@@ -1,13 +1,13 @@
 # Local Execution Operations Runbook
 
 **Status:** Current evergreen operational procedure  
-**Last reviewed:** 2026-09-07
+**Last reviewed:** 2026-09-12
 **Scope:** Start, stop, restart, verify and reconnect the ADS Codexless loopback HTTP service and OpenAI Secure MCP Tunnel without relying on chat memory.  
 **Authority:** Operational procedure only. `docs/CURRENT_STATE.md` and the active validation record own the current experiment, expected tool surface and next mutation. This runbook does not widen local authority or replace the security contracts in the validation records.
 
 ## Purpose
 
-The ADS local-execution path must be recoverable from repository evidence even after a chat, terminal window or model context is lost.
+The ADS local-execution path must be recoverable from repository evidence even after a chat, terminal window, laptop restart or model context is lost.
 
 The normal path is:
 
@@ -24,7 +24,7 @@ Do not reconstruct the startup procedure from conversation memory when this file
 
 ## Public/private boundary
 
-This public runbook records commands, derived locations, ports, environment-variable names and verification procedure.
+This public runbook records commands, public-safe derived locations, ports, profile names and verification procedure.
 
 It deliberately does **not** record:
 
@@ -35,7 +35,7 @@ private workspace/tunnel identifiers
 other credentials or secrets
 ```
 
-Those values are `RESOLVED_PRIVATE` operational state. Retrieve them from the accepted private/local continuity layer when needed. Never commit them to the public repository and never print them merely for diagnostics.
+Those values are `RESOLVED_PRIVATE` operational state. Retrieve them from the accepted private/local continuity layer when needed. Never commit them to the public repository and never print them merely for diagnostics. The persistent profile may reference a local secret file, but neither the credential value nor its user-specific path belongs in public project history.
 
 Do not substitute a general `OPENAI_API_KEY` for the dedicated tunnel runtime credential.
 
@@ -168,86 +168,67 @@ A controlled Codexless-only restart is:
 
 If `/healthz` still reports the old tool count after a source change, assume the old process was not actually replaced until process/listener inspection proves otherwise. Do not refresh the ChatGPT app against a stale runtime.
 
-## Secure MCP Tunnel shell
+## Secure MCP Tunnel profile
 
-The accepted tunnel-client runtime is operated from **Git Bash**.
+The accepted tunnel-client runtime uses a persistent named profile rather than session-local shell variables.
 
-Public-safe derived paths:
-
-```bash
-TUNNEL_HOME="$HOME/ADS-Private/Tooling/OpenAI-Tunnel-Client/v0.0.13"
-TUNNEL_EXE="$TUNNEL_HOME/extracted/tunnel-client.exe"
-export MCP_SERVER_URL="http://127.0.0.1:7690/mcp"
-```
-
-The same Git Bash shell should hold these session-local private variables:
+Public-safe invariants:
 
 ```text
-CONTROL_PLANE_API_KEY
-CONTROL_PLANE_TUNNEL_ID
+tunnel-client version family   v0.0.13
+profile name                    ads-codexless-local-bridge
+MCP target                      http://127.0.0.1:7690/mcp
+health/admin listener           http://127.0.0.1:8080
 ```
 
-Check only whether variables are set, without printing their values:
+The profile is stored in the tunnel client's user-local configuration directory. It contains the non-secret tunnel configuration and a reference to a separate local secret file containing the dedicated Runtime API key. The literal tunnel ID, credential value, user-specific secret-file path and other private coordinates remain `RESOLVED_PRIVATE` and must not be committed to this public repository.
 
-```bash
-for v in CONTROL_PLANE_API_KEY CONTROL_PLANE_TUNNEL_ID MCP_SERVER_URL TUNNEL_EXE; do
-  if [ -n "${!v}" ]; then
-    printf '%s: SET\n' "$v"
-  else
-    printf '%s: MISSING\n' "$v"
-  fi
-done
-```
+Do not substitute a general `OPENAI_API_KEY` for the dedicated tunnel runtime credential. Do not copy the Runtime API key into the profile YAML, repository, shell history, screenshots, issue text or chat.
 
-If the Git Bash shell was closed and the private variables are no longer present, restore their values from the accepted private/local continuity source. If manual secure entry is required, use non-echoing prompts rather than command-line literals:
-
-```bash
-read -rsp "Tunnel runtime API key: " CONTROL_PLANE_API_KEY
-echo
-export CONTROL_PLANE_API_KEY
-
-read -rsp "Tunnel ID: " CONTROL_PLANE_TUNNEL_ID
-echo
-export CONTROL_PLANE_TUNNEL_ID
-```
-
-Do not place those literal values in this public runbook, shell history, screenshots, issue text or chat unless a secure operational step specifically requires them.
+The profile and secret file must survive terminal closure and ordinary laptop restart. A new terminal therefore does not need to recreate `CONTROL_PLANE_API_KEY`, `CONTROL_PLANE_TUNNEL_ID`, `MCP_SERVER_URL` or `TUNNEL_EXE` as session-local environment variables.
 
 ## Verify tunnel configuration before run
 
-With Codexless already healthy on port `7690`, run in the tunnel Git Bash shell:
+With Codexless already healthy on port `7690`, resolve the user-local tunnel-client executable from the accepted private/local continuity layer and run:
 
-```bash
-"$TUNNEL_EXE" doctor --explain
+```powershell
+& $TunnelExe doctor --profile "ads-codexless-local-bridge"
 ```
 
-The doctor should confirm the configured tunnel runtime, MCP target and local listener prerequisites without revealing the private credential values.
+Required healthy evidence includes:
+
+```text
+profile_load             PASS
+control_plane_api_key    PASS
+mcp_target               PASS http://127.0.0.1:7690/mcp
+mcp_server_reachable     PASS
+health_listener          PASS will bind http://127.0.0.1:8080
+RESULT                   ok
+```
+
+A `405 Method Not Allowed` result while probing the Streamable HTTP MCP target is acceptable evidence that the route exists; an ordinary GET is not a valid MCP protocol request.
 
 A doctor failure is a stop condition. Fix the reported configuration/runtime problem rather than broadening authority or substituting credentials.
 
 ## Start Secure MCP Tunnel
 
-In the same Git Bash shell:
+In a dedicated PowerShell window, using the accepted private/local executable path:
 
-```bash
-"$TUNNEL_EXE" run
+```powershell
+& $TunnelExe run --profile "ads-codexless-local-bridge"
 ```
 
-Leave this process running in the foreground.
-
-Do not close that Git Bash shell during normal restart work if you want to retain its session-local environment variables.
+Leave this process running in the foreground. The persistent profile supplies the tunnel ID, MCP target and Runtime API-key reference, so no manual environment-variable rehydration is required after a normal terminal or laptop restart.
 
 ## Stop Secure MCP Tunnel
 
-In the foreground Git Bash window running the tunnel client, press:
+In the foreground PowerShell window running the tunnel client, press:
 
 ```text
 Ctrl+C
 ```
 
-For a short controlled restart, keep the Git Bash shell itself open. The shell then retains the session-local variables while the tunnel process is stopped.
-
-If the shell is closed, treat the private variables as no longer available and rehydrate them from private/local continuity before the next run.
+Wait for the prompt to return before starting a replacement tunnel process.
 
 ## Verify tunnel liveness and readiness
 
@@ -286,18 +267,20 @@ A previous real failure mode was `readyz 503` while Codexless `/healthz` itself 
 Use this order when Codexless code/tool registration changed:
 
 ```text
-1. stop tunnel-client with Ctrl+C, but keep its Git Bash shell open;
+1. stop tunnel-client with Ctrl+C;
 2. stop Codexless HTTP with Ctrl+C;
 3. restart Codexless from `%LOCALAPPDATA%\Codexless\bin\codexless-http.cmd`;
 4. verify Codexless `/healthz` and the expected current toolCount;
-5. in Git Bash, confirm tunnel variables are SET without printing their values;
-6. optionally run `"$TUNNEL_EXE" doctor --explain` when configuration/readiness needs reconfirmation;
-7. start `"$TUNNEL_EXE" run`;
+5. resolve the accepted private/local tunnel-client executable path;
+6. optionally run `& $TunnelExe doctor --profile "ads-codexless-local-bridge"` when configuration/readiness needs reconfirmation;
+7. start `& $TunnelExe run --profile "ads-codexless-local-bridge"`;
 8. verify tunnel `/healthz` is HTTP 200;
 9. verify tunnel `/readyz` is HTTP 200;
 10. only after both layers are healthy, refresh the ChatGPT developer MCP app if the tool surface changed;
 11. perform a fresh read-only discovery check before invoking any newly added mutation tool.
 ```
+
+The persistent profile and secret reference survive normal terminal closure and laptop restart, so the restart procedure must not require re-entering the tunnel ID or Runtime API key unless the credential/profile itself was intentionally rotated or removed.
 
 This order prevents a ChatGPT app refresh from snapshotting a stale or partially registered MCP surface.
 
