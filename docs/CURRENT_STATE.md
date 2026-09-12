@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 451
+**Checkpoint:** 452
 **Date:** 2026-09-12
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -23,6 +23,8 @@ Repository artifacts remain authoritative across chats and models.
 ---
 
 ## Current active stage: Research 124 knowledge architecture redesign
+
+Checkpoint 452 completes Research 124 Phase B and freezes the architecture-neutral acceptance boundary before candidate design. Research 124 now contains 45 requirements, 15 non-negotiable invariants and 16 shared stress scenarios covering repository-native bootstrap, broad-to-deep reconstruction, observable reconstruction receipts, governing-authority activation before consequential action, known-risk surfacing, authority/supersession/conflict semantics, traceable synthesis, one explicit development authority, rebuildable derived representations, deterministic nested workstream resume, fixed-budget 5x/10x scale behavior, bounded marginal maintenance, public/private isolation, interruption recovery and structural plus cognitive qualification. The requirements explicitly separate ordinary relevance retrieval from required-authority resolution: semantic/vector retrieval remains an open candidate accelerator but cannot be the sole high-consequence authority path. No graph, database, vector, metadata, checkpoint, domain-guide or bootstrap implementation has been selected. The active next boundary is to construct genuinely different candidate architecture families against this same frozen requirement set, then subject them to independent-first challenge and common stress scenarios before target selection.
 
 Checkpoint 450 completes Research 124 Phase A, the neutral whole-repository knowledge-architecture baseline. The measured system now contains 1,499 tracked files, 963 files under `docs/`, 986 Markdown files, 124 numbered Research records and 450 numbered Checkpoints. The six mandatory bootstrap reads total about 325 KB / 324.5k characters at the baseline, while `CURRENT_STATE.md` alone is about 222.9 KB and contains 102 explicit historical checkpoint paragraphs. The Knowledge Map remains mechanically valid but `development-governance` now routes 293 direct paths, far above every other topic, establishing real topic-saturation pressure. `current_routing.json` remains intentionally compact but cannot represent nested parent/child workstreams, pause/return conditions or exact resume targets. Existing deterministic validators strongly protect structural integrity but do not yet measure high-recall reconstruction, authority selection, cognitive activation, context efficiency or deterministic resume. Several escalation triggers previously deferred by Foundation 014 and Research 064/103/104 are therefore now at least partly observed. No target architecture is selected. The active next boundary is to convert the purpose, failure model and measured baseline into explicit requirements and invariants before comparing candidate architectures.
 

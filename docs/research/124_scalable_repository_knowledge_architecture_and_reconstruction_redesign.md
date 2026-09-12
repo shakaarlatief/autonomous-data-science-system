@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-12
-**Status:** ACTIVE / PHASE A BASELINE COMPLETE / REQUIREMENTS AND INVARIANTS NEXT / TARGET ARCHITECTURE NOT YET SELECTED
+**Status:** ACTIVE / PHASE B REQUIREMENTS AND INVARIANTS COMPLETE / CANDIDATE ARCHITECTURES NEXT / TARGET ARCHITECTURE NOT YET SELECTED
 **Scope:** Redesign how ADS preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -712,4 +712,546 @@ COGNITIVE_ACTIVATION_GAP=OBSERVED
 STRONGER_ARCHITECTURE_OPTIONS=REOPENED_FOR_COMPARISON
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=REQUIREMENTS_AND_INVARIANTS
+```
+
+## 31. Phase B requirements method
+
+Phase B converts the purpose statement, measured baseline and historical failure evidence into architecture-neutral acceptance requirements before any candidate mechanism is preferred.
+
+The requirements below deliberately avoid assuming that the successor is Markdown-based, graph-based, database-backed, vector-backed or file-only. They state properties the system must provide. A later candidate may satisfy a requirement through source metadata, generated views, an executable router, a graph, a database, deterministic rules, semantic retrieval or a combination.
+
+Requirements are divided into four classes:
+
+```text
+functional continuity
+    what a fresh collaborator must be able to reconstruct and do
+
+epistemic and authority safety
+    how current truth, evidence, conflict and provenance must behave
+
+scale and maintainability
+    how cost must behave as the project grows
+
+qualification and transition safety
+    how the architecture proves that it works and how it may replace the current system
+```
+
+Unless explicitly marked as a comparative preference, the `KA-R` requirements below are acceptance requirements. The later design phase may refine exact thresholds and measurement instruments, but it may not silently remove a requirement merely because one candidate architecture has difficulty satisfying it.
+
+## 32. Reconstruction activation tiers
+
+High-recall reconstruction does not mean loading every durable artifact into every context. Phase B freezes a three-tier activation model at the semantic level.
+
+### Tier A: project orientation
+
+A fresh collaborator must obtain enough project-wide understanding to reason safely before entering narrow task depth. The project-orientation layer must cover at least:
+
+```text
+project identity and purpose
+current project stage and live boundary
+current authority model and conflict-resolution principle
+major durable project domains
+active workstream and its parent objective
+important globally active obligations / blocks / uncertainties
+current verification or epistemic boundary
+existence and status of relevant private continuity surfaces
+```
+
+The orientation may summarize these facts. It does not need to load the detailed evidence behind each fact immediately.
+
+### Tier B: task and domain activation
+
+Once the current task or domain is known, the architecture must activate the domain synthesis and the governing sources needed for that task, including relevant known risks, open questions, constraints, operational procedures, specifications and active dependencies.
+
+### Tier C: evidence and provenance drill-down
+
+Detailed checkpoints, validation records, raw experiment evidence, Git chronology, historical alternatives and deeper rationale may remain latent until required for verification, conflict resolution, explanation or a consequential decision.
+
+The tiers are semantic obligations, not a frozen file hierarchy. A candidate may implement them differently, but it must preserve the broad-to-deep behavior.
+
+## 33. Functional continuity requirements
+
+### KA-R01: persistent project understanding
+
+The architecture must preserve and make reusable the project's accumulated understanding, not merely retain document bytes. Durable knowledge must survive conversation loss, model changes, human memory loss and ordinary environment restarts.
+
+### KA-R02: repository-native bootstrap
+
+One stable project entry must be sufficient to initiate reconstruction. A human-maintained continuation prompt containing a growing list of files, checkpoint numbers or hidden chat context must not be required for normal continuation.
+
+### KA-R03: conversation and model independence
+
+No material current project fact, accepted rationale, active route, unresolved obligation or migration-critical knowledge may exist only in one conversation, one model's memory or one provider-specific hidden memory surface.
+
+### KA-R04: broad project orientation
+
+A fresh collaborator must reconstruct the Tier-A orientation set before narrow consequential work. Passing directly from one live pointer to one next action without broader project/domain orientation is insufficient.
+
+### KA-R05: progressive disclosure
+
+The architecture must support progressively deeper traversal from project orientation to domain, subdomain/workstream, governing source and exact evidence without requiring whole-corpus reading.
+
+### KA-R06: active route reconstruction
+
+The complete active continuation chain must be reconstructable, including the current workstream, parent objective, why the current route exists and what higher-level work resumes after it closes.
+
+### KA-R07: high-recall relevant discovery
+
+A collaborator must be able to discover governing, adjacent and risk-bearing knowledge relevant to a task without already knowing exact filenames, artifact numbers or the prior conversation's search terms.
+
+### KA-R08: reconstruction receipt
+
+A reconstruction must be observable enough to report what project/domain/task surfaces were traversed, which governing sources were activated, which important areas remained latent or unavailable, and which uncertainties remain unresolved. The receipt is evidence of traversal, not proof that a model semantically understood every source.
+
+### KA-R09: consequential-action authority preflight
+
+Before consequential guidance or action, the architecture must resolve the task-relevant governing authority and make its consumption observable. If the required authority cannot be resolved or consumed, the system must fail visibly rather than proceed from memory or plausible inference.
+
+Consequential contexts include at least:
+
+```text
+ordered or safety-sensitive operational procedures
+repository / host / external-system mutations
+security, credential, trust or authority changes
+destructive or difficult-to-reverse actions
+acceptance, promotion or authority-switch decisions
+scientific or experiment conclusions
+migration steps that can retire or transform authoritative knowledge
+```
+
+For AB-022-style cases, it is not sufficient that the runbook exists or is linked somewhere. The architecture must cause the relevant governing procedure to enter the reasoning path before exact instructions are produced.
+
+### KA-R10: known-risk and evolution-trigger activation
+
+Known limitations, deferred upgrades, reopen triggers and previously observed failure conditions must be activatable when the current task or observed condition intersects them. The architecture must not depend on a human remembering that such a warning exists.
+
+### KA-R11: uncertainty visibility
+
+When required authority is unavailable, evidence conflicts, private state is required but not verified, or the reconstruction cannot establish a necessary relationship, the uncertainty must be explicit. The system must not convert missing resolution into a confident guess.
+
+## 34. Authority, relationship and epistemic requirements
+
+### KA-R12: explicit epistemic role
+
+The architecture must distinguish at least the following semantic roles when they matter:
+
+```text
+current accepted architecture / canonical truth
+live project state
+accepted decision
+frozen specification or contract
+current synthesis
+research candidate / hypothesis
+rejected approach
+superseded material
+historical provenance
+raw evidence / validation result
+open question
+known limitation / deferred capability
+```
+
+A candidate does not need one universal schema for every artifact, but the system must be able to resolve these distinctions reliably enough for reconstruction and action.
+
+### KA-R13: explicit authority resolution
+
+Authority must be resolved using governed role, scope, status, chronology and supersession semantics. Recency alone, directory position alone, semantic similarity alone or model confidence alone may not determine current truth.
+
+### KA-R14: supersession and conflict visibility
+
+Explicit supersession must be machine-resolvable where the project has declared it. If two apparently authoritative claims remain incompatible after normal authority rules, the conflict must surface as unresolved rather than being silently blended.
+
+### KA-R15: relationship semantics
+
+The architecture must support explicit representation of relationships that materially affect understanding or continuation, including at least:
+
+```text
+derived-from / supported-by
+implements / governed-by
+tested-by / validated-by
+supersedes / superseded-by
+depends-on / blocks
+opened-from / returns-to
+paused-by / resumes-when
+synthesis-of / evidence-for
+known-risk / reopen-trigger
+```
+
+Not every prose mention must become an edge. The requirement is that relationships whose semantics matter to reasoning can be declared and queried without heuristic prose scraping.
+
+### KA-R16: current state and history separation
+
+The architecture must preserve historical depth without requiring current-state surfaces to grow monotonically with all history. Current state, historical chronology and deep evidence must remain distinguishable even if a candidate presents them through generated views.
+
+### KA-R17: loss-aware synthesis
+
+The architecture may compress detailed knowledge into summaries or syntheses, but compression must not silently delete unique accepted rationale, evidence, uncertainty or provenance. Higher abstraction must retain a route downward to the source material from which it derives.
+
+### KA-R18: synthesis traceability
+
+Material claims in promoted or generated synthesis must be traceable to authoritative source artifacts or governed evidence. A synthesis that cannot explain its source basis cannot silently become stronger authority than those sources.
+
+## 35. Source-of-truth and derived-representation requirements
+
+### KA-R19: one explicit project-development authority
+
+ADS must retain one explicit project-development authority. During this redesign that authority remains the public ADS repository. A future governance change would have to be explicit and separately accepted; no candidate may create an accidental competing authority merely by adding a database, graph or index.
+
+### KA-R20: authoritative versus derived classification
+
+Every new knowledge store or view introduced by a candidate must have an explicit authority class. In particular, generated indexes, embeddings, caches, graph projections, search databases and reconstruction plans must not be mistaken for source truth unless the design intentionally promotes them through a governed authority change.
+
+### KA-R21: rebuildable derived state
+
+Derived representations must be reproducible from durable authoritative inputs plus versioned generation logic/configuration where reproduction is part of the design. Loss of a derived index must not destroy unique project truth.
+
+### KA-R22: durable promotion of unique synthesis
+
+If a generated synthesis contains unique accepted human/model reasoning that the project intends to preserve, that synthesis itself must be promoted onto a durable authoritative surface. It may not remain unique only inside an ephemeral cache, vector store or model response.
+
+### KA-R23: freshness and source binding
+
+A derived representation used for reconstruction must expose enough source identity or revision information to detect stale material. The architecture must not present an old generated view as current merely because its backing service still responds.
+
+### KA-R24: probabilistic retrieval is not sole safety authority
+
+Semantic or vector retrieval may improve recall, but a probabilistic retrieval result alone may not be the sole mechanism for satisfying consequential-action authority preflight. High-consequence required authority needs a deterministic or otherwise verifiable resolution path, or a fail-visible result when none can be established.
+
+## 36. Workstream and continuation requirements
+
+### KA-R25: deterministic workstream state
+
+Active, paused, blocked, completed and superseded workstreams must be distinguishable without reconstructing control flow from chronological prose.
+
+### KA-R26: explicit pause and return semantics
+
+Every deliberately paused route that remains expected to resume must be able to express:
+
+```text
+why it paused
+what condition or dependency permits return
+what exact or typed target resumes
+what parent objective it belongs to
+```
+
+A simple `PAUSED` label without return semantics is insufficient for long-lived nested work.
+
+### KA-R27: multiple dependencies
+
+The continuation model must support multiple dependency edges where real project work requires them. The design must not force a strict tree if the project state is naturally DAG-like.
+
+### KA-R28: interruption recovery
+
+After abnormal interruption during a multi-step transition, the architecture must support reconstruction of intended versus durably completed work from repository state and action evidence. It must not require blind replay of the previous conversation plan.
+
+### KA-R29: concurrent collaborator safety
+
+When multiple humans/models/tools operate on related knowledge, stale or conflicting updates to live state, authority relationships or generated routing must be detectable. The exact concurrency mechanism is a design question, but silent last-writer-wins corruption of project understanding is not acceptable.
+
+## 37. Scale and maintainability requirements
+
+### KA-R30: fixed-budget reconstruction discipline
+
+Candidate qualification must use a predeclared context/read budget for core reconstruction scenarios. The exact budget will be calibrated before comparative testing, but candidates may not obtain better recall simply by consuming an unbounded fraction of the repository.
+
+### KA-R31: sublinear cold-start growth target
+
+Required cold-start cost must not be structurally proportional to total historical corpus size. At 5x and 10x corpus scale, the project-orientation layer should remain within the same order of magnitude and, for the frozen stress tests, within the same predeclared core context budget unless a scenario intentionally adds new active-domain evidence.
+
+### KA-R32: bounded mandatory core
+
+No mandatory bootstrap artifact or mandatory bootstrap set may be designed to accumulate all project history linearly. Historical growth must be pushed behind progressively deeper traversal or generated bounded synthesis.
+
+### KA-R33: bounded marginal maintenance
+
+Adding an ordinary new knowledge artifact should require only local/bounded semantic maintenance or automatically generated global views. It must not require manually editing a growing number of unrelated global catalogs merely to keep the architecture coherent.
+
+### KA-R34: saturation observability
+
+The architecture must expose measurable signals for overloaded routing/index surfaces, such as fan-out, ambiguity, stale synthesis, retrieval miss rates or context pressure, before usability degradation becomes catastrophic.
+
+### KA-R35: human and model usability
+
+Core authority and navigation semantics must remain inspectable by humans as well as machine-consumable. A candidate may use databases or generated structures, but the project must not become understandable only through one opaque service.
+
+### KA-R36: provider and tool portability
+
+Core continuity must not depend on proprietary hidden memory belonging to one model/provider. Different capable collaborators must be able to reconstruct the project from durable project-controlled state using the supported access mechanisms available to them.
+
+## 38. Public/private requirements
+
+### KA-R37: explicit public/private authority boundary
+
+The private companion may be authoritative for explicitly delegated private continuity facts, but it may not silently redefine public ADS development state. Public `RESOLVED_PRIVATE` conclusions remain resolved when the private surface is temporarily inaccessible; lack of access becomes `NOT_VERIFIED`, not invented contradiction.
+
+### KA-R38: private-data non-leakage
+
+Generated public indexes, graph projections, summaries, search stores or exported receipts must not expose private paths, credentials, source locations or other private-only material merely because a private complement participates in reconstruction.
+
+### KA-R39: bounded private dependency
+
+If a task genuinely requires private state, the reconstruction must say so and verify the relevant private continuity status when accessible. If the task does not require it, public reconstruction must remain usable without loading private details.
+
+## 39. Qualification, observability and migration requirements
+
+### KA-R40: structural and cognitive qualification
+
+Success must be tested at two levels:
+
+```text
+structural integrity
+    sources, metadata, references, freshness, generated-view consistency
+
+cognitive / reconstruction behavior
+    orientation recall, authority selection, risk activation, route reconstruction,
+    context efficiency and fail-visible uncertainty in realistic scenarios
+```
+
+A structurally valid repository is not sufficient evidence that the knowledge architecture works.
+
+### KA-R41: measurable reconstruction coverage
+
+A reconstruction result must be evaluable across explicit dimensions rather than judged only as "seems informed". At minimum the evaluation must score or classify:
+
+```text
+project identity / purpose
+current stage and live boundary
+major domain awareness
+active route and parent objective
+authority hierarchy
+relevant governing-source discovery
+known-risk / open-obligation activation
+supersession/conflict handling
+verification / uncertainty awareness
+context/read cost
+important omitted or latent knowledge disclosure
+```
+
+### KA-R42: fail-visible degraded mode
+
+Failure of an optional semantic, vector, graph-index or generated-view service must not create false confidence. The design must either provide a safe deterministic fallback or explicitly state that required reconstruction cannot currently be completed.
+
+### KA-R43: migration preservation
+
+Migration may change files, families, identifiers, schemas or storage mechanisms, but it must preserve the meaning, authority, provenance and discoverability of unique durable knowledge or explicitly classify any intentional retirement. Silent semantic loss is unacceptable.
+
+### KA-R44: old authority remains until successor qualification
+
+The current architecture remains authoritative during design and migration. The authority switch may occur only after the successor passes the frozen qualification scenarios, migration reconciliation and rollback/recovery criteria appropriate to the selected design.
+
+### KA-R45: self-hosting evolution
+
+The knowledge architecture must be capable of preserving and coordinating a major redesign of itself across multiple conversations and interruptions. If its own migration cannot be reconstructed safely using its continuity model, it fails a core use case.
+
+## 40. Non-negotiable architecture invariants
+
+The requirements above imply the following invariants. Candidate architectures may implement them differently, but a selected target must not violate them without an explicit owner-approved revision to this requirements boundary.
+
+```text
+KA-I01  Durable project authority outranks chat/model memory.
+
+KA-I02  The system has one explicit project-development authority; derived stores do not
+        silently become a second source of truth.
+
+KA-I03  Rebuildable derived state contains no unique project truth unless that truth is
+        separately promoted to a durable authoritative surface.
+
+KA-I04  Current, historical, superseded, rejected and unresolved knowledge remain
+        distinguishable.
+
+KA-I05  Consequential exact guidance/action requires task-relevant governing authority
+        to be resolved and observably consumed first, or execution fails visibly.
+
+KA-I06  Unresolved authority conflict or missing required evidence is surfaced rather
+        than guessed away.
+
+KA-I07  Provenance and routes to deeper evidence survive synthesis, compression and
+        migration.
+
+KA-I08  The old continuity system remains operational until the successor earns an
+        explicit authority switch.
+
+KA-I09  Paused work that is expected to resume has explicit reason, return condition,
+        parent relationship and resume target.
+
+KA-I10  Public/private authority separation is preserved and private data is not leaked
+        through public derived representations.
+
+KA-I11  Fresh-collaborator continuation cannot depend on a previous conversation being
+        available.
+
+KA-I12  Required cold-start cost is not structurally proportional to accumulated project
+        history.
+
+KA-I13  Routine artifact addition does not require unbounded manual edits to global
+        routing surfaces.
+
+KA-I14  Optional probabilistic retrieval failure cannot silently bypass required-authority
+        safety or produce false reconstruction success.
+
+KA-I15  The architecture can state its own live state, active route, authority status,
+        reconstruction coverage and qualification status from durable project state.
+```
+
+## 41. Frozen candidate stress-test suite
+
+Every serious candidate architecture must later be evaluated against the same scenario family. Exact fixtures and scoring thresholds may be refined before execution, but candidates must not receive easier scenario definitions simply because their mechanism differs.
+
+### KA-S01: generic cold start
+
+Starting from only the stable project entry and the instruction `Continue ADS`, reconstruct the project-level orientation, current stage, active route, parent objective, major domains, current uncertainty boundary and next legitimate research step without prior chat memory.
+
+### KA-S02: AB-022 operational authority activation
+
+Ask for exact local restart/startup guidance in a fresh context. The candidate must identify and consume the current governing operations authority before giving ordered instructions, rather than relying on reconstructed chat memory.
+
+### KA-S03: latent known-risk trigger
+
+Present a task whose conditions intersect a previously preserved known limitation or reopen trigger that is not named in the prompt. The candidate must surface the relevant warning and its source.
+
+### KA-S04: nested route closure and resume
+
+Open a child side-route, pause the parent, complete the child and reconstruct the exact deterministic return target and parent objective after context loss.
+
+### KA-S05: saturated semantic domain
+
+Query a domain equivalent to the current 293-path `development-governance` topic. The candidate must obtain useful governing orientation without dumping or reading the full member set.
+
+### KA-S06: supersession and conflict
+
+Provide current, historical and superseded artifacts with overlapping claims. The candidate must select the current governed authority where resolvable and surface any genuine unresolved conflict.
+
+### KA-S07: private complement unavailable
+
+Use public state containing `RESOLVED_PRIVATE` knowledge while the private complement is inaccessible. The candidate must preserve the public resolution, mark private freshness as not verified where relevant and avoid inventing private coordinates.
+
+### KA-S08: abnormal transition interruption
+
+Interrupt a multi-step repository or architecture migration after some durable actions have completed. A fresh collaborator must classify intended versus completed work and continue without blindly replaying uncertain mutations.
+
+### KA-S09: 5x corpus growth
+
+Expand historical/evidence volume approximately fivefold with realistic irrelevant and adjacent knowledge while preserving the same active problem. Core orientation and governing-source activation must stay inside the frozen reconstruction budget and maintain required recall.
+
+### KA-S10: 10x corpus growth
+
+Repeat the same test at approximately tenfold corpus scale. Normal continuation must not degrade into proportional whole-corpus reading.
+
+### KA-S11: derived-store deletion and rebuild
+
+Delete the candidate's rebuildable index/graph/vector/search representation. Prove that unique authoritative knowledge is not lost and that the derived state can be rebuilt or a safe fallback used.
+
+### KA-S12: model/provider switch
+
+Move the same project boundary to another capable collaborator with no previous chat memory. The collaborator must reconstruct the same material current state and authority boundaries from project-controlled sources.
+
+### KA-S13: self-redesign continuity
+
+Continue a multi-chat redesign of the knowledge architecture itself, including requirements, candidate comparison, migration and authority switch, without relying on the originating conversation.
+
+### KA-S14: marginal maintenance cost
+
+Add ordinary new research/evidence/checkpoint-like knowledge and measure which global/manual surfaces require updates. The candidate must demonstrate bounded marginal maintenance rather than corpus-proportional curation.
+
+### KA-S15: concurrent related updates
+
+Have multiple collaborators make related knowledge/state changes from nearby starting points. The candidate must detect stale/conflicting state rather than silently losing one collaborator's semantic update.
+
+### KA-S16: probabilistic retrieval miss and false positive
+
+Force semantic retrieval to omit a relevant item and rank an irrelevant similar item highly. The architecture must still protect required authority resolution and show a deterministic/fail-visible fallback path.
+
+## 42. Candidate rejection gates
+
+Regardless of convenience or implementation elegance, reject or materially redesign a candidate if it requires any of the following as a normal property:
+
+```text
+whole-corpus reading for ordinary continuation
+human copy-paste of a growing continuation prompt
+an opaque non-rebuildable second source of truth
+silent use of stale generated state
+probabilistic retrieval as the sole required-authority safety path
+no deterministic/fail-visible nested resume semantics
+loss of unique provenance during synthesis or migration
+cold-start cost that grows approximately with corpus history
+routine manual maintenance proportional to global corpus size
+private continuity details leaking into public derived views
+provider-specific hidden memory as a core continuity dependency
+confident continuation when required authority or conflict resolution is unavailable
+```
+
+A candidate may still have trade-offs. These are failure conditions, not a demand that every dimension be maximized simultaneously.
+
+## 43. Comparative metrics to freeze before candidate testing
+
+Phase B freezes the measurement categories but deliberately does not invent precise numerical thresholds before candidate fixtures exist. Before Phase F comparative execution, each scenario must receive a fixed budget and success rubric shared by all candidates.
+
+The metric set must include at least:
+
+```text
+orientation coverage
+required-authority recall
+known-risk activation recall
+false-positive / irrelevant activation burden
+authority-resolution correctness
+supersession/conflict correctness
+active-route reconstruction correctness
+context / characters / artifacts consumed
+time / tool-call complexity where meaningful
+manual maintenance touches per ordinary artifact change
+derived-view freshness / rebuild success
+unresolved-uncertainty honesty
+migration coverage / orphaned-knowledge count
+```
+
+For probabilistic retrieval components, both false negatives and false positives matter. High recall bought by flooding the context with hundreds of weakly relevant artifacts is not equivalent to useful reconstruction.
+
+## 44. Architecture-neutral conclusions from Phase B
+
+Phase B narrows the design problem without choosing a mechanism.
+
+The future system is not merely an archive, index or search feature. It must behave as persistent project cognition infrastructure with four coupled responsibilities:
+
+```text
+preserve enough truth and provenance to remain durable
+reconstruct broad and task-specific understanding efficiently
+activate governing and risk-bearing knowledge before it matters
+compress and organize accumulated understanding without losing traceability
+```
+
+Three design consequences are now explicit:
+
+1. **Reconstruction must be planned and observable.** A fresh session should not simply receive a pile of files. It should traverse a bounded broad-to-deep route and be able to produce a reconstruction receipt.
+2. **Required authority and ordinary relevance are different retrieval problems.** Semantic search can help discover relevance, but consequential governing authority needs stronger resolution semantics than similarity ranking alone.
+3. **The knowledge system must separate authoritative durable knowledge from rebuildable acceleration structures.** Graphs, databases, embeddings, generated indexes and caches remain fully open options, but their authority/freshness/rebuild semantics must be explicit.
+
+The target architecture remains unselected.
+
+## 45. Next phase: candidate architecture families
+
+The next phase should construct multiple genuinely different candidate families against the same frozen requirements rather than incrementally polishing the current design.
+
+The candidate set should include at minimum serious variants of:
+
+```text
+distributed authoritative metadata + generated hierarchical views
+Git-authoritative artifacts + explicit static/queryable relationship graph
+Git-authoritative artifacts + rebuildable SQLite/indexed knowledge substrate
+hierarchical project/domain synthesis + deterministic task authority router
+hybrid lexical/semantic/vector retrieval subordinate to explicit authority graph
+richer graph/database-first acceleration layer with Git-authoritative source
+```
+
+Combinations are allowed. The point of separate candidates is to expose trade-offs in authority, recall, complexity, context efficiency and maintenance rather than to force artificial purity.
+
+Before ChatGPT's preferred target is reconciled, the independent-first multi-model pattern from Section 16 should be used so the challenger is not anchored on the primary design.
+
+```text
+RESEARCH124=ACTIVE
+PHASE_A_BASELINE_INVENTORY=COMPLETE
+PHASE_B_REQUIREMENTS_AND_INVARIANTS=COMPLETE
+REQUIREMENTS_COUNT=45
+INVARIANTS_COUNT=15
+FROZEN_STRESS_SCENARIOS=16
+TARGET_ARCHITECTURE=NOT_SELECTED
+NEXT=CANDIDATE_ARCHITECTURE_FAMILIES
 ```
