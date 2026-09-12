@@ -1,7 +1,7 @@
 # MC-0011 Thread: Project-Development Knowledge Architecture Foundational Dialogue
 
 **Thread:** MC-0011
-**Status:** OPEN / FOUNDATIONAL DIALOGUE COMPLETE / AWAITING PROJECT-OWNER CLOSURE DECISION
+**Status:** RESOLVED / FOUNDATIONAL PURPOSE SATISFIED / EVIDENCE PHASE NEXT
 **Review mode:** REVIEWED / CURRENT-CONTEXT FOUNDATIONAL DIALOGUE
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
 **Opening repository head:** `1a422c79dc67384426ad10e28c2fc6845147f9e0`
@@ -20,7 +20,7 @@ The knowledge architecture discussed here is project-development infrastructure 
 ## Current phase
 
 ```text
-FOUNDATIONAL_DIALOGUE_AWAITING_OWNER_CLOSURE_DECISION
+FOUNDATIONAL_DIALOGUE_RESOLVED_EVIDENCE_PHASE_NEXT
 ```
 
 The detailed contract is in `BRIEF.md`.
@@ -68,3 +68,14 @@ Only then should Research 124 decide whether to deepen external research, expose
 ## Older Claude obligations
 
 MC-0010 and other older pending Claude work are paused by explicit project-owner routing. They do not precede MC-0011 merely because of thread number or age.
+## Resolution
+
+The project owner accepted closure on 2026-09-12 after Claude Message 005 and ChatGPT Message 006. The thread is resolved because its foundational purpose was satisfied, not because a target architecture was selected.
+
+See:
+
+```text
+docs/model_collaboration/threads/MC-0011/RESOLUTION.md
+```
+
+Research 124 now moves into empirical failure characterization, accumulation/routing audits, blind baseline trials and broad question-driven external research. Target-architecture design remains paused and the withheld paper/video remains withheld.

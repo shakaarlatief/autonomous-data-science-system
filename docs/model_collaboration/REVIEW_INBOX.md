@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-12
-**Status:** MC-0011 FOUNDATIONAL KNOWLEDGE-ARCHITECTURE DIALOGUE OPEN / MC-0010 DEFERRED BY OWNER ROUTING
+**Status:** NO ACTIVE CLAUDE OBLIGATION / MC-0011 RESOLVED / MC-0010 DEFERRED BY OWNER ROUTING
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -23,33 +23,42 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Current active collaboration obligation
 
+There is no active Claude obligation at this boundary.
+
+MC-0011 has been resolved by explicit project-owner decision after the six-message foundational dialogue. Research 124 now proceeds under ChatGPT task ownership into empirical failure characterization and broad external research. A future Claude obligation should be opened only when a new bounded collaboration purpose is justified.
+
+## Most recently completed obligation
+
 ### MC-0011: project-development knowledge architecture foundational dialogue
 
 ```text
-collaborator               Claude / intended claude-03
+collaborator               Claude / claude-03
 mode                       REVIEWED / current-context foundational dialogue
 coordination branch        v1-source-vault-bootstrap-resume
 opening base               1a422c79dc67384426ad10e28c2fc6845147f9e0
-kind                       foundational reflection / critique / research / design-method discussion
-priority                   CURRENT PROJECT-OWNER PRIORITY
-current gate               obtain and seriously consider Claude contribution before target-architecture design resumes
-expected output            project-owner decision on MC-0011 closure and transition to the next evidence phase
-status                     OPEN / CLAUDE 001+003+005 + CHATGPT 002+004+006 PRESERVED / AWAITING HUMAN DECISION
+messages                   Claude 001,003,005 / ChatGPT 002,004,006
+result                     FOUNDATIONAL PURPOSE SATISFIED
+owner decision              ACCEPTED CLOSURE / EMPIRICAL + EXTERNAL EVIDENCE NEXT
+status                     RESOLVED
 conversation               03 - Project Knowledge Architecture Foundations and Design Method
 ```
 
-The detailed contract is in:
+Durable records:
 
 ```text
 docs/model_collaboration/threads/MC-0011/BRIEF.md
 docs/model_collaboration/threads/MC-0011/THREAD.md
 docs/model_collaboration/threads/MC-0011/STATE.json
+docs/model_collaboration/threads/MC-0011/RESOLUTION.md
+docs/model_collaboration/threads/MC-0011/messages/001_claude_foundational_knowledge_architecture_reflection.md
+docs/model_collaboration/threads/MC-0011/messages/002_chatgpt_response_to_claude_foundational_reflection.md
+docs/model_collaboration/threads/MC-0011/messages/003_claude_focused_foundational_followup.md
+docs/model_collaboration/threads/MC-0011/messages/004_chatgpt_second_response_scope_control_plane_and_research_sequence.md
+docs/model_collaboration/threads/MC-0011/messages/005_claude_architecture_boundary_and_sequence_followup.md
+docs/model_collaboration/threads/MC-0011/messages/006_chatgpt_foundational_dialogue_synthesis_and_owner_decision_request.md
 ```
 
-This obligation concerns the project-development knowledge architecture that supports work on the Autonomous Data Science System project. It is not the architecture of ADS itself. The dialogue is intentionally broader than asking Claude to design an architecture: Claude should critique the purpose, Phase A/B framing, newly observed activation/scope weaknesses, methodology, missing concepts and relevant external fields. Target-architecture design is paused during this foundational round.
-
-One potentially relevant external paper/video is intentionally withheld during the first Claude turn to preserve a pre-exposure baseline and reduce design fixation. Claude should not infer or search for that unidentified source.
-
+The resolution does not select a target architecture. It establishes a stronger working problem decomposition and moves Research 124 to empirical failure characterization, routing/accumulation audits, blind current-architecture baselines and broad question-driven external research. The project-owner paper/video remains intentionally withheld.
 ## Deferred older collaboration obligation
 
 ### MC-0010: current Codex and Codexless upstream ecosystem research
@@ -92,7 +101,7 @@ docs/checkpoints/276_codex_codexless_upstream_ecosystem_research_opened_source_v
 
 MC-0010 is intentionally current-context rather than blind. Its epistemic value comes from a separate model performing its own search, source evaluation, and architecture critique while fully aware of the current ADS implementation and evidence. The obsolete MC-0009 thread was explicitly retired on 2026-09-03 and is no longer a collaboration obligation.
 
-## Most recently completed obligation
+## Earlier completed obligation
 
 ### MC-0008: repository governed-document metadata/reference-integrity architecture
 

@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-12
-**Status:** ACTIVE / PHASE B COMPLETE / POST-PHASE-B WEAKNESSES CAPTURED / FOUNDATIONAL CLAUDE DIALOGUE NEXT / TARGET ARCHITECTURE DESIGN PAUSED
+**Status:** ACTIVE / FOUNDATIONAL CLAUDE DIALOGUE RESOLVED / INITIAL EMPIRICAL DENSITY AUDIT COMPLETE / FAILURE CORPUS + BLIND BASELINES + EXTERNAL RESEARCH NEXT / TARGET ARCHITECTURE DESIGN PAUSED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -1346,4 +1346,312 @@ ADS_PRODUCT_ARCHITECTURE_NE_PROJECT_KNOWLEDGE_ARCHITECTURE=true
 PHASE_B_BASELINE=STABLE_BUT_AMENDABLE_BY_NEW_EVIDENCE
 TARGET_ARCHITECTURE_DESIGN=PAUSED
 NEXT=CLAUDE_FOUNDATIONAL_KNOWLEDGE_ARCHITECTURE_DIALOGUE
+```
+## 49. MC-0011 foundational dialogue resolved by owner decision
+
+The project owner explicitly accepted closure of MC-0011 after three Claude responses and three ChatGPT responses. The collaboration therefore exits the foundational-dialogue gate without selecting a target architecture.
+
+The durable resolution is:
+
+```text
+docs/model_collaboration/threads/MC-0011/RESOLUTION.md
+```
+
+The dialogue materially changes the Research 124 working frame in several ways.
+
+First, the redesign is explicitly about **project-development knowledge infrastructure supporting ADS**, not the architecture of the Autonomous Data Science System product itself.
+
+Second, cognitive activation is no longer treated as one undifferentiated problem. At least two failure classes now matter:
+
+```text
+reconstruction / retrieval failure
+    project-specific knowledge should have been recovered but was not
+
+situation-dispatch failure
+    the collaborator never initiated the project-specific retrieval/procedure path
+    because generic reasoning began first
+```
+
+Third, consolidation/compression is now treated as a first-class cross-cutting scaling function rather than merely an output-format concern. Precise navigation without consolidation can still require traversal cost that grows approximately with the number of currently relevant knowledge units.
+
+Fourth, the stable-entry requirement is refined conceptually. The intended target is not one universal static bootstrap packet. It is one stable **bootstrap/router mechanism** that can determine or elicit task/continuation mode and route into task-shaped reconstruction paths.
+
+Fifth, the dialogue introduces a provisional **reasoning control plane** concept. This remains inside Research 124 only where it answers whether project reasoning has license to proceed given task classification, governing authority, reconstruction coverage and uncertainty. It does not absorb Runtime Bridge transport/mutation safety or model-collaboration write-ownership mechanics.
+
+Sixth, the preferred conceptual direction for task/procedure activation is no longer a hand-maintained central situation registry. A safer hypothesis is:
+
+```text
+governing source declares task/situation conditions it governs
+    -> generated / rebuildable dispatch representation
+    -> narrow routing/policy reasoning checks that representation
+    -> ordinary work reasoning proceeds only after the relevant gate
+```
+
+This remains a hypothesis to test, not an accepted implementation.
+
+## 50. Working decomposition after MC-0011
+
+Research 124 now carries this provisional problem decomposition into the evidence phase:
+
+```text
+knowledge substrate / data plane
+    durable authoritative knowledge
+    evidence
+    provenance
+    relationships
+    source-of-truth semantics
+
+knowledge lifecycle / consolidation function
+    capture
+    distill
+    synthesize
+    promote
+    retire from active surface
+    regenerate derived views
+
+reasoning control plane
+    task/situation classification
+    governing-procedure dispatch
+    authority preflight
+    task-shaped reconstruction routing
+    block/fail-visible behavior when required authority is unresolved
+    uncertainty / calibration signaling
+    reconstruction receipt
+
+collaborator interface
+    what a fresh model/human receives
+    how scope and authority are exposed
+    how broad orientation drills into exact evidence
+```
+
+This decomposition is deliberately above implementation mechanism. It does not imply a graph, database, vector store, separate routing model or new artifact family.
+
+### 50.1 Working bootstrap-core principle
+
+The strongest provisional formulation from MC-0011 is:
+
+> **A constitutional/bootstrap core should be a tiny high-stability protocol telling a collaborator how to acquire trustworthy current project understanding. It should contain procedures and pointers, not ordinary changing project-state values or history-growing lists.**
+
+Potential invariants to research later include:
+
+```text
+no ordinary changing state values
+no enumerable lists expected to grow with project history
+all pointers mechanically resolvable
+rare explicit amendment path with rationale
+small size as a secondary, not sufficient, guard
+```
+
+### 50.2 Active knowledge surface
+
+The working definition is:
+
+> **The active knowledge surface is the subset of durable project knowledge that must remain cheaply discoverable, reconstructable or triggerable for current and plausibly near-term work, distinct from deep provenance that remains durable but may stay latent until explicitly traversed.**
+
+The working transition hypothesis is asymmetric:
+
+```text
+promotion to active    explicit and deliberate
+return to latent       default when governing/workstream relevance ends
+```
+
+Where feasible, active status should be derived from live workstream/procedure/dependency state rather than manually maintained as a second per-artifact truth.
+
+## 51. Evidence-phase method after foundational dialogue
+
+The owner accepted an evidence-first next phase while target architecture construction remains paused.
+
+The sequence is now:
+
+```text
+1. audit one high-density checkpoint day and one saturated routing domain
+2. construct a bounded historical failure corpus across distinct mechanism classes
+3. run blind fresh-session/model baselines under the current architecture
+4. conduct broad question-driven external research across several disciplines
+5. reconcile Phase-B requirements with evidentiary provenance and new evidence
+6. stabilize the active-surface and reasoning-control-plane boundary definitions
+7. only then begin serious architecture synthesis
+8. use mechanism probes/prototypes where causal uncertainty remains
+9. expose the owner's withheld paper/video deliberately against the broader evidence base
+```
+
+The external source remains withheld at this boundary.
+
+The evidence program should avoid solution-shaped experiments. A failure corpus should preserve what failed and the exact evidence, not encode the architecture expected to fix it.
+
+## 52. Initial empirical audit A: 2026-09-09 high-density checkpoint day
+
+The first requested granularity discriminator examines the 34 numbered checkpoints dated 2026-09-09, Checkpoints 394 through 427.
+
+Current repository measurement:
+
+```text
+checkpoint count      34
+checkpoint bytes      113,490
+mean bytes/checkpoint about 3,338
+number range          394-427
+```
+
+At the metadata level, the day divides approximately into:
+
+```text
+394-399   GitHub App permission / registration / installation / authorization     6
+400-409   read-only Runtime Bridge qualification plus one semantic-Git repair     10
+410-425   write-family implementation / host qualification / positive-live gates  16
+426-427   parity reconciliation and first beyond-parity administration design      2
+```
+
+Every sampled checkpoint has an explicit status and scope describing a changed project boundary rather than merely another commit.
+
+A deeper spot-check of Checkpoints 410-415 shows a repeating three-gate pattern for each mutation family:
+
+```text
+local implementation + activation + no-write qualification
+    -> fresh-host projection/schema/no-write qualification
+    -> separately owner-authorized positive-live qualification
+```
+
+For repository Git/content this is Checkpoints 410, 411 and 412. For issue mutations it is 413, 414 and 415.
+
+These are not interchangeable micro-adjustments. They correspond to materially different risk/authority states:
+
+```text
+code exists and is locally/live structurally qualified, but no external write allowed
+host-facing contract is independently qualified, but positive write still not authorized
+positive external mutation is separately authorized and read back
+```
+
+The existing checkpoint-granularity rule says a checkpoint is warranted for a substantial implementation/experiment milestone, material status change, reusable lesson, fragile continuity or changed project direction, and not merely because another commit/small adjustment occurred.
+
+### 52.1 Provisional finding
+
+This sampled high-density day does **not** support the strong claim that checkpoint count is primarily caused by obvious micro-iteration abuse.
+
+The 34-record count is high, but much of it reflects a deliberately serialized safety/qualification program with distinct verified authority gates. The metadata and the 410-415 content sample show real boundary changes that plausibly satisfy the existing checkpoint rule.
+
+Therefore:
+
+> **High checkpoint count alone is not evidence of excessive checkpoint granularity.**
+
+This weakens the hypothesis that simply creating fewer checkpoints is the main knowledge-scaling solution.
+
+It does not prove all 34 were optimally separated. A complete line-by-line retrospective could still find mergeable cases, but the first bounded audit finds no obvious systematic violation large enough to explain the current knowledge pressure.
+
+The more important pressure may be that valid historical checkpoints continue to occupy high-salience current/navigation surfaces long after the qualification stage closes.
+
+## 53. Initial empirical audit B: saturated `development-governance` routing surface
+
+The second discriminator examines the current human-visible direct path list under the Knowledge Map topic:
+
+```text
+development-governance
+```
+
+Using the current fenced direct-path block in that topic, after the Research 124 additions but before any redesign, the topic contains 298 unique direct file paths.
+
+Composition is:
+
+```text
+docs/checkpoints/                 123   41.3%
+docs/local_execution/validation  113   37.9%
+docs/research/                     45   15.1%
+core / other                        5    1.7%
+docs/model_collaboration            4    1.3%
+docs/specifications                 4    1.3%
+docs/local_execution                2    0.7%
+docs/foundations                     1    0.3%
+scripts                              1    0.3%
+```
+
+Combined checkpoints plus validation evidence:
+
+```text
+236 / 298 = 79.2%
+```
+
+This measurement is intentionally different from Phase A's validator-normalized route count. It asks what the human-visible direct routing surface currently exposes inside the saturated topic.
+
+### 53.1 Interpretation
+
+The saturation appears to be dominated by historical/evidence-level material rather than by hundreds of independent top-level conceptual authorities.
+
+That matters because those files may be **correctly classified** as development/governance evidence while still being poor default navigation material.
+
+So the problem is not necessarily:
+
+```text
+these artifacts are in the wrong semantic topic
+```
+
+It may instead be:
+
+```text
+a flat topic representation exposes deep evidence at the same navigation depth as
+current synthesis, governing procedures and conceptual orientation
+```
+
+This distinction supports the active/latent and progressive-disclosure framing from MC-0011.
+
+Historical validation/checkpoint evidence should remain durable and reachable. It need not remain part of the ordinary active navigation surface once a higher-level accepted synthesis or current procedure adequately represents it.
+
+### 53.2 Combined density finding
+
+Taken together, Audits A and B change the initial hypothesis:
+
+```text
+initial suspicion
+    rapid artifact creation may itself be the primary scaling defect
+
+current evidence
+    at least one 34-checkpoint day largely reflects meaningful serialized gates
+    while the saturated topic is overwhelmingly populated by checkpoint/validation evidence
+
+stronger current hypothesis
+    legitimate historical accumulation is not being folded out of the active/navigation
+    surface aggressively enough after its immediate work boundary closes
+```
+
+This is provisional and should be tested against additional failure-corpus evidence rather than promoted directly into target architecture.
+
+## 54. Next evidence boundary: historical failure corpus and blind baselines
+
+The next immediate Research 124 task is to construct a deliberately bounded failure corpus before testing any proposed dispatch, retrieval, consolidation or bootstrap mechanism.
+
+Initial mechanism classes from MC-0011 are:
+
+```text
+retrieval / discoverability miss
+stale convenience or generated view
+situation-dispatch / governing-procedure activation miss
+authority-resolution or supersession miss
+semantic scope/domain conflation
+continuation / resume ambiguity
+compression / synthesis loss or misleading abstraction
+public/private boundary failure
+```
+
+Construction rules:
+
+```text
+prefer 2-3 real historical exemplars per class where evidence exists
+use exact durable evidence rather than chat recollection
+record whether the issue was self-caught, validator-caught or owner-caught
+add at most 1-2 adjacent constructed variants only when useful for generalization
+DO NOT encode the preferred architectural remedy into the corpus entry
+absence of enough real exemplars remains evidence rather than being padded artificially
+```
+
+After the corpus is frozen, a small set of blind current-architecture baseline trials should establish which failure classes actually reproduce across fresh collaborators/models before mechanism probes begin.
+
+```text
+RESEARCH124=ACTIVE
+MC0011=RESOLVED
+TARGET_ARCHITECTURE=NOT_SELECTED
+TARGET_ARCHITECTURE_DESIGN=PAUSED
+HIGH_DENSITY_CHECKPOINT_AUDIT=COMPLETE_INITIAL
+SATURATED_ROUTING_DOMAIN_AUDIT=COMPLETE_INITIAL
+CHECKPOINT_COUNT_PRIMARY_GRANULARITY_FAILURE=NOT_SUPPORTED_BY_FIRST_SAMPLE
+ACTIVE_SURFACE_ACCUMULATION_HYPOTHESIS=STRENGTHENED
+WITHHELD_EXTERNAL_SOURCE=STILL_WITHHELD
+NEXT=BOUNDED_HISTORICAL_FAILURE_CORPUS
 ```
