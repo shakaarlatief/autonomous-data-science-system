@@ -1,0 +1,1473 @@
+{
+  "probe_id": "PKA-PROBE-V01",
+  "fixture_id": "PKA-CF-V01",
+  "fixture_sha256": "c8ed1873014b7a69016eb6fb259791d1c34b9cd14219547f1ebc0e755b836fe8",
+  "candidate_results": {
+    "H1": {
+      "hypothesis": "H1_DISTRIBUTED_DOCUMENT_CONTRACTS",
+      "all_semantic_checks_pass": true,
+      "checks": [
+        {
+          "label": "F1:S-A",
+          "pass": true,
+          "actual": {
+            "resolution": "canonical",
+            "targets": [
+              "S-A"
+            ],
+            "current_carriers": [
+              "A2"
+            ]
+          },
+          "expected": {
+            "resolution": "canonical",
+            "targets": [
+              "S-A"
+            ],
+            "current_carriers": [
+              "A2"
+            ]
+          }
+        },
+        {
+          "label": "F1:A1",
+          "pass": true,
+          "actual": {
+            "resolution": "historical_carrier",
+            "targets": [
+              "S-A"
+            ],
+            "current_carriers": [
+              "A2"
+            ]
+          },
+          "expected": {
+            "resolution": "historical_carrier",
+            "targets": [
+              "S-A"
+            ],
+            "current_carriers": [
+              "A2"
+            ]
+          }
+        },
+        {
+          "label": "F1:S-B",
+          "pass": true,
+          "actual": {
+            "resolution": "split",
+            "targets": [
+              "S-B1",
+              "S-B2"
+            ],
+            "current_carriers": []
+          },
+          "expected": {
+            "resolution": "split",
+            "targets": [
+              "S-B1",
+              "S-B2"
+            ],
+            "current_carriers": []
+          }
+        },
+        {
+          "label": "F1:B1",
+          "pass": true,
+          "actual": {
+            "resolution": "historical_carrier_of_split_subject",
+            "targets": [
+              "S-B1",
+              "S-B2"
+            ],
+            "current_carriers": []
+          },
+          "expected": {
+            "resolution": "historical_carrier_of_split_subject",
+            "targets": [
+              "S-B1",
+              "S-B2"
+            ],
+            "current_carriers": []
+          }
+        },
+        {
+          "label": "F1:S-B1",
+          "pass": true,
+          "actual": {
+            "resolution": "canonical",
+            "targets": [
+              "S-B1"
+            ],
+            "current_carriers": [
+              "B2a"
+            ]
+          },
+          "expected": {
+            "resolution": "canonical",
+            "targets": [
+              "S-B1"
+            ],
+            "current_carriers": [
+              "B2a"
+            ]
+          }
+        },
+        {
+          "label": "F1:S-B2",
+          "pass": true,
+          "actual": {
+            "resolution": "canonical",
+            "targets": [
+              "S-B2"
+            ],
+            "current_carriers": [
+              "B2b"
+            ]
+          },
+          "expected": {
+            "resolution": "canonical",
+            "targets": [
+              "S-B2"
+            ],
+            "current_carriers": [
+              "B2b"
+            ]
+          }
+        },
+        {
+          "label": "F1:history",
+          "pass": true,
+          "actual": [
+            "merge:S-B->S-A",
+            "reverse_merge:S-B->S-A",
+            "split:S-B->S-B1,S-B2"
+          ],
+          "expected": [
+            "merge:S-B->S-A",
+            "reverse_merge:S-B->S-A",
+            "split:S-B->S-B1,S-B2"
+          ]
+        },
+        {
+          "label": "F2:before-supplement-effective",
+          "pass": true,
+          "actual": {
+            "governing_sources": [
+              "P1"
+            ],
+            "non_authoritative_conflicts": [],
+            "status": "resolved"
+          },
+          "expected": {
+            "governing_sources": [
+              "P1"
+            ],
+            "non_authoritative_conflicts": [],
+            "status": "resolved"
+          }
+        },
+        {
+          "label": "F2:after-supplement-effective",
+          "pass": true,
+          "actual": {
+            "governing_sources": [
+              "P1",
+              "P2"
+            ],
+            "non_authoritative_conflicts": [
+              "C1"
+            ],
+            "status": "resolved"
+          },
+          "expected": {
+            "governing_sources": [
+              "P1",
+              "P2"
+            ],
+            "non_authoritative_conflicts": [
+              "C1"
+            ],
+            "status": "resolved"
+          }
+        },
+        {
+          "label": "F2:missing-precedence",
+          "pass": true,
+          "actual": {
+            "governing_sources": [],
+            "non_authoritative_conflicts": [
+              "C1"
+            ],
+            "status": "ambiguous"
+          },
+          "expected": {
+            "governing_sources": [],
+            "non_authoritative_conflicts": [
+              "C1"
+            ],
+            "status": "ambiguous"
+          }
+        },
+        {
+          "label": "F2:missing-authority-relation-fails-visible",
+          "pass": true,
+          "actual": [],
+          "expected": []
+        },
+        {
+          "label": "F2:missing-authority-relation-status",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "F3:reconstruction",
+          "pass": true,
+          "actual": {
+            "states": {
+              "W0": "active",
+              "W1": "completed",
+              "W2": "blocked",
+              "W2a": "paused"
+            },
+            "active_chain": [
+              "W0",
+              "W2",
+              "W2a"
+            ],
+            "blocking_condition": "D1=satisfied",
+            "immediate_resume_target": "W2a",
+            "return_chain_after_child_completion": [
+              "W2",
+              "W0"
+            ],
+            "must_not_replay": [
+              "W1"
+            ]
+          },
+          "expected": {
+            "states": {
+              "W0": "active",
+              "W1": "completed",
+              "W2": "blocked",
+              "W2a": "paused"
+            },
+            "active_chain": [
+              "W0",
+              "W2",
+              "W2a"
+            ],
+            "blocking_condition": "D1=satisfied",
+            "immediate_resume_target": "W2a",
+            "return_chain_after_child_completion": [
+              "W2",
+              "W0"
+            ],
+            "must_not_replay": [
+              "W1"
+            ]
+          }
+        },
+        {
+          "label": "F4:capture-not-authority-and-deleted",
+          "pass": true,
+          "actual": false,
+          "expected": false
+        },
+        {
+          "label": "F4:accepted-status",
+          "pass": true,
+          "actual": "accepted",
+          "expected": "accepted"
+        },
+        {
+          "label": "F4:accepted-provenance",
+          "pass": true,
+          "actual": [
+            "I1",
+            "E1",
+            "E2"
+          ],
+          "expected": [
+            "I1",
+            "E1",
+            "E2"
+          ]
+        },
+        {
+          "label": "F4:rejected-historical",
+          "pass": true,
+          "actual": "rejected",
+          "expected": "rejected"
+        },
+        {
+          "label": "F5:active-count-stable",
+          "pass": true,
+          "actual": 1,
+          "expected": 1
+        },
+        {
+          "label": "F5:active-view-bytes-stable",
+          "pass": true,
+          "actual": 1,
+          "expected": 1
+        },
+        {
+          "label": "F6:missing-derived-visible",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "F6:rebuild-payloads",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "F6:freshness-binding",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "F7:source-consumption",
+          "pass": true,
+          "actual": [
+            "G1",
+            "G2"
+          ],
+          "expected": [
+            "G1",
+            "G2"
+          ]
+        },
+        {
+          "label": "F7:ordered-contract",
+          "pass": true,
+          "actual": [
+            "C01",
+            "C02",
+            "C02A",
+            "C03",
+            "C04",
+            "C05"
+          ],
+          "expected": [
+            "C01",
+            "C02",
+            "C02A",
+            "C03",
+            "C04",
+            "C05"
+          ]
+        },
+        {
+          "label": "F7:missing-constraint-fails",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "F7:contradiction-fails",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "overlay:private-non-leakage",
+          "pass": true,
+          "actual": false,
+          "expected": false
+        },
+        {
+          "label": "semantic-inventory:complete",
+          "pass": true,
+          "actual": [
+            "F1:S-A:carrier-continuity",
+            "F1:S-B:merge-history",
+            "F1:S-B:reverse-merge-history",
+            "F1:S-B:split-current",
+            "F2:C1:conflict:P1",
+            "F2:P1-P2:precedence",
+            "F2:P1:supersedes:P0",
+            "F2:P2:supplements:P1",
+            "F2:TASK-X:governing-set",
+            "F3:W0:depends:W1",
+            "F3:W0:depends:W2",
+            "F3:W0:state",
+            "F3:W1:parent:W0",
+            "F3:W1:resume:W0",
+            "F3:W1:state",
+            "F3:W2:depends:W2a",
+            "F3:W2:parent:W0",
+            "F3:W2:resume:W0",
+            "F3:W2:state",
+            "F3:W2a:depends:D1",
+            "F3:W2a:parent:W2",
+            "F3:W2a:pause-reason",
+            "F3:W2a:resume-condition",
+            "F3:W2a:resume:W2a",
+            "F3:W2a:state",
+            "F4:K1:derived-from:E1",
+            "F4:K1:derived-from:E2",
+            "F4:K1:derived-from:I1",
+            "F4:R1:derived-from:I1",
+            "F7:G1-G2:precedence",
+            "F7:G2:supplements:G1",
+            "F7:TASK-SAFE-WRITE:governing-set"
+          ],
+          "expected": [
+            "F1:S-A:carrier-continuity",
+            "F1:S-B:merge-history",
+            "F1:S-B:reverse-merge-history",
+            "F1:S-B:split-current",
+            "F2:C1:conflict:P1",
+            "F2:P1-P2:precedence",
+            "F2:P1:supersedes:P0",
+            "F2:P2:supplements:P1",
+            "F2:TASK-X:governing-set",
+            "F3:W0:depends:W1",
+            "F3:W0:depends:W2",
+            "F3:W0:state",
+            "F3:W1:parent:W0",
+            "F3:W1:resume:W0",
+            "F3:W1:state",
+            "F3:W2:depends:W2a",
+            "F3:W2:parent:W0",
+            "F3:W2:resume:W0",
+            "F3:W2:state",
+            "F3:W2a:depends:D1",
+            "F3:W2a:parent:W2",
+            "F3:W2a:pause-reason",
+            "F3:W2a:resume-condition",
+            "F3:W2a:resume:W2a",
+            "F3:W2a:state",
+            "F4:K1:derived-from:E1",
+            "F4:K1:derived-from:E2",
+            "F4:K1:derived-from:I1",
+            "F4:R1:derived-from:I1",
+            "F7:G1-G2:precedence",
+            "F7:G2:supplements:G1",
+            "F7:TASK-SAFE-WRITE:governing-set"
+          ]
+        },
+        {
+          "label": "semantic-inventory:no-duplicate-authority",
+          "pass": true,
+          "actual": {},
+          "expected": {}
+        }
+      ],
+      "scale": {
+        "1x": {
+          "history_count": 20,
+          "active_count": 5,
+          "active_view_bytes": 138,
+          "authoritative_locations": 41,
+          "spine_records": 0,
+          "manual_global_entries": 0,
+          "full_rebuild_source_scan_count": 41
+        },
+        "5x": {
+          "history_count": 100,
+          "active_count": 5,
+          "active_view_bytes": 138,
+          "authoritative_locations": 121,
+          "spine_records": 0,
+          "manual_global_entries": 0,
+          "full_rebuild_source_scan_count": 121
+        },
+        "10x": {
+          "history_count": 200,
+          "active_count": 5,
+          "active_view_bytes": 138,
+          "authoritative_locations": 221,
+          "spine_records": 0,
+          "manual_global_entries": 0,
+          "full_rebuild_source_scan_count": 221
+        }
+      },
+      "representation": {
+        "source_documents": 16,
+        "capture_records": 0,
+        "spine_records": 0,
+        "authoritative_serialized_bytes": 3223,
+        "semantic_fact_count": 32,
+        "semantic_fact_ownership_count": {
+          "source_local": 30,
+          "spine": 0,
+          "derived_only": 2
+        },
+        "duplicate_authoritative_fact_owners": {},
+        "semantic_ownership": {
+          "F1:S-A:carrier-continuity": [
+            "doc:S-A"
+          ],
+          "F1:S-B:merge-history": [
+            "doc:S-B"
+          ],
+          "F1:S-B:reverse-merge-history": [
+            "doc:S-B"
+          ],
+          "F1:S-B:split-current": [
+            "doc:S-B"
+          ],
+          "F2:P1:supersedes:P0": [
+            "doc:P1"
+          ],
+          "F2:P2:supplements:P1": [
+            "doc:P2"
+          ],
+          "F2:P1-P2:precedence": [
+            "doc:P2"
+          ],
+          "F2:C1:conflict:P1": [
+            "doc:C1"
+          ],
+          "F2:TASK-X:governing-set": [
+            "derived:authority_closure"
+          ],
+          "F3:W0:state": [
+            "doc:W0"
+          ],
+          "F3:W0:depends:W1": [
+            "doc:W0"
+          ],
+          "F3:W0:depends:W2": [
+            "doc:W0"
+          ],
+          "F3:W1:state": [
+            "doc:W1"
+          ],
+          "F3:W1:parent:W0": [
+            "doc:W1"
+          ],
+          "F3:W1:resume:W0": [
+            "doc:W1"
+          ],
+          "F3:W2:state": [
+            "doc:W2"
+          ],
+          "F3:W2:parent:W0": [
+            "doc:W2"
+          ],
+          "F3:W2:depends:W2a": [
+            "doc:W2"
+          ],
+          "F3:W2:resume:W0": [
+            "doc:W2"
+          ],
+          "F3:W2a:state": [
+            "doc:W2a"
+          ],
+          "F3:W2a:parent:W2": [
+            "doc:W2a"
+          ],
+          "F3:W2a:depends:D1": [
+            "doc:W2a"
+          ],
+          "F3:W2a:resume:W2a": [
+            "doc:W2a"
+          ],
+          "F3:W2a:resume-condition": [
+            "doc:W2a"
+          ],
+          "F3:W2a:pause-reason": [
+            "doc:W2a"
+          ],
+          "F4:K1:derived-from:I1": [
+            "doc:K1"
+          ],
+          "F4:K1:derived-from:E1": [
+            "doc:K1"
+          ],
+          "F4:K1:derived-from:E2": [
+            "doc:K1"
+          ],
+          "F4:R1:derived-from:I1": [
+            "doc:R1"
+          ],
+          "F7:G2:supplements:G1": [
+            "doc:G2"
+          ],
+          "F7:G1-G2:precedence": [
+            "doc:G2"
+          ],
+          "F7:TASK-SAFE-WRITE:governing-set": [
+            "derived:contract_binding"
+          ]
+        },
+        "reclassification_events": 0,
+        "authored_location_touch_total": 12
+      },
+      "instrumentation": {
+        "authoritative_touches": [
+          {
+            "event": "F1-T1",
+            "locations": [
+              "doc:S-A"
+            ]
+          },
+          {
+            "event": "F1-T2",
+            "locations": [
+              "doc:S-B"
+            ]
+          },
+          {
+            "event": "F1-T3",
+            "locations": [
+              "doc:S-B"
+            ]
+          },
+          {
+            "event": "F1-T4",
+            "locations": [
+              "doc:S-B",
+              "doc:S-B1",
+              "doc:S-B2"
+            ]
+          },
+          {
+            "event": "F4-capture",
+            "locations": [
+              "capture:I1"
+            ]
+          },
+          {
+            "event": "F4-consolidate",
+            "locations": [
+              "capture:I1"
+            ]
+          },
+          {
+            "event": "F4-promote",
+            "locations": [
+              "doc:K1",
+              "doc:R1"
+            ]
+          },
+          {
+            "event": "F4-retire-capture",
+            "locations": [
+              "capture:I1"
+            ]
+          },
+          {
+            "event": "F7-contradiction-challenge",
+            "locations": [
+              "doc:G3"
+            ]
+          }
+        ],
+        "generated_touches": [
+          {
+            "event": "rebuild-derived",
+            "locations": [
+              "derived:active_route",
+              "derived:authority_closure",
+              "derived:identity_resolution",
+              "derived:search_projection"
+            ]
+          },
+          {
+            "event": "rebuild-derived",
+            "locations": [
+              "derived:active_route",
+              "derived:authority_closure",
+              "derived:identity_resolution",
+              "derived:search_projection"
+            ]
+          }
+        ],
+        "reclassifications": []
+      },
+      "qualitative_declarations": {
+        "human_inspectability": "direct source documents",
+        "ownership_clarity": "directional cross-object facts live on asserting source documents",
+        "degraded_mode": "derived views fail visibly when absent and can be rebuilt from authoritative inputs"
+      }
+    },
+    "H2": {
+      "hypothesis": "H2_PARTITIONED_BOUNDED_SPINE",
+      "all_semantic_checks_pass": true,
+      "checks": [
+        {
+          "label": "F1:S-A",
+          "pass": true,
+          "actual": {
+            "resolution": "canonical",
+            "targets": [
+              "S-A"
+            ],
+            "current_carriers": [
+              "A2"
+            ]
+          },
+          "expected": {
+            "resolution": "canonical",
+            "targets": [
+              "S-A"
+            ],
+            "current_carriers": [
+              "A2"
+            ]
+          }
+        },
+        {
+          "label": "F1:A1",
+          "pass": true,
+          "actual": {
+            "resolution": "historical_carrier",
+            "targets": [
+              "S-A"
+            ],
+            "current_carriers": [
+              "A2"
+            ]
+          },
+          "expected": {
+            "resolution": "historical_carrier",
+            "targets": [
+              "S-A"
+            ],
+            "current_carriers": [
+              "A2"
+            ]
+          }
+        },
+        {
+          "label": "F1:S-B",
+          "pass": true,
+          "actual": {
+            "resolution": "split",
+            "targets": [
+              "S-B1",
+              "S-B2"
+            ],
+            "current_carriers": []
+          },
+          "expected": {
+            "resolution": "split",
+            "targets": [
+              "S-B1",
+              "S-B2"
+            ],
+            "current_carriers": []
+          }
+        },
+        {
+          "label": "F1:B1",
+          "pass": true,
+          "actual": {
+            "resolution": "historical_carrier_of_split_subject",
+            "targets": [
+              "S-B1",
+              "S-B2"
+            ],
+            "current_carriers": []
+          },
+          "expected": {
+            "resolution": "historical_carrier_of_split_subject",
+            "targets": [
+              "S-B1",
+              "S-B2"
+            ],
+            "current_carriers": []
+          }
+        },
+        {
+          "label": "F1:S-B1",
+          "pass": true,
+          "actual": {
+            "resolution": "canonical",
+            "targets": [
+              "S-B1"
+            ],
+            "current_carriers": [
+              "B2a"
+            ]
+          },
+          "expected": {
+            "resolution": "canonical",
+            "targets": [
+              "S-B1"
+            ],
+            "current_carriers": [
+              "B2a"
+            ]
+          }
+        },
+        {
+          "label": "F1:S-B2",
+          "pass": true,
+          "actual": {
+            "resolution": "canonical",
+            "targets": [
+              "S-B2"
+            ],
+            "current_carriers": [
+              "B2b"
+            ]
+          },
+          "expected": {
+            "resolution": "canonical",
+            "targets": [
+              "S-B2"
+            ],
+            "current_carriers": [
+              "B2b"
+            ]
+          }
+        },
+        {
+          "label": "F1:history",
+          "pass": true,
+          "actual": [
+            "merge:S-B->S-A",
+            "reverse_merge:S-B->S-A",
+            "split:S-B->S-B1,S-B2"
+          ],
+          "expected": [
+            "merge:S-B->S-A",
+            "reverse_merge:S-B->S-A",
+            "split:S-B->S-B1,S-B2"
+          ]
+        },
+        {
+          "label": "F2:before-supplement-effective",
+          "pass": true,
+          "actual": {
+            "governing_sources": [
+              "P1"
+            ],
+            "non_authoritative_conflicts": [],
+            "status": "resolved"
+          },
+          "expected": {
+            "governing_sources": [
+              "P1"
+            ],
+            "non_authoritative_conflicts": [],
+            "status": "resolved"
+          }
+        },
+        {
+          "label": "F2:after-supplement-effective",
+          "pass": true,
+          "actual": {
+            "governing_sources": [
+              "P1",
+              "P2"
+            ],
+            "non_authoritative_conflicts": [
+              "C1"
+            ],
+            "status": "resolved"
+          },
+          "expected": {
+            "governing_sources": [
+              "P1",
+              "P2"
+            ],
+            "non_authoritative_conflicts": [
+              "C1"
+            ],
+            "status": "resolved"
+          }
+        },
+        {
+          "label": "F2:missing-precedence",
+          "pass": true,
+          "actual": {
+            "governing_sources": [],
+            "non_authoritative_conflicts": [
+              "C1"
+            ],
+            "status": "ambiguous"
+          },
+          "expected": {
+            "governing_sources": [],
+            "non_authoritative_conflicts": [
+              "C1"
+            ],
+            "status": "ambiguous"
+          }
+        },
+        {
+          "label": "F2:missing-authority-relation-fails-visible",
+          "pass": true,
+          "actual": [],
+          "expected": []
+        },
+        {
+          "label": "F2:missing-authority-relation-status",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "F3:reconstruction",
+          "pass": true,
+          "actual": {
+            "states": {
+              "W0": "active",
+              "W1": "completed",
+              "W2": "blocked",
+              "W2a": "paused"
+            },
+            "active_chain": [
+              "W0",
+              "W2",
+              "W2a"
+            ],
+            "blocking_condition": "D1=satisfied",
+            "immediate_resume_target": "W2a",
+            "return_chain_after_child_completion": [
+              "W2",
+              "W0"
+            ],
+            "must_not_replay": [
+              "W1"
+            ]
+          },
+          "expected": {
+            "states": {
+              "W0": "active",
+              "W1": "completed",
+              "W2": "blocked",
+              "W2a": "paused"
+            },
+            "active_chain": [
+              "W0",
+              "W2",
+              "W2a"
+            ],
+            "blocking_condition": "D1=satisfied",
+            "immediate_resume_target": "W2a",
+            "return_chain_after_child_completion": [
+              "W2",
+              "W0"
+            ],
+            "must_not_replay": [
+              "W1"
+            ]
+          }
+        },
+        {
+          "label": "F4:capture-not-authority-and-deleted",
+          "pass": true,
+          "actual": false,
+          "expected": false
+        },
+        {
+          "label": "F4:accepted-status",
+          "pass": true,
+          "actual": "accepted",
+          "expected": "accepted"
+        },
+        {
+          "label": "F4:accepted-provenance",
+          "pass": true,
+          "actual": [
+            "I1",
+            "E1",
+            "E2"
+          ],
+          "expected": [
+            "I1",
+            "E1",
+            "E2"
+          ]
+        },
+        {
+          "label": "F4:rejected-historical",
+          "pass": true,
+          "actual": "rejected",
+          "expected": "rejected"
+        },
+        {
+          "label": "F5:active-count-stable",
+          "pass": true,
+          "actual": 1,
+          "expected": 1
+        },
+        {
+          "label": "F5:active-view-bytes-stable",
+          "pass": true,
+          "actual": 1,
+          "expected": 1
+        },
+        {
+          "label": "F6:missing-derived-visible",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "F6:rebuild-payloads",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "F6:freshness-binding",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "F7:source-consumption",
+          "pass": true,
+          "actual": [
+            "G1",
+            "G2"
+          ],
+          "expected": [
+            "G1",
+            "G2"
+          ]
+        },
+        {
+          "label": "F7:ordered-contract",
+          "pass": true,
+          "actual": [
+            "C01",
+            "C02",
+            "C02A",
+            "C03",
+            "C04",
+            "C05"
+          ],
+          "expected": [
+            "C01",
+            "C02",
+            "C02A",
+            "C03",
+            "C04",
+            "C05"
+          ]
+        },
+        {
+          "label": "F7:missing-constraint-fails",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "F7:contradiction-fails",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "overlay:private-non-leakage",
+          "pass": true,
+          "actual": false,
+          "expected": false
+        },
+        {
+          "label": "semantic-inventory:complete",
+          "pass": true,
+          "actual": [
+            "F1:S-A:carrier-continuity",
+            "F1:S-B:merge-history",
+            "F1:S-B:reverse-merge-history",
+            "F1:S-B:split-current",
+            "F2:C1:conflict:P1",
+            "F2:P1-P2:precedence",
+            "F2:P1:supersedes:P0",
+            "F2:P2:supplements:P1",
+            "F2:TASK-X:governing-set",
+            "F3:W0:depends:W1",
+            "F3:W0:depends:W2",
+            "F3:W0:state",
+            "F3:W1:parent:W0",
+            "F3:W1:resume:W0",
+            "F3:W1:state",
+            "F3:W2:depends:W2a",
+            "F3:W2:parent:W0",
+            "F3:W2:resume:W0",
+            "F3:W2:state",
+            "F3:W2a:depends:D1",
+            "F3:W2a:parent:W2",
+            "F3:W2a:pause-reason",
+            "F3:W2a:resume-condition",
+            "F3:W2a:resume:W2a",
+            "F3:W2a:state",
+            "F4:K1:derived-from:E1",
+            "F4:K1:derived-from:E2",
+            "F4:K1:derived-from:I1",
+            "F4:R1:derived-from:I1",
+            "F7:G1-G2:precedence",
+            "F7:G2:supplements:G1",
+            "F7:TASK-SAFE-WRITE:governing-set"
+          ],
+          "expected": [
+            "F1:S-A:carrier-continuity",
+            "F1:S-B:merge-history",
+            "F1:S-B:reverse-merge-history",
+            "F1:S-B:split-current",
+            "F2:C1:conflict:P1",
+            "F2:P1-P2:precedence",
+            "F2:P1:supersedes:P0",
+            "F2:P2:supplements:P1",
+            "F2:TASK-X:governing-set",
+            "F3:W0:depends:W1",
+            "F3:W0:depends:W2",
+            "F3:W0:state",
+            "F3:W1:parent:W0",
+            "F3:W1:resume:W0",
+            "F3:W1:state",
+            "F3:W2:depends:W2a",
+            "F3:W2:parent:W0",
+            "F3:W2:resume:W0",
+            "F3:W2:state",
+            "F3:W2a:depends:D1",
+            "F3:W2a:parent:W2",
+            "F3:W2a:pause-reason",
+            "F3:W2a:resume-condition",
+            "F3:W2a:resume:W2a",
+            "F3:W2a:state",
+            "F4:K1:derived-from:E1",
+            "F4:K1:derived-from:E2",
+            "F4:K1:derived-from:I1",
+            "F4:R1:derived-from:I1",
+            "F7:G1-G2:precedence",
+            "F7:G2:supplements:G1",
+            "F7:TASK-SAFE-WRITE:governing-set"
+          ]
+        },
+        {
+          "label": "semantic-inventory:no-duplicate-authority",
+          "pass": true,
+          "actual": {},
+          "expected": {}
+        }
+      ],
+      "scale": {
+        "1x": {
+          "history_count": 20,
+          "active_count": 5,
+          "active_view_bytes": 138,
+          "authoritative_locations": 48,
+          "spine_records": 7,
+          "manual_global_entries": 7,
+          "full_rebuild_source_scan_count": 48
+        },
+        "5x": {
+          "history_count": 100,
+          "active_count": 5,
+          "active_view_bytes": 138,
+          "authoritative_locations": 128,
+          "spine_records": 7,
+          "manual_global_entries": 7,
+          "full_rebuild_source_scan_count": 128
+        },
+        "10x": {
+          "history_count": 200,
+          "active_count": 5,
+          "active_view_bytes": 138,
+          "authoritative_locations": 228,
+          "spine_records": 7,
+          "manual_global_entries": 7,
+          "full_rebuild_source_scan_count": 228
+        }
+      },
+      "representation": {
+        "source_documents": 16,
+        "capture_records": 0,
+        "spine_records": 7,
+        "authoritative_serialized_bytes": 3631,
+        "semantic_fact_count": 32,
+        "semantic_fact_ownership_count": {
+          "source_local": 5,
+          "spine": 27,
+          "derived_only": 0
+        },
+        "duplicate_authoritative_fact_owners": {},
+        "semantic_ownership": {
+          "F1:S-A:carrier-continuity": [
+            "doc:S-A"
+          ],
+          "F1:S-B:merge-history": [
+            "spine:identity:S-B"
+          ],
+          "F1:S-B:reverse-merge-history": [
+            "spine:identity:S-B"
+          ],
+          "F1:S-B:split-current": [
+            "spine:identity:S-B"
+          ],
+          "F2:P1:supersedes:P0": [
+            "spine:authority:TASK-X"
+          ],
+          "F2:P2:supplements:P1": [
+            "spine:authority:TASK-X"
+          ],
+          "F2:P1-P2:precedence": [
+            "spine:authority:TASK-X"
+          ],
+          "F2:C1:conflict:P1": [
+            "spine:authority:TASK-X"
+          ],
+          "F2:TASK-X:governing-set": [
+            "spine:authority:TASK-X"
+          ],
+          "F3:W0:state": [
+            "spine:workstream:W0"
+          ],
+          "F3:W0:depends:W1": [
+            "spine:workstream:W0"
+          ],
+          "F3:W0:depends:W2": [
+            "spine:workstream:W0"
+          ],
+          "F3:W1:state": [
+            "spine:workstream:W1"
+          ],
+          "F3:W1:parent:W0": [
+            "spine:workstream:W1"
+          ],
+          "F3:W1:resume:W0": [
+            "spine:workstream:W1"
+          ],
+          "F3:W2:state": [
+            "spine:workstream:W2"
+          ],
+          "F3:W2:parent:W0": [
+            "spine:workstream:W2"
+          ],
+          "F3:W2:depends:W2a": [
+            "spine:workstream:W2"
+          ],
+          "F3:W2:resume:W0": [
+            "spine:workstream:W2"
+          ],
+          "F3:W2a:state": [
+            "spine:workstream:W2a"
+          ],
+          "F3:W2a:parent:W2": [
+            "spine:workstream:W2a"
+          ],
+          "F3:W2a:depends:D1": [
+            "spine:workstream:W2a"
+          ],
+          "F3:W2a:resume:W2a": [
+            "spine:workstream:W2a"
+          ],
+          "F3:W2a:resume-condition": [
+            "spine:workstream:W2a"
+          ],
+          "F3:W2a:pause-reason": [
+            "spine:workstream:W2a"
+          ],
+          "F4:K1:derived-from:I1": [
+            "doc:K1"
+          ],
+          "F4:K1:derived-from:E1": [
+            "doc:K1"
+          ],
+          "F4:K1:derived-from:E2": [
+            "doc:K1"
+          ],
+          "F4:R1:derived-from:I1": [
+            "doc:R1"
+          ],
+          "F7:G2:supplements:G1": [
+            "spine:authority:TASK-SAFE-WRITE"
+          ],
+          "F7:G1-G2:precedence": [
+            "spine:authority:TASK-SAFE-WRITE"
+          ],
+          "F7:TASK-SAFE-WRITE:governing-set": [
+            "spine:authority:TASK-SAFE-WRITE"
+          ]
+        },
+        "reclassification_events": 1,
+        "authored_location_touch_total": 18
+      },
+      "instrumentation": {
+        "authoritative_touches": [
+          {
+            "event": "F2-authority-promotion",
+            "locations": [
+              "doc:P1",
+              "spine:authority:TASK-X"
+            ]
+          },
+          {
+            "event": "F1-T1",
+            "locations": [
+              "doc:S-A"
+            ]
+          },
+          {
+            "event": "F1-T2",
+            "locations": [
+              "doc:S-B",
+              "spine:identity:S-B"
+            ]
+          },
+          {
+            "event": "F1-T3",
+            "locations": [
+              "doc:S-B",
+              "spine:identity:S-B"
+            ]
+          },
+          {
+            "event": "F1-T4",
+            "locations": [
+              "doc:S-B",
+              "doc:S-B1",
+              "doc:S-B2",
+              "spine:identity:S-B"
+            ]
+          },
+          {
+            "event": "F4-capture",
+            "locations": [
+              "capture:I1"
+            ]
+          },
+          {
+            "event": "F4-consolidate",
+            "locations": [
+              "capture:I1"
+            ]
+          },
+          {
+            "event": "F4-promote",
+            "locations": [
+              "doc:K1",
+              "doc:R1"
+            ]
+          },
+          {
+            "event": "F4-retire-capture",
+            "locations": [
+              "capture:I1"
+            ]
+          },
+          {
+            "event": "F7-contradiction-challenge",
+            "locations": [
+              "doc:G3",
+              "spine:authority:TASK-SAFE-WRITE"
+            ]
+          }
+        ],
+        "generated_touches": [
+          {
+            "event": "rebuild-derived",
+            "locations": [
+              "derived:active_route",
+              "derived:authority_closure",
+              "derived:identity_resolution",
+              "derived:search_projection"
+            ]
+          },
+          {
+            "event": "rebuild-derived",
+            "locations": [
+              "derived:active_route",
+              "derived:authority_closure",
+              "derived:identity_resolution",
+              "derived:search_projection"
+            ]
+          }
+        ],
+        "reclassifications": [
+          {
+            "event": "F2-authority-promotion",
+            "from": "doc:P1:sole_governs",
+            "to": "spine:authority:TASK-X"
+          }
+        ]
+      },
+      "qualitative_declarations": {
+        "human_inspectability": "direct source documents plus small typed spine modules",
+        "ownership_clarity": "source-local facts live on documents; identity/authority/workstream cross-object facts live in named spine modules",
+        "degraded_mode": "derived views fail visibly when absent and can be rebuilt from authoritative inputs"
+      }
+    }
+  },
+  "comparison": {
+    "semantic_correctness": {
+      "H1": true,
+      "H2": true
+    },
+    "active_view_bytes_1x_5x_10x": {
+      "H1": [
+        138,
+        138,
+        138
+      ],
+      "H2": [
+        138,
+        138,
+        138
+      ]
+    },
+    "spine_records_1x_5x_10x": {
+      "H1": [
+        0,
+        0,
+        0
+      ],
+      "H2": [
+        7,
+        7,
+        7
+      ]
+    },
+    "full_rebuild_scan_1x_5x_10x": {
+      "H1": [
+        41,
+        121,
+        221
+      ],
+      "H2": [
+        48,
+        128,
+        228
+      ]
+    },
+    "authoritative_location_count_10x": {
+      "H1": 221,
+      "H2": 228
+    },
+    "semantic_fact_ownership_count": {
+      "H1": {
+        "source_local": 30,
+        "spine": 0,
+        "derived_only": 2
+      },
+      "H2": {
+        "source_local": 5,
+        "spine": 27,
+        "derived_only": 0
+      }
+    },
+    "duplicate_authoritative_fact_owners": {
+      "H1": {},
+      "H2": {}
+    },
+    "authored_location_touch_total": {
+      "H1": 12,
+      "H2": 18
+    },
+    "reclassification_events": {
+      "H1": 0,
+      "H2": 1
+    },
+    "authoritative_serialized_bytes": {
+      "H1": 3223,
+      "H2": 3631
+    },
+    "interpretation_guard": "Metrics are descriptive evidence. No aggregate winner score or target selection is authorized by this probe."
+  }
+}

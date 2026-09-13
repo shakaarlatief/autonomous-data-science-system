@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / MC-0013 RESOLVED / COMMON-FIXTURE MECHANISM PROBES NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / COMMON FIXTURE V0.1 H1-H2 PROBE COMPLETE / RELATION-LIFECYCLE DISCRIMINATOR NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -3700,4 +3700,43 @@ COMMON_FIXTURE_V01=MACHINE_FROZEN
 H1_IMPLEMENTATION=NEXT
 H2_IMPLEMENTATION=NEXT
 TARGET_ARCHITECTURE=NOT_SELECTED
+```
+
+## 79. Common Fixture V0.1 probe challenges the assumed necessity of a separate spine
+
+Research 136 records the first executable H1/H2 comparison against the exact fixture frozen before implementation in Research 135. Both candidates pass every V0.1 semantic/failure challenge. H2's seven top-level spine records remain exactly seven while historical/evidence items grow from 20 to 100 to 200, so passive history does not make the physical spine grow in this fixture. Both candidates keep the same active semantic view at 138 serialized bytes across 1x/5x/10x history.
+
+The more important result is that H1 is materially stronger than the pre-probe prose argument assumed. H1 represents directional relations once on an asserting/source artifact, lets first-class workstream sources own their own control state, and derives joint governing/contract closure deterministically. It therefore covers the same normalized 32 semantic propositions without duplicate authoritative owners and without a separate cross-object store.
+
+```text
+normalized semantic ownership
+
+H1
+    30 source-local authoritative propositions
+     0 spine-owned propositions
+     2 derived-only closure propositions
+
+H2
+     5 source-local authoritative propositions
+    27 spine-owned propositions
+     0 derived-only closure propositions
+```
+
+This exposes a second boundedness dimension. H2 is physically small in V0.1, but its seven records own 27/32 of the normalized control/relationship propositions. Future qualification must therefore measure semantic responsibility share as well as file/row/record count. A physically small substrate that gradually owns most project semantics can still become a central registry in architectural terms.
+
+H2 also incurs one explicit local-to-spine authority reclassification and 18 instrumented authored-location touches versus H1's 12 in the same synthetic transition/challenge sequence. These counts are directional evidence only, not universal maintenance ratios.
+
+The valid first-probe conclusion is not H1 selection. V0.1's cross-object cases each still admit a plausible directional/subject-local owner: S-B owns its identity-transition history, P2 owns the supplement relation, workstream artifacts own their state, and joint closure can remain derived. The fixture therefore does not yet strongly test a relationship whose own lifecycle/status/provenance cannot be assigned to an endpoint without arbitrary ownership.
+
+H3 does not need implementation yet because H1/H2 both satisfy V0.1 without converging on object-primary complexity. The next discriminator should be a separately frozen V0.2 relation-lifecycle fixture in which a relation has its own stable identity, independent proposed/disputed/accepted/superseded state, relation-specific evidence/temporal applicability, genuinely n-ary or symmetric semantics and stale-concurrency pressure while endpoints remain stable. H1 may not solve that by creating a dedicated authoritative relation artifact under another name; doing so would cross the H2 boundary. H2 should simultaneously be narrowed to a minimal admission-rule spine so the test measures whether semantic boundedness survives.
+
+```text
+COMMON_FIXTURE_V01=COMPLETE
+H1=PASS
+H2=PASS
+H2_PHYSICAL_HISTORY_BOUNDEDNESS=SUPPORTED_IN_V01
+H2_SEMANTIC_BOUNDEDNESS=NOT_ESTABLISHED
+SEPARATE_SPINE_NECESSITY=NOT_ESTABLISHED
+TARGET_ARCHITECTURE=NOT_SELECTED
+NEXT=RELATION_LIFECYCLE_DISCRIMINATOR_FIXTURE_V02
 ```
