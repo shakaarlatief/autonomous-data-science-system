@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / CHATGPT OWNER-SOURCE EVALUATION COMPLETE / MC-0012 CLAUDE PHASE 2 OWNER-SOURCE EVALUATION ACTIVE / TARGET ARCHITECTURE NOT SELECTED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / CROSS-MODEL OWNER-SOURCE RECONCILIATION COMPLETE / CANDIDATE ARCHITECTURE SYNTHESIS NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -3545,4 +3545,26 @@ MC0012_PHASE2=OWNER_SOURCE_INDEPENDENT_INCREMENTAL_EVALUATION_ACTIVE
 REQUIREMENTS_V02_AMENDMENT=NO
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=CLAUDE_MC0012_MESSAGE_003
+```
+
+## 74. Cross-model owner-source reconciliation complete; synthesis resumes
+
+MC-0012 completed the intended staged comparison. Claude first updated its MC-0011 position against the full pre-source Research 124 evidence field, then independently inspected ICM while ChatGPT's Research 131 interpretation remained withheld. Research 132 reconciles the two post-source assessments.
+
+The models strongly converge: ICM independently reinforces bounded routing, task-shaped context, source/derived separation, cold-agent qualification, dependency-local maintenance and move/reference integrity; its current repository is materially richer than the original paper; its empirical evidence is preliminary; and its sequential human-reviewed workflow class is narrower than the ADS project-development knowledge problem. Neither model recommends reopening V0.2 or selecting ICM as the target.
+
+Claude adds useful candidate-level calibration: ICM's L0/L1 routing layers total roughly 500-1,300 tokens as one external benchmark; verified System-map cards require freshness/revision/citation evidence while `stale` remains explicit; repeated independent observations are a better basis for structural pattern claims than one memorable incident; ICM's human gates often sidestep rather than test ADS situation-dispatch/task-fidelity failures; factory/product is a different axis from source/derived authority; and file-move continuity does not solve semantic identity merge/split governance.
+
+Research 131's complementary mechanisms remain live, including negative context contracts, routing-payload pressure, repeating-unit-first representation choice, repeated-correction source-improvement proposals, semantic-debugging/source-map provenance and forward/reverse impact walks.
+
+No further MC-0012 round is required. The remaining issues are named candidate-design/qualification risks rather than missing evidence-program gates: identity merge/split governance, ChatGPT-only historical baselines, KA-R07 authority-discovery circularity, evidence-class visibility at consumption, dispatch reliability metrics and consequence-aware `C_failure` calibration.
+
+Research 124 can now resume serious candidate architecture synthesis. Multiple materially different architecture families or mechanism combinations should be constructed to expose assumptions and trade-offs, not to create a shallow score-and-pick tournament. The frozen 50 KA-R / 17 KA-I boundary remains the common acceptance contract.
+
+```text
+MC0012=RESOLVED
+RESEARCH132=CROSS_MODEL_ICM_RECONCILIATION_COMPLETE
+REQUIREMENTS_V02=UNCHANGED_FROZEN
+TARGET_ARCHITECTURE=NOT_SELECTED
+NEXT=CANDIDATE_ARCHITECTURE_SYNTHESIS
 ```

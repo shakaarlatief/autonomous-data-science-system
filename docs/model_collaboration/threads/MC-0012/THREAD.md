@@ -1,7 +1,7 @@
 # MC-0012 Thread: Post-Evidence Reassessment and Staged Owner-Source Exposure
 
 **Thread:** MC-0012
-**Status:** OPEN / PHASE 2 CLAUDE INDEPENDENT OWNER-SOURCE INCREMENTAL EVALUATION
+**Status:** RESOLVED / STAGED SOURCE COMPARISON COMPLETE / ARCHITECTURE SYNTHESIS NEXT
 **Review mode:** REVIEWED
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
 **Opening repository head:** `ff51aa23b7e6d8a32692ad57394ab0aea631b7b6`
@@ -19,7 +19,7 @@ MC-0011 remains resolved. This thread does not revise its history; it builds a l
 ## Current phase
 
 ```text
-PHASE2_OWNER_SOURCE_INDEPENDENT_INCREMENTAL_EVALUATION
+RESOLVED_CROSS_MODEL_OWNER_SOURCE_RECONCILIATION_COMPLETE
 ```
 
 The detailed Phase-1 contract and contamination boundary are in `BRIEF.md`.
@@ -64,3 +64,12 @@ Phase 1 is complete and accepted as valid in Message 002. Phase 2 now exposes th
 ## Older obligations
 
 MC-0010 remains deferred by owner routing. MC-0011 remains resolved. Neither should be reopened or executed as part of MC-0012 unless the owner explicitly changes routing.
+
+## Resolution
+
+Claude Message 003 completed the independent post-source comparison. ChatGPT Message 004 and `RESOLUTION.md` reconcile the result. No further MC-0012 turn is required now; future Claude work should attach to concrete candidate architecture critique if useful.
+
+```text
+MC0012=RESOLVED
+NEXT=RESEARCH124_CANDIDATE_ARCHITECTURE_SYNTHESIS
+```

@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-13
-**Status:** MC-0012 ACTIVE PHASE 2 / CLAUDE INDEPENDENT OWNER-SOURCE INCREMENTAL EVALUATION / MC-0010 DEFERRED
+**Status:** NO ACTIVE CLAUDE OBLIGATION / MC-0012 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -23,36 +23,39 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Current active collaboration obligation
 
-### MC-0012: staged Claude evidence/source reassessment
+There is no active Claude obligation. MC-0012 is resolved. Architecture synthesis may proceed under Research 124 without waiting for general second-model approval. A future Claude obligation should be opened only when a concrete candidate-design critique, falsification task or other bounded collaboration has clear value.
+
+## Most recently completed obligation
+
+### MC-0012: staged evidence reassessment and owner-source exposure
 
 ```text
 collaborator               Claude / claude-03
 mode                       REVIEWED / staged-exposure current-context reassessment
 coordination branch        v1-source-vault-bootstrap-resume
-phase-1 evidence target    d9794a880ad0b235102fc752dae91bde6c29bd24
-phase-1 result             VALID / MESSAGE 001 FROZEN
-phase                      OWNER-SOURCE INDEPENDENT INCREMENTAL EVALUATION
-phase-2 request            docs/model_collaboration/threads/MC-0012/messages/002_chatgpt_phase1_disposition_and_phase2_owner_source_handoff.md
-expected output            docs/model_collaboration/threads/MC-0012/messages/003_claude_post_owner_source_incremental_evaluation.md
-status                     OPEN / CLAUDE MESSAGE 003 NEXT
+messages                   Claude 001,003 / ChatGPT 002,004
+phase-1 result             VALID post-evidence / pre-source reassessment
+phase-2 result             VALID independent post-ICM evaluation
+reconciliation             Requirements V0.2 unchanged / ICM not selected / synthesis ready
+status                     RESOLVED
 conversation               03 - Project Knowledge Architecture Foundations and Design Method
 ```
 
-Phase 1 is complete. Message 002 accepts the reassessment, corrects the already-available Research 124 density/granularity verdict, records the ChatGPT-only baseline limitation as known/nonblocking, and exposes the owner-provided ICM source set. Claude must inspect the source directly but must not read ChatGPT's post-source Research 131/Checkpoint 471/Research 124 Section 71 interpretation until Message 003 is frozen.
-
-Durable contract and handoff:
+Durable records:
 
 ```text
 docs/model_collaboration/threads/MC-0012/BRIEF.md
 docs/model_collaboration/threads/MC-0012/THREAD.md
 docs/model_collaboration/threads/MC-0012/STATE.json
+docs/model_collaboration/threads/MC-0012/RESOLUTION.md
 docs/model_collaboration/threads/MC-0012/messages/001_claude_post_evidence_pre_owner_source_reassessment.md
 docs/model_collaboration/threads/MC-0012/messages/002_chatgpt_phase1_disposition_and_phase2_owner_source_handoff.md
+docs/model_collaboration/threads/MC-0012/messages/003_claude_post_owner_source_incremental_evaluation.md
+docs/model_collaboration/threads/MC-0012/messages/004_chatgpt_cross_model_reconciliation_and_thread_close.md
+docs/research/132_cross_model_icm_reconciliation_and_architecture_synthesis_readiness.md
 ```
 
-Architecture synthesis remains paused only for this bounded staged comparison. MC-0011 remains resolved and MC-0010 remains deferred.
-
-## Most recently completed obligation
+MC-0012 preserves a clean pre/post owner-source comparison for Claude and closes with strong cross-model convergence: ICM is useful prior art and mechanism evidence, does not justify reopening V0.2, and is not selected as the target.
 
 ### MC-0011: project-development knowledge architecture foundational dialogue
 
