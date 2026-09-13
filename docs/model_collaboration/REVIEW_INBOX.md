@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-13
-**Status:** NO ACTIVE CLAUDE OBLIGATION / MC-0013 RESOLVED / COMMON-FIXTURE PROBES NEXT / MC-0010 DEFERRED
+**Status:** MC-0014 ADVERSARIAL PROBE-EVIDENCE REVIEW ACTIVE / CLAUDE MESSAGE 001 NEXT / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -23,7 +23,28 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Current active collaboration obligation
 
-There is no active Claude obligation. MC-0013 is resolved. Research 124 now moves to the common-fixture mechanism-probe stage. A future Claude obligation should be opened only after probe evidence exists or another bounded architecture question has clear marginal value.
+### MC-0014: adversarial interpretation of V0.1/V0.2 architecture-probe evidence
+
+```text
+collaborator               Claude / claude-03
+mode                       ADVERSARIAL_REVIEW
+coordination branch        v1-source-vault-bootstrap-resume
+exact review target        85ade407b2f1957f5a3980aca92c09500db430b8
+review evidence            Requirements V0.2 + Research 134-138 + frozen fixtures/results/implementations
+next output                docs/model_collaboration/threads/MC-0014/messages/001_claude_adversarial_probe_interpretation.md
+status                     OPEN / CLAUDE MESSAGE 001 NEXT
+conversation               03 - Project Knowledge Architecture Foundations and Design Method
+```
+
+This is intentionally not blind. Claude should see both ChatGPT interpretations and raw probe evidence, then search for construct-validity defects, family-boundary leakage, self-fulfilling admission assumptions, stronger untested H1/H2 forms, measurement artifacts and unjustified target narrowing.
+
+Durable contract:
+
+```text
+docs/model_collaboration/threads/MC-0014/BRIEF.md
+docs/model_collaboration/threads/MC-0014/THREAD.md
+docs/model_collaboration/threads/MC-0014/STATE.json
+```
 
 ## Most recently completed obligation
 

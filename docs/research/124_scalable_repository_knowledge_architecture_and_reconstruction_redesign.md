@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / V0.1 + V0.2 H1-H2 PROBES COMPLETE / ADVERSARIAL CROSS-MODEL INTERPRETATION NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / V0.1 + V0.2 PROBES COMPLETE / MC-0014 ADVERSARIAL INTERPRETATION ACTIVE / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -3780,4 +3780,22 @@ BROAD_SPINE=NOT_SELECTED
 REQUIREMENTS_V02=UNCHANGED_FROZEN
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=ADVERSARIAL_CROSS_MODEL_INTERPRETATION
+```
+
+## 82. MC-0014 opens a post-probe adversarial interpretation gate
+
+MC-0014 is opened in `ADVERSARIAL_REVIEW` mode against exact result commit `85ade407b2f1957f5a3980aca92c09500db430b8`. This executes Research 134's earlier plan to defer another Claude contribution until empirical probe evidence existed.
+
+The thread is intentionally not blind. Claude already participated in the architecture-design sequence and is now given both raw V0.1/V0.2 fixtures/results/implementations and ChatGPT's Research 136/138 interpretations. Its role is to attack evidence quality and interpretation, not generate another independent architecture from scratch.
+
+The review must directly test whether the strong-H1 source-owned sidecar remains honestly H1, whether V0.2's admission rule is circular, whether first-class relation identity actually implies a centralized `spine`, whether the maintenance metrics are fair, whether the synthetic selectivity result transfers at all to ambiguous real ADS relationships, whether H3 or another family should reopen, and what minimum real-repository/behavioral evidence is still needed before target narrowing.
+
+Only Claude Message 001 is currently authorized. No target architecture is selected while this gate is open.
+
+```text
+MC0014=OPEN
+MODE=ADVERSARIAL_REVIEW
+EXACT_TARGET=85ade407b2f1957f5a3980aca92c09500db430b8
+NEXT=CLAUDE_MESSAGE_001
+TARGET_ARCHITECTURE=NOT_SELECTED
 ```
