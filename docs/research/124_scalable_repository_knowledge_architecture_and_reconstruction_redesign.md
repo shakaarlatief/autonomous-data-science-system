@@ -2241,3 +2241,163 @@ TARGET_ARCHITECTURE=NOT_SELECTED
 BROAD_EXTERNAL_RESEARCH=NEXT
 WITHHELD_OWNER_SOURCE=STILL_WITHHELD
 ```
+## 63. Owner clarification: Research 124 is a whole-architecture redesign, not a weakness-patching exercise
+
+Before broad external research begins, the project owner reasserted a critical design-freedom constraint.
+
+The empirical baseline and current weakness list are **evidence**, not the boundary of what Research 124 is allowed to improve.
+
+The redesign must not reason as follows:
+
+```text
+current architecture shows weakness A, B and C
+    -> successor only needs to patch A, B and C
+```
+
+That would make the current architecture the hidden design frame and would contradict the opening owner mandate in Section 1.
+
+The correct stance is broader:
+
+```text
+current weaknesses
+    = concrete evidence about failure modes
+
+current strengths
+    = evidence about mechanisms that presently work
+
+neither
+    = an obligation to preserve the current architecture or its artifact families
+
+future scenarios / scale / model changes / collaborator changes
+    = legitimate design inputs even when no present failure has yet occurred
+```
+
+A component that currently works well may still be redesigned if a better architecture can provide stronger reliability, clarity, scaling, maintainability, usability or future robustness. Conversely, an existing mechanism should not be discarded merely for novelty when its current strengths remain valuable.
+
+Research 124 therefore remains free to redesign **any part of the project-development knowledge architecture**, including:
+
+```text
+artifact families
+knowledge-unit boundaries
+subject/domain organization
+history/current-state representation
+promotion/consolidation lifecycle
+routing and indexes
+source/derived separation
+authority/provenance representation
+workstream/resume state
+bootstrap and reconstruction surfaces
+machine-queryable relationships
+storage/retrieval mechanisms
+migration and archival representation
+```
+
+This is permission to reason from first principles, not a direction to remove checkpoints, research files, foundations or any other current family.
+
+The old architecture remains operational authority until a successor qualifies. Design freedom and migration safety are separate questions.
+
+### 63.1 New architectural discriminator: artifact-family organization versus semantic knowledge organization
+
+The owner also raised a concrete observation about how important project understanding is currently preserved.
+
+Some of the project's most important knowledge is not primarily a task result, checkpoint, research experiment or implementation contract. It is **understanding about what ADS is, why it exists, how its system boundary should be understood, and how the project's vision evolves**.
+
+The owner gave the distinction among:
+
+```text
+human-executed data-science project
+human + interactive LLM project
+ADS / system-mediated data-science project
+```
+
+as a representative example.
+
+Repository inspection confirms that this exact concept currently has a multi-layer history:
+
+```text
+Checkpoint 022
+    historical moment where the distinction became explicit
+
+Foundation 013
+    promoted durable canonical system-level interpretation
+
+Knowledge Map
+    semantic routing entry into the system-level vision material
+```
+
+Foundation 013 itself explicitly documents this preservation relationship: Checkpoint 22 retains historical provenance while Foundation 013 carries the durable system-level interpretation.
+
+This is an example where the current architecture already performs a useful **historical-event -> durable-concept promotion**.
+
+However, the owner's broader architectural question remains open. The current repository is primarily partitioned by artifact role/lifecycle:
+
+```text
+foundations       deep durable rationale
+research          bounded evidence/candidates/investigations
+specifications    scoped contracts
+checkpoints       historical/continuity state
+collaboration     review/coordination provenance
+validation        exact evidence
+```
+
+Semantic subject routing is then overlaid through `KNOWLEDGE_MAP.md` and specialized indexes.
+
+That means one conceptual subject can be distributed across many artifact families and historical records. The fact that this currently works in important cases does not establish that this is the best long-term knowledge architecture.
+
+Research 124 should therefore treat the following as a first-class design question rather than assuming the answer:
+
+> **What should be the primary identity of durable project knowledge: documents grouped by lifecycle/role, semantic subjects/concepts, explicit knowledge objects/claims/relationships, events plus materialized syntheses, some hybrid of these, or another representation?**
+
+Subquestions include:
+
+```text
+Should durable concepts have identities independent of the files that currently contain them?
+
+Should one subject expose current synthesis, governing decisions, exact evidence and history
+as different views/depths rather than as separate manually navigated artifact families?
+
+Should chronology remain a first-class preservation axis while semantic subject/domain becomes
+a separate first-class retrieval/reconstruction axis?
+
+Can historical provenance remain complete without forcing historical artifact structure to define
+how current understanding is organized?
+
+What knowledge deserves promotion into durable synthesis, and how should that synthesis evolve
+without erasing the reasoning/history that produced it?
+
+Can the architecture support important conceptual discussion that does not naturally begin as a
+"research", "checkpoint" or "specification" object without losing it or forcing it into an ill-fitting family?
+```
+
+No answer is selected here. In particular, this section does **not** propose a subject-only architecture or the removal of current artifact families.
+
+### 63.2 External-research consequence
+
+Broad external research should not be constrained to mechanisms that repair the five currently strongest empirical weaknesses.
+
+It should also ask what stronger architecture is possible even where the present system works, including literature/practice on:
+
+```text
+faceted classification and multiple simultaneous organizational axes
+knowledge objects / conceptual identity independent of documents
+knowledge graphs and provenance models
+library/information-science subject organization
+records management versus current knowledge representation
+event history versus materialized current views
+knowledge consolidation / promotion / synthesis lifecycle
+software architecture patterns for source-of-truth plus generated views
+personal/organizational knowledge systems that separate capture from durable synthesis
+```
+
+The objective remains the best justified project-development knowledge architecture for ADS at substantial future scale, not the smallest patch that resolves the current failure corpus.
+
+```text
+RESEARCH124_DESIGN_FREEDOM=WHOLE_ARCHITECTURE
+CURRENT_WEAKNESSES=EVIDENCE_NOT_SCOPE_LIMIT
+CURRENT_STRENGTHS=PRESUMPTION_FREE
+CURRENT_ARTIFACT_FAMILIES=NOT_DESIGN_CONSTRAINT
+SEMANTIC_KNOWLEDGE_ORGANIZATION=FIRST_CLASS_RESEARCH_QUESTION
+CHECKPOINT_RESEARCH_FOUNDATION_REMOVAL=NOT_PROPOSED
+TARGET_ARCHITECTURE=NOT_SELECTED
+NEXT=BROAD_QUESTION_DRIVEN_EXTERNAL_RESEARCH_FROM_OPEN_DESIGN_SPACE
+```

@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 462
+**Checkpoint:** 463
 **Date:** 2026-09-13
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -23,6 +23,8 @@ Repository artifacts remain authoritative across chats and models.
 ---
 
 ## Current active stage: Research 124 project-development knowledge architecture redesign
+
+Checkpoint 463 preserves an owner clarification before external research begins: Research 124 is a whole-architecture redesign, not a defect-patching exercise bounded by the weaknesses found so far. Current failures are evidence, current strengths are evidence, but neither fixes the target design. Any artifact family, knowledge-unit boundary, routing/index mechanism, authority/provenance representation, history/current-state representation, consolidation lifecycle or storage/retrieval mechanism may be improved or replaced if a better architecture is justified, while the current architecture remains operational authority until a successor qualifies. The owner also raised semantic/concept-centric organization as a first-class research question. Repository inspection confirms the human-executed versus human-plus-LLM versus ADS distinction was historically captured in Checkpoint 022 and promoted into durable Foundation 013, with Knowledge Map subject routing layered on top. That useful pattern does not settle whether artifact-family-centric organization remains best long-term. External research should therefore explore both current weaknesses and higher-ceiling architectures, including semantic knowledge identity, multiple organizational axes, event/history versus materialized synthesis, and concept-level promotion/consolidation. No current artifact family is deprecated and no target architecture is selected.
 
 Checkpoint 462 accepts BL-002U and closes the bounded pre-external-evidence baseline phase. With the substantive process-existence cue removed, a fresh ChatGPT still recovered the repository-native model-collaboration workflow from the frozen snapshot with modest effort. The run retains a small construct-validity limitation because the trial-visible request metadata itself says `Uncued Dispatch Variant`, so it is supportive rather than perfectly unprimed evidence. No further baseline trial is warranted before external research. Across the completed pilot, the current project-development knowledge architecture proves broadly reconstructable; the strongest remaining redesign case is now narrower: reliable situation activation, exact task-contract preservation after activation, bounded reconstruction cost, task-sensitive evidence-depth routing, and active-surface consolidation without provenance loss. Research 124 now advances into broad question-driven external research across several disciplines while target-architecture design remains paused and the owner paper/video remains withheld.
 
