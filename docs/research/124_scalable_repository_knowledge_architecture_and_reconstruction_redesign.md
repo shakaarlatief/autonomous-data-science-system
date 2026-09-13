@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / D1-D2, D3-D4 AND D5-D6 TARGETED EVIDENCE DEEP DIVES COMPLETE / D7-D8 CONSOLIDATION-FIDELITY AND MAINTENANCE-ECONOMICS DEEP DIVE NEXT / TARGET ARCHITECTURE DESIGN PAUSED
+**Status:** ACTIVE / TARGETED EXTERNAL EVIDENCE D1-D8 COMPLETE / REQUIREMENTS-EVIDENTIARY-PROVENANCE RECONCILIATION NEXT / TARGET ARCHITECTURE DESIGN PAUSED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -2740,7 +2740,7 @@ Research 124 should therefore preserve provenance for authority-significant tran
 
 W3C PROV-O and SLSA independently model not only which input an output derives from but also the process/activity, producing agent/platform and material parameters/dependencies involved in generation.
 
-For later candidate comparison, â€œgenerated from the repositoryâ€ is insufficient when a derived representation materially affects reconstruction. The candidate should be able to establish a proportionate provenance envelope over sources, generator/transformation and freshness.
+For later candidate comparison, Ã¢â‚¬Å“generated from the repositoryÃ¢â‚¬Â is insufficient when a derived representation materially affects reconstruction. The candidate should be able to establish a proportionate provenance envelope over sources, generator/transformation and freshness.
 
 ### 66.5 Rebuildability has several strengths
 
@@ -3029,7 +3029,7 @@ current accepted / preferred
 
 Old authority should remain discoverable for audit/history without entering ordinary current reconstruction by default.
 
-### 67.13 “Current” cannot mean merely “latest commit”
+### 67.13 â€œCurrentâ€ cannot mean merely â€œlatest commitâ€
 
 Current governing truth may depend on:
 
@@ -3092,4 +3092,174 @@ TEMPORAL_APPLICABILITY_NE_RECORDING_TIME=true
 REPLACEMENT_NE_SUPPLEMENTATION=true
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=D7_D8_CONSOLIDATION_FIDELITY_MAINTENANCE_ECONOMICS_DEEP_DIVE
+```
+
+## 68. D7-D8 deep dive: consolidation fidelity, provenance, and maintenance economics
+
+Research 129 completes the final planned targeted external-evidence pair:
+
+```text
+docs/research/129_consolidation_fidelity_provenance_and_maintenance_economics_deep_dive.md
+```
+
+The evidence combines summarization factuality and content-coverage evaluation, Cochrane systematic-review extraction/reconciliation and certainty practice, long-context LLM research, materialized-view maintenance, incremental computation/build-system dependency ideas, ontology evolution and the provenance work already established in Research 127.
+
+### 68.1 Consolidation fidelity is multidimensional
+
+External summarization research distinguishes factual consistency from content selection/coverage. A synthesis can avoid hallucination yet still fail by omitting a critical unit. Cochrane evidence-synthesis practice further shows that uncertainty, inconsistency and disagreements must be represented rather than flattened.
+
+Research 129 therefore defines a candidate-comparison fidelity envelope across:
+
+```text
+source support
+coverage / completeness
+epistemic uncertainty and disagreement
+authority state
+material relationships
+temporal meaning
+negative / minority evidence
+provenance drill-down
+task / abstraction contract
+```
+
+This is not a universal scorecard to store on every summary.
+
+### 68.2 High-consequence consolidation needs proportionate reconciliation
+
+Cochrane recommends independent duplicate extraction for subjectively interpreted and result-critical information because extraction errors may survive ordinary downstream review. Long-document summarization research independently shows that factuality evaluation is itself difficult and that automatic metrics have important limitations.
+
+The project should therefore reject one unverified generative pass as sufficient qualification for high-consequence knowledge promotion. Possible mechanisms remain open: independent model extraction/reconciliation, deterministic must-preserve-unit checking, owner review for authority promotion, or combinations.
+
+### 68.3 Compression is allowed only under an explicit view contract
+
+A useful summary necessarily omits detail. The safe principle is:
+
+> Compression may remove detail from an active representation when the detail remains durably recoverable and every semantic property required by that representation's declared use is preserved.
+
+Project orientation, an operational procedure, an authority synthesis and a historical narrative have different must-preserve units.
+
+### 68.4 Long context is not a scaling substitute
+
+Long-context research shows that models can use large contexts unevenly and that adding more retrieved material can give diminishing returns. At 5x/10x scale the architecture should therefore continue to optimize task-shaped reconstruction and active-surface size rather than relying on larger raw context windows as the primary escape hatch.
+
+### 68.5 Current empirical scaling pressure is already visible
+
+At Checkpoint 467 the repository has approximately:
+
+```text
+1,554 tracked files
+1,018 docs/ files
+1,040 Markdown files
+9.4 MiB Markdown
+468 numbered checkpoints
+128 numbered Research records
+318 direct development-governance paths in the Knowledge Map
+```
+
+A deliberately simple linear-pressure thought experiment yields at 10x roughly:
+
+```text
+15,540 tracked files
+10,180 docs/ files
+10,400 Markdown files
+93.9 MiB Markdown
+4,680 numbered checkpoints
+1,280 Research records
+3,180 direct development-governance paths
+```
+
+These are not forecasts or target artifact ratios. They expose why storage capacity is not the primary risk. Active routing, maintenance fan-out, semantic review and reconstruction cost become the important scaling variables.
+
+### 68.6 Maintenance cost should track the affected dependency neighborhood
+
+Materialized-view maintenance and self-adjusting-computation research provide a strong general systems principle: when a small source change affects only part of a derived computation, update the affected dependency neighborhood rather than recomputing or manually revisiting everything.
+
+Research 129 therefore strengthens KA-I13 and related requirements:
+
+```text
+ordinary local change cost
+    should normally depend on affected semantic/dependency fan-out
+    rather than total accumulated corpus size
+```
+
+Periodic automated full rebuilds and full qualification can still be legitimate.
+
+### 68.7 Rich structure must pay for itself
+
+Ontology-evolution research and view-maintenance economics provide a counterweight to semantic overengineering. Every new universal entity type, relation type, lifecycle state, generated view and integrity rule creates capture, evolution, validation and migration cost.
+
+A later candidate must therefore optimize total lifecycle economics rather than one local objective.
+
+Research 129 introduces the comparison decomposition:
+
+```text
+C_capture
+C_rel
+C_change
+C_propagate
+C_validate
+C_consolidate
+C_reconstruct
+C_migrate
+C_failure
+```
+
+A design that sharply reduces reconstruction cost while exploding metadata/relationship/validation maintenance is not automatically superior.
+
+### 68.8 Active-surface economics are separate from archival economics
+
+Cheap storage does not mean cheap reasoning. The architecture needs separate metrics for archival corpus size and the amount/fan-out of knowledge that remains active in bootstrap, routing and ordinary reconstruction.
+
+Consolidation is therefore a recurring control loop rather than only a one-time migration activity:
+
+```text
+accumulation
+    -> measurable active-surface pressure
+        -> consolidation candidate
+            -> fidelity qualification
+                -> detail becomes latent/history
+                    -> provenance remains traversable
+```
+
+### 68.9 D7-D8 constraints and qualification metrics
+
+Research 129 freezes D7-C1 through D7-C10 and D8-C1 through D8-C12 for requirements reconciliation. It also introduces candidate-scale metrics including manual-touch fan-out, generated-view fan-out, incremental/full rebuild cost, validator footprint, semantic-review burden, active-route/context size, cold-start reconstruction cost, authority-resolution cost, consolidation cost, stale-view repair latency and schema-migration footprint.
+
+These become important later when candidate architectures are stress-tested on 5x/10x synthetic states.
+
+### 68.10 Targeted evidence stop rule
+
+The planned D1-D8 evidence program is now complete:
+
+```text
+Research 126   D1-D2
+Research 127   D3-D4
+Research 128   D5-D6
+Research 129   D7-D8
+```
+
+Continuing broad external collection now risks diminishing returns and confirmation bias.
+
+The next phase is **requirements/evidentiary-provenance reconciliation**, not target design. The 45 requirements and 15 invariants frozen before external research must be systematically revisited against:
+
+```text
+owner goals
+internal historical failure evidence
+blind baseline evidence
+D1-D8 external evidence
+analogy strength / transfer limits
+redundancy / solution-shaping risk
+normative strength: MUST / SHOULD / MAY / discriminator
+```
+
+Target architecture synthesis remains paused. The owner paper/video remains withheld until the reconciliation establishes the independent evidence field cleanly enough to assess its incremental contribution.
+
+```text
+D7_D8_DEEP_DIVE=COMPLETE
+TARGETED_EXTERNAL_EVIDENCE_D1_D8=COMPLETE
+CONSOLIDATION_FIDELITY=MULTIDIMENSIONAL
+ROUTINE_MAINTENANCE_SHOULD_BE_DEPENDENCY_LOCAL=true
+ACTIVE_SURFACE_COST_NE_ARCHIVAL_STORAGE_COST=true
+TARGET_ARCHITECTURE=NOT_SELECTED
+NEXT=REQUIREMENTS_EVIDENTIARY_PROVENANCE_RECONCILIATION
 ```

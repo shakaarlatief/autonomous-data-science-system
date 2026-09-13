@@ -1,7 +1,7 @@
-# Research 125: Cross-Disciplinary External Evidence for Project Knowledge Architecture
+﻿# Research 125: Cross-Disciplinary External Evidence for Project Knowledge Architecture
 
 **Date:** 2026-09-13
-**Status:** PHASE-1 CROSS-DISCIPLINARY EVIDENCE ESTABLISHED / D1-D2, D3-D4 AND D5-D6 DEEP DIVES COMPLETE / D7-D8 NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** PHASE-1 CROSS-DISCIPLINARY EVIDENCE ESTABLISHED / TARGETED D1-D8 EVIDENCE DEEP DIVES COMPLETE / REQUIREMENTS-EVIDENCE RECONCILIATION NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Build an independent external evidence field for Research 124 by examining information science, digital preservation, organizational memory, design rationale, human factors, software architecture, reproducible derived state, temporal data, and modern LLM memory/retrieval research. The goal is to expand the project-development knowledge-architecture design space rather than search for one ready-made solution.
 **Authority:** Supporting evidence research under Research 124. This record does not select the target architecture, does not replace current project-development knowledge authority, and does not make external frameworks authoritative over ADS.
 **Declared references:** `research:124`, `checkpoint:463`, `foundation:014`, `path:docs/KNOWLEDGE_MAP.md`, `path:docs/DEVELOPMENT_METHOD.md`
@@ -304,9 +304,9 @@ Event sourcing stores a sequence of changes in an append-only system of record a
 
 **Transfer limit:** Git history, project knowledge, and domain events are not interchangeable. Event sourcing is an analogy and candidate mechanism only where its audit/reconstruction benefits justify its complexity.
 
-### 7.3 Build Systems Ã  la Carte: decompose architecture choices rather than copy a monolith
+### 7.3 Build Systems ÃƒÂ  la Carte: decompose architecture choices rather than copy a monolith
 
-**Source:** Mokhov, Mitchell, and Peyton Jones, *Build Systems Ã  la Carte*, ICFP 2018 / Journal of Functional Programming 2020.
+**Source:** Mokhov, Mitchell, and Peyton Jones, *Build Systems ÃƒÂ  la Carte*, ICFP 2018 / Journal of Functional Programming 2020.
 
 URL: https://www.microsoft.com/en-us/research/publication/build-systems-la-carte/
 
