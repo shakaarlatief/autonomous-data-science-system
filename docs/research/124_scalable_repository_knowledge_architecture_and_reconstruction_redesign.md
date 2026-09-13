@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / MC-0014 RESOLVED WITH PROBE-INTERPRETATION CORRECTIONS / REAL-CORPUS DISCRIMINATOR NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / REAL ADS RELATIONSHIP CORPUS V0.1 MACHINE-FROZEN / CHATGPT INDEPENDENT JUDGMENT NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -3818,5 +3818,20 @@ V02_ADMISSION_SELECTIVITY_REAL_WORLD=UNTESTED
 BOUNDED_SPINE_LEADING_LABEL=RETIRED
 SELECTIVE_SEMANTIC_REIFICATION=WORKING_CONCEPT
 REAL_CORPUS_DISCRIMINATOR=NEXT
+TARGET_ARCHITECTURE=NOT_SELECTED
+```
+
+## 84. Real ADS Relationship Corpus V0.1 is frozen before reviewer judgments
+
+Research 140 freezes a 15-case real-repository relationship corpus at SHA-256 `cc61a9610b2a88b8be6c3af06b661c6ce270e094e380d1d362dc8f10d8f90ed5` before either ChatGPT or Claude produces an ownership/reification label. The cases are drawn from actual ADS project-development authority, workstream, governance, provenance, navigation, collaboration and transition surfaces at exact source commit `47656a2a6ed98061d987786814a6be39d38b3999`.
+
+Each case carries exact source path/hash/line-range/excerpt evidence but no expected label, `natural_owner`, `independent_lifecycle`, `should_reify`, H1/H2/H3 designation, mechanized admission output or reviewer judgment. This directly removes the answer-bearing fixture flags that made the V0.2 admission test self-confirming.
+
+The first reviewer sequence is staged. ChatGPT will freeze its complete 15-case judgment first. Claude will later be routed to the exact corpus-freeze commit rather than the descendant containing ChatGPT labels. Only after both judgment sets are frozen will the project compare agreement/disagreement and decide whether an observable-feature admission rule is worth mechanizing.
+
+```text
+REAL_CORPUS_V01=FROZEN_UNLABELED
+CHATGPT_JUDGMENT=NEXT
+CLAUDE_LABEL_EXPOSURE=PROHIBITED_UNTIL_OWN_SET_FROZEN
 TARGET_ARCHITECTURE=NOT_SELECTED
 ```

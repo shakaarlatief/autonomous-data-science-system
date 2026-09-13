@@ -1,0 +1,398 @@
+{
+  "schema_version": 1,
+  "corpus_id": "PKA-REAL-REL-V01",
+  "status": "UNLABELED_FROZEN_BEFORE_REVIEWER_JUDGMENTS",
+  "repository": "shakaarlatief/autonomous-data-science-system",
+  "source_commit": "47656a2a6ed98061d987786814a6be39d38b3999",
+  "purpose": "Behavioral discriminator for semantic ownership/reification judgments on real ADS relationships without predeclared admission labels.",
+  "judgment_taxonomy": [
+    "SOURCE_LOCAL",
+    "FIRST_CLASS_SEMANTIC_OBJECT",
+    "DERIVED_ONLY",
+    "UNRESOLVED"
+  ],
+  "prohibited_case_fields": [
+    "expected_label",
+    "natural_owner",
+    "independent_lifecycle",
+    "should_reify",
+    "H1",
+    "H2",
+    "H3",
+    "mechanized_admission_output",
+    "reviewer_judgment"
+  ],
+  "selection_design": {
+    "case_count": 15,
+    "selection_basis": "Coverage-stratified real project-development relationship cases drawn from durable public ADS sources. Inclusion is justified by relation category coverage, not an expected ownership label.",
+    "covered_categories": [
+      "authority_supersession",
+      "authority_transition",
+      "collaboration_write_scope",
+      "execution_supersession",
+      "governance",
+      "live_routing",
+      "navigation_membership",
+      "provenance_derivation",
+      "public_private_authority",
+      "reopen_trigger",
+      "review_binding",
+      "review_target",
+      "workstream_continuation"
+    ],
+    "judgment_independence_plan": "Freeze corpus first; ChatGPT labels all cases; Claude later reads this exact source_commit/corpus freeze boundary without access to ChatGPT labels; compare only after both sets are frozen."
+  },
+  "reviewer_instructions": {
+    "primary_label_required": true,
+    "required_fields": [
+      "label",
+      "confidence",
+      "rationale",
+      "proposed_natural_owner_or_null",
+      "independent_continuity_basis_or_null",
+      "derived_inputs_or_null",
+      "missing_evidence_or_null"
+    ],
+    "confidence_values": [
+      "HIGH",
+      "MEDIUM",
+      "LOW"
+    ],
+    "instruction": "Judge semantic ownership/reification only. Do not choose a physical storage technology. Ground the judgment in the packet evidence and Requirements V0.2. Do not infer an answer from case category or case id."
+  },
+  "cases": [
+    {
+      "case_id": "RC-001",
+      "category": "authority_supersession",
+      "selection_reason": "Covers scoped supersession with a retained outcome rather than full replacement.",
+      "source": {
+        "path": "docs/DECISIONS.md",
+        "source_sha256": "2db2b79712c9333159aca2985f4be75a34d7b8357610714eca299a5f0597e4cd",
+        "line_range": [
+          201,
+          205
+        ],
+        "excerpt": "## D-015. Keep the currently attached learning materials outside the repository for now\n\n**Status:** Superseded in architectural-uncertainty scope by D-033; durable public-Git exclusion outcome retained  \n**Date:** 2026-08-07  \n**Superseded in scope:** 2026-08-25",
+        "source_git_blob_sha": "0ebcfe55cc800f1a8ac1b387f869f39fc01a824c"
+      },
+      "participants": [
+        "D-015",
+        "D-033"
+      ],
+      "source_grounded_case_facts": "D-015 is superseded in architectural-uncertainty scope by D-033 while a public-Git exclusion outcome is retained.",
+      "judgment_question": "How should the durable semantic relationship between D-015, D-033 and the retained outcome be owned or represented?"
+    },
+    {
+      "case_id": "RC-002",
+      "category": "authority_supersession",
+      "selection_reason": "Covers one older decision with several scope-specific successors and residual applicability.",
+      "source": {
+        "path": "docs/DECISIONS.md",
+        "source_sha256": "2db2b79712c9333159aca2985f4be75a34d7b8357610714eca299a5f0597e4cd",
+        "line_range": [
+          146,
+          150
+        ],
+        "excerpt": "## D-011. Do not select the implementation architecture yet\n\n**Status:** Superseded for the V1 persistence/retrieval architecture by D-028, persistence tooling by D-029, Python project/dependency tooling by D-030, reusable-knowledge interchange by D-031, initial reasoning runtime by D-032, and source-universe substrate by D-033; still applicable to implementation subsystems not yet selected  \n**Date:** 2026-08-07  \n**Superseded in scope:** 2026-08-20, 2026-08-22, and 2026-08-25",
+        "source_git_blob_sha": "0ebcfe55cc800f1a8ac1b387f869f39fc01a824c"
+      },
+      "participants": [
+        "D-011",
+        "D-028",
+        "D-029",
+        "D-030",
+        "D-031",
+        "D-032",
+        "D-033"
+      ],
+      "source_grounded_case_facts": "D-011 is superseded for several implementation subsystems by several later decisions while remaining applicable to other unselected subsystems.",
+      "judgment_question": "How should this multi-successor, scope-specific supersession relationship be durably owned or represented?"
+    },
+    {
+      "case_id": "RC-003",
+      "category": "execution_supersession",
+      "selection_reason": "Covers short-lived operational supersession between execution objects.",
+      "source": {
+        "path": "docs/DEVELOPMENT_METHOD.md",
+        "source_sha256": "510cb909d57370690226fe2b55ec4050d68221df5bc7177319f8883cae3c1b57",
+        "line_range": [
+          367,
+          369
+        ],
+        "excerpt": "Only high-confidence local path families may narrow the suite. Mixed/shared/unknown changes fall back conservatively to V3.\n\nSame-branch obsolete CI runs should be cancelled when a newer push supersedes them where the workflow supports that behavior.",
+        "source_git_blob_sha": "85cdb70b86d6d30945b3df0cb3f5bd0694965875"
+      },
+      "participants": [
+        "older same-branch CI run",
+        "newer same-branch push"
+      ],
+      "source_grounded_case_facts": "A newer push can make an older same-branch CI run obsolete and eligible for cancellation.",
+      "judgment_question": "How should the semantic relation that makes one CI run obsolete because of a newer push be owned or represented?"
+    },
+    {
+      "case_id": "RC-004",
+      "category": "governance",
+      "selection_reason": "Covers a directional governance relation with an explicit governing source.",
+      "source": {
+        "path": "docs/DEVELOPMENT_METHOD.md",
+        "source_sha256": "510cb909d57370690226fe2b55ec4050d68221df5bc7177319f8883cae3c1b57",
+        "line_range": [
+          236,
+          240
+        ],
+        "excerpt": "Closed historical checkpoints are not rewritten to make later events appear contemporaneous. Metadata/provenance-only repair is permitted when it restores the checkpoint contract or corrects provenance without rewriting substantive historical knowledge.\n\nIf identity repair displaces a useful historical milestone from the numbered checkpoint family, use the governed historical-intermediate class rather than deleting it or inventing a new number.\n\nCheckpoint metadata and role are governed by `docs/checkpoints/README.md` and mechanically validated.",
+        "source_git_blob_sha": "85cdb70b86d6d30945b3df0cb3f5bd0694965875"
+      },
+      "participants": [
+        "checkpoint metadata/role",
+        "docs/checkpoints/README.md"
+      ],
+      "source_grounded_case_facts": "Checkpoint metadata and role are governed by the checkpoint README and mechanically validated.",
+      "judgment_question": "How should the governing relationship between checkpoint metadata/role and the checkpoint contract be durably owned or represented?"
+    },
+    {
+      "case_id": "RC-005",
+      "category": "workstream_continuation",
+      "selection_reason": "Covers a real paused workstream with an explicit future resume anchor.",
+      "source": {
+        "path": "docs/cockpit/README.md",
+        "source_sha256": "2e5fe6ab83b89f1bec267c64580c53844d82350f1454ebdc45a64454dc5952e0",
+        "line_range": [
+          3,
+          31
+        ],
+        "excerpt": "**Status:** PAUSED / safely resumable next-generation Cockpit design and fidelity surface  \n**Authority:** Specialized integration contract beneath accepted specifications, canonical decisions and foundations. It does not replace their semantic authority.  \n**Frozen design branch:** `v1-cockpit-design-exploration`  \n**Frozen frontend head:** `04f2a907094b8023ac7377c399a6eef1a6e1da99`  \n**Current routing checkpoint:** 267  \n**Last reconciled:** 2026-08-29\n\n## Current pause boundary\n\nThe project owner explicitly paused the frontend Cockpit session at Checkpoint 267 and resumed the permanent Source Vault bootstrap.\n\nThe Cockpit is therefore:\n\n```text\nPAUSED\nnot rejected\nnot deleted\nnot production-promoted\nexact implementation and verification state preserved\n```\n\nProduction `/cockpit` remains untouched.\n\nThe exact future resume anchor is:\n\n```text\nbranch   v1-cockpit-design-exploration\nhead     04f2a907094b8023ac7377c399a6eef1a6e1da99\nworkflow 33268350178",
+        "source_git_blob_sha": "0997baef060a9ce27d84396fcfbed61cd181425b"
+      },
+      "participants": [
+        "Cockpit design workstream",
+        "Checkpoint 267",
+        "Source Vault bootstrap",
+        "v1-cockpit-design-exploration",
+        "04f2a907..."
+      ],
+      "source_grounded_case_facts": "Cockpit work is paused, Source Vault was resumed, and an exact future Cockpit resume branch/head is preserved.",
+      "judgment_question": "How should the pause/resume/return relationship among the Cockpit workstream, Source Vault route and resume anchor be durably owned or represented?"
+    },
+    {
+      "case_id": "RC-006",
+      "category": "workstream_continuation",
+      "selection_reason": "Covers several project-development workstreams with active and paused semantics.",
+      "source": {
+        "path": "docs/OPEN_ARCHITECTURE_BACKLOG.md",
+        "source_sha256": "4b71c882d35a774641c82d36b86a8417ca8f7b13ec7b689f0298902804c122d1",
+        "line_range": [
+          1113,
+          1117
+        ],
+        "excerpt": "Negative connector findings remain conservative `NOT_OBSERVED_IN_THIS_PROJECTION` results rather than permanent global impossibilities. Features not observed in the current native connector may later be added as ADS supersets, but they are not required for first parity closure.\n\nResearch 123 owns the implementation and qualification route. Research 113 is paused, not completed. Source Vault remains paused. The project owner's separately planned next stage comes after this parity work unless explicitly redirected.\n\nCheckpoint 372 design work maps the 89-action baseline into the planned `github.*` Runtime Bridge namespace and selects a dedicated GitHub App user-token/device-flow architecture with installation-derived repository scope, internal REST/GraphQL transport, server-owned secret storage, structured pagination/errors and mutation guards. Exact remote parity remains 0/89 because implementation has not started. The public qualification had not preserved complete native schemas, so it opened the discovery-only batched schema-capture gate.",
+        "source_git_blob_sha": "76de03131b86e5c621d86b1c770071d38091a29e"
+      },
+      "participants": [
+        "Research 123",
+        "Research 113",
+        "Source Vault",
+        "planned next stage"
+      ],
+      "source_grounded_case_facts": "Research 123 owns the implementation and qualification route while Research 113 and Source Vault are paused; a later stage follows parity unless redirected.",
+      "judgment_question": "How should this active-route / paused-route / later-return relationship be durably owned or represented?"
+    },
+    {
+      "case_id": "RC-007",
+      "category": "reopen_trigger",
+      "selection_reason": "Covers one governed process with multiple evolution/reopen triggers.",
+      "source": {
+        "path": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+        "source_sha256": "fdcb795d39945883dcce99995a5c3f396e5f1dd8f904a668b8366b1d1aa69656",
+        "line_range": [
+          452,
+          469
+        ],
+        "excerpt": "## 14. Reopen conditions\n\nPause and revise the deployment process if the first permanent local exercise exposes any of the following:\n\n```text\nunhandled source variant semantics\nunacceptable backup topology\npath portability defects\nregistry/vault placement conflicts\nsource-rights metadata gaps\nperformance or storage problems\nrecovery failure\nindependent remote round-trip failure\nunexplained mismatch with prospectively frozen fingerprints\nprivate information leaking into public-safe outputs\n```\n\nAny material architectural change should be preserved prospectively before bulk intake continues.",
+        "source_git_blob_sha": "044c7c1fd9b32a9240357bacc3edfa38b7c5564e"
+      },
+      "participants": [
+        "Source Vault deployment process",
+        "listed reopen conditions"
+      ],
+      "source_grounded_case_facts": "The deployment process must pause and be revised if any listed permanent-local-exercise failure condition occurs.",
+      "judgment_question": "How should the relationship between the deployment process and its multiple reopen/pause triggers be durably owned or represented?"
+    },
+    {
+      "case_id": "RC-008",
+      "category": "review_binding",
+      "selection_reason": "Covers independence-sensitive review provenance and immutable evidence binding.",
+      "source": {
+        "path": "docs/model_collaboration/threads/MC-0013/STATE.json",
+        "source_sha256": "fc2f66020502b57881936bfc1462302a1a1c38e4be92cc4a75d1d8e38127d13f",
+        "line_range": [
+          54,
+          64
+        ],
+        "excerpt": "  \"independence\": {\n    \"status\": \"COMPARATIVE_ONLY\",\n    \"review_base_ref\": \"233eb932062a24473fcc4f4fe93160c952eea426\",\n    \"known_exposures\": [\n      \"Claude knows the full Research 124 evidence program through MC-0012, including ICM and the cross-model reconciliation at Checkpoint 474.\",\n      \"ChatGPT has created a first candidate-architecture synthesis after the independent base, but its content is intentionally withheld from Claude until Message 001 is frozen.\",\n      \"Current-branch access is restricted to MC-0013 routing surfaces; substantive project evidence is bound to the exact pre-candidate base.\",\n      \"Claude Message 001 is durably frozen at commit 9005b73add028398a827fdf5b251069c65a83208; the independent candidate-design phase is complete.\",\n      \"Comparative Phase 2 intentionally exposes Research 133 and ChatGPT Message 002; subsequent Claude reasoning is comparative, not independent.\"\n    ],\n    \"notes\": \"Message 001 remains the preserved independent architecture counter-design. From Message 003 onward Claude is intentionally exposed to ChatGPT Research 133 and comparative framing.\"",
+        "source_git_blob_sha": "840b0475ce77124f49588a8d6d284b8bbbd700f7"
+      },
+      "participants": [
+        "MC-0013 independent design",
+        "review_base_ref 233eb932...",
+        "Claude Message 001",
+        "descendant candidate content"
+      ],
+      "source_grounded_case_facts": "The independent design was bound to an exact review base while later candidate content was deliberately withheld until Message 001 was frozen.",
+      "judgment_question": "How should the relationship among an independent review, its exact evidence base and its exposure boundary be durably owned or represented?"
+    },
+    {
+      "case_id": "RC-009",
+      "category": "provenance_derivation",
+      "selection_reason": "Covers evidence-to-knowledge derivation across two durable domains.",
+      "source": {
+        "path": "docs/README.md",
+        "source_sha256": "9e50ff1ae3577f53023ca74aba908d7895d6ceb1da788176ac08673bd346f808",
+        "line_range": [
+          164,
+          170
+        ],
+        "excerpt": "### `docs/methodological_knowledge/`\n\nSpecialized Methodological Knowledge Universe documentation. `COVERAGE_MAP.md` is the domain-level coverage/navigation surface for the methodological universe and construction program.\n\n### `docs/source_universe/`\n\nSource Universe architecture, permanent-vault bootstrap material and validation records. This domain preserves the distinction between source artifacts/evidence provenance and the reusable Methodological Knowledge Universe derived from sources.",
+        "source_git_blob_sha": "3d8c2fdd01788d78105b1c344fd363f5e26879c0"
+      },
+      "participants": [
+        "Source Universe",
+        "Methodological Knowledge Universe"
+      ],
+      "source_grounded_case_facts": "The repository distinguishes source artifacts/evidence provenance from reusable methodological knowledge derived from sources.",
+      "judgment_question": "How should the derivation relationship between source evidence and reusable methodological knowledge be durably owned or represented?"
+    },
+    {
+      "case_id": "RC-010",
+      "category": "navigation_membership",
+      "selection_reason": "Covers multi-axis retrieval membership explicitly distinguished from authority.",
+      "source": {
+        "path": "docs/KNOWLEDGE_MAP.md",
+        "source_sha256": "7b0885e53a876247579effc6f72efe18cd409a8af120be5aef8329bddcc6da35",
+        "line_range": [
+          3,
+          21
+        ],
+        "excerpt": "**Status:** Current evergreen subject library\n**Authority:** Navigation only. This file routes subjects to repository evidence and does not replace the authority of the routed artifacts.\n**Last reviewed:** 2026-09-13\n\n## Purpose\n\n`docs/KNOWLEDGE_MAP.md` is the repository's semantic library: **subject -> relevant knowledge artifacts**.\n\nIt is intentionally not the current-state document and not the structural repository guide:\n\n```text\nNeed to know what is happening right now?     docs/CURRENT_STATE.md\nNeed the machine-readable live pointer?        docs/current_routing.json\nNeed to know what each file/folder type means? docs/README.md\nNeed knowledge about a subject?                docs/KNOWLEDGE_MAP.md\nNeed the reconstruction procedure?             docs/CONTINUITY.md\n```\n\nA source may appear under multiple subjects when it genuinely informs multiple questions. Topic membership is retrieval metadata, not an authority claim.",
+        "source_git_blob_sha": "d575ed622fb13022d82d2eff6a373e38c5bfefa6"
+      },
+      "participants": [
+        "semantic subject",
+        "routed knowledge artifact",
+        "Knowledge Map"
+      ],
+      "source_grounded_case_facts": "The Knowledge Map routes subjects to relevant knowledge artifacts; topic membership is retrieval metadata and not an authority claim.",
+      "judgment_question": "How should subject-to-artifact routing membership be owned or represented, given that it is navigation metadata rather than project truth?"
+    },
+    {
+      "case_id": "RC-011",
+      "category": "public_private_authority",
+      "selection_reason": "Covers scoped delegated authority with a non-override constraint.",
+      "source": {
+        "path": "docs/CONTINUITY.md",
+        "source_sha256": "6bcde628dc0f4f12d94df50a7a99127bb55c1c6e12c3764b5c9e9e0dd7a0f868",
+        "line_range": [
+          15,
+          21
+        ],
+        "excerpt": "## Repository authority\n\nThe public `autonomous-data-science-system` repository remains the sole project-development repository and the durable authority for ADS code, architecture, specifications, decisions, checkpoints, public state and development history.\n\nA private companion repository may preserve private knowledge needed for continuity, but it is not a second development repository and cannot silently override public project-development authority.\n\nConversation history may help, but must not override repository state. If repository artifacts disagree, resolve through status, scope, chronology, supersession and accepted authority. If material ambiguity remains, surface it explicitly rather than guessing.",
+        "source_git_blob_sha": "7c364b2ca8f1efa8ad575e0b3e3a50b7dd60375b"
+      },
+      "participants": [
+        "public ADS repository",
+        "private companion repository",
+        "conversation history"
+      ],
+      "source_grounded_case_facts": "The public repository is the sole project-development authority; a private companion may preserve delegated private continuity but cannot silently override public authority.",
+      "judgment_question": "How should the authority/delegation relationship between public and private continuity surfaces be durably owned or represented?"
+    },
+    {
+      "case_id": "RC-012",
+      "category": "live_routing",
+      "selection_reason": "Covers a compact current-state projection whose fields jointly describe the live route.",
+      "source": {
+        "path": "docs/current_routing.json",
+        "source_sha256": "8568f0f53a54672b2787edcf4e5b266c9573debd1543ba94bed96753307c8d41",
+        "line_range": [
+          1,
+          10
+        ],
+        "excerpt": "{\n    \"schema_version\": 1,\n    \"current_checkpoint\": 483,\n    \"active_development_branch\": \"v1-source-vault-bootstrap-resume\",\n    \"active_pr\": null,\n    \"promoted_integration_branch\": \"v1-frontend-spike\",\n    \"promoted_integration_sha\": \"2480109fadeee1e480ef03b82e335aacdf9adf91\",\n    \"latest_specification\": \"027\",\n    \"latest_experiment_outcome\": \"INCOMPLETE\",\n    \"current_boundary\": \"project-knowledge-real-corpus-discriminator-preparation\"",
+        "source_git_blob_sha": "7d5bca5608cf61899841a42db649c4eb8403a0d4"
+      },
+      "participants": [
+        "current checkpoint 483",
+        "active branch",
+        "promoted integration branch/SHA",
+        "current boundary"
+      ],
+      "source_grounded_case_facts": "The machine-readable live routing object binds the current checkpoint, active branch, promoted integration branch/SHA, experiment outcome and current boundary.",
+      "judgment_question": "How should the relationship among these live-routing facts be durably owned or represented?"
+    },
+    {
+      "case_id": "RC-013",
+      "category": "collaboration_write_scope",
+      "selection_reason": "Covers collaboration control semantics with scoped mutation authority.",
+      "source": {
+        "path": "docs/model_collaboration/threads/MC-0014/STATE.json",
+        "source_sha256": "d17abc2493a739521b411e7a848e07577b7fe7b90018f641c1d5fa36686ae5bf",
+        "line_range": [
+          45,
+          53
+        ],
+        "excerpt": "  \"allowed_secondary_write_surfaces\": [\n    {\n      \"collaborator_id\": \"claude\",\n      \"paths\": [\n        \"docs/model_collaboration/threads/MC-0014/messages/**\"\n      ]\n    }\n  ],\n  \"next_expected_actor\": \"human\",",
+        "source_git_blob_sha": "1b13fa106b5989a3ad254f665f499503299b547c"
+      },
+      "participants": [
+        "Claude",
+        "MC-0014 messages path",
+        "next expected actor"
+      ],
+      "source_grounded_case_facts": "MC-0014 records Claude as authorized to write only under the thread messages surface while separately recording the next expected actor.",
+      "judgment_question": "How should the relationship between collaborator identity, bounded write surface and turn/actor state be durably owned or represented?"
+    },
+    {
+      "case_id": "RC-014",
+      "category": "review_target",
+      "selection_reason": "Covers a task-specific branch/ref binding with reproducibility consequences.",
+      "source": {
+        "path": "docs/model_collaboration/threads/MC-0014/STATE.json",
+        "source_sha256": "d17abc2493a739521b411e7a848e07577b7fe7b90018f641c1d5fa36686ae5bf",
+        "line_range": [
+          7,
+          11
+        ],
+        "excerpt": "  \"target\": {\n    \"branch\": \"v1-source-vault-bootstrap-resume\",\n    \"base_ref\": \"85ade407b2f1957f5a3980aca92c09500db430b8\",\n    \"description\": \"MC-0014 adversarial interpretation complete. V0.2 admission selectivity was downgraded as circular/self-confirming, strong H1 and H2 were recognized as near-identical relation reification with different ownership/addressing, bounded-spine terminology was retired, and a real-corpus independent-judgment discriminator is next.\",\n    \"write_paths\": []",
+        "source_git_blob_sha": "1b13fa106b5989a3ad254f665f499503299b547c"
+      },
+      "participants": [
+        "MC-0014",
+        "v1-source-vault-bootstrap-resume",
+        "base_ref 85ade407..."
+      ],
+      "source_grounded_case_facts": "MC-0014 records one coordination branch and one exact review base for the adversarial evaluation.",
+      "judgment_question": "How should the relationship between a review task, its coordination branch and its exact immutable review target be durably owned or represented?"
+    },
+    {
+      "case_id": "RC-015",
+      "category": "authority_transition",
+      "selection_reason": "Covers a future authority switch gated by multiple lifecycle conditions.",
+      "source": {
+        "path": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+        "source_sha256": "9e7aef90e5295441b5b4cba13e4a626bcb067c6102c4d2157bc20e481036b6e1",
+        "line_range": [
+          17,
+          28
+        ],
+        "excerpt": "```text\nexisting files may be retained, changed, merged, split, transformed or retired\nexisting artifact families may be retained, changed, replaced or migrated\nlarge migration effort is acceptable when justified by long-term quality\nsunk cost is not a reason to preserve a weak architecture\nforeseeable scaling pressure is a valid design input\nthe design should be professional and robust for substantial future growth\n```\n\nThis does not authorize accidental knowledge loss. Replacing a representation is different from discarding the understanding, provenance or evidence that representation currently carries.\n\nThe current architecture remains operationally authoritative until a successor has been selected, implemented, migrated and validated strongly enough to assume that role.",
+        "source_git_blob_sha": "9513336f005834fa3f6cfb4284fd21d5968275cc"
+      },
+      "participants": [
+        "current knowledge architecture",
+        "candidate successor architecture"
+      ],
+      "source_grounded_case_facts": "The current architecture remains operationally authoritative until a successor has been selected, implemented, migrated and validated strongly enough to assume that role.",
+      "judgment_question": "How should the authority-transition relationship between the current architecture and a future successor be durably owned or represented?"
+    }
+  ]
+}
