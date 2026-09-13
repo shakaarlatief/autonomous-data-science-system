@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-13
-**Status:** MC-0013 ACTIVE INDEPENDENT COUNTER-DESIGN / CHATGPT CANDIDATE SYNTHESIS WITHHELD / MC-0010 DEFERRED
+**Status:** MC-0013 COMPARATIVE ARCHITECTURE REVIEW ACTIVE / INDEPENDENT CLAUDE DESIGN FROZEN / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -23,30 +23,34 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Current active collaboration obligation
 
-### MC-0013: independent project-knowledge architecture counter-design
+### MC-0013: comparative project-knowledge architecture review
 
 ```text
 collaborator               Claude / claude-03
 mode                       INDEPENDENT_THEN_COMPARATIVE
 coordination branch        v1-source-vault-bootstrap-resume
 independent evidence base  233eb932062a24473fcc4f4fe93160c952eea426
-phase                      INDEPENDENT ARCHITECTURE COUNTER-DESIGN
-expected output            docs/model_collaboration/threads/MC-0013/messages/001_claude_independent_architecture_counter_design.md
-status                     OPEN / CLAUDE MESSAGE 001 NEXT
+independent result         Message 001 frozen at 9005b73add028398a827fdf5b251069c65a83208
+phase                      COMPARATIVE ARCHITECTURE REVIEW
+expected output            docs/model_collaboration/threads/MC-0013/messages/003_claude_comparative_architecture_critique.md
+status                     OPEN / CLAUDE MESSAGE 003 NEXT
 conversation               03 - Project Knowledge Architecture Foundations and Design Method
 ```
 
-ChatGPT has completed a first candidate-family synthesis after the independent base, but that content is intentionally withheld. Claude may use the current branch only for MC-0013 routing and must bind substantive design reasoning to the exact pre-candidate commit above. The goal is candidate-design independence over a shared evidence base, not evidence blindness.
+Claude's candidate-independent Message 001 is valid and durably frozen. The withholding gate is now lifted. Comparative review should read Research 133 plus ChatGPT Message 002 and focus on the remaining architecture differences, especially distributed source-local declarations versus a bounded cross-object semantic/control spine, semantic ownership boundaries, low-friction capture, human inspectability, selective event history and a neutral common-fixture probe sequence.
 
-Durable contract:
+Durable contract and handoff:
 
 ```text
 docs/model_collaboration/threads/MC-0013/BRIEF.md
 docs/model_collaboration/threads/MC-0013/THREAD.md
 docs/model_collaboration/threads/MC-0013/STATE.json
+docs/model_collaboration/threads/MC-0013/messages/001_claude_independent_architecture_counter_design.md
+docs/model_collaboration/threads/MC-0013/messages/002_chatgpt_independent_design_disposition_and_comparative_handoff.md
+docs/research/133_candidate_architecture_family_synthesis_and_falsification_frame.md
 ```
 
-Research 124 remains the active architecture authority. Requirements V0.2 are unchanged and no target architecture is selected.
+Requirements V0.2 remain unchanged and no target architecture is selected.
 
 ## Most recently completed obligation
 

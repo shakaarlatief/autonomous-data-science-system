@@ -1,7 +1,7 @@
 # Research 133: Candidate Architecture Family Synthesis and Falsification Frame
 
 **Date:** 2026-09-13
-**Status:** FIRST ARCHITECTURE-FAMILY SYNTHESIS COMPLETE / INDEPENDENT COUNTER-DESIGN NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** FIRST ARCHITECTURE-FAMILY SYNTHESIS COMPLETE / CLAUDE INDEPENDENT COUNTER-DESIGN VALID / COMPARATIVE REVIEW ACTIVE / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Begin serious target-architecture synthesis for the ADS project-development knowledge architecture from the complete Research 124 evidence field and frozen Requirements V0.2. Construct materially different coherent architecture families, derive cross-family constraints, identify falsification questions and expose the strongest current integration hypothesis without selecting a target.
 **Authority:** Supporting architecture-design research under Research 124. Requirements V0.2 remain the acceptance authority. This record does not authorize implementation, migration or authority switch.
 **Declared references:** `research:124`, `research:126`, `research:127`, `research:128`, `research:129`, `research:130`, `research:131`, `research:132`, `checkpoint:474`, `path:docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md`
@@ -450,4 +450,28 @@ WORKING_HYPOTHESIS_STATUS=CHALLENGE_NOT_SELECTION
 REQUIREMENTS_V02=UNCHANGED_FROZEN
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=INDEPENDENT_CLAUDE_COUNTER_DESIGN
+```
+
+## 17. Claude independent counter-design received; comparative question sharpened
+
+MC-0013 Message 001 is a valid candidate-design-independent Claude contribution. Claude stayed on the exact pre-candidate substantive base and did not read this Research 133 record before freezing its design.
+
+The independent pass strongly converges with Research 133 on the architecture-level distinctions: selected control semantics need deterministic project-controlled representation; rationale and nuanced knowledge should remain rich/human-readable; semantic/vector/model retrieval is a subordinate nomination/discovery aid rather than governing authority; distributed document metadata is a serious family; explicit object/graph structure is a serious family with real schema cost; and event orientation is more plausibly selective than universally primary.
+
+The most valuable divergence is now precise. Claude currently prefers a distributed source-local declaration architecture, with generated routing/dispatch closure and a narrow authority-transition ledger. Research 133's strongest ChatGPT hypothesis instead gives selected cross-artifact identity/control semantics their own bounded authoritative spine. The unresolved question is therefore where authoritative deterministic semantics that span several artifacts should live.
+
+ChatGPT's Message 002 also corrects several requirement overstatements before comparative review: V0.2 does not force a pointer-only constitutional core, one project authority does not mean one physical store or one authoritative object per fact, workstream requirements do not force a literal state-machine implementation, KA-R35 requires human inspectability rather than a prose-only source layer, public/private safety is a behavioral requirement rather than a prescribed implementation, and KA-R48 means ordinary canonical commits alone do not fully answer low-friction conversation-born capture. The existing `claude-03` session also cannot repair the historical ChatGPT-only blind-baseline limitation because it is already evaluator-exposed.
+
+The comparison introduces a third hypothesis worth attacking rather than accepting automatically: partition semantic ownership between source-local facts and cross-object/control-state facts. Source-local declarations could own artifact-specific role/scope/evidence metadata, while a bounded cross-object substrate owns identity merge/split mappings, workstream state, relations with independent lifecycle, joint authority closure and selected transition semantics. Global navigation and retrieval remain derived. This may reduce duplicate truth, or it may merely create two authoring systems and a harder boundary problem.
+
+The next Claude turn is intentionally comparative. It will see Research 133 and ChatGPT Message 002 and should decide whether the bounded spine is genuinely distinct, whether partitioned ownership is coherent, and which common-fixture probes best discriminate the remaining serious hypotheses without giving one family an implementation-first advantage.
+
+```text
+CLAUDE_INDEPENDENT_DESIGN=VALID_FROZEN
+MAIN_ARCHITECTURE_DISAGREEMENT=DISTRIBUTED_DECLARATIONS_VS_BOUNDED_CROSS_OBJECT_SPINE
+PARTITIONED_SEMANTIC_OWNERSHIP=HYPOTHESIS_NOT_SELECTION
+COMPARATIVE_REVIEW=ACTIVE
+REQUIREMENTS_V02=UNCHANGED_FROZEN
+TARGET_ARCHITECTURE=NOT_SELECTED
+NEXT=CLAUDE_MC0013_MESSAGE_003
 ```

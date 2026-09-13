@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / FIRST CANDIDATE SYNTHESIS COMPLETE / MC-0013 INDEPENDENT COUNTER-DESIGN ACTIVE / TARGET ARCHITECTURE NOT SELECTED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / MC-0013 INDEPENDENT DESIGN VALID / COMPARATIVE ARCHITECTURE REVIEW ACTIVE / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -3629,4 +3629,27 @@ WORKING_HYPOTHESIS_STATUS=CHALLENGE_NOT_SELECTION
 REQUIREMENTS_V02=UNCHANGED_FROZEN
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=CLAUDE_MC0013_MESSAGE_001
+```
+
+## 76. MC-0013 independent design valid; comparative architecture review opens
+
+Claude MC-0013 Message 001 is durably frozen and valid as a candidate-design-independent architecture pass. It was written from exact substantive base `233eb932062a24473fcc4f4fe93160c952eea426` while Research 133 and Checkpoint 475 remained hidden. The independent design therefore supplies a useful second architecture path over the same frozen evidence field rather than a reaction to ChatGPT's candidate synthesis.
+
+Claude independently converges with Research 133 on several major boundaries: deterministic/project-controlled representation is needed for selected identity, authority, relation and continuation semantics; rich prose remains important for rationale and nuanced knowledge; probabilistic retrieval is subordinate to governing-authority resolution; distributed document declarations and explicit object/graph structures are both serious candidates; and project-wide event sourcing is not justified merely by selective temporal requirements.
+
+The main design divergence is now sharper than the original family lists. Claude prefers distributed source-local metadata/frontmatter compiled into generated routing/dispatch views, plus a narrow authority-transition ledger. ChatGPT's strongest hypothesis instead gives selected cross-artifact identity/control semantics their own bounded authoritative spine while rich sources retain rationale/exact content and global views remain derived.
+
+ChatGPT Message 002 preserves the comparison and corrects requirement overstatements before the next Claude turn. In particular, the frozen V0.2 boundary does not force a pointer-only core, a single physical truth store, a literal workstream state machine, or a prose-only source-of-truth layer. KA-R48 also means ordinary canonical commits alone do not fully explain low-friction candidate capture.
+
+A new comparative hypothesis is now explicit: semantic ownership might be partitioned so source-local facts remain local while cross-object/control-state facts receive their own authoritative home. This is not accepted architecture. The next comparative turn must attack whether that partition is coherent or simply creates two authoring systems.
+
+Mechanism-probe sequencing also remains open. The current preference is to complete the cheap comparative dialogue first, then freeze a common hard-case fixture and represent it through the strongest surviving hypotheses rather than prototyping only one model's preferred family first.
+
+```text
+MC0013_MESSAGE001=VALID_INDEPENDENT_DESIGN
+MC0013_PHASE=COMPARATIVE_ARCHITECTURE_REVIEW
+MAIN_DISAGREEMENT=DISTRIBUTED_DECLARATIONS_VS_BOUNDED_CROSS_OBJECT_SPINE
+REQUIREMENTS_V02=UNCHANGED_FROZEN
+TARGET_ARCHITECTURE=NOT_SELECTED
+NEXT=CLAUDE_MC0013_MESSAGE_003
 ```
