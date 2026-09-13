@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / WITHHELD OWNER SOURCE INCREMENTAL EVALUATION NEXT / TARGET ARCHITECTURE DESIGN PAUSED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / OWNER-SOURCE INCREMENTAL EVALUATION COMPLETE / CANDIDATE ARCHITECTURE SYNTHESIS NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -3387,4 +3387,52 @@ REQUIREMENTS_V02=OWNER_ACCEPTED_FROZEN
 TARGET_ARCHITECTURE=NOT_SELECTED
 ANTI_ANCHORING_SOURCE_GATE=OPEN
 NEXT=WITHHELD_OWNER_SOURCE_INCREMENTAL_EVALUATION
+```
+
+## 71. Owner-provided ICM source evaluated incrementally; candidate architecture synthesis next
+
+The project-owner-provided Interpretable Context Methodology material has now been evaluated at the anti-anchoring boundary preserved by Checkpoint 470. Detailed evidence is preserved in:
+
+```text
+docs/research/131_owner_provided_icm_source_incremental_evaluation.md
+```
+
+The evaluation treats the ICM paper and the current `RinDig/icm-architect` repository as incremental evidence only. The owner did not recommend adoption, and Research 124 does not reinterpret the preceding failure corpus, blind baselines, D1-D8 research or frozen V0.2 requirements as though ICM had guided them. The supplied Instagram account/reel remained unavailable for direct inspection through the active retrieval surfaces, so no unseen video content is used as evidence.
+
+The strongest ICM contribution is independent convergence plus implementation concreteness. Its small payload-light catalogs, layered task-shaped context, stage contracts, one-home-per-fact discipline, generated views, cold-agent walk tests and dependency-local change-impact reasoning strongly reinforce conclusions Research 124 had already reached independently around bounded bootstrap, progressive disclosure, source-versus-derived state, reconstruction qualification and dependency-local maintenance.
+
+Several mechanisms remain worth carrying into later architecture design without becoming requirements or a bundled ICM adoption:
+
+```text
+positive + negative context contracts, including explicit do-not-load boundaries
+routing-payload pressure as an active-surface smell
+repeating-unit-first representation choice
+ghost / represented-but-not-wired diagnostic state
+forward + reverse dependency/reference walks
+copy -> verify parity -> remove migration discipline
+source-map-like semantic provenance for consequential transformations
+cross-stage verification contracts
+repeated downstream correction -> governed source-improvement proposal
+```
+
+ICM also provides useful counter-evidence against overgeneralization. Its paper primarily targets sequential, repeatable, human-reviewed workflows; its empirical observations are preliminary rather than controlled; and its filesystem-first state/orchestration model does not by itself solve the broader ADS requirements around representation-independent identity, action-shaped authority source sets, temporal/supersession semantics, multi-workstream DAG continuation, interruption recovery, concurrent collaborators, public/private governance or qualified authority migration.
+
+The requirement disposition is therefore unchanged:
+
+```text
+REQUIREMENTS_V02_AMENDMENT=NO
+REQUIREMENTS_COUNT=50
+INVARIANTS_COUNT=17
+ICM_TARGET_SELECTION=NO
+TARGET_ARCHITECTURE=NOT_SELECTED
+```
+
+The owner-source gate is now complete. Research 124 may resume architecture construction, but the next phase must follow the methodology correction already preserved in Sections 48 and 51: reason deeply from the complete evidence and frozen requirements, construct materially different serious alternatives to expose assumptions and trade-offs, use prototypes and shared stress tests for falsification/qualification, and only later narrow toward a coherent target. It must not turn into a shallow architecture tournament and must not make ICM the default candidate merely because it was owner-provided last.
+
+```text
+OWNER_SOURCE_INCREMENTAL_EVALUATION=COMPLETE
+RESEARCH131=COMPLETE
+REQUIREMENTS_V02=UNCHANGED
+TARGET_ARCHITECTURE=NOT_SELECTED
+NEXT=CANDIDATE_ARCHITECTURE_SYNTHESIS
 ```
