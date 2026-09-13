@@ -1,7 +1,7 @@
 # Research 138: Relation-Lifecycle Discriminator V0.2 H1/H2 Empirical Result
 
 **Date:** 2026-09-13
-**Status:** V0.2 RELATION-LIFECYCLE PROBE COMPLETE / BOTH CANDIDATES SEMANTICALLY PASS / SELECTIVE FIRST-CLASS RELATION OWNERSHIP EMPIRICALLY SUPPORTED / TARGET ARCHITECTURE NOT SELECTED
+**Status:** V0.2 RELATION-LIFECYCLE PROBE COMPLETE / BOTH CANDIDATES SEMANTICALLY PASS / FAMILY BOUNDARY AND ADMISSION-SELECTIVITY CLAIMS CORRECTED BY MC-0014 / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Execute the exact hash-frozen Relation-Lifecycle Discriminator V0.2 against the strongest allowed H1 source-local representation and a narrowed H2 first-class relation substrate; measure correctness, ownership naturalness, write coupling, stale-update safety, admission selectivity and derived-state rebuildability.
 **Authority:** Supporting Research 124 empirical architecture evidence only. Requirements V0.2 remain the frozen candidate-acceptance authority. This result does not select a target architecture or authorize migration.
 **Declared references:** `research:124`, `research:136`, `research:137`, `path:docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md`, `path:docs/research/project_knowledge_architecture_probe_v02/RELATION_LIFECYCLE_FIXTURE_V02.json`, `path:docs/research/project_knowledge_architecture_probe_v02/RESULTS_V02.json`, `checkpoint:480`
@@ -376,3 +376,13 @@ REQUIREMENTS_V02=UNCHANGED_FROZEN
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=BOUNDED_ADVERSARIAL_CROSS_MODEL_INTERPRETATION
 ```
+
+## 15. MC-0014 adversarial correction
+
+MC-0014 materially narrows two claims made above.
+
+First, the final strong-H1 sidecar already stores the same lifecycle-bearing first-class relation object shape as H2. V0.2 therefore does not cleanly discriminate non-reified H1 from reified H2; it mainly compares endpoint-namespaced versus relation-addressed ownership of the same broad mechanism. The placement distinction remains real, but the family distinction was overstated.
+
+Second, the V0.2 admission/selectivity result is self-confirming as a classification test. The fixture supplies the same four semantic flags that `H2Probe.qualifies_for_spine()` reads directly. Zero false positives/negatives therefore establishes rule implementation correctness on hand-labeled inputs, not reliable classification of real unlabeled ADS relationships. The lifecycle, temporal, stale-update, missing-evidence and derived-rebuild results remain valid.
+
+Accordingly `H2_ADMISSION_SELECTIVITY=SUPPORTED_IN_V02` is withdrawn as a real-world classification claim. Research 139 replaces `bounded spine` with the representation-neutral working concept `selective semantic reification` and freezes the real-corpus independent-judgment protocol required to test the admission boundary properly.

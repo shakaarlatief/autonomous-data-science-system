@@ -340,3 +340,11 @@ REQUIREMENTS_V02=UNCHANGED_FROZEN
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=RELATION_LIFECYCLE_DISCRIMINATOR_FIXTURE_V02
 ```
+
+## 15. Post-probe adversarial measurement correction
+
+MC-0014 code-level review identified that two V0.1 scale metrics were aliases rather than independent measurements. `authoritative_location_count` and `full_rebuild_source_scan_count` use the same formula, and H2 `manual_global_entries` equals `spine_records` by construction. The raw result file remains valid evidence of the executed implementation, but these pairs must not be counted as independent lines of architecture support.
+
+The core V0.1 conclusions survive this correction: both candidates pass the fixture semantics; H1 requires no duplicate authoritative fact ownership; directional relations can remain source-local; derived authority closure can avoid a second authority store; and passive historical growth does not enlarge the active view in this fixture.
+
+Research 139 owns the corrected cross-probe interpretation and next real-corpus protocol.

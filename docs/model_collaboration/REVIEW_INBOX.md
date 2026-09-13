@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-13
-**Status:** MC-0014 ADVERSARIAL PROBE-EVIDENCE REVIEW ACTIVE / CLAUDE MESSAGE 001 NEXT / MC-0010 DEFERRED
+**Status:** NO ACTIVE CLAUDE OBLIGATION / MC-0014 RESOLVED / REAL-CORPUS DISCRIMINATOR PREPARATION NEXT / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -23,30 +23,37 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Current active collaboration obligation
 
-### MC-0014: adversarial interpretation of V0.1/V0.2 architecture-probe evidence
+There is no active Claude obligation. MC-0014 is resolved after one adversarial Claude message and one ChatGPT disposition. Research 124 now moves to the real-corpus relationship discriminator protocol in Research 139. The next Claude obligation should be opened only after an unlabeled corpus has been frozen and ChatGPT's independent judgment can be withheld from Claude by exact-base discipline.
+
+## Most recently completed obligation
+
+### MC-0014: adversarial interpretation of V0.1/V0.2 probe evidence
 
 ```text
 collaborator               Claude / claude-03
 mode                       ADVERSARIAL_REVIEW
 coordination branch        v1-source-vault-bootstrap-resume
 exact review target        85ade407b2f1957f5a3980aca92c09500db430b8
-review evidence            Requirements V0.2 + Research 134-138 + frozen fixtures/results/implementations
-next output                docs/model_collaboration/threads/MC-0014/messages/001_claude_adversarial_probe_interpretation.md
-status                     OPEN / CLAUDE MESSAGE 001 NEXT
+Claude message             001 @ e7834d626f5092be06fc9485d90e2d01a76033bb
+ChatGPT disposition        002
+result                     V0.2 family boundary narrowed / admission selectivity downgraded / bounded-spine label retired
+status                     RESOLVED
 conversation               03 - Project Knowledge Architecture Foundations and Design Method
 ```
 
-This is intentionally not blind. Claude should see both ChatGPT interpretations and raw probe evidence, then search for construct-validity defects, family-boundary leakage, self-fulfilling admission assumptions, stronger untested H1/H2 forms, measurement artifacts and unjustified target narrowing.
-
-Durable contract:
+Durable records:
 
 ```text
 docs/model_collaboration/threads/MC-0014/BRIEF.md
 docs/model_collaboration/threads/MC-0014/THREAD.md
 docs/model_collaboration/threads/MC-0014/STATE.json
+docs/model_collaboration/threads/MC-0014/RESOLUTION.md
+docs/model_collaboration/threads/MC-0014/messages/001_claude_adversarial_probe_interpretation.md
+docs/model_collaboration/threads/MC-0014/messages/002_chatgpt_adversarial_review_disposition_and_close.md
+docs/research/139_cross_model_probe_reconciliation_and_real_corpus_discriminator_protocol.md
 ```
 
-## Most recently completed obligation
+The thread closes without target selection. V0.1 remains strong evidence for source-local-by-default directional ownership. V0.2 lifecycle mechanics remain valid, but the final H1 already reifies the relation and H2's admission rule is self-confirming on hand-labeled flags. The next discriminator is real-corpus, unlabeled and independently judged.
 
 ### MC-0013: independent and comparative project-knowledge architecture design
 

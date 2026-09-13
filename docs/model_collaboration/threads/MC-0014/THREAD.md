@@ -1,7 +1,7 @@
 # MC-0014 Thread: Adversarial Probe-Evidence Interpretation
 
 **Thread:** MC-0014
-**Status:** OPEN / CLAUDE ADVERSARIAL INTERPRETATION NEXT
+**Status:** RESOLVED / ADVERSARIAL INTERPRETATION RECONCILED / REAL-CORPUS DISCRIMINATOR NEXT
 **Review mode:** ADVERSARIAL_REVIEW
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
 **Exact review target:** `85ade407b2f1957f5a3980aca92c09500db430b8`
@@ -16,7 +16,7 @@ Adversarially test the interpretation of Common Fixture V0.1 and Relation-Lifecy
 ## Current phase
 
 ```text
-ADVERSARIAL_PROBE_INTERPRETATION
+RESOLVED_ADVERSARIAL_INTERPRETATION_COMPLETE
 ```
 
 ## Expected dialogue sequence
@@ -27,7 +27,7 @@ ADVERSARIAL_PROBE_INTERPRETATION
 003+ only if one unresolved disagreement has clear additional value
 ```
 
-Only Message 001 is currently authorized.
+Message 001 was completed by Claude. ChatGPT Message 002 accepts the material corrections and closes the thread. No Message 003 is authorized.
 
 ## Write ownership
 
@@ -41,4 +41,13 @@ docs/model_collaboration/threads/MC-0014/messages/**
 MC0014=OPEN
 NEXT=CLAUDE_MESSAGE_001
 TARGET_ARCHITECTURE=NOT_SELECTED
+```
+
+## Resolution
+
+Claude's review exposed a real family-boundary collapse in V0.2 and a circular admission/selectivity test. ChatGPT accepted both findings, retired `bounded spine` as the leading semantic mechanism label, retained selective semantic reification as a representation-neutral working concept, and routed the research to a real-corpus independent-judgment discriminator.
+
+```text
+MC0014=RESOLVED
+NEXT=REAL_CORPUS_RELATIONSHIP_DISCRIMINATOR
 ```

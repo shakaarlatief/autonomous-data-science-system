@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / V0.1 + V0.2 PROBES COMPLETE / MC-0014 ADVERSARIAL INTERPRETATION ACTIVE / TARGET ARCHITECTURE NOT SELECTED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / MC-0014 RESOLVED WITH PROBE-INTERPRETATION CORRECTIONS / REAL-CORPUS DISCRIMINATOR NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -3797,5 +3797,26 @@ MC0014=OPEN
 MODE=ADVERSARIAL_REVIEW
 EXACT_TARGET=85ade407b2f1957f5a3980aca92c09500db430b8
 NEXT=CLAUDE_MESSAGE_001
+TARGET_ARCHITECTURE=NOT_SELECTED
+```
+
+## 83. MC-0014 resolves with a narrower mechanism concept and a real-corpus discriminator
+
+Claude's MC-0014 Message 001 performed the intended code-level adversarial interpretation of V0.1/V0.2. ChatGPT accepts the material corrections and closes the thread without another round.
+
+The strongest clean result remains V0.1: directional relations and several workstream/identity facts can remain source-local with deterministic derived closure and zero duplicate authoritative owners. V0.2 remains useful for relation lifecycle, temporal semantics, stale-update rejection, evidence failure and derived-view rebuildability, but two earlier claims are downgraded.
+
+First, the final strong-H1 sidecar already contains a lifecycle-bearing first-class relation object structurally near-identical to H2's relation object. V0.2 therefore mainly compares address/ownership namespace, not reification versus non-reification. Second, H2's admission/selectivity test reads hand-authored fixture flags that encode the answer; its 0/0 false-positive/false-negative result validates rule execution, not real ADS classification reliability.
+
+The leading semantic vocabulary is therefore corrected from `bounded spine` to **selective semantic reification** / **selectively first-class semantic/control objects**. First-class identity does not itself imply central physical storage. H3 remains a reference pole: relation-object machinery convergence partially approaches one reopening condition, but object-primary simplification of the broader hard-case set is still unobserved.
+
+Research 139 freezes the next protocol. The project will use a small real ADS relationship corpus with no architecture labels, obtain mutually hidden independent ChatGPT and Claude judgments, and only afterward evaluate any mechanized observable-feature admission rule. Authoring-time ownership/classification cost and reviewer disagreement become empirical evidence rather than fixture assumptions.
+
+```text
+MC0014=RESOLVED
+V02_ADMISSION_SELECTIVITY_REAL_WORLD=UNTESTED
+BOUNDED_SPINE_LEADING_LABEL=RETIRED
+SELECTIVE_SEMANTIC_REIFICATION=WORKING_CONCEPT
+REAL_CORPUS_DISCRIMINATOR=NEXT
 TARGET_ARCHITECTURE=NOT_SELECTED
 ```

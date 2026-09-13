@@ -2,12 +2,12 @@
   "schema_version": 1,
   "thread_id": "MC-0014",
   "review_mode": "ADVERSARIAL_REVIEW",
-  "lifecycle_state": "OPEN",
-  "phase": "ADVERSARIAL_PROBE_INTERPRETATION",
+  "lifecycle_state": "RESOLVED",
+  "phase": "RESOLVED_ADVERSARIAL_INTERPRETATION_COMPLETE",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "85ade407b2f1957f5a3980aca92c09500db430b8",
-    "description": "Adversarially interpret the frozen V0.1/V0.2 H1-H2 probe evidence and ChatGPT synthesis before target narrowing. No target architecture or requirements change is authorized.",
+    "description": "MC-0014 adversarial interpretation complete. V0.2 admission selectivity was downgraded as circular/self-confirming, strong H1 and H2 were recognized as near-identical relation reification with different ownership/addressing, bounded-spine terminology was retired, and a real-corpus independent-judgment discriminator is next.",
     "write_paths": []
   },
   "task_owner": "chatgpt",
@@ -50,7 +50,7 @@
       ]
     }
   ],
-  "next_expected_actor": "claude",
+  "next_expected_actor": "human",
   "independence": {
     "status": "NOT_APPLICABLE",
     "review_base_ref": "85ade407b2f1957f5a3980aca92c09500db430b8",
@@ -62,11 +62,11 @@
     "notes": "No blindness claim is made. Exact-target binding exists for reproducibility and drift control, not independence."
   },
   "last_transition": {
-    "transition_id": "mc0014-open-adversarial-probe-review",
-    "from_state": null,
-    "to_state": "OPEN",
+    "transition_id": "mc0014-adversarial-review-resolved",
+    "from_state": "OPEN",
+    "to_state": "RESOLVED",
     "actor": "chatgpt",
-    "reason": "Research 134 deferred another Claude contribution until empirical probe evidence existed. V0.1 and V0.2 are now complete, making adversarial cross-model interpretation higher value than another internal synthetic probe before target narrowing.",
-    "repository_head": "85ade407b2f1957f5a3980aca92c09500db430b8"
+    "reason": "Claude Message 001 exposed material interpretation defects that ChatGPT accepts. No unresolved disagreement remains; the next uncertainty requires real-corpus behavioral evidence rather than another architecture dialogue round.",
+    "repository_head": "e7834d626f5092be06fc9485d90e2d01a76033bb"
   }
 }
