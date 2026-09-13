@@ -1,7 +1,7 @@
 # Current State
 
-**Checkpoint:** 460
-**Date:** 2026-09-12
+**Checkpoint:** 461
+**Date:** 2026-09-13
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
 **Promoted V1 integration branch:** `v1-frontend-spike` at `2480109fadeee1e480ef03b82e335aacdf9adf91`
@@ -23,6 +23,8 @@ Repository artifacts remain authoritative across chats and models.
 ---
 
 ## Current active stage: Research 124 project-development knowledge architecture redesign
+
+Checkpoint 461 accepts BL-004-A and closes the original four-scenario ChatGPT baseline pilot. BL-004 strongly avoids the historical prose-over-exact-source failure: the fresh ChatGPT reconstructs a source-strength hierarchy in which promoted semantic/interaction authority, latest Phase-C selections, exact accepted design-lab implementations and the production Cockpit substrate play different roles, and it explicitly requires source-level reuse/comparison rather than recreating accepted behavior from prose. Across BL-001 through BL-004, the current architecture proves more reconstructable than a blanket failure narrative would suggest, while narrower weaknesses remain around pre-retrieval situation dispatch, post-activation task fidelity, reconstruction cost and task-sensitive evidence depth. One central MC-0011 question remains insufficiently tested because BL-002 explicitly cued the existence of the collaboration process. Exactly one adjacent uncued variant, BL-002U, is therefore next before broad external research. The owner paper/video remains withheld.
 
 Checkpoint 460 accepts BL-003-A as a valid broad-orientation baseline. The fresh ChatGPT recovered a broad multi-domain project picture from the frozen snapshot despite the historical global Knowledge Map drift by using repository-tree discovery plus selective deep-source reads rather than treating the map as exhaustive. This weakens any strong claim that the drift made broad reconstruction impossible, while preserving it as evidence of semantic routing degradation. The trial still required about 18 tool/read actions, so cheap bounded cold-start reconstruction and long-run sublinear scaling remain unproven. No identical repeat is needed; a later fixed-budget variant would be more informative if cost scaling needs sharper evidence. BL-004 is now the next pilot scenario, testing exact-source fidelity before holistic Cockpit integration. Broad external research and the owner paper/video remain paused.
 

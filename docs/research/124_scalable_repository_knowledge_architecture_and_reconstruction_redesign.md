@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
-**Date:** 2026-09-12
-**Status:** ACTIVE / BLIND BASELINE PROTOCOL V0.1 FROZEN / PILOT EXECUTION NEXT / TARGET ARCHITECTURE DESIGN PAUSED
+**Date:** 2026-09-13
+**Status:** ACTIVE / INITIAL CHATGPT BASELINE PILOT COMPLETE / ONE UNCUED DISPATCH VARIANT NEXT / TARGET ARCHITECTURE DESIGN PAUSED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -2050,4 +2050,102 @@ RECONSTRUCTION_COST_PRESSURE=observed
 IMMEDIATE_IDENTICAL_REPLICATE=NO
 POSSIBLE_LATER_FIXED_BUDGET_VARIANT=YES
 NEXT=BL-004_CHATGPT_A
+```
+## 61. BL-004-A valid and initial four-scenario pilot complete
+
+BL-004-A is evaluated at:
+
+```text
+docs/research/project_knowledge_baselines/evaluations/BL-004_chatgpt_a_evaluation.md
+```
+
+The trial is valid under Protocol V0.2 and strongly does not reproduce the historical exact-source fidelity failure represented by `KF-AS-01` / `KF-CS-01`.
+
+The fresh ChatGPT reconstructed a task-sensitive source hierarchy instead of flattening all Phase-C evidence into prose peers:
+
+```text
+promoted interaction specification
+    -> semantic/product foundations
+    -> latest explicit Phase-C selections
+    -> exact accepted design-lab implementation targets as fidelity oracles
+    -> existing production Cockpit as integration substrate rather than visual authority
+```
+
+It explicitly rejected recreating accepted visual/interaction mechanisms from memory or prose where exact accepted implementations exist. It proposed porting exact geometry/timing/layering/behavior from source implementations, while refusing to import prototype-only persistence, fixture ontology or experiment controls merely because they co-reside in the prototype.
+
+This is important evidence for a **task-sensitive evidence-depth** requirement:
+
+```text
+orientation task
+    may stop at accepted synthesis / governing decision
+
+high-fidelity implementation task
+    must descend into exact executable provenance when prose alone is too lossy
+```
+
+The trial did not exhaustively inspect every accepted design-lab CSS/JS file line-by-line, so it demonstrates correct source-strength reasoning and source-level integration planning rather than complete implementation-source consumption.
+
+### 61.1 Initial pilot synthesis
+
+The original four-scenario ChatGPT pilot is now complete.
+
+```text
+BL-001
+    operational authority activates
+    exact ordered task contract still lost after activation
+
+BL-002-B
+    collaboration process discoverable/reconstructable under explicit process cue
+    uncued situation dispatch not cleanly tested
+
+BL-003
+    broad orientation recoverable despite global-map drift
+    reconstruction requires non-trivial compensating search/read effort
+
+BL-004
+    exact-source fidelity hierarchy recoverable
+    many-source assembly remains non-trivial in cost
+```
+
+The pilot therefore changes the empirical framing substantially. The current project-development knowledge architecture is **not generally incapable of preserving or reconstructing project understanding**. Instead, several narrower failure boundaries are supported:
+
+```text
+situation activation may fail before retrieval begins
+source activation does not guarantee exact answer/task fidelity
+broad/exact reconstruction may remain possible but require expensive compensating search
+required evidence depth depends on task fidelity
+```
+
+### 61.2 One targeted adjacent variant before external research
+
+MC-0011 made uncued situation-class recognition a central unresolved question. BL-002-B cannot answer it because the prompt explicitly told the collaborator to use the way the project already handles multi-model collaboration.
+
+Research 124 therefore authorizes exactly one additional pre-external-evidence variant:
+
+```text
+BL-002U
+    same historical snapshot as BL-002
+    constructed adjacent wording
+    no explicit cue that a project-specific collaboration process exists
+```
+
+Request:
+
+```text
+docs/research/project_knowledge_baselines/requests/BL-002U_uncued_model_collaboration_dispatch.md
+```
+
+This is not an automatic expansion into a larger benchmark. No fixed-budget BL-003 variant or extra BL-001/BL-004 replicate is required before external research at this boundary.
+
+After BL-002U, the pilot should be synthesized and the project can move into broad question-driven external research unless the variant itself exposes a protocol defect.
+
+```text
+BL004_A=VALID
+INITIAL_FOUR_SCENARIO_PILOT=COMPLETE
+UNCUED_SITUATION_DISPATCH=UNRESOLVED
+TARGETED_ADJACENT_VARIANT=BL-002U_ONLY
+TARGET_ARCHITECTURE=NOT_SELECTED
+EXTERNAL_RESEARCH=PAUSED_UNTIL_BL002U
+WITHHELD_EXTERNAL_SOURCE=STILL_WITHHELD
+NEXT=BL-002U_UNCUED_DISPATCH
 ```

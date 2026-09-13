@@ -140,6 +140,8 @@ Self-reported approximate tool/read effort if available
 
 The trial must preserve its answer **before** reading any evaluator material. It must never amend the answer after seeing the rubric or another result.
 
+These result receipts are durable Research 124 empirical evidence. The repository therefore carries a narrow `.gitignore` exception for `docs/research/project_knowledge_baselines/results/*.md` so future trial receipts are visible to ordinary Git preservation instead of being swallowed by the repository-wide generated `**/results/` ignore rule.
+
 ## 6. Pilot scenarios
 
 ### BL-001 - Operational governing-procedure activation
@@ -327,6 +329,14 @@ docs/research/project_knowledge_baselines/requests/BL-004_cockpit_source_fidelit
 
 Their substantive tasks and frozen snapshots are unchanged.
 
+After the original four-scenario pilot completed, one construct-validity gap remained: BL-002 explicitly cued the existence of a project-specific collaboration process. Research 124 therefore authorizes one adjacent uncued-dispatch variant before external research:
+
+```text
+docs/research/project_knowledge_baselines/requests/BL-002U_uncued_model_collaboration_dispatch.md
+```
+
+BL-002U uses the same frozen snapshot as BL-002 and changes only the user-task wording so it no longer tells the collaborator that a governed multi-model process exists. This is a targeted follow-up, not a general pilot expansion.
+
 Initial result paths are reserved as:
 
 ```text
@@ -335,6 +345,7 @@ docs/research/project_knowledge_baselines/results/BL-002_chatgpt_a.md        # i
 docs/research/project_knowledge_baselines/results/BL-002_chatgpt_b.md        # replacement
 docs/research/project_knowledge_baselines/results/BL-003_chatgpt_a.md
 docs/research/project_knowledge_baselines/results/BL-004_chatgpt_a.md
+docs/research/project_knowledge_baselines/results/BL-002U_chatgpt_a.md       # targeted uncued variant
 ```
 
 Trials should run sequentially enough that each result commit can be synchronized before the next writer commits. This avoids turning the baseline into a concurrent-write test.

@@ -44,5 +44,9 @@ frontend/test-results/
 **/generated/
 **/results/
 
+# Research 124 blind-baseline receipts are durable empirical evidence, not generated runtime output.
+!docs/research/project_knowledge_baselines/results/
+!docs/research/project_knowledge_baselines/results/*.md
+
 # Local logs
 *.log
