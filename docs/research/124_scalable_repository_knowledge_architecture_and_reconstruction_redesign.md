@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / OWNER-SOURCE INCREMENTAL EVALUATION COMPLETE / CANDIDATE ARCHITECTURE SYNTHESIS NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / OWNER-SOURCE CHATGPT EVALUATION COMPLETE / MC-0012 STAGED CLAUDE REASSESSMENT ACTIVE / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -3435,4 +3435,73 @@ RESEARCH131=COMPLETE
 REQUIREMENTS_V02=UNCHANGED
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=CANDIDATE_ARCHITECTURE_SYNTHESIS
+```
+
+## 72. MC-0012 opens staged Claude reassessment before architecture synthesis
+
+Before beginning serious candidate architecture synthesis, the project owner asked whether Claude should contribute at the current boundary. Repository-native collaboration evidence showed an important asymmetry: Claude's MC-0011 position was preserved before the empirical failure corpus, blind baseline program, Research 125-129 external evidence, Research 130 reconciliation, Requirements V0.2 freeze and the later owner-source exposure. Claude therefore had not yet evaluated most of the evidence that now constrains the design space.
+
+The owner explicitly authorized a new bounded collaboration rather than reopening MC-0011. MC-0012 uses staged information control:
+
+```text
+PHASE 1
+    exact substantive evidence snapshot:
+    d9794a880ad0b235102fc752dae91bde6c29bd24
+
+    Claude evaluates:
+        post-MC-0011 empirical audits
+        historical failure corpus
+        BL-001 / BL-002-B / BL-002U / BL-003 / BL-004
+        Research 125-129
+        Research 130
+        frozen Requirements V0.2
+
+    Claude does NOT see:
+        owner-source identity/content
+        Research 131
+        Checkpoint 471 post-source conclusions
+        descendant Research 124 source-evaluation material
+
+PHASE 2
+    may be opened only after Claude Message 001 is durably frozen
+    and ChatGPT dispositions the Phase-1 contribution
+
+    then the owner source can be exposed explicitly so its incremental
+    contribution can be separated from the larger evidence-program update
+```
+
+This creates a stronger evidence chain than moving directly from MC-0011 to post-source Claude review:
+
+```text
+Claude MC-0011
+    pre later empirical/external evidence
+    pre owner source
+        ->
+Claude MC-0012 Phase 1
+    post evidence + post V0.2 freeze
+    still pre owner source
+        ->
+Claude MC-0012 Phase 2
+    post owner source
+        ->
+ChatGPT/Claude reconciliation
+        ->
+architecture synthesis
+```
+
+The current coordination branch already contains Research 131, so Phase 1 cannot safely use current HEAD as its substantive evidence base. MC-0012 therefore permits current-branch reads only for collaboration routing and binds all substantive Phase-1 project reasoning to the exact pre-source-evaluation snapshot. Unexpected descendant/post-exposure leakage invalidates the phase rather than being mentally ignored.
+
+The Phase-1 questions are deliberately broader than ICM. They ask Claude to reassess its own MC-0011 positions against the density audits, failure corpus, blind baselines, D1-D8 external research and the full V0.2 requirement/invariant set; distinguish owner constitutional choices from external empirical claims; challenge solution-shaping risk; state remaining uncertainty; and freeze pre-exposure revision predictions before any source identity is disclosed.
+
+This is a bounded collaboration gate, not a general requirement that Claude approve Research 124. Candidate architecture synthesis is paused only until the staged reassessment supplies the missing second-model evidence or fails visibly.
+
+```text
+MC0012=OPEN
+MC0012_PHASE1=POST_EVIDENCE_PRE_OWNER_SOURCE_REASSESSMENT
+PHASE1_REVIEW_BASE=d9794a880ad0b235102fc752dae91bde6c29bd24
+CLAUDE_SESSION=claude-04
+OWNER_SOURCE_EXPOSURE_TO_CLAUDE=PAUSED_UNTIL_MESSAGE_001
+REQUIREMENTS_V02=UNCHANGED_FROZEN
+TARGET_ARCHITECTURE=NOT_SELECTED
+NEXT=CLAUDE_MC0012_MESSAGE_001
 ```

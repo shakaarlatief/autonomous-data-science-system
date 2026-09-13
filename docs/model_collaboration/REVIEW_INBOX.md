@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
-**Date:** 2026-09-12
-**Status:** NO ACTIVE CLAUDE OBLIGATION / MC-0011 RESOLVED / MC-0010 DEFERRED BY OWNER ROUTING
+**Date:** 2026-09-13
+**Status:** MC-0012 ACTIVE PHASE 1 / CLAUDE POST-EVIDENCE PRE-OWNER-SOURCE REASSESSMENT / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -23,9 +23,30 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Current active collaboration obligation
 
-There is no active Claude obligation at this boundary.
+### MC-0012: post-evidence reassessment before staged owner-source exposure
 
-MC-0011 has been resolved by explicit project-owner decision after the six-message foundational dialogue. Research 124 now proceeds under ChatGPT task ownership into empirical failure characterization and broad external research. A future Claude obligation should be opened only when a new bounded collaboration purpose is justified.
+```text
+collaborator               Claude / claude-04
+mode                       REVIEWED / staged-exposure current-context reassessment
+coordination branch        v1-source-vault-bootstrap-resume
+phase-1 evidence target    d9794a880ad0b235102fc752dae91bde6c29bd24
+phase                      POST-EVIDENCE / PRE-OWNER-SOURCE
+expected output            docs/model_collaboration/threads/MC-0012/messages/001_claude_post_evidence_pre_owner_source_reassessment.md
+status                     OPEN / CLAUDE MESSAGE 001 NEXT
+conversation               04 - Project Knowledge Architecture Evidence Reassessment
+```
+
+Phase 1 updates Claude's MC-0011 position against the completed Research 124 evidence program and frozen Requirements V0.2 while deliberately preserving blindness to the separately withheld owner-provided source and ChatGPT's later post-source evaluation. Current-branch access is routing-only; substantive evidence is bound to the exact pre-exposure target above. If descendant/post-exposure material leaks into context, the phase must stop as contaminated.
+
+Durable contract:
+
+```text
+docs/model_collaboration/threads/MC-0012/BRIEF.md
+docs/model_collaboration/threads/MC-0012/THREAD.md
+docs/model_collaboration/threads/MC-0012/STATE.json
+```
+
+Architecture synthesis is paused only for this bounded collaboration gate. MC-0011 remains resolved and MC-0010 remains deferred.
 
 ## Most recently completed obligation
 

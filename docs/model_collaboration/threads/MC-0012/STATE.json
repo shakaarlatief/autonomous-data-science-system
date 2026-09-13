@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "thread_id": "MC-0012",
+  "review_mode": "REVIEWED",
+  "lifecycle_state": "OPEN",
+  "phase": "PHASE1_POST_EVIDENCE_PRE_OWNER_SOURCE_REASSESSMENT",
+  "target": {
+    "branch": "v1-source-vault-bootstrap-resume",
+    "base_ref": "d9794a880ad0b235102fc752dae91bde6c29bd24",
+    "description": "Staged Claude reassessment of Research 124: Phase 1 reviews the completed empirical/external evidence program and frozen Requirements V0.2 at the exact pre-owner-source snapshot; later Phase 2 may expose the owner source only after Phase-1 evidence is durably frozen.",
+    "write_paths": []
+  },
+  "task_owner": "chatgpt",
+  "target_write_owner": null,
+  "participants": [
+    {
+      "collaborator_id": "chatgpt",
+      "interaction_environment": "ChatGPT",
+      "interaction_session": "chatgpt-24",
+      "roles": [
+        "TASK_OWNER",
+        "RESEARCHER",
+        "CRITIC"
+      ]
+    },
+    {
+      "collaborator_id": "claude",
+      "interaction_environment": "Claude",
+      "interaction_session": "claude-04",
+      "roles": [
+        "REVIEWER",
+        "CRITIC",
+        "COUNTER_DESIGNER",
+        "RESEARCHER"
+      ]
+    },
+    {
+      "collaborator_id": "human",
+      "interaction_environment": "Human",
+      "interaction_session": "project-owner",
+      "roles": [
+        "HUMAN_DECIDER"
+      ]
+    }
+  ],
+  "allowed_secondary_write_surfaces": [
+    {
+      "collaborator_id": "claude",
+      "paths": [
+        "docs/model_collaboration/threads/MC-0012/messages/**"
+      ]
+    }
+  ],
+  "next_expected_actor": "claude",
+  "independence": {
+    "status": "PARTIALLY_INDEPENDENT",
+    "review_base_ref": "d9794a880ad0b235102fc752dae91bde6c29bd24",
+    "known_exposures": [
+      "Claude previously participated in MC-0011 and therefore knows the pre-evidence Research 124 framing and its own Messages 001/003/005 plus the interleaved ChatGPT responses.",
+      "Phase 1 intentionally exposes Claude to the completed project-specific audits, failure corpus, ChatGPT-only blind baselines, Research 125-130 external evidence/reconciliation, and owner-frozen Requirements V0.2.",
+      "The existence of a separately withheld owner-provided source is known from MC-0011 and the pre-exposure Research 124 history, but its identity/content must remain hidden during Phase 1.",
+      "The current coordination branch contains post-exposure material, so Phase 1 limits current-branch access to collaboration-routing files and binds all substantive evidence to the exact pre-exposure review base."
+    ],
+    "notes": "This is not blind to Research 124 or to ChatGPT prior reasoning. Independence is specifically preserved for the incremental effect of the owner-provided source: Claude must first freeze an updated post-evidence/pre-source position before Phase 2 exposure."
+  },
+  "last_transition": {
+    "transition_id": "mc0012-open-phase1-post-evidence-pre-owner-source",
+    "from_state": "CLOSED",
+    "to_state": "OPEN",
+    "actor": "human",
+    "reason": "The project owner explicitly authorized proceeding with a new Claude collaboration after discovering that Claude had not yet evaluated the post-MC-0011 empirical/external evidence program or the later owner source. Phase 1 preserves Claude blindness to the owner source while updating its position on the completed evidence and V0.2 freeze.",
+    "repository_head": "ff51aa23b7e6d8a32692ad57394ab0aea631b7b6"
+  }
+}
