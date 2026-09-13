@@ -316,6 +316,7 @@ docs/research/127_capture_consolidation_promotion_and_source_derived_state_deep_
 docs/research/128_authority_activation_and_temporal_supersession_deep_dive.md
 docs/research/129_consolidation_fidelity_provenance_and_maintenance_economics_deep_dive.md
 docs/research/130_requirements_evidentiary_provenance_reconciliation.md
+docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md
 docs/checkpoints/449_scalable_knowledge_architecture_redesign_opened.md
 docs/checkpoints/450_knowledge_architecture_baseline_inventory_complete_requirements_next.md
 docs/checkpoints/451_semantic_git_managed_python_integrity_repair_publication_restored.md
@@ -337,6 +338,7 @@ docs/checkpoints/466_capture_consolidation_source_derived_deep_dive_complete_aut
 docs/checkpoints/467_authority_activation_temporal_supersession_deep_dive_complete_fidelity_economics_next.md
 docs/checkpoints/468_consolidation_fidelity_maintenance_economics_deep_dive_complete_requirements_reconciliation_next.md
 docs/checkpoints/469_provisional_requirements_reconciliation_v02_complete_owner_review_next.md
+docs/checkpoints/470_requirements_v02_owner_accepted_frozen_owner_source_gate_open.md
 docs/research/PROJECT_KNOWLEDGE_FAILURE_CORPUS.md
 docs/research/project_knowledge_baselines/PROJECT_KNOWLEDGE_BLIND_BASELINE_PROTOCOL.md
 docs/local_execution/validation/206_semantic_git_managed_python_integrity_and_publication_restored.md
@@ -872,7 +874,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-469 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-470 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

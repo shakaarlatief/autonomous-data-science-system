@@ -1,9 +1,9 @@
 # Research 130: Requirements and Evidentiary-Provenance Reconciliation
 
 **Date:** 2026-09-13
-**Status:** PROVISIONAL RECONCILIATION V0.2 COMPLETE / OWNER REVIEW NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** OWNER-ACCEPTED / REQUIREMENTS V0.2 FROZEN / WITHHELD OWNER SOURCE INCREMENTAL EVALUATION NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Reconcile the 45 Phase-B requirements and 15 architecture invariants frozen before the historical baseline and external evidence program against owner intent, the historical failure corpus, blind ChatGPT baseline results, and Research 126-129 D1-D8 external evidence. Produce a solution-neutral proposed V0.2 requirement boundary without selecting a successor architecture.
-**Authority:** Research support and proposed requirements revision under Research 124. The original Phase-B requirements remain the last frozen requirements boundary until the project owner accepts or amends this reconciliation. This record does not select a target architecture and does not authorize migration.
+**Authority:** Research support and accepted requirements reconciliation under Research 124. The owner accepted the proposed V0.2 calibration and additions on 2026-09-13; the exact frozen boundary now lives in `docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md`. This record does not select a target architecture and does not authorize migration.
 **Declared references:** `research:124`, `research:125`, `research:126`, `research:127`, `research:128`, `research:129`, `checkpoint:463`, `checkpoint:468`, `path:docs/research/PROJECT_KNOWLEDGE_FAILURE_CORPUS.md`, `path:docs/research/project_knowledge_baselines/evaluations/BL-001_chatgpt_a_evaluation.md`, `path:docs/research/project_knowledge_baselines/evaluations/BL-002_chatgpt_b_evaluation.md`, `path:docs/research/project_knowledge_baselines/evaluations/BL-002U_chatgpt_a_evaluation.md`, `path:docs/research/project_knowledge_baselines/evaluations/BL-003_chatgpt_a_evaluation.md`, `path:docs/research/project_knowledge_baselines/evaluations/BL-004_chatgpt_a_evaluation.md`
 
 ## 1. Why reconciliation is required
@@ -383,15 +383,45 @@ freeze reconciled requirements V0.2
     -> only then narrow toward a target architecture
 ```
 
-The owner paper/video remains withheld **until** this reconciliation is accepted or amended.
+The acceptance condition has now been met. The previously withheld owner paper/video may now be exposed for incremental evaluation against the frozen V0.2 boundary.
 
 ```text
-RESEARCH130=PROVISIONAL_REQUIREMENTS_RECONCILIATION_COMPLETE
+RESEARCH130=OWNER_ACCEPTED_REQUIREMENTS_RECONCILIATION_COMPLETE
 ORIGINAL_REQUIREMENTS_DELETED=0
-PROPOSED_REQUIREMENTS_V02=50
-PROPOSED_INVARIANTS_V02=17
+REQUIREMENTS_V02=FROZEN
+REQUIREMENTS_V02_COUNT=50
+INVARIANTS_V02_COUNT=17
 TARGET_ARCHITECTURE=NOT_SELECTED
-OWNER_REVIEW=REQUIRED_BEFORE_FREEZE
-WITHHELD_OWNER_SOURCE=STILL_WITHHELD
-NEXT=OWNER_REVIEW_AND_FREEZE_OR_AMEND_REQUIREMENTS_V02
+OWNER_REVIEW=COMPLETE
+WITHHELD_OWNER_SOURCE=READY_FOR_INCREMENTAL_EVALUATION
+NEXT=WITHHELD_OWNER_SOURCE_INCREMENTAL_EVALUATION
 ```
+
+## 17. Owner acceptance and freeze
+
+The project owner explicitly accepted the four Research 130 review points without amendment on 2026-09-13:
+
+```text
+generic continuation requires broad orientation;
+narrow governed work may use task-shaped safe orientation
+
+KA-R46..KA-R50 accepted
+KA-I16..KA-I17 accepted
+
+no requirement requested to remain stronger than the reconciled evidence/value boundary
+
+candidate eligibility remains deliberately broad so radically different successor families
+can still compete
+```
+
+The exact accepted requirements are frozen separately at:
+
+```text
+docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md
+```
+
+That artifact now supersedes the original Phase-B wording for candidate-design and qualification purposes while preserving the original requirements in Research 124 as historical provenance.
+
+This acceptance does not select or prefer a target architecture.
+
+The anti-anchoring boundary has now been reached: the previously withheld owner paper/video may be exposed and evaluated for its **incremental contribution** against the already established internal evidence, blind baseline, D1-D8 external evidence and frozen V0.2 requirements.

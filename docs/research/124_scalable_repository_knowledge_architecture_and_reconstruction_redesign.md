@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / PROVISIONAL REQUIREMENTS RECONCILIATION V0.2 COMPLETE / OWNER REVIEW NEXT / TARGET ARCHITECTURE DESIGN PAUSED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / WITHHELD OWNER SOURCE INCREMENTAL EVALUATION NEXT / TARGET ARCHITECTURE DESIGN PAUSED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -2740,7 +2740,7 @@ Research 124 should therefore preserve provenance for authority-significant tran
 
 W3C PROV-O and SLSA independently model not only which input an output derives from but also the process/activity, producing agent/platform and material parameters/dependencies involved in generation.
 
-For later candidate comparison, ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œgenerated from the repositoryÃƒÂ¢Ã¢â€šÂ¬Ã‚Â is insufficient when a derived representation materially affects reconstruction. The candidate should be able to establish a proportionate provenance envelope over sources, generator/transformation and freshness.
+For later candidate comparison, ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“generated from the repositoryÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â is insufficient when a derived representation materially affects reconstruction. The candidate should be able to establish a proportionate provenance envelope over sources, generator/transformation and freshness.
 
 ### 66.5 Rebuildability has several strengths
 
@@ -3029,7 +3029,7 @@ current accepted / preferred
 
 Old authority should remain discoverable for audit/history without entering ordinary current reconstruction by default.
 
-### 67.13 Ã¢â‚¬Å“CurrentÃ¢â‚¬Â cannot mean merely Ã¢â‚¬Å“latest commitÃ¢â‚¬Â
+### 67.13 ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œCurrentÃƒÂ¢Ã¢â€šÂ¬Ã‚Â cannot mean merely ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œlatest commitÃƒÂ¢Ã¢â€šÂ¬Ã‚Â
 
 Current governing truth may depend on:
 
@@ -3332,4 +3332,59 @@ PROPOSED_INVARIANTS=17
 OWNER_REVIEW=NEXT
 TARGET_ARCHITECTURE=NOT_SELECTED
 WITHHELD_OWNER_SOURCE=STILL_WITHHELD
+```
+## 70. Requirements V0.2 owner acceptance and freeze
+
+The project owner explicitly accepted the Research 130 reconciliation without amendment.
+
+The current frozen requirements boundary is now:
+
+```text
+docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md
+```
+
+It contains:
+
+```text
+50 KA-R requirements
+17 KA-I invariants
+```
+
+The original Phase-B KA-R01..KA-R45 and KA-I01..KA-I15 wording remains durable historical provenance in this Research 124 record, but it is superseded for candidate-design and qualification purposes by V0.2.
+
+The owner accepted four important decisions:
+
+```text
+1. Generic continuation/cold start requires broad project orientation.
+   Narrow governed work may instead use task-shaped safe orientation sufficient
+   for state, scope, authority and uncertainty.
+
+2. KA-R46..KA-R50 and KA-I16..KA-I17 are accepted.
+
+3. No original requirement needs to remain deliberately stronger than the
+   evidence-reconciled V0.2 boundary as an additional owner-value override.
+
+4. Candidate eligibility remains intentionally broad enough for radically
+   different successor architecture families to compete.
+```
+
+This freeze still does not select a target architecture, artifact family, ontology, database, retrieval mechanism or control-plane implementation.
+
+The anti-anchoring condition for the owner-provided paper/video is now satisfied. The source may be introduced **after** this independent internal/external evidence and requirements boundary has been durably frozen, and its contribution should be evaluated incrementally:
+
+```text
+what does it add?
+what does it contradict?
+what does it independently reinforce?
+what important requirement/discriminator does it expose that V0.2 missed?
+what mechanism does it advocate that should remain only a candidate rather than a requirement?
+```
+
+Only after that incremental-source evaluation should Research 124 construct several neutral candidate architecture families and begin comparative synthesis.
+
+```text
+REQUIREMENTS_V02=OWNER_ACCEPTED_FROZEN
+TARGET_ARCHITECTURE=NOT_SELECTED
+ANTI_ANCHORING_SOURCE_GATE=OPEN
+NEXT=WITHHELD_OWNER_SOURCE_INCREMENTAL_EVALUATION
 ```
