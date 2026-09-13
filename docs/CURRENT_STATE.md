@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 479
+**Checkpoint:** 480
 **Date:** 2026-09-13
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -23,6 +23,8 @@ Repository artifacts remain authoritative across chats and models.
 ---
 
 ## Current active stage: Research 124 project-development knowledge architecture redesign
+Checkpoint 480 machine-freezes the Relation-Lifecycle Discriminator V0.2 before any V0.2 H1/H2 implementation. The exact fixture at `docs/research/project_knowledge_architecture_probe_v02/RELATION_LIFECYCLE_FIXTURE_V02.json` has SHA-256 `ece094762e3fe4f064640004da3f2293aa39168268af183df6f1347ba7f4b4c0`. It holds endpoint semantic state fixed while a symmetric ternary relation has its own stable identity, lifecycle, evidence, temporal applicability, supersession and stale-write concurrency semantics. H1 may still choose one endpoint as owner but cannot create a dedicated relation authority surface; arbitrary ownership is measured rather than declared an automatic failure. H2 is deliberately narrowed to a minimal admission rule and must keep ordinary directional relations source-local. The fixture also grows non-qualifying ordinary relations 10/50/100 while expecting only the two qualifying first-class relations in H2's spine. Requirements V0.2 remain unchanged and no target architecture is selected.
+
 Checkpoint 479 completes the first executable Common Fixture V0.1 H1/H2 mechanism probe. Both Distributed Document Contracts (H1) and Partitioned Semantic Ownership / Bounded Spine (H2) pass all frozen semantic and fail-visible challenges. H2's physical spine remains seven records while history grows 1x/5x/10x, but those seven records own 27 of the fixture's 32 normalized control/relationship propositions. H1 owns 30 propositions source-locally and derives two closure propositions, with no duplicate authoritative ownership and no separate spine. This materially challenges the earlier assumption that generic cross-objectness itself requires separate relation authority: directional relations and deterministic closure can solve all V0.1 cases. H2 also shows one local-to-spine reclassification and higher instrumented authored-location touch count (18 vs 12), while giving more explicit centralized ownership. The result does not select H1 because V0.1 lacks a truly independent relation-lifecycle case. The next discriminator is a new frozen V0.2 fixture where the relationship itself has stable identity, independent lifecycle/provenance/temporal state and non-arbitrary n-ary or symmetric semantics. H3 remains deferred. Requirements V0.2 are unchanged and the current architecture remains operational authority.
 
 Checkpoint 478 freezes the exact machine-readable Common Fixture V0.1 before any H1/H2 implementation. The synthetic fixture at `docs/research/project_knowledge_architecture_probe_v01/COMMON_FIXTURE_V01.json` has SHA-256 `c8ed1873014b7a69016eb6fb259791d1c34b9cd14219547f1ebc0e755b836fe8` and instantiates the seven Research 134 hard cases without assigning facts to either candidate's ownership model. H1 and H2 must now consume the same frozen bytes; any fixture correction requires a new version and full rerun. No candidate implementation existed at the freeze boundary. Requirements V0.2 remain unchanged and no target architecture is selected.

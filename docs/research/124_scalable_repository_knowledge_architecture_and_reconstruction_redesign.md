@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / COMMON FIXTURE V0.1 H1-H2 PROBE COMPLETE / RELATION-LIFECYCLE DISCRIMINATOR NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / RELATION-LIFECYCLE FIXTURE V0.2 MACHINE-FROZEN / H1-H2 V0.2 IMPLEMENTATION NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -3739,4 +3739,21 @@ H2_SEMANTIC_BOUNDEDNESS=NOT_ESTABLISHED
 SEPARATE_SPINE_NECESSITY=NOT_ESTABLISHED
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=RELATION_LIFECYCLE_DISCRIMINATOR_FIXTURE_V02
+```
+
+## 80. Relation-Lifecycle Discriminator V0.2 is machine-frozen before implementation
+
+Research 137 freezes the exact second mechanism fixture at SHA-256 `ece094762e3fe4f064640004da3f2293aa39168268af183df6f1347ba7f4b4c0` before either H1 or H2 receives V0.2 implementation logic. It responds directly to the construct-validity limitation exposed by V0.1.
+
+The new fixture keeps endpoint semantic state fixed while a symmetric ternary relation `R-ABC-1` develops its own stable identity, proposed/disputed/accepted/verified/superseded lifecycle, relation-specific provenance, recorded/authority/effective times and optimistic-concurrency revision. A later `R-ABC-2` becomes effective independently of any endpoint change. A stale relation update must fail without mutation and missing required relation evidence must fail visibly.
+
+H1 remains prohibited from creating a separately authoritative relation object/store. It may choose one endpoint as the deterministic owner of the relation declaration, but must disclose whether that choice is semantically natural or arbitrary and expose the resulting touch coupling. H2 is narrowed to a minimal admission rule: only a relation with stable identity, independent lifecycle, relation-specific provenance and no natural endpoint owner may enter the first-class relation spine. An ordinary directional `S-D depends_on S-A` control relation must remain source-local.
+
+The fixture also scales ordinary non-qualifying relations from 10 to 50 to 100. H2's first-class relation spine should remain two records if its admission boundary is genuinely selective.
+
+```text
+RELATION_LIFECYCLE_FIXTURE_V02=MACHINE_FROZEN
+H1_V02=IMPLEMENTATION_NEXT
+H2_V02=IMPLEMENTATION_NEXT
+TARGET_ARCHITECTURE=NOT_SELECTED
 ```

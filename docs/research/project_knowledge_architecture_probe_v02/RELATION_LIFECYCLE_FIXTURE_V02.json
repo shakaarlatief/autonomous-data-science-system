@@ -1,0 +1,403 @@
+{
+  "schema_version": 2,
+  "fixture_id": "PKA-RL-V02",
+  "status": "FROZEN_BEFORE_H1_H2_IMPLEMENTATION",
+  "date_frozen": "2026-09-13",
+  "purpose": "Discriminate whether a relation with independent identity, lifecycle, provenance, temporal applicability and concurrency semantics earns separate authoritative ownership.",
+  "authority": "Synthetic representation-neutral mechanism-probe fixture under Research 124/136. It is evidence input, not project-development authority.",
+  "rules": {
+    "same_fixture_for_all_hypotheses": true,
+    "candidate_specific_fact_changes_forbidden": true,
+    "fixture_changes_require_new_version_and_full_rerun": true,
+    "endpoint_semantic_state_must_remain_unchanged_during_relation_lifecycle": true,
+    "stale_relation_updates_must_fail_without_mutation": true,
+    "derived_relation_views_may_be_deleted_and_rebuilt": true,
+    "no_aggregate_winner_score": true
+  },
+  "endpoints": [
+    {
+      "id": "S-A",
+      "status": "active",
+      "semantic_revision": 1,
+      "carrier": "A1",
+      "intrinsic_fact": "alpha"
+    },
+    {
+      "id": "S-B",
+      "status": "active",
+      "semantic_revision": 1,
+      "carrier": "B1",
+      "intrinsic_fact": "beta"
+    },
+    {
+      "id": "S-C",
+      "status": "active",
+      "semantic_revision": 1,
+      "carrier": "C1",
+      "intrinsic_fact": "gamma"
+    },
+    {
+      "id": "S-D",
+      "status": "active",
+      "semantic_revision": 1,
+      "carrier": "D1",
+      "intrinsic_fact": "delta"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E1",
+      "kind": "relation_evidence",
+      "status": "accepted",
+      "claim": "Initial evidence supports an ABC joint-compatibility relation."
+    },
+    {
+      "id": "E2",
+      "kind": "relation_evidence",
+      "status": "accepted",
+      "claim": "Counter-evidence disputes the initial relation interpretation."
+    },
+    {
+      "id": "E3",
+      "kind": "relation_evidence",
+      "status": "accepted",
+      "claim": "Resolution evidence supports accepting the relation for ENV-A."
+    },
+    {
+      "id": "E4",
+      "kind": "relation_evidence",
+      "status": "accepted",
+      "claim": "Independent verification confirms the accepted relation without changing endpoints."
+    },
+    {
+      "id": "E5",
+      "kind": "relation_evidence",
+      "status": "accepted",
+      "claim": "New evidence supports a successor relation effective later."
+    }
+  ],
+  "simple_directional_control": {
+    "fixture_key": "SR-D-A",
+    "relation_identity_required": false,
+    "source": "S-D",
+    "target": "S-A",
+    "type": "depends_on",
+    "directed": true,
+    "natural_owner": "S-D",
+    "independent_lifecycle": false,
+    "relation_specific_provenance": false,
+    "temporal_state_independent_of_endpoints": false,
+    "expected_h2_admission": "source_local"
+  },
+  "independent_relation": {
+    "initial": {
+      "id": "R-ABC-1",
+      "type": "joint_compatibility",
+      "members": [
+        "S-A",
+        "S-B",
+        "S-C"
+      ],
+      "arity": 3,
+      "symmetric": true,
+      "natural_endpoint_owner": null,
+      "stable_relation_identity_required": true,
+      "independent_lifecycle": true,
+      "relation_specific_provenance": true,
+      "temporal_state_independent_of_endpoints": true,
+      "status": "proposed",
+      "revision": 1,
+      "scope": [
+        "ENV-A"
+      ],
+      "qualification": "unverified",
+      "recorded_at": "2026-05-01",
+      "authority_transition_at": null,
+      "effective_from": null,
+      "evidence_ids": [
+        "E1"
+      ],
+      "superseded_by": null,
+      "superseded_effective_from": null
+    },
+    "transitions": [
+      {
+        "id": "RL-T1",
+        "op": "dispute",
+        "relation": "R-ABC-1",
+        "expected_revision": 1,
+        "new_revision": 2,
+        "recorded_at": "2026-05-03",
+        "status": "disputed",
+        "append_evidence": [
+          "E2"
+        ]
+      },
+      {
+        "id": "RL-T2",
+        "op": "accept",
+        "relation": "R-ABC-1",
+        "expected_revision": 2,
+        "new_revision": 3,
+        "recorded_at": "2026-05-05",
+        "authority_transition_at": "2026-05-05",
+        "effective_from": "2026-05-10",
+        "status": "accepted",
+        "append_evidence": [
+          "E3"
+        ]
+      },
+      {
+        "id": "RL-T3",
+        "op": "verify",
+        "relation": "R-ABC-1",
+        "expected_revision": 3,
+        "new_revision": 4,
+        "recorded_at": "2026-05-06",
+        "status": "accepted",
+        "qualification": "verified",
+        "append_evidence": [
+          "E4"
+        ]
+      },
+      {
+        "id": "RL-T4",
+        "op": "stale_update_attempt",
+        "relation": "R-ABC-1",
+        "expected_revision": 3,
+        "observed_revision": 4,
+        "attempted_change": {
+          "scope": [
+            "ENV-C"
+          ]
+        },
+        "expected_error": "STALE_RELATION_REVISION",
+        "must_mutate": false
+      },
+      {
+        "id": "RL-T5",
+        "op": "create_successor_and_schedule_supersession",
+        "relation": "R-ABC-1",
+        "expected_revision": 4,
+        "new_revision": 5,
+        "recorded_at": "2026-05-15",
+        "successor": {
+          "id": "R-ABC-2",
+          "type": "joint_compatibility",
+          "members": [
+            "S-A",
+            "S-B",
+            "S-C"
+          ],
+          "arity": 3,
+          "symmetric": true,
+          "natural_endpoint_owner": null,
+          "stable_relation_identity_required": true,
+          "independent_lifecycle": true,
+          "relation_specific_provenance": true,
+          "temporal_state_independent_of_endpoints": true,
+          "status": "accepted",
+          "revision": 1,
+          "scope": [
+            "ENV-A",
+            "ENV-B"
+          ],
+          "qualification": "verified",
+          "recorded_at": "2026-05-15",
+          "authority_transition_at": "2026-05-15",
+          "effective_from": "2026-05-20",
+          "evidence_ids": [
+            "E5"
+          ],
+          "supersedes": "R-ABC-1"
+        },
+        "superseded_by": "R-ABC-2",
+        "superseded_effective_from": "2026-05-20"
+      }
+    ]
+  },
+  "expected_queries": {
+    "2026-05-02": {
+      "current_applicable_relation_ids": [],
+      "R-ABC-1_lifecycle_status": "proposed",
+      "R-ABC-1_effective": false
+    },
+    "2026-05-04": {
+      "current_applicable_relation_ids": [],
+      "R-ABC-1_lifecycle_status": "disputed",
+      "R-ABC-1_effective": false
+    },
+    "2026-05-07": {
+      "current_applicable_relation_ids": [],
+      "R-ABC-1_lifecycle_status": "accepted",
+      "R-ABC-1_effective": false
+    },
+    "2026-05-11": {
+      "current_applicable_relation_ids": [
+        "R-ABC-1"
+      ],
+      "R-ABC-1_lifecycle_status": "accepted",
+      "R-ABC-1_effective": true
+    },
+    "2026-05-16": {
+      "current_applicable_relation_ids": [
+        "R-ABC-1"
+      ],
+      "R-ABC-1_lifecycle_status": "accepted_pending_supersession",
+      "R-ABC-1_effective": true,
+      "known_successor": "R-ABC-2"
+    },
+    "2026-05-21": {
+      "current_applicable_relation_ids": [
+        "R-ABC-2"
+      ],
+      "R-ABC-1_lifecycle_status": "superseded",
+      "R-ABC-1_effective": false,
+      "R-ABC-2_lifecycle_status": "accepted",
+      "R-ABC-2_effective": true
+    }
+  },
+  "expected_final": {
+    "endpoint_semantic_revisions": {
+      "S-A": 1,
+      "S-B": 1,
+      "S-C": 1,
+      "S-D": 1
+    },
+    "R-ABC-1": {
+      "revision": 5,
+      "status": "superseded",
+      "scope": [
+        "ENV-A"
+      ],
+      "qualification": "verified",
+      "evidence_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "superseded_by": "R-ABC-2",
+      "superseded_effective_from": "2026-05-20"
+    },
+    "R-ABC-2": {
+      "revision": 1,
+      "status": "accepted",
+      "scope": [
+        "ENV-A",
+        "ENV-B"
+      ],
+      "qualification": "verified",
+      "evidence_ids": [
+        "E5"
+      ],
+      "supersedes": "R-ABC-1",
+      "effective_from": "2026-05-20"
+    },
+    "stale_attempt": {
+      "error": "STALE_RELATION_REVISION",
+      "authoritative_mutation": false
+    },
+    "history_ops": [
+      "proposed",
+      "disputed",
+      "accepted",
+      "verified",
+      "supersession_scheduled"
+    ]
+  },
+  "missing_evidence_challenge": {
+    "remove_evidence_id": "E3",
+    "required_by_relation": "R-ABC-1",
+    "query_date": "2026-05-11",
+    "expected_status": "unresolved_missing_relation_evidence"
+  },
+  "derived_views": {
+    "names": [
+      "member_relation_index",
+      "current_relation_view",
+      "relation_history_projection"
+    ],
+    "required": {
+      "unique_truth_lost_after_delete": false,
+      "rebuild_from_authoritative_inputs": true,
+      "freshness_binding_required": true,
+      "missing_required_view_is_visible": true
+    }
+  },
+  "h2_admission_rule_probe": {
+    "qualifying_relation_ids": [
+      "R-ABC-1",
+      "R-ABC-2"
+    ],
+    "nonqualifying_fixture_keys": [
+      "SR-D-A"
+    ],
+    "qualifying_conditions": {
+      "stable_relation_identity_required": true,
+      "independent_lifecycle": true,
+      "relation_specific_provenance": true,
+      "natural_endpoint_owner": null
+    },
+    "expected_false_positive_admissions": 0,
+    "expected_false_negative_admissions": 0
+  },
+  "simple_relation_scale": {
+    "counts": {
+      "1x": 10,
+      "5x": 50,
+      "10x": 100
+    },
+    "template": {
+      "type": "depends_on",
+      "directed": true,
+      "natural_owner": "source",
+      "independent_lifecycle": false,
+      "relation_specific_provenance": false,
+      "stable_relation_identity_required": false
+    },
+    "expected_h2_relation_spine_records": [
+      2,
+      2,
+      2
+    ],
+    "interpretation": "Growth in ordinary source-local relations must not expand a minimal H2 first-class relation spine."
+  },
+  "ownership_observations_required": [
+    "authoritative_owner_location_for_each_independent_relation",
+    "owner_selection_basis",
+    "whether_owner_is_semantically_natural_or_arbitrary",
+    "endpoint_authoritative_locations_touched_by_relation_transitions",
+    "dedicated_relation_authority_locations",
+    "relation_revision_independent_of_endpoint_semantic_revision",
+    "semantic_fact_share_by_source_vs_relation_spine",
+    "h2_admission_false_positives_and_false_negatives"
+  ],
+  "hypothesis_boundaries": {
+    "H1": {
+      "allowed": [
+        "endpoint/source-local structured declarations",
+        "source-local sidecars tightly owned by one endpoint/source",
+        "deterministic derived relation views"
+      ],
+      "forbidden": [
+        "dedicated authoritative relation object/document/store/registry whose lifecycle is independent of an endpoint/source",
+        "separately authoritative cross-object spine"
+      ],
+      "must_report_if_owner_is_arbitrary": true,
+      "arbitrary_owner_is_measurement_not_automatic_correctness_failure": true
+    },
+    "H2": {
+      "allowed": [
+        "source-local declarations for ordinary relations",
+        "minimal authoritative first-class relation spine for relations that satisfy admission rule",
+        "deterministic derived relation views"
+      ],
+      "forbidden": [
+        "centralizing ordinary directional/source-owned relations merely because they cross objects",
+        "moving endpoint-intrinsic facts into relation spine"
+      ],
+      "must_apply_admission_rule": true
+    }
+  }
+}
