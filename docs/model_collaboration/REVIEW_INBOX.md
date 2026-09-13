@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-13
-**Status:** NO ACTIVE CLAUDE OBLIGATION / MC-0014 RESOLVED / REAL-CORPUS DISCRIMINATOR PREPARATION NEXT / MC-0010 DEFERRED
+**Status:** MC-0015 INDEPENDENT REAL-CORPUS JUDGMENT ACTIVE / CLAUDE MESSAGE 001 NEXT / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -23,7 +23,28 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Current active collaboration obligation
 
-There is no active Claude obligation. MC-0014 is resolved after one adversarial Claude message and one ChatGPT disposition. Research 124 now moves to the real-corpus relationship discriminator protocol in Research 139. The next Claude obligation should be opened only after an unlabeled corpus has been frozen and ChatGPT's independent judgment can be withheld from Claude by exact-base discipline.
+### MC-0015: independent Claude judgment of Real ADS Relationship Corpus V0.1
+
+```text
+collaborator               Claude / claude-03
+mode                       INDEPENDENT_THEN_COMPARATIVE
+coordination branch        v1-source-vault-bootstrap-resume
+independent base           ae87c1facbf7c7d7508414e86a935bc439404c24
+corpus                     PKA-REAL-REL-V01
+next output                docs/model_collaboration/threads/MC-0015/messages/001_claude_independent_real_corpus_judgment.md
+status                     OPEN / CLAUDE MESSAGE 001 NEXT
+conversation               03 - Project Knowledge Architecture Foundations and Design Method
+```
+
+Current-branch reads are routing-only. Claude's substantive case and Requirements V0.2 reads are bound to the exact independent base above. Descendant ChatGPT case labels exist but are deliberately prohibited until Claude's complete 15-case judgment set is frozen. If label content is exposed unexpectedly, the run must stop as contaminated.
+
+Durable contract:
+
+```text
+docs/model_collaboration/threads/MC-0015/BRIEF.md
+docs/model_collaboration/threads/MC-0015/THREAD.md
+docs/model_collaboration/threads/MC-0015/STATE.json
+```
 
 ## Most recently completed obligation
 

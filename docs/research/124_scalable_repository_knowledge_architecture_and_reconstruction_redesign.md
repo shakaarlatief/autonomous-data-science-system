@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / CHATGPT REAL-CORPUS JUDGMENT FROZEN / CLAUDE INDEPENDENT JUDGMENT NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / CHATGPT JUDGMENT FROZEN / MC-0015 CLAUDE INDEPENDENT JUDGMENT ACTIVE / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -3848,5 +3848,23 @@ These are reviewer labels, not ground truth. No mechanized rule is allowed yet a
 CHATGPT_REAL_CORPUS_JUDGMENT=FROZEN
 CLAUDE_INDEPENDENT_JUDGMENT=NEXT
 CROSS_REVIEWER_COMPARISON=NOT_YET_ALLOWED
+TARGET_ARCHITECTURE=NOT_SELECTED
+```
+
+## 86. MC-0015 opens the mutually hidden second real-corpus judgment
+
+MC-0015 now executes the second-reviewer half of Research 139's real-corpus protocol. Claude's substantive evidence boundary is the exact unlabeled corpus-freeze commit `ae87c1facbf7c7d7508414e86a935bc439404c24`. Current descendant routing exists only to locate the obligation.
+
+The ChatGPT judgment set is already durably frozen on a descendant commit, but Claude is explicitly prohibited from reading it, Research 141, Checkpoint 485+ bodies, descendant current-state synthesis or any other surface that exposes case labels/confidence/rationales until its own complete set is frozen. This is reviewer-label independence rather than architecture-problem blindness.
+
+Claude must classify all 15 cases using exactly SOURCE_LOCAL, FIRST_CLASS_SEMANTIC_OBJECT, DERIVED_ONLY or UNRESOLVED and provide the required rationale/owner/continuity/derived-input/missing-evidence fields. Packet evidence controls; any necessary deeper source read must use the corpus's exact source snapshot and be declared.
+
+No cross-reviewer comparison and no mechanized admission rule is authorized yet.
+
+```text
+MC0015=OPEN
+CLAUDE_INDEPENDENT_JUDGMENT=ACTIVE
+CHATGPT_LABEL_EXPOSURE=PROHIBITED
+CROSS_REVIEWER_COMPARISON=BLOCKED
 TARGET_ARCHITECTURE=NOT_SELECTED
 ```
