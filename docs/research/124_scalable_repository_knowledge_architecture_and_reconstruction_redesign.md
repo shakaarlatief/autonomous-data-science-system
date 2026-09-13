@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / OWNER-SOURCE CHATGPT EVALUATION COMPLETE / MC-0012 STAGED CLAUDE REASSESSMENT ACTIVE / TARGET ARCHITECTURE NOT SELECTED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / CHATGPT OWNER-SOURCE EVALUATION COMPLETE / MC-0012 CLAUDE PHASE 2 OWNER-SOURCE EVALUATION ACTIVE / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -3504,4 +3504,45 @@ OWNER_SOURCE_EXPOSURE_TO_CLAUDE=PAUSED_UNTIL_MESSAGE_001
 REQUIREMENTS_V02=UNCHANGED_FROZEN
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=CLAUDE_MC0012_MESSAGE_001
+```
+
+## 73. MC-0012 Phase 1 accepted; controlled owner-source exposure opens
+
+Claude Message 001 is durably preserved as the post-evidence/pre-owner-source comparison point. It is valid and materially useful. The main update is epistemic calibration: Claude explicitly retracts the stronger MC-0011 implication that situation dispatch is a reliably recurring dominant failure mechanism, recognizes BL-001 post-activation task-contract fidelity as a distinct and stronger empirical result, and reframes current architecture weakness as expensive/fragile reconstruction plus measurable active-surface scaling pressure rather than present-day inability to reconstruct.
+
+ChatGPT's Phase-1 disposition preserves several corrections and qualifications before exposing the source.
+
+First, Claude's claimed unresolved checkpoint-granularity blocker is not actually open at this boundary. Research 124 Sections 52-53, inside the exact frozen target Claude read, already contain the bounded empirical audits:
+
+```text
+34-checkpoint 2026-09-09 audit
+    -> no evidence that obvious systematic checkpoint micro-iteration abuse explains
+       the high count; sampled records largely represent distinct serialized risk gates
+
+298-path development-governance audit
+    -> 236 / 298 = 79.2% checkpoint + validation evidence
+    -> historical/evidence material is exposed at the same navigation depth as current
+       synthesis/procedure/orientation
+
+combined bounded finding
+    -> active/navigation-surface accumulation is the stronger measured pressure
+       than simply creating fewer checkpoints
+```
+
+Claude's failure to retrieve this finding from a file it was required to read is itself a useful example of evidence-depth/task-fidelity limits, not a reason to reopen the research question as though no verdict existed.
+
+Second, Claude correctly identifies that the historical blind baseline is ChatGPT-only. Checkpoint 457 records that this was an explicit project-owner scope decision. The current `claude-03` interaction cannot now run a clean Claude blind replication because it has read the protocol and all evaluations. A future cross-model study would require a fresh uncontaminated Claude environment and separate owner-approved protocol; it is not inserted as a blocker here.
+
+Third, Claude's V0.2 critiques are carried forward mainly as candidate-design/qualification pressure rather than requirement amendments: break the potential circularity in governing/risk-bearing discovery, keep receipt semantics representation-neutral, preserve evidence-class visibility near requirement consumption, measure dispatch reliability when candidates claim improvement, govern semantic identity merge/split carefully, and make `C_failure` consequence-aware rather than symbolic.
+
+No Phase-1 evidence justifies changing the frozen 50 KA-R / 17 KA-I boundary before the source comparison.
+
+MC-0012 Phase 2 now exposes the owner-provided ICM source to Claude while preserving one remaining independence boundary: Claude must form and freeze its own direct post-source assessment before reading ChatGPT's Research 131, Checkpoint 471 owner-source synthesis or this Research 124 record's Section 71 interpretation.
+
+```text
+MC0012_PHASE1=COMPLETE_VALID
+MC0012_PHASE2=OWNER_SOURCE_INDEPENDENT_INCREMENTAL_EVALUATION_ACTIVE
+REQUIREMENTS_V02_AMENDMENT=NO
+TARGET_ARCHITECTURE=NOT_SELECTED
+NEXT=CLAUDE_MC0012_MESSAGE_003
 ```

@@ -1,7 +1,7 @@
 # MC-0012 Thread: Post-Evidence Reassessment and Staged Owner-Source Exposure
 
 **Thread:** MC-0012
-**Status:** OPEN / PHASE 1 CLAUDE POST-EVIDENCE PRE-OWNER-SOURCE REASSESSMENT
+**Status:** OPEN / PHASE 2 CLAUDE INDEPENDENT OWNER-SOURCE INCREMENTAL EVALUATION
 **Review mode:** REVIEWED
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
 **Opening repository head:** `ff51aa23b7e6d8a32692ad57394ab0aea631b7b6`
@@ -19,20 +19,20 @@ MC-0011 remains resolved. This thread does not revise its history; it builds a l
 ## Current phase
 
 ```text
-PHASE1_POST_EVIDENCE_PRE_OWNER_SOURCE_REASSESSMENT
+PHASE2_OWNER_SOURCE_INDEPENDENT_INCREMENTAL_EVALUATION
 ```
 
 The detailed Phase-1 contract and contamination boundary are in `BRIEF.md`.
 
 ## Information-control boundary
 
-Current branch is routing-only for Phase 1. Substantive evidence is frozen at:
+Phase 1 is frozen at substantive evidence target:
 
 ```text
 d9794a880ad0b235102fc752dae91bde6c29bd24
 ```
 
-The owner-provided source identity/content and ChatGPT's post-source Research 131 evaluation must remain unseen by Claude until Message 001 is durably frozen.
+Phase 2 now intentionally exposes the owner-provided ICM source set through Message 002. The remaining independence boundary is narrower: Claude must not read ChatGPT's post-source Research 131, Checkpoint 471 owner-source synthesis, or Research 124 Section 71 until Claude Message 003 is durably frozen.
 
 ## Expected dialogue sequence
 
@@ -43,7 +43,7 @@ The owner-provided source identity/content and ChatGPT's post-source Research 13
 004+ reconciliation only while additional dialogue has clear epistemic value
 ```
 
-Only Message 001 is currently authorized. Phase 2 will receive a separate explicit request after Phase 1 closes cleanly.
+Message 001 is frozen and valid. Message 002 dispositions Phase 1 and is the authoritative Phase-2 request. Claude Message 003 is now authorized.
 
 ## Target-state ownership
 
@@ -57,19 +57,9 @@ docs/model_collaboration/threads/MC-0012/messages/**
 
 ChatGPT remains task owner/integrator. The human project owner remains the decider for project intent and consequential normative choices.
 
-## Completion condition for Phase 1
+## Phase-1 disposition
 
-Phase 1 is complete when:
-
-```text
-Claude Message 001 is durably preserved without owner-source contamination
-Claude explicitly compares the later evidence against its own MC-0011 position
-V0.2 concerns and support are explicit
-remaining uncertainties and pre-exposure revision predictions are explicit
-ChatGPT verifies/dispositions the contribution before any source exposure
-```
-
-Architecture synthesis remains paused only for this bounded gate, not indefinitely pending general Claude approval.
+Phase 1 is complete and accepted as valid in Message 002. Phase 2 now exposes the owner-provided source while withholding ChatGPT's post-source Research 131 interpretation until Claude Message 003 is frozen. Architecture synthesis remains paused only for this bounded staged comparison.
 
 ## Older obligations
 

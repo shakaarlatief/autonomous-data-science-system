@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-13
-**Status:** MC-0012 ACTIVE PHASE 1 / CLAUDE POST-EVIDENCE PRE-OWNER-SOURCE REASSESSMENT / MC-0010 DEFERRED
+**Status:** MC-0012 ACTIVE PHASE 2 / CLAUDE INDEPENDENT OWNER-SOURCE INCREMENTAL EVALUATION / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -23,30 +23,34 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Current active collaboration obligation
 
-### MC-0012: post-evidence reassessment before staged owner-source exposure
+### MC-0012: staged Claude evidence/source reassessment
 
 ```text
 collaborator               Claude / claude-03
 mode                       REVIEWED / staged-exposure current-context reassessment
 coordination branch        v1-source-vault-bootstrap-resume
 phase-1 evidence target    d9794a880ad0b235102fc752dae91bde6c29bd24
-phase                      POST-EVIDENCE / PRE-OWNER-SOURCE
-expected output            docs/model_collaboration/threads/MC-0012/messages/001_claude_post_evidence_pre_owner_source_reassessment.md
-status                     OPEN / CLAUDE MESSAGE 001 NEXT
+phase-1 result             VALID / MESSAGE 001 FROZEN
+phase                      OWNER-SOURCE INDEPENDENT INCREMENTAL EVALUATION
+phase-2 request            docs/model_collaboration/threads/MC-0012/messages/002_chatgpt_phase1_disposition_and_phase2_owner_source_handoff.md
+expected output            docs/model_collaboration/threads/MC-0012/messages/003_claude_post_owner_source_incremental_evaluation.md
+status                     OPEN / CLAUDE MESSAGE 003 NEXT
 conversation               03 - Project Knowledge Architecture Foundations and Design Method
 ```
 
-Phase 1 updates Claude's MC-0011 position against the completed Research 124 evidence program and frozen Requirements V0.2 while deliberately preserving blindness to the separately withheld owner-provided source and ChatGPT's later post-source evaluation. Current-branch access is routing-only; substantive evidence is bound to the exact pre-exposure target above. If descendant/post-exposure material leaks into context, the phase must stop as contaminated.
+Phase 1 is complete. Message 002 accepts the reassessment, corrects the already-available Research 124 density/granularity verdict, records the ChatGPT-only baseline limitation as known/nonblocking, and exposes the owner-provided ICM source set. Claude must inspect the source directly but must not read ChatGPT's post-source Research 131/Checkpoint 471/Research 124 Section 71 interpretation until Message 003 is frozen.
 
-Durable contract:
+Durable contract and handoff:
 
 ```text
 docs/model_collaboration/threads/MC-0012/BRIEF.md
 docs/model_collaboration/threads/MC-0012/THREAD.md
 docs/model_collaboration/threads/MC-0012/STATE.json
+docs/model_collaboration/threads/MC-0012/messages/001_claude_post_evidence_pre_owner_source_reassessment.md
+docs/model_collaboration/threads/MC-0012/messages/002_chatgpt_phase1_disposition_and_phase2_owner_source_handoff.md
 ```
 
-Architecture synthesis is paused only for this bounded collaboration gate. MC-0011 remains resolved and MC-0010 remains deferred.
+Architecture synthesis remains paused only for this bounded staged comparison. MC-0011 remains resolved and MC-0010 remains deferred.
 
 ## Most recently completed obligation
 

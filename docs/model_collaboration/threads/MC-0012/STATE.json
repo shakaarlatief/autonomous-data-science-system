@@ -3,11 +3,11 @@
   "thread_id": "MC-0012",
   "review_mode": "REVIEWED",
   "lifecycle_state": "OPEN",
-  "phase": "PHASE1_POST_EVIDENCE_PRE_OWNER_SOURCE_REASSESSMENT",
+  "phase": "PHASE2_OWNER_SOURCE_INDEPENDENT_INCREMENTAL_EVALUATION",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
-    "base_ref": "d9794a880ad0b235102fc752dae91bde6c29bd24",
-    "description": "Staged Claude reassessment of Research 124: Phase 1 reviews the completed empirical/external evidence program and frozen Requirements V0.2 at the exact pre-owner-source snapshot; later Phase 2 may expose the owner source only after Phase-1 evidence is durably frozen.",
+    "base_ref": "3e38f5f72024bfc29c6f9a2e014147d80827c1d5",
+    "description": "Phase 2 of staged Claude reassessment: Message 001 is frozen as the post-evidence/pre-owner-source baseline; Claude may now inspect the owner-provided ICM paper/repository/social-source set independently while ChatGPT post-source Research 131 conclusions remain withheld until Message 003 is frozen.",
     "write_paths": []
   },
   "task_owner": "chatgpt",
@@ -54,21 +54,23 @@
   "next_expected_actor": "claude",
   "independence": {
     "status": "PARTIALLY_INDEPENDENT",
-    "review_base_ref": "d9794a880ad0b235102fc752dae91bde6c29bd24",
+    "review_base_ref": "3e38f5f72024bfc29c6f9a2e014147d80827c1d5",
     "known_exposures": [
       "Claude previously participated in MC-0011 and therefore knows the pre-evidence Research 124 framing and its own Messages 001/003/005 plus the interleaved ChatGPT responses.",
       "Phase 1 intentionally exposes Claude to the completed project-specific audits, failure corpus, ChatGPT-only blind baselines, Research 125-130 external evidence/reconciliation, and owner-frozen Requirements V0.2.",
       "The existence of a separately withheld owner-provided source is known from MC-0011 and the pre-exposure Research 124 history, but its identity/content must remain hidden during Phase 1.",
-      "The current coordination branch contains post-exposure material, so Phase 1 limits current-branch access to collaboration-routing files and binds all substantive evidence to the exact pre-exposure review base."
+      "The current coordination branch contains post-exposure material, so Phase 1 limits current-branch access to collaboration-routing files and binds all substantive evidence to the exact pre-exposure review base.",
+      "Phase 2 explicitly exposes the identity/content of the owner-provided ICM source set after Claude Message 001 was durably frozen.",
+      "ChatGPT post-source Research 131, Checkpoint 471 owner-source synthesis, and Research 124 Section 71 remain intentionally withheld until Claude Message 003 is frozen."
     ],
-    "notes": "This is not blind to Research 124 or to ChatGPT prior reasoning. Independence is specifically preserved for the incremental effect of the owner-provided source: Claude must first freeze an updated post-evidence/pre-source position before Phase 2 exposure."
+    "notes": "Phase 1 remained clean and produced Message 001. Phase 2 is independent only with respect to ChatGPT's post-source interpretation, not with respect to the ICM source itself, which is now intentionally exposed. Any accidental exposure to Research 131/Checkpoint 471/Research124 Section71 before Message 003 must be disclosed."
   },
   "last_transition": {
-    "transition_id": "mc0012-open-phase1-post-evidence-pre-owner-source",
-    "from_state": "CLOSED",
+    "transition_id": "mc0012-phase1-disposition-phase2-source-exposure-open",
+    "from_state": "OPEN",
     "to_state": "OPEN",
-    "actor": "human",
-    "reason": "The project owner explicitly authorized proceeding with a new Claude collaboration after discovering that Claude had not yet evaluated the post-MC-0011 empirical/external evidence program or the later owner source. Phase 1 preserves Claude blindness to the owner source while updating its position on the completed evidence and V0.2 freeze.",
-    "repository_head": "ff51aa23b7e6d8a32692ad57394ab0aea631b7b6"
+    "actor": "chatgpt",
+    "reason": "Claude Message 001 was durably preserved without detected owner-source contamination. ChatGPT disposition accepts Phase 1, corrects the already-resolved density-audit point, records the single-model baseline limitation as nonblocking, and opens independent Phase-2 ICM source evaluation while withholding ChatGPT Research 131 conclusions.",
+    "repository_head": "3e38f5f72024bfc29c6f9a2e014147d80827c1d5"
   }
 }
