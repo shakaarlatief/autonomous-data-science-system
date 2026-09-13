@@ -1,7 +1,7 @@
 # Project-Development Knowledge Blind Baseline Protocol
 
 **Date:** 2026-09-12
-**Status:** RESEARCH 124 BASELINE PROTOCOL V0.1 / PILOT REQUESTS FROZEN / NO TRIALS RUN YET
+**Status:** RESEARCH 124 BASELINE PROTOCOL V0.2 / PILOT IN PROGRESS / SNAPSHOT-ACCESS LANE HARDENED AFTER BL-002-A CONTAMINATION
 **Research owner:** Research 124
 **Source corpus:** `docs/research/PROJECT_KNOWLEDGE_FAILURE_CORPUS.md`
 **Purpose:** Measure selected pre-diagnosis project-development knowledge behaviors in fresh model sessions before successor-mechanism probes or broad external research.
@@ -64,6 +64,39 @@ repeat policy          add a second fresh ChatGPT replicate when:
 The first pilot therefore begins with 4 trials: 4 scenarios x 1 ChatGPT environment.
 
 Claude and other model environments are intentionally out of scope for this baseline by explicit project-owner decision. A later cross-model study would require a separate owner-approved protocol rather than being assumed as part of this pilot.
+
+### 3.1 Controlled repository-access environment
+
+The pilot uses **Codexless Runtime Bridge only** for repository access. The native GitHub plugin/connector must not be enabled or used in a trial conversation.
+
+This keeps the repository-access surface constant across trials and avoids mixing connector-specific search/ranking behavior into the project-knowledge result.
+
+After BL-002-A, the frozen-snapshot lane is narrowed further because one broad frozen-commit metadata response unexpectedly included descendant/current patch content.
+
+For BL-002-B and later pilot trials, exact historical reads should use only snapshot-bounded local Git object/tree operations through Codexless read-only command execution, such as:
+
+```text
+git show <SNAPSHOT>:<path>
+git ls-tree ... <SNAPSHOT>
+git grep ... <SNAPSHOT> -- <paths>
+```
+
+The collaborator remains free to decide **which** paths to discover/read inside the snapshot. The restriction is on transport: do not use broad commit metadata/search/fetch actions that may return unrelated patch context.
+
+If any tool response exposes descendant/current project content before the answer is frozen, the trial must stop and report:
+
+```text
+TRIAL_CONTAMINATED
+```
+
+rather than attempting to mentally exclude the leaked content and continue.
+
+Protocol history:
+
+```text
+V0.1    BL-001-A and BL-002-A started under the original snapshot-isolation rules
+V0.2    access lane hardened after BL-002-A tool-response contamination
+```
 
 ## 4. Source-read integrity
 
@@ -268,7 +301,7 @@ Do not expand immediately into dozens of scenarios merely because the failure co
 
 ## 11. Request artifacts and initial execution matrix
 
-The four frozen task requests are:
+The four original frozen task requests are:
 
 ```text
 docs/research/project_knowledge_baselines/requests/BL-001_operational_restart_authority.md
@@ -277,11 +310,20 @@ docs/research/project_knowledge_baselines/requests/BL-003_broad_project_orientat
 docs/research/project_knowledge_baselines/requests/BL-004_cockpit_source_fidelity.md
 ```
 
+BL-002-A was invalidated by tool-response contamination. Its access-hardened replacement request is:
+
+```text
+docs/research/project_knowledge_baselines/requests/BL-002B_model_collaboration_dispatch_access_hardened.md
+```
+
+The substantive BL-002 task is unchanged; only the repository-access lane is narrowed.
+
 Initial result paths are reserved as:
 
 ```text
 docs/research/project_knowledge_baselines/results/BL-001_chatgpt_a.md
-docs/research/project_knowledge_baselines/results/BL-002_chatgpt_a.md
+docs/research/project_knowledge_baselines/results/BL-002_chatgpt_a.md        # invalid / preserved
+docs/research/project_knowledge_baselines/results/BL-002_chatgpt_b.md        # replacement
 docs/research/project_knowledge_baselines/results/BL-003_chatgpt_a.md
 docs/research/project_knowledge_baselines/results/BL-004_chatgpt_a.md
 ```
@@ -304,7 +346,7 @@ It should not include the evaluator rubric or summarize the historical failure t
 No broad external literature search and no owner paper/video exposure should occur until the pilot baseline is either completed or explicitly classified infeasible with a preserved reason. This protects the pre-external-evidence behavioral baseline from additional conceptual priming.
 
 ```text
-BASELINE_PROTOCOL_VERSION=0.1
+BASELINE_PROTOCOL_VERSION=0.2
 PILOT_SCENARIOS=4
 PILOT_ENVIRONMENTS=CHATGPT_ONLY
 INITIAL_TRIALS=4

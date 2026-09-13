@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 457
+**Checkpoint:** 458
 **Date:** 2026-09-12
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -23,6 +23,8 @@ Repository artifacts remain authoritative across chats and models.
 ---
 
 ## Current active stage: Research 124 project-development knowledge architecture redesign
+
+Checkpoint 458 preserves the first baseline evidence and a harness correction. BL-001-A is usable: the fresh ChatGPT recognized the operational task, found and materially consumed the governing operations runbook, and selected the correct authority, so the historical restart failure did not reproduce as a simple source-activation miss. However, it still failed to emit the exact ordered restart contract requested, exposing a distinct post-activation task-fidelity problem. BL-002-A is **invalid** rather than scored because a frozen-commit metadata tool response unexpectedly exposed prohibited current Research 124 content before the answer was frozen. The collaborator reported excluding that content, but contextual influence cannot be proven absent after exposure. Baseline protocol V0.2 therefore fixes repository access to Codexless Runtime Bridge only, excludes the native GitHub connector/plugin, and narrows historical reads to exact snapshot-bounded local Git object/tree operations. A fresh BL-002-B replacement is required before progression. Broad external research and the owner paper/video remain paused.
 
 Checkpoint 457 records the project-owner decision to narrow the blind historical baseline pilot to ChatGPT only before any trial execution. The four historical scenarios, exact snapshots, contamination controls, evaluator dimensions and result-isolation rules remain unchanged, but the active matrix is now four fresh ChatGPT trials rather than eight ChatGPT-plus-Claude trials. Claude is explicitly out of scope for this pilot; any later cross-model study requires a separate owner-approved protocol. Broad external research and the owner paper/video remain paused until the ChatGPT pilot completes or is explicitly classified infeasible.
 
