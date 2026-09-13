@@ -320,6 +320,7 @@ docs/checkpoints/455_historical_failure_corpus_v01_frozen_blind_baseline_protoco
 docs/checkpoints/456_blind_historical_baseline_protocol_frozen_pilot_execution_next.md
 docs/checkpoints/457_blind_baseline_scoped_to_chatgpt_only_pilot_next.md
 docs/checkpoints/458_bl002_tool_contamination_baseline_access_hardened_replacement_next.md
+docs/checkpoints/459_bl002_valid_replacement_process_reconstructable_bl003_next.md
 docs/research/PROJECT_KNOWLEDGE_FAILURE_CORPUS.md
 docs/research/project_knowledge_baselines/PROJECT_KNOWLEDGE_BLIND_BASELINE_PROTOCOL.md
 docs/local_execution/validation/206_semantic_git_managed_python_integrity_and_publication_restored.md
@@ -855,7 +856,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-458 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-459 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

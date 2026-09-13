@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 458
+**Checkpoint:** 459
 **Date:** 2026-09-12
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -23,6 +23,8 @@ Repository artifacts remain authoritative across chats and models.
 ---
 
 ## Current active stage: Research 124 project-development knowledge architecture redesign
+
+Checkpoint 459 accepts BL-002-B as the valid access-hardened replacement. The fresh ChatGPT reconstructed the repository-native collaboration process correctly from the frozen snapshot and avoided the historical giant-manual-relay pattern. However, the BL-002 prompt explicitly told the model to use the way the project already handles multi-model collaboration, so this result demonstrates process discoverability and reconstructability **after the process category is cued**, not spontaneous uncued situation dispatch. No identical repeat is needed; a later neutral adjacent variant may be considered after the four-scenario pilot. BL-003 is now the next trial, using the V0.2 access-hardened Codexless-only historical-snapshot request. Broad external research and the owner paper/video remain paused.
 
 Checkpoint 458 preserves the first baseline evidence and a harness correction. BL-001-A is usable: the fresh ChatGPT recognized the operational task, found and materially consumed the governing operations runbook, and selected the correct authority, so the historical restart failure did not reproduce as a simple source-activation miss. However, it still failed to emit the exact ordered restart contract requested, exposing a distinct post-activation task-fidelity problem. BL-002-A is **invalid** rather than scored because a frozen-commit metadata tool response unexpectedly exposed prohibited current Research 124 content before the answer was frozen. The collaborator reported excluding that content, but contextual influence cannot be proven absent after exposure. Baseline protocol V0.2 therefore fixes repository access to Codexless Runtime Bridge only, excludes the native GitHub connector/plugin, and narrows historical reads to exact snapshot-bounded local Git object/tree operations. A fresh BL-002-B replacement is required before progression. Broad external research and the owner paper/video remain paused.
 

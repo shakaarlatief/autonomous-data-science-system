@@ -318,6 +318,15 @@ docs/research/project_knowledge_baselines/requests/BL-002B_model_collaboration_d
 
 The substantive BL-002 task is unchanged; only the repository-access lane is narrowed.
 
+BL-003 and BL-004 had not yet executed when V0.2 was introduced, so their active request artifacts are the access-hardened versions:
+
+```text
+docs/research/project_knowledge_baselines/requests/BL-003_broad_project_orientation_access_hardened.md
+docs/research/project_knowledge_baselines/requests/BL-004_cockpit_source_fidelity_access_hardened.md
+```
+
+Their substantive tasks and frozen snapshots are unchanged.
+
 Initial result paths are reserved as:
 
 ```text

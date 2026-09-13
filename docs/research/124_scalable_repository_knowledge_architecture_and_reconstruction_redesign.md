@@ -1958,3 +1958,50 @@ REPOSITORY_ACCESS_ENVIRONMENT=CODEXLESS_ONLY
 BL002_REPLACEMENT=REQUIRED
 NEXT=BL-002_CHATGPT_B
 ```
+## 59. BL-002-B valid replacement: process reconstructable under explicit process cue
+
+BL-002-B is the valid replacement for contaminated BL-002-A and is evaluated at:
+
+```text
+docs/research/project_knowledge_baselines/evaluations/BL-002_chatgpt_b_evaluation.md
+```
+
+The V0.2 access-hardened trial remained inside the exact frozen snapshot through Codexless-only local Git object/tree reads and did not expose later Research 124 material.
+
+The result does not reproduce the historical generic manual-relay behavior. A fresh ChatGPT efficiently reconstructed the repository-native model-collaboration machinery, including thread identity, `BRIEF` / `THREAD` / `STATE`, `REVIEW_INBOX`, coordination-branch versus immutable evidence boundaries, role/write-scope separation, bounded Claude message writes, persistent interaction provenance and the short standardized human-to-Claude relay.
+
+The result is strong evidence that the collaboration process is **discoverable, reconstructable and usable once the task explicitly tells the collaborator to use the way the project already handles multi-model collaboration**.
+
+However, the trial has an important construct-validity limitation. The request itself contains that explicit procedural cue. Historical parent `KF-SD-03` involved a stronger failure: ChatGPT was asked to involve Claude and did not spontaneously activate the preserved project-specific collaboration process until the owner reminded it how the process worked.
+
+Therefore BL-002-B supports:
+
+```text
+process existence cued
+    -> governing collaboration sources discovered
+    -> process reconstructed correctly
+    -> short repository-native relay proposed
+```
+
+but does not cleanly establish:
+
+```text
+uncued "bring Claude in"
+    -> situation classified as project-governed collaboration automatically
+```
+
+This distinction should survive later architecture synthesis. Situation classification/dispatch and downstream process reconstruction are empirically separable.
+
+No identical BL-002-B repeat is required. A later adjacent uncued variant may be useful after the bounded four-scenario pilot if spontaneous dispatch remains an important unresolved claim.
+
+BL-003 and BL-004 had not yet executed when Protocol V0.2 hardened the access lane, so access-hardened request artifacts are prepared for both without changing their substantive tasks or frozen snapshots.
+
+```text
+BL002_B=VALID
+BL002_PROCESS_DISCOVERABILITY=PASS
+BL002_PROCESS_RECONSTRUCTION=PASS
+BL002_UNCUED_DISPATCH=NOT_CLEANLY_TESTED
+IDENTICAL_REPLICATE=NO
+POSSIBLE_LATER_UNCUED_VARIANT=YES
+NEXT=BL-003_CHATGPT_A
+```
