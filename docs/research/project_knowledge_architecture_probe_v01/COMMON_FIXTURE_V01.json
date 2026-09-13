@@ -1,0 +1,434 @@
+{
+  "schema_version": 1,
+  "fixture_id": "PKA-CF-V01",
+  "status": "FROZEN_BEFORE_H1_H2_IMPLEMENTATION",
+  "date_frozen": "2026-09-13",
+  "authority": "Synthetic representation-neutral mechanism-probe fixture governed by Research 134. It is evidence input, not project-development authority.",
+  "rules": {
+    "same_fixture_for_all_hypotheses": true,
+    "candidate_specific_facts_forbidden": true,
+    "derived_state_may_be_deleted": true,
+    "probabilistic_retrieval_may_not_resolve_consequential_authority": true,
+    "fixture_changes_require_new_version_and_full_rerun": true
+  },
+  "F1_identity": {
+    "initial": {
+      "semantic_subjects": [
+        {
+          "id": "S-A",
+          "status": "active",
+          "current_carriers": [
+            "A1"
+          ]
+        },
+        {
+          "id": "S-B",
+          "status": "active",
+          "current_carriers": [
+            "B1"
+          ]
+        }
+      ]
+    },
+    "transitions": [
+      {
+        "id": "F1-T1",
+        "op": "move_carrier",
+        "subject": "S-A",
+        "from": "A1",
+        "to": "A2"
+      },
+      {
+        "id": "F1-T2",
+        "op": "merge_identity",
+        "source": "S-B",
+        "target": "S-A",
+        "reason": "initial-equivalence-judgment"
+      },
+      {
+        "id": "F1-T3",
+        "op": "reverse_merge",
+        "source": "S-B",
+        "target": "S-A",
+        "reason": "mistaken-merge-discovered"
+      },
+      {
+        "id": "F1-T4",
+        "op": "split_identity",
+        "source": "S-B",
+        "targets": [
+          {
+            "id": "S-B1",
+            "carrier": "B2a"
+          },
+          {
+            "id": "S-B2",
+            "carrier": "B2b"
+          }
+        ],
+        "reason": "two-distinct-durable-subjects-discovered"
+      }
+    ],
+    "expected_final": {
+      "S-A": {
+        "resolution": "canonical",
+        "targets": [
+          "S-A"
+        ],
+        "current_carriers": [
+          "A2"
+        ]
+      },
+      "A1": {
+        "resolution": "historical_carrier",
+        "targets": [
+          "S-A"
+        ],
+        "current_carriers": [
+          "A2"
+        ]
+      },
+      "S-B": {
+        "resolution": "split",
+        "targets": [
+          "S-B1",
+          "S-B2"
+        ],
+        "current_carriers": []
+      },
+      "B1": {
+        "resolution": "historical_carrier_of_split_subject",
+        "targets": [
+          "S-B1",
+          "S-B2"
+        ],
+        "current_carriers": []
+      },
+      "S-B1": {
+        "resolution": "canonical",
+        "targets": [
+          "S-B1"
+        ],
+        "current_carriers": [
+          "B2a"
+        ]
+      },
+      "S-B2": {
+        "resolution": "canonical",
+        "targets": [
+          "S-B2"
+        ],
+        "current_carriers": [
+          "B2b"
+        ]
+      }
+    },
+    "history_must_show": [
+      "merge:S-B->S-A",
+      "reverse_merge:S-B->S-A",
+      "split:S-B->S-B1,S-B2"
+    ]
+  },
+  "F2_authority": {
+    "task": "TASK-X",
+    "sources": [
+      {
+        "id": "P0",
+        "role": "procedure",
+        "status": "superseded",
+        "recorded_at": "2026-01-01",
+        "effective_from": "2026-01-01"
+      },
+      {
+        "id": "P1",
+        "role": "procedure",
+        "status": "accepted",
+        "recorded_at": "2026-01-10",
+        "effective_from": "2026-01-10"
+      },
+      {
+        "id": "P2",
+        "role": "procedure_supplement",
+        "status": "accepted",
+        "recorded_at": "2026-01-20",
+        "effective_from": "2026-02-01"
+      },
+      {
+        "id": "C1",
+        "role": "candidate",
+        "status": "candidate",
+        "recorded_at": "2026-01-25",
+        "effective_from": null
+      }
+    ],
+    "relations": [
+      {
+        "type": "supersedes",
+        "source": "P1",
+        "target": "P0"
+      },
+      {
+        "type": "supplements",
+        "source": "P2",
+        "target": "P1",
+        "task": "TASK-X",
+        "precedence_after": "P1"
+      },
+      {
+        "type": "candidate_conflicts_with",
+        "source": "C1",
+        "target": "P1",
+        "task": "TASK-X"
+      }
+    ],
+    "expected": {
+      "2026-01-15": {
+        "governing_sources": [
+          "P1"
+        ],
+        "non_authoritative_conflicts": [],
+        "status": "resolved"
+      },
+      "2026-02-15": {
+        "governing_sources": [
+          "P1",
+          "P2"
+        ],
+        "non_authoritative_conflicts": [
+          "C1"
+        ],
+        "status": "resolved"
+      },
+      "without_precedence_after_2026-02-15": {
+        "governing_sources": [],
+        "non_authoritative_conflicts": [
+          "C1"
+        ],
+        "status": "ambiguous"
+      }
+    }
+  },
+  "F3_workstreams": {
+    "workstreams": [
+      {
+        "id": "W0",
+        "state": "active",
+        "parent": null,
+        "depends_on": [
+          "W1",
+          "W2"
+        ],
+        "resume_target": null
+      },
+      {
+        "id": "W1",
+        "state": "completed",
+        "parent": "W0",
+        "depends_on": [],
+        "resume_target": "W0"
+      },
+      {
+        "id": "W2",
+        "state": "blocked",
+        "parent": "W0",
+        "depends_on": [
+          "W2a"
+        ],
+        "resume_target": "W0"
+      },
+      {
+        "id": "W2a",
+        "state": "paused",
+        "parent": "W2",
+        "depends_on": [
+          "D1"
+        ],
+        "pause_reason": "external-condition-not-met",
+        "resume_condition": "D1=satisfied",
+        "resume_target": "W2a"
+      }
+    ],
+    "expected_reconstruction": {
+      "states": {
+        "W0": "active",
+        "W1": "completed",
+        "W2": "blocked",
+        "W2a": "paused"
+      },
+      "active_chain": [
+        "W0",
+        "W2",
+        "W2a"
+      ],
+      "blocking_condition": "D1=satisfied",
+      "immediate_resume_target": "W2a",
+      "return_chain_after_child_completion": [
+        "W2",
+        "W0"
+      ],
+      "must_not_replay": [
+        "W1"
+      ]
+    }
+  },
+  "F4_capture": {
+    "capture": {
+      "id": "I1",
+      "status": "candidate",
+      "recorded_at": "2026-03-01",
+      "source": "conversation:synthetic-01",
+      "rough_subject": "knowledge-architecture",
+      "text": "Candidate insight about authority resolution."
+    },
+    "supporting_sources": [
+      "E1",
+      "E2"
+    ],
+    "accepted_output": {
+      "id": "K1",
+      "status": "accepted",
+      "claim": "Action-shaped authority resolution must preserve governing-set semantics."
+    },
+    "rejected_alternative": {
+      "id": "R1",
+      "status": "rejected",
+      "claim": "Recency alone may resolve authority."
+    },
+    "expected": {
+      "capture_is_authority": false,
+      "accepted_survives_capture_deletion": true,
+      "accepted_provenance_contains": [
+        "I1",
+        "E1",
+        "E2"
+      ],
+      "rejected_remains_historical_not_current": true
+    }
+  },
+  "F5_scale": {
+    "active_items": [
+      "ACTIVE-1",
+      "ACTIVE-2",
+      "ACTIVE-3",
+      "ACTIVE-4",
+      "ACTIVE-5"
+    ],
+    "history_counts": {
+      "1x": 20,
+      "5x": 100,
+      "10x": 200
+    },
+    "historical_item_template": {
+      "status": "historical",
+      "cross_object_relations": []
+    },
+    "expected_invariant": "Active semantic state remains constant while only historical/evidence count grows."
+  },
+  "F6_rebuild": {
+    "derived_views": [
+      "active_route",
+      "authority_closure",
+      "identity_resolution",
+      "search_projection"
+    ],
+    "required": {
+      "unique_truth_lost_after_delete": false,
+      "rebuild_from_authoritative_inputs": true,
+      "freshness_binding_required": true,
+      "missing_required_view_is_visible": true
+    }
+  },
+  "F7_contract": {
+    "task": "TASK-SAFE-WRITE",
+    "sources": [
+      {
+        "id": "G1",
+        "role": "base_contract",
+        "status": "accepted",
+        "required_constraint_ids": [
+          "C01",
+          "C02",
+          "C03",
+          "C04",
+          "C05"
+        ]
+      },
+      {
+        "id": "G2",
+        "role": "contract_supplement",
+        "status": "accepted",
+        "effective_from": "2026-04-01",
+        "supplements": "G1",
+        "precedence_after": "G1:C02",
+        "required_constraint_ids": [
+          "C02A"
+        ]
+      }
+    ],
+    "constraints": [
+      {
+        "id": "C01",
+        "source": "G1",
+        "kind": "precondition",
+        "text": "Verify the target is in a clean, reconstructable state."
+      },
+      {
+        "id": "C02",
+        "source": "G1",
+        "kind": "step",
+        "text": "Resolve and record the exact current target identity."
+      },
+      {
+        "id": "C02A",
+        "source": "G2",
+        "kind": "step",
+        "text": "Verify the expected target revision still matches immediately before mutation."
+      },
+      {
+        "id": "C03",
+        "source": "G1",
+        "kind": "step",
+        "text": "Validate the intended bounded change against governing constraints."
+      },
+      {
+        "id": "C04",
+        "source": "G1",
+        "kind": "prohibition",
+        "text": "Do not use force or bypass authority guards."
+      },
+      {
+        "id": "C05",
+        "source": "G1",
+        "kind": "step",
+        "text": "Execute once and verify the postcondition before reporting success."
+      }
+    ],
+    "expected": {
+      "after_2026-04-01_order": [
+        "C01",
+        "C02",
+        "C02A",
+        "C03",
+        "C04",
+        "C05"
+      ],
+      "source_consumption_receipt": [
+        "G1",
+        "G2"
+      ],
+      "missing_constraint_test": "Remove C04 body while G1 still requires C04; binding must fail visibly.",
+      "contradiction_test": "Add accepted supplement constraint negating C04; binding must fail visibly as conflict."
+    }
+  },
+  "overlay": {
+    "synthetic_private_fact": {
+      "id": "PRIV-1",
+      "visibility": "private",
+      "value": "synthetic-private-only-placeholder"
+    },
+    "public_projection_must_not_include": [
+      "synthetic-private-only-placeholder"
+    ],
+    "degraded_rule": "If a consequential query requires unavailable private authority, return unresolved/private-not-verified rather than infer from memory."
+  }
+}

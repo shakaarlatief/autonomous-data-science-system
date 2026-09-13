@@ -3682,3 +3682,22 @@ REQUIREMENTS_V02=UNCHANGED_FROZEN
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=IMPLEMENT_COMMON_FIXTURE_AND_H1_H2_PROBES
 ```
+
+## 78. Common Fixture V0.1 receives an exact machine freeze before H1/H2 implementation
+
+Research 135 converts Research 134's conceptual fixture into one exact representation-neutral machine artifact **before** either candidate receives implementation logic. This prevents the hard cases or expected outputs from being quietly adapted after seeing how H1 or H2 behaves.
+
+```text
+fixture: docs/research/project_knowledge_architecture_probe_v01/COMMON_FIXTURE_V01.json
+fixture_id: PKA-CF-V01
+SHA-256: c8ed1873014b7a69016eb6fb259791d1c34b9cd14219547f1ebc0e755b836fe8
+```
+
+The fixture contains F1-F7 plus a synthetic private/non-leakage overlay. It does not assign semantic facts to source-local declarations or a cross-object spine. H1 and H2 must consume identical fixture bytes and face identical challenge mutations. Any later fixture defect requires a new version and a complete rerun.
+
+```text
+COMMON_FIXTURE_V01=MACHINE_FROZEN
+H1_IMPLEMENTATION=NEXT
+H2_IMPLEMENTATION=NEXT
+TARGET_ARCHITECTURE=NOT_SELECTED
+```
