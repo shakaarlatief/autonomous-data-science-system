@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / TARGETED EXTERNAL EVIDENCE D1-D8 COMPLETE / REQUIREMENTS-EVIDENTIARY-PROVENANCE RECONCILIATION NEXT / TARGET ARCHITECTURE DESIGN PAUSED
+**Status:** ACTIVE / PROVISIONAL REQUIREMENTS RECONCILIATION V0.2 COMPLETE / OWNER REVIEW NEXT / TARGET ARCHITECTURE DESIGN PAUSED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -2740,7 +2740,7 @@ Research 124 should therefore preserve provenance for authority-significant tran
 
 W3C PROV-O and SLSA independently model not only which input an output derives from but also the process/activity, producing agent/platform and material parameters/dependencies involved in generation.
 
-For later candidate comparison, Ã¢â‚¬Å“generated from the repositoryÃ¢â‚¬Â is insufficient when a derived representation materially affects reconstruction. The candidate should be able to establish a proportionate provenance envelope over sources, generator/transformation and freshness.
+For later candidate comparison, ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œgenerated from the repositoryÃƒÂ¢Ã¢â€šÂ¬Ã‚Â is insufficient when a derived representation materially affects reconstruction. The candidate should be able to establish a proportionate provenance envelope over sources, generator/transformation and freshness.
 
 ### 66.5 Rebuildability has several strengths
 
@@ -3029,7 +3029,7 @@ current accepted / preferred
 
 Old authority should remain discoverable for audit/history without entering ordinary current reconstruction by default.
 
-### 67.13 â€œCurrentâ€ cannot mean merely â€œlatest commitâ€
+### 67.13 Ã¢â‚¬Å“CurrentÃ¢â‚¬Â cannot mean merely Ã¢â‚¬Å“latest commitÃ¢â‚¬Â
 
 Current governing truth may depend on:
 
@@ -3262,4 +3262,74 @@ ROUTINE_MAINTENANCE_SHOULD_BE_DEPENDENCY_LOCAL=true
 ACTIVE_SURFACE_COST_NE_ARCHIVAL_STORAGE_COST=true
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=REQUIREMENTS_EVIDENTIARY_PROVENANCE_RECONCILIATION
+```
+## 69. Provisional requirements reconciliation V0.2 complete
+
+Research 130 performs the planned post-evidence reconciliation:
+
+```text
+docs/research/130_requirements_evidentiary_provenance_reconciliation.md
+```
+
+The reconciliation compares all 45 original KA-R requirements and 15 KA-I invariants against owner intent, historical failures, blind baseline evidence and D1-D8 external evidence.
+
+The original boundary remains substantially sound, but later evidence requires several material calibrations.
+
+Most importantly, Research 130 rejects the hidden Phase-B assumption that every narrow consequential task must first reconstruct the full Tier-A project orientation. BL-001 shows that overly broad reconstruction can reduce exact task fidelity, while BL-003 shows that broad orientation is recoverable but can be expensive. The proposed V0.2 rule is therefore:
+
+```text
+generic continuation / cold start
+    -> broad project orientation required
+
+narrow governed task
+    -> task-shaped minimum safe orientation required
+       sufficient to establish current state, scope, authority and uncertainty
+```
+
+Research 130 also strengthens consequential authority preflight. Resolving and reading the right source is not enough when correctness depends on a concrete procedure/contract; the governing contract must be bound closely enough to the proposed action/guidance that material conformance can be checked.
+
+Five explicit requirements are proposed because the original 45 do not cleanly express later evidence:
+
+```text
+KA-R46  representation-independent continuity of identity
+KA-R47  multi-axis organization without truth duplication
+KA-R48  capture / consolidation / promotion boundary
+KA-R49  selective temporal and supersession semantics
+KA-R50  recurring active-surface consolidation lifecycle
+```
+
+Two invariants are proposed:
+
+```text
+KA-I16  capture does not imply authority
+KA-I17  intended semantic continuity is not forced to equal carrier continuity
+```
+
+The proposal therefore contains 50 requirements and 17 invariants if accepted. No original requirement is simply deleted; several are refined, conditionalized or reclassified as qualification requirements.
+
+The most important weakening/calibration is that the current architecture is not treated as broadly unreconstructable. The redesign objective is reliability, task fidelity, context/maintenance economics and future robustness rather than repairing a system that cannot preserve project understanding at all.
+
+The most important strengthening is around action fidelity, stable semantic identity, source-set authority, temporal meaning, consolidation fidelity and dependency-local maintenance.
+
+Research 130 remains deliberately provisional because this is the first point where the evidence program proposes revising a previously frozen owner-facing requirement boundary. The project owner should review the major calibrations before V0.2 becomes the new frozen acceptance boundary.
+
+Until owner acceptance/amendment:
+
+```text
+original Phase-B requirements/invariants
+    remain the last frozen boundary
+
+Research 130 V0.2
+    remains the proposed evidence-reconciled successor boundary
+```
+
+Target architecture design remains paused and the withheld owner paper/video remains unexposed.
+
+```text
+REQUIREMENTS_RECONCILIATION=PROVISIONAL_V02_COMPLETE
+PROPOSED_REQUIREMENTS=50
+PROPOSED_INVARIANTS=17
+OWNER_REVIEW=NEXT
+TARGET_ARCHITECTURE=NOT_SELECTED
+WITHHELD_OWNER_SOURCE=STILL_WITHHELD
 ```
