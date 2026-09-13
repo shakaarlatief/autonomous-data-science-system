@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "thread_id": "MC-0013",
+  "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
+  "lifecycle_state": "OPEN",
+  "phase": "INDEPENDENT_ARCHITECTURE_COUNTER_DESIGN",
+  "target": {
+    "branch": "v1-source-vault-bootstrap-resume",
+    "base_ref": "233eb932062a24473fcc4f4fe93160c952eea426",
+    "description": "Independent Claude architecture synthesis from the complete Research 124 evidence and Requirements V0.2 at the exact pre-ChatGPT-candidate base. Current branch is routing-only until Claude Message 001 is frozen.",
+    "write_paths": []
+  },
+  "task_owner": "chatgpt",
+  "target_write_owner": null,
+  "participants": [
+    {
+      "collaborator_id": "chatgpt",
+      "interaction_environment": "ChatGPT",
+      "interaction_session": "chatgpt-24",
+      "roles": [
+        "TASK_OWNER",
+        "RESEARCHER",
+        "CRITIC"
+      ]
+    },
+    {
+      "collaborator_id": "claude",
+      "interaction_environment": "Claude",
+      "interaction_session": "claude-03",
+      "roles": [
+        "COUNTER_DESIGNER",
+        "RESEARCHER",
+        "CRITIC"
+      ]
+    },
+    {
+      "collaborator_id": "human",
+      "interaction_environment": "Human",
+      "interaction_session": "project-owner",
+      "roles": [
+        "HUMAN_DECIDER"
+      ]
+    }
+  ],
+  "allowed_secondary_write_surfaces": [
+    {
+      "collaborator_id": "claude",
+      "paths": [
+        "docs/model_collaboration/threads/MC-0013/messages/**"
+      ]
+    }
+  ],
+  "next_expected_actor": "claude",
+  "independence": {
+    "status": "BLIND_TO_CANDIDATE",
+    "review_base_ref": "233eb932062a24473fcc4f4fe93160c952eea426",
+    "known_exposures": [
+      "Claude knows the full Research 124 evidence program through MC-0012, including ICM and the cross-model reconciliation at Checkpoint 474.",
+      "ChatGPT has created a first candidate-architecture synthesis after the independent base, but its content is intentionally withheld from Claude until Message 001 is frozen.",
+      "Current-branch access is restricted to MC-0013 routing surfaces; substantive project evidence is bound to the exact pre-candidate base."
+    ],
+    "notes": "Independence applies to candidate architecture content, not to the common evidence base. Any exposure to Research 133 or descendant candidate synthesis before Message 001 invalidates the independent-design classification."
+  },
+  "last_transition": {
+    "transition_id": "mc0013-open-independent-architecture-counter-design",
+    "from_state": "CLOSED",
+    "to_state": "OPEN",
+    "actor": "chatgpt",
+    "reason": "Research 124 reached candidate architecture synthesis after Checkpoint 474. The first ChatGPT synthesis is frozen separately while Claude receives the same pre-candidate evidence boundary for an independent-first counter-design before comparative review.",
+    "repository_head": "233eb932062a24473fcc4f4fe93160c952eea426"
+  }
+}

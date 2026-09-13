@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-13
-**Status:** NO ACTIVE CLAUDE OBLIGATION / MC-0012 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0013 ACTIVE INDEPENDENT COUNTER-DESIGN / CHATGPT CANDIDATE SYNTHESIS WITHHELD / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -23,7 +23,30 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Current active collaboration obligation
 
-There is no active Claude obligation. MC-0012 is resolved. Architecture synthesis may proceed under Research 124 without waiting for general second-model approval. A future Claude obligation should be opened only when a concrete candidate-design critique, falsification task or other bounded collaboration has clear value.
+### MC-0013: independent project-knowledge architecture counter-design
+
+```text
+collaborator               Claude / claude-03
+mode                       INDEPENDENT_THEN_COMPARATIVE
+coordination branch        v1-source-vault-bootstrap-resume
+independent evidence base  233eb932062a24473fcc4f4fe93160c952eea426
+phase                      INDEPENDENT ARCHITECTURE COUNTER-DESIGN
+expected output            docs/model_collaboration/threads/MC-0013/messages/001_claude_independent_architecture_counter_design.md
+status                     OPEN / CLAUDE MESSAGE 001 NEXT
+conversation               03 - Project Knowledge Architecture Foundations and Design Method
+```
+
+ChatGPT has completed a first candidate-family synthesis after the independent base, but that content is intentionally withheld. Claude may use the current branch only for MC-0013 routing and must bind substantive design reasoning to the exact pre-candidate commit above. The goal is candidate-design independence over a shared evidence base, not evidence blindness.
+
+Durable contract:
+
+```text
+docs/model_collaboration/threads/MC-0013/BRIEF.md
+docs/model_collaboration/threads/MC-0013/THREAD.md
+docs/model_collaboration/threads/MC-0013/STATE.json
+```
+
+Research 124 remains the active architecture authority. Requirements V0.2 are unchanged and no target architecture is selected.
 
 ## Most recently completed obligation
 

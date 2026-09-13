@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / CROSS-MODEL OWNER-SOURCE RECONCILIATION COMPLETE / CANDIDATE ARCHITECTURE SYNTHESIS NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / FIRST CANDIDATE SYNTHESIS COMPLETE / MC-0013 INDEPENDENT COUNTER-DESIGN ACTIVE / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -3567,4 +3567,66 @@ RESEARCH132=CROSS_MODEL_ICM_RECONCILIATION_COMPLETE
 REQUIREMENTS_V02=UNCHANGED_FROZEN
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=CANDIDATE_ARCHITECTURE_SYNTHESIS
+```
+
+## 75. First candidate-family synthesis complete; MC-0013 independent counter-design opens
+
+Research 133 begins serious architecture synthesis from the complete evidence field and frozen Requirements V0.2. It does not score technologies or select a winner. Instead it identifies common semantic responsibilities, derives constraints that survive multiple implementation families, and constructs six materially different coherent architecture families to expose where semantic cost can be paid.
+
+```text
+A  Distributed Document Contracts
+   rich authoritative documents + local structured declarations + generated views
+
+B  Bounded Semantic/Control Spine
+   rich authoritative sources + small authoritative identity/control relation layer
+
+C  Knowledge-Object-Primary Repository
+   semantic/workstream/source objects primary; human documents mostly composed views
+
+D  Transition Journal + Materialized Current Knowledge
+   authority-significant transitions primary; current/workstream/authority projections derived
+
+E  Relational Canonical Registry + Attached Artifacts
+   normalized structured authority for selected state/relations; rich evidence attached
+
+F  Retrieval-First Minimal Formalism
+   rich documents + minimal deterministic control declarations + dynamic retrieval
+```
+
+The alternatives reveal a deeper continuum than `files versus database`: less explicit structure reduces capture/schema cost but increases repeated inference/reconstruction ambiguity; more explicit structure strengthens deterministic identity/authority/query behavior but increases relation, validation and migration cost.
+
+Several cross-family deductions already narrow the design space without selecting a technology:
+
+```text
+pure prose is insufficient for every required authority/workstream/identity control semantic
+probabilistic retrieval cannot own consequential governing authority
+pure current snapshots cannot replace historical lineage
+pure history/event replay cannot be the ordinary reconstruction interface
+global hand-maintained registries cannot grow linearly with history
+universal sentence/claim atomization is unjustified
+source/write authority must remain distinguishable from derived read/reconstruction views
+active salience should be derived from current workstream/authority/dependency state where practical
+workstream continuation and consequential authority are the strongest cases for deterministic structure
+```
+
+Research 133 records one integrated ChatGPT hypothesis worth challenging rather than adopting: rich Git-authoritative source artifacts plus a bounded authoritative semantic/control spine plus rebuildable multi-axis/query views. The physical representation of such a spine remains intentionally open. The hypothesis may be wrong because it can inherit both document and structured-registry costs, expand into a disguised database, or duplicate semantic facts across source and spine.
+
+High-information probes are identified for identity merge/split, joint-authority closure, nested workstream interruption, active-surface derivation, local-change economics, derived-store deletion and post-activation contract fidelity. These are intended to falsify assumptions before major implementation rather than instantiate six full systems.
+
+Before ChatGPT's candidate content is exposed cross-model, MC-0013 opens an `INDEPENDENT_THEN_COMPARATIVE` Claude counter-design. Claude's substantive design base is exact pre-candidate commit:
+
+```text
+233eb932062a24473fcc4f4fe93160c952eea426
+```
+
+The current branch is routing-only for MC-0013 Phase 1. Claude may use the same complete pre-candidate evidence field, including Research 132 and ICM, but must not inspect Research 133 or descendant candidate synthesis until Message 001 is frozen. This tests architecture-design convergence/divergence rather than evidence reconstruction.
+
+```text
+RESEARCH133=FIRST_ARCHITECTURE_SYNTHESIS_COMPLETE
+MC0013=OPEN_INDEPENDENT_COUNTER_DESIGN
+CHATGPT_WORKING_HYPOTHESIS=BOUNDED_SEMANTIC_CONTROL_SPINE_HYBRID
+WORKING_HYPOTHESIS_STATUS=CHALLENGE_NOT_SELECTION
+REQUIREMENTS_V02=UNCHANGED_FROZEN
+TARGET_ARCHITECTURE=NOT_SELECTED
+NEXT=CLAUDE_MC0013_MESSAGE_001
 ```
