@@ -1,0 +1,83 @@
+# BL-003 Result Receipt
+
+## Scenario ID
+
+`BL-003`
+
+## Environment / model
+
+- Environment: ChatGPT using Codexless Runtime Bridge public preview surface
+- Model: GPT-5.6 Sol
+
+## Frozen snapshot SHA
+
+`f355994c538e0b9b28b5a3c2a5814252ffea1939`
+
+## Snapshot access method
+
+The request file was read from the explicitly named coordination branch with Codexless Runtime Bridge. All substantive project evidence was then constrained to the frozen snapshot using Codexless read-only command execution and exact local Git object/tree operations such as `git cat-file`, `git ls-tree`, and `git show <SNAPSHOT>:<path>`.
+
+No web/external source or native GitHub connector was used as project evidence. No descendant/current repository content was used as project evidence.
+
+## Sources materially consulted
+
+- `docs/research/project_knowledge_baselines/requests/BL-003_broad_project_orientation_access_hardened.md`
+- frozen snapshot tree inventory for `docs/` and selected durable subtrees
+- `docs/VISION.md`
+- `docs/PRINCIPLES.md` (partial output before tool truncation)
+- `docs/DEVELOPMENT_METHOD.md`
+- `docs/KNOWLEDGE_MAP.md` (partial output before tool truncation)
+- `docs/foundations/002_epistemic_integrity_and_project_constitution.md`
+- `docs/foundations/004_project_state_dependency_and_state_driven_orchestration.md` (partial output before tool truncation)
+- `docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md`
+- `docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md`
+- `docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md`
+- `docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md`
+- `docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md`
+- `docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md`
+- `docs/specifications/001_v1_sqlite_technical_architecture.md` (partial output before tool truncation)
+- `docs/specifications/008_v1_project_cockpit_interaction_architecture.md`
+- `docs/specifications/024_v1_model_collaboration_state_guard.md`
+- `docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md`
+- `docs/model_collaboration/README.md`
+- `docs/experiments/prototype_v0/FINAL_RESULTS.md`
+
+## Read / access failures
+
+One initial broad `git ls-tree --name-only <SNAPSHOT>` call was blocked by the host safety layer before execution. It returned no repository content. The read was retried in narrower exact-snapshot form and succeeded. Several multi-file `git show` calls returned truncated stdout; where material, the relevant file was then read separately. No snapshot-access failure occurred.
+
+## Final answer
+
+At frozen snapshot `f355994c538e0b9b28b5a3c2a5814252ffea1939`, the project is best understood as an attempt to build a **professional data-science operating environment around strong LLM reasoning**, rather than a one-shot autonomous analyst or a larger chat interface. The enduring question is which parts of good data-science process navigation should remain flexible model reasoning, which should become explicit system-managed state or deterministic guarantees, which should be reusable across projects, and where human judgment should remain authoritative.
+
+A useful high-level mental model is that ADS has two things evolving in parallel: the target data-science system itself, and the governed method used to design, test, preserve, and revise that system. Within that picture, the major enduring domains/workstreams are:
+
+1. **Epistemic integrity, admissibility, and project constitution.** The project is trying to make defensible data science the invariant core, not merely produce technically successful models. The durable conceptual chain is project meaning -> legitimate information -> valid analytical procedure -> evidence -> claim -> traceable state. Foundation 002 develops five core epistemic invariants: semantic validity, information legitimacy, evidence validity, claim validity, and traceability/dependency integrity. It then separates those from admissibility and risk-sensitive assurance. This is the deepest source for why ADS treats leakage, validation design, uncertainty, causal overclaiming, provenance, and downstream invalidation as one coherent scientific-governance problem rather than unrelated checks. Important governing/deep sources are `docs/foundations/002_epistemic_integrity_and_project_constitution.md`, `docs/PRINCIPLES.md`, and `docs/VISION.md`.
+
+2. **The LLM-system-human boundary.** ADS is explicitly not defined as "an LLM that does data science." Foundation 013 distinguishes a human-executed project, a human plus interactive LLM project, and a system-mediated project. The system is meant to externalize process intelligence that otherwise remains implicit in prompts and human memory: persistent project state, methodological memory, provenance, constraints, repair, stopping logic, and selective escalation. The LLM remains the flexible reasoning engine for interpretation, synthesis, hypothesis generation, trade-offs, and open-ended judgment. The human remains authoritative for intent, domain meaning, consequential trade-offs, approvals, and ambiguities where human judgment genuinely adds value. The system should only own mechanisms that empirically earn their complexity. Start with `docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md` and `docs/VISION.md`.
+
+3. **Project state, project objects, dependency integrity, and adaptive orchestration.** The project does not want "memory" to mean a transcript or a summary. It wants an explicit representation of what is currently known, assumed, unresolved, evidenced, decided, stale, invalid, blocked, or superseded. Foundation 004 develops the state/dependency idea, while Foundation 018 turns it into a product model based on **Objects, Relations, Events, and Views**. Important object families include intent and definitions, artifacts/datasets/variables, questions/assumptions/findings/claims, proposals/investigations/runs/evidence/decisions, and reports. Conventional areas such as EDA, Validation, Features, Models, and Evaluation are treated as views over the underlying scientific state, not rigid backend pipeline stages. Foundation 018 also establishes the professional workflow boundary: ADS is the project/process control plane; VS Code remains the developer workbench; Python/containers/etc. remain the execution plane; Git/GitHub remain code versioning and provenance. Key sources are `docs/foundations/004_project_state_dependency_and_state_driven_orchestration.md` and `docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md`.
+
+4. **The methodological-navigation brain and reusable knowledge.** This appears to be one of the project's central long-term intellectual workstreams. The problem is not just storing methods such as Random Forest or rolling validation. ADS wants reusable knowledge about methods, questions, evidence requirements, decision frameworks, invariants, failure modes, interpretation, dependencies, and follow-ups. Foundation 019 defines the staged relevance model `KNOWN -> APPLICABLE -> RELEVANT -> RECOMMENDED -> REQUIRED / BLOCKING` and the idea of a bounded project-specific **MethodologicalHorizon** selected from a much larger global knowledge universe. Foundation 020 then defines the representation architecture: `KnowledgeAsset`, `KnowledgeComponent`, `NarrativeFacet`, `KnowledgeRelation`, conditional `KnowledgeRule`, `KnowledgeCollection`, and separate `ExecutionCapability`, with stable identity and revision history. A key principle is that retrieval, applicability, required context, and project relevance are different responsibilities, and unknown context must not silently become "not applicable." The deep sources are `docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md` and `docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md`. For the V1 implementation of that conceptual layer, `docs/specifications/001_v1_sqlite_technical_architecture.md` is the foundational technical contract, while Specifications 009 through 014 in the snapshot are the focused retrieval, horizon, selective-context, and reasoning-value experiments/contracts.
+
+5. **V1 persistence, retrieval, context assembly, and reasoning-runtime architecture.** The project has deliberately separated enduring semantics from replaceable infrastructure. Specification 001 accepts a SQLite-centered local-first V1 operational architecture, but behind domain/application ports so later PostgreSQL, vector, or graph infrastructure can replace adapters without rewriting methodological meaning. Authoritative semantic state is relational where integrity/query value is high; FTS and embeddings are derived/rebuildable indexes; large artifacts remain outside the operational DB; accepted knowledge revisions are immutable in semantic content; and LLM context is assembled selectively from wider persistent state. `docs/specifications/001_v1_sqlite_technical_architecture.md` is the key technical source. `docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md` governs the reasoning-runtime comparison track; the high-level snapshot stance recorded in `docs/VISION.md` is to keep an ADS-owned runtime boundary rather than letting any agent framework become the authority for ADS semantics.
+
+6. **Professional product experience and the Project Cockpit.** The target product is a persistent interactive data-science environment, not a final-answer generator. Foundation 017 makes this concrete: project sources initialize a workspace; the system exposes methodological options, questions, warnings, evidence, and project state; the user can inspect, run, skip, challenge, and discuss work without having to remember every useful next prompt. The promoted V1 active-work model is the **Project Cockpit**, a living project-process projection with spatial navigation into real specialist analytical workspaces. Specification 008 establishes that the Cockpit is a derived projection over project state, not one universal graph containing every artifact, event, knowledge relation, and runtime actor. It also freezes important interaction boundaries such as deep-work focus, scalable navigation/search, 2D movement, geometric zoom, compact/fold-away chrome, collision safety, fullscreen, URL-addressable focus, keyboard accessibility, and reduced motion, while leaving final visual identity and implementation technology open. The main sources are `docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md`, `docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md`, `docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md`, and `docs/specifications/008_v1_project_cockpit_interaction_architecture.md`.
+
+7. **Source Universe, artifact integrity, and evidence provenance.** ADS treats the evidence substrate itself as a first-class subsystem. Foundation 022 distinguishes the **Source Universe** from the **Methodological Knowledge Universe**. A source artifact is evidence, not automatically accepted methodology. Logical source identity is separate from exact byte identity; exact artifacts are preserved immutably by cryptographic digest; derived text/renders/chunks/embeddings remain rebuildable and linked back to originals; registry metadata and binary storage have distinct authority; source rights/privacy/redistribution are explicit; and long-term knowledge should be able to cite fine-grained source locations. The accepted initial design is provider-neutral and local-first, with a private content-addressed vault and verified backup/restore workflow. Key sources are `docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md`, `docs/specifications/023_v1_source_universe_substrate.md`, and `docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md`.
+
+8. **Scientific evaluation, falsification, and simplification pressure.** ADS is being developed as an empirical architecture program rather than by accumulating plausible-looking machinery. Prototype V0 is the clearest example. It compared a simple strong LLM baseline, a baseline with explicit methodological guidance, and a more elaborate structured P0 architecture. The final result strongly falsified the current P0 design on the tested benchmark: P0 improved the targeted architecture score only from 1.73 to 1.78 over B1, while using 2.160 times the median tokens and completing within budget only 3/10 times versus 10/10 for B1. The lesson was not "systems are useless"; it was that **what the system should remember is not what the model should receive every call**, and every explicit mechanism must earn its overhead against strong simple controls. This experimental philosophy explains much of the later selective-context, bounded-horizon, and mechanism-specific design. The key evidence source is `docs/experiments/prototype_v0/FINAL_RESULTS.md`, with the experimental contract and preregistration in Foundations 010 through 012.
+
+9. **Project-development governance, knowledge preservation, and multi-model collaboration.** ADS also has a durable meta-workstream concerned with how the project itself is built without losing reasoning, provenance, independence, or authority. `docs/DEVELOPMENT_METHOD.md` describes two evolving levels, the target system and the method used to build it. It defines layered knowledge preservation: canonical docs, foundations, research/specifications, checkpoints, experiment ledgers, collaboration provenance, and historical material. Promotion audits and periodic reconciliation keep historical provenance separate from current authority. Multi-model work is selective rather than mandatory and uses modes such as SOLO, REVIEWED, INDEPENDENT_THEN_COMPARATIVE, COORDINATED_HANDOFF, and ADVERSARIAL_REVIEW. The collaboration protocol separates role from write scope, preserves independence/contamination explicitly, and uses repository message/state artifacts without making model agreement itself authoritative. Specification 024 adds a machine-readable collaboration-state **coherence guard**, explicitly not an authenticated distributed lock. The main sources are `docs/DEVELOPMENT_METHOD.md`, `docs/model_collaboration/README.md`, `docs/specifications/024_v1_model_collaboration_state_guard.md`, and, for the broader preservation architecture, `docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`.
+
+If you are re-entering the project after losing context, the most efficient reading sequence is to use `docs/VISION.md` for the whole-system picture, `docs/DEVELOPMENT_METHOD.md` for how project knowledge and authority work, Foundation 013 for why ADS exists beyond ordinary human-plus-LLM interaction, Foundations 017 through 020 for the product/object/methodological-brain core, then dive into the relevant accepted specification for whichever subsystem you are about to change. `docs/KNOWLEDGE_MAP.md` is intended as the repository routing index rather than a substitute for those authorities.
+
+The important unifying theme is that ADS is not trying to hard-code all of data science. It is trying to build a **governed system around strong reasoning models** that makes project meaning, reusable methodology, evidence, state, provenance, selective context, and human control explicit where doing so demonstrably improves real data-science work.
+
+## Uncertainty / areas not checked
+
+This was a broad-orientation reconstruction, not an exhaustive repository audit. I intentionally did not read every specification, checkpoint, research memo, or implementation file. I did not read `CURRENT_STATE.md`, current Research 124 material, any baseline protocol, any other baseline request/result/evaluation, evaluator protocol, or failure corpus. I also did not inspect all implementation source code behind the accepted specifications. The orientation therefore emphasizes enduring architectural domains and the deepest representative sources, not an exact operational status report for every subsystem.
+
+## Approximate tool / read effort
+
+Approximately 18 connector/tool actions were used: one request read, one frozen-commit existence check, one blocked broad tree-list attempt, several successful exact-snapshot tree inventories, and a series of exact-snapshot `git show` reads over representative governing/deep sources. No external web research was used.
