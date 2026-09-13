@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / CROSS-DISCIPLINARY EXTERNAL EVIDENCE PHASE 1 ESTABLISHED / TARGETED EVIDENCE DEEP DIVES NEXT / TARGET ARCHITECTURE DESIGN PAUSED
+**Status:** ACTIVE / D1-D2 KNOWLEDGE IDENTITY AND MULTI-AXIS ORGANIZATION DEEP DIVE COMPLETE / D3-D4 CAPTURE-CONSOLIDATION AND SOURCE-DERIVED DEEP DIVE NEXT / TARGET ARCHITECTURE DESIGN PAUSED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -2550,4 +2550,151 @@ TARGET_ARCHITECTURE=NOT_SELECTED
 TARGET_ARCHITECTURE_DESIGN=PAUSED
 NEXT=TARGETED_EVIDENCE_DEEP_DIVES
 WITHHELD_OWNER_SOURCE=STILL_WITHHELD
+```
+## 65. D1-D2 deep dive: knowledge identity and multi-axis organization
+
+Research 126 deepens the first two external-evidence discriminators:
+
+```text
+docs/research/126_knowledge_identity_and_multi_axis_organization_deep_dive.md
+```
+
+The evidence base now includes SKOS, Getty AAT, IFLA LRM, ICA Records in Contexts, CIDOC CRM and Wikidata/Wikibase. These systems differ substantially in purpose and implementation, but they converge strongly enough to constrain later candidate comparison without selecting a target architecture.
+
+### 65.1 Stable semantic identity is not the same thing as a label, path or carrier
+
+Across SKOS, Getty AAT, IFLA LRM, RiC and CIDOC CRM, the object being described is explicitly separable from one name, one hierarchy position or one physical/digital carrier.
+
+This supports an architecture-neutral requirement for later reconciliation: when ADS deliberately regards some project knowledge as continuous across rename, relocation or representation change, the successor must not require semantic identity to be recreated merely because the current file/path changes.
+
+The inverse is equally important: not every file, paragraph, heading or generated node deserves semantic identity.
+
+### 65.2 Multi-membership is normal; one preferred route can remain a default
+
+Getty AAT is polyhierarchical and allows one concept to have several valid parents while one is marked preferred for default display. RiC Record Sets can group the same record simultaneously in multiple contextual sets based on activity, subject, provenance or another purpose.
+
+The useful project-level distinction is:
+
+```text
+preferred navigation route
+    !=
+exclusive semantic parent
+```
+
+This means deterministic project bootstrap and multi-axis semantic organization are not mutually exclusive.
+
+### 65.3 Organizational/view nodes do not automatically become knowledge entities
+
+Getty distinguishes indexable concept records from facets, guide terms and hierarchy names that exist only to organize the thesaurus. Research 126 therefore adds an explicit anti-test against ontology sprawl: a UI node, breadcrumb, generated cluster, convenience heading or display-only grouping normally remains a view/representation unless it has an independently meaningful lifecycle, provenance or cross-context identity.
+
+### 65.4 Artifact identity and knowledge identity are separate concerns
+
+RiC Record Resource/Instantiation and CIDOC Information Object/carrier distinctions make an important nuance explicit. An exact file may matter greatly for authority, source fidelity, provenance or reproducibility while still not being identical to the semantic knowledge it expresses.
+
+A future candidate may therefore need both:
+
+```text
+artifact identity
+    exact file / source / implementation / validation carrier
+
+semantic identity
+    concept, governed knowledge unit, activity/workstream or other persistent project thing
+```
+
+Whether both are implemented as explicit objects remains a later design choice.
+
+### 65.5 Relation metadata is conditionally justified
+
+RiC-O supports first-class relations with date, state, certainty and source/evidence. Wikidata independently shows statement-level qualifiers, references and rank.
+
+This provides evidence for richer representation when the relation itself matters, for example:
+
+```text
+supersedes
+governed-by
+returns-to
+depends-on
+supports / evidence-for
+reopens-when
+```
+
+It does not justify reifying every edge. A lightweight edge remains preferable where no relation-specific provenance, temporal state, certainty or lifecycle is needed.
+
+### 65.6 Concept identity and claim identity remain distinct
+
+The external evidence is strongest for stable identity of enduring concepts/resources. Statement-level models show that independently governed claims can also deserve metadata, but Research 126 rejects universal sentence/claim atomization as unsupported and likely maintenance-heavy.
+
+Later candidate architectures should therefore justify identity granularity through an explicit test rather than assigning IDs indiscriminately.
+
+### 65.7 Working identity test
+
+Research 126 introduces a comparison test. A thing is a stronger candidate for independent project identity when several of these are true:
+
+```text
+it persists across label/path/representation change
+multiple contexts need to refer to it
+it has an independent lifecycle
+it has multiple representations
+important relationships attach to it directly
+its provenance matters independently
+conflating it with its carrier/group creates material ambiguity or loss
+```
+
+The test is architecture-neutral and intentionally has no frozen numeric threshold yet.
+
+### 65.8 Minimal semantic-family envelope for later comparison
+
+Without selecting an ontology, the evidence is now strong enough to require later candidates to test whether a small role set can cover the project before adding more types:
+
+```text
+subject / concept
+independently governed knowledge unit
+activity / workstream
+evidence / source
+representation / artifact
+relation, usually lightweight and richer only when needed
+```
+
+This is a candidate-comparison envelope, not a selected schema.
+
+### 65.9 Multi-axis view hypothesis is now evidence-backed
+
+Later candidates should be able to compare projections such as:
+
+```text
+semantic
+authority / epistemic state
+workstream / dependency
+provenance
+temporal
+artifact
+reconstruction
+privacy / access
+```
+
+The critical contract is that these remain views over one coherent project authority rather than manually synchronized competing truths.
+
+### 65.10 D1-D2 stop rule and next boundary
+
+The D1-D2 evidence now shows strong convergence. Additional general ontology examples are unlikely to alter the main conclusion enough to justify continued broadening before testing the next open mechanisms.
+
+The next paired deep dive is:
+
+```text
+D3  conversation-born capture -> consolidation -> promotion
+D4  canonical source versus rebuildable derived state
+```
+
+These belong together because capture/consolidation cannot be evaluated safely without deciding how transient, generated or probabilistic synthesis remains subordinate to explicitly promoted project authority.
+
+Target-architecture synthesis remains paused. Requirements/evidentiary-provenance reconciliation still follows the complete targeted evidence set. The owner paper/video remains withheld.
+
+```text
+D1_D2_DEEP_DIVE=COMPLETE
+KNOWLEDGE_IDENTITY_INDEPENDENT_OF_PATH=EVIDENCE_BACKED
+MULTI_AXIS_ORGANIZATION=EVIDENCE_BACKED
+PREFERRED_ROUTE_CAN_BE_DISPLAY_DEFAULT=true
+UNIVERSAL_SEMANTIC_ATOMIZATION=NOT_JUSTIFIED
+TARGET_ARCHITECTURE=NOT_SELECTED
+NEXT=D3_D4_CAPTURE_CONSOLIDATION_SOURCE_DERIVED_DEEP_DIVE
 ```

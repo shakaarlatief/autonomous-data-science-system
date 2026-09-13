@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 464
+**Checkpoint:** 465
 **Date:** 2026-09-13
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -23,6 +23,8 @@ Repository artifacts remain authoritative across chats and models.
 ---
 
 ## Current active stage: Research 124 project-development knowledge architecture redesign
+
+Checkpoint 465 completes the first targeted evidence deep dive, D1-D2, in Research 126. External evidence from SKOS, Getty AAT, IFLA LRM, ICA Records in Contexts, CIDOC CRM and Wikidata/Wikibase now strongly supports separating durable semantic identity from labels, file paths, hierarchy positions and individual carriers while also rejecting universal semantic atomization. One semantic object may participate in several contextual groups/views; a preferred/default route can remain deterministic without becoming the object's exclusive semantic parent; organizational/view nodes need not become knowledge entities; and relations need richer state/provenance only when their own lifecycle matters. Research 126 introduces an architecture-neutral identity test based on persistence, cross-context reference, independent lifecycle, multiple representations, relationship-bearing role, provenance need and identity-confusion risk. It also preserves only a minimal candidate semantic-family envelope for later comparison rather than selecting an ontology. The next paired deep dive is D3 conversation-born capture -> consolidation -> promotion plus D4 canonical source versus rebuildable derived state. Target-architecture design remains paused and the owner paper/video remains withheld.
 
 Checkpoint 464 establishes the first broad cross-disciplinary external evidence field in Research 125 and advances the stage from broad evidence gathering to targeted evidence deep dives. The evidence spans information organization, library/reference models, provenance and digital preservation, records theory, organizational memory, design rationale, human factors, temporal data, software architecture, reproducible/derived-state patterns, and modern LLM memory/retrieval. It does not select a target architecture. The strongest new discriminators concern stable knowledge identity independent of files/labels, multiple orthogonal views, capture versus consolidation versus authority promotion, canonical source versus rebuildable derived state, history versus current projection, task-shaped reconstruction, workflow-integrated activation, vocabulary mismatch, temporal semantics, and maintenance economics. External evidence also supplies strong counterweights against overengineering: ontology evolution cost, generated-view consistency obligations, event-sourcing complexity, capture friction, and authority limitations of LLM-generated summaries/graphs. The next step is targeted deep research on D1-D8, then requirements/evidentiary-provenance reconciliation. The owner paper/video remains withheld and target-architecture design remains paused.
 
