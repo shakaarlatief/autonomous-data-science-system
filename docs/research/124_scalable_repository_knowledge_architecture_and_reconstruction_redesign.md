@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / D1-D2 AND D3-D4 TARGETED EVIDENCE DEEP DIVES COMPLETE / D5-D6 AUTHORITY-ACTIVATION AND TEMPORAL-SUPERSESSION DEEP DIVE NEXT / TARGET ARCHITECTURE DESIGN PAUSED
+**Status:** ACTIVE / D1-D2, D3-D4 AND D5-D6 TARGETED EVIDENCE DEEP DIVES COMPLETE / D7-D8 CONSOLIDATION-FIDELITY AND MAINTENANCE-ECONOMICS DEEP DIVE NEXT / TARGET ARCHITECTURE DESIGN PAUSED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -2740,7 +2740,7 @@ Research 124 should therefore preserve provenance for authority-significant tran
 
 W3C PROV-O and SLSA independently model not only which input an output derives from but also the process/activity, producing agent/platform and material parameters/dependencies involved in generation.
 
-For later candidate comparison, “generated from the repository” is insufficient when a derived representation materially affects reconstruction. The candidate should be able to establish a proportionate provenance envelope over sources, generator/transformation and freshness.
+For later candidate comparison, â€œgenerated from the repositoryâ€ is insufficient when a derived representation materially affects reconstruction. The candidate should be able to establish a proportionate provenance envelope over sources, generator/transformation and freshness.
 
 ### 66.5 Rebuildability has several strengths
 
@@ -2848,4 +2848,248 @@ DERIVED_STATE_UNIQUE_TRUTH=NOT_ALLOWED_WITHOUT_PROMOTION
 REBUILDABILITY_LEVELS=REFINED
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=D5_D6_AUTHORITY_ACTIVATION_TEMPORAL_SUPERSESSION_DEEP_DIVE
+```
+## 67. D5-D6 deep dive: authority-aware activation and temporal/supersession semantics
+
+Research 128 deepens the paired authority/temporal discriminators:
+
+```text
+docs/research/128_authority_activation_and_temporal_supersession_deep_dive.md
+```
+
+The evidence base combines NIST ABAC, OASIS XACML, Open Policy Agent, Kubernetes admission control, temporal-database concepts, RFC Editor update/obsolescence relationships, Wikidata evolving-knowledge semantics and W3C PROV-O revision/invalidation provenance.
+
+### 67.1 Relevance retrieval and authority resolution are now formally distinct
+
+NIST ABAC provides a mature contextual-decision precedent: authorization depends on attributes of the actor, object, requested operation and environment rather than on broad topical similarity alone. Transferred cautiously, this strengthens an ADS distinction that was previously mostly internal:
+
+```text
+relevance retrieval
+    finds knowledge likely useful to understanding the task
+
+authority resolution
+    determines which knowledge is required/allowed to govern the exact
+    action, target, scope, state and time
+```
+
+Probabilistic retrieval may nominate candidates; it may not silently settle consequential authority when explicit applicability semantics exist.
+
+### 67.2 Authority resolution should be action-shaped
+
+Later candidates should demonstrate how they represent the semantic equivalent of:
+
+```text
+requested action / operation
+affected target and scope
+current environment / project state
+actor or collaborator role when relevant
+consequence class
+time query when current versus historical authority matters
+```
+
+and return a governed result containing the applicable source set, why it applies, how sources combine/supersede, required checks/consumption, and unresolved conflicts or unavailable evidence.
+
+This is not a selected API or rule schema.
+
+### 67.3 Decision, administration and enforcement are separate concerns
+
+XACML distinguishes Policy Administration Point, Policy Decision Point and Policy Enforcement Point. OPA independently separates policy decision-making from the application that enforces the decision.
+
+This gives external precedent for the Research 124 working reasoning-control decomposition:
+
+```text
+governing knowledge/policy administration
+    !=
+authority-resolution decision
+    !=
+action enforcement / required-source consumption
+```
+
+The same physical component may perform more than one role; the semantic separation is what matters.
+
+### 67.4 Ambiguity and absence should be first-class resolution outcomes
+
+XACML preserves `NotApplicable` and `Indeterminate` outcomes and includes an `only-one-applicable` combination rule that becomes indeterminate when more than one policy applies where exactly one was expected.
+
+Transferred to ADS, later candidates should be able to distinguish:
+
+```text
+resolved governing authority
+no special governing authority applicable
+conflicting / ambiguous authority
+known required authority unavailable / unreadable / stale
+```
+
+The architecture should not resolve ambiguity by silently blending plausible sources.
+
+### 67.5 Governing authority may be a source set rather than one document
+
+XACML's policy-combining problem and RFC Editor `Updates` semantics both demonstrate that several sources may remain jointly necessary.
+
+Research 128 therefore rejects a hidden assumption that every action maps to one governing artifact. A correct result may be one source, a base source plus mandatory updates/supplements, default project rules only, or an unresolved state.
+
+The preferred result remains the smallest source set that completely covers the action.
+
+### 67.6 Pre-action activation has mature systems precedent
+
+Kubernetes admission controllers intercept mutation requests after authentication/authorization but before persistence. ValidatingAdmissionPolicy can scope checks to particular operations/resources, deny, warn or audit, and choose fail-closed or fail-open behavior on policy-evaluation errors.
+
+For ADS, the transfer is a **bounded pre-action gate**:
+
+```text
+intended action classified
+    -> applicable governing-source obligations resolved
+        -> availability/freshness established
+            -> required source consumption evidenced
+                -> action/proposed guidance checked against the contract
+                    -> proceed / warn / refuse / escalate
+```
+
+This is stronger than cold-start orientation and stronger than merely proving that a runbook was read.
+
+### 67.7 Activation must bind to the action contract
+
+BL-001 showed that correct runbook discovery and consumption can still be followed by an incorrect ordered response. Research 128 therefore sharpens activation:
+
+> **Source consumption alone is not sufficient when correctness depends on preserving a concrete action contract.**
+
+Later candidates should show how high-consequence procedures or mutations can check the proposed action against the governing procedure/preconditions before dispatch or final guidance.
+
+This need not imply deterministic checking of all free-form reasoning.
+
+### 67.8 Enforcement strength should be consequence-sensitive
+
+Kubernetes offers Deny/Warn/Audit and Fail/Ignore policy behaviors. That is useful evidence against one universal ADS behavior.
+
+A future candidate must explain how optional exploratory knowledge gaps differ from missing authority for a mutation, operational procedure, scientific conclusion or authority promotion.
+
+Research 128 keeps the exact consequence taxonomy open but requires the failure/enforcement policy to be explicit and proportionate.
+
+### 67.9 Applicability time and recording time are different semantics
+
+Temporal-database literature distinguishes valid/business time from transaction/system time:
+
+```text
+when was the fact/rule true or applicable?
+    !=
+when was it recorded/known by the information system?
+```
+
+Research 124 should therefore permit project knowledge to answer both when the distinction matters. A late-discovered external change or retroactive correction can otherwise make historical reconstruction ambiguous.
+
+Full bitemporal storage is not justified for every knowledge item.
+
+### 67.10 Authority-transition time is another project concept
+
+In project governance there can also be a meaningful difference between when a fact externally applies and when ADS accepts/promotes/supersedes a project representation as governing.
+
+Research 128 therefore keeps three conceptual questions distinct without requiring three persisted timelines everywhere:
+
+```text
+domain / applicability time
+repository knowledge / recording time
+authority transition time
+```
+
+Candidates may collapse them where project semantics make them identical.
+
+### 67.11 Replacement and supplementation are materially different
+
+RFC Editor metadata distinguishes `Obsoletes` from `Updates`:
+
+```text
+Obsoletes
+    newer document replaces older document for current practice,
+    while the old document remains permanently archived
+
+Updates
+    newer document modifies/adds to older document;
+    current understanding may require both
+```
+
+This means a generic `supersedes` relation may be insufficient for ADS if current authority depends on whether an older source remains partly governing.
+
+Candidate relation vocabularies must remain minimal, but they must preserve the distinctions real project cases need.
+
+### 67.12 Historical validity is not the same as known-wrong knowledge
+
+Wikidata's evolving-knowledge guidance separates formerly valid historical values, currently preferred values and deprecated mistakes/dismissed beliefs.
+
+Research 128 therefore strengthens the epistemic distinction:
+
+```text
+historically/formerly applicable
+    !=
+superseded as current project authority
+    !=
+rejected / known wrong
+    !=
+current accepted / preferred
+```
+
+Old authority should remain discoverable for audit/history without entering ordinary current reconstruction by default.
+
+### 67.13 “Current” cannot mean merely “latest commit”
+
+Current governing truth may depend on:
+
+```text
+scope
+epistemic / lifecycle status
+temporal applicability
+replacement versus supplementation
+precedence / authority class
+availability/freshness of required source
+```
+
+A generated current-state view can therefore be built from the latest Git revision and still be semantically wrong if its derivation ignores these relations.
+
+### 67.14 D5-D6 constraint boundary
+
+Research 128 freezes D5-C1 through D5-C9 and D6-C1 through D6-C8 for later requirements/evidentiary-provenance reconciliation. The deepest new constraints are:
+
+```text
+retrieval != authority resolution
+authority resolution is action/context shaped
+governing result can be a source set
+combination/supersession semantics are explicit
+ambiguity/unavailability are fail-visible
+source consumption must bind to consequential action contract
+failure policy is consequence-sensitive
+decision and enforcement are separable
+
+applicability time != repository knowledge time
+historical validity != epistemic deprecation
+replacement != update/supplement
+current authority != recency
+historical authority remains identifiable
+strong temporal machinery is selective, not universal
+```
+
+### 67.15 Stop rule and next boundary
+
+D5-D6 now have strong cross-domain convergence. More general access-control or temporal examples are unlikely to alter the architecture-level conclusion before the final discriminators are researched.
+
+The next paired deep dive is:
+
+```text
+D7  consolidation fidelity and provenance
+D8  maintenance economics at 5x / 10x scale
+```
+
+They belong together because richer knowledge structure and automated consolidation are only improvements if they preserve semantic fidelity and remain economically/operationally maintainable as the corpus grows.
+
+After D7-D8, Research 124 should perform the planned requirements/evidentiary-provenance reconciliation before architecture synthesis.
+
+Target-architecture synthesis remains paused. The owner paper/video remains withheld.
+
+```text
+D5_D6_DEEP_DIVE=COMPLETE
+RELEVANCE_RETRIEVAL_NE_AUTHORITY_RESOLUTION=true
+ACTION_SHAPED_AUTHORITY_RESOLUTION=EVIDENCE_BACKED
+PRE_ACTION_GATING=EVIDENCE_BACKED_AS_SYSTEMS_PATTERN
+TEMPORAL_APPLICABILITY_NE_RECORDING_TIME=true
+REPLACEMENT_NE_SUPPLEMENTATION=true
+TARGET_ARCHITECTURE=NOT_SELECTED
+NEXT=D7_D8_CONSOLIDATION_FIDELITY_MAINTENANCE_ECONOMICS_DEEP_DIVE
 ```

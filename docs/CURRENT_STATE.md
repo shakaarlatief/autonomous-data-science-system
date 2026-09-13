@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 466
+**Checkpoint:** 467
 **Date:** 2026-09-13
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -23,6 +23,8 @@ Repository artifacts remain authoritative across chats and models.
 ---
 
 ## Current active stage: Research 124 project-development knowledge architecture redesign
+
+Checkpoint 467 completes the D5-D6 targeted evidence deep dive in Research 128. Cross-disciplinary evidence from NIST ABAC, XACML, OPA, Kubernetes admission control, temporal databases, RFC Editor metadata, Wikidata evolving-knowledge semantics and PROV-O now supports a sharp distinction between relevance retrieval and governing-authority resolution. Authority resolution must be action/context shaped, can return a governing source set rather than one artifact, and must preserve fail-visible ambiguity/unavailability. Consequential activation is stronger than source retrieval or consumption alone: the resolved governing contract should be bound closely enough to the intended action that required preconditions/procedure fidelity can be checked before dispatch or final guidance, with enforcement strength scaling by consequence. D6 further establishes that applicability time, repository recording/knowledge time and authority-transition time can diverge; replacement differs from supplementation/update; historical validity differs from rejected/known-wrong knowledge; and current authority cannot be inferred from recency alone. The next paired deep dive is D7 consolidation fidelity/provenance plus D8 maintenance economics at 5x/10x scale. After D7-D8, the existing requirements/invariants will be reconciled against the broader evidentiary provenance before architecture synthesis. Target-architecture design remains paused and the owner paper/video remains withheld.
 
 Checkpoint 466 completes the D3-D4 targeted evidence deep dive in Research 127. Cross-disciplinary evidence now supports a lifecycle distinction between intake/capture, consolidated candidate understanding, explicitly promoted durable knowledge, and task-shaped derived consumption views, without selecting these as concrete artifact families. Capture does not imply authority; promotion is an explicit source-traceable authority transition; rejected/superseded rationale may remain durable without remaining current; and lifecycle taxonomies should stay minimal. Derived reconstruction/index views normally remain read-oriented and must not contain unique accepted truth unless that truth is explicitly promoted. Material derived state needs sufficient source, transformation and freshness binding, with stronger deterministic reproducibility expected for structural views than for probabilistic LLM synthesis. The next paired deep dive is D5 authority-aware retrieval/pre-action activation plus D6 temporal/supersession semantics. D7 consolidation fidelity/provenance and D8 maintenance economics remain later. Target-architecture design remains paused and the owner paper/video remains withheld.
 
