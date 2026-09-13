@@ -26,7 +26,7 @@
     {
       "collaborator_id": "claude",
       "interaction_environment": "Claude",
-      "interaction_session": "claude-04",
+      "interaction_session": "claude-03",
       "roles": [
         "REVIEWER",
         "CRITIC",

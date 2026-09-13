@@ -6,8 +6,8 @@
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
 **Opening repository head:** `ff51aa23b7e6d8a32692ad57394ab0aea631b7b6`
 **Phase-1 substantive evidence target:** `d9794a880ad0b235102fc752dae91bde6c29bd24`
-**Intended Claude interaction:** `claude-04`
-**Intended Claude conversation title:** `04 - Project Knowledge Architecture Evidence Reassessment`
+**Claude interaction:** `claude-03`
+**Claude conversation title:** `03 - Project Knowledge Architecture Foundations and Design Method`
 **Authority:** Collaboration evidence only. This thread does not amend the frozen Requirements V0.2 boundary, does not select a target architecture, and does not authorize migration. Research 124 remains the active research authority and the current repository architecture remains operational authority.
 **Purpose:** Obtain a clean post-MC-0011 Claude reassessment after the empirical failure corpus, blind ChatGPT baselines, broad cross-disciplinary research, D1-D8 deep dives, requirements reconciliation and owner freeze, while preserving Claude's remaining blindness to the separately withheld owner-provided source until that updated pre-exposure position is durably recorded.
 
@@ -216,7 +216,7 @@ Older MC-0010 remains deferred and must not be executed as part of this thread.
 ```text
 MC0012=OPEN
 PHASE=POST_EVIDENCE_PRE_OWNER_SOURCE_REASSESSMENT
-CLAUDE_INTERACTION=claude-04
+CLAUDE_INTERACTION=claude-03
 PHASE1_REVIEW_BASE=d9794a880ad0b235102fc752dae91bde6c29bd24
 OWNER_SOURCE_EXPOSURE=FORBIDDEN_UNTIL_MESSAGE_001_FROZEN
 TARGET_ARCHITECTURE=NOT_SELECTED

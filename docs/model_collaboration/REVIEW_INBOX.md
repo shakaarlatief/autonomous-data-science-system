@@ -26,14 +26,14 @@ This inbox intentionally does not duplicate that state except where needed to ex
 ### MC-0012: post-evidence reassessment before staged owner-source exposure
 
 ```text
-collaborator               Claude / claude-04
+collaborator               Claude / claude-03
 mode                       REVIEWED / staged-exposure current-context reassessment
 coordination branch        v1-source-vault-bootstrap-resume
 phase-1 evidence target    d9794a880ad0b235102fc752dae91bde6c29bd24
 phase                      POST-EVIDENCE / PRE-OWNER-SOURCE
 expected output            docs/model_collaboration/threads/MC-0012/messages/001_claude_post_evidence_pre_owner_source_reassessment.md
 status                     OPEN / CLAUDE MESSAGE 001 NEXT
-conversation               04 - Project Knowledge Architecture Evidence Reassessment
+conversation               03 - Project Knowledge Architecture Foundations and Design Method
 ```
 
 Phase 1 updates Claude's MC-0011 position against the completed Research 124 evidence program and frozen Requirements V0.2 while deliberately preserving blindness to the separately withheld owner-provided source and ChatGPT's later post-source evaluation. Current-branch access is routing-only; substantive evidence is bound to the exact pre-exposure target above. If descendant/post-exposure material leaks into context, the phase must stop as contaminated.

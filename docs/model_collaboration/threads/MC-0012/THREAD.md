@@ -7,8 +7,8 @@
 **Opening repository head:** `ff51aa23b7e6d8a32692ad57394ab0aea631b7b6`
 **Phase-1 substantive evidence target:** `d9794a880ad0b235102fc752dae91bde6c29bd24`
 **Task owner:** ChatGPT / `chatgpt-24`
-**Claude collaborator:** Claude / intended `claude-04`
-**Intended Claude conversation title:** `04 - Project Knowledge Architecture Evidence Reassessment`
+**Claude collaborator:** Claude / `claude-03`
+**Claude conversation title:** `03 - Project Knowledge Architecture Foundations and Design Method`
 
 ## Purpose
 
