@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 463
+**Checkpoint:** 464
 **Date:** 2026-09-13
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -23,6 +23,8 @@ Repository artifacts remain authoritative across chats and models.
 ---
 
 ## Current active stage: Research 124 project-development knowledge architecture redesign
+
+Checkpoint 464 establishes the first broad cross-disciplinary external evidence field in Research 125 and advances the stage from broad evidence gathering to targeted evidence deep dives. The evidence spans information organization, library/reference models, provenance and digital preservation, records theory, organizational memory, design rationale, human factors, temporal data, software architecture, reproducible/derived-state patterns, and modern LLM memory/retrieval. It does not select a target architecture. The strongest new discriminators concern stable knowledge identity independent of files/labels, multiple orthogonal views, capture versus consolidation versus authority promotion, canonical source versus rebuildable derived state, history versus current projection, task-shaped reconstruction, workflow-integrated activation, vocabulary mismatch, temporal semantics, and maintenance economics. External evidence also supplies strong counterweights against overengineering: ontology evolution cost, generated-view consistency obligations, event-sourcing complexity, capture friction, and authority limitations of LLM-generated summaries/graphs. The next step is targeted deep research on D1-D8, then requirements/evidentiary-provenance reconciliation. The owner paper/video remains withheld and target-architecture design remains paused.
 
 Checkpoint 463 preserves an owner clarification before external research begins: Research 124 is a whole-architecture redesign, not a defect-patching exercise bounded by the weaknesses found so far. Current failures are evidence, current strengths are evidence, but neither fixes the target design. Any artifact family, knowledge-unit boundary, routing/index mechanism, authority/provenance representation, history/current-state representation, consolidation lifecycle or storage/retrieval mechanism may be improved or replaced if a better architecture is justified, while the current architecture remains operational authority until a successor qualifies. The owner also raised semantic/concept-centric organization as a first-class research question. Repository inspection confirms the human-executed versus human-plus-LLM versus ADS distinction was historically captured in Checkpoint 022 and promoted into durable Foundation 013, with Knowledge Map subject routing layered on top. That useful pattern does not settle whether artifact-family-centric organization remains best long-term. External research should therefore explore both current weaknesses and higher-ceiling architectures, including semantic knowledge identity, multiple organizational axes, event/history versus materialized synthesis, and concept-level promotion/consolidation. No current artifact family is deprecated and no target architecture is selected.
 

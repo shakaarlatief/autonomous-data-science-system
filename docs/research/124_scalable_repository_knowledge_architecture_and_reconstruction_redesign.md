@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / PRE-EXTERNAL BASELINE PHASE COMPLETE / BROAD QUESTION-DRIVEN EXTERNAL RESEARCH NEXT / TARGET ARCHITECTURE DESIGN PAUSED
+**Status:** ACTIVE / CROSS-DISCIPLINARY EXTERNAL EVIDENCE PHASE 1 ESTABLISHED / TARGETED EVIDENCE DEEP DIVES NEXT / TARGET ARCHITECTURE DESIGN PAUSED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -2400,4 +2400,154 @@ SEMANTIC_KNOWLEDGE_ORGANIZATION=FIRST_CLASS_RESEARCH_QUESTION
 CHECKPOINT_RESEARCH_FOUNDATION_REMOVAL=NOT_PROPOSED
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=BROAD_QUESTION_DRIVEN_EXTERNAL_RESEARCH_FROM_OPEN_DESIGN_SPACE
+```
+## 64. Cross-disciplinary external evidence expands the design space
+
+Research 125 now preserves the first broad external evidence field gathered after the internal failure corpus and historical baseline:
+
+```text
+docs/research/125_cross_disciplinary_external_evidence_for_project_knowledge_architecture.md
+```
+
+The research deliberately spans mature non-AI disciplines as well as modern LLM memory/retrieval work. Sources include information organization, library/reference models, provenance standards, digital preservation, records continuum theory, organizational memory, design rationale, human factors, temporal databases, software architecture documentation, reproducible/derived-state engineering, and recent hierarchical/global/local retrieval research.
+
+The first important result is negative as well as positive:
+
+> **No external framework should be copied wholesale, and the evidence does not identify one ready-made successor architecture.**
+
+Instead, several independent disciplines converge on architectural distinctions that Research 124 should now treat as serious discriminators.
+
+### 64.1 Concept identity versus artifact identity
+
+SKOS and library/reference-model practice demonstrate mature ways to give concepts or intellectual entities identities independent of any one label or physical/document manifestation.
+
+This does not imply an RDF/SKOS ontology. It strengthens the owner's Checkpoint 463 question about whether durable project understanding such as the ADS system identity should remain primarily identified by artifact-family files or instead have a stable conceptual identity with historical, current, evidentiary, and routing manifestations.
+
+### 64.2 Multiple orthogonal views rather than one overloaded hierarchy
+
+Faceted navigation, software architecture viewpoints, provenance models, temporal models, and library user-task frameworks all support the idea that several organizational axes can be valid at once:
+
+```text
+semantic subject
+artifact / representation type
+authority / maturity
+chronology / validity
+workstream / dependency
+provenance / derivation
+evidence depth
+privacy / access
+stakeholder / task viewpoint
+```
+
+This weakens any assumption that one directory hierarchy or one universal index should carry every navigation responsibility.
+
+### 64.3 Capture, consolidation, and authority promotion are distinct functions
+
+Organizational-memory and design-rationale research shows the value of capturing reasoning with low disruption. Modern AI memory systems independently show capture -> reflection/synthesis -> retrieval patterns. Preservation/provenance standards add the requirement that derived understanding remain traceable to source and transformation history.
+
+Research 124 should therefore distinguish:
+
+```text
+capture
+    !=
+consolidation / synthesis
+    !=
+validation
+    !=
+authority promotion
+```
+
+This is directly relevant to important conversation-born insights that do not naturally begin as a Research, Foundation, Checkpoint, or Specification object.
+
+### 64.4 Source knowledge and query-shaped derived views can be different layers
+
+Materialized-view engineering, reproducible-build practice, OAIS descriptive information, and modern RAG indexes all provide precedents for durable source information plus query-optimized derived representations.
+
+The useful transfer is not a database choice. It is the contract:
+
+```text
+canonical durable source
+    -> declared transformation / indexing / consolidation
+        -> rebuildable view or index
+```
+
+Derived state should not become a second accidental source of project truth merely because it is convenient or repeatedly used.
+
+### 64.5 History and current understanding need not be the same representation
+
+Preservation theory, PREMIS events, temporal database concepts, event-sourced projections, and the project's own checkpoint-to-foundation promotion examples all support separating historical provenance from current synthesis while keeping explicit lineage between them.
+
+Research 125 also introduces a temporal question not yet modeled deeply in the repository: whether some knowledge needs separate semantics for when it became applicable and when the project learned/recorded it.
+
+No bitemporal database or event-sourcing architecture is selected. Both are deliberately retained as conceptual evidence with strong complexity counterweights.
+
+### 64.6 Reconstruction should be shaped by the task
+
+IFLA user tasks, ISO architecture viewpoints, GraphRAG global/local modes, RAPTOR abstraction levels, and materialized views converge on a common design principle: broad orientation, exact governing-source resolution, exploratory discovery, and implementation-fidelity retrieval are different information tasks.
+
+This strengthens the working reconstruction-planner idea while leaving its implementation open.
+
+### 64.7 Activation is a workflow/control problem as well as a retrieval problem
+
+NASA checklist research and FDA human-factors guidance reinforce the systems principle that making correct information available is weaker than making correct action naturally follow from the workflow/interface under real use conditions.
+
+The transfer must remain calibrated: human aviation/medical cognition is not LLM cognition. The relevant architectural lesson is to reduce dependence on a collaborator remembering that a manual or governing source exists.
+
+### 64.8 Vocabulary mismatch makes single-label discovery fragile
+
+Classic HCI/IR evidence, SKOS labels, faceted search, and semantic retrieval research all indicate that users and systems may refer to the same concept through different language.
+
+Exact paths and controlled terms remain valuable for precision, but aliases, lexical search, explicit relationships, semantic retrieval, and task context should be evaluated as complementary access mechanisms.
+
+### 64.9 External evidence adds strong counterweights against overengineering
+
+The same evidence field warns against maximal formalization:
+
+```text
+ontology / knowledge graph
+    incurs evolution and governance cost
+
+materialized views
+    create refresh / consistency / validation obligations
+
+event sourcing
+    is explicitly high-complexity and often unjustified
+
+design-rationale capture
+    fails when recording friction is too high
+
+LLM-generated summaries / graphs
+    improve retrieval but do not provide authority safety by themselves
+```
+
+The successor should therefore optimize not only reconstruction quality but the marginal cost of capture, maintenance, consolidation, regeneration, validation, and migration.
+
+### 64.10 Current evidence boundary
+
+Research 125 Phase 1 establishes a broad independent field but intentionally stops before target synthesis.
+
+The next evidence work should deepen the architecture discriminators where mechanism choice remains genuinely open:
+
+```text
+D1  stable knowledge identity
+D2  multi-axis organization and views
+D3  conversation-born capture -> consolidation -> promotion
+D4  canonical source versus rebuildable derived state
+D5  authority-aware retrieval and pre-action activation
+D6  temporal / supersession semantics
+D7  consolidation fidelity and provenance
+D8  maintenance economics at 5x / 10x scale
+```
+
+After those deep dives, Research 124 should reconcile the internal requirements/invariants with their evidentiary provenance before architecture synthesis.
+
+The owner paper/video remains intentionally withheld.
+
+```text
+CROSS_DISCIPLINARY_PHASE1=ESTABLISHED
+WHOLE_ARCHITECTURE_DESIGN_SPACE=EXPANDED
+TARGET_ARCHITECTURE=NOT_SELECTED
+TARGET_ARCHITECTURE_DESIGN=PAUSED
+NEXT=TARGETED_EVIDENCE_DEEP_DIVES
+WITHHELD_OWNER_SOURCE=STILL_WITHHELD
 ```
