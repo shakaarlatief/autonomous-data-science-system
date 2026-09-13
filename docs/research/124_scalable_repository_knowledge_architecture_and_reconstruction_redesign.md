@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / INITIAL CHATGPT BASELINE PILOT COMPLETE / ONE UNCUED DISPATCH VARIANT NEXT / TARGET ARCHITECTURE DESIGN PAUSED
+**Status:** ACTIVE / PRE-EXTERNAL BASELINE PHASE COMPLETE / BROAD QUESTION-DRIVEN EXTERNAL RESEARCH NEXT / TARGET ARCHITECTURE DESIGN PAUSED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -2148,4 +2148,96 @@ TARGET_ARCHITECTURE=NOT_SELECTED
 EXTERNAL_RESEARCH=PAUSED_UNTIL_BL002U
 WITHHELD_EXTERNAL_SOURCE=STILL_WITHHELD
 NEXT=BL-002U_UNCUED_DISPATCH
+```
+## 62. BL-002U closes the pre-external-evidence baseline phase
+
+BL-002U is evaluated at:
+
+```text
+docs/research/project_knowledge_baselines/evaluations/BL-002U_chatgpt_a_evaluation.md
+```
+
+The constructed adjacent task removes BL-002-B's explicit substantive instruction to use "the way this project already handles multi-model collaboration." A fresh ChatGPT nevertheless discovers and reconstructs the governed `MC-*` process from frozen snapshot `1a422c79dc67384426ad10e28c2fc6845147f9e0`, selects the independent-first MC-0008 pattern, separates the unrelated MC-0010 obligation, and rejects an informal manual relay as the primary collaboration path.
+
+This strengthens the evidence that the current repository already makes the collaboration process discoverable and reconstructable with modest effort.
+
+The result retains one construct-validity limitation: the evaluator-facing request title says `Uncued Dispatch Variant` and the metadata identifies it as a constructed adjacent variant. Those labels can prime task classification even though they do not reveal the historical failure contents or the expected workflow.
+
+Research 124 therefore does **not** claim perfectly unprimed spontaneous dispatch. The calibrated conclusion is:
+
+> **When the substantive user wording merely asks to involve Claude, a fresh ChatGPT can still recover the repository-native governed collaboration process from the frozen project state. The remaining evaluator-facing scenario label prevents interpreting the run as a perfectly cue-free behavioral experiment.**
+
+The residual limitation does not justify another pre-external-research trial. Further harness purification would have diminishing value relative to the next evidence phase.
+
+### 62.1 Completed baseline picture
+
+The completed ChatGPT baseline program now supports:
+
+```text
+BL-001
+    governing operational source discoverable and consumed
+    exact task contract still omitted after activation
+
+BL-002-B
+    collaboration process reconstructable under explicit process cue
+
+BL-002U
+    collaboration process still reconstructable after substantive cue removal
+    evaluator-facing scenario metadata remains a small priming limitation
+
+BL-003
+    broad orientation recoverable despite routing drift
+    non-trivial compensating search/read cost remains
+
+BL-004
+    exact-source fidelity hierarchy recoverable
+    high-fidelity tasks require descent into executable provenance
+```
+
+The current architecture is therefore empirically stronger than the initial failure narrative implied. The redesign case should no longer rest on broad claims that project understanding is unrecoverable.
+
+The strongest remaining problem statement is narrower:
+
+```text
+reliable task/situation activation at the decision point
+exact contract extraction after source activation
+bounded reconstruction cost as corpus scale grows
+task-sensitive evidence-depth routing
+active-surface consolidation so deep provenance remains reachable without staying globally salient
+```
+
+### 62.2 Baseline phase closed
+
+No additional ChatGPT baseline scenarios are required before broad external research.
+
+The next phase begins with question-driven research across several disciplines rather than searching for one ready-made "knowledge architecture" solution.
+
+Priority research questions remain:
+
+```text
+human factors / forcing functions
+    what makes a pre-action check survive expertise, routine and time pressure?
+
+information retrieval / vocabulary problem
+    how should lexical, semantic and structured routing interact when terminology drifts?
+
+LLM / agent memory and hierarchical consolidation
+    what evidence exists for compression/consolidation without unacceptable recall loss?
+
+software configuration management / reproducible derived state
+    which lineage, rebuildability, idempotence and source-vs-derived patterns transfer cleanly?
+
+digital preservation / OAIS and adjacent preservation theory
+    what substantive requirements are added beyond labels already present internally?
+```
+
+At least one substantial non-AI/ML evidence stream should be included before the project-owner withheld paper/video is exposed.
+
+```text
+PRE_EXTERNAL_BASELINE_PHASE=COMPLETE
+BL002U=VALID_WITH_METADATA_CUE_LIMITATION
+MORE_BASELINE_TRIALS=NO
+TARGET_ARCHITECTURE=NOT_SELECTED
+BROAD_EXTERNAL_RESEARCH=NEXT
+WITHHELD_OWNER_SOURCE=STILL_WITHHELD
 ```

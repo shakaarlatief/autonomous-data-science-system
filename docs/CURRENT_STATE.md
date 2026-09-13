@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 461
+**Checkpoint:** 462
 **Date:** 2026-09-13
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -23,6 +23,8 @@ Repository artifacts remain authoritative across chats and models.
 ---
 
 ## Current active stage: Research 124 project-development knowledge architecture redesign
+
+Checkpoint 462 accepts BL-002U and closes the bounded pre-external-evidence baseline phase. With the substantive process-existence cue removed, a fresh ChatGPT still recovered the repository-native model-collaboration workflow from the frozen snapshot with modest effort. The run retains a small construct-validity limitation because the trial-visible request metadata itself says `Uncued Dispatch Variant`, so it is supportive rather than perfectly unprimed evidence. No further baseline trial is warranted before external research. Across the completed pilot, the current project-development knowledge architecture proves broadly reconstructable; the strongest remaining redesign case is now narrower: reliable situation activation, exact task-contract preservation after activation, bounded reconstruction cost, task-sensitive evidence-depth routing, and active-surface consolidation without provenance loss. Research 124 now advances into broad question-driven external research across several disciplines while target-architecture design remains paused and the owner paper/video remains withheld.
 
 Checkpoint 461 accepts BL-004-A and closes the original four-scenario ChatGPT baseline pilot. BL-004 strongly avoids the historical prose-over-exact-source failure: the fresh ChatGPT reconstructs a source-strength hierarchy in which promoted semantic/interaction authority, latest Phase-C selections, exact accepted design-lab implementations and the production Cockpit substrate play different roles, and it explicitly requires source-level reuse/comparison rather than recreating accepted behavior from prose. Across BL-001 through BL-004, the current architecture proves more reconstructable than a blanket failure narrative would suggest, while narrower weaknesses remain around pre-retrieval situation dispatch, post-activation task fidelity, reconstruction cost and task-sensitive evidence depth. One central MC-0011 question remains insufficiently tested because BL-002 explicitly cued the existence of the collaboration process. Exactly one adjacent uncued variant, BL-002U, is therefore next before broad external research. The owner paper/video remains withheld.
 
