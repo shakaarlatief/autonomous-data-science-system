@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / MC-0013 INDEPENDENT DESIGN VALID / COMPARATIVE ARCHITECTURE REVIEW ACTIVE / TARGET ARCHITECTURE NOT SELECTED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / MC-0013 RESOLVED / COMMON-FIXTURE MECHANISM PROBES NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -3652,4 +3652,33 @@ MAIN_DISAGREEMENT=DISTRIBUTED_DECLARATIONS_VS_BOUNDED_CROSS_OBJECT_SPINE
 REQUIREMENTS_V02=UNCHANGED_FROZEN
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=CLAUDE_MC0013_MESSAGE_003
+```
+
+## 77. MC-0013 resolved; common-fixture mechanism probes become the next evidence gate
+
+Claude MC-0013 Message 003 completes the comparative architecture dialogue. The independent-first process produced real movement rather than superficial agreement: Claude's original preference for pure distributed source-local declarations plus a narrow authority-transition ledger changed after examining Research 133's cross-object ownership argument. Claude now accepts that identity merge/split mappings, joint governing-source closure, workstream state spanning several artifacts and relations with their own lifecycle need a credible authoritative home that is not arbitrarily assigned to one endpoint document.
+
+The live candidate set therefore narrows without selecting a target:
+
+```text
+H1  Distributed Document Contracts
+H2  Partitioned Semantic Ownership / Bounded Cross-Object Spine
+
+reference poles
+H3  Object-Primary Structured Authority
+H0  Retrieval-First Minimal Formalism
+```
+
+Project-wide Transition Journal and the narrower event-ledger variant are deferred because Git already supplies recording chronology and current evidence does not demonstrate enough value in replayable cross-fact history to justify the extra mechanism. Relational storage is folded into H2/H3 as a physical implementation option rather than retained as a separate semantic family.
+
+Research 134 freezes the semantic-ownership partition and one representation-neutral Common Fixture V0.1. The fixture covers identity rename/merge/reversal/split, joint governing-source closure and conflict, nested workstream interruption/resume, low-friction capture/consolidation/promotion, 1x/5x/10x active-surface pressure, derived-store deletion/rebuild and BL-001-style post-activation contract fidelity. H1 and H2 must face identical facts and transitions. H3 is used only deeply enough to calibrate the upper-structure alternative.
+
+No further Claude architecture discussion is required before probe evidence exists. The next gate is empirical: determine whether H2's cross-object spine remains genuinely bounded and locally maintainable under the hard cases, or whether H1 can satisfy those same cases with less machinery and without ambiguous/duplicated semantic ownership.
+
+```text
+MC0013=RESOLVED
+RESEARCH134=COMMON_FIXTURE_PROTOCOL_FROZEN
+REQUIREMENTS_V02=UNCHANGED_FROZEN
+TARGET_ARCHITECTURE=NOT_SELECTED
+NEXT=IMPLEMENT_COMMON_FIXTURE_AND_H1_H2_PROBES
 ```

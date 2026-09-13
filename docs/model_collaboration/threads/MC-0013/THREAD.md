@@ -1,7 +1,7 @@
 # MC-0013 Thread: Independent Project-Knowledge Architecture Counter-Design
 
 **Thread:** MC-0013
-**Status:** OPEN / INDEPENDENT DESIGN FROZEN / COMPARATIVE ARCHITECTURE REVIEW
+**Status:** RESOLVED / INDEPENDENT-THEN-COMPARATIVE ARCHITECTURE DESIGN COMPLETE / COMMON-FIXTURE PROBES NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
 **Independent substantive base:** `233eb932062a24473fcc4f4fe93160c952eea426`
@@ -16,7 +16,7 @@ Obtain an architecture design from Claude that uses the same frozen evidence and
 ## Current phase
 
 ```text
-COMPARATIVE_ARCHITECTURE_REVIEW
+RESOLVED_COMPARATIVE_ARCHITECTURE_RECONCILIATION_COMPLETE
 ```
 
 The current branch is routing-only. All substantive reasoning is bound to the exact pre-candidate base in `BRIEF.md`.
@@ -41,3 +41,12 @@ docs/model_collaboration/threads/MC-0013/messages/**
 ```
 
 No target architecture is selected by this thread.
+
+## Resolution
+
+Claude Message 003 completed the comparative critique. ChatGPT Message 004 and `RESOLUTION.md` reconcile the result. No target architecture is selected; Research 124 now moves to the neutral Common Fixture V0.1 mechanism probes frozen in Research 134.
+
+```text
+MC0013=RESOLVED
+NEXT=COMMON_FIXTURE_MECHANISM_PROBES
+```

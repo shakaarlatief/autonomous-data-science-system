@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-13
-**Status:** MC-0013 COMPARATIVE ARCHITECTURE REVIEW ACTIVE / INDEPENDENT CLAUDE DESIGN FROZEN / MC-0010 DEFERRED
+**Status:** NO ACTIVE CLAUDE OBLIGATION / MC-0013 RESOLVED / COMMON-FIXTURE PROBES NEXT / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -23,36 +23,38 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Current active collaboration obligation
 
-### MC-0013: comparative project-knowledge architecture review
+There is no active Claude obligation. MC-0013 is resolved. Research 124 now moves to the common-fixture mechanism-probe stage. A future Claude obligation should be opened only after probe evidence exists or another bounded architecture question has clear marginal value.
+
+## Most recently completed obligation
+
+### MC-0013: independent and comparative project-knowledge architecture design
 
 ```text
 collaborator               Claude / claude-03
 mode                       INDEPENDENT_THEN_COMPARATIVE
 coordination branch        v1-source-vault-bootstrap-resume
-independent evidence base  233eb932062a24473fcc4f4fe93160c952eea426
-independent result         Message 001 frozen at 9005b73add028398a827fdf5b251069c65a83208
-phase                      COMPARATIVE ARCHITECTURE REVIEW
-expected output            docs/model_collaboration/threads/MC-0013/messages/003_claude_comparative_architecture_critique.md
-status                     OPEN / CLAUDE MESSAGE 003 NEXT
+independent message        001 @ 9005b73add028398a827fdf5b251069c65a83208
+comparative message        003 @ 8f65507cbb7c66c923fc0f01ae126160c5b49dd4
+result                     H1/H2 LIVE / H3,H0 REFERENCE POLES / COMMON FIXTURE NEXT
+status                     RESOLVED
 conversation               03 - Project Knowledge Architecture Foundations and Design Method
 ```
 
-Claude's candidate-independent Message 001 is valid and durably frozen. The withholding gate is now lifted. Comparative review should read Research 133 plus ChatGPT Message 002 and focus on the remaining architecture differences, especially distributed source-local declarations versus a bounded cross-object semantic/control spine, semantic ownership boundaries, low-friction capture, human inspectability, selective event history and a neutral common-fixture probe sequence.
-
-Durable contract and handoff:
+Durable records:
 
 ```text
 docs/model_collaboration/threads/MC-0013/BRIEF.md
 docs/model_collaboration/threads/MC-0013/THREAD.md
 docs/model_collaboration/threads/MC-0013/STATE.json
+docs/model_collaboration/threads/MC-0013/RESOLUTION.md
 docs/model_collaboration/threads/MC-0013/messages/001_claude_independent_architecture_counter_design.md
 docs/model_collaboration/threads/MC-0013/messages/002_chatgpt_independent_design_disposition_and_comparative_handoff.md
-docs/research/133_candidate_architecture_family_synthesis_and_falsification_frame.md
+docs/model_collaboration/threads/MC-0013/messages/003_claude_comparative_architecture_critique.md
+docs/model_collaboration/threads/MC-0013/messages/004_chatgpt_comparative_reconciliation_and_probe_handoff.md
+docs/research/134_comparative_architecture_reconciliation_and_common_fixture_probe_protocol.md
 ```
 
-Requirements V0.2 remain unchanged and no target architecture is selected.
-
-## Most recently completed obligation
+The thread closes without target selection. The principal empirical question is whether a bounded cross-object semantic/control spine stays genuinely bounded under the hard cases pure distributed declarations struggle to own.
 
 ### MC-0012: staged evidence reassessment and owner-source exposure
 

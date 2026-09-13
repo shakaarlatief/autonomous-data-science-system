@@ -1,7 +1,7 @@
 # Research 133: Candidate Architecture Family Synthesis and Falsification Frame
 
 **Date:** 2026-09-13
-**Status:** FIRST ARCHITECTURE-FAMILY SYNTHESIS COMPLETE / CLAUDE INDEPENDENT COUNTER-DESIGN VALID / COMPARATIVE REVIEW ACTIVE / TARGET ARCHITECTURE NOT SELECTED
+**Status:** FIRST ARCHITECTURE-FAMILY SYNTHESIS COMPLETE / MC-0013 COMPARATIVE RECONCILIATION COMPLETE / COMMON-FIXTURE PROBES NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Begin serious target-architecture synthesis for the ADS project-development knowledge architecture from the complete Research 124 evidence field and frozen Requirements V0.2. Construct materially different coherent architecture families, derive cross-family constraints, identify falsification questions and expose the strongest current integration hypothesis without selecting a target.
 **Authority:** Supporting architecture-design research under Research 124. Requirements V0.2 remain the acceptance authority. This record does not authorize implementation, migration or authority switch.
 **Declared references:** `research:124`, `research:126`, `research:127`, `research:128`, `research:129`, `research:130`, `research:131`, `research:132`, `checkpoint:474`, `path:docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md`
@@ -474,4 +474,20 @@ COMPARATIVE_REVIEW=ACTIVE
 REQUIREMENTS_V02=UNCHANGED_FROZEN
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=CLAUDE_MC0013_MESSAGE_003
+```
+
+## 18. Comparative reconciliation narrows the live candidate set
+
+Claude Message 003 completes the comparative phase and materially revises the independent Claude proposal. The bounded semantic/control spine is confirmed as a genuinely distinct semantic family because some cross-artifact facts do not have an honest single-document owner. Claude drops the narrow event-ledger mechanism, accepts the repository-level reading of KA-R19/R20, strengthens the low-friction capture lifecycle, and adopts the same fixture-first probe discipline rather than prototyping its preferred distributed family first.
+
+Research 134 owns the reconciled candidate status and common-fixture protocol. The live empirical hypotheses are now H1 Distributed Document Contracts and H2 Partitioned Semantic Ownership with a bounded cross-object spine. H3 object-primary structured authority and H0 retrieval-first minimal formalism remain reference poles. Relational storage is an implementation option rather than a separate semantic family, and event-ledger mechanisms are deferred unless later evidence demonstrates a real replay requirement.
+
+The target architecture remains unselected.
+
+```text
+MC0013=RESOLVED
+LIVE_CANDIDATES=H1,H2
+REFERENCE_POLES=H3,H0
+TARGET_ARCHITECTURE=NOT_SELECTED
+NEXT=RESEARCH134_COMMON_FIXTURE_PROBES
 ```
