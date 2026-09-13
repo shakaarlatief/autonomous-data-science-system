@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / RELATION-LIFECYCLE FIXTURE V0.2 MACHINE-FROZEN / H1-H2 V0.2 IMPLEMENTATION NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / V0.1 + V0.2 H1-H2 PROBES COMPLETE / ADVERSARIAL CROSS-MODEL INTERPRETATION NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -3756,4 +3756,28 @@ RELATION_LIFECYCLE_FIXTURE_V02=MACHINE_FROZEN
 H1_V02=IMPLEMENTATION_NEXT
 H2_V02=IMPLEMENTATION_NEXT
 TARGET_ARCHITECTURE=NOT_SELECTED
+```
+
+## 81. V0.2 supports selective first-class relation ownership without selecting a target
+
+Research 138 records the completed Relation-Lifecycle Discriminator V0.2. Both H1 and narrowed H2 pass every frozen semantic, temporal, provenance, stale-update, missing-evidence and derived-rebuild oracle. The final implementation deliberately strengthens H1 to the source-owned sidecar form that Research 137 permits, so relation-only changes do not modify endpoint intrinsic documents.
+
+The remaining discriminator is semantic ownership rather than raw correctness. H1 places both symmetric ternary relations in `sidecar:S-A:relations` because `S-A` wins an explicit lexicographic tie-break; the fixture provides no semantic reason to prefer A over B or C. H2 lets each qualifying relation own its independent identity/lifecycle directly.
+
+The trade-off is not one-sided. H1 uses one source-owned authoritative relation location and four authoritative location touches across successful lifecycle transitions. H2 uses two first-class relation locations and five location touches because the supersession transition updates both predecessor and successor. H2 therefore improves ownership naturalness but does not establish lower physical write cost.
+
+The narrowed H2 admission rule does pass its first selectivity test: only `R-ABC-1/2` enter the relation substrate, the ordinary `S-D depends_on S-A` relation stays source-local, and materializing 10/50/100 additional ordinary relations leaves first-class relation records at 2/2/2 with zero false-positive admissions.
+
+V0.1 and V0.2 jointly support a more selective working hypothesis: source-local authority by default; separately authoritative semantic/control objects only when the thing itself earns independent identity/lifecycle/provenance and lacks a natural source owner; broad routing/search/closure/context remain rebuildable views. This is not yet a selected target and does not choose the physical substrate.
+
+Research 134 explicitly deferred another Claude contribution until empirical probe evidence existed. That condition is now satisfied. The next step is a bounded adversarial cross-model interpretation of the frozen V0.1/V0.2 fixtures, raw results and ChatGPT interpretations before target narrowing.
+
+```text
+V01_PROBE=COMPLETE
+V02_PROBE=COMPLETE
+SELECTIVE_FIRST_CLASS_RELATION_MECHANISM=SUPPORTED
+BROAD_SPINE=NOT_SELECTED
+REQUIREMENTS_V02=UNCHANGED_FROZEN
+TARGET_ARCHITECTURE=NOT_SELECTED
+NEXT=ADVERSARIAL_CROSS_MODEL_INTERPRETATION
 ```

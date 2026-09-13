@@ -1,0 +1,1103 @@
+{
+  "probe_id": "PKA-RL-PROBE-V02",
+  "fixture_id": "PKA-RL-V02",
+  "fixture_sha256": "ece094762e3fe4f064640004da3f2293aa39168268af183df6f1347ba7f4b4c0",
+  "candidate_results": {
+    "H1": {
+      "hypothesis": "H1_DISTRIBUTED_DOCUMENT_CONTRACTS_V02",
+      "all_semantic_checks_pass": true,
+      "checks": [
+        {
+          "label": "temporal:2026-05-02",
+          "pass": true,
+          "actual": {
+            "current_applicable_relation_ids": [],
+            "R-ABC-1_lifecycle_status": "proposed",
+            "R-ABC-1_effective": false
+          },
+          "expected": {
+            "current_applicable_relation_ids": [],
+            "R-ABC-1_lifecycle_status": "proposed",
+            "R-ABC-1_effective": false
+          }
+        },
+        {
+          "label": "temporal:2026-05-04",
+          "pass": true,
+          "actual": {
+            "current_applicable_relation_ids": [],
+            "R-ABC-1_lifecycle_status": "disputed",
+            "R-ABC-1_effective": false
+          },
+          "expected": {
+            "current_applicable_relation_ids": [],
+            "R-ABC-1_lifecycle_status": "disputed",
+            "R-ABC-1_effective": false
+          }
+        },
+        {
+          "label": "temporal:2026-05-07",
+          "pass": true,
+          "actual": {
+            "current_applicable_relation_ids": [],
+            "R-ABC-1_lifecycle_status": "accepted",
+            "R-ABC-1_effective": false
+          },
+          "expected": {
+            "current_applicable_relation_ids": [],
+            "R-ABC-1_lifecycle_status": "accepted",
+            "R-ABC-1_effective": false
+          }
+        },
+        {
+          "label": "temporal:2026-05-11",
+          "pass": true,
+          "actual": {
+            "current_applicable_relation_ids": [
+              "R-ABC-1"
+            ],
+            "R-ABC-1_lifecycle_status": "accepted",
+            "R-ABC-1_effective": true
+          },
+          "expected": {
+            "current_applicable_relation_ids": [
+              "R-ABC-1"
+            ],
+            "R-ABC-1_lifecycle_status": "accepted",
+            "R-ABC-1_effective": true
+          }
+        },
+        {
+          "label": "temporal:2026-05-16",
+          "pass": true,
+          "actual": {
+            "current_applicable_relation_ids": [
+              "R-ABC-1"
+            ],
+            "R-ABC-1_lifecycle_status": "accepted_pending_supersession",
+            "R-ABC-1_effective": true,
+            "known_successor": "R-ABC-2"
+          },
+          "expected": {
+            "current_applicable_relation_ids": [
+              "R-ABC-1"
+            ],
+            "R-ABC-1_lifecycle_status": "accepted_pending_supersession",
+            "R-ABC-1_effective": true,
+            "known_successor": "R-ABC-2"
+          }
+        },
+        {
+          "label": "temporal:2026-05-21",
+          "pass": true,
+          "actual": {
+            "current_applicable_relation_ids": [
+              "R-ABC-2"
+            ],
+            "R-ABC-1_lifecycle_status": "superseded",
+            "R-ABC-1_effective": false,
+            "R-ABC-2_lifecycle_status": "accepted",
+            "R-ABC-2_effective": true
+          },
+          "expected": {
+            "current_applicable_relation_ids": [
+              "R-ABC-2"
+            ],
+            "R-ABC-1_lifecycle_status": "superseded",
+            "R-ABC-1_effective": false,
+            "R-ABC-2_lifecycle_status": "accepted",
+            "R-ABC-2_effective": true
+          }
+        },
+        {
+          "label": "final:endpoint-semantic-revisions",
+          "pass": true,
+          "actual": {
+            "S-A": 1,
+            "S-B": 1,
+            "S-C": 1,
+            "S-D": 1
+          },
+          "expected": {
+            "S-A": 1,
+            "S-B": 1,
+            "S-C": 1,
+            "S-D": 1
+          }
+        },
+        {
+          "label": "final:R-ABC-1",
+          "pass": true,
+          "actual": {
+            "revision": 5,
+            "status": "superseded",
+            "scope": [
+              "ENV-A"
+            ],
+            "qualification": "verified",
+            "evidence_ids": [
+              "E1",
+              "E2",
+              "E3",
+              "E4"
+            ],
+            "superseded_by": "R-ABC-2",
+            "superseded_effective_from": "2026-05-20"
+          },
+          "expected": {
+            "revision": 5,
+            "status": "superseded",
+            "scope": [
+              "ENV-A"
+            ],
+            "qualification": "verified",
+            "evidence_ids": [
+              "E1",
+              "E2",
+              "E3",
+              "E4"
+            ],
+            "superseded_by": "R-ABC-2",
+            "superseded_effective_from": "2026-05-20"
+          }
+        },
+        {
+          "label": "final:R-ABC-2",
+          "pass": true,
+          "actual": {
+            "revision": 1,
+            "status": "accepted",
+            "scope": [
+              "ENV-A",
+              "ENV-B"
+            ],
+            "qualification": "verified",
+            "evidence_ids": [
+              "E5"
+            ],
+            "supersedes": "R-ABC-1",
+            "effective_from": "2026-05-20"
+          },
+          "expected": {
+            "revision": 1,
+            "status": "accepted",
+            "scope": [
+              "ENV-A",
+              "ENV-B"
+            ],
+            "qualification": "verified",
+            "evidence_ids": [
+              "E5"
+            ],
+            "supersedes": "R-ABC-1",
+            "effective_from": "2026-05-20"
+          }
+        },
+        {
+          "label": "final:history",
+          "pass": true,
+          "actual": [
+            "proposed",
+            "disputed",
+            "accepted",
+            "verified",
+            "supersession_scheduled"
+          ],
+          "expected": [
+            "proposed",
+            "disputed",
+            "accepted",
+            "verified",
+            "supersession_scheduled"
+          ]
+        },
+        {
+          "label": "stale:error",
+          "pass": true,
+          "actual": "STALE_RELATION_REVISION",
+          "expected": "STALE_RELATION_REVISION"
+        },
+        {
+          "label": "stale:no-authoritative-mutation",
+          "pass": true,
+          "actual": false,
+          "expected": false
+        },
+        {
+          "label": "stale:state-unchanged",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "missing-evidence:status",
+          "pass": true,
+          "actual": "unresolved_missing_relation_evidence",
+          "expected": "unresolved_missing_relation_evidence"
+        },
+        {
+          "label": "missing-evidence:id",
+          "pass": true,
+          "actual": [
+            "E3"
+          ],
+          "expected": [
+            "E3"
+          ]
+        },
+        {
+          "label": "derived:missing-visible",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "derived:rebuild-equal",
+          "pass": true,
+          "actual": {
+            "member_relation_index": {
+              "S-A": [
+                "R-ABC-1",
+                "R-ABC-2"
+              ],
+              "S-B": [
+                "R-ABC-1",
+                "R-ABC-2"
+              ],
+              "S-C": [
+                "R-ABC-1",
+                "R-ABC-2"
+              ]
+            },
+            "current_relation_view": {
+              "current_applicable_relation_ids": [
+                "R-ABC-2"
+              ],
+              "R-ABC-1_lifecycle_status": "superseded",
+              "R-ABC-1_effective": false,
+              "R-ABC-2_lifecycle_status": "accepted",
+              "R-ABC-2_effective": true
+            },
+            "relation_history_projection": {
+              "R-ABC-1": [
+                "proposed",
+                "disputed",
+                "accepted",
+                "verified",
+                "supersession_scheduled"
+              ],
+              "R-ABC-2": [
+                "accepted"
+              ]
+            }
+          },
+          "expected": {
+            "member_relation_index": {
+              "S-A": [
+                "R-ABC-1",
+                "R-ABC-2"
+              ],
+              "S-B": [
+                "R-ABC-1",
+                "R-ABC-2"
+              ],
+              "S-C": [
+                "R-ABC-1",
+                "R-ABC-2"
+              ]
+            },
+            "current_relation_view": {
+              "current_applicable_relation_ids": [
+                "R-ABC-2"
+              ],
+              "R-ABC-1_lifecycle_status": "superseded",
+              "R-ABC-1_effective": false,
+              "R-ABC-2_lifecycle_status": "accepted",
+              "R-ABC-2_effective": true
+            },
+            "relation_history_projection": {
+              "R-ABC-1": [
+                "proposed",
+                "disputed",
+                "accepted",
+                "verified",
+                "supersession_scheduled"
+              ],
+              "R-ABC-2": [
+                "accepted"
+              ]
+            }
+          }
+        },
+        {
+          "label": "derived:freshness-bound",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        }
+      ],
+      "transition_results": [
+        {
+          "status": "applied",
+          "relation_id": "R-ABC-1",
+          "revision": 2
+        },
+        {
+          "status": "applied",
+          "relation_id": "R-ABC-1",
+          "revision": 3
+        },
+        {
+          "status": "applied",
+          "relation_id": "R-ABC-1",
+          "revision": 4
+        },
+        {
+          "error": "STALE_RELATION_REVISION",
+          "authoritative_mutation": false,
+          "expected_revision": 3,
+          "actual_revision": 4,
+          "state_unchanged": true
+        },
+        {
+          "status": "applied",
+          "relation_id": "R-ABC-1",
+          "revision": 5
+        }
+      ],
+      "scale": {
+        "1x": {
+          "additional_simple_relations": 10,
+          "source_local_relation_count": 13,
+          "relation_spine_records": 0,
+          "false_positive_spine_admissions": 0
+        },
+        "5x": {
+          "additional_simple_relations": 50,
+          "source_local_relation_count": 53,
+          "relation_spine_records": 0,
+          "false_positive_spine_admissions": 0
+        },
+        "10x": {
+          "additional_simple_relations": 100,
+          "source_local_relation_count": 103,
+          "relation_spine_records": 0,
+          "false_positive_spine_admissions": 0
+        }
+      },
+      "representation": {
+        "normalized_semantic_fact_count": 15,
+        "source_local_fact_count": 15,
+        "spine_fact_count": 0,
+        "fact_ownership": {
+          "endpoint:S-A:intrinsic": "doc:S-A",
+          "endpoint:S-B:intrinsic": "doc:S-B",
+          "endpoint:S-C:intrinsic": "doc:S-C",
+          "endpoint:S-D:intrinsic": "doc:S-D",
+          "relation:SR-D-A:depends_on": "doc:S-D",
+          "relation:R-ABC-1:identity": "sidecar:S-A:relations",
+          "relation:R-ABC-1:members": "sidecar:S-A:relations",
+          "relation:R-ABC-1:lifecycle": "sidecar:S-A:relations",
+          "relation:R-ABC-1:temporal": "sidecar:S-A:relations",
+          "relation:R-ABC-1:provenance": "sidecar:S-A:relations",
+          "relation:R-ABC-2:identity": "sidecar:S-A:relations",
+          "relation:R-ABC-2:members": "sidecar:S-A:relations",
+          "relation:R-ABC-2:lifecycle": "sidecar:S-A:relations",
+          "relation:R-ABC-2:temporal": "sidecar:S-A:relations",
+          "relation:R-ABC-2:provenance": "sidecar:S-A:relations"
+        },
+        "spine_record_count": 0,
+        "owner_observation": {
+          "independent_relations": {
+            "R-ABC-1": {
+              "owner": "sidecar:S-A:relations",
+              "owner_selection_basis": "lexicographically-smallest-symmetric-member",
+              "semantically_natural": false,
+              "reason": "fixture declares symmetric ternary membership and no natural endpoint owner"
+            },
+            "R-ABC-2": {
+              "owner": "sidecar:S-A:relations",
+              "owner_selection_basis": "lexicographically-smallest-symmetric-member",
+              "semantically_natural": false,
+              "reason": "fixture declares symmetric ternary membership and no natural endpoint owner"
+            }
+          },
+          "arbitrary_endpoint_owner_count": 2,
+          "relation_only_source_owned_touch_events": 4,
+          "independent_relation_authority_locations": [
+            "sidecar:S-A:relations"
+          ],
+          "independent_relation_authority_location_count": 1,
+          "dedicated_relation_authority_locations": 0,
+          "source_sidecar_write_revisions": {
+            "S-A": 5,
+            "S-B": 1,
+            "S-C": 1,
+            "S-D": 1
+          }
+        },
+        "admission": {
+          "not_applicable_to_h1": true,
+          "false_positive_admissions": 0,
+          "false_negative_admissions": 0
+        },
+        "endpoint_semantic_revisions": {
+          "S-A": 1,
+          "S-B": 1,
+          "S-C": 1,
+          "S-D": 1
+        },
+        "endpoint_container_write_revisions": {
+          "S-A": 1,
+          "S-B": 1,
+          "S-C": 1,
+          "S-D": 1
+        },
+        "authoritative_touch_events": [
+          {
+            "event": "RL-T1",
+            "locations": [
+              "sidecar:S-A:relations"
+            ]
+          },
+          {
+            "event": "RL-T2",
+            "locations": [
+              "sidecar:S-A:relations"
+            ]
+          },
+          {
+            "event": "RL-T3",
+            "locations": [
+              "sidecar:S-A:relations"
+            ]
+          },
+          {
+            "event": "RL-T5",
+            "locations": [
+              "sidecar:S-A:relations"
+            ]
+          }
+        ],
+        "authoritative_location_touch_total": 4,
+        "stale_rejections": [
+          {
+            "event": "RL-T4",
+            "relation_id": "R-ABC-1",
+            "expected_revision": 3,
+            "actual_revision": 4
+          }
+        ]
+      },
+      "derived_view_names": [
+        "current_relation_view",
+        "member_relation_index",
+        "relation_history_projection"
+      ]
+    },
+    "H2": {
+      "hypothesis": "H2_MINIMAL_RELATION_SPINE_V02",
+      "all_semantic_checks_pass": true,
+      "checks": [
+        {
+          "label": "temporal:2026-05-02",
+          "pass": true,
+          "actual": {
+            "current_applicable_relation_ids": [],
+            "R-ABC-1_lifecycle_status": "proposed",
+            "R-ABC-1_effective": false
+          },
+          "expected": {
+            "current_applicable_relation_ids": [],
+            "R-ABC-1_lifecycle_status": "proposed",
+            "R-ABC-1_effective": false
+          }
+        },
+        {
+          "label": "temporal:2026-05-04",
+          "pass": true,
+          "actual": {
+            "current_applicable_relation_ids": [],
+            "R-ABC-1_lifecycle_status": "disputed",
+            "R-ABC-1_effective": false
+          },
+          "expected": {
+            "current_applicable_relation_ids": [],
+            "R-ABC-1_lifecycle_status": "disputed",
+            "R-ABC-1_effective": false
+          }
+        },
+        {
+          "label": "temporal:2026-05-07",
+          "pass": true,
+          "actual": {
+            "current_applicable_relation_ids": [],
+            "R-ABC-1_lifecycle_status": "accepted",
+            "R-ABC-1_effective": false
+          },
+          "expected": {
+            "current_applicable_relation_ids": [],
+            "R-ABC-1_lifecycle_status": "accepted",
+            "R-ABC-1_effective": false
+          }
+        },
+        {
+          "label": "temporal:2026-05-11",
+          "pass": true,
+          "actual": {
+            "current_applicable_relation_ids": [
+              "R-ABC-1"
+            ],
+            "R-ABC-1_lifecycle_status": "accepted",
+            "R-ABC-1_effective": true
+          },
+          "expected": {
+            "current_applicable_relation_ids": [
+              "R-ABC-1"
+            ],
+            "R-ABC-1_lifecycle_status": "accepted",
+            "R-ABC-1_effective": true
+          }
+        },
+        {
+          "label": "temporal:2026-05-16",
+          "pass": true,
+          "actual": {
+            "current_applicable_relation_ids": [
+              "R-ABC-1"
+            ],
+            "R-ABC-1_lifecycle_status": "accepted_pending_supersession",
+            "R-ABC-1_effective": true,
+            "known_successor": "R-ABC-2"
+          },
+          "expected": {
+            "current_applicable_relation_ids": [
+              "R-ABC-1"
+            ],
+            "R-ABC-1_lifecycle_status": "accepted_pending_supersession",
+            "R-ABC-1_effective": true,
+            "known_successor": "R-ABC-2"
+          }
+        },
+        {
+          "label": "temporal:2026-05-21",
+          "pass": true,
+          "actual": {
+            "current_applicable_relation_ids": [
+              "R-ABC-2"
+            ],
+            "R-ABC-1_lifecycle_status": "superseded",
+            "R-ABC-1_effective": false,
+            "R-ABC-2_lifecycle_status": "accepted",
+            "R-ABC-2_effective": true
+          },
+          "expected": {
+            "current_applicable_relation_ids": [
+              "R-ABC-2"
+            ],
+            "R-ABC-1_lifecycle_status": "superseded",
+            "R-ABC-1_effective": false,
+            "R-ABC-2_lifecycle_status": "accepted",
+            "R-ABC-2_effective": true
+          }
+        },
+        {
+          "label": "final:endpoint-semantic-revisions",
+          "pass": true,
+          "actual": {
+            "S-A": 1,
+            "S-B": 1,
+            "S-C": 1,
+            "S-D": 1
+          },
+          "expected": {
+            "S-A": 1,
+            "S-B": 1,
+            "S-C": 1,
+            "S-D": 1
+          }
+        },
+        {
+          "label": "final:R-ABC-1",
+          "pass": true,
+          "actual": {
+            "revision": 5,
+            "status": "superseded",
+            "scope": [
+              "ENV-A"
+            ],
+            "qualification": "verified",
+            "evidence_ids": [
+              "E1",
+              "E2",
+              "E3",
+              "E4"
+            ],
+            "superseded_by": "R-ABC-2",
+            "superseded_effective_from": "2026-05-20"
+          },
+          "expected": {
+            "revision": 5,
+            "status": "superseded",
+            "scope": [
+              "ENV-A"
+            ],
+            "qualification": "verified",
+            "evidence_ids": [
+              "E1",
+              "E2",
+              "E3",
+              "E4"
+            ],
+            "superseded_by": "R-ABC-2",
+            "superseded_effective_from": "2026-05-20"
+          }
+        },
+        {
+          "label": "final:R-ABC-2",
+          "pass": true,
+          "actual": {
+            "revision": 1,
+            "status": "accepted",
+            "scope": [
+              "ENV-A",
+              "ENV-B"
+            ],
+            "qualification": "verified",
+            "evidence_ids": [
+              "E5"
+            ],
+            "supersedes": "R-ABC-1",
+            "effective_from": "2026-05-20"
+          },
+          "expected": {
+            "revision": 1,
+            "status": "accepted",
+            "scope": [
+              "ENV-A",
+              "ENV-B"
+            ],
+            "qualification": "verified",
+            "evidence_ids": [
+              "E5"
+            ],
+            "supersedes": "R-ABC-1",
+            "effective_from": "2026-05-20"
+          }
+        },
+        {
+          "label": "final:history",
+          "pass": true,
+          "actual": [
+            "proposed",
+            "disputed",
+            "accepted",
+            "verified",
+            "supersession_scheduled"
+          ],
+          "expected": [
+            "proposed",
+            "disputed",
+            "accepted",
+            "verified",
+            "supersession_scheduled"
+          ]
+        },
+        {
+          "label": "stale:error",
+          "pass": true,
+          "actual": "STALE_RELATION_REVISION",
+          "expected": "STALE_RELATION_REVISION"
+        },
+        {
+          "label": "stale:no-authoritative-mutation",
+          "pass": true,
+          "actual": false,
+          "expected": false
+        },
+        {
+          "label": "stale:state-unchanged",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "missing-evidence:status",
+          "pass": true,
+          "actual": "unresolved_missing_relation_evidence",
+          "expected": "unresolved_missing_relation_evidence"
+        },
+        {
+          "label": "missing-evidence:id",
+          "pass": true,
+          "actual": [
+            "E3"
+          ],
+          "expected": [
+            "E3"
+          ]
+        },
+        {
+          "label": "derived:missing-visible",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "derived:rebuild-equal",
+          "pass": true,
+          "actual": {
+            "member_relation_index": {
+              "S-A": [
+                "R-ABC-1",
+                "R-ABC-2"
+              ],
+              "S-B": [
+                "R-ABC-1",
+                "R-ABC-2"
+              ],
+              "S-C": [
+                "R-ABC-1",
+                "R-ABC-2"
+              ]
+            },
+            "current_relation_view": {
+              "current_applicable_relation_ids": [
+                "R-ABC-2"
+              ],
+              "R-ABC-1_lifecycle_status": "superseded",
+              "R-ABC-1_effective": false,
+              "R-ABC-2_lifecycle_status": "accepted",
+              "R-ABC-2_effective": true
+            },
+            "relation_history_projection": {
+              "R-ABC-1": [
+                "proposed",
+                "disputed",
+                "accepted",
+                "verified",
+                "supersession_scheduled"
+              ],
+              "R-ABC-2": [
+                "accepted"
+              ]
+            }
+          },
+          "expected": {
+            "member_relation_index": {
+              "S-A": [
+                "R-ABC-1",
+                "R-ABC-2"
+              ],
+              "S-B": [
+                "R-ABC-1",
+                "R-ABC-2"
+              ],
+              "S-C": [
+                "R-ABC-1",
+                "R-ABC-2"
+              ]
+            },
+            "current_relation_view": {
+              "current_applicable_relation_ids": [
+                "R-ABC-2"
+              ],
+              "R-ABC-1_lifecycle_status": "superseded",
+              "R-ABC-1_effective": false,
+              "R-ABC-2_lifecycle_status": "accepted",
+              "R-ABC-2_effective": true
+            },
+            "relation_history_projection": {
+              "R-ABC-1": [
+                "proposed",
+                "disputed",
+                "accepted",
+                "verified",
+                "supersession_scheduled"
+              ],
+              "R-ABC-2": [
+                "accepted"
+              ]
+            }
+          }
+        },
+        {
+          "label": "derived:freshness-bound",
+          "pass": true,
+          "actual": true,
+          "expected": true
+        },
+        {
+          "label": "admission:false-positive",
+          "pass": true,
+          "actual": 0,
+          "expected": 0
+        },
+        {
+          "label": "admission:false-negative",
+          "pass": true,
+          "actual": 0,
+          "expected": 0
+        },
+        {
+          "label": "admission:spine-records-scale",
+          "pass": true,
+          "actual": [
+            2,
+            2,
+            2
+          ],
+          "expected": [
+            2,
+            2,
+            2
+          ]
+        }
+      ],
+      "transition_results": [
+        {
+          "status": "applied",
+          "relation_id": "R-ABC-1",
+          "revision": 2
+        },
+        {
+          "status": "applied",
+          "relation_id": "R-ABC-1",
+          "revision": 3
+        },
+        {
+          "status": "applied",
+          "relation_id": "R-ABC-1",
+          "revision": 4
+        },
+        {
+          "error": "STALE_RELATION_REVISION",
+          "authoritative_mutation": false,
+          "expected_revision": 3,
+          "actual_revision": 4,
+          "state_unchanged": true
+        },
+        {
+          "status": "applied",
+          "relation_id": "R-ABC-1",
+          "revision": 5
+        }
+      ],
+      "scale": {
+        "1x": {
+          "additional_simple_relations": 10,
+          "source_local_relation_count": 11,
+          "relation_spine_records": 2,
+          "false_positive_spine_admissions": 0
+        },
+        "5x": {
+          "additional_simple_relations": 50,
+          "source_local_relation_count": 51,
+          "relation_spine_records": 2,
+          "false_positive_spine_admissions": 0
+        },
+        "10x": {
+          "additional_simple_relations": 100,
+          "source_local_relation_count": 101,
+          "relation_spine_records": 2,
+          "false_positive_spine_admissions": 0
+        }
+      },
+      "representation": {
+        "normalized_semantic_fact_count": 15,
+        "source_local_fact_count": 5,
+        "spine_fact_count": 10,
+        "fact_ownership": {
+          "endpoint:S-A:intrinsic": "doc:S-A",
+          "endpoint:S-B:intrinsic": "doc:S-B",
+          "endpoint:S-C:intrinsic": "doc:S-C",
+          "endpoint:S-D:intrinsic": "doc:S-D",
+          "relation:SR-D-A:depends_on": "doc:S-D",
+          "relation:R-ABC-1:identity": "spine:R-ABC-1",
+          "relation:R-ABC-1:members": "spine:R-ABC-1",
+          "relation:R-ABC-1:lifecycle": "spine:R-ABC-1",
+          "relation:R-ABC-1:temporal": "spine:R-ABC-1",
+          "relation:R-ABC-1:provenance": "spine:R-ABC-1",
+          "relation:R-ABC-2:identity": "spine:R-ABC-2",
+          "relation:R-ABC-2:members": "spine:R-ABC-2",
+          "relation:R-ABC-2:lifecycle": "spine:R-ABC-2",
+          "relation:R-ABC-2:temporal": "spine:R-ABC-2",
+          "relation:R-ABC-2:provenance": "spine:R-ABC-2"
+        },
+        "spine_record_count": 2,
+        "owner_observation": {
+          "independent_relations": {
+            "R-ABC-1": {
+              "owner": "spine:R-ABC-1",
+              "owner_selection_basis": "relation-owns-its-independent-lifecycle",
+              "semantically_natural": true,
+              "reason": "relation satisfies frozen first-class admission rule"
+            },
+            "R-ABC-2": {
+              "owner": "spine:R-ABC-2",
+              "owner_selection_basis": "relation-owns-its-independent-lifecycle",
+              "semantically_natural": true,
+              "reason": "relation satisfies frozen first-class admission rule"
+            }
+          },
+          "arbitrary_endpoint_owner_count": 0,
+          "relation_only_source_owned_touch_events": 0,
+          "independent_relation_authority_locations": [
+            "spine:R-ABC-1",
+            "spine:R-ABC-2"
+          ],
+          "independent_relation_authority_location_count": 2,
+          "dedicated_relation_authority_locations": 2
+        },
+        "admission": {
+          "qualifying_relation_ids": [
+            "R-ABC-1",
+            "R-ABC-2"
+          ],
+          "admitted_relation_ids": [
+            "R-ABC-1",
+            "R-ABC-2"
+          ],
+          "nonqualifying_control_in_spine": false,
+          "false_positive_admissions": 0,
+          "false_negative_admissions": 0
+        },
+        "endpoint_semantic_revisions": {
+          "S-A": 1,
+          "S-B": 1,
+          "S-C": 1,
+          "S-D": 1
+        },
+        "endpoint_container_write_revisions": {
+          "S-A": 1,
+          "S-B": 1,
+          "S-C": 1,
+          "S-D": 1
+        },
+        "authoritative_touch_events": [
+          {
+            "event": "RL-T1",
+            "locations": [
+              "spine:R-ABC-1"
+            ]
+          },
+          {
+            "event": "RL-T2",
+            "locations": [
+              "spine:R-ABC-1"
+            ]
+          },
+          {
+            "event": "RL-T3",
+            "locations": [
+              "spine:R-ABC-1"
+            ]
+          },
+          {
+            "event": "RL-T5",
+            "locations": [
+              "spine:R-ABC-1",
+              "spine:R-ABC-2"
+            ]
+          }
+        ],
+        "authoritative_location_touch_total": 5,
+        "stale_rejections": [
+          {
+            "event": "RL-T4",
+            "relation_id": "R-ABC-1",
+            "expected_revision": 3,
+            "actual_revision": 4
+          }
+        ]
+      },
+      "derived_view_names": [
+        "current_relation_view",
+        "member_relation_index",
+        "relation_history_projection"
+      ]
+    }
+  },
+  "comparison": {
+    "semantic_correctness": {
+      "H1": true,
+      "H2": true
+    },
+    "arbitrary_endpoint_owner_count": {
+      "H1": 2,
+      "H2": 0
+    },
+    "relation_only_source_owned_touch_events": {
+      "H1": 4,
+      "H2": 0
+    },
+    "h1_source_sidecar_write_revisions": {
+      "S-A": 5,
+      "S-B": 1,
+      "S-C": 1,
+      "S-D": 1
+    },
+    "independent_relation_authority_location_count": {
+      "H1": 1,
+      "H2": 2
+    },
+    "dedicated_relation_authority_locations": {
+      "H1": 0,
+      "H2": 2
+    },
+    "authoritative_location_touch_total": {
+      "H1": 4,
+      "H2": 5
+    },
+    "endpoint_container_write_revisions": {
+      "H1": {
+        "S-A": 1,
+        "S-B": 1,
+        "S-C": 1,
+        "S-D": 1
+      },
+      "H2": {
+        "S-A": 1,
+        "S-B": 1,
+        "S-C": 1,
+        "S-D": 1
+      }
+    },
+    "semantic_fact_ownership": {
+      "H1": {
+        "source_local": 15,
+        "spine": 0
+      },
+      "H2": {
+        "source_local": 5,
+        "spine": 10
+      }
+    },
+    "h2_admission": {
+      "qualifying_relation_ids": [
+        "R-ABC-1",
+        "R-ABC-2"
+      ],
+      "admitted_relation_ids": [
+        "R-ABC-1",
+        "R-ABC-2"
+      ],
+      "nonqualifying_control_in_spine": false,
+      "false_positive_admissions": 0,
+      "false_negative_admissions": 0
+    },
+    "relation_spine_records_1x_5x_10x": {
+      "H1": [
+        0,
+        0,
+        0
+      ],
+      "H2": [
+        2,
+        2,
+        2
+      ]
+    },
+    "interpretation_guard": "Descriptive discriminator only. No aggregate score, automatic winner, target selection or migration authority is produced."
+  }
+}
