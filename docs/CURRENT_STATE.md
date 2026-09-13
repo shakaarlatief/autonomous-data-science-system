@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 465
+**Checkpoint:** 466
 **Date:** 2026-09-13
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -23,6 +23,8 @@ Repository artifacts remain authoritative across chats and models.
 ---
 
 ## Current active stage: Research 124 project-development knowledge architecture redesign
+
+Checkpoint 466 completes the D3-D4 targeted evidence deep dive in Research 127. Cross-disciplinary evidence now supports a lifecycle distinction between intake/capture, consolidated candidate understanding, explicitly promoted durable knowledge, and task-shaped derived consumption views, without selecting these as concrete artifact families. Capture does not imply authority; promotion is an explicit source-traceable authority transition; rejected/superseded rationale may remain durable without remaining current; and lifecycle taxonomies should stay minimal. Derived reconstruction/index views normally remain read-oriented and must not contain unique accepted truth unless that truth is explicitly promoted. Material derived state needs sufficient source, transformation and freshness binding, with stronger deterministic reproducibility expected for structural views than for probabilistic LLM synthesis. The next paired deep dive is D5 authority-aware retrieval/pre-action activation plus D6 temporal/supersession semantics. D7 consolidation fidelity/provenance and D8 maintenance economics remain later. Target-architecture design remains paused and the owner paper/video remains withheld.
 
 Checkpoint 465 completes the first targeted evidence deep dive, D1-D2, in Research 126. External evidence from SKOS, Getty AAT, IFLA LRM, ICA Records in Contexts, CIDOC CRM and Wikidata/Wikibase now strongly supports separating durable semantic identity from labels, file paths, hierarchy positions and individual carriers while also rejecting universal semantic atomization. One semantic object may participate in several contextual groups/views; a preferred/default route can remain deterministic without becoming the object's exclusive semantic parent; organizational/view nodes need not become knowledge entities; and relations need richer state/provenance only when their own lifecycle matters. Research 126 introduces an architecture-neutral identity test based on persistence, cross-context reference, independent lifecycle, multiple representations, relationship-bearing role, provenance need and identity-confusion risk. It also preserves only a minimal candidate semantic-family envelope for later comparison rather than selecting an ontology. The next paired deep dive is D3 conversation-born capture -> consolidation -> promotion plus D4 canonical source versus rebuildable derived state. Target-architecture design remains paused and the owner paper/video remains withheld.
 

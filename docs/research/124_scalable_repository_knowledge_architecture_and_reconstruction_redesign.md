@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / D1-D2 KNOWLEDGE IDENTITY AND MULTI-AXIS ORGANIZATION DEEP DIVE COMPLETE / D3-D4 CAPTURE-CONSOLIDATION AND SOURCE-DERIVED DEEP DIVE NEXT / TARGET ARCHITECTURE DESIGN PAUSED
+**Status:** ACTIVE / D1-D2 AND D3-D4 TARGETED EVIDENCE DEEP DIVES COMPLETE / D5-D6 AUTHORITY-ACTIVATION AND TEMPORAL-SUPERSESSION DEEP DIVE NEXT / TARGET ARCHITECTURE DESIGN PAUSED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -2697,4 +2697,155 @@ PREFERRED_ROUTE_CAN_BE_DISPLAY_DEFAULT=true
 UNIVERSAL_SEMANTIC_ATOMIZATION=NOT_JUSTIFIED
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=D3_D4_CAPTURE_CONSOLIDATION_SOURCE_DERIVED_DEEP_DIVE
+```
+## 66. D3-D4 deep dive: capture, consolidation, promotion and source-derived state
+
+Research 127 deepens the next paired discriminators:
+
+```text
+docs/research/127_capture_consolidation_promotion_and_source_derived_state_deep_dive.md
+```
+
+The evidence base combines OAIS, PREMIS, W3C PROV-O, SLSA provenance, reproducible-build practice, materialized-view/CQRS patterns, Python PEP governance, IETF maturity-process simplification, design-rationale research, and modern LLM reflection/memory systems.
+
+### 66.1 Intake, durable knowledge and consumption views are different roles
+
+OAIS provides the strongest new conceptual structure. It distinguishes submitted information (SIP), preservation-complete archival information (AIP), and consumer-shaped dissemination information (DIP). The packages have different information requirements, and ingest may transform, validate, enrich and audit submissions before they become preservation packages.
+
+The transfer to Research 124 is architecture-neutral:
+
+```text
+captured/submitted reasoning
+    !=
+promoted durable knowledge
+    !=
+task-shaped reconstruction/dissemination view
+```
+
+Conversation-born insight therefore need not satisfy final authority requirements at the instant of capture, while a task-shaped context packet need not become project authority merely because it is useful to a model.
+
+### 66.2 Consolidation may transform source material if lineage survives
+
+OAIS ingest and provenance standards show that durable preservation can involve controlled transformation rather than literal copying. For ADS this keeps open model-assisted distillation, classification, conflict surfacing and relationship extraction, provided the resulting durable knowledge remains traceable to its source basis and preserves material uncertainty.
+
+This does not yet establish how consolidation is implemented or validated.
+
+### 66.3 Consequential transformations deserve provenance; routine operations need not
+
+PREMIS records preservation Events with type, time, details, outcomes, Agents and Objects, while explicitly allowing less important actions to remain ordinary logs rather than first-class events.
+
+Research 124 should therefore preserve provenance for authority-significant transformations such as promotion, supersession, migration, repair and material consolidation without turning every read, retrieval or chat message into a permanent project event.
+
+### 66.4 Generated outputs need source lineage and transformation lineage
+
+W3C PROV-O and SLSA independently model not only which input an output derives from but also the process/activity, producing agent/platform and material parameters/dependencies involved in generation.
+
+For later candidate comparison, “generated from the repository” is insufficient when a derived representation materially affects reconstruction. The candidate should be able to establish a proportionate provenance envelope over sources, generator/transformation and freshness.
+
+### 66.5 Rebuildability has several strengths
+
+Research 127 introduces three comparison classes rather than treating rebuildability as binary:
+
+```text
+R0  SOURCE-BOUND
+    source/provenance known; repeat generation not promised
+
+R1  REGENERABLE
+    authoritative inputs + versioned transformation can produce a fresh
+    semantically equivalent representation
+
+R2  DETERMINISTICALLY REPRODUCIBLE
+    authoritative inputs + transformation are expected to produce the same
+    machine-significant result, subject to declared normalization
+```
+
+Structural routing/index/manifests should normally aspire to R2. Probabilistic LLM synthesis may realistically satisfy R1, with semantic review more important than byte identity.
+
+### 66.6 Derived read state should normally be disposable and non-authoritative
+
+Materialized View guidance explicitly treats a view as disposable and rebuildable from source stores, and says applications do not update it directly. CQRS independently separates command/write models from query/read models and warns about eventual consistency and complexity.
+
+This strengthens a later candidate discriminator:
+
+```text
+authority-bearing knowledge mutation path
+    !=
+query/reconstruction/index path
+```
+
+No separate database or CQRS implementation is implied.
+
+### 66.7 Discovery through synthesis is not authority through synthesis
+
+LLM-generated reflection may reveal genuinely novel useful conclusions. The safe lifecycle is:
+
+```text
+derived insight
+    -> candidate capture with provenance
+        -> proportionate review / validation
+            -> explicit promotion to durable authority
+                -> future views may derive from the promoted knowledge
+```
+
+A generated cache or summary does not silently acquire authority because humans/models repeatedly consult it.
+
+### 66.8 Promotion is an explicit authority transition
+
+PEP 1 shows a mature distinction between discussion, draft proposal, acceptance, implementation/finality, rejection and historical rationale. It also preserves rejected ideas because the rationale prevents rediscovery, while current formal behavior may be documented elsewhere after resolution.
+
+The project therefore needs a promotion boundary capable of establishing source basis, resulting epistemic/authority status, unresolved uncertainty, supersession/complement relationships and provenance.
+
+IETF RFC 6410 supplies an important counterweight: mature governance deliberately simplified its maturity ladder when too many progression levels became burdensome. Any ADS lifecycle taxonomy must remain minimal.
+
+### 66.9 Low-friction capture and selective promotion are compatible
+
+DRed/design-rationale evidence supports unobtrusive capture while substantive work proceeds. PEP and PREMIS practice simultaneously show that not every idea/action deserves the strongest durable governed representation.
+
+The successor should therefore be evaluated on whether important insight can enter the knowledge lifecycle cheaply without automatic authority or unbounded permanent capture.
+
+### 66.10 D3-D4 constraints
+
+Research 127 freezes architecture-neutral constraints D3-C1 through D3-C7 and D4-C1 through D4-C8. The most important are:
+
+```text
+capture does not imply authority
+capture / consolidation / validation / promotion are distinguishable
+promotion of unique durable understanding is explicit and source-traceable
+rejected/superseded rationale may remain durable without remaining current authority
+status vocabularies should remain minimal
+full indefinite capture of every token/result is not justified
+
+derived views normally remain read-oriented
+material derived state needs source binding, transformation identity and freshness
+loss of a derived store must not destroy unique accepted truth
+probabilistic synthesis needs provenance-complete regeneration rather than false byte-repeat claims
+generated unique accepted insight must cross an explicit promotion boundary
+task-shaped views may summarize/reorganize authority without becoming authority
+hidden material inputs weaken rebuildability
+required freshness must fail visibly when it cannot be established
+```
+
+### 66.11 Stop rule and next boundary
+
+The D3-D4 evidence now converges strongly enough that more broad examples are unlikely to change the architecture-level result before the remaining discriminators are examined.
+
+The next paired deep dive is:
+
+```text
+D5  authority-aware retrieval and pre-action activation
+D6  temporal / supersession semantics
+```
+
+They are coupled because resolving which source governs a task depends on scope, applicability time, supersession and current-versus-historical state.
+
+D7 consolidation fidelity/provenance and D8 maintenance economics remain after D5-D6. Requirements/evidentiary-provenance reconciliation follows the targeted evidence set. Target-architecture synthesis remains paused. The owner paper/video remains withheld.
+
+```text
+D3_D4_DEEP_DIVE=COMPLETE
+CAPTURE_DOES_NOT_IMPLY_AUTHORITY=true
+PROMOTION_IS_EXPLICIT_AUTHORITY_TRANSITION=true
+DERIVED_STATE_UNIQUE_TRUTH=NOT_ALLOWED_WITHOUT_PROMOTION
+REBUILDABILITY_LEVELS=REFINED
+TARGET_ARCHITECTURE=NOT_SELECTED
+NEXT=D5_D6_AUTHORITY_ACTIVATION_TEMPORAL_SUPERSESSION_DEEP_DIVE
 ```
