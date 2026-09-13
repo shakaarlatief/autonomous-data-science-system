@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "judgment_set_id": "PKA-REAL-REL-V01-CHATGPT-A",
+  "corpus_id": "PKA-REAL-REL-V01",
+  "corpus_freeze_commit": "ae87c1facbf7c7d7508414e86a935bc439404c24",
+  "corpus_sha256": "cc61a9610b2a88b8be6c3af06b661c6ce270e094e380d1d362dc8f10d8f90ed5",
+  "reviewer": {
+    "collaborator_id": "chatgpt",
+    "interaction_environment": "ChatGPT",
+    "interaction_session": "chatgpt-24",
+    "conversation_title": "24 - Owner Source Incremental Evaluation"
+  },
+  "independence_statement": "Judgments were produced after the corpus was machine-frozen and before any Claude judgment set existed or was read. The reviewer knew the Research 124 evidence program and MC-0014 lessons, but had no other reviewer case labels.",
+  "additional_source_reads": [],
+  "judgments": [
+    {
+      "case_id": "RC-001",
+      "label": "SOURCE_LOCAL",
+      "confidence": "HIGH",
+      "rationale": "The supersession and retained-outcome state is fully about D-015's own current applicability. D-015 can state that its architectural-uncertainty scope was replaced by D-033 while preserving the retained outcome, without requiring a separately maintained relation object.",
+      "proposed_natural_owner_or_null": "D-015",
+      "independent_continuity_basis_or_null": null,
+      "derived_inputs_or_null": null,
+      "missing_evidence_or_null": null
+    },
+    {
+      "case_id": "RC-002",
+      "label": "SOURCE_LOCAL",
+      "confidence": "MEDIUM",
+      "rationale": "The multi-successor mapping remains a statement about D-011's applicability by subsystem. D-011 can own its own scope-to-successor status and residual applicability, although the number of successor scopes increases local structure and should be queryable.",
+      "proposed_natural_owner_or_null": "D-011",
+      "independent_continuity_basis_or_null": null,
+      "derived_inputs_or_null": null,
+      "missing_evidence_or_null": null
+    },
+    {
+      "case_id": "RC-003",
+      "label": "DERIVED_ONLY",
+      "confidence": "HIGH",
+      "rationale": "Obsolescence of an older same-branch CI run is a current relation computed from run identity/branch/head plus a newer push and the cancellation policy. Persisting a second authoritative obsolete-by edge would duplicate state that can become stale.",
+      "proposed_natural_owner_or_null": null,
+      "independent_continuity_basis_or_null": null,
+      "derived_inputs_or_null": [
+        "older CI run branch/head/status",
+        "newer push branch/head/ancestry",
+        "same-branch supersession/cancellation policy"
+      ],
+      "missing_evidence_or_null": null
+    },
+    {
+      "case_id": "RC-004",
+      "label": "SOURCE_LOCAL",
+      "confidence": "HIGH",
+      "rationale": "The relationship has an explicit governing source: the checkpoint contract. The governing contract can state its scope over checkpoint metadata/role, while other documents reference that authority.",
+      "proposed_natural_owner_or_null": "docs/checkpoints/README.md",
+      "independent_continuity_basis_or_null": null,
+      "derived_inputs_or_null": null,
+      "missing_evidence_or_null": null
+    },
+    {
+      "case_id": "RC-005",
+      "label": "FIRST_CLASS_SEMANTIC_OBJECT",
+      "confidence": "HIGH",
+      "rationale": "The Cockpit workstream persists while paused, remains neither rejected nor deleted, carries preserved implementation state, and has an exact future resume anchor while another workstream is active. That continuity is not naturally reducible to the branch, checkpoint, or Source Vault participant alone.",
+      "proposed_natural_owner_or_null": null,
+      "independent_continuity_basis_or_null": "Durable Cockpit workstream identity/state persists across pause, branch/head anchors and later resume while other routes proceed.",
+      "derived_inputs_or_null": null,
+      "missing_evidence_or_null": null
+    },
+    {
+      "case_id": "RC-006",
+      "label": "FIRST_CLASS_SEMANTIC_OBJECT",
+      "confidence": "HIGH",
+      "rationale": "The active/paused/later-return semantics span several workstreams and determine continuation order. No one research record naturally owns the whole route graph; the workstream/control state itself needs addressable continuity to reconstruct which route is active, which are paused and what resumes later.",
+      "proposed_natural_owner_or_null": null,
+      "independent_continuity_basis_or_null": "Project-development workstream/control state persists across active, paused and later-return relationships among Research 123, Research 113, Source Vault and the planned next stage.",
+      "derived_inputs_or_null": null,
+      "missing_evidence_or_null": null
+    },
+    {
+      "case_id": "RC-007",
+      "label": "SOURCE_LOCAL",
+      "confidence": "HIGH",
+      "rationale": "The reopen triggers are conditions governing one deployment process. The process contract can own the complete trigger list and pause/revise consequence without creating independent trigger objects unless individual triggers later acquire their own lifecycle/provenance.",
+      "proposed_natural_owner_or_null": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+      "independent_continuity_basis_or_null": null,
+      "derived_inputs_or_null": null,
+      "missing_evidence_or_null": null
+    },
+    {
+      "case_id": "RC-008",
+      "label": "SOURCE_LOCAL",
+      "confidence": "HIGH",
+      "rationale": "The evidence-base and exposure constraints are properties of one review thread/task. MC-0013 can own its review base, exposure state and independence notes; a separate relation object would add another authority surface without demonstrated independent lifecycle.",
+      "proposed_natural_owner_or_null": "MC-0013 review/thread state",
+      "independent_continuity_basis_or_null": null,
+      "derived_inputs_or_null": null,
+      "missing_evidence_or_null": null
+    },
+    {
+      "case_id": "RC-009",
+      "label": "SOURCE_LOCAL",
+      "confidence": "HIGH",
+      "rationale": "Provenance is directional from a reusable knowledge unit or synthesis to the source evidence that supports it. The derived knowledge object can own its source references/provenance without duplicating truth into a separate relation authority surface.",
+      "proposed_natural_owner_or_null": "the reusable Methodological Knowledge unit/synthesis that is derived from the sources",
+      "independent_continuity_basis_or_null": null,
+      "derived_inputs_or_null": null,
+      "missing_evidence_or_null": null
+    },
+    {
+      "case_id": "RC-010",
+      "label": "DERIVED_ONLY",
+      "confidence": "HIGH",
+      "rationale": "The source explicitly classifies topic membership as navigation/retrieval metadata rather than authority. Subject-to-artifact membership is therefore best treated as a rebuildable organizational view over authoritative knowledge and routing declarations, not unique project truth.",
+      "proposed_natural_owner_or_null": null,
+      "independent_continuity_basis_or_null": null,
+      "derived_inputs_or_null": [
+        "authoritative artifact inventory",
+        "subject/routing metadata or deterministic classification inputs"
+      ],
+      "missing_evidence_or_null": null
+    },
+    {
+      "case_id": "RC-011",
+      "label": "SOURCE_LOCAL",
+      "confidence": "HIGH",
+      "rationale": "This is a constitutional authority/delegation rule. A project continuity/authority policy can state that the public repository is project-development authority and that private continuity is delegated but non-overriding. The relation does not need its own independently addressed lifecycle object.",
+      "proposed_natural_owner_or_null": "public continuity/authority policy in docs/CONTINUITY.md",
+      "independent_continuity_basis_or_null": null,
+      "derived_inputs_or_null": null,
+      "missing_evidence_or_null": null
+    },
+    {
+      "case_id": "RC-012",
+      "label": "UNRESOLVED",
+      "confidence": "MEDIUM",
+      "rationale": "The packet shows a compact live-routing tuple but does not establish whether these fields are unique authoritative state, a rebuildable projection of workstream/branch/checkpoint sources, or a mixture. That authority-class distinction is exactly what determines SOURCE_LOCAL versus DERIVED_ONLY/FIRST_CLASS.",
+      "proposed_natural_owner_or_null": null,
+      "independent_continuity_basis_or_null": null,
+      "derived_inputs_or_null": null,
+      "missing_evidence_or_null": "Need evidence identifying which current_routing fields are canonical versus projected and whether the live route has an independent lifecycle beyond the listed source facts."
+    },
+    {
+      "case_id": "RC-013",
+      "label": "SOURCE_LOCAL",
+      "confidence": "HIGH",
+      "rationale": "The collaborator write scope and next-actor state are bounded properties of one collaboration thread. The thread state can own the authorization relationship completely and update it with the thread lifecycle.",
+      "proposed_natural_owner_or_null": "MC-0014 thread state",
+      "independent_continuity_basis_or_null": null,
+      "derived_inputs_or_null": null,
+      "missing_evidence_or_null": null
+    },
+    {
+      "case_id": "RC-014",
+      "label": "SOURCE_LOCAL",
+      "confidence": "HIGH",
+      "rationale": "The coordination branch and exact review base are intrinsic reproducibility constraints of the MC-0014 review task. The review task/thread is a natural owner of that binding; a separate target relation object is unnecessary absent independent lifecycle beyond the task.",
+      "proposed_natural_owner_or_null": "MC-0014 review/thread state",
+      "independent_continuity_basis_or_null": null,
+      "derived_inputs_or_null": null,
+      "missing_evidence_or_null": null
+    },
+    {
+      "case_id": "RC-015",
+      "label": "SOURCE_LOCAL",
+      "confidence": "MEDIUM",
+      "rationale": "The packet currently establishes a governance invariant: current authority remains until a successor satisfies explicit qualification/migration conditions. That rule can be owned by the project architecture-transition policy. If a concrete successor transition later gains its own multi-step state, approvals or effective-time lifecycle, reification may become justified, but that is not evidenced in this packet.",
+      "proposed_natural_owner_or_null": "Research 124 / project architecture-transition policy",
+      "independent_continuity_basis_or_null": null,
+      "derived_inputs_or_null": null,
+      "missing_evidence_or_null": "No concrete successor transition instance with independent lifecycle is present in the packet."
+    }
+  ],
+  "summary": {
+    "case_count": 15,
+    "label_counts": {
+      "SOURCE_LOCAL": 10,
+      "FIRST_CLASS_SEMANTIC_OBJECT": 2,
+      "DERIVED_ONLY": 2,
+      "UNRESOLVED": 1
+    },
+    "confidence_counts": {
+      "HIGH": 12,
+      "MEDIUM": 3,
+      "LOW": 0
+    }
+  }
+}

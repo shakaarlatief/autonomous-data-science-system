@@ -326,6 +326,7 @@ docs/research/137_relation_lifecycle_discriminator_v02_machine_freeze.md
 docs/research/138_relation_lifecycle_discriminator_v02_h1_h2_empirical_result.md
 docs/research/139_cross_model_probe_reconciliation_and_real_corpus_discriminator_protocol.md
 docs/research/140_real_ads_relationship_corpus_v01_machine_freeze.md
+docs/research/141_real_ads_relationship_corpus_v01_chatgpt_independent_judgment.md
 docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md
 docs/checkpoints/449_scalable_knowledge_architecture_redesign_opened.md
 docs/checkpoints/450_knowledge_architecture_baseline_inventory_complete_requirements_next.md
@@ -363,6 +364,7 @@ docs/checkpoints/481_relation_lifecycle_v02_probe_complete_adversarial_review_ne
 docs/checkpoints/482_mc0014_adversarial_probe_evidence_review_opened.md
 docs/checkpoints/483_mc0014_resolved_real_corpus_discriminator_protocol_frozen.md
 docs/checkpoints/484_real_ads_relationship_corpus_v01_machine_frozen.md
+docs/checkpoints/485_chatgpt_real_corpus_judgment_frozen_claude_independent_next.md
 docs/research/PROJECT_KNOWLEDGE_FAILURE_CORPUS.md
 docs/research/project_knowledge_baselines/PROJECT_KNOWLEDGE_BLIND_BASELINE_PROTOCOL.md
 docs/local_execution/validation/206_semantic_git_managed_python_integrity_and_publication_restored.md
@@ -898,7 +900,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-484 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-485 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 
