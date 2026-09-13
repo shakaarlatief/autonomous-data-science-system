@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 459
+**Checkpoint:** 460
 **Date:** 2026-09-12
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -23,6 +23,8 @@ Repository artifacts remain authoritative across chats and models.
 ---
 
 ## Current active stage: Research 124 project-development knowledge architecture redesign
+
+Checkpoint 460 accepts BL-003-A as a valid broad-orientation baseline. The fresh ChatGPT recovered a broad multi-domain project picture from the frozen snapshot despite the historical global Knowledge Map drift by using repository-tree discovery plus selective deep-source reads rather than treating the map as exhaustive. This weakens any strong claim that the drift made broad reconstruction impossible, while preserving it as evidence of semantic routing degradation. The trial still required about 18 tool/read actions, so cheap bounded cold-start reconstruction and long-run sublinear scaling remain unproven. No identical repeat is needed; a later fixed-budget variant would be more informative if cost scaling needs sharper evidence. BL-004 is now the next pilot scenario, testing exact-source fidelity before holistic Cockpit integration. Broad external research and the owner paper/video remain paused.
 
 Checkpoint 459 accepts BL-002-B as the valid access-hardened replacement. The fresh ChatGPT reconstructed the repository-native collaboration process correctly from the frozen snapshot and avoided the historical giant-manual-relay pattern. However, the BL-002 prompt explicitly told the model to use the way the project already handles multi-model collaboration, so this result demonstrates process discoverability and reconstructability **after the process category is cued**, not spontaneous uncued situation dispatch. No identical repeat is needed; a later neutral adjacent variant may be considered after the four-scenario pilot. BL-003 is now the next trial, using the V0.2 access-hardened Codexless-only historical-snapshot request. Broad external research and the owner paper/video remain paused.
 

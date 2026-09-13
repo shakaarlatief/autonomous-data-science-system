@@ -2005,3 +2005,49 @@ IDENTICAL_REPLICATE=NO
 POSSIBLE_LATER_UNCUED_VARIANT=YES
 NEXT=BL-003_CHATGPT_A
 ```
+## 60. BL-003-A valid: broad orientation is recoverable despite map drift, but not cheaply proven
+
+BL-003-A is evaluated at:
+
+```text
+docs/research/project_knowledge_baselines/evaluations/BL-003_chatgpt_a_evaluation.md
+```
+
+The trial is protocol-valid under V0.2. The fresh ChatGPT remained inside frozen snapshot `f355994c538e0b9b28b5a3c2a5814252ffea1939`, used Codexless-only exact Git object/tree reads, and did not consume descendant Research 124 or evaluator material.
+
+The result does not reproduce a strong-form broad-reconstruction failure. Despite the then-drifted global `KNOWLEDGE_MAP.md`, the collaborator reconstructed a broad project picture spanning epistemic integrity, the LLM/system/human boundary, project state/object/dependency architecture, methodological navigation and reusable knowledge, V1 persistence/retrieval/context infrastructure, Project Cockpit/product architecture, Source Universe provenance, experimental falsification, and project-development governance.
+
+The collaborator did this by **not assuming the global map was complete**. It used repository-tree discovery plus selective deep-source reads across Vision, Development Method, Foundations, Specifications, experiment evidence and specialized subsystem sources.
+
+This weakens the simplistic causal claim:
+
+```text
+Cockpit-heavy global map
+    -> broad project orientation impossible
+```
+
+The better current interpretation is:
+
+> **Global routing drift degraded direct semantic navigation, while broad reconstruction remained possible through compensating repository-wide search and deeper-source traversal.**
+
+The key remaining weakness is cost. The trial used about 18 tool/read actions. That is reasonable for a broad orientation task but does not demonstrate the Research 124 goal that sufficient understanding can be reconstructed under a small bounded cold-start budget as corpus size grows.
+
+So BL-003 adds an important empirical distinction:
+
+```text
+recoverability          demonstrated in this frozen case
+cheap reconstruction    not demonstrated
+sublinear scaling       not demonstrated
+```
+
+No identical BL-003 repeat is required. A later fixed-read-budget orientation variant would be more informative if Research 124 needs a sharper scaling discriminator.
+
+```text
+BL003_A=VALID
+BROAD_ORIENTATION_RECOVERABLE=true
+GLOBAL_MAP_DRIFT_EQUAL_TOTAL_RECONSTRUCTION_FAILURE=false
+RECONSTRUCTION_COST_PRESSURE=observed
+IMMEDIATE_IDENTICAL_REPLICATE=NO
+POSSIBLE_LATER_FIXED_BUDGET_VARIANT=YES
+NEXT=BL-004_CHATGPT_A
+```
