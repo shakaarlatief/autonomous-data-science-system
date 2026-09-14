@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "fixture_id": "PKA-C01-ZERO-SEED-ROUTING-V01",
+  "candidate_id": "PKA-CANDIDATE-01",
+  "real_base_commit": "4da4cfecc052b2f339e14dba0e91525662c144b2",
+  "protocol": {
+    "shadow_only": true,
+    "current_project_authority_unchanged": true,
+    "implementation_may_read_oracle": false,
+    "generation_must_not_read_global_live_state": true,
+    "forbidden_generation_paths": [
+      "docs/current_routing.json",
+      "docs/CURRENT_STATE.md",
+      "docs/KNOWLEDGE_MAP.md"
+    ],
+    "forbidden_answer_keys": [
+      "expected_projection",
+      "expected_match",
+      "should_pass",
+      "expected_status"
+    ]
+  },
+  "shadow_sources": [
+    {
+      "source_key": "active_workstream",
+      "path": "docs/research/project_knowledge_candidate_01_zero_seed_routing_v01/SHADOW_WORKSTREAM_SOURCE.md",
+      "sha256": "55d95022fef3145aa3ee1e6cddfb9b311f139fcf77ab2772202e1940e0ea298d",
+      "bytes": 1436,
+      "source_class": "shadow_successor_canonical"
+    },
+    {
+      "source_key": "integration_boundary",
+      "path": "docs/research/project_knowledge_candidate_01_zero_seed_routing_v01/SHADOW_PROJECT_INTEGRATION_BOUNDARY.md",
+      "sha256": "5ef9e53ff021d246c8e46bad8665fa3fd28f9b98ad770327aa57c083930531e1",
+      "bytes": 1168,
+      "source_class": "shadow_successor_canonical"
+    }
+  ],
+  "real_sources": [
+    {
+      "source_key": "spec027",
+      "path": "docs/specifications/027_v1_historical_intermediate_checkpoint_integrity_extension.md",
+      "sha256": "96df5da7c45be645c39ee9b02d1568772aa1b598f6393af784a076702b5a5229",
+      "bytes": 7988,
+      "source_class": "computed_control"
+    },
+    {
+      "source_key": "checkpoint192",
+      "path": "docs/checkpoints/192_specification_022_incomplete_result_preservation_promotion_candidate.md",
+      "sha256": "144e38e6ed91f64a23d33d62f7a557088f6ebed6a472458fd931d9d785133fbb",
+      "bytes": 13541,
+      "source_class": "computed_control"
+    },
+    {
+      "source_key": "routing_target",
+      "path": "docs/current_routing.json",
+      "sha256": "5a656b95115deaafc09c4dc556bdd688972c423e1ac7405aae583bfdc0deb3b4",
+      "bytes": 440,
+      "source_class": "comparison_target"
+    }
+  ],
+  "computed_controls": {
+    "latest_specification": {
+      "source_key": "spec027",
+      "parse": "specification_number_from_title"
+    },
+    "latest_experiment_outcome": {
+      "source_key": "checkpoint192",
+      "parse": "incomplete_experiment_outcome_marker"
+    }
+  },
+  "routing_contract": {
+    "schema_version": 1,
+    "active_route_source": "active_workstream",
+    "integration_boundary_source": "integration_boundary",
+    "latest_specification_source": "spec027",
+    "latest_experiment_outcome_source": "checkpoint192"
+  },
+  "migration_accounting": {
+    "shadow_successor_source_count": 2,
+    "facts_relocated_from_global_authority": [
+      "active_development_branch",
+      "active_pr",
+      "current_checkpoint",
+      "current_boundary",
+      "promoted_integration_branch",
+      "promoted_integration_sha"
+    ],
+    "global_live_state_generation_fact_count": 0,
+    "manual_shadow_source_touch_count": 2
+  }
+}

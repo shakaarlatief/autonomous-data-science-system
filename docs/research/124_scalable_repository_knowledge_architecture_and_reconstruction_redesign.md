@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / REAL-REPOSITORY SHADOW V0.1 PASSED / ZERO-SEED SUCCESSOR-NATIVE ROUTING SHADOW NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / ZERO-SEED ROUTING FIXTURE FROZEN / IMPLEMENTATION NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -4075,4 +4075,19 @@ ROUTING_EXACT_PARITY=PASS_WITH_SEEDS
 CONTROL_OWNERSHIP=AMENDED
 ZERO_SEED_ROUTING_SHADOW=NEXT
 TARGET_ARCHITECTURE=NOT_SELECTED
+```
+
+## 99. Zero-seed successor-native routing fixture freezes before implementation
+
+Research 154 operationalizes the control-ownership amendment from Research 153. Two successor-native shadow canonical sources now own the active workstream execution anchor and promoted integration boundary. The generator is allowed zero current global live-state facts and zero reads of the current routing/state/navigation targets before comparison.
+
+This experiment therefore tests whether the candidate can cross the important line from **parity with migration seeds** to **parity from successor-native semantic owners**.
+
+```text
+ZERO_SEED_ROUTING_FIXTURE=FROZEN
+SUCCESSOR_SHADOW_SOURCES=2
+GLOBAL_LIVE_STATE_GENERATION_FACTS=0
+CURRENT_ARCHITECTURE=STILL_AUTHORITY
+TARGET_ARCHITECTURE=NOT_SELECTED
+NEXT=IMPLEMENT_ZERO_SEED_ROUTING_V01
 ```
