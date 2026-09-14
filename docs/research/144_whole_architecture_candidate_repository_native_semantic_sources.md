@@ -1,7 +1,7 @@
 # Research 144: Whole-Architecture Candidate - Repository-Native Semantic Sources with Selective Identity, Derived Views, and Action-Gated Authority
 
 **Date:** 2026-09-14
-**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE / MC-0016 INCORPORATED / FIRST FALSIFICATION SHADOW SLICE PASSED / BROADER QUALIFICATION PENDING / TARGET ARCHITECTURE NOT SELECTED
+**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE / TWO SYNTHETIC SHADOW SLICES PASSED / REAL-REPOSITORY SHADOW QUALIFICATION NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Candidate label:** `PKA-CANDIDATE-01`
 **Scope:** Synthesize one serious successor architecture from the complete Research 124 evidence field after the H1/H2 mechanism probes, real-corpus independent review, MC-0014/MC-0015 corrections, D1-D8 external evidence and owner-provided ICM evaluation. Define enough logical structure, authority semantics, typed source responsibilities, derived-view behavior, activation, lifecycle, validation, scaling and migration behavior to qualify the candidate systematically against Requirements V0.2.
 **Authority:** Candidate architecture research only. Requirements V0.2 remain the frozen acceptance authority. This record does not select the target architecture, migrate current authority, or authorize implementation as the production continuity system.
@@ -966,4 +966,19 @@ H3_REOPEN=NO
 FINAL_QUALIFIED_PASSES=0
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=BROADER_SHADOW_OPERATIONAL_BEHAVIOR_SLICE
+```
+
+## 38. Operational Shadow V0.2 survives after preserved first-run repair
+
+Research 151 extends Candidate 01 evidence from isolated foundational mechanisms into a broader integrated synthetic operating model. Workstream DAG/pause/resume/interruption, fidelity-gated promotion, generated routing/current/navigation views, public/private degraded behavior and authority uncertainty all pass the untouched frozen oracle after three preserved first-run defects are repaired.
+
+One first-run defect was semantically substantive: natural SUPPLEMENT ordering was reversed. The repair now treats relation targets as prerequisites of the relation owner. The other two were deterministic view-order fidelity defects. No fixture/oracle weakening was used.
+
+The candidate has now earned enough synthetic support that another synthetic expansion has diminishing value. The next qualification step moves to bounded real-repository shadow parity and behavior.
+
+```text
+SYNTHETIC_SHADOW_SLICES=2_PASS_AFTER_RECORDED_REPAIR_DISCIPLINE
+FINAL_QUALIFIED_PASSES=0
+TARGET_ARCHITECTURE=NOT_SELECTED
+NEXT=REAL_REPOSITORY_SHADOW_PARITY_AND_BEHAVIOR
 ```

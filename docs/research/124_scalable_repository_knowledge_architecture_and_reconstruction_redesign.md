@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / CANDIDATE 01 FIRST SHADOW SLICE PASSED / BROADER OPERATIONAL SHADOW QUALIFICATION NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / CANDIDATE 01 TWO SYNTHETIC SHADOW SLICES COMPLETE / REAL-REPOSITORY SHADOW QUALIFICATION NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -4022,4 +4022,22 @@ ORACLE_SHA256=a1af441f356fbd0e7cac65ba1f6c45589f96941139e669d99de4276acf8440b6
 CURRENT_ARCHITECTURE=STILL_AUTHORITY
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=IMPLEMENT_OPERATIONAL_SHADOW_V02
+```
+
+## 96. Operational Shadow V0.2 passes after preserving first-run defects
+
+Research 151 implements the operational fixture frozen at `7231fcb0d6423787f58ed561a9064841e5f9a724`. The first run passed 35/38 checks and preserved three failures before repair: two deterministic ordering-contract mismatches and one substantive reversal of base/supplement authority order. The implementation was repaired without modifying the frozen fixture/oracle, and the final result `6a7e2f1b9846cb2e7c3e349c75a512c30540ccdab0ae485a3154d398236a7de6` passes all focused V0.2 tests.
+
+The broader slice now demonstrates synthetic workstream DAG/pause/resume/interruption behavior, stale-write rejection, fidelity-gated promotion, generated current views, public/private non-leakage/degraded mode and fail-visible missing/conflicting authority. All unit tests pass.
+
+After two synthetic slices, the next evidence should use a bounded real repository shadow. Another synthetic expansion would increasingly test our fixtures rather than the architecture.
+
+```text
+OPERATIONAL_SHADOW_V02=PASS_AFTER_PRESERVED_REPAIR
+FIRST_RUN=35_OF_38
+FINAL_ORACLE=PASS
+H3_REOPEN=NO
+FINAL_QUALIFIED_PASSES=0
+TARGET_ARCHITECTURE=NOT_SELECTED
+NEXT=REAL_REPOSITORY_SHADOW_PARITY_AND_BEHAVIOR
 ```

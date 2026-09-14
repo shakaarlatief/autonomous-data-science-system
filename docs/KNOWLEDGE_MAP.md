@@ -336,6 +336,7 @@ docs/research/147_mc0016_closure_and_shadow_prototype_entry.md
 docs/research/148_candidate01_shadow_fixture_v01_machine_freeze.md
 docs/research/149_candidate01_shadow_v01_falsification_first_empirical_result.md
 docs/research/150_candidate01_operational_shadow_v02_fixture_freeze.md
+docs/research/151_candidate01_operational_shadow_v02_empirical_result.md
 docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md
 docs/checkpoints/449_scalable_knowledge_architecture_redesign_opened.md
 docs/checkpoints/450_knowledge_architecture_baseline_inventory_complete_requirements_next.md
@@ -384,6 +385,7 @@ docs/checkpoints/492_mc0016_resolved_candidate01_shadow_prototype_next.md
 docs/checkpoints/493_candidate01_shadow_fixture_v01_frozen_before_implementation.md
 docs/checkpoints/494_candidate01_shadow_v01_foundational_slice_passed.md
 docs/checkpoints/495_candidate01_operational_shadow_v02_fixture_frozen.md
+docs/checkpoints/496_candidate01_operational_shadow_v02_passed_real_repository_shadow_next.md
 docs/research/PROJECT_KNOWLEDGE_FAILURE_CORPUS.md
 docs/research/project_knowledge_baselines/PROJECT_KNOWLEDGE_BLIND_BASELINE_PROTOCOL.md
 docs/local_execution/validation/206_semantic_git_managed_python_integrity_and_publication_restored.md
@@ -919,7 +921,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-495 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-496 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

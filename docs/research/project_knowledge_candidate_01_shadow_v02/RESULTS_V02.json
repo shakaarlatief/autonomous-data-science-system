@@ -1,0 +1,298 @@
+{
+  "schema_version": 1,
+  "probe_id": "PKA-C01-SHADOW-OPS-PROBE-V02",
+  "candidate_id": "PKA-CANDIDATE-01",
+  "fixture_id": "PKA-C01-SHADOW-OPS-V02",
+  "fixture_sha256": "6daefddd448ead145281d56da8325925cb82c71fc57418283ef21c65418ec486",
+  "shadow_only": true,
+  "implementation_reads_oracle": false,
+  "workstreams": {
+    "baseline": {
+      "mandatory_route": [
+        "WS-PKA",
+        "WS-C01",
+        "WS-OPS"
+      ],
+      "active_leaves": [
+        "WS-OPS"
+      ],
+      "signal_activated_from_pause": [],
+      "paused_visible": [
+        "WS-PRIVATE",
+        "WS-MIGRATION"
+      ],
+      "blocked_visible": [
+        "WS-INTEGRATION"
+      ],
+      "multiple_dependencies": {
+        "WS-INTEGRATION": [
+          "WS-OPS",
+          "WS-PRIVATE"
+        ],
+        "WS-MIGRATION": [
+          "WS-INTEGRATION",
+          "WS-AUDIT"
+        ]
+      }
+    },
+    "private_ready": {
+      "mandatory_route": [
+        "WS-PKA",
+        "WS-C01",
+        "WS-OPS"
+      ],
+      "active_leaves": [
+        "WS-OPS",
+        "WS-PRIVATE"
+      ],
+      "signal_activated_from_pause": [
+        "WS-PRIVATE"
+      ],
+      "paused_visible": [
+        "WS-PRIVATE",
+        "WS-MIGRATION"
+      ],
+      "blocked_visible": [
+        "WS-INTEGRATION"
+      ],
+      "multiple_dependencies": {
+        "WS-INTEGRATION": [
+          "WS-OPS",
+          "WS-PRIVATE"
+        ],
+        "WS-MIGRATION": [
+          "WS-INTEGRATION",
+          "WS-AUDIT"
+        ]
+      }
+    },
+    "interruption_recovery": {
+      "transition_id": "TR-ADVANCE-FOUNDATION",
+      "completed_steps": [
+        "T1",
+        "T2"
+      ],
+      "pending_steps": [
+        "T3",
+        "T4"
+      ],
+      "blind_replay_required": false,
+      "receipt_evidence": [
+        "research:149",
+        "workstream:WS-OPS@rev4"
+      ]
+    },
+    "updates": {
+      "STALE-WS-OPS": {
+        "status": "STALE_REVISION",
+        "actual_revision": 4,
+        "mutation_applied": false,
+        "state_after": {
+          "workstream_id": "WS-OPS",
+          "state": "ACTIVE",
+          "revision": 4,
+          "parent": "WS-C01",
+          "objective": "Exercise broader operational behavior",
+          "depends_on": [
+            "WS-FOUNDATION"
+          ],
+          "current_anchor": "shadow-v02",
+          "on_complete_resume": "WS-C01:WS-INTEGRATION"
+        }
+      },
+      "FRESH-WS-OPS": {
+        "status": "APPLIED",
+        "actual_revision": 4,
+        "new_revision": 5,
+        "mutation_applied": true,
+        "current_anchor": "shadow-v02-qualified",
+        "state_after": {
+          "workstream_id": "WS-OPS",
+          "state": "ACTIVE",
+          "revision": 5,
+          "parent": "WS-C01",
+          "objective": "Exercise broader operational behavior",
+          "depends_on": [
+            "WS-FOUNDATION"
+          ],
+          "current_anchor": "shadow-v02-qualified",
+          "on_complete_resume": "WS-C01:WS-INTEGRATION"
+        }
+      }
+    }
+  },
+  "consolidation": {
+    "candidates": {
+      "SYN-BAD": {
+        "status": "FIDELITY_FAIL",
+        "missing_units": [
+          "U4"
+        ]
+      },
+      "SYN-GOOD": {
+        "status": "FIDELITY_PASS",
+        "missing_units": []
+      }
+    },
+    "promotions": {
+      "PROMOTE-BAD": {
+        "status": "PROMOTION_BLOCKED_FIDELITY"
+      },
+      "PROMOTE-GOOD": {
+        "status": "PROMOTED",
+        "semantic_id": "KN-OPS-FOUNDATION",
+        "provenance_capture_ids": [
+          "CAP-1"
+        ],
+        "recoverable_latent_units": [
+          "U4"
+        ]
+      }
+    },
+    "capture_authority": {
+      "CAP-1": "candidate",
+      "CAP-2": "candidate"
+    },
+    "accepted_view_excludes": [
+      "CAP-1",
+      "CAP-2"
+    ],
+    "novel_narrative_claim_capture_ids": [
+      "NC2"
+    ]
+  },
+  "derived_views": {
+    "routing_rebuild_equal": true,
+    "current_state_rebuild_equal": true,
+    "navigation_rebuild_equal": true,
+    "current_state_core": {
+      "active_workstreams": [
+        "WS-PKA",
+        "WS-C01",
+        "WS-OPS"
+      ],
+      "paused_workstreams": [
+        "WS-PRIVATE",
+        "WS-MIGRATION"
+      ],
+      "blocked_workstreams": [
+        "WS-INTEGRATION"
+      ],
+      "accepted_knowledge": [
+        "KN-BASE",
+        "KN-OPS-FOUNDATION"
+      ]
+    },
+    "navigation_index": {
+      "architecture": [
+        "KN-BASE"
+      ],
+      "operations": [
+        "WS-OPS"
+      ],
+      "privacy": [
+        "WS-PRIVATE"
+      ],
+      "project-knowledge": [
+        "KN-BASE",
+        "WS-OPS",
+        "WS-PRIVATE"
+      ],
+      "qualification": [
+        "WS-OPS",
+        "WS-PRIVATE"
+      ]
+    },
+    "view_digests": {
+      "ROUTING_CURRENT": "857164b7e21d906cd2a534e80d626d172c8778cd72b081715bb5466c6502db46",
+      "CURRENT_STATE_CORE": "d36372d2180cb74b7b0ea2382237b396d896b50d60ea1691448d783c59871bb9",
+      "NAVIGATION_INDEX": "91e83e26c2abfe666ccbeac95976b3585f1f4d8438548a7af3d2241b02965495"
+    }
+  },
+  "private_boundary": {
+    "scenarios": {
+      "PUBLIC-ONLY": {
+        "status": "PASS_PUBLIC_ONLY",
+        "private_loaded": false,
+        "public_output": {
+          "public_id": "PUB-2",
+          "public_state": "CURRENT",
+          "public_conclusion": "Ordinary public architecture research does not require private detail.",
+          "private_dependency_id": null
+        }
+      },
+      "PRIVATE-REQUIRED-AVAILABLE": {
+        "status": "PASS_PRIVATE_VERIFIED",
+        "private_loaded": true,
+        "private_verification": "VERIFIED",
+        "public_output": {
+          "public_id": "PUB-1",
+          "public_state": "RESOLVED_PRIVATE",
+          "public_conclusion": "Private compatibility check was previously resolved successfully.",
+          "private_dependency_id": "PD-1"
+        }
+      },
+      "PRIVATE-REQUIRED-UNAVAILABLE": {
+        "status": "FAIL_VISIBLE_REQUIRED_PRIVATE_UNAVAILABLE",
+        "private_loaded": false,
+        "private_verification": "UNAVAILABLE",
+        "public_output": {
+          "public_id": "PUB-1",
+          "public_state": "RESOLVED_PRIVATE",
+          "public_conclusion": "Private compatibility check was previously resolved successfully.",
+          "private_dependency_id": "PD-1"
+        }
+      },
+      "RESOLVED-PRIVATE-NOT-VERIFIED": {
+        "status": "PASS_PUBLIC_RESOLVED_PRIVATE",
+        "private_loaded": false,
+        "private_verification": "NOT_VERIFIED",
+        "public_state": "RESOLVED_PRIVATE",
+        "public_output": {
+          "public_id": "PUB-1",
+          "public_state": "RESOLVED_PRIVATE",
+          "public_conclusion": "Private compatibility check was previously resolved successfully.",
+          "private_dependency_id": "PD-1"
+        }
+      }
+    },
+    "public_leaked_private_values": []
+  },
+  "authority_uncertainty": {
+    "AUTH-COMPLETE": {
+      "status": "RESOLVED",
+      "governing_sources": [
+        "AUTH-SAFE-BASE",
+        "AUTH-SAFE-SUPPLEMENT"
+      ]
+    },
+    "AUTH-MISSING-REQUIRED": {
+      "status": "FAIL_VISIBLE_MISSING_REQUIRED_AUTHORITY",
+      "missing_sources": [
+        "AUTH-SAFE-SUPPLEMENT"
+      ]
+    },
+    "AUTH-CONFLICT": {
+      "status": "UNRESOLVED_AUTHORITY_CONFLICT",
+      "conflicting_sources": [
+        "AUTH-CONFLICT-A",
+        "AUTH-CONFLICT-B"
+      ]
+    },
+    "OPTIONAL-RETRIEVAL-DOWN": {
+      "status": "DEGRADED_OPTIONAL_RETRIEVAL",
+      "proceed_allowed": true,
+      "uncertainty_visible": true
+    }
+  },
+  "metrics": {
+    "workstream_count": 8,
+    "paused_count": 2,
+    "multi_dependency_workstream_count": 2,
+    "promoted_knowledge_count": 1,
+    "candidate_capture_count": 2,
+    "derived_view_count": 3,
+    "public_leak_count": 0,
+    "fail_visible_authority_cases": 2
+  }
+}

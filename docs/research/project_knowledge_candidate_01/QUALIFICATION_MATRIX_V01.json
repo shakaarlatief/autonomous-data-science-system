@@ -632,7 +632,8 @@
     "design_partial_after_amendment": 0,
     "narrow_mc0016_followup_pending": false,
     "prototype_ready_at_design_level": true,
-    "prototype_foundational_slice_passed": true
+    "prototype_foundational_slice_passed": true,
+    "operational_shadow_v02_passed": true
   },
   "adversarial_review": {
     "thread": "MC-0016",
@@ -674,6 +675,52 @@
       "KA-I17"
     ],
     "stop_conditions_triggered": [],
+    "h3_reopen": false
+  },
+  "prototype_evidence_v02": {
+    "research": "research:151",
+    "result_path": "docs/research/project_knowledge_candidate_01_shadow_v02/RESULTS_V02.json",
+    "result_sha256": "6a7e2f1b9846cb2e7c3e349c75a512c30540ccdab0ae485a3154d398236a7de6",
+    "first_run_result_sha256": "b570c078908adb9ce64680b9a2c820fd44d35838a23ba4077c278be444de5e18",
+    "first_run_comparison_sha256": "ed48a1bf88bef1b5e1207d2a11f406fb24ce3cfcdc775b5d2d5e4ae67dea1ee3",
+    "first_run_checks": {
+      "passed": 35,
+      "failed": 3
+    },
+    "evidence_class": "BROADER_SYNTHETIC_INTEGRATION_SUPPORT",
+    "final_qualification_credit": false,
+    "supported_mechanism_ids": [
+      "KA-R11",
+      "KA-R13",
+      "KA-R14",
+      "KA-R17",
+      "KA-R18",
+      "KA-R20",
+      "KA-R21",
+      "KA-R22",
+      "KA-R23",
+      "KA-R24",
+      "KA-R25",
+      "KA-R26",
+      "KA-R27",
+      "KA-R28",
+      "KA-R29",
+      "KA-R37",
+      "KA-R38",
+      "KA-R39",
+      "KA-R42",
+      "KA-R47",
+      "KA-R48",
+      "KA-I03",
+      "KA-I06",
+      "KA-I07",
+      "KA-I09",
+      "KA-I10",
+      "KA-I13",
+      "KA-I14",
+      "KA-I15",
+      "KA-I16"
+    ],
     "h3_reopen": false
   }
 }

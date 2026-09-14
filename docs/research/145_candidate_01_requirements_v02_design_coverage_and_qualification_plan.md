@@ -1,7 +1,7 @@
 # Research 145: Candidate 01 Requirements V0.2 Design Coverage and Qualification Plan
 
 **Date:** 2026-09-14
-**Status:** 50/50 KA-R + 17/17 KA-I DESIGN-MAPPED / FIRST SHADOW SLICE PASSED / INTEGRATED QUALIFICATION PENDING / TARGET ARCHITECTURE NOT SELECTED
+**Status:** 50/50 KA-R + 17/17 KA-I DESIGN-MAPPED / TWO SYNTHETIC SHADOW SLICES COMPLETE / REAL-REPOSITORY SHADOW QUALIFICATION NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Candidate:** `PKA-CANDIDATE-01` from Research 144
 **Scope:** Systematically map the whole-architecture candidate against every frozen Requirements V0.2 requirement/invariant, distinguish design coverage from actual qualification evidence, identify selection-blocking proof clusters, and freeze the minimum implementation/behavioral evidence needed before target selection.
 **Authority:** Candidate qualification planning only. Requirements V0.2 remain the acceptance authority. A mapped design mechanism is not a qualified pass.
@@ -347,4 +347,18 @@ The first-run result passed the separately frozen oracle without implementation 
 FOUNDATIONAL_SHADOW_EVIDENCE=RECORDED
 FINAL_QUALIFIED_PASSES=0
 NEXT=BROADER_SHADOW_OPERATIONAL_BEHAVIOR_SLICE
+```
+
+## 15. Operational Shadow V0.2 expands synthetic evidence
+
+Research 151 adds broader integration support for workstream continuity, explicit promotion, must-preserve fidelity, derived current views, public/private degraded mode, uncertainty and stale-update safety. The machine matrix records this as `BROADER_SYNTHETIC_INTEGRATION_SUPPORT` with no final qualification credit.
+
+The preserved first run also demonstrates why defect-first prototype evidence matters: 35/38 oracle checks passed immediately, while a real directional-authority ordering defect and two view-order fidelity defects were visible before repair. The frozen oracle remained unchanged.
+
+Future evidence should now reduce synthetic-protocol bias rather than adding more synthetic breadth.
+
+```text
+SYNTHETIC_OPERATIONAL_INTEGRATION=SUPPORTED
+FINAL_QUALIFIED_PASSES=0
+NEXT=REAL_REPOSITORY_SHADOW_PARITY_AND_BEHAVIOR
 ```
