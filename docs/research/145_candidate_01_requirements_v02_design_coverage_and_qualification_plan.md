@@ -1,7 +1,7 @@
 # Research 145: Candidate 01 Requirements V0.2 Design Coverage and Qualification Plan
 
 **Date:** 2026-09-14
-**Status:** 50/50 KA-R + 17/17 KA-I DESIGN-MAPPED / Q9 MIGRATION-ROLLBACK FIXTURE FROZEN / IMPLEMENTATION NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** 50/50 KA-R + 17/17 KA-I DESIGN-MAPPED / Q9 SHADOW SUBSYSTEM SUPPORT PASSED / EVIDENCE RECONCILIATION V0.2 NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Candidate:** `PKA-CANDIDATE-01` from Research 144
 **Scope:** Systematically map the whole-architecture candidate against every frozen Requirements V0.2 requirement/invariant, distinguish design coverage from actual qualification evidence, identify selection-blocking proof clusters, and freeze the minimum implementation/behavioral evidence needed before target selection.
 **Authority:** Candidate qualification planning only. Requirements V0.2 remain the acceptance authority. A mapped design mechanism is not a qualified pass.
@@ -483,4 +483,16 @@ Research 164 freezes the direct behavioral challenge for KA-R19/R43/R44/R45 and 
 Q9_REAL_BASE_SHADOW_IMPLEMENTATION=PENDING
 AUTHORITY_SWITCH=FORBIDDEN
 NEXT=IMPLEMENT_Q9_MIGRATION_V01
+```
+
+## 26. Q9 real-base shadow subsystem evidence
+
+Research 165 adds real-base shadow Candidate 01 support for KA-R19/R43/R44/R45 and KA-I08/I17. Ten migration units preserve exact parity, the rollback exporter produces legacy-compatible surfaces accepted by the current routing validator, live authority remains untouched, and the switch gate remains closed. Candidate 01 also self-hosts the migration workstream.
+
+Descriptive evidence coverage is now 49/67 real and 58/67 synthetic-or-better, still with 0 final qualified passes. Q3, Q7 and Q9 have materially changed since Research 159, so a V0.2 whole-architecture evidence audit is required before choosing the next falsification.
+
+```text
+Q9_SHADOW_EVIDENCE=RECORDED
+FINAL_QUALIFIED_PASSES=0
+NEXT=WHOLE_ARCHITECTURE_EVIDENCE_RECONCILIATION_V02
 ```

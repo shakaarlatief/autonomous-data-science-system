@@ -642,8 +642,9 @@
     "q3_real_subsystem_support_passed": true,
     "h3_reopen_after_q3_real_v01": false,
     "q7_real_subsystem_support_passed": true,
-    "candidate_items_with_synthetic_or_better_evidence_current": 54,
-    "candidate_items_with_real_evidence_current": 45
+    "candidate_items_with_synthetic_or_better_evidence_current": 58,
+    "candidate_items_with_real_evidence_current": 49,
+    "q9_shadow_subsystem_support_passed": true
   },
   "adversarial_review": {
     "thread": "MC-0016",
@@ -977,6 +978,42 @@
       "KA-R42",
       "KA-I10",
       "KA-I14"
+    ]
+  },
+  "prototype_evidence_q9_migration_v01": {
+    "research": "research:165",
+    "freeze_commit": "9305692b5c474ba3b637e83366916622c5bf675e",
+    "real_base_commit": "fe40740e62dabc41e538b2b604e84f5e9167e92d",
+    "result_path": "docs/research/project_knowledge_candidate_01_q9_migration_v01/RESULTS_V01.json",
+    "result_sha256": "12a9ba9ea1e71c6a9886f3792e11c0bdb86669f9eb0fd74a1925eda8e5f43b75",
+    "first_run_result_sha256": "12a9ba9ea1e71c6a9886f3792e11c0bdb86669f9eb0fd74a1925eda8e5f43b75",
+    "first_run_comparison_sha256": "9b4ac6b1e6ea6976e9d15f6b68c515574720a5eef00819090b1d67c6600e72c5",
+    "final_comparison_sha256": "2fbe04ac83f85816e967e0e660f248ff9d7bc59eaeea085ded08a1f58690840e",
+    "first_run_checks": {
+      "passed": 10,
+      "failed": 0
+    },
+    "final_checks": {
+      "passed": 11,
+      "failed": 0
+    },
+    "implementation_repairs_after_first_run": 0,
+    "evidence_class": "REAL_BASE_Q9_MIGRATION_ROLLBACK_SUPPORT",
+    "final_qualification_credit": false,
+    "migration_units_passed": 10,
+    "migration_units_total": 10,
+    "rollback_routing_exact_parity": true,
+    "legacy_validator_pass": true,
+    "live_authority_mutation_detected": false,
+    "authority_switch_allowed": false,
+    "self_hosting_complete": true,
+    "supported_mechanism_ids": [
+      "KA-R19",
+      "KA-R43",
+      "KA-R44",
+      "KA-R45",
+      "KA-I08",
+      "KA-I17"
     ]
   }
 }

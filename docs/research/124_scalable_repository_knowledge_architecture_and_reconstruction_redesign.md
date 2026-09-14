@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / Q9 MIGRATION-ROLLBACK FIXTURE FROZEN / IMPLEMENTATION NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / Q9 SHADOW SUBSYSTEM SUPPORT PASSED / WHOLE-ARCHITECTURE EVIDENCE RECONCILIATION V0.2 NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -4237,5 +4237,20 @@ Q9_MIGRATION_FIXTURE=FROZEN
 CURRENT_ARCHITECTURE=STILL_AUTHORITY
 AUTHORITY_SWITCH=FORBIDDEN_IN_EXPERIMENT
 NEXT=IMPLEMENT_Q9_MIGRATION_V01
+TARGET_ARCHITECTURE=NOT_SELECTED
+```
+
+## 110. Q9 shadow migration/rollback passes; evidence field must be reconciled again
+
+Research 165 executes the frozen Q9 real-base migration/rollback probe with 10/10 first-run oracle checks, 11/11 final checks and no implementation repair. Ten migration-critical semantics preserve exact parity, reverse-reference compatibility targets remain unbroken, a temporary successor-to-legacy export passes the existing routing validator, live authority files remain unchanged, the authority switch stays blocked, and the migration workstream reconstructs itself from Candidate 01 semantics.
+
+The result raises descriptive evidence coverage to 49/67 items with some real repository evidence and 58/67 with synthetic-or-better evidence while final qualified passes remain zero. Because Q3, Q7 and Q9 have now all received major real/shadow evidence since Research 159, the next step is a fresh whole-architecture evidence reconciliation rather than another inherited subsystem experiment.
+
+```text
+Q9_SHADOW_SUBSYSTEM_SUPPORT=PASS
+ROLLBACK_EXPORT=PASS
+AUTHORITY_SWITCH=BLOCKED
+FINAL_QUALIFIED_PASSES=0
+NEXT=WHOLE_ARCHITECTURE_EVIDENCE_RECONCILIATION_V02
 TARGET_ARCHITECTURE=NOT_SELECTED
 ```

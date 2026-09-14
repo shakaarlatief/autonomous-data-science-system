@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "probe_id": "PKA-C01-Q9-MIGRATION-PROBE-V01",
+  "candidate_id": "PKA-CANDIDATE-01",
+  "fixture_id": "PKA-C01-Q9-MIGRATION-V01",
+  "real_base_commit": "fe40740e62dabc41e538b2b604e84f5e9167e92d",
+  "fixture_sha256": "5f6fec6c812692f8b085dde8f15ddc8c1f80a2695bf75933a80d736eeb83dfcc",
+  "shadow_only": true,
+  "implementation_reads_oracle": false,
+  "all_source_hashes_match": true,
+  "migration_unit_parity": {
+    "MU01": true,
+    "MU02": true,
+    "MU03": true,
+    "MU04": true,
+    "MU05": true,
+    "MU06": true,
+    "MU07": true,
+    "MU08": true,
+    "MU09": true,
+    "MU10": true
+  },
+  "migration_values": {
+    "MU01": {
+      "semantic": "current_checkpoint",
+      "legacy": 508,
+      "successor": 508
+    },
+    "MU02": {
+      "semantic": "active_development_branch",
+      "legacy": "v1-source-vault-bootstrap-resume",
+      "successor": "v1-source-vault-bootstrap-resume"
+    },
+    "MU03": {
+      "semantic": "active_pr",
+      "legacy": null,
+      "successor": null
+    },
+    "MU04": {
+      "semantic": "current_boundary",
+      "legacy": "project-knowledge-migration-rollback-shadow-next",
+      "successor": "project-knowledge-migration-rollback-shadow-next"
+    },
+    "MU05": {
+      "semantic": "promoted_integration_branch",
+      "legacy": "v1-frontend-spike",
+      "successor": "v1-frontend-spike"
+    },
+    "MU06": {
+      "semantic": "promoted_integration_sha",
+      "legacy": "2480109fadeee1e480ef03b82e335aacdf9adf91",
+      "successor": "2480109fadeee1e480ef03b82e335aacdf9adf91"
+    },
+    "MU07": {
+      "semantic": "latest_specification",
+      "legacy": "027",
+      "successor": "027"
+    },
+    "MU08": {
+      "semantic": "latest_experiment_outcome",
+      "legacy": "INCOMPLETE",
+      "successor": "INCOMPLETE"
+    },
+    "MU09": {
+      "semantic": "target_architecture_not_selected",
+      "legacy": "TARGET_ARCHITECTURE_NOT_SELECTED",
+      "successor": "TARGET_ARCHITECTURE_NOT_SELECTED"
+    },
+    "MU10": {
+      "semantic": "final_qualified_passes",
+      "legacy": 0,
+      "successor": 0
+    }
+  },
+  "policy_grounding": {
+    "P01": true,
+    "P02": true,
+    "P03": true,
+    "P04": true
+  },
+  "identity_and_provenance": {
+    "active_workstream_semantic_id": "WS-PKA-CURRENT",
+    "integration_boundary_semantic_id": "PROJECT-INTEGRATION-BOUNDARY",
+    "migration_semantic_id": "PKA-C01-MIGRATION",
+    "path_used_as_semantic_identity": false,
+    "migration_source_commit": "fe40740e62dabc41e538b2b604e84f5e9167e92d",
+    "all_sources_shadow_only": true,
+    "migration_provenance_bound_to_real_base": true
+  },
+  "reverse_reference_counts": {
+    "docs/current_routing.json": 115,
+    "docs/CURRENT_STATE.md": 121,
+    "docs/CONTINUITY.md": 98
+  },
+  "broken_reverse_reference_target_count": 0,
+  "rollback_export": {
+    "routing_exact_parity": true,
+    "legacy_validator_pass": true,
+    "legacy_validator_output": "Current routing consistency: PASS checkpoint=508 checked_branch=v1-source-vault-bootstrap-resume active_branch=v1-source-vault-bootstrap-resume active_pr=none promoted=v1-frontend-spike@2480109fadeee1e480ef03b82e335aacdf9adf91 latest_specification=027 latest_outcome=INCOMPLETE current_boundary=project-knowledge-migration-rollback-shadow-next",
+    "live_authority_mutation_detected": false,
+    "compatibility_path_count": 2,
+    "exported_routing": {
+      "schema_version": 1,
+      "current_checkpoint": 508,
+      "active_development_branch": "v1-source-vault-bootstrap-resume",
+      "active_pr": null,
+      "promoted_integration_branch": "v1-frontend-spike",
+      "promoted_integration_sha": "2480109fadeee1e480ef03b82e335aacdf9adf91",
+      "latest_specification": "027",
+      "latest_experiment_outcome": "INCOMPLETE",
+      "current_boundary": "project-knowledge-migration-rollback-shadow-next"
+    }
+  },
+  "authority_switch": {
+    "allowed": false,
+    "current_operational_authority": "CURRENT_CONTINUITY_ARCHITECTURE",
+    "successor_authority_state": "SHADOW_ONLY",
+    "authority_switch_requested": false,
+    "blockers": [
+      "FINAL_QUALIFICATION_INCOMPLETE",
+      "TARGET_NOT_SELECTED",
+      "OWNER_TARGET_ACCEPTANCE_ABSENT"
+    ],
+    "rollback_proof": true,
+    "public_repository_integrity_pass": true,
+    "experiment_forbids_switch": true
+  },
+  "self_hosting": {
+    "complete": true,
+    "migration_phase": "M6_SHADOW_RECONCILIATION",
+    "parent": "WS-PKA-CURRENT",
+    "next_action": "Prove semantic migration parity, reverse-reference safety, lossless legacy export, switch-precondition blocking, and self-hosted continuation without changing authority."
+  },
+  "q9_shadow_subsystem_support": true,
+  "interpretation": {
+    "q9_final_qualification_claimed": false,
+    "production_authority_migrated": false,
+    "rollback_executed_against_live_authority": false,
+    "target_architecture_selected": false
+  }
+}

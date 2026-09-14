@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "fixture_id": "PKA-C01-Q9-MIGRATION-V01",
+  "result": "RESULTS_V01.json",
+  "total_checks": 11,
+  "passed": 11,
+  "failed": 0,
+  "failed_checks": [],
+  "check_results": {
+    "all_source_hashes_match": true,
+    "migration_unit_parity": true,
+    "migration_unit_count": true,
+    "identity_and_provenance": true,
+    "reverse_reference_counts": true,
+    "broken_reverse_reference_target_count": true,
+    "rollback_export": true,
+    "authority_switch": true,
+    "self_hosting": true,
+    "q9_shadow_subsystem_support": true,
+    "first_run_equals_final": true
+  },
+  "implementation_repairs_after_first_run": 0
+}

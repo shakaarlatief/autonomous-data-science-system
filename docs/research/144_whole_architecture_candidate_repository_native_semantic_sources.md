@@ -1,7 +1,7 @@
 # Research 144: Whole-Architecture Candidate - Repository-Native Semantic Sources with Selective Identity, Derived Views, and Action-Gated Authority
 
 **Date:** 2026-09-14
-**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE / Q3 + Q7 REAL SUPPORT / Q9 MIGRATION-ROLLBACK FIXTURE FROZEN / TARGET ARCHITECTURE NOT SELECTED
+**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE / Q3 + Q7 + Q9 REAL/SHADOW SUBSYSTEM SUPPORT / EVIDENCE RECONCILIATION V0.2 NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Candidate label:** `PKA-CANDIDATE-01`
 **Scope:** Synthesize one serious successor architecture from the complete Research 124 evidence field after the H1/H2 mechanism probes, real-corpus independent review, MC-0014/MC-0015 corrections, D1-D8 external evidence and owner-provided ICM evaluation. Define enough logical structure, authority semantics, typed source responsibilities, derived-view behavior, activation, lifecycle, validation, scaling and migration behavior to qualify the candidate systematically against Requirements V0.2.
 **Authority:** Candidate architecture research only. Requirements V0.2 remain the frozen acceptance authority. This record does not select the target architecture, migrate current authority, or authorize implementation as the production continuity system.
@@ -1171,4 +1171,18 @@ Q9_FIXTURE=FROZEN
 ROLLBACK=EXPORTER_BASED_TEST_PENDING
 DUAL_AUTHORITY=FORBIDDEN
 NEXT=IMPLEMENT_Q9_MIGRATION_V01
+```
+
+## 47. Q9 real-base shadow migration validates exporter-based rollback for the tested slice
+
+Research 165 demonstrates that Candidate 01 can map ten migration-critical real-base semantics into successor sources with exact parity, preserve path-independent semantic IDs and migration provenance, retain compatibility paths for existing inbound references, and regenerate legacy routing/current-state surfaces that the current validator accepts. No live authority file is changed.
+
+The same probe keeps the authority switch closed despite rollback proof and public integrity because final qualification, target selection and owner acceptance are absent. The migration is itself represented as a Candidate 01 workstream.
+
+This materially strengthens Sections 27 and 33.10 but remains bounded shadow evidence rather than permission for M7.
+
+```text
+Q9_SHADOW_SUPPORT=PASS
+M7_AUTHORITY_SWITCH=NOT_AUTHORIZED
+NEXT=WHOLE_ARCHITECTURE_EVIDENCE_RECONCILIATION_V02
 ```
