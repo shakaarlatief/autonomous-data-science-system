@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / SOURCE-VAULT WORKSTREAM + CURRENT-STATE-CORE FIXTURE FROZEN / IMPLEMENTATION NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / CURRENT-STATE-CORE SHADOW PASSED / WHOLE-ARCHITECTURE EVIDENCE RECONCILIATION NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -4136,4 +4136,18 @@ SOURCE_VAULT_WORKSTREAM_SHADOW=FROZEN
 CURRENT_ARCHITECTURE=STILL_AUTHORITY
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=IMPLEMENT_CURRENT_STATE_CORE_V01
+```
+
+## 103. Compact current-state core passes; return to whole-architecture qualification
+
+Research 158 executes the exact fixture frozen at Checkpoint 502. The first run passes 12/12 checks without repair and remains byte-identical to the final result at `56c26acb345e164feeddf7a92101f3e332f62d34ece2eaf25a3a4bd6ba81cc64`. All 23 must-preserve semantics remain recoverable, the Source Vault successor workstream aligns with real evidence, the compact core is 871 bytes, and generation consumes zero facts from current routing/state targets.
+
+This is enough evidence to stop treating current global files as the immediate research sequence. The next stage returns to Candidate 01's ten qualification clusters and asks which architecture-level uncertainties still block selection. Only those blockers should trigger further experiments.
+
+```text
+CURRENT_STATE_CORE=PASS_ON_FIRST_RUN
+MUST_PRESERVE=23_OF_23
+LEGACY_FILE_BY_FILE_SEQUENCE=NOT_THE_NEXT_METHOD
+WHOLE_ARCHITECTURE_EVIDENCE_RECONCILIATION=NEXT
+TARGET_ARCHITECTURE=NOT_SELECTED
 ```

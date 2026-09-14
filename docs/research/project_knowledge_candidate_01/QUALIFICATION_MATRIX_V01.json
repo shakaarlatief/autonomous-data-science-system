@@ -636,7 +636,8 @@
     "operational_shadow_v02_passed": true,
     "real_repository_shadow_v01_passed": true,
     "zero_seed_routing_shadow_passed": true,
-    "current_state_decomposition_v01_complete": true
+    "current_state_decomposition_v01_complete": true,
+    "current_state_core_shadow_v01_passed": true
   },
   "adversarial_review": {
     "thread": "MC-0016",
@@ -824,6 +825,53 @@
       "KA-I12",
       "KA-I13",
       "KA-I15"
+    ]
+  },
+  "prototype_evidence_current_state_core_v01": {
+    "research": "research:158",
+    "freeze_commit": "cedaa770fbb7d45139ddcb39a3438b7578a7ae44",
+    "real_base_commit": "57df6561f506cba2c26222693d1403585fad23d2",
+    "result_path": "docs/research/project_knowledge_candidate_01_current_state_core_v01/RESULTS_V01.json",
+    "result_sha256": "56c26acb345e164feeddf7a92101f3e332f62d34ece2eaf25a3a4bd6ba81cc64",
+    "first_run_comparison_sha256": "da4425240a0df4a7b3b4e5212c4bed22262cb2aa44dcf7bf0a95136a299bfcf7",
+    "first_run_checks": {
+      "passed": 12,
+      "failed": 0
+    },
+    "evidence_class": "REAL_REPOSITORY_COMPACT_CURRENT_STATE_CORE_SUPPORT",
+    "final_qualification_credit": false,
+    "must_preserve_items": 23,
+    "must_preserve_recoverable": 23,
+    "core_bytes": 871,
+    "current_state_target_bytes": 283023,
+    "core_to_target_byte_ratio": 0.003077,
+    "global_target_generation_fact_count": 0,
+    "source_vault_a_gap_closed_in_shadow": true,
+    "supported_mechanism_ids": [
+      "KA-R04",
+      "KA-R05",
+      "KA-R06",
+      "KA-R17",
+      "KA-R18",
+      "KA-R21",
+      "KA-R23",
+      "KA-R25",
+      "KA-R26",
+      "KA-R31",
+      "KA-R32",
+      "KA-R33",
+      "KA-R34",
+      "KA-R43",
+      "KA-R47",
+      "KA-R48",
+      "KA-R50",
+      "KA-I03",
+      "KA-I07",
+      "KA-I09",
+      "KA-I12",
+      "KA-I13",
+      "KA-I15",
+      "KA-I16"
     ]
   }
 }

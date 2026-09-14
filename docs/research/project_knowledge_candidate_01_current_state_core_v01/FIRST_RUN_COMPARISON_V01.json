@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "fixture_id": "PKA-C01-CURRENT-STATE-CORE-V01",
+  "first_run_result": "FIRST_RUN_RESULTS_V01.json",
+  "total_checks": 12,
+  "passed": 12,
+  "failed": 0,
+  "failed_checks": [],
+  "check_results": {
+    "all_source_hashes_match": true,
+    "shadow_source_kinds": true,
+    "source_vault_state_evidence_alignment": true,
+    "source_vault_pause_state": true,
+    "current_state_core": true,
+    "routing_subset_exact_parity": true,
+    "current_state_live_marker_parity": true,
+    "must_preserve_items_recoverable": true,
+    "must_preserve_items_missing": true,
+    "generation_forbidden_path_reads": true,
+    "global_target_generation_fact_count": true,
+    "source_vault_old_pause_reason_detected_stale": true
+  }
+}

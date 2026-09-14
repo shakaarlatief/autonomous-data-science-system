@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "probe_id": "PKA-C01-CURRENT-STATE-CORE-PROBE-V01",
+  "candidate_id": "PKA-CANDIDATE-01",
+  "fixture_id": "PKA-C01-CURRENT-STATE-CORE-V01",
+  "real_base_commit": "57df6561f506cba2c26222693d1403585fad23d2",
+  "fixture_sha256": "4b7ac27801e7d89c0cd782c895d6d0db47693916e4aae7696eb3fc4d6081ad38",
+  "shadow_only": true,
+  "implementation_reads_oracle": false,
+  "all_source_hashes_match": true,
+  "generation": {
+    "source_reads": [
+      "docs/research/project_knowledge_candidate_01_current_state_core_v01/SHADOW_ACTIVE_WORKSTREAM.md",
+      "docs/research/project_knowledge_candidate_01_current_state_core_v01/SHADOW_PROJECT_INTEGRATION_BOUNDARY.md",
+      "docs/research/project_knowledge_candidate_01_current_state_core_v01/SHADOW_SOURCE_VAULT_WORKSTREAM.md",
+      "docs/specifications/027_v1_historical_intermediate_checkpoint_integrity_extension.md",
+      "docs/checkpoints/192_specification_022_incomplete_result_preservation_promotion_candidate.md",
+      "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+      "docs/source_universe/validation/003_permanent_source_registry_migrated.md",
+      "docs/source_universe/validation/004_permanent_first_corpus_prospective_compare_all_match.md",
+      "docs/checkpoints/274_archive_unarchive_reacquire_verified_source_vault_ingestion_resumed.md",
+      "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+      "docs/research/project_knowledge_candidate_01_current_state_decomposition_v01/CURRENT_STATE_DECOMPOSITION_V01.json"
+    ],
+    "forbidden_generation_path_reads": [],
+    "shadow_source_kinds": {
+      "active_workstream": "WORKSTREAM",
+      "integration_boundary": "PROJECT_INTEGRATION_BOUNDARY",
+      "source_vault_workstream": "WORKSTREAM"
+    },
+    "source_vault_evidence_alignment": {
+      "all_aligned": true,
+      "checks": {
+        "registry_migrated_verified": true,
+        "alembic_head": true,
+        "table_count": true,
+        "compare_20_match": true,
+        "no_compare_mismatches": true,
+        "ingestion_not_started": true,
+        "resume_target": true,
+        "governing_procedure": true,
+        "working_audit_pending": true,
+        "backup_pending": true,
+        "restore_pending": true,
+        "course2_blocked": true,
+        "private_boundary": true
+      }
+    },
+    "source_vault_pause_state": "PAUSED",
+    "current_state_core": {
+      "schema_version": 1,
+      "current_checkpoint": 501,
+      "active_development_branch": "v1-source-vault-bootstrap-resume",
+      "active_pr": null,
+      "promoted_integration_branch": "v1-frontend-spike",
+      "promoted_integration_sha": "2480109fadeee1e480ef03b82e335aacdf9adf91",
+      "latest_specification": "027",
+      "latest_experiment_outcome": "INCOMPLETE",
+      "active_stage": {
+        "research_id": "124",
+        "objective": "Project-development knowledge architecture redesign and Candidate 01 qualification",
+        "selection_state": "TARGET_ARCHITECTURE_NOT_SELECTED",
+        "current_boundary": "project-knowledge-source-vault-current-state-core-shadow-next"
+      },
+      "paused_workstreams": [
+        {
+          "semantic_id": "WS-SOURCE-VAULT-BOOTSTRAP",
+          "state": "PAUSED",
+          "resume_target": "reviewed ingestion of the frozen 20-entry first corpus",
+          "governing_procedure": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+          "source_ingestion": "NOT_STARTED",
+          "course_2": "BLOCKED"
+        }
+      ]
+    },
+    "current_state_core_bytes": 871,
+    "recoverable_semantics": {
+      "current_checkpoint": 501,
+      "active_development_branch": "v1-source-vault-bootstrap-resume",
+      "active_pr": null,
+      "current_boundary": "project-knowledge-source-vault-current-state-core-shadow-next",
+      "active_research_stage": "124",
+      "target_architecture_selection_state": "TARGET_ARCHITECTURE_NOT_SELECTED",
+      "promoted_integration_branch": "v1-frontend-spike",
+      "promoted_integration_sha": "2480109fadeee1e480ef03b82e335aacdf9adf91",
+      "latest_specification": "027",
+      "latest_experiment_outcome": "INCOMPLETE",
+      "source_vault_workstream_state": "PAUSED",
+      "source_vault_resume_target": "reviewed ingestion of the frozen 20-entry first corpus",
+      "source_vault_governing_procedure": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+      "source_vault_registry_status": "MIGRATED_VERIFIED",
+      "source_vault_alembic_head": "0003_source_universe",
+      "source_vault_first_corpus_compare": {
+        "total": 20,
+        "match": 20,
+        "different": 0,
+        "missing": 0,
+        "additional": 0
+      },
+      "source_vault_ingestion_status": "NOT_STARTED",
+      "source_vault_working_audit_status": "PENDING",
+      "source_vault_backup_status": "PENDING",
+      "source_vault_restore_status": "PENDING",
+      "course2_gate": "BLOCKED",
+      "source_vault_resume_sequence": [
+        "reviewed ingestion of the frozen 20-entry first corpus",
+        "working-store integrity audit",
+        "deterministic backup staging",
+        "client-side encryption",
+        "independent remote replication",
+        "remote retrieval",
+        "encrypted-object digest reproduction",
+        "decryption",
+        "clean restore",
+        "restored integrity audit",
+        "Course 2 unblock only after accepted recovery proof succeeds"
+      ],
+      "source_vault_private_dependency_state": "RESOLVED_PRIVATE"
+    },
+    "must_preserve_items_recoverable": 23,
+    "must_preserve_items_missing": [],
+    "global_target_generation_fact_count": 0
+  },
+  "comparison": {
+    "comparison_reads": [
+      "docs/current_routing.json",
+      "docs/CURRENT_STATE.md"
+    ],
+    "routing_subset_exact_parity": true,
+    "current_state_live_marker_parity": {
+      "checkpoint": true,
+      "active_stage": true,
+      "target_not_selected": true,
+      "source_vault_state": true,
+      "source_vault_resume_target": true,
+      "course2_blocked": true
+    },
+    "source_vault_old_pause_reason_detected_stale": true,
+    "current_state_target_bytes": 283023,
+    "core_to_target_byte_ratio": 0.003077
+  },
+  "metrics": {
+    "successor_shadow_source_count": 3,
+    "new_source_vault_workstream_source_count": 1,
+    "must_preserve_item_count": 23,
+    "must_preserve_recoverable_count": 23,
+    "current_state_core_bytes": 871,
+    "current_state_target_bytes": 283023,
+    "core_to_target_byte_ratio": 0.003077,
+    "generation_forbidden_path_read_count": 0,
+    "global_target_generation_fact_count": 0
+  }
+}

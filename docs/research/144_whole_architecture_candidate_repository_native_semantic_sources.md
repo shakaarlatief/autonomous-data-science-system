@@ -1,7 +1,7 @@
 # Research 144: Whole-Architecture Candidate - Repository-Native Semantic Sources with Selective Identity, Derived Views, and Action-Gated Authority
 
 **Date:** 2026-09-14
-**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE / ZERO-SEED ROUTING PASSED / REAL CURRENT-STATE DECOMPOSITION COMPLETE / SOURCE-VAULT WORKSTREAM + CURRENT-STATE-CORE SHADOW NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE / COMPACT CURRENT-STATE CORE + SOURCE-VAULT WORKSTREAM SHADOW PASSED / WHOLE-ARCHITECTURE EVIDENCE RECONCILIATION NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Candidate label:** `PKA-CANDIDATE-01`
 **Scope:** Synthesize one serious successor architecture from the complete Research 124 evidence field after the H1/H2 mechanism probes, real-corpus independent review, MC-0014/MC-0015 corrections, D1-D8 external evidence and owner-provided ICM evaluation. Define enough logical structure, authority semantics, typed source responsibilities, derived-view behavior, activation, lifecycle, validation, scaling and migration behavior to qualify the candidate systematically against Requirements V0.2.
 **Authority:** Candidate architecture research only. Requirements V0.2 remain the frozen acceptance authority. This record does not select the target architecture, migrate current authority, or authorize implementation as the production continuity system.
@@ -1104,5 +1104,21 @@ D_CATEGORY_BYTE_SHARE=98.28_PERCENT
 REAL_DRIFT_FINDINGS=4
 SOURCE_VAULT_WORKSTREAM_SOURCE=REQUIRED
 CURRENT_STATE_AUTHORITY_SWITCH=NOT_AUTHORIZED
+TARGET_ARCHITECTURE=NOT_SELECTED
+```
+
+## 42. Compact current-state core and Source Vault workstream survive real shadow
+
+Research 158 closes the main current-state ownership gap identified by Research 156 in shadow form. One Source Vault workstream source preserves the paused/resumable semantics while the runbook and validation/checkpoints retain their existing procedural/evidence roles. All 23 frozen must-preserve semantics remain recoverable, while only 15 need direct inclusion in the compact current-state core.
+
+The generated core is 871 canonical bytes versus a 283,023-byte frozen real `CURRENT_STATE.md` target, with zero global-target inputs and exact routing-subset parity. This supports responsibility separation, not deletion of project knowledge.
+
+The next step returns to Candidate 01 as a whole architecture rather than converting legacy files sequentially.
+
+```text
+CURRENT_STATE_CORE_SHADOW=PASS
+SOURCE_VAULT_WORKSTREAM_SHADOW=PASS
+MUST_PRESERVE_RECOVERABILITY=23_OF_23
+WHOLE_ARCHITECTURE_RECONCILIATION=NEXT
 TARGET_ARCHITECTURE=NOT_SELECTED
 ```
