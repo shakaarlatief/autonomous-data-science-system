@@ -2,12 +2,12 @@
   "schema_version": 1,
   "thread_id": "MC-0016",
   "review_mode": "ADVERSARIAL_REVIEW",
-  "lifecycle_state": "OPEN",
-  "phase": "NARROW_AMENDMENT_REVIEW",
+  "lifecycle_state": "RESOLVED",
+  "phase": "RESOLVED_ADVERSARIAL_CANDIDATE_REVIEW_COMPLETE",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "64d04fcc6ba2bcf6b66d4abbcccea714ca11870b",
-    "description": "Narrow review of Candidate 01 amendments for sole-normative action-contract precedence and J1-J6 joint-authority admission. No target selection or implementation is authorized.",
+    "description": "Resolved adversarial review of PKA-CANDIDATE-01. Candidate is prototype-ready at design level; target architecture remains unselected.",
     "write_paths": []
   },
   "task_owner": "chatgpt",
@@ -50,7 +50,7 @@
       ]
     }
   ],
-  "next_expected_actor": "claude",
+  "next_expected_actor": "human",
   "independence": {
     "status": "NOT_APPLICABLE",
     "review_base_ref": "64d04fcc6ba2bcf6b66d4abbcccea714ca11870b",
@@ -61,11 +61,11 @@
     "notes": "Narrow comparative follow-up requested by Claude Message 001 after ChatGPT supplied concrete amendments. Independence is not claimed."
   },
   "last_transition": {
-    "transition_id": "mc0016-message002-amendments-narrow-followup",
+    "transition_id": "mc0016-resolved-after-narrow-amendment-review",
     "from_state": "OPEN",
-    "to_state": "OPEN",
+    "to_state": "RESOLVED",
     "actor": "chatgpt",
-    "reason": "Claude Message 001 exposed several under-specified mechanisms. Candidate 01 was amended and one final narrow Claude review is requested on normative action-contract precedence and JOINT_AUTHORITY admission only.",
-    "repository_head": "64d04fcc6ba2bcf6b66d4abbcccea714ca11870b"
+    "reason": "Claude Message 003 closes precedence, supplies the exact J2/J3 tightening for joint-authority admission, recommends no H3 reopening and no further Claude round before falsification-first shadow implementation.",
+    "repository_head": "94daa8f7f4c2ed1f6099f0a131c5ce53387d3934"
   }
 }

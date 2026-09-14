@@ -1,7 +1,7 @@
 # Research 145: Candidate 01 Requirements V0.2 Design Coverage and Qualification Plan
 
 **Date:** 2026-09-14
-**Status:** 50/50 KA-R + 17/17 KA-I DESIGN-MAPPED AFTER MC-0016 AMENDMENTS / NARROW ADVERSARIAL FOLLOW-UP PENDING / INTEGRATED QUALIFICATION PENDING / TARGET ARCHITECTURE NOT SELECTED
+**Status:** 50/50 KA-R + 17/17 KA-I DESIGN-MAPPED AFTER MC-0016 AMENDMENTS / MC-0016 RESOLVED / SHADOW PROTOTYPE NEXT / INTEGRATED QUALIFICATION PENDING / TARGET ARCHITECTURE NOT SELECTED
 **Candidate:** `PKA-CANDIDATE-01` from Research 144
 **Scope:** Systematically map the whole-architecture candidate against every frozen Requirements V0.2 requirement/invariant, distinguish design coverage from actual qualification evidence, identify selection-blocking proof clusters, and freeze the minimum implementation/behavioral evidence needed before target selection.
 **Authority:** Candidate qualification planning only. Requirements V0.2 remain the acceptance authority. A mapped design mechanism is not a qualified pass.
@@ -316,4 +316,23 @@ DESIGN_COVERAGE_AFTER_MC0016_AMENDMENT=50_KA_R__17_KA_I
 FINAL_QUALIFIED_PASSES=0
 MC0016_NARROW_FOLLOWUP=PENDING
 TARGET_ARCHITECTURE=NOT_SELECTED
+```
+
+## 13. MC-0016 final narrow closure
+
+Claude Message 003 closes the normative-precedence question and identifies one final precision defect in the reviewed J2/J3 wording. That defect is now corrected in Research 144: ordinary source-owned relations remain preferred whenever a natural semantic direction exists, while a joint-authority semantic source is admissible only when correct governing semantics would otherwise require an arbitrary non-semantic directional tie-break among otherwise symmetric participants and an independently relevant set-level authoritative fact exists.
+
+The adjacent source-integrity risk is also carried into the prototype: edits to governed procedure prose or structured contracts must trigger a semantic-drift review. This check flags possible mismatch but never treats prose as a second normative authority.
+
+The design-coverage matrix therefore remains 50 KA-R / 17 KA-I after amendment, with zero final qualified passes. MC-0016 is complete and the next gate is empirical shadow implementation rather than another architecture-dialogue round.
+
+The first slice is deliberately smaller than the full P0-P6 plan. It must falsify the foundational assumptions first: contract-home/drift detection, natural-direction versus irreducible joint authority, BL-001 prevention, dependency-local refresh/full rebuild separation and bounded current identity lookup. Broader workstream, capture, private-boundary and migration machinery should wait until those foundations survive.
+
+```text
+MC0016=RESOLVED
+DESIGN_COVERAGE=50_KA_R__17_KA_I_AFTER_AMENDMENT
+FINAL_QUALIFIED_PASSES=0
+PROTOTYPE_READY_AT_DESIGN_LEVEL=YES
+TARGET_ARCHITECTURE=NOT_SELECTED
+NEXT=FALSIFICATION_FIRST_SHADOW_PROTOTYPE
 ```

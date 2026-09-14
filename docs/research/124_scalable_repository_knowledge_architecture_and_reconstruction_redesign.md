@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / CANDIDATE 01 AMENDED AFTER MC-0016 REVIEW / NARROW MESSAGE 003 NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / MC-0016 RESOLVED / CANDIDATE 01 SHADOW PROTOTYPE NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -3958,4 +3958,24 @@ TASK_OWNER_DESIGN_MAPPING=50_KA_R__17_KA_I
 FINAL_QUALIFIED_PASSES=0
 MC0016_MESSAGE003=NARROW_REVIEW_NEXT
 TARGET_ARCHITECTURE=NOT_SELECTED
+```
+
+## 92. MC-0016 closes and falsification-first shadow implementation begins
+
+Claude Message 003 validates the sole-normative action-contract rule and supplies one final precision correction to `JOINT_AUTHORITY`: ordinary source-owned relations remain preferred whenever a natural semantic direction exists; a first-class joint-authority semantic source is eligible only when correct governing semantics would otherwise require an arbitrary, non-semantically-motivated directional tie-break among otherwise symmetric participants and an independently relevant set-level authoritative fact exists.
+
+The message also identifies a separate source-integrity risk: a human may edit explanatory procedure prose without updating the structured contract. Candidate 01 now requires an impact-aware semantic-drift check on governed-procedure edits. This validator flags suspected divergence for review but never makes prose a competing normative source.
+
+Claude explicitly states that neither issue blocks the falsification-first shadow prototype, H3 should not reopen before prototype evidence, and no further Claude round is needed. MC-0016 is therefore resolved.
+
+Research 147 freezes the first executable slice. It is intentionally smaller than the full qualification program and must test the highest-risk foundations first: one normative contract home plus drift detection, natural directional authority versus irreducible symmetric joint authority, BL-001-style contract omission, dependency-local incremental generation versus clean full rebuild, and bounded current identity lookup over growing transition history.
+
+```text
+MC0016=RESOLVED
+CANDIDATE_01=PROTOTYPE_READY_AT_DESIGN_LEVEL
+DESIGN_MAPPING=50_KA_R__17_KA_I_AFTER_AMENDMENT
+FINAL_QUALIFIED_PASSES=0
+H3_REOPEN=NO
+TARGET_ARCHITECTURE=NOT_SELECTED
+NEXT=FALSIFICATION_FIRST_SHADOW_PROTOTYPE
 ```

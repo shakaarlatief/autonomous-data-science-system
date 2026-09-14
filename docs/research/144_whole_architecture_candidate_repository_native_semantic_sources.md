@@ -1,7 +1,7 @@
 # Research 144: Whole-Architecture Candidate - Repository-Native Semantic Sources with Selective Identity, Derived Views, and Action-Gated Authority
 
 **Date:** 2026-09-14
-**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE SYNTHESIZED / AMENDED AFTER MC-0016 ADVERSARIAL REVIEW / NARROW FOLLOW-UP PENDING / TARGET ARCHITECTURE NOT SELECTED
+**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE SYNTHESIZED / MC-0016 ADVERSARIAL REVIEW INCORPORATED / PROTOTYPE-READY AT DESIGN LEVEL / TARGET ARCHITECTURE NOT SELECTED
 **Candidate label:** `PKA-CANDIDATE-01`
 **Scope:** Synthesize one serious successor architecture from the complete Research 124 evidence field after the H1/H2 mechanism probes, real-corpus independent review, MC-0014/MC-0015 corrections, D1-D8 external evidence and owner-provided ICM evaluation. Define enough logical structure, authority semantics, typed source responsibilities, derived-view behavior, activation, lifecycle, validation, scaling and migration behavior to qualify the candidate systematically against Requirements V0.2.
 **Authority:** Candidate architecture research only. Requirements V0.2 remain the frozen acceptance authority. This record does not select the target architecture, migrate current authority, or authorize implementation as the production continuity system.
@@ -870,4 +870,85 @@ MC0016_MESSAGE001=INCORPORATED_WITH_CALIBRATION
 DESIGN_MECHANISMS=AMENDED
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=NARROW_MC0016_FOLLOWUP_ON_PRECEDENCE_AND_JOINT_AUTHORITY
+```
+
+## 35. MC-0016 Message 003 final narrow amendments
+
+Claude's narrow Message 003 closes the normative-precedence question and sharpens the joint-authority exception one final time. The following rules supersede the broader wording in Sections 11, 12, 23 and 33.3 where necessary.
+
+### 35.1 Governing-procedure drift detection
+
+The structured action contract remains the sole normative home for every exact-fidelity material constraint it represents. A separate source-integrity risk remains possible if explanatory prose is edited to imply a new or changed mandatory step without a corresponding contract change.
+
+Whenever either the governing prose or the structured action contract changes, an impact-aware validator must therefore run a semantic-drift check over the changed procedure. The check does not auto-reconcile prose and contract. It flags suspected mismatch for review. A flagged procedure cannot remain silently treated as fully qualified for consequential exact-fidelity use until the discrepancy is dispositioned.
+
+This is a source-integrity safeguard, distinct from BL-001-style dispatch/action-contract fidelity.
+
+### 35.2 Natural directional ownership is the joint-authority discriminator
+
+The `JOINT_AUTHORITY` admission test is tightened to preserve the strongest empirical lesson from the V0.1/V0.2 mechanism probes: the relevant distinction is not whether a relation can be represented somehow, but whether it has a **natural semantic owner/direction** or would require an arbitrary tie-break among otherwise symmetric participants.
+
+The final gate is:
+
+```text
+J1  two or more current canonical sources overlap on the same governed action/scope/time
+    and each contributes non-redundant mandatory governing content;
+
+J2  ordinary source-owned relations plus deterministic closure cannot represent the governing-set
+    semantics without introducing an arbitrary, non-semantically-motivated directional choice
+    among sources that are otherwise symmetric with respect to the governed action/scope/time;
+
+J3  at least one set-level authoritative fact exists that is not derivable from any member
+    source's own natural directional relation. Ordinary base/supplement, replace, specialize or
+    correct ordering already has an inherent direction and does not qualify merely because the
+    fact could be described as applying to a set;
+
+J4  the irreducible set-level fact must be queried or activated independently for correct
+    consequential behavior, so leaving it implicit would create ambiguity or repeated heuristic
+    synthesis;
+
+J5  creation is an explicit promotion decision with evidence and a review receipt; validators
+    reject duplicate ownership of the same set-level fact in member sources;
+
+J6  if J1-J4 cannot be established clearly, the result is UNRESOLVED rather than automatic
+    creation of a joint-authority semantic source.
+```
+
+Consequences:
+
+```text
+base + supplement
+    natural direction exists: supplement -> base
+    stays source-owned plus derived closure
+
+replace / specialize / correct
+    natural direction exists in the transition semantics
+    stays source-owned plus derived closure
+
+otherwise symmetric relation requiring arbitrary tie-break
+    may satisfy J2/J3 if the set-level fact has independent authority relevance
+    and J1/J4/J5 are also satisfied
+```
+
+This remains a governed promotion test, not a claim that semantic classification is fully automatic.
+
+## 36. Candidate 01 design-level readiness after MC-0016
+
+Claude's final narrow disposition is:
+
+```text
+B_PRECEDENCE=CLOSED
+D_JOINT_AUTHORITY=STILL_OPEN_AT_REVIEW_TARGET_BUT_CLOSED_BY_EXACT_J2_J3_TIGHTENING
+H3_REOPEN_BEFORE_PROTOTYPE=NO
+FURTHER_CLAUDE_ROUND_BEFORE_PROTOTYPE=NO
+```
+
+Candidate 01 is therefore coherent enough to enter falsification-first shadow implementation. This is **prototype readiness only**. It is not target selection and does not change the current authority system.
+
+```text
+CANDIDATE=PKA-CANDIDATE-01
+DESIGN_LEVEL=PROTOTYPE_READY
+FINAL_QUALIFIED_PASSES=0
+TARGET_ARCHITECTURE=NOT_SELECTED
+NEXT=FALSIFICATION_FIRST_SHADOW_PROTOTYPE
 ```

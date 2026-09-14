@@ -1,7 +1,7 @@
 # MC-0016 Thread: Adversarial Whole-Architecture Candidate Review
 
 **Thread:** MC-0016
-**Status:** OPEN / MESSAGE 001 RECONCILED / NARROW CLAUDE MESSAGE 003 NEXT
+**Status:** RESOLVED / ADVERSARIAL REVIEW COMPLETE / SHADOW PROTOTYPE NEXT
 **Review mode:** ADVERSARIAL_REVIEW
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
 **Exact review target:** `69aed186a0d63b3c395a133cd920099d5fa8e000`
@@ -16,7 +16,7 @@ Adversarially review `PKA-CANDIDATE-01` and its complete Requirements V0.2 desig
 ## Current phase
 
 ```text
-NARROW_AMENDMENT_REVIEW
+RESOLVED
 ```
 
 ## Expected sequence
@@ -28,7 +28,7 @@ NARROW_AMENDMENT_REVIEW
 004  ChatGPT close / prototype handoff if both issues close
 ```
 
-Messages 001-002 are complete. Exactly Message 003 is currently authorized.
+Messages 001-004 are complete. No further MC-0016 message is authorized.
 
 ## Write ownership
 
@@ -39,7 +39,7 @@ docs/model_collaboration/threads/MC-0016/messages/**
 ```
 
 ```text
-MC0016=OPEN
-NEXT=CLAUDE_MESSAGE_003
+MC0016=RESOLVED
+NEXT=FALSIFICATION_FIRST_SHADOW_PROTOTYPE
 TARGET_ARCHITECTURE=NOT_SELECTED
 ```

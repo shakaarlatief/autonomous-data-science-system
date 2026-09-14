@@ -1,7 +1,7 @@
 # Research 146: MC-0016 Adversarial Candidate Review Disposition and Candidate 01 Design Amendments
 
 **Date:** 2026-09-14
-**Status:** CLAUDE ADVERSARIAL REVIEW ACCEPTED WITH CALIBRATED CORRECTIONS / CANDIDATE 01 AMENDED / TWO NARROW DESIGN POINTS RETURNED TO CLAUDE / TARGET ARCHITECTURE NOT SELECTED
+**Status:** CLAUDE ADVERSARIAL REVIEW FULLY RECONCILED / FINAL NARROW AMENDMENTS INCORPORATED / MC-0016 READY TO CLOSE / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Reconcile Claude MC-0016 Message 001 against Requirements V0.2 and Candidate 01, preserve valid defects and calibration corrections, amend the candidate before implementation, and decide whether one final narrow Claude turn is warranted.
 **Authority:** Supporting Research 124 candidate-design evidence. Requirements V0.2 remain frozen. This record does not select a target architecture or authorize authority migration.
 **Declared references:** `research:124`, `research:143`, `research:144`, `research:145`, `path:docs/model_collaboration/threads/MC-0016/messages/001_claude_adversarial_candidate_01_review.md`, `path:docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md`, `checkpoint:490`
@@ -380,4 +380,83 @@ FINAL_QUALIFIED_PASSES=0
 MC0016_MESSAGE003=NARROW_FOLLOWUP_WARRANTED
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=CLAUDE_REVIEW_OF_PRECEDENCE_AND_JOINT_AUTHORITY_AMENDMENTS
+```
+
+## 15. Claude Message 003 final disposition
+
+Claude's narrow follow-up validates the main precedence amendment and narrows the remaining joint-authority issue to one precise wording defect.
+
+The final review outcome is:
+
+```text
+B_PRECEDENCE=CLOSED
+    sole-normative structured contract semantics are coherent
+
+ADJACENT_SOURCE_INTEGRITY_RISK=ACCEPTED
+    prose can drift away from the contract without automatic detection
+    -> add impact-aware semantic drift detection on governed-procedure edits
+
+D_JOINT_AUTHORITY=STILL_OPEN_AT_REVIEWED_WORDING
+    J2/J3 were too broad because ordinary source-owned base/supplement semantics could be
+    misread as a set-level fact deserving reification
+
+D_JOINT_AUTHORITY=CORRECTED
+    J2/J3 now explicitly distinguish natural semantic direction from arbitrary tie-break
+    among otherwise symmetric participants
+
+H3_REOPEN_BEFORE_PROTOTYPE=NO
+ANOTHER_CLAUDE_ROUND=NO
+```
+
+Claude also explicitly accepts the requirement-scope calibration from this record as fair: periodic full rebuild cost is not the same as required reconstruction cost; rollback is more naturally attached to KA-R44 than KA-R43; and bounded current identity lookup is an index/scale refinement rather than the missing semantic continuity mechanism itself.
+
+### 15.1 Final J2/J3 wording
+
+The accepted correction is:
+
+```text
+J2
+    ordinary source-owned relations plus deterministic closure cannot represent the governing-set
+    semantics without introducing an arbitrary, non-semantically-motivated directional choice
+    among sources otherwise symmetric with respect to the governed action/scope/time
+
+J3
+    a set-level authoritative fact exists that is not derivable from any member source's own
+    natural directional relation; ordinary base/supplement, replace, specialize or correct
+    semantics do not qualify merely because they can also be described as applying to a set
+```
+
+This directly preserves the empirical distinction earned by the V0.1/V0.2 probes: natural directional ownership stays source-local; irreducible symmetric/set-level authority may justify first-class joint authority.
+
+### 15.2 Procedure drift detection
+
+The adjacent source-integrity fix is also accepted. Whenever governing prose or its structured action contract changes, an impact-aware semantic-drift validator must compare the changed procedure and flag suspected mismatch for review. The validator does not infer a new normative contract from prose and does not auto-reconcile disagreement.
+
+The normative-home rule therefore remains simple:
+
+```text
+structured contract
+    sole normative encoding of exact-fidelity machine-governed constraints
+
+prose
+    explanation / rationale / examples keyed to stable constraint IDs
+
+drift signal
+    review trigger, not an alternative authority source
+```
+
+## 16. MC-0016 closure disposition
+
+No architecture-level disagreement remains that warrants another model round before implementation. Claude explicitly states that neither residual item blocks the falsification-first prototype and that MC-0016 can close after the precise J2/J3 wording correction and drift-detection work item are carried forward. Both are now incorporated in Research 144.
+
+Candidate 01 remains a serious **candidate**, not a selected successor.
+
+```text
+MC0016=READY_TO_RESOLVE
+CANDIDATE_01=PROTOTYPE_READY_AT_DESIGN_LEVEL
+TASK_OWNER_DESIGN_MAPPING=50_KA_R__17_KA_I
+FINAL_QUALIFIED_PASSES=0
+H3_REOPEN=NO
+TARGET_ARCHITECTURE=NOT_SELECTED
+NEXT=FALSIFICATION_FIRST_SHADOW_PROTOTYPE
 ```
