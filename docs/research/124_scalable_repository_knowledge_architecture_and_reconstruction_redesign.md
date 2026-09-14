@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / CURRENT-STATE DECOMPOSITION COMPLETE / SOURCE-VAULT WORKSTREAM + CURRENT-STATE-CORE SHADOW NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / SOURCE-VAULT WORKSTREAM + CURRENT-STATE-CORE FIXTURE FROZEN / IMPLEMENTATION NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -4120,4 +4120,20 @@ REAL_DRIFT_FINDINGS=4_REPAIRED_IN_CURRENT_SURFACE
 SOURCE_VAULT_WORKSTREAM_CANONICAL_MIGRATION=NEXT
 CURRENT_STATE_AUTHORITY_SWITCH=NOT_AUTHORIZED
 TARGET_ARCHITECTURE=NOT_SELECTED
+```
+
+## 102. Source Vault workstream and compact current-state-core fixture freeze
+
+Research 157 closes the main A-category ownership gap from Research 156 in shadow form. One durable Source Vault bootstrap workstream now owns the paused/resumable semantic state while the permanent bootstrap runbook remains the governing procedure and validation/checkpoint records remain evidence.
+
+A 23-item must-preserve contract separates core orientation from detailed source-owned drill-down. Generation may not read current routing/state targets. The experiment therefore tests whether Candidate 01 can preserve current truth without recreating another large global copy.
+
+```text
+CURRENT_STATE_CORE_FIXTURE=FROZEN
+MUST_PRESERVE_ITEMS=23
+CORE_REQUIRED=15
+SOURCE_VAULT_WORKSTREAM_SHADOW=FROZEN
+CURRENT_ARCHITECTURE=STILL_AUTHORITY
+TARGET_ARCHITECTURE=NOT_SELECTED
+NEXT=IMPLEMENT_CURRENT_STATE_CORE_V01
 ```

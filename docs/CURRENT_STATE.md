@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 501
+**Checkpoint:** 502
 **Date:** 2026-09-14
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -23,6 +23,8 @@ Repository artifacts remain authoritative across chats and models.
 ---
 
 ## Current active stage: Research 124 project-development knowledge architecture redesign
+Checkpoint 502 freezes the Source Vault workstream + compact current-state-core shadow fixture before implementation. The fixture is bound to exact public base `57df6561f506cba2c26222693d1403585fad23d2` with fixture SHA `4b7ac27801e7d89c0cd782c895d6d0db47693916e4aae7696eb3fc4d6081ad38` and separate oracle SHA `f7ceee34aa68d79dea8df4043bf5b1711f3a31078cf86d48bfc3b3f0b008af35`. Three shadow-only Candidate 01 canonical sources are frozen: the active Research 124 workstream, Project Integration Boundary and a new paused Source Vault bootstrap workstream. A 23-item must-preserve manifest distinguishes 15 facts required in the compact core from eight detailed facts that must remain source-recoverable without duplication. Generation is forbidden from reading `current_routing.json` or `CURRENT_STATE.md` before comparison. The Source Vault shadow source deliberately does not propagate the stale Research-113 return condition; it uses explicit project routing while preserving the reviewed-ingestion resume target and real runbook/validation evidence. Current continuity remains operational authority and Candidate 01 remains unselected.
+
 Checkpoint 501 completes the block-level decomposition audit of the real Checkpoint 500 `CURRENT_STATE.md`. The exact audited blob is 1,159 lines / 282,796 bytes at SHA-256 `c59e5102c42435a8049101fa59977f6a951f2ed92e7d443233643c984bd0df5a`. At coarse future-role level, 98.28% of bytes are historical/latent, source-owned elsewhere, stale historical/rotation, or derived navigation rather than irreducible current global truth. The audit reproduces four real drift defects and the current operational file is minimally corrected now: the Checkpoint 353 claim is marked historical, MC-0010 is corrected to DEFERRED, the chatgpt-19/Research-122 rotation section is marked historical, and the old fixed minimum-reading packet is explicitly non-current. No authority role is switched. The main unresolved canonical migration block is paused Source Vault bootstrap state, which needs one durable workstream source before a compact generated `CURRENT_STATE_CORE` can be qualified. Candidate 01 remains unselected and final qualified passes remain zero.
 
 Checkpoint 500 completes the zero-seed successor-native routing shadow. The first run passes all 8 frozen checks with no repair and remains byte-identical to the final result at `cf0d4f9505ad8fdab0c54bf293e9022448239318516f9f2f88dcdab12a7dd5eb`. Exact compatibility routing is regenerated from two shadow successor canonical sources, the primary active workstream execution anchor and Project Integration Boundary, plus real Specification 027 and Checkpoint 192. Generation reads zero global live-state facts and none of `current_routing.json`, `CURRENT_STATE.md` or `KNOWLEDGE_MAP.md` before comparison. This supports routing as a derived compatibility surface at shadow-subsystem level, while production migration/rollback remain pending. The next highest-value problem is the real `CURRENT_STATE.md` decomposition into source-owned canonical facts, deterministic current-state core, optional orientation narrative, historical/latent material and unresolved cases. Current continuity remains operational authority; final qualified passes remain zero and Candidate 01 is not selected.
@@ -596,7 +598,7 @@ No Source Universe, Source Vault, original corpus, credential, backup payload, o
 
 ## Preserved next Source Vault action (currently paused)
 
-When the current Research 113 Level-2 route closes, the preserved next Source Vault action is:
+The Source Vault bootstrap is currently paused while Research 124 project-knowledge architecture qualification has routing priority. When project routing explicitly returns to the Source Vault workstream, the preserved next action is:
 
 ```text
 reviewed ingestion of the frozen 20-entry first corpus

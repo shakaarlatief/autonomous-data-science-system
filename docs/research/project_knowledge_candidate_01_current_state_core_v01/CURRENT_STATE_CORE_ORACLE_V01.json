@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "PKA-C01-CURRENT-STATE-CORE-V01-ORACLE",
+  "fixture_id": "PKA-C01-CURRENT-STATE-CORE-V01",
+  "implementation_must_not_read_this_oracle": true,
+  "expectations": {
+    "all_source_hashes_match": true,
+    "shadow_source_kinds": {
+      "active_workstream": "WORKSTREAM",
+      "integration_boundary": "PROJECT_INTEGRATION_BOUNDARY",
+      "source_vault_workstream": "WORKSTREAM"
+    },
+    "source_vault_state_evidence_alignment": true,
+    "source_vault_pause_state": "PAUSED",
+    "current_state_core": {
+      "schema_version": 1,
+      "current_checkpoint": 501,
+      "active_development_branch": "v1-source-vault-bootstrap-resume",
+      "active_pr": null,
+      "promoted_integration_branch": "v1-frontend-spike",
+      "promoted_integration_sha": "2480109fadeee1e480ef03b82e335aacdf9adf91",
+      "latest_specification": "027",
+      "latest_experiment_outcome": "INCOMPLETE",
+      "active_stage": {
+        "research_id": "124",
+        "objective": "Project-development knowledge architecture redesign and Candidate 01 qualification",
+        "selection_state": "TARGET_ARCHITECTURE_NOT_SELECTED",
+        "current_boundary": "project-knowledge-source-vault-current-state-core-shadow-next"
+      },
+      "paused_workstreams": [
+        {
+          "semantic_id": "WS-SOURCE-VAULT-BOOTSTRAP",
+          "state": "PAUSED",
+          "resume_target": "reviewed ingestion of the frozen 20-entry first corpus",
+          "governing_procedure": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+          "source_ingestion": "NOT_STARTED",
+          "course_2": "BLOCKED"
+        }
+      ]
+    },
+    "routing_subset_exact_parity": true,
+    "current_state_live_marker_parity": {
+      "checkpoint": true,
+      "active_stage": true,
+      "target_not_selected": true,
+      "source_vault_state": true,
+      "source_vault_resume_target": true,
+      "course2_blocked": true
+    },
+    "must_preserve_items_recoverable": 23,
+    "must_preserve_items_missing": [],
+    "generation_forbidden_path_reads": [],
+    "global_target_generation_fact_count": 0,
+    "source_vault_old_pause_reason_detected_stale": true
+  }
+}
