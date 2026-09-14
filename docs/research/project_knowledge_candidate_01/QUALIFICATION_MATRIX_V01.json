@@ -631,7 +631,8 @@
     "target_selection_allowed": false,
     "design_partial_after_amendment": 0,
     "narrow_mc0016_followup_pending": false,
-    "prototype_ready_at_design_level": true
+    "prototype_ready_at_design_level": true,
+    "prototype_foundational_slice_passed": true
   },
   "adversarial_review": {
     "thread": "MC-0016",
@@ -653,5 +654,26 @@
       "h3_reopen_before_prototype": false,
       "another_claude_round_before_prototype": false
     }
+  },
+  "prototype_evidence_v01": {
+    "research": "research:149",
+    "result_path": "docs/research/project_knowledge_candidate_01_shadow_v01/RESULTS_V01.json",
+    "result_sha256": "b4498e20d2f4984d938e6e6e32e9a34d7e4706ad17daf010d0ab6f7eb162ebd1",
+    "evidence_class": "NARROW_SYNTHETIC_SUPPORT",
+    "final_qualification_credit": false,
+    "supported_mechanism_ids": [
+      "KA-R09",
+      "KA-R14",
+      "KA-R15",
+      "KA-R21",
+      "KA-R31",
+      "KA-R33",
+      "KA-R46",
+      "KA-I05",
+      "KA-I12",
+      "KA-I17"
+    ],
+    "stop_conditions_triggered": [],
+    "h3_reopen": false
   }
 }

@@ -1,7 +1,7 @@
 # Research 144: Whole-Architecture Candidate - Repository-Native Semantic Sources with Selective Identity, Derived Views, and Action-Gated Authority
 
 **Date:** 2026-09-14
-**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE SYNTHESIZED / MC-0016 ADVERSARIAL REVIEW INCORPORATED / PROTOTYPE-READY AT DESIGN LEVEL / TARGET ARCHITECTURE NOT SELECTED
+**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE / MC-0016 INCORPORATED / FIRST FALSIFICATION SHADOW SLICE PASSED / BROADER QUALIFICATION PENDING / TARGET ARCHITECTURE NOT SELECTED
 **Candidate label:** `PKA-CANDIDATE-01`
 **Scope:** Synthesize one serious successor architecture from the complete Research 124 evidence field after the H1/H2 mechanism probes, real-corpus independent review, MC-0014/MC-0015 corrections, D1-D8 external evidence and owner-provided ICM evaluation. Define enough logical structure, authority semantics, typed source responsibilities, derived-view behavior, activation, lifecycle, validation, scaling and migration behavior to qualify the candidate systematically against Requirements V0.2.
 **Authority:** Candidate architecture research only. Requirements V0.2 remain the frozen acceptance authority. This record does not select the target architecture, migrate current authority, or authorize implementation as the production continuity system.
@@ -951,4 +951,19 @@ DESIGN_LEVEL=PROTOTYPE_READY
 FINAL_QUALIFIED_PASSES=0
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=FALSIFICATION_FIRST_SHADOW_PROTOTYPE
+```
+
+## 37. First falsification-first shadow slice survives
+
+Research 149 implements the exact pre-frozen Shadow Fixture V0.1 after Research 148 committed and pushed the fixture/oracle boundary. The first executable run matches the separate oracle without repair. The candidate's foundational mechanisms survive the five initial stop tests: one normative action-contract home plus drift findings, natural directional ownership versus one irreducible symmetric joint-authority case, BL-001-style deterministic constraint fidelity, dependency-local refresh with independent full rebuild, and bounded current identity lookup over growing transition history.
+
+This is narrow synthetic mechanism support only. No requirement is promoted to final qualified status, no production storage syntax is selected and no current authority surface is migrated.
+
+```text
+SHADOW_V01_FOUNDATIONAL_SLICE=PASS
+FIRST_RUN_REPAIR=NONE
+H3_REOPEN=NO
+FINAL_QUALIFIED_PASSES=0
+TARGET_ARCHITECTURE=NOT_SELECTED
+NEXT=BROADER_SHADOW_OPERATIONAL_BEHAVIOR_SLICE
 ```

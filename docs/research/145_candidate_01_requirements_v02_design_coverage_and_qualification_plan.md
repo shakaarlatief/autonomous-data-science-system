@@ -1,7 +1,7 @@
 # Research 145: Candidate 01 Requirements V0.2 Design Coverage and Qualification Plan
 
 **Date:** 2026-09-14
-**Status:** 50/50 KA-R + 17/17 KA-I DESIGN-MAPPED AFTER MC-0016 AMENDMENTS / MC-0016 RESOLVED / SHADOW PROTOTYPE NEXT / INTEGRATED QUALIFICATION PENDING / TARGET ARCHITECTURE NOT SELECTED
+**Status:** 50/50 KA-R + 17/17 KA-I DESIGN-MAPPED / FIRST SHADOW SLICE PASSED / INTEGRATED QUALIFICATION PENDING / TARGET ARCHITECTURE NOT SELECTED
 **Candidate:** `PKA-CANDIDATE-01` from Research 144
 **Scope:** Systematically map the whole-architecture candidate against every frozen Requirements V0.2 requirement/invariant, distinguish design coverage from actual qualification evidence, identify selection-blocking proof clusters, and freeze the minimum implementation/behavioral evidence needed before target selection.
 **Authority:** Candidate qualification planning only. Requirements V0.2 remain the acceptance authority. A mapped design mechanism is not a qualified pass.
@@ -335,4 +335,16 @@ FINAL_QUALIFIED_PASSES=0
 PROTOTYPE_READY_AT_DESIGN_LEVEL=YES
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=FALSIFICATION_FIRST_SHADOW_PROTOTYPE
+```
+
+## 14. Shadow V0.1 evidence enters the qualification program
+
+Research 149 adds narrow synthetic evidence for mechanisms associated with KA-R09, R14, R15, R21, R31, R33, R46 and KA-I05, I12, I17. The machine matrix records this as `NARROW_SYNTHETIC_SUPPORT` with `final_qualification_credit=false`.
+
+The first-run result passed the separately frozen oracle without implementation repair, but the evidence remains deliberately weaker than a final requirement pass because the fixture is synthetic and omits major ordinary-operation surfaces. The next slice should therefore prioritize workstream recovery, capture/promotion/consolidation, generated current-state/routing parity, public/private degraded mode and consequence-sensitive unavailable/conflicting authority.
+
+```text
+FOUNDATIONAL_SHADOW_EVIDENCE=RECORDED
+FINAL_QUALIFIED_PASSES=0
+NEXT=BROADER_SHADOW_OPERATIONAL_BEHAVIOR_SLICE
 ```

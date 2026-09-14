@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / MC-0016 RESOLVED / CANDIDATE 01 SHADOW PROTOTYPE NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / CANDIDATE 01 FIRST SHADOW SLICE PASSED / BROADER OPERATIONAL SHADOW QUALIFICATION NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -3992,4 +3992,21 @@ FIXTURE_SHA256=77ffecc278995ef03130d962f863d46ccebac41d446de7099cc666750e8b66f7
 ORACLE_SHA256=3ced74eb18f4d792c9a43eaf2b3d6956c497bc7b85c71bfc6b5e226f840fc38b
 IMPLEMENTATION=NEXT
 TARGET_ARCHITECTURE=NOT_SELECTED
+```
+
+## 94. Candidate 01 survives the first falsification-first shadow slice
+
+Research 149 implements the exact fixture frozen at public commit `8ccefd17e229ee5a484c4481ed005290efc0282e`. The implementation reads the fixture hash but not the test oracle. The preserved first run and final raw result are byte-identical at SHA-256 `b4498e20d2f4984d938e6e6e32e9a34d7e4706ad17daf010d0ab6f7eb162ebd1` and all ten focused oracle tests pass without a repair cycle.
+
+The five prototype-entry mechanisms all survive: procedure drift is surfaced without giving prose competing normative authority; natural SUPPLEMENT/SPECIALIZE relations remain source-owned while the symmetric X1/X2/X3 case alone earns a joint-authority object; BL-001-style omission/reordering fails visibly; one P2 change refreshes only two dependent views while full rebuild cost grows linearly with passive history; and identity current-target lookup remains one index operation at 1x/5x/10x while rebuild scans 24/104/204 identity events.
+
+None of Research 147's stop/reopen conditions fires and H3 remains deferred. This is still synthetic/narrow evidence, so final qualified passes remain zero. The next architecture-research step is a broader shadow slice exercising ordinary operational behavior before migration: workstream DAG/pause/resume, capture/consolidate/promote fidelity, generated current-state/routing/navigation, public/private degraded mode and consequence-sensitive missing/conflicting authority.
+
+```text
+SHADOW_V01=PASS_ON_FIRST_RUN
+FOUNDATIONAL_STOP_CONDITIONS=NONE
+H3_REOPEN=NO
+FINAL_QUALIFIED_PASSES=0
+TARGET_ARCHITECTURE=NOT_SELECTED
+NEXT=BROADER_SHADOW_OPERATIONAL_BEHAVIOR_SLICE
 ```
