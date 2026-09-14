@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / TWO REAL-CORPUS JUDGMENT SETS FROZEN / MC-0015 COMPARATIVE CONSTRUCT REVIEW ACTIVE / TARGET ARCHITECTURE NOT SELECTED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / MC-0015 RESOLVED / CORRECTED SEMANTIC AXES FROZEN / WHOLE-ARCHITECTURE CANDIDATE SYNTHESIS NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -3882,5 +3882,23 @@ REAL_CORPUS_EXACT_AGREEMENT=12_OF_15
 TAXONOMY_CONSTRUCT_VALIDITY=OPEN
 MECHANIZED_RULE=BLOCKED
 MC0015_COMPARATIVE_TURN=ACTIVE
+TARGET_ARCHITECTURE=NOT_SELECTED
+```
+
+## 88. MC-0015 resolves the real-corpus construct and returns Research 124 to architecture synthesis
+
+Claude Message 003 confirms that the first real-corpus disagreement was largely a construct problem, not evidence that one model had simply chosen the wrong architecture. Semantic first-classness and authoritative home are separate questions; RC-005 is a durable workstream with one natural source. RC-006 combines durable workstream units with a derived aggregate route view and therefore requires decomposition. Claude also explicitly corrects its RC-012 packet-grounding violation, leaving that frozen packet unresolved.
+
+Research 143 replaces the old mutually exclusive `SOURCE_LOCAL / FIRST_CLASS / DERIVED / UNRESOLVED` taxonomy for future reasoning with a required singular semantic unit plus two axes: semantic continuity/identity (`DURABLE_IDENTITY / NO_SEPARATE_IDENTITY / UNRESOLVED`) and authority mode/home (`SINGLE_SOURCE / JOINT_AUTHORITY / DERIVED_ONLY / UNRESOLVED`).
+
+The first real corpus supports single-source authority as the dominant sampled pattern, derived views for computable/navigation state, and durable identity with single-source authority for project-development workstreams. It does not demonstrate a real `DURABLE_IDENTITY + JOINT_AUTHORITY` case. Therefore broad central relation/spine machinery is not justified as the default.
+
+The next stage is no longer another admission-classifier experiment. Research 124 is ready to synthesize a serious whole-architecture candidate from the full evidence field and qualify it systematically against all frozen requirements and invariants.
+
+```text
+MC0015=RESOLVED
+CORRECTED_SEMANTIC_AXES=FROZEN_FOR_RESEARCH
+MECHANIZED_ADMISSION_CLASSIFIER=DEFERRED
+WHOLE_ARCHITECTURE_CANDIDATE_SYNTHESIS=NEXT
 TARGET_ARCHITECTURE=NOT_SELECTED
 ```

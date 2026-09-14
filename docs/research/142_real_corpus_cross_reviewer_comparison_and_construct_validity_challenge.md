@@ -181,3 +181,15 @@ REQUIREMENTS_V02=UNCHANGED_FROZEN
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=MC0015_CLAUDE_MESSAGE003_COMPARATIVE_CONSTRUCT_REVIEW
 ```
+
+## 11. Comparative resolution
+
+Claude Message 003 confirms the construct-validity diagnosis and resolves all three disagreements without another model round. RC-005 demonstrates that durable first-class identity can coexist with one natural authoritative source. RC-006 must be decomposed into durable per-workstream semantic units and a derived aggregate route projection. Claude explicitly marks its original RC-012 `SOURCE_LOCAL / HIGH` label as protocol-nonconforming; the packet-only answer is `UNRESOLVED`.
+
+Research 143 freezes the corrected judgment model for subsequent architecture reasoning. The 12/15 original-label agreement remains historical experiment evidence but is not treated as the final semantic classification scheme. Mechanized admission-rule work remains deferred.
+
+```text
+TAXONOMY_CONSTRUCT_VALIDITY=RESOLVED_BY_TWO_AXIS_MODEL
+MC0015=RESOLVED
+NEXT=WHOLE_ARCHITECTURE_CANDIDATE_SYNTHESIS
+```

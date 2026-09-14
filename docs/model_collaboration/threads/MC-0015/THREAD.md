@@ -1,7 +1,7 @@
 # MC-0015 Thread: Independent Real-Corpus Relationship Judgment
 
 **Thread:** MC-0015
-**Status:** OPEN / INDEPENDENT JUDGMENTS COMPLETE / CLAUDE COMPARATIVE CONSTRUCT REVIEW NEXT
+**Status:** RESOLVED / CONSTRUCT RECONCILED / WHOLE-ARCHITECTURE SYNTHESIS NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
 **Independent substantive base:** `ae87c1facbf7c7d7508414e86a935bc439404c24`
@@ -16,7 +16,7 @@ Obtain Claude's complete 15-case semantic ownership/reification judgment set ove
 ## Current phase
 
 ```text
-COMPARATIVE_CONSTRUCT_VALIDITY_REVIEW
+RESOLVED_CONSTRUCT_RECONCILED
 ```
 
 ## Expected dialogue sequence
@@ -57,4 +57,13 @@ PHASE=COMPARATIVE_CONSTRUCT_VALIDITY_REVIEW
 NEXT=CLAUDE_MESSAGE_003
 MECHANIZED_RULE=BLOCKED
 TARGET_ARCHITECTURE=NOT_SELECTED
+```
+
+## Resolution
+
+Claude Message 003 confirms that the original four-way judgment taxonomy mixed semantic identity, authority home and derivation. ChatGPT Message 004 adopts a singular-unit plus two-axis model, records Claude's RC-012 protocol correction, and closes the thread. No Message 005 is authorized.
+
+```text
+MC0015=RESOLVED
+NEXT=WHOLE_ARCHITECTURE_CANDIDATE_SYNTHESIS
 ```

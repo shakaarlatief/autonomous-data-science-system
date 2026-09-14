@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-13
-**Status:** MC-0015 COMPARATIVE CONSTRUCT-VALIDITY REVIEW ACTIVE / CLAUDE MESSAGE 003 NEXT / MC-0010 DEFERRED
+**Status:** NO ACTIVE CLAUDE OBLIGATION / MC-0015 RESOLVED / WHOLE-ARCHITECTURE CANDIDATE SYNTHESIS NEXT / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -23,25 +23,33 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Current active collaboration obligation
 
-### MC-0015: comparative construct-validity review after independent real-corpus judgments
+There is no active Claude obligation. MC-0015 is resolved after the independent real-corpus pass and one bounded comparative construct-validity turn. Research 124 now returns to whole-architecture candidate synthesis using the corrected semantic-unit plus two-axis model. A new Claude thread should be opened only if later candidate qualification exposes a specific bounded uncertainty with clear marginal value.
+
+## Most recently completed obligation
+
+### MC-0015: independent + comparative real-corpus semantic-ownership review
 
 ```text
-collaborator               Claude / claude-03
 mode                       INDEPENDENT_THEN_COMPARATIVE
-coordination branch        v1-source-vault-bootstrap-resume
-independent base           ae87c1facbf7c7d7508414e86a935bc439404c24
-independent Claude result  001 @ 507db2cf5916df59a4aeaf053ac695f13636c14f
+Claude independent result  001 @ 507db2cf5916df59a4aeaf053ac695f13636c14f
 ChatGPT comparison         002
-exact label agreement      12 / 15
-material disagreements     RC-005, RC-006, RC-012
-next output                docs/model_collaboration/threads/MC-0015/messages/003_claude_comparative_construct_validity_review.md
-status                     OPEN / CLAUDE MESSAGE 003 NEXT
+Claude construct review    003 @ e58721790ae1dbdb5f93ac721c26fe35065f80c6
+ChatGPT disposition        004
+result                     four-way taxonomy retired; unit + identity/home axes adopted
+status                     RESOLVED
 conversation               03 - Project Knowledge Architecture Foundations and Design Method
 ```
 
-The independence phase is complete. Claude may now intentionally read Message 002, ChatGPT's judgment set and Research 142. The next turn is narrowly limited to whether RC-005 exposes orthogonality between first-class identity and source locality, whether RC-006 mixes workstream objects with a derived route view, whether RC-012 violated the packet-only evidence contract, and the smallest corrected judgment axes. No mechanized admission rule or target architecture is authorized.
+Durable records:
 
-## Most recently completed obligation
+```text
+docs/model_collaboration/threads/MC-0015/RESOLUTION.md
+docs/model_collaboration/threads/MC-0015/messages/001_claude_independent_real_corpus_judgment.md
+docs/model_collaboration/threads/MC-0015/messages/002_chatgpt_cross_reviewer_comparison_and_construct_validity_handoff.md
+docs/model_collaboration/threads/MC-0015/messages/003_claude_comparative_construct_validity_review.md
+docs/model_collaboration/threads/MC-0015/messages/004_chatgpt_construct_reconciliation_and_thread_close.md
+docs/research/143_real_corpus_construct_reconciliation_and_candidate_synthesis_readiness.md
+```
 
 ### MC-0014: adversarial interpretation of V0.1/V0.2 probe evidence
 

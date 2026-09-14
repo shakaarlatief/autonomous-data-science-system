@@ -454,3 +454,9 @@ REQUIREMENTS_V02=UNCHANGED_FROZEN
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=FREEZE_UNLABELED_REAL_ADS_RELATIONSHIP_CORPUS
 ```
+
+## 19. Post-MC-0015 construct correction
+
+MC-0015 shows that the original four-way reviewer taxonomy in Sections 11-17 is construct-invalid as one mutually exclusive label space. `SOURCE_LOCAL` and `FIRST_CLASS_SEMANTIC_OBJECT` answer different questions and may both apply to the same semantic unit; RC-006 also shows that an object and a derived view over objects must not be combined in one judgment unit.
+
+Research 143 supersedes the taxonomy for future work with a mandatory semantic-unit decomposition step plus two axes: semantic continuity/identity and authority mode/home. The original Corpus V0.1 and both frozen reviewer judgment sets remain valid experiment provenance and must not be rewritten.
