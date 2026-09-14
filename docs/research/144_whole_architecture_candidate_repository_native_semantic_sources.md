@@ -1,7 +1,7 @@
 # Research 144: Whole-Architecture Candidate - Repository-Native Semantic Sources with Selective Identity, Derived Views, and Action-Gated Authority
 
 **Date:** 2026-09-14
-**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE / Q3 REAL SUBSYSTEM SUPPORT PASSED WITHOUT H3 REOPEN / Q7 REAL PUBLIC-PRIVATE BOUNDARY NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE / Q3 + Q7 REAL SUBSYSTEM SUPPORT PASSED / Q9 MIGRATION-ROLLBACK SHADOW NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Candidate label:** `PKA-CANDIDATE-01`
 **Scope:** Synthesize one serious successor architecture from the complete Research 124 evidence field after the H1/H2 mechanism probes, real-corpus independent review, MC-0014/MC-0015 corrections, D1-D8 external evidence and owner-provided ICM evaluation. Define enough logical structure, authority semantics, typed source responsibilities, derived-view behavior, activation, lifecycle, validation, scaling and migration behavior to qualify the candidate systematically against Requirements V0.2.
 **Authority:** Candidate architecture research only. Requirements V0.2 remain the frozen acceptance authority. This record does not select the target architecture, migrate current authority, or authorize implementation as the production continuity system.
@@ -1147,4 +1147,17 @@ Q3_REAL_SUBSYSTEM_SUPPORT=PASS
 H3_REOPEN=NO
 Q3_FINAL_QUALIFICATION=PENDING
 NEXT=Q7_REAL_PUBLIC_PRIVATE_BOUNDARY
+```
+
+## 45. Q7 real cross-repository boundary survives without authority collapse or leakage
+
+Research 163 adds real cross-repository support for the Candidate 01 public/private boundary. `RESOLVED_PRIVATE` remains semantic resolution state, while `PASS / FAIL / NOT_VERIFIED` remains independent freshness/verification state. Ordinary public continuation remains possible with private state unverified; private-required work blocks when unavailable or stale; a real private sensitive payload yields a public-safe receipt with zero exact-value/path leakage; optional retrieval loss does not bypass authority.
+
+The private companion remains a delegated continuity authority only. The public ADS repository remains the sole project-development authority.
+
+```text
+Q7_REAL_SUBSYSTEM_SUPPORT=PASS
+PRIVATE_NONLEAKAGE=PASS
+SINGLE_PROJECT_DEVELOPMENT_AUTHORITY=PRESERVED
+NEXT=Q9_MIGRATION_ROLLBACK_SHADOW
 ```

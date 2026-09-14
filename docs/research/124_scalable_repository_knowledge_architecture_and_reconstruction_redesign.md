@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / Q7 REAL PUBLIC-PRIVATE FIXTURE FROZEN / IMPLEMENTATION NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / Q7 REAL SUBSYSTEM SUPPORT PASSED / Q9 MIGRATION-ROLLBACK SHADOW NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -4210,4 +4210,18 @@ PRIVATE_VALUE_PUBLICATION=ZERO
 CURRENT_ARCHITECTURE=STILL_AUTHORITY
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=IMPLEMENT_Q7_REAL_V01
+```
+
+## 108. Q7 real public/private result passes; Q9 migration/rollback is next
+
+Research 163 executes the frozen cross-repository Q7 fixture on the first run with 7/7 oracle checks and no implementation repair. A privacy-preserving receipt is derived inside the private authority boundary; the public result contains zero exact private-value leaks and zero private-path serialization. The real private companion anchor is stale against the frozen public target and correctly produces `PRIVATE_CONTINUITY_INTEGRITY=FAIL` without changing public repository integrity or downgrading `RESOLVED_PRIVATE` facts.
+
+All six Q7 items now have real subsystem evidence, but final qualification remains zero because the successor is still shadow-only. The next architecture-level blocker is Q9 staged migration, semantic preservation, rollback and explicit authority-switch preparation.
+
+```text
+Q7_REAL_SUBSYSTEM_SUPPORT=PASS
+PRIVATE_VALUE_LEAKS=0
+Q7_FINAL_QUALIFICATION=PENDING
+NEXT=Q9_MIGRATION_ROLLBACK_SHADOW
+TARGET_ARCHITECTURE=NOT_SELECTED
 ```

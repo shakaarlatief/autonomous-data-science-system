@@ -1,7 +1,7 @@
 # Research 145: Candidate 01 Requirements V0.2 Design Coverage and Qualification Plan
 
 **Date:** 2026-09-14
-**Status:** 50/50 KA-R + 17/17 KA-I DESIGN-MAPPED / Q3 REAL SUBSYSTEM SUPPORT PASSED / Q7 REAL PUBLIC-PRIVATE BOUNDARY NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** 50/50 KA-R + 17/17 KA-I DESIGN-MAPPED / Q3 + Q7 REAL SUBSYSTEM SUPPORT PASSED / Q9 MIGRATION-ROLLBACK SHADOW NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Candidate:** `PKA-CANDIDATE-01` from Research 144
 **Scope:** Systematically map the whole-architecture candidate against every frozen Requirements V0.2 requirement/invariant, distinguish design coverage from actual qualification evidence, identify selection-blocking proof clusters, and freeze the minimum implementation/behavioral evidence needed before target selection.
 **Authority:** Candidate qualification planning only. Requirements V0.2 remain the acceptance authority. A mapped design mechanism is not a qualified pass.
@@ -461,4 +461,16 @@ No private-only value is copied into the public fixture. The real private compan
 Q7_REAL_IMPLEMENTATION_EVIDENCE=PENDING
 PRIVATE_NONLEAKAGE_GATE=FROZEN
 NEXT=IMPLEMENT_Q7_REAL_V01
+```
+
+## 24. Q7 real subsystem evidence
+
+Research 163 adds real cross-repository Candidate 01 support for KA-R37, R38, R39, R42 and KA-I10/I14. The first run passes unchanged, exact private values remain inside the private authority boundary, the public-safe result leaks zero private values/paths, and a real stale private anchor fails visibly without contaminating public integrity.
+
+Current descriptive evidence coverage rises to 45/67 items with some real Candidate 01 evidence and 54/67 with synthetic-or-better evidence. Final qualified passes remain zero. Q9 is now the next P0 experiment because migration/rollback and the authority switch remain design-dominant.
+
+```text
+Q7_REAL_EVIDENCE=RECORDED
+FINAL_QUALIFIED_PASSES=0
+NEXT=Q9_MIGRATION_AUTHORITY_SWITCH_ROLLBACK_SHADOW
 ```

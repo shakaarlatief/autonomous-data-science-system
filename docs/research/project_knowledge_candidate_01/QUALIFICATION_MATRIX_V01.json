@@ -640,7 +640,10 @@
     "current_state_core_shadow_v01_passed": true,
     "whole_architecture_evidence_reconciliation_v01_complete": true,
     "q3_real_subsystem_support_passed": true,
-    "h3_reopen_after_q3_real_v01": false
+    "h3_reopen_after_q3_real_v01": false,
+    "q7_real_subsystem_support_passed": true,
+    "candidate_items_with_synthetic_or_better_evidence_current": 54,
+    "candidate_items_with_real_evidence_current": 45
   },
   "adversarial_review": {
     "thread": "MC-0016",
@@ -937,6 +940,43 @@
       "KA-R49",
       "KA-I04",
       "KA-I17"
+    ]
+  },
+  "prototype_evidence_q7_real_v01": {
+    "research": "research:163",
+    "freeze_commit": "fc62ef4722763cb73eee239c512d8ea4b95a5366",
+    "real_public_base_commit": "c4bc46a954a577ee697d5ae2bb62740af17e8900",
+    "private_evidence_head": "f5fe565da1cdb6c0daedbf8b9b0aea7586abf350",
+    "result_path": "docs/research/project_knowledge_candidate_01_q7_real_v01/RESULTS_V01.json",
+    "result_sha256": "de41c83b5181ef96bffe359a96e165430b0b350f17ed286c114cf9fc0010823b",
+    "private_evidence_receipt_sha256": "d9c5648e0a62cb2b6fa6b96c4615e1513cff8d48fc5ff3179c8f5aa4abdf0a66",
+    "first_run_result_sha256": "de41c83b5181ef96bffe359a96e165430b0b350f17ed286c114cf9fc0010823b",
+    "first_run_comparison_sha256": "f4e610203933c340bc9b7ee1c2e89584670cc558d41764d10d9fa6dcd0de03e7",
+    "final_comparison_sha256": "d7d65ff9265e381c981538f1124a1e1ece2c4d8f17346456809cee5e368fd2c5",
+    "first_run_checks": {
+      "passed": 7,
+      "failed": 0
+    },
+    "final_checks": {
+      "passed": 8,
+      "failed": 0
+    },
+    "implementation_repairs_after_first_run": 0,
+    "evidence_class": "REAL_CROSS_REPOSITORY_PUBLIC_PRIVATE_BOUNDARY_SUPPORT",
+    "final_qualification_credit": false,
+    "real_scenarios_passed": 5,
+    "real_scenarios_total": 5,
+    "private_value_leak_count": 0,
+    "private_paths_serialized_count": 0,
+    "observed_private_continuity_status_against_frozen_target": "FAIL",
+    "public_integrity_reclassified_by_private_status": false,
+    "supported_mechanism_ids": [
+      "KA-R37",
+      "KA-R38",
+      "KA-R39",
+      "KA-R42",
+      "KA-I10",
+      "KA-I14"
     ]
   }
 }

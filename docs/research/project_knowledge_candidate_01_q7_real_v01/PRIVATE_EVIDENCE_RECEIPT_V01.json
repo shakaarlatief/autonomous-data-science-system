@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "receipt_id": "PKA-C01-Q7-PRIVATE-EVIDENCE-V01",
+  "private_repository_head": "f5fe565da1cdb6c0daedbf8b9b0aea7586abf350",
+  "private_state_sha256": "e61947f10db6d88bf77afa743e2ef21b688d00f407bd9cf25bd35da2030c9cae",
+  "private_sensitive_payload_sha256": "e73f169af67d5296cf7e48d7245dcf3b26cca3346a249d5dc935b24f8892f5f6",
+  "public_safe_anchor": {
+    "checkpoint": 448,
+    "commit": "15e27e87714dcb1875e2c2dcae1414a59f9cda33"
+  },
+  "public_safe_state": {
+    "registry_table_count": 33,
+    "first_corpus_total": 20,
+    "first_corpus_match": 20,
+    "source_ingestion_started": false,
+    "independent_backup_verified": false,
+    "course_2_allowed": false
+  },
+  "sensitive_string_candidates_examined": 19,
+  "private_value_leak_count": 0,
+  "private_paths_serialized_count": 0
+}

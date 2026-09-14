@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "probe_id": "PKA-C01-Q7-REAL-PROBE-V01",
+  "candidate_id": "PKA-CANDIDATE-01",
+  "fixture_id": "PKA-C01-Q7-REAL-V01",
+  "real_public_base_commit": "c4bc46a954a577ee697d5ae2bb62740af17e8900",
+  "fixture_sha256": "a8e0872aa8c1ffab421d86924185c48642a075f872aa64847ebac7df34037bef",
+  "shadow_only": true,
+  "implementation_reads_oracle": false,
+  "all_public_source_hashes_match": true,
+  "private_evidence_binding_match": true,
+  "public_contract_checks": {
+    "resolved_private_present": true,
+    "public_first_reconstruction": true,
+    "private_not_second_development_authority": true,
+    "private_unavailable_preserves_resolved": true,
+    "private_status_separate": true,
+    "private_anchor_contract": true,
+    "checker_has_not_verified_path": true
+  },
+  "observed_private_anchor": {
+    "checkpoint": 448,
+    "commit": "15e27e87714dcb1875e2c2dcae1414a59f9cda33"
+  },
+  "scenarios": {
+    "Q7-S01": {
+      "private_continuity_status": "NOT_VERIFIED",
+      "task_disposition": "ALLOW_PUBLIC_CONTINUATION_WITH_PRIVATE_NOT_VERIFIED",
+      "public_resolved_private_preserved": true,
+      "public_authority_preserved": true
+    },
+    "Q7-S02": {
+      "private_continuity_status": "NOT_VERIFIED",
+      "task_disposition": "BLOCK_REQUIRED_PRIVATE_UNVERIFIED",
+      "public_resolved_private_preserved": true,
+      "public_authority_preserved": true
+    },
+    "Q7-S03": {
+      "private_continuity_status": "FAIL",
+      "task_disposition": "BLOCK_PRIVATE_CONTINUITY_FAIL",
+      "public_resolved_private_preserved": true,
+      "public_authority_preserved": true
+    },
+    "Q7-S04": {
+      "private_continuity_status": "FAIL",
+      "task_disposition": "PUBLIC_SAFE_PROJECTION_ONLY",
+      "public_resolved_private_preserved": true,
+      "public_authority_preserved": true,
+      "private_value_leak_count": 0,
+      "private_paths_serialized_count": 0,
+      "public_safe_state": {
+        "registry_table_count": 33,
+        "first_corpus_total": 20,
+        "first_corpus_match": 20,
+        "source_ingestion_started": false,
+        "independent_backup_verified": false,
+        "course_2_allowed": false
+      }
+    },
+    "Q7-S05": {
+      "private_continuity_status": "NOT_VERIFIED",
+      "task_disposition": "DEGRADED_OPTIONAL_NO_AUTHORITY_BYPASS",
+      "public_resolved_private_preserved": true,
+      "public_authority_preserved": true,
+      "optional_retrieval_authority_bypass": false
+    }
+  },
+  "global_private_value_leak_count": 0,
+  "global_private_paths_serialized_count": 0,
+  "q7_real_subsystem_support": true,
+  "interpretation": {
+    "q7_final_qualification_claimed": false,
+    "private_continuity_current_against_public_target": false,
+    "public_repository_integrity_reclassified_by_private_status": false,
+    "architecture_selection_claimed": false
+  }
+}
