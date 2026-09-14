@@ -1,7 +1,7 @@
 # Research 145: Candidate 01 Requirements V0.2 Design Coverage and Qualification Plan
 
 **Date:** 2026-09-14
-**Status:** 50/50 KA-R + 17/17 KA-I DESIGN-MAPPED / ZERO-SEED ROUTING SHADOW PASSED / CURRENT-STATE DECOMPOSITION NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** 50/50 KA-R + 17/17 KA-I DESIGN-MAPPED / REAL CURRENT-STATE DECOMPOSITION COMPLETE / SOURCE-VAULT WORKSTREAM + CURRENT-STATE-CORE SHADOW NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Candidate:** `PKA-CANDIDATE-01` from Research 144
 **Scope:** Systematically map the whole-architecture candidate against every frozen Requirements V0.2 requirement/invariant, distinguish design coverage from actual qualification evidence, identify selection-blocking proof clusters, and freeze the minimum implementation/behavioral evidence needed before target selection.
 **Authority:** Candidate qualification planning only. Requirements V0.2 remain the acceptance authority. A mapped design mechanism is not a qualified pass.
@@ -388,4 +388,16 @@ The evidence strengthens routing/rebuild/maintenance requirements but remains su
 ZERO_SEED_ROUTING_SUBSYSTEM_SUPPORT=PASS
 FINAL_QUALIFIED_PASSES=0
 NEXT=CURRENT_STATE_DECOMPOSITION_AND_SOURCE_OWNERSHIP_AUDIT
+```
+
+## 18. Real CURRENT_STATE decomposition evidence
+
+Research 156 adds direct real-authority evidence for active-surface boundedness, derived-view separation, task-shaped reconstruction and migration preservation. The result is not a final requirement pass: the 98.28% D-category share is a block-level future-role classification, not deletion authorization, and the Source Vault A-category facts still need a successor canonical owner.
+
+The four reproduced drift defects strengthen the case that global copied current/history/navigation surfaces create maintenance risk. The next evidence gate is therefore source migration plus generated-core parity, not further abstract decomposition.
+
+```text
+CURRENT_STATE_DECOMPOSITION_SUPPORT=RECORDED
+SOURCE_VAULT_A_CATEGORY_GAP=OPEN
+FINAL_QUALIFIED_PASSES=0
 ```

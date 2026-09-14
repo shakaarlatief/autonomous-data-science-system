@@ -1,0 +1,551 @@
+{
+  "schema_version": 1,
+  "audit_id": "PKA-C01-CURRENT-STATE-DECOMP-V01",
+  "candidate_id": "PKA-CANDIDATE-01",
+  "base_commit": "a1f813c0a12d5682c34b7d0000476893756589c3",
+  "source_path": "docs/CURRENT_STATE.md",
+  "source_sha256": "c59e5102c42435a8049101fa59977f6a951f2ed92e7d443233643c984bd0df5a",
+  "source_bytes": 282796,
+  "source_lines": 1159,
+  "blocks": [
+    {
+      "block_id": "CSB-001",
+      "start_line": 1,
+      "end_line": 10,
+      "line_count": 10,
+      "byte_count": 464,
+      "byte_share": 0.001641,
+      "category": "B_DETERMINISTIC_CURRENT_CORE",
+      "future_role": "GENERATED_CORE",
+      "mandatory_generic_bootstrap": true,
+      "proposed_owner_or_inputs": [
+        "active_workstream.execution_anchor",
+        "PROJECT_INTEGRATION_BOUNDARY",
+        "specification index",
+        "governed experiment result"
+      ],
+      "reason": "Small live-control projection; routing subset already has zero-seed derivation evidence."
+    },
+    {
+      "block_id": "CSB-002",
+      "start_line": 11,
+      "end_line": 24,
+      "line_count": 14,
+      "byte_count": 341,
+      "byte_share": 0.001206,
+      "category": "C_OPTIONAL_ORIENTATION",
+      "future_role": "RUNTIME_OR_CHECKPOINT_PROVENANCE",
+      "mandatory_generic_bootstrap": false,
+      "proposed_owner_or_inputs": [
+        "checkpoint/session provenance"
+      ],
+      "reason": "Provider/session/title metadata is provenance, not durable project truth."
+    },
+    {
+      "block_id": "CSB-003",
+      "start_line": 25,
+      "end_line": 26,
+      "line_count": 2,
+      "byte_count": 1176,
+      "byte_share": 0.004158,
+      "category": "C_OPTIONAL_ORIENTATION",
+      "future_role": "DERIVED_ORIENTATION_NARRATIVE",
+      "mandatory_generic_bootstrap": false,
+      "proposed_owner_or_inputs": [
+        "active workstream sources",
+        "research:124",
+        "research:155",
+        "checkpoint:500"
+      ],
+      "reason": "Useful orientation narrative whose accepted facts belong in canonical sources."
+    },
+    {
+      "block_id": "CSB-004",
+      "start_line": 27,
+      "end_line": 420,
+      "line_count": 394,
+      "byte_count": 215169,
+      "byte_share": 0.760863,
+      "category": "D_HISTORICAL_LATENT",
+      "future_role": "REMOVE_FROM_MANDATORY_CURRENT_SURFACE",
+      "mandatory_generic_bootstrap": false,
+      "proposed_owner_or_inputs": [
+        "numbered checkpoints",
+        "research records",
+        "validation records"
+      ],
+      "reason": "Chronological accumulation is durable history already preserved by source artifacts."
+    },
+    {
+      "block_id": "CSB-005",
+      "start_line": 421,
+      "end_line": 485,
+      "line_count": 65,
+      "byte_count": 1767,
+      "byte_share": 0.006248,
+      "category": "D_HISTORICAL_LATENT",
+      "future_role": "SUBJECT_DRILLDOWN_ONLY",
+      "mandatory_generic_bootstrap": false,
+      "proposed_owner_or_inputs": [
+        "research:105",
+        "direct-Git validations",
+        "local-execution research"
+      ],
+      "reason": "Subject-specific historical evidence, not current global state."
+    },
+    {
+      "block_id": "CSB-006",
+      "start_line": 486,
+      "end_line": 524,
+      "line_count": 39,
+      "byte_count": 754,
+      "byte_share": 0.002666,
+      "category": "D_SOURCE_OWNED_ELSEWHERE",
+      "future_role": "POINTER_OR_TASK_SHAPED_LOAD",
+      "mandatory_generic_bootstrap": false,
+      "proposed_owner_or_inputs": [
+        "docs/local_execution/SEMANTIC_PULL_ACCEPTANCE.md"
+      ],
+      "reason": "Accepted Git contract has a dedicated governing owner."
+    },
+    {
+      "block_id": "CSB-007",
+      "start_line": 525,
+      "end_line": 567,
+      "line_count": 43,
+      "byte_count": 1979,
+      "byte_share": 0.006998,
+      "category": "D_SOURCE_OWNED_ELSEWHERE",
+      "future_role": "POINTER_OR_TASK_SHAPED_LOAD",
+      "mandatory_generic_bootstrap": false,
+      "proposed_owner_or_inputs": [
+        "docs/local_execution/OPERATIONS.md",
+        "docs/local_execution/AUTHORITY_BOOTSTRAP.md",
+        "docs/local_execution/ACL_INTEGRITY_GATE.md",
+        "docs/local_execution/DIRECT_GIT_INVESTIGATION_LESSONS.md"
+      ],
+      "reason": "Operational rules already have canonical subject-specific sources."
+    },
+    {
+      "block_id": "CSB-008",
+      "start_line": 568,
+      "end_line": 594,
+      "line_count": 27,
+      "byte_count": 1077,
+      "byte_share": 0.003808,
+      "category": "A_CANONICAL_SOURCE_REQUIRED",
+      "future_role": "MIGRATE_TO_SOURCE_VAULT_WORKSTREAM",
+      "mandatory_generic_bootstrap": false,
+      "proposed_owner_or_inputs": [
+        "new durable Source Vault bootstrap workstream source",
+        "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+        "research:113"
+      ],
+      "reason": "Live paused-workstream facts lack one Candidate-01-style canonical resumable-state owner."
+    },
+    {
+      "block_id": "CSB-009",
+      "start_line": 595,
+      "end_line": 625,
+      "line_count": 31,
+      "byte_count": 661,
+      "byte_share": 0.002337,
+      "category": "A_CANONICAL_SOURCE_REQUIRED",
+      "future_role": "MIGRATE_TO_SOURCE_VAULT_WORKSTREAM",
+      "mandatory_generic_bootstrap": false,
+      "proposed_owner_or_inputs": [
+        "new durable Source Vault bootstrap workstream source",
+        "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+        "research:113"
+      ],
+      "reason": "Preserved next action and resume sequence are workstream continuation semantics."
+    },
+    {
+      "block_id": "CSB-010",
+      "start_line": 626,
+      "end_line": 631,
+      "line_count": 6,
+      "byte_count": 191,
+      "byte_share": 0.000675,
+      "category": "B_DERIVED_ORIENTATION",
+      "future_role": "GENERATED_CORE_OR_POINTER",
+      "mandatory_generic_bootstrap": false,
+      "proposed_owner_or_inputs": [
+        "docs/DEVELOPMENT_METHOD.md",
+        "specification/index state"
+      ],
+      "reason": "Method/version and governing-family pointers can be computed or linked."
+    },
+    {
+      "block_id": "CSB-011",
+      "start_line": 632,
+      "end_line": 633,
+      "line_count": 2,
+      "byte_count": 12954,
+      "byte_share": 0.045807,
+      "category": "D_STALE_HISTORICAL",
+      "future_role": "REMOVE_FROM_CURRENT_SURFACE",
+      "mandatory_generic_bootstrap": false,
+      "proposed_owner_or_inputs": [
+        "historical checkpoints/validations",
+        "docs/KNOWLEDGE_MAP.md"
+      ],
+      "reason": "Runtime chronology contains a stale current-boundary claim and belongs in history/navigation."
+    },
+    {
+      "block_id": "CSB-012",
+      "start_line": 634,
+      "end_line": 641,
+      "line_count": 8,
+      "byte_count": 385,
+      "byte_share": 0.001361,
+      "category": "D_SOURCE_OWNED_ELSEWHERE",
+      "future_role": "POINTER_OR_CONSTITUTIONAL_CORE",
+      "mandatory_generic_bootstrap": false,
+      "proposed_owner_or_inputs": [
+        "docs/CONTINUITY.md",
+        "docs/DEVELOPMENT_METHOD.md",
+        "repository integrity validators"
+      ],
+      "reason": "Authority/integrity/private-continuity policy has dedicated governing sources."
+    },
+    {
+      "block_id": "CSB-013",
+      "start_line": 642,
+      "end_line": 649,
+      "line_count": 8,
+      "byte_count": 961,
+      "byte_share": 0.003398,
+      "category": "B_DERIVED_TASK_STATUS",
+      "future_role": "GENERATE_WHEN_COLLABORATION_RELEVANT",
+      "mandatory_generic_bootstrap": false,
+      "proposed_owner_or_inputs": [
+        "per-thread STATE.json",
+        "docs/model_collaboration/REVIEW_INBOX.md"
+      ],
+      "reason": "Collaboration status is derived from dedicated thread state and is drift-prone when copied."
+    },
+    {
+      "block_id": "CSB-014",
+      "start_line": 650,
+      "end_line": 950,
+      "line_count": 301,
+      "byte_count": 25086,
+      "byte_share": 0.088707,
+      "category": "D_DERIVED_NAVIGATION",
+      "future_role": "GENERATED_NAVIGATION_ONLY",
+      "mandatory_generic_bootstrap": false,
+      "proposed_owner_or_inputs": [
+        "docs/KNOWLEDGE_MAP.md",
+        "source-local declarations",
+        "artifact inventory"
+      ],
+      "reason": "Path-heavy route list is navigation, not canonical truth."
+    },
+    {
+      "block_id": "CSB-015",
+      "start_line": 951,
+      "end_line": 970,
+      "line_count": 20,
+      "byte_count": 4861,
+      "byte_share": 0.017189,
+      "category": "D_STALE_ROTATION_HISTORY",
+      "future_role": "HISTORICAL_CHECKPOINT_PROVENANCE",
+      "mandatory_generic_bootstrap": false,
+      "proposed_owner_or_inputs": [
+        "docs/CONTINUITY.md",
+        "checkpoint/session provenance"
+      ],
+      "reason": "Conversation-rotation history contains obsolete current-session/stage statements."
+    },
+    {
+      "block_id": "CSB-016",
+      "start_line": 971,
+      "end_line": 1159,
+      "line_count": 189,
+      "byte_count": 14970,
+      "byte_share": 0.052936,
+      "category": "D_DERIVED_NAVIGATION",
+      "future_role": "TASK_SHAPED_RECONSTRUCTION_PLAN",
+      "mandatory_generic_bootstrap": false,
+      "proposed_owner_or_inputs": [
+        "reconstruction planner",
+        "current route",
+        "docs/KNOWLEDGE_MAP.md",
+        "governing-source resolver"
+      ],
+      "reason": "Fixed minimum-reading packet is stale navigation; continuation should be task-shaped."
+    }
+  ],
+  "source_manifest": [
+    {
+      "source_key": "current_state",
+      "path": "docs/CURRENT_STATE.md",
+      "bytes": 282796,
+      "sha256": "c59e5102c42435a8049101fa59977f6a951f2ed92e7d443233643c984bd0df5a"
+    },
+    {
+      "source_key": "current_routing",
+      "path": "docs/current_routing.json",
+      "bytes": 443,
+      "sha256": "431e05128999af1ed12a702a8a489f474e080a74188e1948f35481ffaf3a0bbb"
+    },
+    {
+      "source_key": "development_method",
+      "path": "docs/DEVELOPMENT_METHOD.md",
+      "bytes": 27541,
+      "sha256": "510cb909d57370690226fe2b55ec4050d68221df5bc7177319f8883cae3c1b57"
+    },
+    {
+      "source_key": "continuity",
+      "path": "docs/CONTINUITY.md",
+      "bytes": 24457,
+      "sha256": "6bcde628dc0f4f12d94df50a7a99127bb55c1c6e12c3764b5c9e9e0dd7a0f868"
+    },
+    {
+      "source_key": "knowledge_map",
+      "path": "docs/KNOWLEDGE_MAP.md",
+      "bytes": 66348,
+      "sha256": "a5c150b500d6344d2fc7fb45b20e27987739565b22c7fa1cff05cd3f5fcd3377"
+    },
+    {
+      "source_key": "mc0010_state",
+      "path": "docs/model_collaboration/threads/MC-0010/STATE.json",
+      "bytes": 3055,
+      "sha256": "e2af3f6c023b55c5baf0ebfeafd26eac173d453a0a21b3b704e7ff5dbed791fb"
+    },
+    {
+      "source_key": "review_inbox",
+      "path": "docs/model_collaboration/REVIEW_INBOX.md",
+      "bytes": 16286,
+      "sha256": "2a7efd080c938252ed9672f6736f83413fed32d7242175f86f8cb53438255168"
+    },
+    {
+      "source_key": "source_vault_runbook",
+      "path": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+      "bytes": 17085,
+      "sha256": "fdcb795d39945883dcce99995a5c3f396e5f1dd8f904a668b8366b1d1aa69656"
+    },
+    {
+      "source_key": "research113",
+      "path": "docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md",
+      "bytes": 20649,
+      "sha256": "417026aea2f087217f5c566adad8449464b9e895bb899dfbbcb59209be6c9a45"
+    },
+    {
+      "source_key": "semantic_pull",
+      "path": "docs/local_execution/SEMANTIC_PULL_ACCEPTANCE.md",
+      "bytes": 3170,
+      "sha256": "01bc1dbea7a533e7a3781d44c26322089599a9950a5c492b0956fae696f62ba5"
+    },
+    {
+      "source_key": "operations",
+      "path": "docs/local_execution/OPERATIONS.md",
+      "bytes": 18722,
+      "sha256": "eb03e9e85b1bbd3b909f5f1e74ec4bfa954909488d5fbca24429fca60c8f88da"
+    },
+    {
+      "source_key": "research124",
+      "path": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+      "bytes": 222813,
+      "sha256": "73791c23c7d476a14516c123557a5d121d029780b33d23b66c087f45904e4c78"
+    },
+    {
+      "source_key": "research155",
+      "path": "docs/research/155_candidate01_zero_seed_routing_v01_result.md",
+      "bytes": 8124,
+      "sha256": "b893f74c98424f55fa5374c9f537724206a498cb2c02a8f19b57bc418e86f712"
+    },
+    {
+      "source_key": "checkpoint500",
+      "path": "docs/checkpoints/500_candidate01_zero_seed_routing_passed_current_state_decomposition_next.md",
+      "bytes": 1562,
+      "sha256": "8367942e411782f97dcbe956f58272df921cd8d0fe8dd25d37509167643ff1e4"
+    }
+  ],
+  "drift_findings": [
+    {
+      "finding_id": "CS-DRIFT-001",
+      "severity": "HIGH",
+      "line_range": [
+        632,
+        633
+      ],
+      "current_claim": "Checkpoint 353 is now the current meaningful project boundary.",
+      "evidence": [
+        {
+          "source_key": "current_routing",
+          "fact": "current_checkpoint=500"
+        },
+        {
+          "source_key": "checkpoint500",
+          "fact": "Checkpoint 500 is the current meaningful Research 124 boundary."
+        }
+      ],
+      "disposition": "STALE_HISTORICAL_COPY"
+    },
+    {
+      "finding_id": "CS-DRIFT-002",
+      "severity": "HIGH",
+      "line_range": [
+        642,
+        649
+      ],
+      "current_claim": "MC-0010 is now OPEN / PARALLEL UPSTREAM RESEARCH.",
+      "evidence": [
+        {
+          "source_key": "mc0010_state",
+          "fact": "lifecycle_state=DEFERRED; phase=DEFERRED_BY_OWNER_ROUTING_RESEARCH124_PRIORITY"
+        },
+        {
+          "source_key": "review_inbox",
+          "fact": "MC-0010 DEFERRED"
+        }
+      ],
+      "disposition": "DUPLICATED_LIVE_STATUS_DRIFT"
+    },
+    {
+      "finding_id": "CS-DRIFT-003",
+      "severity": "HIGH",
+      "line_range": [
+        951,
+        970
+      ],
+      "current_claim": "Conversation-rotation prose calls chatgpt-19 current and Research 122 active.",
+      "evidence": [
+        {
+          "source_key": "current_state",
+          "fact": "header interaction session=chatgpt-24; active stage=Research 124"
+        },
+        {
+          "source_key": "checkpoint500",
+          "fact": "Research 124 / current-state decomposition is current boundary"
+        }
+      ],
+      "disposition": "STALE_ROTATION_HISTORY"
+    },
+    {
+      "finding_id": "CS-DRIFT-004",
+      "severity": "HIGH",
+      "line_range": [
+        971,
+        1159
+      ],
+      "current_claim": "Fixed minimum-reading packet omits the current Research 124 / Research 155 / Checkpoint 500 sources.",
+      "evidence": [
+        {
+          "source_key": "research124",
+          "fact": "active architecture research authority"
+        },
+        {
+          "source_key": "research155",
+          "fact": "latest zero-seed routing result"
+        },
+        {
+          "source_key": "checkpoint500",
+          "fact": "latest current boundary"
+        }
+      ],
+      "missing_current_sources": [
+        "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+        "docs/research/155_candidate01_zero_seed_routing_v01_result.md",
+        "docs/checkpoints/500_candidate01_zero_seed_routing_passed_current_state_decomposition_next.md"
+      ],
+      "disposition": "STALE_DERIVED_RECONSTRUCTION_PACKET"
+    }
+  ],
+  "category_summary": {
+    "B_DETERMINISTIC_CURRENT_CORE": {
+      "line_count": 10,
+      "byte_count": 464,
+      "byte_share": 0.001641
+    },
+    "C_OPTIONAL_ORIENTATION": {
+      "line_count": 16,
+      "byte_count": 1517,
+      "byte_share": 0.005364
+    },
+    "D_HISTORICAL_LATENT": {
+      "line_count": 459,
+      "byte_count": 216936,
+      "byte_share": 0.767111
+    },
+    "D_SOURCE_OWNED_ELSEWHERE": {
+      "line_count": 90,
+      "byte_count": 3118,
+      "byte_share": 0.011026
+    },
+    "A_CANONICAL_SOURCE_REQUIRED": {
+      "line_count": 58,
+      "byte_count": 1738,
+      "byte_share": 0.006146
+    },
+    "B_DERIVED_ORIENTATION": {
+      "line_count": 6,
+      "byte_count": 191,
+      "byte_share": 0.000675
+    },
+    "D_STALE_HISTORICAL": {
+      "line_count": 2,
+      "byte_count": 12954,
+      "byte_share": 0.045807
+    },
+    "B_DERIVED_TASK_STATUS": {
+      "line_count": 8,
+      "byte_count": 961,
+      "byte_share": 0.003398
+    },
+    "D_DERIVED_NAVIGATION": {
+      "line_count": 490,
+      "byte_count": 40056,
+      "byte_share": 0.141643
+    },
+    "D_STALE_ROTATION_HISTORY": {
+      "line_count": 20,
+      "byte_count": 4861,
+      "byte_share": 0.017189
+    },
+    "E_UNRESOLVED": {
+      "line_count": 0,
+      "byte_count": 0,
+      "byte_share": 0.0
+    }
+  },
+  "aggregate": {
+    "d_category_bytes": 277925,
+    "d_category_byte_share": 0.982776,
+    "a_category_bytes": 1738,
+    "b_category_bytes": 1616,
+    "c_category_bytes": 1517,
+    "candidate_non_d_bytes": 4871,
+    "candidate_non_d_byte_share": 0.017224
+  },
+  "audit_checks": {
+    "complete_nonoverlapping_line_coverage": true,
+    "exact_base_source_hash_binding": true,
+    "drift_findings_programmatically_reproduced": true,
+    "comparison_base_current_checkpoint": 500,
+    "mc0010_authoritative_state": "DEFERRED",
+    "fixed_minimum_reading_omits_current_sources": true
+  },
+  "decomposition_status": "COMPLETE_LINE_COVERAGE__REAL_DRIFT_REPRODUCED__A_BLOCK_MIGRATION_REQUIRED",
+  "category_definitions": {
+    "A_CANONICAL_SOURCE_REQUIRED": "Material current truth lacks one adequate natural successor owner and must be migrated before the global copy can disappear.",
+    "B_DETERMINISTIC_CURRENT_CORE": "Small live projection safe to generate from canonical owners.",
+    "B_DERIVED_ORIENTATION": "Small deterministic orientation/pointer projection.",
+    "B_DERIVED_TASK_STATUS": "Task-specific live status derived from dedicated authority.",
+    "C_OPTIONAL_ORIENTATION": "Non-authoritative narrative or interaction provenance useful for orientation but not required truth.",
+    "D_HISTORICAL_LATENT": "Historical evidence already preserved by durable source artifacts and not needed on mandatory current surface.",
+    "D_SOURCE_OWNED_ELSEWHERE": "Copied contract/fact with a more natural existing canonical owner.",
+    "D_STALE_HISTORICAL": "Historical material whose copied current-language has become stale.",
+    "D_DERIVED_NAVIGATION": "Navigation/reconstruction packet that should be generated from source declarations/inventory.",
+    "D_STALE_ROTATION_HISTORY": "Provider/session rotation history that no longer governs current continuation.",
+    "E_UNRESOLVED": "Future role cannot yet be assigned safely without finer-grained source tracing."
+  },
+  "interpretation_limits": [
+    "Classification is block-level, not proposition-level.",
+    "D classification does not authorize deletion until must-preserve/source-trace parity is proven.",
+    "Zero block-level E bytes does not prove zero proposition-level unresolved material.",
+    "A blocks identify migration need, not permission to make a shadow source current authority."
+  ]
+}

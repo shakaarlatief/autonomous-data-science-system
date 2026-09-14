@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / ZERO-SEED ROUTING PASSED / CURRENT-STATE DECOMPOSITION NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / CURRENT-STATE DECOMPOSITION COMPLETE / SOURCE-VAULT WORKSTREAM + CURRENT-STATE-CORE SHADOW NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -4103,5 +4103,21 @@ ZERO_SEED_ROUTING=PASS
 ROUTING_SHADOW_SUBSYSTEM=SUPPORTED
 CURRENT_STATE_DECOMPOSITION=NEXT
 FINAL_QUALIFIED_PASSES=0
+TARGET_ARCHITECTURE=NOT_SELECTED
+```
+
+## 101. Real CURRENT_STATE decomposition exposes active-surface drift and one canonical migration gap
+
+Research 156 performs complete block-level coverage of the real 1,159-line / 282,796-byte Checkpoint 500 `CURRENT_STATE.md`. The audit classifies 98.28% of bytes into historical/latent, source-owned-elsewhere, stale historical/rotation, or derived-navigation roles, while only 1.72% remains in coarse A/B/C categories. This is not deletion authorization; every D block still requires must-preserve/source-trace parity before migration.
+
+The audit reproduces four concrete drift defects in the current operational surface: stale Checkpoint 353 current-boundary language, stale MC-0010 OPEN status, stale chatgpt-19 / Research-122 rotation language, and a fixed minimum-reading packet that omits Research 124 / Research 155 / Checkpoint 500. Those false current-language claims are corrected immediately without changing authority roles.
+
+The principal A-category gap is the paused Source Vault bootstrap state. Its evidence is distributed across runbook/checkpoints/research, but no single Candidate-01-style source currently owns the complete resumable workstream state. The next shadow must create that workstream source and then generate a compact current-state core under a must-preserve contract.
+
+```text
+CURRENT_STATE_DECOMPOSITION=COMPLETE_AT_BLOCK_LEVEL
+REAL_DRIFT_FINDINGS=4_REPAIRED_IN_CURRENT_SURFACE
+SOURCE_VAULT_WORKSTREAM_CANONICAL_MIGRATION=NEXT
+CURRENT_STATE_AUTHORITY_SWITCH=NOT_AUTHORIZED
 TARGET_ARCHITECTURE=NOT_SELECTED
 ```

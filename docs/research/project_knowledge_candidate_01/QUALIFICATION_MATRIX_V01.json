@@ -635,7 +635,8 @@
     "prototype_foundational_slice_passed": true,
     "operational_shadow_v02_passed": true,
     "real_repository_shadow_v01_passed": true,
-    "zero_seed_routing_shadow_passed": true
+    "zero_seed_routing_shadow_passed": true,
+    "current_state_decomposition_v01_complete": true
   },
   "adversarial_review": {
     "thread": "MC-0016",
@@ -788,6 +789,39 @@
       "KA-R47",
       "KA-I02",
       "KA-I03",
+      "KA-I13",
+      "KA-I15"
+    ]
+  },
+  "prototype_evidence_current_state_decomposition_v01": {
+    "research": "research:156",
+    "base_commit": "a1f813c0a12d5682c34b7d0000476893756589c3",
+    "audit_path": "docs/research/project_knowledge_candidate_01_current_state_decomposition_v01/CURRENT_STATE_DECOMPOSITION_V01.json",
+    "audit_sha256": "cc4a74b1e901af2da3c51500879e89b06e6460cbc6729383876fd627e43a7a4f",
+    "evidence_class": "REAL_AUTHORITY_SURFACE_DECOMPOSITION_SUPPORT",
+    "final_qualification_credit": false,
+    "source_lines": 1159,
+    "source_bytes": 282796,
+    "d_category_byte_share": 0.982776,
+    "real_drift_findings": 4,
+    "open_canonical_migration_units": [
+      "SOURCE_VAULT_BOOTSTRAP_WORKSTREAM"
+    ],
+    "supported_mechanism_ids": [
+      "KA-R04",
+      "KA-R05",
+      "KA-R17",
+      "KA-R21",
+      "KA-R31",
+      "KA-R32",
+      "KA-R33",
+      "KA-R34",
+      "KA-R43",
+      "KA-R47",
+      "KA-R50",
+      "KA-I03",
+      "KA-I07",
+      "KA-I12",
       "KA-I13",
       "KA-I15"
     ]

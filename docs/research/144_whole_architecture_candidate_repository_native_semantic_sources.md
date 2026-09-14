@@ -1,7 +1,7 @@
 # Research 144: Whole-Architecture Candidate - Repository-Native Semantic Sources with Selective Identity, Derived Views, and Action-Gated Authority
 
 **Date:** 2026-09-14
-**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE / ZERO-SEED ROUTING SHADOW PASSED / CURRENT-STATE DECOMPOSITION NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE / ZERO-SEED ROUTING PASSED / REAL CURRENT-STATE DECOMPOSITION COMPLETE / SOURCE-VAULT WORKSTREAM + CURRENT-STATE-CORE SHADOW NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Candidate label:** `PKA-CANDIDATE-01`
 **Scope:** Synthesize one serious successor architecture from the complete Research 124 evidence field after the H1/H2 mechanism probes, real-corpus independent review, MC-0014/MC-0015 corrections, D1-D8 external evidence and owner-provided ICM evaluation. Define enough logical structure, authority semantics, typed source responsibilities, derived-view behavior, activation, lifecycle, validation, scaling and migration behavior to qualify the candidate systematically against Requirements V0.2.
 **Authority:** Candidate architecture research only. Requirements V0.2 remain the frozen acceptance authority. This record does not select the target architecture, migrate current authority, or authorize implementation as the production continuity system.
@@ -1088,4 +1088,21 @@ ROUTING_COMPATIBILITY_VIEW=DERIVABLE_FROM_SUCCESSOR_NATIVE_OWNERS
 GLOBAL_LIVE_STATE_GENERATION_FACTS=0
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=CURRENT_STATE_DECOMPOSITION
+```
+
+## 41. Real current-state decomposition supports responsibility separation
+
+Research 156 audits every line of the real Checkpoint 500 `CURRENT_STATE.md` at exact base `a1f813c0a12d5682c34b7d0000476893756589c3`. At coarse block level, 98.28% of the 282,796-byte artifact is classified as historical/latent, source-owned elsewhere, stale historical, or derived navigation material rather than irreducible current global truth.
+
+The same audit reproduces four real drift defects: a stale Checkpoint 353 "current" claim, stale MC-0010 OPEN state, stale chatgpt-19/Research-122 rotation prose, and a fixed minimum-reading packet that omits the actual Research 124 / Research 155 / Checkpoint 500 active boundary.
+
+The main block that cannot yet be safely derived away is the paused Source Vault bootstrap state. Candidate 01 therefore treats one durable Source Vault workstream source as a required migration unit before a generated current-state core can replace that copy.
+
+```text
+CURRENT_STATE_REAL_DECOMPOSITION=COMPLETE_AT_BLOCK_LEVEL
+D_CATEGORY_BYTE_SHARE=98.28_PERCENT
+REAL_DRIFT_FINDINGS=4
+SOURCE_VAULT_WORKSTREAM_SOURCE=REQUIRED
+CURRENT_STATE_AUTHORITY_SWITCH=NOT_AUTHORIZED
+TARGET_ARCHITECTURE=NOT_SELECTED
 ```
