@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / EVIDENCE RECONCILIATION V0.2 COMPLETE / INTEGRATED Q1+Q2+Q5 CHALLENGE NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / INTEGRATED Q1+Q2+Q5 FIXTURE FROZEN / FRESH COLLABORATOR RUN NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -4267,5 +4267,18 @@ REAL_EVIDENCE_ITEMS=49_OF_67
 SYNTHETIC_OR_BETTER=58_OF_67
 FINAL_QUALIFIED_PASSES=0
 NEXT=Q1_Q2_Q5_INTEGRATED_CHALLENGE
+TARGET_ARCHITECTURE=NOT_SELECTED
+```
+
+## 112. Integrated Q1/Q2/Q5 fresh-collaborator fixture freezes
+
+Research 167 freezes the next Candidate 01 challenge against exact public base `f5996aed3710c63e1ba859ee248c264abd678636`. A fresh collaborator must start from a bounded successor-native bootstrap, decide the real Source Vault Course 2 admission question, activate the governing runbook and relevant reopen risks, reject a historical distractor, fail visibly on a stale derived authority view, emit a source-bound authority receipt, and capture at most one new insight without promoting it.
+
+The run is limited to nine allowed evidence reads and zero legacy `CURRENT_STATE` / routing / Knowledge Map bootstrap reads. Current authority is unchanged.
+
+```text
+Q1_Q2_Q5_FIXTURE=FROZEN
+FRESH_COLLABORATOR=REQUIRED
+NEXT=RUN_FRESH_COLLABORATOR_Q1_Q2_Q5_V01
 TARGET_ARCHITECTURE=NOT_SELECTED
 ```

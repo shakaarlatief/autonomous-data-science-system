@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "PKA-C01-Q1-Q2-Q5-INTEGRATED-V01-ORACLE",
+  "fixture_id": "PKA-C01-Q1-Q2-Q5-INTEGRATED-V01",
+  "implementation_must_not_read_this_oracle": true,
+  "expectations": {
+    "task_a": {
+      "course2_admission_allowed": false,
+      "required_governing_source": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+      "required_evidence_sources": [
+        "docs/source_universe/validation/003_permanent_source_registry_migrated.md",
+        "docs/source_universe/validation/004_permanent_first_corpus_prospective_compare_all_match.md"
+      ],
+      "required_distractor_rejection": "docs/checkpoints/274_archive_unarchive_reacquire_verified_source_vault_ingestion_resumed.md",
+      "required_risk_ids": [
+        "RK-RECOVERY-FAILURE",
+        "RK-REMOTE-ROUNDTRIP-FAILURE",
+        "RK-PRIVATE-LEAK"
+      ],
+      "required_blocker_concepts": [
+        "SOURCE_INGESTION_NOT_STARTED",
+        "WORKING_STORE_AUDIT_PENDING",
+        "INDEPENDENT_BACKUP_ROUND_TRIP_PENDING",
+        "CLEAN_RESTORE_PENDING",
+        "RESTORED_INTEGRITY_AUDIT_PENDING"
+      ],
+      "required_workstream": "WS-SOURCE-VAULT-BOOTSTRAP"
+    },
+    "task_b": {
+      "stale_view_may_authorize": false,
+      "required_view_id": "STALE-VIEW-COURSE2-01",
+      "required_failure_concept": "SOURCE_BINDING_MISMATCH"
+    },
+    "capture": {
+      "initial_authority_class": "captured",
+      "auto_promoted": false,
+      "promotion_requires_explicit_review": true
+    },
+    "receipt": {
+      "must_bind_governing_source_sha256": "fdcb795d39945883dcce99995a5c3f396e5f1dd8f904a668b8366b1d1aa69656",
+      "must_include_risks": true,
+      "must_include_blockers": true
+    },
+    "budget": {
+      "max_allowed_read_count": 9,
+      "forbidden_legacy_bootstrap_read_count": 0
+    },
+    "current_authority_unchanged": true
+  }
+}

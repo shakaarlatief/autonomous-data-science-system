@@ -1,7 +1,7 @@
 # Research 144: Whole-Architecture Candidate - Repository-Native Semantic Sources with Selective Identity, Derived Views, and Action-Gated Authority
 
 **Date:** 2026-09-14
-**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE / FIVE CLUSTERS FULLY REAL-SUPPORTED AT SUBSYSTEM LEVEL / INTEGRATED Q1+Q2+Q5 CHALLENGE NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE / INTEGRATED Q1+Q2+Q5 FIXTURE FROZEN / FRESH COLLABORATOR RUN NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Candidate label:** `PKA-CANDIDATE-01`
 **Scope:** Synthesize one serious successor architecture from the complete Research 124 evidence field after the H1/H2 mechanism probes, real-corpus independent review, MC-0014/MC-0015 corrections, D1-D8 external evidence and owner-provided ICM evaluation. Define enough logical structure, authority semantics, typed source responsibilities, derived-view behavior, activation, lifecycle, validation, scaling and migration behavior to qualify the candidate systematically against Requirements V0.2.
 **Authority:** Candidate architecture research only. Requirements V0.2 remain the frozen acceptance authority. This record does not select the target architecture, migrate current authority, or authorize implementation as the production continuity system.
@@ -1192,3 +1192,7 @@ NEXT=WHOLE_ARCHITECTURE_EVIDENCE_RECONCILIATION_V02
 Research 166 shows that Q3, Q6, Q7, Q8 and Q9 now have real Candidate 01 subsystem evidence on every item in those clusters. The remaining dominant architecture risk has shifted from representation/migration mechanics to integrated knowledge use: fresh reconstruction/discovery, consequential authority activation and durable promotion of new understanding.
 
 Candidate 01 therefore proceeds next to one integrated Q1+Q2+Q5 challenge. Target selection remains premature and H3/Object-Primary remains closed absent new contrary evidence.
+
+## 49. Integrated knowledge-use challenge freezes
+
+Research 167 freezes the first Candidate 01 experiment that directly joins fresh reconstruction/discovery, consequential authority/risk activation and capture/promotion semantics. The real Source Vault Course 2 gate supplies the consequential task; a stale derived authority view and historical ingestion-resumed checkpoint supply adversarial distractors. Capture remains non-authoritative until a separate explicit review.

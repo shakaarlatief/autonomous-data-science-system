@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "fixture_id": "PKA-C01-Q1-Q2-Q5-INTEGRATED-V01",
+  "candidate_id": "PKA-CANDIDATE-01",
+  "real_base_commit": "f5996aed3710c63e1ba859ee248c264abd678636",
+  "purpose": "Integrated fresh-collaborator test of bounded successor-native reconstruction/discovery, consequential authority/risk activation, stale-authority failure, authority receipts, and capture-to-explicit-promotion separation.",
+  "protocol": {
+    "shadow_only": true,
+    "current_project_authority_unchanged": true,
+    "fresh_collaborator_required": true,
+    "implementation_may_read_oracle": false,
+    "forbidden_legacy_bootstrap_paths": [
+      "docs/CURRENT_STATE.md",
+      "docs/current_routing.json",
+      "docs/KNOWLEDGE_MAP.md"
+    ],
+    "authority_mutation_forbidden": true,
+    "source_vault_write_forbidden": true,
+    "capture_does_not_imply_authority": true,
+    "promotion_requires_explicit_post_collaborator_review": true,
+    "forbidden_answer_keys": [
+      "expected_decision",
+      "expected_blockers",
+      "expected_risks",
+      "should_pass",
+      "expected_insight"
+    ]
+  },
+  "real_sources": [
+    {
+      "source_key": "runbook",
+      "path": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+      "bytes": 17085,
+      "sha256": "fdcb795d39945883dcce99995a5c3f396e5f1dd8f904a668b8366b1d1aa69656",
+      "source_class": "governing_procedure"
+    },
+    {
+      "source_key": "validation003",
+      "path": "docs/source_universe/validation/003_permanent_source_registry_migrated.md",
+      "bytes": 2908,
+      "sha256": "fab60cdf76f65d9922ab059c0e008d4bd50f53cb8a4f6e9d390955159aa52024",
+      "source_class": "evidence"
+    },
+    {
+      "source_key": "validation004",
+      "path": "docs/source_universe/validation/004_permanent_first_corpus_prospective_compare_all_match.md",
+      "bytes": 2459,
+      "sha256": "60f04bdaed88929c90a075a411d47b38319aa78ba024375d74fd4c380b5305b3",
+      "source_class": "evidence"
+    },
+    {
+      "source_key": "checkpoint274",
+      "path": "docs/checkpoints/274_archive_unarchive_reacquire_verified_source_vault_ingestion_resumed.md",
+      "bytes": 4737,
+      "sha256": "b41caa760d60e1dea4a29f2be6872bb3f397375f8b8a40d2eba4dc64e93fa7b4",
+      "source_class": "historical_distractor"
+    },
+    {
+      "source_key": "requirements",
+      "path": "docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md",
+      "bytes": 29382,
+      "sha256": "e3337d23bcee32e26ab0e9ada92bbd374ad9c6092626a748986b83901c23eb38",
+      "source_class": "frozen_requirement_boundary"
+    },
+    {
+      "source_key": "research166",
+      "path": "docs/research/166_whole_architecture_evidence_reconciliation_v02_and_next_integrated_falsification.md",
+      "bytes": 9853,
+      "sha256": "c1e3bbef0a8a7e8f3eed40422c2e3568f8e58525b409bf52859769d02f01c3be",
+      "source_class": "experiment_authority_context"
+    }
+  ],
+  "shadow_sources": [
+    {
+      "source_key": "bootstrap",
+      "path": "docs/research/project_knowledge_candidate_01_q1_q2_q5_integrated_v01/SHADOW_BOOTSTRAP_CORE.md",
+      "bytes": 1278,
+      "sha256": "1dc67b1d15f4f4fdeb5931a02c1e5cda2b5cb68b30e4db204126ab66f9f85158",
+      "source_class": "shadow_bootstrap"
+    },
+    {
+      "source_key": "active_workstream",
+      "path": "docs/research/project_knowledge_candidate_01_q1_q2_q5_integrated_v01/SHADOW_ACTIVE_WORKSTREAM.md",
+      "bytes": 1103,
+      "sha256": "9493674ea7340d6cc15fd04eb2ca327daaddb354b2c4e922402bee1073a53b27",
+      "source_class": "shadow_successor_candidate"
+    },
+    {
+      "source_key": "source_vault_workstream",
+      "path": "docs/research/project_knowledge_candidate_01_q1_q2_q5_integrated_v01/SHADOW_SOURCE_VAULT_WORKSTREAM.md",
+      "bytes": 1886,
+      "sha256": "2c328c76f1a60d4397dd5fefee852e1698b8d4bb737f015028426d7c68282bdd",
+      "source_class": "shadow_successor_candidate"
+    },
+    {
+      "source_key": "authority_risk_index",
+      "path": "docs/research/project_knowledge_candidate_01_q1_q2_q5_integrated_v01/SHADOW_AUTHORITY_RISK_INDEX.json",
+      "bytes": 3246,
+      "sha256": "879ff0f47803ed1dcfbd73ec737f295f5693da0ca682d07e5ce9b4230101daa6",
+      "source_class": "derived_shadow_index"
+    },
+    {
+      "source_key": "capture_envelope",
+      "path": "docs/research/project_knowledge_candidate_01_q1_q2_q5_integrated_v01/SHADOW_CAPTURE_ENVELOPE.md",
+      "bytes": 736,
+      "sha256": "42650fc83819dda944466494d6e3e7460d672eff980d5f8c2ba5166c614b9f28",
+      "source_class": "captured_non_authority"
+    },
+    {
+      "source_key": "fresh_request",
+      "path": "docs/research/project_knowledge_candidate_01_q1_q2_q5_integrated_v01/FRESH_COLLABORATOR_REQUEST_V01.md",
+      "bytes": 3852,
+      "sha256": "c279b638b8214349eca1528d7f558b8b3b118c02063e9ef8d9da518166bee0fc",
+      "source_class": "evaluation_request"
+    }
+  ],
+  "allowed_collaborator_reads": [
+    "docs/research/project_knowledge_candidate_01_q1_q2_q5_integrated_v01/SHADOW_BOOTSTRAP_CORE.md",
+    "docs/research/project_knowledge_candidate_01_q1_q2_q5_integrated_v01/SHADOW_ACTIVE_WORKSTREAM.md",
+    "docs/research/project_knowledge_candidate_01_q1_q2_q5_integrated_v01/SHADOW_SOURCE_VAULT_WORKSTREAM.md",
+    "docs/research/project_knowledge_candidate_01_q1_q2_q5_integrated_v01/SHADOW_AUTHORITY_RISK_INDEX.json",
+    "docs/research/project_knowledge_candidate_01_q1_q2_q5_integrated_v01/SHADOW_CAPTURE_ENVELOPE.md",
+    "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+    "docs/source_universe/validation/003_permanent_source_registry_migrated.md",
+    "docs/source_universe/validation/004_permanent_first_corpus_prospective_compare_all_match.md",
+    "docs/checkpoints/274_archive_unarchive_reacquire_verified_source_vault_ingestion_resumed.md"
+  ],
+  "tasks": [
+    {
+      "task_id": "A",
+      "action": "COURSE2_ADMISSION_DECISION",
+      "consequence": "HIGH",
+      "entry_route": "AUTHORITY-ROUTE-SOURCE-VAULT-COURSE2"
+    },
+    {
+      "task_id": "B",
+      "action": "STALE_AUTHORITY_VIEW_CHECK",
+      "consequence": "HIGH",
+      "view_id": "STALE-VIEW-COURSE2-01"
+    },
+    {
+      "task_id": "C",
+      "action": "CAPTURE_NEW_GENERALIZED_INSIGHT",
+      "consequence": "KNOWLEDGE_PROMOTION_CANDIDATE_ONLY"
+    }
+  ],
+  "promotion_gate": {
+    "capture_semantic_id": "CAPTURE-Q125-INSIGHT-01",
+    "promotion_output_path": "docs/research/project_knowledge_candidate_01_q1_q2_q5_integrated_v01/SHADOW_PROMOTED_KNOWLEDGE_V01.md",
+    "required_checks": [
+      "COLLABORATOR_RESULT_VALID",
+      "SOURCE_TRACEABLE",
+      "NON_CONFLICTING",
+      "MATERIAL_SYNTHESIS",
+      "EXPLICIT_REVIEW_DECISION_ACCEPT"
+    ],
+    "auto_promotion_forbidden": true
+  },
+  "measurement_contract": {
+    "record_exact_read_paths": true,
+    "record_read_count": true,
+    "record_read_bytes": true,
+    "record_legacy_bootstrap_read_count": true,
+    "record_governing_source_count": true,
+    "record_risk_count": true,
+    "record_capture_state_transition": true
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "kind": "AUTHORITY_RISK_INDEX",
+  "semantic_id": "AUTHORITY-RISK-INDEX-Q125-V01",
+  "authority_class": "derived",
+  "shadow_only": true,
+  "source_binding": {
+    "real_base_commit": "f5996aed3710c63e1ba859ee248c264abd678636"
+  },
+  "task_routes": {
+    "AUTHORITY-ROUTE-SOURCE-VAULT-COURSE2": {
+      "task_class": "CONSEQUENTIAL_ADMISSION_DECISION",
+      "scope": "Course 2 educational-source admission after the first permanent Source Vault bootstrap",
+      "workstream_ref": "WS-SOURCE-VAULT-BOOTSTRAP",
+      "governing_sources": [
+        {
+          "path": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+          "sha256": "fdcb795d39945883dcce99995a5c3f396e5f1dd8f904a668b8366b1d1aa69656",
+          "role": "governing_procedure"
+        }
+      ],
+      "evidence_sources": [
+        {
+          "path": "docs/source_universe/validation/003_permanent_source_registry_migrated.md",
+          "role": "completed_step_evidence"
+        },
+        {
+          "path": "docs/source_universe/validation/004_permanent_first_corpus_prospective_compare_all_match.md",
+          "role": "completed_step_evidence"
+        }
+      ],
+      "plausible_distractors": [
+        {
+          "path": "docs/checkpoints/274_archive_unarchive_reacquire_verified_source_vault_ingestion_resumed.md",
+          "sha256": "b41caa760d60e1dea4a29f2be6872bb3f397375f8b8a40d2eba4dc64e93fa7b4",
+          "reason": "historical checkpoint whose title says ingestion resumed but does not govern current admission state"
+        }
+      ],
+      "activated_risks": [
+        "RK-RECOVERY-FAILURE",
+        "RK-REMOTE-ROUNDTRIP-FAILURE",
+        "RK-PRIVATE-LEAK"
+      ],
+      "required_receipt_fields": [
+        "task",
+        "workstream",
+        "governing_source",
+        "source_revision",
+        "activated_risks",
+        "decision",
+        "blockers",
+        "uncertainty"
+      ]
+    }
+  },
+  "risk_triggers": {
+    "RK-RECOVERY-FAILURE": {
+      "source": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+      "source_section": "14. Reopen conditions",
+      "trigger_text": "recovery failure",
+      "effect": "PAUSE_AND_REVISE"
+    },
+    "RK-REMOTE-ROUNDTRIP-FAILURE": {
+      "source": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+      "source_section": "14. Reopen conditions",
+      "trigger_text": "independent remote round-trip failure",
+      "effect": "PAUSE_AND_REVISE"
+    },
+    "RK-PRIVATE-LEAK": {
+      "source": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+      "source_section": "14. Reopen conditions",
+      "trigger_text": "private information leaking into public-safe outputs",
+      "effect": "PAUSE_AND_REVISE"
+    }
+  },
+  "stale_views": {
+    "STALE-VIEW-COURSE2-01": {
+      "kind": "DERIVED_AUTHORITY_VIEW",
+      "authority_class": "derived",
+      "declared_source_path": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+      "declared_source_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "claim": "COURSE_2_READY",
+      "freshness": "STALE_BY_SOURCE_BINDING_MISMATCH",
+      "must_not_override_governing_source": true
+    }
+  }
+}
