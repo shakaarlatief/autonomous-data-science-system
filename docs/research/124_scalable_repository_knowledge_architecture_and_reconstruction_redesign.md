@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / WHOLE-ARCHITECTURE EVIDENCE RECONCILED / Q3 REAL IDENTITY-TEMPORAL FALSIFICATION NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / Q3 REAL IDENTITY-TEMPORAL FIXTURE FROZEN / IMPLEMENTATION NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -4165,4 +4165,19 @@ WHOLE_ARCH_EVIDENCE_RECONCILIATION=COMPLETE
 Q6_Q8=STRONGEST_REAL_SUBSYSTEM_EVIDENCE
 Q3=NEXT_ARCHITECTURE_FALSIFICATION_TARGET
 TARGET_ARCHITECTURE=NOT_SELECTED
+```
+
+## 105. Q3 real identity/temporal fixture freezes before implementation
+
+Research 160 freezes five real ADS Q3 cases and five profile-specific Candidate 01 shadow sources before implementation. The cases cover scoped supersession with retained outcome, multi-successor partial supersession, real Git carrier/identity repair, durable paused workstream identity and epistemic-role transition.
+
+The H3/Object-Primary reopening rule is prospective: central-registry need, relation/transition-source proliferation, authoritative duplication, universal objectization or unresolved real queries reopen comparative architecture work.
+
+```text
+Q3_REAL_FIXTURE=FROZEN
+REAL_CASES=5
+H3_REOPEN_RULE=ACTIVE
+CURRENT_ARCHITECTURE=STILL_AUTHORITY
+TARGET_ARCHITECTURE=NOT_SELECTED
+NEXT=IMPLEMENT_Q3_REAL_V01
 ```

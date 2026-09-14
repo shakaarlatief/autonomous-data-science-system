@@ -425,3 +425,15 @@ WHOLE_ARCH_EVIDENCE_AUDIT=COMPLETE
 FINAL_QUALIFIED_PASSES=0
 NEXT=Q3_REAL_IDENTITY_RELATIONSHIP_TEMPORAL_FALSIFICATION
 ```
+
+## 21. Q3 real falsification fixture freeze
+
+Research 160 freezes the first real Candidate 01 Q3 implementation challenge. The fixture intentionally does not convert a legacy global surface. It targets the weakest architecture cluster and carries an explicit H3 reopening rule.
+
+Real cases cover D-015/D-033 scoped supersession, D-011 multi-successor residual applicability, Specification 027 historical-intermediate identity repair, Cockpit durable paused identity and MC-0013 epistemic-role transition.
+
+```text
+Q3_REAL_IMPLEMENTATION_EVIDENCE=PENDING
+H3_REOPEN_RULE=PROSPECTIVELY_FROZEN
+NEXT=IMPLEMENT_Q3_REAL_V01
+```

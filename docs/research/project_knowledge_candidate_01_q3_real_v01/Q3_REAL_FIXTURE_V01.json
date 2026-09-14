@@ -1,0 +1,193 @@
+{
+  "schema_version": 1,
+  "fixture_id": "PKA-C01-Q3-REAL-V01",
+  "candidate_id": "PKA-CANDIDATE-01",
+  "real_base_commit": "d8690d215e9701fc25d378a7d104aa6dbab10b2d",
+  "purpose": "Real ADS falsification of selective identity, source-owned relationship, epistemic-role and temporal semantics against the H3/Object-Primary reopening rule.",
+  "protocol": {
+    "shadow_only": true,
+    "current_project_authority_unchanged": true,
+    "implementation_may_read_oracle": false,
+    "fixture_contains_expected_query_answers": false,
+    "forbidden_answer_keys": [
+      "expected_answer",
+      "expected_owner",
+      "expected_state",
+      "should_pass",
+      "expected_h3_reopen"
+    ],
+    "h3_reopen_triggers": {
+      "any_general_authoritative_object_registry_required": true,
+      "standalone_relation_or_transition_source_threshold": 2,
+      "any_duplicate_authoritative_relation_required": true,
+      "any_universal_objectization_required_for_all_participants": true,
+      "any_real_semantic_query_unresolvable": true
+    }
+  },
+  "real_sources": [
+    {
+      "source_key": "decisions",
+      "path": "docs/DECISIONS.md",
+      "bytes": 45566,
+      "sha256": "2db2b79712c9333159aca2985f4be75a34d7b8357610714eca299a5f0597e4cd",
+      "source_class": "semantic_source"
+    },
+    {
+      "source_key": "spec027",
+      "path": "docs/specifications/027_v1_historical_intermediate_checkpoint_integrity_extension.md",
+      "bytes": 7988,
+      "sha256": "96df5da7c45be645c39ee9b02d1568772aa1b598f6393af784a076702b5a5229",
+      "source_class": "governing_specification"
+    },
+    {
+      "source_key": "historical_intermediate",
+      "path": "docs/checkpoints/intermediate_2026-08-28_source_faithful_reintegration_interaction_integrity_gate.md",
+      "bytes": 7024,
+      "sha256": "aa67536160ae205bc91b0275a4cee64134ba837b36b24a8cc5592848323196a7",
+      "source_class": "historical_source"
+    },
+    {
+      "source_key": "canonical_checkpoint252",
+      "path": "docs/checkpoints/252_advanced_integrated_cockpit_spatial_rail_study_opened.md",
+      "bytes": 6606,
+      "sha256": "0177bdf730bd91ced5196bc4d1f6467e34ce69b322f7beff0b52284ea4fff5e3",
+      "source_class": "canonical_source"
+    },
+    {
+      "source_key": "cockpit",
+      "path": "docs/cockpit/README.md",
+      "bytes": 9525,
+      "sha256": "2e5fe6ab83b89f1bec267c64580c53844d82350f1454ebdc45a64454dc5952e0",
+      "source_class": "semantic_source"
+    },
+    {
+      "source_key": "mc0013_state",
+      "path": "docs/model_collaboration/threads/MC-0013/STATE.json",
+      "bytes": 3231,
+      "sha256": "fc2f66020502b57881936bfc1462302a1a1c38e4be92cc4a75d1d8e38127d13f",
+      "source_class": "semantic_source"
+    },
+    {
+      "source_key": "mc0013_message001",
+      "path": "docs/model_collaboration/threads/MC-0013/messages/001_claude_independent_architecture_counter_design.md",
+      "bytes": 32482,
+      "sha256": "f2872a667e2a3936a8448bf3918f42569fda3ef9a4279f6a2388e41ffc58775a",
+      "source_class": "evidence"
+    },
+    {
+      "source_key": "mc0013_message003",
+      "path": "docs/model_collaboration/threads/MC-0013/messages/003_claude_comparative_architecture_critique.md",
+      "bytes": 17737,
+      "sha256": "fcf1a9752f6b9ac76c92def3721a3275a7fd38036a1cdb0c7e07a695b5c7f761",
+      "source_class": "evidence"
+    }
+  ],
+  "shadow_sources": [
+    {
+      "source_key": "decision_d015",
+      "path": "docs/research/project_knowledge_candidate_01_q3_real_v01/SHADOW_DECISION_D015.md",
+      "bytes": 777,
+      "sha256": "1b9dd2ab66646278eb502a3b5584fc9149863b31c519d55f9fe46a956ea8fcb0",
+      "source_class": "shadow_successor_canonical"
+    },
+    {
+      "source_key": "decision_d011",
+      "path": "docs/research/project_knowledge_candidate_01_q3_real_v01/SHADOW_DECISION_D011.md",
+      "bytes": 1162,
+      "sha256": "1de955e619e51d38f3ce07a344dc58a95e1c1e924c9cd7b4782b4d0df199aa8e",
+      "source_class": "shadow_successor_canonical"
+    },
+    {
+      "source_key": "historical_intermediate",
+      "path": "docs/research/project_knowledge_candidate_01_q3_real_v01/SHADOW_HISTORICAL_INTERMEDIATE.md",
+      "bytes": 1304,
+      "sha256": "0adf6d94c1ec32f8550c1e1e484876b507fce9352038f72f034ae3ae3889559a",
+      "source_class": "shadow_successor_canonical"
+    },
+    {
+      "source_key": "cockpit_workstream",
+      "path": "docs/research/project_knowledge_candidate_01_q3_real_v01/SHADOW_COCKPIT_WORKSTREAM.md",
+      "bytes": 844,
+      "sha256": "7e7dab176f7a9f95824591e5a8e4de72efbf02271fb7c3ead29a5979cb77e10d",
+      "source_class": "shadow_successor_canonical"
+    },
+    {
+      "source_key": "mc0013_review",
+      "path": "docs/research/project_knowledge_candidate_01_q3_real_v01/SHADOW_MC0013_REVIEW.md",
+      "bytes": 1066,
+      "sha256": "ef2f102a02d190a9d170d4a84ea3389838ef7c3415f9a102b52af2b890b8bd28",
+      "source_class": "shadow_successor_canonical"
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "Q3-R01",
+      "kind": "SCOPED_SUPERSESSION_WITH_RETAINED_OUTCOME",
+      "real_source_key": "decisions",
+      "shadow_source_key": "decision_d015",
+      "queries": [
+        "governing successor for external-source architecture uncertainty",
+        "whether public-Git source-binary exclusion outcome remains retained",
+        "recorded versus scoped-supersession dates"
+      ]
+    },
+    {
+      "case_id": "Q3-R02",
+      "kind": "MULTI_SUCCESSOR_SCOPED_SUPERSESSION",
+      "real_source_key": "decisions",
+      "shadow_source_key": "decision_d011",
+      "queries": [
+        "governing decision for each of six selected implementation scopes",
+        "residual applicability for an unselected implementation subsystem",
+        "whether exact per-successor effective dates are asserted beyond source support"
+      ]
+    },
+    {
+      "case_id": "Q3-R03",
+      "kind": "REPRESENTATION_INDEPENDENT_IDENTITY_REPAIR",
+      "real_source_key": "historical_intermediate",
+      "shadow_source_key": "historical_intermediate",
+      "queries": [
+        "current carrier for preserved milestone",
+        "status of original Checkpoint 252 identity",
+        "canonical owner of numeric Checkpoint 252",
+        "Git rename provenance and identity collision absence"
+      ]
+    },
+    {
+      "case_id": "Q3-R04",
+      "kind": "DURABLE_PAUSED_WORKSTREAM_IDENTITY",
+      "real_source_key": "cockpit",
+      "shadow_source_key": "cockpit_workstream",
+      "queries": [
+        "current workstream state",
+        "exact future resume anchor",
+        "whether pause changes semantic workstream identity"
+      ]
+    },
+    {
+      "case_id": "Q3-R05",
+      "kind": "EPISTEMIC_ROLE_TRANSITION",
+      "real_source_key": "mc0013_state",
+      "shadow_source_key": "mc0013_review",
+      "queries": [
+        "epistemic role of Message 001",
+        "current thread epistemic state",
+        "epistemic role from Message 003 onward",
+        "independent substantive base and exposure trigger"
+      ]
+    }
+  ],
+  "architecture_complexity_measurements": [
+    "shadow_source_count",
+    "source_local_relation_count",
+    "selective_temporal_field_count",
+    "standalone_relation_source_count",
+    "standalone_identity_transition_source_count",
+    "joint_authority_source_count",
+    "general_authoritative_registry_count",
+    "duplicated_authoritative_relation_count",
+    "universally_objectized_participant_count",
+    "real_semantic_query_failure_count"
+  ]
+}
