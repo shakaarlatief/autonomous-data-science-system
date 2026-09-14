@@ -1,0 +1,303 @@
+{
+  "schema_version": 1,
+  "fixture_id": "PKA-C01-Q9-MIGRATION-V01",
+  "candidate_id": "PKA-CANDIDATE-01",
+  "real_base_commit": "fe40740e62dabc41e538b2b604e84f5e9167e92d",
+  "purpose": "Shadow-only real migration/rollback qualification for Candidate 01 across semantic parity, identity/provenance, reverse-reference safety, legacy export, single-authority switch blocking and self-hosted evolution.",
+  "protocol": {
+    "shadow_only": true,
+    "current_project_authority_unchanged": true,
+    "implementation_may_read_oracle": false,
+    "migration_must_not_mutate_current_authority": true,
+    "rollback_export_must_not_overwrite_live_paths": true,
+    "authority_switch_forbidden": true,
+    "compatibility_export_temp_only": true,
+    "forbidden_answer_keys": [
+      "expected_value",
+      "expected_parity",
+      "should_pass",
+      "expected_switch_allowed",
+      "expected_rollback_status"
+    ]
+  },
+  "real_sources": [
+    {
+      "source_key": "current_routing",
+      "path": "docs/current_routing.json",
+      "bytes": 441,
+      "sha256": "59e2d91c34e14dcc9c4d5b7b411d142112a89efe3aa459e10a5b938a1999f356",
+      "source_class": "legacy_live_authority"
+    },
+    {
+      "source_key": "current_state",
+      "path": "docs/CURRENT_STATE.md",
+      "bytes": 290922,
+      "sha256": "5c61d098359bd50d4e7b00b2b4c1e6c1f0e524a0fca55d7bd00fe5c51956916d",
+      "source_class": "legacy_live_authority"
+    },
+    {
+      "source_key": "continuity",
+      "path": "docs/CONTINUITY.md",
+      "bytes": 24457,
+      "sha256": "6bcde628dc0f4f12d94df50a7a99127bb55c1c6e12c3764b5c9e9e0dd7a0f868",
+      "source_class": "legacy_governing_procedure"
+    },
+    {
+      "source_key": "research144",
+      "path": "docs/research/144_whole_architecture_candidate_repository_native_semantic_sources.md",
+      "bytes": 56456,
+      "sha256": "722d94d5a4cfa6b3d703f2b92c5dd197ef10380042a01386e7131f48268d3712",
+      "source_class": "candidate_design"
+    },
+    {
+      "source_key": "research163",
+      "path": "docs/research/163_q7_real_public_private_boundary_result.md",
+      "bytes": 9044,
+      "sha256": "3f055e3b96efad44fb5d5209c2fce7090a0a96271e2b4848691850a3b4f2f698",
+      "source_class": "migration_input_evidence"
+    },
+    {
+      "source_key": "qualification_matrix",
+      "path": "docs/research/project_knowledge_candidate_01/QUALIFICATION_MATRIX_V01.json",
+      "bytes": 39495,
+      "sha256": "43d4aed2befca650241f7bf6fb7182426b89fc426942363defb0cdc713ac0c3f",
+      "source_class": "candidate_qualification_state"
+    },
+    {
+      "source_key": "spec027",
+      "path": "docs/specifications/027_v1_historical_intermediate_checkpoint_integrity_extension.md",
+      "bytes": 7988,
+      "sha256": "96df5da7c45be645c39ee9b02d1568772aa1b598f6393af784a076702b5a5229",
+      "source_class": "computed_control"
+    },
+    {
+      "source_key": "checkpoint192",
+      "path": "docs/checkpoints/192_specification_022_incomplete_result_preservation_promotion_candidate.md",
+      "bytes": 13541,
+      "sha256": "144e38e6ed91f64a23d33d62f7a557088f6ebed6a472458fd931d9d785133fbb",
+      "source_class": "computed_control"
+    },
+    {
+      "source_key": "checkpoint508",
+      "path": "docs/checkpoints/508_q7_real_subsystem_support_passed_q9_migration_rollback_next.md",
+      "bytes": 1907,
+      "sha256": "d04311d48e080c45bcb942a42263a160fb36e9171b7f9832dc64b008cc3f2bcc",
+      "source_class": "migration_input_evidence"
+    },
+    {
+      "source_key": "routing_checker",
+      "path": "scripts/check_current_routing.py",
+      "bytes": 10630,
+      "sha256": "0bdcb46c6d7d7971139e2f6eba39f89decb0303fa3a98d96fa8bcfcd0ec8cb0f",
+      "source_class": "legacy_compatibility_validator"
+    }
+  ],
+  "shadow_sources": [
+    {
+      "source_key": "active_workstream",
+      "path": "docs/research/project_knowledge_candidate_01_q9_migration_v01/SHADOW_ACTIVE_WORKSTREAM.md",
+      "bytes": 1300,
+      "sha256": "f68897636d7d8728b263d61a191a66ea1775a242e27014eb15f3fcd01ec43568",
+      "source_class": "shadow_successor_candidate"
+    },
+    {
+      "source_key": "integration_boundary",
+      "path": "docs/research/project_knowledge_candidate_01_q9_migration_v01/SHADOW_PROJECT_INTEGRATION_BOUNDARY.md",
+      "bytes": 846,
+      "sha256": "dd03a8eea4696445b7def2424ffe05440e55790534aa98375000fce84a2bd893",
+      "source_class": "shadow_successor_candidate"
+    },
+    {
+      "source_key": "migration_workstream",
+      "path": "docs/research/project_knowledge_candidate_01_q9_migration_v01/SHADOW_MIGRATION_WORKSTREAM.md",
+      "bytes": 1674,
+      "sha256": "74e6cb5bc4971f07ddb60e707da886659d4f9b6c35cf10a9ae10eabccec95a2c",
+      "source_class": "shadow_successor_candidate"
+    }
+  ],
+  "computed_controls": {
+    "latest_specification": {
+      "source_key": "spec027",
+      "parse": "specification_number_from_title"
+    },
+    "latest_experiment_outcome": {
+      "source_key": "checkpoint192",
+      "parse": "incomplete_experiment_outcome_marker"
+    }
+  },
+  "migration_units": [
+    {
+      "unit_id": "MU01",
+      "semantic": "current_checkpoint",
+      "legacy": {
+        "source_key": "current_routing",
+        "json_pointer": "/current_checkpoint"
+      },
+      "successor": {
+        "source_key": "active_workstream",
+        "json_pointer": "/execution_anchor/current_checkpoint"
+      }
+    },
+    {
+      "unit_id": "MU02",
+      "semantic": "active_development_branch",
+      "legacy": {
+        "source_key": "current_routing",
+        "json_pointer": "/active_development_branch"
+      },
+      "successor": {
+        "source_key": "active_workstream",
+        "json_pointer": "/execution_anchor/active_development_branch"
+      }
+    },
+    {
+      "unit_id": "MU03",
+      "semantic": "active_pr",
+      "legacy": {
+        "source_key": "current_routing",
+        "json_pointer": "/active_pr"
+      },
+      "successor": {
+        "source_key": "active_workstream",
+        "json_pointer": "/execution_anchor/active_pr"
+      }
+    },
+    {
+      "unit_id": "MU04",
+      "semantic": "current_boundary",
+      "legacy": {
+        "source_key": "current_routing",
+        "json_pointer": "/current_boundary"
+      },
+      "successor": {
+        "source_key": "active_workstream",
+        "json_pointer": "/execution_anchor/current_semantic_boundary"
+      }
+    },
+    {
+      "unit_id": "MU05",
+      "semantic": "promoted_integration_branch",
+      "legacy": {
+        "source_key": "current_routing",
+        "json_pointer": "/promoted_integration_branch"
+      },
+      "successor": {
+        "source_key": "integration_boundary",
+        "json_pointer": "/promoted_branch"
+      }
+    },
+    {
+      "unit_id": "MU06",
+      "semantic": "promoted_integration_sha",
+      "legacy": {
+        "source_key": "current_routing",
+        "json_pointer": "/promoted_integration_sha"
+      },
+      "successor": {
+        "source_key": "integration_boundary",
+        "json_pointer": "/promoted_commit"
+      }
+    },
+    {
+      "unit_id": "MU07",
+      "semantic": "latest_specification",
+      "legacy": {
+        "source_key": "current_routing",
+        "json_pointer": "/latest_specification"
+      },
+      "successor": {
+        "computed_control": "latest_specification"
+      }
+    },
+    {
+      "unit_id": "MU08",
+      "semantic": "latest_experiment_outcome",
+      "legacy": {
+        "source_key": "current_routing",
+        "json_pointer": "/latest_experiment_outcome"
+      },
+      "successor": {
+        "computed_control": "latest_experiment_outcome"
+      }
+    },
+    {
+      "unit_id": "MU09",
+      "semantic": "target_architecture_not_selected",
+      "legacy": {
+        "source_key": "qualification_matrix",
+        "json_pointer": "/summary/target_selection_allowed",
+        "transform": "false_to_target_not_selected"
+      },
+      "successor": {
+        "source_key": "active_workstream",
+        "json_pointer": "/selection_state"
+      }
+    },
+    {
+      "unit_id": "MU10",
+      "semantic": "final_qualified_passes",
+      "legacy": {
+        "source_key": "qualification_matrix",
+        "json_pointer": "/summary/final_qualified_passes"
+      },
+      "successor": {
+        "source_key": "migration_workstream",
+        "json_pointer": "/qualification/final_qualified_passes"
+      }
+    }
+  ],
+  "policy_checks": [
+    {
+      "check_id": "P01",
+      "source_key": "research144",
+      "must_contain": "Migration is staged and **single-authority throughout**."
+    },
+    {
+      "check_id": "P02",
+      "source_key": "research144",
+      "must_contain": "Until then, the current continuity architecture remains authoritative."
+    },
+    {
+      "check_id": "P03",
+      "source_key": "research144",
+      "must_contain": "Rollback freezes writes, regenerates legacy surfaces from the exact successor head"
+    },
+    {
+      "check_id": "P04",
+      "source_key": "research163",
+      "must_contain": "The next experiment should remain **shadow-only** and prove migration/rollback mechanics without switching authority."
+    }
+  ],
+  "reverse_reference_targets": [
+    "docs/current_routing.json",
+    "docs/CURRENT_STATE.md",
+    "docs/CONTINUITY.md"
+  ],
+  "rollback_export_contract": {
+    "compatibility_paths": [
+      "docs/current_routing.json",
+      "docs/CURRENT_STATE.md"
+    ],
+    "legacy_validator_source_key": "routing_checker",
+    "checkpoint_source_key": "checkpoint508",
+    "checked_branch": "v1-source-vault-bootstrap-resume",
+    "must_not_modify_live_repository": true
+  },
+  "switch_gate": {
+    "required_frozen_item_count": 67,
+    "required_conditions": [
+      "FULL_REQUIREMENTS_QUALIFICATION",
+      "OWNER_TARGET_ACCEPTANCE",
+      "ROLLBACK_PROOF",
+      "PUBLIC_REPOSITORY_INTEGRITY_PASS"
+    ]
+  },
+  "self_hosting_queries": [
+    "current migration phase",
+    "current operational authority",
+    "successor authority state",
+    "parent workstream identity",
+    "next migration action",
+    "authority switch requested state"
+  ]
+}

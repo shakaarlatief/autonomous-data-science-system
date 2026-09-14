@@ -1,7 +1,7 @@
 # Research 144: Whole-Architecture Candidate - Repository-Native Semantic Sources with Selective Identity, Derived Views, and Action-Gated Authority
 
 **Date:** 2026-09-14
-**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE / Q3 + Q7 REAL SUBSYSTEM SUPPORT PASSED / Q9 MIGRATION-ROLLBACK SHADOW NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE / Q3 + Q7 REAL SUPPORT / Q9 MIGRATION-ROLLBACK FIXTURE FROZEN / TARGET ARCHITECTURE NOT SELECTED
 **Candidate label:** `PKA-CANDIDATE-01`
 **Scope:** Synthesize one serious successor architecture from the complete Research 124 evidence field after the H1/H2 mechanism probes, real-corpus independent review, MC-0014/MC-0015 corrections, D1-D8 external evidence and owner-provided ICM evaluation. Define enough logical structure, authority semantics, typed source responsibilities, derived-view behavior, activation, lifecycle, validation, scaling and migration behavior to qualify the candidate systematically against Requirements V0.2.
 **Authority:** Candidate architecture research only. Requirements V0.2 remain the frozen acceptance authority. This record does not select the target architecture, migrate current authority, or authorize implementation as the production continuity system.
@@ -1160,4 +1160,15 @@ Q7_REAL_SUBSYSTEM_SUPPORT=PASS
 PRIVATE_NONLEAKAGE=PASS
 SINGLE_PROJECT_DEVELOPMENT_AUTHORITY=PRESERVED
 NEXT=Q9_MIGRATION_ROLLBACK_SHADOW
+```
+
+## 46. Q9 migration/rollback experiment is frozen before execution
+
+Research 164 turns Sections 27 and 33.10 into a real-base shadow challenge. Candidate 01 must now prove that its successor semantic sources can preserve migration-critical meaning and produce legacy-compatible rollback surfaces without becoming authority. Reverse references to compatibility paths are measured, switch preconditions are fail-closed, and the migration workstream self-hosts its own continuation state.
+
+```text
+Q9_FIXTURE=FROZEN
+ROLLBACK=EXPORTER_BASED_TEST_PENDING
+DUAL_AUTHORITY=FORBIDDEN
+NEXT=IMPLEMENT_Q9_MIGRATION_V01
 ```

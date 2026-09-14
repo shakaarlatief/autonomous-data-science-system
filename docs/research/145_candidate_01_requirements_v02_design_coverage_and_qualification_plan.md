@@ -1,7 +1,7 @@
 # Research 145: Candidate 01 Requirements V0.2 Design Coverage and Qualification Plan
 
 **Date:** 2026-09-14
-**Status:** 50/50 KA-R + 17/17 KA-I DESIGN-MAPPED / Q3 + Q7 REAL SUBSYSTEM SUPPORT PASSED / Q9 MIGRATION-ROLLBACK SHADOW NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** 50/50 KA-R + 17/17 KA-I DESIGN-MAPPED / Q9 MIGRATION-ROLLBACK FIXTURE FROZEN / IMPLEMENTATION NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Candidate:** `PKA-CANDIDATE-01` from Research 144
 **Scope:** Systematically map the whole-architecture candidate against every frozen Requirements V0.2 requirement/invariant, distinguish design coverage from actual qualification evidence, identify selection-blocking proof clusters, and freeze the minimum implementation/behavioral evidence needed before target selection.
 **Authority:** Candidate qualification planning only. Requirements V0.2 remain the acceptance authority. A mapped design mechanism is not a qualified pass.
@@ -473,4 +473,14 @@ Current descriptive evidence coverage rises to 45/67 items with some real Candid
 Q7_REAL_EVIDENCE=RECORDED
 FINAL_QUALIFIED_PASSES=0
 NEXT=Q9_MIGRATION_AUTHORITY_SWITCH_ROLLBACK_SHADOW
+```
+
+## 25. Q9 migration/rollback fixture freeze
+
+Research 164 freezes the direct behavioral challenge for KA-R19/R43/R44/R45 and KA-I08/I17. The test maps ten real migration-critical semantics, preserves three successor semantic identities, measures reverse references to compatibility paths, requires a temporary rollback export that the legacy routing validator accepts, keeps the switch gate closed at 0/67 final passes, and requires Candidate 01 to represent the migration of itself.
+
+```text
+Q9_REAL_BASE_SHADOW_IMPLEMENTATION=PENDING
+AUTHORITY_SWITCH=FORBIDDEN
+NEXT=IMPLEMENT_Q9_MIGRATION_V01
 ```

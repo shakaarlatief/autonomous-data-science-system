@@ -349,6 +349,7 @@ docs/research/160_q3_real_identity_relationship_temporal_fixture_freeze.md
 docs/research/161_q3_real_identity_relationship_temporal_result.md
 docs/research/162_q7_real_public_private_boundary_fixture_freeze.md
 docs/research/163_q7_real_public_private_boundary_result.md
+docs/research/164_q9_migration_authority_switch_rollback_fixture_freeze.md
 docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md
 docs/checkpoints/449_scalable_knowledge_architecture_redesign_opened.md
 docs/checkpoints/450_knowledge_architecture_baseline_inventory_complete_requirements_next.md
@@ -410,6 +411,7 @@ docs/checkpoints/505_q3_real_identity_temporal_fixture_frozen.md
 docs/checkpoints/506_q3_real_subsystem_support_passed_q7_next.md
 docs/checkpoints/507_q7_real_public_private_fixture_frozen.md
 docs/checkpoints/508_q7_real_subsystem_support_passed_q9_migration_rollback_next.md
+docs/checkpoints/509_q9_migration_authority_switch_rollback_fixture_frozen.md
 docs/research/PROJECT_KNOWLEDGE_FAILURE_CORPUS.md
 docs/research/project_knowledge_baselines/PROJECT_KNOWLEDGE_BLIND_BASELINE_PROTOCOL.md
 docs/local_execution/validation/206_semantic_git_managed_python_integrity_and_publication_restored.md
@@ -945,7 +947,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-508 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-509 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 
