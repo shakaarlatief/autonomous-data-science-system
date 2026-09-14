@@ -331,6 +331,7 @@ docs/research/142_real_corpus_cross_reviewer_comparison_and_construct_validity_c
 docs/research/143_real_corpus_construct_reconciliation_and_candidate_synthesis_readiness.md
 docs/research/144_whole_architecture_candidate_repository_native_semantic_sources.md
 docs/research/145_candidate_01_requirements_v02_design_coverage_and_qualification_plan.md
+docs/research/146_mc0016_adversarial_candidate_review_disposition_and_design_amendments.md
 docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md
 docs/checkpoints/449_scalable_knowledge_architecture_redesign_opened.md
 docs/checkpoints/450_knowledge_architecture_baseline_inventory_complete_requirements_next.md
@@ -374,6 +375,7 @@ docs/checkpoints/487_real_corpus_cross_reviewer_construct_validity_review_opened
 docs/checkpoints/488_mc0015_resolved_corrected_semantic_axes_candidate_synthesis_next.md
 docs/checkpoints/489_whole_architecture_candidate_01_design_coverage_complete.md
 docs/checkpoints/490_mc0016_adversarial_candidate_01_review_opened.md
+docs/checkpoints/491_mc0016_message001_reconciled_candidate01_amended_narrow_followup.md
 docs/research/PROJECT_KNOWLEDGE_FAILURE_CORPUS.md
 docs/research/project_knowledge_baselines/PROJECT_KNOWLEDGE_BLIND_BASELINE_PROTOCOL.md
 docs/local_execution/validation/206_semantic_git_managed_python_integrity_and_publication_restored.md
@@ -909,7 +911,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-490 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-491 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

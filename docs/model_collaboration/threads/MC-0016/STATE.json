@@ -3,11 +3,11 @@
   "thread_id": "MC-0016",
   "review_mode": "ADVERSARIAL_REVIEW",
   "lifecycle_state": "OPEN",
-  "phase": "ADVERSARIAL_CANDIDATE_REVIEW",
+  "phase": "NARROW_AMENDMENT_REVIEW",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
-    "base_ref": "69aed186a0d63b3c395a133cd920099d5fa8e000",
-    "description": "Adversarial review of PKA-CANDIDATE-01 whole architecture and its 50 KA-R / 17 KA-I design mapping before shadow implementation. No target selection or migration is authorized.",
+    "base_ref": "64d04fcc6ba2bcf6b66d4abbcccea714ca11870b",
+    "description": "Narrow review of Candidate 01 amendments for sole-normative action-contract precedence and J1-J6 joint-authority admission. No target selection or implementation is authorized.",
     "write_paths": []
   },
   "task_owner": "chatgpt",
@@ -53,19 +53,19 @@
   "next_expected_actor": "claude",
   "independence": {
     "status": "NOT_APPLICABLE",
-    "review_base_ref": "69aed186a0d63b3c395a133cd920099d5fa8e000",
+    "review_base_ref": "64d04fcc6ba2bcf6b66d4abbcccea714ca11870b",
     "known_exposures": [
       "Claude participated in earlier Research 124 collaboration and knows the architecture problem, probe results and corrected semantic axes.",
       "This review intentionally exposes the complete Candidate 01 and Requirements V0.2 mapping."
     ],
-    "notes": "This is adversarial comparative review, not an independence-sensitive design round."
+    "notes": "Narrow comparative follow-up requested by Claude Message 001 after ChatGPT supplied concrete amendments. Independence is not claimed."
   },
   "last_transition": {
-    "transition_id": "mc0016-open-adversarial-candidate-review",
-    "from_state": null,
+    "transition_id": "mc0016-message002-amendments-narrow-followup",
+    "from_state": "OPEN",
     "to_state": "OPEN",
     "actor": "chatgpt",
-    "reason": "Candidate 01 now exists as a whole architecture and maps all frozen requirements at design level. Adversarial review before implementation has high value because hidden duplication or requirement gaps are still cheap to correct.",
-    "repository_head": "69aed186a0d63b3c395a133cd920099d5fa8e000"
+    "reason": "Claude Message 001 exposed several under-specified mechanisms. Candidate 01 was amended and one final narrow Claude review is requested on normative action-contract precedence and JOINT_AUTHORITY admission only.",
+    "repository_head": "64d04fcc6ba2bcf6b66d4abbcccea714ca11870b"
   }
 }

@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / CANDIDATE 01 DESIGN-MAPPED / MC-0016 ADVERSARIAL CANDIDATE REVIEW ACTIVE / TARGET ARCHITECTURE NOT SELECTED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / CANDIDATE 01 AMENDED AFTER MC-0016 REVIEW / NARROW MESSAGE 003 NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -3939,4 +3939,23 @@ EXACT_REVIEW_TARGET=69aed186a0d63b3c395a133cd920099d5fa8e000
 CANDIDATE=PKA-CANDIDATE-01
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=CLAUDE_MESSAGE_001
+```
+
+## 91. MC-0016 Message 001 materially amends Candidate 01
+
+Claude's exact-target adversarial review is accepted as substantive evidence. It identifies a repeated architecture risk: stating an admission, precedence or fidelity intention in prose is not enough if the architecture lacks an observable rule that governs disagreement or transition. Research 146 reconciles the review and Candidate 01 is amended at `64d04fcc6ba2bcf6b66d4abbcccea714ca11870b`.
+
+The most important new rules are one normative home for exact action-contract facts, a deterministic-plan-first assurance ladder, a default-deny J1-J6 joint-authority promotion test, must-preserve manifests for consequential consolidation, deterministic current-state core plus subordinate narrative, dependency-local ordinary refresh, bounded current identity lookup, paused-workstream salience, capture-backlog pressure and exporter-based rollback without dual authority.
+
+The review's requirement-level downgrades are preserved as exact-target reviewer evidence but calibrated against frozen requirement scope. The task-owner working mapping returns to 50 KA-R / 17 KA-I design-covered after amendment, while final qualified passes remain zero.
+
+Claude requested one short follow-up if concrete answers were supplied for the two most architecture-sensitive defects. MC-0016 therefore remains open only for Message 003 reviewing (B) normative action-contract precedence and (D) J1-J6 joint-authority admission.
+
+```text
+MC0016_MESSAGE001=RECONCILED
+CANDIDATE_01_AMENDED_TARGET=64d04fcc6ba2bcf6b66d4abbcccea714ca11870b
+TASK_OWNER_DESIGN_MAPPING=50_KA_R__17_KA_I
+FINAL_QUALIFIED_PASSES=0
+MC0016_MESSAGE003=NARROW_REVIEW_NEXT
+TARGET_ARCHITECTURE=NOT_SELECTED
 ```

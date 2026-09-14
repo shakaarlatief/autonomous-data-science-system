@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-13
-**Status:** MC-0016 ADVERSARIAL CANDIDATE REVIEW ACTIVE / CLAUDE MESSAGE 001 NEXT / MC-0010 DEFERRED
+**Status:** MC-0016 NARROW AMENDMENT REVIEW ACTIVE / CLAUDE MESSAGE 003 NEXT / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -27,16 +27,18 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ```text
 collaborator               Claude / claude-03
-mode                       ADVERSARIAL_REVIEW
+mode                       ADVERSARIAL_REVIEW -> NARROW_AMENDMENT_REVIEW
 coordination branch        v1-source-vault-bootstrap-resume
-exact review target        69aed186a0d63b3c395a133cd920099d5fa8e000
-candidate                  PKA-CANDIDATE-01
-next output                docs/model_collaboration/threads/MC-0016/messages/001_claude_adversarial_candidate_01_review.md
-status                     OPEN / CLAUDE MESSAGE 001 NEXT
+original review target     69aed186a0d63b3c395a133cd920099d5fa8e000
+Claude Message 001         complete @ 6b13b1891d9d22332c1933a1eaeae0a29e3ef03f
+amended candidate target  64d04fcc6ba2bcf6b66d4abbcccea714ca11870b
+ChatGPT Message 002        complete
+next output                docs/model_collaboration/threads/MC-0016/messages/003_claude_narrow_candidate_amendment_review.md
+status                     OPEN / CLAUDE MESSAGE 003 NEXT
 conversation               03 - Project Knowledge Architecture Foundations and Design Method
 ```
 
-Claude should attack the candidate as an integrated architecture, independently audit the 50 KA-R / 17 KA-I design-coverage claim, test rich-source versus structured-declaration drift, identity/tombstone boundedness, the joint-authority exception, generated current-state feasibility, action-contract fidelity, capture/consolidation economics, migration safety and whether H3 or another family should reopen.
+Claude's first review found several under-specified mechanisms. Research 146 and amended Research 144 incorporate calibrated corrections. The only remaining collaboration question before a shadow prototype is whether two architecture-sensitive amendments really close their defects: (B) the sole-normative action-contract precedence rule and (D) the J1-J6 joint-authority admission/governance rule. Message 003 must remain narrow; no full re-review is requested.
 
 Durable contract:
 
@@ -44,6 +46,8 @@ Durable contract:
 docs/model_collaboration/threads/MC-0016/BRIEF.md
 docs/model_collaboration/threads/MC-0016/THREAD.md
 docs/model_collaboration/threads/MC-0016/STATE.json
+docs/model_collaboration/threads/MC-0016/messages/001_claude_adversarial_candidate_01_review.md
+docs/model_collaboration/threads/MC-0016/messages/002_chatgpt_adversarial_review_disposition_and_narrow_followup.md
 ```
 
 ## Most recently completed obligation

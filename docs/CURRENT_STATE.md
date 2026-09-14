@@ -1,7 +1,7 @@
 # Current State
 
-**Checkpoint:** 490
-**Date:** 2026-09-13
+**Checkpoint:** 491
+**Date:** 2026-09-14
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
 **Promoted V1 integration branch:** `v1-frontend-spike` at `2480109fadeee1e480ef03b82e335aacdf9adf91`
@@ -23,6 +23,8 @@ Repository artifacts remain authoritative across chats and models.
 ---
 
 ## Current active stage: Research 124 project-development knowledge architecture redesign
+Checkpoint 491 reconciles Claude MC-0016 Message 001 and amends `PKA-CANDIDATE-01` before implementation. The review is accepted as materially useful: action-contract prose/structure precedence, joint-authority admission governance, consolidation fidelity, routine derived refresh, identity lookup, capture-backlog pressure, paused-workstream salience, rollback mechanics and complexity-growth observability are now explicit. Research 146 also calibrates three requirement-scope points: KA-R31/KA-I12 govern required reconstruction rather than periodic full-rebuild cost; KA-R46 already had identity continuity semantics and now gains a bounded current lookup; rollback belongs most directly to KA-R44 rather than KA-R43. The amended candidate target is `64d04fcc6ba2bcf6b66d4abbcccea714ca11870b`. MC-0016 remains open for exactly one narrow Claude Message 003 on the sole-normative action-contract rule and J1-J6 joint-authority admission test. Requirements V0.2 and current continuity remain authoritative; final qualified passes remain zero and no target architecture is selected.
+
 Checkpoint 490 opens MC-0016 for adversarial review of `PKA-CANDIDATE-01` before shadow implementation. The exact review target is `69aed186a0d63b3c395a133cd920099d5fa8e000`, which contains Research 144's whole architecture and Research 145's complete 50 KA-R / 17 KA-I design mapping. Claude is asked to treat zero design gaps as a falsifiable claim, attack hidden duplicate truth and interaction risks, audit all frozen requirements/invariants, and determine the smallest falsification-first prototype slice. No implementation or authority switch is authorized by this checkpoint. Requirements V0.2 and the current continuity architecture remain authoritative; no target architecture is selected.
 
 Checkpoint 489 synthesizes `PKA-CANDIDATE-01`, the first whole-architecture successor candidate after the corrected real-corpus semantic model. The candidate keeps rich repository-native sources primary, uses selective durable identity, defaults authority to one canonical source, reserves joint-authority declarations for demonstrated exceptions, generates current/routing/navigation/identity/authority views, and adds action-shaped authority resolution plus structured action-contract activation. Research 145 maps all 50 KA-R and 17 KA-I statements to explicit candidate mechanisms with no identified design-coverage gap, but records zero final qualified passes because the candidate has not yet been implemented and behaviorally qualified as one integrated system. Ten selection-blocking proof clusters remain. The next step is adversarial review of this concrete candidate and then a shadow prototype focused on falsification, not migration. Requirements V0.2 and the current continuity architecture remain authoritative; no target architecture is selected.
