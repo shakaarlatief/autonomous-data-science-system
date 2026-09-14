@@ -634,7 +634,8 @@
     "prototype_ready_at_design_level": true,
     "prototype_foundational_slice_passed": true,
     "operational_shadow_v02_passed": true,
-    "real_repository_shadow_v01_passed": true
+    "real_repository_shadow_v01_passed": true,
+    "zero_seed_routing_shadow_passed": true
   },
   "adversarial_review": {
     "thread": "MC-0016",
@@ -760,5 +761,35 @@
       "KA-I16"
     ],
     "target_selection_allowed": false
+  },
+  "prototype_evidence_zero_seed_routing_v01": {
+    "research": "research:155",
+    "freeze_commit": "e327d2a2f4843b99f1440c977b7ce6e5a108759f",
+    "real_base_commit": "4da4cfecc052b2f339e14dba0e91525662c144b2",
+    "result_path": "docs/research/project_knowledge_candidate_01_zero_seed_routing_v01/RESULTS_V01.json",
+    "result_sha256": "cf0d4f9505ad8fdab0c54bf293e9022448239318516f9f2f88dcdab12a7dd5eb",
+    "first_run_comparison_sha256": "986f2f82d8248fa038f24f02bdfc6428a06346bc59e1a5634bfe848d607cc414",
+    "first_run_checks": {
+      "passed": 8,
+      "failed": 0
+    },
+    "evidence_class": "REAL_REPOSITORY_ZERO_SEED_SUBSYSTEM_SUPPORT",
+    "final_qualification_credit": false,
+    "global_live_state_generation_fact_count": 0,
+    "manual_successor_source_touch_count": 2,
+    "routing_exact_parity": true,
+    "supported_mechanism_ids": [
+      "KA-R06",
+      "KA-R21",
+      "KA-R23",
+      "KA-R25",
+      "KA-R31",
+      "KA-R33",
+      "KA-R47",
+      "KA-I02",
+      "KA-I03",
+      "KA-I13",
+      "KA-I15"
+    ]
   }
 }

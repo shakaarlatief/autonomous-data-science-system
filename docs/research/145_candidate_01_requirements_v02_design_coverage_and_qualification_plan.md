@@ -1,7 +1,7 @@
 # Research 145: Candidate 01 Requirements V0.2 Design Coverage and Qualification Plan
 
 **Date:** 2026-09-14
-**Status:** 50/50 KA-R + 17/17 KA-I DESIGN-MAPPED / REAL-REPOSITORY SHADOW V0.1 PASSED / ZERO-SEED ROUTING SHADOW NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** 50/50 KA-R + 17/17 KA-I DESIGN-MAPPED / ZERO-SEED ROUTING SHADOW PASSED / CURRENT-STATE DECOMPOSITION NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Candidate:** `PKA-CANDIDATE-01` from Research 144
 **Scope:** Systematically map the whole-architecture candidate against every frozen Requirements V0.2 requirement/invariant, distinguish design coverage from actual qualification evidence, identify selection-blocking proof clusters, and freeze the minimum implementation/behavioral evidence needed before target selection.
 **Authority:** Candidate qualification planning only. Requirements V0.2 remain the acceptance authority. A mapped design mechanism is not a qualified pass.
@@ -376,4 +376,16 @@ REAL_REPOSITORY_SHADOW_SUPPORT=RECORDED
 ZERO_SEED_ROUTING_PARITY=PENDING
 FINAL_QUALIFIED_PASSES=0
 TARGET_ARCHITECTURE=NOT_SELECTED
+```
+
+## 17. Zero-seed routing subsystem evidence
+
+Research 155 records the first Candidate 01 real-repository subsystem result with zero global live-state facts in the generation path. Exact routing compatibility parity is achieved from natural successor owners after two explicit migration touches.
+
+The evidence strengthens routing/rebuild/maintenance requirements but remains subsystem support rather than final requirement qualification because the successor sources are still shadow-only and the full continuity system has not migrated or rolled back.
+
+```text
+ZERO_SEED_ROUTING_SUBSYSTEM_SUPPORT=PASS
+FINAL_QUALIFIED_PASSES=0
+NEXT=CURRENT_STATE_DECOMPOSITION_AND_SOURCE_OWNERSHIP_AUDIT
 ```

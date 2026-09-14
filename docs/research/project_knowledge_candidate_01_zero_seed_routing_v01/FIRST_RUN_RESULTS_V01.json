@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "probe_id": "PKA-C01-ZERO-SEED-ROUTING-PROBE-V01",
+  "candidate_id": "PKA-CANDIDATE-01",
+  "fixture_id": "PKA-C01-ZERO-SEED-ROUTING-V01",
+  "real_base_commit": "4da4cfecc052b2f339e14dba0e91525662c144b2",
+  "fixture_sha256": "25d302e1fd46afdc1f7e1d363cd8eeedc5881c055aeb2ab79655bae756364594",
+  "shadow_only": true,
+  "implementation_reads_oracle": false,
+  "all_source_hashes_match": true,
+  "generation": {
+    "routing_projection": {
+      "schema_version": 1,
+      "current_checkpoint": 498,
+      "active_development_branch": "v1-source-vault-bootstrap-resume",
+      "active_pr": null,
+      "promoted_integration_branch": "v1-frontend-spike",
+      "promoted_integration_sha": "2480109fadeee1e480ef03b82e335aacdf9adf91",
+      "latest_specification": "027",
+      "latest_experiment_outcome": "INCOMPLETE",
+      "current_boundary": "project-knowledge-zero-seed-routing-shadow-next"
+    },
+    "generation_reads": [
+      "docs/research/project_knowledge_candidate_01_zero_seed_routing_v01/SHADOW_WORKSTREAM_SOURCE.md",
+      "docs/research/project_knowledge_candidate_01_zero_seed_routing_v01/SHADOW_PROJECT_INTEGRATION_BOUNDARY.md",
+      "docs/specifications/027_v1_historical_intermediate_checkpoint_integrity_extension.md",
+      "docs/checkpoints/192_specification_022_incomplete_result_preservation_promotion_candidate.md"
+    ],
+    "forbidden_generation_path_reads": [],
+    "shadow_source_kinds": {
+      "active_workstream": "WORKSTREAM",
+      "integration_boundary": "PROJECT_INTEGRATION_BOUNDARY"
+    },
+    "semantic_ownership": {
+      "active_development_branch": "active_workstream.execution_anchor",
+      "active_pr": "active_workstream.execution_anchor",
+      "current_checkpoint": "active_workstream.execution_anchor",
+      "current_boundary": "active_workstream.execution_anchor",
+      "promoted_integration_branch": "integration_boundary",
+      "promoted_integration_sha": "integration_boundary",
+      "latest_specification": "computed:spec027",
+      "latest_experiment_outcome": "computed:checkpoint192"
+    },
+    "global_live_state_generation_fact_count": 0,
+    "manual_shadow_source_touch_count": 2
+  },
+  "comparison": {
+    "comparison_reads": [
+      "docs/current_routing.json"
+    ],
+    "routing_exact_parity": true,
+    "target_sha256": "5a656b95115deaafc09c4dc556bdd688972c423e1ac7405aae583bfdc0deb3b4"
+  },
+  "metrics": {
+    "successor_shadow_source_count": 2,
+    "generation_source_read_count": 4,
+    "generation_forbidden_path_read_count": 0,
+    "global_live_state_generation_fact_count": 0,
+    "manual_shadow_source_touch_count": 2,
+    "broad_project_control_source_count": 0
+  }
+}

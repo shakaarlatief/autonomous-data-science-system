@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "fixture_id": "PKA-C01-ZERO-SEED-ROUTING-V01",
+  "first_run_result": "FIRST_RUN_RESULTS_V01.json",
+  "total_checks": 8,
+  "passed": 8,
+  "failed": 0,
+  "failed_checks": [],
+  "check_results": {
+    "all_source_hashes_match": true,
+    "shadow_source_kinds": true,
+    "routing_projection": true,
+    "routing_exact_parity": true,
+    "generation_forbidden_path_reads": true,
+    "generation_global_live_state_fact_count": true,
+    "manual_shadow_source_touch_count": true,
+    "semantic_ownership": true
+  }
+}

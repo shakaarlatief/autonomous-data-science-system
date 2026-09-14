@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / ZERO-SEED ROUTING FIXTURE FROZEN / IMPLEMENTATION NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / ZERO-SEED ROUTING PASSED / CURRENT-STATE DECOMPOSITION NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -4090,4 +4090,18 @@ GLOBAL_LIVE_STATE_GENERATION_FACTS=0
 CURRENT_ARCHITECTURE=STILL_AUTHORITY
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=IMPLEMENT_ZERO_SEED_ROUTING_V01
+```
+
+## 100. Zero-seed routing passes and current-state decomposition becomes the next bottleneck
+
+Research 155 executes the fixture frozen at Checkpoint 499. The first run passes 8/8 checks without repair and remains byte-identical to the final result at `cf0d4f9505ad8fdab0c54bf293e9022448239318516f9f2f88dcdab12a7dd5eb`. Two successor-native shadow sources plus real Specification 027 and Checkpoint 192 reproduce the exact frozen routing target with zero global live-state generation facts and zero forbidden target reads.
+
+This is the first direct evidence that one current global control surface can become a deterministic compatibility view after facts are relocated to natural semantic owners. The next major uncertainty is not routing but `CURRENT_STATE.md`, whose current role mixes live facts, orientation, rationale and history.
+
+```text
+ZERO_SEED_ROUTING=PASS
+ROUTING_SHADOW_SUBSYSTEM=SUPPORTED
+CURRENT_STATE_DECOMPOSITION=NEXT
+FINAL_QUALIFIED_PASSES=0
+TARGET_ARCHITECTURE=NOT_SELECTED
 ```

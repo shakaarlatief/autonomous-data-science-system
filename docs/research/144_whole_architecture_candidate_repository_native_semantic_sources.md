@@ -1,7 +1,7 @@
 # Research 144: Whole-Architecture Candidate - Repository-Native Semantic Sources with Selective Identity, Derived Views, and Action-Gated Authority
 
 **Date:** 2026-09-14
-**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE / REAL-REPOSITORY SHADOW V0.1 PASSED / ZERO-SEED SUCCESSOR-NATIVE ROUTING SHADOW NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE / ZERO-SEED ROUTING SHADOW PASSED / CURRENT-STATE DECOMPOSITION NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Candidate label:** `PKA-CANDIDATE-01`
 **Scope:** Synthesize one serious successor architecture from the complete Research 124 evidence field after the H1/H2 mechanism probes, real-corpus independent review, MC-0014/MC-0015 corrections, D1-D8 external evidence and owner-provided ICM evaluation. Define enough logical structure, authority semantics, typed source responsibilities, derived-view behavior, activation, lifecycle, validation, scaling and migration behavior to qualify the candidate systematically against Requirements V0.2.
 **Authority:** Candidate architecture research only. Requirements V0.2 remain the frozen acceptance authority. This record does not select the target architecture, migrate current authority, or authorize implementation as the production continuity system.
@@ -1072,4 +1072,20 @@ PRIMARY_WORKSTREAM_EXECUTION_ANCHOR=ADDED
 PROJECT_INTEGRATION_BOUNDARY_PROFILE=ADDED
 ZERO_SEED_ROUTING_SHADOW=REQUIRED_NEXT
 TARGET_ARCHITECTURE=NOT_SELECTED
+```
+
+## 40. Zero-seed successor-native routing is supported in shadow
+
+Research 155 proves exact `current_routing.json` compatibility parity using only two successor-native shadow canonical sources plus real non-target specification/experiment evidence. The generator consumes zero global live-state facts and performs zero reads of the current routing/state/navigation targets before comparison.
+
+This supports the ownership amendment from Research 153: primary active workstream execution anchors plus one narrow Project Integration Boundary are sufficient for the bounded real routing slice; a broad project-control registry is not required.
+
+Routing therefore moves from architecture-design uncertainty to shadow-subsystem support. Production authority migration, rollback and final qualification remain pending.
+
+```text
+ZERO_SEED_ROUTING_SHADOW=PASS
+ROUTING_COMPATIBILITY_VIEW=DERIVABLE_FROM_SUCCESSOR_NATIVE_OWNERS
+GLOBAL_LIVE_STATE_GENERATION_FACTS=0
+TARGET_ARCHITECTURE=NOT_SELECTED
+NEXT=CURRENT_STATE_DECOMPOSITION
 ```
