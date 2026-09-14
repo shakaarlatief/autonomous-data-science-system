@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / REAL-REPOSITORY SHADOW V0.1 FROZEN / IMPLEMENTATION NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / REAL-REPOSITORY SHADOW V0.1 PASSED / ZERO-SEED SUCCESSOR-NATIVE ROUTING SHADOW NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -4058,4 +4058,21 @@ GENERATION_COMPARISON_TARGET_READS=FORBIDDEN
 CURRENT_ARCHITECTURE=STILL_AUTHORITY
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=IMPLEMENT_REAL_SHADOW_V01
+```
+
+## 98. Real-repository Shadow V0.1 passes and exposes concrete control ownership
+
+Research 153 executes the exact real-repository fixture frozen at Checkpoint 497. The first run passes 24/24 checks without repair and the final result remains byte-identical at `54e666aa5d42bb83b97e0ff2a8124bd6024dfd22ab71f2740bb87638ee0f50a3`. Generation reads zero comparison targets; `current_routing.json`, `CURRENT_STATE.md` and `KNOWLEDGE_MAP.md` are opened only after the shadow projection exists.
+
+The most important outcome is not parity itself but its decomposition. One current workstream semantic unit needs successor-native representation, while active PR and promoted integration branch/SHA were still migration-seeded from today's global live-state authority. Candidate 01 is amended so the primary active workstream owns its branch/PR/boundary execution anchor, while one narrow Project Integration Boundary source owns promoted branch + exact promoted commit. A broad `PROJECT_CONTROL` registry is rejected for now.
+
+The next experiment must eliminate those migration seeds entirely and reproduce routing from successor-native shadow sources only.
+
+```text
+REAL_SHADOW_V01=PASS_ON_FIRST_RUN
+FIRST_RUN_CHECKS=24_OF_24
+ROUTING_EXACT_PARITY=PASS_WITH_SEEDS
+CONTROL_OWNERSHIP=AMENDED
+ZERO_SEED_ROUTING_SHADOW=NEXT
+TARGET_ARCHITECTURE=NOT_SELECTED
 ```

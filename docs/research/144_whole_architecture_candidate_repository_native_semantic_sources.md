@@ -1,7 +1,7 @@
 # Research 144: Whole-Architecture Candidate - Repository-Native Semantic Sources with Selective Identity, Derived Views, and Action-Gated Authority
 
 **Date:** 2026-09-14
-**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE / TWO SYNTHETIC SHADOW SLICES PASSED / REAL-REPOSITORY SHADOW QUALIFICATION NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE / REAL-REPOSITORY SHADOW V0.1 PASSED / ZERO-SEED SUCCESSOR-NATIVE ROUTING SHADOW NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Candidate label:** `PKA-CANDIDATE-01`
 **Scope:** Synthesize one serious successor architecture from the complete Research 124 evidence field after the H1/H2 mechanism probes, real-corpus independent review, MC-0014/MC-0015 corrections, D1-D8 external evidence and owner-provided ICM evaluation. Define enough logical structure, authority semantics, typed source responsibilities, derived-view behavior, activation, lifecycle, validation, scaling and migration behavior to qualify the candidate systematically against Requirements V0.2.
 **Authority:** Candidate architecture research only. Requirements V0.2 remain the frozen acceptance authority. This record does not select the target architecture, migrate current authority, or authorize implementation as the production continuity system.
@@ -981,4 +981,95 @@ SYNTHETIC_SHADOW_SLICES=2_PASS_AFTER_RECORDED_REPAIR_DISCIPLINE
 FINAL_QUALIFIED_PASSES=0
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=REAL_REPOSITORY_SHADOW_PARITY_AND_BEHAVIOR
+```
+
+## 39. Real-repository control-ownership amendment
+
+Research 153 is the first Candidate 01 experiment over a bounded real repository slice with the current global routing/state/navigation files withheld from generation. Exact routing parity succeeds, but the experiment deliberately distinguishes independently recovered facts from explicit migration seeds.
+
+The real evidence sharpens Candidate 01's ownership model rather than confirming today's global control surfaces.
+
+### 39.1 Primary active workstream owns its live execution anchor
+
+For the workstream that defines the primary continuation route, `current_anchor` may decompose into a small structured execution anchor owned by that workstream:
+
+```text
+active_development_branch    optional, when the workstream is bound to a branch
+active_pr                    optional explicit PR identity or explicit no-active-PR state
+current_checkpoint_or_ref    optional exact evidence/ref anchor
+current_semantic_boundary    optional next/resume boundary
+```
+
+These facts are not independent project-wide registry entries when they naturally describe the active workstream. Compatibility routing fields derive from the primary route's workstream source. Parallel workstreams may own their own branch/PR anchors without forcing the compatibility view to pretend the project has only one workstream.
+
+### 39.2 Project Integration Boundary is one narrow project-wide semantic unit
+
+The real slice also exposes a fact that does not naturally belong to the current Research 124 workstream: the exact integration boundary that the project has promoted as the stable upstream product/integration state. Candidate 01 therefore adds a narrow canonical source profile:
+
+```text
+kind                     PROJECT_INTEGRATION_BOUNDARY
+semantic_id              durable project-owned identity
+state                    current / superseded
+promoted_branch          exact integration branch
+promoted_commit          exact commit SHA
+promotion_provenance     checkpoint / decision / evidence references
+recorded_at               when materially useful
+```
+
+`promoted_branch + promoted_commit` are one semantic fact and must not be copied independently into several authority surfaces. `current_routing.json` and current-state views derive the pair from this source.
+
+### 39.3 Broad PROJECT_CONTROL registry remains rejected
+
+The real evidence does not justify a catch-all control file. Current routing values decompose into narrower ownership or deterministic projection:
+
+```text
+active branch / PR / current boundary
+    primary active workstream anchor
+
+promoted integration branch + SHA
+    Project Integration Boundary
+
+latest specification
+    specification identity/index projection
+
+latest experiment outcome
+    governed experiment/result state projection
+
+current checkpoint
+    active route/checkpoint evidence
+```
+
+A broad project-control source should be reconsidered only if later real cases reveal several unrelated project-wide control facts with no honest narrower owner and the narrower decomposition creates greater coordination cost.
+
+### 39.4 Honest parity requires zero-seed follow-up
+
+Research 153 obtains exact `current_routing.json` parity while explicitly seeding three facts from today's global authority and carrying the active branch from frozen experiment context. That is migration evidence, not successor-native reconstruction.
+
+Candidate 01 therefore requires one additional shadow gate before routing architecture can be considered migration-ready:
+
+```text
+create successor-native shadow canonical sources for:
+    primary active workstream execution anchor
+    Project Integration Boundary
+
+move all routing migration-seed facts into those sources
+
+regenerate routing with:
+    zero reads of current_routing.json
+    zero reads of CURRENT_STATE.md
+    zero copied global live-state migration facts
+
+require exact compatibility-view parity
+```
+
+This amendment does not select a physical file format or directory. It freezes semantic ownership only.
+
+```text
+REAL_SHADOW_V01=PASS
+ROUTING_PARITY=PASS_WITH_MEASURED_MIGRATION_SEEDS
+BROAD_PROJECT_CONTROL_PROFILE=REJECTED_FOR_NOW
+PRIMARY_WORKSTREAM_EXECUTION_ANCHOR=ADDED
+PROJECT_INTEGRATION_BOUNDARY_PROFILE=ADDED
+ZERO_SEED_ROUTING_SHADOW=REQUIRED_NEXT
+TARGET_ARCHITECTURE=NOT_SELECTED
 ```

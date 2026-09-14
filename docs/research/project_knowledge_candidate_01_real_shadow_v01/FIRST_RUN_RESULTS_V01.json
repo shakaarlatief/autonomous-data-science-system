@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "probe_id": "PKA-C01-REAL-SHADOW-PROBE-V01",
+  "candidate_id": "PKA-CANDIDATE-01",
+  "fixture_id": "PKA-C01-REAL-SHADOW-V01",
+  "base_commit": "e10fd108330f2cf8d260a621ea59053aebd28291",
+  "fixture_sha256": "9e8cd2ce0be7ced69eabc246414bd9aa0f21b305e03efeffd81db86c222d42bc",
+  "shadow_only": true,
+  "implementation_reads_oracle": false,
+  "manifest_verification": {
+    "all_match": true,
+    "sources": {
+      "research124": {
+        "path": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+        "bytes_match": true,
+        "sha256_match": true,
+        "comparison_target": false
+      },
+      "candidate144": {
+        "path": "docs/research/144_whole_architecture_candidate_repository_native_semantic_sources.md",
+        "bytes_match": true,
+        "sha256_match": true,
+        "comparison_target": false
+      },
+      "result151": {
+        "path": "docs/research/151_candidate01_operational_shadow_v02_empirical_result.md",
+        "bytes_match": true,
+        "sha256_match": true,
+        "comparison_target": false
+      },
+      "checkpoint496": {
+        "path": "docs/checkpoints/496_candidate01_operational_shadow_v02_passed_real_repository_shadow_next.md",
+        "bytes_match": true,
+        "sha256_match": true,
+        "comparison_target": false
+      },
+      "continuity": {
+        "path": "docs/CONTINUITY.md",
+        "bytes_match": true,
+        "sha256_match": true,
+        "comparison_target": false
+      },
+      "development_method": {
+        "path": "docs/DEVELOPMENT_METHOD.md",
+        "bytes_match": true,
+        "sha256_match": true,
+        "comparison_target": false
+      },
+      "spec027": {
+        "path": "docs/specifications/027_v1_historical_intermediate_checkpoint_integrity_extension.md",
+        "bytes_match": true,
+        "sha256_match": true,
+        "comparison_target": false
+      },
+      "checkpoint192": {
+        "path": "docs/checkpoints/192_specification_022_incomplete_result_preservation_promotion_candidate.md",
+        "bytes_match": true,
+        "sha256_match": true,
+        "comparison_target": false
+      },
+      "routing_target": {
+        "path": "docs/current_routing.json",
+        "bytes_match": true,
+        "sha256_match": true,
+        "comparison_target": true
+      },
+      "current_state_target": {
+        "path": "docs/CURRENT_STATE.md",
+        "bytes_match": true,
+        "sha256_match": true,
+        "comparison_target": true
+      },
+      "knowledge_map_target": {
+        "path": "docs/KNOWLEDGE_MAP.md",
+        "bytes_match": true,
+        "sha256_match": true,
+        "comparison_target": true
+      }
+    }
+  },
+  "generation": {
+    "source_reads": [
+      "candidate144",
+      "checkpoint192",
+      "checkpoint496",
+      "continuity",
+      "research124",
+      "result151",
+      "spec027"
+    ],
+    "generation_reads_comparison_targets": false,
+    "workstreams": {
+      "route": [
+        "WS-R124",
+        "WS-C01",
+        "WS-REAL-SHADOW"
+      ],
+      "migration_seed_workstreams": [
+        "WS-REAL-SHADOW"
+      ]
+    },
+    "migration_seed_project_control": {
+      "source_mode": "MIGRATION_FROM_EXISTING_GLOBAL_AUTHORITY",
+      "fact_count": 3,
+      "facts": [
+        "active_pr",
+        "promoted_integration_branch",
+        "promoted_integration_sha"
+      ]
+    },
+    "routing_projection": {
+      "schema_version": 1,
+      "current_checkpoint": 496,
+      "active_development_branch": "v1-source-vault-bootstrap-resume",
+      "active_pr": null,
+      "promoted_integration_branch": "v1-frontend-spike",
+      "promoted_integration_sha": "2480109fadeee1e480ef03b82e335aacdf9adf91",
+      "latest_specification": "027",
+      "latest_experiment_outcome": "INCOMPLETE",
+      "current_boundary": "project-knowledge-real-repository-shadow-next"
+    },
+    "continuity_contract": {
+      "aligned": true,
+      "constraint_positions": {
+        "B01": 200,
+        "B02": 215,
+        "B03": 235,
+        "B04": 259,
+        "B05": 290,
+        "B06": 317,
+        "B07": 344,
+        "B08": 420,
+        "B09": 464,
+        "B10": 519
+      }
+    },
+    "continuity_action_attempts": {
+      "BOOTSTRAP-GOOD": {
+        "status": "PASS",
+        "omitted": [],
+        "order_violations": []
+      },
+      "BOOTSTRAP-BAD": {
+        "status": "FAIL_VISIBLE",
+        "omitted": [
+          "B03"
+        ],
+        "order_violations": [
+          "B04",
+          "B05"
+        ]
+      }
+    },
+    "navigation_projection": {
+      "candidate-architecture": [
+        "candidate144"
+      ],
+      "candidate-qualification": [
+        "checkpoint496",
+        "result151"
+      ],
+      "current-boundary": [
+        "checkpoint496"
+      ],
+      "project-knowledge": [
+        "candidate144",
+        "checkpoint496",
+        "result151"
+      ],
+      "shadow-evidence": [
+        "result151"
+      ]
+    },
+    "real_capture": {
+      "capture_id": "REAL-CAP-01",
+      "authority_class": "candidate"
+    }
+  },
+  "comparison": {
+    "comparison_reads": [
+      "routing_target",
+      "current_state_target",
+      "knowledge_map_target"
+    ],
+    "routing_exact_parity": true,
+    "current_state_semantic_parity": {
+      "checkpoint": true,
+      "active_branch": true,
+      "research124_stage": true,
+      "next_real_shadow": true,
+      "target_not_selected": true
+    },
+    "knowledge_map_membership": {
+      "result151": true,
+      "checkpoint496": true,
+      "candidate144": true
+    }
+  },
+  "metrics": {
+    "generation_source_read_count": 7,
+    "generation_comparison_target_read_count": 0,
+    "migration_seed_workstream_count": 1,
+    "migration_seed_project_control_fact_count": 3
+  }
+}

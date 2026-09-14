@@ -1,7 +1,7 @@
 # Research 145: Candidate 01 Requirements V0.2 Design Coverage and Qualification Plan
 
 **Date:** 2026-09-14
-**Status:** 50/50 KA-R + 17/17 KA-I DESIGN-MAPPED / TWO SYNTHETIC SHADOW SLICES COMPLETE / REAL-REPOSITORY SHADOW QUALIFICATION NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** 50/50 KA-R + 17/17 KA-I DESIGN-MAPPED / REAL-REPOSITORY SHADOW V0.1 PASSED / ZERO-SEED ROUTING SHADOW NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Candidate:** `PKA-CANDIDATE-01` from Research 144
 **Scope:** Systematically map the whole-architecture candidate against every frozen Requirements V0.2 requirement/invariant, distinguish design coverage from actual qualification evidence, identify selection-blocking proof clusters, and freeze the minimum implementation/behavioral evidence needed before target selection.
 **Authority:** Candidate qualification planning only. Requirements V0.2 remain the acceptance authority. A mapped design mechanism is not a qualified pass.
@@ -361,4 +361,19 @@ Future evidence should now reduce synthetic-protocol bias rather than adding mor
 SYNTHETIC_OPERATIONAL_INTEGRATION=SUPPORTED
 FINAL_QUALIFIED_PASSES=0
 NEXT=REAL_REPOSITORY_SHADOW_PARITY_AND_BEHAVIOR
+```
+
+## 16. Real-repository Shadow V0.1 adds migration-seed evidence
+
+Research 153 adds the first bounded real-repository support to the qualification program. It demonstrates exact routing compatibility parity, real governing-procedure contract checking and real-source navigation/reconstruction while withholding current global views from generation.
+
+The evidence is intentionally not credited as final routing qualification because parity still uses measured migration seeds. One live workstream semantic unit lacks a successor-native canonical source, three project-control facts were explicitly migrated from today's global live-state authority, and the active branch came from the frozen experiment context.
+
+This converts an abstract migration concern into a concrete next gate: successor-native shadow ownership of the active workstream anchor and Project Integration Boundary must reproduce routing with zero global live-state seeds.
+
+```text
+REAL_REPOSITORY_SHADOW_SUPPORT=RECORDED
+ZERO_SEED_ROUTING_PARITY=PENDING
+FINAL_QUALIFIED_PASSES=0
+TARGET_ARCHITECTURE=NOT_SELECTED
 ```

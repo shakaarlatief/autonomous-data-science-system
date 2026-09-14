@@ -633,7 +633,8 @@
     "narrow_mc0016_followup_pending": false,
     "prototype_ready_at_design_level": true,
     "prototype_foundational_slice_passed": true,
-    "operational_shadow_v02_passed": true
+    "operational_shadow_v02_passed": true,
+    "real_repository_shadow_v01_passed": true
   },
   "adversarial_review": {
     "thread": "MC-0016",
@@ -722,5 +723,42 @@
       "KA-I16"
     ],
     "h3_reopen": false
+  },
+  "prototype_evidence_real_v01": {
+    "research": "research:153",
+    "base_commit": "e10fd108330f2cf8d260a621ea59053aebd28291",
+    "result_path": "docs/research/project_knowledge_candidate_01_real_shadow_v01/RESULTS_V01.json",
+    "result_sha256": "54e666aa5d42bb83b97e0ff2a8124bd6024dfd22ab71f2740bb87638ee0f50a3",
+    "first_run_result_sha256": "54e666aa5d42bb83b97e0ff2a8124bd6024dfd22ab71f2740bb87638ee0f50a3",
+    "first_run_comparison_sha256": "2f31903e0de921c9b2df764eb617aad5425b5125e71b1eadc2c033c0c1d693dd",
+    "first_run_checks": {
+      "passed": 24,
+      "failed": 0
+    },
+    "evidence_class": "REAL_REPOSITORY_SHADOW_SUPPORT_WITH_MEASURED_MIGRATION_SEEDS",
+    "final_qualification_credit": false,
+    "migration_seed_workstream_count": 1,
+    "migration_seed_project_control_fact_count": 3,
+    "supported_mechanism_ids": [
+      "KA-R02",
+      "KA-R05",
+      "KA-R06",
+      "KA-R08",
+      "KA-R09",
+      "KA-R18",
+      "KA-R20",
+      "KA-R23",
+      "KA-R25",
+      "KA-R35",
+      "KA-R47",
+      "KA-R48",
+      "KA-I02",
+      "KA-I03",
+      "KA-I05",
+      "KA-I11",
+      "KA-I15",
+      "KA-I16"
+    ],
+    "target_selection_allowed": false
   }
 }
