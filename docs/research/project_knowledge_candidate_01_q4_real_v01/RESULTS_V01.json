@@ -1,0 +1,825 @@
+{
+  "schema_version": 1,
+  "fixture_id": "PKA-C01-Q4-REAL-V01",
+  "candidate_id": "PKA-CANDIDATE-01",
+  "real_base_commit": "eece72a16d9664387a67e38998ec715f8efe927e",
+  "scope": "SHADOW_ONLY; no authority promotion or qualification evaluation",
+  "provenance": {
+    "started_at_utc": "2026-09-14T12:32:37.371649+00:00",
+    "finished_at_utc": "2026-09-14T12:32:37.971878+00:00",
+    "branch": "v1-source-vault-bootstrap-resume",
+    "execution_head": "e1ab545f536e32c580fe7960496242f7f300db1e",
+    "python_version": "3.11.0",
+    "python_executable": "C:\\Users\\shaka\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "argv": [
+      "scripts/research/probe_candidate_01_q4_real_v01.py"
+    ],
+    "cwd": "C:\\Projects_Data\\autonomous-data-science-system",
+    "command": "python scripts/research/probe_candidate_01_q4_real_v01.py",
+    "implementation_path": "scripts/research/probe_candidate_01_q4_real_v01.py",
+    "implementation_sha256": "ab1c9384f2c1f01231769dc39388e12bd5e5ab37ca25a36ba5f01b64508e8abe",
+    "fixture_path": "docs/research/project_knowledge_candidate_01_q4_real_v01/Q4_REAL_FIXTURE_V01.json",
+    "fixture_sha256": "5046c5cfa6672e8467ba91c30c8dd0212267df6cd7cfb316f875d11299ccca40",
+    "fixture_bytes": 5798,
+    "run_ordinal": 1,
+    "result_existed_at_start": false,
+    "output_policy": "Exclusive create; never read or overwrite prior result",
+    "oracle_reads": 0,
+    "evaluation_artifact_reads": 0
+  },
+  "source_verification": [
+    {
+      "source_key": "research168",
+      "path": "docs/research/168_q1_q2_q5_integrated_fresh_collaborator_result_and_revision_binding_amendment.md",
+      "bytes": 10764,
+      "sha256": "9505569f771f56669a86e05b58efaffe8d20fb0ed0bf31722d4361ba9f530622",
+      "source_class": "current_qualification_evidence",
+      "observed_bytes": 10764,
+      "observed_sha256": "9505569f771f56669a86e05b58efaffe8d20fb0ed0bf31722d4361ba9f530622",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "source_commit": "eece72a16d9664387a67e38998ec715f8efe927e",
+      "verified": true
+    },
+    {
+      "source_key": "research166",
+      "path": "docs/research/166_whole_architecture_evidence_reconciliation_v02_and_next_integrated_falsification.md",
+      "bytes": 9853,
+      "sha256": "c1e3bbef0a8a7e8f3eed40422c2e3568f8e58525b409bf52859769d02f01c3be",
+      "source_class": "qualification_plan",
+      "observed_bytes": 9853,
+      "observed_sha256": "c1e3bbef0a8a7e8f3eed40422c2e3568f8e58525b409bf52859769d02f01c3be",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "source_commit": "eece72a16d9664387a67e38998ec715f8efe927e",
+      "verified": true
+    },
+    {
+      "source_key": "research165",
+      "path": "docs/research/165_q9_migration_authority_switch_rollback_result.md",
+      "bytes": 9406,
+      "sha256": "d585269ccf9c5e417328d66898fed9bb9d3f5e4b2ebab4d248ea9e2ab788937d",
+      "source_class": "completed_workstream_evidence",
+      "observed_bytes": 9406,
+      "observed_sha256": "d585269ccf9c5e417328d66898fed9bb9d3f5e4b2ebab4d248ea9e2ab788937d",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "source_commit": "eece72a16d9664387a67e38998ec715f8efe927e",
+      "verified": true
+    },
+    {
+      "source_key": "checkpoint513",
+      "path": "docs/checkpoints/513_integrated_q1_q2_q5_passed_revision_binding_amended_q4_next.md",
+      "bytes": 2102,
+      "sha256": "c4bf09d7cc632d22be4429a9343861b5f015d3accc9a710f54eea7aab478e16b",
+      "source_class": "current_boundary_evidence",
+      "observed_bytes": 2102,
+      "observed_sha256": "c4bf09d7cc632d22be4429a9343861b5f015d3accc9a710f54eea7aab478e16b",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "source_commit": "eece72a16d9664387a67e38998ec715f8efe927e",
+      "verified": true
+    },
+    {
+      "source_key": "qualification_matrix",
+      "path": "docs/research/project_knowledge_candidate_01/QUALIFICATION_MATRIX_V01.json",
+      "bytes": 43915,
+      "sha256": "a92276d0733be4013b23816f309411789e7e8083ba00413be48b687a182a713b",
+      "source_class": "current_candidate_evidence_state",
+      "observed_bytes": 43915,
+      "observed_sha256": "a92276d0733be4013b23816f309411789e7e8083ba00413be48b687a182a713b",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "source_commit": "eece72a16d9664387a67e38998ec715f8efe927e",
+      "verified": true
+    },
+    {
+      "source_key": "cockpit",
+      "path": "docs/cockpit/README.md",
+      "bytes": 9525,
+      "sha256": "2e5fe6ab83b89f1bec267c64580c53844d82350f1454ebdc45a64454dc5952e0",
+      "source_class": "real_paused_workstream",
+      "observed_bytes": 9525,
+      "observed_sha256": "2e5fe6ab83b89f1bec267c64580c53844d82350f1454ebdc45a64454dc5952e0",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "source_commit": "eece72a16d9664387a67e38998ec715f8efe927e",
+      "verified": true
+    },
+    {
+      "source_key": "source_vault_runbook",
+      "path": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+      "bytes": 17085,
+      "sha256": "fdcb795d39945883dcce99995a5c3f396e5f1dd8f904a668b8366b1d1aa69656",
+      "source_class": "real_governing_procedure",
+      "observed_bytes": 17085,
+      "observed_sha256": "fdcb795d39945883dcce99995a5c3f396e5f1dd8f904a668b8366b1d1aa69656",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "source_commit": "eece72a16d9664387a67e38998ec715f8efe927e",
+      "verified": true
+    },
+    {
+      "source_key": "source_vault_shadow",
+      "path": "docs/research/project_knowledge_candidate_01_current_state_core_v01/SHADOW_SOURCE_VAULT_WORKSTREAM.md",
+      "bytes": 2940,
+      "sha256": "60eca8c0173c169b6780d9c6fccd4061c3865cb109c3df0e172db6b48f488c37",
+      "source_class": "qualified_shadow_workstream",
+      "observed_bytes": 2940,
+      "observed_sha256": "60eca8c0173c169b6780d9c6fccd4061c3865cb109c3df0e172db6b48f488c37",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "source_commit": "eece72a16d9664387a67e38998ec715f8efe927e",
+      "verified": true
+    },
+    {
+      "source_key": "candidate144",
+      "path": "docs/research/144_whole_architecture_candidate_repository_native_semantic_sources.md",
+      "bytes": 60699,
+      "sha256": "e043252413946ac1fb203c6c6ef503682be9056296a2320cacae4670e58f9810",
+      "source_class": "candidate_design",
+      "observed_bytes": 60699,
+      "observed_sha256": "e043252413946ac1fb203c6c6ef503682be9056296a2320cacae4670e58f9810",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "source_commit": "eece72a16d9664387a67e38998ec715f8efe927e",
+      "verified": true
+    },
+    {
+      "source_key": "q4_dag",
+      "path": "docs/research/project_knowledge_candidate_01_q4_real_v01/SHADOW_Q4_WORKSTREAM_DAG.json",
+      "bytes": 5436,
+      "sha256": "6f7e7bb4a387590320129da12bbde30d9e01ea1122489c48b2c13c1b226bfc35",
+      "source_class": "shadow_successor_candidate",
+      "observed_bytes": 5436,
+      "observed_sha256": "6f7e7bb4a387590320129da12bbde30d9e01ea1122489c48b2c13c1b226bfc35",
+      "hash_basis": "DECLARED_SHADOW_FILE_RAW_BYTES",
+      "source_commit": null,
+      "verified": true
+    }
+  ],
+  "graph": {
+    "acyclic": true,
+    "nodes": [
+      {
+        "semantic_id": "WS-PKA-CURRENT",
+        "state": "ACTIVE",
+        "parent": null,
+        "depends_on": [],
+        "objective": "Qualify Candidate 01 project-knowledge architecture",
+        "current_anchor": "checkpoint:513",
+        "evidence_refs": [
+          "research:168",
+          "checkpoint:513"
+        ]
+      },
+      {
+        "semantic_id": "WS-Q125-INTEGRATED",
+        "state": "COMPLETED",
+        "parent": "WS-PKA-CURRENT",
+        "depends_on": [],
+        "objective": "Complete integrated fresh reconstruction/authority/capture challenge",
+        "completed_evidence": [
+          "research:168"
+        ]
+      },
+      {
+        "semantic_id": "WS-Q9-MIGRATION",
+        "state": "COMPLETED",
+        "parent": "WS-PKA-CURRENT",
+        "depends_on": [],
+        "objective": "Complete migration/rollback shadow",
+        "completed_evidence": [
+          "research:165"
+        ]
+      },
+      {
+        "semantic_id": "WS-Q4-STRESS",
+        "state": "ACTIVE",
+        "parent": "WS-PKA-CURRENT",
+        "depends_on": [
+          "WS-Q125-INTEGRATED",
+          "WS-Q9-MIGRATION"
+        ],
+        "objective": "Qualify real multi-dependency, interruption recovery and stale-write safety",
+        "current_anchor": "research:168:NEXT=Q4_REAL_WORKSTREAM_CONCURRENCY_INTERRUPTION_STRESS"
+      },
+      {
+        "semantic_id": "WS-Q1-PORTABILITY",
+        "state": "BLOCKED",
+        "parent": "WS-PKA-CURRENT",
+        "depends_on": [
+          "WS-Q125-INTEGRATED"
+        ],
+        "objective": "Establish controlled provider/tool portability evidence",
+        "blocked_reason": "Exact fresh collaborator engine/thread provenance and controlled cross-provider execution remain absent",
+        "evidence_refs": [
+          "research:168"
+        ]
+      },
+      {
+        "semantic_id": "WS-Q2-HARD-CASES",
+        "state": "BLOCKED",
+        "parent": "WS-PKA-CURRENT",
+        "depends_on": [
+          "WS-Q125-INTEGRATED"
+        ],
+        "objective": "Qualify remaining real authority conflict/supersession/retrieval hard cases",
+        "blocked_reason": "Research 168 leaves Q2 mixed-gap despite strong consequential-task evidence",
+        "evidence_refs": [
+          "research:168"
+        ]
+      },
+      {
+        "semantic_id": "WS-Q10-FINAL",
+        "state": "BLOCKED",
+        "parent": "WS-PKA-CURRENT",
+        "depends_on": [
+          "WS-Q4-STRESS",
+          "WS-Q1-PORTABILITY",
+          "WS-Q2-HARD-CASES"
+        ],
+        "objective": "Run final multidimensional qualification and budgets",
+        "blocked_reason": "Requires remaining real gaps to close before final governing gate",
+        "evidence_refs": [
+          "research:166",
+          "research:168"
+        ]
+      },
+      {
+        "semantic_id": "WS-SOURCE-VAULT-BOOTSTRAP",
+        "state": "PAUSED",
+        "parent": "PROJECT-SOURCE-UNIVERSE",
+        "depends_on": [],
+        "objective": "Complete first permanent Source Vault bootstrap",
+        "pause_reason": "Research 124 project-knowledge architecture qualification owns primary route",
+        "return_condition": "EXPLICIT_PROJECT_ROUTING",
+        "resume_target": "reviewed ingestion of the frozen 20-entry first corpus",
+        "evidence_refs": [
+          "source_vault_shadow",
+          "source_vault_runbook"
+        ]
+      },
+      {
+        "semantic_id": "WS-COCKPIT-DESIGN",
+        "state": "PAUSED",
+        "parent": "PROJECT-COCKPIT",
+        "depends_on": [],
+        "objective": "Resume next-generation Cockpit design/fidelity work",
+        "pause_reason": "Project owner paused frontend and resumed Source Vault/project work",
+        "return_condition": "OWNER_EXPLICITLY_RETURNS_TO_FRONTEND_WORK",
+        "resume_target": "v1-cockpit-design-exploration@04f2a907094b8023ac7377c399a6eef1a6e1da99",
+        "evidence_refs": [
+          "cockpit"
+        ]
+      }
+    ],
+    "dependency_edges": [
+      {
+        "workstream": "WS-Q4-STRESS",
+        "depends_on": "WS-Q125-INTEGRATED"
+      },
+      {
+        "workstream": "WS-Q4-STRESS",
+        "depends_on": "WS-Q9-MIGRATION"
+      },
+      {
+        "workstream": "WS-Q1-PORTABILITY",
+        "depends_on": "WS-Q125-INTEGRATED"
+      },
+      {
+        "workstream": "WS-Q2-HARD-CASES",
+        "depends_on": "WS-Q125-INTEGRATED"
+      },
+      {
+        "workstream": "WS-Q10-FINAL",
+        "depends_on": "WS-Q4-STRESS"
+      },
+      {
+        "workstream": "WS-Q10-FINAL",
+        "depends_on": "WS-Q1-PORTABILITY"
+      },
+      {
+        "workstream": "WS-Q10-FINAL",
+        "depends_on": "WS-Q2-HARD-CASES"
+      }
+    ],
+    "parent_relationships": [
+      {
+        "child": "WS-Q125-INTEGRATED",
+        "parent": "WS-PKA-CURRENT"
+      },
+      {
+        "child": "WS-Q9-MIGRATION",
+        "parent": "WS-PKA-CURRENT"
+      },
+      {
+        "child": "WS-Q4-STRESS",
+        "parent": "WS-PKA-CURRENT"
+      },
+      {
+        "child": "WS-Q1-PORTABILITY",
+        "parent": "WS-PKA-CURRENT"
+      },
+      {
+        "child": "WS-Q2-HARD-CASES",
+        "parent": "WS-PKA-CURRENT"
+      },
+      {
+        "child": "WS-Q10-FINAL",
+        "parent": "WS-PKA-CURRENT"
+      },
+      {
+        "child": "WS-SOURCE-VAULT-BOOTSTRAP",
+        "parent": "PROJECT-SOURCE-UNIVERSE"
+      },
+      {
+        "child": "WS-COCKPIT-DESIGN",
+        "parent": "PROJECT-COCKPIT"
+      }
+    ],
+    "node_states": {
+      "WS-PKA-CURRENT": {
+        "declared_state": "ACTIVE",
+        "depends_on": [],
+        "dependency_closure": [],
+        "runnable": true,
+        "effective_state": "RUNNABLE",
+        "dependency_blockers": [],
+        "own_blocked_reason": null,
+        "pause_reason": null,
+        "return_condition": null,
+        "resume_target": null
+      },
+      "WS-Q125-INTEGRATED": {
+        "declared_state": "COMPLETED",
+        "depends_on": [],
+        "dependency_closure": [],
+        "runnable": false,
+        "effective_state": "COMPLETED",
+        "dependency_blockers": [],
+        "own_blocked_reason": null,
+        "pause_reason": null,
+        "return_condition": null,
+        "resume_target": null
+      },
+      "WS-Q9-MIGRATION": {
+        "declared_state": "COMPLETED",
+        "depends_on": [],
+        "dependency_closure": [],
+        "runnable": false,
+        "effective_state": "COMPLETED",
+        "dependency_blockers": [],
+        "own_blocked_reason": null,
+        "pause_reason": null,
+        "return_condition": null,
+        "resume_target": null
+      },
+      "WS-Q4-STRESS": {
+        "declared_state": "ACTIVE",
+        "depends_on": [
+          "WS-Q125-INTEGRATED",
+          "WS-Q9-MIGRATION"
+        ],
+        "dependency_closure": [
+          "WS-Q125-INTEGRATED",
+          "WS-Q9-MIGRATION"
+        ],
+        "runnable": true,
+        "effective_state": "RUNNABLE",
+        "dependency_blockers": [],
+        "own_blocked_reason": null,
+        "pause_reason": null,
+        "return_condition": null,
+        "resume_target": null
+      },
+      "WS-Q1-PORTABILITY": {
+        "declared_state": "BLOCKED",
+        "depends_on": [
+          "WS-Q125-INTEGRATED"
+        ],
+        "dependency_closure": [
+          "WS-Q125-INTEGRATED"
+        ],
+        "runnable": false,
+        "effective_state": "BLOCKED",
+        "dependency_blockers": [],
+        "own_blocked_reason": "Exact fresh collaborator engine/thread provenance and controlled cross-provider execution remain absent",
+        "pause_reason": null,
+        "return_condition": null,
+        "resume_target": null
+      },
+      "WS-Q2-HARD-CASES": {
+        "declared_state": "BLOCKED",
+        "depends_on": [
+          "WS-Q125-INTEGRATED"
+        ],
+        "dependency_closure": [
+          "WS-Q125-INTEGRATED"
+        ],
+        "runnable": false,
+        "effective_state": "BLOCKED",
+        "dependency_blockers": [],
+        "own_blocked_reason": "Research 168 leaves Q2 mixed-gap despite strong consequential-task evidence",
+        "pause_reason": null,
+        "return_condition": null,
+        "resume_target": null
+      },
+      "WS-Q10-FINAL": {
+        "declared_state": "BLOCKED",
+        "depends_on": [
+          "WS-Q4-STRESS",
+          "WS-Q1-PORTABILITY",
+          "WS-Q2-HARD-CASES"
+        ],
+        "dependency_closure": [
+          "WS-Q1-PORTABILITY",
+          "WS-Q125-INTEGRATED",
+          "WS-Q2-HARD-CASES",
+          "WS-Q4-STRESS",
+          "WS-Q9-MIGRATION"
+        ],
+        "runnable": false,
+        "effective_state": "BLOCKED",
+        "dependency_blockers": [
+          {
+            "node_id": "WS-Q1-PORTABILITY",
+            "state": "BLOCKED",
+            "direct": true,
+            "reason": "Exact fresh collaborator engine/thread provenance and controlled cross-provider execution remain absent"
+          },
+          {
+            "node_id": "WS-Q2-HARD-CASES",
+            "state": "BLOCKED",
+            "direct": true,
+            "reason": "Research 168 leaves Q2 mixed-gap despite strong consequential-task evidence"
+          },
+          {
+            "node_id": "WS-Q4-STRESS",
+            "state": "ACTIVE",
+            "direct": true,
+            "reason": "Dependency has no COMPLETED state in frozen DAG"
+          }
+        ],
+        "own_blocked_reason": "Requires remaining real gaps to close before final governing gate",
+        "pause_reason": null,
+        "return_condition": null,
+        "resume_target": null
+      },
+      "WS-SOURCE-VAULT-BOOTSTRAP": {
+        "declared_state": "PAUSED",
+        "depends_on": [],
+        "dependency_closure": [],
+        "runnable": false,
+        "effective_state": "PAUSED",
+        "dependency_blockers": [],
+        "own_blocked_reason": null,
+        "pause_reason": "Research 124 project-knowledge architecture qualification owns primary route",
+        "return_condition": "EXPLICIT_PROJECT_ROUTING",
+        "resume_target": "reviewed ingestion of the frozen 20-entry first corpus"
+      },
+      "WS-COCKPIT-DESIGN": {
+        "declared_state": "PAUSED",
+        "depends_on": [],
+        "dependency_closure": [],
+        "runnable": false,
+        "effective_state": "PAUSED",
+        "dependency_blockers": [],
+        "own_blocked_reason": null,
+        "pause_reason": "Project owner paused frontend and resumed Source Vault/project work",
+        "return_condition": "OWNER_EXPLICITLY_RETURNS_TO_FRONTEND_WORK",
+        "resume_target": "v1-cockpit-design-exploration@04f2a907094b8023ac7377c399a6eef1a6e1da99"
+      }
+    }
+  },
+  "cases": [
+    {
+      "case_id": "Q4-R01",
+      "kind": "MULTI_DEPENDENCY_DAG",
+      "nodes": {
+        "WS-Q4-STRESS": {
+          "declared_state": "ACTIVE",
+          "depends_on": [
+            "WS-Q125-INTEGRATED",
+            "WS-Q9-MIGRATION"
+          ],
+          "dependency_closure": [
+            "WS-Q125-INTEGRATED",
+            "WS-Q9-MIGRATION"
+          ],
+          "runnable": true,
+          "effective_state": "RUNNABLE",
+          "dependency_blockers": [],
+          "own_blocked_reason": null,
+          "pause_reason": null,
+          "return_condition": null,
+          "resume_target": null
+        },
+        "WS-Q10-FINAL": {
+          "declared_state": "BLOCKED",
+          "depends_on": [
+            "WS-Q4-STRESS",
+            "WS-Q1-PORTABILITY",
+            "WS-Q2-HARD-CASES"
+          ],
+          "dependency_closure": [
+            "WS-Q1-PORTABILITY",
+            "WS-Q125-INTEGRATED",
+            "WS-Q2-HARD-CASES",
+            "WS-Q4-STRESS",
+            "WS-Q9-MIGRATION"
+          ],
+          "runnable": false,
+          "effective_state": "BLOCKED",
+          "dependency_blockers": [
+            {
+              "node_id": "WS-Q1-PORTABILITY",
+              "state": "BLOCKED",
+              "direct": true,
+              "reason": "Exact fresh collaborator engine/thread provenance and controlled cross-provider execution remain absent"
+            },
+            {
+              "node_id": "WS-Q2-HARD-CASES",
+              "state": "BLOCKED",
+              "direct": true,
+              "reason": "Research 168 leaves Q2 mixed-gap despite strong consequential-task evidence"
+            },
+            {
+              "node_id": "WS-Q4-STRESS",
+              "state": "ACTIVE",
+              "direct": true,
+              "reason": "Dependency has no COMPLETED state in frozen DAG"
+            }
+          ],
+          "own_blocked_reason": "Requires remaining real gaps to close before final governing gate",
+          "pause_reason": null,
+          "return_condition": null,
+          "resume_target": null
+        }
+      }
+    },
+    {
+      "case_id": "Q4-R02",
+      "kind": "INTERRUPTION_RECOVERY",
+      "transition_id": "TR-Q4-QUALIFICATION",
+      "completed_steps": [
+        "S1",
+        "S2"
+      ],
+      "pending_steps": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "next_resume_step": "S3",
+      "resume_plan": [
+        {
+          "step_id": "S3",
+          "operation": "freeze_q4_real_fixture",
+          "target": "Q4_REAL_FIXTURE"
+        },
+        {
+          "step_id": "S4",
+          "operation": "execute_q4_real_stress",
+          "target": "Q4_REAL_RESULT"
+        },
+        {
+          "step_id": "S5",
+          "operation": "reconcile_post_q4_evidence",
+          "target": "WHOLE_ARCH_EVIDENCE_NEXT"
+        }
+      ],
+      "completion_evidence": [
+        {
+          "step_id": "S1",
+          "status": "COMPLETED",
+          "evidence_ref": "research:166"
+        },
+        {
+          "step_id": "S2",
+          "status": "COMPLETED",
+          "evidence_ref": "research:168"
+        }
+      ],
+      "blind_replay_required": false,
+      "execution_log": [],
+      "recovery_replay_count": 0,
+      "completion_policy": "Only frozen COMPLETED durable receipts establish completion",
+      "interruption": {
+        "interruption_id": "INT-COCKPIT-DIAGNOSTIC",
+        "unrelated_workstream_id": "WS-COCKPIT-DESIGN",
+        "operation": "read_only_resume_anchor_inspection",
+        "mutation_authorized": false,
+        "inspected_state": "PAUSED",
+        "declared_resume_target": "v1-cockpit-design-exploration@04f2a907094b8023ac7377c399a6eef1a6e1da99",
+        "source_resume_anchor": "v1-cockpit-design-exploration@04f2a907094b8023ac7377c399a6eef1a6e1da99",
+        "anchor_matches_source": true,
+        "return_condition": "OWNER_EXPLICITLY_RETURNS_TO_FRONTEND_WORK",
+        "performed_operation": "read_only_resume_anchor_inspection",
+        "transition_sha256_before": "9471d6a40d07bca3674b7c2bcbba0c85af5984e3b6c56c4cd92dc8650170d769",
+        "transition_sha256_after": "9471d6a40d07bca3674b7c2bcbba0c85af5984e3b6c56c4cd92dc8650170d769",
+        "transition_mutated": false,
+        "dag_mutated": false,
+        "recovery_unchanged": true
+      }
+    },
+    {
+      "case_id": "Q4-R03",
+      "kind": "STALE_CONCURRENT_UPDATE",
+      "target_path": "docs/cockpit/README.md",
+      "base_revision": {
+        "source_commit": "eece72a16d9664387a67e38998ec715f8efe927e",
+        "source_path": "docs/cockpit/README.md",
+        "hash_algorithm": "SHA-256",
+        "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+        "content_digest": "2e5fe6ab83b89f1bec267c64580c53844d82350f1454ebdc45a64454dc5952e0"
+      },
+      "update_storage": "IN_MEMORY_ONLY",
+      "schedule": "FIXTURE_ORDER_SERIALIZED_CAS",
+      "revision_policy": "Exact immutable Git seed descriptor plus exact raw copy digest",
+      "initial_copy_sha256": "2e5fe6ab83b89f1bec267c64580c53844d82350f1454ebdc45a64454dc5952e0",
+      "final_copy_sha256": "a2e0d91b574b32a3b4c4a9ba062d3c3bd8e1025d510729c1bb501368c2ffa86a",
+      "attempts": [
+        {
+          "attempt_id": "WRITER-B-FRESH",
+          "expected_revision": "BASE",
+          "patch_kind": "append_test_only_marker",
+          "expected_revision_descriptor": {
+            "base_revision": {
+              "source_commit": "eece72a16d9664387a67e38998ec715f8efe927e",
+              "source_path": "docs/cockpit/README.md",
+              "hash_algorithm": "SHA-256",
+              "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+              "content_digest": "2e5fe6ab83b89f1bec267c64580c53844d82350f1454ebdc45a64454dc5952e0"
+            },
+            "copy_hash_algorithm": "SHA-256",
+            "copy_hash_basis": "IN_MEMORY_RAW_BYTES",
+            "copy_content_digest": "2e5fe6ab83b89f1bec267c64580c53844d82350f1454ebdc45a64454dc5952e0"
+          },
+          "actual_revision_before": {
+            "base_revision": {
+              "source_commit": "eece72a16d9664387a67e38998ec715f8efe927e",
+              "source_path": "docs/cockpit/README.md",
+              "hash_algorithm": "SHA-256",
+              "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+              "content_digest": "2e5fe6ab83b89f1bec267c64580c53844d82350f1454ebdc45a64454dc5952e0"
+            },
+            "copy_hash_algorithm": "SHA-256",
+            "copy_hash_basis": "IN_MEMORY_RAW_BYTES",
+            "copy_content_digest": "2e5fe6ab83b89f1bec267c64580c53844d82350f1454ebdc45a64454dc5952e0"
+          },
+          "revision_after": {
+            "base_revision": {
+              "source_commit": "eece72a16d9664387a67e38998ec715f8efe927e",
+              "source_path": "docs/cockpit/README.md",
+              "hash_algorithm": "SHA-256",
+              "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+              "content_digest": "2e5fe6ab83b89f1bec267c64580c53844d82350f1454ebdc45a64454dc5952e0"
+            },
+            "copy_hash_algorithm": "SHA-256",
+            "copy_hash_basis": "IN_MEMORY_RAW_BYTES",
+            "copy_content_digest": "1fa1223b1807385cdbe4d85060a9aef17e9692730ab7d18515e3029010da74a4"
+          },
+          "status": "APPLIED",
+          "expected_revision_matches": true,
+          "mutated": true,
+          "sha256_before": "2e5fe6ab83b89f1bec267c64580c53844d82350f1454ebdc45a64454dc5952e0",
+          "sha256_after": "1fa1223b1807385cdbe4d85060a9aef17e9692730ab7d18515e3029010da74a4",
+          "bytes_before": 9525,
+          "bytes_after": 9590,
+          "proposed_marker_utf8": "\n<!-- Q4 TEMP ONLY: WRITER-B-FRESH / append_test_only_marker -->\n",
+          "marker_present_after": true
+        },
+        {
+          "attempt_id": "WRITER-A-STALE",
+          "expected_revision": "BASE",
+          "patch_kind": "append_stale_marker",
+          "expected_revision_descriptor": {
+            "base_revision": {
+              "source_commit": "eece72a16d9664387a67e38998ec715f8efe927e",
+              "source_path": "docs/cockpit/README.md",
+              "hash_algorithm": "SHA-256",
+              "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+              "content_digest": "2e5fe6ab83b89f1bec267c64580c53844d82350f1454ebdc45a64454dc5952e0"
+            },
+            "copy_hash_algorithm": "SHA-256",
+            "copy_hash_basis": "IN_MEMORY_RAW_BYTES",
+            "copy_content_digest": "2e5fe6ab83b89f1bec267c64580c53844d82350f1454ebdc45a64454dc5952e0"
+          },
+          "actual_revision_before": {
+            "base_revision": {
+              "source_commit": "eece72a16d9664387a67e38998ec715f8efe927e",
+              "source_path": "docs/cockpit/README.md",
+              "hash_algorithm": "SHA-256",
+              "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+              "content_digest": "2e5fe6ab83b89f1bec267c64580c53844d82350f1454ebdc45a64454dc5952e0"
+            },
+            "copy_hash_algorithm": "SHA-256",
+            "copy_hash_basis": "IN_MEMORY_RAW_BYTES",
+            "copy_content_digest": "1fa1223b1807385cdbe4d85060a9aef17e9692730ab7d18515e3029010da74a4"
+          },
+          "revision_after": {
+            "base_revision": {
+              "source_commit": "eece72a16d9664387a67e38998ec715f8efe927e",
+              "source_path": "docs/cockpit/README.md",
+              "hash_algorithm": "SHA-256",
+              "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+              "content_digest": "2e5fe6ab83b89f1bec267c64580c53844d82350f1454ebdc45a64454dc5952e0"
+            },
+            "copy_hash_algorithm": "SHA-256",
+            "copy_hash_basis": "IN_MEMORY_RAW_BYTES",
+            "copy_content_digest": "1fa1223b1807385cdbe4d85060a9aef17e9692730ab7d18515e3029010da74a4"
+          },
+          "status": "REJECTED_STALE_REVISION",
+          "expected_revision_matches": false,
+          "mutated": false,
+          "sha256_before": "1fa1223b1807385cdbe4d85060a9aef17e9692730ab7d18515e3029010da74a4",
+          "sha256_after": "1fa1223b1807385cdbe4d85060a9aef17e9692730ab7d18515e3029010da74a4",
+          "bytes_before": 9590,
+          "bytes_after": 9590,
+          "proposed_marker_utf8": "\n<!-- Q4 TEMP ONLY: WRITER-A-STALE / append_stale_marker -->\n",
+          "marker_present_after": false
+        },
+        {
+          "attempt_id": "WRITER-C-FRESH",
+          "expected_revision": "AFTER_WRITER_B",
+          "patch_kind": "append_fresh_marker",
+          "expected_revision_descriptor": {
+            "base_revision": {
+              "source_commit": "eece72a16d9664387a67e38998ec715f8efe927e",
+              "source_path": "docs/cockpit/README.md",
+              "hash_algorithm": "SHA-256",
+              "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+              "content_digest": "2e5fe6ab83b89f1bec267c64580c53844d82350f1454ebdc45a64454dc5952e0"
+            },
+            "copy_hash_algorithm": "SHA-256",
+            "copy_hash_basis": "IN_MEMORY_RAW_BYTES",
+            "copy_content_digest": "1fa1223b1807385cdbe4d85060a9aef17e9692730ab7d18515e3029010da74a4"
+          },
+          "actual_revision_before": {
+            "base_revision": {
+              "source_commit": "eece72a16d9664387a67e38998ec715f8efe927e",
+              "source_path": "docs/cockpit/README.md",
+              "hash_algorithm": "SHA-256",
+              "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+              "content_digest": "2e5fe6ab83b89f1bec267c64580c53844d82350f1454ebdc45a64454dc5952e0"
+            },
+            "copy_hash_algorithm": "SHA-256",
+            "copy_hash_basis": "IN_MEMORY_RAW_BYTES",
+            "copy_content_digest": "1fa1223b1807385cdbe4d85060a9aef17e9692730ab7d18515e3029010da74a4"
+          },
+          "revision_after": {
+            "base_revision": {
+              "source_commit": "eece72a16d9664387a67e38998ec715f8efe927e",
+              "source_path": "docs/cockpit/README.md",
+              "hash_algorithm": "SHA-256",
+              "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+              "content_digest": "2e5fe6ab83b89f1bec267c64580c53844d82350f1454ebdc45a64454dc5952e0"
+            },
+            "copy_hash_algorithm": "SHA-256",
+            "copy_hash_basis": "IN_MEMORY_RAW_BYTES",
+            "copy_content_digest": "a2e0d91b574b32a3b4c4a9ba062d3c3bd8e1025d510729c1bb501368c2ffa86a"
+          },
+          "status": "APPLIED",
+          "expected_revision_matches": true,
+          "mutated": true,
+          "sha256_before": "1fa1223b1807385cdbe4d85060a9aef17e9692730ab7d18515e3029010da74a4",
+          "sha256_after": "a2e0d91b574b32a3b4c4a9ba062d3c3bd8e1025d510729c1bb501368c2ffa86a",
+          "bytes_before": 9590,
+          "bytes_after": 9651,
+          "proposed_marker_utf8": "\n<!-- Q4 TEMP ONLY: WRITER-C-FRESH / append_fresh_marker -->\n",
+          "marker_present_after": true
+        }
+      ],
+      "stale_attempt_mutation": false,
+      "live_target": {
+        "path": "docs/cockpit/README.md",
+        "hash_algorithm": "SHA-256",
+        "hash_basis": "WORKTREE_RAW_BYTES",
+        "sha256_before": "59de209560fc4d49d41c5652bef7d2cfc06abf9ef9f817ae8c82bd3e49e2a89c",
+        "sha256_after": "59de209560fc4d49d41c5652bef7d2cfc06abf9ef9f817ae8c82bd3e49e2a89c",
+        "unchanged": true
+      }
+    }
+  ],
+  "measurement_contract": {
+    "record_dependency_edge_count": true,
+    "record_multi_dependency_node_count": true,
+    "record_recovery_replay_count": true,
+    "record_stale_attempt_mutation": true,
+    "record_live_target_hash_before_after": true,
+    "record_revision_binding_basis": true
+  },
+  "metrics": {
+    "dependency_edge_count": 7,
+    "multi_dependency_node_count": 2,
+    "recovery_replay_count": 0,
+    "stale_attempt_mutation": false,
+    "live_target_hash_before_after": {
+      "path": "docs/cockpit/README.md",
+      "hash_algorithm": "SHA-256",
+      "hash_basis": "WORKTREE_RAW_BYTES",
+      "sha256_before": "59de209560fc4d49d41c5652bef7d2cfc06abf9ef9f817ae8c82bd3e49e2a89c",
+      "sha256_after": "59de209560fc4d49d41c5652bef7d2cfc06abf9ef9f817ae8c82bd3e49e2a89c",
+      "unchanged": true
+    },
+    "revision_binding_basis": {
+      "source_commit": "eece72a16d9664387a67e38998ec715f8efe927e",
+      "source_path": "docs/cockpit/README.md",
+      "hash_algorithm": "SHA-256",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "content_digest": "2e5fe6ab83b89f1bec267c64580c53844d82350f1454ebdc45a64454dc5952e0"
+    }
+  }
+}

@@ -1,7 +1,7 @@
 # Research 145: Candidate 01 Requirements V0.2 Design Coverage and Qualification Plan
 
 **Date:** 2026-09-14
-**Status:** 50/50 KA-R + 17/17 KA-I DESIGN-MAPPED / Q4 REAL WORKSTREAM STRESS FIXTURE FROZEN / IMPLEMENTATION NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** 50/50 KA-R + 17/17 KA-I DESIGN-MAPPED / Q4 REAL-SOURCE STRESS SUPPORT PASSED / EVIDENCE RECONCILIATION V0.3 NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Candidate:** `PKA-CANDIDATE-01` from Research 144
 **Scope:** Systematically map the whole-architecture candidate against every frozen Requirements V0.2 requirement/invariant, distinguish design coverage from actual qualification evidence, identify selection-blocking proof clusters, and freeze the minimum implementation/behavioral evidence needed before target selection.
 **Authority:** Candidate qualification planning only. Requirements V0.2 remain the acceptance authority. A mapped design mechanism is not a qualified pass.
@@ -518,3 +518,9 @@ Descriptive coverage becomes 58/67 real and 63/67 synthetic-or-better. Q5 now jo
 Research 169 freezes the direct real-source challenge for KA-R27/R28/R29 after Q5 becomes fully real-supported at subsystem level. Two multi-dependency nodes are grounded in current Candidate 01 qualification work units, interruption recovery is bound to durable S1/S2 receipts, and stale-write rejection uses an exact Git-blob revision descriptor over the real Cockpit workstream source.
 
 Evidence credit remains pending implementation. Current authority mutation is forbidden.
+
+## 31. Q4 real-source subsystem evidence
+
+Research 170 adds real-source support to KA-R27/R28/R29. Together with prior evidence for KA-R06/R25/R26 and KA-I09, every Q4 item now has real Candidate 01 subsystem evidence.
+
+Current descriptive coverage is 61/67 real and 63/67 synthetic-or-better. Six items remain without real evidence: KA-R14, KA-R24, KA-R30, KA-R36, KA-R40 and KA-R41. A whole-architecture V0.3 reconciliation will choose the next falsification before Q10.

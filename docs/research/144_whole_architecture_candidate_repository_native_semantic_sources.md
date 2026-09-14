@@ -1,7 +1,7 @@
 # Research 144: Whole-Architecture Candidate - Repository-Native Semantic Sources with Selective Identity, Derived Views, and Action-Gated Authority
 
 **Date:** 2026-09-14
-**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE / Q4 REAL WORKSTREAM STRESS FIXTURE FROZEN / IMPLEMENTATION NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE / Q4 REAL-SOURCE STRESS SUPPORT PASSED / EVIDENCE RECONCILIATION V0.3 NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Candidate label:** `PKA-CANDIDATE-01`
 **Scope:** Synthesize one serious successor architecture from the complete Research 124 evidence field after the H1/H2 mechanism probes, real-corpus independent review, MC-0014/MC-0015 corrections, D1-D8 external evidence and owner-provided ICM evaluation. Define enough logical structure, authority semantics, typed source responsibilities, derived-view behavior, activation, lifecycle, validation, scaling and migration behavior to qualify the candidate systematically against Requirements V0.2.
 **Authority:** Candidate architecture research only. Requirements V0.2 remain the frozen acceptance authority. This record does not select the target architecture, migrate current authority, or authorize implementation as the production continuity system.
@@ -1226,3 +1226,9 @@ Provider/tool portability remains open because the manual result did not preserv
 Research 169 freezes a real-source Q4 stress slice after the integrated Q1/Q2/Q5 result. The test uses current qualification work units, the real paused Source Vault and Cockpit workstreams, durable transition receipts and a temporary stale-write race bound by the explicit `GIT_BLOB_BYTES_AT_COMMIT` revision descriptor introduced in Research 168.
 
 The coordination DAG remains shadow-only and may not mutate current authority. A pass would strengthen Candidate 01's workstream/concurrency mechanics without authorizing target selection.
+
+## 53. Real Q4 stress validates DAG, interruption and expected-revision safety
+
+Research 170 strengthens Candidate 01's workstream model with real-source stress. Multiple dependencies remain first-class DAG edges, durable receipts reconstruct interruption recovery without blind replay, and explicit expected-revision preconditions reject a stale concurrent update without touching live authority. The Research 168 Git-blob revision-basis amendment survives direct concurrency use.
+
+The result closes Q4's remaining real-evidence gap at subsystem level but does not authorize target selection or an authority switch.

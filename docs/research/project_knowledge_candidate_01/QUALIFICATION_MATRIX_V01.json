@@ -643,13 +643,14 @@
     "h3_reopen_after_q3_real_v01": false,
     "q7_real_subsystem_support_passed": true,
     "candidate_items_with_synthetic_or_better_evidence_current": 63,
-    "candidate_items_with_real_evidence_current": 58,
+    "candidate_items_with_real_evidence_current": 61,
     "q9_shadow_subsystem_support_passed": true,
     "whole_architecture_evidence_reconciliation_v02_complete": true,
     "whole_architecture_evidence_reconciliation_v02_sha256": "ce1fe5f6f4dd630b2820a05ae961a8df6035d2283f7af8ca25c68169cd099c60",
-    "next_priority": "Q4_REAL_MULTI_DEPENDENCY_INTERRUPTION_STALE_WRITE_STRESS",
+    "next_priority": "POST_Q4_WHOLE_ARCHITECTURE_EVIDENCE_RECONCILIATION",
     "strong_real_subsystem_clusters_current": [
       "Q3",
+      "Q4",
       "Q5",
       "Q6",
       "Q7",
@@ -658,12 +659,12 @@
     ],
     "mixed_gap_clusters_current": [
       "Q1",
-      "Q2",
-      "Q4"
+      "Q2"
     ],
     "final_governing_cluster": "Q10",
     "q1_q2_q5_integrated_fresh_collaborator_support_passed": true,
-    "revision_binding_basis_amendment_required": true
+    "revision_binding_basis_amendment_required": true,
+    "q4_real_source_stress_support_passed": true
   },
   "adversarial_review": {
     "thread": "MC-0016",
@@ -1092,6 +1093,41 @@
       "KA-R08",
       "KA-R23",
       "KA-R36"
+    ]
+  },
+  "prototype_evidence_q4_real_v01": {
+    "research": "research:170",
+    "freeze_commit": "e1ab545f536e32c580fe7960496242f7f300db1e",
+    "real_base_commit": "eece72a16d9664387a67e38998ec715f8efe927e",
+    "result_path": "docs/research/project_knowledge_candidate_01_q4_real_v01/RESULTS_V01.json",
+    "result_sha256": "85e9bf340c62ee9eeea860e53f4b40d3f753a5e0c83bb6c115678aa95532ac44",
+    "first_run_result_sha256": "85e9bf340c62ee9eeea860e53f4b40d3f753a5e0c83bb6c115678aa95532ac44",
+    "evaluation_path": "docs/research/project_knowledge_candidate_01_q4_real_v01/EVALUATION_V01.json",
+    "evaluation_sha256": "f29a13fd1246aaa85714932b7b2faba0d97796b54cdf13b59ebdd27b6b707cff",
+    "evaluation_checks": {
+      "passed": 20,
+      "failed": 0
+    },
+    "implementation_repairs_after_first_run": 0,
+    "oracle_label_variance": {
+      "field": "Q4-R03.WRITER-A-STALE.status",
+      "oracle": "STALE_REVISION",
+      "observed": "REJECTED_STALE_REVISION",
+      "disposition": "NON_SEMANTIC_LABEL_VARIANCE"
+    },
+    "focused_tests": 9,
+    "exhaustive_partitioned_unit_tests": 291,
+    "evidence_class": "REAL_SOURCE_Q4_WORKSTREAM_CONCURRENCY_SUPPORT",
+    "final_qualification_credit": false,
+    "multi_dependency_nodes": 2,
+    "dependency_edges": 7,
+    "recovery_replay_count": 0,
+    "stale_attempt_mutation": false,
+    "live_target_unchanged": true,
+    "supported_mechanism_ids": [
+      "KA-R27",
+      "KA-R28",
+      "KA-R29"
     ]
   }
 }
