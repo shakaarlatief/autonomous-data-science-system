@@ -1,7 +1,7 @@
 # Research 145: Candidate 01 Requirements V0.2 Design Coverage and Qualification Plan
 
 **Date:** 2026-09-14
-**Status:** 50/50 KA-R + 17/17 KA-I DESIGN-MAPPED / EVIDENCE RECONCILED ACROSS Q1-Q10 / Q3 REAL FALSIFICATION NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** 50/50 KA-R + 17/17 KA-I DESIGN-MAPPED / Q3 REAL SUBSYSTEM SUPPORT PASSED / Q7 REAL PUBLIC-PRIVATE BOUNDARY NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Candidate:** `PKA-CANDIDATE-01` from Research 144
 **Scope:** Systematically map the whole-architecture candidate against every frozen Requirements V0.2 requirement/invariant, distinguish design coverage from actual qualification evidence, identify selection-blocking proof clusters, and freeze the minimum implementation/behavioral evidence needed before target selection.
 **Authority:** Candidate qualification planning only. Requirements V0.2 remain the acceptance authority. A mapped design mechanism is not a qualified pass.
@@ -436,4 +436,17 @@ Real cases cover D-015/D-033 scoped supersession, D-011 multi-successor residual
 Q3_REAL_IMPLEMENTATION_EVIDENCE=PENDING
 H3_REOPEN_RULE=PROSPECTIVELY_FROZEN
 NEXT=IMPLEMENT_Q3_REAL_V01
+```
+
+## 22. Q3 real subsystem evidence
+
+Research 161 adds real Candidate 01 support for KA-R12, R15, R16, R46 and R49 plus material support for KA-I04/I17. Five real ADS cases pass the frozen oracle after one preserved implementation repair. No H3/Object-Primary reopening trigger fires.
+
+The result remains subsystem evidence with `final_qualification_credit=false`; merge/split/tombstone still lack equivalent real implementation evidence. Research 159's next P0 gap is Q7, where all six items remain synthetic-only.
+
+```text
+Q3_REAL_EVIDENCE=RECORDED
+H3_REOPEN=NO
+FINAL_QUALIFIED_PASSES=0
+NEXT=Q7_REAL_PUBLIC_PRIVATE_BOUNDARY_QUALIFICATION
 ```

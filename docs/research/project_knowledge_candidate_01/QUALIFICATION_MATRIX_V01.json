@@ -638,7 +638,9 @@
     "zero_seed_routing_shadow_passed": true,
     "current_state_decomposition_v01_complete": true,
     "current_state_core_shadow_v01_passed": true,
-    "whole_architecture_evidence_reconciliation_v01_complete": true
+    "whole_architecture_evidence_reconciliation_v01_complete": true,
+    "q3_real_subsystem_support_passed": true,
+    "h3_reopen_after_q3_real_v01": false
   },
   "adversarial_review": {
     "thread": "MC-0016",
@@ -898,5 +900,43 @@
     ],
     "immediate_next_cluster": "Q3",
     "next_method": "architecture-uncertainty-driven falsification, not legacy-file order"
+  },
+  "prototype_evidence_q3_real_v01": {
+    "research": "research:161",
+    "freeze_commit": "5b53e906f64ee96457af5a14ff1fbe24368178b8",
+    "real_base_commit": "d8690d215e9701fc25d378a7d104aa6dbab10b2d",
+    "result_path": "docs/research/project_knowledge_candidate_01_q3_real_v01/RESULTS_V01.json",
+    "result_sha256": "3f722f778637bd67c86ce297ca559e93c8e2a6ef51ab9ff0d366d1eb6876b73e",
+    "first_run_result_sha256": "34b37939ce34422bc924cee96a4a2d0c043dc746be025ee45a1b9440a2a1c93d",
+    "first_run_comparison_sha256": "66139a91440d3435bc22f34f8dc298331bca7207eefe7ba0895f18bf219afae8",
+    "final_comparison_sha256": "ef074346b827c49f7d7f54a4e95f7ace00e9e5cf7bb44ba15e22a914e472d15c",
+    "first_run_checks": {
+      "passed": 1,
+      "failed": 3
+    },
+    "final_checks": {
+      "passed": 4,
+      "failed": 0
+    },
+    "implementation_repairs_after_first_run": 1,
+    "evidence_class": "REAL_REPOSITORY_Q3_IDENTITY_RELATIONSHIP_TEMPORAL_SUPPORT",
+    "final_qualification_credit": false,
+    "real_cases_passed": 5,
+    "real_cases_total": 5,
+    "h3_reopen": false,
+    "unproven_real_transition_classes": [
+      "MERGE",
+      "SPLIT",
+      "TOMBSTONE"
+    ],
+    "supported_mechanism_ids": [
+      "KA-R12",
+      "KA-R15",
+      "KA-R16",
+      "KA-R46",
+      "KA-R49",
+      "KA-I04",
+      "KA-I17"
+    ]
   }
 }

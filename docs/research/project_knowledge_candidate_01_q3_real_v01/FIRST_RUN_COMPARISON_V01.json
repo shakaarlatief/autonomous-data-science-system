@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "fixture_id": "PKA-C01-Q3-REAL-V01",
+  "first_run_result": "FIRST_RUN_RESULTS_V01.json",
+  "total_checks": 4,
+  "passed": 1,
+  "failed": 3,
+  "failed_checks": [
+    "real_semantics_alignment",
+    "complexity_bounds",
+    "h3_reopen"
+  ],
+  "check_results": {
+    "all_source_hashes_match": true,
+    "real_semantics_alignment": false,
+    "complexity_bounds": false,
+    "h3_reopen": false
+  },
+  "observed_failure": [
+    "Q3-R03: RuntimeError: Q3-R03: real source missing expected grounded tokens: ['b79d6ae0187b61e73c3b08312e4c7ec9d8f7f61d']"
+  ]
+}

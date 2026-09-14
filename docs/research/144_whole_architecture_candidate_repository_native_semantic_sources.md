@@ -1,7 +1,7 @@
 # Research 144: Whole-Architecture Candidate - Repository-Native Semantic Sources with Selective Identity, Derived Views, and Action-Gated Authority
 
 **Date:** 2026-09-14
-**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE / EVIDENCE RECONCILED ACROSS Q1-Q10 / Q3 REAL IDENTITY-TEMPORAL FALSIFICATION NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE / Q3 REAL SUBSYSTEM SUPPORT PASSED WITHOUT H3 REOPEN / Q7 REAL PUBLIC-PRIVATE BOUNDARY NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Candidate label:** `PKA-CANDIDATE-01`
 **Scope:** Synthesize one serious successor architecture from the complete Research 124 evidence field after the H1/H2 mechanism probes, real-corpus independent review, MC-0014/MC-0015 corrections, D1-D8 external evidence and owner-provided ICM evaluation. Define enough logical structure, authority semantics, typed source responsibilities, derived-view behavior, activation, lifecycle, validation, scaling and migration behavior to qualify the candidate systematically against Requirements V0.2.
 **Authority:** Candidate architecture research only. Requirements V0.2 remain the frozen acceptance authority. This record does not select the target architecture, migrate current authority, or authorize implementation as the production continuity system.
@@ -1134,4 +1134,17 @@ EVIDENCE_RECONCILIATION=Q1_TO_Q10_COMPLETE
 LEGACY_FILE_ORDER=NOT_THE_RESEARCH_SEQUENCE
 Q3_REAL_IDENTITY_TEMPORAL_FALSIFICATION=NEXT
 TARGET_ARCHITECTURE=NOT_SELECTED
+```
+
+## 44. Q3 real cases do not force Object-Primary reopening
+
+Research 161 executes five real ADS identity/relationship/temporal cases. After one preserved implementation-evidence-location repair, all five cases match the frozen oracle and no prospective H3 reopening trigger fires. The final representation uses five profile-specific shadow sources, seven source-local relations and five selective temporal fields with zero general registry, standalone relation sources, standalone identity-transition sources, duplicate authoritative relations or universal participant objectization.
+
+The result strengthens Candidate 01's selective repository-native profile design but does not finally qualify Q3. Real merge/split/tombstone evidence remains absent.
+
+```text
+Q3_REAL_SUBSYSTEM_SUPPORT=PASS
+H3_REOPEN=NO
+Q3_FINAL_QUALIFICATION=PENDING
+NEXT=Q7_REAL_PUBLIC_PRIVATE_BOUNDARY
 ```

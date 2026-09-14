@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "probe_id": "PKA-C01-Q3-REAL-PROBE-V01",
+  "candidate_id": "PKA-CANDIDATE-01",
+  "fixture_id": "PKA-C01-Q3-REAL-V01",
+  "real_base_commit": "d8690d215e9701fc25d378a7d104aa6dbab10b2d",
+  "fixture_sha256": "d30a3968e901b6f273a25ddef8d1ebbe093e1040e74f3ab80ba68ce523760ab6",
+  "shadow_only": true,
+  "implementation_reads_oracle": false,
+  "all_source_hashes_match": true,
+  "real_semantics_alignment": {
+    "Q3-R01": {
+      "successor_for_external_source_architecture_uncertainty": "D-033",
+      "retained_outcomes": [
+        "public_git_source_binary_exclusion"
+      ],
+      "recorded_on": "2026-08-07",
+      "superseded_in_scope_on": "2026-08-25"
+    },
+    "Q3-R02": {
+      "scope_successors": {
+        "v1_persistence_retrieval_architecture": "D-028",
+        "persistence_tooling": "D-029",
+        "python_project_dependency_tooling": "D-030",
+        "reusable_knowledge_interchange": "D-031",
+        "initial_reasoning_runtime": "D-032",
+        "source_universe_substrate": "D-033"
+      },
+      "residual_applicability": "implementation_subsystems_not_yet_selected",
+      "invented_per_successor_effective_dates": false
+    },
+    "Q3-R03": {
+      "semantic_id": "MILESTONE-SOURCE-FAITHFUL-REINTEGRATION",
+      "current_carrier": "docs/checkpoints/intermediate_2026-08-28_source_faithful_reintegration_interaction_integrity_gate.md",
+      "original_recorded_identity": "Checkpoint 252",
+      "original_identity_disposition": "RETIRED_PROVENANCE_ONLY",
+      "canonical_numeric_identity_owner": "docs/checkpoints/252_advanced_integrated_cockpit_spatial_rail_study_opened.md",
+      "rename_commit": "b79d6ae0187b61e73c3b08312e4c7ec9d8f7f61d",
+      "identity_collision": false
+    },
+    "Q3-R04": {
+      "semantic_id": "WS-COCKPIT-DESIGN",
+      "state": "PAUSED",
+      "resume_branch": "v1-cockpit-design-exploration",
+      "resume_head": "04f2a907094b8023ac7377c399a6eef1a6e1da99",
+      "semantic_identity_preserved_while_paused": true
+    },
+    "Q3-R05": {
+      "semantic_id": "MC-0013",
+      "message001_role": "INDEPENDENT_CANDIDATE_DESIGN",
+      "current_thread_state": "COMPARATIVE_ONLY",
+      "message003_and_later_role": "COMPARATIVE_REVIEW",
+      "independent_substantive_base": "233eb932062a24473fcc4f4fe93160c952eea426",
+      "comparative_trigger": "EXPOSURE_TO_RESEARCH_133_AND_CHATGPT_MESSAGE_002"
+    }
+  },
+  "real_semantic_query_failures": [],
+  "complexity": {
+    "shadow_source_count": 5,
+    "source_local_relation_count": 7,
+    "selective_temporal_field_count": 5,
+    "standalone_relation_source_count": 0,
+    "standalone_identity_transition_source_count": 0,
+    "joint_authority_source_count": 0,
+    "general_authoritative_registry_count": 0,
+    "duplicated_authoritative_relation_count": 0,
+    "universally_objectized_participant_count": 0,
+    "real_semantic_query_failure_count": 0
+  },
+  "h3_reopen_triggers": {
+    "general_authoritative_object_registry_required": false,
+    "standalone_relation_or_transition_source_threshold_reached": false,
+    "duplicate_authoritative_relation_required": false,
+    "universal_objectization_required": false,
+    "real_semantic_query_unresolvable": false
+  },
+  "h3_reopen": false,
+  "interpretation": {
+    "candidate01_real_q3_support": true,
+    "q3_final_qualification_claimed": false,
+    "unproven_real_transition_classes": [
+      "MERGE",
+      "SPLIT",
+      "TOMBSTONE"
+    ],
+    "architecture_family_selection_claimed": false
+  }
+}

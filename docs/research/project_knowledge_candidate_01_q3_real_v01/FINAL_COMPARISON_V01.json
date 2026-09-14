@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "fixture_id": "PKA-C01-Q3-REAL-V01",
+  "result": "RESULTS_V01.json",
+  "total_checks": 4,
+  "passed": 4,
+  "failed": 0,
+  "failed_checks": [],
+  "check_results": {
+    "all_source_hashes_match": true,
+    "real_semantics_alignment": true,
+    "complexity_bounds": true,
+    "h3_reopen": true
+  },
+  "implementation_repairs_after_first_run": 1,
+  "repair_summary": "Removed an invalid requirement that the real historical-intermediate source itself contain the Git rename commit; rename provenance is correctly verified from Git history."
+}
