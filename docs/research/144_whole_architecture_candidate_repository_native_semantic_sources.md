@@ -1,7 +1,7 @@
 # Research 144: Whole-Architecture Candidate - Repository-Native Semantic Sources with Selective Identity, Derived Views, and Action-Gated Authority
 
 **Date:** 2026-09-14
-**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE / INTEGRATED Q1+Q2+Q5 FIXTURE FROZEN / FRESH COLLABORATOR RUN NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE / INTEGRATED Q1+Q2+Q5 FRESH-COLLABORATOR SUPPORT PASSED / REVISION-BINDING BASIS AMENDED / Q4 REAL STRESS NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Candidate label:** `PKA-CANDIDATE-01`
 **Scope:** Synthesize one serious successor architecture from the complete Research 124 evidence field after the H1/H2 mechanism probes, real-corpus independent review, MC-0014/MC-0015 corrections, D1-D8 external evidence and owner-provided ICM evaluation. Define enough logical structure, authority semantics, typed source responsibilities, derived-view behavior, activation, lifecycle, validation, scaling and migration behavior to qualify the candidate systematically against Requirements V0.2.
 **Authority:** Candidate architecture research only. Requirements V0.2 remain the frozen acceptance authority. This record does not select the target architecture, migrate current authority, or authorize implementation as the production continuity system.
@@ -1196,3 +1196,27 @@ Candidate 01 therefore proceeds next to one integrated Q1+Q2+Q5 challenge. Targe
 ## 49. Integrated knowledge-use challenge freezes
 
 Research 167 freezes the first Candidate 01 experiment that directly joins fresh reconstruction/discovery, consequential authority/risk activation and capture/promotion semantics. The real Source Vault Course 2 gate supplies the consequential task; a stale derived authority view and historical ingestion-resumed checkpoint supply adversarial distractors. Capture remains non-authoritative until a separate explicit review.
+
+## 50. Source revision bindings require an explicit byte/canonicalization basis
+
+Research 168 exposed a portability-relevant ambiguity in the previously described receipt/index binding. A bare content SHA is insufficient because a tracked Git blob and a checked-out working-tree file may differ in raw bytes due to line-ending or other checkout transformations without differing semantically.
+
+Candidate 01 therefore amends persistent source revision bindings to carry an explicit descriptor:
+
+```text
+source_commit
+source_path
+hash_algorithm
+hash_basis
+content_digest
+```
+
+For repository-backed authority the default is `GIT_BLOB_BYTES_AT_COMMIT`. Validators resolve and hash the blob at the declared commit/path. Working-tree bytes or canonicalized text may be used only with a different explicit basis. No validator may silently guess a normalization rule after mismatch.
+
+This amendment applies to authority/reconstruction receipts, derived-view freshness bindings and any later cross-tool portability checks.
+
+## 51. Integrated fresh collaborator validates the knowledge-use loop
+
+Research 168 demonstrates bounded fresh orientation, consequential authority/risk discovery, visible stale-authority failure, a source-bound receipt and capture -> explicit review -> shadow promotion without using legacy global current-state surfaces. Candidate 01 now has real subsystem evidence on every Q5 item.
+
+Provider/tool portability remains open because the manual result did not preserve exact engine/thread provenance and did not constitute a controlled cross-provider run.

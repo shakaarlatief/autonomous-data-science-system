@@ -642,14 +642,15 @@
     "q3_real_subsystem_support_passed": true,
     "h3_reopen_after_q3_real_v01": false,
     "q7_real_subsystem_support_passed": true,
-    "candidate_items_with_synthetic_or_better_evidence_current": 58,
-    "candidate_items_with_real_evidence_current": 49,
+    "candidate_items_with_synthetic_or_better_evidence_current": 63,
+    "candidate_items_with_real_evidence_current": 58,
     "q9_shadow_subsystem_support_passed": true,
     "whole_architecture_evidence_reconciliation_v02_complete": true,
     "whole_architecture_evidence_reconciliation_v02_sha256": "ce1fe5f6f4dd630b2820a05ae961a8df6035d2283f7af8ca25c68169cd099c60",
-    "next_priority": "Q1_Q2_Q5_INTEGRATED_COLD_CONTINUATION_AUTHORITY_CAPTURE_PROMOTION",
+    "next_priority": "Q4_REAL_MULTI_DEPENDENCY_INTERRUPTION_STALE_WRITE_STRESS",
     "strong_real_subsystem_clusters_current": [
       "Q3",
+      "Q5",
       "Q6",
       "Q7",
       "Q8",
@@ -658,10 +659,11 @@
     "mixed_gap_clusters_current": [
       "Q1",
       "Q2",
-      "Q4",
-      "Q5"
+      "Q4"
     ],
-    "final_governing_cluster": "Q10"
+    "final_governing_cluster": "Q10",
+    "q1_q2_q5_integrated_fresh_collaborator_support_passed": true,
+    "revision_binding_basis_amendment_required": true
   },
   "adversarial_review": {
     "thread": "MC-0016",
@@ -1031,6 +1033,65 @@
       "KA-R45",
       "KA-I08",
       "KA-I17"
+    ]
+  },
+  "prototype_evidence_q1_q2_q5_integrated_v01": {
+    "research": "research:168",
+    "freeze_commit": "06a6e2e3aea325df5424174d0e87e7555b701428",
+    "real_base_commit": "f5996aed3710c63e1ba859ee248c264abd678636",
+    "fresh_collaborator_result_path": "docs/research/project_knowledge_candidate_01_q1_q2_q5_integrated_v01/FRESH_COLLABORATOR_RESULT_V01.json",
+    "fresh_collaborator_result_sha256": "ccbaa542d3c522d0a6460eb20ba5784ba9fde419a7764043671370a9ec80d448",
+    "evaluation_path": "docs/research/project_knowledge_candidate_01_q1_q2_q5_integrated_v01/FRESH_COLLABORATOR_EVALUATION_V01.json",
+    "evaluation_sha256": "affc0811870523b972ad23a32c2774e639dccc91840ddacb9553931c02682c4e",
+    "final_result_path": "docs/research/project_knowledge_candidate_01_q1_q2_q5_integrated_v01/FINAL_INTEGRATED_RESULT_V01.json",
+    "final_result_sha256": "82ceb42e979ca979ec08f6e3c8ae55abec13e8a4f3b7091ed1e696339e1dc183",
+    "promotion_review_sha256": "121e76e7f29624234919ee52f12c3558a16175b3845e32dfbaafe3ef25f1990c",
+    "promoted_knowledge_sha256": "e773834e5f88c5d409eae37b84152e53d53e8b208e8d8a1105800bb90d3815f5",
+    "fresh_collaborator_checks": {
+      "passed": 25,
+      "failed": 0
+    },
+    "final_checks": {
+      "passed": 11,
+      "failed": 0
+    },
+    "collaborator_repairs": 0,
+    "evaluator_repairs": 2,
+    "evidence_read_count": 9,
+    "evidence_read_bytes_from_frozen_manifest": 35438,
+    "legacy_bootstrap_read_count": 0,
+    "evidence_class": "REAL_FRESH_COLLABORATOR_INTEGRATED_Q1_Q2_Q5_SUPPORT",
+    "final_qualification_credit": false,
+    "capture_promoted_after_explicit_review": true,
+    "source_revision_basis_finding": "SOURCE_REVISION_BASIS_AMBIGUOUS",
+    "architecture_amendment_required": "EXPLICIT_SOURCE_REVISION_BASIS_DESCRIPTOR",
+    "exact_engine_thread_provenance_recorded": false,
+    "provider_tool_portability_credit": false,
+    "supported_mechanism_ids": [
+      "KA-R01",
+      "KA-R03",
+      "KA-R07",
+      "KA-R09",
+      "KA-R10",
+      "KA-R11",
+      "KA-R13",
+      "KA-R18",
+      "KA-R22",
+      "KA-R48",
+      "KA-I01",
+      "KA-I03",
+      "KA-I05",
+      "KA-I06",
+      "KA-I11",
+      "KA-I16"
+    ],
+    "supported_with_limitation_ids": [
+      "KA-R08"
+    ],
+    "amendment_impacted_mechanism_ids": [
+      "KA-R08",
+      "KA-R23",
+      "KA-R36"
     ]
   }
 }

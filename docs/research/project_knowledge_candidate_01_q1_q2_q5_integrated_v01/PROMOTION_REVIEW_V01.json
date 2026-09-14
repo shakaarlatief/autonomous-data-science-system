@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "review_id": "PKA-C01-Q125-PROMOTION-REVIEW-V01",
+  "capture_semantic_id": "CAPTURE-Q125-INSIGHT-01",
+  "collaborator_result_sha256": "ccbaa542d3c522d0a6460eb20ba5784ba9fde419a7764043671370a9ec80d448",
+  "evaluation_sha256": "affc0811870523b972ad23a32c2774e639dccc91840ddacb9553931c02682c4e",
+  "reviewer": "ChatGPT task-owner architecture review",
+  "checks": {
+    "COLLABORATOR_RESULT_VALID": true,
+    "SOURCE_TRACEABLE": true,
+    "NON_CONFLICTING": true,
+    "MATERIAL_SYNTHESIS": true,
+    "EXPLICIT_REVIEW_DECISION_ACCEPT": true
+  },
+  "decision": "ACCEPT_FOR_SHADOW_PROMOTION",
+  "decision_scope": "Candidate 01 shadow qualification only; not current project authority and not target-architecture selection.",
+  "reasoning": {
+    "source_traceability": "The synthesis is grounded only in the collaborator-read Source Vault workstream/index, governing runbook, comparison evidence, historical checkpoint and capture envelope.",
+    "non_conflict": "The statement does not replace runbook facts. It generalizes the observed need to keep source binding, workstream execution permission and operational gate evidence separate.",
+    "material_synthesis": "The statement is not a copied sentence and captures a reusable consequential-decision pattern that directly explains why the distractor, readiness evidence and stale derived view cannot substitute for current authority.",
+    "revision_binding_finding": "A separate evaluator finding, SOURCE_REVISION_BASIS_AMBIGUOUS, is not folded into this promoted statement. It is handled as an architecture amendment rather than silently changing the collaborator capture."
+  }
+}

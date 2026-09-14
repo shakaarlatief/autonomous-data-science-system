@@ -1,0 +1,97 @@
+{
+  "collaborator": "Codex fresh-collaborator session; bounded file-only qualification using the specified request and nine allowed evidence files, without prior conversation memory.",
+  "reads": [
+    "docs/research/project_knowledge_candidate_01_q1_q2_q5_integrated_v01/SHADOW_BOOTSTRAP_CORE.md",
+    "docs/research/project_knowledge_candidate_01_q1_q2_q5_integrated_v01/SHADOW_ACTIVE_WORKSTREAM.md",
+    "docs/research/project_knowledge_candidate_01_q1_q2_q5_integrated_v01/SHADOW_SOURCE_VAULT_WORKSTREAM.md",
+    "docs/research/project_knowledge_candidate_01_q1_q2_q5_integrated_v01/SHADOW_AUTHORITY_RISK_INDEX.json",
+    "docs/research/project_knowledge_candidate_01_q1_q2_q5_integrated_v01/SHADOW_CAPTURE_ENVELOPE.md",
+    "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+    "docs/source_universe/validation/003_permanent_source_registry_migrated.md",
+    "docs/source_universe/validation/004_permanent_first_corpus_prospective_compare_all_match.md",
+    "docs/checkpoints/274_archive_unarchive_reacquire_verified_source_vault_ingestion_resumed.md"
+  ],
+  "task_a": {
+    "decision": "BLOCKED: Course 2 may not be admitted now.",
+    "governing_sources": [
+      "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+    ],
+    "evidence_sources": [
+      "docs/source_universe/validation/003_permanent_source_registry_migrated.md",
+      "docs/source_universe/validation/004_permanent_first_corpus_prospective_compare_all_match.md",
+      "docs/research/project_knowledge_candidate_01_q1_q2_q5_integrated_v01/SHADOW_SOURCE_VAULT_WORKSTREAM.md",
+      "docs/research/project_knowledge_candidate_01_q1_q2_q5_integrated_v01/SHADOW_ACTIVE_WORKSTREAM.md"
+    ],
+    "distractors_rejected": [
+      "docs/checkpoints/274_archive_unarchive_reacquire_verified_source_vault_ingestion_resumed.md"
+    ],
+    "activated_risks": [
+      "RK-RECOVERY-FAILURE",
+      "RK-REMOTE-ROUNDTRIP-FAILURE",
+      "RK-PRIVATE-LEAK"
+    ],
+    "blockers": [
+      "WS-SOURCE-VAULT-BOOTSTRAP is PAUSED; explicit project routing must return to this workstream before execution resumes. The active shadow route belongs to Research 124 project-knowledge architecture qualification.",
+      "First-corpus ingestion is NOT_STARTED. The migrated registry and 20 MATCH / 0 non-MATCH prospective comparison establish preparation, not completed ingestion or final accounting of every intended file.",
+      "The working-store integrity audit is PENDING; clean registered-artifact results and no unexplained orphan objects have not been demonstrated.",
+      "A verified independent backup round trip is PENDING. Verified local staging alone cannot satisfy separate-storage recovery; the independent encrypted object must be retrieved and its digest reproduced.",
+      "Clean restore from the independently retrieved copy and the restored integrity audit are PENDING; reproduced registry semantics, artifact sizes and SHA-256 values, and absence of unexplained orphans have not been demonstrated.",
+      "Public-safe evidence establishing completion of the entire Section 13 admission gate has not been preserved in the allowed evidence.",
+      "Before any future ingestion write, local execution state and genuine backup separation/topology must be verified under Section 4. Its dated preflight records pending destination/local-state verification; the allowed later records do not individually establish every preflight check. Capacity READY alone is insufficient and capacity is not a demonstrated current blocker."
+    ],
+    "next_safe_action": "Keep Course 2 blocked and perform no Source Vault or Source Registry write. Preserve this bounded decision and wait for explicit project routing back to WS-SOURCE-VAULT-BOOTSTRAP. Checkpoint 274 records a historical route return and continuity verification; its 'ingestion resumed' title neither supersedes the shadow PAUSED state nor proves ingestion or recovery completion. When routing returns under separate execution authorization, verify the runbook's local execution and topology preconditions, then resume reviewed ingestion of the frozen 20-entry first corpus, preserve association uncertainty, verify ingestion accounting, run the working audit, create verified staging and independent encrypted replication, retrieve and verify the exact encrypted archive, decrypt and restore into a clean target, run the restored audit, and preserve public-safe evidence before reconsidering admission. Under Section 14, recovery failure, independent remote round-trip failure, or private information leaking into public-safe outputs require PAUSE_AND_REVISE. The same pause-and-revise rule applies to unhandled source variants, unacceptable backup topology, path portability defects, registry/vault placement conflicts, source-rights metadata gaps, performance or storage problems, and unexplained fingerprint mismatches. Preserve material architectural changes prospectively before bulk intake continues.",
+    "uncertainty": [
+      "This decision describes only the frozen Candidate 01 slice. Shadow bootstrap/workstream declarations are candidate discovery and state surfaces, and the index is derived; none is promoted to current project authority. The allowed public runbook supplies the governing admission procedure.",
+      "Validation 004 reports readiness for reviewed ingestion, while the runbook retains an earlier dated preflight snapshot. The bounded evidence does not resolve every machine-local execution/topology detail; none was inspected or inferred complete. This does not weaken the definite Course 2 block from the pending admission gates and paused workstream.",
+      "The receipt source_revision is copied exactly from the shadow index. The checkout's raw-byte SHA-256 is d4e8efb8686a899f02c792294c93ad6c62c11ab3dd595dd711ffd69f69f7d8b2; UTF-8 hashing after CRLF-to-LF normalization reproduces the indexed fdcb795d39945883dcce99995a5c3f396e5f1dd8f904a668b8366b1d1aa69656. This is a disclosed line-ending diagnostic, not an assertion of raw-byte binding equality or a repair of either binding.",
+      "The three indexed risks are applicable decision checks, not claims that failures or a private leak have occurred. No such occurrence is established by the allowed evidence.",
+      "Byte-level MATCH does not resolve POSSIBLE or UNVERIFIED course associations; those semantics must remain unchanged during future ingestion."
+    ]
+  },
+  "task_b": {
+    "decision": "FAIL: STALE-VIEW-COURSE2-01 cannot authorize Course 2 admission.",
+    "stale_view_id": "STALE-VIEW-COURSE2-01",
+    "reason": "The view is DERIVED_AUTHORITY_VIEW with freshness STALE_BY_SOURCE_BINDING_MISMATCH. Its declared source digest is 64 zeroes, which matches neither the indexed governing revision fdcb795d39945883dcce99995a5c3f396e5f1dd8f904a668b8366b1d1aa69656 nor the checkout's raw-byte digest. Its COURSE_2_READY claim also contradicts the runbook's unmet Section 13 gates and the frozen Source Vault state. Fail visibly and retain the invalid binding as evidence; do not replace it silently. Repetition, copied summaries, derived storage, or placement in a capture envelope cannot grant authority or satisfy admission gates. Any future regenerated view would need explicit valid source binding and review against the governing procedure; regeneration alone would not supply missing ingestion or recovery proof."
+  },
+  "authority_receipt": {
+    "task": "COURSE2_ADMISSION_DECISION",
+    "workstream": "WS-SOURCE-VAULT-BOOTSTRAP",
+    "governing_source": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+    "source_revision": "fdcb795d39945883dcce99995a5c3f396e5f1dd8f904a668b8366b1d1aa69656",
+    "activated_risks": [
+      "RK-RECOVERY-FAILURE",
+      "RK-REMOTE-ROUNDTRIP-FAILURE",
+      "RK-PRIVATE-LEAK"
+    ],
+    "decision": "BLOCKED: Course 2 may not be admitted now.",
+    "blockers": [
+      "WS-SOURCE-VAULT-BOOTSTRAP is PAUSED; explicit project routing must return to this workstream before execution resumes. The active shadow route belongs to Research 124 project-knowledge architecture qualification.",
+      "First-corpus ingestion is NOT_STARTED. The migrated registry and 20 MATCH / 0 non-MATCH prospective comparison establish preparation, not completed ingestion or final accounting of every intended file.",
+      "The working-store integrity audit is PENDING; clean registered-artifact results and no unexplained orphan objects have not been demonstrated.",
+      "A verified independent backup round trip is PENDING. Verified local staging alone cannot satisfy separate-storage recovery; the independent encrypted object must be retrieved and its digest reproduced.",
+      "Clean restore from the independently retrieved copy and the restored integrity audit are PENDING; reproduced registry semantics, artifact sizes and SHA-256 values, and absence of unexplained orphans have not been demonstrated.",
+      "Public-safe evidence establishing completion of the entire Section 13 admission gate has not been preserved in the allowed evidence.",
+      "Before any future ingestion write, local execution state and genuine backup separation/topology must be verified under Section 4. Its dated preflight records pending destination/local-state verification; the allowed later records do not individually establish every preflight check. Capacity READY alone is insufficient and capacity is not a demonstrated current blocker."
+    ],
+    "uncertainty": [
+      "This decision describes only the frozen Candidate 01 slice. Shadow bootstrap/workstream declarations are candidate discovery and state surfaces, and the index is derived; none is promoted to current project authority. The allowed public runbook supplies the governing admission procedure.",
+      "Validation 004 reports readiness for reviewed ingestion, while the runbook retains an earlier dated preflight snapshot. The bounded evidence does not resolve every machine-local execution/topology detail; none was inspected or inferred complete. This does not weaken the definite Course 2 block from the pending admission gates and paused workstream.",
+      "The receipt source_revision is copied exactly from the shadow index. The checkout's raw-byte SHA-256 is d4e8efb8686a899f02c792294c93ad6c62c11ab3dd595dd711ffd69f69f7d8b2; UTF-8 hashing after CRLF-to-LF normalization reproduces the indexed fdcb795d39945883dcce99995a5c3f396e5f1dd8f904a668b8366b1d1aa69656. This is a disclosed line-ending diagnostic, not an assertion of raw-byte binding equality or a repair of either binding.",
+      "The three indexed risks are applicable decision checks, not claims that failures or a private leak have occurred. No such occurrence is established by the allowed evidence.",
+      "Byte-level MATCH does not resolve POSSIBLE or UNVERIFIED course associations; those semantics must remain unchanged during future ingestion."
+    ]
+  },
+  "capture_candidate": {
+    "state": "CAPTURED_NON_AUTHORITATIVE",
+    "statement": "A consequential admission decision needs separate checks for governing-source binding, permission to resume the relevant workstream, and completion evidence for the operational gate. Success in one check cannot stand in for another: matching intake fingerprints do not prove recovery, a historical resume record does not establish present routing, and a repeated readiness claim cannot repair an invalid source binding.",
+    "source_basis": [
+      "docs/research/project_knowledge_candidate_01_q1_q2_q5_integrated_v01/SHADOW_SOURCE_VAULT_WORKSTREAM.md",
+      "docs/research/project_knowledge_candidate_01_q1_q2_q5_integrated_v01/SHADOW_AUTHORITY_RISK_INDEX.json",
+      "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+      "docs/source_universe/validation/004_permanent_first_corpus_prospective_compare_all_match.md",
+      "docs/checkpoints/274_archive_unarchive_reacquire_verified_source_vault_ingestion_resumed.md",
+      "docs/research/project_knowledge_candidate_01_q1_q2_q5_integrated_v01/SHADOW_CAPTURE_ENVELOPE.md"
+    ],
+    "promotion_recommendation": "REVIEW_FOR_PROMOTION"
+  }
+}

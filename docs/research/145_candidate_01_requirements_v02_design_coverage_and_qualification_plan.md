@@ -1,7 +1,7 @@
 # Research 145: Candidate 01 Requirements V0.2 Design Coverage and Qualification Plan
 
 **Date:** 2026-09-14
-**Status:** 50/50 KA-R + 17/17 KA-I DESIGN-MAPPED / INTEGRATED Q1+Q2+Q5 FIXTURE FROZEN / FRESH COLLABORATOR RUN NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** 50/50 KA-R + 17/17 KA-I DESIGN-MAPPED / INTEGRATED Q1+Q2+Q5 SUPPORT PASSED / Q4 REAL STRESS NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Candidate:** `PKA-CANDIDATE-01` from Research 144
 **Scope:** Systematically map the whole-architecture candidate against every frozen Requirements V0.2 requirement/invariant, distinguish design coverage from actual qualification evidence, identify selection-blocking proof clusters, and freeze the minimum implementation/behavioral evidence needed before target selection.
 **Authority:** Candidate qualification planning only. Requirements V0.2 remain the acceptance authority. A mapped design mechanism is not a qualified pass.
@@ -506,3 +506,9 @@ The next qualification unit is an integrated Q1+Q2+Q5 cold-continuation / author
 ## 28. Integrated Q1/Q2/Q5 fixture freeze
 
 Research 167 freezes a cross-cluster test for the remaining high-value Q1/Q2/Q5 gaps. The run will directly exercise KA-R01/R03/R07/R08/R09/R10/R11/R13/R22/R48 and KA-I01/I05/I06/I11/I16 at integrated shadow level where the frozen task reaches them. Evidence credit will depend on the actual fresh-collaborator result, not the fixture design.
+
+## 29. Integrated Q1/Q2/Q5 fresh-collaborator evidence
+
+Research 168 adds real fresh-collaborator support to KA-R01/R03/R07/R09/R10/R11/R13/R18/R22/R48 and KA-I01/I03/I05/I06/I11/I16. KA-R08 is directly exercised but recorded with a source-revision-basis limitation exposed by the run. The Candidate 01 design now requires explicit revision-basis descriptors for future receipt/index bindings.
+
+Descriptive coverage becomes 58/67 real and 63/67 synthetic-or-better. Q5 now joins Q3/Q6/Q7/Q8/Q9 as a cluster with real subsystem evidence on every item. Q4 is the next real-behavior stress target.

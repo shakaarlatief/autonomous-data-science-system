@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "result_id": "PKA-C01-Q1-Q2-Q5-INTEGRATED-FINAL-V01",
+  "collaborator_result_sha256": "ccbaa542d3c522d0a6460eb20ba5784ba9fde419a7764043671370a9ec80d448",
+  "first_collaborator_result_sha256": "ccbaa542d3c522d0a6460eb20ba5784ba9fde419a7764043671370a9ec80d448",
+  "evaluation_sha256": "affc0811870523b972ad23a32c2774e639dccc91840ddacb9553931c02682c4e",
+  "first_evaluator_run_sha256": "90c192cf64e3b5e9772b5edd1e4789c012016675aedd2b9626a3a47fccf1e241",
+  "second_evaluator_run_sha256": "90c192cf64e3b5e9772b5edd1e4789c012016675aedd2b9626a3a47fccf1e241",
+  "promotion_review_sha256": "121e76e7f29624234919ee52f12c3558a16175b3845e32dfbaafe3ef25f1990c",
+  "promoted_knowledge_sha256": "e773834e5f88c5d409eae37b84152e53d53e8b208e8d8a1105800bb90d3815f5",
+  "collaborator_repairs": 0,
+  "evaluator_repairs": 2,
+  "evaluator_repair_summary": [
+    "First evaluator implementation compared Windows checkout raw bytes directly with an earlier Git-blob base, conflating line-ending transformation and checkpoint progression with collaborator mutation.",
+    "Second evaluator implementation used Git diff semantics but still compared against the pre-fixture real base rather than the committed fixture-freeze HEAD. Final evaluator checks working-tree mutation against frozen HEAD."
+  ],
+  "checks": {
+    "fresh_collaborator_result_preserved_exactly": true,
+    "fresh_collaborator_oracle_evaluation_pass": true,
+    "fresh_collaborator_budget_pass": true,
+    "explicit_promotion_review_all_checks_pass": true,
+    "explicit_promotion_review_accepts": true,
+    "promoted_statement_matches_capture": true,
+    "promoted_source_basis_matches_capture": true,
+    "promoted_source_is_shadow_only": true,
+    "promotion_transition_was_not_automatic": true,
+    "current_authority_unchanged": true,
+    "source_revision_basis_ambiguity_preserved": true
+  },
+  "passed": 11,
+  "failed": 0,
+  "failed_checks": [],
+  "budget": {
+    "evidence_read_count": 9,
+    "evidence_read_bytes_from_frozen_manifest": 35438,
+    "max_allowed_read_count": 9,
+    "legacy_bootstrap_read_count": 0,
+    "all_allowed_reads_used": true
+  },
+  "capture_transition": [
+    "EMPTY_BEFORE_COLLABORATOR_RUN",
+    "CAPTURED_NON_AUTHORITATIVE",
+    "PROMOTED_WITHIN_CANDIDATE_01_SHADOW_AFTER_EXPLICIT_REVIEW"
+  ],
+  "promoted_semantic_id": "KN-Q125-CONSEQUENTIAL-GATE-SEPARATION",
+  "source_revision_binding_finding": {
+    "indexed_sha256": "fdcb795d39945883dcce99995a5c3f396e5f1dd8f904a668b8366b1d1aa69656",
+    "receipt_sha256": "fdcb795d39945883dcce99995a5c3f396e5f1dd8f904a668b8366b1d1aa69656",
+    "git_blob_sha256": "fdcb795d39945883dcce99995a5c3f396e5f1dd8f904a668b8366b1d1aa69656",
+    "working_tree_raw_sha256": "d4e8efb8686a899f02c792294c93ad6c62c11ab3dd595dd711ffd69f69f7d8b2",
+    "working_tree_lf_normalized_sha256": "fdcb795d39945883dcce99995a5c3f396e5f1dd8f904a668b8366b1d1aa69656",
+    "indexed_matches_git_blob": true,
+    "indexed_matches_working_tree_raw": false,
+    "indexed_matches_working_tree_lf_normalized": true,
+    "receipt_follows_frozen_index": true,
+    "finding": "SOURCE_REVISION_BASIS_AMBIGUOUS",
+    "interpretation": "The frozen index binds canonical Git-blob bytes at the exact base, while the Windows working tree exposes CRLF-transformed bytes. The receipt obeys the frozen request, but a bare sha256 field is insufficiently explicit about revision/hash basis. Future successor receipts/index entries should bind commit + path + hash basis (for example GIT_BLOB_BYTES) or an equally explicit canonicalization contract."
+  },
+  "architecture_amendment_required": "EXPLICIT_SOURCE_REVISION_BASIS_DESCRIPTOR",
+  "collaborator_exact_engine_provenance_recorded": false,
+  "collaborator_provenance_limitation": "The result establishes a fresh manual Codex collaborator session but does not preserve an exact engine/thread identifier. This is sufficient for conversation-independence evidence but not for a provider/engine-portability claim.",
+  "integrated_q1_q2_q5_shadow_support": true,
+  "final_qualification_claimed": false,
+  "target_architecture_selected": false
+}

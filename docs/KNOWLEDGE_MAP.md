@@ -353,6 +353,7 @@ docs/research/164_q9_migration_authority_switch_rollback_fixture_freeze.md
 docs/research/165_q9_migration_authority_switch_rollback_result.md
 docs/research/166_whole_architecture_evidence_reconciliation_v02_and_next_integrated_falsification.md
 docs/research/167_q1_q2_q5_integrated_cold_continuation_authority_capture_fixture_freeze.md
+docs/research/168_q1_q2_q5_integrated_fresh_collaborator_result_and_revision_binding_amendment.md
 docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md
 docs/checkpoints/449_scalable_knowledge_architecture_redesign_opened.md
 docs/checkpoints/450_knowledge_architecture_baseline_inventory_complete_requirements_next.md
@@ -418,6 +419,7 @@ docs/checkpoints/509_q9_migration_authority_switch_rollback_fixture_frozen.md
 docs/checkpoints/510_q9_shadow_subsystem_support_passed_evidence_reconciliation_next.md
 docs/checkpoints/511_evidence_reconciliation_v02_integrated_q1_q2_q5_challenge_next.md
 docs/checkpoints/512_q1_q2_q5_integrated_fixture_frozen_fresh_collaborator_next.md
+docs/checkpoints/513_integrated_q1_q2_q5_passed_revision_binding_amended_q4_next.md
 docs/research/PROJECT_KNOWLEDGE_FAILURE_CORPUS.md
 docs/research/project_knowledge_baselines/PROJECT_KNOWLEDGE_BLIND_BASELINE_PROTOCOL.md
 docs/local_execution/validation/206_semantic_git_managed_python_integrity_and_publication_restored.md
@@ -953,7 +955,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-512 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-513 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

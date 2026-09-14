@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / INTEGRATED Q1+Q2+Q5 FIXTURE FROZEN / FRESH COLLABORATOR RUN NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / INTEGRATED Q1+Q2+Q5 FRESH-COLLABORATOR SUPPORT PASSED / Q4 REAL STRESS NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -4280,5 +4280,20 @@ The run is limited to nine allowed evidence reads and zero legacy `CURRENT_STATE
 Q1_Q2_Q5_FIXTURE=FROZEN
 FRESH_COLLABORATOR=REQUIRED
 NEXT=RUN_FRESH_COLLABORATOR_Q1_Q2_Q5_V01
+TARGET_ARCHITECTURE=NOT_SELECTED
+```
+
+## 113. Integrated Q1/Q2/Q5 fresh-collaborator run passes and exposes revision-binding basis defect
+
+Research 168 records a fresh manual collaborator result with 9/9 bounded evidence reads, zero legacy bootstrap reads, correct Course 2 block, correct governing/risk activation, fail-visible stale derived authority and explicit capture -> review -> shadow promotion. The collaborator result required no repair.
+
+The run also exposed that a bare SHA-256 authority binding is ambiguous across Git-blob versus checkout byte representations. Candidate 01 is amended so repository-backed revision bindings declare commit, path, hash algorithm, hash basis and digest. `GIT_BLOB_BYTES_AT_COMMIT` is the default basis for tracked repository authority.
+
+Evidence coverage rises to 58/67 real and 63/67 synthetic-or-better while final qualified passes remain zero. Q4 real workstream concurrency/interruption stress is next.
+
+```text
+Q1_Q2_Q5_INTEGRATED_SUPPORT=PASS
+REVISION_BINDING_BASIS=EXPLICIT_DESCRIPTOR_REQUIRED
+NEXT=Q4_REAL_WORKSTREAM_STRESS
 TARGET_ARCHITECTURE=NOT_SELECTED
 ```
