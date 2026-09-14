@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "judgment_set_id": "PKA-REAL-REL-V01-CLAUDE-A",
+  "corpus_id": "PKA-REAL-REL-V01",
+  "corpus_freeze_commit": "ae87c1facbf7c7d7508414e86a935bc439404c24",
+  "corpus_sha256": "cc61a9610b2a88b8be6c3af06b661c6ce270e094e380d1d362dc8f10d8f90ed5",
+  "reviewer": {
+    "collaborator_id": "claude",
+    "interaction_environment": "Claude",
+    "interaction_session": "claude-03",
+    "conversation_title": "03 - Project Knowledge Architecture Foundations and Design Method"
+  },
+  "independence_statement": "Claude reports current-branch reads were limited to the five authorized routing surfaces; substantive reads were pinned to the exact corpus-freeze base; no prohibited ChatGPT case-label content was exposed. ChatGPT validation finds no repository evidence contradicting that statement. RC-012 separately raises an evidence-boundary fidelity issue because its rationale asserts project-specific authority facts not present in the packet despite declaring no additional source reads.",
+  "additional_source_reads": [],
+  "judgments": [
+    {
+      "case_id": "RC-001",
+      "label": "SOURCE_LOCAL",
+      "confidence": "MEDIUM",
+      "rationale": "D-015's own entry already hosts the fact ('Status: Superseded in architectural-uncertainty scope by D-033'). This is a scope-qualified, dated pointer forward to a successor, structurally the same shape Common Fixture V0.1 validated as source-local (a document declaring its own supersession relation). The 'retained outcome' is a property of D-033's currently active content, not a separate object with its own lifecycle.",
+      "proposed_natural_owner_or_null": "D-015 (already hosts its own scoped Status: Superseded-by field, per the excerpt)",
+      "independent_continuity_basis_or_null": null,
+      "derived_inputs_or_null": null,
+      "missing_evidence_or_null": null
+    },
+    {
+      "case_id": "RC-002",
+      "label": "SOURCE_LOCAL",
+      "confidence": "MEDIUM",
+      "rationale": "D-011's own entry already hosts an evolving roll-up of scope-specific supersessions across three dates and six successors, the same pattern as V0.1's validated identity_history array on a single durable subject. The fan-out is richer than RC-001 but is still one document progressively recording facts about itself, not six documents needing to agree on a shared external truth. This is the closest case in the corpus to tempting a first-class 'supersession mapping' object, and I considered that reading, but nothing in the excerpt suggests the mapping is disputed, jointly edited, or needed independent of D-011's own record.",
+      "proposed_natural_owner_or_null": "D-011 (already hosts its own scoped superseded-by roll-up, per the excerpt)",
+      "independent_continuity_basis_or_null": null,
+      "derived_inputs_or_null": null,
+      "missing_evidence_or_null": null
+    },
+    {
+      "case_id": "RC-003",
+      "label": "DERIVED_ONLY",
+      "confidence": "MEDIUM",
+      "rationale": "Which CI run is obsolete because of a newer same-branch push is a deterministic function of branch identity and push/commit ordering -- ordinary git ancestry plus run timestamps. Nothing about this relation has its own state, provenance, or lifecycle distinct from the underlying commit history; persisting it as an authoritative fact would just be caching a query result. This reads as a deliberately generic build-tooling example rather than a project-knowledge relation needing a home at all.",
+      "proposed_natural_owner_or_null": null,
+      "independent_continuity_basis_or_null": null,
+      "derived_inputs_or_null": "branch identity, commit/push order, per-run timestamps from the CI system's own run history",
+      "missing_evidence_or_null": "I don't know whether ADS's specific CI system already persists an explicit cancellation annotation for audit reasons; the packet doesn't say, so this is a judgment about what SHOULD be authoritative, not a claim about current implementation."
+    },
+    {
+      "case_id": "RC-004",
+      "label": "SOURCE_LOCAL",
+      "confidence": "HIGH",
+      "rationale": "A clean, one-directional governance statement: checkpoint metadata/role are governed by docs/checkpoints/README.md and mechanically validated. The governing document is the obvious, already-functioning owner, and the existence of mechanical validation is itself evidence this relation is already well-handled by ordinary directional governance without needing a separate relation object.",
+      "proposed_natural_owner_or_null": "docs/checkpoints/README.md",
+      "independent_continuity_basis_or_null": null,
+      "derived_inputs_or_null": null,
+      "missing_evidence_or_null": null
+    },
+    {
+      "case_id": "RC-005",
+      "label": "SOURCE_LOCAL",
+      "confidence": "HIGH",
+      "rationale": "docs/cockpit/README.md already successfully hosts the full pause/resume state directly -- status, subordinate-authority note, frozen branch/head, pause checkpoint, last-reconciled date, an explicit non-status list, and an exact resume anchor (branch/head/workflow id). This is a real, working instance of the same source-local workstream pattern Common Fixture V0.1 validated (a workstream document owning its own state/parent/resume fields), not a case crying out for independent identity -- it already has it, at the document level, and it works.",
+      "proposed_natural_owner_or_null": "docs/cockpit/README.md",
+      "independent_continuity_basis_or_null": null,
+      "derived_inputs_or_null": null,
+      "missing_evidence_or_null": null
+    },
+    {
+      "case_id": "RC-006",
+      "label": "DERIVED_ONLY",
+      "confidence": "MEDIUM",
+      "rationale": "Each initiative's own status (Research 123 active, Research 113 paused, Source Vault paused) is plausibly source-local to that initiative's own record. But the aggregate picture this case actually asks about -- which route is active, which is paused, and what comes next unless redirected -- reads as exactly the kind of current-state projection KA-R32/R50 describe: a derived view computed from the individual initiatives' own declared status plus a priority/redirect condition, not a fact that itself needs a single authoritative home. The excerpt appears as incidental commentary inside a backlog document about a different topic, which is consistent with this being a derived summary rather than an authoritative record in its own right.",
+      "proposed_natural_owner_or_null": null,
+      "independent_continuity_basis_or_null": null,
+      "derived_inputs_or_null": "each initiative's own status field (Research 123, Research 113, Source Vault) plus whatever currently states the priority/redirect condition",
+      "missing_evidence_or_null": "I don't know where the 'planned next stage unless explicitly redirected' condition is currently canonically stated; the packet doesn't show it, so I can't confirm this derived view already has a clean set of source inputs versus needing one to be created."
+    },
+    {
+      "case_id": "RC-007",
+      "label": "SOURCE_LOCAL",
+      "confidence": "HIGH",
+      "rationale": "The deployment process document already hosts its own list of ten reopen/pause trigger conditions directly (Section 14). This is a governing document owning its own trigger list, matching the known-risk/trigger-activation pattern (KA-R10) without any indication that individual trigger conditions have independent lifecycle apart from the process document that lists them.",
+      "proposed_natural_owner_or_null": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+      "independent_continuity_basis_or_null": null,
+      "derived_inputs_or_null": null,
+      "missing_evidence_or_null": null
+    },
+    {
+      "case_id": "RC-008",
+      "label": "SOURCE_LOCAL",
+      "confidence": "HIGH",
+      "rationale": "MC-0013's own STATE.json already successfully hosts this exact information -- review base ref, known exposures, and the exact freeze commit -- as one coherent 'independence' object within the thread's own control file. This is a real, working example of a review thread's own state file being the natural owner of its own independence/provenance bookkeeping.",
+      "proposed_natural_owner_or_null": "the review thread's own STATE.json (here, MC-0013's)",
+      "independent_continuity_basis_or_null": null,
+      "derived_inputs_or_null": null,
+      "missing_evidence_or_null": null
+    },
+    {
+      "case_id": "RC-009",
+      "label": "SOURCE_LOCAL",
+      "confidence": "MEDIUM",
+      "rationale": "The excerpt describes a structural, domain-level distinction (two top-level doc domains) rather than one specific derivation instance. For the general pattern this establishes -- a piece of derived methodological knowledge citing the source evidence it came from -- the natural owner is the derived-knowledge unit itself, stating its own provenance, matching the K1.derived_from pattern V0.1 validated as source-local. The case as posed is about the domain-level principle rather than an instance, so this reads more as evidence of an existing organizational convention than a single relationship needing a new home.",
+      "proposed_natural_owner_or_null": "the individual derived-knowledge artifact (states its own source provenance)",
+      "independent_continuity_basis_or_null": null,
+      "derived_inputs_or_null": null,
+      "missing_evidence_or_null": null
+    },
+    {
+      "case_id": "RC-010",
+      "label": "DERIVED_ONLY",
+      "confidence": "HIGH",
+      "rationale": "The excerpt states this outright: topic membership is retrieval metadata, not an authority claim, and a source may appear under multiple subjects. This is exactly the multi-axis-organization-without-duplicated-truth case (KA-R47) -- the subject-to-artifact mapping should be generated from each artifact's own declared subject/topic tags, not hand-maintained as a second, separately authoritative index. This is also the precise shape of a drift pattern I have flagged in this project's own history before (a hand-maintained convenience index drifting from the source-local tags it's supposed to summarize).",
+      "proposed_natural_owner_or_null": null,
+      "independent_continuity_basis_or_null": null,
+      "derived_inputs_or_null": "each artifact's own declared subject/topic tags",
+      "missing_evidence_or_null": null
+    },
+    {
+      "case_id": "RC-011",
+      "label": "SOURCE_LOCAL",
+      "confidence": "HIGH",
+      "rationale": "A stable, constitutional-style precedence rule (public repository is sole authority; private companion may hold delegated continuity but cannot silently override; conflicts resolve via status/scope/chronology/supersession/accepted authority, else surfaced explicitly), already stated in one document. This is a standing procedural rule, not an evolving multi-party relation -- it doesn't need independent identity any more than an ordinary conflict-resolution clause does.",
+      "proposed_natural_owner_or_null": "docs/CONTINUITY.md",
+      "independent_continuity_basis_or_null": null,
+      "derived_inputs_or_null": null,
+      "missing_evidence_or_null": null
+    },
+    {
+      "case_id": "RC-012",
+      "label": "SOURCE_LOCAL",
+      "confidence": "HIGH",
+      "rationale": "current_routing.json is a small, deliberately authoritative pointer file whose fields change together, in one commit, to describe one project moment. I considered whether this should instead be DERIVED_ONLY (computed from git/checkpoint state on demand), but nothing else in the repository separately tracks these facts authoritatively -- the file is authoritative by design, precisely to keep bootstrap cost low (matching KA-R02/R32's bounded-core requirement), not a cached copy of some other primary source.",
+      "proposed_natural_owner_or_null": "docs/current_routing.json itself",
+      "independent_continuity_basis_or_null": null,
+      "derived_inputs_or_null": null,
+      "missing_evidence_or_null": null
+    },
+    {
+      "case_id": "RC-013",
+      "label": "SOURCE_LOCAL",
+      "confidence": "HIGH",
+      "rationale": "The same pattern as RC-012 and RC-008: a review thread's own STATE.json coherently holding collaborator identity, bounded write surface, and next-expected-actor as one small, atomically-updated record. This is a real, repeatedly-used, working convention across this project's collaboration threads.",
+      "proposed_natural_owner_or_null": "the review thread's own STATE.json (here, MC-0014's)",
+      "independent_continuity_basis_or_null": null,
+      "derived_inputs_or_null": null,
+      "missing_evidence_or_null": null
+    },
+    {
+      "case_id": "RC-014",
+      "label": "SOURCE_LOCAL",
+      "confidence": "HIGH",
+      "rationale": "Again the same pattern: a review thread's own STATE.json holding its own task/branch/base-ref binding directly. I note that RC-008, RC-012, RC-013 and RC-014 are structurally near-identical cases (a small control file whose own fields cohere as one record) drawn from different categories in the selection design, and I've given all four the same answer for the same reason -- that consistency across superficially different categories is itself a useful check on whether my reasoning is principled rather than case-by-case guessing.",
+      "proposed_natural_owner_or_null": "the review thread's own STATE.json (here, MC-0014's)",
+      "independent_continuity_basis_or_null": null,
+      "derived_inputs_or_null": null,
+      "missing_evidence_or_null": null
+    },
+    {
+      "case_id": "RC-015",
+      "label": "SOURCE_LOCAL",
+      "confidence": "HIGH",
+      "rationale": "A standing procedural rule (the current architecture stays authoritative until a successor is selected, implemented, migrated and validated) stated once, in Research 124. This is a checklist-gated principle, not evidence that the eventual transition event itself needs a persistent object separate from wherever the decision is finally recorded -- when it happens, I'd expect it to be recorded as an ordinary decision using the same directional supersession convention already validated in RC-001/RC-002.",
+      "proposed_natural_owner_or_null": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md (or wherever the project's migration-policy statement finally lives)",
+      "independent_continuity_basis_or_null": null,
+      "derived_inputs_or_null": null,
+      "missing_evidence_or_null": null
+    }
+  ],
+  "summary": {
+    "case_count": 15,
+    "label_counts": {
+      "SOURCE_LOCAL": 12,
+      "FIRST_CLASS_SEMANTIC_OBJECT": 0,
+      "DERIVED_ONLY": 3,
+      "UNRESOLVED": 0
+    },
+    "confidence_counts": {
+      "HIGH": 10,
+      "MEDIUM": 5,
+      "LOW": 0
+    }
+  }
+}

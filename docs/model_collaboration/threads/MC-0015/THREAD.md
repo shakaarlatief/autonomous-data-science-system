@@ -1,7 +1,7 @@
 # MC-0015 Thread: Independent Real-Corpus Relationship Judgment
 
 **Thread:** MC-0015
-**Status:** OPEN / CLAUDE INDEPENDENT JUDGMENT NEXT
+**Status:** OPEN / INDEPENDENT JUDGMENTS COMPLETE / CLAUDE COMPARATIVE CONSTRUCT REVIEW NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
 **Independent substantive base:** `ae87c1facbf7c7d7508414e86a935bc439404c24`
@@ -16,7 +16,7 @@ Obtain Claude's complete 15-case semantic ownership/reification judgment set ove
 ## Current phase
 
 ```text
-INDEPENDENT_REAL_CORPUS_JUDGMENT
+COMPARATIVE_CONSTRUCT_VALIDITY_REVIEW
 ```
 
 ## Expected dialogue sequence
@@ -27,7 +27,7 @@ INDEPENDENT_REAL_CORPUS_JUDGMENT
 003+ only if a material case-level disagreement warrants another bounded comparative turn
 ```
 
-Only Message 001 is currently authorized.
+Message 001 is durably frozen as Claude independent judgment set. Message 002 exposes ChatGPT judgments and the comparison. Message 003 is now authorized only for the bounded construct-validity questions in Message 002.
 
 ## Independence
 
@@ -44,5 +44,17 @@ docs/model_collaboration/threads/MC-0015/messages/**
 ```text
 MC0015=OPEN
 NEXT=CLAUDE_MESSAGE_001
+TARGET_ARCHITECTURE=NOT_SELECTED
+```
+
+
+## Independent-phase result
+
+Claude Message 001 was committed at `507db2cf5916df59a4aeaf053ac695f13636c14f`. The independent pass is accepted as reviewer-label independent, with one separate RC-012 packet-grounding caveat. Mechanical comparison yields 12/15 exact label agreement. RC-005, RC-006 and RC-012 require one bounded comparative turn.
+
+```text
+PHASE=COMPARATIVE_CONSTRUCT_VALIDITY_REVIEW
+NEXT=CLAUDE_MESSAGE_003
+MECHANIZED_RULE=BLOCKED
 TARGET_ARCHITECTURE=NOT_SELECTED
 ```

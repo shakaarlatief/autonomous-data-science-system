@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "comparison_id": "PKA-REAL-REL-V01-CHATGPT-CLAUDE-A",
+  "corpus_id": "PKA-REAL-REL-V01",
+  "corpus_freeze_commit": "ae87c1facbf7c7d7508414e86a935bc439404c24",
+  "corpus_sha256": "cc61a9610b2a88b8be6c3af06b661c6ce270e094e380d1d362dc8f10d8f90ed5",
+  "chatgpt_judgment_set_id": "PKA-REAL-REL-V01-CHATGPT-A",
+  "claude_judgment_set_id": "PKA-REAL-REL-V01-CLAUDE-A",
+  "case_count": 15,
+  "exact_agreement_count": 12,
+  "exact_agreement_rate": 0.8,
+  "cohens_kappa_descriptive": 0.5454545454545455,
+  "marginal_label_counts": {
+    "chatgpt": {
+      "SOURCE_LOCAL": 10,
+      "FIRST_CLASS_SEMANTIC_OBJECT": 2,
+      "DERIVED_ONLY": 2,
+      "UNRESOLVED": 1
+    },
+    "claude": {
+      "SOURCE_LOCAL": 12,
+      "FIRST_CLASS_SEMANTIC_OBJECT": 0,
+      "DERIVED_ONLY": 3,
+      "UNRESOLVED": 0
+    }
+  },
+  "cases": [
+    {
+      "case_id": "RC-001",
+      "chatgpt_label": "SOURCE_LOCAL",
+      "claude_label": "SOURCE_LOCAL",
+      "exact_label_agreement": true,
+      "chatgpt_confidence": "HIGH",
+      "claude_confidence": "MEDIUM"
+    },
+    {
+      "case_id": "RC-002",
+      "chatgpt_label": "SOURCE_LOCAL",
+      "claude_label": "SOURCE_LOCAL",
+      "exact_label_agreement": true,
+      "chatgpt_confidence": "MEDIUM",
+      "claude_confidence": "MEDIUM"
+    },
+    {
+      "case_id": "RC-003",
+      "chatgpt_label": "DERIVED_ONLY",
+      "claude_label": "DERIVED_ONLY",
+      "exact_label_agreement": true,
+      "chatgpt_confidence": "HIGH",
+      "claude_confidence": "MEDIUM"
+    },
+    {
+      "case_id": "RC-004",
+      "chatgpt_label": "SOURCE_LOCAL",
+      "claude_label": "SOURCE_LOCAL",
+      "exact_label_agreement": true,
+      "chatgpt_confidence": "HIGH",
+      "claude_confidence": "HIGH"
+    },
+    {
+      "case_id": "RC-005",
+      "chatgpt_label": "FIRST_CLASS_SEMANTIC_OBJECT",
+      "claude_label": "SOURCE_LOCAL",
+      "exact_label_agreement": false,
+      "chatgpt_confidence": "HIGH",
+      "claude_confidence": "HIGH"
+    },
+    {
+      "case_id": "RC-006",
+      "chatgpt_label": "FIRST_CLASS_SEMANTIC_OBJECT",
+      "claude_label": "DERIVED_ONLY",
+      "exact_label_agreement": false,
+      "chatgpt_confidence": "HIGH",
+      "claude_confidence": "MEDIUM"
+    },
+    {
+      "case_id": "RC-007",
+      "chatgpt_label": "SOURCE_LOCAL",
+      "claude_label": "SOURCE_LOCAL",
+      "exact_label_agreement": true,
+      "chatgpt_confidence": "HIGH",
+      "claude_confidence": "HIGH"
+    },
+    {
+      "case_id": "RC-008",
+      "chatgpt_label": "SOURCE_LOCAL",
+      "claude_label": "SOURCE_LOCAL",
+      "exact_label_agreement": true,
+      "chatgpt_confidence": "HIGH",
+      "claude_confidence": "HIGH"
+    },
+    {
+      "case_id": "RC-009",
+      "chatgpt_label": "SOURCE_LOCAL",
+      "claude_label": "SOURCE_LOCAL",
+      "exact_label_agreement": true,
+      "chatgpt_confidence": "HIGH",
+      "claude_confidence": "MEDIUM"
+    },
+    {
+      "case_id": "RC-010",
+      "chatgpt_label": "DERIVED_ONLY",
+      "claude_label": "DERIVED_ONLY",
+      "exact_label_agreement": true,
+      "chatgpt_confidence": "HIGH",
+      "claude_confidence": "HIGH"
+    },
+    {
+      "case_id": "RC-011",
+      "chatgpt_label": "SOURCE_LOCAL",
+      "claude_label": "SOURCE_LOCAL",
+      "exact_label_agreement": true,
+      "chatgpt_confidence": "HIGH",
+      "claude_confidence": "HIGH"
+    },
+    {
+      "case_id": "RC-012",
+      "chatgpt_label": "UNRESOLVED",
+      "claude_label": "SOURCE_LOCAL",
+      "exact_label_agreement": false,
+      "chatgpt_confidence": "MEDIUM",
+      "claude_confidence": "HIGH"
+    },
+    {
+      "case_id": "RC-013",
+      "chatgpt_label": "SOURCE_LOCAL",
+      "claude_label": "SOURCE_LOCAL",
+      "exact_label_agreement": true,
+      "chatgpt_confidence": "HIGH",
+      "claude_confidence": "HIGH"
+    },
+    {
+      "case_id": "RC-014",
+      "chatgpt_label": "SOURCE_LOCAL",
+      "claude_label": "SOURCE_LOCAL",
+      "exact_label_agreement": true,
+      "chatgpt_confidence": "HIGH",
+      "claude_confidence": "HIGH"
+    },
+    {
+      "case_id": "RC-015",
+      "chatgpt_label": "SOURCE_LOCAL",
+      "claude_label": "SOURCE_LOCAL",
+      "exact_label_agreement": true,
+      "chatgpt_confidence": "MEDIUM",
+      "claude_confidence": "HIGH"
+    }
+  ],
+  "material_disagreements": [
+    "RC-005",
+    "RC-006",
+    "RC-012"
+  ],
+  "notes": [
+    "Cohen kappa is descriptive only because the sample is small and class marginals are skewed.",
+    "RC-012 is not treated as clean disagreement evidence until its source-grounding issue is resolved.",
+    "RC-005 and RC-006 expose a possible taxonomy overlap between SOURCE_LOCAL ownership and FIRST_CLASS semantic identity rather than merely reviewer inconsistency."
+  ]
+}

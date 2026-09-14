@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / CHATGPT JUDGMENT FROZEN / MC-0015 CLAUDE INDEPENDENT JUDGMENT ACTIVE / TARGET ARCHITECTURE NOT SELECTED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / TWO REAL-CORPUS JUDGMENT SETS FROZEN / MC-0015 COMPARATIVE CONSTRUCT REVIEW ACTIVE / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -3866,5 +3866,21 @@ MC0015=OPEN
 CLAUDE_INDEPENDENT_JUDGMENT=ACTIVE
 CHATGPT_LABEL_EXPOSURE=PROHIBITED
 CROSS_REVIEWER_COMPARISON=BLOCKED
+TARGET_ARCHITECTURE=NOT_SELECTED
+```
+
+## 87. Two independent real-corpus judgments expose a taxonomy construct question
+
+Claude's MC-0015 Message 001 is accepted as reviewer-label independent. The two frozen judgment sets agree on 12 of 15 cases. They independently converge on source-local ownership for scoped supersession, governance, reopen triggers, thread/review control state, provenance, public/private authority policy and the sampled architecture-transition policy; they also converge on derived-only treatment for same-branch CI obsolescence and Knowledge Map topic membership.
+
+The three disagreements are more useful than a simple score. RC-005 is FIRST_CLASS for ChatGPT and SOURCE_LOCAL for Claude, but both rationales may be simultaneously true if a first-class workstream object is represented by one natural source artifact. RC-006 is FIRST_CLASS for ChatGPT and DERIVED_ONLY for Claude; Claude's decomposition suggests durable per-workstream identity/state can coexist with a derived aggregate active/paused/next route view. RC-012 is UNRESOLVED for ChatGPT and SOURCE_LOCAL for Claude, but Claude's rationale uses authority claims not present in the packet despite declaring no additional source reads, so this case needs a protocol audit rather than a winner.
+
+Research 142 therefore blocks mechanized admission-rule work and opens one bounded comparative Claude turn. The core construct question is whether the four-class taxonomy incorrectly treats semantic first-classness, authority ownership/home and derived-view status as one mutually exclusive dimension. Requirements V0.2 remain unchanged and no architecture is selected.
+
+```text
+REAL_CORPUS_EXACT_AGREEMENT=12_OF_15
+TAXONOMY_CONSTRUCT_VALIDITY=OPEN
+MECHANIZED_RULE=BLOCKED
+MC0015_COMPARATIVE_TURN=ACTIVE
 TARGET_ARCHITECTURE=NOT_SELECTED
 ```

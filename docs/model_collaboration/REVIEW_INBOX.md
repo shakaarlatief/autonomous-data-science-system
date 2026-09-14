@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-13
-**Status:** MC-0015 INDEPENDENT REAL-CORPUS JUDGMENT ACTIVE / CLAUDE MESSAGE 001 NEXT / MC-0010 DEFERRED
+**Status:** MC-0015 COMPARATIVE CONSTRUCT-VALIDITY REVIEW ACTIVE / CLAUDE MESSAGE 003 NEXT / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -23,28 +23,23 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Current active collaboration obligation
 
-### MC-0015: independent Claude judgment of Real ADS Relationship Corpus V0.1
+### MC-0015: comparative construct-validity review after independent real-corpus judgments
 
 ```text
 collaborator               Claude / claude-03
 mode                       INDEPENDENT_THEN_COMPARATIVE
 coordination branch        v1-source-vault-bootstrap-resume
 independent base           ae87c1facbf7c7d7508414e86a935bc439404c24
-corpus                     PKA-REAL-REL-V01
-next output                docs/model_collaboration/threads/MC-0015/messages/001_claude_independent_real_corpus_judgment.md
-status                     OPEN / CLAUDE MESSAGE 001 NEXT
+independent Claude result  001 @ 507db2cf5916df59a4aeaf053ac695f13636c14f
+ChatGPT comparison         002
+exact label agreement      12 / 15
+material disagreements     RC-005, RC-006, RC-012
+next output                docs/model_collaboration/threads/MC-0015/messages/003_claude_comparative_construct_validity_review.md
+status                     OPEN / CLAUDE MESSAGE 003 NEXT
 conversation               03 - Project Knowledge Architecture Foundations and Design Method
 ```
 
-Current-branch reads are routing-only. Claude's substantive case and Requirements V0.2 reads are bound to the exact independent base above. Descendant ChatGPT case labels exist but are deliberately prohibited until Claude's complete 15-case judgment set is frozen. If label content is exposed unexpectedly, the run must stop as contaminated.
-
-Durable contract:
-
-```text
-docs/model_collaboration/threads/MC-0015/BRIEF.md
-docs/model_collaboration/threads/MC-0015/THREAD.md
-docs/model_collaboration/threads/MC-0015/STATE.json
-```
+The independence phase is complete. Claude may now intentionally read Message 002, ChatGPT's judgment set and Research 142. The next turn is narrowly limited to whether RC-005 exposes orthogonality between first-class identity and source locality, whether RC-006 mixes workstream objects with a derived route view, whether RC-012 violated the packet-only evidence contract, and the smallest corrected judgment axes. No mechanized admission rule or target architecture is authorized.
 
 ## Most recently completed obligation
 

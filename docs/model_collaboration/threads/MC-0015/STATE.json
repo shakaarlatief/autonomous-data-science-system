@@ -3,11 +3,11 @@
   "thread_id": "MC-0015",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "OPEN",
-  "phase": "INDEPENDENT_REAL_CORPUS_JUDGMENT",
+  "phase": "COMPARATIVE_CONSTRUCT_VALIDITY_REVIEW",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "ae87c1facbf7c7d7508414e86a935bc439404c24",
-    "description": "Independent Claude judgment of all 15 unlabeled Real ADS Relationship Corpus V0.1 cases. Current descendant branch is routing-only; substantive evidence is bound to the corpus-freeze base and ChatGPT descendant labels are prohibited.",
+    "description": "Both independent real-corpus judgment sets are frozen. Claude Message 003 is a bounded comparative review of RC-005, RC-006 and RC-012 plus the possible overlap among semantic first-classness, authority ownership/home and derived-view status. No target architecture or mechanized rule may be selected.",
     "write_paths": []
   },
   "task_owner": "chatgpt",
@@ -51,21 +51,21 @@
   ],
   "next_expected_actor": "claude",
   "independence": {
-    "status": "BLIND_TO_CANDIDATE",
+    "status": "COMPARATIVE_ONLY",
     "review_base_ref": "ae87c1facbf7c7d7508414e86a935bc439404c24",
     "known_exposures": [
-      "Claude knows the Research 124 architecture problem and participated in MC-0011 through MC-0014; architecture-problem blindness is not claimed.",
-      "The unlabeled corpus and judgment taxonomy are visible at the frozen base.",
-      "ChatGPT has already produced a descendant case-label set after the frozen base, but its labels, confidence values and rationales are explicitly excluded until Claude Message 001 is frozen."
+      "Claude Message 001 remains the preserved independent reviewer-label result at commit 507db2cf5916df59a4aeaf053ac695f13636c14f.",
+      "Comparative Phase now intentionally exposes ChatGPT judgment labels/rationales through Message 002 and Research 142.",
+      "The comparative turn is restricted to RC-005, RC-006, RC-012, taxonomy construct validity and architecture-neutral evidence implications."
     ],
-    "notes": "The independence claim is reviewer-label non-exposure. Current-branch reads are restricted to MC-0015 routing surfaces; substantive case and requirements reads are bound to the exact corpus-freeze base."
+    "notes": "Independence is complete and preserved in Message 001. Message 003 is intentionally comparative and must not be described as independent."
   },
   "last_transition": {
-    "transition_id": "mc0015-open-independent-real-corpus-judgment",
-    "from_state": null,
+    "transition_id": "mc0015-independent-complete-comparative-construct-review-open",
+    "from_state": "OPEN",
     "to_state": "OPEN",
     "actor": "chatgpt",
-    "reason": "The unlabeled corpus and ChatGPT judgment set are both frozen. A second mutually hidden reviewer judgment is now required before any cross-reviewer comparison or mechanized admission rule.",
-    "repository_head": "fbeb5a8ae20de000d1da344590d0036fecd77278"
+    "reason": "Claude independent judgments are frozen and compared with ChatGPT. Three material disagreements reveal possible taxonomy overlap and one packet-grounding issue, warranting one bounded comparative turn before mechanized admission work.",
+    "repository_head": "507db2cf5916df59a4aeaf053ac695f13636c14f"
   }
 }
