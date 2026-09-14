@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "oracle_id": "PKA-C01-REAL-SHADOW-V01-ORACLE",
+  "fixture_id": "PKA-C01-REAL-SHADOW-V01",
+  "implementation_must_not_read_this_oracle": true,
+  "expectations": {
+    "source_hashes_all_match": true,
+    "workstream_route": [
+      "WS-R124",
+      "WS-C01",
+      "WS-REAL-SHADOW"
+    ],
+    "migration_seed_workstreams": [
+      "WS-REAL-SHADOW"
+    ],
+    "project_control_global_fact_count": 3,
+    "routing_projection": {
+      "schema_version": 1,
+      "current_checkpoint": 496,
+      "active_development_branch": "v1-source-vault-bootstrap-resume",
+      "active_pr": null,
+      "promoted_integration_branch": "v1-frontend-spike",
+      "promoted_integration_sha": "2480109fadeee1e480ef03b82e335aacdf9adf91",
+      "latest_specification": "027",
+      "latest_experiment_outcome": "INCOMPLETE",
+      "current_boundary": "project-knowledge-real-repository-shadow-next"
+    },
+    "routing_exact_parity": true,
+    "current_state_semantic_parity": {
+      "checkpoint": true,
+      "active_branch": true,
+      "research124_stage": true,
+      "next_real_shadow": true,
+      "target_not_selected": true
+    },
+    "knowledge_map_membership": {
+      "result151": true,
+      "checkpoint496": true,
+      "candidate144": true
+    },
+    "continuity_contract_alignment": true,
+    "continuity_action_attempts": {
+      "BOOTSTRAP-GOOD": {
+        "status": "PASS",
+        "omitted": [],
+        "order_violations": []
+      },
+      "BOOTSTRAP-BAD": {
+        "status": "FAIL_VISIBLE",
+        "omitted": [
+          "B03"
+        ],
+        "order_violations": [
+          "B04",
+          "B05"
+        ]
+      }
+    },
+    "generated_navigation": {
+      "candidate-architecture": [
+        "candidate144"
+      ],
+      "candidate-qualification": [
+        "checkpoint496",
+        "result151"
+      ],
+      "current-boundary": [
+        "checkpoint496"
+      ],
+      "project-knowledge": [
+        "candidate144",
+        "checkpoint496",
+        "result151"
+      ],
+      "shadow-evidence": [
+        "result151"
+      ]
+    },
+    "real_capture_authority": "candidate",
+    "generation_reads_comparison_targets": false
+  }
+}

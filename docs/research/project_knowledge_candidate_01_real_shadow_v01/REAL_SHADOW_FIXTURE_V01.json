@@ -1,0 +1,285 @@
+{
+  "schema_version": 1,
+  "fixture_id": "PKA-C01-REAL-SHADOW-V01",
+  "candidate_id": "PKA-CANDIDATE-01",
+  "base_commit": "e10fd108330f2cf8d260a621ea59053aebd28291",
+  "base_branch": "v1-source-vault-bootstrap-resume",
+  "protocol": {
+    "shadow_only": true,
+    "current_project_authority_unchanged": true,
+    "implementation_may_read_oracle": false,
+    "generation_must_not_read_comparison_targets": true,
+    "comparison_targets": [
+      "routing_target",
+      "current_state_target",
+      "knowledge_map_target"
+    ],
+    "forbidden_answer_keys": [
+      "expected_match",
+      "expected_status",
+      "expected_projection",
+      "should_pass"
+    ]
+  },
+  "source_manifest": [
+    {
+      "source_key": "research124",
+      "path": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+      "sha256": "e2a80b3971c7ffbdbeedcbe239ba0b2638a85bea90673f641723f5d3f075d37a",
+      "bytes": 218544,
+      "comparison_target": false
+    },
+    {
+      "source_key": "candidate144",
+      "path": "docs/research/144_whole_architecture_candidate_repository_native_semantic_sources.md",
+      "sha256": "89f1860935d78d53454657f642c62474a0e75a33db822cc9a1079d25c24d1149",
+      "bytes": 46297,
+      "comparison_target": false
+    },
+    {
+      "source_key": "result151",
+      "path": "docs/research/151_candidate01_operational_shadow_v02_empirical_result.md",
+      "sha256": "14465bbb4036bdcd08340358825d981edcbebb99f6cdecec13642d944b07d8ea",
+      "bytes": 11720,
+      "comparison_target": false
+    },
+    {
+      "source_key": "checkpoint496",
+      "path": "docs/checkpoints/496_candidate01_operational_shadow_v02_passed_real_repository_shadow_next.md",
+      "sha256": "68a84c763db152f7d15cd77054fda182c781188350e9afae7429c5952b853fcd",
+      "bytes": 1555,
+      "comparison_target": false
+    },
+    {
+      "source_key": "continuity",
+      "path": "docs/CONTINUITY.md",
+      "sha256": "6bcde628dc0f4f12d94df50a7a99127bb55c1c6e12c3764b5c9e9e0dd7a0f868",
+      "bytes": 24457,
+      "comparison_target": false
+    },
+    {
+      "source_key": "development_method",
+      "path": "docs/DEVELOPMENT_METHOD.md",
+      "sha256": "510cb909d57370690226fe2b55ec4050d68221df5bc7177319f8883cae3c1b57",
+      "bytes": 27541,
+      "comparison_target": false
+    },
+    {
+      "source_key": "spec027",
+      "path": "docs/specifications/027_v1_historical_intermediate_checkpoint_integrity_extension.md",
+      "sha256": "96df5da7c45be645c39ee9b02d1568772aa1b598f6393af784a076702b5a5229",
+      "bytes": 7988,
+      "comparison_target": false
+    },
+    {
+      "source_key": "checkpoint192",
+      "path": "docs/checkpoints/192_specification_022_incomplete_result_preservation_promotion_candidate.md",
+      "sha256": "144e38e6ed91f64a23d33d62f7a557088f6ebed6a472458fd931d9d785133fbb",
+      "bytes": 13541,
+      "comparison_target": false
+    },
+    {
+      "source_key": "routing_target",
+      "path": "docs/current_routing.json",
+      "sha256": "83544525e2a21a458121184ba42844ec8873b48e4b7de2d7659de9a9f6b574c7",
+      "bytes": 438,
+      "comparison_target": true
+    },
+    {
+      "source_key": "current_state_target",
+      "path": "docs/CURRENT_STATE.md",
+      "sha256": "dc72733e17e6fb56017af666f6a657d6c725568c229873188fbb1dbab72433e3",
+      "bytes": 278294,
+      "comparison_target": true
+    },
+    {
+      "source_key": "knowledge_map_target",
+      "path": "docs/KNOWLEDGE_MAP.md",
+      "sha256": "9a5b7bc637198b20f36055db106448c1edeb85b7d005e150d483611da6255720",
+      "bytes": 65706,
+      "comparison_target": true
+    }
+  ],
+  "workstream_declarations": [
+    {
+      "workstream_id": "WS-R124",
+      "source_key": "research124",
+      "source_mode": "EXISTING_SOURCE",
+      "state": "ACTIVE",
+      "parent": null,
+      "objective": "project-development knowledge architecture redesign",
+      "depends_on": []
+    },
+    {
+      "workstream_id": "WS-C01",
+      "source_key": "candidate144",
+      "source_mode": "EXISTING_SOURCE",
+      "state": "ACTIVE",
+      "parent": "WS-R124",
+      "objective": "qualify Candidate 01",
+      "depends_on": []
+    },
+    {
+      "workstream_id": "WS-OPS-V02",
+      "source_key": "result151",
+      "source_mode": "EXISTING_SOURCE",
+      "state": "COMPLETED",
+      "parent": "WS-C01",
+      "objective": "broader synthetic operational shadow qualification",
+      "depends_on": []
+    },
+    {
+      "workstream_id": "WS-REAL-SHADOW",
+      "source_key": "checkpoint496",
+      "source_mode": "MIGRATION_SEED_REQUIRED",
+      "state": "ACTIVE",
+      "parent": "WS-C01",
+      "objective": "real repository shadow parity and behavior",
+      "depends_on": [
+        "WS-OPS-V02"
+      ],
+      "current_checkpoint": 496,
+      "current_boundary": "project-knowledge-real-repository-shadow-next"
+    }
+  ],
+  "project_control_seed": {
+    "source_key": "current_state_target",
+    "source_mode": "MIGRATION_FROM_EXISTING_GLOBAL_AUTHORITY",
+    "facts": {
+      "active_pr": null,
+      "promoted_integration_branch": "v1-frontend-spike",
+      "promoted_integration_sha": "2480109fadeee1e480ef03b82e335aacdf9adf91"
+    }
+  },
+  "computed_control_sources": {
+    "latest_specification": {
+      "source_key": "spec027",
+      "parse": "specification_number_from_title"
+    },
+    "latest_experiment_outcome": {
+      "source_key": "checkpoint192",
+      "parse": "incomplete_experiment_outcome_marker"
+    }
+  },
+  "continuity_contract": {
+    "source_key": "continuity",
+    "section_heading": "## Required new-session reconstruction",
+    "constraints": [
+      {
+        "constraint_id": "B01",
+        "order": 1,
+        "source_token": "`README.md`"
+      },
+      {
+        "constraint_id": "B02",
+        "order": 2,
+        "source_token": "`docs/README.md`"
+      },
+      {
+        "constraint_id": "B03",
+        "order": 3,
+        "source_token": "`docs/CONTINUITY.md`"
+      },
+      {
+        "constraint_id": "B04",
+        "order": 4,
+        "source_token": "`docs/current_routing.json`"
+      },
+      {
+        "constraint_id": "B05",
+        "order": 5,
+        "source_token": "`docs/CURRENT_STATE.md`"
+      },
+      {
+        "constraint_id": "B06",
+        "order": 6,
+        "source_token": "`docs/KNOWLEDGE_MAP.md`"
+      },
+      {
+        "constraint_id": "B07",
+        "order": 7,
+        "source_token": "governing canonical documents/specifications routed by the current state"
+      },
+      {
+        "constraint_id": "B08",
+        "order": 8,
+        "source_token": "the current checkpoint/research boundary"
+      },
+      {
+        "constraint_id": "B09",
+        "order": 9,
+        "source_token": "specialized ledgers/manifests for the active topic"
+      },
+      {
+        "constraint_id": "B10",
+        "order": 10,
+        "source_token": "relevant private companion state when the public state explicitly indicates private knowledge is involved and the companion repository is accessible"
+      }
+    ]
+  },
+  "continuity_action_attempts": [
+    {
+      "attempt_id": "BOOTSTRAP-GOOD",
+      "emitted_constraint_ids": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08",
+        "B09",
+        "B10"
+      ]
+    },
+    {
+      "attempt_id": "BOOTSTRAP-BAD",
+      "emitted_constraint_ids": [
+        "B01",
+        "B02",
+        "B05",
+        "B04",
+        "B06",
+        "B07",
+        "B08",
+        "B09",
+        "B10"
+      ]
+    }
+  ],
+  "navigation_declarations": [
+    {
+      "source_key": "result151",
+      "subjects": [
+        "project-knowledge",
+        "candidate-qualification",
+        "shadow-evidence"
+      ]
+    },
+    {
+      "source_key": "checkpoint496",
+      "subjects": [
+        "project-knowledge",
+        "candidate-qualification",
+        "current-boundary"
+      ]
+    },
+    {
+      "source_key": "candidate144",
+      "subjects": [
+        "project-knowledge",
+        "candidate-architecture"
+      ]
+    }
+  ],
+  "real_capture_seed": {
+    "capture_id": "REAL-CAP-01",
+    "authority_class": "candidate",
+    "source_refs": [
+      "checkpoint496",
+      "result151"
+    ],
+    "text": "Real-repository shadow qualification may reveal migration-seeding facts currently owned only by global live-state surfaces."
+  }
+}

@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / CANDIDATE 01 TWO SYNTHETIC SHADOW SLICES COMPLETE / REAL-REPOSITORY SHADOW QUALIFICATION NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / REAL-REPOSITORY SHADOW V0.1 FROZEN / IMPLEMENTATION NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -4040,4 +4040,22 @@ H3_REOPEN=NO
 FINAL_QUALIFIED_PASSES=0
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=REAL_REPOSITORY_SHADOW_PARITY_AND_BEHAVIOR
+```
+
+## 97. Real-repository Shadow V0.1 freezes migration-seed burden before implementation
+
+Research 152 moves Candidate 01 beyond synthetic evidence. The experiment is bound to exact repository commit `e10fd108330f2cf8d260a621ea59053aebd28291` and forbids generation from reading the three global surfaces it later compares against.
+
+The freeze makes two migration burdens explicit rather than hiding them: one active workstream semantic unit needs a successor-style canonical workstream seed, and three live project-control facts are still uniquely owned by the existing global live-state architecture. Those facts are admitted as `MIGRATION_FROM_EXISTING_GLOBAL_AUTHORITY`, not credited as already source-local.
+
+The same fixture also tests a real governing procedure by mapping the ordered new-session reconstruction contract in `CONTINUITY.md` to stable B01..B10 constraint IDs.
+
+```text
+REAL_SHADOW_V01=FROZEN
+MIGRATION_SEED_WORKSTREAMS=1
+MIGRATION_SEED_PROJECT_CONTROL_FACTS=3
+GENERATION_COMPARISON_TARGET_READS=FORBIDDEN
+CURRENT_ARCHITECTURE=STILL_AUTHORITY
+TARGET_ARCHITECTURE=NOT_SELECTED
+NEXT=IMPLEMENT_REAL_SHADOW_V01
 ```
