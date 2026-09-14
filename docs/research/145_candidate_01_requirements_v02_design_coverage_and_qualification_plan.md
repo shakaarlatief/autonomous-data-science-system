@@ -1,7 +1,7 @@
 # Research 145: Candidate 01 Requirements V0.2 Design Coverage and Qualification Plan
 
 **Date:** 2026-09-14
-**Status:** 50/50 KA-R + 17/17 KA-I DESIGN-MAPPED / ZERO IDENTIFIED DESIGN-COVERAGE GAPS / INTEGRATED QUALIFICATION PENDING / TARGET ARCHITECTURE NOT SELECTED
+**Status:** 50/50 KA-R + 17/17 KA-I DESIGN-MAPPED AFTER MC-0016 AMENDMENTS / NARROW ADVERSARIAL FOLLOW-UP PENDING / INTEGRATED QUALIFICATION PENDING / TARGET ARCHITECTURE NOT SELECTED
 **Candidate:** `PKA-CANDIDATE-01` from Research 144
 **Scope:** Systematically map the whole-architecture candidate against every frozen Requirements V0.2 requirement/invariant, distinguish design coverage from actual qualification evidence, identify selection-blocking proof clusters, and freeze the minimum implementation/behavioral evidence needed before target selection.
 **Authority:** Candidate qualification planning only. Requirements V0.2 remain the acceptance authority. A mapped design mechanism is not a qualified pass.
@@ -57,15 +57,15 @@ PENDING_INTEGRATED_EVIDENCE
 | KA-R06 | active route reconstruction | DESIGN_COVERED | single-source workstream declarations plus generated active route graph | Q4 |
 | KA-R07 | relevant discovery with safety-calibrated recall | DESIGN_COVERED | exact/structured/lexical/optional semantic retrieval plus generated risk/governance indexes | Q1 |
 | KA-R08 | reconstruction and authority-resolution receipts | DESIGN_COVERED | authority/reconstruction receipts bind sources, revisions, freshness and activated constraints | Q2 |
-| KA-R09 | consequential-action authority activation and contract fidelity | DESIGN_COVERED | action-shaped authority resolver plus structured action-contract activation/conformance | Q2 |
+| KA-R09 | consequential-action authority activation and contract fidelity | DESIGN_COVERED_AFTER_MC0016_AMENDMENT | sole-normative structured contract facts + stable constraint IDs + deterministic execution-plan conformance + independent verification where deterministic equivalence is insufficient | Q2 |
 | KA-R10 | known-risk and evolution-trigger activation | DESIGN_COVERED | source-owned risk/reopen triggers exposed through generated indexes and task activation | Q2 |
 | KA-R11 | uncertainty visibility | DESIGN_COVERED | explicit unresolved/conflict/unavailable/stale states and consequence-sensitive failure | Q2 |
 | KA-R12 | explicit epistemic role | DESIGN_COVERED | typed source profiles preserve material epistemic/lifecycle distinctions selectively | Q3 |
 | KA-R13 | action-shaped authority resolution | DESIGN_COVERED | resolver uses action, scope, state, actor if material, time and authority closure | Q2 |
-| KA-R14 | supersession, supplementation and conflict visibility | DESIGN_COVERED | REPLACE/SUPPLEMENT/SPECIALIZE/CORRECT semantics plus fail-visible conflicts | Q2 |
+| KA-R14 | supersession, supplementation and conflict visibility | DESIGN_COVERED_AFTER_MC0016_AMENDMENT | REPLACE/SUPPLEMENT/SPECIALIZE/CORRECT + fail-visible conflicts; joint-authority exception uses explicit J1-J6 promotion gate | Q2 |
 | KA-R15 | relationship semantics | DESIGN_COVERED | directional source-owned relations by default; rich relation source only when relation lifecycle warrants it | Q3 |
 | KA-R16 | current state, history and selective temporal semantics | DESIGN_COVERED | Git history plus selective applicability/authority temporal qualifiers and generated current views | Q3 |
-| KA-R17 | view-contract consolidation fidelity | DESIGN_COVERED | consolidation uses explicit view contracts and must-preserve fidelity dimensions | Q5 |
+| KA-R17 | view-contract consolidation fidelity | DESIGN_COVERED_AFTER_MC0016_AMENDMENT | must-preserve manifest + unit-level coverage disposition + source drill-down + consequence-shaped independent verification | Q5 |
 | KA-R18 | synthesis provenance and auditability | DESIGN_COVERED | promoted synthesis and consequential transformations retain source/transformation provenance | Q5 |
 | KA-R19 | one explicit project-development authority | DESIGN_COVERED | public ADS repository remains one explicit project-development authority | Q9 |
 | KA-R20 | explicit authority class for stores and views | DESIGN_COVERED | source/view profiles declare canonical, candidate, historical, derived or evidence authority role | Q6 |
@@ -79,9 +79,9 @@ PENDING_INTEGRATED_EVIDENCE
 | KA-R28 | interruption recovery | DESIGN_COVERED | resume reconstruction uses durable workstream state plus completed project evidence, not prior-chat plan | Q4 |
 | KA-R29 | concurrent collaborator safety | DESIGN_COVERED | expected Git/source revision preconditions make stale/conflicting authoritative updates fail | Q4 |
 | KA-R30 | bounded qualification budgets | QUALIFICATION_RULE_MAPPED | task-class-specific read/context budgets measured during candidate qualification | Q10 |
-| KA-R31 | non-linear-history reconstruction cost | DESIGN_COVERED | bounded active/generated views and progressive drill-down prevent passive history from forcing proportional cold start | Q8 |
+| KA-R31 | non-linear-history reconstruction cost | DESIGN_COVERED_AFTER_MC0016_AMENDMENT | normal reconstruction consumes bounded current views and does not rescan whole history; periodic rebuild cost is measured separately | Q8 |
 | KA-R32 | bounded mandatory active core | DESIGN_COVERED | payload-light bootstrap and generated active surfaces remain separate from historical archive | Q8 |
-| KA-R33 | dependency-local marginal maintenance | DESIGN_COVERED | source-local declarations and dependency-aware regeneration bound ordinary change fan-out | Q8 |
+| KA-R33 | dependency-local marginal maintenance | DESIGN_COVERED_AFTER_MC0016_AMENDMENT | ordinary local changes use dependency-aware incremental refresh; periodic automated full rebuild remains allowed | Q8 |
 | KA-R34 | saturation and active-surface observability | DESIGN_COVERED | active-view size, routing payload, fan-out, staleness and consolidation pressure are observable | Q8 |
 | KA-R35 | human and model inspectability | DESIGN_COVERED | rich repository sources plus inspectable structured declarations/manifests | Q1 |
 | KA-R36 | provider and tool portability | DESIGN_COVERED | project-controlled repository semantics and deterministic views remain reconstructable across capable providers/tools | Q1 |
@@ -91,14 +91,14 @@ PENDING_INTEGRATED_EVIDENCE
 | KA-R40 | structural and behavioral qualification | QUALIFICATION_RULE_MAPPED | layered structural and behavioral qualification suite is part of candidate contract | Q10 |
 | KA-R41 | multidimensional reconstruction qualification | QUALIFICATION_RULE_MAPPED | qualification remains multidimensional and case-level with no aggregate winner score | Q10 |
 | KA-R42 | consequence-sensitive degraded mode | DESIGN_COVERED | consequence-sensitive degraded mode separates optional retrieval gaps from required authority failure | Q7 |
-| KA-R43 | migration preservation and identity reconciliation | DESIGN_COVERED | M0-M7 migration preserves identity, authority, provenance, history and reverse references | Q9 |
-| KA-R44 | old authority remains until successor qualification | DESIGN_COVERED | candidate stays shadow/non-authoritative until explicit qualified switch and rollback proof | Q9 |
+| KA-R43 | migration preservation and identity reconciliation | DESIGN_COVERED_AFTER_MC0016_AMENDMENT | M0-M7 migration preserves identity, authority, provenance, history and reverse references with explicit semantic parity checks | Q9 |
+| KA-R44 | old authority remains until successor qualification | DESIGN_COVERED_AFTER_MC0016_AMENDMENT | candidate stays shadow/non-authoritative until qualification; rollback exporter and stabilization window enable explicit lossless reverse switch | Q9 |
 | KA-R45 | self-hosting evolution | DESIGN_COVERED | same capture, workstream, migration and authority-transition mechanisms can coordinate architecture evolution | Q9 |
-| KA-R46 | representation-independent continuity of identity | DESIGN_COVERED | selective project-owned semantic IDs plus identity transition/tombstone semantics survive carrier changes | Q3 |
+| KA-R46 | representation-independent continuity of identity | DESIGN_COVERED_AFTER_MC0016_AMENDMENT | semantic IDs + transition/tombstone history + generated flattened current-target lookup survive carrier changes without normal history scans | Q3 |
 | KA-R47 | multi-axis organization without truth duplication | DESIGN_COVERED | source-local declarations generate orthogonal subject/authority/workstream/provenance/temporal views without copied truth | Q6 |
 | KA-R48 | capture, consolidation and promotion boundary | DESIGN_COVERED | capture -> consolidated candidate -> explicit promotion -> derived consumption roles remain distinct | Q5 |
 | KA-R49 | selective temporal and supersession semantics | DESIGN_COVERED | selective effective/authority time plus explicit transition modes only where semantics require them | Q3 |
-| KA-R50 | recurring active-surface consolidation lifecycle | DESIGN_COVERED | recurring pressure-triggered consolidation controls active surfaces while retaining drill-down/history | Q5 |
+| KA-R50 | recurring active-surface consolidation lifecycle | DESIGN_COVERED_AFTER_MC0016_AMENDMENT | active-surface and capture-backlog pressure trigger governed consolidation while preserving drill-down/history | Q5 |
 
 ## 4. Full KA-I01..KA-I17 mapping
 
@@ -108,19 +108,19 @@ PENDING_INTEGRATED_EVIDENCE
 | KA-I02 | one explicit project-development authority; derived stores cannot silently compete | DESIGN_COVERED | canonical source roles plus derived-view manifests | Q1 |
 | KA-I03 | derived state contains no unique accepted truth unless explicitly promoted | DESIGN_COVERED | derived deletion/rebuild contract plus promotion boundary | Q5 |
 | KA-I04 | material current/historical/superseded/rejected/unresolved distinctions survive | DESIGN_COVERED | source lifecycle profiles plus selective temporal semantics | Q1 |
-| KA-I05 | consequential guidance resolves/consumes authority and preserves material action contract | DESIGN_COVERED | authority resolver receipts plus action-contract conformance | Q2 |
+| KA-I05 | consequential guidance resolves/consumes authority and preserves material action contract | DESIGN_COVERED_AFTER_MC0016_AMENDMENT | resolver receipts + sole-normative constraint IDs + deterministic plan conformance + independent high-consequence semantic verification where needed | Q2 |
 | KA-I06 | missing required evidence or unresolved governing conflict is surfaced | DESIGN_COVERED | explicit unresolved/unavailable/conflict result states | Q2 |
 | KA-I07 | provenance and must-preserve view semantics survive synthesis/compression/migration | DESIGN_COVERED | view-contract fidelity, source drill-down and migration reconciliation | Q5 |
 | KA-I08 | old continuity remains operational until explicit qualified switch | DESIGN_COVERED | M0-M7 shadow migration and explicit authority transition | Q9 |
 | KA-I09 | resumable paused work preserves reason, return condition, parent relationship and target | DESIGN_COVERED | workstream profile conditional fields | Q4 |
 | KA-I10 | public/private authority separation and non-leakage are preserved | DESIGN_COVERED | delegated private dependency model plus publication validator | Q7 |
 | KA-I11 | fresh continuation does not depend on previous conversation | DESIGN_COVERED | stable bootstrap plus committed canonical sources/views | Q1 |
-| KA-I12 | required reconstruction cost is not structurally proportional to accumulated history | DESIGN_COVERED | bounded active views, progressive disclosure and consolidation | Q8 |
+| KA-I12 | required reconstruction cost is not structurally proportional to accumulated history | DESIGN_COVERED_AFTER_MC0016_AMENDMENT | normal reconstruction consumes bounded current views; periodic full rebuild may remain corpus-proportional | Q8 |
 | KA-I13 | routine local change avoids unbounded manual/global maintenance | DESIGN_COVERED | source-local declarations plus dependency-aware regeneration | Q8 |
 | KA-I14 | optional probabilistic retrieval failure cannot bypass authority safety | DESIGN_COVERED | retrieval subordinate to explicit authority resolver | Q7 |
 | KA-I15 | durable state exposes live route/authority/reconstruction/qualification/freshness health | DESIGN_COVERED | generated routing/current views plus manifests and validation receipts | Q1 |
 | KA-I16 | capture does not imply authority | DESIGN_COVERED | capture/candidate/promotion roles and explicit authority transition | Q5 |
-| KA-I17 | intended semantic continuity is not forced to equal carrier continuity | DESIGN_COVERED | selective semantic IDs and merge/split/move/representation-transition semantics | Q9 |
+| KA-I17 | intended semantic continuity is not forced to equal carrier continuity | DESIGN_COVERED_AFTER_MC0016_AMENDMENT | semantic IDs + merge/split/move/representation transitions + generated bounded current-target lookup | Q9 |
 
 ## 5. Design-coverage result
 
@@ -276,4 +276,44 @@ DESIGN_COVERAGE_GATE=PASS
 EVIDENCE_GATE=PENDING
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=SHADOW_PROTOTYPE_AND_ADVERSARIAL_CANDIDATE_REVIEW
+```
+
+## 12. MC-0016 Message 001 correction to the design-coverage claim
+
+Claude's exact-target adversarial review did not accept the original blanket `50/50 + 17/17` statement without qualification. At commit `69aed186a0d63b3c395a133cd920099d5fa8e000`, Claude judged seven KA-R and one KA-I entries partially covered and identified additional non-matrix design risks. Research 146 preserves that result and distinguishes actual mechanism under-specification from requirement-scope conflation.
+
+The task-owner disposition accepts substantive amendments for action-contract precedence/assurance, consolidation fidelity, incremental routine refresh, identity lookup, capture backlog, paused-workstream salience, rollback and complexity observability. It also adds a concrete J1-J6 joint-authority admission gate.
+
+Three scope corrections matter:
+
+```text
+KA-R31 / KA-I12
+    govern required reconstruction cost, not periodic full-rebuild scan complexity;
+    periodic global rebuild remains explicitly permitted by KA-R33.
+
+KA-R46
+    governs semantic continuity across carriers; bounded lookup is an important index/scale
+    refinement but was not the missing semantic identity mechanism itself.
+
+KA-R43 versus KA-R44
+    forward semantic preservation is KA-R43; the missing rollback mechanism belongs most
+    directly to KA-R44's authority-switch/recovery criteria.
+```
+
+The current working matrix therefore returns every requirement/invariant to design-covered **after amendment**, not because Claude's review was rejected, but because the concrete missing mechanisms have now been added. Final qualification remains zero across the board.
+
+One narrow MC-0016 follow-up remains before implementation, limited to:
+
+```text
+1. sole-normative action-contract precedence rule
+2. J1-J6 joint-authority admission/governance rule
+```
+
+If those survive review without another architecture-level defect, Candidate 01 is ready for the smallest falsification-first shadow prototype.
+
+```text
+DESIGN_COVERAGE_AFTER_MC0016_AMENDMENT=50_KA_R__17_KA_I
+FINAL_QUALIFIED_PASSES=0
+MC0016_NARROW_FOLLOWUP=PENDING
+TARGET_ARCHITECTURE=NOT_SELECTED
 ```

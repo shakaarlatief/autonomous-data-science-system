@@ -1,7 +1,7 @@
 # Research 144: Whole-Architecture Candidate - Repository-Native Semantic Sources with Selective Identity, Derived Views, and Action-Gated Authority
 
 **Date:** 2026-09-14
-**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE SYNTHESIZED / DESIGN-COVERAGE QUALIFICATION NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE SYNTHESIZED / AMENDED AFTER MC-0016 ADVERSARIAL REVIEW / NARROW FOLLOW-UP PENDING / TARGET ARCHITECTURE NOT SELECTED
 **Candidate label:** `PKA-CANDIDATE-01`
 **Scope:** Synthesize one serious successor architecture from the complete Research 124 evidence field after the H1/H2 mechanism probes, real-corpus independent review, MC-0014/MC-0015 corrections, D1-D8 external evidence and owner-provided ICM evaluation. Define enough logical structure, authority semantics, typed source responsibilities, derived-view behavior, activation, lifecycle, validation, scaling and migration behavior to qualify the candidate systematically against Requirements V0.2.
 **Authority:** Candidate architecture research only. Requirements V0.2 remain the frozen acceptance authority. This record does not select the target architecture, migrate current authority, or authorize implementation as the production continuity system.
@@ -810,4 +810,64 @@ CAPTURE_DOES_NOT_IMPLY_AUTHORITY=CORE
 MECHANIZED_REIFICATION_CLASSIFIER=NOT_REQUIRED_FOR_V01
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=SYSTEMATIC_REQUIREMENTS_V02_DESIGN_COVERAGE_AND_QUALIFICATION_PLAN
+```
+
+## 33. MC-0016 Message 001 amendments
+
+Research 146 reconciles Claude's first adversarial review. The following rules are now part of Candidate 01 and supersede any looser wording above where they conflict.
+
+### 33.1 One normative home for action-contract facts
+
+For an exact-fidelity governed procedure, the structured action contract is the sole normative encoding of every material constraint it represents. Explanatory prose may reference stable constraint IDs but cannot independently add, remove, reorder or redefine those constraints. A newly discovered mandatory constraint must enter the structured contract before the procedure remains qualified for consequential exact-fidelity use. Prose/contract disagreement is a document defect, not an authority choice to make at execution time.
+
+### 33.2 Consequence-shaped contract assurance
+
+Every governed exact-fidelity action receives deterministic contract checks. The proposed action is first represented as a structured execution plan bound to activated constraint IDs. If final free-form guidance can materially alter that plan and deterministic checks cannot establish equivalence, high-consequence dispatch requires an independent verification path such as an isolated verifier or human review. Universal two-model review is not required.
+
+### 33.3 Joint-authority admission is exceptional and governed
+
+No joint-authority object is created by default. Promotion requires all of: overlapping current canonical sources with non-redundant mandatory content; failure of ordinary directional source-owned relations plus deterministic closure to represent the complete governing semantics; at least one independent set-level authoritative fact not already owned or derivable from member relations; and a demonstrated need to query/activate that set-level fact independently. Creation is an explicit reviewed promotion with evidence. If those conditions are not clear, the result is `UNRESOLVED`.
+
+### 33.4 Consolidation uses a must-preserve manifest
+
+Consequential consolidation or promotion declares the material semantic units its target view must preserve, including governing constraints, authority/supersession, uncertainty/conflict, dependencies/resume/reopen conditions, temporal qualifiers, retained rejected rationale and provenance where applicable. Every unit must be preserved directly, preserved by synthesis at a declared location, intentionally made latent with a recoverable source, or marked not applicable with reason. Missing required coverage blocks promotion.
+
+### 33.5 Current state has a deterministic core
+
+The future current-state surface separates a deterministic current-state core from optional derived orientation narrative. Unique accepted truth may not live only in the narrative. Novel narrative insight becomes capture/candidate material until explicitly promoted. If narrative fidelity cannot be established, reconstruction falls back to the deterministic core plus source links.
+
+### 33.6 Routine refresh is dependency-local; full rebuild remains available
+
+Ordinary local changes refresh affected persistent structural views incrementally using declared/generated dependencies. Normal reconstruction consumes bounded current views rather than rescanning history. Periodic repair, qualification and migration may perform automated corpus-wide rebuilds. Linear full-rebuild scan cost does not by itself violate the non-linear-history reconstruction requirement.
+
+### 33.7 Normal identity lookup does not scan tombstone history
+
+The generated identity index materializes each current target or split-successor set. Normal lookup reads that index directly. Full rebuild may scan all identity-transition history, validate cycles/dangling targets and flatten transition chains into the current projection.
+
+### 33.8 Paused does not mean permanently bootstrap-active
+
+A paused workstream remains durable and queryable but enters mandatory ordinary bootstrap only when the current parent/task intersects it, its return condition becomes satisfied, a governed review trigger is due or another explicit rule activates it. Otherwise it remains behind a generated paused-workstream view. An optional review trigger may represent return conditions that cannot be machine-observed.
+
+### 33.9 Capture backlog is observable pressure
+
+The architecture measures unreviewed capture count, oldest capture age, high-consequence backlog, subject/workstream concentration, promotion/retirement throughput and repeated retrieval of unresolved captures. Backlog pressure may trigger review/consolidation but can never auto-promote candidate knowledge.
+
+### 33.10 Rollback is exporter-based, not dual authority
+
+Before any authority switch, successor canonical state must be exportable into legacy-compatible authority representations for all current and migration-critical accepted facts, with semantic parity and integrity checks. During a post-switch stabilization window the successor remains the only write authority while legacy-compatible surfaces are regenerated from it. Rollback freezes writes, regenerates legacy surfaces from the exact successor head, verifies parity/integrity and then performs an explicit reverse authority switch. If successor semantics cannot be represented without material loss, the forward switch is forbidden until a fallback bridge exists.
+
+### 33.11 Complexity growth is measured
+
+Track active profile-type count and growth, identity-transition object count, joint-authority object count, special-semantic-object ratio and schema migration fan-out. H3/Object-Primary reopens if the selective profile system converges toward a general object substrate in both breadth and maintenance mechanics and H3 can demonstrably simplify the same hard cases without unacceptable cost.
+
+## 34. Post-review candidate status
+
+Claude's exact-target review remains durable evidence that the earlier version under-specified several mechanisms. Research 146 calibrates the requirement-level implications and applies the amendments above. The task-owner working position is again that every frozen KA-R/KA-I has an explicit design mechanism, but **zero requirements are treated as finally qualified until integrated evidence exists**.
+
+```text
+CANDIDATE=PKA-CANDIDATE-01
+MC0016_MESSAGE001=INCORPORATED_WITH_CALIBRATION
+DESIGN_MECHANISMS=AMENDED
+TARGET_ARCHITECTURE=NOT_SELECTED
+NEXT=NARROW_MC0016_FOLLOWUP_ON_PRECEDENCE_AND_JOINT_AUTHORITY
 ```

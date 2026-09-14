@@ -2,7 +2,7 @@
   "schema_version": 1,
   "candidate_id": "PKA-CANDIDATE-01",
   "requirements_boundary": "PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02",
-  "status": "DESIGN_COVERAGE_COMPLETE__FINAL_QUALIFICATION_PENDING",
+  "status": "DESIGN_COVERAGE_COMPLETE_AFTER_MC0016_AMENDMENT__NARROW_FOLLOWUP_PENDING__FINAL_QUALIFICATION_PENDING",
   "qualification_clusters": {
     "Q1": "bootstrap / reconstruction / discovery",
     "Q2": "authority resolution / action-contract fidelity",
@@ -91,8 +91,8 @@
     {
       "id": "KA-R09",
       "title": "consequential-action authority activation and contract fidelity",
-      "design_coverage": "DESIGN_COVERED",
-      "mechanism": "action-shaped authority resolver plus structured action-contract activation/conformance",
+      "design_coverage": "DESIGN_COVERED_AFTER_MC0016_AMENDMENT",
+      "mechanism": "sole-normative structured action-contract facts + stable constraint IDs + deterministic execution-plan conformance + independent semantic verification where deterministic equivalence is insufficient",
       "qualification_cluster": "Q2",
       "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
       "selection_blocking": true
@@ -136,8 +136,8 @@
     {
       "id": "KA-R14",
       "title": "supersession, supplementation and conflict visibility",
-      "design_coverage": "DESIGN_COVERED",
-      "mechanism": "REPLACE/SUPPLEMENT/SPECIALIZE/CORRECT semantics plus fail-visible conflicts",
+      "design_coverage": "DESIGN_COVERED_AFTER_MC0016_AMENDMENT",
+      "mechanism": "REPLACE/SUPPLEMENT/SPECIALIZE/CORRECT semantics plus fail-visible conflicts; joint-authority objects require explicit J1-J6 admission and promotion",
       "qualification_cluster": "Q2",
       "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
       "selection_blocking": true
@@ -163,8 +163,8 @@
     {
       "id": "KA-R17",
       "title": "view-contract consolidation fidelity",
-      "design_coverage": "DESIGN_COVERED",
-      "mechanism": "consolidation uses explicit view contracts and must-preserve fidelity dimensions",
+      "design_coverage": "DESIGN_COVERED_AFTER_MC0016_AMENDMENT",
+      "mechanism": "consolidation must-preserve manifest with unit-by-unit coverage disposition, source drill-down and consequence-shaped independent verification",
       "qualification_cluster": "Q5",
       "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
       "selection_blocking": true
@@ -289,8 +289,8 @@
     {
       "id": "KA-R31",
       "title": "non-linear-history reconstruction cost",
-      "design_coverage": "DESIGN_COVERED",
-      "mechanism": "bounded active/generated views and progressive drill-down prevent passive history from forcing proportional cold start",
+      "design_coverage": "DESIGN_COVERED_AFTER_MC0016_AMENDMENT",
+      "mechanism": "normal reconstruction uses bounded materialized/current views and never requires whole-history scans; passive history may affect periodic rebuild cost but not mandatory orientation cost",
       "qualification_cluster": "Q8",
       "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
       "selection_blocking": true
@@ -307,8 +307,8 @@
     {
       "id": "KA-R33",
       "title": "dependency-local marginal maintenance",
-      "design_coverage": "DESIGN_COVERED",
-      "mechanism": "source-local declarations and dependency-aware regeneration bound ordinary change fan-out",
+      "design_coverage": "DESIGN_COVERED_AFTER_MC0016_AMENDMENT",
+      "mechanism": "ordinary local changes use dependency-aware incremental refresh; periodic automated full rebuild remains allowed",
       "qualification_cluster": "Q8",
       "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
       "selection_blocking": true
@@ -397,8 +397,8 @@
     {
       "id": "KA-R43",
       "title": "migration preservation and identity reconciliation",
-      "design_coverage": "DESIGN_COVERED",
-      "mechanism": "M0-M7 migration preserves identity, authority, provenance, history and reverse references",
+      "design_coverage": "DESIGN_COVERED_AFTER_MC0016_AMENDMENT",
+      "mechanism": "M0-M7 migration preserves identity, authority, provenance, history and reverse references with explicit semantic parity checks",
       "qualification_cluster": "Q9",
       "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
       "selection_blocking": true
@@ -406,8 +406,8 @@
     {
       "id": "KA-R44",
       "title": "old authority remains until successor qualification",
-      "design_coverage": "DESIGN_COVERED",
-      "mechanism": "candidate stays shadow/non-authoritative until explicit qualified switch and rollback proof",
+      "design_coverage": "DESIGN_COVERED_AFTER_MC0016_AMENDMENT",
+      "mechanism": "old authority remains until qualification; pre-switch rollback exporter and post-switch stabilization allow explicit lossless reverse authority switch",
       "qualification_cluster": "Q9",
       "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
       "selection_blocking": true
@@ -424,8 +424,8 @@
     {
       "id": "KA-R46",
       "title": "representation-independent continuity of identity",
-      "design_coverage": "DESIGN_COVERED",
-      "mechanism": "selective project-owned semantic IDs plus identity transition/tombstone semantics survive carrier changes",
+      "design_coverage": "DESIGN_COVERED_AFTER_MC0016_AMENDMENT",
+      "mechanism": "selective project-owned semantic IDs plus transition/tombstone history; normal current identity lookup uses generated flattened current-target index rather than history scan",
       "qualification_cluster": "Q3",
       "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
       "selection_blocking": true
@@ -460,8 +460,8 @@
     {
       "id": "KA-R50",
       "title": "recurring active-surface consolidation lifecycle",
-      "design_coverage": "DESIGN_COVERED",
-      "mechanism": "recurring pressure-triggered consolidation controls active surfaces while retaining drill-down/history",
+      "design_coverage": "DESIGN_COVERED_AFTER_MC0016_AMENDMENT",
+      "mechanism": "pressure-triggered consolidation includes active-surface and capture-backlog metrics while preserving drill-down/history",
       "qualification_cluster": "Q5",
       "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
       "selection_blocking": true
@@ -507,8 +507,8 @@
     {
       "id": "KA-I05",
       "title": "consequential guidance resolves/consumes authority and preserves material action contract",
-      "design_coverage": "DESIGN_COVERED",
-      "mechanism": "authority resolver receipts plus action-contract conformance",
+      "design_coverage": "DESIGN_COVERED_AFTER_MC0016_AMENDMENT",
+      "mechanism": "authority resolver receipts plus sole-normative structured constraint IDs, deterministic plan conformance and independent high-consequence semantic verification where needed",
       "qualification_cluster": "Q2",
       "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
       "selection_blocking": true
@@ -570,8 +570,8 @@
     {
       "id": "KA-I12",
       "title": "required reconstruction cost is not structurally proportional to accumulated history",
-      "design_coverage": "DESIGN_COVERED",
-      "mechanism": "bounded active views, progressive disclosure and consolidation",
+      "design_coverage": "DESIGN_COVERED_AFTER_MC0016_AMENDMENT",
+      "mechanism": "normal cold-start/reconstruction consumes bounded current views and is not history-scan dependent; periodic full rebuild may remain corpus-proportional",
       "qualification_cluster": "Q8",
       "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
       "selection_blocking": true
@@ -615,8 +615,8 @@
     {
       "id": "KA-I17",
       "title": "intended semantic continuity is not forced to equal carrier continuity",
-      "design_coverage": "DESIGN_COVERED",
-      "mechanism": "selective semantic IDs and merge/split/move/representation-transition semantics",
+      "design_coverage": "DESIGN_COVERED_AFTER_MC0016_AMENDMENT",
+      "mechanism": "selective semantic IDs and merge/split/move/representation-transition semantics plus generated bounded current-target lookup",
       "qualification_cluster": "Q9",
       "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
       "selection_blocking": true
@@ -628,6 +628,21 @@
     "design_gaps": 0,
     "final_qualified_passes": 0,
     "selection_blocking_clusters": 10,
-    "target_selection_allowed": false
+    "target_selection_allowed": false,
+    "design_partial_after_amendment": 0,
+    "narrow_mc0016_followup_pending": true
+  },
+  "adversarial_review": {
+    "thread": "MC-0016",
+    "message": "001_claude_adversarial_candidate_01_review.md",
+    "reviewed_target": "69aed186a0d63b3c395a133cd920099d5fa8e000",
+    "claude_review_target_assessment": {
+      "ka_r_design_covered": 43,
+      "ka_r_partially_covered": 7,
+      "ka_i_design_covered": 16,
+      "ka_i_partially_covered": 1,
+      "not_covered": 0
+    },
+    "task_owner_disposition": "Research 146 accepts several under-specified mechanisms, calibrates requirement scope, amends Candidate 01, and returns only normative precedence plus joint-authority admission for one narrow Claude follow-up."
   }
 }
