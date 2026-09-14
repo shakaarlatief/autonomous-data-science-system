@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / MC-0015 RESOLVED / CORRECTED SEMANTIC AXES FROZEN / WHOLE-ARCHITECTURE CANDIDATE SYNTHESIS NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / WHOLE-ARCHITECTURE CANDIDATE 01 SYNTHESIZED / 50 KA-R + 17 KA-I DESIGN-MAPPED / INTEGRATED QUALIFICATION PENDING / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -3901,4 +3901,26 @@ CORRECTED_SEMANTIC_AXES=FROZEN_FOR_RESEARCH
 MECHANIZED_ADMISSION_CLASSIFIER=DEFERRED
 WHOLE_ARCHITECTURE_CANDIDATE_SYNTHESIS=NEXT
 TARGET_ARCHITECTURE=NOT_SELECTED
+```
+
+## 89. Whole-architecture Candidate 01 clears the design-coverage gate
+
+Research 144 synthesizes the first post-MC-0015 whole-architecture candidate from the complete evidence field. `PKA-CANDIDATE-01` keeps rich repository-native semantic sources primary, assigns durable semantic identity selectively, defaults authoritative facts to one canonical semantic source, represents joint authority only as a bounded exception, derives global current/navigation/closure views, and adds task-shaped authority resolution plus action-contract activation for consequential work.
+
+The candidate explicitly does not revive the old H1/H2 split. It uses Research 143's singular semantic-unit rule and separates semantic continuity/identity from authority mode/home. A first-class workstream can therefore remain single-source, while an aggregate route can remain derived-only.
+
+Research 145 maps the candidate against every frozen acceptance statement. All 50 KA-R requirements and all 17 KA-I invariants have explicit candidate mechanisms; no design-coverage hole currently forces a different architecture family. That result is only a **design coverage pass**, not target qualification. The machine-readable matrix intentionally records zero final qualified passes because Candidate 01 has not yet been implemented and exercised as one integrated system.
+
+Ten selection-blocking qualification clusters remain: reconstruction/discovery; authority/action-contract fidelity; identity/relation/temporal semantics; workstream/concurrency; capture/promotion/consolidation; derived-view rebuild/freshness; public/private degraded behavior; scale/maintenance economics; migration/authority switch; and qualification methodology itself.
+
+The next high-value boundary is adversarial review of the concrete candidate followed by the smallest shadow prototype capable of exercising those clusters. Current project-development authority remains unchanged.
+
+```text
+PKA_CANDIDATE_01=WHOLE_ARCHITECTURE_SYNTHESIZED
+KA_R_DESIGN_MAPPED=50_OF_50
+KA_I_DESIGN_MAPPED=17_OF_17
+DESIGN_COVERAGE_GATE=PASS
+INTEGRATED_EVIDENCE_GATE=PENDING
+TARGET_ARCHITECTURE=NOT_SELECTED
+NEXT=ADVERSARIAL_CANDIDATE_REVIEW_THEN_SHADOW_PROTOTYPE
 ```

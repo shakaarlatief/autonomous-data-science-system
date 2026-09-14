@@ -329,6 +329,8 @@ docs/research/140_real_ads_relationship_corpus_v01_machine_freeze.md
 docs/research/141_real_ads_relationship_corpus_v01_chatgpt_independent_judgment.md
 docs/research/142_real_corpus_cross_reviewer_comparison_and_construct_validity_challenge.md
 docs/research/143_real_corpus_construct_reconciliation_and_candidate_synthesis_readiness.md
+docs/research/144_whole_architecture_candidate_repository_native_semantic_sources.md
+docs/research/145_candidate_01_requirements_v02_design_coverage_and_qualification_plan.md
 docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md
 docs/checkpoints/449_scalable_knowledge_architecture_redesign_opened.md
 docs/checkpoints/450_knowledge_architecture_baseline_inventory_complete_requirements_next.md
@@ -370,6 +372,7 @@ docs/checkpoints/485_chatgpt_real_corpus_judgment_frozen_claude_independent_next
 docs/checkpoints/486_mc0015_claude_independent_real_corpus_judgment_opened.md
 docs/checkpoints/487_real_corpus_cross_reviewer_construct_validity_review_opened.md
 docs/checkpoints/488_mc0015_resolved_corrected_semantic_axes_candidate_synthesis_next.md
+docs/checkpoints/489_whole_architecture_candidate_01_design_coverage_complete.md
 docs/research/PROJECT_KNOWLEDGE_FAILURE_CORPUS.md
 docs/research/project_knowledge_baselines/PROJECT_KNOWLEDGE_BLIND_BASELINE_PROTOCOL.md
 docs/local_execution/validation/206_semantic_git_managed_python_integrity_and_publication_restored.md
@@ -905,7 +908,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-488 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-489 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

@@ -1,0 +1,633 @@
+{
+  "schema_version": 1,
+  "candidate_id": "PKA-CANDIDATE-01",
+  "requirements_boundary": "PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02",
+  "status": "DESIGN_COVERAGE_COMPLETE__FINAL_QUALIFICATION_PENDING",
+  "qualification_clusters": {
+    "Q1": "bootstrap / reconstruction / discovery",
+    "Q2": "authority resolution / action-contract fidelity",
+    "Q3": "identity / relationship / temporal semantics",
+    "Q4": "workstream continuation / concurrency",
+    "Q5": "capture / promotion / consolidation fidelity",
+    "Q6": "derived views / freshness / multi-axis projection",
+    "Q7": "public-private boundary / degraded mode",
+    "Q8": "scaling / maintenance economics",
+    "Q9": "migration / authority switch / self-hosting evolution",
+    "Q10": "qualification methodology / budgets"
+  },
+  "requirements": [
+    {
+      "id": "KA-R01",
+      "title": "persistent project understanding",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "canonical semantic sources preserve rich rationale, status and provenance; derived views are subordinate",
+      "qualification_cluster": "Q5",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R02",
+      "title": "stable project-controlled bootstrap",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "small authored bootstrap core plus generated committed routing/current views",
+      "qualification_cluster": "Q1",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R03",
+      "title": "conversation and model independence",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "public repository is authority; capture/promotion prevents chat-only truth",
+      "qualification_cluster": "Q5",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R04",
+      "title": "task-shaped safe orientation",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "reconstruction planner selects broad continuation or task-shaped safe narrow path",
+      "qualification_cluster": "Q1",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R05",
+      "title": "progressive disclosure",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "progressive bootstrap -> view -> semantic source -> evidence drill-down",
+      "qualification_cluster": "Q1",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R06",
+      "title": "active route reconstruction",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "single-source workstream declarations plus generated active route graph",
+      "qualification_cluster": "Q4",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R07",
+      "title": "relevant discovery with safety-calibrated recall",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "exact/structured/lexical/optional semantic retrieval plus generated risk/governance indexes",
+      "qualification_cluster": "Q1",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R08",
+      "title": "reconstruction and authority-resolution receipts",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "authority/reconstruction receipts bind sources, revisions, freshness and activated constraints",
+      "qualification_cluster": "Q2",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R09",
+      "title": "consequential-action authority activation and contract fidelity",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "action-shaped authority resolver plus structured action-contract activation/conformance",
+      "qualification_cluster": "Q2",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R10",
+      "title": "known-risk and evolution-trigger activation",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "source-owned risk/reopen triggers exposed through generated indexes and task activation",
+      "qualification_cluster": "Q2",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R11",
+      "title": "uncertainty visibility",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "explicit unresolved/conflict/unavailable/stale states and consequence-sensitive failure",
+      "qualification_cluster": "Q2",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R12",
+      "title": "explicit epistemic role",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "typed source profiles preserve material epistemic/lifecycle distinctions selectively",
+      "qualification_cluster": "Q3",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R13",
+      "title": "action-shaped authority resolution",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "resolver uses action, scope, state, actor if material, time and authority closure",
+      "qualification_cluster": "Q2",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R14",
+      "title": "supersession, supplementation and conflict visibility",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "REPLACE/SUPPLEMENT/SPECIALIZE/CORRECT semantics plus fail-visible conflicts",
+      "qualification_cluster": "Q2",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R15",
+      "title": "relationship semantics",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "directional source-owned relations by default; rich relation source only when relation lifecycle warrants it",
+      "qualification_cluster": "Q3",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R16",
+      "title": "current state, history and selective temporal semantics",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "Git history plus selective applicability/authority temporal qualifiers and generated current views",
+      "qualification_cluster": "Q3",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R17",
+      "title": "view-contract consolidation fidelity",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "consolidation uses explicit view contracts and must-preserve fidelity dimensions",
+      "qualification_cluster": "Q5",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R18",
+      "title": "synthesis provenance and auditability",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "promoted synthesis and consequential transformations retain source/transformation provenance",
+      "qualification_cluster": "Q5",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R19",
+      "title": "one explicit project-development authority",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "public ADS repository remains one explicit project-development authority",
+      "qualification_cluster": "Q9",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R20",
+      "title": "explicit authority class for stores and views",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "source/view profiles declare canonical, candidate, historical, derived or evidence authority role",
+      "qualification_cluster": "Q6",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R21",
+      "title": "rebuildability appropriate to representation",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "derived-view manifests declare inputs, generator, rebuildability and deletion/rebuild behavior",
+      "qualification_cluster": "Q6",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R22",
+      "title": "explicit promotion of unique accepted synthesis",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "unique accepted synthesis crosses explicit source-traceable promotion into canonical source",
+      "qualification_cluster": "Q5",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R23",
+      "title": "freshness, source and authority-closure binding",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "persistent derived views bind source revision/digest, generator and freshness state",
+      "qualification_cluster": "Q6",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R24",
+      "title": "probabilistic retrieval is not sole governing authority",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "probabilistic retrieval nominates candidates but cannot silently resolve governing authority",
+      "qualification_cluster": "Q2",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R25",
+      "title": "explicit workstream identity and state",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "durable workstream profile with explicit single-source state",
+      "qualification_cluster": "Q4",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R26",
+      "title": "explicit pause and return semantics",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "paused work requires pause reason, return condition and resume target",
+      "qualification_cluster": "Q4",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R27",
+      "title": "multiple dependencies",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "workstream profile supports multiple depends_on edges and generated DAG validation",
+      "qualification_cluster": "Q4",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R28",
+      "title": "interruption recovery",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "resume reconstruction uses durable workstream state plus completed project evidence, not prior-chat plan",
+      "qualification_cluster": "Q4",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R29",
+      "title": "concurrent collaborator safety",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "expected Git/source revision preconditions make stale/conflicting authoritative updates fail",
+      "qualification_cluster": "Q4",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R30",
+      "title": "bounded qualification budgets",
+      "design_coverage": "QUALIFICATION_RULE_MAPPED",
+      "mechanism": "task-class-specific read/context budgets measured during candidate qualification",
+      "qualification_cluster": "Q10",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R31",
+      "title": "non-linear-history reconstruction cost",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "bounded active/generated views and progressive drill-down prevent passive history from forcing proportional cold start",
+      "qualification_cluster": "Q8",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R32",
+      "title": "bounded mandatory active core",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "payload-light bootstrap and generated active surfaces remain separate from historical archive",
+      "qualification_cluster": "Q8",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R33",
+      "title": "dependency-local marginal maintenance",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "source-local declarations and dependency-aware regeneration bound ordinary change fan-out",
+      "qualification_cluster": "Q8",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R34",
+      "title": "saturation and active-surface observability",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "active-view size, routing payload, fan-out, staleness and consolidation pressure are observable",
+      "qualification_cluster": "Q8",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R35",
+      "title": "human and model inspectability",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "rich repository sources plus inspectable structured declarations/manifests",
+      "qualification_cluster": "Q1",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R36",
+      "title": "provider and tool portability",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "project-controlled repository semantics and deterministic views remain reconstructable across capable providers/tools",
+      "qualification_cluster": "Q1",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R37",
+      "title": "explicit public/private authority boundary",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "public authority constitution plus explicitly delegated private dependency semantics",
+      "qualification_cluster": "Q7",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R38",
+      "title": "private-data non-leakage",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "public-view generation includes private-field/path non-leakage validation",
+      "qualification_cluster": "Q7",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R39",
+      "title": "bounded private dependency",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "public reconstruction works independently; private-required tasks expose dependency/verification status",
+      "qualification_cluster": "Q7",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R40",
+      "title": "structural and behavioral qualification",
+      "design_coverage": "QUALIFICATION_RULE_MAPPED",
+      "mechanism": "layered structural and behavioral qualification suite is part of candidate contract",
+      "qualification_cluster": "Q10",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R41",
+      "title": "multidimensional reconstruction qualification",
+      "design_coverage": "QUALIFICATION_RULE_MAPPED",
+      "mechanism": "qualification remains multidimensional and case-level with no aggregate winner score",
+      "qualification_cluster": "Q10",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R42",
+      "title": "consequence-sensitive degraded mode",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "consequence-sensitive degraded mode separates optional retrieval gaps from required authority failure",
+      "qualification_cluster": "Q7",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R43",
+      "title": "migration preservation and identity reconciliation",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "M0-M7 migration preserves identity, authority, provenance, history and reverse references",
+      "qualification_cluster": "Q9",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R44",
+      "title": "old authority remains until successor qualification",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "candidate stays shadow/non-authoritative until explicit qualified switch and rollback proof",
+      "qualification_cluster": "Q9",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R45",
+      "title": "self-hosting evolution",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "same capture, workstream, migration and authority-transition mechanisms can coordinate architecture evolution",
+      "qualification_cluster": "Q9",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R46",
+      "title": "representation-independent continuity of identity",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "selective project-owned semantic IDs plus identity transition/tombstone semantics survive carrier changes",
+      "qualification_cluster": "Q3",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R47",
+      "title": "multi-axis organization without truth duplication",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "source-local declarations generate orthogonal subject/authority/workstream/provenance/temporal views without copied truth",
+      "qualification_cluster": "Q6",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R48",
+      "title": "capture, consolidation and promotion boundary",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "capture -> consolidated candidate -> explicit promotion -> derived consumption roles remain distinct",
+      "qualification_cluster": "Q5",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R49",
+      "title": "selective temporal and supersession semantics",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "selective effective/authority time plus explicit transition modes only where semantics require them",
+      "qualification_cluster": "Q3",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-R50",
+      "title": "recurring active-surface consolidation lifecycle",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "recurring pressure-triggered consolidation controls active surfaces while retaining drill-down/history",
+      "qualification_cluster": "Q5",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    }
+  ],
+  "invariants": [
+    {
+      "id": "KA-I01",
+      "title": "durable repository authority outranks transient model/chat memory",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "public repository authority boundary and explicit promotion",
+      "qualification_cluster": "Q1",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-I02",
+      "title": "one explicit project-development authority; derived stores cannot silently compete",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "canonical source roles plus derived-view manifests",
+      "qualification_cluster": "Q1",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-I03",
+      "title": "derived state contains no unique accepted truth unless explicitly promoted",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "derived deletion/rebuild contract plus promotion boundary",
+      "qualification_cluster": "Q5",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-I04",
+      "title": "material current/historical/superseded/rejected/unresolved distinctions survive",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "source lifecycle profiles plus selective temporal semantics",
+      "qualification_cluster": "Q1",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-I05",
+      "title": "consequential guidance resolves/consumes authority and preserves material action contract",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "authority resolver receipts plus action-contract conformance",
+      "qualification_cluster": "Q2",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-I06",
+      "title": "missing required evidence or unresolved governing conflict is surfaced",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "explicit unresolved/unavailable/conflict result states",
+      "qualification_cluster": "Q2",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-I07",
+      "title": "provenance and must-preserve view semantics survive synthesis/compression/migration",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "view-contract fidelity, source drill-down and migration reconciliation",
+      "qualification_cluster": "Q5",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-I08",
+      "title": "old continuity remains operational until explicit qualified switch",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "M0-M7 shadow migration and explicit authority transition",
+      "qualification_cluster": "Q9",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-I09",
+      "title": "resumable paused work preserves reason, return condition, parent relationship and target",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "workstream profile conditional fields",
+      "qualification_cluster": "Q4",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-I10",
+      "title": "public/private authority separation and non-leakage are preserved",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "delegated private dependency model plus publication validator",
+      "qualification_cluster": "Q7",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-I11",
+      "title": "fresh continuation does not depend on previous conversation",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "stable bootstrap plus committed canonical sources/views",
+      "qualification_cluster": "Q1",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-I12",
+      "title": "required reconstruction cost is not structurally proportional to accumulated history",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "bounded active views, progressive disclosure and consolidation",
+      "qualification_cluster": "Q8",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-I13",
+      "title": "routine local change avoids unbounded manual/global maintenance",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "source-local declarations plus dependency-aware regeneration",
+      "qualification_cluster": "Q8",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-I14",
+      "title": "optional probabilistic retrieval failure cannot bypass authority safety",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "retrieval subordinate to explicit authority resolver",
+      "qualification_cluster": "Q7",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-I15",
+      "title": "durable state exposes live route/authority/reconstruction/qualification/freshness health",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "generated routing/current views plus manifests and validation receipts",
+      "qualification_cluster": "Q1",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-I16",
+      "title": "capture does not imply authority",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "capture/candidate/promotion roles and explicit authority transition",
+      "qualification_cluster": "Q5",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    },
+    {
+      "id": "KA-I17",
+      "title": "intended semantic continuity is not forced to equal carrier continuity",
+      "design_coverage": "DESIGN_COVERED",
+      "mechanism": "selective semantic IDs and merge/split/move/representation-transition semantics",
+      "qualification_cluster": "Q9",
+      "qualification_state": "PENDING_INTEGRATED_EVIDENCE",
+      "selection_blocking": true
+    }
+  ],
+  "summary": {
+    "requirements_count": 50,
+    "invariants_count": 17,
+    "design_gaps": 0,
+    "final_qualified_passes": 0,
+    "selection_blocking_clusters": 10,
+    "target_selection_allowed": false
+  }
+}
