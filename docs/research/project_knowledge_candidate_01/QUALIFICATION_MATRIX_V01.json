@@ -637,7 +637,8 @@
     "real_repository_shadow_v01_passed": true,
     "zero_seed_routing_shadow_passed": true,
     "current_state_decomposition_v01_complete": true,
-    "current_state_core_shadow_v01_passed": true
+    "current_state_core_shadow_v01_passed": true,
+    "whole_architecture_evidence_reconciliation_v01_complete": true
   },
   "adversarial_review": {
     "thread": "MC-0016",
@@ -873,5 +874,29 @@
       "KA-I15",
       "KA-I16"
     ]
+  },
+  "whole_architecture_evidence_reconciliation_v01": {
+    "research": "research:159",
+    "machine_audit_path": "docs/research/project_knowledge_candidate_01/WHOLE_ARCHITECTURE_EVIDENCE_RECONCILIATION_V01.json",
+    "machine_audit_sha256": "af3672adf26183982515af3e583adae0f93f4337857c0d96d295b55790df9c4b",
+    "items_with_real_evidence": 32,
+    "items_with_synthetic_or_better": 50,
+    "formal_final_qualified_passes": 0,
+    "strong_real_subsystem_clusters": [
+      "Q6",
+      "Q8"
+    ],
+    "current_priority_blocker_clusters": [
+      "Q1",
+      "Q2",
+      "Q3",
+      "Q4",
+      "Q5",
+      "Q7",
+      "Q9",
+      "Q10"
+    ],
+    "immediate_next_cluster": "Q3",
+    "next_method": "architecture-uncertainty-driven falsification, not legacy-file order"
   }
 }

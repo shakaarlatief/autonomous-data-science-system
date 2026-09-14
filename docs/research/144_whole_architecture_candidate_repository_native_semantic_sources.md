@@ -1,7 +1,7 @@
 # Research 144: Whole-Architecture Candidate - Repository-Native Semantic Sources with Selective Identity, Derived Views, and Action-Gated Authority
 
 **Date:** 2026-09-14
-**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE / COMPACT CURRENT-STATE CORE + SOURCE-VAULT WORKSTREAM SHADOW PASSED / WHOLE-ARCHITECTURE EVIDENCE RECONCILIATION NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE / EVIDENCE RECONCILED ACROSS Q1-Q10 / Q3 REAL IDENTITY-TEMPORAL FALSIFICATION NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Candidate label:** `PKA-CANDIDATE-01`
 **Scope:** Synthesize one serious successor architecture from the complete Research 124 evidence field after the H1/H2 mechanism probes, real-corpus independent review, MC-0014/MC-0015 corrections, D1-D8 external evidence and owner-provided ICM evaluation. Define enough logical structure, authority semantics, typed source responsibilities, derived-view behavior, activation, lifecycle, validation, scaling and migration behavior to qualify the candidate systematically against Requirements V0.2.
 **Authority:** Candidate architecture research only. Requirements V0.2 remain the frozen acceptance authority. This record does not select the target architecture, migrate current authority, or authorize implementation as the production continuity system.
@@ -1120,5 +1120,18 @@ CURRENT_STATE_CORE_SHADOW=PASS
 SOURCE_VAULT_WORKSTREAM_SHADOW=PASS
 MUST_PRESERVE_RECOVERABILITY=23_OF_23
 WHOLE_ARCHITECTURE_RECONCILIATION=NEXT
+TARGET_ARCHITECTURE=NOT_SELECTED
+```
+
+## 43. Whole-architecture evidence reconciliation resets the next-test logic
+
+Research 159 reconciles all Candidate 01 evidence across Q1-Q10 after the real routing/current-state experiments. The next experiment is no longer chosen by which legacy global file remains. It is chosen by the largest architecture-level uncertainty.
+
+Q6 derived views and Q8 scaling/maintenance currently have the strongest real subsystem evidence. Q3 identity/relationship/temporal semantics has no real Candidate 01 implementation evidence and is the most direct H3/Object-Primary reopening discriminator, so Q3 becomes the next falsification target.
+
+```text
+EVIDENCE_RECONCILIATION=Q1_TO_Q10_COMPLETE
+LEGACY_FILE_ORDER=NOT_THE_RESEARCH_SEQUENCE
+Q3_REAL_IDENTITY_TEMPORAL_FALSIFICATION=NEXT
 TARGET_ARCHITECTURE=NOT_SELECTED
 ```

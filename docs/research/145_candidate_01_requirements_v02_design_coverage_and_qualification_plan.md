@@ -1,7 +1,7 @@
 # Research 145: Candidate 01 Requirements V0.2 Design Coverage and Qualification Plan
 
 **Date:** 2026-09-14
-**Status:** 50/50 KA-R + 17/17 KA-I DESIGN-MAPPED / CURRENT-STATE-CORE REAL SHADOW PASSED / WHOLE-ARCHITECTURE EVIDENCE RECONCILIATION NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** 50/50 KA-R + 17/17 KA-I DESIGN-MAPPED / EVIDENCE RECONCILED ACROSS Q1-Q10 / Q3 REAL FALSIFICATION NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Candidate:** `PKA-CANDIDATE-01` from Research 144
 **Scope:** Systematically map the whole-architecture candidate against every frozen Requirements V0.2 requirement/invariant, distinguish design coverage from actual qualification evidence, identify selection-blocking proof clusters, and freeze the minimum implementation/behavioral evidence needed before target selection.
 **Authority:** Candidate qualification planning only. Requirements V0.2 remain the acceptance authority. A mapped design mechanism is not a qualified pass.
@@ -412,4 +412,16 @@ The next qualification action is cluster-level evidence reconciliation across Q1
 CURRENT_STATE_CORE_SUPPORT=RECORDED
 FINAL_QUALIFIED_PASSES=0
 NEXT=WHOLE_ARCHITECTURE_EVIDENCE_RECONCILIATION
+```
+
+## 20. Whole-architecture evidence reconciliation
+
+Research 159 converts the accumulated prototype record into a cluster-level evidence audit. Of 67 frozen KA-R/KA-I items, 50 now have synthetic-or-better Candidate 01 evidence and 32 have some real-repository evidence. These counts are descriptive only; final qualified passes remain zero.
+
+The audit identifies Q6 and Q8 as the strongest real subsystem clusters, while Q3, Q7, Q9 and Q10 remain the clearest P0 uncertainties. Q3 is chosen next because it is both weakly evidenced and most architecture-family-discriminating.
+
+```text
+WHOLE_ARCH_EVIDENCE_AUDIT=COMPLETE
+FINAL_QUALIFIED_PASSES=0
+NEXT=Q3_REAL_IDENTITY_RELATIONSHIP_TEMPORAL_FALSIFICATION
 ```

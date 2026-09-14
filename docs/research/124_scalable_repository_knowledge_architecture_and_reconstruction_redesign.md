@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / CURRENT-STATE-CORE SHADOW PASSED / WHOLE-ARCHITECTURE EVIDENCE RECONCILIATION NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / WHOLE-ARCHITECTURE EVIDENCE RECONCILED / Q3 REAL IDENTITY-TEMPORAL FALSIFICATION NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -4149,5 +4149,20 @@ CURRENT_STATE_CORE=PASS_ON_FIRST_RUN
 MUST_PRESERVE=23_OF_23
 LEGACY_FILE_BY_FILE_SEQUENCE=NOT_THE_NEXT_METHOD
 WHOLE_ARCHITECTURE_EVIDENCE_RECONCILIATION=NEXT
+TARGET_ARCHITECTURE=NOT_SELECTED
+```
+
+## 104. Whole-architecture evidence reconciliation selects Q3 by uncertainty, not file order
+
+Research 159 audits Candidate 01 evidence across all ten qualification clusters. The current record contains 50/67 items with synthetic-or-better support and 32/67 with some real-repository evidence, but still zero final qualified passes.
+
+The evidence audit explicitly rejects sequential conversion of `CONTINUITY.md`, `KNOWLEDGE_MAP.md` or other legacy artifacts as the next research method. Those artifacts may be used as evidence only when an architecture-level uncertainty requires them.
+
+Q3 identity/relationship/temporal semantics is selected next because it has zero real Candidate 01 implementation evidence and directly tests whether selective repository-native source profiles remain simpler than an object-primary architecture.
+
+```text
+WHOLE_ARCH_EVIDENCE_RECONCILIATION=COMPLETE
+Q6_Q8=STRONGEST_REAL_SUBSYSTEM_EVIDENCE
+Q3=NEXT_ARCHITECTURE_FALSIFICATION_TARGET
 TARGET_ARCHITECTURE=NOT_SELECTED
 ```
