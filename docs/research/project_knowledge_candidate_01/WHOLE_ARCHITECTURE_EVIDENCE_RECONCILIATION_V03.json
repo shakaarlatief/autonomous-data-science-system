@@ -1,0 +1,1659 @@
+{
+  "schema_version": 3,
+  "audit_id": "PKA-C01-WHOLE-ARCH-EVIDENCE-V03",
+  "candidate_id": "PKA-CANDIDATE-01",
+  "matrix_sha256": "a087b2724aa90eed06813cd2372f6e3988d797bd6a5415b0cdd0f2dfd0963bd1",
+  "total_items": 67,
+  "overall_evidence_counts": {
+    "DESIGN_ONLY": 4,
+    "SYNTHETIC": 2,
+    "REAL": 61
+  },
+  "items_with_real_evidence": 61,
+  "items_with_synthetic_or_better": 63,
+  "final_qualified_passes": 0,
+  "clusters": {
+    "Q1": {
+      "title": "bootstrap / reconstruction / discovery",
+      "item_count": 11,
+      "evidence_counts": {
+        "DESIGN_ONLY": 1,
+        "SYNTHETIC": 0,
+        "REAL": 10
+      },
+      "maturity": "MIXED_EVIDENCE_WITH_DESIGN_GAPS",
+      "items_without_real": [
+        "KA-R36"
+      ],
+      "formal_final_pass_recorded": false
+    },
+    "Q2": {
+      "title": "authority resolution / action-contract fidelity",
+      "item_count": 9,
+      "evidence_counts": {
+        "DESIGN_ONLY": 0,
+        "SYNTHETIC": 2,
+        "REAL": 7
+      },
+      "maturity": "MIXED_REAL_AND_SYNTHETIC",
+      "items_without_real": [
+        "KA-R14",
+        "KA-R24"
+      ],
+      "formal_final_pass_recorded": false
+    },
+    "Q3": {
+      "title": "identity / relationship / temporal semantics",
+      "item_count": 5,
+      "evidence_counts": {
+        "DESIGN_ONLY": 0,
+        "SYNTHETIC": 0,
+        "REAL": 5
+      },
+      "maturity": "ALL_ITEMS_REAL_SUBSYSTEM_SUPPORTED",
+      "items_without_real": [],
+      "formal_final_pass_recorded": false
+    },
+    "Q4": {
+      "title": "workstream continuation / concurrency",
+      "item_count": 7,
+      "evidence_counts": {
+        "DESIGN_ONLY": 0,
+        "SYNTHETIC": 0,
+        "REAL": 7
+      },
+      "maturity": "ALL_ITEMS_REAL_SUBSYSTEM_SUPPORTED",
+      "items_without_real": [],
+      "formal_final_pass_recorded": false
+    },
+    "Q5": {
+      "title": "capture / promotion / consolidation fidelity",
+      "item_count": 10,
+      "evidence_counts": {
+        "DESIGN_ONLY": 0,
+        "SYNTHETIC": 0,
+        "REAL": 10
+      },
+      "maturity": "ALL_ITEMS_REAL_SUBSYSTEM_SUPPORTED",
+      "items_without_real": [],
+      "formal_final_pass_recorded": false
+    },
+    "Q6": {
+      "title": "derived views / freshness / multi-axis projection",
+      "item_count": 4,
+      "evidence_counts": {
+        "DESIGN_ONLY": 0,
+        "SYNTHETIC": 0,
+        "REAL": 4
+      },
+      "maturity": "ALL_ITEMS_REAL_SUBSYSTEM_SUPPORTED",
+      "items_without_real": [],
+      "formal_final_pass_recorded": false
+    },
+    "Q7": {
+      "title": "public-private boundary / degraded mode",
+      "item_count": 6,
+      "evidence_counts": {
+        "DESIGN_ONLY": 0,
+        "SYNTHETIC": 0,
+        "REAL": 6
+      },
+      "maturity": "ALL_ITEMS_REAL_SUBSYSTEM_SUPPORTED",
+      "items_without_real": [],
+      "formal_final_pass_recorded": false
+    },
+    "Q8": {
+      "title": "scaling / maintenance economics",
+      "item_count": 6,
+      "evidence_counts": {
+        "DESIGN_ONLY": 0,
+        "SYNTHETIC": 0,
+        "REAL": 6
+      },
+      "maturity": "ALL_ITEMS_REAL_SUBSYSTEM_SUPPORTED",
+      "items_without_real": [],
+      "formal_final_pass_recorded": false
+    },
+    "Q9": {
+      "title": "migration / authority switch / self-hosting evolution",
+      "item_count": 6,
+      "evidence_counts": {
+        "DESIGN_ONLY": 0,
+        "SYNTHETIC": 0,
+        "REAL": 6
+      },
+      "maturity": "ALL_ITEMS_REAL_SUBSYSTEM_SUPPORTED",
+      "items_without_real": [],
+      "formal_final_pass_recorded": false
+    },
+    "Q10": {
+      "title": "qualification methodology / budgets",
+      "item_count": 3,
+      "evidence_counts": {
+        "DESIGN_ONLY": 3,
+        "SYNTHETIC": 0,
+        "REAL": 0
+      },
+      "maturity": "DESIGN_ONLY",
+      "items_without_real": [
+        "KA-R30",
+        "KA-R40",
+        "KA-R41"
+      ],
+      "formal_final_pass_recorded": false
+    }
+  },
+  "items": [
+    {
+      "id": "KA-R01",
+      "title": "persistent project understanding",
+      "cluster": "Q5",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_q1_q2_q5_integrated_v01",
+          "tier": "REAL",
+          "research": "research:168",
+          "native_class": "REAL_FRESH_COLLABORATOR_INTEGRATED_Q1_Q2_Q5_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R02",
+      "title": "stable project-controlled bootstrap",
+      "cluster": "Q1",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_real_v01",
+          "tier": "REAL",
+          "research": "research:153",
+          "native_class": "REAL_REPOSITORY_SHADOW_SUPPORT_WITH_MEASURED_MIGRATION_SEEDS"
+        }
+      ]
+    },
+    {
+      "id": "KA-R03",
+      "title": "conversation and model independence",
+      "cluster": "Q5",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_q1_q2_q5_integrated_v01",
+          "tier": "REAL",
+          "research": "research:168",
+          "native_class": "REAL_FRESH_COLLABORATOR_INTEGRATED_Q1_Q2_Q5_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R04",
+      "title": "task-shaped safe orientation",
+      "cluster": "Q1",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_current_state_decomposition_v01",
+          "tier": "REAL",
+          "research": "research:156",
+          "native_class": "REAL_AUTHORITY_SURFACE_DECOMPOSITION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_current_state_core_v01",
+          "tier": "REAL",
+          "research": "research:158",
+          "native_class": "REAL_REPOSITORY_COMPACT_CURRENT_STATE_CORE_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R05",
+      "title": "progressive disclosure",
+      "cluster": "Q1",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_real_v01",
+          "tier": "REAL",
+          "research": "research:153",
+          "native_class": "REAL_REPOSITORY_SHADOW_SUPPORT_WITH_MEASURED_MIGRATION_SEEDS"
+        },
+        {
+          "source_key": "prototype_evidence_current_state_decomposition_v01",
+          "tier": "REAL",
+          "research": "research:156",
+          "native_class": "REAL_AUTHORITY_SURFACE_DECOMPOSITION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_current_state_core_v01",
+          "tier": "REAL",
+          "research": "research:158",
+          "native_class": "REAL_REPOSITORY_COMPACT_CURRENT_STATE_CORE_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R06",
+      "title": "active route reconstruction",
+      "cluster": "Q4",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_real_v01",
+          "tier": "REAL",
+          "research": "research:153",
+          "native_class": "REAL_REPOSITORY_SHADOW_SUPPORT_WITH_MEASURED_MIGRATION_SEEDS"
+        },
+        {
+          "source_key": "prototype_evidence_zero_seed_routing_v01",
+          "tier": "REAL",
+          "research": "research:155",
+          "native_class": "REAL_REPOSITORY_ZERO_SEED_SUBSYSTEM_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_current_state_core_v01",
+          "tier": "REAL",
+          "research": "research:158",
+          "native_class": "REAL_REPOSITORY_COMPACT_CURRENT_STATE_CORE_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R07",
+      "title": "relevant discovery with safety-calibrated recall",
+      "cluster": "Q1",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_q1_q2_q5_integrated_v01",
+          "tier": "REAL",
+          "research": "research:168",
+          "native_class": "REAL_FRESH_COLLABORATOR_INTEGRATED_Q1_Q2_Q5_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R08",
+      "title": "reconstruction and authority-resolution receipts",
+      "cluster": "Q2",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_real_v01",
+          "tier": "REAL",
+          "research": "research:153",
+          "native_class": "REAL_REPOSITORY_SHADOW_SUPPORT_WITH_MEASURED_MIGRATION_SEEDS"
+        }
+      ]
+    },
+    {
+      "id": "KA-R09",
+      "title": "consequential-action authority activation and contract fidelity",
+      "cluster": "Q2",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_v01",
+          "tier": "SYNTHETIC",
+          "research": "research:149",
+          "native_class": "NARROW_SYNTHETIC_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_real_v01",
+          "tier": "REAL",
+          "research": "research:153",
+          "native_class": "REAL_REPOSITORY_SHADOW_SUPPORT_WITH_MEASURED_MIGRATION_SEEDS"
+        },
+        {
+          "source_key": "prototype_evidence_q1_q2_q5_integrated_v01",
+          "tier": "REAL",
+          "research": "research:168",
+          "native_class": "REAL_FRESH_COLLABORATOR_INTEGRATED_Q1_Q2_Q5_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R10",
+      "title": "known-risk and evolution-trigger activation",
+      "cluster": "Q2",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_q1_q2_q5_integrated_v01",
+          "tier": "REAL",
+          "research": "research:168",
+          "native_class": "REAL_FRESH_COLLABORATOR_INTEGRATED_Q1_Q2_Q5_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R11",
+      "title": "uncertainty visibility",
+      "cluster": "Q2",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_v02",
+          "tier": "SYNTHETIC",
+          "research": "research:151",
+          "native_class": "BROADER_SYNTHETIC_INTEGRATION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_q1_q2_q5_integrated_v01",
+          "tier": "REAL",
+          "research": "research:168",
+          "native_class": "REAL_FRESH_COLLABORATOR_INTEGRATED_Q1_Q2_Q5_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R12",
+      "title": "explicit epistemic role",
+      "cluster": "Q3",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_q3_real_v01",
+          "tier": "REAL",
+          "research": "research:161",
+          "native_class": "REAL_REPOSITORY_Q3_IDENTITY_RELATIONSHIP_TEMPORAL_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R13",
+      "title": "action-shaped authority resolution",
+      "cluster": "Q2",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_v02",
+          "tier": "SYNTHETIC",
+          "research": "research:151",
+          "native_class": "BROADER_SYNTHETIC_INTEGRATION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_q1_q2_q5_integrated_v01",
+          "tier": "REAL",
+          "research": "research:168",
+          "native_class": "REAL_FRESH_COLLABORATOR_INTEGRATED_Q1_Q2_Q5_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R14",
+      "title": "supersession, supplementation and conflict visibility",
+      "cluster": "Q2",
+      "best_evidence_tier": "SYNTHETIC",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_v01",
+          "tier": "SYNTHETIC",
+          "research": "research:149",
+          "native_class": "NARROW_SYNTHETIC_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_v02",
+          "tier": "SYNTHETIC",
+          "research": "research:151",
+          "native_class": "BROADER_SYNTHETIC_INTEGRATION_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R15",
+      "title": "relationship semantics",
+      "cluster": "Q3",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_v01",
+          "tier": "SYNTHETIC",
+          "research": "research:149",
+          "native_class": "NARROW_SYNTHETIC_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_q3_real_v01",
+          "tier": "REAL",
+          "research": "research:161",
+          "native_class": "REAL_REPOSITORY_Q3_IDENTITY_RELATIONSHIP_TEMPORAL_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R16",
+      "title": "current state, history and selective temporal semantics",
+      "cluster": "Q3",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_q3_real_v01",
+          "tier": "REAL",
+          "research": "research:161",
+          "native_class": "REAL_REPOSITORY_Q3_IDENTITY_RELATIONSHIP_TEMPORAL_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R17",
+      "title": "view-contract consolidation fidelity",
+      "cluster": "Q5",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_v02",
+          "tier": "SYNTHETIC",
+          "research": "research:151",
+          "native_class": "BROADER_SYNTHETIC_INTEGRATION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_current_state_decomposition_v01",
+          "tier": "REAL",
+          "research": "research:156",
+          "native_class": "REAL_AUTHORITY_SURFACE_DECOMPOSITION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_current_state_core_v01",
+          "tier": "REAL",
+          "research": "research:158",
+          "native_class": "REAL_REPOSITORY_COMPACT_CURRENT_STATE_CORE_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R18",
+      "title": "synthesis provenance and auditability",
+      "cluster": "Q5",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_v02",
+          "tier": "SYNTHETIC",
+          "research": "research:151",
+          "native_class": "BROADER_SYNTHETIC_INTEGRATION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_real_v01",
+          "tier": "REAL",
+          "research": "research:153",
+          "native_class": "REAL_REPOSITORY_SHADOW_SUPPORT_WITH_MEASURED_MIGRATION_SEEDS"
+        },
+        {
+          "source_key": "prototype_evidence_current_state_core_v01",
+          "tier": "REAL",
+          "research": "research:158",
+          "native_class": "REAL_REPOSITORY_COMPACT_CURRENT_STATE_CORE_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_q1_q2_q5_integrated_v01",
+          "tier": "REAL",
+          "research": "research:168",
+          "native_class": "REAL_FRESH_COLLABORATOR_INTEGRATED_Q1_Q2_Q5_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R19",
+      "title": "one explicit project-development authority",
+      "cluster": "Q9",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_q9_migration_v01",
+          "tier": "REAL",
+          "research": "research:165",
+          "native_class": "REAL_BASE_Q9_MIGRATION_ROLLBACK_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R20",
+      "title": "explicit authority class for stores and views",
+      "cluster": "Q6",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_v02",
+          "tier": "SYNTHETIC",
+          "research": "research:151",
+          "native_class": "BROADER_SYNTHETIC_INTEGRATION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_real_v01",
+          "tier": "REAL",
+          "research": "research:153",
+          "native_class": "REAL_REPOSITORY_SHADOW_SUPPORT_WITH_MEASURED_MIGRATION_SEEDS"
+        }
+      ]
+    },
+    {
+      "id": "KA-R21",
+      "title": "rebuildability appropriate to representation",
+      "cluster": "Q6",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_v01",
+          "tier": "SYNTHETIC",
+          "research": "research:149",
+          "native_class": "NARROW_SYNTHETIC_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_v02",
+          "tier": "SYNTHETIC",
+          "research": "research:151",
+          "native_class": "BROADER_SYNTHETIC_INTEGRATION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_zero_seed_routing_v01",
+          "tier": "REAL",
+          "research": "research:155",
+          "native_class": "REAL_REPOSITORY_ZERO_SEED_SUBSYSTEM_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_current_state_decomposition_v01",
+          "tier": "REAL",
+          "research": "research:156",
+          "native_class": "REAL_AUTHORITY_SURFACE_DECOMPOSITION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_current_state_core_v01",
+          "tier": "REAL",
+          "research": "research:158",
+          "native_class": "REAL_REPOSITORY_COMPACT_CURRENT_STATE_CORE_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R22",
+      "title": "explicit promotion of unique accepted synthesis",
+      "cluster": "Q5",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_v02",
+          "tier": "SYNTHETIC",
+          "research": "research:151",
+          "native_class": "BROADER_SYNTHETIC_INTEGRATION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_q1_q2_q5_integrated_v01",
+          "tier": "REAL",
+          "research": "research:168",
+          "native_class": "REAL_FRESH_COLLABORATOR_INTEGRATED_Q1_Q2_Q5_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R23",
+      "title": "freshness, source and authority-closure binding",
+      "cluster": "Q6",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_v02",
+          "tier": "SYNTHETIC",
+          "research": "research:151",
+          "native_class": "BROADER_SYNTHETIC_INTEGRATION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_real_v01",
+          "tier": "REAL",
+          "research": "research:153",
+          "native_class": "REAL_REPOSITORY_SHADOW_SUPPORT_WITH_MEASURED_MIGRATION_SEEDS"
+        },
+        {
+          "source_key": "prototype_evidence_zero_seed_routing_v01",
+          "tier": "REAL",
+          "research": "research:155",
+          "native_class": "REAL_REPOSITORY_ZERO_SEED_SUBSYSTEM_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_current_state_core_v01",
+          "tier": "REAL",
+          "research": "research:158",
+          "native_class": "REAL_REPOSITORY_COMPACT_CURRENT_STATE_CORE_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R24",
+      "title": "probabilistic retrieval is not sole governing authority",
+      "cluster": "Q2",
+      "best_evidence_tier": "SYNTHETIC",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_v02",
+          "tier": "SYNTHETIC",
+          "research": "research:151",
+          "native_class": "BROADER_SYNTHETIC_INTEGRATION_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R25",
+      "title": "explicit workstream identity and state",
+      "cluster": "Q4",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_v02",
+          "tier": "SYNTHETIC",
+          "research": "research:151",
+          "native_class": "BROADER_SYNTHETIC_INTEGRATION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_real_v01",
+          "tier": "REAL",
+          "research": "research:153",
+          "native_class": "REAL_REPOSITORY_SHADOW_SUPPORT_WITH_MEASURED_MIGRATION_SEEDS"
+        },
+        {
+          "source_key": "prototype_evidence_zero_seed_routing_v01",
+          "tier": "REAL",
+          "research": "research:155",
+          "native_class": "REAL_REPOSITORY_ZERO_SEED_SUBSYSTEM_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_current_state_core_v01",
+          "tier": "REAL",
+          "research": "research:158",
+          "native_class": "REAL_REPOSITORY_COMPACT_CURRENT_STATE_CORE_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R26",
+      "title": "explicit pause and return semantics",
+      "cluster": "Q4",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_v02",
+          "tier": "SYNTHETIC",
+          "research": "research:151",
+          "native_class": "BROADER_SYNTHETIC_INTEGRATION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_current_state_core_v01",
+          "tier": "REAL",
+          "research": "research:158",
+          "native_class": "REAL_REPOSITORY_COMPACT_CURRENT_STATE_CORE_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R27",
+      "title": "multiple dependencies",
+      "cluster": "Q4",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_v02",
+          "tier": "SYNTHETIC",
+          "research": "research:151",
+          "native_class": "BROADER_SYNTHETIC_INTEGRATION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_q4_real_v01",
+          "tier": "REAL",
+          "research": "research:170",
+          "native_class": "REAL_SOURCE_Q4_WORKSTREAM_CONCURRENCY_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R28",
+      "title": "interruption recovery",
+      "cluster": "Q4",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_v02",
+          "tier": "SYNTHETIC",
+          "research": "research:151",
+          "native_class": "BROADER_SYNTHETIC_INTEGRATION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_q4_real_v01",
+          "tier": "REAL",
+          "research": "research:170",
+          "native_class": "REAL_SOURCE_Q4_WORKSTREAM_CONCURRENCY_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R29",
+      "title": "concurrent collaborator safety",
+      "cluster": "Q4",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_v02",
+          "tier": "SYNTHETIC",
+          "research": "research:151",
+          "native_class": "BROADER_SYNTHETIC_INTEGRATION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_q4_real_v01",
+          "tier": "REAL",
+          "research": "research:170",
+          "native_class": "REAL_SOURCE_Q4_WORKSTREAM_CONCURRENCY_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R30",
+      "title": "bounded qualification budgets",
+      "cluster": "Q10",
+      "best_evidence_tier": "DESIGN_ONLY",
+      "selection_blocking": true,
+      "evidence_sources": []
+    },
+    {
+      "id": "KA-R31",
+      "title": "non-linear-history reconstruction cost",
+      "cluster": "Q8",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_v01",
+          "tier": "SYNTHETIC",
+          "research": "research:149",
+          "native_class": "NARROW_SYNTHETIC_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_zero_seed_routing_v01",
+          "tier": "REAL",
+          "research": "research:155",
+          "native_class": "REAL_REPOSITORY_ZERO_SEED_SUBSYSTEM_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_current_state_decomposition_v01",
+          "tier": "REAL",
+          "research": "research:156",
+          "native_class": "REAL_AUTHORITY_SURFACE_DECOMPOSITION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_current_state_core_v01",
+          "tier": "REAL",
+          "research": "research:158",
+          "native_class": "REAL_REPOSITORY_COMPACT_CURRENT_STATE_CORE_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R32",
+      "title": "bounded mandatory active core",
+      "cluster": "Q8",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_current_state_decomposition_v01",
+          "tier": "REAL",
+          "research": "research:156",
+          "native_class": "REAL_AUTHORITY_SURFACE_DECOMPOSITION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_current_state_core_v01",
+          "tier": "REAL",
+          "research": "research:158",
+          "native_class": "REAL_REPOSITORY_COMPACT_CURRENT_STATE_CORE_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R33",
+      "title": "dependency-local marginal maintenance",
+      "cluster": "Q8",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_v01",
+          "tier": "SYNTHETIC",
+          "research": "research:149",
+          "native_class": "NARROW_SYNTHETIC_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_zero_seed_routing_v01",
+          "tier": "REAL",
+          "research": "research:155",
+          "native_class": "REAL_REPOSITORY_ZERO_SEED_SUBSYSTEM_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_current_state_decomposition_v01",
+          "tier": "REAL",
+          "research": "research:156",
+          "native_class": "REAL_AUTHORITY_SURFACE_DECOMPOSITION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_current_state_core_v01",
+          "tier": "REAL",
+          "research": "research:158",
+          "native_class": "REAL_REPOSITORY_COMPACT_CURRENT_STATE_CORE_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R34",
+      "title": "saturation and active-surface observability",
+      "cluster": "Q8",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_current_state_decomposition_v01",
+          "tier": "REAL",
+          "research": "research:156",
+          "native_class": "REAL_AUTHORITY_SURFACE_DECOMPOSITION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_current_state_core_v01",
+          "tier": "REAL",
+          "research": "research:158",
+          "native_class": "REAL_REPOSITORY_COMPACT_CURRENT_STATE_CORE_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R35",
+      "title": "human and model inspectability",
+      "cluster": "Q1",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_real_v01",
+          "tier": "REAL",
+          "research": "research:153",
+          "native_class": "REAL_REPOSITORY_SHADOW_SUPPORT_WITH_MEASURED_MIGRATION_SEEDS"
+        }
+      ]
+    },
+    {
+      "id": "KA-R36",
+      "title": "provider and tool portability",
+      "cluster": "Q1",
+      "best_evidence_tier": "DESIGN_ONLY",
+      "selection_blocking": true,
+      "evidence_sources": []
+    },
+    {
+      "id": "KA-R37",
+      "title": "explicit public/private authority boundary",
+      "cluster": "Q7",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_v02",
+          "tier": "SYNTHETIC",
+          "research": "research:151",
+          "native_class": "BROADER_SYNTHETIC_INTEGRATION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_q7_real_v01",
+          "tier": "REAL",
+          "research": "research:163",
+          "native_class": "REAL_CROSS_REPOSITORY_PUBLIC_PRIVATE_BOUNDARY_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R38",
+      "title": "private-data non-leakage",
+      "cluster": "Q7",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_v02",
+          "tier": "SYNTHETIC",
+          "research": "research:151",
+          "native_class": "BROADER_SYNTHETIC_INTEGRATION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_q7_real_v01",
+          "tier": "REAL",
+          "research": "research:163",
+          "native_class": "REAL_CROSS_REPOSITORY_PUBLIC_PRIVATE_BOUNDARY_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R39",
+      "title": "bounded private dependency",
+      "cluster": "Q7",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_v02",
+          "tier": "SYNTHETIC",
+          "research": "research:151",
+          "native_class": "BROADER_SYNTHETIC_INTEGRATION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_q7_real_v01",
+          "tier": "REAL",
+          "research": "research:163",
+          "native_class": "REAL_CROSS_REPOSITORY_PUBLIC_PRIVATE_BOUNDARY_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R40",
+      "title": "structural and behavioral qualification",
+      "cluster": "Q10",
+      "best_evidence_tier": "DESIGN_ONLY",
+      "selection_blocking": true,
+      "evidence_sources": []
+    },
+    {
+      "id": "KA-R41",
+      "title": "multidimensional reconstruction qualification",
+      "cluster": "Q10",
+      "best_evidence_tier": "DESIGN_ONLY",
+      "selection_blocking": true,
+      "evidence_sources": []
+    },
+    {
+      "id": "KA-R42",
+      "title": "consequence-sensitive degraded mode",
+      "cluster": "Q7",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_v02",
+          "tier": "SYNTHETIC",
+          "research": "research:151",
+          "native_class": "BROADER_SYNTHETIC_INTEGRATION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_q7_real_v01",
+          "tier": "REAL",
+          "research": "research:163",
+          "native_class": "REAL_CROSS_REPOSITORY_PUBLIC_PRIVATE_BOUNDARY_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R43",
+      "title": "migration preservation and identity reconciliation",
+      "cluster": "Q9",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_current_state_decomposition_v01",
+          "tier": "REAL",
+          "research": "research:156",
+          "native_class": "REAL_AUTHORITY_SURFACE_DECOMPOSITION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_current_state_core_v01",
+          "tier": "REAL",
+          "research": "research:158",
+          "native_class": "REAL_REPOSITORY_COMPACT_CURRENT_STATE_CORE_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_q9_migration_v01",
+          "tier": "REAL",
+          "research": "research:165",
+          "native_class": "REAL_BASE_Q9_MIGRATION_ROLLBACK_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R44",
+      "title": "old authority remains until successor qualification",
+      "cluster": "Q9",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_q9_migration_v01",
+          "tier": "REAL",
+          "research": "research:165",
+          "native_class": "REAL_BASE_Q9_MIGRATION_ROLLBACK_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R45",
+      "title": "self-hosting evolution",
+      "cluster": "Q9",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_q9_migration_v01",
+          "tier": "REAL",
+          "research": "research:165",
+          "native_class": "REAL_BASE_Q9_MIGRATION_ROLLBACK_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R46",
+      "title": "representation-independent continuity of identity",
+      "cluster": "Q3",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_v01",
+          "tier": "SYNTHETIC",
+          "research": "research:149",
+          "native_class": "NARROW_SYNTHETIC_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_q3_real_v01",
+          "tier": "REAL",
+          "research": "research:161",
+          "native_class": "REAL_REPOSITORY_Q3_IDENTITY_RELATIONSHIP_TEMPORAL_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R47",
+      "title": "multi-axis organization without truth duplication",
+      "cluster": "Q6",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_v02",
+          "tier": "SYNTHETIC",
+          "research": "research:151",
+          "native_class": "BROADER_SYNTHETIC_INTEGRATION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_real_v01",
+          "tier": "REAL",
+          "research": "research:153",
+          "native_class": "REAL_REPOSITORY_SHADOW_SUPPORT_WITH_MEASURED_MIGRATION_SEEDS"
+        },
+        {
+          "source_key": "prototype_evidence_zero_seed_routing_v01",
+          "tier": "REAL",
+          "research": "research:155",
+          "native_class": "REAL_REPOSITORY_ZERO_SEED_SUBSYSTEM_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_current_state_decomposition_v01",
+          "tier": "REAL",
+          "research": "research:156",
+          "native_class": "REAL_AUTHORITY_SURFACE_DECOMPOSITION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_current_state_core_v01",
+          "tier": "REAL",
+          "research": "research:158",
+          "native_class": "REAL_REPOSITORY_COMPACT_CURRENT_STATE_CORE_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R48",
+      "title": "capture, consolidation and promotion boundary",
+      "cluster": "Q5",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_v02",
+          "tier": "SYNTHETIC",
+          "research": "research:151",
+          "native_class": "BROADER_SYNTHETIC_INTEGRATION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_real_v01",
+          "tier": "REAL",
+          "research": "research:153",
+          "native_class": "REAL_REPOSITORY_SHADOW_SUPPORT_WITH_MEASURED_MIGRATION_SEEDS"
+        },
+        {
+          "source_key": "prototype_evidence_current_state_core_v01",
+          "tier": "REAL",
+          "research": "research:158",
+          "native_class": "REAL_REPOSITORY_COMPACT_CURRENT_STATE_CORE_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_q1_q2_q5_integrated_v01",
+          "tier": "REAL",
+          "research": "research:168",
+          "native_class": "REAL_FRESH_COLLABORATOR_INTEGRATED_Q1_Q2_Q5_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R49",
+      "title": "selective temporal and supersession semantics",
+      "cluster": "Q3",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_q3_real_v01",
+          "tier": "REAL",
+          "research": "research:161",
+          "native_class": "REAL_REPOSITORY_Q3_IDENTITY_RELATIONSHIP_TEMPORAL_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-R50",
+      "title": "recurring active-surface consolidation lifecycle",
+      "cluster": "Q5",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_current_state_decomposition_v01",
+          "tier": "REAL",
+          "research": "research:156",
+          "native_class": "REAL_AUTHORITY_SURFACE_DECOMPOSITION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_current_state_core_v01",
+          "tier": "REAL",
+          "research": "research:158",
+          "native_class": "REAL_REPOSITORY_COMPACT_CURRENT_STATE_CORE_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-I01",
+      "title": "durable repository authority outranks transient model/chat memory",
+      "cluster": "Q1",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_q1_q2_q5_integrated_v01",
+          "tier": "REAL",
+          "research": "research:168",
+          "native_class": "REAL_FRESH_COLLABORATOR_INTEGRATED_Q1_Q2_Q5_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-I02",
+      "title": "one explicit project-development authority; derived stores cannot silently compete",
+      "cluster": "Q1",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_real_v01",
+          "tier": "REAL",
+          "research": "research:153",
+          "native_class": "REAL_REPOSITORY_SHADOW_SUPPORT_WITH_MEASURED_MIGRATION_SEEDS"
+        },
+        {
+          "source_key": "prototype_evidence_zero_seed_routing_v01",
+          "tier": "REAL",
+          "research": "research:155",
+          "native_class": "REAL_REPOSITORY_ZERO_SEED_SUBSYSTEM_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-I03",
+      "title": "derived state contains no unique accepted truth unless explicitly promoted",
+      "cluster": "Q5",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_v02",
+          "tier": "SYNTHETIC",
+          "research": "research:151",
+          "native_class": "BROADER_SYNTHETIC_INTEGRATION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_real_v01",
+          "tier": "REAL",
+          "research": "research:153",
+          "native_class": "REAL_REPOSITORY_SHADOW_SUPPORT_WITH_MEASURED_MIGRATION_SEEDS"
+        },
+        {
+          "source_key": "prototype_evidence_zero_seed_routing_v01",
+          "tier": "REAL",
+          "research": "research:155",
+          "native_class": "REAL_REPOSITORY_ZERO_SEED_SUBSYSTEM_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_current_state_decomposition_v01",
+          "tier": "REAL",
+          "research": "research:156",
+          "native_class": "REAL_AUTHORITY_SURFACE_DECOMPOSITION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_current_state_core_v01",
+          "tier": "REAL",
+          "research": "research:158",
+          "native_class": "REAL_REPOSITORY_COMPACT_CURRENT_STATE_CORE_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_q1_q2_q5_integrated_v01",
+          "tier": "REAL",
+          "research": "research:168",
+          "native_class": "REAL_FRESH_COLLABORATOR_INTEGRATED_Q1_Q2_Q5_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-I04",
+      "title": "material current/historical/superseded/rejected/unresolved distinctions survive",
+      "cluster": "Q1",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_q3_real_v01",
+          "tier": "REAL",
+          "research": "research:161",
+          "native_class": "REAL_REPOSITORY_Q3_IDENTITY_RELATIONSHIP_TEMPORAL_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-I05",
+      "title": "consequential guidance resolves/consumes authority and preserves material action contract",
+      "cluster": "Q2",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_v01",
+          "tier": "SYNTHETIC",
+          "research": "research:149",
+          "native_class": "NARROW_SYNTHETIC_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_real_v01",
+          "tier": "REAL",
+          "research": "research:153",
+          "native_class": "REAL_REPOSITORY_SHADOW_SUPPORT_WITH_MEASURED_MIGRATION_SEEDS"
+        },
+        {
+          "source_key": "prototype_evidence_q1_q2_q5_integrated_v01",
+          "tier": "REAL",
+          "research": "research:168",
+          "native_class": "REAL_FRESH_COLLABORATOR_INTEGRATED_Q1_Q2_Q5_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-I06",
+      "title": "missing required evidence or unresolved governing conflict is surfaced",
+      "cluster": "Q2",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_v02",
+          "tier": "SYNTHETIC",
+          "research": "research:151",
+          "native_class": "BROADER_SYNTHETIC_INTEGRATION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_q1_q2_q5_integrated_v01",
+          "tier": "REAL",
+          "research": "research:168",
+          "native_class": "REAL_FRESH_COLLABORATOR_INTEGRATED_Q1_Q2_Q5_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-I07",
+      "title": "provenance and must-preserve view semantics survive synthesis/compression/migration",
+      "cluster": "Q5",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_v02",
+          "tier": "SYNTHETIC",
+          "research": "research:151",
+          "native_class": "BROADER_SYNTHETIC_INTEGRATION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_current_state_decomposition_v01",
+          "tier": "REAL",
+          "research": "research:156",
+          "native_class": "REAL_AUTHORITY_SURFACE_DECOMPOSITION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_current_state_core_v01",
+          "tier": "REAL",
+          "research": "research:158",
+          "native_class": "REAL_REPOSITORY_COMPACT_CURRENT_STATE_CORE_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-I08",
+      "title": "old continuity remains operational until explicit qualified switch",
+      "cluster": "Q9",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_q9_migration_v01",
+          "tier": "REAL",
+          "research": "research:165",
+          "native_class": "REAL_BASE_Q9_MIGRATION_ROLLBACK_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-I09",
+      "title": "resumable paused work preserves reason, return condition, parent relationship and target",
+      "cluster": "Q4",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_v02",
+          "tier": "SYNTHETIC",
+          "research": "research:151",
+          "native_class": "BROADER_SYNTHETIC_INTEGRATION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_current_state_core_v01",
+          "tier": "REAL",
+          "research": "research:158",
+          "native_class": "REAL_REPOSITORY_COMPACT_CURRENT_STATE_CORE_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-I10",
+      "title": "public/private authority separation and non-leakage are preserved",
+      "cluster": "Q7",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_v02",
+          "tier": "SYNTHETIC",
+          "research": "research:151",
+          "native_class": "BROADER_SYNTHETIC_INTEGRATION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_q7_real_v01",
+          "tier": "REAL",
+          "research": "research:163",
+          "native_class": "REAL_CROSS_REPOSITORY_PUBLIC_PRIVATE_BOUNDARY_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-I11",
+      "title": "fresh continuation does not depend on previous conversation",
+      "cluster": "Q1",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_real_v01",
+          "tier": "REAL",
+          "research": "research:153",
+          "native_class": "REAL_REPOSITORY_SHADOW_SUPPORT_WITH_MEASURED_MIGRATION_SEEDS"
+        },
+        {
+          "source_key": "prototype_evidence_q1_q2_q5_integrated_v01",
+          "tier": "REAL",
+          "research": "research:168",
+          "native_class": "REAL_FRESH_COLLABORATOR_INTEGRATED_Q1_Q2_Q5_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-I12",
+      "title": "required reconstruction cost is not structurally proportional to accumulated history",
+      "cluster": "Q8",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_v01",
+          "tier": "SYNTHETIC",
+          "research": "research:149",
+          "native_class": "NARROW_SYNTHETIC_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_current_state_decomposition_v01",
+          "tier": "REAL",
+          "research": "research:156",
+          "native_class": "REAL_AUTHORITY_SURFACE_DECOMPOSITION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_current_state_core_v01",
+          "tier": "REAL",
+          "research": "research:158",
+          "native_class": "REAL_REPOSITORY_COMPACT_CURRENT_STATE_CORE_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-I13",
+      "title": "routine local change avoids unbounded manual/global maintenance",
+      "cluster": "Q8",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_v02",
+          "tier": "SYNTHETIC",
+          "research": "research:151",
+          "native_class": "BROADER_SYNTHETIC_INTEGRATION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_zero_seed_routing_v01",
+          "tier": "REAL",
+          "research": "research:155",
+          "native_class": "REAL_REPOSITORY_ZERO_SEED_SUBSYSTEM_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_current_state_decomposition_v01",
+          "tier": "REAL",
+          "research": "research:156",
+          "native_class": "REAL_AUTHORITY_SURFACE_DECOMPOSITION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_current_state_core_v01",
+          "tier": "REAL",
+          "research": "research:158",
+          "native_class": "REAL_REPOSITORY_COMPACT_CURRENT_STATE_CORE_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-I14",
+      "title": "optional probabilistic retrieval failure cannot bypass authority safety",
+      "cluster": "Q7",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_v02",
+          "tier": "SYNTHETIC",
+          "research": "research:151",
+          "native_class": "BROADER_SYNTHETIC_INTEGRATION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_q7_real_v01",
+          "tier": "REAL",
+          "research": "research:163",
+          "native_class": "REAL_CROSS_REPOSITORY_PUBLIC_PRIVATE_BOUNDARY_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-I15",
+      "title": "durable state exposes live route/authority/reconstruction/qualification/freshness health",
+      "cluster": "Q1",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_v02",
+          "tier": "SYNTHETIC",
+          "research": "research:151",
+          "native_class": "BROADER_SYNTHETIC_INTEGRATION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_real_v01",
+          "tier": "REAL",
+          "research": "research:153",
+          "native_class": "REAL_REPOSITORY_SHADOW_SUPPORT_WITH_MEASURED_MIGRATION_SEEDS"
+        },
+        {
+          "source_key": "prototype_evidence_zero_seed_routing_v01",
+          "tier": "REAL",
+          "research": "research:155",
+          "native_class": "REAL_REPOSITORY_ZERO_SEED_SUBSYSTEM_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_current_state_decomposition_v01",
+          "tier": "REAL",
+          "research": "research:156",
+          "native_class": "REAL_AUTHORITY_SURFACE_DECOMPOSITION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_current_state_core_v01",
+          "tier": "REAL",
+          "research": "research:158",
+          "native_class": "REAL_REPOSITORY_COMPACT_CURRENT_STATE_CORE_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-I16",
+      "title": "capture does not imply authority",
+      "cluster": "Q5",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_v02",
+          "tier": "SYNTHETIC",
+          "research": "research:151",
+          "native_class": "BROADER_SYNTHETIC_INTEGRATION_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_real_v01",
+          "tier": "REAL",
+          "research": "research:153",
+          "native_class": "REAL_REPOSITORY_SHADOW_SUPPORT_WITH_MEASURED_MIGRATION_SEEDS"
+        },
+        {
+          "source_key": "prototype_evidence_current_state_core_v01",
+          "tier": "REAL",
+          "research": "research:158",
+          "native_class": "REAL_REPOSITORY_COMPACT_CURRENT_STATE_CORE_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_q1_q2_q5_integrated_v01",
+          "tier": "REAL",
+          "research": "research:168",
+          "native_class": "REAL_FRESH_COLLABORATOR_INTEGRATED_Q1_Q2_Q5_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "KA-I17",
+      "title": "intended semantic continuity is not forced to equal carrier continuity",
+      "cluster": "Q9",
+      "best_evidence_tier": "REAL",
+      "selection_blocking": true,
+      "evidence_sources": [
+        {
+          "source_key": "prototype_evidence_v01",
+          "tier": "SYNTHETIC",
+          "research": "research:149",
+          "native_class": "NARROW_SYNTHETIC_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_q3_real_v01",
+          "tier": "REAL",
+          "research": "research:161",
+          "native_class": "REAL_REPOSITORY_Q3_IDENTITY_RELATIONSHIP_TEMPORAL_SUPPORT"
+        },
+        {
+          "source_key": "prototype_evidence_q9_migration_v01",
+          "tier": "REAL",
+          "research": "research:165",
+          "native_class": "REAL_BASE_Q9_MIGRATION_ROLLBACK_SUPPORT"
+        }
+      ]
+    }
+  ],
+  "selection_disposition": {
+    "target_selection_allowed": false,
+    "strong_real_subsystem_clusters": [
+      "Q3",
+      "Q4",
+      "Q5",
+      "Q6",
+      "Q7",
+      "Q8",
+      "Q9"
+    ],
+    "remaining_pre_q10_gaps": {
+      "Q1": [
+        "KA-R36"
+      ],
+      "Q2": [
+        "KA-R14",
+        "KA-R24"
+      ]
+    },
+    "q10_design_only_items": [
+      "KA-R30",
+      "KA-R40",
+      "KA-R41"
+    ],
+    "next_method": "Run one controlled cross-provider/tool challenge that simultaneously tests portable reconstruction, fail-visible supersession/conflict semantics, and probabilistic-retrieval non-authority; then execute Q10 final multidimensional qualification.",
+    "immediate_priority": "Q1_Q2_CROSS_PROVIDER_AUTHORITY_HARD_CASE_CHALLENGE",
+    "after_that": "Q10_FINAL_MULTIDIMENSIONAL_QUALIFICATION",
+    "h3_reopen": false
+  }
+}

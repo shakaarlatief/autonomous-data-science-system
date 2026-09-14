@@ -647,7 +647,7 @@
     "q9_shadow_subsystem_support_passed": true,
     "whole_architecture_evidence_reconciliation_v02_complete": true,
     "whole_architecture_evidence_reconciliation_v02_sha256": "ce1fe5f6f4dd630b2820a05ae961a8df6035d2283f7af8ca25c68169cd099c60",
-    "next_priority": "POST_Q4_WHOLE_ARCHITECTURE_EVIDENCE_RECONCILIATION",
+    "next_priority": "Q1_Q2_CROSS_PROVIDER_AUTHORITY_HARD_CASE_CHALLENGE",
     "strong_real_subsystem_clusters_current": [
       "Q3",
       "Q4",
@@ -664,7 +664,10 @@
     "final_governing_cluster": "Q10",
     "q1_q2_q5_integrated_fresh_collaborator_support_passed": true,
     "revision_binding_basis_amendment_required": true,
-    "q4_real_source_stress_support_passed": true
+    "q4_real_source_stress_support_passed": true,
+    "whole_architecture_evidence_reconciliation_v03_complete": true,
+    "whole_architecture_evidence_reconciliation_v03_sha256": "3e8df6195ab0082cc0a3e355361ec6fb4fe7d885b29115037214adc41c367b64",
+    "after_next_priority": "Q10_FINAL_MULTIDIMENSIONAL_QUALIFICATION"
   },
   "adversarial_review": {
     "thread": "MC-0016",
