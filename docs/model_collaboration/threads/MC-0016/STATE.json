@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "thread_id": "MC-0016",
+  "review_mode": "ADVERSARIAL_REVIEW",
+  "lifecycle_state": "OPEN",
+  "phase": "ADVERSARIAL_CANDIDATE_REVIEW",
+  "target": {
+    "branch": "v1-source-vault-bootstrap-resume",
+    "base_ref": "69aed186a0d63b3c395a133cd920099d5fa8e000",
+    "description": "Adversarial review of PKA-CANDIDATE-01 whole architecture and its 50 KA-R / 17 KA-I design mapping before shadow implementation. No target selection or migration is authorized.",
+    "write_paths": []
+  },
+  "task_owner": "chatgpt",
+  "target_write_owner": null,
+  "participants": [
+    {
+      "collaborator_id": "chatgpt",
+      "interaction_environment": "ChatGPT",
+      "interaction_session": "chatgpt-24",
+      "roles": [
+        "TASK_OWNER",
+        "RESEARCHER",
+        "CRITIC"
+      ]
+    },
+    {
+      "collaborator_id": "claude",
+      "interaction_environment": "Claude",
+      "interaction_session": "claude-03",
+      "roles": [
+        "REVIEWER",
+        "CRITIC",
+        "RESEARCHER"
+      ]
+    },
+    {
+      "collaborator_id": "human",
+      "interaction_environment": "Human",
+      "interaction_session": "project-owner",
+      "roles": [
+        "HUMAN_DECIDER"
+      ]
+    }
+  ],
+  "allowed_secondary_write_surfaces": [
+    {
+      "collaborator_id": "claude",
+      "paths": [
+        "docs/model_collaboration/threads/MC-0016/messages/**"
+      ]
+    }
+  ],
+  "next_expected_actor": "claude",
+  "independence": {
+    "status": "NOT_APPLICABLE",
+    "review_base_ref": "69aed186a0d63b3c395a133cd920099d5fa8e000",
+    "known_exposures": [
+      "Claude participated in earlier Research 124 collaboration and knows the architecture problem, probe results and corrected semantic axes.",
+      "This review intentionally exposes the complete Candidate 01 and Requirements V0.2 mapping."
+    ],
+    "notes": "This is adversarial comparative review, not an independence-sensitive design round."
+  },
+  "last_transition": {
+    "transition_id": "mc0016-open-adversarial-candidate-review",
+    "from_state": null,
+    "to_state": "OPEN",
+    "actor": "chatgpt",
+    "reason": "Candidate 01 now exists as a whole architecture and maps all frozen requirements at design level. Adversarial review before implementation has high value because hidden duplication or requirement gaps are still cheap to correct.",
+    "repository_head": "69aed186a0d63b3c395a133cd920099d5fa8e000"
+  }
+}

@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 489
+**Checkpoint:** 490
 **Date:** 2026-09-13
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -23,6 +23,8 @@ Repository artifacts remain authoritative across chats and models.
 ---
 
 ## Current active stage: Research 124 project-development knowledge architecture redesign
+Checkpoint 490 opens MC-0016 for adversarial review of `PKA-CANDIDATE-01` before shadow implementation. The exact review target is `69aed186a0d63b3c395a133cd920099d5fa8e000`, which contains Research 144's whole architecture and Research 145's complete 50 KA-R / 17 KA-I design mapping. Claude is asked to treat zero design gaps as a falsifiable claim, attack hidden duplicate truth and interaction risks, audit all frozen requirements/invariants, and determine the smallest falsification-first prototype slice. No implementation or authority switch is authorized by this checkpoint. Requirements V0.2 and the current continuity architecture remain authoritative; no target architecture is selected.
+
 Checkpoint 489 synthesizes `PKA-CANDIDATE-01`, the first whole-architecture successor candidate after the corrected real-corpus semantic model. The candidate keeps rich repository-native sources primary, uses selective durable identity, defaults authority to one canonical source, reserves joint-authority declarations for demonstrated exceptions, generates current/routing/navigation/identity/authority views, and adds action-shaped authority resolution plus structured action-contract activation. Research 145 maps all 50 KA-R and 17 KA-I statements to explicit candidate mechanisms with no identified design-coverage gap, but records zero final qualified passes because the candidate has not yet been implemented and behaviorally qualified as one integrated system. Ten selection-blocking proof clusters remain. The next step is adversarial review of this concrete candidate and then a shadow prototype focused on falsification, not migration. Requirements V0.2 and the current continuity architecture remain authoritative; no target architecture is selected.
 
 Checkpoint 488 resolves MC-0015 and freezes the corrected semantic judgment model for future architecture reasoning. Claude confirms that RC-005 was not a real FIRST_CLASS-versus-SOURCE_LOCAL conflict: a workstream can have durable semantic identity while one canonical source owns its state. RC-006 must be decomposed into durable per-workstream units plus a derived aggregate active/paused/next route view. Claude explicitly marks its original RC-012 SOURCE_LOCAL/HIGH judgment protocol-nonconforming because the packet did not establish authority class; packet-only disposition is unresolved. Research 143 therefore retires the old four-way taxonomy and requires a singular semantic unit plus two axes: semantic continuity/identity and authority mode/home. The first real corpus supports single-source authority as the dominant sampled pattern, derived views for computable/navigation state, and durable identity with single-source authority for workstreams; it does not demonstrate a real durable-identity plus joint-authority case. Mechanized admission classification is deferred. Research 124 now returns to whole-architecture candidate synthesis and requirement qualification. Requirements V0.2 remain unchanged and no target architecture is selected.

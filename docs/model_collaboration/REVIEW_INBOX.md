@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-13
-**Status:** NO ACTIVE CLAUDE OBLIGATION / MC-0015 RESOLVED / WHOLE-ARCHITECTURE CANDIDATE SYNTHESIS NEXT / MC-0010 DEFERRED
+**Status:** MC-0016 ADVERSARIAL CANDIDATE REVIEW ACTIVE / CLAUDE MESSAGE 001 NEXT / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -23,7 +23,28 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Current active collaboration obligation
 
-There is no active Claude obligation. MC-0015 is resolved after the independent real-corpus pass and one bounded comparative construct-validity turn. Research 124 now returns to whole-architecture candidate synthesis using the corrected semantic-unit plus two-axis model. A new Claude thread should be opened only if later candidate qualification exposes a specific bounded uncertainty with clear marginal value.
+### MC-0016: adversarial review of whole-architecture Candidate 01
+
+```text
+collaborator               Claude / claude-03
+mode                       ADVERSARIAL_REVIEW
+coordination branch        v1-source-vault-bootstrap-resume
+exact review target        69aed186a0d63b3c395a133cd920099d5fa8e000
+candidate                  PKA-CANDIDATE-01
+next output                docs/model_collaboration/threads/MC-0016/messages/001_claude_adversarial_candidate_01_review.md
+status                     OPEN / CLAUDE MESSAGE 001 NEXT
+conversation               03 - Project Knowledge Architecture Foundations and Design Method
+```
+
+Claude should attack the candidate as an integrated architecture, independently audit the 50 KA-R / 17 KA-I design-coverage claim, test rich-source versus structured-declaration drift, identity/tombstone boundedness, the joint-authority exception, generated current-state feasibility, action-contract fidelity, capture/consolidation economics, migration safety and whether H3 or another family should reopen.
+
+Durable contract:
+
+```text
+docs/model_collaboration/threads/MC-0016/BRIEF.md
+docs/model_collaboration/threads/MC-0016/THREAD.md
+docs/model_collaboration/threads/MC-0016/STATE.json
+```
 
 ## Most recently completed obligation
 

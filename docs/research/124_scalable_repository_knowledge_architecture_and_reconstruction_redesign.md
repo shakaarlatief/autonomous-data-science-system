@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / WHOLE-ARCHITECTURE CANDIDATE 01 SYNTHESIZED / 50 KA-R + 17 KA-I DESIGN-MAPPED / INTEGRATED QUALIFICATION PENDING / TARGET ARCHITECTURE NOT SELECTED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / CANDIDATE 01 DESIGN-MAPPED / MC-0016 ADVERSARIAL CANDIDATE REVIEW ACTIVE / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -3923,4 +3923,20 @@ DESIGN_COVERAGE_GATE=PASS
 INTEGRATED_EVIDENCE_GATE=PENDING
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=ADVERSARIAL_CANDIDATE_REVIEW_THEN_SHADOW_PROTOTYPE
+```
+
+## 90. MC-0016 opens adversarial review before Candidate 01 implementation
+
+MC-0016 is opened in `ADVERSARIAL_REVIEW` mode against exact Candidate 01 design commit `69aed186a0d63b3c395a133cd920099d5fa8e000`. The design-coverage mapping is treated as a claim to falsify rather than an accepted proof.
+
+The review explicitly attacks interactions that a requirement-by-requirement matrix can hide: prose versus structured declaration drift, selective identity/tombstone maintenance, source-local authority versus joint-authority exceptions, generated current-state feasibility, workstream identity/home, action-contract fidelity, capture/consolidation burden, public/private degraded behavior, migration/rollback and 5x/10x economics. It must also independently identify any frozen requirement or invariant that is not actually design-covered and state whether Candidate 01 has accumulated enough object/relation machinery to reopen H3 or another family.
+
+No implementation or authority migration is authorized while this review is pending.
+
+```text
+MC0016=OPEN
+EXACT_REVIEW_TARGET=69aed186a0d63b3c395a133cd920099d5fa8e000
+CANDIDATE=PKA-CANDIDATE-01
+TARGET_ARCHITECTURE=NOT_SELECTED
+NEXT=CLAUDE_MESSAGE_001
 ```
