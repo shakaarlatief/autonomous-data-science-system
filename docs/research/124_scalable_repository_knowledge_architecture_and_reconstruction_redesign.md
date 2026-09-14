@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / Q9 SHADOW SUBSYSTEM SUPPORT PASSED / WHOLE-ARCHITECTURE EVIDENCE RECONCILIATION V0.2 NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / EVIDENCE RECONCILIATION V0.2 COMPLETE / INTEGRATED Q1+Q2+Q5 CHALLENGE NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -4252,5 +4252,20 @@ ROLLBACK_EXPORT=PASS
 AUTHORITY_SWITCH=BLOCKED
 FINAL_QUALIFIED_PASSES=0
 NEXT=WHOLE_ARCHITECTURE_EVIDENCE_RECONCILIATION_V02
+TARGET_ARCHITECTURE=NOT_SELECTED
+```
+
+## 111. Evidence reconciliation V0.2 moves the next test to integrated Q1/Q2/Q5
+
+Research 166 recomputes Candidate 01 evidence after the Q3, Q7 and Q9 programs. The current distribution is 49/67 items with real evidence, 58/67 with synthetic-or-better evidence and 0 final qualified passes. Q3, Q6, Q7, Q8 and Q9 now have real subsystem evidence for every cluster item. Remaining architecture uncertainty is concentrated in Q1/Q2/Q4/Q5 plus the final Q10 governing program.
+
+The highest-value next falsification is one integrated Q1+Q2+Q5 challenge combining fresh successor-native reconstruction/discovery, consequential authority/risk activation and capture -> explicit promotion. Q4 follows; Q10 remains the final multidimensional gate rather than the immediate next task.
+
+```text
+WHOLE_ARCH_EVIDENCE_V02=COMPLETE
+REAL_EVIDENCE_ITEMS=49_OF_67
+SYNTHETIC_OR_BETTER=58_OF_67
+FINAL_QUALIFIED_PASSES=0
+NEXT=Q1_Q2_Q5_INTEGRATED_CHALLENGE
 TARGET_ARCHITECTURE=NOT_SELECTED
 ```
