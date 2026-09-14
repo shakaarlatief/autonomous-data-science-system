@@ -3979,3 +3979,17 @@ H3_REOPEN=NO
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=FALSIFICATION_FIRST_SHADOW_PROTOTYPE
 ```
+
+## 93. Candidate 01 shadow fixture freezes before implementation
+
+Research 148 freezes `PKA-C01-SHADOW-V01` plus a separate test-only oracle before implementation. This preserves the anti-treatment-bias discipline used by the earlier architecture probes while also correcting MC-0014's self-confirming-label problem: the semantic fixture contains no expected joint-authority label and the implementation is prohibited from reading the oracle.
+
+The fixture directly exercises the five prototype-entry questions from Research 147: one normative action-contract home plus semantic drift review, natural directional ownership versus irreducible symmetric set-level authority, BL-001-style output fidelity, dependency-local refresh versus clean rebuild, and bounded current identity lookup while transition history grows 1x/5x/10x.
+
+```text
+SHADOW_FIXTURE_V01=FROZEN
+FIXTURE_SHA256=77ffecc278995ef03130d962f863d46ccebac41d446de7099cc666750e8b66f7
+ORACLE_SHA256=3ced74eb18f4d792c9a43eaf2b3d6956c497bc7b85c71bfc6b5e226f840fc38b
+IMPLEMENTATION=NEXT
+TARGET_ARCHITECTURE=NOT_SELECTED
+```

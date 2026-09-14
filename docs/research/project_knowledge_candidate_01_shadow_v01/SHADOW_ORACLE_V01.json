@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "oracle_id": "PKA-C01-SHADOW-V01-ORACLE",
+  "fixture_id": "PKA-C01-SHADOW-V01",
+  "implementation_must_not_read_this_oracle": true,
+  "expectations": {
+    "contract_drift": {
+      "baseline_findings": [],
+      "P1-PROSE-ADD-UNSTRUCTURED-MANDATORY": [
+        {
+          "code": "PROSE_CONTRACT_MISSING_NORMATIVE_CONSTRAINT",
+          "constraint_id": "C07"
+        }
+      ],
+      "P1-PROSE-CONTRADICT-C03": [
+        {
+          "code": "PROSE_CONTRACT_SEMANTIC_MISMATCH",
+          "constraint_id": "C03"
+        }
+      ]
+    },
+    "authority_admission": {
+      "publish_release": {
+        "joint_authority_objects_created": 0,
+        "governing_sources": [
+          "P1",
+          "P2"
+        ],
+        "natural_direction_owner": "P2"
+      },
+      "deploy_service_eu": {
+        "joint_authority_objects_created": 0,
+        "governing_sources": [
+          "N1",
+          "N2"
+        ],
+        "admission_status": "SOURCE_OWNED_DERIVED_CLOSURE"
+      },
+      "approve_joint_release_jx": {
+        "joint_authority_objects_created": 1,
+        "members": [
+          "X1",
+          "X2",
+          "X3"
+        ],
+        "admission_status": "JOINT_AUTHORITY_ADMITTED"
+      }
+    },
+    "action_contract": {
+      "activated_constraint_ids": [
+        "C01",
+        "C02",
+        "C03",
+        "C06",
+        "C04",
+        "C05"
+      ],
+      "BL1-GOOD": {
+        "status": "PASS",
+        "omitted": [],
+        "order_violations": []
+      },
+      "BL1-BAD": {
+        "status": "FAIL_VISIBLE",
+        "omitted": [
+          "C04"
+        ],
+        "order_violations": [
+          "C01",
+          "C02"
+        ]
+      }
+    },
+    "refresh_and_rebuild": {
+      "CHANGE-P2-CONTRACT": {
+        "incremental_source_scans": 1,
+        "refreshed_views": [
+          "AUTHORITY_CURRENT",
+          "CONTRACT_CURRENT"
+        ]
+      },
+      "scales": {
+        "20": {
+          "full_rebuild_source_records": 31,
+          "identity_event_records": 24,
+          "normal_identity_lookup_steps": 1
+        },
+        "100": {
+          "full_rebuild_source_records": 111,
+          "identity_event_records": 104,
+          "normal_identity_lookup_steps": 1
+        },
+        "200": {
+          "full_rebuild_source_records": 211,
+          "identity_event_records": 204,
+          "normal_identity_lookup_steps": 1
+        }
+      },
+      "current_view_digest_equal_across_scales": true
+    },
+    "identity_current_targets": {
+      "S-A": [
+        "S-A"
+      ],
+      "S-B": [
+        "S-B1",
+        "S-B2"
+      ],
+      "S-M": [
+        "S-A",
+        "S-B1",
+        "S-B2"
+      ],
+      "S-B1": [
+        "S-B1"
+      ],
+      "S-B2": [
+        "S-B2"
+      ],
+      "S-C": [
+        "S-C"
+      ]
+    },
+    "identity_current_carriers": {
+      "S-A": "carriers/a/a_v2.md",
+      "S-B1": "carriers/b/b1.md",
+      "S-B2": "carriers/b/b2.md",
+      "S-C": "carriers/c/current.md"
+    }
+  }
+}
