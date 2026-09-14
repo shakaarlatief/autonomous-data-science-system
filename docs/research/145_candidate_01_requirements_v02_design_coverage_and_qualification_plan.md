@@ -450,3 +450,15 @@ H3_REOPEN=NO
 FINAL_QUALIFIED_PASSES=0
 NEXT=Q7_REAL_PUBLIC_PRIVATE_BOUNDARY_QUALIFICATION
 ```
+
+## 23. Q7 real public/private fixture freeze
+
+Research 162 freezes a real cross-repository Q7 challenge after Q3 passes its real subsystem probe. The test covers R37/R38/R39/R42 and I10/I14 through inaccessible-private, stale-accessible-private, private-required and redacted-projection scenarios.
+
+No private-only value is copied into the public fixture. The real private companion participates only as runtime evidence under its delegated role.
+
+```text
+Q7_REAL_IMPLEMENTATION_EVIDENCE=PENDING
+PRIVATE_NONLEAKAGE_GATE=FROZEN
+NEXT=IMPLEMENT_Q7_REAL_V01
+```

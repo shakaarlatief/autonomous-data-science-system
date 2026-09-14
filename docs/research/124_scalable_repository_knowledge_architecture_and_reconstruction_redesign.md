@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / Q3 REAL SUBSYSTEM SUPPORT PASSED / Q7 REAL PUBLIC-PRIVATE BOUNDARY NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / Q7 REAL PUBLIC-PRIVATE FIXTURE FROZEN / IMPLEMENTATION NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -4196,4 +4196,18 @@ H3_REOPEN=NO
 Q3_FINAL_QUALIFICATION=PENDING
 NEXT=Q7_REAL_PUBLIC_PRIVATE_BOUNDARY
 TARGET_ARCHITECTURE=NOT_SELECTED
+```
+
+## 107. Q7 real public/private fixture freezes before implementation
+
+Research 162 freezes five cross-repository public/private scenarios using exact public authority sources and hash-bound real private companion evidence. The fixture contains no exact private path or value. Runtime-supplied private surfaces may be read only to test independent freshness, bounded dependency and redacted public projection.
+
+The frozen real private anchor is intentionally stale relative to the current public target, creating a real FAIL case that must remain orthogonal to public repository integrity and must not downgrade `RESOLVED_PRIVATE` facts to unresolved.
+
+```text
+Q7_REAL_FIXTURE=FROZEN
+PRIVATE_VALUE_PUBLICATION=ZERO
+CURRENT_ARCHITECTURE=STILL_AUTHORITY
+TARGET_ARCHITECTURE=NOT_SELECTED
+NEXT=IMPLEMENT_Q7_REAL_V01
 ```

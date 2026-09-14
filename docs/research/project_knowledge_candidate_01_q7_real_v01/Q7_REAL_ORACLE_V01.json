@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "PKA-C01-Q7-REAL-V01-ORACLE",
+  "fixture_id": "PKA-C01-Q7-REAL-V01",
+  "implementation_must_not_read_this_oracle": true,
+  "expectations": {
+    "all_public_source_hashes_match": true,
+    "private_evidence_binding_match": true,
+    "observed_private_anchor": {
+      "checkpoint": 448,
+      "commit": "15e27e87714dcb1875e2c2dcae1414a59f9cda33"
+    },
+    "scenarios": {
+      "Q7-S01": {
+        "private_continuity_status": "NOT_VERIFIED",
+        "task_disposition": "ALLOW_PUBLIC_CONTINUATION_WITH_PRIVATE_NOT_VERIFIED",
+        "public_resolved_private_preserved": true,
+        "public_authority_preserved": true
+      },
+      "Q7-S02": {
+        "private_continuity_status": "NOT_VERIFIED",
+        "task_disposition": "BLOCK_REQUIRED_PRIVATE_UNVERIFIED",
+        "public_resolved_private_preserved": true,
+        "public_authority_preserved": true
+      },
+      "Q7-S03": {
+        "private_continuity_status": "FAIL",
+        "task_disposition": "BLOCK_PRIVATE_CONTINUITY_FAIL",
+        "public_resolved_private_preserved": true,
+        "public_authority_preserved": true
+      },
+      "Q7-S04": {
+        "private_continuity_status": "FAIL",
+        "task_disposition": "PUBLIC_SAFE_PROJECTION_ONLY",
+        "public_resolved_private_preserved": true,
+        "public_authority_preserved": true,
+        "private_value_leak_count": 0,
+        "private_paths_serialized_count": 0
+      },
+      "Q7-S05": {
+        "private_continuity_status": "NOT_VERIFIED",
+        "task_disposition": "DEGRADED_OPTIONAL_NO_AUTHORITY_BYPASS",
+        "public_resolved_private_preserved": true,
+        "public_authority_preserved": true,
+        "optional_retrieval_authority_bypass": false
+      }
+    },
+    "global_private_value_leak_count": 0,
+    "global_private_paths_serialized_count": 0,
+    "q7_real_subsystem_support": true
+  }
+}

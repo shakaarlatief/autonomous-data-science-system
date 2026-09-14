@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "fixture_id": "PKA-C01-Q7-REAL-V01",
+  "candidate_id": "PKA-CANDIDATE-01",
+  "real_public_base_commit": "c4bc46a954a577ee697d5ae2bb62740af17e8900",
+  "purpose": "Real cross-repository qualification of public/private authority separation, bounded private dependency, non-leakage and degraded-mode behavior without publishing private-only values.",
+  "protocol": {
+    "shadow_only": true,
+    "current_project_authority_unchanged": true,
+    "implementation_may_read_oracle": false,
+    "private_root_must_be_runtime_supplied": true,
+    "private_paths_must_not_be_serialized": true,
+    "private_payload_values_must_not_be_serialized": true,
+    "forbidden_result_fields": [
+      "private_root",
+      "private_state_path",
+      "private_sensitive_payload_path",
+      "private_exact_values"
+    ]
+  },
+  "public_target": {
+    "checkpoint": 506,
+    "commit": "c4bc46a954a577ee697d5ae2bb62740af17e8900"
+  },
+  "private_evidence_binding": {
+    "repository_head": "f5fe565da1cdb6c0daedbf8b9b0aea7586abf350",
+    "current_private_state_sha256": "e61947f10db6d88bf77afa743e2ef21b688d00f407bd9cf25bd35da2030c9cae",
+    "sensitive_payload_sha256": "e73f169af67d5296cf7e48d7245dcf3b26cca3346a249d5dc935b24f8892f5f6",
+    "public_safe_anchor_fields": [
+      "Public continuity checkpoint",
+      "Public continuity commit"
+    ]
+  },
+  "real_public_sources": [
+    {
+      "source_key": "current_state",
+      "path": "docs/CURRENT_STATE.md",
+      "bytes": 288626,
+      "sha256": "7523eb7220fd0cc5139a12973babb6c36aa86f3d6b9a8066b7b370ac1d2cbe07",
+      "source_class": "live_public_state"
+    },
+    {
+      "source_key": "continuity",
+      "path": "docs/CONTINUITY.md",
+      "bytes": 24457,
+      "sha256": "6bcde628dc0f4f12d94df50a7a99127bb55c1c6e12c3764b5c9e9e0dd7a0f868",
+      "source_class": "governing_procedure"
+    },
+    {
+      "source_key": "private_companion_contract",
+      "path": "docs/private_companion/README.md",
+      "bytes": 8054,
+      "sha256": "e60e6afb4f06805cf2ef96750e098ce19dd877e611d6a6a3d1b036e110ddf3c0",
+      "source_class": "governing_contract"
+    },
+    {
+      "source_key": "spec025",
+      "path": "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+      "bytes": 17190,
+      "sha256": "509aa6b5fa2f419541a38c25ccdb75129e5663faf6634d535493187abc0a5fda",
+      "source_class": "governing_specification"
+    },
+    {
+      "source_key": "spec026",
+      "path": "docs/specifications/026_v1_repository_integrity_recovery_amendment.md",
+      "bytes": 12145,
+      "sha256": "c81d389d6a925a2ecf3bd8f5c2d8d6730f58e3f72dc1d152759bfc16ab2ff5d8",
+      "source_class": "governing_specification"
+    },
+    {
+      "source_key": "private_checker",
+      "path": "scripts/check_private_continuity.py",
+      "bytes": 3425,
+      "sha256": "4fc5bcfb9c418a14be5509c85cbc916017092d898ef463c8adbfd07845ae831e",
+      "source_class": "governing_implementation"
+    }
+  ],
+  "shadow_sources": [
+    {
+      "source_key": "private_boundary",
+      "path": "docs/research/project_knowledge_candidate_01_q7_real_v01/SHADOW_PRIVATE_BOUNDARY.md",
+      "bytes": 1273,
+      "sha256": "4839deec38c015f091b31a20c6bf3b130f7245f9425411e674260e527034e745",
+      "source_class": "shadow_successor_canonical"
+    }
+  ],
+  "scenarios": [
+    {
+      "scenario_id": "Q7-S01",
+      "task_class": "PUBLIC_ONLY_CONTINUATION",
+      "private_required": false,
+      "private_access": "UNAVAILABLE",
+      "optional_retrieval_available": true
+    },
+    {
+      "scenario_id": "Q7-S02",
+      "task_class": "PRIVATE_REQUIRED_TRANSITION",
+      "private_required": true,
+      "private_access": "UNAVAILABLE",
+      "optional_retrieval_available": true
+    },
+    {
+      "scenario_id": "Q7-S03",
+      "task_class": "PRIVATE_REQUIRED_TRANSITION",
+      "private_required": true,
+      "private_access": "ACCESSIBLE_REAL",
+      "optional_retrieval_available": true
+    },
+    {
+      "scenario_id": "Q7-S04",
+      "task_class": "PUBLIC_SAFE_PROJECTION",
+      "private_required": false,
+      "private_access": "ACCESSIBLE_REAL_WITH_SENSITIVE_PAYLOAD",
+      "optional_retrieval_available": true
+    },
+    {
+      "scenario_id": "Q7-S05",
+      "task_class": "LOW_RISK_PUBLIC_EXPLORATION",
+      "private_required": false,
+      "private_access": "UNAVAILABLE",
+      "optional_retrieval_available": false
+    }
+  ],
+  "required_measurements": [
+    "public_resolved_private_preserved",
+    "private_continuity_status",
+    "task_disposition",
+    "public_authority_preserved",
+    "private_value_leak_count",
+    "optional_retrieval_authority_bypass",
+    "private_paths_serialized_count"
+  ]
+}
