@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "PKA-C01-Q1-Q2-CROSS-PROVIDER-V01-ORACLE",
+  "fixture_id": "PKA-C01-Q1-Q2-CROSS-PROVIDER-V01",
+  "implementation_must_not_read_this_oracle": true,
+  "expectations": {
+    "provider": {
+      "must_be_non_openai": true,
+      "exact_model_required": true
+    },
+    "task_a": {
+      "resolution_status": "RESOLVED",
+      "governing_ids": [
+        "D-028"
+      ],
+      "retrieval_used_as_authority": false
+    },
+    "task_b": {
+      "resolution_status": "UNRESOLVED_SCOPE_REQUIRED",
+      "governing_ids": [],
+      "retrieval_used_as_authority": false,
+      "must_surface_missing_scope": true
+    },
+    "task_c": {
+      "resolution_status": "RESOLVED_WITH_RETAINED_OUTCOME",
+      "governing_architecture_ids": [
+        "D-033"
+      ],
+      "retained_outcomes": [
+        "public_git_source_binary_exclusion"
+      ],
+      "public_git_source_binaries_allowed_merely_because_ads_consumes_them": false,
+      "retrieval_used_as_authority": false
+    },
+    "authority_receipt": {
+      "source_base_commit": "a685ef48c4c4853babff9295f03f198c7b3dcd1d",
+      "retrieval_is_non_authoritative": true
+    },
+    "supported_mechanism_ids": [
+      "KA-R36",
+      "KA-R14",
+      "KA-R24"
+    ]
+  }
+}

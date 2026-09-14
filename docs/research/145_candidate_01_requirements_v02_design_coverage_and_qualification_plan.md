@@ -1,7 +1,7 @@
 # Research 145: Candidate 01 Requirements V0.2 Design Coverage and Qualification Plan
 
 **Date:** 2026-09-14
-**Status:** 50/50 KA-R + 17/17 KA-I DESIGN-MAPPED / EVIDENCE V0.3 RECONCILED / CROSS-PROVIDER Q1+Q2 CHALLENGE NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** 50/50 KA-R + 17/17 KA-I DESIGN-MAPPED / CROSS-PROVIDER Q1+Q2 FIXTURE FROZEN / MANUAL NON-OPENAI RUN NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Candidate:** `PKA-CANDIDATE-01` from Research 144
 **Scope:** Systematically map the whole-architecture candidate against every frozen Requirements V0.2 requirement/invariant, distinguish design coverage from actual qualification evidence, identify selection-blocking proof clusters, and freeze the minimum implementation/behavioral evidence needed before target selection.
 **Authority:** Candidate qualification planning only. Requirements V0.2 remain the acceptance authority. A mapped design mechanism is not a qualified pass.
@@ -528,3 +528,7 @@ Current descriptive coverage is 61/67 real and 63/67 synthetic-or-better. Six it
 ## 32. Evidence V0.3 and final pre-Q10 test
 
 Research 171 records 61/67 real-evidence items and 63/67 synthetic-or-better. Only KA-R36, KA-R14 and KA-R24 remain as non-Q10 real-evidence gaps. KA-R30/R40/R41 remain intentionally design-only until Q10 executes. The next qualification unit is therefore one controlled cross-provider Q1+Q2 authority-hard-case challenge.
+
+## 33. Final pre-Q10 fixture targets KA-R36 / R14 / R24
+
+Research 172 freezes one controlled non-OpenAI provider challenge covering the three remaining non-Q10 real-evidence gaps. Evidence credit remains pending the untouched external-provider result and post-run oracle comparison.

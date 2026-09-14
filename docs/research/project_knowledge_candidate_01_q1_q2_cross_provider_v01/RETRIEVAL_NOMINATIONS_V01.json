@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "kind": "PROBABILISTIC_RETRIEVAL_NOMINATIONS",
+  "authority_class": "derived",
+  "semantic_id": "RETRIEVAL-Q1Q2-XPROVIDER-V01",
+  "shadow_only": true,
+  "warning": "Ranking and similarity scores nominate evidence only. They do not establish governing authority, supersession closure, combination semantics, or conflict resolution.",
+  "queries": {
+    "TASK_A": {
+      "query": "Which decision governs the V1 persistence/retrieval architecture?",
+      "candidates": [
+        {
+          "rank": 1,
+          "semantic_id": "D-011",
+          "score": 0.96,
+          "reason": "strong lexical match to implementation architecture selection"
+        },
+        {
+          "rank": 2,
+          "semantic_id": "D-028",
+          "score": 0.91,
+          "reason": "explicit V1 persistence/retrieval architecture decision"
+        },
+        {
+          "rank": 3,
+          "semantic_id": "D-029",
+          "score": 0.66,
+          "reason": "persistence tooling adjacency"
+        }
+      ]
+    },
+    "TASK_B": {
+      "query": "Which implementation architecture decision governs?",
+      "candidates": [
+        {
+          "rank": 1,
+          "semantic_id": "D-011",
+          "score": 0.95,
+          "reason": "generic implementation architecture language"
+        },
+        {
+          "rank": 2,
+          "semantic_id": "D-028",
+          "score": 0.9,
+          "reason": "selected persistence/retrieval architecture"
+        },
+        {
+          "rank": 3,
+          "semantic_id": "D-033",
+          "score": 0.86,
+          "reason": "selected source-universe substrate"
+        },
+        {
+          "rank": 4,
+          "semantic_id": "D-032",
+          "score": 0.82,
+          "reason": "selected initial reasoning runtime"
+        }
+      ]
+    },
+    "TASK_C": {
+      "query": "What governs external learning-source architecture and may source binaries go into public Git?",
+      "candidates": [
+        {
+          "rank": 1,
+          "semantic_id": "D-015",
+          "score": 0.97,
+          "reason": "direct learning-material/public repository language"
+        },
+        {
+          "rank": 2,
+          "semantic_id": "D-033",
+          "score": 0.93,
+          "reason": "accepted external source-universe architecture"
+        }
+      ]
+    }
+  }
+}

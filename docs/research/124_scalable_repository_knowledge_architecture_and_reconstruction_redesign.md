@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / EVIDENCE RECONCILIATION V0.3 COMPLETE / CROSS-PROVIDER Q1+Q2 CHALLENGE NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / CROSS-PROVIDER Q1+Q2 FIXTURE FROZEN / MANUAL NON-OPENAI RUN NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -4326,3 +4326,7 @@ Q4 now has real subsystem evidence on every cluster item. Descriptive coverage r
 Research 171 recomputes all 67 frozen items after Q4. Descriptive evidence is now 61 real, 2 synthetic-only and 4 design-only. Q3/Q4/Q5/Q6/Q7/Q8/Q9 each have real subsystem evidence on every item. The only non-Q10 gaps are KA-R36 provider/tool portability and Q2 KA-R14/KA-R24.
 
 The next experiment combines those three gaps in one controlled non-OpenAI provider challenge with bounded successor-native evidence, probabilistic nomination that cannot decide authority, explicit supersession/supplement/conflict semantics and a deterministic receipt. Q10 follows only after that pre-Q10 challenge.
+
+## 117. Cross-provider Q1/Q2 fixture freezes before the external run
+
+Research 172 freezes the final pre-Q10 challenge. A fresh non-OpenAI provider must consume one bounded project-controlled packet and demonstrate the same authority semantics: scoped replacement beats retrieval rank, under-specified authority scope remains visibly unresolved, partial supersession preserves an explicit retained outcome, and probabilistic retrieval never becomes governing authority. Exact provider/model provenance is mandatory.

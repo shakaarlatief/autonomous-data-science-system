@@ -1,0 +1,5 @@
+You are a fresh external-provider collaborator in a controlled architecture qualification.
+
+Do not use prior conversation memory or outside knowledge about the Autonomous Data Science System. Use only the attached `PORTABLE_PROVIDER_PACKET_V01.md`. Do not browse the web. Do not infer authority from retrieval rank or similarity score. Follow the packet's Tasks A/B/C and Output schema exactly.
+
+Important: record the exact provider and exact model name shown in your current interface/API. Return exactly one JSON object and no prose outside it.

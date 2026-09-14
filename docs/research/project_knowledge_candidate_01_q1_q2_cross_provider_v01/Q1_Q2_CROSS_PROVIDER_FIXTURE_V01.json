@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "fixture_id": "PKA-C01-Q1-Q2-CROSS-PROVIDER-V01",
+  "candidate_id": "PKA-CANDIDATE-01",
+  "real_base_commit": "a685ef48c4c4853babff9295f03f198c7b3dcd1d",
+  "purpose": "Controlled non-OpenAI provider/tool test of portable Candidate 01 reconstruction, explicit supersession/conflict visibility, and probabilistic retrieval non-authority.",
+  "protocol": {
+    "fresh_external_provider_required": true,
+    "openai_provider_forbidden": true,
+    "prior_ads_context_forbidden": true,
+    "web_browsing_forbidden": true,
+    "oracle_access_forbidden": true,
+    "outside_packet_evidence_forbidden": true,
+    "exact_provider_model_provenance_required": true,
+    "current_project_authority_unchanged": true
+  },
+  "real_sources": [
+    {
+      "source_key": "decisions",
+      "path": "docs/DECISIONS.md",
+      "bytes": 45566,
+      "sha256": "2db2b79712c9333159aca2985f4be75a34d7b8357610714eca299a5f0597e4cd",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "source_commit": "a685ef48c4c4853babff9295f03f198c7b3dcd1d",
+      "source_class": "current_decision_authority"
+    },
+    {
+      "source_key": "d011_shadow",
+      "path": "docs/research/project_knowledge_candidate_01_q3_real_v01/SHADOW_DECISION_D011.md",
+      "bytes": 1136,
+      "sha256": "7ce4e736d21615cbd84dcf48447c031f1e5cab78457c5efa0a8c8d1a321f0e5f",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "source_commit": "a685ef48c4c4853babff9295f03f198c7b3dcd1d",
+      "source_class": "qualified_candidate_shadow"
+    },
+    {
+      "source_key": "d015_shadow",
+      "path": "docs/research/project_knowledge_candidate_01_q3_real_v01/SHADOW_DECISION_D015.md",
+      "bytes": 749,
+      "sha256": "86e4535fefdf6f6bbb519724a86c7c2d538ddf3b1ac581e7225a191d49800b46",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "source_commit": "a685ef48c4c4853babff9295f03f198c7b3dcd1d",
+      "source_class": "qualified_candidate_shadow"
+    },
+    {
+      "source_key": "candidate144",
+      "path": "docs/research/144_whole_architecture_candidate_repository_native_semantic_sources.md",
+      "bytes": 62349,
+      "sha256": "37b911abf32260c29262a2ab70f274192114c87c3e23a5e85d2bfa27042a1f3a",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "source_commit": "a685ef48c4c4853babff9295f03f198c7b3dcd1d",
+      "source_class": "candidate_architecture"
+    },
+    {
+      "source_key": "research171",
+      "path": "docs/research/171_whole_architecture_evidence_reconciliation_v03_final_pre_q10_gap_selection.md",
+      "bytes": 5076,
+      "sha256": "58daf0a521e999bf6590c9e228b6980e9074cab074fcadb93b8e1ac7b7dec7a2",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "source_commit": "a685ef48c4c4853babff9295f03f198c7b3dcd1d",
+      "source_class": "qualification_plan"
+    }
+  ],
+  "portable_artifacts": [
+    {
+      "source_key": "retrieval",
+      "path": "docs/research/project_knowledge_candidate_01_q1_q2_cross_provider_v01/RETRIEVAL_NOMINATIONS_V01.json",
+      "bytes": 2394,
+      "sha256": "76e5da10ab1ec2ff8bae6d91837e1ff1162b8998c27e9fa5044dfe9af0b3d1db",
+      "source_class": "derived_retrieval"
+    },
+    {
+      "source_key": "packet",
+      "path": "docs/research/project_knowledge_candidate_01_q1_q2_cross_provider_v01/PORTABLE_PROVIDER_PACKET_V01.md",
+      "bytes": 17997,
+      "sha256": "dc24924a828da7ea4d2421e70c35d7d65a0b42decf83cb3d03c888a461a351b8",
+      "source_class": "portable_derived_consumption_view"
+    },
+    {
+      "source_key": "request",
+      "path": "docs/research/project_knowledge_candidate_01_q1_q2_cross_provider_v01/EXTERNAL_PROVIDER_REQUEST_V01.txt",
+      "bytes": 552,
+      "sha256": "97237d154bdb93384c03d800b7aff16f392152bc9e2c0c0d532d07dbd0e7e610",
+      "source_class": "external_provider_request"
+    }
+  ],
+  "result_capture": {
+    "manual_external_result_path": "docs/research/project_knowledge_candidate_01_q1_q2_cross_provider_v01/EXTERNAL_PROVIDER_RESULT_V01.json",
+    "preserve_first_result_before_evaluation": true
+  },
+  "measurements": [
+    "provider",
+    "model",
+    "packet_bytes",
+    "task_a_resolution",
+    "task_b_fail_visible",
+    "task_c_partial_supersession",
+    "retrieval_used_as_authority",
+    "result_schema_valid"
+  ]
+}

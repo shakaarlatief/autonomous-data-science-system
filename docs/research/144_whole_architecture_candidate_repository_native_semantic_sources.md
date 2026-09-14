@@ -1,7 +1,7 @@
 # Research 144: Whole-Architecture Candidate - Repository-Native Semantic Sources with Selective Identity, Derived Views, and Action-Gated Authority
 
 **Date:** 2026-09-14
-**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE / EVIDENCE V0.3 RECONCILED / CROSS-PROVIDER Q1+Q2 CHALLENGE NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE / CROSS-PROVIDER Q1+Q2 FIXTURE FROZEN / MANUAL NON-OPENAI RUN NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Candidate label:** `PKA-CANDIDATE-01`
 **Scope:** Synthesize one serious successor architecture from the complete Research 124 evidence field after the H1/H2 mechanism probes, real-corpus independent review, MC-0014/MC-0015 corrections, D1-D8 external evidence and owner-provided ICM evaluation. Define enough logical structure, authority semantics, typed source responsibilities, derived-view behavior, activation, lifecycle, validation, scaling and migration behavior to qualify the candidate systematically against Requirements V0.2.
 **Authority:** Candidate architecture research only. Requirements V0.2 remain the frozen acceptance authority. This record does not select the target architecture, migrate current authority, or authorize implementation as the production continuity system.
@@ -1236,3 +1236,7 @@ The result closes Q4's remaining real-evidence gap at subsystem level but does n
 ## 54. Final pre-Q10 architecture uncertainty is portability plus authority hard cases
 
 Research 171 shows Candidate 01's remaining non-Q10 uncertainty is concentrated in three items: provider/tool portability, real supersession/conflict visibility and real proof that probabilistic retrieval cannot silently become governing authority. These should be tested together in one controlled external-provider reconstruction/authority challenge before the Q10 final governing program.
+
+## 55. Cross-provider portability is tested through authority semantics, not generic reading
+
+Research 172 freezes a provider-portability challenge that requires another provider to reconstruct Candidate 01's explicit authority model rather than merely summarize repository prose. The packet deliberately makes retrieval ranking misleading and requires fail-visible ambiguity plus scoped supersession closure. A pass would directly strengthen KA-R36/R14/R24 before Q10.
