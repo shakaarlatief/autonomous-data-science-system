@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "PKA-C01-Q4-REAL-V01-ORACLE",
+  "fixture_id": "PKA-C01-Q4-REAL-V01",
+  "implementation_must_not_read_this_oracle": true,
+  "expectations": {
+    "all_source_hashes_match": true,
+    "multi_dependency": {
+      "WS-Q4-STRESS": [
+        "WS-Q125-INTEGRATED",
+        "WS-Q9-MIGRATION"
+      ],
+      "WS-Q10-FINAL": [
+        "WS-Q4-STRESS",
+        "WS-Q1-PORTABILITY",
+        "WS-Q2-HARD-CASES"
+      ],
+      "multi_dependency_node_count": 2,
+      "q4_stress_dependencies_satisfied": true,
+      "q10_final_runnable": false
+    },
+    "interruption_recovery": {
+      "transition_id": "TR-Q4-QUALIFICATION",
+      "completed_steps": [
+        "S1",
+        "S2"
+      ],
+      "pending_steps": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "next_resume_step": "S3",
+      "blind_replay_required": false,
+      "unrelated_interruption_mutation": false
+    },
+    "concurrency": {
+      "revision_hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "WRITER-B-FRESH": {
+        "status": "APPLIED",
+        "mutation_applied": true
+      },
+      "WRITER-A-STALE": {
+        "status": "STALE_REVISION",
+        "mutation_applied": false
+      },
+      "WRITER-C-FRESH": {
+        "status": "APPLIED",
+        "mutation_applied": true
+      },
+      "stale_attempt_preserves_temp_state": true,
+      "live_target_unchanged": true
+    },
+    "q4_real_source_stress_support": true
+  }
+}

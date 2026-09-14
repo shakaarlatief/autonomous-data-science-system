@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / INTEGRATED Q1+Q2+Q5 FRESH-COLLABORATOR SUPPORT PASSED / Q4 REAL STRESS NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / Q4 REAL WORKSTREAM STRESS FIXTURE FROZEN / IMPLEMENTATION NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -4295,5 +4295,20 @@ Evidence coverage rises to 58/67 real and 63/67 synthetic-or-better while final 
 Q1_Q2_Q5_INTEGRATED_SUPPORT=PASS
 REVISION_BINDING_BASIS=EXPLICIT_DESCRIPTOR_REQUIRED
 NEXT=Q4_REAL_WORKSTREAM_STRESS
+TARGET_ARCHITECTURE=NOT_SELECTED
+```
+
+## 114. Q4 real-source workstream stress fixture freezes
+
+Research 169 freezes the next Q4 challenge against exact Checkpoint 513 base `eece72a16d9664387a67e38998ec715f8efe927e`. The fixture uses current real qualification results/gaps, actual paused Source Vault/Cockpit workstreams and the real Cockpit source bytes. It stresses two multi-dependency nodes, interruption recovery from durable receipts after unrelated work, and an optimistic-concurrency sequence in a temporary Cockpit copy using the Research 168 `GIT_BLOB_BYTES_AT_COMMIT` revision basis.
+
+The coordination edges are explicitly shadow representations of the current qualification program rather than claims about a pre-existing canonical dependency graph. Live workstream mutation is forbidden.
+
+```text
+Q4_REAL_FIXTURE=FROZEN
+MULTI_DEPENDENCY_NODES=2
+REVISION_BASIS=GIT_BLOB_BYTES_AT_COMMIT
+CURRENT_ARCHITECTURE=STILL_AUTHORITY
+NEXT=IMPLEMENT_Q4_REAL_V01
 TARGET_ARCHITECTURE=NOT_SELECTED
 ```

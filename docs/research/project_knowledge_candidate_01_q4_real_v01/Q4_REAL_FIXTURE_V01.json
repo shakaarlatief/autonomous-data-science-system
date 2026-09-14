@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "fixture_id": "PKA-C01-Q4-REAL-V01",
+  "candidate_id": "PKA-CANDIDATE-01",
+  "real_base_commit": "eece72a16d9664387a67e38998ec715f8efe927e",
+  "purpose": "Real-source Q4 stress of multi-dependency workstream DAG reconstruction, interruption recovery, and stale concurrent authoritative update rejection without mutating live authority.",
+  "protocol": {
+    "shadow_only": true,
+    "current_project_authority_unchanged": true,
+    "implementation_may_read_oracle": false,
+    "live_workstream_mutation_forbidden": true,
+    "all_update_tests_temp_only": true,
+    "forbidden_answer_keys": [
+      "expected_route",
+      "expected_resume_step",
+      "expected_update_status",
+      "should_pass"
+    ]
+  },
+  "real_sources": [
+    {
+      "source_key": "research168",
+      "path": "docs/research/168_q1_q2_q5_integrated_fresh_collaborator_result_and_revision_binding_amendment.md",
+      "bytes": 10764,
+      "sha256": "9505569f771f56669a86e05b58efaffe8d20fb0ed0bf31722d4361ba9f530622",
+      "source_class": "current_qualification_evidence"
+    },
+    {
+      "source_key": "research166",
+      "path": "docs/research/166_whole_architecture_evidence_reconciliation_v02_and_next_integrated_falsification.md",
+      "bytes": 9853,
+      "sha256": "c1e3bbef0a8a7e8f3eed40422c2e3568f8e58525b409bf52859769d02f01c3be",
+      "source_class": "qualification_plan"
+    },
+    {
+      "source_key": "research165",
+      "path": "docs/research/165_q9_migration_authority_switch_rollback_result.md",
+      "bytes": 9406,
+      "sha256": "d585269ccf9c5e417328d66898fed9bb9d3f5e4b2ebab4d248ea9e2ab788937d",
+      "source_class": "completed_workstream_evidence"
+    },
+    {
+      "source_key": "checkpoint513",
+      "path": "docs/checkpoints/513_integrated_q1_q2_q5_passed_revision_binding_amended_q4_next.md",
+      "bytes": 2102,
+      "sha256": "c4bf09d7cc632d22be4429a9343861b5f015d3accc9a710f54eea7aab478e16b",
+      "source_class": "current_boundary_evidence"
+    },
+    {
+      "source_key": "qualification_matrix",
+      "path": "docs/research/project_knowledge_candidate_01/QUALIFICATION_MATRIX_V01.json",
+      "bytes": 43915,
+      "sha256": "a92276d0733be4013b23816f309411789e7e8083ba00413be48b687a182a713b",
+      "source_class": "current_candidate_evidence_state"
+    },
+    {
+      "source_key": "cockpit",
+      "path": "docs/cockpit/README.md",
+      "bytes": 9525,
+      "sha256": "2e5fe6ab83b89f1bec267c64580c53844d82350f1454ebdc45a64454dc5952e0",
+      "source_class": "real_paused_workstream"
+    },
+    {
+      "source_key": "source_vault_runbook",
+      "path": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+      "bytes": 17085,
+      "sha256": "fdcb795d39945883dcce99995a5c3f396e5f1dd8f904a668b8366b1d1aa69656",
+      "source_class": "real_governing_procedure"
+    },
+    {
+      "source_key": "source_vault_shadow",
+      "path": "docs/research/project_knowledge_candidate_01_current_state_core_v01/SHADOW_SOURCE_VAULT_WORKSTREAM.md",
+      "bytes": 2940,
+      "sha256": "60eca8c0173c169b6780d9c6fccd4061c3865cb109c3df0e172db6b48f488c37",
+      "source_class": "qualified_shadow_workstream"
+    },
+    {
+      "source_key": "candidate144",
+      "path": "docs/research/144_whole_architecture_candidate_repository_native_semantic_sources.md",
+      "bytes": 60699,
+      "sha256": "e043252413946ac1fb203c6c6ef503682be9056296a2320cacae4670e58f9810",
+      "source_class": "candidate_design"
+    }
+  ],
+  "shadow_sources": [
+    {
+      "source_key": "q4_dag",
+      "path": "docs/research/project_knowledge_candidate_01_q4_real_v01/SHADOW_Q4_WORKSTREAM_DAG.json",
+      "bytes": 5436,
+      "sha256": "6f7e7bb4a387590320129da12bbde30d9e01ea1122489c48b2c13c1b226bfc35",
+      "source_class": "shadow_successor_candidate"
+    }
+  ],
+  "stress_cases": [
+    {
+      "case_id": "Q4-R01",
+      "kind": "MULTI_DEPENDENCY_DAG",
+      "node_ids": [
+        "WS-Q4-STRESS",
+        "WS-Q10-FINAL"
+      ],
+      "queries": [
+        "dependency closure",
+        "runnable state",
+        "blocked dependency reasons"
+      ]
+    },
+    {
+      "case_id": "Q4-R02",
+      "kind": "INTERRUPTION_RECOVERY",
+      "transition_id": "TR-Q4-QUALIFICATION",
+      "queries": [
+        "completed steps",
+        "pending steps",
+        "next resume step",
+        "blind replay requirement",
+        "unrelated interruption mutation"
+      ]
+    },
+    {
+      "case_id": "Q4-R03",
+      "kind": "STALE_CONCURRENT_UPDATE",
+      "target_path": "docs/cockpit/README.md",
+      "base_revision": {
+        "source_commit": "eece72a16d9664387a67e38998ec715f8efe927e",
+        "source_path": "docs/cockpit/README.md",
+        "hash_algorithm": "SHA-256",
+        "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+        "content_digest": "2e5fe6ab83b89f1bec267c64580c53844d82350f1454ebdc45a64454dc5952e0"
+      },
+      "temp_updates": [
+        {
+          "attempt_id": "WRITER-B-FRESH",
+          "expected_revision": "BASE",
+          "patch_kind": "append_test_only_marker"
+        },
+        {
+          "attempt_id": "WRITER-A-STALE",
+          "expected_revision": "BASE",
+          "patch_kind": "append_stale_marker"
+        },
+        {
+          "attempt_id": "WRITER-C-FRESH",
+          "expected_revision": "AFTER_WRITER_B",
+          "patch_kind": "append_fresh_marker"
+        }
+      ]
+    }
+  ],
+  "measurement_contract": {
+    "record_dependency_edge_count": true,
+    "record_multi_dependency_node_count": true,
+    "record_recovery_replay_count": true,
+    "record_stale_attempt_mutation": true,
+    "record_live_target_hash_before_after": true,
+    "record_revision_binding_basis": true
+  }
+}

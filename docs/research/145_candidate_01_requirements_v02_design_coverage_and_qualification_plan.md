@@ -1,7 +1,7 @@
 # Research 145: Candidate 01 Requirements V0.2 Design Coverage and Qualification Plan
 
 **Date:** 2026-09-14
-**Status:** 50/50 KA-R + 17/17 KA-I DESIGN-MAPPED / INTEGRATED Q1+Q2+Q5 SUPPORT PASSED / Q4 REAL STRESS NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** 50/50 KA-R + 17/17 KA-I DESIGN-MAPPED / Q4 REAL WORKSTREAM STRESS FIXTURE FROZEN / IMPLEMENTATION NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Candidate:** `PKA-CANDIDATE-01` from Research 144
 **Scope:** Systematically map the whole-architecture candidate against every frozen Requirements V0.2 requirement/invariant, distinguish design coverage from actual qualification evidence, identify selection-blocking proof clusters, and freeze the minimum implementation/behavioral evidence needed before target selection.
 **Authority:** Candidate qualification planning only. Requirements V0.2 remain the acceptance authority. A mapped design mechanism is not a qualified pass.
@@ -512,3 +512,9 @@ Research 167 freezes a cross-cluster test for the remaining high-value Q1/Q2/Q5 
 Research 168 adds real fresh-collaborator support to KA-R01/R03/R07/R09/R10/R11/R13/R18/R22/R48 and KA-I01/I03/I05/I06/I11/I16. KA-R08 is directly exercised but recorded with a source-revision-basis limitation exposed by the run. The Candidate 01 design now requires explicit revision-basis descriptors for future receipt/index bindings.
 
 Descriptive coverage becomes 58/67 real and 63/67 synthetic-or-better. Q5 now joins Q3/Q6/Q7/Q8/Q9 as a cluster with real subsystem evidence on every item. Q4 is the next real-behavior stress target.
+
+## 30. Q4 real-source workstream stress fixture freeze
+
+Research 169 freezes the direct real-source challenge for KA-R27/R28/R29 after Q5 becomes fully real-supported at subsystem level. Two multi-dependency nodes are grounded in current Candidate 01 qualification work units, interruption recovery is bound to durable S1/S2 receipts, and stale-write rejection uses an exact Git-blob revision descriptor over the real Cockpit workstream source.
+
+Evidence credit remains pending implementation. Current authority mutation is forbidden.

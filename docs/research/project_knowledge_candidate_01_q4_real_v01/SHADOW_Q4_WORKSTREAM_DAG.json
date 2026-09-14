@@ -1,0 +1,174 @@
+{
+  "schema_version": 1,
+  "kind": "WORKSTREAM_DAG",
+  "semantic_id": "PKA-C01-Q4-REAL-DAG-V01",
+  "authority_class": "candidate",
+  "shadow_only": true,
+  "source_binding": {
+    "source_commit": "eece72a16d9664387a67e38998ec715f8efe927e",
+    "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT"
+  },
+  "workstreams": [
+    {
+      "semantic_id": "WS-PKA-CURRENT",
+      "state": "ACTIVE",
+      "parent": null,
+      "depends_on": [],
+      "objective": "Qualify Candidate 01 project-knowledge architecture",
+      "current_anchor": "checkpoint:513",
+      "evidence_refs": [
+        "research:168",
+        "checkpoint:513"
+      ]
+    },
+    {
+      "semantic_id": "WS-Q125-INTEGRATED",
+      "state": "COMPLETED",
+      "parent": "WS-PKA-CURRENT",
+      "depends_on": [],
+      "objective": "Complete integrated fresh reconstruction/authority/capture challenge",
+      "completed_evidence": [
+        "research:168"
+      ]
+    },
+    {
+      "semantic_id": "WS-Q9-MIGRATION",
+      "state": "COMPLETED",
+      "parent": "WS-PKA-CURRENT",
+      "depends_on": [],
+      "objective": "Complete migration/rollback shadow",
+      "completed_evidence": [
+        "research:165"
+      ]
+    },
+    {
+      "semantic_id": "WS-Q4-STRESS",
+      "state": "ACTIVE",
+      "parent": "WS-PKA-CURRENT",
+      "depends_on": [
+        "WS-Q125-INTEGRATED",
+        "WS-Q9-MIGRATION"
+      ],
+      "objective": "Qualify real multi-dependency, interruption recovery and stale-write safety",
+      "current_anchor": "research:168:NEXT=Q4_REAL_WORKSTREAM_CONCURRENCY_INTERRUPTION_STRESS"
+    },
+    {
+      "semantic_id": "WS-Q1-PORTABILITY",
+      "state": "BLOCKED",
+      "parent": "WS-PKA-CURRENT",
+      "depends_on": [
+        "WS-Q125-INTEGRATED"
+      ],
+      "objective": "Establish controlled provider/tool portability evidence",
+      "blocked_reason": "Exact fresh collaborator engine/thread provenance and controlled cross-provider execution remain absent",
+      "evidence_refs": [
+        "research:168"
+      ]
+    },
+    {
+      "semantic_id": "WS-Q2-HARD-CASES",
+      "state": "BLOCKED",
+      "parent": "WS-PKA-CURRENT",
+      "depends_on": [
+        "WS-Q125-INTEGRATED"
+      ],
+      "objective": "Qualify remaining real authority conflict/supersession/retrieval hard cases",
+      "blocked_reason": "Research 168 leaves Q2 mixed-gap despite strong consequential-task evidence",
+      "evidence_refs": [
+        "research:168"
+      ]
+    },
+    {
+      "semantic_id": "WS-Q10-FINAL",
+      "state": "BLOCKED",
+      "parent": "WS-PKA-CURRENT",
+      "depends_on": [
+        "WS-Q4-STRESS",
+        "WS-Q1-PORTABILITY",
+        "WS-Q2-HARD-CASES"
+      ],
+      "objective": "Run final multidimensional qualification and budgets",
+      "blocked_reason": "Requires remaining real gaps to close before final governing gate",
+      "evidence_refs": [
+        "research:166",
+        "research:168"
+      ]
+    },
+    {
+      "semantic_id": "WS-SOURCE-VAULT-BOOTSTRAP",
+      "state": "PAUSED",
+      "parent": "PROJECT-SOURCE-UNIVERSE",
+      "depends_on": [],
+      "objective": "Complete first permanent Source Vault bootstrap",
+      "pause_reason": "Research 124 project-knowledge architecture qualification owns primary route",
+      "return_condition": "EXPLICIT_PROJECT_ROUTING",
+      "resume_target": "reviewed ingestion of the frozen 20-entry first corpus",
+      "evidence_refs": [
+        "source_vault_shadow",
+        "source_vault_runbook"
+      ]
+    },
+    {
+      "semantic_id": "WS-COCKPIT-DESIGN",
+      "state": "PAUSED",
+      "parent": "PROJECT-COCKPIT",
+      "depends_on": [],
+      "objective": "Resume next-generation Cockpit design/fidelity work",
+      "pause_reason": "Project owner paused frontend and resumed Source Vault/project work",
+      "return_condition": "OWNER_EXPLICITLY_RETURNS_TO_FRONTEND_WORK",
+      "resume_target": "v1-cockpit-design-exploration@04f2a907094b8023ac7377c399a6eef1a6e1da99",
+      "evidence_refs": [
+        "cockpit"
+      ]
+    }
+  ],
+  "transition": {
+    "transition_id": "TR-Q4-QUALIFICATION",
+    "workstream_id": "WS-Q4-STRESS",
+    "steps": [
+      {
+        "step_id": "S1",
+        "operation": "confirm_whole_architecture_evidence_v02",
+        "target": "research:166"
+      },
+      {
+        "step_id": "S2",
+        "operation": "confirm_integrated_q125_complete",
+        "target": "research:168"
+      },
+      {
+        "step_id": "S3",
+        "operation": "freeze_q4_real_fixture",
+        "target": "Q4_REAL_FIXTURE"
+      },
+      {
+        "step_id": "S4",
+        "operation": "execute_q4_real_stress",
+        "target": "Q4_REAL_RESULT"
+      },
+      {
+        "step_id": "S5",
+        "operation": "reconcile_post_q4_evidence",
+        "target": "WHOLE_ARCH_EVIDENCE_NEXT"
+      }
+    ],
+    "durable_receipts": [
+      {
+        "step_id": "S1",
+        "status": "COMPLETED",
+        "evidence_ref": "research:166"
+      },
+      {
+        "step_id": "S2",
+        "status": "COMPLETED",
+        "evidence_ref": "research:168"
+      }
+    ],
+    "interruption": {
+      "interruption_id": "INT-COCKPIT-DIAGNOSTIC",
+      "unrelated_workstream_id": "WS-COCKPIT-DESIGN",
+      "operation": "read_only_resume_anchor_inspection",
+      "mutation_authorized": false
+    }
+  }
+}

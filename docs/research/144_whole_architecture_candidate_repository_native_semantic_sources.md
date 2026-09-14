@@ -1,7 +1,7 @@
 # Research 144: Whole-Architecture Candidate - Repository-Native Semantic Sources with Selective Identity, Derived Views, and Action-Gated Authority
 
 **Date:** 2026-09-14
-**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE / INTEGRATED Q1+Q2+Q5 FRESH-COLLABORATOR SUPPORT PASSED / REVISION-BINDING BASIS AMENDED / Q4 REAL STRESS NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE / Q4 REAL WORKSTREAM STRESS FIXTURE FROZEN / IMPLEMENTATION NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Candidate label:** `PKA-CANDIDATE-01`
 **Scope:** Synthesize one serious successor architecture from the complete Research 124 evidence field after the H1/H2 mechanism probes, real-corpus independent review, MC-0014/MC-0015 corrections, D1-D8 external evidence and owner-provided ICM evaluation. Define enough logical structure, authority semantics, typed source responsibilities, derived-view behavior, activation, lifecycle, validation, scaling and migration behavior to qualify the candidate systematically against Requirements V0.2.
 **Authority:** Candidate architecture research only. Requirements V0.2 remain the frozen acceptance authority. This record does not select the target architecture, migrate current authority, or authorize implementation as the production continuity system.
@@ -1220,3 +1220,9 @@ This amendment applies to authority/reconstruction receipts, derived-view freshn
 Research 168 demonstrates bounded fresh orientation, consequential authority/risk discovery, visible stale-authority failure, a source-bound receipt and capture -> explicit review -> shadow promotion without using legacy global current-state surfaces. Candidate 01 now has real subsystem evidence on every Q5 item.
 
 Provider/tool portability remains open because the manual result did not preserve exact engine/thread provenance and did not constitute a controlled cross-provider run.
+
+## 52. Q4 real-source workstream stress fixture freezes
+
+Research 169 freezes a real-source Q4 stress slice after the integrated Q1/Q2/Q5 result. The test uses current qualification work units, the real paused Source Vault and Cockpit workstreams, durable transition receipts and a temporary stale-write race bound by the explicit `GIT_BLOB_BYTES_AT_COMMIT` revision descriptor introduced in Research 168.
+
+The coordination DAG remains shadow-only and may not mutate current authority. A pass would strengthen Candidate 01's workstream/concurrency mechanics without authorizing target selection.
