@@ -1,0 +1,615 @@
+{
+  "schema_version": 1,
+  "fixture_id": "PKA-C01-SHADOW-OPS-V02",
+  "candidate_id": "PKA-CANDIDATE-01",
+  "protocol": {
+    "shadow_only": true,
+    "current_project_authority_unchanged": true,
+    "fixture_contains_expected_outcomes": false,
+    "oracle_is_test_only": true,
+    "forbidden_answer_keys": [
+      "expected_status",
+      "should_pass",
+      "should_fail",
+      "expected_route",
+      "expected_promotion",
+      "expected_conflict_result"
+    ]
+  },
+  "workstreams": [
+    {
+      "workstream_id": "WS-PKA",
+      "state": "ACTIVE",
+      "revision": 5,
+      "parent": null,
+      "objective": "Qualify successor project-knowledge architecture",
+      "depends_on": [],
+      "current_anchor": "research-124"
+    },
+    {
+      "workstream_id": "WS-C01",
+      "state": "ACTIVE",
+      "revision": 7,
+      "parent": "WS-PKA",
+      "objective": "Qualify Candidate 01 in shadow mode",
+      "depends_on": [
+        "WS-FOUNDATION"
+      ],
+      "current_anchor": "candidate-01"
+    },
+    {
+      "workstream_id": "WS-FOUNDATION",
+      "state": "COMPLETED",
+      "revision": 3,
+      "parent": "WS-C01",
+      "objective": "Complete foundational shadow mechanisms",
+      "depends_on": [],
+      "completed_evidence": [
+        "research:149"
+      ]
+    },
+    {
+      "workstream_id": "WS-OPS",
+      "state": "ACTIVE",
+      "revision": 4,
+      "parent": "WS-C01",
+      "objective": "Exercise broader operational behavior",
+      "depends_on": [
+        "WS-FOUNDATION"
+      ],
+      "current_anchor": "shadow-v02",
+      "on_complete_resume": "WS-C01:WS-INTEGRATION"
+    },
+    {
+      "workstream_id": "WS-PRIVATE",
+      "state": "PAUSED",
+      "revision": 2,
+      "parent": "WS-C01",
+      "objective": "Exercise private-dependent degraded mode",
+      "depends_on": [
+        "WS-FOUNDATION"
+      ],
+      "pause_reason": "Private fixture readiness intentionally withheld at baseline",
+      "return_condition": {
+        "signal": "PRIVATE_FIXTURE_READY",
+        "equals": true
+      },
+      "resume_target": "PUBLIC_PRIVATE_DEGRADED_TEST",
+      "review_after": "2026-09-21"
+    },
+    {
+      "workstream_id": "WS-INTEGRATION",
+      "state": "BLOCKED",
+      "revision": 1,
+      "parent": "WS-C01",
+      "objective": "Integrate operational evidence before migration qualification",
+      "depends_on": [
+        "WS-OPS",
+        "WS-PRIVATE"
+      ],
+      "blocked_reason": "Requires both operational and private-boundary slices"
+    },
+    {
+      "workstream_id": "WS-MIGRATION",
+      "state": "PAUSED",
+      "revision": 1,
+      "parent": "WS-PKA",
+      "objective": "Qualify migration and rollback later",
+      "depends_on": [
+        "WS-INTEGRATION",
+        "WS-AUDIT"
+      ],
+      "pause_reason": "Migration is later than ordinary-operation qualification",
+      "return_condition": {
+        "all_dependencies_completed": true
+      },
+      "resume_target": "MIGRATION_SHADOW_PLAN"
+    },
+    {
+      "workstream_id": "WS-AUDIT",
+      "state": "COMPLETED",
+      "revision": 2,
+      "parent": "WS-PKA",
+      "objective": "Complete adversarial architecture review",
+      "depends_on": [],
+      "completed_evidence": [
+        "MC-0016"
+      ]
+    }
+  ],
+  "workstream_signals": [
+    {
+      "signal_id": "SIG-BASELINE",
+      "values": {
+        "PRIVATE_FIXTURE_READY": false
+      }
+    },
+    {
+      "signal_id": "SIG-PRIVATE-READY",
+      "values": {
+        "PRIVATE_FIXTURE_READY": true
+      }
+    }
+  ],
+  "transition_intents": [
+    {
+      "transition_id": "TR-ADVANCE-FOUNDATION",
+      "workstream_id": "WS-C01",
+      "steps": [
+        {
+          "step_id": "T1",
+          "operation": "confirm_completed",
+          "target": "WS-FOUNDATION"
+        },
+        {
+          "step_id": "T2",
+          "operation": "activate",
+          "target": "WS-OPS"
+        },
+        {
+          "step_id": "T3",
+          "operation": "rebuild_route",
+          "target": "ROUTING_CURRENT"
+        },
+        {
+          "step_id": "T4",
+          "operation": "record_checkpoint",
+          "target": "CHECKPOINT-NEXT"
+        }
+      ]
+    }
+  ],
+  "durable_action_receipts": [
+    {
+      "transition_id": "TR-ADVANCE-FOUNDATION",
+      "step_id": "T1",
+      "status": "COMPLETED",
+      "evidence_ref": "research:149"
+    },
+    {
+      "transition_id": "TR-ADVANCE-FOUNDATION",
+      "step_id": "T2",
+      "status": "COMPLETED",
+      "evidence_ref": "workstream:WS-OPS@rev4"
+    }
+  ],
+  "workstream_update_attempts": [
+    {
+      "attempt_id": "STALE-WS-OPS",
+      "workstream_id": "WS-OPS",
+      "expected_revision": 3,
+      "patch": {
+        "current_anchor": "shadow-v02-stale"
+      }
+    },
+    {
+      "attempt_id": "FRESH-WS-OPS",
+      "workstream_id": "WS-OPS",
+      "expected_revision": 4,
+      "patch": {
+        "current_anchor": "shadow-v02-qualified"
+      }
+    }
+  ],
+  "captures": [
+    {
+      "capture_id": "CAP-1",
+      "authority_class": "candidate",
+      "subject": "operational-qualification",
+      "source_refs": [
+        "research:149",
+        "MC-0016"
+      ],
+      "units": [
+        {
+          "unit_id": "U1",
+          "kind": "conclusion",
+          "text": "Foundational shadow mechanisms passed frozen synthetic slice.",
+          "epistemic_state": "supported"
+        },
+        {
+          "unit_id": "U2",
+          "kind": "limitation",
+          "text": "Natural-language drift extraction remains unqualified.",
+          "epistemic_state": "limitation"
+        },
+        {
+          "unit_id": "U3",
+          "kind": "uncertainty",
+          "text": "Real-repository joint-authority frequency remains unknown.",
+          "epistemic_state": "unresolved"
+        },
+        {
+          "unit_id": "U4",
+          "kind": "negative_evidence",
+          "text": "First slice does not qualify free-form semantic action equivalence.",
+          "epistemic_state": "negative"
+        },
+        {
+          "unit_id": "U5",
+          "kind": "relation",
+          "text": "Migration remains downstream of ordinary operational behavior.",
+          "epistemic_state": "current"
+        },
+        {
+          "unit_id": "U6",
+          "kind": "provenance",
+          "text": "Result is grounded in frozen fixture and first-run evidence.",
+          "epistemic_state": "supported"
+        }
+      ]
+    },
+    {
+      "capture_id": "CAP-2",
+      "authority_class": "candidate",
+      "subject": "alternative-family",
+      "source_refs": [
+        "research:149"
+      ],
+      "units": [
+        {
+          "unit_id": "U7",
+          "kind": "open_question",
+          "text": "H3 may reopen if profile machinery expands materially.",
+          "epistemic_state": "open"
+        }
+      ]
+    }
+  ],
+  "consolidation_candidates": [
+    {
+      "candidate_id": "SYN-BAD",
+      "source_capture_ids": [
+        "CAP-1"
+      ],
+      "declared_use": "current orientation",
+      "must_preserve_unit_ids": [
+        "U1",
+        "U2",
+        "U3",
+        "U4",
+        "U5",
+        "U6"
+      ],
+      "unit_dispositions": [
+        {
+          "unit_id": "U1",
+          "disposition": "PRESERVED_BY_SYNTHESIS_AT",
+          "location": "summary.1"
+        },
+        {
+          "unit_id": "U2",
+          "disposition": "PRESERVED_BY_SYNTHESIS_AT",
+          "location": "limitations.1"
+        },
+        {
+          "unit_id": "U3",
+          "disposition": "PRESERVED_BY_SYNTHESIS_AT",
+          "location": "uncertainty.1"
+        },
+        {
+          "unit_id": "U5",
+          "disposition": "PRESERVED_DIRECTLY",
+          "location": "next.1"
+        },
+        {
+          "unit_id": "U6",
+          "disposition": "PRESERVED_DIRECTLY",
+          "location": "provenance.1"
+        }
+      ]
+    },
+    {
+      "candidate_id": "SYN-GOOD",
+      "source_capture_ids": [
+        "CAP-1"
+      ],
+      "declared_use": "current orientation",
+      "must_preserve_unit_ids": [
+        "U1",
+        "U2",
+        "U3",
+        "U4",
+        "U5",
+        "U6"
+      ],
+      "unit_dispositions": [
+        {
+          "unit_id": "U1",
+          "disposition": "PRESERVED_BY_SYNTHESIS_AT",
+          "location": "summary.1"
+        },
+        {
+          "unit_id": "U2",
+          "disposition": "PRESERVED_BY_SYNTHESIS_AT",
+          "location": "limitations.1"
+        },
+        {
+          "unit_id": "U3",
+          "disposition": "PRESERVED_BY_SYNTHESIS_AT",
+          "location": "uncertainty.1"
+        },
+        {
+          "unit_id": "U4",
+          "disposition": "INTENTIONALLY_LATENT_WITH_RECOVERABLE_SOURCE",
+          "source_ref": "CAP-1:U4"
+        },
+        {
+          "unit_id": "U5",
+          "disposition": "PRESERVED_DIRECTLY",
+          "location": "next.1"
+        },
+        {
+          "unit_id": "U6",
+          "disposition": "PRESERVED_DIRECTLY",
+          "location": "provenance.1"
+        }
+      ]
+    }
+  ],
+  "promotion_requests": [
+    {
+      "promotion_id": "PROMOTE-BAD",
+      "candidate_id": "SYN-BAD",
+      "review_status": "ACCEPTED",
+      "target_semantic_id": "KN-OPS-FOUNDATION"
+    },
+    {
+      "promotion_id": "PROMOTE-GOOD",
+      "candidate_id": "SYN-GOOD",
+      "review_status": "ACCEPTED",
+      "target_semantic_id": "KN-OPS-FOUNDATION"
+    }
+  ],
+  "canonical_knowledge_seed": [
+    {
+      "semantic_id": "KN-BASE",
+      "authority_class": "canonical",
+      "state": "current",
+      "subject": "project-knowledge",
+      "summary": "Candidate 01 remains unselected during shadow qualification.",
+      "provenance": [
+        "research:144"
+      ]
+    }
+  ],
+  "generated_narrative_input": {
+    "narrative_id": "NARR-1",
+    "claims": [
+      {
+        "claim_id": "NC1",
+        "text": "Operational slice should prioritize workstream recovery.",
+        "source_refs": [
+          "research:149"
+        ],
+        "supported_by_existing_canonical": true
+      },
+      {
+        "claim_id": "NC2",
+        "text": "Candidate 01 is ready for production authority migration.",
+        "source_refs": [],
+        "supported_by_existing_canonical": false
+      }
+    ]
+  },
+  "navigation_declarations": [
+    {
+      "source_id": "WS-OPS",
+      "subjects": [
+        "project-knowledge",
+        "qualification",
+        "operations"
+      ]
+    },
+    {
+      "source_id": "WS-PRIVATE",
+      "subjects": [
+        "project-knowledge",
+        "qualification",
+        "privacy"
+      ]
+    },
+    {
+      "source_id": "KN-BASE",
+      "subjects": [
+        "project-knowledge",
+        "architecture"
+      ]
+    }
+  ],
+  "derived_view_manifests": [
+    {
+      "view_id": "ROUTING_CURRENT",
+      "authority_class": "derived",
+      "source_sets": [
+        "workstreams",
+        "signals"
+      ],
+      "generator": "shadow_v02.routing",
+      "version": 1,
+      "rebuildability": "deterministic"
+    },
+    {
+      "view_id": "CURRENT_STATE_CORE",
+      "authority_class": "derived",
+      "source_sets": [
+        "workstreams",
+        "canonical_knowledge",
+        "authority_cases"
+      ],
+      "generator": "shadow_v02.current_state",
+      "version": 1,
+      "rebuildability": "deterministic"
+    },
+    {
+      "view_id": "NAVIGATION_INDEX",
+      "authority_class": "derived",
+      "source_sets": [
+        "navigation_declarations"
+      ],
+      "generator": "shadow_v02.navigation",
+      "version": 1,
+      "rebuildability": "deterministic"
+    }
+  ],
+  "public_records": [
+    {
+      "public_id": "PUB-1",
+      "state": "RESOLVED_PRIVATE",
+      "public_conclusion": "Private compatibility check was previously resolved successfully.",
+      "private_dependency_id": "PD-1",
+      "private_required_for": [
+        "rotate_private_material"
+      ]
+    },
+    {
+      "public_id": "PUB-2",
+      "state": "CURRENT",
+      "public_conclusion": "Ordinary public architecture research does not require private detail.",
+      "private_dependency_id": null,
+      "private_required_for": []
+    }
+  ],
+  "private_records": [
+    {
+      "private_dependency_id": "PD-1",
+      "private_status": "VERIFIED",
+      "private_locator": "PRIVATE_ONLY_LOCATOR",
+      "private_marker": "PRIVATE_ONLY_SENTINEL",
+      "detail": "PRIVATE_ONLY_DETAIL"
+    }
+  ],
+  "private_scenarios": [
+    {
+      "scenario_id": "PUBLIC-ONLY",
+      "action": "research_public_architecture",
+      "public_record_id": "PUB-2",
+      "private_available": false
+    },
+    {
+      "scenario_id": "PRIVATE-REQUIRED-AVAILABLE",
+      "action": "rotate_private_material",
+      "public_record_id": "PUB-1",
+      "private_available": true
+    },
+    {
+      "scenario_id": "PRIVATE-REQUIRED-UNAVAILABLE",
+      "action": "rotate_private_material",
+      "public_record_id": "PUB-1",
+      "private_available": false
+    },
+    {
+      "scenario_id": "RESOLVED-PRIVATE-NOT-VERIFIED",
+      "action": "read_public_resolved_private_conclusion",
+      "public_record_id": "PUB-1",
+      "private_available": false
+    }
+  ],
+  "authority_sources": [
+    {
+      "source_id": "AUTH-SAFE-BASE",
+      "authority_class": "canonical",
+      "state": "current",
+      "scope": {
+        "action": "safe_deploy",
+        "environment": "prod"
+      },
+      "required": true,
+      "rule_value": "require_integrity_gate",
+      "relations": []
+    },
+    {
+      "source_id": "AUTH-SAFE-SUPPLEMENT",
+      "authority_class": "canonical",
+      "state": "current",
+      "scope": {
+        "action": "safe_deploy",
+        "environment": "prod"
+      },
+      "required": true,
+      "rule_value": "require_postflight",
+      "relations": [
+        {
+          "relation": "SUPPLEMENT",
+          "target": "AUTH-SAFE-BASE"
+        }
+      ]
+    },
+    {
+      "source_id": "AUTH-CONFLICT-A",
+      "authority_class": "canonical",
+      "state": "current",
+      "scope": {
+        "action": "choose_mode",
+        "environment": "prod"
+      },
+      "required": true,
+      "rule_value": "MODE_A",
+      "relations": []
+    },
+    {
+      "source_id": "AUTH-CONFLICT-B",
+      "authority_class": "canonical",
+      "state": "current",
+      "scope": {
+        "action": "choose_mode",
+        "environment": "prod"
+      },
+      "required": true,
+      "rule_value": "MODE_B",
+      "relations": []
+    }
+  ],
+  "authority_scenarios": [
+    {
+      "scenario_id": "AUTH-COMPLETE",
+      "action": "safe_deploy",
+      "scope": {
+        "environment": "prod"
+      },
+      "available_source_ids": [
+        "AUTH-SAFE-BASE",
+        "AUTH-SAFE-SUPPLEMENT"
+      ],
+      "consequence": "high",
+      "optional_retrieval_available": true
+    },
+    {
+      "scenario_id": "AUTH-MISSING-REQUIRED",
+      "action": "safe_deploy",
+      "scope": {
+        "environment": "prod"
+      },
+      "available_source_ids": [
+        "AUTH-SAFE-BASE"
+      ],
+      "consequence": "high",
+      "optional_retrieval_available": true
+    },
+    {
+      "scenario_id": "AUTH-CONFLICT",
+      "action": "choose_mode",
+      "scope": {
+        "environment": "prod"
+      },
+      "available_source_ids": [
+        "AUTH-CONFLICT-A",
+        "AUTH-CONFLICT-B"
+      ],
+      "consequence": "high",
+      "optional_retrieval_available": true
+    },
+    {
+      "scenario_id": "OPTIONAL-RETRIEVAL-DOWN",
+      "action": "explore_architecture",
+      "scope": {
+        "subject": "project-knowledge"
+      },
+      "available_source_ids": [
+        "KN-BASE"
+      ],
+      "consequence": "low",
+      "optional_retrieval_available": false
+    }
+  ]
+}

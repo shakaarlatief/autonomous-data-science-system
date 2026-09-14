@@ -4010,3 +4010,16 @@ FINAL_QUALIFIED_PASSES=0
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=BROADER_SHADOW_OPERATIONAL_BEHAVIOR_SLICE
 ```
+
+## 95. Operational Shadow V0.2 freezes before implementation
+
+Research 150 freezes the broader Candidate 01 operational fixture/oracle after V0.1 survived its foundational stop gate. The new fixture adds the still-untested operational behaviors most likely to determine whether the candidate can replace the current continuity architecture safely: explicit workstream continuation and interruption recovery, capture/promotion fidelity, generated current views, public/private degraded mode and authority uncertainty.
+
+```text
+OPERATIONAL_SHADOW_V02=FROZEN
+FIXTURE_SHA256=6daefddd448ead145281d56da8325925cb82c71fc57418283ef21c65418ec486
+ORACLE_SHA256=a1af441f356fbd0e7cac65ba1f6c45589f96941139e669d99de4276acf8440b6
+CURRENT_ARCHITECTURE=STILL_AUTHORITY
+TARGET_ARCHITECTURE=NOT_SELECTED
+NEXT=IMPLEMENT_OPERATIONAL_SHADOW_V02
+```
