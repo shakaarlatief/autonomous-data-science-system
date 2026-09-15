@@ -1,7 +1,7 @@
 # Research 176: Candidate 01 Owner Selection and Implementation / Migration Program Opening
 
 **Date:** 2026-09-15
-**Status:** PKA-CANDIDATE-01 SELECTED SUCCESSOR TARGET / PHYSICAL ARCHITECTURE V0.1 PROPOSED / SPECIFICATION 028 NEXT / CURRENT CONTINUITY STILL AUTHORITY
+**Status:** PKA-CANDIDATE-01 SELECTED SUCCESSOR TARGET / SPECIFICATION 028 FROZEN / W0 IMPLEMENTATION SUBSTRATE NEXT / CURRENT CONTINUITY STILL AUTHORITY
 **Selected architecture:** `PKA-CANDIDATE-01`
 **Selection decision:** `D-035`
 **Qualification basis:** Research 175 / 67 of 67 frozen requirements and invariants PASS

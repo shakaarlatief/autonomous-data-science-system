@@ -284,6 +284,7 @@ docs/specifications/024_v1_model_collaboration_state_guard.md
 docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md
 docs/specifications/026_v1_repository_integrity_recovery_amendment.md
 docs/specifications/027_v1_historical_intermediate_checkpoint_integrity_extension.md
+docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md
 docs/research/035_multi_model_development_collaboration_architecture.md
 docs/research/036_deferred_asynchronous_review_and_catchup_architecture.md
 docs/research/064_rapid_iteration_repository_preservation_audit_and_checkpoint_hygiene.md
@@ -438,6 +439,7 @@ docs/checkpoints/519_q10_final_qualification_fixture_frozen_implementation_next.
 docs/checkpoints/520_q10_final_qualification_passed_target_selection_decision_next.md
 docs/checkpoints/521_candidate01_selected_implementation_migration_design_opened.md
 docs/checkpoints/522_candidate01_physical_architecture_v01_proposed_spec028_next.md
+docs/checkpoints/523_specification028_frozen_w0_implementation_substrate_next.md
 docs/research/PROJECT_KNOWLEDGE_FAILURE_CORPUS.md
 docs/research/project_knowledge_baselines/PROJECT_KNOWLEDGE_BLIND_BASELINE_PROTOCOL.md
 docs/local_execution/validation/206_semantic_git_managed_python_integrity_and_publication_restored.md
@@ -973,7 +975,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-522 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-523 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

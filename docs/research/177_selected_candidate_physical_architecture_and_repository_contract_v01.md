@@ -1,7 +1,7 @@
 # Research 177: Selected Candidate 01 Physical Architecture and Repository Contract V0.1
 
 **Date:** 2026-09-15
-**Status:** PHYSICAL ARCHITECTURE V0.1 PROPOSED / SELECTED LOGICAL ARCHITECTURE PRESERVED / SPECIFICATION 028 NEXT / CURRENT CONTINUITY STILL AUTHORITY
+**Status:** PHYSICAL ARCHITECTURE V0.1 ACCEPTED INTO SPECIFICATION 028 / W0 IMPLEMENTATION SUBSTRATE NEXT / CURRENT CONTINUITY STILL AUTHORITY
 **Selected architecture:** `PKA-CANDIDATE-01`
 **Selection decision:** `D-035`
 **Scope:** Convert the selected logical architecture into a concrete repository/software architecture suitable for production implementation and staged migration, while preserving the distinction between ADS product runtime architecture and ADS project-development knowledge infrastructure.
@@ -578,3 +578,9 @@ VECTOR_DATABASE_REQUIRED=NO
 CURRENT_CONTINUITY_AUTHORITY=UNCHANGED
 NEXT=SPECIFICATION_028_PHYSICAL_IMPLEMENTATION_AND_MIGRATION_CONTRACT
 ```
+
+## 22. Specification 028 freezes the production contract
+
+Specification 028 adopts this V0.1 physical architecture into a prospective production/migration contract. It fixes the project-support package boundary, profile/schema family, embedded strict-JSON declaration format, derived-view and manifest contracts, resolver/reconstruction/capture responsibilities, compatibility migration waves, professional architecture-documentation requirement, and W0/W1 executable gates.
+
+The immediate next stage is W0 implementation substrate. No current authority surface is migrated or overwritten merely because the specification is frozen.
