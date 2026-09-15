@@ -1,7 +1,7 @@
 # Research 176: Candidate 01 Owner Selection and Implementation / Migration Program Opening
 
 **Date:** 2026-09-15
-**Status:** PKA-CANDIDATE-01 SELECTED SUCCESSOR TARGET / CURRENT CONTINUITY STILL AUTHORITY / IMPLEMENTATION-MIGRATION DESIGN OPEN
+**Status:** PKA-CANDIDATE-01 SELECTED SUCCESSOR TARGET / PHYSICAL ARCHITECTURE V0.1 PROPOSED / SPECIFICATION 028 NEXT / CURRENT CONTINUITY STILL AUTHORITY
 **Selected architecture:** `PKA-CANDIDATE-01`
 **Selection decision:** `D-035`
 **Qualification basis:** Research 175 / 67 of 67 frozen requirements and invariants PASS
@@ -198,3 +198,9 @@ CURRENT_OPERATIONAL_AUTHORITY=CURRENT_CONTINUITY_ARCHITECTURE
 AUTHORITY_SWITCH_ALLOWED=false
 NEXT=PHYSICAL_ARCHITECTURE_AND_REPOSITORY_CONTRACT
 ```
+
+## 8. Stage I0 physical architecture proposal completed
+
+Research 177 proposes the concrete repository/software realization: a repo-local `tools/project_knowledge` implementation package separate from ADS product runtime; embedded strict-JSON declarations in natural Markdown canonical sources; profile-specific schemas; deterministic generated structural views; no central authority database; explicit revision/hash-basis descriptors; staged compatibility migration; and durable architecture documentation under `docs/project_knowledge/architecture`.
+
+The next boundary is Specification 028, which should freeze the implementable contract before production code or canonical-source migrations begin.
