@@ -1,0 +1,14 @@
+{
+  "schema_version": "1",
+  "profile": "identity_transition.v1",
+  "kind": "identity_transition",
+  "authority_class": "canonical",
+  "transition_class": "RETIRE",
+  "predecessors": [
+    "OLD:1"
+  ],
+  "provenance": [
+    "docs/decision.md"
+  ],
+  "resolution_behavior": "Resolve to historical provenance"
+}

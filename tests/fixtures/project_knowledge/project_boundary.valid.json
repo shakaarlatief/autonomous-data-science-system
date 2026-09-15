@@ -1,0 +1,7 @@
+{
+  "schema_version": "1",
+  "profile": "project_boundary.v1",
+  "kind": "project_boundary",
+  "authority_class": "canonical",
+  "semantic_id": "PROJECT:boundary"
+}

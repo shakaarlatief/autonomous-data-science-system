@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.ads.local/project-knowledge/identity_transition.v1.schema.json",
+  "title": "Project knowledge identity_transition V1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1"
+    },
+    "profile": {
+      "const": "identity_transition.v1"
+    },
+    "kind": {
+      "$ref": "defs.v1.schema.json#/$defs/text"
+    },
+    "authority_class": {
+      "$ref": "defs.v1.schema.json#/$defs/authority_class"
+    },
+    "semantic_id": {
+      "$ref": "defs.v1.schema.json#/$defs/semantic_id"
+    },
+    "state": {
+      "$ref": "defs.v1.schema.json#/$defs/lifecycle_state"
+    },
+    "scope": {
+      "$ref": "defs.v1.schema.json#/$defs/scope"
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "$ref": "defs.v1.schema.json#/$defs/relation"
+      },
+      "uniqueItems": true
+    },
+    "provenance": {
+      "$ref": "defs.v1.schema.json#/$defs/references"
+    },
+    "references": {
+      "$ref": "defs.v1.schema.json#/$defs/references"
+    },
+    "risk_or_reopen_triggers": {
+      "$ref": "defs.v1.schema.json#/$defs/references"
+    },
+    "effective_from": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "effective_to": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "authority_from": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "authority_to": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "transition_class": {
+      "enum": [
+        "MOVE_OR_RENAME",
+        "REPRESENTATION_REPLACEMENT",
+        "MERGE",
+        "SPLIT",
+        "SUPERSEDE",
+        "RETIRE",
+        "REDIRECT"
+      ]
+    },
+    "predecessors": {
+      "type": "array",
+      "items": {
+        "$ref": "defs.v1.schema.json#/$defs/semantic_id"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "successors": {
+      "type": "array",
+      "items": {
+        "$ref": "defs.v1.schema.json#/$defs/semantic_id"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "resolution_behavior": {
+      "$ref": "defs.v1.schema.json#/$defs/text"
+    }
+  },
+  "required": [
+    "schema_version",
+    "profile",
+    "kind",
+    "authority_class",
+    "predecessors",
+    "transition_class",
+    "provenance",
+    "resolution_behavior"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "transition_class": {
+            "const": "RETIRE"
+          }
+        }
+      },
+      "then": {
+        "not": {
+          "required": [
+            "successors"
+          ]
+        }
+      },
+      "else": {
+        "required": [
+          "successors"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "transition_class": {
+            "const": "MERGE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "predecessors": {
+            "minItems": 2
+          },
+          "successors": {
+            "maxItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "transition_class": {
+            "const": "SPLIT"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "predecessors": {
+            "maxItems": 1
+          },
+          "successors": {
+            "minItems": 2
+          }
+        }
+      }
+    }
+  ]
+}

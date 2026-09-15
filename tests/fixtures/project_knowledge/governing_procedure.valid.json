@@ -1,0 +1,25 @@
+{
+  "schema_version": "1",
+  "profile": "governing_procedure.v1",
+  "kind": "governing_procedure",
+  "authority_class": "canonical",
+  "semantic_id": "PROC:example",
+  "state": "ACTIVE",
+  "governed_action_classes": [
+    "validate"
+  ],
+  "preconditions": [],
+  "mandatory_constraints": [
+    {
+      "constraint_id": "CHECK:1",
+      "requirement": "Read the exact source"
+    }
+  ],
+  "prohibitions": [],
+  "required_postconditions": [
+    "Report diagnostics"
+  ],
+  "fail_closed_conditions": [
+    "Unavailable source"
+  ]
+}

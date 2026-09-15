@@ -1,0 +1,31 @@
+{
+  "schema_version": "1",
+  "profile": "derived_view_manifest.v1",
+  "kind": "derived_view_manifest",
+  "authority_class": "derived",
+  "view_id": "source_catalog",
+  "view_path": "docs/project_knowledge/generated/source_catalog.json",
+  "view_schema_version": "1",
+  "input_bindings": [
+    {
+      "source_path": "docs/example.md",
+      "hash_algorithm": "sha256",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "content_digest": "0000000000000000000000000000000000000000000000000000000000000000"
+    }
+  ],
+  "generator": {
+    "generator_id": "project_knowledge",
+    "generator_version": "1",
+    "implementation_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+    "implementation_files": [
+      "tools/project_knowledge/model.py"
+    ],
+    "implementation_digest": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "rebuildability_class": "DETERMINISTIC_BYTE_REBUILD",
+  "created_or_refreshed_boundary": "input digests",
+  "freshness_basis": "Verify inputs against committed Git blobs",
+  "snapshot_mode": "COMMIT_SNAPSHOT",
+  "snapshot_status": "COMMITTED"
+}

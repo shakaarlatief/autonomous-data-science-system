@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.ads.local/project-knowledge/workstream.v1.schema.json",
+  "title": "Project knowledge workstream V1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1"
+    },
+    "profile": {
+      "const": "workstream.v1"
+    },
+    "kind": {
+      "$ref": "defs.v1.schema.json#/$defs/text"
+    },
+    "authority_class": {
+      "$ref": "defs.v1.schema.json#/$defs/authority_class"
+    },
+    "semantic_id": {
+      "$ref": "defs.v1.schema.json#/$defs/semantic_id"
+    },
+    "state": {
+      "$ref": "defs.v1.schema.json#/$defs/lifecycle_state"
+    },
+    "scope": {
+      "$ref": "defs.v1.schema.json#/$defs/scope"
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "$ref": "defs.v1.schema.json#/$defs/relation"
+      },
+      "uniqueItems": true
+    },
+    "provenance": {
+      "$ref": "defs.v1.schema.json#/$defs/references"
+    },
+    "references": {
+      "$ref": "defs.v1.schema.json#/$defs/references"
+    },
+    "risk_or_reopen_triggers": {
+      "$ref": "defs.v1.schema.json#/$defs/references"
+    },
+    "effective_from": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "effective_to": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "authority_from": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "authority_to": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "objective": {
+      "$ref": "defs.v1.schema.json#/$defs/text"
+    },
+    "objective_reference": {
+      "$ref": "defs.v1.schema.json#/$defs/text"
+    },
+    "parent": {
+      "$ref": "defs.v1.schema.json#/$defs/semantic_id"
+    },
+    "depends_on": {
+      "type": "array",
+      "items": {
+        "$ref": "defs.v1.schema.json#/$defs/semantic_id"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "expected_to_resume": {
+      "type": "boolean"
+    },
+    "pause_reason": {
+      "$ref": "defs.v1.schema.json#/$defs/text"
+    },
+    "return_condition": {
+      "$ref": "defs.v1.schema.json#/$defs/text"
+    },
+    "resume_target": {
+      "$ref": "defs.v1.schema.json#/$defs/semantic_id"
+    },
+    "current_anchor": {
+      "$ref": "defs.v1.schema.json#/$defs/text"
+    },
+    "expected_revision": {
+      "$ref": "defs.v1.schema.json#/$defs/source_revision"
+    }
+  },
+  "required": [
+    "schema_version",
+    "profile",
+    "kind",
+    "authority_class",
+    "semantic_id",
+    "state"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "state": {
+            "const": "PAUSED"
+          },
+          "expected_to_resume": {
+            "const": true
+          }
+        },
+        "required": [
+          "state"
+        ]
+      },
+      "then": {
+        "required": [
+          "pause_reason",
+          "return_condition",
+          "resume_target"
+        ]
+      }
+    }
+  ],
+  "anyOf": [
+    {
+      "required": [
+        "objective"
+      ]
+    },
+    {
+      "required": [
+        "objective_reference"
+      ]
+    }
+  ]
+}

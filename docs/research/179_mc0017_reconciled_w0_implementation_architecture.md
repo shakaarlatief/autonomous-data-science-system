@@ -1,7 +1,7 @@
 # Research 179: MC-0017 Reconciled W0 Implementation Architecture
 
 **Date:** 2026-09-15
-**Status:** ACCEPTED W0 IMPLEMENTATION ARCHITECTURE / MC-0017 RECONCILED / SPECIFICATION 028 UNCHANGED / W0 CODING NEXT
+**Status:** ACCEPTED W0 IMPLEMENTATION ARCHITECTURE / MC-0017 RECONCILED / SPECIFICATION 028 UNCHANGED / W0 SUBSTRATE SLICE 1 ACCEPTED / IDENTITY+AUTHORITY ENGINES NEXT
 **Selected architecture:** `PKA-CANDIDATE-01`
 **Governing contract:** Specification 028
 **Scope:** Freeze the concrete production W0 software/repository architecture after independent ChatGPT and Claude designs plus bounded comparative reconciliation.

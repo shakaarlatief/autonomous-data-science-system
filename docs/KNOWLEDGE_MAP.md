@@ -366,6 +366,7 @@ docs/research/176_candidate01_owner_selection_and_implementation_migration_progr
 docs/research/177_selected_candidate_physical_architecture_and_repository_contract_v01.md
 docs/research/178_chatgpt_independent_w0_implementation_architecture_design.md
 docs/research/179_mc0017_reconciled_w0_implementation_architecture.md
+docs/research/180_w0_substrate_slice1_implementation_and_real_repository_integration_result.md
 docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md
 docs/checkpoints/449_scalable_knowledge_architecture_redesign_opened.md
 docs/checkpoints/450_knowledge_architecture_baseline_inventory_complete_requirements_next.md
@@ -445,6 +446,7 @@ docs/checkpoints/523_specification028_frozen_w0_implementation_substrate_next.md
 docs/checkpoints/524_mc0017_w0_independent_implementation_codesign_opened.md
 docs/checkpoints/525_mc0017_independent_w0_design_compared_claude_comparative_next.md
 docs/checkpoints/526_mc0017_resolved_w0_implementation_architecture_frozen.md
+docs/checkpoints/527_w0_substrate_slice1_accepted_semantic_engines_next.md
 docs/research/PROJECT_KNOWLEDGE_FAILURE_CORPUS.md
 docs/research/project_knowledge_baselines/PROJECT_KNOWLEDGE_BLIND_BASELINE_PROTOCOL.md
 docs/local_execution/validation/206_semantic_git_managed_python_integrity_and_publication_restored.md
@@ -980,7 +982,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-526 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-527 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

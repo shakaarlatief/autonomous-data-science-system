@@ -1,0 +1,12 @@
+{
+  "schema_version": "1",
+  "profile": "workstream.v1",
+  "kind": "workstream",
+  "authority_class": "canonical",
+  "semantic_id": "WS:example",
+  "state": "PAUSED",
+  "objective": "Resume bounded implementation",
+  "pause_reason": "Dependency pending",
+  "return_condition": "Dependency verified",
+  "resume_target": "WS:example"
+}

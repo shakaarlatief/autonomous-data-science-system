@@ -1,7 +1,7 @@
 # Research 177: Selected Candidate 01 Physical Architecture and Repository Contract V0.1
 
 **Date:** 2026-09-15
-**Status:** PHYSICAL ARCHITECTURE V0.1 ACCEPTED INTO SPECIFICATION 028 / REFINED BY RESEARCH 179 / W0 CODING NEXT / CURRENT CONTINUITY STILL AUTHORITY
+**Status:** PHYSICAL ARCHITECTURE V0.1 ACCEPTED INTO SPECIFICATION 028 / REFINED BY RESEARCH 179 / W0 SUBSTRATE SLICE 1 ACCEPTED / CURRENT CONTINUITY STILL AUTHORITY
 **Selected architecture:** `PKA-CANDIDATE-01`
 **Selection decision:** `D-035`
 **Scope:** Convert the selected logical architecture into a concrete repository/software architecture suitable for production implementation and staged migration, while preserving the distinction between ADS product runtime architecture and ADS project-development knowledge infrastructure.

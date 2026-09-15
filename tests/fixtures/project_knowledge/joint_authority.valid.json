@@ -1,0 +1,31 @@
+{
+  "schema_version": "1",
+  "profile": "joint_authority.v1",
+  "kind": "joint_authority",
+  "authority_class": "canonical",
+  "semantic_id": "JOINT:1",
+  "members": [
+    "PROC:1",
+    "PROC:2"
+  ],
+  "scope": {
+    "target": "release"
+  },
+  "combination_semantics": "Both procedures govern",
+  "governed_action_classes": [
+    "release"
+  ],
+  "admission": {
+    "overlapping_current_canonical_sources": true,
+    "ordinary_relations_insufficient": true,
+    "irreducible_set_fact": true,
+    "independently_activated": true,
+    "review_evidence": [
+      "docs/review.md"
+    ],
+    "duplicate_ownership_rejected": true
+  },
+  "provenance": [
+    "docs/decision.md"
+  ]
+}

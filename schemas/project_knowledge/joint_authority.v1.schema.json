@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.ads.local/project-knowledge/joint_authority.v1.schema.json",
+  "title": "Project knowledge joint_authority V1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1"
+    },
+    "profile": {
+      "const": "joint_authority.v1"
+    },
+    "kind": {
+      "$ref": "defs.v1.schema.json#/$defs/text"
+    },
+    "authority_class": {
+      "$ref": "defs.v1.schema.json#/$defs/authority_class"
+    },
+    "semantic_id": {
+      "$ref": "defs.v1.schema.json#/$defs/semantic_id"
+    },
+    "state": {
+      "$ref": "defs.v1.schema.json#/$defs/lifecycle_state"
+    },
+    "scope": {
+      "$ref": "defs.v1.schema.json#/$defs/scope"
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "$ref": "defs.v1.schema.json#/$defs/relation"
+      },
+      "uniqueItems": true
+    },
+    "provenance": {
+      "$ref": "defs.v1.schema.json#/$defs/references"
+    },
+    "references": {
+      "$ref": "defs.v1.schema.json#/$defs/references"
+    },
+    "risk_or_reopen_triggers": {
+      "$ref": "defs.v1.schema.json#/$defs/references"
+    },
+    "effective_from": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "effective_to": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "authority_from": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "authority_to": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "members": {
+      "type": "array",
+      "items": {
+        "$ref": "defs.v1.schema.json#/$defs/semantic_id"
+      },
+      "minItems": 2,
+      "uniqueItems": true
+    },
+    "combination_semantics": {
+      "$ref": "defs.v1.schema.json#/$defs/text"
+    },
+    "governed_action_classes": {
+      "type": "array",
+      "items": {
+        "$ref": "defs.v1.schema.json#/$defs/text"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "admission": {
+      "type": "object",
+      "properties": {
+        "overlapping_current_canonical_sources": {
+          "const": true
+        },
+        "ordinary_relations_insufficient": {
+          "const": true
+        },
+        "irreducible_set_fact": {
+          "const": true
+        },
+        "independently_activated": {
+          "const": true
+        },
+        "review_evidence": {
+          "$ref": "defs.v1.schema.json#/$defs/references"
+        },
+        "duplicate_ownership_rejected": {
+          "const": true
+        }
+      },
+      "required": [
+        "overlapping_current_canonical_sources",
+        "ordinary_relations_insufficient",
+        "irreducible_set_fact",
+        "independently_activated",
+        "review_evidence",
+        "duplicate_ownership_rejected"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "profile",
+    "kind",
+    "authority_class",
+    "semantic_id",
+    "members",
+    "scope",
+    "combination_semantics",
+    "governed_action_classes",
+    "admission",
+    "provenance"
+  ],
+  "additionalProperties": false
+}

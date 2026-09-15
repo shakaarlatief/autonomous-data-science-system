@@ -1,0 +1,7 @@
+{
+  "schema_version": "1",
+  "profile": "capture.v1",
+  "kind": "capture",
+  "authority_class": "capture",
+  "summary": "Unreviewed observation"
+}

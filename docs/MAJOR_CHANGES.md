@@ -488,3 +488,33 @@ docs/research/144_whole_architecture_candidate_repository_native_semantic_source
 docs/research/175_q10_final_multidimensional_qualification_result.md
 docs/checkpoints/520_q10_final_qualification_passed_target_selection_decision_next.md
 ```
+---
+
+## 2026-09-15: Successor project-knowledge architecture entered production implementation
+
+After Candidate 01 selection, Specification 028 and the cross-model W0 implementation co-design were frozen. The first production W0 substrate slice then established repository-local project-knowledge tooling under `tools/project_knowledge/`, eight strict V1 profile schemas, selective-identity typed models, deterministic declaration parsing, exact Git-blob revision binding, dual commit/worktree snapshot semantics, role-aware source discovery and a read-only validation CLI.
+
+The first isolated implementation pass exposed a real-repository integration defect: fenced declaration examples in architecture/specification documentation were misread as live declarations, and canonical-discovery exclusion was initially conflated with declaration prohibition. The repair introduced Markdown fence awareness and explicit path roles for eligible sources, evidence fixtures, capture areas, generated areas and disallowed locations.
+
+The accepted first slice now passes:
+
+```text
+PKA-G001 through PKA-G005       PASS
+new substrate tests             222 / 222 PASS
+inherited unit tests             309 / 309 PASS
+complete unit inventory          531 / 531 PASS
+actual ADS worktree validation   PASS / zero diagnostics
+actual ADS commit validation     PASS / zero diagnostics
+PUBLIC_REPOSITORY_INTEGRITY      PASS
+```
+
+W0 as a whole remains in progress. W1 migration has not started and the current continuity architecture remains operational authority.
+
+Key sources:
+
+```text
+docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md
+docs/research/179_mc0017_reconciled_w0_implementation_architecture.md
+docs/research/180_w0_substrate_slice1_implementation_and_real_repository_integration_result.md
+docs/checkpoints/527_w0_substrate_slice1_accepted_semantic_engines_next.md
+```

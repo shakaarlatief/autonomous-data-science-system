@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.ads.local/project-knowledge/governing_procedure.v1.schema.json",
+  "title": "Project knowledge governing_procedure V1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1"
+    },
+    "profile": {
+      "const": "governing_procedure.v1"
+    },
+    "kind": {
+      "$ref": "defs.v1.schema.json#/$defs/text"
+    },
+    "authority_class": {
+      "$ref": "defs.v1.schema.json#/$defs/authority_class"
+    },
+    "semantic_id": {
+      "$ref": "defs.v1.schema.json#/$defs/semantic_id"
+    },
+    "state": {
+      "$ref": "defs.v1.schema.json#/$defs/lifecycle_state"
+    },
+    "scope": {
+      "$ref": "defs.v1.schema.json#/$defs/scope"
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "$ref": "defs.v1.schema.json#/$defs/relation"
+      },
+      "uniqueItems": true
+    },
+    "provenance": {
+      "$ref": "defs.v1.schema.json#/$defs/references"
+    },
+    "references": {
+      "$ref": "defs.v1.schema.json#/$defs/references"
+    },
+    "risk_or_reopen_triggers": {
+      "$ref": "defs.v1.schema.json#/$defs/references"
+    },
+    "effective_from": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "effective_to": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "authority_from": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "authority_to": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "governed_action_classes": {
+      "type": "array",
+      "items": {
+        "$ref": "defs.v1.schema.json#/$defs/text"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "preconditions": {
+      "type": "array",
+      "items": {
+        "$ref": "defs.v1.schema.json#/$defs/text"
+      }
+    },
+    "mandatory_constraints": {
+      "type": "array",
+      "items": {
+        "$ref": "defs.v1.schema.json#/$defs/constraint"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "prohibitions": {
+      "type": "array",
+      "items": {
+        "$ref": "defs.v1.schema.json#/$defs/text"
+      }
+    },
+    "required_postconditions": {
+      "type": "array",
+      "items": {
+        "$ref": "defs.v1.schema.json#/$defs/text"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "fail_closed_conditions": {
+      "type": "array",
+      "items": {
+        "$ref": "defs.v1.schema.json#/$defs/text"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "schema_version",
+    "profile",
+    "kind",
+    "authority_class",
+    "semantic_id",
+    "state",
+    "governed_action_classes",
+    "preconditions",
+    "mandatory_constraints",
+    "prohibitions",
+    "required_postconditions",
+    "fail_closed_conditions"
+  ],
+  "additionalProperties": false
+}
