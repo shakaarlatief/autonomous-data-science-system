@@ -1,0 +1,345 @@
+{
+  "schema_version": 1,
+  "fixture_id": "PKA-C01-Q10-FINAL-V01",
+  "candidate_id": "PKA-CANDIDATE-01",
+  "freeze_base_commit": "df983219300526d49fa9897c6752e95a3f347642",
+  "purpose": "Final multidimensional Candidate 01 qualification over the complete frozen Requirements V0.2 boundary after every Q1-Q9 item has real evidence.",
+  "protocol": {
+    "oracle_blind_implementation": true,
+    "no_aggregate_winner_score": true,
+    "current_authority_unchanged": true,
+    "target_selection_not_automatic": true,
+    "authority_switch_forbidden_during_q10": true,
+    "all_67_items_must_receive_explicit_final_disposition": true
+  },
+  "sources": [
+    {
+      "source_key": "requirements",
+      "path": "docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md",
+      "source_commit": "df983219300526d49fa9897c6752e95a3f347642",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "bytes": 29382,
+      "sha256": "e3337d23bcee32e26ab0e9ada92bbd374ad9c6092626a748986b83901c23eb38"
+    },
+    {
+      "source_key": "candidate",
+      "path": "docs/research/144_whole_architecture_candidate_repository_native_semantic_sources.md",
+      "source_commit": "df983219300526d49fa9897c6752e95a3f347642",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "bytes": 63426,
+      "sha256": "ad1a1117d45d5cad87b0ef4f8e7782fe7c12aacaef59c9840a63e09034e1b0c7"
+    },
+    {
+      "source_key": "matrix",
+      "path": "docs/research/project_knowledge_candidate_01/QUALIFICATION_MATRIX_V01.json",
+      "source_commit": "df983219300526d49fa9897c6752e95a3f347642",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "bytes": 47403,
+      "sha256": "9c2dc2eedd8f5b0a390b12d136556cafa5872d0191097d7cfe395161605b3636"
+    },
+    {
+      "source_key": "shadow_v01",
+      "path": "docs/research/project_knowledge_candidate_01_shadow_v01/RESULTS_V01.json",
+      "source_commit": "df983219300526d49fa9897c6752e95a3f347642",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "bytes": 5475,
+      "sha256": "87ad27125fff436606ff9b0730348ede113832c93456c69c3c3736b779c9b1ba"
+    },
+    {
+      "source_key": "shadow_v02",
+      "path": "docs/research/project_knowledge_candidate_01_shadow_v02/RESULTS_V02.json",
+      "source_commit": "df983219300526d49fa9897c6752e95a3f347642",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "bytes": 7699,
+      "sha256": "cbf6b15f86b5cc977ac1bd4d3c48d253cc96fc4a4d9a6a49b351a768dd80edd0"
+    },
+    {
+      "source_key": "real_shadow",
+      "path": "docs/research/project_knowledge_candidate_01_real_shadow_v01/RESULTS_V01.json",
+      "source_commit": "df983219300526d49fa9897c6752e95a3f347642",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "bytes": 5732,
+      "sha256": "f80b199e36d439109a409773bb52991080944f27e3a6f12acd8857d1ee544e80"
+    },
+    {
+      "source_key": "zero_seed",
+      "path": "docs/research/project_knowledge_candidate_01_zero_seed_routing_v01/RESULTS_V01.json",
+      "source_commit": "df983219300526d49fa9897c6752e95a3f347642",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "bytes": 2669,
+      "sha256": "f6d133a05d427783de25d3b50fe3adfe03710204779b50f6941ff5e648aea9f6"
+    },
+    {
+      "source_key": "decomposition",
+      "path": "docs/research/project_knowledge_candidate_01_current_state_decomposition_v01/CURRENT_STATE_DECOMPOSITION_V01.json",
+      "source_commit": "df983219300526d49fa9897c6752e95a3f347642",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "bytes": 18827,
+      "sha256": "017e8469121a98f0730c13d310f043e18dbaff42ff25b4965994bf2c24fef38d"
+    },
+    {
+      "source_key": "current_core",
+      "path": "docs/research/project_knowledge_candidate_01_current_state_core_v01/RESULTS_V01.json",
+      "source_commit": "df983219300526d49fa9897c6752e95a3f347642",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "bytes": 6559,
+      "sha256": "4f24cc836b87d648dda293f9729769fdd6a8a92ec97453590174604045675be9"
+    },
+    {
+      "source_key": "q3",
+      "path": "docs/research/project_knowledge_candidate_01_q3_real_v01/RESULTS_V01.json",
+      "source_commit": "df983219300526d49fa9897c6752e95a3f347642",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "bytes": 3480,
+      "sha256": "77e3ac0356c5f684d8b1afd773dda78d00612584eb0d51e6dc9dac65f58350c9"
+    },
+    {
+      "source_key": "q7",
+      "path": "docs/research/project_knowledge_candidate_01_q7_real_v01/RESULTS_V01.json",
+      "source_commit": "df983219300526d49fa9897c6752e95a3f347642",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "bytes": 2830,
+      "sha256": "e3a34ed052c0429eeb3a9e7b62a8e85bac3b2f9eb884c1a43eff63835175d5cf"
+    },
+    {
+      "source_key": "q9",
+      "path": "docs/research/project_knowledge_candidate_01_q9_migration_v01/RESULTS_V01.json",
+      "source_commit": "df983219300526d49fa9897c6752e95a3f347642",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "bytes": 4861,
+      "sha256": "dc007c7bb5b2f0c9363672673c541b02785b9dff27d220e7b112038a6c5d241a"
+    },
+    {
+      "source_key": "q125",
+      "path": "docs/research/project_knowledge_candidate_01_q1_q2_q5_integrated_v01/FINAL_INTEGRATED_RESULT_V01.json",
+      "source_commit": "df983219300526d49fa9897c6752e95a3f347642",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "bytes": 4090,
+      "sha256": "37a24f3faa4cc5242778e1369664b51f1ca285726111fb284818d79a6a7209f0"
+    },
+    {
+      "source_key": "q4",
+      "path": "docs/research/project_knowledge_candidate_01_q4_real_v01/RESULTS_V01.json",
+      "source_commit": "df983219300526d49fa9897c6752e95a3f347642",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "bytes": 31933,
+      "sha256": "85e9bf340c62ee9eeea860e53f4b40d3f753a5e0c83bb6c115678aa95532ac44"
+    },
+    {
+      "source_key": "q4_eval",
+      "path": "docs/research/project_knowledge_candidate_01_q4_real_v01/EVALUATION_V01.json",
+      "source_commit": "df983219300526d49fa9897c6752e95a3f347642",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "bytes": 1515,
+      "sha256": "f44117386274ff4f2154b5d2b251a625e1d4a8cf8fb7408e59b13511f38aa7cd"
+    },
+    {
+      "source_key": "cross_provider_eval",
+      "path": "docs/research/project_knowledge_candidate_01_q1_q2_cross_provider_v01/EVALUATION_V01.json",
+      "source_commit": "df983219300526d49fa9897c6752e95a3f347642",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "bytes": 1768,
+      "sha256": "18a8e0b4e25ebbcd68e688e533920e5ca7749a5bae80f2db6620bc3d4ed3eb66"
+    },
+    {
+      "source_key": "cross_provider_fixture",
+      "path": "docs/research/project_knowledge_candidate_01_q1_q2_cross_provider_v01/Q1_Q2_CROSS_PROVIDER_FIXTURE_V01.json",
+      "source_commit": "df983219300526d49fa9897c6752e95a3f347642",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "bytes": 4217,
+      "sha256": "ac08b3437e5776dff536aae3566ebd709cfc98a71b0143d270609fc4280d0817"
+    }
+  ],
+  "budget_contract": {
+    "B01_BROAD_CURRENT_CORE": {
+      "metric_source": "current_core",
+      "max_core_bytes": 2048,
+      "required_must_preserve_recoverability": "23/23"
+    },
+    "B02_NARROW_CONSEQUENTIAL_TASK": {
+      "metric_source": "q125",
+      "max_evidence_reads": 10,
+      "max_evidence_bytes": 40960,
+      "max_legacy_bootstrap_reads": 0
+    },
+    "B03_CROSS_PROVIDER_AUTHORITY_TASK": {
+      "metric_source": "cross_provider_fixture",
+      "max_packet_materialization_bytes": 20480,
+      "max_packet_count": 1,
+      "non_openai_provider_required": true
+    },
+    "B04_REAL_WORKSTREAM_STRESS": {
+      "metric_source": "q4",
+      "max_declared_source_reads": 12,
+      "max_recovery_replays": 0,
+      "live_target_mutation_forbidden": true
+    }
+  },
+  "dimension_contract": {
+    "dimensions": [
+      "project_current_state_orientation",
+      "route_parent_objective",
+      "governing_source_discovery_resolution",
+      "risk_open_obligation_activation",
+      "supersession_conflict_handling",
+      "action_task_fidelity",
+      "uncertainty_visibility",
+      "important_omission",
+      "context_read_tool_cost",
+      "active_surface_maintenance_burden"
+    ],
+    "scenarios": [
+      {
+        "scenario_id": "S01_BROAD_CURRENT_ORIENTATION",
+        "evidence_keys": [
+          "current_core",
+          "decomposition",
+          "zero_seed"
+        ],
+        "relevant_dimensions": [
+          "project_current_state_orientation",
+          "route_parent_objective",
+          "important_omission",
+          "context_read_tool_cost",
+          "active_surface_maintenance_burden"
+        ]
+      },
+      {
+        "scenario_id": "S02_CONSEQUENTIAL_NARROW_TASK",
+        "evidence_keys": [
+          "q125"
+        ],
+        "relevant_dimensions": [
+          "project_current_state_orientation",
+          "governing_source_discovery_resolution",
+          "risk_open_obligation_activation",
+          "action_task_fidelity",
+          "uncertainty_visibility",
+          "important_omission",
+          "context_read_tool_cost"
+        ]
+      },
+      {
+        "scenario_id": "S03_CROSS_PROVIDER_AUTHORITY_HARD_CASE",
+        "evidence_keys": [
+          "cross_provider_eval"
+        ],
+        "relevant_dimensions": [
+          "governing_source_discovery_resolution",
+          "supersession_conflict_handling",
+          "uncertainty_visibility",
+          "action_task_fidelity",
+          "important_omission",
+          "context_read_tool_cost"
+        ]
+      },
+      {
+        "scenario_id": "S04_IDENTITY_RELATIONSHIP_TEMPORAL",
+        "evidence_keys": [
+          "q3"
+        ],
+        "relevant_dimensions": [
+          "supersession_conflict_handling",
+          "uncertainty_visibility",
+          "important_omission"
+        ]
+      },
+      {
+        "scenario_id": "S05_WORKSTREAM_CONCURRENCY_INTERRUPTION",
+        "evidence_keys": [
+          "q4",
+          "q4_eval"
+        ],
+        "relevant_dimensions": [
+          "route_parent_objective",
+          "uncertainty_visibility",
+          "action_task_fidelity",
+          "active_surface_maintenance_burden"
+        ]
+      },
+      {
+        "scenario_id": "S06_PUBLIC_PRIVATE_DEGRADED_MODE",
+        "evidence_keys": [
+          "q7"
+        ],
+        "relevant_dimensions": [
+          "governing_source_discovery_resolution",
+          "risk_open_obligation_activation",
+          "uncertainty_visibility",
+          "important_omission"
+        ]
+      },
+      {
+        "scenario_id": "S07_MIGRATION_ROLLBACK_SELF_HOSTING",
+        "evidence_keys": [
+          "q9"
+        ],
+        "relevant_dimensions": [
+          "route_parent_objective",
+          "governing_source_discovery_resolution",
+          "uncertainty_visibility",
+          "important_omission",
+          "active_surface_maintenance_burden"
+        ]
+      },
+      {
+        "scenario_id": "S08_CAPTURE_PROMOTION_FIDELITY",
+        "evidence_keys": [
+          "q125",
+          "shadow_v02"
+        ],
+        "relevant_dimensions": [
+          "governing_source_discovery_resolution",
+          "action_task_fidelity",
+          "uncertainty_visibility",
+          "important_omission"
+        ]
+      },
+      {
+        "scenario_id": "S09_SCALE_MAINTENANCE_REBUILD",
+        "evidence_keys": [
+          "shadow_v01",
+          "zero_seed",
+          "decomposition",
+          "current_core"
+        ],
+        "relevant_dimensions": [
+          "project_current_state_orientation",
+          "context_read_tool_cost",
+          "active_surface_maintenance_burden",
+          "important_omission"
+        ]
+      }
+    ],
+    "status_values": [
+      "PASS",
+      "FAIL",
+      "NOT_APPLICABLE_WITH_REASON"
+    ],
+    "aggregate_score_forbidden": true,
+    "rule": "Every dimension relevant to a scenario must receive an explicit case-level disposition; any FAIL blocks final qualification."
+  },
+  "structural_gate": {
+    "repository_integrity_required": true,
+    "all_frozen_source_hashes_required": true,
+    "qualification_matrix_non_q10_real_items_required": 64,
+    "unit_suite_required": true
+  },
+  "behavioral_gate": {
+    "scenario_count": 9,
+    "all_scenarios_required": true,
+    "all_relevant_dimensions_required": true,
+    "no_material_unresolved_blocker": true
+  },
+  "final_item_rule": {
+    "non_q10_items": "PASS only if matrix shows real evidence and no blocking final limitation",
+    "KA-R30": "PASS only if every frozen budget passes",
+    "KA-R40": "PASS only if structural and behavioral gates both pass",
+    "KA-R41": "PASS only if every scenario is evaluated across explicit relevant dimensions without an aggregate score"
+  },
+  "post_q10_rule": {
+    "if_all_67_pass": "target selection becomes allowed but does not occur automatically",
+    "owner_acceptance_required_for_selection": true,
+    "explicit_authority_switch_separate_after_selection": true
+  }
+}

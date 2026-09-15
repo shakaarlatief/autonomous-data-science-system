@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "oracle_id": "PKA-C01-Q10-FINAL-V01-ORACLE",
+  "fixture_id": "PKA-C01-Q10-FINAL-V01",
+  "implementation_must_not_read_this_oracle": true,
+  "expectations": {
+    "source_hashes_match": true,
+    "budget_passes": {
+      "B01_BROAD_CURRENT_CORE": true,
+      "B02_NARROW_CONSEQUENTIAL_TASK": true,
+      "B03_CROSS_PROVIDER_AUTHORITY_TASK": true,
+      "B04_REAL_WORKSTREAM_STRESS": true
+    },
+    "budget_pass_count": 4,
+    "dimension_count": 10,
+    "scenario_count": 9,
+    "all_relevant_dimensions_pass": true,
+    "structural_gate_pass": true,
+    "behavioral_gate_pass": true,
+    "non_q10_final_passes": 64,
+    "q10_item_passes": {
+      "KA-R30": true,
+      "KA-R40": true,
+      "KA-R41": true
+    },
+    "final_qualified_passes": 67,
+    "final_qualified_failures": 0,
+    "target_selection_allowed": true,
+    "target_selected": false,
+    "authority_switch_allowed": false,
+    "h3_reopen": false
+  }
+}

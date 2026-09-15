@@ -1,7 +1,7 @@
 # Research 144: Whole-Architecture Candidate - Repository-Native Semantic Sources with Selective Identity, Derived Views, and Action-Gated Authority
 
 **Date:** 2026-09-14
-**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE / ALL NON-Q10 CLUSTERS REAL-SUPPORTED / Q10 FINAL QUALIFICATION NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE / Q10 FINAL QUALIFICATION FIXTURE FROZEN / ORACLE-BLIND IMPLEMENTATION NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Candidate label:** `PKA-CANDIDATE-01`
 **Scope:** Synthesize one serious successor architecture from the complete Research 124 evidence field after the H1/H2 mechanism probes, real-corpus independent review, MC-0014/MC-0015 corrections, D1-D8 external evidence and owner-provided ICM evaluation. Define enough logical structure, authority semantics, typed source responsibilities, derived-view behavior, activation, lifecycle, validation, scaling and migration behavior to qualify the candidate systematically against Requirements V0.2.
 **Authority:** Candidate architecture research only. Requirements V0.2 remain the frozen acceptance authority. This record does not select the target architecture, migrate current authority, or authorize implementation as the production continuity system.
@@ -1246,3 +1246,7 @@ Research 172 freezes a provider-portability challenge that requires another prov
 Research 173 demonstrates that Candidate 01's scoped replacement, fail-visible ambiguity, retained outcomes and retrieval non-authority survive transfer to a fresh non-OpenAI provider from one bounded derived packet. This closes the final non-Q10 portability/authority-hard-case evidence gap.
 
 The run also reinforces Research 168's revision-basis lesson: external attachment identity must distinguish canonical Git-blob identity from exact materialized attachment bytes. Future portable fixtures record both explicitly.
+
+## 57. Candidate 01 enters final qualification without automatic selection
+
+Research 174 freezes Q10 over the complete evidence field. Candidate 01 must now survive explicit bounded-budget, structural and behavioral, and multidimensional case-level qualification. A 67/67 pass would make selection eligible but would not itself select the architecture or change current authority.

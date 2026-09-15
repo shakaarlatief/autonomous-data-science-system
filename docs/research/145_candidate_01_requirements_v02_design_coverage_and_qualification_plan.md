@@ -1,7 +1,7 @@
 # Research 145: Candidate 01 Requirements V0.2 Design Coverage and Qualification Plan
 
 **Date:** 2026-09-14
-**Status:** 50/50 KA-R + 17/17 KA-I DESIGN-MAPPED / ALL NON-Q10 ITEMS REAL-SUPPORTED / Q10 FINAL QUALIFICATION NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** 50/50 KA-R + 17/17 KA-I DESIGN-MAPPED / Q10 FINAL QUALIFICATION FIXTURE FROZEN / ORACLE-BLIND IMPLEMENTATION NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Candidate:** `PKA-CANDIDATE-01` from Research 144
 **Scope:** Systematically map the whole-architecture candidate against every frozen Requirements V0.2 requirement/invariant, distinguish design coverage from actual qualification evidence, identify selection-blocking proof clusters, and freeze the minimum implementation/behavioral evidence needed before target selection.
 **Authority:** Candidate qualification planning only. Requirements V0.2 remain the acceptance authority. A mapped design mechanism is not a qualified pass.
@@ -538,3 +538,7 @@ Research 172 freezes one controlled non-OpenAI provider challenge covering the t
 Research 173 adds real cross-provider support for KA-R36/R14/R24. Candidate 01 now has real evidence for 64/67 frozen items, covering every Q1-Q9 item. KA-R30/R40/R41 remain intentionally unqualified until the Q10 final governing program executes.
 
 No final item pass is granted automatically from this descriptive evidence coverage.
+
+## 35. Q10 final qualification fixture freeze
+
+Research 174 freezes the final qualification contract for KA-R30/R40/R41 and all 67 final item dispositions. Four budgets, ten dimensions and nine scenarios are fixed before implementation. Oracle-blind execution is next; final qualification and owner selection remain distinct gates.
