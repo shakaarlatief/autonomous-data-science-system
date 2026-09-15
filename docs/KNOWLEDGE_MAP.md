@@ -358,6 +358,7 @@ docs/research/169_q4_real_workstream_concurrency_interruption_fixture_freeze.md
 docs/research/170_q4_real_workstream_concurrency_interruption_result.md
 docs/research/171_whole_architecture_evidence_reconciliation_v03_final_pre_q10_gap_selection.md
 docs/research/172_q1_q2_cross_provider_authority_hard_case_fixture_freeze.md
+docs/research/173_q1_q2_cross_provider_authority_hard_case_result.md
 docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md
 docs/checkpoints/449_scalable_knowledge_architecture_redesign_opened.md
 docs/checkpoints/450_knowledge_architecture_baseline_inventory_complete_requirements_next.md
@@ -428,6 +429,7 @@ docs/checkpoints/514_q4_real_workstream_stress_fixture_frozen.md
 docs/checkpoints/515_q4_real_workstream_stress_passed_evidence_reconciliation_next.md
 docs/checkpoints/516_evidence_reconciliation_v03_cross_provider_q1_q2_challenge_next.md
 docs/checkpoints/517_cross_provider_q1_q2_fixture_frozen_external_run_next.md
+docs/checkpoints/518_cross_provider_q1_q2_passed_q10_final_qualification_next.md
 docs/research/PROJECT_KNOWLEDGE_FAILURE_CORPUS.md
 docs/research/project_knowledge_baselines/PROJECT_KNOWLEDGE_BLIND_BASELINE_PROTOCOL.md
 docs/local_execution/validation/206_semantic_git_managed_python_integrity_and_publication_restored.md
@@ -963,7 +965,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-517 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-518 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

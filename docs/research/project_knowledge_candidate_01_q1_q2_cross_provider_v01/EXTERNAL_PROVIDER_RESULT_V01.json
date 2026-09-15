@@ -1,0 +1,38 @@
+{
+  "provider": "Anthropic",
+  "model": "Claude Opus 5",
+  "fresh_session": true,
+  "prior_ads_context": false,
+  "packet_id": "PKA-C01-Q1-Q2-CROSS-PROVIDER-V01",
+  "task_a": {
+    "resolution_status": "RESOLVED",
+    "governing_ids": ["D-028"],
+    "retrieval_used_as_authority": false,
+    "reason": "The D-011 shadow declaration contains an explicit relation {mode: REPLACE, target: D-028, scope: v1_persistence_retrieval_architecture}, and D-011's canonical status line states it is superseded for the V1 persistence/retrieval architecture by D-028. Under rule 2, REPLACE means the successor fully replaces the predecessor for the declared scope, so D-028 (Accepted for V1, SQLite-centered local-first architecture) governs this scope. D-011's epistemic_state is PARTIALLY_SUPERSEDED with residual applicability only to implementation subsystems not yet selected, which excludes this requested scope. Retrieval ranked D-011 first at 0.96; per rules 1 and 5 that ranking was treated as a non-authoritative access hint and did not determine the outcome."
+  },
+  "task_b": {
+    "resolution_status": "UNRESOLVED_INSUFFICIENT_SCOPE",
+    "governing_ids": [],
+    "retrieval_used_as_authority": false,
+    "missing_scope_or_conflict": "The question names no subsystem or scope. D-011 is PARTIALLY_SUPERSEDED scope-by-scope: REPLACE relations bind D-028 (v1_persistence_retrieval_architecture), D-029 (persistence_tooling), D-030 (python_project_dependency_tooling), D-031 (reusable_knowledge_interchange), D-032 (initial_reasoning_runtime), and D-033 (source_universe_substrate), while D-011 itself retains residual applicability to implementation_subsystems_not_yet_selected. Selecting one governing decision therefore requires the caller to name the implementation subsystem or scope in question. No scope may be invented, and per rule 4 the result remains visibly unresolved rather than defaulting to the top-ranked candidate (D-011, 0.95). A further limit: the packet supplies canonical excerpts only for D-011, D-015, D-028, and D-033, so even a named scope of D-029, D-030, D-031, or D-032 could not be fully verified against source-local lifecycle semantics from this packet alone."
+  },
+  "task_c": {
+    "resolution_status": "RESOLVED",
+    "governing_architecture_ids": ["D-033"],
+    "retained_outcomes": ["public_git_source_binary_exclusion"],
+    "public_git_source_binaries_allowed_merely_because_ads_consumes_them": false,
+    "retrieval_used_as_authority": false,
+    "reason": "The D-015 shadow declaration contains {mode: REPLACE, target: D-033, scope: external_source_architecture_uncertainty}, so D-033 (Accepted for V1, ADS-owned private Source Universe substrate) is the current governing architecture decision for external learning-source architecture. Under rule 3, D-015 remains PARTIALLY_SUPERSEDED and retains the explicit outcome public_git_source_binary_exclusion outside the replaced scope; D-015's canonical status line confirms the durable public-Git exclusion outcome is retained. The answer to the binary question is negative and is independently stated by both sources: D-033 requires that source binaries, private observed paths, private registry snapshots, backup payloads, and material with unknown redistribution rights must not be placed in the public repository merely because ADS consumes them, and its rationale explicitly preserves D-015's conservative outcome. Retrieval ranked D-015 first at 0.97; that ranking was not used as authority, and the split between current architecture (D-033) and retained outcome (D-015) was derived from explicit relation and lifecycle semantics."
+  },
+  "authority_receipt": {
+    "source_base_commit": "a685ef48c4c4853babff9295f03f198c7b3dcd1d",
+    "source_ids_considered": ["D-011", "D-015", "D-028", "D-033", "D-029", "D-030", "D-031", "D-032"],
+    "retrieval_is_non_authoritative": true,
+    "unresolved_items": [
+      "TASK_B: no subsystem/scope supplied; governing implementation architecture decision cannot be selected without a named scope",
+      "Canonical excerpts for D-029, D-030, D-031, and D-032 are not included in this packet; their source-local lifecycle and relation semantics were not verifiable here and are known only as REPLACE targets declared by the D-011 shadow",
+      "Scope boundary of D-011 residual applicability (implementation_subsystems_not_yet_selected) is not enumerated in this packet, so the set of subsystems still governed by D-011 cannot be listed",
+      "Byte-level verification of the declared sha256 bindings against the exact repository sources was not performed; only the packet's derived view was available"
+    ]
+  }
+}
