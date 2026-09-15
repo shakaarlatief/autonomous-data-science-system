@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-15
-**Status:** MC-0017 ACTIVE / CLAUDE INDEPENDENT W0 IMPLEMENTATION DESIGN NEXT / MC-0010 DEFERRED
+**Status:** MC-0017 ACTIVE / CLAUDE COMPARATIVE W0 IMPLEMENTATION CRITIQUE NEXT / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -31,15 +31,17 @@ coordination branch        v1-source-vault-bootstrap-resume
 independent base           1f09fc812e8d7b1f31771a8b545864b76ea61db0
 selected architecture      PKA-CANDIDATE-01
 governing contract         Specification 028
-ChatGPT design             frozen in Research 178, withheld from Claude
-Claude next                Message 001 independent W0 implementation design
+ChatGPT design             frozen in Research 178
+Claude independent         Message 001 frozen @ 7bb1909412a14e806215e4e166a09a9f199407e6
+ChatGPT comparative        Message 002 frozen on current branch
+Claude next                Message 003 comparative critique
 Claude session             claude-03
 conversation               03 - Project Knowledge Architecture Foundations and Design Method
-W0 implementation          held until first comparative reconciliation
-status                     OPEN
+W0 implementation          held until Message 003 + final reconciliation
+status                     ACTIVE / COMPARATIVE
 ```
 
-Claude may use the current branch only for MC-0017 routing surfaces. Substantive design reads are bound to the exact independent base. Research 178, Checkpoint 524+ bodies and descendant current-state synthesis are excluded until Claude Message 001 is frozen. Reusing the existing `claude-03` architecture-design conversation is intentional and does not weaken the independence claim, because the hidden candidate is ChatGPT's new W0 implementation design rather than Candidate 01's already shared design history.
+The independence-sensitive phase is complete. Claude Message 001 remains frozen as the independent artifact. Comparative Phase 2 now intentionally exposes Research 178 and MC-0017 Message 002; Claude should respond only to the remaining implementation-design disagreements where another pass has clear marginal value. Reusing the existing `claude-03` architecture-design conversation remains intentional.
 
 Durable contract:
 

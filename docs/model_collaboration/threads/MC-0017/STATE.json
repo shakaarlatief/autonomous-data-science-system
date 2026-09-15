@@ -2,8 +2,8 @@
   "schema_version": 1,
   "thread_id": "MC-0017",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
-  "lifecycle_state": "OPEN",
-  "phase": "CLAUDE_INDEPENDENT_W0_IMPLEMENTATION_DESIGN",
+  "lifecycle_state": "ACTIVE",
+  "phase": "CLAUDE_COMPARATIVE_W0_IMPLEMENTATION_CRITIQUE",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "1f09fc812e8d7b1f31771a8b545864b76ea61db0",
@@ -53,22 +53,22 @@
   ],
   "next_expected_actor": "claude",
   "independence": {
-    "status": "BLIND_TO_CANDIDATE",
+    "status": "COMPARATIVE_ONLY",
     "review_base_ref": "1f09fc812e8d7b1f31771a8b545864b76ea61db0",
     "known_exposures": [
-      "Claude may know the selected Candidate 01 logical architecture and earlier architecture reasoning from prior repository-preserved collaboration.",
-      "Claude may read Candidate 01, Requirements V0.2, Research 177 and Specification 028 at the independent base because those are fixed inputs to the W0 implementation-design problem.",
-      "ChatGPT has independently created a descendant W0 implementation design in Research 178, but that design is intentionally withheld until Claude Message 001 is frozen.",
-      "Current-branch access before Message 001 is limited to MC-0017 routing surfaces; substantive design evidence is bound to the exact independent base."
+      "Claude's independent Message 001 was frozen before exposure to ChatGPT Research 178.",
+      "Comparative Phase 2 now intentionally exposes Research 178 and MC-0017 Message 002.",
+      "Claude may use the selected Candidate 01 logical architecture, Requirements V0.2, Research 177 and Specification 028 as shared fixed design inputs.",
+      "Claude retains its own earlier MC-0011 through MC-0016 architecture-design context."
     ],
-    "notes": "BLIND_TO_CANDIDATE refers specifically to ChatGPT's W0 production implementation design, not blindness to the already selected logical architecture or frozen implementation contract. Reusing claude-03 is intentional because it preserves Claude's own prior architecture-design context from MC-0011 through MC-0016; that prior context is not contamination for this independence claim so long as Research 178 and descendant ChatGPT W0 synthesis remain withheld until Message 001 is frozen."
+    "notes": "The independence-sensitive phase is complete. Claude Message 001 remains the frozen independent artifact. Current work is intentionally comparative and should critique only the remaining implementation-design differences before W0 coding begins."
   },
   "last_transition": {
-    "transition_id": "mc0017-open-independent-w0-codesign",
-    "from_state": null,
-    "to_state": "OPEN",
+    "transition_id": "mc0017-independent-design-frozen-comparative-phase-open",
+    "from_state": "OPEN",
+    "to_state": "ACTIVE",
     "actor": "chatgpt",
-    "reason": "The owner authorized continued best-effort architecture design. ChatGPT froze an independent W0 implementation design and opened a candidate-design-independent Claude pass before Codex implementation.",
-    "repository_head": "1f09fc812e8d7b1f31771a8b545864b76ea61db0"
+    "reason": "Claude Message 001 was frozen independently, ChatGPT compared it with Research 178 in Message 002, and MC-0017 now enters a bounded comparative critique before W0 implementation.",
+    "repository_head": "7bb1909412a14e806215e4e166a09a9f199407e6"
   }
 }

@@ -1,7 +1,7 @@
 # MC-0017 Thread: Independent W0 Production Implementation Architecture Co-Design
 
 **Thread:** MC-0017
-**Status:** OPEN / CLAUDE INDEPENDENT W0 DESIGN NEXT
+**Status:** ACTIVE / CLAUDE COMPARATIVE W0 CRITIQUE NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
 **Independent substantive base:** `1f09fc812e8d7b1f31771a8b545864b76ea61db0`
@@ -63,12 +63,16 @@ W0_IMPLEMENTATION=NOT_STARTED
 ## Current phase
 
 ```text
-CLAUDE_INDEPENDENT_W0_IMPLEMENTATION_DESIGN
+CLAUDE_COMPARATIVE_W0_IMPLEMENTATION_CRITIQUE
 ```
 
+Claude Message 001 is frozen independently. ChatGPT Message 002 intentionally exposes Research 178 and the comparative reconciliation. Claude should now respond only to the remaining disagreements/questions where another pass has clear design value.
+
 ```text
-MC0017=OPEN
+MC0017=ACTIVE
 MODE=INDEPENDENT_THEN_COMPARATIVE
 INDEPENDENT_BASE=1f09fc812e8d7b1f31771a8b545864b76ea61db0
-MESSAGE_001=CLAUDE_NEXT
+MESSAGE_001=FROZEN_INDEPENDENT
+MESSAGE_002=CHATGPT_COMPARATIVE_FROZEN
+MESSAGE_003=CLAUDE_NEXT
 ```
