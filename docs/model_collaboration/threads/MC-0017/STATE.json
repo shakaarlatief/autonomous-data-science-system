@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "thread_id": "MC-0017",
+  "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
+  "lifecycle_state": "OPEN",
+  "phase": "CLAUDE_INDEPENDENT_W0_IMPLEMENTATION_DESIGN",
+  "target": {
+    "branch": "v1-source-vault-bootstrap-resume",
+    "base_ref": "1f09fc812e8d7b1f31771a8b545864b76ea61db0",
+    "description": "Independent Claude W0 production implementation-architecture design under the owner-selected Candidate 01 and frozen Specification 028, before exposure to ChatGPT Research 178.",
+    "write_paths": []
+  },
+  "task_owner": "chatgpt",
+  "target_write_owner": null,
+  "participants": [
+    {
+      "collaborator_id": "chatgpt",
+      "interaction_environment": "ChatGPT",
+      "interaction_session": "chatgpt-24",
+      "roles": [
+        "TASK_OWNER",
+        "RESEARCHER",
+        "CRITIC"
+      ]
+    },
+    {
+      "collaborator_id": "claude",
+      "interaction_environment": "Claude",
+      "interaction_session": "claude-04",
+      "roles": [
+        "INDEPENDENT_REVIEWER",
+        "COUNTER_DESIGNER",
+        "RESEARCHER",
+        "CRITIC"
+      ]
+    },
+    {
+      "collaborator_id": "human",
+      "interaction_environment": "Human",
+      "interaction_session": "project-owner",
+      "roles": [
+        "HUMAN_DECIDER"
+      ]
+    }
+  ],
+  "allowed_secondary_write_surfaces": [
+    {
+      "collaborator_id": "claude",
+      "paths": [
+        "docs/model_collaboration/threads/MC-0017/messages/**"
+      ]
+    }
+  ],
+  "next_expected_actor": "claude",
+  "independence": {
+    "status": "BLIND_TO_CANDIDATE",
+    "review_base_ref": "1f09fc812e8d7b1f31771a8b545864b76ea61db0",
+    "known_exposures": [
+      "Claude may know the selected Candidate 01 logical architecture and earlier architecture reasoning from prior repository-preserved collaboration.",
+      "Claude may read Candidate 01, Requirements V0.2, Research 177 and Specification 028 at the independent base because those are fixed inputs to the W0 implementation-design problem.",
+      "ChatGPT has independently created a descendant W0 implementation design in Research 178, but that design is intentionally withheld until Claude Message 001 is frozen.",
+      "Current-branch access before Message 001 is limited to MC-0017 routing surfaces; substantive design evidence is bound to the exact independent base."
+    ],
+    "notes": "BLIND_TO_CANDIDATE refers specifically to ChatGPT's W0 production implementation design, not blindness to the already selected logical architecture or frozen implementation contract."
+  },
+  "last_transition": {
+    "transition_id": "mc0017-open-independent-w0-codesign",
+    "from_state": null,
+    "to_state": "OPEN",
+    "actor": "chatgpt",
+    "reason": "The owner authorized continued best-effort architecture design. ChatGPT froze an independent W0 implementation design and opened a candidate-design-independent Claude pass before Codex implementation.",
+    "repository_head": "1f09fc812e8d7b1f31771a8b545864b76ea61db0"
+  }
+}

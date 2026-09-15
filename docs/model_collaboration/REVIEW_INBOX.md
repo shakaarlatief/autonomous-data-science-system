@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
-**Date:** 2026-09-14
-**Status:** NO ACTIVE CLAUDE OBLIGATION / MC-0016 RESOLVED / SHADOW PROTOTYPE NEXT / MC-0010 DEFERRED
+**Date:** 2026-09-15
+**Status:** MC-0017 ACTIVE / CLAUDE INDEPENDENT W0 IMPLEMENTATION DESIGN NEXT / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -23,7 +23,31 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Current active collaboration obligation
 
-There is no active Claude obligation. MC-0016 is resolved. Research 124 now proceeds to the falsification-first shadow prototype of Candidate 01 under ChatGPT task ownership. A new cross-model thread should be opened only if implementation evidence creates a real architecture disagreement or a later independent/adversarial evidence pass has clear marginal value.
+### MC-0017: independent W0 production implementation architecture co-design
+
+```text
+mode                       INDEPENDENT_THEN_COMPARATIVE
+coordination branch        v1-source-vault-bootstrap-resume
+independent base           1f09fc812e8d7b1f31771a8b545864b76ea61db0
+selected architecture      PKA-CANDIDATE-01
+governing contract         Specification 028
+ChatGPT design             frozen in Research 178, withheld from Claude
+Claude next                Message 001 independent W0 implementation design
+Claude session             claude-04
+intended conversation      04 - Project Knowledge W0 Implementation Co-Design
+W0 implementation          held until first comparative reconciliation
+status                     OPEN
+```
+
+Claude may use the current branch only for MC-0017 routing surfaces. Substantive design reads are bound to the exact independent base. Research 178, Checkpoint 524+ bodies and descendant current-state synthesis are excluded until Claude Message 001 is frozen.
+
+Durable contract:
+
+```text
+docs/model_collaboration/threads/MC-0017/BRIEF.md
+docs/model_collaboration/threads/MC-0017/THREAD.md
+docs/model_collaboration/threads/MC-0017/STATE.json
+```
 
 ## Most recently completed obligation
 
