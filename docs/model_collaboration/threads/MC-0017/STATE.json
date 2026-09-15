@@ -26,7 +26,7 @@
     {
       "collaborator_id": "claude",
       "interaction_environment": "Claude",
-      "interaction_session": "claude-04",
+      "interaction_session": "claude-03",
       "roles": [
         "INDEPENDENT_REVIEWER",
         "COUNTER_DESIGNER",
@@ -61,7 +61,7 @@
       "ChatGPT has independently created a descendant W0 implementation design in Research 178, but that design is intentionally withheld until Claude Message 001 is frozen.",
       "Current-branch access before Message 001 is limited to MC-0017 routing surfaces; substantive design evidence is bound to the exact independent base."
     ],
-    "notes": "BLIND_TO_CANDIDATE refers specifically to ChatGPT's W0 production implementation design, not blindness to the already selected logical architecture or frozen implementation contract."
+    "notes": "BLIND_TO_CANDIDATE refers specifically to ChatGPT's W0 production implementation design, not blindness to the already selected logical architecture or frozen implementation contract. Reusing claude-03 is intentional because it preserves Claude's own prior architecture-design context from MC-0011 through MC-0016; that prior context is not contamination for this independence claim so long as Research 178 and descendant ChatGPT W0 synthesis remain withheld until Message 001 is frozen."
   },
   "last_transition": {
     "transition_id": "mc0017-open-independent-w0-codesign",

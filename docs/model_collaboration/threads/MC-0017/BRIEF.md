@@ -5,9 +5,13 @@
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
 **Independent substantive base:** `1f09fc812e8d7b1f31771a8b545864b76ea61db0`
-**Intended Claude interaction:** fresh persistent Claude session `claude-04`
-**Intended conversation title:** `04 - Project Knowledge W0 Implementation Co-Design`
+**Claude interaction:** existing persistent architecture-design session `claude-03`
+**Claude conversation title:** `03 - Project Knowledge Architecture Foundations and Design Method`
+
+The session reuse is deliberate. This conversation has already carried the architecture-design lineage for MC-0011 through MC-0016 and has not hit its practical context limit. Preserving that Claude-local continuity is preferable here because the independent variable is exposure to ChatGPT's new W0 implementation design, not whether Claude remembers its own earlier reasoning.
+
 **Authority:** Collaboration evidence only. D-035 selects Candidate 01 and Specification 028 is the frozen implementation/migration contract. This thread cannot switch operational authority or begin W1 migration.
+
 **Purpose:** Obtain Claude's independent production W0 software/repository architecture before exposing ChatGPT's separately frozen W0 implementation design, then compare and reconcile the two before Codex implementation begins.
 
 ## 1. Independence rationale
@@ -17,6 +21,8 @@ Candidate 01 itself was already shaped through extensive ChatGPT/Claude collabor
 The genuinely new design layer is how the selected and qualified logical architecture should be realized as maintainable production W0 software under Specification 028.
 
 ChatGPT has independently produced a W0 design after the base below. Claude must not see that design until Message 001 is frozen.
+
+Reuse of the existing `claude-03` architecture-design conversation is intentional. Claude's own prior context from MC-0011 through MC-0016 is relevant design continuity, not contamination for this experiment. The independence claim is narrower: Claude must remain blind to ChatGPT's new W0 implementation design in Research 178 and descendant synthesis until Message 001 is frozen.
 
 Substantive base:
 

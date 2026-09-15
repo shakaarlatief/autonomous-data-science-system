@@ -33,13 +33,13 @@ selected architecture      PKA-CANDIDATE-01
 governing contract         Specification 028
 ChatGPT design             frozen in Research 178, withheld from Claude
 Claude next                Message 001 independent W0 implementation design
-Claude session             claude-04
-intended conversation      04 - Project Knowledge W0 Implementation Co-Design
+Claude session             claude-03
+conversation               03 - Project Knowledge Architecture Foundations and Design Method
 W0 implementation          held until first comparative reconciliation
 status                     OPEN
 ```
 
-Claude may use the current branch only for MC-0017 routing surfaces. Substantive design reads are bound to the exact independent base. Research 178, Checkpoint 524+ bodies and descendant current-state synthesis are excluded until Claude Message 001 is frozen.
+Claude may use the current branch only for MC-0017 routing surfaces. Substantive design reads are bound to the exact independent base. Research 178, Checkpoint 524+ bodies and descendant current-state synthesis are excluded until Claude Message 001 is frozen. Reusing the existing `claude-03` architecture-design conversation is intentional and does not weaken the independence claim, because the hidden candidate is ChatGPT's new W0 implementation design rather than Candidate 01's already shared design history.
 
 Durable contract:
 

@@ -17,8 +17,8 @@ independent substantive base   1f09fc812e8d7b1f31771a8b545864b76ea61db0
 selected target                PKA-CANDIDATE-01
 Specification 028              frozen
 ChatGPT W0 design              frozen in Research 178
-Claude W0 design               pending MC-0017 Message 001
-independence mode              blind to ChatGPT W0 design
+Claude W0 design               pending MC-0017 Message 001 in claude-03
+independence mode              blind to ChatGPT W0 design; prior Claude architecture context retained
 Codex W0 implementation        held
 current operational authority  current continuity architecture
 authority switch allowed       false

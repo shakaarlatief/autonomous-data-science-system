@@ -6,8 +6,8 @@
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
 **Independent substantive base:** `1f09fc812e8d7b1f31771a8b545864b76ea61db0`
 **Task owner:** ChatGPT / `chatgpt-24`
-**Claude collaborator:** Claude / new persistent session to be allocated as `claude-04`
-**Intended Claude conversation title:** `04 - Project Knowledge W0 Implementation Co-Design`
+**Claude collaborator:** Claude / existing persistent architecture-design session `claude-03`
+**Claude conversation title:** `03 - Project Knowledge Architecture Foundations and Design Method`
 
 ## Purpose
 
@@ -19,7 +19,7 @@ The logical architecture is already selected and qualified. Specification 028 is
 
 ## Independence structure
 
-ChatGPT has independently frozen its W0 implementation design in Research 178 on a descendant commit. Claude Message 001 must not read Research 178 or descendant synthesis before freezing its own design.
+ChatGPT has independently frozen its W0 implementation design in Research 178 on a descendant commit. Claude Message 001 must not read Research 178 or descendant synthesis before freezing its own design. Reusing `claude-03` is intentional because the preserved prior Claude architecture context is useful continuity; independence here means blindness to ChatGPT's new W0 implementation design, not amnesia about Candidate 01's earlier co-design.
 
 Claude substantive reasoning is bound to exact base:
 
