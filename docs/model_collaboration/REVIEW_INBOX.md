@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-15
-**Status:** MC-0017 ACTIVE / CLAUDE COMPARATIVE W0 IMPLEMENTATION CRITIQUE NEXT / MC-0010 DEFERRED
+**Status:** NO ACTIVE CLAUDE OBLIGATION / MC-0017 RESOLVED / W0 IMPLEMENTATION NEXT / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -23,35 +23,38 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Current active collaboration obligation
 
-### MC-0017: independent W0 production implementation architecture co-design
+There is no active Claude obligation. MC-0017 is resolved. Research 179 freezes the reconciled W0 production implementation architecture and W0 implementation is now the active continuation. Open another model-collaboration thread only if implementation evidence exposes a real architecture disagreement or a later independent/adversarial pass has clear marginal value.
+
+## Most recently completed obligation
+
+### MC-0017: independent-then-comparative W0 production implementation architecture co-design
 
 ```text
 mode                       INDEPENDENT_THEN_COMPARATIVE
-coordination branch        v1-source-vault-bootstrap-resume
 independent base           1f09fc812e8d7b1f31771a8b545864b76ea61db0
-selected architecture      PKA-CANDIDATE-01
-governing contract         Specification 028
-ChatGPT design             frozen in Research 178
-Claude independent         Message 001 frozen @ 7bb1909412a14e806215e4e166a09a9f199407e6
-ChatGPT comparative        Message 002 frozen on current branch
-Claude next                Message 003 comparative critique
-Claude session             claude-03
+Claude independent         Message 001
+ChatGPT comparison         Message 002
+Claude comparative         Message 003 @ b944ea8fe6893ffd06a9aae77cfaca63de9128cd
+ChatGPT final synthesis    Message 004
+final design               Research 179
+Specification 028          unchanged
+logical architecture       not reopened
+H3                         not reopened
+result                     reconciled W0 implementation architecture accepted
+status                     RESOLVED
 conversation               03 - Project Knowledge Architecture Foundations and Design Method
-W0 implementation          held until Message 003 + final reconciliation
-status                     ACTIVE / COMPARATIVE
 ```
 
-The independence-sensitive phase is complete. Claude Message 001 remains frozen as the independent artifact. Comparative Phase 2 now intentionally exposes Research 178 and MC-0017 Message 002; Claude should respond only to the remaining implementation-design disagreements where another pass has clear marginal value. Reusing the existing `claude-03` architecture-design conversation remains intentional.
-
-Durable contract:
+Durable records:
 
 ```text
-docs/model_collaboration/threads/MC-0017/BRIEF.md
-docs/model_collaboration/threads/MC-0017/THREAD.md
-docs/model_collaboration/threads/MC-0017/STATE.json
+docs/model_collaboration/threads/MC-0017/RESOLUTION.md
+docs/model_collaboration/threads/MC-0017/messages/001_claude_independent_w0_implementation_architecture.md
+docs/model_collaboration/threads/MC-0017/messages/002_chatgpt_comparative_w0_implementation_architecture.md
+docs/model_collaboration/threads/MC-0017/messages/003_claude_comparative_w0_implementation_critique.md
+docs/model_collaboration/threads/MC-0017/messages/004_chatgpt_final_w0_implementation_architecture_synthesis.md
+docs/research/179_mc0017_reconciled_w0_implementation_architecture.md
 ```
-
-## Most recently completed obligation
 
 ### MC-0016: adversarial review of whole-architecture Candidate 01
 

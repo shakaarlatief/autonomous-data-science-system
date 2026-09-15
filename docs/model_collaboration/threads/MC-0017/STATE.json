@@ -2,8 +2,8 @@
   "schema_version": 1,
   "thread_id": "MC-0017",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
-  "lifecycle_state": "ACTIVE",
-  "phase": "CLAUDE_COMPARATIVE_W0_IMPLEMENTATION_CRITIQUE",
+  "lifecycle_state": "RESOLVED",
+  "phase": "RESOLVED_W0_IMPLEMENTATION_ARCHITECTURE_RECONCILED",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "1f09fc812e8d7b1f31771a8b545864b76ea61db0",
@@ -51,7 +51,7 @@
       ]
     }
   ],
-  "next_expected_actor": "claude",
+  "next_expected_actor": "human",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "1f09fc812e8d7b1f31771a8b545864b76ea61db0",
@@ -64,11 +64,11 @@
     "notes": "The independence-sensitive phase is complete. Claude Message 001 remains the frozen independent artifact. Current work is intentionally comparative and should critique only the remaining implementation-design differences before W0 coding begins."
   },
   "last_transition": {
-    "transition_id": "mc0017-independent-design-frozen-comparative-phase-open",
-    "from_state": "OPEN",
-    "to_state": "ACTIVE",
+    "transition_id": "mc0017-resolved-w0-implementation-architecture-reconciled",
+    "from_state": "ACTIVE",
+    "to_state": "RESOLVED",
     "actor": "chatgpt",
-    "reason": "Claude Message 001 was frozen independently, ChatGPT compared it with Research 178 in Message 002, and MC-0017 now enters a bounded comparative critique before W0 implementation.",
-    "repository_head": "7bb1909412a14e806215e4e166a09a9f199407e6"
+    "reason": "Claude Message 003 reconciled the remaining W0 design questions, ChatGPT accepted the final sharpenings in Message 004, and Research 179 freezes the production W0 implementation architecture without requiring a Specification 028 amendment or logical-architecture reopen.",
+    "repository_head": "b944ea8fe6893ffd06a9aae77cfaca63de9128cd"
   }
 }
