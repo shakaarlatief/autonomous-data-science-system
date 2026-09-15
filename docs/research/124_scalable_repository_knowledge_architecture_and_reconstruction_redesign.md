@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-13
-**Status:** ACTIVE / REQUIREMENTS V0.2 OWNER-ACCEPTED AND FROZEN / Q10 FINAL QUALIFICATION 67/67 PASS / OWNER TARGET-SELECTION DECISION NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** ACTIVE / PKA-CANDIDATE-01 OWNER-SELECTED / IMPLEMENTATION-MIGRATION DESIGN OPEN / CURRENT CONTINUITY STILL AUTHORITY
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -4346,3 +4346,9 @@ Research 174 freezes the final governing qualification program only after Resear
 Research 175 preserves the oracle-blind first Q10 result at SHA `7855357e68ba29414b82a39039f62abb62ec4ddc295070f2949b072583ba8663` and its frozen-oracle evaluation at SHA `f562c849439937a196537c07f431db93f54eb208864b6a28163e42a8fda34593`. All 17 frozen sources verify, all four predeclared budgets pass, structural and behavioral gates both pass, all 42 relevant scenario/dimension dispositions pass without an aggregate score, and all 67 frozen requirements/invariants receive final PASS.
 
 Twelve residual limitations remain explicitly visible but none contradicts the frozen acceptance condition. Q10 does not select Candidate 01 or authorize an authority switch. The correct boundary is `TARGET_SELECTION_ALLOWED=true`, `TARGET_SELECTED=false`, `AUTHORITY_SWITCH_ALLOWED=false`. The next action is an explicit owner target-selection decision.
+
+## 121. Owner selects Candidate 01 and implementation/migration becomes the active stage
+
+D-035 records the project owner's explicit selection of `PKA-CANDIDATE-01` after Research 175's 67/67 qualification. Research 124 therefore moves from architecture-family selection into physical implementation and migration design.
+
+Selection does not change current operational authority. The next stage must concretize the selected logical contracts, create professional architecture documentation/visualization, define the repository implementation contract, map migration responsibilities, and preserve rollback until a separately qualified authority switch.

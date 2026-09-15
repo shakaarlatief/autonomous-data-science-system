@@ -2,7 +2,7 @@
 
 **Status:** Current selective structural history  
 **Authority:** Navigation and project-history aid. Detailed decisions, foundations, specifications, checkpoints, final experiment reports, and Git history remain authoritative for their own scope.  
-**Last reviewed:** 2026-08-29
+**Last reviewed:** 2026-09-15
 
 ## Purpose
 
@@ -458,4 +458,33 @@ docs/KNOWLEDGE_MAP.md
 docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md
 docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md
 docs/checkpoints/266_repository_information_architecture_and_exhaustive_knowledge_routing.md
+```
+
+---
+
+## 2026-09-13 to 2026-09-15: Successor project-knowledge architecture selected after 67/67 qualification
+
+The project reopened its own development-knowledge architecture from first principles rather than treating `CURRENT_STATE.md`, `CONTINUITY.md`, `KNOWLEDGE_MAP.md`, current routing or the existing folder layout as permanent constraints.
+
+The resulting `PKA-CANDIDATE-01` architecture uses repository-native canonical semantic sources, selective durable identity, explicit authority and relation semantics, derived current/navigation/search surfaces, fail-visible uncertainty, bounded task-shaped reconstruction, explicit capture/promotion, durable workstreams and governed migration/rollback.
+
+The qualification program ultimately produced:
+
+```text
+50 / 50 KA-R PASS
+17 / 17 KA-I PASS
+67 / 67 final qualification PASS
+H3/Object-Primary reopen trigger  false
+```
+
+D-035 records the owner's explicit selection of Candidate 01 as the successor target. Selection does not change current operational authority. Implementation, migration, cutover qualification and the later authority-switch decision remain separate stages.
+
+Key sources:
+
+```text
+docs/DECISIONS.md, D-035
+docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md
+docs/research/144_whole_architecture_candidate_repository_native_semantic_sources.md
+docs/research/175_q10_final_multidimensional_qualification_result.md
+docs/checkpoints/520_q10_final_qualification_passed_target_selection_decision_next.md
 ```

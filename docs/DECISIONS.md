@@ -145,9 +145,9 @@ The project is expected to discover better ways to organize knowledge through ac
 
 ## D-011. Do not select the implementation architecture yet
 
-**Status:** Superseded for the V1 persistence/retrieval architecture by D-028, persistence tooling by D-029, Python project/dependency tooling by D-030, reusable-knowledge interchange by D-031, initial reasoning runtime by D-032, and source-universe substrate by D-033; still applicable to implementation subsystems not yet selected  
+**Status:** Superseded for the V1 persistence/retrieval architecture by D-028, persistence tooling by D-029, Python project/dependency tooling by D-030, reusable-knowledge interchange by D-031, initial reasoning runtime by D-032, source-universe substrate by D-033, and project-development knowledge architecture by D-035; still applicable to implementation subsystems not yet selected
 **Date:** 2026-08-07  
-**Superseded in scope:** 2026-08-20, 2026-08-22, and 2026-08-25
+**Superseded in scope:** 2026-08-20, 2026-08-22, 2026-08-25, and 2026-09-15
 
 The project will not yet choose an agent framework, number of agents, LLM providers, orchestration framework, database, graph technology, rule engine, execution architecture, or other implementation stack.
 
@@ -921,4 +921,85 @@ docs/specifications/024_v1_model_collaboration_state_guard.md
 docs/model_collaboration/threads/MC-0002/RESOLUTION.md
 docs/model_collaboration/threads/MC-0003/RESOLUTION.md
 docs/checkpoints/204_multimodel_collaboration_method_promoted.md
+```
+
+---
+
+## D-035. Select PKA-CANDIDATE-01 as the successor project-development knowledge architecture target
+
+**Status:** Accepted / selected successor target / not yet operational authority
+**Date:** 2026-09-15
+
+The project owner explicitly selects `PKA-CANDIDATE-01`, formally described in Research 144 as **Repository-Native Semantic Sources with Selective Identity, Derived Views, and Action-Gated Authority**, as the successor target architecture for ADS project-development knowledge preservation, reconstruction, authority resolution, continuity and evolution.
+
+This decision accepts the **logical architecture** that passed the complete Requirements V0.2 qualification boundary. It authorizes implementation and migration design toward that architecture. It does not freeze every physical encoding, file layout, schema, database choice, generator implementation or visualization format. Those physical choices must preserve the selected logical contracts and remain open to evidence-driven implementation design.
+
+The selection is based on the completed qualification program recorded in Research 175:
+
+```text
+KA-R01 .. KA-R50   50 / 50 PASS
+KA-I01 .. KA-I17   17 / 17 PASS
+--------------------------------
+TOTAL              67 / 67 PASS
+H3 reopen          false
+```
+
+The selected target keeps these architectural commitments:
+
+```text
+repository-native rich semantic sources remain primary authority
+one natural canonical owner per fact by default
+durable semantic identity only where continuity materially requires it
+explicit scoped relation/lifecycle semantics
+JOINT_AUTHORITY as an explicit narrow exception
+current/routing/navigation/search/closure surfaces derived where practical
+probabilistic retrieval nominates evidence but never silently determines authority
+conversation/tool discoveries remain non-authoritative until explicit promotion
+workstream continuation is durable and dependency-aware
+missing/conflicting authority remains fail-visible
+consequential actions require action-shaped authority resolution and contract activation
+public/private boundaries remain explicit
+revision, migration, rollback and concurrency safety remain governed
+```
+
+### Authority boundary
+
+Selection does **not** switch operational authority.
+
+```text
+selected successor target        PKA-CANDIDATE-01
+current operational authority    existing continuity architecture
+authority switch allowed         no
+```
+
+The current continuity architecture remains authoritative until the selected successor has been physically implemented, migrated in controlled stages, shown to preserve semantic parity and rollback, passed cutover qualification, and received a separate explicit authority-switch decision.
+
+### Implementation and migration authorization
+
+This decision authorizes the next program to:
+
+1. turn the selected logical architecture into a concrete physical implementation architecture;
+2. define professional repository-native architecture documentation and visualizations, including one clear whole-architecture overview plus focused diagrams where needed;
+3. map current authoritative knowledge into successor semantic-source profiles without mass-converting history blindly;
+4. build parsers, validators, generators, indexes, authority resolution and reconstruction mechanisms;
+5. preserve compatibility surfaces while they remain operationally required;
+6. migrate in bounded reversible waves with explicit semantic-parity evidence;
+7. perform a separate cutover qualification before any authority transition.
+
+### Rationale
+
+Research 124 deliberately reopened the project-knowledge architecture from first principles rather than treating existing files as immutable constraints. Candidate 01 emerged only after alternative-family exploration, cross-model critique, real-corpus semantic correction, repeated synthetic and real-repository falsification, public/private and migration tests, fresh-model and cross-provider reconstruction, concurrency/interruption stress, and final multidimensional qualification.
+
+The candidate preserves the inspectability and provenance advantages of repository-native knowledge while removing the requirement that current understanding scale through increasingly large hand-maintained global summaries. Its selective-identity design also avoided triggering the explicit condition for reopening the more general Object-Primary/H3 family.
+
+The project owner reviewed the qualified candidate conceptually and explicitly approved selection on 2026-09-15.
+
+See:
+
+```text
+docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md
+docs/research/144_whole_architecture_candidate_repository_native_semantic_sources.md
+docs/research/145_candidate_01_requirements_v02_design_coverage_and_qualification_plan.md
+docs/research/175_q10_final_multidimensional_qualification_result.md
+docs/checkpoints/520_q10_final_qualification_passed_target_selection_decision_next.md
 ```

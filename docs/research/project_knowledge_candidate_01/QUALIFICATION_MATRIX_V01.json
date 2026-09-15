@@ -647,7 +647,7 @@
     "q9_shadow_subsystem_support_passed": true,
     "whole_architecture_evidence_reconciliation_v02_complete": true,
     "whole_architecture_evidence_reconciliation_v02_sha256": "ce1fe5f6f4dd630b2820a05ae961a8df6035d2283f7af8ca25c68169cd099c60",
-    "next_priority": "OWNER_TARGET_SELECTION_DECISION",
+    "next_priority": "SELECTED_CANDIDATE_PHYSICAL_ARCHITECTURE_AND_REPOSITORY_CONTRACT",
     "strong_real_subsystem_clusters_current": [
       "Q1",
       "Q2",
@@ -666,14 +666,19 @@
     "q4_real_source_stress_support_passed": true,
     "whole_architecture_evidence_reconciliation_v03_complete": true,
     "whole_architecture_evidence_reconciliation_v03_sha256": "3e8df6195ab0082cc0a3e355361ec6fb4fe7d885b29115037214adc41c367b64",
-    "after_next_priority": "AUTHORITY_SWITCH_PLANNING_IF_CANDIDATE_01_SELECTED",
+    "after_next_priority": "SELECTED_CANDIDATE_IMPLEMENTATION_AND_MIGRATION",
     "q1_q2_cross_provider_support_passed": true,
     "final_qualified_failures": 0,
-    "target_selected": false,
+    "target_selected": true,
     "authority_switch_allowed": false,
     "q10_final_qualification_passed": true,
     "q10_final_result_sha256": "7855357e68ba29414b82a39039f62abb62ec4ddc295070f2949b072583ba8663",
-    "q10_final_evaluation_sha256": "f562c849439937a196537c07f431db93f54eb208864b6a28163e42a8fda34593"
+    "q10_final_evaluation_sha256": "f562c849439937a196537c07f431db93f54eb208864b6a28163e42a8fda34593",
+    "selected_candidate": "PKA-CANDIDATE-01",
+    "owner_acceptance": true,
+    "selection_decision": "D-035",
+    "selection_date": "2026-09-15",
+    "current_operational_authority": "CURRENT_CONTINUITY_ARCHITECTURE"
   },
   "adversarial_review": {
     "thread": "MC-0016",
