@@ -1,7 +1,7 @@
 # Research 144: Whole-Architecture Candidate - Repository-Native Semantic Sources with Selective Identity, Derived Views, and Action-Gated Authority
 
 **Date:** 2026-09-14
-**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE / Q10 FINAL QUALIFICATION FIXTURE FROZEN / ORACLE-BLIND IMPLEMENTATION NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** SERIOUS WHOLE-ARCHITECTURE CANDIDATE / Q10 FINAL QUALIFICATION 67/67 PASS / OWNER TARGET-SELECTION DECISION NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Candidate label:** `PKA-CANDIDATE-01`
 **Scope:** Synthesize one serious successor architecture from the complete Research 124 evidence field after the H1/H2 mechanism probes, real-corpus independent review, MC-0014/MC-0015 corrections, D1-D8 external evidence and owner-provided ICM evaluation. Define enough logical structure, authority semantics, typed source responsibilities, derived-view behavior, activation, lifecycle, validation, scaling and migration behavior to qualify the candidate systematically against Requirements V0.2.
 **Authority:** Candidate architecture research only. Requirements V0.2 remain the frozen acceptance authority. This record does not select the target architecture, migrate current authority, or authorize implementation as the production continuity system.
@@ -1250,3 +1250,9 @@ The run also reinforces Research 168's revision-basis lesson: external attachmen
 ## 57. Candidate 01 enters final qualification without automatic selection
 
 Research 174 freezes Q10 over the complete evidence field. Candidate 01 must now survive explicit bounded-budget, structural and behavioral, and multidimensional case-level qualification. A 67/67 pass would make selection eligible but would not itself select the architecture or change current authority.
+
+## 58. Candidate 01 is fully qualified but remains unselected
+
+Research 175 records a 67/67 final qualification pass. All frozen budgets, structural checks and behavioral scenario/dimension checks pass; preserved residual limitations remain visible and non-blocking under Requirements V0.2; no H3 reopening trigger fires. Candidate 01 is therefore eligible for explicit owner selection.
+
+Qualification does not itself make Candidate 01 operational authority. The current continuity architecture remains authoritative until a separately governed selection, migration/cutover qualification and explicit authority-switch decision occur.

@@ -1,7 +1,7 @@
 # Research 145: Candidate 01 Requirements V0.2 Design Coverage and Qualification Plan
 
 **Date:** 2026-09-14
-**Status:** 50/50 KA-R + 17/17 KA-I DESIGN-MAPPED / Q10 FINAL QUALIFICATION FIXTURE FROZEN / ORACLE-BLIND IMPLEMENTATION NEXT / TARGET ARCHITECTURE NOT SELECTED
+**Status:** 50/50 KA-R + 17/17 KA-I DESIGN-MAPPED / Q10 FINAL QUALIFICATION 67/67 PASS / OWNER TARGET-SELECTION DECISION NEXT / TARGET ARCHITECTURE NOT SELECTED
 **Candidate:** `PKA-CANDIDATE-01` from Research 144
 **Scope:** Systematically map the whole-architecture candidate against every frozen Requirements V0.2 requirement/invariant, distinguish design coverage from actual qualification evidence, identify selection-blocking proof clusters, and freeze the minimum implementation/behavioral evidence needed before target selection.
 **Authority:** Candidate qualification planning only. Requirements V0.2 remain the acceptance authority. A mapped design mechanism is not a qualified pass.
@@ -542,3 +542,9 @@ No final item pass is granted automatically from this descriptive evidence cover
 ## 35. Q10 final qualification fixture freeze
 
 Research 174 freezes the final qualification contract for KA-R30/R40/R41 and all 67 final item dispositions. Four budgets, ten dimensions and nine scenarios are fixed before implementation. Oracle-blind execution is next; final qualification and owner selection remain distinct gates.
+
+## 36. Q10 final qualification passes every frozen item
+
+Research 175 records explicit final PASS for KA-R01 through KA-R50 and KA-I01 through KA-I17. KA-R30 passes because all four predeclared budgets pass; KA-R40 passes because both structural and behavioral gates pass; KA-R41 passes because all nine scenarios receive explicit dispositions for all 42 relevant dimension instances without one aggregate winner score.
+
+Final qualified passes are now 67/67 with zero failures. This makes target selection eligible, but Candidate 01 remains unselected until the owner explicitly accepts it. Authority switching remains disallowed until a later governed migration/cutover stage.
