@@ -77,6 +77,7 @@ def test_no_automatic_semantic_id_minting_capability():
         ("adapters/schema.py", 'value["semantic_id"]'),
         ("services/validation.py", 'fields["semantic_id"]'),
         ("services/validation.py", 'r["target"]'),
+        ("identity.py", 'value'),  # Only authored predecessor/successor fields; checked below.
     }
     observed = set()
     for path in PACKAGE.rglob("*.py"):
@@ -85,6 +86,14 @@ def test_no_automatic_semantic_id_minting_capability():
             if isinstance(node, ast.Call) and isinstance(node.func, ast.Name) and node.func.id == "SemanticId":
                 argument = ast.unparse(node.args[0]).replace("'", '"')
                 observed.add((path.relative_to(PACKAGE).as_posix(), argument))
+                if path.name == "identity.py":
+                    assert any(
+                        isinstance(parent, ast.GeneratorExp) and node is parent.elt
+                        and ast.unparse(parent.generators[0].iter) in {
+                            "fields['predecessors']", "fields.get('successors', ())",
+                        }
+                        for parent in ast.walk(tree)
+                    )
     assert observed == approved
     assert SemanticId.__dataclass_fields__["value"].default_factory is __import__("dataclasses").MISSING
 

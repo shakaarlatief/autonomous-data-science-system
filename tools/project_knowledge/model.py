@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from datetime import datetime
 from enum import StrEnum
 from pathlib import Path
 import re
@@ -243,3 +244,94 @@ class SubstrateError(ValueError):
     def __init__(self, code: str, message: str):
         super().__init__(message)
         self.code = code
+
+
+class TransitionClass(StrEnum):
+    MOVE_OR_RENAME = "MOVE_OR_RENAME"
+    REPRESENTATION_REPLACEMENT = "REPRESENTATION_REPLACEMENT"
+    MERGE = "MERGE"
+    SPLIT = "SPLIT"
+    SUPERSEDE = "SUPERSEDE"
+    RETIRE = "RETIRE"
+    REDIRECT = "REDIRECT"
+
+
+class IdentityDisposition(StrEnum):
+    CURRENT = "CURRENT"
+    HISTORICAL = "HISTORICAL"
+    CONTINUITY = "CONTINUITY"
+    MERGED = "MERGED"
+    SPLIT = "SPLIT"
+    SUPERSEDED = "SUPERSEDED"
+    RETIRED = "RETIRED"
+    REDIRECTED = "REDIRECTED"
+    UNKNOWN = "UNKNOWN"
+    UNRESOLVED = "UNRESOLVED"
+
+
+@dataclass(frozen=True)
+class IdentityTransition:
+    """Typed projection of an accepted identity_transition.v1 declaration.
+
+    The declaring source retains provenance, optional times, references, and
+    its own optional authored ID. Its carrier path identifies a record, not a
+    semantic unit. No event ordering is inferred from that path.
+    """
+    source: GovernedSource
+    transition_class: TransitionClass
+    predecessors: tuple[SemanticId, ...]
+    successors: tuple[SemanticId, ...]
+    resolution_behavior: str
+    provenance: tuple[str, ...]
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "transition_class", TransitionClass(self.transition_class))
+        for field in ("predecessors", "successors", "provenance"):
+            object.__setattr__(self, field, tuple(getattr(self, field)))
+        if any(not isinstance(sid, SemanticId) for sid in (*self.predecessors, *self.successors)):
+            raise ValueError("Transition endpoints must be explicitly authored SemanticId values")
+
+
+@dataclass(frozen=True)
+class IdentityResolution:
+    semantic_id: SemanticId
+    disposition: IdentityDisposition
+    current_targets: tuple[SemanticId, ...] = ()
+    retired_targets: tuple[SemanticId, ...] = ()
+    direct_transition_paths: tuple[str, ...] = ()
+    transition_paths: tuple[str, ...] = ()
+    predecessor_lineage: tuple[SemanticId, ...] = ()
+    continuity_preserved: bool = False
+    current_sources: tuple[GovernedSource, ...] = ()
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "disposition", IdentityDisposition(self.disposition))
+        for field in ("current_targets", "retired_targets", "direct_transition_paths",
+                      "transition_paths", "predecessor_lineage", "current_sources"):
+            object.__setattr__(self, field, tuple(getattr(self, field)))
+
+
+@dataclass(frozen=True)
+class IdentityHistory:
+    semantic_id: SemanticId
+    known: bool
+    sources: tuple[GovernedSource, ...] = ()
+    transition_paths: tuple[str, ...] = ()
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "sources", tuple(self.sources))
+        object.__setattr__(self, "transition_paths", tuple(self.transition_paths))
+
+
+@dataclass(frozen=True)
+class IdentityIndex:
+    snapshot_mode: SnapshotMode
+    at_time: datetime | None
+    transitions: Mapping[str, IdentityTransition]
+    current: Mapping[SemanticId, IdentityResolution]
+    history: Mapping[SemanticId, IdentityHistory]
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "snapshot_mode", SnapshotMode(self.snapshot_mode))
+        for field in ("transitions", "current", "history"):
+            object.__setattr__(self, field, MappingProxyType(dict(getattr(self, field))))

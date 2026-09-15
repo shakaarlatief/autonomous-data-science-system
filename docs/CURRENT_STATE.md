@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 527
+**Checkpoint:** 528
 **Date:** 2026-09-15
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -13,8 +13,8 @@
 ```text
 Interaction environment  ChatGPT
 Project / workspace      Autonomous Data Science System
-Interaction session      chatgpt-24
-Conversation title       24 - Owner Source Incremental Evaluation
+Interaction session      chatgpt-25
+Conversation title       25 - Identity Transition Semantics and G006 Repair
 Primary collaborator     ChatGPT
 ```
 
@@ -22,8 +22,8 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: Research 124 project-development knowledge architecture redesign
-Checkpoint 527 accepts the first production W0 substrate slice and Research 180 records the implementation evidence. PKA-G001 through PKA-G005 now PASS in production: the repository-local package boundary is established under `tools/project_knowledge/`; all eight V1 schemas validate with strict unknown-property rejection; Markdown/native-JSON declaration parsing is deterministic and now correctly ignores fenced documentation examples; the typed substrate preserves selective identity; and exact Git-blob revision descriptors verify with `GIT_BLOB_BYTES_AT_COMMIT`. The first isolated implementation pass exposed a real-repository integration defect when fenced declaration examples and non-production fixture locations were treated too coarsely; the bounded repair introduced Markdown fence awareness plus role-aware discovery (`ELIGIBLE_SOURCE`, `EVIDENCE_FIXTURE`, `CAPTURE_AREA`, `GENERATED_AREA`, `DISALLOWED`) without excluding numbered research or making future capture/generated profiles impossible. ChatGPT independently verified actual ADS WORKTREE and COMMIT snapshot validation with zero diagnostics, re-ran all 222 new substrate tests, and re-ran the 309 inherited unit tests in bounded partitions for a complete 531/531 PASS. `PUBLIC_REPOSITORY_INTEGRITY=PASS`. W0 overall remains in progress; PKA-G006 through PKA-G017 remain pending. The next bounded implementation slice is identity-transition/current-index semantics plus deterministic authority resolution. W1 migration has not started, current continuity remains operational authority, and `authority_switch_allowed=false`.
+## Current active stage: Candidate 01 W0 project-knowledge implementation
+Checkpoint 528 accepts PKA-G006 after the repaired production identity-transition/current-index engine passed independent ChatGPT verification. PKA-G001 through PKA-G006 now PASS; PKA-G007 through PKA-G017 remain pending. G006 implements the seven frozen transition classes, same-ID continuity for `MOVE_OR_RENAME` and `REPRESENTATION_REPLACEMENT`, deterministic merge/split/supersede/retire/redirect closure, explicit transition-source identities that remain separate from relation endpoints, temporal/lifecycle disambiguation, historical lookup, collision/cycle/dangling-target failure, flattened bounded current lookup, and deterministic serialization without auto-minting semantic IDs. The initial G006 implementation exposed two identity-contract holes before acceptance: continuity classes could change durable identity, and an explicitly authored `semantic_id` on an `identity_transition.v1` source was not itself participating in identity ownership/history. Both were repaired without weakening Specification 028 or Research 179. Independent verification reproduced 63/63 identity tests, 222/222 substrate tests and 309/309 inherited tests for a complete 594/594 unit PASS; compileall passed; actual WORKTREE and COMMIT validation both passed with zero diagnostics and zero live declarations; `PUBLIC_REPOSITORY_INTEGRITY=PASS`; and `git diff --check` passed. No G007 implementation, W1 migration, persisted identity index, authority switch, commit-derived live semantic migration or compatibility-surface replacement occurred as part of G006. The next bounded W0 task is PKA-G007 deterministic authority resolution under the still-current continuity architecture; `authority_switch_allowed=false`.
 
 Checkpoint 526 resolves MC-0017 and freezes the reconciled production W0 implementation architecture in Research 179. Claude's comparative Message 003 accepted most of the ChatGPT reconciliation and exposed no remaining logical-architecture fork; ChatGPT Message 004 closes the thread. The accepted implementation design uses a shallow layered `tools/project_knowledge/` package with mechanically enforced dependency direction, strict profile schemas, dual `COMMIT_SNAPSHOT` / structurally non-authoritative `WORKTREE_SNAPSHOT` discovery modes, scope discrimination that fails only when omitted facets can change the governing set, deterministic authority/workstream semantics without accidental lexical priority, one full/incremental view-builder path with complete inputs per affected view, explicit generator digest/hash-basis semantics, deterministic task-shaped reconstruction, explicit semantic-unit capture/promotion dispositions, layered public/private safeguards and embedded Mermaid architecture diagrams. The recent Claude-history miss remains a W0 activation/reconstruction falsifier rather than justification for a new topology registry. Specification 028 remains unchanged, Candidate 01/H3 remain closed, no further Claude design round is required, and W0 production implementation is now the immediate continuation. Current continuity remains operational authority and `authority_switch_allowed=false`.
 
