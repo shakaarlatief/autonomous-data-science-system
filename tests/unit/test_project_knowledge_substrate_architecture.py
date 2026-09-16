@@ -78,6 +78,9 @@ def test_no_automatic_semantic_id_minting_capability():
         ("services/validation.py", 'fields["semantic_id"]'),
         ("services/validation.py", 'r["target"]'),
         ("identity.py", 'value'),  # Only authored predecessor/successor fields; checked below.
+        ("workstreams.py", 'data["parent"]'),
+        ("workstreams.py", 'data["resume_target"]'),
+        ("workstreams.py", 'value'),  # Only the authored depends_on list; checked below.
     }
     observed = set()
     for path in PACKAGE.rglob("*.py"):
@@ -92,6 +95,12 @@ def test_no_automatic_semantic_id_minting_capability():
                         and ast.unparse(parent.generators[0].iter) in {
                             "fields['predecessors']", "fields.get('successors', ())",
                         }
+                        for parent in ast.walk(tree)
+                    )
+                if path.name == "workstreams.py" and argument == "value":
+                    assert any(
+                        isinstance(parent, ast.GeneratorExp) and node is parent.elt
+                        and ast.unparse(parent.generators[0].iter) == "data.get('depends_on', ())"
                         for parent in ast.walk(tree)
                     )
     assert observed == approved

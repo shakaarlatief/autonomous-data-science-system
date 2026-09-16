@@ -518,3 +518,211 @@ class AuthorityResult:
         object.__setattr__(self, "diagnostics", tuple(self.diagnostics))
         if (self.status == AuthorityStatus.RESOLVED) != (self.receipt is not None):
             raise ValueError("Exactly RESOLVED results carry an authority receipt")
+
+
+class WorkstreamReadiness(StrEnum):
+    RUNNABLE = "RUNNABLE"
+    DEPENDENCY_BLOCKED = "DEPENDENCY_BLOCKED"
+    BLOCKED = "BLOCKED"
+    PAUSED = "PAUSED"
+    COMPLETED = "COMPLETED"
+    SUPERSEDED = "SUPERSEDED"
+
+
+class PrimaryRouteDisposition(StrEnum):
+    UNIQUE_PRIMARY_ROUTE = "UNIQUE_PRIMARY_ROUTE"
+    NO_UNIQUE_PRIMARY_ROUTE = "NO_UNIQUE_PRIMARY_ROUTE"
+    NO_READY_WORKSTREAM = "NO_READY_WORKSTREAM"
+
+
+@dataclass(frozen=True)
+class Workstream:
+    source: GovernedSource
+    semantic_id: SemanticId
+    state: LifecycleState
+    objective: str | None
+    objective_reference: str | None
+    parent: SemanticId | None
+    depends_on: tuple[SemanticId, ...]
+    expected_to_resume: bool
+    pause_reason: str | None
+    return_condition: str | None
+    resume_target: SemanticId | None
+    current_anchor: str | None
+    expected_revision: SourceRevision | None
+    risk_or_reopen_triggers: tuple[str, ...] = ()
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "state", LifecycleState(self.state))
+        object.__setattr__(self, "depends_on", tuple(sorted(self.depends_on, key=lambda sid: sid.value)))
+        object.__setattr__(self, "risk_or_reopen_triggers", tuple(sorted(self.risk_or_reopen_triggers)))
+
+
+@dataclass(frozen=True)
+class WorkstreamBlocker:
+    semantic_id: SemanticId
+    state: LifecycleState
+    direct: bool
+
+
+@dataclass(frozen=True)
+class WorkstreamNode:
+    workstream: Workstream
+    readiness: WorkstreamReadiness
+    dependency_closure: frozenset[SemanticId]
+    parent_chain: tuple[SemanticId, ...]
+    dependency_blockers: tuple[WorkstreamBlocker, ...]
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "dependency_closure", frozenset(self.dependency_closure))
+        object.__setattr__(self, "parent_chain", tuple(self.parent_chain))
+        object.__setattr__(self, "dependency_blockers", tuple(self.dependency_blockers))
+
+    @property
+    def declared_block(self) -> bool:
+        return self.workstream.state == LifecycleState.BLOCKED
+
+
+@dataclass(frozen=True)
+class WorkstreamBranch:
+    workstream_id: SemanticId
+    context_path: tuple[SemanticId, ...]
+    current_anchor: str | None
+    resume_target: SemanticId | None
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "context_path", tuple(self.context_path))
+
+
+@dataclass(frozen=True)
+class WorkstreamRoute:
+    disposition: PrimaryRouteDisposition
+    primary: WorkstreamBranch | None
+    branches: tuple[WorkstreamBranch, ...]
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "disposition", PrimaryRouteDisposition(self.disposition))
+        object.__setattr__(self, "branches", tuple(self.branches))
+
+
+@dataclass(frozen=True)
+class WorkstreamGraph:
+    snapshot_mode: SnapshotMode
+    nodes: Mapping[SemanticId, WorkstreamNode]
+    context_sources: Mapping[SemanticId, GovernedSource]
+    active_ready_set: frozenset[SemanticId]
+    route: WorkstreamRoute
+    excluded_sources: tuple[str, ...] = ()
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "snapshot_mode", SnapshotMode(self.snapshot_mode))
+        for field in ("nodes", "context_sources"):
+            object.__setattr__(self, field, MappingProxyType(dict(getattr(self, field))))
+        object.__setattr__(self, "active_ready_set", frozenset(self.active_ready_set))
+        object.__setattr__(self, "excluded_sources", tuple(self.excluded_sources))
+
+
+@dataclass(frozen=True)
+class WorkflowStep:
+    step_id: str
+    operation: str
+    target: str
+    consequential: bool = True
+
+
+@dataclass(frozen=True)
+class WorkstreamWorkflow:
+    workflow_id: str
+    workstream_id: SemanticId
+    definition_revision: SourceRevision
+    steps: tuple[WorkflowStep, ...]
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "steps", tuple(self.steps))
+
+
+@dataclass(frozen=True)
+class DurableStepReceipt:
+    workflow_id: str
+    workstream_id: SemanticId
+    definition_revision: SourceRevision
+    step_id: str
+    status: str
+    evidence_refs: tuple[str, ...]
+    receipt_revision: SourceRevision
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "evidence_refs", tuple(sorted(self.evidence_refs)))
+
+
+@dataclass(frozen=True)
+class WorkstreamRecovery:
+    workflow: WorkstreamWorkflow
+    completed: tuple[WorkflowStep, ...]
+    pending: tuple[WorkflowStep, ...]
+    next_resume_step: WorkflowStep | None
+    receipts: tuple[DurableStepReceipt, ...]
+
+    def __post_init__(self) -> None:
+        for field in ("completed", "pending", "receipts"):
+            object.__setattr__(self, field, tuple(getattr(self, field)))
+
+    @property
+    def blind_replay_required(self) -> bool:
+        return False
+
+
+@dataclass(frozen=True)
+class TransientContentVersion:
+    """Immutable Git seed plus SHA-256 of exact transient bytes, not a commit.
+
+    The base revision always describes the seed. The content digest describes
+    the current copy, which may differ from that seed without any new commit.
+    """
+    base_revision: SourceRevision
+    content_digest: str
+
+    def __post_init__(self) -> None:
+        if not isinstance(self.base_revision, SourceRevision):
+            raise ValueError("Transient versions require an exact immutable Git seed revision")
+        if not isinstance(self.content_digest, str) or not re.fullmatch(r"[0-9a-f]{64}", self.content_digest):
+            raise ValueError("Transient content_digest must be lowercase SHA-256 of exact bytes")
+
+
+@dataclass(frozen=True)
+class TransientContent:
+    version: TransientContentVersion
+    content: bytes
+
+    def __post_init__(self) -> None:
+        if not isinstance(self.content, bytes):
+            raise ValueError("Transient content requires immutable exact bytes")
+
+
+class WorkstreamUpdateStatus(StrEnum):
+    APPLIED = "APPLIED"
+    REJECTED_STALE_REVISION = "REJECTED_STALE_REVISION"
+
+
+@dataclass(frozen=True)
+class ConditionalMutationResult:
+    """Store attestation of before/after state at one conditional mutation.
+
+    APPLIED attests a successful mutation, not just acceptance of a request.
+    Rejection attests no mutation by this attempt. These are transient states.
+    """
+    status: WorkstreamUpdateStatus
+    before: TransientContent
+    after: TransientContent
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "status", WorkstreamUpdateStatus(self.status))
+
+
+@dataclass(frozen=True)
+class WorkstreamUpdateResult:
+    status: WorkstreamUpdateStatus
+    expected_version: TransientContentVersion
+    before_version: TransientContentVersion
+    after_version: TransientContentVersion
+    mutation_applied: bool
