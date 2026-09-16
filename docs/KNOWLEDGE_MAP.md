@@ -2,7 +2,7 @@
 
 **Status:** Current evergreen subject library
 **Authority:** Navigation only. This file routes subjects to repository evidence and does not replace the authority of the routed artifacts.
-**Last reviewed:** 2026-09-15
+**Last reviewed:** 2026-09-16
 
 ## Purpose
 
@@ -454,6 +454,7 @@ docs/research/PROJECT_KNOWLEDGE_FAILURE_CORPUS.md
 docs/research/project_knowledge_baselines/PROJECT_KNOWLEDGE_BLIND_BASELINE_PROTOCOL.md
 docs/local_execution/validation/206_semantic_git_managed_python_integrity_and_publication_restored.md
 docs/local_execution/validation/207_browser_current_plugin_compatibility_live_qualified.md
+docs/local_execution/validation/208_browser_turn_ended_cleanup_contract_and_model_free_boundary_localized.md
 docs/research/GITHUB_CONNECTOR_PARITY_MATRIX.md
 docs/research/GITHUB_CONNECTOR_SCHEMA_CAPTURE.md
 docs/research/github_connector_89_action_inventory.json
@@ -986,7 +987,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-531 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-532 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

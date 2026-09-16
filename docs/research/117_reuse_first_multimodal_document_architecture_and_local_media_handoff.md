@@ -1126,3 +1126,29 @@ The prepared second Astra semantic-worker task was declined before any model tur
 Research 117 therefore returns to its original local-media handoff problem: expose authorized local file content directly to ChatGPT through whole-file/native transport where possible, and otherwise through deterministic, faithful model-free representations such as text, structure, cells or rendered media.
 
 Primary evidence: Research 119 and Checkpoint 308.
+
+## 44. Browser lifecycle localization after current-plugin compatibility restoration
+
+Validation 207 removed the obsolete `chrome_skill_unavailable` compatibility blocker and live-qualified maintained Chrome/Browser installed-plugin discovery on Runtime Bridge preview.47. A follow-up model-free investigation then isolated the remaining existing-tab lifecycle boundary against the exact current Browser bundle, Codexless executor and current official OpenAI Codex source.
+
+The current bundled Browser documentation says that claimed user tabs which are not marked are released from Browser-session control and left open when the turn ends. The implementation ties that contract to a Node REPL turn-ended tracker keyed by the current `session_id` and `turn_id`. The tracker requires `addTurnEndedHandler` and invokes Browser `turnEnded(...)` cleanup for the matching completed turn.
+
+Codexless direct Browser execution is structurally different. It calls App Server `mcpServer/tool/call` against `node_repl/js` and attaches locally generated synthetic correlation metadata; it does not create a genuine `turn/start`. Current official Codex source confirms that the direct MCP endpoint calls `CodexThread::call_mcp_tool(...)` out of band, whereas `turn/start` begins model generation and owns the normal `turn/started` -> `turn/completed` lifecycle.
+
+No current public `releaseTab`, `unclaimTab`, `unclaim` or `Tabs.finalize` operation was found in Browser build `26.908.40834`. Therefore a direct model-free cleanup primitive is not merely missing from Codexless's wrapper. Manual invocation of node_repl `turn_ended`, synthetic turn metadata, `markDeliverable`/`markHandoff`, user-tab closure, process teardown and private cleanup internals remain rejected as substitutes for a genuine supported release lifecycle.
+
+Accepted current boundary:
+
+```text
+Browser plugin discovery + status + tab inventory     LIVE-QUALIFIED
+model-free existing-tab claim                         BLOCKED BEFORE CLAIM
+model-free new-tab lifecycle                          DEFERRED / UNPROVEN
+supported direct release/unclaim API                  NOT PRESENT IN CURRENT BUILD
+genuine-turn Browser lifecycle                        SUPPORTED NORMAL UPSTREAM MODEL
+ADS genuine-turn Browser integration                  NOT YET QUALIFIED
+Browser upload implementation                         PRESERVED, NOT LIVE-QUALIFIED
+```
+
+The next legitimate Browser-operation experiment, if this capability is prioritized, is a separately bounded genuine-turn qualification that spends one real Codex model turn and verifies claim, normal turn completion, release, interruption and failure semantics. It must not weaken the deterministic direct-path preguards or fabricate turn completion.
+
+Primary evidence: Validation 208 and Checkpoint 532.
