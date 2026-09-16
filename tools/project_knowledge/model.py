@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import datetime, timezone
 from enum import StrEnum
 from pathlib import Path
 import re
@@ -335,3 +335,186 @@ class IdentityIndex:
         object.__setattr__(self, "snapshot_mode", SnapshotMode(self.snapshot_mode))
         for field in ("transitions", "current", "history"):
             object.__setattr__(self, field, MappingProxyType(dict(getattr(self, field))))
+
+
+class AuthorityStatus(StrEnum):
+    RESOLVED = "RESOLVED"
+    UNRESOLVED_SCOPE_REQUIRED = "UNRESOLVED_SCOPE_REQUIRED"
+    UNRESOLVED_AUTHORITY_CONFLICT = "UNRESOLVED_AUTHORITY_CONFLICT"
+    MISSING_REQUIRED_AUTHORITY = "MISSING_REQUIRED_AUTHORITY"
+    STALE_REQUIRED_AUTHORITY = "STALE_REQUIRED_AUTHORITY"
+    REQUIRED_PRIVATE_STATE_UNAVAILABLE = "REQUIRED_PRIVATE_STATE_UNAVAILABLE"
+
+
+class ScopeDisposition(StrEnum):
+    NO_MATCH = "NO_MATCH"
+    UNDERSPECIFIED = "UNDERSPECIFIED"
+    MATCH = "MATCH"
+
+
+class Freshness(StrEnum):
+    FRESH = "FRESH"
+    STALE = "STALE"
+    UNKNOWN = "UNKNOWN"
+
+
+@dataclass(frozen=True)
+class AuthorityQuery:
+    action: str
+    target: str
+    scope: Scope
+    consequence: str
+    at_time: datetime | None = None
+    workstream: str | None = None
+    actor: str | None = None
+    required_authorities: tuple[SemanticId, ...] = ()
+    required_private_dependencies: tuple[str, ...] = ()
+    require_revision: bool = False
+    require_freshness: bool = True
+
+    def __post_init__(self) -> None:
+        if not all(isinstance(v, str) and v for v in (self.action, self.target, self.consequence)):
+            raise ValueError("Authority query requires explicit action, target and consequence")
+        if set(self.scope.facets) & {"target", "workstream", "actor"}:
+            raise ValueError("Use the dedicated query target/workstream/actor fields")
+        object.__setattr__(self, "scope", Scope({k: tuple(sorted((v,) if isinstance(v, str) else v))
+                                               for k, v in self.scope.facets.items()}))
+        for field in ("required_authorities", "required_private_dependencies"):
+            object.__setattr__(self, field, tuple(getattr(self, field)))
+        if any(not isinstance(sid, SemanticId) for sid in self.required_authorities):
+            raise ValueError("Required authorities must be authored typed IDs")
+        object.__setattr__(self, "required_authorities", tuple(sorted(set(self.required_authorities), key=lambda s: s.value)))
+        object.__setattr__(self, "required_private_dependencies", tuple(sorted(set(self.required_private_dependencies))))
+        if self.at_time is not None and self.at_time.utcoffset() is not None:
+            object.__setattr__(self, "at_time", self.at_time.astimezone(timezone.utc))
+
+
+@dataclass(frozen=True)
+class AuthorityEvidence:
+    """Explicit caller attestation, never an I/O check or a default freshness claim."""
+    carrier_path: str
+    available: bool | None = None
+    freshness: Freshness = Freshness.UNKNOWN
+    verified_revision: SourceRevision | None = None
+    expected_revision: SourceRevision | None = None
+
+    def __post_init__(self) -> None:
+        validate_source_path(self.carrier_path)
+        object.__setattr__(self, "freshness", Freshness(self.freshness))
+
+
+@dataclass(frozen=True)
+class PrivateStateEvidence:
+    """Public-safe dependency token and verification state; no private contents."""
+    dependency: str
+    available: bool | None = None
+    freshness: Freshness = Freshness.UNKNOWN
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "freshness", Freshness(self.freshness))
+
+
+@dataclass(frozen=True)
+class ActionConstraint:
+    constraint_id: str
+    requirement: str
+
+
+@dataclass(frozen=True)
+class ActionContract:
+    carrier_path: str
+    preconditions: tuple[str, ...]
+    mandatory_constraints: tuple[ActionConstraint, ...]
+    prohibitions: tuple[str, ...]
+    required_postconditions: tuple[str, ...]
+    fail_closed_conditions: tuple[str, ...]
+
+    def __post_init__(self) -> None:
+        for field in ("preconditions", "mandatory_constraints", "prohibitions",
+                      "required_postconditions", "fail_closed_conditions"):
+            object.__setattr__(self, field, tuple(getattr(self, field)))
+
+
+@dataclass(frozen=True)
+class AuthoritySource:
+    semantic_id: SemanticId | None
+    carrier_path: str
+    revision: SourceRevision | None
+    applicability_reason: str
+    evidence: AuthorityEvidence
+
+
+@dataclass(frozen=True)
+class ScopeAssessment:
+    carrier_path: str
+    disposition: ScopeDisposition
+
+
+@dataclass(frozen=True)
+class AuthorityRemoval:
+    carrier_path: str
+    reason: str
+    by_source: str | None = None
+
+
+@dataclass(frozen=True)
+class AppliedAuthorityRelation:
+    owner_path: str
+    target_path: str
+    mode: RelationMode
+    scope: Scope | None = None
+
+
+@dataclass(frozen=True)
+class ConstraintActivation:
+    carrier_path: str
+    constraint_id: str
+    requirement: str
+
+
+@dataclass(frozen=True)
+class ConstraintPrecedence:
+    before_source: str
+    before_constraint: str
+    after_source: str
+    after_constraint: str
+
+
+@dataclass(frozen=True)
+class AuthorityReceipt:
+    query: AuthorityQuery
+    snapshot_mode: SnapshotMode
+    governing_sources: tuple[AuthoritySource, ...]
+    joint_sources: tuple[AuthoritySource, ...]
+    supporting_sources: tuple[AuthoritySource, ...]
+    combination_semantics: tuple[tuple[str, str], ...]
+    scope_dispositions: tuple[ScopeAssessment, ...]
+    removed_sources: tuple[AuthorityRemoval, ...]
+    relations: tuple[AppliedAuthorityRelation, ...]
+    action_contracts: tuple[ActionContract, ...]
+    # Array order is presentation only. Only explicit edges assert precedence.
+    activated_constraints: tuple[ConstraintActivation, ...]
+    constraint_order: tuple[ConstraintPrecedence, ...]
+    private_evidence: tuple[PrivateStateEvidence, ...]
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "snapshot_mode", SnapshotMode(self.snapshot_mode))
+        for field in ("governing_sources", "joint_sources", "supporting_sources", "scope_dispositions",
+                      "removed_sources", "relations", "action_contracts", "private_evidence",
+                      "activated_constraints", "constraint_order"):
+            object.__setattr__(self, field, tuple(getattr(self, field)))
+        for field in ("combination_semantics",):
+            object.__setattr__(self, field, tuple(tuple(v) for v in getattr(self, field)))
+
+
+@dataclass(frozen=True)
+class AuthorityResult:
+    status: AuthorityStatus
+    receipt: AuthorityReceipt | None = None
+    diagnostics: tuple[Diagnostic, ...] = ()
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "status", AuthorityStatus(self.status))
+        object.__setattr__(self, "diagnostics", tuple(self.diagnostics))
+        if (self.status == AuthorityStatus.RESOLVED) != (self.receipt is not None):
+            raise ValueError("Exactly RESOLVED results carry an authority receipt")
