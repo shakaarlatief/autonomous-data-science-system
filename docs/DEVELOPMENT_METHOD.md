@@ -2,7 +2,7 @@
 
 **Status:** Current canonical project-development method  
 **Current version:** 0.9  
-**Last reviewed:** 2026-09-01
+**Last reviewed:** 2026-09-17
 
 ## Purpose
 
@@ -501,6 +501,65 @@ One collaborator owns target-state writes unless secondary write surfaces are ex
 
 `docs/model_collaboration/REVIEW_INBOX.md` is a convenience route; per-thread state and exact repository artifacts are authoritative.
 
+## Codex model and reasoning routing
+
+Model choice is an operational engineering decision, not project authority. Before relying on a named Codex model or reasoning level, verify that the choice still exists in the current model catalog. If names or available effort levels change, preserve the intent of the routing tiers below rather than guessing from stale names.
+
+The governing optimization target is **quality per complete engineering loop**, not maximum intelligence in one isolated Codex turn. When usage limits are material, very high reasoning can consume enough allowance to remove implementation/review/repair iterations. Preserve enough capacity for the full evidence loop when that yields stronger engineering evidence. Correctness is not lowered merely to conserve usage; waiting for capacity to reset is preferable to accepting weaker work.
+
+Current routing defaults are:
+
+```text
+GPT-5.6 Sol + High
+    ordinary bounded engineering
+    routine implementation
+    narrow/localized repair with exact reproduction, invariant and acceptance test
+
+GPT-6 Astra + High
+    genuinely difficult implementation
+    unfamiliar or foundational work
+    several interacting invariants
+    open-ended architecture/reasoning where stronger reasoning is likely to matter
+
+GPT-6 Astra + XHigh or Max
+    exceptional use only
+    major architecture formation
+    migration/cutover semantics
+    authority / identity / provenance redesign
+    consequential or hard-to-reverse architectural decisions
+    cases where High has demonstrably been insufficient
+
+Ultra
+    use only when automatic task delegation is itself desirable
+    do not use merely as a synonym for "most important" or "strongest"
+```
+
+Do not spend frontier reasoning merely because a task is important. If ChatGPT, Claude or earlier architecture work has already resolved the difficult conceptual question and Codex is executing a sharply bounded repair, Sol High may be the stronger system-level choice because it preserves additional review/repair cycles. Conversely, when the task itself is an unresolved architectural boundary, escalating to Astra High or selectively to XHigh/Max is justified.
+
+The preferred ADS division of reasoning responsibility is:
+
+```text
+ChatGPT and/or Claude
+    research, compare alternatives, challenge assumptions, define invariants,
+    form or reconcile architecture
+
+Codex
+    implement the bounded repository change under the accepted contract
+
+ChatGPT
+    independently inspect and adversarially attack the implementation rather
+    than inheriting Codex's assumptions
+
+Codex
+    perform narrowly localized repair when a concrete defect is established
+
+repeat until evidence supports acceptance
+```
+
+For especially consequential architecture, prefer independent thinking from multiple capable models plus explicit reconciliation over asking one maximum-reasoning Codex turn to invent and implement everything. Different models may fail differently, which is useful evidence.
+
+No model's confidence makes a gate pass. Acceptance remains evidence-based: reproducible behavior, architectural invariants, adversarial tests, regression results, repository integrity and the governing qualification rules.
+
 ## Interaction provenance
 
 Visible conversations use `NN - Main Topic / Stage` with provider-local IDs such as `chatgpt-13` or `claude-01`. Provider/model identity is provenance, not authority.
@@ -566,6 +625,8 @@ If the central Knowledge Map later becomes a demonstrated reconstruction-read-co
 ### Version 0.9
 
 **Introduced:** historical-intermediate checkpoint integrity extension, 2026-09-01. No new checkpoint is created merely for this bounded method refinement.
+
+**Operational refinement, 2026-09-17:** added explicit Codex model/reasoning routing based on quality per complete engineering loop. The refinement records Sol High as the default for bounded implementation/repair, Astra High for genuinely difficult or foundational work, selective Astra XHigh/Max for especially consequential architecture, and Ultra only when delegation itself is desired. It also preserves the ChatGPT/Claude architecture -> Codex implementation -> independent adversarial review -> repair loop and keeps evidence, not model confidence, as the acceptance basis.
 
 - preserved the single canonical numeric identity of Checkpoint 252;
 - retained the earlier source-faithful milestone as useful historical evidence without fabricating a replacement number;

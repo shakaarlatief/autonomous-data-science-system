@@ -8,7 +8,7 @@ from enum import StrEnum
 from pathlib import Path
 import re
 from types import MappingProxyType
-from typing import Mapping, TypeAlias
+from typing import Callable, Mapping, TypeAlias
 
 
 class AuthorityClass(StrEnum):
@@ -726,3 +726,106 @@ class WorkstreamUpdateResult:
     before_version: TransientContentVersion
     after_version: TransientContentVersion
     mutation_applied: bool
+
+
+class RebuildabilityClass(StrEnum):
+    DETERMINISTIC_BYTE_REBUILD = "DETERMINISTIC_BYTE_REBUILD"
+    DETERMINISTIC_SEMANTIC_REBUILD = "DETERMINISTIC_SEMANTIC_REBUILD"
+    REGENERABLE_NONAUTHORITATIVE = "REGENERABLE_NONAUTHORITATIVE"
+
+
+@dataclass(frozen=True)
+class ViewInput:
+    source: GovernedSource
+    content: bytes
+
+    def __post_init__(self) -> None:
+        if not isinstance(self.content, bytes):
+            raise ValueError("View inputs require immutable exact bytes")
+
+
+@dataclass(frozen=True)
+class ViewInputSelector:
+    """Conjunction of profile/prefix filters; empty filters match all.
+
+    ordered_paths, when present, additionally restricts membership and supplies
+    meaningful input order. Otherwise source-path order is representation only.
+    Missing ordered paths are omitted, so disappearance changes the binding set.
+    """
+    profiles: tuple[Profile, ...] = ()
+    prefixes: tuple[str, ...] = ()
+    ordered_paths: tuple[str, ...] | None = None
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "profiles", tuple(Profile(p) for p in self.profiles))
+        object.__setattr__(self, "prefixes", tuple(self.prefixes))
+        if self.ordered_paths is not None:
+            object.__setattr__(self, "ordered_paths", tuple(self.ordered_paths))
+
+
+@dataclass(frozen=True)
+class ViewGenerator:
+    generator_id: str
+    generator_version: str
+    implementation_files: tuple[str, ...]
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "implementation_files", tuple(self.implementation_files))
+
+
+@dataclass(frozen=True)
+class ViewSpecification:
+    """Explicit per-view dependency, compute, serialization and manifest contract.
+
+    Durable registrations use string pure-unit/serializer identities. Callables
+    are only resolved infrastructure inputs to the reusable lower-level builder;
+    they are never admitted as caller-provided persistent authority.
+
+    The identity fields preserve that data-only execution contract after the
+    infrastructure resolves it to callables inside the bound worker.
+    """
+    view_id: str
+    view_path: str
+    manifest_path: str
+    view_schema_version: str
+    rebuildability_class: RebuildabilityClass
+    selector: ViewInputSelector
+    generator: ViewGenerator
+    compute: str | Callable[[JsonValue], JsonValue]
+    serialize: str | Callable[[JsonValue], bytes]
+    compute_identity: str | None = None
+    serialize_identity: str | None = None
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "rebuildability_class", RebuildabilityClass(self.rebuildability_class))
+        if type(self.compute) is str:
+            object.__setattr__(self, "compute_identity", self.compute)
+        if type(self.serialize) is str:
+            object.__setattr__(self, "serialize_identity", self.serialize)
+
+
+@dataclass(frozen=True)
+class ViewBuildResult:
+    view_id: str
+    view_path: str
+    manifest_path: str
+    view_bytes: bytes
+    manifest: RawDeclaration
+    manifest_bytes: bytes
+
+
+class ViewFreshnessStatus(StrEnum):
+    FRESH = "FRESH"
+    STALE = "STALE"
+    INVALID = "INVALID"
+    UNSUPPORTED_SNAPSHOT = "UNSUPPORTED_SNAPSHOT"
+
+
+@dataclass(frozen=True)
+class ViewFreshnessResult:
+    status: ViewFreshnessStatus
+    diagnostics: tuple[Diagnostic, ...] = ()
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "status", ViewFreshnessStatus(self.status))
+        object.__setattr__(self, "diagnostics", tuple(self.diagnostics))

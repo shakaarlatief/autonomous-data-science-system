@@ -11,10 +11,30 @@ from referencing import Registry, Resource
 from ..model import Diagnostic, DiagnosticSeverity, Profile, RawDeclaration, SemanticId, thaw_json
 
 
+# Durable validation requires this explicit schema closure. The ordinary
+# directory-based validator keeps its existing WORKTREE/G001-G008 behavior.
+SCHEMA_FILES = (
+    "schemas/project_knowledge/defs.v1.schema.json",
+    "schemas/project_knowledge/semantic_source.v1.schema.json",
+    "schemas/project_knowledge/workstream.v1.schema.json",
+    "schemas/project_knowledge/governing_procedure.v1.schema.json",
+    "schemas/project_knowledge/project_boundary.v1.schema.json",
+    "schemas/project_knowledge/identity_transition.v1.schema.json",
+    "schemas/project_knowledge/joint_authority.v1.schema.json",
+    "schemas/project_knowledge/capture.v1.schema.json",
+    "schemas/project_knowledge/derived_view_manifest.v1.schema.json",
+)
+
+
 class SchemaValidator:
-    def __init__(self, schema_root: Path | None = None):
-        root = schema_root or Path(__file__).resolve().parents[3] / "schemas" / "project_knowledge"
-        schemas = [json.loads(path.read_text(encoding="utf-8")) for path in sorted(root.glob("*.schema.json"))]
+    def __init__(self, schema_root: Path | None = None, *, schema_blobs=None):
+        if schema_blobs is not None:
+            if schema_root is not None:
+                raise ValueError("Choose explicit schema blobs or a schema directory")
+            schemas = [json.loads(schema_blobs[path].decode("utf-8")) for path in sorted(schema_blobs)]
+        else:
+            root = schema_root or Path(__file__).resolve().parents[3] / "schemas" / "project_knowledge"
+            schemas = [json.loads(path.read_text(encoding="utf-8")) for path in sorted(root.glob("*.schema.json"))]
         registry = Registry().with_resources((schema["$id"], Resource.from_contents(schema)) for schema in schemas)
         formats = FormatChecker()
 

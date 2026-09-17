@@ -2,7 +2,7 @@
 
 **Status:** Current evergreen subject library
 **Authority:** Navigation only. This file routes subjects to repository evidence and does not replace the authority of the routed artifacts.
-**Last reviewed:** 2026-09-16
+**Last reviewed:** 2026-09-17
 
 ## Purpose
 
@@ -370,6 +370,7 @@ docs/research/180_w0_substrate_slice1_implementation_and_real_repository_integra
 docs/research/181_w0_identity_transition_current_index_g006_result.md
 docs/research/182_w0_deterministic_authority_resolver_g007_result.md
 docs/research/183_w0_workstream_engine_g008_result.md
+docs/research/184_w0_derived_view_framework_g009_result.md
 docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md
 docs/checkpoints/449_scalable_knowledge_architecture_redesign_opened.md
 docs/checkpoints/450_knowledge_architecture_baseline_inventory_complete_requirements_next.md
@@ -455,6 +456,7 @@ docs/research/project_knowledge_baselines/PROJECT_KNOWLEDGE_BLIND_BASELINE_PROTO
 docs/local_execution/validation/206_semantic_git_managed_python_integrity_and_publication_restored.md
 docs/local_execution/validation/207_browser_current_plugin_compatibility_live_qualified.md
 docs/local_execution/validation/208_browser_turn_ended_cleanup_contract_and_model_free_boundary_localized.md
+docs/local_execution/validation/209_windows_sandbox_managed_runtime_recovery_qualified.md
 docs/research/GITHUB_CONNECTOR_PARITY_MATRIX.md
 docs/research/GITHUB_CONNECTOR_SCHEMA_CAPTURE.md
 docs/research/github_connector_89_action_inventory.json
@@ -987,7 +989,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-532 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-533 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

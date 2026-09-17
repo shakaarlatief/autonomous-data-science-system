@@ -10,7 +10,10 @@ import pytest
 
 from tools.project_knowledge.model import (
     AuthorityClass, GovernedSource, Profile, RawDeclaration, Relation, RelationMode,
-    Scope, SemanticId, SnapshotMode, SourceRevision,
+    Scope, SemanticId, SnapshotMode, SourceRevision, thaw_json,
+)
+from tools.project_knowledge.views import (
+    PURE_UNIT_REGISTRY, source_inventory_specification,
 )
 
 
@@ -54,6 +57,27 @@ def test_g001_package_boundary_and_all_layer_directions():
         module = ".".join(path.relative_to(ROOT).with_suffix("").parts)
         for dependency in imports(path.read_text(encoding="utf-8"), module):
             assert allowed_dependency(module, dependency), (module, dependency)
+
+
+def test_g009_production_units_and_tcb_have_explicit_source_contracts():
+    from tools.project_knowledge.adapters.execution import TCB_FILES, check_tcb_source
+    from tools.project_knowledge.adapters.pure import resolve_unit
+    from tools.project_knowledge.adapters.schema import SCHEMA_FILES
+    specification = source_inventory_specification()
+    assert type(specification.compute) is type(specification.serialize) is str
+    assert len(TCB_FILES) == 15 and len(SCHEMA_FILES) == 9
+    assert set(specification.generator.implementation_files) == (
+        set(TCB_FILES) | set(SCHEMA_FILES) | {"tools/project_knowledge/pure_units.py"})
+    for path in TCB_FILES:
+        check_tcb_source(path, (ROOT / path).read_bytes())
+    assert PURE_UNIT_REGISTRY == (
+        ("source_inventory.v1", "tools/project_knowledge/pure_units.py", "source_inventory",
+         (("entry", "inventory_entry.v1"),), ()),
+        ("inventory_entry.v1", "tools/project_knowledge/pure_units.py", "inventory_entry", (), ()),
+    )
+    blobs = {"tools/project_knowledge/pure_units.py": (PACKAGE / "pure_units.py").read_bytes()}
+    compute = resolve_unit(specification.compute, PURE_UNIT_REGISTRY, blobs, {})
+    assert compute(()) == {"schema_version": "1", "authority_class": "derived", "sources": []}
 
 
 @pytest.mark.parametrize("source", [

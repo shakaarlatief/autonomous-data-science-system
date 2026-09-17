@@ -1,7 +1,7 @@
 # Local Execution Operations Runbook
 
 **Status:** Current evergreen operational procedure  
-**Last reviewed:** 2026-09-12
+**Last reviewed:** 2026-09-17
 **Scope:** Start, stop, restart, verify and reconnect the ADS Codexless loopback HTTP service and OpenAI Secure MCP Tunnel without relying on chat memory.  
 **Authority:** Operational procedure only. `docs/CURRENT_STATE.md` and the active validation record own the current experiment, expected tool surface and next mutation. This runbook does not widen local authority or replace the security contracts in the validation records.
 
@@ -338,6 +338,58 @@ Do not automatically classify the difference as stale discovery. Some actions ma
 ### Browser/manual GET reports unsupported media type on `/mcp`
 
 A browser GET is not a valid Streamable HTTP MCP initialize request. Use `/healthz`, tunnel `/readyz`, or an actual MCP client/discovery flow instead.
+
+### Windows Codex sandbox setup reports `helper_unknown_error` or runtime validation failures
+
+A reproduced 2026-09-17 failure prevented Codexless from starting even though the npm Codex CLI itself could execute both Windows sandbox backends successfully. The important diagnostic distinction was that the direct CLI and Codexless/Codex App Server path were not necessarily using the same managed runtime generation.
+
+Observed blocking startup symptom:
+
+```text
+windows sandbox: helper_unknown_error: setup refresh had errors
+```
+
+The sandbox log localized the failing validation to one Desktop-managed `cua_node` runtime subtree under the public-safe root:
+
+```text
+%LOCALAPPDATA%\OpenAI\Codex\runtimes\cua_node\<runtime-id>\...
+```
+
+Recovery procedure:
+
+```text
+1. update the ordinary Codex CLI first and verify its exact version;
+2. with Codex Desktop closed, execute one trivial command through both the
+   unelevated and elevated Windows sandbox backends;
+3. if both direct sandbox probes pass but Codexless still fails during startup,
+   inspect the current sandbox log rather than broadening ACLs or repository permissions;
+4. identify the exact `cua_node` runtime subtree named by the fresh validation error;
+5. preserve that subtree by moving it entirely OUTSIDE the scanned `cua_node`
+   directory into a separate quarantine location under the Codex local-data root;
+6. retry Codexless before deleting or changing any other runtime;
+7. verify a fresh model-free `codex.command_exec` succeeds through Runtime Bridge;
+8. restart/verify the managed tunnel only after Codexless is healthy.
+```
+
+A rename that leaves the defective tree inside `cua_node` is insufficient. The sandbox setup scans the runtime directory and can continue validating the renamed subtree. In the reproduced incident, moving the preserved defective runtime outside `cua_node` immediately restored Codexless startup.
+
+Do not delete the quarantined runtime during diagnosis. Do not apply broad ACL changes, long-path changes, Defender exclusions, repository permission widening, or wholesale Codex reinstallation unless fresh evidence independently requires them. In this incident long paths were already enabled, the exact long path existed, network checks had recovered, and both direct sandbox modes passed.
+
+Post-recovery log interpretation also matters. These observations were non-blocking after recovery:
+
+```text
+Unsupported Media Type on an ordinary /mcp HTTP request
+    -> request was not a valid MCP application/json request
+
+CreateProcessAsUserW error 2 for one requested executable such as rg.exe
+    -> command-specific executable resolution failure; other command/exec calls may remain healthy
+
+agents_md background failure while searching for AGENTS.md
+    -> background document-discovery noise when no root AGENTS.md is available;
+       not proof that command/exec is broken
+```
+
+Always prove recovery with a fresh trivial bridge command rather than inferring health from the absence of red log lines.
 
 ### Windows Codex sandbox helper suddenly reports `program not found`
 

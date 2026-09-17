@@ -1,7 +1,7 @@
 # Local Execution
 
 **Status:** Current local-execution navigation  
-**Last reviewed:** 2026-09-02
+**Last reviewed:** 2026-09-17
 
 This directory contains durable ADS evidence, accepted bounded capability records, and operational guidance for the local-execution bridge.
 
@@ -22,6 +22,7 @@ start / stop / restart the OpenAI Secure MCP Tunnel
 verify tunnel liveness/readiness
 refresh the ChatGPT developer MCP app after a surface change
 recover safely when the foreground terminal is lost
+recover Windows sandbox setup/runtime-validation failures without broad permission changes
 ```
 
 Before starting Codexless for ADS, also use:
@@ -105,7 +106,13 @@ Do not manipulate Codex Desktop private catalog/session databases to improve vis
 
 ## Validation evidence
 
-`docs/local_execution/validation/` contains chronological evidence for the Codexless/Secure MCP Tunnel/ChatGPT local-execution investigation.
+`docs/local_execution/validation/` contains chronological evidence for the Codexless/Secure MCP Tunnel/ChatGPT local-execution investigation. The 2026-09-17 Windows sandbox managed-runtime recovery is preserved in:
+
+```text
+docs/local_execution/validation/209_windows_sandbox_managed_runtime_recovery_qualified.md
+```
+
+Its reusable recovery procedure is incorporated into the evergreen operations runbook.
 
 Validation records preserve what was tested and observed. They do not replace the evergreen operational procedures, and historical validation commands should not automatically be treated as the current operational method.
 

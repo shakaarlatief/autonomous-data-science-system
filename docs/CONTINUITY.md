@@ -2,7 +2,7 @@
 
 **Status:** Current canonical continuity procedure  
 **Aligned development-method version:** 0.9  
-**Last reviewed:** 2026-09-02
+**Last reviewed:** 2026-09-17
 
 ## Purpose
 
@@ -403,6 +403,8 @@ Canonical collaboration method:
 docs/model_collaboration/README.md
 docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md
 ```
+
+When choosing a Codex model or reasoning level, use `docs/DEVELOPMENT_METHOD.md` under **Codex model and reasoning routing**. Do not reconstruct model/effort choice from prior-chat habit and do not mechanically maximize reasoning: preserve the documented quality-per-complete-engineering-loop strategy and verify named model/effort options against the current catalog.
 
 ## Recovery after unplanned context loss
 

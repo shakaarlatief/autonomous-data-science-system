@@ -344,7 +344,9 @@ A second model should create marginal epistemic value, not merely more activity.
 
 Use expensive independent/comparative review selectively. Routine implementation under a frozen contract normally deserves a cheaper bounded direct review. Mechanical checks may remain SOLO or deterministic.
 
-Model, effort level, and product surface are operational choices rather than fixed architecture. The project may collect lightweight evidence about review value versus usage cost before institutionalizing model-specific defaults.
+Model, effort level, and product surface are operational choices rather than fixed architecture. The current canonical Codex model/reasoning routing policy, including the quality-per-complete-engineering-loop rule and Sol/Astra effort tiers, lives in `docs/DEVELOPMENT_METHOD.md` under **Codex model and reasoning routing**. This collaboration protocol does not duplicate those model-specific defaults.
+
+The project may collect lightweight evidence about review value versus usage cost before further institutionalizing model-specific defaults.
 
 Claude product usage was observed to be materially scarce during the first collaboration trial, which strengthened the case for deferred catch-up and bounded reading sets. Exact percentage usage is historical operational evidence, not a permanent architecture constant.
 

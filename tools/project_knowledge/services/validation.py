@@ -63,8 +63,9 @@ def validate_declaration(content: bytes, carrier_path: str, validator: SchemaVal
 
 def validate_repository(
     snapshot: RepositorySnapshot, *, validator: SchemaValidator | None = None,
-    policy: DiscoveryPolicy = DiscoveryPolicy(), durable_evidence: bool = False,
+    policy: DiscoveryPolicy | None = None, durable_evidence: bool = False,
 ) -> ValidationResult:
+    policy = policy if policy is not None else DiscoveryPolicy()
     validator = validator or SchemaValidator()
     diagnostics = list(validate_durable_evidence(snapshot.mode)) if durable_evidence else []
     sources = []
