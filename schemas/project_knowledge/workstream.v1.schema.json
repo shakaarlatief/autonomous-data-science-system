@@ -91,6 +91,83 @@
     },
     "expected_revision": {
       "$ref": "defs.v1.schema.json#/$defs/source_revision"
+    },
+    "execution_anchor": {
+      "type": "object",
+      "properties": {
+        "checkpoint": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "development_branch": {
+          "$ref": "defs.v1.schema.json#/$defs/text",
+          "pattern": "\\S"
+        },
+        "pull_request": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "current_boundary": {
+          "$ref": "defs.v1.schema.json#/$defs/semantic_id"
+        }
+      },
+      "required": [
+        "checkpoint",
+        "development_branch",
+        "pull_request",
+        "current_boundary"
+      ],
+      "additionalProperties": false
+    },
+    "stage": {
+      "type": "object",
+      "properties": {
+        "stage_id": {
+          "$ref": "defs.v1.schema.json#/$defs/semantic_id"
+        },
+        "stage_state": {
+          "$ref": "defs.v1.schema.json#/$defs/semantic_id"
+        }
+      },
+      "required": [
+        "stage_id",
+        "stage_state"
+      ],
+      "additionalProperties": false
+    },
+    "governing_procedure": {
+      "$ref": "defs.v1.schema.json#/$defs/semantic_id"
+    },
+    "orientation_milestones": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "milestone_id": {
+            "$ref": "defs.v1.schema.json#/$defs/semantic_id"
+          },
+          "state": {
+            "enum": [
+              "NOT_STARTED",
+              "PENDING",
+              "ACTIVE",
+              "PAUSED",
+              "BLOCKED",
+              "COMPLETED",
+              "SUPERSEDED"
+            ]
+          }
+        },
+        "required": [
+          "milestone_id",
+          "state"
+        ],
+        "additionalProperties": false
+      },
+      "uniqueItems": true
     }
   },
   "required": [
@@ -122,6 +199,14 @@
           "pause_reason",
           "return_condition",
           "resume_target"
+        ]
+      }
+    },
+    {
+      "not": {
+        "required": [
+          "current_anchor",
+          "execution_anchor"
         ]
       }
     }

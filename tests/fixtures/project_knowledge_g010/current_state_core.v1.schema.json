@@ -1,0 +1,203 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1"
+    },
+    "active_workstream": {
+      "type": "object",
+      "properties": {
+        "semantic_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_.:-]*(?![\\s\\S])"
+        },
+        "state": {
+          "const": "ACTIVE"
+        },
+        "objective": {
+          "type": "string",
+          "minLength": 1
+        },
+        "execution_anchor": {
+          "type": "object",
+          "properties": {
+            "checkpoint": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "development_branch": {
+              "type": "string",
+              "pattern": "\\S"
+            },
+            "pull_request": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 1
+            },
+            "current_boundary": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_.:-]*(?![\\s\\S])"
+            }
+          },
+          "required": [
+            "checkpoint",
+            "development_branch",
+            "pull_request",
+            "current_boundary"
+          ],
+          "additionalProperties": false
+        },
+        "stage": {
+          "type": "object",
+          "properties": {
+            "stage_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_.:-]*(?![\\s\\S])"
+            },
+            "stage_state": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_.:-]*(?![\\s\\S])"
+            }
+          },
+          "required": [
+            "stage_id",
+            "stage_state"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "semantic_id",
+        "state",
+        "objective",
+        "execution_anchor",
+        "stage"
+      ],
+      "additionalProperties": false
+    },
+    "integration_boundary": {
+      "type": "object",
+      "properties": {
+        "semantic_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_.:-]*(?![\\s\\S])"
+        },
+        "promoted_branch": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "promoted_commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}(?![\\s\\S])"
+        }
+      },
+      "required": [
+        "semantic_id",
+        "promoted_branch",
+        "promoted_commit"
+      ],
+      "additionalProperties": false
+    },
+    "current_specification": {
+      "type": "object",
+      "properties": {
+        "semantic_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_.:-]*(?![\\s\\S])"
+        }
+      },
+      "required": [
+        "semantic_id"
+      ],
+      "additionalProperties": false
+    },
+    "current_experiment": {
+      "type": "object",
+      "properties": {
+        "semantic_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_.:-]*(?![\\s\\S])"
+        },
+        "outcome": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_.:-]*(?![\\s\\S])"
+        }
+      },
+      "required": [
+        "semantic_id",
+        "outcome"
+      ],
+      "additionalProperties": false
+    },
+    "paused_workstreams": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "semantic_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_.:-]*(?![\\s\\S])"
+          },
+          "state": {
+            "const": "PAUSED"
+          },
+          "resume_target": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_.:-]*(?![\\s\\S])"
+          },
+          "governing_procedure": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_.:-]*(?![\\s\\S])"
+          },
+          "orientation_milestones": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "milestone_id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z][A-Za-z0-9_.:-]*(?![\\s\\S])"
+                },
+                "state": {
+                  "enum": [
+                    "NOT_STARTED",
+                    "PENDING",
+                    "ACTIVE",
+                    "PAUSED",
+                    "BLOCKED",
+                    "COMPLETED",
+                    "SUPERSEDED"
+                  ]
+                }
+              },
+              "required": [
+                "milestone_id",
+                "state"
+              ],
+              "additionalProperties": false
+            },
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "semantic_id",
+          "state",
+          "resume_target"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "active_workstream",
+    "integration_boundary",
+    "current_specification",
+    "current_experiment",
+    "paused_workstreams"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

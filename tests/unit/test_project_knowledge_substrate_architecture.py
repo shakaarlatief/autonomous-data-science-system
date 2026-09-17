@@ -74,10 +74,36 @@ def test_g009_production_units_and_tcb_have_explicit_source_contracts():
         ("source_inventory.v1", "tools/project_knowledge/pure_units.py", "source_inventory",
          (("entry", "inventory_entry.v1"),), ()),
         ("inventory_entry.v1", "tools/project_knowledge/pure_units.py", "inventory_entry", (), ()),
+        ("current_state_core.v1", "tools/project_knowledge/pure_units.py", "current_state_core",
+         (("single", "core_single.v1"), ("fields", "core_fields.v1"),
+          ("reference", "core_reference.v1"), ("paused", "core_paused.v1")), ("sorted_values",)),
+        ("core_single.v1", "tools/project_knowledge/pure_units.py", "core_single", (), ("length", "fail_view")),
+        ("core_fields.v1", "tools/project_knowledge/pure_units.py", "core_fields", (), ("fail_view",)),
+        ("core_reference.v1", "tools/project_knowledge/pure_units.py", "core_reference",
+         (("single", "core_single.v1"),), ()),
+        ("core_procedure.v1", "tools/project_knowledge/pure_units.py", "core_procedure", (), ("length", "fail_view")),
+        ("core_paused.v1", "tools/project_knowledge/pure_units.py", "core_paused",
+         (("fields", "core_fields.v1"), ("reference", "core_reference.v1"), ("procedure", "core_procedure.v1")),
+         ("sorted_values",)),
     )
     blobs = {"tools/project_knowledge/pure_units.py": (PACKAGE / "pure_units.py").read_bytes()}
     compute = resolve_unit(specification.compute, PURE_UNIT_REGISTRY, blobs, {})
     assert compute(()) == {"schema_version": "1", "authority_class": "derived", "sources": []}
+
+
+def test_g010_uses_same_closed_framework_and_no_research_runtime():
+    from tools.project_knowledge.views import current_state_core_specification
+    from tools.project_knowledge.adapters.pure import resolve_unit
+    from tools.project_knowledge.services.generation import _capabilities
+    core = current_state_core_specification()
+    assert core.generator.implementation_files == source_inventory_specification().generator.implementation_files
+    blobs = {p: (ROOT / p).read_bytes() for p in core.generator.implementation_files}
+    compute = resolve_unit(core.compute, PURE_UNIT_REGISTRY, blobs, _capabilities())
+    with pytest.raises(Exception, match="exactly one canonical owner"):
+        compute(())
+    assert core.compute_identity == "current_state_core.v1"
+    assert core.serialize_identity == "canonical_json.v1"
+    assert not any(p.startswith(("scripts/research/", "tests/", "docs/")) for p in blobs)
 
 
 @pytest.mark.parametrize("source", [

@@ -56,6 +56,14 @@
     "authority_to": {
       "type": "string",
       "format": "date-time"
+    },
+    "promoted_branch": {
+      "$ref": "defs.v1.schema.json#/$defs/text",
+      "pattern": "\\S"
+    },
+    "promoted_commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}(?![\\s\\S])"
     }
   },
   "required": [
@@ -65,5 +73,33 @@
     "authority_class",
     "semantic_id"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "dependentRequired": {
+    "promoted_branch": [
+      "promoted_commit"
+    ],
+    "promoted_commit": [
+      "promoted_branch"
+    ]
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "PROJECT_INTEGRATION_BOUNDARY"
+          }
+        },
+        "required": [
+          "kind"
+        ]
+      },
+      "then": {
+        "required": [
+          "promoted_branch",
+          "promoted_commit"
+        ]
+      }
+    }
+  ]
 }

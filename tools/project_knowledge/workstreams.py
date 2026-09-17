@@ -60,6 +60,14 @@ def workstream_from_source(source: GovernedSource) -> Workstream:
             _fail("INVALID_WORKSTREAM_CONTROL", f"{name} must be nonblank authored text", source)
     if not (data.get("objective") or data.get("objective_reference")):
         _fail("MISSING_WORKSTREAM_OBJECTIVE", "Workstream needs an objective or objective reference", source)
+    anchor = data.get("current_anchor")
+    if "execution_anchor" in data:
+        execution = data["execution_anchor"]
+        if "current_anchor" in data or not isinstance(execution, Mapping):
+            _fail("INVALID_WORKSTREAM_CONTROL", "Exactly one valid execution anchor is permitted", source)
+        anchor = execution.get("current_boundary")
+        if not isinstance(anchor, str) or not anchor.strip():
+            _fail("INVALID_WORKSTREAM_CONTROL", "execution_anchor requires a current boundary", source)
     expected_resume = data.get("expected_to_resume", source.state == LifecycleState.PAUSED)
     if not isinstance(expected_resume, bool):
         _fail("INVALID_PAUSE_CONTRACT", "expected_to_resume must be a boolean", source)
@@ -72,7 +80,7 @@ def workstream_from_source(source: GovernedSource) -> Workstream:
         _fail("INVALID_WORKSTREAM_REVISION", "Source revision must identify this workstream carrier", source)
     return Workstream(source, source.semantic_id, source.state, data.get("objective"), data.get("objective_reference"),
                       parent, _ids(dependencies), expected_resume, data.get("pause_reason"), data.get("return_condition"),
-                      resume, data.get("current_anchor"), revision, data.get("risk_or_reopen_triggers", ()))
+                      resume, anchor, revision, data.get("risk_or_reopen_triggers", ()))
 
 
 def _topological(prerequisites, code, sources):

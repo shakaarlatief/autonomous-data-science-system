@@ -1,0 +1,570 @@
+{
+  "qualification_only": true,
+  "real_base_commit": "57df6561f506cba2c26222693d1403585fad23d2",
+  "items": [
+    {
+      "id": "MP01",
+      "source_binding": {
+        "source_key": "active_workstream",
+        "path": "docs/research/project_knowledge_candidate_01_current_state_core_v01/SHADOW_ACTIVE_WORKSTREAM.md",
+        "bytes": 1055,
+        "sha256": "ec7cb761360b7fedc3f66ab1bff66d055c97cb477785c71de725fe1a1e344f49",
+        "source_class": "shadow_successor_canonical"
+      },
+      "historical_pointer": "execution_anchor.current_checkpoint",
+      "historical_value": 501,
+      "core_pointer": "active_workstream.execution_anchor.checkpoint"
+    },
+    {
+      "id": "MP02",
+      "source_binding": {
+        "source_key": "active_workstream",
+        "path": "docs/research/project_knowledge_candidate_01_current_state_core_v01/SHADOW_ACTIVE_WORKSTREAM.md",
+        "bytes": 1055,
+        "sha256": "ec7cb761360b7fedc3f66ab1bff66d055c97cb477785c71de725fe1a1e344f49",
+        "source_class": "shadow_successor_canonical"
+      },
+      "historical_pointer": "execution_anchor.active_development_branch",
+      "historical_value": "v1-source-vault-bootstrap-resume",
+      "core_pointer": "active_workstream.execution_anchor.development_branch"
+    },
+    {
+      "id": "MP03",
+      "source_binding": {
+        "source_key": "active_workstream",
+        "path": "docs/research/project_knowledge_candidate_01_current_state_core_v01/SHADOW_ACTIVE_WORKSTREAM.md",
+        "bytes": 1055,
+        "sha256": "ec7cb761360b7fedc3f66ab1bff66d055c97cb477785c71de725fe1a1e344f49",
+        "source_class": "shadow_successor_canonical"
+      },
+      "historical_pointer": "execution_anchor.active_pr",
+      "historical_value": null,
+      "core_pointer": "active_workstream.execution_anchor.pull_request"
+    },
+    {
+      "id": "MP04",
+      "source_binding": {
+        "source_key": "active_workstream",
+        "path": "docs/research/project_knowledge_candidate_01_current_state_core_v01/SHADOW_ACTIVE_WORKSTREAM.md",
+        "bytes": 1055,
+        "sha256": "ec7cb761360b7fedc3f66ab1bff66d055c97cb477785c71de725fe1a1e344f49",
+        "source_class": "shadow_successor_canonical"
+      },
+      "historical_pointer": "execution_anchor.current_semantic_boundary",
+      "historical_value": "project-knowledge-source-vault-current-state-core-shadow-next",
+      "core_pointer": "active_workstream.execution_anchor.current_boundary"
+    },
+    {
+      "id": "MP05",
+      "source_binding": {
+        "source_key": "active_workstream",
+        "path": "docs/research/project_knowledge_candidate_01_current_state_core_v01/SHADOW_ACTIVE_WORKSTREAM.md",
+        "bytes": 1055,
+        "sha256": "ec7cb761360b7fedc3f66ab1bff66d055c97cb477785c71de725fe1a1e344f49",
+        "source_class": "shadow_successor_canonical"
+      },
+      "historical_pointer": "research_id",
+      "historical_value": "124",
+      "core_pointer": "active_workstream.stage.stage_id",
+      "production_identity": "RESEARCH:124"
+    },
+    {
+      "id": "MP06",
+      "source_binding": {
+        "source_key": "active_workstream",
+        "path": "docs/research/project_knowledge_candidate_01_current_state_core_v01/SHADOW_ACTIVE_WORKSTREAM.md",
+        "bytes": 1055,
+        "sha256": "ec7cb761360b7fedc3f66ab1bff66d055c97cb477785c71de725fe1a1e344f49",
+        "source_class": "shadow_successor_canonical"
+      },
+      "historical_pointer": "selection_state",
+      "historical_value": "TARGET_ARCHITECTURE_NOT_SELECTED",
+      "core_pointer": "active_workstream.stage.stage_state"
+    },
+    {
+      "id": "MP07",
+      "source_binding": {
+        "source_key": "integration_boundary",
+        "path": "docs/research/project_knowledge_candidate_01_current_state_core_v01/SHADOW_PROJECT_INTEGRATION_BOUNDARY.md",
+        "bytes": 713,
+        "sha256": "256df6b025b4fe476b8d6409839c7af16dd3069e0f5fd2349a0b69f7aed86440",
+        "source_class": "shadow_successor_canonical"
+      },
+      "historical_pointer": "promoted_branch",
+      "historical_value": "v1-frontend-spike",
+      "core_pointer": "integration_boundary.promoted_branch"
+    },
+    {
+      "id": "MP08",
+      "source_binding": {
+        "source_key": "integration_boundary",
+        "path": "docs/research/project_knowledge_candidate_01_current_state_core_v01/SHADOW_PROJECT_INTEGRATION_BOUNDARY.md",
+        "bytes": 713,
+        "sha256": "256df6b025b4fe476b8d6409839c7af16dd3069e0f5fd2349a0b69f7aed86440",
+        "source_class": "shadow_successor_canonical"
+      },
+      "historical_pointer": "promoted_commit",
+      "historical_value": "2480109fadeee1e480ef03b82e335aacdf9adf91",
+      "core_pointer": "integration_boundary.promoted_commit"
+    },
+    {
+      "id": "MP09",
+      "source_binding": {
+        "source_key": "spec027",
+        "path": "docs/specifications/027_v1_historical_intermediate_checkpoint_integrity_extension.md",
+        "bytes": 7988,
+        "sha256": "96df5da7c45be645c39ee9b02d1568772aa1b598f6393af784a076702b5a5229",
+        "source_class": "computed_control"
+      },
+      "historical_pointer": null,
+      "historical_value": "027",
+      "core_pointer": "current_specification.semantic_id",
+      "production_identity": "SPECIFICATION:027",
+      "evidence_text": "# Specification 027"
+    },
+    {
+      "id": "MP10",
+      "source_binding": {
+        "source_key": "checkpoint192",
+        "path": "docs/checkpoints/192_specification_022_incomplete_result_preservation_promotion_candidate.md",
+        "bytes": 13541,
+        "sha256": "144e38e6ed91f64a23d33d62f7a557088f6ebed6a472458fd931d9d785133fbb",
+        "source_class": "computed_control"
+      },
+      "historical_pointer": null,
+      "historical_value": "INCOMPLETE",
+      "core_pointer": "current_experiment.outcome",
+      "evidence_text": "INCOMPLETE / EXECUTION INTEGRITY FAILED"
+    },
+    {
+      "id": "MP11",
+      "source_binding": {
+        "source_key": "source_vault_workstream",
+        "path": "docs/research/project_knowledge_candidate_01_current_state_core_v01/SHADOW_SOURCE_VAULT_WORKSTREAM.md",
+        "bytes": 3000,
+        "sha256": "2f4acb786f1c16df4b045d25ed2dffef0a1a82e4687c0fbc80c88789b19d7d71",
+        "source_class": "shadow_successor_canonical"
+      },
+      "historical_pointer": "state",
+      "historical_value": "PAUSED",
+      "core_pointer": "paused_workstreams.0.state"
+    },
+    {
+      "id": "MP12",
+      "source_binding": {
+        "source_key": "source_vault_workstream",
+        "path": "docs/research/project_knowledge_candidate_01_current_state_core_v01/SHADOW_SOURCE_VAULT_WORKSTREAM.md",
+        "bytes": 3000,
+        "sha256": "2f4acb786f1c16df4b045d25ed2dffef0a1a82e4687c0fbc80c88789b19d7d71",
+        "source_class": "shadow_successor_canonical"
+      },
+      "historical_pointer": "resume_target",
+      "historical_value": "reviewed ingestion of the frozen 20-entry first corpus",
+      "core_pointer": "paused_workstreams.0.resume_target",
+      "production_identity": "SOURCE-VAULT:REVIEWED-INGESTION"
+    },
+    {
+      "id": "MP13",
+      "source_binding": {
+        "source_key": "source_vault_workstream",
+        "path": "docs/research/project_knowledge_candidate_01_current_state_core_v01/SHADOW_SOURCE_VAULT_WORKSTREAM.md",
+        "bytes": 3000,
+        "sha256": "2f4acb786f1c16df4b045d25ed2dffef0a1a82e4687c0fbc80c88789b19d7d71",
+        "source_class": "shadow_successor_canonical"
+      },
+      "historical_pointer": "governing_procedure",
+      "historical_value": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+      "core_pointer": "paused_workstreams.0.governing_procedure",
+      "production_identity": "PROCEDURE:PERMANENT-SOURCE-VAULT-BOOTSTRAP"
+    },
+    {
+      "id": "MP14",
+      "source_binding": {
+        "source_key": "source_vault_workstream",
+        "path": "docs/research/project_knowledge_candidate_01_current_state_core_v01/SHADOW_SOURCE_VAULT_WORKSTREAM.md",
+        "bytes": 3000,
+        "sha256": "2f4acb786f1c16df4b045d25ed2dffef0a1a82e4687c0fbc80c88789b19d7d71",
+        "source_class": "shadow_successor_canonical"
+      },
+      "historical_pointer": "bootstrap_state.source_registry",
+      "historical_value": "MIGRATED_VERIFIED",
+      "evidence_bindings": [
+        {
+          "source_key": "source_vault_runbook",
+          "path": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+          "bytes": 17085,
+          "sha256": "fdcb795d39945883dcce99995a5c3f396e5f1dd8f904a668b8366b1d1aa69656",
+          "source_class": "governing_procedure"
+        },
+        {
+          "source_key": "source_vault_validation003",
+          "path": "docs/source_universe/validation/003_permanent_source_registry_migrated.md",
+          "bytes": 2908,
+          "sha256": "fab60cdf76f65d9922ab059c0e008d4bd50f53cb8a4f6e9d390955159aa52024",
+          "source_class": "evidence"
+        },
+        {
+          "source_key": "source_vault_validation004",
+          "path": "docs/source_universe/validation/004_permanent_first_corpus_prospective_compare_all_match.md",
+          "bytes": 2459,
+          "sha256": "60f04bdaed88929c90a075a411d47b38319aa78ba024375d74fd4c380b5305b3",
+          "source_class": "evidence"
+        },
+        {
+          "source_key": "source_vault_checkpoint274",
+          "path": "docs/checkpoints/274_archive_unarchive_reacquire_verified_source_vault_ingestion_resumed.md",
+          "bytes": 4737,
+          "sha256": "b41caa760d60e1dea4a29f2be6872bb3f397375f8b8a40d2eba4dc64e93fa7b4",
+          "source_class": "evidence"
+        }
+      ]
+    },
+    {
+      "id": "MP15",
+      "source_binding": {
+        "source_key": "source_vault_workstream",
+        "path": "docs/research/project_knowledge_candidate_01_current_state_core_v01/SHADOW_SOURCE_VAULT_WORKSTREAM.md",
+        "bytes": 3000,
+        "sha256": "2f4acb786f1c16df4b045d25ed2dffef0a1a82e4687c0fbc80c88789b19d7d71",
+        "source_class": "shadow_successor_canonical"
+      },
+      "historical_pointer": "bootstrap_state.alembic_head",
+      "historical_value": "0003_source_universe",
+      "evidence_bindings": [
+        {
+          "source_key": "source_vault_runbook",
+          "path": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+          "bytes": 17085,
+          "sha256": "fdcb795d39945883dcce99995a5c3f396e5f1dd8f904a668b8366b1d1aa69656",
+          "source_class": "governing_procedure"
+        },
+        {
+          "source_key": "source_vault_validation003",
+          "path": "docs/source_universe/validation/003_permanent_source_registry_migrated.md",
+          "bytes": 2908,
+          "sha256": "fab60cdf76f65d9922ab059c0e008d4bd50f53cb8a4f6e9d390955159aa52024",
+          "source_class": "evidence"
+        },
+        {
+          "source_key": "source_vault_validation004",
+          "path": "docs/source_universe/validation/004_permanent_first_corpus_prospective_compare_all_match.md",
+          "bytes": 2459,
+          "sha256": "60f04bdaed88929c90a075a411d47b38319aa78ba024375d74fd4c380b5305b3",
+          "source_class": "evidence"
+        },
+        {
+          "source_key": "source_vault_checkpoint274",
+          "path": "docs/checkpoints/274_archive_unarchive_reacquire_verified_source_vault_ingestion_resumed.md",
+          "bytes": 4737,
+          "sha256": "b41caa760d60e1dea4a29f2be6872bb3f397375f8b8a40d2eba4dc64e93fa7b4",
+          "source_class": "evidence"
+        }
+      ]
+    },
+    {
+      "id": "MP16",
+      "source_binding": {
+        "source_key": "source_vault_workstream",
+        "path": "docs/research/project_knowledge_candidate_01_current_state_core_v01/SHADOW_SOURCE_VAULT_WORKSTREAM.md",
+        "bytes": 3000,
+        "sha256": "2f4acb786f1c16df4b045d25ed2dffef0a1a82e4687c0fbc80c88789b19d7d71",
+        "source_class": "shadow_successor_canonical"
+      },
+      "historical_pointer": null,
+      "historical_value": {
+        "total": 20,
+        "match": 20,
+        "different": 0,
+        "missing": 0,
+        "additional": 0
+      },
+      "historical_members": {
+        "total": "bootstrap_state.prospective_compare_total",
+        "match": "bootstrap_state.prospective_compare_match",
+        "different": "bootstrap_state.different_artifact",
+        "missing": "bootstrap_state.missing_local_source",
+        "additional": "bootstrap_state.additional_local_source"
+      },
+      "evidence_bindings": [
+        {
+          "source_key": "source_vault_runbook",
+          "path": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+          "bytes": 17085,
+          "sha256": "fdcb795d39945883dcce99995a5c3f396e5f1dd8f904a668b8366b1d1aa69656",
+          "source_class": "governing_procedure"
+        },
+        {
+          "source_key": "source_vault_validation003",
+          "path": "docs/source_universe/validation/003_permanent_source_registry_migrated.md",
+          "bytes": 2908,
+          "sha256": "fab60cdf76f65d9922ab059c0e008d4bd50f53cb8a4f6e9d390955159aa52024",
+          "source_class": "evidence"
+        },
+        {
+          "source_key": "source_vault_validation004",
+          "path": "docs/source_universe/validation/004_permanent_first_corpus_prospective_compare_all_match.md",
+          "bytes": 2459,
+          "sha256": "60f04bdaed88929c90a075a411d47b38319aa78ba024375d74fd4c380b5305b3",
+          "source_class": "evidence"
+        },
+        {
+          "source_key": "source_vault_checkpoint274",
+          "path": "docs/checkpoints/274_archive_unarchive_reacquire_verified_source_vault_ingestion_resumed.md",
+          "bytes": 4737,
+          "sha256": "b41caa760d60e1dea4a29f2be6872bb3f397375f8b8a40d2eba4dc64e93fa7b4",
+          "source_class": "evidence"
+        }
+      ]
+    },
+    {
+      "id": "MP17",
+      "source_binding": {
+        "source_key": "source_vault_workstream",
+        "path": "docs/research/project_knowledge_candidate_01_current_state_core_v01/SHADOW_SOURCE_VAULT_WORKSTREAM.md",
+        "bytes": 3000,
+        "sha256": "2f4acb786f1c16df4b045d25ed2dffef0a1a82e4687c0fbc80c88789b19d7d71",
+        "source_class": "shadow_successor_canonical"
+      },
+      "historical_pointer": "bootstrap_state.source_ingestion",
+      "historical_value": "NOT_STARTED",
+      "core_pointer": "paused_workstreams.0.orientation_milestones.1.state",
+      "milestone_id": "SOURCE-VAULT:INGESTION"
+    },
+    {
+      "id": "MP18",
+      "source_binding": {
+        "source_key": "source_vault_workstream",
+        "path": "docs/research/project_knowledge_candidate_01_current_state_core_v01/SHADOW_SOURCE_VAULT_WORKSTREAM.md",
+        "bytes": 3000,
+        "sha256": "2f4acb786f1c16df4b045d25ed2dffef0a1a82e4687c0fbc80c88789b19d7d71",
+        "source_class": "shadow_successor_canonical"
+      },
+      "historical_pointer": "bootstrap_state.working_store_integrity_audit",
+      "historical_value": "PENDING",
+      "evidence_bindings": [
+        {
+          "source_key": "source_vault_runbook",
+          "path": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+          "bytes": 17085,
+          "sha256": "fdcb795d39945883dcce99995a5c3f396e5f1dd8f904a668b8366b1d1aa69656",
+          "source_class": "governing_procedure"
+        },
+        {
+          "source_key": "source_vault_validation003",
+          "path": "docs/source_universe/validation/003_permanent_source_registry_migrated.md",
+          "bytes": 2908,
+          "sha256": "fab60cdf76f65d9922ab059c0e008d4bd50f53cb8a4f6e9d390955159aa52024",
+          "source_class": "evidence"
+        },
+        {
+          "source_key": "source_vault_validation004",
+          "path": "docs/source_universe/validation/004_permanent_first_corpus_prospective_compare_all_match.md",
+          "bytes": 2459,
+          "sha256": "60f04bdaed88929c90a075a411d47b38319aa78ba024375d74fd4c380b5305b3",
+          "source_class": "evidence"
+        },
+        {
+          "source_key": "source_vault_checkpoint274",
+          "path": "docs/checkpoints/274_archive_unarchive_reacquire_verified_source_vault_ingestion_resumed.md",
+          "bytes": 4737,
+          "sha256": "b41caa760d60e1dea4a29f2be6872bb3f397375f8b8a40d2eba4dc64e93fa7b4",
+          "source_class": "evidence"
+        }
+      ]
+    },
+    {
+      "id": "MP19",
+      "source_binding": {
+        "source_key": "source_vault_workstream",
+        "path": "docs/research/project_knowledge_candidate_01_current_state_core_v01/SHADOW_SOURCE_VAULT_WORKSTREAM.md",
+        "bytes": 3000,
+        "sha256": "2f4acb786f1c16df4b045d25ed2dffef0a1a82e4687c0fbc80c88789b19d7d71",
+        "source_class": "shadow_successor_canonical"
+      },
+      "historical_pointer": "bootstrap_state.independent_encrypted_backup_proof",
+      "historical_value": "PENDING",
+      "evidence_bindings": [
+        {
+          "source_key": "source_vault_runbook",
+          "path": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+          "bytes": 17085,
+          "sha256": "fdcb795d39945883dcce99995a5c3f396e5f1dd8f904a668b8366b1d1aa69656",
+          "source_class": "governing_procedure"
+        },
+        {
+          "source_key": "source_vault_validation003",
+          "path": "docs/source_universe/validation/003_permanent_source_registry_migrated.md",
+          "bytes": 2908,
+          "sha256": "fab60cdf76f65d9922ab059c0e008d4bd50f53cb8a4f6e9d390955159aa52024",
+          "source_class": "evidence"
+        },
+        {
+          "source_key": "source_vault_validation004",
+          "path": "docs/source_universe/validation/004_permanent_first_corpus_prospective_compare_all_match.md",
+          "bytes": 2459,
+          "sha256": "60f04bdaed88929c90a075a411d47b38319aa78ba024375d74fd4c380b5305b3",
+          "source_class": "evidence"
+        },
+        {
+          "source_key": "source_vault_checkpoint274",
+          "path": "docs/checkpoints/274_archive_unarchive_reacquire_verified_source_vault_ingestion_resumed.md",
+          "bytes": 4737,
+          "sha256": "b41caa760d60e1dea4a29f2be6872bb3f397375f8b8a40d2eba4dc64e93fa7b4",
+          "source_class": "evidence"
+        }
+      ]
+    },
+    {
+      "id": "MP20",
+      "source_binding": {
+        "source_key": "source_vault_workstream",
+        "path": "docs/research/project_knowledge_candidate_01_current_state_core_v01/SHADOW_SOURCE_VAULT_WORKSTREAM.md",
+        "bytes": 3000,
+        "sha256": "2f4acb786f1c16df4b045d25ed2dffef0a1a82e4687c0fbc80c88789b19d7d71",
+        "source_class": "shadow_successor_canonical"
+      },
+      "historical_pointer": "bootstrap_state.clean_restore_and_restored_audit",
+      "historical_value": "PENDING",
+      "evidence_bindings": [
+        {
+          "source_key": "source_vault_runbook",
+          "path": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+          "bytes": 17085,
+          "sha256": "fdcb795d39945883dcce99995a5c3f396e5f1dd8f904a668b8366b1d1aa69656",
+          "source_class": "governing_procedure"
+        },
+        {
+          "source_key": "source_vault_validation003",
+          "path": "docs/source_universe/validation/003_permanent_source_registry_migrated.md",
+          "bytes": 2908,
+          "sha256": "fab60cdf76f65d9922ab059c0e008d4bd50f53cb8a4f6e9d390955159aa52024",
+          "source_class": "evidence"
+        },
+        {
+          "source_key": "source_vault_validation004",
+          "path": "docs/source_universe/validation/004_permanent_first_corpus_prospective_compare_all_match.md",
+          "bytes": 2459,
+          "sha256": "60f04bdaed88929c90a075a411d47b38319aa78ba024375d74fd4c380b5305b3",
+          "source_class": "evidence"
+        },
+        {
+          "source_key": "source_vault_checkpoint274",
+          "path": "docs/checkpoints/274_archive_unarchive_reacquire_verified_source_vault_ingestion_resumed.md",
+          "bytes": 4737,
+          "sha256": "b41caa760d60e1dea4a29f2be6872bb3f397375f8b8a40d2eba4dc64e93fa7b4",
+          "source_class": "evidence"
+        }
+      ]
+    },
+    {
+      "id": "MP21",
+      "source_binding": {
+        "source_key": "source_vault_workstream",
+        "path": "docs/research/project_knowledge_candidate_01_current_state_core_v01/SHADOW_SOURCE_VAULT_WORKSTREAM.md",
+        "bytes": 3000,
+        "sha256": "2f4acb786f1c16df4b045d25ed2dffef0a1a82e4687c0fbc80c88789b19d7d71",
+        "source_class": "shadow_successor_canonical"
+      },
+      "historical_pointer": "bootstrap_state.course_2",
+      "historical_value": "BLOCKED",
+      "core_pointer": "paused_workstreams.0.orientation_milestones.0.state",
+      "milestone_id": "COURSE:2"
+    },
+    {
+      "id": "MP22",
+      "source_binding": {
+        "source_key": "source_vault_workstream",
+        "path": "docs/research/project_knowledge_candidate_01_current_state_core_v01/SHADOW_SOURCE_VAULT_WORKSTREAM.md",
+        "bytes": 3000,
+        "sha256": "2f4acb786f1c16df4b045d25ed2dffef0a1a82e4687c0fbc80c88789b19d7d71",
+        "source_class": "shadow_successor_canonical"
+      },
+      "historical_pointer": "resume_sequence",
+      "historical_value": [
+        "reviewed ingestion of the frozen 20-entry first corpus",
+        "working-store integrity audit",
+        "deterministic backup staging",
+        "client-side encryption",
+        "independent remote replication",
+        "remote retrieval",
+        "encrypted-object digest reproduction",
+        "decryption",
+        "clean restore",
+        "restored integrity audit",
+        "Course 2 unblock only after accepted recovery proof succeeds"
+      ],
+      "evidence_bindings": [
+        {
+          "source_key": "source_vault_runbook",
+          "path": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+          "bytes": 17085,
+          "sha256": "fdcb795d39945883dcce99995a5c3f396e5f1dd8f904a668b8366b1d1aa69656",
+          "source_class": "governing_procedure"
+        },
+        {
+          "source_key": "source_vault_validation003",
+          "path": "docs/source_universe/validation/003_permanent_source_registry_migrated.md",
+          "bytes": 2908,
+          "sha256": "fab60cdf76f65d9922ab059c0e008d4bd50f53cb8a4f6e9d390955159aa52024",
+          "source_class": "evidence"
+        },
+        {
+          "source_key": "source_vault_validation004",
+          "path": "docs/source_universe/validation/004_permanent_first_corpus_prospective_compare_all_match.md",
+          "bytes": 2459,
+          "sha256": "60f04bdaed88929c90a075a411d47b38319aa78ba024375d74fd4c380b5305b3",
+          "source_class": "evidence"
+        },
+        {
+          "source_key": "source_vault_checkpoint274",
+          "path": "docs/checkpoints/274_archive_unarchive_reacquire_verified_source_vault_ingestion_resumed.md",
+          "bytes": 4737,
+          "sha256": "b41caa760d60e1dea4a29f2be6872bb3f397375f8b8a40d2eba4dc64e93fa7b4",
+          "source_class": "evidence"
+        }
+      ]
+    },
+    {
+      "id": "MP23",
+      "source_binding": {
+        "source_key": "source_vault_workstream",
+        "path": "docs/research/project_knowledge_candidate_01_current_state_core_v01/SHADOW_SOURCE_VAULT_WORKSTREAM.md",
+        "bytes": 3000,
+        "sha256": "2f4acb786f1c16df4b045d25ed2dffef0a1a82e4687c0fbc80c88789b19d7d71",
+        "source_class": "shadow_successor_canonical"
+      },
+      "historical_pointer": "private_dependency_state",
+      "historical_value": "RESOLVED_PRIVATE",
+      "evidence_bindings": [
+        {
+          "source_key": "source_vault_runbook",
+          "path": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+          "bytes": 17085,
+          "sha256": "fdcb795d39945883dcce99995a5c3f396e5f1dd8f904a668b8366b1d1aa69656",
+          "source_class": "governing_procedure"
+        },
+        {
+          "source_key": "source_vault_validation003",
+          "path": "docs/source_universe/validation/003_permanent_source_registry_migrated.md",
+          "bytes": 2908,
+          "sha256": "fab60cdf76f65d9922ab059c0e008d4bd50f53cb8a4f6e9d390955159aa52024",
+          "source_class": "evidence"
+        },
+        {
+          "source_key": "source_vault_validation004",
+          "path": "docs/source_universe/validation/004_permanent_first_corpus_prospective_compare_all_match.md",
+          "bytes": 2459,
+          "sha256": "60f04bdaed88929c90a075a411d47b38319aa78ba024375d74fd4c380b5305b3",
+          "source_class": "evidence"
+        },
+        {
+          "source_key": "source_vault_checkpoint274",
+          "path": "docs/checkpoints/274_archive_unarchive_reacquire_verified_source_vault_ingestion_resumed.md",
+          "bytes": 4737,
+          "sha256": "b41caa760d60e1dea4a29f2be6872bb3f397375f8b8a40d2eba4dc64e93fa7b4",
+          "source_class": "evidence"
+        }
+      ]
+    }
+  ]
+}

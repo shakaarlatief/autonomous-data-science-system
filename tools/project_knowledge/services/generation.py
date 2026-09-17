@@ -26,6 +26,11 @@ from .validation import validate_repository
 
 class _GenerationDiscovery(DiscoveryPolicy):
     def classify(self, path):
+        # W0 compatibility surfaces remain operational authority, never source
+        # material for successor derived views (Research 185). Skip even reads.
+        if path in {"docs/CURRENT_STATE.md", "docs/current_routing.json",
+                    "docs/CONTINUITY.md", "docs/KNOWLEDGE_MAP.md"}:
+            return PathRole.EVIDENCE_FIXTURE
         if self._under(path, self.generated_root):
             return PathRole.EVIDENCE_FIXTURE
         return super().classify(path)
@@ -36,7 +41,7 @@ def _capabilities():
     # an explicitly declared entry; it cannot retrieve/inspect the callable.
     return {"canonical_json": deterministic_json, "utf8_text": deterministic_utf8, "length": len, "sorted_values": sorted,
             "as_text": plain_text, "as_integer": int, "as_tuple": tuple, "sequence_range": range,
-            "minimum": min, "maximum": max, "total": sum}
+            "minimum": min, "maximum": max, "total": sum, "fail_view": fail}
 
 
 def _generate_verified(snapshot: RepositorySnapshot, specifications, *, selected_view_ids=None, schema_blobs):

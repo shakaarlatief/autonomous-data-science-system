@@ -1,0 +1,48 @@
+{
+  "active_workstream": {
+    "execution_anchor": {
+      "checkpoint": 501,
+      "current_boundary": "project-knowledge-source-vault-current-state-core-shadow-next",
+      "development_branch": "v1-source-vault-bootstrap-resume",
+      "pull_request": null
+    },
+    "objective": "Project-development knowledge architecture redesign and Candidate 01 qualification",
+    "semantic_id": "WS-PKA-CURRENT",
+    "stage": {
+      "stage_id": "RESEARCH:124",
+      "stage_state": "TARGET_ARCHITECTURE_NOT_SELECTED"
+    },
+    "state": "ACTIVE"
+  },
+  "current_experiment": {
+    "outcome": "INCOMPLETE",
+    "semantic_id": "EXPERIMENT:192"
+  },
+  "current_specification": {
+    "semantic_id": "SPECIFICATION:027"
+  },
+  "integration_boundary": {
+    "promoted_branch": "v1-frontend-spike",
+    "promoted_commit": "2480109fadeee1e480ef03b82e335aacdf9adf91",
+    "semantic_id": "PROJECT-INTEGRATION-BOUNDARY"
+  },
+  "paused_workstreams": [
+    {
+      "governing_procedure": "PROCEDURE:PERMANENT-SOURCE-VAULT-BOOTSTRAP",
+      "orientation_milestones": [
+        {
+          "milestone_id": "COURSE:2",
+          "state": "BLOCKED"
+        },
+        {
+          "milestone_id": "SOURCE-VAULT:INGESTION",
+          "state": "NOT_STARTED"
+        }
+      ],
+      "resume_target": "SOURCE-VAULT:REVIEWED-INGESTION",
+      "semantic_id": "WS-SOURCE-VAULT-BOOTSTRAP",
+      "state": "PAUSED"
+    }
+  ],
+  "schema_version": "1"
+}

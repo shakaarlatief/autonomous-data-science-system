@@ -1,0 +1,112 @@
+{
+  "docs/work/active.json": {
+    "schema_version": "1",
+    "profile": "workstream.v1",
+    "kind": "PROJECT_KNOWLEDGE_ARCHITECTURE_WORKSTREAM",
+    "authority_class": "canonical",
+    "semantic_id": "WS-PKA-CURRENT",
+    "state": "ACTIVE",
+    "objective": "Project-development knowledge architecture redesign and Candidate 01 qualification",
+    "execution_anchor": {
+      "checkpoint": 501,
+      "development_branch": "v1-source-vault-bootstrap-resume",
+      "pull_request": null,
+      "current_boundary": "project-knowledge-source-vault-current-state-core-shadow-next"
+    },
+    "stage": {
+      "stage_id": "RESEARCH:124",
+      "stage_state": "TARGET_ARCHITECTURE_NOT_SELECTED"
+    }
+  },
+  "docs/boundary.json": {
+    "schema_version": "1",
+    "profile": "project_boundary.v1",
+    "kind": "PROJECT_INTEGRATION_BOUNDARY",
+    "authority_class": "canonical",
+    "semantic_id": "PROJECT-INTEGRATION-BOUNDARY",
+    "promoted_branch": "v1-frontend-spike",
+    "promoted_commit": "2480109fadeee1e480ef03b82e335aacdf9adf91"
+  },
+  "docs/specification.json": {
+    "schema_version": "1",
+    "profile": "semantic_source.v1",
+    "kind": "SPECIFICATION",
+    "authority_class": "canonical",
+    "semantic_id": "SPECIFICATION:027"
+  },
+  "docs/experiment.json": {
+    "schema_version": "1",
+    "profile": "semantic_source.v1",
+    "kind": "EXPERIMENT_RESULT",
+    "authority_class": "canonical",
+    "semantic_id": "EXPERIMENT:192",
+    "outcome": "INCOMPLETE"
+  },
+  "docs/work/paused.json": {
+    "schema_version": "1",
+    "profile": "workstream.v1",
+    "kind": "SOURCE_VAULT_BOOTSTRAP_WORKSTREAM",
+    "authority_class": "canonical",
+    "semantic_id": "WS-SOURCE-VAULT-BOOTSTRAP",
+    "state": "PAUSED",
+    "objective": "Complete the first permanent user-controlled Source Vault bootstrap and unblock Course 2 only after accepted recovery proof",
+    "expected_to_resume": true,
+    "pause_reason": "Project routing currently prioritizes Research 124 project-knowledge architecture qualification; Source Vault bootstrap is preserved, not superseded",
+    "return_condition": "Resume when project routing explicitly returns to the Source Vault bootstrap workstream",
+    "resume_target": "SOURCE-VAULT:REVIEWED-INGESTION",
+    "governing_procedure": "PROCEDURE:PERMANENT-SOURCE-VAULT-BOOTSTRAP",
+    "orientation_milestones": [
+      {
+        "milestone_id": "SOURCE-VAULT:INGESTION",
+        "state": "NOT_STARTED"
+      },
+      {
+        "milestone_id": "COURSE:2",
+        "state": "BLOCKED"
+      }
+    ]
+  },
+  "docs/research-stage.json": {
+    "schema_version": "1",
+    "profile": "semantic_source.v1",
+    "kind": "RESEARCH_STAGE",
+    "authority_class": "canonical",
+    "semantic_id": "RESEARCH:124"
+  },
+  "docs/ingestion.json": {
+    "schema_version": "1",
+    "profile": "semantic_source.v1",
+    "kind": "RESUME_TARGET",
+    "authority_class": "canonical",
+    "semantic_id": "SOURCE-VAULT:REVIEWED-INGESTION"
+  },
+  "docs/procedure.json": {
+    "schema_version": "1",
+    "profile": "governing_procedure.v1",
+    "kind": "SOURCE_VAULT_BOOTSTRAP_PROCEDURE",
+    "authority_class": "canonical",
+    "semantic_id": "PROCEDURE:PERMANENT-SOURCE-VAULT-BOOTSTRAP",
+    "state": "ACTIVE",
+    "governed_action_classes": [
+      "SOURCE_VAULT_BOOTSTRAP"
+    ],
+    "preconditions": [
+      "Explicit project routing"
+    ],
+    "mandatory_constraints": [
+      {
+        "constraint_id": "RECOVERY",
+        "requirement": "Require accepted recovery proof before Course 2"
+      }
+    ],
+    "prohibitions": [
+      "Do not unblock Course 2 before recovery proof"
+    ],
+    "required_postconditions": [
+      "Accepted recovery proof"
+    ],
+    "fail_closed_conditions": [
+      "Missing recovery proof"
+    ]
+  }
+}

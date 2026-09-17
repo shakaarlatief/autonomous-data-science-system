@@ -27,6 +27,17 @@ PURE_UNIT_REGISTRY = (
     ("source_inventory.v1", "tools/project_knowledge/pure_units.py", "source_inventory",
      (("entry", "inventory_entry.v1"),), ()),
     ("inventory_entry.v1", "tools/project_knowledge/pure_units.py", "inventory_entry", (), ()),
+    ("current_state_core.v1", "tools/project_knowledge/pure_units.py", "current_state_core",
+     (("single", "core_single.v1"), ("fields", "core_fields.v1"),
+      ("reference", "core_reference.v1"), ("paused", "core_paused.v1")), ("sorted_values",)),
+    ("core_single.v1", "tools/project_knowledge/pure_units.py", "core_single", (), ("length", "fail_view")),
+    ("core_fields.v1", "tools/project_knowledge/pure_units.py", "core_fields", (), ("fail_view",)),
+    ("core_reference.v1", "tools/project_knowledge/pure_units.py", "core_reference",
+     (("single", "core_single.v1"),), ()),
+    ("core_procedure.v1", "tools/project_knowledge/pure_units.py", "core_procedure", (), ("length", "fail_view")),
+    ("core_paused.v1", "tools/project_knowledge/pure_units.py", "core_paused",
+     (("fields", "core_fields.v1"), ("reference", "core_reference.v1"), ("procedure", "core_procedure.v1")),
+     ("sorted_values",)),
 )
 
 
@@ -290,4 +301,20 @@ def source_inventory_specification() -> ViewSpecification:
         GENERATED_ROOT + "manifests/source_inventory.json", "1", RebuildabilityClass.DETERMINISTIC_BYTE_REBUILD,
         ViewInputSelector(), ViewGenerator("project_knowledge_source_inventory", "1", files),
         "source_inventory.v1", "canonical_json.v1",
+    )
+
+
+def current_state_core_specification() -> ViewSpecification:
+    """Research 185 orientation projection; no publication or authority switch.
+
+    All canonical profiles participate so references can resolve without a
+    carrier-path registry. Unrelated sources can alter provenance membership,
+    but only the explicit semantic roles influence the view's value.
+    """
+    return ViewSpecification(
+        "current_state_core", GENERATED_ROOT + "current_state_core.json",
+        GENERATED_ROOT + "manifests/current_state_core.json", "1", RebuildabilityClass.DETERMINISTIC_BYTE_REBUILD,
+        ViewInputSelector(), ViewGenerator("project_knowledge_current_state_core", "1",
+                                          source_inventory_specification().generator.implementation_files),
+        "current_state_core.v1", "canonical_json.v1",
     )

@@ -56,6 +56,9 @@
     "authority_to": {
       "type": "string",
       "format": "date-time"
+    },
+    "outcome": {
+      "$ref": "defs.v1.schema.json#/$defs/semantic_id"
     }
   },
   "required": [
@@ -64,5 +67,31 @@
     "kind",
     "authority_class"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "EXPERIMENT_RESULT"
+          }
+        },
+        "required": [
+          "kind"
+        ]
+      },
+      "then": {
+        "required": [
+          "outcome"
+        ]
+      },
+      "else": {
+        "not": {
+          "required": [
+            "outcome"
+          ]
+        }
+      }
+    }
+  ]
 }

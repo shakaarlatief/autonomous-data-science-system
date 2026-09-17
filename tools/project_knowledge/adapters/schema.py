@@ -69,6 +69,13 @@ class SchemaValidator:
         except ValueError:
             semantic_id = None
         errors = sorted(self.validators[profile].iter_errors(value), key=lambda e: (tuple(map(str, e.absolute_path)), e.message))
+        # JSON Schema uniqueItems compares whole objects; Research 185 requires
+        # identity uniqueness even when two milestones carry different states.
+        if not errors and profile == Profile.WORKSTREAM:
+            identities = [item["milestone_id"] for item in value.get("orientation_milestones", ())]
+            if len(identities) != len(set(identities)):
+                return (Diagnostic("PROFILE_SCHEMA_VIOLATION", DiagnosticSeverity.ERROR, carrier_path,
+                                   "/orientation_milestones: milestone_id must be unique", semantic_id),)
         return tuple(Diagnostic(
             "PROFILE_SCHEMA_VIOLATION", DiagnosticSeverity.ERROR, carrier_path,
             f"/{'/'.join(map(str, error.absolute_path))}: {error.message}", semantic_id,
