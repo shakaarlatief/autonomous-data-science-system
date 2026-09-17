@@ -6,6 +6,7 @@
 **Governing contract:** Specification 028
 **Scope:** Freeze the concrete production W0 software/repository architecture after independent ChatGPT and Claude designs plus bounded comparative reconciliation.
 **Authority:** Accepted implementation-design interpretation subordinate to D-035, Requirements V0.2 and Specification 028. This record resolves implementation freedom left open by Specification 028 but does not amend that specification, migrate canonical knowledge, or switch operational authority.
+**Prospective refinement:** Research 185 refines the W0 field-level input contract for PKA-G010 after the first honest implementation attempt demonstrated that the narrow pre-G010 schemas could not carry all frozen current-state-core must-preserve semantics. Specification 028 remains unchanged; Research 185 governs those refined G010 input fields and role-selection rules.
 **Declared references:** `research:144`, `research:175`, `research:176`, `research:177`, `research:178`, `specification:028`, `path:docs/model_collaboration/threads/MC-0017/messages/001_claude_independent_w0_implementation_architecture.md`, `path:docs/model_collaboration/threads/MC-0017/messages/002_chatgpt_comparative_w0_implementation_architecture.md`, `path:docs/model_collaboration/threads/MC-0017/messages/003_claude_comparative_w0_implementation_critique.md`
 
 ## 1. Outcome
