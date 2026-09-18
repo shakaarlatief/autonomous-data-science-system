@@ -106,6 +106,28 @@ def test_g010_uses_same_closed_framework_and_no_research_runtime():
     assert not any(p.startswith(("scripts/research/", "tests/", "docs/")) for p in blobs)
 
 
+def test_g011_capture_planning_is_structurally_separate_from_authority():
+    from tools.project_knowledge.model import HISTORICAL_CAPTURE_ROOT, OPEN_CAPTURE_ROOT
+    from tools.project_knowledge.services.discovery import DiscoveryPolicy
+
+    policy = DiscoveryPolicy()
+    assert policy.open_capture_root == OPEN_CAPTURE_ROOT
+    assert policy.historical_capture_root == HISTORICAL_CAPTURE_ROOT
+
+    capture_module = "tools.project_knowledge.capture"
+    capture_source = (PACKAGE / "capture.py").read_text(encoding="utf-8")
+    capture_dependencies = tuple(imports(capture_source, capture_module))
+    assert not any(dep.startswith((
+        "tools.project_knowledge.authority",
+        "tools.project_knowledge.services",
+        "tools.project_knowledge.adapters",
+    )) for dep in capture_dependencies)
+
+    authority_module = "tools.project_knowledge.authority"
+    authority_source = (PACKAGE / "authority.py").read_text(encoding="utf-8")
+    assert not any(dep.startswith("tools.project_knowledge.capture") for dep in imports(authority_source, authority_module))
+
+
 @pytest.mark.parametrize("source", [
     "from .adapters import gitio", "from . import adapters", "from . import services",
     "from .services.validation import validate_repository",

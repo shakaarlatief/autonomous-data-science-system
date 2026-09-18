@@ -9,7 +9,7 @@ from ..adapters.gitio import read_committed_path
 from ..adapters.schema import SchemaValidator
 from ..declaration import parse_markdown, parse_native_json
 from ..model import (
-    AuthorityClass, Diagnostic, DiagnosticSeverity, GovernedSource, HashBasis, LifecycleState,
+    AuthorityClass, CaptureRecord, Diagnostic, DiagnosticSeverity, GovernedSource, HashBasis, LifecycleState,
     Profile, RawDeclaration, Relation, RelationMode, RepositorySnapshot, Scope,
     SemanticId, SnapshotMode, SourceRevision, SubstrateError,
 )
@@ -26,6 +26,7 @@ class ValidationResult:
     undeclared_by_root: tuple[tuple[str, int], ...]
     path_role_counts: tuple[tuple[str, int], ...]
     noncanonical_declaration_count: int
+    captures: tuple[CaptureRecord, ...] = ()
 
     @property
     def ok(self) -> bool:
@@ -68,7 +69,7 @@ def validate_repository(
     policy = policy if policy is not None else DiscoveryPolicy()
     validator = validator or SchemaValidator()
     diagnostics = list(validate_durable_evidence(snapshot.mode)) if durable_evidence else []
-    sources = []
+    sources, captures = [], []
     candidates = excluded_count = 0
     undeclared = {}
     role_counts = {}
@@ -125,15 +126,10 @@ def validate_repository(
                     ))
         if "expected_revision" in fields:
             diagnostics.extend(validate_revision_descriptor(snapshot.root, fields["expected_revision"]))
-        if excluded:
-            # Validate admitted capture/manifest declarations, including revision
-            # and durability checks, without exposing them as canonical sources.
-            noncanonical_count += 1
-            continue
         revision = None
         if snapshot.mode == SnapshotMode.COMMIT_SNAPSHOT:
             revision = SourceRevision(entry.path, snapshot.source_commit, "sha256", HashBasis.GIT_BLOB_BYTES_AT_COMMIT, hashlib.sha256(content).hexdigest())
-        sources.append(GovernedSource(
+        source = GovernedSource(
             carrier_path=entry.path, profile=Profile(fields["profile"]),
             authority_class=AuthorityClass(fields["authority_class"]), kind=fields["kind"],
             declaration=raw, snapshot_mode=snapshot.mode,
@@ -142,8 +138,21 @@ def validate_repository(
             relations=tuple(Relation(RelationMode(r["mode"]), SemanticId(r["target"]), Scope(r["scope"]) if "scope" in r else None) for r in fields.get("relations", ())),
             revision=revision,
             state=LifecycleState(fields["state"]) if "state" in fields else None,
-        ))
+        )
+        if role == PathRole.CAPTURE_AREA:
+            captures.append(CaptureRecord(
+                source, fields.get("summary"), tuple(fields.get("provenance", ())),
+                tuple(fields.get("source_references", ())),
+            ))
+            noncanonical_count += 1
+            continue
+        if excluded:
+            # Validate admitted manifest declarations, including revision and
+            # durability checks, without exposing them as canonical sources.
+            noncanonical_count += 1
+            continue
+        sources.append(source)
     return ValidationResult(
         tuple(sources), tuple(diagnostics), candidates, excluded_count,
-        tuple(sorted(undeclared.items())), tuple(sorted(role_counts.items())), noncanonical_count,
+        tuple(sorted(undeclared.items())), tuple(sorted(role_counts.items())), noncanonical_count, tuple(captures),
     )

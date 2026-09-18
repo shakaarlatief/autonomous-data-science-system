@@ -266,9 +266,26 @@ def test_legitimate_special_artifacts_validate_without_becoming_sources(repo, mo
     result = validate_repository(open_snapshot(repo, mode, "HEAD" if mode == SnapshotMode.COMMIT_SNAPSHOT else None))
     assert result.ok and result.excluded_but_declared_count == 0
     assert [s.carrier_path for s in result.sources] == ["docs/source.md"]
+    assert [c.source.carrier_path for c in result.captures] == [
+        "docs/project_knowledge/captures/historical/observation.json",
+        "docs/project_knowledge/captures/open/observation.md",
+    ]
+    assert all(c.source.authority_class.value == "capture" for c in result.captures)
+    assert all((c.source.revision is not None) == (mode == SnapshotMode.COMMIT_SNAPSHOT) for c in result.captures)
     assert result.noncanonical_declaration_count == 3
     assert dict(result.path_role_counts)[PathRole.CAPTURE_AREA] == 2
     assert dict(result.path_role_counts)[PathRole.GENERATED_AREA] == 2
+
+
+def test_capture_profile_is_admitted_only_in_open_or_historical_areas(repo):
+    capture = json.loads((ROOT / "tests/fixtures/project_knowledge/capture.valid.json").read_text())
+    write(repo, "docs/project_knowledge/captures/loose.json", json.dumps(capture).encode())
+    write(repo, "docs/project_knowledge/captures/review/observation.json", json.dumps(capture).encode())
+    write(repo, "docs/ordinary-capture.json", json.dumps(capture).encode())
+    result = validate_repository(worktree_snapshot(repo))
+    assert not result.ok and result.excluded_but_declared_count == 3
+    assert result.captures == ()
+    assert all(d.code == "EXCLUDED_BUT_DECLARED" for d in result.diagnostics)
 
 
 def test_special_artifacts_do_not_bypass_schema_validation(repo):

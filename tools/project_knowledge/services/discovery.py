@@ -60,6 +60,8 @@ class DiscoveryPolicy:
         "docs/research/project_knowledge_real_corpus_v01",
     )
     capture_root: str = "docs/project_knowledge/captures"
+    open_capture_root: str = "docs/project_knowledge/captures/open"
+    historical_capture_root: str = "docs/project_knowledge/captures/historical"
     generated_root: str = "docs/project_knowledge/generated"
     manifest_root: str = "docs/project_knowledge/generated/manifests"
     excluded_components: frozenset[str] = frozenset({
@@ -77,8 +79,10 @@ class DiscoveryPolicy:
     def classify(self, path: str) -> PathRole:
         if any(self._under(path, root) for root in self.fixture_roots):
             return PathRole.EVIDENCE_FIXTURE
-        if self._under(path, self.capture_root):
+        if self._under(path, self.open_capture_root) or self._under(path, self.historical_capture_root):
             return PathRole.CAPTURE_AREA
+        if self._under(path, self.capture_root):
+            return PathRole.DISALLOWED
         if self._under(path, self.generated_root):
             return PathRole.GENERATED_AREA
         parts = PurePosixPath(path).parts
@@ -95,7 +99,7 @@ class DiscoveryPolicy:
     def admits_profile(self, path: str, profile: Profile) -> bool:
         role = self.classify(path)
         if role == PathRole.ELIGIBLE_SOURCE:
-            return True
+            return profile != Profile.CAPTURE
         if role == PathRole.CAPTURE_AREA:
             return profile == Profile.CAPTURE
         if role == PathRole.GENERATED_AREA:

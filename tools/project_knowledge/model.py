@@ -11,6 +11,10 @@ from types import MappingProxyType
 from typing import Callable, Mapping, TypeAlias
 
 
+OPEN_CAPTURE_ROOT = "docs/project_knowledge/captures/open"
+HISTORICAL_CAPTURE_ROOT = "docs/project_knowledge/captures/historical"
+
+
 class AuthorityClass(StrEnum):
     CANONICAL = "canonical"
     CANDIDATE = "candidate"
@@ -221,6 +225,126 @@ class GovernedSource:
             raise ValueError("A capture cannot claim canonical authority")
         if self.profile == Profile.DERIVED_VIEW_MANIFEST and self.authority_class != AuthorityClass.DERIVED:
             raise ValueError("A view manifest must have derived authority class")
+
+
+@dataclass(frozen=True)
+class CaptureRecord:
+    """Validated non-authoritative capture material kept outside canonical discovery."""
+    source: GovernedSource
+    summary: str | None = None
+    provenance: tuple[str, ...] = ()
+    source_references: tuple[str, ...] = ()
+
+    def __post_init__(self) -> None:
+        if not isinstance(self.source, GovernedSource):
+            raise ValueError("CaptureRecord requires a governed capture source")
+        if self.source.profile != Profile.CAPTURE or self.source.authority_class != AuthorityClass.CAPTURE:
+            raise ValueError("CaptureRecord can only wrap capture.v1 / authority_class=capture")
+        if not self.source.carrier_path.startswith((OPEN_CAPTURE_ROOT + "/", HISTORICAL_CAPTURE_ROOT + "/")):
+            raise ValueError("CaptureRecord requires the designated open or historical capture area")
+        if self.summary is not None and (not isinstance(self.summary, str) or not self.summary.strip()):
+            raise ValueError("Capture summary must be nonblank when present")
+        for field in ("provenance", "source_references"):
+            raw_references = tuple(getattr(self, field))
+            if any(not isinstance(ref, str) or not ref.strip() for ref in raw_references):
+                raise ValueError(f"Capture {field} must contain unique nonblank references")
+            if len(set(raw_references)) != len(raw_references):
+                raise ValueError(f"Capture {field} must contain unique nonblank references")
+            object.__setattr__(self, field, tuple(sorted(raw_references)))
+
+    @property
+    def provenance_chain(self) -> tuple[str, ...]:
+        """Union of explicit origin/provenance pointers without inventing authority."""
+        return tuple(sorted(set((*self.provenance, *self.source_references))))
+
+
+class PromotionDisposition(StrEnum):
+    MATERIALIZED_IN_CANONICAL_SOURCE = "MATERIALIZED_IN_CANONICAL_SOURCE"
+    INTENTIONALLY_LATENT_WITH_RECOVERABLE_SOURCE = "INTENTIONALLY_LATENT_WITH_RECOVERABLE_SOURCE"
+    REJECTED_WITH_REVIEWED_RATIONALE = "REJECTED_WITH_REVIEWED_RATIONALE"
+
+
+@dataclass(frozen=True)
+class PromotionUnitDisposition:
+    semantic_unit_id: SemanticId
+    disposition: PromotionDisposition
+    source_references: tuple[str, ...] = ()
+    reviewed_rationale: str | None = None
+
+    def __post_init__(self) -> None:
+        if not isinstance(self.semantic_unit_id, SemanticId):
+            raise ValueError("Promotion dispositions require authored semantic unit IDs")
+        object.__setattr__(self, "disposition", PromotionDisposition(self.disposition))
+        raw_references = tuple(self.source_references)
+        if any(not isinstance(ref, str) or not ref.strip() for ref in raw_references):
+            raise ValueError("Promotion disposition source references must be unique and nonblank")
+        if len(set(raw_references)) != len(raw_references):
+            raise ValueError("Promotion disposition source references must be unique and nonblank")
+        references = tuple(sorted(raw_references))
+        object.__setattr__(self, "source_references", references)
+        if (self.disposition == PromotionDisposition.INTENTIONALLY_LATENT_WITH_RECOVERABLE_SOURCE
+                and not references):
+            raise ValueError("Latent promotion dispositions require a recoverable source reference")
+        if (self.disposition == PromotionDisposition.REJECTED_WITH_REVIEWED_RATIONALE
+                and (not isinstance(self.reviewed_rationale, str) or not self.reviewed_rationale.strip())):
+            raise ValueError("Rejected promotion dispositions require reviewed rationale")
+        if self.reviewed_rationale is not None and not self.reviewed_rationale.strip():
+            raise ValueError("Reviewed rationale must be nonblank when present")
+
+
+@dataclass(frozen=True)
+class PromotionPlan:
+    """Prospective reviewed promotion evidence only; it performs no repository mutation."""
+    capture: CaptureRecord
+    review_disposition: str
+    accepted_understanding: str
+    target_source: GovernedSource
+    expected_target_revision: SourceRevision
+    required_semantic_units: tuple[SemanticId, ...]
+    unit_dispositions: tuple[PromotionUnitDisposition, ...]
+    capture_provenance: tuple[str, ...]
+
+    def __post_init__(self) -> None:
+        if not isinstance(self.capture, CaptureRecord):
+            raise ValueError("PromotionPlan requires a validated capture")
+        if not self.capture.source.carrier_path.startswith(OPEN_CAPTURE_ROOT + "/"):
+            raise ValueError("PromotionPlan can only consume a capture from the open-capture area")
+        if self.review_disposition != "ACCEPTED_FOR_PROMOTION":
+            raise ValueError("PromotionPlan requires explicit ACCEPTED_FOR_PROMOTION review disposition")
+        if not isinstance(self.accepted_understanding, str) or not self.accepted_understanding.strip():
+            raise ValueError("PromotionPlan requires explicit accepted understanding")
+        target = self.target_source
+        if (not isinstance(target, GovernedSource) or target.authority_class != AuthorityClass.CANONICAL
+                or target.profile in {Profile.CAPTURE, Profile.DERIVED_VIEW_MANIFEST}):
+            raise ValueError("Promotion target must be a natural canonical source, never the capture itself")
+        if target.carrier_path == self.capture.source.carrier_path:
+            raise ValueError("Promotion cannot turn the capture carrier into canonical authority")
+        if (target.revision is None or target.revision != self.expected_target_revision
+                or target.revision.source_path != target.carrier_path):
+            raise ValueError("PromotionPlan must bind the exact current canonical target revision and carrier")
+        required_raw = tuple(self.required_semantic_units)
+        if not required_raw or any(not isinstance(sid, SemanticId) for sid in required_raw):
+            raise ValueError("PromotionPlan requires unique authored semantic unit IDs")
+        if len(set(required_raw)) != len(required_raw):
+            raise ValueError("PromotionPlan requires unique authored semantic unit IDs")
+        required = tuple(sorted(required_raw, key=lambda sid: sid.value))
+        object.__setattr__(self, "required_semantic_units", required)
+        dispositions_raw = tuple(self.unit_dispositions)
+        if any(not isinstance(item, PromotionUnitDisposition) for item in dispositions_raw):
+            raise ValueError("PromotionPlan requires typed promotion dispositions")
+        dispositions = tuple(sorted(dispositions_raw, key=lambda item: item.semantic_unit_id.value))
+        disposition_ids = tuple(item.semantic_unit_id for item in dispositions)
+        if disposition_ids != required:
+            raise ValueError("Every required semantic unit must have exactly one promotion disposition")
+        if not any(item.disposition == PromotionDisposition.MATERIALIZED_IN_CANONICAL_SOURCE for item in dispositions):
+            raise ValueError("Accepted promotion must materialize at least one semantic unit in the canonical target")
+        object.__setattr__(self, "unit_dispositions", dispositions)
+        provenance_raw = tuple(self.capture_provenance)
+        if not provenance_raw or any(not isinstance(ref, str) or not ref.strip() for ref in provenance_raw):
+            raise ValueError("PromotionPlan requires a unique nonempty capture provenance chain")
+        if len(set(provenance_raw)) != len(provenance_raw):
+            raise ValueError("PromotionPlan requires a unique nonempty capture provenance chain")
+        object.__setattr__(self, "capture_provenance", tuple(sorted(provenance_raw)))
 
 
 @dataclass(frozen=True)
