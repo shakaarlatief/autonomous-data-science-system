@@ -38,6 +38,58 @@ PURE_UNIT_REGISTRY = (
     ("core_paused.v1", "tools/project_knowledge/pure_units.py", "core_paused",
      (("fields", "core_fields.v1"), ("reference", "core_reference.v1"), ("procedure", "core_procedure.v1")),
      ("sorted_values",)),
+    ("unique_values.v1", "tools/project_knowledge/pure_units.py", "unique_values", (), ("sorted_values",)),
+    ("normalized_scope.v1", "tools/project_knowledge/pure_units.py", "normalized_scope",
+     (("unique", "unique_values.v1"),), ("sorted_values", "is_text")),
+    ("scope_token.v1", "tools/project_knowledge/pure_units.py", "scope_token",
+     (("normalize_scope", "normalized_scope.v1"),), ("sorted_values", "is_text")),
+    ("normalized_relations.v1", "tools/project_knowledge/pure_units.py", "normalized_relations",
+     (("normalize_scope", "normalized_scope.v1"), ("scope_key", "scope_token.v1")), ("sorted_values",)),
+    ("catalog_entry.v1", "tools/project_knowledge/pure_units.py", "catalog_entry",
+     (("normalize_scope", "normalized_scope.v1"),), ()),
+    ("source_catalog.v1", "tools/project_knowledge/pure_units.py", "source_catalog",
+     (("catalog", "catalog_entry.v1"),), ()),
+    ("has_temporal_control.v1", "tools/project_knowledge/pure_units.py", "has_temporal_control", (), ()),
+    ("identity_transition_record.v1", "tools/project_knowledge/pure_units.py", "identity_transition_record",
+     (("unique", "unique_values.v1"), ("temporal", "has_temporal_control.v1")), ()),
+    ("identity_source_record.v1", "tools/project_knowledge/pure_units.py", "identity_source_record",
+     (("temporal", "has_temporal_control.v1"),), ()),
+    ("any_temporal.v1", "tools/project_knowledge/pure_units.py", "any_temporal",
+     (("temporal", "has_temporal_control.v1"),), ()),
+    ("identity_static_resolution.v1", "tools/project_knowledge/pure_units.py", "identity_static_resolution",
+     (("unique", "unique_values.v1"), ("any_temporal", "any_temporal.v1"),
+      ("temporal", "has_temporal_control.v1")), ("length", "any_true", "fail_view")),
+    ("identity_index.v1", "tools/project_knowledge/pure_units.py", "identity_index",
+     (("transition_record", "identity_transition_record.v1"), ("unique", "unique_values.v1"),
+      ("resolve_identity_row", "identity_static_resolution.v1"),
+      ("identity_source", "identity_source_record.v1")), ()),
+    ("authority_candidate.v1", "tools/project_knowledge/pure_units.py", "authority_candidate",
+     (("normalize_scope", "normalized_scope.v1"), ("normalize_relations", "normalized_relations.v1"),
+      ("unique", "unique_values.v1")), ()),
+    ("authority_index.v1", "tools/project_knowledge/pure_units.py", "authority_index",
+     (("authority_candidate", "authority_candidate.v1"),), ()),
+    ("workstream_dependency_closure.v1", "tools/project_knowledge/pure_units.py", "workstream_dependency_closure",
+     (("unique", "unique_values.v1"),), ("length", "fail_view")),
+    ("workstream_parent_chain.v1", "tools/project_knowledge/pure_units.py", "workstream_parent_chain",
+     (), ("length", "fail_view")),
+    ("workstream_node.v1", "tools/project_knowledge/pure_units.py", "workstream_node",
+     (("dependency_closure", "workstream_dependency_closure.v1"),
+      ("parent_chain", "workstream_parent_chain.v1"), ("unique", "unique_values.v1"),
+      ("temporal", "has_temporal_control.v1")),
+     ("length", "fail_view")),
+    ("workstream_graph.v1", "tools/project_knowledge/pure_units.py", "workstream_graph",
+     (("unique", "unique_values.v1"), ("node", "workstream_node.v1")),
+     ("sorted_values", "any_true", "length", "fail_view")),
+    ("subject_memberships.v1", "tools/project_knowledge/pure_units.py", "subject_memberships",
+     (("unique", "unique_values.v1"),), ("sorted_values", "is_text")),
+    ("subject_index.v1", "tools/project_knowledge/pure_units.py", "subject_index",
+     (("memberships", "subject_memberships.v1"),), ("sorted_values",)),
+    ("obligation_rows.v1", "tools/project_knowledge/pure_units.py", "obligation_rows",
+     (), ("sequence_range", "length")),
+    ("risk_obligation_index.v1", "tools/project_knowledge/pure_units.py", "risk_obligation_index",
+     (("unique", "unique_values.v1"), ("obligations_for", "obligation_rows.v1")), ("sorted_values",)),
+    ("current_state_core_markdown.v1", "tools/project_knowledge/pure_units.py", "current_state_core_markdown",
+     (), ("utf8_text", "length", "as_text")),
 )
 
 
@@ -126,36 +178,37 @@ def implementation_digest(generator: ViewGenerator, blobs: Mapping[str, bytes]) 
 
 
 def _complete_inputs(spec, corpus, outputs):
+    selector = spec.selector
+    allowed_classes = set(selector.authority_classes)
     seen, duplicates = set(), set()
     for item in corpus:
-        if item.source.authority_class == AuthorityClass.CANONICAL:
+        if item.source.authority_class in allowed_classes:
             path = item.source.carrier_path
             if path in seen:
                 duplicates.add(path)
             seen.add(path)
     if duplicates:
-        fail("DUPLICATE_VIEW_INPUT", "Canonical input paths must be unique", min(duplicates))
-    selected, identities = {}, set()
+        fail("DUPLICATE_VIEW_INPUT", "Selected input paths must be unique", min(duplicates))
+    selected, canonical_identities = {}, set()
     for item in sorted(corpus, key=lambda item: item.source.carrier_path):
         source = item.source
-        if source.authority_class != AuthorityClass.CANONICAL:
+        if source.authority_class not in allowed_classes:
             continue
         path = source.carrier_path
         if path in outputs or path.startswith(GENERATED_ROOT):
-            fail("CIRCULAR_VIEW_BINDING", "Generated content cannot enter canonical view inputs", path)
+            fail("CIRCULAR_VIEW_BINDING", "Generated content cannot enter governed view inputs", path)
         if path in selected:
-            fail("DUPLICATE_VIEW_INPUT", "Canonical input paths must be unique", path)
-        if source.semantic_id is not None:
-            if source.semantic_id in identities:
+            fail("DUPLICATE_VIEW_INPUT", "Selected input paths must be unique", path)
+        if source.authority_class == AuthorityClass.CANONICAL and source.semantic_id is not None:
+            if source.semantic_id in canonical_identities:
                 fail("DUPLICATE_VIEW_INPUT_IDENTITY", "Canonical input identities must be unique")
-            identities.add(source.semantic_id)
+            canonical_identities.add(source.semantic_id)
         revision = source.revision
         if source.snapshot_mode != SnapshotMode.COMMIT_SNAPSHOT or revision is None:
             fail("NON_COMMITTED_VIEW_INPUT", "Durable views require exact COMMIT_SNAPSHOT inputs", path)
         if revision.source_path != path or hashlib.sha256(item.content).hexdigest() != revision.content_digest:
-            fail("VIEW_INPUT_DIGEST_MISMATCH", "Input must match its exact canonical Git revision", path)
+            fail("VIEW_INPUT_DIGEST_MISMATCH", "Input must match its exact governed Git revision", path)
         selected[path] = item
-    selector = spec.selector
     paths = selector.ordered_paths if selector.ordered_paths is not None else sorted(selected)
     return tuple(selected[path] for path in paths if path in selected
                  and (not selector.profiles or selected[path].source.profile in selector.profiles)
@@ -187,8 +240,10 @@ def _manifest(spec, inputs, blobs):
     if not spec.compute_identity or not spec.serialize_identity:
         fail("UNBOUND_VIEW_EXECUTION_CONTRACT", "Durable manifests require explicit compute and serializer identities")
     boundary = {"manifest": data, "selection_contract": {
-        "profiles": sorted(set(spec.selector.profiles)), "prefixes": sorted(set(spec.selector.prefixes)),
-        "ordered_paths": spec.selector.ordered_paths}, "execution_contract": {
+        "profiles": sorted(set(spec.selector.profiles)),
+        "prefixes": sorted(set(spec.selector.prefixes)),
+        "ordered_paths": spec.selector.ordered_paths,
+        "authority_classes": sorted(set(spec.selector.authority_classes))}, "execution_contract": {
         "compute_unit": spec.compute_identity, "serializer": spec.serialize_identity}}
     data["created_or_refreshed_boundary"] = "sha256:" + hashlib.sha256(deterministic_json(boundary)).hexdigest()
     return RawDeclaration(data)
@@ -239,6 +294,8 @@ def build_views(specifications, corpus: Iterable[ViewInput], implementation_blob
         projected = tuple({"source_path": item.source.carrier_path,
                            "semantic_id": item.source.semantic_id.value if item.source.semantic_id else None,
                            "profile": item.source.profile.value,
+                           "authority_class": item.source.authority_class.value,
+                           "state": item.source.state.value if item.source.state else None,
                            "content_digest": item.source.revision.content_digest,
                            "declaration": item.source.declaration.fields,
                            "content": item.content} for item in inputs)
@@ -333,4 +390,106 @@ def current_state_core_specification() -> ViewSpecification:
         ViewInputSelector(), ViewGenerator("project_knowledge_current_state_core", "1",
                                           source_inventory_specification().generator.implementation_files),
         "current_state_core.v1", "canonical_json.v1",
+    )
+
+
+
+def source_catalog_specification() -> ViewSpecification:
+    """Persistent governed-source catalog required by Specification 028."""
+    files = source_inventory_specification().generator.implementation_files
+    return ViewSpecification(
+        "source_catalog", GENERATED_ROOT + "source_catalog.json",
+        GENERATED_ROOT + "manifests/source_catalog.json", "1",
+        RebuildabilityClass.DETERMINISTIC_BYTE_REBUILD, ViewInputSelector(),
+        ViewGenerator("project_knowledge_source_catalog", "1", files),
+        "source_catalog.v1", "canonical_json.v1",
+    )
+
+
+def identity_index_specification() -> ViewSpecification:
+    """Persistent identity/history lookup over canonical plus accepted historical sources."""
+    files = source_inventory_specification().generator.implementation_files
+    selector = ViewInputSelector(
+        authority_classes=(AuthorityClass.CANONICAL, AuthorityClass.HISTORICAL)
+    )
+    return ViewSpecification(
+        "identity_index", GENERATED_ROOT + "identity_index.json",
+        GENERATED_ROOT + "manifests/identity_index.json", "1",
+        RebuildabilityClass.DETERMINISTIC_BYTE_REBUILD, selector,
+        ViewGenerator("project_knowledge_identity_index", "1", files),
+        "identity_index.v1", "canonical_json.v1",
+    )
+
+
+def authority_index_specification() -> ViewSpecification:
+    """Persistent non-authoritative inputs for task-scoped G007 resolution."""
+    files = source_inventory_specification().generator.implementation_files
+    return ViewSpecification(
+        "authority_index", GENERATED_ROOT + "authority_index.json",
+        GENERATED_ROOT + "manifests/authority_index.json", "1",
+        RebuildabilityClass.DETERMINISTIC_BYTE_REBUILD, ViewInputSelector(),
+        ViewGenerator("project_knowledge_authority_index", "1", files),
+        "authority_index.v1", "canonical_json.v1",
+    )
+
+
+def workstream_graph_specification() -> ViewSpecification:
+    """Persistent workstream/navigation projection over the current canonical corpus."""
+    files = source_inventory_specification().generator.implementation_files
+    return ViewSpecification(
+        "workstream_graph", GENERATED_ROOT + "workstream_graph.json",
+        GENERATED_ROOT + "manifests/workstream_graph.json", "1",
+        RebuildabilityClass.DETERMINISTIC_BYTE_REBUILD, ViewInputSelector(),
+        ViewGenerator("project_knowledge_workstream_graph", "1", files),
+        "workstream_graph.v1", "canonical_json.v1",
+    )
+
+
+def subject_index_specification() -> ViewSpecification:
+    """Persistent multi-axis navigation memberships from profile/kind/scope metadata."""
+    files = source_inventory_specification().generator.implementation_files
+    return ViewSpecification(
+        "subject_index", GENERATED_ROOT + "subject_index.json",
+        GENERATED_ROOT + "manifests/subject_index.json", "1",
+        RebuildabilityClass.DETERMINISTIC_BYTE_REBUILD, ViewInputSelector(),
+        ViewGenerator("project_knowledge_subject_index", "1", files),
+        "subject_index.v1", "canonical_json.v1",
+    )
+
+
+def risk_obligation_index_specification() -> ViewSpecification:
+    """Persistent source-owned risk/reopen and obligation projection."""
+    files = source_inventory_specification().generator.implementation_files
+    return ViewSpecification(
+        "risk_obligation_index", GENERATED_ROOT + "risk_obligation_index.json",
+        GENERATED_ROOT + "manifests/risk_obligation_index.json", "1",
+        RebuildabilityClass.DETERMINISTIC_BYTE_REBUILD, ViewInputSelector(),
+        ViewGenerator("project_knowledge_risk_obligation_index", "1", files),
+        "risk_obligation_index.v1", "canonical_json.v1",
+    )
+
+
+def current_state_core_markdown_specification() -> ViewSpecification:
+    """Human deterministic representation of the same accepted current-state core."""
+    files = source_inventory_specification().generator.implementation_files
+    return ViewSpecification(
+        "current_state_core_markdown", GENERATED_ROOT + "CURRENT_STATE_CORE.md",
+        GENERATED_ROOT + "manifests/current_state_core_markdown.json", "1",
+        RebuildabilityClass.DETERMINISTIC_BYTE_REBUILD, ViewInputSelector(),
+        ViewGenerator("project_knowledge_current_state_core_markdown", "1", files),
+        "current_state_core.v1", "current_state_core_markdown.v1",
+    )
+
+
+def production_view_specifications() -> tuple[ViewSpecification, ...]:
+    """The eight persistent W0 artifacts required by Specification 028."""
+    return (
+        source_catalog_specification(),
+        identity_index_specification(),
+        authority_index_specification(),
+        workstream_graph_specification(),
+        subject_index_specification(),
+        risk_obligation_index_specification(),
+        current_state_core_specification(),
+        current_state_core_markdown_specification(),
     )

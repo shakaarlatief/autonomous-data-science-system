@@ -12,6 +12,29 @@ from tests.unit.test_project_knowledge_current_state_core import ACTIVE, ROOT, c
 from tests.unit.test_project_knowledge_views import commit, deterministic_json, git, write
 
 
+PERSISTENT_VIEW_IDS = (
+    "authority_index",
+    "current_state_core",
+    "current_state_core_markdown",
+    "identity_index",
+    "risk_obligation_index",
+    "source_catalog",
+    "subject_index",
+    "workstream_graph",
+)
+
+PERSISTENT_VIEW_PATHS = {
+    "docs/project_knowledge/generated/source_catalog.json",
+    "docs/project_knowledge/generated/identity_index.json",
+    "docs/project_knowledge/generated/authority_index.json",
+    "docs/project_knowledge/generated/workstream_graph.json",
+    "docs/project_knowledge/generated/subject_index.json",
+    "docs/project_knowledge/generated/risk_obligation_index.json",
+    "docs/project_knowledge/generated/current_state_core.json",
+    "docs/project_knowledge/generated/CURRENT_STATE_CORE.md",
+}
+
+
 CLI_FILES = (
     "tools/project_knowledge/__main__.py",
     "tools/project_knowledge/cli.py",
@@ -64,7 +87,8 @@ def test_rebuild_is_deterministic_staged_read_only_and_machine_stable(cli_repo):
     result = payload(first)
     assert result["ok"] and result["staging_mode"] == "TEMPORARY_DIFF"
     assert result["materialized"] is False
-    assert [view["view_id"] for view in result["views"]] == ["current_state_core", "source_inventory"]
+    assert tuple(view["view_id"] for view in result["views"]) == PERSISTENT_VIEW_IDS
+    assert {view["view_path"] for view in result["views"]} == PERSISTENT_VIEW_PATHS
     assert {view["view_status_before"] for view in result["views"]} == {"MISSING"}
     assert {view["manifest_status_before"] for view in result["views"]} == {"MISSING"}
     assert all(len(view["view_digest"]) == len(view["manifest_digest"]) == 64 for view in result["views"])
@@ -528,6 +552,29 @@ def test_materialization_refuses_uncommitted_canonical_source_drift(cli_repo):
     assert not (cli_repo / "docs/project_knowledge/generated").exists()
 
 
+def test_materialization_refuses_uncommitted_historical_input_drift(cli_repo):
+    path = "docs/history/accepted.json"
+    write(cli_repo, path, deterministic_json({
+        "schema_version": "1",
+        "profile": "semantic_source.v1",
+        "kind": "HISTORICAL_NOTE",
+        "authority_class": "historical",
+        "semantic_id": "HISTORY:ONE",
+        "state": "SUPERSEDED",
+    }))
+    commit(cli_repo)
+
+    value = json.loads((cli_repo / path).read_bytes())
+    value["kind"] = "HISTORICAL_NOTE_CHANGED_LOCALLY"
+    write(cli_repo, path, deterministic_json(value))
+
+    refused = run_cli(cli_repo, "rebuild", "--ref", "HEAD", "--write")
+    assert refused.returncode == 1
+    result = payload(refused)
+    assert result["error"]["code"] == "MATERIALIZATION_SOURCE_DRIFT"
+    assert not (cli_repo / "docs/project_knowledge/generated").exists()
+
+
 def test_refresh_cli_uses_g013_plan_and_same_staged_builds(cli_repo):
     previous = git(cli_repo, "rev-parse", "HEAD").decode().strip()
     value = json.loads((cli_repo / ACTIVE).read_bytes())
@@ -541,7 +588,7 @@ def test_refresh_cli_uses_g013_plan_and_same_staged_builds(cli_repo):
     assert first.stdout == second.stdout
     result = payload(first)
     assert result["ok"] and not result["full_fallback"]
-    assert result["affected_view_ids"] == ["current_state_core", "source_inventory"]
+    assert tuple(result["affected_view_ids"]) == PERSISTENT_VIEW_IDS
     assert {view["view_id"] for view in result["views"]} == set(result["affected_view_ids"])
     assert not (cli_repo / "docs/project_knowledge/generated").exists()
 

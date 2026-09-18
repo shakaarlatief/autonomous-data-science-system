@@ -883,21 +883,28 @@ class ViewInput:
 
 @dataclass(frozen=True)
 class ViewInputSelector:
-    """Conjunction of profile/prefix filters; empty filters match all.
+    """Conjunction of authority/profile/prefix filters over governed sources.
 
-    ordered_paths, when present, additionally restricts membership and supplies
-    meaningful input order. Otherwise source-path order is representation only.
-    Missing ordered paths are omitted, so disappearance changes the binding set.
+    Canonical-only remains the default so accepted G009/G010 semantics do not
+    broaden accidentally. Views that need accepted history opt in explicitly.
+    ordered_paths, when present, restricts membership and supplies meaningful
+    input order; otherwise source-path order is representation only.
     """
     profiles: tuple[Profile, ...] = ()
     prefixes: tuple[str, ...] = ()
     ordered_paths: tuple[str, ...] | None = None
+    authority_classes: tuple[AuthorityClass, ...] = (AuthorityClass.CANONICAL,)
 
     def __post_init__(self) -> None:
         object.__setattr__(self, "profiles", tuple(Profile(p) for p in self.profiles))
         object.__setattr__(self, "prefixes", tuple(self.prefixes))
         if self.ordered_paths is not None:
             object.__setattr__(self, "ordered_paths", tuple(self.ordered_paths))
+        classes = {AuthorityClass(value) for value in self.authority_classes}
+        if not classes:
+            raise ValueError("View selectors require at least one authority class")
+        object.__setattr__(self, "authority_classes",
+                           tuple(sorted(classes, key=lambda value: value.value)))
 
 
 @dataclass(frozen=True)

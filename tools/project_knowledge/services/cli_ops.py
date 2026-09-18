@@ -14,7 +14,7 @@ from ..declaration import parse_native_json
 from ..model import (
     AuthorityClass, Diagnostic, DiagnosticSeverity, SnapshotMode, SubstrateError, ViewFreshnessStatus,
 )
-from ..views import ViewValidationError, current_state_core_specification, source_inventory_specification
+from ..views import ViewValidationError, production_view_specifications
 from .discovery import open_snapshot, read_entry
 from .generation import check_view_freshness, generate_views
 from .refresh import refresh_views
@@ -23,13 +23,8 @@ from .validation import validate_repository
 
 
 def qualified_cli_view_specifications():
-    """Return only W0 views already production-qualified before G014.
-
-    G014 exposes the accepted G009 source inventory and G010 current-state core.
-    This registry does not pretend the remaining Specification 028 persistent
-    views already exist, and it does not publish either qualified view.
-    """
-    return (source_inventory_specification(), current_state_core_specification())
+    """Return the complete eight-artifact W0 persistent-view contract."""
+    return production_view_specifications()
 
 
 def _diagnostic_data(diagnostic):
@@ -92,21 +87,26 @@ def _ensure_materialization_alignment(root: Path, snapshot):
     if not committed_validation.ok:
         raise ViewValidationError(committed_validation.diagnostics)
 
+    materialized_classes = {
+        authority_class
+        for specification in qualified_cli_view_specifications()
+        for authority_class in specification.selector.authority_classes
+    }
     local_entries = {entry.path: entry for entry in local.entries}
     local_bindings = {
         source.carrier_path: _sha256(read_entry(local, local_entries[source.carrier_path]))
         for source in local_validation.sources
-        if source.authority_class == AuthorityClass.CANONICAL
+        if source.authority_class in materialized_classes
     }
     committed_bindings = {
         source.carrier_path: source.revision.content_digest
         for source in committed_validation.sources
-        if source.authority_class == AuthorityClass.CANONICAL and source.revision is not None
+        if source.authority_class in materialized_classes and source.revision is not None
     }
     if local_bindings != committed_bindings:
         raise SubstrateError(
             "MATERIALIZATION_SOURCE_DRIFT",
-            "Explicit generated-output materialization requires local canonical inputs to match the selected commit.",
+            "Explicit generated-output materialization requires all locally influential governed inputs to match the selected commit.",
         )
 
 

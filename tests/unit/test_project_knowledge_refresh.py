@@ -18,7 +18,7 @@ from tests.unit.test_project_knowledge_current_state_core import (
 from tests.unit.test_project_knowledge_views import git, write, commit
 from tools.project_knowledge.adapters.gitio import commit_snapshot
 from tools.project_knowledge.identity import build_identity_index, transition_from_source
-from tools.project_knowledge.model import Profile, SnapshotMode, ViewInputSelector, ViewSpecification
+from tools.project_knowledge.model import AuthorityClass, Profile, SnapshotMode, ViewInputSelector, ViewSpecification
 from tools.project_knowledge.services import refresh
 from tools.project_knowledge.services.generation import generate_views
 from tools.project_knowledge.services.validation import validate_repository
@@ -175,6 +175,57 @@ def test_selector_and_execution_contract_changes_without_repository_change(refre
     assert_equivalent(root, previous, changed, ("work_inventory",), old_specs=specs)
     changed = (replace(specs[0], compute="source_inventory.v1"), *specs[1:])
     assert_equivalent(root, previous, changed, ("current_state_core",), old_specs=specs)
+
+
+def test_selector_authority_class_change_is_bound_even_when_membership_is_equal(refresh_repo):
+    root = refresh_repo
+    specs = specifications()
+    previous = head(root)
+    original = specs[1]
+    changed_selector = replace(
+        original.selector,
+        authority_classes=(AuthorityClass.CANONICAL, AuthorityClass.HISTORICAL),
+    )
+    changed = (specs[0], replace(original, selector=changed_selector), specs[2])
+
+    result, full = assert_equivalent(
+        root, previous, changed, (original.view_id,), old_specs=specs
+    )
+    assert result.plan.full_fallback is False
+    assert result.plan.reasons == ((original.view_id, "DEPENDENCY_BINDING_CHANGED"),)
+    selected, = result.builds
+    assert selected == next(build for build in full if build.view_id == original.view_id)
+
+
+def test_historical_source_change_affects_only_view_that_declares_historical_inputs(refresh_repo):
+    root = refresh_repo
+    specs = specifications()
+    historical_selector = replace(
+        specs[1].selector,
+        authority_classes=(AuthorityClass.CANONICAL, AuthorityClass.HISTORICAL),
+    )
+    scoped = (specs[0], replace(specs[1], selector=historical_selector), specs[2])
+    previous = head(root)
+
+    historical = corpus()[PAUSED].copy()
+    historical.update(
+        authority_class="historical",
+        semantic_id="HISTORY:WORKSTREAM",
+        state="SUPERSEDED",
+        expected_to_resume=False,
+    )
+    historical.pop("pause_reason", None)
+    historical.pop("return_condition", None)
+    historical.pop("resume_target", None)
+    historical.pop("governing_procedure", None)
+    historical.pop("orientation_milestones", None)
+    write(root, "docs/work/history.json", deterministic_json(historical))
+    commit(root)
+
+    result, _ = assert_equivalent(
+        root, previous, scoped, (specs[1].view_id,), old_specs=scoped
+    )
+    assert result.plan.reasons == ((specs[1].view_id, "DEPENDENCY_BINDING_CHANGED"),)
 
 
 def test_manifest_output_relocation_selects_only_that_view_and_matches_full_build(refresh_repo):
@@ -396,9 +447,16 @@ def test_committed_shared_implementation_changes_select_all_from_executing_fixtu
         update(root, path, lambda d: d.update(title="G013 exact schema revision"))
     elif path.endswith("pure_units.py"):
         original = (root / path).read_bytes()
-        target = b'"schema_version": "1", "authority_class": "derived"'
+        target = (
+            b'return {"schema_version": "1", "authority_class": "derived",\n'
+            b'            "sources": [entry(item) for item in inputs]}'
+        )
+        replacement = (
+            b'return {"schema_version": "2", "authority_class": "derived",\n'
+            b'            "sources": [entry(item) for item in inputs]}'
+        )
         assert original.count(target) == 1
-        write(root, path, original.replace(target, b'"schema_version": "2", "authority_class": "derived"'))
+        write(root, path, original.replace(target, replacement))
     else:
         write(root, path, (root / path).read_bytes() + b"\n# G013 exact implementation revision\n")
     commit(root)

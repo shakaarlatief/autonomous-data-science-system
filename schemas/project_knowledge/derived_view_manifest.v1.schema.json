@@ -118,7 +118,8 @@
               "workstream_graph",
               "subject_index",
               "risk_obligation_index",
-              "current_state_core"
+              "current_state_core",
+              "current_state_core_markdown"
             ]
           }
         }

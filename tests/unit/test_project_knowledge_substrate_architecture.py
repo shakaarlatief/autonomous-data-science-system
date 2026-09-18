@@ -72,7 +72,7 @@ def test_g009_production_units_and_tcb_have_explicit_source_contracts():
         set(TCB_FILES) | set(SCHEMA_FILES) | {"tools/project_knowledge/pure_units.py"})
     for path in TCB_FILES:
         check_tcb_source(path, (ROOT / path).read_bytes())
-    assert PURE_UNIT_REGISTRY == (
+    accepted_prefix = (
         ("source_inventory.v1", "tools/project_knowledge/pure_units.py", "source_inventory",
          (("entry", "inventory_entry.v1"),), ()),
         ("inventory_entry.v1", "tools/project_knowledge/pure_units.py", "inventory_entry", (), ()),
@@ -87,6 +87,33 @@ def test_g009_production_units_and_tcb_have_explicit_source_contracts():
         ("core_paused.v1", "tools/project_knowledge/pure_units.py", "core_paused",
          (("fields", "core_fields.v1"), ("reference", "core_reference.v1"), ("procedure", "core_procedure.v1")),
          ("sorted_values",)),
+    )
+    assert PURE_UNIT_REGISTRY[:len(accepted_prefix)] == accepted_prefix
+    identities = tuple(record[0] for record in PURE_UNIT_REGISTRY)
+    assert len(identities) == len(set(identities))
+    assert set(identities) == {
+        "source_inventory.v1", "inventory_entry.v1",
+        "current_state_core.v1", "core_single.v1", "core_fields.v1",
+        "core_reference.v1", "core_procedure.v1", "core_paused.v1",
+        "unique_values.v1", "normalized_scope.v1", "scope_token.v1",
+        "normalized_relations.v1", "catalog_entry.v1", "source_catalog.v1",
+        "has_temporal_control.v1", "identity_transition_record.v1",
+        "identity_source_record.v1", "any_temporal.v1",
+        "identity_static_resolution.v1", "identity_index.v1",
+        "authority_candidate.v1", "authority_index.v1",
+        "workstream_dependency_closure.v1", "workstream_parent_chain.v1",
+        "workstream_node.v1", "workstream_graph.v1",
+        "subject_memberships.v1", "subject_index.v1",
+        "obligation_rows.v1", "risk_obligation_index.v1",
+        "current_state_core_markdown.v1",
+    }
+    assert {record[1] for record in PURE_UNIT_REGISTRY} == {
+        "tools/project_knowledge/pure_units.py"
+    }
+    assert all(
+        dependency in set(identities)
+        for _, _, _, helpers, _ in PURE_UNIT_REGISTRY
+        for _, dependency in helpers
     )
     blobs = {"tools/project_knowledge/pure_units.py": (PACKAGE / "pure_units.py").read_bytes()}
     compute = resolve_unit(specification.compute, PURE_UNIT_REGISTRY, blobs, {})
@@ -216,6 +243,26 @@ def test_g014_cli_is_thin_and_generated_writes_are_structurally_bounded():
     assert "tools/project_knowledge/services/cli_ops.py" not in TCB_FILES
     assert "tools/project_knowledge/services/semantic_validation.py" not in TCB_FILES
     assert "tools/project_knowledge/cli.py" not in TCB_FILES
+
+    from tools.project_knowledge.views import production_view_specifications
+    persistent = production_view_specifications()
+    assert len(persistent) == 8
+    assert {spec.view_path for spec in persistent} == {
+        "docs/project_knowledge/generated/source_catalog.json",
+        "docs/project_knowledge/generated/identity_index.json",
+        "docs/project_knowledge/generated/authority_index.json",
+        "docs/project_knowledge/generated/workstream_graph.json",
+        "docs/project_knowledge/generated/subject_index.json",
+        "docs/project_knowledge/generated/risk_obligation_index.json",
+        "docs/project_knowledge/generated/current_state_core.json",
+        "docs/project_knowledge/generated/CURRENT_STATE_CORE.md",
+    }
+    assert {spec.view_id for spec in persistent} == {
+        "source_catalog", "identity_index", "authority_index", "workstream_graph",
+        "subject_index", "risk_obligation_index", "current_state_core",
+        "current_state_core_markdown",
+    }
+    assert source_inventory_specification().view_id not in {spec.view_id for spec in persistent}
 
 
 @pytest.mark.parametrize("source", [

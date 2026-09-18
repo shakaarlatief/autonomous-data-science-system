@@ -41,7 +41,8 @@ def _capabilities():
     # an explicitly declared entry; it cannot retrieve/inspect the callable.
     return {"canonical_json": deterministic_json, "utf8_text": deterministic_utf8, "length": len, "sorted_values": sorted,
             "as_text": plain_text, "as_integer": int, "as_tuple": tuple, "sequence_range": range,
-            "minimum": min, "maximum": max, "total": sum, "fail_view": fail}
+            "minimum": min, "maximum": max, "total": sum, "any_true": any,
+            "is_text": lambda value: type(value) is str, "fail_view": fail}
 
 
 def _generation_inputs(snapshot: RepositorySnapshot, specifications, *, selected_view_ids=None, schema_blobs):
@@ -61,7 +62,16 @@ def _generation_inputs(snapshot: RepositorySnapshot, specifications, *, selected
     validation = validate_repository(snapshot, validator=validator, policy=_GenerationDiscovery(), durable_evidence=True)
     if not validation.ok:
         raise ViewValidationError(validation.diagnostics)
-    sources = tuple(source for source in validation.sources if source.authority_class == AuthorityClass.CANONICAL)
+    selected_specs = tuple(spec for spec in specs if spec.view_id in selected)
+    requested_classes = {
+        authority_class
+        for spec in selected_specs
+        for authority_class in spec.selector.authority_classes
+    }
+    sources = tuple(
+        source for source in validation.sources
+        if source.authority_class in requested_classes
+    )
     paths = {source.carrier_path for source in sources}
     paths.update(path for spec in specs if spec.view_id in selected for path in spec.generator.implementation_files)
     entries = {entry.path: entry for entry in snapshot.entries}
