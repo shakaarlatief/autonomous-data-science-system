@@ -1,7 +1,7 @@
 # Local Execution
 
 **Status:** Current local-execution navigation  
-**Last reviewed:** 2026-09-17
+**Last reviewed:** 2026-09-18
 
 This directory contains durable ADS evidence, accepted bounded capability records, and operational guidance for the local-execution bridge.
 
@@ -22,6 +22,8 @@ start / stop / restart the OpenAI Secure MCP Tunnel
 verify tunnel liveness/readiness
 refresh the ChatGPT developer MCP app after a surface change
 recover safely when the foreground terminal is lost
+recover release-bound runtime dependencies through semantic runtime-maintenance restart
+diagnose and recover `GITHUB_KEYRING_UNAVAILABLE` without unnecessary reauthorization
 recover Windows sandbox setup/runtime-validation failures without broad permission changes
 ```
 
@@ -106,13 +108,14 @@ Do not manipulate Codex Desktop private catalog/session databases to improve vis
 
 ## Validation evidence
 
-`docs/local_execution/validation/` contains chronological evidence for the Codexless/Secure MCP Tunnel/ChatGPT local-execution investigation. The 2026-09-17 Windows sandbox managed-runtime recovery is preserved in:
+`docs/local_execution/validation/` contains chronological evidence for the Codexless/Secure MCP Tunnel/ChatGPT local-execution investigation. Recent runtime-recovery evidence is preserved in:
 
 ```text
 docs/local_execution/validation/209_windows_sandbox_managed_runtime_recovery_qualified.md
+docs/local_execution/validation/210_github_keyring_release_dependency_restart_recovery_qualified.md
 ```
 
-Its reusable recovery procedure is incorporated into the evergreen operations runbook.
+Validation 209 owns the Windows managed-runtime quarantine recovery. Validation 210 owns the GitHub keyring failure caused by a directly launched worker missing its active-release runtime dependency binding. Both reusable recovery procedures are incorporated into the evergreen operations runbook.
 
 Validation records preserve what was tested and observed. They do not replace the evergreen operational procedures, and historical validation commands should not automatically be treated as the current operational method.
 

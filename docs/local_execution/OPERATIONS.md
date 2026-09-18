@@ -1,7 +1,7 @@
 # Local Execution Operations Runbook
 
 **Status:** Current evergreen operational procedure  
-**Last reviewed:** 2026-09-17
+**Last reviewed:** 2026-09-18
 **Scope:** Start, stop, restart, verify and reconnect the ADS Codexless loopback HTTP service and OpenAI Secure MCP Tunnel without relying on chat memory.  
 **Authority:** Operational procedure only. `docs/CURRENT_STATE.md` and the active validation record own the current experiment, expected tool surface and next mutation. This runbook does not widen local authority or replace the security contracts in the validation records.
 
@@ -73,6 +73,8 @@ Test-Path $CodexlessLauncher
 For the currently accepted installation layout, `Test-Path` must return `True`.
 
 The launcher resolves to the installed Codexless HTTP launch path and starts the Streamable HTTP MCP service in the foreground.
+
+The direct launcher is a bootstrap/start path. It is **not** semantically equivalent to the bounded runtime-maintenance restart for an active managed release that declares runtime dependencies. Validation 210 reproduced a partially healthy state in which direct launch exposed the expected HTTP/tool surface but did not restore the active release's GitHub keyring dependency binding. Therefore health and tool count alone are not sufficient proof that dependency-backed subsystems are ready after a direct launch.
 
 ## Start Codexless HTTP
 
@@ -155,16 +157,40 @@ Then verify port `7690` is no longer listening before restarting.
 
 ## Restart Codexless HTTP
 
-A controlled Codexless-only restart is:
+### Preferred path: bounded semantic restart
+
+When Codexless is currently reachable through Runtime Bridge, use the bounded runtime-maintenance surface rather than manually stopping and relaunching the HTTP process:
 
 ```text
-1. stop the existing foreground Codexless process with Ctrl+C;
-2. confirm the prompt returned;
-3. run the same `%LOCALAPPDATA%\Codexless\bin\codexless-http.cmd` launcher again;
-4. leave the new process running in the foreground;
-5. query http://127.0.0.1:7690/healthz from another PowerShell window;
-6. confirm the expected version, toolCount and defaultCwd before continuing.
+codex.runtime_maintenance
+    action: restart_codexless
+    requestId: one new stable idempotency key
 ```
+
+The restart call returns before destructive work completes. Reconcile the exact request with:
+
+```text
+codex.runtime_maintenance
+    action: status
+    requestId: the same idempotency key
+```
+
+Require durable `status=succeeded`, then verify a fresh read-only bridge call and `/healthz`. The managed tunnel is intentionally left running during this Codexless-only restart.
+
+This is the required restart path when the active managed release may declare runtime dependencies. The restart supervisor reconstructs the active release's dependency binding and starts the replacement worker with that binding. A direct stop plus `codexless-http.cmd` relaunch must not be treated as equivalent.
+
+### Cold/manual bootstrap fallback
+
+If no Codexless runtime is callable, the direct launcher remains the accepted bootstrap path:
+
+```powershell
+$CodexlessLauncher = Join-Path $env:LOCALAPPDATA "Codexless\bin\codexless-http.cmd"
+& $CodexlessLauncher
+```
+
+After basic `/healthz` succeeds, restore or verify tunnel readiness as needed so Runtime Bridge becomes callable. If the active managed release may have runtime dependencies, immediately perform the bounded semantic restart above **before relying on dependency-backed subsystems such as GitHub**. Then verify the affected subsystem explicitly.
+
+Validation 210 proves why this extra step matters: a directly launched runtime can look healthy and expose the expected public tool surface while a release-bound native dependency is absent from the worker.
 
 If `/healthz` still reports the old tool count after a source change, assume the old process was not actually replaced until process/listener inspection proves otherwise. Do not refresh the ChatGPT app against a stale runtime.
 
@@ -264,25 +290,26 @@ A previous real failure mode was `readyz 503` while Codexless `/healthz` itself 
 
 ## Full controlled restart order
 
-Use this order when Codexless code/tool registration changed:
+When Codexless is already reachable and only the Codexless runtime must be replaced, **keep the managed tunnel running** and use the bounded semantic restart:
 
 ```text
-1. stop tunnel-client with Ctrl+C;
-2. stop Codexless HTTP with Ctrl+C;
-3. restart Codexless from `%LOCALAPPDATA%\Codexless\bin\codexless-http.cmd`;
-4. verify Codexless `/healthz` and the expected current toolCount;
-5. resolve the accepted private/local tunnel-client executable path;
-6. optionally run `& $TunnelExe doctor --profile "ads-codexless-local-bridge"` when configuration/readiness needs reconfirmation;
-7. start `& $TunnelExe run --profile "ads-codexless-local-bridge"`;
-8. verify tunnel `/healthz` is HTTP 200;
-9. verify tunnel `/readyz` is HTTP 200;
-10. only after both layers are healthy, refresh the ChatGPT developer MCP app if the tool surface changed;
-11. perform a fresh read-only discovery check before invoking any newly added mutation tool.
+1. invoke codex.runtime_maintenance restart_codexless with one stable requestId;
+2. reconcile that exact requestId until durable status=succeeded;
+3. verify a fresh read-only Runtime Bridge call;
+4. verify Codexless /healthz reports the expected version, toolCount and defaultCwd;
+5. verify tunnel /healthz is HTTP 200 and /readyz is HTTP 200;
+6. if the active release uses dependency-backed subsystems, verify one bounded read from each relevant subsystem;
+7. refresh the ChatGPT developer MCP app only if the public tool surface changed;
+8. perform a fresh read-only discovery check before invoking any newly added mutation tool.
 ```
 
-The persistent profile and secret reference survive normal terminal closure and laptop restart, so the restart procedure must not require re-entering the tunnel ID or Runtime API key unless the credential/profile itself was intentionally rotated or removed.
+Do not stop/restart the tunnel merely because Codexless is being semantically restarted. The runtime-maintenance path is designed to replace the Codexless worker while preserving the managed tunnel.
 
-This order prevents a ChatGPT app refresh from snapshotting a stale or partially registered MCP surface.
+If Codexless is completely unavailable, use the direct launcher only to bootstrap it, verify basic `/healthz`, and restore tunnel readiness if required. Then run the semantic restart before depending on release-bound runtime dependencies. A direct launcher start followed only by green health/readiness checks is insufficient evidence for dependency-backed features.
+
+The persistent tunnel profile and secret reference survive normal terminal closure and laptop restart, so recovery must not require re-entering the tunnel ID or Runtime API key unless the credential/profile itself was intentionally rotated or removed.
+
+This order prevents both stale ChatGPT discovery and the subtler failure mode where the HTTP/tool surface is healthy but a managed release dependency was not rebound.
 
 ## Refresh the ChatGPT developer MCP app after a tool-surface change
 
@@ -334,6 +361,29 @@ Then refresh the existing developer MCP app and repeat discovery in a fresh chat
 ### ChatGPT callable count differs from Codexless total tool count
 
 Do not automatically classify the difference as stale discovery. Some actions may intentionally be private/app-only. Compare the active surface contract and visibility before diagnosing the count.
+
+### GitHub reports `GITHUB_KEYRING_UNAVAILABLE` while Codexless otherwise looks healthy
+
+Validation 210 reproduced a failure in which Codexless `/healthz` was healthy and the expected public tools were present, but GitHub calls failed before reaching GitHub because the running worker lacked its release-bound `github-keyring-win32-x64` dependency.
+
+Do **not** begin by deleting credentials, restarting OAuth/device flow, reinstalling the GitHub App, or assuming repository permissions changed.
+
+Use this order:
+
+```text
+1. verify Codexless /healthz and tunnel /readyz;
+2. confirm the GitHub tools are still present on the public surface;
+3. when available, confirm the active managed release declares the expected GitHub keyring dependency and that the dependency generation is provisioned;
+4. if the process was started directly with codexless-http.cmd, treat missing release dependency binding as the leading hypothesis;
+5. invoke codex.runtime_maintenance restart_codexless with a fresh stable requestId;
+6. reconcile the same requestId until durable status=succeeded;
+7. verify codex.github_authorization metadata from the protected credential store;
+8. perform one bounded read-only github_get_repo call for an installation-authorized repository.
+```
+
+If steps 7 and 8 succeed, the authorization and GitHub transport path are recovered. Reauthentication is not required merely because the previous worker lacked the keyring binding.
+
+Only investigate token expiry, App installation scope, repository permissions or credential replacement if the bounded semantic restart does not restore protected-store access or if fresh evidence points to those layers.
 
 ### Browser/manual GET reports unsupported media type on `/mcp`
 
