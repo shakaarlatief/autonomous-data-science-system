@@ -43,6 +43,8 @@ def allowed_dependency(module: str, dependency: str) -> bool:
     if ".services." in module:
         return dependency.startswith(prefix)
     if module == prefix + ".__main__":
+        return dependency.startswith(prefix + ".cli")
+    if module == prefix + ".cli":
         return dependency.startswith((prefix + ".model", prefix + ".services"))
     # All other top-level modules are L2. Parent import statements yield the
     # package itself too; aliases below are checked separately.
@@ -163,6 +165,57 @@ def test_g013_impact_reuses_binding_admission_and_generation_without_compute_or_
     assert "build_views" not in calls(refresh)
     assert not any(isinstance(n, ast.Attribute) and n.attr in {"write_bytes", "write_text", "unlink", "rename"}
                    for n in ast.walk(refresh))
+
+
+def test_g014_cli_is_thin_and_generated_writes_are_structurally_bounded():
+    main_tree = ast.parse((PACKAGE / "__main__.py").read_text(encoding="utf-8"))
+    main_imports = tuple(imports((PACKAGE / "__main__.py").read_text(encoding="utf-8"),
+                                 "tools.project_knowledge.__main__"))
+    assert main_imports == ("tools.project_knowledge.cli", "tools.project_knowledge.cli.main")
+    assert not any(isinstance(node, ast.FunctionDef) for node in main_tree.body)
+
+    cli_tree = ast.parse((PACKAGE / "cli.py").read_text(encoding="utf-8"))
+    cli_imports = tuple(imports((PACKAGE / "cli.py").read_text(encoding="utf-8"),
+                                "tools.project_knowledge.cli"))
+    assert all(allowed_dependency("tools.project_knowledge.cli", dependency) for dependency in cli_imports)
+    assert not any(
+        isinstance(node, ast.Attribute) and node.attr in {"write_bytes", "write_text", "unlink", "rename"}
+        for node in ast.walk(cli_tree)
+    )
+
+    operations = ast.parse((PACKAGE / "services/cli_ops.py").read_text(encoding="utf-8"))
+    functions = {node.name: node for node in operations.body if isinstance(node, ast.FunctionDef)}
+    def named_calls(node):
+        return {item.func.id for item in ast.walk(node)
+                if isinstance(item, ast.Call) and isinstance(item.func, ast.Name)}
+    assert {"validate_project_knowledge"} <= named_calls(functions["validate_operation"])
+    assert {"validate_project_knowledge"} <= named_calls(functions["_require_semantic_validity"])
+    assert "generate_views" in named_calls(functions["rebuild_operation"])
+    assert "refresh_views" in named_calls(functions["refresh_operation"])
+    assert "check_view_freshness" in named_calls(functions["check_freshness_operation"])
+
+    semantic_validation = ast.parse(
+        (PACKAGE / "services/semantic_validation.py").read_text(encoding="utf-8")
+    )
+    semantic_calls = {item.func.id for item in ast.walk(semantic_validation)
+                      if isinstance(item, ast.Call) and isinstance(item.func, ast.Name)}
+    assert {"validate_repository", "build_identity_index", "build_workstream_graph"} <= semantic_calls
+
+    generated_io = (PACKAGE / "adapters/generated_io.py").read_text(encoding="utf-8")
+    generated_tree = ast.parse(generated_io)
+    assert 'GENERATED_ROOT = "docs/project_knowledge/generated/"' in generated_io
+    assert any(
+        isinstance(node, ast.Raise)
+        and isinstance(node.exc, ast.Call)
+        and isinstance(node.exc.func, ast.Name)
+        and node.exc.func.id == "SubstrateError"
+        for node in ast.walk(generated_tree)
+    )
+    from tools.project_knowledge.adapters.execution import TCB_FILES
+    assert "tools/project_knowledge/adapters/generated_io.py" not in TCB_FILES
+    assert "tools/project_knowledge/services/cli_ops.py" not in TCB_FILES
+    assert "tools/project_knowledge/services/semantic_validation.py" not in TCB_FILES
+    assert "tools/project_knowledge/cli.py" not in TCB_FILES
 
 
 @pytest.mark.parametrize("source", [

@@ -1,0 +1,310 @@
+"""L3 deterministic application operations for the W0 command-line surface.
+
+The CLI is a transport/rendering layer only. These operations own repository
+snapshot selection, generated-artifact staging/diffing, explicit materialization,
+and freshness aggregation. They never mutate canonical semantic sources.
+"""
+
+import hashlib
+from pathlib import Path
+import tempfile
+
+from ..adapters.generated_io import read_generated_bytes, write_generated_bytes
+from ..declaration import parse_native_json
+from ..model import (
+    AuthorityClass, Diagnostic, DiagnosticSeverity, SnapshotMode, SubstrateError, ViewFreshnessStatus,
+)
+from ..views import ViewValidationError, current_state_core_specification, source_inventory_specification
+from .discovery import open_snapshot, read_entry
+from .generation import check_view_freshness, generate_views
+from .refresh import refresh_views
+from .semantic_validation import validate_project_knowledge
+from .validation import validate_repository
+
+
+def qualified_cli_view_specifications():
+    """Return only W0 views already production-qualified before G014.
+
+    G014 exposes the accepted G009 source inventory and G010 current-state core.
+    This registry does not pretend the remaining Specification 028 persistent
+    views already exist, and it does not publish either qualified view.
+    """
+    return (source_inventory_specification(), current_state_core_specification())
+
+
+def _diagnostic_data(diagnostic):
+    return {
+        "code": diagnostic.code,
+        "severity": diagnostic.severity.value,
+        "carrier_path": diagnostic.carrier_path,
+        "message": diagnostic.message,
+        **({"semantic_id": diagnostic.semantic_id.value} if diagnostic.semantic_id else {}),
+        **({"related_sources": list(diagnostic.related_sources)} if diagnostic.related_sources else {}),
+        **({"remediation": diagnostic.remediation} if diagnostic.remediation else {}),
+    }
+
+
+def _sha256(content: bytes) -> str:
+    return hashlib.sha256(content).hexdigest()
+
+
+def validate_operation(root: Path, mode: SnapshotMode, ref: str | None, *, durable_evidence: bool = False):
+    snapshot = open_snapshot(root, mode, ref)
+    result = validate_project_knowledge(snapshot, durable_evidence=durable_evidence)
+    repository = result.repository
+    return {
+        "command": "validate",
+        "ok": result.ok,
+        "validation_scope": "QUERY_INDEPENDENT",
+        "deferred_checks": sorted({
+            diagnostic.code for diagnostic in result.diagnostics
+            if diagnostic.severity == DiagnosticSeverity.INFO
+            and diagnostic.code.endswith("_DEFERRED")
+        }),
+        "snapshot_mode": snapshot.mode.value,
+        "snapshot_status": snapshot.status,
+        "source_commit": snapshot.source_commit,
+        "candidate_count": repository.candidate_count,
+        "governed_declaration_count": len(repository.sources),
+        "excluded_count": repository.excluded_count,
+        "excluded_but_declared_count": repository.excluded_but_declared_count,
+        "path_role_counts": dict(repository.path_role_counts),
+        "noncanonical_declaration_count": repository.noncanonical_declaration_count,
+        "undeclared_by_root": dict(repository.undeclared_by_root),
+        "diagnostics": [_diagnostic_data(d) for d in result.diagnostics],
+    }
+
+
+def _artifact_state(root: Path, path: str, expected: bytes):
+    current = read_generated_bytes(root, path)
+    if current is None:
+        return "MISSING", None
+    return ("MATCH" if current == expected else "DIFF"), _sha256(current)
+
+
+def _ensure_materialization_alignment(root: Path, snapshot):
+    """Never materialize commit-bound outputs over different local canonical inputs."""
+    local = open_snapshot(root, SnapshotMode.WORKTREE_SNAPSHOT)
+    local_validation = validate_repository(local)
+    if not local_validation.ok:
+        raise ViewValidationError(local_validation.diagnostics)
+    committed_validation = validate_repository(snapshot, durable_evidence=True)
+    if not committed_validation.ok:
+        raise ViewValidationError(committed_validation.diagnostics)
+
+    local_entries = {entry.path: entry for entry in local.entries}
+    local_bindings = {
+        source.carrier_path: _sha256(read_entry(local, local_entries[source.carrier_path]))
+        for source in local_validation.sources
+        if source.authority_class == AuthorityClass.CANONICAL
+    }
+    committed_bindings = {
+        source.carrier_path: source.revision.content_digest
+        for source in committed_validation.sources
+        if source.authority_class == AuthorityClass.CANONICAL and source.revision is not None
+    }
+    if local_bindings != committed_bindings:
+        raise SubstrateError(
+            "MATERIALIZATION_SOURCE_DRIFT",
+            "Explicit generated-output materialization requires local canonical inputs to match the selected commit.",
+        )
+
+
+def _stage_and_compare(root: Path, builds, *, materialize: bool, materialization_snapshot=None):
+    """Physically stage generated bytes in a temporary location, then diff.
+
+    The temporary path is intentionally never returned, so command output is
+    independent of random staging names and machine-local filesystem layout.
+    """
+    records = []
+    if materialize:
+        if materialization_snapshot is None:
+            raise ValueError("Materialization requires an exact source snapshot")
+        _ensure_materialization_alignment(root, materialization_snapshot)
+
+    with tempfile.TemporaryDirectory(prefix=".project-knowledge-stage-", dir=root.parent) as stage_name:
+        stage_root = Path(stage_name)
+        for build in sorted(builds, key=lambda item: item.view_id):
+            write_generated_bytes(stage_root, build.view_path, build.view_bytes)
+            write_generated_bytes(stage_root, build.manifest_path, build.manifest_bytes)
+            if read_generated_bytes(stage_root, build.view_path) != build.view_bytes:
+                raise SubstrateError("STAGING_MISMATCH", "Staged view bytes changed during staging.")
+            if read_generated_bytes(stage_root, build.manifest_path) != build.manifest_bytes:
+                raise SubstrateError("STAGING_MISMATCH", "Staged manifest bytes changed during staging.")
+
+            view_state, existing_view_digest = _artifact_state(root, build.view_path, build.view_bytes)
+            manifest_state, existing_manifest_digest = _artifact_state(
+                root, build.manifest_path, build.manifest_bytes
+            )
+            records.append({
+                "view_id": build.view_id,
+                "view_path": build.view_path,
+                "manifest_path": build.manifest_path,
+                "view_digest": _sha256(build.view_bytes),
+                "manifest_digest": _sha256(build.manifest_bytes),
+                "view_status_before": view_state,
+                "manifest_status_before": manifest_state,
+                **({"existing_view_digest": existing_view_digest} if existing_view_digest else {}),
+                **({"existing_manifest_digest": existing_manifest_digest} if existing_manifest_digest else {}),
+            })
+
+        if materialize:
+            # All builds have already staged and all target paths have been read
+            # through the generated-only adapter before any repository write.
+            for build in sorted(builds, key=lambda item: item.view_id):
+                write_generated_bytes(root, build.view_path, build.view_bytes)
+                write_generated_bytes(root, build.manifest_path, build.manifest_bytes)
+            # Detect source drift that races the pre-write check. Generated
+            # artifacts remain non-authoritative, but a raced write never
+            # reports success.
+            _ensure_materialization_alignment(root, materialization_snapshot)
+    return records
+
+
+def _require_semantic_validity(snapshot):
+    validation = validate_project_knowledge(snapshot, durable_evidence=True)
+    if not validation.ok:
+        raise ViewValidationError(validation.diagnostics)
+
+
+def rebuild_operation(root: Path, ref: str = "HEAD", *, materialize: bool = False):
+    snapshot = open_snapshot(root, SnapshotMode.COMMIT_SNAPSHOT, ref)
+    _require_semantic_validity(snapshot)
+    specifications = qualified_cli_view_specifications()
+    builds = generate_views(snapshot, specifications)
+    return {
+        "command": "rebuild",
+        "ok": True,
+        "snapshot_mode": snapshot.mode.value,
+        "snapshot_status": snapshot.status,
+        "source_commit": snapshot.source_commit,
+        "staging_mode": "TEMPORARY_DIFF",
+        "materialized": materialize,
+        "comparison_basis": "WORKTREE_ARTIFACTS_AGAINST_COMMIT_SOURCES",
+        "views": _stage_and_compare(
+            root, builds, materialize=materialize, materialization_snapshot=snapshot
+        ),
+    }
+
+
+def refresh_operation(
+    root: Path, changed_since: str, current_ref: str = "HEAD", *, materialize: bool = False
+):
+    specifications = qualified_cli_view_specifications()
+    current_snapshot = open_snapshot(root, SnapshotMode.COMMIT_SNAPSHOT, current_ref)
+    _require_semantic_validity(current_snapshot)
+    result = refresh_views(
+        root,
+        changed_since,
+        current_snapshot.source_commit,
+        specifications,
+        previous_specifications=specifications,
+    )
+    return {
+        "command": "refresh",
+        "ok": True,
+        "previous_commit": result.plan.previous_commit,
+        "current_commit": result.plan.current_commit,
+        "affected_view_ids": list(result.plan.affected_view_ids),
+        "removed_view_ids": list(result.plan.removed_view_ids),
+        "full_fallback": result.plan.full_fallback,
+        "reasons": [{"view_id": view_id, "reason": reason} for view_id, reason in result.plan.reasons],
+        "staging_mode": "TEMPORARY_DIFF",
+        "materialized": materialize,
+        "comparison_basis": "WORKTREE_ARTIFACTS_AGAINST_COMMIT_SOURCES",
+        "views": _stage_and_compare(
+            root,
+            result.builds,
+            materialize=materialize,
+            materialization_snapshot=open_snapshot(root, SnapshotMode.COMMIT_SNAPSHOT, result.plan.current_commit),
+        ),
+    }
+
+
+def _missing_diagnostic(code: str, path: str, message: str):
+    return Diagnostic(code, DiagnosticSeverity.ERROR, path, message)
+
+
+def check_freshness_operation(root: Path, ref: str = "HEAD"):
+    """Check worktree generated artifacts against one exact committed source state."""
+    snapshot = open_snapshot(root, SnapshotMode.COMMIT_SNAPSHOT, ref)
+    _require_semantic_validity(snapshot)
+    specifications = qualified_cli_view_specifications()
+    records = []
+
+    for spec in sorted(specifications, key=lambda item: item.view_id):
+        view_bytes = read_generated_bytes(root, spec.view_path)
+        manifest_bytes = read_generated_bytes(root, spec.manifest_path)
+        diagnostics = []
+
+        if view_bytes is None:
+            diagnostics.append(_missing_diagnostic(
+                "MISSING_VIEW_ARTIFACT", spec.view_path,
+                "The generated view artifact is missing from the worktree.",
+            ))
+        if manifest_bytes is None:
+            diagnostics.append(_missing_diagnostic(
+                "MISSING_VIEW_MANIFEST", spec.manifest_path,
+                "The generated view manifest is missing from the worktree.",
+            ))
+
+        if diagnostics:
+            records.append({
+                "view_id": spec.view_id,
+                "view_path": spec.view_path,
+                "manifest_path": spec.manifest_path,
+                "status": "MISSING",
+                "diagnostics": [_diagnostic_data(d) for d in sorted(
+                    diagnostics, key=lambda item: (item.code, item.carrier_path)
+                )],
+            })
+            continue
+
+        try:
+            manifest = parse_native_json(manifest_bytes)
+            findings = ()
+        except SubstrateError as error:
+            manifest = None
+            findings = (_missing_diagnostic(error.code, spec.manifest_path, str(error)),)
+        if manifest is None and not findings:
+            findings = (_missing_diagnostic(
+                "INVALID_VIEW_MANIFEST", spec.manifest_path,
+                "The manifest file does not contain a governed derived-view declaration.",
+            ),)
+        if findings:
+            records.append({
+                "view_id": spec.view_id,
+                "view_path": spec.view_path,
+                "manifest_path": spec.manifest_path,
+                "status": "INVALID",
+                "diagnostics": [_diagnostic_data(d) for d in findings],
+            })
+            continue
+
+        freshness = check_view_freshness(
+            snapshot,
+            specifications,
+            spec.view_id,
+            manifest,
+            existing_view_bytes=view_bytes,
+        )
+        records.append({
+            "view_id": spec.view_id,
+            "view_path": spec.view_path,
+            "manifest_path": spec.manifest_path,
+            "status": freshness.status.value,
+            "view_digest": _sha256(view_bytes),
+            "manifest_digest": _sha256(manifest_bytes),
+            "diagnostics": [_diagnostic_data(d) for d in freshness.diagnostics],
+        })
+
+    ok = bool(records) and all(item["status"] == ViewFreshnessStatus.FRESH.value for item in records)
+    return {
+        "command": "check-freshness",
+        "ok": ok,
+        "snapshot_mode": snapshot.mode.value,
+        "snapshot_status": snapshot.status,
+        "source_commit": snapshot.source_commit,
+        "comparison_basis": "WORKTREE_ARTIFACTS_AGAINST_COMMIT_SOURCES",
+        "views": records,
+    }
