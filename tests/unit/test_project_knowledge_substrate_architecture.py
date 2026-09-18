@@ -145,6 +145,26 @@ def test_g012_public_generation_and_repository_validation_have_nonleakage_gates(
     assert any(isinstance(call.func, ast.Name) and call.func.id == "validate_public_projection" for call in calls)
 
 
+def test_g013_impact_reuses_binding_admission_and_generation_without_compute_or_writes():
+    generation = ast.parse((PACKAGE / "services/generation.py").read_text(encoding="utf-8"))
+    functions = {n.name: n for n in generation.body if isinstance(n, ast.FunctionDef)}
+    def calls(node):
+        return {n.func.id for n in ast.walk(node) if isinstance(n, ast.Call) and isinstance(n.func, ast.Name)}
+    assert {"_generation_inputs", "bind_view_inputs", "validate_public_projection"} <= calls(functions["_dependencies_verified"])
+    assert not {"build_views", "_generate_verified", "resolve_unit"} & calls(functions["_dependencies_verified"])
+    assert {"_generation_inputs", "build_views", "validate_public_projection"} <= calls(functions["_generate_verified"])
+    assert "validate_repository" in calls(functions["_generation_inputs"])
+    views = ast.parse((PACKAGE / "views.py").read_text(encoding="utf-8"))
+    builder = next(n for n in views.body if isinstance(n, ast.FunctionDef) and n.name == "build_views")
+    assert "bind_view_inputs" in calls(builder)
+    refresh = ast.parse((PACKAGE / "services/refresh.py").read_text(encoding="utf-8"))
+    functions = {n.name: n for n in refresh.body if isinstance(n, ast.FunctionDef)}
+    assert {"commit_snapshot", "_plan", "generate_views"} <= calls(functions["refresh_views"])
+    assert "build_views" not in calls(refresh)
+    assert not any(isinstance(n, ast.Attribute) and n.attr in {"write_bytes", "write_text", "unlink", "rename"}
+                   for n in ast.walk(refresh))
+
+
 @pytest.mark.parametrize("source", [
     "from .adapters import gitio", "from . import adapters", "from . import services",
     "from .services.validation import validate_repository",

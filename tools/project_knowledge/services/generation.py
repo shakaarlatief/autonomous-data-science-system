@@ -18,7 +18,7 @@ from ..model import (
 )
 from ..views import (
     PURE_UNIT_REGISTRY, deterministic_json, deterministic_utf8, ViewValidationError, build_views, fail, finding,
-    manifest_freshness, validate_specifications,
+    bind_view_inputs, manifest_freshness, validate_specifications,
 )
 from .discovery import DiscoveryPolicy, PathRole
 from .validation import validate_public_projection, validate_repository
@@ -44,7 +44,7 @@ def _capabilities():
             "minimum": min, "maximum": max, "total": sum, "fail_view": fail}
 
 
-def _generate_verified(snapshot: RepositorySnapshot, specifications, *, selected_view_ids=None, schema_blobs):
+def _generation_inputs(snapshot: RepositorySnapshot, specifications, *, selected_view_ids=None, schema_blobs):
     """Discover all current inputs even when only some view IDs are selected.
 
     The durable entry point has already resolved qualified restricted units
@@ -72,6 +72,12 @@ def _generate_verified(snapshot: RepositorySnapshot, specifications, *, selected
     blobs = read_blobs(snapshot.root, tuple(entries[path] for path in sorted(paths)))
     content = {path: blobs[entries[path].blob_id] for path in paths}
     corpus = tuple(ViewInput(source, content[source.carrier_path]) for source in sources)
+    return specs, selected, corpus, content, validator
+
+
+def _generate_verified(snapshot: RepositorySnapshot, specifications, *, selected_view_ids=None, schema_blobs):
+    specs, selected, corpus, content, validator = _generation_inputs(
+        snapshot, specifications, selected_view_ids=selected_view_ids, schema_blobs=schema_blobs)
     results = build_views(specs, corpus, content, snapshot_mode=snapshot.mode, selected_view_ids=selected)
     for result in results:
         diagnostics = tuple(validator.validate(result.manifest, result.manifest_path))
@@ -80,6 +86,32 @@ def _generate_verified(snapshot: RepositorySnapshot, specifications, *, selected
         if diagnostics:
             raise ViewValidationError(diagnostics)
     return results
+
+
+def _dependencies_verified(snapshot, specifications, *, selected_view_ids, schema_blobs):
+    """G013 admission/binding pass in the same isolated per-view G009 worker.
+
+    No compute or serialization unit is executed and no view is built. Full
+    repository admission (including G011/G012) and the normal builder's exact
+    binding stage still run, so global defects cannot justify narrow omission.
+    """
+    specs, selected, corpus, content, validator = _generation_inputs(
+        snapshot, specifications, selected_view_ids=selected_view_ids, schema_blobs=schema_blobs)
+    bindings = []
+    for spec, inputs, manifest in bind_view_inputs(
+            specs, corpus, content, snapshot_mode=snapshot.mode, selected_view_ids=selected):
+        encoded = deterministic_json(manifest.fields)
+        diagnostics = tuple(validator.validate(manifest, spec.manifest_path))
+        diagnostics += validate_public_projection(encoded, spec.manifest_path)
+        if diagnostics:
+            raise ViewValidationError(diagnostics)
+        # The manifest binds view semantics and the primary output path, but its
+        # own carrier path is intentionally outside the accepted G009 schema.
+        # G013 compares this complete dependency/output envelope so relocating
+        # that carrier cannot be mistaken for an unchanged build result.
+        bindings.append({"view_id": spec.view_id, "manifest_path": spec.manifest_path,
+                         "manifest_bytes": encoded.hex()})
+    return bindings
 
 
 def _freshness_verified(snapshot: RepositorySnapshot, specifications, view_id: str, manifest, *, existing_view_bytes=None, schema_blobs):
@@ -140,9 +172,9 @@ def _execute_bound(snapshot, specifications, selected, operation, **extra):
             raise ViewValidationError(finding(d["code"], d["message"], d["carrier_path"]) for d in result["diagnostics"])
         if operation == "freshness":
             return result
-        builds.extend(result["builds"])
+        builds.extend(result["bindings"] if operation == "dependencies" else result["builds"])
     # No partial generated evidence escapes if any selected view fails.
-    return {"builds": builds}
+    return {"bindings" if operation == "dependencies" else "builds": builds}
 
 
 def generate_views(snapshot: RepositorySnapshot, specifications, *, selected_view_ids=None, known_private_values=()):
@@ -202,7 +234,7 @@ def _worker_dispatch(request, blobs):
             RepositorySnapshot, SnapshotEntry, ViewSpecification, ViewGenerator,
             ViewInputSelector, RawDeclaration, thaw_json,
         )
-        from tools.project_knowledge.services.generation import _generate_verified, _freshness_verified
+        from tools.project_knowledge.services.generation import _generate_verified, _freshness_verified, _dependencies_verified
         specs = []
         for s in request["specifications"]:
             capabilities = _capabilities()
@@ -215,7 +247,10 @@ def _worker_dispatch(request, blobs):
         snapshot = RepositorySnapshot(Path(request["root"]), request["snapshot_mode"],
                                       tuple(SnapshotEntry(**e) for e in request["entries"]), request["source_commit"])
         schemas = {p: b for p, b in blobs.items() if p.startswith("schemas/project_knowledge/") and p.endswith(".schema.json")}
-        if request["operation"] == "build":
+        if request["operation"] == "dependencies":
+            output = {"bindings": _dependencies_verified(snapshot, specs, selected_view_ids=request["selected"],
+                                                         schema_blobs=schemas)}
+        elif request["operation"] == "build":
             results = _generate_verified(snapshot, specs, selected_view_ids=request["selected"], schema_blobs=schemas)
             output = {"builds": [{"view_id": r.view_id, "view_path": r.view_path, "manifest_path": r.manifest_path,
                                  "view_bytes": r.view_bytes.hex(), "manifest": thaw_json(r.manifest.fields),

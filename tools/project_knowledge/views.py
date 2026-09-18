@@ -194,13 +194,13 @@ def _manifest(spec, inputs, blobs):
     return RawDeclaration(data)
 
 
-def build_views(specifications, corpus: Iterable[ViewInput], implementation_blobs: Mapping[str, bytes], *,
-                snapshot_mode: SnapshotMode, selected_view_ids: Iterable[str] | None = None) -> tuple[ViewBuildResult, ...]:
-    """Full and selected operation share complete selection/compute/serialize.
+def bind_view_inputs(specifications, corpus: Iterable[ViewInput], implementation_blobs: Mapping[str, bytes], *,
+                     snapshot_mode: SnapshotMode, selected_view_ids: Iterable[str] | None = None):
+    """Shared complete-input selection and manifest binding, without compute.
 
-    corpus is the complete current canonical corpus, never a changed-file delta.
-    No persisted view state is accepted by this builder. The repository service
-    obtains the corpus itself, so selecting view IDs cannot truncate its inputs.
+    G013 compares these exact bindings, including the execution contract, rather
+    than maintaining another selector/dependency interpretation or reading old
+    generated artifacts. This is also the binding stage of every normal build.
     """
     if SnapshotMode(snapshot_mode) != SnapshotMode.COMMIT_SNAPSHOT:
         fail("NON_COMMITTED_VIEW_INPUT", "WORKTREE_SNAPSHOT is NON_COMMITTED; durable generation is unsupported")
@@ -216,6 +216,22 @@ def build_views(specifications, corpus: Iterable[ViewInput], implementation_blob
             continue
         inputs = _complete_inputs(spec, corpus, outputs)
         manifest = _manifest(spec, inputs, implementation_blobs)
+        results.append((spec, inputs, manifest))
+    return tuple(results)
+
+
+def build_views(specifications, corpus: Iterable[ViewInput], implementation_blobs: Mapping[str, bytes], *,
+                snapshot_mode: SnapshotMode, selected_view_ids: Iterable[str] | None = None) -> tuple[ViewBuildResult, ...]:
+    """Full and selected operation share complete selection/compute/serialize.
+
+    corpus is the complete current canonical corpus, never a changed-file delta.
+    No persisted view state is accepted by this builder. The repository service
+    obtains the corpus itself, so selecting view IDs cannot truncate its inputs.
+    """
+    results = []
+    for spec, inputs, manifest in bind_view_inputs(
+            specifications, corpus, implementation_blobs, snapshot_mode=snapshot_mode,
+            selected_view_ids=selected_view_ids):
         if not callable(spec.compute) or not callable(spec.serialize):
             fail("UNRESOLVED_VIEW_UNIT", "Resolve declared units before entering the lower-level builder")
         # Only plain value projections reach compute; no enums, descriptors or

@@ -951,6 +951,23 @@ class ViewBuildResult:
     manifest_bytes: bytes
 
 
+@dataclass(frozen=True)
+class ViewRefreshPlan:
+    """Read-only selection between exact commits; not persisted freshness evidence."""
+    previous_commit: str
+    current_commit: str
+    affected_view_ids: tuple[str, ...]
+    full_fallback: bool
+    reasons: tuple[tuple[str, str], ...]
+    removed_view_ids: tuple[str, ...] = ()
+
+
+@dataclass(frozen=True)
+class ViewRefreshResult:
+    plan: ViewRefreshPlan
+    builds: tuple[ViewBuildResult, ...]
+
+
 class ViewFreshnessStatus(StrEnum):
     FRESH = "FRESH"
     STALE = "STALE"
