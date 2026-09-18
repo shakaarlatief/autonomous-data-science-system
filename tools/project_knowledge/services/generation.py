@@ -21,7 +21,7 @@ from ..views import (
     manifest_freshness, validate_specifications,
 )
 from .discovery import DiscoveryPolicy, PathRole
-from .validation import validate_repository
+from .validation import validate_public_projection, validate_repository
 
 
 class _GenerationDiscovery(DiscoveryPolicy):
@@ -74,7 +74,9 @@ def _generate_verified(snapshot: RepositorySnapshot, specifications, *, selected
     corpus = tuple(ViewInput(source, content[source.carrier_path]) for source in sources)
     results = build_views(specs, corpus, content, snapshot_mode=snapshot.mode, selected_view_ids=selected)
     for result in results:
-        diagnostics = validator.validate(result.manifest, result.manifest_path)
+        diagnostics = tuple(validator.validate(result.manifest, result.manifest_path))
+        diagnostics += validate_public_projection(result.view_bytes, result.view_path)
+        diagnostics += validate_public_projection(result.manifest_bytes, result.manifest_path)
         if diagnostics:
             raise ViewValidationError(diagnostics)
     return results
@@ -143,12 +145,14 @@ def _execute_bound(snapshot, specifications, selected, operation, **extra):
     return {"builds": builds}
 
 
-def generate_views(snapshot: RepositorySnapshot, specifications, *, selected_view_ids=None):
-    """Durable entry point: verify execution identity, then use the same builder.
+def generate_views(snapshot: RepositorySnapshot, specifications, *, selected_view_ids=None, known_private_values=()):
+    """Durable entry point with mandatory public-byte non-leakage validation.
 
     Data-only definitions resolve committed restricted units and serializer
     capabilities. Each view gets a fresh worker and its own explicit Git closure;
-    general repository imports cannot become pure view authority.
+    general repository imports cannot become pure view authority. Optional known
+    private fixture values are validation probes only and never enter the worker,
+    compute input, manifest, or generated semantic value.
     """
     try:
         result = _execute_bound(snapshot, specifications, selected_view_ids, "build")
@@ -156,8 +160,24 @@ def generate_views(snapshot: RepositorySnapshot, specifications, *, selected_vie
         raise
     except SubstrateError as error:
         raise ViewValidationError((finding(error.code, str(error)),)) from error
-    return tuple(ViewBuildResult(r["view_id"], r["view_path"], r["manifest_path"], bytes.fromhex(r["view_bytes"]),
-                                 RawDeclaration(r["manifest"]), bytes.fromhex(r["manifest_bytes"])) for r in result["builds"])
+    builds = tuple(ViewBuildResult(r["view_id"], r["view_path"], r["manifest_path"], bytes.fromhex(r["view_bytes"]),
+                                  RawDeclaration(r["manifest"]), bytes.fromhex(r["manifest_bytes"])) for r in result["builds"])
+    private_values = ((known_private_values,) if isinstance(known_private_values, (str, bytes))
+                      else tuple(known_private_values))
+    diagnostics = []
+    try:
+        for build in builds:
+            diagnostics.extend(validate_public_projection(
+                build.view_bytes, build.view_path, known_private_values=private_values,
+            ))
+            diagnostics.extend(validate_public_projection(
+                build.manifest_bytes, build.manifest_path, known_private_values=private_values,
+            ))
+    except ValueError as error:
+        raise ViewValidationError((finding("INVALID_PRIVATE_LEAK_PROBE", str(error)),)) from error
+    if diagnostics:
+        raise ViewValidationError(diagnostics)
+    return builds
 
 
 def check_view_freshness(snapshot: RepositorySnapshot, specifications, view_id: str, manifest, *, existing_view_bytes=None):

@@ -128,6 +128,23 @@ def test_g011_capture_planning_is_structurally_separate_from_authority():
     assert not any(dep.startswith("tools.project_knowledge.capture") for dep in imports(authority_source, authority_module))
 
 
+def test_g012_public_generation_and_repository_validation_have_nonleakage_gates():
+    generation_tree = ast.parse((PACKAGE / "services/generation.py").read_text(encoding="utf-8"))
+    generation_functions = {node.name: node for node in generation_tree.body if isinstance(node, ast.FunctionDef)}
+    for name in ("_generate_verified", "generate_views"):
+        calls = [node for node in ast.walk(generation_functions[name]) if isinstance(node, ast.Call)]
+        assert any(isinstance(call.func, ast.Name) and call.func.id == "validate_public_projection" for call in calls)
+    assert not any(
+        isinstance(node, ast.Name) and node.id == "known_private_values"
+        for node in ast.walk(generation_functions["_execute_bound"])
+    )
+
+    validation_tree = ast.parse((PACKAGE / "services/validation.py").read_text(encoding="utf-8"))
+    validation_functions = {node.name: node for node in validation_tree.body if isinstance(node, ast.FunctionDef)}
+    calls = [node for node in ast.walk(validation_functions["validate_repository"]) if isinstance(node, ast.Call)]
+    assert any(isinstance(call.func, ast.Name) and call.func.id == "validate_public_projection" for call in calls)
+
+
 @pytest.mark.parametrize("source", [
     "from .adapters import gitio", "from . import adapters", "from . import services",
     "from .services.validation import validate_repository",

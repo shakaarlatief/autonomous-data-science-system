@@ -76,6 +76,14 @@ class SemanticId:
             raise ValueError("semantic_id must be an authored nonempty identifier")
 
 
+def validate_private_dependency_token(value: str) -> None:
+    """Require a public-safe abstract token, never a private path, URI or content locator."""
+    if (not isinstance(value, str)
+            or not re.fullmatch(r"[A-Za-z][A-Za-z0-9_.:-]{0,127}", value)
+            or re.match(r"^[A-Za-z]:", value)):
+        raise ValueError("private dependency must be a public-safe abstract identifier")
+
+
 def validate_source_path(value: str) -> None:
     """Require a normalized repository-relative POSIX path, never a filesystem escape."""
     if (not isinstance(value, str) or not value or "\\" in value or ":" in value
@@ -507,6 +515,8 @@ class AuthorityQuery:
             object.__setattr__(self, field, tuple(getattr(self, field)))
         if any(not isinstance(sid, SemanticId) for sid in self.required_authorities):
             raise ValueError("Required authorities must be authored typed IDs")
+        for dependency in self.required_private_dependencies:
+            validate_private_dependency_token(dependency)
         object.__setattr__(self, "required_authorities", tuple(sorted(set(self.required_authorities), key=lambda s: s.value)))
         object.__setattr__(self, "required_private_dependencies", tuple(sorted(set(self.required_private_dependencies))))
         if self.at_time is not None and self.at_time.utcoffset() is not None:
@@ -535,6 +545,9 @@ class PrivateStateEvidence:
     freshness: Freshness = Freshness.UNKNOWN
 
     def __post_init__(self) -> None:
+        validate_private_dependency_token(self.dependency)
+        if self.available is not None and type(self.available) is not bool:
+            raise ValueError("Private-state availability must be bool or None")
         object.__setattr__(self, "freshness", Freshness(self.freshness))
 
 
