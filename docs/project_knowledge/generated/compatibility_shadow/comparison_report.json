@@ -15,16 +15,16 @@
       "sha256": "aee4d4312d6025a7205edce9857b98131cf18cb0a2aafaf5019fc340e91326e1"
     },
     {
-      "byte_length": 5331,
+      "byte_length": 5332,
       "path": "docs/project_knowledge/generated/compatibility_shadow/KNOWLEDGE_MAP.md",
       "role": "knowledge_map",
-      "sha256": "ae859d60931dc7df6c5cdca215ae02197ea1f94e1ae789473f471a10a13feb37"
+      "sha256": "d2ac1ae9ec4b29ae90002e7f13e09e9a7cdd5e63c2bc36050429879dd233cefd"
     },
     {
-      "byte_length": 224110,
+      "byte_length": 224431,
       "path": "docs/project_knowledge/generated/compatibility_shadow/artifact_inventory.json",
       "role": "artifact_inventory",
-      "sha256": "d436d6a2ecb83d088f07fbe0154b71a7696bba2733df71af1a810589749729bf"
+      "sha256": "1c444ed35b78b2a04bd8a9b035babc55d57a76f4b99d238694b0693b449e2f18"
     }
   ],
   "differences": [
@@ -76,5 +76,5 @@
     "generator_version": "1"
   },
   "schema_version": "1",
-  "source_boundary": "sha256:40e6c66ed1effaa2c247e3398884bea4c2145a97c723126fba30da4b52d1454a"
+  "source_boundary": "sha256:d94e2275d3b7889d7a7b93efdd4c4deeae63e7cbd2ef59cbc74440ad4df9732c"
 }

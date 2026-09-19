@@ -1,6 +1,6 @@
 {
-  "artifact_count": 1348,
-  "artifact_tree_digest": "26592a48ed57307990dc328981a0f5d6dd1aa00cdf3872e0571c586753e1d92c",
+  "artifact_count": 1350,
+  "artifact_tree_digest": "50dcce4c6feb670c72ae4c47bd2f0ab35557bbbc8acbecbb31ef7f17cf8b99ea",
   "artifacts": [
     {
       "group": "<docs-root>",
@@ -4788,6 +4788,16 @@
     },
     {
       "group": "project_knowledge",
+      "path": "docs/project_knowledge/captures/historical/w4_branch_boundary_scope.json",
+      "suffix": ".json"
+    },
+    {
+      "group": "project_knowledge",
+      "path": "docs/project_knowledge/captures/open/w4_branch_boundary_scope.json",
+      "suffix": ".json"
+    },
+    {
+      "group": "project_knowledge",
       "path": "docs/project_knowledge/project_integration_boundary.md",
       "semantic_id": "PROJECT-INTEGRATION-BOUNDARY",
       "suffix": ".md"
@@ -6792,7 +6802,7 @@
       "group": "private_companion"
     },
     {
-      "artifact_count": 8,
+      "artifact_count": 10,
       "group": "project_knowledge"
     },
     {
@@ -6809,5 +6819,5 @@
     }
   ],
   "schema_version": "1",
-  "source_boundary": "sha256:40e6c66ed1effaa2c247e3398884bea4c2145a97c723126fba30da4b52d1454a"
+  "source_boundary": "sha256:d94e2275d3b7889d7a7b93efdd4c4deeae63e7cbd2ef59cbc74440ad4df9732c"
 }
