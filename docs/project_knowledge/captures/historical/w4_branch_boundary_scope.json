@@ -1,0 +1,22 @@
+{
+  "authority_class": "capture",
+  "kind": "PROJECT_INTEGRATION_BOUNDARY_SCOPE_OBSERVATION",
+  "profile": "capture.v1",
+  "provenance": [
+    "interaction:chatgpt-27",
+    "path:docs/OPEN_ARCHITECTURE_BACKLOG.md#AB-032"
+  ],
+  "schema_version": "1",
+  "scope": {
+    "target_semantic_id": "PROJECT-INTEGRATION-BOUNDARY",
+    "topic": "git-branch-lifecycle"
+  },
+  "semantic_id": "CAPTURE:W4-BRANCH-BOUNDARY-SCOPE",
+  "source_references": [
+    "path:docs/project_knowledge/project_integration_boundary.md",
+    "path:docs/OPEN_ARCHITECTURE_BACKLOG.md#AB-032",
+    "path:docs/CONTINUITY.md"
+  ],
+  "state": "COMPLETED",
+  "summary": "The Project Integration Boundary owns the promoted integration branch plus exact promoted commit. It does not own or imply policy for when development branches are created, continued, rotated, merged, archived, or retired; that policy remains a separate deferred architecture question."
+}
