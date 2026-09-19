@@ -30,10 +30,10 @@ AUTHORITY_SWITCH_ALLOWED=false
   },
   "objective": "Implement and migrate the selected Candidate 01 project-development knowledge architecture under Specification 028 while current continuity remains operational authority until an explicit qualified switch.",
   "execution_anchor": {
-    "checkpoint": 548,
+    "checkpoint": 549,
     "development_branch": "v1-source-vault-bootstrap-resume",
     "pull_request": null,
-    "current_boundary": "project-knowledge-views-accepted-compatibility-next"
+    "current_boundary": "project-knowledge-compatibility-protected-authority-next"
   },
   "stage": {
     "stage_id": "SPECIFICATION:028",
