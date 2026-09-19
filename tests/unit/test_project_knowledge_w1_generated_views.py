@@ -56,7 +56,7 @@ def test_g106_current_state_core_is_derived_from_live_w1_canonical_owners() -> N
     }
     assert active["stage"] == {
         "stage_id": "SPECIFICATION:028",
-        "stage_state": "W1_IN_PROGRESS",
+        "stage_state": "W1_ACCEPTED",
     }
 
     assert core["integration_boundary"] == {

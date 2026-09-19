@@ -29,6 +29,6 @@ The canonical diagram source is Mermaid embedded directly in these Markdown file
 
 ## Current implementation status
 
-W0 is accepted and W1 live-control semantic migration is in progress. The successor now has bounded live semantic owners for the selected architecture workstream, Project Integration Boundary, Source Vault and Cockpit continuation, D-035 selection semantics, and deterministic workstream/current-state-core views.
+W0 and W1 are accepted. The successor now has a qualified bounded live-control semantic slice covering the selected architecture workstream, Project Integration Boundary, Source Vault and Cockpit continuation, D-035 selection semantics, and deterministic workstream/current-state-core views. W2 shadow derived views are the next migration wave and have not yet started.
 
 The broader migration program remains staged. Current continuity remains operational authority; live compatibility paths are still maintained by that architecture, successor outputs remain non-authoritative, and `AUTHORITY_SWITCH_ALLOWED=false` until a later explicit qualified W8 authority-switch decision.
