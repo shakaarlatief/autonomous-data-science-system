@@ -930,6 +930,30 @@ docs/checkpoints/204_multimodel_collaboration_method_promoted.md
 **Status:** Accepted / selected successor target / not yet operational authority
 **Date:** 2026-09-15
 
+<!-- PKA-STRUCTURED-DECLARATION-BEGIN -->
+{
+  "schema_version": "1",
+  "profile": "semantic_source.v1",
+  "kind": "ARCHITECTURE_SELECTION_DECISION",
+  "authority_class": "canonical",
+  "semantic_id": "D-035",
+  "state": "ACTIVE",
+  "scope": {
+    "decision_domain": "project-development-knowledge-architecture",
+    "selected_target": "PKA-CANDIDATE-01"
+  },
+  "provenance": [
+    "research:175",
+    "checkpoint:520"
+  ],
+  "references": [
+    "research:144",
+    "research:176",
+    "specification:028"
+  ]
+}
+<!-- PKA-STRUCTURED-DECLARATION-END -->
+
 The project owner explicitly selects `PKA-CANDIDATE-01`, formally described in Research 144 as **Repository-Native Semantic Sources with Selective Identity, Derived Views, and Action-Gated Authority**, as the successor target architecture for ADS project-development knowledge preservation, reconstruction, authority resolution, continuity and evolution.
 
 This decision accepts the **logical architecture** that passed the complete Requirements V0.2 qualification boundary. It authorizes implementation and migration design toward that architecture. It does not freeze every physical encoding, file layout, schema, database choice, generator implementation or visualization format. Those physical choices must preserve the selected logical contracts and remain open to evidence-driven implementation design.

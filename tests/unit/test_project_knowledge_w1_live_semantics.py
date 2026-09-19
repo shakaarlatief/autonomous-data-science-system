@@ -254,3 +254,55 @@ def test_g104_cockpit_owner_preserves_pause_and_nonpromotion_boundary() -> None:
     assert "not production-promoted" in text
     assert "Production `/cockpit` remains untouched." in text
     assert "When the project owner chooses to return to frontend work:" in text
+
+
+def test_g105_d035_selection_semantics_are_machine_resolvable_at_natural_owner() -> None:
+    result = validate_project_knowledge(worktree_snapshot(ROOT))
+
+    assert result.ok
+    owners = tuple(
+        source
+        for source in result.repository.sources
+        if source.semantic_id == SemanticId("D-035")
+    )
+    assert len(owners) == 1
+
+    owner = owners[0]
+    assert owner.carrier_path == "docs/DECISIONS.md"
+    assert owner.profile == Profile.SEMANTIC_SOURCE
+    assert owner.authority_class == AuthorityClass.CANONICAL
+    assert owner.state == LifecycleState.ACTIVE
+    assert owner.kind == "ARCHITECTURE_SELECTION_DECISION"
+    assert owner.declaration.fields["scope"] == {
+        "decision_domain": "project-development-knowledge-architecture",
+        "selected_target": "PKA-CANDIDATE-01",
+    }
+
+
+def test_g105_workstream_architecture_scope_resolves_back_to_d035_selection() -> None:
+    result = validate_project_knowledge(worktree_snapshot(ROOT))
+    by_id = {
+        source.semantic_id.value: source
+        for source in result.repository.sources
+        if source.semantic_id is not None
+    }
+
+    decision = by_id["D-035"]
+    workstream = by_id["WS-PKA-CURRENT"]
+
+    assert (
+        workstream.declaration.fields["scope"]["architecture"]
+        == decision.declaration.fields["scope"]["selected_target"]
+    )
+
+
+def test_g105_structured_projection_does_not_duplicate_d035_substantive_decision_text() -> None:
+    text = (ROOT / "docs/DECISIONS.md").read_text(encoding="utf-8")
+    begin = text.index("<!-- PKA-STRUCTURED-DECLARATION-BEGIN -->", text.index("## D-035."))
+    end = text.index("<!-- PKA-STRUCTURED-DECLARATION-END -->", begin)
+    declaration_text = text[begin:end]
+
+    assert "Repository-Native Semantic Sources with Selective Identity" not in declaration_text
+    assert "KA-R01" not in declaration_text
+    assert "one natural canonical owner per fact" not in declaration_text
+    assert "authority switch allowed" not in declaration_text
