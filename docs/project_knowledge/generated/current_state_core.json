@@ -1,8 +1,8 @@
 {
   "active_workstream": {
     "execution_anchor": {
-      "checkpoint": 552,
-      "current_boundary": "project-knowledge-wave-two-accepted-compatibility-shadow-next",
+      "checkpoint": 553,
+      "current_boundary": "project-knowledge-wave-three-accepted-capture-promotion-next",
       "development_branch": "v1-source-vault-bootstrap-resume",
       "pull_request": null
     },
@@ -10,7 +10,7 @@
     "semantic_id": "WS-PKA-CURRENT",
     "stage": {
       "stage_id": "SPECIFICATION:028",
-      "stage_state": "W2_ACCEPTED"
+      "stage_state": "W3_ACCEPTED"
     },
     "state": "ACTIVE"
   },

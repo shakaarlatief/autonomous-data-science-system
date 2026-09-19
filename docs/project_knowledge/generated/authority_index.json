@@ -212,12 +212,12 @@
       "authority_from": null,
       "authority_to": null,
       "combination_semantics": null,
-      "content_digest": "fb5898f172a68ae1c4838745499d86bc54b94eeb5640fec5377d3bbd835c097d",
+      "content_digest": "c44c81bdf022475dd815be9ea78519353d2fb1b95b03cd9eaeda64f6aa970fdd",
       "declaration": {
         "authority_class": "canonical",
         "execution_anchor": {
-          "checkpoint": 552,
-          "current_boundary": "project-knowledge-wave-two-accepted-compatibility-shadow-next",
+          "checkpoint": 553,
+          "current_boundary": "project-knowledge-wave-three-accepted-capture-promotion-next",
           "development_branch": "v1-source-vault-bootstrap-resume",
           "pull_request": null
         },
@@ -242,7 +242,7 @@
         "semantic_id": "WS-PKA-CURRENT",
         "stage": {
           "stage_id": "SPECIFICATION:028",
-          "stage_state": "W2_ACCEPTED"
+          "stage_state": "W3_ACCEPTED"
         },
         "state": "ACTIVE"
       },
