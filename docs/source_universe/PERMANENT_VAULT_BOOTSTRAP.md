@@ -6,6 +6,74 @@
 **Scope:** Deploy the accepted Specification 023 source substrate on durable user-controlled storage and ingest the original VU Amsterdam Machine Learning folder before any additional course corpus is admitted  
 **Authority:** Operational guidance subordinate to Foundation 022, Specification 023, and the current checkpoint. This file does not select a permanent cloud provider, backup provider, or final multi-user deployment topology.
 
+## Machine-resolved Course 2 admission contract
+
+The structured declaration below is a bounded authoritative projection of the Course 2 admission gate already stated in Section 13. It does not replace the richer operational procedure in this runbook or claim that every bootstrap step is represented as structured data.
+
+<!-- PKA-STRUCTURED-DECLARATION-BEGIN -->
+{
+  "schema_version": "1",
+  "profile": "governing_procedure.v1",
+  "kind": "SOURCE_VAULT_COURSE2_ADMISSION_PROCEDURE",
+  "authority_class": "canonical",
+  "semantic_id": "PROCEDURE:PERMANENT-SOURCE-VAULT-BOOTSTRAP",
+  "state": "ACTIVE",
+  "scope": {
+    "domain": "source-universe",
+    "decision": "course2-admission"
+  },
+  "governed_action_classes": [
+    "COURSE2_ADMISSION_DECISION"
+  ],
+  "preconditions": [],
+  "mandatory_constraints": [
+    {
+      "constraint_id": "FIRST_CORPUS_ACCOUNTED",
+      "requirement": "The original local corpus is reviewed and all intended files are ingested or explicitly accounted for."
+    },
+    {
+      "constraint_id": "WORKING_AUDIT_CLEAN",
+      "requirement": "The working Source Vault integrity audit is clean."
+    },
+    {
+      "constraint_id": "INDEPENDENT_BACKUP_ROUND_TRIP",
+      "requirement": "The independent backup is verified through a separate-storage round trip."
+    },
+    {
+      "constraint_id": "CLEAN_RESTORE",
+      "requirement": "A clean restore from the independently retrieved copy succeeds."
+    },
+    {
+      "constraint_id": "RESTORED_AUDIT_CLEAN",
+      "requirement": "The restored Source Vault integrity audit is clean."
+    },
+    {
+      "constraint_id": "SAFE_EVIDENCE_PRESERVED",
+      "requirement": "Safe recovery evidence is preserved."
+    }
+  ],
+  "prohibitions": [
+    "Do not admit an additional educational course batch before every Course 2 admission-gate requirement is satisfied."
+  ],
+  "required_postconditions": [
+    "Course 2 is unblocked only after every Course 2 admission-gate requirement is satisfied."
+  ],
+  "fail_closed_conditions": [
+    "Any missing, pending, failed, or unverified Course 2 admission-gate requirement keeps Course 2 blocked."
+  ],
+  "provenance": [
+    "path:docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md#13",
+    "research:167",
+    "research:168"
+  ],
+  "risk_or_reopen_triggers": [
+    "RK-RECOVERY-FAILURE",
+    "RK-REMOTE-ROUNDTRIP-FAILURE",
+    "RK-PRIVATE-LEAK"
+  ]
+}
+<!-- PKA-STRUCTURED-DECLARATION-END -->
+
 ## 1. Purpose
 
 Specification 023 has demonstrated that the provider-free source substrate can preserve exact bytes, maintain source identity and encounter provenance, audit integrity, create a verified backup, and restore into a clean target.
