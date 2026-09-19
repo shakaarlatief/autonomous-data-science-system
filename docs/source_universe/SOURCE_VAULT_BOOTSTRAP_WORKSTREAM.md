@@ -3,7 +3,7 @@
 **Status:** PAUSED SUCCESSOR SEMANTIC OWNER / EXPECTED TO RESUME
 **Purpose:** Own the current resumable state of the first permanent Source Vault bootstrap without duplicating the operational procedure or private execution coordinates.
 **Governing procedure:** `docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md`
-**Current operational authority:** Current continuity remains operational authority during W1.
+**Current operational authority:** Current continuity remains operational authority throughout the qualified migration program until an explicit authority switch.
 
 ## Current qualified state
 
@@ -27,7 +27,7 @@ private dependency                       RESOLVED_PRIVATE
 resume target                            reviewed ingestion of the frozen 20-entry first corpus
 ```
 
-The pause is routing, not completion or supersession. The current project route is Candidate 01 W1 project-knowledge migration. Source Vault execution resumes only when project routing explicitly returns to this workstream.
+The pause is routing, not completion or supersession. The current project route remains the Candidate 01 project-knowledge migration program. Source Vault execution resumes only when project routing explicitly returns to this workstream.
 
 The public source intentionally records only the public-safe private-dependency classification. Exact private paths, credentials, storage coordinates and other private execution values remain outside this public semantic source.
 
@@ -45,7 +45,7 @@ The public source intentionally records only the public-safe private-dependency 
   },
   "objective": "Complete the first permanent user-controlled Source Vault bootstrap and unblock Course 2 only after accepted recovery proof.",
   "expected_to_resume": true,
-  "pause_reason": "The active project route is Candidate 01 W1 project-knowledge migration; Source Vault bootstrap remains preserved and paused.",
+  "pause_reason": "The active project route remains the Candidate 01 project-knowledge migration program; Source Vault bootstrap remains preserved and paused.",
   "return_condition": "Resume only when project routing explicitly returns to the Source Vault bootstrap workstream.",
   "resume_target": "SOURCE-VAULT:REVIEWED-INGESTION",
   "governing_procedure": "PROCEDURE:PERMANENT-SOURCE-VAULT-BOOTSTRAP",

@@ -9,7 +9,7 @@ This source owns the durable identity, active state, scope, objective, execution
 
 It does **not** own the substantive rationale selecting Candidate 01. D-035 remains the natural owner of that decision. The Project Integration Boundary, Source Vault continuation and Cockpit continuation remain in their own natural canonical owners. Current compatibility surfaces remain separate, and this workstream does not own an operational-authority switch.
 
-W1 is accepted and the W2 shadow-derived-view wave has reached its acceptance boundary. The workstream remains active for the continuing migration program while preserving:
+W1 and W2 are accepted. W3 compatibility shadow is the next migration wave. The workstream remains active for the continuing migration program while preserving:
 
 ```text
 CURRENT_OPERATIONAL_AUTHORITY=CURRENT_CONTINUITY_ARCHITECTURE
