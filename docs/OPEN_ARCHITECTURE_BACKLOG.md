@@ -1514,6 +1514,38 @@ Primary context: Specification 028 reconstruction/capture/workstream architectur
 
 ---
 
+## AB-032: Governed Git branch lifecycle policy
+
+**Status:** OPEN / DEFERRED ARCHITECTURE QUESTION
+**Priority:** P2
+
+Candidate 01 already preserves branch state that matters to continuity and authority, including the active workstream's development branch, the promoted integration branch plus exact promoted commit, and exact frozen branch/head information where a paused workstream requires it. What is not yet represented as a general governed policy is **when ADS should create, continue, rotate, promote, merge, archive, or retire a Git development branch**.
+
+This is not a W3 blocker and should not expand Specification 028 opportunistically. Preserve it for later evaluation, preferably before W6 cutover or as part of the broader intent/orchestration work in AB-031, so branch lifecycle decisions do not remain permanently dependent on collaborator habit.
+
+Research should distinguish:
+
+```text
+branch-state knowledge
+    which branch/commit currently carries a workstream or promoted boundary
+
+from
+
+branch-lifecycle policy
+    when a new branch is warranted
+    when work should remain on the current branch
+    how branch naming relates to workstream/stage identity
+    what qualifies promotion/merge
+    how paused branches are resumed or retired
+    what evidence is required before destructive cleanup
+```
+
+Any future policy should remain subordinate to Git/repository authority, preserve exact commit provenance, avoid unnecessary branch proliferation, and integrate with workstream/reconstruction/action semantics rather than creating a second control system.
+
+Primary context: Candidate 01 `workstream.v1` execution anchors, `PROJECT-INTEGRATION-BOUNDARY`, `docs/CONTINUITY.md` branch continuity rules, Specification 028 migration/cutover semantics, and AB-031.
+
+---
+
 # Continuation obligations that must not be forgotten
 
 ## CO-001: MC-0010 Claude dual-repository research
