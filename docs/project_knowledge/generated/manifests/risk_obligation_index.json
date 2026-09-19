@@ -1,6 +1,6 @@
 {
   "authority_class": "derived",
-  "created_or_refreshed_boundary": "sha256:485e09084ca0aa2e60818a3078e74e1209b6ea9994a3fba5d0e679db2a4f90a9",
+  "created_or_refreshed_boundary": "sha256:28c717e482bbafeb7623b4e808b4e05a273eeb2df8ed81294ab81b07be10a216",
   "freshness_basis": "G009_EXACT_INPUTS_AND_GENERATOR_V1",
   "generator": {
     "generator_id": "project_knowledge_risk_obligation_index",
@@ -65,7 +65,7 @@
       "source_path": "docs/cockpit/README.md"
     },
     {
-      "content_digest": "0e05f2294891a4ffb9bca5f281ac6b00850b41de29331d321b0bfe55550627b5",
+      "content_digest": "a06d2734d4ff8298f60ed52aa5ff02a9a373c4a02937a8e3d7ba4a01b2993549",
       "hash_algorithm": "sha256",
       "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
       "semantic_id": "PROJECT-INTEGRATION-BOUNDARY",
