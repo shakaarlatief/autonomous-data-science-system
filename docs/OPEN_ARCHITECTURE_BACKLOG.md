@@ -1212,6 +1212,308 @@ docs/checkpoints/431_github_extended_ci_evidence_foundation_designed_implementat
 
 ---
 
+## AB-031: Intent-driven interaction orchestration, collaboration routing, and recoverable conversation continuity
+
+**Status:** OPEN / ARCHITECTURE RESEARCH CANDIDATE / NOT YET ACCEPTED DESIGN
+**Priority:** P0
+
+The project owner identified a higher-level architecture concern that unifies several already-recognized ADS problems: a human should not need to remember the repository architecture, internal file paths, model-routing habits, recovery runbooks or preservation rules in order to use the architecture correctly.
+
+The desired human role is closer to:
+
+```text
+project owner
++ source of intent
++ decision authority where human judgment is genuinely required
+```
+
+rather than:
+
+```text
+manual workflow operator who must remember
+which files to read
+which process to start
+which model to call
+which tool to use
+where to preserve an idea
+how to resume after interruption
+how to recover failed infrastructure
+```
+
+Explicit human control must remain available. The owner may still say things such as "ask Claude", "do not modify anything", "save this for later", "use Codex", or "only investigate". The architecture question is whether ordinary operation can increasingly infer and route the appropriate process without requiring those mechanics to be manually orchestrated every time.
+
+### Candidate intent-to-process architecture
+
+Research whether arbitrary natural-language project intent can be routed through one inspectable project-controlled process:
+
+```text
+owner intent
+    -> model-assisted intent understanding
+    -> typed project intent / task class
+    -> project-controlled routing
+    -> reconstruction plan
+    -> applicable workstream / governing procedure
+    -> required authority, freshness and private-state checks
+    -> tool and/or collaborator selection
+    -> execution or investigation
+    -> result / evidence
+    -> preservation decision
+    -> continuation receipt
+```
+
+The model may help infer what the owner means, but consequential source closure, authority, safety constraints and mutation rules should remain project-controlled and independently inspectable. The system should not depend on a collaborator merely remembering the right process.
+
+Potential explicit shortcuts such as:
+
+```text
+continue project
+investigate idea
+preserve this
+review architecture
+recover local runtime
+resume workstream
+```
+
+may be useful interfaces, but they should be aliases for the same underlying semantics that ordinary natural language can invoke. Remembering a command vocabulary should not become a new prerequisite for using ADS correctly.
+
+### General actor-entry problem
+
+Do not frame this only as "how a new ChatGPT chat continues". The deeper problem is how any actor entering an arbitrary project situation determines the correct next process.
+
+Possible actors include:
+
+```text
+fresh ChatGPT conversation
+returning ChatGPT conversation
+Claude
+Codex
+local agent
+GitHub Action
+future ADS orchestration agent
+project owner at a terminal
+recovery interaction after infrastructure failure
+```
+
+A new chat is therefore one instance of a broader reconstruction-and-routing problem already related to AB-022, AB-024 and the selected Candidate 01 reconstruction planner.
+
+### Idea, observation and change lifecycle
+
+Investigate routing owner statements such as:
+
+```text
+"I noticed X"
+"Can you investigate X?"
+"I think X should work differently"
+"Change X"
+"Save this for later"
+"Resume what we were doing"
+```
+
+into the appropriate lifecycle rather than either editing canonical architecture immediately or leaving the thought ephemeral.
+
+A likely conceptual mapping is:
+
+```text
+observation
+    -> non-authoritative capture / open issue candidate
+
+investigation request
+    -> exploratory research
+
+proposed architecture change
+    -> review / research / decision path
+
+accepted bounded change
+    -> governed task with authority and revision controls
+
+save-for-later request
+    -> backlog / capture / workstream obligation
+
+resume request
+    -> broad continuation / reconstruction
+```
+
+This should build on the already-selected capture/review/promotion distinction. Conversation content must not become canonical merely because it was discussed.
+
+### Model collaboration and delegation policy
+
+The owner also identified that cross-model collaboration is currently more manual and conversational than the desired architecture.
+
+Research whether model/tool participation should be selected from explicit task characteristics such as:
+
+```text
+task class
+consequence
+uncertainty
+architecture novelty
+implementation boundedness
+need for independent judgment
+need for adversarial review
+available quota/capacity
+provider/tool availability
+```
+
+Possible roles include:
+
+```text
+ChatGPT architecture formation / synthesis
+Codex bounded implementation
+Claude independent research or architecture challenge
+independent second-model review
+localized repair
+adversarial review
+no additional model when unnecessary
+```
+
+The goal is not maximum model count. Delegation should occur only when it materially improves the complete engineering loop.
+
+This research should also address durable collaboration lineage. Current repository records usually preserve what was implemented and reviewed better than they preserve which persistent external thread/model performed each role, which prompt/result boundary was used, and how the result returned to the primary interaction for reconciliation. The recurring ChatGPT -> owner-dispatched Codex -> ChatGPT independent-review pattern is one concrete motivating example, but this item must generalize beyond any one provider or thread.
+
+### Interaction continuity without making conversation authoritative
+
+Investigate a non-authoritative interaction-continuity envelope that can say that unresolved interaction-local material exists without promoting the conversation itself into project authority.
+
+Possible metadata to evaluate:
+
+```text
+interaction/session identity
+actor/environment
+interaction mode
+durable project anchor at entry
+active workstream / task class
+bounded topic or purpose
+unpromoted material present: yes/no
+external collaborators involved
+pending review/capture/promotion
+return or resume condition
+last durable receipt
+content recoverability status
+```
+
+A future session could then distinguish:
+
+```text
+canonical project state is safely at checkpoint N
+
+AND
+
+an earlier interaction ended with unresolved non-authoritative discussion
+about topic X
+```
+
+without asserting that the discussion's proposals were accepted architecture.
+
+Do not solve this by committing every conversational utterance. That would create noise, duplication, privacy pressure, unclear authority and accidental promotion of exploratory wording.
+
+The architecture must also distinguish:
+
+```text
+interaction is known to exist
+    !=
+interaction content is recoverable
+```
+
+A repository marker cannot recover chat text that is unavailable through the current product/tool surface. Recovery may require prior-chat access, a non-authoritative summary/capture, returning to the original conversation, or owner-provided excerpts.
+
+### Context-window rollover as interruption recovery
+
+Research whether chat/session exhaustion should become a normal interruption-recovery case rather than a bespoke manual continuation-prompt ritual.
+
+Candidate behavior:
+
+```text
+interaction approaches or reaches boundary
+    -> preserve durable project anchor
+    -> preserve non-authoritative continuation receipt if unresolved material exists
+    -> mark what is and is not canonical
+    -> fresh interaction performs project reconstruction
+    -> recover or request unresolved interaction context when relevant
+    -> resume without guessing prior-chat plan state
+```
+
+This should extend, not replace, the existing principle that completed work is reconstructed from durable repository evidence rather than unstored chat memory.
+
+### Break-glass operational recovery
+
+The owner gave local-runtime/Codexless unavailability as a concrete operational example.
+
+Research a professional break-glass workflow in which a failed access component does not also remove access to its own recovery instructions:
+
+```text
+normal interaction detects local runtime unavailable
+    -> classify bounded operational incident
+    -> preserve current workstream state
+    -> avoid consuming the primary workstream interaction with prolonged diagnosis where practical
+    -> open/use an alternate recovery interaction or channel
+    -> access public-safe recovery authority through an independent path
+    -> diagnose and restore the failed component
+    -> verify service/tunnel/tool readiness
+    -> preserve cause and recovery evidence when materially new
+    -> return to the original workstream
+```
+
+One candidate is a stable public repository recovery entrypoint reachable through an independent GitHub connector when the custom local Runtime Bridge itself is unavailable. This is only a research direction. Exact provider/tool assumptions must be reverified when designed.
+
+The general resilience rule is:
+
+```text
+a recovery procedure must not depend exclusively on the component whose failure it is intended to recover
+```
+
+### Relationship to existing architecture
+
+This item is not a proposal to replace existing accepted mechanisms. It is a candidate orchestration layer over concepts already selected or actively researched:
+
+```text
+Specification 028 reconstruction planner and task classes
+capture / review / promotion lifecycle
+governing procedures
+authority and revision-aware action
+workstream interruption / resume semantics
+AB-022 required authority routing
+AB-023 backlog/open-question discoverability
+AB-024 high-recall reconstruction
+AB-025 workstream graph / deterministic resume
+AB-027 deferred-risk / evolution triggers
+existing model-collaboration provenance guidance
+existing local-execution recovery runbooks
+```
+
+Research must determine what is already sufficiently represented by those owners and what genuinely requires a new semantic object, procedure or generated view. Avoid creating a second competing routing/control system merely because the conversational framing is new.
+
+### Core design principle
+
+Preserve the following design objective for later evaluation:
+
+```text
+The human should not need to remember the architecture
+in order to use the architecture.
+```
+
+A mature ADS interaction should increasingly allow the owner to express intent while the surrounding system resolves the appropriate context, procedure, collaboration, safety, preservation and continuation path.
+
+### Non-decision boundary
+
+Nothing in AB-031 is accepted architecture merely because it is recorded here.
+
+In particular, this item does not yet select:
+
+```text
+a specific interaction-router schema
+a command syntax
+a conversation-mode state machine
+an automatic model-delegation algorithm
+a persistent conversation store
+a break-glass connector/provider
+a new canonical authority surface
+```
+
+Those require later research, comparison against the implemented Candidate 01 substrate, and an explicit accepted design if justified.
+
+Primary context: Specification 028 reconstruction/capture/workstream architecture, Research 179, AB-022, AB-023, AB-024, AB-025, AB-027, `docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md`, and `docs/local_execution/OPERATIONS.md`.
+
+---
+
 # Continuation obligations that must not be forgotten
 
 ## CO-001: MC-0010 Claude dual-repository research
