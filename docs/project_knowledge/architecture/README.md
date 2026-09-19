@@ -29,6 +29,6 @@ The canonical diagram source is Mermaid embedded directly in these Markdown file
 
 ## Current implementation status
 
-At the G015 boundary, the W0 substrate implements and qualifies the core semantic model, declarations and schemas, Git-bound revision evidence, identity transitions, authority resolution, workstream semantics, deterministic derived views, current-state core, capture/promotion planning, public/private validation, full/incremental equivalence, the eight persistent W0 structural views, and deterministic CLI validation/rebuild/refresh/freshness surfaces.
+W0 is accepted and W1 live-control semantic migration is in progress. The successor now has bounded live semantic owners for the selected architecture workstream, Project Integration Boundary, Source Vault and Cockpit continuation, D-035 selection semantics, and deterministic workstream/current-state-core views.
 
-The broader migration program remains staged. W1 live semantic migration has not started. Current compatibility paths remain operational authority, successor outputs remain non-authoritative, and `AUTHORITY_SWITCH_ALLOWED=false`.
+The broader migration program remains staged. Current continuity remains operational authority; live compatibility paths are still maintained by that architecture, successor outputs remain non-authoritative, and `AUTHORITY_SWITCH_ALLOWED=false` until a later explicit qualified W8 authority-switch decision.

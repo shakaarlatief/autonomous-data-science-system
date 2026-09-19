@@ -87,4 +87,6 @@ Rollback must preserve the ability to return to the last qualified authority sta
 
 ## Physical implementation status
 
-At G015, W0 implementation exists and the current CLI can validate, rebuild, refresh and check freshness for the W0 substrate. W1 has not started. No live compatibility path has been overwritten and no authority switch has occurred.
+W0 is accepted and W1 live-control semantic migration is in progress. The successor has live canonical semantic owners and deterministic derived views, but no successor-generated compatibility path has overwritten the live continuity surfaces.
+
+Current continuity remains operational authority, successor outputs remain non-authoritative, and no authority switch may occur before the later qualified W8 decision.
