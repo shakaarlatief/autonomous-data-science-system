@@ -10,12 +10,13 @@ from pathlib import Path
 import tempfile
 
 from ..adapters.generated_io import read_generated_bytes, write_generated_bytes
+from ..adapters.gitio import worktree_paths_match_commit
 from ..declaration import parse_native_json
 from ..model import (
     AuthorityClass, Diagnostic, DiagnosticSeverity, SnapshotMode, SubstrateError, ViewFreshnessStatus,
 )
 from ..views import ViewValidationError, production_view_specifications
-from .discovery import open_snapshot, read_entry
+from .discovery import open_snapshot
 from .generation import check_view_freshness, generate_views
 from .refresh import refresh_views
 from .semantic_validation import validate_project_knowledge
@@ -92,18 +93,24 @@ def _ensure_materialization_alignment(root: Path, snapshot):
         for specification in qualified_cli_view_specifications()
         for authority_class in specification.selector.authority_classes
     }
-    local_entries = {entry.path: entry for entry in local.entries}
-    local_bindings = {
-        source.carrier_path: _sha256(read_entry(local, local_entries[source.carrier_path]))
+    local_paths = {
+        source.carrier_path
         for source in local_validation.sources
         if source.authority_class in materialized_classes
     }
-    committed_bindings = {
-        source.carrier_path: source.revision.content_digest
+    committed_paths = {
+        source.carrier_path
         for source in committed_validation.sources
         if source.authority_class in materialized_classes and source.revision is not None
     }
-    if local_bindings != committed_bindings:
+    if (
+        local_paths != committed_paths
+        or not worktree_paths_match_commit(
+            root,
+            snapshot.source_commit,
+            tuple(committed_paths),
+        )
+    ):
         raise SubstrateError(
             "MATERIALIZATION_SOURCE_DRIFT",
             "Explicit generated-output materialization requires all locally influential governed inputs to match the selected commit.",

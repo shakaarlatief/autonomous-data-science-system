@@ -38,6 +38,37 @@ def worktree_snapshot(root: Path) -> RepositorySnapshot:
     return RepositorySnapshot(root.resolve(), SnapshotMode.WORKTREE_SNAPSHOT, entries)
 
 
+def worktree_paths_match_commit(root: Path, commit: str, paths: tuple[str, ...]) -> bool:
+    """Return whether selected worktree carriers are Git-equivalent to one commit.
+
+    Git performs the comparison so normal clean/smudge and text-normalization
+    rules are respected. This intentionally differs from hashing raw checkout
+    bytes, which can differ from canonical blob bytes on a clean checkout.
+    """
+    normalized = tuple(sorted(set(paths)))
+    for path in normalized:
+        validate_source_path(path)
+    if not normalized:
+        return True
+
+    result = subprocess.run(
+        [
+            "git", "-C", str(root), "diff", "--quiet", "--no-ext-diff",
+            "--no-renames", commit, "--", *normalized,
+        ],
+        capture_output=True,
+        check=False,
+    )
+    if result.returncode == 0:
+        return True
+    if result.returncode == 1:
+        return False
+    raise SubstrateError(
+        "GIT_READ_FAILED",
+        result.stderr.decode("utf-8", errors="replace").strip(),
+    )
+
+
 def read_blob(root: Path, entry: SnapshotEntry) -> bytes:
     if entry.git_mode not in {"100644", "100755"} or entry.blob_id is None:
         raise SubstrateError("UNSUPPORTED_SOURCE_MODE", "Only regular Git blob carriers are supported")

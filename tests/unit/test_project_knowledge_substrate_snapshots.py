@@ -324,11 +324,27 @@ def test_actual_ads_documentation_and_fixture_discovery_integration(mode):
         assert any(e.path.startswith("tests/fixtures/project_knowledge/") for e in selected)
     result = validate_repository(replace(snapshot, entries=selected))
     assert result.ok, result.diagnostics
-    assert result.sources == () and result.excluded_but_declared_count == 0
+    assert len(result.sources) == 1 and result.excluded_but_declared_count == 0
+
+    source = result.sources[0]
+    assert source.carrier_path == (
+        "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md"
+    )
+    assert source.semantic_id is not None and source.semantic_id.value == "SPECIFICATION:028"
+    assert source.kind == "SPECIFICATION"
+
     assert dict(result.path_role_counts)[PathRole.EVIDENCE_FIXTURE] > 0
     for path in documents:
         assert policy.classify(path) == PathRole.ELIGIBLE_SOURCE
-        assert parse_markdown((ROOT / path).read_bytes()) is None
+
+    assert parse_markdown(
+        (ROOT / "docs/research/177_selected_candidate_physical_architecture_and_repository_contract_v01.md").read_bytes()
+    ) is None
+    specification = parse_markdown(
+        (ROOT / "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md").read_bytes()
+    )
+    assert specification is not None
+    assert specification.fields["semantic_id"] == "SPECIFICATION:028"
 
 
 def test_snapshot_ref_is_explicit(repo):

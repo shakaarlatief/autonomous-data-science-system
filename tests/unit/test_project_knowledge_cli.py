@@ -123,6 +123,24 @@ def test_explicit_write_materializes_only_generated_outputs_and_freshness_passes
     assert {view["manifest_status_before"] for view in payload(diff)["views"]} == {"MATCH"}
 
 
+def test_explicit_write_accepts_git_clean_line_ending_materialization(cli_repo):
+    git(cli_repo, "config", "core.autocrlf", "true")
+
+    target = cli_repo / ACTIVE
+    target.unlink()
+    git(cli_repo, "checkout", "--", ACTIVE)
+
+    materialized = target.read_bytes()
+    assert b"\r\n" in materialized
+    assert git(cli_repo, "status", "--porcelain") == b""
+
+    rebuilt = run_cli(cli_repo, "rebuild", "--ref", "HEAD", "--write")
+    assert rebuilt.returncode == 0, rebuilt.stderr + rebuilt.stdout
+    result = payload(rebuilt)
+    assert result["ok"] and result["materialized"] is True
+    assert {view["view_status_before"] for view in result["views"]} == {"MISSING"}
+
+
 def test_check_freshness_missing_stale_and_invalid_are_nonzero(cli_repo):
     missing = run_cli(cli_repo, "check-freshness", "--ref", "HEAD")
     assert missing.returncode == 1
