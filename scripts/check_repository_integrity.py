@@ -94,6 +94,35 @@ def run_validator(
     return ValidatorResult(name, completed.returncode, output)
 
 
+def project_knowledge_validator_command(root: Path) -> list[str]:
+    return [
+        sys.executable,
+        "-B",
+        "-m",
+        "tools.project_knowledge",
+        "validate",
+        "--root",
+        str(root),
+        "--snapshot-mode",
+        "WORKTREE_SNAPSHOT",
+    ]
+
+
+def run_project_knowledge_validator(root: Path) -> ValidatorResult:
+    command = project_knowledge_validator_command(root)
+    completed = subprocess.run(
+        command,
+        cwd=root,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    output = "\n".join(
+        part.strip() for part in (completed.stdout, completed.stderr) if part.strip()
+    )
+    return ValidatorResult("project knowledge", completed.returncode, output)
+
+
 def main() -> int:
     args = parse_args()
     root = args.root.resolve()
@@ -107,6 +136,19 @@ def main() -> int:
             print(f"  ERROR {error}")
     else:
         print("Family-aware repository contracts: PASS")
+
+    project_knowledge_result = run_project_knowledge_validator(root)
+    if project_knowledge_result.returncode == 0:
+        print("Project-knowledge validation: PASS")
+    else:
+        failures.append(project_knowledge_result.name)
+        print(
+            "Project-knowledge validation: FAIL "
+            f"(exit={project_knowledge_result.returncode})"
+        )
+        if project_knowledge_result.output:
+            for line in project_knowledge_result.output.splitlines():
+                print(f"    {line}")
 
     results: list[ValidatorResult] = []
     for validator in FOCUSED_VALIDATORS:

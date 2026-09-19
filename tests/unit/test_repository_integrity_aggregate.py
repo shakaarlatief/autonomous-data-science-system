@@ -4,6 +4,7 @@ import importlib.util
 import subprocess
 import sys
 from pathlib import Path
+from types import SimpleNamespace
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -51,6 +52,49 @@ def test_validator_command_preserves_focused_validator_cli_contracts(tmp_path: P
     assert "--root" not in unrooted
 
 
+def test_project_knowledge_validator_command_is_worktree_bound(tmp_path: Path) -> None:
+    command = MODULE.project_knowledge_validator_command(tmp_path)
+
+    assert command == [
+        sys.executable,
+        "-B",
+        "-m",
+        "tools.project_knowledge",
+        "validate",
+        "--root",
+        str(tmp_path),
+        "--snapshot-mode",
+        "WORKTREE_SNAPSHOT",
+    ]
+
+
+def test_project_knowledge_validator_runs_fail_closed_component(monkeypatch, tmp_path: Path) -> None:
+    observed: list[str] = []
+
+    def fake_run(command, **kwargs):
+        observed.extend(command)
+        assert kwargs["cwd"] == tmp_path
+        return subprocess.CompletedProcess(command, 1, stdout='{"ok": false}\n', stderr="")
+
+    monkeypatch.setattr(MODULE.subprocess, "run", fake_run)
+
+    result = MODULE.run_project_knowledge_validator(tmp_path)
+
+    assert result.name == "project knowledge"
+    assert result.returncode == 1
+    assert result.output == '{"ok": false}'
+    assert observed == MODULE.project_knowledge_validator_command(tmp_path)
+
+
+def test_repository_integrity_workflow_tracks_project_knowledge_inputs() -> None:
+    workflow = (ROOT / ".github/workflows/repository-integrity.yml").read_text(
+        encoding="utf-8"
+    )
+
+    assert workflow.count("- schemas/project_knowledge/**") == 2
+    assert workflow.count("- tools/project_knowledge/**") == 2
+
+
 def test_model_collaboration_validator_is_configured_without_root_argument() -> None:
     validators = {validator.name: validator for validator in MODULE.FOCUSED_VALIDATORS}
 
@@ -79,6 +123,35 @@ def test_run_validator_uses_compatible_command(monkeypatch, tmp_path: Path) -> N
     assert result.returncode == 0
     assert result.output == "ok"
     assert "--root" not in observed
+
+
+def test_aggregate_fails_closed_when_project_knowledge_validation_fails(
+    monkeypatch,
+    tmp_path: Path,
+    capsys,
+) -> None:
+    monkeypatch.setattr(
+        MODULE,
+        "parse_args",
+        lambda: SimpleNamespace(root=tmp_path, checked_branch=None),
+    )
+    monkeypatch.setattr(MODULE, "validate_repository_contracts", lambda root: [])
+    monkeypatch.setattr(
+        MODULE,
+        "run_project_knowledge_validator",
+        lambda root: MODULE.ValidatorResult("project knowledge", 1, "semantic defect"),
+    )
+    monkeypatch.setattr(
+        MODULE,
+        "run_validator",
+        lambda *args, **kwargs: MODULE.ValidatorResult("legacy component", 0, ""),
+    )
+
+    assert MODULE.main() == 1
+    output = capsys.readouterr().out
+    assert "Project-knowledge validation: FAIL (exit=1)" in output
+    assert "semantic defect" in output
+    assert "PUBLIC_REPOSITORY_INTEGRITY=FAIL" in output
 
 
 def valid_intermediate_text(*, identity_disposition: bool = True) -> str:

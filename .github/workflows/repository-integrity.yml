@@ -5,6 +5,8 @@ on:
   push:
     paths:
       - docs/**
+      - schemas/project_knowledge/**
+      - tools/project_knowledge/**
       - scripts/repository_integrity.py
       - scripts/repository_integrity_legacy_validation_paths.json
       - scripts/check_repository_integrity.py
@@ -22,6 +24,8 @@ on:
   pull_request:
     paths:
       - docs/**
+      - schemas/project_knowledge/**
+      - tools/project_knowledge/**
       - scripts/repository_integrity.py
       - scripts/repository_integrity_legacy_validation_paths.json
       - scripts/check_repository_integrity.py
