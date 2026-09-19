@@ -29,18 +29,18 @@ def test_g108_governing_and_successor_control_sources_preserve_exact_authority_i
         assert SWITCH_FORBIDDEN in text
 
 
-def test_g108_current_architecture_documentation_states_w1_without_claiming_authority() -> None:
+def test_g108_current_architecture_documentation_tracks_migration_without_claiming_authority() -> None:
     readme = _text(ARCHITECTURE_README)
     migration = _text(MIGRATION)
 
-    assert "W0, W1 and W2 are accepted." in readme
-    assert "W3 compatibility shadow is the next migration wave and has not yet started." in readme
+    assert "W0 through W3 are accepted." in readme
+    assert "W4 production capture/promotion is the next migration wave." in readme
     assert "Current continuity remains operational authority" in readme
     assert "successor outputs remain non-authoritative" in readme
     assert "explicit qualified W8 authority-switch decision" in readme
 
-    assert "W0, W1 and W2 are accepted." in migration
-    assert "W3 compatibility shadow is next" in migration
+    assert "W0 through W3 are accepted." in migration
+    assert "W4 production capture/promotion is next." in migration
     assert "Current continuity remains operational authority" in migration
     assert "successor outputs remain non-authoritative" in migration
     assert "no authority switch may occur before the later qualified W8 decision" in migration

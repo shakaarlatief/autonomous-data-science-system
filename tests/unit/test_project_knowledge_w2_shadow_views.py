@@ -108,7 +108,7 @@ def test_w2_current_state_core_matches_live_control_state_and_stable_shadow_fact
     }
     assert core["active_workstream"]["stage"] == {
         "stage_id": "SPECIFICATION:028",
-        "stage_state": "W2_ACCEPTED",
+        "stage_state": "W3_ACCEPTED",
     }
 
     assert core["integration_boundary"] == {
