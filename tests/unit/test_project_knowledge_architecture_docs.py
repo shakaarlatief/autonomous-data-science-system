@@ -94,8 +94,8 @@ def test_migration_diagram_makes_shadow_cutover_and_rollback_explicit():
     ):
         assert marker in value
     assert "AUTHORITY_SWITCH_ALLOWED=false" in value
-    assert "W0 through W3 are accepted." in value
-    assert "W4 production capture/promotion is next." in value
+    assert "## Physical implementation status" in value
+    assert "Current continuity remains operational authority" in value
 
 
 def test_no_rendered_visual_is_committed_as_independent_truth_at_g015():

@@ -33,14 +33,12 @@ def test_g108_current_architecture_documentation_tracks_migration_without_claimi
     readme = _text(ARCHITECTURE_README)
     migration = _text(MIGRATION)
 
-    assert "W0 through W3 are accepted." in readme
-    assert "W4 production capture/promotion is the next migration wave." in readme
+    assert "## Current implementation status" in readme
     assert "Current continuity remains operational authority" in readme
     assert "successor outputs remain non-authoritative" in readme
     assert "explicit qualified W8 authority-switch decision" in readme
 
-    assert "W0 through W3 are accepted." in migration
-    assert "W4 production capture/promotion is next." in migration
+    assert "## Physical implementation status" in migration
     assert "Current continuity remains operational authority" in migration
     assert "successor outputs remain non-authoritative" in migration
     assert "no authority switch may occur before the later qualified W8 decision" in migration

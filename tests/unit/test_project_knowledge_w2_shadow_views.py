@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 
 from tools.project_knowledge.adapters.gitio import commit_snapshot
+from tools.project_knowledge.declaration import parse_markdown
 from tools.project_knowledge.services.generation import generate_views
 from tools.project_knowledge.views import production_view_specifications
 
@@ -106,10 +107,11 @@ def test_w2_current_state_core_matches_live_control_state_and_stable_shadow_fact
         "pull_request": routing["active_pr"],
         "current_boundary": routing["current_boundary"],
     }
-    assert core["active_workstream"]["stage"] == {
-        "stage_id": "SPECIFICATION:028",
-        "stage_state": "W3_ACCEPTED",
-    }
+    workstream = parse_markdown(
+        (ROOT / "docs/project_knowledge/selected_architecture_workstream.md").read_bytes()
+    )
+    assert workstream is not None
+    assert core["active_workstream"]["stage"] == workstream.fields["stage"]
 
     assert core["integration_boundary"] == {
         "semantic_id": "PROJECT-INTEGRATION-BOUNDARY",

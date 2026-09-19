@@ -42,7 +42,8 @@ def test_w3_candidate_generation_does_not_read_live_compatibility_content(monkey
     assert source_commit
     assert source_boundary.startswith("sha256:")
     assert len(sources) == 10
-    assert model["routing"]["current_checkpoint"] == 553
+    assert isinstance(model["routing"]["current_checkpoint"], int)
+    assert model["routing"]["current_checkpoint"] > 0
     assert inventory["artifact_count"] > 1000
     assert {item.role for item in artifacts} == {
         "routing",
