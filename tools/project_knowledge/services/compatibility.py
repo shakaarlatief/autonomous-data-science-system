@@ -73,6 +73,7 @@ class CompatibilityDifference:
 @dataclass(frozen=True)
 class CompatibilityShadow:
     source_commit: str
+    source_boundary: str
     artifacts: tuple[CompatibilityArtifact, ...]
     differences: tuple[CompatibilityDifference, ...]
 
@@ -276,7 +277,6 @@ def _artifact_inventory(snapshot, sources):
     return {
         "schema_version": "1",
         "authority_class": "derived",
-        "source_commit": snapshot.source_commit,
         "artifact_count": len(artifacts),
         "artifact_tree_digest": hashlib.sha256(tree_material).hexdigest(),
         "groups": [
@@ -285,6 +285,22 @@ def _artifact_inventory(snapshot, sources):
         ],
         "artifacts": artifacts,
     }
+
+
+def _source_boundary(sources, inventory) -> str:
+    records = []
+    for source in sorted(sources, key=lambda item: item.carrier_path):
+        if source.revision is None:
+            raise SubstrateError(
+                "MISSING_COMPATIBILITY_SOURCE_REVISION",
+                "Committed compatibility inputs require exact source revisions.",
+            )
+        records.append(
+            source.carrier_path + "\0" + source.revision.content_digest
+        )
+    records.append("artifact-tree\0" + inventory["artifact_tree_digest"])
+    material = "\n".join(records).encode("utf-8")
+    return "sha256:" + hashlib.sha256(material).hexdigest()
 
 
 def _subject_rows(sources):
@@ -510,6 +526,8 @@ def build_shadow_candidates(snapshot):
     sources = _canonical_sources(snapshot)
     model = _successor_model(sources)
     inventory = _artifact_inventory(snapshot, sources)
+    source_boundary = _source_boundary(sources, inventory)
+    inventory["source_boundary"] = source_boundary
     artifacts = (
         CompatibilityArtifact("routing", ROUTING_PATH, _json_bytes(model["routing"])),
         CompatibilityArtifact(
@@ -538,7 +556,7 @@ def build_shadow_candidates(snapshot):
                 item.code + ":" + item.carrier_path for item in diagnostics
             ),
         )
-    return snapshot.source_commit, sources, model, inventory, artifacts
+    return snapshot.source_commit, source_boundary, sources, model, inventory, artifacts
 
 
 def _read_committed_paths(snapshot, paths):
@@ -708,9 +726,9 @@ def compare_shadow_to_live(snapshot, model, inventory, artifacts):
 
 
 def build_compatibility_shadow(snapshot) -> CompatibilityShadow:
-    source_commit, sources, model, inventory, artifacts = build_shadow_candidates(snapshot)
+    source_commit, source_boundary, sources, model, inventory, artifacts = build_shadow_candidates(snapshot)
     differences = compare_shadow_to_live(snapshot, model, inventory, artifacts)
-    provisional = CompatibilityShadow(source_commit, artifacts, differences)
+    provisional = CompatibilityShadow(source_commit, source_boundary, artifacts, differences)
     report = {
         "schema_version": "1",
         "authority_class": "derived",
@@ -718,7 +736,7 @@ def build_compatibility_shadow(snapshot) -> CompatibilityShadow:
             "generator_id": GENERATOR_ID,
             "generator_version": GENERATOR_VERSION,
         },
-        "source_commit": source_commit,
+        "source_boundary": source_boundary,
         "blocking": provisional.blocking,
         "candidates": [
             {
@@ -758,6 +776,7 @@ def build_compatibility_shadow(snapshot) -> CompatibilityShadow:
         )
     return CompatibilityShadow(
         source_commit,
+        source_boundary,
         (*artifacts, report_artifact),
         differences,
     )

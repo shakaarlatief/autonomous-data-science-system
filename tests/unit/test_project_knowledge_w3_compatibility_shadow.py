@@ -35,11 +35,12 @@ def test_w3_candidate_generation_does_not_read_live_compatibility_content(monkey
         raise AssertionError("live compatibility content entered candidate generation")
 
     monkeypatch.setattr(module, "_read_committed_paths", forbidden)
-    source_commit, sources, model, inventory, artifacts = build_shadow_candidates(
+    source_commit, source_boundary, sources, model, inventory, artifacts = build_shadow_candidates(
         _snapshot()
     )
 
     assert source_commit
+    assert source_boundary.startswith("sha256:")
     assert len(sources) == 10
     assert model["routing"]["current_checkpoint"] == 552
     assert inventory["artifact_count"] > 1000
@@ -113,7 +114,9 @@ def test_w3_difference_report_uses_only_frozen_classes_and_has_no_blockers() -> 
     }
 
     assert shadow.artifact("comparison_report").path == COMPARISON_REPORT_PATH
-    assert report["source_commit"] == shadow.source_commit
+    assert report["source_boundary"] == shadow.source_boundary
+    assert shadow.source_commit.encode("ascii") not in shadow.artifact("comparison_report").content
+    assert shadow.source_commit.encode("ascii") not in shadow.artifact("artifact_inventory").content
     assert report["blocking"] is False
     assert shadow.blocking is False
     assert classifications <= set(DifferenceClass)
@@ -124,7 +127,7 @@ def test_w3_difference_report_uses_only_frozen_classes_and_has_no_blockers() -> 
 
 
 def test_w3_routing_mismatch_is_a_blocking_migration_gap() -> None:
-    source_commit, sources, model, inventory, artifacts = build_shadow_candidates(
+    source_commit, source_boundary, sources, model, inventory, artifacts = build_shadow_candidates(
         _snapshot()
     )
     altered = []
