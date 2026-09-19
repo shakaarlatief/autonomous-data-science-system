@@ -1,0 +1,11 @@
+{
+  "active_development_branch": "v1-source-vault-bootstrap-resume",
+  "active_pr": null,
+  "current_boundary": "project-knowledge-wave-two-accepted-compatibility-shadow-next",
+  "current_checkpoint": 552,
+  "latest_experiment_outcome": "INCOMPLETE",
+  "latest_specification": "028",
+  "promoted_integration_branch": "v1-frontend-spike",
+  "promoted_integration_sha": "2480109fadeee1e480ef03b82e335aacdf9adf91",
+  "schema_version": 1
+}

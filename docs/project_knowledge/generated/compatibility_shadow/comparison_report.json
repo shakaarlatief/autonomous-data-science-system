@@ -1,0 +1,80 @@
+{
+  "authority_class": "derived",
+  "blocking": false,
+  "candidates": [
+    {
+      "byte_length": 436,
+      "path": "docs/project_knowledge/generated/compatibility_shadow/current_routing.json",
+      "role": "routing",
+      "sha256": "f475b07b33f6720a4ee638f465b365ead6eb9267ffe326c47e94552254ae7301"
+    },
+    {
+      "byte_length": 2671,
+      "path": "docs/project_knowledge/generated/compatibility_shadow/CURRENT_STATE.md",
+      "role": "current_state",
+      "sha256": "3b640fe8d1c1291899ea32ea4cde7b26e78e125962bd309b2c45d14a1bb2adbc"
+    },
+    {
+      "byte_length": 5331,
+      "path": "docs/project_knowledge/generated/compatibility_shadow/KNOWLEDGE_MAP.md",
+      "role": "knowledge_map",
+      "sha256": "944f88ad9e483614b6e57fa4a620d9ee3a1c66ed7038ca7cfd2856780d19e84d"
+    },
+    {
+      "byte_length": 223802,
+      "path": "docs/project_knowledge/generated/compatibility_shadow/artifact_inventory.json",
+      "role": "artifact_inventory",
+      "sha256": "b7c437ef6cb84641ecf67e28319abd10f77676d17fe4beb1a574181b974a9959"
+    }
+  ],
+  "differences": [
+    {
+      "blocking": false,
+      "classification": "EQUIVALENT_REPRESENTATION",
+      "difference_id": "current-state.control-parity",
+      "rationale": "Successor orientation preserves the live high-consequence current controls.",
+      "role": "current_state"
+    },
+    {
+      "blocking": false,
+      "classification": "EXPECTED_SEMANTIC_IMPROVEMENT",
+      "difference_id": "current-state.history-compaction",
+      "rationale": "Successor current state points to canonical owners instead of replaying accumulated checkpoint and research history.",
+      "role": "current_state"
+    },
+    {
+      "blocking": false,
+      "classification": "LEGACY_DRIFT",
+      "difference_id": "current-state.legacy-source-vault-route",
+      "rationale": "The live surface retains an older Research 124 Source Vault route sentence; successor continuation uses durable return semantics.",
+      "role": "current_state"
+    },
+    {
+      "blocking": false,
+      "classification": "EQUIVALENT_REPRESENTATION",
+      "difference_id": "knowledge-map.artifact-reachability",
+      "rationale": "All 652 unique legacy path/directory references remain reachable.",
+      "role": "knowledge_map"
+    },
+    {
+      "blocking": false,
+      "classification": "EXPECTED_SEMANTIC_IMPROVEMENT",
+      "difference_id": "knowledge-map.organization",
+      "rationale": "Successor navigation separates multi-axis semantic membership from complete artifact inventory instead of indefinite manual path enumeration.",
+      "role": "knowledge_map"
+    },
+    {
+      "blocking": false,
+      "classification": "EQUIVALENT_REPRESENTATION",
+      "difference_id": "routing.semantic-parity",
+      "rationale": "Successor routing reproduces the exact live routing schema and values.",
+      "role": "routing"
+    }
+  ],
+  "generator": {
+    "generator_id": "compatibility_shadow.w3",
+    "generator_version": "1"
+  },
+  "schema_version": "1",
+  "source_boundary": "sha256:e10d564f726cfd2a17c4054b83406a7236fb2ee8a1c9698dc982fa19136b518f"
+}
