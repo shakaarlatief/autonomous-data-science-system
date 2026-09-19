@@ -1,7 +1,7 @@
 # Research 204: W3 Compatibility Shadow Acceptance Result
 
 **Date:** 2026-09-19
-**Status:** W3 ACCEPTED / POST-BOUNDARY FINALIZATION PENDING
+**Status:** W3 ACCEPTED / POST-BOUNDARY FINALIZATION QUALIFIED / W4 NEXT
 **Selected architecture:** `PKA-CANDIDATE-01`
 **Governing contract:** Specification 028
 **Prior accepted boundary:** Checkpoint 552 / Research 203 / W2 ACCEPTED
@@ -169,13 +169,36 @@ stage            SPECIFICATION:028 / W3_ACCEPTED
 boundary         project-knowledge-wave-three-accepted-capture-promotion-next
 ```
 
-Because that changes a canonical generated-view input and adds the W3 acceptance artifacts to the committed documentation tree, the structural views and compatibility-shadow artifacts must be rematerialized from the exact Checkpoint 553 state before final publication.
-
-Post-boundary finalization is therefore still required after the Checkpoint 553 boundary commit. No later checkpoint is required merely for that generated-output refresh if the semantic anchor itself does not change.
+That post-boundary finalization is now complete without advancing the semantic anchor again.
 
 ```text
-W3=ACCEPTED
-POST_BOUNDARY_FINALIZATION=PENDING
+acceptance-boundary commit                  c70af2aa0296d6b674c06d4ddee9f96103887c73
+post-boundary structural refresh            b1a3742db6890e2a005f35eff993fb1a394c6051
+post-boundary compatibility refresh         1aab8f44f4dd4a5b26d776ea21c1100c2fca4679
+acceptance regression repair                6d44e17a01b013f6a01ad3ed301a288d614c8ee5
+final compatibility source boundary         sha256:40e6c66ed1effaa2c247e3398884bea4c2145a97c723126fba30da4b52d1454a
+final compatibility artifacts               5 / 5 exact generated-byte match
+final difference classifications            6 / 6 non-blocking
+final legacy Knowledge Map references       654 / 654 reachable
+post-boundary focused regression            46 / 46 PASS
+persistent structural-view freshness        8 / 8 FRESH
+COMMIT project-knowledge validation         PASS
+candidate count                             1,480
+governed declarations                       10
+diagnostics                                 0
+PUBLIC_REPOSITORY_INTEGRITY                 PASS
+git show --check                            PASS
+```
+
+The first post-boundary regression run exposed four stale test expectations that still encoded the prior W2/current-documentation wording, plus the repository-integrity validator correctly rejected Checkpoint 553 until its semantic checkpoint range was added to the live Knowledge Map. Those were compatibility-regression maintenance defects, not successor semantic blockers. After repair, the exact focused set passes 46/46 and the aggregate integrity gate returns PASS.
+
+The final compatibility rebuild preserves the same six semantic classifications, with zero `MIGRATION_GAP` and zero `UNRESOLVED`. All five persisted compatibility-shadow artifacts are byte-identical to a fresh build from the final accepted semantic boundary. No live compatibility path was successor-overwritten.
+
+No new checkpoint is created for this finalization because Checkpoint 553 is the stable W3 semantic anchor that the refreshed outputs describe.
+
+```text
+W3=ACCEPTED_AND_FINALIZED
+POST_BOUNDARY_FINALIZATION=PASS
 W4=NOT_STARTED
 NEXT=W4_PRODUCTION_CAPTURE_PROMOTION
 CURRENT_OPERATIONAL_AUTHORITY=CURRENT_CONTINUITY_ARCHITECTURE
