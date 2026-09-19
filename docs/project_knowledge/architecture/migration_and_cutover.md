@@ -87,6 +87,6 @@ Rollback must preserve the ability to return to the last qualified authority sta
 
 ## Physical implementation status
 
-W0 and W1 are accepted. The successor has qualified live canonical semantic owners and deterministic derived views for the bounded W1 slice. W2 shadow derived views are next, but no successor-generated compatibility path has overwritten the live continuity surfaces.
+W0, W1 and W2 are accepted. The successor has qualified live canonical semantic owners and a persistent, deterministic eight-view structural shadow set. W3 compatibility shadow is next, but no successor-generated compatibility path has overwritten the live continuity surfaces.
 
 Current continuity remains operational authority, successor outputs remain non-authoritative, and no authority switch may occur before the later qualified W8 decision.

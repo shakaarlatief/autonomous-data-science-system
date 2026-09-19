@@ -1,13 +1,13 @@
 # Research 203: W2 Shadow Derived Views Acceptance Result
 
 **Date:** 2026-09-19
-**Status:** W2 ACCEPTANCE RECORDED / POST-BOUNDARY MATERIALIZATION AND FINAL QUALIFICATION PENDING
+**Status:** W2 ACCEPTED / POST-BOUNDARY MATERIALIZATION QUALIFIED / W3 NEXT
 **Selected architecture:** `PKA-CANDIDATE-01`
 **Governing contract:** Specification 028
 **Prior accepted boundary:** Checkpoint 551 / Research 202 / W1 ACCEPTED
 **Qualified pre-acceptance materialization:** `1e615aec0e67b782ec7e599704e7c18a84ec932c`
 **Scope:** Accept W2 after all eight V1 structural views are generated from the real successor semantic owners, persistently materialized with manifests, and compared with qualified shadow expectations plus current compatibility state.
-**Authority:** This record does not start W3, overwrite a live compatibility path, resume Source Vault/Cockpit execution, or switch operational authority. Final publication remains blocked until the Checkpoint 552 semantic anchor is rematerialized and requalified.
+**Authority:** This record accepts W2 only. It does not start W3, overwrite a live compatibility path, resume Source Vault/Cockpit execution, or switch operational authority. Checkpoint 552 is the final W2 semantic anchor.
 
 ## 1. W2 requirement
 
@@ -190,11 +190,42 @@ stage            SPECIFICATION:028 / W2_ACCEPTED
 boundary         project-knowledge-wave-two-accepted-compatibility-shadow-next
 ```
 
-Because this changes a canonical generated-view input, the eight persistent views must be rematerialized from the exact post-boundary commit before this result is finalized and published.
+Because this changes a canonical generated-view input, the eight persistent views were rematerialized from the exact Checkpoint 552 state before final publication.
 
-Until that post-boundary rematerialization and qualification pass:
+The final post-boundary repair and materialization commit is:
 
 ```text
-W2_PUBLICATION=BLOCKED
+6ec2a155db8024bdf66c5c0c71adc0a03647c3b7
+Finalize W2 generated view repair path
+```
+
+This finalization also closes a second W2 lifecycle defect: once generated manifests are persistent, a stale derived manifest must remain visible to freshness checking but must not block `rebuild` from repairing itself. Canonical/source semantic validation used by rebuild/refresh now excludes generated entries while ordinary validation and freshness checking continue to report stale generated state.
+
+Final post-boundary qualification:
+
+```text
+persistent structural views                 8
+persistent manifests                        8
+view freshness                            8 / 8 FRESH
+CLI + snapshot + W2 regression           83 / 83 PASS
+exact final focused qualification          7 / 7 PASS
+COMMIT validation                         PASS
+candidate count                           1,473
+governed declarations                    10
+generated noncanonical manifests           8
+diagnostics                                0
+PUBLIC_REPOSITORY_INTEGRITY               PASS
+git show --check                          PASS
+git diff --check                          PASS
+```
+
+No new checkpoint is created by this publication-finalization step because Checkpoint 552 is itself part of the canonical execution anchor that the final generated views describe.
+
+```text
+W2_PUBLICATION=FINALIZED
+W2=ACCEPTED
 W3=NOT_STARTED
+NEXT=W3_COMPATIBILITY_SHADOW
+CURRENT_OPERATIONAL_AUTHORITY=CURRENT_CONTINUITY_ARCHITECTURE
+AUTHORITY_SWITCH_ALLOWED=false
 ```

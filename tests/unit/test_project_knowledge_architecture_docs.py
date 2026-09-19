@@ -94,7 +94,8 @@ def test_migration_diagram_makes_shadow_cutover_and_rollback_explicit():
     ):
         assert marker in value
     assert "AUTHORITY_SWITCH_ALLOWED=false" in value
-    assert "W1 has not started" in value
+    assert "W0, W1 and W2 are accepted." in value
+    assert "W3 compatibility shadow is next" in value
 
 
 def test_no_rendered_visual_is_committed_as_independent_truth_at_g015():
