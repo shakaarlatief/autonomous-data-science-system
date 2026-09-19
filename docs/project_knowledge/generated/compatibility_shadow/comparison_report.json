@@ -3,28 +3,28 @@
   "blocking": false,
   "candidates": [
     {
-      "byte_length": 436,
+      "byte_length": 435,
       "path": "docs/project_knowledge/generated/compatibility_shadow/current_routing.json",
       "role": "routing",
-      "sha256": "f475b07b33f6720a4ee638f465b365ead6eb9267ffe326c47e94552254ae7301"
+      "sha256": "bba672bc3bcef7da16ea6dd1054cf9d30c0fc800c4dcc2a1be120dc1d60f130e"
     },
     {
-      "byte_length": 2671,
+      "byte_length": 2670,
       "path": "docs/project_knowledge/generated/compatibility_shadow/CURRENT_STATE.md",
       "role": "current_state",
-      "sha256": "3b640fe8d1c1291899ea32ea4cde7b26e78e125962bd309b2c45d14a1bb2adbc"
+      "sha256": "aee4d4312d6025a7205edce9857b98131cf18cb0a2aafaf5019fc340e91326e1"
     },
     {
       "byte_length": 5331,
       "path": "docs/project_knowledge/generated/compatibility_shadow/KNOWLEDGE_MAP.md",
       "role": "knowledge_map",
-      "sha256": "944f88ad9e483614b6e57fa4a620d9ee3a1c66ed7038ca7cfd2856780d19e84d"
+      "sha256": "ae859d60931dc7df6c5cdca215ae02197ea1f94e1ae789473f471a10a13feb37"
     },
     {
-      "byte_length": 223802,
+      "byte_length": 224110,
       "path": "docs/project_knowledge/generated/compatibility_shadow/artifact_inventory.json",
       "role": "artifact_inventory",
-      "sha256": "b7c437ef6cb84641ecf67e28319abd10f77676d17fe4beb1a574181b974a9959"
+      "sha256": "d436d6a2ecb83d088f07fbe0154b71a7696bba2733df71af1a810589749729bf"
     }
   ],
   "differences": [
@@ -53,7 +53,7 @@
       "blocking": false,
       "classification": "EQUIVALENT_REPRESENTATION",
       "difference_id": "knowledge-map.artifact-reachability",
-      "rationale": "All 652 unique legacy path/directory references remain reachable.",
+      "rationale": "All 654 unique legacy path/directory references remain reachable.",
       "role": "knowledge_map"
     },
     {
@@ -76,5 +76,5 @@
     "generator_version": "1"
   },
   "schema_version": "1",
-  "source_boundary": "sha256:e10d564f726cfd2a17c4054b83406a7236fb2ee8a1c9698dc982fa19136b518f"
+  "source_boundary": "sha256:40e6c66ed1effaa2c247e3398884bea4c2145a97c723126fba30da4b52d1454a"
 }
