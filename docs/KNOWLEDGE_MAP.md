@@ -394,6 +394,8 @@ docs/research/193_w0_complete_unit_suite_g017_and_w0_acceptance_result.md
 docs/checkpoints/542_pka_w0_accepted_w1_live_control_semantics_next.md
 docs/research/194_w1_selected_architecture_workstream_g101_result.md
 docs/checkpoints/543_pka_g101_workstream_owner_accepted_project_boundary_next.md
+docs/research/195_w1_project_integration_boundary_g102_result.md
+docs/checkpoints/544_pka_g102_project_boundary_accepted_source_vault_next.md
 docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md
 docs/checkpoints/449_scalable_knowledge_architecture_redesign_opened.md
 docs/checkpoints/450_knowledge_architecture_baseline_inventory_complete_requirements_next.md
@@ -1013,7 +1015,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-543 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-544 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 
