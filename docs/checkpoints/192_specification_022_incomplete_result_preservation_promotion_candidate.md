@@ -13,6 +13,27 @@
 **PR:** #72  
 **Starting promoted integration head:** `0b8ad9cdc3fbd4dab7fcc53dec596ba78946831e`
 
+<!-- PKA-STRUCTURED-DECLARATION-BEGIN -->
+{
+  "schema_version": "1",
+  "profile": "semantic_source.v1",
+  "kind": "EXPERIMENT_RESULT",
+  "authority_class": "canonical",
+  "semantic_id": "EXPERIMENT:192",
+  "outcome": "INCOMPLETE",
+  "scope": {
+    "specification": "SPECIFICATION:022"
+  },
+  "provenance": [
+    "checkpoint:191",
+    "checkpoint:192"
+  ],
+  "references": [
+    "path:docs/specifications/022_v1_methodological_navigation_coverage_live_experiment.md"
+  ]
+}
+<!-- PKA-STRUCTURED-DECLARATION-END -->
+
 ## 1. Recovery boundary
 
 The previous design session reached the platform conversation-length limit immediately after Checkpoint 191 and the stable Specification 022 result had been preserved, but before the preservation-only integration tree was actually committed.

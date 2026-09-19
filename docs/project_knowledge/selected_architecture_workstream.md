@@ -5,9 +5,9 @@
 **Governing decision:** D-035 in `docs/DECISIONS.md`
 **Governing implementation contract:** Specification 028
 
-This source owns the durable identity, active state, scope, objective and provenance of the selected project-knowledge architecture implementation/migration workstream.
+This source owns the durable identity, active state, scope, objective, execution anchor, current stage and provenance of the selected project-knowledge architecture implementation/migration workstream.
 
-It does **not** own the substantive rationale selecting Candidate 01. D-035 remains the natural owner of that decision. It also does not yet own the Project Integration Boundary, Source Vault continuation, Cockpit continuation, current compatibility surfaces, or an operational-authority switch.
+It does **not** own the substantive rationale selecting Candidate 01. D-035 remains the natural owner of that decision. The Project Integration Boundary, Source Vault continuation and Cockpit continuation remain in their own natural canonical owners. Current compatibility surfaces remain separate, and this workstream does not own an operational-authority switch.
 
 W1 begins by introducing this bounded live semantic owner while preserving:
 
@@ -29,6 +29,16 @@ AUTHORITY_SWITCH_ALLOWED=false
     "program": "project-knowledge-architecture"
   },
   "objective": "Implement and migrate the selected Candidate 01 project-development knowledge architecture under Specification 028 while current continuity remains operational authority until an explicit qualified switch.",
+  "execution_anchor": {
+    "checkpoint": 547,
+    "development_branch": "v1-source-vault-bootstrap-resume",
+    "pull_request": null,
+    "current_boundary": "project-knowledge-decision-accepted-views-next"
+  },
+  "stage": {
+    "stage_id": "SPECIFICATION:028",
+    "stage_state": "W1_IN_PROGRESS"
+  },
   "provenance": [
     "path:docs/DECISIONS.md#D-035",
     "research:176",

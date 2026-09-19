@@ -6,6 +6,28 @@
 **Authority:** Frozen implementation contract subordinate to D-035 and Requirements V0.2. It does not switch operational authority. Existing continuity remains authoritative until a later explicit qualified authority-switch decision.
 **Declared references:** `path:docs/DECISIONS.md`, `research:144`, `research:145`, `research:175`, `research:176`, `research:177`, `checkpoint:522`, `path:docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md`, `path:docs/research/project_knowledge_candidate_01/QUALIFICATION_MATRIX_V01.json`, `path:pyproject.toml`
 
+<!-- PKA-STRUCTURED-DECLARATION-BEGIN -->
+{
+  "schema_version": "1",
+  "profile": "semantic_source.v1",
+  "kind": "SPECIFICATION",
+  "authority_class": "canonical",
+  "semantic_id": "SPECIFICATION:028",
+  "scope": {
+    "program": "project-knowledge-architecture"
+  },
+  "provenance": [
+    "D-035",
+    "checkpoint:522"
+  ],
+  "references": [
+    "research:176",
+    "research:177",
+    "research:179"
+  ]
+}
+<!-- PKA-STRUCTURED-DECLARATION-END -->
+
 ## 1. Purpose and frozen boundary
 
 D-035 selects Candidate 01 as the successor project-development knowledge architecture. Research 175 qualifies the logical architecture 67/67. Research 177 proposes its physical realization.
