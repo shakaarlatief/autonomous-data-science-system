@@ -444,7 +444,8 @@ def workstream_node(workstreams, contexts, identity):
         "pause_reason": declaration["pause_reason"] if "pause_reason" in declaration else None,
         "return_condition": declaration["return_condition"] if "return_condition" in declaration else None,
         "resume_target": declaration["resume_target"] if "resume_target" in declaration else None,
-        "current_anchor": declaration["current_anchor"] if "current_anchor" in declaration else None,
+        "current_anchor": declaration["current_anchor"] if "current_anchor" in declaration else (
+            declaration["execution_anchor"]["current_boundary"] if "execution_anchor" in declaration else None),
         "risk_or_reopen_triggers": unique(declaration["risk_or_reopen_triggers"])
             if "risk_or_reopen_triggers" in declaration else [],
         "temporal": temporal(declaration),

@@ -457,3 +457,4 @@ def test_workstream_projection_matches_g008_non_temporal_readiness_and_route(cor
         domain_node = domain_nodes[node["semantic_id"]]
         assert node["readiness"] == domain_node["readiness"]
         assert node["dependency_closure"] == domain_node["dependency_closure"]
+        assert node["current_anchor"] == domain_node["workstream"]["current_anchor"]

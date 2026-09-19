@@ -122,6 +122,7 @@ def test_g106_workstream_graph_and_markdown_project_same_live_w1_state() -> None
     nodes = {item["semantic_id"]: item for item in graph["nodes"]}
     assert set(nodes) == {"WS-COCKPIT-DESIGN", "WS-PKA-CURRENT", "WS-SOURCE-VAULT-BOOTSTRAP"}
     assert nodes["WS-PKA-CURRENT"]["readiness"] == "RUNNABLE"
+    assert nodes["WS-PKA-CURRENT"]["current_anchor"] == routing["current_boundary"]
     assert nodes["WS-COCKPIT-DESIGN"]["readiness"] == "PAUSED"
     assert nodes["WS-SOURCE-VAULT-BOOTSTRAP"]["readiness"] == "PAUSED"
 
