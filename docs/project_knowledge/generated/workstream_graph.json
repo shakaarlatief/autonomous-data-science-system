@@ -51,7 +51,7 @@
       "objective": "Complete the first permanent user-controlled Source Vault bootstrap and unblock Course 2 only after accepted recovery proof.",
       "parent": null,
       "parent_chain": [],
-      "pause_reason": "The active project route is Candidate 01 W1 project-knowledge migration; Source Vault bootstrap remains preserved and paused.",
+      "pause_reason": "The active project route remains the Candidate 01 project-knowledge migration program; Source Vault bootstrap remains preserved and paused.",
       "readiness": "PAUSED",
       "resume_target": "SOURCE-VAULT:REVIEWED-INGESTION",
       "return_condition": "Resume only when project routing explicitly returns to the Source Vault bootstrap workstream.",

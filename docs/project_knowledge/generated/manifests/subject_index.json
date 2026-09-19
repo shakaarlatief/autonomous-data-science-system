@@ -1,6 +1,6 @@
 {
   "authority_class": "derived",
-  "created_or_refreshed_boundary": "sha256:7a27805cfe16d03cdc2f5432c4e014dfb6c8e37a605c7e3f09b9aadb250fc19f",
+  "created_or_refreshed_boundary": "sha256:998da32183febef34e8b3a48944ea9e560b64d794f80be985aa05956cdc25e57",
   "freshness_basis": "G009_EXACT_INPUTS_AND_GENERATOR_V1",
   "generator": {
     "generator_id": "project_knowledge_subject_index",
@@ -72,7 +72,7 @@
       "source_path": "docs/project_knowledge/project_integration_boundary.md"
     },
     {
-      "content_digest": "c5ccfdec97a1f63ed7574646c5197b12aa0b764213e1526a9a6b9858153e7af0",
+      "content_digest": "fb5898f172a68ae1c4838745499d86bc54b94eeb5640fec5377d3bbd835c097d",
       "hash_algorithm": "sha256",
       "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
       "semantic_id": "WS-PKA-CURRENT",
@@ -86,7 +86,7 @@
       "source_path": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
     },
     {
-      "content_digest": "ce21e6f1727d7b40f8d2611fdf266716de4b3757bda21e16956f3caa3d5bb108",
+      "content_digest": "8af6602abbc25ff7eac8d8021239841231b32d28fe0880c859b3be2a7c30ea2a",
       "hash_algorithm": "sha256",
       "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
       "semantic_id": "WS-SOURCE-VAULT-BOOTSTRAP",
