@@ -29,6 +29,6 @@ The canonical diagram source is Mermaid embedded directly in these Markdown file
 
 ## Current implementation status
 
-W0, W1 and W2 are accepted. The successor now has a qualified bounded live-control semantic slice plus the complete persistent eight-view structural shadow set derived from those owners. W3 compatibility shadow is the next migration wave and has not yet started.
+W0 through W3 are accepted. The successor now has a qualified bounded live-control semantic slice, the complete persistent eight-view structural shadow set, and a five-artifact compatibility shadow for routing, current-state and Knowledge Map roles with zero blocking differences. W4 production capture/promotion is the next migration wave.
 
 The broader migration program remains staged. Current continuity remains operational authority; live compatibility paths are still maintained by that architecture, successor outputs remain non-authoritative, and `AUTHORITY_SWITCH_ALLOWED=false` until a later explicit qualified W8 authority-switch decision.
