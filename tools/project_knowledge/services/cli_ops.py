@@ -5,6 +5,7 @@ snapshot selection, generated-artifact staging/diffing, explicit materialization
 and freshness aggregation. They never mutate canonical semantic sources.
 """
 
+from dataclasses import replace
 import hashlib
 from pathlib import Path
 import tempfile
@@ -16,7 +17,7 @@ from ..model import (
     AuthorityClass, Diagnostic, DiagnosticSeverity, SnapshotMode, SubstrateError, ViewFreshnessStatus,
 )
 from ..views import ViewValidationError, production_view_specifications
-from .discovery import open_snapshot
+from .discovery import DiscoveryPolicy, PathRole, open_snapshot
 from .generation import check_view_freshness, generate_views
 from .refresh import refresh_views
 from .semantic_validation import validate_project_knowledge
@@ -26,6 +27,26 @@ from .validation import validate_repository
 def qualified_cli_view_specifications():
     """Return the complete eight-artifact W0 persistent-view contract."""
     return production_view_specifications()
+
+
+def _without_generated_entries(snapshot):
+    """Validate canonical/source semantics without treating stale derived state as an input.
+
+    Persistent generated manifests are freshness evidence, not canonical source
+    authority. Once those manifests are version-controlled, a canonical source
+    change can legitimately make them stale. Rebuild/refresh must therefore be
+    able to validate and regenerate from the changed canonical snapshot rather
+    than letting the stale derived manifests block their own repair.
+    """
+    policy = DiscoveryPolicy()
+    return replace(
+        snapshot,
+        entries=tuple(
+            entry
+            for entry in snapshot.entries
+            if policy.classify(entry.path) != PathRole.GENERATED_AREA
+        ),
+    )
 
 
 def _diagnostic_data(diagnostic):
@@ -81,10 +102,13 @@ def _artifact_state(root: Path, path: str, expected: bytes):
 def _ensure_materialization_alignment(root: Path, snapshot):
     """Never materialize commit-bound outputs over different local canonical inputs."""
     local = open_snapshot(root, SnapshotMode.WORKTREE_SNAPSHOT)
-    local_validation = validate_repository(local)
+    local_validation = validate_repository(_without_generated_entries(local))
     if not local_validation.ok:
         raise ViewValidationError(local_validation.diagnostics)
-    committed_validation = validate_repository(snapshot, durable_evidence=True)
+    committed_validation = validate_repository(
+        _without_generated_entries(snapshot),
+        durable_evidence=True,
+    )
     if not committed_validation.ok:
         raise ViewValidationError(committed_validation.diagnostics)
 
@@ -169,7 +193,10 @@ def _stage_and_compare(root: Path, builds, *, materialize: bool, materialization
 
 
 def _require_semantic_validity(snapshot):
-    validation = validate_project_knowledge(snapshot, durable_evidence=True)
+    validation = validate_project_knowledge(
+        _without_generated_entries(snapshot),
+        durable_evidence=True,
+    )
     if not validation.ok:
         raise ViewValidationError(validation.diagnostics)
 

@@ -123,6 +123,52 @@ def test_explicit_write_materializes_only_generated_outputs_and_freshness_passes
     assert {view["manifest_status_before"] for view in payload(diff)["views"]} == {"MATCH"}
 
 
+def test_persistent_stale_manifests_are_visible_but_do_not_block_rebuild_repair(cli_repo):
+    initial = run_cli(cli_repo, "rebuild", "--ref", "HEAD", "--write")
+    assert initial.returncode == 0, initial.stderr + initial.stdout
+    commit(cli_repo)
+
+    active = json.loads((cli_repo / ACTIVE).read_bytes())
+    active["objective"] = "Updated canonical objective after persistent view publication"
+    write(cli_repo, ACTIVE, deterministic_json(active))
+    commit(cli_repo)
+
+    full_validation = run_cli(
+        cli_repo,
+        "validate",
+        "--snapshot-mode",
+        "COMMIT_SNAPSHOT",
+        "--ref",
+        "HEAD",
+        "--durable-evidence",
+    )
+    assert full_validation.returncode == 1
+    assert "SOURCE_DIGEST_MISMATCH" in {
+        item["code"] for item in payload(full_validation)["diagnostics"]
+    }
+
+    stale = run_cli(cli_repo, "check-freshness", "--ref", "HEAD")
+    assert stale.returncode == 1
+    stale_payload = payload(stale)
+    assert not stale_payload["ok"]
+    assert {view["status"] for view in stale_payload["views"]} == {"STALE"}
+
+    staged = run_cli(cli_repo, "rebuild", "--ref", "HEAD")
+    assert staged.returncode == 0, staged.stderr + staged.stdout
+    staged_payload = payload(staged)
+    assert staged_payload["ok"] and staged_payload["materialized"] is False
+    assert "DIFF" in {view["manifest_status_before"] for view in staged_payload["views"]}
+
+    repaired = run_cli(cli_repo, "rebuild", "--ref", "HEAD", "--write")
+    assert repaired.returncode == 0, repaired.stderr + repaired.stdout
+    repaired_payload = payload(repaired)
+    assert repaired_payload["ok"] and repaired_payload["materialized"] is True
+
+    fresh = run_cli(cli_repo, "check-freshness", "--ref", "HEAD")
+    assert fresh.returncode == 0, fresh.stderr + fresh.stdout
+    assert {view["status"] for view in payload(fresh)["views"]} == {"FRESH"}
+
+
 def test_explicit_write_accepts_git_clean_line_ending_materialization(cli_repo):
     git(cli_repo, "config", "core.autocrlf", "true")
 
