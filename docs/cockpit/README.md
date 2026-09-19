@@ -4,8 +4,44 @@
 **Authority:** Specialized integration contract beneath accepted specifications, canonical decisions and foundations. It does not replace their semantic authority.  
 **Frozen design branch:** `v1-cockpit-design-exploration`  
 **Frozen frontend head:** `04f2a907094b8023ac7377c399a6eef1a6e1da99`  
-**Current routing checkpoint:** 267  
+**Pause-origin checkpoint:** 267
 **Last reconciled:** 2026-08-29
+
+## Successor workstream control semantics
+
+The structured declaration below makes the existing paused/resumable Cockpit continuity explicit for Candidate 01. It does not promote the design-lab candidate, replace the richer implementation-provenance contract in this file, or change current operational authority.
+
+<!-- PKA-STRUCTURED-DECLARATION-BEGIN -->
+{
+  "schema_version": "1",
+  "profile": "workstream.v1",
+  "kind": "COCKPIT_DESIGN_WORKSTREAM",
+  "authority_class": "canonical",
+  "semantic_id": "WS-COCKPIT-DESIGN",
+  "state": "PAUSED",
+  "scope": {
+    "domain": "cockpit",
+    "program": "next-generation-cockpit-design"
+  },
+  "objective": "Resume next-generation Cockpit design and fidelity work from the exact preserved frontend candidate when the project owner explicitly returns to frontend work.",
+  "expected_to_resume": true,
+  "pause_reason": "The project owner explicitly paused Cockpit frontend work and routed the project back to Source Vault and subsequent project work; the preserved candidate remains unpromoted.",
+  "return_condition": "Resume only when the project owner explicitly returns to Cockpit frontend work.",
+  "resume_target": "COCKPIT:DESIGN-EXPLORATION-RESUME",
+  "current_anchor": "v1-cockpit-design-exploration@04f2a907094b8023ac7377c399a6eef1a6e1da99",
+  "provenance": [
+    "checkpoint:267",
+    "research:169",
+    "research:170"
+  ],
+  "references": [
+    "path:docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md",
+    "path:docs/cockpit/accepted_implementation_manifest.json",
+    "path:docs/cockpit/PHASE_C_DECISION_LEDGER.md",
+    "research:097"
+  ]
+}
+<!-- PKA-STRUCTURED-DECLARATION-END -->
 
 ## Current pause boundary
 

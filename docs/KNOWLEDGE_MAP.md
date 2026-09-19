@@ -930,6 +930,7 @@ docs/checkpoints/251_cockpit_implementation_provenance_recovered_and_reintegrati
 docs/checkpoints/intermediate_2026-08-28_source_faithful_reintegration_interaction_integrity_gate.md
 docs/checkpoints/267_cockpit_frontend_paused_source_vault_bootstrap_resumed.md
 docs/cockpit/README.md
+docs/cockpit/COCKPIT_DESIGN_RESUME_TARGET.md
 docs/cockpit/PHASE_C_DECISION_LEDGER.md
 docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md
 docs/cockpit/accepted_implementation_manifest.json

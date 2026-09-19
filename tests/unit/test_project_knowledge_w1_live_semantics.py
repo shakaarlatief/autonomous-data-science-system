@@ -14,6 +14,8 @@ BOUNDARY_SOURCE = ROOT / "docs/project_knowledge/project_integration_boundary.md
 SOURCE_VAULT_WORKSTREAM = ROOT / "docs/source_universe/SOURCE_VAULT_BOOTSTRAP_WORKSTREAM.md"
 SOURCE_VAULT_RESUME_TARGET = ROOT / "docs/source_universe/SOURCE_VAULT_REVIEWED_INGESTION.md"
 SOURCE_VAULT_RUNBOOK = ROOT / "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+COCKPIT_SOURCE = ROOT / "docs/cockpit/README.md"
+COCKPIT_RESUME_TARGET = ROOT / "docs/cockpit/COCKPIT_DESIGN_RESUME_TARGET.md"
 
 
 def test_w1_selected_architecture_workstream_is_one_live_canonical_owner() -> None:
@@ -186,3 +188,69 @@ def test_g103_course2_action_contract_is_bounded_to_existing_runbook_gate() -> N
     assert "does not replace the richer operational procedure" in text
     assert "## 13. Course 2 admission gate" in text
     assert "No additional educational course batch should be admitted until" in text
+
+
+def test_g104_cockpit_paused_resume_semantics_reproduce_qualified_state() -> None:
+    result = validate_project_knowledge(worktree_snapshot(ROOT))
+
+    assert result.ok
+    owners = tuple(
+        source
+        for source in result.repository.sources
+        if source.semantic_id == SemanticId("WS-COCKPIT-DESIGN")
+    )
+    assert len(owners) == 1
+
+    owner = owners[0]
+    assert owner.carrier_path == "docs/cockpit/README.md"
+    assert owner.profile == Profile.WORKSTREAM
+    assert owner.authority_class == AuthorityClass.CANONICAL
+    assert owner.state == LifecycleState.PAUSED
+    assert owner.kind == "COCKPIT_DESIGN_WORKSTREAM"
+
+    fields = owner.declaration.fields
+    assert fields["expected_to_resume"] is True
+    assert fields["return_condition"] == (
+        "Resume only when the project owner explicitly returns to Cockpit frontend work."
+    )
+    assert fields["resume_target"] == "COCKPIT:DESIGN-EXPLORATION-RESUME"
+    assert fields["current_anchor"] == (
+        "v1-cockpit-design-exploration@04f2a907094b8023ac7377c399a6eef1a6e1da99"
+    )
+
+
+def test_g104_cockpit_resume_target_preserves_exact_frozen_anchor() -> None:
+    result = validate_project_knowledge(worktree_snapshot(ROOT))
+    by_id = {
+        source.semantic_id.value: source
+        for source in result.repository.sources
+        if source.semantic_id is not None
+    }
+
+    target = by_id["COCKPIT:DESIGN-EXPLORATION-RESUME"]
+    assert target.carrier_path == "docs/cockpit/COCKPIT_DESIGN_RESUME_TARGET.md"
+    assert target.profile == Profile.SEMANTIC_SOURCE
+    assert target.authority_class == AuthorityClass.CANONICAL
+    assert target.state == LifecycleState.ACTIVE
+
+    text = COCKPIT_RESUME_TARGET.read_text(encoding="utf-8")
+    for expected in (
+        "branch   v1-cockpit-design-exploration",
+        "head     04f2a907094b8023ac7377c399a6eef1a6e1da99",
+        "workflow 33268350178",
+        "job      99142293330",
+        "gate     V3 full",
+        "browser  84 / 84 PASS",
+    ):
+        assert expected in text
+
+
+def test_g104_cockpit_owner_preserves_pause_and_nonpromotion_boundary() -> None:
+    text = COCKPIT_SOURCE.read_text(encoding="utf-8")
+
+    assert "**Pause-origin checkpoint:** 267" in text
+    assert "PAUSED" in text
+    assert "not rejected" in text
+    assert "not production-promoted" in text
+    assert "Production `/cockpit` remains untouched." in text
+    assert "When the project owner chooses to return to frontend work:" in text
