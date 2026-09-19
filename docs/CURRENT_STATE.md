@@ -13,8 +13,8 @@
 ```text
 Interaction environment  ChatGPT
 Project / workspace      Autonomous Data Science System
-Interaction session      chatgpt-26
-Conversation title       26 - Full Rebuild and Incremental Refresh Equivalence
+Interaction session      chatgpt-27
+Conversation title       27 - Project Knowledge Migration and Qualification
 Primary collaborator     ChatGPT
 ```
 

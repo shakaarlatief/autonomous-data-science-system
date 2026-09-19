@@ -2,7 +2,7 @@
 
 **Status:** Current canonical continuity procedure  
 **Aligned development-method version:** 0.9  
-**Last reviewed:** 2026-09-17
+**Last reviewed:** 2026-09-19
 
 ## Purpose
 
@@ -149,7 +149,7 @@ Visible conversations use the abstract convention:
 NN - Main Topic / Stage
 ```
 
-The `/` in that notation means **main topic or stage**. It is not required literal punctuation. Use natural human wording for the descriptive title, including a conjunction such as `and` when that is clearer. A literal slash is used only when it is genuinely natural for the actual title. Historical exact titles are not rewritten merely for cosmetic punctuation consistency.
+The `/` in that notation means **main topic or stage**. It is not required literal punctuation. Use natural human wording for the descriptive title, including a conjunction such as `and` when that is clearer. Prefer a title broad enough to remain accurate if the conversation progresses through several adjacent gates or waves; do not overfit the title to only the immediate next step when the wider workstream is the more stable description. A literal slash is used only when it is genuinely natural for the actual title. Historical exact titles are not rewritten merely for cosmetic punctuation consistency.
 
 For example:
 

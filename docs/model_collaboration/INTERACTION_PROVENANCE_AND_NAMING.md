@@ -2,7 +2,7 @@
 
 **Status:** Accepted collaboration/continuity convention  
 **Date promoted:** 2026-08-26  
-**Last reviewed:** 2026-09-01  
+**Last reviewed:** 2026-09-19
 **Authority:** Canonical provider-neutral interaction-provenance convention under Development Method v0.5 and `docs/checkpoints/README.md`  
 **Scope:** Preserve which concrete interaction environment, workspace, session, and conversation produced ADS development artifacts without making chat history authoritative.
 
@@ -50,6 +50,8 @@ NN - Main Topic / Stage
 The slash in that abstract pattern is **not required literal punctuation**. It means "main topic or stage" and indicates that the descriptive portion of the title should naturally communicate the main topic, the current stage, or both.
 
 Use ordinary human wording rather than forcing a slash into every title. When two related concepts are combined, a natural conjunction such as `and` is preferred when that reads better.
+
+Prefer a title broad enough to remain accurate across the likely span of the conversation. When a session may reasonably progress through several adjacent gates, waves, or sub-stages, name it for the stable workstream or broader program rather than overfitting the title to the immediate next step. A title should still be specific enough to distinguish the conversation from unrelated ADS work.
 
 For example:
 
