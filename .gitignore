@@ -44,6 +44,10 @@ frontend/test-results/
 **/generated/
 **/results/
 
+# Candidate 01 persistent deterministic structural views are version-controlled.
+!docs/project_knowledge/generated/
+!docs/project_knowledge/generated/**
+
 # Research 124 blind-baseline receipts are durable empirical evidence, not generated runtime output.
 !docs/research/project_knowledge_baselines/results/
 !docs/research/project_knowledge_baselines/results/*.md

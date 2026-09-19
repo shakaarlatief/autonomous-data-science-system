@@ -1,0 +1,310 @@
+{
+  "authority_class": "derived",
+  "identities": [
+    {
+      "continuity_preserved": false,
+      "disposition": "CURRENT",
+      "history_carriers": [
+        "docs/cockpit/COCKPIT_DESIGN_RESUME_TARGET.md"
+      ],
+      "semantic_id": "COCKPIT:DESIGN-EXPLORATION-RESUME",
+      "static_current_carriers": [
+        "docs/cockpit/COCKPIT_DESIGN_RESUME_TARGET.md"
+      ],
+      "static_retired_ids": [],
+      "static_terminal_ids": [
+        "COCKPIT:DESIGN-EXPLORATION-RESUME"
+      ],
+      "temporal_resolution_required": false,
+      "transition_paths": []
+    },
+    {
+      "continuity_preserved": false,
+      "disposition": "CURRENT",
+      "history_carriers": [
+        "docs/DECISIONS.md"
+      ],
+      "semantic_id": "D-035",
+      "static_current_carriers": [
+        "docs/DECISIONS.md"
+      ],
+      "static_retired_ids": [],
+      "static_terminal_ids": [
+        "D-035"
+      ],
+      "temporal_resolution_required": false,
+      "transition_paths": []
+    },
+    {
+      "continuity_preserved": false,
+      "disposition": "CURRENT",
+      "history_carriers": [
+        "docs/checkpoints/192_specification_022_incomplete_result_preservation_promotion_candidate.md"
+      ],
+      "semantic_id": "EXPERIMENT:192",
+      "static_current_carriers": [
+        "docs/checkpoints/192_specification_022_incomplete_result_preservation_promotion_candidate.md"
+      ],
+      "static_retired_ids": [],
+      "static_terminal_ids": [
+        "EXPERIMENT:192"
+      ],
+      "temporal_resolution_required": false,
+      "transition_paths": []
+    },
+    {
+      "continuity_preserved": false,
+      "disposition": "CURRENT",
+      "history_carriers": [
+        "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+      ],
+      "semantic_id": "PROCEDURE:PERMANENT-SOURCE-VAULT-BOOTSTRAP",
+      "static_current_carriers": [
+        "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+      ],
+      "static_retired_ids": [],
+      "static_terminal_ids": [
+        "PROCEDURE:PERMANENT-SOURCE-VAULT-BOOTSTRAP"
+      ],
+      "temporal_resolution_required": false,
+      "transition_paths": []
+    },
+    {
+      "continuity_preserved": false,
+      "disposition": "CURRENT",
+      "history_carriers": [
+        "docs/project_knowledge/project_integration_boundary.md"
+      ],
+      "semantic_id": "PROJECT-INTEGRATION-BOUNDARY",
+      "static_current_carriers": [
+        "docs/project_knowledge/project_integration_boundary.md"
+      ],
+      "static_retired_ids": [],
+      "static_terminal_ids": [
+        "PROJECT-INTEGRATION-BOUNDARY"
+      ],
+      "temporal_resolution_required": false,
+      "transition_paths": []
+    },
+    {
+      "continuity_preserved": false,
+      "disposition": "CURRENT",
+      "history_carriers": [
+        "docs/source_universe/SOURCE_VAULT_REVIEWED_INGESTION.md"
+      ],
+      "semantic_id": "SOURCE-VAULT:REVIEWED-INGESTION",
+      "static_current_carriers": [
+        "docs/source_universe/SOURCE_VAULT_REVIEWED_INGESTION.md"
+      ],
+      "static_retired_ids": [],
+      "static_terminal_ids": [
+        "SOURCE-VAULT:REVIEWED-INGESTION"
+      ],
+      "temporal_resolution_required": false,
+      "transition_paths": []
+    },
+    {
+      "continuity_preserved": false,
+      "disposition": "CURRENT",
+      "history_carriers": [
+        "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md"
+      ],
+      "semantic_id": "SPECIFICATION:028",
+      "static_current_carriers": [
+        "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md"
+      ],
+      "static_retired_ids": [],
+      "static_terminal_ids": [
+        "SPECIFICATION:028"
+      ],
+      "temporal_resolution_required": false,
+      "transition_paths": []
+    },
+    {
+      "continuity_preserved": false,
+      "disposition": "CURRENT",
+      "history_carriers": [
+        "docs/cockpit/README.md"
+      ],
+      "semantic_id": "WS-COCKPIT-DESIGN",
+      "static_current_carriers": [
+        "docs/cockpit/README.md"
+      ],
+      "static_retired_ids": [],
+      "static_terminal_ids": [
+        "WS-COCKPIT-DESIGN"
+      ],
+      "temporal_resolution_required": false,
+      "transition_paths": []
+    },
+    {
+      "continuity_preserved": false,
+      "disposition": "CURRENT",
+      "history_carriers": [
+        "docs/project_knowledge/selected_architecture_workstream.md"
+      ],
+      "semantic_id": "WS-PKA-CURRENT",
+      "static_current_carriers": [
+        "docs/project_knowledge/selected_architecture_workstream.md"
+      ],
+      "static_retired_ids": [],
+      "static_terminal_ids": [
+        "WS-PKA-CURRENT"
+      ],
+      "temporal_resolution_required": false,
+      "transition_paths": []
+    },
+    {
+      "continuity_preserved": false,
+      "disposition": "CURRENT",
+      "history_carriers": [
+        "docs/source_universe/SOURCE_VAULT_BOOTSTRAP_WORKSTREAM.md"
+      ],
+      "semantic_id": "WS-SOURCE-VAULT-BOOTSTRAP",
+      "static_current_carriers": [
+        "docs/source_universe/SOURCE_VAULT_BOOTSTRAP_WORKSTREAM.md"
+      ],
+      "static_retired_ids": [],
+      "static_terminal_ids": [
+        "WS-SOURCE-VAULT-BOOTSTRAP"
+      ],
+      "temporal_resolution_required": false,
+      "transition_paths": []
+    }
+  ],
+  "resolution_basis": "STATIC_PLUS_EXPLICIT_TEMPORAL_DEFER",
+  "schema_version": "1",
+  "sources": [
+    {
+      "authority_class": "canonical",
+      "authority_from": null,
+      "authority_to": null,
+      "content_digest": "8111fb7631c1e931b223645b8b755c1b97f54cc31434dcf4e14a0fe917edeef7",
+      "effective_from": null,
+      "effective_to": null,
+      "profile": "semantic_source.v1",
+      "semantic_id": "D-035",
+      "source_path": "docs/DECISIONS.md",
+      "state": "ACTIVE",
+      "temporal": false
+    },
+    {
+      "authority_class": "canonical",
+      "authority_from": null,
+      "authority_to": null,
+      "content_digest": "d39bf8ef85d714c12de23ee3ee48f626febc53a214805effca0b5812f6280970",
+      "effective_from": null,
+      "effective_to": null,
+      "profile": "semantic_source.v1",
+      "semantic_id": "EXPERIMENT:192",
+      "source_path": "docs/checkpoints/192_specification_022_incomplete_result_preservation_promotion_candidate.md",
+      "state": null,
+      "temporal": false
+    },
+    {
+      "authority_class": "canonical",
+      "authority_from": null,
+      "authority_to": null,
+      "content_digest": "74e919bc8a3f817d08a82d8d523cb9656d310af9873bd31b39b8b9f1ffb46b69",
+      "effective_from": null,
+      "effective_to": null,
+      "profile": "semantic_source.v1",
+      "semantic_id": "COCKPIT:DESIGN-EXPLORATION-RESUME",
+      "source_path": "docs/cockpit/COCKPIT_DESIGN_RESUME_TARGET.md",
+      "state": "ACTIVE",
+      "temporal": false
+    },
+    {
+      "authority_class": "canonical",
+      "authority_from": null,
+      "authority_to": null,
+      "content_digest": "08726acc6541e23fa568d1b444f98124456ac5863fc263498af5e5115f8a90c3",
+      "effective_from": null,
+      "effective_to": null,
+      "profile": "workstream.v1",
+      "semantic_id": "WS-COCKPIT-DESIGN",
+      "source_path": "docs/cockpit/README.md",
+      "state": "PAUSED",
+      "temporal": false
+    },
+    {
+      "authority_class": "canonical",
+      "authority_from": null,
+      "authority_to": null,
+      "content_digest": "0e05f2294891a4ffb9bca5f281ac6b00850b41de29331d321b0bfe55550627b5",
+      "effective_from": null,
+      "effective_to": null,
+      "profile": "project_boundary.v1",
+      "semantic_id": "PROJECT-INTEGRATION-BOUNDARY",
+      "source_path": "docs/project_knowledge/project_integration_boundary.md",
+      "state": "ACTIVE",
+      "temporal": false
+    },
+    {
+      "authority_class": "canonical",
+      "authority_from": null,
+      "authority_to": null,
+      "content_digest": "80dc48d0eb6625bbd956db362eaf9ce27d7e36b4076d206ec2abb8504f0eae45",
+      "effective_from": null,
+      "effective_to": null,
+      "profile": "workstream.v1",
+      "semantic_id": "WS-PKA-CURRENT",
+      "source_path": "docs/project_knowledge/selected_architecture_workstream.md",
+      "state": "ACTIVE",
+      "temporal": false
+    },
+    {
+      "authority_class": "canonical",
+      "authority_from": null,
+      "authority_to": null,
+      "content_digest": "4cf4205cd5f800a43ab32f74db3b3f4c557f6f9bf65e97c6dbbb98f214f413bf",
+      "effective_from": null,
+      "effective_to": null,
+      "profile": "governing_procedure.v1",
+      "semantic_id": "PROCEDURE:PERMANENT-SOURCE-VAULT-BOOTSTRAP",
+      "source_path": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+      "state": "ACTIVE",
+      "temporal": false
+    },
+    {
+      "authority_class": "canonical",
+      "authority_from": null,
+      "authority_to": null,
+      "content_digest": "ce21e6f1727d7b40f8d2611fdf266716de4b3757bda21e16956f3caa3d5bb108",
+      "effective_from": null,
+      "effective_to": null,
+      "profile": "workstream.v1",
+      "semantic_id": "WS-SOURCE-VAULT-BOOTSTRAP",
+      "source_path": "docs/source_universe/SOURCE_VAULT_BOOTSTRAP_WORKSTREAM.md",
+      "state": "PAUSED",
+      "temporal": false
+    },
+    {
+      "authority_class": "canonical",
+      "authority_from": null,
+      "authority_to": null,
+      "content_digest": "8e5515bbdab42fe1ba9de7bd374207ebadc26e89cddcd8085ad7962495f3eeea",
+      "effective_from": null,
+      "effective_to": null,
+      "profile": "semantic_source.v1",
+      "semantic_id": "SOURCE-VAULT:REVIEWED-INGESTION",
+      "source_path": "docs/source_universe/SOURCE_VAULT_REVIEWED_INGESTION.md",
+      "state": "ACTIVE",
+      "temporal": false
+    },
+    {
+      "authority_class": "canonical",
+      "authority_from": null,
+      "authority_to": null,
+      "content_digest": "7651707b5d590efd7686a77dca20597dc731bfafa1fabc2358775bef7b9d2ffe",
+      "effective_from": null,
+      "effective_to": null,
+      "profile": "semantic_source.v1",
+      "semantic_id": "SPECIFICATION:028",
+      "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "state": null,
+      "temporal": false
+    }
+  ],
+  "transitions": []
+}

@@ -1,0 +1,78 @@
+{
+  "active_ready_set": [
+    "WS-PKA-CURRENT"
+  ],
+  "authority_class": "derived",
+  "nodes": [
+    {
+      "current_anchor": "v1-cockpit-design-exploration@04f2a907094b8023ac7377c399a6eef1a6e1da99",
+      "dependency_blockers": [],
+      "dependency_closure": [],
+      "depends_on": [],
+      "expected_to_resume": true,
+      "objective": "Resume next-generation Cockpit design and fidelity work from the exact preserved frontend candidate when the project owner explicitly returns to frontend work.",
+      "parent": null,
+      "parent_chain": [],
+      "pause_reason": "The project owner explicitly paused Cockpit frontend work and routed the project back to Source Vault and subsequent project work; the preserved candidate remains unpromoted.",
+      "readiness": "PAUSED",
+      "resume_target": "COCKPIT:DESIGN-EXPLORATION-RESUME",
+      "return_condition": "Resume only when the project owner explicitly returns to Cockpit frontend work.",
+      "risk_or_reopen_triggers": [],
+      "semantic_id": "WS-COCKPIT-DESIGN",
+      "source_path": "docs/cockpit/README.md",
+      "state": "PAUSED",
+      "temporal": false
+    },
+    {
+      "current_anchor": "project-knowledge-wave-one-accepted-shadow-views-next",
+      "dependency_blockers": [],
+      "dependency_closure": [],
+      "depends_on": [],
+      "expected_to_resume": false,
+      "objective": "Implement and migrate the selected Candidate 01 project-development knowledge architecture under Specification 028 while current continuity remains operational authority until an explicit qualified switch.",
+      "parent": null,
+      "parent_chain": [],
+      "pause_reason": null,
+      "readiness": "RUNNABLE",
+      "resume_target": null,
+      "return_condition": null,
+      "risk_or_reopen_triggers": [],
+      "semantic_id": "WS-PKA-CURRENT",
+      "source_path": "docs/project_knowledge/selected_architecture_workstream.md",
+      "state": "ACTIVE",
+      "temporal": false
+    },
+    {
+      "current_anchor": null,
+      "dependency_blockers": [],
+      "dependency_closure": [],
+      "depends_on": [],
+      "expected_to_resume": true,
+      "objective": "Complete the first permanent user-controlled Source Vault bootstrap and unblock Course 2 only after accepted recovery proof.",
+      "parent": null,
+      "parent_chain": [],
+      "pause_reason": "The active project route is Candidate 01 W1 project-knowledge migration; Source Vault bootstrap remains preserved and paused.",
+      "readiness": "PAUSED",
+      "resume_target": "SOURCE-VAULT:REVIEWED-INGESTION",
+      "return_condition": "Resume only when project routing explicitly returns to the Source Vault bootstrap workstream.",
+      "risk_or_reopen_triggers": [
+        "RK-PRIVATE-LEAK",
+        "RK-RECOVERY-FAILURE",
+        "RK-REMOTE-ROUNDTRIP-FAILURE"
+      ],
+      "semantic_id": "WS-SOURCE-VAULT-BOOTSTRAP",
+      "source_path": "docs/source_universe/SOURCE_VAULT_BOOTSTRAP_WORKSTREAM.md",
+      "state": "PAUSED",
+      "temporal": false
+    }
+  ],
+  "route": {
+    "branches": [
+      "WS-PKA-CURRENT"
+    ],
+    "disposition": "UNIQUE_PRIMARY_ROUTE",
+    "primary": "WS-PKA-CURRENT"
+  },
+  "schema_version": "1",
+  "temporal_context_required": false
+}

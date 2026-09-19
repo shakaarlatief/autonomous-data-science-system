@@ -1,0 +1,228 @@
+{
+  "authority_class": "derived",
+  "memberships": [
+    {
+      "axis": "kind",
+      "semantic_id": "D-035",
+      "source_path": "docs/DECISIONS.md",
+      "value": "ARCHITECTURE_SELECTION_DECISION"
+    },
+    {
+      "axis": "kind",
+      "semantic_id": "WS-COCKPIT-DESIGN",
+      "source_path": "docs/cockpit/README.md",
+      "value": "COCKPIT_DESIGN_WORKSTREAM"
+    },
+    {
+      "axis": "kind",
+      "semantic_id": "EXPERIMENT:192",
+      "source_path": "docs/checkpoints/192_specification_022_incomplete_result_preservation_promotion_candidate.md",
+      "value": "EXPERIMENT_RESULT"
+    },
+    {
+      "axis": "kind",
+      "semantic_id": "PROJECT-INTEGRATION-BOUNDARY",
+      "source_path": "docs/project_knowledge/project_integration_boundary.md",
+      "value": "PROJECT_INTEGRATION_BOUNDARY"
+    },
+    {
+      "axis": "kind",
+      "semantic_id": "WS-PKA-CURRENT",
+      "source_path": "docs/project_knowledge/selected_architecture_workstream.md",
+      "value": "PROJECT_KNOWLEDGE_ARCHITECTURE_WORKSTREAM"
+    },
+    {
+      "axis": "kind",
+      "semantic_id": "COCKPIT:DESIGN-EXPLORATION-RESUME",
+      "source_path": "docs/cockpit/COCKPIT_DESIGN_RESUME_TARGET.md",
+      "value": "RESUME_TARGET"
+    },
+    {
+      "axis": "kind",
+      "semantic_id": "SOURCE-VAULT:REVIEWED-INGESTION",
+      "source_path": "docs/source_universe/SOURCE_VAULT_REVIEWED_INGESTION.md",
+      "value": "RESUME_TARGET"
+    },
+    {
+      "axis": "kind",
+      "semantic_id": "WS-SOURCE-VAULT-BOOTSTRAP",
+      "source_path": "docs/source_universe/SOURCE_VAULT_BOOTSTRAP_WORKSTREAM.md",
+      "value": "SOURCE_VAULT_BOOTSTRAP_WORKSTREAM"
+    },
+    {
+      "axis": "kind",
+      "semantic_id": "PROCEDURE:PERMANENT-SOURCE-VAULT-BOOTSTRAP",
+      "source_path": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+      "value": "SOURCE_VAULT_COURSE2_ADMISSION_PROCEDURE"
+    },
+    {
+      "axis": "kind",
+      "semantic_id": "SPECIFICATION:028",
+      "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "value": "SPECIFICATION"
+    },
+    {
+      "axis": "profile",
+      "semantic_id": "PROCEDURE:PERMANENT-SOURCE-VAULT-BOOTSTRAP",
+      "source_path": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+      "value": "governing_procedure.v1"
+    },
+    {
+      "axis": "profile",
+      "semantic_id": "PROJECT-INTEGRATION-BOUNDARY",
+      "source_path": "docs/project_knowledge/project_integration_boundary.md",
+      "value": "project_boundary.v1"
+    },
+    {
+      "axis": "profile",
+      "semantic_id": "COCKPIT:DESIGN-EXPLORATION-RESUME",
+      "source_path": "docs/cockpit/COCKPIT_DESIGN_RESUME_TARGET.md",
+      "value": "semantic_source.v1"
+    },
+    {
+      "axis": "profile",
+      "semantic_id": "D-035",
+      "source_path": "docs/DECISIONS.md",
+      "value": "semantic_source.v1"
+    },
+    {
+      "axis": "profile",
+      "semantic_id": "EXPERIMENT:192",
+      "source_path": "docs/checkpoints/192_specification_022_incomplete_result_preservation_promotion_candidate.md",
+      "value": "semantic_source.v1"
+    },
+    {
+      "axis": "profile",
+      "semantic_id": "SOURCE-VAULT:REVIEWED-INGESTION",
+      "source_path": "docs/source_universe/SOURCE_VAULT_REVIEWED_INGESTION.md",
+      "value": "semantic_source.v1"
+    },
+    {
+      "axis": "profile",
+      "semantic_id": "SPECIFICATION:028",
+      "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "value": "semantic_source.v1"
+    },
+    {
+      "axis": "profile",
+      "semantic_id": "WS-COCKPIT-DESIGN",
+      "source_path": "docs/cockpit/README.md",
+      "value": "workstream.v1"
+    },
+    {
+      "axis": "profile",
+      "semantic_id": "WS-PKA-CURRENT",
+      "source_path": "docs/project_knowledge/selected_architecture_workstream.md",
+      "value": "workstream.v1"
+    },
+    {
+      "axis": "profile",
+      "semantic_id": "WS-SOURCE-VAULT-BOOTSTRAP",
+      "source_path": "docs/source_universe/SOURCE_VAULT_BOOTSTRAP_WORKSTREAM.md",
+      "value": "workstream.v1"
+    },
+    {
+      "axis": "scope:architecture",
+      "semantic_id": "WS-PKA-CURRENT",
+      "source_path": "docs/project_knowledge/selected_architecture_workstream.md",
+      "value": "PKA-CANDIDATE-01"
+    },
+    {
+      "axis": "scope:boundary",
+      "semantic_id": "PROJECT-INTEGRATION-BOUNDARY",
+      "source_path": "docs/project_knowledge/project_integration_boundary.md",
+      "value": "promoted-v1-integration"
+    },
+    {
+      "axis": "scope:decision",
+      "semantic_id": "PROCEDURE:PERMANENT-SOURCE-VAULT-BOOTSTRAP",
+      "source_path": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+      "value": "course2-admission"
+    },
+    {
+      "axis": "scope:decision_domain",
+      "semantic_id": "D-035",
+      "source_path": "docs/DECISIONS.md",
+      "value": "project-development-knowledge-architecture"
+    },
+    {
+      "axis": "scope:domain",
+      "semantic_id": "COCKPIT:DESIGN-EXPLORATION-RESUME",
+      "source_path": "docs/cockpit/COCKPIT_DESIGN_RESUME_TARGET.md",
+      "value": "cockpit"
+    },
+    {
+      "axis": "scope:domain",
+      "semantic_id": "WS-COCKPIT-DESIGN",
+      "source_path": "docs/cockpit/README.md",
+      "value": "cockpit"
+    },
+    {
+      "axis": "scope:domain",
+      "semantic_id": "PROCEDURE:PERMANENT-SOURCE-VAULT-BOOTSTRAP",
+      "source_path": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+      "value": "source-universe"
+    },
+    {
+      "axis": "scope:domain",
+      "semantic_id": "SOURCE-VAULT:REVIEWED-INGESTION",
+      "source_path": "docs/source_universe/SOURCE_VAULT_REVIEWED_INGESTION.md",
+      "value": "source-universe"
+    },
+    {
+      "axis": "scope:domain",
+      "semantic_id": "WS-SOURCE-VAULT-BOOTSTRAP",
+      "source_path": "docs/source_universe/SOURCE_VAULT_BOOTSTRAP_WORKSTREAM.md",
+      "value": "source-universe"
+    },
+    {
+      "axis": "scope:program",
+      "semantic_id": "WS-COCKPIT-DESIGN",
+      "source_path": "docs/cockpit/README.md",
+      "value": "next-generation-cockpit-design"
+    },
+    {
+      "axis": "scope:program",
+      "semantic_id": "WS-SOURCE-VAULT-BOOTSTRAP",
+      "source_path": "docs/source_universe/SOURCE_VAULT_BOOTSTRAP_WORKSTREAM.md",
+      "value": "permanent-source-vault-bootstrap"
+    },
+    {
+      "axis": "scope:program",
+      "semantic_id": "SPECIFICATION:028",
+      "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "value": "project-knowledge-architecture"
+    },
+    {
+      "axis": "scope:program",
+      "semantic_id": "WS-PKA-CURRENT",
+      "source_path": "docs/project_knowledge/selected_architecture_workstream.md",
+      "value": "project-knowledge-architecture"
+    },
+    {
+      "axis": "scope:selected_target",
+      "semantic_id": "D-035",
+      "source_path": "docs/DECISIONS.md",
+      "value": "PKA-CANDIDATE-01"
+    },
+    {
+      "axis": "scope:specification",
+      "semantic_id": "EXPERIMENT:192",
+      "source_path": "docs/checkpoints/192_specification_022_incomplete_result_preservation_promotion_candidate.md",
+      "value": "SPECIFICATION:022"
+    },
+    {
+      "axis": "scope:workstream",
+      "semantic_id": "COCKPIT:DESIGN-EXPLORATION-RESUME",
+      "source_path": "docs/cockpit/COCKPIT_DESIGN_RESUME_TARGET.md",
+      "value": "WS-COCKPIT-DESIGN"
+    },
+    {
+      "axis": "scope:workstream",
+      "semantic_id": "SOURCE-VAULT:REVIEWED-INGESTION",
+      "source_path": "docs/source_universe/SOURCE_VAULT_REVIEWED_INGESTION.md",
+      "value": "WS-SOURCE-VAULT-BOOTSTRAP"
+    }
+  ],
+  "schema_version": "1"
+}

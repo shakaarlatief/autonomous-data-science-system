@@ -1,0 +1,126 @@
+{
+  "authority_class": "derived",
+  "obligations": [
+    {
+      "category": "RETURN_CONDITION",
+      "constraint_id": null,
+      "ordinal": 0,
+      "requirement": "Resume only when the project owner explicitly returns to Cockpit frontend work.",
+      "semantic_id": "WS-COCKPIT-DESIGN",
+      "source_path": "docs/cockpit/README.md"
+    },
+    {
+      "category": "FAIL_CLOSED",
+      "constraint_id": null,
+      "ordinal": 0,
+      "requirement": "Any missing, pending, failed, or unverified Course 2 admission-gate requirement keeps Course 2 blocked.",
+      "semantic_id": "PROCEDURE:PERMANENT-SOURCE-VAULT-BOOTSTRAP",
+      "source_path": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+    },
+    {
+      "category": "MANDATORY_CONSTRAINT",
+      "constraint_id": "FIRST_CORPUS_ACCOUNTED",
+      "ordinal": 0,
+      "requirement": "The original local corpus is reviewed and all intended files are ingested or explicitly accounted for.",
+      "semantic_id": "PROCEDURE:PERMANENT-SOURCE-VAULT-BOOTSTRAP",
+      "source_path": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+    },
+    {
+      "category": "MANDATORY_CONSTRAINT",
+      "constraint_id": "WORKING_AUDIT_CLEAN",
+      "ordinal": 1,
+      "requirement": "The working Source Vault integrity audit is clean.",
+      "semantic_id": "PROCEDURE:PERMANENT-SOURCE-VAULT-BOOTSTRAP",
+      "source_path": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+    },
+    {
+      "category": "MANDATORY_CONSTRAINT",
+      "constraint_id": "INDEPENDENT_BACKUP_ROUND_TRIP",
+      "ordinal": 2,
+      "requirement": "The independent backup is verified through a separate-storage round trip.",
+      "semantic_id": "PROCEDURE:PERMANENT-SOURCE-VAULT-BOOTSTRAP",
+      "source_path": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+    },
+    {
+      "category": "MANDATORY_CONSTRAINT",
+      "constraint_id": "CLEAN_RESTORE",
+      "ordinal": 3,
+      "requirement": "A clean restore from the independently retrieved copy succeeds.",
+      "semantic_id": "PROCEDURE:PERMANENT-SOURCE-VAULT-BOOTSTRAP",
+      "source_path": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+    },
+    {
+      "category": "MANDATORY_CONSTRAINT",
+      "constraint_id": "RESTORED_AUDIT_CLEAN",
+      "ordinal": 4,
+      "requirement": "The restored Source Vault integrity audit is clean.",
+      "semantic_id": "PROCEDURE:PERMANENT-SOURCE-VAULT-BOOTSTRAP",
+      "source_path": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+    },
+    {
+      "category": "MANDATORY_CONSTRAINT",
+      "constraint_id": "SAFE_EVIDENCE_PRESERVED",
+      "ordinal": 5,
+      "requirement": "Safe recovery evidence is preserved.",
+      "semantic_id": "PROCEDURE:PERMANENT-SOURCE-VAULT-BOOTSTRAP",
+      "source_path": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+    },
+    {
+      "category": "POSTCONDITION",
+      "constraint_id": null,
+      "ordinal": 0,
+      "requirement": "Course 2 is unblocked only after every Course 2 admission-gate requirement is satisfied.",
+      "semantic_id": "PROCEDURE:PERMANENT-SOURCE-VAULT-BOOTSTRAP",
+      "source_path": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+    },
+    {
+      "category": "PROHIBITION",
+      "constraint_id": null,
+      "ordinal": 0,
+      "requirement": "Do not admit an additional educational course batch before every Course 2 admission-gate requirement is satisfied.",
+      "semantic_id": "PROCEDURE:PERMANENT-SOURCE-VAULT-BOOTSTRAP",
+      "source_path": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+    },
+    {
+      "category": "RETURN_CONDITION",
+      "constraint_id": null,
+      "ordinal": 0,
+      "requirement": "Resume only when project routing explicitly returns to the Source Vault bootstrap workstream.",
+      "semantic_id": "WS-SOURCE-VAULT-BOOTSTRAP",
+      "source_path": "docs/source_universe/SOURCE_VAULT_BOOTSTRAP_WORKSTREAM.md"
+    }
+  ],
+  "risks": [
+    {
+      "semantic_id": "PROCEDURE:PERMANENT-SOURCE-VAULT-BOOTSTRAP",
+      "source_path": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+      "trigger": "RK-PRIVATE-LEAK"
+    },
+    {
+      "semantic_id": "WS-SOURCE-VAULT-BOOTSTRAP",
+      "source_path": "docs/source_universe/SOURCE_VAULT_BOOTSTRAP_WORKSTREAM.md",
+      "trigger": "RK-PRIVATE-LEAK"
+    },
+    {
+      "semantic_id": "PROCEDURE:PERMANENT-SOURCE-VAULT-BOOTSTRAP",
+      "source_path": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+      "trigger": "RK-RECOVERY-FAILURE"
+    },
+    {
+      "semantic_id": "WS-SOURCE-VAULT-BOOTSTRAP",
+      "source_path": "docs/source_universe/SOURCE_VAULT_BOOTSTRAP_WORKSTREAM.md",
+      "trigger": "RK-RECOVERY-FAILURE"
+    },
+    {
+      "semantic_id": "PROCEDURE:PERMANENT-SOURCE-VAULT-BOOTSTRAP",
+      "source_path": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+      "trigger": "RK-REMOTE-ROUNDTRIP-FAILURE"
+    },
+    {
+      "semantic_id": "WS-SOURCE-VAULT-BOOTSTRAP",
+      "source_path": "docs/source_universe/SOURCE_VAULT_BOOTSTRAP_WORKSTREAM.md",
+      "trigger": "RK-REMOTE-ROUNDTRIP-FAILURE"
+    }
+  ],
+  "schema_version": "1"
+}

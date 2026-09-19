@@ -1,0 +1,53 @@
+{
+  "active_workstream": {
+    "execution_anchor": {
+      "checkpoint": 551,
+      "current_boundary": "project-knowledge-wave-one-accepted-shadow-views-next",
+      "development_branch": "v1-source-vault-bootstrap-resume",
+      "pull_request": null
+    },
+    "objective": "Implement and migrate the selected Candidate 01 project-development knowledge architecture under Specification 028 while current continuity remains operational authority until an explicit qualified switch.",
+    "semantic_id": "WS-PKA-CURRENT",
+    "stage": {
+      "stage_id": "SPECIFICATION:028",
+      "stage_state": "W1_ACCEPTED"
+    },
+    "state": "ACTIVE"
+  },
+  "current_experiment": {
+    "outcome": "INCOMPLETE",
+    "semantic_id": "EXPERIMENT:192"
+  },
+  "current_specification": {
+    "semantic_id": "SPECIFICATION:028"
+  },
+  "integration_boundary": {
+    "promoted_branch": "v1-frontend-spike",
+    "promoted_commit": "2480109fadeee1e480ef03b82e335aacdf9adf91",
+    "semantic_id": "PROJECT-INTEGRATION-BOUNDARY"
+  },
+  "paused_workstreams": [
+    {
+      "resume_target": "COCKPIT:DESIGN-EXPLORATION-RESUME",
+      "semantic_id": "WS-COCKPIT-DESIGN",
+      "state": "PAUSED"
+    },
+    {
+      "governing_procedure": "PROCEDURE:PERMANENT-SOURCE-VAULT-BOOTSTRAP",
+      "orientation_milestones": [
+        {
+          "milestone_id": "COURSE:2",
+          "state": "BLOCKED"
+        },
+        {
+          "milestone_id": "SOURCE-VAULT:INGESTION",
+          "state": "NOT_STARTED"
+        }
+      ],
+      "resume_target": "SOURCE-VAULT:REVIEWED-INGESTION",
+      "semantic_id": "WS-SOURCE-VAULT-BOOTSTRAP",
+      "state": "PAUSED"
+    }
+  ],
+  "schema_version": "1"
+}

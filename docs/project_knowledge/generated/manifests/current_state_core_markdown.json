@@ -1,0 +1,119 @@
+{
+  "authority_class": "derived",
+  "created_or_refreshed_boundary": "sha256:f7831d76595db6795b80b4cafc5df1db564efd034d23579ebcec5036de7869e4",
+  "freshness_basis": "G009_EXACT_INPUTS_AND_GENERATOR_V1",
+  "generator": {
+    "generator_id": "project_knowledge_current_state_core_markdown",
+    "generator_version": "1",
+    "implementation_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+    "implementation_digest": "7fc38f760ba3bd6defaee99bbff6dc3b63c8a62e5cb336773ca83649ba8617d3",
+    "implementation_files": [
+      "tools/project_knowledge/model.py",
+      "tools/project_knowledge/views.py",
+      "tools/project_knowledge/services/generation.py",
+      "tools/project_knowledge/services/validation.py",
+      "tools/project_knowledge/services/discovery.py",
+      "tools/project_knowledge/adapters/gitio.py",
+      "tools/project_knowledge/adapters/fsio.py",
+      "tools/project_knowledge/adapters/schema.py",
+      "tools/project_knowledge/declaration.py",
+      "tools/project_knowledge/references.py",
+      "schemas/project_knowledge/defs.v1.schema.json",
+      "schemas/project_knowledge/semantic_source.v1.schema.json",
+      "schemas/project_knowledge/workstream.v1.schema.json",
+      "schemas/project_knowledge/governing_procedure.v1.schema.json",
+      "schemas/project_knowledge/project_boundary.v1.schema.json",
+      "schemas/project_knowledge/identity_transition.v1.schema.json",
+      "schemas/project_knowledge/joint_authority.v1.schema.json",
+      "schemas/project_knowledge/capture.v1.schema.json",
+      "schemas/project_knowledge/derived_view_manifest.v1.schema.json",
+      "tools/project_knowledge/__init__.py",
+      "tools/project_knowledge/adapters/__init__.py",
+      "tools/project_knowledge/services/__init__.py",
+      "tools/project_knowledge/adapters/execution.py",
+      "tools/project_knowledge/adapters/pure.py",
+      "tools/project_knowledge/pure_units.py"
+    ]
+  },
+  "input_bindings": [
+    {
+      "content_digest": "8111fb7631c1e931b223645b8b755c1b97f54cc31434dcf4e14a0fe917edeef7",
+      "hash_algorithm": "sha256",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "semantic_id": "D-035",
+      "source_path": "docs/DECISIONS.md"
+    },
+    {
+      "content_digest": "d39bf8ef85d714c12de23ee3ee48f626febc53a214805effca0b5812f6280970",
+      "hash_algorithm": "sha256",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "semantic_id": "EXPERIMENT:192",
+      "source_path": "docs/checkpoints/192_specification_022_incomplete_result_preservation_promotion_candidate.md"
+    },
+    {
+      "content_digest": "74e919bc8a3f817d08a82d8d523cb9656d310af9873bd31b39b8b9f1ffb46b69",
+      "hash_algorithm": "sha256",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "semantic_id": "COCKPIT:DESIGN-EXPLORATION-RESUME",
+      "source_path": "docs/cockpit/COCKPIT_DESIGN_RESUME_TARGET.md"
+    },
+    {
+      "content_digest": "08726acc6541e23fa568d1b444f98124456ac5863fc263498af5e5115f8a90c3",
+      "hash_algorithm": "sha256",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "semantic_id": "WS-COCKPIT-DESIGN",
+      "source_path": "docs/cockpit/README.md"
+    },
+    {
+      "content_digest": "0e05f2294891a4ffb9bca5f281ac6b00850b41de29331d321b0bfe55550627b5",
+      "hash_algorithm": "sha256",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "semantic_id": "PROJECT-INTEGRATION-BOUNDARY",
+      "source_path": "docs/project_knowledge/project_integration_boundary.md"
+    },
+    {
+      "content_digest": "80dc48d0eb6625bbd956db362eaf9ce27d7e36b4076d206ec2abb8504f0eae45",
+      "hash_algorithm": "sha256",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "semantic_id": "WS-PKA-CURRENT",
+      "source_path": "docs/project_knowledge/selected_architecture_workstream.md"
+    },
+    {
+      "content_digest": "4cf4205cd5f800a43ab32f74db3b3f4c557f6f9bf65e97c6dbbb98f214f413bf",
+      "hash_algorithm": "sha256",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "semantic_id": "PROCEDURE:PERMANENT-SOURCE-VAULT-BOOTSTRAP",
+      "source_path": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+    },
+    {
+      "content_digest": "ce21e6f1727d7b40f8d2611fdf266716de4b3757bda21e16956f3caa3d5bb108",
+      "hash_algorithm": "sha256",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "semantic_id": "WS-SOURCE-VAULT-BOOTSTRAP",
+      "source_path": "docs/source_universe/SOURCE_VAULT_BOOTSTRAP_WORKSTREAM.md"
+    },
+    {
+      "content_digest": "8e5515bbdab42fe1ba9de7bd374207ebadc26e89cddcd8085ad7962495f3eeea",
+      "hash_algorithm": "sha256",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "semantic_id": "SOURCE-VAULT:REVIEWED-INGESTION",
+      "source_path": "docs/source_universe/SOURCE_VAULT_REVIEWED_INGESTION.md"
+    },
+    {
+      "content_digest": "7651707b5d590efd7686a77dca20597dc731bfafa1fabc2358775bef7b9d2ffe",
+      "hash_algorithm": "sha256",
+      "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+      "semantic_id": "SPECIFICATION:028",
+      "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md"
+    }
+  ],
+  "kind": "derived_view_manifest",
+  "profile": "derived_view_manifest.v1",
+  "rebuildability_class": "DETERMINISTIC_BYTE_REBUILD",
+  "schema_version": "1",
+  "snapshot_mode": "COMMIT_SNAPSHOT",
+  "snapshot_status": "COMMITTED",
+  "view_id": "current_state_core_markdown",
+  "view_path": "docs/project_knowledge/generated/CURRENT_STATE_CORE.md",
+  "view_schema_version": "1"
+}
