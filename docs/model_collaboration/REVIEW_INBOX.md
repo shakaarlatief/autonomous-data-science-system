@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
-**Date:** 2026-09-15
-**Status:** NO ACTIVE CLAUDE OBLIGATION / MC-0017 RESOLVED / W0 IMPLEMENTATION NEXT / MC-0010 DEFERRED
+**Date:** 2026-09-20
+**Status:** ACTIVE CLAUDE OBLIGATION / MC-0018 W5 INFORMATION-ARCHITECTURE CO-DESIGN / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -23,7 +23,29 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Current active collaboration obligation
 
-There is no active Claude obligation. MC-0017 is resolved. Research 179 freezes the reconciled W0 production implementation architecture and W0 implementation is now the active continuation. Open another model-collaboration thread only if implementation evidence exposes a real architecture disagreement or a later independent/adversarial pass has clear marginal value.
+### MC-0018: W5 future knowledge information architecture co-design
+
+```text
+collaborator               Claude / claude-03
+mode                       REVIEWED / CURRENT_CONTEXT_CO_DESIGN
+coordination branch        v1-source-vault-bootstrap-resume
+exact design target        ac45bc7078cd23af85f243cb61ba6a8b499f284d
+current task               challenge and improve Research 206/207 before W5 design freeze
+expected output            messages/001_claude_w5_information_architecture_review_and_counterdesign.md
+write scope                docs/model_collaboration/threads/MC-0018/messages/**
+status                     OPEN / CLAUDE MESSAGE 001 NEXT
+conversation               03 - Project Knowledge Architecture Foundations and Design Method
+```
+
+This is intentionally current-context co-design rather than blind independent review. Claude may use its preserved MC-0011 through MC-0017 architecture context and the accepted W0-W4 evidence. Broad W5 semantic migration remains paused until the future file/folder/subject/authoring architecture is reconciled and frozen.
+
+Durable contract:
+
+```text
+docs/model_collaboration/threads/MC-0018/BRIEF.md
+docs/model_collaboration/threads/MC-0018/THREAD.md
+docs/model_collaboration/threads/MC-0018/STATE.json
+```
 
 ## Most recently completed obligation
 

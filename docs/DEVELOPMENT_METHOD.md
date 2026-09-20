@@ -2,7 +2,7 @@
 
 **Status:** Current canonical project-development method  
 **Current version:** 0.9  
-**Last reviewed:** 2026-09-17
+**Last reviewed:** 2026-09-20
 
 ## Purpose
 
@@ -535,6 +535,16 @@ Ultra
 ```
 
 Do not spend frontier reasoning merely because a task is important. If ChatGPT, Claude or earlier architecture work has already resolved the difficult conceptual question and Codex is executing a sharply bounded repair, Sol High may be the stronger system-level choice because it preserves additional review/repair cycles. Conversely, when the task itself is an unresolved architectural boundary, escalating to Astra High or selectively to XHigh/Max is justified.
+
+### Default Codex relay workflow
+
+The default ADS Codex workflow is **manual prompt relay by the project owner**, not direct ChatGPT/Codexless model dispatch. ChatGPT prepares the exact bounded Codex prompt; the project owner sends it in an appropriate Codex thread and returns the result for independent inspection and integration.
+
+An existing persistent Codex thread may be reused when its scope/context remains appropriate. Open a fresh Codex thread when a clean context boundary, independence-sensitive implementation, or materially different workstream makes reuse undesirable. The prompt must carry enough repository/task authority to remain reconstructable without relying on hidden chat memory.
+
+Direct Codexless agent dispatch is an optional convenience, not the default correctness path. Use it only when the project owner explicitly chooses that route for the task or when a separately accepted workflow specifically requires it. Manual relay does not weaken the evidence standard: ChatGPT remains responsible for exact prompt construction, result inspection, adversarial verification, repository reconciliation, and acceptance disposition.
+
+This operational default is consistent with the accepted Research 122 conclusion that direct ADS-to-Codex dispatch is convenience rather than a core requirement and that manual prompt copy/paste is an accepted workflow.
 
 The preferred ADS division of reasoning responsibility is:
 
