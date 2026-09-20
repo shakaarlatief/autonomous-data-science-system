@@ -19,9 +19,10 @@ from tools.project_knowledge.model import (
 )
 from tools.project_knowledge.services.generation import generate_views, check_view_freshness
 from tools.project_knowledge.services.validation import validate_repository
+from tools.project_knowledge.view_definitions import PURE_UNIT_REGISTRY, source_inventory_specification
 from tools.project_knowledge.views import (
     ViewValidationError, build_views as domain_build_views, deterministic_json, implementation_digest,
-    manifest_freshness, PURE_UNIT_REGISTRY, source_inventory_specification,
+    manifest_freshness,
 )
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -87,7 +88,8 @@ def build_views(specifications, corpus, implementation_blobs, **options):
     from tools.project_knowledge.adapters.pure import resolve_unit
     resolved = []
     for s in specifications:
-        if type(s.compute) is str and "tools/project_knowledge/pure_units.py" in implementation_blobs:
+        compute_path = next((path for identity, path, *_ in PURE_UNIT_REGISTRY if identity == s.compute), None)
+        if type(s.compute) is str and compute_path in implementation_blobs:
             s = replace(s, compute=resolve_unit(s.compute, PURE_UNIT_REGISTRY, implementation_blobs, {}))
         if s.serialize == "canonical_json.v1":
             s = replace(s, serialize=deterministic_json)
@@ -398,6 +400,6 @@ def test_builtin_structural_view_has_explicit_auditable_closure(repo):
     result, = build(repo, (s,))
     assert result.view_id == "source_inventory"
     assert tuple(result.manifest.fields["generator"]["implementation_files"]) == IMPL
-    assert len(IMPL) == 25 and len(set(IMPL)) == 25
+    assert len(IMPL) == 27 and len(set(IMPL)) == 27
     assert result.manifest.fields["rebuildability_class"] == "DETERMINISTIC_BYTE_REBUILD"
     assert result.manifest.fields["authority_class"] == "derived"

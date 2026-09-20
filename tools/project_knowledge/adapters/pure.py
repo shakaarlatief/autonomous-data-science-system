@@ -100,6 +100,39 @@ def check_function(node, dependencies):
         reject("PURE_DEPENDENCY_MISMATCH", "Pure helper/capability declarations must match source calls exactly")
 
 
+UNIT_DECLARATION_PREFIX = "tools/project_knowledge/view_definitions/"
+
+
+def declared_units(blobs):
+    """Data-only unit records from this view's own explicit implementation blobs.
+
+    Declaration modules are parsed, never imported or executed: each may bind one
+    top-level PURE_UNITS literal. Only blobs the caller already bound are read, so
+    another view's declarations cannot qualify a unit here.
+    """
+    records = []
+    for path in sorted(blobs):
+        if not (path.startswith(UNIT_DECLARATION_PREFIX) and path.endswith(".py")):
+            continue
+        try:
+            tree = ast.parse(blobs[path], filename=path)
+        except (SyntaxError, ValueError) as error:
+            reject("INVALID_PURE_REGISTRY", str(error))
+        nodes = [node for node in tree.body if isinstance(node, ast.Assign)
+                 and any(isinstance(target, ast.Name) and target.id == "PURE_UNITS" for target in node.targets)]
+        if len(nodes) > 1:
+            reject("INVALID_PURE_REGISTRY", "A declaration module binds PURE_UNITS at most once")
+        for node in nodes:
+            try:
+                declared = ast.literal_eval(node.value)
+            except ValueError as error:
+                reject("INVALID_PURE_REGISTRY", "PURE_UNITS must be a data literal: " + str(error))
+            if type(declared) is not tuple:
+                reject("INVALID_PURE_REGISTRY", "PURE_UNITS must be a tuple of unit records")
+            records.extend(declared)
+    return tuple(records)
+
+
 def resolve_unit(unit_id, registry, blobs, capabilities):
     """Construct a closed function graph; cycles need no module initialization."""
     records = {}

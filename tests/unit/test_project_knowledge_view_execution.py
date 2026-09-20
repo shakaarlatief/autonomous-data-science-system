@@ -21,7 +21,7 @@ from tests.unit.test_project_knowledge_views import repo, git, commit
 from tools.project_knowledge.adapters.pure import resolve_unit
 from tools.project_knowledge.model import SubstrateError
 
-PURE_PATH = "tools/project_knowledge/pure_units.py"
+PURE_PATH = "tools/project_knowledge/pure_source_inventory.py"
 
 PROBE = r'''
 import json, sys
@@ -34,6 +34,7 @@ original = views_path.read_bytes()
 if request.get("cached_code"):
     views_path.write_bytes(original.replace(b"ensure_ascii=False", b"ensure_ascii=True"))
 from tools.project_knowledge import views, model
+from tools.project_knowledge.view_definitions.source_inventory import source_inventory_specification
 from tools.project_knowledge.adapters.gitio import commit_snapshot
 from tools.project_knowledge.services.generation import generate_views, check_view_freshness
 if request.get("cached_code"):
@@ -41,7 +42,7 @@ if request.get("cached_code"):
 if request.get("cached_binding"):
     from types import SimpleNamespace
     views.json = SimpleNamespace(dumps=lambda *a, **k: '{"ambient":"HOST"}')
-base = views.source_inventory_specification()
+base = source_inventory_specification()
 files = tuple(p for p in base.generator.implementation_files if p not in request.get("exclude", ()))
 files += tuple(request.get("extra", ()))
 spec = replace(base, view_path=request.get("view_path", base.view_path), compute=request.get("unit", base.compute),
@@ -71,7 +72,7 @@ if request.get("editable_name"):
     import importlib.util
     host_observations["editable_origin"] = importlib.util.find_spec(request["editable_name"]).origin
 result = {"host_observations": host_observations, "loaded_from": str(Path(views.__file__).resolve()),
-          "pure_module_imported": "tools.project_knowledge.pure_units" in sys.modules}
+          "pure_module_imported": any(name.startswith("tools.project_knowledge.pure_") for name in sys.modules)}
 try:
     builds = generate_views(snapshot, specs, selected_view_ids=request.get("selected"))
     built = next(item for item in builds if item.view_id == spec.view_id)
@@ -111,10 +112,10 @@ def rejected(result, code=None):
 
 def register(repo, *entries):
     """Amend committed fixture DATA, never register a live Python object."""
-    path = repo / "tools/project_knowledge/views.py"
+    path = repo / "tools/project_knowledge/view_definitions/source_inventory.py"
     tree = ast.parse(path.read_text(encoding="utf-8"))
     node, = [node for node in tree.body if isinstance(node, ast.Assign)
-             and any(isinstance(target, ast.Name) and target.id == "PURE_UNIT_REGISTRY" for target in node.targets)]
+             and any(isinstance(target, ast.Name) and target.id == "PURE_UNITS" for target in node.targets)]
     node.value = ast.parse(repr(ast.literal_eval(node.value) + entries), mode="eval").body
     path.write_text(ast.unparse(ast.fix_missing_locations(tree)) + "\n", encoding="utf-8")
 

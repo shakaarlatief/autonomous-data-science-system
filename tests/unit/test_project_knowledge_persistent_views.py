@@ -1,19 +1,32 @@
 """Qualification of the complete Specification 028 persistent W0 view set."""
 
+import ast
 from dataclasses import replace
 import json
+from pathlib import Path
+
+import pytest
 
 from jsonschema import Draft202012Validator
 
-from tools.project_knowledge.adapters.gitio import commit_snapshot
+from tools.project_knowledge.adapters.gitio import commit_snapshot, read_blobs
+from tools.project_knowledge.adapters.pure import declared_units, resolve_unit
 from tools.project_knowledge.identity import (
     build_identity_index, identity_index_data, transition_from_source,
 )
-from tools.project_knowledge.model import AuthorityClass, Profile, SnapshotMode
+from tools.project_knowledge.model import (
+    AuthorityClass, Profile, SnapshotMode, SubstrateError, ViewFreshnessStatus, ViewInput,
+)
 from tools.project_knowledge.services.generation import generate_views
+from tools.project_knowledge.services.generation import _capabilities
 from tools.project_knowledge.services.validation import validate_repository
+from tools.project_knowledge import view_definitions
+from tools.project_knowledge.view_definitions import (
+    DECLARATION_MODULES, identity_index_specification, production_view_specifications, PURE_UNIT_REGISTRY,
+)
+from tools.project_knowledge.view_definitions.common import SHARED_IMPLEMENTATION_FILES
 from tools.project_knowledge.views import (
-    deterministic_json, identity_index_specification, production_view_specifications,
+    build_views as domain_build_views, deterministic_json, manifest_freshness,
 )
 from tools.project_knowledge.workstreams import build_workstream_graph, workstream_result_data
 from tests.unit.test_project_knowledge_current_state_core import (
@@ -22,6 +35,7 @@ from tests.unit.test_project_knowledge_current_state_core import (
 from tests.unit.test_project_knowledge_views import commit, write
 
 
+ROOT = Path(__file__).resolve().parents[2]
 PERSISTENT_PATHS = {
     "docs/project_knowledge/generated/source_catalog.json",
     "docs/project_knowledge/generated/identity_index.json",
@@ -257,6 +271,292 @@ def builds(root):
 
 def by_id(results):
     return {result.view_id: result for result in results}
+
+
+def c1_material(root):
+    """Exact fixture Git blobs and complete corpus, without checkout-code attestation."""
+    specifications = production_view_specifications()
+    snapshot = commit_snapshot(root, "HEAD")
+    validation = validate_repository(snapshot)
+    assert validation.ok
+    entries = {entry.path: entry for entry in snapshot.entries}
+    paths = {source.carrier_path for source in validation.sources}
+    paths.update(path for specification in specifications for path in specification.generator.implementation_files)
+    raw = read_blobs(root, tuple(entries[path] for path in sorted(paths)))
+    content = {path: raw[entries[path].blob_id] for path in paths}
+    corpus = tuple(ViewInput(source, content[source.carrier_path]) for source in validation.sources)
+    return specifications, corpus, content
+
+
+def blob_builds(material, overrides=None):
+    """Build every view from ONLY its own declared closure blobs, like the bound worker."""
+    specifications, corpus, content = material
+    content = {**content, **(overrides or {})}
+    capabilities = _capabilities()
+    results = []
+    for specification in specifications:
+        closure = {path: content[path] for path in specification.generator.implementation_files}
+        registry = declared_units(closure)
+        compute = resolve_unit(specification.compute, registry, closure, capabilities)
+        serialize = (deterministic_json if specification.serialize == "canonical_json.v1"
+                     else resolve_unit(specification.serialize, registry, closure, capabilities))
+        resolved = replace(specification, compute=compute, serialize=serialize)
+        result, = domain_build_views(
+            (resolved,), corpus, closure, snapshot_mode=SnapshotMode.COMMIT_SNAPSHOT,
+        )
+        results.append(result)
+    return by_id(results)
+
+
+PACKAGE_ROOT = "tools/project_knowledge/"
+DEFINITIONS = PACKAGE_ROOT + "view_definitions/"
+ALL_VIEWS = frozenset({
+    "source_catalog", "identity_index", "authority_index", "workstream_graph", "subject_index",
+    "risk_obligation_index", "current_state_core", "current_state_core_markdown",
+})
+NOT_CORE = ALL_VIEWS - {"current_state_core", "current_state_core_markdown"}
+
+# Everything after the shared prefix: this view's specification module, the
+# unit-declaration modules of its reachable units, then their pure sources.
+EXPECTED_VIEW_SPECIFIC_FILES = {
+    "source_catalog": (
+        DEFINITIONS + "source_catalog.py", DEFINITIONS + "units_normalized_scope.py",
+        DEFINITIONS + "units_unique_values.py", PACKAGE_ROOT + "pure_source_catalog.py",
+        PACKAGE_ROOT + "pure_normalized_scope.py", PACKAGE_ROOT + "pure_unique_values.py",
+    ),
+    "identity_index": (
+        DEFINITIONS + "identity_index.py", DEFINITIONS + "units_temporal.py",
+        DEFINITIONS + "units_unique_values.py", PACKAGE_ROOT + "pure_identity_index.py",
+        PACKAGE_ROOT + "pure_temporal.py", PACKAGE_ROOT + "pure_unique_values.py",
+    ),
+    "authority_index": (
+        DEFINITIONS + "authority_index.py", DEFINITIONS + "units_normalized_scope.py",
+        DEFINITIONS + "units_unique_values.py", PACKAGE_ROOT + "pure_authority_index.py",
+        PACKAGE_ROOT + "pure_normalized_scope.py", PACKAGE_ROOT + "pure_unique_values.py",
+    ),
+    "workstream_graph": (
+        DEFINITIONS + "workstream_graph.py", DEFINITIONS + "units_temporal.py",
+        DEFINITIONS + "units_unique_values.py", PACKAGE_ROOT + "pure_workstream_graph.py",
+        PACKAGE_ROOT + "pure_temporal.py", PACKAGE_ROOT + "pure_unique_values.py",
+    ),
+    "subject_index": (
+        DEFINITIONS + "subject_index.py", DEFINITIONS + "units_unique_values.py",
+        PACKAGE_ROOT + "pure_subject_index.py", PACKAGE_ROOT + "pure_unique_values.py",
+    ),
+    "risk_obligation_index": (
+        DEFINITIONS + "risk_obligation_index.py", DEFINITIONS + "units_unique_values.py",
+        PACKAGE_ROOT + "pure_risk_obligation_index.py", PACKAGE_ROOT + "pure_unique_values.py",
+    ),
+    "current_state_core": (
+        DEFINITIONS + "current_state_core.py", DEFINITIONS + "units_current_state_core.py",
+        PACKAGE_ROOT + "pure_current_state_core.py",
+    ),
+    "current_state_core_markdown": (
+        DEFINITIONS + "current_state_core_markdown.py", DEFINITIONS + "units_current_state_core.py",
+        PACKAGE_ROOT + "pure_current_state_core.py", PACKAGE_ROOT + "pure_current_state_core_markdown.py",
+    ),
+}
+SHARED_PREFIX_LENGTH = 25
+
+
+def shared_prefix_and_tail(specification):
+    files = specification.generator.implementation_files
+    return files[:SHARED_PREFIX_LENGTH], files[SHARED_PREFIX_LENGTH:]
+
+
+def repository_path(module):
+    return str(Path(module.__file__).resolve().relative_to(ROOT)).replace("\\", "/")
+
+
+def derived_view_specific_files(specification):
+    """Independent derivation from the unit graph, not from the declared lists."""
+    records = {record[0]: record for record in PURE_UNIT_REGISTRY}
+    assert len(records) == len(PURE_UNIT_REGISTRY)
+    reachable, pending = set(), [specification.compute_identity]
+    if specification.serialize_identity != "canonical_json.v1":
+        pending.append(specification.serialize_identity)
+    while pending:
+        identity = pending.pop()
+        if identity not in reachable:
+            reachable.add(identity)
+            pending.extend(dependency for _, dependency in records[identity][3])
+    declared_in = {
+        record[0]: repository_path(module) for module in DECLARATION_MODULES for record in module.PURE_UNITS
+    }
+    return (
+        {repository_path(getattr(view_definitions, specification.view_id))}
+        | {declared_in[identity] for identity in reachable}
+        | {records[identity][1] for identity in reachable}
+    )
+
+
+def test_c1_implementation_closures_are_explicit_ordered_and_deterministic():
+    from tools.project_knowledge.adapters.execution import TCB_FILES
+    from tools.project_knowledge.adapters.schema import SCHEMA_FILES
+    first, second = production_view_specifications(), production_view_specifications()
+    assert first == second
+    assert len(first) == 8 and {spec.view_id for spec in first} == ALL_VIEWS
+    shared = first[0].generator.implementation_files[:SHARED_PREFIX_LENGTH]
+    assert set(shared) == set(TCB_FILES) | set(SCHEMA_FILES) | {DEFINITIONS + "common.py"}
+    assert shared == SHARED_IMPLEMENTATION_FILES
+    for specification in first:
+        prefix, tail = shared_prefix_and_tail(specification)
+        assert prefix == shared
+        assert tail == EXPECTED_VIEW_SPECIFIC_FILES[specification.view_id]
+        files = specification.generator.implementation_files
+        assert len(files) == len(set(files))
+        assert not any(path.startswith("docs/") for path in files)
+
+
+def test_c1_no_view_binds_another_views_specific_bytes():
+    specifications = {spec.view_id: spec for spec in production_view_specifications()}
+    private_modules = {DEFINITIONS + view_id + ".py" for view_id in specifications}
+    for view_id, specification in specifications.items():
+        tail = set(shared_prefix_and_tail(specification)[1])
+        own = DEFINITIONS + view_id + ".py"
+        assert own in tail
+        assert not (tail & (private_modules - {own}))
+        assert tail == derived_view_specific_files(specification)
+    # Neither the host catalog nor the non-persistent inventory view is any persistent view's input.
+    unbound = {DEFINITIONS + "__init__.py", DEFINITIONS + "source_inventory.py",
+               PACKAGE_ROOT + "pure_source_inventory.py"}
+    assert not any(unbound & set(spec.generator.implementation_files) for spec in specifications.values())
+
+
+def test_c1_views_module_holds_only_shared_builder_infrastructure():
+    """views.py is shared by every view, so it carries no view-specific declaration."""
+    source = (ROOT / "tools/project_knowledge/views.py").read_text(encoding="utf-8")
+    tree = ast.parse(source)
+    names = {node.name for node in tree.body if isinstance(node, ast.FunctionDef)}
+    assigned = {target.id for node in tree.body if isinstance(node, ast.Assign)
+                for target in node.targets if isinstance(target, ast.Name)}
+    assert not {name for name in names if name.endswith("_specification")}
+    assert "production_view_specifications" not in names and "PURE_UNIT_REGISTRY" not in assigned
+    assert "pure_" not in source and "view_definitions" not in source
+    assert [path for path in SHARED_IMPLEMENTATION_FILES if "pure_" in path] == []
+    assert [path for path in SHARED_IMPLEMENTATION_FILES
+            if path.startswith(DEFINITIONS) and path != DEFINITIONS + "common.py"] == []
+
+
+def test_c1_every_declared_view_specific_file_is_required_by_generation(core_repo):
+    specifications, _, content = c1_material(core_repo)
+    capabilities = _capabilities()
+    for specification in specifications:
+        closure = {path: content[path] for path in specification.generator.implementation_files}
+        identities = [specification.compute]
+        if specification.serialize != "canonical_json.v1":
+            identities.append(specification.serialize)
+        # Sufficient: the view's own closure alone resolves every unit it executes.
+        for identity in identities:
+            resolve_unit(identity, declared_units(closure), closure, capabilities)
+        # Necessary: dropping any one view-specific file breaks resolution. The
+        # specification module is the file that declares the closure itself.
+        own = repository_path(getattr(view_definitions, specification.view_id))
+        for path in shared_prefix_and_tail(specification)[1]:
+            if path == own:
+                continue
+            reduced = {name: blob for name, blob in closure.items() if name != path}
+            with pytest.raises(SubstrateError) as failure:
+                for identity in identities:
+                    resolve_unit(identity, declared_units(reduced), reduced, capabilities)
+            assert failure.value.code in {"UNQUALIFIED_PURE_UNIT", "MISSING_PURE_IMPLEMENTATION"}, (
+                specification.view_id, path)
+
+
+def test_c1_declaration_loader_is_data_only_and_closure_scoped():
+    good = b"PURE_UNITS = (('a.v1', 'tools/project_knowledge/pure_x.py', 'a', (), ()),)\n"
+    path = DEFINITIONS + "x.py"
+    assert declared_units({path: good}) == (("a.v1", "tools/project_knowledge/pure_x.py", "a", (), ()),)
+    assert declared_units({PACKAGE_ROOT + "other.py": good, DEFINITIONS + "x.txt": good}) == ()
+    assert declared_units({path: b"import os\nvalue = os.getcwd()\n"}) == ()
+    for bad in (b"PURE_UNITS = [1]\n", b"PURE_UNITS = (open('x'),)\n", b"PURE_UNITS = ()\nPURE_UNITS = ()\n",
+                b"PURE_UNITS = (\n"):
+        with pytest.raises(SubstrateError) as failure:
+            declared_units({path: bad})
+        assert failure.value.code == "INVALID_PURE_REGISTRY"
+    # A view's own blobs cannot qualify another view's private unit.
+    specifications = {spec.view_id: spec for spec in production_view_specifications()}
+    blobs = {p: (ROOT / p).read_bytes() for p in specifications["subject_index"].generator.implementation_files}
+    with pytest.raises(SubstrateError) as failure:
+        resolve_unit("identity_index.v1", declared_units(blobs), blobs, _capabilities())
+    assert failure.value.code == "UNQUALIFIED_PURE_UNIT"
+
+
+# path -> the exact set of views whose generation semantics depend on it
+C1_INVALIDATION_CASES = {
+    # view-specific specification / private unit-declaration modules
+    DEFINITIONS + "subject_index.py": {"subject_index"},
+    DEFINITIONS + "identity_index.py": {"identity_index"},
+    DEFINITIONS + "authority_index.py": {"authority_index"},
+    DEFINITIONS + "current_state_core.py": {"current_state_core"},
+    DEFINITIONS + "current_state_core_markdown.py": {"current_state_core_markdown"},
+    # unit declarations consumed by several views
+    DEFINITIONS + "units_unique_values.py": NOT_CORE,
+    DEFINITIONS + "units_temporal.py": {"identity_index", "workstream_graph"},
+    DEFINITIONS + "units_normalized_scope.py": {"source_catalog", "authority_index"},
+    DEFINITIONS + "units_current_state_core.py": {"current_state_core", "current_state_core_markdown"},
+    # view-specific pure sources
+    PACKAGE_ROOT + "pure_authority_index.py": {"authority_index"},
+    PACKAGE_ROOT + "pure_risk_obligation_index.py": {"risk_obligation_index"},
+    PACKAGE_ROOT + "pure_current_state_core_markdown.py": {"current_state_core_markdown"},
+    # shared pure sources
+    PACKAGE_ROOT + "pure_unique_values.py": NOT_CORE,
+    PACKAGE_ROOT + "pure_temporal.py": {"identity_index", "workstream_graph"},
+    PACKAGE_ROOT + "pure_normalized_scope.py": {"source_catalog", "authority_index"},
+    PACKAGE_ROOT + "pure_current_state_core.py": {"current_state_core", "current_state_core_markdown"},
+    # genuinely shared builder / admission / execution infrastructure and schemas
+    PACKAGE_ROOT + "views.py": ALL_VIEWS,
+    PACKAGE_ROOT + "model.py": ALL_VIEWS,
+    PACKAGE_ROOT + "adapters/pure.py": ALL_VIEWS,
+    PACKAGE_ROOT + "adapters/execution.py": ALL_VIEWS,
+    PACKAGE_ROOT + "services/generation.py": ALL_VIEWS,
+    DEFINITIONS + "common.py": ALL_VIEWS,
+    "schemas/project_knowledge/defs.v1.schema.json": ALL_VIEWS,
+}
+
+
+def test_c1_declared_consumers_match_every_closure_membership():
+    specifications = production_view_specifications()
+    for path, expected in C1_INVALIDATION_CASES.items():
+        assert {spec.view_id for spec in specifications if path in spec.generator.implementation_files} == expected, path
+
+
+def test_c1_byte_change_invalidates_exactly_the_actual_consumers(core_repo):
+    material = c1_material(core_repo)
+    before = blob_builds(material)
+    assert set(before) == ALL_VIEWS
+    for path, expected in C1_INVALIDATION_CASES.items():
+        after = blob_builds(material, {path: material[2][path] + b"\n# c1 fixture-only byte change\n"})
+        stale = set()
+        for view_id, previous in before.items():
+            freshness = manifest_freshness(previous.manifest, after[view_id], existing_view_bytes=previous.view_bytes)
+            if freshness.status == ViewFreshnessStatus.STALE:
+                stale.add(view_id)
+                assert {d.code for d in freshness.diagnostics} == {"STALE_VIEW_GENERATOR", "STALE_VIEW_BOUNDARY"}, (path, view_id)
+            else:
+                assert freshness.status == ViewFreshnessStatus.FRESH, (path, view_id)
+                assert after[view_id].manifest_bytes == previous.manifest_bytes, (path, view_id)
+            # Comment-only structure changes never change generated view bytes.
+            assert after[view_id].view_bytes == previous.view_bytes, (path, view_id)
+        assert stale == expected, path
+
+
+def test_c1_full_and_each_selected_build_are_exactly_equivalent(core_repo):
+    specifications = production_view_specifications()
+    snapshot = commit_snapshot(core_repo, "HEAD")
+    full = by_id(generate_views(snapshot, specifications))
+    for view_id in full:
+        selected, = generate_views(snapshot, specifications, selected_view_ids=(view_id,))
+        assert selected == full[view_id]
+
+
+def test_c1_bound_worker_build_matches_in_process_closure_build(core_repo):
+    """The bound worker reads declarations from blobs and yields the same exact bytes."""
+    snapshot = commit_snapshot(core_repo, "HEAD")
+    worker = by_id(generate_views(snapshot, production_view_specifications()))
+    local = blob_builds(c1_material(core_repo))
+    assert {k: (v.view_bytes, v.manifest_bytes) for k, v in worker.items()} == {
+        k: (v.view_bytes, v.manifest_bytes) for k, v in local.items()}
 
 
 def test_eight_persistent_paths_exact_schemas_and_deterministic_bytes(core_repo):

@@ -12,9 +12,7 @@ from tools.project_knowledge.model import (
     AuthorityClass, GovernedSource, Profile, RawDeclaration, Relation, RelationMode,
     Scope, SemanticId, SnapshotMode, SourceRevision, thaw_json,
 )
-from tools.project_knowledge.views import (
-    PURE_UNIT_REGISTRY, source_inventory_specification,
-)
+from tools.project_knowledge.view_definitions import PURE_UNIT_REGISTRY, source_inventory_specification
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -42,6 +40,9 @@ def allowed_dependency(module: str, dependency: str) -> bool:
         return dependency.startswith(prefix + ".model") or dependency.split(".")[0] in {"jsonschema", "referencing"}
     if ".services." in module:
         return dependency.startswith(prefix)
+    if ".view_definitions." in module:
+        # Declaration data: model types and sibling declarations only.
+        return dependency.startswith((prefix + ".model", prefix + ".view_definitions"))
     if module == prefix + ".__main__":
         return dependency.startswith(prefix + ".cli")
     if module == prefix + ".cli":
@@ -69,26 +70,30 @@ def test_g009_production_units_and_tcb_have_explicit_source_contracts():
     assert type(specification.compute) is type(specification.serialize) is str
     assert len(TCB_FILES) == 15 and len(SCHEMA_FILES) == 9
     assert set(specification.generator.implementation_files) == (
-        set(TCB_FILES) | set(SCHEMA_FILES) | {"tools/project_knowledge/pure_units.py"})
+        set(TCB_FILES) | set(SCHEMA_FILES) | {
+            "tools/project_knowledge/view_definitions/common.py",
+            "tools/project_knowledge/view_definitions/source_inventory.py",
+            "tools/project_knowledge/pure_source_inventory.py"})
     for path in TCB_FILES:
         check_tcb_source(path, (ROOT / path).read_bytes())
     accepted_prefix = (
-        ("source_inventory.v1", "tools/project_knowledge/pure_units.py", "source_inventory",
+        ("source_inventory.v1", "tools/project_knowledge/pure_source_inventory.py", "source_inventory",
          (("entry", "inventory_entry.v1"),), ()),
-        ("inventory_entry.v1", "tools/project_knowledge/pure_units.py", "inventory_entry", (), ()),
-        ("current_state_core.v1", "tools/project_knowledge/pure_units.py", "current_state_core",
+        ("inventory_entry.v1", "tools/project_knowledge/pure_source_inventory.py", "inventory_entry", (), ()),
+        ("current_state_core.v1", "tools/project_knowledge/pure_current_state_core.py", "current_state_core",
          (("single", "core_single.v1"), ("fields", "core_fields.v1"),
           ("reference", "core_reference.v1"), ("paused", "core_paused.v1")), ("sorted_values",)),
-        ("core_single.v1", "tools/project_knowledge/pure_units.py", "core_single", (), ("length", "fail_view")),
-        ("core_fields.v1", "tools/project_knowledge/pure_units.py", "core_fields", (), ("fail_view",)),
-        ("core_reference.v1", "tools/project_knowledge/pure_units.py", "core_reference",
+        ("core_single.v1", "tools/project_knowledge/pure_current_state_core.py", "core_single", (), ("length", "fail_view")),
+        ("core_fields.v1", "tools/project_knowledge/pure_current_state_core.py", "core_fields", (), ("fail_view",)),
+        ("core_reference.v1", "tools/project_knowledge/pure_current_state_core.py", "core_reference",
          (("single", "core_single.v1"),), ()),
-        ("core_procedure.v1", "tools/project_knowledge/pure_units.py", "core_procedure", (), ("length", "fail_view")),
-        ("core_paused.v1", "tools/project_knowledge/pure_units.py", "core_paused",
+        ("core_procedure.v1", "tools/project_knowledge/pure_current_state_core.py", "core_procedure", (), ("length", "fail_view")),
+        ("core_paused.v1", "tools/project_knowledge/pure_current_state_core.py", "core_paused",
          (("fields", "core_fields.v1"), ("reference", "core_reference.v1"), ("procedure", "core_procedure.v1")),
          ("sorted_values",)),
     )
-    assert PURE_UNIT_REGISTRY[:len(accepted_prefix)] == accepted_prefix
+    # Registry order is now per declaration module; the accepted records are unchanged data.
+    assert set(accepted_prefix) <= set(PURE_UNIT_REGISTRY) and len(PURE_UNIT_REGISTRY) == 31
     identities = tuple(record[0] for record in PURE_UNIT_REGISTRY)
     assert len(identities) == len(set(identities))
     assert set(identities) == {
@@ -108,24 +113,42 @@ def test_g009_production_units_and_tcb_have_explicit_source_contracts():
         "current_state_core_markdown.v1",
     }
     assert {record[1] for record in PURE_UNIT_REGISTRY} == {
-        "tools/project_knowledge/pure_units.py"
+        "tools/project_knowledge/pure_authority_index.py",
+        "tools/project_knowledge/pure_current_state_core.py",
+        "tools/project_knowledge/pure_current_state_core_markdown.py",
+        "tools/project_knowledge/pure_identity_index.py",
+        "tools/project_knowledge/pure_normalized_scope.py",
+        "tools/project_knowledge/pure_risk_obligation_index.py",
+        "tools/project_knowledge/pure_source_catalog.py",
+        "tools/project_knowledge/pure_source_inventory.py",
+        "tools/project_knowledge/pure_subject_index.py",
+        "tools/project_knowledge/pure_temporal.py",
+        "tools/project_knowledge/pure_unique_values.py",
+        "tools/project_knowledge/pure_workstream_graph.py",
     }
     assert all(
         dependency in set(identities)
         for _, _, _, helpers, _ in PURE_UNIT_REGISTRY
         for _, dependency in helpers
     )
-    blobs = {"tools/project_knowledge/pure_units.py": (PACKAGE / "pure_units.py").read_bytes()}
+    blobs = {"tools/project_knowledge/pure_source_inventory.py":
+             (PACKAGE / "pure_source_inventory.py").read_bytes()}
     compute = resolve_unit(specification.compute, PURE_UNIT_REGISTRY, blobs, {})
     assert compute(()) == {"schema_version": "1", "authority_class": "derived", "sources": []}
 
 
 def test_g010_uses_same_closed_framework_and_no_research_runtime():
-    from tools.project_knowledge.views import current_state_core_specification
+    from tools.project_knowledge.view_definitions import current_state_core_specification
     from tools.project_knowledge.adapters.pure import resolve_unit
     from tools.project_knowledge.services.generation import _capabilities
     core = current_state_core_specification()
-    assert core.generator.implementation_files == source_inventory_specification().generator.implementation_files
+    shared = source_inventory_specification().generator.implementation_files[:25]
+    assert core.generator.implementation_files[:25] == shared
+    assert core.generator.implementation_files[25:] == (
+        "tools/project_knowledge/view_definitions/current_state_core.py",
+        "tools/project_knowledge/view_definitions/units_current_state_core.py",
+        "tools/project_knowledge/pure_current_state_core.py",
+    )
     blobs = {p: (ROOT / p).read_bytes() for p in core.generator.implementation_files}
     compute = resolve_unit(core.compute, PURE_UNIT_REGISTRY, blobs, _capabilities())
     with pytest.raises(Exception, match="exactly one canonical owner"):
@@ -244,7 +267,7 @@ def test_g014_cli_is_thin_and_generated_writes_are_structurally_bounded():
     assert "tools/project_knowledge/services/semantic_validation.py" not in TCB_FILES
     assert "tools/project_knowledge/cli.py" not in TCB_FILES
 
-    from tools.project_knowledge.views import production_view_specifications
+    from tools.project_knowledge.view_definitions import production_view_specifications
     persistent = production_view_specifications()
     assert len(persistent) == 8
     assert {spec.view_path for spec in persistent} == {

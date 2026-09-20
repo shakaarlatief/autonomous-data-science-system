@@ -15,7 +15,8 @@ from tools.project_knowledge.services import generation
 from tools.project_knowledge.adapters.gitio import worktree_snapshot
 from tools.project_knowledge.services.generation import generate_views
 from tools.project_knowledge.services.validation import validate_public_projection, validate_repository
-from tools.project_knowledge.views import ViewValidationError, source_inventory_specification
+from tools.project_knowledge.view_definitions import source_inventory_specification
+from tools.project_knowledge.views import ViewValidationError
 
 
 ROOT = Path(__file__).resolve().parents[2]

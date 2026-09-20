@@ -9,7 +9,7 @@ from dataclasses import asdict
 from pathlib import Path
 
 from ..adapters.execution import TCB_FILES, execute_snapshot, verify_checkout_implementation
-from ..adapters.pure import plain_text, resolve_unit
+from ..adapters.pure import declared_units, plain_text, resolve_unit
 from ..adapters.gitio import read_blobs
 from ..adapters.schema import SCHEMA_FILES, SchemaValidator
 from ..model import (
@@ -17,7 +17,7 @@ from ..model import (
     RawDeclaration, ViewBuildResult, ViewFreshnessStatus, ViewInput, thaw_json,
 )
 from ..views import (
-    PURE_UNIT_REGISTRY, deterministic_json, deterministic_utf8, ViewValidationError, build_views, fail, finding,
+    deterministic_json, deterministic_utf8, ViewValidationError, build_views, fail, finding,
     bind_view_inputs, manifest_freshness, validate_specifications,
 )
 from .discovery import DiscoveryPolicy, PathRole
@@ -246,11 +246,12 @@ def _worker_dispatch(request, blobs):
         )
         from tools.project_knowledge.services.generation import _generate_verified, _freshness_verified, _dependencies_verified
         specs = []
+        registry = declared_units(blobs)
         for s in request["specifications"]:
             capabilities = _capabilities()
-            compute = resolve_unit(s["compute"], PURE_UNIT_REGISTRY, blobs, capabilities)
+            compute = resolve_unit(s["compute"], registry, blobs, capabilities)
             serialize = deterministic_json if s["serialize"] == "canonical_json.v1" else resolve_unit(
-                s["serialize"], PURE_UNIT_REGISTRY, blobs, capabilities)
+                s["serialize"], registry, blobs, capabilities)
             specs.append(ViewSpecification(s["view_id"], s["view_path"], s["manifest_path"], s["view_schema_version"],
                 s["rebuildability_class"], ViewInputSelector(**s["selector"]), ViewGenerator(**s["generator"]), compute, serialize,
                 compute_identity=s["compute"], serialize_identity=s["serialize"]))

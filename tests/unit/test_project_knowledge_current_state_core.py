@@ -17,10 +17,11 @@ from tools.project_knowledge.adapters.schema import SchemaValidator
 from tools.project_knowledge.model import RawDeclaration, SnapshotMode, ViewFreshnessStatus, ViewInput
 from tools.project_knowledge.services.generation import generate_views, check_view_freshness, _capabilities
 from tools.project_knowledge.services.validation import validate_repository, validate_declaration
-from tools.project_knowledge.views import (
-    PURE_UNIT_REGISTRY, build_views, current_state_core_specification, deterministic_json,
-    source_inventory_specification, ViewValidationError,
+from tools.project_knowledge.view_definitions import (
+    PURE_UNIT_REGISTRY, current_state_core_specification, production_view_specifications,
+    source_inventory_specification,
 )
+from tools.project_knowledge.views import build_views, deterministic_json, ViewValidationError
 from tools.project_knowledge.workstreams import workstream_from_source
 from tests.unit.test_project_knowledge_views import git, write, commit
 
@@ -46,7 +47,12 @@ def core_repo(tmp_path):
     git(tmp_path, "config", "user.email", "fixture@example.invalid")
     git(tmp_path, "config", "user.name", "G010 isolated fixture")
     git(tmp_path, "config", "core.autocrlf", "false")
-    for path in current_state_core_specification().generator.implementation_files:
+    implementation_files = {
+        path
+        for specification in (*production_view_specifications(), source_inventory_specification())
+        for path in specification.generator.implementation_files
+    }
+    for path in sorted(implementation_files):
         write(tmp_path, path, (ROOT / path).read_bytes())
     for path, declaration in corpus().items():
         write(tmp_path, path, deterministic_json(declaration))

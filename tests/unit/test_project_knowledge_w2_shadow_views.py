@@ -8,7 +8,7 @@ from pathlib import Path
 from tools.project_knowledge.adapters.gitio import commit_snapshot
 from tools.project_knowledge.declaration import parse_markdown
 from tools.project_knowledge.services.generation import generate_views
-from tools.project_knowledge.views import production_view_specifications
+from tools.project_knowledge.view_definitions import production_view_specifications
 
 
 ROOT = Path(__file__).resolve().parents[2]

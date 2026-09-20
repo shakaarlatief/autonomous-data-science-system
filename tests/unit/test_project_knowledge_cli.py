@@ -39,6 +39,7 @@ CLI_FILES = (
     "tools/project_knowledge/__main__.py",
     "tools/project_knowledge/cli.py",
     "tools/project_knowledge/identity.py",
+    "tools/project_knowledge/view_definitions/__init__.py",
     "tools/project_knowledge/workstreams.py",
     "tools/project_knowledge/adapters/generated_io.py",
     "tools/project_knowledge/services/cli_ops.py",

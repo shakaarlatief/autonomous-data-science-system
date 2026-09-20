@@ -22,9 +22,8 @@ from tools.project_knowledge.model import AuthorityClass, Profile, SnapshotMode,
 from tools.project_knowledge.services import refresh
 from tools.project_knowledge.services.generation import generate_views
 from tools.project_knowledge.services.validation import validate_repository
-from tools.project_knowledge.views import (
-    ViewValidationError, current_state_core_specification, deterministic_json, source_inventory_specification,
-)
+from tools.project_knowledge.view_definitions import current_state_core_specification, source_inventory_specification
+from tools.project_knowledge.views import ViewValidationError, deterministic_json
 
 
 @pytest.fixture
@@ -173,7 +172,12 @@ def test_selector_and_execution_contract_changes_without_repository_change(refre
     changed = (specs[0], replace(specs[1], selector=ViewInputSelector(profiles=(Profile.WORKSTREAM,))), specs[2])
     # Even with equal membership, the declared selection boundary changes.
     assert_equivalent(root, previous, changed, ("work_inventory",), old_specs=specs)
-    changed = (replace(specs[0], compute="source_inventory.v1"), *specs[1:])
+    inventory_files = source_inventory_specification().generator.implementation_files
+    changed_core = replace(
+        specs[0], compute="source_inventory.v1",
+        generator=replace(specs[0].generator, implementation_files=inventory_files),
+    )
+    changed = (changed_core, *specs[1:])
     assert_equivalent(root, previous, changed, ("current_state_core",), old_specs=specs)
 
 
@@ -435,9 +439,9 @@ def probe(root, previous, specs, old_specs=None):
     return result
 
 
-@pytest.mark.parametrize("path", ["tools/project_knowledge/pure_units.py", "tools/project_knowledge/services/validation.py",
+@pytest.mark.parametrize("path", ["tools/project_knowledge/pure_source_inventory.py", "tools/project_knowledge/services/validation.py",
                                  "schemas/project_knowledge/workstream.v1.schema.json"])
-def test_committed_shared_implementation_changes_select_all_from_executing_fixture(refresh_repo, path):
+def test_committed_implementation_changes_select_exact_consumers_from_executing_fixture(refresh_repo, path):
     root = refresh_repo
     specs = specifications()
     previous = head(root)
@@ -445,7 +449,7 @@ def test_committed_shared_implementation_changes_select_all_from_executing_fixtu
     # never modules accidentally imported from the main checkout.
     if path.endswith(".json"):
         update(root, path, lambda d: d.update(title="G013 exact schema revision"))
-    elif path.endswith("pure_units.py"):
+    elif path.endswith("pure_source_inventory.py"):
         original = (root / path).read_bytes()
         target = (
             b'return {"schema_version": "1", "authority_class": "derived",\n'
@@ -461,9 +465,11 @@ def test_committed_shared_implementation_changes_select_all_from_executing_fixtu
         write(root, path, (root / path).read_bytes() + b"\n# G013 exact implementation revision\n")
     commit(root)
     result = probe(root, previous, specs)
-    assert result["equal"] and result["ids"] == sorted(s.view_id for s in specs)
+    expected = (["semantic_inventory", "work_inventory"]
+                if path.endswith("pure_source_inventory.py") else sorted(s.view_id for s in specs))
+    assert result["equal"] and result["ids"] == expected
     assert {reason for _, reason in result["reasons"]} == {"IMPLEMENTATION_CLOSURE_CHANGED"}
-    if path.endswith("pure_units.py"):
+    if path.endswith("pure_source_inventory.py"):
         assert result["versions"] == {"current_state_core": "1", "semantic_inventory": "2", "work_inventory": "2"}
 
 
@@ -485,7 +491,7 @@ def test_view_local_implementation_change_does_not_rebuild_other_views(refresh_r
 def test_uncommitted_executing_drift_cannot_be_misreported_as_no_impact(refresh_repo):
     root = refresh_repo
     previous = head(root)
-    path = "tools/project_knowledge/pure_units.py"
+    path = "tools/project_knowledge/pure_source_inventory.py"
     write(root, path, (root / path).read_bytes().replace(b'"schema_version": "1"', b'"schema_version": "X"'))
     result = probe(root, previous, specifications())
     assert "EXECUTION_IMPLEMENTATION_MISMATCH" in result["codes"]

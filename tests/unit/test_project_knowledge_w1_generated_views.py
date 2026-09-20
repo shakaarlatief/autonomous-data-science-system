@@ -8,7 +8,7 @@ from pathlib import Path
 from tools.project_knowledge.adapters.gitio import commit_snapshot
 from tools.project_knowledge.declaration import parse_markdown
 from tools.project_knowledge.services.generation import generate_views
-from tools.project_knowledge.views import (
+from tools.project_knowledge.view_definitions import (
     current_state_core_markdown_specification,
     current_state_core_specification,
     workstream_graph_specification,

@@ -16,7 +16,8 @@ from ..declaration import parse_native_json
 from ..model import (
     AuthorityClass, Diagnostic, DiagnosticSeverity, SnapshotMode, SubstrateError, ViewFreshnessStatus,
 )
-from ..views import ViewValidationError, production_view_specifications
+from ..view_definitions import production_view_specifications
+from ..views import ViewValidationError
 from .discovery import DiscoveryPolicy, PathRole, open_snapshot
 from .generation import check_view_freshness, generate_views
 from .refresh import refresh_views
