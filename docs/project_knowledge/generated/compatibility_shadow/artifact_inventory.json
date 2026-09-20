@@ -1,6 +1,6 @@
 {
-  "artifact_count": 1364,
-  "artifact_tree_digest": "28ca3046bc41e41bc0ede691d5d8e7df0f2050e8dacb6a09dd2f1b468492c7cd",
+  "artifact_count": 1370,
+  "artifact_tree_digest": "65e0ba29f5395111d95d58669c4cf7a2806a0647d501da342d95baa1d261eb64",
   "artifacts": [
     {
       "group": "<docs-root>",
@@ -4797,6 +4797,21 @@
       "suffix": ".md"
     },
     {
+      "group": "model_collaboration",
+      "path": "docs/model_collaboration/threads/MC-0019/BRIEF.md",
+      "suffix": ".md"
+    },
+    {
+      "group": "model_collaboration",
+      "path": "docs/model_collaboration/threads/MC-0019/STATE.json",
+      "suffix": ".json"
+    },
+    {
+      "group": "model_collaboration",
+      "path": "docs/model_collaboration/threads/MC-0019/THREAD.md",
+      "suffix": ".md"
+    },
+    {
       "group": "private_companion",
       "path": "docs/private_companion/README.md",
       "suffix": ".md"
@@ -5900,6 +5915,21 @@
     },
     {
       "group": "research",
+      "path": "docs/research/210_w5_t1_controlled_subject_vocabulary_fixture_freeze.md",
+      "suffix": ".md"
+    },
+    {
+      "group": "research",
+      "path": "docs/research/211_w5_t3_item_registry_identity_carrier_fixture_freeze.md",
+      "suffix": ".md"
+    },
+    {
+      "group": "research",
+      "path": "docs/research/212_w5_t3_item_registry_identity_carrier_result.md",
+      "suffix": ".md"
+    },
+    {
+      "group": "research",
       "path": "docs/research/CODEX_UPSTREAM_ADS_COMPARISON_MATRIX.md",
       "suffix": ".md"
     },
@@ -6864,7 +6894,7 @@
       "group": "methodological_knowledge"
     },
     {
-      "artifact_count": 135,
+      "artifact_count": 138,
       "group": "model_collaboration"
     },
     {
@@ -6876,7 +6906,7 @@
       "group": "project_knowledge"
     },
     {
-      "artifact_count": 356,
+      "artifact_count": 359,
       "group": "research"
     },
     {
@@ -6889,5 +6919,5 @@
     }
   ],
   "schema_version": "1",
-  "source_boundary": "sha256:77c7c4bc586e37627bba1af60d4b54771a37526ce40a739aecf4caf292608ffd"
+  "source_boundary": "sha256:ecc52a2c52734b83cd45cb80ae7634dba1a48881cee91b8efa5ff38067007232"
 }
