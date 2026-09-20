@@ -1,6 +1,6 @@
 {
-  "artifact_count": 1386,
-  "artifact_tree_digest": "f6569b45e4a32a932af360a5b3a72d5fa18f989e55510d4d2e2436766d971d33",
+  "artifact_count": 1391,
+  "artifact_tree_digest": "7bf208216202b980f5cfc67137c92adf49a8a36930dcf8d438bff4cf525e10c3",
   "artifacts": [
     {
       "group": "<docs-root>",
@@ -2837,6 +2837,11 @@
     {
       "group": "checkpoints",
       "path": "docs/checkpoints/555_w5_information_architecture_frozen_broader_semantic_migration_opened.md",
+      "suffix": ".md"
+    },
+    {
+      "group": "checkpoints",
+      "path": "docs/checkpoints/556_activation_orchestration_self_hosting_bootstrap_opened.md",
       "suffix": ".md"
     },
     {
@@ -6010,6 +6015,11 @@
     },
     {
       "group": "research",
+      "path": "docs/research/219_activation_orchestration_self_hosting_bootstrap_program.md",
+      "suffix": ".md"
+    },
+    {
+      "group": "research",
       "path": "docs/research/CODEX_UPSTREAM_ADS_COMPARISON_MATRIX.md",
       "suffix": ".md"
     },
@@ -6112,6 +6122,21 @@
       "group": "research",
       "path": "docs/research/github_connector_native_schema_capture.json",
       "suffix": ".json"
+    },
+    {
+      "group": "research",
+      "path": "docs/research/project_knowledge_activation_orchestration/001_chat26_owner_source_interaction_orchestration_evidence.md",
+      "suffix": ".md"
+    },
+    {
+      "group": "research",
+      "path": "docs/research/project_knowledge_activation_orchestration/002_chat27_activation_self_hosting_bootstrap_evidence.md",
+      "suffix": ".md"
+    },
+    {
+      "group": "research",
+      "path": "docs/research/project_knowledge_activation_orchestration/README.md",
+      "suffix": ".md"
     },
     {
       "group": "research",
@@ -6950,7 +6975,7 @@
       "group": "<docs-root>"
     },
     {
-      "artifact_count": 558,
+      "artifact_count": 559,
       "group": "checkpoints"
     },
     {
@@ -6986,7 +7011,7 @@
       "group": "project_knowledge"
     },
     {
-      "artifact_count": 365,
+      "artifact_count": 369,
       "group": "research"
     },
     {
@@ -6999,5 +7024,5 @@
     }
   ],
   "schema_version": "1",
-  "source_boundary": "sha256:3b9e73deea80dd300e8ac5a986d1530808fdf77ae0144ea38a39d14528917d69"
+  "source_boundary": "sha256:a5e14b9159cae5002ffd3f7464da359d2447d52ac70c6d1dcdf4c3122128d6ad"
 }

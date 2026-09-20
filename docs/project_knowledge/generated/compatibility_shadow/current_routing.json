@@ -1,8 +1,8 @@
 {
   "active_development_branch": "v1-source-vault-bootstrap-resume",
   "active_pr": null,
-  "current_boundary": "project-knowledge-broader-semantic-migration",
-  "current_checkpoint": 555,
+  "current_boundary": "project-knowledge-activation-orchestration-bootstrap",
+  "current_checkpoint": 556,
   "latest_experiment_outcome": "INCOMPLETE",
   "latest_specification": "028",
   "promoted_integration_branch": "v1-frontend-spike",
