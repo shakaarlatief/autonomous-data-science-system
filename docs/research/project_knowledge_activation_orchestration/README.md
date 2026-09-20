@@ -27,6 +27,9 @@ AO1_ARCHITECTURE_BACKLOG_STATUS_SNAPSHOT_V01.json
 
 AO1_OPEN_QUESTION_STATUS_SNAPSHOT_V01.json
     all 31 current open-question status rows at AO-1
+
+AO2_CONTROL_BOUNDARY_AND_FAILURE_TAXONOMY_V01.json
+    eight control responsibilities + eighteen behavioral failure classes
 ```
 
 Interpretation:

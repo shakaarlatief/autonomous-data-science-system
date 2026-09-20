@@ -9,7 +9,7 @@ This source owns the durable identity, active state, scope, objective, execution
 
 It does **not** own the substantive rationale selecting Candidate 01. D-035 remains the natural owner of that decision. The Project Integration Boundary, Source Vault continuation and Cockpit continuation remain in their own natural canonical owners. Current compatibility surfaces remain separate, and this workstream does not own an operational-authority switch.
 
-W1 through W4 are accepted. W5 remains in progress. Research 218 remains the frozen full W5 information-architecture baseline. Checkpoint 556 paused W5-F0 before implementation and opened Research 219's activation/orchestration bootstrap. Checkpoint 557 closes AO-1 after Research 220 reconstructed 31 capability families and exposed a material obligation-to-realization gap around the selected reconstruction planner and activation behavior. AO-2 now synthesizes the smallest architecture-neutral control-loop responsibility/failure model before conceptual design. W5-F0 remains paused, W5 itself is not yet accepted, W6 remains unavailable, and the workstream remains active while preserving:
+W1 through W4 are accepted. W5 remains in progress. Research 218 remains the frozen full W5 information-architecture baseline. Checkpoint 556 paused W5-F0 and opened Research 219. Checkpoint 557 / Research 220 completed AO-1 with a 31-capability audit; Checkpoint 558 / Research 221 completes AO-2 with eight control responsibilities and eighteen failure classes. AO-3 now owns conceptual control-plane design. W5-F0 remains paused, W5 itself is not yet accepted, W6 remains unavailable, and the workstream remains active while preserving:
 
 ```text
 CURRENT_OPERATIONAL_AUTHORITY=CURRENT_CONTINUITY_ARCHITECTURE
@@ -30,10 +30,10 @@ AUTHORITY_SWITCH_ALLOWED=false
   },
   "objective": "Implement and migrate the selected Candidate 01 project-development knowledge architecture under Specification 028 while current continuity remains operational authority until an explicit qualified switch.",
   "execution_anchor": {
-    "checkpoint": 557,
+    "checkpoint": 558,
     "development_branch": "v1-source-vault-bootstrap-resume",
     "pull_request": null,
-    "current_boundary": "project-knowledge-activation-orchestration-capability-synthesis"
+    "current_boundary": "project-knowledge-activation-orchestration-control-design"
   },
   "stage": {
     "stage_id": "SPECIFICATION:028",

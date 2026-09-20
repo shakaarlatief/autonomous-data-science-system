@@ -1,0 +1,326 @@
+{
+  "schema_version": 1,
+  "audit_id": "AO-2-CONTROL-BOUNDARY-V01",
+  "date": "2026-09-20",
+  "authority_class": "research_output",
+  "status": "AO2_SYNTHESIS",
+  "source_matrix": "docs/research/project_knowledge_activation_orchestration/AO1_COMPLETENESS_MATRIX_V01.json",
+  "design_boundary": {
+    "owner_role": [
+      "source of intent",
+      "source of observations",
+      "decision authority for genuine project intent and consequential normative choices",
+      "explicit override authority"
+    ],
+    "system_role": [
+      "interpret project events",
+      "activate relevant project-controlled knowledge",
+      "route process/workstream/collaborator/tool behavior",
+      "enforce authority and conformance gates",
+      "preserve appropriate evidence and continuation state",
+      "observe control-plane failures and architecture-evolution triggers"
+    ],
+    "principle": "The owner should not need to remember the architecture in order to use the architecture."
+  },
+  "control_responsibilities": [
+    {
+      "id": "AO-R1",
+      "name": "Project-event interpretation and explicit-intent boundary",
+      "mapped_capabilities": [
+        "AO-C02",
+        "AO-C10"
+      ],
+      "must_do": [
+        "Distinguish ordinary question/discussion from observation, investigation request, change request, preservation request, resume request, operational incident, architecture challenge, review result, and other consequential project events.",
+        "Preserve explicit owner directives and overrides.",
+        "Expose uncertainty when event classification materially affects downstream routing."
+      ],
+      "must_not_do": [
+        "Treat every utterance as a mutation request.",
+        "Require command syntax for normal operation.",
+        "Let model confidence silently authorize consequential behavior."
+      ]
+    },
+    {
+      "id": "AO-R2",
+      "name": "Reconstruction and knowledge-activation closure",
+      "mapped_capabilities": [
+        "AO-C01",
+        "AO-C03",
+        "AO-C06",
+        "AO-C07",
+        "AO-C21",
+        "AO-C28",
+        "AO-C29",
+        "AO-C31"
+      ],
+      "must_do": [
+        "Choose task-shaped reconstruction rather than whole-corpus loading.",
+        "Activate mandatory governing/risk-bearing/deferred knowledge when event conditions intersect it.",
+        "Keep exploratory retrieval subordinate to project-controlled mandatory closure.",
+        "Produce an inspectable traversal/activation receipt appropriate to consequence."
+      ],
+      "must_not_do": [
+        "Depend on owner filename knowledge.",
+        "Assume search similarity equals authority or mandatory relevance.",
+        "Declare success merely because relevant knowledge was discoverable after an explicit hint."
+      ]
+    },
+    {
+      "id": "AO-R3",
+      "name": "Authority, action-contract, and conformance gate",
+      "mapped_capabilities": [
+        "AO-C04",
+        "AO-C05"
+      ],
+      "must_do": [
+        "Resolve task-relevant governing authority before consequential guidance/action.",
+        "Bind exact revisions/freshness/private dependencies where required.",
+        "Activate mandatory action constraints and verify proposed guidance/action preserves them.",
+        "Fail visibly when required authority or conformance cannot be established."
+      ],
+      "must_not_do": [
+        "Allow retrieval rank, recency, model confidence, or convenience to set authority.",
+        "Treat source reading alone as proof that final guidance conforms."
+      ]
+    },
+    {
+      "id": "AO-R4",
+      "name": "Process, workstream, recovery, and Git-lifecycle routing",
+      "mapped_capabilities": [
+        "AO-C09",
+        "AO-C10",
+        "AO-C14",
+        "AO-C15",
+        "AO-C19"
+      ],
+      "must_do": [
+        "Select the appropriate project process and workstream transition.",
+        "Preserve parent/child/return semantics across interruptions and side missions.",
+        "Route operational failures to recovery paths independent of the failed component.",
+        "Apply governed branch/publication lifecycle policy when Git state is part of the work."
+      ],
+      "must_not_do": [
+        "Consume the main workstream indefinitely with an unrelated recovery incident.",
+        "Infer completion from previous-chat plans rather than durable evidence.",
+        "Conflate current branch state with lifecycle policy."
+      ]
+    },
+    {
+      "id": "AO-R5",
+      "name": "Collaboration and tool routing",
+      "mapped_capabilities": [
+        "AO-C16",
+        "AO-C17",
+        "AO-C18",
+        "AO-C20",
+        "AO-C24",
+        "AO-C25",
+        "AO-C26",
+        "AO-C27"
+      ],
+      "must_do": [
+        "Choose SOLO, review, independent/comparative, adversarial, implementation, or local-evidence collaboration according to task characteristics.",
+        "Keep collaboration policy distinct from transport.",
+        "Respect capability availability, independence requirements, write ownership, and review gates.",
+        "Allow manual relay when it is the accepted transport without making the owner decide the collaboration topology."
+      ],
+      "must_not_do": [
+        "Use more models by default.",
+        "Treat a provider/model as project authority.",
+        "Require automatic Codex dispatch, wakeup, or multi-agent machinery when manual transport satisfies the accepted workflow."
+      ]
+    },
+    {
+      "id": "AO-R6",
+      "name": "Preservation, promotion, and interaction continuity",
+      "mapped_capabilities": [
+        "AO-C11",
+        "AO-C12",
+        "AO-C13",
+        "AO-C14"
+      ],
+      "must_do": [
+        "Distinguish ephemeral conversation, interaction-durable non-authoritative continuity, captured candidate understanding, and promoted project knowledge.",
+        "Preserve unresolved interaction-local material when interruption would otherwise lose important reasoning.",
+        "Route valuable new understanding into capture/backlog/research/current-owner update as appropriate.",
+        "Never auto-promote conversation into authority."
+      ],
+      "must_not_do": [
+        "Store every token forever.",
+        "Lose important unresolved reasoning merely because it is not yet canonical.",
+        "Turn session metadata into substantive project authority."
+      ]
+    },
+    {
+      "id": "AO-R7",
+      "name": "Self-observation, obligation closure, and architecture evolution",
+      "mapped_capabilities": [
+        "AO-C07",
+        "AO-C08",
+        "AO-C21",
+        "AO-C22",
+        "AO-C23",
+        "AO-C28",
+        "AO-C31"
+      ],
+      "must_do": [
+        "Observe activation/routing/conformance/preservation misses and recurring pressure.",
+        "Track accepted design obligations through implementation gate, implementation evidence, and operational activation.",
+        "Distinguish implementation defects from clarification, amendment, supersession, and architecture reopen.",
+        "Activate known reopen conditions without making the trigger itself an automatic architecture change."
+      ],
+      "must_not_do": [
+        "Rely on the owner to notice every repeated system failure.",
+        "Silently drift away from frozen architecture.",
+        "Retroactively rewrite historical acceptance gates when a prospective scheduling gap is discovered."
+      ]
+    },
+    {
+      "id": "AO-R8",
+      "name": "Successor bridge and authority-transition safety",
+      "mapped_capabilities": [
+        "AO-C30",
+        "AO-C15",
+        "AO-C24",
+        "AO-C27"
+      ],
+      "must_do": [
+        "Allow successor control behavior to be evaluated/operated without claiming successor semantic authority.",
+        "Use current continuity architecture as authoritative input until explicit later switch.",
+        "Keep mutation authority bounded and case-specific.",
+        "Make rollback/fallback and degraded-mode behavior explicit."
+      ],
+      "must_not_do": [
+        "Use control-plane activation as an implicit authority switch.",
+        "Let successor-generated interpretations overwrite live authority merely because routing is better."
+      ]
+    }
+  ],
+  "failure_taxonomy": [
+    {
+      "id": "AO-F01",
+      "name": "EVENT_MISCLASSIFICATION",
+      "default_response": "ROUTE_REPAIR",
+      "definition": "Owner/project event is classified into a materially wrong process class."
+    },
+    {
+      "id": "AO-F02",
+      "name": "ACTIVATION_MISS",
+      "default_response": "ROUTE_REPAIR_AND_EVIDENCE",
+      "definition": "Relevant mandatory governing/risk-bearing knowledge exists but does not enter reasoning when the event makes it applicable."
+    },
+    {
+      "id": "AO-F03",
+      "name": "ACTIVATION_OVERREACH",
+      "default_response": "REPLAN_CONTEXT",
+      "definition": "Irrelevant or excessive context is made mandatory and degrades task fidelity or reconstruction cost."
+    },
+    {
+      "id": "AO-F04",
+      "name": "AUTHORITY_BYPASS",
+      "default_response": "FAIL_CLOSED",
+      "definition": "Consequential guidance/action proceeds without required authority resolution/consumption."
+    },
+    {
+      "id": "AO-F05",
+      "name": "CONTRACT_FIDELITY_LOSS",
+      "default_response": "FAIL_CLOSED",
+      "definition": "Correct governing source is activated but material constraints/order/prohibitions do not survive into final guidance/action."
+    },
+    {
+      "id": "AO-F06",
+      "name": "PROCESS_MISROUTE",
+      "default_response": "ROUTE_REPAIR",
+      "definition": "Correct event is sent to the wrong project lifecycle or procedure."
+    },
+    {
+      "id": "AO-F07",
+      "name": "COLLABORATION_MISROUTE",
+      "default_response": "ROUTE_REPAIR_OR_REVIEW",
+      "definition": "Collaboration topology/model/tool choice does not match consequence, independence, boundedness, or evidence-access needs."
+    },
+    {
+      "id": "AO-F08",
+      "name": "PRESERVATION_MISS",
+      "default_response": "CAPTURE_OR_RECOVER",
+      "definition": "Material unresolved/new understanding is lost because no appropriate durable path was activated."
+    },
+    {
+      "id": "AO-F09",
+      "name": "PREMATURE_AUTHORITY_PROMOTION",
+      "default_response": "FAIL_CLOSED",
+      "definition": "Conversation/capture/candidate material is treated as accepted authority without explicit promotion."
+    },
+    {
+      "id": "AO-F10",
+      "name": "RESUME_TARGET_LOSS",
+      "default_response": "FAIL_VISIBLE_AND_RECONSTRUCT",
+      "definition": "Interruption/side work closes without a reconstructable parent objective/return target."
+    },
+    {
+      "id": "AO-F11",
+      "name": "RECOVERY_PATH_DEPENDENCY_FAILURE",
+      "default_response": "BREAK_GLASS",
+      "definition": "The only available recovery instructions/path depend on the failed component."
+    },
+    {
+      "id": "AO-F12",
+      "name": "EVOLUTION_TRIGGER_MISS",
+      "default_response": "EVIDENCE_AND_REVIEW_TRIGGER",
+      "definition": "A declared reopen/escalation condition is observed but does not activate evaluation."
+    },
+    {
+      "id": "AO-F13",
+      "name": "FROZEN_CONTRACT_DRIFT",
+      "default_response": "FAIL_VISIBLE_AND_CLASSIFY",
+      "definition": "Implementation/process diverges from frozen architecture without explicit clarification/amendment/supersession/reopen."
+    },
+    {
+      "id": "AO-F14",
+      "name": "OBLIGATION_REALIZATION_GAP",
+      "default_response": "SCHEDULE_RECONCILIATION",
+      "definition": "Accepted design/spec obligation is not connected to an implementation gate/evidence/operational realization path."
+    },
+    {
+      "id": "AO-F15",
+      "name": "GIT_LIFECYCLE_DRIFT",
+      "default_response": "ROUTE_REPAIR_OR_WARN",
+      "definition": "Branch/publication lifecycle state diverges from governed policy, including prolonged qualified unpublished accumulation."
+    },
+    {
+      "id": "AO-F16",
+      "name": "CONTROL_OBSERVABILITY_GAP",
+      "default_response": "EVIDENCE_REQUIRED",
+      "definition": "The system cannot explain what it activated/routed/left latent or why."
+    },
+    {
+      "id": "AO-F17",
+      "name": "BRIDGE_AUTHORITY_LEAK",
+      "default_response": "FAIL_CLOSED",
+      "definition": "Successor control-plane output is treated as successor semantic authority before explicit cutover."
+    },
+    {
+      "id": "AO-F18",
+      "name": "OWNER_REMINDER_DEPENDENCY",
+      "default_response": "EVIDENCE_AND_ROOT_CAUSE",
+      "definition": "Correct project behavior occurs only after the owner remembers and names a mechanism/knowledge source that should have activated independently."
+    }
+  ],
+  "response_classes": {
+    "FAIL_CLOSED": "Do not perform the consequential action or authority transition.",
+    "FAIL_VISIBLE_AND_RECONSTRUCT": "Stop the affected continuation and reconstruct from durable project state.",
+    "ROUTE_REPAIR": "Correct process/collaboration routing before material continuation.",
+    "ROUTE_REPAIR_AND_EVIDENCE": "Correct the activation route and preserve the miss as qualification evidence when material.",
+    "REPLAN_CONTEXT": "Recompute a smaller/more appropriate reconstruction closure.",
+    "EVIDENCE_AND_REVIEW_TRIGGER": "Preserve observed trigger evidence and open the governed evaluation path; do not auto-change architecture.",
+    "FAIL_VISIBLE_AND_CLASSIFY": "Stop silent drift and classify as defect/clarification/amendment/supersession/reopen.",
+    "SCHEDULE_RECONCILIATION": "Create a prospective realization obligation; do not rewrite past acceptance history.",
+    "BREAK_GLASS": "Use an independent recovery path and preserve/resume parent workstream state.",
+    "CAPTURE_OR_RECOVER": "Preserve material unresolved reasoning through the least-authoritative sufficient path.",
+    "ROUTE_REPAIR_OR_REVIEW": "Correct collaborator/tool topology or open appropriate review.",
+    "ROUTE_REPAIR_OR_WARN": "Repair immediately if lifecycle integrity is at risk; otherwise surface bounded warning/obligation.",
+    "EVIDENCE_REQUIRED": "Do not claim qualified control behavior without inspectable traversal/routing evidence.",
+    "EVIDENCE_AND_ROOT_CAUSE": "Record the owner-reminder dependency and determine which activation/routing rule failed."
+  }
+}

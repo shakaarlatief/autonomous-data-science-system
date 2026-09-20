@@ -556,10 +556,10 @@ AO-1  repository-wide retrospective completeness audit
       COMPLETE / Research 220 + machine-readable matrix/snapshots
 
 AO-2  capability boundary and failure taxonomy
-      NEXT / collapse the 31-row audit into architecture-neutral control-loop responsibilities
+      COMPLETE / Research 221 + machine-readable responsibility/failure model
 
 AO-3  control-plane conceptual architecture
-      event -> activation -> routing -> collaboration -> preservation -> resume
+      NEXT / event -> activation -> routing -> collaboration -> preservation -> resume
 
 AO-4  architecture evolution + frozen-contract governance
       trigger classification and KEEP/CLARIFY/AMEND/SUPERSEDE/REOPEN path
@@ -601,7 +601,7 @@ Authority switch
     NOT ALLOWED
 
 Immediate next work
-    AO-2 CAPABILITY BOUNDARY AND FAILURE TAXONOMY
+    AO-3 CONTROL-PLANE CONCEPTUAL ARCHITECTURE
 ```
 
 No production navigation-schema/view code should be mutated merely to keep the old sequence moving.
@@ -638,5 +638,6 @@ RESEARCH218=FROZEN_BASELINE_RETAINED
 CURRENT_OPERATIONAL_AUTHORITY=CURRENT_CONTINUITY_ARCHITECTURE
 AUTHORITY_SWITCH_ALLOWED=false
 AO_1=COMPLETE
-NEXT=AO_2_CAPABILITY_BOUNDARY_AND_FAILURE_TAXONOMY
+AO_2=COMPLETE
+NEXT=AO_3_CONTROL_PLANE_CONCEPTUAL_ARCHITECTURE
 ```
