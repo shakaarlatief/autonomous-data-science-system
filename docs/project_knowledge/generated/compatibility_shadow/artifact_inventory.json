@@ -1,6 +1,6 @@
 {
-  "artifact_count": 1391,
-  "artifact_tree_digest": "7bf208216202b980f5cfc67137c92adf49a8a36930dcf8d438bff4cf525e10c3",
+  "artifact_count": 1396,
+  "artifact_tree_digest": "6a05955d6e935fa57e9af6fb2d8e2fa711c8bc7a9eeafe735e518d95b653c092",
   "artifacts": [
     {
       "group": "<docs-root>",
@@ -2842,6 +2842,11 @@
     {
       "group": "checkpoints",
       "path": "docs/checkpoints/556_activation_orchestration_self_hosting_bootstrap_opened.md",
+      "suffix": ".md"
+    },
+    {
+      "group": "checkpoints",
+      "path": "docs/checkpoints/557_ao1_retrospective_completeness_audit_closed.md",
       "suffix": ".md"
     },
     {
@@ -6020,6 +6025,11 @@
     },
     {
       "group": "research",
+      "path": "docs/research/220_ao1_retrospective_activation_orchestration_completeness_audit.md",
+      "suffix": ".md"
+    },
+    {
+      "group": "research",
       "path": "docs/research/CODEX_UPSTREAM_ADS_COMPARISON_MATRIX.md",
       "suffix": ".md"
     },
@@ -6132,6 +6142,21 @@
       "group": "research",
       "path": "docs/research/project_knowledge_activation_orchestration/002_chat27_activation_self_hosting_bootstrap_evidence.md",
       "suffix": ".md"
+    },
+    {
+      "group": "research",
+      "path": "docs/research/project_knowledge_activation_orchestration/AO1_ARCHITECTURE_BACKLOG_STATUS_SNAPSHOT_V01.json",
+      "suffix": ".json"
+    },
+    {
+      "group": "research",
+      "path": "docs/research/project_knowledge_activation_orchestration/AO1_COMPLETENESS_MATRIX_V01.json",
+      "suffix": ".json"
+    },
+    {
+      "group": "research",
+      "path": "docs/research/project_knowledge_activation_orchestration/AO1_OPEN_QUESTION_STATUS_SNAPSHOT_V01.json",
+      "suffix": ".json"
     },
     {
       "group": "research",
@@ -6975,7 +7000,7 @@
       "group": "<docs-root>"
     },
     {
-      "artifact_count": 559,
+      "artifact_count": 560,
       "group": "checkpoints"
     },
     {
@@ -7011,7 +7036,7 @@
       "group": "project_knowledge"
     },
     {
-      "artifact_count": 369,
+      "artifact_count": 373,
       "group": "research"
     },
     {
@@ -7024,5 +7049,5 @@
     }
   ],
   "schema_version": "1",
-  "source_boundary": "sha256:a5e14b9159cae5002ffd3f7464da359d2447d52ac70c6d1dcdf4c3122128d6ad"
+  "source_boundary": "sha256:fba0e7fe3072150e6a7c709946d9bb16ab967c5c06258b6ab8da6b18d5668c64"
 }

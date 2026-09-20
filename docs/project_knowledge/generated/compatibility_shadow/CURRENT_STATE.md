@@ -1,6 +1,6 @@
 # Current State
 
-Checkpoint: 556
+Checkpoint: 557
 Active development branch: v1-source-vault-bootstrap-resume
 Active PR: none
 Promoted integration boundary: v1-frontend-spike at 2480109fadeee1e480ef03b82e335aacdf9adf91
@@ -12,7 +12,7 @@ Latest scientific experiment outcome: INCOMPLETE
 - Semantic ID: WS-PKA-CURRENT
 - State: ACTIVE
 - Stage: SPECIFICATION:028 / W5_ACTIVATION_ORCHESTRATION_SELF_HOSTING_RESEARCH
-- Boundary: project-knowledge-activation-orchestration-bootstrap
+- Boundary: project-knowledge-activation-orchestration-capability-synthesis
 - Canonical owner: docs/project_knowledge/selected_architecture_workstream.md
 - Objective: Implement and migrate the selected Candidate 01 project-development knowledge architecture under Specification 028 while current continuity remains operational authority until an explicit qualified switch.
 
