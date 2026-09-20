@@ -1,7 +1,7 @@
 # MC-0020 Thread: W5 T1 V0.2 Blind Subject-Placement Calibration
 
 **Thread:** MC-0020
-**Status:** OPEN / CLAUDE MESSAGE 001 NEXT
+**Status:** RESOLVED / T1 ACCEPTED / FULL W5 RECONCILIATION NEXT
 **Review mode:** INDEPENDENT / BLIND PLACEMENT CALIBRATION
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
 **Exact reviewer-fixture target:** `f4308cc74b6d44640f399b6e9c102473382232df`
@@ -29,6 +29,9 @@ Claude receives only the blind reviewer catalog projection, the reviewer subset 
 Claude may write only under `docs/model_collaboration/threads/MC-0020/messages/**`. ChatGPT remains task owner/integrator.
 
 ```text
-MC0020=OPEN
-NEXT=CLAUDE_MESSAGE_001
+MC0020=RESOLVED
+MESSAGE_001=CLAUDE_COMPLETE
+MESSAGE_002=CHATGPT_COMPLETE
+T1=ACCEPTED
+NEXT=FINAL_W5_INFORMATION_ARCHITECTURE_RECONCILIATION
 ```

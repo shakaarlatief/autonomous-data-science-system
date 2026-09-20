@@ -2,8 +2,8 @@
   "schema_version": 1,
   "thread_id": "MC-0020",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
-  "lifecycle_state": "OPEN",
-  "phase": "CLAUDE_V02_BLIND_SUBJECT_PLACEMENT",
+  "lifecycle_state": "RESOLVED",
+  "phase": "RESOLVED_T1_ACCEPTED",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "f4308cc74b6d44640f399b6e9c102473382232df",
@@ -48,7 +48,7 @@
       ]
     }
   ],
-  "next_expected_actor": "claude",
+  "next_expected_actor": "chatgpt",
   "independence": {
     "status": "BLIND_TO_CANDIDATE",
     "review_base_ref": "f4308cc74b6d44640f399b6e9c102473382232df",
@@ -59,11 +59,11 @@
     "notes": "A fresh Claude Opus conversation is required. Before freezing Message 001, Claude must not read ChatGPT V0.2 annotations/results, V0.1 calibration outputs, MC-0019 messages, legacy Knowledge Map routing, or later T1 interpretation. The reviewer catalog projection intentionally omits legacy_topics."
   },
   "last_transition": {
-    "transition_id": "mc0020-open-v02-blind-placement",
-    "from_state": "WAITING",
-    "to_state": "OPEN",
+    "transition_id": "mc0020-resolved-t1-accepted",
+    "from_state": "OPEN",
+    "to_state": "RESOLVED",
     "actor": "chatgpt",
-    "reason": "Research 215 identified membership-threshold and vocabulary-definition confounds in V0.1. Research 216 froze a refined V0.2 contract; a controlled fresh blind placement on the same sample is required before production subject freeze.",
-    "repository_head": "f4308cc74b6d44640f399b6e9c102473382232df"
+    "reason": "V0.2 materially improved blind multi-membership agreement while preserving strong preferred-route agreement. Remaining ambiguity is localized and dispositioned through bounded authoring clarifications; Research 217 freezes T1.",
+    "repository_head": "69b88a4e5a4cc26ef579d27ee6d23e3033927180"
   }
 }
