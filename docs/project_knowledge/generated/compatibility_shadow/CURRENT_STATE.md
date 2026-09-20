@@ -12,7 +12,7 @@ Latest scientific experiment outcome: INCOMPLETE
 - Semantic ID: WS-PKA-CURRENT
 - State: ACTIVE
 - Stage: SPECIFICATION:028 / W5_INFORMATION_ARCHITECTURE_DESIGN
-- Boundary: project-knowledge-w5-information-architecture-design
+- Boundary: project-knowledge-information-architecture-design
 - Canonical owner: docs/project_knowledge/selected_architecture_workstream.md
 - Objective: Implement and migrate the selected Candidate 01 project-development knowledge architecture under Specification 028 while current continuity remains operational authority until an explicit qualified switch.
 
