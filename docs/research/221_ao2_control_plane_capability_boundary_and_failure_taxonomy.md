@@ -2,6 +2,7 @@
 
 **Date:** 2026-09-20
 **Status:** AO-2 COMPLETE / AO-3 CONTROL-PLANE CONCEPTUAL ARCHITECTURE NEXT / W5-F0 REMAINS PAUSED
+**Scope:** Reduce AO-1's 31 capability rows into the smallest architecture-neutral control responsibilities and behavioral failure taxonomy needed to design the activation/orchestration control plane without selecting an implementation stack.
 **Program:** Research 219
 **AO-1 input:** Research 220
 **Machine synthesis:** `docs/research/project_knowledge_activation_orchestration/AO2_CONTROL_BOUNDARY_AND_FAILURE_TAXONOMY_V01.json`
