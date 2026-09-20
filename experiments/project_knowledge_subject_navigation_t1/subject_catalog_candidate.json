@@ -1,0 +1,272 @@
+{
+  "schema_version": 1,
+  "experiment": "W5-T1",
+  "authority_class": "research_fixture",
+  "source_boundary": "4b94ffe183ff7af72cef6ee7492b4ba2f30c11ef",
+  "note": "Candidate controlled semantic-subject vocabulary. No membership is stored here; memberships remain in the separate non-authoritative corpus annotation fixture.",
+  "subjects": [
+    {
+      "id": "ads-system",
+      "label": "ADS system architecture",
+      "assignable": false,
+      "broader": [],
+      "preferred_parent": null,
+      "legacy_topics": []
+    },
+    {
+      "id": "methodological-engine",
+      "label": "Methodological engine",
+      "assignable": false,
+      "broader": [],
+      "preferred_parent": null,
+      "legacy_topics": []
+    },
+    {
+      "id": "runtime-and-tooling",
+      "label": "Runtime and tooling",
+      "assignable": false,
+      "broader": [],
+      "preferred_parent": null,
+      "legacy_topics": []
+    },
+    {
+      "id": "project-development",
+      "label": "Project development",
+      "assignable": false,
+      "broader": [],
+      "preferred_parent": null,
+      "legacy_topics": []
+    },
+    {
+      "id": "source-and-evidence",
+      "label": "Source and evidence",
+      "assignable": false,
+      "broader": [],
+      "preferred_parent": null,
+      "legacy_topics": []
+    },
+    {
+      "id": "cockpit",
+      "label": "Project Cockpit",
+      "assignable": false,
+      "broader": [],
+      "preferred_parent": null,
+      "legacy_topics": []
+    },
+    {
+      "id": "system-identity",
+      "label": "System identity and human/system boundary",
+      "assignable": true,
+      "broader": [
+        "ads-system"
+      ],
+      "preferred_parent": "ads-system",
+      "legacy_topics": [
+        "system-identity"
+      ]
+    },
+    {
+      "id": "project-orchestration",
+      "label": "Project state, dependency and orchestration",
+      "assignable": true,
+      "broader": [
+        "ads-system"
+      ],
+      "preferred_parent": "ads-system",
+      "legacy_topics": [
+        "project-state"
+      ]
+    },
+    {
+      "id": "knowledge-representation",
+      "label": "Knowledge representation, activation and lifecycle semantics",
+      "assignable": true,
+      "broader": [
+        "ads-system",
+        "methodological-engine"
+      ],
+      "preferred_parent": "methodological-engine",
+      "legacy_topics": [
+        "knowledge-representation"
+      ]
+    },
+    {
+      "id": "evaluation-assurance",
+      "label": "Evaluation, falsification, assurance and execution integrity",
+      "assignable": true,
+      "broader": [
+        "methodological-engine"
+      ],
+      "preferred_parent": "methodological-engine",
+      "legacy_topics": [
+        "evaluation-falsification"
+      ]
+    },
+    {
+      "id": "runtime-persistence",
+      "label": "Runtime, persistence and execution substrate",
+      "assignable": true,
+      "broader": [
+        "runtime-and-tooling"
+      ],
+      "preferred_parent": "runtime-and-tooling",
+      "legacy_topics": [
+        "runtime-persistence"
+      ]
+    },
+    {
+      "id": "retrieval-context",
+      "label": "Retrieval, relevance and selective reasoning context",
+      "assignable": true,
+      "broader": [
+        "methodological-engine"
+      ],
+      "preferred_parent": "methodological-engine",
+      "legacy_topics": [
+        "retrieval-horizon"
+      ]
+    },
+    {
+      "id": "recommendation-action",
+      "label": "Recommendation, disposition and action semantics",
+      "assignable": true,
+      "broader": [
+        "methodological-engine"
+      ],
+      "preferred_parent": "methodological-engine",
+      "legacy_topics": [
+        "recommendation-action"
+      ]
+    },
+    {
+      "id": "methodological-knowledge",
+      "label": "Methodological Knowledge Universe",
+      "assignable": true,
+      "broader": [
+        "methodological-engine"
+      ],
+      "preferred_parent": "methodological-engine",
+      "legacy_topics": [
+        "methodological-knowledge-universe"
+      ]
+    },
+    {
+      "id": "source-universe",
+      "label": "Source Universe and evidence substrate",
+      "assignable": true,
+      "broader": [
+        "source-and-evidence"
+      ],
+      "preferred_parent": "source-and-evidence",
+      "legacy_topics": [
+        "source-universe"
+      ]
+    },
+    {
+      "id": "development-governance",
+      "label": "Development governance, continuity and repository method",
+      "assignable": true,
+      "broader": [
+        "project-development"
+      ],
+      "preferred_parent": "project-development",
+      "legacy_topics": [
+        "development-governance",
+        "canonical-history"
+      ]
+    },
+    {
+      "id": "project-knowledge-architecture",
+      "label": "Project-knowledge architecture and reconstruction",
+      "assignable": true,
+      "broader": [
+        "ads-system",
+        "project-development"
+      ],
+      "preferred_parent": "project-development",
+      "legacy_topics": [
+        "development-governance"
+      ]
+    },
+    {
+      "id": "model-collaboration",
+      "label": "Multi-model collaboration and review protocol",
+      "assignable": true,
+      "broader": [
+        "project-development"
+      ],
+      "preferred_parent": "project-development",
+      "legacy_topics": [
+        "development-governance"
+      ]
+    },
+    {
+      "id": "tooling-integrations",
+      "label": "Developer tooling, local execution and external integrations",
+      "assignable": true,
+      "broader": [
+        "runtime-and-tooling",
+        "project-development"
+      ],
+      "preferred_parent": "runtime-and-tooling",
+      "legacy_topics": [
+        "runtime-persistence",
+        "development-governance"
+      ]
+    },
+    {
+      "id": "cockpit-product",
+      "label": "Project Cockpit product architecture",
+      "assignable": true,
+      "broader": [
+        "cockpit"
+      ],
+      "preferred_parent": "cockpit",
+      "legacy_topics": [
+        "cockpit-core",
+        "cockpit-world"
+      ]
+    },
+    {
+      "id": "cockpit-interaction",
+      "label": "Cockpit interaction, focus and conversation workspace",
+      "assignable": true,
+      "broader": [
+        "cockpit"
+      ],
+      "preferred_parent": "cockpit",
+      "legacy_topics": [
+        "cockpit-world",
+        "interaction-focus",
+        "conversation-workspace"
+      ]
+    },
+    {
+      "id": "cockpit-visual-language",
+      "label": "Cockpit WorkUnit, connector and visual grammar",
+      "assignable": true,
+      "broader": [
+        "cockpit"
+      ],
+      "preferred_parent": "cockpit",
+      "legacy_topics": [
+        "work-unit-visual-grammar",
+        "connector-visual-grammar"
+      ]
+    },
+    {
+      "id": "cockpit-implementation",
+      "label": "Cockpit implementation fidelity and provenance",
+      "assignable": true,
+      "broader": [
+        "cockpit",
+        "project-development"
+      ],
+      "preferred_parent": "cockpit",
+      "legacy_topics": [
+        "cockpit-provenance",
+        "shell-rail"
+      ]
+    }
+  ]
+}
