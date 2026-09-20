@@ -6,7 +6,7 @@
 - State: ACTIVE
 - Objective: Implement and migrate the selected Candidate 01 project-development knowledge architecture under Specification 028 while current continuity remains operational authority until an explicit qualified switch.
 - Stage: SPECIFICATION:028
-- Checkpoint: 557
+- Checkpoint: 558
 
 ## Integration boundary
 
