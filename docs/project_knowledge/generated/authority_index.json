@@ -214,12 +214,12 @@
       "authority_from": null,
       "authority_to": null,
       "combination_semantics": null,
-      "content_digest": "9cae4863837353a1d9e46989b82d8885c5f0c6fd36ac78a3255ea463ab66be8f",
+      "content_digest": "84099e91169c559c097126ba9179fc8f0befc50b0a366e031ac356ad435da1f8",
       "declaration": {
         "authority_class": "canonical",
         "execution_anchor": {
           "checkpoint": 554,
-          "current_boundary": "project-knowledge-w5-information-architecture-design",
+          "current_boundary": "project-knowledge-information-architecture-design",
           "development_branch": "v1-source-vault-bootstrap-resume",
           "pull_request": null
         },

@@ -2,7 +2,7 @@
   "active_workstream": {
     "execution_anchor": {
       "checkpoint": 554,
-      "current_boundary": "project-knowledge-w5-information-architecture-design",
+      "current_boundary": "project-knowledge-information-architecture-design",
       "development_branch": "v1-source-vault-bootstrap-resume",
       "pull_request": null
     },
