@@ -1,6 +1,6 @@
 {
-  "artifact_count": 1396,
-  "artifact_tree_digest": "6a05955d6e935fa57e9af6fb2d8e2fa711c8bc7a9eeafe735e518d95b653c092",
+  "artifact_count": 1399,
+  "artifact_tree_digest": "3075daa0b742590e656a7d8c751ab4c4e4a82338efbec8f7790bfc1cb7620635",
   "artifacts": [
     {
       "group": "<docs-root>",
@@ -2847,6 +2847,11 @@
     {
       "group": "checkpoints",
       "path": "docs/checkpoints/557_ao1_retrospective_completeness_audit_closed.md",
+      "suffix": ".md"
+    },
+    {
+      "group": "checkpoints",
+      "path": "docs/checkpoints/558_ao2_control_boundary_failure_taxonomy_closed.md",
       "suffix": ".md"
     },
     {
@@ -6030,6 +6035,11 @@
     },
     {
       "group": "research",
+      "path": "docs/research/221_ao2_control_plane_capability_boundary_and_failure_taxonomy.md",
+      "suffix": ".md"
+    },
+    {
+      "group": "research",
       "path": "docs/research/CODEX_UPSTREAM_ADS_COMPARISON_MATRIX.md",
       "suffix": ".md"
     },
@@ -6156,6 +6166,11 @@
     {
       "group": "research",
       "path": "docs/research/project_knowledge_activation_orchestration/AO1_OPEN_QUESTION_STATUS_SNAPSHOT_V01.json",
+      "suffix": ".json"
+    },
+    {
+      "group": "research",
+      "path": "docs/research/project_knowledge_activation_orchestration/AO2_CONTROL_BOUNDARY_AND_FAILURE_TAXONOMY_V01.json",
       "suffix": ".json"
     },
     {
@@ -7000,7 +7015,7 @@
       "group": "<docs-root>"
     },
     {
-      "artifact_count": 560,
+      "artifact_count": 561,
       "group": "checkpoints"
     },
     {
@@ -7036,7 +7051,7 @@
       "group": "project_knowledge"
     },
     {
-      "artifact_count": 373,
+      "artifact_count": 375,
       "group": "research"
     },
     {
@@ -7049,5 +7064,5 @@
     }
   ],
   "schema_version": "1",
-  "source_boundary": "sha256:fba0e7fe3072150e6a7c709946d9bb16ab967c5c06258b6ab8da6b18d5668c64"
+  "source_boundary": "sha256:77bd8dd54d1a1802c50f6041ad335630c3654adff5db660d2c19df44fafe6fdc"
 }
