@@ -1,6 +1,6 @@
 {
-  "artifact_count": 1352,
-  "artifact_tree_digest": "b05a3924a234669e7b18399ed03243977fafa37d6f251efab6dea8c841233ecf",
+  "artifact_count": 1353,
+  "artifact_tree_digest": "c1407c81d83e999c2e160947cf485298dab202c9a7aa59faa692eac81ce592bb",
   "artifacts": [
     {
       "group": "<docs-root>",
@@ -5840,6 +5840,11 @@
     },
     {
       "group": "research",
+      "path": "docs/research/206_w5_future_knowledge_information_architecture_and_authoring_design.md",
+      "suffix": ".md"
+    },
+    {
+      "group": "research",
       "path": "docs/research/CODEX_UPSTREAM_ADS_COMPARISON_MATRIX.md",
       "suffix": ".md"
     },
@@ -6816,7 +6821,7 @@
       "group": "project_knowledge"
     },
     {
-      "artifact_count": 352,
+      "artifact_count": 353,
       "group": "research"
     },
     {
@@ -6829,5 +6834,5 @@
     }
   ],
   "schema_version": "1",
-  "source_boundary": "sha256:8490810e42cae4439274b0fe29f3501c56ae7072acb99bf2ba016953d6d09ecc"
+  "source_boundary": "sha256:f97f21bb388985023925b057ccb70caadc9ae1a10312ea0f13c499cfc9029639"
 }
