@@ -9,7 +9,7 @@ This source owns the durable identity, active state, scope, objective, execution
 
 It does **not** own the substantive rationale selecting Candidate 01. D-035 remains the natural owner of that decision. The Project Integration Boundary, Source Vault continuation and Cockpit continuation remain in their own natural canonical owners. Current compatibility surfaces remain separate, and this workstream does not own an operational-authority switch.
 
-W1, W2 and W3 are accepted. W4 production capture/promotion is the next migration wave. The workstream remains active for the continuing migration program while preserving:
+W1 through W4 are accepted. W5 broader current semantic migration is the next migration wave. The workstream remains active for the continuing migration program while preserving:
 
 ```text
 CURRENT_OPERATIONAL_AUTHORITY=CURRENT_CONTINUITY_ARCHITECTURE
@@ -30,14 +30,14 @@ AUTHORITY_SWITCH_ALLOWED=false
   },
   "objective": "Implement and migrate the selected Candidate 01 project-development knowledge architecture under Specification 028 while current continuity remains operational authority until an explicit qualified switch.",
   "execution_anchor": {
-    "checkpoint": 553,
+    "checkpoint": 554,
     "development_branch": "v1-source-vault-bootstrap-resume",
     "pull_request": null,
-    "current_boundary": "project-knowledge-wave-three-accepted-capture-promotion-next"
+    "current_boundary": "project-knowledge-wave-four-accepted-broader-semantic-migration-next"
   },
   "stage": {
     "stage_id": "SPECIFICATION:028",
-    "stage_state": "W3_ACCEPTED"
+    "stage_state": "W4_ACCEPTED"
   },
   "provenance": [
     "path:docs/DECISIONS.md#D-035",

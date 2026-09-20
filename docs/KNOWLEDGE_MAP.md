@@ -2,7 +2,7 @@
 
 **Status:** Current evergreen subject library
 **Authority:** Navigation only. This file routes subjects to repository evidence and does not replace the authority of the routed artifacts.
-**Last reviewed:** 2026-09-17
+**Last reviewed:** 2026-09-20
 
 ## Purpose
 
@@ -416,6 +416,8 @@ docs/research/203_w2_shadow_derived_views_acceptance_result.md
 docs/checkpoints/552_pka_w2_shadow_views_accepted_compatibility_shadow_next.md
 docs/research/204_w3_compatibility_shadow_acceptance_result.md
 docs/checkpoints/553_pka_w3_compatibility_shadow_accepted_capture_promotion_next.md
+docs/research/205_w4_production_capture_promotion_acceptance_result.md
+docs/checkpoints/554_pka_w4_capture_promotion_accepted_broader_semantic_migration_next.md
 docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md
 docs/checkpoints/449_scalable_knowledge_architecture_redesign_opened.md
 docs/checkpoints/450_knowledge_architecture_baseline_inventory_complete_requirements_next.md
@@ -1036,7 +1038,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-553 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-554 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 
