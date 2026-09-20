@@ -1,12 +1,12 @@
 {
   "authority_class": "derived",
-  "created_or_refreshed_boundary": "sha256:4900c621501a531733851b4621e7e4c3667f0f069577ec0c1cfeb60037b9f25b",
+  "created_or_refreshed_boundary": "sha256:881ec7692b67dc765bd1db591fa959e8b60b630e45f6d475249a8be78e9bc8bc",
   "freshness_basis": "G009_EXACT_INPUTS_AND_GENERATOR_V1",
   "generator": {
     "generator_id": "project_knowledge_source_catalog",
     "generator_version": "1",
     "implementation_basis": "GIT_BLOB_BYTES_AT_COMMIT",
-    "implementation_digest": "7fc38f760ba3bd6defaee99bbff6dc3b63c8a62e5cb336773ca83649ba8617d3",
+    "implementation_digest": "8eee8b2003124cf7e0033abeac9d61f8deeacd947c0ac26ccf9145f18b416318",
     "implementation_files": [
       "tools/project_knowledge/model.py",
       "tools/project_knowledge/views.py",
@@ -32,7 +32,13 @@
       "tools/project_knowledge/services/__init__.py",
       "tools/project_knowledge/adapters/execution.py",
       "tools/project_knowledge/adapters/pure.py",
-      "tools/project_knowledge/pure_units.py"
+      "tools/project_knowledge/view_definitions/common.py",
+      "tools/project_knowledge/view_definitions/source_catalog.py",
+      "tools/project_knowledge/view_definitions/units_normalized_scope.py",
+      "tools/project_knowledge/view_definitions/units_unique_values.py",
+      "tools/project_knowledge/pure_source_catalog.py",
+      "tools/project_knowledge/pure_normalized_scope.py",
+      "tools/project_knowledge/pure_unique_values.py"
     ]
   },
   "input_bindings": [

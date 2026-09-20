@@ -1,12 +1,12 @@
 {
   "authority_class": "derived",
-  "created_or_refreshed_boundary": "sha256:d348993ce8408c9ba1aed3185b9535acb32685c7cff20d0806369a3a7091f4bf",
+  "created_or_refreshed_boundary": "sha256:4598e3d660ce3c51a40e6a444390bceadd393aebee64aa701c400567fa0e8c7d",
   "freshness_basis": "G009_EXACT_INPUTS_AND_GENERATOR_V1",
   "generator": {
     "generator_id": "project_knowledge_risk_obligation_index",
     "generator_version": "1",
     "implementation_basis": "GIT_BLOB_BYTES_AT_COMMIT",
-    "implementation_digest": "7fc38f760ba3bd6defaee99bbff6dc3b63c8a62e5cb336773ca83649ba8617d3",
+    "implementation_digest": "916930d834c809b90b8b526f992fd1ac83b49d827d61ac728e67fd651f36caca",
     "implementation_files": [
       "tools/project_knowledge/model.py",
       "tools/project_knowledge/views.py",
@@ -32,7 +32,11 @@
       "tools/project_knowledge/services/__init__.py",
       "tools/project_knowledge/adapters/execution.py",
       "tools/project_knowledge/adapters/pure.py",
-      "tools/project_knowledge/pure_units.py"
+      "tools/project_knowledge/view_definitions/common.py",
+      "tools/project_knowledge/view_definitions/risk_obligation_index.py",
+      "tools/project_knowledge/view_definitions/units_unique_values.py",
+      "tools/project_knowledge/pure_risk_obligation_index.py",
+      "tools/project_knowledge/pure_unique_values.py"
     ]
   },
   "input_bindings": [
