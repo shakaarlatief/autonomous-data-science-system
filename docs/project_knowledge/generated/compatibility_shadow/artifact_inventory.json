@@ -1,6 +1,6 @@
 {
-  "artifact_count": 1370,
-  "artifact_tree_digest": "65e0ba29f5395111d95d58669c4cf7a2806a0647d501da342d95baa1d261eb64",
+  "artifact_count": 1372,
+  "artifact_tree_digest": "8fa5af151357ea095f8d736254d9bfdb535697b14dbdfd919b77c5d679f5c9f2",
   "artifacts": [
     {
       "group": "<docs-root>",
@@ -5930,6 +5930,16 @@
     },
     {
       "group": "research",
+      "path": "docs/research/213_w5_t4_historical_navigation_preservation_fixture_freeze.md",
+      "suffix": ".md"
+    },
+    {
+      "group": "research",
+      "path": "docs/research/214_w5_t4_historical_navigation_preservation_result.md",
+      "suffix": ".md"
+    },
+    {
+      "group": "research",
       "path": "docs/research/CODEX_UPSTREAM_ADS_COMPARISON_MATRIX.md",
       "suffix": ".md"
     },
@@ -6906,7 +6916,7 @@
       "group": "project_knowledge"
     },
     {
-      "artifact_count": 359,
+      "artifact_count": 361,
       "group": "research"
     },
     {
@@ -6919,5 +6929,5 @@
     }
   ],
   "schema_version": "1",
-  "source_boundary": "sha256:ecc52a2c52734b83cd45cb80ae7634dba1a48881cee91b8efa5ff38067007232"
+  "source_boundary": "sha256:f97a5c39a303af03fa721091c59defe76835e86d22d5cd1318e3e091d52c1fc9"
 }
