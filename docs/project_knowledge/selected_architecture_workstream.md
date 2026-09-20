@@ -33,7 +33,7 @@ AUTHORITY_SWITCH_ALLOWED=false
     "checkpoint": 554,
     "development_branch": "v1-source-vault-bootstrap-resume",
     "pull_request": null,
-    "current_boundary": "project-knowledge-wave-four-accepted-broader-semantic-migration-next"
+    "current_boundary": "project-knowledge-capture-accepted-semantic-migration-next"
   },
   "stage": {
     "stage_id": "SPECIFICATION:028",

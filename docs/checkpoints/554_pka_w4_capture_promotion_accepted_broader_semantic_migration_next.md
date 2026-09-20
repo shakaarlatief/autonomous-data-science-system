@@ -42,7 +42,7 @@ current operational authority             current continuity architecture
 authority switch allowed                  false
 ```
 
-The workstream/current-routing anchor advances to Checkpoint 554 / `W4_ACCEPTED` / `project-knowledge-wave-four-accepted-broader-semantic-migration-next`.
+The workstream/current-routing anchor advances to Checkpoint 554 / `W4_ACCEPTED` / `project-knowledge-capture-accepted-semantic-migration-next`.
 
 Post-boundary rematerialization and requalification are required because the acceptance boundary itself changes canonical successor inputs and the committed documentation inventory.
 

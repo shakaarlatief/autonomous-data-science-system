@@ -189,7 +189,7 @@ The semantic program anchor advances to:
 ```text
 checkpoint       554
 stage            SPECIFICATION:028 / W4_ACCEPTED
-boundary         project-knowledge-wave-four-accepted-broader-semantic-migration-next
+boundary         project-knowledge-capture-accepted-semantic-migration-next
 ```
 
 Because this changes the canonical workstream execution anchor and adds W4 acceptance artifacts to the committed documentation tree, the structural views and compatibility shadow must be rematerialized from the exact Checkpoint 554 state before final publication.
