@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-20
-**Status:** NO ACTIVE CLAUDE OBLIGATION / MC-0018 RESOLVED / C1-T1-T3-T4 NEXT / MC-0010 DEFERRED
+**Status:** ACTIVE CLAUDE OBLIGATION / MC-0019 T1 BLIND SUBJECT PLACEMENT / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -23,7 +23,21 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Current active collaboration obligation
 
-There is no active Claude obligation. MC-0018 is resolved after Claude Messages 001/003 and ChatGPT Messages 002/004. Research 208 freezes the W5 physical/authoring V0.2 subset and hands the remaining subject/item-registry/historical-navigation questions to empirical gates C1/T1/T3/T4. Open another Claude or Claude Code thread only if those measured results expose a material architecture ambiguity or if a future task specifically requires the local-machine access available through Claude Code.
+### MC-0019: W5 T1 blind subject-placement calibration
+
+```text
+collaborator               Claude / fresh session preferred
+mode                       INDEPENDENT / BLIND PLACEMENT CALIBRATION
+coordination branch        v1-source-vault-bootstrap-resume
+reviewer fixture target    dcd01d865340c0d562c07f68307ef0a2c7ee2d75
+source corpus boundary     4b94ffe183ff7af72cef6ee7492b4ba2f30c11ef
+current task               independently annotate the frozen 24-source subset
+expected output            messages/001_claude_blind_subject_placement.md
+write scope                docs/model_collaboration/threads/MC-0019/messages/**
+status                     OPEN / CLAUDE MESSAGE 001 NEXT
+```
+
+This thread exists because ChatGPT authored the primary T1 vocabulary and annotations. Claude must apply the frozen vocabulary without reading ChatGPT's annotation fixture, navigation scenarios, generated T1 outputs or the legacy Knowledge Map before freezing its answer. The result will measure placement agreement and missing-vocabulary pressure before any production subject contract is accepted.
 
 ## Most recently completed obligation
 

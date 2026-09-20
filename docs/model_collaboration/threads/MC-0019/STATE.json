@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "thread_id": "MC-0019",
+  "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
+  "lifecycle_state": "OPEN",
+  "phase": "CLAUDE_BLIND_SUBJECT_PLACEMENT",
+  "target": {
+    "branch": "v1-source-vault-bootstrap-resume",
+    "base_ref": "dcd01d865340c0d562c07f68307ef0a2c7ee2d75",
+    "description": "W5 T1 blind placement calibration against a frozen controlled semantic-subject vocabulary and 24-source reviewer subset.",
+    "write_paths": []
+  },
+  "task_owner": "chatgpt",
+  "target_write_owner": null,
+  "participants": [
+    {
+      "collaborator_id": "chatgpt",
+      "interaction_environment": "ChatGPT",
+      "interaction_session": "chatgpt-27",
+      "roles": [
+        "TASK_OWNER",
+        "CRITIC",
+        "RESEARCHER"
+      ]
+    },
+    {
+      "collaborator_id": "claude",
+      "interaction_environment": "Claude",
+      "interaction_session": "fresh-for-mc0019",
+      "roles": [
+        "INDEPENDENT_REVIEWER"
+      ]
+    },
+    {
+      "collaborator_id": "human",
+      "interaction_environment": "Human",
+      "interaction_session": "project-owner",
+      "roles": [
+        "HUMAN_DECIDER"
+      ]
+    }
+  ],
+  "allowed_secondary_write_surfaces": [
+    {
+      "collaborator_id": "claude",
+      "paths": [
+        "docs/model_collaboration/threads/MC-0019/messages/**"
+      ]
+    }
+  ],
+  "next_expected_actor": "claude",
+  "independence": {
+    "status": "BLIND_TO_CANDIDATE",
+    "review_base_ref": "dcd01d865340c0d562c07f68307ef0a2c7ee2d75",
+    "known_exposures": [
+      "The candidate subject vocabulary is intentionally exposed because applying it is the task.",
+      "The 24-path reviewer subset is intentionally exposed.",
+      "Claude may know broad ADS concepts from prior interactions unless the project owner uses a fresh session."
+    ],
+    "notes": "Before freezing Message 001, Claude must not read ChatGPT candidate annotations, navigation scenarios, T1 generated outputs, legacy Knowledge Map routing, or later T1 interpretation/results. The detailed prohibited paths are in BRIEF.md."
+  },
+  "last_transition": {
+    "transition_id": "mc0019-open-blind-subject-placement",
+    "from_state": "WAITING",
+    "to_state": "OPEN",
+    "actor": "chatgpt",
+    "reason": "The primary T1 fixture was authored by ChatGPT, so a blind second-model placement pass is needed before interpreting subject-placement agreement as evidence for a production vocabulary.",
+    "repository_head": "dcd01d865340c0d562c07f68307ef0a2c7ee2d75"
+  }
+}
