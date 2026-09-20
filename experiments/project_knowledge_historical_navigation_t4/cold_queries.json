@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "experiment": "W5-T4",
+  "source_boundary": "4b94ffe183ff7af72cef6ee7492b4ba2f30c11ef",
+  "subject_queries": [
+    "system-identity",
+    "runtime-persistence",
+    "recommendation-action",
+    "source-universe",
+    "development-governance",
+    "cockpit-world",
+    "conversation-workspace",
+    "canonical-history"
+  ],
+  "checkpoint_queries": [
+    5,
+    110,
+    140,
+    200,
+    267,
+    300,
+    554
+  ],
+  "specialized_index_query": true
+}
