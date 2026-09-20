@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-20
-**Status:** ACTIVE CLAUDE OBLIGATION / MC-0019 T1 BLIND SUBJECT PLACEMENT / MC-0010 DEFERRED
+**Status:** NO ACTIVE CLAUDE OBLIGATION / MC-0019 RESOLVED / T1 V0.2 REFINEMENT NEXT / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -23,21 +23,32 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Current active collaboration obligation
 
+There is no active Claude obligation. MC-0019 is resolved. Research 215 records that the T1 V0.1 controlled-subject direction is supported but not production-ready: preferred-route agreement is strong, while multi-membership admission remains under-specified and an admissibility/authority subject is missing. ChatGPT now owns the bounded V0.2 vocabulary refinement. A fresh blind reviewer will be opened only after that revised fixture is frozen.
+
+## Most recently completed obligation
+
 ### MC-0019: W5 T1 blind subject-placement calibration
 
 ```text
-collaborator               Claude / fresh session preferred
 mode                       INDEPENDENT / BLIND PLACEMENT CALIBRATION
-coordination branch        v1-source-vault-bootstrap-resume
 reviewer fixture target    dcd01d865340c0d562c07f68307ef0a2c7ee2d75
 source corpus boundary     4b94ffe183ff7af72cef6ee7492b4ba2f30c11ef
-current task               independently annotate the frozen 24-source subset
-expected output            messages/001_claude_blind_subject_placement.md
-write scope                docs/model_collaboration/threads/MC-0019/messages/**
-status                     OPEN / CLAUDE MESSAGE 001 NEXT
+Claude Message 001         blind 24-carrier subject placement
+ChatGPT Message 002        comparison + T1 V0.1 disposition
+preferred-route agreement  22 / 24
+exact subject-set agreement 7 / 24
+result                     V0.1 direction supported; V0.2 refinement required
+status                     RESOLVED
 ```
 
-This thread exists because ChatGPT authored the primary T1 vocabulary and annotations. Claude must apply the frozen vocabulary without reading ChatGPT's annotation fixture, navigation scenarios, generated T1 outputs or the legacy Knowledge Map before freezing its answer. The result will measure placement agreement and missing-vocabulary pressure before any production subject contract is accepted.
+Durable records:
+
+```text
+docs/model_collaboration/threads/MC-0019/RESOLUTION.md
+docs/model_collaboration/threads/MC-0019/messages/001_claude_blind_subject_placement.md
+docs/model_collaboration/threads/MC-0019/messages/002_chatgpt_calibration_comparison_and_t1_disposition.md
+docs/research/215_w5_t1_v01_controlled_subject_calibration_result.md
+```
 
 ## Most recently completed obligation
 

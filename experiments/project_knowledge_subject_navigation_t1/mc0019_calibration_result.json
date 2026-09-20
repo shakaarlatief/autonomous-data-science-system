@@ -1,0 +1,557 @@
+{
+  "schema_version": 1,
+  "experiment": "W5-T1-MC0019-CALIBRATION",
+  "authority_class": "research_output",
+  "source_boundary": "4b94ffe183ff7af72cef6ee7492b4ba2f30c11ef",
+  "reviewer_fixture_target": "dcd01d865340c0d562c07f68307ef0a2c7ee2d75",
+  "reviewer_subset_count": 24,
+  "metrics": {
+    "exact_subject_set_count": 7,
+    "exact_subject_set_fraction": 0.2916666666666667,
+    "mean_jaccard": 0.642361111111111,
+    "median_jaccard": 0.5,
+    "preferred_route_exact_count": 22,
+    "preferred_route_exact_fraction": 0.9166666666666666,
+    "micro_membership_precision_claude_vs_chatgpt": 0.8888888888888888,
+    "micro_membership_recall_claude_vs_chatgpt": 0.6530612244897959,
+    "micro_membership_f1": 0.7529411764705882,
+    "chatgpt_memberships_on_subset": 49,
+    "claude_memberships_on_subset": 36,
+    "missing_vocabulary_path_count": 1
+  },
+  "per_subject": {
+    "cockpit-implementation": {
+      "tp": 2,
+      "claude_only": 0,
+      "chatgpt_only": 0,
+      "neither": 22
+    },
+    "cockpit-interaction": {
+      "tp": 1,
+      "claude_only": 1,
+      "chatgpt_only": 0,
+      "neither": 22
+    },
+    "cockpit-product": {
+      "tp": 1,
+      "claude_only": 0,
+      "chatgpt_only": 1,
+      "neither": 22
+    },
+    "cockpit-visual-language": {
+      "tp": 1,
+      "claude_only": 2,
+      "chatgpt_only": 0,
+      "neither": 21
+    },
+    "development-governance": {
+      "tp": 3,
+      "claude_only": 0,
+      "chatgpt_only": 3,
+      "neither": 18
+    },
+    "evaluation-assurance": {
+      "tp": 2,
+      "claude_only": 1,
+      "chatgpt_only": 2,
+      "neither": 19
+    },
+    "knowledge-representation": {
+      "tp": 2,
+      "claude_only": 0,
+      "chatgpt_only": 3,
+      "neither": 19
+    },
+    "methodological-knowledge": {
+      "tp": 4,
+      "claude_only": 0,
+      "chatgpt_only": 0,
+      "neither": 20
+    },
+    "model-collaboration": {
+      "tp": 2,
+      "claude_only": 0,
+      "chatgpt_only": 1,
+      "neither": 21
+    },
+    "project-knowledge-architecture": {
+      "tp": 2,
+      "claude_only": 0,
+      "chatgpt_only": 1,
+      "neither": 21
+    },
+    "project-orchestration": {
+      "tp": 1,
+      "claude_only": 0,
+      "chatgpt_only": 2,
+      "neither": 21
+    },
+    "recommendation-action": {
+      "tp": 1,
+      "claude_only": 0,
+      "chatgpt_only": 0,
+      "neither": 23
+    },
+    "retrieval-context": {
+      "tp": 3,
+      "claude_only": 0,
+      "chatgpt_only": 0,
+      "neither": 21
+    },
+    "runtime-persistence": {
+      "tp": 0,
+      "claude_only": 0,
+      "chatgpt_only": 2,
+      "neither": 22
+    },
+    "source-universe": {
+      "tp": 2,
+      "claude_only": 0,
+      "chatgpt_only": 0,
+      "neither": 22
+    },
+    "system-identity": {
+      "tp": 3,
+      "claude_only": 0,
+      "chatgpt_only": 1,
+      "neither": 20
+    },
+    "tooling-integrations": {
+      "tp": 2,
+      "claude_only": 0,
+      "chatgpt_only": 1,
+      "neither": 21
+    }
+  },
+  "rows": [
+    {
+      "path": "docs/VISION.md",
+      "chatgpt_subjects": [
+        "system-identity"
+      ],
+      "claude_subjects": [
+        "system-identity"
+      ],
+      "subject_set_exact": true,
+      "jaccard": 1.0,
+      "chatgpt_preferred_subject": "system-identity",
+      "claude_preferred_subject": "system-identity",
+      "preferred_exact": true,
+      "claude_confidence": "HIGH",
+      "claude_missing_vocabulary": []
+    },
+    {
+      "path": "docs/PRINCIPLES.md",
+      "chatgpt_subjects": [
+        "development-governance",
+        "evaluation-assurance",
+        "system-identity"
+      ],
+      "claude_subjects": [
+        "development-governance",
+        "system-identity"
+      ],
+      "subject_set_exact": false,
+      "jaccard": 0.6666666666666666,
+      "chatgpt_preferred_subject": null,
+      "claude_preferred_subject": "system-identity",
+      "preferred_exact": false,
+      "claude_confidence": "MEDIUM",
+      "claude_missing_vocabulary": []
+    },
+    {
+      "path": "docs/DEVELOPMENT_METHOD.md",
+      "chatgpt_subjects": [
+        "development-governance",
+        "model-collaboration",
+        "tooling-integrations"
+      ],
+      "claude_subjects": [
+        "development-governance"
+      ],
+      "subject_set_exact": false,
+      "jaccard": 0.3333333333333333,
+      "chatgpt_preferred_subject": "development-governance",
+      "claude_preferred_subject": "development-governance",
+      "preferred_exact": true,
+      "claude_confidence": "HIGH",
+      "claude_missing_vocabulary": []
+    },
+    {
+      "path": "docs/foundations/003_admissibility_risk_and_assurance.md",
+      "chatgpt_subjects": [
+        "evaluation-assurance",
+        "system-identity"
+      ],
+      "claude_subjects": [
+        "evaluation-assurance"
+      ],
+      "subject_set_exact": false,
+      "jaccard": 0.5,
+      "chatgpt_preferred_subject": "evaluation-assurance",
+      "claude_preferred_subject": "evaluation-assurance",
+      "preferred_exact": true,
+      "claude_confidence": "MEDIUM",
+      "claude_missing_vocabulary": [
+        "admissibility-and-authority: whether an action is permitted, constraint provenance, residual-risk acceptance authority, and dynamic human-gate activation, as distinct from evaluation/falsification/assurance intensity"
+      ]
+    },
+    {
+      "path": "docs/foundations/004_project_state_dependency_and_state_driven_orchestration.md",
+      "chatgpt_subjects": [
+        "project-orchestration"
+      ],
+      "claude_subjects": [
+        "project-orchestration"
+      ],
+      "subject_set_exact": true,
+      "jaccard": 1.0,
+      "chatgpt_preferred_subject": "project-orchestration",
+      "claude_preferred_subject": "project-orchestration",
+      "preferred_exact": true,
+      "claude_confidence": "HIGH",
+      "claude_missing_vocabulary": []
+    },
+    {
+      "path": "docs/foundations/006_knowledge_activation_and_open_world_reasoning.md",
+      "chatgpt_subjects": [
+        "knowledge-representation",
+        "retrieval-context"
+      ],
+      "claude_subjects": [
+        "knowledge-representation",
+        "retrieval-context"
+      ],
+      "subject_set_exact": true,
+      "jaccard": 1.0,
+      "chatgpt_preferred_subject": "knowledge-representation",
+      "claude_preferred_subject": "knowledge-representation",
+      "preferred_exact": true,
+      "claude_confidence": "HIGH",
+      "claude_missing_vocabulary": []
+    },
+    {
+      "path": "docs/specifications/020_v1_recommended_vs_blocking_required_calibration_diagnostic.md",
+      "chatgpt_subjects": [
+        "evaluation-assurance",
+        "recommendation-action"
+      ],
+      "claude_subjects": [
+        "evaluation-assurance",
+        "recommendation-action"
+      ],
+      "subject_set_exact": true,
+      "jaccard": 1.0,
+      "chatgpt_preferred_subject": "recommendation-action",
+      "claude_preferred_subject": "recommendation-action",
+      "preferred_exact": true,
+      "claude_confidence": "HIGH",
+      "claude_missing_vocabulary": []
+    },
+    {
+      "path": "docs/specifications/022_v1_project_state_methodological_horizon_coverage_diagnostic.md",
+      "chatgpt_subjects": [
+        "methodological-knowledge",
+        "project-orchestration",
+        "retrieval-context"
+      ],
+      "claude_subjects": [
+        "evaluation-assurance",
+        "methodological-knowledge",
+        "retrieval-context"
+      ],
+      "subject_set_exact": false,
+      "jaccard": 0.5,
+      "chatgpt_preferred_subject": "retrieval-context",
+      "claude_preferred_subject": "retrieval-context",
+      "preferred_exact": true,
+      "claude_confidence": "HIGH",
+      "claude_missing_vocabulary": []
+    },
+    {
+      "path": "docs/research/028_system_identity_methodological_navigation_and_knowledge_universe_construction.md",
+      "chatgpt_subjects": [
+        "methodological-knowledge",
+        "retrieval-context",
+        "system-identity"
+      ],
+      "claude_subjects": [
+        "methodological-knowledge",
+        "retrieval-context",
+        "system-identity"
+      ],
+      "subject_set_exact": true,
+      "jaccard": 1.0,
+      "chatgpt_preferred_subject": null,
+      "claude_preferred_subject": null,
+      "preferred_exact": true,
+      "claude_confidence": "MEDIUM",
+      "claude_missing_vocabulary": []
+    },
+    {
+      "path": "docs/research/033_methodological_knowledge_universe_construction_framework.md",
+      "chatgpt_subjects": [
+        "knowledge-representation",
+        "methodological-knowledge"
+      ],
+      "claude_subjects": [
+        "knowledge-representation",
+        "methodological-knowledge"
+      ],
+      "subject_set_exact": true,
+      "jaccard": 1.0,
+      "chatgpt_preferred_subject": "methodological-knowledge",
+      "claude_preferred_subject": "methodological-knowledge",
+      "preferred_exact": true,
+      "claude_confidence": "HIGH",
+      "claude_missing_vocabulary": []
+    },
+    {
+      "path": "docs/research/034_durable_source_universe_and_evidence_substrate_architecture.md",
+      "chatgpt_subjects": [
+        "knowledge-representation",
+        "source-universe"
+      ],
+      "claude_subjects": [
+        "source-universe"
+      ],
+      "subject_set_exact": false,
+      "jaccard": 0.5,
+      "chatgpt_preferred_subject": "source-universe",
+      "claude_preferred_subject": "source-universe",
+      "preferred_exact": true,
+      "claude_confidence": "HIGH",
+      "claude_missing_vocabulary": []
+    },
+    {
+      "path": "docs/research/035_multi_model_development_collaboration_architecture.md",
+      "chatgpt_subjects": [
+        "development-governance",
+        "model-collaboration"
+      ],
+      "claude_subjects": [
+        "model-collaboration"
+      ],
+      "subject_set_exact": false,
+      "jaccard": 0.5,
+      "chatgpt_preferred_subject": "model-collaboration",
+      "claude_preferred_subject": "model-collaboration",
+      "preferred_exact": true,
+      "claude_confidence": "HIGH",
+      "claude_missing_vocabulary": []
+    },
+    {
+      "path": "docs/research/037_project_cockpit_next_generation_visual_interaction_design_exploration_map.md",
+      "chatgpt_subjects": [
+        "cockpit-interaction",
+        "cockpit-product"
+      ],
+      "claude_subjects": [
+        "cockpit-interaction",
+        "cockpit-product",
+        "cockpit-visual-language"
+      ],
+      "subject_set_exact": false,
+      "jaccard": 0.6666666666666666,
+      "chatgpt_preferred_subject": "cockpit-product",
+      "claude_preferred_subject": "cockpit-product",
+      "preferred_exact": true,
+      "claude_confidence": "MEDIUM",
+      "claude_missing_vocabulary": []
+    },
+    {
+      "path": "docs/research/046_work_unit_category_and_silhouette_visual_grammar_experiment.md",
+      "chatgpt_subjects": [
+        "cockpit-visual-language"
+      ],
+      "claude_subjects": [
+        "cockpit-visual-language"
+      ],
+      "subject_set_exact": true,
+      "jaccard": 1.0,
+      "chatgpt_preferred_subject": "cockpit-visual-language",
+      "claude_preferred_subject": "cockpit-visual-language",
+      "preferred_exact": true,
+      "claude_confidence": "HIGH",
+      "claude_missing_vocabulary": []
+    },
+    {
+      "path": "docs/research/064_rapid_iteration_repository_preservation_audit_and_checkpoint_hygiene.md",
+      "chatgpt_subjects": [
+        "development-governance",
+        "project-knowledge-architecture"
+      ],
+      "claude_subjects": [
+        "development-governance"
+      ],
+      "subject_set_exact": false,
+      "jaccard": 0.5,
+      "chatgpt_preferred_subject": null,
+      "claude_preferred_subject": "development-governance",
+      "preferred_exact": false,
+      "claude_confidence": "HIGH",
+      "claude_missing_vocabulary": []
+    },
+    {
+      "path": "docs/research/089_cockpit_implementation_provenance_recovery_completion_and_exact_history_gate.md",
+      "chatgpt_subjects": [
+        "cockpit-implementation",
+        "development-governance"
+      ],
+      "claude_subjects": [
+        "cockpit-implementation"
+      ],
+      "subject_set_exact": false,
+      "jaccard": 0.5,
+      "chatgpt_preferred_subject": "cockpit-implementation",
+      "claude_preferred_subject": "cockpit-implementation",
+      "preferred_exact": true,
+      "claude_confidence": "HIGH",
+      "claude_missing_vocabulary": []
+    },
+    {
+      "path": "docs/research/105_codexless_local_execution_bridge_evaluation.md",
+      "chatgpt_subjects": [
+        "runtime-persistence",
+        "tooling-integrations"
+      ],
+      "claude_subjects": [
+        "tooling-integrations"
+      ],
+      "subject_set_exact": false,
+      "jaccard": 0.5,
+      "chatgpt_preferred_subject": "tooling-integrations",
+      "claude_preferred_subject": "tooling-integrations",
+      "preferred_exact": true,
+      "claude_confidence": "HIGH",
+      "claude_missing_vocabulary": []
+    },
+    {
+      "path": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+      "chatgpt_subjects": [
+        "knowledge-representation",
+        "project-knowledge-architecture"
+      ],
+      "claude_subjects": [
+        "project-knowledge-architecture"
+      ],
+      "subject_set_exact": false,
+      "jaccard": 0.5,
+      "chatgpt_preferred_subject": "project-knowledge-architecture",
+      "claude_preferred_subject": "project-knowledge-architecture",
+      "preferred_exact": true,
+      "claude_confidence": "HIGH",
+      "claude_missing_vocabulary": []
+    },
+    {
+      "path": "docs/source_universe/SOURCE_VAULT_BOOTSTRAP_WORKSTREAM.md",
+      "chatgpt_subjects": [
+        "project-orchestration",
+        "source-universe"
+      ],
+      "claude_subjects": [
+        "source-universe"
+      ],
+      "subject_set_exact": false,
+      "jaccard": 0.5,
+      "chatgpt_preferred_subject": "source-universe",
+      "claude_preferred_subject": "source-universe",
+      "preferred_exact": true,
+      "claude_confidence": "HIGH",
+      "claude_missing_vocabulary": []
+    },
+    {
+      "path": "docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md",
+      "chatgpt_subjects": [
+        "cockpit-implementation",
+        "cockpit-product"
+      ],
+      "claude_subjects": [
+        "cockpit-implementation",
+        "cockpit-interaction",
+        "cockpit-visual-language"
+      ],
+      "subject_set_exact": false,
+      "jaccard": 0.25,
+      "chatgpt_preferred_subject": "cockpit-implementation",
+      "claude_preferred_subject": "cockpit-implementation",
+      "preferred_exact": true,
+      "claude_confidence": "HIGH",
+      "claude_missing_vocabulary": []
+    },
+    {
+      "path": "docs/local_execution/README.md",
+      "chatgpt_subjects": [
+        "runtime-persistence",
+        "tooling-integrations"
+      ],
+      "claude_subjects": [
+        "tooling-integrations"
+      ],
+      "subject_set_exact": false,
+      "jaccard": 0.5,
+      "chatgpt_preferred_subject": "tooling-integrations",
+      "claude_preferred_subject": "tooling-integrations",
+      "preferred_exact": true,
+      "claude_confidence": "HIGH",
+      "claude_missing_vocabulary": []
+    },
+    {
+      "path": "docs/model_collaboration/README.md",
+      "chatgpt_subjects": [
+        "development-governance",
+        "model-collaboration"
+      ],
+      "claude_subjects": [
+        "model-collaboration"
+      ],
+      "subject_set_exact": false,
+      "jaccard": 0.5,
+      "chatgpt_preferred_subject": "model-collaboration",
+      "claude_preferred_subject": "model-collaboration",
+      "preferred_exact": true,
+      "claude_confidence": "HIGH",
+      "claude_missing_vocabulary": []
+    },
+    {
+      "path": "docs/methodological_knowledge/COVERAGE_MAP.md",
+      "chatgpt_subjects": [
+        "evaluation-assurance",
+        "methodological-knowledge"
+      ],
+      "claude_subjects": [
+        "methodological-knowledge"
+      ],
+      "subject_set_exact": false,
+      "jaccard": 0.5,
+      "chatgpt_preferred_subject": "methodological-knowledge",
+      "claude_preferred_subject": "methodological-knowledge",
+      "preferred_exact": true,
+      "claude_confidence": "HIGH",
+      "claude_missing_vocabulary": []
+    },
+    {
+      "path": "docs/project_knowledge/architecture/whole_architecture.md",
+      "chatgpt_subjects": [
+        "knowledge-representation",
+        "project-knowledge-architecture"
+      ],
+      "claude_subjects": [
+        "project-knowledge-architecture"
+      ],
+      "subject_set_exact": false,
+      "jaccard": 0.5,
+      "chatgpt_preferred_subject": "project-knowledge-architecture",
+      "claude_preferred_subject": "project-knowledge-architecture",
+      "preferred_exact": true,
+      "claude_confidence": "HIGH",
+      "claude_missing_vocabulary": []
+    }
+  ],
+  "interpretation_flags": {
+    "preferred_route_agreement_strong": true,
+    "full_membership_agreement_insufficient_for_freeze": true,
+    "secondary_membership_threshold_is_material_confound": true,
+    "missing_admissibility_authority_pressure": true
+  }
+}

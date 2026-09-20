@@ -1,7 +1,7 @@
 # MC-0019 Thread: W5 T1 Blind Subject-Placement Calibration
 
 **Thread:** MC-0019
-**Status:** OPEN / CLAUDE MESSAGE 001 NEXT
+**Status:** RESOLVED / T1 V0.1 DIRECTION SUPPORTED / V0.2 REFINEMENT NEXT
 **Review mode:** INDEPENDENT / BLIND PLACEMENT CALIBRATION
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
 **Exact reviewer-fixture target:** `dcd01d865340c0d562c07f68307ef0a2c7ee2d75`
@@ -30,6 +30,8 @@ This is independence with respect to placement labels, not independence from the
 Claude may write only under `docs/model_collaboration/threads/MC-0019/messages/**`. ChatGPT remains task owner/integrator.
 
 ```text
-MC0019=OPEN
-NEXT=CLAUDE_MESSAGE_001
+MC0019=RESOLVED
+MESSAGE_001=CLAUDE_COMPLETE
+MESSAGE_002=CHATGPT_COMPLETE
+NEXT=T1_V0_2_REFINEMENT_AND_FRESH_BLIND_CALIBRATION
 ```

@@ -2,8 +2,8 @@
   "schema_version": 1,
   "thread_id": "MC-0019",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
-  "lifecycle_state": "OPEN",
-  "phase": "CLAUDE_BLIND_SUBJECT_PLACEMENT",
+  "lifecycle_state": "RESOLVED",
+  "phase": "RESOLVED_T1_V01_DIRECTION_SUPPORTED_V02_REFINEMENT_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "dcd01d865340c0d562c07f68307ef0a2c7ee2d75",
@@ -48,7 +48,7 @@
       ]
     }
   ],
-  "next_expected_actor": "claude",
+  "next_expected_actor": "chatgpt",
   "independence": {
     "status": "BLIND_TO_CANDIDATE",
     "review_base_ref": "dcd01d865340c0d562c07f68307ef0a2c7ee2d75",
@@ -60,11 +60,11 @@
     "notes": "Before freezing Message 001, Claude must not read ChatGPT candidate annotations, navigation scenarios, T1 generated outputs, legacy Knowledge Map routing, or later T1 interpretation/results. The detailed prohibited paths are in BRIEF.md."
   },
   "last_transition": {
-    "transition_id": "mc0019-open-blind-subject-placement",
-    "from_state": "WAITING",
-    "to_state": "OPEN",
+    "transition_id": "mc0019-resolved-after-blind-calibration",
+    "from_state": "OPEN",
+    "to_state": "RESOLVED",
     "actor": "chatgpt",
-    "reason": "The primary T1 fixture was authored by ChatGPT, so a blind second-model placement pass is needed before interpreting subject-placement agreement as evidence for a production vocabulary.",
-    "repository_head": "dcd01d865340c0d562c07f68307ef0a2c7ee2d75"
+    "reason": "Claude blind placement produced strong preferred-route agreement but insufficient full membership agreement. T1 V0.1 direction is supported, production freeze withheld, and V0.2 refinement is required before a fresh blind calibration.",
+    "repository_head": "ae1086dc23cd381d15815975034a9c7bdc133582"
   }
 }
