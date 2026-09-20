@@ -2,7 +2,7 @@
 
 **Purpose:** Professional overview of the selected project-development knowledge architecture.
 **Logical design authority:** D-035, Requirements V0.2, Specification 028, Research 179.
-**Current physical state:** W0 substrate through PKA-G014 is implemented; W1 migration has not started.
+**Current physical state:** W0-W4 are accepted and finalized where applicable; W5 physical/authoring V0.2 is frozen, C1 per-view implementation-closure granularity is accepted, and T1/T3/T4 remain before broad W5 semantic migration.
 
 ## Architectural principle
 
@@ -170,7 +170,12 @@ tools/project_knowledge/
     workstreams.py
     views.py
     capture.py
-    pure_units.py
+    pure_*.py
+
+    view_definitions/
+        common.py
+        one view-definition module per view
+        units_*.py
 
     adapters/
         gitio.py

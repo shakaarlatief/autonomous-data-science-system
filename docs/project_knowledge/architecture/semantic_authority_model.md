@@ -113,7 +113,8 @@ model.py            typed values
 identity.py         identity transition/index semantics
 authority.py        task-scoped authority resolution
 views.py            deterministic derived-view contracts
-pure_units.py       restricted persistent-view projections
+pure_*.py          restricted persistent-view projection bodies
+view_definitions/   per-view specifications + data-only unit declarations
 services/validation.py
 services/semantic_validation.py
 services/generation.py
