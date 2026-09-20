@@ -1,6 +1,6 @@
 {
-  "artifact_count": 1376,
-  "artifact_tree_digest": "55bd9f9c1593c4b85f1e5204676232b77924021bc557be0e10db11b2c5a9d266",
+  "artifact_count": 1380,
+  "artifact_tree_digest": "0423b26424f9cedd503c2450c3a72a1903dc45ab4db335ccbd1e6d729f46c3bc",
   "artifacts": [
     {
       "group": "<docs-root>",
@@ -4827,6 +4827,21 @@
       "suffix": ".md"
     },
     {
+      "group": "model_collaboration",
+      "path": "docs/model_collaboration/threads/MC-0020/BRIEF.md",
+      "suffix": ".md"
+    },
+    {
+      "group": "model_collaboration",
+      "path": "docs/model_collaboration/threads/MC-0020/STATE.json",
+      "suffix": ".json"
+    },
+    {
+      "group": "model_collaboration",
+      "path": "docs/model_collaboration/threads/MC-0020/THREAD.md",
+      "suffix": ".md"
+    },
+    {
       "group": "private_companion",
       "path": "docs/private_companion/README.md",
       "suffix": ".md"
@@ -5960,6 +5975,11 @@
     },
     {
       "group": "research",
+      "path": "docs/research/216_w5_t1_v02_subject_vocabulary_refinement_and_blind_calibration_fixture.md",
+      "suffix": ".md"
+    },
+    {
+      "group": "research",
       "path": "docs/research/CODEX_UPSTREAM_ADS_COMPARISON_MATRIX.md",
       "suffix": ".md"
     },
@@ -6924,7 +6944,7 @@
       "group": "methodological_knowledge"
     },
     {
-      "artifact_count": 141,
+      "artifact_count": 144,
       "group": "model_collaboration"
     },
     {
@@ -6936,7 +6956,7 @@
       "group": "project_knowledge"
     },
     {
-      "artifact_count": 362,
+      "artifact_count": 363,
       "group": "research"
     },
     {
@@ -6949,5 +6969,5 @@
     }
   ],
   "schema_version": "1",
-  "source_boundary": "sha256:5a9183cc9479b0035d71b74594548834464c0bc0052bf8e92381dfb25d9246ef"
+  "source_boundary": "sha256:aa7a4be3f194c4ccce079f5cbce67721515bbdaca056ecadc91ad57df722fe94"
 }
