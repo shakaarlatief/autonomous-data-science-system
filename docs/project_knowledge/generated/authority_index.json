@@ -214,12 +214,12 @@
       "authority_from": null,
       "authority_to": null,
       "combination_semantics": null,
-      "content_digest": "84099e91169c559c097126ba9179fc8f0befc50b0a366e031ac356ad435da1f8",
+      "content_digest": "ac04db27371f5ee4aed3135c855d61cab0e24a625c6301d51f33c0898f518212",
       "declaration": {
         "authority_class": "canonical",
         "execution_anchor": {
           "checkpoint": 554,
-          "current_boundary": "project-knowledge-information-architecture-design",
+          "current_boundary": "project-knowledge-empirical-gates",
           "development_branch": "v1-source-vault-bootstrap-resume",
           "pull_request": null
         },
@@ -244,7 +244,7 @@
         "semantic_id": "WS-PKA-CURRENT",
         "stage": {
           "stage_id": "SPECIFICATION:028",
-          "stage_state": "W5_INFORMATION_ARCHITECTURE_DESIGN"
+          "stage_state": "W5_EMPIRICAL_INFORMATION_ARCHITECTURE_GATES"
         },
         "state": "ACTIVE"
       },

@@ -2,7 +2,7 @@
   "active_workstream": {
     "execution_anchor": {
       "checkpoint": 554,
-      "current_boundary": "project-knowledge-information-architecture-design",
+      "current_boundary": "project-knowledge-empirical-gates",
       "development_branch": "v1-source-vault-bootstrap-resume",
       "pull_request": null
     },
@@ -10,7 +10,7 @@
     "semantic_id": "WS-PKA-CURRENT",
     "stage": {
       "stage_id": "SPECIFICATION:028",
-      "stage_state": "W5_INFORMATION_ARCHITECTURE_DESIGN"
+      "stage_state": "W5_EMPIRICAL_INFORMATION_ARCHITECTURE_GATES"
     },
     "state": "ACTIVE"
   },
