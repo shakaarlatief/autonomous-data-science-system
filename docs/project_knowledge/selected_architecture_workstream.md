@@ -33,7 +33,7 @@ AUTHORITY_SWITCH_ALLOWED=false
     "checkpoint": 554,
     "development_branch": "v1-source-vault-bootstrap-resume",
     "pull_request": null,
-    "current_boundary": "project-knowledge-w5-information-architecture-design"
+    "current_boundary": "project-knowledge-information-architecture-design"
   },
   "stage": {
     "stage_id": "SPECIFICATION:028",
