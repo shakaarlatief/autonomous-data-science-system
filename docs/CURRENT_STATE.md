@@ -13,8 +13,8 @@
 ```text
 Interaction environment  ChatGPT
 Project / workspace      Autonomous Data Science System
-Interaction session      chatgpt-27
-Conversation title       27 - Project Knowledge Migration and Qualification
+Interaction session      chatgpt-28
+Conversation title       28 - Activation Orchestration Control Plane and Self-Hosting
 Primary collaborator     ChatGPT
 ```
 

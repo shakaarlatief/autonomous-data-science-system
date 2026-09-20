@@ -19,6 +19,11 @@ The files here are not governing architecture. They preserve owner intent, examp
     detailed reconstruction of the 2026-09-20 Chat 27 discussion
     beginning with the frozen-architecture/reopen question
 
+003_chat28_continuation_reconstruction_activation_gap.md
+    observed Chat 28 continuation near-miss where the high-level active stage
+    was reconstructed correctly but rich stage-specific evidence entered only
+    after the owner named the exact evidence packet
+
 AO1_COMPLETENESS_MATRIX_V01.json
     machine-readable 31-capability maturity + urgency audit
 

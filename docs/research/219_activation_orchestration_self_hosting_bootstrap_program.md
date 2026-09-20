@@ -518,6 +518,7 @@ bounded implementation -> implementation workflow routing
 runtime unavailable -> break-glass recovery
 child workstream close -> deterministic parent resume
 context limit -> non-authoritative interaction continuity
+fresh continuation into evidence-rich active research -> stage-specific supporting evidence activates without owner path hints
 unpublished qualified commits -> Git lifecycle warning
 repeated frozen-design exceptions -> architecture reopen evaluation
 ```
