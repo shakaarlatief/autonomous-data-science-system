@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "experiment": "W5-T4",
+  "authority_class": "research_output",
+  "source_boundary": "4b94ffe183ff7af72cef6ee7492b4ba2f30c11ef",
+  "source_sha256": "a212bb2bf5ba2fa7f9e19e573932c3663dc83b02d980373dcd8f811d03b2d291",
+  "source_map_bytes": 74887,
+  "candidate_evidence_bytes": 82375,
+  "candidate_to_source_size_ratio": 1.0999906525832255,
+  "subject_count": 19,
+  "checkpoint_range_count": 31,
+  "specialized_index_count": 5,
+  "flat_inventory_path_count": 656,
+  "flat_inventory_has_subject_mapping": false,
+  "flat_inventory_has_checkpoint_subject_ranges": false,
+  "exact_structure_parity": true,
+  "cold_subject_queries": [
+    {
+      "topic_id": "system-identity",
+      "exact_match": true,
+      "explicit_path_count": 10
+    },
+    {
+      "topic_id": "runtime-persistence",
+      "exact_match": true,
+      "explicit_path_count": 13
+    },
+    {
+      "topic_id": "recommendation-action",
+      "exact_match": true,
+      "explicit_path_count": 21
+    },
+    {
+      "topic_id": "source-universe",
+      "exact_match": true,
+      "explicit_path_count": 19
+    },
+    {
+      "topic_id": "development-governance",
+      "exact_match": true,
+      "explicit_path_count": 488
+    },
+    {
+      "topic_id": "cockpit-world",
+      "exact_match": true,
+      "explicit_path_count": 18
+    },
+    {
+      "topic_id": "conversation-workspace",
+      "exact_match": true,
+      "explicit_path_count": 25
+    },
+    {
+      "topic_id": "canonical-history",
+      "exact_match": true,
+      "explicit_path_count": 18
+    }
+  ],
+  "cold_checkpoint_queries": [
+    {
+      "checkpoint": 5,
+      "exact_match": true,
+      "topics": [
+        "system-identity",
+        "knowledge-representation",
+        "evaluation-falsification"
+      ]
+    },
+    {
+      "checkpoint": 110,
+      "exact_match": true,
+      "topics": [
+        "runtime-persistence"
+      ]
+    },
+    {
+      "checkpoint": 140,
+      "exact_match": true,
+      "topics": [
+        "retrieval-horizon"
+      ]
+    },
+    {
+      "checkpoint": 200,
+      "exact_match": true,
+      "topics": [
+        "development-governance"
+      ]
+    },
+    {
+      "checkpoint": 267,
+      "exact_match": true,
+      "topics": [
+        "source-universe",
+        "development-governance",
+        "cockpit-core",
+        "conversation-workspace",
+        "shell-rail"
+      ]
+    },
+    {
+      "checkpoint": 300,
+      "exact_match": true,
+      "topics": [
+        "development-governance"
+      ]
+    },
+    {
+      "checkpoint": 554,
+      "exact_match": true,
+      "topics": [
+        "development-governance"
+      ]
+    }
+  ],
+  "specialized_indexes_exact": true,
+  "mechanical_verdict": {
+    "compact_evidence_preserves_full_legacy_routing_structure": true,
+    "cold_subject_queries_pass_without_live_map": true,
+    "cold_checkpoint_queries_pass_without_live_map": true,
+    "specialized_index_routes_pass_without_live_map": true,
+    "flat_inventory_is_insufficient_for_deterministic_subject_routing": true
+  }
+}
