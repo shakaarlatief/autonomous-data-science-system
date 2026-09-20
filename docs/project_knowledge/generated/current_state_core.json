@@ -2,7 +2,7 @@
   "active_workstream": {
     "execution_anchor": {
       "checkpoint": 554,
-      "current_boundary": "project-knowledge-wave-four-accepted-broader-semantic-migration-next",
+      "current_boundary": "project-knowledge-capture-accepted-semantic-migration-next",
       "development_branch": "v1-source-vault-bootstrap-resume",
       "pull_request": null
     },
