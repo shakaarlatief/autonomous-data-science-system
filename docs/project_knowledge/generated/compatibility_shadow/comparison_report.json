@@ -3,16 +3,16 @@
   "blocking": false,
   "candidates": [
     {
-      "byte_length": 443,
+      "byte_length": 433,
       "path": "docs/project_knowledge/generated/compatibility_shadow/current_routing.json",
       "role": "routing",
-      "sha256": "b5061ea4c00db68c69a97d2a583f3413149475c79b1536397670722c8ff98fe7"
+      "sha256": "76d7636106110152c9fae7ae286e6b181ed573864fb20e2f6f44382ba6a89e04"
     },
     {
-      "byte_length": 2678,
+      "byte_length": 2668,
       "path": "docs/project_knowledge/generated/compatibility_shadow/CURRENT_STATE.md",
       "role": "current_state",
-      "sha256": "bfed58bf2c5e3cef0c0ca038ec5f1e7a7dffb46ac80df05fa72b9a95e7fdb719"
+      "sha256": "83a70068f7c03359f23f2496e91552f59aa9a5b387a8030358377468a43bcd18"
     },
     {
       "byte_length": 5332,
@@ -24,7 +24,7 @@
       "byte_length": 224753,
       "path": "docs/project_knowledge/generated/compatibility_shadow/artifact_inventory.json",
       "role": "artifact_inventory",
-      "sha256": "4c931fb8929720f1cba82513750c1be093f0b034818482333edfaf8fa083b1d0"
+      "sha256": "4d450d16e89b7ec5d6bac43584d5438e517d357cbb2d2fe36d531e3c835723b6"
     }
   ],
   "differences": [
@@ -76,5 +76,5 @@
     "generator_version": "1"
   },
   "schema_version": "1",
-  "source_boundary": "sha256:d975a9d083842af4c667c8d33dcd97ad1474afbfff85332b60689a4b2b357f44"
+  "source_boundary": "sha256:8490810e42cae4439274b0fe29f3501c56ae7072acb99bf2ba016953d6d09ecc"
 }
