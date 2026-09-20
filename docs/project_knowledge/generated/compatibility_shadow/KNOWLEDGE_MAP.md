@@ -125,7 +125,7 @@ Provide semantic navigation for governed successor knowledge while preserving co
 
 ## Repository artifact inventory
 
-The exact committed documentation inventory contains 1380 non-generated artifacts.
+The exact committed documentation inventory contains 1384 non-generated artifacts.
 
 Machine-readable inventory: docs/project_knowledge/generated/compatibility_shadow/artifact_inventory.json
 
@@ -138,10 +138,10 @@ Top-level documentation groups:
 - foundations: 25
 - local_execution: 218
 - methodological_knowledge: 1
-- model_collaboration: 144
+- model_collaboration: 147
 - private_companion: 1
 - project_knowledge: 10
-- research: 363
+- research: 364
 - source_universe: 11
 - specifications: 28
 

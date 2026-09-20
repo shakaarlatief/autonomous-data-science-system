@@ -1,6 +1,6 @@
 {
-  "artifact_count": 1380,
-  "artifact_tree_digest": "0423b26424f9cedd503c2450c3a72a1903dc45ab4db335ccbd1e6d729f46c3bc",
+  "artifact_count": 1384,
+  "artifact_tree_digest": "42fc35d37a0fdd7f034a3819e9d4c58ce1123dc27e496c17730e3e6ad7dfafa4",
   "artifacts": [
     {
       "group": "<docs-root>",
@@ -4833,12 +4833,27 @@
     },
     {
       "group": "model_collaboration",
+      "path": "docs/model_collaboration/threads/MC-0020/RESOLUTION.md",
+      "suffix": ".md"
+    },
+    {
+      "group": "model_collaboration",
       "path": "docs/model_collaboration/threads/MC-0020/STATE.json",
       "suffix": ".json"
     },
     {
       "group": "model_collaboration",
       "path": "docs/model_collaboration/threads/MC-0020/THREAD.md",
+      "suffix": ".md"
+    },
+    {
+      "group": "model_collaboration",
+      "path": "docs/model_collaboration/threads/MC-0020/messages/001_claude_v02_blind_subject_placement.md",
+      "suffix": ".md"
+    },
+    {
+      "group": "model_collaboration",
+      "path": "docs/model_collaboration/threads/MC-0020/messages/002_chatgpt_v02_calibration_comparison_and_final_t1_disposition.md",
       "suffix": ".md"
     },
     {
@@ -5980,6 +5995,11 @@
     },
     {
       "group": "research",
+      "path": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+      "suffix": ".md"
+    },
+    {
+      "group": "research",
       "path": "docs/research/CODEX_UPSTREAM_ADS_COMPARISON_MATRIX.md",
       "suffix": ".md"
     },
@@ -6944,7 +6964,7 @@
       "group": "methodological_knowledge"
     },
     {
-      "artifact_count": 144,
+      "artifact_count": 147,
       "group": "model_collaboration"
     },
     {
@@ -6956,7 +6976,7 @@
       "group": "project_knowledge"
     },
     {
-      "artifact_count": 363,
+      "artifact_count": 364,
       "group": "research"
     },
     {
@@ -6969,5 +6989,5 @@
     }
   ],
   "schema_version": "1",
-  "source_boundary": "sha256:aa7a4be3f194c4ccce079f5cbce67721515bbdaca056ecadc91ad57df722fe94"
+  "source_boundary": "sha256:b36865ece1de7a00c7593f1946d7a5999cfed10545913560424d3d175c58c8f4"
 }
