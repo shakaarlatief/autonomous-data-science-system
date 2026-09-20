@@ -1,6 +1,6 @@
 {
-  "artifact_count": 1357,
-  "artifact_tree_digest": "758ac5c4c215be5e2557f280ecb0dd8a4dab966a9d5f24d3ced99839a16810ea",
+  "artifact_count": 1359,
+  "artifact_tree_digest": "e35122a3d05e804b4d7530c8afc2a5b38011c7b877cd4d440963e6a241dab070",
   "artifacts": [
     {
       "group": "<docs-root>",
@@ -4772,6 +4772,16 @@
       "suffix": ".md"
     },
     {
+      "group": "model_collaboration",
+      "path": "docs/model_collaboration/threads/MC-0018/messages/001_claude_w5_information_architecture_review_and_counterdesign.md",
+      "suffix": ".md"
+    },
+    {
+      "group": "model_collaboration",
+      "path": "docs/model_collaboration/threads/MC-0018/messages/002_chatgpt_w5_v02_disposition_and_implementation_review_request.md",
+      "suffix": ".md"
+    },
+    {
       "group": "private_companion",
       "path": "docs/private_companion/README.md",
       "suffix": ".md"
@@ -6829,7 +6839,7 @@
       "group": "methodological_knowledge"
     },
     {
-      "artifact_count": 130,
+      "artifact_count": 132,
       "group": "model_collaboration"
     },
     {
@@ -6854,5 +6864,5 @@
     }
   ],
   "schema_version": "1",
-  "source_boundary": "sha256:26855d1b65186b342d44eab8d0521a3eed8a751a14df6d697bff146eac6d6265"
+  "source_boundary": "sha256:96ef6a452620d105eb792bc1d524febb37d8b7d9f4c9410c2c9c86d4a9d9dfd0"
 }

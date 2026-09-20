@@ -18,13 +18,13 @@
       "byte_length": 5332,
       "path": "docs/project_knowledge/generated/compatibility_shadow/KNOWLEDGE_MAP.md",
       "role": "knowledge_map",
-      "sha256": "40db19d5c068de0c2f30629dc84827befa0aa82eaf46389d1502feb8bb5be5b7"
+      "sha256": "ae0a64ecd38a41f6fc26badd899707cd73d0c95590656ca6b1a2e6cc3650b169"
     },
     {
-      "byte_length": 225518,
+      "byte_length": 225933,
       "path": "docs/project_knowledge/generated/compatibility_shadow/artifact_inventory.json",
       "role": "artifact_inventory",
-      "sha256": "3660c06050088e830a5c417118e519aa4620e5b676de31d9137e1270cb04bc98"
+      "sha256": "c02a06a2c35448dcbae2c64357eab63d44a49e88c3a72abaa1edc195287fdb2f"
     }
   ],
   "differences": [
@@ -76,5 +76,5 @@
     "generator_version": "1"
   },
   "schema_version": "1",
-  "source_boundary": "sha256:26855d1b65186b342d44eab8d0521a3eed8a751a14df6d697bff146eac6d6265"
+  "source_boundary": "sha256:96ef6a452620d105eb792bc1d524febb37d8b7d9f4c9410c2c9c86d4a9d9dfd0"
 }
