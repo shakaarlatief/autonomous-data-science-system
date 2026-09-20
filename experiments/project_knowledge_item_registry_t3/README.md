@@ -52,7 +52,7 @@ No live repository carriers are changed.
 Running:
 
 ```powershell
-.\.venv\Scripts\python.exe experiments/project_knowledge_item_registry_t3/evaluate.py
+.\.venv\Scripts\python.exe -m experiments.project_knowledge_item_registry_t3.evaluate
 ```
 
 materializes `result.json` as non-authoritative research output.

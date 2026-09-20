@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "experiment": "W5-T3",
+  "authority_class": "research_output",
+  "source_boundary": "4b94ffe183ff7af72cef6ee7492b4ba2f30c11ef",
+  "option_a_selective_per_item": {
+    "all_scoped_successors_resolve": true,
+    "residual_base_resolves": true,
+    "ab032_first_class_required_identity_resolves": true,
+    "rows": [
+      {
+        "scope": "v1_persistence_retrieval_architecture",
+        "status": "RESOLVED",
+        "governing_ids": [
+          "D-028"
+        ]
+      },
+      {
+        "scope": "persistence_tooling",
+        "status": "RESOLVED",
+        "governing_ids": [
+          "D-029"
+        ]
+      },
+      {
+        "scope": "python_project_dependency_tooling",
+        "status": "RESOLVED",
+        "governing_ids": [
+          "D-030"
+        ]
+      },
+      {
+        "scope": "reusable_knowledge_interchange",
+        "status": "RESOLVED",
+        "governing_ids": [
+          "D-031"
+        ]
+      },
+      {
+        "scope": "initial_reasoning_runtime",
+        "status": "RESOLVED",
+        "governing_ids": [
+          "D-032"
+        ]
+      },
+      {
+        "scope": "source_universe_substrate",
+        "status": "RESOLVED",
+        "governing_ids": [
+          "D-033"
+        ]
+      },
+      {
+        "scope": "project_development_knowledge_architecture",
+        "status": "RESOLVED",
+        "governing_ids": [
+          "D-035"
+        ]
+      }
+    ],
+    "residual": {
+      "status": "RESOLVED",
+      "governing_ids": [
+        "D-011"
+      ]
+    },
+    "ab032_required_identity": {
+      "status": "RESOLVED",
+      "governing_ids": [
+        "AB-032"
+      ]
+    }
+  },
+  "option_b_multiple_declarations_one_carrier": {
+    "accepted_by_current_parser": false,
+    "error_code": "MALFORMED_DECLARATION_MARKERS"
+  },
+  "option_c_anchor_only": {
+    "status": "MISSING_REQUIRED_AUTHORITY",
+    "diagnostic_codes": [
+      "MISSING_RELATION_TARGET"
+    ],
+    "typed_relation_target_resolves": false,
+    "ab032_required_identity_status": "MISSING_REQUIRED_AUTHORITY",
+    "ab032_anchor_only_satisfies_required_identity": false,
+    "ab032_required_identity_diagnostics": [
+      "MISSING_REQUIRED_AUTHORITY"
+    ]
+  },
+  "qualitative_comparison": {
+    "A": {
+      "implementation_blast_radius": "LOW: native one-carrier/one-declaration/source-ID model",
+      "reference_integrity": "HIGH: typed relations target stable semantic IDs",
+      "move_rename_behavior": "SUPPORTED by existing identity-transition machinery when needed",
+      "migration_cost": "SELECTIVE: only items that justify first-class identity need new carriers"
+    },
+    "B": {
+      "implementation_blast_radius": "HIGH: parser cardinality, discovery, carrier/source revision and downstream path-key assumptions must change",
+      "reference_integrity": "POSSIBLE but requires section-level declaration/source semantics absent from V1",
+      "move_rename_behavior": "MORE COMPLEX: one carrier can move multiple independently identified units",
+      "migration_cost": "LOWER file-count churn but HIGHER substrate/schema/runtime change"
+    },
+    "C": {
+      "implementation_blast_radius": "NONE",
+      "reference_integrity": "LOW for first-class items: typed relation targets cannot resolve anchor-only identity",
+      "move_rename_behavior": "PATH/ANCHOR COUPLED unless another identity layer is invented",
+      "migration_cost": "LOW initially but leaves the motivating first-class-identity problem unsolved"
+    }
+  },
+  "mechanical_verdict": {
+    "A_native_semantics_pass": true,
+    "B_requires_substrate_change": true,
+    "C_fails_typed_relation_target": true,
+    "C_fails_required_item_identity": true
+  }
+}

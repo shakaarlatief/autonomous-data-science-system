@@ -29,6 +29,6 @@ The canonical diagram source is Mermaid embedded directly in these Markdown file
 
 ## Current implementation status
 
-W0 through W4 are accepted. W5 is in progress. Research 208 freezes the future physical/authoring V0.2 subset after MC-0018, and Research 209 accepts C1 per-view implementation-closure granularity. The semantic-subject vocabulary, item-registry identity contract, historical-navigation preservation and production navigation realization remain gated by T1/T3/T4. Broader current semantic migration follows only after those empirical gates close and the remaining W5 information-architecture contract is frozen.
+W0 through W4 are accepted. W5 is in progress. Research 208 freezes the future physical/authoring V0.2 subset after MC-0018, and Research 209 accepts C1 per-view implementation-closure granularity. Research 212 accepts the T3 selective per-item carrier contract while retaining one declaration per carrier. The semantic-subject vocabulary, historical-navigation preservation and production navigation realization remain gated by T1/T4. Broader current semantic migration follows only after those empirical gates close and the remaining W5 information-architecture contract is frozen.
 
 The broader migration program remains staged. Current continuity remains operational authority; live compatibility paths are still maintained by that architecture, successor outputs remain non-authoritative, and `AUTHORITY_SWITCH_ALLOWED=false` until a later explicit qualified W8 authority-switch decision.
