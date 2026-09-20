@@ -1,6 +1,6 @@
 {
-  "artifact_count": 1353,
-  "artifact_tree_digest": "c1407c81d83e999c2e160947cf485298dab202c9a7aa59faa692eac81ce592bb",
+  "artifact_count": 1354,
+  "artifact_tree_digest": "5e94e921cb4c1e15d1050a078877fb6d037696a14208fa180f831d7d6d7ced91",
   "artifacts": [
     {
       "group": "<docs-root>",
@@ -5845,6 +5845,11 @@
     },
     {
       "group": "research",
+      "path": "docs/research/207_w5_representative_artifact_family_matrix_and_information_architecture_v01.md",
+      "suffix": ".md"
+    },
+    {
+      "group": "research",
       "path": "docs/research/CODEX_UPSTREAM_ADS_COMPARISON_MATRIX.md",
       "suffix": ".md"
     },
@@ -6821,7 +6826,7 @@
       "group": "project_knowledge"
     },
     {
-      "artifact_count": 353,
+      "artifact_count": 354,
       "group": "research"
     },
     {
@@ -6834,5 +6839,5 @@
     }
   ],
   "schema_version": "1",
-  "source_boundary": "sha256:f97f21bb388985023925b057ccb70caadc9ae1a10312ea0f13c499cfc9029639"
+  "source_boundary": "sha256:fc95bdb487ee4907d041e6df30278268e83f5f2312d1b312a1d5f1eb9dfc8318"
 }
