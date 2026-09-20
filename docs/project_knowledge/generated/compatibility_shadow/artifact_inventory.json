@@ -1,6 +1,6 @@
 {
-  "artifact_count": 1359,
-  "artifact_tree_digest": "e35122a3d05e804b4d7530c8afc2a5b38011c7b877cd4d440963e6a241dab070",
+  "artifact_count": 1363,
+  "artifact_tree_digest": "c8e50cb9bc093db9d3ed0555a5c4909569345d6279a16a1e1ee500bdb7a21b5b",
   "artifacts": [
     {
       "group": "<docs-root>",
@@ -4763,6 +4763,11 @@
     },
     {
       "group": "model_collaboration",
+      "path": "docs/model_collaboration/threads/MC-0018/RESOLUTION.md",
+      "suffix": ".md"
+    },
+    {
+      "group": "model_collaboration",
       "path": "docs/model_collaboration/threads/MC-0018/STATE.json",
       "suffix": ".json"
     },
@@ -4779,6 +4784,16 @@
     {
       "group": "model_collaboration",
       "path": "docs/model_collaboration/threads/MC-0018/messages/002_chatgpt_w5_v02_disposition_and_implementation_review_request.md",
+      "suffix": ".md"
+    },
+    {
+      "group": "model_collaboration",
+      "path": "docs/model_collaboration/threads/MC-0018/messages/003_claude_w5_v02_and_w0_w4_implementation_conformance_followup.md",
+      "suffix": ".md"
+    },
+    {
+      "group": "model_collaboration",
+      "path": "docs/model_collaboration/threads/MC-0018/messages/004_chatgpt_final_reconciliation_and_empirical_gate_handoff.md",
       "suffix": ".md"
     },
     {
@@ -5875,6 +5890,11 @@
     },
     {
       "group": "research",
+      "path": "docs/research/208_w5_physical_authoring_v02_freeze_and_empirical_gate_program.md",
+      "suffix": ".md"
+    },
+    {
+      "group": "research",
       "path": "docs/research/CODEX_UPSTREAM_ADS_COMPARISON_MATRIX.md",
       "suffix": ".md"
     },
@@ -6839,7 +6859,7 @@
       "group": "methodological_knowledge"
     },
     {
-      "artifact_count": 132,
+      "artifact_count": 135,
       "group": "model_collaboration"
     },
     {
@@ -6851,7 +6871,7 @@
       "group": "project_knowledge"
     },
     {
-      "artifact_count": 354,
+      "artifact_count": 355,
       "group": "research"
     },
     {
@@ -6864,5 +6884,5 @@
     }
   ],
   "schema_version": "1",
-  "source_boundary": "sha256:96ef6a452620d105eb792bc1d524febb37d8b7d9f4c9410c2c9c86d4a9d9dfd0"
+  "source_boundary": "sha256:73688f63e26f0aa3bba89f5076ee5235e639b5d29003b7f8487fae126ea533bb"
 }

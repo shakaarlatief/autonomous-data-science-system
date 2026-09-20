@@ -3,28 +3,28 @@
   "blocking": false,
   "candidates": [
     {
-      "byte_length": 424,
+      "byte_length": 408,
       "path": "docs/project_knowledge/generated/compatibility_shadow/current_routing.json",
       "role": "routing",
-      "sha256": "1e266eac29eb9e6f73f656df9205656dab17d7900d24c2a774a5e310ec24e83f"
+      "sha256": "29afbe5143533373e902f86673e3f56b9103288b24ef53e36f073219a515b19a"
     },
     {
-      "byte_length": 2682,
+      "byte_length": 2675,
       "path": "docs/project_knowledge/generated/compatibility_shadow/CURRENT_STATE.md",
       "role": "current_state",
-      "sha256": "05c93ab8763e9e148eefdb3a5eaf7d2a006f569069a5d4f2f495f4197b61041c"
+      "sha256": "cdb01486a59e4aa34e7bdbc48a038a3df8ad5248a92fe1b9ab8197321778728d"
     },
     {
       "byte_length": 5332,
       "path": "docs/project_knowledge/generated/compatibility_shadow/KNOWLEDGE_MAP.md",
       "role": "knowledge_map",
-      "sha256": "ae0a64ecd38a41f6fc26badd899707cd73d0c95590656ca6b1a2e6cc3650b169"
+      "sha256": "f905a34258404adbb39d24f4d918d851c7348c9874b6c41b37a3c23581a5fd1c"
     },
     {
-      "byte_length": 225933,
+      "byte_length": 226648,
       "path": "docs/project_knowledge/generated/compatibility_shadow/artifact_inventory.json",
       "role": "artifact_inventory",
-      "sha256": "c02a06a2c35448dcbae2c64357eab63d44a49e88c3a72abaa1edc195287fdb2f"
+      "sha256": "889ccbc897385efc864d82f5bab7cb2a780fd78043c3588f970f7c9152ff2793"
     }
   ],
   "differences": [
@@ -53,7 +53,7 @@
       "blocking": false,
       "classification": "EQUIVALENT_REPRESENTATION",
       "difference_id": "knowledge-map.artifact-reachability",
-      "rationale": "All 658 unique legacy path/directory references remain reachable.",
+      "rationale": "All 659 unique legacy path/directory references remain reachable.",
       "role": "knowledge_map"
     },
     {
@@ -76,5 +76,5 @@
     "generator_version": "1"
   },
   "schema_version": "1",
-  "source_boundary": "sha256:96ef6a452620d105eb792bc1d524febb37d8b7d9f4c9410c2c9c86d4a9d9dfd0"
+  "source_boundary": "sha256:73688f63e26f0aa3bba89f5076ee5235e639b5d29003b7f8487fae126ea533bb"
 }
