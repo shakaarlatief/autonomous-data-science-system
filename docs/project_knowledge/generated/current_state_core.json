@@ -1,8 +1,8 @@
 {
   "active_workstream": {
     "execution_anchor": {
-      "checkpoint": 556,
-      "current_boundary": "project-knowledge-activation-orchestration-bootstrap",
+      "checkpoint": 557,
+      "current_boundary": "project-knowledge-activation-orchestration-capability-synthesis",
       "development_branch": "v1-source-vault-bootstrap-resume",
       "pull_request": null
     },
