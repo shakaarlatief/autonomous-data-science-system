@@ -1537,10 +1537,13 @@ branch-lifecycle policy
     how branch naming relates to workstream/stage identity
     what qualifies promotion/merge
     how paused branches are resumed or retired
+    when qualified local commits should be published to the authorized remote
+    what bounded exceptions justify a temporary local-only committed state
+    how prolonged unpublished commit accumulation is detected and reconciled
     what evidence is required before destructive cleanup
 ```
 
-Any future policy should remain subordinate to Git/repository authority, preserve exact commit provenance, avoid unnecessary branch proliferation, and integrate with workstream/reconstruction/action semantics rather than creating a second control system.
+Any future policy should remain subordinate to Git/repository authority, preserve exact commit provenance, avoid unnecessary branch proliferation, and integrate with workstream/reconstruction/action semantics rather than creating a second control system. It should also distinguish local commit durability from authorized remote publication so a long sequence of already-qualified project-development commits does not remain unpublished merely by collaborator habit; exceptions for deliberately local, sensitive, incomplete, or experimentally unsafe states must remain explicit and bounded.
 
 Primary context: Candidate 01 `workstream.v1` execution anchors, `PROJECT-INTEGRATION-BOUNDARY`, `docs/CONTINUITY.md` branch continuity rules, Specification 028 migration/cutover semantics, and AB-031.
 
