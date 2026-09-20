@@ -214,12 +214,12 @@
       "authority_from": null,
       "authority_to": null,
       "combination_semantics": null,
-      "content_digest": "d2d3b258e22e5555220796ece90ee1dffcb05e32a2a449ca154c8b62abae7e61",
+      "content_digest": "675962b8045614f489576b35d9f322176a820930b7692bbca6b8c83ad875b43a",
       "declaration": {
         "authority_class": "canonical",
         "execution_anchor": {
-          "checkpoint": 555,
-          "current_boundary": "project-knowledge-broader-semantic-migration",
+          "checkpoint": 556,
+          "current_boundary": "project-knowledge-activation-orchestration-bootstrap",
           "development_branch": "v1-source-vault-bootstrap-resume",
           "pull_request": null
         },
@@ -244,7 +244,7 @@
         "semantic_id": "WS-PKA-CURRENT",
         "stage": {
           "stage_id": "SPECIFICATION:028",
-          "stage_state": "W5_BROADER_CURRENT_SEMANTIC_MIGRATION"
+          "stage_state": "W5_ACTIVATION_ORCHESTRATION_SELF_HOSTING_RESEARCH"
         },
         "state": "ACTIVE"
       },
