@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "experiment": "W5-T3",
+  "authority_class": "research_fixture",
+  "source_boundary": "4b94ffe183ff7af72cef6ee7492b4ba2f30c11ef",
+  "d011": {
+    "base_id": "D-011",
+    "residual_scope": "implementation_subsystems_not_yet_selected",
+    "successors": [
+      {
+        "id": "D-028",
+        "scope": "v1_persistence_retrieval_architecture"
+      },
+      {
+        "id": "D-029",
+        "scope": "persistence_tooling"
+      },
+      {
+        "id": "D-030",
+        "scope": "python_project_dependency_tooling"
+      },
+      {
+        "id": "D-031",
+        "scope": "reusable_knowledge_interchange"
+      },
+      {
+        "id": "D-032",
+        "scope": "initial_reasoning_runtime"
+      },
+      {
+        "id": "D-033",
+        "scope": "source_universe_substrate"
+      },
+      {
+        "id": "D-035",
+        "scope": "project_development_knowledge_architecture"
+      }
+    ]
+  },
+  "ab032": {
+    "legacy_carrier": "docs/OPEN_ARCHITECTURE_BACKLOG.md",
+    "legacy_anchor": "AB-032",
+    "proposed_identity": "AB-032",
+    "independent_lifecycle": true,
+    "current_status": "OPEN / DEFERRED ARCHITECTURE QUESTION"
+  },
+  "alternatives": {
+    "A": "selective per-item canonical carrier with one declaration and semantic ID",
+    "B": "multiple declarations inside one aggregate Markdown carrier",
+    "C": "aggregate carrier with anchor-only item identity"
+  }
+}
