@@ -214,12 +214,12 @@
       "authority_from": null,
       "authority_to": null,
       "combination_semantics": null,
-      "content_digest": "48b47467dd6e848bfd61d94b3f7fd6dd1fb27693a195c411417b394e9973dcf1",
+      "content_digest": "9cae4863837353a1d9e46989b82d8885c5f0c6fd36ac78a3255ea463ab66be8f",
       "declaration": {
         "authority_class": "canonical",
         "execution_anchor": {
           "checkpoint": 554,
-          "current_boundary": "project-knowledge-capture-accepted-semantic-migration-next",
+          "current_boundary": "project-knowledge-w5-information-architecture-design",
           "development_branch": "v1-source-vault-bootstrap-resume",
           "pull_request": null
         },
@@ -244,7 +244,7 @@
         "semantic_id": "WS-PKA-CURRENT",
         "stage": {
           "stage_id": "SPECIFICATION:028",
-          "stage_state": "W4_ACCEPTED"
+          "stage_state": "W5_INFORMATION_ARCHITECTURE_DESIGN"
         },
         "state": "ACTIVE"
       },
