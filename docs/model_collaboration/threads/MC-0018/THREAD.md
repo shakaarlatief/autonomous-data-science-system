@@ -1,7 +1,7 @@
 # MC-0018 Thread: W5 Future Knowledge Information Architecture Co-Design
 
 **Thread:** MC-0018
-**Status:** OPEN / CLAUDE MESSAGE 001 NEXT
+**Status:** OPEN / CHATGPT MESSAGE 002 COMPLETE / CLAUDE MESSAGE 003 NEXT
 **Review mode:** REVIEWED / CURRENT_CONTEXT_CO_DESIGN
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
 **Exact design target:** `ac45bc7078cd23af85f243cb61ba6a8b499f284d`
@@ -46,5 +46,7 @@ AUTHORITY_SWITCH_ALLOWED=false
 
 ```text
 MC0018=OPEN
-NEXT=CLAUDE_MESSAGE_001
+MESSAGE_001=CLAUDE_COMPLETE
+MESSAGE_002=CHATGPT_COMPLETE
+NEXT=CLAUDE_MESSAGE_003
 ```
