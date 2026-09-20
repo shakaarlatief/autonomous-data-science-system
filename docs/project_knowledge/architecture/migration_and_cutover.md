@@ -87,6 +87,6 @@ Rollback must preserve the ability to return to the last qualified authority sta
 
 ## Physical implementation status
 
-W0 through W4 are accepted. W5 is now in progress. Research 208 freezes the physical/authoring V0.2 subset, Research 209 accepts C1 generator implementation-closure granularity, Research 212 accepts the T3 selective per-item carrier contract, Research 214 accepts the T4 historical-navigation evidence contract, and Research 217 accepts T1 controlled semantic subjects after independent V0.2 calibration. All empirical information-architecture gates are closed. Broader current semantic migration remains paused only until the full W5 target contract and production navigation realization are explicitly reconciled and frozen. No successor-generated compatibility path has overwritten the live continuity surfaces.
+W0 through W4 are accepted. W5 is now in progress. Research 218 freezes the full W5 target after reconciling Research 208, Research 209 C1, Research 212 T3, Research 214 T4 and Research 217 T1. Checkpoint 555 opens broader current semantic migration under the frozen target, beginning with W5-F0 production navigation substrate. W5 is not yet accepted, W6 cutover-candidate entry remains unavailable, and no successor-generated compatibility path has overwritten the live continuity surfaces.
 
 Current continuity remains operational authority, successor outputs remain non-authoritative, and no authority switch may occur before the later qualified W8 decision.

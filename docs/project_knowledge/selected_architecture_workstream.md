@@ -9,7 +9,7 @@ This source owns the durable identity, active state, scope, objective, execution
 
 It does **not** own the substantive rationale selecting Candidate 01. D-035 remains the natural owner of that decision. The Project Integration Boundary, Source Vault continuation and Cockpit continuation remain in their own natural canonical owners. Current compatibility surfaces remain separate, and this workstream does not own an operational-authority switch.
 
-W1 through W4 are accepted. W5 remains in progress. Research 208 freezes the physical/authoring V0.2 subset, Research 209 accepts C1 implementation-closure granularity, Research 212 accepts the T3 selective per-item carrier contract while retaining one declaration per carrier, and Research 214 accepts the T4 historical-navigation evidence contract. Research 217 now accepts T1 after the V0.2 65-carrier experiment and independent MC-0020 blind calibration: controlled semantic subjects, source-owned membership, optional deterministic preferred routes, polyhierarchy and strict separation from structural/resolver facets are frozen. All empirical information-architecture gates are now closed; the next step is C1/T1/T3/T4 reconciliation, production-navigation realization selection and full W5 information-architecture freeze before broader current semantic migration begins. The workstream remains active for the continuing migration program while preserving:
+W1 through W4 are accepted. W5 remains in progress. Research 218 now reconciles the accepted Research 208 physical/authoring design, Research 209 C1 implementation-closure result, Research 212 T3 item-carrier contract, Research 214 T4 historical-navigation contract and Research 217 T1 controlled-subject architecture into the frozen full W5 information architecture. Broader current semantic migration is now open under that target, beginning with W5-F0 production navigation substrate. W5 itself is not yet accepted, W6 remains unavailable, and the workstream remains active for the continuing migration program while preserving:
 
 ```text
 CURRENT_OPERATIONAL_AUTHORITY=CURRENT_CONTINUITY_ARCHITECTURE
@@ -30,14 +30,14 @@ AUTHORITY_SWITCH_ALLOWED=false
   },
   "objective": "Implement and migrate the selected Candidate 01 project-development knowledge architecture under Specification 028 while current continuity remains operational authority until an explicit qualified switch.",
   "execution_anchor": {
-    "checkpoint": 554,
+    "checkpoint": 555,
     "development_branch": "v1-source-vault-bootstrap-resume",
     "pull_request": null,
-    "current_boundary": "project-knowledge-empirical-gates"
+    "current_boundary": "project-knowledge-broader-semantic-migration"
   },
   "stage": {
     "stage_id": "SPECIFICATION:028",
-    "stage_state": "W5_EMPIRICAL_INFORMATION_ARCHITECTURE_GATES"
+    "stage_state": "W5_BROADER_CURRENT_SEMANTIC_MIGRATION"
   },
   "provenance": [
     "path:docs/DECISIONS.md#D-035",
