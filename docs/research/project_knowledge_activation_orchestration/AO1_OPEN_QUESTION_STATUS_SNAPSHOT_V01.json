@@ -1,0 +1,193 @@
+{
+  "schema_version": 1,
+  "source": "docs/OPEN_QUESTIONS.md",
+  "snapshot_date": "2026-09-20",
+  "items": [
+    {
+      "id": "Q-005",
+      "title": "### Q-005. How should explicit knowledge interact with open-ended LLM reasoning?",
+      "status": "Selective reasoning-context seam supported; downstream recommendation/navigation value remains unresolved",
+      "priority": null
+    },
+    {
+      "id": "Q-006",
+      "title": "### Q-006. How should relevant investigations be activated?",
+      "status": "Bounded mechanics and structural constructs supported; production activation policy remains open",
+      "priority": null
+    },
+    {
+      "id": "Q-008",
+      "title": "### Q-008. How should project state be represented?",
+      "status": "Substantially advanced, not complete",
+      "priority": null
+    },
+    {
+      "id": "Q-021",
+      "title": "### Q-021. How should model and tool providers be selected?",
+      "status": "Open; runtime boundary selected, final provider/model policy not selected",
+      "priority": null
+    },
+    {
+      "id": "Q-029",
+      "title": "### Q-029. How should analytical effort be prioritized?",
+      "status": "Substantially refined, not resolved",
+      "priority": null
+    },
+    {
+      "id": "Q-037",
+      "title": "### Q-037. How should project state activate reusable knowledge and reasoning?",
+      "status": "Architecture advanced; serious open-world navigation remains unresolved",
+      "priority": null
+    },
+    {
+      "id": "Q-044",
+      "title": "### Q-044. How should production retrieval, MethodologicalHorizon construction and selective context work?",
+      "status": "First bounded chain supported; serious-scale production strategy remains open",
+      "priority": null
+    },
+    {
+      "id": "Q-045",
+      "title": "### Q-045. How should recommendation/reasoning quality be separated from knowledge coverage and provenance?",
+      "status": "Several separations established; end-to-end system value unresolved",
+      "priority": null
+    },
+    {
+      "id": "Q-053",
+      "title": "### Q-053. How should authorized live experiments be launched autonomously and safely?",
+      "status": "Bounded V1 launch mechanism supported; production authorization lifecycle remains open",
+      "priority": null
+    },
+    {
+      "id": "Q-001",
+      "title": "### Q-001. What exactly must the system accomplish to be considered successful?",
+      "status": "Partially answered",
+      "priority": null
+    },
+    {
+      "id": "Q-002",
+      "title": "### Q-002. What degree of autonomy should the system have?",
+      "status": "Substantially reframed, still open",
+      "priority": null
+    },
+    {
+      "id": "Q-003",
+      "title": "### Q-003. What should the human's role be?",
+      "status": "Substantially refined, still open",
+      "priority": null
+    },
+    {
+      "id": "Q-027",
+      "title": "### Q-027. What belongs in the non-negotiable methodological quality floor?",
+      "status": "Substantially refined, not finalized",
+      "priority": null
+    },
+    {
+      "id": "Q-028",
+      "title": "### Q-028. How should project intent be represented?",
+      "status": "Substantially refined, not finalized",
+      "priority": null
+    },
+    {
+      "id": "Q-030",
+      "title": "### Q-030. Are the five epistemic invariants complete and precise enough?",
+      "status": "Strong design hypothesis under broader validation",
+      "priority": null
+    },
+    {
+      "id": "Q-031",
+      "title": "### Q-031. What belongs in the admissibility layer?",
+      "status": "Open at production depth",
+      "priority": null
+    },
+    {
+      "id": "Q-032",
+      "title": "### Q-032. How should risk-sensitive assurance be represented?",
+      "status": "Open at production depth",
+      "priority": null
+    },
+    {
+      "id": "Q-035",
+      "title": "### Q-035. How should admissibility, risk, controls, approvals and assurance participate in project state?",
+      "status": "Open",
+      "priority": null
+    },
+    {
+      "id": "Q-010",
+      "title": "### Q-010. When is independent review required?",
+      "status": "Substantially refined, not resolved",
+      "priority": null
+    },
+    {
+      "id": "Q-011",
+      "title": "### Q-011. What counts as sufficient evidence for a decision?",
+      "status": "Active",
+      "priority": null
+    },
+    {
+      "id": "Q-012",
+      "title": "### Q-012. How should uncertainty and confidence be represented?",
+      "status": "Open",
+      "priority": null
+    },
+    {
+      "id": "Q-019",
+      "title": "### Q-019. How should invalidation and repair work?",
+      "status": "Reframed after V0",
+      "priority": null
+    },
+    {
+      "id": "Q-033",
+      "title": "### Q-033. Should analytical Questions and Claims be primary state objects?",
+      "status": "Strongly supported conceptually, not frozen as universal orchestration law",
+      "priority": null
+    },
+    {
+      "id": "Q-034",
+      "title": "### Q-034. How should project completion be defined?",
+      "status": "Substantially refined, not resolved",
+      "priority": null
+    },
+    {
+      "id": "Q-004",
+      "title": "### Q-004. How should data-science knowledge be represented?",
+      "status": "Substantially answered at conceptual/V1 architecture level; serious construction remains open",
+      "priority": null
+    },
+    {
+      "id": "Q-007",
+      "title": "### Q-007. What should a reusable decision or knowledge unit contain?",
+      "status": "Substantially answered conceptually, taxonomy still open",
+      "priority": null
+    },
+    {
+      "id": "Q-018",
+      "title": "### Q-018. How should knowledge packages interact?",
+      "status": "Substantially refined, not resolved at scale",
+      "priority": null
+    },
+    {
+      "id": "Q-022",
+      "title": "### Q-022. How should external knowledge and source material be integrated?",
+      "status": "Source persistence/substrate architecture accepted; source-to-accepted-knowledge pipeline and permanent deployment remain open",
+      "priority": null
+    },
+    {
+      "id": "Q-025",
+      "title": "### Q-025. What maturity model should be used for ideas and reusable knowledge?",
+      "status": "Substantially refined, not finalized",
+      "priority": null
+    },
+    {
+      "id": "Q-038",
+      "title": "### Q-038. How should reusable knowledge quality and evolution be governed?",
+      "status": "Substantially refined, not resolved end to end",
+      "priority": null
+    },
+    {
+      "id": "Q-054",
+      "title": "### Q-054. How far should governed multi-model collaboration be mechanized?",
+      "status": "Core human-supervised method accepted; further mechanization deliberately open",
+      "priority": null
+    }
+  ]
+}

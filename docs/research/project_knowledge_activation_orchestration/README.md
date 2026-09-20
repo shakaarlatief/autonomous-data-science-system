@@ -18,6 +18,15 @@ The files here are not governing architecture. They preserve owner intent, examp
 002_chat27_activation_self_hosting_bootstrap_evidence.md
     detailed reconstruction of the 2026-09-20 Chat 27 discussion
     beginning with the frozen-architecture/reopen question
+
+AO1_COMPLETENESS_MATRIX_V01.json
+    machine-readable 31-capability maturity + urgency audit
+
+AO1_ARCHITECTURE_BACKLOG_STATUS_SNAPSHOT_V01.json
+    all 32 current architecture-backlog items and statuses at AO-1
+
+AO1_OPEN_QUESTION_STATUS_SNAPSHOT_V01.json
+    all 31 current open-question status rows at AO-1
 ```
 
 Interpretation:

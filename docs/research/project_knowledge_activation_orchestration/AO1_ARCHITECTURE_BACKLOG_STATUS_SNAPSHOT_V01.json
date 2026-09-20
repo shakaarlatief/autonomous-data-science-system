@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "source": "docs/OPEN_ARCHITECTURE_BACKLOG.md",
+  "snapshot_date": "2026-09-20",
+  "items": [
+    {
+      "id": "AB-001",
+      "title": "Device-independent ChatGPT access to the local ADS connector",
+      "status": "RESOLVED FOR CONNECTOR REACHABILITY / MOBILE WEB PASS / NATIVE APP AUTH-CONTEXT FAIL",
+      "priority": "P0"
+    },
+    {
+      "id": "AB-002",
+      "title": "Narrow Codexless runtime self-maintenance authority",
+      "status": "CLOSED / LIVE SEMANTIC PUBLICATION + RESTART + ROLLBACK QUALIFIED",
+      "priority": "P1"
+    },
+    {
+      "id": "AB-003",
+      "title": "Autonomous supervision and wakeup for long-running Codex tasks",
+      "status": "DEFERRED / OPTIONAL DIRECT-CODEX ORCHESTRATION CONVENIENCE",
+      "priority": "P2"
+    },
+    {
+      "id": "AB-004",
+      "title": "Active-turn writer ownership transfer and reacquisition",
+      "status": "DEFERRED / OPTIONAL DIRECT-CODEX DESKTOP-HANDOFF RESEARCH",
+      "priority": "P2"
+    },
+    {
+      "id": "AB-005",
+      "title": "Reuse-first multimodal document architecture",
+      "status": "RESOLVED FOR ACCEPTED PDF + OFFICE DIRECT-SOURCE SCOPE / REOPEN ON NEW FORMAT OR RENDERED-FIDELITY TRIGGER",
+      "priority": "P1"
+    },
+    {
+      "id": "AB-006",
+      "title": "Robust Codex task recovery after caller/tunnel/device interruption",
+      "status": "DEFERRED / OPTIONAL CODEXLESS-DIRECT TASK RECOVERY / NATIVE REMOTE ACCEPTED",
+      "priority": "P2"
+    },
+    {
+      "id": "AB-007",
+      "title": "Actionable Rich Card supervision surface",
+      "status": "DEFERRED / OPTIONAL CUSTOM RICH-CARD SUPERVISION",
+      "priority": "P2"
+    },
+    {
+      "id": "AB-008",
+      "title": "Stable MCP schema and ChatGPT tool-projection lifecycle",
+      "status": "OPEN / MONITOR / TOP-LEVEL UNION SCHEMA GENERICIZATION REPRODUCED",
+      "priority": "P1"
+    },
+    {
+      "id": "AB-009",
+      "title": "Developer MCP and native ChatGPT connector coexistence",
+      "status": "MONITOR / OPEN HOST LIMITATION",
+      "priority": "P2"
+    },
+    {
+      "id": "AB-010",
+      "title": "v17 semantic Codex task viewer",
+      "status": "PAUSED / RESEARCHING",
+      "priority": "P1"
+    },
+    {
+      "id": "AB-011",
+      "title": "Same-turn steering and persistent follow-up queues",
+      "status": "RESEARCHING",
+      "priority": "P1"
+    },
+    {
+      "id": "AB-012",
+      "title": "App Server reviewer / auto-review integration with Call Profile",
+      "status": "LIVE-QUALIFIED COMPLEMENT / BROADER ESCALATION BEHAVIOR OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "AB-013",
+      "title": "Shared spectator / cross-client live synchronization",
+      "status": "RESEARCHING",
+      "priority": "P1"
+    },
+    {
+      "id": "AB-014",
+      "title": "Long-thread pagination, history and restart compatibility",
+      "status": "MONITOR / RESEARCHING",
+      "priority": "P2"
+    },
+    {
+      "id": "AB-015",
+      "title": "Multi-agent / subagent supervision and lineage",
+      "status": "MONITOR / RESEARCHING",
+      "priority": "P2"
+    },
+    {
+      "id": "AB-016",
+      "title": "App Server daemon / local-control transport as a future simplification",
+      "status": "MONITOR",
+      "priority": "P3"
+    },
+    {
+      "id": "AB-017",
+      "title": "Broader host-capability taxonomy beyond workspaces",
+      "status": "RESEARCHING / FIRST RUNTIME-MAINTENANCE AUTHORITY CLASS RESOLVED / BROADER TAXONOMY OPEN",
+      "priority": "P2"
+    },
+    {
+      "id": "AB-018",
+      "title": "Public Codexless and OpenAI Codex upstream reconciliation",
+      "status": "RESEARCHING",
+      "priority": "P1"
+    },
+    {
+      "id": "AB-019",
+      "title": "Exact local Codex capability/version probes",
+      "status": "RESEARCHING",
+      "priority": "P1"
+    },
+    {
+      "id": "AB-020",
+      "title": "Private local-runtime preservation and publication workflow refinement",
+      "status": "RESOLVED / LIVE ABOVE-32-KIB PUSH QUALIFIED",
+      "priority": "P2"
+    },
+    {
+      "id": "AB-021",
+      "title": "Privacy/consent behavior for developer-MCP arguments",
+      "status": "OPEN / OBSERVATION TO CHARACTERIZE",
+      "priority": "P2"
+    },
+    {
+      "id": "AB-022",
+      "title": "Reconstruction-to-operational-authority routing and required-read enforcement",
+      "status": "RESEARCHING / RESEARCH 124 / REPRODUCED ARCHITECTURE GAP",
+      "priority": "P0"
+    },
+    {
+      "id": "AB-023",
+      "title": "Open Architecture Backlog vs Open Questions discoverability and usage audit",
+      "status": "RESEARCHING / RESEARCH 124 / SELF-AUDIT REQUESTED",
+      "priority": "P1"
+    },
+    {
+      "id": "AB-024",
+      "title": "High-recall new-session reconstruction and hierarchical knowledge traversal",
+      "status": "RESEARCHING / RESEARCH 124 / ARCHITECTURE AUDIT",
+      "priority": "P0"
+    },
+    {
+      "id": "AB-025",
+      "title": "Nested workstream graph, active route stack, and deterministic resume semantics",
+      "status": "RESEARCHING / RESEARCH 124 / ARCHITECTURE AUDIT",
+      "priority": "P1"
+    },
+    {
+      "id": "AB-026",
+      "title": "Knowledge Map topic saturation, hierarchical decomposition, and retrieval usability",
+      "status": "RESEARCHING / RESEARCH 124 / ARCHITECTURE AUDIT",
+      "priority": "P1"
+    },
+    {
+      "id": "AB-027",
+      "title": "Deferred architecture risks, known weaknesses, and evolution-trigger register",
+      "status": "RESEARCHING / RESEARCH 124 / ARCHITECTURE AUDIT",
+      "priority": "P1"
+    },
+    {
+      "id": "AB-028",
+      "title": "Post-Browser Astra independent architecture review after the GPT-5.6 Sol baseline",
+      "status": "CLOSED / PHASE 2 COMPLETE / RESEARCH 118",
+      "priority": "P1"
+    },
+    {
+      "id": "AB-029",
+      "title": "Native GitHub connector capability parity inside Codexless Runtime Bridge",
+      "status": "COMPLETE / RESEARCH 123 CLOSED",
+      "priority": "P1"
+    },
+    {
+      "id": "AB-030",
+      "title": "Governed ADS validation to GitHub CI-evidence workflow",
+      "status": "OPEN / CI-EVIDENCE FOUNDATION QUALIFIED / DESIGN CANDIDATE",
+      "priority": "P1"
+    },
+    {
+      "id": "AB-031",
+      "title": "Intent-driven interaction orchestration, collaboration routing, and recoverable conversation continuity",
+      "status": "OPEN / ARCHITECTURE RESEARCH CANDIDATE / NOT YET ACCEPTED DESIGN",
+      "priority": "P0"
+    },
+    {
+      "id": "AB-032",
+      "title": "Governed Git branch lifecycle policy",
+      "status": "OPEN / DEFERRED ARCHITECTURE QUESTION",
+      "priority": "P2"
+    }
+  ]
+}

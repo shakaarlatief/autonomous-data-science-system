@@ -553,10 +553,10 @@ AO-0  source-evidence preservation
       COMPLETE for Chat 26 + current Chat 27 discussion
 
 AO-1  repository-wide retrospective completeness audit
-      original requirements + deferred mechanisms + backlog + failures
+      COMPLETE / Research 220 + machine-readable matrix/snapshots
 
-AO-2  capability matrix and failure taxonomy
-      solved / partial / substrate-only / missing / deferred
+AO-2  capability boundary and failure taxonomy
+      NEXT / collapse the 31-row audit into architecture-neutral control-loop responsibilities
 
 AO-3  control-plane conceptual architecture
       event -> activation -> routing -> collaboration -> preservation -> resume
@@ -601,7 +601,7 @@ Authority switch
     NOT ALLOWED
 
 Immediate next work
-    AO-1 REPOSITORY-WIDE RETROSPECTIVE COMPLETENESS AUDIT
+    AO-2 CAPABILITY BOUNDARY AND FAILURE TAXONOMY
 ```
 
 No production navigation-schema/view code should be mutated merely to keep the old sequence moving.
@@ -637,5 +637,6 @@ SUCCESSOR_ORCHESTRATION_BRIDGE=HYPOTHESIS
 RESEARCH218=FROZEN_BASELINE_RETAINED
 CURRENT_OPERATIONAL_AUTHORITY=CURRENT_CONTINUITY_ARCHITECTURE
 AUTHORITY_SWITCH_ALLOWED=false
-NEXT=AO_1_RETROSPECTIVE_COMPLETENESS_AUDIT
+AO_1=COMPLETE
+NEXT=AO_2_CAPABILITY_BOUNDARY_AND_FAILURE_TAXONOMY
 ```

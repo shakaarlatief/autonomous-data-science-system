@@ -1,0 +1,577 @@
+{
+  "schema_version": 1,
+  "audit_id": "AO-1-COMPLETENESS-V01",
+  "date": "2026-09-20",
+  "authority_class": "research_output",
+  "status": "AO1_EVIDENCE_RECONSTRUCTION",
+  "baseline_commit": "c1794e44e8abc6e39c97201d850bc8d68608ba29",
+  "classification_dimensions": {
+    "implementation_maturity": [
+      "ALREADY_SOLVED",
+      "PARTIALLY_SOLVED",
+      "SUBSTRATE_EXISTS_BUT_BEHAVIOR_MISSING",
+      "DEFERRED_WITH_TRIGGER",
+      "UNSCHEDULED",
+      "OBSOLETE"
+    ],
+    "urgency": [
+      "BOOTSTRAP_BLOCKER",
+      "REQUIRED_IN_BOOTSTRAP_STAGE",
+      "REQUIRED_BEFORE_W6",
+      "INTEGRATE_WHEN_RELEVANT",
+      "MONITOR",
+      "OPTIONAL_DEFERRED",
+      "OUT_OF_SCOPE_CURRENT"
+    ]
+  },
+  "capabilities": [
+    {
+      "id": "AO-C01",
+      "name": "Stable project-controlled bootstrap",
+      "maturity": "PARTIALLY_SOLVED",
+      "urgency": "REQUIRED_IN_BOOTSTRAP_STAGE",
+      "basis": [
+        "KA-R02",
+        "AB-024",
+        "docs/CONTINUITY.md"
+      ],
+      "current": [
+        "Repository-first continuation procedure exists",
+        "current routing/current state/Knowledge Map are durable"
+      ],
+      "gap": "Normal continuation still begins through a human/model procedure rather than an executable successor reconstruction control surface."
+    },
+    {
+      "id": "AO-C02",
+      "name": "Owner-intent / project-event interpretation",
+      "maturity": "UNSCHEDULED",
+      "urgency": "BOOTSTRAP_BLOCKER",
+      "basis": [
+        "AB-031",
+        "Q-028",
+        "Research 178",
+        "Research 179"
+      ],
+      "current": [
+        "TaskIntent is designed conceptually",
+        "model-assisted intent classification is permitted"
+      ],
+      "gap": "No production TaskIntent/event model or interaction entrypoint translates ordinary owner language into project-controlled semantics."
+    },
+    {
+      "id": "AO-C03",
+      "name": "Task-shaped reconstruction planner",
+      "maturity": "SUBSTRATE_EXISTS_BUT_BEHAVIOR_MISSING",
+      "urgency": "BOOTSTRAP_BLOCKER",
+      "basis": [
+        "KA-R04",
+        "KA-R05",
+        "KA-R07",
+        "Specification 028 section 26",
+        "Research 178 section 14",
+        "Research 179 section 16",
+        "PKA-W0-J1"
+      ],
+      "current": [
+        "source_catalog",
+        "subject_index",
+        "workstream_graph",
+        "risk_obligation_index",
+        "current_state_core",
+        "authority resolver"
+      ],
+      "gap": "Specification 028 requires a reconstruction planner and Research 179 accepted PKA-W0-J1, but no production reconstruction.py, reconstruct CLI, or production PKA-W0-J1 regression exists."
+    },
+    {
+      "id": "AO-C04",
+      "name": "Consequential-action authority preflight",
+      "maturity": "SUBSTRATE_EXISTS_BUT_BEHAVIOR_MISSING",
+      "urgency": "BOOTSTRAP_BLOCKER",
+      "basis": [
+        "KA-R08",
+        "KA-R09",
+        "KA-R13",
+        "AB-022",
+        "Specification 028 sections 25-26"
+      ],
+      "current": [
+        "deterministic authority resolver",
+        "AuthorityReceipt",
+        "freshness/private evidence semantics"
+      ],
+      "gap": "Resolver is production code, but ordinary owner interaction does not automatically invoke it before consequential guidance/action; resolve-authority CLI promised by Specification 028 is absent."
+    },
+    {
+      "id": "AO-C05",
+      "name": "Action-contract activation and final guidance/action conformance",
+      "maturity": "PARTIALLY_SOLVED",
+      "urgency": "REQUIRED_IN_BOOTSTRAP_STAGE",
+      "basis": [
+        "KA-R09",
+        "BL-001 lineage",
+        "Specification 028 section 17",
+        "Research 144 sections 19-20"
+      ],
+      "current": [
+        "governing procedure ActionContract parsed",
+        "mandatory constraints activated and ordered by authority resolver"
+      ],
+      "gap": "Constraint activation exists, but no general production execution-plan/final-guidance conformance stage was found that guarantees activated constraints survive into dispatched guidance/action."
+    },
+    {
+      "id": "AO-C06",
+      "name": "Known-risk / reopen-trigger activation",
+      "maturity": "SUBSTRATE_EXISTS_BUT_BEHAVIOR_MISSING",
+      "urgency": "BOOTSTRAP_BLOCKER",
+      "basis": [
+        "KA-R10",
+        "AB-027",
+        "KF-KR-01",
+        "Research 168"
+      ],
+      "current": [
+        "risk_or_reopen_triggers field",
+        "risk_obligation_index",
+        "bounded experiment proved risk activation when correct task path is already invoked"
+      ],
+      "gap": "No general event-to-trigger matching/activation path makes relevant risks enter reasoning from ordinary owner observations."
+    },
+    {
+      "id": "AO-C07",
+      "name": "Evolution-trigger register and trigger-state monitoring",
+      "maturity": "PARTIALLY_SOLVED",
+      "urgency": "BOOTSTRAP_BLOCKER",
+      "basis": [
+        "AB-027",
+        "Foundation 014",
+        "D-024",
+        "KA-R34",
+        "KA-R50"
+      ],
+      "current": [
+        "risk trigger field exists",
+        "generated risk index exists",
+        "AB-027 defines desired trigger semantics"
+      ],
+      "gap": "Repository-wide deferred limitations/reopen conditions have not been extracted into a monitorable current register; current production risk index covers only declared migrated sources."
+    },
+    {
+      "id": "AO-C08",
+      "name": "Frozen-architecture evolution protocol",
+      "maturity": "UNSCHEDULED",
+      "urgency": "BOOTSTRAP_BLOCKER",
+      "basis": [
+        "KA-R45",
+        "AB-027",
+        "Research 219"
+      ],
+      "current": [
+        "Git/history and decisions preserve prior architecture",
+        "research process can reopen architecture manually"
+      ],
+      "gap": "No explicit operational classifier/routes CONFORMANCE_DEFECT vs CLARIFICATION vs AMENDMENT vs SUPERSESSION vs REOPEN with trigger evidence and required review gates."
+    },
+    {
+      "id": "AO-C09",
+      "name": "Active workstream graph and deterministic resume",
+      "maturity": "PARTIALLY_SOLVED",
+      "urgency": "REQUIRED_IN_BOOTSTRAP_STAGE",
+      "basis": [
+        "KA-R06",
+        "KA-R25",
+        "KA-R26",
+        "KA-R27",
+        "KA-R28",
+        "AB-025",
+        "Research 170"
+      ],
+      "current": [
+        "production workstream engine",
+        "DAG/readiness/route semantics",
+        "durable receipt recovery",
+        "real Source Vault/Cockpit workstream owners"
+      ],
+      "gap": "Core semantics exist, but ordinary interaction/process routing does not automatically open/pause/return workstreams; many project routes remain outside migrated workstream semantics."
+    },
+    {
+      "id": "AO-C10",
+      "name": "Intent-to-process routing",
+      "maturity": "UNSCHEDULED",
+      "urgency": "BOOTSTRAP_BLOCKER",
+      "basis": [
+        "AB-031",
+        "Q-006",
+        "Research 219"
+      ],
+      "current": [
+        "separate mature procedures exist for research, collaboration, capture, implementation, recovery, continuity"
+      ],
+      "gap": "No project-controlled router maps ordinary events to answer/discussion/research/capture/change/implementation/recovery/architecture-review/human-decision paths."
+    },
+    {
+      "id": "AO-C11",
+      "name": "Preservation routing",
+      "maturity": "SUBSTRATE_EXISTS_BUT_BEHAVIOR_MISSING",
+      "urgency": "REQUIRED_IN_BOOTSTRAP_STAGE",
+      "basis": [
+        "KA-R03",
+        "KA-R22",
+        "KA-R48",
+        "AB-023",
+        "AB-031"
+      ],
+      "current": [
+        "capture validation",
+        "PromotionPlan",
+        "Research 205 real W4 capture/promotion",
+        "backlog/open-question routing rules"
+      ],
+      "gap": "No general interaction layer decides whether new reasoning remains ephemeral, becomes interaction-durable evidence, enters capture/backlog/research, or updates a canonical owner."
+    },
+    {
+      "id": "AO-C12",
+      "name": "Low-friction conversation-born capture",
+      "maturity": "PARTIALLY_SOLVED",
+      "urgency": "REQUIRED_IN_BOOTSTRAP_STAGE",
+      "basis": [
+        "KA-R48",
+        "Research 127",
+        "Research 144",
+        "Research 205"
+      ],
+      "current": [
+        "capture.v1 and open/historical capture lifecycle",
+        "real bounded promotion path qualified"
+      ],
+      "gap": "The repository mechanism exists, but ordinary conversation has no low-friction automatic/suggested intake path and depends on collaborator/owner recognition."
+    },
+    {
+      "id": "AO-C13",
+      "name": "Non-authoritative interaction continuity envelope",
+      "maturity": "UNSCHEDULED",
+      "urgency": "REQUIRED_IN_BOOTSTRAP_STAGE",
+      "basis": [
+        "AB-031",
+        "Interaction provenance convention",
+        "Chat 26 owner evidence"
+      ],
+      "current": [
+        "provider-local interaction metadata exists in checkpoints/current state",
+        "collaboration threads preserve bounded provenance"
+      ],
+      "gap": "No first-class envelope records unresolved non-authoritative interaction material, recoverability, return condition, pending capture/review, and last durable receipt."
+    },
+    {
+      "id": "AO-C14",
+      "name": "Context-window rollover / chat interruption recovery",
+      "maturity": "PARTIALLY_SOLVED",
+      "urgency": "REQUIRED_IN_BOOTSTRAP_STAGE",
+      "basis": [
+        "KA-R03",
+        "KA-R28",
+        "AB-031",
+        "docs/CONTINUITY.md"
+      ],
+      "current": [
+        "planned chat-rotation procedure",
+        "abnormal interruption recovery procedure",
+        "fresh session naming rules"
+      ],
+      "gap": "Procedure remains human/collaborator-driven and does not automatically preserve unresolved interaction-local state or initiate a continuation receipt."
+    },
+    {
+      "id": "AO-C15",
+      "name": "Break-glass / degraded-mode operational recovery",
+      "maturity": "PARTIALLY_SOLVED",
+      "urgency": "REQUIRED_IN_BOOTSTRAP_STAGE",
+      "basis": [
+        "KA-R42",
+        "AB-031",
+        "docs/local_execution/OPERATIONS.md",
+        "AB-001",
+        "AB-002"
+      ],
+      "current": [
+        "exact runtime runbooks",
+        "independent GitHub access exists",
+        "runtime self-maintenance qualified",
+        "public/private degraded-mode semantics exist"
+      ],
+      "gap": "No project-level incident classifier/router automatically moves a failed primary path to an independent recovery channel while preserving parent-workstream continuation."
+    },
+    {
+      "id": "AO-C16",
+      "name": "Collaboration-mode and collaborator routing",
+      "maturity": "SUBSTRATE_EXISTS_BUT_BEHAVIOR_MISSING",
+      "urgency": "BOOTSTRAP_BLOCKER",
+      "basis": [
+        "D-034",
+        "Q-010",
+        "Q-054",
+        "AB-031",
+        "docs/model_collaboration/README.md",
+        "docs/DEVELOPMENT_METHOD.md"
+      ],
+      "current": [
+        "SOLO/REVIEWED/INDEPENDENT_THEN_COMPARATIVE/COORDINATED_HANDOFF/ADVERSARIAL_REVIEW protocols",
+        "Claude/Codex routing guidance",
+        "thread state guard"
+      ],
+      "gap": "Policies exist, but no event/consequence/novelty-based control surface reliably decides when Claude, Codex, Claude Code, or no second model should be used. Owner reminders still materially influence activation."
+    },
+    {
+      "id": "AO-C17",
+      "name": "Review obligations, gates, and downstream impact",
+      "maturity": "PARTIALLY_SOLVED",
+      "urgency": "INTEGRATE_WHEN_RELEVANT",
+      "basis": [
+        "D-034",
+        "Q-054",
+        "DEFERRED_REVIEW_AND_CATCHUP.md"
+      ],
+      "current": [
+        "exact target/gate conventions",
+        "REVIEW_INBOX",
+        "thread state"
+      ],
+      "gap": "Cross-thread dependency/downstream-impact discovery, generated inbox consistency, explicit review-obligation fields, and stale obligation checks remain procedural/open."
+    },
+    {
+      "id": "AO-C18",
+      "name": "Codex bounded implementation routing and transport",
+      "maturity": "ALREADY_SOLVED",
+      "urgency": "INTEGRATE_WHEN_RELEVANT",
+      "basis": [
+        "Development Method",
+        "Research 122",
+        "AB-003",
+        "AB-004",
+        "AB-006"
+      ],
+      "current": [
+        "manual owner relay is accepted default",
+        "Codex model/reasoning tiers documented",
+        "direct dispatch explicitly optional"
+      ],
+      "gap": "The control plane should be able to recommend/select the bounded implementation workflow, but direct automated Codex dispatch is not required for correctness."
+    },
+    {
+      "id": "AO-C19",
+      "name": "Git branch lifecycle and publication policy",
+      "maturity": "UNSCHEDULED",
+      "urgency": "REQUIRED_BEFORE_W6",
+      "basis": [
+        "AB-032",
+        "Specification 028 migration/cutover"
+      ],
+      "current": [
+        "branch state is preserved in workstream/current routing",
+        "guarded Git mutation/push surfaces exist",
+        "branch safety baseline exists"
+      ],
+      "gap": "No governed create/continue/rotate/merge/archive/retire policy, publication cadence, local-only exception contract, unpublished-commit pressure detection, or cleanup evidence policy."
+    },
+    {
+      "id": "AO-C20",
+      "name": "GitHub CI evidence publication integration",
+      "maturity": "DEFERRED_WITH_TRIGGER",
+      "urgency": "INTEGRATE_WHEN_RELEVANT",
+      "basis": [
+        "AB-030"
+      ],
+      "current": [
+        "GitHub Check/status publication foundation exists",
+        "local repository-integrity gate remains authoritative"
+      ],
+      "gap": "Local governed validation is not yet systematically bound/published to exact GitHub commits as project-control evidence."
+    },
+    {
+      "id": "AO-C21",
+      "name": "Reconstruction-quality and activation observability",
+      "maturity": "PARTIALLY_SOLVED",
+      "urgency": "BOOTSTRAP_BLOCKER",
+      "basis": [
+        "KA-R08",
+        "KA-R34",
+        "KA-R40",
+        "KA-R41",
+        "Research 124 section 27",
+        "Research 175"
+      ],
+      "current": [
+        "qualification experiments measure bounded reads and outcomes",
+        "authority receipts exist",
+        "freshness/integrity views exist"
+      ],
+      "gap": "No routine production reconstruction receipt reports what was traversed, activated, left latent, or missed; no live activation quality metric exists."
+    },
+    {
+      "id": "AO-C22",
+      "name": "Architecture self-observation / activation-miss recording",
+      "maturity": "UNSCHEDULED",
+      "urgency": "REQUIRED_IN_BOOTSTRAP_STAGE",
+      "basis": [
+        "KF-KR-01",
+        "Research 219",
+        "Chat 27 observed miss"
+      ],
+      "current": [
+        "failure corpus methodology exists",
+        "new Chat 27 evidence packet preserves one live miss"
+      ],
+      "gap": "No operational event type or evidence path automatically records activation misses, routing misses, repeated exceptions, or owner-reminder dependencies for later architecture evaluation."
+    },
+    {
+      "id": "AO-C23",
+      "name": "Active-surface pressure and recurring consolidation",
+      "maturity": "SUBSTRATE_EXISTS_BUT_BEHAVIOR_MISSING",
+      "urgency": "INTEGRATE_WHEN_RELEVANT",
+      "basis": [
+        "KA-R34",
+        "KA-R50",
+        "Research 144",
+        "Research 146"
+      ],
+      "current": [
+        "persistent view sizes/freshness are inspectable",
+        "consolidation triggers are designed"
+      ],
+      "gap": "No integrated production pressure monitor currently opens governed consolidation/review work from routing payload growth, capture age, fan-out, repeated correction, or stale summary signals."
+    },
+    {
+      "id": "AO-C24",
+      "name": "Provider/tool capability drift monitoring",
+      "maturity": "PARTIALLY_SOLVED",
+      "urgency": "MONITOR",
+      "basis": [
+        "AB-008",
+        "AB-018",
+        "AB-019",
+        "KA-R36"
+      ],
+      "current": [
+        "exact capability/version probe discipline exists",
+        "Codex upstream comparison exists",
+        "provider portability was qualified at architecture level"
+      ],
+      "gap": "Monitoring remains distributed/manual; control-plane behavior must not assume optional provider/tool capabilities without current probes."
+    },
+    {
+      "id": "AO-C25",
+      "name": "Optional direct-Codex liveness/writer/task recovery",
+      "maturity": "DEFERRED_WITH_TRIGGER",
+      "urgency": "OPTIONAL_DEFERRED",
+      "basis": [
+        "AB-003",
+        "AB-004",
+        "AB-006"
+      ],
+      "current": [
+        "manual relay + native Codex Remote accepted",
+        "idle handoff path exists",
+        "auto-review mitigates routine approval stalls"
+      ],
+      "gap": "Autonomous assistant wakeup, active-turn writer transfer, and direct task recovery remain intentionally optional unless direct orchestration becomes a first-order requirement."
+    },
+    {
+      "id": "AO-C26",
+      "name": "Cross-client spectator/steer/thread-history orchestration",
+      "maturity": "DEFERRED_WITH_TRIGGER",
+      "urgency": "OPTIONAL_DEFERRED",
+      "basis": [
+        "AB-011",
+        "AB-013",
+        "AB-014",
+        "AB-015"
+      ],
+      "current": [
+        "some App Server capabilities are researched",
+        "persistent thread identity conventions exist"
+      ],
+      "gap": "Same-turn steering, spectator synchronization, long-thread APIs, and multi-agent lineage are not required for the core owner-intent control plane yet."
+    },
+    {
+      "id": "AO-C27",
+      "name": "Host capability authority taxonomy",
+      "maturity": "PARTIALLY_SOLVED",
+      "urgency": "MONITOR",
+      "basis": [
+        "AB-017",
+        "AB-002"
+      ],
+      "current": [
+        "runtime-maintenance authority class is live-qualified",
+        "workspace authority remains bounded"
+      ],
+      "gap": "Other host-resource classes remain open and must not inherit broad authority implicitly."
+    },
+    {
+      "id": "AO-C28",
+      "name": "Open backlog / open-question relevance activation",
+      "maturity": "SUBSTRATE_EXISTS_BUT_BEHAVIOR_MISSING",
+      "urgency": "BOOTSTRAP_BLOCKER",
+      "basis": [
+        "AB-023",
+        "AB-027",
+        "OPEN_QUESTIONS maintenance rule"
+      ],
+      "current": [
+        "purpose distinction is documented",
+        "Knowledge Map routes both surfaces"
+      ],
+      "gap": "Relevant deferred architecture/open questions can remain practically invisible unless a collaborator chooses to inspect them; no task/event relevance activation is enforced."
+    },
+    {
+      "id": "AO-C29",
+      "name": "Semantic/hierarchical retrieval beyond flat legacy Knowledge Map",
+      "maturity": "PARTIALLY_SOLVED",
+      "urgency": "REQUIRED_IN_BOOTSTRAP_STAGE",
+      "basis": [
+        "AB-024",
+        "AB-026",
+        "KA-R07",
+        "KA-R47",
+        "Research 217",
+        "Research 218"
+      ],
+      "current": [
+        "source catalog and structural subject_index exist",
+        "T1 controlled semantic subject architecture is frozen"
+      ],
+      "gap": "Production subject catalog/source-owned semantic memberships/subject_index V2 are not implemented because W5-F0 is paused; current activation still relies heavily on legacy navigation and explicit search."
+    },
+    {
+      "id": "AO-C30",
+      "name": "Operational use of successor control plane before authority switch",
+      "maturity": "UNSCHEDULED",
+      "urgency": "BOOTSTRAP_BLOCKER",
+      "basis": [
+        "KA-R44",
+        "KA-R45",
+        "Research 219 successor orchestration bridge hypothesis"
+      ],
+      "current": [
+        "Candidate 01 can represent its own migration in shadow and current authority remains explicit"
+      ],
+      "gap": "No accepted/qualified bridge mode yet allows successor reconstruction/activation/routing to operate as a control layer over current continuity authority during W5."
+    },
+    {
+      "id": "AO-C31",
+      "name": "Specification 028 V1 command-surface completion",
+      "maturity": "PARTIALLY_SOLVED",
+      "urgency": "REQUIRED_IN_BOOTSTRAP_STAGE",
+      "basis": [
+        "Specification 028 section 32",
+        "Research 178 section 18",
+        "Research 190"
+      ],
+      "current": [
+        "validate CLI",
+        "rebuild CLI",
+        "refresh CLI",
+        "check-freshness CLI"
+      ],
+      "gap": "Specification 028 also requires equivalent resolve-authority, reconstruct, and migration-audit command surfaces. None is currently exposed. Reconstruction/authority commands are directly relevant to the bootstrap control plane; migration-audit must be scheduled before W5 acceptance/cutover qualification."
+    }
+  ]
+}
