@@ -9,7 +9,7 @@ This source owns the durable identity, active state, scope, objective, execution
 
 It does **not** own the substantive rationale selecting Candidate 01. D-035 remains the natural owner of that decision. The Project Integration Boundary, Source Vault continuation and Cockpit continuation remain in their own natural canonical owners. Current compatibility surfaces remain separate, and this workstream does not own an operational-authority switch.
 
-W1 through W4 are accepted. W5 is now in progress, beginning with future knowledge information-architecture and authoring design before broader current semantic migration. The workstream remains active for the continuing migration program while preserving:
+W1 through W4 are accepted. W5 remains in progress. Research 208 freezes the physical/authoring V0.2 subset, while C1/T1/T3/T4 empirical gates remain before the subject, item-registry and historical-navigation contracts can be frozen and broader current semantic migration can begin. The workstream remains active for the continuing migration program while preserving:
 
 ```text
 CURRENT_OPERATIONAL_AUTHORITY=CURRENT_CONTINUITY_ARCHITECTURE
@@ -33,11 +33,11 @@ AUTHORITY_SWITCH_ALLOWED=false
     "checkpoint": 554,
     "development_branch": "v1-source-vault-bootstrap-resume",
     "pull_request": null,
-    "current_boundary": "project-knowledge-information-architecture-design"
+    "current_boundary": "project-knowledge-empirical-gates"
   },
   "stage": {
     "stage_id": "SPECIFICATION:028",
-    "stage_state": "W5_INFORMATION_ARCHITECTURE_DESIGN"
+    "stage_state": "W5_EMPIRICAL_INFORMATION_ARCHITECTURE_GATES"
   },
   "provenance": [
     "path:docs/DECISIONS.md#D-035",

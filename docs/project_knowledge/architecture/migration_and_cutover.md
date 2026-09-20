@@ -87,6 +87,6 @@ Rollback must preserve the ability to return to the last qualified authority sta
 
 ## Physical implementation status
 
-W0 through W4 are accepted. W5 is now in progress. Its first bounded substage designs and pressure-tests the future knowledge information architecture and authoring contract before broader current semantic migration begins. No successor-generated compatibility path has overwritten the live continuity surfaces.
+W0 through W4 are accepted. W5 is now in progress. Research 208 freezes the physical/authoring V0.2 subset; C1/T1/T3/T4 must still qualify generator granularity, semantic subjects, item-registry identity and historical-navigation preservation before broader current semantic migration begins. No successor-generated compatibility path has overwritten the live continuity surfaces.
 
 Current continuity remains operational authority, successor outputs remain non-authoritative, and no authority switch may occur before the later qualified W8 decision.

@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-20
-**Status:** ACTIVE CLAUDE OBLIGATION / MC-0018 W5 INFORMATION-ARCHITECTURE CO-DESIGN / MC-0010 DEFERRED
+**Status:** NO ACTIVE CLAUDE OBLIGATION / MC-0018 RESOLVED / C1-T1-T3-T4 NEXT / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -23,28 +23,34 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Current active collaboration obligation
 
+There is no active Claude obligation. MC-0018 is resolved after Claude Messages 001/003 and ChatGPT Messages 002/004. Research 208 freezes the W5 physical/authoring V0.2 subset and hands the remaining subject/item-registry/historical-navigation questions to empirical gates C1/T1/T3/T4. Open another Claude or Claude Code thread only if those measured results expose a material architecture ambiguity or if a future task specifically requires the local-machine access available through Claude Code.
+
+## Most recently completed obligation
+
 ### MC-0018: W5 future knowledge information architecture co-design
 
 ```text
-collaborator               Claude / claude-03
 mode                       REVIEWED / CURRENT_CONTEXT_CO_DESIGN
-coordination branch        v1-source-vault-bootstrap-resume
 exact design target        ac45bc7078cd23af85f243cb61ba6a8b499f284d
-current task               respond to ChatGPT Message 002 and perform bounded W0-W4 implementation-informed architecture-conformance pass
-expected output            messages/003_claude_w5_v02_and_w0_w4_implementation_conformance_followup.md
-write scope                docs/model_collaboration/threads/MC-0018/messages/**
-status                     OPEN / CHATGPT MESSAGE 002 COMPLETE / CLAUDE MESSAGE 003 NEXT
+Claude Message 001         W5 V0.1 adversarial review/counter-design
+ChatGPT Message 002        verified disposition + V0.2 direction
+Claude Message 003         V0.2 challenge + bounded W0-W4 conformance pass
+ChatGPT Message 004        final reconciliation + empirical-gate handoff
+final design               Research 208
+result                     physical/authoring V0.2 frozen; C1/T1/T3/T4 next
+status                     RESOLVED
 conversation               03 - Project Knowledge Architecture Foundations and Design Method
 ```
 
-This is intentionally current-context co-design rather than blind independent review. Claude may use its preserved MC-0011 through MC-0017 architecture context and the accepted W0-W4 evidence. Broad W5 semantic migration remains paused until the future file/folder/subject/authoring architecture is reconciled and frozen.
-
-Durable contract:
+Durable records:
 
 ```text
-docs/model_collaboration/threads/MC-0018/BRIEF.md
-docs/model_collaboration/threads/MC-0018/THREAD.md
-docs/model_collaboration/threads/MC-0018/STATE.json
+docs/model_collaboration/threads/MC-0018/RESOLUTION.md
+docs/model_collaboration/threads/MC-0018/messages/001_claude_w5_information_architecture_review_and_counterdesign.md
+docs/model_collaboration/threads/MC-0018/messages/002_chatgpt_w5_v02_disposition_and_implementation_review_request.md
+docs/model_collaboration/threads/MC-0018/messages/003_claude_w5_v02_and_w0_w4_implementation_conformance_followup.md
+docs/model_collaboration/threads/MC-0018/messages/004_chatgpt_final_reconciliation_and_empirical_gate_handoff.md
+docs/research/208_w5_physical_authoring_v02_freeze_and_empirical_gate_program.md
 ```
 
 ## Most recently completed obligation
