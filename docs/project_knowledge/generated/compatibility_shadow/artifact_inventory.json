@@ -1,6 +1,6 @@
 {
-  "artifact_count": 1363,
-  "artifact_tree_digest": "c8e50cb9bc093db9d3ed0555a5c4909569345d6279a16a1e1ee500bdb7a21b5b",
+  "artifact_count": 1364,
+  "artifact_tree_digest": "28ca3046bc41e41bc0ede691d5d8e7df0f2050e8dacb6a09dd2f1b468492c7cd",
   "artifacts": [
     {
       "group": "<docs-root>",
@@ -5895,6 +5895,11 @@
     },
     {
       "group": "research",
+      "path": "docs/research/209_w5_c1_persistent_view_implementation_closure_qualification_result.md",
+      "suffix": ".md"
+    },
+    {
+      "group": "research",
       "path": "docs/research/CODEX_UPSTREAM_ADS_COMPARISON_MATRIX.md",
       "suffix": ".md"
     },
@@ -6871,7 +6876,7 @@
       "group": "project_knowledge"
     },
     {
-      "artifact_count": 355,
+      "artifact_count": 356,
       "group": "research"
     },
     {
@@ -6884,5 +6889,5 @@
     }
   ],
   "schema_version": "1",
-  "source_boundary": "sha256:73688f63e26f0aa3bba89f5076ee5235e639b5d29003b7f8487fae126ea533bb"
+  "source_boundary": "sha256:77c7c4bc586e37627bba1af60d4b54771a37526ce40a739aecf4caf292608ffd"
 }

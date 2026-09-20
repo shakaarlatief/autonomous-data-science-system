@@ -18,13 +18,13 @@
       "byte_length": 5332,
       "path": "docs/project_knowledge/generated/compatibility_shadow/KNOWLEDGE_MAP.md",
       "role": "knowledge_map",
-      "sha256": "f905a34258404adbb39d24f4d918d851c7348c9874b6c41b37a3c23581a5fd1c"
+      "sha256": "085cb8dac2d0683867c92de03da6b04c5a78a507d140897738a4e828ec1376d4"
     },
     {
-      "byte_length": 226648,
+      "byte_length": 226814,
       "path": "docs/project_knowledge/generated/compatibility_shadow/artifact_inventory.json",
       "role": "artifact_inventory",
-      "sha256": "889ccbc897385efc864d82f5bab7cb2a780fd78043c3588f970f7c9152ff2793"
+      "sha256": "c02626d3cdc35d87bf7502b2ddc4b002eaaf3690ac806a6511bff6152665cc74"
     }
   ],
   "differences": [
@@ -53,7 +53,7 @@
       "blocking": false,
       "classification": "EQUIVALENT_REPRESENTATION",
       "difference_id": "knowledge-map.artifact-reachability",
-      "rationale": "All 659 unique legacy path/directory references remain reachable.",
+      "rationale": "All 660 unique legacy path/directory references remain reachable.",
       "role": "knowledge_map"
     },
     {
@@ -76,5 +76,5 @@
     "generator_version": "1"
   },
   "schema_version": "1",
-  "source_boundary": "sha256:73688f63e26f0aa3bba89f5076ee5235e639b5d29003b7f8487fae126ea533bb"
+  "source_boundary": "sha256:77c7c4bc586e37627bba1af60d4b54771a37526ce40a739aecf4caf292608ffd"
 }
