@@ -1,6 +1,6 @@
 {
-  "artifact_count": 1372,
-  "artifact_tree_digest": "8fa5af151357ea095f8d736254d9bfdb535697b14dbdfd919b77c5d679f5c9f2",
+  "artifact_count": 1376,
+  "artifact_tree_digest": "55bd9f9c1593c4b85f1e5204676232b77924021bc557be0e10db11b2c5a9d266",
   "artifacts": [
     {
       "group": "<docs-root>",
@@ -4803,12 +4803,27 @@
     },
     {
       "group": "model_collaboration",
+      "path": "docs/model_collaboration/threads/MC-0019/RESOLUTION.md",
+      "suffix": ".md"
+    },
+    {
+      "group": "model_collaboration",
       "path": "docs/model_collaboration/threads/MC-0019/STATE.json",
       "suffix": ".json"
     },
     {
       "group": "model_collaboration",
       "path": "docs/model_collaboration/threads/MC-0019/THREAD.md",
+      "suffix": ".md"
+    },
+    {
+      "group": "model_collaboration",
+      "path": "docs/model_collaboration/threads/MC-0019/messages/001_claude_blind_subject_placement.md",
+      "suffix": ".md"
+    },
+    {
+      "group": "model_collaboration",
+      "path": "docs/model_collaboration/threads/MC-0019/messages/002_chatgpt_calibration_comparison_and_t1_disposition.md",
       "suffix": ".md"
     },
     {
@@ -5940,6 +5955,11 @@
     },
     {
       "group": "research",
+      "path": "docs/research/215_w5_t1_v01_controlled_subject_calibration_result.md",
+      "suffix": ".md"
+    },
+    {
+      "group": "research",
       "path": "docs/research/CODEX_UPSTREAM_ADS_COMPARISON_MATRIX.md",
       "suffix": ".md"
     },
@@ -6904,7 +6924,7 @@
       "group": "methodological_knowledge"
     },
     {
-      "artifact_count": 138,
+      "artifact_count": 141,
       "group": "model_collaboration"
     },
     {
@@ -6916,7 +6936,7 @@
       "group": "project_knowledge"
     },
     {
-      "artifact_count": 361,
+      "artifact_count": 362,
       "group": "research"
     },
     {
@@ -6929,5 +6949,5 @@
     }
   ],
   "schema_version": "1",
-  "source_boundary": "sha256:f97a5c39a303af03fa721091c59defe76835e86d22d5cd1318e3e091d52c1fc9"
+  "source_boundary": "sha256:5a9183cc9479b0035d71b74594548834464c0bc0052bf8e92381dfb25d9246ef"
 }
