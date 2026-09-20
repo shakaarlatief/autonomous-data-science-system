@@ -9,7 +9,7 @@ This source owns the durable identity, active state, scope, objective, execution
 
 It does **not** own the substantive rationale selecting Candidate 01. D-035 remains the natural owner of that decision. The Project Integration Boundary, Source Vault continuation and Cockpit continuation remain in their own natural canonical owners. Current compatibility surfaces remain separate, and this workstream does not own an operational-authority switch.
 
-W1 through W4 are accepted. W5 remains in progress. Research 218 now reconciles the accepted Research 208 physical/authoring design, Research 209 C1 implementation-closure result, Research 212 T3 item-carrier contract, Research 214 T4 historical-navigation contract and Research 217 T1 controlled-subject architecture into the frozen full W5 information architecture. Broader current semantic migration is now open under that target, beginning with W5-F0 production navigation substrate. W5 itself is not yet accepted, W6 remains unavailable, and the workstream remains active for the continuing migration program while preserving:
+W1 through W4 are accepted. W5 remains in progress. Research 218 remains the frozen full W5 information-architecture baseline, but Checkpoint 556 pauses W5-F0 before implementation because the owner surfaced a stronger activation/orchestration bootstrapping gap. Research 219 now governs a bounded self-hosting research program to recover deferred requirements, audit what is actually solved versus substrate-only, design the missing control plane, and determine whether successor activation/routing can operate over the still-authoritative current continuity architecture before broader migration resumes. W5 itself is not yet accepted, W6 remains unavailable, and the workstream remains active while preserving:
 
 ```text
 CURRENT_OPERATIONAL_AUTHORITY=CURRENT_CONTINUITY_ARCHITECTURE
@@ -30,14 +30,14 @@ AUTHORITY_SWITCH_ALLOWED=false
   },
   "objective": "Implement and migrate the selected Candidate 01 project-development knowledge architecture under Specification 028 while current continuity remains operational authority until an explicit qualified switch.",
   "execution_anchor": {
-    "checkpoint": 555,
+    "checkpoint": 556,
     "development_branch": "v1-source-vault-bootstrap-resume",
     "pull_request": null,
-    "current_boundary": "project-knowledge-broader-semantic-migration"
+    "current_boundary": "project-knowledge-activation-orchestration-bootstrap"
   },
   "stage": {
     "stage_id": "SPECIFICATION:028",
-    "stage_state": "W5_BROADER_CURRENT_SEMANTIC_MIGRATION"
+    "stage_state": "W5_ACTIVATION_ORCHESTRATION_SELF_HOSTING_RESEARCH"
   },
   "provenance": [
     "path:docs/DECISIONS.md#D-035",

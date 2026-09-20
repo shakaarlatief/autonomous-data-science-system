@@ -432,6 +432,11 @@ docs/research/216_w5_t1_v02_subject_vocabulary_refinement_and_blind_calibration_
 docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md
 docs/research/218_w5_final_information_architecture_reconciliation_and_target_freeze.md
 docs/checkpoints/555_w5_information_architecture_frozen_broader_semantic_migration_opened.md
+docs/research/219_activation_orchestration_self_hosting_bootstrap_program.md
+docs/checkpoints/556_activation_orchestration_self_hosting_bootstrap_opened.md
+docs/research/project_knowledge_activation_orchestration/README.md
+docs/research/project_knowledge_activation_orchestration/001_chat26_owner_source_interaction_orchestration_evidence.md
+docs/research/project_knowledge_activation_orchestration/002_chat27_activation_self_hosting_bootstrap_evidence.md
 docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md
 docs/checkpoints/449_scalable_knowledge_architecture_redesign_opened.md
 docs/checkpoints/450_knowledge_architecture_baseline_inventory_complete_requirements_next.md
@@ -1052,7 +1057,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-555 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-556 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 
