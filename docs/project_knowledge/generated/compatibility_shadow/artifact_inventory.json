@@ -1,6 +1,6 @@
 {
-  "artifact_count": 1350,
-  "artifact_tree_digest": "50dcce4c6feb670c72ae4c47bd2f0ab35557bbbc8acbecbb31ef7f17cf8b99ea",
+  "artifact_count": 1352,
+  "artifact_tree_digest": "b05a3924a234669e7b18399ed03243977fafa37d6f251efab6dea8c841233ecf",
   "artifacts": [
     {
       "group": "<docs-root>",
@@ -2827,6 +2827,11 @@
     {
       "group": "checkpoints",
       "path": "docs/checkpoints/553_pka_w3_compatibility_shadow_accepted_capture_promotion_next.md",
+      "suffix": ".md"
+    },
+    {
+      "group": "checkpoints",
+      "path": "docs/checkpoints/554_pka_w4_capture_promotion_accepted_broader_semantic_migration_next.md",
       "suffix": ".md"
     },
     {
@@ -5830,6 +5835,11 @@
     },
     {
       "group": "research",
+      "path": "docs/research/205_w4_production_capture_promotion_acceptance_result.md",
+      "suffix": ".md"
+    },
+    {
+      "group": "research",
       "path": "docs/research/CODEX_UPSTREAM_ADS_COMPARISON_MATRIX.md",
       "suffix": ".md"
     },
@@ -6770,7 +6780,7 @@
       "group": "<docs-root>"
     },
     {
-      "artifact_count": 556,
+      "artifact_count": 557,
       "group": "checkpoints"
     },
     {
@@ -6806,7 +6816,7 @@
       "group": "project_knowledge"
     },
     {
-      "artifact_count": 351,
+      "artifact_count": 352,
       "group": "research"
     },
     {
@@ -6819,5 +6829,5 @@
     }
   ],
   "schema_version": "1",
-  "source_boundary": "sha256:d94e2275d3b7889d7a7b93efdd4c4deeae63e7cbd2ef59cbc74440ad4df9732c"
+  "source_boundary": "sha256:d975a9d083842af4c667c8d33dcd97ad1474afbfff85332b60689a4b2b357f44"
 }
