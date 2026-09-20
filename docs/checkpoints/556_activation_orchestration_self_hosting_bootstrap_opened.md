@@ -6,6 +6,11 @@
 **Project stage:** Candidate 01 activation-orchestration/self-hosting bootstrap before broader W5 implementation
 **Scope:** Preserve the Chat 26/27 interaction evidence, record the observed activation miss, pause ordinary W5-F0 before mutation, and open Research 219's completeness-audit/control-plane program.
 **Authority:** Research 218 remains the frozen W5 information-architecture baseline. The current continuity architecture remains operational authority.
+**Interaction environment:** ChatGPT
+**Project / workspace:** Autonomous Data Science System
+**Interaction session:** chatgpt-27
+**Conversation title:** 27 - Project Knowledge Migration and Qualification
+**Primary collaborator:** ChatGPT
 
 ```text
 prior checkpoint                         555
