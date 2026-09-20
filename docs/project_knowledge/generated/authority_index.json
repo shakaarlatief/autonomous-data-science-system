@@ -214,7 +214,7 @@
       "authority_from": null,
       "authority_to": null,
       "combination_semantics": null,
-      "content_digest": "1b38dc27dc3b5e8d2ab6cd513108b23c3ed652fb7f5792c857e2f2f170e4440e",
+      "content_digest": "04ea61adbe98533badfeda1fa676bba78241060f0a4a1d363410fb932d006784",
       "declaration": {
         "authority_class": "canonical",
         "execution_anchor": {
