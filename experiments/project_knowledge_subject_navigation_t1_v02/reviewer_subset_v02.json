@@ -3,13 +3,20 @@
   "experiment": "W5-T1-V02-independent-placement",
   "authority_class": "research_fixture",
   "source_boundary": "4b94ffe183ff7af72cef6ee7492b4ba2f30c11ef",
-  "catalog_path": "experiments/project_knowledge_subject_navigation_t1_v02/subject_catalog_candidate_v02.json",
+  "catalog_path": "experiments/project_knowledge_subject_navigation_t1_v02/subject_catalog_reviewer_v02.json",
   "prohibited_read_paths": [
     "experiments/project_knowledge_subject_navigation_t1_v02/corpus_annotations_v02.json",
     "experiments/project_knowledge_subject_navigation_t1_v02/navigation_scenarios_v02.json",
     "experiments/project_knowledge_subject_navigation_t1_v02/result_v02.json",
     "experiments/project_knowledge_subject_navigation_t1_v02/candidate_projection_v02.json",
-    "experiments/project_knowledge_subject_navigation_t1_v02/RESULT_V02.md"
+    "experiments/project_knowledge_subject_navigation_t1_v02/RESULT_V02.md",
+    "experiments/project_knowledge_subject_navigation_t1_v02/subject_catalog_candidate_v02.json",
+    "experiments/project_knowledge_subject_navigation_t1/subject_catalog_candidate.json",
+    "experiments/project_knowledge_subject_navigation_t1/corpus_annotations.json",
+    "experiments/project_knowledge_subject_navigation_t1/RESULT.md",
+    "experiments/project_knowledge_subject_navigation_t1/mc0019_calibration_result.json",
+    "docs/model_collaboration/threads/MC-0019/messages/001_claude_blind_subject_placement.md",
+    "docs/model_collaboration/threads/MC-0019/messages/002_chatgpt_calibration_comparison_and_t1_disposition.md"
   ],
   "paths": [
     "docs/VISION.md",

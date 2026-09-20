@@ -1,0 +1,290 @@
+{
+  "schema_version": 2,
+  "experiment": "W5-T1-V02",
+  "authority_class": "research_fixture",
+  "source_boundary": "4b94ffe183ff7af72cef6ee7492b4ba2f30c11ef",
+  "note": "Blind-review projection of the frozen V0.2 vocabulary. Legacy comparison metadata is intentionally removed; semantic definitions and hierarchy are unchanged.",
+  "membership_policy": {
+    "assign_when": "Assign a subject only when the carrier substantively develops, governs, specifies, evaluates, or preserves durable meaning about that subject.",
+    "do_not_assign_when": "Do not assign for mere mention, dependency, implementation adjacency, generic cross-cutting relevance, artifact family, authority class, lifecycle, workstream, physical domain, or resolver scope.",
+    "secondary_subject_rule": "Every secondary subject must independently satisfy the same substantive-content threshold as the preferred subject.",
+    "preferred_subject_rule": "Choose the best default semantic navigation route for the carrier's primary purpose.",
+    "null_preferred_rule": "Use null only when two or more assigned subjects are genuinely co-primary and no unique default route is defensible.",
+    "preferred_parent_semantics": "Display/default hierarchy only. It does not narrow the semantic meaning of the subject.",
+    "broader_semantics": "Polyhierarchical semantic/navigation relation. Multiple broader parents are allowed.",
+    "parent_assignment": "Non-assignable parent nodes are never authored as source memberships; parent rollups are derived.",
+    "legacy_topics_semantics": "Migration/comparison metadata only. Never use legacy_topics as placement guidance.",
+    "membership_ownership": "Membership remains source-owned or source-adjacent. The vocabulary catalog never enumerates members."
+  },
+  "subjects": [
+    {
+      "id": "ads-system",
+      "label": "ADS system architecture",
+      "assignable": false,
+      "description": "Navigation parent for system-level ADS architecture and responsibility boundaries.",
+      "broader": [],
+      "preferred_parent": null
+    },
+    {
+      "id": "methodological-engine",
+      "label": "Methodological engine",
+      "assignable": false,
+      "description": "Navigation parent for methodological reasoning, evaluation, retrieval, action and reusable methodological knowledge.",
+      "broader": [],
+      "preferred_parent": null
+    },
+    {
+      "id": "runtime-and-tooling",
+      "label": "Runtime and tooling",
+      "assignable": false,
+      "description": "Navigation parent for runtime substrate and developer/tool integration surfaces.",
+      "broader": [],
+      "preferred_parent": null
+    },
+    {
+      "id": "project-development",
+      "label": "Project development",
+      "assignable": false,
+      "description": "Navigation parent for the operating method used to develop, preserve and coordinate ADS itself.",
+      "broader": [],
+      "preferred_parent": null
+    },
+    {
+      "id": "source-and-evidence",
+      "label": "Source and evidence",
+      "assignable": false,
+      "description": "Navigation parent for the Source Universe, source artifacts and evidence substrate.",
+      "broader": [],
+      "preferred_parent": null
+    },
+    {
+      "id": "cockpit",
+      "label": "Project Cockpit",
+      "assignable": false,
+      "description": "Navigation parent for Project Cockpit product, interaction, visual-language and implementation concerns.",
+      "broader": [],
+      "preferred_parent": null
+    },
+    {
+      "id": "system-identity",
+      "label": "System identity and human/system boundary",
+      "assignable": true,
+      "description": "What ADS is as a system and how responsibility is divided among the human, LLMs, deterministic software, persistent project state and professional developer workbench.",
+      "include_when": "The carrier substantively defines ADS identity, component ownership, autonomy boundaries, human/system responsibility, or the product-level operating boundary.",
+      "exclude_when": "The carrier only mentions a model/tool or concerns repository development process without defining the ADS system boundary.",
+      "broader": [
+        "ads-system"
+      ],
+      "preferred_parent": "ads-system"
+    },
+    {
+      "id": "project-orchestration",
+      "label": "Project state, dependency and orchestration",
+      "assignable": true,
+      "description": "The product-side project-state model, dependencies, runnable frontier, adaptive sequencing and next-action orchestration.",
+      "include_when": "The carrier substantively defines or evaluates project-state semantics, dependency propagation, adaptive orchestration or next-action selection.",
+      "exclude_when": "The carrier merely records a development workstream, migration sequence, checkpoint plan or repository task status.",
+      "broader": [
+        "ads-system"
+      ],
+      "preferred_parent": "ads-system"
+    },
+    {
+      "id": "knowledge-representation",
+      "label": "Reusable knowledge representation, activation and lifecycle",
+      "assignable": true,
+      "description": "How reusable reasoning or methodological knowledge inside ADS is represented, activated, related, versioned, invalidated, consolidated or promoted.",
+      "include_when": "The carrier materially develops the representation or lifecycle mechanics of reusable ADS reasoning/methodological knowledge.",
+      "exclude_when": "The carrier is primarily about the substantive methodological corpus itself or about preserving project-development knowledge in the repository.",
+      "broader": [
+        "ads-system",
+        "methodological-engine"
+      ],
+      "preferred_parent": "methodological-engine"
+    },
+    {
+      "id": "admissibility-authority",
+      "label": "Admissibility, constraints and action authority",
+      "assignable": true,
+      "description": "Whether an action is permitted, which binding constraints govern it, who has authority to approve or accept residual risk, and when permission/authority requires human gates.",
+      "include_when": "The carrier substantively develops action admissibility, constraint provenance, legal/policy/ethical permission boundaries, approval authority, residual-risk acceptance authority or permission-triggered human involvement.",
+      "exclude_when": "The carrier is only about evaluation quality, assurance intensity, generic project governance or ordinary review workflow.",
+      "broader": [
+        "ads-system",
+        "methodological-engine"
+      ],
+      "preferred_parent": "ads-system"
+    },
+    {
+      "id": "evaluation-assurance",
+      "label": "Evaluation, falsification, assurance and execution integrity",
+      "assignable": true,
+      "description": "Scientific/system evaluation, falsification, regression testing, assurance intensity, execution integrity and evidence needed to justify confidence in system behavior.",
+      "include_when": "The carrier materially designs, performs or governs evaluation, falsification, assurance controls, regression evidence or execution-integrity checks.",
+      "exclude_when": "The carrier is primarily about permission to act or who has authority to approve/accept risk rather than the assurance required once action is admissible.",
+      "broader": [
+        "methodological-engine"
+      ],
+      "preferred_parent": "methodological-engine"
+    },
+    {
+      "id": "runtime-persistence",
+      "label": "Runtime, persistence and execution substrate",
+      "assignable": true,
+      "description": "Durable product runtime state, execution substrate, process/thread/session persistence, resume/recovery semantics and runtime state boundaries.",
+      "include_when": "The carrier substantively defines ADS runtime/persistence architecture or durable execution state semantics.",
+      "exclude_when": "The carrier is only a local operations runbook, connector setup, developer tool integration or external ecosystem review.",
+      "broader": [
+        "runtime-and-tooling"
+      ],
+      "preferred_parent": "runtime-and-tooling"
+    },
+    {
+      "id": "retrieval-context",
+      "label": "Retrieval, relevance and selective reasoning context",
+      "assignable": true,
+      "description": "How ADS retrieves, ranks, filters and activates context or methodological knowledge for a concrete project state.",
+      "include_when": "The carrier substantively develops retrieval channels, applicability, relevance, methodological horizon, selective context or routing into reasoning.",
+      "exclude_when": "The carrier only stores knowledge or describes its general representation without retrieval/applicability semantics.",
+      "broader": [
+        "methodological-engine"
+      ],
+      "preferred_parent": "methodological-engine"
+    },
+    {
+      "id": "recommendation-action",
+      "label": "Recommendation, disposition and action semantics",
+      "assignable": true,
+      "description": "How ADS represents, ranks, constrains and interprets recommendations, dispositions, action value, blocking/required status and candidate next actions.",
+      "include_when": "The carrier materially develops recommendation/disposition/action-value semantics or their evaluation.",
+      "exclude_when": "The carrier only describes general project orchestration without recommendation/action semantics.",
+      "broader": [
+        "methodological-engine"
+      ],
+      "preferred_parent": "methodological-engine"
+    },
+    {
+      "id": "methodological-knowledge",
+      "label": "Methodological Knowledge Universe",
+      "assignable": true,
+      "description": "The substantive reusable methodological knowledge corpus, its coverage, acquisition, organization and domain content.",
+      "include_when": "The carrier materially develops the Methodological Knowledge Universe, its coverage map, source acquisition or substantive methodological content organization.",
+      "exclude_when": "The carrier is primarily about the generic representation/lifecycle mechanism used to encode reusable knowledge.",
+      "broader": [
+        "methodological-engine"
+      ],
+      "preferred_parent": "methodological-engine"
+    },
+    {
+      "id": "source-universe",
+      "label": "Source Universe and evidence substrate",
+      "assignable": true,
+      "description": "The Source Universe, Source Vault, source artifacts, ingestion, evidence provenance and durable source/evidence substrate used by ADS.",
+      "include_when": "The carrier materially develops Source Universe architecture, source-vault operation, ingestion, artifact integrity or source/evidence provenance.",
+      "exclude_when": "The carrier only uses sources as ordinary evidence for another subject.",
+      "broader": [
+        "source-and-evidence"
+      ],
+      "preferred_parent": "source-and-evidence"
+    },
+    {
+      "id": "development-governance",
+      "label": "Development governance, continuity and repository method",
+      "assignable": true,
+      "description": "The operating method for developing ADS: repository integrity, continuity, branching, commits, checkpoints, routing, review and preservation discipline.",
+      "include_when": "The carrier substantively governs or evaluates the project-development method, repository process, continuity, commit/checkpoint discipline or development routing.",
+      "exclude_when": "The carrier is about the architecture of project knowledge itself rather than how development work is operated.",
+      "broader": [
+        "project-development"
+      ],
+      "preferred_parent": "project-development"
+    },
+    {
+      "id": "project-knowledge-architecture",
+      "label": "Project-knowledge architecture and reconstruction",
+      "assignable": true,
+      "description": "Architecture for ownership, preservation, identity, reconstruction, migration and navigation of project-development knowledge.",
+      "include_when": "The carrier materially designs or evaluates how durable project knowledge is owned, identified, migrated, reconstructed or navigated.",
+      "exclude_when": "The carrier only specifies day-to-day repository process or concerns reusable product-side methodological knowledge.",
+      "broader": [
+        "ads-system",
+        "project-development"
+      ],
+      "preferred_parent": "project-development"
+    },
+    {
+      "id": "model-collaboration",
+      "label": "Multi-model collaboration and review protocol",
+      "assignable": true,
+      "description": "Collaboration protocols among ChatGPT, Claude, Codex, Claude Code and future model collaborators, including task ownership, independent review and evidence handoff.",
+      "include_when": "The carrier materially defines or evaluates multi-model collaboration, review modes, write ownership, model handoffs or interaction-session coordination.",
+      "exclude_when": "The carrier merely mentions that another model was used.",
+      "broader": [
+        "project-development"
+      ],
+      "preferred_parent": "project-development"
+    },
+    {
+      "id": "tooling-integrations",
+      "label": "Developer tooling, local execution and external integrations",
+      "assignable": true,
+      "description": "Developer tools and integration surfaces used to build, operate or connect ADS, including local execution bridges, MCP/connectors, external APIs and development-runtime tooling.",
+      "include_when": "The carrier materially develops, evaluates or operates a developer/tool integration or external connection used by ADS development or operation.",
+      "exclude_when": "The carrier primarily defines ADS product runtime/persistence state rather than a tool/integration surface.",
+      "broader": [
+        "runtime-and-tooling",
+        "project-development"
+      ],
+      "preferred_parent": "runtime-and-tooling"
+    },
+    {
+      "id": "cockpit-product",
+      "label": "Project Cockpit product architecture",
+      "assignable": true,
+      "description": "Overall Project Cockpit product/world/control architecture and the product-level composition of its major surfaces.",
+      "include_when": "The carrier materially develops the Cockpit as a whole product or its broad world/control architecture.",
+      "exclude_when": "The carrier is narrowly about interaction behavior, visual grammar or implementation provenance without broader product architecture.",
+      "broader": [
+        "cockpit"
+      ],
+      "preferred_parent": "cockpit"
+    },
+    {
+      "id": "cockpit-interaction",
+      "label": "Cockpit interaction, focus and conversation workspace",
+      "assignable": true,
+      "description": "Cockpit interaction mechanics such as focus, selection, zoom, context suppression, conversation workspace behavior and user-control interactions.",
+      "include_when": "The carrier materially designs or validates Cockpit interaction/focus/workspace behavior.",
+      "exclude_when": "The carrier is only about static visual styling or implementation provenance.",
+      "broader": [
+        "cockpit"
+      ],
+      "preferred_parent": "cockpit"
+    },
+    {
+      "id": "cockpit-visual-language",
+      "label": "Cockpit WorkUnit, connector and visual grammar",
+      "assignable": true,
+      "description": "Cockpit semantic visual language, including WorkUnit silhouettes/categories, connectors/ports, relation appearance, visual hierarchy and related grammar.",
+      "include_when": "The carrier materially designs or validates the semantic visual grammar of Cockpit objects or relations.",
+      "exclude_when": "The carrier only concerns interaction behavior or implementation source binding.",
+      "broader": [
+        "cockpit"
+      ],
+      "preferred_parent": "cockpit"
+    },
+    {
+      "id": "cockpit-implementation",
+      "label": "Cockpit implementation fidelity and provenance",
+      "assignable": true,
+      "description": "Implementation fidelity, source binding, provenance recovery, accepted implementation manifests and exact-history/implementation integrity for Project Cockpit.",
+      "include_when": "The carrier materially governs or verifies Cockpit implementation fidelity, accepted source mapping, provenance or recovery.",
+      "exclude_when": "The carrier is only conceptual product/interaction/visual design without implementation-fidelity concerns.",
+      "broader": [
+        "cockpit",
+        "project-development"
+      ],
+      "preferred_parent": "cockpit"
+    }
+  ]
+}
