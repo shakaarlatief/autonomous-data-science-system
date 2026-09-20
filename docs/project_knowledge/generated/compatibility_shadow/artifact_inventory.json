@@ -1,6 +1,6 @@
 {
-  "artifact_count": 1354,
-  "artifact_tree_digest": "5e94e921cb4c1e15d1050a078877fb6d037696a14208fa180f831d7d6d7ced91",
+  "artifact_count": 1357,
+  "artifact_tree_digest": "758ac5c4c215be5e2557f280ecb0dd8a4dab966a9d5f24d3ced99839a16810ea",
   "artifacts": [
     {
       "group": "<docs-root>",
@@ -4757,6 +4757,21 @@
       "suffix": ".md"
     },
     {
+      "group": "model_collaboration",
+      "path": "docs/model_collaboration/threads/MC-0018/BRIEF.md",
+      "suffix": ".md"
+    },
+    {
+      "group": "model_collaboration",
+      "path": "docs/model_collaboration/threads/MC-0018/STATE.json",
+      "suffix": ".json"
+    },
+    {
+      "group": "model_collaboration",
+      "path": "docs/model_collaboration/threads/MC-0018/THREAD.md",
+      "suffix": ".md"
+    },
+    {
       "group": "private_companion",
       "path": "docs/private_companion/README.md",
       "suffix": ".md"
@@ -6814,7 +6829,7 @@
       "group": "methodological_knowledge"
     },
     {
-      "artifact_count": 127,
+      "artifact_count": 130,
       "group": "model_collaboration"
     },
     {
@@ -6839,5 +6854,5 @@
     }
   ],
   "schema_version": "1",
-  "source_boundary": "sha256:e70f2d2454137e4543dc30c3e95b5092052941bf982386aa3d7820a82427b485"
+  "source_boundary": "sha256:26855d1b65186b342d44eab8d0521a3eed8a751a14df6d697bff146eac6d6265"
 }
