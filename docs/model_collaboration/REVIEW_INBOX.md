@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-20
-**Status:** NO ACTIVE CLAUDE OBLIGATION / MC-0019 RESOLVED / T1 V0.2 REFINEMENT NEXT / MC-0010 DEFERRED
+**Status:** ACTIVE CLAUDE OBLIGATION / MC-0020 T1 V0.2 BLIND PLACEMENT / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -23,7 +23,21 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Current active collaboration obligation
 
-There is no active Claude obligation. MC-0019 is resolved. Research 215 records that the T1 V0.1 controlled-subject direction is supported but not production-ready: preferred-route agreement is strong, while multi-membership admission remains under-specified and an admissibility/authority subject is missing. ChatGPT now owns the bounded V0.2 vocabulary refinement. A fresh blind reviewer will be opened only after that revised fixture is frozen.
+### MC-0020: W5 T1 V0.2 blind subject-placement calibration
+
+```text
+collaborator               Claude Opus / fresh conversation required
+mode                       INDEPENDENT / BLIND PLACEMENT CALIBRATION
+coordination branch        v1-source-vault-bootstrap-resume
+reviewer fixture target    f4308cc74b6d44640f399b6e9c102473382232df
+source corpus boundary     4b94ffe183ff7af72cef6ee7492b4ba2f30c11ef
+current task               independently annotate the same frozen 24-source subset using the V0.2 reviewer catalog
+expected output            messages/001_claude_v02_blind_subject_placement.md
+write scope                docs/model_collaboration/threads/MC-0020/messages/**
+status                     OPEN / CLAUDE MESSAGE 001 NEXT
+```
+
+The reviewer catalog exposes the refined V0.2 definitions and membership policy but intentionally removes `legacy_topics` so legacy routing cannot anchor placement. Claude must not read ChatGPT's V0.2 annotations/scenarios/results, V0.1 calibration outputs, MC-0019 messages or the legacy Knowledge Map before freezing Message 001. This repeats the same sample used by MC-0019 so the project can measure whether V0.2 materially improves placement consistency.
 
 ## Most recently completed obligation
 

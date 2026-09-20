@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "thread_id": "MC-0020",
+  "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
+  "lifecycle_state": "OPEN",
+  "phase": "CLAUDE_V02_BLIND_SUBJECT_PLACEMENT",
+  "target": {
+    "branch": "v1-source-vault-bootstrap-resume",
+    "base_ref": "f4308cc74b6d44640f399b6e9c102473382232df",
+    "description": "W5 T1 V0.2 blind placement calibration against the same 24-source subset used by MC-0019.",
+    "write_paths": []
+  },
+  "task_owner": "chatgpt",
+  "target_write_owner": null,
+  "participants": [
+    {
+      "collaborator_id": "chatgpt",
+      "interaction_environment": "ChatGPT",
+      "interaction_session": "chatgpt-27",
+      "roles": [
+        "TASK_OWNER",
+        "CRITIC",
+        "RESEARCHER"
+      ]
+    },
+    {
+      "collaborator_id": "claude",
+      "interaction_environment": "Claude",
+      "interaction_session": "fresh-opus-for-mc0020",
+      "roles": [
+        "INDEPENDENT_REVIEWER"
+      ]
+    },
+    {
+      "collaborator_id": "human",
+      "interaction_environment": "Human",
+      "interaction_session": "project-owner",
+      "roles": [
+        "HUMAN_DECIDER"
+      ]
+    }
+  ],
+  "allowed_secondary_write_surfaces": [
+    {
+      "collaborator_id": "claude",
+      "paths": [
+        "docs/model_collaboration/threads/MC-0020/messages/**"
+      ]
+    }
+  ],
+  "next_expected_actor": "claude",
+  "independence": {
+    "status": "BLIND_TO_CANDIDATE",
+    "review_base_ref": "f4308cc74b6d44640f399b6e9c102473382232df",
+    "known_exposures": [
+      "The V0.2 reviewer subject vocabulary and its definitions are intentionally exposed.",
+      "The same 24-path reviewer subset used in MC-0019 is intentionally exposed."
+    ],
+    "notes": "A fresh Claude Opus conversation is required. Before freezing Message 001, Claude must not read ChatGPT V0.2 annotations/results, V0.1 calibration outputs, MC-0019 messages, legacy Knowledge Map routing, or later T1 interpretation. The reviewer catalog projection intentionally omits legacy_topics."
+  },
+  "last_transition": {
+    "transition_id": "mc0020-open-v02-blind-placement",
+    "from_state": "WAITING",
+    "to_state": "OPEN",
+    "actor": "chatgpt",
+    "reason": "Research 215 identified membership-threshold and vocabulary-definition confounds in V0.1. Research 216 froze a refined V0.2 contract; a controlled fresh blind placement on the same sample is required before production subject freeze.",
+    "repository_head": "f4308cc74b6d44640f399b6e9c102473382232df"
+  }
+}
