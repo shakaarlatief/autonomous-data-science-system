@@ -1,6 +1,6 @@
 {
-  "artifact_count": 1384,
-  "artifact_tree_digest": "42fc35d37a0fdd7f034a3819e9d4c58ce1123dc27e496c17730e3e6ad7dfafa4",
+  "artifact_count": 1386,
+  "artifact_tree_digest": "f6569b45e4a32a932af360a5b3a72d5fa18f989e55510d4d2e2436766d971d33",
   "artifacts": [
     {
       "group": "<docs-root>",
@@ -2832,6 +2832,11 @@
     {
       "group": "checkpoints",
       "path": "docs/checkpoints/554_pka_w4_capture_promotion_accepted_broader_semantic_migration_next.md",
+      "suffix": ".md"
+    },
+    {
+      "group": "checkpoints",
+      "path": "docs/checkpoints/555_w5_information_architecture_frozen_broader_semantic_migration_opened.md",
       "suffix": ".md"
     },
     {
@@ -6000,6 +6005,11 @@
     },
     {
       "group": "research",
+      "path": "docs/research/218_w5_final_information_architecture_reconciliation_and_target_freeze.md",
+      "suffix": ".md"
+    },
+    {
+      "group": "research",
       "path": "docs/research/CODEX_UPSTREAM_ADS_COMPARISON_MATRIX.md",
       "suffix": ".md"
     },
@@ -6940,7 +6950,7 @@
       "group": "<docs-root>"
     },
     {
-      "artifact_count": 557,
+      "artifact_count": 558,
       "group": "checkpoints"
     },
     {
@@ -6976,7 +6986,7 @@
       "group": "project_knowledge"
     },
     {
-      "artifact_count": 364,
+      "artifact_count": 365,
       "group": "research"
     },
     {
@@ -6989,5 +6999,5 @@
     }
   ],
   "schema_version": "1",
-  "source_boundary": "sha256:b36865ece1de7a00c7593f1946d7a5999cfed10545913560424d3d175c58c8f4"
+  "source_boundary": "sha256:3b9e73deea80dd300e8ac5a986d1530808fdf77ae0144ea38a39d14528917d69"
 }
