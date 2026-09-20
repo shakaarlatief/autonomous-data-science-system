@@ -1,7 +1,7 @@
 # Research 205: W4 Production Capture and Promotion Acceptance Result
 
 **Date:** 2026-09-20
-**Status:** W4 ACCEPTED / POST-BOUNDARY FINALIZATION PENDING
+**Status:** W4 ACCEPTED / POST-BOUNDARY FINALIZATION QUALIFIED / W5 NEXT
 **Selected architecture:** `PKA-CANDIDATE-01`
 **Governing contract:** Specification 028
 **Prior accepted boundary:** Checkpoint 553 / Research 204 / W3 ACCEPTED AND FINALIZED
@@ -192,11 +192,41 @@ stage            SPECIFICATION:028 / W4_ACCEPTED
 boundary         project-knowledge-capture-accepted-semantic-migration-next
 ```
 
-Because this changes the canonical workstream execution anchor and adds W4 acceptance artifacts to the committed documentation tree, the structural views and compatibility shadow must be rematerialized from the exact Checkpoint 554 state before final publication.
+Post-boundary finalization is now complete without advancing the semantic anchor again.
+
+The first Checkpoint 554 finalization pass correctly exposed one continuity-contract defect: the initially authored boundary label exceeded the live routing manifest's 64-character contract. That was repaired to `project-knowledge-capture-accepted-semantic-migration-next`, after which repository integrity returned PASS. The defect was in the authored compatibility boundary label, not in the accepted W4 capture/promotion semantics.
+
+Final post-boundary evidence:
 
 ```text
-W4=ACCEPTED
-POST_BOUNDARY_FINALIZATION=PENDING
+acceptance-boundary commit                  d3a146f68aa2e38e222c45b88699d258fe39e588
+routing-boundary repair                     ded87777baa6b6433eaf86b751a80ff7dd165bd6
+final structural refresh                    de15b9f94e66b282c5d3c6f47eab1c9cfd25cf64
+final compatibility refresh                 7a45eb47da9170c08c1434e1391d72e8a8a8480a
+final compatibility source boundary         sha256:8490810e42cae4439274b0fe29f3501c56ae7072acb99bf2ba016953d6d09ecc
+post-boundary focused regression            77 / 77 PASS
+persistent structural views                 8 / 8 FRESH
+compatibility artifacts                     5 / 5 exact generated-byte match
+legacy Knowledge Map references             656 / 656 reachable
+compatibility blocking                      false
+MIGRATION_GAP                               0
+UNRESOLVED                                  0
+COMMIT project-knowledge validation         PASS
+candidate count                             1,484
+governed declarations                       10
+noncanonical declarations                   9
+capture-area carriers                       2
+diagnostics                                 0
+PUBLIC_REPOSITORY_INTEGRITY                 PASS
+```
+
+The five compatibility artifacts remain derived/non-authoritative and byte-identical to a fresh build from the final accepted semantic boundary. No live compatibility path was successor-overwritten.
+
+No later checkpoint is created merely for this finalization because Checkpoint 554 is already the stable W4 semantic anchor.
+
+```text
+W4=ACCEPTED_AND_FINALIZED
+POST_BOUNDARY_FINALIZATION=PASS
 W5=NOT_STARTED
 NEXT=W5_BROADER_CURRENT_SEMANTIC_MIGRATION
 CURRENT_OPERATIONAL_AUTHORITY=CURRENT_CONTINUITY_ARCHITECTURE

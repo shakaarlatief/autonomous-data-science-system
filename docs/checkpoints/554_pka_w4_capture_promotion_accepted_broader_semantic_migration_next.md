@@ -1,7 +1,7 @@
 # Checkpoint 554: PKA W4 Production Capture and Promotion Accepted, Broader Semantic Migration Next
 
 **Date:** 2026-09-20
-**Status:** W4 ACCEPTED / POST-BOUNDARY FINALIZATION PENDING / W5 NEXT
+**Status:** W4 ACCEPTED / POST-BOUNDARY FINALIZATION QUALIFIED / W5 NEXT
 **Checkpoint class:** MIGRATION / VALIDATION / PROJECT_KNOWLEDGE
 **Project stage:** Selected project-development knowledge architecture W4 production capture/promotion
 **Scope:** Accept W4 after one real capture was explicitly reviewed against an exact canonical target revision, promoted into its natural canonical owner, archived out of the open state, and qualified for meaning/provenance preservation after archival.
@@ -44,13 +44,28 @@ authority switch allowed                  false
 
 The workstream/current-routing anchor advances to Checkpoint 554 / `W4_ACCEPTED` / `project-knowledge-capture-accepted-semantic-migration-next`.
 
-Post-boundary rematerialization and requalification are required because the acceptance boundary itself changes canonical successor inputs and the committed documentation inventory.
+Post-boundary finalization is complete. The first pass exposed one overlong current-boundary label, which was repaired to the routing-contract-valid `project-knowledge-capture-accepted-semantic-migration-next`; the W4 capture/promotion semantics themselves did not change.
 
 ```text
-CHECKPOINT554=W4_ACCEPTED
-RESEARCH205=ACCEPTED
-POST_BOUNDARY_FINALIZATION=PENDING
-NEXT=W5_BROADER_CURRENT_SEMANTIC_MIGRATION_AFTER_FINALIZATION
+routing-boundary repair                    ded87777baa6b6433eaf86b751a80ff7dd165bd6
+final structural refresh                   de15b9f94e66b282c5d3c6f47eab1c9cfd25cf64
+final compatibility refresh                7a45eb47da9170c08c1434e1391d72e8a8a8480a
+final compatibility source boundary        sha256:8490810e42cae4439274b0fe29f3501c56ae7072acb99bf2ba016953d6d09ecc
+post-boundary focused regression           77 / 77 PASS
+persistent views                           8 / 8 FRESH
+compatibility artifacts                    5 / 5 exact generated-byte match
+legacy Knowledge Map references            656 / 656
+COMMIT validation                          PASS / 1,484 candidates / 10 governed declarations / zero diagnostics
+PUBLIC_REPOSITORY_INTEGRITY                PASS
+```
+
+No later checkpoint is created merely for this generated-output finalization because Checkpoint 554 is the stable W4 semantic anchor.
+
+```text
+CHECKPOINT554=W4_ACCEPTED_AND_FINALIZED
+RESEARCH205=ACCEPTED_AND_FINALIZED
+POST_BOUNDARY_FINALIZATION=PASS
+NEXT=W5_BROADER_CURRENT_SEMANTIC_MIGRATION
 CURRENT_ARCHITECTURE=STILL_AUTHORITY
 AUTHORITY_SWITCH_ALLOWED=false
 ```
