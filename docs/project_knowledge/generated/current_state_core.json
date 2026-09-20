@@ -1,8 +1,8 @@
 {
   "active_workstream": {
     "execution_anchor": {
-      "checkpoint": 554,
-      "current_boundary": "project-knowledge-empirical-gates",
+      "checkpoint": 555,
+      "current_boundary": "project-knowledge-broader-semantic-migration",
       "development_branch": "v1-source-vault-bootstrap-resume",
       "pull_request": null
     },
@@ -10,7 +10,7 @@
     "semantic_id": "WS-PKA-CURRENT",
     "stage": {
       "stage_id": "SPECIFICATION:028",
-      "stage_state": "W5_EMPIRICAL_INFORMATION_ARCHITECTURE_GATES"
+      "stage_state": "W5_BROADER_CURRENT_SEMANTIC_MIGRATION"
     },
     "state": "ACTIVE"
   },
