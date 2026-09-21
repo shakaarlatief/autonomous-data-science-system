@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "scenario_id": "R7",
+  "provenance_class": "HISTORICAL",
+  "title": "W0 obligation-realization retrospective",
+  "parent": [
+    "AO-F14",
+    "Specification 028 sections 26 and 32",
+    "Checkpoint 542"
+  ],
+  "evidence_boundary": {
+    "snapshot": "cc2ce7ec2f129b8887bd8be1c0703b414445d580",
+    "mode": "EXACT_GIT_SNAPSHOT"
+  },
+  "task": "At this accepted W0 boundary, audit whether the implementation contract's W0-relevant MUST obligations are fully represented in the executable qualification gates and implementation evidence. Report any accepted obligations that lack an implementation gate, evidence path, operational realization, or explicit governed deferral. Do not rewrite prior gate history.",
+  "permitted_evidence": [
+    "exact frozen snapshot only"
+  ],
+  "prohibited_evidence": [
+    "Research 220 retrospective finding",
+    "Research 227/228",
+    "evaluator keys",
+    "prior AO-9 scored results"
+  ],
+  "execution_hint": "mechanism-level obligation audit; do not infer retroactive gate failure merely because a prospective scheduling gap exists",
+  "evaluator_key_visible_to_trial": false
+}

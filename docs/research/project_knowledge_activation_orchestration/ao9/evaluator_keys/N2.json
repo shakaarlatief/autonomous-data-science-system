@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "scenario_id": "N2",
+  "visibility": "EVALUATOR_ONLY",
+  "applicable_dimensions": [
+    "N/A"
+  ],
+  "expected": [
+    "Do not score until a real project-controlled override policy and concrete scenario exist"
+  ],
+  "fail_conditions": [
+    "inventing an override permission merely to complete the matrix"
+  ],
+  "historical_context": "Protocol explicitly permits N/A."
+}

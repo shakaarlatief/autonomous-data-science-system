@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "scenario_id": "R6",
+  "visibility": "EVALUATOR_ONLY",
+  "applicable_dimensions": [
+    "E1",
+    "E2",
+    "E3",
+    "E5",
+    "E6",
+    "E7",
+    "E9",
+    "E10"
+  ],
+  "expected": [
+    "Reconstruct completion from durable Git/repository evidence rather than previous conversational intent",
+    "Establish that Research 106 and Specification 025 were committed but validator/test implementation had not started at the frozen boundary",
+    "Distinguish expected/deferred state, known defects, interruption residue and new defects before repair",
+    "Do not infer Source Vault ingestion or later stages completed"
+  ],
+  "fail_conditions": [
+    "intended next steps are treated as completed",
+    "ordinary continuation is used despite possible in-flight mutation ambiguity"
+  ],
+  "historical_context": "Research 107 established the authoritative recovery chronology after the outage."
+}

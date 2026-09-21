@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "packet_id": "AO9-SCENARIO-EVALUATOR-KEY-PACKET-V01",
+  "protocol": "research:228",
+  "protocol_freeze_commit": "bf48758eaee2b87559ac86f4aee02f48cecf37e5",
+  "status": "P1_FROZEN_BEFORE_ARM_CONTRACTS_AND_SCORING",
+  "scenario_count": 15,
+  "positive_count": 11,
+  "negative_control_count": 4,
+  "scoring_started": false,
+  "evaluator_keys_trial_visible": false,
+  "n2_policy_status": "DEFERRED_NA_PENDING_VALID_OVERRIDE_POLICY",
+  "entries": [
+    {
+      "scenario_id": "R1",
+      "provenance_class": "HISTORICAL_BASELINE",
+      "scenario_path": "docs/research/project_knowledge_activation_orchestration/ao9/scenarios/R1.json",
+      "scenario_sha256": "10236917c42c1084a5605a822942a154eb0061603eb8e028c3cdb56ddb4cf33e",
+      "evaluator_key_path": "docs/research/project_knowledge_activation_orchestration/ao9/evaluator_keys/R1.json",
+      "evaluator_key_sha256": "3c4115783e5bdd137cb4ea415096e9e38a6c3169f82a3d0a9edca774bf3b8bd4",
+      "status": "FROZEN_FOR_P2"
+    },
+    {
+      "scenario_id": "R2",
+      "provenance_class": "HISTORICAL_BASELINE",
+      "scenario_path": "docs/research/project_knowledge_activation_orchestration/ao9/scenarios/R2.json",
+      "scenario_sha256": "1cd3c22f6b95cb612c3c4e97623c5ec637b1a4c7f956122c5042761698c79c2c",
+      "evaluator_key_path": "docs/research/project_knowledge_activation_orchestration/ao9/evaluator_keys/R2.json",
+      "evaluator_key_sha256": "8330bc539ba6fa14be9b30fc8e9ee70e6cba2d704b30b4432518753bc37e9f7f",
+      "status": "FROZEN_FOR_P2"
+    },
+    {
+      "scenario_id": "R3",
+      "provenance_class": "HISTORICAL",
+      "scenario_path": "docs/research/project_knowledge_activation_orchestration/ao9/scenarios/R3.json",
+      "scenario_sha256": "a86ba6c3fef1eadbe4d73459952071dbba960d16622c5fd67e24124c127d48fb",
+      "evaluator_key_path": "docs/research/project_knowledge_activation_orchestration/ao9/evaluator_keys/R3.json",
+      "evaluator_key_sha256": "c0c5b0f46c9c11cec647b82ea96d7bab8443a3d077fdd340241274d7c1d8deb3",
+      "status": "FROZEN_FOR_P2"
+    },
+    {
+      "scenario_id": "R4",
+      "provenance_class": "HISTORICAL",
+      "scenario_path": "docs/research/project_knowledge_activation_orchestration/ao9/scenarios/R4.json",
+      "scenario_sha256": "35dacc18ff4c357b4ab233d989ffdec5b7799259e09c1eaa32d554938d2e96d7",
+      "evaluator_key_path": "docs/research/project_knowledge_activation_orchestration/ao9/evaluator_keys/R4.json",
+      "evaluator_key_sha256": "7953160b2a072dc3bda28b952c1fc2a7c1375e8803a471b4fedda74f3cb5893e",
+      "status": "FROZEN_FOR_P2"
+    },
+    {
+      "scenario_id": "R5",
+      "provenance_class": "HISTORICAL_BASELINE",
+      "scenario_path": "docs/research/project_knowledge_activation_orchestration/ao9/scenarios/R5.json",
+      "scenario_sha256": "cbf59d9367309effc8b65f9c985d7b0dc3497bbac15f0e216aa837e54d52643e",
+      "evaluator_key_path": "docs/research/project_knowledge_activation_orchestration/ao9/evaluator_keys/R5.json",
+      "evaluator_key_sha256": "ef4c7667751591300a4cd5401aab5ecdb977325d53be720d858be744ae85fb17",
+      "status": "FROZEN_FOR_P2"
+    },
+    {
+      "scenario_id": "R6",
+      "provenance_class": "HISTORICAL",
+      "scenario_path": "docs/research/project_knowledge_activation_orchestration/ao9/scenarios/R6.json",
+      "scenario_sha256": "c1763b4426a52242f8581fc47c9a29df63e3551b8b493ff4db732a2bfa19e382",
+      "evaluator_key_path": "docs/research/project_knowledge_activation_orchestration/ao9/evaluator_keys/R6.json",
+      "evaluator_key_sha256": "1e3dc17a1b80e87e8e0a89c0032960451245f302740b5ccfc18bf6d33f93c57d",
+      "status": "FROZEN_FOR_P2"
+    },
+    {
+      "scenario_id": "R7",
+      "provenance_class": "HISTORICAL",
+      "scenario_path": "docs/research/project_knowledge_activation_orchestration/ao9/scenarios/R7.json",
+      "scenario_sha256": "25b35a696948613594c37d69a761e3673d0f73a716779bee5526e857ff5391fc",
+      "evaluator_key_path": "docs/research/project_knowledge_activation_orchestration/ao9/evaluator_keys/R7.json",
+      "evaluator_key_sha256": "7ecdcb0f75c2f1823df86d6212d34ee9d51434c4eb6324c485cca3e059501738",
+      "status": "FROZEN_FOR_P2"
+    },
+    {
+      "scenario_id": "R8",
+      "provenance_class": "HISTORICAL",
+      "scenario_path": "docs/research/project_knowledge_activation_orchestration/ao9/scenarios/R8.json",
+      "scenario_sha256": "4468bb6f56cace043cb2ca75e98db16fb2b809f5b2c4b07cb77273a9c3c80b63",
+      "evaluator_key_path": "docs/research/project_knowledge_activation_orchestration/ao9/evaluator_keys/R8.json",
+      "evaluator_key_sha256": "d0d7710fb576e00000e306738837eba998e399fbf8c606fde82d624ef8ffe70f",
+      "status": "FROZEN_FOR_P2"
+    },
+    {
+      "scenario_id": "R9",
+      "provenance_class": "INDUCED_CONTROL",
+      "scenario_path": "docs/research/project_knowledge_activation_orchestration/ao9/scenarios/R9.json",
+      "scenario_sha256": "ac3b5a7a14361d2cd1a4de7c636f7cb1c1f8b2ae1d716a5889ef317ea000c946",
+      "evaluator_key_path": "docs/research/project_knowledge_activation_orchestration/ao9/evaluator_keys/R9.json",
+      "evaluator_key_sha256": "67ec037ca70d5036603ad3a5f8740e55eb306a5404fd69a7ae8bd0aebf39b5fe",
+      "status": "FROZEN_FOR_P2"
+    },
+    {
+      "scenario_id": "R10",
+      "provenance_class": "INDUCED_CONTROL",
+      "scenario_path": "docs/research/project_knowledge_activation_orchestration/ao9/scenarios/R10.json",
+      "scenario_sha256": "84570231b179db1e4d57e8602748a8e6087e92913fbe6e7f7cea3c201c8a6c66",
+      "evaluator_key_path": "docs/research/project_knowledge_activation_orchestration/ao9/evaluator_keys/R10.json",
+      "evaluator_key_sha256": "e44cc748095070aa898fe792f67484b2766548f36b2a3053523e58bcfd304d86",
+      "status": "FROZEN_FOR_P2"
+    },
+    {
+      "scenario_id": "R11",
+      "provenance_class": "HISTORICAL",
+      "scenario_path": "docs/research/project_knowledge_activation_orchestration/ao9/scenarios/R11.json",
+      "scenario_sha256": "c9677f299ede15b93d89d46b9607958a8bfa7966e89b0eedab921a25f6ef6768",
+      "evaluator_key_path": "docs/research/project_knowledge_activation_orchestration/ao9/evaluator_keys/R11.json",
+      "evaluator_key_sha256": "d126986546a0cf9e06aceadabc4fd9eae43f17010c7ea05ab20bf2c854d05e60",
+      "status": "FROZEN_FOR_P2"
+    },
+    {
+      "scenario_id": "N1",
+      "provenance_class": "CONSTRUCTED_ADJACENT",
+      "scenario_path": "docs/research/project_knowledge_activation_orchestration/ao9/scenarios/N1.json",
+      "scenario_sha256": "d1175383873dd874429b7f9158130b5b0c41af4dabbbbea92d4efdb70efa5d5b",
+      "evaluator_key_path": "docs/research/project_knowledge_activation_orchestration/ao9/evaluator_keys/N1.json",
+      "evaluator_key_sha256": "807d47a41b5d8e93d4038e966359f65b60eae03d92958eb441eea820fd4b3c36",
+      "status": "FROZEN_FOR_P2"
+    },
+    {
+      "scenario_id": "N2",
+      "provenance_class": "INDUCED_CONTROL",
+      "scenario_path": "docs/research/project_knowledge_activation_orchestration/ao9/scenarios/N2.json",
+      "scenario_sha256": "7bf371e811d6302789c146c99a0ba50e571e3d0f335db287cae8f782c25be918",
+      "evaluator_key_path": "docs/research/project_knowledge_activation_orchestration/ao9/evaluator_keys/N2.json",
+      "evaluator_key_sha256": "79250c82619fd665048b570ef6cb1276ca5b75fb32fd840819c39f4f991fe291",
+      "status": "DEFERRED_NA_PENDING_VALID_OVERRIDE_POLICY"
+    },
+    {
+      "scenario_id": "N3",
+      "provenance_class": "CONSTRUCTED_ADJACENT",
+      "scenario_path": "docs/research/project_knowledge_activation_orchestration/ao9/scenarios/N3.json",
+      "scenario_sha256": "b194d472a4829a9c5d15cc97076c706074d7823b197f9ccb70b66c5c3159c412",
+      "evaluator_key_path": "docs/research/project_knowledge_activation_orchestration/ao9/evaluator_keys/N3.json",
+      "evaluator_key_sha256": "9544cc22a05ffa26bd2da9a454b07746c96cb823dc3aa10375f752faa7d93978",
+      "status": "FROZEN_FOR_P2"
+    },
+    {
+      "scenario_id": "N4",
+      "provenance_class": "CONSTRUCTED_ADJACENT",
+      "scenario_path": "docs/research/project_knowledge_activation_orchestration/ao9/scenarios/N4.json",
+      "scenario_sha256": "34a9f9f421cf6902990b711f8fb526a0eb59c42a3bbe75fd14b34150d642cdb9",
+      "evaluator_key_path": "docs/research/project_knowledge_activation_orchestration/ao9/evaluator_keys/N4.json",
+      "evaluator_key_sha256": "bcaa030ad6c84a4507a14b5db3c3f441fddeeaf2739424b5be51df2546b668a9",
+      "status": "FROZEN_FOR_P2"
+    }
+  ],
+  "next": "AO9_P2_ARM_CONTRACT_FREEZE"
+}

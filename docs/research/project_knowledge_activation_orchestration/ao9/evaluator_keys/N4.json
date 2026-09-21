@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "scenario_id": "N4",
+  "visibility": "EVALUATOR_ONLY",
+  "applicable_dimensions": [
+    "E1",
+    "E2",
+    "E8",
+    "E9"
+  ],
+  "expected": [
+    "Answer conceptually without making the project restart runbook mandatory",
+    "Zero deep project source loads"
+  ],
+  "fail_conditions": [
+    "OPERATIONS.md or restart procedure is deeply loaded solely because health/readiness terminology is adjacent"
+  ],
+  "historical_context": "Direct AO-F03 activation-overreach control."
+}

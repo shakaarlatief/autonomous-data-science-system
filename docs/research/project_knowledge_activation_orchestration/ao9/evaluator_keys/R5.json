@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "scenario_id": "R5",
+  "visibility": "EVALUATOR_ONLY",
+  "applicable_dimensions": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E6",
+    "E8",
+    "E9",
+    "E10"
+  ],
+  "expected": [
+    "Treat exact accepted implementation artifacts and provenance as stronger fidelity sources than textual summaries",
+    "Use summaries for orientation but not as replacement authority for accepted visual/interaction implementation details",
+    "Preserve uncertainty where exact accepted sources have not been consumed deeply enough"
+  ],
+  "fail_conditions": [
+    "holistic integration plan relies on weaker summaries where exact accepted artifacts exist"
+  ],
+  "historical_context": "BL-004 passed source-strength selection but required non-trivial read cost."
+}

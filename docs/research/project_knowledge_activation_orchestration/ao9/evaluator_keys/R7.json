@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "scenario_id": "R7",
+  "visibility": "EVALUATOR_ONLY",
+  "applicable_dimensions": [
+    "E2",
+    "E3",
+    "E5",
+    "E6",
+    "E7",
+    "E10"
+  ],
+  "expected": [
+    "Identify Specification 028 section 26 reconstruction-planner obligation and section 32 resolve-authority/reconstruct/migration-audit CLI obligations as accepted MUSTs without corresponding W0 executable realization at Checkpoint 542",
+    "Classify this as a prospective scheduling/realization gap, not retroactive falsification of PKA-G001..G017",
+    "Expose missing gate/evidence/activation linkage"
+  ],
+  "fail_conditions": [
+    "declare all MUST obligations realized solely because W0 gates passed",
+    "rewrite historical W0 acceptance as if an unlisted gate had failed"
+  ],
+  "historical_context": "Research 220 later discovered this AO-F14 gap."
+}

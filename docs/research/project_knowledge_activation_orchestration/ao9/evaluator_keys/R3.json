@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "scenario_id": "R3",
+  "visibility": "EVALUATOR_ONLY",
+  "applicable_dimensions": [
+    "E1",
+    "E2",
+    "E3",
+    "E5",
+    "E6",
+    "E7",
+    "E10"
+  ],
+  "expected": [
+    "Recognize a frozen-architecture evolution concern rather than an implementation request",
+    "Surface the already-durable known-risk/reopen-trigger and interaction-orchestration concerns, including AB-027/AB-031 or their exact authoritative equivalents at the snapshot",
+    "Route to governed architecture-evolution evaluation",
+    "Do not amend the architecture automatically"
+  ],
+  "fail_conditions": [
+    "reason from scratch while the prior relevant mechanism remains latent",
+    "treat the owner's question as an instruction to mutate architecture"
+  ],
+  "historical_context": "Chat 27 required owner reminder before AB-027/AB-031 were recovered."
+}

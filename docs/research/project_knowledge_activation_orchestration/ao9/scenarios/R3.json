@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "scenario_id": "R3",
+  "provenance_class": "HISTORICAL",
+  "title": "Architecture trigger activation without owner reminder",
+  "parent": [
+    "Chat27 activation miss",
+    "AB-027",
+    "AB-031"
+  ],
+  "evidence_boundary": {
+    "snapshot": "736fb1b91301effd311a0d06439f1c6a92183aee",
+    "mode": "EXACT_GIT_SNAPSHOT"
+  },
+  "task": "Before continuing, I want to understand something better. The architecture is frozen, but how are we going to know when something should be changed or reconsidered? Do we actually have a path for recognizing that, or would I have to remember and raise it myself when a problem appears? I am genuinely asking how this should work; this is not an instruction to change the architecture.",
+  "permitted_evidence": [
+    "exact frozen snapshot only"
+  ],
+  "prohibited_evidence": [
+    "Source Evidence 002 or any descendant record of this incident",
+    "evaluator keys",
+    "prior AO-9 scored results"
+  ],
+  "execution_hint": "tests whether already-durable risk/orchestration knowledge becomes relevant without the owner naming AB-027/AB-031",
+  "evaluator_key_visible_to_trial": false
+}

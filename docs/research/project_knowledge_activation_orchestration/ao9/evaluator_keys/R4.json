@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "scenario_id": "R4",
+  "visibility": "EVALUATOR_ONLY",
+  "applicable_dimensions": [
+    "E1",
+    "E2",
+    "E3",
+    "E6",
+    "E8",
+    "E9",
+    "E10"
+  ],
+  "expected": [
+    "Recover Checkpoint 558 / AO-3-next high-level state from the exact snapshot",
+    "Before substantive AO-3 design, surface the activation/orchestration packet's Source Evidence 001 and 002 plus its README/program references as stage-required supporting evidence",
+    "Distinguish those source-evidence files from governing authority",
+    "Avoid whole-repository reading"
+  ],
+  "fail_conditions": [
+    "high-level continuation is declared complete while stage-critical evidence remains latent until owner path hint"
+  ],
+  "historical_context": "This is the exact Chat 28 near-miss; Source Evidence 003 must remain unavailable to the trial."
+}

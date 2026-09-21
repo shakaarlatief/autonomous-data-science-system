@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "scenario_id": "N2",
+  "provenance_class": "INDUCED_CONTROL",
+  "title": "Explicit governed override",
+  "parent": [
+    "AO-4 decision-rights / KA-R08 receipt semantics"
+  ],
+  "evidence_boundary": {
+    "snapshot": null,
+    "mode": "DEFERRED_POLICY_FIXTURE"
+  },
+  "task": null,
+  "permitted_evidence": [],
+  "prohibited_evidence": [
+    "inventing an override permission that has no governing policy"
+  ],
+  "execution_hint": "DEFERRED_UNTIL_VALID_OVERRIDE_POLICY; score N/A until a real project-controlled override policy is identified",
+  "evaluator_key_visible_to_trial": false
+}

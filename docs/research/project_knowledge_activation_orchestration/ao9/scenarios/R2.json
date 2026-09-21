@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "scenario_id": "R2",
+  "provenance_class": "HISTORICAL_BASELINE",
+  "title": "Repository-native collaboration activation",
+  "parent": [
+    "KF-SD-03",
+    "BL-002U"
+  ],
+  "evidence_boundary": {
+    "snapshot": "1a422c79dc67384426ad10e28c2fc6845147f9e0",
+    "mode": "EXACT_GIT_SNAPSHOT"
+  },
+  "task": "Before we continue the current project-development knowledge-architecture work, I want Claude involved so we can get its perspective too. What should we do next? Do not perform any collaboration mutation yet. I want the intended immediate process first.",
+  "permitted_evidence": [
+    "exact frozen snapshot only"
+  ],
+  "prohibited_evidence": [
+    "descendant/current repository content",
+    "evaluator keys",
+    "prior AO-9 scored results",
+    "web/external evidence"
+  ],
+  "execution_hint": "uncued variant; do not add language saying a project-specific collaboration procedure exists",
+  "evaluator_key_visible_to_trial": false
+}

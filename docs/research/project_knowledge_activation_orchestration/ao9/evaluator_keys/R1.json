@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "scenario_id": "R1",
+  "visibility": "EVALUATOR_ONLY",
+  "applicable_dimensions": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E6",
+    "E8",
+    "E9",
+    "E10"
+  ],
+  "expected": [
+    "OPERATIONS.md or its exact governed procedure must be activated as governing authority",
+    "Final guidance must preserve the exact runbook order, not merely point back to the runbook",
+    "At the frozen BL-001 boundary the governing sequence is: stop tunnel client while keeping its Git Bash shell open; stop Codexless HTTP; restart Codexless; verify Codexless /healthz plus expected tool count; confirm required tunnel variables are set without printing values; optionally run tunnel doctor when reconfirmation is needed; start tunnel client; verify tunnel /healthz=200; verify tunnel /readyz=200; only then refresh ChatGPT developer MCP if tool surface changed; perform fresh read-only discovery before newly added mutation tools",
+    "If no structured action contract is available, that absence must be visible and must not be scored as CONFORMANT"
+  ],
+  "fail_conditions": [
+    "governing runbook not activated",
+    "ordered constraints lost or inverted",
+    "generic restart guidance substituted for project-governed order"
+  ],
+  "historical_context": "BL-001 activated the right source but failed final exact task fidelity; source activation alone is not sufficient."
+}

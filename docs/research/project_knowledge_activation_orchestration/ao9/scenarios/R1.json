@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "scenario_id": "R1",
+  "provenance_class": "HISTORICAL_BASELINE",
+  "title": "Operational restart authority and ordered fidelity",
+  "parent": [
+    "KF-SD-01",
+    "BL-001"
+  ],
+  "evidence_boundary": {
+    "snapshot": "a570f0d87b77960ae0715b291de0d5f6e884e4d0",
+    "mode": "EXACT_GIT_SNAPSHOT"
+  },
+  "task": "The local Runtime Bridge/Codexless update is ready and I need to do the project's controlled restart/reconnect now. Give me the exact order I should follow from this repository state so I can execute it safely. Include the relevant readiness/refresh points you think matter. Do not perform the restart or any mutation.",
+  "permitted_evidence": [
+    "exact frozen snapshot only"
+  ],
+  "prohibited_evidence": [
+    "descendant/current repository content",
+    "evaluator keys",
+    "prior AO-9 scored results",
+    "web/external evidence"
+  ],
+  "execution_hint": "fresh collaborator replay may reuse the already-frozen BL-001 request wording",
+  "evaluator_key_visible_to_trial": false
+}

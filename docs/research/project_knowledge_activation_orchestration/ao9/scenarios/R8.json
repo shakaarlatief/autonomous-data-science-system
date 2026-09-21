@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "scenario_id": "R8",
+  "provenance_class": "HISTORICAL",
+  "title": "Known-risk and reopen-trigger activation",
+  "parent": [
+    "KF-KR-01",
+    "AB-027",
+    "Foundation 014"
+  ],
+  "evidence_boundary": {
+    "snapshot": null,
+    "mode": "MECHANISM_LEVEL_HISTORICAL",
+    "limitation": "No single clean pre-rediscovery snapshot is frozen by the corpus; score mechanism trace against preserved historical sources rather than claim a blind replay."
+  },
+  "task": "A recurring project-knowledge discoverability and maintenance problem has appeared again during active work. Determine whether the project already recorded conditions under which stronger knowledge machinery should be reconsidered, and explain what process should activate now. Do not change the architecture automatically.",
+  "permitted_evidence": [
+    "historical sources named by KF-KR-01"
+  ],
+  "prohibited_evidence": [
+    "evaluator keys",
+    "prior AO-9 scored results"
+  ],
+  "execution_hint": "known trigger should surface before relying on owner memory; trigger evidence is not an architecture disposition",
+  "evaluator_key_visible_to_trial": false
+}

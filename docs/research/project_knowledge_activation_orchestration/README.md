@@ -63,6 +63,10 @@ AO8_REVIEW_RECONCILIATION_V01.json
 AO9_HISTORICAL_REGRESSION_PROTOCOL_V01.json
     preregistered AO-9 four-arm historical-regression protocol, positive/negative
     scenarios, budgets, invalidators, decision rules and no-tuning boundary
+
+ao9/
+    AO-9 scenario/evaluator-key packet. Trial-visible scenarios and evaluator-only
+    keys are physically separated; MANIFEST.json binds their digests and freeze state.
 ```
 
 Interpretation:

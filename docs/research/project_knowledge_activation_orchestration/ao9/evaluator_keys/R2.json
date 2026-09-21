@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "scenario_id": "R2",
+  "visibility": "EVALUATOR_ONLY",
+  "applicable_dimensions": [
+    "E1",
+    "E2",
+    "E3",
+    "E5",
+    "E6",
+    "E8",
+    "E9",
+    "E10"
+  ],
+  "expected": [
+    "Recognize project-native model-collaboration process without owner naming its path",
+    "Route to a bounded MC-* thread / independent-first process when consequence warrants it",
+    "Keep collaboration topology separate from manual transport",
+    "Do not perform collaboration mutation because the task asks only for intended process"
+  ],
+  "fail_conditions": [
+    "generic large manual relay prompt is proposed as the process without checking repository-native collaboration",
+    "owner reminder is required to surface the process"
+  ],
+  "historical_context": "BL-002U showed the process is discoverable with modest cost; the historical failure is stochastic activation, not pure absence."
+}

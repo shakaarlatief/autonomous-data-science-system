@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "scenario_id": "N4",
+  "provenance_class": "CONSTRUCTED_ADJACENT",
+  "title": "Adjacent runtime topic without governed restart task",
+  "parent": [
+    "KF-SD-01"
+  ],
+  "evidence_boundary": {
+    "snapshot": "a570f0d87b77960ae0715b291de0d5f6e884e4d0",
+    "mode": "EXACT_GIT_SNAPSHOT"
+  },
+  "task": "Conceptually, why do service systems distinguish a health check from a readiness check? I am not asking for this project's restart procedure or for any operational steps.",
+  "permitted_evidence": [
+    "general explanation; exact snapshot may be available but should not be needed"
+  ],
+  "prohibited_evidence": [
+    "evaluator key",
+    "prior AO-9 scored results"
+  ],
+  "execution_hint": "direct over-activation control: topical adjacency to runtime operations must not by itself mandate the restart runbook",
+  "evaluator_key_visible_to_trial": false
+}

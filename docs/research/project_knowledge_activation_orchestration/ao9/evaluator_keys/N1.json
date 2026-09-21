@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "scenario_id": "N1",
+  "visibility": "EVALUATOR_ONLY",
+  "applicable_dimensions": [
+    "E1",
+    "E2",
+    "E8",
+    "E9"
+  ],
+  "expected": [
+    "Use ordinary fast path",
+    "No deep repository governing-source load",
+    "No persistent control receipt required"
+  ],
+  "fail_conditions": [
+    "project-wide reconstruction or deep source activation for a generic concept question"
+  ],
+  "historical_context": "Low-consequence over-control negative."
+}

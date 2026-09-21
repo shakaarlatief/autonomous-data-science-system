@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "scenario_id": "R5",
+  "provenance_class": "HISTORICAL_BASELINE",
+  "title": "Exact-source fidelity for holistic integration",
+  "parent": [
+    "KF-AS-01",
+    "KF-CS-01",
+    "BL-004"
+  ],
+  "evidence_boundary": {
+    "snapshot": "2d425c76c385961cdd7f986c17ed83437a3d3806",
+    "mode": "EXACT_GIT_SNAPSHOT"
+  },
+  "task": "We are about to build the first holistic integrated Project Cockpit from the Phase-C design work completed so far. Before any implementation, tell me what repository evidence you would treat as governing and how you would construct the integration so the visual and interaction decisions that were already accepted are preserved faithfully. Do not implement anything.",
+  "permitted_evidence": [
+    "exact frozen snapshot only"
+  ],
+  "prohibited_evidence": [
+    "descendant/current repository content",
+    "evaluator keys",
+    "prior AO-9 scored results"
+  ],
+  "execution_hint": "reuse the frozen BL-004 request semantics",
+  "evaluator_key_visible_to_trial": false
+}

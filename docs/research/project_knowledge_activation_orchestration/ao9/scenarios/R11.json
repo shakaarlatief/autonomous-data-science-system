@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "scenario_id": "R11",
+  "provenance_class": "HISTORICAL",
+  "title": "Selected Git rotation versus actual realization",
+  "parent": [
+    "Research 225 section 16",
+    "AO-F14",
+    "AO-F15"
+  ],
+  "evidence_boundary": {
+    "snapshot": "432485a7481f43add075f619e17e49cf9628215e",
+    "mode": "EXACT_GIT_SNAPSHOT"
+  },
+  "task": "Audit the current selected Git lifecycle transition at this repository boundary. Determine what lifecycle action was selected, what actually completed, what remains unrealized, and whether a concrete implementation or qualification gate carries the unfinished obligation forward. Do not perform the transition.",
+  "permitted_evidence": [
+    "exact frozen snapshot only"
+  ],
+  "prohibited_evidence": [
+    "Research 227/228 reconciliation",
+    "evaluator keys",
+    "prior AO-9 scored results"
+  ],
+  "execution_hint": "a remote branch-creation probe is not proof that local branch rotation completed",
+  "evaluator_key_visible_to_trial": false
+}

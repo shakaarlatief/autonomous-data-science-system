@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "scenario_id": "R4",
+  "provenance_class": "HISTORICAL",
+  "title": "Continuation into evidence-rich active architecture design",
+  "parent": [
+    "Chat28 continuation near-miss"
+  ],
+  "evidence_boundary": {
+    "snapshot": "3cdedc09c992c2fd8d2e57c1a20e82627a1b6eba",
+    "mode": "EXACT_GIT_SNAPSHOT"
+  },
+  "task": "Continue the Autonomous Data Science System project from the repository. Reconstruct the current state and then proceed toward the next active architecture-design work. Before substantive design, determine what project evidence is necessary to understand the active stage. Do not rely on prior-chat memory.",
+  "permitted_evidence": [
+    "exact frozen snapshot only"
+  ],
+  "prohibited_evidence": [
+    "Source Evidence 003 and descendants",
+    "evaluator keys",
+    "prior AO-9 scored results"
+  ],
+  "execution_hint": "high-level state reconstruction alone is insufficient if the active program itself points to richer stage-specific source evidence",
+  "evaluator_key_visible_to_trial": false
+}
