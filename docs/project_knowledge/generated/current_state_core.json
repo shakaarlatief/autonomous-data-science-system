@@ -1,8 +1,8 @@
 {
   "active_workstream": {
     "execution_anchor": {
-      "checkpoint": 561,
-      "current_boundary": "project-knowledge-git-workstream-orchestration-integration",
+      "checkpoint": 562,
+      "current_boundary": "project-knowledge-successor-orchestration-bridge-design",
       "development_branch": "v1-source-vault-bootstrap-resume",
       "pull_request": null
     },
