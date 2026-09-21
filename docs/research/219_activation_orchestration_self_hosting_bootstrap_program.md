@@ -551,7 +551,7 @@ This must be designed and empirically qualified before adoption.
 
 ```text
 AO-0  source-evidence preservation
-      COMPLETE for Chat 26 + current Chat 27 discussion
+      COMPLETE for Chat 26/27 source evidence + Chat 28 continuation near-miss
 
 AO-1  repository-wide retrospective completeness audit
       COMPLETE / Research 220 + machine-readable matrix/snapshots
@@ -560,10 +560,10 @@ AO-2  capability boundary and failure taxonomy
       COMPLETE / Research 221 + machine-readable responsibility/failure model
 
 AO-3  control-plane conceptual architecture
-      NEXT / event -> activation -> routing -> collaboration -> preservation -> resume
+      COMPLETE / Research 222 + Progressive Control Closure machine synthesis
 
 AO-4  architecture evolution + frozen-contract governance
-      trigger classification and KEEP/CLARIFY/AMEND/SUPERSEDE/REOPEN path
+      NEXT / trigger classification and KEEP/CLARIFY/AMEND/SUPERSEDE/REOPEN path
 
 AO-5  interaction continuity + interruption + break-glass design
 
@@ -602,7 +602,7 @@ Authority switch
     NOT ALLOWED
 
 Immediate next work
-    AO-3 CONTROL-PLANE CONCEPTUAL ARCHITECTURE
+    AO-4 ARCHITECTURE EVOLUTION + FROZEN-CONTRACT GOVERNANCE
 ```
 
 No production navigation-schema/view code should be mutated merely to keep the old sequence moving.
@@ -634,11 +634,13 @@ RESEARCH219=ACTIVE
 ACTIVATION_ORCHESTRATION_BOOTSTRAP=OPEN
 W5_F0=PAUSED_BEFORE_IMPLEMENTATION
 FULL_CONTROL_PLANE_DESIGN=NOT_YET_SELECTED
+CONCEPTUAL_CONTROL_ARCHITECTURE=PROGRESSIVE_CONTROL_CLOSURE
 SUCCESSOR_ORCHESTRATION_BRIDGE=HYPOTHESIS
 RESEARCH218=FROZEN_BASELINE_RETAINED
 CURRENT_OPERATIONAL_AUTHORITY=CURRENT_CONTINUITY_ARCHITECTURE
 AUTHORITY_SWITCH_ALLOWED=false
 AO_1=COMPLETE
 AO_2=COMPLETE
-NEXT=AO_3_CONTROL_PLANE_CONCEPTUAL_ARCHITECTURE
+AO_3=COMPLETE
+NEXT=AO_4_ARCHITECTURE_EVOLUTION_AND_FROZEN_CONTRACT_GOVERNANCE
 ```

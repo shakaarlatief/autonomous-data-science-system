@@ -1,0 +1,448 @@
+{
+  "schema_version": 1,
+  "architecture_id": "AO3-PROGRESSIVE-CONTROL-CLOSURE-V01",
+  "date": "2026-09-21",
+  "authority_class": "research_output",
+  "status": "AO3_CONCEPTUAL_BASELINE",
+  "governing_program": "research:219",
+  "source_synthesis": "research:221",
+  "name": "Progressive Control Closure",
+  "principles": [
+    "One logical control cycle handles observed project events without requiring one service per capability.",
+    "Only a small ingress/control screen is universal; deeper work is activated progressively.",
+    "Ordinary natural language may be model-interpreted, but mandatory closure remains project-controlled and inspectable.",
+    "Explicit owner directives are preserved separately from inferred intent.",
+    "A low-consequence event may take an explicit no-additional-obligations fast path.",
+    "Reconstruction and activation continue until mandatory control obligations are satisfied, explicitly discharged, or fail-visible unresolved.",
+    "Derived control records are non-authoritative by default.",
+    "Current continuity remains semantic authority until explicit later switch.",
+    "Manual collaborator/tool transport is compatible with system-selected routing.",
+    "Postflight preservation, resume and self-observation are part of the same control loop."
+  ],
+  "logical_stages": [
+    {
+      "id": "S1",
+      "name": "event_ingress_and_explicit_intent",
+      "responsibilities": [
+        "AO-R1"
+      ],
+      "outputs": [
+        "EventInterpretation",
+        "explicit_owner_directives"
+      ],
+      "notes": "May be model-assisted. Multi-facet events are allowed. Material uncertainty affecting consequential routing must remain visible."
+    },
+    {
+      "id": "S2",
+      "name": "baseline_control_context",
+      "responsibilities": [
+        "AO-R1",
+        "AO-R2",
+        "AO-R8"
+      ],
+      "outputs": [
+        "bounded_current_control_context"
+      ],
+      "notes": "Uses compact fresh project state or already-valid interaction state; does not require whole-project reconstruction."
+    },
+    {
+      "id": "S3",
+      "name": "control_obligation_screening",
+      "responsibilities": [
+        "AO-R2",
+        "AO-R4",
+        "AO-R5",
+        "AO-R6",
+        "AO-R7"
+      ],
+      "outputs": [
+        "ControlObligationSet"
+      ],
+      "notes": "Determines mandatory/optional obligations and permits an explicit no-additional-obligations fast path."
+    },
+    {
+      "id": "S4",
+      "name": "progressive_reconstruction_and_activation_closure",
+      "responsibilities": [
+        "AO-R2"
+      ],
+      "outputs": [
+        "ReconstructionContract",
+        "activation_receipt",
+        "updated_control_obligations"
+      ],
+      "notes": "Reuses Candidate 01 task-shaped reconstruction. Newly surfaced material control facts may trigger bounded re-evaluation."
+    },
+    {
+      "id": "S5",
+      "name": "process_workstream_collaboration_tool_routing",
+      "responsibilities": [
+        "AO-R4",
+        "AO-R5"
+      ],
+      "outputs": [
+        "RouteDecision"
+      ],
+      "notes": "Selects process, workstream transition, collaboration topology, tool route and transport. Manual handoff may suspend the cycle."
+    },
+    {
+      "id": "S6",
+      "name": "authority_and_action_contract_preflight",
+      "responsibilities": [
+        "AO-R3",
+        "AO-R8"
+      ],
+      "outputs": [
+        "AuthorityReceipt",
+        "ActionContract",
+        "mutation_permission_state"
+      ],
+      "notes": "Required for consequential guidance/action. Exact revisions/private dependencies are bound when required."
+    },
+    {
+      "id": "S7",
+      "name": "reasoning_execution_or_handoff",
+      "responsibilities": [
+        "AO-R4",
+        "AO-R5"
+      ],
+      "outputs": [
+        "proposed_result",
+        "ExecutionOrHandoffReceipt"
+      ],
+      "notes": "May be direct reasoning, tool work, governed mutation, manual Codex/Claude relay, recovery or human-decision request."
+    },
+    {
+      "id": "S8",
+      "name": "pre_dispatch_or_pre_mutation_conformance",
+      "responsibilities": [
+        "AO-R3"
+      ],
+      "outputs": [
+        "conformance_disposition"
+      ],
+      "notes": "Checks that material action-contract constraints survive into proposed guidance/action before consequential dispatch."
+    },
+    {
+      "id": "S9",
+      "name": "postflight_preservation_resume_and_self_observation",
+      "responsibilities": [
+        "AO-R4",
+        "AO-R6",
+        "AO-R7",
+        "AO-R8"
+      ],
+      "outputs": [
+        "preservation_route",
+        "ContinuationReceipt",
+        "ControlObservation"
+      ],
+      "notes": "Verifies completion, preservation, workstream/resume implications, Git lifecycle consequences and control-plane failure/evolution evidence."
+    }
+  ],
+  "logical_records": [
+    {
+      "name": "EventInterpretation",
+      "authority": "derived_non_authoritative",
+      "purpose": "Preserve explicit directives separately from event/task hypotheses, consequence and routing-relevant uncertainty."
+    },
+    {
+      "name": "ControlObligationSet",
+      "authority": "derived_non_authoritative",
+      "purpose": "State what control behavior is required, why it activated, how it is satisfied, and what happens if it cannot be satisfied."
+    },
+    {
+      "name": "ReconstructionContract",
+      "authority": "existing_candidate01_contract",
+      "purpose": "Task-shaped must-load/optional/negative context plus freshness, receipt and escalation requirements."
+    },
+    {
+      "name": "RouteDecision",
+      "authority": "derived_non_authoritative",
+      "purpose": "Explain selected project process, workstream transition, collaboration topology, tool and transport route."
+    },
+    {
+      "name": "AuthorityReceipt",
+      "authority": "existing_candidate01_receipt",
+      "purpose": "Deterministic governing-source/revision/constraint resolution."
+    },
+    {
+      "name": "ActionContract",
+      "authority": "authoritative_projection_from_governing_source",
+      "purpose": "Material preconditions, ordered constraints, prohibitions and postconditions."
+    },
+    {
+      "name": "ExecutionOrHandoffReceipt",
+      "authority": "evidence",
+      "purpose": "Record what was actually dispatched/performed and against what boundary when durable evidence is required."
+    },
+    {
+      "name": "ContinuationReceipt",
+      "authority": "non_authoritative_continuity_evidence",
+      "purpose": "Preserve enough bounded state to resume after interruption without turning conversation into authority."
+    },
+    {
+      "name": "ControlObservation",
+      "authority": "evidence",
+      "purpose": "Record control failure, pressure, trigger or obligation-realization evidence for qualification/evolution."
+    }
+  ],
+  "control_obligation_families": [
+    "RECONSTRUCT_CONTEXT",
+    "ACTIVATE_GOVERNING_KNOWLEDGE",
+    "ACTIVATE_RISK_OR_REOPEN_TRIGGER",
+    "RESOLVE_AUTHORITY",
+    "PRESERVE_ACTION_CONTRACT",
+    "ROUTE_PROJECT_PROCESS",
+    "ROUTE_WORKSTREAM_TRANSITION",
+    "ROUTE_COLLABORATION",
+    "ROUTE_TOOL",
+    "REQUIRE_REVIEW",
+    "ROUTE_RECOVERY",
+    "PRESERVE_INTERACTION_STATE",
+    "CAPTURE_OR_PROMOTE",
+    "CHECK_GIT_LIFECYCLE",
+    "EVALUATE_ARCHITECTURE_EVOLUTION",
+    "REQUEST_OWNER_DECISION",
+    "EMIT_CONTROL_RECEIPT"
+  ],
+  "fast_path": {
+    "allowed": true,
+    "conditions": [
+      "low consequence",
+      "no consequential mutation",
+      "no unresolved control condition whose applicability could materially change the route",
+      "no activated mandatory deeper obligation"
+    ],
+    "result": "NO_ADDITIONAL_CONTROL_OBLIGATIONS",
+    "prohibition": "Fast path cannot bypass mandatory authority, risk, review, recovery or preservation obligations."
+  },
+  "trigger_boundary": {
+    "project_controlled_examples": [
+      "missing_or_stale_required_authority",
+      "required_private_state_unavailable",
+      "workstream_state_or_return_condition",
+      "required_review_gate_reached",
+      "known_reopen_trigger_observed",
+      "stale_expected_revision",
+      "runtime_or_tool_availability_fact",
+      "current_authority_transition_state"
+    ],
+    "model_assisted_examples": [
+      "repeated_friction_semantics",
+      "architecture_challenge_semantics",
+      "bounded_implementation_hypothesis",
+      "independent_judgment_value",
+      "potentially_durable_observation",
+      "exploratory_vs_governed_task_hypothesis"
+    ],
+    "rule": "Model-assisted signals may nominate typed conditions; project-controlled policy determines mandatory obligations."
+  },
+  "closure_rule": {
+    "initial": "derive obligations from event interpretation, explicit directives and bounded current control context",
+    "expansion": "targeted reconstruction/activation may add or strengthen obligations when new material control facts appear",
+    "termination": "all mandatory obligations are satisfied, explicitly discharged under policy, or fail-visible unresolved",
+    "safety": "mandatory obligations cannot silently disappear between model passes"
+  },
+  "candidate01_reuse": {
+    "compact_orientation": [
+      "current_state_core"
+    ],
+    "workstream": [
+      "workstream_graph",
+      "workstream_engine"
+    ],
+    "authority": [
+      "authority_index",
+      "authority_resolver"
+    ],
+    "risk_obligations": [
+      "risk_obligation_index"
+    ],
+    "discovery": [
+      "source_catalog",
+      "subject_index"
+    ],
+    "identity_provenance": [
+      "identity_index",
+      "revision_binding"
+    ],
+    "action_fidelity": [
+      "governing_procedure",
+      "ActionContract"
+    ],
+    "preservation": [
+      "capture",
+      "PromotionPlan"
+    ],
+    "public_private": [
+      "private_dependency_evidence",
+      "non_leakage_validation"
+    ],
+    "migration_authority_boundary": [
+      "current_compatibility_surfaces",
+      "Specification_028"
+    ]
+  },
+  "responsibility_coverage": {
+    "AO-R1": [
+      "S1",
+      "S2"
+    ],
+    "AO-R2": [
+      "S2",
+      "S3",
+      "S4"
+    ],
+    "AO-R3": [
+      "S6",
+      "S8"
+    ],
+    "AO-R4": [
+      "S3",
+      "S5",
+      "S7",
+      "S9"
+    ],
+    "AO-R5": [
+      "S3",
+      "S5",
+      "S7"
+    ],
+    "AO-R6": [
+      "S3",
+      "S9"
+    ],
+    "AO-R7": [
+      "S3",
+      "S9"
+    ],
+    "AO-R8": [
+      "S2",
+      "S6",
+      "S9",
+      "cross_cutting_authority_membrane"
+    ]
+  },
+  "failure_detection_seams": {
+    "AO-F01": [
+      "S1",
+      "S5"
+    ],
+    "AO-F02": [
+      "S4"
+    ],
+    "AO-F03": [
+      "S4"
+    ],
+    "AO-F04": [
+      "S6"
+    ],
+    "AO-F05": [
+      "S8"
+    ],
+    "AO-F06": [
+      "S5"
+    ],
+    "AO-F07": [
+      "S5",
+      "S9"
+    ],
+    "AO-F08": [
+      "S9"
+    ],
+    "AO-F09": [
+      "S9"
+    ],
+    "AO-F10": [
+      "S5",
+      "S9"
+    ],
+    "AO-F11": [
+      "S5",
+      "S9"
+    ],
+    "AO-F12": [
+      "S9"
+    ],
+    "AO-F13": [
+      "S9"
+    ],
+    "AO-F14": [
+      "S9"
+    ],
+    "AO-F15": [
+      "S5",
+      "S9"
+    ],
+    "AO-F16": [
+      "S3",
+      "S4",
+      "S5",
+      "S9"
+    ],
+    "AO-F17": [
+      "cross_cutting_authority_membrane"
+    ],
+    "AO-F18": [
+      "S1",
+      "S3",
+      "S4",
+      "S5",
+      "S9"
+    ]
+  },
+  "deferred_interfaces": {
+    "AO-4": [
+      "architecture_evolution_governance"
+    ],
+    "AO-5": [
+      "interaction_continuity",
+      "context_rollover",
+      "break_glass_recovery"
+    ],
+    "AO-6": [
+      "git_lifecycle_policy",
+      "workstream_orchestration_integration"
+    ],
+    "AO-7": [
+      "successor_orchestration_bridge"
+    ],
+    "AO-8": [
+      "independent_architecture_review"
+    ],
+    "AO-9": [
+      "historical_regression_program"
+    ],
+    "AO-10": [
+      "bounded_implementation_and_shadow_bridge_qualification"
+    ]
+  },
+  "non_decisions": [
+    "central router service",
+    "microservice topology",
+    "event bus",
+    "daemon or background worker",
+    "production event schema",
+    "production ControlPlan schema",
+    "LLM prompt format",
+    "rules engine",
+    "database or graph store",
+    "vector store",
+    "scheduler",
+    "automatic Claude dispatch",
+    "automatic Codex dispatch",
+    "fixed collaborator scoring formula",
+    "interaction continuity storage format",
+    "Git lifecycle rules",
+    "bridge transport",
+    "authority switch"
+  ],
+  "authority_boundary": {
+    "current_operational_authority": "CURRENT_CONTINUITY_ARCHITECTURE",
+    "successor_control_output": "DERIVED_NON_AUTHORITATIVE",
+    "mutation_authority": "GOVERNED_CASE_BY_CASE",
+    "authority_switch_allowed": false
+  },
+  "next": "AO_4_ARCHITECTURE_EVOLUTION_AND_FROZEN_CONTRACT_GOVERNANCE"
+}

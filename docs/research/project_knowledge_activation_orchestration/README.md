@@ -35,6 +35,10 @@ AO1_OPEN_QUESTION_STATUS_SNAPSHOT_V01.json
 
 AO2_CONTROL_BOUNDARY_AND_FAILURE_TAXONOMY_V01.json
     eight control responsibilities + eighteen behavioral failure classes
+
+AO3_PROGRESSIVE_CONTROL_CLOSURE_V01.json
+    machine-readable AO-3 control cycle, logical records, Candidate 01 substrate reuse,
+    responsibility coverage and failure-observation seams
 ```
 
 Interpretation:
