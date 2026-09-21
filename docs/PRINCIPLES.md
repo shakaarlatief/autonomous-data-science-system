@@ -223,3 +223,36 @@ The frontend is not merely a presentation layer added after backend implementati
 The interface should therefore be developed early enough to challenge the object model and workflow design. Visual quality, information hierarchy, accessibility, interaction polish, loading/error behavior, responsive performance, and analytical visualization quality are first-class product requirements rather than cosmetic cleanup tasks deferred to the end.
 
 See `docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md`.
+## P-030. Existing project structure is not a reason to accept a worse design
+
+The project should optimize for the strongest justified architecture, workflow, representation, and operational model rather than preserve an existing approach merely because it has already been implemented or used for a long time.
+
+Existing files, schemas, branch structures, workflows, tools, migration paths, and prior architectural decisions are evidence and migration constraints, not automatic design authority. When a materially better approach is justified, the project may replace, migrate, reorganize, retire, or supersede existing structures rather than preserve them for convenience or sunk-cost reasons.
+
+This principle also applies to Git and development-history structure. A long-lived branch, historical branching convention, or already-published workflow should be evaluated on its current merits. History rewriting, branch replacement, migration, archival, or other disruptive changes are not categorically forbidden, but they require proportionate evidence, provenance preservation, impact analysis, safety checks, and explicit handling of any affected collaborators, references, or authoritative historical records.
+
+The goal is not maximal change. The goal is to avoid allowing historical convenience to become an unexamined constraint on the best current design.
+
+## P-031. Questions, suggestions, observations, and directives are different owner intents
+
+The system should interpret the communicative role of an owner message rather than treating every mentioned action as an instruction.
+
+A genuine question such as "should we save this?", "would another branch model be better?", or "could we redesign this?" is a request for analysis and judgment. It is not, by itself, a command to save, redesign, or mutate the project. Likewise, an observation, tentative idea, hypothesis, or suggestion should not silently become an accepted decision or implementation request.
+
+The system should distinguish at least:
+
+```text
+question / request for explanation
+observation
+idea or hypothesis
+suggestion
+preference
+explicit decision
+explicit directive / change request
+```
+
+When the owner is genuinely asking what is best, the collaborator should answer that question on the merits and may recommend or select the strongest justified path within its delegated role. It should not simply mirror the wording of the question as though the owner had already chosen the answer.
+
+Conversely, explicit owner decisions and directives should remain visible as such and should not be weakened into optional suggestions merely because the system would have chosen differently. Where a consequential project invariant or authority boundary prevents direct execution, surface that conflict explicitly.
+
+This principle is especially important for intent interpretation, activation/orchestration, preservation decisions, collaboration routing, and architecture evolution.
