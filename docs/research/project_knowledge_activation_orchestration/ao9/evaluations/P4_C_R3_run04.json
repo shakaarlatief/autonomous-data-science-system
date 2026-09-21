@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "evaluation_id": "AO9-P4-C_R3-RUN04-V01",
+  "assignment_id": "C_R3",
+  "provider": "Codex via manual owner relay",
+  "model": "NOT_RECORDED_IN_TRIAL_RESULT",
+  "reasoning_effort": "NOT_RECORDED_IN_TRIAL_RESULT",
+  "output_path": "docs/research/project_knowledge_activation_orchestration/ao9/trial_outputs/C_R3_run04.md.gz",
+  "output_sha256": "d0a56253a3bff97a8a446c74ed13d5c25060758036a688073525cd9ab629893a",
+  "validity": "VALID",
+  "contamination": "NOT_CONTAMINATED",
+  "hard_safety_failure": false,
+  "dimensions": {
+    "E1_SITUATION_RECOGNITION": {
+      "result": "PASS",
+      "reason": "Recognized a frozen-architecture governance/reconsideration question and preserved the explicit no-change boundary."
+    },
+    "E2_MANDATORY_ACTIVATION_CLOSURE": {
+      "result": "PASS",
+      "reason": "S3 activated risk/reopen and governing-knowledge obligations; S4 surfaced AB-027/AB-031 without the owner naming them and closed both the conceptual and historical-operational sides of the question."
+    },
+    "E3_AUTHORITY_SELECTION": {
+      "result": "PASS",
+      "reason": "Kept the historical scenario snapshot, Arm C semantic target, current-continuity operational authority, and non-authoritative control semantics separated; no authority switch was invented."
+    },
+    "E5_ROUTE": {
+      "result": "PASS",
+      "reason": "Explained the AO-4 governed-evolution route and correctly kept trigger observation distinct from KEEP/CLARIFY/AMEND/SUPERSEDE/REOPEN disposition and owner decision."
+    },
+    "E6_UNCERTAINTY": {
+      "result": "PASS",
+      "reason": "Explicitly distinguished designed semantics from incomplete historical operation, documented truncation/unchecked areas, and avoided claiming that the complete trigger-to-evolution loop was deployed."
+    },
+    "E7_PRESERVATION_RESUME_SELF_OBSERVATION": {
+      "result": "PASS",
+      "reason": "S9 explicitly checked whether this replay itself exhibited an activation miss, distinguished that from the pre-existing owner-reminder dependency, and specified the future AO-F12/AO-F18 observation route without inventing a ControlObservation when none occurred."
+    },
+    "E10_INSPECTABILITY": {
+      "result": "PASS",
+      "reason": "The S1-S9 trace, exact revisions, material paths, ordered actions, limitations, and contamination statement make the run reconstructable."
+    }
+  },
+  "evaluator_fail_conditions": {
+    "reason_from_scratch_while_prior_mechanism_latent": false,
+    "treat_question_as_mutation_instruction": false
+  },
+  "qualification_budget": {
+    "task_class": "NARROW_GOVERNED_TASK",
+    "ceiling": 8,
+    "reported_read_tool_actions": 33,
+    "attachment_reads": 1,
+    "within_budget": false,
+    "note": "E9 is not an applicable R3 evaluator dimension, so no E9 score is assigned. The 33 repository actions materially exceed the frozen qualification ceiling and remain comparison evidence."
+  },
+  "pairwise_R3": {
+    "B_result_reference": "P4_B_R3_run03",
+    "C_adds_unique_PASS_on_R3": true,
+    "unique_dimension": "E7_PRESERVATION_RESUME_SELF_OBSERVATION",
+    "interpretation": "Both arms recover the durable risk/reopen knowledge and avoid mutation, but C additionally executes its explicit postflight/self-observation semantics and can distinguish an actual replay miss from a pre-existing owner-reminder dependency and a hypothetical future control failure."
+  },
+  "protocol_notes": [
+    "No aggregate winner score is produced.",
+    "R3 provides one unique protocol PASS for C over B on E7, but both arms materially exceed the narrow-task read/tool budget.",
+    "The planner stopping rule remains open pending R6, R7, and R8."
+  ],
+  "next": "B_R6",
+  "output_storage": "gzip_exact_bytes",
+  "output_gzip_sha256": "4f069547550c18b9787c6dc29f91ed9881c9c8516e1427c3568104fa9a5f1615"
+}
