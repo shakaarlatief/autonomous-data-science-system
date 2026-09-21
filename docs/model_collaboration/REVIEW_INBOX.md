@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-21
-**Status:** MC-0021 ACTIVE / AO-8 INDEPENDENT_THEN_COMPARATIVE ARCHITECTURE REVIEW / CLAUDE MESSAGE 001 NEXT / MC-0010 DEFERRED
+**Status:** MC-0021 ACTIVE / AO-8 COMPARATIVE ARCHITECTURE REVIEW / CLAUDE MESSAGE 003 NEXT / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -33,12 +33,12 @@ mode                  INDEPENDENT_THEN_COMPARATIVE
 independent base      b649c1a846d3bf9274fd718e0efd8de9d63bd990
 candidate target      f73239ee486132a94701de80514ffd11480b9ecd
 reviewer              fresh Claude architecture-review conversation
-phase                 Claude independent Message 001
+phase                 Claude comparative/adversarial Message 003
 gate                  BEFORE_THREAD_RESOLUTION
 AO-9                  BLOCKED until AO-8 reconciliation
 ```
 
-Before Message 001 is frozen, Claude must remain blind to Research 222 through Research 226 and their AO3-AO7 machine syntheses. Current-branch reads are limited to routing plus the MC-0021 thread contract; substantive evidence comes from the exact pre-AO-3 base. After Message 001 is durably frozen, ChatGPT will expose the integrated AO-3 through AO-7 candidate for comparative/adversarial review.
+Claude Message 001 is frozen at commit `7f11f5f3af4106ad322a4e1572cf6befda81a582`. Phase 2 intentionally exposes Research 222 through Research 226 and their AO3-AO7 machine syntheses at exact candidate target `f73239ee486132a94701de80514ffd11480b9ecd`. Message 002 is the comparison/exposure package. Claude Message 003 is now required before ChatGPT reconciliation and AO-8 closure.
 
 Primary contract:
 

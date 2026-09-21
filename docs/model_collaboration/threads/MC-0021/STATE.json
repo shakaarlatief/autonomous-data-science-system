@@ -2,8 +2,8 @@
   "schema_version": 1,
   "thread_id": "MC-0021",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
-  "lifecycle_state": "OPEN",
-  "phase": "CLAUDE_INDEPENDENT_CONTROL_PLANE_ARCHITECTURE",
+  "lifecycle_state": "ACTIVE",
+  "phase": "CLAUDE_COMPARATIVE_ADVERSARIAL_REVIEW",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "b649c1a846d3bf9274fd718e0efd8de9d63bd990",
@@ -52,21 +52,22 @@
   ],
   "next_expected_actor": "claude",
   "independence": {
-    "status": "BLIND_TO_CANDIDATE",
+    "status": "COMPARATIVE_ONLY",
     "review_base_ref": "b649c1a846d3bf9274fd718e0efd8de9d63bd990",
     "known_exposures": [
-      "The reviewer knows an integrated AO-3 through AO-7 candidate exists and knows its immutable target SHA, but must not inspect its content before Message 001 is frozen.",
-      "Two candidate-neutral later owner constraints are supplied in BRIEF.md: no sunk-cost architecture constraint and question/observation/directive intent separation.",
-      "Current routing and review-inbox state may be read only to locate the thread and confirm that AO-8 is active."
+      "Claude Message 001 was durably frozen at commit 7f11f5f3af4106ad322a4e1572cf6befda81a582 before candidate exposure.",
+      "Comparative Phase 2 intentionally exposes the integrated AO-3 through AO-7 candidate at exact target f73239ee486132a94701de80514ffd11480b9ecd.",
+      "Message 002 includes ChatGPT provisional comparison seams and Q1-Q15 challenge questions.",
+      "The frozen independent Message 001 remains the reference for pre-exposure judgment."
     ],
-    "notes": "Phase 1 is independence-sensitive. All substantive reads must use the pre-AO-3 base. Research 222-226, Checkpoints 559-563 bodies and descendant synthesis are excluded until Message 001 is durably frozen."
+    "notes": "The independence-sensitive phase is complete. Current work is intentionally comparative/adversarial; candidate exposure does not retroactively contaminate frozen Message 001."
   },
   "last_transition": {
-    "transition_id": "mc0021-open-independent-control-plane-review",
-    "from_state": null,
-    "to_state": "OPEN",
+    "transition_id": "mc0021-message001-frozen-enter-comparative",
+    "from_state": "OPEN",
+    "to_state": "ACTIVE",
     "actor": "chatgpt",
-    "reason": "AO-7 completed at Checkpoint 563, activating Research 219 AO-8 independent architecture review before AO-9/AO-10.",
-    "repository_head": "f73239ee486132a94701de80514ffd11480b9ecd"
+    "reason": "Claude independent Message 001 was verified as the only file in commit 7f11f5f3 and frozen; Phase 2 now intentionally exposes the integrated AO-3 through AO-7 candidate.",
+    "repository_head": "7f11f5f3af4106ad322a4e1572cf6befda81a582"
   }
 }
