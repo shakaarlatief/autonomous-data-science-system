@@ -51,6 +51,10 @@ AO5_INTERACTION_CONTINUITY_AND_RECOVERY_V01.json
 AO6_GIT_WORKSTREAM_ORCHESTRATION_V01.json
     machine-readable AO-6 purpose-bound branch lifecycle, workstream/Git separation,
     publication semantics and live branch-rotation disposition
+
+AO7_SUCCESSOR_ORCHESTRATION_BRIDGE_V01.json
+    machine-readable AO-7 authority-preserving successor bridge, bridge modes,
+    authority membrane, conflict/fallback rules and AO-10 qualification obligations
 ```
 
 Interpretation:

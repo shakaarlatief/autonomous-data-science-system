@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "architecture_id": "AO7-AUTHORITY-PRESERVING-SUCCESSOR-BRIDGE-V01",
+  "date": "2026-09-21",
+  "authority_class": "research_output",
+  "status": "AO7_CONCEPTUAL_BASELINE",
+  "governing_program": "research:219",
+  "name": "Authority-Preserving Successor Bridge",
+  "core_invariant": "Control execution may move to successor logic before semantic authority moves.",
+  "bridge_modes": ["DISABLED", "SHADOW", "ACTIVE_SUBORDINATE", "SUSPENDED"],
+  "authority_state_during_bridge": {
+    "current_operational_authority": "CURRENT_CONTINUITY_ARCHITECTURE",
+    "authority_switch_allowed": false,
+    "bridge_output_authority": "NON_AUTHORITATIVE_BY_DEFAULT"
+  },
+  "successor_control_may": [
+    "interpret_project_events",
+    "form_control_obligations",
+    "perform_task_shaped_reconstruction",
+    "route_process_workstream_collaboration_and_tools",
+    "coordinate_postflight",
+    "emit_control_observations"
+  ],
+  "successor_control_may_not": [
+    "self_enable",
+    "invent_project_authority",
+    "treat_derived_views_as_authority",
+    "overwrite_live_compatibility_paths_as_successor_generation",
+    "waive_action_contracts",
+    "self_promote_control_records",
+    "switch_operational_authority"
+  ],
+  "authority_membrane": {
+    "derived_control_side": [
+      "EventInterpretation",
+      "ControlObligationSet",
+      "ReconstructionContract",
+      "RouteDecision",
+      "BridgeReceipt",
+      "ControlObservation"
+    ],
+    "governing_side": [
+      "canonical_current_project_facts",
+      "current_workstream_state",
+      "current_compatibility_contracts",
+      "governing_procedures",
+      "accepted_decisions_and_specifications",
+      "required_private_authority_and_freshness",
+      "mutation_permissions",
+      "authority_transitions"
+    ]
+  },
+  "conflict_rule": "CURRENT_AUTHORITY_WINS_AND_CONTROL_OBSERVATION_EMITTED",
+  "bootstrap": {
+    "direction": "CURRENT_CONTINUITY_BOOTSTRAP_DELEGATES_TO_QUALIFIED_BRIDGE",
+    "bridge_self_bootstrap_authority": false,
+    "activation_state_owned_by_current_authority": true
+  },
+  "read_path": [
+    "project_event",
+    "bounded_current_control_context",
+    "fresh_successor_views_as_acceleration",
+    "targeted_reconstruction",
+    "current_authority_resolution"
+  ],
+  "action_path": [
+    "RouteDecision",
+    "AuthorityReceipt",
+    "ActionContract",
+    "governed_execution_surface",
+    "expected_revision_precondition",
+    "action",
+    "postcondition_verification",
+    "current_state_reconciliation",
+    "BridgeReceipt_or_ControlObservation"
+  ],
+  "staleness_rule": "MATERIAL_STATE_CHANGE_INVALIDATES_CONSEQUENTIAL_CONTROL_PLAN_AND_REQUIRES_RECONSTRUCTION",
+  "fallback": {
+    "bridge_is_single_point_of_failure": false,
+    "current_continuity_path_required": true,
+    "required_authority_unavailable": "FAIL_VISIBLE_FOR_AFFECTED_CONSEQUENTIAL_ACTION"
+  },
+  "enable_lifecycle": [
+    "DISABLED_TO_SHADOW_AFTER_IMPLEMENTATION",
+    "SHADOW_TO_ACTIVE_SUBORDINATE_ONLY_AFTER_QUALIFICATION_AND_CURRENT_AUTHORITY_ENABLE_DECISION",
+    "ACTIVE_SUBORDINATE_TO_SUSPENDED_ON_MATERIAL_FAILURE_OR_GOVERNED_DISABLE",
+    "SUSPENDED_TO_ACTIVE_ONLY_AFTER_REPAIR_AND_REQUALIFICATION"
+  ],
+  "no_authority_laundering": true,
+  "logical_records": ["BridgeReceipt"],
+  "migration_relationship": {
+    "bridge_active_implies_W6": false,
+    "bridge_active_implies_W8": false,
+    "compatibility_path_takeover": false,
+    "allowed_during_remaining_W5_after_AO10_qualification": true
+  },
+  "ao6_realization_gap": {
+    "branch_attach_switch_gap_remains_open": true,
+    "bridge_must_not_claim_rotation_completed": true
+  },
+  "defining_failure_falsifier": "AO-F17_BRIDGE_AUTHORITY_LEAK",
+  "non_decisions": [
+    "physical_bridge_service",
+    "daemon",
+    "event_bus",
+    "database",
+    "LLM_prompt_format",
+    "bridge_enable_state_storage_schema",
+    "provider_specific_chat_hook",
+    "automatic_collaborator_transport",
+    "production_BridgeReceipt_schema",
+    "rules_engine_technology",
+    "background_polling_cadence",
+    "W6_cutover_implementation",
+    "W8_authority_switch",
+    "post_W8_architecture"
+  ],
+  "next": "AO_8_INDEPENDENT_ARCHITECTURE_REVIEW"
+}
