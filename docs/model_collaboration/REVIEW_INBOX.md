@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-21
-**Status:** MC-0021 ACTIVE / AO-8 COMPARATIVE ARCHITECTURE REVIEW / CLAUDE MESSAGE 003 NEXT / MC-0010 DEFERRED
+**Status:** NO ACTIVE CLAUDE OBLIGATION / MC-0021 RESOLVED / AO-9 OWNED BY CHATGPT / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -23,32 +23,22 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Current active collaboration obligation
 
+There is no active Claude obligation. MC-0021 is resolved after blind independent Message 001, comparative Message 003 and ChatGPT reconciliation Message 004. AO-9 empirical historical-regression design is now owned by ChatGPT. A new collaborator route should open only if AO-9 evidence or Research 219 policy creates a concrete review obligation.
+
+## Most recently completed obligation
+
 ### MC-0021: AO-8 independent activation/orchestration architecture review
 
-Status:
-
 ```text
-OPEN / REQUIRED
+RESOLVED
 mode                  INDEPENDENT_THEN_COMPARATIVE
 independent base      b649c1a846d3bf9274fd718e0efd8de9d63bd990
 candidate target      f73239ee486132a94701de80514ffd11480b9ecd
-reviewer              fresh Claude architecture-review conversation
-phase                 Claude comparative/adversarial Message 003
-gate                  BEFORE_THREAD_RESOLUTION
-AO-9                  BLOCKED until AO-8 reconciliation
+independent message   001 @ 7f11f5f3af4106ad322a4e1572cf6befda81a582
+comparative message   003 @ 4eb17b185bf939e0767e72121a61081a5638fda0
+reconciliation        Message 004
+result                baseline retained; one AO-3 amendment candidate awaits AO-9 evidence
 ```
-
-Claude Message 001 is frozen at commit `7f11f5f3af4106ad322a4e1572cf6befda81a582`. Phase 2 intentionally exposes Research 222 through Research 226 and their AO3-AO7 machine syntheses at exact candidate target `f73239ee486132a94701de80514ffd11480b9ecd`. Message 002 is the comparison/exposure package. Claude Message 003 is now required before ChatGPT reconciliation and AO-8 closure.
-
-Primary contract:
-
-```text
-docs/model_collaboration/threads/MC-0021/BRIEF.md
-docs/model_collaboration/threads/MC-0021/THREAD.md
-docs/model_collaboration/threads/MC-0021/STATE.json
-```
-
-## Most recently completed obligation
 
 ### MC-0020: W5 T1 V0.2 blind subject-placement calibration
 

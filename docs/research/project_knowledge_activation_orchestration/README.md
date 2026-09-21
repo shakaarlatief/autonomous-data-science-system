@@ -55,6 +55,10 @@ AO6_GIT_WORKSTREAM_ORCHESTRATION_V01.json
 AO7_SUCCESSOR_ORCHESTRATION_BRIDGE_V01.json
     machine-readable AO-7 authority-preserving successor bridge, bridge modes,
     authority membrane, conflict/fallback rules and AO-10 qualification obligations
+
+AO8_REVIEW_RECONCILIATION_V01.json
+    machine-readable AO-8 independent-review reconciliation, pending AO-3 amendment
+    candidate, requirements candidates and AO-10 realization obligations
 ```
 
 Interpretation:

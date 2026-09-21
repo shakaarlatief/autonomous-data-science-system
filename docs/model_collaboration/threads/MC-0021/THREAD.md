@@ -1,7 +1,7 @@
 # MC-0021 Thread: Independent Activation/Orchestration Architecture Review
 
 **Thread:** MC-0021
-**Status:** ACTIVE / INDEPENDENT MESSAGE 001 FROZEN / CLAUDE COMPARATIVE MESSAGE 003 NEXT
+**Status:** RESOLVED / AO-8 REVIEW RECONCILED / AO-9 NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Review requirement:** REQUIRED
 **Gate boundary:** BEFORE_THREAD_RESOLUTION / AO-9 must not begin before reconciliation
@@ -29,8 +29,8 @@ If candidate content leaks before Message 001, record the contamination rather t
 ~~~text
 001  Claude independent control-plane architecture                 COMPLETE
 002  ChatGPT comparison/exposure package                          COMPLETE
-003  Claude comparative/adversarial architecture review           NEXT
-004  ChatGPT reconciliation / AO-8 disposition                    PENDING
+003  Claude comparative/adversarial architecture review           COMPLETE
+004  ChatGPT reconciliation / AO-8 disposition                    COMPLETE
 ~~~
 
 Additional bounded messages are allowed only if a material disagreement remains unresolved.
@@ -46,8 +46,8 @@ docs/model_collaboration/threads/MC-0021/messages/**
 ChatGPT remains task owner and integrator. Claude must not mutate current routing, research, specifications, checkpoints, architecture docs, code, tests, or generated views.
 
 ~~~text
-MC0021=ACTIVE
-PHASE=CLAUDE_COMPARATIVE_ADVERSARIAL_REVIEW
-INDEPENDENT_MESSAGE_001=FROZEN
-NEXT=CLAUDE_MESSAGE_003
+MC0021=RESOLVED
+PHASE=ARCHITECTURE_REVIEW_RECONCILED
+AO8=COMPLETE
+NEXT=AO_9_EMPIRICAL_HISTORICAL_REGRESSION_PROGRAM
 ~~~

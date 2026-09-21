@@ -576,9 +576,10 @@ AO-7  successor orchestration bridge design
       COMPLETE / Research 226 + Authority-Preserving Successor Bridge
 
 AO-8  independent architecture review
-      NEXT / independent-then-comparative challenge of the integrated AO-3 through AO-7 architecture
+      COMPLETE / Research 227 + MC-0021 independent-then-comparative review reconciliation
 
 AO-9  empirical historical-regression program
+      NEXT / preregistered four-arm historical regression with negative controls and decisive C-vs-D output-shape probe
 
 AO-10 bounded implementation and shadow/bridge qualification
 
@@ -607,7 +608,7 @@ Authority switch
     NOT ALLOWED
 
 Immediate next work
-    AO-8 INDEPENDENT ARCHITECTURE REVIEW
+    AO-9 EMPIRICAL HISTORICAL-REGRESSION PROGRAM
 ```
 
 No production navigation-schema/view code should be mutated merely to keep the old sequence moving.
@@ -652,5 +653,9 @@ AO_5=COMPLETE
 AO_6=COMPLETE
 AO6_BRANCH_ROTATION_REALIZATION=DEFERRED_ATTACH_SWITCH_CAPABILITY_GAP
 AO_7=COMPLETE
-NEXT=AO_8_INDEPENDENT_ARCHITECTURE_REVIEW
+AO_8=COMPLETE
+AO8_E01_OUTPUT_SHAPE_AMENDMENT=DISPOSITION_PENDING_AO9
+AO10_O01_BRANCH_ROTATION_REALIZATION=REQUIRED
+AO10_O02_SPEC028_REPRESENTATION_RECONCILIATION=REQUIRED
+NEXT=AO_9_EMPIRICAL_HISTORICAL_REGRESSION_PROGRAM
 ```
