@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "arm_id": "C",
+  "name": "AO3_AO7_CANDIDATE",
+  "contract_version": "AO9-C-V01",
+  "authority_class": "research_fixture",
+  "semantic_target": "f73239ee486132a94701de80514ffd11480b9ecd",
+  "normative_sources": [
+    "Research 222 / AO3_PROGRESSIVE_CONTROL_CLOSURE_V01",
+    "Research 223 / AO4_ARCHITECTURE_EVOLUTION_GOVERNANCE_V01",
+    "Research 224 / AO5_INTERACTION_CONTINUITY_AND_RECOVERY_V01",
+    "Research 225 / AO6_GIT_WORKSTREAM_ORCHESTRATION_V01",
+    "Research 226 / AO7_SUCCESSOR_ORCHESTRATION_BRIDGE_V01"
+  ],
+  "flow": [
+    "S1 event ingress and explicit intent",
+    "S2 bounded baseline control context",
+    "S3 project-controlled ControlObligationSet screening",
+    "S4 progressive reconstruction and activation closure when obligations require it",
+    "S5 process/workstream/collaboration/tool routing when required",
+    "S6 AuthorityReceipt + ActionContract preflight for consequential guidance/action",
+    "S7 reasoning/execution/handoff",
+    "S8 pre-dispatch/pre-mutation conformance against the established ActionContract",
+    "S9 postflight preservation/resume/self-observation"
+  ],
+  "fast_path": {
+    "allowed": true,
+    "conditions": [
+      "low consequence",
+      "no consequential mutation",
+      "no unresolved control condition whose applicability could materially change route",
+      "no activated mandatory deeper obligation"
+    ],
+    "cannot_bypass": [
+      "mandatory authority",
+      "risk",
+      "review",
+      "recovery",
+      "preservation"
+    ]
+  },
+  "closure_rule": {
+    "initial": "event interpretation + explicit directives + bounded current context",
+    "expansion": "targeted reconstruction may add/strengthen obligations",
+    "termination": "mandatory obligations satisfied, policy-discharged, or fail-visible unresolved",
+    "silent_drop_forbidden": true
+  },
+  "critical_R9_freeze": {
+    "independent_output_action_shape_reentry": false,
+    "S8_independently_creates_missing_S6_contract": false,
+    "rule": "If S3 fast-paths and no other candidate-defined obligation requires S6, Arm C does not gain the MC-0021 output-shape amendment by implication."
+  },
+  "conformance": {
+    "checks_order_prohibitions_postconditions_against_established_contract": true,
+    "NO_CONTRACT_AVAILABLE_distinct_verdict_frozen": false,
+    "generic_structural_receipt_verifier_from_MC0021": false
+  },
+  "bridge": {
+    "mode_semantics": [
+      "DISABLED",
+      "SHADOW",
+      "ACTIVE_SUBORDINATE",
+      "SUSPENDED"
+    ],
+    "bridge_outputs_non_authoritative": true,
+    "current_authority_wins_on_conflict": true,
+    "self_enable_forbidden": true
+  },
+  "forbidden_additions": [
+    "MC-0021 Message 003/004 output-shape amendment",
+    "universal control ledger",
+    "new R51/R52 requirement semantics",
+    "post-review fixes not present at semantic target"
+  ]
+}

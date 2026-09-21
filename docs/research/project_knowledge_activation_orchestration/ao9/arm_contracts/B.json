@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "arm_id": "B",
+  "name": "PLANNER_ONLY",
+  "contract_version": "AO9-B-V01",
+  "authority_class": "research_fixture",
+  "normative_sources": [
+    "Specification 028 section 26 reconstruction planner",
+    "Specification 028 authority-resolution contract where invoked"
+  ],
+  "purpose": "Strong simpler alternative: task-shaped reconstruction plus authority resolution, without the broader event/control plane.",
+  "input_boundary": {
+    "task_spec_may_be_model_assisted": true,
+    "supported_task_classes": [
+      "BROAD_CONTINUATION",
+      "NARROW_GOVERNED_TASK",
+      "EXPLORATORY_RESEARCH"
+    ],
+    "scenario_evidence_boundary_must_be_respected": true
+  },
+  "flow": [
+    "form TaskIntent/task class from the scenario",
+    "construct ReconstructionContract",
+    "load minimum safe orientation sources/views",
+    "load planner-declared must-load governing sources",
+    "load planner-declared optional/supporting evidence when task-shaped contract requires it",
+    "resolve authority when planner/task requires governing-source closure",
+    "produce answer/action under resolved authority"
+  ],
+  "reconstruction_contract_fields": [
+    "task_class",
+    "minimum_safe_orientation",
+    "must_load_governing_sources",
+    "optional_or_supporting_evidence",
+    "negative_or_do_not_load_guidance",
+    "freshness_requirements",
+    "receipt_requirements",
+    "fail_or_escalate_conditions"
+  ],
+  "project_controlled_boundary": [
+    "governing-source closure",
+    "safety constraints",
+    "unresolved authority conflict"
+  ],
+  "explicit_absences": [
+    "no AO-3 event/state ControlObligationSet",
+    "no source-trigger monitoring unless the planner task contract itself loads the trigger source",
+    "no AO-3 process/workstream/collaboration/tool router",
+    "no AO-3 independent postflight/self-observation loop",
+    "no independent output/action-shape re-entry",
+    "no AO-4 evolution-case orchestration",
+    "no AO-5 recovery router beyond what the planner explicitly reconstructs",
+    "no AO-6 Git lifecycle controller",
+    "no AO-7 successor bridge"
+  ],
+  "conformance": {
+    "action_contract_available_when_authority_path_provides_one": true,
+    "independent_final_output_shape_trigger": false,
+    "no_contract_result": "UNSPECIFIED_BY_ARM_B"
+  },
+  "scoring_rule": "Arm B receives credit for anything a strong task-shaped planner plus authority resolver can do. It must not be weakened merely to make Arm C look useful."
+}

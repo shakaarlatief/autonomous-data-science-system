@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "arm_id": "A",
+  "name": "BASELINE_CURRENT_BEHAVIOR",
+  "contract_version": "AO9-A-V01",
+  "authority_class": "research_fixture",
+  "purpose": "Represent observed historical/current continuity behavior without successor control-plane semantics.",
+  "evidence_model": {
+    "primary": "historical_observation_and_existing_blind_baseline",
+    "current_head_fresh_model_answer_is_clean_baseline": false,
+    "reason": "Current HEAD contains AO diagnosis/review material and would contaminate the historical baseline."
+  },
+  "mechanism": {
+    "planner": "legacy/current continuity only as it existed at the scenario boundary",
+    "progressive_control_closure": false,
+    "output_shape_reentry": false,
+    "successor_bridge": false,
+    "postflight_control_self_observation": false,
+    "result_source": "Use preserved historical outcome where available; mechanism-level scenarios may be N/A rather than invented."
+  },
+  "scoring_rules": [
+    "Do not improve Arm A using descendant AO artifacts.",
+    "Do not infer behavior not evidenced by the historical record.",
+    "Existing BL evaluations may be reused only for the exact corresponding frozen request/snapshot.",
+    "If no historical behavioral result exists for a mechanism-only scenario, mark behavior N/A rather than simulate a modern answer."
+  ],
+  "forbidden_features": [
+    "Research 222 through 227 control semantics",
+    "MC-0021 amendments",
+    "current-HEAD AO-aware reconstruction as baseline behavior"
+  ]
+}

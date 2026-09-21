@@ -65,8 +65,9 @@ AO9_HISTORICAL_REGRESSION_PROTOCOL_V01.json
     scenarios, budgets, invalidators, decision rules and no-tuning boundary
 
 ao9/
-    AO-9 scenario/evaluator-key packet. Trial-visible scenarios and evaluator-only
-    keys are physically separated; MANIFEST.json binds their digests and freeze state.
+    AO-9 regression packet. Trial-visible scenarios and evaluator-only keys are
+    physically separated; arm_contracts/ freezes the A/B/C/D mechanism contracts;
+    manifests bind digests and freeze state before scoring.
 ```
 
 Interpretation:

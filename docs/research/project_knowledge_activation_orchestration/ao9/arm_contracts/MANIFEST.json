@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "packet_id": "AO9-ARM-CONTRACT-PACKET-V01",
+  "status": "P2_FROZEN_BEFORE_MODEL_FREE_TRACE",
+  "scenario_packet_commit": "76f5d6e784651f244d882b5373d7f750b1a706ef",
+  "scoring_started": false,
+  "arms": [
+    {
+      "arm_id": "A",
+      "path": "docs/research/project_knowledge_activation_orchestration/ao9/arm_contracts/A.json",
+      "sha256": "c56aeed358738c428d29ae68553a1817402eb9db7a44d28672911735fa34dbd1"
+    },
+    {
+      "arm_id": "B",
+      "path": "docs/research/project_knowledge_activation_orchestration/ao9/arm_contracts/B.json",
+      "sha256": "5fc9c1ba00c9845e633ba301ddeb8352fbdca895e69843e588e99a2412d57967"
+    },
+    {
+      "arm_id": "C",
+      "path": "docs/research/project_knowledge_activation_orchestration/ao9/arm_contracts/C.json",
+      "sha256": "e4c785cbb38f50b15ce5c3e547cd55601785736be631d8017a86b05df46f9879"
+    },
+    {
+      "arm_id": "D",
+      "path": "docs/research/project_knowledge_activation_orchestration/ao9/arm_contracts/D.json",
+      "sha256": "6e7d467776484ce66b84e9b10ec9a89c4e77170b683694ae6ec9835cad71b742"
+    }
+  ]
+}
