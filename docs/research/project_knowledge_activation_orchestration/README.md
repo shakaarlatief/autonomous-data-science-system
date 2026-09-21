@@ -47,6 +47,10 @@ AO4_ARCHITECTURE_EVOLUTION_GOVERNANCE_V01.json
 AO5_INTERACTION_CONTINUITY_AND_RECOVERY_V01.json
     machine-readable AO-5 interaction-continuity layers, recoverability semantics,
     interruption classes, break-glass independence and degraded-mode rules
+
+AO6_GIT_WORKSTREAM_ORCHESTRATION_V01.json
+    machine-readable AO-6 purpose-bound branch lifecycle, workstream/Git separation,
+    publication semantics and live branch-rotation disposition
 ```
 
 Interpretation:
