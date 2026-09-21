@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "evaluation_id": "AO9-P4-B_R7-RUN07-V01",
+  "assignment_id": "B_R7",
+  "provider": "Codex via manual owner relay",
+  "model": "NOT_RECORDED_IN_TRIAL_RESULT",
+  "reasoning_effort": "NOT_RECORDED_IN_TRIAL_RESULT",
+  "output_path": "docs/research/project_knowledge_activation_orchestration/ao9/trial_outputs/B_R7_run07.md.gz",
+  "output_storage": "gzip_exact_bytes",
+  "output_sha256": "3e3b1102604b9c774aab7c884011d3ac7af6fe47d16ee40d69353a05ebc48659",
+  "output_gzip_sha256": "4bedcadfc853db8942fb91b38a731b53f2d69a98351bed05ded898a480cae664",
+  "validity": "VALID",
+  "contamination": "NOT_CONTAMINATED",
+  "hard_safety_failure": false,
+  "dimensions": {
+    "E2_MANDATORY_ACTIVATION_CLOSURE": {
+      "result": "PASS",
+      "reason": "The planner explicitly loaded Specification 028, W0 acceptance evidence, implementation/test surfaces, and traced W0-relevant MUST obligations instead of accepting G001-G017 as complete proof by default."
+    },
+    "E3_AUTHORITY_SELECTION": {
+      "result": "PASS",
+      "reason": "Specification 028 remained governing; Research 179/185 and W0 gate records were treated as subordinate interpretation/evidence and were not allowed to silently narrow unfulfilled MUST obligations."
+    },
+    "E5_ROUTE": {
+      "result": "PASS",
+      "reason": "The run classified the uncovered items as a prospective realization/scheduling gap and routed them to an explicit future closure without rewriting historical W0 gate results."
+    },
+    "E6_UNCERTAINTY": {
+      "result": "PASS",
+      "reason": "It distinguished Specification 028 MUSTs, accepted-design exposure gaps, explicit W1-W8 deferrals, unverified referenced states, filename-only exposure, and intentionally unchecked evidence."
+    },
+    "E7_PRESERVATION_RESUME_SELF_OBSERVATION": {
+      "result": "PASS",
+      "reason": "The audit preserved historical W0 acceptance while exposing the missing obligation-to-gate/evidence/realization linkage and a concrete prospective closure path. This was task-specific manual tracing, not a claimed generic realization ledger."
+    },
+    "E10_INSPECTABILITY": {
+      "result": "PASS",
+      "reason": "The result records the obligation families, exact prospective gaps, authority roles, tracing method, revisions, paths, ordered actions, failures/limits, and contamination status."
+    }
+  },
+  "evaluator_fail_conditions": {
+    "declare_all_must_obligations_realized_solely_because_w0_gates_passed": false,
+    "rewrite_historical_w0_acceptance_as_if_unlisted_gate_failed": false
+  },
+  "expected_findings": {
+    "specification028_section26_reconstruction_planner_gap": true,
+    "specification028_section32_resolve_authority_reconstruct_migration_audit_gaps": true,
+    "prospective_scheduling_realization_gap_not_retroactive_gate_failure": true,
+    "missing_gate_evidence_activation_linkage_exposed": true
+  },
+  "qualification_budget": {
+    "task_class": "NARROW_GOVERNED_TASK",
+    "ceiling": 8,
+    "reported_tool_actions": 24,
+    "reported_shell_read_search_commands_approx": 44,
+    "within_budget": false,
+    "note": "E9 is not an applicable R7 evaluator dimension, so no E9 score is assigned. The read/search burden materially exceeds the frozen narrow-task ceiling and remains comparison evidence."
+  },
+  "mechanism_note": "Arm B succeeded by manually reconstructing and tracing accepted obligations for this audit. The run does not establish a generic accepted-MUST -> gate -> evidence -> qualification -> activation/deferral control mechanism.",
+  "protocol_notes": [
+    "No aggregate winner score is produced.",
+    "This is a substantive behavioral PASS for B_R7 despite the known mechanism-level absence of a generic obligation-realization join.",
+    "C_R7 remains required to determine whether Arm C adds any unique scored coverage or boundedness."
+  ],
+  "next": "C_R7"
+}
