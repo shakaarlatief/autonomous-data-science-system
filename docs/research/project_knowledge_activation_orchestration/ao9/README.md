@@ -3,7 +3,7 @@
 **Program:** Research 219 / AO-9
 **Protocol:** Research 228 / AO9-HISTORICAL-REGRESSION-PROTOCOL-V01
 **Protocol freeze commit:** bf48758eaee2b87559ac86f4aee02f48cecf37e5
-**Status:** P3 MODEL-FREE TRACE COMPLETE / P4 FRESH REPLAY NEXT
+**Status:** P4 HARNESS FROZEN / FRESH REPLAY NEXT
 **Authority:** Research fixtures only. These files do not amend architecture or project authority.
 
 This packet separates trial-visible scenario inputs from evaluator-only expected behavior.
@@ -21,6 +21,9 @@ arm_contracts/
 
 traces/
     durable model-free mechanism traces from AO-9 P3
+
+p4_assignments/
+    frozen minimum decision-relevant fresh-collaborator assignments
 
 trial_outputs/
     reserved non-ignored durable path for P4 fresh-collaborator outputs

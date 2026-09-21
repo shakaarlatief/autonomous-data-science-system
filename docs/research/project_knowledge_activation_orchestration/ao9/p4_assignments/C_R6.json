@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "assignment_id": "C_R6",
+  "phase": "AO9_P4_FRESH_COLLABORATOR_REPLAY",
+  "arm_id": "C",
+  "arm_name": "AO3_AO7_CANDIDATE",
+  "scenario_id": "R6",
+  "scenario_title": "Abnormal interruption recovery",
+  "scenario_sha256": "c1763b4426a52242f8581fc47c9a29df63e3551b8b493ff4db732a2bfa19e382",
+  "arm_contract_sha256": "e4c785cbb38f50b15ce5c3e547cd55601785736be631d8017a86b05df46f9879",
+  "scenario": {
+    "schema_version": 1,
+    "scenario_id": "R6",
+    "provenance_class": "HISTORICAL",
+    "title": "Abnormal interruption recovery",
+    "parent": [
+      "KF-CR-01",
+      "Research 107"
+    ],
+    "evidence_boundary": {
+      "snapshot": "851ff497261a15d7ca499b1b68e92fce70202672",
+      "mode": "EXACT_GIT_SNAPSHOT"
+    },
+    "task": "The previous long-running ChatGPT task may have been interrupted during a multi-step repository change. From this repository state, determine what actually completed, what remains unfinished, and what should happen next. Do not mutate anything until the interruption state is reconstructed.",
+    "permitted_evidence": [
+      "exact frozen snapshot only"
+    ],
+    "prohibited_evidence": [
+      "Research 107 and descendant recovery conclusions",
+      "evaluator keys",
+      "prior AO-9 scored results"
+    ],
+    "execution_hint": "completion must come from durable repository evidence, not the interrupted conversational plan",
+    "evaluator_key_visible_to_trial": false
+  },
+  "arm_contract": {
+    "schema_version": 1,
+    "arm_id": "C",
+    "name": "AO3_AO7_CANDIDATE",
+    "contract_version": "AO9-C-V01",
+    "authority_class": "research_fixture",
+    "semantic_target": "f73239ee486132a94701de80514ffd11480b9ecd",
+    "normative_sources": [
+      "Research 222 / AO3_PROGRESSIVE_CONTROL_CLOSURE_V01",
+      "Research 223 / AO4_ARCHITECTURE_EVOLUTION_GOVERNANCE_V01",
+      "Research 224 / AO5_INTERACTION_CONTINUITY_AND_RECOVERY_V01",
+      "Research 225 / AO6_GIT_WORKSTREAM_ORCHESTRATION_V01",
+      "Research 226 / AO7_SUCCESSOR_ORCHESTRATION_BRIDGE_V01"
+    ],
+    "flow": [
+      "S1 event ingress and explicit intent",
+      "S2 bounded baseline control context",
+      "S3 project-controlled ControlObligationSet screening",
+      "S4 progressive reconstruction and activation closure when obligations require it",
+      "S5 process/workstream/collaboration/tool routing when required",
+      "S6 AuthorityReceipt + ActionContract preflight for consequential guidance/action",
+      "S7 reasoning/execution/handoff",
+      "S8 pre-dispatch/pre-mutation conformance against the established ActionContract",
+      "S9 postflight preservation/resume/self-observation"
+    ],
+    "fast_path": {
+      "allowed": true,
+      "conditions": [
+        "low consequence",
+        "no consequential mutation",
+        "no unresolved control condition whose applicability could materially change route",
+        "no activated mandatory deeper obligation"
+      ],
+      "cannot_bypass": [
+        "mandatory authority",
+        "risk",
+        "review",
+        "recovery",
+        "preservation"
+      ]
+    },
+    "closure_rule": {
+      "initial": "event interpretation + explicit directives + bounded current context",
+      "expansion": "targeted reconstruction may add/strengthen obligations",
+      "termination": "mandatory obligations satisfied, policy-discharged, or fail-visible unresolved",
+      "silent_drop_forbidden": true
+    },
+    "critical_R9_freeze": {
+      "independent_output_action_shape_reentry": false,
+      "S8_independently_creates_missing_S6_contract": false,
+      "rule": "If S3 fast-paths and no other candidate-defined obligation requires S6, Arm C does not gain the MC-0021 output-shape amendment by implication."
+    },
+    "conformance": {
+      "checks_order_prohibitions_postconditions_against_established_contract": true,
+      "NO_CONTRACT_AVAILABLE_distinct_verdict_frozen": false,
+      "generic_structural_receipt_verifier_from_MC0021": false
+    },
+    "bridge": {
+      "mode_semantics": [
+        "DISABLED",
+        "SHADOW",
+        "ACTIVE_SUBORDINATE",
+        "SUSPENDED"
+      ],
+      "bridge_outputs_non_authoritative": true,
+      "current_authority_wins_on_conflict": true,
+      "self_enable_forbidden": true
+    },
+    "forbidden_additions": [
+      "MC-0021 Message 003/004 output-shape amendment",
+      "universal control ledger",
+      "new R51/R52 requirement semantics",
+      "post-review fixes not present at semantic target"
+    ]
+  },
+  "trial_visibility": {
+    "evaluator_keys": false,
+    "p3_trace": false,
+    "prior_p4_outputs": false,
+    "research231": false
+  },
+  "allowed_current_paths": [
+    "docs/research/project_knowledge_activation_orchestration/ao9/scenarios/R6.json",
+    "docs/research/project_knowledge_activation_orchestration/ao9/arm_contracts/C.json",
+    "docs/research/project_knowledge_activation_orchestration/ao9/p4_assignments/C_R6.json"
+  ],
+  "prohibited_current_paths": [
+    "docs/research/project_knowledge_activation_orchestration/ao9/evaluator_keys/**",
+    "docs/research/project_knowledge_activation_orchestration/ao9/traces/**",
+    "docs/research/project_knowledge_activation_orchestration/ao9/evaluations/**",
+    "docs/research/231_ao9_p3_model_free_mechanism_trace.md",
+    "docs/research/227_ao8_independent_architecture_review_reconciliation.md",
+    "docs/model_collaboration/threads/MC-0021/messages/003_claude_comparative_control_plane_review.md",
+    "docs/model_collaboration/threads/MC-0021/messages/004_chatgpt_reconciliation_and_ao8_disposition.md",
+    "docs/research/project_knowledge_activation_orchestration/ao9/trial_outputs/**"
+  ],
+  "historical_access": {
+    "mode": "EXACT_GIT_SNAPSHOT",
+    "snapshot": "851ff497261a15d7ca499b1b68e92fce70202672",
+    "limitation": null
+  },
+  "required_output_sections": [
+    "ANSWER_OR_ROUTE",
+    "CONTROL_TRACE_UNDER_ASSIGNED_ARM",
+    "EVIDENCE_RECEIPT"
+  ],
+  "receipt_fields": [
+    "exact repository revisions consulted",
+    "project paths materially consulted",
+    "commands/tool actions used in order",
+    "read/access failures",
+    "uncertainty and areas not checked",
+    "approximate repository read/tool action count",
+    "whether any prohibited current path was exposed"
+  ],
+  "write_policy": "Do not mutate repository. Return the result to the caller only; the caller freezes it after the turn.",
+  "contamination_rule": "If any evaluator key, P3 trace/evaluation, prior P4 output, or prohibited descendant material is exposed, report CONTAMINATED and stop substantive reasoning.",
+  "neutrality_rule": "Do not optimize for passing the arm. Execute only the frozen arm contract, including its absences and limitations."
+}

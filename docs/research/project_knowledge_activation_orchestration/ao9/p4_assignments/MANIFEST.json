@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "packet_id": "AO9-P4-MINIMUM-REPLAY-ASSIGNMENTS-V01",
+  "status": "FROZEN_BEFORE_FRESH_REPLAY",
+  "p3_commit": "02f17d733052fae031b14f62208a55096a846c2a",
+  "assignment_count": 13,
+  "assignments": [
+    {
+      "assignment_id": "B_R2",
+      "path": "docs/research/project_knowledge_activation_orchestration/ao9/p4_assignments/B_R2.json",
+      "sha256": "64074bb833867f6e2bdd485712c366b5eefad0e1e9578b5c076006f4c34fda3c"
+    },
+    {
+      "assignment_id": "C_R2",
+      "path": "docs/research/project_knowledge_activation_orchestration/ao9/p4_assignments/C_R2.json",
+      "sha256": "10d802485b15c8df401c7255009242f5919d0a76db6eb55c8fb2fd654b791d54"
+    },
+    {
+      "assignment_id": "B_R3",
+      "path": "docs/research/project_knowledge_activation_orchestration/ao9/p4_assignments/B_R3.json",
+      "sha256": "10b1f21a9fe43ba94df6b2906c14d89e80ef0dbfbf95914875dcd633fb208d64"
+    },
+    {
+      "assignment_id": "C_R3",
+      "path": "docs/research/project_knowledge_activation_orchestration/ao9/p4_assignments/C_R3.json",
+      "sha256": "8393d36110b67b69c48e668b4706c54c9299d898ad38ef7c5dbc93c2bb24c9e9"
+    },
+    {
+      "assignment_id": "B_R6",
+      "path": "docs/research/project_knowledge_activation_orchestration/ao9/p4_assignments/B_R6.json",
+      "sha256": "a41e41e1f0050ae5483176f6c114587c801a3ff3a09ca3db4b0f5d6a368eec28"
+    },
+    {
+      "assignment_id": "C_R6",
+      "path": "docs/research/project_knowledge_activation_orchestration/ao9/p4_assignments/C_R6.json",
+      "sha256": "dddb04f43afbab9eca9cf624dd654d24cc52f648d4fe3f061719c41c9b08d515"
+    },
+    {
+      "assignment_id": "B_R7",
+      "path": "docs/research/project_knowledge_activation_orchestration/ao9/p4_assignments/B_R7.json",
+      "sha256": "be69d6ea0359695c333b272bbe6449bb6a548c1d51fe61e18e53684e48a1e635"
+    },
+    {
+      "assignment_id": "C_R7",
+      "path": "docs/research/project_knowledge_activation_orchestration/ao9/p4_assignments/C_R7.json",
+      "sha256": "d44a7327c785ddd3eaea8274da3870ada9cb77ec50326ed5aeab4431cfc945b4"
+    },
+    {
+      "assignment_id": "B_R8",
+      "path": "docs/research/project_knowledge_activation_orchestration/ao9/p4_assignments/B_R8.json",
+      "sha256": "e6a78a450532385d9f0760b019e57d2b6781ca69ec7502779c6771077156e06b"
+    },
+    {
+      "assignment_id": "C_R8",
+      "path": "docs/research/project_knowledge_activation_orchestration/ao9/p4_assignments/C_R8.json",
+      "sha256": "f7563e5e9b3e73d107edfeeddc2f5dc27f14db1f7d04604f96c608dff3a044ed"
+    },
+    {
+      "assignment_id": "D_N1",
+      "path": "docs/research/project_knowledge_activation_orchestration/ao9/p4_assignments/D_N1.json",
+      "sha256": "df651135d9d30c5b6f1b2f620262158bb7734b72e8c03fa4cf9a6ed3338b2d46"
+    },
+    {
+      "assignment_id": "D_N3",
+      "path": "docs/research/project_knowledge_activation_orchestration/ao9/p4_assignments/D_N3.json",
+      "sha256": "979e75f645aec9bdd422f6713988260e037e273ccbb29ecbfa071a690f5c2cc9"
+    },
+    {
+      "assignment_id": "D_N4",
+      "path": "docs/research/project_knowledge_activation_orchestration/ao9/p4_assignments/D_N4.json",
+      "sha256": "7f4ca32a85b9141041750459550072cf097b301db0d308bb227a3825fbc37816"
+    }
+  ]
+}
