@@ -61,7 +61,7 @@
       "state": "ACTIVE"
     },
     {
-      "content_digest": "2b1fe17c0ed0d25d87c62bab43c35af4762b4b279aceeea35f557623c66a70da",
+      "content_digest": "02ce1ef130325f35251672021a01c2ce41ec472fb26abaa1c34da1be752ae7da",
       "kind": "PROJECT_KNOWLEDGE_ARCHITECTURE_WORKSTREAM",
       "profile": "workstream.v1",
       "scope": {
