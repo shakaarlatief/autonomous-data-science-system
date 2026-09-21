@@ -563,9 +563,10 @@ AO-3  control-plane conceptual architecture
       COMPLETE / Research 222 + Progressive Control Closure machine synthesis
 
 AO-4  architecture evolution + frozen-contract governance
-      NEXT / trigger classification and KEEP/CLARIFY/AMEND/SUPERSEDE/REOPEN path
+      COMPLETE / Research 223 + Governed Evolution Cases machine synthesis
 
 AO-5  interaction continuity + interruption + break-glass design
+      NEXT / non-authoritative interaction continuity, interruption recovery and break-glass design
 
 AO-6  Git lifecycle + workstream orchestration integration
 
@@ -602,7 +603,7 @@ Authority switch
     NOT ALLOWED
 
 Immediate next work
-    AO-4 ARCHITECTURE EVOLUTION + FROZEN-CONTRACT GOVERNANCE
+    AO-5 INTERACTION CONTINUITY + INTERRUPTION + BREAK-GLASS DESIGN
 ```
 
 No production navigation-schema/view code should be mutated merely to keep the old sequence moving.
@@ -642,5 +643,6 @@ AUTHORITY_SWITCH_ALLOWED=false
 AO_1=COMPLETE
 AO_2=COMPLETE
 AO_3=COMPLETE
-NEXT=AO_4_ARCHITECTURE_EVOLUTION_AND_FROZEN_CONTRACT_GOVERNANCE
+AO_4=COMPLETE
+NEXT=AO_5_INTERACTION_CONTINUITY_INTERRUPTION_AND_BREAK_GLASS_DESIGN
 ```

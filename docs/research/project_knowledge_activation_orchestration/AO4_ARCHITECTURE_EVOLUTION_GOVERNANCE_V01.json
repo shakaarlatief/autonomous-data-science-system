@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "architecture_id": "AO4-GOVERNED-EVOLUTION-CASES-V01",
+  "date": "2026-09-21",
+  "authority_class": "research_output",
+  "status": "AO4_CONCEPTUAL_BASELINE",
+  "governing_program": "research:219",
+  "control_plane_baseline": "research:222",
+  "name": "Governed Evolution Cases",
+  "core_invariant": "Observed trigger evidence opens evaluation; it does not automatically mutate frozen architecture.",
+  "trigger_states": [
+    "NOT_OBSERVED",
+    "PARTIAL",
+    "OBSERVED",
+    "SUPERSEDED"
+  ],
+  "dispositions": [
+    {
+      "id": "CONFORMANCE_DEFECT",
+      "semantic_change": false,
+      "meaning": "Observed behavior violates a sufficiently clear accepted contract; route to repair without architecture change."
+    },
+    {
+      "id": "KEEP",
+      "semantic_change": false,
+      "meaning": "Trigger was evaluated and the accepted architecture remains appropriate."
+    },
+    {
+      "id": "CLARIFY",
+      "semantic_change": false,
+      "meaning": "Resolve ambiguity without changing authority, obligation, permission, prohibition, acceptance criteria, migration or cutover semantics."
+    },
+    {
+      "id": "AMEND",
+      "semantic_change": true,
+      "meaning": "Apply a bounded prospective semantic change while retaining the same overall governing design."
+    },
+    {
+      "id": "SUPERSEDE",
+      "semantic_change": true,
+      "meaning": "Replace an accepted element or contract with an explicit qualified successor while preserving provenance."
+    },
+    {
+      "id": "REOPEN",
+      "semantic_change": "pending_research",
+      "meaning": "Reopen the narrowest affected architecture scope because foundational assumptions or design space require renewed research."
+    }
+  ],
+  "temporary_control_states": [
+    {
+      "id": "AFFECTED_SCOPE_HOLD",
+      "meaning": "Pause affected consequential action while preserving current authority and resolving serious new evidence.",
+      "is_architecture_disposition": false
+    }
+  ],
+  "trigger_sources": [
+    "source_owned_risk_or_reopen_trigger",
+    "risk_obligation_index_intersection",
+    "control_observation",
+    "repeated_owner_friction",
+    "reconstruction_or_activation_failure",
+    "validation_or_integrity_failure",
+    "scale_or_maintenance_pressure",
+    "new_requirement",
+    "upstream_tool_provider_change",
+    "new_empirical_evidence",
+    "security_or_safety_concern",
+    "repeated_exception_pressure",
+    "obligation_realization_gap",
+    "explicit_owner_architecture_challenge"
+  ],
+  "evolution_case": {
+    "authority": "derived_non_authoritative_until_promoted",
+    "conceptual_fields": [
+      "case_identity",
+      "trigger_sources",
+      "trigger_state",
+      "affected_contract_or_semantic_owner",
+      "exact_affected_revision",
+      "current_accepted_architecture",
+      "observed_evidence",
+      "consequence_and_risk_of_continuing",
+      "candidate_classification",
+      "required_review_and_evidence",
+      "owner_decision_when_normative",
+      "final_disposition",
+      "prospective_realization_obligations",
+      "qualification_impact",
+      "status_and_closure_evidence"
+    ]
+  },
+  "lifecycle": [
+    "TRIGGER_CANDIDATE",
+    "EVIDENCE_BOUND",
+    "CLASSIFICATION_PENDING",
+    "REVIEW_PENDING",
+    "DISPOSITION_PENDING",
+    "DISPOSITIONED",
+    "REALIZATION_PENDING",
+    "QUALIFICATION_PENDING",
+    "CLOSED"
+  ],
+  "decision_rights": {
+    "system_may": [
+      "detect_trigger_candidates",
+      "bind_source_evidence",
+      "resolve_affected_current_authority",
+      "identify_candidate_classification",
+      "open_governed_evaluation_route",
+      "apply_deterministic_fail_closed_or_hold_rules",
+      "route_required_review",
+      "verify_realization_and_qualification_evidence"
+    ],
+    "owner_explicit_decision_required_for": [
+      "material_keep_after_observed_trigger",
+      "material_governing_clarification",
+      "amend",
+      "supersede",
+      "reopen",
+      "authority_transition"
+    ],
+    "mechanical_conformance_repair_may_use_existing_authority": true
+  },
+  "historical_integrity": {
+    "retroactive_gate_rewrite_allowed": false,
+    "rule": "Later discoveries create prospective obligations or new invalidation records; they do not rewrite what earlier gates required.",
+    "example": "The W0 reconstruction-planner gap remains a prospective obligation-realization gap, not a secret retroactive W0 gate failure."
+  },
+  "trigger_ownership": {
+    "canonical": "source_owned_risk_or_reopen_triggers",
+    "derived_monitoring": "risk_obligation_index",
+    "central_parallel_truth_registry": false
+  },
+  "monitoring_activation_points": [
+    "incoming_event_intersects_known_trigger",
+    "control_observation_emitted",
+    "meaningful_stage_or_reconciliation_boundary",
+    "material_upstream_tool_provider_change",
+    "repeated_friction_evidence_accumulates"
+  ],
+  "realization_chain": [
+    "accepted_disposition",
+    "prospective_canonical_owner_decision_or_spec_update",
+    "implementation_or_migration_gate_when_needed",
+    "evidence",
+    "qualification",
+    "operational_activation_verification"
+  ],
+  "qualification_impact": {
+    "CLARIFY": "prove_no_semantic_change_plus_ordinary_integrity",
+    "AMEND": "requalify_affected_obligations_gates_and_dependencies",
+    "SUPERSEDE": "qualify_successor_transition_compatibility_and_rollback_as_applicable",
+    "REOPEN": "define_fresh_research_and_qualification_contract_before_acceptance_resumes"
+  },
+  "ao3_integration": {
+    "S3": "may_activate_EVALUATE_ARCHITECTURE_EVOLUTION",
+    "S4": "reconstruct_current_contract_trigger_evidence_and_prior_rationale",
+    "S5": "route_to_conformance_repair_or_EvolutionCase",
+    "S6": "resolve_contract_owner_and_decision_mutation_boundary",
+    "S9": "preserve_case_evidence_realization_obligations_trigger_state_and_control_observations"
+  },
+  "failure_coverage": [
+    "AO-F12",
+    "AO-F13",
+    "AO-F14",
+    "AO-F16",
+    "AO-F18",
+    "AO-F17"
+  ],
+  "non_decisions": [
+    "production EvolutionCase schema",
+    "central trigger database",
+    "background polling daemon",
+    "trigger scoring algorithm",
+    "automatic architecture amendment",
+    "automatic owner approval",
+    "exact collaboration threshold",
+    "Git representation for amendments",
+    "exact compatibility migration mechanics"
+  ],
+  "authority_boundary": {
+    "current_operational_authority": "CURRENT_CONTINUITY_ARCHITECTURE",
+    "research218_frozen_baseline_retained": true,
+    "w5_f0_paused": true,
+    "authority_switch_allowed": false
+  },
+  "next": "AO_5_INTERACTION_CONTINUITY_INTERRUPTION_AND_BREAK_GLASS_DESIGN"
+}

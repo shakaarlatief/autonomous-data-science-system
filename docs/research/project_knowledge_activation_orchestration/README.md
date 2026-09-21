@@ -39,6 +39,10 @@ AO2_CONTROL_BOUNDARY_AND_FAILURE_TAXONOMY_V01.json
 AO3_PROGRESSIVE_CONTROL_CLOSURE_V01.json
     machine-readable AO-3 control cycle, logical records, Candidate 01 substrate reuse,
     responsibility coverage and failure-observation seams
+
+AO4_ARCHITECTURE_EVOLUTION_GOVERNANCE_V01.json
+    machine-readable AO-4 trigger states, evolution dispositions, decision rights,
+    historical-integrity rules and obligation-realization closure
 ```
 
 Interpretation:
