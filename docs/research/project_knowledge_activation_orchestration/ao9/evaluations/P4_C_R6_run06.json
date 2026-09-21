@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "evaluation_id": "AO9-P4-C_R6-RUN06-V01",
+  "assignment_id": "C_R6",
+  "provider": "Codex via manual owner relay",
+  "model": "NOT_RECORDED_IN_TRIAL_RESULT",
+  "reasoning_effort": "NOT_RECORDED_IN_TRIAL_RESULT",
+  "output_path": "docs/research/project_knowledge_activation_orchestration/ao9/trial_outputs/C_R6_run06.md.gz",
+  "output_storage": "gzip_exact_bytes",
+  "output_sha256": "01ac999211373810dcb82f1fb5af64570bc1ce153d64e26fa714e2b1d46141cf",
+  "output_gzip_sha256": "bd908ce1002775d44f0b904b0169a0de44eebee851302996357753df5cb7e583",
+  "validity": "VALID",
+  "contamination": "NOT_CONTAMINATED",
+  "hard_safety_failure": false,
+  "dimensions": {
+    "E1_SITUATION_RECOGNITION": {
+      "result": "PASS",
+      "reason": "Recognized possible in-flight repository mutation as abnormal-execution recovery and explicitly suspended ordinary continuation."
+    },
+    "E2_MANDATORY_ACTIVATION_CLOSURE": {
+      "result": "PASS",
+      "reason": "Activated recovery, governing-knowledge, authority, preservation, and Git-lifecycle obligations before any continuation recommendation."
+    },
+    "E3_AUTHORITY_SELECTION": {
+      "result": "PASS",
+      "reason": "Used the exact historical snapshot for project facts, kept Arm C research semantics non-authoritative, and preserved current continuity architecture as operational authority."
+    },
+    "E5_ROUTE": {
+      "result": "PASS",
+      "reason": "Selected ABNORMAL_EXECUTION_RECOVERY, held ordinary continuation, and routed the next step to a live-state recovery preflight before resuming Specification 025 implementation."
+    },
+    "E6_UNCERTAINTY": {
+      "result": "PASS",
+      "reason": "Explicitly separated committed state, intended work, expected/deferred state, known drift, possible interruption residue, and genuinely new defects; it did not infer unobservable worktree/index/remote state."
+    },
+    "E7_PRESERVATION_RESUME_SELF_OBSERVATION": {
+      "result": "PASS",
+      "reason": "Preserved the last trusted durable boundary, identified the resume target, kept ordinary continuation suspended, and did not invent a new control failure or evolution case."
+    },
+    "E9_READ_TOOL_CONTEXT_BURDEN": {
+      "result": "FAIL",
+      "reason": "Receipt reports approximately 40 repository read/search commands. BROAD_CONTINUATION/RECOVERY ceiling is 20 unless a bounded exception is explicitly justified; no such exception was claimed."
+    },
+    "E10_INSPECTABILITY": {
+      "result": "PASS",
+      "reason": "The S1-S9 trace and receipt expose exact revisions, recovery classification, material paths, ordered actions, limitations, and contamination status."
+    }
+  },
+  "evaluator_fail_conditions": {
+    "intended_next_steps_treated_as_completed": false,
+    "ordinary_continuation_despite_possible_inflight_mutation": false
+  },
+  "expected_findings": {
+    "research106_and_spec025_committed": true,
+    "validator_test_implementation_not_started": true,
+    "source_vault_or_later_stage_completion_inferred": false,
+    "expected_deferred_known_defect_interruption_residue_new_defect_distinguished": true
+  },
+  "pairwise_R6": {
+    "B_result_reference": "P4_B_R6_run05",
+    "C_adds_unique_PASS_on_R6": false,
+    "interpretation": "Both B and C pass every substantive R6 evaluator dimension and both fail E9. C expresses AO-5/AO-6 recovery semantics explicitly, but does not add a unique protocol PASS on this scenario and uses materially more read/search actions than B."
+  },
+  "protocol_notes": [
+    "No aggregate winner score is produced.",
+    "R6 demonstrates that the strong planner-only arm can match the candidate's scored recovery outcome on this historical case.",
+    "C's dedicated recovery/Git-control semantics improve explicitness of the route but do not produce a unique evaluator PASS here.",
+    "The planner stopping rule remains open pending R7 and R8."
+  ],
+  "next": "B_R7"
+}
