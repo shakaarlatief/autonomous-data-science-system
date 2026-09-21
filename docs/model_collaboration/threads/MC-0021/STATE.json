@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "thread_id": "MC-0021",
+  "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
+  "lifecycle_state": "OPEN",
+  "phase": "CLAUDE_INDEPENDENT_CONTROL_PLANE_ARCHITECTURE",
+  "target": {
+    "branch": "v1-source-vault-bootstrap-resume",
+    "base_ref": "b649c1a846d3bf9274fd718e0efd8de9d63bd990",
+    "description": "Independent activation/orchestration control-plane architecture from the pre-AO-3 evidence, before comparative exposure to the integrated AO-3 through AO-7 candidate frozen at f73239ee486132a94701de80514ffd11480b9ecd.",
+    "write_paths": []
+  },
+  "task_owner": "chatgpt",
+  "target_write_owner": null,
+  "participants": [
+    {
+      "collaborator_id": "chatgpt",
+      "interaction_environment": "ChatGPT",
+      "interaction_session": "chatgpt-28",
+      "roles": [
+        "TASK_OWNER",
+        "RESEARCHER",
+        "CRITIC"
+      ]
+    },
+    {
+      "collaborator_id": "claude",
+      "interaction_environment": "Claude",
+      "interaction_session": "fresh-claude-for-mc0021",
+      "roles": [
+        "INDEPENDENT_REVIEWER",
+        "COUNTER_DESIGNER",
+        "CRITIC"
+      ]
+    },
+    {
+      "collaborator_id": "human",
+      "interaction_environment": "Human",
+      "interaction_session": "project-owner",
+      "roles": [
+        "HUMAN_DECIDER"
+      ]
+    }
+  ],
+  "allowed_secondary_write_surfaces": [
+    {
+      "collaborator_id": "claude",
+      "paths": [
+        "docs/model_collaboration/threads/MC-0021/messages/**"
+      ]
+    }
+  ],
+  "next_expected_actor": "claude",
+  "independence": {
+    "status": "BLIND_TO_CANDIDATE",
+    "review_base_ref": "b649c1a846d3bf9274fd718e0efd8de9d63bd990",
+    "known_exposures": [
+      "The reviewer knows an integrated AO-3 through AO-7 candidate exists and knows its immutable target SHA, but must not inspect its content before Message 001 is frozen.",
+      "Two candidate-neutral later owner constraints are supplied in BRIEF.md: no sunk-cost architecture constraint and question/observation/directive intent separation.",
+      "Current routing and review-inbox state may be read only to locate the thread and confirm that AO-8 is active."
+    ],
+    "notes": "Phase 1 is independence-sensitive. All substantive reads must use the pre-AO-3 base. Research 222-226, Checkpoints 559-563 bodies and descendant synthesis are excluded until Message 001 is durably frozen."
+  },
+  "last_transition": {
+    "transition_id": "mc0021-open-independent-control-plane-review",
+    "from_state": null,
+    "to_state": "OPEN",
+    "actor": "chatgpt",
+    "reason": "AO-7 completed at Checkpoint 563, activating Research 219 AO-8 independent architecture review before AO-9/AO-10.",
+    "repository_head": "f73239ee486132a94701de80514ffd11480b9ecd"
+  }
+}

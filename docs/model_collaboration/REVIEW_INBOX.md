@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-21
-**Status:** AO-8 INDEPENDENT ARCHITECTURE REVIEW NOW REQUIRED / THREAD OPENING NEXT / MC-0010 DEFERRED
+**Status:** MC-0021 ACTIVE / AO-8 INDEPENDENT_THEN_COMPARATIVE ARCHITECTURE REVIEW / CLAUDE MESSAGE 001 NEXT / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -23,7 +23,30 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Current active collaboration obligation
 
-AO-7 is now complete at Checkpoint 563 / Research 226, so Research 219's AO-8 independent architecture review gate is active. Open the dedicated review thread against the exact frozen AO-7 target before AO-9 empirical-regression design or AO-10 implementation qualification begins. The review should use INDEPENDENT_THEN_COMPARATIVE mode so the reviewer first freezes an architecture position from a pre-AO-3 base and neutral constraints, then receives the integrated AO-3 through AO-7 proposal for adversarial comparison.
+### MC-0021: AO-8 independent activation/orchestration architecture review
+
+Status:
+
+```text
+OPEN / REQUIRED
+mode                  INDEPENDENT_THEN_COMPARATIVE
+independent base      b649c1a846d3bf9274fd718e0efd8de9d63bd990
+candidate target      f73239ee486132a94701de80514ffd11480b9ecd
+reviewer              fresh Claude architecture-review conversation
+phase                 Claude independent Message 001
+gate                  BEFORE_THREAD_RESOLUTION
+AO-9                  BLOCKED until AO-8 reconciliation
+```
+
+Before Message 001 is frozen, Claude must remain blind to Research 222 through Research 226 and their AO3-AO7 machine syntheses. Current-branch reads are limited to routing plus the MC-0021 thread contract; substantive evidence comes from the exact pre-AO-3 base. After Message 001 is durably frozen, ChatGPT will expose the integrated AO-3 through AO-7 candidate for comparative/adversarial review.
+
+Primary contract:
+
+```text
+docs/model_collaboration/threads/MC-0021/BRIEF.md
+docs/model_collaboration/threads/MC-0021/THREAD.md
+docs/model_collaboration/threads/MC-0021/STATE.json
+```
 
 ## Most recently completed obligation
 
