@@ -43,6 +43,10 @@ AO3_PROGRESSIVE_CONTROL_CLOSURE_V01.json
 AO4_ARCHITECTURE_EVOLUTION_GOVERNANCE_V01.json
     machine-readable AO-4 trigger states, evolution dispositions, decision rights,
     historical-integrity rules and obligation-realization closure
+
+AO5_INTERACTION_CONTINUITY_AND_RECOVERY_V01.json
+    machine-readable AO-5 interaction-continuity layers, recoverability semantics,
+    interruption classes, break-glass independence and degraded-mode rules
 ```
 
 Interpretation:

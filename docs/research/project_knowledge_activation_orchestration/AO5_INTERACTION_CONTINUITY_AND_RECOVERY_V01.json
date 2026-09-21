@@ -1,0 +1,239 @@
+{
+  "schema_version": 1,
+  "architecture_id": "AO5-ANCHORED-INTERACTION-CONTINUITY-INDEPENDENT-RECOVERY-V01",
+  "date": "2026-09-21",
+  "authority_class": "research_output",
+  "status": "AO5_CONCEPTUAL_BASELINE",
+  "governing_program": "research:219",
+  "control_plane_baseline": "research:222",
+  "evolution_governance": "research:223",
+  "name": "Anchored Interaction Continuity and Independent Recovery",
+  "core_principles": [
+    "Canonical project state is reconstructed from canonical project owners.",
+    "Interaction continuity preserves only additional non-authoritative state required to recover unresolved work, handoffs, or interruption boundaries.",
+    "Conversation preservation never implies project authority.",
+    "Interaction existence and content recoverability are separate facts.",
+    "Canonical reconstruction precedes optional recovery of unresolved interaction-local material.",
+    "Planned rotation reuses the existing PASS/HOLD/FAIL preflight.",
+    "Potential in-flight mutation routes to abnormal-execution recovery rather than optimistic continuation.",
+    "Break-glass recovery authority must be reachable through a path independent of the failed component.",
+    "Recovery authority and recovery transport remain separate.",
+    "Degraded mode may relax optional capability use but never mandatory authority, review, privacy, or conformance obligations.",
+    "Interaction continuity has an explicit closure lifecycle so active reconstruction does not accumulate every historical interaction."
+  ],
+  "information_states": [
+    "EPHEMERAL",
+    "INTERACTION_DURABLE_NON_AUTHORITATIVE",
+    "CAPTURE_OR_CANDIDATE",
+    "PROMOTED_PROJECT_KNOWLEDGE"
+  ],
+  "logical_records": {
+    "InteractionContinuityEnvelope": {
+      "authority": "NON_AUTHORITATIVE",
+      "conceptual_fields": [
+        "interaction_identity",
+        "provider_environment",
+        "conversation_title",
+        "persistent_or_disposable",
+        "durable_project_anchor_at_entry",
+        "bounded_purpose_or_mode",
+        "related_workstream_or_route_reference",
+        "unpromoted_material_present",
+        "bounded_unresolved_material_description",
+        "content_recoverability",
+        "external_collaborators_or_pending_handoffs",
+        "pending_review_capture_or_promotion",
+        "return_or_resume_condition",
+        "last_durable_continuation_receipt",
+        "closure_status"
+      ]
+    },
+    "ContinuationReceipt": {
+      "authority": "NON_AUTHORITATIVE_CONTINUITY_EVIDENCE",
+      "required_when": [
+        "durable_project_boundary_would_be_ambiguous",
+        "material_unresolved_non_authoritative_work_exists",
+        "external_handoff_or_review_is_pending",
+        "return_condition_matters",
+        "execution_may_have_been_in_flight",
+        "recovery_path_is_required",
+        "content_recoverability_needs_to_be_explicit"
+      ]
+    },
+    "RecoveryCase": {
+      "authority": "NON_AUTHORITATIVE_EVIDENCE",
+      "preserve_when": [
+        "incident_materially_affects_continuity",
+        "new_failure_mode_is_exposed",
+        "governing_runbook_changes",
+        "qualification_evidence_is_created"
+      ],
+      "conceptual_fields": [
+        "incident_or_failure_class",
+        "failed_component_or_capability",
+        "parent_project_or_workstream_anchor",
+        "last_trusted_durable_boundary",
+        "recovery_authority_source_and_revision",
+        "independent_access_path_used",
+        "actions_actually_performed",
+        "verification_evidence",
+        "residual_uncertainty",
+        "result",
+        "return_or_resume_target",
+        "new_reusable_lesson"
+      ]
+    }
+  },
+  "recoverability_states_conceptual": [
+    "NOT_REQUIRED",
+    "RECOVERABLE",
+    "PARTIALLY_RECOVERABLE",
+    "OWNER_RELAY_REQUIRED",
+    "UNAVAILABLE",
+    "UNKNOWN"
+  ],
+  "boundary_classes": [
+    {
+      "id": "PLANNED_ROTATION",
+      "route": "rotation_preflight_then_fresh_session_reconstruction"
+    },
+    {
+      "id": "UNPLANNED_CONTEXT_LOSS_NO_MUTATION_EVIDENCE",
+      "route": "fresh_identity_then_repository_first_reconstruction_then_optional_interaction_recovery"
+    },
+    {
+      "id": "ABNORMAL_EXECUTION_INTERRUPTION",
+      "route": "repository_first_intended_vs_completed_recovery"
+    },
+    {
+      "id": "PENDING_EXTERNAL_HANDOFF",
+      "route": "preserve_pending_state_and_treat_returned_result_as_new_event"
+    },
+    {
+      "id": "OPERATIONAL_COMPONENT_FAILURE",
+      "route": "independent_break_glass_or_degraded_mode"
+    }
+  ],
+  "planned_rotation": {
+    "preflight": "CHAT_ROTATION_PREFLIGHT=PASS|HOLD|FAIL",
+    "requirements": [
+      "durable_project_boundary",
+      "interaction_receipt_only_when_material",
+      "public_private_continuity_evaluated_as_required",
+      "fresh_provider_local_session_identity",
+      "repository_first_reconstruction",
+      "recover_only_required_unresolved_interaction_material"
+    ]
+  },
+  "abnormal_execution_recovery": {
+    "reused_from": [
+      "docs/CONTINUITY.md",
+      "research:107"
+    ],
+    "steps": [
+      "inspect_current_HEAD",
+      "identify_last_independently_trusted_durable_boundary",
+      "enumerate_actual_completed_commits_files_actions",
+      "compare_with_intended_staged_plan_when_recoverable",
+      "classify_expected_deferred_known_defect_interruption_residue_or_new_unplanned_defect",
+      "repair_only_current_stage_findings",
+      "rerun_required_verification",
+      "preserve_material_recovery_result"
+    ],
+    "conservative_rule": "If evidence cannot establish that no mutation was in flight, use abnormal-execution recovery."
+  },
+  "manual_handoff": {
+    "completion_inferred_from_dispatch": false,
+    "pending_state_may_include": [
+      "handoff_purpose",
+      "exact_project_revision_anchor",
+      "collaboration_mode_and_role",
+      "external_interaction_or_thread_reference",
+      "result_status",
+      "required_return_or_review_action"
+    ],
+    "returned_result": "NEW_PROJECT_EVENT"
+  },
+  "break_glass": {
+    "independence_rule": "Recovery procedure and essential recovery authority cannot depend exclusively on the component being recovered.",
+    "authority_transport_separation": true,
+    "flow": [
+      "classify_operational_incident",
+      "preserve_parent_anchor",
+      "resolve_recovery_authority",
+      "prove_independent_access_path",
+      "execute_bounded_recovery",
+      "verify_restored_capability_with_fresh_evidence",
+      "preserve_material_new_recovery_evidence",
+      "return_to_parent_route"
+    ],
+    "if_recovery_authority_unavailable": "FAIL_VISIBLE_AND_REQUEST_NARROWEST_HUMAN_ASSISTANCE"
+  },
+  "degraded_mode": {
+    "rules": [
+      "irrelevant_failed_capability_does_not_block_unaffected_work",
+      "optional_collaborator_or_tool_may_reroute_or_degrade_if_policy_allows",
+      "required_authority_or_evidence_failure_blocks_affected_consequential_action",
+      "inaccessible_private_complement_preserves_RESOLVED_PRIVATE_and_may_mark_freshness_NOT_VERIFIED",
+      "mandatory_review_privacy_authority_and_conformance_requirements_are_never_silently_weakened"
+    ]
+  },
+  "closure_conditions": [
+    "material_unresolved_content_promoted_captured_rejected_or_no_longer_relevant",
+    "pending_external_handoffs_resolved_or_abandoned",
+    "recovery_obligations_closed",
+    "canonical_state_contains_everything_needed_for_future_project_work"
+  ],
+  "ao3_integration": {
+    "S1": "recognize_rotation_context_loss_interruption_handoff_return_runtime_failure",
+    "S3": [
+      "PRESERVE_INTERACTION_STATE",
+      "ROUTE_RECOVERY",
+      "REQUEST_OWNER_DECISION_when_content_cannot_otherwise_be_recovered"
+    ],
+    "S4": "canonical_project_reconstruction_first_then_interaction_continuity_if_relevant",
+    "S5": "route_planned_rotation_unplanned_recovery_abnormal_execution_pending_handoff_break_glass_or_degraded_mode",
+    "S6": "resolve_recovery_procedure_authority_for_consequential_recovery",
+    "S9": "update_envelope_receipt_recovery_evidence_parent_resume_and_control_observations"
+  },
+  "failure_coverage": [
+    "AO-F08",
+    "AO-F09",
+    "AO-F10",
+    "AO-F11",
+    "AO-F16",
+    "AO-F18",
+    "AO-F04",
+    "AO-F05"
+  ],
+  "deferred_to_ao6": [
+    "detailed_parent_child_workstream_incident_representation",
+    "exact_pause_return_resume_transition_operations",
+    "branch_publication_rotation_consequences_of_interruption",
+    "git_lifecycle_policy_for_local_only_or_unpublished_qualified_commits"
+  ],
+  "non_decisions": [
+    "production InteractionContinuityEnvelope schema",
+    "production ContinuationReceipt schema",
+    "production RecoveryCase schema",
+    "raw conversation archive",
+    "provider conversation API",
+    "background context-window monitor",
+    "fixed token threshold for rotation",
+    "specific break-glass connector or provider",
+    "persistent transcript database",
+    "automatic owner-message export",
+    "workstream schema changes",
+    "Git lifecycle policy",
+    "successor bridge transport",
+    "authority switch"
+  ],
+  "authority_boundary": {
+    "current_operational_authority": "CURRENT_CONTINUITY_ARCHITECTURE",
+    "interaction_continuity_authority": "NON_AUTHORITATIVE",
+    "research218_frozen_baseline_retained": true,
+    "w5_f0_paused": true,
+    "authority_switch_allowed": false
+  },
+  "next": "AO_6_GIT_LIFECYCLE_AND_WORKSTREAM_ORCHESTRATION_INTEGRATION"
+}

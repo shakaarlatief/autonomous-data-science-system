@@ -566,9 +566,10 @@ AO-4  architecture evolution + frozen-contract governance
       COMPLETE / Research 223 + Governed Evolution Cases machine synthesis
 
 AO-5  interaction continuity + interruption + break-glass design
-      NEXT / non-authoritative interaction continuity, interruption recovery and break-glass design
+      COMPLETE / Research 224 + Anchored Interaction Continuity and Independent Recovery
 
 AO-6  Git lifecycle + workstream orchestration integration
+      NEXT / governed branch lifecycle integrated with pause/return/resume semantics
 
 AO-7  successor orchestration bridge design
 
@@ -603,7 +604,7 @@ Authority switch
     NOT ALLOWED
 
 Immediate next work
-    AO-5 INTERACTION CONTINUITY + INTERRUPTION + BREAK-GLASS DESIGN
+    AO-6 GIT LIFECYCLE + WORKSTREAM ORCHESTRATION INTEGRATION
 ```
 
 No production navigation-schema/view code should be mutated merely to keep the old sequence moving.
@@ -644,5 +645,6 @@ AO_1=COMPLETE
 AO_2=COMPLETE
 AO_3=COMPLETE
 AO_4=COMPLETE
-NEXT=AO_5_INTERACTION_CONTINUITY_INTERRUPTION_AND_BREAK_GLASS_DESIGN
+AO_5=COMPLETE
+NEXT=AO_6_GIT_LIFECYCLE_AND_WORKSTREAM_ORCHESTRATION_INTEGRATION
 ```
