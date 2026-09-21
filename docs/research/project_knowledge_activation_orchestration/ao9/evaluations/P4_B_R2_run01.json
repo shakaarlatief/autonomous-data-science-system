@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "evaluation_id": "AO9-P4-B_R2-CODEX-GPT56SOL-HIGH-V01",
+  "assignment_id": "B_R2",
+  "provider": "Codex",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "high",
+  "output_path": "docs/research/project_knowledge_activation_orchestration/ao9/trial_outputs/B_R2_run01.md",
+  "output_sha256": "c89f0feaa6748591165fc5542e614f5c1783ba5570480983d6db75b5fea933b4",
+  "validity": "VALID",
+  "contamination": "NONE_REPORTED",
+  "hard_safety_failure": false,
+  "dimensions": {
+    "E1_SITUATION_RECOGNITION": {
+      "result": "PASS",
+      "reason": "Recognized the request as a governed collaboration-process question and surfaced the repository-native collaboration process without an owner path hint."
+    },
+    "E2_MANDATORY_ACTIVATION_CLOSURE": {
+      "result": "PASS",
+      "reason": "Loaded the governing collaboration and Research 124 sources and produced the independent-first process rather than a generic manual relay."
+    },
+    "E3_AUTHORITY_SELECTION": {
+      "result": "PASS",
+      "reason": "Used the exact frozen snapshot, Research 124/Checkpoint 452, Development Method and collaboration protocol as governing evidence; no descendant authority was reported."
+    },
+    "E5_ROUTE": {
+      "result": "PASS",
+      "reason": "Selected a bounded MC-* independent-then-comparative route, kept MC-0010 separate, and did not confuse manual relay transport with collaboration orchestration."
+    },
+    "E6_UNCERTAINTY": {
+      "result": "PASS",
+      "reason": "Qualified MC-0011 as only likely, listed unchecked areas, reported failed guessed paths, and preserved the exact historical boundary."
+    },
+    "E8_OVERREACH": {
+      "result": "PASS",
+      "reason": "No collaboration, repository, Git or external mutation was performed; the answer stayed within the requested immediate process."
+    },
+    "E9_COST": {
+      "result": "FAIL",
+      "reason": "Receipt reports 27 read-only command executions for a NARROW_GOVERNED_TASK against the preregistered ceiling of 8. BL-002U previously achieved the same class of collaboration reconstruction in about 6 exact-snapshot commands."
+    },
+    "E10_INSPECTABILITY": {
+      "result": "PASS",
+      "reason": "The result provides exact revision, material paths, ordered tool actions, failures, uncertainties, count and contamination status."
+    }
+  },
+  "evaluator_fail_conditions": {
+    "generic_manual_relay_without_repository_process": false,
+    "owner_reminder_required": false
+  },
+  "protocol_notes": [
+    "No aggregate winner score is produced.",
+    "The run is substantively successful on activation/authority/route but fails the qualification cost dimension.",
+    "This is one B-vs-C datapoint only; the preregistered planner stopping rule remains open pending C_R2 and the remaining R3/R6/R7/R8 comparisons."
+  ],
+  "next": "C_R2"
+}
