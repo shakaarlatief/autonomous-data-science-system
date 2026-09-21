@@ -9,7 +9,7 @@ This source owns the durable identity, active state, scope, objective, execution
 
 It does **not** own the substantive rationale selecting Candidate 01. D-035 remains the natural owner of that decision. The Project Integration Boundary, Source Vault continuation and Cockpit continuation remain in their own natural canonical owners. Current compatibility surfaces remain separate, and this workstream does not own an operational-authority switch.
 
-W1 through W4 are accepted. W5 remains in progress. Research 218 remains the frozen full W5 information-architecture baseline. Checkpoint 556 paused W5-F0 and opened Research 219. Checkpoint 557 / Research 220 completed AO-1 with a 31-capability audit; Checkpoint 558 / Research 221 completed AO-2 with eight control responsibilities and eighteen failure classes; Checkpoint 559 / Research 222 completed AO-3 by selecting Progressive Control Closure as the conceptual control-plane baseline. Checkpoint 560 / Research 223 now completes AO-4 by selecting Governed Evolution Cases for architecture-evolution and frozen-contract governance. AO-5 now owns interaction continuity, interruption recovery and break-glass design. W5-F0 remains paused, W5 itself is not yet accepted, W6 remains unavailable, and the workstream remains active while preserving:
+W1 through W4 are accepted. W5 remains in progress. Research 218 remains the frozen full W5 information-architecture baseline. Checkpoint 556 paused W5-F0 and opened Research 219. Research 220 / AO-1 completed the capability audit; Research 221 / AO-2 froze the control responsibilities and failure taxonomy; Research 222 / AO-3 selected Progressive Control Closure; Research 223 / AO-4 selected Governed Evolution Cases. Checkpoint 561 / Research 224 now completes AO-5 by selecting Anchored Interaction Continuity and Independent Recovery. AO-6 now owns governed Git lifecycle and detailed workstream orchestration integration. W5-F0 remains paused, W5 itself is not yet accepted, W6 remains unavailable, and the workstream remains active while preserving:
 
 ```text
 CURRENT_OPERATIONAL_AUTHORITY=CURRENT_CONTINUITY_ARCHITECTURE
@@ -30,10 +30,10 @@ AUTHORITY_SWITCH_ALLOWED=false
   },
   "objective": "Implement and migrate the selected Candidate 01 project-development knowledge architecture under Specification 028 while current continuity remains operational authority until an explicit qualified switch.",
   "execution_anchor": {
-    "checkpoint": 560,
+    "checkpoint": 561,
     "development_branch": "v1-source-vault-bootstrap-resume",
     "pull_request": null,
-    "current_boundary": "project-knowledge-interaction-continuity-break-glass-design"
+    "current_boundary": "project-knowledge-git-workstream-orchestration-integration"
   },
   "stage": {
     "stage_id": "SPECIFICATION:028",
