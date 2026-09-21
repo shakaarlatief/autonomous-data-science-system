@@ -573,9 +573,10 @@ AO-6  Git lifecycle + workstream orchestration integration
       live current-branch rotation selected but deferred by missing governed local attach/switch surface
 
 AO-7  successor orchestration bridge design
-      NEXT / successor control over current continuity authority without authority leakage
+      COMPLETE / Research 226 + Authority-Preserving Successor Bridge
 
 AO-8  independent architecture review
+      NEXT / independent-then-comparative challenge of the integrated AO-3 through AO-7 architecture
 
 AO-9  empirical historical-regression program
 
@@ -606,7 +607,7 @@ Authority switch
     NOT ALLOWED
 
 Immediate next work
-    AO-7 SUCCESSOR ORCHESTRATION BRIDGE DESIGN
+    AO-8 INDEPENDENT ARCHITECTURE REVIEW
 ```
 
 No production navigation-schema/view code should be mutated merely to keep the old sequence moving.
@@ -650,5 +651,6 @@ AO_4=COMPLETE
 AO_5=COMPLETE
 AO_6=COMPLETE
 AO6_BRANCH_ROTATION_REALIZATION=DEFERRED_ATTACH_SWITCH_CAPABILITY_GAP
-NEXT=AO_7_SUCCESSOR_ORCHESTRATION_BRIDGE_DESIGN
+AO_7=COMPLETE
+NEXT=AO_8_INDEPENDENT_ARCHITECTURE_REVIEW
 ```

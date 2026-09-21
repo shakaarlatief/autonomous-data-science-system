@@ -9,7 +9,7 @@ This source owns the durable identity, active state, scope, objective, execution
 
 It does **not** own the substantive rationale selecting Candidate 01. D-035 remains the natural owner of that decision. The Project Integration Boundary, Source Vault continuation and Cockpit continuation remain in their own natural canonical owners. Current compatibility surfaces remain separate, and this workstream does not own an operational-authority switch.
 
-W1 through W4 are accepted. W5 remains in progress. Research 218 remains the frozen full W5 information-architecture baseline. Checkpoint 556 paused W5-F0 and opened Research 219. Research 220 / AO-1 completed the capability audit; Research 221 / AO-2 froze the control responsibilities and failure taxonomy; Research 222 / AO-3 selected Progressive Control Closure; Research 223 / AO-4 selected Governed Evolution Cases; Research 224 / AO-5 selected Anchored Interaction Continuity and Independent Recovery. Checkpoint 562 / Research 225 now completes AO-6 by selecting Purpose-Bound Git Lifecycle. The current branch has a selected ROTATE disposition but remains active temporarily because the live probe exposed a missing governed local branch attach/switch action; that realization obligation is carried prospectively to AO-10. AO-7 now owns successor orchestration bridge design. W5-F0 remains paused, W5 itself is not yet accepted, W6 remains unavailable, and the workstream remains active while preserving:
+W1 through W4 are accepted. W5 remains in progress. Research 218 remains the frozen full W5 information-architecture baseline. Checkpoint 556 paused W5-F0 and opened Research 219. Research 220 / AO-1 completed the capability audit; Research 221 / AO-2 froze the control responsibilities and failure taxonomy; Research 222 / AO-3 selected Progressive Control Closure; Research 223 / AO-4 selected Governed Evolution Cases; Research 224 / AO-5 selected Anchored Interaction Continuity and Independent Recovery; Research 225 / AO-6 selected Purpose-Bound Git Lifecycle. Checkpoint 563 / Research 226 now completes AO-7 by selecting an Authority-Preserving Successor Bridge. The AO-6 branch rotation realization gap remains explicitly open for AO-10. AO-8 now owns independent architecture review before empirical regression and implementation qualification. W5-F0 remains paused, W5 itself is not yet accepted, W6 remains unavailable, and the workstream remains active while preserving:
 
 ```text
 CURRENT_OPERATIONAL_AUTHORITY=CURRENT_CONTINUITY_ARCHITECTURE
@@ -30,10 +30,10 @@ AUTHORITY_SWITCH_ALLOWED=false
   },
   "objective": "Implement and migrate the selected Candidate 01 project-development knowledge architecture under Specification 028 while current continuity remains operational authority until an explicit qualified switch.",
   "execution_anchor": {
-    "checkpoint": 562,
+    "checkpoint": 563,
     "development_branch": "v1-source-vault-bootstrap-resume",
     "pull_request": null,
-    "current_boundary": "project-knowledge-successor-orchestration-bridge-design"
+    "current_boundary": "project-knowledge-independent-architecture-review"
   },
   "stage": {
     "stage_id": "SPECIFICATION:028",
