@@ -59,6 +59,10 @@ AO7_SUCCESSOR_ORCHESTRATION_BRIDGE_V01.json
 AO8_REVIEW_RECONCILIATION_V01.json
     machine-readable AO-8 independent-review reconciliation, pending AO-3 amendment
     candidate, requirements candidates and AO-10 realization obligations
+
+AO9_HISTORICAL_REGRESSION_PROTOCOL_V01.json
+    preregistered AO-9 four-arm historical-regression protocol, positive/negative
+    scenarios, budgets, invalidators, decision rules and no-tuning boundary
 ```
 
 Interpretation:
