@@ -1516,7 +1516,7 @@ Primary context: Specification 028 reconstruction/capture/workstream architectur
 
 ## AB-032: Governed Git branch lifecycle policy
 
-**Status:** OPEN / DEFERRED ARCHITECTURE QUESTION
+**Status:** ARCHITECTURE RESOLVED / IMPLEMENTATION-QUALIFICATION OBLIGATION OPEN
 **Priority:** P2
 
 Candidate 01 already preserves branch state that matters to continuity and authority, including the active workstream's development branch, the promoted integration branch plus exact promoted commit, and exact frozen branch/head information where a paused workstream requires it. What is not yet represented as a general governed policy is **when ADS should create, continue, rotate, promote, merge, archive, or retire a Git development branch**.
@@ -1546,6 +1546,8 @@ branch-lifecycle policy
 Any future policy should remain subordinate to Git/repository authority, preserve exact commit provenance, avoid unnecessary branch proliferation, and integrate with workstream/reconstruction/action semantics rather than creating a second control system. It should also distinguish local commit durability from authorized remote publication so a long sequence of already-qualified project-development commits does not remain unpublished merely by collaborator habit; exceptions for deliberately local, sensitive, incomplete, or experimentally unsafe states must remain explicit and bounded.
 
 Primary context: Candidate 01 `workstream.v1` execution anchors, `PROJECT-INTEGRATION-BOUNDARY`, `docs/CONTINUITY.md` branch continuity rules, Specification 028 migration/cutover semantics, and AB-031.
+
+Research 225 / AO-6 resolves the lifecycle architecture as Purpose-Bound Git Lifecycle. The current `v1-source-vault-bootstrap-resume` branch has confirmed purpose drift; ROTATE is selected, but the live self-hosting attempt exposed a missing governed local branch attach/switch surface. The temporary remote successor ref was deleted after the local attach failed, so active routing remains unchanged. Carry the attach/switch realization and rotation qualification into AO-10 rather than requiring undocumented owner-operated Git.
 
 ---
 

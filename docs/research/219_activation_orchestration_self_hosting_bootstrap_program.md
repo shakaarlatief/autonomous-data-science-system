@@ -569,9 +569,11 @@ AO-5  interaction continuity + interruption + break-glass design
       COMPLETE / Research 224 + Anchored Interaction Continuity and Independent Recovery
 
 AO-6  Git lifecycle + workstream orchestration integration
-      NEXT / governed branch lifecycle integrated with pause/return/resume semantics
+      COMPLETE / Research 225 + Purpose-Bound Git Lifecycle
+      live current-branch rotation selected but deferred by missing governed local attach/switch surface
 
 AO-7  successor orchestration bridge design
+      NEXT / successor control over current continuity authority without authority leakage
 
 AO-8  independent architecture review
 
@@ -604,7 +606,7 @@ Authority switch
     NOT ALLOWED
 
 Immediate next work
-    AO-6 GIT LIFECYCLE + WORKSTREAM ORCHESTRATION INTEGRATION
+    AO-7 SUCCESSOR ORCHESTRATION BRIDGE DESIGN
 ```
 
 No production navigation-schema/view code should be mutated merely to keep the old sequence moving.
@@ -646,5 +648,7 @@ AO_2=COMPLETE
 AO_3=COMPLETE
 AO_4=COMPLETE
 AO_5=COMPLETE
-NEXT=AO_6_GIT_LIFECYCLE_AND_WORKSTREAM_ORCHESTRATION_INTEGRATION
+AO_6=COMPLETE
+AO6_BRANCH_ROTATION_REALIZATION=DEFERRED_ATTACH_SWITCH_CAPABILITY_GAP
+NEXT=AO_7_SUCCESSOR_ORCHESTRATION_BRIDGE_DESIGN
 ```

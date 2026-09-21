@@ -1,7 +1,7 @@
 # Research 225: AO-6 Purpose-Bound Git Lifecycle and Workstream Orchestration
 
 **Date:** 2026-09-21
-**Status:** AO-6 COMPLETE / PURPOSE-BOUND GIT LIFECYCLE SELECTED / LIVE BRANCH ROTATION REQUIRED / AO-7 NEXT
+**Status:** AO-6 COMPLETE / PURPOSE-BOUND GIT LIFECYCLE SELECTED / CURRENT ROTATION DEFERRED BY ATTACH-CAPABILITY GAP / AO-7 NEXT
 **Program:** Research 219
 **Control-plane baseline:** Research 222 / Progressive Control Closure
 **Evolution governance:** Research 223 / Governed Evolution Cases
@@ -422,11 +422,11 @@ This is not preserving the old approach for convenience. It is a merits-based de
 
 A future security/provenance defect could reopen this disposition.
 
-## 16. Current self-hosting branch decision
+## 16. Current self-hosting branch decision and execution probe
 
-AO-6 selects a live rotation at its own closure.
+AO-6 selects ROTATE as the correct lifecycle action for the current branch-purpose drift.
 
-After Research 225 and its machine synthesis are committed on the current branch:
+The intended transition is:
 
 ~~~text
 freeze historical execution lane
@@ -446,11 +446,50 @@ update
     live collaboration routing index
 ~~~
 
-Do not rewrite or delete the old branch during this transition.
+A live self-hosting probe then tested whether the currently qualified public control surface can complete that transition coherently.
 
-The new name is deliberately bounded to Research 219's AO program. When AO-12 closes and the project returns to broader W5 migration, branch purpose should be reevaluated rather than allowed to drift indefinitely again.
+Observed result:
 
-This live rotation is the first self-hosting use of AO-6.
+~~~text
+AO-6 research head
+    5f499e913d32c52d1e51562b5aa086f5ca8566ec
+
+remote successor branch creation
+    PASS
+
+local checkout / branch attach through command sandbox
+    BLOCKED
+
+reason
+    .git repository metadata is protected host/VCS state
+    and no currently exposed semantic branch-attach/switch action exists
+
+remote candidate branch after failed coherent transition
+    DELETED at the exact unchanged head
+
+active local/public development branch
+    remains v1-source-vault-bootstrap-resume
+~~~
+
+This is not a reason to reverse the lifecycle decision. It is a realization gap between accepted branch-rotation policy and the currently exposed mutation surface.
+
+The required prospective obligation is:
+
+~~~text
+qualify or implement a governed branch attach/switch action
+    ->
+repeat rotation from an exact published head
+    ->
+reconcilably update active routing surfaces
+    ->
+verify local branch, upstream, remote branch and project routing agree
+~~~
+
+The owner should not have to perform an untracked manual Git switch merely to compensate for a missing control-plane action. AO-10 must therefore carry this as an implementation/qualification obligation unless a stronger governed host path exists by then.
+
+The intended successor name remains bounded to Research 219's AO program. When AO-12 closes and the project returns to broader W5 migration, branch purpose should be reevaluated again.
+
+The failed coherent rotation attempt is first-class self-hosting evidence for AO-F14 OBLIGATION_REALIZATION_GAP and AO-F16 CONTROL_OBSERVABILITY_GAP avoidance: the gap is visible rather than papered over.
 
 ## 17. Branch-specific operational contracts
 
@@ -600,9 +639,10 @@ WHOLE_BRANCH_MERGE_INFERRED=false
 HISTORY_REWRITE=EXCEPTION_ONLY
 CURRENT_BRANCH_PURPOSE_DRIFT=OBSERVED
 REWRITE_CURRENT_HISTORY=false
-LIVE_BRANCH_ROTATION=REQUIRED_AT_AO6_CLOSURE
-SUCCESSOR_ACTIVE_BRANCH=v1-project-knowledge-activation-orchestration
+LIVE_BRANCH_ROTATION=REQUIRED_BUT_DEFERRED_BY_ATTACH_CAPABILITY_GAP
+INTENDED_SUCCESSOR_ACTIVE_BRANCH=v1-project-knowledge-activation-orchestration
 OLD_BRANCH_DELETE_NOW=false
+BRANCH_ATTACH_SWITCH_SURFACE=REALIZATION_OBLIGATION_FOR_AO10
 RESEARCH218=FROZEN_BASELINE_RETAINED
 W5_F0=PAUSED_BEFORE_IMPLEMENTATION
 CURRENT_OPERATIONAL_AUTHORITY=CURRENT_CONTINUITY_ARCHITECTURE

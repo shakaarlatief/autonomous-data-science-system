@@ -1,52 +1,85 @@
 {
-  "schema_version": 1,
-  "architecture_id": "AO6-PURPOSE-BOUND-GIT-LIFECYCLE-V01",
-  "date": "2026-09-21",
-  "authority_class": "research_output",
-  "status": "AO6_CONCEPTUAL_BASELINE_WITH_LIVE_ROTATION_DISPOSITION",
-  "governing_program": "research:219",
-  "control_plane_baseline": "research:222",
-  "interaction_recovery_baseline": "research:224",
-  "name": "Purpose-Bound Git Lifecycle",
-  "distinctions": {
-    "workstream": "semantic_project_control_identity",
-    "branch": "mutable_git_execution_carrier",
-    "commit": "immutable_revision_evidence",
-    "promoted_integration_boundary": "separately_governed_integration_pointer"
-  },
-  "lifecycle_actions": ["CREATE", "CONTINUE", "ROTATE", "FREEZE", "RESUME", "PUBLISH", "INTEGRATE", "RETIRE", "REWRITE_EXCEPTION"],
-  "durability_levels": ["WORKTREE_ONLY", "LOCAL_COMMIT", "REMOTE_PUBLISHED_COMMIT", "PROMOTED_OR_INTEGRATED_REVISION"],
-  "workstream_rules": {
-    "branch_per_workstream_required": false,
-    "dedicated_paused_branch_freezes": true,
-    "shared_branch_pause_freezes_entire_branch": false,
-    "child_close_implies_merge": false,
-    "child_close_implies_parent_complete": false,
-    "concurrent_lane_exact_base_required": true,
-    "target_head_revalidation_required_before_integration": true
-  },
-  "history_rewrite": {
-    "default": "EXCEPTION_ONLY",
-    "current_history_disposition": "DO_NOT_REWRITE"
-  },
-  "current_case": {
-    "observed_condition": "BRANCH_PURPOSE_DRIFT",
-    "old_branch": "v1-source-vault-bootstrap-resume",
-    "origin": "checkpoint:267",
-    "selected_action": "ROTATE",
-    "successor_branch": "v1-project-knowledge-activation-orchestration",
-    "base_rule": "exact AO-6 research commit on old branch",
-    "rewrite_old_history": false,
-    "delete_old_branch_now": false,
-    "reevaluate_successor_branch_after": "AO-12"
-  },
-  "logical_records": ["GitExecutionBinding", "GitLifecycleDecision", "GitPublicationReceipt"],
-  "failure_coverage": ["AO-F06", "AO-F10", "AO-F11", "AO-F14", "AO-F15", "AO-F16", "AO-F18"],
-  "authority_boundary": {
-    "current_operational_authority": "CURRENT_CONTINUITY_ARCHITECTURE",
-    "research218_frozen_baseline_retained": true,
-    "w5_f0_paused": true,
-    "authority_switch_allowed": false
-  },
-  "next": "AO_7_SUCCESSOR_ORCHESTRATION_BRIDGE_DESIGN"
+    "schema_version":  1,
+    "architecture_id":  "AO6-PURPOSE-BOUND-GIT-LIFECYCLE-V01",
+    "date":  "2026-09-21",
+    "authority_class":  "research_output",
+    "status":  "AO6_CONCEPTUAL_BASELINE_WITH_ROTATION_REALIZATION_GAP",
+    "governing_program":  "research:219",
+    "control_plane_baseline":  "research:222",
+    "interaction_recovery_baseline":  "research:224",
+    "name":  "Purpose-Bound Git Lifecycle",
+    "distinctions":  {
+                         "workstream":  "semantic_project_control_identity",
+                         "branch":  "mutable_git_execution_carrier",
+                         "commit":  "immutable_revision_evidence",
+                         "promoted_integration_boundary":  "separately_governed_integration_pointer"
+                     },
+    "lifecycle_actions":  [
+                              "CREATE",
+                              "CONTINUE",
+                              "ROTATE",
+                              "FREEZE",
+                              "RESUME",
+                              "PUBLISH",
+                              "INTEGRATE",
+                              "RETIRE",
+                              "REWRITE_EXCEPTION"
+                          ],
+    "durability_levels":  [
+                              "WORKTREE_ONLY",
+                              "LOCAL_COMMIT",
+                              "REMOTE_PUBLISHED_COMMIT",
+                              "PROMOTED_OR_INTEGRATED_REVISION"
+                          ],
+    "workstream_rules":  {
+                             "branch_per_workstream_required":  false,
+                             "dedicated_paused_branch_freezes":  true,
+                             "shared_branch_pause_freezes_entire_branch":  false,
+                             "child_close_implies_merge":  false,
+                             "child_close_implies_parent_complete":  false,
+                             "concurrent_lane_exact_base_required":  true,
+                             "target_head_revalidation_required_before_integration":  true
+                         },
+    "history_rewrite":  {
+                            "default":  "EXCEPTION_ONLY",
+                            "current_history_disposition":  "DO_NOT_REWRITE"
+                        },
+    "current_case":  {
+                         "observed_condition":  "BRANCH_PURPOSE_DRIFT",
+                         "old_branch":  "v1-source-vault-bootstrap-resume",
+                         "origin":  "checkpoint:267",
+                         "selected_action":  "ROTATE",
+                         "successor_branch":  "v1-project-knowledge-activation-orchestration",
+                         "base_rule":  "exact AO-6 research commit on old branch",
+                         "rewrite_old_history":  false,
+                         "delete_old_branch_now":  false,
+                         "reevaluate_successor_branch_after":  "AO-12",
+                         "operational_status":  "DEFERRED_BY_BRANCH_ATTACH_CAPABILITY_GAP",
+                         "rotation_probe_head":  "5f499e913d32c52d1e51562b5aa086f5ca8566ec",
+                         "remote_branch_create":  "PASS_THEN_CLEANED_UP",
+                         "local_attach":  "BLOCKED_PROTECTED_GIT_METADATA_NO_SEMANTIC_SWITCH_SURFACE",
+                         "active_branch_remains":  "v1-source-vault-bootstrap-resume",
+                         "ao10_realization_obligation":  "qualify_or_implement_governed_branch_attach_switch_then_repeat_rotation"
+                     },
+    "logical_records":  [
+                            "GitExecutionBinding",
+                            "GitLifecycleDecision",
+                            "GitPublicationReceipt"
+                        ],
+    "failure_coverage":  [
+                             "AO-F06",
+                             "AO-F10",
+                             "AO-F11",
+                             "AO-F14",
+                             "AO-F15",
+                             "AO-F16",
+                             "AO-F18"
+                         ],
+    "authority_boundary":  {
+                               "current_operational_authority":  "CURRENT_CONTINUITY_ARCHITECTURE",
+                               "research218_frozen_baseline_retained":  true,
+                               "w5_f0_paused":  true,
+                               "authority_switch_allowed":  false
+                           },
+    "next":  "AO_7_SUCCESSOR_ORCHESTRATION_BRIDGE_DESIGN"
 }
