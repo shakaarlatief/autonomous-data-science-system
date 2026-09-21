@@ -67,7 +67,8 @@ AO9_HISTORICAL_REGRESSION_PROTOCOL_V01.json
 ao9/
     AO-9 regression packet. Trial-visible scenarios and evaluator-only keys are
     physically separated; arm_contracts/ freezes the A/B/C/D mechanism contracts;
-    manifests bind digests and freeze state before scoring.
+    traces/ and evaluations/ preserve the P3 model-free trace; manifests bind
+    digests and freeze state before scored behavioral replay.
 ```
 
 Interpretation:

@@ -1,0 +1,581 @@
+{
+  "schema_version": 1,
+  "artifact_id": "AO9-P3-MODEL-FREE-TRACE-V01",
+  "date": "2026-09-21",
+  "protocol": "research:228",
+  "scenario_packet_commit": "76f5d6e784651f244d882b5373d7f750b1a706ef",
+  "arm_contract_commit": "80b05a8ae36e951000dc66ca5fed571571f33606",
+  "trace_scope": "mechanism_and_preserved_historical_evidence_only",
+  "fresh_collaborator_replay_used": false,
+  "matrix": {
+    "R1": {
+      "A": {
+        "trace_class": "HISTORICAL_OBSERVED",
+        "provisional_protocol_result": "FAIL",
+        "p4_required": false,
+        "reason": "BL-001 materially activated OPERATIONS.md but omitted the exact governing 11-step restart sequence; this is a post-activation task-fidelity failure.",
+        "deterministic_dimensions": [
+          "E1=PASS",
+          "E2=PASS",
+          "E3=PASS",
+          "E4=FAIL",
+          "E6=PARTIAL",
+          "E9=PARTIAL"
+        ]
+      },
+      "B": {
+        "trace_class": "P4_REQUIRED",
+        "provisional_protocol_result": null,
+        "p4_required": true,
+        "reason": "Planner-only can task-shape the governing runbook and authority path, but its contract does not mechanically guarantee exact final ordered-output fidelity.",
+        "deterministic_dimensions": []
+      },
+      "C": {
+        "trace_class": "P4_REQUIRED",
+        "provisional_protocol_result": null,
+        "p4_required": true,
+        "reason": "Candidate has S6 ActionContract plus S8 conformance once the task is recognized as consequential; model-free trace cannot prove S1/S3 recognition or contract extraction on this historical input.",
+        "deterministic_dimensions": []
+      },
+      "D": {
+        "trace_class": "P4_REQUIRED",
+        "provisional_protocol_result": null,
+        "p4_required": true,
+        "reason": "D adds output-shape re-entry and explicit no-contract semantics, but the non-induced R1 run still requires behavioral replay to measure source activation, exact fidelity and cost.",
+        "deterministic_dimensions": []
+      }
+    },
+    "R2": {
+      "A": {
+        "trace_class": "HISTORICAL_OBSERVED",
+        "provisional_protocol_result": "PARTIAL",
+        "p4_required": false,
+        "reason": "BL-002U reconstructed the repository-native collaboration workflow efficiently, but evaluator-facing request metadata retained an 'uncued dispatch variant' cue, so perfectly unprimed activation was not proven.",
+        "deterministic_dimensions": [
+          "E2=PASS",
+          "E3=PASS",
+          "E5=PASS",
+          "E6=PASS",
+          "E9=PASS"
+        ]
+      },
+      "B": {
+        "trace_class": "P4_REQUIRED",
+        "provisional_protocol_result": null,
+        "p4_required": true,
+        "reason": "A strong planner may classify this as a governed collaboration task and load the collaboration subsystem, but no project-control router forces that nomination.",
+        "deterministic_dimensions": []
+      },
+      "C": {
+        "trace_class": "P4_REQUIRED",
+        "provisional_protocol_result": null,
+        "p4_required": true,
+        "reason": "AO-3/AO-7 contain explicit collaboration routing semantics, but situation recognition still includes model-assisted interpretation; replay is needed to test owner-reminder independence and cost.",
+        "deterministic_dimensions": []
+      },
+      "D": {
+        "trace_class": "P4_REQUIRED",
+        "provisional_protocol_result": null,
+        "p4_required": true,
+        "reason": "Same candidate routing as C; D's additional output-shape/verification deltas do not mechanically decide this ingress-routing case.",
+        "deterministic_dimensions": []
+      }
+    },
+    "R3": {
+      "A": {
+        "trace_class": "HISTORICAL_OBSERVED",
+        "provisional_protocol_result": "FAIL",
+        "p4_required": false,
+        "reason": "Chat 27 preserved a live activation miss: AB-027/AB-031 existed but entered reasoning only after owner reminder.",
+        "deterministic_dimensions": [
+          "E2=FAIL",
+          "E5=FAIL",
+          "E7=PARTIAL"
+        ]
+      },
+      "B": {
+        "trace_class": "P4_REQUIRED",
+        "provisional_protocol_result": null,
+        "p4_required": true,
+        "reason": "Planner-only can load backlog/trigger sources if its task contract nominates them, but it has no source-trigger monitoring or evolution-case router to guarantee this.",
+        "deterministic_dimensions": []
+      },
+      "C": {
+        "trace_class": "P4_REQUIRED",
+        "provisional_protocol_result": null,
+        "p4_required": true,
+        "reason": "AO-4 provides source-owned triggers and governed evolution routing; semantic intersection between the owner event and the trigger still needs behavioral replay.",
+        "deterministic_dimensions": []
+      },
+      "D": {
+        "trace_class": "P4_REQUIRED",
+        "provisional_protocol_result": null,
+        "p4_required": true,
+        "reason": "D does not change architecture-trigger ingress semantics relative to C.",
+        "deterministic_dimensions": []
+      }
+    },
+    "R4": {
+      "A": {
+        "trace_class": "HISTORICAL_OBSERVED",
+        "provisional_protocol_result": "FAIL",
+        "p4_required": false,
+        "reason": "Chat 28 recovered the high-level active stage but did not surface Source Evidence 001/002 until the owner named the paths.",
+        "deterministic_dimensions": [
+          "E1=PASS",
+          "E2=FAIL",
+          "E3=PASS",
+          "E9=PARTIAL"
+        ]
+      },
+      "B": {
+        "trace_class": "P4_REQUIRED",
+        "provisional_protocol_result": null,
+        "p4_required": true,
+        "reason": "BROAD_CONTINUATION can declare supporting evidence in ReconstructionContract, but the frozen planner contract does not mechanically prove that the stage-specific packet will be nominated.",
+        "deterministic_dimensions": []
+      },
+      "C": {
+        "trace_class": "P4_REQUIRED",
+        "provisional_protocol_result": null,
+        "p4_required": true,
+        "reason": "C adds progressive activation closure over task-shaped reconstruction, but the exact supporting-evidence nomination remains a behavioral test.",
+        "deterministic_dimensions": []
+      },
+      "D": {
+        "trace_class": "P4_REQUIRED",
+        "provisional_protocol_result": null,
+        "p4_required": true,
+        "reason": "D does not change continuation/supporting-evidence ingress relative to C.",
+        "deterministic_dimensions": []
+      }
+    },
+    "R5": {
+      "A": {
+        "trace_class": "HISTORICAL_OBSERVED",
+        "provisional_protocol_result": "PARTIAL",
+        "p4_required": false,
+        "reason": "BL-004 reconstructed the correct source-strength hierarchy and exact implementation/provenance rule, with material but non-failing context/read cost.",
+        "deterministic_dimensions": [
+          "E1=PASS",
+          "E2=PASS",
+          "E3=PASS",
+          "E4=PASS",
+          "E6=PASS",
+          "E9=PARTIAL"
+        ]
+      },
+      "B": {
+        "trace_class": "P4_REQUIRED",
+        "provisional_protocol_result": null,
+        "p4_required": true,
+        "reason": "Planner-only can descend from orientation to exact supporting provenance when task-shaped contract requires it; actual depth selection and cost remain behavioral.",
+        "deterministic_dimensions": []
+      },
+      "C": {
+        "trace_class": "P4_REQUIRED",
+        "provisional_protocol_result": null,
+        "p4_required": true,
+        "reason": "C has the same progressive-disclosure capability plus closure, but exact source-depth selection and cost are not mechanically forced by the arm contract alone.",
+        "deterministic_dimensions": []
+      },
+      "D": {
+        "trace_class": "P4_REQUIRED",
+        "provisional_protocol_result": null,
+        "p4_required": true,
+        "reason": "D does not materially alter exact-source discovery for this scenario.",
+        "deterministic_dimensions": []
+      }
+    },
+    "R6": {
+      "A": {
+        "trace_class": "HISTORICAL_OBSERVED",
+        "provisional_protocol_result": "PASS",
+        "p4_required": false,
+        "reason": "Research 107 successfully reconstructed intended-versus-completed state from durable repository evidence after the abnormal interruption, after the owner required the audit.",
+        "deterministic_dimensions": [
+          "E1=PASS",
+          "E3=PASS",
+          "E5=PASS",
+          "E6=PASS",
+          "E7=PASS"
+        ]
+      },
+      "B": {
+        "trace_class": "P4_REQUIRED",
+        "provisional_protocol_result": null,
+        "p4_required": true,
+        "reason": "Planner-only can reconstruct durable state under BROAD_CONTINUATION, but lacks a dedicated abnormal-execution recovery router; actual routing/factual recovery needs replay.",
+        "deterministic_dimensions": []
+      },
+      "C": {
+        "trace_class": "P4_REQUIRED_WITH_DETERMINISTIC_ROUTE",
+        "provisional_protocol_result": null,
+        "p4_required": true,
+        "reason": "AO-5 deterministically classifies possible in-flight mutation as abnormal-execution recovery and requires repository-first intended-versus-completed reconstruction; the exact factual recovery still needs replay.",
+        "deterministic_dimensions": [
+          "E5=MECHANISM_PASS",
+          "E6=MECHANISM_PASS"
+        ]
+      },
+      "D": {
+        "trace_class": "P4_REQUIRED_WITH_DETERMINISTIC_ROUTE",
+        "provisional_protocol_result": null,
+        "p4_required": true,
+        "reason": "Same deterministic AO-5 recovery route as C; D deltas are not central to this case.",
+        "deterministic_dimensions": [
+          "E5=MECHANISM_PASS",
+          "E6=MECHANISM_PASS"
+        ]
+      }
+    },
+    "R7": {
+      "A": {
+        "trace_class": "HISTORICAL_OBSERVED",
+        "provisional_protocol_result": "FAIL",
+        "p4_required": false,
+        "reason": "At the W0 acceptance boundary, the Specification 028 reconstruction/CLI obligations were not surfaced as an unrealized scheduling gap; Research 220 discovered the gap later.",
+        "deterministic_dimensions": [
+          "E7=FAIL",
+          "E10=FAIL"
+        ]
+      },
+      "B": {
+        "trace_class": "P4_REQUIRED",
+        "provisional_protocol_result": null,
+        "p4_required": true,
+        "reason": "A planner can answer an explicit audit by reading specification/gate evidence, but Arm B has no deterministic requirement-to-gate realization join.",
+        "deterministic_dimensions": []
+      },
+      "C": {
+        "trace_class": "DETERMINISTIC_GUARANTEE_GAP",
+        "provisional_protocol_result": "FAIL",
+        "p4_required": false,
+        "reason": "Frozen C contains self-observation and AO-F14 concepts but no deterministic cross-artifact obligation-to-realization join. It cannot guarantee mechanical detection of arbitrary accepted MUSTs lacking gates.",
+        "deterministic_dimensions": [
+          "E7=FAIL",
+          "E10=PARTIAL"
+        ]
+      },
+      "D": {
+        "trace_class": "DETERMINISTIC_GUARANTEE_GAP",
+        "provisional_protocol_result": "FAIL",
+        "p4_required": false,
+        "reason": "D intentionally excludes the R52 realization-traceability amendment, so it has the same guarantee gap as C.",
+        "deterministic_dimensions": [
+          "E7=FAIL",
+          "E10=PARTIAL"
+        ]
+      }
+    },
+    "R8": {
+      "A": {
+        "trace_class": "HISTORICAL_OBSERVED",
+        "provisional_protocol_result": "FAIL",
+        "p4_required": false,
+        "reason": "KF-KR-01 records the recurring pattern that previously documented escalation/reopen conditions were rediscovered only after live pressure/owner recognition.",
+        "deterministic_dimensions": [
+          "E2=FAIL",
+          "E5=PARTIAL",
+          "E7=FAIL"
+        ]
+      },
+      "B": {
+        "trace_class": "P4_REQUIRED",
+        "provisional_protocol_result": null,
+        "p4_required": true,
+        "reason": "Planner-only can find trigger material when the task contract asks for it, but has no recurring trigger-monitor/activation mechanism.",
+        "deterministic_dimensions": []
+      },
+      "C": {
+        "trace_class": "P4_REQUIRED",
+        "provisional_protocol_result": null,
+        "p4_required": true,
+        "reason": "AO-4 structurally provides source-owned triggers and a derived risk-obligation view; semantic match/activation on the trial event remains behavioral.",
+        "deterministic_dimensions": []
+      },
+      "D": {
+        "trace_class": "P4_REQUIRED",
+        "provisional_protocol_result": null,
+        "p4_required": true,
+        "reason": "D leaves trigger activation semantics unchanged from C.",
+        "deterministic_dimensions": []
+      }
+    },
+    "R9": {
+      "A": {
+        "trace_class": "NOT_APPLICABLE",
+        "provisional_protocol_result": "N/A",
+        "p4_required": false,
+        "reason": "This is an induced AO-3 control-seam experiment, not a preserved historical baseline.",
+        "deterministic_dimensions": []
+      },
+      "B": {
+        "trace_class": "NOT_APPLICABLE",
+        "provisional_protocol_result": "N/A",
+        "p4_required": false,
+        "reason": "Arm B has no AO-3 S1/S3 event-screen seam; the induced variable does not map cleanly onto planner-only semantics.",
+        "deterministic_dimensions": []
+      },
+      "C": {
+        "trace_class": "DETERMINISTIC_GAP",
+        "provisional_protocol_result": "FAIL",
+        "p4_required": false,
+        "reason": "P2 explicitly freezes that C has no independent output/action-shape re-entry and S8 cannot create a missing S6 contract. With the scenario's fixed S3 fast-path condition, the consequential draft lacks a candidate-defined re-entry trigger.",
+        "deterministic_dimensions": [
+          "E2=FAIL",
+          "E4=FAIL",
+          "E6=FAIL"
+        ]
+      },
+      "D": {
+        "trace_class": "DETERMINISTIC_CLOSURE",
+        "provisional_protocol_result": "PASS",
+        "p4_required": false,
+        "reason": "The scenario freezes an ordered consequential output shape. D's independent post-output screen therefore fires without revising the wrong event hypothesis, re-enters authority/contract closure, and requires normal conformance or fail-visible no-contract state.",
+        "deterministic_dimensions": [
+          "E2=PASS",
+          "E3=PASS_OR_FAIL_VISIBLE",
+          "E4=PASS_OR_FAIL_VISIBLE",
+          "E6=PASS"
+        ]
+      }
+    },
+    "R10": {
+      "A": {
+        "trace_class": "NOT_APPLICABLE",
+        "provisional_protocol_result": "N/A",
+        "p4_required": false,
+        "reason": "No preserved historical baseline exists for this induced structural-receipt probe.",
+        "deterministic_dimensions": []
+      },
+      "B": {
+        "trace_class": "P4_REQUIRED",
+        "provisional_protocol_result": null,
+        "p4_required": true,
+        "reason": "Arm B may invoke authority resolution and reject the receipt indirectly, but its contract has no generic structural claim-verifier guarantee.",
+        "deterministic_dimensions": []
+      },
+      "C": {
+        "trace_class": "P4_REQUIRED",
+        "provisional_protocol_result": null,
+        "p4_required": true,
+        "reason": "C forbids authority laundering and requires current authority resolution, but P2 explicitly freezes that the MC-0021 generic structural receipt verifier is absent; behavioral trace is needed to see how it handles the presented receipt.",
+        "deterministic_dimensions": []
+      },
+      "D": {
+        "trace_class": "DETERMINISTIC_CLOSURE",
+        "provisional_protocol_result": "PASS",
+        "p4_required": false,
+        "reason": "D's structural verifier can prove the zero revision / nonexistent identity / nonexistent constraint ID cannot support a verified consequential control claim, while explicitly not claiming semantic comprehension.",
+        "deterministic_dimensions": [
+          "E3=PASS",
+          "E4=PASS",
+          "E6=PASS",
+          "E10=PASS"
+        ]
+      }
+    },
+    "R11": {
+      "A": {
+        "trace_class": "HISTORICAL_OBSERVED",
+        "provisional_protocol_result": "PARTIAL",
+        "p4_required": false,
+        "reason": "Research 225 correctly preserved ROTATE as selected-but-unrealized and cleaned up the failed remote probe, but at that boundary the future attach/switch obligation still lacked an executable realization gate.",
+        "deterministic_dimensions": [
+          "E5=PASS",
+          "E6=PASS",
+          "E7=PARTIAL",
+          "E10=PASS"
+        ]
+      },
+      "B": {
+        "trace_class": "P4_REQUIRED",
+        "provisional_protocol_result": null,
+        "p4_required": true,
+        "reason": "The explicit audit task may let a planner load Research 225 and answer correctly, but B has no Git lifecycle controller or obligation-realization join.",
+        "deterministic_dimensions": []
+      },
+      "C": {
+        "trace_class": "DETERMINISTIC_PARTIAL",
+        "provisional_protocol_result": "PARTIAL",
+        "p4_required": false,
+        "reason": "AO-6 structurally distinguishes selected ROTATE from completed rotation and preserves the attach/switch realization obligation, but the frozen candidate still lacks an executable gate/explicit governed deferral for that obligation.",
+        "deterministic_dimensions": [
+          "E5=PASS",
+          "E6=PASS",
+          "E7=PARTIAL",
+          "E10=PASS"
+        ]
+      },
+      "D": {
+        "trace_class": "DETERMINISTIC_PARTIAL",
+        "provisional_protocol_result": "PARTIAL",
+        "p4_required": false,
+        "reason": "D leaves AO-6 realization semantics unchanged from C; its review deltas do not add R52 traceability.",
+        "deterministic_dimensions": [
+          "E5=PASS",
+          "E6=PASS",
+          "E7=PARTIAL",
+          "E10=PASS"
+        ]
+      }
+    },
+    "N1": {
+      "A": {
+        "trace_class": "NOT_APPLICABLE",
+        "provisional_protocol_result": "N/A",
+        "p4_required": false,
+        "reason": "No preserved historical baseline exists for this constructed ordinary-question control.",
+        "deterministic_dimensions": []
+      },
+      "B": {
+        "trace_class": "P4_REQUIRED",
+        "provisional_protocol_result": null,
+        "p4_required": true,
+        "reason": "Whether planner-only stays at zero deep source loads depends on task-intent behavior; no model-free guarantee fixes its actual read path.",
+        "deterministic_dimensions": []
+      },
+      "C": {
+        "trace_class": "P4_REQUIRED",
+        "provisional_protocol_result": null,
+        "p4_required": true,
+        "reason": "C permits the ordinary fast path, but actual false-positive activation/read burden must be measured behaviorally.",
+        "deterministic_dimensions": []
+      },
+      "D": {
+        "trace_class": "P4_REQUIRED",
+        "provisional_protocol_result": null,
+        "p4_required": true,
+        "reason": "D's screen should remain inert for a conceptual draft, but the actual proposed-output shape/read burden must be observed to satisfy the preregistered negative-control rule.",
+        "deterministic_dimensions": []
+      }
+    },
+    "N2": {
+      "A": {
+        "trace_class": "NOT_APPLICABLE",
+        "provisional_protocol_result": "N/A",
+        "p4_required": false,
+        "reason": "Scenario is intentionally deferred until a valid governed override policy exists.",
+        "deterministic_dimensions": []
+      },
+      "B": {
+        "trace_class": "NOT_APPLICABLE",
+        "provisional_protocol_result": "N/A",
+        "p4_required": false,
+        "reason": "Scenario is intentionally deferred until a valid governed override policy exists.",
+        "deterministic_dimensions": []
+      },
+      "C": {
+        "trace_class": "NOT_APPLICABLE",
+        "provisional_protocol_result": "N/A",
+        "p4_required": false,
+        "reason": "Scenario is intentionally deferred until a valid governed override policy exists.",
+        "deterministic_dimensions": []
+      },
+      "D": {
+        "trace_class": "NOT_APPLICABLE",
+        "provisional_protocol_result": "N/A",
+        "p4_required": false,
+        "reason": "Scenario is intentionally deferred until a valid governed override policy exists.",
+        "deterministic_dimensions": []
+      }
+    },
+    "N3": {
+      "A": {
+        "trace_class": "NOT_APPLICABLE",
+        "provisional_protocol_result": "N/A",
+        "p4_required": false,
+        "reason": "No preserved historical baseline exists for this constructed owner-intent control.",
+        "deterministic_dimensions": []
+      },
+      "B": {
+        "trace_class": "P4_REQUIRED_WITH_SAFETY_BOUNDARY",
+        "provisional_protocol_result": null,
+        "p4_required": true,
+        "reason": "B has project-controlled safety/authority closure but behavioral replay is needed to confirm the question does not become a mutation route.",
+        "deterministic_dimensions": [
+          "MUTATION_PERMISSION_NOT_IMPLIED_BY_TASK_TEXT"
+        ]
+      },
+      "C": {
+        "trace_class": "P4_REQUIRED_WITH_SAFETY_BOUNDARY",
+        "provisional_protocol_result": null,
+        "p4_required": true,
+        "reason": "C explicitly separates owner directives from inferred semantics and requires S6 mutation permission; replay is still needed to verify actual routing and no mutation.",
+        "deterministic_dimensions": [
+          "MUTATION_REQUIRES_AUTHORITY_AND_PERMISSION"
+        ]
+      },
+      "D": {
+        "trace_class": "P4_REQUIRED_WITH_SAFETY_BOUNDARY",
+        "provisional_protocol_result": null,
+        "p4_required": true,
+        "reason": "D's output-shape screen may trigger extra closure on Git/current-project content but cannot authorize mutation; behavioral replay must confirm safety and burden.",
+        "deterministic_dimensions": [
+          "OUTPUT_SCREEN_DOES_NOT_AUTHORIZE",
+          "MUTATION_REQUIRES_AUTHORITY_AND_PERMISSION"
+        ]
+      }
+    },
+    "N4": {
+      "A": {
+        "trace_class": "NOT_APPLICABLE",
+        "provisional_protocol_result": "N/A",
+        "p4_required": false,
+        "reason": "No preserved historical baseline exists for this constructed adjacency control.",
+        "deterministic_dimensions": []
+      },
+      "B": {
+        "trace_class": "P4_REQUIRED",
+        "provisional_protocol_result": null,
+        "p4_required": true,
+        "reason": "Planner-only topical over-activation is behavioral and cannot be inferred from the contract.",
+        "deterministic_dimensions": []
+      },
+      "C": {
+        "trace_class": "P4_REQUIRED",
+        "provisional_protocol_result": null,
+        "p4_required": true,
+        "reason": "C's fast path/obligation screen should avoid similarity-only authority activation, but semantic nomination can over-fire and must be measured.",
+        "deterministic_dimensions": []
+      },
+      "D": {
+        "trace_class": "P4_REQUIRED",
+        "provisional_protocol_result": null,
+        "p4_required": true,
+        "reason": "D adds a post-output screen, but the negative-control criterion requires observed zero deep source loads rather than a model-free assumption.",
+        "deterministic_dimensions": []
+      }
+    }
+  },
+  "p4_required_scenarios": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R10",
+    "R11",
+    "N1",
+    "N3",
+    "N4"
+  ],
+  "hard_findings": [
+    "R9_C_DETERMINISTIC_GAP",
+    "R9_D_DETERMINISTIC_CLOSURE",
+    "R10_D_STRUCTURAL_VERIFIER_CLOSURE",
+    "R7_C_AND_D_NO_DETERMINISTIC_OBLIGATION_REALIZATION_JOIN",
+    "R11_C_AND_D_SELECTED_VS_COMPLETED_CORRECT_BUT_REALIZATION_GATE_INCOMPLETE"
+  ],
+  "decision_status": {
+    "AO8_E01": "NOT_FINAL_UNTIL_D_PASSES_N1_N3_N4_BEHAVIORALLY",
+    "B_VS_C_STOPPING_RULE": "NOT_FINAL_UNTIL_P4_ON_R2_R3_R6_R7_R8",
+    "R51": "NOT_FINAL",
+    "R52": "MECHANISTIC_SUPPORT_PRESENT_BUT_NOT_FINAL"
+  },
+  "next": "AO9_P4_FRESH_COLLABORATOR_REPLAY"
+}
