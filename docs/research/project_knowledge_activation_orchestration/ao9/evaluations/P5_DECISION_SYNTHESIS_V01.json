@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "synthesis_id": "AO9-P5-DECISION-SYNTHESIS-V01",
+  "date": "2026-09-21",
+  "status": "COMPLETE",
+  "authority_class": "research_evaluation",
+  "protocol": "docs/research/228_ao9_preregistered_historical_regression_protocol.md",
+  "machine_protocol": "docs/research/project_knowledge_activation_orchestration/AO9_HISTORICAL_REGRESSION_PROTOCOL_V01.json",
+  "model_free_trace": "docs/research/231_ao9_p3_model_free_mechanism_trace.md",
+  "p4_harness": "docs/research/232_ao9_p4_minimum_fresh_replay_harness_freeze.md",
+  "p4_completion_commit": "b5d236fadbde99c668d752fec8e18b79fcdda489",
+  "p4": {
+    "minimum_required_runs": 13,
+    "valid_required_runs": 13,
+    "invalid_attempts_preserved_separately": 1,
+    "invalid_attempts": [
+      "C_R7_run08_INVALID"
+    ],
+    "aggregate_winner_score_produced": false,
+    "hard_safety_failures_in_required_valid_runs": 0
+  },
+  "b_vs_c": {
+    "scenarios": {
+      "R2": {
+        "B": "substantive dimensions PASS; E9 FAIL",
+        "C": "substantive dimensions PASS; E9 FAIL",
+        "C_unique_pass": false,
+        "budget": "both above narrow ceiling"
+      },
+      "R3": {
+        "B": "E7 PARTIAL; other applicable dimensions PASS",
+        "C": "E7 PASS; other applicable dimensions PASS",
+        "C_unique_pass": true,
+        "unique_dimension": "E7_PRESERVATION_RESUME_SELF_OBSERVATION",
+        "budget": "B 32 / C 33 reported repository actions, both above narrow ceiling 8"
+      },
+      "R6": {
+        "B": "all substantive applicable dimensions PASS; E9 FAIL",
+        "C": "all substantive applicable dimensions PASS; E9 FAIL",
+        "C_unique_pass": false,
+        "budget": "B ~22 / C ~40 actions, both above recovery ceiling 20"
+      },
+      "R7": {
+        "B": "all applicable dimensions PASS",
+        "C": "all applicable dimensions PASS",
+        "C_unique_pass": false,
+        "budget": "both materially above narrow ceiling",
+        "mechanism_limit": "Neither frozen B nor C provides a generic deterministic accepted-MUST -> gate -> evidence -> qualification -> activation/deferral join."
+      },
+      "R8": {
+        "B": "E7 PARTIAL; other applicable dimensions PASS",
+        "C": "E7 PASS; other applicable dimensions PASS",
+        "C_unique_pass": true,
+        "unique_dimension": "E7_PRESERVATION_RESUME_SELF_OBSERVATION",
+        "budget": "B ~9 / C 16 repository actions, both above narrow ceiling 8"
+      }
+    },
+    "unique_pass_scenarios_for_C": [
+      "R3",
+      "R8"
+    ],
+    "unique_pass_dimension": "E7_PRESERVATION_RESUME_SELF_OBSERVATION",
+    "planner_only_default_narrowing_triggered": false,
+    "interpretation": "The preregistered no-unique-PASS fallback does not trigger. Arm B remains a strong simpler baseline, and Arm C demonstrates incremental value specifically around preservation/resume/self-observation and source-owned trigger activation. The evidence does not qualify wholesale implementation of every AO-3..AO-7 mechanism."
+  },
+  "ao8_e01": {
+    "result": "SUPPORT_AMEND",
+    "evidence": {
+      "C_R9": "FAIL_DETERMINISTIC_MECHANISM_GAP",
+      "D_R9": "PASS_DETERMINISTIC_CLOSURE",
+      "D_N1": "PASS",
+      "D_N3": "PASS",
+      "D_N4": "PASS",
+      "D_N1_deep_source_loads": 0,
+      "D_N4_deep_source_loads": 0,
+      "new_hard_safety_failure": false
+    },
+    "automatic_architecture_amendment": false,
+    "owner_AMEND_decision_required": true,
+    "owner_decision_stage": "AO9_P7",
+    "affected_contract": "Research 222 / AO-3",
+    "supported_primary_delta": "independent pre-dispatch output/action-shape re-entry that requires bounded authority/action-contract closure when a consequential shape fires",
+    "not_bundled_automatically": [
+      "AO8-Q01 structural receipt/claim verification",
+      "AO8-C02 NO_CONTRACT_AVAILABLE clarification",
+      "other later AO-8/MC-0021 ideas"
+    ]
+  },
+  "requirements_candidates": {
+    "R51": {
+      "disposition": "SUPPORTED_BUT_NOT_EXECUTABLY_QUALIFIED",
+      "evidence": "C adds unique E7 PASS over B on R3 and R8 and surfaces durable trigger/reopen knowledge without owner path naming.",
+      "limitation": "P4 exercises frozen control semantics through fresh collaborators; it does not prove a deployed mechanical monitor or executable bridge can surface every miss without task-shaped nomination.",
+      "owner_decision_required": true
+    },
+    "R52": {
+      "disposition": "STRONGLY_SUPPORTED_REQUIREMENT_GAP_MECHANISM_NOT_YET_SATISFIED",
+      "evidence": "R7 identifies Specification 028 section 26/32 realization gaps while preserving realized W0 obligations; P3 R11 preserves the AO-6 rotation realization gap.",
+      "limitation": "P3 and P4 both show the frozen candidate lacks a generic deterministic cross-artifact realization join.",
+      "owner_decision_required": true
+    }
+  },
+  "cost_and_scope": {
+    "positive_case_budget_pressure": "material",
+    "negative_control_over_activation": "not observed for D on N1/N3/N4",
+    "conclusion": "Behavioral value and boundedness must be reconciled separately. P5 does not authorize wholesale AO-3..AO-7 implementation and does not revert to planner-only by default.",
+    "p6_required": true
+  },
+  "preserved_nondecisions": {
+    "production_control_plane_implementation_authorized": false,
+    "authority_switch_allowed": false,
+    "requirements_amended": false,
+    "specification_028_amended": false,
+    "research_222_amended": false,
+    "AO10_O01_closed": false,
+    "AO10_O02_closed": false
+  },
+  "next": "AO9_P6_RECONCILIATION"
+}

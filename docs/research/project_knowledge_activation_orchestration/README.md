@@ -67,8 +67,9 @@ AO9_HISTORICAL_REGRESSION_PROTOCOL_V01.json
 ao9/
     AO-9 regression packet. Trial-visible scenarios and evaluator-only keys are
     physically separated; arm_contracts/ freezes the A/B/C/D mechanism contracts;
-    traces/ and evaluations/ preserve the P3 model-free trace; p4_assignments/
-    freezes the minimum fresh-replay harness; manifests bind digests and freeze state.
+    traces/ and evaluations/ preserve the P3 model-free trace and P5 decision synthesis;
+    p4_assignments/ freezes the minimum fresh-replay harness; trial_outputs/ preserves
+    fresh replay evidence; manifests bind digests and freeze state.
 ```
 
 Interpretation:
