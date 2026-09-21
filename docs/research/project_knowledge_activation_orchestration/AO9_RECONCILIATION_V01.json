@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "reconciliation_id": "AO9-RECONCILIATION-V01",
+  "date": "2026-09-21",
+  "status": "P6_COMPLETE_OWNER_DECISIONS_PENDING",
+  "authority_class": "research_reconciliation",
+  "program": "Research 219",
+  "evidence": {
+    "protocol": "Research 228",
+    "p3": "Research 231",
+    "p4_harness": "Research 232",
+    "p5": "Research 233",
+    "p4_completion_commit": "b5d236fadbde99c668d752fec8e18b79fcdda489",
+    "p5_commit": "1656c4500cdc21dfe8db307d1fa0ec8df32584a5"
+  },
+  "reconciled_findings": {
+    "planner_only_fallback_triggered": false,
+    "C_unique_behavior": [
+      "R3:E7",
+      "R8:E7"
+    ],
+    "wholesale_C_qualification": false,
+    "positive_path_boundedness": "UNRESOLVED",
+    "ao8_e01": "SUPPORT_AMEND_PENDING_OWNER",
+    "R51": "SUPPORTED_REQUIREMENT_CANDIDATE_PENDING_OWNER",
+    "R52": "STRONGLY_SUPPORTED_REQUIREMENT_CANDIDATE_PENDING_OWNER",
+    "R52_mechanism_present_in_frozen_candidate": false
+  },
+  "ao10_conditional_qualification_obligations": [
+    "preserve strong planner/reconstruction baseline",
+    "qualify independent pre-dispatch output/action-shape re-entry if owner accepts AO8-E01",
+    "qualify low-consequence precision and question-is-not-mutation negative controls",
+    "meet or explicitly disposition frozen read/tool budgets",
+    "prove mechanical control-miss / reopen-trigger surfacing if R51 is accepted",
+    "provide deterministic accepted-MUST realization traceability if R52 is accepted",
+    "close AO10-O01 governed branch attach/switch and selected rotation realization",
+    "close AO10-O02 Specification 028 representation compatibility before production mutation"
+  ],
+  "p7_owner_decisions": [
+    {
+      "id": "P7-D01",
+      "subject": "AO8-E01 / Research 222",
+      "evidence_disposition": "SUPPORT_AMEND",
+      "decision_needed": "AMEND or KEEP/DEFER",
+      "proposed_amendment_scope": "independent pre-dispatch output/action-shape re-entry only"
+    },
+    {
+      "id": "P7-D02",
+      "subject": "Requirements V0.2 KA-R51 candidate",
+      "evidence_disposition": "SUPPORTED_BUT_NOT_EXECUTABLY_QUALIFIED",
+      "decision_needed": "ACCEPT_REQUIREMENT or DEFER/REJECT"
+    },
+    {
+      "id": "P7-D03",
+      "subject": "Requirements V0.2 KA-R52 candidate",
+      "evidence_disposition": "STRONGLY_SUPPORTED_REQUIREMENT_GAP",
+      "decision_needed": "ACCEPT_REQUIREMENT or DEFER/REJECT"
+    }
+  ],
+  "nondecisions": {
+    "research_222_amended": false,
+    "requirements_v02_amended": false,
+    "specification_028_amended": false,
+    "production_implementation_authorized": false,
+    "operational_authority_changed": false,
+    "authority_switch_allowed": false
+  },
+  "current_boundary": "project-knowledge-owner-decision-boundary",
+  "next": "AO9_P7_OWNER_DECISIONS"
+}

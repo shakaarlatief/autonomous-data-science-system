@@ -450,12 +450,14 @@ docs/research/226_ao7_authority_preserving_successor_orchestration_bridge.md
 docs/checkpoints/563_ao7_authority_preserving_successor_bridge_selected.md
 docs/research/227_ao8_independent_architecture_review_reconciliation.md
 docs/checkpoints/564_ao8_independent_architecture_review_reconciled.md
+docs/checkpoints/565_ao9_evidence_reconciled_owner_decisions_open.md
 docs/research/228_ao9_preregistered_historical_regression_protocol.md
 docs/research/229_ao9_p1_scenario_and_evaluator_key_freeze.md
 docs/research/230_ao9_p2_arm_contract_freeze.md
 docs/research/231_ao9_p3_model_free_mechanism_trace.md
 docs/research/232_ao9_p4_minimum_fresh_replay_harness_freeze.md
 docs/research/233_ao9_p5_evaluation_and_decision_synthesis.md
+docs/research/234_ao9_p6_reconciliation_and_owner_decision_boundary.md
 docs/research/project_knowledge_activation_orchestration/README.md
 docs/research/project_knowledge_activation_orchestration/001_chat26_owner_source_interaction_orchestration_evidence.md
 docs/research/project_knowledge_activation_orchestration/002_chat27_activation_self_hosting_bootstrap_evidence.md
@@ -1087,7 +1089,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-564 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-565 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

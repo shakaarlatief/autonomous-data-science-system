@@ -64,6 +64,10 @@ AO9_HISTORICAL_REGRESSION_PROTOCOL_V01.json
     preregistered AO-9 four-arm historical-regression protocol, positive/negative
     scenarios, budgets, invalidators, decision rules and no-tuning boundary
 
+AO9_RECONCILIATION_V01.json
+    P6 machine-readable reconciliation of P5 decisions, owner-decision packet,
+    preserved non-decisions and conditional AO-10 qualification obligations
+
 ao9/
     AO-9 regression packet. Trial-visible scenarios and evaluator-only keys are
     physically separated; arm_contracts/ freezes the A/B/C/D mechanism contracts;
