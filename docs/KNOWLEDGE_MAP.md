@@ -440,11 +440,14 @@ docs/research/221_ao2_control_plane_capability_boundary_and_failure_taxonomy.md
 docs/checkpoints/558_ao2_control_boundary_failure_taxonomy_closed.md
 docs/research/222_ao3_progressive_control_closure_architecture.md
 docs/checkpoints/559_ao3_progressive_control_closure_selected.md
+docs/research/223_ao4_architecture_evolution_and_frozen_contract_governance.md
+docs/checkpoints/560_ao4_governed_architecture_evolution_selected.md
 docs/research/project_knowledge_activation_orchestration/README.md
 docs/research/project_knowledge_activation_orchestration/001_chat26_owner_source_interaction_orchestration_evidence.md
 docs/research/project_knowledge_activation_orchestration/002_chat27_activation_self_hosting_bootstrap_evidence.md
 docs/research/project_knowledge_activation_orchestration/003_chat28_continuation_reconstruction_activation_gap.md
 docs/research/project_knowledge_activation_orchestration/AO3_PROGRESSIVE_CONTROL_CLOSURE_V01.json
+docs/research/project_knowledge_activation_orchestration/AO4_ARCHITECTURE_EVOLUTION_GOVERNANCE_V01.json
 docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md
 docs/checkpoints/449_scalable_knowledge_architecture_redesign_opened.md
 docs/checkpoints/450_knowledge_architecture_baseline_inventory_complete_requirements_next.md
@@ -1065,7 +1068,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-559 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-560 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 
