@@ -1,6 +1,6 @@
 {
   "authority_class": "derived",
-  "created_or_refreshed_boundary": "sha256:0fa4dbb3732b65bc12101fa13403db3a86605b9713d1869f5e9fd927888b3b33",
+  "created_or_refreshed_boundary": "sha256:b2b1b133f8ddaf52c0565d1b49bcc0890bf13672086d3c8d9586d6282ad022d0",
   "freshness_basis": "G009_EXACT_INPUTS_AND_GENERATOR_V1",
   "generator": {
     "generator_id": "project_knowledge_source_catalog",
@@ -78,7 +78,7 @@
       "source_path": "docs/project_knowledge/project_integration_boundary.md"
     },
     {
-      "content_digest": "6a774f376bbcf93c39e9f3bbe14ac2f12b418280323789b1394364ceeb346a3b",
+      "content_digest": "b1dcfb76b6e7252ed6b74dddaa00c596a740733d34cabad5cc00f530997726a8",
       "hash_algorithm": "sha256",
       "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
       "semantic_id": "WS-PKA-CURRENT",

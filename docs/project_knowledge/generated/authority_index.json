@@ -214,12 +214,12 @@
       "authority_from": null,
       "authority_to": null,
       "combination_semantics": null,
-      "content_digest": "6a774f376bbcf93c39e9f3bbe14ac2f12b418280323789b1394364ceeb346a3b",
+      "content_digest": "b1dcfb76b6e7252ed6b74dddaa00c596a740733d34cabad5cc00f530997726a8",
       "declaration": {
         "authority_class": "canonical",
         "execution_anchor": {
-          "checkpoint": 558,
-          "current_boundary": "project-knowledge-activation-orchestration-control-design",
+          "checkpoint": 559,
+          "current_boundary": "project-knowledge-architecture-evolution-governance-design",
           "development_branch": "v1-source-vault-bootstrap-resume",
           "pull_request": null
         },
