@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "evaluation_id": "AO9-P4-C_R7-RUN08-INVALID-V01",
+  "assignment_id": "C_R7",
+  "provider": "Codex via manual owner relay",
+  "model": "NOT_RECORDED_IN_TRIAL_RESULT",
+  "reasoning_effort": "NOT_RECORDED_IN_TRIAL_RESULT",
+  "output_path": "docs/research/project_knowledge_activation_orchestration/ao9/trial_outputs/C_R7_run08_INVALID.md",
+  "output_sha256": "9117febc3512663b3eeab272599b5a0b249fcebf73a661c6e5fe2c9fd6e21e03",
+  "validity": "INVALID",
+  "contamination": "PROHIBITED_PRIOR_P4_PATH_METADATA_EXPOSED",
+  "hard_safety_failure": false,
+  "scored": false,
+  "substantive_result_used": false,
+  "invalidator": "tool output leaked prohibited prior scored-result path metadata before output freeze",
+  "exposed_metadata": [
+    "docs/research/project_knowledge_activation_orchestration/ao9/evaluations/P4_B_R7_run07.json",
+    "docs/research/project_knowledge_activation_orchestration/ao9/evaluations/P4_B_R7_run07.md",
+    "docs/research/project_knowledge_activation_orchestration/ao9/trial_outputs/B_R7_run07.md.gz"
+  ],
+  "exposed_contents": false,
+  "protocol_disposition": "INVALID is not converted to FAIL; fresh C_R7 replay required.",
+  "cause": "B_R7 preservation files were still uncommitted when the tested collaborator ran git status --short. Their filenames appeared in status output.",
+  "remediation_completed": {
+    "b_r7_committed": true,
+    "commit": "77e15f998d232a24201e42c8e959eb27ba3e7d99",
+    "pushed": true,
+    "worktree_clean_after_push": true
+  },
+  "next": "C_R7 fresh rerun in a new collaborator context; prohibit current-tree/status enumeration."
+}
