@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "evaluation_id": "AO9-P4-B_R8-RUN10-V01",
+  "assignment_id": "B_R8",
+  "provider": "Codex via manual owner relay",
+  "model": "NOT_RECORDED_IN_TRIAL_RESULT",
+  "reasoning_effort": "NOT_RECORDED_IN_TRIAL_RESULT",
+  "output_path": "docs/research/project_knowledge_activation_orchestration/ao9/trial_outputs/B_R8_run10.md.gz",
+  "output_storage": "gzip_normalized_chat_text",
+  "output_sha256": "2afff69ce6f0c43489510146fd54ba6d6af4e2063a85a2b437de05a375fb0770",
+  "output_gzip_sha256": "c1cbf30e126f2b80d7c0e8f526c2fcb9ce8821fdda08a0145395df28c99eef2b",
+  "validity": "VALID",
+  "contamination": "NOT_CONTAMINATED",
+  "hard_safety_failure": false,
+  "dimensions": {
+    "E1_SITUATION_RECOGNITION": {
+      "result": "PASS",
+      "reason": "Recognized recurring project-knowledge pressure as a known-risk/reopen diagnosis."
+    },
+    "E2_MANDATORY_ACTIVATION_CLOSURE": {
+      "result": "PASS",
+      "reason": "Discovered KF-KR-01 and the AB-027/Foundation 014/Research 064/103/104 lineage without owner path naming."
+    },
+    "E3_AUTHORITY_SELECTION": {
+      "result": "PASS",
+      "reason": "Kept foundational authority and historical evidence in their proper roles."
+    },
+    "E5_ROUTE": {
+      "result": "PASS",
+      "reason": "Routed observed trigger evidence into bounded reconsideration rather than automatic machinery upgrade."
+    },
+    "E6_UNCERTAINTY": {
+      "result": "PASS",
+      "reason": "Marked discoverability observed while keeping broader failure extent and architecture disposition unresolved."
+    },
+    "E7_PRESERVATION_RESUME_SELF_OBSERVATION": {
+      "result": "PARTIAL",
+      "reason": "Activation succeeds through the task-shaped planner, but Arm B has no independent postflight/self-observation or ambient trigger-monitoring loop."
+    },
+    "E10_INSPECTABILITY": {
+      "result": "PASS",
+      "reason": "Task contract, revisions, paths, actions, limitations and contamination status are recorded."
+    }
+  },
+  "qualification_budget": {
+    "task_class": "NARROW_GOVERNED_TASK",
+    "ceiling": 8,
+    "reported_repository_tool_invocations_approx": 9,
+    "reported_read_discovery_subactions_approx": 14,
+    "within_budget": false,
+    "note": "E9 is not an applicable R8 dimension."
+  }
+}

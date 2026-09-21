@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "evaluation_id": "AO9-P4-C_R7-RUN09-V01",
+  "assignment_id": "C_R7",
+  "provider": "Codex via manual owner relay",
+  "model": "NOT_RECORDED_IN_TRIAL_RESULT",
+  "reasoning_effort": "NOT_RECORDED_IN_TRIAL_RESULT",
+  "output_path": "docs/research/project_knowledge_activation_orchestration/ao9/trial_outputs/C_R7_run09.md.gz",
+  "output_storage": "gzip_exact_bytes",
+  "output_sha256": "b4c495933d4d3a05205a04ad978ef5ad5efd0cf8d949663c60f5b7546bd2bf98",
+  "output_gzip_sha256": "e545f6952f15d904ab609b8440216b72975b3b462d2bc9798c599faa9bff092b",
+  "validity": "VALID",
+  "contamination": "NOT_CONTAMINATED",
+  "hard_safety_failure": false,
+  "dimensions": {
+    "E2_MANDATORY_ACTIVATION_CLOSURE": {
+      "result": "PASS",
+      "reason": "Traced Specification 028 MUST obligations through the accepted W0 gate/evidence boundary and exposed planner/CLI obligations lacking closed realization."
+    },
+    "E3_AUTHORITY_SELECTION": {
+      "result": "PASS",
+      "reason": "Specification 028 remained governing while W0 checkpoint/research records remained acceptance and evidence."
+    },
+    "E5_ROUTE": {
+      "result": "PASS",
+      "reason": "Classified the uncovered items prospectively as an obligation-realization/scheduling gap without rewriting historical W0 acceptance."
+    },
+    "E6_UNCERTAINTY": {
+      "result": "PASS",
+      "reason": "Separated realized obligations, explicit future-wave deferrals, unscheduled gaps, unexecuted tests and non-exhaustiveness."
+    },
+    "E7_PRESERVATION_RESUME_SELF_OBSERVATION": {
+      "result": "PASS",
+      "reason": "Preserved W0 acceptance, recorded AO-F14 as the observed gap and named a prospective realization/scheduling resume target without claiming a generic ledger."
+    },
+    "E10_INSPECTABILITY": {
+      "result": "PASS",
+      "reason": "S1-S9 trace, revisions, paths, ordered actions, package evidence, limitations and contamination status are reconstructable."
+    }
+  },
+  "qualification_budget": {
+    "task_class": "NARROW_GOVERNED_TASK",
+    "ceiling": 8,
+    "reported_repository_oriented_tool_invocations": 24,
+    "reported_repository_read_discovery_operations_approx": 34,
+    "within_budget": false,
+    "note": "E9 is not an applicable R7 dimension; no E9 score is assigned."
+  },
+  "pairwise_R7": {
+    "B_result_reference": "P4_B_R7_run07",
+    "C_adds_unique_PASS_over_B": false,
+    "interpretation": "B_R7 and C_R7 both pass all applicable dimensions."
+  },
+  "protocol_notes": [
+    "Earlier C_R7 run08 remains INVALID and unscored.",
+    "No aggregate winner score is produced."
+  ]
+}

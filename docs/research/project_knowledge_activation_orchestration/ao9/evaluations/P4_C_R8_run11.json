@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "evaluation_id": "AO9-P4-C_R8-RUN11-V01",
+  "assignment_id": "C_R8",
+  "provider": "Codex via manual owner relay",
+  "model": "NOT_RECORDED_IN_TRIAL_RESULT",
+  "reasoning_effort": "NOT_RECORDED_IN_TRIAL_RESULT",
+  "output_path": "docs/research/project_knowledge_activation_orchestration/ao9/trial_outputs/C_R8_run11.md.gz",
+  "output_storage": "gzip_exact_bytes",
+  "output_sha256": "dd20a54ac3819665fc1461682c09a8691223e1c53a8d5303a46031bdc285b8f6",
+  "output_gzip_sha256": "046ddb32753d811bc6659eca8090c9de6c1dd464b17a7bf6673be59124845222",
+  "validity": "VALID",
+  "contamination": "NOT_CONTAMINATED",
+  "hard_safety_failure": false,
+  "dimensions": {
+    "E1_SITUATION_RECOGNITION": {
+      "result": "PASS",
+      "reason": "Recognized recurring discoverability/maintenance pressure as known-trigger evidence requiring governed evaluation."
+    },
+    "E2_MANDATORY_ACTIVATION_CLOSURE": {
+      "result": "PASS",
+      "reason": "S3 activates risk/evolution obligations and S4 reconstructs the source-owned trigger lineage without owner source naming."
+    },
+    "E3_AUTHORITY_SELECTION": {
+      "result": "PASS",
+      "reason": "Frozen AO-3 through AO-7 semantics and historical evidence remain bounded; trigger evidence does not self-promote."
+    },
+    "E5_ROUTE": {
+      "result": "PASS",
+      "reason": "Routes the active trigger into an AO-4 EvolutionCase before any prospective change."
+    },
+    "E6_UNCERTAINTY": {
+      "result": "PASS",
+      "reason": "Separates observed trigger evidence, unproven trigger classes and unverified production deployment."
+    },
+    "E7_PRESERVATION_RESUME_SELF_OBSERVATION": {
+      "result": "PASS",
+      "reason": "S9 preserves the unresolved resume point and self-observation semantics while S3 surfaces the present trigger."
+    },
+    "E10_INSPECTABILITY": {
+      "result": "PASS",
+      "reason": "S1-S9 trace, semantic target, historical paths, ordered actions and isolation boundaries are inspectable."
+    }
+  },
+  "qualification_budget": {
+    "task_class": "NARROW_GOVERNED_TASK",
+    "ceiling": 8,
+    "reported_repository_read_tool_actions": 16,
+    "external_attachment_reads": 1,
+    "within_budget": false,
+    "note": "E9 is not an applicable R8 dimension."
+  },
+  "pairwise_R8": {
+    "B_result_reference": "P4_B_R8_run10",
+    "C_adds_unique_PASS_over_B": true,
+    "unique_dimension": "E7_PRESERVATION_RESUME_SELF_OBSERVATION"
+  }
+}
