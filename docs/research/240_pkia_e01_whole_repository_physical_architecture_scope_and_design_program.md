@@ -37,6 +37,22 @@ The goal is not to tidy today's tree.
 
 The goal is to determine what a professional, coherent and scalable ADS repository should look like if designed today for long-term growth.
 
+This freedom is stronger than renaming or relocating existing folders. Every current structural concept is challengeable. A current root, subsystem, package, workspace, artifact family, file type, workflow or representation may ultimately be retained, relocated, reorganized internally, split, merged, absorbed into another owner, replaced by a different mechanism, externalized, retired from the active architecture, or preserved only as historical evidence if that is the professionally stronger design.
+
+For example, `prototype_v0/` is not presumed to be the permanent professional pattern for future prototypes merely because it exists as a self-contained folder today. The redesign may conclude that future prototypes should use a different workspace model, live under a governed experiments/program structure, become independent repositories, or follow another architecture entirely. The current `prototype_v0/` still has historical/provenance value and must not be destructively rewritten merely to make the future tree look uniform.
+
+The governing distinction is therefore:
+
+    current artifact existence
+        !=
+    future architectural requirement
+
+    preserving historical truth/provenance
+        !=
+    preserving the current representation forever
+
+A future migration may supersede, archive, redirect or transition current carriers while preserving their accepted history and semantic continuity.
+
 ## 2. Why this is a scope correction rather than a contradiction
 
 The original owner-approved reopening at Research 235 / Checkpoint 566 required reconsidering Research 218's physical hierarchy from first principles for:

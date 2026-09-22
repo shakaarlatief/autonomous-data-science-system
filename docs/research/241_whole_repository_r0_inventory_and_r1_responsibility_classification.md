@@ -16,11 +16,26 @@ This pass deliberately separates two questions:
     R1
         What is each major thing, conceptually?
 
-The classification is not a placement decision.
+The classification is not a placement decision and it is not an existence-preservation decision.
 
-For example, saying that migrations/ is persistence-schema evolution owned by the backend does not yet imply that migrations/ should move beneath src/, packages/, backend/ or any other future path.
+For example, saying that migrations/ is persistence-schema evolution owned by the backend does not yet imply that migrations/ should move beneath src/, packages/, backend/ or any other future path. It also does not imply that a dedicated migrations/ root must continue to exist at all if a better professional persistence architecture emerges.
 
-Likewise, saying that tests/ is cross-cutting verification does not yet imply centralized or co-located tests.
+Likewise, saying that tests/ is cross-cutting verification does not yet imply centralized or co-located tests, and saying that prototype_v0/ is a historical experimental workspace does not imply that future prototypes should copy its structure.
+
+Every current concern will eventually receive both a responsibility classification and a possible structural disposition. Candidate dispositions include, without selection yet:
+
+    RETAIN_AS_IS
+    RETAIN_BUT_RESTRUCTURE
+    RELOCATE
+    SPLIT
+    MERGE
+    ABSORB_INTO_OWNER
+    REPLACE_WITH_DIFFERENT_MECHANISM
+    EXTERNALIZE
+    RETIRE_FROM_ACTIVE_ARCHITECTURE
+    PRESERVE_AS_HISTORICAL_EVIDENCE
+
+These are analytical possibilities, not a new mandatory registry or schema.
 
 ## 2. Tracked root inventory
 
