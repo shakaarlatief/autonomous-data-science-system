@@ -473,11 +473,13 @@ docs/research/242_whole_repository_r2_lifecycle_dependency_and_cochange_analysis
 docs/research/243_whole_repository_r3_repository_architecture_archetype_synthesis.md
 docs/research/244_whole_repository_r4_professional_pattern_and_growth_stress_review.md
 docs/research/245_whole_repository_r5_root_role_derivation_and_recommended_target.md
+docs/research/246_whole_repository_r5_owner_acceptance_and_from_scratch_lower_level_boundary.md
 docs/checkpoints/570_whole_repository_physical_architecture_scope_clarified.md
 docs/checkpoints/571_whole_repository_r2_boundaries_identified.md
 docs/checkpoints/572_whole_repository_r3_candidate_archetypes_frozen.md
 docs/checkpoints/573_whole_repository_r4_candidate_g_convergence.md
 docs/checkpoints/574_whole_repository_r5_g_dual_target_recommended.md
+docs/checkpoints/575_g_dual_accepted_lower_level_architecture_open.md
 docs/research/project_knowledge_activation_orchestration/README.md
 docs/research/project_knowledge_activation_orchestration/001_chat26_owner_source_interaction_orchestration_evidence.md
 docs/research/project_knowledge_activation_orchestration/002_chat27_activation_self_hosting_bootstrap_evidence.md
@@ -1109,7 +1111,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-574 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-575 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 
