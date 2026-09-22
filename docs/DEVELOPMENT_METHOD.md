@@ -2,7 +2,7 @@
 
 **Status:** Current canonical project-development method  
 **Current version:** 0.9  
-**Last reviewed:** 2026-09-20
+**Last reviewed:** 2026-09-22
 
 ## Purpose
 
@@ -34,6 +34,8 @@ explore / discuss
 ```
 
 The preservation and verification process must be strong enough for a large long-lived project without becoming so expensive that it interferes with substantive work.
+
+Evidence-driven development does not require waiting for a capability to fail in a live workflow before adding it. When a capability is clearly reusable, low-risk, consistent with accepted architecture, and likely to remove known friction or enable an imminent workflow, it may be added proactively at the smallest justified scope. This must not become speculative platform expansion: uncertain, broad, or weakly motivated capability should still wait for stronger evidence.
 
 ## Repository information architecture
 
@@ -637,6 +639,8 @@ If the central Knowledge Map later becomes a demonstrated reconstruction-read-co
 **Introduced:** historical-intermediate checkpoint integrity extension, 2026-09-01. No new checkpoint is created merely for this bounded method refinement.
 
 **Operational refinement, 2026-09-17:** added explicit Codex model/reasoning routing based on quality per complete engineering loop. The refinement records Sol High as the default for bounded implementation/repair, Astra High for genuinely difficult or foundational work, selective Astra XHigh/Max for especially consequential architecture, and Ultra only when delegation itself is desired. It also preserves the ChatGPT/Claude architecture -> Codex implementation -> independent adversarial review -> repair loop and keeps evidence, not model confidence, as the acceptance basis.
+
+**Operational refinement, 2026-09-22:** clarified that evidence-driven development is not failure-driven development. Clearly reusable, low-risk capabilities consistent with accepted architecture may be added proactively at the smallest justified scope when their value is already well established, while broad or weakly motivated platform expansion still waits for stronger evidence.
 
 - preserved the single canonical numeric identity of Checkpoint 252;
 - retained the earlier source-faithful milestone as useful historical evidence without fabricating a replacement number;

@@ -1549,6 +1549,10 @@ Primary context: Candidate 01 `workstream.v1` execution anchors, `PROJECT-INTEGR
 
 Research 225 / AO-6 resolves the lifecycle architecture as Purpose-Bound Git Lifecycle. The current `v1-source-vault-bootstrap-resume` branch has confirmed purpose drift; ROTATE is selected, but the live self-hosting attempt exposed a missing governed local branch attach/switch surface. The temporary remote successor ref was deleted after the local attach failed, so active routing remains unchanged. Carry the attach/switch realization and rotation qualification into AO-10 rather than requiring undocumented owner-operated Git.
 
+The attach/switch gap does not justify broad generic mutation access to protected `.git` repository metadata. The preferred implementation direction is to retain the protected VCS boundary and extend the trusted semantic Git surface with the smallest reusable local operations needed by governed project workflows, with explicit preconditions, expected-revision guards, failure semantics and postflight reconciliation.
+
+This demand-driven rule is not a requirement to wait for a workflow to fail before adding every capability. Clearly useful, reusable and low-risk Git operations may be introduced proactively when their value is already well established. The project should avoid both extremes: do not weaken `.git` protection for convenience, and do not deliberately postpone an obviously valuable bounded capability merely because it has not yet produced a failure. At the same time, do not mirror the complete Git CLI speculatively when no project need justifies the authority surface.
+
 ---
 
 # Continuation obligations that must not be forgotten
