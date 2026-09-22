@@ -2,12 +2,12 @@
   "schema_version": 1,
   "thread_id": "MC-0023",
   "review_mode": "ADVERSARIAL_REVIEW",
-  "lifecycle_state": "WAITING",
-  "phase": "OWNER_G_DUAL_AMENDMENT_DECISION",
+  "lifecycle_state": "RESOLVED",
+  "phase": "RESOLVED_G_DUAL_AMENDED_R6_UNBLOCKED",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
-    "base_ref": "ff9b10a8b71ccac93683610092b3048143296410",
-    "description": "Claude adversarial review is complete and ChatGPT reconciliation freezes a narrow G-DUAL Level-1 amendment candidate. Product/Project survives; A1 cross-plane resolution and A2 bounded true-root responsibility await explicit owner decision before R6/R7.",
+    "base_ref": "3aebde8aca9e0daf69ddcf5cdac073a7eea13eb8",
+    "description": "Owner explicitly accepted the reconciled narrow G-DUAL amendment. Product/Project remains the Level-1 target; A1 cross-plane resolution, A2 bounded true-root responsibility and associated R6/R7 guardrails are now accepted. R6 is unblocked; no physical migration is authorized.",
     "write_paths": []
   },
   "task_owner": "chatgpt",
@@ -51,7 +51,7 @@
       ]
     }
   ],
-  "next_expected_actor": "human",
+  "next_expected_actor": "chatgpt",
   "independence": {
     "status": "NOT_APPLICABLE",
     "review_base_ref": "33af35442df7350d9571e4f59108c393759ad4b3",
@@ -60,14 +60,14 @@
       "The review intentionally exposes Research 240-246, the accepted G-DUAL target, PSMF evidence and prior MC-0022 collaboration.",
       "The owner has already accepted G-DUAL at Level 1; the review is adversarial post-acceptance verification, not independent candidate generation."
     ],
-    "notes": "No blindness claim is made. Claude Message 001 returned AMEND rather than REOPEN. ChatGPT accepts the narrow amendment direction, but because A1/A2 materially change the owner-accepted Level-1 placement rules, explicit owner amendment is required before R6/R7."
+    "notes": "No blindness claim is made. Claude Message 001 returned AMEND rather than REOPEN; ChatGPT reconciled the amendment in Message 002; the owner explicitly chose AMEND; Message 003 closes the thread. R6 may proceed under Research 248."
   },
   "last_transition": {
-    "transition_id": "mc0023-reconciled-owner-amendment-decision",
-    "from_state": "OPEN",
-    "to_state": "WAITING",
+    "transition_id": "mc0023-owner-amendment-accepted-resolved",
+    "from_state": "WAITING",
+    "to_state": "RESOLVED",
     "actor": "chatgpt",
-    "reason": "Claude Message 001 found a narrow material Level-1 procedure defect but supported the Product/Project distinction. ChatGPT accepts the A1/A2 amendment direction and freezes it for explicit owner decision before R6/R7.",
-    "repository_head": "ff9b10a8b71ccac93683610092b3048143296410"
+    "reason": "The project owner explicitly chose AMEND, accepting A1 cross-plane resolution, A2 bounded true-root responsibility and the reconciled R6/R7 guardrails. MC-0023 is resolved and R6 is unblocked.",
+    "repository_head": "3aebde8aca9e0daf69ddcf5cdac073a7eea13eb8"
   }
 }
