@@ -1,7 +1,7 @@
 # Project-Development Knowledge Architecture Requirements V0.2
 
 **Date frozen:** 2026-09-13
-**Status:** OWNER-ACCEPTED / FROZEN REQUIREMENTS BOUNDARY V0.2 / TARGET ARCHITECTURE NOT SELECTED
+**Status:** OWNER-ACCEPTED / FROZEN V0.2 BASELINE WITH PROSPECTIVE AO-9 P7-D02 AMENDMENT
 **Owner acceptance:** explicit approval in `chatgpt-23` after Research 130 reconciliation
 **Scope:** Architecture-neutral acceptance requirements and invariants for the successor project-development knowledge architecture supporting development of ADS. This is not the architecture of the ADS product itself.
 **Supersedes for candidate-design purposes:** the original Phase-B KA-R01..KA-R45 and KA-I01..KA-I15 wording embedded in Research 124. The original wording remains durable historical provenance.
@@ -332,6 +332,15 @@ Universal bitemporal/tritemporal structure is not required for knowledge where t
 
 The architecture must provide a recurring mechanism for reducing active-routing/context pressure as knowledge accumulates while preserving durable history, provenance and drill-down. Consolidation should be triggered by measurable lifecycle/saturation pressure or explicit transition rather than arbitrary file-count aesthetics, and high-consequence consolidation must satisfy the relevant fidelity/view contract before detail becomes latent.
 
+### KA-R51: control-miss and owner-reminder observability
+**Strength:** MUST capability / QUALIFICATION MUST
+
+Material control-behavior misses must be observable enough to become qualification and architecture-evolution evidence without depending solely on the project owner to notice, remember or preserve the failure. This includes, where materially applicable, activation misses, architecture-evolution trigger misses and cases where the owner must remind the system of a governing mechanism, deferred obligation, known risk/reopen trigger or required project process that should already have activated.
+
+The requirement is for bounded, inspectable observability of material control failures, not exhaustive logging of every interaction, model intermediate or control decision. A detected miss is evidence only: it does not automatically change architecture, grant authority, or imply that every candidate miss is valid. Production/shadow qualification must demonstrate mechanical surfacing of representative misses without owner path naming or reminder while preserving low-consequence precision.
+
+**Prospective amendment provenance:** accepted by the project owner at AO-9 P7-D02 on 2026-09-22 from the evidence reconciled in Research 227 and Research 228-234. Acceptance creates the requirement; it does not claim executable satisfaction. AO-10 must qualify the realization.
+
 ## 10. Frozen architecture invariants V0.2
 
 ```text
@@ -433,12 +442,15 @@ Research 124 original Phase-B KA-R01..KA-R45 / KA-I01..KA-I15
     = historical predecessor requirements boundary retained as provenance
 ```
 
-This freeze does not authorize implementation or target selection.
+The original V0.2 freeze did not authorize implementation or target selection. The later AO-9 P7-D02 amendment adds only KA-R51 prospectively; it does not itself authorize implementation, claim executable satisfaction, or change project authority.
 
 ```text
-REQUIREMENTS_V02=FROZEN
-REQUIREMENTS_COUNT=50
+REQUIREMENTS_V02=FROZEN_BASELINE_WITH_PROSPECTIVE_AMENDMENT
+REQUIREMENTS_COUNT=51
 INVARIANTS_COUNT=17
-TARGET_ARCHITECTURE=NOT_SELECTED
-NEXT=WITHHELD_OWNER_SOURCE_INCREMENTAL_EVALUATION
+AO9_P7_D02=ACCEPT_REQUIREMENT
+KA_R51=ACCEPTED_NOT_EXECUTABLY_QUALIFIED
+TARGET_ARCHITECTURE_ORIGINAL_FREEZE_STATE=NOT_SELECTED
+CURRENT_SELECTED_SUCCESSOR=PKA-CANDIDATE-01
+NEXT=AO9_P7_D03_OWNER_DECISION
 ```

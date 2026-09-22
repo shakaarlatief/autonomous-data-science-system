@@ -2,7 +2,7 @@
   "schema_version": 1,
   "reconciliation_id": "AO9-RECONCILIATION-V01",
   "date": "2026-09-21",
-  "status": "P6_COMPLETE_OWNER_DECISIONS_PENDING",
+  "status": "P7_PARTIAL_D01_D02_ACCEPTED_D03_PENDING",
   "authority_class": "research_reconciliation",
   "program": "Research 219",
   "evidence": {
@@ -21,17 +21,17 @@
     ],
     "wholesale_C_qualification": false,
     "positive_path_boundedness": "UNRESOLVED",
-    "ao8_e01": "SUPPORT_AMEND_PENDING_OWNER",
-    "R51": "SUPPORTED_REQUIREMENT_CANDIDATE_PENDING_OWNER",
+    "ao8_e01": "ACCEPTED_AMEND",
+    "R51": "ACCEPTED_REQUIREMENT_NOT_EXECUTABLY_QUALIFIED",
     "R52": "STRONGLY_SUPPORTED_REQUIREMENT_CANDIDATE_PENDING_OWNER",
     "R52_mechanism_present_in_frozen_candidate": false
   },
   "ao10_conditional_qualification_obligations": [
     "preserve strong planner/reconstruction baseline",
-    "qualify independent pre-dispatch output/action-shape re-entry if owner accepts AO8-E01",
+    "qualify accepted independent pre-dispatch output/action-shape re-entry",
     "qualify low-consequence precision and question-is-not-mutation negative controls",
     "meet or explicitly disposition frozen read/tool budgets",
-    "prove mechanical control-miss / reopen-trigger surfacing if R51 is accepted",
+    "prove accepted KA-R51 mechanical control-miss / reopen-trigger surfacing",
     "provide deterministic accepted-MUST realization traceability if R52 is accepted",
     "close AO10-O01 governed branch attach/switch and selected rotation realization",
     "close AO10-O02 Specification 028 representation compatibility before production mutation"
@@ -41,14 +41,17 @@
       "id": "P7-D01",
       "subject": "AO8-E01 / Research 222",
       "evidence_disposition": "SUPPORT_AMEND",
-      "decision_needed": "AMEND or KEEP/DEFER",
+      "owner_decision": "AMEND",
+      "decision_date": "2026-09-22",
       "proposed_amendment_scope": "independent pre-dispatch output/action-shape re-entry only"
     },
     {
       "id": "P7-D02",
       "subject": "Requirements V0.2 KA-R51 candidate",
       "evidence_disposition": "SUPPORTED_BUT_NOT_EXECUTABLY_QUALIFIED",
-      "decision_needed": "ACCEPT_REQUIREMENT or DEFER/REJECT"
+      "owner_decision": "ACCEPT_REQUIREMENT",
+      "decision_date": "2026-09-22",
+      "result": "KA-R51 accepted prospectively; executable satisfaction remains to be qualified in AO-10"
     },
     {
       "id": "P7-D03",
@@ -58,13 +61,13 @@
     }
   ],
   "nondecisions": {
-    "research_222_amended": false,
-    "requirements_v02_amended": false,
+    "research_222_amended": true,
+    "requirements_v02_amended": true,
     "specification_028_amended": false,
     "production_implementation_authorized": false,
     "operational_authority_changed": false,
     "authority_switch_allowed": false
   },
   "current_boundary": "project-knowledge-owner-decision-boundary",
-  "next": "AO9_P7_OWNER_DECISIONS"
+  "next": "AO9_P7_D03_OWNER_DECISION"
 }
