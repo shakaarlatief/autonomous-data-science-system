@@ -481,6 +481,7 @@ docs/research/250_r6a_responsibility_coupling_bounded_context_and_workspace_synt
 docs/research/251_r6_bounded_context_architecture_owner_acceptance_and_r6b_entry.md
 docs/research/252_r6b_current_to_target_mapping_and_structural_disposition_matrix.md
 docs/research/253_r7a_from_scratch_project_information_model_authority_and_lifecycle.md
+docs/research/254_r7b_target_project_information_hierarchy_and_research218_supersession_candidate.md
 docs/checkpoints/570_whole_repository_physical_architecture_scope_clarified.md
 docs/checkpoints/571_whole_repository_r2_boundaries_identified.md
 docs/checkpoints/572_whole_repository_r3_candidate_archetypes_frozen.md
@@ -495,6 +496,7 @@ docs/checkpoints/580_r6_bounded_context_architecture_recommended.md
 docs/checkpoints/581_r6_boundary_architecture_accepted_r6b_unblocked.md
 docs/checkpoints/582_r6b_mapping_complete_r7_unblocked.md
 docs/checkpoints/583_r7a_project_information_model_frozen.md
+docs/checkpoints/584_r7_target_project_information_architecture_recommended.md
 docs/research/project_knowledge_activation_orchestration/README.md
 docs/research/project_knowledge_activation_orchestration/001_chat26_owner_source_interaction_orchestration_evidence.md
 docs/research/project_knowledge_activation_orchestration/002_chat27_activation_self_hosting_bootstrap_evidence.md
@@ -1126,7 +1128,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-583 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-584 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 
