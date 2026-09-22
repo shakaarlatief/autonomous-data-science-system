@@ -1,7 +1,7 @@
 # MC-0023 Thread: Adversarial Review of Accepted G-DUAL Architecture
 
 **Thread:** MC-0023
-**Status:** OPEN / CLAUDE ADVERSARIAL G-DUAL REVIEW NEXT
+**Status:** WAITING / ADVERSARIAL REVIEW RECONCILED / OWNER G-DUAL AMENDMENT DECISION NEXT
 **Review mode:** ADVERSARIAL_REVIEW
 **Review requirement:** REQUIRED BEFORE R6/R7 DETAIL
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -22,9 +22,9 @@ The owner has also explicitly clarified that every current lower-level folder/su
 ## Expected sequence
 
 ```text
-001  Claude adversarial G-DUAL review             NEXT
-002  ChatGPT disposition/reconciliation           AFTER 001
-003+ only if a concrete unresolved architecture disagreement remains
+001  Claude adversarial G-DUAL review             COMPLETE
+002  ChatGPT disposition/reconciliation           COMPLETE
+003+ only if owner decision or a concrete unresolved disagreement requires it
 ```
 
 ## Write ownership
@@ -52,7 +52,10 @@ AUTHORITY_SWITCH_ALLOWED=false
 ```
 
 ```text
-MC0023=OPEN
-PHASE=CLAUDE_ADVERSARIAL_G_DUAL_REVIEW
-NEXT=CLAUDE_MESSAGE_001
+MC0023=WAITING
+PHASE=OWNER_G_DUAL_AMENDMENT_DECISION
+CLAUDE_MESSAGE_001=ff9b10a8b71ccac93683610092b3048143296410
+CHATGPT_MESSAGE_002=docs/model_collaboration/threads/MC-0023/messages/002_chatgpt_disposition_and_g_dual_amendment_candidate.md
+PROPOSED_DISPOSITION=AMEND
+NEXT=OWNER_AMENDMENT_DECISION
 ```

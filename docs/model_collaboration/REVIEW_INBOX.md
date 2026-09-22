@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-22
-**Status:** MC-0023 ACTIVE / CLAUDE ADVERSARIAL G-DUAL REVIEW NEXT / MC-0010 DEFERRED
+**Status:** MC-0023 WAITING / G-DUAL AMENDMENT OWNER DECISION NEXT / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -31,12 +31,13 @@ coordination branch   v1-source-vault-bootstrap-resume
 exact review target   33af35442df7350d9571e4f59108c393759ad4b3
 reviewer              Claude / persistent claude-03
 conversation title    03 - Project Knowledge Architecture Foundations and Design Method
-phase                 CLAUDE_ADVERSARIAL_G_DUAL_REVIEW
-write scope           docs/model_collaboration/threads/MC-0023/messages/**
-next                   Claude Message 001
+phase                 OWNER_G_DUAL_AMENDMENT_DECISION
+Claude Message 001    ff9b10a8b71ccac93683610092b3048143296410
+ChatGPT Message 002   reconciliation / amendment candidate
+next                   owner AMEND / reject / redirect decision
 ```
 
-The owner has accepted G-DUAL only at Level 1 and has explicitly clarified that all lower-level folders, subsystem names, conceptual groupings and representations remain fully open to from-scratch redesign. MC-0023 should attack the dual-plane distinction and search for hidden current-structure inheritance before R6/R7 detailed design begins.
+Claude's adversarial review supports the Product/Project distinction but identifies two material Level-1 procedure amendments: A1 cross-plane resolution and A2 complete/bounded true-root responsibility, plus derive-before-map and lifecycle/workspace guardrails. ChatGPT accepts the amendment direction in Message 002. Because the amendments modify an owner-accepted Level-1 rule, MC-0023 now waits for explicit owner decision before R6/R7.
 
 ## Most recently completed obligation
 
