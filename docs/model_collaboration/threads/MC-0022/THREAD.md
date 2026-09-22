@@ -8,15 +8,15 @@
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
 **Independent substantive base:** `c7252e182b6068954aca804fb064a10e37e298a4`
 **Task owner:** ChatGPT / `chatgpt-29`
-**Reviewer:** Claude / intended `claude-04`
-**Claude conversation title:** `04 - Project Knowledge Architecture Residency and Reuse Review`
+**Reviewer:** Claude / persistent `claude-03`
+**Claude conversation title:** `03 - Project Knowledge Architecture Foundations and Design Method`
 **Authority:** Collaboration evidence only.
 
 ## Purpose
 
 Independently challenge the fundamental residency, ownership, reuse and instantiation boundary of the project-development knowledge/control architecture before ChatGPT freezes a topology recommendation.
 
-The review should start from pre-candidate repository evidence and the neutral question in `BRIEF.md`, not from ChatGPT's later topology synthesis.
+The review should start from pre-candidate repository evidence and the neutral question in `BRIEF.md`, not from ChatGPT's later topology synthesis. Claude may and should use its preserved `claude-03` project-knowledge architecture context from MC-0011 through MC-0018; the independence claim is blindness to the new PKIA-E01 residency framing/candidate, not blindness to the architecture history it helped create.
 
 ## Independence contract
 

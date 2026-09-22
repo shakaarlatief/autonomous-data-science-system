@@ -29,14 +29,14 @@ This inbox intentionally does not duplicate that state except where needed to ex
 mode                  INDEPENDENT_THEN_COMPARATIVE
 coordination branch   v1-source-vault-bootstrap-resume
 independent base      c7252e182b6068954aca804fb064a10e37e298a4
-reviewer              Claude / intended claude-04
-conversation title    04 - Project Knowledge Architecture Residency and Reuse Review
+reviewer              Claude / persistent claude-03
+conversation title    03 - Project Knowledge Architecture Foundations and Design Method
 phase                 CLAUDE_INDEPENDENT_RESIDENCY_ARCHITECTURE
 write scope           docs/model_collaboration/threads/MC-0022/messages/**
 next                   Claude Message 001
 ```
 
-MC-0022 independently evaluates the residency, ownership, reuse and project-instantiation boundary of the project-development knowledge/control architecture before ChatGPT freezes a topology recommendation. Current-branch reads are limited by the thread's independence contract; substantive review evidence is bound to the exact base above. Research 236, Research 237, Checkpoint 567 and descendant PKIA candidate synthesis are excluded from the independent phase.
+MC-0022 independently evaluates the residency, ownership, reuse and project-instantiation boundary of the project-development knowledge/control architecture before ChatGPT freezes a topology recommendation. The existing `claude-03` knowledge-architecture conversation is intentionally reused: its preserved MC-0011 through MC-0018 context is allowed and desirable, while the review remains blind to the new PKIA-E01 framing/candidate. Current-branch reads are limited by the thread's independence contract; substantive repository evidence is bound to the exact base above. Research 236, Research 237, Checkpoint 567 and descendant PKIA candidate synthesis are excluded from the independent phase.
 
 ## Most recently completed obligation
 

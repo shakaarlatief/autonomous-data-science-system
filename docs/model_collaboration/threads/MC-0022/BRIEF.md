@@ -5,10 +5,12 @@
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
 **Independent substantive base:** `c7252e182b6068954aca804fb064a10e37e298a4`
-**Reviewer control:** fresh Claude architecture-review conversation
-**Intended Claude interaction:** `claude-04`
-**Intended Claude conversation title:** `04 - Project Knowledge Architecture Residency and Reuse Review`
+**Reviewer control:** persistent Claude project-knowledge architecture-design conversation, candidate-blind to the new PKIA-E01 topology framing
+**Claude interaction:** `claude-03`
+**Claude conversation title:** `03 - Project Knowledge Architecture Foundations and Design Method`
 **Authority:** Collaboration evidence only. This thread does not change Research 218, Research 177, Specification 028, Candidate 01, current operational authority, W5, AO-10 or any project-knowledge authority boundary.
+
+**Reviewer-control amendment:** MC-0022 was initially opened for a fresh `claude-04` conversation, but before any Claude message was sent the owner challenged that choice. The thread now intentionally reuses persistent `claude-03`, which co-designed the project-knowledge architecture through MC-0011 through MC-0018. Its historical context is useful evidence; blindness is required only to the new PKIA-E01 residency framing/candidate.
 
 ## 1. Purpose
 
@@ -40,9 +42,9 @@ docs/model_collaboration/threads/MC-0022/THREAD.md
 docs/model_collaboration/threads/MC-0022/STATE.json
 ```
 
-All substantive architecture evidence must come from the exact independent base above.
+All substantive repository evidence must come from the exact independent base above. Claude's preserved `claude-03` context from the earlier project-knowledge architecture program, including MC-0011 through MC-0018, is explicitly allowed and desirable. This review is **candidate-blind, not history-blind**: prior participation in Candidate 01 and W5 design is part of the evidence base rather than contamination.
 
-For the independent phase, do **not** read these exact-base files because they contain ChatGPT's current framing of the residency design space:
+For the independent phase, do **not** read these exact-base files because they contain ChatGPT's new PKIA-E01 residency framing or synthesis:
 
 ```text
 docs/research/236_project_knowledge_information_architecture_evolution_case_and_residency_boundary.md
@@ -290,7 +292,7 @@ Write exactly one durable response at:
 docs/model_collaboration/threads/MC-0022/messages/001_claude_independent_residency_and_reuse_architecture.md
 ```
 
-Include collaboration provenance, intended interaction `claude-04`, conversation title `04 - Project Knowledge Architecture Residency and Reuse Review`, and exact independent base.
+Include collaboration provenance, interaction `claude-03`, conversation title `03 - Project Knowledge Architecture Foundations and Design Method`, and exact independent base.
 
 Do not modify any other repository path.
 

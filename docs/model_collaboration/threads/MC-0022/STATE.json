@@ -26,7 +26,7 @@
     {
       "collaborator_id": "claude",
       "interaction_environment": "Claude",
-      "interaction_session": "claude-04",
+      "interaction_session": "claude-03",
       "roles": [
         "INDEPENDENT_REVIEWER",
         "COUNTER_DESIGNER",
@@ -58,16 +58,17 @@
     "known_exposures": [
       "Claude receives the neutral residency/reuse question and exact pre-candidate repository evidence.",
       "Research 236, Research 237, Checkpoint 567, descendant CURRENT_STATE/KNOWLEDGE_MAP synthesis and future PKIA candidate material are excluded before Message 001.",
-      "Earlier Research 177/218 and Research 219-235 are intentionally available because they are pre-candidate evidence needed to understand the current architecture and control-plane growth."
+      "Earlier Research 177/218 and Research 219-235 are intentionally available because they are pre-candidate evidence needed to understand the current architecture and control-plane growth.",
+      "Claude may use its preserved claude-03 context from MC-0011 through MC-0018; prior participation in the project-knowledge architecture is intentionally treated as useful historical context, not contamination."
     ],
-    "notes": "Independence is candidate-blind rather than history-blind. Claude may independently derive any topology, including project-native, external, materialized, hybrid or another design, but is not shown ChatGPT's current topology framing before Message 001."
+    "notes": "Independence is candidate-blind rather than history-blind. The persistent claude-03 architecture-design session is intentionally reused because its MC-0011 through MC-0018 context can expose assumptions and rationale from the architecture it helped design. Claude may independently derive any topology, including project-native, external, materialized, hybrid or another design, but is not shown ChatGPT's new PKIA-E01 topology framing before Message 001."
   },
   "last_transition": {
-    "transition_id": "mc0022-open-independent-residency-review",
-    "from_state": null,
+    "transition_id": "mc0022-reviewer-control-amended-to-claude03",
+    "from_state": "OPEN",
     "to_state": "OPEN",
     "actor": "chatgpt",
-    "reason": "PKIA-E01 reached the point where a candidate-blind second-model review can add epistemic value before ChatGPT freezes a topology recommendation.",
-    "repository_head": "c7252e182b6068954aca804fb064a10e37e298a4"
+    "reason": "Before any Claude response, the owner challenged the planned fresh claude-04 session. The review now intentionally reuses persistent claude-03 so earlier project-knowledge architecture context remains available while blindness is preserved only against the new PKIA-E01 residency framing and candidate.",
+    "repository_head": "1f9305ff9d4f093696afe5c1d75aa809f05be525"
   }
 }
