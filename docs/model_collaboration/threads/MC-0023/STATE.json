@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "thread_id": "MC-0023",
+  "review_mode": "ADVERSARIAL_REVIEW",
+  "lifecycle_state": "OPEN",
+  "phase": "CLAUDE_ADVERSARIAL_G_DUAL_REVIEW",
+  "target": {
+    "branch": "v1-source-vault-bootstrap-resume",
+    "base_ref": "33af35442df7350d9571e4f59108c393759ad4b3",
+    "description": "Adversarial review of the owner-accepted G-DUAL Level-1 whole-repository architecture and from-scratch lower-level design boundary before R6/R7 detailed design.",
+    "write_paths": []
+  },
+  "task_owner": "chatgpt",
+  "target_write_owner": null,
+  "participants": [
+    {
+      "collaborator_id": "chatgpt",
+      "interaction_environment": "ChatGPT",
+      "interaction_session": "chatgpt-29",
+      "roles": [
+        "TASK_OWNER",
+        "RESEARCHER",
+        "CRITIC"
+      ]
+    },
+    {
+      "collaborator_id": "claude",
+      "interaction_environment": "Claude",
+      "interaction_session": "claude-03",
+      "roles": [
+        "REVIEWER",
+        "RESEARCHER",
+        "CRITIC",
+        "COUNTER_DESIGNER"
+      ]
+    },
+    {
+      "collaborator_id": "human",
+      "interaction_environment": "Human",
+      "interaction_session": "project-owner",
+      "roles": [
+        "HUMAN_DECIDER"
+      ]
+    }
+  ],
+  "allowed_secondary_write_surfaces": [
+    {
+      "collaborator_id": "claude",
+      "paths": [
+        "docs/model_collaboration/threads/MC-0023/messages/**"
+      ]
+    }
+  ],
+  "next_expected_actor": "claude",
+  "independence": {
+    "status": "NOT_APPLICABLE",
+    "review_base_ref": "33af35442df7350d9571e4f59108c393759ad4b3",
+    "known_exposures": [
+      "Claude may use its persistent claude-03 context from the full project-knowledge architecture program.",
+      "The review intentionally exposes Research 240-246, the accepted G-DUAL target, PSMF evidence and prior MC-0022 collaboration.",
+      "The owner has already accepted G-DUAL at Level 1; the review is adversarial post-acceptance verification, not independent candidate generation."
+    ],
+    "notes": "No blindness claim is made. Exact-target binding exists for reproducibility and drift control."
+  },
+  "last_transition": {
+    "transition_id": "mc0023-open-adversarial-g-dual-review",
+    "from_state": "OPEN",
+    "to_state": "OPEN",
+    "actor": "chatgpt",
+    "reason": "Owner accepted G-DUAL as the Level-1 target and explicitly allowed Claude review. A bounded adversarial pass is opened before R6/R7 to test the dual-plane distinction and ensure lower-level design remains genuinely from-scratch.",
+    "repository_head": "33af35442df7350d9571e4f59108c393759ad4b3"
+  }
+}

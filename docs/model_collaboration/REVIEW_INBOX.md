@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-22
-**Status:** NO ACTIVE CLAUDE OBLIGATION / MC-0022 RESOLVED / PKIA G1 OWNED BY CHATGPT / MC-0010 DEFERRED
+**Status:** MC-0023 ACTIVE / CLAUDE ADVERSARIAL G-DUAL REVIEW NEXT / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -23,7 +23,20 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Current active collaboration obligation
 
-There is no active Claude obligation. MC-0022 is resolved after candidate-blind Message 001, ChatGPT PSMF Message 002, Claude comparative Message 003 and ChatGPT reconciliation Message 004. PKIA-E01 G1 lifecycle-independence measurement is now owned by ChatGPT under Research 238. A new collaborator route should open only if G1 ambiguity or later architecture evidence creates a concrete review obligation.
+### MC-0023: adversarial review of accepted G-DUAL whole-repository architecture
+
+```text
+mode                  ADVERSARIAL_REVIEW
+coordination branch   v1-source-vault-bootstrap-resume
+exact review target   33af35442df7350d9571e4f59108c393759ad4b3
+reviewer              Claude / persistent claude-03
+conversation title    03 - Project Knowledge Architecture Foundations and Design Method
+phase                 CLAUDE_ADVERSARIAL_G_DUAL_REVIEW
+write scope           docs/model_collaboration/threads/MC-0023/messages/**
+next                   Claude Message 001
+```
+
+The owner has accepted G-DUAL only at Level 1 and has explicitly clarified that all lower-level folders, subsystem names, conceptual groupings and representations remain fully open to from-scratch redesign. MC-0023 should attack the dual-plane distinction and search for hidden current-structure inheritance before R6/R7 detailed design begins.
 
 ## Most recently completed obligation
 
