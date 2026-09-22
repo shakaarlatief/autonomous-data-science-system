@@ -3,7 +3,7 @@
   "architecture_id": "AO3-PROGRESSIVE-CONTROL-CLOSURE-V01",
   "date": "2026-09-21",
   "authority_class": "research_output",
-  "status": "AO3_CONCEPTUAL_BASELINE",
+  "status": "AO3_CONCEPTUAL_BASELINE_PROSPECTIVELY_AMENDED_P7_D01",
   "governing_program": "research:219",
   "source_synthesis": "research:221",
   "name": "Progressive Control Closure",
@@ -437,6 +437,41 @@
     "Git lifecycle rules",
     "bridge transport",
     "authority switch"
+  ],
+  "prospective_amendments": [
+    {
+      "id": "AO9-P7-D01",
+      "decision_date": "2026-09-22",
+      "owner_disposition": "AMEND",
+      "evidence_source": [
+        "Research 227 AO8-E01",
+        "Research 228-234 AO-9"
+      ],
+      "affected_scope": "pre-dispatch control path",
+      "rule": "Independently inspect the proposed output/action for consequential shape before final dispatch or consequential mutation. If a relevant shape fires and sufficient AuthorityReceipt/ActionContract closure is absent, re-enter bounded reconstruction/authority closure and then return to normal conformance.",
+      "candidate_shapes": [
+        "ordered operational/procedural steps",
+        "repository/tool/runtime mutation",
+        "frozen-design assertion or change",
+        "Git ref action",
+        "external dispatch or handoff",
+        "authoritative current-project assertion"
+      ],
+      "non_effects": [
+        "does not replace event/state activation",
+        "does not infer owner mutation permission",
+        "does not authorize the proposed action",
+        "does not make derived control evidence authoritative",
+        "does not adopt other Arm-D-only refinements",
+        "does not require deep reconstruction for ordinary low-consequence output"
+      ],
+      "qualification": [
+        "AO10-Q02",
+        "negative-control precision",
+        "false-positive behavior",
+        "bounded read/tool cost"
+      ]
+    }
   ],
   "authority_boundary": {
     "current_operational_authority": "CURRENT_CONTINUITY_ARCHITECTURE",

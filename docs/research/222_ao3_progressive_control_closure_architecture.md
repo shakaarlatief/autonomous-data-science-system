@@ -1,7 +1,7 @@
 # Research 222: AO-3 Progressive Control Closure Architecture
 
 **Date:** 2026-09-21
-**Status:** AO-3 COMPLETE / PROGRESSIVE CONTROL CLOSURE SELECTED AS CONCEPTUAL BASELINE / AO-4 NEXT / W5-F0 REMAINS PAUSED
+**Status:** AO-3 COMPLETE / PROGRESSIVE CONTROL CLOSURE SELECTED AS CONCEPTUAL BASELINE / PROSPECTIVELY AMENDED BY AO-9 P7-D01 / W5-F0 REMAINS PAUSED
 **Program:** Research 219
 **Prior synthesis:** Research 221 / AO-2
 **Machine synthesis:** `docs/research/project_knowledge_activation_orchestration/AO3_PROGRESSIVE_CONTROL_CLOSURE_V01.json`
@@ -577,4 +577,51 @@ W5_F0=PAUSED_BEFORE_IMPLEMENTATION
 CURRENT_OPERATIONAL_AUTHORITY=CURRENT_CONTINUITY_ARCHITECTURE
 AUTHORITY_SWITCH_ALLOWED=false
 NEXT=AO_4_ARCHITECTURE_EVOLUTION_AND_FROZEN_CONTRACT_GOVERNANCE
+```
+
+## 24. Prospective amendment accepted at AO-9 P7-D01
+
+**Decision date:** 2026-09-22
+**Owner disposition:** `AMEND`
+**Evidence basis:** Research 227 AO8-E01, Research 228-234 AO-9 regression and reconciliation evidence
+**Affected scope:** AO-3 pre-dispatch control path only
+
+The owner accepts the narrowly supported AO8-E01 amendment. The original AO-3 architecture above remains the historical baseline; this section prospectively amends the transition from proposed result to normal conformance.
+
+Before final dispatch or consequential mutation, the control plane MUST independently inspect the proposed output/action for consequential shape. Candidate shapes include:
+
+```text
+ordered operational/procedural steps
+repository/tool/runtime mutation
+frozen-design assertion or change
+Git ref action
+external dispatch or handoff
+authoritative current-project assertion
+```
+
+If a relevant shape fires and sufficient `AuthorityReceipt` / `ActionContract` closure is absent, the cycle MUST re-enter bounded reconstruction/authority closure and then return to normal pre-dispatch conformance.
+
+This screen is independent of the earlier S3 obligation classification. It exists specifically so an early event/control-classification miss cannot propagate unchallenged when the proposed result itself reveals consequential structure.
+
+The amendment does **not**:
+
+```text
+replace event/state activation
+infer owner mutation permission
+authorize the proposed action
+make derived control evidence authoritative
+adopt other Arm-D-only refinements
+require deep reconstruction for ordinary low-consequence output
+```
+
+AO-10 must qualify this amendment for precision, false-positive behavior and bounded read/tool cost, including negative controls proving that ordinary low-consequence explanation, topical adjacency and a question by itself do not trigger unnecessary authority closure.
+
+```text
+AO9_P7_D01=AMEND
+AO8_E01=ACCEPTED_PROSPECTIVE_AMENDMENT
+INDEPENDENT_OUTPUT_ACTION_SHAPE_REENTRY=REQUIRED
+AO10_Q02=REQUIRED
+RESEARCH222_AMENDED=true
+CURRENT_OPERATIONAL_AUTHORITY=CURRENT_CONTINUITY_ARCHITECTURE
+AUTHORITY_SWITCH_ALLOWED=false
 ```
