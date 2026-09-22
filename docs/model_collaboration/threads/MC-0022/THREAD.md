@@ -1,7 +1,7 @@
 # MC-0022 Thread: Independent Project-Knowledge Architecture Residency and Reuse Review
 
 **Thread:** MC-0022
-**Status:** ACTIVE / CHATGPT PSMF CANDIDATE FROZEN / CLAUDE COMPARATIVE RESIDENCY REVIEW NEXT
+**Status:** RESOLVED / PSMF LEADING TARGET HYPOTHESIS / G1 LIFECYCLE-INDEPENDENCE MEASUREMENT NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Review requirement:** REQUIRED
 **Gate boundary:** BEFORE THREAD RESOLUTION / PKIA-E01 reconciliation waits for comparative review
@@ -31,8 +31,8 @@ Comparative Phase 2 intentionally exposes Research 236, Research 237, Checkpoint
 ```text
 001  Claude independent residency/reuse architecture          COMPLETE
 002  ChatGPT PSMF candidate + comparative exposure            COMPLETE
-003  Claude comparative/adversarial review                    NEXT
-004  ChatGPT reconciliation / PKIA-E01 candidate disposition  AFTER 003
+003  Claude comparative/adversarial review                    COMPLETE
+004  ChatGPT reconciliation / PKIA-E01 candidate disposition  COMPLETE
 ```
 
 Additional bounded messages are allowed only when material architecture disagreement remains.
@@ -61,9 +61,11 @@ AUTHORITY_SWITCH_ALLOWED=false
 ```
 
 ```text
-MC0022=ACTIVE
-PHASE=CLAUDE_COMPARATIVE_RESIDENCY_REVIEW
+MC0022=RESOLVED
+PHASE=RESOLVED_PSMF_LEADING_TARGET_G1_NEXT
 INDEPENDENT_MESSAGE_001=d842b665ee4f2de5330cb2a2884461bd5f4af1d6
 CHATGPT_CANDIDATE_MESSAGE_002=a3539c797c1d306e11048246bda829da730831f3
-NEXT=CLAUDE_MESSAGE_003
+CLAUDE_COMPARATIVE_MESSAGE_003=98bf05e03b59205ee5b8f7e6f08b2489114fb51b
+RECONCILIATION_MESSAGE_004=docs/model_collaboration/threads/MC-0022/messages/004_chatgpt_reconciliation_and_residency_disposition.md
+NEXT=PKIA_G1_LIFECYCLE_INDEPENDENCE_MEASUREMENT
 ```

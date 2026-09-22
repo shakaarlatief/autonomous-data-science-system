@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-22
-**Status:** MC-0022 ACTIVE / CHATGPT PSMF CANDIDATE FROZEN / CLAUDE COMPARATIVE PKIA REVIEW NEXT / MC-0010 DEFERRED
+**Status:** NO ACTIVE CLAUDE OBLIGATION / MC-0022 RESOLVED / PKIA G1 OWNED BY CHATGPT / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -23,24 +23,22 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Current active collaboration obligation
 
-### MC-0022: independent project-knowledge architecture residency and reuse review
-
-```text
-mode                  INDEPENDENT_THEN_COMPARATIVE
-coordination branch   v1-source-vault-bootstrap-resume
-independent base      c7252e182b6068954aca804fb064a10e37e298a4
-reviewer              Claude / persistent claude-03
-conversation title    03 - Project Knowledge Architecture Foundations and Design Method
-phase                 CLAUDE_COMPARATIVE_RESIDENCY_REVIEW
-independent message   001 @ d842b665ee4f2de5330cb2a2884461bd5f4af1d6
-candidate message     002 @ a3539c797c1d306e11048246bda829da730831f3
-write scope           docs/model_collaboration/threads/MC-0022/messages/**
-next                   Claude Message 003
-```
-
-Claude Message 001 is frozen as the uncontaminated pre-candidate position. ChatGPT Message 002 now intentionally exposes the withheld PKIA-E01 framing and proposes a Project-Sovereign Materialized Framework target: generic upstream authoring with complete project-local materialization, no external project authority/runtime dependency, explicit lineage, governed upgrades and local divergence. Claude `claude-03` should now perform the comparative/adversarial Message 003 defined by MC-0022.
+There is no active Claude obligation. MC-0022 is resolved after candidate-blind Message 001, ChatGPT PSMF Message 002, Claude comparative Message 003 and ChatGPT reconciliation Message 004. PKIA-E01 G1 lifecycle-independence measurement is now owned by ChatGPT under Research 238. A new collaborator route should open only if G1 ambiguity or later architecture evidence creates a concrete review obligation.
 
 ## Most recently completed obligation
+
+### MC-0022: project-knowledge architecture residency and reuse review
+
+```text
+RESOLVED
+mode                  INDEPENDENT_THEN_COMPARATIVE
+independent base      c7252e182b6068954aca804fb064a10e37e298a4
+independent message   001 @ d842b665ee4f2de5330cb2a2884461bd5f4af1d6
+candidate message     002 @ a3539c797c1d306e11048246bda829da730831f3
+comparative message   003 @ 98bf05e03b59205ee5b8f7e6f08b2489114fb51b
+reconciliation        Message 004
+result                PSMF leading target hypothesis; owner decision withheld; G1 lifecycle gate next
+```
 
 ### MC-0021: AO-8 independent activation/orchestration architecture review
 

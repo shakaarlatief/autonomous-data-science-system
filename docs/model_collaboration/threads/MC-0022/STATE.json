@@ -2,12 +2,12 @@
   "schema_version": 1,
   "thread_id": "MC-0022",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
-  "lifecycle_state": "ACTIVE",
-  "phase": "CLAUDE_COMPARATIVE_RESIDENCY_REVIEW",
+  "lifecycle_state": "RESOLVED",
+  "phase": "RESOLVED_PSMF_LEADING_TARGET_G1_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
-    "base_ref": "a3539c797c1d306e11048246bda829da730831f3",
-    "description": "Comparative review of Claude Message 001 against ChatGPT Message 002 Project-Sovereign Materialized Framework candidate, with the frozen independent base retained in the independence record.",
+    "base_ref": "98bf05e03b59205ee5b8f7e6f08b2489114fb51b",
+    "description": "Resolved independent-then-comparative residency review. PSMF is the jointly supported leading target hypothesis; owner acceptance and mechanism extraction remain withheld while PKIA-E01 proceeds to the preregistered G1 lifecycle-independence measurement.",
     "write_paths": []
   },
   "task_owner": "chatgpt",
@@ -51,7 +51,7 @@
       ]
     }
   ],
-  "next_expected_actor": "claude",
+  "next_expected_actor": "chatgpt",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "c7252e182b6068954aca804fb064a10e37e298a4",
@@ -63,14 +63,14 @@
       "Claude Message 001 was durably frozen at d842b665ee4f2de5330cb2a2884461bd5f4af1d6 before candidate exposure.",
       "Comparative Phase 2 intentionally exposes Research 236, Research 237, Checkpoint 567 and ChatGPT Message 002 / PSMF candidate frozen at a3539c797c1d306e11048246bda829da730831f3."
     ],
-    "notes": "The independent position remains preserved in Message 001. Phase 2 is intentionally comparative: Claude should now read ChatGPT Message 002 and the previously withheld PKIA-E01 artifacts while retaining Message 001 as the pre-exposure reference."
+    "notes": "Message 001 preserves the candidate-blind position, Message 002 freezes the ChatGPT PSMF candidate, Message 003 performs comparative review and converges on PSMF with a new lifecycle-independence evidence gate, and Message 004 reconciles the thread. No owner acceptance or extraction authority is implied."
   },
   "last_transition": {
-    "transition_id": "mc0022-chatgpt-candidate-frozen-comparative-review-open",
-    "from_state": "OPEN",
-    "to_state": "ACTIVE",
+    "transition_id": "mc0022-resolved-psmf-g1-next",
+    "from_state": "ACTIVE",
+    "to_state": "RESOLVED",
     "actor": "chatgpt",
-    "reason": "Claude Message 001 was verified as uncontaminated and frozen at d842b665. ChatGPT then froze the Project-Sovereign Materialized Framework candidate in Message 002 at a3539c79, so comparative/adversarial review can now begin.",
-    "repository_head": "a3539c797c1d306e11048246bda829da730831f3"
+    "reason": "Claude Message 003 converged on PSMF as the target topology while identifying a distinct unmeasured lifecycle-independence claim. ChatGPT Message 004 reconciles the review and routes PKIA-E01 to a preregistered historical G1 measurement before owner disposition.",
+    "repository_head": "98bf05e03b59205ee5b8f7e6f08b2489114fb51b"
   }
 }
