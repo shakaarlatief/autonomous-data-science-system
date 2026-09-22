@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
-**Date:** 2026-09-21
-**Status:** NO ACTIVE CLAUDE OBLIGATION / MC-0021 RESOLVED / AO-9 OWNED BY CHATGPT / MC-0010 DEFERRED
+**Date:** 2026-09-22
+**Status:** MC-0022 ACTIVE / CLAUDE INDEPENDENT PKIA RESIDENCY REVIEW NEXT / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -23,7 +23,20 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Current active collaboration obligation
 
-There is no active Claude obligation. MC-0021 is resolved after blind independent Message 001, comparative Message 003 and ChatGPT reconciliation Message 004. AO-9 empirical historical-regression design is now owned by ChatGPT. A new collaborator route should open only if AO-9 evidence or Research 219 policy creates a concrete review obligation.
+### MC-0022: independent project-knowledge architecture residency and reuse review
+
+```text
+mode                  INDEPENDENT_THEN_COMPARATIVE
+coordination branch   v1-source-vault-bootstrap-resume
+independent base      c7252e182b6068954aca804fb064a10e37e298a4
+reviewer              Claude / intended claude-04
+conversation title    04 - Project Knowledge Architecture Residency and Reuse Review
+phase                 CLAUDE_INDEPENDENT_RESIDENCY_ARCHITECTURE
+write scope           docs/model_collaboration/threads/MC-0022/messages/**
+next                   Claude Message 001
+```
+
+MC-0022 independently evaluates the residency, ownership, reuse and project-instantiation boundary of the project-development knowledge/control architecture before ChatGPT freezes a topology recommendation. Current-branch reads are limited by the thread's independence contract; substantive review evidence is bound to the exact base above. Research 236, Research 237, Checkpoint 567 and descendant PKIA candidate synthesis are excluded from the independent phase.
 
 ## Most recently completed obligation
 

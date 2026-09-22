@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "thread_id": "MC-0022",
+  "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
+  "lifecycle_state": "OPEN",
+  "phase": "CLAUDE_INDEPENDENT_RESIDENCY_ARCHITECTURE",
+  "target": {
+    "branch": "v1-source-vault-bootstrap-resume",
+    "base_ref": "c7252e182b6068954aca804fb064a10e37e298a4",
+    "description": "Independent first-principles review of project-knowledge/control architecture residency, ownership, reuse and instantiation before ChatGPT freezes a topology recommendation.",
+    "write_paths": []
+  },
+  "task_owner": "chatgpt",
+  "target_write_owner": null,
+  "participants": [
+    {
+      "collaborator_id": "chatgpt",
+      "interaction_environment": "ChatGPT",
+      "interaction_session": "chatgpt-29",
+      "roles": [
+        "TASK_OWNER",
+        "RESEARCHER",
+        "CRITIC"
+      ]
+    },
+    {
+      "collaborator_id": "claude",
+      "interaction_environment": "Claude",
+      "interaction_session": "claude-04",
+      "roles": [
+        "INDEPENDENT_REVIEWER",
+        "COUNTER_DESIGNER",
+        "RESEARCHER",
+        "CRITIC"
+      ]
+    },
+    {
+      "collaborator_id": "human",
+      "interaction_environment": "Human",
+      "interaction_session": "project-owner",
+      "roles": [
+        "HUMAN_DECIDER"
+      ]
+    }
+  ],
+  "allowed_secondary_write_surfaces": [
+    {
+      "collaborator_id": "claude",
+      "paths": [
+        "docs/model_collaboration/threads/MC-0022/messages/**"
+      ]
+    }
+  ],
+  "next_expected_actor": "claude",
+  "independence": {
+    "status": "BLIND_TO_CANDIDATE",
+    "review_base_ref": "c7252e182b6068954aca804fb064a10e37e298a4",
+    "known_exposures": [
+      "Claude receives the neutral residency/reuse question and exact pre-candidate repository evidence.",
+      "Research 236, Research 237, Checkpoint 567, descendant CURRENT_STATE/KNOWLEDGE_MAP synthesis and future PKIA candidate material are excluded before Message 001.",
+      "Earlier Research 177/218 and Research 219-235 are intentionally available because they are pre-candidate evidence needed to understand the current architecture and control-plane growth."
+    ],
+    "notes": "Independence is candidate-blind rather than history-blind. Claude may independently derive any topology, including project-native, external, materialized, hybrid or another design, but is not shown ChatGPT's current topology framing before Message 001."
+  },
+  "last_transition": {
+    "transition_id": "mc0022-open-independent-residency-review",
+    "from_state": null,
+    "to_state": "OPEN",
+    "actor": "chatgpt",
+    "reason": "PKIA-E01 reached the point where a candidate-blind second-model review can add epistemic value before ChatGPT freezes a topology recommendation.",
+    "repository_head": "c7252e182b6068954aca804fb064a10e37e298a4"
+  }
+}
