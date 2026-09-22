@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-22
-**Status:** MC-0022 ACTIVE / CLAUDE INDEPENDENT PKIA RESIDENCY REVIEW NEXT / MC-0010 DEFERRED
+**Status:** MC-0022 ACTIVE / CHATGPT PSMF CANDIDATE FROZEN / CLAUDE COMPARATIVE PKIA REVIEW NEXT / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -31,12 +31,14 @@ coordination branch   v1-source-vault-bootstrap-resume
 independent base      c7252e182b6068954aca804fb064a10e37e298a4
 reviewer              Claude / persistent claude-03
 conversation title    03 - Project Knowledge Architecture Foundations and Design Method
-phase                 CLAUDE_INDEPENDENT_RESIDENCY_ARCHITECTURE
+phase                 CLAUDE_COMPARATIVE_RESIDENCY_REVIEW
+independent message   001 @ d842b665ee4f2de5330cb2a2884461bd5f4af1d6
+candidate message     002 @ a3539c797c1d306e11048246bda829da730831f3
 write scope           docs/model_collaboration/threads/MC-0022/messages/**
-next                   Claude Message 001
+next                   Claude Message 003
 ```
 
-MC-0022 independently evaluates the residency, ownership, reuse and project-instantiation boundary of the project-development knowledge/control architecture before ChatGPT freezes a topology recommendation. The existing `claude-03` knowledge-architecture conversation is intentionally reused: its preserved MC-0011 through MC-0018 context is allowed and desirable, while the review remains blind to the new PKIA-E01 framing/candidate. Current-branch reads are limited by the thread's independence contract; substantive repository evidence is bound to the exact base above. Research 236, Research 237, Checkpoint 567 and descendant PKIA candidate synthesis are excluded from the independent phase.
+Claude Message 001 is frozen as the uncontaminated pre-candidate position. ChatGPT Message 002 now intentionally exposes the withheld PKIA-E01 framing and proposes a Project-Sovereign Materialized Framework target: generic upstream authoring with complete project-local materialization, no external project authority/runtime dependency, explicit lineage, governed upgrades and local divergence. Claude `claude-03` should now perform the comparative/adversarial Message 003 defined by MC-0022.
 
 ## Most recently completed obligation
 

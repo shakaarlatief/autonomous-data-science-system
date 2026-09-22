@@ -2,12 +2,12 @@
   "schema_version": 1,
   "thread_id": "MC-0022",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
-  "lifecycle_state": "OPEN",
-  "phase": "CLAUDE_INDEPENDENT_RESIDENCY_ARCHITECTURE",
+  "lifecycle_state": "ACTIVE",
+  "phase": "CLAUDE_COMPARATIVE_RESIDENCY_REVIEW",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
-    "base_ref": "c7252e182b6068954aca804fb064a10e37e298a4",
-    "description": "Independent first-principles review of project-knowledge/control architecture residency, ownership, reuse and instantiation before ChatGPT freezes a topology recommendation.",
+    "base_ref": "a3539c797c1d306e11048246bda829da730831f3",
+    "description": "Comparative review of Claude Message 001 against ChatGPT Message 002 Project-Sovereign Materialized Framework candidate, with the frozen independent base retained in the independence record.",
     "write_paths": []
   },
   "task_owner": "chatgpt",
@@ -53,22 +53,24 @@
   ],
   "next_expected_actor": "claude",
   "independence": {
-    "status": "BLIND_TO_CANDIDATE",
+    "status": "COMPARATIVE_ONLY",
     "review_base_ref": "c7252e182b6068954aca804fb064a10e37e298a4",
     "known_exposures": [
       "Claude receives the neutral residency/reuse question and exact pre-candidate repository evidence.",
       "Research 236, Research 237, Checkpoint 567, descendant CURRENT_STATE/KNOWLEDGE_MAP synthesis and future PKIA candidate material are excluded before Message 001.",
       "Earlier Research 177/218 and Research 219-235 are intentionally available because they are pre-candidate evidence needed to understand the current architecture and control-plane growth.",
-      "Claude may use its preserved claude-03 context from MC-0011 through MC-0018; prior participation in the project-knowledge architecture is intentionally treated as useful historical context, not contamination."
+      "Claude may use its preserved claude-03 context from MC-0011 through MC-0018; prior participation in the project-knowledge architecture is intentionally treated as useful historical context, not contamination.",
+      "Claude Message 001 was durably frozen at d842b665ee4f2de5330cb2a2884461bd5f4af1d6 before candidate exposure.",
+      "Comparative Phase 2 intentionally exposes Research 236, Research 237, Checkpoint 567 and ChatGPT Message 002 / PSMF candidate frozen at a3539c797c1d306e11048246bda829da730831f3."
     ],
-    "notes": "Independence is candidate-blind rather than history-blind. The persistent claude-03 architecture-design session is intentionally reused because its MC-0011 through MC-0018 context can expose assumptions and rationale from the architecture it helped design. Claude may independently derive any topology, including project-native, external, materialized, hybrid or another design, but is not shown ChatGPT's new PKIA-E01 topology framing before Message 001."
+    "notes": "The independent position remains preserved in Message 001. Phase 2 is intentionally comparative: Claude should now read ChatGPT Message 002 and the previously withheld PKIA-E01 artifacts while retaining Message 001 as the pre-exposure reference."
   },
   "last_transition": {
-    "transition_id": "mc0022-reviewer-control-amended-to-claude03",
+    "transition_id": "mc0022-chatgpt-candidate-frozen-comparative-review-open",
     "from_state": "OPEN",
-    "to_state": "OPEN",
+    "to_state": "ACTIVE",
     "actor": "chatgpt",
-    "reason": "Before any Claude response, the owner challenged the planned fresh claude-04 session. The review now intentionally reuses persistent claude-03 so earlier project-knowledge architecture context remains available while blindness is preserved only against the new PKIA-E01 residency framing and candidate.",
-    "repository_head": "1f9305ff9d4f093696afe5c1d75aa809f05be525"
+    "reason": "Claude Message 001 was verified as uncontaminated and frozen at d842b665. ChatGPT then froze the Project-Sovereign Materialized Framework candidate in Message 002 at a3539c79, so comparative/adversarial review can now begin.",
+    "repository_head": "a3539c797c1d306e11048246bda829da730831f3"
   }
 }

@@ -1,12 +1,14 @@
 # MC-0022 Thread: Independent Project-Knowledge Architecture Residency and Reuse Review
 
 **Thread:** MC-0022
-**Status:** OPEN / CLAUDE INDEPENDENT RESIDENCY ARCHITECTURE NEXT
+**Status:** ACTIVE / CHATGPT PSMF CANDIDATE FROZEN / CLAUDE COMPARATIVE RESIDENCY REVIEW NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Review requirement:** REQUIRED
-**Gate boundary:** BEFORE CHATGPT TOPOLOGY RECOMMENDATION IS FROZEN
+**Gate boundary:** BEFORE THREAD RESOLUTION / PKIA-E01 reconciliation waits for comparative review
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
 **Independent substantive base:** `c7252e182b6068954aca804fb064a10e37e298a4`
+**Claude independent Message 001:** `d842b665ee4f2de5330cb2a2884461bd5f4af1d6`
+**ChatGPT candidate Message 002:** `a3539c797c1d306e11048246bda829da730831f3`
 **Task owner:** ChatGPT / `chatgpt-29`
 **Reviewer:** Claude / persistent `claude-03`
 **Claude conversation title:** `03 - Project Knowledge Architecture Foundations and Design Method`
@@ -14,30 +16,22 @@
 
 ## Purpose
 
-Independently challenge the fundamental residency, ownership, reuse and instantiation boundary of the project-development knowledge/control architecture before ChatGPT freezes a topology recommendation.
+Independently challenge the fundamental residency, ownership, reuse and instantiation boundary of the project-development knowledge/control architecture, then compare the frozen independent position against ChatGPT's Project-Sovereign Materialized Framework candidate.
 
-The review should start from pre-candidate repository evidence and the neutral question in `BRIEF.md`, not from ChatGPT's later topology synthesis. Claude may and should use its preserved `claude-03` project-knowledge architecture context from MC-0011 through MC-0018; the independence claim is blindness to the new PKIA-E01 residency framing/candidate, not blindness to the architecture history it helped create.
+Message 001 preserves Claude's candidate-blind position. Message 002 intentionally exposes the withheld PKIA-E01 framing and ChatGPT candidate. The current phase is comparative/adversarial rather than independent.
 
-## Independence contract
+## Independence / comparative contract
 
-Current-branch reads are limited to routing and MC-0022 thread files needed to locate the obligation.
+The candidate-blind phase is complete. Claude Message 001 remains the frozen pre-exposure reference at `d842b665ee4f2de5330cb2a2884461bd5f4af1d6`.
 
-Substantive project evidence is bound to exact commit:
-
-```text
-c7252e182b6068954aca804fb064a10e37e298a4
-```
-
-The independent phase excludes Research 236, Research 237, Checkpoint 567, descendant CURRENT_STATE/KNOWLEDGE_MAP synthesis and future PKIA candidate material as specified in `BRIEF.md`.
-
-If candidate content is exposed before Message 001, record contamination explicitly.
+Comparative Phase 2 intentionally exposes Research 236, Research 237, Checkpoint 567 and ChatGPT Message 002 at `a3539c797c1d306e11048246bda829da730831f3`. Claude should challenge the candidate against its own preserved Message 001 rather than retroactively rewriting the independent position.
 
 ## Expected sequence
 
 ```text
-001  Claude independent residency/reuse architecture          NEXT
-002  ChatGPT candidate synthesis + comparative exposure       AFTER 001
-003  Claude comparative/adversarial review                    AFTER 002
+001  Claude independent residency/reuse architecture          COMPLETE
+002  ChatGPT PSMF candidate + comparative exposure            COMPLETE
+003  Claude comparative/adversarial review                    NEXT
 004  ChatGPT reconciliation / PKIA-E01 candidate disposition  AFTER 003
 ```
 
@@ -67,7 +61,9 @@ AUTHORITY_SWITCH_ALLOWED=false
 ```
 
 ```text
-MC0022=OPEN
-PHASE=CLAUDE_INDEPENDENT_RESIDENCY_ARCHITECTURE
-NEXT=CLAUDE_MESSAGE_001
+MC0022=ACTIVE
+PHASE=CLAUDE_COMPARATIVE_RESIDENCY_REVIEW
+INDEPENDENT_MESSAGE_001=d842b665ee4f2de5330cb2a2884461bd5f4af1d6
+CHATGPT_CANDIDATE_MESSAGE_002=a3539c797c1d306e11048246bda829da730831f3
+NEXT=CLAUDE_MESSAGE_003
 ```
