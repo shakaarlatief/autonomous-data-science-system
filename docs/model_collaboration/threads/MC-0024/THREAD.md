@@ -1,7 +1,7 @@
 # MC-0024 Thread: Research 218 Versus R7 Comparative Architecture Review
 
 **Thread:** MC-0024
-**Status:** WAITING / COMPARATIVE REVIEW RECONCILED / OWNER R7 AMENDMENT DECISION NEXT
+**Status:** RESOLVED / R7 ACCEPTED AS AMENDED / R8 UNBLOCKED
 **Review mode:** COMPARATIVE_ARCHITECTURE_REVIEW
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
 **Exact review target:** `b0ff5c59411b2fae2786a87d6b93ea722e7cdfe5`
@@ -26,7 +26,7 @@ The review must specifically determine whether the difference is caused by:
 ```text
 001  Claude comparative architecture review      COMPLETE
 002  ChatGPT reconciliation                      COMPLETE
-003+ only if owner decision or a material disagreement requires it
+003  ChatGPT owner-amendment acceptance / closure      COMPLETE
 ```
 
 ## Write ownership
@@ -40,9 +40,10 @@ ChatGPT remains task owner and integrator.
 ## Current authority boundary
 
 ```text
-R7_TARGET=RECOMMENDED_NOT_ACCEPTED
-RESEARCH218=FROZEN_BASELINE_PENDING_DISPOSITION
-SPECIFICATION028=UNCHANGED
+R7_TARGET=ACCEPTED_AS_AMENDED
+RESEARCH218_PHYSICAL_DISPOSITION=SUPERSEDED
+RESEARCH218_VALIDATED_SEMANTICS=RETAINED
+SPECIFICATION028=UNCHANGED_PENDING_R8_AMENDMENT
 PHYSICAL_MIGRATION_AUTHORIZED=false
 W5_F0=PAUSED
 AO10=HELD
@@ -50,10 +51,11 @@ AUTHORITY_SWITCH_ALLOWED=false
 ```
 
 ```text
-MC0024=WAITING
-PHASE=OWNER_R7_AMENDMENT_DECISION
+MC0024=RESOLVED
+PHASE=RESOLVED_R7_ACCEPTED_AS_AMENDED
 CLAUDE_MESSAGE_001=b5e0c4d0a94fdd629b6faf650919a2e7fde3074d
 CHATGPT_MESSAGE_002=docs/model_collaboration/threads/MC-0024/messages/002_chatgpt_comparative_reconciliation_and_r7_amendment_candidate.md
-PROPOSED_DISPOSITION=AMEND
-NEXT=OWNER_R7_AMENDMENT_DECISION
+CHATGPT_MESSAGE_003=docs/model_collaboration/threads/MC-0024/messages/003_chatgpt_owner_r7_amendment_acceptance_and_thread_close.md
+OWNER_DECISION=AMEND
+NEXT=R8_EXACT_TARGET_REALIZATION_AND_MIGRATION_DESIGN
 ```

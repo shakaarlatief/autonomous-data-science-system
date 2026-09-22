@@ -2,12 +2,12 @@
   "schema_version": 1,
   "thread_id": "MC-0024",
   "review_mode": "REVIEWED",
-  "lifecycle_state": "WAITING",
-  "phase": "OWNER_R7_AMENDMENT_DECISION",
+  "lifecycle_state": "RESOLVED",
+  "phase": "RESOLVED_R7_ACCEPTED_AS_AMENDED",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
-    "base_ref": "b5e0c4d0a94fdd629b6faf650919a2e7fde3074d",
-    "description": "Claude comparative review and ChatGPT reconciliation support Research 254 as the materially stronger whole-repository target while preserving Research 218 validated semantic contracts. Six R7 amendments are frozen for explicit owner decision before R8.",
+    "base_ref": "66996189ed772df0cc32038fdb63d232e05bfde5",
+    "description": "Owner accepted the reconciled R7 amendment. Research 254 is accepted as amended by Research 255; Research 218 physical architecture is superseded while validated semantic contracts are retained; R8 is unblocked without physical migration.",
     "write_paths": []
   },
   "task_owner": "chatgpt",
@@ -51,7 +51,7 @@
       ]
     }
   ],
-  "next_expected_actor": "human",
+  "next_expected_actor": "chatgpt",
   "independence": {
     "status": "NOT_APPLICABLE",
     "review_base_ref": "b0ff5c59411b2fae2786a87d6b93ea722e7cdfe5",
@@ -60,14 +60,14 @@
       "Claude has persistent claude-03 context for the project-knowledge architecture program.",
       "The review intentionally exposes both the old and new architecture paths and is comparative, not blind."
     ],
-    "notes": "Claude returned AMEND and judged Research 254 materially better while finding Research 218 only partly methodologically anchored. ChatGPT accepts the comparative conclusion and freezes A1-A6 amendments. Explicit owner amendment is required before R7 acceptance and R8."
+    "notes": "Claude returned AMEND; ChatGPT reconciled A1-A6; the owner explicitly chose AMEND. MC-0024 is resolved and R8 may proceed under Research 256."
   },
   "last_transition": {
-    "transition_id": "mc0024-comparative-reconciled-owner-amendment-decision",
-    "from_state": "OPEN",
-    "to_state": "WAITING",
+    "transition_id": "mc0024-owner-r7-amendment-accepted-resolved",
+    "from_state": "WAITING",
+    "to_state": "RESOLVED",
     "actor": "chatgpt",
-    "reason": "Claude comparative review supports physical supersession of Research 218 and Research 254 as the materially stronger target, with bounded amendments. ChatGPT accepts the conclusion and freezes A1-A6 for explicit owner decision before R8.",
-    "repository_head": "b5e0c4d0a94fdd629b6faf650919a2e7fde3074d"
+    "reason": "The project owner explicitly chose AMEND, accepting Research 254 as amended by Research 255. Research 218 physical architecture is superseded, validated semantic contracts are retained, MC-0024 is resolved and R8 is unblocked.",
+    "repository_head": "66996189ed772df0cc32038fdb63d232e05bfde5"
   }
 }

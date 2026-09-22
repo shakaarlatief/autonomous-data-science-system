@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-22
-**Status:** MC-0024 WAITING / R7 AMENDMENT OWNER DECISION NEXT / MC-0010 DEFERRED
+**Status:** NO ACTIVE CLAUDE OBLIGATION / MC-0024 RESOLVED / R8 OWNED BY CHATGPT / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -23,23 +23,24 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Current active collaboration obligation
 
+There is no active Claude obligation. MC-0024 is resolved. The owner accepted R7 as amended, Research 218 physical supersession is now explicit, and R8 exact target/migration design is owned by ChatGPT.
+
+## Most recently completed obligation
+
 ### MC-0024: Research 218 versus R7 comparative architecture review
 
 ```text
+RESOLVED
 mode                  COMPARATIVE_ARCHITECTURE_REVIEW
-coordination branch   v1-source-vault-bootstrap-resume
-exact review target   b0ff5c59411b2fae2786a87d6b93ea722e7cdfe5
-reviewer              Claude / persistent claude-03
-conversation title    03 - Project Knowledge Architecture Foundations and Design Method
-phase                 OWNER_R7_AMENDMENT_DECISION
+review target         b0ff5c59411b2fae2786a87d6b93ea722e7cdfe5
 Claude Message 001    b5e0c4d0a94fdd629b6faf650919a2e7fde3074d
-ChatGPT Message 002   comparative reconciliation / A1-A6 amendment candidate
-next                   owner AMEND / reject / redirect decision
+ChatGPT Message 002   A1-A6 comparative reconciliation
+owner decision        AMEND
+ChatGPT Message 003   owner-decision closure
+result                R7 accepted as amended; Research 218 physical tree superseded; R8 unblocked
 ```
 
-Claude's comparative review returns `AMEND`: Research 254 is materially better for the whole-repository objective; Research 218 was coherent for its narrower `docs/`-bounded problem and partly anchored by its audit-first method; its validated semantic contracts should survive. ChatGPT accepts the conclusion and freezes six R7 amendments in Research 255. MC-0024 now waits for the owner's explicit R7 amendment decision before R8.
-
-## Most recently completed obligation
+## Earlier completed obligation
 
 ### MC-0023: adversarial review of accepted G-DUAL whole-repository architecture
 
