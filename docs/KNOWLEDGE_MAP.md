@@ -2,7 +2,7 @@
 
 **Status:** Current evergreen subject library
 **Authority:** Navigation only. This file routes subjects to repository evidence and does not replace the authority of the routed artifacts.
-**Last reviewed:** 2026-09-20
+**Last reviewed:** 2026-09-22
 
 ## Purpose
 
@@ -458,6 +458,8 @@ docs/research/231_ao9_p3_model_free_mechanism_trace.md
 docs/research/232_ao9_p4_minimum_fresh_replay_harness_freeze.md
 docs/research/233_ao9_p5_evaluation_and_decision_synthesis.md
 docs/research/234_ao9_p6_reconciliation_and_owner_decision_boundary.md
+docs/research/235_ao9_p7_owner_decisions_and_ao9_closure.md
+docs/checkpoints/566_ao9_p7_owner_decisions_accepted_research218_evolution_next.md
 docs/research/project_knowledge_activation_orchestration/README.md
 docs/research/project_knowledge_activation_orchestration/001_chat26_owner_source_interaction_orchestration_evidence.md
 docs/research/project_knowledge_activation_orchestration/002_chat27_activation_self_hosting_bootstrap_evidence.md
@@ -1089,7 +1091,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-565 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-566 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

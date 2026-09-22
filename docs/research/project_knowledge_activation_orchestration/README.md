@@ -1,6 +1,6 @@
 # Project-Knowledge Activation / Orchestration Research Packet
 
-**Status:** ACTIVE RESEARCH SUPPORT / NON-AUTHORITATIVE SOURCE EVIDENCE
+**Status:** ACTIVE RESEARCH SUPPORT / AO-9 COMPLETE / NON-AUTHORITATIVE SOURCE EVIDENCE
 **Opened:** 2026-09-20
 **Current governing research:** `docs/research/219_activation_orchestration_self_hosting_bootstrap_program.md`
 
@@ -57,16 +57,16 @@ AO7_SUCCESSOR_ORCHESTRATION_BRIDGE_V01.json
     authority membrane, conflict/fallback rules and AO-10 qualification obligations
 
 AO8_REVIEW_RECONCILIATION_V01.json
-    machine-readable AO-8 independent-review reconciliation, pending AO-3 amendment
-    candidate, requirements candidates and AO-10 realization obligations
+    machine-readable AO-8 independent-review reconciliation that produced the
+    later P7-D01 amendment and KA-R51 / KA-R52 requirement candidates
 
 AO9_HISTORICAL_REGRESSION_PROTOCOL_V01.json
     preregistered AO-9 four-arm historical-regression protocol, positive/negative
     scenarios, budgets, invalidators, decision rules and no-tuning boundary
 
 AO9_RECONCILIATION_V01.json
-    P6 machine-readable reconciliation of P5 decisions, owner-decision packet,
-    preserved non-decisions and conditional AO-10 qualification obligations
+    AO-9 machine-readable reconciliation now carrying completed P7 owner decisions,
+    accepted D01/D02/D03 effects and the post-AO9 architecture-evolution boundary
 
 ao9/
     AO-9 regression packet. Trial-visible scenarios and evaluator-only keys are

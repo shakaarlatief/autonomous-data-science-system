@@ -2,7 +2,7 @@
   "schema_version": 1,
   "reconciliation_id": "AO9-RECONCILIATION-V01",
   "date": "2026-09-21",
-  "status": "P7_PARTIAL_D01_D02_ACCEPTED_D03_PENDING",
+  "status": "P7_COMPLETE_ALL_OWNER_DECISIONS_RECORDED",
   "authority_class": "research_reconciliation",
   "program": "Research 219",
   "evidence": {
@@ -23,7 +23,7 @@
     "positive_path_boundedness": "UNRESOLVED",
     "ao8_e01": "ACCEPTED_AMEND",
     "R51": "ACCEPTED_REQUIREMENT_NOT_EXECUTABLY_QUALIFIED",
-    "R52": "STRONGLY_SUPPORTED_REQUIREMENT_CANDIDATE_PENDING_OWNER",
+    "R52": "ACCEPTED_REQUIREMENT_MECHANISM_NOT_SELECTED_OR_QUALIFIED",
     "R52_mechanism_present_in_frozen_candidate": false
   },
   "ao10_conditional_qualification_obligations": [
@@ -32,7 +32,7 @@
     "qualify low-consequence precision and question-is-not-mutation negative controls",
     "meet or explicitly disposition frozen read/tool budgets",
     "prove accepted KA-R51 mechanical control-miss / reopen-trigger surfacing",
-    "provide deterministic accepted-MUST realization traceability if R52 is accepted",
+    "provide accepted KA-R52 deterministic accepted-MUST realization traceability",
     "close AO10-O01 governed branch attach/switch and selected rotation realization",
     "close AO10-O02 Specification 028 representation compatibility before production mutation"
   ],
@@ -57,7 +57,9 @@
       "id": "P7-D03",
       "subject": "Requirements V0.2 KA-R52 candidate",
       "evidence_disposition": "STRONGLY_SUPPORTED_REQUIREMENT_GAP",
-      "decision_needed": "ACCEPT_REQUIREMENT or DEFER/REJECT"
+      "owner_decision": "ACCEPT_REQUIREMENT",
+      "decision_date": "2026-09-22",
+      "result": "KA-R52 accepted prospectively; generic realization mechanism remains to be selected and qualified in AO-10"
     }
   ],
   "nondecisions": {
@@ -68,6 +70,6 @@
     "operational_authority_changed": false,
     "authority_switch_allowed": false
   },
-  "current_boundary": "project-knowledge-owner-decision-boundary",
-  "next": "AO9_P7_D03_OWNER_DECISION"
+  "current_boundary": "project-knowledge-information-architecture-evolution-boundary",
+  "next": "RESEARCH218_GOVERNED_PHYSICAL_INFORMATION_ARCHITECTURE_EVOLUTION"
 }

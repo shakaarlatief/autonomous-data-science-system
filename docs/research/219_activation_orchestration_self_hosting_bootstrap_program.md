@@ -1,7 +1,7 @@
 # Research 219: Activation, Orchestration and Self-Hosting Bootstrap Program
 
 **Date:** 2026-09-20
-**Status:** ACTIVE / ARCHITECTURE RESEARCH PROGRAM OPEN / W5-F0 PAUSED BEFORE IMPLEMENTATION
+**Status:** ACTIVE / AO-9 COMPLETE / RESEARCH 218 PHYSICAL-INFORMATION-ARCHITECTURE EVOLUTION NEXT BEFORE AO-10 / W5-F0 PAUSED
 **Selected knowledge architecture:** `PKA-CANDIDATE-01`
 **Frozen W5 information architecture:** Research 218
 **Current project-development authority:** current continuity architecture
@@ -579,9 +579,13 @@ AO-8  independent architecture review
       COMPLETE / Research 227 + MC-0021 independent-then-comparative review reconciliation
 
 AO-9  empirical historical-regression program
-      NEXT / preregistered four-arm historical regression with negative controls and decisive C-vs-D output-shape probe
+      COMPLETE / Research 228-235; P7 owner decisions: D01 AMEND, D02 ACCEPT KA-R51, D03 ACCEPT KA-R52
+
+INTERPOSED GOVERNED EVOLUTION BOUNDARY
+      before AO-10, open an AO-4 EvolutionCase against Research 218's frozen physical information architecture and reconsider the physical hierarchy from first principles for long-term ADS scale, professional organization and future growth
 
 AO-10 bounded implementation and shadow/bridge qualification
+      HELD until the Research 218 evolution case is dispositioned and affected Specification 028 / Candidate 01 / control-plane dependencies are reconciled
 
 AO-11 operational use during remaining W5 migration
 
@@ -608,7 +612,10 @@ Authority switch
     NOT ALLOWED
 
 Immediate next work
-    AO-9 EMPIRICAL HISTORICAL-REGRESSION PROGRAM
+    GOVERNED AO-4 EVOLUTION CASE AGAINST RESEARCH 218 PHYSICAL INFORMATION ARCHITECTURE
+
+AO-10
+    HELD UNTIL THAT EVOLUTION CASE IS DISPOSITIONED AND DEPENDENCIES ARE RECONCILED
 ```
 
 No production navigation-schema/view code should be mutated merely to keep the old sequence moving.
@@ -654,8 +661,12 @@ AO_6=COMPLETE
 AO6_BRANCH_ROTATION_REALIZATION=DEFERRED_ATTACH_SWITCH_CAPABILITY_GAP
 AO_7=COMPLETE
 AO_8=COMPLETE
-AO8_E01_OUTPUT_SHAPE_AMENDMENT=DISPOSITION_PENDING_AO9
+AO_9=COMPLETE
+AO8_E01_OUTPUT_SHAPE_AMENDMENT=ACCEPTED_P7_D01
+KA_R51_CONTROL_MISS_OBSERVABILITY=ACCEPTED_P7_D02_NOT_YET_EXECUTABLY_QUALIFIED
+KA_R52_OBLIGATION_REALIZATION_TRACEABILITY=ACCEPTED_P7_D03_MECHANISM_NOT_YET_SELECTED_OR_QUALIFIED
 AO10_O01_BRANCH_ROTATION_REALIZATION=REQUIRED
 AO10_O02_SPEC028_REPRESENTATION_RECONCILIATION=REQUIRED
-NEXT=AO_9_EMPIRICAL_HISTORICAL_REGRESSION_PROGRAM
+AO10=HELD_PENDING_RESEARCH218_PHYSICAL_INFORMATION_ARCHITECTURE_EVOLUTION
+NEXT=RESEARCH218_GOVERNED_PHYSICAL_INFORMATION_ARCHITECTURE_EVOLUTION
 ```

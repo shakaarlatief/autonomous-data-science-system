@@ -1,7 +1,7 @@
 # Project-Development Knowledge Architecture Requirements V0.2
 
 **Date frozen:** 2026-09-13
-**Status:** OWNER-ACCEPTED / FROZEN V0.2 BASELINE WITH PROSPECTIVE AO-9 P7-D02 AMENDMENT
+**Status:** OWNER-ACCEPTED / FROZEN V0.2 BASELINE WITH PROSPECTIVE AO-9 P7-D02/D03 AMENDMENTS
 **Owner acceptance:** explicit approval in `chatgpt-23` after Research 130 reconciliation
 **Scope:** Architecture-neutral acceptance requirements and invariants for the successor project-development knowledge architecture supporting development of ADS. This is not the architecture of the ADS product itself.
 **Supersedes for candidate-design purposes:** the original Phase-B KA-R01..KA-R45 and KA-I01..KA-I15 wording embedded in Research 124. The original wording remains durable historical provenance.
@@ -341,6 +341,17 @@ The requirement is for bounded, inspectable observability of material control fa
 
 **Prospective amendment provenance:** accepted by the project owner at AO-9 P7-D02 on 2026-09-22 from the evidence reconciled in Research 227 and Research 228-234. Acceptance creates the requirement; it does not claim executable satisfaction. AO-10 must qualify the realization.
 
+### KA-R52: accepted-obligation realization traceability
+**Strength:** MUST / QUALIFICATION MUST
+
+Every accepted governing `MUST`-level obligation must be deterministically traceable to a realization path appropriate to its semantics. That path must identify the implementation, migration, procedure, human-decision, runtime-activation or other governed gate/scheduling boundary responsible for the obligation; the evidence required to establish completion; the qualification status; and the resulting operational realization state. If realization cannot proceed yet, the obligation must instead have an explicit governed deferral that records why it is deferred, what blocks or reactivates it, and what future evidence closes it.
+
+An accepted obligation may not remain in an untracked third state where it is neither realized nor explicitly deferred. Requirement text by itself is not implementation evidence, a passed stage is not proof for obligations that were never attached to that stage's gates, and a selected action or architecture disposition is not equivalent to completed realization.
+
+The realization mechanism may use source-owned declarations, derived views, gate/evidence links or another bounded repository-native design. This requirement does not mandate a universal ledger, one central requirements database, event sourcing, or treating every suggestion/`SHOULD`/research hypothesis as a formal realization obligation. Historical acceptance boundaries remain intact: a later-discovered gap creates a prospective realization obligation rather than retroactively inventing an earlier gate.
+
+**Prospective amendment provenance:** accepted by the project owner at AO-9 P7-D03 on 2026-09-22. Evidence includes the Specification 028 reconstruction/CLI realization gap and AO-6 selected-rotation realization gap reconciled in Research 227 and Research 228-234. Acceptance creates the requirement; it does not select the generic mechanism or claim executable satisfaction. AO-10 must qualify the realization.
+
 ## 10. Frozen architecture invariants V0.2
 
 ```text
@@ -442,15 +453,17 @@ Research 124 original Phase-B KA-R01..KA-R45 / KA-I01..KA-I15
     = historical predecessor requirements boundary retained as provenance
 ```
 
-The original V0.2 freeze did not authorize implementation or target selection. The later AO-9 P7-D02 amendment adds only KA-R51 prospectively; it does not itself authorize implementation, claim executable satisfaction, or change project authority.
+The original V0.2 freeze did not authorize implementation or target selection. The later AO-9 P7-D02/D03 amendments add KA-R51 and KA-R52 prospectively; they do not themselves authorize implementation, claim executable satisfaction, or change project authority.
 
 ```text
-REQUIREMENTS_V02=FROZEN_BASELINE_WITH_PROSPECTIVE_AMENDMENT
-REQUIREMENTS_COUNT=51
+REQUIREMENTS_V02=FROZEN_BASELINE_WITH_PROSPECTIVE_AMENDMENTS
+REQUIREMENTS_COUNT=52
 INVARIANTS_COUNT=17
 AO9_P7_D02=ACCEPT_REQUIREMENT
 KA_R51=ACCEPTED_NOT_EXECUTABLY_QUALIFIED
+AO9_P7_D03=ACCEPT_REQUIREMENT
+KA_R52=ACCEPTED_MECHANISM_NOT_SELECTED_OR_QUALIFIED
 TARGET_ARCHITECTURE_ORIGINAL_FREEZE_STATE=NOT_SELECTED
 CURRENT_SELECTED_SUCCESSOR=PKA-CANDIDATE-01
-NEXT=AO9_P7_D03_OWNER_DECISION
+NEXT=RESEARCH218_GOVERNED_PHYSICAL_INFORMATION_ARCHITECTURE_EVOLUTION
 ```
