@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-22
-**Status:** NO ACTIVE CLAUDE OBLIGATION / MC-0023 RESOLVED / R6 OWNED BY CHATGPT / MC-0010 DEFERRED
+**Status:** MC-0024 ACTIVE / RESEARCH 218 VS R7 COMPARATIVE REVIEW NEXT / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -23,7 +23,20 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Current active collaboration obligation
 
-There is no active Claude obligation. MC-0023 is resolved. The owner accepted the reconciled G-DUAL amendment, and R6 whole-repository from-scratch responsibility derivation is now owned by ChatGPT.
+### MC-0024: Research 218 versus R7 comparative architecture review
+
+```text
+mode                  COMPARATIVE_ARCHITECTURE_REVIEW
+coordination branch   v1-source-vault-bootstrap-resume
+exact review target   b0ff5c59411b2fae2786a87d6b93ea722e7cdfe5
+reviewer              Claude / persistent claude-03
+conversation title    03 - Project Knowledge Architecture Foundations and Design Method
+phase                 CLAUDE_R218_R254_COMPARATIVE_REVIEW
+write scope           docs/model_collaboration/threads/MC-0024/messages/**
+next                   Claude Message 001
+```
+
+The review compares frozen Research 218 with recommended Research 254 before the owner accepts R7. It must explain why the architectures differ, assess whether the earlier architecture was constrained by current-tree assumptions, test whether the newer architecture overcorrects, and recommend ACCEPT / AMEND / REOPEN.
 
 ## Most recently completed obligation
 

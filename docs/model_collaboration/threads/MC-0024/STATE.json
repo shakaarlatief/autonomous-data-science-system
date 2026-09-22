@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "thread_id": "MC-0024",
+  "review_mode": "REVIEWED",
+  "lifecycle_state": "OPEN",
+  "phase": "CLAUDE_R218_R254_COMPARATIVE_REVIEW",
+  "target": {
+    "branch": "v1-source-vault-bootstrap-resume",
+    "base_ref": "b0ff5c59411b2fae2786a87d6b93ea722e7cdfe5",
+    "description": "Compare frozen Research 218 with recommended Research 254, explain the large architecture delta, test current-tree anchoring versus legitimate scope evolution, and advise whether R7 should be accepted, amended, or reopened.",
+    "write_paths": []
+  },
+  "task_owner": "chatgpt",
+  "target_write_owner": null,
+  "participants": [
+    {
+      "collaborator_id": "chatgpt",
+      "interaction_environment": "ChatGPT",
+      "interaction_session": "chatgpt-29",
+      "roles": [
+        "TASK_OWNER",
+        "RESEARCHER",
+        "CRITIC"
+      ]
+    },
+    {
+      "collaborator_id": "claude",
+      "interaction_environment": "Claude",
+      "interaction_session": "claude-03",
+      "roles": [
+        "REVIEWER",
+        "RESEARCHER",
+        "CRITIC",
+        "COUNTER_DESIGNER"
+      ]
+    },
+    {
+      "collaborator_id": "human",
+      "interaction_environment": "Human",
+      "interaction_session": "project-owner",
+      "roles": [
+        "HUMAN_DECIDER"
+      ]
+    }
+  ],
+  "allowed_secondary_write_surfaces": [
+    {
+      "collaborator_id": "claude",
+      "paths": [
+        "docs/model_collaboration/threads/MC-0024/messages/**"
+      ]
+    }
+  ],
+  "next_expected_actor": "claude",
+  "independence": {
+    "status": "NOT_APPLICABLE",
+    "review_base_ref": "b0ff5c59411b2fae2786a87d6b93ea722e7cdfe5",
+    "known_exposures": [
+      "Claude participated in MC-0018, which contributed to the earlier Research 208/218 architecture.",
+      "Claude has persistent claude-03 context for the project-knowledge architecture program.",
+      "The review intentionally exposes both the old and new architecture paths and is comparative, not blind."
+    ],
+    "notes": "Claude's prior involvement is an advantage here because the task is to compare why the architecture changed and whether the earlier reasoning was constrained or the newer reasoning overcorrected."
+  },
+  "last_transition": {
+    "transition_id": "mc0024-open-r218-r254-comparative-review",
+    "from_state": "OPEN",
+    "to_state": "OPEN",
+    "actor": "chatgpt",
+    "reason": "Owner requested an explanation for the large delta between Research 218 and Research 254 and suggested Claude review before accepting R7. A bounded comparative review is opened before the R7 owner decision.",
+    "repository_head": "b0ff5c59411b2fae2786a87d6b93ea722e7cdfe5"
+  }
+}
