@@ -467,6 +467,8 @@ docs/research/238_pkia_e01_psmf_reconciliation_and_lifecycle_independence_gate.m
 docs/checkpoints/568_pkia_psmf_reconciled_lifecycle_gate_frozen.md
 docs/research/239_pkia_e01_g1_historical_lifecycle_independence_measurement.md
 docs/checkpoints/569_pkia_g1_lifecycle_independence_passed.md
+docs/research/240_pkia_e01_whole_repository_physical_architecture_scope_and_design_program.md
+docs/checkpoints/570_whole_repository_physical_architecture_scope_clarified.md
 docs/research/project_knowledge_activation_orchestration/README.md
 docs/research/project_knowledge_activation_orchestration/001_chat26_owner_source_interaction_orchestration_evidence.md
 docs/research/project_knowledge_activation_orchestration/002_chat27_activation_self_hosting_bootstrap_evidence.md
@@ -1098,7 +1100,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-569 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-570 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 
