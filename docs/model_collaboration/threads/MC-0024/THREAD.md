@@ -1,7 +1,7 @@
 # MC-0024 Thread: Research 218 Versus R7 Comparative Architecture Review
 
 **Thread:** MC-0024
-**Status:** OPEN / CLAUDE COMPARATIVE REVIEW NEXT
+**Status:** WAITING / COMPARATIVE REVIEW RECONCILED / OWNER R7 AMENDMENT DECISION NEXT
 **Review mode:** COMPARATIVE_ARCHITECTURE_REVIEW
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
 **Exact review target:** `b0ff5c59411b2fae2786a87d6b93ea722e7cdfe5`
@@ -24,9 +24,9 @@ The review must specifically determine whether the difference is caused by:
 ## Expected sequence
 
 ```text
-001  Claude comparative architecture review      NEXT
-002  ChatGPT reconciliation                      AFTER 001
-003+ only if a material disagreement remains
+001  Claude comparative architecture review      COMPLETE
+002  ChatGPT reconciliation                      COMPLETE
+003+ only if owner decision or a material disagreement requires it
 ```
 
 ## Write ownership
@@ -50,7 +50,10 @@ AUTHORITY_SWITCH_ALLOWED=false
 ```
 
 ```text
-MC0024=OPEN
-PHASE=CLAUDE_R218_R254_COMPARATIVE_REVIEW
-NEXT=CLAUDE_MESSAGE_001
+MC0024=WAITING
+PHASE=OWNER_R7_AMENDMENT_DECISION
+CLAUDE_MESSAGE_001=b5e0c4d0a94fdd629b6faf650919a2e7fde3074d
+CHATGPT_MESSAGE_002=docs/model_collaboration/threads/MC-0024/messages/002_chatgpt_comparative_reconciliation_and_r7_amendment_candidate.md
+PROPOSED_DISPOSITION=AMEND
+NEXT=OWNER_R7_AMENDMENT_DECISION
 ```

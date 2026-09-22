@@ -2,12 +2,12 @@
   "schema_version": 1,
   "thread_id": "MC-0024",
   "review_mode": "REVIEWED",
-  "lifecycle_state": "OPEN",
-  "phase": "CLAUDE_R218_R254_COMPARATIVE_REVIEW",
+  "lifecycle_state": "WAITING",
+  "phase": "OWNER_R7_AMENDMENT_DECISION",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
-    "base_ref": "b0ff5c59411b2fae2786a87d6b93ea722e7cdfe5",
-    "description": "Compare frozen Research 218 with recommended Research 254, explain the large architecture delta, test current-tree anchoring versus legitimate scope evolution, and advise whether R7 should be accepted, amended, or reopened.",
+    "base_ref": "b5e0c4d0a94fdd629b6faf650919a2e7fde3074d",
+    "description": "Claude comparative review and ChatGPT reconciliation support Research 254 as the materially stronger whole-repository target while preserving Research 218 validated semantic contracts. Six R7 amendments are frozen for explicit owner decision before R8.",
     "write_paths": []
   },
   "task_owner": "chatgpt",
@@ -51,7 +51,7 @@
       ]
     }
   ],
-  "next_expected_actor": "claude",
+  "next_expected_actor": "human",
   "independence": {
     "status": "NOT_APPLICABLE",
     "review_base_ref": "b0ff5c59411b2fae2786a87d6b93ea722e7cdfe5",
@@ -60,14 +60,14 @@
       "Claude has persistent claude-03 context for the project-knowledge architecture program.",
       "The review intentionally exposes both the old and new architecture paths and is comparative, not blind."
     ],
-    "notes": "Claude's prior involvement is an advantage here because the task is to compare why the architecture changed and whether the earlier reasoning was constrained or the newer reasoning overcorrected."
+    "notes": "Claude returned AMEND and judged Research 254 materially better while finding Research 218 only partly methodologically anchored. ChatGPT accepts the comparative conclusion and freezes A1-A6 amendments. Explicit owner amendment is required before R7 acceptance and R8."
   },
   "last_transition": {
-    "transition_id": "mc0024-open-r218-r254-comparative-review",
+    "transition_id": "mc0024-comparative-reconciled-owner-amendment-decision",
     "from_state": "OPEN",
-    "to_state": "OPEN",
+    "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Owner requested an explanation for the large delta between Research 218 and Research 254 and suggested Claude review before accepting R7. A bounded comparative review is opened before the R7 owner decision.",
-    "repository_head": "b0ff5c59411b2fae2786a87d6b93ea722e7cdfe5"
+    "reason": "Claude comparative review supports physical supersession of Research 218 and Research 254 as the materially stronger target, with bounded amendments. ChatGPT accepts the conclusion and freezes A1-A6 for explicit owner decision before R8.",
+    "repository_head": "b5e0c4d0a94fdd629b6faf650919a2e7fde3074d"
   }
 }

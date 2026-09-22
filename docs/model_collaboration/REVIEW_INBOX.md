@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-22
-**Status:** MC-0024 ACTIVE / RESEARCH 218 VS R7 COMPARATIVE REVIEW NEXT / MC-0010 DEFERRED
+**Status:** MC-0024 WAITING / R7 AMENDMENT OWNER DECISION NEXT / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -31,12 +31,13 @@ coordination branch   v1-source-vault-bootstrap-resume
 exact review target   b0ff5c59411b2fae2786a87d6b93ea722e7cdfe5
 reviewer              Claude / persistent claude-03
 conversation title    03 - Project Knowledge Architecture Foundations and Design Method
-phase                 CLAUDE_R218_R254_COMPARATIVE_REVIEW
-write scope           docs/model_collaboration/threads/MC-0024/messages/**
-next                   Claude Message 001
+phase                 OWNER_R7_AMENDMENT_DECISION
+Claude Message 001    b5e0c4d0a94fdd629b6faf650919a2e7fde3074d
+ChatGPT Message 002   comparative reconciliation / A1-A6 amendment candidate
+next                   owner AMEND / reject / redirect decision
 ```
 
-The review compares frozen Research 218 with recommended Research 254 before the owner accepts R7. It must explain why the architectures differ, assess whether the earlier architecture was constrained by current-tree assumptions, test whether the newer architecture overcorrects, and recommend ACCEPT / AMEND / REOPEN.
+Claude's comparative review returns `AMEND`: Research 254 is materially better for the whole-repository objective; Research 218 was coherent for its narrower `docs/`-bounded problem and partly anchored by its audit-first method; its validated semantic contracts should survive. ChatGPT accepts the conclusion and freezes six R7 amendments in Research 255. MC-0024 now waits for the owner's explicit R7 amendment decision before R8.
 
 ## Most recently completed obligation
 
