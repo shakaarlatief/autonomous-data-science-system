@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-23
-**Status:** NO ACTIVE CLAUDE OBLIGATION / MC-0026 RESOLVED / P-R8B-01 NEXT / MC-0010 DEFERRED
+**Status:** MC-0027 ACTIVE / CLAUDE P-R8B-01 RESULT AUDIT NEXT / MC-0026 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -23,21 +23,21 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Current active collaboration obligation
 
-### MC-0026: independent R8-B representation/content architecture design
+### MC-0027: P-R8B-01 adversarial result audit
 
 ```text
-RESOLVED
-mode                  INDEPENDENT_THEN_COMPARATIVE
-frozen base           1fe4bbe4b2658532359411825d3b1d819a6c4c68
-Claude candidate      Message 001 / WMR
-ChatGPT candidate     Research 261 / GCHR-DQI
-comparative synthesis Research 262 / WMR-H
-Claude critique       Message 003 / 0e9225bd957859b4d7a8bb3511e2191a9230900f
-final reconciliation  Research 263 / WMR-H V0.2
-next                  execute P-R8B-01
+OPEN
+mode                  ADVERSARIAL_RESULT_AUDIT
+coordination branch   v1-source-vault-bootstrap-resume
+exact audit target    87603fff31609c45baac5b41ef29dc36b6625015
+probe result          P-R8B-01 PASS / 18 OF 18
+candidate             WMR-H V0.2
+required output       docs/model_collaboration/threads/MC-0027/messages/001_claude_p_r8b_01_result_audit.md
+write scope           docs/model_collaboration/threads/MC-0027/messages/**
+next actor            Claude
 ```
 
-There is no active Claude obligation. Research 263 preregisters the 18 blocking gates before empirical execution and carries forward the owner's assurance anti-anchoring clarification with migration-oracle and invariant-extraction obligations. Representation owner decision, Specification 028 amendment, file-level migration, AO-10 and physical migration remain held until the probe is reconciled.
+The audit must evaluate protocol fidelity, frozen-harness integrity, gate-by-gate validity, real-source discrimination, possible self-confirmation/overclaim and architecture-decision readiness without changing the preregistered thresholds. Representation owner decision, Specification 028 amendment, file-level migration, AO-10 and physical migration remain held.
 
 ## Most recently completed obligation
 

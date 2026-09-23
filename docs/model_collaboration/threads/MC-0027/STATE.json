@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "thread_id": "MC-0027",
+  "review_mode": "ADVERSARIAL_REVIEW",
+  "lifecycle_state": "WAITING",
+  "phase": "WAITING_FOR_CLAUDE_RESULT_AUDIT",
+  "target": {
+    "branch": "v1-source-vault-bootstrap-resume",
+    "base_ref": "87603fff31609c45baac5b41ef29dc36b6625015",
+    "description": "Adversarial audit of P-R8B-01 protocol fidelity, frozen harness, result validity and WMR-H V0.2 architecture-decision readiness.",
+    "write_paths": []
+  },
+  "task_owner": "chatgpt",
+  "target_write_owner": null,
+  "participants": [
+    {
+      "collaborator_id": "chatgpt",
+      "interaction_environment": "ChatGPT",
+      "interaction_session": "chatgpt-29",
+      "roles": ["TASK_OWNER", "RESEARCHER", "CRITIC"]
+    },
+    {
+      "collaborator_id": "claude",
+      "interaction_environment": "Claude",
+      "interaction_session": "claude-03",
+      "roles": ["REVIEWER", "RESEARCHER", "CRITIC"]
+    },
+    {
+      "collaborator_id": "human",
+      "interaction_environment": "Human",
+      "interaction_session": "project-owner",
+      "roles": ["HUMAN_DECIDER"]
+    }
+  ],
+  "allowed_secondary_write_surfaces": [
+    {
+      "collaborator_id": "claude",
+      "paths": ["docs/model_collaboration/threads/MC-0027/messages/**"]
+    }
+  ],
+  "next_expected_actor": "claude",
+  "independence": {
+    "status": "COMPARATIVE_ONLY",
+    "review_base_ref": "87603fff31609c45baac5b41ef29dc36b6625015",
+    "known_exposures": [
+      "Claude participated in MC-0026 representation design and comparative critique.",
+      "Claude did not author the P-R8B-01 harness or ChatGPT's Research 265 result interpretation.",
+      "The audit is adversarial result interpretation, not an independent architecture-design claim."
+    ],
+    "notes": "Claude is independent of the concrete harness implementation/result write-up but not blind to the architecture candidate. This is sufficient for a bounded protocol/result audit, not a blind replication."
+  },
+  "last_transition": {
+    "transition_id": "mc0027-open-pr8b01-result-audit",
+    "from_state": null,
+    "to_state": "WAITING",
+    "actor": "chatgpt",
+    "reason": "P-R8B-01 passed all 18 preregistered gates. Because the architecture decision is material and the harness/result interpretation were ChatGPT-authored, one bounded Claude result audit is required before the owner decision.",
+    "repository_head": "87603fff31609c45baac5b41ef29dc36b6625015"
+  }
+}
