@@ -1243,6 +1243,93 @@ def record_gate(
         )
 
 
+
+def detect_current_transition_assertions(
+    definition_text: str,
+    legacy_workstream: dict[str, Any],
+) -> list[str]:
+    """Detect explicit ownership of current transition state in a human definition.
+
+    The detector distinguishes durable vocabulary/semantics such as
+    "A PAUSED state is routing" from assertions that this specific
+    workstream is currently PAUSED. It intentionally targets explicit
+    current-state ownership forms rather than banning state-value tokens.
+    """
+    parsed = parse_governed_markdown(definition_text)
+    if parsed["classification"] != "governed":
+        raise ProbeFailure(
+            "transition-assertion detector requires governed definition"
+        )
+
+    findings: list[str] = []
+    metadata = parsed["metadata"]
+
+    forbidden_metadata_keys = {
+        "state": legacy_workstream["state"],
+        "current_state": legacy_workstream["state"],
+        "workstream_state": legacy_workstream["state"],
+        "pause_reason": legacy_workstream["pause_reason"],
+        "return_condition": legacy_workstream["return_condition"],
+        "resume_target": legacy_workstream["resume_target"],
+        "source_ingestion": legacy_workstream["orientation_milestones"][0]["state"],
+        "course_2": legacy_workstream["orientation_milestones"][1]["state"],
+    }
+
+    def walk_metadata(value: Any, path: str = "") -> None:
+        if isinstance(value, dict):
+            for key, item in value.items():
+                normalized = re.sub(r"[^a-z0-9]+", "_", str(key).lower()).strip("_")
+                item_path = f"{path}.{normalized}" if path else normalized
+                if normalized in forbidden_metadata_keys:
+                    expected = forbidden_metadata_keys[normalized]
+                    if item == expected:
+                        findings.append(f"metadata:{item_path}")
+                walk_metadata(item, item_path)
+        elif isinstance(value, list):
+            for idx, item in enumerate(value):
+                walk_metadata(item, f"{path}[{idx}]")
+
+    walk_metadata(metadata)
+
+    body = strip_governed_metadata(definition_text)
+
+    state_value = re.escape(str(legacy_workstream["state"]))
+    current_state_patterns = [
+        rf"(?im)^\s*(?:workstream\s+state|current\s+state)\s*(?:=|:)\s*{state_value}\s*$",
+        rf"(?im)^\s*\*\*Status:\*\*\s*{state_value}\s*$",
+    ]
+    if any(re.search(pattern, body) for pattern in current_state_patterns):
+        findings.append("body:current_workstream_state")
+
+    exact_text_checks = [
+        ("body:pause_reason", legacy_workstream["pause_reason"]),
+        ("body:return_condition", legacy_workstream["return_condition"]),
+        ("body:resume_target", legacy_workstream["resume_target"]),
+    ]
+    for label, value in exact_text_checks:
+        if value and str(value) in body:
+            findings.append(label)
+
+    milestone_expectations = {
+        "body:source_ingestion_milestone": (
+            r"source\s+ingestion",
+            legacy_workstream["orientation_milestones"][0]["state"],
+        ),
+        "body:course_2_milestone": (
+            r"course\s*2",
+            legacy_workstream["orientation_milestones"][1]["state"],
+        ),
+    }
+    for label, (name_pattern, state_value_raw) in milestone_expectations.items():
+        pattern = (
+            rf"(?im)^\s*{name_pattern}\s*(?:=|:|\s{{2,}})\s*"
+            rf"{re.escape(str(state_value_raw))}\s*$"
+        )
+        if re.search(pattern, body):
+            findings.append(label)
+
+    return sorted(set(findings))
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", required=True)
@@ -1448,12 +1535,38 @@ def main() -> int:
             legacy_workstream["orientation_milestones"][0]["state"],
             legacy_workstream["orientation_milestones"][1]["state"],
         ]
-        for value in transition_values:
-            if value and value in definition:
-                raise ProbeFailure(
-                    f"transition-owned current fact leaked into definition: "
-                    f"{value!r}"
-                )
+        detected_assertions = detect_current_transition_assertions(
+            definition,
+            legacy_workstream,
+        )
+        if detected_assertions:
+            raise ProbeFailure(
+                "transition-owned current assertions leaked into definition: "
+                + ", ".join(detected_assertions)
+            )
+
+        negative_control = (
+            definition
+            + "\n## Injected current-state negative control\n\n"
+            + f"workstream state = {legacy_workstream['state']}\n"
+            + f"{legacy_workstream['pause_reason']}\n"
+            + f"{legacy_workstream['return_condition']}\n"
+            + f"{legacy_workstream['resume_target']}\n"
+            + "source ingestion = "
+            + legacy_workstream["orientation_milestones"][0]["state"]
+            + "\nCourse 2 = "
+            + legacy_workstream["orientation_milestones"][1]["state"]
+            + "\n"
+        )
+        negative_findings = detect_current_transition_assertions(
+            negative_control,
+            legacy_workstream,
+        )
+        if len(negative_findings) != 6:
+            raise ProbeFailure(
+                "G04 negative control did not detect all six current "
+                f"assertions: {negative_findings}"
+            )
 
         with tempfile.TemporaryDirectory(
             prefix="pr8b01r2-g04-"
@@ -1499,6 +1612,8 @@ def main() -> int:
 
         return {
             "removed_transition_facts": len(transition_values),
+            "detected_current_assertions": len(detected_assertions),
+            "negative_control_assertions_detected": len(negative_findings),
             "pairing_violations": pairing["pairing_violations"],
             "loss_manifest_complete": True,
             "provenance_preserved": len(
