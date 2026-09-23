@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-23
-**Status:** MC-0027 ACTIVE / P-R8B-01-R2 PASS / OWNER REPRESENTATION DECISION NEXT / MC-0010 DEFERRED
+**Status:** NO ACTIVE CLAUDE OBLIGATION / MC-0027 RESOLVED / ASSURANCE ARCHITECTURE NEXT / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -23,26 +23,31 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Current active collaboration obligation
 
+There is no active Claude obligation.
+
+The active project stage is the from-scratch assurance / verification / testing / CI-CD architecture. A new collaboration thread may be opened later if an independent or adversarial Claude pass would materially improve that design.
+
+## Most recently completed obligation
+
 ### MC-0027: P-R8B-01 adversarial result audit and corrected rerun
 
 ```text
-OPEN
+RESOLVED
 mode                  ADVERSARIAL_RESULT_AUDIT
 coordination branch   v1-source-vault-bootstrap-resume
 audit target          87603fff31609c45baac5b41ef29dc36b6625015
 Claude audit          902fcfd15450a7ba3fb9f3e3542ef33790cf9af9 / AMEND
 ChatGPT reconciliation Research 266
-candidate             WMR-H V0.3 correction candidate
-corrected protocol    P-R8B-01-R2
-next actor            Human project owner
-result                P-R8B-01-R2 attempt 3 PASS / 18 of 18 + 2 of 2
-recommendation        ACCEPT WMR-H V0.3
-next                  explicit owner representation decision
+corrected probe       P-R8B-01-R2 attempt 3 PASS
+blocking gates        18 / 18 PASS
+amendment gates       2 / 2 PASS
+owner decision        ACCEPT
+accepted target       WMR-H V0.3
+durable acceptance    Research 272
+status                RESOLVED
 ```
 
-Attempt 3 has completed against the frozen repaired harness and passes all 18 original blocking gates plus both WMR-H V0.3 amendment gates. Research 271 reconciles the result and finds the representation architecture ready for explicit owner decision. ChatGPT recommends `ACCEPT` WMR-H V0.3 as the R8-B representation-architecture direction. This does not accept the temporary probe as production code and does not authorize Specification 028 amendment, file-level migration, AO-10, physical migration or authority switch.
-
-## Most recently completed obligation
+WMR-H V0.3 is the accepted R8-B representation-architecture direction. The temporary probe implementations are evidence only. Specification 028, AO-10, file-level migration, physical migration and authority switch remain held. The next active stage is first-principles assurance architecture.
 
 ### MC-0024: Research 218 versus R7 comparative architecture review
 

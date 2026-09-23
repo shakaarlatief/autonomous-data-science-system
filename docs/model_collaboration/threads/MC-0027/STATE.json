@@ -2,8 +2,8 @@
   "schema_version": 1,
   "thread_id": "MC-0027",
   "review_mode": "ADVERSARIAL_REVIEW",
-  "lifecycle_state": "WAITING",
-  "phase": "OWNER_DECISION_READY",
+  "lifecycle_state": "RESOLVED",
+  "phase": "WMRH_V03_ACCEPTED",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "87603fff31609c45baac5b41ef29dc36b6625015",
@@ -17,28 +17,40 @@
       "collaborator_id": "chatgpt",
       "interaction_environment": "ChatGPT",
       "interaction_session": "chatgpt-29",
-      "roles": ["TASK_OWNER", "RESEARCHER", "CRITIC"]
+      "roles": [
+        "TASK_OWNER",
+        "RESEARCHER",
+        "CRITIC"
+      ]
     },
     {
       "collaborator_id": "claude",
       "interaction_environment": "Claude",
       "interaction_session": "claude-03",
-      "roles": ["REVIEWER", "RESEARCHER", "CRITIC"]
+      "roles": [
+        "REVIEWER",
+        "RESEARCHER",
+        "CRITIC"
+      ]
     },
     {
       "collaborator_id": "human",
       "interaction_environment": "Human",
       "interaction_session": "project-owner",
-      "roles": ["HUMAN_DECIDER"]
+      "roles": [
+        "HUMAN_DECIDER"
+      ]
     }
   ],
   "allowed_secondary_write_surfaces": [
     {
       "collaborator_id": "claude",
-      "paths": ["docs/model_collaboration/threads/MC-0027/messages/**"]
+      "paths": [
+        "docs/model_collaboration/threads/MC-0027/messages/**"
+      ]
     }
   ],
-  "next_expected_actor": "human",
+  "next_expected_actor": null,
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "87603fff31609c45baac5b41ef29dc36b6625015",
@@ -47,14 +59,14 @@
       "Claude did not author the P-R8B-01 harness or ChatGPT's Research 265 result interpretation.",
       "The audit is adversarial result interpretation, not an independent architecture-design claim."
     ],
-    "notes": "Claude independently reproduced the frozen run, mutation-tested the harness, and returned AMEND. ChatGPT accepts the audit in Research 266. The original 18/18 run remains authentic but confirmatorily insufficient; P-R8B-01-R2 must correct invalid gates against unchanged thresholds before owner representation decision."
+    "notes": "Claude independently reproduced and mutation-tested the original probe, returned AMEND, and identified seven invalid gates. ChatGPT accepted the audit, corrected the probe prospectively against unchanged thresholds, preserved two harness-invalid attempts, and obtained a fully passing third corrected run. The project owner explicitly accepted WMR-H V0.3; Research 272 records the accepted target and MC-0027 closure."
   },
   "last_transition": {
-    "transition_id": "mc0027-audit-amend-accepted-corrected-rerun",
+    "transition_id": "mc0027-owner-acceptance-thread-resolved",
     "from_state": "WAITING",
-    "to_state": "WAITING",
-    "actor": "chatgpt",
-    "reason": "P-R8B-01-R2 attempt 3 passed all 18 original blocking gates and both WMR-H V0.3 amendment gates against the frozen third harness. Research 271 determines that the representation architecture is ready for explicit owner decision and recommends ACCEPT.",
-    "repository_head": "b5a8034d1dbedd616c8c3b82aa1553a5b8b5aa8e"
+    "to_state": "RESOLVED",
+    "actor": "human",
+    "reason": "The project owner explicitly chose ACCEPT after P-R8B-01-R2 attempt 3 passed all 18 original blocking gates and both WMR-H V0.3 amendment gates. Research 272 records WMR-H V0.3 acceptance and closes MC-0027.",
+    "repository_head": "aa0eda73685f6f91d107db99db2d1d7f7f560a1e"
   }
 }
