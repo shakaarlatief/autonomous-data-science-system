@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
-**Date:** 2026-09-22
-**Status:** NO ACTIVE CLAUDE OBLIGATION / MC-0024 RESOLVED / R8 OWNED BY CHATGPT / MC-0010 DEFERRED
+**Date:** 2026-09-23
+**Status:** MC-0025 ACTIVE / CLAUDE R8-A ADVERSARIAL REVIEW NEXT / MC-0024 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -23,7 +23,21 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Current active collaboration obligation
 
-There is no active Claude obligation. MC-0024 is resolved. The owner accepted R7 as amended, Research 218 physical supersession is now explicit, and R8 exact target/migration design is owned by ChatGPT.
+### MC-0025: R8-A exact target repository realization adversarial review
+
+```text
+OPEN
+mode                  ADVERSARIAL_REVIEW
+coordination branch   v1-source-vault-bootstrap-resume
+exact review target   39435d148b4170e13d150e178022d66408de0df1
+reviewer              Claude / claude-03
+required output       docs/model_collaboration/threads/MC-0025/messages/001_claude_adversarial_r8a_exact_target_review.md
+write scope           docs/model_collaboration/threads/MC-0025/messages/**
+owner decision        R8-A PENDING
+next actor            Claude
+```
+
+The review attacks Research 257 before owner acceptance. Representation architecture, Specification 028 amendment, file-level migration, AO-10 and physical migration remain held.
 
 ## Most recently completed obligation
 

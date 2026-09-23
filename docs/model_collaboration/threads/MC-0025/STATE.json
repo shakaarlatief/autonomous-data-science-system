@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "thread_id": "MC-0025",
+  "review_mode": "ADVERSARIAL_REVIEW",
+  "lifecycle_state": "WAITING",
+  "phase": "WAITING_FOR_CLAUDE_MESSAGE_001",
+  "target": {
+    "branch": "v1-source-vault-bootstrap-resume",
+    "base_ref": "39435d148b4170e13d150e178022d66408de0df1",
+    "description": "Adversarial review of Research 257 R8-A exact target repository/workspace realization before owner acceptance, representation selection or physical migration.",
+    "write_paths": []
+  },
+  "task_owner": "chatgpt",
+  "target_write_owner": null,
+  "participants": [
+    {
+      "collaborator_id": "chatgpt",
+      "interaction_environment": "ChatGPT",
+      "interaction_session": "chatgpt-29",
+      "roles": ["TASK_OWNER", "RESEARCHER", "CRITIC"]
+    },
+    {
+      "collaborator_id": "claude",
+      "interaction_environment": "Claude",
+      "interaction_session": "claude-03",
+      "roles": ["REVIEWER", "RESEARCHER", "CRITIC", "COUNTER_DESIGNER"]
+    },
+    {
+      "collaborator_id": "human",
+      "interaction_environment": "Human",
+      "interaction_session": "project-owner",
+      "roles": ["HUMAN_DECIDER"]
+    }
+  ],
+  "allowed_secondary_write_surfaces": [
+    {
+      "collaborator_id": "claude",
+      "paths": ["docs/model_collaboration/threads/MC-0025/messages/**"]
+    }
+  ],
+  "next_expected_actor": "claude",
+  "independence": {
+    "status": "NOT_APPLICABLE",
+    "review_base_ref": "39435d148b4170e13d150e178022d66408de0df1",
+    "known_exposures": [
+      "Claude has persistent claude-03 context for the Project-knowledge and whole-repository architecture program.",
+      "The review intentionally exposes the complete Research 257 proposal and its accepted R5-R7/AO inputs.",
+      "Claude previously participated in MC-0021 through MC-0024 and therefore has prior exposure to several upstream architecture decisions."
+    ],
+    "notes": "This is an adversarial post-proposal review. No blindness or independent-candidate claim is made."
+  },
+  "last_transition": {
+    "transition_id": "mc0025-open-r8a-adversarial-review",
+    "from_state": null,
+    "to_state": "WAITING",
+    "actor": "chatgpt",
+    "reason": "The owner approved opening a Claude adversarial review before deciding whether to accept Research 257 R8-A exact target realization.",
+    "repository_head": "39435d148b4170e13d150e178022d66408de0df1"
+  }
+}
