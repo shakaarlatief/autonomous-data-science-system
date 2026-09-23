@@ -289,7 +289,7 @@ def verify_real_source_hashes() -> dict[str, str]:
 
 def _parse_state_block(text: str) -> dict[str, str]:
     match = re.search(
-        r"## Current qualified state\s*\n\s*\x60\x60\x60text\s*\n"
+        r"## Current qualified state\b.*?\n\x60\x60\x60text\s*\n"
         r"(.*?)\n\x60\x60\x60",
         text,
         flags=re.S,
