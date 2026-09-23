@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ads-probe-v02:project-meta:1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract",
+    "id",
+    "kind",
+    "authority",
+    "lifecycle"
+  ],
+  "properties": {
+    "contract": {
+      "const": "project-knowledge-carrier/1"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "type": "string",
+      "minLength": 1
+    },
+    "authority": {
+      "type": "string",
+      "enum": [
+        "canonical",
+        "governing",
+        "evidence",
+        "operational"
+      ]
+    },
+    "lifecycle": {
+      "type": "string",
+      "enum": [
+        "active",
+        "frozen",
+        "superseded",
+        "historical",
+        "candidate"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "subjects": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "scope": {
+      "type": "object"
+    },
+    "provenance": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "declared_references": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "extensions": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "type",
+          "target"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "minLength": 1
+          },
+          "target": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}
