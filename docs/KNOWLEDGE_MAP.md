@@ -497,6 +497,7 @@ docs/research/266_mc0027_audit_reconciliation_wmrh_v03_and_corrected_probe_contr
 docs/research/267_p_r8b_01_r2_corrected_harness_freeze.md
 docs/research/268_p_r8b_01_r2_harness_defect_and_replacement_freeze.md
 docs/research/269_p_r8b_01_r2_attempt2_g04_false_positive.md
+docs/research/270_p_r8b_01_r2_attempt3_g04_repair_refreeze.md
 docs/checkpoints/570_whole_repository_physical_architecture_scope_clarified.md
 docs/checkpoints/571_whole_repository_r2_boundaries_identified.md
 docs/checkpoints/572_whole_repository_r3_candidate_archetypes_frozen.md
@@ -531,6 +532,7 @@ docs/checkpoints/600_mc0027_audit_accepted_corrected_probe_contract.md
 docs/checkpoints/601_p_r8b_01_r2_corrected_harness_frozen.md
 docs/checkpoints/602_p_r8b_01_r2_harness_repaired_refrozen.md
 docs/checkpoints/603_p_r8b_01_r2_attempt2_harness_invalid.md
+docs/checkpoints/604_p_r8b_01_r2_attempt3_harness_frozen.md
 docs/research/project_knowledge_activation_orchestration/README.md
 docs/research/project_knowledge_activation_orchestration/001_chat26_owner_source_interaction_orchestration_evidence.md
 docs/research/project_knowledge_activation_orchestration/002_chat27_activation_self_hosting_bootstrap_evidence.md
@@ -1162,7 +1164,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-603 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-604 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

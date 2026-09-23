@@ -3,7 +3,7 @@
   "thread_id": "MC-0027",
   "review_mode": "ADVERSARIAL_REVIEW",
   "lifecycle_state": "WAITING",
-  "phase": "G04_REPAIR_REQUIRED",
+  "phase": "ATTEMPT_3_READY",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "87603fff31609c45baac5b41ef29dc36b6625015",
@@ -54,7 +54,7 @@
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "P-R8B-01-R2 attempt 2 completed with 17/18 blocking gates and 2/2 amendment gates passing. Research 269 demonstrates the sole G04 failure is a false positive caused by raw-token matching of PAUSED rather than detection of current-state ownership, so a prospective G04 harness repair is required without changing thresholds or candidate.",
-    "repository_head": "1dada765f31b026a216f6dee5b9ce909da18a181"
+    "reason": "Research 270 prospectively repairs the demonstrated G04 false-positive detector, freezes the third harness at 17c48ac8d7810b5d938532e65367e8aa550e101c on the Git-blob hash basis, and leaves all architecture thresholds and the WMR-H V0.3 candidate unchanged before attempt 3.",
+    "repository_head": "17c48ac8d7810b5d938532e65367e8aa550e101c"
   }
 }
