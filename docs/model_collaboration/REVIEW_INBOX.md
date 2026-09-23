@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-23
-**Status:** NO ACTIVE CLAUDE OBLIGATION / MC-0027 RESOLVED / ASSURANCE ARCHITECTURE NEXT / MC-0010 DEFERRED
+**Status:** MC-0028 ACTIVE / CLAUDE INDEPENDENT ASSURANCE CANDIDATE PENDING / MC-0027 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -25,7 +25,7 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 There is no active Claude obligation.
 
-The active project stage is the from-scratch assurance / verification / testing / CI-CD architecture. Research 273 freezes the mechanism-neutral assurance requirements. The next step is independent assurance-architecture candidate design; no Claude obligation is active until a dedicated thread is opened.
+The active project stage is the from-scratch assurance / verification / testing / CI-CD architecture. Research 273 freezes the mechanism-neutral assurance requirements. MC-0028 is now open against frozen base `cac7a699eb012c5a02e1c5fab349ebc9e5726145`; Claude Message 001 and ChatGPT's independent candidate must be produced without cross-exposure before comparative synthesis.
 
 ## Most recently completed obligation
 

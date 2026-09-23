@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "thread_id": "MC-0028",
+  "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
+  "lifecycle_state": "WAITING",
+  "phase": "INDEPENDENT_CANDIDATES",
+  "target": {
+    "branch": "v1-source-vault-bootstrap-resume",
+    "base_ref": "cac7a699eb012c5a02e1c5fab349ebc9e5726145",
+    "description": "Independent target assurance / verification / testing / CI-CD / delivery architecture design from frozen Research 273 requirements.",
+    "write_paths": []
+  },
+  "task_owner": "chatgpt",
+  "target_write_owner": null,
+  "participants": [
+    {
+      "collaborator_id": "chatgpt",
+      "interaction_environment": "ChatGPT",
+      "interaction_session": "chatgpt-29",
+      "roles": [
+        "TASK_OWNER",
+        "RESEARCHER",
+        "CRITIC"
+      ]
+    },
+    {
+      "collaborator_id": "claude",
+      "interaction_environment": "Claude",
+      "interaction_session": "claude-03",
+      "roles": [
+        "INDEPENDENT_REVIEWER",
+        "RESEARCHER",
+        "CRITIC",
+        "COUNTER_DESIGNER"
+      ]
+    },
+    {
+      "collaborator_id": "human",
+      "interaction_environment": "Human",
+      "interaction_session": "project-owner",
+      "roles": [
+        "HUMAN_DECIDER"
+      ]
+    }
+  ],
+  "allowed_secondary_write_surfaces": [
+    {
+      "collaborator_id": "claude",
+      "paths": [
+        "docs/model_collaboration/threads/MC-0028/messages/**"
+      ]
+    }
+  ],
+  "next_expected_actor": "claude",
+  "independence": {
+    "status": "BLIND_TO_CANDIDATE",
+    "review_base_ref": "cac7a699eb012c5a02e1c5fab349ebc9e5726145",
+    "known_exposures": [
+      "Claude participated in earlier repository, information and representation architecture work.",
+      "Research 273 requirements and all accepted upstream architecture at the frozen base are intentionally visible.",
+      "Any later ChatGPT assurance candidate is prohibited from Claude's Message 001 evidence boundary."
+    ],
+    "notes": "Independence is about candidate topology/mechanisms, not ignorance of accepted ADS architecture."
+  },
+  "last_transition": {
+    "transition_id": "mc0028-open-independent-assurance-design",
+    "from_state": null,
+    "to_state": "WAITING",
+    "actor": "chatgpt",
+    "reason": "Research 273 froze mechanism-neutral assurance requirements. A genuinely independent Claude candidate and ChatGPT candidate are required before comparative synthesis.",
+    "repository_head": "cac7a699eb012c5a02e1c5fab349ebc9e5726145"
+  }
+}
