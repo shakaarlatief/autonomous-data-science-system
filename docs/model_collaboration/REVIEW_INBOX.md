@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-23
-**Status:** MC-0027 ACTIVE / CORRECTED P-R8B-01-R2 IMPLEMENTATION NEXT / MC-0026 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0027 ACTIVE / CORRECTED P-R8B-01-R2 FROZEN / EXECUTION NEXT / MC-0026 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -35,10 +35,10 @@ ChatGPT reconciliation Research 266
 candidate             WMR-H V0.3 correction candidate
 corrected protocol    P-R8B-01-R2
 next actor            ChatGPT
-next                  implement and freeze corrected harness
+next                  execute frozen corrected harness
 ```
 
-The original run remains authentic but is confirmatorily insufficient because seven gates could not meaningfully fail. Research 266 accepts Claude's audit, freezes two narrow architecture amendments and the corrected-rerun contract, and preserves the original thresholds. Representation owner decision, Specification 028 amendment, file-level migration, AO-10 and physical migration remain held.
+The original run remains authentic but is confirmatorily insufficient because seven gates could not meaningfully fail. Research 266 accepts Claude's audit and freezes the corrected-rerun contract. Research 267 freezes the corrected harness at `ceda2a257e8ff6b16bf9ffd1403d041ed07acc61` using Git-blob SHA-256 hashes before execution. Representation owner decision, Specification 028 amendment, file-level migration, AO-10 and physical migration remain held.
 
 ## Most recently completed obligation
 
