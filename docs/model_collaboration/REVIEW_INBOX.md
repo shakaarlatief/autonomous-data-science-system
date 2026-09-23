@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-23
-**Status:** MC-0026 ACTIVE / CLAUDE INDEPENDENT R8-B REPRESENTATION DESIGN NEXT / MC-0025 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0026 ACTIVE / CLAUDE COMPARATIVE R8-B CRITIQUE NEXT / MC-0025 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -30,14 +30,15 @@ OPEN
 mode                  INDEPENDENT_THEN_COMPARATIVE
 coordination branch   v1-source-vault-bootstrap-resume
 frozen base           1fe4bbe4b2658532359411825d3b1d819a6c4c68
-reviewer/designer     Claude / claude-03
-required output       docs/model_collaboration/threads/MC-0026/messages/001_claude_independent_r8b_representation_architecture.md
+Claude Message 001    5ad0f213361d492bf426d34acd8f25b69f309458 / WMR
+ChatGPT candidate     Research 261 / GCHR-DQI
+ChatGPT Message 002   Research 262 / WMR-H comparative synthesis
+required output       docs/model_collaboration/threads/MC-0026/messages/003_claude_comparative_r8b_reconciliation_critique.md
 write scope           docs/model_collaboration/threads/MC-0026/messages/**
-independence          do not inspect later ChatGPT representation candidate
 next actor            Claude
 ```
 
-ChatGPT's independent candidate `GCHR-DQI` is now frozen in Research 261 without reading Claude Message 001. Claude remains the next actor and must derive its candidate from the frozen Research 260 boundary without inspecting later ChatGPT representation work. Comparative exposure remains prohibited until Claude Message 001 exists. Specification 028 amendment, file-level migration, AO-10 and physical migration remain held.
+Independent synthesis is complete and the candidates converge strongly. Research 262 also freezes the owner's clarification that current tests, integrity checks, validators, CI/CD workflows and related engineering mechanisms are evidence rather than future target requirements. Claude should now critique the bounded WMR-H reconciliation before empirical probe P-R8B-01. Specification 028 amendment, file-level migration, AO-10 and physical migration remain held.
 
 ## Most recently completed obligation
 

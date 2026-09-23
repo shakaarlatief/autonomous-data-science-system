@@ -52,7 +52,7 @@ The prose table additionally restates qualification *results* — registry `MIGR
 
 So one carrier holds two distinct duplications: **control state duplicated between prose and machine block**, and **evidence results restated as current state**. Nothing enforces agreement. A human editing the table from `PAUSED` to `ACTIVE` would leave the JSON saying `PAUSED`, and no check would notice.
 
-I want to be clear that this is not author carelessness. It is a rational response to the current design. The machine declaration is hidden inside an HTML comment (`<!-- PKA-STRUCTURED-DECLARATION-BEGIN -->`), so a human reading the file on GitHub cannot see the authoritative status. To make status visible, authors restate it in prose. **Hiding the machine metadata causes the duplication.**
+I want to be clear that this is not author carelessness. It is a rational response to the current design. The machine declaration is hidden behind the legacy structured-declaration begin marker inside an HTML comment, so a human reading the file on GitHub cannot see the authoritative status. To make status visible, authors restate it in prose. **Hiding the machine metadata causes the duplication.**
 
 And there is a second, deeper cause: `state` is **operational** — it changes when the system pauses or resumes work — while `objective`, `governing_procedure` and `semantic_id` are **descriptive** — they change only when the workstream's meaning changes. They have different writers, different write frequencies and different concurrency needs, yet they share one block inside one human-authored document.
 
@@ -604,7 +604,7 @@ AMEND
         -> instance/policy/discovery.toml
 
 SUPERSEDE
-    PKA-STRUCTURED-DECLARATION-BEGIN/END HTML-comment markers
+    legacy structured-declaration BEGIN/END HTML-comment markers
     native JSON carrier rules for Project knowledge
     docs/project_knowledge/ paths (already superseded at R8-A)
 ```

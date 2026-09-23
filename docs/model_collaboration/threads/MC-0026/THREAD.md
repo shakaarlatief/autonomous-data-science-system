@@ -1,7 +1,7 @@
 # MC-0026 Thread: Independent R8-B Representation Architecture
 
 **Thread:** MC-0026
-**Status:** OPEN / CHATGPT INDEPENDENT CANDIDATE FROZEN / CLAUDE MESSAGE 001 NEXT
+**Status:** OPEN / INDEPENDENT CANDIDATES RECONCILED / CLAUDE COMPARATIVE MESSAGE 003 NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent-design base:** 1fe4bbe4b2658532359411825d3b1d819a6c4c68
@@ -16,11 +16,12 @@ Derive two representation/content architecture candidates independently from Res
 
 ## Sequence
 
-    001 Claude independent candidate     PENDING
+    001 Claude independent candidate     COMPLETE / WMR / 5ad0f213...
     ChatGPT candidate                    COMPLETE / Research 261 / GCHR-DQI
-    002 ChatGPT comparative synthesis    only after Claude Message 001 exists
-    003 Claude comparative critique      if needed
-    owner decision                       after reconciliation
+    002 ChatGPT comparative synthesis    COMPLETE / Research 262 / WMR-H
+    003 Claude comparative critique      NEXT
+    empirical probe                      AFTER 003 RECONCILIATION
+    owner decision                       AFTER PROBE
 
 ## Independence
 
@@ -41,10 +42,10 @@ Claude may write only:
 ChatGPT remains task owner/integrator.
 
     MC0026=OPEN
-    PHASE=CHATGPT_CANDIDATE_FROZEN_WAITING_FOR_CLAUDE
+    PHASE=COMPARATIVE_CRITIQUE
     FROZEN_BASE=1fe4bbe4b2658532359411825d3b1d819a6c4c68
-    CLAUDE_MESSAGE_001=PENDING
+    CLAUDE_MESSAGE_001=5ad0f213361d492bf426d34acd8f25b69f309458
     CHATGPT_CANDIDATE=GCHR-DQI
-    CHATGPT_CANDIDATE_RECORD=docs/research/261_chatgpt_independent_r8b_representation_architecture_candidate.md
-    COMPARATIVE_EXPOSURE_ALLOWED=false
-    NEXT=CLAUDE_MESSAGE_001
+    CHATGPT_COMPARATIVE_MESSAGE_002=docs/model_collaboration/threads/MC-0026/messages/002_chatgpt_comparative_r8b_reconciliation.md
+    COMPARATIVE_CANDIDATE=WMR-H
+    NEXT=CLAUDE_MESSAGE_003
