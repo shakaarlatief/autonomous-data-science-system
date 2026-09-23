@@ -3,7 +3,7 @@
   "thread_id": "MC-0026",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "PARALLEL_INDEPENDENT_DESIGN",
+  "phase": "CHATGPT_CANDIDATE_FROZEN_WAITING_FOR_CLAUDE",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "1fe4bbe4b2658532359411825d3b1d819a6c4c68",
@@ -47,14 +47,14 @@
       "Both designers share the accepted architecture and Research 260 requirements.",
       "Claude must not inspect any later ChatGPT R8-B representation candidate before Message 001."
     ],
-    "notes": "Independent target synthesis from a shared requirements boundary; not blind to project history."
+    "notes": "Independent target synthesis from a shared requirements boundary; not blind to project history. ChatGPT candidate GCHR-DQI is now frozen in Research 261 without reading Claude Message 001. Claude remains blind to the later ChatGPT candidate and must derive Message 001 from the frozen base before comparative exposure."
   },
   "last_transition": {
-    "transition_id": "mc0026-open-independent-representation-design",
-    "from_state": null,
+    "transition_id": "mc0026-chatgpt-candidate-frozen-await-claude",
+    "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 260 froze the shared representation requirements. The owner authorized proceeding and reiterated that Claude may be used whenever useful. Independent parallel synthesis is the selected next method.",
-    "repository_head": "1fe4bbe4b2658532359411825d3b1d819a6c4c68"
+    "reason": "ChatGPT independently derived and froze candidate GCHR-DQI in Research 261 without reading Claude Message 001. Claude remains the next actor under the frozen-base independence contract.",
+    "repository_head": "d3771150ca86dd5642479202c33c9f23b5b75d3b"
   }
 }

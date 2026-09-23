@@ -37,7 +37,7 @@ independence          do not inspect later ChatGPT representation candidate
 next actor            Claude
 ```
 
-ChatGPT is deriving an independent candidate from the same frozen Research 260 boundary. Comparative exposure is prohibited until both candidates exist. Specification 028 amendment, file-level migration, AO-10 and physical migration remain held.
+ChatGPT's independent candidate `GCHR-DQI` is now frozen in Research 261 without reading Claude Message 001. Claude remains the next actor and must derive its candidate from the frozen Research 260 boundary without inspecting later ChatGPT representation work. Comparative exposure remains prohibited until Claude Message 001 exists. Specification 028 amendment, file-level migration, AO-10 and physical migration remain held.
 
 ## Most recently completed obligation
 

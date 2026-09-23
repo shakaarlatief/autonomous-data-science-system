@@ -488,6 +488,7 @@ docs/research/257_r8a_exact_target_repository_realization_and_project_system_res
 docs/research/258_mc0025_r8a_adversarial_reconciliation_and_amended_exact_target_candidate.md
 docs/research/259_r8a_owner_amendment_acceptance_and_from_scratch_representation_freedom.md
 docs/research/260_r8b_from_scratch_representation_requirements_and_independent_design_protocol.md
+docs/research/261_chatgpt_independent_r8b_representation_architecture_candidate.md
 docs/checkpoints/570_whole_repository_physical_architecture_scope_clarified.md
 docs/checkpoints/571_whole_repository_r2_boundaries_identified.md
 docs/checkpoints/572_whole_repository_r3_candidate_archetypes_frozen.md
@@ -512,6 +513,7 @@ docs/checkpoints/590_mc0025_r8a_review_reconciled_amendment_decision_pending.md
 docs/checkpoints/591_r8a_accepted_representation_freedom_frozen.md
 docs/checkpoints/592_r8b_representation_requirements_frozen.md
 docs/checkpoints/593_mc0026_independent_representation_design_opened.md
+docs/checkpoints/594_chatgpt_independent_r8b_representation_candidate_frozen.md
 docs/research/project_knowledge_activation_orchestration/README.md
 docs/research/project_knowledge_activation_orchestration/001_chat26_owner_source_interaction_orchestration_evidence.md
 docs/research/project_knowledge_activation_orchestration/002_chat27_activation_self_hosting_bootstrap_evidence.md
@@ -1143,7 +1145,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-593 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-594 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 
