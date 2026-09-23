@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-23
-**Status:** MC-0025 ACTIVE / CLAUDE R8-A ADVERSARIAL REVIEW NEXT / MC-0024 RESOLVED / MC-0010 DEFERRED
+**Status:** NO ACTIVE CLAUDE OBLIGATION / MC-0025 REVIEW RECONCILED / R8-A OWNER DECISION PENDING / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -26,18 +26,19 @@ This inbox intentionally does not duplicate that state except where needed to ex
 ### MC-0025: R8-A exact target repository realization adversarial review
 
 ```text
-OPEN
+WAITING FOR OWNER DECISION
 mode                  ADVERSARIAL_REVIEW
 coordination branch   v1-source-vault-bootstrap-resume
 exact review target   39435d148b4170e13d150e178022d66408de0df1
-reviewer              Claude / claude-03
-required output       docs/model_collaboration/threads/MC-0025/messages/001_claude_adversarial_r8a_exact_target_review.md
-write scope           docs/model_collaboration/threads/MC-0025/messages/**
+Claude Message 001    14bb28f0094a7a30d4f29798e916bb4ee77fdda7
+Claude disposition    AMEND
+ChatGPT Message 002   Research 258 reconciliation
+ChatGPT disposition   AMEND
 owner decision        R8-A PENDING
-next actor            Claude
+next actor            project owner
 ```
 
-The review attacks Research 257 before owner acceptance. Representation architecture, Specification 028 amendment, file-level migration, AO-10 and physical migration remain held.
+There is no active Claude obligation. Representation architecture, Specification 028 amendment, file-level migration, AO-10 and physical migration remain held until the owner decides the amended R8-A target.
 
 ## Most recently completed obligation
 

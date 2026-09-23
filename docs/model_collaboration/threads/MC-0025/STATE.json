@@ -3,7 +3,7 @@
   "thread_id": "MC-0025",
   "review_mode": "ADVERSARIAL_REVIEW",
   "lifecycle_state": "WAITING",
-  "phase": "WAITING_FOR_CLAUDE_MESSAGE_001",
+  "phase": "WAITING_FOR_OWNER_R8A_AMENDMENT_DECISION",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "39435d148b4170e13d150e178022d66408de0df1",
@@ -38,7 +38,7 @@
       "paths": ["docs/model_collaboration/threads/MC-0025/messages/**"]
     }
   ],
-  "next_expected_actor": "claude",
+  "next_expected_actor": "human",
   "independence": {
     "status": "NOT_APPLICABLE",
     "review_base_ref": "39435d148b4170e13d150e178022d66408de0df1",
@@ -47,14 +47,14 @@
       "The review intentionally exposes the complete Research 257 proposal and its accepted R5-R7/AO inputs.",
       "Claude previously participated in MC-0021 through MC-0024 and therefore has prior exposure to several upstream architecture decisions."
     ],
-    "notes": "This is an adversarial post-proposal review. No blindness or independent-candidate claim is made."
+    "notes": "This is an adversarial post-proposal review. Claude Message 001 returned AMEND at commit 14bb28f0094a7a30d4f29798e916bb4ee77fdda7. ChatGPT reconciled all nine amendments plus eleven clarifications in Message 002 / Research 258 and also recommends AMEND. The owner decision is pending."
   },
   "last_transition": {
-    "transition_id": "mc0025-open-r8a-adversarial-review",
-    "from_state": null,
+    "transition_id": "mc0025-review-reconciled-owner-decision-pending",
+    "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "The owner approved opening a Claude adversarial review before deciding whether to accept Research 257 R8-A exact target realization.",
-    "repository_head": "39435d148b4170e13d150e178022d66408de0df1"
+    "reason": "Claude Message 001 returned AMEND. ChatGPT reconciled the nine amendments and eleven clarifications in Message 002 / Research 258, recommends AMEND, and routes the next normative step to the project owner.",
+    "repository_head": "14bb28f0094a7a30d4f29798e916bb4ee77fdda7"
   }
 }
