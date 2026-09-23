@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-23
-**Status:** MC-0027 ACTIVE / CORRECTED P-R8B-01-R2 FROZEN / EXECUTION NEXT / MC-0026 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0027 ACTIVE / ATTEMPT 1 HARNESS_INVALID / REPAIRED P-R8B-01-R2 REFROZEN / ATTEMPT 2 NEXT / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -35,10 +35,10 @@ ChatGPT reconciliation Research 266
 candidate             WMR-H V0.3 correction candidate
 corrected protocol    P-R8B-01-R2
 next actor            ChatGPT
-next                  execute frozen corrected harness
+next                  execute replacement frozen harness / attempt 2
 ```
 
-The original run remains authentic but is confirmatorily insufficient because seven gates could not meaningfully fail. Research 266 accepts Claude's audit and freezes the corrected-rerun contract. Research 267 freezes the corrected harness at `ceda2a257e8ff6b16bf9ffd1403d041ed07acc61` using Git-blob SHA-256 hashes before execution. Representation owner decision, Specification 028 amendment, file-level migration, AO-10 and physical migration remain held.
+The original run remains authentic but is confirmatorily insufficient because seven gates could not meaningfully fail. Research 266 accepts Claude's audit and freezes the corrected-rerun contract. Attempt 1 against the Research 267 harness was `HARNESS_INVALID` before any gate result because the real Source Vault state block locator assumed an immediate fence. Research 268 prospectively repairs and refreezes the harness at `a893e7e904e29ca91491108bd816d4af06dba6c1` with unchanged thresholds and candidate. Representation owner decision, Specification 028 amendment, file-level migration, AO-10 and physical migration remain held.
 
 ## Most recently completed obligation
 

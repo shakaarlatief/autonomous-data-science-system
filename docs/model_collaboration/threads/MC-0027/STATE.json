@@ -3,7 +3,7 @@
   "thread_id": "MC-0027",
   "review_mode": "ADVERSARIAL_REVIEW",
   "lifecycle_state": "WAITING",
-  "phase": "CORRECTED_RERUN_FROZEN",
+  "phase": "CORRECTED_RERUN_REFROZEN",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "87603fff31609c45baac5b41ef29dc36b6625015",
@@ -54,7 +54,7 @@
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 267 freezes the corrected P-R8B-01-R2 harness at commit ceda2a257e8ff6b16bf9ffd1403d041ed07acc61 on a Git-blob hash basis before execution.",
-    "repository_head": "ceda2a257e8ff6b16bf9ffd1403d041ed07acc61"
+    "reason": "P-R8B-01-R2 attempt 1 terminated before any gate result because the harness could not locate the real Source Vault state block. Research 268 classifies HARNESS_INVALID and freezes the prospective parser repair at a893e7e904e29ca91491108bd816d4af06dba6c1 without changing thresholds or candidate.",
+    "repository_head": "a893e7e904e29ca91491108bd816d4af06dba6c1"
   }
 }
