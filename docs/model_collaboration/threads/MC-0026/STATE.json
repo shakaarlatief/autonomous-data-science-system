@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "thread_id": "MC-0026",
+  "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
+  "lifecycle_state": "WAITING",
+  "phase": "PARALLEL_INDEPENDENT_DESIGN",
+  "target": {
+    "branch": "v1-source-vault-bootstrap-resume",
+    "base_ref": "1fe4bbe4b2658532359411825d3b1d819a6c4c68",
+    "description": "Independent R8-B representation/content architecture synthesis from frozen Research 260 requirements before comparative exposure.",
+    "write_paths": []
+  },
+  "task_owner": "chatgpt",
+  "target_write_owner": null,
+  "participants": [
+    {
+      "collaborator_id": "chatgpt",
+      "interaction_environment": "ChatGPT",
+      "interaction_session": "chatgpt-29",
+      "roles": ["TASK_OWNER", "RESEARCHER", "CRITIC"]
+    },
+    {
+      "collaborator_id": "claude",
+      "interaction_environment": "Claude",
+      "interaction_session": "claude-03",
+      "roles": ["INDEPENDENT_REVIEWER", "RESEARCHER", "CRITIC", "COUNTER_DESIGNER"]
+    },
+    {
+      "collaborator_id": "human",
+      "interaction_environment": "Human",
+      "interaction_session": "project-owner",
+      "roles": ["HUMAN_DECIDER"]
+    }
+  ],
+  "allowed_secondary_write_surfaces": [
+    {
+      "collaborator_id": "claude",
+      "paths": ["docs/model_collaboration/threads/MC-0026/messages/**"]
+    }
+  ],
+  "next_expected_actor": "claude",
+  "independence": {
+    "status": "BLIND_TO_CANDIDATE",
+    "review_base_ref": "1fe4bbe4b2658532359411825d3b1d819a6c4c68",
+    "known_exposures": [
+      "Claude has prior project context and prior upstream collaboration through MC-0025.",
+      "Both designers share the accepted architecture and Research 260 requirements.",
+      "Claude must not inspect any later ChatGPT R8-B representation candidate before Message 001."
+    ],
+    "notes": "Independent target synthesis from a shared requirements boundary; not blind to project history."
+  },
+  "last_transition": {
+    "transition_id": "mc0026-open-independent-representation-design",
+    "from_state": null,
+    "to_state": "WAITING",
+    "actor": "chatgpt",
+    "reason": "Research 260 froze the shared representation requirements. The owner authorized proceeding and reiterated that Claude may be used whenever useful. Independent parallel synthesis is the selected next method.",
+    "repository_head": "1fe4bbe4b2658532359411825d3b1d819a6c4c68"
+  }
+}

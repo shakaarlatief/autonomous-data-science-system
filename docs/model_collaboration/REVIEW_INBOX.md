@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-23
-**Status:** NO ACTIVE CLAUDE OBLIGATION / MC-0025 RESOLVED / R8-A ACCEPTED AS AMENDED / MC-0010 DEFERRED
+**Status:** MC-0026 ACTIVE / CLAUDE INDEPENDENT R8-B REPRESENTATION DESIGN NEXT / MC-0025 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -23,22 +23,21 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Current active collaboration obligation
 
-### MC-0025: R8-A exact target repository realization adversarial review
+### MC-0026: independent R8-B representation/content architecture design
 
 ```text
-RESOLVED
-mode                  ADVERSARIAL_REVIEW
+OPEN
+mode                  INDEPENDENT_THEN_COMPARATIVE
 coordination branch   v1-source-vault-bootstrap-resume
-exact review target   39435d148b4170e13d150e178022d66408de0df1
-Claude Message 001    14bb28f0094a7a30d4f29798e916bb4ee77fdda7
-Claude disposition    AMEND
-ChatGPT Message 002   Research 258 reconciliation
-owner decision        AMEND
-result                R8-A accepted as amended; from-scratch representation/content design unblocked
-next actor            ChatGPT
+frozen base           1fe4bbe4b2658532359411825d3b1d819a6c4c68
+reviewer/designer     Claude / claude-03
+required output       docs/model_collaboration/threads/MC-0026/messages/001_claude_independent_r8b_representation_architecture.md
+write scope           docs/model_collaboration/threads/MC-0026/messages/**
+independence          do not inspect later ChatGPT representation candidate
+next actor            Claude
 ```
 
-There is no active Claude obligation. Research 259 records that current metadata/file-internal conventions are evidence rather than target requirements. Representation/content architecture is now the active stage; Specification 028 amendment, file-level migration, AO-10 and physical migration remain held.
+ChatGPT is deriving an independent candidate from the same frozen Research 260 boundary. Comparative exposure is prohibited until both candidates exist. Specification 028 amendment, file-level migration, AO-10 and physical migration remain held.
 
 ## Most recently completed obligation
 
