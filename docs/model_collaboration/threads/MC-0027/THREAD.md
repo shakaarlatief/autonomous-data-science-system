@@ -1,7 +1,7 @@
 # MC-0027 Thread: P-R8B-01 Result Audit
 
 **Thread:** MC-0027
-**Status:** OPEN / CLAUDE RESULT AUDIT NEXT
+**Status:** OPEN / CLAUDE AUDIT RECONCILED / CORRECTED RERUN IMPLEMENTATION NEXT
 **Review mode:** ADVERSARIAL_RESULT_AUDIT
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Exact audit target:** 87603fff31609c45baac5b41ef29dc36b6625015
@@ -15,9 +15,10 @@ Independently audit whether the frozen P-R8B-01 protocol, frozen harness and 18/
 
 ## Sequence
 
-    001 Claude result audit              NEXT
-    002 ChatGPT reconciliation           AFTER 001
-    owner decision                       AFTER reconciliation if ready
+    001 Claude result audit              COMPLETE / 902fcfd...
+    002 ChatGPT reconciliation           COMPLETE / Research 266
+    corrected rerun                      NEXT / P-R8B-01-R2
+    owner decision                       AFTER valid corrected result
 
 ## Write ownership
 
@@ -26,7 +27,10 @@ Claude may write only:
     docs/model_collaboration/threads/MC-0027/messages/**
 
     MC0027=OPEN
-    PHASE=WAITING_FOR_CLAUDE_RESULT_AUDIT
+    PHASE=CORRECTED_RERUN_IMPLEMENTATION
     AUDIT_TARGET=87603fff31609c45baac5b41ef29dc36b6625015
+    CLAUDE_MESSAGE_001=902fcfd15450a7ba3fb9f3e3542ef33790cf9af9
+    WMR_H_V0_3=CORRECTION_CANDIDATE
+    P_R8B_01_R2=PROTOCOL_FROZEN
     OWNER_REPRESENTATION_DECISION=PENDING
-    NEXT=CLAUDE_MESSAGE_001
+    NEXT=IMPLEMENT_AND_FREEZE_CORRECTED_HARNESS

@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-23
-**Status:** MC-0027 ACTIVE / CLAUDE P-R8B-01 RESULT AUDIT NEXT / MC-0026 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0027 ACTIVE / CORRECTED P-R8B-01-R2 IMPLEMENTATION NEXT / MC-0026 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -23,21 +23,22 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Current active collaboration obligation
 
-### MC-0027: P-R8B-01 adversarial result audit
+### MC-0027: P-R8B-01 adversarial result audit and corrected rerun
 
 ```text
 OPEN
 mode                  ADVERSARIAL_RESULT_AUDIT
 coordination branch   v1-source-vault-bootstrap-resume
-exact audit target    87603fff31609c45baac5b41ef29dc36b6625015
-probe result          P-R8B-01 PASS / 18 OF 18
-candidate             WMR-H V0.2
-required output       docs/model_collaboration/threads/MC-0027/messages/001_claude_p_r8b_01_result_audit.md
-write scope           docs/model_collaboration/threads/MC-0027/messages/**
-next actor            Claude
+audit target          87603fff31609c45baac5b41ef29dc36b6625015
+Claude audit          902fcfd15450a7ba3fb9f3e3542ef33790cf9af9 / AMEND
+ChatGPT reconciliation Research 266
+candidate             WMR-H V0.3 correction candidate
+corrected protocol    P-R8B-01-R2
+next actor            ChatGPT
+next                  implement and freeze corrected harness
 ```
 
-The audit must evaluate protocol fidelity, frozen-harness integrity, gate-by-gate validity, real-source discrimination, possible self-confirmation/overclaim and architecture-decision readiness without changing the preregistered thresholds. Representation owner decision, Specification 028 amendment, file-level migration, AO-10 and physical migration remain held.
+The original run remains authentic but is confirmatorily insufficient because seven gates could not meaningfully fail. Research 266 accepts Claude's audit, freezes two narrow architecture amendments and the corrected-rerun contract, and preserves the original thresholds. Representation owner decision, Specification 028 amendment, file-level migration, AO-10 and physical migration remain held.
 
 ## Most recently completed obligation
 
