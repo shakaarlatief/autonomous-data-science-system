@@ -3,7 +3,7 @@
   "thread_id": "MC-0027",
   "review_mode": "ADVERSARIAL_REVIEW",
   "lifecycle_state": "WAITING",
-  "phase": "ATTEMPT_3_READY",
+  "phase": "OWNER_DECISION_READY",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "87603fff31609c45baac5b41ef29dc36b6625015",
@@ -38,7 +38,7 @@
       "paths": ["docs/model_collaboration/threads/MC-0027/messages/**"]
     }
   ],
-  "next_expected_actor": "chatgpt",
+  "next_expected_actor": "human",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "87603fff31609c45baac5b41ef29dc36b6625015",
@@ -54,7 +54,7 @@
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 270 prospectively repairs the demonstrated G04 false-positive detector, freezes the third harness at 17c48ac8d7810b5d938532e65367e8aa550e101c on the Git-blob hash basis, and leaves all architecture thresholds and the WMR-H V0.3 candidate unchanged before attempt 3.",
-    "repository_head": "17c48ac8d7810b5d938532e65367e8aa550e101c"
+    "reason": "P-R8B-01-R2 attempt 3 passed all 18 original blocking gates and both WMR-H V0.3 amendment gates against the frozen third harness. Research 271 determines that the representation architecture is ready for explicit owner decision and recommends ACCEPT.",
+    "repository_head": "b5a8034d1dbedd616c8c3b82aa1553a5b8b5aa8e"
   }
 }

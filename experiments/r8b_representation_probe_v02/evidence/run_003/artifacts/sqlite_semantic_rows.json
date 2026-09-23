@@ -1,0 +1,27 @@
+{
+  "sources": [
+    [
+      "SPECIFICATION:028",
+      "specification",
+      ""
+    ],
+    [
+      "WS-SOURCE-VAULT-BOOTSTRAP",
+      "workstream",
+      "PAUSED"
+    ]
+  ],
+  "relations": [
+    [
+      "REL:SPEC-WORKSTREAM",
+      "informs",
+      "SPECIFICATION:028",
+      "WS-SOURCE-VAULT-BOOTSTRAP"
+    ]
+  ],
+  "fts": [
+    [
+      "SPECIFICATION:028"
+    ]
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "legacy_declaration_fields": {
+    "schema_version": "replaced-by:metadata.contract",
+    "profile": "mapped-to:metadata.kind",
+    "kind": "mapped-to:metadata.kind",
+    "authority_class": "mapped-to:metadata.authority",
+    "semantic_id": "mapped-to:metadata.id",
+    "scope": "mapped-to:metadata.scope",
+    "provenance": "mapped-to:metadata.provenance",
+    "references": "merged-into:metadata.declared_references"
+  },
+  "header": {
+    "status": "preserved-verbatim-and-mapped-to-metadata.status/lifecycle",
+    "authority": "preserved-verbatim; metadata.authority reflects canonical carrier role",
+    "declared_references": "preserved-verbatim-and-mapped-to-metadata.declared_references"
+  },
+  "authority_clause": "Frozen implementation contract subordinate to D-035 and Requirements V0.2. It does not switch operational authority. Existing continuity remains authoritative until a later explicit qualified authority-switch decision.",
+  "dropped_without_disposition": []
+}

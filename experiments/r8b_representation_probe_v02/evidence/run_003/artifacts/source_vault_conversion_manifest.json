@@ -1,0 +1,27 @@
+{
+  "legacy_declaration_fields": {
+    "schema_version": "replaced-by:metadata.contract",
+    "profile": "mapped-to:metadata.kind",
+    "kind": "mapped-to:metadata.kind",
+    "authority_class": "mapped-to:metadata.authority",
+    "semantic_id": "mapped-to:metadata.id",
+    "state": "moved-to:state.state",
+    "scope": "mapped-to:metadata.scope",
+    "objective": "preserved-in:definition.objective",
+    "expected_to_resume": "moved-to:state.expected_to_resume",
+    "pause_reason": "moved-to:state.pause_reason",
+    "return_condition": "moved-to:state.return_condition",
+    "resume_target": "moved-to:state.resume_target",
+    "governing_procedure": "preserved-in:definition-and-relation",
+    "orientation_milestones": "moved-to:state.milestones",
+    "provenance": "mapped-to:metadata.provenance",
+    "references": "mapped-to:metadata.declared_references",
+    "risk_or_reopen_triggers": "preserved-in:definition.risk_or_reopen_triggers"
+  },
+  "prose": {
+    "current_qualified_state": "transition facts moved to state; residual observations retained",
+    "pause_routing_paragraph": "durable pause semantics retained; current routing facts moved to state",
+    "public_private_boundary": "preserved verbatim in definition"
+  },
+  "dropped_without_disposition": []
+}

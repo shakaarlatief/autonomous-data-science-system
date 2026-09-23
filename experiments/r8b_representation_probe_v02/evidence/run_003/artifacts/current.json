@@ -1,0 +1,29 @@
+{
+  "contract": "project-orientation/1",
+  "derived": true,
+  "authoritative": false,
+  "source_boundary_digest": "8ceade73422982f5e3a851ae1cf214168b4e1d76abea67cf33732d1bc8cfc319",
+  "sources": [
+    {
+      "id": "WS-SOURCE-VAULT-BOOTSTRAP",
+      "role": "definition",
+      "path": "definition.md",
+      "revision": null,
+      "sha256": "1527e78a60d28f3d1aac5ae2dd9868a8d46fe7d851f1fb9e340c92622c518cb7"
+    },
+    {
+      "id": "WS-SOURCE-VAULT-BOOTSTRAP",
+      "role": "state",
+      "path": "state.json",
+      "revision": 1,
+      "sha256": "1ef6a7918e0a624723ca84592c39d1b03d4a387faf31fed4d39c506835e48b0a"
+    }
+  ],
+  "workstreams": [
+    {
+      "id": "WS-SOURCE-VAULT-BOOTSTRAP",
+      "state": "PAUSED",
+      "revision": 1
+    }
+  ]
+}
