@@ -492,6 +492,7 @@ docs/research/261_chatgpt_independent_r8b_representation_architecture_candidate.
 docs/research/262_mc0026_comparative_representation_reconciliation_and_assurance_architecture_freedom.md
 docs/research/263_mc0026_final_reconciliation_and_preregistered_r8b_representation_probe.md
 docs/research/264_p_r8b_01_probe_harness_freeze.md
+docs/research/265_p_r8b_01_empirical_result_and_wmrh_v02_qualification.md
 docs/checkpoints/570_whole_repository_physical_architecture_scope_clarified.md
 docs/checkpoints/571_whole_repository_r2_boundaries_identified.md
 docs/checkpoints/572_whole_repository_r3_candidate_archetypes_frozen.md
@@ -520,6 +521,7 @@ docs/checkpoints/594_chatgpt_independent_r8b_representation_candidate_frozen.md
 docs/checkpoints/595_r8b_comparative_reconciliation_assurance_freedom.md
 docs/checkpoints/596_wmrh_v02_probe_preregistered.md
 docs/checkpoints/597_p_r8b_01_probe_harness_frozen.md
+docs/checkpoints/598_p_r8b_01_pass_independent_audit_next.md
 docs/research/project_knowledge_activation_orchestration/README.md
 docs/research/project_knowledge_activation_orchestration/001_chat26_owner_source_interaction_orchestration_evidence.md
 docs/research/project_knowledge_activation_orchestration/002_chat27_activation_self_hosting_bootstrap_evidence.md
@@ -1151,7 +1153,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-597 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-598 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

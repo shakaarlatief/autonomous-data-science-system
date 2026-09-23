@@ -1,0 +1,13 @@
+{
+  "contract": "project-control-workstream-state/1",
+  "workstream_id": "WS-SOURCE-VAULT-BOOTSTRAP",
+  "revision": 1,
+  "state": "PAUSED",
+  "pause_reason": "The active project route remains the Candidate 01 project-knowledge migration program; Source Vault bootstrap remains preserved and paused.",
+  "return_condition": "Resume only when project routing explicitly returns to the Source Vault bootstrap workstream.",
+  "resume_target": "SOURCE-VAULT:REVIEWED-INGESTION",
+  "milestones": {
+    "SOURCE-VAULT:INGESTION": "NOT_STARTED",
+    "COURSE:2": "BLOCKED"
+  }
+}

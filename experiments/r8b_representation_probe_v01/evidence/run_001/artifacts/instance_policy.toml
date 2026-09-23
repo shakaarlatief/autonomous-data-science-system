@@ -1,0 +1,3 @@
+contract = "ads-instance-policy/1"
+enabled_integrations = ["git"]
+authority_mode = "current-continuity"

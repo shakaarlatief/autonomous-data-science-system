@@ -1,0 +1,21 @@
+{
+  "contract": "project-orientation/1",
+  "derived": true,
+  "authoritative": false,
+  "source_boundary_digest": "4eeff7a2ec6aeb9477c4fc138e512ad0ba5c6e2f9ce6723bd833448794381739",
+  "sources": [
+    {
+      "id": "WS-SOURCE-VAULT-BOOTSTRAP",
+      "path": "source_vault_state.json",
+      "revision": 1,
+      "sha256": "e70c84414ad884fc3010e2fe0eb9449dd6f5590fdd060e40d54ebce804baf929"
+    }
+  ],
+  "workstreams": [
+    {
+      "id": "WS-SOURCE-VAULT-BOOTSTRAP",
+      "state": "PAUSED",
+      "revision": 1
+    }
+  ]
+}

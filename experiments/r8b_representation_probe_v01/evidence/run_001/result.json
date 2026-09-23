@@ -1,0 +1,197 @@
+{
+  "probe": "P-R8B-01",
+  "protocol": "Research 263",
+  "candidate": "WMR-H V0.2",
+  "source_hashes": {
+    "docs/source_universe/SOURCE_VAULT_BOOTSTRAP_WORKSTREAM.md": "8af6602abbc25ff7eac8d8021239841231b32d28fe0880c859b3be2a7c30ea2a",
+    "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md": "7651707b5d590efd7686a77dca20597dc731bfafa1fabc2358775bef7b9d2ffe"
+  },
+  "blocking_gate_count": 18,
+  "overall": "PASS",
+  "gates": [
+    {
+      "gate": "G01",
+      "status": "PASS",
+      "details": {
+        "cases": {
+          "valid": "governed",
+          "plain": "plain",
+          "about": "plain",
+          "example": "plain",
+          "malformed": "error",
+          "wrong_position": "plain",
+          "duplicate": "error",
+          "non_h1": "plain"
+        },
+        "count": 8
+      }
+    },
+    {
+      "gate": "G02",
+      "status": "PASS",
+      "details": {
+        "native_types": {
+          "date": "error",
+          "time": "error",
+          "local_datetime": "error",
+          "offset_datetime": "error"
+        },
+        "string_equivalent": "accepted"
+      }
+    },
+    {
+      "gate": "G03",
+      "status": "PASS",
+      "details": {
+        "classification": "plain"
+      }
+    },
+    {
+      "gate": "G04",
+      "status": "PASS",
+      "details": {
+        "removed_transition_facts": 6,
+        "pairing_violations": 0,
+        "workstream_id": "WS-SOURCE-VAULT-BOOTSTRAP"
+      }
+    },
+    {
+      "gate": "G05",
+      "status": "PASS",
+      "details": {
+        "definition_bytes_changed": 0,
+        "state_revision_before": 1,
+        "state_revision_after": 2
+      }
+    },
+    {
+      "gate": "G06",
+      "status": "PASS",
+      "details": {
+        "stale_writer": "rejected",
+        "base_sha": "e70c84414ad884fc3010e2fe0eb9449dd6f5590fdd060e40d54ebce804baf929"
+      }
+    },
+    {
+      "gate": "G07",
+      "status": "PASS",
+      "details": {
+        "merge_returncode": 1,
+        "conflict": "state.json"
+      }
+    },
+    {
+      "gate": "G08",
+      "status": "PASS",
+      "details": {
+        "ordinary_increment": 1,
+        "resolved_revision": 3
+      }
+    },
+    {
+      "gate": "G09",
+      "status": "PASS",
+      "details": {
+        "discovered": [
+          "REL:1",
+          "REL:2",
+          "REL:3"
+        ],
+        "repository_wide_count": 3,
+        "review_bound": 12,
+        "attempted_13th": "REVIEW_REQUIRED"
+      }
+    },
+    {
+      "gate": "G10",
+      "status": "PASS",
+      "details": {
+        "machine_capture_unchanged": true,
+        "human_elaboration_separate": true,
+        "receipt_reference": "receipt:63beca292c4573417743de762c43aed34005fa042c0b6d039b2f40bd56eba177",
+        "promotion_owner": "governance:trigger-vocabulary"
+      }
+    },
+    {
+      "gate": "G11",
+      "status": "PASS",
+      "details": {
+        "locator_a": "receipts/2026-09/f3543befc9111602e4d171e19ae24ebf2534cbf49a517c9294fabcad3bae736d.json",
+        "locator_b": "receipts/2026-09/42a6bf4d742633eba7f086ec4f3f25ed4b8b797894e41ab7b0d9749d8443d228.json",
+        "parallel_merge": "clean",
+        "retention_isolated": true
+      }
+    },
+    {
+      "gate": "G12",
+      "status": "PASS",
+      "details": {
+        "public_safe": "accepted",
+        "private_field": "rejected",
+        "private_sentinel": "rejected"
+      }
+    },
+    {
+      "gate": "G13",
+      "status": "PASS",
+      "details": {
+        "id": "SPECIFICATION:028",
+        "authority": "canonical",
+        "body_preserved": true
+      }
+    },
+    {
+      "gate": "G14",
+      "status": "PASS",
+      "details": {
+        "fresh_initially": true,
+        "stale_after_source_change": true,
+        "listed_revision": 1,
+        "source_revision_after_change": 2
+      }
+    },
+    {
+      "gate": "G15",
+      "status": "PASS",
+      "details": {
+        "rebuild_equivalent": true,
+        "fts_ids": [
+          "SPECIFICATION:028"
+        ],
+        "edge_count": 1
+      }
+    },
+    {
+      "gate": "G16",
+      "status": "PASS",
+      "details": {
+        "derivatives_required": false,
+        "recovered": {
+          "workstream_id": "WS-SOURCE-VAULT-BOOTSTRAP",
+          "state": "PAUSED",
+          "specification": "SPECIFICATION:028",
+          "authority_mode": "current-continuity"
+        }
+      }
+    },
+    {
+      "gate": "G17",
+      "status": "PASS",
+      "details": {
+        "compatible_refresh": "PASS",
+        "incompatible_refresh": "migration_required",
+        "instance_bytes_unchanged": true
+      }
+    },
+    {
+      "gate": "G18",
+      "status": "PASS",
+      "details": {
+        "routine_human_definition_diff_bytes": 0,
+        "metadata_change_scope": "metadata-only",
+        "receipt_change_shape": "one-new-json-file",
+        "spec_metadata_visible": true
+      }
+    }
+  ]
+}
