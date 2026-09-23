@@ -25,7 +25,7 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 There is no active Claude obligation.
 
-The active project stage is the from-scratch assurance / verification / testing / CI-CD architecture. A new collaboration thread may be opened later if an independent or adversarial Claude pass would materially improve that design.
+The active project stage is the from-scratch assurance / verification / testing / CI-CD architecture. Research 273 freezes the mechanism-neutral assurance requirements. The next step is independent assurance-architecture candidate design; no Claude obligation is active until a dedicated thread is opened.
 
 ## Most recently completed obligation
 
