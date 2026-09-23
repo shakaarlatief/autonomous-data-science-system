@@ -16,7 +16,7 @@ Produce genuinely independent target assurance architectures from frozen Researc
 ## Sequence
 
     001 Claude independent assurance candidate    PENDING
-    ChatGPT independent candidate                 PENDING / separate Research artifact
+    ChatGPT independent candidate                 COMPLETE / Research 274 / FACET
     comparative synthesis                         AFTER BOTH ARE FROZEN
     comparative critique                          OPTIONAL IF MATERIAL
     owner decision / empirical gates              AFTER RECONCILIATION
@@ -38,4 +38,5 @@ Claude may write only:
     MC0028=OPEN
     PHASE=INDEPENDENT_CANDIDATES
     INDEPENDENT_BASE=cac7a699eb012c5a02e1c5fab349ebc9e5726145
-    NEXT=CLAUDE_MESSAGE_001_AND_CHATGPT_INDEPENDENT_CANDIDATE
+    CHATGPT_CANDIDATE=FACET_RESEARCH274
+    NEXT=CLAUDE_MESSAGE_001
