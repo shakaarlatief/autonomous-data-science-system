@@ -2,8 +2,8 @@
   "schema_version": 1,
   "thread_id": "MC-0026",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
-  "lifecycle_state": "WAITING",
-  "phase": "COMPARATIVE_CRITIQUE",
+  "lifecycle_state": "RESOLVED",
+  "phase": "WMRH_V02_PROBE_HANDOFF",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "1fe4bbe4b2658532359411825d3b1d819a6c4c68",
@@ -38,23 +38,23 @@
       "paths": ["docs/model_collaboration/threads/MC-0026/messages/**"]
     }
   ],
-  "next_expected_actor": "claude",
+  "next_expected_actor": null,
   "independence": {
-    "status": "BLIND_TO_CANDIDATE",
+    "status": "PARTIALLY_INDEPENDENT",
     "review_base_ref": "1fe4bbe4b2658532359411825d3b1d819a6c4c68",
     "known_exposures": [
       "Claude has prior project context and prior upstream collaboration through MC-0025.",
       "Both designers share the accepted architecture and Research 260 requirements.",
       "Claude must not inspect any later ChatGPT R8-B representation candidate before Message 001."
     ],
-    "notes": "Independent synthesis is complete. ChatGPT froze GCHR-DQI before reading Claude Message 001; Claude produced WMR from the frozen base and disclosed only candidate-name exposure. Research 262 / Message 002 now reconcile the candidates into WMR-H and request a bounded Claude comparative critique before empirical probe P-R8B-01."
+    "notes": "Independent and comparative synthesis are complete. ChatGPT froze GCHR-DQI before Claude exposure; Claude produced WMR from the frozen base; Research 262 reconciled them into WMR-H; Claude Message 003 returned AMEND; Research 263 / Message 004 accepts the critique and preregisters WMR-H V0.2 for empirical probe P-R8B-01. No owner representation decision is made by this thread."
   },
   "last_transition": {
-    "transition_id": "mc0026-independent-candidates-reconciled-comparative-critique",
+    "transition_id": "mc0026-final-reconciliation-probe-handoff",
     "from_state": "WAITING",
-    "to_state": "WAITING",
+    "to_state": "RESOLVED",
     "actor": "chatgpt",
-    "reason": "Claude Message 001 completed the independent candidate. ChatGPT compared GCHR-DQI and WMR in Research 262 / Message 002, froze working candidate WMR-H, incorporated the owner assurance-architecture anti-anchoring clarification, and requests bounded Claude comparative critique.",
-    "repository_head": "5ad0f213361d492bf426d34acd8f25b69f309458"
+    "reason": "Claude Message 003 returned AMEND. ChatGPT accepted the bounded amendments in Research 263 / Message 004, froze WMR-H V0.2, preregistered P-R8B-01 with fixed blocking gates, and closed the collaboration thread before empirical execution.",
+    "repository_head": "0e9225bd957859b4d7a8bb3511e2191a9230900f"
   }
 }
