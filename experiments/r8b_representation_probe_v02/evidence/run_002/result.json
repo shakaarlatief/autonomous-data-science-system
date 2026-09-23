@@ -1,0 +1,265 @@
+{
+  "probe": "P-R8B-01-R2",
+  "protocol": "Research 266",
+  "original_threshold_basis": "Research 263",
+  "candidate": "WMR-H V0.3",
+  "harness_binding": {
+    "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+    "commit": "a893e7e904e29ca91491108bd816d4af06dba6c1",
+    "files": {
+      "experiments/r8b_representation_probe_v02/README.md": "2f18eac78843435825bccefc7b5f134253909b7ccb6cab0b6d9999a3ba65c5b4",
+      "experiments/r8b_representation_probe_v02/probe.py": "db73ab4f5a37df69337be430864d72b9d926fbea8f964e309256275d971b3dd1",
+      "experiments/r8b_representation_probe_v02/schemas/project_meta.schema.json": "67c24d1ae68af5d6283c2c7c1f493aaea4f1db976f7d3758fa7e7cafaa0248fa",
+      "experiments/r8b_representation_probe_v02/schemas/workstream_state.schema.json": "b07c488940ac11e5bcf3edced5b323062ed3a6f43b8e68a582efca1f37427afd",
+      "experiments/r8b_representation_probe_v02/schemas/receipt.schema.json": "53e889a09332e35e44e5ca033d7e2f3915edeada9fd1f2125a46fcd4730b5074",
+      "experiments/r8b_representation_probe_v02/schemas/standalone_relation.schema.json": "8a674fefe8aa13404e138ad59d6def6a48423578c484d6498ff4a89f6ef93132"
+    }
+  },
+  "source_hashes": {
+    "docs/source_universe/SOURCE_VAULT_BOOTSTRAP_WORKSTREAM.md": "8af6602abbc25ff7eac8d8021239841231b32d28fe0880c859b3be2a7c30ea2a",
+    "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md": "7651707b5d590efd7686a77dca20597dc731bfafa1fabc2358775bef7b9d2ffe"
+  },
+  "blocking_gate_count": 18,
+  "amendment_gate_count": 2,
+  "overall": "AMEND_REQUIRED",
+  "blocking_gates": [
+    {
+      "gate": "G01",
+      "status": "PASS",
+      "details": {
+        "cases": {
+          "valid": "governed",
+          "plain": "plain",
+          "about": "plain",
+          "example": "plain",
+          "malformed": "error",
+          "wrong_position": "plain",
+          "duplicate": "error",
+          "non_h1": "plain"
+        },
+        "count": 8
+      }
+    },
+    {
+      "gate": "G02",
+      "status": "PASS",
+      "details": {
+        "native_types": {
+          "date": "rejected",
+          "time": "rejected",
+          "local_datetime": "rejected",
+          "offset_datetime": "rejected"
+        },
+        "string_equivalent": "accepted",
+        "isolated_compatibility_checker": true
+      }
+    },
+    {
+      "gate": "G03",
+      "status": "PASS",
+      "details": {
+        "classification": "plain"
+      }
+    },
+    {
+      "gate": "G04",
+      "status": "FAIL",
+      "details": {
+        "error": "ProbeFailure: transition-owned current fact leaked into definition: 'PAUSED'"
+      }
+    },
+    {
+      "gate": "G05",
+      "status": "PASS",
+      "details": {
+        "definition_bytes_modified": 0,
+        "state_file_changed": true,
+        "colocated_negative_control": "nonzero-definition-diff"
+      }
+    },
+    {
+      "gate": "G06",
+      "status": "PASS",
+      "details": {
+        "stale_writer": "rejected",
+        "base_sha": "1ef6a7918e0a624723ca84592c39d1b03d4a387faf31fed4d39c506835e48b0a"
+      }
+    },
+    {
+      "gate": "G07",
+      "status": "PASS",
+      "details": {
+        "revision_bump": "conflict",
+        "no_revision_control": "clean-merge",
+        "control_hazard": {
+          "state": "ACTIVE",
+          "pause_reason_present": true,
+          "ingestion": "IN_PROGRESS"
+        }
+      }
+    },
+    {
+      "gate": "G08",
+      "status": "PASS",
+      "details": {
+        "negative_checks": {
+          "revision_only": "rejected",
+          "decrement": "rejected",
+          "same_revision": "rejected",
+          "skipped_revision": "rejected"
+        },
+        "invalid_merge": "rejected",
+        "no_op_transition_validator_detected": true,
+        "no_op_merge_validator_detected": true,
+        "valid_committed_history": {
+          "commits_checked": 3,
+          "status": "valid"
+        },
+        "corrupted_history": "rejected"
+      }
+    },
+    {
+      "gate": "G09",
+      "status": "PASS",
+      "details": {
+        "discovered_repository_wide": 12,
+        "review_bound": 12,
+        "attempted_13th": "REVIEW_REQUIRED",
+        "malformed_relation": "rejected"
+      }
+    },
+    {
+      "gate": "G10",
+      "status": "PASS",
+      "details": {
+        "capture_bytes_unchanged": true,
+        "receipt_bytes_unchanged": true,
+        "human_review_separate": true,
+        "canonical_target_written": true,
+        "capture_authority": "candidate"
+      }
+    },
+    {
+      "gate": "G11",
+      "status": "PASS",
+      "details": {
+        "locator_a": "receipts/2026-09/f3543befc9111602e4d171e19ae24ebf2534cbf49a517c9294fabcad3bae736d.json",
+        "locator_b": "receipts/2026-09/42a6bf4d742633eba7f086ec4f3f25ed4b8b797894e41ab7b0d9749d8443d228.json",
+        "parallel_merge": "clean",
+        "retention_isolated": true,
+        "claim_scope": "individual-content-addressed-JSON-behaves-as-designed"
+      }
+    },
+    {
+      "gate": "G12",
+      "status": "PASS",
+      "details": {
+        "public_safe": "accepted",
+        "private_field": "rejected",
+        "private_sentinel": "rejected"
+      }
+    },
+    {
+      "gate": "G13",
+      "status": "PASS",
+      "details": {
+        "id": "SPECIFICATION:028",
+        "authority": "canonical",
+        "lifecycle": "frozen",
+        "non_metadata_content_preserved": true,
+        "declared_reference_count": 11,
+        "provenance_count": 2,
+        "loss_manifest_complete": true
+      }
+    },
+    {
+      "gate": "G14",
+      "status": "PASS",
+      "details": {
+        "deterministic": true,
+        "state_staleness_detected": true,
+        "definition_hash_staleness_detected": true,
+        "tool_less_revision_comparison_scope": "revisioned-state-only",
+        "cold_start_usefulness": "not-a-blocking-claim"
+      }
+    },
+    {
+      "gate": "G15",
+      "status": "PASS",
+      "details": {
+        "rebuild_equivalent": true,
+        "canonical_files_reread": true,
+        "fts_ids": [
+          "SPECIFICATION:028"
+        ],
+        "edge_count": 1,
+        "relation_path": "relation.toml"
+      }
+    },
+    {
+      "gate": "G16",
+      "status": "PASS",
+      "details": {
+        "derivatives_materialized_then_deleted": true,
+        "recovered": {
+          "workstream_id": "WS-SOURCE-VAULT-BOOTSTRAP",
+          "state": "PAUSED",
+          "specification": "SPECIFICATION:028",
+          "authority_mode": "current-continuity"
+        },
+        "generated_only_negative_control": "rejected"
+      }
+    },
+    {
+      "gate": "G17",
+      "status": "PASS",
+      "details": {
+        "framework_files_replaced": [
+          "framework.json",
+          "policy.schema.json",
+          "parser_rules.json"
+        ],
+        "compatible_refresh": "valid",
+        "incompatible_refresh": "migration_required",
+        "instance_bytes_unchanged": true
+      }
+    },
+    {
+      "gate": "G18",
+      "status": "PASS",
+      "details": {
+        "routine_human_definition_diff_bytes": 0,
+        "metadata_change": "git-diffed-body-preserved",
+        "receipt_change": "one-new-json-file",
+        "spec_metadata": "visible-in-git-diff"
+      }
+    }
+  ],
+  "amendment_gates": [
+    {
+      "gate": "AM1-G1",
+      "status": "PASS",
+      "details": {
+        "intended_governed_cases": {
+          "bom": "governed",
+          "leading_blank": "governed",
+          "setext": "governed"
+        },
+        "indented_pseudo_fence": "plain",
+        "body_example": "plain"
+      }
+    },
+    {
+      "gate": "AM2-G1",
+      "status": "PASS",
+      "details": {
+        "valid_merge_history": {
+          "commits_checked": 3,
+          "status": "valid"
+        },
+        "skipped_history": "rejected",
+        "history_validation_required": true
+      }
+    }
+  ]
+}
