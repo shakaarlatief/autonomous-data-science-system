@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ads-probe:workstream-state:1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract",
+    "workstream_id",
+    "revision",
+    "state",
+    "pause_reason",
+    "return_condition",
+    "resume_target",
+    "milestones"
+  ],
+  "properties": {
+    "contract": {
+      "const": "project-control-workstream-state/1"
+    },
+    "workstream_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "state": {
+      "type": "string",
+      "minLength": 1
+    },
+    "pause_reason": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "return_condition": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "resume_target": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "milestones": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}

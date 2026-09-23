@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ads-probe:standalone-relation:1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract",
+    "kind",
+    "relation_id",
+    "relation_type",
+    "source",
+    "target"
+  ],
+  "properties": {
+    "contract": {
+      "const": "project-standalone-relation/1"
+    },
+    "kind": {
+      "const": "standalone-relation"
+    },
+    "relation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "relation_type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source": {
+      "type": "string",
+      "minLength": 1
+    },
+    "target": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}
