@@ -505,6 +505,7 @@ docs/research/274_chatgpt_independent_r8c_assurance_architecture_candidate_facet
 docs/research/275_mc0028_facet_warrant_comparative_reconciliation_and_warrant_f_v01_candidate.md
 docs/research/276_owner_total_architecture_freedom_and_warrant_f_v02_reconciliation.md
 docs/research/277_r8c_decision_relevant_assurance_probe_protocol.md
+docs/research/278_p_h_current_host_capability_study.md
 docs/checkpoints/570_whole_repository_physical_architecture_scope_clarified.md
 docs/checkpoints/571_whole_repository_r2_boundaries_identified.md
 docs/checkpoints/572_whole_repository_r3_candidate_archetypes_frozen.md
@@ -548,6 +549,7 @@ docs/checkpoints/609_chatgpt_independent_assurance_candidate_facet_frozen.md
 docs/checkpoints/610_mc0028_warrant_f_v01_comparative_synthesis_frozen.md
 docs/checkpoints/611_total_architecture_freedom_warrant_f_v02_frozen.md
 docs/checkpoints/612_r8c_decision_probes_preregistered.md
+docs/checkpoints/613_p_h_inconclusive_no_target_constraint.md
 docs/research/project_knowledge_activation_orchestration/README.md
 docs/research/project_knowledge_activation_orchestration/001_chat26_owner_source_interaction_orchestration_evidence.md
 docs/research/project_knowledge_activation_orchestration/002_chat27_activation_self_hosting_bootstrap_evidence.md
@@ -1179,7 +1181,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-612 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-613 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 
