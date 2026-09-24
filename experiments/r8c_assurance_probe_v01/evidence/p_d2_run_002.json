@@ -1,0 +1,190 @@
+{
+  "candidate": "WARRANT-F V0.2",
+  "classifications": [
+    {
+      "case_id": "PD2-H01",
+      "criterion_satisfied": true,
+      "expected_independent_label": "STRENGTHEN",
+      "observed_ratchet_classification": "STRENGTHEN"
+    },
+    {
+      "case_id": "PD2-H02",
+      "criterion_satisfied": true,
+      "expected_independent_label": "WEAKEN",
+      "observed_ratchet_classification": "WEAKEN"
+    },
+    {
+      "case_id": "PD2-H03",
+      "criterion_satisfied": true,
+      "expected_independent_label": "NEUTRAL_LINEAGE",
+      "observed_ratchet_classification": "NEUTRAL"
+    },
+    {
+      "case_id": "PD2-H04",
+      "criterion_satisfied": true,
+      "expected_independent_label": "NEUTRAL_LINEAGE",
+      "observed_ratchet_classification": "NEUTRAL"
+    },
+    {
+      "case_id": "PD2-H05",
+      "criterion_satisfied": true,
+      "expected_independent_label": "NEUTRAL_LINEAGE",
+      "observed_ratchet_classification": "NEUTRAL"
+    },
+    {
+      "case_id": "PD2-H06",
+      "criterion_satisfied": true,
+      "expected_independent_label": "REVIEW",
+      "observed_ratchet_classification": "REVIEW"
+    },
+    {
+      "case_id": "PD2-H07",
+      "criterion_satisfied": true,
+      "expected_independent_label": "STRENGTHEN",
+      "observed_ratchet_classification": "STRENGTHEN"
+    },
+    {
+      "case_id": "PD2-H08",
+      "criterion_satisfied": true,
+      "expected_independent_label": "NEUTRAL",
+      "observed_ratchet_classification": "NEUTRAL"
+    },
+    {
+      "case_id": "PD2-H09",
+      "criterion_satisfied": true,
+      "expected_independent_label": "STRENGTHEN",
+      "observed_ratchet_classification": "STRENGTHEN"
+    },
+    {
+      "case_id": "PD2-H10",
+      "criterion_satisfied": true,
+      "expected_independent_label": "STRENGTHEN",
+      "observed_ratchet_classification": "STRENGTHEN"
+    }
+  ],
+  "criteria": {
+    "all_frozen_labels_satisfy_preregistered_criteria": true,
+    "classifier_input_excludes_frozen_labels": true,
+    "every_material_weakening_detected": true,
+    "historical_patch_drift_negative_control_rejected": true,
+    "lineage_preserving_changes_not_owner_gated": true,
+    "material_policy_mutation_changes_digest": true,
+    "owner_batch_binds_one_exact_policy_diff_digest": true,
+    "required_base_witness_removal_cannot_pass": true,
+    "stale_owner_batch_digest_rejected": true
+  },
+  "harness_binding": {
+    "commit": "3ee7e4f547e98f5fd8bbf38fc7a5a760c6a47ed1",
+    "files": {
+      "experiments/r8c_assurance_probe_v01/README.md": "9611225a2dc3ce7c6d14bef04303fc9459a9127d04eed52c3894f853e876bf5b",
+      "experiments/r8c_assurance_probe_v01/p_d2_ratchet_history.py": "3c7324ccc22270b68e819fe2a761d70f7d0da76d669b90dea98c84052d84c6f7"
+    },
+    "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT"
+  },
+  "history_bindings": [
+    {
+      "binding_valid": true,
+      "case_id": "PD2-H01",
+      "patch_bytes": 46676,
+      "patch_sha256": "888cd4302bd1384ca47fd8f4c58020de7cf32e1a5d01d0e3a335c37940a6d78e"
+    },
+    {
+      "binding_valid": true,
+      "case_id": "PD2-H02",
+      "patch_bytes": 4272,
+      "patch_sha256": "fea8925b1a8f46cdffa7fdaddc6ce4f1aa9ad54c625ca12aa664e98f4fe267e6"
+    },
+    {
+      "binding_valid": true,
+      "case_id": "PD2-H03",
+      "patch_bytes": 2980,
+      "patch_sha256": "0f575904d95df41b07b8f1947939c47c0d0ee88a6f5bec40c4016ab433272370"
+    },
+    {
+      "binding_valid": true,
+      "case_id": "PD2-H04",
+      "patch_bytes": 2547,
+      "patch_sha256": "3a6929b9532338ad533e233ac0e4ead557b780d2ca58d4c7002da811d67159c8"
+    },
+    {
+      "binding_valid": true,
+      "case_id": "PD2-H05",
+      "patch_bytes": 2516,
+      "patch_sha256": "69d56652f00baf44e316c6d7018b8a13370b184f6aa12d366449d9c23ca45edb"
+    },
+    {
+      "binding_valid": true,
+      "case_id": "PD2-H06",
+      "patch_bytes": 1486,
+      "patch_sha256": "c9687a53df8e50268c3ef80a0c2df397aa5178cf805a796c2ae591284528b4a3"
+    },
+    {
+      "binding_valid": true,
+      "case_id": "PD2-H07",
+      "patch_bytes": 1270,
+      "patch_sha256": "a3a96eb7bab299edf888f7a9bdb86248857f9f668d7432128b84f2515024a383"
+    },
+    {
+      "binding_valid": true,
+      "case_id": "PD2-H08",
+      "patch_bytes": 1445,
+      "patch_sha256": "a6ffa7745833be082358795efa4013360eebe463aaf96c3f322535de949bfd1b"
+    },
+    {
+      "binding_valid": true,
+      "case_id": "PD2-H09",
+      "patch_bytes": 16187,
+      "patch_sha256": "b7a1a95a0940122119ade079a7cd0cd261bf9464b1c72c71ec90ac9c75aec87b"
+    },
+    {
+      "binding_valid": true,
+      "case_id": "PD2-H10",
+      "patch_bytes": 50678,
+      "patch_sha256": "6ebc04e211e90c27d73f24ba322d1ef0bef27923b8c2caf5e95520449dbd3184"
+    }
+  ],
+  "interpretation": {
+    "lineage_preserving_evolution_can_remain_non_reviewing": true,
+    "material_weakening_can_be_detected": true,
+    "owner_batch_can_bind_exact_policy_diff": true,
+    "physical_migration_authorized": false,
+    "self_removal_of_required_base_witness_is_blocked": true,
+    "target_architecture_amendment_required": false
+  },
+  "negative_controls": {
+    "historical_patch_digest_drift_rejected": true,
+    "removed_required_base_witness": {
+      "blocked": true,
+      "classification": "REVIEW",
+      "source_case": "PD2-H03"
+    }
+  },
+  "policy_diff_binding": {
+    "case_ids": [
+      "PD2-H01",
+      "PD2-H02",
+      "PD2-H03",
+      "PD2-H04",
+      "PD2-H05",
+      "PD2-H06",
+      "PD2-H07",
+      "PD2-H08",
+      "PD2-H09",
+      "PD2-H10"
+    ],
+    "decision_semantics": "One owner disposition may bind exactly this policy-diff digest.",
+    "digest_changed": true,
+    "material_delta_mutant_digest": "8de644d6125c04232f87bda3659d6b14538e242a2e7218f1a4ff1385ff920ebb",
+    "policy_diff_digest": "c1b1b03023da5e2ef5a153a6d6d92ff358d51a2785e37b76edd7645ade486f75",
+    "stale_original_binding_rejected_for_mutant": true
+  },
+  "probe": "P-D2",
+  "protocol": "Research 277",
+  "result": "PASS",
+  "selection_binding": {
+    "commit": "d7f65392b851c03b49c246c023b0a6684ef3c60b",
+    "fixture_path": "experiments/r8c_assurance_probe_v01/p_d2_history_labels.json",
+    "fixture_sha256": "3946655c69bba95d5f7b606e8a25cb1a2be1119e5613dfb4e3ecf9dbf515fc43"
+  },
+  "selection_freeze": "Research 294"
+}

@@ -61,14 +61,14 @@
       "Comparative exposure is now intentionally authorized: Claude may read Research 274 FACET, Research 275 WARRANT-F V0.1, and its own Message 001 WARRANT.",
       "Claude Message 003 completed comparative critique at b6ac1d492216265e1351e420179d149928bffa8e. Research 276 / Message 004 reconcile it into WARRANT-F V0.2."
     ],
-    "notes": "P-D2 Attempt 001 remains preserved as HARNESS_INVALID with no architecture inference. Research 297 / Checkpoint 632 prospectively refreeze Attempt 002 at repaired harness commit 3ee7e4f5 after only the authorized selection-fixture Git-blob SHA substitution. The independently labelled d7f65392 sample, policy deltas, classifier semantics, thresholds, negative controls and digest algorithm are unchanged. Five of eight decision-relevant probes remain valid/scoped; exact Attempt 002 execution is next."
+    "notes": "P-D2 Attempt 002 is a valid PASS under Research 298 / Checkpoint 633. All ten frozen historical cases satisfy their independent labels and all nine frozen criteria pass. The material trust weakening is detected; lineage-preserving evolution with carried witnesses remains non-reviewing; required base-witness self-removal is blocked; exact owner-batch policy-diff binding rejects material mutation. Six of eight decision-relevant probes now have valid/scoped results. P-D4 current-oracle successor feasibility is next."
   },
   "last_transition": {
-    "transition_id": "mc0028-p-d2-attempt002-refrozen",
+    "transition_id": "mc0028-p-d2-pass",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 297 / Checkpoint 632 freeze the narrowly repaired P-D2 Attempt 002 harness at 3ee7e4f5 before execution. Only the frozen selection-fixture expected hash changed to its committed Git-blob content SHA.",
-    "repository_head": "3ee7e4f547e98f5fd8bbf38fc7a5a760c6a47ed1"
+    "reason": "Research 298 / Checkpoint 633 reconcile P-D2 Attempt 002 as PASS against all preregistered criteria. Six of eight decision-relevant probes now have valid/scoped results; P-D4 is next.",
+    "repository_head": "a3a21bb07b0d141efee6a002408c0f9f8a8a5f2b"
   }
 }
