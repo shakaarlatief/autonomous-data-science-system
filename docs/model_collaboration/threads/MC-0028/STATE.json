@@ -61,14 +61,14 @@
       "Comparative exposure is now intentionally authorized: Claude may read Research 274 FACET, Research 275 WARRANT-F V0.1, and its own Message 001 WARRANT.",
       "Claude Message 003 completed comparative critique at b6ac1d492216265e1351e420179d149928bffa8e. Research 276 / Message 004 reconcile it into WARRANT-F V0.2."
     ],
-    "notes": "P-D4 corpus and 11/11 old-oracle replay are frozen. Research 301 / Checkpoint 636 now freeze six successor semantic claims and the target-neutral ROUTING_ASSURANCE_SUBJECT_V1 before implementation. Legacy JSON/Markdown/file-scan/output mechanisms are explicitly non-preserved; direct translated good and stale-negative cases are preregistered. Six of eight decision-relevant probes remain valid/scoped; P-D4 awaits implementation, harness freeze and execution."
+    "notes": "P-D4 corpus and old-oracle replay remain frozen. Research 302 / Checkpoint 637 prospectively complete the successor contract to V0.2 before any implementation: eight claims plus four successor-only negative controls now cover work-line/PR identity and specification/outcome well-formedness in addition to V0.1 semantics. No result has been observed. Six of eight decision-relevant probes remain valid/scoped; P-D4 implementation/harness freeze is next."
   },
   "last_transition": {
-    "transition_id": "mc0028-p-d4-successor-contract-frozen",
+    "transition_id": "mc0028-p-d4-successor-contract-v02-frozen",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 301 / Checkpoint 636 freeze P-D4 successor semantic claims and translated representation before any successor implementation.",
-    "repository_head": "5b66c4d03126a9c46ba1f5f34ddeb2d579b31f0e"
+    "reason": "Research 302 / Checkpoint 637 prospectively complete P-D4 successor semantic coverage before implementation. V0.2 supersedes V0.1 for execution.",
+    "repository_head": "30a91b02ede2f074e1bddadf927c862ea8442d3f"
   }
 }
