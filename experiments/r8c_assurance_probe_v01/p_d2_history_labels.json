@@ -1,0 +1,451 @@
+{
+  "schema_version": 1,
+  "probe": "P-D2",
+  "fixture_id": "R8C-PD2-HISTORY-LABELS-V01",
+  "status": "FROZEN_BEFORE_CLASSIFIER",
+  "authored_against_head": "0ea3f7c1fb3c19d96ba69073e34670e83beea8ab",
+  "classifier_authored": false,
+  "label_authority": "Independent semantic labels frozen before ratchet classifier implementation.",
+  "label_vocabulary": {
+    "STRENGTHEN": "Material assurance semantics become stronger or broader.",
+    "WEAKEN": "A material assurance property becomes weaker and must be detected as WEAKEN or REVIEW.",
+    "REVIEW": "The change materially alters assurance semantics and requires explicit review; silent neutral/strengthen is invalid.",
+    "NEUTRAL_LINEAGE": "Carrier/topology/lifecycle changes while the assurance obligation and required witnesses carry forward.",
+    "NEUTRAL": "No material assurance-policy change."
+  },
+  "classifier_visibility_rule": "The future classifier may consume the policy_delta and exact Git evidence binding, but must not consume independent_label or label_rationale when producing its result.",
+  "patch_hash_basis": "git diff --binary --find-renames=50% <parent> <head> -- <selected_paths>, raw stdout bytes",
+  "coverage_requirements": [
+    "tightening",
+    "weakening",
+    "rename_move",
+    "split_merge",
+    "test_deletion",
+    "input_scope_narrowing",
+    "dependency_lock_change",
+    "neutral_refactor",
+    "check_script",
+    "workflow",
+    "tests",
+    "schema_validator_contract"
+  ],
+  "cases": [
+    {
+      "case_id": "PD2-H01",
+      "head_commit": "b4e9abe061d7051289af3080020f87fe5b09fcc7",
+      "selected_paths": [
+        ".github/workflows/repository-integrity.yml",
+        "scripts/check_repository_integrity.py",
+        "scripts/check_chat_rotation_preflight.py",
+        "scripts/check_private_continuity.py",
+        "scripts/repository_integrity.py",
+        "tests/unit/test_repository_integrity.py",
+        "tests/unit/test_current_routing_integrity.py",
+        "tests/unit/test_continuity_preflight.py"
+      ],
+      "coverage_tags": [
+        "tightening",
+        "check_script",
+        "workflow",
+        "tests"
+      ],
+      "independent_label": "STRENGTHEN",
+      "label_rationale": "Introduces an aggregate repository-integrity gate plus focused public/private/rotation checks and executable tests. It adds assurance coverage rather than reducing an existing requirement.",
+      "policy_delta": {
+        "claim_requirement": "ADDED",
+        "consequence_floor": "UNCHANGED",
+        "threshold": "UNCHANGED",
+        "trust_floor": "UNCHANGED",
+        "input_scope": "WIDER",
+        "verifier_coverage": "WIDER",
+        "witness_strength": "STRONGER",
+        "waiver_authority": "UNCHANGED",
+        "lineage_operation": "NONE",
+        "base_witness_carry_forward": true
+      },
+      "evidence_markers": {
+        "added": [
+          "PUBLIC_REPOSITORY_INTEGRITY",
+          "check_repository_integrity.py"
+        ],
+        "removed": []
+      },
+      "parent_commit": "b79d6ae0187b61e73c3b08312e4c7ec9d8f7f61d",
+      "commit_subject": "Implement governed repository integrity gates",
+      "selected_patch_sha256": "888cd4302bd1384ca47fd8f4c58020de7cf32e1a5d01d0e3a335c37940a6d78e",
+      "selected_patch_bytes": 46676
+    },
+    {
+      "case_id": "PD2-H02",
+      "head_commit": "6583059992412e413e25fc3d153aeb392d2fa7e4",
+      "selected_paths": [
+        ".github/workflows/v1-architecture-falsification.yml"
+      ],
+      "coverage_tags": [
+        "weakening",
+        "workflow",
+        "trust"
+      ],
+      "independent_label": "WEAKEN",
+      "label_rationale": "The workflow expands repository contents authority from read to write. The self-reporting behavior may justify that mutation operationally, but the least-privilege trust property is materially weakened and must not be silently classified as neutral or stronger.",
+      "policy_delta": {
+        "claim_requirement": "UNCHANGED",
+        "consequence_floor": "UNCHANGED",
+        "threshold": "UNCHANGED",
+        "trust_floor": "WEAKER",
+        "input_scope": "SAME",
+        "verifier_coverage": "RESTRUCTURED",
+        "witness_strength": "UNCHANGED",
+        "waiver_authority": "UNCHANGED",
+        "lineage_operation": "MERGE",
+        "base_witness_carry_forward": true
+      },
+      "evidence_markers": {
+        "added": [
+          "contents: write",
+          "architecture-gates:"
+        ],
+        "removed": [
+          "contents: read",
+          "sqlite-gates:",
+          "postgres-portability:"
+        ]
+      },
+      "parent_commit": "5f0369162a963beb9240bbb40ec8d7a47860434c",
+      "commit_subject": "Make V1 architecture gate self-reporting",
+      "selected_patch_sha256": "fea8925b1a8f46cdffa7fdaddc6ce4f1aa9ad54c625ca12aa664e98f4fe267e6",
+      "selected_patch_bytes": 4272
+    },
+    {
+      "case_id": "PD2-H03",
+      "head_commit": "c55ca6f9d34d43ed79be8b5f4b665c8071be11dc",
+      "selected_paths": [
+        ".github/workflows/v1-runtime-bakeoff.yml",
+        "experiments/runtime_bakeoff/candidates/langgraph/__init__.py",
+        "experiments/runtime_bakeoff/candidates/langgraph/adapter.py",
+        "experiments/runtime_bakeoff/candidates/langgraph/local_mcp_server.py",
+        "experiments/runtime_bakeoff/candidates/langgraph/test_candidate.py",
+        "experiments/runtime_bakeoff/candidates/langgraph_runtime/__init__.py",
+        "experiments/runtime_bakeoff/candidates/langgraph_runtime/adapter.py",
+        "experiments/runtime_bakeoff/candidates/langgraph_runtime/local_mcp_server.py",
+        "experiments/runtime_bakeoff/candidates/langgraph_runtime/test_candidate.py"
+      ],
+      "coverage_tags": [
+        "rename_move",
+        "workflow"
+      ],
+      "independent_label": "NEUTRAL_LINEAGE",
+      "label_rationale": "The LangGraph candidate package is renamed to avoid namespace shadowing and the workflow follows the new path. Git records near/exact renames and the same test carrier remains referenced, so the assurance meaning is lineage-preserving.",
+      "policy_delta": {
+        "claim_requirement": "UNCHANGED",
+        "consequence_floor": "UNCHANGED",
+        "threshold": "UNCHANGED",
+        "trust_floor": "UNCHANGED",
+        "input_scope": "MOVED",
+        "verifier_coverage": "EQUIVALENT",
+        "witness_strength": "UNCHANGED",
+        "waiver_authority": "UNCHANGED",
+        "lineage_operation": "RENAME_MOVE",
+        "base_witness_carry_forward": true
+      },
+      "evidence_markers": {
+        "added": [
+          "candidates/langgraph_runtime/test_candidate.py"
+        ],
+        "removed": [
+          "candidates/langgraph/test_candidate.py"
+        ]
+      },
+      "parent_commit": "a4149b835bac8e98a27d65b02279794a209af8e0",
+      "commit_subject": "Rename LangGraph experiment package to avoid namespace shadowing",
+      "selected_patch_sha256": "0f575904d95df41b07b8f1947939c47c0d0ee88a6f5bec40c4016ab433272370",
+      "selected_patch_bytes": 2980
+    },
+    {
+      "case_id": "PD2-H04",
+      "head_commit": "7e79902b86269c7674f719a7f3583b7a70bab3a3",
+      "selected_paths": [
+        ".github/workflows/generate-frontend-visual-baselines.yml",
+        ".github/workflows/v1-frontend-spike.yml"
+      ],
+      "coverage_tags": [
+        "split_merge",
+        "workflow",
+        "lineage"
+      ],
+      "independent_label": "NEUTRAL_LINEAGE",
+      "label_rationale": "A temporary baseline-generation workflow is retired while visual-regression execution is incorporated into the enduring frontend CI workflow. The carrier topology changes, but the visual-regression obligation is carried forward rather than silently removed.",
+      "policy_delta": {
+        "claim_requirement": "UNCHANGED",
+        "consequence_floor": "UNCHANGED",
+        "threshold": "UNCHANGED",
+        "trust_floor": "UNCHANGED",
+        "input_scope": "SAME",
+        "verifier_coverage": "EQUIVALENT",
+        "witness_strength": "STRONGER",
+        "waiver_authority": "UNCHANGED",
+        "lineage_operation": "MERGE",
+        "base_witness_carry_forward": true
+      },
+      "evidence_markers": {
+        "added": [
+          "Run visual regression tests",
+          "VISUAL_REGRESSION: '1'"
+        ],
+        "removed": [
+          "Generate frontend visual baselines",
+          "--update-snapshots"
+        ]
+      },
+      "parent_commit": "d78444284104c950b7572981007b13178180e3f5",
+      "commit_subject": "Enforce frontend visual regression in CI",
+      "selected_patch_sha256": "3a6929b9532338ad533e233ac0e4ead557b780d2ca58d4c7002da811d67159c8",
+      "selected_patch_bytes": 2547
+    },
+    {
+      "case_id": "PD2-H05",
+      "head_commit": "bac3a3929d0a32fab22097addadc437d333089a6",
+      "selected_paths": [
+        "tests/unit/test_blocking_calibration_live_runner.py"
+      ],
+      "coverage_tags": [
+        "test_deletion",
+        "lineage",
+        "tests"
+      ],
+      "independent_label": "NEUTRAL_LINEAGE",
+      "label_rationale": "A test for the now-consumed live workflow is deleted and replaced by a test requiring that the one-shot surface be retired while exact frozen provenance remains. The lifecycle claim changes deliberately and the retained evidence obligation is explicitly re-witnessed.",
+      "policy_delta": {
+        "claim_requirement": "REPLACED_EQUIVALENT_LIFECYCLE",
+        "consequence_floor": "UNCHANGED",
+        "threshold": "UNCHANGED",
+        "trust_floor": "UNCHANGED",
+        "input_scope": "SAME",
+        "verifier_coverage": "REPLACED_EQUIVALENT",
+        "witness_strength": "UNCHANGED",
+        "waiver_authority": "UNCHANGED",
+        "lineage_operation": "RETIRE_REPLACE",
+        "base_witness_carry_forward": true
+      },
+      "evidence_markers": {
+        "added": [
+          "test_live_workflow_is_retired_without_losing_frozen_provenance",
+          "assert not LIVE_WORKFLOW.exists()"
+        ],
+        "removed": [
+          "test_live_workflow_is_fixed_to_governed_specification_020_boundary"
+        ]
+      },
+      "parent_commit": "0ba6bd3ffaeb283fe0683ce4bf8bca99f8e90088",
+      "commit_subject": "Validate Specification 020 live-workflow retirement",
+      "selected_patch_sha256": "69d56652f00baf44e316c6d7018b8a13370b184f6aa12d366449d9c23ca45edb",
+      "selected_patch_bytes": 2516
+    },
+    {
+      "case_id": "PD2-H06",
+      "head_commit": "75e1e68b52d8989aea732c33101d32ea9a5e9ab2",
+      "selected_paths": [
+        ".github/workflows/observe-spec021-replacement-target.yml"
+      ],
+      "coverage_tags": [
+        "input_scope_narrowing",
+        "workflow"
+      ],
+      "independent_label": "REVIEW",
+      "label_rationale": "The observer changes from issue-opened invocation guarded by exact issue content to a main-branch push on one exact trigger path and a fixed audit issue. This materially narrows and changes the accepted invocation/input surface; the ratchet must require review rather than assume semantic neutrality.",
+      "policy_delta": {
+        "claim_requirement": "UNCHANGED",
+        "consequence_floor": "UNCHANGED",
+        "threshold": "UNCHANGED",
+        "trust_floor": "UNCHANGED",
+        "input_scope": "NARROWER",
+        "verifier_coverage": "CHANGED",
+        "witness_strength": "UNCHANGED",
+        "waiver_authority": "UNCHANGED",
+        "lineage_operation": "NONE",
+        "base_witness_carry_forward": true
+      },
+      "evidence_markers": {
+        "added": [
+          "push:",
+          "branches: [main]",
+          ".github/observe-spec021-replacement-target.trigger",
+          "AUDIT_ISSUE: '61'"
+        ],
+        "removed": [
+          "issues:",
+          "types: [opened]",
+          "github.event.issue.title"
+        ]
+      },
+      "parent_commit": "d803faf4267067ff980d93cbaf04d33c5747577a",
+      "commit_subject": "Make Specification 021 observer push-triggered",
+      "selected_patch_sha256": "c9687a53df8e50268c3ef80a0c2df397aa5178cf805a796c2ae591284528b4a3",
+      "selected_patch_bytes": 1486
+    },
+    {
+      "case_id": "PD2-H07",
+      "head_commit": "fc2c97ab5f52ca3529708a03d83712a25d0be27e",
+      "selected_paths": [
+        ".github/workflows/v1-frontend-spike.yml"
+      ],
+      "coverage_tags": [
+        "dependency_lock_change",
+        "workflow",
+        "tightening"
+      ],
+      "independent_label": "STRENGTHEN",
+      "label_rationale": "Frontend CI moves from npm install to npm ci against the committed lock and removes the generated-lock artifact workaround. The dependency execution becomes more reproducible and no assurance scope is removed.",
+      "policy_delta": {
+        "claim_requirement": "UNCHANGED",
+        "consequence_floor": "UNCHANGED",
+        "threshold": "UNCHANGED",
+        "trust_floor": "STRONGER",
+        "input_scope": "SAME",
+        "verifier_coverage": "SAME",
+        "witness_strength": "STRONGER",
+        "waiver_authority": "UNCHANGED",
+        "lineage_operation": "NONE",
+        "base_witness_carry_forward": true
+      },
+      "evidence_markers": {
+        "added": [
+          "npm ci --no-audit --no-fund"
+        ],
+        "removed": [
+          "npm install --no-audit --no-fund",
+          "Upload generated package lock"
+        ]
+      },
+      "parent_commit": "65c4a46c45b662bdd97ce6acf9f497610908f5c1",
+      "commit_subject": "Use locked npm dependencies in frontend CI",
+      "selected_patch_sha256": "a3a96eb7bab299edf888f7a9bdb86248857f9f668d7432128b84f2515024a383",
+      "selected_patch_bytes": 1270
+    },
+    {
+      "case_id": "PD2-H08",
+      "head_commit": "07da2a091b5686b0378c7f8114495fe1d0b29c32",
+      "selected_paths": [
+        "tests/integration/test_relation_backed_recommendation_action_value_vertical_slice.py"
+      ],
+      "coverage_tags": [
+        "neutral_refactor",
+        "tests"
+      ],
+      "independent_label": "NEUTRAL",
+      "label_rationale": "The same integration test is executed through asyncio.run instead of the pytest-asyncio marker. Assertions and the tested experiment semantics remain intact; only the harness invocation mechanism changes.",
+      "policy_delta": {
+        "claim_requirement": "UNCHANGED",
+        "consequence_floor": "UNCHANGED",
+        "threshold": "UNCHANGED",
+        "trust_floor": "UNCHANGED",
+        "input_scope": "SAME",
+        "verifier_coverage": "EQUIVALENT",
+        "witness_strength": "UNCHANGED",
+        "waiver_authority": "UNCHANGED",
+        "lineage_operation": "REFACTOR",
+        "base_witness_carry_forward": true
+      },
+      "evidence_markers": {
+        "added": [
+          "import asyncio",
+          "result = asyncio.run("
+        ],
+        "removed": [
+          "import pytest",
+          "@pytest.mark.asyncio",
+          "async def test_complete_fake_vertical_slice_preserves_state_and_returns_safe_ceiling"
+        ]
+      },
+      "parent_commit": "e9810de145bde01a4236f5a9de21467851606fbe",
+      "commit_subject": "Run Specification 017 integration test without async pytest plugin",
+      "selected_patch_sha256": "a6ffa7745833be082358795efa4013360eebe463aaf96c3f322535de949bfd1b",
+      "selected_patch_bytes": 1445
+    },
+    {
+      "case_id": "PD2-H09",
+      "head_commit": "063fdc99c76d7821efc58bb83823bcad33c068c5",
+      "selected_paths": [
+        "scripts/check_checkpoint_metadata.py",
+        "scripts/check_knowledge_map.py",
+        "tests/unit/test_repository_integrity_aggregate.py"
+      ],
+      "coverage_tags": [
+        "tightening",
+        "check_script",
+        "validator",
+        "tests"
+      ],
+      "independent_label": "STRENGTHEN",
+      "label_rationale": "Historical-intermediate checkpoint discoverability/integrity rules are added to the validators and aggregate regression coverage. This increases enforced invariant coverage.",
+      "policy_delta": {
+        "claim_requirement": "ADDED",
+        "consequence_floor": "UNCHANGED",
+        "threshold": "UNCHANGED",
+        "trust_floor": "UNCHANGED",
+        "input_scope": "WIDER",
+        "verifier_coverage": "WIDER",
+        "witness_strength": "STRONGER",
+        "waiver_authority": "UNCHANGED",
+        "lineage_operation": "NONE",
+        "base_witness_carry_forward": true
+      },
+      "evidence_markers": {
+        "added": [
+          "historical",
+          "intermediate"
+        ],
+        "removed": []
+      },
+      "parent_commit": "284c99e094a44750404fa197da127bfaf6d9b93a",
+      "commit_subject": "Govern historical intermediate checkpoint integrity",
+      "selected_patch_sha256": "b7a1a95a0940122119ade079a7cd0cd261bf9464b1c72c71ec90ac9c75aec87b",
+      "selected_patch_bytes": 16187
+    },
+    {
+      "case_id": "PD2-H10",
+      "head_commit": "eae343ac1f5c242b19d69f5c5c888cfe9b7bf0bd",
+      "selected_paths": [
+        "schemas/project_knowledge/derived_view_manifest.v1.schema.json",
+        "tests/unit/test_project_knowledge_cli.py",
+        "tests/unit/test_project_knowledge_persistent_views.py",
+        "tests/unit/test_project_knowledge_refresh.py",
+        "tests/unit/test_project_knowledge_substrate_architecture.py",
+        "tools/project_knowledge/services/cli_ops.py",
+        "tools/project_knowledge/services/generation.py",
+        "tools/project_knowledge/views.py"
+      ],
+      "coverage_tags": [
+        "schema_validator_contract",
+        "tightening",
+        "tests"
+      ],
+      "independent_label": "STRENGTHEN",
+      "label_rationale": "The repair extends the persistent-view schema and CLI/refresh qualification to the complete W0 persistent view set, adds a dedicated persistent-view test suite, and closes previously missing coverage.",
+      "policy_delta": {
+        "claim_requirement": "ADDED",
+        "consequence_floor": "UNCHANGED",
+        "threshold": "UNCHANGED",
+        "trust_floor": "UNCHANGED",
+        "input_scope": "WIDER",
+        "verifier_coverage": "WIDER",
+        "witness_strength": "STRONGER",
+        "waiver_authority": "UNCHANGED",
+        "lineage_operation": "NONE",
+        "base_witness_carry_forward": true
+      },
+      "evidence_markers": {
+        "added": [
+          "current_state_core_markdown",
+          "PERSISTENT_VIEW_IDS",
+          "test_eight_persistent_paths_exact_schemas_and_deterministic_bytes"
+        ],
+        "removed": []
+      },
+      "parent_commit": "05dca1d6d3f71dfa19c0c166be83dc08ae6e9237",
+      "commit_subject": "Repair G014 persistent W0 view coverage",
+      "selected_patch_sha256": "6ebc04e211e90c27d73f24ba322d1ef0bef27923b8c2caf5e95520449dbd3184",
+      "selected_patch_bytes": 50678
+    }
+  ]
+}
