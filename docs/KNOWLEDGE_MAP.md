@@ -528,6 +528,7 @@ docs/research/297_p_d2_attempt002_repaired_harness_refreeze.md
 docs/research/298_p_d2_ratchet_history_attempt002_pass.md
 docs/research/299_p_d4_current_oracle_corpus_freeze.md
 docs/research/300_p_d4_formal_current_oracle_replay_result.md
+docs/research/301_p_d4_successor_semantic_contract_freeze.md
 docs/checkpoints/570_whole_repository_physical_architecture_scope_clarified.md
 docs/checkpoints/571_whole_repository_r2_boundaries_identified.md
 docs/checkpoints/572_whole_repository_r3_candidate_archetypes_frozen.md
@@ -594,6 +595,7 @@ docs/checkpoints/632_p_d2_attempt002_harness_refrozen.md
 docs/checkpoints/633_p_d2_ratchet_history_pass.md
 docs/checkpoints/634_p_d4_current_oracle_corpus_frozen.md
 docs/checkpoints/635_p_d4_old_oracle_replay_pass.md
+docs/checkpoints/636_p_d4_successor_contract_frozen.md
 docs/research/project_knowledge_activation_orchestration/README.md
 docs/research/project_knowledge_activation_orchestration/001_chat26_owner_source_interaction_orchestration_evidence.md
 docs/research/project_knowledge_activation_orchestration/002_chat27_activation_self_hosting_bootstrap_evidence.md
@@ -1225,7 +1227,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-635 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-636 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

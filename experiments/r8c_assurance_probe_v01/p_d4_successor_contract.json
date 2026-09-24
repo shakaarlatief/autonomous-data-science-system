@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "probe": "P-D4",
+  "contract_id": "R8C-PD4-ROUTING-SUCCESSOR-CONTRACT-V01",
+  "status": "FROZEN_BEFORE_SUCCESSOR_IMPLEMENTATION",
+  "corpus_freeze": {
+    "research": 299,
+    "commit": "d1f9418b4315010b0b4e77cc5943921a5b0e76d0"
+  },
+  "old_oracle_replay": {
+    "research": 300,
+    "result": "PASS_11_OF_11"
+  },
+  "successor_representation": {
+    "name": "ROUTING_ASSURANCE_SUBJECT_V1",
+    "mechanism_neutrality": "The successor consumes structured semantic routing facts. It does not consume docs/current_routing.json, CURRENT_STATE.md, checkpoint filenames, or current oracle output strings as its target representation.",
+    "shape": {
+      "version": 1,
+      "route": {
+        "active_checkpoint": "positive integer",
+        "available_checkpoints": "set/list of positive integers",
+        "declared_active_line": "bounded line identity",
+        "checked_line": "bounded line identity"
+      },
+      "boundary": {
+        "name": "human-reviewable semantic name",
+        "stability": "SEMANTIC | VOLATILE"
+      },
+      "integration": {
+        "line": "bounded integration-line identity",
+        "revision": {
+          "kind": "GIT_COMMIT",
+          "value": "40 lowercase hex"
+        }
+      },
+      "knowledge": {
+        "latest_specification": "three-digit identity",
+        "latest_experiment_outcome": "non-empty semantic status"
+      },
+      "orientation_projection": {
+        "active_checkpoint": "integer",
+        "declared_active_line": "string",
+        "active_pr": "null or positive integer",
+        "integration_line": "string",
+        "integration_revision": "string",
+        "latest_specification": "three-digit identity",
+        "latest_experiment_outcome": "string"
+      }
+    }
+  },
+  "claims": [
+    {
+      "claim_id": "PD4-SR1-TRANSLATABLE-STRUCTURED-FACTS",
+      "statement": "A compatibility source must translate into one well-formed successor routing subject before semantic qualification; malformed legacy carriers fail translation visibly.",
+      "warrant_basis": [
+        "Research 106 live-state contract",
+        "PD4-C10 malformed routing payload"
+      ],
+      "required_cases": [
+        "PD4-C10-MALFORMED-ROUTING-PAYLOAD"
+      ]
+    },
+    {
+      "claim_id": "PD4-SR2-ROUTE-TARGET-EXISTS",
+      "statement": "The active routed checkpoint must exist in the represented repository checkpoint set.",
+      "warrant_basis": [
+        "Research 106 live-state contract",
+        "PD4-C06 missing checkpoint"
+      ],
+      "required_cases": [
+        "PD4-C02-GOOD-CANONICAL-RECONCILIATION",
+        "PD4-C06-MUT-MISSING-CHECKPOINT"
+      ]
+    },
+    {
+      "claim_id": "PD4-SR3-BRANCH-SCOPED-FRESHNESS",
+      "statement": "When the checked line is the declared active development line, active checkpoint equals the maximum available checkpoint; an unrelated checked line does not manufacture active-line staleness.",
+      "warrant_basis": [
+        "Research 106 branch-scoped freshness",
+        "PD4-C05 active stale mutation",
+        "PD4-C11 unrelated-branch specificity"
+      ],
+      "required_cases": [
+        "PD4-C05-MUT-STale-AGREEING-ACTIVE",
+        "PD4-C11-GOOD-UNRELATED-BRANCH-SPECIFICITY"
+      ]
+    },
+    {
+      "claim_id": "PD4-SR4-ORIENTATION-SEMANTIC-PARITY",
+      "statement": "Any independently supplied human/orientation projection of overlapping routing facts must agree semantically with canonical structured routing facts. A future generated orientation may be derived from the same canonical facts and therefore need not preserve manual Markdown synchronization.",
+      "warrant_basis": [
+        "Research 106 CURRENT_STATE/current_routing agreement",
+        "PD4-C07 disagreement mutation"
+      ],
+      "required_cases": [
+        "PD4-C07-MUT-HUMAN-MACHINE-DISAGREEMENT"
+      ]
+    },
+    {
+      "claim_id": "PD4-SR5-STABLE-SEMANTIC-BOUNDARY",
+      "statement": "The routing boundary must be explicitly classified as stable semantic identity rather than transition-volatile checkpoint/research/date identity.",
+      "warrant_basis": [
+        "Research 106 stable current boundary",
+        "Research 107 real volatile boundary defect",
+        "PD4-C08 volatile boundary mutation"
+      ],
+      "required_cases": [
+        "PD4-C01-REAL-HISTORICAL-DEFECT",
+        "PD4-C08-MUT-VOLATILE-BOUNDARY"
+      ]
+    },
+    {
+      "claim_id": "PD4-SR6-INTEGRATION-REVISION-IDENTITY",
+      "statement": "The promoted integration revision must be one complete Git commit identity with explicit revision kind.",
+      "warrant_basis": [
+        "Current routing contract",
+        "PD4-C09 malformed revision mutation"
+      ],
+      "required_cases": [
+        "PD4-C09-MUT-MALFORMED-INTEGRATION-REVISION"
+      ]
+    }
+  ],
+  "intentional_mechanism_differences": [
+    "No preservation of the legacy nine-key docs/current_routing.json object shape.",
+    "No preservation of Markdown fragment matching as the target consistency mechanism.",
+    "No preservation of current_boundary regex as the target semantic model; compatibility translation classifies stability explicitly.",
+    "No preservation of old oracle stdout wording or distinction between process return codes 1 and 2.",
+    "No preservation of checkpoint filename scanning as the target input mechanism; available checkpoint identities are explicit successor facts."
+  ],
+  "classification_parity_requirement": "All 11 frozen corpus GOOD/BAD dispositions must match the old-oracle baseline. There are no preregistered accept/reject differences for the frozen corpus.",
+  "translated_representation_case": {
+    "source_case": "PD4-C02-GOOD-CANONICAL-RECONCILIATION",
+    "requirement": "Materialize the same routing semantics directly as ROUTING_ASSURANCE_SUBJECT_V1 without legacy file paths or Markdown and require successor PASS.",
+    "negative_control": "Change direct subject active_checkpoint from 269 to 268 while checked_line equals declared_active_line and available_checkpoints still include 269; successor must FAIL."
+  },
+  "successor_independence_controls": [
+    "Successor classifier may not execute or import scripts/check_current_routing.py.",
+    "Successor classifier may not read docs/current_routing.json or docs/CURRENT_STATE.md.",
+    "Legacy-to-successor translation is a compatibility adapter and must be separate from successor semantic classification.",
+    "Classifier must return structured violated claim IDs, not clone old oracle output text."
+  ],
+  "pass_criteria": [
+    "Frozen old-oracle replay remains 11/11 against the corpus.",
+    "Successor accepts every frozen GOOD case.",
+    "Successor rejects every frozen BAD case.",
+    "Direct translated representation of PD4-C02 passes without legacy carrier access.",
+    "Direct stale translated negative control fails PD4-SR3.",
+    "No unique frozen invariant requires retaining the legacy carrier/output mechanism.",
+    "No thresholds or semantic labels change after successor execution."
+  ]
+}
