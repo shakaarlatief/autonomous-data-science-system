@@ -99,7 +99,7 @@ def run_child(
 ) -> dict[str, object]:
     wrapped = f"import sys\nsys.path.insert(0, {str(sys_path)!r})\n" + code
     cp = subprocess.run(
-        [sys.executable, "-I", "-c", wrapped],
+        [sys.executable, "-I", "-S", "-c", wrapped],
         cwd=ROOT,
         capture_output=True,
         text=True,
