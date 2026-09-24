@@ -5,7 +5,7 @@
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** cac7a699eb012c5a02e1c5fab349ebc9e5726145
-**Task owner:** ChatGPT / chatgpt-29
+**Task owner:** ChatGPT / chatgpt-30
 **Independent reviewer/designer:** Claude / claude-03
 **Authority:** Collaboration evidence only.
 
