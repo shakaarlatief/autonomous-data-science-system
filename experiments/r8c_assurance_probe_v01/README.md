@@ -28,4 +28,8 @@ p_d2_history_labels.json contains the ten real historical changes and independen
 
 p_d4_oracle_corpus.json freezes the real current-routing oracle corpus before successor design. p_d4_successor_contract_v02.json freezes the representation-independent successor claims and controls before implementation. p_d4_oracle_successor.py replays the frozen old oracle, translates compatibility inputs into ROUTING_ASSURANCE_SUBJECT_V1, evaluates the independent successor classifier, and exercises direct translated-representation and semantic-completeness controls.
 
+## P-S
+
+p_s_power_study_plan.json freezes the source-bound stochastic campaign power desk-study contract before calculation. p_s_stochastic_power.py estimates paired within-item stochastic variance from preserved Prototype V0 evidence, treats benchmark items rather than repeated runs as the independent unit, computes preregistered MDE/sample-size sensitivity, exercises a pseudo-independence negative control, and evaluates the item-level public/private confirmatory campaign requirement without making new live model calls.
+
 Every concrete probe harness must be committed and Git-blob-hash frozen before execution.
