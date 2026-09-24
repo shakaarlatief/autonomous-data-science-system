@@ -3,7 +3,7 @@
   "thread_id": "MC-0028",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "P_D3_HARNESS_REPAIR_2",
+  "phase": "P_D3_ATTEMPT003_READY",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "cac7a699eb012c5a02e1c5fab349ebc9e5726145",
@@ -61,14 +61,14 @@
       "Comparative exposure is now intentionally authorized: Claude may read Research 274 FACET, Research 275 WARRANT-F V0.1, and its own Message 001 WARRANT.",
       "Claude Message 003 completed comparative critique at b6ac1d492216265e1351e420179d149928bffa8e. Research 276 / Message 004 reconcile it into WARRANT-F V0.2."
     ],
-    "notes": "P-D3 Attempt 002 is HARNESS_INVALID because the forbidden-import control was prepended ahead of a __future__ import. Research 284 authorizes only append-style injection before refreeze and Attempt 003."
+    "notes": "P-D3 Attempts 001 and 002 are HARNESS_INVALID. Research 285 refreezes the second repaired harness at 374c64ee069cb690c1d5b7108ffbf2cfd83c9c5d after append-style forbidden-import injection repair. Attempt 003 is next."
   },
   "last_transition": {
-    "transition_id": "mc0028-p-d3-attempt002-harness-invalid",
+    "transition_id": "mc0028-p-d3-attempt003-refrozen",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Attempt 002 failed inside the negative-control injector before testing dependency absence. Research 284 preserves the failure and authorizes a narrow prospective repair.",
-    "repository_head": "e9ef6a4702d70b9182ff64d6762e109d5f436f13"
+    "reason": "Research 285 freezes the second repaired P-D3 harness after the narrowly authorized append-style negative-control repair. No Attempt 003 result has been observed.",
+    "repository_head": "374c64ee069cb690c1d5b7108ffbf2cfd83c9c5d"
   }
 }
