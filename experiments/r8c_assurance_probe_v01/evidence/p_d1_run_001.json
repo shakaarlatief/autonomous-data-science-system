@@ -1,0 +1,115 @@
+{
+  "candidate": "WARRANT-F V0.2",
+  "catalog_structure": {
+    "claim_counts": {
+      "CROSS_BOUNDARY": 4,
+      "INVARIANT": 4,
+      "SUITE": 4
+    },
+    "covered_suite_test_function_count": 160,
+    "first_class_claim_count": 12,
+    "one_claim_per_test_expansion": false,
+    "suite_test_counts": {
+      "S1_PRODUCT_REASONING_CONTRACT_SUITE": 4,
+      "S2_PRODUCT_CONTEXT_SELECTION_SUITE": 2,
+      "S3_JW1_PROJECT_KNOWLEDGE_SEMANTIC_SUITE": 134,
+      "S4_REPOSITORY_INTEGRITY_AGGREGATE_SUITE": 20
+    }
+  },
+  "harness_binding": {
+    "commit": "733e55796beed3cd07f4017e4f3718e3a2e2f943",
+    "files": {
+      "experiments/r8c_assurance_probe_v01/README.md": "edd20b05a5afbe1854b5b8324c20fa3cb6ef38902d46ac3b2e913ef3ceba8512",
+      "experiments/r8c_assurance_probe_v01/p_d1_claims.json": "c4d9360968fd4fce41cd37572f74a4e34e041b06e8c297a2b9ff8bdf157c0810",
+      "experiments/r8c_assurance_probe_v01/p_d1_warrant_proportionality.py": "3cf7d198e7017d871dd2fd6cc07a5fdae57e69fec1b24bbd728b843172704baf"
+    },
+    "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT"
+  },
+  "interpretation": {
+    "invariant_witnesses_feasible": true,
+    "one_claim_per_test_required": false,
+    "ordinary_unrelated_edits_require_rewitness": false,
+    "physical_migration_authorized": false,
+    "suite_warrant_sensitivity_demonstrated": true,
+    "target_architecture_amendment_required": false
+  },
+  "invariant_witnesses": {
+    "I1_AUTHORITY_NONCANONICAL_NEVER_GOVERNS": {
+      "sensitivity": "PASS",
+      "sensitivity_node": "tests/unit/test_project_knowledge_authority.py::test_noncanonical_sources_never_govern",
+      "specificity": "PASS",
+      "specificity_node": "tests/unit/test_project_knowledge_authority.py::test_selective_identity_and_receipt_completeness"
+    },
+    "I2_IDENTITY_DUPLICATE_CURRENT_OWNER_REJECTED": {
+      "sensitivity": "PASS",
+      "sensitivity_node": "tests/unit/test_project_knowledge_identity.py::test_duplicate_current_ownership_never_picks_by_path",
+      "specificity": "PASS",
+      "specificity_node": "tests/unit/test_project_knowledge_identity.py::test_current_selective_and_unknown_identity"
+    },
+    "I3_CAPTURE_STALE_PROMOTION_TARGET_REJECTED": {
+      "sensitivity": "PASS",
+      "sensitivity_node": "tests/unit/test_project_knowledge_capture.py::test_promotion_rejects_stale_target_revision",
+      "specificity": "PASS",
+      "specificity_node": "tests/unit/test_project_knowledge_capture.py::test_valid_plan_binds_review_target_revision_provenance_and_complete_dispositions"
+    },
+    "I4_PUBLIC_PRIVATE_NONLEAKAGE": {
+      "sensitivity": "PASS",
+      "sensitivity_node": "tests/unit/test_project_knowledge_privacy.py::test_known_private_fixture_value_is_rejected_even_when_json_escaped_without_echoing_secret",
+      "specificity": "PASS",
+      "specificity_node": "tests/unit/test_project_knowledge_privacy.py::test_public_safe_relative_paths_tokens_and_urls_are_not_overclassified_as_private"
+    }
+  },
+  "maintenance": {
+    "rule": "Re-witness on semantic verifier/input/witness/scope changes or suite health triggers, not ordinary unrelated test edits.",
+    "unrelated_edit_rewitness_triggers": 0
+  },
+  "probe": "P-D1",
+  "protocol": "Research 277",
+  "result": "PASS",
+  "selection_freeze": "Research 291",
+  "source_binding": {
+    "catalog_declared_commit": "1a095044282622f2ce9e2bd38b90d77b8be8a4a2",
+    "commit": "1a095044282622f2ce9e2bd38b90d77b8be8a4a2"
+  },
+  "suite_mutation_adequacy": {
+    "baseline": "PASS",
+    "kill_rate": 1.0,
+    "killed": 4,
+    "sampled_mutations": [
+      {
+        "killed": true,
+        "mutation_id": "M1_NONCE_FIELD_REMOVED",
+        "returncode": 1,
+        "stderr_tail": "",
+        "stdout_tail": "F...                                                                     [100%]\n================================== FAILURES ===================================\n_____ test_reasoning_request_is_deterministic_and_nonce_precedes_context ______\n\n    def test_reasoning_request_is_deterministic_and_nonce_precedes_context() -> None:\n        request = _request()\n        first = request.canonical_model_input()\n        second = request.canonical_model_input()\n        assert first == second\n        assert request.semantic_digest() == request.semantic_digest()\n    \n        payload = json.loads(first)\n>       assert payload[\"experiment_run_nonce\"] == \"nonce-before-context\"\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       KeyError: 'experiment_run_nonce'\n\ntests\\unit\\test_reasoning.py:52: KeyError\n=========================== short test summary info ===========================\nFAILED tests/unit/test_reasoning.py::test_reasoning_request_is_deterministic_and_nonce_precedes_context\n1 failed, 3 passed in 0.07s\n"
+      },
+      {
+        "killed": true,
+        "mutation_id": "M2_DUPLICATE_OUTPUT_LIST_GUARD_DISABLED",
+        "returncode": 1,
+        "stderr_tail": "",
+        "stdout_tail": ".F..                                                                     [100%]\n================================== FAILURES ===================================\n________ test_reasoning_result_rejects_duplicate_methodological_basis _________\n\n    def test_reasoning_result_rejects_duplicate_methodological_basis() -> None:\n>       with pytest.raises(ValueError, match=\"methodological_basis must not contain duplicates\"):\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       Failed: DID NOT RAISE <class 'ValueError'>\n\ntests\\unit\\test_reasoning.py:61: Failed\n=========================== short test summary info ===========================\nFAILED tests/unit/test_reasoning.py::test_reasoning_result_rejects_duplicate_methodological_basis\n1 failed, 3 passed in 0.07s\n"
+      },
+      {
+        "killed": true,
+        "mutation_id": "M3_UNSUPPORTED_BASIS_GUARD_DISABLED",
+        "returncode": 1,
+        "stderr_tail": "",
+        "stdout_tail": "_______\n\n    def test_methodological_basis_must_be_subset_of_supplied_context() -> None:\n        request = _request()\n        valid = ReasoningContextValueResult(\n            answer=\"Both supplied tree ensembles are candidates.\",\n            proposed_actions=(),\n            required_clarifications=(),\n            warnings=(),\n            methodological_basis=(\"random-forest\", \"gradient-boosted-trees\"),\n        )\n        validate_methodological_basis(valid, request.knowledge_revisions)\n    \n        invalid = ReasoningContextValueResult(\n            answer=\"Introduce another family.\",\n            proposed_actions=(),\n            required_clarifications=(),\n            warnings=(),\n            methodological_basis=(\"unsupported-model\",),\n        )\n>       with pytest.raises(ValueError, match=\"outside supplied context\"):\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       Failed: DID NOT RAISE <class 'ValueError'>\n\ntests\\unit\\test_reasoning.py:89: Failed\n=========================== short test summary info ===========================\nFAILED tests/unit/test_reasoning.py::test_methodological_basis_must_be_subset_of_supplied_context\n1 failed, 3 passed in 0.07s\n"
+      },
+      {
+        "killed": true,
+        "mutation_id": "M4_DUPLICATE_KNOWLEDGE_KEY_GUARD_DISABLED",
+        "returncode": 1,
+        "stderr_tail": "",
+        "stdout_tail": "...F                                                                     [100%]\n================================== FAILURES ===================================\n____________ test_reasoning_request_rejects_duplicate_stable_keys _____________\n\n    def test_reasoning_request_rejects_duplicate_stable_keys() -> None:\n>       with pytest.raises(ValueError, match=\"unique stable keys\"):\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       Failed: DID NOT RAISE <class 'ValueError'>\n\ntests\\unit\\test_reasoning.py:94: Failed\n=========================== short test summary info ===========================\nFAILED tests/unit/test_reasoning.py::test_reasoning_request_rejects_duplicate_stable_keys\n1 failed, 3 passed in 0.07s\n"
+      }
+    ],
+    "suite_claim": "S1_PRODUCT_REASONING_CONTRACT_SUITE",
+    "total": 4
+  },
+  "warrant_status_counts": {
+    "FULL_FOR_DECLARED_SCOPE": 4,
+    "PARTIALLY_WARRANTED": 8
+  }
+}
