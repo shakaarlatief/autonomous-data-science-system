@@ -1,0 +1,62 @@
+{
+  "assertions": {
+    "jw1_adapter_mapping": "PASS",
+    "jw1_faulty_adapter_detected": true,
+    "owner_import_of_engineering_required": false,
+    "product_adapter_mapping": "PASS",
+    "product_faulty_adapter_detected": true
+  },
+  "candidate": "WARRANT-F V0.2",
+  "harness_binding": {
+    "commit": "669134254f370802698dad8c299a02613bf4a8bb",
+    "files": {
+      "experiments/r8c_assurance_probe_v01/README.md": "a4753b505745a7653eeb14e92579128e17ac325056afb6603fde017f2f33c0dd",
+      "experiments/r8c_assurance_probe_v01/p_d5_adapter_fidelity.py": "d84bad07adf6ecff8309420d6e8b9f66647a447e6252e5280e30ef4757cc8b79"
+    },
+    "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT"
+  },
+  "interpretation": {
+    "engineering_consumer_side_adapter_viable": true,
+    "physical_migration_authorized": false,
+    "target_architecture": "SUPPORTED"
+  },
+  "jw1_native_path": {
+    "faulty_adapter_fail_case": "PASS",
+    "format": "project_knowledge-cli-json",
+    "states": {
+      "fail": "FAIL",
+      "pass": "PASS",
+      "truncated": "HARNESS_INVALID"
+    }
+  },
+  "probe": "P-D5",
+  "product_native_path": {
+    "faulty_adapter_fail_case": "PASS",
+    "format": "pytest-junit-xml",
+    "states": {
+      "collection_error": "HARNESS_INVALID",
+      "fail": "FAIL",
+      "pass": "PASS",
+      "skipped": "INCOMPLETE",
+      "zero": "INCOMPLETE"
+    },
+    "truncated_state": "HARNESS_INVALID",
+    "zero_claim_match_state": "UNVERIFIED"
+  },
+  "protocol": "Research 277",
+  "required_mapping": {
+    "crash_or_collection": "HARNESS_INVALID",
+    "native_fail": "FAIL",
+    "native_pass": "PASS",
+    "skipped_only": "INCOMPLETE",
+    "truncated_or_unparseable": "HARNESS_INVALID",
+    "zero_claim_matches": "UNVERIFIED",
+    "zero_collected": "INCOMPLETE"
+  },
+  "result": "PASS",
+  "source_binding": {
+    "commit": "721545c46b94e0a87c87a572fb357ff314f6913f",
+    "jw1_cli_path": "tools/project_knowledge/cli.py",
+    "jw1_cli_sha256": "8d2005f7fab9b16cd00cd8b0df042075188a2da40ad9f07a839b04df851b416e"
+  }
+}
