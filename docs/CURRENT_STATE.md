@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 644
+**Checkpoint:** 645
 **Date:** 2026-09-24
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -1263,3 +1263,5 @@ docs/DEVELOPMENT_METHOD.md
 ```
 
 Research 309 / Checkpoint 644 preserve the owner's longer-term vision that, after ADS architecture, implementation, migration and operational qualification mature sufficiently, the genuinely reusable core should be considered for extraction into a standalone professional public architecture/reference implementation rather than a personal-project template. The candidate general system spans Product/Project separation, knowledge/state/authority, activation/orchestration, governed architecture evolution, capability/trust, WARRANT-F assurance/admission, execution/delivery, migration/oracle retirement, recovery and deterministic/stochastic qualification. ADS remains the primary real realization and falsification ground before any extraction. Research 309 also clarifies that AO and WARRANT-F are complementary: AO/JW1 governs project process and state transitions, WARRANT-F decides admissibility for exact consequences, and delivery engineering performs admitted governed mutations. Architecture change itself is governed primarily by AO-4 Governed Evolution Cases using CONFORMANCE_DEFECT / KEEP / CLARIFY / AMEND / SUPERSEDE / REOPEN, with owner normative decision authority preserved. WARRANT-F may supply trigger evidence and later qualify an accepted change; its base-revision ratchet is a specialized assurance-policy guard, not a competing general architecture-change authority. This preservation does not record R8-C acceptance, unhold AO-10, amend Specification 028, authorize physical migration, or switch authority.
+
+Research 310 / Checkpoint 645 preserve the whole-architecture governed self-improvement model. Architecture evolution applies across Product/Project structure, bounded contexts, information and representation architecture, AO itself, WARRANT-F, CI/CD/workflow realization, capability/trust, migration, delivery, provider and recovery architecture, and any future generalized framework. AO-3 activates reconsideration when evidence or project events warrant it; AO-4 governs CONFORMANCE_DEFECT / KEEP / CLARIFY / AMEND / SUPERSEDE / REOPEN; the owner retains normative architecture authority; Project Knowledge/WMR-H preserve temporal authority and rationale; Engineering/Delivery realizes accepted change; WARRANT-F qualifies the changed realization; and AO activates the qualified successor state. This is controlled self-improvement rather than autonomous self-modification. The clarification does not record R8-C acceptance or authorize migration/cutover.
