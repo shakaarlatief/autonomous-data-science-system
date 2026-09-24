@@ -3,7 +3,7 @@
   "thread_id": "MC-0028",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "P_D6_HARNESS_FROZEN",
+  "phase": "DECISION_PROBES_RUNNING",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "cac7a699eb012c5a02e1c5fab349ebc9e5726145",
@@ -61,14 +61,14 @@
       "Comparative exposure is now intentionally authorized: Claude may read Research 274 FACET, Research 275 WARRANT-F V0.1, and its own Message 001 WARRANT.",
       "Claude Message 003 completed comparative critique at b6ac1d492216265e1351e420179d149928bffa8e. Research 276 / Message 004 reconcile it into WARRANT-F V0.2."
     ],
-    "notes": "Research 279 freezes the P-D6 harness at a84e111e6dd60d1b56380a8aeb78fd842b1cf4f9 before execution. P-D6 execution is next."
+    "notes": "P-D6 completed PASS against the frozen harness and supports executor-capability/trust separation without selecting any provider or model-specific semantics. P-D3 is next."
   },
   "last_transition": {
-    "transition_id": "mc0028-p-d6-harness-frozen",
+    "transition_id": "mc0028-p-d6-pass-p-d3-next",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "P-D6 harness was committed and pushed before observation, then frozen by Research 279 using Git-blob hashes. Execution is next.",
-    "repository_head": "a84e111e6dd60d1b56380a8aeb78fd842b1cf4f9"
+    "reason": "Research 280 records P-D6 PASS with matching frozen-harness binding. Two of eight decision-relevant probes are complete; P-D3 boundary independence is next.",
+    "repository_head": "c2afb94eb332389c35a42249745505d11091162d"
   }
 }

@@ -1,0 +1,104 @@
+{
+  "assertions": {
+    "actor_label_invariance": "PASS",
+    "hosted_label_not_t2": "PASS",
+    "missing_capability_blocks": "PASS",
+    "missing_trust_blocks": "PASS",
+    "negative_control": {
+      "bad_surface_based_tier": "T2",
+      "correct_property_based_tier": "T2_ISOLATED_ONLY",
+      "discriminates": true
+    },
+    "request_semantics_unchanged": "PASS"
+  },
+  "candidate": "WARRANT-F V0.2",
+  "executor_results": [
+    {
+      "actor_label": "model-A",
+      "eligible": true,
+      "executor_id": "exec-local-a",
+      "missing_capabilities": [],
+      "missing_trust_properties": [],
+      "surface_label": "local",
+      "trust_tier": "T1"
+    },
+    {
+      "actor_label": "model-B",
+      "eligible": true,
+      "executor_id": "exec-local-b",
+      "missing_capabilities": [],
+      "missing_trust_properties": [],
+      "surface_label": "local",
+      "trust_tier": "T1"
+    },
+    {
+      "actor_label": "automation-A",
+      "eligible": true,
+      "executor_id": "exec-hosted-authentic",
+      "missing_capabilities": [],
+      "missing_trust_properties": [],
+      "surface_label": "hosted",
+      "trust_tier": "T2"
+    },
+    {
+      "actor_label": "automation-B",
+      "eligible": true,
+      "executor_id": "exec-hosted-isolated-only",
+      "missing_capabilities": [],
+      "missing_trust_properties": [],
+      "surface_label": "hosted",
+      "trust_tier": "T2_ISOLATED_ONLY"
+    },
+    {
+      "actor_label": "model-C",
+      "eligible": false,
+      "executor_id": "exec-git-api-only",
+      "missing_capabilities": [
+        "process_execute"
+      ],
+      "missing_trust_properties": [],
+      "surface_label": "git_api",
+      "trust_tier": "T0"
+    },
+    {
+      "actor_label": "model-A",
+      "eligible": false,
+      "executor_id": "exec-local-unbound",
+      "missing_capabilities": [],
+      "missing_trust_properties": [
+        "subject_bound"
+      ],
+      "surface_label": "local",
+      "trust_tier": "T0"
+    }
+  ],
+  "harness_binding": {
+    "commit": "a84e111e6dd60d1b56380a8aeb78fd842b1cf4f9",
+    "files": {
+      "experiments/r8c_assurance_probe_v01/README.md": "aa57781bb751135f3132e0d656e46b2ebcef26eb60144a42d826823acd577e4d",
+      "experiments/r8c_assurance_probe_v01/p_d6_executor_capability.py": "a7cd0ffcdb3e18e26018f234353b006e2b1c5f406ed5eadf25ebe6a2e5ae835d"
+    },
+    "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT"
+  },
+  "interpretation": {
+    "current_provider_selected": false,
+    "model_specific_semantics_required": false,
+    "target_architecture": "SUPPORTED"
+  },
+  "probe": "P-D6",
+  "protocol": "Research 277",
+  "request_semantics": {
+    "request_id": "P-D6-REQUEST-1",
+    "required_capabilities": [
+      "process_execute",
+      "repository_read"
+    ],
+    "required_trust_properties": [
+      "result_integrity",
+      "subject_bound"
+    ],
+    "subject": "sha256:ac34d21c12ad978c0ced6ee7f3409f2a908f565256f263132fe2e0e1eba1b630",
+    "verifier_id": "VERIFY:BOUNDARY:1"
+  },
+  "result": "PASS"
+}
