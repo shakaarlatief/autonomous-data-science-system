@@ -20,7 +20,7 @@ Produce genuinely independent target assurance architectures from frozen Researc
     002 ChatGPT comparative synthesis             COMPLETE / Research 275 / WARRANT-F V0.1
     003 Claude comparative critique               COMPLETE / AMEND / b6ac1d49...
     004 ChatGPT reconciliation                    COMPLETE / Research 276 / WARRANT-F V0.2
-    decision-relevant empirical gates             NEXT
+    decision-relevant empirical gates             IN PROGRESS / Research 277
     owner decision                                AFTER PROBE RECONCILIATION
 
 ## Independence boundary
@@ -45,4 +45,5 @@ Claude may write only:
     SYNTHESIS=WARRANT_F_V0_2
     COMPARATIVE_EXPOSURE=AUTHORIZED
     OWNER_TOTAL_ARCHITECTURE_FREEDOM=RECORDED
-    NEXT=PREREGISTER_DECISION_RELEVANT_PROBES
+    PROBE_PROTOCOL=RESEARCH277_FROZEN
+    NEXT=EXECUTE_P_H

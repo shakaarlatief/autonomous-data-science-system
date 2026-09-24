@@ -3,7 +3,7 @@
   "thread_id": "MC-0028",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DECISION_RELEVANT_PROBES",
+  "phase": "DECISION_PROBES_RUNNING",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "cac7a699eb012c5a02e1c5fab349ebc9e5726145",
@@ -61,14 +61,14 @@
       "Comparative exposure is now intentionally authorized: Claude may read Research 274 FACET, Research 275 WARRANT-F V0.1, and its own Message 001 WARRANT.",
       "Claude Message 003 completed comparative critique at b6ac1d492216265e1351e420179d149928bffa8e. Research 276 / Message 004 reconcile it into WARRANT-F V0.2."
     ],
-    "notes": "Independent and comparative design phases are complete. The owner clarified that no current workflow/tool/branch/execution mechanism has preservation rights at any level. WARRANT-F V0.2 is the empirical candidate; decision-relevant probes are next."
+    "notes": "Independent/comparative design is complete. Research 277 preregisters eight decision-relevant probes with explicit anti-anchoring interpretation. P-H is first and read-only."
   },
   "last_transition": {
-    "transition_id": "mc0028-warrant-f-v02-decision-probes",
+    "transition_id": "mc0028-r8c-probes-preregistered",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Claude Message 003 AMEND is accepted and reconciled in Research 276. Owner all-level redesign freedom is recorded. WARRANT-F V0.2 is frozen and eight decision-relevant probes must be preregistered before owner decision.",
-    "repository_head": "b6ac1d492216265e1351e420179d149928bffa8e"
+    "reason": "Research 277 freezes eight decision-relevant probe questions and interpretation rules before observation. P-H current host capability study is first and read-only.",
+    "repository_head": "a9f7b71a5d243f815374e53d8fca96625d84e889"
   }
 }
