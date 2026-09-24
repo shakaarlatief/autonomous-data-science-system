@@ -61,14 +61,14 @@
       "Comparative exposure is now intentionally authorized: Claude may read Research 274 FACET, Research 275 WARRANT-F V0.1, and its own Message 001 WARRANT.",
       "Claude Message 003 completed comparative critique at b6ac1d492216265e1351e420179d149928bffa8e. Research 276 / Message 004 reconcile it into WARRANT-F V0.2."
     ],
-    "notes": "P-D2 Attempt 002 is a valid PASS under Research 298 / Checkpoint 633. All ten frozen historical cases satisfy their independent labels and all nine frozen criteria pass. The material trust weakening is detected; lineage-preserving evolution with carried witnesses remains non-reviewing; required base-witness self-removal is blocked; exact owner-batch policy-diff binding rejects material mutation. Six of eight decision-relevant probes now have valid/scoped results. P-D4 current-oracle successor feasibility is next."
+    "notes": "P-D2 is PASS, giving six of eight valid/scoped probe results. Research 299 / Checkpoint 634 now freeze the P-D4 current-routing oracle corpus before successor design: 11 exact cases, four semantically good and seven bad, including the real Research-107-era defect, mutation/malformed cases and unrelated-branch specificity. Current-oracle source/blob and fixture source/inventory digests are bound. Formal old-oracle replay and successor claims/implementation occur only after this freeze."
   },
   "last_transition": {
-    "transition_id": "mc0028-p-d2-pass",
+    "transition_id": "mc0028-p-d4-corpus-frozen",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 298 / Checkpoint 633 reconcile P-D2 Attempt 002 as PASS against all preregistered criteria. Six of eight decision-relevant probes now have valid/scoped results; P-D4 is next.",
-    "repository_head": "a3a21bb07b0d141efee6a002408c0f9f8a8a5f2b"
+    "reason": "Research 299 / Checkpoint 634 freeze the P-D4 current-oracle corpus before any successor design. Formal replay and successor implementation are next.",
+    "repository_head": "3da817c7d9af9492d071801bec4e649baa0f48f4"
   }
 }
