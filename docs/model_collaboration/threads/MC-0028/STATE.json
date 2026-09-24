@@ -3,7 +3,7 @@
   "thread_id": "MC-0028",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "P_D3_HARNESS_REPAIR_3",
+  "phase": "P_D3_ATTEMPT004_READY",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "cac7a699eb012c5a02e1c5fab349ebc9e5726145",
@@ -61,14 +61,14 @@
       "Comparative exposure is now intentionally authorized: Claude may read Research 274 FACET, Research 275 WARRANT-F V0.1, and its own Message 001 WARRANT.",
       "Claude Message 003 completed comparative critique at b6ac1d492216265e1351e420179d149928bffa8e. Research 276 / Message 004 reconcile it into WARRANT-F V0.2."
     ],
-    "notes": "P-D3 Attempts 001-003 are HARNESS_INVALID. Attempt 003 exposed ambient venv site-packages in the child interpreter. Research 286 authorizes only adding -S before refreeze and Attempt 004."
+    "notes": "P-D3 Attempts 001-003 are HARNESS_INVALID. Research 287 freezes the -I -S isolated child harness at 542018f1290864bc7735c896a64f5aed5de48a76 before Attempt 004."
   },
   "last_transition": {
-    "transition_id": "mc0028-p-d3-attempt003-harness-invalid",
+    "transition_id": "mc0028-p-d3-attempt004-refrozen",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Attempt 003 did not actually remove Product from the JW1 child environment because site-packages remained available. Research 286 preserves the invalid attempt and authorizes only -S child isolation.",
-    "repository_head": "f79a2c91b5fc0c12b35d531276950b7d1431af53"
+    "reason": "Research 287 freezes the narrowly repaired child-interpreter-isolated P-D3 harness. Attempt 004 has not yet run.",
+    "repository_head": "542018f1290864bc7735c896a64f5aed5de48a76"
   }
 }
