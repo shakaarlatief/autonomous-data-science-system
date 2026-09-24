@@ -16,4 +16,8 @@ p_d3_boundary_independence.py implements the preregistered two-layer Product/JW1
 
 p_d5_adapter_fidelity.py tests consumer-side normalization of a native pytest JUnit XML result path and the JW1 project-knowledge CLI JSON result contract across pass/fail/error/zero/skipped/truncated/unmatched cases, with intentionally faulty adapters as witnesses.
 
+## P-D1
+
+p_d1_claims.json contains the twelve claims selected and frozen in Research 291 before warrant authoring. p_d1_warrant_proportionality.py validates selective claim grain, executes sensitivity/specificity witnesses for all four invariant claims, and runs sampled mutation adequacy against the Product reasoning suite.
+
 Every concrete probe harness must be committed and Git-blob-hash frozen before execution.

@@ -1,0 +1,259 @@
+{
+  "schema_version": 1,
+  "probe": "P-D1",
+  "protocol": "Research 277",
+  "selection_freeze": "Research 291",
+  "source_commit": "1a095044282622f2ce9e2bd38b90d77b8be8a4a2",
+  "claims": [
+    {
+      "claim_id": "I1_AUTHORITY_NONCANONICAL_NEVER_GOVERNS",
+      "grain": "INVARIANT",
+      "scope": "Noncanonical source classes cannot establish canonical governing authority.",
+      "verifier_sources": [
+        "tools/project_knowledge/authority.py",
+        "tests/unit/test_project_knowledge_authority.py"
+      ],
+      "warrant_basis": "The authority resolver explicitly classifies candidate, historical, derived, evidence and capture sources as non-governing, and the sensitivity fixture exercises every noncanonical class.",
+      "limitations": "This warrant is about authority-class exclusion. It does not prove every authority-resolution rule.",
+      "warrant_status": "FULL_FOR_DECLARED_SCOPE",
+      "witness_provenance": "HAND_AUTHORED_EXISTING_TEST_FIXTURE",
+      "sensitivity_node": "tests/unit/test_project_knowledge_authority.py::test_noncanonical_sources_never_govern",
+      "specificity_node": "tests/unit/test_project_knowledge_authority.py::test_selective_identity_and_receipt_completeness",
+      "rewitness_triggers": [
+        "authority resolver logic change",
+        "authority-class model change",
+        "declared claim scope change",
+        "witness fixture change"
+      ]
+    },
+    {
+      "claim_id": "I2_IDENTITY_DUPLICATE_CURRENT_OWNER_REJECTED",
+      "grain": "INVARIANT",
+      "scope": "Two simultaneous current canonical owners of one semantic identity cannot silently resolve as one current identity.",
+      "verifier_sources": [
+        "tools/project_knowledge/identity.py",
+        "tests/unit/test_project_knowledge_identity.py"
+      ],
+      "warrant_basis": "Identity construction explicitly diagnoses duplicate current ownership, and the sensitivity fixture supplies ambiguous current owners that must fail visibly.",
+      "limitations": "This warrant does not claim complete identity-transition correctness.",
+      "warrant_status": "FULL_FOR_DECLARED_SCOPE",
+      "witness_provenance": "HAND_AUTHORED_EXISTING_TEST_FIXTURE",
+      "sensitivity_node": "tests/unit/test_project_knowledge_identity.py::test_duplicate_current_ownership_never_picks_by_path",
+      "specificity_node": "tests/unit/test_project_knowledge_identity.py::test_current_selective_and_unknown_identity",
+      "rewitness_triggers": [
+        "identity ownership logic change",
+        "current-owner applicability change",
+        "declared claim scope change",
+        "witness fixture change"
+      ]
+    },
+    {
+      "claim_id": "I3_CAPTURE_STALE_PROMOTION_TARGET_REJECTED",
+      "grain": "INVARIANT",
+      "scope": "Capture promotion planning rejects a stale target revision rather than planning against an obsolete canonical target.",
+      "verifier_sources": [
+        "tools/project_knowledge/capture.py",
+        "tests/unit/test_project_knowledge_capture.py"
+      ],
+      "warrant_basis": "Promotion planning binds an expected exact target revision, and the sensitivity fixture supplies a stale revision that must raise STALE_PROMOTION_TARGET.",
+      "limitations": "This warrant covers exact-target freshness, not every capture-promotion precondition.",
+      "warrant_status": "FULL_FOR_DECLARED_SCOPE",
+      "witness_provenance": "HAND_AUTHORED_EXISTING_TEST_FIXTURE",
+      "sensitivity_node": "tests/unit/test_project_knowledge_capture.py::test_promotion_rejects_stale_target_revision",
+      "specificity_node": "tests/unit/test_project_knowledge_capture.py::test_valid_plan_binds_review_target_revision_provenance_and_complete_dispositions",
+      "rewitness_triggers": [
+        "promotion target-binding logic change",
+        "SourceRevision contract change",
+        "declared claim scope change",
+        "witness fixture change"
+      ]
+    },
+    {
+      "claim_id": "I4_PUBLIC_PRIVATE_NONLEAKAGE",
+      "grain": "INVARIANT",
+      "scope": "Known private values reaching public rendered bytes are rejected without echoing the private value in diagnostics.",
+      "verifier_sources": [
+        "tools/project_knowledge/privacy.py",
+        "tests/unit/test_project_knowledge_privacy.py"
+      ],
+      "warrant_basis": "The public projection validator checks rendered bytes against known private values, and the sensitivity fixture injects a private value through JSON escaping while asserting non-echoing diagnostics.",
+      "limitations": "This warrant covers known-value rendered-byte leakage, not all possible information-flow channels.",
+      "warrant_status": "FULL_FOR_DECLARED_SCOPE",
+      "witness_provenance": "HAND_AUTHORED_EXISTING_TEST_FIXTURE",
+      "sensitivity_node": "tests/unit/test_project_knowledge_privacy.py::test_known_private_fixture_value_is_rejected_even_when_json_escaped_without_echoing_secret",
+      "specificity_node": "tests/unit/test_project_knowledge_privacy.py::test_public_safe_relative_paths_tokens_and_urls_are_not_overclassified_as_private",
+      "rewitness_triggers": [
+        "privacy rendered-byte logic change",
+        "private-value representation change",
+        "declared claim scope change",
+        "witness fixture change"
+      ]
+    },
+    {
+      "claim_id": "S1_PRODUCT_REASONING_CONTRACT_SUITE",
+      "grain": "SUITE",
+      "scope": "Current Product reasoning request/result contract, canonical input/digest behavior, methodological-basis constraints and duplicate stable-key rejection.",
+      "verifier_sources": [
+        "src/ads_system/application/reasoning.py",
+        "tests/unit/test_reasoning.py"
+      ],
+      "warrant_basis": "The owner-local suite directly exercises the declared Product reasoning behaviors. Sampled mutation adequacy is used to demonstrate that the suite can reject representative defects rather than merely execute.",
+      "limitations": "Sampled mutation evidence cannot prove that every defect in the reasoning contract is detectable.",
+      "warrant_status": "PARTIALLY_WARRANTED",
+      "witness_provenance": "MUTATION_GENERATED_PLUS_EXISTING_TESTS",
+      "covered_test_files": [
+        "tests/unit/test_reasoning.py"
+      ],
+      "rewitness_triggers": [
+        "declared suite scope change",
+        "reasoning contract semantic change",
+        "mutation sample revision",
+        "material suite-family redesign"
+      ]
+    },
+    {
+      "claim_id": "S2_PRODUCT_CONTEXT_SELECTION_SUITE",
+      "grain": "SUITE",
+      "scope": "Current bounded context-selection semantics including budget, reasoning-function filtering, materialization discipline and duplicate request-function rejection.",
+      "verifier_sources": [
+        "src/ads_system/application/context_selection.py",
+        "tests/unit/test_context_selection.py"
+      ],
+      "warrant_basis": "The Product-local suite exercises the declared context-selection behaviors without requiring Project Engineering imports.",
+      "limitations": "P-D1 does not mutation-sample this suite, so it remains partially warranted.",
+      "warrant_status": "PARTIALLY_WARRANTED",
+      "witness_provenance": "EXISTING_TEST_SUITE",
+      "covered_test_files": [
+        "tests/unit/test_context_selection.py"
+      ],
+      "rewitness_triggers": [
+        "declared suite scope change",
+        "context-selection semantics change",
+        "material suite-family redesign"
+      ]
+    },
+    {
+      "claim_id": "S3_JW1_PROJECT_KNOWLEDGE_SEMANTIC_SUITE",
+      "grain": "SUITE",
+      "scope": "Current JW1 authority, identity, capture/promotion and privacy semantic families.",
+      "verifier_sources": [
+        "tools/project_knowledge/",
+        "tests/unit/test_project_knowledge_authority.py",
+        "tests/unit/test_project_knowledge_identity.py",
+        "tests/unit/test_project_knowledge_capture.py",
+        "tests/unit/test_project_knowledge_privacy.py"
+      ],
+      "warrant_basis": "The JW1-owned semantic suites exercise distinct authority, identity, lifecycle and privacy mechanisms. P-D1 uses targeted invariant witnesses from this family while keeping the broader suite claim partial.",
+      "limitations": "The full JW1 semantic surface is larger than the targeted P-D1 witnesses.",
+      "warrant_status": "PARTIALLY_WARRANTED",
+      "witness_provenance": "EXISTING_TEST_SUITES_PLUS_TARGETED_WITNESSES",
+      "covered_test_files": [
+        "tests/unit/test_project_knowledge_authority.py",
+        "tests/unit/test_project_knowledge_identity.py",
+        "tests/unit/test_project_knowledge_capture.py",
+        "tests/unit/test_project_knowledge_privacy.py"
+      ],
+      "rewitness_triggers": [
+        "declared suite scope change",
+        "JW1 semantic-family change",
+        "major suite partition change"
+      ]
+    },
+    {
+      "claim_id": "S4_REPOSITORY_INTEGRITY_AGGREGATE_SUITE",
+      "grain": "SUITE",
+      "scope": "Current family-aware repository contracts, Project-knowledge validation, checkpoint metadata, Knowledge Map, collaboration state and routing integrity.",
+      "verifier_sources": [
+        "scripts/repository_integrity.py",
+        "scripts/check_repository_integrity.py",
+        "tests/unit/test_repository_integrity.py",
+        "tests/unit/test_repository_integrity_aggregate.py"
+      ],
+      "warrant_basis": "The current aggregate is evidence of several repository invariants and remains a migration oracle. P-D1 deliberately does not treat the aggregate shape or PASS label as the target contract.",
+      "limitations": "The suite is current-mechanism evidence only and its individual invariants still require disposition during migration.",
+      "warrant_status": "PARTIALLY_WARRANTED",
+      "witness_provenance": "CURRENT_MIGRATION_ORACLE",
+      "covered_test_files": [
+        "tests/unit/test_repository_integrity.py",
+        "tests/unit/test_repository_integrity_aggregate.py"
+      ],
+      "rewitness_triggers": [
+        "retained invariant set changes",
+        "aggregate membership changes",
+        "successor shadow qualification"
+      ]
+    },
+    {
+      "claim_id": "C1_PRODUCT_RUNTIME_INDEPENDENT_OF_PROJECT",
+      "grain": "CROSS_BOUNDARY",
+      "scope": "Representative operational Product behavior can run without Project-plane runtime dependence.",
+      "verifier_sources": [
+        "docs/research/288_p_d3_boundary_independence_attempt004_pass.md"
+      ],
+      "warrant_basis": "P-D3 executes representative Product behavior in a target-shaped isolated fixture and detects a deliberately injected forbidden dependency.",
+      "limitations": "P-D3 is representative rather than exhaustive across the eventual Product runtime.",
+      "warrant_status": "PARTIALLY_WARRANTED",
+      "witness_provenance": "EMPIRICAL_P_D3",
+      "rewitness_triggers": [
+        "Product boundary change",
+        "allowed dependency contract change",
+        "representative behavior set expansion"
+      ]
+    },
+    {
+      "claim_id": "C2_JW1_INDEPENDENT_OF_ENGINEERING",
+      "grain": "CROSS_BOUNDARY",
+      "scope": "Representative JW1 semantic behavior can run without Project Engineering runtime dependence.",
+      "verifier_sources": [
+        "docs/research/288_p_d3_boundary_independence_attempt004_pass.md"
+      ],
+      "warrant_basis": "P-D3 executes representative JW1 behavior in a target-shaped isolated fixture and detects a deliberately injected Engineering/Product-side forbidden dependency.",
+      "limitations": "P-D3 is representative rather than exhaustive across all future JW1 modules.",
+      "warrant_status": "PARTIALLY_WARRANTED",
+      "witness_provenance": "EMPIRICAL_P_D3",
+      "rewitness_triggers": [
+        "JW1 boundary change",
+        "Engineering interface change",
+        "representative behavior set expansion"
+      ]
+    },
+    {
+      "claim_id": "C3_ASSURANCE_ORACLE_SEMANTIC_PARITY_BEFORE_RETIREMENT",
+      "grain": "CROSS_BOUNDARY",
+      "scope": "A current assurance oracle is not retired until retained semantic invariants have a qualified successor with sensitivity, specificity and explicit release.",
+      "verifier_sources": [
+        "docs/research/273_r8c0_from_scratch_assurance_requirements_claim_failure_and_design_protocol.md",
+        "docs/research/277_r8c_decision_relevant_assurance_probe_protocol.md"
+      ],
+      "warrant_basis": "The assurance architecture defines old/new shadow qualification at invariant level, but direct empirical warrant remains pending P-D4.",
+      "limitations": "Direct successor-oracle evidence is intentionally not yet available.",
+      "warrant_status": "PARTIALLY_WARRANTED",
+      "witness_provenance": "ARCHITECTURE_CONTRACT_PENDING_P_D4",
+      "rewitness_triggers": [
+        "oracle-retirement contract change",
+        "P-D4 result",
+        "migration-equivalence policy change"
+      ]
+    },
+    {
+      "claim_id": "C4_DECISION_EVIDENCE_EXACT_SUBJECT_BINDING",
+      "grain": "CROSS_BOUNDARY",
+      "scope": "Decision-grade evidence binds the exact qualified subject and becomes inadmissible when a material bound input changes.",
+      "verifier_sources": [
+        "docs/research/273_r8c0_from_scratch_assurance_requirements_claim_failure_and_design_protocol.md",
+        "docs/research/280_p_d6_executor_capability_trust_separation_result.md",
+        "docs/research/288_p_d3_boundary_independence_attempt004_pass.md",
+        "docs/research/290_p_d5_adapter_fidelity_result.md"
+      ],
+      "warrant_basis": "Multiple frozen probes already bind harness/source identities exactly, demonstrating the pattern, while the universal future subject model remains open.",
+      "limitations": "Existing examples are Git-bound research fixtures and do not prove every future artifact/environment subject type.",
+      "warrant_status": "PARTIALLY_WARRANTED",
+      "witness_provenance": "MULTIPLE_FROZEN_EMPIRICAL_PROBES",
+      "rewitness_triggers": [
+        "subject-identity model change",
+        "evidence-binding schema change",
+        "artifact/environment qualification introduction"
+      ]
+    }
+  ]
+}
