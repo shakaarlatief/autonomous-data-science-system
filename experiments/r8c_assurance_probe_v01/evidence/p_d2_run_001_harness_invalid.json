@@ -1,0 +1,38 @@
+{
+  "attempt": 1,
+  "candidate": "WARRANT-F V0.2",
+  "error": "ProbeFailure: frozen P-D2 fixture SHA-256 mismatch",
+  "failure_phase": "SELECTION_FIXTURE_BINDING",
+  "failure_type": "HASH_BASIS_MISMATCH",
+  "harness_binding": {
+    "commit": "c83313e150b8fbc0676e045c77137b69b322d790",
+    "files": {
+      "experiments/r8c_assurance_probe_v01/README.md": "9611225a2dc3ce7c6d14bef04303fc9459a9127d04eed52c3894f853e876bf5b",
+      "experiments/r8c_assurance_probe_v01/p_d2_ratchet_history.py": "bb8019eb60bb0fac9786f900727973b865574b859c51f873a9a13b13665505e4"
+    },
+    "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT"
+  },
+  "harness_freeze": "Research 295",
+  "interpretation": {
+    "architecture_inference_allowed": false,
+    "classifier_executed": false,
+    "historical_cases_classified": 0,
+    "labels_changed": false,
+    "physical_migration_authorized": false,
+    "repair_allowed_prospectively": true,
+    "target_architecture_amendment_required": false,
+    "thresholds_changed": false
+  },
+  "probe": "P-D2",
+  "protocol": "Research 277",
+  "result": "HARNESS_INVALID",
+  "selection_binding": {
+    "actual_git_blob_bytes": 18491,
+    "actual_git_blob_content_sha256": "3946655c69bba95d5f7b606e8a25cb1a2be1119e5613dfb4e3ecf9dbf515fc43",
+    "commit": "d7f65392b851c03b49c246c023b0a6684ef3c60b",
+    "git_blob_object": "257fa5fa7fcf2d1438f28b24f277ad70c17779d8",
+    "harness_expected_sha256": "be70e8c3aa5f4dea2b9f2680ebaae1b4c09b1733a6f8a22da4edeb93d3f86072",
+    "path": "experiments/r8c_assurance_probe_v01/p_d2_history_labels.json"
+  },
+  "selection_freeze": "Research 294"
+}

@@ -61,14 +61,14 @@
       "Comparative exposure is now intentionally authorized: Claude may read Research 274 FACET, Research 275 WARRANT-F V0.1, and its own Message 001 WARRANT.",
       "Claude Message 003 completed comparative critique at b6ac1d492216265e1351e420179d149928bffa8e. Research 276 / Message 004 reconcile it into WARRANT-F V0.2."
     ],
-    "notes": "P-D2 independent history labels are frozen at d7f65392 and the label-blind ratchet harness is frozen at c83313e1 by Research 295 / Checkpoint 630 before execution. The harness revalidates exact Git-history bindings, exercises required-witness self-removal and patch-drift negative controls, and binds owner batching to an exact canonical policy-diff digest. Five of eight decision-relevant probes still have valid/scoped results because P-D2 has not run. Exact frozen-harness execution is next."
+    "notes": "P-D2 Attempt 001 is HARNESS_INVALID under Research 296 / Checkpoint 631. The frozen harness compared Git blob bytes for the d7f65392 selection fixture to the working-tree SHA recorded during Research 294, so execution stopped before classifier use. No architecture inference is allowed and five of eight decision-relevant probes remain valid/scoped. Only a prospective repair to the expected selection-fixture Git-blob content hash is authorized; labels, classifier rules, thresholds and controls remain unchanged."
   },
   "last_transition": {
-    "transition_id": "mc0028-p-d2-harness-frozen",
+    "transition_id": "mc0028-p-d2-attempt001-harness-invalid",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 295 / Checkpoint 630 freeze the P-D2 label-blind ratchet harness at c83313e1 after the independently labelled d7f65392 history selection. No P-D2 result has been observed; exact execution is next.",
-    "repository_head": "c83313e150b8fbc0676e045c77137b69b322d790"
+    "reason": "P-D2 Attempt 001 stopped at selection-fixture binding because the frozen harness mixed working-tree and Git-blob byte hashes. Research 296 classifies HARNESS_INVALID with no architecture inference and authorizes only a prospective Git-blob hash repair.",
+    "repository_head": "15cdcb02616752320b91b98a3ce99d7b56719955"
   }
 }
