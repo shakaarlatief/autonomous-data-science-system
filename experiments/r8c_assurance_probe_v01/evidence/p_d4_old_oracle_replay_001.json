@@ -1,0 +1,119 @@
+{
+  "case_count": 11,
+  "corpus_binding": {
+    "commit": "d1f9418b4315010b0b4e77cc5943921a5b0e76d0",
+    "git_blob_content_sha256": "4baacd66facc321c2ada84eff57acbd71fd3c9e326d8ab93a6b7adc752a24877",
+    "path": "experiments/r8c_assurance_probe_v01/p_d4_oracle_corpus.json"
+  },
+  "matched_count": 11,
+  "oracle_binding": {
+    "commit": "3da817c7d9af9492d071801bec4e649baa0f48f4",
+    "git_blob_content_sha256": "0bdcb46c6d7d7971139e2f6eba39f89decb0303fa3a98d96fa8bcfcd0ec8cb0f",
+    "path": "scripts/check_current_routing.py"
+  },
+  "phase": "FORMAL_OLD_ORACLE_REPLAY",
+  "probe": "P-D4",
+  "result": "PASS",
+  "results": [
+    {
+      "case_id": "PD4-C01-REAL-HISTORICAL-DEFECT",
+      "matches_semantic_label": true,
+      "oracle_observed": "BAD",
+      "oracle_returncode": 2,
+      "semantic_label": "BAD",
+      "stderr": "Current routing manifest error: current_boundary must be at most 64 characters and match ^[a-z]+(?:-[a-z]+)*$\n",
+      "stdout": ""
+    },
+    {
+      "case_id": "PD4-C02-GOOD-CANONICAL-RECONCILIATION",
+      "matches_semantic_label": true,
+      "oracle_observed": "GOOD",
+      "oracle_returncode": 0,
+      "semantic_label": "GOOD",
+      "stderr": "",
+      "stdout": "Current routing consistency: PASS checkpoint=269 checked_branch=v1-source-vault-bootstrap-resume active_branch=v1-source-vault-bootstrap-resume active_pr=none promoted=v1-frontend-spike@2480109fadeee1e480ef03b82e335aacdf9adf91 latest_specification=026 latest_outcome=INCOMPLETE current_boundary=repository-integrity-hardening\n"
+    },
+    {
+      "case_id": "PD4-C03-GOOD-W1-AUTHORITY-BOUNDARY",
+      "matches_semantic_label": true,
+      "oracle_observed": "GOOD",
+      "oracle_returncode": 0,
+      "semantic_label": "GOOD",
+      "stderr": "",
+      "stdout": "Current routing consistency: PASS checkpoint=550 checked_branch=v1-source-vault-bootstrap-resume active_branch=v1-source-vault-bootstrap-resume active_pr=none promoted=v1-frontend-spike@2480109fadeee1e480ef03b82e335aacdf9adf91 latest_specification=028 latest_outcome=INCOMPLETE current_boundary=project-knowledge-authority-confirmed-integrity-next\n"
+    },
+    {
+      "case_id": "PD4-C04-GOOD-PD2-RESULT-STATE",
+      "matches_semantic_label": true,
+      "oracle_observed": "GOOD",
+      "oracle_returncode": 0,
+      "semantic_label": "GOOD",
+      "stderr": "",
+      "stdout": "Current routing consistency: PASS checkpoint=633 checked_branch=v1-source-vault-bootstrap-resume active_branch=v1-source-vault-bootstrap-resume active_pr=none promoted=v1-frontend-spike@2480109fadeee1e480ef03b82e335aacdf9adf91 latest_specification=028 latest_outcome=INCOMPLETE current_boundary=assurance-ratchet-history-pass\n"
+    },
+    {
+      "case_id": "PD4-C05-MUT-STale-AGREEING-ACTIVE",
+      "matches_semantic_label": true,
+      "oracle_observed": "BAD",
+      "oracle_returncode": 1,
+      "semantic_label": "BAD",
+      "stderr": "",
+      "stdout": "Current routing consistency violations:\n  ERROR active-branch current checkpoint is stale: manifest=268, branch_max=269, branch=v1-source-vault-bootstrap-resume\n"
+    },
+    {
+      "case_id": "PD4-C06-MUT-MISSING-CHECKPOINT",
+      "matches_semantic_label": true,
+      "oracle_observed": "BAD",
+      "oracle_returncode": 1,
+      "semantic_label": "BAD",
+      "stderr": "",
+      "stdout": "Current routing consistency violations:\n  ERROR no checkpoint file found for current_checkpoint=999\n"
+    },
+    {
+      "case_id": "PD4-C07-MUT-HUMAN-MACHINE-DISAGREEMENT",
+      "matches_semantic_label": true,
+      "oracle_observed": "BAD",
+      "oracle_returncode": 1,
+      "semantic_label": "BAD",
+      "stderr": "",
+      "stdout": "Current routing consistency violations:\n  ERROR docs\\CURRENT_STATE.md: missing routing fragment '**Active development branch:** `v1-source-vault-bootstrap-resume`'\n"
+    },
+    {
+      "case_id": "PD4-C08-MUT-VOLATILE-BOUNDARY",
+      "matches_semantic_label": true,
+      "oracle_observed": "BAD",
+      "oracle_returncode": 2,
+      "semantic_label": "BAD",
+      "stderr": "Current routing manifest error: current_boundary must be at most 64 characters and match ^[a-z]+(?:-[a-z]+)*$\n",
+      "stdout": ""
+    },
+    {
+      "case_id": "PD4-C09-MUT-MALFORMED-INTEGRATION-REVISION",
+      "matches_semantic_label": true,
+      "oracle_observed": "BAD",
+      "oracle_returncode": 2,
+      "semantic_label": "BAD",
+      "stderr": "Current routing manifest error: promoted_integration_sha must be one lowercase 40-character SHA\n",
+      "stdout": ""
+    },
+    {
+      "case_id": "PD4-C10-MALFORMED-ROUTING-PAYLOAD",
+      "matches_semantic_label": true,
+      "oracle_observed": "BAD",
+      "oracle_returncode": 2,
+      "semantic_label": "BAD",
+      "stderr": "Current routing manifest error: routing manifest is invalid JSON: Extra data: line 12 column 1 (char 405)\n",
+      "stdout": ""
+    },
+    {
+      "case_id": "PD4-C11-GOOD-UNRELATED-BRANCH-SPECIFICITY",
+      "matches_semantic_label": true,
+      "oracle_observed": "GOOD",
+      "oracle_returncode": 0,
+      "semantic_label": "GOOD",
+      "stderr": "",
+      "stdout": "Current routing consistency: PASS checkpoint=268 checked_branch=independent-review-branch active_branch=v1-source-vault-bootstrap-resume active_pr=none promoted=v1-frontend-spike@2480109fadeee1e480ef03b82e335aacdf9adf91 latest_specification=026 latest_outcome=INCOMPLETE current_boundary=repository-integrity-hardening\n"
+    }
+  ],
+  "successor_designed_during_replay": false
+}
