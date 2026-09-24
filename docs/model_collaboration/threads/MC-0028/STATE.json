@@ -61,14 +61,14 @@
       "Comparative exposure is now intentionally authorized: Claude may read Research 274 FACET, Research 275 WARRANT-F V0.1, and its own Message 001 WARRANT.",
       "Claude Message 003 completed comparative critique at b6ac1d492216265e1351e420179d149928bffa8e. Research 276 / Message 004 reconcile it into WARRANT-F V0.2."
     ],
-    "notes": "P-D4 corpus, 11/11 old-oracle replay and successor contract V0.2 are frozen. Research 303 / Checkpoint 638 now freeze the concrete oracle-successor harness at 7f0f035f before execution. The harness separates frozen old-oracle replay, legacy translation and a representation-independent successor classifier, binds all 11 corpus dispositions, direct translated good/stale cases, four completeness controls and static classifier-independence checks. Six of eight decision-relevant probes remain valid/scoped because P-D4 has not yet executed. Exact frozen-harness execution is next."
+    "notes": "P-D4 is a valid PASS under Research 304 / Checkpoint 639: frozen old oracle and representation-independent successor each match 11/11 semantic corpus dispositions, all seven frozen criteria pass, direct translated representation succeeds, stale and four completeness controls fail their expected successor claims, and classifier independence holds. The current checker remains a migration oracle until eventual production successor/cutover release. Seven of eight decision-relevant probes now have valid/scoped results. P-S stochastic campaign power desk study is next."
   },
   "last_transition": {
-    "transition_id": "mc0028-p-d4-harness-frozen",
+    "transition_id": "mc0028-p-d4-pass",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 303 / Checkpoint 638 freeze the concrete P-D4 oracle-successor harness before execution. No P-D4 successor result has been observed.",
-    "repository_head": "7f0f035f38118d0f9671050ac6fb5fc3b938cc37"
+    "reason": "Research 304 / Checkpoint 639 reconcile P-D4 as PASS against all frozen semantic parity and translated-representation criteria. Seven of eight decision-relevant probes now have valid/scoped results; P-S is next.",
+    "repository_head": "6813ba61ac9235aaf6f892ff33d3fd40bca3812f"
   }
 }

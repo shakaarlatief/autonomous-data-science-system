@@ -1,0 +1,270 @@
+{
+  "candidate": "WARRANT-F V0.2",
+  "corpus_binding": {
+    "commit": "d1f9418b4315010b0b4e77cc5943921a5b0e76d0",
+    "git_blob_content_sha256": "4baacd66facc321c2ada84eff57acbd71fd3c9e326d8ab93a6b7adc752a24877",
+    "path": "experiments/r8c_assurance_probe_v01/p_d4_oracle_corpus.json"
+  },
+  "criteria": {
+    "direct_stale_translated_control_fails_freshness_claim": true,
+    "direct_translated_good_case_passes_without_legacy_carrier_access": true,
+    "frozen_old_oracle_replay_remains_11_of_11": true,
+    "no_unique_frozen_requirement_depends_on_legacy_shape": true,
+    "successor_classifier_is_legacy_mechanism_independent": true,
+    "successor_matches_all_11_frozen_dispositions": true,
+    "successor_only_semantic_completeness_controls_pass": true
+  },
+  "harness_binding": {
+    "commit": "7f0f035f38118d0f9671050ac6fb5fc3b938cc37",
+    "files": {
+      "experiments/r8c_assurance_probe_v01/README.md": "496aa994ff036895bd3201b8064bb495fb7693ea46b6f21b81b76b02e93a0b70",
+      "experiments/r8c_assurance_probe_v01/p_d4_oracle_successor.py": "b327ce4ada3861e5ef3f6d0946f1655a9fe22de63f0b3123d39534232a1196bf"
+    },
+    "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT"
+  },
+  "independence": {
+    "classifier_forbidden_tokens": [
+      "check_current_routing",
+      "current_routing.json",
+      "CURRENT_STATE.md",
+      "git_bytes",
+      "subprocess"
+    ],
+    "classifier_independent": true
+  },
+  "interpretation": {
+    "current_oracle_retirement_authorized_now": false,
+    "legacy_mechanism_shape_required": false,
+    "physical_migration_authorized": false,
+    "semantic_parity_demonstrated_on_frozen_corpus": true,
+    "target_architecture_amendment_required": false,
+    "translated_representation_preserves_invariants": true
+  },
+  "old_oracle_results": [
+    {
+      "case_id": "PD4-C01-REAL-HISTORICAL-DEFECT",
+      "matches": true,
+      "observed": "BAD",
+      "returncode": 2,
+      "semantic_label": "BAD"
+    },
+    {
+      "case_id": "PD4-C02-GOOD-CANONICAL-RECONCILIATION",
+      "matches": true,
+      "observed": "GOOD",
+      "returncode": 0,
+      "semantic_label": "GOOD"
+    },
+    {
+      "case_id": "PD4-C03-GOOD-W1-AUTHORITY-BOUNDARY",
+      "matches": true,
+      "observed": "GOOD",
+      "returncode": 0,
+      "semantic_label": "GOOD"
+    },
+    {
+      "case_id": "PD4-C04-GOOD-PD2-RESULT-STATE",
+      "matches": true,
+      "observed": "GOOD",
+      "returncode": 0,
+      "semantic_label": "GOOD"
+    },
+    {
+      "case_id": "PD4-C05-MUT-STale-AGREEING-ACTIVE",
+      "matches": true,
+      "observed": "BAD",
+      "returncode": 1,
+      "semantic_label": "BAD"
+    },
+    {
+      "case_id": "PD4-C06-MUT-MISSING-CHECKPOINT",
+      "matches": true,
+      "observed": "BAD",
+      "returncode": 1,
+      "semantic_label": "BAD"
+    },
+    {
+      "case_id": "PD4-C07-MUT-HUMAN-MACHINE-DISAGREEMENT",
+      "matches": true,
+      "observed": "BAD",
+      "returncode": 1,
+      "semantic_label": "BAD"
+    },
+    {
+      "case_id": "PD4-C08-MUT-VOLATILE-BOUNDARY",
+      "matches": true,
+      "observed": "BAD",
+      "returncode": 2,
+      "semantic_label": "BAD"
+    },
+    {
+      "case_id": "PD4-C09-MUT-MALFORMED-INTEGRATION-REVISION",
+      "matches": true,
+      "observed": "BAD",
+      "returncode": 2,
+      "semantic_label": "BAD"
+    },
+    {
+      "case_id": "PD4-C10-MALFORMED-ROUTING-PAYLOAD",
+      "matches": true,
+      "observed": "BAD",
+      "returncode": 2,
+      "semantic_label": "BAD"
+    },
+    {
+      "case_id": "PD4-C11-GOOD-UNRELATED-BRANCH-SPECIFICITY",
+      "matches": true,
+      "observed": "GOOD",
+      "returncode": 0,
+      "semantic_label": "GOOD"
+    }
+  ],
+  "probe": "P-D4",
+  "protocol": "Research 277",
+  "result": "PASS",
+  "successor_contract_binding": {
+    "commit": "58ff6b2f39169e2f8470ba020848472b8b196724",
+    "git_blob_content_sha256": "36abb09beb186f8bdd0b3014ce8acfaa606036ab9f66955c96d0fd4f043b04aa",
+    "path": "experiments/r8c_assurance_probe_v01/p_d4_successor_contract_v02.json"
+  },
+  "successor_only_controls": {
+    "PD4-X1-ACTIVE-PR-ZERO": {
+      "expected_claim": "PD4-SR7-WORK-LINE-AND-PR-IDENTITY",
+      "expected_claim_detected": true,
+      "pass": false,
+      "violations": [
+        "PD4-SR7-WORK-LINE-AND-PR-IDENTITY"
+      ]
+    },
+    "PD4-X2-INVALID-WORK-LINE": {
+      "expected_claim": "PD4-SR7-WORK-LINE-AND-PR-IDENTITY",
+      "expected_claim_detected": true,
+      "pass": false,
+      "violations": [
+        "PD4-SR7-WORK-LINE-AND-PR-IDENTITY"
+      ]
+    },
+    "PD4-X3-MALFORMED-SPECIFICATION": {
+      "expected_claim": "PD4-SR8-KNOWLEDGE-POINTER-WELL-FORMED",
+      "expected_claim_detected": true,
+      "pass": false,
+      "violations": [
+        "PD4-SR8-KNOWLEDGE-POINTER-WELL-FORMED"
+      ]
+    },
+    "PD4-X4-EMPTY-EXPERIMENT-OUTCOME": {
+      "expected_claim": "PD4-SR8-KNOWLEDGE-POINTER-WELL-FORMED",
+      "expected_claim_detected": true,
+      "pass": false,
+      "violations": [
+        "PD4-SR8-KNOWLEDGE-POINTER-WELL-FORMED"
+      ]
+    }
+  },
+  "successor_results": [
+    {
+      "case_id": "PD4-C01-REAL-HISTORICAL-DEFECT",
+      "matches": true,
+      "semantic_label": "BAD",
+      "successor_observed": "BAD",
+      "violations": [
+        "PD4-SR3-BRANCH-SCOPED-FRESHNESS",
+        "PD4-SR5-STABLE-SEMANTIC-BOUNDARY"
+      ]
+    },
+    {
+      "case_id": "PD4-C02-GOOD-CANONICAL-RECONCILIATION",
+      "matches": true,
+      "semantic_label": "GOOD",
+      "successor_observed": "GOOD",
+      "violations": []
+    },
+    {
+      "case_id": "PD4-C03-GOOD-W1-AUTHORITY-BOUNDARY",
+      "matches": true,
+      "semantic_label": "GOOD",
+      "successor_observed": "GOOD",
+      "violations": []
+    },
+    {
+      "case_id": "PD4-C04-GOOD-PD2-RESULT-STATE",
+      "matches": true,
+      "semantic_label": "GOOD",
+      "successor_observed": "GOOD",
+      "violations": []
+    },
+    {
+      "case_id": "PD4-C05-MUT-STale-AGREEING-ACTIVE",
+      "matches": true,
+      "semantic_label": "BAD",
+      "successor_observed": "BAD",
+      "violations": [
+        "PD4-SR3-BRANCH-SCOPED-FRESHNESS"
+      ]
+    },
+    {
+      "case_id": "PD4-C06-MUT-MISSING-CHECKPOINT",
+      "matches": true,
+      "semantic_label": "BAD",
+      "successor_observed": "BAD",
+      "violations": [
+        "PD4-SR2-ROUTE-TARGET-EXISTS"
+      ]
+    },
+    {
+      "case_id": "PD4-C07-MUT-HUMAN-MACHINE-DISAGREEMENT",
+      "matches": true,
+      "semantic_label": "BAD",
+      "successor_observed": "BAD",
+      "violations": [
+        "PD4-SR4-ORIENTATION-SEMANTIC-PARITY"
+      ]
+    },
+    {
+      "case_id": "PD4-C08-MUT-VOLATILE-BOUNDARY",
+      "matches": true,
+      "semantic_label": "BAD",
+      "successor_observed": "BAD",
+      "violations": [
+        "PD4-SR5-STABLE-SEMANTIC-BOUNDARY"
+      ]
+    },
+    {
+      "case_id": "PD4-C09-MUT-MALFORMED-INTEGRATION-REVISION",
+      "matches": true,
+      "semantic_label": "BAD",
+      "successor_observed": "BAD",
+      "violations": [
+        "PD4-SR6-INTEGRATION-REVISION-IDENTITY"
+      ]
+    },
+    {
+      "case_id": "PD4-C10-MALFORMED-ROUTING-PAYLOAD",
+      "matches": true,
+      "semantic_label": "BAD",
+      "successor_observed": "BAD",
+      "violations": [
+        "PD4-SR1-TRANSLATABLE-STRUCTURED-FACTS"
+      ]
+    },
+    {
+      "case_id": "PD4-C11-GOOD-UNRELATED-BRANCH-SPECIFICITY",
+      "matches": true,
+      "semantic_label": "GOOD",
+      "successor_observed": "GOOD",
+      "violations": []
+    }
+  ],
+  "translated_representation": {
+    "direct_good_result": {
+      "pass": true,
+      "violations": []
+    },
+    "stale_negative_result": {
+      "pass": false,
+      "violations": [
+        "PD4-SR3-BRANCH-SCOPED-FRESHNESS"
+      ]
+    }
+  }
+}
