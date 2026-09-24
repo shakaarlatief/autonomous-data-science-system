@@ -61,14 +61,14 @@
       "Comparative exposure is now intentionally authorized: Claude may read Research 274 FACET, Research 275 WARRANT-F V0.1, and its own Message 001 WARRANT.",
       "Claude Message 003 completed comparative critique at b6ac1d492216265e1351e420179d149928bffa8e. Research 276 / Message 004 reconcile it into WARRANT-F V0.2."
     ],
-    "notes": "Seven of eight decision-relevant probes have valid/scoped results. Research 305 / Checkpoint 640 freeze the final P-S stochastic power-study plan before any calculation. Prototype V0 supplies two independent item clusters and five paired candidate-baseline repeats per item; the plan forbids pseudo-independence, freezes clustered variance/MDE/power sensitivity, a negative control, and item-level public-development/private-held-out separation. P-S calculator implementation and harness freeze are next."
+    "notes": "Seven of eight decision-relevant probes have valid/scoped results. P-S plan is frozen and Research 306 / Checkpoint 641 now freeze the exact stochastic power harness at ae66a929 before calculation. The harness preserves independent-item clustering, paired candidate/baseline design, all preregistered MDE/repeat/tau scenarios, a pseudo-independence negative control, item-level public/private confirmatory separation and OBSERVE_ONLY status for the current two-item evidence. Exact frozen-harness P-S execution is next."
   },
   "last_transition": {
-    "transition_id": "mc0028-p-s-plan-frozen",
+    "transition_id": "mc0028-p-s-harness-frozen",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 305 / Checkpoint 640 freeze the P-S power desk-study plan before calculation. P-S is the final unreconciled decision-relevant probe.",
-    "repository_head": "b693ca84722149e91e5a6e67b5d2b292491097ac"
+    "reason": "Research 306 / Checkpoint 641 freeze the P-S stochastic power harness before calculation. No P-S result has been observed.",
+    "repository_head": "ae66a929b023d9fec805eb11a3a2c9b1155d74d8"
   }
 }
