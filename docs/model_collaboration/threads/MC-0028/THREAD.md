@@ -1,7 +1,7 @@
 # MC-0028 Thread: Independent Assurance Architecture Design
 
 **Thread:** MC-0028
-**Status:** OPEN / WARRANT-F V0.2 FROZEN / DECISION-RELEVANT PROBES NEXT
+**Status:** RESOLVED / WARRANT-F V0.2 ACCEPTED / R8-C COMPLETE
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** cac7a699eb012c5a02e1c5fab349ebc9e5726145
@@ -20,8 +20,8 @@ Produce genuinely independent target assurance architectures from frozen Researc
     002 ChatGPT comparative synthesis             COMPLETE / Research 275 / WARRANT-F V0.1
     003 Claude comparative critique               COMPLETE / AMEND / b6ac1d49...
     004 ChatGPT reconciliation                    COMPLETE / Research 276 / WARRANT-F V0.2
-    decision-relevant empirical gates             IN PROGRESS / Research 277
-    owner decision                                AFTER PROBE RECONCILIATION
+    decision-relevant empirical gates             COMPLETE / 8 OF 8 RECONCILED
+    owner decision                                COMPLETE / ACCEPT
 
 ## Independence boundary
 
@@ -37,8 +37,8 @@ Claude may write only:
 
     docs/model_collaboration/threads/MC-0028/messages/**
 
-    MC0028=OPEN
-    PHASE=DECISION_RELEVANT_PROBES
+    MC0028=RESOLVED
+    PHASE=WARRANT_F_V02_ACCEPTED
     INDEPENDENT_BASE=cac7a699eb012c5a02e1c5fab349ebc9e5726145
     CHATGPT_CANDIDATE=FACET_RESEARCH274
     CLAUDE_CANDIDATE=WARRANT_MESSAGE001
@@ -85,7 +85,8 @@ Claude may write only:
     SCOPED_INCONCLUSIVE=P_H_ONLY
     UNRESOLVED_AMEND_RESULTS=0
     ACTIVE_HARNESS_INVALID_RESULTS=0
-    WARRANT_F_V0_2=OWNER_DECISION_READY
+    WARRANT_F_V0_2=ACCEPTED
     RECOMMEND_OWNER_DECISION=ACCEPT
-    OWNER_ASSURANCE_DECISION=PENDING
-    NEXT=OWNER_ACCEPT_AMEND_OR_REOPEN
+    OWNER_ASSURANCE_DECISION=ACCEPT
+    R8A_ENGINEERING_ENVIRONMENT_AMENDMENT=ACCEPTED
+    NEXT=SPECIFICATION028_RECONCILIATION_AND_AO10_REALIZATION_DESIGN

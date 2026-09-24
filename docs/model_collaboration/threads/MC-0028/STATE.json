@@ -2,8 +2,8 @@
   "schema_version": 1,
   "thread_id": "MC-0028",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
-  "lifecycle_state": "WAITING",
-  "phase": "DECISION_PROBES_RUNNING",
+  "lifecycle_state": "RESOLVED",
+  "phase": "WARRANT_F_V02_ACCEPTED",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "cac7a699eb012c5a02e1c5fab349ebc9e5726145",
@@ -51,24 +51,24 @@
       ]
     }
   ],
-  "next_expected_actor": "chatgpt",
+  "next_expected_actor": null,
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "cac7a699eb012c5a02e1c5fab349ebc9e5726145",
     "known_exposures": [
       "Claude Message 001 was produced from frozen base cac7a699eb012c5a02e1c5fab349ebc9e5726145 before reading Research 274.",
       "The new Claude conversation title is 04 - Assurance and Delivery Architecture Design; the durable participant slot remains claude-03 under the thread schema.",
-      "Comparative exposure is now intentionally authorized: Claude may read Research 274 FACET, Research 275 WARRANT-F V0.1, and its own Message 001 WARRANT.",
-      "Claude Message 003 completed comparative critique at b6ac1d492216265e1351e420179d149928bffa8e. Research 276 / Message 004 reconcile it into WARRANT-F V0.2."
+      "Comparative exposure was intentionally authorized after both independent candidates existed.",
+      "Claude Message 003 completed comparative critique at b6ac1d492216265e1351e420179d149928bffa8e. Research 276 / Message 004 reconciled it into WARRANT-F V0.2."
     ],
-    "notes": "Research 308 / Checkpoint 643 complete the eight-probe reconciliation. Seven probes PASS; P-H is explicitly scoped INCONCLUSIVE for current host-settings observability only. There are zero unresolved AMEND results and zero active HARNESS_INVALID results. WARRANT-F V0.2 is owner-decision-ready and the evidence-based recommendation is ACCEPT. Acceptance would preserve all-level design freedom, accept the reconciled semantic assurance rules plus the independent project/engineering environment amendment, and leave concrete provider/workflow/branch/CI/evidence-store/deployment realization open. No physical migration or authority switch occurs until later qualification."
+    "notes": "Research 308 reconciled all eight decision-relevant probes with seven PASS and one explicitly scoped INCONCLUSIVE result for P-H. The project owner explicitly accepted WARRANT-F V0.2 on 2026-09-24. Research 311 records the accepted semantic assurance architecture, the accepted R8-A Engineering-environment amendment, MC-0028 closure, and the next boundary: Specification 028 reconciliation plus AO-10 concrete realization design. No physical migration or authority switch is authorized."
   },
   "last_transition": {
-    "transition_id": "mc0028-owner-decision-ready",
+    "transition_id": "mc0028-owner-acceptance-thread-resolved",
     "from_state": "WAITING",
-    "to_state": "WAITING",
-    "actor": "chatgpt",
-    "reason": "Research 308 / Checkpoint 643 complete all eight decision-relevant probe reconciliation and present WARRANT-F V0.2 for explicit owner ACCEPT / AMEND / REOPEN. Recommendation is ACCEPT.",
-    "repository_head": "c412e0e61386b43201cc62cc7987d814f1a80b2f"
+    "to_state": "RESOLVED",
+    "actor": "human",
+    "reason": "The project owner explicitly chose ACCEPT after Research 308 established owner-decision readiness for WARRANT-F V0.2. Research 311 records R8-C acceptance, accepts the carried R8-A Engineering amendment, closes MC-0028, and routes the project to Specification 028 reconciliation plus AO-10 realization design.",
+    "repository_head": "78b3e7f2d88e1ab6b51a9dfb85cfdc604d6c074c"
   }
 }
