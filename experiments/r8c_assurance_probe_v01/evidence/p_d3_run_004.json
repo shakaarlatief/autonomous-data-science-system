@@ -1,0 +1,96 @@
+{
+  "assertions": {
+    "current_static_import_boundaries_clean": true,
+    "forbidden_dependency_injections_detected": true,
+    "target_shaped_runtime_succeeds": true
+  },
+  "candidate": "WARRANT-F V0.2",
+  "harness_binding": {
+    "commit": "542018f1290864bc7735c896a64f5aed5de48a76",
+    "files": {
+      "experiments/r8c_assurance_probe_v01/README.md": "614967937244531c8b1cb8e4154f7e42f91b88f58bcd32120f31918ba1090fa4",
+      "experiments/r8c_assurance_probe_v01/p_d3_boundary_independence.py": "7babd8dcaf7b61527c95ab6419383137375f0a62ac17f2191495a60f73531341"
+    },
+    "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT"
+  },
+  "interpretation": {
+    "current_layout_debt_observed": false,
+    "physical_migration_authorized": false,
+    "target_architecture_amendment_required": false
+  },
+  "layer_a_current_observation": {
+    "runtime": {
+      "jw1_without_engineering": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "JW1_BEHAVIOR=PASS"
+      },
+      "product_without_project": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "PRODUCT_BEHAVIOR=PASS"
+      }
+    },
+    "static_jw1": {
+      "file_count": 54,
+      "forbidden_prefixes": [
+        "ads_system",
+        "project.engineering",
+        "tests",
+        "scripts"
+      ],
+      "prefix": "tools/project_knowledge/",
+      "violations": []
+    },
+    "static_product": {
+      "file_count": 35,
+      "forbidden_prefixes": [
+        "tools",
+        "project",
+        "ads_project_system"
+      ],
+      "prefix": "src/ads_system/",
+      "violations": []
+    }
+  },
+  "layer_b_target_shaped_fixture": {
+    "forbidden_dependency_controls": {
+      "jw1_forbidden_dependency": {
+        "returncode": 1,
+        "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 4, in <module>\n    from ads_project_system.identity import build_identity_index, resolve_identity\n  File \"C:\\Users\\shaka\\AppData\\Local\\Temp\\p-d3-target-jw1-83qaijbs\\project\\system\\src\\ads_project_system\\identity.py\", line 335, in <module>\n    import ads_system\nModuleNotFoundError: No module named 'ads_system'",
+        "stdout": ""
+      },
+      "product_forbidden_dependency": {
+        "returncode": 1,
+        "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 4, in <module>\n    from ads_system.application.reasoning import (\n    ...<3 lines>...\n    )\n  File \"C:\\Users\\shaka\\AppData\\Local\\Temp\\p-d3-target-product-pqf29z5f\\product\\runtime\\src\\ads_system\\application\\reasoning.py\", line 270, in <module>\n    import ads_project_system\nModuleNotFoundError: No module named 'ads_project_system'",
+        "stdout": ""
+      }
+    },
+    "runtime": {
+      "jw1_system": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "JW1_BEHAVIOR=PASS"
+      },
+      "product_runtime": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "PRODUCT_BEHAVIOR=PASS"
+      }
+    }
+  },
+  "probe": "P-D3",
+  "protocol": "Research 277",
+  "result": "PASS",
+  "scope_limits": [
+    "Representative Product behavior is the provider-neutral reasoning request contract.",
+    "Representative JW1 behavior is identity-index construction and resolution.",
+    "Static scan covers explicit absolute Python imports at the frozen source commit.",
+    "The probe establishes boundary realizability, not exhaustive production readiness."
+  ],
+  "source_binding": {
+    "commit": "721545c46b94e0a87c87a572fb357ff314f6913f",
+    "jw1_prefix": "tools/project_knowledge/",
+    "product_prefix": "src/ads_system/"
+  }
+}
