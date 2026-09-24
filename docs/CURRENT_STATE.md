@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 643
+**Checkpoint:** 644
 **Date:** 2026-09-24
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -1261,3 +1261,5 @@ docs/local_execution/DIRECT_GIT_INVESTIGATION_LESSONS.md
 docs/local_execution/SEMANTIC_PULL_ACCEPTANCE.md
 docs/DEVELOPMENT_METHOD.md
 ```
+
+Research 309 / Checkpoint 644 preserve the owner's longer-term vision that, after ADS architecture, implementation, migration and operational qualification mature sufficiently, the genuinely reusable core should be considered for extraction into a standalone professional public architecture/reference implementation rather than a personal-project template. The candidate general system spans Product/Project separation, knowledge/state/authority, activation/orchestration, governed architecture evolution, capability/trust, WARRANT-F assurance/admission, execution/delivery, migration/oracle retirement, recovery and deterministic/stochastic qualification. ADS remains the primary real realization and falsification ground before any extraction. Research 309 also clarifies that AO and WARRANT-F are complementary: AO/JW1 governs project process and state transitions, WARRANT-F decides admissibility for exact consequences, and delivery engineering performs admitted governed mutations. Architecture change itself is governed primarily by AO-4 Governed Evolution Cases using CONFORMANCE_DEFECT / KEEP / CLARIFY / AMEND / SUPERSEDE / REOPEN, with owner normative decision authority preserved. WARRANT-F may supply trigger evidence and later qualify an accepted change; its base-revision ratchet is a specialized assurance-policy guard, not a competing general architecture-change authority. This preservation does not record R8-C acceptance, unhold AO-10, amend Specification 028, authorize physical migration, or switch authority.

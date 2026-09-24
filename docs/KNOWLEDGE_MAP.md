@@ -536,6 +536,7 @@ docs/research/305_p_s_stochastic_campaign_power_desk_study_plan_freeze.md
 docs/research/306_p_s_stochastic_power_harness_freeze.md
 docs/research/307_p_s_stochastic_campaign_power_desk_study_pass.md
 docs/research/308_r8c_eight_probe_reconciliation_owner_decision_readiness.md
+docs/research/309_generalizable_project_operating_architecture_vision_and_evolution_boundary.md
 docs/checkpoints/570_whole_repository_physical_architecture_scope_clarified.md
 docs/checkpoints/571_whole_repository_r2_boundaries_identified.md
 docs/checkpoints/572_whole_repository_r3_candidate_archetypes_frozen.md
@@ -610,6 +611,7 @@ docs/checkpoints/640_p_s_power_desk_study_plan_frozen.md
 docs/checkpoints/641_p_s_stochastic_power_harness_frozen.md
 docs/checkpoints/642_p_s_pass_eight_probe_program_complete.md
 docs/checkpoints/643_warrant_f_v02_owner_decision_ready.md
+docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md
 docs/research/project_knowledge_activation_orchestration/README.md
 docs/research/project_knowledge_activation_orchestration/001_chat26_owner_source_interaction_orchestration_evidence.md
 docs/research/project_knowledge_activation_orchestration/002_chat27_activation_self_hosting_bootstrap_evidence.md
@@ -1241,7 +1243,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-643 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-644 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 
