@@ -61,14 +61,14 @@
       "Comparative exposure is now intentionally authorized: Claude may read Research 274 FACET, Research 275 WARRANT-F V0.1, and its own Message 001 WARRANT.",
       "Claude Message 003 completed comparative critique at b6ac1d492216265e1351e420179d149928bffa8e. Research 276 / Message 004 reconcile it into WARRANT-F V0.2."
     ],
-    "notes": "Seven of eight decision-relevant probes have valid/scoped results. P-S plan is frozen and Research 306 / Checkpoint 641 now freeze the exact stochastic power harness at ae66a929 before calculation. The harness preserves independent-item clustering, paired candidate/baseline design, all preregistered MDE/repeat/tau scenarios, a pseudo-independence negative control, item-level public/private confirmatory separation and OBSERVE_ONLY status for the current two-item evidence. Exact frozen-harness P-S execution is next."
+    "notes": "Research 307 / Checkpoint 642 record P-S PASS: all eight frozen stochastic desk-study criteria pass. The current two-item Prototype V0 corpus remains OBSERVE_ONLY for decision-grade BLOCK, while a future paired item-clustered campaign with item-level public/private separation is designable; the conservative MDE 0.10 sensitivity is feasible at J=29 independent items, R=2 and 116 total candidate+baseline executions. All eight decision-relevant probes are now valid or explicitly scoped, with no unresolved AMEND and no active HARNESS_INVALID result. Total probe reconciliation and owner-decision readiness are next."
   },
   "last_transition": {
-    "transition_id": "mc0028-p-s-harness-frozen",
+    "transition_id": "mc0028-p-s-pass",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 306 / Checkpoint 641 freeze the P-S stochastic power harness before calculation. No P-S result has been observed.",
-    "repository_head": "ae66a929b023d9fec805eb11a3a2c9b1155d74d8"
+    "reason": "Research 307 / Checkpoint 642 reconcile P-S as PASS and complete all eight decision-relevant probes. Total owner-decision-readiness synthesis is next.",
+    "repository_head": "84a1c291c3b61e496cffc1a5e179efb22197697f"
   }
 }
