@@ -61,14 +61,14 @@
       "Comparative exposure is now intentionally authorized: Claude may read Research 274 FACET, Research 275 WARRANT-F V0.1, and its own Message 001 WARRANT.",
       "Claude Message 003 completed comparative critique at b6ac1d492216265e1351e420179d149928bffa8e. Research 276 / Message 004 reconcile it into WARRANT-F V0.2."
     ],
-    "notes": "Research 307 / Checkpoint 642 record P-S PASS: all eight frozen stochastic desk-study criteria pass. The current two-item Prototype V0 corpus remains OBSERVE_ONLY for decision-grade BLOCK, while a future paired item-clustered campaign with item-level public/private separation is designable; the conservative MDE 0.10 sensitivity is feasible at J=29 independent items, R=2 and 116 total candidate+baseline executions. All eight decision-relevant probes are now valid or explicitly scoped, with no unresolved AMEND and no active HARNESS_INVALID result. Total probe reconciliation and owner-decision readiness are next."
+    "notes": "Research 308 / Checkpoint 643 complete the eight-probe reconciliation. Seven probes PASS; P-H is explicitly scoped INCONCLUSIVE for current host-settings observability only. There are zero unresolved AMEND results and zero active HARNESS_INVALID results. WARRANT-F V0.2 is owner-decision-ready and the evidence-based recommendation is ACCEPT. Acceptance would preserve all-level design freedom, accept the reconciled semantic assurance rules plus the independent project/engineering environment amendment, and leave concrete provider/workflow/branch/CI/evidence-store/deployment realization open. No physical migration or authority switch occurs until later qualification."
   },
   "last_transition": {
-    "transition_id": "mc0028-p-s-pass",
+    "transition_id": "mc0028-owner-decision-ready",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 307 / Checkpoint 642 reconcile P-S as PASS and complete all eight decision-relevant probes. Total owner-decision-readiness synthesis is next.",
-    "repository_head": "84a1c291c3b61e496cffc1a5e179efb22197697f"
+    "reason": "Research 308 / Checkpoint 643 complete all eight decision-relevant probe reconciliation and present WARRANT-F V0.2 for explicit owner ACCEPT / AMEND / REOPEN. Recommendation is ACCEPT.",
+    "repository_head": "c412e0e61386b43201cc62cc7987d814f1a80b2f"
   }
 }
