@@ -3,7 +3,7 @@
   "thread_id": "MC-0028",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DECISION_PROBES_RUNNING",
+  "phase": "P_D1_CLAIM_SET_FROZEN",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "cac7a699eb012c5a02e1c5fab349ebc9e5726145",
@@ -61,14 +61,14 @@
       "Comparative exposure is now intentionally authorized: Claude may read Research 274 FACET, Research 275 WARRANT-F V0.1, and its own Message 001 WARRANT.",
       "Claude Message 003 completed comparative critique at b6ac1d492216265e1351e420179d149928bffa8e. Research 276 / Message 004 reconcile it into WARRANT-F V0.2."
     ],
-    "notes": "P-D5 completed PASS against the frozen Research 289 harness, supporting consumer-side Product/JW1 result adaptation without target preservation of current result formats. Four of eight decision-relevant probes have valid/scoped results. P-D1 warrant proportionality is next."
+    "notes": "P-D5 completed PASS. Research 291 now freezes the twelve P-D1 claims before any warrant or witness implementation is authored. Four of eight decision-relevant probes have valid/scoped results; P-D1 warrant and harness authoring is next."
   },
   "last_transition": {
-    "transition_id": "mc0028-p-d5-pass-p-d1-next",
+    "transition_id": "mc0028-p-d1-claim-set-frozen",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 290 records P-D5 PASS with matching frozen harness/source bindings. Four of eight decision-relevant probes have valid/scoped results; P-D1 warrant proportionality is next.",
-    "repository_head": "68a259c91d1aa26ec12d6393724f85e6ab66029d"
+    "reason": "Research 291 freezes the twelve real P-D1 candidate claims before warrant and witness design. No P-D1 result has been observed.",
+    "repository_head": "1a095044282622f2ce9e2bd38b90d77b8be8a4a2"
   }
 }
