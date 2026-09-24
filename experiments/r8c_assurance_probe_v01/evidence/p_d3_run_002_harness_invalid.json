@@ -1,0 +1,27 @@
+{
+  "attempt": 2,
+  "candidate": "WARRANT-F V0.2",
+  "error": "The negative-control injector prepended 'import ads_project_system' ahead of an existing 'from __future__ import annotations', causing SyntaxError before the intended forbidden-dependency failure. The expected module token was therefore absent from stderr.",
+  "failure_phase": "NEGATIVE_CONTROL_PRODUCT_FORBIDDEN_DEPENDENCY",
+  "failure_type": "HARNESS_INJECTION_ERROR",
+  "harness_binding": {
+    "commit": "1841fb62b5f41556381535263b567f43c97d8d2d",
+    "files": {
+      "experiments/r8c_assurance_probe_v01/README.md": "614967937244531c8b1cb8e4154f7e42f91b88f58bcd32120f31918ba1090fa4",
+      "experiments/r8c_assurance_probe_v01/p_d3_boundary_independence.py": "47a7ea55278f716f90e065b156b706cb8bc1af6fa17fd2990a9facd5c6912fd1"
+    },
+    "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT"
+  },
+  "interpretation": {
+    "architecture_inference_allowed": false,
+    "repair_allowed_prospectively": true,
+    "target_architecture_amendment_required": false,
+    "thresholds_changed": false
+  },
+  "probe": "P-D3",
+  "protocol": "Research 277",
+  "result": "HARNESS_INVALID",
+  "source_binding": {
+    "commit": "721545c46b94e0a87c87a572fb357ff314f6913f"
+  }
+}
