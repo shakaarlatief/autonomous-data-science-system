@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-23
-**Status:** MC-0028 ACTIVE / FACET + WARRANT RECONCILED / WARRANT-F V0.1 / CLAUDE COMPARATIVE CRITIQUE NEXT / MC-0010 DEFERRED
+**Status:** MC-0028 ACTIVE / CLAUDE AMEND RECONCILED / WARRANT-F V0.2 / DECISION-RELEVANT PROBES NEXT / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -25,7 +25,7 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 There is no active Claude obligation.
 
-The active project stage is the from-scratch assurance / verification / testing / CI-CD architecture. Claude's independent WARRANT candidate is committed at `76138e29ed4125bda21f1d9f8e46b34c89bfeef2`. Research 275 / Message 002 compare it with independently frozen FACET and freeze `WARRANT-F V0.1`. Comparative exposure is now authorized. Claude Message 003 must review Research 274 and 275 against Message 001, including the warrant bar, base-revision ratchet, T0-T3 trust scope, exact-result lifecycle, engineering Python project amendment, evidence storage and kill-set retirement. Owner decision and empirical probe freeze remain blocked until that critique is reconciled.
+The active project stage is the from-scratch assurance / verification / testing / CI-CD architecture. Claude Message 003 (`b6ac1d49...`) returned `AMEND`; Research 276 / Message 004 accept the critique and freeze `WARRANT-F V0.2`. The owner further clarified that current branch/workflow/tool/execution practices have no target preservation right at any level. Current direct-push and GitHub mechanics are transition/provider evidence only. Accepted state is now modeled semantically as an exact accepted-state subject role, not a permanent branch name; detective post-admission qualification is a transition bridge only. No active Claude response is required while ChatGPT preregisters the eight decision-relevant probes.
 
 ## Most recently completed obligation
 
