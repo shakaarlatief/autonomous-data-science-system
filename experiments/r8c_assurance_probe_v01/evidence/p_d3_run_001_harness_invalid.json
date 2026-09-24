@@ -1,0 +1,27 @@
+{
+  "attempt": 1,
+  "candidate": "WARRANT-F V0.2",
+  "error": "ProbeFailure: git failed: show 721545c46b94e0a87c87a572fb357ff314f6913f:tools/__init__.py; fatal: path 'tools/__init__.py' does not exist in the frozen source commit.",
+  "failure_phase": "CURRENT_JW1_FIXTURE_CONSTRUCTION",
+  "failure_type": "HARNESS_ASSUMPTION",
+  "harness_binding": {
+    "commit": "5ba5ae40567bcc55da2ba031ef10a98f0df3a46e",
+    "files": {
+      "experiments/r8c_assurance_probe_v01/README.md": "614967937244531c8b1cb8e4154f7e42f91b88f58bcd32120f31918ba1090fa4",
+      "experiments/r8c_assurance_probe_v01/p_d3_boundary_independence.py": "81b9de078b87608817b359bd6b5e3b41242937fdd41c47eb4612521d0a92058f"
+    },
+    "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT"
+  },
+  "interpretation": {
+    "architecture_inference_allowed": false,
+    "repair_allowed_prospectively": true,
+    "target_architecture_amendment_required": false,
+    "thresholds_changed": false
+  },
+  "probe": "P-D3",
+  "protocol": "Research 277",
+  "result": "HARNESS_INVALID",
+  "source_binding": {
+    "commit": "721545c46b94e0a87c87a572fb357ff314f6913f"
+  }
+}
