@@ -20,4 +20,8 @@ p_d5_adapter_fidelity.py tests consumer-side normalization of a native pytest JU
 
 p_d1_claims.json contains the twelve claims selected and frozen in Research 291 before warrant authoring. p_d1_warrant_proportionality.py validates selective claim grain, executes sensitivity/specificity witnesses for all four invariant claims, and runs sampled mutation adequacy against the Product reasoning suite.
 
+## P-D2
+
+p_d2_history_labels.json contains the ten real historical changes and independent semantic labels frozen in Research 294 before classifier authoring. p_d2_ratchet_history.py verifies exact Git patch bindings, classifies only normalized policy deltas, exercises witness-removal and patch-drift negative controls, and proves exact owner-batch policy-diff digest binding.
+
 Every concrete probe harness must be committed and Git-blob-hash frozen before execution.
