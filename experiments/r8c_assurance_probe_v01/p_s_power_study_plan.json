@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "probe": "P-S",
+  "plan_id": "R8C-PS-STOCHASTIC-POWER-DESK-STUDY-V01",
+  "status": "FROZEN_BEFORE_POWER_CALCULATION",
+  "candidate": "WARRANT-F V0.2",
+  "source_commit": "a6ab12426df1bc06676b6631ca2a6305cf3b64f4",
+  "source_bindings": [
+    {
+      "path": "docs/experiments/prototype_v0/FINAL_RESULTS.md",
+      "git_blob_content_sha256": "ce508bcfff678a812ea49ddb3745adc90347281035b7930dc0c1ed8aa81280ae",
+      "role": "durable decoded held-out result and paired P0-B1 differences"
+    },
+    {
+      "path": "docs/foundations/012_preregistered_held_out_evaluation_protocol.md",
+      "git_blob_content_sha256": "d9f226ee72ec71e1fd4108ca57e31ac911bca55d3270c944a22c277c9cce11f3",
+      "role": "pre-existing held-out design, pairing, primary metric and material-effect contract"
+    },
+    {
+      "path": "prototype_v0/configs/held_out_protocol_v0_1.json",
+      "git_blob_content_sha256": "086447b3a227bb7713db95faffa42abfb7649496f2829f88278b7251ea33cc32",
+      "role": "machine-readable held-out protocol corroboration"
+    }
+  ],
+  "ignored_non_authoritative_local_source": {
+    "path": "prototype_v0/results/held_out/semantic_judge_decoded/decoded_results.json",
+    "reason": "Local ignored result material exists but is not required for the desk study. The tracked durable final result contains the exact paired differences and summary facts used here."
+  },
+  "observed_design": {
+    "primary_comparison": "P0_MINUS_B1",
+    "primary_metric": "targeted_architecture_score",
+    "metric_range": [
+      0.0,
+      2.0
+    ],
+    "independent_item_clusters": [
+      {
+        "item_id": "H1",
+        "repeated_paired_differences": [
+          0.1,
+          0.0,
+          0.0,
+          0.0,
+          0.2
+        ]
+      },
+      {
+        "item_id": "H2",
+        "repeated_paired_differences": [
+          0.0,
+          0.2,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "repeats_per_item": 5,
+    "paired_run_count": 10,
+    "independent_item_count": 2,
+    "independence_rule": "The ten paired runs are repeated stochastic samples nested in two benchmark items. They must not be treated as ten independent benchmark items."
+  },
+  "analysis_contract": {
+    "paired_difference_symbol": "d_ir",
+    "model": "d_ir = mu + u_i + e_ir, with independent item effects u_i variance tau^2 and within-item stochastic paired residuals e_ir variance sigma^2.",
+    "within_item_variance_estimator": "Pool the ordinary sample variances of repeated paired differences within H1 and H2 using within-item degrees of freedom.",
+    "item_mean_variance": "tau^2 + sigma^2 / R",
+    "grand_mean_variance": "(tau^2 + sigma^2 / R) / J",
+    "power_method": "Two-sided large-sample normal planning approximation for the mean paired item effect.",
+    "alpha": 0.05,
+    "target_power": 0.8,
+    "normal_quantile_rule": "z_(1-alpha/2) + z_(power), computed with Python statistics.NormalDist.",
+    "required_item_formula": "ceil((z_(1-alpha/2)+z_power)^2 * (tau^2 + sigma^2/R) / delta^2)",
+    "mde_grid": [
+      {
+        "delta": 0.3,
+        "role": "PRIMARY_PREEXISTING_MATERIAL_EFFECT",
+        "basis": "Foundation 012 preregistered +0.30 targeted-architecture-score material-reliability alternative."
+      },
+      {
+        "delta": 0.2,
+        "role": "PLANNING_SENSITIVITY_ONLY"
+      },
+      {
+        "delta": 0.1,
+        "role": "PLANNING_SENSITIVITY_ONLY"
+      }
+    ],
+    "repeat_grid": [
+      1,
+      2,
+      3,
+      5
+    ],
+    "between_item_sensitivity": {
+      "basis": "The current two-item corpus cannot identify between-item heterogeneity reliably. Report method-of-moments information descriptively, but power planning must use tau sensitivity ratios rather than treating tau_hat=0 as truth.",
+      "tau_over_sigma_grid": [
+        0.0,
+        0.5,
+        1.0,
+        2.0
+      ]
+    },
+    "future_campaign_primary_analysis": "Pair candidate and baseline within each independent item and stochastic replicate. Aggregate or model repeats within item; inference/generalization is item-clustered, with J independent item clusters as the sample-size axis.",
+    "multiplicity": "One decisive metric only for this desk study: targeted_architecture_score. Other outcomes may remain diagnostics and must not silently create multiple decisive tests."
+  },
+  "negative_control": {
+    "name": "PSEUDO_INDEPENDENT_REPEATS",
+    "procedure": "Compute the naive standard error obtained by treating all ten paired repeats as independent items, then compare it with the cluster-aware current-study standard error under tau = 2*sigma. The naive value must not be used for decision-grade sample-size recommendations and the cluster-aware sensitivity standard error must be larger.",
+    "purpose": "Prove the desk study does not invent independence from repeated samples."
+  },
+  "public_private_release_contract": {
+    "required_for_decision_grade_blocking": true,
+    "split_unit": "INDEPENDENT_ITEM",
+    "rule": "All repeats for one item stay in one partition. Public/development items may support variance estimation, harness/judge calibration and preregistration. Private held-out items remain untouched until the confirmatory campaign and provide the release/BLOCK evidence.",
+    "anti_leakage": "Do not split stochastic repeats of the same item across public and private partitions."
+  },
+  "probe_pass_criteria": {
+    "result_if_satisfied": "PASS",
+    "requirements": [
+      "The preserved evidence yields a finite positive within-item paired stochastic variance estimate from the two repeated item clusters.",
+      "The analysis explicitly distinguishes J=2 independent items from 10 repeated paired runs and never uses the naive n=10 independence assumption for the recommendation.",
+      "Finite required independent-item counts are produced for every preregistered MDE/repeat/tau-sensitivity combination.",
+      "Under the conservative tau=2*sigma sensitivity, at least one design with R in {2,3,5} supports MDE <= 0.10 at alpha=0.05 and power=0.80 within no more than 200 total candidate+baseline treatment executions.",
+      "The campaign design is paired by candidate/baseline item and item-clustered when repeats exist.",
+      "A public-development versus private-held-out confirmatory split is required at item level for decision-grade BLOCK claims.",
+      "Current Prototype V0 evidence is not upgraded into a decision-grade generalization claim merely because it supplies variance-planning evidence."
+    ],
+    "inconclusive_if": "The preserved evidence cannot support the variance calculation or no preregistered finite campaign satisfies the bounded feasibility discriminator.",
+    "amend_if": "The calculations show that WARRANT-F V0.2 requires a materially different stochastic decision model rather than only a larger/preregistered campaign."
+  },
+  "interpretation_limits": [
+    "The two observed benchmark items are insufficient to estimate population-level between-item heterogeneity reliably.",
+    "The normal approximation is a desk-study planning calculation, not the final confirmatory analysis method.",
+    "The historical observed +0.05 P0-B1 difference is descriptive and is not promoted into a post-hoc target effect.",
+    "No live model call is permitted in P-S."
+  ]
+}
