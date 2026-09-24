@@ -522,6 +522,7 @@ docs/research/291_p_d1_warrant_proportionality_claim_set_freeze.md
 docs/research/292_p_d1_warrant_proportionality_harness_freeze.md
 docs/research/293_p_d1_warrant_proportionality_result.md
 docs/research/294_p_d2_ratchet_history_sample_and_independent_label_freeze.md
+docs/research/295_p_d2_ratchet_history_harness_freeze.md
 docs/checkpoints/570_whole_repository_physical_architecture_scope_clarified.md
 docs/checkpoints/571_whole_repository_r2_boundaries_identified.md
 docs/checkpoints/572_whole_repository_r3_candidate_archetypes_frozen.md
@@ -582,6 +583,7 @@ docs/checkpoints/626_p_d1_claim_set_frozen.md
 docs/checkpoints/627_p_d1_harness_frozen.md
 docs/checkpoints/628_p_d1_pass.md
 docs/checkpoints/629_p_d2_ratchet_history_sample_and_independent_labels_frozen.md
+docs/checkpoints/630_p_d2_ratchet_history_harness_frozen.md
 docs/research/project_knowledge_activation_orchestration/README.md
 docs/research/project_knowledge_activation_orchestration/001_chat26_owner_source_interaction_orchestration_evidence.md
 docs/research/project_knowledge_activation_orchestration/002_chat27_activation_self_hosting_bootstrap_evidence.md
@@ -1213,7 +1215,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-629 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-630 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

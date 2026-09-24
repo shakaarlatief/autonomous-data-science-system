@@ -61,14 +61,14 @@
       "Comparative exposure is now intentionally authorized: Claude may read Research 274 FACET, Research 275 WARRANT-F V0.1, and its own Message 001 WARRANT.",
       "Claude Message 003 completed comparative critique at b6ac1d492216265e1351e420179d149928bffa8e. Research 276 / Message 004 reconcile it into WARRANT-F V0.2."
     ],
-    "notes": "P-D2 historical sample and independent labels are frozen by Research 294 / Checkpoint 629 before classifier authoring. Ten exact Git-history cases cover all preregistered change categories and are patch-digest bound. Five of eight decision-relevant probes still have valid/scoped results because P-D2 has not run. The next task is authoring and freezing the label-blind ratchet harness."
+    "notes": "P-D2 independent history labels are frozen at d7f65392 and the label-blind ratchet harness is frozen at c83313e1 by Research 295 / Checkpoint 630 before execution. The harness revalidates exact Git-history bindings, exercises required-witness self-removal and patch-drift negative controls, and binds owner batching to an exact canonical policy-diff digest. Five of eight decision-relevant probes still have valid/scoped results because P-D2 has not run. Exact frozen-harness execution is next."
   },
   "last_transition": {
-    "transition_id": "mc0028-p-d2-history-labels-frozen",
+    "transition_id": "mc0028-p-d2-harness-frozen",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 294 freezes the ten-case P-D2 history sample and independent semantic labels before any classifier exists. P-D2 remains unexecuted; harness authoring/freeze is next.",
-    "repository_head": "0ea3f7c1fb3c19d96ba69073e34670e83beea8ab"
+    "reason": "Research 295 / Checkpoint 630 freeze the P-D2 label-blind ratchet harness at c83313e1 after the independently labelled d7f65392 history selection. No P-D2 result has been observed; exact execution is next.",
+    "repository_head": "c83313e150b8fbc0676e045c77137b69b322d790"
   }
 }
