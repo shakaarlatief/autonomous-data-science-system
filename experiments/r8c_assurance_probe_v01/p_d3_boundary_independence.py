@@ -195,7 +195,9 @@ def current_product(commit: str, root: Path) -> Path:
 
 
 def current_jw1(commit: str, root: Path) -> Path:
-    write_blob(commit, "tools/__init__.py", root / "tools/__init__.py")
+    tools = root / "tools"
+    tools.mkdir(parents=True, exist_ok=True)
+    (tools / "__init__.py").write_text("", encoding="utf-8")
     write_blob(
         commit,
         "tools/project_knowledge/__init__.py",
