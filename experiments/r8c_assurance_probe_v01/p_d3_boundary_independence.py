@@ -245,7 +245,7 @@ def target_jw1(commit: str, root: Path) -> Path:
 
 def inject(path: Path, module: str) -> None:
     path.write_text(
-        f"import {module}\n" + path.read_text(encoding="utf-8"),
+        path.read_text(encoding="utf-8") + f"\nimport {module}\n",
         encoding="utf-8",
     )
 
