@@ -24,4 +24,8 @@ p_d1_claims.json contains the twelve claims selected and frozen in Research 291 
 
 p_d2_history_labels.json contains the ten real historical changes and independent semantic labels frozen in Research 294 before classifier authoring. p_d2_ratchet_history.py verifies exact Git patch bindings, classifies only normalized policy deltas, exercises witness-removal and patch-drift negative controls, and proves exact owner-batch policy-diff digest binding.
 
+## P-D4
+
+p_d4_oracle_corpus.json freezes the real current-routing oracle corpus before successor design. p_d4_successor_contract_v02.json freezes the representation-independent successor claims and controls before implementation. p_d4_oracle_successor.py replays the frozen old oracle, translates compatibility inputs into ROUTING_ASSURANCE_SUBJECT_V1, evaluates the independent successor classifier, and exercises direct translated-representation and semantic-completeness controls.
+
 Every concrete probe harness must be committed and Git-blob-hash frozen before execution.
