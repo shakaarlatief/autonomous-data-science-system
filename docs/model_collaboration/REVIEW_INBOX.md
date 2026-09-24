@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-23
-**Status:** MC-0028 ACTIVE / CHATGPT FACET FROZEN / CLAUDE INDEPENDENT ASSURANCE CANDIDATE NEXT / MC-0027 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0028 ACTIVE / FACET + WARRANT RECONCILED / WARRANT-F V0.1 / CLAUDE COMPARATIVE CRITIQUE NEXT / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -25,7 +25,7 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 There is no active Claude obligation.
 
-The active project stage is the from-scratch assurance / verification / testing / CI-CD architecture. Research 273 freezes the mechanism-neutral assurance requirements. MC-0028 is open against frozen base `cac7a699eb012c5a02e1c5fab349ebc9e5726145`. Research 274 freezes ChatGPT's independent candidate FACET; Claude must still use the frozen base and must not inspect Research 274 before committing Message 001. Comparative synthesis remains blocked until Claude's independent candidate arrives.
+The active project stage is the from-scratch assurance / verification / testing / CI-CD architecture. Claude's independent WARRANT candidate is committed at `76138e29ed4125bda21f1d9f8e46b34c89bfeef2`. Research 275 / Message 002 compare it with independently frozen FACET and freeze `WARRANT-F V0.1`. Comparative exposure is now authorized. Claude Message 003 must review Research 274 and 275 against Message 001, including the warrant bar, base-revision ratchet, T0-T3 trust scope, exact-result lifecycle, engineering Python project amendment, evidence storage and kill-set retirement. Owner decision and empirical probe freeze remain blocked until that critique is reconciled.
 
 ## Most recently completed obligation
 
