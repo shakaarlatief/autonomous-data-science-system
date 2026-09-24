@@ -539,6 +539,8 @@ docs/research/308_r8c_eight_probe_reconciliation_owner_decision_readiness.md
 docs/research/309_generalizable_project_operating_architecture_vision_and_evolution_boundary.md
 docs/research/310_whole_architecture_governed_self_improvement_model.md
 docs/research/311_warrant_f_v02_owner_acceptance_r8c_closure_and_ao10_reconciliation_entry.md
+docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md
+docs/research/project_knowledge_activation_orchestration/AO10_SPEC028_RECONCILIATION_V01.json
 docs/checkpoints/570_whole_repository_physical_architecture_scope_clarified.md
 docs/checkpoints/571_whole_repository_r2_boundaries_identified.md
 docs/checkpoints/572_whole_repository_r3_candidate_archetypes_frozen.md
@@ -616,6 +618,7 @@ docs/checkpoints/643_warrant_f_v02_owner_decision_ready.md
 docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md
 docs/checkpoints/645_whole_architecture_governed_self_improvement_model_preserved.md
 docs/checkpoints/646_warrant_f_v02_accepted_ao10_reconciliation_unblocked.md
+docs/checkpoints/647_spec028_ao10_v01_frozen_independent_review_opened.md
 docs/research/project_knowledge_activation_orchestration/README.md
 docs/research/project_knowledge_activation_orchestration/001_chat26_owner_source_interaction_orchestration_evidence.md
 docs/research/project_knowledge_activation_orchestration/002_chat27_activation_self_hosting_bootstrap_evidence.md
@@ -1247,7 +1250,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-646 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-647 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

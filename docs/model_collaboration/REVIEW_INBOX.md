@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-24
-**Status:** MC-0028 RESOLVED / WARRANT-F V0.2 ACCEPTED / SPECIFICATION 028 RECONCILIATION + AO-10 DESIGN NEXT / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / INDEPENDENT SPEC028 + AO-10 DESIGN NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -23,9 +23,17 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Current active collaboration obligation
 
-There is no active Claude obligation.
+### MC-0029: independent Specification 028 reconciliation and AO-10 realization design
 
-MC-0028 is now resolved. The project owner explicitly chose ACCEPT for WARRANT-F V0.2 after Research 308 reconciled all eight decision-relevant probes. Research 311 records the accepted R8-C semantic assurance architecture, accepts WF-A1 through WF-A36 plus the carried R8-A Engineering-environment amendment, and preserves provider/workflow mechanism freedom. The next active project boundary is Specification 028 reconciliation plus concrete AO-10 realization design. A new independent-review obligation should be opened only when that downstream work reaches a consequence or uncertainty level where independent review is materially useful; it is not a continuation obligation of MC-0028.
+MC-0029 is OPEN in INDEPENDENT_THEN_COMPARATIVE mode.
+
+Claude's substantive evidence boundary is frozen at 0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d, which contains the accepted architecture through Research 311 but not ChatGPT Research 312. Claude may read the current MC-0029 brief/thread/state for instructions, but must not inspect Research 312 or later ChatGPT AO-10 candidate material before Message 001 is committed.
+
+The independent task is to derive the strongest Specification 028 reconciliation and concrete AO-10 realization architecture, including KA-R51, KA-R52, WMR-H, WARRANT-F, migration-oracle retirement, provider neutrality, bridge qualification, recovery and authority transition.
+
+Expected next artifact:
+
+docs/model_collaboration/threads/MC-0029/messages/001_claude_independent_spec028_ao10_design.md
 
 ## Most recently completed obligation
 

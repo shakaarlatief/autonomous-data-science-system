@@ -1,0 +1,269 @@
+{
+  "schema_version": 1,
+  "candidate_id": "AO10_SPEC028_RECONCILIATION_V01",
+  "date": "2026-09-24",
+  "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
+  "status": "FROZEN_CHATGPT_CANDIDATE",
+  "whole_specification_disposition_candidate": "SUPERSEDE",
+  "allowed_dispositions": [
+    "RETAIN",
+    "GENERALIZE",
+    "AMEND",
+    "SUPERSEDE",
+    "RETIRE_AFTER_SUCCESSOR_QUALIFICATION"
+  ],
+  "counts": {
+    "RETAIN": 8,
+    "GENERALIZE": 15,
+    "AMEND": 9,
+    "SUPERSEDE": 12,
+    "RETIRE_AFTER_SUCCESSOR_QUALIFICATION": 2,
+    "TOTAL": 46
+  },
+  "sections": [
+    {
+      "section": 1,
+      "subject": "Purpose and frozen boundary",
+      "disposition": "AMEND"
+    },
+    {
+      "section": 2,
+      "subject": "Product/runtime separation",
+      "disposition": "SUPERSEDE"
+    },
+    {
+      "section": 3,
+      "subject": "Required production package surface",
+      "disposition": "SUPERSEDE"
+    },
+    {
+      "section": 4,
+      "subject": "Canonical source-location rule",
+      "disposition": "GENERALIZE"
+    },
+    {
+      "section": 5,
+      "subject": "Project-knowledge repository directories",
+      "disposition": "SUPERSEDE"
+    },
+    {
+      "section": 6,
+      "subject": "Markdown structured-declaration contract",
+      "disposition": "SUPERSEDE"
+    },
+    {
+      "section": 7,
+      "subject": "Native JSON carrier rule",
+      "disposition": "GENERALIZE"
+    },
+    {
+      "section": 8,
+      "subject": "Profile schemas",
+      "disposition": "AMEND"
+    },
+    {
+      "section": 9,
+      "subject": "Common governed-source envelope",
+      "disposition": "GENERALIZE"
+    },
+    {
+      "section": 10,
+      "subject": "Semantic identity contract",
+      "disposition": "RETAIN"
+    },
+    {
+      "section": 11,
+      "subject": "Identity-transition contract",
+      "disposition": "GENERALIZE"
+    },
+    {
+      "section": 12,
+      "subject": "Relation semantics",
+      "disposition": "RETAIN"
+    },
+    {
+      "section": 13,
+      "subject": "Joint-authority exception",
+      "disposition": "RETAIN"
+    },
+    {
+      "section": 14,
+      "subject": "Temporal semantics",
+      "disposition": "GENERALIZE"
+    },
+    {
+      "section": 15,
+      "subject": "Workstream profile",
+      "disposition": "AMEND"
+    },
+    {
+      "section": 16,
+      "subject": "Interruption and concurrency semantics",
+      "disposition": "AMEND"
+    },
+    {
+      "section": 17,
+      "subject": "Governing-procedure and action-contract profile",
+      "disposition": "GENERALIZE"
+    },
+    {
+      "section": 18,
+      "subject": "Source-revision descriptor",
+      "disposition": "GENERALIZE"
+    },
+    {
+      "section": 19,
+      "subject": "Same-commit generated-view binding",
+      "disposition": "RETAIN"
+    },
+    {
+      "section": 20,
+      "subject": "Persistent deterministic derived views",
+      "disposition": "SUPERSEDE"
+    },
+    {
+      "section": 21,
+      "subject": "Derived-view manifest requirements",
+      "disposition": "GENERALIZE"
+    },
+    {
+      "section": 22,
+      "subject": "Canonical serialization for generated JSON",
+      "disposition": "GENERALIZE"
+    },
+    {
+      "section": 23,
+      "subject": "Full rebuild",
+      "disposition": "GENERALIZE"
+    },
+    {
+      "section": 24,
+      "subject": "Incremental refresh",
+      "disposition": "GENERALIZE"
+    },
+    {
+      "section": 25,
+      "subject": "Authority resolver",
+      "disposition": "RETAIN"
+    },
+    {
+      "section": 26,
+      "subject": "Reconstruction planner",
+      "disposition": "AMEND"
+    },
+    {
+      "section": 27,
+      "subject": "Capture and promotion",
+      "disposition": "GENERALIZE"
+    },
+    {
+      "section": 28,
+      "subject": "Public/private contract",
+      "disposition": "RETAIN"
+    },
+    {
+      "section": 29,
+      "subject": "Optional retrieval caches",
+      "disposition": "AMEND"
+    },
+    {
+      "section": 30,
+      "subject": "Compatibility surfaces during migration",
+      "disposition": "RETIRE_AFTER_SUCCESSOR_QUALIFICATION"
+    },
+    {
+      "section": 31,
+      "subject": "Professional architecture documentation",
+      "disposition": "AMEND"
+    },
+    {
+      "section": 32,
+      "subject": "CLI contract",
+      "disposition": "SUPERSEDE"
+    },
+    {
+      "section": 33,
+      "subject": "Validation layers",
+      "disposition": "SUPERSEDE"
+    },
+    {
+      "section": 34,
+      "subject": "Integration with existing repository integrity",
+      "disposition": "RETIRE_AFTER_SUCCESSOR_QUALIFICATION"
+    },
+    {
+      "section": 35,
+      "subject": "Migration waves",
+      "disposition": "SUPERSEDE"
+    },
+    {
+      "section": 36,
+      "subject": "Migration-unit contract",
+      "disposition": "GENERALIZE"
+    },
+    {
+      "section": 37,
+      "subject": "No mass historical conversion",
+      "disposition": "RETAIN"
+    },
+    {
+      "section": 38,
+      "subject": "Research-code reuse rule",
+      "disposition": "GENERALIZE"
+    },
+    {
+      "section": 39,
+      "subject": "W0 executable gates",
+      "disposition": "SUPERSEDE"
+    },
+    {
+      "section": 40,
+      "subject": "W1 executable gates",
+      "disposition": "SUPERSEDE"
+    },
+    {
+      "section": 41,
+      "subject": "Architecture-documentation acceptance",
+      "disposition": "GENERALIZE"
+    },
+    {
+      "section": 42,
+      "subject": "Cutover qualification minimum",
+      "disposition": "AMEND"
+    },
+    {
+      "section": 43,
+      "subject": "Authority-switch prohibition",
+      "disposition": "RETAIN"
+    },
+    {
+      "section": 44,
+      "subject": "Explicit non-goals for V1 implementation",
+      "disposition": "AMEND"
+    },
+    {
+      "section": 45,
+      "subject": "Acceptance state transitions",
+      "disposition": "SUPERSEDE"
+    },
+    {
+      "section": 46,
+      "subject": "Frozen continuation",
+      "disposition": "SUPERSEDE"
+    }
+  ],
+  "successor_specification_candidate": {
+    "role": "Integrated Project Development System Realization, Assurance, Migration and Cutover Contract",
+    "number_candidate": "029",
+    "accepted": false,
+    "created": false
+  },
+  "ao10": {
+    "production_implementation_authorized": false,
+    "shadow_activation_authorized": false,
+    "jw1_target": "project/system",
+    "engineering_target": "project/engineering",
+    "product_runtime_dependency_on_project": false,
+    "current_oracle_retirement_authorized": false
+  }
+}

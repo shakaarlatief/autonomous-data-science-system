@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "thread_id": "MC-0029",
+  "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
+  "lifecycle_state": "WAITING",
+  "phase": "INDEPENDENT_SPEC028_AO10_DESIGN",
+  "target": {
+    "branch": "v1-source-vault-bootstrap-resume",
+    "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
+    "description": "Independent Specification 028 reconciliation and AO-10 realization design from the accepted pre-Research-312 architecture base.",
+    "write_paths": []
+  },
+  "task_owner": "chatgpt",
+  "target_write_owner": null,
+  "participants": [
+    {
+      "collaborator_id": "chatgpt",
+      "interaction_environment": "ChatGPT",
+      "interaction_session": "chatgpt-30",
+      "roles": [
+        "TASK_OWNER",
+        "RESEARCHER",
+        "CRITIC"
+      ]
+    },
+    {
+      "collaborator_id": "claude",
+      "interaction_environment": "Claude",
+      "interaction_session": "claude-03",
+      "roles": [
+        "INDEPENDENT_REVIEWER",
+        "RESEARCHER",
+        "CRITIC",
+        "COUNTER_DESIGNER"
+      ]
+    },
+    {
+      "collaborator_id": "human",
+      "interaction_environment": "Human",
+      "interaction_session": "project-owner",
+      "roles": [
+        "HUMAN_DECIDER"
+      ]
+    }
+  ],
+  "allowed_secondary_write_surfaces": [
+    {
+      "collaborator_id": "claude",
+      "paths": [
+        "docs/model_collaboration/threads/MC-0029/messages/**"
+      ]
+    }
+  ],
+  "next_expected_actor": "claude",
+  "independence": {
+    "status": "BLIND_TO_CANDIDATE",
+    "review_base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
+    "known_exposures": [
+      "Claude may read MC-0029 routing/brief files from current state for task instructions.",
+      "Claude must not inspect Research 312 or later ChatGPT AO-10 candidate material before Message 001 is committed."
+    ],
+    "notes": "Research 312 is ChatGPT's candidate and is intentionally outside Claude's independent substantive evidence boundary."
+  },
+  "last_transition": {
+    "transition_id": "mc0029-open-independent-design",
+    "from_state": "OPEN",
+    "to_state": "WAITING",
+    "actor": "chatgpt",
+    "reason": "R8-C acceptance unblocked Specification 028 reconciliation and AO-10 realization design. The material scope warrants an independent design before comparative synthesis or owner acceptance.",
+    "repository_head": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d"
+  }
+}
