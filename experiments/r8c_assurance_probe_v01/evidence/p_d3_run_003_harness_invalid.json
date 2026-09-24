@@ -1,0 +1,27 @@
+{
+  "attempt": 3,
+  "candidate": "WARRANT-F V0.2",
+  "error": "JW1 forbidden-dependency negative control imported ads_system successfully because the child interpreter inherited the repository virtual environment site-packages. The fixture therefore did not actually remove Product from the JW1 execution environment.",
+  "failure_phase": "NEGATIVE_CONTROL_JW1_FORBIDDEN_DEPENDENCY",
+  "failure_type": "HARNESS_ISOLATION_ERROR",
+  "harness_binding": {
+    "commit": "374c64ee069cb690c1d5b7108ffbf2cfd83c9c5d",
+    "files": {
+      "experiments/r8c_assurance_probe_v01/README.md": "614967937244531c8b1cb8e4154f7e42f91b88f58bcd32120f31918ba1090fa4",
+      "experiments/r8c_assurance_probe_v01/p_d3_boundary_independence.py": "e30cfbad900cdfb71346147fc7cbcc2c621512905dbcb3c8eaa6738e8da4d57e"
+    },
+    "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT"
+  },
+  "interpretation": {
+    "architecture_inference_allowed": false,
+    "repair_allowed_prospectively": true,
+    "target_architecture_amendment_required": false,
+    "thresholds_changed": false
+  },
+  "probe": "P-D3",
+  "protocol": "Research 277",
+  "result": "HARNESS_INVALID",
+  "source_binding": {
+    "commit": "721545c46b94e0a87c87a572fb357ff314f6913f"
+  }
+}
