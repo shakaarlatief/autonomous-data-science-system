@@ -14,7 +14,7 @@ HARNESS_PATHS = [
     "experiments/r8c_assurance_probe_v01/README.md",
     "experiments/r8c_assurance_probe_v01/p_d2_ratchet_history.py",
 ]
-EXPECTED_FIXTURE_SHA256 = "be70e8c3aa5f4dea2b9f2680ebaae1b4c09b1733a6f8a22da4edeb93d3f86072"
+EXPECTED_FIXTURE_SHA256 = "3946655c69bba95d5f7b606e8a25cb1a2be1119e5613dfb4e3ecf9dbf515fc43"
 EXPECTED_COVERAGE = {
     "tightening",
     "weakening",
