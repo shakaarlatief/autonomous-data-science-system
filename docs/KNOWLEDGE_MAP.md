@@ -508,6 +508,7 @@ docs/research/277_r8c_decision_relevant_assurance_probe_protocol.md
 docs/research/278_p_h_current_host_capability_study.md
 docs/research/279_p_d6_executor_capability_probe_harness_freeze.md
 docs/research/280_p_d6_executor_capability_trust_separation_result.md
+docs/research/281_p_d3_boundary_independence_probe_harness_freeze.md
 docs/checkpoints/570_whole_repository_physical_architecture_scope_clarified.md
 docs/checkpoints/571_whole_repository_r2_boundaries_identified.md
 docs/checkpoints/572_whole_repository_r3_candidate_archetypes_frozen.md
@@ -554,6 +555,7 @@ docs/checkpoints/612_r8c_decision_probes_preregistered.md
 docs/checkpoints/613_p_h_inconclusive_no_target_constraint.md
 docs/checkpoints/614_p_d6_harness_frozen.md
 docs/checkpoints/615_p_d6_pass.md
+docs/checkpoints/616_p_d3_harness_frozen.md
 docs/research/project_knowledge_activation_orchestration/README.md
 docs/research/project_knowledge_activation_orchestration/001_chat26_owner_source_interaction_orchestration_evidence.md
 docs/research/project_knowledge_activation_orchestration/002_chat27_activation_self_hosting_bootstrap_evidence.md
@@ -1185,7 +1187,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-615 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-616 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 
