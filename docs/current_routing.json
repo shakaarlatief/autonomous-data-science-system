@@ -1,11 +1,11 @@
 {
     "schema_version": 1,
-    "current_checkpoint": 631,
+    "current_checkpoint": 632,
     "active_development_branch": "v1-source-vault-bootstrap-resume",
     "active_pr": null,
     "promoted_integration_branch": "v1-frontend-spike",
     "promoted_integration_sha": "2480109fadeee1e480ef03b82e335aacdf9adf91",
     "latest_specification": "028",
     "latest_experiment_outcome": "INCOMPLETE",
-    "current_boundary": "assurance-ratchet-history-harness-invalid"
+    "current_boundary": "assurance-ratchet-history-repaired-harness-frozen"
 }
