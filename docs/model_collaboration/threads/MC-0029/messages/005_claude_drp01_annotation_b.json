@@ -1,0 +1,1033 @@
+{
+  "reviewer_id": "claude",
+  "reviewer_environment": "Claude / interaction claude-04 / conversation 04 - Assurance and Delivery Architecture Design",
+  "base": "870689734673e6e8c2212035afcdf27daf733c15",
+  "independence_attestation": "Annotation produced from Research 316, Research 321, the reviewer packet, schema, definitions and corpus read at harness-freeze commit bbd9c370c918c55a0dd43481de41b7a8b9106cb6 (before Annotation A existed), and the 30 carriers verified by SHA-256 at the frozen base. annotation_chatgpt_a.json, Research 322 and any summary of Annotation A were not inspected. The comparison harness was not executed.",
+  "carrier_annotations": [
+    {
+      "path": "docs/PRINCIPLES.md",
+      "units": [
+        {
+          "anchor": "Principles",
+          "role": "GOVERNING",
+          "governing_status": "IN_FORCE",
+          "rationale": "Homogeneous set of durable project principles P-001..P-031 constraining design and process; no principle is marked superseded or withdrawn.",
+          "irreducibly_multirole": false
+        }
+      ],
+      "path_used_as_identity_or_authority": false
+    },
+    {
+      "path": "docs/DECISIONS.md",
+      "units": [
+        {
+          "anchor": "Decisions :: all D-nnn sections except D-003, D-011, D-016, D-026, D-027",
+          "role": "GOVERNING",
+          "governing_status": "IN_FORCE",
+          "rationale": "Accepted project-level decisions currently constraining the project. D-015 is included because its retained public-Git exclusion outcome is still binding; its architectural-uncertainty scope is superseded by D-033, which a single per-unit status cannot express without scope-qualified relations.",
+          "irreducibly_multirole": false
+        },
+        {
+          "anchor": "D-003. Keep the repository private during the early design stage; D-011. Do not select the implementation architecture yet",
+          "role": "GOVERNING",
+          "governing_status": "SUPERSEDED",
+          "rationale": "Both carry explicit superseded status: D-003 by current public repository state; D-011 by D-028..D-033 for the V1 scopes listed. Retained as historical decisions.",
+          "irreducibly_multirole": false
+        },
+        {
+          "anchor": "D-016. Create Checkpoint 0 before continuing deeper system design; D-026. Use the retrospectively validated held-out supervisor for remaining Prototype V0 execution; D-027. Allow large bounded unattended supervisor batches after the prospective smoke test",
+          "role": "GOVERNING",
+          "governing_status": "RETIRED",
+          "rationale": "Phase-bound decisions whose scope has been discharged (Checkpoint 0 executed; Prototype V0 supervisor/batch operation phase complete). Not superseded by an equivalent successor; no longer operationally applicable.",
+          "irreducibly_multirole": false
+        }
+      ],
+      "path_used_as_identity_or_authority": false
+    },
+    {
+      "path": "docs/CONTINUITY.md",
+      "units": [
+        {
+          "anchor": "Continuity",
+          "role": "GOVERNING",
+          "governing_status": "IN_FORCE",
+          "rationale": "Self-declared current canonical continuity procedure: reconstruction, rotation, recovery and integrity rules that constrain collaborator behavior. Homogeneous procedure carrier.",
+          "irreducibly_multirole": false
+        }
+      ],
+      "path_used_as_identity_or_authority": false
+    },
+    {
+      "path": "docs/CURRENT_STATE.md",
+      "units": [
+        {
+          "anchor": "Current active stage: Specification 028 reconciliation + AO-10 realization design / MC-0029 independent review",
+          "role": "CONTROL",
+          "governing_status": null,
+          "rationale": "Primary role CONTROL (current stage/routing facts), but the section interleaves current operating state with a long chronological checkpoint narrative (historical EVIDENCE) paragraph by paragraph under one heading. No stable sub-anchors exist; separating it requires paragraph-level decomposition that the carrier does not support without rewriting. Flagged as the one irreducible mixed unit.",
+          "irreducibly_multirole": true
+        },
+        {
+          "anchor": "Active interaction context; Current Source Vault state; Preserved next Source Vault action (currently paused); Model collaboration state; Current canonical route",
+          "role": "CONTROL",
+          "governing_status": null,
+          "rationale": "Current operational facts (interaction context, Source Vault state/resume target, collaboration states, canonical route) whose ordinary transitions change project state.",
+          "irreducibly_multirole": false
+        },
+        {
+          "anchor": "What the investigation established; Durable operational and investigation knowledge; Historical conversation-rotation record (non-current)",
+          "role": "EVIDENCE",
+          "governing_status": null,
+          "rationale": "Findings, established investigation results and historical event records supporting decisions; not normative by existence.",
+          "irreducibly_multirole": false
+        },
+        {
+          "anchor": "Accepted Git boundary remains deliberately narrow; Repository integrity and development method",
+          "role": "GOVERNING",
+          "governing_status": "IN_FORCE",
+          "rationale": "Restated accepted boundaries and methods that currently constrain operation (accepted Git authority boundary; Development Method v0.9 and integrity governance). Governing in this carrier because CURRENT_STATE remains the live human state authority before cutover.",
+          "irreducibly_multirole": false
+        },
+        {
+          "anchor": "Historical fixed minimum-reading packet (non-current)",
+          "role": "GOVERNING",
+          "governing_status": "SUPERSEDED",
+          "rationale": "A formerly governing reconstruction packet explicitly marked non-current; reconstruction is now governed by CONTINUITY/current routing. Preserved historically.",
+          "irreducibly_multirole": false
+        }
+      ],
+      "path_used_as_identity_or_authority": false
+    },
+    {
+      "path": "docs/current_routing.json",
+      "units": [
+        {
+          "anchor": "current_routing.json (root object)",
+          "role": "CONTROL",
+          "governing_status": null,
+          "rationale": "Machine control facts: current checkpoint, active branch, promoted integration pointer, current boundary. Ordinary transitions change project state.",
+          "irreducibly_multirole": false
+        }
+      ],
+      "path_used_as_identity_or_authority": false
+    },
+    {
+      "path": "docs/KNOWLEDGE_MAP.md",
+      "units": [
+        {
+          "anchor": "Subject index; Subject library; Historical checkpoint topic routing; Specialized library indexes",
+          "role": "DERIVED",
+          "governing_status": null,
+          "rationale": "Self-declared navigation-only routing to repository evidence; carries no unique accepted truth and does not replace routed artifacts. Hand-maintained rather than generated, but semantically a navigation projection.",
+          "irreducibly_multirole": false
+        },
+        {
+          "anchor": "Purpose; Coverage contract; Maintenance rule",
+          "role": "GOVERNING",
+          "governing_status": "IN_FORCE",
+          "rationale": "Rules constraining how the navigation surface must be maintained and what it must cover; consequential for maintainers independently of the routing content.",
+          "irreducibly_multirole": false
+        }
+      ],
+      "path_used_as_identity_or_authority": false
+    },
+    {
+      "path": "docs/model_collaboration/REVIEW_INBOX.md",
+      "units": [
+        {
+          "anchor": "Routing discipline",
+          "role": "GOVERNING",
+          "governing_status": "IN_FORCE",
+          "rationale": "Binding collaboration rule: triggers must name repository and branch; collaborators must stop and report mismatches rather than choose a branch.",
+          "irreducibly_multirole": false
+        },
+        {
+          "anchor": "Current active collaboration obligation; completed/deferred obligation sections",
+          "role": "DERIVED",
+          "governing_status": null,
+          "rationale": "Self-declared convenience index; thread STATE.json/THREAD.md/frozen requests remain authoritative. A projection of collaboration control state.",
+          "irreducibly_multirole": false
+        }
+      ],
+      "path_used_as_identity_or_authority": false
+    },
+    {
+      "path": "docs/model_collaboration/threads/MC-0028/STATE.json",
+      "units": [
+        {
+          "anchor": "STATE.json (root object)",
+          "role": "CONTROL",
+          "governing_status": null,
+          "rationale": "Machine-maintained thread control state (lifecycle RESOLVED, phase, participants, write surfaces, next actor).",
+          "irreducibly_multirole": false
+        }
+      ],
+      "path_used_as_identity_or_authority": false
+    },
+    {
+      "path": "docs/model_collaboration/threads/MC-0029/STATE.json",
+      "units": [
+        {
+          "anchor": "STATE.json (root object)",
+          "role": "CONTROL",
+          "governing_status": null,
+          "rationale": "Machine-maintained thread control state. independence.known_exposures restates boundary rules owned by the thread brief/contract; here they function as current control facts for the thread, not an independent governing source.",
+          "irreducibly_multirole": false
+        }
+      ],
+      "path_used_as_identity_or_authority": false
+    },
+    {
+      "path": "docs/source_universe/SOURCE_VAULT_BOOTSTRAP_WORKSTREAM.md",
+      "units": [
+        {
+          "anchor": "Current qualified state",
+          "role": "CONTROL",
+          "governing_status": null,
+          "rationale": "Current resumable workstream state (PAUSED, registry/ingestion/audit states, resume target) whose transitions change project state.",
+          "irreducibly_multirole": false
+        },
+        {
+          "anchor": "structured declaration::objective, return_condition, governing_procedure",
+          "role": "GOVERNING",
+          "governing_status": "IN_FORCE",
+          "rationale": "Durable workstream objective, return condition and governing-procedure binding that constrain when and how the workstream may resume; definition co-located with state in the same carrier.",
+          "irreducibly_multirole": false
+        }
+      ],
+      "path_used_as_identity_or_authority": false
+    },
+    {
+      "path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "units": [
+        {
+          "anchor": "Specification 028 — V1 Project-Knowledge Architecture Implementation and Migration Contract",
+          "role": "GOVERNING",
+          "governing_status": "IN_FORCE",
+          "rationale": "Frozen implementation/migration contract that remains current authority until a governed successor is accepted (Research 311 §8). Historical W0/W1 gate sections are part of the same in-force contract.",
+          "irreducibly_multirole": false
+        }
+      ],
+      "path_used_as_identity_or_authority": false
+    },
+    {
+      "path": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+      "units": [
+        {
+          "anchor": "1. Why T1 existed; 2. V0.2 primary corpus result; 3. Blind calibration result",
+          "role": "EVIDENCE",
+          "governing_status": null,
+          "rationale": "Experimental and blind-calibration results supporting the accepted contract.",
+          "irreducibly_multirole": false
+        },
+        {
+          "anchor": "4. Accepted membership rule .. 13. T1 result",
+          "role": "GOVERNING",
+          "governing_status": "EFFECT_WITHHELD",
+          "rationale": "Accepted W5 subject-architecture contract that remains governing until prospectively changed, but its production effect is deliberately held: it adds no production navigation metadata, and W5 realization remains paused pending governed semantic-architecture qualification.",
+          "irreducibly_multirole": false
+        }
+      ],
+      "path_used_as_identity_or_authority": false
+    },
+    {
+      "path": "docs/research/222_ao3_progressive_control_closure_architecture.md",
+      "units": [
+        {
+          "anchor": "Research 222: AO-3 Progressive Control Closure Architecture",
+          "role": "GOVERNING",
+          "governing_status": "IN_FORCE",
+          "rationale": "Accepted AO-3 conceptual baseline as prospectively amended by §24 (P7-D01). The amendment and the unamended remainder are both in force; the pre-amendment conformance transition is superseded only in scope.",
+          "irreducibly_multirole": false
+        }
+      ],
+      "path_used_as_identity_or_authority": false
+    },
+    {
+      "path": "docs/research/223_ao4_architecture_evolution_and_frozen_contract_governance.md",
+      "units": [
+        {
+          "anchor": "Research 223: AO-4 Architecture Evolution and Frozen-Contract Governance",
+          "role": "GOVERNING",
+          "governing_status": "IN_FORCE",
+          "rationale": "Selected governed-evolution architecture; primary evolution route per Research 309/310.",
+          "irreducibly_multirole": false
+        }
+      ],
+      "path_used_as_identity_or_authority": false
+    },
+    {
+      "path": "docs/research/224_ao5_anchored_interaction_continuity_and_independent_recovery.md",
+      "units": [
+        {
+          "anchor": "Research 224: AO-5 Anchored Interaction Continuity and Independent Recovery",
+          "role": "GOVERNING",
+          "governing_status": "IN_FORCE",
+          "rationale": "Selected continuity/recovery model constraining future realization.",
+          "irreducibly_multirole": false
+        }
+      ],
+      "path_used_as_identity_or_authority": false
+    },
+    {
+      "path": "docs/research/225_ao6_purpose_bound_git_lifecycle_and_workstream_orchestration.md",
+      "units": [
+        {
+          "anchor": "AO-6 lifecycle policy (sections 1-13, 15, 17-23)",
+          "role": "GOVERNING",
+          "governing_status": "IN_FORCE",
+          "rationale": "Purpose-bound Git lifecycle policy, including the REWRITE_CURRENT_HISTORY=NO disposition, currently governing.",
+          "irreducibly_multirole": false
+        },
+        {
+          "anchor": "14. Current branch audit",
+          "role": "EVIDENCE",
+          "governing_status": null,
+          "rationale": "Point-in-time audit of branch state supporting the lifecycle decision.",
+          "irreducibly_multirole": false
+        },
+        {
+          "anchor": "16. Current self-hosting branch decision and execution probe",
+          "role": "GOVERNING",
+          "governing_status": "EFFECT_WITHHELD",
+          "rationale": "ROTATE was selected but its execution is deferred by the recorded attach-capability gap; the governing selection exists while its effect is held.",
+          "irreducibly_multirole": false
+        }
+      ],
+      "path_used_as_identity_or_authority": false
+    },
+    {
+      "path": "docs/research/226_ao7_authority_preserving_successor_orchestration_bridge.md",
+      "units": [
+        {
+          "anchor": "Research 226: AO-7 Authority-Preserving Successor Orchestration Bridge",
+          "role": "GOVERNING",
+          "governing_status": "IN_FORCE",
+          "rationale": "Selected bridge invariant, modes and membrane governing future bridge realization.",
+          "irreducibly_multirole": false
+        }
+      ],
+      "path_used_as_identity_or_authority": false
+    },
+    {
+      "path": "docs/research/233_ao9_p5_evaluation_and_decision_synthesis.md",
+      "units": [
+        {
+          "anchor": "Research 233: AO-9 P5 Evaluation and Decision Synthesis",
+          "role": "EVIDENCE",
+          "governing_status": null,
+          "rationale": "Preregistered evaluation results and candidate requirement text; normative effect was created only by the later P7 owner decisions (Research 235).",
+          "irreducibly_multirole": false
+        }
+      ],
+      "path_used_as_identity_or_authority": false
+    },
+    {
+      "path": "docs/research/235_ao9_p7_owner_decisions_and_ao9_closure.md",
+      "units": [
+        {
+          "anchor": "1. P7 decisions are complete .. 6. AO-10 qualification envelope after P7; 8. AO-9 closure",
+          "role": "GOVERNING",
+          "governing_status": "IN_FORCE",
+          "rationale": "Owner P7 decisions (AO-3 amendment, KA-R51, KA-R52) and the AO-10 qualification envelope, currently binding.",
+          "irreducibly_multirole": false
+        },
+        {
+          "anchor": "7. Owner-approved sequencing boundary before AO-10",
+          "role": "GOVERNING",
+          "governing_status": "RETIRED",
+          "rationale": "One-time sequencing requirement (reconsider Research 218 physical IA before AO-10) that has since been discharged through R7/R8; no longer operationally applicable and not replaced by an equivalent successor.",
+          "irreducibly_multirole": false
+        }
+      ],
+      "path_used_as_identity_or_authority": false
+    },
+    {
+      "path": "docs/research/253_r7a_from_scratch_project_information_model_authority_and_lifecycle.md",
+      "units": [
+        {
+          "anchor": "Research 253: R7-A From-Scratch Project Information Model, Authority, and Lifecycle",
+          "role": "GOVERNING",
+          "governing_status": "IN_FORCE",
+          "rationale": "Information model accepted within R7 as amended by Research 256; constrains Project information classes and authority/lifecycle semantics.",
+          "irreducibly_multirole": false
+        }
+      ],
+      "path_used_as_identity_or_authority": false
+    },
+    {
+      "path": "docs/research/256_r7_owner_amendment_acceptance_research218_supersession_and_r8_entry.md",
+      "units": [
+        {
+          "anchor": "Research 256: R7 Owner Amendment Acceptance, Research 218 Physical Supersession, and R8 Entry Contract",
+          "role": "GOVERNING",
+          "governing_status": "IN_FORCE",
+          "rationale": "Owner acceptance record for R7 and Research 218 physical supersession; currently binding.",
+          "irreducibly_multirole": false
+        }
+      ],
+      "path_used_as_identity_or_authority": false
+    },
+    {
+      "path": "docs/research/258_mc0025_r8a_adversarial_reconciliation_and_amended_exact_target_candidate.md",
+      "units": [
+        {
+          "anchor": "Research 258: MC-0025 R8-A Adversarial Reconciliation and Amended Exact-Target Candidate",
+          "role": "GOVERNING",
+          "governing_status": "IN_FORCE",
+          "rationale": "Amended exact target and AM-1..AM-9 were adopted by the owner in Research 259. The carrier's own status line (OWNER DECISION REQUIRED) is stale: lifecycle was changed by another record, not by this carrier.",
+          "irreducibly_multirole": false
+        }
+      ],
+      "path_used_as_identity_or_authority": false
+    },
+    {
+      "path": "docs/research/259_r8a_owner_amendment_acceptance_and_from_scratch_representation_freedom.md",
+      "units": [
+        {
+          "anchor": "Research 259: R8-A Owner Amendment Acceptance and From-Scratch Representation Freedom",
+          "role": "GOVERNING",
+          "governing_status": "IN_FORCE",
+          "rationale": "Owner acceptance of R8-A as amended plus representation-freedom clarification.",
+          "irreducibly_multirole": false
+        }
+      ],
+      "path_used_as_identity_or_authority": false
+    },
+    {
+      "path": "docs/research/263_mc0026_final_reconciliation_and_preregistered_r8b_representation_probe.md",
+      "units": [
+        {
+          "anchor": "1. Comparative disposition; 14. MC-0026 disposition",
+          "role": "EVIDENCE",
+          "governing_status": null,
+          "rationale": "Comparative reconciliation analysis and collaboration disposition supporting the WMR-H evolution.",
+          "irreducibly_multirole": false
+        },
+        {
+          "anchor": "2. V0.2 core representation .. 7. Assurance freedom amended with two transition obligations",
+          "role": "GOVERNING",
+          "governing_status": "SUPERSEDED",
+          "rationale": "WMR-H V0.2 representation candidate, never itself owner-accepted, later replaced by the accepted WMR-H V0.3 (Research 272). SUPERSEDED is used because PROPOSED (not yet effective) and REJECTED (not adopted) are both wrong for a proposal adopted in amended form.",
+          "irreducibly_multirole": false
+        },
+        {
+          "anchor": "8. P-R8B-01 empirical probe purpose .. 13. Post-probe decision sequence",
+          "role": "GOVERNING",
+          "governing_status": "RETIRED",
+          "rationale": "Preregistered probe protocol governing a one-time empirical program that has been executed and closed; no longer operationally applicable.",
+          "irreducibly_multirole": false
+        }
+      ],
+      "path_used_as_identity_or_authority": false
+    },
+    {
+      "path": "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+      "units": [
+        {
+          "anchor": "Research 272: WMR-H V0.3 Owner Acceptance, MC-0027 Closure, and Assurance-Architecture Entry",
+          "role": "GOVERNING",
+          "governing_status": "IN_FORCE",
+          "rationale": "Owner acceptance of the representation architecture; currently binding.",
+          "irreducibly_multirole": false
+        }
+      ],
+      "path_used_as_identity_or_authority": false
+    },
+    {
+      "path": "docs/research/276_owner_total_architecture_freedom_and_warrant_f_v02_reconciliation.md",
+      "units": [
+        {
+          "anchor": "Research 276: Owner Total-Architecture-Freedom Clarification and WARRANT-F V0.2 Reconciliation",
+          "role": "GOVERNING",
+          "governing_status": "IN_FORCE",
+          "rationale": "Accepted owner design-freedom clarification plus the WARRANT-F V0.2 rules adopted by Research 311. The self-declared candidate status is stale in the same way as Research 258.",
+          "irreducibly_multirole": false
+        }
+      ],
+      "path_used_as_identity_or_authority": false
+    },
+    {
+      "path": "docs/research/304_p_d4_oracle_successor_semantic_parity_pass.md",
+      "units": [
+        {
+          "anchor": "Research 304: P-D4 Oracle-Successor Semantic Parity PASS",
+          "role": "EVIDENCE",
+          "governing_status": null,
+          "rationale": "Probe result evidence.",
+          "irreducibly_multirole": false
+        }
+      ],
+      "path_used_as_identity_or_authority": false
+    },
+    {
+      "path": "docs/research/308_r8c_eight_probe_reconciliation_owner_decision_readiness.md",
+      "units": [
+        {
+          "anchor": "Research 308: R8-C Eight-Probe Reconciliation and Owner-Decision Readiness",
+          "role": "EVIDENCE",
+          "governing_status": null,
+          "rationale": "Decision-readiness synthesis and recommendation; explicitly not the decision.",
+          "irreducibly_multirole": false
+        }
+      ],
+      "path_used_as_identity_or_authority": false
+    },
+    {
+      "path": "docs/research/310_whole_architecture_governed_self_improvement_model.md",
+      "units": [
+        {
+          "anchor": "Research 310: Whole-Architecture Governed Self-Improvement Model",
+          "role": "GOVERNING",
+          "governing_status": "IN_FORCE",
+          "rationale": "Self-described as explanatory, but it states constraints (whole-architecture evolution scope, no self-modification, owner normative authority) that Research 311 §10 declares applicable. Treated as governing clarification.",
+          "irreducibly_multirole": false
+        }
+      ],
+      "path_used_as_identity_or_authority": false
+    },
+    {
+      "path": "docs/research/311_warrant_f_v02_owner_acceptance_r8c_closure_and_ao10_reconciliation_entry.md",
+      "units": [
+        {
+          "anchor": "Research 311: WARRANT-F V0.2 Owner Acceptance, R8-C Closure, and AO-10 Reconciliation Entry",
+          "role": "GOVERNING",
+          "governing_status": "IN_FORCE",
+          "rationale": "Owner acceptance record with binding empirical limitations and holds.",
+          "irreducibly_multirole": false
+        }
+      ],
+      "path_used_as_identity_or_authority": false
+    }
+  ],
+  "primitive_annotations": [
+    {
+      "primitive": "semantic_identity",
+      "admitted": true,
+      "canonical_meaning": "A durable identifier of a semantic object that is independent of path, blob digest and title, minted selectively, and whose continuity across carrier change is governed by explicit identity transitions.",
+      "seams": [
+        {
+          "seam_id": "S1",
+          "required_shared_meaning": true,
+          "meaning_statement": "Authority receipts name governing semantic IDs; AO reconstruction and knowledge must resolve the same object regardless of carrier location.",
+          "source_refs": [
+            "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md::10. Semantic identity contract",
+            "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md::25. Authority resolver"
+          ]
+        },
+        {
+          "seam_id": "S2",
+          "required_shared_meaning": false,
+          "meaning_statement": "Admission binds exact subject revisions and claim identities, not governing semantic identity; covered by exact_subject_revision_binding.",
+          "source_refs": []
+        },
+        {
+          "seam_id": "S3",
+          "required_shared_meaning": true,
+          "meaning_statement": "AO routing and resume must reference the same workstream identity the workstream model owns (semantic_id, resume_target).",
+          "source_refs": [
+            "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md::15. Workstream profile",
+            "docs/source_universe/SOURCE_VAULT_BOOTSTRAP_WORKSTREAM.md::structured declaration.semantic_id"
+          ]
+        },
+        {
+          "seam_id": "S4",
+          "required_shared_meaning": false,
+          "meaning_statement": "Collaboration threads use domain-local keys (MC-nnnn); AO consumes them without needing governed identity-transition semantics.",
+          "source_refs": []
+        },
+        {
+          "seam_id": "S5",
+          "required_shared_meaning": true,
+          "meaning_statement": "Successor bridging and migration must resolve predecessor/successor identities consistently with AO authority resolution; identity transitions are the handoff contract.",
+          "source_refs": [
+            "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md::11. Identity-transition contract",
+            "docs/research/226_ao7_authority_preserving_successor_orchestration_bridge.md::5. Authority resolution through the bridge"
+          ]
+        },
+        {
+          "seam_id": "S6",
+          "required_shared_meaning": true,
+          "meaning_statement": "Engineering-executed carrier moves must preserve semantic identity and inbound reference resolution (path != identity).",
+          "source_refs": [
+            "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md::36. Migration-unit contract",
+            "docs/research/258_mc0025_r8a_adversarial_reconciliation_and_amended_exact_target_candidate.md::12. Additional migration guard accepted from the review"
+          ]
+        },
+        {
+          "seam_id": "S7",
+          "required_shared_meaning": true,
+          "meaning_statement": "Navigation and retrieval must address semantic objects rather than paths so moves do not break routes; the identity index is a shared derived view.",
+          "source_refs": [
+            "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md::20. Persistent deterministic derived views",
+            "docs/research/253_r7a_from_scratch_project_information_model_authority_and_lifecycle.md::10. Identity/carrier model"
+          ]
+        },
+        {
+          "seam_id": "S8",
+          "required_shared_meaning": false,
+          "meaning_statement": "Evidence binds to subject digests and claim IDs; no governed semantic identity agreement is required at this seam.",
+          "source_refs": []
+        },
+        {
+          "seam_id": "S9",
+          "required_shared_meaning": true,
+          "meaning_statement": "An EvolutionCase binds evidence to the exact affected accepted contract identity; evolution and lifecycle must agree which object is being amended or superseded.",
+          "source_refs": [
+            "docs/research/223_ao4_architecture_evolution_and_frozen_contract_governance.md::12. EvolutionCase logical record",
+            "docs/research/223_ao4_architecture_evolution_and_frozen_contract_governance.md::15. Frozen-contract and historical acceptance integrity"
+          ]
+        }
+      ],
+      "semantic_conflict": false
+    },
+    {
+      "primitive": "exact_subject_revision_binding",
+      "admitted": true,
+      "canonical_meaning": "Binding of a receipt, decision, view or evidence record to exact content: repository identity, source path at a commit, hash algorithm, hash basis GIT_BLOB_BYTES_AT_COMMIT and content digest (or ordered input digests for same-commit views).",
+      "seams": [
+        {
+          "seam_id": "S1",
+          "required_shared_meaning": true,
+          "meaning_statement": "AuthorityReceipts must record exact source revisions of governing sources; AO must consume the same bytes knowledge validated.",
+          "source_refs": [
+            "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md::18. Source-revision descriptor",
+            "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md::25. Authority resolver"
+          ]
+        },
+        {
+          "seam_id": "S2",
+          "required_shared_meaning": true,
+          "meaning_statement": "WARRANT-F admits only for the exact subject/revision AO presents; both must bind the same subject identity and hash basis.",
+          "source_refs": [
+            "docs/research/276_owner_total_architecture_freedom_and_warrant_f_v02_reconciliation.md::9. WARRANT-F V0.2 primitive model",
+            "docs/research/311_warrant_f_v02_owner_acceptance_r8c_closure_and_ao10_reconciliation_entry.md::2. Accepted assurance architecture"
+          ]
+        },
+        {
+          "seam_id": "S3",
+          "required_shared_meaning": true,
+          "meaning_statement": "Workstream updates use expected-revision preconditions; continuation must fail on stale revisions.",
+          "source_refs": [
+            "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md::16. Interruption and concurrency semantics",
+            "docs/research/224_ao5_anchored_interaction_continuity_and_independent_recovery.md::6. ContinuationReceipt"
+          ]
+        },
+        {
+          "seam_id": "S4",
+          "required_shared_meaning": true,
+          "meaning_statement": "Collaboration reviews are bound to frozen base commits; AO routing and the collaboration record must agree on which exact revision a review covers.",
+          "source_refs": [
+            "docs/model_collaboration/threads/MC-0029/STATE.json::target.base_ref",
+            "docs/model_collaboration/threads/MC-0029/STATE.json::independence.review_base_ref"
+          ]
+        },
+        {
+          "seam_id": "S5",
+          "required_shared_meaning": true,
+          "meaning_statement": "Bridge re-planning on staleness and migration parity evidence both require exact revision binding of current authority.",
+          "source_refs": [
+            "docs/research/226_ao7_authority_preserving_successor_orchestration_bridge.md::10. Staleness and re-planning",
+            "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md::36. Migration-unit contract"
+          ]
+        },
+        {
+          "seam_id": "S6",
+          "required_shared_meaning": true,
+          "meaning_statement": "Engineering executes transitions against the exact admitted subject; the delivered subject must equal the qualified subject.",
+          "source_refs": [
+            "docs/research/276_owner_total_architecture_freedom_and_warrant_f_v02_reconciliation.md::5. Generalize branch role into accepted-state subject role",
+            "docs/research/311_warrant_f_v02_owner_acceptance_r8c_closure_and_ao10_reconciliation_entry.md::3. Accepted-state semantics remain mechanism-neutral"
+          ]
+        },
+        {
+          "seam_id": "S7",
+          "required_shared_meaning": true,
+          "meaning_statement": "Derived navigation/views bind ordered input digests and hash basis to prove freshness without self-reference.",
+          "source_refs": [
+            "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md::19. Same-commit generated-view binding",
+            "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md::21. Derived-view manifest requirements"
+          ]
+        },
+        {
+          "seam_id": "S8",
+          "required_shared_meaning": true,
+          "meaning_statement": "Evidence records and delivered artifacts must bind the same subject digests for decision evidence to be admissible.",
+          "source_refs": [
+            "docs/research/276_owner_total_architecture_freedom_and_warrant_f_v02_reconciliation.md::16. Evidence publication and storage",
+            "docs/research/276_owner_total_architecture_freedom_and_warrant_f_v02_reconciliation.md::12. Trust model"
+          ]
+        },
+        {
+          "seam_id": "S9",
+          "required_shared_meaning": true,
+          "meaning_statement": "Evolution binds trigger evidence to the exact accepted contract revision; historical acceptance integrity depends on revision binding.",
+          "source_refs": [
+            "docs/research/223_ao4_architecture_evolution_and_frozen_contract_governance.md::15. Frozen-contract and historical acceptance integrity"
+          ]
+        }
+      ],
+      "semantic_conflict": false
+    },
+    {
+      "primitive": "provenance_descriptor",
+      "admitted": true,
+      "canonical_meaning": "Typed derivation lineage of a fact or record: which governing sources, evidence, decisions or captures it derives from, and whether a fact is authority-sourced or successor/derived-sourced. Distinct from executor/build producer provenance, which remains assurance-domain.",
+      "seams": [
+        {
+          "seam_id": "S1",
+          "required_shared_meaning": true,
+          "meaning_statement": "Reconstruction and authority closure must preserve the lineage of governing facts through synthesis so that derived summaries do not become authority (KA-I07).",
+          "source_refs": [
+            "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md::26. Reconstruction planner",
+            "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md::27. Capture and promotion"
+          ]
+        },
+        {
+          "seam_id": "S2",
+          "required_shared_meaning": false,
+          "meaning_statement": "Admission needs evidence freshness/producer/trust provenance, which is assurance-internal and not the same concept as derivation lineage.",
+          "source_refs": []
+        },
+        {
+          "seam_id": "S3",
+          "required_shared_meaning": false,
+          "meaning_statement": "Workstream continuity relies on revision binding and receipts, not a shared lineage contract.",
+          "source_refs": []
+        },
+        {
+          "seam_id": "S4",
+          "required_shared_meaning": false,
+          "meaning_statement": "Interaction-session provenance is collaboration-domain metadata; AO does not need a shared lineage meaning here.",
+          "source_refs": []
+        },
+        {
+          "seam_id": "S5",
+          "required_shared_meaning": true,
+          "meaning_statement": "No authority laundering requires distinguishing authority-sourced facts from successor-derived control output across the bridge.",
+          "source_refs": [
+            "docs/research/226_ao7_authority_preserving_successor_orchestration_bridge.md::14. No authority laundering",
+            "docs/research/226_ao7_authority_preserving_successor_orchestration_bridge.md::15. BridgeReceipt"
+          ]
+        },
+        {
+          "seam_id": "S6",
+          "required_shared_meaning": true,
+          "meaning_statement": "Engineering-executed migration must preserve provenance of each migrated unit so transition management can prove parity and rollback.",
+          "source_refs": [
+            "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md::36. Migration-unit contract"
+          ]
+        },
+        {
+          "seam_id": "S7",
+          "required_shared_meaning": false,
+          "meaning_statement": "Navigation may display lineage but does not require agreement on its meaning for correctness.",
+          "source_refs": []
+        },
+        {
+          "seam_id": "S8",
+          "required_shared_meaning": false,
+          "meaning_statement": "Build/executor producer provenance at this seam is assurance/delivery-owned (trust, attestation), not derivation lineage.",
+          "source_refs": []
+        },
+        {
+          "seam_id": "S9",
+          "required_shared_meaning": true,
+          "meaning_statement": "Evolution must record what evidence triggered a change and what was superseded, and lifecycle must retain that lineage without rewriting history.",
+          "source_refs": [
+            "docs/research/310_whole_architecture_governed_self_improvement_model.md::4. Responsibility split",
+            "docs/research/223_ao4_architecture_evolution_and_frozen_contract_governance.md::15. Frozen-contract and historical acceptance integrity"
+          ]
+        }
+      ],
+      "semantic_conflict": false
+    },
+    {
+      "primitive": "governing_lifecycle_reference",
+      "admitted": true,
+      "canonical_meaning": "A reference to a governing object's governing status (proposed, in force, effect withheld, superseded, retired, rejected) resolved at an explicit effective/authority boundary, independent of the carrier's self-declared status text and of commit recency.",
+      "seams": [
+        {
+          "seam_id": "S1",
+          "required_shared_meaning": true,
+          "meaning_statement": "The authority resolver must not use latest-commit recency; it must consume explicit lifecycle and supersession semantics to decide what governs.",
+          "source_refs": [
+            "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md::14. Temporal semantics",
+            "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md::25. Authority resolver"
+          ]
+        },
+        {
+          "seam_id": "S2",
+          "required_shared_meaning": true,
+          "meaning_statement": "Admission evaluates the effective policy; weakening changes do not take effect until a governed decision, so AO decision events and WARRANT-F must agree which policy state is in force.",
+          "source_refs": [
+            "docs/research/276_owner_total_architecture_freedom_and_warrant_f_v02_reconciliation.md::11. Self-weakening ratchet"
+          ]
+        },
+        {
+          "seam_id": "S3",
+          "required_shared_meaning": false,
+          "meaning_statement": "Workstream states (ACTIVE/PAUSED/...) are domain-owned control states, not governing lifecycle.",
+          "source_refs": []
+        },
+        {
+          "seam_id": "S4",
+          "required_shared_meaning": false,
+          "meaning_statement": "Collaboration messages select and authorize nothing; thread lifecycle is control state.",
+          "source_refs": []
+        },
+        {
+          "seam_id": "S5",
+          "required_shared_meaning": true,
+          "meaning_statement": "Current authority remains in force until an explicit switch; the bridge must bind whichever governing sources are currently in force.",
+          "source_refs": [
+            "docs/research/226_ao7_authority_preserving_successor_orchestration_bridge.md::4. Authority membrane",
+            "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md::43. Authority-switch prohibition"
+          ]
+        },
+        {
+          "seam_id": "S6",
+          "required_shared_meaning": true,
+          "meaning_statement": "Engineering may execute only transitions whose governing authorization is in force; held authorizations (e.g. physical migration) must block delivery.",
+          "source_refs": [
+            "docs/research/311_warrant_f_v02_owner_acceptance_r8c_closure_and_ao10_reconciliation_entry.md::13. Still not authorized",
+            "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md::45. Acceptance state transitions"
+          ]
+        },
+        {
+          "seam_id": "S7",
+          "required_shared_meaning": true,
+          "meaning_statement": "Navigation and retrieval must keep superseded, rejected and current knowledge distinguishable and must not present superseded material as current.",
+          "source_refs": [
+            "docs/PRINCIPLES.md::P-003. Historical material is provenance, not automatic authority",
+            "docs/research/253_r7a_from_scratch_project_information_model_authority_and_lifecycle.md::5. Authority model"
+          ]
+        },
+        {
+          "seam_id": "S8",
+          "required_shared_meaning": false,
+          "meaning_statement": "Evidence delivery does not carry governing lifecycle.",
+          "source_refs": []
+        },
+        {
+          "seam_id": "S9",
+          "required_shared_meaning": true,
+          "meaning_statement": "AO-4 dispositions (AMEND/SUPERSEDE/REOPEN) change governing lifecycle prospectively while preserving historical acceptance.",
+          "source_refs": [
+            "docs/research/223_ao4_architecture_evolution_and_frozen_contract_governance.md::9. SUPERSEDE",
+            "docs/research/223_ao4_architecture_evolution_and_frozen_contract_governance.md::15. Frozen-contract and historical acceptance integrity"
+          ]
+        }
+      ],
+      "semantic_conflict": false
+    },
+    {
+      "primitive": "obligation_reference",
+      "admitted": true,
+      "canonical_meaning": "A reference to an accepted normative obligation (unit) created by a governing acceptance, together with its realization path or governed deferral. Distinct from collaboration 'obligations' (next-actor duties in a thread), which are a homonym.",
+      "seams": [
+        {
+          "seam_id": "S1",
+          "required_shared_meaning": true,
+          "meaning_statement": "Accepted governing obligations must activate in AO control screening from governing knowledge; both must identify the same obligation.",
+          "source_refs": [
+            "docs/research/235_ao9_p7_owner_decisions_and_ao9_closure.md::4. P7-D03 accepts KA-R52",
+            "docs/research/222_ao3_progressive_control_closure_architecture.md::6. Control-obligation screening"
+          ]
+        },
+        {
+          "seam_id": "S2",
+          "required_shared_meaning": true,
+          "meaning_statement": "Verifiable obligations are realized through gates/evidence; WARRANT-F qualification and AO must reference the same obligation to close it.",
+          "source_refs": [
+            "docs/research/235_ao9_p7_owner_decisions_and_ao9_closure.md::4. P7-D03 accepts KA-R52",
+            "docs/research/233_ao9_p5_evaluation_and_decision_synthesis.md::7. R52 requirement candidate"
+          ]
+        },
+        {
+          "seam_id": "S3",
+          "required_shared_meaning": false,
+          "meaning_statement": "Workstream pause/return conditions are workstream-owned; no shared obligation semantics required.",
+          "source_refs": []
+        },
+        {
+          "seam_id": "S4",
+          "required_shared_meaning": false,
+          "meaning_statement": "Collaboration 'obligations' (pending actor duties) are a different concept sharing the word; no agreement on KA-R52 meaning is required.",
+          "source_refs": []
+        },
+        {
+          "seam_id": "S5",
+          "required_shared_meaning": true,
+          "meaning_statement": "Migration and oracle-retirement conditions are realization paths for accepted obligations; transition management must reference the obligation it discharges.",
+          "source_refs": [
+            "docs/research/235_ao9_p7_owner_decisions_and_ao9_closure.md::6. AO-10 qualification envelope after P7",
+            "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md::36. Migration-unit contract"
+          ]
+        },
+        {
+          "seam_id": "S6",
+          "required_shared_meaning": true,
+          "meaning_statement": "Engineering implementation realizes accepted obligations; unrealized obligations (e.g. required production responsibilities) must remain traceable to their realization boundary.",
+          "source_refs": [
+            "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md::3. Required production package surface",
+            "docs/research/235_ao9_p7_owner_decisions_and_ao9_closure.md::4. P7-D03 accepts KA-R52"
+          ]
+        },
+        {
+          "seam_id": "S7",
+          "required_shared_meaning": false,
+          "meaning_statement": "Navigation need not agree on obligation semantics.",
+          "source_refs": []
+        },
+        {
+          "seam_id": "S8",
+          "required_shared_meaning": false,
+          "meaning_statement": "Evidence closure of obligations is mediated at S2; no separate shared meaning at the delivery seam.",
+          "source_refs": []
+        },
+        {
+          "seam_id": "S9",
+          "required_shared_meaning": true,
+          "meaning_statement": "An accepted AMEND/SUPERSEDE creates realization obligations that must be tracked rather than ending as prose.",
+          "source_refs": [
+            "docs/research/223_ao4_architecture_evolution_and_frozen_contract_governance.md::17. Obligation realization after disposition"
+          ]
+        }
+      ],
+      "semantic_conflict": false
+    },
+    {
+      "primitive": "governed_relation_reference",
+      "admitted": true,
+      "canonical_meaning": "A typed relation from a finite governed registry (e.g. REPLACE, SUPPLEMENT, SPECIALIZE, CORRECT) authored once by the natural owner end, with explicit target and scope, whose reverse edges and closure are derived.",
+      "seams": [
+        {
+          "seam_id": "S1",
+          "required_shared_meaning": true,
+          "meaning_statement": "Authority resolution combines governing sources by relation mode; knowledge authoring and AO resolution must interpret REPLACE/SUPPLEMENT/SPECIALIZE/CORRECT identically.",
+          "source_refs": [
+            "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md::12. Relation semantics",
+            "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md::25. Authority resolver"
+          ]
+        },
+        {
+          "seam_id": "S2",
+          "required_shared_meaning": false,
+          "meaning_statement": "Admission does not consume governing relations.",
+          "source_refs": []
+        },
+        {
+          "seam_id": "S3",
+          "required_shared_meaning": false,
+          "meaning_statement": "Workstream depends_on/parent edges are workstream-domain graph relations.",
+          "source_refs": []
+        },
+        {
+          "seam_id": "S4",
+          "required_shared_meaning": false,
+          "meaning_statement": "No shared relation semantics required.",
+          "source_refs": []
+        },
+        {
+          "seam_id": "S5",
+          "required_shared_meaning": true,
+          "meaning_statement": "Successor contracts replace predecessors at governed boundaries; the bridge and transition management must agree on replacement scope.",
+          "source_refs": [
+            "docs/research/226_ao7_authority_preserving_successor_orchestration_bridge.md::5. Authority resolution through the bridge",
+            "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md::12. Relation semantics"
+          ]
+        },
+        {
+          "seam_id": "S6",
+          "required_shared_meaning": false,
+          "meaning_statement": "Engineering moves carriers but does not interpret governing relation semantics; identity transitions cover its needs.",
+          "source_refs": []
+        },
+        {
+          "seam_id": "S7",
+          "required_shared_meaning": true,
+          "meaning_statement": "Navigation traverses derived reverse edges and closure over authored relations; navigation must not invent relation meaning.",
+          "source_refs": [
+            "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md::12. Relation semantics",
+            "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md::11. Structural and resolver facets remain separate"
+          ]
+        },
+        {
+          "seam_id": "S8",
+          "required_shared_meaning": false,
+          "meaning_statement": "Not consumed at evidence delivery.",
+          "source_refs": []
+        },
+        {
+          "seam_id": "S9",
+          "required_shared_meaning": true,
+          "meaning_statement": "Evolution dispositions are realized as governed relations (supersession, correction, specialization) between contract versions.",
+          "source_refs": [
+            "docs/research/223_ao4_architecture_evolution_and_frozen_contract_governance.md::8. AMEND",
+            "docs/research/223_ao4_architecture_evolution_and_frozen_contract_governance.md::9. SUPERSEDE"
+          ]
+        }
+      ],
+      "semantic_conflict": false
+    }
+  ],
+  "negative_controls": [
+    {
+      "concept": "workstream_state",
+      "admitted": false,
+      "rationale": "Workstream states (ACTIVE/PAUSED/BLOCKED/COMPLETED/SUPERSEDED) are owned and defined by the workstream model; AO consumes them through one seam (S3) via that model's contract. No second domain needs to own or redefine the meaning.",
+      "seam_refs": [
+        "S3"
+      ]
+    },
+    {
+      "concept": "bridge_execution_mode",
+      "admitted": false,
+      "rationale": "DISABLED/SHADOW/ACTIVE_SUBORDINATE/SUSPENDED describe who performs control processing, explicitly separate from authority state; consumed only at the transition-management seam.",
+      "seam_refs": [
+        "S5"
+      ]
+    },
+    {
+      "concept": "warrant_claim_internal_state",
+      "admitted": false,
+      "rationale": "Claim/warrant internals stay inside the assurance kernel; AO consumes only the admission decision. Sharing internals would breach the accepted assurance/AO boundary.",
+      "seam_refs": [
+        "S2"
+      ]
+    },
+    {
+      "concept": "stochastic_campaign_statistic",
+      "admitted": false,
+      "rationale": "Campaign statistics (item clusters, MDE, pairing) are assurance-internal inputs to gate outcomes such as OBSERVE_ONLY; other domains consume the gate result, not the statistic.",
+      "seam_refs": [
+        "S8"
+      ]
+    }
+  ],
+  "status_label_assessment": {
+    "vocabulary_used": {
+      "PROPOSED": 0,
+      "IN_FORCE": 22,
+      "EFFECT_WITHHELD": 2,
+      "SUPERSEDED": 3,
+      "RETIRED": 3,
+      "REJECTED": 0
+    },
+    "adequate_for_corpus": "MOSTLY",
+    "findings": [
+      "PARTIAL_SCOPE_SUPERSESSION: DECISIONS D-011/D-015 and AO-3 as amended by its §24 are superseded only in scope. One status per unit cannot express 'superseded for scope X, in force elsewhere' without scope-qualified governed relations; a new token is not recommended.",
+      "PROPOSAL_ADOPTED_AS_AMENDED: Research 263's WMR-H V0.2 was never effective and was replaced by accepted V0.3. PROPOSED and REJECTED are both wrong; SUPERSEDED was used although its definition implies prior effectiveness. The SUPERSEDED definition should explicitly cover proposals replaced by an adopted successor, or a distinct token is needed.",
+      "STALE_SELF_DECLARED_STATUS: Research 258 and Research 276 still carry pre-acceptance status lines although their content was adopted by Research 259 and Research 311. Governing status must be resolved from lifecycle records, not carrier headers; this supports governing_lifecycle_reference as a shared primitive.",
+      "EFFECT_WITHHELD_BOUNDARY: EFFECT_WITHHELD was needed twice (Research 217 contract with W5 realization paused; AO-6 ROTATE deferred). It should mean a deliberate hold on governing effect, not merely 'accepted but not yet realized' (unrealized obligations belong to obligation/realization state), or it will absorb most accepted-but-unimplemented contracts.",
+      "RETIRED_FOR_DISCHARGED_ONE_TIME_ITEMS: RETIRED fits executed or discharged one-time governing items (D-016, Prototype V0 phase decisions, executed probe protocols, a satisfied sequencing boundary). Consider documenting 'discharged' as a RETIRED reason rather than adding a token.",
+      "TOKEN_COLLISION: EFFECT_WITHHELD avoids the HELD/SUSPENDED collisions noted in Message 003."
+    ],
+    "role_findings": [
+      "CURRENT_STATE's current-stage section interleaves CONTROL and historical EVIDENCE under one heading and is the only unit flagged irreducibly multi-role.",
+      "Hand-maintained navigation and convenience indexes (KNOWLEDGE_MAP, REVIEW_INBOX) fit DERIVED semantically even though they are authored, and both contain small GOVERNING rule sections.",
+      "Workstream carriers co-locate GOVERNING definition with CONTROL state, consistent with the WMR-H definition/state split."
+    ]
+  }
+}
