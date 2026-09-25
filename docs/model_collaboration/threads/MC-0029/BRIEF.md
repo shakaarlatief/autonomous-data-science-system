@@ -180,3 +180,46 @@ The output must follow annotation_schema.json exactly and preserve review_scope.
 Use interaction claude-04 / conversation 04 - Assurance and Delivery Architecture Design in reviewer provenance.
 
 If the frozen source base, reviewer materials, or blindness boundary cannot be respected, stop and report the mismatch rather than improvising.
+
+## DRP-03 AMEND adversarial critique
+
+The independent reviewer phase is complete and blindness restrictions for DRP-03 are lifted.
+
+The frozen DRP-03 run returns AMEND. Research 326 reconciles the result and proposes a prospective V0.4 obligation-birth amendment plus an R2 measurement method.
+
+Claude must now adversarially inspect the full evidence, including:
+
+- Research 315;
+- Research 316;
+- Research 324;
+- Research 325;
+- Research 326;
+- both reviewer annotations;
+- the frozen evaluator key and probe;
+- the durable DRP-03 result evidence.
+
+Review at least:
+
+1. whether AMEND remains the correct decision class after isolating the false-gap text-matcher defect;
+2. whether the proposition/grouping failures really demonstrate an architectural problem rather than only reviewer-writing variance;
+3. whether the reviewer-A false-gap submetric is correctly classified as not decision-usable rather than making the entire attempt HARNESS_INVALID;
+4. whether V0.4's AcceptanceDelta / acceptance-bound ObligationDeclarationSet actually closes the demonstrated failure without creating a requirements-database or manual-bookkeeping anti-pattern;
+5. whether temporal authority is preserved for old owner/governance decisions;
+6. whether legacy retrospective extraction is correctly candidate-only until governed reconciliation;
+7. whether fully derived RealizationState should remain unchanged;
+8. whether the proposed DRP-03 R2 source-item-ID method tests the right thing without giving reviewers the answer;
+9. whether any new falsifier, adoption burden, cross-layer conflict or downstream DRP dependency follows.
+
+Do not modify the frozen V0.1 harness, reviewer artifacts, result evidence, Research 326, routing or prior records.
+
+Write exactly one critique under the existing Claude message boundary:
+
+    docs/model_collaboration/threads/MC-0029/messages/007_claude_drp03_amendment_critique.md
+
+End with an explicit disposition for Research 326:
+
+    KEEP
+    AMEND
+    REOPEN
+
+and enumerate any required changes before DRP-03 R2 is frozen.

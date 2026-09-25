@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_BOTH_REVIEWERS_FROZEN_COMPARISON_NEXT",
+  "phase": "DRP03_AMEND_V04_CLAUDE_CRITIQUE_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -51,7 +51,7 @@
       ]
     }
   ],
-  "next_expected_actor": "chatgpt",
+  "next_expected_actor": "claude",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -71,14 +71,14 @@
       "DRP-03 Claude reviewer A must not inspect Research 324 or any future ChatGPT DRP-03 annotation/summary before committing its annotation.",
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15."
     ],
-    "notes": "DRP-03 Claude reviewer A is frozen at b9fba658... / blob 56ecc1da.... ChatGPT reviewer B is independently authored and frozen at SHA-256 39410f68... without opening/parsing/grepping/summarizing Claude A. ChatGPT authored the hidden evaluator key, so only Claude is blind to that key. Comparison is now permitted."
+    "notes": "DRP-03 comparison is complete. Frozen result is AMEND: proposition F1 0.4983 and grouping F1 0.6753 both fail independently; witnesses/negative controls/state fixtures pass. The hidden false-gap evaluator text matcher misclassifies Claude's grouped W0/W1 operational gates as null and is not decision-usable, but removing it cannot change AMEND. Research 326 is a prospective V0.4 candidate requiring Claude critique and later R2 requalification."
   },
   "last_transition": {
-    "transition_id": "mc0029-drp03-both-reviewers-frozen",
+    "transition_id": "mc0029-drp03-amend-v04-candidate",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 325 freezes ChatGPT reviewer B without inspecting Claude reviewer A contents. Both DRP-03 reviewer artifacts are now frozen; frozen comparison is next.",
-    "repository_head": "b9fba658e422279d8f8b8193b8c1bda88302dcda"
+    "reason": "Research 326 reconciles the frozen DRP-03 run as AMEND, isolates the reviewer-A false-gap text-matcher submetric as non-decision-usable without changing the valid AMEND, and proposes a strengthened acceptance-bound V0.4 plus R2 measurement method. Claude adversarial critique is next.",
+    "repository_head": "cb0224b1715381d3c19cc5462dcafaba8ae38389"
   }
 }

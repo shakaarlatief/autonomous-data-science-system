@@ -1,7 +1,7 @@
 # MC-0029 Thread: Specification 028 Reconciliation and AO-10 Realization Design
 
 **Thread:** MC-0029
-**Status:** OPEN / V0.3 FROZEN / DRP-03 BOTH REVIEWERS FROZEN / COMPARISON NEXT
+**Status:** OPEN / DRP-03 AMEND / V0.4 CANDIDATE / CLAUDE CRITIQUE NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** 0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
@@ -39,8 +39,11 @@ Independently derive Specification 028 reconciliation and AO-10 realization arch
     DRP-03 obligation-unit harness freeze       COMPLETE / Research 324
     DRP-03 Claude reviewer A                    COMPLETE / b9fba658 / blind to evaluator key
     DRP-03 ChatGPT reviewer B                   COMPLETE / independent of Claude A
-    DRP-03 frozen comparison                    NEXT
-    remaining decision probes                  AFTER FROZEN HARNESS PER PROBE
+    DRP-03 frozen comparison                    COMPLETE / AMEND / Research 326
+    DRP-03 V0.4 amendment candidate             COMPLETE / Research 326
+    Claude adversarial amendment critique       NEXT / Message 007
+    DRP-03 R2                                   AFTER RECONCILIATION + FREEZE
+    remaining decision probes                  AFTER REQUALIFIED DRP-03 WHERE DEPENDENT
     owner decision                             AFTER RECONCILED EVIDENCE
 
 ## Independence boundary
@@ -67,7 +70,7 @@ Claude may write only:
     docs/model_collaboration/threads/MC-0029/messages/**
 
     MC0029=OPEN
-    PHASE=DRP03_BOTH_REVIEWERS_FROZEN_COMPARISON_NEXT
+    PHASE=DRP03_AMEND_V04_CLAUDE_CRITIQUE_NEXT
     INDEPENDENT_BASE=0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
     CHATGPT_CANDIDATE=RESEARCH312
     CLAUDE_MESSAGE_001=COMPLETE

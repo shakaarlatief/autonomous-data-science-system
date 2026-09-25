@@ -1,0 +1,705 @@
+{
+  "probe": "DRP-03",
+  "protocol": "AO10-DRP-V01",
+  "primary_class": "AMEND",
+  "reviewer_a_propositions": 157,
+  "reviewer_b_propositions": 136,
+  "matched_propositions": 73,
+  "proposition_set_f1": 0.49829351535836175,
+  "grouping_agreement_f1": 0.6753246753246753,
+  "witnesses": {
+    "required": [
+      "W_AO6_BRANCH_ROTATION_ATTACH_GAP",
+      "W_R311_ENGINEERING_NO_MUST",
+      "W_SPEC028_SECTION3_NAMED_RESPONSIBILITY_GAP"
+    ],
+    "a": [
+      "W_AO6_BRANCH_ROTATION_ATTACH_GAP",
+      "W_R311_ENGINEERING_NO_MUST",
+      "W_SPEC028_SECTION3_NAMED_RESPONSIBILITY_GAP"
+    ],
+    "b": [
+      "W_AO6_BRANCH_ROTATION_ATTACH_GAP",
+      "W_R311_ENGINEERING_NO_MUST",
+      "W_SPEC028_SECTION3_NAMED_RESPONSIBILITY_GAP"
+    ],
+    "both_ok": true
+  },
+  "negative_control_unit_counts": {
+    "a": 0,
+    "b": 0
+  },
+  "false_gap": {
+    "a_rate": 0.7,
+    "b_rate": 0.0,
+    "a": [
+      {
+        "id": "FG01",
+        "derived_state": null,
+        "false_gap": true
+      },
+      {
+        "id": "FG02",
+        "derived_state": null,
+        "false_gap": true
+      },
+      {
+        "id": "FG03",
+        "derived_state": null,
+        "false_gap": true
+      },
+      {
+        "id": "FG04",
+        "derived_state": null,
+        "false_gap": true
+      },
+      {
+        "id": "FG05",
+        "derived_state": null,
+        "false_gap": true
+      },
+      {
+        "id": "FG06",
+        "derived_state": null,
+        "false_gap": true
+      },
+      {
+        "id": "FG07",
+        "derived_state": null,
+        "false_gap": true
+      },
+      {
+        "id": "FG08",
+        "derived_state": "OPERATIONAL",
+        "false_gap": false
+      },
+      {
+        "id": "FG09",
+        "derived_state": "OPERATIONAL",
+        "false_gap": false
+      },
+      {
+        "id": "FG10",
+        "derived_state": "OPERATIONAL",
+        "false_gap": false
+      }
+    ],
+    "b": [
+      {
+        "id": "FG01",
+        "derived_state": "OPERATIONAL",
+        "false_gap": false
+      },
+      {
+        "id": "FG02",
+        "derived_state": "OPERATIONAL",
+        "false_gap": false
+      },
+      {
+        "id": "FG03",
+        "derived_state": "OPERATIONAL",
+        "false_gap": false
+      },
+      {
+        "id": "FG04",
+        "derived_state": "OPERATIONAL",
+        "false_gap": false
+      },
+      {
+        "id": "FG05",
+        "derived_state": "OPERATIONAL",
+        "false_gap": false
+      },
+      {
+        "id": "FG06",
+        "derived_state": "OPERATIONAL",
+        "false_gap": false
+      },
+      {
+        "id": "FG07",
+        "derived_state": "OPERATIONAL",
+        "false_gap": false
+      },
+      {
+        "id": "FG08",
+        "derived_state": "OPERATIONAL",
+        "false_gap": false
+      },
+      {
+        "id": "FG09",
+        "derived_state": "OPERATIONAL",
+        "false_gap": false
+      },
+      {
+        "id": "FG10",
+        "derived_state": "OPERATIONAL",
+        "false_gap": false
+      }
+    ]
+  },
+  "derived_state_fixtures": [
+    {
+      "id": "DS1",
+      "expected": "UNLINKED",
+      "actual": "UNLINKED",
+      "ok": true
+    },
+    {
+      "id": "DS2",
+      "expected": "LINKED",
+      "actual": "LINKED",
+      "ok": true
+    },
+    {
+      "id": "DS3",
+      "expected": "EVIDENCED",
+      "actual": "EVIDENCED",
+      "ok": true
+    },
+    {
+      "id": "DS4",
+      "expected": "QUALIFIED",
+      "actual": "QUALIFIED",
+      "ok": true
+    },
+    {
+      "id": "DS5",
+      "expected": "OPERATIONAL",
+      "actual": "OPERATIONAL",
+      "ok": true
+    },
+    {
+      "id": "DS6",
+      "expected": "DEFERRED",
+      "actual": "DEFERRED",
+      "ok": true
+    },
+    {
+      "id": "DS7",
+      "expected": "DEFERRED",
+      "actual": "DEFERRED",
+      "ok": true
+    }
+  ],
+  "thresholds": {
+    "proposition_set_f1_min": 0.85,
+    "grouping_agreement_min": 0.7,
+    "false_gap_rate_max": 0.1,
+    "known_witnesses_required": 3,
+    "negative_control_units_max": 0,
+    "derived_state_fixture_accuracy": 1
+  },
+  "matches": [
+    {
+      "a_prop": "S028-U24-P1",
+      "b_prop": "S028-P54",
+      "source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "anchor": "## 43. Authority-switch prohibition",
+      "similarity": 1.0
+    },
+    {
+      "a_prop": "S028-U18-P1",
+      "b_prop": "S028-P49",
+      "source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "anchor": "### W2 \u2014 shadow derived views",
+      "similarity": 1.0
+    },
+    {
+      "a_prop": "R311-U06-P1",
+      "b_prop": "R311-P15",
+      "source": "docs/research/311_warrant_f_v02_owner_acceptance_r8c_closure_and_ao10_reconciliation_entry.md",
+      "anchor": "## 5. R8-A Engineering environment amendment is now accepted",
+      "similarity": 1.0
+    },
+    {
+      "a_prop": "R311-U05-P1",
+      "b_prop": "R311-P12",
+      "source": "docs/research/311_warrant_f_v02_owner_acceptance_r8c_closure_and_ao10_reconciliation_entry.md",
+      "anchor": "## 5. R8-A Engineering environment amendment is now accepted",
+      "similarity": 1.0
+    },
+    {
+      "a_prop": "R311-U04-P4",
+      "b_prop": "R311-P14",
+      "source": "docs/research/311_warrant_f_v02_owner_acceptance_r8c_closure_and_ao10_reconciliation_entry.md",
+      "anchor": "## 5. R8-A Engineering environment amendment is now accepted",
+      "similarity": 1.0
+    },
+    {
+      "a_prop": "R311-U04-P3",
+      "b_prop": "R311-P13",
+      "source": "docs/research/311_warrant_f_v02_owner_acceptance_r8c_closure_and_ao10_reconciliation_entry.md",
+      "anchor": "## 5. R8-A Engineering environment amendment is now accepted",
+      "similarity": 1.0
+    },
+    {
+      "a_prop": "R311-U04-P2",
+      "b_prop": "R311-P11",
+      "source": "docs/research/311_warrant_f_v02_owner_acceptance_r8c_closure_and_ao10_reconciliation_entry.md",
+      "anchor": "## 5. R8-A Engineering environment amendment is now accepted",
+      "similarity": 1.0
+    },
+    {
+      "a_prop": "R272-U05-P2",
+      "b_prop": "R272-P10",
+      "source": "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+      "anchor": "## 2. Accepted representation architecture",
+      "similarity": 1.0
+    },
+    {
+      "a_prop": "R235-U03-P3",
+      "b_prop": "R235-P07",
+      "source": "docs/research/235_ao9_p7_owner_decisions_and_ao9_closure.md",
+      "anchor": "## 4. P7-D03 accepts KA-R52",
+      "similarity": 1.0
+    },
+    {
+      "a_prop": "R217-U04-P2",
+      "b_prop": "R217-P06",
+      "source": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+      "anchor": "## 7. Final vocabulary structure",
+      "similarity": 1.0
+    },
+    {
+      "a_prop": "R217-U02-P1",
+      "b_prop": "R217-P03",
+      "source": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+      "anchor": "## 5. Preferred route contract",
+      "similarity": 1.0
+    },
+    {
+      "a_prop": "R217-U01-P1",
+      "b_prop": "R217-P01",
+      "source": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+      "anchor": "## 4. Accepted membership rule",
+      "similarity": 1.0
+    },
+    {
+      "a_prop": "R272-U03-P1",
+      "b_prop": "R272-P04",
+      "source": "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+      "anchor": "## 2. Accepted representation architecture",
+      "similarity": 0.9847328244274809
+    },
+    {
+      "a_prop": "R235-U03-P2",
+      "b_prop": "R235-P06",
+      "source": "docs/research/235_ao9_p7_owner_decisions_and_ao9_closure.md",
+      "anchor": "## 4. P7-D03 accepts KA-R52",
+      "similarity": 0.9805194805194806
+    },
+    {
+      "a_prop": "R272-U01-P3",
+      "b_prop": "R272-P03",
+      "source": "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+      "anchor": "## 2. Accepted representation architecture",
+      "similarity": 0.9770114942528736
+    },
+    {
+      "a_prop": "R235-U02-P2",
+      "b_prop": "R235-P04",
+      "source": "docs/research/235_ao9_p7_owner_decisions_and_ao9_closure.md",
+      "anchor": "## 3. P7-D02 accepts KA-R51",
+      "similarity": 0.9754098360655737
+    },
+    {
+      "a_prop": "S028-U21-P2",
+      "b_prop": "S028-P38",
+      "source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "anchor": "## 39. W0 executable gates",
+      "similarity": 0.9753694581280788
+    },
+    {
+      "a_prop": "R272-U04-P1",
+      "b_prop": "R272-P06",
+      "source": "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+      "anchor": "## 2. Accepted representation architecture",
+      "similarity": 0.9698630136986301
+    },
+    {
+      "a_prop": "R311-U08-P1",
+      "b_prop": "R311-P17",
+      "source": "docs/research/311_warrant_f_v02_owner_acceptance_r8c_closure_and_ao10_reconciliation_entry.md",
+      "anchor": "### P-D4 current oracle succession",
+      "similarity": 0.9658314350797267
+    },
+    {
+      "a_prop": "S028-U19-P1",
+      "b_prop": "S028-P50",
+      "source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "anchor": "### W3 \u2014 compatibility shadow",
+      "similarity": 0.9615384615384616
+    },
+    {
+      "a_prop": "S028-U20-P1",
+      "b_prop": "S028-P51",
+      "source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "anchor": "### W4 \u2014 production capture/promotion path",
+      "similarity": 0.9612903225806452
+    },
+    {
+      "a_prop": "R311-U04-P1",
+      "b_prop": "R311-P10",
+      "source": "docs/research/311_warrant_f_v02_owner_acceptance_r8c_closure_and_ao10_reconciliation_entry.md",
+      "anchor": "## 5. R8-A Engineering environment amendment is now accepted",
+      "similarity": 0.9565217391304348
+    },
+    {
+      "a_prop": "S028-U14-P1",
+      "b_prop": "S028-P18",
+      "source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "anchor": "## 34. Integration with existing repository integrity",
+      "similarity": 0.9534246575342465
+    },
+    {
+      "a_prop": "R256-U11-P2",
+      "b_prop": "R256-P09",
+      "source": "docs/research/256_r7_owner_amendment_acceptance_research218_supersession_and_r8_entry.md",
+      "anchor": "## 6. R8 method",
+      "similarity": 0.9467455621301775
+    },
+    {
+      "a_prop": "S028-U05-P1",
+      "b_prop": "S028-P02",
+      "source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "anchor": "## 3. Required production package surface",
+      "similarity": 0.9411764705882353
+    },
+    {
+      "a_prop": "R272-U06-P1",
+      "b_prop": "R272-P12",
+      "source": "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+      "anchor": "## 2. Accepted representation architecture",
+      "similarity": 0.9401709401709402
+    },
+    {
+      "a_prop": "R272-U05-P1",
+      "b_prop": "R272-P09",
+      "source": "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+      "anchor": "## 2. Accepted representation architecture",
+      "similarity": 0.9387755102040817
+    },
+    {
+      "a_prop": "R256-U04-P1",
+      "b_prop": "R256-P02",
+      "source": "docs/research/256_r7_owner_amendment_acceptance_research218_supersession_and_r8_entry.md",
+      "anchor": "## 2. Accepted amendments",
+      "similarity": 0.9381107491856677
+    },
+    {
+      "a_prop": "R256-U11-P1",
+      "b_prop": "R256-P08",
+      "source": "docs/research/256_r7_owner_amendment_acceptance_research218_supersession_and_r8_entry.md",
+      "anchor": "## 6. R8 method",
+      "similarity": 0.9367088607594937
+    },
+    {
+      "a_prop": "R217-U02-P2",
+      "b_prop": "R217-P04",
+      "source": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+      "anchor": "## 5. Preferred route contract",
+      "similarity": 0.9357142857142857
+    },
+    {
+      "a_prop": "S028-U11-P1",
+      "b_prop": "S028-P13",
+      "source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "anchor": "## 26. Reconstruction planner",
+      "similarity": 0.9327731092436975
+    },
+    {
+      "a_prop": "R217-U02-P3",
+      "b_prop": "R217-P05",
+      "source": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+      "anchor": "## 5. Preferred route contract",
+      "similarity": 0.9270833333333334
+    },
+    {
+      "a_prop": "R311-U12-P1",
+      "b_prop": "R311-P23",
+      "source": "docs/research/311_warrant_f_v02_owner_acceptance_r8c_closure_and_ao10_reconciliation_entry.md",
+      "anchor": "## 9. AO-10 status after acceptance",
+      "similarity": 0.9191685912240185
+    },
+    {
+      "a_prop": "R217-U13-P2",
+      "b_prop": "R217-P09",
+      "source": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+      "anchor": "## 12. Production realization contract",
+      "similarity": 0.9166666666666666
+    },
+    {
+      "a_prop": "R272-U09-P1",
+      "b_prop": "R272-P16",
+      "source": "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+      "anchor": "## 6. Assurance anti-anchoring is now a hard downstream input",
+      "similarity": 0.9098360655737705
+    },
+    {
+      "a_prop": "R256-U03-P1",
+      "b_prop": "R256-P01",
+      "source": "docs/research/256_r7_owner_amendment_acceptance_research218_supersession_and_r8_entry.md",
+      "anchor": "## 2. Accepted amendments",
+      "similarity": 0.9067357512953368
+    },
+    {
+      "a_prop": "R235-U03-P4",
+      "b_prop": "R235-P08",
+      "source": "docs/research/235_ao9_p7_owner_decisions_and_ao9_closure.md",
+      "anchor": "## 4. P7-D03 accepts KA-R52",
+      "similarity": 0.888268156424581
+    },
+    {
+      "a_prop": "S028-U08-P3",
+      "b_prop": "S028-P08",
+      "source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "anchor": "## 14. Temporal semantics",
+      "similarity": 0.8767123287671232
+    },
+    {
+      "a_prop": "S028-U12-P1",
+      "b_prop": "S028-P15",
+      "source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "anchor": "## 27. Capture and promotion",
+      "similarity": 0.8765957446808511
+    },
+    {
+      "a_prop": "S028-U06-P1",
+      "b_prop": "S028-P03",
+      "source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "anchor": "## 10. Semantic identity contract",
+      "similarity": 0.8666666666666667
+    },
+    {
+      "a_prop": "R217-U01-P3",
+      "b_prop": "R217-P02",
+      "source": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+      "anchor": "## 4. Accepted membership rule",
+      "similarity": 0.8553459119496856
+    },
+    {
+      "a_prop": "R272-U01-P4",
+      "b_prop": "R272-P11",
+      "source": "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+      "anchor": "## 2. Accepted representation architecture",
+      "similarity": 0.8481375358166189
+    },
+    {
+      "a_prop": "R217-U12-P1",
+      "b_prop": "R217-P07",
+      "source": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+      "anchor": "## 11. Structural and resolver facets remain separate",
+      "similarity": 0.8395604395604396
+    },
+    {
+      "a_prop": "S028-U13-P2",
+      "b_prop": "S028-P17",
+      "source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "anchor": "## 27. Capture and promotion",
+      "similarity": 0.8389057750759878
+    },
+    {
+      "a_prop": "R256-U06-P1",
+      "b_prop": "R256-P05",
+      "source": "docs/research/256_r7_owner_amendment_acceptance_research218_supersession_and_r8_entry.md",
+      "anchor": "## 2. Accepted amendments",
+      "similarity": 0.8372093023255814
+    },
+    {
+      "a_prop": "S028-U07-P3",
+      "b_prop": "S028-P06",
+      "source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "anchor": "## 12. Relation semantics",
+      "similarity": 0.8326530612244898
+    },
+    {
+      "a_prop": "R311-U09-P1",
+      "b_prop": "R311-P18",
+      "source": "docs/research/311_warrant_f_v02_owner_acceptance_r8c_closure_and_ao10_reconciliation_entry.md",
+      "anchor": "### P-S stochastic qualification",
+      "similarity": 0.8275862068965517
+    },
+    {
+      "a_prop": "S028-U10-P1",
+      "b_prop": "S028-P11",
+      "source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "anchor": "## 25. Authority resolver",
+      "similarity": 0.8253164556962025
+    },
+    {
+      "a_prop": "R272-U11-P2",
+      "b_prop": "R272-P20",
+      "source": "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+      "anchor": "## 9. Relationship to activation/orchestration and migration",
+      "similarity": 0.8152866242038217
+    },
+    {
+      "a_prop": "R235-U01-P4",
+      "b_prop": "R235-P02",
+      "source": "docs/research/235_ao9_p7_owner_decisions_and_ao9_closure.md",
+      "anchor": "## 2. P7-D01 prospectively amends AO-3",
+      "similarity": 0.8102564102564103
+    },
+    {
+      "a_prop": "R259-U07-P1",
+      "b_prop": "R259-P06",
+      "source": "docs/research/259_r8a_owner_amendment_acceptance_and_from_scratch_representation_freedom.md",
+      "anchor": "## 8. Representation-stage design freedom",
+      "similarity": 0.8048780487804879
+    },
+    {
+      "a_prop": "R235-U03-P1",
+      "b_prop": "R235-P05",
+      "source": "docs/research/235_ao9_p7_owner_decisions_and_ao9_closure.md",
+      "anchor": "## 4. P7-D03 accepts KA-R52",
+      "similarity": 0.7935779816513762
+    },
+    {
+      "a_prop": "R311-U11-P1",
+      "b_prop": "R311-P21",
+      "source": "docs/research/311_warrant_f_v02_owner_acceptance_r8c_closure_and_ao10_reconciliation_entry.md",
+      "anchor": "## 8. Specification 028 remains current until reconciled",
+      "similarity": 0.7894736842105263
+    },
+    {
+      "a_prop": "R311-U10-P1",
+      "b_prop": "R311-P19",
+      "source": "docs/research/311_warrant_f_v02_owner_acceptance_r8c_closure_and_ao10_reconciliation_entry.md",
+      "anchor": "## 7. Realization-stage qualification remains downstream",
+      "similarity": 0.7894736842105263
+    },
+    {
+      "a_prop": "R311-U03-P1",
+      "b_prop": "R311-P08",
+      "source": "docs/research/311_warrant_f_v02_owner_acceptance_r8c_closure_and_ao10_reconciliation_entry.md",
+      "anchor": "## 4. Accepted assurance / AO / delivery boundary",
+      "similarity": 0.7791741472172352
+    },
+    {
+      "a_prop": "S028-U10-P3",
+      "b_prop": "S028-P12",
+      "source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "anchor": "## 25. Authority resolver",
+      "similarity": 0.775
+    },
+    {
+      "a_prop": "R225-U01-P2",
+      "b_prop": "R225-P02",
+      "source": "docs/research/225_ao6_purpose_bound_git_lifecycle_and_workstream_orchestration.md",
+      "anchor": "## 16. Current self-hosting branch decision and execution probe",
+      "similarity": 0.7647058823529411
+    },
+    {
+      "a_prop": "R256-U05-P1",
+      "b_prop": "R256-P04",
+      "source": "docs/research/256_r7_owner_amendment_acceptance_research218_supersession_and_r8_entry.md",
+      "anchor": "## 2. Accepted amendments",
+      "similarity": 0.7483443708609272
+    },
+    {
+      "a_prop": "S028-U24-P2",
+      "b_prop": "S028-P55",
+      "source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "anchor": "## 43. Authority-switch prohibition",
+      "similarity": 0.7415730337078652
+    },
+    {
+      "a_prop": "R256-U03-P4",
+      "b_prop": "R256-P06",
+      "source": "docs/research/256_r7_owner_amendment_acceptance_research218_supersession_and_r8_entry.md",
+      "anchor": "## 2. Accepted amendments",
+      "similarity": 0.7317073170731707
+    },
+    {
+      "a_prop": "R272-U03-P3",
+      "b_prop": "R272-P05",
+      "source": "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+      "anchor": "## 2. Accepted representation architecture",
+      "similarity": 0.7232472324723247
+    },
+    {
+      "a_prop": "R272-U08-P1",
+      "b_prop": "R272-P17",
+      "source": "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+      "anchor": "## 6. Assurance anti-anchoring is now a hard downstream input",
+      "similarity": 0.7218543046357616
+    },
+    {
+      "a_prop": "R272-U01-P1",
+      "b_prop": "R272-P01",
+      "source": "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+      "anchor": "## 2. Accepted representation architecture",
+      "similarity": 0.71875
+    },
+    {
+      "a_prop": "S028-U13-P1",
+      "b_prop": "S028-P16",
+      "source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "anchor": "## 27. Capture and promotion",
+      "similarity": 0.7058823529411765
+    },
+    {
+      "a_prop": "R272-U02-P1",
+      "b_prop": "R272-P02",
+      "source": "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+      "anchor": "## 2. Accepted representation architecture",
+      "similarity": 0.6956521739130435
+    },
+    {
+      "a_prop": "R272-U04-P2",
+      "b_prop": "R272-P07",
+      "source": "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+      "anchor": "## 2. Accepted representation architecture",
+      "similarity": 0.6901960784313725
+    },
+    {
+      "a_prop": "R311-U07-P1",
+      "b_prop": "R311-P16",
+      "source": "docs/research/311_warrant_f_v02_owner_acceptance_r8c_closure_and_ao10_reconciliation_entry.md",
+      "anchor": "### P-H current host capability",
+      "similarity": 0.676923076923077
+    },
+    {
+      "a_prop": "S028-U14-P3",
+      "b_prop": "S028-P19",
+      "source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "anchor": "## 34. Integration with existing repository integrity",
+      "similarity": 0.6666666666666666
+    },
+    {
+      "a_prop": "S028-U07-P1",
+      "b_prop": "S028-P05",
+      "source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "anchor": "## 12. Relation semantics",
+      "similarity": 0.6542056074766355
+    },
+    {
+      "a_prop": "S028-U16-P1",
+      "b_prop": "S028-P20",
+      "source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "anchor": "### W0 \u2014 implementation substrate",
+      "similarity": 0.6390977443609023
+    },
+    {
+      "a_prop": "S028-U11-P2",
+      "b_prop": "S028-P14",
+      "source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "anchor": "## 26. Reconstruction planner",
+      "similarity": 0.6270270270270271
+    },
+    {
+      "a_prop": "S028-U17-P1",
+      "b_prop": "S028-P39",
+      "source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "anchor": "### W1 \u2014 live control semantics",
+      "similarity": 0.6090712742980562
+    },
+    {
+      "a_prop": "S028-U09-P1",
+      "b_prop": "S028-P09",
+      "source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "anchor": "## 18. Source-revision descriptor",
+      "similarity": 0.5882352941176471
+    }
+  ]
+}

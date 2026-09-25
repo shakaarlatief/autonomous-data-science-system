@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-25
-**Status:** MC-0029 OPEN / V0.3 FROZEN / DRP-03 BOTH REVIEWERS FROZEN / COMPARISON NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / DRP-03 AMEND / V0.4 CANDIDATE / CLAUDE CRITIQUE NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -39,9 +39,11 @@ Research 319 froze DRP-05a/05b against all 65 mechanically selected non-merge co
 
 Research 321 froze DRP-01, Research 322 froze ChatGPT Annotation A, and Claude committed independent Annotation B at b6ba5d22239626b01097add55118b266aed1f633 while blind to A. Research 323 records the frozen comparison result: PASS. Both reviewers independently admit the same six candidate shared primitives, reject all four negative controls, satisfy role-granularity thresholds, and never use path as identity/authority. Admitted-set Jaccard is 1.00. Exact governing-status vocabulary remains deliberately provisional, with Claude's scoped-supersession, stale-status and EFFECT_WITHHELD findings retained as successor-contract design inputs.
 
-Research 324 froze the DRP-03 obligation-unit review harness. Claude reviewer A is now frozen at commit b9fba658e422279d8f8b8193b8c1bda88302dcda / blob 56ecc1da7677a6be450b3b38beaa9266d6ffb8a8. Research 325 freezes ChatGPT reviewer B at SHA-256 39410f682818ee558defe3fb1fd8d582d14835d2f22d76733d101bb0e4813737. ChatGPT did not inspect Claude reviewer A contents before completing reviewer B. The asymmetry remains explicit: Claude was blind to the hidden evaluator key; ChatGPT authored that key.
+The frozen DRP-03 comparison is complete. Research 326 records AMEND: proposition-set F1 is 0.4983 against the frozen 0.85 threshold and grouping F1 is 0.6753 against 0.70. Both reviewers found all three sensitivity witnesses, both produced zero negative-control units, and all seven derived-state fixtures pass. The reviewer-A 0.70 false-gap rate is not decision-usable because the hidden key matched expected reviewer wording rather than stable gate identity; that submetric defect cannot change the independent AMEND because the proposition and grouping criteria already fail.
 
-Next: validate both reviewer artifacts and execute the already-frozen DRP-03 comparison harness without changing corpus, thresholds, evaluator key or reviewer output.
+Research 326 proposes a V0.4 acceptance-bound normative-delta / ObligationDeclarationSet mechanism and an R2 method using frozen source-item identities rather than paraphrase matching.
+
+Next: Claude adversarial critique of Research 326 before any DRP-03 R2 harness is frozen.
 
 Owner decision and all production/migration/authority actions remain held.
 

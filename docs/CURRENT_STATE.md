@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 662
+**Checkpoint:** 663
 **Date:** 2026-09-25
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -1299,3 +1299,5 @@ Checkpoint 660 records Research 323 / DRP-01 PASS after Claude's independent Ann
 Checkpoint 661 freezes Research 324 / DRP-03 obligation-unit review harness. The protocol now has a base-bound accepted-event/governing-trace/support corpus, fully derived realization-state semantics, independent proposition matching, pairwise unit-grouping comparison, three preregistered sensitivity witnesses, a hidden ten-control W0-W4 false-gap key, negative controls and seven state-derivation fixtures. Claude is reviewer A and must remain blind to evaluator_key.json, Research 324, probe.py and any future ChatGPT DRP-03 annotation until its own JSON is committed. No DRP-03 result has been observed. Next is Claude reviewer A.
 
 Checkpoint 662 freezes Research 325 / DRP-03 reviewer B. Claude reviewer A is present at b9fba658e422279d8f8b8193b8c1bda88302dcda with blob 56ecc1da7677a6be450b3b38beaa9266d6ffb8a8. ChatGPT reviewer B is frozen at SHA-256 39410f682818ee558defe3fb1fd8d582d14835d2f22d76733d101bb0e4813737 after 60 ObligationUnits and 136 normalized propositions across the ten frozen primary sources. ChatGPT did not inspect Claude A contents before reviewer B was authored. Claude is the evaluator-key-blind specificity reviewer; ChatGPT is independent of Claude A but not blind to the key it authored. Both reviewers are now frozen and the DRP-03 comparison may run. No result has yet been observed.
+
+Checkpoint 663 records Research 326 / DRP-03 AMEND. The frozen two-reviewer run yields proposition F1 0.49829351535836175 (<0.85) and unit-grouping F1 0.6753246753246753 (<0.70), while both reviewers surface all three required material witnesses, both create zero negative-control obligations, and all seven realization-state fixtures pass. The hidden false-gap key's reviewer-A 0.70 rate is not decision-usable because seven W0/W1 controls were keyed to expected proposition wording while Claude represented those accepted gate families as grouped OPERATIONAL units; the primary AMEND remains independently valid. Research 326 proposes V0.4: obligation authority is born from an acceptance-bound normative delta, retrospective legacy extraction remains candidate-only pending governed reconciliation, and realization state remains fully derived. Claude adversarial critique is next before DRP-03 R2 is frozen.
