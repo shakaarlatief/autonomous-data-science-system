@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP05_HARNESS_FROZEN",
+  "phase": "DRP05_PASS_DRP01_FREEZE_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -65,14 +65,14 @@
       "Claude Message 003 completed comparative critique at 79b915894e0b055aadea05fe7d5767aa223d423e.",
       "Research 315 / Message 004 reconcile Message 003 into V0.3 and route MC-0029 to DRP-01 through DRP-09 preregistration."
     ],
-    "notes": "DRP-09 is PASS. Research 319 freezes DRP-05a/05b against 65 mechanically selected real Git events from MC-0028 opening through the DRP-09 result commit. No DRP-05 result has been observed."
+    "notes": "Valid DRP results: DRP-09 PASS; DRP-05a PASS; DRP-05b PASS_DETECTIVE_FIRST. No unresolved AMEND or active HARNESS_INVALID result. DRP-01 corpus/harness freeze is next."
   },
   "last_transition": {
-    "transition_id": "mc0029-drp05-harness-frozen",
+    "transition_id": "mc0029-drp05-pass",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 319 freezes the DRP-05a/05b 65-event real Git corpus, ActionShape contract, mediation contract and controls before scored execution.",
-    "repository_head": "500de961fcfe6c4eaa017cf564ecb5d65ff158e7"
+    "reason": "Research 320 records DRP-05a PASS and DRP-05b PASS_DETECTIVE_FIRST over the frozen 65-event corpus. V0.3 ActionShape and mediation-specific AO semantics are retained; DRP-01 freeze is next.",
+    "repository_head": "240e3246d18c5d375e1f04d9f00f0c879fe27965"
   }
 }

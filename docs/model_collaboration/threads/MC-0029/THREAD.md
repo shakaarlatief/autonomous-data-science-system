@@ -1,7 +1,7 @@
 # MC-0029 Thread: Specification 028 Reconciliation and AO-10 Realization Design
 
 **Thread:** MC-0029
-**Status:** OPEN / V0.3 FROZEN / DRP-05A/05B HARNESS FROZEN / EXECUTION NEXT
+**Status:** OPEN / V0.3 FROZEN / DRP-05A/05B PASS / DRP-01 FREEZE NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** 0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
@@ -31,7 +31,8 @@ Independently derive Specification 028 reconciliation and AO-10 realization arch
     DRP-09 fixture + harness freeze             COMPLETE / Research 317
     DRP-09 scored execution                    COMPLETE / PASS / Research 318
     DRP-05a/05b corpus + harness freeze         COMPLETE / Research 319
-    DRP-05a/05b scored execution                NEXT
+    DRP-05a/05b scored execution                COMPLETE / PASS + PASS_DETECTIVE_FIRST / Research 320
+    DRP-01 corpus + harness freeze              NEXT
     remaining decision probes                  AFTER FROZEN HARNESS PER PROBE
     owner decision                             AFTER RECONCILED EVIDENCE
 
@@ -59,7 +60,7 @@ Claude may write only:
     docs/model_collaboration/threads/MC-0029/messages/**
 
     MC0029=OPEN
-    PHASE=DRP05_HARNESS_FROZEN
+    PHASE=DRP05_PASS_DRP01_FREEZE_NEXT
     INDEPENDENT_BASE=0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
     CHATGPT_CANDIDATE=RESEARCH312
     CLAUDE_MESSAGE_001=COMPLETE
