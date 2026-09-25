@@ -1,7 +1,7 @@
 # MC-0029 Thread: Specification 028 Reconciliation and AO-10 Realization Design
 
 **Thread:** MC-0029
-**Status:** OPEN / DRP-03 R1 AMEND / V0.6 + R2 PROTOCOL V0.2 CANDIDATE / FINAL CLAUDE REVIEW NEXT
+**Status:** OPEN / V0.7 + R2 PROTOCOL V0.3 FREEZE CANDIDATE / OWNER M-1 DEFERRAL DECISION REQUIRED
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** 0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
@@ -46,8 +46,11 @@ Independently derive Specification 028 reconciliation and AO-10 realization arch
     DRP-03 R2 exact preregistration candidate   COMPLETE / Research 328
     Claude R2 protocol adversarial review        COMPLETE / AMEND / e52dff02 / Message 008
     ChatGPT Message 008 reconciliation            COMPLETE / Research 329 / V0.6 + R2 V0.2
-    Claude final R2 protocol review               NEXT / Message 009
-    DRP-03 R2 key/harness freeze                  AFTER FINAL PROTOCOL RECONCILIATION
+    Claude final R2 protocol review               COMPLETE / AMEND / c41bae5b / Message 009
+    ChatGPT Message 009 reconciliation            COMPLETE / Research 330 / V0.7 + R2 V0.3
+    Owner M-1 deferral decision                   NEXT
+    Public R2 protocol assets freeze              AFTER OWNER DECISION
+    DRP-03 hidden key construction                AFTER PUBLIC FREEZE
     DRP-03 R2                                    AFTER HARNESS FREEZE
     remaining decision probes                  AFTER REQUALIFIED DRP-03 WHERE DEPENDENT
     owner decision                             AFTER RECONCILED EVIDENCE
@@ -76,7 +79,7 @@ Claude may write only:
     docs/model_collaboration/threads/MC-0029/messages/**
 
     MC0029=OPEN
-    PHASE=DRP03_R2_PROTOCOL_V02_FINAL_CLAUDE_REVIEW_NEXT
+    PHASE=DRP03_R2_V03_OWNER_M1_DEFERRAL_DECISION_REQUIRED
     INDEPENDENT_BASE=0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
     CHATGPT_CANDIDATE=RESEARCH312
     CLAUDE_MESSAGE_001=COMPLETE
@@ -111,3 +114,9 @@ Claude may write only:
     R2_HARNESS=NOT_CREATED
     CLAUDE_MESSAGE_009=NEXT
     NEXT=CLAUDE04_FINAL_R2_PROTOCOL_REVIEW
+    CLAUDE_MESSAGE_009=COMPLETE
+    RESEARCH330=V07_AND_R2_PROTOCOL_V03_FREEZE_CANDIDATE
+    M1_DEFERRAL=OWNER_DECISION_REQUIRED
+    R2_KEY=NOT_CREATED
+    R2_HARNESS=NOT_CREATED
+    NEXT=OWNER_M1_DEFERRAL_DECISION

@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-25
-**Status:** MC-0029 OPEN / DRP-03 R1 AMEND / V0.6 + R2 V0.2 CANDIDATE / FINAL CLAUDE REVIEW NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / V0.7 + R2 V0.3 FREEZE CANDIDATE / OWNER M-1 DEFERRAL DECISION REQUIRED / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -45,13 +45,15 @@ Research 327 reconciles every Message 007 requirement into V0.5. Obligation birt
 
 The durable R1 result evidence is now explicitly bound to GIT_BLOB_BYTES_AT_COMMIT SHA-256 f2e7b9071320079d5b239ef38b1d1d9f252a6af36d3a574e16df081dd09b8966; Research 326's a5a7... value is retained as the Windows CRLF working-tree observation rather than canonical repository evidence.
 
-Claude Message 008 returned AMEND. Research 329 reconciles all R2P-1 through R2P-15 into V0.6 and R2 protocol V0.2. The accepted-event pool is now mechanically enumerated from first-parent history, AO9 P7 D01/D02/D03 are split into separate temporally fair events, reviewers receive bounded whole-document packets rather than repository snapshots, and the historical E259 owner-added-delta metric is removed as untestable without verbatim owner evidence.
+Claude Message 009 returned AMEND. Research 330 reconciles F-1 through F-21 into V0.7 and R2 Protocol V0.3. The event split now operates on proposal-source clusters, eliminating development/held-out leakage across shared Research 234 items. The authoritative V0.3 machine file records 11 events, 9 proposal clusters, 8 primary held-out real events across 6 primary held-out clusters, decision-time-delta exclusion/reporting, RESTATED-neutral treatment, minimal decision-input provenance, and the historical OWNER_NORMATIVE_CLARIFICATION blind spot.
 
-R2 now requires two independent hidden-key authors with a pre-reviewer construct-validity gate, owner adjudication of material key disagreements without erasing poor agreement, a capped ambiguity set, MUST_JOIN/MUST_SPLIT grouping constraints, two fresh blind decision reviewers, reviewer-inaccessible key storage with public hash commitments, separate BIRTH/LEGACY/STATE result classes, and explicit INCONCLUSIVE / CONSTRUCT_UNDERDETERMINED / HARNESS_INVALID outcomes. M-1 through M-6 are carried explicitly; historical owner rubber-stamp efficacy remains untested rather than assumed.
+The protocol now adds a two-author construct gate with prevalence and positive-specific-agreement measures, per-event ambiguity denominators, exact MUST_JOIN/MUST_SPLIT scoring and floors, revised structured-block/table segmentation, packet-generator commitments before key authoring, material/realization item floors, cluster-bootstrap uncertainty, independent LEGACY repository evidence, two-author STATE expected outputs, stricter reviewer freshness, maximum-attempt/no-retry-to-green rules, expanded COST_CARRY, and N-1 through N-4 controls.
 
-No hidden R2 evaluator key, executable harness, or reviewer annotation exists.
+F-21 requires a valid governed deferral for the historically untested M-1 owner rubber-stamp / authority-laundering risk. A complete deferral proposal exists, with reactivation before production activation/authority switch/operational reliance and a prospective seeded-error owner-review trial as the future evidence path. It is not valid until the owner explicitly accepts it.
 
-Next: Claude-04 final adversarial review of Research 329 before any R2 freeze.
+No hidden R2 key, labels, executable scoring harness, or reviewer annotation exists.
+
+Next: owner decision on the M-1 DeferralRecord proposal.
 
 Owner decision and all production/migration/authority actions remain held.
 

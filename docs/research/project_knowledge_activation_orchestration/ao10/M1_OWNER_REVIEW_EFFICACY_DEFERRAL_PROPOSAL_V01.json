@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "record_type": "DEFERRAL_PROPOSAL",
+  "record_id": "AO10-M1-OWNER-REVIEW-EFFICACY-DEFERRAL-V01",
+  "status": "OWNER_DECISION_REQUIRED_NOT_YET_VALID",
+  "subject": "M-1 owner rubber-stamp / authority-laundering efficacy test",
+  "obligation_id": "AO10-V07-M1-OWNER-REVIEW-EFFICACY",
+  "governing_authority_required": "OWNER",
+  "authority_decision": null,
+  "blocking_reason": "Historical DRP-03 replay can measure declaration extraction and semantic agreement but cannot validly measure whether the human owner detects material agent-drafted declaration errors before acceptance.",
+  "reactivation_condition": "Before any V0.7 production activation, authority switch, or operational reliance on agent-drafted AcceptanceDeclarationSet semantics as accepted structured interpretation.",
+  "future_evidence_path": {
+    "program": "DRP-08 / dedicated owner-review efficacy qualification",
+    "required_test": "Prospective seeded-error owner-review trial",
+    "minimum_questions": [
+      "Does the owner detect material seeded declaration omissions or misclassifications before acceptance?",
+      "Does the material-items-first projection improve detection without excessive false correction burden?",
+      "What owner intervention and review burden does the mechanism impose?"
+    ]
+  },
+  "temporal_binding": {
+    "candidate_architecture": "Research 330 / V0.7 candidate",
+    "protocol": "DRP-03 R2 Protocol V0.3 candidate",
+    "created_after_message": "MC-0029 Message 009"
+  },
+  "future_evidence_owner": "DRP-08 adoption/ergonomics qualification",
+  "provenance": {
+    "source_failure_mode": "MC-0029 Message 008 M-1, reaffirmed by Message 009 F-21",
+    "drafting_actor": "ChatGPT",
+    "note": "This file is a proposed DeferralRecord shape only. It must not be treated as a valid governed deferral until the owner explicitly accepts it."
+  }
+}

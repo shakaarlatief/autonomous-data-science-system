@@ -1,0 +1,489 @@
+{
+  "schema_version": 2,
+  "status": "R2_PROTOCOL_V03_EVENT_UNIVERSE_CANDIDATE_NOT_FROZEN",
+  "history_window": {
+    "first_parent_start_inclusive": "1435b02729edaf416c8196f224e1cf49c1dd715b",
+    "first_parent_end_inclusive": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d"
+  },
+  "mechanical_candidate_rule": {
+    "history": "first-parent only",
+    "subject_regex": "^(Accept\\b|Apply AO9 P7\\b)",
+    "include_every_match": true,
+    "split_rule": "first_32_bits(SHA256(canonical_cluster_payload)) mod 3; 0=DEVELOPMENT, 1|2=HELD_OUT",
+    "subject_regex_rationale": "Accept captures explicit acceptance commits in the frozen window. Apply AO9 P7 is the event-specific inclusion needed because P7-D01 was an owner AMEND committed under Apply rather than Accept.",
+    "cluster_rule": "Build connected components over events that share any proposal source path. Canonical cluster payload is newline-joined sorted event_ids."
+  },
+  "reviewer_packet_boundary": {
+    "full_repository_snapshot_visible": false,
+    "proposal_sources": "whole documents only, resolved at pre_acceptance_snapshot",
+    "forbidden_live_state_surfaces": [
+      "docs/CURRENT_STATE.md",
+      "docs/current_routing.json",
+      "docs/checkpoints/**"
+    ],
+    "acceptance_record_visible_during_authoring": false,
+    "temporal_fairness": "every packet blob must exist at pre_acceptance_snapshot; no content first introduced by the acceptance commit or later may enter the predecision packet",
+    "decision_time_delta": "Any accepted meaning determinable only from acceptance-record content is tagged DECISION_TIME_DELTA by key authors, excluded from reviewer precision/recall, and counted per event.",
+    "restatement": "Items already governing before the event are tagged RESTATED and are neutral for reviewer precision/recall; novelty is not scored by the reviewer.",
+    "proposal_scope": "whole proposal documents only; no heading curation"
+  },
+  "events": [
+    {
+      "event_id": "EV-1435b027",
+      "acceptance_commit": "1435b02729edaf416c8196f224e1cf49c1dd715b",
+      "pre_acceptance_snapshot": "b908fe0e0230383feedc0f97df17e615daf0ea63",
+      "commit_subject": "Apply AO9 P7 D01 amendment",
+      "event_kind": "REQUIREMENT_ACCEPTANCE_OR_AMENDMENT",
+      "proposal_sources": [
+        "docs/research/234_ao9_p6_reconciliation_and_owner_decision_boundary.md"
+      ],
+      "decision_input": "P7-D01 / AO8-E01 = AMEND",
+      "split": "HELD_OUT",
+      "birth_scoring_eligibility": "PRIMARY_BIRTH_ELIGIBLE",
+      "notes": [],
+      "proposal_source_cluster_id": "CL-d5bcbc1b837d",
+      "cluster_split_hash_mod3": 1,
+      "decision_input_provenance": {
+        "source_type": "HISTORICAL_OWNER_DECISION_TOKEN_AGENT_TRANSCRIPTION",
+        "acceptance_commit": "1435b02729edaf416c8196f224e1cf49c1dd715b",
+        "reviewer_visible": "MINIMAL_DECISION_TOKEN_ONLY",
+        "verbatim_owner_authorship_proven": false,
+        "note": "Historical decision token is preserved by project records but is not a platform-exported verbatim owner message."
+      },
+      "decision_time_delta_policy": "EXCLUDE_FROM_REVIEWER_PRECISION_RECALL_AND_REPORT_COUNT",
+      "restatement_policy": "RESTATED_NEUTRAL_FOR_REVIEWER_PRECISION_RECALL"
+    },
+    {
+      "event_id": "EV-02847e6a",
+      "acceptance_commit": "02847e6a608d0c0fa2bc3cb8a2a3d93fef981df5",
+      "pre_acceptance_snapshot": "1435b02729edaf416c8196f224e1cf49c1dd715b",
+      "commit_subject": "Accept AO9 P7 D02 requirement",
+      "event_kind": "REQUIREMENT_ACCEPTANCE_OR_AMENDMENT",
+      "proposal_sources": [
+        "docs/research/234_ao9_p6_reconciliation_and_owner_decision_boundary.md"
+      ],
+      "decision_input": "P7-D02 / KA-R51 = ACCEPT_REQUIREMENT",
+      "split": "HELD_OUT",
+      "birth_scoring_eligibility": "PRIMARY_BIRTH_ELIGIBLE",
+      "notes": [],
+      "proposal_source_cluster_id": "CL-d5bcbc1b837d",
+      "cluster_split_hash_mod3": 1,
+      "decision_input_provenance": {
+        "source_type": "HISTORICAL_OWNER_DECISION_TOKEN_AGENT_TRANSCRIPTION",
+        "acceptance_commit": "02847e6a608d0c0fa2bc3cb8a2a3d93fef981df5",
+        "reviewer_visible": "MINIMAL_DECISION_TOKEN_ONLY",
+        "verbatim_owner_authorship_proven": false,
+        "note": "Historical decision token is preserved by project records but is not a platform-exported verbatim owner message."
+      },
+      "decision_time_delta_policy": "EXCLUDE_FROM_REVIEWER_PRECISION_RECALL_AND_REPORT_COUNT",
+      "restatement_policy": "RESTATED_NEUTRAL_FOR_REVIEWER_PRECISION_RECALL"
+    },
+    {
+      "event_id": "EV-6c1a51c4",
+      "acceptance_commit": "6c1a51c490c863c34486a1bcb186939675b25071",
+      "pre_acceptance_snapshot": "02847e6a608d0c0fa2bc3cb8a2a3d93fef981df5",
+      "commit_subject": "Accept AO9 P7 D03 and close AO9",
+      "event_kind": "REQUIREMENT_ACCEPTANCE_OR_AMENDMENT",
+      "proposal_sources": [
+        "docs/research/234_ao9_p6_reconciliation_and_owner_decision_boundary.md"
+      ],
+      "decision_input": "P7-D03 / KA-R52 = ACCEPT_REQUIREMENT",
+      "split": "HELD_OUT",
+      "birth_scoring_eligibility": "PRIMARY_BIRTH_ELIGIBLE",
+      "notes": [],
+      "proposal_source_cluster_id": "CL-d5bcbc1b837d",
+      "cluster_split_hash_mod3": 1,
+      "decision_input_provenance": {
+        "source_type": "HISTORICAL_OWNER_DECISION_TOKEN_AGENT_TRANSCRIPTION",
+        "acceptance_commit": "6c1a51c490c863c34486a1bcb186939675b25071",
+        "reviewer_visible": "MINIMAL_DECISION_TOKEN_ONLY",
+        "verbatim_owner_authorship_proven": false,
+        "note": "Historical decision token is preserved by project records but is not a platform-exported verbatim owner message."
+      },
+      "decision_time_delta_policy": "EXCLUDE_FROM_REVIEWER_PRECISION_RECALL_AND_REPORT_COUNT",
+      "restatement_policy": "RESTATED_NEUTRAL_FOR_REVIEWER_PRECISION_RECALL"
+    },
+    {
+      "event_id": "EV-33af3544",
+      "acceptance_commit": "33af35442df7350d9571e4f59108c393759ad4b3",
+      "pre_acceptance_snapshot": "a2341810c0e8a91d3e71c2c26ad2624d1aaa87a2",
+      "commit_subject": "Accept G-DUAL and preserve from-scratch lower levels",
+      "event_kind": "OWNER_DECISION_ACCEPTANCE",
+      "proposal_sources": [
+        "docs/research/245_whole_repository_r5_root_role_derivation_and_recommended_target.md"
+      ],
+      "decision_input": "ACCEPT G-DUAL Level-1 target",
+      "split": "DEVELOPMENT",
+      "birth_scoring_eligibility": "PRIMARY_BIRTH_ELIGIBLE",
+      "notes": [],
+      "proposal_source_cluster_id": "CL-e3bb466eefe8",
+      "cluster_split_hash_mod3": 0,
+      "decision_input_provenance": {
+        "source_type": "HISTORICAL_OWNER_DECISION_TOKEN_AGENT_TRANSCRIPTION",
+        "acceptance_commit": "33af35442df7350d9571e4f59108c393759ad4b3",
+        "reviewer_visible": "MINIMAL_DECISION_TOKEN_ONLY",
+        "verbatim_owner_authorship_proven": false,
+        "note": "Historical decision token is preserved by project records but is not a platform-exported verbatim owner message."
+      },
+      "decision_time_delta_policy": "EXCLUDE_FROM_REVIEWER_PRECISION_RECALL_AND_REPORT_COUNT",
+      "restatement_policy": "RESTATED_NEUTRAL_FOR_REVIEWER_PRECISION_RECALL"
+    },
+    {
+      "event_id": "EV-8c85be87",
+      "acceptance_commit": "8c85be872f11b9a09b2a3f2cef8b52add2072a56",
+      "pre_acceptance_snapshot": "3aebde8aca9e0daf69ddcf5cdac073a7eea13eb8",
+      "commit_subject": "Accept G-DUAL amendment and unblock R6",
+      "event_kind": "OWNER_DECISION_ACCEPTANCE",
+      "proposal_sources": [
+        "docs/research/247_g_dual_adversarial_reconciliation_and_proposed_level1_amendment.md"
+      ],
+      "decision_input": "AMEND G-DUAL",
+      "split": "HELD_OUT",
+      "birth_scoring_eligibility": "PRIMARY_BIRTH_ELIGIBLE",
+      "notes": [],
+      "proposal_source_cluster_id": "CL-250bc98b54b0",
+      "cluster_split_hash_mod3": 1,
+      "decision_input_provenance": {
+        "source_type": "HISTORICAL_OWNER_DECISION_TOKEN_AGENT_TRANSCRIPTION",
+        "acceptance_commit": "8c85be872f11b9a09b2a3f2cef8b52add2072a56",
+        "reviewer_visible": "MINIMAL_DECISION_TOKEN_ONLY",
+        "verbatim_owner_authorship_proven": false,
+        "note": "Historical decision token is preserved by project records but is not a platform-exported verbatim owner message."
+      },
+      "decision_time_delta_policy": "EXCLUDE_FROM_REVIEWER_PRECISION_RECALL_AND_REPORT_COUNT",
+      "restatement_policy": "RESTATED_NEUTRAL_FOR_REVIEWER_PRECISION_RECALL"
+    },
+    {
+      "event_id": "EV-39a5f8f6",
+      "acceptance_commit": "39a5f8f66d78a1c355c3300d110d24121f796deb",
+      "pre_acceptance_snapshot": "26de53ff02df8b9a32ad195d211f634f0a9be500",
+      "commit_subject": "Accept R6 bounded-context architecture",
+      "event_kind": "OWNER_DECISION_ACCEPTANCE",
+      "proposal_sources": [
+        "docs/research/250_r6a_responsibility_coupling_bounded_context_and_workspace_synthesis.md"
+      ],
+      "decision_input": "ACCEPT R6 bounded-context architecture",
+      "split": "DEVELOPMENT",
+      "birth_scoring_eligibility": "PRIMARY_BIRTH_ELIGIBLE",
+      "notes": [],
+      "proposal_source_cluster_id": "CL-6b5fb8a6586f",
+      "cluster_split_hash_mod3": 0,
+      "decision_input_provenance": {
+        "source_type": "HISTORICAL_OWNER_DECISION_TOKEN_AGENT_TRANSCRIPTION",
+        "acceptance_commit": "39a5f8f66d78a1c355c3300d110d24121f796deb",
+        "reviewer_visible": "MINIMAL_DECISION_TOKEN_ONLY",
+        "verbatim_owner_authorship_proven": false,
+        "note": "Historical decision token is preserved by project records but is not a platform-exported verbatim owner message."
+      },
+      "decision_time_delta_policy": "EXCLUDE_FROM_REVIEWER_PRECISION_RECALL_AND_REPORT_COUNT",
+      "restatement_policy": "RESTATED_NEUTRAL_FOR_REVIEWER_PRECISION_RECALL"
+    },
+    {
+      "event_id": "EV-1d91d0db",
+      "acceptance_commit": "1d91d0dbed289cad7cc0ce06a4268a685910ff87",
+      "pre_acceptance_snapshot": "66996189ed772df0cc32038fdb63d232e05bfde5",
+      "commit_subject": "Accept amended R7 architecture and unblock R8",
+      "event_kind": "OWNER_DECISION_ACCEPTANCE",
+      "proposal_sources": [
+        "docs/research/255_r218_vs_r7_comparative_reconciliation_and_amended_r7_target_candidate.md"
+      ],
+      "decision_input": "AMEND / accept R7 as amended",
+      "split": "HELD_OUT",
+      "birth_scoring_eligibility": "PRIMARY_BIRTH_ELIGIBLE",
+      "notes": [],
+      "proposal_source_cluster_id": "CL-305658705fc9",
+      "cluster_split_hash_mod3": 1,
+      "decision_input_provenance": {
+        "source_type": "HISTORICAL_OWNER_DECISION_TOKEN_AGENT_TRANSCRIPTION",
+        "acceptance_commit": "1d91d0dbed289cad7cc0ce06a4268a685910ff87",
+        "reviewer_visible": "MINIMAL_DECISION_TOKEN_ONLY",
+        "verbatim_owner_authorship_proven": false,
+        "note": "Historical decision token is preserved by project records but is not a platform-exported verbatim owner message."
+      },
+      "decision_time_delta_policy": "EXCLUDE_FROM_REVIEWER_PRECISION_RECALL_AND_REPORT_COUNT",
+      "restatement_policy": "RESTATED_NEUTRAL_FOR_REVIEWER_PRECISION_RECALL"
+    },
+    {
+      "event_id": "EV-18199147",
+      "acceptance_commit": "181991476bb7091f30235674acf6bfb2b065df59",
+      "pre_acceptance_snapshot": "7e9dafd675611632769a482cffca69661567a00e",
+      "commit_subject": "Accept amended R8-A and freeze representation freedom",
+      "event_kind": "OWNER_DECISION_ACCEPTANCE",
+      "proposal_sources": [
+        "docs/research/258_mc0025_r8a_adversarial_reconciliation_and_amended_exact_target_candidate.md"
+      ],
+      "decision_input": "AMEND / accept R8-A as amended",
+      "split": "HELD_OUT",
+      "birth_scoring_eligibility": "PRIMARY_BIRTH_ELIGIBLE",
+      "notes": [
+        "Historical owner-added clarification is not scored as verbatim-delta capture because no repository-native verbatim owner message is bound to the event."
+      ],
+      "proposal_source_cluster_id": "CL-8d7bc36a3a37",
+      "cluster_split_hash_mod3": 1,
+      "decision_input_provenance": {
+        "source_type": "HISTORICAL_OWNER_DECISION_TOKEN_AGENT_TRANSCRIPTION",
+        "acceptance_commit": "181991476bb7091f30235674acf6bfb2b065df59",
+        "reviewer_visible": "MINIMAL_DECISION_TOKEN_ONLY",
+        "verbatim_owner_authorship_proven": false,
+        "note": "Historical decision token is preserved by project records but is not a platform-exported verbatim owner message."
+      },
+      "decision_time_delta_policy": "EXCLUDE_FROM_REVIEWER_PRECISION_RECALL_AND_REPORT_COUNT",
+      "restatement_policy": "RESTATED_NEUTRAL_FOR_REVIEWER_PRECISION_RECALL"
+    },
+    {
+      "event_id": "EV-46bc4eeb",
+      "acceptance_commit": "46bc4eeb74998d70d212c26acc7c8b8d2f0e1c3f",
+      "pre_acceptance_snapshot": "902fcfd15450a7ba3fb9f3e3542ef33790cf9af9",
+      "commit_subject": "Accept MC-0027 audit and freeze corrected representation probe",
+      "event_kind": "OWNER_DECISION_ACCEPTANCE",
+      "proposal_sources": [
+        "docs/research/263_mc0026_final_reconciliation_and_preregistered_r8b_representation_probe.md",
+        "docs/model_collaboration/threads/MC-0027/messages/001_claude_p_r8b_01_result_audit.md"
+      ],
+      "decision_input": "ACCEPT MC-0027 audit and corrected-probe direction",
+      "split": "HELD_OUT",
+      "birth_scoring_eligibility": "SECONDARY_STRESS_ONLY_PREDECISION_PACKAGE_INCOMPLETE",
+      "notes": [
+        "The final ChatGPT reconciliation was created in the acceptance commit, so this event cannot establish primary proposal-time birth performance."
+      ],
+      "proposal_source_cluster_id": "CL-2d7f700b1baa",
+      "cluster_split_hash_mod3": 1,
+      "decision_input_provenance": {
+        "source_type": "HISTORICAL_OWNER_DECISION_TOKEN_AGENT_TRANSCRIPTION",
+        "acceptance_commit": "46bc4eeb74998d70d212c26acc7c8b8d2f0e1c3f",
+        "reviewer_visible": "MINIMAL_DECISION_TOKEN_ONLY",
+        "verbatim_owner_authorship_proven": false,
+        "note": "Historical decision token is preserved by project records but is not a platform-exported verbatim owner message."
+      },
+      "decision_time_delta_policy": "EXCLUDE_FROM_REVIEWER_PRECISION_RECALL_AND_REPORT_COUNT",
+      "restatement_policy": "RESTATED_NEUTRAL_FOR_REVIEWER_PRECISION_RECALL"
+    },
+    {
+      "event_id": "EV-6e627e53",
+      "acceptance_commit": "6e627e539e44b2619de7893cd64b47bc5cb3d422",
+      "pre_acceptance_snapshot": "aa0eda73685f6f91d107db99db2d1d7f7f560a1e",
+      "commit_subject": "Accept WMR-H V0.3 and close MC-0027",
+      "event_kind": "OWNER_DECISION_ACCEPTANCE",
+      "proposal_sources": [
+        "docs/research/266_mc0027_audit_reconciliation_wmrh_v03_and_corrected_probe_contract.md",
+        "docs/research/271_p_r8b_01_r2_attempt3_pass_wmrh_v03_owner_decision_ready.md"
+      ],
+      "decision_input": "ACCEPT WMR-H V0.3",
+      "split": "HELD_OUT",
+      "birth_scoring_eligibility": "PRIMARY_BIRTH_ELIGIBLE",
+      "notes": [],
+      "proposal_source_cluster_id": "CL-138914963583",
+      "cluster_split_hash_mod3": 2,
+      "decision_input_provenance": {
+        "source_type": "HISTORICAL_OWNER_DECISION_TOKEN_AGENT_TRANSCRIPTION",
+        "acceptance_commit": "6e627e539e44b2619de7893cd64b47bc5cb3d422",
+        "reviewer_visible": "MINIMAL_DECISION_TOKEN_ONLY",
+        "verbatim_owner_authorship_proven": false,
+        "note": "Historical decision token is preserved by project records but is not a platform-exported verbatim owner message."
+      },
+      "decision_time_delta_policy": "EXCLUDE_FROM_REVIEWER_PRECISION_RECALL_AND_REPORT_COUNT",
+      "restatement_policy": "RESTATED_NEUTRAL_FOR_REVIEWER_PRECISION_RECALL"
+    },
+    {
+      "event_id": "EV-0a68787a",
+      "acceptance_commit": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
+      "pre_acceptance_snapshot": "78b3e7f2d88e1ab6b51a9dfb85cfdc604d6c074c",
+      "commit_subject": "Accept WARRANT-F V0.2 and close R8-C",
+      "event_kind": "OWNER_DECISION_ACCEPTANCE",
+      "proposal_sources": [
+        "docs/research/276_owner_total_architecture_freedom_and_warrant_f_v02_reconciliation.md",
+        "docs/research/308_r8c_eight_probe_reconciliation_owner_decision_readiness.md",
+        "docs/research/309_generalizable_project_operating_architecture_vision_and_evolution_boundary.md",
+        "docs/research/310_whole_architecture_governed_self_improvement_model.md"
+      ],
+      "decision_input": "ACCEPT WARRANT-F V0.2 and R8-A Engineering amendment",
+      "split": "HELD_OUT",
+      "birth_scoring_eligibility": "PRIMARY_BIRTH_ELIGIBLE",
+      "notes": [],
+      "proposal_source_cluster_id": "CL-e908a54f081e",
+      "cluster_split_hash_mod3": 2,
+      "decision_input_provenance": {
+        "source_type": "HISTORICAL_OWNER_DECISION_TOKEN_AGENT_TRANSCRIPTION",
+        "acceptance_commit": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
+        "reviewer_visible": "MINIMAL_DECISION_TOKEN_ONLY",
+        "verbatim_owner_authorship_proven": false,
+        "note": "Historical decision token is preserved by project records but is not a platform-exported verbatim owner message."
+      },
+      "decision_time_delta_policy": "EXCLUDE_FROM_REVIEWER_PRECISION_RECALL_AND_REPORT_COUNT",
+      "restatement_policy": "RESTATED_NEUTRAL_FOR_REVIEWER_PRECISION_RECALL"
+    }
+  ],
+  "negative_birth_controls": [
+    {
+      "control_id": "NC-PRINCIPLE-01",
+      "control_type": "CONTROLLED_ACCEPTED_PRINCIPLE_ONLY",
+      "reviewer_visibility": "INDISTINGUISHABLE_PACKET_NO_CONTROL_FLAG",
+      "interleaving": "FROZEN_HASH_DERIVED_POSITION",
+      "purpose": "Exercise CREATES_NO_REALIZATION_UNITS without announcing that a control exists."
+    },
+    {
+      "control_id": "NC-DISPOSITION-01",
+      "control_type": "CONTROLLED_SELF_EXECUTING_DISPOSITION_ONLY",
+      "reviewer_visibility": "INDISTINGUISHABLE_PACKET_NO_CONTROL_FLAG",
+      "interleaving": "FROZEN_HASH_DERIVED_POSITION",
+      "purpose": "Exercise a self-executing accepted disposition with no follow-on realization unit."
+    }
+  ],
+  "owner_added_delta_metric": {
+    "historical_scored": false,
+    "reason": "No historical event in this candidate set has a repository-bound verbatim owner message suitable for unbiased scoring.",
+    "future_rule": "Persist platform-exported verbatim owner decision evidence bound to exact proposal and declaration revisions; if private, use a salted private commitment and public-safe reference. Agent paraphrase is not verbatim evidence.",
+    "historical_owner_normative_clarification_birth": "UNTESTED"
+  },
+  "supersedes": "DRP03_R2_EVENT_UNIVERSE_CANDIDATE_V02.json",
+  "authority_note": "This machine file is authoritative for R2 V0.3 event membership and development/held-out placement. Research 329 section 3 contains a historical prose split defect and is superseded on this point.",
+  "proposal_source_clusters": [
+    {
+      "cluster_id": "CL-138914963583",
+      "canonical_payload": "EV-6e627e53",
+      "sha256": "1389149635830eff947a116c87283d1340fcb09de461a19f87d31f789657a914",
+      "split_hash_mod3": 2,
+      "split": "HELD_OUT",
+      "event_ids": [
+        "EV-6e627e53"
+      ],
+      "proposal_sources": [
+        "docs/research/266_mc0027_audit_reconciliation_wmrh_v03_and_corrected_probe_contract.md",
+        "docs/research/271_p_r8b_01_r2_attempt3_pass_wmrh_v03_owner_decision_ready.md"
+      ]
+    },
+    {
+      "cluster_id": "CL-250bc98b54b0",
+      "canonical_payload": "EV-8c85be87",
+      "sha256": "250bc98b54b019a63d147075c4bca2aa251e65612c3489d636ddccb8ce46afdb",
+      "split_hash_mod3": 1,
+      "split": "HELD_OUT",
+      "event_ids": [
+        "EV-8c85be87"
+      ],
+      "proposal_sources": [
+        "docs/research/247_g_dual_adversarial_reconciliation_and_proposed_level1_amendment.md"
+      ]
+    },
+    {
+      "cluster_id": "CL-2d7f700b1baa",
+      "canonical_payload": "EV-46bc4eeb",
+      "sha256": "2d7f700b1baaebb3b1c045c8352d3752476a681287f8d4c33d6f1ebebbb922fb",
+      "split_hash_mod3": 1,
+      "split": "HELD_OUT",
+      "event_ids": [
+        "EV-46bc4eeb"
+      ],
+      "proposal_sources": [
+        "docs/model_collaboration/threads/MC-0027/messages/001_claude_p_r8b_01_result_audit.md",
+        "docs/research/263_mc0026_final_reconciliation_and_preregistered_r8b_representation_probe.md"
+      ]
+    },
+    {
+      "cluster_id": "CL-305658705fc9",
+      "canonical_payload": "EV-1d91d0db",
+      "sha256": "305658705fc977359b348f7fd8419cc1f4470f59ee81acf0c3ff9c0917f46d15",
+      "split_hash_mod3": 1,
+      "split": "HELD_OUT",
+      "event_ids": [
+        "EV-1d91d0db"
+      ],
+      "proposal_sources": [
+        "docs/research/255_r218_vs_r7_comparative_reconciliation_and_amended_r7_target_candidate.md"
+      ]
+    },
+    {
+      "cluster_id": "CL-6b5fb8a6586f",
+      "canonical_payload": "EV-39a5f8f6",
+      "sha256": "6b5fb8a6586fc4e39cc10d84b9685169c27117cb6f5808a91e2175d2dab1a117",
+      "split_hash_mod3": 0,
+      "split": "DEVELOPMENT",
+      "event_ids": [
+        "EV-39a5f8f6"
+      ],
+      "proposal_sources": [
+        "docs/research/250_r6a_responsibility_coupling_bounded_context_and_workspace_synthesis.md"
+      ]
+    },
+    {
+      "cluster_id": "CL-8d7bc36a3a37",
+      "canonical_payload": "EV-18199147",
+      "sha256": "8d7bc36a3a376a31754b2ced0da110e13406802d0af3efa93b7679669d2f92a7",
+      "split_hash_mod3": 1,
+      "split": "HELD_OUT",
+      "event_ids": [
+        "EV-18199147"
+      ],
+      "proposal_sources": [
+        "docs/research/258_mc0025_r8a_adversarial_reconciliation_and_amended_exact_target_candidate.md"
+      ]
+    },
+    {
+      "cluster_id": "CL-d5bcbc1b837d",
+      "canonical_payload": "EV-02847e6a\nEV-1435b027\nEV-6c1a51c4",
+      "sha256": "d5bcbc1b837da69a22fd23c40d796a7bcc7cce783152c07c2bf99293914deb09",
+      "split_hash_mod3": 1,
+      "split": "HELD_OUT",
+      "event_ids": [
+        "EV-02847e6a",
+        "EV-1435b027",
+        "EV-6c1a51c4"
+      ],
+      "proposal_sources": [
+        "docs/research/234_ao9_p6_reconciliation_and_owner_decision_boundary.md"
+      ]
+    },
+    {
+      "cluster_id": "CL-e3bb466eefe8",
+      "canonical_payload": "EV-33af3544",
+      "sha256": "e3bb466eefe8205d82a77189f0ead2607e6ae55e68043ae429680f7e93115006",
+      "split_hash_mod3": 0,
+      "split": "DEVELOPMENT",
+      "event_ids": [
+        "EV-33af3544"
+      ],
+      "proposal_sources": [
+        "docs/research/245_whole_repository_r5_root_role_derivation_and_recommended_target.md"
+      ]
+    },
+    {
+      "cluster_id": "CL-e908a54f081e",
+      "canonical_payload": "EV-0a68787a",
+      "sha256": "e908a54f081e1e1d7063b85c9c83df8a2d3b92c62ce32a48f0411e743525f1e0",
+      "split_hash_mod3": 2,
+      "split": "HELD_OUT",
+      "event_ids": [
+        "EV-0a68787a"
+      ],
+      "proposal_sources": [
+        "docs/research/276_owner_total_architecture_freedom_and_warrant_f_v02_reconciliation.md",
+        "docs/research/308_r8c_eight_probe_reconciliation_owner_decision_readiness.md",
+        "docs/research/309_generalizable_project_operating_architecture_vision_and_evolution_boundary.md",
+        "docs/research/310_whole_architecture_governed_self_improvement_model.md"
+      ]
+    }
+  ],
+  "clarification_blind_spot": {
+    "historical_owner_normative_clarification_birth": "UNTESTED",
+    "reason": "The event regex intentionally captures explicit Accept and the event-specific Apply AO9 P7 acceptance path. It does not capture clarification/freeze commits that lack a qualifying proposal-time package.",
+    "known_examples": [
+      {
+        "commit": "a9f7b71a5d243f815374e53d8fca96625d84e889",
+        "subject": "Freeze WARRANT-F V0.2 with total design freedom"
+      },
+      {
+        "commit": "ca4ceb67b28313d2f3cd1a0d33f00bcc9f7a586c",
+        "subject": "Reconcile R8-B candidates and freeze assurance freedom"
+      },
+      {
+        "commit": "470a3b4070b7fb72ae474e85696ec6f13bf4b3af",
+        "subject": "Clarify unconstrained repository redesign freedom"
+      },
+      {
+        "commit": "770ad49c9d503f213eeac3d66c611ad38e31ca5b",
+        "subject": "Clarify proactive capability and semantic Git policy"
+      }
+    ],
+    "controlled_negative_coverage_only": true
+  }
+}

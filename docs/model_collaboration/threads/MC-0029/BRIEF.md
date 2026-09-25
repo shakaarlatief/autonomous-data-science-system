@@ -289,3 +289,29 @@ End with:
     REOPEN
 
 and enumerate every remaining change required before a hidden key and executable harness may be frozen.
+
+## Owner M-1 deferral decision
+
+Claude Message 009 is reconciled by Research 330.
+
+No further Claude protocol critique is pending.
+
+The one remaining authority item before public R2 protocol freeze is the M-1 owner-review efficacy deferral.
+
+The proposed DeferralRecord is:
+
+    docs/research/project_knowledge_activation_orchestration/ao10/M1_OWNER_REVIEW_EFFICACY_DEFERRAL_PROPOSAL_V01.json
+
+The owner must explicitly choose:
+
+    ACCEPT_DEFERRAL
+
+or
+
+    REJECT_DEFERRAL
+
+If accepted, the deferred test must reactivate before any V0.7 production activation, authority switch, or operational reliance on agent-drafted AcceptanceDeclarationSet semantics. Its future evidence path is the prospective seeded-error owner-review efficacy trial in DRP-08 / dedicated owner-review qualification.
+
+If rejected, R2/public protocol freeze remains held until the owner-review efficacy issue is addressed by another accepted path.
+
+No hidden key, labels, scoring harness or reviewer annotation may be created before this authority item is resolved and the public protocol assets are frozen.
