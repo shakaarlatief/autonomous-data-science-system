@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "policy_id": "drp09-policy-v01",
+  "subject_id": "integrated-project-system",
+  "subject_revision": "v03-fixture",
+  "required_base_revision": "base-accepted-v02",
+  "required_claims": [
+    "claim:exact-binding",
+    "claim:semantic-contract",
+    "claim:negative-control"
+  ],
+  "consequence_floor": "PROMOTE",
+  "consequence_order": [
+    "OBSERVE",
+    "INTERNAL",
+    "PROMOTE",
+    "AUTHORITY_SWITCH"
+  ],
+  "required_trust_level": "T2",
+  "trust_order": [
+    "T0",
+    "T1",
+    "T2"
+  ],
+  "freshness_max_age_seconds": 3600,
+  "known_profiles": [
+    "standard",
+    "alternate"
+  ],
+  "governed_extra_checks": {
+    "extra:rollback": "claim:rollback-readiness"
+  }
+}

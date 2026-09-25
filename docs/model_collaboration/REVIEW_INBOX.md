@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-25
-**Status:** MC-0029 OPEN / V0.3 FROZEN / DRP PROGRAM PREREGISTERED / DRP-09 FREEZE NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / V0.3 FROZEN / DRP-09 HARNESS FROZEN / EXECUTION NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -33,7 +33,9 @@ The protocol freezes result classes, no-tuning rules, fixture/corpus rules, thre
 
 No result has been observed. No Claude obligation is currently pending. Fresh independent collaboration will be introduced where the frozen protocol requires it.
 
-Next: DRP-09 fixture and harness freeze.
+Research 317 now freezes the DRP-09 policy/case fixture and seeded-violation harness. Pre-execution validation passes, but the scored probe has not run.
+
+Next: execute the exact frozen DRP-09 harness.
 
 Owner decision and all production/migration/authority actions remain held.
 

@@ -1,0 +1,228 @@
+[
+  {
+    "id": "C01_normal",
+    "request": {
+      "subject_id": "integrated-project-system",
+      "subject_revision": "v03-fixture",
+      "base_revision": "base-accepted-v02",
+      "intended_consequence": "PROMOTE",
+      "profile_hint": "standard",
+      "trust_context": {
+        "level": "T2"
+      },
+      "evidence_age_seconds": 100,
+      "requested_claims": [
+        "claim:exact-binding",
+        "claim:semantic-contract",
+        "claim:negative-control"
+      ]
+    },
+    "expected_decision": "ADMIT"
+  },
+  {
+    "id": "C02_omit_one_claim",
+    "request": {
+      "subject_id": "integrated-project-system",
+      "subject_revision": "v03-fixture",
+      "base_revision": "base-accepted-v02",
+      "intended_consequence": "PROMOTE",
+      "profile_hint": "standard",
+      "trust_context": {
+        "level": "T2"
+      },
+      "evidence_age_seconds": 100,
+      "requested_claims": [
+        "claim:exact-binding",
+        "claim:semantic-contract"
+      ]
+    },
+    "expected_decision": "ADMIT"
+  },
+  {
+    "id": "C03_omit_multiple_claims",
+    "request": {
+      "subject_id": "integrated-project-system",
+      "subject_revision": "v03-fixture",
+      "base_revision": "base-accepted-v02",
+      "intended_consequence": "PROMOTE",
+      "profile_hint": "standard",
+      "trust_context": {
+        "level": "T2"
+      },
+      "evidence_age_seconds": 100,
+      "requested_claims": []
+    },
+    "expected_decision": "ADMIT"
+  },
+  {
+    "id": "C04_alternate_profile",
+    "request": {
+      "subject_id": "integrated-project-system",
+      "subject_revision": "v03-fixture",
+      "base_revision": "base-accepted-v02",
+      "intended_consequence": "PROMOTE",
+      "profile_hint": "alternate",
+      "trust_context": {
+        "level": "T2"
+      },
+      "evidence_age_seconds": 100,
+      "requested_claims": [
+        "claim:exact-binding"
+      ]
+    },
+    "expected_decision": "ADMIT"
+  },
+  {
+    "id": "C05_stale_subject",
+    "request": {
+      "subject_id": "integrated-project-system",
+      "subject_revision": "v02-stale",
+      "base_revision": "base-accepted-v02",
+      "intended_consequence": "PROMOTE",
+      "profile_hint": "standard",
+      "trust_context": {
+        "level": "T2"
+      },
+      "evidence_age_seconds": 100,
+      "requested_claims": []
+    },
+    "expected_decision": "REFUSE"
+  },
+  {
+    "id": "C06_stale_base",
+    "request": {
+      "subject_id": "integrated-project-system",
+      "subject_revision": "v03-fixture",
+      "base_revision": "base-stale-v01",
+      "intended_consequence": "PROMOTE",
+      "profile_hint": "standard",
+      "trust_context": {
+        "level": "T2"
+      },
+      "evidence_age_seconds": 100,
+      "requested_claims": []
+    },
+    "expected_decision": "REFUSE"
+  },
+  {
+    "id": "C07_weaker_consequence",
+    "request": {
+      "subject_id": "integrated-project-system",
+      "subject_revision": "v03-fixture",
+      "base_revision": "base-accepted-v02",
+      "intended_consequence": "INTERNAL",
+      "profile_hint": "standard",
+      "trust_context": {
+        "level": "T2"
+      },
+      "evidence_age_seconds": 100,
+      "requested_claims": []
+    },
+    "expected_decision": "REFUSE"
+  },
+  {
+    "id": "C08_missing_trust",
+    "request": {
+      "subject_id": "integrated-project-system",
+      "subject_revision": "v03-fixture",
+      "base_revision": "base-accepted-v02",
+      "intended_consequence": "PROMOTE",
+      "profile_hint": "standard",
+      "evidence_age_seconds": 100,
+      "requested_claims": []
+    },
+    "expected_decision": "REVIEW_REQUIRED"
+  },
+  {
+    "id": "C09_supplemental_context",
+    "request": {
+      "subject_id": "integrated-project-system",
+      "subject_revision": "v03-fixture",
+      "base_revision": "base-accepted-v02",
+      "intended_consequence": "PROMOTE",
+      "profile_hint": "standard",
+      "trust_context": {
+        "level": "T2"
+      },
+      "evidence_age_seconds": 100,
+      "requested_claims": [],
+      "supplemental_context": {
+        "note": "informational only"
+      }
+    },
+    "expected_decision": "ADMIT"
+  },
+  {
+    "id": "C10_extra_check",
+    "request": {
+      "subject_id": "integrated-project-system",
+      "subject_revision": "v03-fixture",
+      "base_revision": "base-accepted-v02",
+      "intended_consequence": "PROMOTE",
+      "profile_hint": "standard",
+      "trust_context": {
+        "level": "T2"
+      },
+      "evidence_age_seconds": 100,
+      "requested_claims": [],
+      "extra_checks": [
+        "extra:rollback"
+      ]
+    },
+    "expected_decision": "ADMIT",
+    "expected_extra_claims": [
+      "claim:rollback-readiness"
+    ]
+  },
+  {
+    "id": "C11_unknown_profile",
+    "request": {
+      "subject_id": "integrated-project-system",
+      "subject_revision": "v03-fixture",
+      "base_revision": "base-accepted-v02",
+      "intended_consequence": "PROMOTE",
+      "profile_hint": "unknown",
+      "trust_context": {
+        "level": "T2"
+      },
+      "evidence_age_seconds": 100,
+      "requested_claims": []
+    },
+    "expected_decision": "REVIEW_REQUIRED"
+  },
+  {
+    "id": "C12_contradictory_profile_context",
+    "request": {
+      "subject_id": "integrated-project-system",
+      "subject_revision": "v03-fixture",
+      "base_revision": "base-accepted-v02",
+      "intended_consequence": "PROMOTE",
+      "profile_hint": "standard",
+      "trust_context": {
+        "level": "T0"
+      },
+      "evidence_age_seconds": 100,
+      "requested_claims": [],
+      "supplemental_context": {
+        "claims_trust_sufficient": true
+      }
+    },
+    "expected_decision": "REVIEW_REQUIRED"
+  },
+  {
+    "id": "C13_stale_evidence",
+    "request": {
+      "subject_id": "integrated-project-system",
+      "subject_revision": "v03-fixture",
+      "base_revision": "base-accepted-v02",
+      "intended_consequence": "PROMOTE",
+      "profile_hint": "standard",
+      "trust_context": {
+        "level": "T2"
+      },
+      "evidence_age_seconds": 7200,
+      "requested_claims": []
+    },
+    "expected_decision": "REFUSE"
+  }
+]
