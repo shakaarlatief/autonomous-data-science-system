@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "provider_invariance_samples": [
+    "4fdb64d753008b777a64f5acb4df3bfd2c339cb8",
+    "76138e29ed4125bda21f1d9f8e46b34c89bfeef2",
+    "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
+    "74023a779998200a6317df07dc7cd4979ff84e47",
+    "500de961fcfe6c4eaa017cf564ecb5d65ff158e7"
+  ],
+  "malformed_event": {
+    "event_id": "NEG_MALFORMED",
+    "source_type": "UNKNOWN_RAW_EVENT",
+    "changed_paths": []
+  },
+  "synthetic_mediated_event": {
+    "event_id": "CTRL_MEDIATED",
+    "source_type": "GIT_COMMIT_EVENT",
+    "commit": "synthetic-control",
+    "changed_paths": [
+      "docs/current_routing.json"
+    ],
+    "derived_fixture_flags": {
+      "touches_control_state": true,
+      "publishes_collaboration_message": false,
+      "touches_research_or_checkpoint": false,
+      "touches_experiment_or_test": false,
+      "touches_specification_or_foundation": false
+    },
+    "ao_preflight_attested": true
+  }
+}

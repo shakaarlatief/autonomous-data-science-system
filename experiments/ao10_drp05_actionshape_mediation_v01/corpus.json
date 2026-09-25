@@ -1,0 +1,4448 @@
+{
+  "schema_version": 1,
+  "probe": "DRP-05a/DRP-05b",
+  "selection_rule": "all non-merge Git commits from MC-0028 opening commit through corpus_base inclusive; no ease-based exclusions",
+  "start_commit": "4fdb64d753008b777a64f5acb4df3bfd2c339cb8",
+  "corpus_base": "500de961fcfe6c4eaa017cf564ecb5d65ff158e7",
+  "event_count": 65,
+  "events": [
+    {
+      "event_id": "E001",
+      "commit": "4fdb64d753008b777a64f5acb4df3bfd2c339cb8",
+      "parents": [
+        "cac7a699eb012c5a02e1c5fab349ebc9e5726145"
+      ],
+      "date": "2026-09-23T21:41:53+02:00",
+      "subject": "Open MC-0028 independent assurance design",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/608_mc0028_independent_assurance_design_opened.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/BRIEF.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/STATE.json"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/THREAD.md"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/608_mc0028_independent_assurance_design_opened.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0028/BRIEF.md",
+        "docs/model_collaboration/threads/MC-0028/STATE.json",
+        "docs/model_collaboration/threads/MC-0028/THREAD.md"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": false,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E002",
+      "commit": "eb321b9013bae86183702862e07d871e9f695142",
+      "parents": [
+        "4fdb64d753008b777a64f5acb4df3bfd2c339cb8"
+      ],
+      "date": "2026-09-23T21:50:38+02:00",
+      "subject": "Freeze ChatGPT FACET assurance candidate",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/609_chatgpt_independent_assurance_candidate_facet_frozen.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/274_chatgpt_independent_r8c_assurance_architecture_candidate_facet.md"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/609_chatgpt_independent_assurance_candidate_facet_frozen.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0028/STATE.json",
+        "docs/model_collaboration/threads/MC-0028/THREAD.md",
+        "docs/research/274_chatgpt_independent_r8c_assurance_architecture_candidate_facet.md"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": false,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E003",
+      "commit": "76138e29ed4125bda21f1d9f8e46b34c89bfeef2",
+      "parents": [
+        "eb321b9013bae86183702862e07d871e9f695142"
+      ],
+      "date": "2026-09-24T07:44:11+02:00",
+      "subject": "MC-0028 Message 001: Claude independent assurance architecture (WARRANT)",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "A",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/messages/001_claude_independent_assurance_architecture.md"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/model_collaboration/threads/MC-0028/messages/001_claude_independent_assurance_architecture.md"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": false,
+        "publishes_collaboration_message": true,
+        "touches_research_or_checkpoint": false,
+        "touches_experiment_or_test": false,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E004",
+      "commit": "69b5ca91af3b45bd8e6092a87109d0d18176549c",
+      "parents": [
+        "76138e29ed4125bda21f1d9f8e46b34c89bfeef2"
+      ],
+      "date": "2026-09-24T08:17:03+02:00",
+      "subject": "Reconcile FACET and WARRANT assurance candidates",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/610_mc0028_warrant_f_v01_comparative_synthesis_frozen.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/messages/002_chatgpt_facet_warrant_comparative_reconciliation_and_warrant_f_handoff.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/275_mc0028_facet_warrant_comparative_reconciliation_and_warrant_f_v01_candidate.md"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/610_mc0028_warrant_f_v01_comparative_synthesis_frozen.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0028/STATE.json",
+        "docs/model_collaboration/threads/MC-0028/THREAD.md",
+        "docs/model_collaboration/threads/MC-0028/messages/002_chatgpt_facet_warrant_comparative_reconciliation_and_warrant_f_handoff.md",
+        "docs/research/275_mc0028_facet_warrant_comparative_reconciliation_and_warrant_f_v01_candidate.md"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": true,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": false,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E005",
+      "commit": "b6ac1d492216265e1351e420179d149928bffa8e",
+      "parents": [
+        "69b5ca91af3b45bd8e6092a87109d0d18176549c"
+      ],
+      "date": "2026-09-24T08:31:40+02:00",
+      "subject": "MC-0028 Message 003: Claude comparative critique of WARRANT-F V0.1",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "A",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/messages/003_claude_comparative_warrant_f_critique.md"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/model_collaboration/threads/MC-0028/messages/003_claude_comparative_warrant_f_critique.md"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": false,
+        "publishes_collaboration_message": true,
+        "touches_research_or_checkpoint": false,
+        "touches_experiment_or_test": false,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E006",
+      "commit": "a9f7b71a5d243f815374e53d8fca96625d84e889",
+      "parents": [
+        "b6ac1d492216265e1351e420179d149928bffa8e"
+      ],
+      "date": "2026-09-24T09:40:02+02:00",
+      "subject": "Freeze WARRANT-F V0.2 with total design freedom",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/611_total_architecture_freedom_warrant_f_v02_frozen.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/messages/004_chatgpt_owner_freedom_and_warrant_f_v02_reconciliation.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/276_owner_total_architecture_freedom_and_warrant_f_v02_reconciliation.md"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/611_total_architecture_freedom_warrant_f_v02_frozen.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0028/STATE.json",
+        "docs/model_collaboration/threads/MC-0028/THREAD.md",
+        "docs/model_collaboration/threads/MC-0028/messages/004_chatgpt_owner_freedom_and_warrant_f_v02_reconciliation.md",
+        "docs/research/276_owner_total_architecture_freedom_and_warrant_f_v02_reconciliation.md"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": true,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": false,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E007",
+      "commit": "ffe5eb51247e4b9edbb5dbd9d8a3a7bdb23b5f79",
+      "parents": [
+        "a9f7b71a5d243f815374e53d8fca96625d84e889"
+      ],
+      "date": "2026-09-24T09:45:46+02:00",
+      "subject": "Preregister R8-C decision assurance probes",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/612_r8c_decision_probes_preregistered.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/277_r8c_decision_relevant_assurance_probe_protocol.md"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/612_r8c_decision_probes_preregistered.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0028/STATE.json",
+        "docs/model_collaboration/threads/MC-0028/THREAD.md",
+        "docs/research/277_r8c_decision_relevant_assurance_probe_protocol.md"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": false,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E008",
+      "commit": "a96f77078e318a3d6b137745df4c251b5407e963",
+      "parents": [
+        "ffe5eb51247e4b9edbb5dbd9d8a3a7bdb23b5f79"
+      ],
+      "date": "2026-09-24T09:51:55+02:00",
+      "subject": "Record P-H host capability result",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/613_p_h_inconclusive_no_target_constraint.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/278_p_h_current_host_capability_study.md"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/613_p_h_inconclusive_no_target_constraint.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0028/STATE.json",
+        "docs/model_collaboration/threads/MC-0028/THREAD.md",
+        "docs/research/278_p_h_current_host_capability_study.md"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": false,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E009",
+      "commit": "a84e111e6dd60d1b56380a8aeb78fd842b1cf4f9",
+      "parents": [
+        "a96f77078e318a3d6b137745df4c251b5407e963"
+      ],
+      "date": "2026-09-24T09:56:33+02:00",
+      "subject": "Add P-D6 executor capability probe harness",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "A",
+          "paths": [
+            "experiments/r8c_assurance_probe_v01/README.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "experiments/r8c_assurance_probe_v01/p_d6_executor_capability.py"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "experiments/r8c_assurance_probe_v01/README.md",
+        "experiments/r8c_assurance_probe_v01/p_d6_executor_capability.py"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": false,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": false,
+        "touches_experiment_or_test": true,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E010",
+      "commit": "c2afb94eb332389c35a42249745505d11091162d",
+      "parents": [
+        "a84e111e6dd60d1b56380a8aeb78fd842b1cf4f9"
+      ],
+      "date": "2026-09-24T10:01:51+02:00",
+      "subject": "Freeze P-D6 executor capability probe",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/614_p_d6_harness_frozen.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/279_p_d6_executor_capability_probe_harness_freeze.md"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/614_p_d6_harness_frozen.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0028/STATE.json",
+        "docs/model_collaboration/threads/MC-0028/THREAD.md",
+        "docs/research/279_p_d6_executor_capability_probe_harness_freeze.md"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": false,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E011",
+      "commit": "721545c46b94e0a87c87a572fb357ff314f6913f",
+      "parents": [
+        "c2afb94eb332389c35a42249745505d11091162d"
+      ],
+      "date": "2026-09-24T10:06:30+02:00",
+      "subject": "Record P-D6 executor capability probe pass",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/615_p_d6_pass.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/280_p_d6_executor_capability_trust_separation_result.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "experiments/r8c_assurance_probe_v01/evidence/p_d6_run_001.json"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/615_p_d6_pass.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0028/STATE.json",
+        "docs/model_collaboration/threads/MC-0028/THREAD.md",
+        "docs/research/280_p_d6_executor_capability_trust_separation_result.md",
+        "experiments/r8c_assurance_probe_v01/evidence/p_d6_run_001.json"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": true,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E012",
+      "commit": "5ba5ae40567bcc55da2ba031ef10a98f0df3a46e",
+      "parents": [
+        "721545c46b94e0a87c87a572fb357ff314f6913f"
+      ],
+      "date": "2026-09-24T11:48:02+02:00",
+      "subject": "Add P-D3 boundary independence probe harness",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "experiments/r8c_assurance_probe_v01/README.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "experiments/r8c_assurance_probe_v01/p_d3_boundary_independence.py"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "experiments/r8c_assurance_probe_v01/README.md",
+        "experiments/r8c_assurance_probe_v01/p_d3_boundary_independence.py"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": false,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": false,
+        "touches_experiment_or_test": true,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E013",
+      "commit": "77b2dc0cddf6e28b9023a4c66a240bf28bcc32df",
+      "parents": [
+        "5ba5ae40567bcc55da2ba031ef10a98f0df3a46e"
+      ],
+      "date": "2026-09-24T11:52:35+02:00",
+      "subject": "Freeze P-D3 boundary independence probe",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/616_p_d3_harness_frozen.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/281_p_d3_boundary_independence_probe_harness_freeze.md"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/616_p_d3_harness_frozen.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0028/STATE.json",
+        "docs/model_collaboration/threads/MC-0028/THREAD.md",
+        "docs/research/281_p_d3_boundary_independence_probe_harness_freeze.md"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": false,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E014",
+      "commit": "bd49d729e39915f54d08b73c81ffd9e66d6f602d",
+      "parents": [
+        "77b2dc0cddf6e28b9023a4c66a240bf28bcc32df"
+      ],
+      "date": "2026-09-24T11:59:00+02:00",
+      "subject": "Record P-D3 harness-invalid attempt",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/617_p_d3_attempt001_harness_invalid.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/282_p_d3_attempt001_harness_invalid_and_repair.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "experiments/r8c_assurance_probe_v01/evidence/p_d3_run_001_harness_invalid.json"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/617_p_d3_attempt001_harness_invalid.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0028/STATE.json",
+        "docs/model_collaboration/threads/MC-0028/THREAD.md",
+        "docs/research/282_p_d3_attempt001_harness_invalid_and_repair.md",
+        "experiments/r8c_assurance_probe_v01/evidence/p_d3_run_001_harness_invalid.json"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": true,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E015",
+      "commit": "1841fb62b5f41556381535263b567f43c97d8d2d",
+      "parents": [
+        "bd49d729e39915f54d08b73c81ffd9e66d6f602d"
+      ],
+      "date": "2026-09-24T12:02:21+02:00",
+      "subject": "Repair P-D3 fixture bootstrap",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "experiments/r8c_assurance_probe_v01/p_d3_boundary_independence.py"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "experiments/r8c_assurance_probe_v01/p_d3_boundary_independence.py"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": false,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": false,
+        "touches_experiment_or_test": true,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E016",
+      "commit": "e9ef6a4702d70b9182ff64d6762e109d5f436f13",
+      "parents": [
+        "1841fb62b5f41556381535263b567f43c97d8d2d"
+      ],
+      "date": "2026-09-24T12:06:48+02:00",
+      "subject": "Refreeze repaired P-D3 boundary probe",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/618_p_d3_repaired_harness_refrozen.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/283_p_d3_repaired_harness_refreeze.md"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/618_p_d3_repaired_harness_refrozen.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0028/STATE.json",
+        "docs/model_collaboration/threads/MC-0028/THREAD.md",
+        "docs/research/283_p_d3_repaired_harness_refreeze.md"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": false,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E017",
+      "commit": "e3448107e1c15bac3e8c4b7cce32c888bfe37d37",
+      "parents": [
+        "e9ef6a4702d70b9182ff64d6762e109d5f436f13"
+      ],
+      "date": "2026-09-24T12:11:32+02:00",
+      "subject": "Record P-D3 second harness-invalid attempt",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/619_p_d3_attempt002_harness_invalid.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/284_p_d3_attempt002_harness_invalid_and_repair.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "experiments/r8c_assurance_probe_v01/evidence/p_d3_run_002_harness_invalid.json"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/619_p_d3_attempt002_harness_invalid.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0028/STATE.json",
+        "docs/model_collaboration/threads/MC-0028/THREAD.md",
+        "docs/research/284_p_d3_attempt002_harness_invalid_and_repair.md",
+        "experiments/r8c_assurance_probe_v01/evidence/p_d3_run_002_harness_invalid.json"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": true,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E018",
+      "commit": "374c64ee069cb690c1d5b7108ffbf2cfd83c9c5d",
+      "parents": [
+        "e3448107e1c15bac3e8c4b7cce32c888bfe37d37"
+      ],
+      "date": "2026-09-24T12:15:31+02:00",
+      "subject": "Repair P-D3 forbidden import control",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "experiments/r8c_assurance_probe_v01/p_d3_boundary_independence.py"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "experiments/r8c_assurance_probe_v01/p_d3_boundary_independence.py"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": false,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": false,
+        "touches_experiment_or_test": true,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E019",
+      "commit": "f79a2c91b5fc0c12b35d531276950b7d1431af53",
+      "parents": [
+        "374c64ee069cb690c1d5b7108ffbf2cfd83c9c5d"
+      ],
+      "date": "2026-09-24T12:52:48+02:00",
+      "subject": "Refreeze P-D3 for attempt 003",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/620_p_d3_second_repair_refrozen.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/285_p_d3_second_repair_refreeze_attempt003.md"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/620_p_d3_second_repair_refrozen.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/threads/MC-0028/STATE.json",
+        "docs/model_collaboration/threads/MC-0028/THREAD.md",
+        "docs/research/285_p_d3_second_repair_refreeze_attempt003.md"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": false,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E020",
+      "commit": "941723946d44d89475668363db9657ca8b500e4d",
+      "parents": [
+        "f79a2c91b5fc0c12b35d531276950b7d1431af53"
+      ],
+      "date": "2026-09-24T12:58:41+02:00",
+      "subject": "Record P-D3 attempt 003 harness invalid",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/621_p_d3_attempt003_harness_invalid.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/286_p_d3_attempt003_harness_invalid_and_isolation_repair.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "experiments/r8c_assurance_probe_v01/evidence/p_d3_run_003_harness_invalid.json"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/621_p_d3_attempt003_harness_invalid.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/threads/MC-0028/STATE.json",
+        "docs/model_collaboration/threads/MC-0028/THREAD.md",
+        "docs/research/286_p_d3_attempt003_harness_invalid_and_isolation_repair.md",
+        "experiments/r8c_assurance_probe_v01/evidence/p_d3_run_003_harness_invalid.json"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": true,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E021",
+      "commit": "542018f1290864bc7735c896a64f5aed5de48a76",
+      "parents": [
+        "941723946d44d89475668363db9657ca8b500e4d"
+      ],
+      "date": "2026-09-24T13:00:39+02:00",
+      "subject": "Repair P-D3 child interpreter isolation",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "experiments/r8c_assurance_probe_v01/p_d3_boundary_independence.py"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "experiments/r8c_assurance_probe_v01/p_d3_boundary_independence.py"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": false,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": false,
+        "touches_experiment_or_test": true,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E022",
+      "commit": "ebb8cef778ca793babe63393bb2b8e6b756b6255",
+      "parents": [
+        "542018f1290864bc7735c896a64f5aed5de48a76"
+      ],
+      "date": "2026-09-24T13:05:12+02:00",
+      "subject": "Refreeze P-D3 for attempt 004",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/622_p_d3_third_repair_refrozen.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/287_p_d3_third_repair_refreeze_attempt004.md"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/622_p_d3_third_repair_refrozen.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/threads/MC-0028/STATE.json",
+        "docs/model_collaboration/threads/MC-0028/THREAD.md",
+        "docs/research/287_p_d3_third_repair_refreeze_attempt004.md"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": false,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E023",
+      "commit": "e9bb96425d259588018e6e0ef2906cf24e3be853",
+      "parents": [
+        "ebb8cef778ca793babe63393bb2b8e6b756b6255"
+      ],
+      "date": "2026-09-24T13:09:53+02:00",
+      "subject": "Record P-D3 boundary independence pass",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/623_p_d3_pass.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/288_p_d3_boundary_independence_attempt004_pass.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "experiments/r8c_assurance_probe_v01/evidence/p_d3_run_004.json"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/623_p_d3_pass.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/threads/MC-0028/STATE.json",
+        "docs/model_collaboration/threads/MC-0028/THREAD.md",
+        "docs/research/288_p_d3_boundary_independence_attempt004_pass.md",
+        "experiments/r8c_assurance_probe_v01/evidence/p_d3_run_004.json"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": true,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E024",
+      "commit": "669134254f370802698dad8c299a02613bf4a8bb",
+      "parents": [
+        "e9bb96425d259588018e6e0ef2906cf24e3be853"
+      ],
+      "date": "2026-09-24T13:13:44+02:00",
+      "subject": "Add P-D5 adapter fidelity probe harness",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "experiments/r8c_assurance_probe_v01/README.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "experiments/r8c_assurance_probe_v01/p_d5_adapter_fidelity.py"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "experiments/r8c_assurance_probe_v01/README.md",
+        "experiments/r8c_assurance_probe_v01/p_d5_adapter_fidelity.py"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": false,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": false,
+        "touches_experiment_or_test": true,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E025",
+      "commit": "68a259c91d1aa26ec12d6393724f85e6ab66029d",
+      "parents": [
+        "669134254f370802698dad8c299a02613bf4a8bb"
+      ],
+      "date": "2026-09-24T13:17:43+02:00",
+      "subject": "Freeze P-D5 adapter fidelity probe",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/624_p_d5_adapter_fidelity_harness_frozen.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/289_p_d5_adapter_fidelity_harness_freeze.md"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/624_p_d5_adapter_fidelity_harness_frozen.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/threads/MC-0028/STATE.json",
+        "docs/model_collaboration/threads/MC-0028/THREAD.md",
+        "docs/research/289_p_d5_adapter_fidelity_harness_freeze.md"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": false,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E026",
+      "commit": "1a095044282622f2ce9e2bd38b90d77b8be8a4a2",
+      "parents": [
+        "68a259c91d1aa26ec12d6393724f85e6ab66029d"
+      ],
+      "date": "2026-09-24T15:58:56+02:00",
+      "subject": "Record P-D5 adapter fidelity pass",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/625_p_d5_adapter_fidelity_pass.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/290_p_d5_adapter_fidelity_result.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "experiments/r8c_assurance_probe_v01/evidence/p_d5_run_001.json"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/625_p_d5_adapter_fidelity_pass.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0028/STATE.json",
+        "docs/model_collaboration/threads/MC-0028/THREAD.md",
+        "docs/research/290_p_d5_adapter_fidelity_result.md",
+        "experiments/r8c_assurance_probe_v01/evidence/p_d5_run_001.json"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": true,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E027",
+      "commit": "7c43a203fdfa5cfc7a89af59dc1b3e4703c36b28",
+      "parents": [
+        "1a095044282622f2ce9e2bd38b90d77b8be8a4a2"
+      ],
+      "date": "2026-09-24T16:04:44+02:00",
+      "subject": "Freeze P-D1 warrant claim set",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/626_p_d1_claim_set_frozen.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/291_p_d1_warrant_proportionality_claim_set_freeze.md"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/626_p_d1_claim_set_frozen.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0028/STATE.json",
+        "docs/model_collaboration/threads/MC-0028/THREAD.md",
+        "docs/research/291_p_d1_warrant_proportionality_claim_set_freeze.md"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": false,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E028",
+      "commit": "733e55796beed3cd07f4017e4f3718e3a2e2f943",
+      "parents": [
+        "7c43a203fdfa5cfc7a89af59dc1b3e4703c36b28"
+      ],
+      "date": "2026-09-24T16:10:10+02:00",
+      "subject": "Add P-D1 warrant proportionality probe harness",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "experiments/r8c_assurance_probe_v01/README.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "experiments/r8c_assurance_probe_v01/p_d1_claims.json"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "experiments/r8c_assurance_probe_v01/p_d1_warrant_proportionality.py"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "experiments/r8c_assurance_probe_v01/README.md",
+        "experiments/r8c_assurance_probe_v01/p_d1_claims.json",
+        "experiments/r8c_assurance_probe_v01/p_d1_warrant_proportionality.py"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": false,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": false,
+        "touches_experiment_or_test": true,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E029",
+      "commit": "67273164eecf417bd93991c1a6501cf35afb1e6c",
+      "parents": [
+        "733e55796beed3cd07f4017e4f3718e3a2e2f943"
+      ],
+      "date": "2026-09-24T16:15:45+02:00",
+      "subject": "Freeze P-D1 warrant proportionality probe",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/627_p_d1_harness_frozen.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/292_p_d1_warrant_proportionality_harness_freeze.md"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/627_p_d1_harness_frozen.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0028/STATE.json",
+        "docs/model_collaboration/threads/MC-0028/THREAD.md",
+        "docs/research/292_p_d1_warrant_proportionality_harness_freeze.md"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": false,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E030",
+      "commit": "ed368f49825e865f7b5ba9b46c77454b9f590dcf",
+      "parents": [
+        "67273164eecf417bd93991c1a6501cf35afb1e6c"
+      ],
+      "date": "2026-09-24T16:20:27+02:00",
+      "subject": "Record P-D1 warrant proportionality pass",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/628_p_d1_pass.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/293_p_d1_warrant_proportionality_result.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "experiments/r8c_assurance_probe_v01/evidence/p_d1_run_001.json"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/628_p_d1_pass.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0028/STATE.json",
+        "docs/model_collaboration/threads/MC-0028/THREAD.md",
+        "docs/research/293_p_d1_warrant_proportionality_result.md",
+        "experiments/r8c_assurance_probe_v01/evidence/p_d1_run_001.json"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": true,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E031",
+      "commit": "0ea3f7c1fb3c19d96ba69073e34670e83beea8ab",
+      "parents": [
+        "ed368f49825e865f7b5ba9b46c77454b9f590dcf"
+      ],
+      "date": "2026-09-24T16:46:36+02:00",
+      "subject": "Rotate ChatGPT session to assurance qualification",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/THREAD.md"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/model_collaboration/threads/MC-0028/STATE.json",
+        "docs/model_collaboration/threads/MC-0028/THREAD.md"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": false,
+        "touches_experiment_or_test": false,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E032",
+      "commit": "d7f65392b851c03b49c246c023b0a6684ef3c60b",
+      "parents": [
+        "0ea3f7c1fb3c19d96ba69073e34670e83beea8ab"
+      ],
+      "date": "2026-09-24T17:10:03+02:00",
+      "subject": "Freeze P-D2 ratchet history labels",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/629_p_d2_ratchet_history_sample_and_independent_labels_frozen.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/294_p_d2_ratchet_history_sample_and_independent_label_freeze.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "experiments/r8c_assurance_probe_v01/p_d2_history_labels.json"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/629_p_d2_ratchet_history_sample_and_independent_labels_frozen.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0028/STATE.json",
+        "docs/model_collaboration/threads/MC-0028/THREAD.md",
+        "docs/research/294_p_d2_ratchet_history_sample_and_independent_label_freeze.md",
+        "experiments/r8c_assurance_probe_v01/p_d2_history_labels.json"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": true,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E033",
+      "commit": "c83313e150b8fbc0676e045c77137b69b322d790",
+      "parents": [
+        "d7f65392b851c03b49c246c023b0a6684ef3c60b"
+      ],
+      "date": "2026-09-24T17:14:01+02:00",
+      "subject": "Add P-D2 ratchet history probe harness",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "experiments/r8c_assurance_probe_v01/README.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "experiments/r8c_assurance_probe_v01/p_d2_ratchet_history.py"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "experiments/r8c_assurance_probe_v01/README.md",
+        "experiments/r8c_assurance_probe_v01/p_d2_ratchet_history.py"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": false,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": false,
+        "touches_experiment_or_test": true,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E034",
+      "commit": "15cdcb02616752320b91b98a3ce99d7b56719955",
+      "parents": [
+        "c83313e150b8fbc0676e045c77137b69b322d790"
+      ],
+      "date": "2026-09-24T17:18:45+02:00",
+      "subject": "Freeze P-D2 ratchet history probe",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/630_p_d2_ratchet_history_harness_frozen.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/295_p_d2_ratchet_history_harness_freeze.md"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/630_p_d2_ratchet_history_harness_frozen.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0028/STATE.json",
+        "docs/model_collaboration/threads/MC-0028/THREAD.md",
+        "docs/research/295_p_d2_ratchet_history_harness_freeze.md"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": false,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E035",
+      "commit": "f06b896f377eb7f65f8973ec6b346f51d4f1e4f8",
+      "parents": [
+        "15cdcb02616752320b91b98a3ce99d7b56719955"
+      ],
+      "date": "2026-09-24T17:24:12+02:00",
+      "subject": "Record P-D2 attempt 001 harness invalid",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/631_p_d2_attempt001_harness_invalid.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/296_p_d2_attempt001_harness_invalid_and_hash_basis_repair.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "experiments/r8c_assurance_probe_v01/evidence/p_d2_run_001_harness_invalid.json"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/631_p_d2_attempt001_harness_invalid.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0028/STATE.json",
+        "docs/model_collaboration/threads/MC-0028/THREAD.md",
+        "docs/research/296_p_d2_attempt001_harness_invalid_and_hash_basis_repair.md",
+        "experiments/r8c_assurance_probe_v01/evidence/p_d2_run_001_harness_invalid.json"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": true,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E036",
+      "commit": "3ee7e4f547e98f5fd8bbf38fc7a5a760c6a47ed1",
+      "parents": [
+        "f06b896f377eb7f65f8973ec6b346f51d4f1e4f8"
+      ],
+      "date": "2026-09-24T17:26:08+02:00",
+      "subject": "Repair P-D2 selection fixture hash binding",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "experiments/r8c_assurance_probe_v01/p_d2_ratchet_history.py"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "experiments/r8c_assurance_probe_v01/p_d2_ratchet_history.py"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": false,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": false,
+        "touches_experiment_or_test": true,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E037",
+      "commit": "a3a21bb07b0d141efee6a002408c0f9f8a8a5f2b",
+      "parents": [
+        "3ee7e4f547e98f5fd8bbf38fc7a5a760c6a47ed1"
+      ],
+      "date": "2026-09-24T17:29:54+02:00",
+      "subject": "Refreeze P-D2 repaired harness",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/632_p_d2_attempt002_harness_refrozen.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/297_p_d2_attempt002_repaired_harness_refreeze.md"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/632_p_d2_attempt002_harness_refrozen.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0028/STATE.json",
+        "docs/model_collaboration/threads/MC-0028/THREAD.md",
+        "docs/research/297_p_d2_attempt002_repaired_harness_refreeze.md"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": false,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E038",
+      "commit": "3da817c7d9af9492d071801bec4e649baa0f48f4",
+      "parents": [
+        "a3a21bb07b0d141efee6a002408c0f9f8a8a5f2b"
+      ],
+      "date": "2026-09-24T17:42:31+02:00",
+      "subject": "Record P-D2 ratchet history pass",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/633_p_d2_ratchet_history_pass.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/298_p_d2_ratchet_history_attempt002_pass.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "experiments/r8c_assurance_probe_v01/evidence/p_d2_run_002.json"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/633_p_d2_ratchet_history_pass.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0028/STATE.json",
+        "docs/model_collaboration/threads/MC-0028/THREAD.md",
+        "docs/research/298_p_d2_ratchet_history_attempt002_pass.md",
+        "experiments/r8c_assurance_probe_v01/evidence/p_d2_run_002.json"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": true,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E039",
+      "commit": "d1f9418b4315010b0b4e77cc5943921a5b0e76d0",
+      "parents": [
+        "3da817c7d9af9492d071801bec4e649baa0f48f4"
+      ],
+      "date": "2026-09-24T17:50:23+02:00",
+      "subject": "Freeze P-D4 oracle corpus",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/634_p_d4_current_oracle_corpus_frozen.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/299_p_d4_current_oracle_corpus_freeze.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "experiments/r8c_assurance_probe_v01/p_d4_oracle_corpus.json"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/634_p_d4_current_oracle_corpus_frozen.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0028/STATE.json",
+        "docs/model_collaboration/threads/MC-0028/THREAD.md",
+        "docs/research/299_p_d4_current_oracle_corpus_freeze.md",
+        "experiments/r8c_assurance_probe_v01/p_d4_oracle_corpus.json"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": true,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E040",
+      "commit": "5b66c4d03126a9c46ba1f5f34ddeb2d579b31f0e",
+      "parents": [
+        "d1f9418b4315010b0b4e77cc5943921a5b0e76d0"
+      ],
+      "date": "2026-09-24T17:54:48+02:00",
+      "subject": "Record P-D4 old oracle replay",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/635_p_d4_old_oracle_replay_pass.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/300_p_d4_formal_current_oracle_replay_result.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "experiments/r8c_assurance_probe_v01/evidence/p_d4_old_oracle_replay_001.json"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/635_p_d4_old_oracle_replay_pass.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0028/STATE.json",
+        "docs/model_collaboration/threads/MC-0028/THREAD.md",
+        "docs/research/300_p_d4_formal_current_oracle_replay_result.md",
+        "experiments/r8c_assurance_probe_v01/evidence/p_d4_old_oracle_replay_001.json"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": true,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E041",
+      "commit": "30a91b02ede2f074e1bddadf927c862ea8442d3f",
+      "parents": [
+        "5b66c4d03126a9c46ba1f5f34ddeb2d579b31f0e"
+      ],
+      "date": "2026-09-24T17:59:31+02:00",
+      "subject": "Freeze P-D4 successor contract",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/636_p_d4_successor_contract_frozen.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/301_p_d4_successor_semantic_contract_freeze.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "experiments/r8c_assurance_probe_v01/p_d4_successor_contract.json"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/636_p_d4_successor_contract_frozen.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0028/STATE.json",
+        "docs/model_collaboration/threads/MC-0028/THREAD.md",
+        "docs/research/301_p_d4_successor_semantic_contract_freeze.md",
+        "experiments/r8c_assurance_probe_v01/p_d4_successor_contract.json"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": true,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E042",
+      "commit": "58ff6b2f39169e2f8470ba020848472b8b196724",
+      "parents": [
+        "30a91b02ede2f074e1bddadf927c862ea8442d3f"
+      ],
+      "date": "2026-09-24T18:04:42+02:00",
+      "subject": "Amend P-D4 successor contract",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/637_p_d4_successor_contract_v02_frozen.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/302_p_d4_successor_contract_v02_completeness_amendment.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "experiments/r8c_assurance_probe_v01/p_d4_successor_contract_v02.json"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/637_p_d4_successor_contract_v02_frozen.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0028/STATE.json",
+        "docs/model_collaboration/threads/MC-0028/THREAD.md",
+        "docs/research/302_p_d4_successor_contract_v02_completeness_amendment.md",
+        "experiments/r8c_assurance_probe_v01/p_d4_successor_contract_v02.json"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": true,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E043",
+      "commit": "7f0f035f38118d0f9671050ac6fb5fc3b938cc37",
+      "parents": [
+        "58ff6b2f39169e2f8470ba020848472b8b196724"
+      ],
+      "date": "2026-09-24T18:09:41+02:00",
+      "subject": "Add P-D4 oracle successor probe harness",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "experiments/r8c_assurance_probe_v01/README.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "experiments/r8c_assurance_probe_v01/p_d4_oracle_successor.py"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "experiments/r8c_assurance_probe_v01/README.md",
+        "experiments/r8c_assurance_probe_v01/p_d4_oracle_successor.py"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": false,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": false,
+        "touches_experiment_or_test": true,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E044",
+      "commit": "6813ba61ac9235aaf6f892ff33d3fd40bca3812f",
+      "parents": [
+        "7f0f035f38118d0f9671050ac6fb5fc3b938cc37"
+      ],
+      "date": "2026-09-24T18:14:00+02:00",
+      "subject": "Freeze P-D4 oracle successor probe",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/638_p_d4_oracle_successor_harness_frozen.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/303_p_d4_oracle_successor_harness_freeze.md"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/638_p_d4_oracle_successor_harness_frozen.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0028/STATE.json",
+        "docs/model_collaboration/threads/MC-0028/THREAD.md",
+        "docs/research/303_p_d4_oracle_successor_harness_freeze.md"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": false,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E045",
+      "commit": "a6ab12426df1bc06676b6631ca2a6305cf3b64f4",
+      "parents": [
+        "6813ba61ac9235aaf6f892ff33d3fd40bca3812f"
+      ],
+      "date": "2026-09-24T18:17:56+02:00",
+      "subject": "Record P-D4 semantic parity pass",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/639_p_d4_semantic_oracle_successor_parity_pass.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/304_p_d4_oracle_successor_semantic_parity_pass.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "experiments/r8c_assurance_probe_v01/evidence/p_d4_run_001.json"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/639_p_d4_semantic_oracle_successor_parity_pass.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0028/STATE.json",
+        "docs/model_collaboration/threads/MC-0028/THREAD.md",
+        "docs/research/304_p_d4_oracle_successor_semantic_parity_pass.md",
+        "experiments/r8c_assurance_probe_v01/evidence/p_d4_run_001.json"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": true,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E046",
+      "commit": "b693ca84722149e91e5a6e67b5d2b292491097ac",
+      "parents": [
+        "a6ab12426df1bc06676b6631ca2a6305cf3b64f4"
+      ],
+      "date": "2026-09-24T18:27:04+02:00",
+      "subject": "Freeze P-S power study plan",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "A",
+          "paths": [
+            "experiments/r8c_assurance_probe_v01/p_s_power_study_plan.json"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "experiments/r8c_assurance_probe_v01/p_s_power_study_plan.json"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": false,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": false,
+        "touches_experiment_or_test": true,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E047",
+      "commit": "fe3aeb2a59879ac9349142457d68a15508d619fc",
+      "parents": [
+        "b693ca84722149e91e5a6e67b5d2b292491097ac"
+      ],
+      "date": "2026-09-24T18:31:20+02:00",
+      "subject": "Record P-S power study plan freeze",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/640_p_s_power_desk_study_plan_frozen.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/305_p_s_stochastic_campaign_power_desk_study_plan_freeze.md"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/640_p_s_power_desk_study_plan_frozen.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0028/STATE.json",
+        "docs/model_collaboration/threads/MC-0028/THREAD.md",
+        "docs/research/305_p_s_stochastic_campaign_power_desk_study_plan_freeze.md"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": false,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E048",
+      "commit": "ae66a929b023d9fec805eb11a3a2c9b1155d74d8",
+      "parents": [
+        "fe3aeb2a59879ac9349142457d68a15508d619fc"
+      ],
+      "date": "2026-09-24T18:48:00+02:00",
+      "subject": "Add P-S stochastic power probe harness",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "experiments/r8c_assurance_probe_v01/README.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "experiments/r8c_assurance_probe_v01/p_s_stochastic_power.py"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "experiments/r8c_assurance_probe_v01/README.md",
+        "experiments/r8c_assurance_probe_v01/p_s_stochastic_power.py"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": false,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": false,
+        "touches_experiment_or_test": true,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E049",
+      "commit": "84a1c291c3b61e496cffc1a5e179efb22197697f",
+      "parents": [
+        "ae66a929b023d9fec805eb11a3a2c9b1155d74d8"
+      ],
+      "date": "2026-09-24T18:51:48+02:00",
+      "subject": "Freeze P-S stochastic power probe",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/641_p_s_stochastic_power_harness_frozen.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/306_p_s_stochastic_power_harness_freeze.md"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/641_p_s_stochastic_power_harness_frozen.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0028/STATE.json",
+        "docs/model_collaboration/threads/MC-0028/THREAD.md",
+        "docs/research/306_p_s_stochastic_power_harness_freeze.md"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": false,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E050",
+      "commit": "c412e0e61386b43201cc62cc7987d814f1a80b2f",
+      "parents": [
+        "84a1c291c3b61e496cffc1a5e179efb22197697f"
+      ],
+      "date": "2026-09-24T18:56:40+02:00",
+      "subject": "Record P-S stochastic power pass",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/642_p_s_pass_eight_probe_program_complete.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/307_p_s_stochastic_campaign_power_desk_study_pass.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "experiments/r8c_assurance_probe_v01/evidence/p_s_run_001.json"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/642_p_s_pass_eight_probe_program_complete.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0028/STATE.json",
+        "docs/model_collaboration/threads/MC-0028/THREAD.md",
+        "docs/research/307_p_s_stochastic_campaign_power_desk_study_pass.md",
+        "experiments/r8c_assurance_probe_v01/evidence/p_s_run_001.json"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": true,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E051",
+      "commit": "6623ec93cabafed4c5cfbf6271cc8f7ee967e903",
+      "parents": [
+        "c412e0e61386b43201cc62cc7987d814f1a80b2f"
+      ],
+      "date": "2026-09-24T19:02:35+02:00",
+      "subject": "Prepare WARRANT-F V0.2 owner decision",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/643_warrant_f_v02_owner_decision_ready.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/308_r8c_eight_probe_reconciliation_owner_decision_readiness.md"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/643_warrant_f_v02_owner_decision_ready.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0028/STATE.json",
+        "docs/model_collaboration/threads/MC-0028/THREAD.md",
+        "docs/research/308_r8c_eight_probe_reconciliation_owner_decision_readiness.md"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": false,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E052",
+      "commit": "cd6f5ba5b707c7af40b8381a3ef707241be75aa8",
+      "parents": [
+        "6623ec93cabafed4c5cfbf6271cc8f7ee967e903"
+      ],
+      "date": "2026-09-24T22:40:53+02:00",
+      "subject": "Preserve general architecture vision and evolution boundary",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/309_generalizable_project_operating_architecture_vision_and_evolution_boundary.md"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md",
+        "docs/current_routing.json",
+        "docs/research/309_generalizable_project_operating_architecture_vision_and_evolution_boundary.md"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": false,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E053",
+      "commit": "78b3e7f2d88e1ab6b51a9dfb85cfdc604d6c074c",
+      "parents": [
+        "cd6f5ba5b707c7af40b8381a3ef707241be75aa8"
+      ],
+      "date": "2026-09-24T22:52:46+02:00",
+      "subject": "Preserve whole-architecture self-improvement model",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/645_whole_architecture_governed_self_improvement_model_preserved.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/310_whole_architecture_governed_self_improvement_model.md"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/645_whole_architecture_governed_self_improvement_model_preserved.md",
+        "docs/current_routing.json",
+        "docs/research/310_whole_architecture_governed_self_improvement_model.md"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": false,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E054",
+      "commit": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
+      "parents": [
+        "78b3e7f2d88e1ab6b51a9dfb85cfdc604d6c074c"
+      ],
+      "date": "2026-09-24T23:03:31+02:00",
+      "subject": "Accept WARRANT-F V0.2 and close R8-C",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/646_warrant_f_v02_accepted_ao10_reconciliation_unblocked.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/RESOLUTION.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/messages/005_chatgpt_owner_acceptance_and_thread_close.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/311_warrant_f_v02_owner_acceptance_r8c_closure_and_ao10_reconciliation_entry.md"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/646_warrant_f_v02_accepted_ao10_reconciliation_unblocked.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0028/RESOLUTION.md",
+        "docs/model_collaboration/threads/MC-0028/STATE.json",
+        "docs/model_collaboration/threads/MC-0028/THREAD.md",
+        "docs/model_collaboration/threads/MC-0028/messages/005_chatgpt_owner_acceptance_and_thread_close.md",
+        "docs/research/311_warrant_f_v02_owner_acceptance_r8c_closure_and_ao10_reconciliation_entry.md"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": true,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": false,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E055",
+      "commit": "61762e2f89917be58c9bc3f908011ae03442eef3",
+      "parents": [
+        "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d"
+      ],
+      "date": "2026-09-24T23:27:10+02:00",
+      "subject": "Freeze Spec 028 reconciliation and AO-10 candidate",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/647_spec028_ao10_v01_frozen_independent_review_opened.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0029/BRIEF.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0029/STATE.json"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0029/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/project_knowledge_activation_orchestration/AO10_SPEC028_RECONCILIATION_V01.json"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/647_spec028_ao10_v01_frozen_independent_review_opened.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0029/BRIEF.md",
+        "docs/model_collaboration/threads/MC-0029/STATE.json",
+        "docs/model_collaboration/threads/MC-0029/THREAD.md",
+        "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+        "docs/research/project_knowledge_activation_orchestration/AO10_SPEC028_RECONCILIATION_V01.json"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": false,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E056",
+      "commit": "6afbeda338a2e32dd8d9b5216aa93b265a0ac789",
+      "parents": [
+        "61762e2f89917be58c9bc3f908011ae03442eef3"
+      ],
+      "date": "2026-09-25T08:51:14+02:00",
+      "subject": "Preserve integrated semantic architecture clarification",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/648_integrated_dynamic_architecture_semantic_system_clarification_preserved.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0029/BRIEF.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0029/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0029/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/313_integrated_dynamic_professional_architecture_and_semantic_system_owner_clarification.md"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/648_integrated_dynamic_architecture_semantic_system_clarification_preserved.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0029/BRIEF.md",
+        "docs/model_collaboration/threads/MC-0029/STATE.json",
+        "docs/model_collaboration/threads/MC-0029/THREAD.md",
+        "docs/research/313_integrated_dynamic_professional_architecture_and_semantic_system_owner_clarification.md"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": false,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E057",
+      "commit": "d803cf1c62e501d41d8f0329fb62569a02935620",
+      "parents": [
+        "6afbeda338a2e32dd8d9b5216aa93b265a0ac789"
+      ],
+      "date": "2026-09-25T09:02:31+02:00",
+      "subject": "Reconcile Claude-04 provenance for MC-0029",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/649_claude04_conversation_provenance_reconciled_mc0029_ready.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0029/BRIEF.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0029/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0029/THREAD.md"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/649_claude04_conversation_provenance_reconciled_mc0029_ready.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0029/BRIEF.md",
+        "docs/model_collaboration/threads/MC-0029/STATE.json",
+        "docs/model_collaboration/threads/MC-0029/THREAD.md"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": false,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E058",
+      "commit": "21ffc1a5c95de57aaf64fcc12f55dfffcd220523",
+      "parents": [
+        "d803cf1c62e501d41d8f0329fb62569a02935620"
+      ],
+      "date": "2026-09-25T09:13:43+02:00",
+      "subject": "Correct Claude-04 collaboration provenance",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/650_claude04_interaction_provenance_corrected.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/BRIEF.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/PROVENANCE_CORRECTION.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/RESOLUTION.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0028/THREAD.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0029/BRIEF.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0029/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0029/THREAD.md"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/650_claude04_interaction_provenance_corrected.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0028/BRIEF.md",
+        "docs/model_collaboration/threads/MC-0028/PROVENANCE_CORRECTION.md",
+        "docs/model_collaboration/threads/MC-0028/RESOLUTION.md",
+        "docs/model_collaboration/threads/MC-0028/STATE.json",
+        "docs/model_collaboration/threads/MC-0028/THREAD.md",
+        "docs/model_collaboration/threads/MC-0029/BRIEF.md",
+        "docs/model_collaboration/threads/MC-0029/STATE.json",
+        "docs/model_collaboration/threads/MC-0029/THREAD.md"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": false,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E059",
+      "commit": "74023a779998200a6317df07dc7cd4979ff84e47",
+      "parents": [
+        "21ffc1a5c95de57aaf64fcc12f55dfffcd220523"
+      ],
+      "date": "2026-09-25T09:30:34+02:00",
+      "subject": "MC-0029 Message 001: Claude independent Spec 028 reconciliation and AO-10 design (KEYSTONE)",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "A",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0029/messages/001_claude_independent_spec028_ao10_design.md"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/model_collaboration/threads/MC-0029/messages/001_claude_independent_spec028_ao10_design.md"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": false,
+        "publishes_collaboration_message": true,
+        "touches_research_or_checkpoint": false,
+        "touches_experiment_or_test": false,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E060",
+      "commit": "cebbde3a0b815b437fed7d8c1d0932a545db6958",
+      "parents": [
+        "74023a779998200a6317df07dc7cd4979ff84e47"
+      ],
+      "date": "2026-09-25T09:54:58+02:00",
+      "subject": "Reconcile KEYSTONE with AO-10 candidate",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/651_mc0029_comparative_reconciliation_frozen.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0029/BRIEF.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0029/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0029/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0029/messages/002_chatgpt_comparative_reconciliation.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/314_mc0029_comparative_reconciliation_integrated_project_system_v02.md"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/651_mc0029_comparative_reconciliation_frozen.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0029/BRIEF.md",
+        "docs/model_collaboration/threads/MC-0029/STATE.json",
+        "docs/model_collaboration/threads/MC-0029/THREAD.md",
+        "docs/model_collaboration/threads/MC-0029/messages/002_chatgpt_comparative_reconciliation.md",
+        "docs/research/314_mc0029_comparative_reconciliation_integrated_project_system_v02.md"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": true,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": false,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E061",
+      "commit": "79b915894e0b055aadea05fe7d5767aa223d423e",
+      "parents": [
+        "cebbde3a0b815b437fed7d8c1d0932a545db6958"
+      ],
+      "date": "2026-09-25T10:08:30+02:00",
+      "subject": "MC-0029 Message 003: Claude comparative critique of integrated Project-system V0.2",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "A",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0029/messages/003_claude_comparative_integrated_project_system_critique.md"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/model_collaboration/threads/MC-0029/messages/003_claude_comparative_integrated_project_system_critique.md"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": false,
+        "publishes_collaboration_message": true,
+        "touches_research_or_checkpoint": false,
+        "touches_experiment_or_test": false,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E062",
+      "commit": "870689734673e6e8c2212035afcdf27daf733c15",
+      "parents": [
+        "79b915894e0b055aadea05fe7d5767aa223d423e"
+      ],
+      "date": "2026-09-25T10:18:10+02:00",
+      "subject": "Reconcile MC-0029 critique into V0.3",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/652_mc0029_message003_reconciliation_frozen.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0029/BRIEF.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0029/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0029/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0029/messages/004_chatgpt_message003_reconciliation.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/315_mc0029_message003_reconciliation_integrated_project_system_v03.md"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/652_mc0029_message003_reconciliation_frozen.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0029/BRIEF.md",
+        "docs/model_collaboration/threads/MC-0029/STATE.json",
+        "docs/model_collaboration/threads/MC-0029/THREAD.md",
+        "docs/model_collaboration/threads/MC-0029/messages/004_chatgpt_message003_reconciliation.md",
+        "docs/research/315_mc0029_message003_reconciliation_integrated_project_system_v03.md"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": true,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": false,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E063",
+      "commit": "58b099896bcca0b804b6efee92dc45e4ab25a6aa",
+      "parents": [
+        "870689734673e6e8c2212035afcdf27daf733c15"
+      ],
+      "date": "2026-09-25T10:47:17+02:00",
+      "subject": "Preregister AO-10 decision probe program",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/653_ao10_decision_probe_program_preregistered.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0029/BRIEF.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0029/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0029/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/316_ao10_integrated_project_system_decision_probe_preregistration_v01.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/project_knowledge_activation_orchestration/ao10/AO10_DRP_PROTOCOL_V01.json"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/653_ao10_decision_probe_program_preregistered.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0029/BRIEF.md",
+        "docs/model_collaboration/threads/MC-0029/STATE.json",
+        "docs/model_collaboration/threads/MC-0029/THREAD.md",
+        "docs/research/316_ao10_integrated_project_system_decision_probe_preregistration_v01.md",
+        "docs/research/project_knowledge_activation_orchestration/ao10/AO10_DRP_PROTOCOL_V01.json"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": false,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E064",
+      "commit": "97ece84d0deb123e6e647fcf90462f0f8e608c8b",
+      "parents": [
+        "58b099896bcca0b804b6efee92dc45e4ab25a6aa"
+      ],
+      "date": "2026-09-25T10:52:18+02:00",
+      "subject": "Freeze DRP-09 assurance request harness",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/654_drp09_harness_frozen.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0029/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0029/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/317_drp09_assurance_request_claim_integrity_harness_freeze.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "experiments/ao10_drp09_assurance_request_integrity_v01/README.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "experiments/ao10_drp09_assurance_request_integrity_v01/cases.json"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "experiments/ao10_drp09_assurance_request_integrity_v01/policy.json"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "experiments/ao10_drp09_assurance_request_integrity_v01/probe.py"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/654_drp09_harness_frozen.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0029/STATE.json",
+        "docs/model_collaboration/threads/MC-0029/THREAD.md",
+        "docs/research/317_drp09_assurance_request_claim_integrity_harness_freeze.md",
+        "experiments/ao10_drp09_assurance_request_integrity_v01/README.md",
+        "experiments/ao10_drp09_assurance_request_integrity_v01/cases.json",
+        "experiments/ao10_drp09_assurance_request_integrity_v01/policy.json",
+        "experiments/ao10_drp09_assurance_request_integrity_v01/probe.py"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": true,
+        "touches_specification_or_foundation": false
+      }
+    },
+    {
+      "event_id": "E065",
+      "commit": "500de961fcfe6c4eaa017cf564ecb5d65ff158e7",
+      "parents": [
+        "97ece84d0deb123e6e647fcf90462f0f8e608c8b"
+      ],
+      "date": "2026-09-25T10:57:59+02:00",
+      "subject": "Record DRP-09 assurance request pass",
+      "source_type": "GIT_COMMIT_EVENT",
+      "changes": [
+        {
+          "status": "M",
+          "paths": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/checkpoints/655_drp09_pass.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/current_routing.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/REVIEW_INBOX.md"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0029/STATE.json"
+          ]
+        },
+        {
+          "status": "M",
+          "paths": [
+            "docs/model_collaboration/threads/MC-0029/THREAD.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/318_drp09_assurance_request_claim_integrity_pass.md"
+          ]
+        },
+        {
+          "status": "A",
+          "paths": [
+            "docs/research/project_knowledge_activation_orchestration/ao10/evidence/drp09_run001_result.json"
+          ]
+        }
+      ],
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/655_drp09_pass.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0029/STATE.json",
+        "docs/model_collaboration/threads/MC-0029/THREAD.md",
+        "docs/research/318_drp09_assurance_request_claim_integrity_pass.md",
+        "docs/research/project_knowledge_activation_orchestration/ao10/evidence/drp09_run001_result.json"
+      ],
+      "derived_fixture_flags": {
+        "touches_control_state": true,
+        "publishes_collaboration_message": false,
+        "touches_research_or_checkpoint": true,
+        "touches_experiment_or_test": false,
+        "touches_specification_or_foundation": false
+      }
+    }
+  ]
+}

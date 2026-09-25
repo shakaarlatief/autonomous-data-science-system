@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 655
+**Checkpoint:** 656
 **Date:** 2026-09-25
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -1285,3 +1285,5 @@ Checkpoint 653 freezes Research 316, the AO-10 Integrated Project-System Decisio
 Checkpoint 654 freezes Research 317, the DRP-09 assurance-request claim-integrity fixture/harness, after Research 316 preregistered all decision rules. The frozen fixture contains 13 request variants and a seeded faulty-normalizer witness that improperly trusts request-provided claim lists. AST/JSON pre-execution validation passes. The scored probe has not run, no result has been observed, and thresholds are unchanged. Next is exact execution of the frozen DRP-09 harness. No production implementation, migration or authority action is authorized.
 
 Checkpoint 655 records Research 318 / DRP-09 PASS. The exact frozen harness from Research 317 ran once with 13/13 cases matching expected decisions and both deliberately faulty request-normalizer witnesses detected. Policy-required claims remained policy-derived even when request-side claim lists omitted one or multiple claims; stale subject/base, weaker consequence, missing trust, unknown profile and stale evidence remained fail-visible as preregistered. This supports the V0.3 rule that AO cannot suppress WARRANT-F policy-required claims. The result is target-architecture evidence only and does not qualify a production adapter. DRP result count is now 1, with no unresolved AMEND or active HARNESS_INVALID result. Next is DRP-05a/05b corpus and harness freeze.
+
+Checkpoint 656 freezes Research 319 / DRP-05a and DRP-05b before scored execution. The fixture uses all 65 non-merge commits from MC-0028 opening through the DRP-09 result commit, with no ease-based exclusions. DRP-05a normalizes structured Git history events into provider-neutral ActionShape classes and includes provider-invariance and malformed-event controls. DRP-05b measures actual AO pre-dispatch mediation rather than generic transport safety: current production AO preflight is absent, so the frozen classifier distinguishes cooperative governed practice from technical prevention and includes a synthetic MEDIATED sensitivity witness. The harness is AST/JSON-valid and unexecuted. Next is exact DRP-05a/05b execution.

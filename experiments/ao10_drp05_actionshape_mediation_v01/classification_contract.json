@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "probe": "DRP-05a/DRP-05b",
+  "corpus_base": "500de961fcfe6c4eaa017cf564ecb5d65ff158e7",
+  "actionshape": {
+    "provider_neutral": true,
+    "source_type": "GIT_COMMIT_EVENT",
+    "required_fields": [
+      "commit",
+      "changed_paths"
+    ],
+    "base_operation_family": "GIT_COMMIT",
+    "base_target_family": "REPOSITORY_HISTORY",
+    "base_consequence": "REPOSITORY_HISTORY_MUTATION",
+    "path_rules": [
+      {
+        "name": "CONTROL_STATE_MUTATION",
+        "flag": "touches_control_state"
+      },
+      {
+        "name": "COLLABORATION_HANDOFF_PUBLICATION",
+        "flag": "publishes_collaboration_message"
+      },
+      {
+        "name": "QUALIFICATION_ARTIFACT_MUTATION",
+        "flag": "touches_experiment_or_test"
+      },
+      {
+        "name": "GOVERNANCE_CARRIER_MUTATION",
+        "flag": "touches_specification_or_foundation"
+      },
+      {
+        "name": "KNOWLEDGE_BOUNDARY_MUTATION",
+        "flag": "touches_research_or_checkpoint"
+      }
+    ],
+    "exact_authority_transition_commits": [
+      "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d"
+    ],
+    "authority_transition_shape": "AUTHORITY_STATE_TRANSITION",
+    "fallback": "MODEL_ASSISTED_REVIEW"
+  },
+  "mediation": {
+    "measure": "AO_PRE_DISPATCH_MEDIATION",
+    "generic_transport_safety_does_not_count_as_AO_mediation": true,
+    "production_ao_preflight_available": false,
+    "evidence": [
+      "Research 315 section 20: AO10_PRODUCTION_IMPLEMENTATION_AUTHORIZED=false",
+      "Checkpoint 655/current state: no AO-10 production implementation is authorized"
+    ],
+    "cooperative_evidence_rule": "event touches durable control state, research/checkpoint boundary, or model-collaboration message, demonstrating project-protocol participation but not enforced AO interception",
+    "classes": [
+      "MEDIATED",
+      "COOPERATIVE",
+      "UNMEDIATED",
+      "UNKNOWN"
+    ],
+    "prevention_allowed_only_for": "MEDIATED"
+  },
+  "thresholds": {
+    "actionshape_coverage_min": 0.9,
+    "high_consequence_coverage_required": 1,
+    "mediation_classification_min": 0.9,
+    "detective_first_if_mediated_share_below": 0.5
+  },
+  "controls": {
+    "provider_identity_invariance": true,
+    "malformed_event_must_fallback": true,
+    "synthetic_mediated_event_must_classify": true
+  }
+}

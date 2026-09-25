@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP09_PASS_DRP05_FREEZE_NEXT",
+  "phase": "DRP05_HARNESS_FROZEN",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -65,14 +65,14 @@
       "Claude Message 003 completed comparative critique at 79b915894e0b055aadea05fe7d5767aa223d423e.",
       "Research 315 / Message 004 reconcile Message 003 into V0.3 and route MC-0029 to DRP-01 through DRP-09 preregistration."
     ],
-    "notes": "DRP-09 is the first valid scored result under Research 316: PASS, 13/13 cases, 2/2 seeded suppression witnesses caught. No AMEND or HARNESS_INVALID result is active. DRP-05a/05b freeze is next."
+    "notes": "DRP-09 is PASS. Research 319 freezes DRP-05a/05b against 65 mechanically selected real Git events from MC-0028 opening through the DRP-09 result commit. No DRP-05 result has been observed."
   },
   "last_transition": {
-    "transition_id": "mc0029-drp09-pass",
+    "transition_id": "mc0029-drp05-harness-frozen",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Frozen DRP-09 executed with 13/13 cases passing and both seeded policy-claim suppression defects detected. V0.3 assurance seam retained; DRP-05a/05b corpus/harness freeze is next.",
-    "repository_head": "97ece84d0deb123e6e647fcf90462f0f8e608c8b"
+    "reason": "Research 319 freezes the DRP-05a/05b 65-event real Git corpus, ActionShape contract, mediation contract and controls before scored execution.",
+    "repository_head": "500de961fcfe6c4eaa017cf564ecb5d65ff158e7"
   }
 }
