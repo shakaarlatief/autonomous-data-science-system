@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_PROTOCOL_CANDIDATE_CLAUDE_REVIEW_NEXT",
+  "phase": "DRP03_R2_PROTOCOL_V02_FINAL_CLAUDE_REVIEW_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -71,14 +71,14 @@
       "DRP-03 Claude reviewer A must not inspect Research 324 or any future ChatGPT DRP-03 annotation/summary before committing its annotation.",
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15."
     ],
-    "notes": "Research 328 proposes the exact DRP-03 R2 protocol but does not freeze a hidden key or executable harness. R2 is split into BIRTH, LEGACY and STATE. Birth uses six owner/governance acceptance events with pre-acceptance snapshots and a deterministic development/held-out split; legacy output remains candidate-only; state tests fact validity plus derived-state reproducibility. ChatGPT remains key/protocol author and is excluded as a decision reviewer. Claude-04 is eligible only as protocol critic/non-blind reviewer. A fresh reviewer interaction remains mandatory for hidden-witness decision evidence."
+    "notes": "Claude Message 008 AMEND is reconciled by Research 329. R2 protocol V0.2 now mechanically enumerates the accepted-event pool, splits AO9 P7 D01/D02/D03, removes full-snapshot exposure, removes historical E259 owner-added-delta scoring, requires dual independent key authors plus construct-validity gate, pairwise MUST_JOIN/MUST_SPLIT grouping truth, two fresh blind decision reviewers, hash-committed private key concealment, component-level results, and explicit M-1..M-6 controls/limitations. No hidden R2 key, harness or reviewer annotation exists. Claude-04 is protocol critic only and must not create a key or annotation in Message 009."
   },
   "last_transition": {
-    "transition_id": "mc0029-drp03-r2-protocol-candidate",
+    "transition_id": "mc0029-drp03-r2-protocol-v02-candidate",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 328 defines the exact DRP-03 R2 preregistration candidate, including corpus, temporal snapshots, split, segmentation, metrics, candidate thresholds, reviewer roles and result classes. Claude-04 adversarial protocol review is required before any hidden key or harness is frozen.",
-    "repository_head": "546a86e2bc30b4c871e8d875f358c9ce1f393d0f"
+    "reason": "Research 329 reconciles Message 008 R2P-1 through R2P-15 into V0.6 and R2 protocol V0.2. A final Claude-04 protocol critique is required before any hidden key/harness freeze.",
+    "repository_head": "e52dff020299560e2f49f5b31d6a3c8dbb42b49e"
   }
 }

@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-25
-**Status:** MC-0029 OPEN / DRP-03 R1 AMEND / V0.5 RECONCILED / R2 PROTOCOL CANDIDATE / CLAUDE REVIEW NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / DRP-03 R1 AMEND / V0.6 + R2 V0.2 CANDIDATE / FINAL CLAUDE REVIEW NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -45,11 +45,13 @@ Research 327 reconciles every Message 007 requirement into V0.5. Obligation birt
 
 The durable R1 result evidence is now explicitly bound to GIT_BLOB_BYTES_AT_COMMIT SHA-256 f2e7b9071320079d5b239ef38b1d1d9f252a6af36d3a574e16df081dd09b8966; Research 326's a5a7... value is retained as the Windows CRLF working-tree observation rather than canonical repository evidence.
 
-Research 328 now defines the exact DRP-03 R2 preregistration candidate. R2 is split into BIRTH, LEGACY and STATE. BIRTH uses six temporally anchored owner/governance acceptance events, with a deterministic development/held-out split and pre-acceptance proposal snapshots. LEGACY remains candidate-only and uses stable item IDs plus hidden witness/control identities. STATE tests DeferralRecord/fact validity and derived-state reproducibility. ChatGPT is excluded as a decision reviewer because it is the protocol/key author. Claude-04 may critique the protocol and later serve only as a non-blind reviewer; a fresh interaction is mandatory for blind decision evidence.
+Claude Message 008 returned AMEND. Research 329 reconciles all R2P-1 through R2P-15 into V0.6 and R2 protocol V0.2. The accepted-event pool is now mechanically enumerated from first-parent history, AO9 P7 D01/D02/D03 are split into separate temporally fair events, reviewers receive bounded whole-document packets rather than repository snapshots, and the historical E259 owner-added-delta metric is removed as untestable without verbatim owner evidence.
 
-No hidden R2 evaluator key or executable harness has been created.
+R2 now requires two independent hidden-key authors with a pre-reviewer construct-validity gate, owner adjudication of material key disagreements without erasing poor agreement, a capped ambiguity set, MUST_JOIN/MUST_SPLIT grouping constraints, two fresh blind decision reviewers, reviewer-inaccessible key storage with public hash commitments, separate BIRTH/LEGACY/STATE result classes, and explicit INCONCLUSIVE / CONSTRUCT_UNDERDETERMINED / HARNESS_INVALID outcomes. M-1 through M-6 are carried explicitly; historical owner rubber-stamp efficacy remains untested rather than assumed.
 
-Next: Claude-04 adversarial review of Research 328 before any R2 freeze.
+No hidden R2 evaluator key, executable harness, or reviewer annotation exists.
+
+Next: Claude-04 final adversarial review of Research 329 before any R2 freeze.
 
 Owner decision and all production/migration/authority actions remain held.
 

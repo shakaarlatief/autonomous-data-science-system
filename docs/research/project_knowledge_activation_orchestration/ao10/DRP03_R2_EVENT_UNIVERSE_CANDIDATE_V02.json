@@ -1,0 +1,220 @@
+{
+  "schema_version": 1,
+  "status": "R2_PROTOCOL_V02_EVENT_UNIVERSE_CANDIDATE_NOT_FROZEN",
+  "history_window": {
+    "first_parent_start_inclusive": "1435b02729edaf416c8196f224e1cf49c1dd715b",
+    "first_parent_end_inclusive": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d"
+  },
+  "mechanical_candidate_rule": {
+    "history": "first-parent only",
+    "subject_regex": "^(Accept\\b|Apply AO9 P7\\b)",
+    "include_every_match": true,
+    "split_rule": "first_32_bits(SHA256(event_id)) mod 3; 0=DEVELOPMENT, 1|2=HELD_OUT"
+  },
+  "reviewer_packet_boundary": {
+    "full_repository_snapshot_visible": false,
+    "proposal_sources": "whole documents only, resolved at pre_acceptance_snapshot",
+    "forbidden_live_state_surfaces": [
+      "docs/CURRENT_STATE.md",
+      "docs/current_routing.json",
+      "docs/checkpoints/**"
+    ],
+    "acceptance_record_visible_during_authoring": false,
+    "temporal_fairness": "every packet blob must exist at pre_acceptance_snapshot; no content first introduced by the acceptance commit or later may enter the predecision packet"
+  },
+  "events": [
+    {
+      "event_id": "EV-1435b027",
+      "acceptance_commit": "1435b02729edaf416c8196f224e1cf49c1dd715b",
+      "pre_acceptance_snapshot": "b908fe0e0230383feedc0f97df17e615daf0ea63",
+      "commit_subject": "Apply AO9 P7 D01 amendment",
+      "event_kind": "REQUIREMENT_ACCEPTANCE_OR_AMENDMENT",
+      "proposal_sources": [
+        "docs/research/234_ao9_p6_reconciliation_and_owner_decision_boundary.md"
+      ],
+      "decision_input": "P7-D01 / AO8-E01 = AMEND",
+      "split_hash_mod3": 1,
+      "split": "HELD_OUT",
+      "birth_scoring_eligibility": "PRIMARY_BIRTH_ELIGIBLE",
+      "notes": []
+    },
+    {
+      "event_id": "EV-02847e6a",
+      "acceptance_commit": "02847e6a608d0c0fa2bc3cb8a2a3d93fef981df5",
+      "pre_acceptance_snapshot": "1435b02729edaf416c8196f224e1cf49c1dd715b",
+      "commit_subject": "Accept AO9 P7 D02 requirement",
+      "event_kind": "REQUIREMENT_ACCEPTANCE_OR_AMENDMENT",
+      "proposal_sources": [
+        "docs/research/234_ao9_p6_reconciliation_and_owner_decision_boundary.md"
+      ],
+      "decision_input": "P7-D02 / KA-R51 = ACCEPT_REQUIREMENT",
+      "split_hash_mod3": 0,
+      "split": "DEVELOPMENT",
+      "birth_scoring_eligibility": "PRIMARY_BIRTH_ELIGIBLE",
+      "notes": []
+    },
+    {
+      "event_id": "EV-6c1a51c4",
+      "acceptance_commit": "6c1a51c490c863c34486a1bcb186939675b25071",
+      "pre_acceptance_snapshot": "02847e6a608d0c0fa2bc3cb8a2a3d93fef981df5",
+      "commit_subject": "Accept AO9 P7 D03 and close AO9",
+      "event_kind": "REQUIREMENT_ACCEPTANCE_OR_AMENDMENT",
+      "proposal_sources": [
+        "docs/research/234_ao9_p6_reconciliation_and_owner_decision_boundary.md"
+      ],
+      "decision_input": "P7-D03 / KA-R52 = ACCEPT_REQUIREMENT",
+      "split_hash_mod3": 2,
+      "split": "HELD_OUT",
+      "birth_scoring_eligibility": "PRIMARY_BIRTH_ELIGIBLE",
+      "notes": []
+    },
+    {
+      "event_id": "EV-33af3544",
+      "acceptance_commit": "33af35442df7350d9571e4f59108c393759ad4b3",
+      "pre_acceptance_snapshot": "a2341810c0e8a91d3e71c2c26ad2624d1aaa87a2",
+      "commit_subject": "Accept G-DUAL and preserve from-scratch lower levels",
+      "event_kind": "OWNER_DECISION_ACCEPTANCE",
+      "proposal_sources": [
+        "docs/research/245_whole_repository_r5_root_role_derivation_and_recommended_target.md"
+      ],
+      "decision_input": "ACCEPT G-DUAL Level-1 target",
+      "split_hash_mod3": 0,
+      "split": "DEVELOPMENT",
+      "birth_scoring_eligibility": "PRIMARY_BIRTH_ELIGIBLE",
+      "notes": []
+    },
+    {
+      "event_id": "EV-8c85be87",
+      "acceptance_commit": "8c85be872f11b9a09b2a3f2cef8b52add2072a56",
+      "pre_acceptance_snapshot": "3aebde8aca9e0daf69ddcf5cdac073a7eea13eb8",
+      "commit_subject": "Accept G-DUAL amendment and unblock R6",
+      "event_kind": "OWNER_DECISION_ACCEPTANCE",
+      "proposal_sources": [
+        "docs/research/247_g_dual_adversarial_reconciliation_and_proposed_level1_amendment.md"
+      ],
+      "decision_input": "AMEND G-DUAL",
+      "split_hash_mod3": 1,
+      "split": "HELD_OUT",
+      "birth_scoring_eligibility": "PRIMARY_BIRTH_ELIGIBLE",
+      "notes": []
+    },
+    {
+      "event_id": "EV-39a5f8f6",
+      "acceptance_commit": "39a5f8f66d78a1c355c3300d110d24121f796deb",
+      "pre_acceptance_snapshot": "26de53ff02df8b9a32ad195d211f634f0a9be500",
+      "commit_subject": "Accept R6 bounded-context architecture",
+      "event_kind": "OWNER_DECISION_ACCEPTANCE",
+      "proposal_sources": [
+        "docs/research/250_r6a_responsibility_coupling_bounded_context_and_workspace_synthesis.md"
+      ],
+      "decision_input": "ACCEPT R6 bounded-context architecture",
+      "split_hash_mod3": 0,
+      "split": "DEVELOPMENT",
+      "birth_scoring_eligibility": "PRIMARY_BIRTH_ELIGIBLE",
+      "notes": []
+    },
+    {
+      "event_id": "EV-1d91d0db",
+      "acceptance_commit": "1d91d0dbed289cad7cc0ce06a4268a685910ff87",
+      "pre_acceptance_snapshot": "66996189ed772df0cc32038fdb63d232e05bfde5",
+      "commit_subject": "Accept amended R7 architecture and unblock R8",
+      "event_kind": "OWNER_DECISION_ACCEPTANCE",
+      "proposal_sources": [
+        "docs/research/255_r218_vs_r7_comparative_reconciliation_and_amended_r7_target_candidate.md"
+      ],
+      "decision_input": "AMEND / accept R7 as amended",
+      "split_hash_mod3": 1,
+      "split": "HELD_OUT",
+      "birth_scoring_eligibility": "PRIMARY_BIRTH_ELIGIBLE",
+      "notes": []
+    },
+    {
+      "event_id": "EV-18199147",
+      "acceptance_commit": "181991476bb7091f30235674acf6bfb2b065df59",
+      "pre_acceptance_snapshot": "7e9dafd675611632769a482cffca69661567a00e",
+      "commit_subject": "Accept amended R8-A and freeze representation freedom",
+      "event_kind": "OWNER_DECISION_ACCEPTANCE",
+      "proposal_sources": [
+        "docs/research/258_mc0025_r8a_adversarial_reconciliation_and_amended_exact_target_candidate.md"
+      ],
+      "decision_input": "AMEND / accept R8-A as amended",
+      "split_hash_mod3": 1,
+      "split": "HELD_OUT",
+      "birth_scoring_eligibility": "PRIMARY_BIRTH_ELIGIBLE",
+      "notes": [
+        "Historical owner-added clarification is not scored as verbatim-delta capture because no repository-native verbatim owner message is bound to the event."
+      ]
+    },
+    {
+      "event_id": "EV-46bc4eeb",
+      "acceptance_commit": "46bc4eeb74998d70d212c26acc7c8b8d2f0e1c3f",
+      "pre_acceptance_snapshot": "902fcfd15450a7ba3fb9f3e3542ef33790cf9af9",
+      "commit_subject": "Accept MC-0027 audit and freeze corrected representation probe",
+      "event_kind": "OWNER_DECISION_ACCEPTANCE",
+      "proposal_sources": [
+        "docs/research/263_mc0026_final_reconciliation_and_preregistered_r8b_representation_probe.md",
+        "docs/model_collaboration/threads/MC-0027/messages/001_claude_p_r8b_01_result_audit.md"
+      ],
+      "decision_input": "ACCEPT MC-0027 audit and corrected-probe direction",
+      "split_hash_mod3": 1,
+      "split": "HELD_OUT",
+      "birth_scoring_eligibility": "SECONDARY_STRESS_ONLY_PREDECISION_PACKAGE_INCOMPLETE",
+      "notes": [
+        "The final ChatGPT reconciliation was created in the acceptance commit, so this event cannot establish primary proposal-time birth performance."
+      ]
+    },
+    {
+      "event_id": "EV-6e627e53",
+      "acceptance_commit": "6e627e539e44b2619de7893cd64b47bc5cb3d422",
+      "pre_acceptance_snapshot": "aa0eda73685f6f91d107db99db2d1d7f7f560a1e",
+      "commit_subject": "Accept WMR-H V0.3 and close MC-0027",
+      "event_kind": "OWNER_DECISION_ACCEPTANCE",
+      "proposal_sources": [
+        "docs/research/266_mc0027_audit_reconciliation_wmrh_v03_and_corrected_probe_contract.md",
+        "docs/research/271_p_r8b_01_r2_attempt3_pass_wmrh_v03_owner_decision_ready.md"
+      ],
+      "decision_input": "ACCEPT WMR-H V0.3",
+      "split_hash_mod3": 2,
+      "split": "HELD_OUT",
+      "birth_scoring_eligibility": "PRIMARY_BIRTH_ELIGIBLE",
+      "notes": []
+    },
+    {
+      "event_id": "EV-0a68787a",
+      "acceptance_commit": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
+      "pre_acceptance_snapshot": "78b3e7f2d88e1ab6b51a9dfb85cfdc604d6c074c",
+      "commit_subject": "Accept WARRANT-F V0.2 and close R8-C",
+      "event_kind": "OWNER_DECISION_ACCEPTANCE",
+      "proposal_sources": [
+        "docs/research/276_owner_total_architecture_freedom_and_warrant_f_v02_reconciliation.md",
+        "docs/research/308_r8c_eight_probe_reconciliation_owner_decision_readiness.md",
+        "docs/research/309_generalizable_project_operating_architecture_vision_and_evolution_boundary.md",
+        "docs/research/310_whole_architecture_governed_self_improvement_model.md"
+      ],
+      "decision_input": "ACCEPT WARRANT-F V0.2 and R8-A Engineering amendment",
+      "split_hash_mod3": 2,
+      "split": "HELD_OUT",
+      "birth_scoring_eligibility": "PRIMARY_BIRTH_ELIGIBLE",
+      "notes": []
+    }
+  ],
+  "negative_birth_controls": [
+    {
+      "control_id": "NC-PRINCIPLE-01",
+      "control_type": "SYNTHETIC_ACCEPTED_PRINCIPLE_ONLY",
+      "purpose": "Exercise CREATES_NO_REALIZATION_UNITS without using a historical event whose proposal-time evidence is unavailable.",
+      "decision_relevance": "NEGATIVE_BIRTH_CONTROL_ONLY"
+    },
+    {
+      "control_id": "NC-DISPOSITION-01",
+      "control_type": "SYNTHETIC_SELF_EXECUTING_DISPOSITION_ONLY",
+      "purpose": "Exercise a self-executing accepted disposition with no follow-on realization unit.",
+      "decision_relevance": "NEGATIVE_BIRTH_CONTROL_ONLY"
+    }
+  ],
+  "owner_added_delta_metric": {
+    "historical_scored": false,
+    "reason": "No historical event in this candidate set has a repository-bound verbatim owner message suitable for unbiased scoring.",
+    "future_rule": "Persist verbatim owner decision evidence (or a private exact-text carrier plus digest/reference when required) separately from agent paraphrase."
+  }
+}

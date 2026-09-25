@@ -246,3 +246,46 @@ End with:
     REOPEN
 
 and enumerate every required change before a hidden key/harness freeze.
+
+## DRP-03 R2 protocol V0.2 final review
+
+Research 329 reconciles Message 008 and is still a candidate. No hidden R2 key, executable harness or reviewer annotation exists.
+
+Claude-04 remains protocol critic only.
+
+Adversarially review Research 329 and the public machine-readable event-universe candidate before any key/harness freeze.
+
+Required focus:
+
+- whether the first-parent history window plus Accept / Apply AO9 P7 subject rule is a defensible, replayable event universe rather than a new home-field selection;
+- whether whole-document proposal mappings are temporally fair and sufficiently non-curated;
+- whether the D01/D02/D03 split actually removes E235 leakage;
+- whether excluding EV-46bc4eeb from primary BIRTH scoring is justified;
+- whether historical E259 owner-added-delta capture is correctly marked UNTESTED and the prospective verbatim-decision rule is sufficient;
+- whether OWNER_NORMATIVE_CLARIFICATION and the two controlled negative birth fixtures are conceptually sound;
+- whether dual independent key authors, the construct-validity gate, owner material adjudication and the <=10% ambiguity cap avoid making the key one model's opinion;
+- whether MUST_JOIN / MUST_SPLIT grouping constraints faithfully implement the realization-boundary rule;
+- whether segmentation V0.2 is truly mechanical and avoids formatting-weight leakage;
+- whether BIRTH/LEGACY/STATE sample floors, metrics and candidate thresholds are defensible;
+- whether two fresh blind reviewers and the operational freshness boundary are realistically enforceable;
+- whether hash-committed reviewer-inaccessible key storage is sufficient;
+- whether component-level PASS / AMEND / INCONCLUSIVE / CONSTRUCT_UNDERDETERMINED / HARNESS_INVALID semantics map correctly to downstream holds;
+- whether M-1 through M-6 are addressed honestly, especially owner rubber-stamp efficacy being explicitly untested.
+
+Do not create or infer hidden labels.
+Do not create an R2 evaluator key.
+Do not create a harness.
+Do not create an R2 annotation.
+
+Write exactly:
+
+    docs/model_collaboration/threads/MC-0029/messages/009_claude_drp03_r2_protocol_v02_final_critique.md
+
+End with:
+
+    KEEP
+    AMEND
+    or
+    REOPEN
+
+and enumerate every remaining change required before a hidden key and executable harness may be frozen.
