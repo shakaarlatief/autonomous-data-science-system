@@ -1,0 +1,53 @@
+{
+  "probe": "DRP-01",
+  "protocol": "AO10-DRP-V01",
+  "primary_class": "PASS",
+  "reviewer_a": {
+    "carrier_count": 30,
+    "total_units": 36,
+    "represented_carriers": 30,
+    "role_representability": 1.0,
+    "carriers_over_four_units": 0,
+    "carriers_over_four_units_rate": 0.0,
+    "irreducibly_multirole_units": 0,
+    "irreducibly_multirole_unit_rate": 0.0,
+    "path_misuse_count": 0,
+    "admitted_primitives": [
+      "semantic_identity",
+      "exact_subject_revision_binding",
+      "provenance_descriptor",
+      "governing_lifecycle_reference",
+      "obligation_reference",
+      "governed_relation_reference"
+    ],
+    "primitive_failures": [],
+    "negative_controls_admitted": []
+  },
+  "reviewer_b": {
+    "carrier_count": 30,
+    "total_units": 45,
+    "represented_carriers": 29,
+    "role_representability": 0.9666666666666667,
+    "carriers_over_four_units": 1,
+    "carriers_over_four_units_rate": 0.03333333333333333,
+    "irreducibly_multirole_units": 1,
+    "irreducibly_multirole_unit_rate": 0.022222222222222223,
+    "path_misuse_count": 0,
+    "admitted_primitives": [
+      "semantic_identity",
+      "exact_subject_revision_binding",
+      "provenance_descriptor",
+      "governing_lifecycle_reference",
+      "obligation_reference",
+      "governed_relation_reference"
+    ],
+    "primitive_failures": [],
+    "negative_controls_admitted": []
+  },
+  "admission_set_jaccard": 1.0,
+  "admission_agreement_threshold": 0.8,
+  "reviewer_passes": [
+    true,
+    true
+  ]
+}

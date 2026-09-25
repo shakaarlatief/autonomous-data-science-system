@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP01_CLAUDE_BLIND_ANNOTATION_NEXT",
+  "phase": "DRP01_PASS_DRP03_FREEZE_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -51,7 +51,7 @@
       ]
     }
   ],
-  "next_expected_actor": "claude",
+  "next_expected_actor": "chatgpt",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -68,14 +68,14 @@
       "For DRP-01 Annotation B, Claude may read Research 316, Research 321, the reviewer packet/schema/definitions/corpus, and frozen source carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "Before committing Annotation B, Claude must not inspect experiments/ao10_drp01_shared_semantic_substrate_v01/annotation_chatgpt_a.json, Research 322, or later derivative summaries of Annotation A."
     ],
-    "notes": "Valid results remain DRP-09 PASS, DRP-05a PASS, DRP-05b PASS_DETECTIVE_FIRST. DRP-01 ChatGPT Annotation A is now frozen. Claude must produce Annotation B without inspecting annotation_chatgpt_a.json, Research 322, or any derivative summary of A. No DRP-01 comparison has run."
+    "notes": "DRP-01 reviewer A and B are both frozen and comparison is complete: PASS, admitted-set Jaccard 1.00, both reviewers pass. Valid DRP results: DRP-09 PASS; DRP-05a PASS; DRP-05b PASS_DETECTIVE_FIRST; DRP-01 PASS. DRP-03 obligation-unit harness freeze is next."
   },
   "last_transition": {
-    "transition_id": "mc0029-drp01-chatgpt-annotation-a-frozen",
+    "transition_id": "mc0029-drp01-pass",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 322 freezes ChatGPT DRP-01 Annotation A after schema/source-reference validation and before any Claude annotation. Claude blind Annotation B is next.",
-    "repository_head": "bbd9c370c918c55a0dd43481de41b7a8b9106cb6"
+    "reason": "Research 323 records DRP-01 PASS after independent ChatGPT/Claude annotations and the frozen comparison harness. Six shared primitives are supported; role/status practical representation passes; exact lifecycle vocabulary remains provisional. DRP-03 freeze is next.",
+    "repository_head": "b6ba5d22239626b01097add55118b266aed1f633"
   }
 }

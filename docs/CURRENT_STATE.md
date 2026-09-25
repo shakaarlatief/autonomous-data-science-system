@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 659
+**Checkpoint:** 660
 **Date:** 2026-09-25
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -1293,3 +1293,5 @@ Checkpoint 657 records Research 320: DRP-05a PASS and DRP-05b PASS_DETECTIVE_FIR
 Checkpoint 658 freezes Research 321 / DRP-01 before semantic scoring. The exact 30-carrier corpus is bound to protocol base 870689734673e6e8c2212035afcdf27daf733c15. Roles, provisional governing statuses, nine cross-domain seams, six candidate shared primitives, four negative controls, unit-decomposition rules and a comparison harness are frozen. Because the probe requires semantic judgment, Research 321 strengthens the protocol with two independent annotations: ChatGPT first, then Claude blind to ChatGPT's annotation, with >=0.80 admitted-primitive-set Jaccard added before either result exists. No DRP-01 annotation/result has been observed. Next is ChatGPT annotation A.
 
 Checkpoint 659 freezes Research 322 / DRP-01 ChatGPT Annotation A after schema/order and frozen-source-reference validation. No comparison score has been computed. Claude is now the independent reviewer B and must remain blind to Annotation A, Research 322, and derivative summaries of A until its own JSON annotation is committed. Claude may use Research 316, Research 321, the frozen reviewer packet/schema/definitions/corpus, and the exact 30 source carriers at protocol base 870689734673e6e8c2212035afcdf27daf733c15. No production or migration authority changes.
+
+Checkpoint 660 records Research 323 / DRP-01 PASS after Claude's independent Annotation B at b6ba5d22239626b01097add55118b266aed1f633. The frozen two-reviewer comparison yields admitted-primitive Jaccard 1.00: both reviewers admit semantic_identity, exact_subject_revision_binding, provenance_descriptor, governing_lifecycle_reference, obligation_reference and governed_relation_reference, reject all four domain negative controls, satisfy role decomposition thresholds and never rely on path as identity/authority. ChatGPT used 36 units; Claude used 45 with one irreducibly mixed CURRENT_STATE unit, still well inside preregistered burden limits. Claude's lifecycle-vocabulary findings are retained as successor-contract refinement input; exact status tokens remain intentionally unselected. Valid result count is now four. Next is DRP-03 obligation-unit harness freeze. No implementation, migration or authority action is authorized.
