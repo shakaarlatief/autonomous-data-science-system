@@ -1,0 +1,579 @@
+{
+  "schema_version": 1,
+  "probe": "DRP-01",
+  "base": "870689734673e6e8c2212035afcdf27daf733c15",
+  "carrier_count": 30,
+  "carriers": [
+    {
+      "path": "docs/PRINCIPLES.md",
+      "bytes": 19118,
+      "sha256": "134a9f823fccf1d4e21f465a78d2b9eb005603399f041989826c78c8b435bfb4",
+      "heading_count": 32,
+      "top_headings": [
+        "# Principles",
+        "## P-001. The repository is the persistent source of truth",
+        "## P-002. Preserve both distilled knowledge and rich reasoning",
+        "## P-003. Historical material is provenance, not automatic authority",
+        "## P-004. Evidence should dominate unsupported LLM judgment when a question is empirically testable",
+        "## P-005. Important assumptions should be explicit",
+        "## P-006. The workflow should be adaptive rather than globally linear",
+        "## P-007. Relevant investigations should be activated by project facts",
+        "## P-008. Use a hybrid reasoning architecture",
+        "## P-009. Important decisions should be challengeable",
+        "## P-010. The system should distinguish claims, hypotheses, decisions, and uncertainty",
+        "## P-011. Human attention should be used where it creates value"
+      ],
+      "format": "markdown"
+    },
+    {
+      "path": "docs/DECISIONS.md",
+      "bytes": 51120,
+      "sha256": "8111fb7631c1e931b223645b8b755c1b97f54cc31434dcf4e14a0fe917edeef7",
+      "heading_count": 73,
+      "top_headings": [
+        "# Decisions",
+        "## D-001. Create a dedicated project separate from individual data projects",
+        "### Rationale",
+        "## D-002. Use a dedicated GitHub repository as the persistent home of the project",
+        "### Rationale",
+        "## D-003. Keep the repository private during the early design stage",
+        "### Rationale",
+        "## D-004. Treat chat as the design workspace and the repository as the source of truth",
+        "### Rationale",
+        "## D-005. Preserve important knowledge at multiple levels of detail",
+        "### Rationale",
+        "## D-006. Foundational design memos are first-class project artifacts"
+      ],
+      "format": "markdown"
+    },
+    {
+      "path": "docs/CONTINUITY.md",
+      "bytes": 25061,
+      "sha256": "37b48c032bd372d75fded27ffdf46fe3a43c3e3215d408d4ca7ea49c5f106ebe",
+      "heading_count": 22,
+      "top_headings": [
+        "# Continuity",
+        "## Purpose",
+        "## Repository authority",
+        "## Separation of continuity concerns",
+        "## Private knowledge and operational-state continuity",
+        "### Public/private continuity anchor",
+        "## Interaction/session naming",
+        "### Automatic new-session allocation",
+        "## Required new-session reconstruction",
+        "## Standard continuation prompt",
+        "## Public repository integrity",
+        "## Chat-rotation preflight"
+      ],
+      "format": "markdown"
+    },
+    {
+      "path": "docs/CURRENT_STATE.md",
+      "bytes": 439260,
+      "sha256": "c1ca9a2f106724dc2705edc701e83c7e2629f15589b7cc70e3fd383e93e994a7",
+      "heading_count": 13,
+      "top_headings": [
+        "# Current State",
+        "## Active interaction context",
+        "## Current active stage: Specification 028 reconciliation + AO-10 realization design / MC-0029 independent review",
+        "## What the investigation established",
+        "## Accepted Git boundary remains deliberately narrow",
+        "## Durable operational and investigation knowledge",
+        "## Current Source Vault state",
+        "## Preserved next Source Vault action (currently paused)",
+        "## Repository integrity and development method",
+        "## Model collaboration state",
+        "## Current canonical route",
+        "## Historical conversation-rotation record (non-current)"
+      ],
+      "format": "markdown"
+    },
+    {
+      "path": "docs/current_routing.json",
+      "bytes": 435,
+      "sha256": "8d27e9ff1ba42291dacb4d66b1064e6510c5e75ecdea256d5284762d6ac0a0ab",
+      "heading_count": 0,
+      "top_headings": [],
+      "format": "json"
+    },
+    {
+      "path": "docs/KNOWLEDGE_MAP.md",
+      "bytes": 90245,
+      "sha256": "02264ebc291a9adf82cdf018cf66c3179bfbf6dc9e35927db930087a6ac536c4",
+      "heading_count": 27,
+      "top_headings": [
+        "# Knowledge Map",
+        "## Purpose",
+        "## Coverage contract",
+        "## Subject index",
+        "## Subject library",
+        "### System identity, vision, epistemic integrity and human/system boundary",
+        "### Project state, initialization, dependency structure and orchestration",
+        "### Reusable methodological knowledge, activation, representation and evolution",
+        "### Evaluation, falsification, supervision, observability and execution integrity",
+        "### V1 persistence, tooling, interchange and reasoning runtime",
+        "### Retrieval, MethodologicalHorizon, relevance and selective reasoning context",
+        "### Recommendation value, disposition, provenance, dependencies and calibration"
+      ],
+      "format": "markdown"
+    },
+    {
+      "path": "docs/model_collaboration/REVIEW_INBOX.md",
+      "bytes": 26762,
+      "sha256": "c74a735ce16c9ab5ab281939655278197f214bdd97983d9e76e73e8639602469",
+      "heading_count": 35,
+      "top_headings": [
+        "# Model Collaboration Review Inbox",
+        "## Routing discipline",
+        "## Current active collaboration obligation",
+        "### MC-0029: Specification 028 reconciliation and AO-10 integrated Project-system design",
+        "## Most recently completed obligation",
+        "### MC-0028: WARRANT-F V0.2 assurance architecture acceptance",
+        "### MC-0027: P-R8B-01 adversarial result audit and corrected rerun",
+        "### MC-0024: Research 218 versus R7 comparative architecture review",
+        "## Earlier completed obligation",
+        "### MC-0023: adversarial review of accepted G-DUAL whole-repository architecture",
+        "## Earlier completed obligation",
+        "### MC-0022: project-knowledge architecture residency and reuse review"
+      ],
+      "format": "markdown"
+    },
+    {
+      "path": "docs/model_collaboration/threads/MC-0028/STATE.json",
+      "bytes": 3469,
+      "sha256": "f92f050f01495859285ac9f1f9f0164d437d4713118f75c97d4cea41d8c5586f",
+      "heading_count": 0,
+      "top_headings": [],
+      "format": "json"
+    },
+    {
+      "path": "docs/model_collaboration/threads/MC-0029/STATE.json",
+      "bytes": 3829,
+      "sha256": "874bbfe1f6f194a32111bcf52555ea6aab8b9c065abbcc19c78ab001de62460b",
+      "heading_count": 0,
+      "top_headings": [],
+      "format": "json"
+    },
+    {
+      "path": "docs/source_universe/SOURCE_VAULT_BOOTSTRAP_WORKSTREAM.md",
+      "bytes": 3851,
+      "sha256": "8af6602abbc25ff7eac8d8021239841231b32d28fe0880c859b3be2a7c30ea2a",
+      "heading_count": 2,
+      "top_headings": [
+        "# Permanent Source Vault Bootstrap Workstream",
+        "## Current qualified state"
+      ],
+      "format": "markdown"
+    },
+    {
+      "path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "bytes": 37292,
+      "sha256": "7651707b5d590efd7686a77dca20597dc731bfafa1fabc2358775bef7b9d2ffe",
+      "heading_count": 60,
+      "top_headings": [
+        "# Specification 028 \u2014 V1 Project-Knowledge Architecture Implementation and Migration Contract",
+        "## 1. Purpose and frozen boundary",
+        "## 2. Product/runtime separation",
+        "## 3. Required production package surface",
+        "## 4. Canonical source-location rule",
+        "## 5. Project-knowledge repository directories",
+        "## 6. Markdown structured-declaration contract",
+        "## 7. Native JSON carrier rule",
+        "## 8. Profile schemas",
+        "## 9. Common governed-source envelope",
+        "## 10. Semantic identity contract",
+        "## 11. Identity-transition contract"
+      ],
+      "format": "markdown"
+    },
+    {
+      "path": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+      "bytes": 9218,
+      "sha256": "ea21b21b79a89efc6c2c2bcf030cc1617bad9f47eb2b761d07f5ec0a6e246177",
+      "heading_count": 18,
+      "top_headings": [
+        "# Research 217: W5 T1 V0.2 Controlled Subject Architecture Acceptance",
+        "## 1. Why T1 existed",
+        "## 2. V0.2 primary corpus result",
+        "## 3. Blind calibration result",
+        "## 4. Accepted membership rule",
+        "## 5. Preferred route contract",
+        "## 6. Constitutional and summary carriers",
+        "## 7. Final vocabulary structure",
+        "## 8. Bounded definition clarifications from MC-0020",
+        "### 8.1 `knowledge-representation`",
+        "### 8.2 `development-governance`",
+        "### 8.3 `tooling-integrations`"
+      ],
+      "format": "markdown"
+    },
+    {
+      "path": "docs/research/222_ao3_progressive_control_closure_architecture.md",
+      "bytes": 24434,
+      "sha256": "016696b230d1d5f3ee3f1444aaeeb106e1760d0cde55e706d2613539af9a7192",
+      "heading_count": 26,
+      "top_headings": [
+        "# Research 222: AO-3 Progressive Control Closure Architecture",
+        "## 1. AO-3 design question",
+        "## 2. The selected control cycle",
+        "## 3. Why the architecture is progressive rather than one-shot",
+        "## 4. Event ingress and explicit owner intent",
+        "## 5. Baseline control context",
+        "## 6. Control-obligation screening",
+        "## 7. Hard predicates and model-assisted semantic triggers",
+        "## 8. Progressive reconstruction and activation closure",
+        "### Supporting evidence versus governing authority",
+        "## 9. Process, workstream, collaboration and tool routing",
+        "## 10. Authority, action contract and conformance"
+      ],
+      "format": "markdown"
+    },
+    {
+      "path": "docs/research/223_ao4_architecture_evolution_and_frozen_contract_governance.md",
+      "bytes": 16483,
+      "sha256": "27a46f6c3e15f16dc92a05f302629ba32e05e583c411c86797122e19d84955dd",
+      "heading_count": 27,
+      "top_headings": [
+        "# Research 223: AO-4 Architecture Evolution and Frozen-Contract Governance",
+        "## 1. AO-4 design question",
+        "## 2. Core invariant",
+        "## 3. Trigger sources",
+        "## 4. Trigger state versus architecture disposition",
+        "### Trigger state",
+        "### Architecture disposition",
+        "## 5. First split: defect or architecture question",
+        "### CONFORMANCE_DEFECT",
+        "## 6. KEEP",
+        "## 7. CLARIFY",
+        "## 8. AMEND"
+      ],
+      "format": "markdown"
+    },
+    {
+      "path": "docs/research/224_ao5_anchored_interaction_continuity_and_independent_recovery.md",
+      "bytes": 19443,
+      "sha256": "0928f461684943f298d9a74cde75b9b0d61f8b65cfa0b05f15aa58fd12027d3f",
+      "heading_count": 23,
+      "top_headings": [
+        "# Research 224: AO-5 Anchored Interaction Continuity and Independent Recovery",
+        "## 1. AO-5 design question",
+        "## 2. Two distinct continuity planes",
+        "## 3. Four information states",
+        "## 4. InteractionContinuityEnvelope",
+        "## 5. Content recoverability is separate from interaction existence",
+        "## 6. ContinuationReceipt",
+        "## 7. Planned rotation",
+        "## 8. Unplanned context loss without mutation evidence",
+        "## 9. Abnormal execution interruption",
+        "## 10. Pending external handoff",
+        "## 11. Break-glass independence principle"
+      ],
+      "format": "markdown"
+    },
+    {
+      "path": "docs/research/225_ao6_purpose_bound_git_lifecycle_and_workstream_orchestration.md",
+      "bytes": 21821,
+      "sha256": "e07b6083578cccd49236fa4ad73c976f3103f3be53048b828ae2bc83dc16e033",
+      "heading_count": 37,
+      "top_headings": [
+        "# Research 225: AO-6 Purpose-Bound Git Lifecycle and Workstream Orchestration",
+        "## 1. AO-6 design question",
+        "## 2. Why branch-per-workstream is rejected",
+        "## 3. Branch purpose is project-controlled",
+        "## 4. Lifecycle actions",
+        "### CREATE",
+        "### CONTINUE",
+        "### ROTATE",
+        "### FREEZE",
+        "### RESUME",
+        "### PUBLISH",
+        "### INTEGRATE"
+      ],
+      "format": "markdown"
+    },
+    {
+      "path": "docs/research/226_ao7_authority_preserving_successor_orchestration_bridge.md",
+      "bytes": 18840,
+      "sha256": "156e24c4b0a87dc0b93aa0d50d94ff9c1afac2b10ad32abc57dec4fd8d87f31b",
+      "heading_count": 32,
+      "top_headings": [
+        "# Research 226: AO-7 Authority-Preserving Successor Orchestration Bridge",
+        "## 1. AO-7 design question",
+        "## 2. Bridge invariant",
+        "## 3. Bridge state is separate from authority state",
+        "## 4. Authority membrane",
+        "### Successor side may own",
+        "### Current authority side owns",
+        "## 5. Authority resolution through the bridge",
+        "## 6. Current compatibility surfaces remain live",
+        "## 7. Bootstrap direction",
+        "## 8. Read path",
+        "## 9. Write/action path"
+      ],
+      "format": "markdown"
+    },
+    {
+      "path": "docs/research/233_ao9_p5_evaluation_and_decision_synthesis.md",
+      "bytes": 12061,
+      "sha256": "82a193f224b14f4c938304c9dd416d7925223ac2735a055e987b1e86020301d8",
+      "heading_count": 15,
+      "top_headings": [
+        "# Research 233: AO-9 P5 Evaluation and Decision Synthesis",
+        "## 1. Evidence boundary",
+        "## 2. B-versus-C planner stopping rule",
+        "## 3. Cost and boundedness are a separate qualification issue",
+        "## 4. AO8-E01 decisive rule",
+        "### Condition 1: frozen C fails R9 mandatory closure",
+        "### Condition 2: frozen D passes R9 mandatory closure",
+        "### Condition 3: D passes N1, N3 and N4",
+        "### Condition 4: D adds zero deep source loads on N1/N4",
+        "### Condition 5: D introduces no new hard-safety failure",
+        "## 5. D-only secondary refinements are not silently bundled",
+        "## 6. R51 requirement candidate"
+      ],
+      "format": "markdown"
+    },
+    {
+      "path": "docs/research/235_ao9_p7_owner_decisions_and_ao9_closure.md",
+      "bytes": 7005,
+      "sha256": "f02a6840bb3c3216e89633773125ca7cf272621f6724be01a1b3a6a7eff86f48",
+      "heading_count": 9,
+      "top_headings": [
+        "# Research 235: AO-9 P7 Owner Decisions and AO-9 Closure",
+        "## 1. P7 decisions are complete",
+        "## 2. P7-D01 prospectively amends AO-3",
+        "## 3. P7-D02 accepts KA-R51",
+        "## 4. P7-D03 accepts KA-R52",
+        "## 5. Historical integrity is preserved",
+        "## 6. AO-10 qualification envelope after P7",
+        "## 7. Owner-approved sequencing boundary before AO-10",
+        "## 8. AO-9 closure"
+      ],
+      "format": "markdown"
+    },
+    {
+      "path": "docs/research/253_r7a_from_scratch_project_information_model_authority_and_lifecycle.md",
+      "bytes": 16226,
+      "sha256": "d5b9cec8e51c79e81363e0ab452699daa0bdf71896f94a69ce6d1cb824685077",
+      "heading_count": 32,
+      "top_headings": [
+        "# Research 253: R7-A From-Scratch Project Information Model, Authority, and Lifecycle",
+        "## 1. Problem statement",
+        "## 2. Information architecture is not one taxonomy",
+        "### 2.1 Responsibility",
+        "### 2.2 Information role",
+        "### 2.3 Maturity",
+        "### 2.4 Time/lifecycle",
+        "### 2.5 Semantic subject",
+        "### 2.6 Carrier/identity",
+        "## 3. Durable information classes",
+        "## 3.1 I1 Governance and Current Authority",
+        "## 3.2 I2 Evidence and Qualification"
+      ],
+      "format": "markdown"
+    },
+    {
+      "path": "docs/research/256_r7_owner_amendment_acceptance_research218_supersession_and_r8_entry.md",
+      "bytes": 5766,
+      "sha256": "cb63562f9e797e9e5852220f0217b3c069bd142e9c02ce0f1af9973e5d9a2cc4",
+      "heading_count": 9,
+      "top_headings": [
+        "# Research 256: R7 Owner Amendment Acceptance, Research 218 Physical Supersession, and R8 Entry Contract",
+        "## 1. Accepted target",
+        "## 2. Accepted amendments",
+        "## 3. Research 218 disposition",
+        "## 4. Research 177 and Specification 028",
+        "## 5. R8 required outputs",
+        "## 6. R8 method",
+        "## 7. Still held",
+        "## 8. Current state"
+      ],
+      "format": "markdown"
+    },
+    {
+      "path": "docs/research/258_mc0025_r8a_adversarial_reconciliation_and_amended_exact_target_candidate.md",
+      "bytes": 21695,
+      "sha256": "af2339802e47fc198ae81e3036df67e152086f37d03b4f4303dec1acb0db1f33",
+      "heading_count": 29,
+      "top_headings": [
+        "# Research 258: MC-0025 R8-A Adversarial Reconciliation and Amended Exact-Target Candidate",
+        "## 1. Reconciliation result",
+        "## 2. AM-1 accepted: Product and Project Python dependency resolution are independent",
+        "### 2.1 Amended true-root inventory",
+        "## 3. AM-5 accepted: JW1 responsibility boundaries are not pre-created empty modules",
+        "## 4. AM-6 accepted with refinement: framework mechanism versus ADS instance integration",
+        "## 5. AM-7 accepted: permanent transition management replaces a one-time migration concept",
+        "## 6. AM-9 accepted: cold start has a generate-independent break-glass path",
+        "## 7. AM-2 accepted: PC7 remains one context/module family with explicit internal seams",
+        "## 8. AM-3 accepted: semantic validation and repository validation have different owners",
+        "## 9. AM-4 accepted: active research requires terminal disposition; reproductions require admission",
+        "## 10. AM-8 accepted: continuity/recovery responsibilities get an explicit three-way discriminator"
+      ],
+      "format": "markdown"
+    },
+    {
+      "path": "docs/research/259_r8a_owner_amendment_acceptance_and_from_scratch_representation_freedom.md",
+      "bytes": 12130,
+      "sha256": "e120e8905634805638597fac5e0daa021f9c7b16735b5378ba4df7b7be50e493",
+      "heading_count": 14,
+      "top_headings": [
+        "# Research 259: R8-A Owner Amendment Acceptance and From-Scratch Representation Freedom",
+        "## 1. Owner decision",
+        "## 2. Additional owner clarification: representation and file internals are also redesignable from scratch",
+        "## 3. From-scratch representation principle",
+        "## 4. Current artifacts are evidence, not preservation requirements",
+        "## 5. No hidden grandfathering of current metadata",
+        "## 6. Relationship to accepted semantic contracts",
+        "## 7. Specification 028 implication",
+        "## 8. Representation-stage design freedom",
+        "## 9. Bounded exception already accepted at R8-A",
+        "## 10. Next-stage method",
+        "## 11. Accepted R8-A target"
+      ],
+      "format": "markdown"
+    },
+    {
+      "path": "docs/research/263_mc0026_final_reconciliation_and_preregistered_r8b_representation_probe.md",
+      "bytes": 23153,
+      "sha256": "c725595e195f23b10d56174514bc0412254e59aa3c218975cb1512fa180316c7",
+      "heading_count": 48,
+      "top_headings": [
+        "# Research 263: MC-0026 Final Reconciliation and P-R8B-01 Preregistered Representation Probe",
+        "## 1. Comparative disposition",
+        "## 2. V0.2 core representation",
+        "### 2.1 Human durable knowledge",
+        "### 2.2 Selective governed metadata",
+        "### 2.3 No duplicate metadata by default",
+        "### 2.4 Representation follows contracted writer",
+        "### 2.5 Definition versus state discriminator",
+        "## 3. Durable control concurrency model",
+        "### 3.1 Exact compare-and-swap",
+        "### 3.2 Cross-branch conflict line",
+        "### 3.3 Merge-resolution rule"
+      ],
+      "format": "markdown"
+    },
+    {
+      "path": "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+      "bytes": 10255,
+      "sha256": "6149420d512f197e02efa9f0568d51474f59ce84e9da5fe36afae40b83b7230e",
+      "heading_count": 12,
+      "top_headings": [
+        "# Research 272: WMR-H V0.3 Owner Acceptance, MC-0027 Closure, and Assurance-Architecture Entry",
+        "## 1. Owner decision",
+        "## 2. Accepted representation architecture",
+        "## 3. Acceptance does not adopt the temporary probe as production architecture",
+        "## 4. Acceptance remains evolvable",
+        "## 5. Specification 028 remains unchanged for now",
+        "## 6. Assurance anti-anchoring is now a hard downstream input",
+        "## 7. MC-0027 closure",
+        "## 8. Next stage: first-principles assurance architecture",
+        "## 9. Relationship to activation/orchestration and migration",
+        "## 10. Still held",
+        "## 11. Current state"
+      ],
+      "format": "markdown"
+    },
+    {
+      "path": "docs/research/276_owner_total_architecture_freedom_and_warrant_f_v02_reconciliation.md",
+      "bytes": 22619,
+      "sha256": "be9620c34f25df816fbf69416a8b0a59025510f654ec86d12117118456fd266d",
+      "heading_count": 33,
+      "top_headings": [
+        "# Research 276: Owner Total-Architecture-Freedom Clarification and WARRANT-F V0.2 Reconciliation",
+        "## 1. Owner clarification: freedom applies at every level",
+        "## 2. Accepted architecture is current authority, not immutable inheritance",
+        "## 3. Three layers must never be conflated",
+        "### CURRENT OPERATING REALITY",
+        "### TRANSITION / MIGRATION BRIDGE",
+        "### TARGET ARCHITECTURE",
+        "## 4. Reinterpretation of Claude X1",
+        "## 5. Generalize branch role into accepted-state subject role",
+        "## 6. Preventive target, detective bridge",
+        "## 7. Execution-surface and agent capability neutrality",
+        "## 8. Claude Message 003 disposition"
+      ],
+      "format": "markdown"
+    },
+    {
+      "path": "docs/research/304_p_d4_oracle_successor_semantic_parity_pass.md",
+      "bytes": 5136,
+      "sha256": "4f2979b7c2a7a165dad97b32669cb0f8f760098e8ca79da307647841c43b154d",
+      "heading_count": 9,
+      "top_headings": [
+        "# Research 304: P-D4 Oracle-Successor Semantic Parity PASS",
+        "## 1. Result",
+        "## 2. Frozen corpus parity",
+        "## 3. Claim-local failure evidence",
+        "## 4. Representation translation succeeds",
+        "## 5. Successor semantic-completeness controls",
+        "## 6. Oracle-retirement interpretation",
+        "## 7. Limits",
+        "## 8. Program state"
+      ],
+      "format": "markdown"
+    },
+    {
+      "path": "docs/research/308_r8c_eight_probe_reconciliation_owner_decision_readiness.md",
+      "bytes": 9400,
+      "sha256": "2911cefffe62a8897167b6da6962abf7c805af5cd0787e29a6b897fe38f41539",
+      "heading_count": 11,
+      "top_headings": [
+        "# Research 308: R8-C Eight-Probe Reconciliation and Owner-Decision Readiness",
+        "## 1. Decision-readiness test",
+        "## 2. Complete probe disposition",
+        "## 3. Why P-H does not block semantic architecture acceptance",
+        "## 4. What the empirical program changed",
+        "## 5. What remains intentionally unselected",
+        "## 6. What ACCEPT would accept",
+        "## 7. What ACCEPT would unblock",
+        "## 8. Recommendation",
+        "## 9. Decision boundary",
+        "## 10. Current state"
+      ],
+      "format": "markdown"
+    },
+    {
+      "path": "docs/research/310_whole_architecture_governed_self_improvement_model.md",
+      "bytes": 8151,
+      "sha256": "b172eb7126305aee3b6c6a13baf536aed0daeae85350ec1bbc1d23d801f5f676",
+      "heading_count": 16,
+      "top_headings": [
+        "# Research 310: Whole-Architecture Governed Self-Improvement Model",
+        "## 1. Central clarification",
+        "## 2. Controlled self-improvement, not autonomous self-modification",
+        "## 3. Whole-system evolution loop",
+        "## 4. Responsibility split",
+        "### AO-3: recognize and activate reconsideration",
+        "### AO-4: govern reconsideration",
+        "### Owner: normative decision authority",
+        "### Project Knowledge / WMR-H: preserve temporal truth",
+        "### Engineering / Delivery: realize accepted change",
+        "### WARRANT-F: qualify the changed realization",
+        "### AO: activate the qualified successor state"
+      ],
+      "format": "markdown"
+    },
+    {
+      "path": "docs/research/311_warrant_f_v02_owner_acceptance_r8c_closure_and_ao10_reconciliation_entry.md",
+      "bytes": 12481,
+      "sha256": "fb9eafd778fd650b6a9b3a407259b51be32b400a856c2b45132ba0262b6c1f31",
+      "heading_count": 18,
+      "top_headings": [
+        "# Research 311: WARRANT-F V0.2 Owner Acceptance, R8-C Closure, and AO-10 Reconciliation Entry",
+        "## 1. Owner decision",
+        "## 2. Accepted assurance architecture",
+        "## 3. Accepted-state semantics remain mechanism-neutral",
+        "## 4. Accepted assurance / AO / delivery boundary",
+        "## 5. R8-A Engineering environment amendment is now accepted",
+        "## 6. Empirical limitations remain binding",
+        "### P-H current host capability",
+        "### P-D4 current oracle succession",
+        "### P-S stochastic qualification",
+        "## 7. Realization-stage qualification remains downstream",
+        "## 8. Specification 028 remains current until reconciled"
+      ],
+      "format": "markdown"
+    }
+  ]
+}

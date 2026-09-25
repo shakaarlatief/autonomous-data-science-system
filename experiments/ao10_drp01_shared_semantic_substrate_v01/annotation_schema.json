@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "required_top": [
+    "reviewer_id",
+    "reviewer_environment",
+    "base",
+    "carrier_annotations",
+    "primitive_annotations",
+    "negative_controls",
+    "status_label_assessment"
+  ],
+  "carrier_annotation": {
+    "required": [
+      "path",
+      "units",
+      "path_used_as_identity_or_authority"
+    ],
+    "unit_required": [
+      "anchor",
+      "role",
+      "governing_status",
+      "rationale",
+      "irreducibly_multirole"
+    ],
+    "role_enum": [
+      "GOVERNING",
+      "EVIDENCE",
+      "CONTROL",
+      "DERIVED",
+      "CAPTURE"
+    ],
+    "governing_status_enum": [
+      "PROPOSED",
+      "IN_FORCE",
+      "EFFECT_WITHHELD",
+      "SUPERSEDED",
+      "RETIRED",
+      "REJECTED",
+      null
+    ]
+  },
+  "primitive_annotation": {
+    "required": [
+      "primitive",
+      "admitted",
+      "canonical_meaning",
+      "seams",
+      "semantic_conflict"
+    ],
+    "seam_required": [
+      "seam_id",
+      "required_shared_meaning",
+      "meaning_statement",
+      "source_refs"
+    ],
+    "source_ref_format": "repository/path::stable heading or JSON field"
+  },
+  "negative_control": {
+    "required": [
+      "concept",
+      "admitted",
+      "rationale",
+      "seam_refs"
+    ]
+  }
+}

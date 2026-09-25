@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-25
-**Status:** MC-0029 OPEN / V0.3 FROZEN / DRP-05A/05B PASS / DRP-01 FREEZE NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / V0.3 FROZEN / DRP-01 HARNESS FROZEN / CHATGPT ANNOTATION NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -37,7 +37,9 @@ Research 317 froze the DRP-09 fixture/harness. Research 318 records a valid PASS
 
 Research 319 froze DRP-05a/05b against all 65 mechanically selected non-merge commits. Research 320 records DRP-05a PASS with 100% deterministic ActionShape coverage and DRP-05b PASS_DETECTIVE_FIRST with 100% mediation classification, 0% current MEDIATED share, 53 COOPERATIVE and 12 UNMEDIATED events. This retains V0.3's mediation-aware architecture while establishing that current AO control is detective-first rather than technically preventive.
 
-Next: freeze DRP-01 shared-semantic-substrate corpus/harness.
+Research 321 now freezes the DRP-01 30-carrier corpus, semantic role/status definitions, candidate shared primitives, negative controls, annotation schema and two-reviewer comparison harness. ChatGPT and Claude must annotate independently; neither may inspect the other's annotation before its own is committed.
+
+Next: ChatGPT annotation A.
 
 Owner decision and all production/migration/authority actions remain held.
 

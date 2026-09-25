@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP05_PASS_DRP01_FREEZE_NEXT",
+  "phase": "DRP01_HARNESS_FROZEN_CHATGPT_ANNOTATION_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -65,14 +65,14 @@
       "Claude Message 003 completed comparative critique at 79b915894e0b055aadea05fe7d5767aa223d423e.",
       "Research 315 / Message 004 reconcile Message 003 into V0.3 and route MC-0029 to DRP-01 through DRP-09 preregistration."
     ],
-    "notes": "Valid DRP results: DRP-09 PASS; DRP-05a PASS; DRP-05b PASS_DETECTIVE_FIRST. No unresolved AMEND or active HARNESS_INVALID result. DRP-01 corpus/harness freeze is next."
+    "notes": "Valid results: DRP-09 PASS, DRP-05a PASS, DRP-05b PASS_DETECTIVE_FIRST. DRP-01 now requires independent ChatGPT and Claude annotations. Neither annotation exists yet; ChatGPT annotation A is next."
   },
   "last_transition": {
-    "transition_id": "mc0029-drp05-pass",
+    "transition_id": "mc0029-drp01-harness-frozen",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 320 records DRP-05a PASS and DRP-05b PASS_DETECTIVE_FIRST over the frozen 65-event corpus. V0.3 ActionShape and mediation-specific AO semantics are retained; DRP-01 freeze is next.",
-    "repository_head": "240e3246d18c5d375e1f04d9f00f0c879fe27965"
+    "reason": "Research 321 freezes DRP-01 30-carrier semantic review, two-reviewer blind annotation protocol and comparison harness before either annotation.",
+    "repository_head": "fc778ac1a21baba3518105a2b701bdf7ca01f3c9"
   }
 }

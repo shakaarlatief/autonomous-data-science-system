@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "probe": "DRP-01",
+  "base": "870689734673e6e8c2212035afcdf27daf733c15",
+  "roles": {
+    "GOVERNING": "durable normative meaning that can constrain project decisions, authority, obligations, policy, architecture or procedure",
+    "EVIDENCE": "observation, qualification, analysis or result supporting a claim/decision without itself becoming normative merely by existence",
+    "CONTROL": "current operational/workflow/machine control facts whose ordinary transition changes project state",
+    "DERIVED": "rebuildable projection, index, summary or navigation representation that is not unique accepted truth",
+    "CAPTURE": "unpromoted candidate/input/capture awaiting governed promotion"
+  },
+  "governing_statuses": {
+    "PROPOSED": "governing proposition not yet effective",
+    "IN_FORCE": "currently effective governing meaning",
+    "EFFECT_WITHHELD": "accepted/governing object whose effect is deliberately held for a scoped reason",
+    "SUPERSEDED": "replaced prospectively by a successor while retained historically",
+    "RETIRED": "no longer operationally applicable and not superseded by a semantically equivalent successor",
+    "REJECTED": "governing proposal explicitly not adopted"
+  },
+  "unit_rule": "Use the whole carrier if homogeneous. Split only into stable, consequential semantic units with durable anchors when different roles/statuses would otherwise be conflated. Do not split merely to make the model pass.",
+  "candidate_primitives": [
+    "semantic_identity",
+    "exact_subject_revision_binding",
+    "provenance_descriptor",
+    "governing_lifecycle_reference",
+    "obligation_reference",
+    "governed_relation_reference"
+  ],
+  "negative_controls": [
+    "workstream_state",
+    "bridge_execution_mode",
+    "warrant_claim_internal_state",
+    "stochastic_campaign_statistic"
+  ],
+  "seams": [
+    {
+      "id": "S1",
+      "name": "knowledge_to_ao_authority_reconstruction"
+    },
+    {
+      "id": "S2",
+      "name": "ao_to_warrant_admission"
+    },
+    {
+      "id": "S3",
+      "name": "ao_to_workstream_continuity"
+    },
+    {
+      "id": "S4",
+      "name": "ao_to_collaboration"
+    },
+    {
+      "id": "S5",
+      "name": "ao_to_transition_management"
+    },
+    {
+      "id": "S6",
+      "name": "transition_to_engineering_delivery"
+    },
+    {
+      "id": "S7",
+      "name": "knowledge_to_retrieval_navigation"
+    },
+    {
+      "id": "S8",
+      "name": "assurance_to_evidence_delivery"
+    },
+    {
+      "id": "S9",
+      "name": "evolution_to_governing_lifecycle"
+    }
+  ]
+}
