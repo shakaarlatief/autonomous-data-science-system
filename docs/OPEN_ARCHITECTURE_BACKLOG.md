@@ -343,22 +343,30 @@ can compatibility probes detect stale projections automatically?
 
 ## AB-009: Developer MCP and native ChatGPT connector coexistence
 
-**Status:** MONITOR / OPEN HOST LIMITATION
-**Priority:** P2
+**Status:** CURRENT SAME-CONVERSATION PASS OBSERVED / BROADER REQUALIFICATION PENDING
+**Priority:** P1
 
-Repeated fresh-chat attempts to combine the ADS developer MCP with native connectors such as GitHub produced `FORBIDDEN: This conversation is restricted to developer MCPs` while the native connector could still appear discoverable.
+Validation 034 and Research 123 preserve the historical condition: repeated fresh-chat attempts could not reliably keep the custom developer MCP and native GitHub connector executable in the same conversation.
 
-Direction:
+Validation 211 / Research 333 now record materially different current evidence. In chatgpt-30, Codexless Runtime Bridge and the native GitHub connector both executed successfully in the same conversation, and the two provider families were subsequently interleaved successfully.
 
-```text
-monitor OpenAI product/documentation changes
-reproduce after relevant updates
-prefer Codexless + authorized local clones for critical development continuity
-keep native GitHub useful for remote-only metadata/review when available
-do not make same-conversation coexistence a hard dependency until proven
-```
+Current interpretation:
 
-Primary evidence: Validation 034 and Research 116.
+    historical coexistence failure
+        retain as valid environment evidence
+
+    current same-chat coexistence
+        PASS in at least one current interaction
+
+    broader fresh-chat / client / duration matrix
+        PENDING
+
+    old limitation as a current hard architectural constraint
+        NOT SAFE TO ASSUME
+
+Future direction is to run a replicated fresh-chat and relevant client-surface matrix in the dedicated Runtime Bridge/provider workstream, measure actual invocation rather than mere tool projection, preserve historical failures, and allow future provider architecture to exploit coexistence only if the new behavior qualifies.
+
+Primary evidence: Validation 034, Research 123, Validation 211 and Research 333.
 
 ---
 
@@ -1552,6 +1560,38 @@ Research 225 / AO-6 resolves the lifecycle architecture as Purpose-Bound Git Lif
 The attach/switch gap does not justify broad generic mutation access to protected `.git` repository metadata. The preferred implementation direction is to retain the protected VCS boundary and extend the trusted semantic Git surface with the smallest reusable local operations needed by governed project workflows, with explicit preconditions, expected-revision guards, failure semantics and postflight reconciliation.
 
 This demand-driven rule is not a requirement to wait for a workflow to fail before adding every capability. Clearly useful, reusable and low-risk Git operations may be introduced proactively when their value is already well established. The project should avoid both extremes: do not weaken `.git` protection for convenience, and do not deliberately postpone an obviously valuable bounded capability merely because it has not yet produced a failure. At the same time, do not mirror the complete Git CLI speculatively when no project need justifies the authority surface.
+
+---
+
+## AB-033: Codexless Runtime Bridge professional productization, repository architecture, and provider strategy
+
+**Status:** PAUSED / DEDICATED FUTURE STAGE REQUIRED
+**Priority:** P1
+
+The project owner wants Codexless Runtime Bridge to become a professional software project in its own right, with an appropriate public repository, professional software architecture, documentation, testing, CI/CD, releases, security model and contribution/upstream strategy.
+
+This is not equivalent to making shakaarlatief/autonomous-data-science-system-local-runtime public. That private repository is currently a preservation/runtime-evidence repository and its historical candidate-tree layout has no target-architecture preservation right.
+
+The future workstream must derive the strongest product/repository architecture from first principles.
+
+Required design questions include public product identity and naming, public/private repository boundaries, relationship to ADS and upstream liyana31811/Codexless, Apache-2.0 attribution and derivative-work obligations, source-of-truth and contribution model, runtime/deployment-state separation, capability architecture and provider abstractions, native GitHub vs Codexless GitHub strategy, authority/security/credentials, file/document/Browser/Codex boundaries, cross-platform support, packaging/install/upgrade/rollback, tests, CI/CD, releases/versioning, observability and migration from historical candidate/evidence trees.
+
+Research 333 preserves the owner vision and initial candidate repository separation. Validation 211 removes the old native-GitHub/custom-MCP coexistence limitation from the set of safe current assumptions and opens a new provider-comparison space.
+
+The workstream should empirically compare native GitHub and Codexless where both can satisfy the same task, including latency, reliability, fidelity, capability breadth, safety semantics, operational complexity and fallback behavior.
+
+Scheduling:
+
+    preserve now
+        -> finish the current bounded MC-0029 / AO-10 decision sequence
+        -> activate this as a dedicated stage at a clean boundary
+
+    unless the Runtime Bridge becomes an active blocker or materially
+    changes the current architecture before then
+
+Nothing in this backlog item authorizes a new repository, publication of the private runtime repository, migration, provider retirement or upstream fork/contribution.
+
+Primary context: Research 105, Research 113, Research 115, Research 116, Research 119 through 123, Research 333, Validation 211, AB-009, AB-018, AB-020 and AB-029.
 
 ---
 
