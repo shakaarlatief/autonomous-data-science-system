@@ -26,7 +26,7 @@
     {
       "collaborator_id": "claude",
       "interaction_environment": "Claude",
-      "interaction_session": "claude-03",
+      "interaction_session": "claude-04",
       "roles": [
         "INDEPENDENT_REVIEWER",
         "RESEARCHER",
@@ -57,11 +57,11 @@
     "review_base_ref": "cac7a699eb012c5a02e1c5fab349ebc9e5726145",
     "known_exposures": [
       "Claude Message 001 was produced from frozen base cac7a699eb012c5a02e1c5fab349ebc9e5726145 before reading Research 274.",
-      "The new Claude conversation title is 04 - Assurance and Delivery Architecture Design; the durable participant slot remains claude-03 under the thread schema.",
+      "The Claude independent pass was performed in the newly opened persistent interaction claude-04, titled 04 - Assurance and Delivery Architecture Design. The original thread-open metadata mistakenly carried forward claude-03 and was corrected transparently on 2026-09-25.",
       "Comparative exposure was intentionally authorized after both independent candidates existed.",
       "Claude Message 003 completed comparative critique at b6ac1d492216265e1351e420179d149928bffa8e. Research 276 / Message 004 reconciled it into WARRANT-F V0.2."
     ],
-    "notes": "Research 308 reconciled all eight decision-relevant probes with seven PASS and one explicitly scoped INCONCLUSIVE result for P-H. The project owner explicitly accepted WARRANT-F V0.2 on 2026-09-24. Research 311 records the accepted semantic assurance architecture, the accepted R8-A Engineering-environment amendment, MC-0028 closure, and the next boundary: Specification 028 reconciliation plus AO-10 concrete realization design. No physical migration or authority switch is authorized."
+    "notes": "PROVENANCE_CORRECTION.md records the bounded correction of the Claude interaction from mistakenly inherited claude-03 to actual claude-04. Research 308 reconciled all eight decision-relevant probes with seven PASS and one explicitly scoped INCONCLUSIVE result for P-H. The project owner explicitly accepted WARRANT-F V0.2 on 2026-09-24. Research 311 records the accepted semantic assurance architecture, the accepted R8-A Engineering-environment amendment, MC-0028 closure, and the next boundary: Specification 028 reconciliation plus AO-10 concrete realization design. No physical migration or authority switch is authorized."
   },
   "last_transition": {
     "transition_id": "mc0028-owner-acceptance-thread-resolved",

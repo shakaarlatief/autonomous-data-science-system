@@ -25,7 +25,7 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ### MC-0029: independent Specification 028 reconciliation and AO-10 realization design
 
-MC-0029 is OPEN in INDEPENDENT_THEN_COMPARATIVE mode. The active Claude conversation is 04 - Assurance and Delivery Architecture Design; claude-03 remains the durable collaboration participant slot, following MC-0028 precedent.
+MC-0029 is OPEN in INDEPENDENT_THEN_COMPARATIVE mode. The active Claude interaction is claude-04, conversation 04 - Assurance and Delivery Architecture Design. MC-0028 originally carried claude-03 by a clerical provenance error that has now been corrected explicitly.
 
 Claude's substantive evidence boundary is frozen at 0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d, which contains the accepted architecture through Research 311 but not ChatGPT Research 312. Claude may read the current MC-0029 brief/thread/state for instructions, but must not inspect Research 312 or later ChatGPT AO-10 candidate material before Message 001 is committed.
 

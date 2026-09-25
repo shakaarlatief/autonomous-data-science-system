@@ -4,9 +4,10 @@
 **Date resolved:** 2026-09-24
 **Status:** RESOLVED
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
-**Independent reviewer/designer:** Claude / claude-03
+**Independent reviewer/designer:** Claude / claude-04
 **Task owner / integrator:** ChatGPT / chatgpt-30
 **Owner disposition:** ACCEPT
+**Provenance correction:** See PROVENANCE_CORRECTION.md; MC-0028 ran in Claude interaction claude-04, conversation 04 - Assurance and Delivery Architecture Design.
 
 MC-0028 produced independent assurance architectures before comparative synthesis.
 

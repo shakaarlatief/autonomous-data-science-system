@@ -5,7 +5,7 @@
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen substantive evidence base:** 0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
 **Task owner:** ChatGPT / chatgpt-30
-**Independent reviewer/designer:** Claude / claude-03 durable participant slot
+**Independent reviewer/designer:** Claude / claude-04
 **Active Claude conversation:** 04 - Assurance and Delivery Architecture Design
 **Authority:** Collaboration evidence only.
 
@@ -15,11 +15,11 @@ The current Claude conversation is the fresh conversation titled:
 
     04 - Assurance and Delivery Architecture Design
 
-Under the existing collaboration schema, the durable participant slot remains:
+The provider-local interaction session for this conversation is:
 
-    claude-03
+    claude-04
 
-This is intentional and follows MC-0028 precedent. The participant slot is not the visible conversation number. Claude should preserve both values in Message 001 provenance: claude-03 (thread participant slot) and conversation title 04 - Assurance and Delivery Architecture Design.
+This follows the accepted interaction-provenance rule that every newly opened persistent conversation receives a new provider-local session ID. MC-0028 originally carried claude-03 by mistake; that clerical provenance defect is corrected in MC-0028/PROVENANCE_CORRECTION.md. Claude should preserve claude-04 and conversation title 04 - Assurance and Delivery Architecture Design in Message 001 provenance.
 
 ## Task
 

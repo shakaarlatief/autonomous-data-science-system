@@ -6,8 +6,9 @@
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** cac7a699eb012c5a02e1c5fab349ebc9e5726145
 **Task owner:** ChatGPT / chatgpt-30
-**Independent reviewer/designer:** Claude / claude-03
+**Independent reviewer/designer:** Claude / claude-04
 **Authority:** Collaboration evidence only.
+**Provenance correction:** See PROVENANCE_CORRECTION.md; the original claude-03 value was a clerical carry-forward error when the fresh Claude 04 conversation was opened.
 
 ## Purpose
 

@@ -5,9 +5,10 @@
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** cac7a699eb012c5a02e1c5fab349ebc9e5726145
-**Claude interaction:** claude-03
-**Claude conversation title:** 03 - Project Knowledge Architecture Foundations and Design Method
+**Claude interaction:** claude-04
+**Claude conversation title:** 04 - Assurance and Delivery Architecture Design
 **Authority:** Collaboration evidence only. No assurance architecture is accepted by opening this thread.
+**Provenance correction:** PROVENANCE_CORRECTION.md records the bounded 2026-09-25 repair from the mistakenly inherited claude-03 metadata to the actual new-session identity claude-04.
 
 ## 1. Purpose
 

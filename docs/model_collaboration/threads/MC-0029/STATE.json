@@ -26,7 +26,7 @@
     {
       "collaborator_id": "claude",
       "interaction_environment": "Claude",
-      "interaction_session": "claude-03",
+      "interaction_session": "claude-04",
       "roles": [
         "INDEPENDENT_REVIEWER",
         "RESEARCHER",
@@ -59,9 +59,9 @@
       "Claude may read MC-0029 routing/brief files from current state for task instructions.",
       "Claude must not inspect Research 312 or later ChatGPT AO-10 candidate material before Message 001 is committed.",
       "Owner clarification dated 2026-09-25 is visible through the MC-0029 brief: semantic architecture and Research 217 are evidence rather than target constraints, and the design must be evaluated as one integrated professional Project system. This instruction does not expose Research 312.",
-      "The actual current Claude conversation is the fresh chat titled 04 - Assurance and Delivery Architecture Design. The durable participant slot remains claude-03 under the collaboration thread schema, matching MC-0028 precedent."
+      "The actual current Claude conversation is interaction claude-04, titled 04 - Assurance and Delivery Architecture Design. MC-0028 originally carried claude-03 by clerical provenance error; that error is corrected explicitly and is not a participant-slot convention."
     ],
-    "notes": "Research 312 remains intentionally outside Claude's independent substantive evidence boundary. Current owner design-method clarifications in the MC-0029 brief are instructions, not exposure to the ChatGPT candidate. The live conversation title is 04 - Assurance and Delivery Architecture Design; claude-03 remains the durable thread participant slot rather than the visible chat number."
+    "notes": "Research 312 remains intentionally outside Claude's independent substantive evidence boundary. Current owner design-method clarifications in the MC-0029 brief are instructions, not exposure to the ChatGPT candidate. The live Claude interaction is claude-04 and the conversation title is 04 - Assurance and Delivery Architecture Design."
   },
   "last_transition": {
     "transition_id": "mc0029-open-independent-design",
