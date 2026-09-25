@@ -65,3 +65,26 @@ Claude may write only:
 ~~~
 docs/model_collaboration/threads/MC-0029/messages/**
 ~~~
+
+## Comparative phase after Message 001
+
+Claude Message 001 is frozen at 74023a779998200a6317df07dc7cd4979ff84e47. Comparative exposure is now authorized.
+
+For Message 003, read Research 312, Research 314 and MC-0029 Message 002. Critique the reconciled V0.2 candidate rather than defending KEYSTONE by default.
+
+Focus especially on:
+
+- minimal shared semantic substrate versus the stronger one-kernel KEYSTONE model;
+- ROLE x STATUS semantics and the AMEND classification;
+- relation-registry scope;
+- Research 217 target deferral pending P2;
+- logical ownership/responsibility position versus physical path;
+- obligation-unit semantics and no-third-state enforcement;
+- C1/C2/C3 contract strata without premature framework extraction;
+- AO hosting neutrality and provider-neutral ActionShape;
+- architecture-decision probes versus realization-stage probes;
+- rollback/recovery strategy.
+
+Return KEEP / AMEND / REOPEN guidance for Research 314 and identify missing risks, falsifiers or probes.
+
+Write only under docs/model_collaboration/threads/MC-0029/messages/**.

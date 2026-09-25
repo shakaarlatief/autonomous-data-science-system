@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "INDEPENDENT_SPEC028_AO10_DESIGN",
+  "phase": "COMPARATIVE_CRITIQUE",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -53,22 +53,24 @@
   ],
   "next_expected_actor": "claude",
   "independence": {
-    "status": "BLIND_TO_CANDIDATE",
+    "status": "COMPARATIVE_ONLY",
     "review_base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
     "known_exposures": [
       "Claude may read MC-0029 routing/brief files from current state for task instructions.",
       "Claude must not inspect Research 312 or later ChatGPT AO-10 candidate material before Message 001 is committed.",
       "Owner clarification dated 2026-09-25 is visible through the MC-0029 brief: semantic architecture and Research 217 are evidence rather than target constraints, and the design must be evaluated as one integrated professional Project system. This instruction does not expose Research 312.",
-      "The actual current Claude conversation is interaction claude-04, titled 04 - Assurance and Delivery Architecture Design. MC-0028 originally carried claude-03 by clerical provenance error; that error is corrected explicitly and is not a participant-slot convention."
+      "The actual current Claude conversation is interaction claude-04, titled 04 - Assurance and Delivery Architecture Design. MC-0028 originally carried claude-03 by clerical provenance error; that error is corrected explicitly and is not a participant-slot convention.",
+      "Claude Message 001 was committed at 74023a779998200a6317df07dc7cd4979ff84e47 before comparative exposure.",
+      "Comparative exposure to ChatGPT Research 312, Research 314 and Message 002 is now authorized for MC-0029 Message 003."
     ],
-    "notes": "Research 312 remains intentionally outside Claude's independent substantive evidence boundary. Current owner design-method clarifications in the MC-0029 brief are instructions, not exposure to the ChatGPT candidate. The live Claude interaction is claude-04 and the conversation title is 04 - Assurance and Delivery Architecture Design."
+    "notes": "Claude's independent Message 001 is frozen. Research 314 / Message 002 reconcile Research 312 and KEYSTONE into comparative candidate V0.2. Claude may now inspect Research 312, Research 314 and Message 002 for Message 003. Owner decision and production realization remain held."
   },
   "last_transition": {
-    "transition_id": "mc0029-open-independent-design",
-    "from_state": "OPEN",
+    "transition_id": "mc0029-chatgpt-comparative-reconciliation",
+    "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "R8-C acceptance unblocked Specification 028 reconciliation and AO-10 realization design. The material scope warrants an independent design before comparative synthesis or owner acceptance.",
-    "repository_head": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d"
+    "reason": "Claude Message 001 completed the independent phase. Research 314 / Message 002 freeze comparative reconciliation and authorize controlled comparative exposure for Claude Message 003.",
+    "repository_head": "74023a779998200a6317df07dc7cd4979ff84e47"
   }
 }

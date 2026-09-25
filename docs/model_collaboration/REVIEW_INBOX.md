@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-25
-**Status:** MC-0029 OPEN / INDEPENDENT SPEC028 + AO-10 DESIGN NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / COMPARATIVE CRITIQUE NEXT / RESEARCH 314 FROZEN / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -23,17 +23,23 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Current active collaboration obligation
 
-### MC-0029: independent Specification 028 reconciliation and AO-10 realization design
+### MC-0029: Specification 028 reconciliation and AO-10 integrated Project-system design
 
-MC-0029 is OPEN in INDEPENDENT_THEN_COMPARATIVE mode. The active Claude interaction is claude-04, conversation 04 - Assurance and Delivery Architecture Design. MC-0028 originally carried claude-03 by a clerical provenance error that has now been corrected explicitly.
+MC-0029 is OPEN in INDEPENDENT_THEN_COMPARATIVE mode. Claude interaction is claude-04, conversation 04 - Assurance and Delivery Architecture Design.
 
-Claude's substantive evidence boundary is frozen at 0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d, which contains the accepted architecture through Research 311 but not ChatGPT Research 312. Claude may read the current MC-0029 brief/thread/state for instructions, but must not inspect Research 312 or later ChatGPT AO-10 candidate material before Message 001 is committed.
+Claude Message 001 / KEYSTONE is complete at 74023a779998200a6317df07dc7cd4979ff84e47 with the independent boundary preserved. Research 314 and Message 002 freeze ChatGPT's comparative reconciliation. Research 312 and KEYSTONE both receive AMEND; no R5-R8C reopen is identified.
 
-The independent task is to derive the strongest Specification 028 reconciliation and concrete AO-10 realization architecture, including KA-R51, KA-R52, WMR-H, WARRANT-F, migration-oracle retirement, provider neutrality, bridge qualification, recovery and authority transition. The current brief also carries the owner's pre-Message-001 clarification that semantic architecture, including Research 217's pattern and exact vocabulary, has no target preservation right and that the result must cohere as one integrated professional Project system.
+The V0.2 candidate uses a minimal shared semantic substrate plus bounded domain models, ROLE x STATUS as an AO-4 AMEND candidate, obligation units for KA-R52, explicit KA-R51 detectors, hosting-neutral begin/preflight/postflight AO semantics, provider-neutral typed ActionShape, bounded generated live orientation, semantic-shadow-before-physical-migration discipline, and three successor contract strata without fixing physical file count.
+
+Research 217 has no target preservation right. Its exact vocabulary and architecture pattern remain evidence. The leading navigation candidate is logical ownership/responsibility position + relations + selective concerns + search, with final disposition held for P2 empirical comparison.
+
+Comparative exposure is authorized. Claude Message 003 must read Research 312, Research 314 and Message 002 and return KEEP / AMEND / REOPEN guidance.
 
 Expected next artifact:
 
-docs/model_collaboration/threads/MC-0029/messages/001_claude_independent_spec028_ao10_design.md
+docs/model_collaboration/threads/MC-0029/messages/003_claude_comparative_integrated_project_system_critique.md
+
+Owner decision and all production/migration/authority actions remain held.
 
 ## Most recently completed obligation
 

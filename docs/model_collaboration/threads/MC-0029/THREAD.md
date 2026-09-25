@@ -1,7 +1,7 @@
 # MC-0029 Thread: Specification 028 Reconciliation and AO-10 Realization Design
 
 **Thread:** MC-0029
-**Status:** OPEN / INDEPENDENT DESIGN NEXT
+**Status:** OPEN / COMPARATIVE CRITIQUE NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** 0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
@@ -22,11 +22,11 @@ Independently derive Specification 028 reconciliation and AO-10 realization arch
 
 ## Sequence
 
-    Research 312 ChatGPT candidate             FROZEN / NOT EXPOSED TO CLAUDE INDEPENDENT PASS
-    001 Claude independent design              NEXT
-    002 ChatGPT comparative reconciliation     AFTER MESSAGE 001
-    003 Claude comparative critique            IF MATERIAL
-    empirical realization probes               AFTER SYNTHESIS / BEFORE OWNER ACCEPTANCE
+    Research 312 ChatGPT candidate             FROZEN
+    001 Claude independent design              COMPLETE / 74023a77...
+    002 ChatGPT comparative reconciliation     COMPLETE / Research 314
+    003 Claude comparative critique            NEXT / comparative exposure authorized
+    decision-relevant probes P1-P7             AFTER MESSAGE 003 RECONCILIATION
     owner decision                             AFTER EVIDENCE
 
 ## Independence boundary
@@ -35,7 +35,7 @@ Claude substantive evidence base:
 
     0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
 
-Claude may read current MC-0029 routing/brief files for instructions but must not inspect Research 312 or later ChatGPT candidate material until Message 001 is committed.
+Claude Message 001 is committed. The independent boundary remains historical evidence. Comparative exposure is now authorized: Claude may inspect Research 312, Research 314 and Message 002 for Message 003.
 
 Current owner instruction visible through the brief, without changing the frozen substantive evidence base:
 
@@ -53,11 +53,11 @@ Claude may write only:
     docs/model_collaboration/threads/MC-0029/messages/**
 
     MC0029=OPEN
-    PHASE=INDEPENDENT_SPEC028_AO10_DESIGN
+    PHASE=COMPARATIVE_CRITIQUE
     INDEPENDENT_BASE=0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
     CHATGPT_CANDIDATE=RESEARCH312
-    CLAUDE_MESSAGE_001=PENDING
-    COMPARATIVE_EXPOSURE=NOT_AUTHORIZED_YET
+    CLAUDE_MESSAGE_001=COMPLETE
+    COMPARATIVE_EXPOSURE=AUTHORIZED
     OWNER_DECISION=NOT_READY
     PRODUCTION_IMPLEMENTATION_AUTHORIZED=false
-    NEXT=CLAUDE_MESSAGE001
+    NEXT=CLAUDE_MESSAGE003_COMPARATIVE_CRITIQUE
