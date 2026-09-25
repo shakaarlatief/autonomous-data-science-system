@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-25
-**Status:** MC-0029 OPEN / V0.7 + R2 V0.3 FREEZE CANDIDATE / OWNER M-1 DEFERRAL DECISION REQUIRED / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / M-1 DEFERRAL ACCEPTED / R2 V0.3 PUBLIC FREEZE NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -49,11 +49,11 @@ Claude Message 009 returned AMEND. Research 330 reconciles F-1 through F-21 into
 
 The protocol now adds a two-author construct gate with prevalence and positive-specific-agreement measures, per-event ambiguity denominators, exact MUST_JOIN/MUST_SPLIT scoring and floors, revised structured-block/table segmentation, packet-generator commitments before key authoring, material/realization item floors, cluster-bootstrap uncertainty, independent LEGACY repository evidence, two-author STATE expected outputs, stricter reviewer freshness, maximum-attempt/no-retry-to-green rules, expanded COST_CARRY, and N-1 through N-4 controls.
 
-F-21 requires a valid governed deferral for the historically untested M-1 owner rubber-stamp / authority-laundering risk. A complete deferral proposal exists, with reactivation before production activation/authority switch/operational reliance and a prospective seeded-error owner-review trial as the future evidence path. It is not valid until the owner explicitly accepts it.
+The owner explicitly chose ACCEPT_DEFERRAL. Research 331 records the decision and M1_OWNER_REVIEW_EFFICACY_DEFERRAL_V01.json is now a governed active deferral. The seeded-error owner-review efficacy trial remains mandatory before V0.7 production activation, authority switch, or operational reliance on agent-drafted declaration semantics.
 
 No hidden R2 key, labels, executable scoring harness, or reviewer annotation exists.
 
-Next: owner decision on the M-1 DeferralRecord proposal.
+Next: freeze the public DRP-03 R2 Protocol V0.3 assets required by Research 330, including protocol, event universe, splitter/generator, public schemas/fixtures/test vectors, generated reviewer packets and cryptographic commitments.
 
 Owner decision and all production/migration/authority actions remain held.
 

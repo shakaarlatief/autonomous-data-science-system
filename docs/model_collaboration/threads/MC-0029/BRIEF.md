@@ -315,3 +315,21 @@ If accepted, the deferred test must reactivate before any V0.7 production activa
 If rejected, R2/public protocol freeze remains held until the owner-review efficacy issue is addressed by another accepted path.
 
 No hidden key, labels, scoring harness or reviewer annotation may be created before this authority item is resolved and the public protocol assets are frozen.
+
+## M-1 deferral accepted
+
+The owner explicitly chose:
+
+    ACCEPT_DEFERRAL
+
+The record:
+
+    docs/research/project_knowledge_activation_orchestration/ao10/M1_OWNER_REVIEW_EFFICACY_DEFERRAL_V01.json
+
+is now a governed active deferral.
+
+Its reactivation boundary is mandatory before V0.7 production activation, authority switch, or operational reliance on agent-drafted AcceptanceDeclarationSet semantics.
+
+The future evidence path is a prospective seeded-error owner-review efficacy trial.
+
+This acceptance unblocks only the public DRP-03 R2 Protocol V0.3 asset freeze. It does not accept V0.7, qualify R2, authorize production/migration, or authorize hidden-key creation before the public freeze.
