@@ -100,3 +100,15 @@ The comparative design phase is complete. No further Claude design response is c
 The next MC-0029 phase is decision-relevant empirical preregistration for DRP-01 through DRP-09. No probe result may be observed before its decision rules, metrics, thresholds, negative controls and attempt-integrity rules are frozen.
 
 Owner decision, production implementation, AO shadow activation, CURRENT_STATE compaction, physical migration, current-oracle retirement and authority switch remain held.
+
+## Decision-probe program freeze
+
+Research 316 freezes DRP-01 through DRP-09 before any scored result.
+
+The program uses explicit no-tuning, harness-invalid, anti-anchoring, adoption-cost and downstream-pause rules. Every concrete probe still requires its own fixture/harness freeze before execution.
+
+The frozen order begins with DRP-09 assurance-request claim integrity, followed by DRP-05a/05b, DRP-01, DRP-03, DRP-04, DRP-07, DRP-02, DRP-06 and DRP-08.
+
+No Claude obligation is currently pending. A fresh independent collaborator will be used where Research 316 requires one, especially DRP-02 scenario authorship and DRP-03 second delimitation.
+
+No probe result has been observed.

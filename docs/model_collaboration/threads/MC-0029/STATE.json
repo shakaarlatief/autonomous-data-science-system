@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DECISION_PROBE_PREREGISTRATION",
+  "phase": "DECISION_PROBE_PROGRAM_FROZEN",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -65,14 +65,14 @@
       "Claude Message 003 completed comparative critique at 79b915894e0b055aadea05fe7d5767aa223d423e.",
       "Research 315 / Message 004 reconcile Message 003 into V0.3 and route MC-0029 to DRP-01 through DRP-09 preregistration."
     ],
-    "notes": "The independent and comparative design phases are complete. Claude Message 003 returned AMEND; Research 315 / Message 004 accept the material critique with bounded refinements and freeze Integrated Project-System V0.3 as a pre-decision candidate. The next phase is preregistration of DRP-01 through DRP-09 before any probe results are observed. Owner decision and production realization remain held."
+    "notes": "Independent/comparative design is complete. Research 316 freezes the decision-probe program against V0.3 before any result. Next is DRP-09 fixture/harness freeze; no scored probe has run."
   },
   "last_transition": {
-    "transition_id": "mc0029-message003-reconciled-v03",
+    "transition_id": "mc0029-drp-program-preregistered",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 315 / Message 004 reconcile Claude Message 003 into V0.3 and move the thread from comparative design to decision-relevant empirical preregistration.",
-    "repository_head": "79b915894e0b055aadea05fe7d5767aa223d423e"
+    "reason": "Research 316 freezes DRP-01 through DRP-09 questions, thresholds, dependencies and no-tuning rules before any scored result. DRP-09 fixture/harness freeze is next.",
+    "repository_head": "870689734673e6e8c2212035afcdf27daf733c15"
   }
 }

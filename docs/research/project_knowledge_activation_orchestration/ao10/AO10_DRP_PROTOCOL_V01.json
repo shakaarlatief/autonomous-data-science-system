@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "protocol_id": "AO10-DRP-V01",
+  "status": "PREREGISTERED_NO_RESULTS",
+  "candidate": {
+    "research": 315,
+    "name": "Integrated Project-System V0.3",
+    "protocol_base": "870689734673e6e8c2212035afcdf27daf733c15"
+  },
+  "result_classes": [
+    "PASS",
+    "AMEND",
+    "CURRENT_DEBT_ONLY",
+    "INCONCLUSIVE",
+    "HARNESS_INVALID"
+  ],
+  "no_aggregate_winner_score": true,
+  "no_post_observation_threshold_change": true,
+  "probes": [
+    {
+      "id": "DRP-09",
+      "title": "Assurance-request claim integrity",
+      "order": 1,
+      "hard_rules": [
+        "policy-derived required claims cannot be suppressed",
+        "profiles cannot weaken consequence/threshold/freshness/trust",
+        "exact subject/base binding remains fail-visible"
+      ],
+      "cases_min": 12
+    },
+    {
+      "id": "DRP-05a",
+      "title": "ActionShape classifiability",
+      "order": 2,
+      "corpus_min": 30,
+      "thresholds": {
+        "deterministic_coverage": 0.9,
+        "high_consequence_coverage": 1
+      }
+    },
+    {
+      "id": "DRP-05b",
+      "title": "Action interceptability and mediation",
+      "order": 2,
+      "corpus": "same_as_DRP-05a",
+      "thresholds": {
+        "classified": 0.9
+      },
+      "mediation_classes": [
+        "MEDIATED",
+        "COOPERATIVE",
+        "UNMEDIATED",
+        "UNKNOWN"
+      ]
+    },
+    {
+      "id": "DRP-01",
+      "title": "Shared semantic substrate sufficiency",
+      "order": 3,
+      "corpus_count": 30,
+      "thresholds": {
+        "seams_per_admitted_primitive_min": 2,
+        "role_representability": 0.9,
+        "carriers_over_four_units_max": 0.25,
+        "irreducibly_multirole_units_max": 0.1
+      }
+    },
+    {
+      "id": "DRP-03",
+      "title": "Obligation-unit granularity and birth",
+      "order": 4,
+      "thresholds": {
+        "proposition_f1": 0.85,
+        "grouping_agreement": 0.7,
+        "false_gap_max": 0.1,
+        "known_witnesses_required": 3
+      }
+    },
+    {
+      "id": "DRP-04",
+      "title": "KA-R51 detector precision",
+      "order": 5,
+      "positives": 8,
+      "negatives": 16,
+      "thresholds": {
+        "positive_detection": 1,
+        "false_escalation_max_count": 1
+      }
+    },
+    {
+      "id": "DRP-07",
+      "title": "Specification 028 lineage and contract partition",
+      "order": 6,
+      "facts": {
+        "sections": 46,
+        "must_occurrences": 104,
+        "must_lines": 94
+      },
+      "thresholds": {
+        "section_coverage": 1,
+        "must_coverage": 1,
+        "unresolved_material_lineage_disagreements": 0
+      }
+    },
+    {
+      "id": "DRP-02",
+      "title": "Semantic navigation architectures",
+      "order": 7,
+      "arms": [
+        "RESEARCH217",
+        "POSITION_RELATIONS_SEARCH",
+        "POSITION_RELATIONS_CONCERNS_SEARCH",
+        "RELATIONS_SEARCH_MINIMAL"
+      ],
+      "primary_tasks": 12,
+      "legacy_tasks": 9,
+      "thresholds": {
+        "primary_pass_min": 10,
+        "legacy_pass_min": 8,
+        "maintenance_f1_min": 0.8,
+        "metadata_drift_max": 0.1
+      }
+    },
+    {
+      "id": "DRP-06",
+      "title": "Bounded orientation",
+      "order": 8,
+      "fresh_sessions_target": 4,
+      "target_payload_bytes_max": 65536,
+      "thresholds": {
+        "target_questions_correct_min": 9,
+        "target_reads_median_max": 8,
+        "bytes_reduction_min": 0.5
+      }
+    },
+    {
+      "id": "DRP-08",
+      "title": "Adoption economics",
+      "order": 9,
+      "replay_commits": 24,
+      "thresholds": {
+        "machine_fields_generated_min": 0.8,
+        "authored_fields_median_max": 3,
+        "authored_fields_p90_max": 6,
+        "first_pass_validation_min": 0.9,
+        "median_corrections_max": 1,
+        "duplicate_canonical_facts": 0,
+        "owner_bookkeeping_interventions": 0
+      }
+    }
+  ],
+  "downstream_realization_namespace": [
+    "RQP-01",
+    "RQP-02",
+    "RQP-03",
+    "RQP-04",
+    "RQP-05",
+    "RQP-06",
+    "RQP-07"
+  ],
+  "holds": {
+    "owner_decision": true,
+    "production_implementation": true,
+    "ao_shadow_activation": true,
+    "current_state_compaction": true,
+    "physical_migration": true,
+    "current_oracle_retirement": true,
+    "authority_switch": true
+  },
+  "next": "DRP09_FIXTURE_AND_HARNESS_FREEZE"
+}
