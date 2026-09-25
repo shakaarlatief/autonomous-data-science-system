@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-25
-**Status:** MC-0029 OPEN / DRP-03 AMEND / V0.4 CANDIDATE / CLAUDE CRITIQUE NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / DRP-03 R1 AMEND / V0.5 RECONCILED / R2 PREREGISTRATION NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -39,11 +39,13 @@ Research 319 froze DRP-05a/05b against all 65 mechanically selected non-merge co
 
 Research 321 froze DRP-01, Research 322 froze ChatGPT Annotation A, and Claude committed independent Annotation B at b6ba5d22239626b01097add55118b266aed1f633 while blind to A. Research 323 records the frozen comparison result: PASS. Both reviewers independently admit the same six candidate shared primitives, reject all four negative controls, satisfy role-granularity thresholds, and never use path as identity/authority. Admitted-set Jaccard is 1.00. Exact governing-status vocabulary remains deliberately provisional, with Claude's scoped-supersession, stale-status and EFFECT_WITHHELD findings retained as successor-contract design inputs.
 
-The frozen DRP-03 comparison is complete. Research 326 records AMEND: proposition-set F1 is 0.4983 against the frozen 0.85 threshold and grouping F1 is 0.6753 against 0.70. Both reviewers found all three sensitivity witnesses, both produced zero negative-control units, and all seven derived-state fixtures pass. The reviewer-A 0.70 false-gap rate is not decision-usable because the hidden key matched expected reviewer wording rather than stable gate identity; that submetric defect cannot change the independent AMEND because the proposition and grouping criteria already fail.
+The frozen DRP-03 R1 comparison remains AMEND. Claude Message 007 independently confirms that the failure is robust: even a perfect within-anchor proposition matcher can reach at most F1 0.6758, below the frozen 0.85 threshold, while grouping F1 is 0.6753 below 0.70. Message 007 also narrows the evidence claims: reviewer-A false-gap is not decision-usable, reviewer-B false-gap is not blind, and the three witness tags were instructed rather than blindly detected. R1 remains a valid AMEND because those defects do not create the proposition-selection/grouping failures.
 
-Research 326 proposes a V0.4 acceptance-bound normative-delta / ObligationDeclarationSet mechanism and an R2 method using frozen source-item identities rather than paraphrase matching.
+Research 327 reconciles every Message 007 requirement into V0.5. Obligation birth moves to proposal authoring and governing acceptance; accepted delta items receive a closed normative-kind taxonomy; realization boundaries are operationalized; realizing artifacts own reverse REALIZES/EVIDENCES/QUALIFIES/ACTIVATES/DEFERS facts; DeferralRecord validity and derived REVIEW_REQUIRED are added; temporal T-1/T-2/T-3 and legacy candidate-only rules are explicit. DRP-03 R2 is split into BIRTH, LEGACY and STATE components. At least one fresh reviewer with no R1 witness/key exposure is required.
 
-Next: Claude adversarial critique of Research 326 before any DRP-03 R2 harness is frozen.
+The durable R1 result evidence is now explicitly bound to GIT_BLOB_BYTES_AT_COMMIT SHA-256 f2e7b9071320079d5b239ef38b1d1d9f252a6af36d3a574e16df081dd09b8966; Research 326's a5a7... value is retained as the Windows CRLF working-tree observation rather than canonical repository evidence.
+
+Next: exact DRP-03 R2 preregistration and harness design. No R2 harness is frozen yet.
 
 Owner decision and all production/migration/authority actions remain held.
 

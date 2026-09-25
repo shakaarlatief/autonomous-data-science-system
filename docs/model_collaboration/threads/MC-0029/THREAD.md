@@ -1,7 +1,7 @@
 # MC-0029 Thread: Specification 028 Reconciliation and AO-10 Realization Design
 
 **Thread:** MC-0029
-**Status:** OPEN / DRP-03 AMEND / V0.4 CANDIDATE / CLAUDE CRITIQUE NEXT
+**Status:** OPEN / DRP-03 R1 AMEND / V0.5 RECONCILED / R2 PREREGISTRATION NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** 0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
@@ -41,8 +41,10 @@ Independently derive Specification 028 reconciliation and AO-10 realization arch
     DRP-03 ChatGPT reviewer B                   COMPLETE / independent of Claude A
     DRP-03 frozen comparison                    COMPLETE / AMEND / Research 326
     DRP-03 V0.4 amendment candidate             COMPLETE / Research 326
-    Claude adversarial amendment critique       NEXT / Message 007
-    DRP-03 R2                                   AFTER RECONCILIATION + FREEZE
+    Claude adversarial amendment critique       COMPLETE / AMEND / b0603ca8 / Message 007
+    ChatGPT Message 007 reconciliation          COMPLETE / Research 327 / V0.5
+    DRP-03 R2 exact preregistration             NEXT
+    DRP-03 R2                                   AFTER HARNESS FREEZE
     remaining decision probes                  AFTER REQUALIFIED DRP-03 WHERE DEPENDENT
     owner decision                             AFTER RECONCILED EVIDENCE
 
@@ -70,7 +72,7 @@ Claude may write only:
     docs/model_collaboration/threads/MC-0029/messages/**
 
     MC0029=OPEN
-    PHASE=DRP03_AMEND_V04_CLAUDE_CRITIQUE_NEXT
+    PHASE=DRP03_V05_RECONCILED_R2_PREREGISTRATION_NEXT
     INDEPENDENT_BASE=0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
     CHATGPT_CANDIDATE=RESEARCH312
     CLAUDE_MESSAGE_001=COMPLETE
@@ -88,3 +90,9 @@ Claude may write only:
     DRP05_HARNESS=RESEARCH319_FROZEN
     DRP05_EVENT_COUNT=65
     NEXT=EXECUTE_DRP05A_DRP05B
+    CLAUDE_MESSAGE_007=COMPLETE
+    RESEARCH327=V05_CANDIDATE
+    DRP03_R1=AMEND
+    DRP03_R2=NOT_YET_FROZEN
+    FRESH_BLIND_REVIEWER_REQUIRED=true
+    NEXT=DRP03_R2_EXACT_PREREGISTRATION_AND_HARNESS_DESIGN

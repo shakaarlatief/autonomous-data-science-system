@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "probe": "DRP-03",
+  "attempt": "R1",
+  "evidence_path": "docs/research/project_knowledge_activation_orchestration/ao10/evidence/drp03_run001_result.json",
+  "first_tracked_commit": "7eb98abcda10e0fc7417c32da493239fea78b807",
+  "git_blob_oid": "bd26cd313fcdaf8163fa0b605a3fcfacb23f471b",
+  "hash_algorithm": "sha256",
+  "hash_basis": "GIT_BLOB_BYTES_AT_COMMIT",
+  "content_digest": "f2e7b9071320079d5b239ef38b1d1d9f252a6af36d3a574e16df081dd09b8966",
+  "working_tree_observation": {
+    "platform": "Windows checkout",
+    "newline_form": "CRLF",
+    "bytes": 24629,
+    "sha256": "a5a7a51e25f635d3536a1a4c5a64fa02c76fe8539fbef6503a0ca7978a74c609",
+    "authority": "NON_CANONICAL_WORKING_TREE_SERIALIZATION"
+  },
+  "note": "Research 326 recorded the Windows CRLF working-tree digest. The durable repository evidence binding uses the Git blob bytes at the tracked commit."
+}
