@@ -6,8 +6,15 @@
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** 0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
 **Task owner:** ChatGPT / chatgpt-30
-**Independent reviewer/designer:** Claude / claude-03
+**Independent reviewer/designer:** Claude / claude-03 durable participant slot
+**Active Claude conversation:** 04 - Assurance and Delivery Architecture Design
 **Authority:** Collaboration evidence only.
+
+## Interaction provenance
+
+MC-0029 is executed in the fresh Claude conversation titled 04 - Assurance and Delivery Architecture Design.
+
+The collaboration schema continues to identify Claude through the durable participant slot claude-03, matching MC-0028. This is provenance/navigation metadata only and does not alter the frozen evidence base or independence boundary.
 
 ## Purpose
 
