@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "probe": "DRP-03",
+  "base": "870689734673e6e8c2212035afcdf27daf733c15",
+  "source_roles": {
+    "ACCEPTANCE_EVENT": "Accepted governing event whose effective normative propositions may create obligation units.",
+    "GOVERNING_TRACE": "Existing governing source used to test obligation granularity and realization tracing.",
+    "SUPPLEMENTAL_KNOWN_WITNESS": "Accepted source included for a preregistered known realization-gap witness.",
+    "NEGATIVE_CONTROL": "Research/candidate artifact that discusses requirements but is not itself an accepted governing transition."
+  },
+  "unit_rule": "An ObligationUnit is the smallest semantic group of accepted normative propositions sharing one realization boundary and one evidence path. Split independent realization paths even inside one paragraph; group propositions only when realization and evidence are genuinely shared.",
+  "realization_state_derivation": {
+    "DEFERRED": "deferral_refs non-empty",
+    "UNLINKED": "no deferral and realization_relation_refs empty",
+    "LINKED": "realization relation exists, but evidence_refs empty",
+    "EVIDENCED": "evidence exists, but qualification_refs empty",
+    "QUALIFIED": "qualification exists, but activation_refs empty",
+    "OPERATIONAL": "realization, evidence, qualification and activation refs all non-empty"
+  },
+  "required_witness_tags": [
+    "W_SPEC028_SECTION3_NAMED_RESPONSIBILITY_GAP",
+    "W_AO6_BRANCH_ROTATION_ATTACH_GAP",
+    "W_R311_ENGINEERING_NO_MUST"
+  ],
+  "proposition_matching": {
+    "same_source_required": true,
+    "same_anchor_required": true,
+    "text_similarity": "max(token_jaccard, difflib_sequence_ratio)",
+    "match_threshold": 0.58,
+    "one_to_one": "greedy descending similarity"
+  },
+  "grouping_metric": {
+    "name": "pairwise_same_unit_f1",
+    "threshold": 0.7,
+    "domain": "all matched proposition pairs within the same source",
+    "degenerate_rule": "if neither reviewer groups any matched pair together, score 1.0"
+  },
+  "thresholds": {
+    "proposition_set_f1_min": 0.85,
+    "grouping_agreement_min": 0.7,
+    "false_gap_rate_max": 0.1,
+    "known_witnesses_required": 3,
+    "negative_control_units_max": 0,
+    "derived_state_fixture_accuracy": 1
+  }
+}

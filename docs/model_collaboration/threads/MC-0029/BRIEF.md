@@ -144,3 +144,39 @@ Write exactly one reviewer-B JSON artifact under the existing Claude write bound
 The file must follow annotation_schema.json exactly and preserve the corpus order. Use interaction claude-04 / conversation 04 - Assurance and Delivery Architecture Design in reviewer provenance.
 
 If the frozen base, corpus, definitions, or blindness boundary cannot be respected, stop and report the mismatch rather than improvising.
+
+## DRP-03 independent reviewer A
+
+The DRP-03 obligation-unit review harness is frozen.
+
+Claude is reviewer A and must remain blind to the hidden specificity/evaluator key and to any future ChatGPT reviewer annotation.
+
+Claude may read:
+
+- Research 316;
+- Research 323 for the already-reconciled DRP-01 result;
+- experiments/ao10_drp03_obligation_units_v01/REVIEWER_PACKET.md;
+- review_scope.json;
+- implementation_snapshot.json;
+- definitions.json;
+- annotation_schema.json;
+- the exact primary/support source carriers identified by review_scope.json at commit 870689734673e6e8c2212035afcdf27daf733c15.
+
+Claude must not inspect before committing reviewer A:
+
+- experiments/ao10_drp03_obligation_units_v01/evaluator_key.json;
+- Research 324;
+- probe.py;
+- any future ChatGPT DRP-03 annotation or summary.
+
+Do not run the DRP-03 comparison harness.
+
+Write exactly one JSON artifact under the existing Claude message boundary:
+
+    docs/model_collaboration/threads/MC-0029/messages/006_claude_drp03_obligation_units_a.json
+
+The output must follow annotation_schema.json exactly and preserve review_scope.json source order.
+
+Use interaction claude-04 / conversation 04 - Assurance and Delivery Architecture Design in reviewer provenance.
+
+If the frozen source base, reviewer materials, or blindness boundary cannot be respected, stop and report the mismatch rather than improvising.

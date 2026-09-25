@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "required_top": [
+    "reviewer_id",
+    "reviewer_environment",
+    "base",
+    "source_annotations"
+  ],
+  "source_annotation_required": [
+    "source_path",
+    "source_role",
+    "creates_no_obligation_units",
+    "obligation_units"
+  ],
+  "obligation_unit_required": [
+    "unit_id",
+    "source_anchor",
+    "propositions",
+    "responsible_semantic_owner",
+    "realization_boundary",
+    "expected_evidence_path",
+    "activation_boundary",
+    "realization_facts",
+    "witness_tags"
+  ],
+  "proposition_required": [
+    "proposition_id",
+    "statement"
+  ],
+  "realization_facts_required": [
+    "realization_relation_refs",
+    "deferral_refs",
+    "evidence_refs",
+    "qualification_refs",
+    "activation_refs"
+  ],
+  "source_ref_format": "repository/path::stable heading, field, test, commit, or frozen evidence locator",
+  "reviewer_statement_rule": "Keep proposition wording close enough to the source to preserve actors, modality, object and consequence. Do not merge clauses with independent realization/evidence paths."
+}

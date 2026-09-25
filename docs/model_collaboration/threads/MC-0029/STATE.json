@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP01_PASS_DRP03_FREEZE_NEXT",
+  "phase": "DRP03_CLAUDE_BLIND_REVIEWER_A_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -51,7 +51,7 @@
       ]
     }
   ],
-  "next_expected_actor": "chatgpt",
+  "next_expected_actor": "claude",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -66,16 +66,19 @@
       "Research 315 / Message 004 reconcile Message 003 into V0.3 and route MC-0029 to DRP-01 through DRP-09 preregistration.",
       "DRP-01 ChatGPT Annotation A was frozen before Claude Annotation B existed.",
       "For DRP-01 Annotation B, Claude may read Research 316, Research 321, the reviewer packet/schema/definitions/corpus, and frozen source carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
-      "Before committing Annotation B, Claude must not inspect experiments/ao10_drp01_shared_semantic_substrate_v01/annotation_chatgpt_a.json, Research 322, or later derivative summaries of Annotation A."
+      "Before committing Annotation B, Claude must not inspect experiments/ao10_drp01_shared_semantic_substrate_v01/annotation_chatgpt_a.json, Research 322, or later derivative summaries of Annotation A.",
+      "DRP-03 Claude reviewer A must not inspect experiments/ao10_drp03_obligation_units_v01/evaluator_key.json before committing its annotation.",
+      "DRP-03 Claude reviewer A must not inspect Research 324 or any future ChatGPT DRP-03 annotation/summary before committing its annotation.",
+      "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15."
     ],
-    "notes": "DRP-01 reviewer A and B are both frozen and comparison is complete: PASS, admitted-set Jaccard 1.00, both reviewers pass. Valid DRP results: DRP-09 PASS; DRP-05a PASS; DRP-05b PASS_DETECTIVE_FIRST; DRP-01 PASS. DRP-03 obligation-unit harness freeze is next."
+    "notes": "Valid results: DRP-09 PASS, DRP-05a PASS, DRP-05b PASS_DETECTIVE_FIRST, DRP-01 PASS. DRP-03 harness is frozen. Claude reviewer A must use only reviewer-facing materials and frozen sources; evaluator_key.json and Research 324 are outside the reviewer evidence boundary before A is committed."
   },
   "last_transition": {
-    "transition_id": "mc0029-drp01-pass",
+    "transition_id": "mc0029-drp03-harness-frozen",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 323 records DRP-01 PASS after independent ChatGPT/Claude annotations and the frozen comparison harness. Six shared primitives are supported; role/status practical representation passes; exact lifecycle vocabulary remains provisional. DRP-03 freeze is next.",
-    "repository_head": "b6ba5d22239626b01097add55118b266aed1f633"
+    "reason": "Research 324 freezes DRP-03 obligation-unit review/evaluator machinery before reviewer annotations. Claude reviewer A is next and must remain blind to evaluator_key.json and any future ChatGPT reviewer annotation.",
+    "repository_head": "6314e5717ee0241f9c4316bcefab39a6873f588e"
   }
 }

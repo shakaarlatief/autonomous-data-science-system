@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "known_witnesses": [
+    {
+      "tag": "W_SPEC028_SECTION3_NAMED_RESPONSIBILITY_GAP",
+      "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "source_anchor": "## 3. Required production package surface"
+    },
+    {
+      "tag": "W_AO6_BRANCH_ROTATION_ATTACH_GAP",
+      "source_path": "docs/research/225_ao6_purpose_bound_git_lifecycle_and_workstream_orchestration.md",
+      "source_anchor": "## 16. Current self-hosting branch decision and execution probe"
+    },
+    {
+      "tag": "W_R311_ENGINEERING_NO_MUST",
+      "source_path": "docs/research/311_warrant_f_v02_owner_acceptance_r8c_closure_and_ao10_reconciliation_entry.md",
+      "source_anchor": "## 5. R8-A Engineering environment amendment is now accepted"
+    }
+  ],
+  "false_gap_controls": [
+    {
+      "id": "FG01",
+      "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "source_anchor": "## 39. W0 executable gates",
+      "match_text": "identity index generator rebuilds deterministically and resolves qualified transition fixtures",
+      "evidence_ref": "docs/research/193_w0_complete_unit_suite_g017_and_w0_acceptance_result.md::PKA-G006 identity index PASS"
+    },
+    {
+      "id": "FG02",
+      "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "source_anchor": "## 39. W0 executable gates",
+      "match_text": "authority resolver passes relation ambiguity and retrieval non authority regressions",
+      "evidence_ref": "docs/research/193_w0_complete_unit_suite_g017_and_w0_acceptance_result.md::PKA-G007 authority resolver PASS"
+    },
+    {
+      "id": "FG03",
+      "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "source_anchor": "## 39. W0 executable gates",
+      "match_text": "workstream engine passes DAG pause return resume interruption stale expected revision regressions",
+      "evidence_ref": "docs/research/193_w0_complete_unit_suite_g017_and_w0_acceptance_result.md::PKA-G008 workstream engine PASS"
+    },
+    {
+      "id": "FG04",
+      "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "source_anchor": "## 39. W0 executable gates",
+      "match_text": "derived view framework produces deterministic manifests and detects stale input bindings",
+      "evidence_ref": "docs/research/193_w0_complete_unit_suite_g017_and_w0_acceptance_result.md::PKA-G009 derived-view framework PASS"
+    },
+    {
+      "id": "FG05",
+      "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "source_anchor": "## 39. W0 executable gates",
+      "match_text": "current state core generator reproduces bounded qualified must preserve fixture behavior",
+      "evidence_ref": "docs/research/193_w0_complete_unit_suite_g017_and_w0_acceptance_result.md::PKA-G010 current-state-core PASS"
+    },
+    {
+      "id": "FG06",
+      "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "source_anchor": "## 39. W0 executable gates",
+      "match_text": "full rebuild and incremental refresh are semantically equivalent on frozen W0 fixture corpus",
+      "evidence_ref": "docs/research/193_w0_complete_unit_suite_g017_and_w0_acceptance_result.md::PKA-G013 full/incremental semantic equivalence PASS"
+    },
+    {
+      "id": "FG07",
+      "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "source_anchor": "## 40. W1 executable gates",
+      "match_text": "generated workstream current core views are deterministic from W1 canonical owners",
+      "evidence_ref": "docs/research/202_w1_public_repository_integrity_g109_and_w1_acceptance_result.md::PKA-G106 deterministic W1 views PASS"
+    },
+    {
+      "id": "FG08",
+      "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "source_anchor": "### W2 — shadow derived views",
+      "match_text": "generate all V1 structural views from successor semantic owners compare with qualified shadow expectations current compatibility state",
+      "evidence_ref": "docs/research/203_w2_shadow_derived_views_acceptance_result.md::W2 ACCEPTED"
+    },
+    {
+      "id": "FG09",
+      "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "source_anchor": "### W3 — compatibility shadow",
+      "match_text": "produce shadow candidates routing current state Knowledge Map without overwriting live paths classify every difference",
+      "evidence_ref": "docs/research/204_w3_compatibility_shadow_acceptance_result.md::W3 ACCEPTED AND FINALIZED"
+    },
+    {
+      "id": "FG10",
+      "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "source_anchor": "### W4 — production capture/promotion path",
+      "match_text": "run one bounded real capture through review canonical promotion verify accepted meaning provenance remains after archival removal",
+      "evidence_ref": "docs/research/205_w4_production_capture_promotion_acceptance_result.md::W4 ACCEPTED AND FINALIZED"
+    }
+  ],
+  "derived_state_fixtures": [
+    {
+      "id": "DS1",
+      "facts": {
+        "realization_relation_refs": [],
+        "deferral_refs": [],
+        "evidence_refs": [],
+        "qualification_refs": [],
+        "activation_refs": []
+      },
+      "expected": "UNLINKED"
+    },
+    {
+      "id": "DS2",
+      "facts": {
+        "realization_relation_refs": [
+          "r"
+        ],
+        "deferral_refs": [],
+        "evidence_refs": [],
+        "qualification_refs": [],
+        "activation_refs": []
+      },
+      "expected": "LINKED"
+    },
+    {
+      "id": "DS3",
+      "facts": {
+        "realization_relation_refs": [
+          "r"
+        ],
+        "deferral_refs": [],
+        "evidence_refs": [
+          "e"
+        ],
+        "qualification_refs": [],
+        "activation_refs": []
+      },
+      "expected": "EVIDENCED"
+    },
+    {
+      "id": "DS4",
+      "facts": {
+        "realization_relation_refs": [
+          "r"
+        ],
+        "deferral_refs": [],
+        "evidence_refs": [
+          "e"
+        ],
+        "qualification_refs": [
+          "q"
+        ],
+        "activation_refs": []
+      },
+      "expected": "QUALIFIED"
+    },
+    {
+      "id": "DS5",
+      "facts": {
+        "realization_relation_refs": [
+          "r"
+        ],
+        "deferral_refs": [],
+        "evidence_refs": [
+          "e"
+        ],
+        "qualification_refs": [
+          "q"
+        ],
+        "activation_refs": [
+          "a"
+        ]
+      },
+      "expected": "OPERATIONAL"
+    },
+    {
+      "id": "DS6",
+      "facts": {
+        "realization_relation_refs": [],
+        "deferral_refs": [
+          "d"
+        ],
+        "evidence_refs": [],
+        "qualification_refs": [],
+        "activation_refs": []
+      },
+      "expected": "DEFERRED"
+    },
+    {
+      "id": "DS7",
+      "facts": {
+        "realization_relation_refs": [
+          "r"
+        ],
+        "deferral_refs": [
+          "d"
+        ],
+        "evidence_refs": [
+          "e"
+        ],
+        "qualification_refs": [
+          "q"
+        ],
+        "activation_refs": [
+          "a"
+        ]
+      },
+      "expected": "DEFERRED"
+    }
+  ]
+}
