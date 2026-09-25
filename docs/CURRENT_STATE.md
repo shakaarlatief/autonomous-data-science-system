@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 654
+**Checkpoint:** 655
 **Date:** 2026-09-25
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -1283,3 +1283,5 @@ Checkpoint 652 freezes Research 315 / MC-0029 Message 004 after Claude Message 0
 Checkpoint 653 freezes Research 316, the AO-10 Integrated Project-System Decision-Probe Preregistration V0.1, against base 870689734673e6e8c2212035afcdf27daf733c15 before any scored result. DRP-01 through DRP-09 now have frozen questions, corpus/fixture rules, thresholds, negative controls, falsifiers, no-post-observation-tuning rules, invalidation criteria, dependency ordering and decision-readiness semantics. The protocol explicitly tests semantic-substrate boundedness, navigation alternatives including Research 217 without preservation privilege, acceptance-time obligation birth, KA-R51 precision, ActionShape classifiability and real interceptability, bounded current orientation, full Specification 028 lineage, adoption economics and AO/WARRANT-F claim integrity. Each concrete probe still requires a pre-execution fixture/harness freeze. No result has been observed. The first execution path is DRP-09 fixture/harness freeze. No architecture acceptance, AO-10 production implementation, shadow activation, CURRENT_STATE compaction, physical migration, current-oracle retirement or authority switch is authorized.
 
 Checkpoint 654 freezes Research 317, the DRP-09 assurance-request claim-integrity fixture/harness, after Research 316 preregistered all decision rules. The frozen fixture contains 13 request variants and a seeded faulty-normalizer witness that improperly trusts request-provided claim lists. AST/JSON pre-execution validation passes. The scored probe has not run, no result has been observed, and thresholds are unchanged. Next is exact execution of the frozen DRP-09 harness. No production implementation, migration or authority action is authorized.
+
+Checkpoint 655 records Research 318 / DRP-09 PASS. The exact frozen harness from Research 317 ran once with 13/13 cases matching expected decisions and both deliberately faulty request-normalizer witnesses detected. Policy-required claims remained policy-derived even when request-side claim lists omitted one or multiple claims; stale subject/base, weaker consequence, missing trust, unknown profile and stale evidence remained fail-visible as preregistered. This supports the V0.3 rule that AO cannot suppress WARRANT-F policy-required claims. The result is target-architecture evidence only and does not qualify a production adapter. DRP result count is now 1, with no unresolved AMEND or active HARNESS_INVALID result. Next is DRP-05a/05b corpus and harness freeze.

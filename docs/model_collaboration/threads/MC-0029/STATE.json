@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP09_HARNESS_FROZEN",
+  "phase": "DRP09_PASS_DRP05_FREEZE_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -65,14 +65,14 @@
       "Claude Message 003 completed comparative critique at 79b915894e0b055aadea05fe7d5767aa223d423e.",
       "Research 315 / Message 004 reconcile Message 003 into V0.3 and route MC-0029 to DRP-01 through DRP-09 preregistration."
     ],
-    "notes": "Research 316 preregisters the full DRP program. Research 317 now freezes DRP-09 fixture/harness before execution. No scored DRP result has been observed."
+    "notes": "DRP-09 is the first valid scored result under Research 316: PASS, 13/13 cases, 2/2 seeded suppression witnesses caught. No AMEND or HARNESS_INVALID result is active. DRP-05a/05b freeze is next."
   },
   "last_transition": {
-    "transition_id": "mc0029-drp09-harness-frozen",
+    "transition_id": "mc0029-drp09-pass",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 317 freezes the DRP-09 policy/case fixture and deterministic seeded-violation harness before any scored execution.",
-    "repository_head": "58b099896bcca0b804b6efee92dc45e4ab25a6aa"
+    "reason": "Frozen DRP-09 executed with 13/13 cases passing and both seeded policy-claim suppression defects detected. V0.3 assurance seam retained; DRP-05a/05b corpus/harness freeze is next.",
+    "repository_head": "97ece84d0deb123e6e647fcf90462f0f8e608c8b"
   }
 }

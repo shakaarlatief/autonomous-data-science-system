@@ -1,7 +1,7 @@
 # MC-0029 Thread: Specification 028 Reconciliation and AO-10 Realization Design
 
 **Thread:** MC-0029
-**Status:** OPEN / V0.3 FROZEN / DRP-09 HARNESS FROZEN / EXECUTION NEXT
+**Status:** OPEN / V0.3 FROZEN / DRP-09 PASS / DRP-05A/05B FREEZE NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** 0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
@@ -29,7 +29,8 @@ Independently derive Specification 028 reconciliation and AO-10 realization arch
     004 ChatGPT final design reconciliation    COMPLETE / Research 315 / V0.3
     DRP-01 through DRP-09 preregistration      COMPLETE / Research 316
     DRP-09 fixture + harness freeze             COMPLETE / Research 317
-    DRP-09 scored execution                    NEXT
+    DRP-09 scored execution                    COMPLETE / PASS / Research 318
+    DRP-05a/05b corpus + harness freeze         NEXT
     remaining decision probes                  AFTER FROZEN HARNESS PER PROBE
     owner decision                             AFTER RECONCILED EVIDENCE
 
@@ -57,7 +58,7 @@ Claude may write only:
     docs/model_collaboration/threads/MC-0029/messages/**
 
     MC0029=OPEN
-    PHASE=DRP09_HARNESS_FROZEN
+    PHASE=DRP09_PASS_DRP05_FREEZE_NEXT
     INDEPENDENT_BASE=0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
     CHATGPT_CANDIDATE=RESEARCH312
     CLAUDE_MESSAGE_001=COMPLETE
@@ -69,6 +70,7 @@ Claude may write only:
     INTEGRATED_PROJECT_SYSTEM_V03=FROZEN_PRE_DECISION_CANDIDATE
     DECISION_PROBES=DRP01_TO_DRP09
     DRP_PROTOCOL=RESEARCH316_V01_FROZEN
-    DRP_RESULT_COUNT=0
+    DRP_RESULT_COUNT=1
     DRP09_HARNESS=RESEARCH317_FROZEN
-    NEXT=EXECUTE_DRP09
+    DRP09=PASS_RESEARCH318
+    NEXT=DRP05A_DRP05B_CORPUS_AND_HARNESS_FREEZE

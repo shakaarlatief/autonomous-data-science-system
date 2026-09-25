@@ -1,0 +1,326 @@
+{
+  "probe": "DRP-09",
+  "protocol": "AO10-DRP-V01",
+  "case_count": 13,
+  "case_pass_count": 13,
+  "faulty_normalizer_witness_caught": true,
+  "all_pass": true,
+  "cases": [
+    {
+      "id": "C01_normal",
+      "ok": true,
+      "expected_decision": "ADMIT",
+      "actual": {
+        "decision": "ADMIT",
+        "effective_claims": [
+          "claim:exact-binding",
+          "claim:negative-control",
+          "claim:semantic-contract"
+        ],
+        "missing_policy_claims": [],
+        "reasons": [],
+        "subject_id": "integrated-project-system",
+        "subject_revision": "v03-fixture",
+        "base_revision": "base-accepted-v02"
+      },
+      "required_claims_preserved": true,
+      "expected_extra_claims_preserved": true
+    },
+    {
+      "id": "C02_omit_one_claim",
+      "ok": true,
+      "expected_decision": "ADMIT",
+      "actual": {
+        "decision": "ADMIT",
+        "effective_claims": [
+          "claim:exact-binding",
+          "claim:negative-control",
+          "claim:semantic-contract"
+        ],
+        "missing_policy_claims": [],
+        "reasons": [],
+        "subject_id": "integrated-project-system",
+        "subject_revision": "v03-fixture",
+        "base_revision": "base-accepted-v02"
+      },
+      "required_claims_preserved": true,
+      "expected_extra_claims_preserved": true
+    },
+    {
+      "id": "C03_omit_multiple_claims",
+      "ok": true,
+      "expected_decision": "ADMIT",
+      "actual": {
+        "decision": "ADMIT",
+        "effective_claims": [
+          "claim:exact-binding",
+          "claim:negative-control",
+          "claim:semantic-contract"
+        ],
+        "missing_policy_claims": [],
+        "reasons": [],
+        "subject_id": "integrated-project-system",
+        "subject_revision": "v03-fixture",
+        "base_revision": "base-accepted-v02"
+      },
+      "required_claims_preserved": true,
+      "expected_extra_claims_preserved": true
+    },
+    {
+      "id": "C04_alternate_profile",
+      "ok": true,
+      "expected_decision": "ADMIT",
+      "actual": {
+        "decision": "ADMIT",
+        "effective_claims": [
+          "claim:exact-binding",
+          "claim:negative-control",
+          "claim:semantic-contract"
+        ],
+        "missing_policy_claims": [],
+        "reasons": [],
+        "subject_id": "integrated-project-system",
+        "subject_revision": "v03-fixture",
+        "base_revision": "base-accepted-v02"
+      },
+      "required_claims_preserved": true,
+      "expected_extra_claims_preserved": true
+    },
+    {
+      "id": "C05_stale_subject",
+      "ok": true,
+      "expected_decision": "REFUSE",
+      "actual": {
+        "decision": "REFUSE",
+        "effective_claims": [
+          "claim:exact-binding",
+          "claim:negative-control",
+          "claim:semantic-contract"
+        ],
+        "missing_policy_claims": [],
+        "reasons": [
+          "SUBJECT_REVISION_MISMATCH"
+        ],
+        "subject_id": "integrated-project-system",
+        "subject_revision": "v02-stale",
+        "base_revision": "base-accepted-v02"
+      },
+      "required_claims_preserved": true,
+      "expected_extra_claims_preserved": true
+    },
+    {
+      "id": "C06_stale_base",
+      "ok": true,
+      "expected_decision": "REFUSE",
+      "actual": {
+        "decision": "REFUSE",
+        "effective_claims": [
+          "claim:exact-binding",
+          "claim:negative-control",
+          "claim:semantic-contract"
+        ],
+        "missing_policy_claims": [],
+        "reasons": [
+          "BASE_REVISION_MISMATCH"
+        ],
+        "subject_id": "integrated-project-system",
+        "subject_revision": "v03-fixture",
+        "base_revision": "base-stale-v01"
+      },
+      "required_claims_preserved": true,
+      "expected_extra_claims_preserved": true
+    },
+    {
+      "id": "C07_weaker_consequence",
+      "ok": true,
+      "expected_decision": "REFUSE",
+      "actual": {
+        "decision": "REFUSE",
+        "effective_claims": [
+          "claim:exact-binding",
+          "claim:negative-control",
+          "claim:semantic-contract"
+        ],
+        "missing_policy_claims": [],
+        "reasons": [
+          "CONSEQUENCE_BELOW_POLICY_FLOOR"
+        ],
+        "subject_id": "integrated-project-system",
+        "subject_revision": "v03-fixture",
+        "base_revision": "base-accepted-v02"
+      },
+      "required_claims_preserved": true,
+      "expected_extra_claims_preserved": true
+    },
+    {
+      "id": "C08_missing_trust",
+      "ok": true,
+      "expected_decision": "REVIEW_REQUIRED",
+      "actual": {
+        "decision": "REVIEW_REQUIRED",
+        "effective_claims": [
+          "claim:exact-binding",
+          "claim:negative-control",
+          "claim:semantic-contract"
+        ],
+        "missing_policy_claims": [],
+        "reasons": [
+          "TRUST_REQUIREMENT_UNSATISFIED"
+        ],
+        "subject_id": "integrated-project-system",
+        "subject_revision": "v03-fixture",
+        "base_revision": "base-accepted-v02"
+      },
+      "required_claims_preserved": true,
+      "expected_extra_claims_preserved": true
+    },
+    {
+      "id": "C09_supplemental_context",
+      "ok": true,
+      "expected_decision": "ADMIT",
+      "actual": {
+        "decision": "ADMIT",
+        "effective_claims": [
+          "claim:exact-binding",
+          "claim:negative-control",
+          "claim:semantic-contract"
+        ],
+        "missing_policy_claims": [],
+        "reasons": [],
+        "subject_id": "integrated-project-system",
+        "subject_revision": "v03-fixture",
+        "base_revision": "base-accepted-v02"
+      },
+      "required_claims_preserved": true,
+      "expected_extra_claims_preserved": true
+    },
+    {
+      "id": "C10_extra_check",
+      "ok": true,
+      "expected_decision": "ADMIT",
+      "actual": {
+        "decision": "ADMIT",
+        "effective_claims": [
+          "claim:exact-binding",
+          "claim:negative-control",
+          "claim:rollback-readiness",
+          "claim:semantic-contract"
+        ],
+        "missing_policy_claims": [],
+        "reasons": [],
+        "subject_id": "integrated-project-system",
+        "subject_revision": "v03-fixture",
+        "base_revision": "base-accepted-v02"
+      },
+      "required_claims_preserved": true,
+      "expected_extra_claims_preserved": true
+    },
+    {
+      "id": "C11_unknown_profile",
+      "ok": true,
+      "expected_decision": "REVIEW_REQUIRED",
+      "actual": {
+        "decision": "REVIEW_REQUIRED",
+        "effective_claims": [
+          "claim:exact-binding",
+          "claim:negative-control",
+          "claim:semantic-contract"
+        ],
+        "missing_policy_claims": [],
+        "reasons": [
+          "UNKNOWN_PROFILE_HINT"
+        ],
+        "subject_id": "integrated-project-system",
+        "subject_revision": "v03-fixture",
+        "base_revision": "base-accepted-v02"
+      },
+      "required_claims_preserved": true,
+      "expected_extra_claims_preserved": true
+    },
+    {
+      "id": "C12_contradictory_profile_context",
+      "ok": true,
+      "expected_decision": "REVIEW_REQUIRED",
+      "actual": {
+        "decision": "REVIEW_REQUIRED",
+        "effective_claims": [
+          "claim:exact-binding",
+          "claim:negative-control",
+          "claim:semantic-contract"
+        ],
+        "missing_policy_claims": [],
+        "reasons": [
+          "TRUST_REQUIREMENT_UNSATISFIED"
+        ],
+        "subject_id": "integrated-project-system",
+        "subject_revision": "v03-fixture",
+        "base_revision": "base-accepted-v02"
+      },
+      "required_claims_preserved": true,
+      "expected_extra_claims_preserved": true
+    },
+    {
+      "id": "C13_stale_evidence",
+      "ok": true,
+      "expected_decision": "REFUSE",
+      "actual": {
+        "decision": "REFUSE",
+        "effective_claims": [
+          "claim:exact-binding",
+          "claim:negative-control",
+          "claim:semantic-contract"
+        ],
+        "missing_policy_claims": [],
+        "reasons": [
+          "FRESHNESS_REQUIREMENT_UNSATISFIED"
+        ],
+        "subject_id": "integrated-project-system",
+        "subject_revision": "v03-fixture",
+        "base_revision": "base-accepted-v02"
+      },
+      "required_claims_preserved": true,
+      "expected_extra_claims_preserved": true
+    }
+  ],
+  "faulty_witnesses": [
+    {
+      "id": "C02_omit_one_claim",
+      "caught": true,
+      "faulty_result": {
+        "decision": "REFUSE",
+        "effective_claims": [
+          "claim:exact-binding",
+          "claim:semantic-contract"
+        ],
+        "missing_policy_claims": [
+          "claim:negative-control"
+        ],
+        "reasons": [
+          "POLICY_REQUIRED_CLAIM_SUPPRESSED"
+        ],
+        "subject_id": "integrated-project-system",
+        "subject_revision": "v03-fixture",
+        "base_revision": "base-accepted-v02"
+      }
+    },
+    {
+      "id": "C03_omit_multiple_claims",
+      "caught": true,
+      "faulty_result": {
+        "decision": "REFUSE",
+        "effective_claims": [],
+        "missing_policy_claims": [
+          "claim:exact-binding",
+          "claim:negative-control",
+          "claim:semantic-contract"
+        ],
+        "reasons": [
+          "POLICY_REQUIRED_CLAIM_SUPPRESSED"
+        ],
+        "subject_id": "integrated-project-system",
+        "subject_revision": "v03-fixture",
+        "base_revision": "base-accepted-v02"
+      }
+    }
+  ]
+}
