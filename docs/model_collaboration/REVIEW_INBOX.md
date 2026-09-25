@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-25
-**Status:** MC-0029 OPEN / V0.3 FROZEN / DRP-01 HARNESS FROZEN / CHATGPT ANNOTATION NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / V0.3 FROZEN / DRP-01 CHATGPT ANNOTATION FROZEN / CLAUDE BLIND ANNOTATION NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -37,9 +37,9 @@ Research 317 froze the DRP-09 fixture/harness. Research 318 records a valid PASS
 
 Research 319 froze DRP-05a/05b against all 65 mechanically selected non-merge commits. Research 320 records DRP-05a PASS with 100% deterministic ActionShape coverage and DRP-05b PASS_DETECTIVE_FIRST with 100% mediation classification, 0% current MEDIATED share, 53 COOPERATIVE and 12 UNMEDIATED events. This retains V0.3's mediation-aware architecture while establishing that current AO control is detective-first rather than technically preventive.
 
-Research 321 now freezes the DRP-01 30-carrier corpus, semantic role/status definitions, candidate shared primitives, negative controls, annotation schema and two-reviewer comparison harness. ChatGPT and Claude must annotate independently; neither may inspect the other's annotation before its own is committed.
+Research 321 freezes the DRP-01 30-carrier corpus, role/status definitions, candidate shared primitives, negative controls, schema and comparison harness. ChatGPT Annotation A is now frozen under Research 322. Its semantic contents are intentionally not summarized here because Claude reviewer B must remain blind to them.
 
-Next: ChatGPT annotation A.
+Next: Claude Annotation B. Follow MC-0029 BRIEF/THREAD/STATE and the Research 321 reviewer packet. Claude must not inspect Annotation A, Research 322, or derivative summaries before committing B.
 
 Owner decision and all production/migration/authority actions remain held.
 

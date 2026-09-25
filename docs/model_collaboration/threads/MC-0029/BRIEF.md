@@ -112,3 +112,35 @@ The frozen order begins with DRP-09 assurance-request claim integrity, followed 
 No Claude obligation is currently pending. A fresh independent collaborator will be used where Research 316 requires one, especially DRP-02 scenario authorship and DRP-03 second delimitation.
 
 No probe result has been observed.
+
+## DRP-01 independent reviewer B
+
+Research 321 freezes the DRP-01 semantic-review protocol.
+
+ChatGPT Annotation A now exists and is frozen. Claude must remain blind to its contents until Annotation B is committed.
+
+For Annotation B, Claude may read:
+
+- Research 316;
+- Research 321;
+- experiments/ao10_drp01_shared_semantic_substrate_v01/REVIEWER_PACKET.md;
+- corpus.json;
+- definitions.json;
+- annotation_schema.json;
+- the 30 frozen source carriers from exact commit 870689734673e6e8c2212035afcdf27daf733c15.
+
+Claude must not inspect before committing Annotation B:
+
+- experiments/ao10_drp01_shared_semantic_substrate_v01/annotation_chatgpt_a.json;
+- Research 322;
+- any later file that summarizes ChatGPT Annotation A.
+
+Do not run the DRP-01 comparison harness.
+
+Write exactly one reviewer-B JSON artifact under the existing Claude write boundary:
+
+    docs/model_collaboration/threads/MC-0029/messages/005_claude_drp01_annotation_b.json
+
+The file must follow annotation_schema.json exactly and preserve the corpus order. Use interaction claude-04 / conversation 04 - Assurance and Delivery Architecture Design in reviewer provenance.
+
+If the frozen base, corpus, definitions, or blindness boundary cannot be respected, stop and report the mismatch rather than improvising.

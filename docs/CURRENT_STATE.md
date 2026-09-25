@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 658
+**Checkpoint:** 659
 **Date:** 2026-09-25
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -1291,3 +1291,5 @@ Checkpoint 656 freezes Research 319 / DRP-05a and DRP-05b before scored executio
 Checkpoint 657 records Research 320: DRP-05a PASS and DRP-05b PASS_DETECTIVE_FIRST over the frozen 65-event corpus. All 65 structured Git-history events normalized deterministically into provider-neutral ActionShape records; provider identity invariance and malformed-event fallback controls passed. Mediation classification covered all events: 0 MEDIATED, 53 COOPERATIVE, 12 UNMEDIATED, 0 UNKNOWN. The synthetic MEDIATED control passed. This supports V0.3's rule that current AO guarantees must be detective-first where no AO-controlled preflight actually intercepts effects, while leaving future preventive coverage to realization/adapter qualification. No provider/workflow mechanism is selected. Next is DRP-01 corpus/harness freeze.
 
 Checkpoint 658 freezes Research 321 / DRP-01 before semantic scoring. The exact 30-carrier corpus is bound to protocol base 870689734673e6e8c2212035afcdf27daf733c15. Roles, provisional governing statuses, nine cross-domain seams, six candidate shared primitives, four negative controls, unit-decomposition rules and a comparison harness are frozen. Because the probe requires semantic judgment, Research 321 strengthens the protocol with two independent annotations: ChatGPT first, then Claude blind to ChatGPT's annotation, with >=0.80 admitted-primitive-set Jaccard added before either result exists. No DRP-01 annotation/result has been observed. Next is ChatGPT annotation A.
+
+Checkpoint 659 freezes Research 322 / DRP-01 ChatGPT Annotation A after schema/order and frozen-source-reference validation. No comparison score has been computed. Claude is now the independent reviewer B and must remain blind to Annotation A, Research 322, and derivative summaries of A until its own JSON annotation is committed. Claude may use Research 316, Research 321, the frozen reviewer packet/schema/definitions/corpus, and the exact 30 source carriers at protocol base 870689734673e6e8c2212035afcdf27daf733c15. No production or migration authority changes.
