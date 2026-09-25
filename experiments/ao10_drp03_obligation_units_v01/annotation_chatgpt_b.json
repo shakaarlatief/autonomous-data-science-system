@@ -1,0 +1,1927 @@
+{
+  "schema_version": 1,
+  "reviewer_id": "chatgpt",
+  "reviewer_environment": "OpenAI ChatGPT / interaction chatgpt-30 / independent DRP-03 reviewer B; Claude reviewer A file present after fast-forward but not opened, parsed, grepped, summarized, or used before this annotation was authored",
+  "base": "870689734673e6e8c2212035afcdf27daf733c15",
+  "source_annotations": [
+    {
+      "source_path": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+      "source_role": "ACCEPTANCE_EVENT",
+      "creates_no_obligation_units": false,
+      "obligation_units": [
+        {
+          "unit_id": "R217-U01",
+          "source_anchor": "## 4. Accepted membership rule",
+          "propositions": [
+            {
+              "proposition_id": "R217-P01",
+              "statement": "Assign a semantic subject only when the carrier substantively develops, governs, specifies, evaluates, or preserves durable meaning about that subject."
+            },
+            {
+              "proposition_id": "R217-P02",
+              "statement": "Every secondary subject must independently clear the same substantive-membership threshold."
+            }
+          ],
+          "responsible_semantic_owner": "Project knowledge semantic organization",
+          "realization_boundary": "subject-membership authoring and validation",
+          "expected_evidence_path": "production subject metadata/validation evidence",
+          "activation_boundary": "subject membership becomes production-governed only when the W5 realization resumes",
+          "realization_facts": {
+            "realization_relation_refs": [],
+            "deferral_refs": [
+              "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md::## 13. T1 result / BROAD_W5_MIGRATION=STILL_PAUSED_PENDING_FULL_W5_RECONCILIATION"
+            ],
+            "evidence_refs": [],
+            "qualification_refs": [],
+            "activation_refs": []
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "R217-U02",
+          "source_anchor": "## 5. Preferred route contract",
+          "propositions": [
+            {
+              "proposition_id": "R217-P03",
+              "statement": "preferred_subject is the best default semantic navigation route for the carrier's primary purpose."
+            },
+            {
+              "proposition_id": "R217-P04",
+              "statement": "preferred_subject may be null only when two or more assigned subjects are genuinely co-primary and no unique default route is defensible."
+            },
+            {
+              "proposition_id": "R217-P05",
+              "statement": "preferred_subject is navigation only and does not change source authority or semantic identity."
+            }
+          ],
+          "responsible_semantic_owner": "Project knowledge semantic organization",
+          "realization_boundary": "preferred-route authoring and generated navigation",
+          "expected_evidence_path": "navigation projection qualification",
+          "activation_boundary": "W5 production semantic-navigation activation",
+          "realization_facts": {
+            "realization_relation_refs": [],
+            "deferral_refs": [
+              "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md::## 13. T1 result / BROAD_W5_MIGRATION=STILL_PAUSED_PENDING_FULL_W5_RECONCILIATION"
+            ],
+            "evidence_refs": [],
+            "qualification_refs": [],
+            "activation_refs": []
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "R217-U03",
+          "source_anchor": "## 7. Final vocabulary structure",
+          "propositions": [
+            {
+              "proposition_id": "R217-P06",
+              "statement": "The subject catalog is a vocabulary and parentage contract only and must never enumerate source members."
+            }
+          ],
+          "responsible_semantic_owner": "Project knowledge semantic organization",
+          "realization_boundary": "subject-catalog realization",
+          "expected_evidence_path": "catalog/member separation validation",
+          "activation_boundary": "W5 production catalog activation",
+          "realization_facts": {
+            "realization_relation_refs": [],
+            "deferral_refs": [
+              "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md::## 13. T1 result / BROAD_W5_MIGRATION=STILL_PAUSED_PENDING_FULL_W5_RECONCILIATION"
+            ],
+            "evidence_refs": [],
+            "qualification_refs": [],
+            "activation_refs": []
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "R217-U04",
+          "source_anchor": "## 11. Structural and resolver facets remain separate",
+          "propositions": [
+            {
+              "proposition_id": "R217-P07",
+              "statement": "The accepted subject layer does not absorb profile, kind, authority state, lifecycle state, workstream/dependency, privacy/access, physical domain, temporal/evidence facets, or scope resolver matching."
+            }
+          ],
+          "responsible_semantic_owner": "Project knowledge semantic organization",
+          "realization_boundary": "semantic-subject versus resolver/structural-facet separation",
+          "expected_evidence_path": "schema and generated-view evidence",
+          "activation_boundary": "W5 production semantic-navigation activation",
+          "realization_facts": {
+            "realization_relation_refs": [],
+            "deferral_refs": [
+              "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md::## 13. T1 result / BROAD_W5_MIGRATION=STILL_PAUSED_PENDING_FULL_W5_RECONCILIATION"
+            ],
+            "evidence_refs": [],
+            "qualification_refs": [],
+            "activation_refs": []
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "R217-U05",
+          "source_anchor": "## 12. Production realization contract",
+          "propositions": [
+            {
+              "proposition_id": "R217-P08",
+              "statement": "Production realization should keep vocabulary and parentage in a subject catalog, source-local optional subjects and preferred_subject metadata, and a generated navigation projection that keeps semantic subjects distinct from structural and resolver facets."
+            },
+            {
+              "proposition_id": "R217-P09",
+              "statement": "Membership must never move into the subject catalog."
+            }
+          ],
+          "responsible_semantic_owner": "Project knowledge semantic organization",
+          "realization_boundary": "W5 T1 production realization",
+          "expected_evidence_path": "schema/parser/view implementation and regression evidence",
+          "activation_boundary": "W5 production realization after full W5 reconciliation",
+          "realization_facts": {
+            "realization_relation_refs": [],
+            "deferral_refs": [
+              "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md::## 13. T1 result / BROAD_W5_MIGRATION=STILL_PAUSED_PENDING_FULL_W5_RECONCILIATION"
+            ],
+            "evidence_refs": [],
+            "qualification_refs": [],
+            "activation_refs": []
+          },
+          "witness_tags": []
+        }
+      ]
+    },
+    {
+      "source_path": "docs/research/235_ao9_p7_owner_decisions_and_ao9_closure.md",
+      "source_role": "ACCEPTANCE_EVENT",
+      "creates_no_obligation_units": false,
+      "obligation_units": [
+        {
+          "unit_id": "R235-U01",
+          "source_anchor": "## 2. P7-D01 prospectively amends AO-3",
+          "propositions": [
+            {
+              "proposition_id": "R235-P01",
+              "statement": "AO-3 now requires an independent pre-dispatch output/action-shape screen; consequential proposed output without sufficient AuthorityReceipt and ActionContract closure re-enters bounded reconstruction and authority closure before normal conformance."
+            },
+            {
+              "proposition_id": "R235-P02",
+              "statement": "AO-10 must qualify the output/action-shape amendment's precision, false-positive behavior, and bounded control cost."
+            }
+          ],
+          "responsible_semantic_owner": "AO / JW1 control plane",
+          "realization_boundary": "AO-10 realization and qualification of the P7-D01 amendment",
+          "expected_evidence_path": "shadow/decision-probe evidence for shape classification and bounded re-entry",
+          "activation_boundary": "AO-10 activation only after qualification",
+          "realization_facts": {
+            "realization_relation_refs": [],
+            "deferral_refs": [],
+            "evidence_refs": [],
+            "qualification_refs": [],
+            "activation_refs": []
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "R235-U02",
+          "source_anchor": "## 3. P7-D02 accepts KA-R51",
+          "propositions": [
+            {
+              "proposition_id": "R235-P03",
+              "statement": "KA-R51 requires material activation misses, architecture-evolution trigger misses, and owner-reminder dependencies to be observable enough to become qualification or evolution evidence without depending solely on the owner."
+            },
+            {
+              "proposition_id": "R235-P04",
+              "statement": "AO-10 must mechanically qualify representative miss and reopen-trigger surfacing while preserving low-consequence precision."
+            }
+          ],
+          "responsible_semantic_owner": "AO / JW1 control plane",
+          "realization_boundary": "KA-R51 mechanical observability realization",
+          "expected_evidence_path": "shadow miss-surfacing and negative-control evidence",
+          "activation_boundary": "AO-10 activation after representative miss qualification",
+          "realization_facts": {
+            "realization_relation_refs": [],
+            "deferral_refs": [],
+            "evidence_refs": [],
+            "qualification_refs": [],
+            "activation_refs": []
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "R235-U03",
+          "source_anchor": "## 4. P7-D03 accepts KA-R52",
+          "propositions": [
+            {
+              "proposition_id": "R235-P05",
+              "statement": "Accepted governing MUST obligations must be deterministically traceable through gate or scheduling responsibility, realization, evidence, qualification, and operational realization."
+            },
+            {
+              "proposition_id": "R235-P06",
+              "statement": "If realization cannot proceed, an explicit governed deferral must preserve the blocking reason, reactivation or closure condition, and future evidence path."
+            },
+            {
+              "proposition_id": "R235-P07",
+              "statement": "There must not be an untracked third state in which an accepted obligation is neither realized nor explicitly deferred."
+            },
+            {
+              "proposition_id": "R235-P08",
+              "statement": "AO-10 must select and qualify a bounded accepted-obligation realization mechanism that fits the surviving Candidate 01 and Specification 028 contracts or obtain a prospective amendment."
+            }
+          ],
+          "responsible_semantic_owner": "AO / JW1 obligation realization",
+          "realization_boundary": "KA-R52 obligation-unit/realization mechanism",
+          "expected_evidence_path": "traceability, seeded-gap sensitivity, false-gap specificity and deferral evidence",
+          "activation_boundary": "AO-10 activation after bounded mechanism qualification",
+          "realization_facts": {
+            "realization_relation_refs": [],
+            "deferral_refs": [],
+            "evidence_refs": [],
+            "qualification_refs": [],
+            "activation_refs": []
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "R235-U04",
+          "source_anchor": "## 7. Owner-approved sequencing boundary before AO-10",
+          "propositions": [
+            {
+              "proposition_id": "R235-P09",
+              "statement": "Before AO-10 implementation or shadow qualification, the project must govern an AO-4 evolution of Research 218's physical information architecture, reconcile affected Specification 028/Candidate 01/AO dependencies, and only then begin AO-10 implementation."
+            }
+          ],
+          "responsible_semantic_owner": "Project architecture governance",
+          "realization_boundary": "R7/R8 architecture evolution before AO-10",
+          "expected_evidence_path": "Research 256 through Research 311 accepted architecture evolution",
+          "activation_boundary": "AO-10 reconciliation/design may begin after R8-C acceptance",
+          "realization_facts": {
+            "realization_relation_refs": [
+              "docs/research/256_r7_owner_amendment_acceptance_research218_supersession_and_r8_entry.md::## 3. Research 218 disposition"
+            ],
+            "deferral_refs": [],
+            "evidence_refs": [
+              "docs/research/311_warrant_f_v02_owner_acceptance_r8c_closure_and_ao10_reconciliation_entry.md::## 9. AO-10 status after acceptance"
+            ],
+            "qualification_refs": [
+              "docs/research/311_warrant_f_v02_owner_acceptance_r8c_closure_and_ao10_reconciliation_entry.md::## 1. Owner decision"
+            ],
+            "activation_refs": [
+              "docs/research/311_warrant_f_v02_owner_acceptance_r8c_closure_and_ao10_reconciliation_entry.md::AO10=UNBLOCKED_FOR_RECONCILIATION_AND_DESIGN"
+            ]
+          },
+          "witness_tags": []
+        }
+      ]
+    },
+    {
+      "source_path": "docs/research/256_r7_owner_amendment_acceptance_research218_supersession_and_r8_entry.md",
+      "source_role": "ACCEPTANCE_EVENT",
+      "creates_no_obligation_units": false,
+      "obligation_units": [
+        {
+          "unit_id": "R256-U01",
+          "source_anchor": "## 2. Accepted amendments",
+          "propositions": [
+            {
+              "proposition_id": "R256-P01",
+              "statement": "Decision event and status belong in governance/decisions; durable rationale or specification gets its own architecture carrier only when independent lifecycle, authority, or provenance justifies it."
+            }
+          ],
+          "responsible_semantic_owner": "Project information architecture",
+          "realization_boundary": "decision-versus-architecture carrier placement",
+          "expected_evidence_path": "R8 target architecture and migration mapping",
+          "activation_boundary": "target information architecture realization",
+          "realization_facts": {
+            "realization_relation_refs": [],
+            "deferral_refs": [],
+            "evidence_refs": [],
+            "qualification_refs": [],
+            "activation_refs": []
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "R256-U02",
+          "source_anchor": "## 2. Accepted amendments",
+          "propositions": [
+            {
+              "proposition_id": "R256-P02",
+              "statement": "Declaration instances remain carrier-resident, while schemas, generated indexes and views, and validation machinery belong to the Project Development System."
+            }
+          ],
+          "responsible_semantic_owner": "Project information architecture / JW1",
+          "realization_boundary": "declaration and project-system ownership separation",
+          "expected_evidence_path": "R8 representation and system-realization evidence",
+          "activation_boundary": "target Project-system activation",
+          "realization_facts": {
+            "realization_relation_refs": [],
+            "deferral_refs": [],
+            "evidence_refs": [],
+            "qualification_refs": [],
+            "activation_refs": []
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "R256-U03",
+          "source_anchor": "## 2. Accepted amendments",
+          "propositions": [
+            {
+              "proposition_id": "R256-P03",
+              "statement": "Project-system human documentation separates rationale, normative specifications, operation and recovery, and executable/generated state into their accepted responsibility areas."
+            }
+          ],
+          "responsible_semantic_owner": "Project information architecture",
+          "realization_boundary": "human-documentation responsibility placement",
+          "expected_evidence_path": "target-tree and migration evidence",
+          "activation_boundary": "target information architecture activation",
+          "realization_facts": {
+            "realization_relation_refs": [],
+            "deferral_refs": [],
+            "evidence_refs": [],
+            "qualification_refs": [],
+            "activation_refs": []
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "R256-U04",
+          "source_anchor": "## 2. Accepted amendments",
+          "propositions": [
+            {
+              "proposition_id": "R256-P04",
+              "statement": "Governance is primarily declarative and Operations is primarily procedural; R8 must derive operations/engineering subareas and preregister a direct-subarea review bound before population."
+            }
+          ],
+          "responsible_semantic_owner": "Project architecture / Engineering",
+          "realization_boundary": "operations-engineering subarea derivation and bound",
+          "expected_evidence_path": "R8-A target/review-bound evidence",
+          "activation_boundary": "R8-A accepted target activation",
+          "realization_facts": {
+            "realization_relation_refs": [
+              "docs/research/259_r8a_owner_amendment_acceptance_and_from_scratch_representation_freedom.md::## 1. Owner decision"
+            ],
+            "deferral_refs": [],
+            "evidence_refs": [
+              "docs/research/259_r8a_owner_amendment_acceptance_and_from_scratch_representation_freedom.md::## 11. Accepted R8-A target"
+            ],
+            "qualification_refs": [
+              "docs/research/259_r8a_owner_amendment_acceptance_and_from_scratch_representation_freedom.md::## 1. Owner decision"
+            ],
+            "activation_refs": [
+              "docs/research/259_r8a_owner_amendment_acceptance_and_from_scratch_representation_freedom.md::R8A=ACCEPTED_AS_AMENDED"
+            ]
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "R256-U05",
+          "source_anchor": "## 2. Accepted amendments",
+          "propositions": [
+            {
+              "proposition_id": "R256-P05",
+              "statement": "The cold-start gate requires root README reach current Project orientation and Project knowledge root in one explicit link, any primary knowledge class within two links, governing architecture/current authority within three links, and the machine root anchor provide routing/authority immediately with continuation/orientation within one additional read."
+            }
+          ],
+          "responsible_semantic_owner": "Project continuity / information architecture",
+          "realization_boundary": "cold-start orientation contract",
+          "expected_evidence_path": "cold-start gate evidence at target realization",
+          "activation_boundary": "target continuity architecture activation",
+          "realization_facts": {
+            "realization_relation_refs": [],
+            "deferral_refs": [],
+            "evidence_refs": [],
+            "qualification_refs": [],
+            "activation_refs": []
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "R256-U06",
+          "source_anchor": "## 2. Accepted amendments",
+          "propositions": [
+            {
+              "proposition_id": "R256-P06",
+              "statement": "A carrier does not move merely because it ages or becomes historical; stable natural-owner path plus lifecycle/status and generated-navigation update is the default, with history reserved for born-historical records, milestone snapshots, or justified archival extractions."
+            }
+          ],
+          "responsible_semantic_owner": "Project information architecture",
+          "realization_boundary": "history and natural-owner placement semantics",
+          "expected_evidence_path": "migration-disposition and reference-integrity evidence",
+          "activation_boundary": "target information architecture activation",
+          "realization_facts": {
+            "realization_relation_refs": [],
+            "deferral_refs": [],
+            "evidence_refs": [],
+            "qualification_refs": [],
+            "activation_refs": []
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "R256-U07",
+          "source_anchor": "## 5. R8 required outputs",
+          "propositions": [
+            {
+              "proposition_id": "R256-P07",
+              "statement": "Before any physical migration, R8 must produce the exact target repository/workspace layouts, operations-engineering model and bound, semantic-vocabulary plan, file-level dispositions, research/archive placement, root-bound evidence, cold-start evidence, Specification 028 amendments, validator/test/schema impact map, compatibility/shadow strategy, migration dependency order, authority/cutover gates, rollback/recovery plan, and post-migration integrity/semantic-parity qualification."
+            }
+          ],
+          "responsible_semantic_owner": "R8 architecture program",
+          "realization_boundary": "complete pre-migration R8 design package",
+          "expected_evidence_path": "R8-A/R8-B/R8-C and AO-10 reconciliation artifacts",
+          "activation_boundary": "owner migration authorization only after complete qualification",
+          "realization_facts": {
+            "realization_relation_refs": [],
+            "deferral_refs": [
+              "docs/research/256_r7_owner_amendment_acceptance_research218_supersession_and_r8_entry.md::## 7. Still held / PHYSICAL_MIGRATION_AUTHORIZED=false"
+            ],
+            "evidence_refs": [],
+            "qualification_refs": [],
+            "activation_refs": []
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "R256-U08",
+          "source_anchor": "## 6. R8 method",
+          "propositions": [
+            {
+              "proposition_id": "R256-P08",
+              "statement": "R8 must design exact target realization first, then current-file disposition, contract/specification amendments, compatibility/migration graph, qualification gates, and owner migration authorization; physical moves happen only later."
+            },
+            {
+              "proposition_id": "R256-P09",
+              "statement": "Material evidence against G-DUAL, R6, or R7 reopens the appropriate architecture level."
+            }
+          ],
+          "responsible_semantic_owner": "R8 architecture program",
+          "realization_boundary": "governed R8 design and migration sequencing",
+          "expected_evidence_path": "architecture-stage evidence and owner decisions",
+          "activation_boundary": "physical migration only after explicit authorization",
+          "realization_facts": {
+            "realization_relation_refs": [],
+            "deferral_refs": [
+              "docs/research/256_r7_owner_amendment_acceptance_research218_supersession_and_r8_entry.md::## 7. Still held / PHYSICAL_MIGRATION_AUTHORIZED=false"
+            ],
+            "evidence_refs": [],
+            "qualification_refs": [],
+            "activation_refs": []
+          },
+          "witness_tags": []
+        }
+      ]
+    },
+    {
+      "source_path": "docs/research/259_r8a_owner_amendment_acceptance_and_from_scratch_representation_freedom.md",
+      "source_role": "ACCEPTANCE_EVENT",
+      "creates_no_obligation_units": false,
+      "obligation_units": [
+        {
+          "unit_id": "R259-U01",
+          "source_anchor": "## 3. From-scratch representation principle",
+          "propositions": [
+            {
+              "proposition_id": "R259-P01",
+              "statement": "The representation stage must derive semantic responsibility and required behavior, information objects and lifecycle, authority/identity/provenance/relation requirements, and human/machine access requirements before choosing representation, metadata, schema, or exact carrier realization."
+            },
+            {
+              "proposition_id": "R259-P02",
+              "statement": "The representation stage must not preserve current Markdown or JSON metadata shape merely by reorganizing it under new folders."
+            }
+          ],
+          "responsible_semantic_owner": "R8-B representation architecture",
+          "realization_boundary": "from-scratch representation derivation",
+          "expected_evidence_path": "comparative representation design and probe evidence",
+          "activation_boundary": "owner acceptance of selected representation architecture",
+          "realization_facts": {
+            "realization_relation_refs": [
+              "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md::## 2. Accepted representation architecture"
+            ],
+            "deferral_refs": [],
+            "evidence_refs": [
+              "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md::## 2. Accepted representation architecture"
+            ],
+            "qualification_refs": [
+              "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md::## 1. Owner decision"
+            ],
+            "activation_refs": [
+              "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md::R8B=WMR_H_V0_3_ACCEPTED"
+            ]
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "R259-U02",
+          "source_anchor": "## 5. No hidden grandfathering of current metadata",
+          "propositions": [
+            {
+              "proposition_id": "R259-P03",
+              "statement": "Current metadata headers, front matter, declaration blocks, embedded JSON, JSON Schema, checkpoint/research/collaboration metadata, current document families, generated-view schemas, status and relation vocabularies, and naming conventions are not grandfathered into the future architecture merely because they exist."
+            }
+          ],
+          "responsible_semantic_owner": "R8-B representation architecture",
+          "realization_boundary": "anti-inheritance representation constraint",
+          "expected_evidence_path": "representation comparison evidence",
+          "activation_boundary": "accepted representation architecture",
+          "realization_facts": {
+            "realization_relation_refs": [
+              "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md::## 2. Accepted representation architecture"
+            ],
+            "deferral_refs": [],
+            "evidence_refs": [
+              "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md::## 2. Accepted representation architecture"
+            ],
+            "qualification_refs": [
+              "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md::## 1. Owner decision"
+            ],
+            "activation_refs": [
+              "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md::R8B=WMR_H_V0_3_ACCEPTED"
+            ]
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "R259-U03",
+          "source_anchor": "## 7. Specification 028 implication",
+          "propositions": [
+            {
+              "proposition_id": "R259-P04",
+              "statement": "The next representation stage must deliberately review all representation-sensitive clauses in Specification 028 rather than treating them as target constraints."
+            },
+            {
+              "proposition_id": "R259-P05",
+              "statement": "No Specification 028 representation clause changes until the review is completed and the amendment is explicitly accepted."
+            }
+          ],
+          "responsible_semantic_owner": "R8-B representation architecture / specification governance",
+          "realization_boundary": "Specification 028 representation reconciliation",
+          "expected_evidence_path": "clause-disposition evidence and accepted successor amendment",
+          "activation_boundary": "prospective specification amendment only after acceptance",
+          "realization_facts": {
+            "realization_relation_refs": [
+              "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md::## 5. Specification 028 remains unchanged for now"
+            ],
+            "deferral_refs": [],
+            "evidence_refs": [
+              "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md::## 5. Specification 028 remains unchanged for now"
+            ],
+            "qualification_refs": [],
+            "activation_refs": []
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "R259-U04",
+          "source_anchor": "## 8. Representation-stage design freedom",
+          "propositions": [
+            {
+              "proposition_id": "R259-P06",
+              "statement": "Representation families must be evaluated without preference by inheritance and justified by authority semantics, lifecycle, update locality, human inspectability, machine determinism, reconstruction, provenance, migration safety, failure/recovery, versioning/evolution, validation, relevant performance, PSMF upgradeability, Product/Project separation, and operational complexity."
+            }
+          ],
+          "responsible_semantic_owner": "R8-B representation architecture",
+          "realization_boundary": "representation-family selection",
+          "expected_evidence_path": "comparative probe and owner-acceptance evidence",
+          "activation_boundary": "accepted representation architecture",
+          "realization_facts": {
+            "realization_relation_refs": [
+              "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md::## 2. Accepted representation architecture"
+            ],
+            "deferral_refs": [],
+            "evidence_refs": [
+              "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md::## 2. Accepted representation architecture"
+            ],
+            "qualification_refs": [
+              "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md::## 1. Owner decision"
+            ],
+            "activation_refs": [
+              "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md::R8B=WMR_H_V0_3_ACCEPTED"
+            ]
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "R259-U05",
+          "source_anchor": "## 10. Next-stage method",
+          "propositions": [
+            {
+              "proposition_id": "R259-P07",
+              "statement": "The next stage must derive the representation model from first principles, design metadata and schema only after representation selection, map retained semantics into the new model, produce the Specification 028 delta, and only then build file-level migration disposition."
+            },
+            {
+              "proposition_id": "R259-P08",
+              "statement": "The stage must explicitly detect when an existing metadata field, heading convention, or document family is being retained merely through familiarity."
+            }
+          ],
+          "responsible_semantic_owner": "R8-B representation architecture",
+          "realization_boundary": "representation-stage method",
+          "expected_evidence_path": "R8-B design/probe evidence",
+          "activation_boundary": "representation acceptance then later specification reconciliation",
+          "realization_facts": {
+            "realization_relation_refs": [
+              "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md::## 2. Accepted representation architecture"
+            ],
+            "deferral_refs": [],
+            "evidence_refs": [
+              "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md::## 2. Accepted representation architecture"
+            ],
+            "qualification_refs": [
+              "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md::## 1. Owner decision"
+            ],
+            "activation_refs": [
+              "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md::R8B=WMR_H_V0_3_ACCEPTED"
+            ]
+          },
+          "witness_tags": []
+        }
+      ]
+    },
+    {
+      "source_path": "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+      "source_role": "ACCEPTANCE_EVENT",
+      "creates_no_obligation_units": false,
+      "obligation_units": [
+        {
+          "unit_id": "R272-U01",
+          "source_anchor": "## 2. Accepted representation architecture",
+          "propositions": [
+            {
+              "proposition_id": "R272-P01",
+              "statement": "Durable human Project knowledge uses Markdown, while selective machine-readable descriptors on governed human carriers use visible fenced TOML metadata only where machine semantics are required, with a JSON-compatible governed TOML value model."
+            },
+            {
+              "proposition_id": "R272-P02",
+              "statement": "Human-authored Project-system instance policy uses TOML, machine-maintained durable Project control state uses sharded pretty JSON, and state concurrency uses exact stale-write/content preconditions plus monotonic revision history over committed history."
+            },
+            {
+              "proposition_id": "R272-P03",
+              "statement": "Machine contracts use versioned JSON Schema over normalized structured representations."
+            }
+          ],
+          "responsible_semantic_owner": "R8-B representation architecture",
+          "realization_boundary": "human/machine carrier and state representation",
+          "expected_evidence_path": "production representation realization and semantic-parity evidence",
+          "activation_boundary": "successor representation activation after migration qualification",
+          "realization_facts": {
+            "realization_relation_refs": [],
+            "deferral_refs": [],
+            "evidence_refs": [],
+            "qualification_refs": [],
+            "activation_refs": []
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "R272-U02",
+          "source_anchor": "## 2. Accepted representation architecture",
+          "propositions": [
+            {
+              "proposition_id": "R272-P04",
+              "statement": "Standalone independent semantic facts use natural-owner structured records with a repository-wide direct-record review bound of 12."
+            },
+            {
+              "proposition_id": "R272-P05",
+              "statement": "Human captures use human-readable carriers, machine captures use JSON, and receipts are selective immutable individual JSON records with a content-derived locator candidate."
+            },
+            {
+              "proposition_id": "R272-P06",
+              "statement": "Generated orientation uses bounded committed current.md and current.json accelerators that are derived, non-authoritative, freshness-qualified, and not required for break-glass recovery."
+            }
+          ],
+          "responsible_semantic_owner": "R8-B representation architecture",
+          "realization_boundary": "bounded records, captures, receipts, and orientation",
+          "expected_evidence_path": "production realization and recovery evidence",
+          "activation_boundary": "successor Project-system activation",
+          "realization_facts": {
+            "realization_relation_refs": [],
+            "deferral_refs": [],
+            "evidence_refs": [],
+            "qualification_refs": [],
+            "activation_refs": []
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "R272-U03",
+          "source_anchor": "## 2. Accepted representation architecture",
+          "propositions": [
+            {
+              "proposition_id": "R272-P07",
+              "statement": "Query/search acceleration is rebuildable SQLite/FTS; graph semantics use canonical typed relations with derived graph projections and no canonical graph database requirement; vector retrieval is optional derived cache only."
+            },
+            {
+              "proposition_id": "R272-P08",
+              "statement": "A canonical Project SQL database and broad event-sourcing architecture are not selected."
+            }
+          ],
+          "responsible_semantic_owner": "R8-B representation architecture",
+          "realization_boundary": "derived query/graph/vector representation",
+          "expected_evidence_path": "rebuild/freshness and no-unique-truth qualification",
+          "activation_boundary": "successor retrieval/navigation activation",
+          "realization_facts": {
+            "realization_relation_refs": [],
+            "deferral_refs": [],
+            "evidence_refs": [],
+            "qualification_refs": [],
+            "activation_refs": []
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "R272-U04",
+          "source_anchor": "## 2. Accepted representation architecture",
+          "propositions": [
+            {
+              "proposition_id": "R272-P09",
+              "statement": "Break-glass recovery must use a stable anchor plus canonical source and remain derivative-independent."
+            },
+            {
+              "proposition_id": "R272-P10",
+              "statement": "The PSMF seam keeps framework mechanism and ADS instance meaning independently replaceable."
+            },
+            {
+              "proposition_id": "R272-P11",
+              "statement": "An intended governed carrier must resolve as GOVERNED or ERROR and must never be silently downgraded to plain because of BOM, leading whitespace, or supported title variation."
+            },
+            {
+              "proposition_id": "R272-P12",
+              "statement": "Real-carrier migration must be rule-based and loss-accounted."
+            }
+          ],
+          "responsible_semantic_owner": "R8-B representation architecture",
+          "realization_boundary": "recovery, framework seam, governance recognition, and migration invariants",
+          "expected_evidence_path": "failure/recovery and migration qualification",
+          "activation_boundary": "successor migration/cutover",
+          "realization_facts": {
+            "realization_relation_refs": [],
+            "deferral_refs": [],
+            "evidence_refs": [],
+            "qualification_refs": [],
+            "activation_refs": []
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "R272-U05",
+          "source_anchor": "## 5. Specification 028 remains unchanged for now",
+          "propositions": [
+            {
+              "proposition_id": "R272-P13",
+              "statement": "Specification 028 remains the current governing implementation and migration contract until explicitly amended."
+            },
+            {
+              "proposition_id": "R272-P14",
+              "statement": "The accepted R8-B architecture creates a later obligation to reconcile representation-sensitive Specification 028 clauses, and no clause is silently changed by this acceptance."
+            }
+          ],
+          "responsible_semantic_owner": "Specification governance",
+          "realization_boundary": "R8-B to Specification 028 reconciliation",
+          "expected_evidence_path": "clause disposition and successor-spec evidence",
+          "activation_boundary": "prospective amendment only after owner/governed acceptance",
+          "realization_facts": {
+            "realization_relation_refs": [],
+            "deferral_refs": [],
+            "evidence_refs": [],
+            "qualification_refs": [],
+            "activation_refs": []
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "R272-U06",
+          "source_anchor": "## 6. Assurance anti-anchoring is now a hard downstream input",
+          "propositions": [
+            {
+              "proposition_id": "R272-P15",
+              "statement": "Current tests, validators, integrity checks, CI/CD machinery, repository checks, pytest organization, GitHub Actions topology, and aggregate PASS shape are redesignable from scratch and have no target preservation right."
+            },
+            {
+              "proposition_id": "R272-P16",
+              "statement": "Current assurance mechanisms remain migration oracles, and assurance invariants must be extracted before replacement."
+            },
+            {
+              "proposition_id": "R272-P17",
+              "statement": "The assurance stage must design from required behaviors and failure modes rather than from current test files or CI workflows."
+            }
+          ],
+          "responsible_semantic_owner": "R8-C assurance architecture",
+          "realization_boundary": "first-principles assurance derivation and oracle mapping",
+          "expected_evidence_path": "assurance architecture and decision-probe evidence",
+          "activation_boundary": "accepted assurance architecture then realization qualification",
+          "realization_facts": {
+            "realization_relation_refs": [
+              "docs/research/311_warrant_f_v02_owner_acceptance_r8c_closure_and_ao10_reconciliation_entry.md::## 2. Accepted assurance architecture"
+            ],
+            "deferral_refs": [],
+            "evidence_refs": [
+              "docs/research/311_warrant_f_v02_owner_acceptance_r8c_closure_and_ao10_reconciliation_entry.md::## 1. Owner decision"
+            ],
+            "qualification_refs": [
+              "docs/research/311_warrant_f_v02_owner_acceptance_r8c_closure_and_ao10_reconciliation_entry.md::## 1. Owner decision"
+            ],
+            "activation_refs": [
+              "docs/research/311_warrant_f_v02_owner_acceptance_r8c_closure_and_ao10_reconciliation_entry.md::R8C=ACCEPTED"
+            ]
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "R272-U07",
+          "source_anchor": "## 8. Next stage: first-principles assurance architecture",
+          "propositions": [
+            {
+              "proposition_id": "R272-P18",
+              "statement": "The next stage must derive from scratch what must be assured, lifecycle boundary, evidence class, failure semantics, trust assumptions, execution location, ownership, and migration/cutover role before choosing mechanisms and tools."
+            }
+          ],
+          "responsible_semantic_owner": "R8-C assurance architecture",
+          "realization_boundary": "assurance architecture derivation",
+          "expected_evidence_path": "WARRANT-F design, probe, and owner-acceptance evidence",
+          "activation_boundary": "R8-C accepted assurance architecture",
+          "realization_facts": {
+            "realization_relation_refs": [
+              "docs/research/311_warrant_f_v02_owner_acceptance_r8c_closure_and_ao10_reconciliation_entry.md::## 2. Accepted assurance architecture"
+            ],
+            "deferral_refs": [],
+            "evidence_refs": [
+              "docs/research/311_warrant_f_v02_owner_acceptance_r8c_closure_and_ao10_reconciliation_entry.md::## 1. Owner decision"
+            ],
+            "qualification_refs": [
+              "docs/research/311_warrant_f_v02_owner_acceptance_r8c_closure_and_ao10_reconciliation_entry.md::## 1. Owner decision"
+            ],
+            "activation_refs": [
+              "docs/research/311_warrant_f_v02_owner_acceptance_r8c_closure_and_ao10_reconciliation_entry.md::R8C=ACCEPTED"
+            ]
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "R272-U08",
+          "source_anchor": "## 9. Relationship to activation/orchestration and migration",
+          "propositions": [
+            {
+              "proposition_id": "R272-P19",
+              "statement": "Assurance precedes physical migration; AO realization must be reconciled against accepted R8-A, R8-B, assurance architecture, and Specification 028 amendments before exact migration/disposition planning, migration readiness, owner authorization, and physical migration."
+            },
+            {
+              "proposition_id": "R272-P20",
+              "statement": "If assurance or Specification 028 reconciliation materially invalidates architecture, AO-4 must reopen the affected decision instead of patching around it."
+            }
+          ],
+          "responsible_semantic_owner": "Project architecture governance",
+          "realization_boundary": "assurance-to-AO-to-migration sequencing",
+          "expected_evidence_path": "R8-C acceptance and AO-10 reconciliation evidence",
+          "activation_boundary": "physical migration only after readiness and owner authorization",
+          "realization_facts": {
+            "realization_relation_refs": [],
+            "deferral_refs": [
+              "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md::## 10. Still held / PHYSICAL_MIGRATION_AUTHORIZED=false"
+            ],
+            "evidence_refs": [],
+            "qualification_refs": [],
+            "activation_refs": []
+          },
+          "witness_tags": []
+        }
+      ]
+    },
+    {
+      "source_path": "docs/research/311_warrant_f_v02_owner_acceptance_r8c_closure_and_ao10_reconciliation_entry.md",
+      "source_role": "ACCEPTANCE_EVENT",
+      "creates_no_obligation_units": false,
+      "obligation_units": [
+        {
+          "unit_id": "R311-U01",
+          "source_anchor": "## 2. Accepted assurance architecture",
+          "propositions": [
+            {
+              "proposition_id": "R311-P01",
+              "statement": "The accepted assurance architecture uses selective first-class claims, explicit verifier warrants, executable sensitivity/specificity evidence where warranted, exact subject and revision binding, freshness/provenance requirements, and a base-revision assurance-policy ratchet."
+            },
+            {
+              "proposition_id": "R311-P02",
+              "statement": "The assurance architecture requires explicit trust semantics, executor capability modeling, and separation of execution surface from trust."
+            },
+            {
+              "proposition_id": "R311-P03",
+              "statement": "Provider and workflow mechanisms remain free, result adaptation is consumer-side, exact-result promotion is explicit, decision evidence is non-self-mutating, and oracle retirement requires qualification."
+            },
+            {
+              "proposition_id": "R311-P04",
+              "statement": "Deterministic and stochastic assurance remain separate; stochastic decision-grade campaigns are preregistered, use public-development/private-held-out separation, and prohibit retry-to-green."
+            },
+            {
+              "proposition_id": "R311-P05",
+              "statement": "Profiles compose without owning consequence semantics, decision-grade evidence is retained selectively, and assurance, orchestration, and delivery remain separate."
+            }
+          ],
+          "responsible_semantic_owner": "WARRANT-F assurance architecture",
+          "realization_boundary": "WARRANT-F semantic realization",
+          "expected_evidence_path": "assurance-kernel, policy, evidence and adapter qualification",
+          "activation_boundary": "accepted-state admission only after concrete realization qualification",
+          "realization_facts": {
+            "realization_relation_refs": [],
+            "deferral_refs": [],
+            "evidence_refs": [],
+            "qualification_refs": [],
+            "activation_refs": []
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "R311-U02",
+          "source_anchor": "## 3. Accepted-state semantics remain mechanism-neutral",
+          "propositions": [
+            {
+              "proposition_id": "R311-P06",
+              "statement": "Accepted state remains a semantic exact-subject role and does not permanently select the current Git branch, workflow, CI/provider, runner, host protection, identity/status publisher, test framework, evidence store, deployment/release topology, current routing carrier design, or repository-integrity aggregate."
+            },
+            {
+              "proposition_id": "R311-P07",
+              "statement": "Current mechanisms may remain migration constraints, evidence, compatibility obligations, or temporary bridges but have no target preservation right merely because they are current."
+            }
+          ],
+          "responsible_semantic_owner": "Project assurance/governance",
+          "realization_boundary": "mechanism-neutral accepted-state realization",
+          "expected_evidence_path": "provider-neutral implementation and migration evidence",
+          "activation_boundary": "qualified successor mechanism activation",
+          "realization_facts": {
+            "realization_relation_refs": [],
+            "deferral_refs": [],
+            "evidence_refs": [],
+            "qualification_refs": [],
+            "activation_refs": []
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "R311-U03",
+          "source_anchor": "## 4. Accepted assurance / AO / delivery boundary",
+          "propositions": [
+            {
+              "proposition_id": "R311-P08",
+              "statement": "AO/JW1 determines project process, governing transitions, and lifecycle routing; WARRANT-F determines whether an exact consequence is admissible under applicable assurance policy; Engineering/Delivery performs governed mutation only after required control and assurance decisions exist."
+            },
+            {
+              "proposition_id": "R311-P09",
+              "statement": "Assurance decisions may re-enter AO as project events and AO may activate assurance when a transition requires an assurance profile; neither subsystem silently absorbs the other."
+            }
+          ],
+          "responsible_semantic_owner": "AO / WARRANT-F / Engineering seam",
+          "realization_boundary": "separate control, admission, and mutation interfaces",
+          "expected_evidence_path": "interface contracts and integration qualification",
+          "activation_boundary": "production AO/WARRANT-F/Engineering activation",
+          "realization_facts": {
+            "realization_relation_refs": [],
+            "deferral_refs": [],
+            "evidence_refs": [],
+            "qualification_refs": [],
+            "activation_refs": []
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "R311-U04",
+          "source_anchor": "## 5. R8-A Engineering environment amendment is now accepted",
+          "propositions": [
+            {
+              "proposition_id": "R311-P10",
+              "statement": "project/engineering must be an independently resolved Python project with an independent lock."
+            },
+            {
+              "proposition_id": "R311-P11",
+              "statement": "Product and JW1 are not co-installed into Engineering merely to run assurance."
+            },
+            {
+              "proposition_id": "R311-P12",
+              "statement": "JW1 is invoked through a CLI/result contract rather than a path dependency."
+            },
+            {
+              "proposition_id": "R311-P13",
+              "statement": "Assurance-kernel runtime dependencies remain deliberately small."
+            },
+            {
+              "proposition_id": "R311-P14",
+              "statement": "One Engineering-owned bootstrap entry prepares the required environments."
+            },
+            {
+              "proposition_id": "R311-P15",
+              "statement": "A root Python project is removed unless an independently justified repository-wide runtime remains."
+            }
+          ],
+          "responsible_semantic_owner": "Project Engineering architecture",
+          "realization_boundary": "Engineering environment realization",
+          "expected_evidence_path": "environment/bootstrap/lock/interface qualification",
+          "activation_boundary": "Engineering target activation",
+          "realization_facts": {
+            "realization_relation_refs": [],
+            "deferral_refs": [],
+            "evidence_refs": [],
+            "qualification_refs": [],
+            "activation_refs": []
+          },
+          "witness_tags": [
+            "W_R311_ENGINEERING_NO_MUST"
+          ]
+        },
+        {
+          "unit_id": "R311-U05",
+          "source_anchor": "### P-H current host capability",
+          "propositions": [
+            {
+              "proposition_id": "R311-P16",
+              "statement": "Host or provider qualification is required before dependent cutover; GitHub and current Git-host mechanisms are neither selected nor rejected as the target."
+            }
+          ],
+          "responsible_semantic_owner": "Engineering / Delivery host integration",
+          "realization_boundary": "host/provider capability qualification",
+          "expected_evidence_path": "provider capability evidence",
+          "activation_boundary": "cutover only after host/provider qualification",
+          "realization_facts": {
+            "realization_relation_refs": [],
+            "deferral_refs": [],
+            "evidence_refs": [],
+            "qualification_refs": [],
+            "activation_refs": []
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "R311-U06",
+          "source_anchor": "### P-D4 current oracle succession",
+          "propositions": [
+            {
+              "proposition_id": "R311-P17",
+              "statement": "The current routing oracle must be retained as a migration oracle until a production successor exists, translated semantics are implemented, shadow qualification passes, and an explicit release or retirement decision occurs."
+            }
+          ],
+          "responsible_semantic_owner": "Project transition management",
+          "realization_boundary": "routing-oracle successor qualification",
+          "expected_evidence_path": "successor semantic parity and shadow evidence",
+          "activation_boundary": "oracle retirement only after explicit release decision",
+          "realization_facts": {
+            "realization_relation_refs": [],
+            "deferral_refs": [
+              "docs/research/311_warrant_f_v02_owner_acceptance_r8c_closure_and_ao10_reconciliation_entry.md::### P-D4 current oracle succession / retain until qualified successor release"
+            ],
+            "evidence_refs": [],
+            "qualification_refs": [],
+            "activation_refs": []
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "R311-U07",
+          "source_anchor": "### P-S stochastic qualification",
+          "propositions": [
+            {
+              "proposition_id": "R311-P18",
+              "statement": "Current Prototype V0 stochastic BLOCK status remains observe-only; decision-grade stochastic BLOCK use must follow the accepted preregistered item-cluster design and public/private item separation."
+            }
+          ],
+          "responsible_semantic_owner": "WARRANT-F stochastic assurance",
+          "realization_boundary": "decision-grade stochastic campaign qualification",
+          "expected_evidence_path": "preregistered campaign and held-out evidence",
+          "activation_boundary": "BLOCK authority only after decision-grade campaign qualification",
+          "realization_facts": {
+            "realization_relation_refs": [],
+            "deferral_refs": [
+              "docs/research/311_warrant_f_v02_owner_acceptance_r8c_closure_and_ao10_reconciliation_entry.md::### P-S stochastic qualification / CURRENT_PROTOTYPE_STOCHASTIC_BLOCK_STATUS=OBSERVE_ONLY"
+            ],
+            "evidence_refs": [],
+            "qualification_refs": [],
+            "activation_refs": []
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "R311-U08",
+          "source_anchor": "## 7. Realization-stage qualification remains downstream",
+          "propositions": [
+            {
+              "proposition_id": "R311-P19",
+              "statement": "Concrete assurance realization must still qualify missing/stale/contradictory evidence behavior, affected-scope fallback, exact-result promotion, artifact provenance, non-self-mutating evidence storage, provider adapters, assurance-kernel mutation testing, and deployment/recovery implementation evidence."
+            }
+          ],
+          "responsible_semantic_owner": "WARRANT-F / Engineering",
+          "realization_boundary": "production assurance realization qualification",
+          "expected_evidence_path": "decision-relevant realization-stage probe evidence",
+          "activation_boundary": "production admission/delivery activation",
+          "realization_facts": {
+            "realization_relation_refs": [],
+            "deferral_refs": [],
+            "evidence_refs": [],
+            "qualification_refs": [],
+            "activation_refs": []
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "R311-U09",
+          "source_anchor": "## 8. Specification 028 remains current until reconciled",
+          "propositions": [
+            {
+              "proposition_id": "R311-P20",
+              "statement": "Specification 028 remains current implementation/migration authority until governed reconciliation accepts prospective changes."
+            },
+            {
+              "proposition_id": "R311-P21",
+              "statement": "The next stage must disposition current Specification 028 clauses as RETAIN, GENERALIZE, AMEND, SUPERSEDE, or RETIRE_AFTER_SUCCESSOR_QUALIFICATION and include architecture, representation, assurance, control-evidence, environment, provider-neutrality, migration-oracle, and authority-transition implications."
+            }
+          ],
+          "responsible_semantic_owner": "Specification governance / AO-10",
+          "realization_boundary": "Specification 028 reconciliation",
+          "expected_evidence_path": "accepted successor contract and traceable clause dispositions",
+          "activation_boundary": "prospective successor clauses activate only after governed acceptance",
+          "realization_facts": {
+            "realization_relation_refs": [],
+            "deferral_refs": [],
+            "evidence_refs": [],
+            "qualification_refs": [],
+            "activation_refs": []
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "R311-U10",
+          "source_anchor": "## 9. AO-10 status after acceptance",
+          "propositions": [
+            {
+              "proposition_id": "R311-P22",
+              "statement": "AO-10 may proceed with reconciliation and design but is not authorized for unbounded production implementation, physical migration, or authority switch."
+            },
+            {
+              "proposition_id": "R311-P23",
+              "statement": "Immediate AO-10 work must derive concrete realization from accepted R5-R8 architecture and reconcile affected Specification 028 contracts before implementation proceeds beyond bounded qualification work."
+            }
+          ],
+          "responsible_semantic_owner": "AO / JW1 control plane",
+          "realization_boundary": "AO-10 reconciliation/design before production realization",
+          "expected_evidence_path": "decision-probe and successor-contract evidence",
+          "activation_boundary": "production implementation only after owner/governed authorization",
+          "realization_facts": {
+            "realization_relation_refs": [],
+            "deferral_refs": [],
+            "evidence_refs": [],
+            "qualification_refs": [],
+            "activation_refs": []
+          },
+          "witness_tags": []
+        }
+      ]
+    },
+    {
+      "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "source_role": "GOVERNING_TRACE",
+      "creates_no_obligation_units": false,
+      "obligation_units": [
+        {
+          "unit_id": "S028-U01",
+          "source_anchor": "## 3. Required production package surface",
+          "propositions": [
+            {
+              "proposition_id": "S028-P01",
+              "statement": "The initial package must expose responsibilities equivalent to the named project-knowledge package surface, and exact helper decomposition may differ only if the logical responsibility boundaries remain explicit and testable."
+            }
+          ],
+          "responsible_semantic_owner": "Project Development System / project knowledge",
+          "realization_boundary": "explicit project-knowledge responsibility realization",
+          "expected_evidence_path": "module/service responsibility map plus behavioral qualification",
+          "activation_boundary": "production project-knowledge substrate",
+          "realization_facts": {
+            "realization_relation_refs": [
+              "experiments/ao10_drp03_obligation_units_v01/implementation_snapshot.json::spec028_section3_named_modules"
+            ],
+            "deferral_refs": [],
+            "evidence_refs": [
+              "docs/research/193_w0_complete_unit_suite_g017_and_w0_acceptance_result.md::## 4. W0 acceptance result"
+            ],
+            "qualification_refs": [],
+            "activation_refs": []
+          },
+          "witness_tags": [
+            "W_SPEC028_SECTION3_NAMED_RESPONSIBILITY_GAP"
+          ]
+        },
+        {
+          "unit_id": "S028-U02",
+          "source_anchor": "## 3. Required production package surface",
+          "propositions": [
+            {
+              "proposition_id": "S028-P02",
+              "statement": "The project-knowledge package must not persist unique accepted project truth in Python constants or module-local registries."
+            }
+          ],
+          "responsible_semantic_owner": "Project Development System / project knowledge",
+          "realization_boundary": "no-unique-truth implementation constraint",
+          "expected_evidence_path": "source-of-truth and rebuildability validation",
+          "activation_boundary": "production project-knowledge substrate",
+          "realization_facts": {
+            "realization_relation_refs": [
+              "tools/project_knowledge/::production package"
+            ],
+            "deferral_refs": [],
+            "evidence_refs": [
+              "docs/research/193_w0_complete_unit_suite_g017_and_w0_acceptance_result.md::## 4. W0 acceptance result"
+            ],
+            "qualification_refs": [
+              "docs/research/193_w0_complete_unit_suite_g017_and_w0_acceptance_result.md::## 4. W0 acceptance result"
+            ],
+            "activation_refs": [
+              "docs/research/193_w0_complete_unit_suite_g017_and_w0_acceptance_result.md::## 4. W0 acceptance result"
+            ]
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "S028-U03",
+          "source_anchor": "## 10. Semantic identity contract",
+          "propositions": [
+            {
+              "proposition_id": "S028-P03",
+              "statement": "Durable semantic_id is required only when continuity across carrier changes or explicit cross-source reference materially matters; path, Git blob SHA, and display title are not semantic identity."
+            },
+            {
+              "proposition_id": "S028-P04",
+              "statement": "Sources that do not require durable identity must not receive meaningless generated IDs, governed durable IDs must be unique except explicit transition state, and the identity index must be derived and rebuildable from canonical sources plus authoritative transition records."
+            }
+          ],
+          "responsible_semantic_owner": "Project knowledge identity",
+          "realization_boundary": "selective durable identity and rebuildable index",
+          "expected_evidence_path": "docs/research/193_w0_complete_unit_suite_g017_and_w0_acceptance_result.md::PKA-G004/PKA-G006",
+          "activation_boundary": "W1+ production semantic identity",
+          "realization_facts": {
+            "realization_relation_refs": [
+              "tools/project_knowledge/identity.py"
+            ],
+            "deferral_refs": [],
+            "evidence_refs": [
+              "docs/research/193_w0_complete_unit_suite_g017_and_w0_acceptance_result.md::## 4. W0 acceptance result"
+            ],
+            "qualification_refs": [
+              "docs/research/193_w0_complete_unit_suite_g017_and_w0_acceptance_result.md::## 4. W0 acceptance result"
+            ],
+            "activation_refs": [
+              "docs/research/193_w0_complete_unit_suite_g017_and_w0_acceptance_result.md::## 4. W0 acceptance result"
+            ]
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "S028-U04",
+          "source_anchor": "## 12. Relation semantics",
+          "propositions": [
+            {
+              "proposition_id": "S028-P05",
+              "statement": "Authoritative relations use REPLACE, SUPPLEMENT, SPECIALIZE, and CORRECT; non-global relations must include explicit target and scope."
+            },
+            {
+              "proposition_id": "S028-P06",
+              "statement": "Relations must be authored once by the natural semantic owner where a natural direction exists, while reverse edges and closure are generated."
+            }
+          ],
+          "responsible_semantic_owner": "Project knowledge relations/authority",
+          "realization_boundary": "typed source-owned relations",
+          "expected_evidence_path": "docs/research/193_w0_complete_unit_suite_g017_and_w0_acceptance_result.md::PKA-G007",
+          "activation_boundary": "production authority/relation resolution",
+          "realization_facts": {
+            "realization_relation_refs": [
+              "tools/project_knowledge/authority.py"
+            ],
+            "deferral_refs": [],
+            "evidence_refs": [
+              "docs/research/193_w0_complete_unit_suite_g017_and_w0_acceptance_result.md::## 4. W0 acceptance result"
+            ],
+            "qualification_refs": [
+              "docs/research/193_w0_complete_unit_suite_g017_and_w0_acceptance_result.md::## 4. W0 acceptance result"
+            ],
+            "activation_refs": [
+              "docs/research/193_w0_complete_unit_suite_g017_and_w0_acceptance_result.md::## 4. W0 acceptance result"
+            ]
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "S028-U05",
+          "source_anchor": "## 14. Temporal semantics",
+          "propositions": [
+            {
+              "proposition_id": "S028-P07",
+              "statement": "Git revision/history is the default recording history; universal bitemporal fields are not required, and effective/authority fields are selective only when applicability or authority materially differs from repository recording time."
+            },
+            {
+              "proposition_id": "S028-P08",
+              "statement": "Generated current-authority views must resolve explicit temporal semantics when present and must not substitute latest-commit recency for authority."
+            }
+          ],
+          "responsible_semantic_owner": "Project knowledge temporal semantics",
+          "realization_boundary": "selective temporal-authority realization",
+          "expected_evidence_path": "temporal resolver and current-authority regression evidence",
+          "activation_boundary": "production authority/current views",
+          "realization_facts": {
+            "realization_relation_refs": [
+              "tools/project_knowledge/pure_temporal.py"
+            ],
+            "deferral_refs": [],
+            "evidence_refs": [
+              "docs/research/193_w0_complete_unit_suite_g017_and_w0_acceptance_result.md::## 4. W0 acceptance result"
+            ],
+            "qualification_refs": [
+              "docs/research/193_w0_complete_unit_suite_g017_and_w0_acceptance_result.md::## 4. W0 acceptance result"
+            ],
+            "activation_refs": [
+              "docs/research/193_w0_complete_unit_suite_g017_and_w0_acceptance_result.md::## 4. W0 acceptance result"
+            ]
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "S028-U06",
+          "source_anchor": "## 18. Source-revision descriptor",
+          "propositions": [
+            {
+              "proposition_id": "S028-P09",
+              "statement": "Persistent receipts or manifests binding repository authority must use an explicit source path, source commit when immutable binding is required, sha256, GIT_BLOB_BYTES_AT_COMMIT hash basis, and content digest."
+            },
+            {
+              "proposition_id": "S028-P10",
+              "statement": "Working-tree bytes, normalized text, or external attachment bytes must not be silently substituted for canonical tracked repository authority; external attachment provenance records repository and materialization identity separately when both matter."
+            }
+          ],
+          "responsible_semantic_owner": "Project knowledge provenance",
+          "realization_boundary": "exact source-revision descriptor",
+          "expected_evidence_path": "Git revision-helper qualification",
+          "activation_boundary": "production receipts/manifests",
+          "realization_facts": {
+            "realization_relation_refs": [
+              "tools/project_knowledge/references.py"
+            ],
+            "deferral_refs": [],
+            "evidence_refs": [
+              "docs/research/193_w0_complete_unit_suite_g017_and_w0_acceptance_result.md::## 4. W0 acceptance result"
+            ],
+            "qualification_refs": [
+              "docs/research/193_w0_complete_unit_suite_g017_and_w0_acceptance_result.md::## 4. W0 acceptance result"
+            ],
+            "activation_refs": [
+              "docs/research/193_w0_complete_unit_suite_g017_and_w0_acceptance_result.md::## 4. W0 acceptance result"
+            ]
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "S028-U07",
+          "source_anchor": "## 25. Authority resolver",
+          "propositions": [
+            {
+              "proposition_id": "S028-P11",
+              "statement": "The implementation must provide a deterministic project-controlled authority resolver whose input covers action, target/scope, workstream/environment, actor/role when material, consequence class, and time when material."
+            },
+            {
+              "proposition_id": "S028-P12",
+              "statement": "A RESOLVED receipt must record governing semantic IDs, carrier paths, exact source revisions, applicability reason, relation/combination semantics, activated action-contract constraints, and freshness/availability, and probabilistic retrieval rank must not set resolved authority."
+            }
+          ],
+          "responsible_semantic_owner": "Project knowledge authority",
+          "realization_boundary": "deterministic authority resolver and receipt",
+          "expected_evidence_path": "authority-resolver regression evidence",
+          "activation_boundary": "production authority resolution",
+          "realization_facts": {
+            "realization_relation_refs": [
+              "tools/project_knowledge/authority.py"
+            ],
+            "deferral_refs": [],
+            "evidence_refs": [
+              "docs/research/193_w0_complete_unit_suite_g017_and_w0_acceptance_result.md::## 4. W0 acceptance result"
+            ],
+            "qualification_refs": [
+              "docs/research/193_w0_complete_unit_suite_g017_and_w0_acceptance_result.md::## 4. W0 acceptance result"
+            ],
+            "activation_refs": [
+              "docs/research/193_w0_complete_unit_suite_g017_and_w0_acceptance_result.md::## 4. W0 acceptance result"
+            ]
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "S028-U08",
+          "source_anchor": "## 26. Reconstruction planner",
+          "propositions": [
+            {
+              "proposition_id": "S028-P13",
+              "statement": "The implementation must support BROAD_CONTINUATION, NARROW_GOVERNED_TASK, and EXPLORATORY_RESEARCH reconstruction task classes."
+            },
+            {
+              "proposition_id": "S028-P14",
+              "statement": "A reconstruction contract must record task class, minimum safe orientation, must-load governing sources, optional evidence, negative context guidance where material, freshness, receipt requirements, and fail/escalate conditions; model-assisted intent classification must not remove project-controlled governing-source closure or safety constraints."
+            }
+          ],
+          "responsible_semantic_owner": "Project continuity / reconstruction",
+          "realization_boundary": "production reconstruction planner",
+          "expected_evidence_path": "reconstruction behavior and cold-start qualification",
+          "activation_boundary": "production continuity/reconstruction",
+          "realization_facts": {
+            "realization_relation_refs": [
+              "docs/research/222_ao3_progressive_control_closure_architecture.md::planner/reconstruction baseline"
+            ],
+            "deferral_refs": [],
+            "evidence_refs": [
+              "docs/research/235_ao9_p7_owner_decisions_and_ao9_closure.md::## 5. Historical integrity is preserved / later reconstruction realization finding remains a prospective gap"
+            ],
+            "qualification_refs": [],
+            "activation_refs": []
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "S028-U09",
+          "source_anchor": "## 27. Capture and promotion",
+          "propositions": [
+            {
+              "proposition_id": "S028-P15",
+              "statement": "Open captures live under the open capture area, validate as capture.v1, and remain non-authoritative by definition."
+            },
+            {
+              "proposition_id": "S028-P16",
+              "statement": "Promotion requires an explicit reviewed operation recording provenance, review disposition, accepted understanding, natural canonical target, and resulting revision; promotion updates or creates the natural canonical source and must not simply flip the capture to canonical."
+            },
+            {
+              "proposition_id": "S028-P17",
+              "statement": "After promotion and provenance verification, the capture may move to historical storage or be removed only when the preservation contract proves provenance is fully retained elsewhere."
+            }
+          ],
+          "responsible_semantic_owner": "Project knowledge capture/promotion",
+          "realization_boundary": "bounded capture review, promotion, and archival",
+          "expected_evidence_path": "W4 real capture/promotion evidence",
+          "activation_boundary": "production capture/promotion path",
+          "realization_facts": {
+            "realization_relation_refs": [
+              "tools/project_knowledge/capture.py"
+            ],
+            "deferral_refs": [],
+            "evidence_refs": [
+              "docs/research/205_w4_production_capture_promotion_acceptance_result.md::W4=ACCEPTED_AND_FINALIZED"
+            ],
+            "qualification_refs": [
+              "docs/research/205_w4_production_capture_promotion_acceptance_result.md::W4=ACCEPTED_AND_FINALIZED"
+            ],
+            "activation_refs": [
+              "docs/research/205_w4_production_capture_promotion_acceptance_result.md::W4=ACCEPTED_AND_FINALIZED"
+            ]
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "S028-U10",
+          "source_anchor": "## 34. Integration with existing repository integrity",
+          "propositions": [
+            {
+              "proposition_id": "S028-P18",
+              "statement": "Production project-knowledge validation must become a component of aggregate public repository integrity before successor-generated compatibility surfaces become authoritative."
+            },
+            {
+              "proposition_id": "S028-P19",
+              "statement": "The aggregate must remain fail-closed and existing checkpoint, collaboration, routing, and Knowledge Map validators must not be replaced before equivalent or stronger behavior is verified and deliberately reconciled."
+            }
+          ],
+          "responsible_semantic_owner": "Project Engineering assurance / project knowledge",
+          "realization_boundary": "aggregate integrity integration and validator succession",
+          "expected_evidence_path": "W0/W1 public repository-integrity evidence",
+          "activation_boundary": "successor compatibility authority only after equivalent-or-stronger qualification",
+          "realization_facts": {
+            "realization_relation_refs": [
+              "scripts/check_repository_integrity.py"
+            ],
+            "deferral_refs": [],
+            "evidence_refs": [
+              "docs/research/193_w0_complete_unit_suite_g017_and_w0_acceptance_result.md::## 4. W0 acceptance result",
+              "docs/research/202_w1_public_repository_integrity_g109_and_w1_acceptance_result.md::## 3. W1 gate matrix"
+            ],
+            "qualification_refs": [
+              "docs/research/202_w1_public_repository_integrity_g109_and_w1_acceptance_result.md::## 3. W1 gate matrix"
+            ],
+            "activation_refs": [
+              "docs/research/202_w1_public_repository_integrity_g109_and_w1_acceptance_result.md::## 3. W1 gate matrix"
+            ]
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "S028-U11",
+          "source_anchor": "### W0 \u2014 implementation substrate",
+          "propositions": [
+            {
+              "proposition_id": "S028-P20",
+              "statement": "W0 creates the project-knowledge tools, schemas, architecture/generated contracts and implements parser, schemas, core typed model, Git revision helper, validation skeleton, deterministic generation framework, and CLI scaffolding."
+            }
+          ],
+          "responsible_semantic_owner": "Project knowledge implementation",
+          "realization_boundary": "W0 substrate realization",
+          "expected_evidence_path": "Research 193 W0 acceptance",
+          "activation_boundary": "W0 accepted production substrate",
+          "realization_facts": {
+            "realization_relation_refs": [
+              "tools/project_knowledge/ + schemas/project_knowledge/"
+            ],
+            "deferral_refs": [],
+            "evidence_refs": [
+              "docs/research/193_w0_complete_unit_suite_g017_and_w0_acceptance_result.md::## 4. W0 acceptance result"
+            ],
+            "qualification_refs": [
+              "docs/research/193_w0_complete_unit_suite_g017_and_w0_acceptance_result.md::## 4. W0 acceptance result"
+            ],
+            "activation_refs": [
+              "docs/research/193_w0_complete_unit_suite_g017_and_w0_acceptance_result.md::## 4. W0 acceptance result"
+            ]
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "S028-U12",
+          "source_anchor": "## 39. W0 executable gates",
+          "propositions": [
+            {
+              "proposition_id": "S028-P21",
+              "statement": "PKA-G001 package boundary exists under tools/project_knowledge and not src/ads_system."
+            },
+            {
+              "proposition_id": "S028-P22",
+              "statement": "PKA-G002 all eight V1 profile schemas validate positive fixtures and reject required negative fixtures."
+            },
+            {
+              "proposition_id": "S028-P23",
+              "statement": "PKA-G003 Markdown declaration parser rejects malformed, duplicate, and multiple blocks and supports LF/CRLF carriers."
+            },
+            {
+              "proposition_id": "S028-P24",
+              "statement": "PKA-G004 canonical semantic model represents authority class, selective identity, scope, and typed relations without universal IDs."
+            },
+            {
+              "proposition_id": "S028-P25",
+              "statement": "PKA-G005 Git revision helper verifies GIT_BLOB_BYTES_AT_COMMIT descriptors deterministically."
+            },
+            {
+              "proposition_id": "S028-P26",
+              "statement": "PKA-G006 identity index generator rebuilds deterministically and resolves qualified transition fixtures."
+            },
+            {
+              "proposition_id": "S028-P27",
+              "statement": "PKA-G007 authority resolver passes REPLACE, SUPPLEMENT, SPECIALIZE, CORRECT, ambiguity, and retrieval-non-authority regressions."
+            },
+            {
+              "proposition_id": "S028-P28",
+              "statement": "PKA-G008 workstream engine passes DAG, pause/return/resume, interruption, and stale expected-revision regressions."
+            },
+            {
+              "proposition_id": "S028-P29",
+              "statement": "PKA-G009 derived-view framework produces deterministic manifests and detects stale input bindings."
+            },
+            {
+              "proposition_id": "S028-P30",
+              "statement": "PKA-G010 current-state-core generator reproduces bounded qualified must-preserve fixture behavior."
+            },
+            {
+              "proposition_id": "S028-P31",
+              "statement": "PKA-G011 capture validation enforces non-authority before explicit promotion."
+            },
+            {
+              "proposition_id": "S028-P32",
+              "statement": "PKA-G012 public/private validation rejects synthetic leakage and preserves consequence-sensitive unavailable state."
+            },
+            {
+              "proposition_id": "S028-P33",
+              "statement": "PKA-G013 full rebuild and incremental refresh are semantically equivalent on the frozen W0 fixture corpus."
+            },
+            {
+              "proposition_id": "S028-P34",
+              "statement": "PKA-G014 CLI validate, rebuild, and check-freshness surfaces are deterministic and fail non-zero on hard defects."
+            },
+            {
+              "proposition_id": "S028-P35",
+              "statement": "PKA-G015 professional architecture documentation skeleton plus version-controlled whole-architecture diagram source exists."
+            },
+            {
+              "proposition_id": "S028-P36",
+              "statement": "PKA-G016 existing public repository-integrity aggregate remains PASS."
+            },
+            {
+              "proposition_id": "S028-P37",
+              "statement": "PKA-G017 inherited complete unit suite remains PASS."
+            },
+            {
+              "proposition_id": "S028-P38",
+              "statement": "No W0 gate may be waived retrospectively without a prospective Specification 028 revision or amendment."
+            }
+          ],
+          "responsible_semantic_owner": "Specification 028 / Project knowledge",
+          "realization_boundary": "W0 gate qualification",
+          "expected_evidence_path": "Research 193 complete W0 gate matrix",
+          "activation_boundary": "W0 accepted",
+          "realization_facts": {
+            "realization_relation_refs": [
+              "Specification028::W0 gate set"
+            ],
+            "deferral_refs": [],
+            "evidence_refs": [
+              "docs/research/193_w0_complete_unit_suite_g017_and_w0_acceptance_result.md::## 4. W0 acceptance result"
+            ],
+            "qualification_refs": [
+              "docs/research/193_w0_complete_unit_suite_g017_and_w0_acceptance_result.md::## 4. W0 acceptance result"
+            ],
+            "activation_refs": [
+              "docs/research/193_w0_complete_unit_suite_g017_and_w0_acceptance_result.md::## 4. W0 acceptance result"
+            ]
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "S028-U13",
+          "source_anchor": "### W1 \u2014 live control semantics",
+          "propositions": [
+            {
+              "proposition_id": "S028-P39",
+              "statement": "W1 migrates only the bounded high-value live-control semantic set and must preserve current compatibility outputs and must not switch operational authority."
+            }
+          ],
+          "responsible_semantic_owner": "Project knowledge migration",
+          "realization_boundary": "W1 bounded live semantic migration",
+          "expected_evidence_path": "Research 202 W1 acceptance",
+          "activation_boundary": "W1 accepted without authority switch",
+          "realization_facts": {
+            "realization_relation_refs": [
+              "Specification028::W1 migration wave"
+            ],
+            "deferral_refs": [],
+            "evidence_refs": [
+              "docs/research/202_w1_public_repository_integrity_g109_and_w1_acceptance_result.md::## 3. W1 gate matrix"
+            ],
+            "qualification_refs": [
+              "docs/research/202_w1_public_repository_integrity_g109_and_w1_acceptance_result.md::## 3. W1 gate matrix"
+            ],
+            "activation_refs": [
+              "docs/research/202_w1_public_repository_integrity_g109_and_w1_acceptance_result.md::## 3. W1 gate matrix"
+            ]
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "S028-U14",
+          "source_anchor": "## 40. W1 executable gates",
+          "propositions": [
+            {
+              "proposition_id": "S028-P40",
+              "statement": "PKA-G101 selected architecture/workstream semantic owner validates."
+            },
+            {
+              "proposition_id": "S028-P41",
+              "statement": "PKA-G102 Project Integration Boundary has one natural canonical semantic owner."
+            },
+            {
+              "proposition_id": "S028-P42",
+              "statement": "PKA-G103 Source Vault paused/resume semantics reproduce the qualified real state."
+            },
+            {
+              "proposition_id": "S028-P43",
+              "statement": "PKA-G104 Cockpit paused/resume semantics reproduce the qualified real state."
+            },
+            {
+              "proposition_id": "S028-P44",
+              "statement": "PKA-G105 D-035 selection semantics resolve without duplicating substantive decision text."
+            },
+            {
+              "proposition_id": "S028-P45",
+              "statement": "PKA-G106 generated workstream and current-core views are deterministic from W1 canonical owners."
+            },
+            {
+              "proposition_id": "S028-P46",
+              "statement": "PKA-G107 no existing live compatibility path is overwritten."
+            },
+            {
+              "proposition_id": "S028-P47",
+              "statement": "PKA-G108 current continuity remains explicit operational authority."
+            },
+            {
+              "proposition_id": "S028-P48",
+              "statement": "PKA-G109 public repository integrity remains PASS."
+            }
+          ],
+          "responsible_semantic_owner": "Specification 028 / Project knowledge",
+          "realization_boundary": "W1 gate qualification",
+          "expected_evidence_path": "Research 202 W1 gate matrix",
+          "activation_boundary": "W1 accepted",
+          "realization_facts": {
+            "realization_relation_refs": [
+              "Specification028::W1 gate set"
+            ],
+            "deferral_refs": [],
+            "evidence_refs": [
+              "docs/research/202_w1_public_repository_integrity_g109_and_w1_acceptance_result.md::## 3. W1 gate matrix"
+            ],
+            "qualification_refs": [
+              "docs/research/202_w1_public_repository_integrity_g109_and_w1_acceptance_result.md::## 3. W1 gate matrix"
+            ],
+            "activation_refs": [
+              "docs/research/202_w1_public_repository_integrity_g109_and_w1_acceptance_result.md::## 3. W1 gate matrix"
+            ]
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "S028-U15",
+          "source_anchor": "### W2 \u2014 shadow derived views",
+          "propositions": [
+            {
+              "proposition_id": "S028-P49",
+              "statement": "W2 generates all V1 structural views from successor semantic owners and compares them with qualified shadow expectations and current compatibility state."
+            }
+          ],
+          "responsible_semantic_owner": "Project knowledge derived views",
+          "realization_boundary": "W2 shadow-derived-view materialization and comparison",
+          "expected_evidence_path": "Research 203 W2 acceptance",
+          "activation_boundary": "W2 accepted shadow views",
+          "realization_facts": {
+            "realization_relation_refs": [
+              "Specification028::W2 migration wave"
+            ],
+            "deferral_refs": [],
+            "evidence_refs": [
+              "docs/research/203_w2_shadow_derived_views_acceptance_result.md::W2=ACCEPTED"
+            ],
+            "qualification_refs": [
+              "docs/research/203_w2_shadow_derived_views_acceptance_result.md::W2=ACCEPTED"
+            ],
+            "activation_refs": [
+              "docs/research/203_w2_shadow_derived_views_acceptance_result.md::W2=ACCEPTED"
+            ]
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "S028-U16",
+          "source_anchor": "### W3 \u2014 compatibility shadow",
+          "propositions": [
+            {
+              "proposition_id": "S028-P50",
+              "statement": "W3 produces shadow candidates for routing, current-state, and Knowledge-Map roles without overwriting live paths, classifies every difference, and blocks advancement on MIGRATION_GAP or UNRESOLVED."
+            }
+          ],
+          "responsible_semantic_owner": "Project knowledge compatibility",
+          "realization_boundary": "W3 compatibility-shadow generation and classification",
+          "expected_evidence_path": "Research 204 W3 acceptance",
+          "activation_boundary": "W3 accepted compatibility shadow",
+          "realization_facts": {
+            "realization_relation_refs": [
+              "Specification028::W3 migration wave"
+            ],
+            "deferral_refs": [],
+            "evidence_refs": [
+              "docs/research/204_w3_compatibility_shadow_acceptance_result.md::W3=ACCEPTED_AND_FINALIZED"
+            ],
+            "qualification_refs": [
+              "docs/research/204_w3_compatibility_shadow_acceptance_result.md::W3=ACCEPTED_AND_FINALIZED"
+            ],
+            "activation_refs": [
+              "docs/research/204_w3_compatibility_shadow_acceptance_result.md::W3=ACCEPTED_AND_FINALIZED"
+            ]
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "S028-U17",
+          "source_anchor": "### W4 \u2014 production capture/promotion path",
+          "propositions": [
+            {
+              "proposition_id": "S028-P51",
+              "statement": "W4 runs one bounded real capture through review and canonical promotion and verifies accepted meaning and provenance remain after capture archival or removal."
+            }
+          ],
+          "responsible_semantic_owner": "Project knowledge capture/promotion",
+          "realization_boundary": "W4 real capture/promotion path",
+          "expected_evidence_path": "Research 205 W4 acceptance",
+          "activation_boundary": "W4 accepted capture/promotion path",
+          "realization_facts": {
+            "realization_relation_refs": [
+              "Specification028::W4 migration wave"
+            ],
+            "deferral_refs": [],
+            "evidence_refs": [
+              "docs/research/205_w4_production_capture_promotion_acceptance_result.md::W4=ACCEPTED_AND_FINALIZED"
+            ],
+            "qualification_refs": [
+              "docs/research/205_w4_production_capture_promotion_acceptance_result.md::W4=ACCEPTED_AND_FINALIZED"
+            ],
+            "activation_refs": [
+              "docs/research/205_w4_production_capture_promotion_acceptance_result.md::W4=ACCEPTED_AND_FINALIZED"
+            ]
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "S028-U18",
+          "source_anchor": "## 42. Cutover qualification minimum",
+          "propositions": [
+            {
+              "proposition_id": "S028-P52",
+              "statement": "W7 must revalidate the Requirements V0.2 set and production/migrated behavior including continuity, provider/tool portability, task budgets, authority/action-contract fidelity, relation/retrieval behavior, workstream concurrency, degraded mode, capture/promotion, identity continuity, rebuild equivalence, migration parity, rollback/recovery, and repository integrity."
+            },
+            {
+              "proposition_id": "S028-P53",
+              "statement": "Prior logical-architecture PASS evidence is not a substitute for W7 production cutover qualification."
+            }
+          ],
+          "responsible_semantic_owner": "Project migration/cutover assurance",
+          "realization_boundary": "W7 production cutover qualification",
+          "expected_evidence_path": "production/migrated-state qualification evidence",
+          "activation_boundary": "cutover candidate may advance only after W7 PASS",
+          "realization_facts": {
+            "realization_relation_refs": [],
+            "deferral_refs": [],
+            "evidence_refs": [],
+            "qualification_refs": [],
+            "activation_refs": []
+          },
+          "witness_tags": []
+        },
+        {
+          "unit_id": "S028-U19",
+          "source_anchor": "## 43. Authority-switch prohibition",
+          "propositions": [
+            {
+              "proposition_id": "S028-P54",
+              "statement": "Before W8 every implementation and result must preserve CURRENT_OPERATIONAL_AUTHORITY=CURRENT_CONTINUITY_ARCHITECTURE and AUTHORITY_SWITCH_ALLOWED=false."
+            },
+            {
+              "proposition_id": "S028-P55",
+              "statement": "No generator, migration command, test fixture, documentation statement, or target-selection decision may implicitly switch authority; W8 requires a separate explicit owner-approved decision after successful W7 qualification."
+            }
+          ],
+          "responsible_semantic_owner": "Project authority governance",
+          "realization_boundary": "pre-W8 authority-switch prohibition",
+          "expected_evidence_path": "continuity/routing and W7 qualification evidence",
+          "activation_boundary": "authority switch only by explicit owner-approved W8 decision",
+          "realization_facts": {
+            "realization_relation_refs": [],
+            "deferral_refs": [
+              "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md::## 43. Authority-switch prohibition / W8 not reached"
+            ],
+            "evidence_refs": [],
+            "qualification_refs": [],
+            "activation_refs": []
+          },
+          "witness_tags": []
+        }
+      ]
+    },
+    {
+      "source_path": "docs/research/225_ao6_purpose_bound_git_lifecycle_and_workstream_orchestration.md",
+      "source_role": "SUPPLEMENTAL_KNOWN_WITNESS",
+      "creates_no_obligation_units": false,
+      "obligation_units": [
+        {
+          "unit_id": "R225-U01",
+          "source_anchor": "## 16. Current self-hosting branch decision and execution probe",
+          "propositions": [
+            {
+              "proposition_id": "R225-P01",
+              "statement": "AO-6 selected ROTATE for current branch-purpose drift, but the live coherent transition was blocked because no exposed semantic local branch attach/switch action existed."
+            },
+            {
+              "proposition_id": "R225-P02",
+              "statement": "The prospective obligation is to qualify or implement a governed branch attach/switch action, repeat rotation from an exact published head, reconcile active routing surfaces, and verify local branch, upstream, remote branch, and project routing agree."
+            },
+            {
+              "proposition_id": "R225-P03",
+              "statement": "AO-10 must carry the branch attach/switch implementation and qualification obligation unless a stronger governed host path exists by then."
+            }
+          ],
+          "responsible_semantic_owner": "AO / Git lifecycle control",
+          "realization_boundary": "governed branch attach/switch and rotation realization",
+          "expected_evidence_path": "branch-attach/switch capability and coherent rotation evidence",
+          "activation_boundary": "active branch rotation only after coherent qualification",
+          "realization_facts": {
+            "realization_relation_refs": [],
+            "deferral_refs": [
+              "docs/research/225_ao6_purpose_bound_git_lifecycle_and_workstream_orchestration.md::## 16. Current self-hosting branch decision and execution probe / local checkout branch attach BLOCKED"
+            ],
+            "evidence_refs": [],
+            "qualification_refs": [],
+            "activation_refs": []
+          },
+          "witness_tags": [
+            "W_AO6_BRANCH_ROTATION_ATTACH_GAP"
+          ]
+        }
+      ]
+    },
+    {
+      "source_path": "docs/research/308_r8c_eight_probe_reconciliation_owner_decision_readiness.md",
+      "source_role": "NEGATIVE_CONTROL",
+      "creates_no_obligation_units": true,
+      "obligation_units": []
+    },
+    {
+      "source_path": "docs/research/314_mc0029_comparative_reconciliation_integrated_project_system_v02.md",
+      "source_role": "NEGATIVE_CONTROL",
+      "creates_no_obligation_units": true,
+      "obligation_units": []
+    }
+  ]
+}

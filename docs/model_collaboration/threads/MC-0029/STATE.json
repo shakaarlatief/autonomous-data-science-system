@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_CLAUDE_BLIND_REVIEWER_A_NEXT",
+  "phase": "DRP03_BOTH_REVIEWERS_FROZEN_COMPARISON_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -51,7 +51,7 @@
       ]
     }
   ],
-  "next_expected_actor": "claude",
+  "next_expected_actor": "chatgpt",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -71,14 +71,14 @@
       "DRP-03 Claude reviewer A must not inspect Research 324 or any future ChatGPT DRP-03 annotation/summary before committing its annotation.",
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15."
     ],
-    "notes": "Valid results: DRP-09 PASS, DRP-05a PASS, DRP-05b PASS_DETECTIVE_FIRST, DRP-01 PASS. DRP-03 harness is frozen. Claude reviewer A must use only reviewer-facing materials and frozen sources; evaluator_key.json and Research 324 are outside the reviewer evidence boundary before A is committed."
+    "notes": "DRP-03 Claude reviewer A is frozen at b9fba658... / blob 56ecc1da.... ChatGPT reviewer B is independently authored and frozen at SHA-256 39410f68... without opening/parsing/grepping/summarizing Claude A. ChatGPT authored the hidden evaluator key, so only Claude is blind to that key. Comparison is now permitted."
   },
   "last_transition": {
-    "transition_id": "mc0029-drp03-harness-frozen",
+    "transition_id": "mc0029-drp03-both-reviewers-frozen",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 324 freezes DRP-03 obligation-unit review/evaluator machinery before reviewer annotations. Claude reviewer A is next and must remain blind to evaluator_key.json and any future ChatGPT reviewer annotation.",
-    "repository_head": "6314e5717ee0241f9c4316bcefab39a6873f588e"
+    "reason": "Research 325 freezes ChatGPT reviewer B without inspecting Claude reviewer A contents. Both DRP-03 reviewer artifacts are now frozen; frozen comparison is next.",
+    "repository_head": "b9fba658e422279d8f8b8193b8c1bda88302dcda"
   }
 }
