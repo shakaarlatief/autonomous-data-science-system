@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "COMPARATIVE_CRITIQUE",
+  "phase": "DECISION_PROBE_PREREGISTRATION",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -51,7 +51,7 @@
       ]
     }
   ],
-  "next_expected_actor": "claude",
+  "next_expected_actor": "chatgpt",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -61,16 +61,18 @@
       "Owner clarification dated 2026-09-25 is visible through the MC-0029 brief: semantic architecture and Research 217 are evidence rather than target constraints, and the design must be evaluated as one integrated professional Project system. This instruction does not expose Research 312.",
       "The actual current Claude conversation is interaction claude-04, titled 04 - Assurance and Delivery Architecture Design. MC-0028 originally carried claude-03 by clerical provenance error; that error is corrected explicitly and is not a participant-slot convention.",
       "Claude Message 001 was committed at 74023a779998200a6317df07dc7cd4979ff84e47 before comparative exposure.",
-      "Comparative exposure to ChatGPT Research 312, Research 314 and Message 002 is now authorized for MC-0029 Message 003."
+      "Comparative exposure to ChatGPT Research 312, Research 314 and Message 002 is now authorized for MC-0029 Message 003.",
+      "Claude Message 003 completed comparative critique at 79b915894e0b055aadea05fe7d5767aa223d423e.",
+      "Research 315 / Message 004 reconcile Message 003 into V0.3 and route MC-0029 to DRP-01 through DRP-09 preregistration."
     ],
-    "notes": "Claude's independent Message 001 is frozen. Research 314 / Message 002 reconcile Research 312 and KEYSTONE into comparative candidate V0.2. Claude may now inspect Research 312, Research 314 and Message 002 for Message 003. Owner decision and production realization remain held."
+    "notes": "The independent and comparative design phases are complete. Claude Message 003 returned AMEND; Research 315 / Message 004 accept the material critique with bounded refinements and freeze Integrated Project-System V0.3 as a pre-decision candidate. The next phase is preregistration of DRP-01 through DRP-09 before any probe results are observed. Owner decision and production realization remain held."
   },
   "last_transition": {
-    "transition_id": "mc0029-chatgpt-comparative-reconciliation",
+    "transition_id": "mc0029-message003-reconciled-v03",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Claude Message 001 completed the independent phase. Research 314 / Message 002 freeze comparative reconciliation and authorize controlled comparative exposure for Claude Message 003.",
-    "repository_head": "74023a779998200a6317df07dc7cd4979ff84e47"
+    "reason": "Research 315 / Message 004 reconcile Claude Message 003 into V0.3 and move the thread from comparative design to decision-relevant empirical preregistration.",
+    "repository_head": "79b915894e0b055aadea05fe7d5767aa223d423e"
   }
 }

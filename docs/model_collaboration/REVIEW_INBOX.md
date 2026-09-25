@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-25
-**Status:** MC-0029 OPEN / COMPARATIVE CRITIQUE NEXT / RESEARCH 314 FROZEN / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / V0.3 FROZEN / DECISION-PROBE PREREGISTRATION NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -25,21 +25,19 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ### MC-0029: Specification 028 reconciliation and AO-10 integrated Project-system design
 
-MC-0029 is OPEN in INDEPENDENT_THEN_COMPARATIVE mode. Claude interaction is claude-04, conversation 04 - Assurance and Delivery Architecture Design.
+MC-0029 remains OPEN in INDEPENDENT_THEN_COMPARATIVE mode and has completed the architecture-design dialogue.
 
-Claude Message 001 / KEYSTONE is complete at 74023a779998200a6317df07dc7cd4979ff84e47 with the independent boundary preserved. Research 314 and Message 002 freeze ChatGPT's comparative reconciliation. Research 312 and KEYSTONE both receive AMEND; no R5-R8C reopen is identified.
+Claude Message 001 / KEYSTONE was independent. Research 314 / Message 002 produced V0.2. Claude Message 003 at 79b915894e0b055aadea05fe7d5767aa223d423e returned AMEND. Research 315 / Message 004 reconcile all material critique into Integrated Project-System V0.3.
 
-The V0.2 candidate uses a minimal shared semantic substrate plus bounded domain models, ROLE x STATUS as an AO-4 AMEND candidate, obligation units for KA-R52, explicit KA-R51 detectors, hosting-neutral begin/preflight/postflight AO semantics, provider-neutral typed ActionShape, bounded generated live orientation, semantic-shadow-before-physical-migration discipline, and three successor contract strata without fixing physical file count.
+V0.3 retains the Specification 028 whole-contract SUPERSEDE candidate and does not reopen R5-R8C. It adds a seam-justified minimal shared substrate, semantic-unit role granularity, acceptance-postflight obligation declaration without invalidating owner temporal authority, fully derived realization state, mediation-specific AO guarantees, policy-derived WARRANT-F claim sets, permanent transition semantics in C1/C2 with R8 instance material in C3, adoption economics as a first-class criterion, a zero-loss Project-fact rollback window candidate, and a separately governed AO-4 case requirement before any early CURRENT_STATE relief.
 
-Research 217 has no target preservation right. Its exact vocabulary and architecture pattern remain evidence. The leading navigation candidate is logical ownership/responsibility position + relations + selective concerns + search, with final disposition held for P2 empirical comparison.
+Research 217 and all alternative navigation patterns remain evidence without preservation rights. Final semantic-navigation disposition remains a DRP-02 question.
 
-Comparative exposure is authorized. Claude Message 003 must read Research 312, Research 314 and Message 002 and return KEEP / AMEND / REOPEN guidance.
+The next phase is preregistration of:
 
-Expected next artifact:
+DRP-01 shared semantic substrate sufficiency; DRP-02 semantic navigation; DRP-03 obligation units/birth; DRP-04 KA-R51 precision; DRP-05a ActionShape classifiability; DRP-05b mediation/interceptability; DRP-06 bounded orientation; DRP-07 Specification 028 lineage/contract partition; DRP-08 adoption economics; DRP-09 assurance-request claim integrity.
 
-docs/model_collaboration/threads/MC-0029/messages/003_claude_comparative_integrated_project_system_critique.md
-
-Owner decision and all production/migration/authority actions remain held.
+No probe execution may precede frozen preregistration. Owner decision and all production/migration/authority actions remain held.
 
 ## Most recently completed obligation
 

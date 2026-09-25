@@ -1,7 +1,7 @@
 # MC-0029 Thread: Specification 028 Reconciliation and AO-10 Realization Design
 
 **Thread:** MC-0029
-**Status:** OPEN / COMPARATIVE CRITIQUE NEXT
+**Status:** OPEN / V0.3 FROZEN / DECISION-PROBE PREREGISTRATION NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** 0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
@@ -22,12 +22,14 @@ Independently derive Specification 028 reconciliation and AO-10 realization arch
 
 ## Sequence
 
-    Research 312 ChatGPT candidate             FROZEN
-    001 Claude independent design              COMPLETE / 74023a77...
-    002 ChatGPT comparative reconciliation     COMPLETE / Research 314
-    003 Claude comparative critique            NEXT / comparative exposure authorized
-    decision-relevant probes P1-P7             AFTER MESSAGE 003 RECONCILIATION
-    owner decision                             AFTER EVIDENCE
+    Research 312 ChatGPT candidate             COMPLETE / V0.1
+    001 Claude independent design              COMPLETE / KEYSTONE / 74023a77...
+    002 ChatGPT comparative reconciliation     COMPLETE / Research 314 / V0.2
+    003 Claude comparative critique            COMPLETE / AMEND / 79b91589...
+    004 ChatGPT final design reconciliation    COMPLETE / Research 315 / V0.3
+    DRP-01 through DRP-09 preregistration      NEXT
+    decision-relevant probe execution          AFTER FROZEN PREREGISTRATION
+    owner decision                             AFTER RECONCILED EVIDENCE
 
 ## Independence boundary
 
@@ -53,11 +55,15 @@ Claude may write only:
     docs/model_collaboration/threads/MC-0029/messages/**
 
     MC0029=OPEN
-    PHASE=COMPARATIVE_CRITIQUE
+    PHASE=DECISION_PROBE_PREREGISTRATION
     INDEPENDENT_BASE=0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
     CHATGPT_CANDIDATE=RESEARCH312
     CLAUDE_MESSAGE_001=COMPLETE
     COMPARATIVE_EXPOSURE=AUTHORIZED
     OWNER_DECISION=NOT_READY
     PRODUCTION_IMPLEMENTATION_AUTHORIZED=false
-    NEXT=CLAUDE_MESSAGE003_COMPARATIVE_CRITIQUE
+    CLAUDE_MESSAGE_003=COMPLETE
+    CHATGPT_MESSAGE_004=COMPLETE
+    INTEGRATED_PROJECT_SYSTEM_V03=FROZEN_PRE_DECISION_CANDIDATE
+    DECISION_PROBES=DRP01_TO_DRP09
+    NEXT=DRP01_TO_DRP09_PREREGISTRATION

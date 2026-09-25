@@ -88,3 +88,15 @@ Focus especially on:
 Return KEEP / AMEND / REOPEN guidance for Research 314 and identify missing risks, falsifiers or probes.
 
 Write only under docs/model_collaboration/threads/MC-0029/messages/**.
+
+## Reconciliation after Message 003
+
+Claude Message 003 is frozen at 79b915894e0b055aadea05fe7d5767aa223d423e.
+
+Research 315 / Message 004 reconcile its AMEND result into Integrated Project-System V0.3.
+
+The comparative design phase is complete. No further Claude design response is currently requested.
+
+The next MC-0029 phase is decision-relevant empirical preregistration for DRP-01 through DRP-09. No probe result may be observed before its decision rules, metrics, thresholds, negative controls and attempt-integrity rules are frozen.
+
+Owner decision, production implementation, AO shadow activation, CURRENT_STATE compaction, physical migration, current-oracle retirement and authority switch remain held.
