@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "source_base": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
+  "authority": "LEGACY_CANDIDATE_ONLY",
+  "source_disjointness": {
+    "r1_hidden_control_and_witness_sources": true,
+    "r2_birth_heldout_proposal_sources": true,
+    "note": "The selected primary sources do not reuse the R1 primary/control sources or R2 BIRTH held-out proposal carriers."
+  },
+  "sources": [
+    {
+      "id": "L01",
+      "path": "docs/research/193_w0_complete_unit_suite_g017_and_w0_acceptance_result.md",
+      "role": "PRIMARY"
+    },
+    {
+      "id": "L02",
+      "path": "docs/research/202_w1_public_repository_integrity_g109_and_w1_acceptance_result.md",
+      "role": "PRIMARY"
+    },
+    {
+      "id": "L03",
+      "path": "docs/research/203_w2_shadow_derived_views_acceptance_result.md",
+      "role": "PRIMARY"
+    },
+    {
+      "id": "L04",
+      "path": "docs/research/204_w3_compatibility_shadow_acceptance_result.md",
+      "role": "PRIMARY"
+    },
+    {
+      "id": "L05",
+      "path": "docs/research/205_w4_production_capture_promotion_acceptance_result.md",
+      "role": "PRIMARY"
+    },
+    {
+      "id": "L06",
+      "path": "docs/research/220_ao1_retrospective_activation_orchestration_completeness_audit.md",
+      "role": "PRIMARY"
+    },
+    {
+      "id": "L07",
+      "path": "docs/research/221_ao2_control_plane_capability_boundary_and_failure_taxonomy.md",
+      "role": "PRIMARY"
+    },
+    {
+      "id": "L08",
+      "path": "docs/research/222_ao3_progressive_control_closure_architecture.md",
+      "role": "PRIMARY"
+    },
+    {
+      "id": "L09",
+      "path": "docs/research/223_ao4_architecture_evolution_and_frozen_contract_governance.md",
+      "role": "PRIMARY"
+    },
+    {
+      "id": "L10",
+      "path": "docs/research/224_ao5_anchored_interaction_continuity_and_independent_recovery.md",
+      "role": "PRIMARY"
+    },
+    {
+      "id": "L11",
+      "path": "docs/research/226_ao7_authority_preserving_successor_orchestration_bridge.md",
+      "role": "PRIMARY"
+    },
+    {
+      "id": "L12",
+      "path": "docs/research/227_ao8_independent_architecture_review_reconciliation.md",
+      "role": "PRIMARY"
+    },
+    {
+      "id": "L13",
+      "path": "docs/research/246_whole_repository_r5_owner_acceptance_and_from_scratch_lower_level_boundary.md",
+      "role": "PRIMARY"
+    },
+    {
+      "id": "L14",
+      "path": "docs/research/248_g_dual_owner_amendment_acceptance_and_r6_entry_contract.md",
+      "role": "PRIMARY"
+    },
+    {
+      "id": "L15",
+      "path": "docs/research/251_r6_bounded_context_architecture_owner_acceptance_and_r6b_entry.md",
+      "role": "PRIMARY"
+    },
+    {
+      "id": "L16",
+      "path": "docs/research/206_w5_future_knowledge_information_architecture_and_authoring_design.md",
+      "role": "NEGATIVE_CONTROL_SOURCE"
+    },
+    {
+      "id": "L17",
+      "path": "docs/research/207_w5_representative_artifact_family_matrix_and_information_architecture_v01.md",
+      "role": "NEGATIVE_CONTROL_SOURCE"
+    }
+  ],
+  "hidden_key_requirements": {
+    "material_gap_witnesses_min": 6,
+    "already_realized_false_gap_controls_min": 10,
+    "negative_control_sources": 2,
+    "independent_repository_evidence_per_witness_or_control": true
+  }
+}

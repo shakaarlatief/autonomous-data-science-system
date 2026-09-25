@@ -1,7 +1,7 @@
 # MC-0029 Thread: Specification 028 Reconciliation and AO-10 Realization Design
 
 **Thread:** MC-0029
-**Status:** OPEN / M-1 DEFERRAL ACCEPTED / R2 PROTOCOL V0.3 PUBLIC FREEZE NEXT
+**Status:** OPEN / R2 V0.3 PUBLIC PROTOCOL FROZEN / CLAUDE-04 KEY AUTHOR A NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** 0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
@@ -49,8 +49,10 @@ Independently derive Specification 028 reconciliation and AO-10 realization arch
     Claude final R2 protocol review               COMPLETE / AMEND / c41bae5b / Message 009
     ChatGPT Message 009 reconciliation            COMPLETE / Research 330 / V0.7 + R2 V0.3
     Owner M-1 deferral decision                   COMPLETE / ACCEPT_DEFERRAL
-    Public R2 protocol assets freeze              NEXT
-    DRP-03 hidden key construction                AFTER PUBLIC FREEZE
+    Public R2 protocol assets freeze              COMPLETE / Research 332 / f358d031...
+    Claude-04 private Key Author A                 NEXT
+    Fresh private Key Author B                    AFTER A COMMITMENT / BLIND TO A
+    Key construct-validity gate                   AFTER BOTH COMMITMENTS
     DRP-03 R2                                    AFTER HARNESS FREEZE
     remaining decision probes                  AFTER REQUALIFIED DRP-03 WHERE DEPENDENT
     owner decision                             AFTER RECONCILED EVIDENCE
@@ -79,7 +81,7 @@ Claude may write only:
     docs/model_collaboration/threads/MC-0029/messages/**
 
     MC0029=OPEN
-    PHASE=DRP03_R2_V03_PUBLIC_PROTOCOL_FREEZE_NEXT
+    PHASE=DRP03_R2_KEY_AUTHOR_A_CLAUDE04_NEXT
     INDEPENDENT_BASE=0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
     CHATGPT_CANDIDATE=RESEARCH312
     CLAUDE_MESSAGE_001=COMPLETE
@@ -125,3 +127,9 @@ Claude may write only:
     R2_KEY=NOT_CREATED
     R2_HARNESS=NOT_CREATED
     NEXT=FREEZE_PUBLIC_DRP03_R2_PROTOCOL_V03_ASSETS
+    PUBLIC_R2_FREEZE=COMPLETE_F358D031
+    HIDDEN_KEY_A=NOT_YET_CREATED
+    HIDDEN_KEY_B=NOT_YET_CREATED
+    CLAUDE04_ROLE=EXPOSED_KEY_AUTHOR_A
+    FRESH_KEY_AUTHOR_MINIMUM=1
+    NEXT=CLAUDE04_PRIVATE_KEY_AUTHOR_A

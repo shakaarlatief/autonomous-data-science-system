@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "protocol_id": "AO10-DRP03-R2-V03",
+  "freeze_kind": "PUBLIC_PROTOCOL_ASSET_FREEZE",
+  "canonical_serialization": "UTF-8 JSON, indent=2, ensure_ascii=true, LF newline",
+  "assets": [
+    {
+      "path": "experiments/ao10_drp03_obligation_units_r2_v03/delivery_plan.json",
+      "sha256": "74f4a568ea8bd71e0fd00e42ac5bd25296759681b7c9db69a49bdf341d079a1e",
+      "bytes": 2010
+    },
+    {
+      "path": "experiments/ao10_drp03_obligation_units_r2_v03/event_universe_frozen.json",
+      "sha256": "116156ef83b2637bf60e760d23c87e60fe3842f760845d127be5a60fb3d8c845",
+      "bytes": 24201
+    },
+    {
+      "path": "experiments/ao10_drp03_obligation_units_r2_v03/freeze_public_assets.py",
+      "sha256": "1f11cd0a1ba0dcee177a0be55e6c4dddd51d16befe2202d6616037ffda20d06c",
+      "bytes": 2760
+    },
+    {
+      "path": "experiments/ao10_drp03_obligation_units_r2_v03/generate_key_author_packets.py",
+      "sha256": "b2631b99dc95c10d4ddb524e5eb1c694b2ba4d03c8e423486736650bc9663b16",
+      "bytes": 6476
+    },
+    {
+      "path": "experiments/ao10_drp03_obligation_units_r2_v03/generate_packets.py",
+      "sha256": "ae5a680647a259da9cc4ad04d7699422e07d3d94fe08fe12bd2470a77ad49038",
+      "bytes": 25699
+    },
+    {
+      "path": "experiments/ao10_drp03_obligation_units_r2_v03/KEY_AUTHOR_INSTRUCTIONS.md",
+      "sha256": "7472d09251a2a9f112c922536f2031b4158391c2154cbc5a027b731c1bd016ca",
+      "bytes": 2372
+    },
+    {
+      "path": "experiments/ao10_drp03_obligation_units_r2_v03/key_author_schema.json",
+      "sha256": "7751fdd4faee7736139d4bcaa25c76207e69ec0de50129e29c1dc47161c63e59",
+      "bytes": 1259
+    },
+    {
+      "path": "experiments/ao10_drp03_obligation_units_r2_v03/legacy_corpus_manifest.json",
+      "sha256": "2717f27c572dd3ab38807132ce80d92a564a7f3d3b920813e860c0ba1acbe91c",
+      "bytes": 3233
+    },
+    {
+      "path": "experiments/ao10_drp03_obligation_units_r2_v03/packets/birth_development.json",
+      "sha256": "676bf2c4c9cc82392b20e33f683af5d3648714ea616873387e6f6354aa924397",
+      "bytes": 206231
+    },
+    {
+      "path": "experiments/ao10_drp03_obligation_units_r2_v03/packets/birth_development_attention_provenance.json",
+      "sha256": "a2aa6f3d9bd455936912b8e5620be06d3d2bdbd83cad6bc1166b5328adb61ff9",
+      "bytes": 78918
+    },
+    {
+      "path": "experiments/ao10_drp03_obligation_units_r2_v03/packets/birth_development_classification_sessions.json",
+      "sha256": "c4cae66b7874e2e4459818b17508d5c5bca83d2c593ee07b2069cc9844a31363",
+      "bytes": 227465
+    },
+    {
+      "path": "experiments/ao10_drp03_obligation_units_r2_v03/packets/birth_heldout.json",
+      "sha256": "ec3d84071ae78ceddfa9df089a8a1b9360207e65b6ce02c983a06a1391403336",
+      "bytes": 1036581
+    },
+    {
+      "path": "experiments/ao10_drp03_obligation_units_r2_v03/packets/birth_heldout_attention_provenance.json",
+      "sha256": "253563cf50c122bf850d2465713b5c8c33cc6dbcfe48a7033ed061f3d629d4bd",
+      "bytes": 394881
+    },
+    {
+      "path": "experiments/ao10_drp03_obligation_units_r2_v03/packets/birth_heldout_classification_sessions.json",
+      "sha256": "26fda821df686cc002041b1d8ff3a83778a647db09580bdb2479f86cad67595d",
+      "bytes": 1152118
+    },
+    {
+      "path": "experiments/ao10_drp03_obligation_units_r2_v03/packets/birth_provenance.json",
+      "sha256": "09f0574089ab37cd2d0395a9315b4eb2d0d0af9fbe7ce3d3337656742002872f",
+      "bytes": 16511
+    },
+    {
+      "path": "experiments/ao10_drp03_obligation_units_r2_v03/packets/key_author_birth_development.json",
+      "sha256": "0bb1ba499e935b3bdfe7613c1e0c2e50d827072c6b116d672104334c5024af6e",
+      "bytes": 221599
+    },
+    {
+      "path": "experiments/ao10_drp03_obligation_units_r2_v03/packets/key_author_birth_heldout.json",
+      "sha256": "a81db255411cbda5729eded44f4dc6872fd3d460b3be3ede7f845ac445b01116",
+      "bytes": 1168175
+    },
+    {
+      "path": "experiments/ao10_drp03_obligation_units_r2_v03/packets/key_author_packet_manifest.json",
+      "sha256": "406c0f70df9cf65f8262b94f6d48c3ce82b523e41e552f2bd5aa990c7dd37448",
+      "bytes": 947
+    },
+    {
+      "path": "experiments/ao10_drp03_obligation_units_r2_v03/packets/legacy.json",
+      "sha256": "a12cdce74f3c019683bfcd4a2484cdc158e43622ed520263cfb4a3bdbc08c463",
+      "bytes": 1271659
+    },
+    {
+      "path": "experiments/ao10_drp03_obligation_units_r2_v03/packets/legacy_attention_provenance.json",
+      "sha256": "bfc35235ab1aa0a325018fe66c03b14facf43f9ab710ec587ad3901850b459f6",
+      "bytes": 540084
+    },
+    {
+      "path": "experiments/ao10_drp03_obligation_units_r2_v03/packets/legacy_classification_sessions.json",
+      "sha256": "9346cb5eab59d509e2ae1c5934e492d25d905b24dd261f7c771205f979d4f910",
+      "bytes": 1540120
+    },
+    {
+      "path": "experiments/ao10_drp03_obligation_units_r2_v03/packets/legacy_provenance.json",
+      "sha256": "2cd5d07f8a6543ccbd1c1990eee4d682249a08e8ba5363f21cd894b675da8a45",
+      "bytes": 6787
+    },
+    {
+      "path": "experiments/ao10_drp03_obligation_units_r2_v03/packets/packet_manifest.json",
+      "sha256": "fa0cd059dc9e761e5e9b20a86bcdb8075caf946ff6d728caaf72d86f360bb56d",
+      "bytes": 3221
+    },
+    {
+      "path": "experiments/ao10_drp03_obligation_units_r2_v03/packets/state.json",
+      "sha256": "6bbaa09823d00b6527ca0a670cb7622177a34f0a49f7ead8e6d789a5d6c81039",
+      "bytes": 17558
+    },
+    {
+      "path": "experiments/ao10_drp03_obligation_units_r2_v03/packets/state_provenance.json",
+      "sha256": "d0c89282499fa11944f8f00a37c31c016ed6b976c70fb8f80235bc62a0bde9eb",
+      "bytes": 1558
+    },
+    {
+      "path": "experiments/ao10_drp03_obligation_units_r2_v03/public_fixtures/control_disposition.md",
+      "sha256": "33b88e6016e8cd72fdfe49ded26e28dfabd744583fedc90aabdff3f915e5a0d6",
+      "bytes": 1583
+    },
+    {
+      "path": "experiments/ao10_drp03_obligation_units_r2_v03/public_fixtures/control_principle.md",
+      "sha256": "619843d6c635360c7e31ef60514b718f50ec77620314e39f1af8970af510413c",
+      "bytes": 1887
+    },
+    {
+      "path": "experiments/ao10_drp03_obligation_units_r2_v03/public_fixtures/sentence_splitter_test_vectors.json",
+      "sha256": "c9d77aa91952eb3c1ec2183db7c350194faca7084ef256407cb5b672223bb951",
+      "bytes": 1945
+    },
+    {
+      "path": "experiments/ao10_drp03_obligation_units_r2_v03/public_fixtures/state_fixtures.json",
+      "sha256": "cf63d2b55bf0683af5f5740b57ba505a59118e6fe3bc9f3a5841208e248d0666",
+      "bytes": 12542
+    },
+    {
+      "path": "experiments/ao10_drp03_obligation_units_r2_v03/public_fixtures/state_real_fact_manifest.json",
+      "sha256": "a3c0bae88579af50f04e82704eb17aec8de36b0e90052b302ceaad82434511a0",
+      "bytes": 1829
+    },
+    {
+      "path": "experiments/ao10_drp03_obligation_units_r2_v03/public_fixtures/state_rules.json",
+      "sha256": "307fe7848279caa3f3374c29464f124bb66b22359ddec0885299c4d93313f396",
+      "bytes": 2895
+    },
+    {
+      "path": "experiments/ao10_drp03_obligation_units_r2_v03/public_protocol.json",
+      "sha256": "b03d926747abb2578381dd1ae33e6b6e46ed4f0915663b77c1ae042da81559b0",
+      "bytes": 3455
+    },
+    {
+      "path": "experiments/ao10_drp03_obligation_units_r2_v03/README.md",
+      "sha256": "7fd5ed1d938c6c19b62c1e7ce3f1f68c47ce2d0e7587f849a59d44ff4c44de46",
+      "bytes": 2478
+    },
+    {
+      "path": "experiments/ao10_drp03_obligation_units_r2_v03/reviewer_annotation_schema.json",
+      "sha256": "b38edcf80506ace03ddbc7c8764cb2b78e2cc9bfeb733a786d1038e65023ffd1",
+      "bytes": 3228
+    },
+    {
+      "path": "experiments/ao10_drp03_obligation_units_r2_v03/REVIEWER_INSTRUCTIONS.md",
+      "sha256": "ed373978072a0441d7a55b9e08f3d159cf3a53bfff65444a9fc87914a7d61e0b",
+      "bytes": 4503
+    },
+    {
+      "path": "experiments/ao10_drp03_obligation_units_r2_v03/splitter.py",
+      "sha256": "f8498041e590f0e33da190ffad539fe67af5db47a0787e33f34ad91c0d6796be",
+      "bytes": 6984
+    }
+  ],
+  "external_bindings": [
+    {
+      "path": "docs/research/330_mc0029_message009_reconciliation_v07_and_drp03_r2_protocol_v03_freeze_candidate.md",
+      "sha256": "8e191d81d15da3254466194f874223aebb377306056619f47778565ae286a8fa",
+      "bytes": 28175
+    },
+    {
+      "path": "docs/research/331_owner_acceptance_m1_governed_deferral_and_r2_public_freeze_unblock.md",
+      "sha256": "e95ffde003b8d87a5a92116b2f70d46c1bc78d7ded433d9b2f3198b59856cfe8",
+      "bytes": 4566
+    },
+    {
+      "path": "docs/research/project_knowledge_activation_orchestration/ao10/DRP03_R2_EVENT_UNIVERSE_CANDIDATE_V03.json",
+      "sha256": "533c0546898c6cc7808378e1b1ee883b4fa82d89cdc1ef92f67f4fefd87da2fc",
+      "bytes": 24083
+    },
+    {
+      "path": "docs/research/project_knowledge_activation_orchestration/ao10/M1_OWNER_REVIEW_EFFICACY_DEFERRAL_V01.json",
+      "sha256": "9a2e66c8083dbaa81282150fc53d49ecfbceeb35f22f98f22617e1a41c445783",
+      "bytes": 3053
+    }
+  ],
+  "hidden_key_created": false,
+  "hidden_labels_created": false,
+  "scoring_harness_created": false
+}

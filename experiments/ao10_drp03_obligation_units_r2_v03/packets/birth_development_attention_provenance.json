@@ -1,0 +1,2371 @@
+{
+  "schema_version": 1,
+  "protocol_id": "AO10-DRP03-R2-V03",
+  "component": "BIRTH_CLASSIFICATION_ATTENTION_PROVENANCE",
+  "split": "DEVELOPMENT",
+  "records": [
+    {
+      "batch_id": "BAT-2d0805e6c619",
+      "packet_event_id": "EVP-ca475c9a5a9d",
+      "part_index": 1,
+      "primary_count": 199,
+      "attention_duplicate_count": 6,
+      "presentation_map": [
+        {
+          "presentation_id": "PRS-d544bda0e11061d8",
+          "semantic_item_id": "ITM-e5d02afe029dea69",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-e3bf70d019abefa4",
+          "semantic_item_id": "ITM-5db5c9cf5983d218",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-dde36679608ee02b",
+          "semantic_item_id": "ITM-151d01fa886cf81d",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-ba3dd3aec59eb7ab",
+          "semantic_item_id": "ITM-e9287c87d75b1328",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-37ad459793c56651",
+          "semantic_item_id": "ITM-cc6bdec9b60c0482",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-8f82ffcdfb2eadd2",
+          "semantic_item_id": "ITM-7e13afff9d2ee251",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-fdbbb38075d33559",
+          "semantic_item_id": "ITM-6ec40a78ed105d21",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-8a1bd76c32248e76",
+          "semantic_item_id": "ITM-3b314e07a6b20e59",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-4064245f180dca56",
+          "semantic_item_id": "ITM-0b32aa3ddb144f7d",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-081825c4b95fe5b3",
+          "semantic_item_id": "ITM-0c87cf395001f3a5",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-ad120f9e72ac481f",
+          "semantic_item_id": "ITM-4e9d1ea791a1848c",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-f3fe6e80eb088438",
+          "semantic_item_id": "ITM-b7b22853593212f9",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-0694a0bb6b32952b",
+          "semantic_item_id": "ITM-98d6059c701d5528",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-ce49b14cf26f1595",
+          "semantic_item_id": "ITM-38057811f4ed7f06",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-44951e0f29dbd930",
+          "semantic_item_id": "ITM-a0133930c663dae6",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-852c20856ea1b06d",
+          "semantic_item_id": "ITM-ba6b1289387a41f1",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-d000e40da23afc70",
+          "semantic_item_id": "ITM-8594bc1695550651",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-d0f83a4a46551226",
+          "semantic_item_id": "ITM-f5db79ef4e703f63",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-638f721e3657d333",
+          "semantic_item_id": "ITM-7fd83d74104f2903",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-9d89fc62362fc5ad",
+          "semantic_item_id": "ITM-a383b27505c0436b",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-aefb622692065cfd",
+          "semantic_item_id": "ITM-6b096762c3df3917",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-9d434f232d52e1dc",
+          "semantic_item_id": "ITM-4b0556040106e161",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-c985c5012272a5e3",
+          "semantic_item_id": "ITM-378b86ad4451fb4e",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-4bf0d52ae2e05fbe",
+          "semantic_item_id": "ITM-343cf3ad2764312e",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-e914b6900b5c62ad",
+          "semantic_item_id": "ITM-8aa658da15e0e868",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-58cb0e80796b8c0a",
+          "semantic_item_id": "ITM-7def6ba39ecb8006",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-bc0cd2c3ecc3155f",
+          "semantic_item_id": "ITM-5337d48d0faf3969",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-6a3e8f2fc337079b",
+          "semantic_item_id": "ITM-51bfbdeb2b067ddb",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-95bf232b22ef91e9",
+          "semantic_item_id": "ITM-934b0c304cb30312",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-3d2a63903b532b8e",
+          "semantic_item_id": "ITM-8cf51b6f2d523d87",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-b494c978e03d0a73",
+          "semantic_item_id": "ITM-cf01c66f5dc468ee",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-68bd772d6f5026c5",
+          "semantic_item_id": "ITM-76c7ee804377453b",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-3d78ff4bd7d07144",
+          "semantic_item_id": "ITM-3fcb0a322f2cb9cf",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-54440c3a027950e8",
+          "semantic_item_id": "ITM-c7a643e73c489787",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-d3def3b5b7965d3b",
+          "semantic_item_id": "ITM-dc9e95cad6ffc956",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-a43e721420d68f9a",
+          "semantic_item_id": "ITM-7718f1b338ce6da2",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-4def5841eb789223",
+          "semantic_item_id": "ITM-a9941a7d77265605",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-470514a3bcd8d926",
+          "semantic_item_id": "ITM-26c5284f43ba48b1",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-1cb1347f64c756cd",
+          "semantic_item_id": "ITM-558bc49d2c413500",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-fd17a6de5c0fbedb",
+          "semantic_item_id": "ITM-ed789ec53fcd863d",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-b1e2b4ae683788f8",
+          "semantic_item_id": "ITM-763544dbdbef6ea7",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-87b393b0b426a7a3",
+          "semantic_item_id": "ITM-9e1d5acaec5d3af9",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-48dad764ac8dbd5d",
+          "semantic_item_id": "ITM-a9ae936a00807e75",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-5609904b1fecb813",
+          "semantic_item_id": "ITM-8393707086db1ab7",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-71f7d5d9d4f9a0e5",
+          "semantic_item_id": "ITM-bc9f7ada681ef3e0",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-3a12ba1f81cb200d",
+          "semantic_item_id": "ITM-d6a8027929847c88",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-b90c1141dc472f26",
+          "semantic_item_id": "ITM-04184e9f86d679af",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-3826a2d1c382b8a6",
+          "semantic_item_id": "ITM-c44821ecb8ee9851",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-568fbee0ece668b2",
+          "semantic_item_id": "ITM-a975102ecdcf919b",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-fdf48061a3bb09f9",
+          "semantic_item_id": "ITM-01ebccbfd8aeac00",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-e38a95a67a9133c5",
+          "semantic_item_id": "ITM-78d850a62a28f431",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-19975b9dfd2d72df",
+          "semantic_item_id": "ITM-dabe513f07a30d7c",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-af0ad91b0c9c0536",
+          "semantic_item_id": "ITM-3aa7c728ac972e37",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-9522b284161b461e",
+          "semantic_item_id": "ITM-62d7795fda49e93d",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-6bd53d014da41f4b",
+          "semantic_item_id": "ITM-debaadb432f936fc",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-8e2e33ebe22039ee",
+          "semantic_item_id": "ITM-1bb3e9683e104780",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-229a3b57a7677a58",
+          "semantic_item_id": "ITM-c8d06a200df691ee",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-d8023eb23108d46d",
+          "semantic_item_id": "ITM-dc9904de41082d71",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-6e2ddd74f44734ac",
+          "semantic_item_id": "ITM-4e263791c6febc17",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-4e762a5bacb47936",
+          "semantic_item_id": "ITM-87b3bb23fa70e198",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-443490733acd6cce",
+          "semantic_item_id": "ITM-50cd1fbbeb662ff9",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-8affe76269373bf8",
+          "semantic_item_id": "ITM-99a4310365cf4d67",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-7fbe8693add40084",
+          "semantic_item_id": "ITM-6a8c7379812c8ec4",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-dd4a61bcef1ee51c",
+          "semantic_item_id": "ITM-294dea813d4a5554",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-3e92f42b294af4a2",
+          "semantic_item_id": "ITM-6a2fa2d95f0ce866",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-64d73810489a76cb",
+          "semantic_item_id": "ITM-6a99c30b1741022a",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-ce4c6f8ed1649c4e",
+          "semantic_item_id": "ITM-8ccb41f5da89c49f",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-eba2d9ec44c179b9",
+          "semantic_item_id": "ITM-65bbb7f6a6bc4305",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-f9c76079a086a1b6",
+          "semantic_item_id": "ITM-d95b957ee322ce28",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-2149aeca6417aeeb",
+          "semantic_item_id": "ITM-2d956658ab24b689",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-757e4a902910d425",
+          "semantic_item_id": "ITM-6996b3b784ced7be",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-0fcb1da410ae0627",
+          "semantic_item_id": "ITM-9fa2062d3602ea7b",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-29c1421ca5917cec",
+          "semantic_item_id": "ITM-3d8b14dd3a2ab113",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-78b52637c477cf2f",
+          "semantic_item_id": "ITM-fa3f314f30a4ad11",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-488c4d9cd66a8b53",
+          "semantic_item_id": "ITM-788cc26593560a42",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-636f8e78a3faf49c",
+          "semantic_item_id": "ITM-889a280396da3487",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-0ed8814cf0f7ef9e",
+          "semantic_item_id": "ITM-97618a71b1b96324",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-288ea4df3571f0b2",
+          "semantic_item_id": "ITM-0b2be448716eb626",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-44bc37ca10995a2e",
+          "semantic_item_id": "ITM-b942fdfba9acf925",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-5514347417105e64",
+          "semantic_item_id": "ITM-060d54c8a4cc07dd",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-a0d3ad9af3c41c18",
+          "semantic_item_id": "ITM-f72f4b21f3dd7519",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-91ea26429a79f78b",
+          "semantic_item_id": "ITM-199cb8ff72b88c34",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-b20548cbfc945f5f",
+          "semantic_item_id": "ITM-f4f205a7bc6ae801",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-7f28bbc3bfe49c82",
+          "semantic_item_id": "ITM-194010b718679980",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-457b97fabb4182f6",
+          "semantic_item_id": "ITM-7c387b5a8da3987d",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-b96b8d67916a7bb2",
+          "semantic_item_id": "ITM-3f7e6e2eb6ebbe03",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-db0483fcb3cfaca1",
+          "semantic_item_id": "ITM-0e33a29d6313623b",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-fde67f1ea4d32f15",
+          "semantic_item_id": "ITM-406203d2080d3d48",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-56e2291ff7b7fe1e",
+          "semantic_item_id": "ITM-5bfcda83db5f891f",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-30950a737632a87c",
+          "semantic_item_id": "ITM-8908702c5d79a572",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-d5d6a055067b402e",
+          "semantic_item_id": "ITM-0e4d04b21c550f79",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-7c5d022394ed41d6",
+          "semantic_item_id": "ITM-62da44de6b961814",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-77bee5d7d59d3fb4",
+          "semantic_item_id": "ITM-0a56b25fe42279b3",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-845aefd4a7934b53",
+          "semantic_item_id": "ITM-b85ba06c65b6587c",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-11df583dbe6c3523",
+          "semantic_item_id": "ITM-0f5630e8f193c48f",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-b939698f8f134bde",
+          "semantic_item_id": "ITM-fc7ee8d25e3aeef2",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-77242868109d5974",
+          "semantic_item_id": "ITM-daf122a4d2eb42bd",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-f828d0d956312d20",
+          "semantic_item_id": "ITM-bb6e53102460748d",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-f41a4e87f2aa0561",
+          "semantic_item_id": "ITM-b6d461b38129870f",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-847749f4bcb3f1a5",
+          "semantic_item_id": "ITM-78e59ae9e516ad59",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-a01be5d931995c7f",
+          "semantic_item_id": "ITM-0cc9cc9157df975e",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-782cdb33d8b5cc9f",
+          "semantic_item_id": "ITM-262d1012d5e83dbd",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-121673d949c6a392",
+          "semantic_item_id": "ITM-1387ef7ec3e555ae",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-5cf74fcdbb702264",
+          "semantic_item_id": "ITM-409b8e4fe1290e59",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-c41e5588e3d3e5a7",
+          "semantic_item_id": "ITM-d20744def83b79c1",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-c2feb3a967f73aba",
+          "semantic_item_id": "ITM-46424fbb968a36df",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-372951ad58dd3ffd",
+          "semantic_item_id": "ITM-e97de6a20d52554a",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-c54ccddcbb18a6f8",
+          "semantic_item_id": "ITM-4ea3f225a5209d8f",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-e85551b6a8b7febd",
+          "semantic_item_id": "ITM-d72c496538d98734",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-2ef7fecdb2250110",
+          "semantic_item_id": "ITM-556b6d456776e546",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-ab33a1246a8acadf",
+          "semantic_item_id": "ITM-f3f733cfe6d0256f",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-0822932f8090c7ec",
+          "semantic_item_id": "ITM-08403b0c1772886a",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-e12d8fa2c0699945",
+          "semantic_item_id": "ITM-7225323b3186afe4",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-2c7fffc9a9defcf5",
+          "semantic_item_id": "ITM-736d15e0e24179a7",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-0e11e564b1448831",
+          "semantic_item_id": "ITM-04bf73cfd3828129",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-06025477b285d6ec",
+          "semantic_item_id": "ITM-8c508831088f5cb4",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-0d02f599b35d6c7c",
+          "semantic_item_id": "ITM-37db87f92f7f7534",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-175f03a100a995f5",
+          "semantic_item_id": "ITM-2f1790ea543d7db5",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-f7e02ec9f5abd90a",
+          "semantic_item_id": "ITM-2121c530634ec894",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-0d900ae7c6d43692",
+          "semantic_item_id": "ITM-c52003fc94fd9676",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-1bbbf1fd454acf3a",
+          "semantic_item_id": "ITM-66c55db970e96d0a",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-7046f4171cd94356",
+          "semantic_item_id": "ITM-9fa6922188e6ab4f",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-13a0ff256f37591c",
+          "semantic_item_id": "ITM-2092aba1dd0ff43d",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-9dec0d40523cd738",
+          "semantic_item_id": "ITM-57c821c75b60f414",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-d2287422d0e9483d",
+          "semantic_item_id": "ITM-c54020eed874741c",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-44a001e838519cd8",
+          "semantic_item_id": "ITM-b34203408b3fc475",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-523c41ca3e7cf4af",
+          "semantic_item_id": "ITM-cf57cad0b0a0cf7a",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-739212498d804ad2",
+          "semantic_item_id": "ITM-8a6990d66b55b3a1",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-a3345d3975c56ef8",
+          "semantic_item_id": "ITM-977c45d47574e736",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-9e87ac8321714a08",
+          "semantic_item_id": "ITM-2a15abeff01cb9dc",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-9a849a7ad121ef6b",
+          "semantic_item_id": "ITM-649af6f23a25c9f0",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-35d16e5deac2ffaf",
+          "semantic_item_id": "ITM-cd6eb157847eea0f",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-d3817545efe5ab5c",
+          "semantic_item_id": "ITM-5effe33be63c9a39",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-35bdc4fef152fbef",
+          "semantic_item_id": "ITM-96d712335639628d",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-92954b32e2aa454f",
+          "semantic_item_id": "ITM-e94d7b469fdc2c09",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-dee628c108544995",
+          "semantic_item_id": "ITM-fdbbffd7e3f75768",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-c50b9e7045546b38",
+          "semantic_item_id": "ITM-cb749a1039190421",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-3413867197645628",
+          "semantic_item_id": "ITM-0abbc5e3cc454e9c",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-24f6fd1cc61feb63",
+          "semantic_item_id": "ITM-940eb6882261a35c",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-f93796a1fb0962b7",
+          "semantic_item_id": "ITM-b2709901f7852c63",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-8be226db4b612fa0",
+          "semantic_item_id": "ITM-c141946ae923d624",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-243f9cd3b31bf2e6",
+          "semantic_item_id": "ITM-35a388d7c1fb7298",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-8ec9a58a06b8aef0",
+          "semantic_item_id": "ITM-39807aa060046cc5",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-f4e9b95ad49617e0",
+          "semantic_item_id": "ITM-b8266844776d193e",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-375a13c6b9f880c5",
+          "semantic_item_id": "ITM-b4bd1d66deceb178",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-50da014362312346",
+          "semantic_item_id": "ITM-e4d0f5f1154788ee",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-de9b84936b2be1c8",
+          "semantic_item_id": "ITM-ded9afef2c4b835f",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-81b74be0b0069d77",
+          "semantic_item_id": "ITM-9cb1fb3edceda911",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-16e304f0ece27c58",
+          "semantic_item_id": "ITM-f56f63cced73fd4a",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-33fa557b7bd79e0d",
+          "semantic_item_id": "ITM-5353f762c7041cfa",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-3e5302d8fdd018d1",
+          "semantic_item_id": "ITM-8fdf0e2fde850c3e",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-879ab334d2e788a0",
+          "semantic_item_id": "ITM-1c29bb0d607b3407",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-373a8c0358f5267c",
+          "semantic_item_id": "ITM-310dc465a4b3d3b4",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-b2148315e435c112",
+          "semantic_item_id": "ITM-05d46fe9da8d86da",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-97bd784994b60ef4",
+          "semantic_item_id": "ITM-5484e31a932502eb",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-9036dea725c98785",
+          "semantic_item_id": "ITM-4856a92d98d93f5a",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-8b8a3521e0878b44",
+          "semantic_item_id": "ITM-120e069d802abfc1",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-c54348b7d0f85394",
+          "semantic_item_id": "ITM-e27727ce56be5b60",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-8a4fde1d717fdf29",
+          "semantic_item_id": "ITM-41c9c9e66ff8b1e3",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-784952c61d1f9680",
+          "semantic_item_id": "ITM-10097072339516e7",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-12b4363fd5dc175d",
+          "semantic_item_id": "ITM-9c2efca27db96a4a",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-1f1349b9ae96780e",
+          "semantic_item_id": "ITM-2ff46a180cb05c69",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-1a1eadf74e490f73",
+          "semantic_item_id": "ITM-c348b810873060fc",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-0896b1040a6d5451",
+          "semantic_item_id": "ITM-e58af133c0acaa8e",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-5aef6929044a2915",
+          "semantic_item_id": "ITM-1f95e434760cfdef",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-9005b71c1a47f4f7",
+          "semantic_item_id": "ITM-972d3953dd8c3c38",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-961c4dedff8a4ee8",
+          "semantic_item_id": "ITM-dc18e935b7af34a5",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-0fbfc1525b359645",
+          "semantic_item_id": "ITM-675a6f09892cbaf2",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-219d0d91265da0f5",
+          "semantic_item_id": "ITM-9928a5163e120264",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-a587327703f0ae74",
+          "semantic_item_id": "ITM-7a30d1e9d0e1e73f",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-d57533c991d3e6bb",
+          "semantic_item_id": "ITM-e1b1d7697d0012ce",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-3b677419f8fc035a",
+          "semantic_item_id": "ITM-1f1880148d90ade3",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-64fe75546fa179f6",
+          "semantic_item_id": "ITM-27e078879f390e0f",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-17c864fc7ce80758",
+          "semantic_item_id": "ITM-f78d1afdfa6d3116",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-c4e7a71eb01ae470",
+          "semantic_item_id": "ITM-768ed88156ff5376",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-008d14915e4bbfce",
+          "semantic_item_id": "ITM-a87ce9ec89542b85",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-97c92cec674c4d2b",
+          "semantic_item_id": "ITM-dc7afb9c5149732f",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-d4ff42949a1e9a01",
+          "semantic_item_id": "ITM-c777ce32e6521bed",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-dbe711897999e545",
+          "semantic_item_id": "ITM-7585955ae5bbbcb9",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-7e077ee13a4352c7",
+          "semantic_item_id": "ITM-a188696b99420c7e",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-edf1fcba590358b0",
+          "semantic_item_id": "ITM-de4f7de70aa28378",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-3934c07bf817c207",
+          "semantic_item_id": "ITM-9af822a7e5b67169",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-5031113daa8b5613",
+          "semantic_item_id": "ITM-38878e8838acd0fa",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-9c498a53c313e228",
+          "semantic_item_id": "ITM-f6854a083bf9d1a6",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-97bdebd5a38e083a",
+          "semantic_item_id": "ITM-b56c74de64187a66",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-21d0fc8f9a4a186d",
+          "semantic_item_id": "ITM-e3da1504a6e342ae",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-072b6b755dd291b9",
+          "semantic_item_id": "ITM-12165d682bea0796",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-ce89beb30dc7f0ef",
+          "semantic_item_id": "ITM-3dd6ba1a854e8fbe",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-fe5afeb8b94e3a37",
+          "semantic_item_id": "ITM-a2c1d2961e0713c0",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-ba3a6dda4b0d2fad",
+          "semantic_item_id": "ITM-a8136e0440a0317a",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-5b1d5a4849e2aafb",
+          "semantic_item_id": "ITM-5d5aac1f4cd20ef9",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-ea5a6c9b6472624f",
+          "semantic_item_id": "ITM-327c144b2324cf94",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-d610077a3f738afd",
+          "semantic_item_id": "ITM-d1aea995ca04a514",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-6bd4d06dece483a0",
+          "semantic_item_id": "ITM-243fed6c135a1156",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-650f36a2c411e61d",
+          "semantic_item_id": "ITM-ec053030287d9a6a",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-f83b26bf63f4893b",
+          "semantic_item_id": "ITM-b4bebd553475f34a",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-7860450ad0811a5b",
+          "semantic_item_id": "ITM-ff56afe8e377dd87",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-df8ee3ed463097d7",
+          "semantic_item_id": "ITM-da0e018b7e5af398",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-b8be9307160c1a5b",
+          "semantic_item_id": "ITM-0e2e408f61baed07",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-73ad0e9df56f6231",
+          "semantic_item_id": "ITM-e9287c87d75b1328",
+          "attention_duplicate": true
+        },
+        {
+          "presentation_id": "PRS-26f448ba879e744d",
+          "semantic_item_id": "ITM-27e078879f390e0f",
+          "attention_duplicate": true
+        },
+        {
+          "presentation_id": "PRS-ae112f058766b475",
+          "semantic_item_id": "ITM-2d956658ab24b689",
+          "attention_duplicate": true
+        },
+        {
+          "presentation_id": "PRS-b9dc51fc6ea6d0eb",
+          "semantic_item_id": "ITM-2f1790ea543d7db5",
+          "attention_duplicate": true
+        },
+        {
+          "presentation_id": "PRS-8441d075dbbd0b9b",
+          "semantic_item_id": "ITM-c8d06a200df691ee",
+          "attention_duplicate": true
+        },
+        {
+          "presentation_id": "PRS-672c31e83a082de8",
+          "semantic_item_id": "ITM-d20744def83b79c1",
+          "attention_duplicate": true
+        }
+      ]
+    },
+    {
+      "batch_id": "BAT-904613dd8a4e",
+      "packet_event_id": "EVP-362b09ec98e9",
+      "part_index": 1,
+      "primary_count": 256,
+      "attention_duplicate_count": 8,
+      "presentation_map": [
+        {
+          "presentation_id": "PRS-aab79d4f852e54ea",
+          "semantic_item_id": "ITM-1fc3776465b7ea41",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-0f7993c3b53f6bce",
+          "semantic_item_id": "ITM-8f374db533e4585d",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-c3f5068a55a0e86f",
+          "semantic_item_id": "ITM-f579a86c99a3a2f8",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-6f2d12aab74e5fbc",
+          "semantic_item_id": "ITM-9f156a87962fe4cf",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-77b954b0b56ce249",
+          "semantic_item_id": "ITM-fb4f4772abf11493",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-97e17b4adcc292f1",
+          "semantic_item_id": "ITM-30f692e76d750cd6",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-b759cc1472697e24",
+          "semantic_item_id": "ITM-53b62ef2a090fac5",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-d17a8c8f1073ea8c",
+          "semantic_item_id": "ITM-8e2ff2a9c5611a02",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-228e66852420ce4d",
+          "semantic_item_id": "ITM-8f147275d11466ee",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-4ae7bcfc56f25005",
+          "semantic_item_id": "ITM-96e30aa7a3b736d8",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-21789112f529ed05",
+          "semantic_item_id": "ITM-ffc762f2e56cc9f8",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-4c540b57f69e2aeb",
+          "semantic_item_id": "ITM-07e664700da8e4e7",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-5d7e8998dd5eb46f",
+          "semantic_item_id": "ITM-ccb41b0c5f621b74",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-be91492c108923e2",
+          "semantic_item_id": "ITM-cc45ad4747dc5b78",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-31455ac19141f126",
+          "semantic_item_id": "ITM-83baff48d5617c9a",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-080ddadab3c6a51f",
+          "semantic_item_id": "ITM-557233e1216ac8d8",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-51315d2e1b413675",
+          "semantic_item_id": "ITM-a0bebe166cb76d31",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-19fb543744c728b4",
+          "semantic_item_id": "ITM-c7fc8430d6be38cf",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-aeefdae78fc8debe",
+          "semantic_item_id": "ITM-276952aca039ef2f",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-26b78a2e18fbbc6d",
+          "semantic_item_id": "ITM-38c3c7e91c79d04d",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-a1be2f1af9d8c30d",
+          "semantic_item_id": "ITM-e84ee1bbab260089",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-24a88ddaecd49797",
+          "semantic_item_id": "ITM-98a42fcbc684ecec",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-244231d937b42c15",
+          "semantic_item_id": "ITM-ef6cf58a5efee491",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-bda2d0b1823d48cd",
+          "semantic_item_id": "ITM-ad679f6176b56ae8",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-5e1d788f189e62c6",
+          "semantic_item_id": "ITM-c8bd3cde50976392",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-9e150fb994f41980",
+          "semantic_item_id": "ITM-85278a7979634ee5",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-ba29a194ae4be17e",
+          "semantic_item_id": "ITM-9c76a94d6d0a4984",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-4341988944364d16",
+          "semantic_item_id": "ITM-b717a5354bb92403",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-44b9b81c1b5624be",
+          "semantic_item_id": "ITM-48913cf504b96e8d",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-0c26ae33d81c74b0",
+          "semantic_item_id": "ITM-5ce330711e1210aa",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-7a072da3946349b5",
+          "semantic_item_id": "ITM-c5122b0decf054da",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-e1caccf29d88c537",
+          "semantic_item_id": "ITM-82108b4ced079423",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-2e0141d626bb3d64",
+          "semantic_item_id": "ITM-2428e09f2f95c518",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-b249c0849744760d",
+          "semantic_item_id": "ITM-2619313e246fdc8c",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-7d5cd00b41264cd1",
+          "semantic_item_id": "ITM-7c54248c3d03671c",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-b3e96c8452d8d37d",
+          "semantic_item_id": "ITM-0ddd44411f9c2055",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-b0d4e7468b5aa9dd",
+          "semantic_item_id": "ITM-a47c57611cd61fab",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-4a2bc2daee1e2b0d",
+          "semantic_item_id": "ITM-0775b7c0bb116a71",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-a77636ecff666ef9",
+          "semantic_item_id": "ITM-b65eda5e5c38e42a",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-806ae1ba02b228d3",
+          "semantic_item_id": "ITM-cb31dcc4e404beeb",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-ed334604f62a5748",
+          "semantic_item_id": "ITM-a93211c8d3753ed9",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-1f6c5637e8b6088b",
+          "semantic_item_id": "ITM-0722c4d3913f2f32",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-8d93bdb77ecd89e6",
+          "semantic_item_id": "ITM-c379f6f48c4f33c7",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-49693b866cd5a533",
+          "semantic_item_id": "ITM-658bfdf2b15b70ba",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-9bd63b1175ad68a0",
+          "semantic_item_id": "ITM-b7c49196c453c15b",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-ba11226efe209f4d",
+          "semantic_item_id": "ITM-79ec1c7fb14bc9c8",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-0b47c131a20c4dc6",
+          "semantic_item_id": "ITM-09957c850dedaef1",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-dafa37dd51e5b61f",
+          "semantic_item_id": "ITM-9b7392bea5ce254f",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-c11593d3c3c992a2",
+          "semantic_item_id": "ITM-bd24f24641ad4e1d",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-6358756cef354aa7",
+          "semantic_item_id": "ITM-c5cb1b7d5f0cdfbf",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-b3f0dc53411b66d2",
+          "semantic_item_id": "ITM-651c3608f53422dc",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-f8a096fce962848d",
+          "semantic_item_id": "ITM-77729f5c0eda0b00",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-a1c5b266cfac27c5",
+          "semantic_item_id": "ITM-3514e138e2173bef",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-0150259f3bdcad8d",
+          "semantic_item_id": "ITM-7785e6ab22279ab0",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-a721b15aa5991525",
+          "semantic_item_id": "ITM-1a915c4c0ceb6cae",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-df314a71ee8e8460",
+          "semantic_item_id": "ITM-75e56f8a7119d194",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-44252d8869d8fe01",
+          "semantic_item_id": "ITM-a7a98fe813b3b823",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-965f4bf804622199",
+          "semantic_item_id": "ITM-239888d3ff626af1",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-81dc3816412d7d83",
+          "semantic_item_id": "ITM-180311352b573b3d",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-f48aa22c64cf8fa5",
+          "semantic_item_id": "ITM-519c62da453a88d2",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-6bcd12edf8adfb3b",
+          "semantic_item_id": "ITM-8233fdd544b8eef5",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-0bb06b4539a748d6",
+          "semantic_item_id": "ITM-f8be9a1c4780f18f",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-000df8b927e657d0",
+          "semantic_item_id": "ITM-56229d749286e3e6",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-4d5840d93a2bb93e",
+          "semantic_item_id": "ITM-e568899636fc69e1",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-62cfd78ab1e7196d",
+          "semantic_item_id": "ITM-0ced347e819c4ebd",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-6f48ee5b26df8af2",
+          "semantic_item_id": "ITM-198bd3be0d181e45",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-5f82cde25f47c5b9",
+          "semantic_item_id": "ITM-fbb8614b7bf64595",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-2fb426a859bda383",
+          "semantic_item_id": "ITM-e47273c3461c4f8d",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-81ea16d0b66e5bf1",
+          "semantic_item_id": "ITM-d0925137718bb876",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-0ee11daeb243dc8e",
+          "semantic_item_id": "ITM-76de27ea1b7b62c3",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-8c7eb735c9b15e84",
+          "semantic_item_id": "ITM-aa7da8ac1ff103bd",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-274f0d351a4c6e16",
+          "semantic_item_id": "ITM-63c10893bcbfa76d",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-4c37c35068db6d69",
+          "semantic_item_id": "ITM-e525d33a48d1bc35",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-a520e3954e86572c",
+          "semantic_item_id": "ITM-d07dc52a436564d1",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-8ef7822afbc34873",
+          "semantic_item_id": "ITM-90687f2be51831a3",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-840591ec499293a7",
+          "semantic_item_id": "ITM-21c42e9e90a5e078",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-89a57d1f584f32a5",
+          "semantic_item_id": "ITM-c834bb4c162d285e",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-cb87e846d8973629",
+          "semantic_item_id": "ITM-7aa8541d7a15b707",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-c9dd34706d04758c",
+          "semantic_item_id": "ITM-e9e4479c438df366",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-0072185ea1265b5e",
+          "semantic_item_id": "ITM-9895b1af54296fba",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-7029bda2df4191e3",
+          "semantic_item_id": "ITM-531b3cf2aec39675",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-fe9f7a5d048016f1",
+          "semantic_item_id": "ITM-14b52a6e3b53a731",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-1641fac2b305869c",
+          "semantic_item_id": "ITM-9bababf6c2d0de2e",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-2c13d53fc84778b0",
+          "semantic_item_id": "ITM-c8ab2d64df08e887",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-c0201b0e19e0cfa2",
+          "semantic_item_id": "ITM-05077b3d3d6db8e7",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-ee80cca18862c938",
+          "semantic_item_id": "ITM-fdea8cba3cca8022",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-85b94ac48ec0001d",
+          "semantic_item_id": "ITM-a30b7785f695b006",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-819f350aa760fdb8",
+          "semantic_item_id": "ITM-f4346f5764e05030",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-eaa05c5e1a18c1dc",
+          "semantic_item_id": "ITM-ee143bae47bcd01e",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-c5a57037b61ba0c2",
+          "semantic_item_id": "ITM-b84f3cf086514296",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-5a73f38b0a56a9cf",
+          "semantic_item_id": "ITM-b29c666b8e55f58f",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-29e4cbf33b17ea8f",
+          "semantic_item_id": "ITM-57eed20e30ab23f5",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-f2d5eded6a1e308f",
+          "semantic_item_id": "ITM-a99b0be153c06676",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-8db90ca5657cecd6",
+          "semantic_item_id": "ITM-abdc7d5447e9abd0",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-e476b80212de217a",
+          "semantic_item_id": "ITM-ad765269a3f1efbc",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-7922ff1af5f16814",
+          "semantic_item_id": "ITM-b26ccfabb682b256",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-bf46784c1c4f61f4",
+          "semantic_item_id": "ITM-62124ce97d876a21",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-f35a0a3382cc21f4",
+          "semantic_item_id": "ITM-78b74761f4bfaeb6",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-74f72b41c36c07f0",
+          "semantic_item_id": "ITM-590f4c93cc2b57e0",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-a5d036f57d0ac863",
+          "semantic_item_id": "ITM-5d8e6a355f335c7f",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-9c9af2834716f59e",
+          "semantic_item_id": "ITM-ea6f151e103db07e",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-9edb76e76dfe2d20",
+          "semantic_item_id": "ITM-24dfeb29a2b6c937",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-4bd74bc2b58b288c",
+          "semantic_item_id": "ITM-74e1cdfc7cc84420",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-16347c9d498511dc",
+          "semantic_item_id": "ITM-7f599b02571c8d55",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-756e242bf702c57f",
+          "semantic_item_id": "ITM-b576c9c4e1bd03c0",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-46d3db64302a7e3b",
+          "semantic_item_id": "ITM-96dedf5d043706b0",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-ef6fe446dd388ffb",
+          "semantic_item_id": "ITM-7f5112bf5abace1e",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-e1b59f43ddb17878",
+          "semantic_item_id": "ITM-763e09aacc31753f",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-076f18e5dd8c814f",
+          "semantic_item_id": "ITM-43168622f537402e",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-133112bb50b9ac85",
+          "semantic_item_id": "ITM-dd06ec521bb9c156",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-42c16bf7f4ec9d4e",
+          "semantic_item_id": "ITM-d1514d5afd9860e7",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-b9c8353ea6e32566",
+          "semantic_item_id": "ITM-1dfe62d47cb42d51",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-387e1c4c96b4d4a6",
+          "semantic_item_id": "ITM-db472b0b2385acea",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-78affacd86ec24de",
+          "semantic_item_id": "ITM-281e88140c7777ec",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-34d5a46a2a9622c7",
+          "semantic_item_id": "ITM-b0c07c50704a1a3c",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-4fad6fd72a279c64",
+          "semantic_item_id": "ITM-e1f67d0296ee42b5",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-2f724e4a3b92a569",
+          "semantic_item_id": "ITM-198c13b06cbaae60",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-e8461c5cc4023181",
+          "semantic_item_id": "ITM-84c14b8ab5b3d535",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-6bec9772e57050ea",
+          "semantic_item_id": "ITM-20b5739e48ba49d1",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-699d6d055a5ae0c3",
+          "semantic_item_id": "ITM-379a319ffc59ad79",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-d071f1b27560d3f8",
+          "semantic_item_id": "ITM-fe6a86aef6fa84e4",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-77f1bc4369dacc46",
+          "semantic_item_id": "ITM-760f5b22c0664bc0",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-64976c3590a0c68d",
+          "semantic_item_id": "ITM-beff8feb4407ebab",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-cc88099ebfa17eec",
+          "semantic_item_id": "ITM-b4faf5e03fe35572",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-426a091e36ae3de4",
+          "semantic_item_id": "ITM-4ba03433dfbaa065",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-d38d1f2ac5b0e4a0",
+          "semantic_item_id": "ITM-c501036a19953fb0",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-e0e41d4067772cfb",
+          "semantic_item_id": "ITM-e740c08bb2e60585",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-54e30958a8c782da",
+          "semantic_item_id": "ITM-e89fe9d6c8d46cd3",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-560f527a333a9a6b",
+          "semantic_item_id": "ITM-73fe3fedba0a1b14",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-42c5245dd1a12f79",
+          "semantic_item_id": "ITM-7de0a86af3d705d2",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-994c5d59359b8ba1",
+          "semantic_item_id": "ITM-aedd72951c891023",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-5dc85ade05a22cbd",
+          "semantic_item_id": "ITM-bb8a18c648d0c571",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-15bfd7c2a424d7b5",
+          "semantic_item_id": "ITM-b3c72fb1afcbd616",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-4f9e440776f375c0",
+          "semantic_item_id": "ITM-d317cf317675ec9f",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-7f0e20458621bce9",
+          "semantic_item_id": "ITM-1bdd3f66727a769e",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-d850376df363b673",
+          "semantic_item_id": "ITM-2bdeaa656753f907",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-7a944ab10129ee5f",
+          "semantic_item_id": "ITM-7f2200c4704b3e7d",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-59f1b3f1e245596e",
+          "semantic_item_id": "ITM-5c91e482ae6fd4bd",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-860b5dcd00bc4fda",
+          "semantic_item_id": "ITM-cddb67340977cefc",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-7aa8df4b2bd50ee0",
+          "semantic_item_id": "ITM-16ad722ecb97c5e8",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-f85f3adc766185a9",
+          "semantic_item_id": "ITM-62ffcfeb593dd96f",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-83a81547d5b7fc3c",
+          "semantic_item_id": "ITM-01a03641be25fe12",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-d344828d9287c33c",
+          "semantic_item_id": "ITM-b72a1c7df5e63020",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-7a5e423efd630997",
+          "semantic_item_id": "ITM-35689827ba0d3f75",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-1b1b4f66f3b799c4",
+          "semantic_item_id": "ITM-0212ede61c61efb6",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-74a4904355d6fc49",
+          "semantic_item_id": "ITM-63e2c44ecd2bec41",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-2741e615a10cc503",
+          "semantic_item_id": "ITM-051944754b0c2ef5",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-ab85eb351082701d",
+          "semantic_item_id": "ITM-0508a261e40f50ea",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-5ee6fb328b60458f",
+          "semantic_item_id": "ITM-ec53d2aee4de7808",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-80fd00827ed9038c",
+          "semantic_item_id": "ITM-40ce233749bcb5f7",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-5f56977a29194acd",
+          "semantic_item_id": "ITM-f9960ac07a4b5449",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-03edc04f50520248",
+          "semantic_item_id": "ITM-ed160dfc0c2233d0",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-f865bf71dd632064",
+          "semantic_item_id": "ITM-d605f1ea1ef900c2",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-bba6aaf46acbefd6",
+          "semantic_item_id": "ITM-8f8dbd6b04fbe81a",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-2faa3bffc093c78e",
+          "semantic_item_id": "ITM-413133c2a0b7b009",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-32f629fa5186dab0",
+          "semantic_item_id": "ITM-32f4e62e5aab9fa0",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-f8a68293d1ee5030",
+          "semantic_item_id": "ITM-952b1186dc19563a",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-4cb36f461277ab3a",
+          "semantic_item_id": "ITM-2c120f0f3b2c796f",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-20483f54792e2176",
+          "semantic_item_id": "ITM-99437959c0809a28",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-242321b96a47f76b",
+          "semantic_item_id": "ITM-2e406c293b1fedb3",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-dae197606d557b84",
+          "semantic_item_id": "ITM-a8bc4861f2409295",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-6d763cb6d5ae0d19",
+          "semantic_item_id": "ITM-fcf71ef94765febb",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-ca38f7eefb27ca73",
+          "semantic_item_id": "ITM-0faa08c236220c1c",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-284b0687119e351e",
+          "semantic_item_id": "ITM-ac9e2d8d68508ec1",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-b933c932f39b8b75",
+          "semantic_item_id": "ITM-c7b6eed629d357c5",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-1936059f01bef80f",
+          "semantic_item_id": "ITM-65f7eaa67dfdc459",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-a53f2a69d7b42267",
+          "semantic_item_id": "ITM-261f5d124fb519ba",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-8221e5228cf027de",
+          "semantic_item_id": "ITM-44330f4f08142ccd",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-f2dedf04e58b662c",
+          "semantic_item_id": "ITM-753e72b98b86af81",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-0305a47e86b7d22e",
+          "semantic_item_id": "ITM-f2e0eaa4a725032d",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-c0b953f242b02d07",
+          "semantic_item_id": "ITM-90434db056b02aec",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-62e5ba384b5f691f",
+          "semantic_item_id": "ITM-ee74a6cfa8811ab2",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-8821b4648a92353e",
+          "semantic_item_id": "ITM-d440be8f670bc3b1",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-e445bc15b0a2d3a4",
+          "semantic_item_id": "ITM-ce04d3b4a3297f1f",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-637ccda1ed9cf04b",
+          "semantic_item_id": "ITM-f519a5b8d0fa8e96",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-a52288f00d051c46",
+          "semantic_item_id": "ITM-323bcdc78c7bd8fe",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-b04368e081c875af",
+          "semantic_item_id": "ITM-ecd2b9ac9dc76573",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-2193233f77c9528b",
+          "semantic_item_id": "ITM-6c9dc9936a6e99ec",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-0897e84984d5a73a",
+          "semantic_item_id": "ITM-f5633f36944da5fd",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-6a797262935b0dbc",
+          "semantic_item_id": "ITM-60c85fb9eda36ece",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-ab059e25f66c8459",
+          "semantic_item_id": "ITM-65777bfcca920a04",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-a743d52efbcd60e2",
+          "semantic_item_id": "ITM-e0feea008e7bebe0",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-578e52109ce2c585",
+          "semantic_item_id": "ITM-360d76ef0d096ff2",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-c6b3b712515940db",
+          "semantic_item_id": "ITM-f9af489c7083efd4",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-34094651168b7662",
+          "semantic_item_id": "ITM-489a2eb6a72740b0",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-d108f58fbeffff34",
+          "semantic_item_id": "ITM-89c752fb63c2094c",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-dd8bab9c1d7d6ad9",
+          "semantic_item_id": "ITM-0db4a219eacf0964",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-24ca866e2aa0cae0",
+          "semantic_item_id": "ITM-615556aaa530e11e",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-aeecc0c202a2de16",
+          "semantic_item_id": "ITM-01ea9ce1cc5108b1",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-ee36f7aa2e451c81",
+          "semantic_item_id": "ITM-4c3bbada17c9c518",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-640e495b03979edd",
+          "semantic_item_id": "ITM-5eb27b8f5438e4b7",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-e4b993a990591a41",
+          "semantic_item_id": "ITM-fe182362a7fdb190",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-953c7769225874f0",
+          "semantic_item_id": "ITM-dde4493a95977075",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-9766bba9205d714b",
+          "semantic_item_id": "ITM-9c144a0f1d07fa53",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-d90224b9671959f7",
+          "semantic_item_id": "ITM-4f9489b0a8daa09f",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-413fde9c6f0b7fa6",
+          "semantic_item_id": "ITM-050e53b0ec572e79",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-9af409a3f8251e62",
+          "semantic_item_id": "ITM-f14c321b0e7f1fd3",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-74ebfaa2bf129995",
+          "semantic_item_id": "ITM-7d237a2405a9b31b",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-662cd8760c519f77",
+          "semantic_item_id": "ITM-b4b688554501107c",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-db584c7a0f709d61",
+          "semantic_item_id": "ITM-7d110f92b3c759e8",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-3050d62d6084c01d",
+          "semantic_item_id": "ITM-65c6dac65fcc4221",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-593ebc526bd8f12e",
+          "semantic_item_id": "ITM-ef609fb22f1ca3c5",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-a18398714ebabd1b",
+          "semantic_item_id": "ITM-dc2250f229551fcc",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-ed8228056cac64c2",
+          "semantic_item_id": "ITM-f821b6b1e9d52067",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-5dd9df42d1b2bf56",
+          "semantic_item_id": "ITM-347b31278d0dbedd",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-ccaa848c37adac1c",
+          "semantic_item_id": "ITM-02a987ac15aa85b3",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-f4dc665829e28a55",
+          "semantic_item_id": "ITM-a1964925251c75af",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-830e2b5d9c14123a",
+          "semantic_item_id": "ITM-5f8cbddd358ddbbc",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-b0016229ae035bc8",
+          "semantic_item_id": "ITM-fd86f68b505ddd1d",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-1811893a4d77fc12",
+          "semantic_item_id": "ITM-70eb4175164b21d8",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-08a79a65ca47f0b4",
+          "semantic_item_id": "ITM-5a9566d526bc76e2",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-6046da73087cda98",
+          "semantic_item_id": "ITM-2125912bf2c3f50a",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-ecd6fafb27eb08d2",
+          "semantic_item_id": "ITM-c2152b1ac9d65860",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-3b207779d33bf795",
+          "semantic_item_id": "ITM-4ed2cbeaa76dace5",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-a2c2b94ec5d1e70c",
+          "semantic_item_id": "ITM-a857b18c75f456d3",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-7850880ad1b43912",
+          "semantic_item_id": "ITM-657d8ba373f4168e",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-3171fd9886ff39fd",
+          "semantic_item_id": "ITM-dc271a0fb4ef4933",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-27eb6d381d9e2525",
+          "semantic_item_id": "ITM-5f0e1169531d5254",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-9102f1cd1f95bbea",
+          "semantic_item_id": "ITM-59e8f7bcbc5bd77a",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-ce572ffe70cbcbf6",
+          "semantic_item_id": "ITM-9676644a7942801f",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-beadf7b4e25f0de1",
+          "semantic_item_id": "ITM-9b5437cdb8b3fa9f",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-5e7a34ad60ff55e3",
+          "semantic_item_id": "ITM-a4d88f42d6c3b160",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-eeda15b509547fe9",
+          "semantic_item_id": "ITM-bb2c2c6653412050",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-9a56f61912546e38",
+          "semantic_item_id": "ITM-cc9f67fc225b89bb",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-fc01bbb23b393c50",
+          "semantic_item_id": "ITM-76846e950b689f36",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-0b2b1123ca65b903",
+          "semantic_item_id": "ITM-d610844d053eb27b",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-ae97a8f1213115c8",
+          "semantic_item_id": "ITM-c989227abe9aa132",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-6fd207425c036e46",
+          "semantic_item_id": "ITM-2463f5d77ef18260",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-d4c1dee22fca9a0f",
+          "semantic_item_id": "ITM-d519ab920590df9d",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-48195c9fa8e72522",
+          "semantic_item_id": "ITM-f683a4655c8cbe22",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-ccd5c7168888d54d",
+          "semantic_item_id": "ITM-fe33d8564bd5d369",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-ccdf1efa21c501bb",
+          "semantic_item_id": "ITM-7896ebf19afb385d",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-a7ea70a6d42a2690",
+          "semantic_item_id": "ITM-d541c68a1fd89965",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-467f17eebf31acef",
+          "semantic_item_id": "ITM-cbfb1c2f4f8b45eb",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-92a0d0f9c5405a91",
+          "semantic_item_id": "ITM-ebc47138e31a3e72",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-34020bb466419bd3",
+          "semantic_item_id": "ITM-3d4ba5bcdff38bfa",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-0af178579fa0d15e",
+          "semantic_item_id": "ITM-2fe6fdf7a69124b2",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-dbbb6554a5e81151",
+          "semantic_item_id": "ITM-5de5568d2eeda0b9",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-74343ef6972005d8",
+          "semantic_item_id": "ITM-a1f60c3bce932398",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-675ee0f394f0a712",
+          "semantic_item_id": "ITM-76e5baecad53766c",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-facce4c1afb9adbd",
+          "semantic_item_id": "ITM-faaaa59029f67249",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-384bf88987e4d22f",
+          "semantic_item_id": "ITM-1501fb063539c9dc",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-4c5bf0ed16f918b4",
+          "semantic_item_id": "ITM-02113a02f41046ff",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-f9817e07d13f3aa9",
+          "semantic_item_id": "ITM-6b91f98045a5ede2",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-f6e27264186cc717",
+          "semantic_item_id": "ITM-af6e8b570b84c341",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-072216f2ca08310a",
+          "semantic_item_id": "ITM-b3bb01f0bd5658ca",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-a31ddf5e1dec881c",
+          "semantic_item_id": "ITM-87f2565984762955",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-163c3521ca66717f",
+          "semantic_item_id": "ITM-af147077e52d3c57",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-b8a62b3739b918ac",
+          "semantic_item_id": "ITM-5f734471e852bc83",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-09d789ab2f40f3f1",
+          "semantic_item_id": "ITM-21e0f67781e25745",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-f20e7145ff605c0e",
+          "semantic_item_id": "ITM-7a7def672a37a6f9",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-b78e522aefbc47a3",
+          "semantic_item_id": "ITM-1e43c8fdaba9b3d9",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-896afa8250052972",
+          "semantic_item_id": "ITM-3fed0ebfffa887c1",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-e2899fc7571f11d1",
+          "semantic_item_id": "ITM-39914faa29072125",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-d97393d113321327",
+          "semantic_item_id": "ITM-69a714afa522b832",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-40029ca9673aea01",
+          "semantic_item_id": "ITM-b44c2d9ebae961b3",
+          "attention_duplicate": false
+        },
+        {
+          "presentation_id": "PRS-8edc44c10c0ef0fd",
+          "semantic_item_id": "ITM-20b5739e48ba49d1",
+          "attention_duplicate": true
+        },
+        {
+          "presentation_id": "PRS-5335cd7005794fda",
+          "semantic_item_id": "ITM-59e8f7bcbc5bd77a",
+          "attention_duplicate": true
+        },
+        {
+          "presentation_id": "PRS-42bcfbe9653967d9",
+          "semantic_item_id": "ITM-fb4f4772abf11493",
+          "attention_duplicate": true
+        },
+        {
+          "presentation_id": "PRS-bae4823d6d312e22",
+          "semantic_item_id": "ITM-fdea8cba3cca8022",
+          "attention_duplicate": true
+        },
+        {
+          "presentation_id": "PRS-fc549708453b0f17",
+          "semantic_item_id": "ITM-2fe6fdf7a69124b2",
+          "attention_duplicate": true
+        },
+        {
+          "presentation_id": "PRS-55fad59f7aa76b11",
+          "semantic_item_id": "ITM-a93211c8d3753ed9",
+          "attention_duplicate": true
+        },
+        {
+          "presentation_id": "PRS-5744b2752479e62a",
+          "semantic_item_id": "ITM-b44c2d9ebae961b3",
+          "attention_duplicate": true
+        },
+        {
+          "presentation_id": "PRS-ad2d7a618335d969",
+          "semantic_item_id": "ITM-9c144a0f1d07fa53",
+          "attention_duplicate": true
+        }
+      ]
+    }
+  ]
+}

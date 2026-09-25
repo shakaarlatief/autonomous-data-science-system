@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "protocol_id": "AO10-DRP03-R2-V03",
+  "birth_key_author_packets": [
+    {
+      "path": "experiments/ao10_drp03_obligation_units_r2_v03/packets/key_author_birth_development.json",
+      "sha256": "0bb1ba499e935b3bdfe7613c1e0c2e50d827072c6b116d672104334c5024af6e",
+      "bytes": 221599,
+      "events": 2
+    },
+    {
+      "path": "experiments/ao10_drp03_obligation_units_r2_v03/packets/key_author_birth_heldout.json",
+      "sha256": "a81db255411cbda5729eded44f4dc6872fd3d460b3be3ede7f845ac445b01116",
+      "bytes": 1168175,
+      "events": 11
+    }
+  ],
+  "legacy_key_author_inputs": [
+    "packets/legacy.json",
+    "packets/legacy_provenance.json",
+    "legacy_corpus_manifest.json"
+  ],
+  "state_key_author_inputs": [
+    "packets/state.json",
+    "packets/state_provenance.json",
+    "public_fixtures/state_rules.json"
+  ],
+  "other_key_output_must_remain_unseen": true,
+  "hidden_semantic_key_created": false
+}

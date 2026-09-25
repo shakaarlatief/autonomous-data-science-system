@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "protocol_id": "AO10-DRP03-R2-V03",
+  "public_freeze_delivery_order": [
+    "Freeze protocol, splitter, generator, public fixtures, schemas and all packet bytes.",
+    "Construct Key A privately and publish only its canonical-byte commitment.",
+    "Construct Key B privately and publish only its canonical-byte commitment.",
+    "Run construct-validity comparison without exposing either full key to decision reviewers.",
+    "Resolve material key disagreements by owner adjudication or return CONSTRUCT_UNDERDETERMINED.",
+    "Commit final-key digest only.",
+    "For each fresh blind reviewer, deliver BIRTH classification batches sequentially; freeze each batch annotation before the next.",
+    "After all BIRTH classification batches freeze, deliver the unique BIRTH grouping catalog.",
+    "Deliver LEGACY classification batches sequentially under the same rule, then the unique LEGACY grouping catalog.",
+    "Deliver STATE packet.",
+    "Freeze both complete reviewer annotations.",
+    "Only then publish key bytes and execute scoring."
+  ],
+  "reviewer_files": {
+    "common": [
+      "REVIEWER_INSTRUCTIONS.md",
+      "reviewer_annotation_schema.json",
+      "public_fixtures/state_rules.json"
+    ],
+    "birth_classification_development": "packets/birth_development_classification_sessions.json",
+    "birth_classification_heldout": "packets/birth_heldout_classification_sessions.json",
+    "birth_grouping_development": "packets/birth_development.json",
+    "birth_grouping_heldout": "packets/birth_heldout.json",
+    "legacy_classification": "packets/legacy_classification_sessions.json",
+    "legacy_grouping": "packets/legacy.json",
+    "state": "packets/state.json"
+  },
+  "not_reviewer_deliverable": [
+    "packets/*provenance.json",
+    "legacy_corpus_manifest.json",
+    "docs/research/project_knowledge_activation_orchestration/ao10/DRP03_R2_EVENT_UNIVERSE_CANDIDATE_V03.json",
+    "future hidden key material"
+  ],
+  "hidden_semantic_labels_created": false
+}

@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "protocol_id": "AO10-DRP03-R2-V03",
+  "state_enum": [
+    "UNLINKED",
+    "LINKED",
+    "EVIDENCED",
+    "QUALIFIED",
+    "OPERATIONAL",
+    "DEFERRED",
+    "REVIEW_REQUIRED"
+  ],
+  "fact_validity": {
+    "common_required": [
+      "obligation_binding",
+      "temporal_or_revision_binding",
+      "provenance"
+    ],
+    "REALIZES": [
+      "realizer_identity",
+      "realization_boundary"
+    ],
+    "EVIDENCES": [
+      "evidence_identity",
+      "evidence_subject_revision"
+    ],
+    "QUALIFIES": [
+      "qualification_identity",
+      "qualification_subject_revision"
+    ],
+    "ACTIVATES": [
+      "activation_identity",
+      "activation_subject_revision"
+    ],
+    "DEFERS": [
+      "governing_authority",
+      "blocking_reason",
+      "reactivation_condition",
+      "future_evidence_path",
+      "scope_resolution",
+      "temporal_or_revision_binding",
+      "provenance"
+    ]
+  },
+  "invariants": [
+    "Generic program holds are not governed deferrals.",
+    "A scoped-selector deferral is invalid unless the obligation set resolved at deferral time is recorded.",
+    "A deferral whose reactivation condition has already occurred is not a current valid deferral.",
+    "Evidence without a valid REALIZES relation is orphan evidence and requires review.",
+    "Contradictory current facts require review.",
+    "Stale or wrong-subject/wrong-revision facts require review.",
+    "An owner waiver may permit advancement but does not change realization state.",
+    "Governing lifecycle such as supersession is separate from realization lifecycle.",
+    "Two independently sufficient realizers with independently remediable failure semantics on one unit indicate a grouping conflict requiring review."
+  ],
+  "derivation_order": [
+    {
+      "when": "invalid_stale_or_contradictory_required_facts",
+      "state": "REVIEW_REQUIRED"
+    },
+    {
+      "when": "valid_governed_deferral_active",
+      "state": "DEFERRED"
+    },
+    {
+      "when": "no_valid_realizes_and_no_valid_deferral",
+      "state": "UNLINKED"
+    },
+    {
+      "when": "valid_realizes_and_required_evidence_absent",
+      "state": "LINKED"
+    },
+    {
+      "when": "valid_realizes_and_evidence_present_and_qualification_incomplete",
+      "state": "EVIDENCED"
+    },
+    {
+      "when": "qualification_complete_and_required_activation_or_effect_absent",
+      "state": "QUALIFIED"
+    },
+    {
+      "when": "valid_realization_evidence_qualification_and_activation",
+      "state": "OPERATIONAL"
+    }
+  ],
+  "deferral_precedence": "A current valid governed deferral precedes realization progression state for the deferred obligation. Invalid/stale deferral facts do not.",
+  "renewal_rule": "For a continuous governed renewal chain, the latest valid deferral record governs if predecessor/successor continuity is explicit and no reactivation condition has already fired."
+}

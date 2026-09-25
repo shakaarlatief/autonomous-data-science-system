@@ -1,0 +1,347 @@
+{
+  "schema_version": 1,
+  "protocol_id": "AO10-DRP03-R2-V03",
+  "component": "BIRTH",
+  "records": [
+    {
+      "packet_event_id": "EVP-dca0fcb4fb4d",
+      "historical_event_id": "EV-1435b027",
+      "acceptance_commit": "1435b02729edaf416c8196f224e1cf49c1dd715b",
+      "pre_acceptance_snapshot": "b908fe0e0230383feedc0f97df17e615daf0ea63",
+      "proposal_source_cluster_id": "CL-d5bcbc1b837d",
+      "birth_scoring_eligibility": "PRIMARY_BIRTH_ELIGIBLE",
+      "split": "HELD_OUT",
+      "decision_input_provenance": {
+        "source_type": "HISTORICAL_OWNER_DECISION_TOKEN_AGENT_TRANSCRIPTION",
+        "acceptance_commit": "1435b02729edaf416c8196f224e1cf49c1dd715b",
+        "reviewer_visible": "MINIMAL_DECISION_TOKEN_ONLY",
+        "verbatim_owner_authorship_proven": false,
+        "note": "Historical decision token is preserved by project records but is not a platform-exported verbatim owner message."
+      },
+      "sources": [
+        {
+          "source_id": "SRC-16c40462495c",
+          "source_path": "docs/research/234_ao9_p6_reconciliation_and_owner_decision_boundary.md",
+          "revision": "b908fe0e0230383feedc0f97df17e615daf0ea63",
+          "blob_sha256": "7940686bd48f6f58a1521cbab61a66682357a8b1dff8e0945e8ff49393e19ec7",
+          "item_count": 124
+        }
+      ]
+    },
+    {
+      "packet_event_id": "EVP-3ad3b2e576e0",
+      "historical_event_id": "EV-02847e6a",
+      "acceptance_commit": "02847e6a608d0c0fa2bc3cb8a2a3d93fef981df5",
+      "pre_acceptance_snapshot": "1435b02729edaf416c8196f224e1cf49c1dd715b",
+      "proposal_source_cluster_id": "CL-d5bcbc1b837d",
+      "birth_scoring_eligibility": "PRIMARY_BIRTH_ELIGIBLE",
+      "split": "HELD_OUT",
+      "decision_input_provenance": {
+        "source_type": "HISTORICAL_OWNER_DECISION_TOKEN_AGENT_TRANSCRIPTION",
+        "acceptance_commit": "02847e6a608d0c0fa2bc3cb8a2a3d93fef981df5",
+        "reviewer_visible": "MINIMAL_DECISION_TOKEN_ONLY",
+        "verbatim_owner_authorship_proven": false,
+        "note": "Historical decision token is preserved by project records but is not a platform-exported verbatim owner message."
+      },
+      "sources": [
+        {
+          "source_id": "SRC-ef16d3b5e432",
+          "source_path": "docs/research/234_ao9_p6_reconciliation_and_owner_decision_boundary.md",
+          "revision": "1435b02729edaf416c8196f224e1cf49c1dd715b",
+          "blob_sha256": "7940686bd48f6f58a1521cbab61a66682357a8b1dff8e0945e8ff49393e19ec7",
+          "item_count": 124
+        }
+      ]
+    },
+    {
+      "packet_event_id": "EVP-838a4c21407b",
+      "historical_event_id": "EV-6c1a51c4",
+      "acceptance_commit": "6c1a51c490c863c34486a1bcb186939675b25071",
+      "pre_acceptance_snapshot": "02847e6a608d0c0fa2bc3cb8a2a3d93fef981df5",
+      "proposal_source_cluster_id": "CL-d5bcbc1b837d",
+      "birth_scoring_eligibility": "PRIMARY_BIRTH_ELIGIBLE",
+      "split": "HELD_OUT",
+      "decision_input_provenance": {
+        "source_type": "HISTORICAL_OWNER_DECISION_TOKEN_AGENT_TRANSCRIPTION",
+        "acceptance_commit": "6c1a51c490c863c34486a1bcb186939675b25071",
+        "reviewer_visible": "MINIMAL_DECISION_TOKEN_ONLY",
+        "verbatim_owner_authorship_proven": false,
+        "note": "Historical decision token is preserved by project records but is not a platform-exported verbatim owner message."
+      },
+      "sources": [
+        {
+          "source_id": "SRC-1e99853e138b",
+          "source_path": "docs/research/234_ao9_p6_reconciliation_and_owner_decision_boundary.md",
+          "revision": "02847e6a608d0c0fa2bc3cb8a2a3d93fef981df5",
+          "blob_sha256": "7940686bd48f6f58a1521cbab61a66682357a8b1dff8e0945e8ff49393e19ec7",
+          "item_count": 124
+        }
+      ]
+    },
+    {
+      "packet_event_id": "EVP-ca475c9a5a9d",
+      "historical_event_id": "EV-33af3544",
+      "acceptance_commit": "33af35442df7350d9571e4f59108c393759ad4b3",
+      "pre_acceptance_snapshot": "a2341810c0e8a91d3e71c2c26ad2624d1aaa87a2",
+      "proposal_source_cluster_id": "CL-e3bb466eefe8",
+      "birth_scoring_eligibility": "PRIMARY_BIRTH_ELIGIBLE",
+      "split": "DEVELOPMENT",
+      "decision_input_provenance": {
+        "source_type": "HISTORICAL_OWNER_DECISION_TOKEN_AGENT_TRANSCRIPTION",
+        "acceptance_commit": "33af35442df7350d9571e4f59108c393759ad4b3",
+        "reviewer_visible": "MINIMAL_DECISION_TOKEN_ONLY",
+        "verbatim_owner_authorship_proven": false,
+        "note": "Historical decision token is preserved by project records but is not a platform-exported verbatim owner message."
+      },
+      "sources": [
+        {
+          "source_id": "SRC-a28c251a031c",
+          "source_path": "docs/research/245_whole_repository_r5_root_role_derivation_and_recommended_target.md",
+          "revision": "a2341810c0e8a91d3e71c2c26ad2624d1aaa87a2",
+          "blob_sha256": "1a836f1ad27fca6106714046938504c7aa189c3abd2cd32fd7a9e87dd387eaa3",
+          "item_count": 199
+        }
+      ]
+    },
+    {
+      "packet_event_id": "EVP-ba08dc62e616",
+      "historical_event_id": "EV-8c85be87",
+      "acceptance_commit": "8c85be872f11b9a09b2a3f2cef8b52add2072a56",
+      "pre_acceptance_snapshot": "3aebde8aca9e0daf69ddcf5cdac073a7eea13eb8",
+      "proposal_source_cluster_id": "CL-250bc98b54b0",
+      "birth_scoring_eligibility": "PRIMARY_BIRTH_ELIGIBLE",
+      "split": "HELD_OUT",
+      "decision_input_provenance": {
+        "source_type": "HISTORICAL_OWNER_DECISION_TOKEN_AGENT_TRANSCRIPTION",
+        "acceptance_commit": "8c85be872f11b9a09b2a3f2cef8b52add2072a56",
+        "reviewer_visible": "MINIMAL_DECISION_TOKEN_ONLY",
+        "verbatim_owner_authorship_proven": false,
+        "note": "Historical decision token is preserved by project records but is not a platform-exported verbatim owner message."
+      },
+      "sources": [
+        {
+          "source_id": "SRC-4746b4fac645",
+          "source_path": "docs/research/247_g_dual_adversarial_reconciliation_and_proposed_level1_amendment.md",
+          "revision": "3aebde8aca9e0daf69ddcf5cdac073a7eea13eb8",
+          "blob_sha256": "3e6332541691159e354dc11d8fd8633ec724d0ca88d58a8cc28baffe53d230e6",
+          "item_count": 63
+        }
+      ]
+    },
+    {
+      "packet_event_id": "EVP-362b09ec98e9",
+      "historical_event_id": "EV-39a5f8f6",
+      "acceptance_commit": "39a5f8f66d78a1c355c3300d110d24121f796deb",
+      "pre_acceptance_snapshot": "26de53ff02df8b9a32ad195d211f634f0a9be500",
+      "proposal_source_cluster_id": "CL-6b5fb8a6586f",
+      "birth_scoring_eligibility": "PRIMARY_BIRTH_ELIGIBLE",
+      "split": "DEVELOPMENT",
+      "decision_input_provenance": {
+        "source_type": "HISTORICAL_OWNER_DECISION_TOKEN_AGENT_TRANSCRIPTION",
+        "acceptance_commit": "39a5f8f66d78a1c355c3300d110d24121f796deb",
+        "reviewer_visible": "MINIMAL_DECISION_TOKEN_ONLY",
+        "verbatim_owner_authorship_proven": false,
+        "note": "Historical decision token is preserved by project records but is not a platform-exported verbatim owner message."
+      },
+      "sources": [
+        {
+          "source_id": "SRC-a0f51299673d",
+          "source_path": "docs/research/250_r6a_responsibility_coupling_bounded_context_and_workspace_synthesis.md",
+          "revision": "26de53ff02df8b9a32ad195d211f634f0a9be500",
+          "blob_sha256": "a6c96fe8aed10380c3e52a320d620fa3e4b6fabe7c8eb11161d7e84f4a9d629f",
+          "item_count": 256
+        }
+      ]
+    },
+    {
+      "packet_event_id": "EVP-d8bfe7b48f85",
+      "historical_event_id": "EV-1d91d0db",
+      "acceptance_commit": "1d91d0dbed289cad7cc0ce06a4268a685910ff87",
+      "pre_acceptance_snapshot": "66996189ed772df0cc32038fdb63d232e05bfde5",
+      "proposal_source_cluster_id": "CL-305658705fc9",
+      "birth_scoring_eligibility": "PRIMARY_BIRTH_ELIGIBLE",
+      "split": "HELD_OUT",
+      "decision_input_provenance": {
+        "source_type": "HISTORICAL_OWNER_DECISION_TOKEN_AGENT_TRANSCRIPTION",
+        "acceptance_commit": "1d91d0dbed289cad7cc0ce06a4268a685910ff87",
+        "reviewer_visible": "MINIMAL_DECISION_TOKEN_ONLY",
+        "verbatim_owner_authorship_proven": false,
+        "note": "Historical decision token is preserved by project records but is not a platform-exported verbatim owner message."
+      },
+      "sources": [
+        {
+          "source_id": "SRC-16f069681032",
+          "source_path": "docs/research/255_r218_vs_r7_comparative_reconciliation_and_amended_r7_target_candidate.md",
+          "revision": "66996189ed772df0cc32038fdb63d232e05bfde5",
+          "blob_sha256": "a06b99f310646428ddb2325114925ffaeec09f0ffda7dfb1abd427027a7129db",
+          "item_count": 65
+        }
+      ]
+    },
+    {
+      "packet_event_id": "EVP-1b53b3b00c6c",
+      "historical_event_id": "EV-18199147",
+      "acceptance_commit": "181991476bb7091f30235674acf6bfb2b065df59",
+      "pre_acceptance_snapshot": "7e9dafd675611632769a482cffca69661567a00e",
+      "proposal_source_cluster_id": "CL-8d7bc36a3a37",
+      "birth_scoring_eligibility": "PRIMARY_BIRTH_ELIGIBLE",
+      "split": "HELD_OUT",
+      "decision_input_provenance": {
+        "source_type": "HISTORICAL_OWNER_DECISION_TOKEN_AGENT_TRANSCRIPTION",
+        "acceptance_commit": "181991476bb7091f30235674acf6bfb2b065df59",
+        "reviewer_visible": "MINIMAL_DECISION_TOKEN_ONLY",
+        "verbatim_owner_authorship_proven": false,
+        "note": "Historical decision token is preserved by project records but is not a platform-exported verbatim owner message."
+      },
+      "sources": [
+        {
+          "source_id": "SRC-8ef5d2946017",
+          "source_path": "docs/research/258_mc0025_r8a_adversarial_reconciliation_and_amended_exact_target_candidate.md",
+          "revision": "7e9dafd675611632769a482cffca69661567a00e",
+          "blob_sha256": "af2339802e47fc198ae81e3036df67e152086f37d03b4f4303dec1acb0db1f33",
+          "item_count": 216
+        }
+      ]
+    },
+    {
+      "packet_event_id": "EVP-ffd3c3f9f874",
+      "historical_event_id": "EV-46bc4eeb",
+      "acceptance_commit": "46bc4eeb74998d70d212c26acc7c8b8d2f0e1c3f",
+      "pre_acceptance_snapshot": "902fcfd15450a7ba3fb9f3e3542ef33790cf9af9",
+      "proposal_source_cluster_id": "CL-2d7f700b1baa",
+      "birth_scoring_eligibility": "SECONDARY_STRESS_ONLY_PREDECISION_PACKAGE_INCOMPLETE",
+      "split": "HELD_OUT",
+      "decision_input_provenance": {
+        "source_type": "HISTORICAL_OWNER_DECISION_TOKEN_AGENT_TRANSCRIPTION",
+        "acceptance_commit": "46bc4eeb74998d70d212c26acc7c8b8d2f0e1c3f",
+        "reviewer_visible": "MINIMAL_DECISION_TOKEN_ONLY",
+        "verbatim_owner_authorship_proven": false,
+        "note": "Historical decision token is preserved by project records but is not a platform-exported verbatim owner message."
+      },
+      "sources": [
+        {
+          "source_id": "SRC-f84b46d4df2d",
+          "source_path": "docs/research/263_mc0026_final_reconciliation_and_preregistered_r8b_representation_probe.md",
+          "revision": "902fcfd15450a7ba3fb9f3e3542ef33790cf9af9",
+          "blob_sha256": "c725595e195f23b10d56174514bc0412254e59aa3c218975cb1512fa180316c7",
+          "item_count": 227
+        },
+        {
+          "source_id": "SRC-5b10a9255c66",
+          "source_path": "docs/model_collaboration/threads/MC-0027/messages/001_claude_p_r8b_01_result_audit.md",
+          "revision": "902fcfd15450a7ba3fb9f3e3542ef33790cf9af9",
+          "blob_sha256": "3108ab0106aa02e4328e3d5830de224282e130921181e6fbb4d0eea8ce41aade",
+          "item_count": 209
+        }
+      ]
+    },
+    {
+      "packet_event_id": "EVP-819a9953b12b",
+      "historical_event_id": "EV-6e627e53",
+      "acceptance_commit": "6e627e539e44b2619de7893cd64b47bc5cb3d422",
+      "pre_acceptance_snapshot": "aa0eda73685f6f91d107db99db2d1d7f7f560a1e",
+      "proposal_source_cluster_id": "CL-138914963583",
+      "birth_scoring_eligibility": "PRIMARY_BIRTH_ELIGIBLE",
+      "split": "HELD_OUT",
+      "decision_input_provenance": {
+        "source_type": "HISTORICAL_OWNER_DECISION_TOKEN_AGENT_TRANSCRIPTION",
+        "acceptance_commit": "6e627e539e44b2619de7893cd64b47bc5cb3d422",
+        "reviewer_visible": "MINIMAL_DECISION_TOKEN_ONLY",
+        "verbatim_owner_authorship_proven": false,
+        "note": "Historical decision token is preserved by project records but is not a platform-exported verbatim owner message."
+      },
+      "sources": [
+        {
+          "source_id": "SRC-cd6d5724ff66",
+          "source_path": "docs/research/266_mc0027_audit_reconciliation_wmrh_v03_and_corrected_probe_contract.md",
+          "revision": "aa0eda73685f6f91d107db99db2d1d7f7f560a1e",
+          "blob_sha256": "445e3deae58e276ce1fa33a9959ccf5cf45d677a929a92b17952070a460388a9",
+          "item_count": 186
+        },
+        {
+          "source_id": "SRC-9350d4bcc3a5",
+          "source_path": "docs/research/271_p_r8b_01_r2_attempt3_pass_wmrh_v03_owner_decision_ready.md",
+          "revision": "aa0eda73685f6f91d107db99db2d1d7f7f560a1e",
+          "blob_sha256": "e50e73838c226a182cfb40b8d686d2e10ec83dbdc5d490089b5b20a84e95f17c",
+          "item_count": 185
+        }
+      ]
+    },
+    {
+      "packet_event_id": "EVP-63516d4b5c63",
+      "historical_event_id": "EV-0a68787a",
+      "acceptance_commit": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
+      "pre_acceptance_snapshot": "78b3e7f2d88e1ab6b51a9dfb85cfdc604d6c074c",
+      "proposal_source_cluster_id": "CL-e908a54f081e",
+      "birth_scoring_eligibility": "PRIMARY_BIRTH_ELIGIBLE",
+      "split": "HELD_OUT",
+      "decision_input_provenance": {
+        "source_type": "HISTORICAL_OWNER_DECISION_TOKEN_AGENT_TRANSCRIPTION",
+        "acceptance_commit": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
+        "reviewer_visible": "MINIMAL_DECISION_TOKEN_ONLY",
+        "verbatim_owner_authorship_proven": false,
+        "note": "Historical decision token is preserved by project records but is not a platform-exported verbatim owner message."
+      },
+      "sources": [
+        {
+          "source_id": "SRC-f2061c95c389",
+          "source_path": "docs/research/276_owner_total_architecture_freedom_and_warrant_f_v02_reconciliation.md",
+          "revision": "78b3e7f2d88e1ab6b51a9dfb85cfdc604d6c074c",
+          "blob_sha256": "be9620c34f25df816fbf69416a8b0a59025510f654ec86d12117118456fd266d",
+          "item_count": 248
+        },
+        {
+          "source_id": "SRC-ac0de83a262c",
+          "source_path": "docs/research/308_r8c_eight_probe_reconciliation_owner_decision_readiness.md",
+          "revision": "78b3e7f2d88e1ab6b51a9dfb85cfdc604d6c074c",
+          "blob_sha256": "2911cefffe62a8897167b6da6962abf7c805af5cd0787e29a6b897fe38f41539",
+          "item_count": 118
+        },
+        {
+          "source_id": "SRC-55675c3349b5",
+          "source_path": "docs/research/309_generalizable_project_operating_architecture_vision_and_evolution_boundary.md",
+          "revision": "78b3e7f2d88e1ab6b51a9dfb85cfdc604d6c074c",
+          "blob_sha256": "6f79f925ec4545526dfa376d4db867dd6e77a98527ef0ab8cc33d654f89d9b56",
+          "item_count": 218
+        },
+        {
+          "source_id": "SRC-29f7e9d06d51",
+          "source_path": "docs/research/310_whole_architecture_governed_self_improvement_model.md",
+          "revision": "78b3e7f2d88e1ab6b51a9dfb85cfdc604d6c074c",
+          "blob_sha256": "b172eb7126305aee3b6c6a13baf536aed0daeae85350ec1bbc1d23d801f5f676",
+          "item_count": 112
+        }
+      ]
+    },
+    {
+      "packet_event_id": "EVP-e9498b2ad950",
+      "controlled_negative_id": "NC-PRINCIPLE-01",
+      "split": "HELD_OUT",
+      "birth_scoring_eligibility": "NEGATIVE_BIRTH_CONTROL_ONLY",
+      "sources": [
+        {
+          "source_id": "SRC-3b33d8b5692b",
+          "source_path": "experiments/ao10_drp03_obligation_units_r2_v03/public_fixtures/control_principle.md",
+          "revision": "PUBLIC_FREEZE_WORKTREE",
+          "blob_sha256": "619843d6c635360c7e31ef60514b718f50ec77620314e39f1af8970af510413c",
+          "item_count": 20
+        }
+      ]
+    },
+    {
+      "packet_event_id": "EVP-1b6edca704fa",
+      "controlled_negative_id": "NC-DISPOSITION-01",
+      "split": "HELD_OUT",
+      "birth_scoring_eligibility": "NEGATIVE_BIRTH_CONTROL_ONLY",
+      "sources": [
+        {
+          "source_id": "SRC-7072bf59ccee",
+          "source_path": "experiments/ao10_drp03_obligation_units_r2_v03/public_fixtures/control_disposition.md",
+          "revision": "PUBLIC_FREEZE_WORKTREE",
+          "blob_sha256": "33b88e6016e8cd72fdfe49ded26e28dfabd744583fedc90aabdff3f915e5a0d6",
+          "item_count": 15
+        }
+      ]
+    }
+  ]
+}

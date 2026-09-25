@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_V03_PUBLIC_PROTOCOL_FREEZE_NEXT",
+  "phase": "DRP03_R2_KEY_AUTHOR_A_CLAUDE04_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -51,7 +51,7 @@
       ]
     }
   ],
-  "next_expected_actor": "chatgpt",
+  "next_expected_actor": "claude",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -71,14 +71,14 @@
       "DRP-03 Claude reviewer A must not inspect Research 324 or any future ChatGPT DRP-03 annotation/summary before committing its annotation.",
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15."
     ],
-    "notes": "Owner explicitly accepted the M-1 deferral with exact text ACCEPT_DEFERRAL on 2026-09-25. The governed deferral is active and requires a prospective seeded-error owner-review efficacy trial before V0.7 production activation, authority switch, or operational reliance on agent-drafted AcceptanceDeclarationSet semantics. Public R2 Protocol V0.3 asset freeze is now unblocked. No hidden key, labels, scoring harness or reviewer annotation exists."
+    "notes": "Owner M-1 deferral is governed and Research 332 freezes the full public DRP-03 R2 V0.3 pre-key surface at manifest SHA-256 f358d03168973c33e31a0c877b3175c6804157f6da5074053767e8a9305c3150. No hidden semantic key, hidden label, scoring harness or reviewer annotation exists. Key construction is now permitted. Claude-04 is eligible only as the exposed/non-fresh Key Author A, not as a fresh key author or blind decision reviewer. Its full key must remain private from future Key Author B and decision reviewers; only a canonical-byte commitment may enter the repository before reviewer freeze."
   },
   "last_transition": {
-    "transition_id": "mc0029-owner-accepted-m1-deferral",
+    "transition_id": "mc0029-drp03-r2-public-freeze-complete",
     "from_state": "WAITING",
     "to_state": "WAITING",
-    "actor": "human",
-    "reason": "Owner decision ACCEPT_DEFERRAL makes AO10-M1-OWNER-REVIEW-EFFICACY-DEFERRAL-V01 a governed active deferral and releases the public DRP-03 R2 Protocol V0.3 freeze hold.",
-    "repository_head": "50e0ba03367cd69d36abc29dbdf7da05e134f52b"
+    "actor": "chatgpt",
+    "reason": "Research 332 freezes the reproducible public R2 V0.3 protocol surface after owner ACCEPT_DEFERRAL. Dual private key construction is next; Claude-04 is routed as exposed Key Author A and at least one later key author must be fresh.",
+    "repository_head": "11a3726b69abfc8c3bda329328ce677070324bf8"
   }
 }

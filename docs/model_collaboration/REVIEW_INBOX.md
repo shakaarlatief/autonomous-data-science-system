@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-25
-**Status:** MC-0029 OPEN / M-1 DEFERRAL ACCEPTED / R2 V0.3 PUBLIC FREEZE NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / R2 V0.3 PUBLIC PROTOCOL FROZEN / CLAUDE-04 KEY AUTHOR A NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -51,9 +51,9 @@ The protocol now adds a two-author construct gate with prevalence and positive-s
 
 The owner explicitly chose ACCEPT_DEFERRAL. Research 331 records the decision and M1_OWNER_REVIEW_EFFICACY_DEFERRAL_V01.json is now a governed active deferral. The seeded-error owner-review efficacy trial remains mandatory before V0.7 production activation, authority switch, or operational reliance on agent-drafted declaration semantics.
 
-No hidden R2 key, labels, executable scoring harness, or reviewer annotation exists.
+Research 332 freezes the complete public pre-key DRP-03 R2 V0.3 surface at manifest SHA-256 f358d03168973c33e31a0c877b3175c6804157f6da5074053767e8a9305c3150. Packet regeneration is deterministic and reproduces the same digest. BIRTH, LEGACY and STATE reviewer surfaces, session batching, attention-check provenance, key-author packets, schemas, splitter/generator, fixtures, delivery order and public commitments are frozen. No hidden semantic key, held-out semantic label, scoring harness or reviewer annotation exists.
 
-Next: freeze the public DRP-03 R2 Protocol V0.3 assets required by Research 330, including protocol, event universe, splitter/generator, public schemas/fixtures/test vectors, generated reviewer packets and cryptographic commitments.
+Next: Claude-04 acts as the exposed/non-fresh private Key Author A. Only its commitment/provenance message may be committed. The complete Key A must remain outside reviewer-accessible repository storage. A later Key Author B must be genuinely fresh and blind to Key A.
 
 Owner decision and all production/migration/authority actions remain held.
 

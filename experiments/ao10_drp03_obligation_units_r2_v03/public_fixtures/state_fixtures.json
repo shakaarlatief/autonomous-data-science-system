@@ -1,0 +1,443 @@
+{
+  "schema_version": 1,
+  "protocol_id": "AO10-DRP03-R2-V03",
+  "note": "No expected outputs are stored here. Two independent expected-output authors derive them after the public freeze.",
+  "fixtures": [
+    {
+      "fixture_id": "SF-001",
+      "obligation_id": "O-001",
+      "facts": []
+    },
+    {
+      "fixture_id": "SF-002",
+      "obligation_id": "O-002",
+      "facts": [
+        {
+          "fact_id": "F1",
+          "type": "REALIZES",
+          "obligation_binding": "O-002",
+          "realizer_identity": "impl-A",
+          "realization_boundary": "boundary-A",
+          "temporal_or_revision_binding": "r1",
+          "provenance": "artifact-A"
+        }
+      ]
+    },
+    {
+      "fixture_id": "SF-003",
+      "obligation_id": "O-003",
+      "facts": [
+        {
+          "fact_id": "F1",
+          "type": "REALIZES",
+          "obligation_binding": "O-003",
+          "realizer_identity": "impl-A",
+          "realization_boundary": "boundary-A",
+          "temporal_or_revision_binding": "r1",
+          "provenance": "artifact-A"
+        },
+        {
+          "fact_id": "F2",
+          "type": "EVIDENCES",
+          "obligation_binding": "O-003",
+          "evidence_identity": "ev-A",
+          "evidence_subject_revision": "r1",
+          "temporal_or_revision_binding": "r1",
+          "provenance": "test-A"
+        }
+      ]
+    },
+    {
+      "fixture_id": "SF-004",
+      "obligation_id": "O-004",
+      "facts": [
+        {
+          "fact_id": "F1",
+          "type": "REALIZES",
+          "obligation_binding": "O-004",
+          "realizer_identity": "impl-A",
+          "realization_boundary": "boundary-A",
+          "temporal_or_revision_binding": "r1",
+          "provenance": "artifact-A"
+        },
+        {
+          "fact_id": "F2",
+          "type": "EVIDENCES",
+          "obligation_binding": "O-004",
+          "evidence_identity": "ev-A",
+          "evidence_subject_revision": "r1",
+          "temporal_or_revision_binding": "r1",
+          "provenance": "test-A"
+        },
+        {
+          "fact_id": "F3",
+          "type": "QUALIFIES",
+          "obligation_binding": "O-004",
+          "qualification_identity": "q-A",
+          "qualification_subject_revision": "r1",
+          "temporal_or_revision_binding": "r1",
+          "provenance": "decision-A"
+        }
+      ]
+    },
+    {
+      "fixture_id": "SF-005",
+      "obligation_id": "O-005",
+      "facts": [
+        {
+          "fact_id": "F1",
+          "type": "REALIZES",
+          "obligation_binding": "O-005",
+          "realizer_identity": "impl-A",
+          "realization_boundary": "boundary-A",
+          "temporal_or_revision_binding": "r1",
+          "provenance": "artifact-A"
+        },
+        {
+          "fact_id": "F2",
+          "type": "EVIDENCES",
+          "obligation_binding": "O-005",
+          "evidence_identity": "ev-A",
+          "evidence_subject_revision": "r1",
+          "temporal_or_revision_binding": "r1",
+          "provenance": "test-A"
+        },
+        {
+          "fact_id": "F3",
+          "type": "QUALIFIES",
+          "obligation_binding": "O-005",
+          "qualification_identity": "q-A",
+          "qualification_subject_revision": "r1",
+          "temporal_or_revision_binding": "r1",
+          "provenance": "decision-A"
+        },
+        {
+          "fact_id": "F4",
+          "type": "ACTIVATES",
+          "obligation_binding": "O-005",
+          "activation_identity": "a-A",
+          "activation_subject_revision": "r1",
+          "temporal_or_revision_binding": "r1",
+          "provenance": "receipt-A"
+        }
+      ]
+    },
+    {
+      "fixture_id": "SF-006",
+      "obligation_id": "O-006",
+      "facts": [
+        {
+          "fact_id": "F1",
+          "type": "DEFERS",
+          "obligation_binding": "O-006",
+          "governing_authority": "OWNER",
+          "blocking_reason": "dependency",
+          "reactivation_condition": "before production",
+          "future_evidence_path": "probe-X",
+          "scope_resolution": [
+            "O-006"
+          ],
+          "temporal_or_revision_binding": "r1",
+          "provenance": "owner-decision"
+        }
+      ]
+    },
+    {
+      "fixture_id": "SF-007",
+      "obligation_id": "O-007",
+      "facts": [
+        {
+          "fact_id": "F1",
+          "type": "HOLD",
+          "obligation_binding": "O-007",
+          "reason": "program-wide hold",
+          "temporal_or_revision_binding": "r1",
+          "provenance": "status-line"
+        }
+      ]
+    },
+    {
+      "fixture_id": "SF-008",
+      "obligation_id": "O-008",
+      "facts": [
+        {
+          "fact_id": "F1",
+          "type": "DEFERS",
+          "obligation_binding": "O-008",
+          "governing_authority": "OWNER",
+          "blocking_reason": "dependency",
+          "future_evidence_path": "probe-X",
+          "scope_resolution": [
+            "O-008"
+          ],
+          "temporal_or_revision_binding": "r1",
+          "provenance": "owner-decision"
+        }
+      ]
+    },
+    {
+      "fixture_id": "SF-009",
+      "obligation_id": "O-009",
+      "facts": [
+        {
+          "fact_id": "F1",
+          "type": "DEFERS",
+          "obligation_binding": "O-009",
+          "governing_authority": "OWNER",
+          "blocking_reason": "dependency",
+          "reactivation_condition": "before production",
+          "scope_resolution": [
+            "O-009"
+          ],
+          "temporal_or_revision_binding": "r1",
+          "provenance": "owner-decision"
+        }
+      ]
+    },
+    {
+      "fixture_id": "SF-010",
+      "obligation_id": "O-010",
+      "facts": [
+        {
+          "fact_id": "F1",
+          "type": "REALIZES",
+          "obligation_binding": "O-010",
+          "realizer_identity": "impl-A",
+          "realization_boundary": "boundary-A",
+          "temporal_or_revision_binding": "r0",
+          "provenance": "artifact-A",
+          "stale": true
+        }
+      ]
+    },
+    {
+      "fixture_id": "SF-011",
+      "obligation_id": "O-011",
+      "facts": [
+        {
+          "fact_id": "F1",
+          "type": "REALIZES",
+          "obligation_binding": "O-011",
+          "realizer_identity": "impl-A",
+          "realization_boundary": "boundary-A",
+          "temporal_or_revision_binding": "r1",
+          "provenance": "artifact-A"
+        },
+        {
+          "fact_id": "F2",
+          "type": "REALIZES",
+          "obligation_binding": "O-011",
+          "realizer_identity": "impl-B",
+          "realization_boundary": "boundary-B",
+          "temporal_or_revision_binding": "r1",
+          "provenance": "artifact-B",
+          "contradicts": "F1"
+        }
+      ]
+    },
+    {
+      "fixture_id": "SF-012",
+      "obligation_id": "O-012",
+      "facts": [
+        {
+          "fact_id": "F1",
+          "type": "REALIZES",
+          "obligation_binding": "O-012",
+          "realizer_identity": "impl-A",
+          "realization_boundary": "boundary-A",
+          "temporal_or_revision_binding": "r1",
+          "provenance": "artifact-A"
+        },
+        {
+          "fact_id": "F2",
+          "type": "EVIDENCES",
+          "obligation_binding": "O-012",
+          "evidence_identity": "ev-A",
+          "evidence_subject_revision": "different-revision",
+          "temporal_or_revision_binding": "different-revision",
+          "provenance": "test-A"
+        }
+      ]
+    },
+    {
+      "fixture_id": "SF-013",
+      "obligation_id": "O-013",
+      "facts": [
+        {
+          "fact_id": "F1",
+          "type": "DEFERS",
+          "obligation_binding": "O-013",
+          "governing_authority": "AGENT",
+          "blocking_reason": "dependency",
+          "reactivation_condition": "before production",
+          "future_evidence_path": "probe-X",
+          "scope_resolution": [
+            "O-013"
+          ],
+          "temporal_or_revision_binding": "r1",
+          "provenance": "agent-note"
+        }
+      ]
+    },
+    {
+      "fixture_id": "SF-014",
+      "obligation_id": "O-014",
+      "facts": [
+        {
+          "fact_id": "F1",
+          "type": "DEFERS",
+          "obligation_binding": "selector:group-A",
+          "governing_authority": "OWNER",
+          "blocking_reason": "dependency",
+          "reactivation_condition": "before production",
+          "future_evidence_path": "probe-X",
+          "scope_resolution": null,
+          "temporal_or_revision_binding": "r1",
+          "provenance": "owner-decision"
+        }
+      ]
+    },
+    {
+      "fixture_id": "SF-015",
+      "obligation_id": "O-015",
+      "facts": [
+        {
+          "fact_id": "F0",
+          "type": "DEFERS",
+          "obligation_binding": "O-015",
+          "governing_authority": "OWNER",
+          "blocking_reason": "dependency",
+          "reactivation_condition": "2026-09-24",
+          "future_evidence_path": "probe-X",
+          "scope_resolution": [
+            "O-015"
+          ],
+          "temporal_or_revision_binding": "r0",
+          "provenance": "owner-decision"
+        },
+        {
+          "fact_id": "F1",
+          "type": "DEFERS",
+          "obligation_binding": "O-015",
+          "governing_authority": "OWNER",
+          "blocking_reason": "renewed dependency",
+          "reactivation_condition": "before production",
+          "future_evidence_path": "probe-Y",
+          "scope_resolution": [
+            "O-015"
+          ],
+          "temporal_or_revision_binding": "r1",
+          "provenance": "owner-renewal",
+          "supersedes": "F0"
+        }
+      ]
+    },
+    {
+      "fixture_id": "SF-016",
+      "obligation_id": "O-016",
+      "facts": [
+        {
+          "fact_id": "F1",
+          "type": "EVIDENCES",
+          "obligation_binding": "O-016",
+          "evidence_identity": "ev-A",
+          "evidence_subject_revision": "r1",
+          "temporal_or_revision_binding": "r1",
+          "provenance": "test-A"
+        }
+      ]
+    },
+    {
+      "fixture_id": "SF-017",
+      "obligation_id": "O-017",
+      "facts": [
+        {
+          "fact_id": "F1",
+          "type": "REALIZES",
+          "obligation_binding": "O-017",
+          "realizer_identity": "impl-A",
+          "realization_boundary": "boundary-A",
+          "temporal_or_revision_binding": "r1",
+          "provenance": "artifact-A"
+        },
+        {
+          "fact_id": "F2",
+          "type": "REALIZES",
+          "obligation_binding": "O-017",
+          "realizer_identity": "impl-B",
+          "realization_boundary": "boundary-B",
+          "temporal_or_revision_binding": "r1",
+          "provenance": "artifact-B",
+          "independently_sufficient": true,
+          "independently_remediable": true
+        }
+      ]
+    },
+    {
+      "fixture_id": "SF-018",
+      "obligation_id": "O-018",
+      "facts": [
+        {
+          "fact_id": "F1",
+          "type": "DEFERS",
+          "obligation_binding": "O-018",
+          "governing_authority": "OWNER",
+          "blocking_reason": "dependency",
+          "reactivation_condition": "before production",
+          "future_evidence_path": "probe-X",
+          "scope_resolution": [
+            "O-018"
+          ],
+          "temporal_or_revision_binding": "r1",
+          "provenance": "owner-decision"
+        },
+        {
+          "fact_id": "F2",
+          "type": "OWNER_WAIVER",
+          "obligation_binding": "O-018",
+          "waiver_identity": "w-A",
+          "scope": "advancement-only",
+          "temporal_or_revision_binding": "r1",
+          "provenance": "owner-waiver"
+        }
+      ]
+    },
+    {
+      "fixture_id": "SF-019",
+      "obligation_id": "O-019",
+      "facts": [
+        {
+          "fact_id": "F1",
+          "type": "DEFERS",
+          "obligation_binding": "O-019",
+          "governing_authority": "OWNER",
+          "blocking_reason": "dependency",
+          "reactivation_condition": "2026-09-20",
+          "future_evidence_path": "probe-X",
+          "scope_resolution": [
+            "O-019"
+          ],
+          "temporal_or_revision_binding": "r1",
+          "provenance": "owner-decision",
+          "reactivation_condition_occurred": true
+        }
+      ]
+    },
+    {
+      "fixture_id": "SF-020",
+      "obligation_id": "O-020",
+      "governing_status": "SUPERSEDED_PARENT",
+      "facts": [
+        {
+          "fact_id": "F1",
+          "type": "REALIZES",
+          "obligation_binding": "O-020",
+          "realizer_identity": "impl-A",
+          "realization_boundary": "boundary-A",
+          "temporal_or_revision_binding": "r1",
+          "provenance": "artifact-A"
+        }
+      ]
+    }
+  ]
+}

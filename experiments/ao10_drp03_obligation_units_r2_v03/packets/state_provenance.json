@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "protocol_id": "AO10-DRP03-R2-V03",
+  "component": "STATE",
+  "real_repository_cases": [
+    {
+      "fixture_id": "RS-001",
+      "path": "docs/research/225_ao6_purpose_bound_git_lifecycle_and_workstream_orchestration.md",
+      "revision": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
+      "candidate_fact_type": "DEFERRAL_CANDIDATE",
+      "source_blob_sha256": "e07b6083578cccd49236fa4ad73c976f3103f3be53048b828ae2bc83dc16e033"
+    },
+    {
+      "fixture_id": "RS-002",
+      "path": "docs/research/311_warrant_f_v02_owner_acceptance_r8c_closure_and_ao10_reconciliation_entry.md",
+      "revision": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
+      "candidate_fact_type": "DEFERRAL_CANDIDATE",
+      "source_blob_sha256": "fb9eafd778fd650b6a9b3a407259b51be32b400a856c2b45132ba0262b6c1f31"
+    },
+    {
+      "fixture_id": "RS-003",
+      "path": "docs/research/project_knowledge_activation_orchestration/ao10/M1_OWNER_REVIEW_EFFICACY_DEFERRAL_V01.json",
+      "revision": "11a3726b69abfc8c3bda329328ce677070324bf8",
+      "candidate_fact_type": "DEFERRAL_CANDIDATE",
+      "source_blob_sha256": "9a2e66c8083dbaa81282150fc53d49ecfbceeb35f22f98f22617e1a41c445783"
+    },
+    {
+      "fixture_id": "RS-004",
+      "path": "docs/research/315_mc0029_message003_reconciliation_integrated_project_system_v03.md",
+      "revision": "11a3726b69abfc8c3bda329328ce677070324bf8",
+      "candidate_fact_type": "DEFERRAL_CANDIDATE",
+      "source_blob_sha256": "668261bff22876ee5019f678a2a3b7848018ad1d933801f11869997b71e2cfaf"
+    }
+  ]
+}

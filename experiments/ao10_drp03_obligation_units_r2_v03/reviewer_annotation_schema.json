@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "protocol_id": "AO10-DRP03-R2-V03",
+  "required_top_level": [
+    "schema_version",
+    "reviewer",
+    "packet_digests",
+    "classification_batches",
+    "birth_grouping",
+    "legacy_grouping",
+    "state",
+    "attestation"
+  ],
+  "reviewer": {
+    "required": [
+      "reviewer_id",
+      "provider",
+      "model",
+      "interaction_environment"
+    ]
+  },
+  "birth_event_annotation": {
+    "required": [
+      "packet_event_id",
+      "selected_items",
+      "obligation_units",
+      "review_required"
+    ],
+    "selected_item_fields": [
+      "item_id",
+      "normative_kind",
+      "material",
+      "realization_required"
+    ],
+    "normative_kind_enum": [
+      "OBLIGATION",
+      "CONSTRAINT",
+      "DISPOSITION",
+      "SEQUENCING",
+      "PRINCIPLE"
+    ],
+    "obligation_unit_fields": [
+      "unit_id",
+      "item_ids",
+      "semantic_owner",
+      "realization_boundary",
+      "expected_evidence_path",
+      "activation_or_effective_boundary"
+    ],
+    "review_required_fields": [
+      "item_id",
+      "reason"
+    ]
+  },
+  "legacy_source_annotation": {
+    "required": [
+      "packet_source_id",
+      "selected_items",
+      "obligation_units",
+      "candidate_gaps",
+      "review_required"
+    ],
+    "authority_must_equal": "CANDIDATE_ONLY"
+  },
+  "state_annotation": {
+    "required": [
+      "fixture_id",
+      "valid_fact_ids",
+      "invalid_fact_ids",
+      "derived_state",
+      "review_required_reason"
+    ],
+    "derived_state_enum": [
+      "UNLINKED",
+      "LINKED",
+      "EVIDENCED",
+      "QUALIFIED",
+      "OPERATIONAL",
+      "DEFERRED",
+      "REVIEW_REQUIRED"
+    ]
+  },
+  "attestation": {
+    "required": [
+      "ads_memory",
+      "past_chat_search",
+      "repository_access",
+      "git_access",
+      "web_access",
+      "connector_access",
+      "tools_used",
+      "knowledge_cutoff",
+      "boundary_violated"
+    ]
+  },
+  "classification_batch_annotation": {
+    "required": [
+      "component",
+      "batch_id",
+      "presentations"
+    ],
+    "presentation_fields": [
+      "presentation_id",
+      "normative",
+      "normative_kind",
+      "material",
+      "realization_required",
+      "review_required_reason"
+    ],
+    "normative_kind_enum": [
+      "OBLIGATION",
+      "CONSTRAINT",
+      "DISPOSITION",
+      "SEQUENCING",
+      "PRINCIPLE",
+      null
+    ],
+    "freeze_rule": "Each batch is final before the next batch is exposed."
+  },
+  "birth_grouping": {
+    "required": [
+      "events"
+    ],
+    "event_fields": [
+      "packet_event_id",
+      "obligation_units",
+      "review_required"
+    ],
+    "obligation_unit_fields": [
+      "unit_id",
+      "item_ids",
+      "semantic_owner",
+      "realization_boundary",
+      "expected_evidence_path",
+      "activation_or_effective_boundary"
+    ],
+    "exposure_rule": "Only after all BIRTH classification batches are frozen."
+  },
+  "legacy_grouping": {
+    "required": [
+      "sources"
+    ],
+    "source_fields": [
+      "packet_source_id",
+      "obligation_units",
+      "candidate_gaps",
+      "review_required"
+    ],
+    "authority_must_equal": "CANDIDATE_ONLY",
+    "exposure_rule": "Only after all LEGACY classification batches are frozen."
+  }
+}

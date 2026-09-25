@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "protocol_id": "AO10-DRP03-R2-V03",
+  "hash_basis": "EXACT_PUBLIC_FREEZE_MANIFEST_BYTES",
+  "manifest_path": "experiments/ao10_drp03_obligation_units_r2_v03/public_freeze_manifest.json",
+  "manifest_sha256": "f358d03168973c33e31a0c877b3175c6804157f6da5074053767e8a9305c3150",
+  "manifest_bytes": 8998,
+  "bootstrap_seed_source": "f358d03168973c33e31a0c877b3175c6804157f6da5074053767e8a9305c3150",
+  "hidden_key_created": false,
+  "hidden_labels_created": false,
+  "scoring_harness_created": false
+}

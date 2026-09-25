@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "source_base_current": "11a3726b69abfc8c3bda329328ce677070324bf8",
+  "note": "Public real-source fact candidates. No expected states are stored here.",
+  "cases": [
+    {
+      "case_id": "RS-001",
+      "obligation_id": "AO6-LIVE-BRANCH-ROTATION",
+      "revision": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
+      "path": "docs/research/225_ao6_purpose_bound_git_lifecycle_and_workstream_orchestration.md",
+      "candidate_fact_type": "DEFERRAL_CANDIDATE",
+      "match_substrings": [
+        "CURRENT ROTATION DEFERRED BY ATTACH-CAPABILITY GAP",
+        "LIVE_BRANCH_ROTATION=REQUIRED_BUT_DEFERRED_BY_ATTACH_CAPABILITY_GAP"
+      ]
+    },
+    {
+      "case_id": "RS-002",
+      "obligation_id": "FILE-LEVEL-MIGRATION",
+      "revision": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
+      "path": "docs/research/311_warrant_f_v02_owner_acceptance_r8c_closure_and_ao10_reconciliation_entry.md",
+      "candidate_fact_type": "DEFERRAL_CANDIDATE",
+      "match_substrings": [
+        "FILE_LEVEL_MIGRATION=HELD"
+      ]
+    },
+    {
+      "case_id": "RS-003",
+      "obligation_id": "AO10-V07-M1-OWNER-REVIEW-EFFICACY",
+      "revision": "11a3726b69abfc8c3bda329328ce677070324bf8",
+      "path": "docs/research/project_knowledge_activation_orchestration/ao10/M1_OWNER_REVIEW_EFFICACY_DEFERRAL_V01.json",
+      "candidate_fact_type": "DEFERRAL_CANDIDATE",
+      "include_whole_file": true
+    },
+    {
+      "case_id": "RS-004",
+      "obligation_id": "GENERAL-FRAMEWORK-EXTRACTION",
+      "revision": "11a3726b69abfc8c3bda329328ce677070324bf8",
+      "path": "docs/research/315_mc0029_message003_reconciliation_integrated_project_system_v03.md",
+      "candidate_fact_type": "DEFERRAL_CANDIDATE",
+      "match_substrings": [
+        "General framework extraction remains deferred."
+      ]
+    }
+  ]
+}

@@ -333,3 +333,55 @@ Its reactivation boundary is mandatory before V0.7 production activation, author
 The future evidence path is a prospective seeded-error owner-review efficacy trial.
 
 This acceptance unblocks only the public DRP-03 R2 Protocol V0.3 asset freeze. It does not accept V0.7, qualify R2, authorize production/migration, or authorize hidden-key creation before the public freeze.
+
+## DRP-03 R2 private Key Author A
+
+Research 332 freezes the public DRP-03 R2 V0.3 surface.
+
+Public freeze commitment:
+
+    f358d03168973c33e31a0c877b3175c6804157f6da5074053767e8a9305c3150
+
+Claude-04 is the exposed/non-fresh Key Author A.
+
+Claude-04 must use the frozen key-author instructions, schemas and key-author packets under:
+
+    experiments/ao10_drp03_obligation_units_r2_v03/
+
+It may use the bounded acceptance evidence already embedded in the key-author BIRTH packet and the frozen LEGACY/STATE key-author inputs.
+
+Claude-04 must not act as a fresh key author and must not later count toward blind decision-reviewer thresholds.
+
+The complete Key A bytes are private material.
+
+They must not be committed to the repository and must not be exposed to the future fresh Key Author B or any decision reviewer.
+
+Claude-04 must:
+
+    create Key A in canonical JSON matching key_author_schema.json
+
+    validate it against the frozen public packet/item IDs
+
+    calculate exact canonical-byte SHA-256 and byte length
+
+    preserve the full private key as a user-recoverable private artifact outside the repository
+
+    commit only a commitment/provenance message:
+
+        docs/model_collaboration/threads/MC-0029/messages/010_claude_drp03_r2_key_author_a_commitment.md
+
+The commitment message may contain:
+
+    key SHA-256
+    canonical byte length
+    canonical serialization rule
+    public-freeze digest
+    provider/model/environment identity
+    prior MC-0029 exposure = true
+    proposal-author bias flag as applicable
+    tool/evidence sources used
+    validation summary
+
+It must not contain semantic labels, witness identities, expected states, item classifications, grouping pairs, or excerpts sufficient to reconstruct the private key.
+
+After Message 010 is committed, a genuinely fresh Key Author B interaction is required and must remain blind to Key A.

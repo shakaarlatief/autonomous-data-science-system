@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "protocol_id": "AO10-DRP03-R2-V03",
+  "key_author_required": [
+    "author",
+    "packet_digests",
+    "birth",
+    "legacy",
+    "state_expected_outputs",
+    "provenance"
+  ],
+  "birth_item_fields": [
+    "item_id",
+    "normative",
+    "normative_kind",
+    "material",
+    "realization_required",
+    "restated",
+    "decision_time_delta",
+    "ambiguity"
+  ],
+  "normative_kind_enum": [
+    "OBLIGATION",
+    "CONSTRAINT",
+    "DISPOSITION",
+    "SEQUENCING",
+    "PRINCIPLE",
+    null
+  ],
+  "grouping_fields": [
+    "must_join_pairs",
+    "must_split_pairs"
+  ],
+  "pair_format": [
+    "item_id_a",
+    "item_id_b",
+    "reason"
+  ],
+  "legacy_item_fields": [
+    "item_id",
+    "normative",
+    "normative_kind",
+    "material",
+    "realization_required",
+    "candidate_gap",
+    "evidence_refs"
+  ],
+  "legacy_evidence_ref_fields": [
+    "evidence_type",
+    "path",
+    "revision",
+    "locator_or_search_spec",
+    "result"
+  ],
+  "state_expected_output_fields": [
+    "fixture_id",
+    "valid_fact_ids",
+    "invalid_fact_ids",
+    "expected_state",
+    "reason"
+  ],
+  "provenance_fields": [
+    "prior_mc0029_exposure",
+    "proposal_author_bias",
+    "tools_used",
+    "evidence_access",
+    "other_key_seen"
+  ]
+}

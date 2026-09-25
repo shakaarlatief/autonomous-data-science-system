@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "protocol_id": "AO10-DRP03-R2-V03",
+  "component": "LEGACY",
+  "records": [
+    {
+      "packet_source_id": "LSP-937da553d9a7",
+      "manifest_id": "L01",
+      "path": "docs/research/193_w0_complete_unit_suite_g017_and_w0_acceptance_result.md",
+      "revision": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
+      "manifest_role": "PRIMARY",
+      "blob_sha256": "54bce5c5f4181ccd9e9de402cc6d05db5e5d45502f47a08d53e6b2594bff3cf7",
+      "item_count": 73
+    },
+    {
+      "packet_source_id": "LSP-1186bc1ed0f6",
+      "manifest_id": "L02",
+      "path": "docs/research/202_w1_public_repository_integrity_g109_and_w1_acceptance_result.md",
+      "revision": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
+      "manifest_role": "PRIMARY",
+      "blob_sha256": "3a23f2112fa13ca27f4cbc1c07fd01ccb26da53d404e15b997b9b326c63ed84d",
+      "item_count": 72
+    },
+    {
+      "packet_source_id": "LSP-b413978959e6",
+      "manifest_id": "L03",
+      "path": "docs/research/203_w2_shadow_derived_views_acceptance_result.md",
+      "revision": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
+      "manifest_role": "PRIMARY",
+      "blob_sha256": "165bacaf00216fafeafddb593ccbd433b1c594e2ca64282baf646b1e1a7cab82",
+      "item_count": 123
+    },
+    {
+      "packet_source_id": "LSP-8fad31d410da",
+      "manifest_id": "L04",
+      "path": "docs/research/204_w3_compatibility_shadow_acceptance_result.md",
+      "revision": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
+      "manifest_role": "PRIMARY",
+      "blob_sha256": "73577eef530971e4cf12b8c57e4224be4924591164f3fe116be4228f90a4aff8",
+      "item_count": 117
+    },
+    {
+      "packet_source_id": "LSP-576a5c4f15b5",
+      "manifest_id": "L05",
+      "path": "docs/research/205_w4_production_capture_promotion_acceptance_result.md",
+      "revision": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
+      "manifest_role": "PRIMARY",
+      "blob_sha256": "12c306c639c6deb0f355cd49e0f345c5760eddc03c54c1d2d1f53244021982bb",
+      "item_count": 115
+    },
+    {
+      "packet_source_id": "LSP-ff70bc5bdc8e",
+      "manifest_id": "L06",
+      "path": "docs/research/220_ao1_retrospective_activation_orchestration_completeness_audit.md",
+      "revision": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
+      "manifest_role": "PRIMARY",
+      "blob_sha256": "deca9d45836e35446ee8907c8756c56bc04fbac9a6d25cde1955cac5a8d3ac9f",
+      "item_count": 455
+    },
+    {
+      "packet_source_id": "LSP-4f1bc6ce3068",
+      "manifest_id": "L07",
+      "path": "docs/research/221_ao2_control_plane_capability_boundary_and_failure_taxonomy.md",
+      "revision": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
+      "manifest_role": "PRIMARY",
+      "blob_sha256": "295bfc04e128554a6021da6c529a3209d38efd648f2d1b481e07208d0229a1ec",
+      "item_count": 151
+    },
+    {
+      "packet_source_id": "LSP-157dfb537436",
+      "manifest_id": "L08",
+      "path": "docs/research/222_ao3_progressive_control_closure_architecture.md",
+      "revision": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
+      "manifest_role": "PRIMARY",
+      "blob_sha256": "016696b230d1d5f3ee3f1444aaeeb106e1760d0cde55e706d2613539af9a7192",
+      "item_count": 288
+    },
+    {
+      "packet_source_id": "LSP-19f2c71d43cf",
+      "manifest_id": "L09",
+      "path": "docs/research/223_ao4_architecture_evolution_and_frozen_contract_governance.md",
+      "revision": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
+      "manifest_role": "PRIMARY",
+      "blob_sha256": "27a46f6c3e15f16dc92a05f302629ba32e05e583c411c86797122e19d84955dd",
+      "item_count": 297
+    },
+    {
+      "packet_source_id": "LSP-31bd3b0b93e0",
+      "manifest_id": "L10",
+      "path": "docs/research/224_ao5_anchored_interaction_continuity_and_independent_recovery.md",
+      "revision": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
+      "manifest_role": "PRIMARY",
+      "blob_sha256": "0928f461684943f298d9a74cde75b9b0d61f8b65cfa0b05f15aa58fd12027d3f",
+      "item_count": 278
+    },
+    {
+      "packet_source_id": "LSP-297f8addd5b0",
+      "manifest_id": "L11",
+      "path": "docs/research/226_ao7_authority_preserving_successor_orchestration_bridge.md",
+      "revision": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
+      "manifest_role": "PRIMARY",
+      "blob_sha256": "156e24c4b0a87dc0b93aa0d50d94ff9c1afac2b10ad32abc57dec4fd8d87f31b",
+      "item_count": 346
+    },
+    {
+      "packet_source_id": "LSP-2e843c73931a",
+      "manifest_id": "L12",
+      "path": "docs/research/227_ao8_independent_architecture_review_reconciliation.md",
+      "revision": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
+      "manifest_role": "PRIMARY",
+      "blob_sha256": "e8bde9ebb9804b88d08a345a85279ec03bf0cd40d608373309dd2ebe0637ff6d",
+      "item_count": 119
+    },
+    {
+      "packet_source_id": "LSP-816d7caf56ea",
+      "manifest_id": "L13",
+      "path": "docs/research/246_whole_repository_r5_owner_acceptance_and_from_scratch_lower_level_boundary.md",
+      "revision": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
+      "manifest_role": "PRIMARY",
+      "blob_sha256": "170a160925c7140bc30d63867ccf127877c4941430a055935a0c11c82ba18e21",
+      "item_count": 58
+    },
+    {
+      "packet_source_id": "LSP-50e46578ac33",
+      "manifest_id": "L14",
+      "path": "docs/research/248_g_dual_owner_amendment_acceptance_and_r6_entry_contract.md",
+      "revision": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
+      "manifest_role": "PRIMARY",
+      "blob_sha256": "9afccf4afe844216475d9e78ca5c463f00783dd19d44e95665617a31c756431e",
+      "item_count": 40
+    },
+    {
+      "packet_source_id": "LSP-56ca7c39ec1f",
+      "manifest_id": "L15",
+      "path": "docs/research/251_r6_bounded_context_architecture_owner_acceptance_and_r6b_entry.md",
+      "revision": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
+      "manifest_role": "PRIMARY",
+      "blob_sha256": "50b8f26b5c8a8c5da52d43a0590e98b4dc691bb1094da3a09dc367efb251a032",
+      "item_count": 26
+    },
+    {
+      "packet_source_id": "LSP-8b58f8ed9f58",
+      "manifest_id": "L16",
+      "path": "docs/research/206_w5_future_knowledge_information_architecture_and_authoring_design.md",
+      "revision": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
+      "manifest_role": "NEGATIVE_CONTROL_SOURCE",
+      "blob_sha256": "4094e8a6f1283f8b03690915ea2ea3871489993e30baab93feb2931441242750",
+      "item_count": 270
+    },
+    {
+      "packet_source_id": "LSP-5d0a24d52fe4",
+      "manifest_id": "L17",
+      "path": "docs/research/207_w5_representative_artifact_family_matrix_and_information_architecture_v01.md",
+      "revision": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
+      "manifest_role": "NEGATIVE_CONTROL_SOURCE",
+      "blob_sha256": "b685fe57b4f8f93a14524113d2e065d8ee7d8c650cdeb24f1dd5244397d06fbb",
+      "item_count": 260
+    }
+  ]
+}
