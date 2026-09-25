@@ -30,6 +30,15 @@ Claude substantive evidence base:
 
 Claude may read current MC-0029 routing/brief files for instructions but must not inspect Research 312 or later ChatGPT candidate material until Message 001 is committed.
 
+Current owner instruction visible through the brief, without changing the frozen substantive evidence base:
+
+    semantic architecture itself is redesignable from first principles
+    Research 217 is evidence, not a target constraint
+    exact 18-subject vocabulary is not final
+    semantic organization must be designed as part of the integrated professional Project system
+    local subsystem elegance is insufficient without whole-system coherence
+    accepted current contracts retain temporal authority until prospectively changed
+
 ## Write ownership
 
 Claude may write only:

@@ -16,6 +16,18 @@ Do not inspect Research 312 or any later ChatGPT AO-10 reconciliation/design bef
 
 You may read this MC-0029 brief/thread/state from current routing for instructions, but substantive project evidence must be resolved at the frozen base.
 
+## Owner clarification added before Message 001
+
+The owner has clarified two design-method requirements that apply to this independent pass and do not expose Research 312:
+
+1. **Semantic architecture has no preservation right.** Research 217, the existing 18-subject vocabulary, the broader subject pattern, current identity/authority/relation/navigation machinery and every other current semantic mechanism are evidence, not target constraints. Derive the strongest semantic organization and semantic-system architecture from first principles. Retain, amend, split, merge, add, delete or replace any mechanism if the evidence supports it.
+
+2. **Evaluate one integrated professional Project system.** Semantic organization, Project knowledge, JW1 activation/orchestration, authority/reconstruction, WMR-H representation, WARRANT-F assurance, Engineering, workflow/provider integration, continuity/recovery, migration and governed architecture evolution must fit together coherently. Do not optimize an ontology, package, workflow or documentation structure in isolation if it weakens the whole-system design.
+
+"From scratch" means no existing mechanism is privileged because it exists. It does not mean discard accumulated evidence. Existing qualified results must be treated as evidence to explain, challenge and either preserve by merit or supersede with explicit loss accounting.
+
+Research 217's empirical subject/navigation results are therefore valuable evidence to beat or preserve, but neither its exact vocabulary nor its architecture pattern is frozen as the target.
+
 Address at least:
 
 1. whether Specification 028 should be retained, amended, or prospectively superseded as a whole;
@@ -30,6 +42,8 @@ Address at least:
 10. provider/workflow neutrality;
 11. shadow bridge / ACTIVE_SUBORDINATE qualification;
 12. recovery, rollback and authority-switch boundaries.
+13. first-principles semantic organization and semantic-system architecture, including explicit disposition of Research 217 evidence without assuming its pattern or 18-subject vocabulary survives;
+14. whole-system integration seams and cases where a locally attractive semantic, AO, assurance, representation, workflow or migration design would weaken the professional Project system as a whole.
 
 Return an independent architecture, material risks/falsifiers, and recommended empirical probes. Defer comparative ACCEPT/AMEND/REOPEN guidance until Research 312 is intentionally exposed after Message 001.
 

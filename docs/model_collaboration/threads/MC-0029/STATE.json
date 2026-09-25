@@ -7,7 +7,7 @@
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
-    "description": "Independent Specification 028 reconciliation and AO-10 realization design from the accepted pre-Research-312 architecture base.",
+    "description": "Independent Specification 028 reconciliation and AO-10 realization design from the accepted pre-Research-312 architecture base, under the owner clarification that semantic architecture has no target preservation right and the result must cohere as one professional Project system.",
     "write_paths": []
   },
   "task_owner": "chatgpt",
@@ -57,9 +57,10 @@
     "review_base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
     "known_exposures": [
       "Claude may read MC-0029 routing/brief files from current state for task instructions.",
-      "Claude must not inspect Research 312 or later ChatGPT AO-10 candidate material before Message 001 is committed."
+      "Claude must not inspect Research 312 or later ChatGPT AO-10 candidate material before Message 001 is committed.",
+      "Owner clarification dated 2026-09-25 is visible through the MC-0029 brief: semantic architecture and Research 217 are evidence rather than target constraints, and the design must be evaluated as one integrated professional Project system. This instruction does not expose Research 312."
     ],
-    "notes": "Research 312 is ChatGPT's candidate and is intentionally outside Claude's independent substantive evidence boundary."
+    "notes": "Research 312 remains intentionally outside Claude's independent substantive evidence boundary. Current owner design-method clarifications in the MC-0029 brief are instructions, not exposure to the ChatGPT candidate."
   },
   "last_transition": {
     "transition_id": "mc0029-open-independent-design",

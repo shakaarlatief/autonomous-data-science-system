@@ -1,6 +1,6 @@
 # Model Collaboration Review Inbox
 
-**Date:** 2026-09-24
+**Date:** 2026-09-25
 **Status:** MC-0029 OPEN / INDEPENDENT SPEC028 + AO-10 DESIGN NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
@@ -29,7 +29,7 @@ MC-0029 is OPEN in INDEPENDENT_THEN_COMPARATIVE mode.
 
 Claude's substantive evidence boundary is frozen at 0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d, which contains the accepted architecture through Research 311 but not ChatGPT Research 312. Claude may read the current MC-0029 brief/thread/state for instructions, but must not inspect Research 312 or later ChatGPT AO-10 candidate material before Message 001 is committed.
 
-The independent task is to derive the strongest Specification 028 reconciliation and concrete AO-10 realization architecture, including KA-R51, KA-R52, WMR-H, WARRANT-F, migration-oracle retirement, provider neutrality, bridge qualification, recovery and authority transition.
+The independent task is to derive the strongest Specification 028 reconciliation and concrete AO-10 realization architecture, including KA-R51, KA-R52, WMR-H, WARRANT-F, migration-oracle retirement, provider neutrality, bridge qualification, recovery and authority transition. The current brief also carries the owner's pre-Message-001 clarification that semantic architecture, including Research 217's pattern and exact vocabulary, has no target preservation right and that the result must cohere as one integrated professional Project system.
 
 Expected next artifact:
 
