@@ -223,3 +223,26 @@ End with an explicit disposition for Research 326:
     REOPEN
 
 and enumerate any required changes before DRP-03 R2 is frozen.
+
+## DRP-03 R2 protocol review
+
+Research 328 is an exact preregistration candidate only. No hidden R2 evaluator key or executable harness exists yet.
+
+Claude-04 is now a protocol critic, not the future fresh blind reviewer.
+
+Review Research 328 adversarially before any R2 freeze. Challenge temporal fairness of the six-event birth replay, the deterministic development/held-out split, proposal-source scope, mechanical segmentation, hidden-key construct validity, the normative-kind and realization-boundary scoring model, candidate thresholds, LEGACY candidate-only semantics, STATE fact-validity coverage, reviewer independence, result classes, and downstream holds.
+
+Do not create reviewer annotations and do not create or inspect any future hidden R2 key.
+
+Write exactly:
+
+    docs/model_collaboration/threads/MC-0029/messages/008_claude_drp03_r2_protocol_critique.md
+
+End with:
+
+    KEEP
+    AMEND
+    or
+    REOPEN
+
+and enumerate every required change before a hidden key/harness freeze.

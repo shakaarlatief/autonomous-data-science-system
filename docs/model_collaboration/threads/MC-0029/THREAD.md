@@ -1,7 +1,7 @@
 # MC-0029 Thread: Specification 028 Reconciliation and AO-10 Realization Design
 
 **Thread:** MC-0029
-**Status:** OPEN / DRP-03 R1 AMEND / V0.5 RECONCILED / R2 PREREGISTRATION NEXT
+**Status:** OPEN / DRP-03 R1 AMEND / V0.5 RECONCILED / R2 PROTOCOL CANDIDATE / CLAUDE REVIEW NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** 0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
@@ -43,8 +43,10 @@ Independently derive Specification 028 reconciliation and AO-10 realization arch
     DRP-03 V0.4 amendment candidate             COMPLETE / Research 326
     Claude adversarial amendment critique       COMPLETE / AMEND / b0603ca8 / Message 007
     ChatGPT Message 007 reconciliation          COMPLETE / Research 327 / V0.5
-    DRP-03 R2 exact preregistration             NEXT
-    DRP-03 R2                                   AFTER HARNESS FREEZE
+    DRP-03 R2 exact preregistration candidate   COMPLETE / Research 328
+    Claude R2 protocol adversarial review        NEXT / Message 008
+    DRP-03 R2 harness freeze                     AFTER PROTOCOL RECONCILIATION
+    DRP-03 R2                                    AFTER HARNESS FREEZE
     remaining decision probes                  AFTER REQUALIFIED DRP-03 WHERE DEPENDENT
     owner decision                             AFTER RECONCILED EVIDENCE
 
@@ -72,7 +74,7 @@ Claude may write only:
     docs/model_collaboration/threads/MC-0029/messages/**
 
     MC0029=OPEN
-    PHASE=DRP03_V05_RECONCILED_R2_PREREGISTRATION_NEXT
+    PHASE=DRP03_R2_PROTOCOL_CANDIDATE_CLAUDE_REVIEW_NEXT
     INDEPENDENT_BASE=0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
     CHATGPT_CANDIDATE=RESEARCH312
     CLAUDE_MESSAGE_001=COMPLETE
@@ -96,3 +98,8 @@ Claude may write only:
     DRP03_R2=NOT_YET_FROZEN
     FRESH_BLIND_REVIEWER_REQUIRED=true
     NEXT=DRP03_R2_EXACT_PREREGISTRATION_AND_HARNESS_DESIGN
+    RESEARCH328=R2_PROTOCOL_CANDIDATE
+    R2_HIDDEN_KEY=NOT_CREATED
+    R2_HARNESS=NOT_CREATED
+    CLAUDE_MESSAGE_008=NEXT
+    NEXT=CLAUDE04_R2_PROTOCOL_ADVERSARIAL_REVIEW

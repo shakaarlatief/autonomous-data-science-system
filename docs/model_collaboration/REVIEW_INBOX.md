@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-25
-**Status:** MC-0029 OPEN / DRP-03 R1 AMEND / V0.5 RECONCILED / R2 PREREGISTRATION NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / DRP-03 R1 AMEND / V0.5 RECONCILED / R2 PROTOCOL CANDIDATE / CLAUDE REVIEW NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -45,7 +45,11 @@ Research 327 reconciles every Message 007 requirement into V0.5. Obligation birt
 
 The durable R1 result evidence is now explicitly bound to GIT_BLOB_BYTES_AT_COMMIT SHA-256 f2e7b9071320079d5b239ef38b1d1d9f252a6af36d3a574e16df081dd09b8966; Research 326's a5a7... value is retained as the Windows CRLF working-tree observation rather than canonical repository evidence.
 
-Next: exact DRP-03 R2 preregistration and harness design. No R2 harness is frozen yet.
+Research 328 now defines the exact DRP-03 R2 preregistration candidate. R2 is split into BIRTH, LEGACY and STATE. BIRTH uses six temporally anchored owner/governance acceptance events, with a deterministic development/held-out split and pre-acceptance proposal snapshots. LEGACY remains candidate-only and uses stable item IDs plus hidden witness/control identities. STATE tests DeferralRecord/fact validity and derived-state reproducibility. ChatGPT is excluded as a decision reviewer because it is the protocol/key author. Claude-04 may critique the protocol and later serve only as a non-blind reviewer; a fresh interaction is mandatory for blind decision evidence.
+
+No hidden R2 evaluator key or executable harness has been created.
+
+Next: Claude-04 adversarial review of Research 328 before any R2 freeze.
 
 Owner decision and all production/migration/authority actions remain held.
 

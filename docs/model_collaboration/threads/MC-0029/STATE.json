@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_V05_RECONCILED_R2_PREREGISTRATION_NEXT",
+  "phase": "DRP03_R2_PROTOCOL_CANDIDATE_CLAUDE_REVIEW_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -51,7 +51,7 @@
       ]
     }
   ],
-  "next_expected_actor": "chatgpt",
+  "next_expected_actor": "claude",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -71,14 +71,14 @@
       "DRP-03 Claude reviewer A must not inspect Research 324 or any future ChatGPT DRP-03 annotation/summary before committing its annotation.",
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15."
     ],
-    "notes": "DRP-03 R1 remains AMEND after Message 007. Research 327 reconciles all R2-REQ-1..11 into a V0.5 candidate: proposal-authored acceptance-bound declarations, normative-kind taxonomy, operational realization boundaries, natural-owner reverse realization facts, DeferralRecord validity plus derived REVIEW_REQUIRED, temporal T-1/T-2/T-3, legacy candidate-only scope, and split R2-BIRTH/R2-LEGACY/R2-STATE. R1 blind sensitivity/specificity claims are narrowed: reviewer-A false-gap is not decision-usable, reviewer-B false-gap is not blind, witness tags were instructed rather than detected. Durable result evidence is bound by GIT_BLOB_BYTES_AT_COMMIT SHA-256 f2e7b907.... A fresh blind reviewer is required for R2."
+    "notes": "Research 328 proposes the exact DRP-03 R2 protocol but does not freeze a hidden key or executable harness. R2 is split into BIRTH, LEGACY and STATE. Birth uses six owner/governance acceptance events with pre-acceptance snapshots and a deterministic development/held-out split; legacy output remains candidate-only; state tests fact validity plus derived-state reproducibility. ChatGPT remains key/protocol author and is excluded as a decision reviewer. Claude-04 is eligible only as protocol critic/non-blind reviewer. A fresh reviewer interaction remains mandatory for hidden-witness decision evidence."
   },
   "last_transition": {
-    "transition_id": "mc0029-drp03-message007-reconciled-v05",
+    "transition_id": "mc0029-drp03-r2-protocol-candidate",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 327 accepts Claude Message 007 AMEND, corrects R1 evidence scope and digest binding, incorporates R2-REQ-1 through R2-REQ-11 into V0.5, and routes DRP-03 R2 exact preregistration/harness design.",
-    "repository_head": "b0603ca8b4698d4bc159ba957e76823cec630af8"
+    "reason": "Research 328 defines the exact DRP-03 R2 preregistration candidate, including corpus, temporal snapshots, split, segmentation, metrics, candidate thresholds, reviewer roles and result classes. Claude-04 adversarial protocol review is required before any hidden key or harness is frozen.",
+    "repository_head": "546a86e2bc30b4c871e8d875f358c9ce1f393d0f"
   }
 }
