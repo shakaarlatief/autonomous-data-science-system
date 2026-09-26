@@ -432,3 +432,38 @@ Grouping clarification:
     candidate generation may be heuristic
     every stored MUST_JOIN and MUST_SPLIT pair must be individually confirmed
     unsampled/unreviewed pairs remain UNCONSTRAINED
+
+## Key Author A P0 result
+
+Local Claude Code P0 completed without creating semantic Key A material.
+
+Research 335 reconciles it as:
+
+    PASS WITH REMEDIATION
+
+The four pre-P1 hardening decisions are:
+
+    semantic model
+        claude-opus-5-5
+
+    semantic effort
+        HIGH
+
+    Research 330
+        export exact frozen blob only
+        SHA-256 8e191d81d15da3254466194f874223aebb377306056619f47778565ae286a8fa
+
+    semantic session launch
+        new plain-terminal session
+        IDE disconnected
+        interactive/manual approval mode, not auto/bypass
+
+    transcript handling
+        P0 transcript copied into private Key A package and hashed
+        future Key B must be unable to read all Key A transcript storage
+
+P1 remains unauthorized.
+
+Next is non-semantic P0.5 hardening and verification.
+
+No Key A labels, grouping pairs, STATE expected outputs, LEGACY witness identities or private key bytes exist.

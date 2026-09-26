@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-25
-**Status:** MC-0029 OPEN / KEY-A EXECUTION ADDENDUM FROZEN / LOCAL CLAUDE CODE P0 OWNER LAUNCH NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / KEY-A P0 PASS WITH REMEDIATION / P0.5 HARDENING OWNER NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -55,7 +55,9 @@ Research 332 freezes the complete public pre-key DRP-03 R2 V0.3 surface at manif
 
 Claude-04 correctly stopped before generating any labels because the full Key A workload is too large for a reliable single long-chat turn. Research 334 reconciles its execution plan and freezes a symmetric pre-key execution addendum at SHA-256 811d098dcda35583b5ef6a45fce0d1578b85029d3c43167a28e96804010ce862. Key Author A remains exposed/non-fresh; claude-04 is dispatcher and local Claude Code is the semantic executor under a fixed model/configuration. Cloud Claude Code is not used for this hidden-key task. The public R2 freeze is unchanged and no Key A labels/private bytes exist.
 
-Next: owner launches local Claude Code P0 preflight only. P0 verifies isolation, frozen inputs, permissions and provenance and creates no semantic labels. ChatGPT reviews P0 before semantic phase P1.
+Local Claude Code P0 returned PASS for the non-semantic preflight and explicitly created no semantic Key A material. Research 335 resolves four blockers before P1: fix claude-opus-5-5 with HIGH effort; export the exact frozen Research 330 blob; relaunch from a plain terminal with IDE disconnected and interactive/manual approval; and capture/hash P0 transcript material inside the private Key A package while treating Claude's client transcript storage as confidential from future Key B.
+
+Next: owner completes P0.5 hardening. P1 remains unauthorized until ChatGPT reviews P0.5.
 
 Owner decision and all production/migration/authority actions remain held.
 

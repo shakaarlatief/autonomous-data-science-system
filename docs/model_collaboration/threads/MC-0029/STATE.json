@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_AUTHOR_A_LOCAL_CLAUDE_CODE_P0_OWNER_LAUNCH_NEXT",
+  "phase": "DRP03_R2_KEY_AUTHOR_A_P0_5_HARDENING_OWNER_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -80,14 +80,14 @@
       "DRP-03 Claude reviewer A must not inspect Research 324 or any future ChatGPT DRP-03 annotation/summary before committing its annotation.",
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15."
     ],
-    "notes": "Research 334 freezes a pre-key execution addendum at SHA-256 811d098dcda35583b5ef6a45fce0d1578b85029d3c43167a28e96804010ce862. The public R2 V0.3 freeze remains unchanged. Key Author A remains exposed/non-fresh; claude-04 is dispatcher, while semantic execution is routed to sequential local Claude Code sessions under one fixed model/configuration and private disk state. No semantic Key A labels or private key bytes exist. Cloud Claude Code is not used for hidden-key authoring. The owner must launch P0 preflight first; P0 is non-semantic and must create no labels."
+    "notes": "Local Claude Code P0 substantively passed with no semantic material created. Research 335 resolves the four pre-P1 blockers: semantic model claude-opus-5-5 with HIGH effort is fixed before P1; exact Research 330 export is authorized because it is an external binding of the frozen public manifest; P1 must start from a plain terminal with IDE disconnected and interactive/manual approval rather than auto/bypass behavior; P0 and later Key A transcripts are private material and future Key B must be isolated from them. P1 remains unauthorized until P0.5 verifies these controls."
   },
   "last_transition": {
-    "transition_id": "mc0029-key-a-local-claude-code-execution-addendum",
+    "transition_id": "mc0029-key-a-p0-pass-p05-hardening",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Claude-04 planning was reconciled by Research 334. A shared operational addendum was frozen before key authoring, local Claude Code was selected for the exposed Key Author A slot, and the next action is owner launch of non-semantic P0 preflight.",
-    "repository_head": "00dbf68515a91aa2c5a02cbc3a5f6059af6b2697"
+    "reason": "Research 335 reconciles the local Claude Code P0 report as PASS with four non-semantic hardening actions. No Key A semantic labels exist. Owner must complete P0.5 before P1 can begin.",
+    "repository_head": "68a1849c4366412ae1e94ac54d247571f7f84b47"
   }
 }
