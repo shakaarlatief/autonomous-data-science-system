@@ -990,3 +990,38 @@ Research 348 remains active: public ADS repository operations use the Codexless 
 Next:
 
     owner continues P3 Batch 5 in the existing fresh P3 Claude Code session
+
+## Key Author A P3 Batch 5 result
+
+Research 352 records Batch 5 PASS after task-owner artifact and transcript review.
+
+Task-owner checks confirm:
+
+    68 / 68 presentations
+    exact frozen presentation-ID set and order
+    exact metadata/schema/types
+    exact classification exposure lines 7002-7689
+    exact event-context exposure lines 6142-6745
+    no prior frozen semantic-artifact access
+    no Batch 6 exposure
+    no compaction
+    no prohibited shell/web/agent/MCP/IDE tool use
+    controlled settings unchanged
+    no new precedents or errata
+
+Batch 5 is private frozen.
+
+Under the owner's existing P3 authorization, Batch 6 is task-owner released:
+
+    BAT-63443a6cadb8
+    129 presentations
+    classification lines 7690-8987
+    event-context lines 6746-7898
+
+Batches 7-13 remain task-owner gated.
+
+Research 348 remains active: public ADS repository operations use the Codexless Runtime Bridge only.
+
+Next:
+
+    owner continues P3 Batch 6 in the existing fresh P3 Claude Code session
