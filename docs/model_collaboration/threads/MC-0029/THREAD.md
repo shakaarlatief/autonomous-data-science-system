@@ -1,7 +1,7 @@
 # MC-0029 Thread: Specification 028 Reconciliation and AO-10 Realization Design
 
 **Thread:** MC-0029
-**Status:** OPEN / KEY-A P0 PASS WITH REMEDIATION / P0.5 HARDENING OWNER NEXT
+**Status:** OPEN / KEY-A P0.5 ATTEMPT 001 HOLD / CLEAN PERMISSION RERUN OWNER NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** 0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
@@ -54,7 +54,8 @@ Independently derive Specification 028 reconciliation and AO-10 realization arch
     Claude-04 Key-A execution planning             COMPLETE / NO LABELS
     Key-author execution addendum                 COMPLETE / 811d098d...
     Local Claude Code Key A P0                    COMPLETE / PASS WITH REMEDIATION / NO LABELS
-    Key A P0.5 hardening                          NEXT / OWNER
+    Key A P0.5 Attempt 001                       COMPLETE / HOLD / NO SEMANTIC CONTAMINATION / Research 337
+    Key A P0.5 Attempt 002                       NEXT / OWNER / CLEAN PERMISSION RERUN
     Key A semantic phases P1-P8                   AFTER P0.5 REVIEW
     Fresh private Key Author B                    AFTER A COMMITMENT / BLIND TO A
     Key construct-validity gate                   AFTER BOTH COMMITMENTS
@@ -86,7 +87,7 @@ Claude may write only:
     docs/model_collaboration/threads/MC-0029/messages/**
 
     MC0029=OPEN
-    PHASE=DRP03_R2_KEY_AUTHOR_A_P0_5_HARDENING_OWNER_NEXT
+    PHASE=DRP03_R2_KEY_AUTHOR_A_P0_5_ATTEMPT2_CLEAN_PERMISSION_OWNER_NEXT
     INDEPENDENT_BASE=0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
     CHATGPT_CANDIDATE=RESEARCH312
     CLAUDE_MESSAGE_001=COMPLETE
@@ -150,5 +151,10 @@ Claude may write only:
     KEY_A_EFFORT=HIGH
     KEY_A_PERMISSION_CLASS=INTERACTIVE_APPROVAL
     KEY_A_LABELS=NONE
-    KEY_A_P0_5=NEXT
-    NEXT=OWNER_KEY_A_P0_5_HARDENING
+    KEY_A_P0_5_ATTEMPT_001=HOLD
+    KEY_A_P0_5_PERMISSION_MODE=DEFAULT_MANUAL_PASS
+    KEY_A_P0_5_IDE_DISCONNECTED=PASS_TASK_OWNER_VERIFIED
+    KEY_A_P0_5_LOCAL_PERMISSION_DRIFT=BLOCKING
+    KEY_A_P0_5_SEMANTIC_CONTAMINATION=NONE
+    KEY_A_P0_5_ATTEMPT_002=NEXT
+    NEXT=OWNER_KEY_A_P0_5_ATTEMPT_002_CLEAN_PERMISSION_RERUN

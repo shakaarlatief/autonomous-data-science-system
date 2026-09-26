@@ -484,3 +484,36 @@ Required launch:
 If Claude Code nevertheless reports an IDE attachment, stop that session before any semantic work and remediate the connection. Closing VS Code is fallback-only.
 
 P0.5 remains next. P1 remains unauthorized.
+## Key Author A P0.5 Attempt 001
+
+Research 337 reconciles the first P0.5 run.
+
+Result:
+
+    HOLD
+
+No semantic contamination occurred.
+
+The recorded Claude Code permission value:
+
+    default
+
+is the config/internal value for the UI mode Manual and therefore satisfies Research 335's INTERACTIVE_APPROVAL class. Future launch instructions use `--permission-mode default` directly to avoid alias ambiguity.
+
+Task-owner host postflight also verified that the Attempt 001 Claude CLI process had no connection to the active VS Code IDE listener. Another older Claude process remained attached to VS Code, which explains the live IDE lockfile without violating the Key A session invariant.
+
+The remaining blocker is the session-created:
+
+    .claude/settings.local.json
+
+It did not exist before Attempt 001. Standing "don't ask again" approvals created broad PowerShell allow rules, including `PowerShell(claude *)`. The file must be removed before the clean rerun, and the owner must use one-time approvals only.
+
+Still pending:
+
+    exact Research 330 raw Git-blob export
+    exact P0 transcript copy/hash
+    complete P0.5 postflight
+
+P0.5 Attempt 002 is next.
+
+P1 remains unauthorized.

@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_AUTHOR_A_P0_5_HARDENING_OWNER_NEXT",
+  "phase": "DRP03_R2_KEY_AUTHOR_A_P0_5_ATTEMPT2_CLEAN_PERMISSION_OWNER_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -80,14 +80,14 @@
       "DRP-03 Claude reviewer A must not inspect Research 324 or any future ChatGPT DRP-03 annotation/summary before committing its annotation.",
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15."
     ],
-    "notes": "Local Claude Code P0 substantively passed with no semantic material created. Research 335 resolves the four pre-P1 blockers: semantic model claude-opus-5-5 with HIGH effort is fixed before P1; exact Research 330 export is authorized because it is an external binding of the frozen public manifest; P1 must start from a plain terminal with IDE disconnected and interactive/manual approval rather than auto/bypass behavior; P0 and later Key A transcripts are private material and future Key B must be isolated from them. P1 remains unauthorized until P0.5 verifies these controls."
+    "notes": "Research 337 preserves P0.5 Attempt 001 as HOLD with no semantic contamination. The transcript value permissionMode=default is the installed Claude Code config/internal value for Manual and satisfies Research 335 INTERACTIVE_APPROVAL. Task-owner host postflight verified that the Attempt 001 Claude CLI process was not connected to the active VS Code IDE listener. The remaining blocker is session-created .claude/settings.local.json standing approvals, including broad PowerShell allow rules; that file did not exist before Attempt 001 and must be removed before a clean rerun. Research 330 export and P0 transcript copy remain not attempted. P1 remains unauthorized."
   },
   "last_transition": {
-    "transition_id": "mc0029-key-a-p0-pass-p05-hardening",
+    "transition_id": "mc0029-key-a-p05-attempt001-hold-clean-rerun",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 335 reconciles the local Claude Code P0 report as PASS with four non-semantic hardening actions. No Key A semantic labels exist. Owner must complete P0.5 before P1 can begin.",
-    "repository_head": "68a1849c4366412ae1e94ac54d247571f7f84b47"
+    "reason": "Research 337 reconciles P0.5 Attempt 001 as HOLD without semantic contamination. Manual/default permission mode and current-session IDE isolation are satisfied; session-created standing approvals must be removed and P0.5 rerun cleanly before P1.",
+    "repository_head": "161c702806745bed42c863bb53e73a41de9d0d74"
   }
 }

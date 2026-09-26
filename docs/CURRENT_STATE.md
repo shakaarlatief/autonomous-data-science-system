@@ -1,7 +1,7 @@
 # Current State
 
-**Checkpoint:** 673
-**Date:** 2026-09-25
+**Checkpoint:** 674
+**Date:** 2026-09-26
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
 **Promoted V1 integration branch:** `v1-frontend-spike` at `2480109fadeee1e480ef03b82e335aacdf9adf91`
@@ -1321,3 +1321,5 @@ Checkpoint 671 reconciles Claude-04's planning-only Key Author A response. The p
 Checkpoint 672 records the local Claude Code P0 preflight as PASS WITH REMEDIATION and preserves Research 335. No semantic Key A material was created. Before P1, Key Author A is fixed to claude-opus-5-5 with HIGH effort; the exact frozen Research 330 blob may be exported because it is already bound by the Research 332 public manifest; the semantic session must relaunch in a plain terminal with IDE disconnected and interactive/manual approval rather than auto/bypass behavior; and the P0 transcript must be copied/hash-bound into the private Key A package while all Key A transcript storage remains inaccessible to future Key B. P1 remains unauthorized until P0.5 is reviewed.
 
 Checkpoint 673 refines the Key Author A P0.5 isolation requirement without changing the protocol or semantic boundary. VS Code and Codexless may remain running. The Key A Claude Code session must instead be launched from a standalone external Windows Terminal/PowerShell process, not a VS Code integrated terminal, and must positively verify that no IDE connector is attached. If it attaches anyway, the session stops before semantic work; closing VS Code is only a fallback. P0.5 remains next and P1 remains unauthorized.
+
+Checkpoint 674 preserves Research 337 and P0.5 Attempt 001 as HOLD without semantic contamination. The recorded Claude Code permissionMode `default` is accepted as the config/internal value of Manual and therefore satisfies Research 335's INTERACTIVE_APPROVAL class; the earlier launch prompt's literal `manual` requirement was overconstrained. Task-owner host postflight verified that the Attempt 001 Claude CLI process had no connection to the active VS Code IDE listener, so the Key A session itself was IDE-disconnected even though another older Claude process remained attached to VS Code. The actual remaining blocker is session-created `.claude/settings.local.json` standing approvals, including broad PowerShell allow rules. That file did not exist before Attempt 001 and must be removed before a clean P0.5 rerun. Research 330 export and P0 transcript capture remain not attempted. `out/` remains empty, `p1_authorized=false`, and `semantic_labels_created=false`. P0.5 Attempt 002 is next; P1 remains unauthorized.
