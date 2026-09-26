@@ -658,3 +658,39 @@ P2 is ready but not authorized.
 Next:
 
     explicit project-owner P2 authorization decision
+
+## Key Author A P2 authorization
+
+The project owner explicitly authorized the complete P2 scope defined in Research 341.
+
+Research 342 records:
+
+    P2 AUTHORIZED
+
+P2 remains limited to:
+
+    BIRTH development classification
+    2 sequential frozen batches
+    469 presentations total
+
+Immediate execution is batch 1 only:
+
+    BAT-2d0805e6c619
+    205 presentations
+
+Batch 2 is already authorized in principle as part of P2, but must not be exposed until ChatGPT mechanically accepts frozen batch 1.
+
+No second human authorization is required for batch 2 if batch 1 passes. The task-owner continuation gate is still mandatory.
+
+Still prohibited:
+
+    BIRTH held-out
+    BIRTH grouping
+    LEGACY
+    attention provenance
+    P1 STATE semantic output
+    shell/Git/Python/web/repository access
+
+Next:
+
+    owner launches the standalone local Claude Code P2 batch-1 session

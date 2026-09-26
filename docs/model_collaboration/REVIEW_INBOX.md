@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-26
-**Status:** MC-0029 OPEN / KEY-A P2 BIRTH DEVELOPMENT DEFINED / OWNER AUTHORIZATION NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / KEY-A P2 AUTHORIZED / BATCH 1 OWNER LAUNCH NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -65,9 +65,9 @@ A bounded return-boundary deviation is recorded because the owner-pasted Claude 
 
 Research 341 now defines the exact next Key Author A phase prospectively. P2 is BIRTH development classification only: two frozen sequential batches totaling 469 presentations. Batch 1 must be frozen and mechanically reviewed before batch 2 is exposed. Grouping, BIRTH held-out, LEGACY, attention provenance, P1 STATE-output access and semantic shell use are all outside P2.
 
-P2 is ready but not authorized.
+The project owner has explicitly authorized P2. Research 342 binds the authorization to the two frozen BIRTH development batches. Immediate execution is batch 1 only; batch 2 remains inaccessible until ChatGPT task-owner review accepts frozen batch 1.
 
-Next: project-owner P2 authorization decision.
+Next: owner launches P2 batch 1 and returns only the bounded non-secret batch report.
 
 Owner decision and all production/migration/authority actions remain held.
 

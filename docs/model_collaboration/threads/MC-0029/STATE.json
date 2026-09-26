@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_AUTHOR_A_P2_BIRTH_DEVELOPMENT_OWNER_AUTHORIZATION",
+  "phase": "DRP03_R2_KEY_AUTHOR_A_P2_BATCH1_OWNER_LAUNCH_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 341 prospectively defines P2 as BIRTH development classification only: two frozen sequential batches totaling 469 presentations. Batch 1 must freeze and pass task-owner mechanical/transcript review before batch 2 is exposed. P2 prohibits grouping, held-out BIRTH, LEGACY, P1 STATE-output access, attention-provenance access and shell use. P2 is ready but remains unauthorized pending explicit owner authorization."
+    "notes": "Research 342 preserves the project owner's explicit authorization of P2. P2 remains BIRTH development classification only. Immediate execution is batch 1 with 205 presentations; batch 2 is authorized in principle but cannot be exposed until ChatGPT task-owner postflight accepts frozen batch 1. Grouping, held-out BIRTH, LEGACY, P1 STATE-output access, attention-provenance access and shell use remain prohibited."
   },
   "last_transition": {
-    "transition_id": "mc0029-key-a-p2-birth-development-phase-defined",
+    "transition_id": "mc0029-key-a-p2-explicit-owner-authorization",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 341 defines the next Key Author A phase as two sequential BIRTH development classification batches with a mandatory task-owner gate between them. No P2 semantic work is authorized yet.",
-    "repository_head": "2cbd43f9aebaad03dcc89ee7248c454177844267"
+    "reason": "The project owner explicitly authorized P2. Research 342 binds that authorization to BIRTH development classification only, with immediate execution limited to batch 1 and batch 2 held behind mandatory task-owner review.",
+    "repository_head": "ffd069c422552d52868ca72ca0ac87b7b7810a33"
   }
 }
