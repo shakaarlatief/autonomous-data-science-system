@@ -746,3 +746,35 @@ Still prohibited:
 Next:
 
     owner continues the current P2 Claude Code session with the bounded Batch 2 instruction
+
+## Key Author A P2 completion
+
+Research 344 reconciles P2 BIRTH development classification as:
+
+    PASS
+
+Both prospectively frozen batches are accepted:
+
+    BAT-2d0805e6c619    205 / 205    PRIVATE FROZEN
+    BAT-904613dd8a4e    264 / 264    PRIVATE FROZEN
+
+Total:
+
+    469 / 469 presentations
+
+Task-owner checks confirm Batch 1 remained unchanged, Batch 2 matches its frozen source IDs/order/schema, Batch 2 reads stayed strictly inside the released second ranges, and no forbidden shell/web/agent/MCP/IDE or hidden-source access occurred.
+
+Six append-only precedents were created across P2 and no errata were added.
+
+Still unstarted and unauthorized:
+
+    BIRTH held-out classification
+    BIRTH grouping
+    LEGACY
+    attention-consistency reconciliation
+    canonical Key A assembly
+    commitment generation
+
+Next:
+
+    prospectively define the next Key Author A semantic phase before any new labels are created

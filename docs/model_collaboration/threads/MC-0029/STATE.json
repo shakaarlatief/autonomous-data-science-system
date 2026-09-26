@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_AUTHOR_A_P2_BATCH2_OWNER_CONTINUE_NEXT",
+  "phase": "DRP03_R2_KEY_AUTHOR_A_POST_P2_NEXT_PHASE_DESIGN",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 343 accepts P2 Batch 1 as PASS after mechanical output, transcript exposure-boundary and host-isolation review. Batch 1 is private frozen. The existing owner P2 authorization now permits ChatGPT to release Batch 2, which remains limited to the second frozen development batch and its bounded event context. P2 is not complete, and grouping, held-out BIRTH, LEGACY, P1 STATE-output access, attention-provenance access and shell use remain prohibited."
+    "notes": "Research 344 closes P2 BIRTH development classification as PASS. Both sequential development batches are private frozen, Batch 1 remains unchanged, all 469 presentations are covered, and transcript/configuration/isolation checks pass. No later semantic phase is authorized. BIRTH held-out, BIRTH grouping, LEGACY, attention-consistency work and complete-key assembly remain unstarted pending prospective phase definition."
   },
   "last_transition": {
-    "transition_id": "mc0029-key-a-p2-batch1-pass-batch2-release",
+    "transition_id": "mc0029-key-a-p2-pass-next-phase-design",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 343 accepts P2 Batch 1 as PASS, verifies no premature Batch 2 exposure, freezes Batch 1 and releases Batch 2 under the already-granted P2 authorization.",
-    "repository_head": "52cb71e2831676360343be024cd4ebf6d4232dfe"
+    "reason": "Research 344 accepts P2 Batch 2, confirms Batch 1 immutability, closes BIRTH development classification as PASS, and holds all later semantic phases pending prospective definition.",
+    "repository_head": "32ade1e24363b39355a466e693fd43c7e7a843a4"
   }
 }

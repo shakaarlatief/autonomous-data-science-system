@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 680
+**Checkpoint:** 681
 **Date:** 2026-09-26
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -1335,3 +1335,5 @@ Checkpoint 678 preserves Research 341 and prospectively defines P2 before any P2
 Checkpoint 679 preserves Research 342 and the project owner's explicit authorization of the complete prospectively defined P2 BIRTH development phase. Immediate execution remains limited to batch 1: 205 presentations. Batch 2 is authorized in principle as part of P2 but remains operationally inaccessible until ChatGPT task-owner postflight accepts the frozen batch-1 artifact and transcript boundary. P2 retains line-bounded current-batch reads, no grouping/held-out/LEGACY/P1-output/attention-provenance access, no shell, and the already-qualified local Claude Code isolation configuration. BIRTH held-out, BIRTH grouping, LEGACY and complete-key assembly remain unauthorized.
 
 Checkpoint 680 preserves Research 343 and accepts P2 Batch 1 as PASS after task-owner mechanical artifact validation, transcript-level sequential-exposure verification and host-side IDE-isolation review. All 205 frozen presentations are present with exact metadata, fields, types, ID set and source order; the private batch artifact is frozen. Transcript reads stop exactly at classification line 2067 and key-author-context line 1831, with no Batch 2 exposure, no shell/web/agent/MCP/IDE tool use and no forbidden-source access. The three reported semantic precedents were added in one append-only edit with existing content preserved, and no errata were added. Under the owner's already-granted P2 authorization, Batch 2 is now task-owner released: 264 presentations with exposure limited to classification lines 2068-4716 and key-author-context lines 1832-4168. P2 remains incomplete; BIRTH held-out, grouping, LEGACY and complete-key assembly remain unauthorized.
+
+Checkpoint 681 preserves Research 344 and closes P2 BIRTH development classification as PASS. Batch 2 contains all 264 frozen presentations with exact metadata, schema, ID set and source order; Batch 1 remains byte-identical to its accepted boundary. Transcript verification confirms Batch 2 reads only the released second ranges, does not reread the frozen Batch 1 semantic artifact or P1 STATE output, and uses no shell/web/agent/MCP/IDE tooling. The second set of three precedents was appended without altering prior content; no errata were added. Both P2 batches are private frozen, totaling 469/469 presentations. No later semantic phase is authorized; BIRTH held-out, BIRTH grouping, LEGACY and complete-key assembly remain unstarted.

@@ -1,7 +1,7 @@
 # MC-0029 Thread: Specification 028 Reconciliation and AO-10 Realization Design
 
 **Thread:** MC-0029
-**Status:** OPEN / KEY-A P2 BATCH 1 PASS / BATCH 2 OWNER CONTINUE NEXT
+**Status:** OPEN / KEY-A P2 PASS / NEXT SEMANTIC PHASE DESIGN NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** 0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
@@ -57,7 +57,7 @@ Independently derive Specification 028 reconciliation and AO-10 realization arch
     Key A P0.5 Attempt 001                       COMPLETE / HOLD / NO SEMANTIC CONTAMINATION / Research 337
     Key A P0.5 Attempt 002                       COMPLETE / PASS / NO SEMANTIC CONTAMINATION / Research 338
     Key A P1 STATE                               COMPLETE / PASS / PRIVATE FROZEN / Research 340
-    Key A P2 BIRTH development classification    BATCH 1 PASS / PRIVATE FROZEN / BATCH 2 TASK-OWNER RELEASED
+    Key A P2 BIRTH development classification    COMPLETE / PASS / 2 PRIVATE FROZEN BATCHES / Research 344
     Key A later semantic phases                   NOT AUTHORIZED
     Fresh private Key Author B                    AFTER A COMMITMENT / BLIND TO A
     Key construct-validity gate                   AFTER BOTH COMMITMENTS
@@ -89,7 +89,7 @@ Claude may write only:
     docs/model_collaboration/threads/MC-0029/messages/**
 
     MC0029=OPEN
-    PHASE=DRP03_R2_KEY_AUTHOR_A_P2_BATCH2_OWNER_CONTINUE_NEXT
+    PHASE=DRP03_R2_KEY_AUTHOR_A_POST_P2_NEXT_PHASE_DESIGN
     INDEPENDENT_BASE=0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
     CHATGPT_CANDIDATE=RESEARCH312
     CLAUDE_MESSAGE_001=COMPLETE
@@ -178,5 +178,8 @@ Claude may write only:
     KEY_A_P2_AUTHORIZED=true
     KEY_A_LATER_SEMANTIC_PHASE_AUTHORIZED=false
     KEY_A_P2_BATCH1=PASS_PRIVATE_FROZEN
-    KEY_A_P2_BATCH2=TASK_OWNER_RELEASED
-    NEXT=OWNER_CONTINUE_P2_BATCH2
+    KEY_A_P2_BATCH2=PASS_PRIVATE_FROZEN
+    KEY_A_P2=PASS
+    KEY_A_P2_PRESENTATIONS=469_OF_469
+    KEY_A_LATER_SEMANTIC_PHASE_AUTHORIZED=false
+    NEXT=DEFINE_NEXT_KEY_A_PHASE_PROSPECTIVELY
