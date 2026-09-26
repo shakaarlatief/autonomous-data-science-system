@@ -778,3 +778,48 @@ Still unstarted and unauthorized:
 Next:
 
     prospectively define the next Key Author A semantic phase before any new labels are created
+
+## Key Author A P3 phase definition
+
+Research 345 prospectively defines the next semantic phase as:
+
+    P3 = BIRTH held-out classification
+
+Frozen held-out surface:
+
+    11 opaque packet events
+    2254 unique semantic items
+    2347 classification presentations
+    13 sequential batches
+
+A fresh Claude Code session is mandatory for P3. The P2 session must not be continued or resumed because its conversational context contains exact development presentation labels.
+
+Semantic carry-forward is limited to:
+
+    CODEBOOK
+    append-only PRECEDENTS
+    optional ERRATA
+    frozen Key Author instructions/schema/addendum
+
+P2 development artifacts and transcripts are forbidden.
+
+Every held-out batch has an exact frozen line-bounded classification range and matching event-context range. Each batch must freeze and pass ChatGPT task-owner mechanical/transcript review before the next batch is exposed.
+
+Two packet events span two batches. Their event context is exposed with the first part; the second part receives no new event context unless a fresh sequential P3 session must reread the already-exposed same-event context.
+
+Attention provenance remains hidden throughout P3. The 2347 presentations correspond to 2254 unique semantic items because attention-check duplicates are intentionally present.
+
+Still prohibited:
+
+    BIRTH grouping
+    attention-consistency reconciliation
+    LEGACY
+    canonical Key A assembly
+    commitment generation
+    shell / Git / Python / web / MCP / IDE tools
+
+P3 is ready but not authorized.
+
+Next:
+
+    explicit project-owner P3 authorization decision

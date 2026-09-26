@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_AUTHOR_A_POST_P2_NEXT_PHASE_DESIGN",
+  "phase": "DRP03_R2_KEY_AUTHOR_A_P3_BIRTH_HELDOUT_OWNER_AUTHORIZATION",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 344 closes P2 BIRTH development classification as PASS. Both sequential development batches are private frozen, Batch 1 remains unchanged, all 469 presentations are covered, and transcript/configuration/isolation checks pass. No later semantic phase is authorized. BIRTH held-out, BIRTH grouping, LEGACY, attention-consistency work and complete-key assembly remain unstarted pending prospective phase definition."
+    "notes": "Research 345 prospectively defines P3 as BIRTH held-out classification: 2254 unique semantic items represented by 2347 presentations across 13 sequential gated batches. P3 requires a fresh Claude Code session so P2 presentation-level label context cannot carry into held-out work; only append-only precedents and common frozen instructions carry forward. P3 is ready but remains unauthorized. Grouping, attention provenance, LEGACY and complete-key work remain prohibited."
   },
   "last_transition": {
-    "transition_id": "mc0029-key-a-p2-pass-next-phase-design",
+    "transition_id": "mc0029-key-a-p3-birth-heldout-phase-defined",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 344 accepts P2 Batch 2, confirms Batch 1 immutability, closes BIRTH development classification as PASS, and holds all later semantic phases pending prospective definition.",
-    "repository_head": "32ade1e24363b39355a466e693fd43c7e7a843a4"
+    "reason": "Research 345 defines the next Key Author A phase as 13 sequential BIRTH held-out classification batches with a fresh-session requirement and mandatory task-owner gates. No P3 semantic work is authorized yet.",
+    "repository_head": "bbebc63d61ebd12033db25d8c5cc7aa00d4642d8"
   }
 }

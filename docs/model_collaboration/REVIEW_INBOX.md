@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-26
-**Status:** MC-0029 OPEN / KEY-A P2 PASS / NEXT SEMANTIC PHASE DESIGN NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / KEY-A P3 BIRTH HELD-OUT DEFINED / OWNER AUTHORIZATION NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -69,7 +69,11 @@ The project owner has explicitly authorized P2. Research 342 binds the authoriza
 
 Research 344 accepts P2 BIRTH development classification as PASS. Both development batches are private frozen, all 469 presentations are covered, Batch 1 remained unchanged through Batch 2, and transcript/configuration/isolation checks pass. Six append-only precedents were added across P2 and no errata were created.
 
-No later semantic phase is authorized. Next: define the next Key Author A semantic phase prospectively before any new hidden labels are produced.
+Research 345 now defines P3 prospectively as BIRTH held-out classification: 2254 unique semantic items represented by 2347 presentations across 13 sequential batches. P3 requires a fresh Claude Code session so exact P2 development-label conversational context cannot carry into held-out work. Every batch remains task-owner gated, attention provenance stays hidden, and grouping/LEGACY/complete-key work remains outside scope.
+
+P3 is ready but not authorized.
+
+Next: project-owner P3 authorization decision.
 
 Owner decision and all production/migration/authority actions remain held.
 
