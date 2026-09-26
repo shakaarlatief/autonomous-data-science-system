@@ -901,3 +901,40 @@ This rule is transitional and does not select the future Project workflow realiz
 Next:
 
     owner continues P3 Batch 2 in the existing fresh P3 Claude Code session
+
+## Key Author A P3 Batch 2 result
+
+Research 349 reconciles P3 Batch 2 as:
+
+    PASS
+
+Task-owner checks confirm:
+
+    223 / 223 presentations
+    exact frozen presentation-ID set and order
+    exact metadata/schema/types
+    exact held-out classification exposure lines 218-2455
+    exact held-out event-context exposure lines 158-2138
+    no access to the frozen Batch 1 semantic artifact
+    no Batch 3 exposure
+    no compaction
+    no prohibited shell/web/agent/MCP/IDE tool use
+    controlled settings unchanged
+    no new precedents or errata
+
+Batch 2 is private frozen.
+
+Under the owner's existing P3 authorization, Batch 3 is task-owner released:
+
+    BAT-145d2d76772f
+    383 presentations
+    classification lines 2456-6293
+    event-context lines 2139-5519
+
+Batches 4-13 remain task-owner gated.
+
+Research 348 remains active: public ADS repository operations use the Codexless Runtime Bridge only.
+
+Next:
+
+    owner continues P3 Batch 3 in the existing fresh P3 Claude Code session
