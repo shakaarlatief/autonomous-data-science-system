@@ -1133,3 +1133,15 @@ Research 348 remains active: public ADS repository operations use the Codexless 
 Next:
 
     owner continues P3 Batch 9 in the existing fresh P3 Claude Code session
+
+## Key Author A P3 Batch 9 HOLD
+
+Research 356 records Batch 9 HOLD because a verified Claude Code compaction boundary occurred while Batch 9 remained open. No Batch 9 artifact was created, no Batch 10 material was exposed, and one pre-compaction precedent append is preserved. The compacted session is retired from semantic execution.
+
+A fresh replacement P3 session is authorized to restart Batch 9 from scratch under the same logical Key Author A. It may reread the full Batch 9 source/context ranges, but must not read any prior frozen semantic artifact or Batch 10 classification material.
+
+Batches 10-13 remain task-owner gated.
+
+Next:
+
+    owner launches fresh P3 Batch 9 replacement session
