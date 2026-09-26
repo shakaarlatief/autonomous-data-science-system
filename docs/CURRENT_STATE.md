@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 672
+**Checkpoint:** 673
 **Date:** 2026-09-25
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -1319,3 +1319,5 @@ Checkpoint 670 preserves a side-track owner vision and environment-change observ
 Checkpoint 671 reconciles Claude-04's planning-only Key Author A response. The public DRP-03 R2 V0.3 freeze remains unchanged. A symmetric key-author execution addendum is frozen before labels at SHA-256 811d098dcda35583b5ef6a45fce0d1578b85029d3c43167a28e96804010ce862. Local Claude Code is selected as the semantic executor for the exposed/non-fresh Key Author A slot, with claude-04 remaining dispatcher and eventual Message 010 author. Cloud Claude Code is not used for hidden-key material. Grouping was tightened so every stored MUST_JOIN/MUST_SPLIT pair requires individual confirmation; unsampled pairs remain unconstrained. No Key A labels or private bytes exist. The next action is owner launch of a non-semantic local Claude Code P0 preflight; P1 cannot start until ChatGPT reviews that preflight.
 
 Checkpoint 672 records the local Claude Code P0 preflight as PASS WITH REMEDIATION and preserves Research 335. No semantic Key A material was created. Before P1, Key Author A is fixed to claude-opus-5-5 with HIGH effort; the exact frozen Research 330 blob may be exported because it is already bound by the Research 332 public manifest; the semantic session must relaunch in a plain terminal with IDE disconnected and interactive/manual approval rather than auto/bypass behavior; and the P0 transcript must be copied/hash-bound into the private Key A package while all Key A transcript storage remains inaccessible to future Key B. P1 remains unauthorized until P0.5 is reviewed.
+
+Checkpoint 673 refines the Key Author A P0.5 isolation requirement without changing the protocol or semantic boundary. VS Code and Codexless may remain running. The Key A Claude Code session must instead be launched from a standalone external Windows Terminal/PowerShell process, not a VS Code integrated terminal, and must positively verify that no IDE connector is attached. If it attaches anyway, the session stops before semantic work; closing VS Code is only a fallback. P0.5 remains next and P1 remains unauthorized.

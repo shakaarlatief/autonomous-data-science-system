@@ -467,3 +467,20 @@ P1 remains unauthorized.
 Next is non-semantic P0.5 hardening and verification.
 
 No Key A labels, grouping pairs, STATE expected outputs, LEGACY witness identities or private key bytes exist.
+
+## Key Author A IDE-isolation refinement
+
+Research 336 refines the P0.5 launch condition.
+
+VS Code and Codexless may remain running.
+
+The actual invariant is that the Key A Claude Code semantic session itself must have no IDE attachment.
+
+Required launch:
+
+    standalone Windows Terminal / PowerShell
+    not a VS Code integrated terminal
+
+If Claude Code nevertheless reports an IDE attachment, stop that session before any semantic work and remediate the connection. Closing VS Code is fallback-only.
+
+P0.5 remains next. P1 remains unauthorized.

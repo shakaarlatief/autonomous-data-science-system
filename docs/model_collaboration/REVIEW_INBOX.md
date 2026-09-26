@@ -549,3 +549,5 @@ resume        only when the project owner explicitly returns to frontend work
 ```
 
 There is no pending Claude obligation inside MC-0004.
+
+Research 336 refines the P0.5 host rule: VS Code and Codexless may remain running. Key Author A must launch from a standalone external terminal and positively verify that the Claude Code session has no IDE attachment. Closing VS Code is fallback-only. P0.5 remains next and P1 remains unauthorized.
