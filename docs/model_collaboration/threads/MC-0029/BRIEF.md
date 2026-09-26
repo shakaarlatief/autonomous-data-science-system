@@ -1145,3 +1145,46 @@ Batches 10-13 remain task-owner gated.
 Next:
 
     owner launches fresh P3 Batch 9 replacement session
+
+## Key Author A P3 Batch 9 replacement result
+
+Research 357 records replacement Batch 9 PASS after task-owner artifact and transcript review.
+
+Task-owner checks confirm:
+
+    392 / 392 presentations
+    exact frozen presentation-ID set and order
+    exact metadata/schema/types
+    bounded semantic Reads remain inside Batch 9 source/context ranges
+    no compaction in replacement session
+    no prohibited shell/web/agent/MCP/IDE tool use
+    recovery provenance records compaction_events=1 and restarts=1
+    no new precedent or erratum in the replacement
+
+One technical deviation is preserved:
+
+    a count-only Grep scanned the whole classification-session source
+    its only model-visible result was the already-published total 2347
+    it occurred after the final Batch 9 semantic artifact mutation
+    no Batch 9 semantic mutation occurred afterward
+    no future-batch text, IDs, labels or semantic content were exposed
+
+The deviation is therefore recorded as non-semantic and non-influential to Batch 9 classification rather than erased.
+
+Batch 9 is private frozen.
+
+The replacement session is retired after Batch 9. Under Research 345, Batch 10 is released to a fresh sequential P3 session, which may reread the already-authorized shared event context for EVP-ffd3c3f9f874.
+
+Batch 10:
+
+    BAT-ece1bc9728dc
+    EVP-ffd3c3f9f874 part 2
+    61 presentations
+    classification lines 15512-16129
+    shared event-context lines 10220-14185 may be reread in the fresh session
+
+Batches 11-13 remain task-owner gated.
+
+Next:
+
+    owner launches fresh P3 Batch 10 session

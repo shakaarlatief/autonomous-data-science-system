@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-26
-**Status:** MC-0029 OPEN / KEY-A P3 BATCH 9 HOLD / FRESH REPLACEMENT OWNER LAUNCH NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / KEY-A P3 BATCH 9 PASS / BATCH 10 FRESH SESSION OWNER LAUNCH NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -91,9 +91,11 @@ Research 354 accepts P3 Batch 7 as PASS after exact artifact and transcript revi
 
 Research 355 accepts P3 Batch 8 as PASS after exact artifact and transcript review. Batch 8 is private frozen.
 
-Research 356 records Batch 9 HOLD after verified open-batch compaction. No Batch 9 artifact exists and Batch 10 remains gated. The pre-compaction append-only precedent is preserved. The compacted session is retired and a fresh replacement P3 session is authorized to restart Batch 9 from scratch.
+Research 356 records the prior Batch 9 compaction HOLD and recovery.
 
-Next: owner launches a fresh standalone P3 Claude Code replacement session with the bounded Batch 9 restart instruction and returns only the final bounded report.
+Research 357 accepts the fresh replacement Batch 9 as PASS. One whole-source count-only Grep is retained as a recorded technical tool-scope deviation: it returned only the already-published aggregate 2347 after every Batch 9 label had been written, exposed no future semantic content, and was followed by no label mutation. Batch 9 is private frozen. The replacement session is retired, and Batch 10 is task-owner released to a fresh sequential P3 session.
+
+Next: owner launches a fresh standalone P3 Claude Code Batch 10 session and returns only the final bounded report.
 
 Owner decision and all production/migration/authority actions remain held.
 

@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_AUTHOR_A_P3_BATCH9_HOLD_FRESH_REPLACEMENT_NEXT",
+  "phase": "DRP03_R2_KEY_AUTHOR_A_P3_BATCH10_FRESH_SESSION_OWNER_LAUNCH_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 356 reconciles Batch 9 as HOLD because a real compact_boundary occurred while the batch remained open. No Batch 9 artifact exists, no Batch 10 material was exposed, and no tool call occurred after the transcript's compact boundary. One authorized append-only precedent added before compaction is preserved. The compacted P3 session is retired from semantic execution and a fresh replacement P3 session is task-owner authorized to restart Batch 9 from scratch under the existing P3 authorization. Batches 10-13 remain gated. Research 348's Runtime-Bridge-only repository constraint remains active."
+    "notes": "Research 357 accepts the fresh replacement Batch 9 as PASS after exact mechanical and transcript review. One whole-source count-only Grep is recorded as a technical tool-scope deviation: it returned only the already-published aggregate count 2347 after all 392 Batch 9 labels were written, exposed no future-batch semantic content, and was followed by no Batch 9 semantic mutation. The Batch 9 artifact is private frozen. The replacement session is retired after Batch 9, and Batch 10 is released to a fresh sequential P3 session. Batches 11-13 remain gated. Research 348's Runtime-Bridge-only repository constraint remains active."
   },
   "last_transition": {
-    "transition_id": "mc0029-key-a-p3-batch9-compaction-hold-replacement-release",
+    "transition_id": "mc0029-key-a-p3-batch9-pass-batch10-fresh-session-release",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 356 confirms an open-batch compaction HOLD in Batch 9, preserves the pre-compaction append-only precedent, retires the compacted session and authorizes a fresh replacement session to restart Batch 9 from scratch.",
-    "repository_head": "144702db6ede8ae04e0d92575d20934c9e26e662"
+    "reason": "Research 357 accepts replacement Batch 9 with one recorded non-semantic count-query tool-scope deviation, freezes Batch 9, retires the replacement session and releases Batch 10 to a fresh sequential P3 session.",
+    "repository_head": "b1efff5988d832cf6d7ff3b1bbb684434c31c3fb"
   }
 }
