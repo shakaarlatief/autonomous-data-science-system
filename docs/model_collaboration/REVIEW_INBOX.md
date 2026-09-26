@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-26
-**Status:** MC-0029 OPEN / KEY-A P0.5 ATTEMPT 001 HOLD / CLEAN PERMISSION RERUN OWNER NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / KEY-A P0.5 PASS / P1 OWNER AUTHORIZATION NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -57,9 +57,11 @@ Claude-04 correctly stopped before generating any labels because the full Key A 
 
 Local Claude Code P0 returned PASS for the non-semantic preflight and explicitly created no semantic Key A material. Research 335 resolves four blockers before P1: fix claude-opus-5-5 with HIGH effort; export the exact frozen Research 330 blob; relaunch from a plain terminal with IDE disconnected and interactive/manual approval; and capture/hash P0 transcript material inside the private Key A package while treating Claude's client transcript storage as confidential from future Key B.
 
-Research 337 preserves P0.5 Attempt 001 as HOLD without semantic contamination. The transcript value `permissionMode=default` is Manual mode's config value and satisfies the frozen INTERACTIVE_APPROVAL class. Task-owner host postflight verified that the Attempt 001 Claude CLI process was not attached to the active VS Code IDE listener. The remaining blocker is session-created `.claude/settings.local.json` standing approvals, including broad PowerShell allow rules; the file must be removed before the clean rerun. Research 330 export and P0 transcript copy remain not attempted.
+Research 338 records P0.5 Attempt 002 PASS with no semantic contamination. Task-owner postflight independently verifies the unchanged controlled settings hash, absence of `.claude/settings.local.json`, exact Research 330 export, exact P0 transcript copy, empty `out/`, `p1_authorized=false`, and `semantic_labels_created=false`. Host-side verification also confirms that the Attempt 002 Claude CLI process was not attached to the active VS Code IDE listener while other Claude/VS Code activity remained isolated.
 
-Next: owner runs P0.5 Attempt 002 from a clean permission state. P1 remains unauthorized until ChatGPT reviews a passing P0.5.
+Pre-P1 hardening is complete. P1 is technically ready but remains unauthorized until the project owner explicitly authorizes semantic Key Author A execution.
+
+Next: owner P1 authorization decision.
 
 Owner decision and all production/migration/authority actions remain held.
 

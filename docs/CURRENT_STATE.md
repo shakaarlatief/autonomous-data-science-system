@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 674
+**Checkpoint:** 675
 **Date:** 2026-09-26
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -1323,3 +1323,5 @@ Checkpoint 672 records the local Claude Code P0 preflight as PASS WITH REMEDIATI
 Checkpoint 673 refines the Key Author A P0.5 isolation requirement without changing the protocol or semantic boundary. VS Code and Codexless may remain running. The Key A Claude Code session must instead be launched from a standalone external Windows Terminal/PowerShell process, not a VS Code integrated terminal, and must positively verify that no IDE connector is attached. If it attaches anyway, the session stops before semantic work; closing VS Code is only a fallback. P0.5 remains next and P1 remains unauthorized.
 
 Checkpoint 674 preserves Research 337 and P0.5 Attempt 001 as HOLD without semantic contamination. The recorded Claude Code permissionMode `default` is accepted as the config/internal value of Manual and therefore satisfies Research 335's INTERACTIVE_APPROVAL class; the earlier launch prompt's literal `manual` requirement was overconstrained. Task-owner host postflight verified that the Attempt 001 Claude CLI process had no connection to the active VS Code IDE listener, so the Key A session itself was IDE-disconnected even though another older Claude process remained attached to VS Code. The actual remaining blocker is session-created `.claude/settings.local.json` standing approvals, including broad PowerShell allow rules. That file did not exist before Attempt 001 and must be removed before a clean P0.5 rerun. Research 330 export and P0 transcript capture remain not attempted. `out/` remains empty, `p1_authorized=false`, and `semantic_labels_created=false`. P0.5 Attempt 002 is next; P1 remains unauthorized.
+
+Checkpoint 675 preserves Research 338 and P0.5 Attempt 002 as PASS. Task-owner postflight independently verifies the unchanged controlled settings hash, absence of `.claude/settings.local.json`, exact Research 330 export hash/length, exact P0 transcript copy hash/length, empty `out/`, `p1_authorized=false`, and `semantic_labels_created=false`. Host-side verification shows the Attempt 002 Claude CLI process had no connection to the active VS Code IDE listener while a different older Claude process remained attached, satisfying the Research 336 session-level isolation invariant. The pre-P1 hardening gate is complete with no semantic contamination. P1 is now technically ready but remains explicitly unauthorized pending an owner decision; no Key A labels or private key bytes exist.

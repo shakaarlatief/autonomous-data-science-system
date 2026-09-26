@@ -517,3 +517,35 @@ Still pending:
 P0.5 Attempt 002 is next.
 
 P1 remains unauthorized.
+## Key Author A P0.5 Attempt 002
+
+Research 338 reconciles the clean rerun as:
+
+    PASS
+
+Task-owner postflight independently verifies:
+
+    controlled settings hash unchanged
+    .claude/settings.local.json absent
+    exact Research 330 export hash and byte length
+    exact P0 transcript copy hash and byte length
+    out/ empty
+    p1_authorized=false
+    semantic_labels_created=false
+
+Host-side postflight confirms that the Attempt 002 Claude CLI process had no connection to the active VS Code IDE listener. A different older Claude process remained IDE-attached, which is permitted by Research 336.
+
+The complete Research 335 P0.5 hardening gate is therefore satisfied without semantic contamination.
+
+P1 is technically ready but is not authorized by the P0.5 pass itself.
+
+The next actor is the human owner, who must explicitly authorize or hold P1.
+
+Until authorization:
+
+    do not change p1_authorized
+    do not create STATE expected outputs
+    do not create BIRTH or LEGACY labels
+    do not create witness/control identities
+    do not create grouping pairs
+    do not create canonical/private Key A bytes

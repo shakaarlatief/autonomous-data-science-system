@@ -1,7 +1,7 @@
 # MC-0029 Thread: Specification 028 Reconciliation and AO-10 Realization Design
 
 **Thread:** MC-0029
-**Status:** OPEN / KEY-A P0.5 ATTEMPT 001 HOLD / CLEAN PERMISSION RERUN OWNER NEXT
+**Status:** OPEN / KEY-A P0.5 PASS / P1 OWNER AUTHORIZATION NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** 0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
@@ -55,8 +55,8 @@ Independently derive Specification 028 reconciliation and AO-10 realization arch
     Key-author execution addendum                 COMPLETE / 811d098d...
     Local Claude Code Key A P0                    COMPLETE / PASS WITH REMEDIATION / NO LABELS
     Key A P0.5 Attempt 001                       COMPLETE / HOLD / NO SEMANTIC CONTAMINATION / Research 337
-    Key A P0.5 Attempt 002                       NEXT / OWNER / CLEAN PERMISSION RERUN
-    Key A semantic phases P1-P8                   AFTER P0.5 REVIEW
+    Key A P0.5 Attempt 002                       COMPLETE / PASS / NO SEMANTIC CONTAMINATION / Research 338
+    Key A semantic phases P1-P8                   P1 READY / EXPLICIT OWNER AUTHORIZATION REQUIRED
     Fresh private Key Author B                    AFTER A COMMITMENT / BLIND TO A
     Key construct-validity gate                   AFTER BOTH COMMITMENTS
     DRP-03 R2                                    AFTER HARNESS FREEZE
@@ -87,7 +87,7 @@ Claude may write only:
     docs/model_collaboration/threads/MC-0029/messages/**
 
     MC0029=OPEN
-    PHASE=DRP03_R2_KEY_AUTHOR_A_P0_5_ATTEMPT2_CLEAN_PERMISSION_OWNER_NEXT
+    PHASE=DRP03_R2_KEY_AUTHOR_A_P1_OWNER_AUTHORIZATION_NEXT
     INDEPENDENT_BASE=0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
     CHATGPT_CANDIDATE=RESEARCH312
     CLAUDE_MESSAGE_001=COMPLETE
@@ -156,5 +156,10 @@ Claude may write only:
     KEY_A_P0_5_IDE_DISCONNECTED=PASS_TASK_OWNER_VERIFIED
     KEY_A_P0_5_LOCAL_PERMISSION_DRIFT=BLOCKING
     KEY_A_P0_5_SEMANTIC_CONTAMINATION=NONE
-    KEY_A_P0_5_ATTEMPT_002=NEXT
-    NEXT=OWNER_KEY_A_P0_5_ATTEMPT_002_CLEAN_PERMISSION_RERUN
+    KEY_A_P0_5_ATTEMPT_002=PASS
+    KEY_A_PRE_P1_HARDENING=COMPLETE
+    KEY_A_P1_READY=true
+    KEY_A_P1_AUTHORIZED=false
+    KEY_A_LABELS=NONE
+    KEY_A_PRIVATE_BYTES=NOT_CREATED
+    NEXT=OWNER_P1_AUTHORIZATION_DECISION
