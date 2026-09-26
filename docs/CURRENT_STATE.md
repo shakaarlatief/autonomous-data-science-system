@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 686
+**Checkpoint:** 687
 **Date:** 2026-09-26
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none

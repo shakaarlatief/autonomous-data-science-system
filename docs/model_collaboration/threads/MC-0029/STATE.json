@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_AUTHOR_A_P3_BATCH3_OWNER_CONTINUE_NEXT",
+  "phase": "DRP03_R2_KEY_AUTHOR_A_P3_BATCH4_OWNER_CONTINUE_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 349 accepts P3 Batch 2 as PASS after exact mechanical and transcript-level sequential-exposure review. Batch 2 is private frozen, prior held-out semantic artifacts were not accessed, no Batch 3 material was exposed early, and the existing P3 authorization now permits task-owner release of Batch 3. Batches 4-13 remain gated. Research 348's Runtime-Bridge-only repository constraint remains active. Grouping, attention provenance, LEGACY and prior-phase semantic outputs/transcripts remain prohibited."
+    "notes": "Research 350 accepts P3 Batch 3 as PASS after exact mechanical and transcript-level sequential-exposure review. Batch 3 is private frozen, one authorized append-only precedent was added, no prior frozen semantic artifact was read, no Batch 4 material was exposed early, and the existing P3 authorization now permits task-owner release of Batch 4. Batches 5-13 remain gated. Research 348's Runtime-Bridge-only repository constraint remains active. Grouping, attention provenance, LEGACY and prior-phase semantic outputs/transcripts remain prohibited."
   },
   "last_transition": {
-    "transition_id": "mc0029-key-a-p3-batch2-pass-batch3-release",
+    "transition_id": "mc0029-key-a-p3-batch3-pass-batch4-release",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 349 accepts P3 Batch 2 as PASS, verifies exact Batch 2 exposure and unchanged execution configuration, freezes Batch 2 and releases Batch 3 under the existing P3 authorization.",
-    "repository_head": "50dc448d555659551b6a23e1816ff50df8801df5"
+    "reason": "Research 350 accepts P3 Batch 3 as PASS, verifies exact Batch 3 exposure and the authorized append-only precedent change, freezes Batch 3 and releases Batch 4 under the existing P3 authorization.",
+    "repository_head": "ef0175bd50fa8ae60e9868676a576c484cdcebae"
   }
 }

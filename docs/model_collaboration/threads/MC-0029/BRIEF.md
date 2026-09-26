@@ -938,3 +938,20 @@ Research 348 remains active: public ADS repository operations use the Codexless 
 Next:
 
     owner continues P3 Batch 3 in the existing fresh P3 Claude Code session
+
+## Key Author A P3 Batch 3 result
+
+Research 350 records Batch 3 PASS after task-owner artifact and transcript review. Batch 3 is private frozen, exactly one append-only precedent was added, no erratum was added, and no Batch 4 material was exposed early.
+
+Batch 4 is now task-owner released under the existing P3 authorization:
+
+    BAT-5b6b88a6e3c6
+    70 presentations
+    classification lines 6294-7001
+    event-context lines 5520-6141
+
+Batches 5-13 remain task-owner gated. Research 348 remains active.
+
+Next:
+
+    owner continues P3 Batch 4 in the existing fresh P3 Claude Code session
