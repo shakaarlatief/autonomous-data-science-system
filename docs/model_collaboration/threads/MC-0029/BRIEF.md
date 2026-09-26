@@ -1265,3 +1265,41 @@ Batch 13 is part 2 of the same event and remains gated.
 Next:
 
     owner launches fresh P3 Batch 12 session
+
+## Key Author A P3 Batch 12 result
+
+Research 360 records fresh-sequential Batch 12 PASS after task-owner artifact and transcript review.
+
+Task-owner checks confirm:
+
+    392 / 392 presentations
+    exact frozen presentation-ID set and order
+    exact metadata/schema/types
+    classification Reads entirely within lines 16388-20315
+    shared split-event context Reads entirely within lines 14380-20696
+    no out-of-scope query against multi-batch sources
+    all Grep validation targets only the Batch 12 artifact
+    no Batch 13 classification exposure
+    no compaction
+    no prohibited shell/web/agent/MCP/IDE tool use
+    controlled settings unchanged
+    one authorized append-only precedent added
+    no erratum
+
+Batch 12 is private frozen.
+
+To reduce avoidable compaction risk before the large final split-event Batch 13, the Batch 12 session is retired proactively. Research 345 permits the same logical Key Author A to continue in a fresh sequential session and permits the already-authorized same-event context to be reread in that fresh session.
+
+Final Batch 13 is task-owner released:
+
+    BAT-3ab72b275f68
+    EVP-63516d4b5c63 part 2
+    326 presentations
+    classification lines 20316-23584
+    same-event context lines 14380-20696 may be reread in the fresh session
+
+Completion of Batch 13 will complete P3 classification only. Grouping, attention reconciliation, LEGACY and complete Key A construction remain separately gated.
+
+Next:
+
+    owner launches fresh P3 Batch 13 session
