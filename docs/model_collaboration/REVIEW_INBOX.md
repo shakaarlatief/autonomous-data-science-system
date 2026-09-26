@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-26
-**Status:** MC-0029 OPEN / KEY-A P1 STATE PASS / LATER SEMANTIC PHASE OWNER DECISION NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / KEY-A P2 BIRTH DEVELOPMENT DEFINED / OWNER AUTHORIZATION NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -63,7 +63,11 @@ Research 340 accepts Key Author A P1 STATE as PASS after task-owner mechanical o
 
 A bounded return-boundary deviation is recorded because the owner-pasted Claude Code console exposed a small STATE preview to the human owner and chatgpt-31 after P1 had already frozen. The exposure is non-invalidating, but chatgpt-31 cannot serve as a fresh decision reviewer and future Key Author B must not receive this conversation.
 
-Next: task owner defines the exact next Key Author A phase and returns to the human owner for explicit authorization. No later semantic phase is currently authorized.
+Research 341 now defines the exact next Key Author A phase prospectively. P2 is BIRTH development classification only: two frozen sequential batches totaling 469 presentations. Batch 1 must be frozen and mechanically reviewed before batch 2 is exposed. Grouping, BIRTH held-out, LEGACY, attention provenance, P1 STATE-output access and semantic shell use are all outside P2.
+
+P2 is ready but not authorized.
+
+Next: project-owner P2 authorization decision.
 
 Owner decision and all production/migration/authority actions remain held.
 

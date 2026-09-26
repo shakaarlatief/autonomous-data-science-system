@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_AUTHOR_A_POST_P1_NEXT_PHASE_OWNER_DECISION",
+  "phase": "DRP03_R2_KEY_AUTHOR_A_P2_BIRTH_DEVELOPMENT_OWNER_AUTHORIZATION",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 340 accepts Key Author A P1 STATE as PASS after task-owner mechanical validation and transcript/host isolation checks. The private STATE output is frozen and semantic material now exists only inside the Key A confidentiality boundary. A bounded console-preview exposure reached the human owner and chatgpt-31 after P1 freeze; it is non-invalidating but means chatgpt-31 is exposed and cannot be a fresh decision reviewer, and future Key Author B must not access this conversation. No later semantic phase is authorized."
+    "notes": "Research 341 prospectively defines P2 as BIRTH development classification only: two frozen sequential batches totaling 469 presentations. Batch 1 must freeze and pass task-owner mechanical/transcript review before batch 2 is exposed. P2 prohibits grouping, held-out BIRTH, LEGACY, P1 STATE-output access, attention-provenance access and shell use. P2 is ready but remains unauthorized pending explicit owner authorization."
   },
   "last_transition": {
-    "transition_id": "mc0029-key-a-p1-state-pass-next-phase-held",
+    "transition_id": "mc0029-key-a-p2-birth-development-phase-defined",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 340 accepts P1 STATE as PASS after mechanical and execution-boundary review, records the bounded task-owner semantic-preview exposure, freezes the private STATE output and keeps all later semantic phases unauthorized.",
-    "repository_head": "84ca76f3dffbd01f9de016556328ca5153e03fcc"
+    "reason": "Research 341 defines the next Key Author A phase as two sequential BIRTH development classification batches with a mandatory task-owner gate between them. No P2 semantic work is authorized yet.",
+    "repository_head": "2cbd43f9aebaad03dcc89ee7248c454177844267"
   }
 }

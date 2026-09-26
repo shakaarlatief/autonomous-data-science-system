@@ -616,3 +616,45 @@ Consequences:
     future handoffs must paste only bounded phase reports, not tool previews
 
 No later Key Author A semantic phase is authorized yet.
+
+## Key Author A P2 phase definition
+
+Research 341 prospectively defines the next semantic phase before any P2 label exists.
+
+P2 scope:
+
+    BIRTH development classification only
+
+Frozen workload:
+
+    2 sequential batches
+    469 total presentations
+
+Batch 1:
+
+    BAT-2d0805e6c619
+    205 presentations
+
+Batch 2:
+
+    BAT-904613dd8a4e
+    264 presentations
+
+The batch/session and key-author development files are multi-batch files, so P2 freezes exact line-bounded reads. Batch 2 and its event context may not be exposed before batch 1 is frozen and accepted by the task owner.
+
+P2 prohibits:
+
+    BIRTH grouping
+    BIRTH held-out classification
+    LEGACY
+    attention-provenance mappings
+    P1 STATE semantic output
+    shell/Git/Python/web/repository queries
+
+Each batch is written to a separate private presentation-level artifact. The task owner mechanically validates and hashes batch 1 before allowing the same authorized P2 phase to continue to batch 2.
+
+P2 is ready but not authorized.
+
+Next:
+
+    explicit project-owner P2 authorization decision
