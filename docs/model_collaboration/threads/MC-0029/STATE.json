@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_AUTHOR_A_P3_COMPLETE_NEXT_PHASE_DESIGN",
+  "phase": "DRP03_R2_KEY_AUTHOR_A_BIRTH_ATTENTION_QUALITY_PASS_P4_DESIGN_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 361 accepts final P3 Batch 13 as PASS after exact mechanical and transcript review. All 13 held-out artifacts are private frozen, the cumulative file set and 2347-presentation order reconcile exactly, and all BIRTH classification is now frozen. One authorized append-only precedent was added in Batch 13 and no erratum was added. BIRTH grouping is now eligible for prospective phase definition but remains unauthorized; attention reconciliation, LEGACY and canonical-key work remain unstarted. Research 348's Runtime-Bridge-only repository constraint remains active."
+    "notes": "Research 362 executes the frozen post-classification BIRTH attention-consistency gate after all BIRTH labels are frozen. Development, held-out and combined binary and normative-kind consistency are 1.0, so the quality gate passes and no Key Author A replacement is required. The hidden attention mapping was used mechanically by the task owner only, no label was revised, and the semantic author remains blind to attention identities. BIRTH grouping is eligible but unauthorized. Research 348's Runtime-Bridge-only repository constraint remains active."
   },
   "last_transition": {
-    "transition_id": "mc0029-key-a-p3-complete-next-phase-design",
+    "transition_id": "mc0029-key-a-birth-attention-quality-pass-p4-design",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 361 accepts final Batch 13, completes P3 BIRTH held-out classification, freezes all BIRTH classification and routes to prospective next-phase definition without authorizing grouping or later semantic work.",
-    "repository_head": "0ec554b6f0f36e4136646acd6ea715086e069d61"
+    "reason": "Research 362 records the mandatory post-freeze BIRTH attention-consistency gate as PASS with no replacement required and routes to prospective P4 BIRTH grouping design.",
+    "repository_head": "97623fbebb01faead07f6605be2a1f613afcccb5"
   }
 }

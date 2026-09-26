@@ -1335,3 +1335,26 @@ Research 345 now makes the unique BIRTH grouping catalog eligible for a separate
 Next:
 
     task owner defines the next Key Author A phase prospectively
+
+## Key Author A BIRTH attention-quality gate
+
+Research 362 runs the post-classification attention-consistency gate required by the frozen R2 protocol and execution addendum.
+
+The task owner mechanically joins hidden attention provenance to the already frozen private BIRTH artifacts after all classification freezes.
+
+Results:
+
+    development binary consistency        1.0
+    development normative-kind consistency 1.0
+    held-out binary consistency           1.0
+    held-out normative-kind consistency   1.0
+    combined binary consistency           1.0
+    combined normative-kind consistency   1.0
+
+Frozen gates are 0.95 binary and 0.90 normative-kind consistency.
+
+Therefore Key Author A passes the BIRTH within-author quality gate. No pre-score replacement is required. No label is changed and the semantic author remains blind to attention identities.
+
+Next:
+
+    task owner defines P4 BIRTH grouping prospectively

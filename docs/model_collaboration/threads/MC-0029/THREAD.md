@@ -1,7 +1,7 @@
 # MC-0029 Thread: Specification 028 Reconciliation and AO-10 Realization Design
 
 **Thread:** MC-0029
-**Status:** OPEN / KEY-A P3 PASS / NEXT PHASE DESIGN NEXT
+**Status:** OPEN / KEY-A BIRTH ATTENTION QUALITY PASS / P4 DESIGN NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** 0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
@@ -59,6 +59,7 @@ Independently derive Specification 028 reconciliation and AO-10 realization arch
     Key A P1 STATE                               COMPLETE / PASS / PRIVATE FROZEN / Research 340
     Key A P2 BIRTH development classification    COMPLETE / PASS / 2 PRIVATE FROZEN BATCHES / Research 344
     Key A P3 BIRTH held-out classification       COMPLETE / PASS / 13 PRIVATE FROZEN BATCHES / Research 361
+    Key A BIRTH attention quality                PASS / NO REPLACEMENT / Research 362
     Key A later semantic phases                   NOT AUTHORIZED
     Fresh private Key Author B                    AFTER A COMMITMENT / BLIND TO A
     Key construct-validity gate                   AFTER BOTH COMMITMENTS
@@ -90,7 +91,7 @@ Claude may write only:
     docs/model_collaboration/threads/MC-0029/messages/**
 
     MC0029=OPEN
-    PHASE=DRP03_R2_KEY_AUTHOR_A_P3_COMPLETE_NEXT_PHASE_DESIGN
+    PHASE=DRP03_R2_KEY_AUTHOR_A_BIRTH_ATTENTION_QUALITY_PASS_P4_DESIGN_NEXT
     INDEPENDENT_BASE=0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
     CHATGPT_CANDIDATE=RESEARCH312
     CLAUDE_MESSAGE_001=COMPLETE
@@ -206,5 +207,7 @@ Claude may write only:
     KEY_A_P3_BATCH13=PASS_PRIVATE_FROZEN
     KEY_A_P3=PASS
     KEY_A_ALL_BIRTH_CLASSIFICATION=FROZEN
+    KEY_A_BIRTH_ATTENTION_QUALITY=PASS
+    KEY_A_QUALITY_REPLACEMENT_REQUIRED=false
     KEY_A_BIRTH_GROUPING=ELIGIBLE_NOT_AUTHORIZED
-    NEXT=DEFINE_NEXT_KEY_AUTHOR_A_PHASE_PROSPECTIVELY
+    NEXT=DEFINE_P4_BIRTH_GROUPING_PHASE_PROSPECTIVELY
