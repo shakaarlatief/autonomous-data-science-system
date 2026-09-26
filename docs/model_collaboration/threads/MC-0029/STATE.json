@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_AUTHOR_A_P1_OWNER_AUTHORIZATION_NEXT",
+  "phase": "DRP03_R2_KEY_AUTHOR_A_P1_STATE_OWNER_LAUNCH_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -80,14 +80,14 @@
       "DRP-03 Claude reviewer A must not inspect Research 324 or any future ChatGPT DRP-03 annotation/summary before committing its annotation.",
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15."
     ],
-    "notes": "Research 338 reconciles P0.5 Attempt 002 as PASS with no semantic contamination. Task-owner postflight independently verifies the controlled settings hash, no settings.local.json, the exact Research 330 export, exact P0 transcript copy, empty out/, p1_authorized=false and semantic_labels_created=false. Host postflight confirms the Attempt 002 Claude CLI process is not attached to the active VS Code IDE listener. Pre-P1 hardening is complete. P1 is technically ready but remains unauthorized pending explicit owner authorization."
+    "notes": "Research 339 preserves the project owner's explicit authorization of Key Author A P1. P1 is limited to STATE derivation only, using a new standalone local Claude Code session with claude-opus-5-5, HIGH effort and interactive/default permission mode. Shell use is prohibited during P1. P2-P8 remain unauthorized. P1 must return to ChatGPT task-owner review before continuation."
   },
   "last_transition": {
-    "transition_id": "mc0029-key-a-p05-attempt002-pass-p1-owner-gate",
+    "transition_id": "mc0029-key-a-p1-explicit-owner-authorization",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 338 reconciles P0.5 Attempt 002 as PASS with no semantic contamination and closes all pre-P1 hardening controls. P1 remains unauthorized until explicit owner authorization.",
-    "repository_head": "aff209373a8563ddb31a5687b60890d49b4fc796"
+    "reason": "The project owner explicitly authorized P1. Research 339 binds the authorization to STATE only, preserves the no-shell semantic boundary and keeps P2-P8 held pending task-owner review.",
+    "repository_head": "7f5107c0c851fb443d8775c62854ce175ec9f988"
   }
 }

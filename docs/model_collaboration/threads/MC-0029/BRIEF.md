@@ -549,3 +549,37 @@ Until authorization:
     do not create witness/control identities
     do not create grouping pairs
     do not create canonical/private Key A bytes
+## Key Author A P1 authorization
+
+The project owner explicitly authorized:
+
+    P1
+
+Research 339 preserves that decision.
+
+P1 is the first semantic Key Author A phase and is limited to:
+
+    STATE derivation for all 24 frozen fixtures
+
+Required execution:
+
+    new local Claude Code session
+    standalone external Windows Terminal / PowerShell
+    claude-opus-5-5
+    HIGH effort
+    interactive/default permission mode
+    no IDE attachment
+    no web / MCP / GitHub connector access
+    no standing local permission overrides
+
+Research 335 freezes:
+
+    P1 STATE shell use = PROHIBITED
+
+P1 may create private STATE expected outputs and allowed private rule traces / append-only precedents.
+
+P1 must not create BIRTH labels, LEGACY labels, grouping pairs, complete canonical Key A bytes or public commitment material.
+
+P2-P8 remain unauthorized.
+
+P1 must stop after its bounded phase report and return to ChatGPT task-owner review.

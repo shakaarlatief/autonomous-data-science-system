@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-26
-**Status:** MC-0029 OPEN / KEY-A P0.5 PASS / P1 OWNER AUTHORIZATION NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / KEY-A P1 AUTHORIZED / STATE OWNER LAUNCH NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -59,9 +59,9 @@ Local Claude Code P0 returned PASS for the non-semantic preflight and explicitly
 
 Research 338 records P0.5 Attempt 002 PASS with no semantic contamination. Task-owner postflight independently verifies the unchanged controlled settings hash, absence of `.claude/settings.local.json`, exact Research 330 export, exact P0 transcript copy, empty `out/`, `p1_authorized=false`, and `semantic_labels_created=false`. Host-side verification also confirms that the Attempt 002 Claude CLI process was not attached to the active VS Code IDE listener while other Claude/VS Code activity remained isolated.
 
-Pre-P1 hardening is complete. P1 is technically ready but remains unauthorized until the project owner explicitly authorizes semantic Key Author A execution.
+Pre-P1 hardening is complete. The project owner has now explicitly authorized P1. Research 339 binds that authorization to STATE derivation only, with shell use prohibited and all previously qualified isolation/configuration controls retained. P2-P8 remain unauthorized.
 
-Next: owner P1 authorization decision.
+Next: owner launches the new standalone local Claude Code P1 STATE session and returns its bounded non-secret phase report for ChatGPT task-owner review.
 
 Owner decision and all production/migration/authority actions remain held.
 
