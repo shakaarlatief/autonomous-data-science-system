@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 683
+**Checkpoint:** 684
 **Date:** 2026-09-26
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -1341,3 +1341,5 @@ Checkpoint 681 preserves Research 344 and closes P2 BIRTH development classifica
 Checkpoint 682 preserves Research 345 and prospectively defines P3 as BIRTH held-out classification before any held-out semantic label exists. The held-out surface contains 2254 unique semantic items represented as 2347 classification presentations across 13 sequential batches. P3 requires a fresh Claude Code session so exact P2 development-label conversational context cannot carry into held-out work; only CODEBOOK, append-only PRECEDENTS, optional ERRATA and frozen instructions/schema/addendum carry forward. Exact line-bounded classification and event-context ranges are frozen for every batch, with a task-owner acceptance gate between batches. Attention provenance, development outputs, grouping, LEGACY and shell/external tools remain prohibited. P3 is ready but remains unauthorized pending explicit owner authorization.
 
 Checkpoint 683 preserves Research 346 and the project owner's explicit authorization of the complete prospectively defined P3 BIRTH held-out classification phase. P3 must start in a fresh Claude Code session rather than continuing/resuming P2, so development presentation-label conversational context cannot carry into held-out work. Immediate execution is limited to Batch 1: 20 presentations, classification lines 1-217 and event-context lines 1-157. Batches 2-13 are authorized in principle but remain inaccessible until ChatGPT task-owner review releases each next batch. BIRTH grouping, attention provenance, LEGACY, shell/external tools and complete-key assembly remain unauthorized.
+
+Checkpoint 684 preserves Research 347 and accepts P3 Batch 1 as PASS after mechanical artifact validation and fresh-session transcript review. All 20 presentations match the frozen Batch 1 source IDs/order/schema. The new P3 session read only the authorized common sources plus classification lines 1-217 and event-context lines 1-157, with no P2 semantic-output/transcript access and no future held-out exposure. Transcript metadata confirms `claude-opus-5-5`, HIGH effort and `permissionMode=default`; no prohibited shell/web/agent/MCP/IDE tool was used. Batch 1 is private frozen. Under the already-granted P3 authorization, Batch 2 is task-owner released: 223 presentations, classification lines 218-2455 and event-context lines 158-2138. P3 remains incomplete; grouping and LEGACY remain unauthorized.
