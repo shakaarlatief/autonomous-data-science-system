@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_AUTHOR_A_P1_STATE_OWNER_LAUNCH_NEXT",
+  "phase": "DRP03_R2_KEY_AUTHOR_A_POST_P1_NEXT_PHASE_OWNER_DECISION",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -78,16 +78,17 @@
       "Before committing Annotation B, Claude must not inspect experiments/ao10_drp01_shared_semantic_substrate_v01/annotation_chatgpt_a.json, Research 322, or later derivative summaries of Annotation A.",
       "DRP-03 Claude reviewer A must not inspect experiments/ao10_drp03_obligation_units_v01/evaluator_key.json before committing its annotation.",
       "DRP-03 Claude reviewer A must not inspect Research 324 or any future ChatGPT DRP-03 annotation/summary before committing its annotation.",
-      "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15."
+      "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
+      "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 339 preserves the project owner's explicit authorization of Key Author A P1. P1 is limited to STATE derivation only, using a new standalone local Claude Code session with claude-opus-5-5, HIGH effort and interactive/default permission mode. Shell use is prohibited during P1. P2-P8 remain unauthorized. P1 must return to ChatGPT task-owner review before continuation."
+    "notes": "Research 340 accepts Key Author A P1 STATE as PASS after task-owner mechanical validation and transcript/host isolation checks. The private STATE output is frozen and semantic material now exists only inside the Key A confidentiality boundary. A bounded console-preview exposure reached the human owner and chatgpt-31 after P1 freeze; it is non-invalidating but means chatgpt-31 is exposed and cannot be a fresh decision reviewer, and future Key Author B must not access this conversation. No later semantic phase is authorized."
   },
   "last_transition": {
-    "transition_id": "mc0029-key-a-p1-explicit-owner-authorization",
+    "transition_id": "mc0029-key-a-p1-state-pass-next-phase-held",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "The project owner explicitly authorized P1. Research 339 binds the authorization to STATE only, preserves the no-shell semantic boundary and keeps P2-P8 held pending task-owner review.",
-    "repository_head": "7f5107c0c851fb443d8775c62854ce175ec9f988"
+    "reason": "Research 340 accepts P1 STATE as PASS after mechanical and execution-boundary review, records the bounded task-owner semantic-preview exposure, freezes the private STATE output and keeps all later semantic phases unauthorized.",
+    "repository_head": "84ca76f3dffbd01f9de016556328ca5153e03fcc"
   }
 }

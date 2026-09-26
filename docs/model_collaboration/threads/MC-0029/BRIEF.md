@@ -583,3 +583,36 @@ P1 must not create BIRTH labels, LEGACY labels, grouping pairs, complete canonic
 P2-P8 remain unauthorized.
 
 P1 must stop after its bounded phase report and return to ChatGPT task-owner review.
+## Key Author A P1 STATE result
+
+Research 340 reconciles P1 as:
+
+    PASS
+
+Task-owner postflight validates the private output mechanically without publishing fixture-level truth:
+
+    24 / 24 frozen STATE fixtures
+    exact required fields
+    fixture-ID set exact
+    state enum valid
+    fact IDs source-valid
+    complete valid/invalid fact partition
+    no duplicate/overlapping fact IDs
+    nonblank reasons
+
+Transcript verification confirms actual tool use was limited to authorized Read/Edit/Write/Glob operations on the P1 private paths. No shell, web, agent, MCP or IDE tool call occurred.
+
+Host verification confirms the P1 Claude Code process was not attached to VS Code.
+
+The private STATE output is frozen. BIRTH, LEGACY, grouping and complete-key material remain uncreated.
+
+A bounded return-boundary deviation is preserved: the owner-pasted Claude Code console included a small semantic STATE preview after P1 had already frozen. It reached the human owner and chatgpt-31 only. It did not enter Git, Key B storage or a decision-reviewer environment.
+
+Consequences:
+
+    P1 output validity remains intact
+    chatgpt-31 is exposed and may not act as a fresh decision reviewer
+    future Key Author B must not receive access to chatgpt-31
+    future handoffs must paste only bounded phase reports, not tool previews
+
+No later Key Author A semantic phase is authorized yet.
