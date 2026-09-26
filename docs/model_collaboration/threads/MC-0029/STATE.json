@@ -16,7 +16,7 @@
     {
       "collaborator_id": "chatgpt",
       "interaction_environment": "ChatGPT",
-      "interaction_session": "chatgpt-30",
+      "interaction_session": "chatgpt-31",
       "roles": [
         "TASK_OWNER",
         "RESEARCHER",

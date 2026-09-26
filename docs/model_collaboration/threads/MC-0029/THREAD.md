@@ -5,9 +5,10 @@
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** 0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
-**Task owner:** ChatGPT / chatgpt-30
+**Task owner:** ChatGPT / chatgpt-31
 **Independent reviewer/designer:** Claude / claude-04
 **Active Claude conversation:** 04 - Assurance and Delivery Architecture Design
+**Active ChatGPT conversation:** 31 - Assurance Architecture Qualification and Semantic Evidence
 **Authority:** Collaboration evidence only.
 
 ## Interaction provenance
