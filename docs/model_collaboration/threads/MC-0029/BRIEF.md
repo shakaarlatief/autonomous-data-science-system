@@ -1188,3 +1188,43 @@ Batches 11-13 remain task-owner gated.
 Next:
 
     owner launches fresh P3 Batch 10 session
+
+## Key Author A P3 Batch 10 result
+
+Research 358 records fresh-sequential Batch 10 PASS after task-owner artifact and transcript review.
+
+Task-owner checks confirm:
+
+    61 / 61 presentations
+    exact frozen presentation-ID set and order
+    exact metadata/schema/types
+    classification exposure exactly lines 15512-16129
+    shared split-event context Reads entirely within lines 10220-14185
+    no out-of-scope query against multi-batch sources
+    all Grep validation targets only the Batch 10 artifact
+    no Batch 11 exposure
+    no compaction
+    no prohibited shell/web/agent/MCP/IDE tool use
+    controlled settings unchanged
+    one authorized append-only precedent added
+    no erratum
+
+Batch 10 is private frozen.
+
+The clean fresh-sequential Batch 10 session remains qualified and may continue as the same logical Key Author A.
+
+Under the owner's existing P3 authorization, Batch 11 is task-owner released:
+
+    BAT-89df08a20c3b
+    EVP-e9498b2ad950 part 1
+    25 presentations
+    classification lines 16130-16387
+    event-context lines 14186-14379
+
+Batches 12-13 remain task-owner gated.
+
+Research 348 remains active: public ADS repository operations use the Codexless Runtime Bridge only.
+
+Next:
+
+    owner continues P3 Batch 11 in session 3ff1eec5-be00-4538-960e-ffd6064934c7
