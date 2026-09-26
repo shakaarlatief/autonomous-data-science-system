@@ -823,3 +823,41 @@ P3 is ready but not authorized.
 Next:
 
     explicit project-owner P3 authorization decision
+
+## Key Author A P3 authorization
+
+The project owner explicitly authorized the complete P3 scope defined in Research 345.
+
+Research 346 records:
+
+    P3 AUTHORIZED
+
+P3 remains limited to:
+
+    BIRTH held-out classification
+    13 sequential batches
+    2347 presentations
+    2254 unique semantic items
+
+P3 must start in a fresh Claude Code session. The P2 session must not be continued or resumed because it contains exact development presentation labels in conversational context.
+
+Immediate execution is Batch 1 only:
+
+    BAT-373ed51c1abb
+    20 presentations
+    classification lines 1-217
+    event-context lines 1-157
+
+Batches 2-13 are already authorized in principle as part of P3, but every next batch remains inaccessible until ChatGPT task-owner review accepts the current frozen batch.
+
+Still prohibited:
+
+    P2 semantic outputs and transcript/context
+    BIRTH grouping
+    attention provenance
+    LEGACY
+    shell / Git / Python / web / repository access
+
+Next:
+
+    owner launches a fresh standalone local Claude Code P3 Batch-1 session

@@ -1,7 +1,7 @@
 # MC-0029 Thread: Specification 028 Reconciliation and AO-10 Realization Design
 
 **Thread:** MC-0029
-**Status:** OPEN / KEY-A P3 BIRTH HELD-OUT DEFINED / OWNER AUTHORIZATION NEXT
+**Status:** OPEN / KEY-A P3 AUTHORIZED / FRESH BATCH 1 SESSION OWNER LAUNCH NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** 0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
@@ -58,7 +58,7 @@ Independently derive Specification 028 reconciliation and AO-10 realization arch
     Key A P0.5 Attempt 002                       COMPLETE / PASS / NO SEMANTIC CONTAMINATION / Research 338
     Key A P1 STATE                               COMPLETE / PASS / PRIVATE FROZEN / Research 340
     Key A P2 BIRTH development classification    COMPLETE / PASS / 2 PRIVATE FROZEN BATCHES / Research 344
-    Key A P3 BIRTH held-out classification       DEFINED / 13 SEQUENTIAL BATCHES / FRESH SESSION / OWNER AUTHORIZATION REQUIRED
+    Key A P3 BIRTH held-out classification       AUTHORIZED / FRESH SESSION / BATCH 1 OWNER LAUNCH NEXT / BATCHES 2-13 TASK-OWNER GATED
     Key A later semantic phases                   NOT AUTHORIZED
     Fresh private Key Author B                    AFTER A COMMITMENT / BLIND TO A
     Key construct-validity gate                   AFTER BOTH COMMITMENTS
@@ -90,7 +90,7 @@ Claude may write only:
     docs/model_collaboration/threads/MC-0029/messages/**
 
     MC0029=OPEN
-    PHASE=DRP03_R2_KEY_AUTHOR_A_P3_BIRTH_HELDOUT_OWNER_AUTHORIZATION
+    PHASE=DRP03_R2_KEY_AUTHOR_A_P3_BATCH1_OWNER_LAUNCH_NEXT
     INDEPENDENT_BASE=0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
     CHATGPT_CANDIDATE=RESEARCH312
     CLAUDE_MESSAGE_001=COMPLETE
@@ -188,6 +188,8 @@ Claude may write only:
     KEY_A_P3_BATCH_COUNT=13
     KEY_A_P3_FRESH_SESSION_REQUIRED=true
     KEY_A_P3_READY=true
-    KEY_A_P3_AUTHORIZED=false
+    KEY_A_P3_AUTHORIZED=true
     KEY_A_LATER_SEMANTIC_PHASE_AUTHORIZED=false
-    NEXT=OWNER_P3_AUTHORIZATION_DECISION
+    KEY_A_P3_BATCH1=AUTHORIZED_OWNER_LAUNCH_NEXT
+    KEY_A_P3_BATCHES_2_13=AUTHORIZED_IN_PRINCIPLE_TASK_OWNER_GATED
+    NEXT=OWNER_LAUNCH_FRESH_P3_BATCH1_SESSION
