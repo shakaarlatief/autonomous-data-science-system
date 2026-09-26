@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_AUTHOR_A_P3_BATCH1_OWNER_LAUNCH_NEXT",
+  "phase": "DRP03_R2_KEY_AUTHOR_A_P3_BATCH2_OWNER_CONTINUE_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 346 preserves the project owner's explicit authorization of P3. P3 remains BIRTH held-out classification only and must start in a fresh Claude Code session. Immediate execution is Batch 1 with 20 presentations; Batches 2-13 are authorized in principle but task-owner gated. Grouping, attention provenance, LEGACY, P2 semantic outputs/transcripts and shell use remain prohibited."
+    "notes": "Research 347 accepts P3 Batch 1 as PASS after mechanical artifact and fresh-session transcript review. Batch 1 is private frozen, no Batch 2 material was exposed early, and the existing P3 authorization now permits task-owner release of Batch 2. Batches 3-13 remain gated. Grouping, attention provenance, LEGACY and prior-phase semantic outputs/transcripts remain prohibited."
   },
   "last_transition": {
-    "transition_id": "mc0029-key-a-p3-explicit-owner-authorization",
+    "transition_id": "mc0029-key-a-p3-batch1-pass-batch2-release",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "The project owner explicitly authorized P3. Research 346 binds that authorization to the 13-batch BIRTH held-out classification phase, requires a fresh Claude Code session, and limits immediate execution to Batch 1 with later batches task-owner gated.",
-    "repository_head": "314b01c387cd18dbc2a5e95cc983f1c3aed2a99d"
+    "reason": "Research 347 accepts P3 Batch 1 as PASS, verifies the fresh-session and sequential-exposure boundaries, freezes Batch 1 and releases Batch 2 under the existing P3 authorization.",
+    "repository_head": "3429447be8a4be6d3daabf83608b4587efd77b6e"
   }
 }
