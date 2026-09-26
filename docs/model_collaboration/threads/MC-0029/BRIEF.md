@@ -694,3 +694,55 @@ Still prohibited:
 Next:
 
     owner launches the standalone local Claude Code P2 batch-1 session
+
+## Key Author A P2 Batch 1 result
+
+Research 343 reconciles P2 Batch 1 as:
+
+    PASS
+
+Task-owner mechanical checks confirm:
+
+    205 / 205 presentations
+    exact frozen presentation-ID set and order
+    exact output fields and types
+    valid normative-kind enum/null consistency
+    private artifact frozen
+
+Transcript verification confirms the frozen sequential-exposure control:
+
+    classification source read only through line 2067
+    key-author context read only through line 1831
+    Batch 2 not exposed
+    no shell, web, agent, MCP or IDE tool use
+    no forbidden-source access
+
+The three reported precedents were added append-only; no errata were added.
+
+Host postflight confirms the active P2 process is not attached to the VS Code IDE listener.
+
+The owner already authorized the complete two-batch P2 phase, so no second human authorization is needed. ChatGPT task-owner now releases Batch 2.
+
+Batch 2:
+
+    BAT-904613dd8a4e
+    264 presentations
+
+Allowed Batch 2 exposure:
+
+    classification-session lines 2068-4716
+    key-author-development lines 1832-4168
+
+Still prohibited:
+
+    Batch 1 rewrite
+    BIRTH held-out
+    BIRTH grouping
+    LEGACY
+    attention provenance
+    P1 STATE output
+    shell / Git / Python / web / repository queries
+
+Next:
+
+    owner continues the current P2 Claude Code session with the bounded Batch 2 instruction

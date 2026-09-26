@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_AUTHOR_A_P2_BATCH1_OWNER_LAUNCH_NEXT",
+  "phase": "DRP03_R2_KEY_AUTHOR_A_P2_BATCH2_OWNER_CONTINUE_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 342 preserves the project owner's explicit authorization of P2. P2 remains BIRTH development classification only. Immediate execution is batch 1 with 205 presentations; batch 2 is authorized in principle but cannot be exposed until ChatGPT task-owner postflight accepts frozen batch 1. Grouping, held-out BIRTH, LEGACY, P1 STATE-output access, attention-provenance access and shell use remain prohibited."
+    "notes": "Research 343 accepts P2 Batch 1 as PASS after mechanical output, transcript exposure-boundary and host-isolation review. Batch 1 is private frozen. The existing owner P2 authorization now permits ChatGPT to release Batch 2, which remains limited to the second frozen development batch and its bounded event context. P2 is not complete, and grouping, held-out BIRTH, LEGACY, P1 STATE-output access, attention-provenance access and shell use remain prohibited."
   },
   "last_transition": {
-    "transition_id": "mc0029-key-a-p2-explicit-owner-authorization",
+    "transition_id": "mc0029-key-a-p2-batch1-pass-batch2-release",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "The project owner explicitly authorized P2. Research 342 binds that authorization to BIRTH development classification only, with immediate execution limited to batch 1 and batch 2 held behind mandatory task-owner review.",
-    "repository_head": "ffd069c422552d52868ca72ca0ac87b7b7810a33"
+    "reason": "Research 343 accepts P2 Batch 1 as PASS, verifies no premature Batch 2 exposure, freezes Batch 1 and releases Batch 2 under the already-granted P2 authorization.",
+    "repository_head": "52cb71e2831676360343be024cd4ebf6d4232dfe"
   }
 }
