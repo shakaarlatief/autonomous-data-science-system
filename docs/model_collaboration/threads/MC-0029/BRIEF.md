@@ -1303,3 +1303,35 @@ Completion of Batch 13 will complete P3 classification only. Grouping, attention
 Next:
 
     owner launches fresh P3 Batch 13 session
+
+## Key Author A P3 completion
+
+Research 361 accepts final Batch 13 and closes P3 BIRTH held-out classification.
+
+Task-owner verification confirms:
+
+    Batch 13 326 / 326 presentations
+    exact frozen presentation-ID set and order
+    exact metadata/schema/types
+    event-context Reads only within lines 14380-20696
+    classification Reads only within lines 20316-23584
+    all Grep validation targets only the Batch 13 artifact
+    no compaction
+    no prohibited shell/web/agent/MCP/IDE tool use
+    one authorized append-only precedent
+    no erratum
+
+Cumulative P3 verification confirms:
+
+    exactly 13 held-out artifact files
+    exactly 2347 presentations
+    exact per-batch presentation-ID order
+    every batch individually task-owner accepted
+
+Therefore all BIRTH classification is private frozen.
+
+Research 345 now makes the unique BIRTH grouping catalog eligible for a separately defined later phase. Eligibility does not authorize grouping. Attention reconciliation, LEGACY and canonical Key A assembly remain unstarted.
+
+Next:
+
+    task owner defines the next Key Author A phase prospectively

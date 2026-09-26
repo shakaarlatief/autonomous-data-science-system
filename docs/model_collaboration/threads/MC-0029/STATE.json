@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_AUTHOR_A_P3_BATCH13_FRESH_SESSION_OWNER_LAUNCH_NEXT",
+  "phase": "DRP03_R2_KEY_AUTHOR_A_P3_COMPLETE_NEXT_PHASE_DESIGN",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -60,7 +60,7 @@
       ]
     }
   ],
-  "next_expected_actor": "human",
+  "next_expected_actor": "chatgpt",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 360 accepts fresh-sequential P3 Batch 12 as PASS after exact mechanical and transcript review. Batch 12 is private frozen, source-boundary discipline is clean, one authorized append-only precedent was added, no erratum was added, and no Batch 13 classification material was exposed. The Batch 12 session is retired proactively at the accepted boundary to reduce compaction risk before the large final split-event Batch 13. Batch 13 is task-owner released to a fresh sequential P3 session. Research 348's Runtime-Bridge-only repository constraint remains active."
+    "notes": "Research 361 accepts final P3 Batch 13 as PASS after exact mechanical and transcript review. All 13 held-out artifacts are private frozen, the cumulative file set and 2347-presentation order reconcile exactly, and all BIRTH classification is now frozen. One authorized append-only precedent was added in Batch 13 and no erratum was added. BIRTH grouping is now eligible for prospective phase definition but remains unauthorized; attention reconciliation, LEGACY and canonical-key work remain unstarted. Research 348's Runtime-Bridge-only repository constraint remains active."
   },
   "last_transition": {
-    "transition_id": "mc0029-key-a-p3-batch12-pass-batch13-fresh-session-release",
+    "transition_id": "mc0029-key-a-p3-complete-next-phase-design",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 360 accepts clean fresh-sequential Batch 12, preserves one new append-only precedent, freezes Batch 12, retires the Batch 12 session proactively and releases final split-event Batch 13 to a fresh sequential P3 session.",
-    "repository_head": "82b9a0bdff87a4976cc7709f9378cf3ac5f74a3e"
+    "reason": "Research 361 accepts final Batch 13, completes P3 BIRTH held-out classification, freezes all BIRTH classification and routes to prospective next-phase definition without authorizing grouping or later semantic work.",
+    "repository_head": "0ec554b6f0f36e4136646acd6ea715086e069d61"
   }
 }
