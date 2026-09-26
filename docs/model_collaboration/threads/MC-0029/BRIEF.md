@@ -385,3 +385,50 @@ The commitment message may contain:
 It must not contain semantic labels, witness identities, expected states, item classifications, grouping pairs, or excerpts sufficient to reconstruct the private key.
 
 After Message 010 is committed, a genuinely fresh Key Author B interaction is required and must remain blind to Key A.
+
+## Local Claude Code Key Author A execution
+
+Claude-04 stopped safely before creating any key labels and returned a planning-only execution design.
+
+Research 334 reconciles that design.
+
+The frozen operational addendum is:
+
+    docs/research/project_knowledge_activation_orchestration/ao10/DRP03_R2_KEY_AUTHOR_EXECUTION_ADDENDUM_V01.md
+
+SHA-256:
+
+    811d098dcda35583b5ef6a45fce0d1578b85029d3c43167a28e96804010ce862
+
+The public Research 332 protocol freeze remains unchanged.
+
+Key Author A remains EXPOSED / NON-FRESH.
+
+Roles:
+
+    dispatcher
+        claude-04
+
+    semantic executor
+        local Claude Code sessions
+        exact model fixed at launch
+
+    repository writer for Message 010
+        claude-04, and only after the private executor returns a non-secret commitment block
+
+Cloud Claude Code is not used for hidden-key authoring.
+
+No semantic labels or private Key A bytes exist yet.
+
+The next action is P0 only:
+
+    owner launches local Claude Code in an isolated private workspace
+    P0 verifies environment, frozen inputs, permissions, model/version and private-storage boundary
+    P0 creates no semantic labels
+    ChatGPT reviews P0 before P1 begins
+
+Grouping clarification:
+
+    candidate generation may be heuristic
+    every stored MUST_JOIN and MUST_SPLIT pair must be individually confirmed
+    unsampled/unreviewed pairs remain UNCONSTRAINED

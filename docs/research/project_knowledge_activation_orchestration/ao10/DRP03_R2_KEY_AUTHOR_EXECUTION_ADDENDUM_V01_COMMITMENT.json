@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "record_type": "DRP03_R2_KEY_AUTHOR_EXECUTION_ADDENDUM_COMMITMENT",
+  "addendum_path": "docs/research/project_knowledge_activation_orchestration/ao10/DRP03_R2_KEY_AUTHOR_EXECUTION_ADDENDUM_V01.md",
+  "sha256": "811d098dcda35583b5ef6a45fce0d1578b85029d3c43167a28e96804010ce862",
+  "bytes": 13928,
+  "hash_basis": "EXACT_FILE_BYTES",
+  "encoding": "UTF-8",
+  "public_protocol_sha256": "f358d03168973c33e31a0c877b3175c6804157f6da5074053767e8a9305c3150",
+  "public_protocol_semantics_changed": false,
+  "key_a_labels_created_before_commitment": false,
+  "applies_to": [
+    "KEY_AUTHOR_A",
+    "KEY_AUTHOR_B",
+    "AUTHORIZED_PRE_SCORE_REPLACEMENTS"
+  ],
+  "status": "FROZEN_BEFORE_KEY_AUTHORING"
+}

@@ -1,7 +1,7 @@
 # MC-0029 Thread: Specification 028 Reconciliation and AO-10 Realization Design
 
 **Thread:** MC-0029
-**Status:** OPEN / R2 V0.3 PUBLIC PROTOCOL FROZEN / CLAUDE-04 KEY AUTHOR A NEXT
+**Status:** OPEN / KEY-A EXECUTION ADDENDUM FROZEN / LOCAL CLAUDE CODE P0 OWNER LAUNCH NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** 0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
@@ -50,7 +50,10 @@ Independently derive Specification 028 reconciliation and AO-10 realization arch
     ChatGPT Message 009 reconciliation            COMPLETE / Research 330 / V0.7 + R2 V0.3
     Owner M-1 deferral decision                   COMPLETE / ACCEPT_DEFERRAL
     Public R2 protocol assets freeze              COMPLETE / Research 332 / f358d031...
-    Claude-04 private Key Author A                 NEXT
+    Claude-04 Key-A execution planning             COMPLETE / NO LABELS
+    Key-author execution addendum                 COMPLETE / 811d098d...
+    Local Claude Code Key A P0                    NEXT / OWNER LAUNCH
+    Key A semantic phases P1-P8                   AFTER P0 REVIEW
     Fresh private Key Author B                    AFTER A COMMITMENT / BLIND TO A
     Key construct-validity gate                   AFTER BOTH COMMITMENTS
     DRP-03 R2                                    AFTER HARNESS FREEZE
@@ -81,7 +84,7 @@ Claude may write only:
     docs/model_collaboration/threads/MC-0029/messages/**
 
     MC0029=OPEN
-    PHASE=DRP03_R2_KEY_AUTHOR_A_CLAUDE04_NEXT
+    PHASE=DRP03_R2_KEY_AUTHOR_A_LOCAL_CLAUDE_CODE_P0_OWNER_LAUNCH_NEXT
     INDEPENDENT_BASE=0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
     CHATGPT_CANDIDATE=RESEARCH312
     CLAUDE_MESSAGE_001=COMPLETE
@@ -133,3 +136,10 @@ Claude may write only:
     CLAUDE04_ROLE=EXPOSED_KEY_AUTHOR_A
     FRESH_KEY_AUTHOR_MINIMUM=1
     NEXT=CLAUDE04_PRIVATE_KEY_AUTHOR_A
+    KEY_A_SLOT=EXPOSED_NON_FRESH
+    KEY_A_DISPATCHER=CLAUDE04
+    KEY_A_EXECUTOR=LOCAL_CLAUDE_CODE
+    KEY_A_LABELS=NONE
+    KEY_A_PRIVATE_BYTES=NOT_CREATED
+    KEY_A_P0=NEXT
+    NEXT=OWNER_LAUNCH_LOCAL_CLAUDE_CODE_P0

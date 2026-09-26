@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-25
-**Status:** MC-0029 OPEN / R2 V0.3 PUBLIC PROTOCOL FROZEN / CLAUDE-04 KEY AUTHOR A NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / KEY-A EXECUTION ADDENDUM FROZEN / LOCAL CLAUDE CODE P0 OWNER LAUNCH NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -53,7 +53,9 @@ The owner explicitly chose ACCEPT_DEFERRAL. Research 331 records the decision an
 
 Research 332 freezes the complete public pre-key DRP-03 R2 V0.3 surface at manifest SHA-256 f358d03168973c33e31a0c877b3175c6804157f6da5074053767e8a9305c3150. Packet regeneration is deterministic and reproduces the same digest. BIRTH, LEGACY and STATE reviewer surfaces, session batching, attention-check provenance, key-author packets, schemas, splitter/generator, fixtures, delivery order and public commitments are frozen. No hidden semantic key, held-out semantic label, scoring harness or reviewer annotation exists.
 
-Next: Claude-04 acts as the exposed/non-fresh private Key Author A. Only its commitment/provenance message may be committed. The complete Key A must remain outside reviewer-accessible repository storage. A later Key Author B must be genuinely fresh and blind to Key A.
+Claude-04 correctly stopped before generating any labels because the full Key A workload is too large for a reliable single long-chat turn. Research 334 reconciles its execution plan and freezes a symmetric pre-key execution addendum at SHA-256 811d098dcda35583b5ef6a45fce0d1578b85029d3c43167a28e96804010ce862. Key Author A remains exposed/non-fresh; claude-04 is dispatcher and local Claude Code is the semantic executor under a fixed model/configuration. Cloud Claude Code is not used for this hidden-key task. The public R2 freeze is unchanged and no Key A labels/private bytes exist.
+
+Next: owner launches local Claude Code P0 preflight only. P0 verifies isolation, frozen inputs, permissions and provenance and creates no semantic labels. ChatGPT reviews P0 before semantic phase P1.
 
 Owner decision and all production/migration/authority actions remain held.
 

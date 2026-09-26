@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_AUTHOR_A_CLAUDE04_NEXT",
+  "phase": "DRP03_R2_KEY_AUTHOR_A_LOCAL_CLAUDE_CODE_P0_OWNER_LAUNCH_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -41,6 +41,15 @@
       "roles": [
         "HUMAN_DECIDER"
       ]
+    },
+    {
+      "collaborator_id": "claude-code-a",
+      "interaction_environment": "Claude Code local",
+      "interaction_session": "TBD_PER_PHASE",
+      "roles": [
+        "RESEARCHER",
+        "VERIFIER"
+      ]
     }
   ],
   "allowed_secondary_write_surfaces": [
@@ -51,7 +60,7 @@
       ]
     }
   ],
-  "next_expected_actor": "claude",
+  "next_expected_actor": "human",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -71,14 +80,14 @@
       "DRP-03 Claude reviewer A must not inspect Research 324 or any future ChatGPT DRP-03 annotation/summary before committing its annotation.",
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15."
     ],
-    "notes": "Owner M-1 deferral is governed and Research 332 freezes the full public DRP-03 R2 V0.3 pre-key surface at manifest SHA-256 f358d03168973c33e31a0c877b3175c6804157f6da5074053767e8a9305c3150. No hidden semantic key, hidden label, scoring harness or reviewer annotation exists. Key construction is now permitted. Claude-04 is eligible only as the exposed/non-fresh Key Author A, not as a fresh key author or blind decision reviewer. Its full key must remain private from future Key Author B and decision reviewers; only a canonical-byte commitment may enter the repository before reviewer freeze."
+    "notes": "Research 334 freezes a pre-key execution addendum at SHA-256 811d098dcda35583b5ef6a45fce0d1578b85029d3c43167a28e96804010ce862. The public R2 V0.3 freeze remains unchanged. Key Author A remains exposed/non-fresh; claude-04 is dispatcher, while semantic execution is routed to sequential local Claude Code sessions under one fixed model/configuration and private disk state. No semantic Key A labels or private key bytes exist. Cloud Claude Code is not used for hidden-key authoring. The owner must launch P0 preflight first; P0 is non-semantic and must create no labels."
   },
   "last_transition": {
-    "transition_id": "mc0029-drp03-r2-public-freeze-complete",
+    "transition_id": "mc0029-key-a-local-claude-code-execution-addendum",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 332 freezes the reproducible public R2 V0.3 protocol surface after owner ACCEPT_DEFERRAL. Dual private key construction is next; Claude-04 is routed as exposed Key Author A and at least one later key author must be fresh.",
-    "repository_head": "11a3726b69abfc8c3bda329328ce677070324bf8"
+    "reason": "Claude-04 planning was reconciled by Research 334. A shared operational addendum was frozen before key authoring, local Claude Code was selected for the exposed Key Author A slot, and the next action is owner launch of non-semantic P0 preflight.",
+    "repository_head": "00dbf68515a91aa2c5a02cbc3a5f6059af6b2697"
   }
 }
