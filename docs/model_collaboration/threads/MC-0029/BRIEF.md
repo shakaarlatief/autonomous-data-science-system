@@ -1228,3 +1228,40 @@ Research 348 remains active: public ADS repository operations use the Codexless 
 Next:
 
     owner continues P3 Batch 11 in session 3ff1eec5-be00-4538-960e-ffd6064934c7
+
+## Key Author A P3 Batch 11 result
+
+Research 359 records Batch 11 PASS after task-owner artifact and transcript review.
+
+Task-owner checks confirm:
+
+    25 / 25 presentations
+    exact frozen presentation-ID set and order
+    exact metadata/schema/types
+    classification exposure exactly lines 16130-16387
+    event-context exposure exactly lines 14186-14379
+    no out-of-scope query against multi-batch sources
+    all Grep validation targets only the Batch 11 artifact
+    no Batch 12 exposure
+    no compaction
+    no prohibited shell/web/agent/MCP/IDE tool use
+    controlled settings unchanged
+    no new precedent or erratum
+
+Batch 11 is private frozen.
+
+To reduce avoidable compaction risk before the large split-event Batch 12, the completed Batch 10-11 session is retired proactively. Research 345 permits the same logical Key Author A to continue in a fresh sequential session using the frozen common sources and append-only precedent record.
+
+Batch 12 is task-owner released to a fresh session:
+
+    BAT-20aa129a94ca
+    EVP-63516d4b5c63 part 1
+    392 presentations
+    classification lines 16388-20315
+    event-context lines 14380-20696
+
+Batch 13 is part 2 of the same event and remains gated.
+
+Next:
+
+    owner launches fresh P3 Batch 12 session

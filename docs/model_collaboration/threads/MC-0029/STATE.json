@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_AUTHOR_A_P3_BATCH11_OWNER_CONTINUE_NEXT",
+  "phase": "DRP03_R2_KEY_AUTHOR_A_P3_BATCH12_FRESH_SESSION_OWNER_LAUNCH_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 358 accepts fresh-sequential P3 Batch 10 as PASS after exact mechanical and transcript review. Batch 10 is private frozen, source-boundary discipline is clean, all Grep operations target only the current Batch 10 artifact, one authorized append-only precedent was added, and no erratum was added. The clean Batch 10 session may continue as the same logical Key Author A. Batch 11 is task-owner released and Batches 12-13 remain gated. Research 348's Runtime-Bridge-only repository constraint remains active."
+    "notes": "Research 359 accepts P3 Batch 11 as PASS after exact mechanical and transcript review. Batch 11 is private frozen, source-boundary discipline is clean, no new precedent or erratum was added, and no Batch 12 material was exposed. The completed Batch 10-11 session is retired proactively at the accepted boundary to reduce compaction risk before the large split-event Batch 12. Batch 12 is task-owner released to a fresh sequential P3 session and Batch 13 remains gated. Research 348's Runtime-Bridge-only repository constraint remains active."
   },
   "last_transition": {
-    "transition_id": "mc0029-key-a-p3-batch10-pass-batch11-release",
+    "transition_id": "mc0029-key-a-p3-batch11-pass-batch12-fresh-session-release",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 358 accepts clean fresh-sequential Batch 10, preserves one new append-only precedent, freezes Batch 10 and releases Batch 11 in the same clean P3 session.",
-    "repository_head": "058cf8345c8ddee5c0dd2a4930a0057ea9f7cc83"
+    "reason": "Research 359 accepts clean Batch 11, freezes it, retires the Batch 10-11 session proactively and releases large split-event Batch 12 to a fresh sequential P3 session.",
+    "repository_head": "e00b0189d23cc539bc91932434c1a61f9633377d"
   }
 }
