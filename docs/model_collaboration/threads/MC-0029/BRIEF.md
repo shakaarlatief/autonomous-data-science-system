@@ -861,3 +861,43 @@ Still prohibited:
 Next:
 
     owner launches a fresh standalone local Claude Code P3 Batch-1 session
+
+## Key Author A P3 Batch 1 result
+
+Research 347 reconciles P3 Batch 1 as:
+
+    PASS
+
+Task-owner mechanical validation confirms:
+
+    20 / 20 presentations
+    exact frozen presentation-ID set and order
+    exact metadata/schema/types
+    no premature Batch 2 exposure
+    fresh P3 session boundary preserved
+    no prohibited shell/web/agent/MCP/IDE tool use
+
+Batch 1 is private frozen.
+
+Under the owner's existing P3 authorization, Batch 2 is task-owner released:
+
+    BAT-d9a702f46dee
+    223 presentations
+    classification lines 218-2455
+    event-context lines 158-2138
+
+Batches 3-13 remain task-owner gated.
+
+## Temporary transition repository execution constraint
+
+Research 348 activates a temporary operating constraint for the current public ADS repository:
+
+    repository execution surface = Codexless Runtime Bridge only
+    native GitHub connector = prohibited for ADS repository operations
+    Runtime Bridge failure = diagnose/repair or explicitly reconsider, never silent fallback
+
+This rule is transitional and does not select the future Project workflow realization.
+
+Next:
+
+    owner continues P3 Batch 2 in the existing fresh P3 Claude Code session

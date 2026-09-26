@@ -3,6 +3,7 @@
 **Date:** 2026-09-26
 **Status:** P3 BATCH 1 PASS / PRIVATE FROZEN / BATCH 2 RELEASED
 **Parent:** Research 346
+**Scope:** Reconcile P3 BIRTH held-out Batch 1 after task-owner mechanical and transcript review, preserve the fresh-session and sequential-exposure boundary, freeze the accepted private batch artifact, and release Batch 2 under the already-granted P3 authorization.
 **Authority:** P3 Batch 1 acceptance and Batch 2 continuation release only. BIRTH grouping, attention-consistency work, LEGACY, canonical-key assembly, commitment generation, Key Author B, scoring and reviewer execution remain unauthorized.
 
 ## Result

@@ -1,8 +1,8 @@
 # Development Method
 
 **Status:** Current canonical project-development method  
-**Current version:** 0.9  
-**Last reviewed:** 2026-09-22
+**Current version:** 0.10
+**Last reviewed:** 2026-09-26
 
 ## Purpose
 
@@ -39,7 +39,7 @@ Evidence-driven development does not require waiting for a capability to fail in
 
 ## Repository information architecture
 
-Development Method v0.9 preserves the v0.8 single-responsibility information architecture and integrity layer, and closes the historical-intermediate checkpoint edge case identified after the duplicate Checkpoint 252 repair:
+Development Method v0.10 preserves the v0.9 single-responsibility information architecture and integrity layer, including the governed historical-intermediate checkpoint extension, while adding only the temporary transition repository execution-surface constraint in Research 348:
 
 ```text
 README.md
@@ -304,7 +304,7 @@ A green Knowledge Map validator establishes **structural coverage and integrity*
 
 ## Risk-scaled verification
 
-Development Method v0.9 retains the V0-V4 risk-scaled verification model:
+Development Method v0.10 retains the V0-V4 risk-scaled verification model:
 
 ```text
 V0  documentation / provenance
@@ -437,6 +437,42 @@ When several routing/canonical files represent one logical transition, prefer on
 Do not batch unrelated changes merely for convenience.
 
 Before the final branch ref is advanced for a multi-file mutation, re-read the branch HEAD. If it moved since the operation was prepared, do not force the write; reconstruct against the new target.
+
+## Temporary transition repository execution surface
+
+Research 348 activates a temporary transition-period execution-surface constraint for the current public `autonomous-data-science-system` repository.
+
+While this constraint is active:
+
+```text
+ADS repository operation
+    -> Codexless Runtime Bridge only
+
+native GitHub connector
+    -> do not use for ADS repository mutation or routine repository-state retrieval
+
+Runtime Bridge failure
+    -> diagnose / repair / explicitly reconsider
+    -> do not silently fall back to another repository execution surface
+```
+
+The current repository procedure is:
+
+```text
+mutate the local checkout through the Runtime Bridge
+-> inspect the complete local diff
+-> run required repository validation
+-> preserve one coherent multi-file logical transition where practical
+-> revalidate branch HEAD / upstream state
+-> commit through Runtime Bridge Git capability
+-> fetch/revalidate upstream
+-> push through Runtime Bridge
+-> confirm local == origin and working tree clean
+```
+
+An exception requires an explicit deliberate owner/task-owner decision before using another repository execution surface.
+
+This rule is deliberately **transitional**. It does not select the future branch model, Git host, promotion mechanism, accepted-state carrier, local/remote execution model or provider. Research 276 / accepted WARRANT-F V0.2 continue to preserve freedom at that realization layer. The constraint remains active until deliberately reassessed; it is not released merely because another connector is convenient or a Runtime Bridge operation fails.
 
 ## Abnormal execution interruption recovery
 
@@ -628,11 +664,29 @@ AI-assisted curation under normal governance
 
 Semantic/vector repository retrieval, generated semantic catalogs, contradiction engines, generalized dependency graphs and heavier orchestration remain deferred until observed need justifies them.
 
-Development Method v0.9 still does **not** introduce a vector/semantic knowledge database. The integrity layer is deliberately small, typed and attached to existing authority surfaces rather than becoming a second truth system.
+Development Method v0.10 still does **not** introduce a vector/semantic knowledge database. The integrity layer is deliberately small, typed and attached to existing authority surfaces rather than becoming a second truth system.
 
 If the central Knowledge Map later becomes a demonstrated reconstruction-read-cost or maintenance bottleneck, or repeated semantic-routing drift survives the current guards, distributed per-artifact topic metadata with a generated semantic view remains the leading lightweight successor architecture to evaluate before introducing a heavier semantic repository database.
 
 ## Version history
+
+### Version 0.10
+
+**Introduced:** temporary transition repository execution-surface constraint, 2026-09-26.
+
+- makes Codexless Runtime Bridge the single ChatGPT repository execution surface for the current public ADS repository during the active transition;
+- prohibits native GitHub connector use for ADS repository mutation and routine repository-state retrieval while the constraint is active;
+- requires Runtime Bridge failures to be diagnosed/repaired or explicitly reconsidered rather than triggering silent execution-surface fallback;
+- preserves coherent local diff, validation, commit, fetch/revalidation, push and clean postflight as the current transition procedure;
+- explicitly preserves Research 276 / WARRANT-F freedom over the future branch strategy, Git host, promotion mechanism, accepted-state carrier and local/remote execution realization;
+- requires an explicit later decision to amend or release the constraint.
+
+Evidence:
+
+```text
+docs/research/348_temporary_transition_repository_execution_surface_constraint.md
+docs/checkpoints/685_temporary_runtime_bridge_only_repository_constraint_activated.md
+```
 
 ### Version 0.9
 

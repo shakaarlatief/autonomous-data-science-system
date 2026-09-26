@@ -1,8 +1,8 @@
 # Continuity
 
 **Status:** Current canonical continuity procedure  
-**Aligned development-method version:** 0.9  
-**Last reviewed:** 2026-09-19
+**Aligned development-method version:** 0.10
+**Last reviewed:** 2026-09-26
 
 ## Purpose
 
@@ -19,6 +19,24 @@ The public `autonomous-data-science-system` repository remains the sole project-
 A private companion repository may preserve private knowledge needed for continuity, but it is not a second development repository and cannot silently override public project-development authority.
 
 Conversation history may help, but must not override repository state. If repository artifacts disagree, resolve through status, scope, chronology, supersession and accepted authority. If material ambiguity remains, surface it explicitly rather than guessing.
+
+### Active transition repository-execution constraint
+
+Research 348 / Checkpoint 685 currently require repository operations for the public ADS development repository to use the **Codexless Runtime Bridge only**.
+
+Until that constraint is deliberately released:
+
+```text
+do not use the native GitHub connector for ADS repository operations
+
+if Runtime Bridge fails:
+    stop the affected mutation
+    inspect durable state
+    diagnose / repair / explicitly reconsider
+    do not silently switch execution surfaces
+```
+
+This is a temporary continuity/transition rule, not a target-architecture decision. Future provider, branch, promotion and local/remote execution choices remain open under the accepted architecture.
 
 ## Separation of continuity concerns
 
@@ -494,7 +512,7 @@ Do not run the whole reconciliation after every small implementation commit.
 
 ## Version relationship
 
-Development Method v0.9 preserves the v0.8 integrity/continuity architecture and adds the governed historical-intermediate checkpoint extension without creating a second authority database:
+Development Method v0.10 preserves the v0.9 integrity/continuity architecture and adds the temporary Runtime-Bridge-only repository execution constraint for the current transition without selecting the future workflow/provider realization:
 
 ```text
 structure     docs/README.md
