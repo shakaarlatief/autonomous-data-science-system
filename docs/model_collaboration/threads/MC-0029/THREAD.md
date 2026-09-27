@@ -1,7 +1,7 @@
 # MC-0029 Thread: Specification 028 Reconciliation and AO-10 Realization Design
 
 **Thread:** MC-0029
-**Status:** OPEN / P4 ELIGIBILITY PROJECTION V0.1 FROZEN / D01 ATTEMPT 003 PREPARATION NEXT
+**Status:** OPEN / P4 D01 PROJECTION PREPARATION PASS / FRESH ATTEMPT 003 OWNER LAUNCH NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** 0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
@@ -60,7 +60,7 @@ Independently derive Specification 028 reconciliation and AO-10 realization arch
     Key A P2 BIRTH development classification    COMPLETE / PASS / 2 PRIVATE FROZEN BATCHES / Research 344
     Key A P3 BIRTH held-out classification       COMPLETE / PASS / 13 PRIVATE FROZEN BATCHES / Research 361
     Key A BIRTH attention quality                PASS / NO REPLACEMENT / Research 362
-    Key A P4 BIRTH grouping                      ELIGIBILITY PROJECTION V0.1 FROZEN / D01 ATTEMPT 003 PREPARATION / Research 367
+    Key A P4 BIRTH grouping                      D01 PROJECTION PREPARATION PASS / ATTEMPT 003 RELEASED / Research 368
     Key A later semantic phases                   NOT AUTHORIZED
     Fresh private Key Author B                    AFTER A COMMITMENT / BLIND TO A
     Key construct-validity gate                   AFTER BOTH COMMITMENTS
@@ -92,7 +92,7 @@ Claude may write only:
     docs/model_collaboration/threads/MC-0029/messages/**
 
     MC0029=OPEN
-    PHASE=DRP03_R2_KEY_AUTHOR_A_P4_D01_ATTEMPT_003_PREPARATION
+    PHASE=DRP03_R2_KEY_AUTHOR_A_P4_D01_ATTEMPT_003_OWNER_LAUNCH_NEXT
     INDEPENDENT_BASE=0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
     CHATGPT_CANDIDATE=RESEARCH312
     CLAUDE_MESSAGE_001=COMPLETE
@@ -219,8 +219,8 @@ Claude may write only:
     KEY_A_P4_D01_ATTEMPT001=HOLD_REJECTED
     KEY_A_P4_D01_ATTEMPT002=HOLD_REJECTED
     KEY_A_P4_ELIGIBILITY_INTERFACE=V01_FROZEN
-    KEY_A_P4_D01_ATTEMPT003_PREPARATION=AUTHORIZED
-    KEY_A_P4_D01_ATTEMPT003_EXECUTION=NOT_YET_RELEASED
+    KEY_A_P4_D01_ATTEMPT003_PREPARATION=PASS
+    KEY_A_P4_D01_ATTEMPT003_EXECUTION=RELEASED
     KEY_A_P4_D02_RELEASED=false
     KEY_A_P4_LATER_EVENTS=TASK_OWNER_GATED
-    NEXT=OWNER_RUN_D01_ELIGIBILITY_PROJECTION_PREPARATION
+    NEXT=OWNER_LAUNCH_FRESH_P4_D01_ATTEMPT003

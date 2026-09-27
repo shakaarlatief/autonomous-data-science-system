@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-26
-**Status:** MC-0029 OPEN / P4 ELIGIBILITY PROJECTION V0.1 FROZEN / D01 ATTEMPT 003 PREPARATION NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / D01 PROJECTION PREPARATION PASS / FRESH ATTEMPT 003 OWNER LAUNCH NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -113,7 +113,9 @@ Research 365 rejects D01 attempt 001 at the prospectively frozen hidden endpoint
 
 Research 366 records that D01 attempt 002 also fails the hidden endpoint-consistency gate while all observable execution controls pass, and stops further blind retry.
 
-Research 367 records the project owner's explicit AMEND decision and freezes P4 eligibility projection interface V0.1. Grouping now consumes only a minimal same-key projection of the current event's semantic item IDs whose frozen primary classification has realization_required=true. No other classification field, attention mapping, rationale, pair candidate or pair result is exposed. Pairwise MUST_JOIN/MUST_SPLIT/UNCONSTRAINED judgments remain independently authored and individually reviewed. Attempts 001 and 002 remain private/frozen/rejected. Deterministic D01 attempt-003 projection preparation is authorized; semantic execution is not yet released. D02 and held-out grouping remain gated. The same projection mechanism must later apply symmetrically to Key B using Key B's own frozen classifications.
+Research 367 records the project owner's explicit AMEND decision and freezes P4 eligibility projection interface V0.1.
+
+Research 368 records PASS for the owner-run deterministic D01 eligibility-projection preparation. The projection was mechanically verified exact against Key A's own frozen primary realization_required=true truth without publishing eligible IDs or counts. Attempts 001 and 002 remain private/frozen/rejected. Fresh D01 attempt 003 is released; endpoint eligibility is supplied only by the frozen projection, while pairwise MUST_JOIN/MUST_SPLIT/UNCONSTRAINED judgments remain semantic and individually reviewed. D02 and held-out grouping remain gated.
 
 Next: owner launches the fresh D01 replacement session and returns only the bounded report.
 

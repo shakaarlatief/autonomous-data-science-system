@@ -1542,3 +1542,29 @@ Immediate next step:
     owner runs deterministic D01 eligibility-projection preparation
 
 D01 attempt 003 semantic execution is not released until that preparation receipt passes task-owner review.
+
+## D01 amended-projection preparation PASS and attempt 003 release
+
+Research 368 records the owner-run deterministic preparation receipt:
+
+    OVERALL_PREPARATION=PASS
+
+The current-event projection was verified exact against Key A's frozen primary realization-required truth.
+
+No eligibility IDs, eligibility count, frozen classification identity, attention mapping or pair result was published.
+
+Current authority:
+
+    D01 attempt 003
+        RELEASED
+
+    endpoint eligibility
+        frozen eligibility projection V0.1
+
+    pairwise relation truth
+        semantic author
+
+    D02
+        NOT RELEASED
+
+Attempt 003 must use a fresh standalone Claude Code session, may read only the current D01 event range plus the D01 eligibility projection and common P4 procedural sources, must not reread either rejected grouping attempt, and must stop after freezing its distinct attempt-003 artifact.

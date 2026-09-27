@@ -595,6 +595,7 @@ docs/research/364_key_author_a_p4_explicit_owner_authorization.md
 docs/research/365_key_author_a_p4_d01_attempt001_hold_eligibility_correction.md
 docs/research/366_key_author_a_p4_d01_attempt002_hold_eligibility_interface_reopened.md
 docs/research/367_owner_amended_p4_frozen_eligibility_projection_interface_v01.md
+docs/research/368_key_author_a_p4_d01_projection_preparation_pass_attempt003_released.md
 docs/research/project_knowledge_activation_orchestration/AO10_SPEC028_RECONCILIATION_V01.json
 docs/checkpoints/570_whole_repository_physical_architecture_scope_clarified.md
 docs/checkpoints/571_whole_repository_r2_boundaries_identified.md
@@ -1307,7 +1308,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-704 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-705 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 
