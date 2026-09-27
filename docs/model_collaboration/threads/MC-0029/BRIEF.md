@@ -1358,3 +1358,38 @@ Therefore Key Author A passes the BIRTH within-author quality gate. No pre-score
 Next:
 
     task owner defines P4 BIRTH grouping prospectively
+
+## Key Author A P4 BIRTH grouping design
+
+Research 363 defines P4 prospectively after Research 362's BIRTH attention-quality PASS.
+
+P4 scope:
+
+    BIRTH grouping only
+
+Execution shape:
+
+    13 event-scoped grouping batches
+    2 development events first
+    mandatory fresh-session boundary
+    11 held-out events second
+    task-owner acceptance before each next event exposure
+
+The semantic author receives only the current unique grouping-catalog event plus frozen common guidance. It does not read prior classification artifacts, attention provenance, prior frozen grouping artifacts or LEGACY material.
+
+Every stored MUST_JOIN/MUST_SPLIT pair must be individually reviewed and confirmed. Unreviewed/uncertain pairs remain UNCONSTRAINED. No class inference and no floor padding are permitted.
+
+The task owner mechanically verifies endpoints against the author's frozen realization_required truth without exposing the hidden presentation-to-item mapping.
+
+Held-out grouping floors are evaluated only after all held-out event artifacts freeze.
+
+P4 requires a fresh Claude Code session at phase start and a fresh session at the development-to-held-out boundary.
+
+Current authorization:
+
+    P4_READY=true
+    P4_AUTHORIZED=false
+
+Next:
+
+    owner P4 authorization decision

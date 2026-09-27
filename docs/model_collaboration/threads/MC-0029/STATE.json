@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_AUTHOR_A_BIRTH_ATTENTION_QUALITY_PASS_P4_DESIGN_NEXT",
+  "phase": "DRP03_R2_KEY_AUTHOR_A_P4_BIRTH_GROUPING_OWNER_AUTHORIZATION_REQUIRED",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -60,7 +60,7 @@
       ]
     }
   ],
-  "next_expected_actor": "chatgpt",
+  "next_expected_actor": "human",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 362 executes the frozen post-classification BIRTH attention-consistency gate after all BIRTH labels are frozen. Development, held-out and combined binary and normative-kind consistency are 1.0, so the quality gate passes and no Key Author A replacement is required. The hidden attention mapping was used mechanically by the task owner only, no label was revised, and the semantic author remains blind to attention identities. BIRTH grouping is eligible but unauthorized. Research 348's Runtime-Bridge-only repository constraint remains active."
+    "notes": "Research 363 prospectively defines P4 as the complete BIRTH grouping phase after all BIRTH classification and the post-freeze attention-quality gate passed. P4 contains 13 event-scoped grouping batches: two development events followed by eleven held-out events, with a mandatory fresh session at P4 start and another at the development-to-held-out boundary. Every constrained pair requires individual confirmation; unreviewed pairs remain UNCONSTRAINED; no floor padding or classification repair is permitted. P4 is ready but not authorized. Research 348's Runtime-Bridge-only repository constraint remains active."
   },
   "last_transition": {
-    "transition_id": "mc0029-key-a-birth-attention-quality-pass-p4-design",
+    "transition_id": "mc0029-key-a-p4-birth-grouping-design-ready",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 362 records the mandatory post-freeze BIRTH attention-consistency gate as PASS with no replacement required and routes to prospective P4 BIRTH grouping design.",
-    "repository_head": "97623fbebb01faead07f6605be2a1f613afcccb5"
+    "reason": "Research 363 freezes the prospective P4 BIRTH grouping execution design, including event-level gating, development/held-out session separation, pair-level confirmation, hidden classification-consistency checks and owner authorization boundary.",
+    "repository_head": "2ae41f245cf72b58963b09b2f397d620fe9532b3"
   }
 }

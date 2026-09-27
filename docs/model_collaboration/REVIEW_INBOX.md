@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-26
-**Status:** MC-0029 OPEN / KEY-A BIRTH ATTENTION QUALITY PASS / P4 DESIGN NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / KEY-A P4 BIRTH GROUPING READY / OWNER AUTHORIZATION REQUIRED / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -103,9 +103,11 @@ Research 360 accepts fresh-sequential Batch 12 as PASS after clean source-bounda
 
 Research 361 accepts final Batch 13 as PASS and freezes all BIRTH classification.
 
-Research 362 executes the mandatory post-freeze BIRTH attention-consistency quality gate. Development, held-out and combined binary/normative-kind consistency all pass at 1.0; no Key Author A replacement is required, no label repair is authorized or performed, and the attention mapping remains hidden from the semantic author. BIRTH grouping is eligible but remains unauthorized.
+Research 362 executes the mandatory post-freeze BIRTH attention-consistency quality gate and records PASS with no Key Author A replacement required.
 
-Next: ChatGPT task owner defines P4 BIRTH grouping prospectively before any grouping semantic work.
+Research 363 now defines P4 BIRTH grouping prospectively. P4 contains 13 event-scoped grouping batches: two development events, then a mandatory fresh-session boundary, then eleven held-out events. Every stored MUST_JOIN/MUST_SPLIT pair must be individually confirmed; all unreviewed pairs remain UNCONSTRAINED; floor padding and classification repair are prohibited. P4 is ready but not authorized.
+
+Next: project owner explicitly authorizes or declines P4 before any grouping catalog is exposed to the semantic author.
 
 Owner decision and all production/migration/authority actions remain held.
 
