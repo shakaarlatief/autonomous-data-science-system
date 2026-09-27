@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_AUTHOR_A_P4_H03_FRESH_SESSION_NEXT",
+  "phase": "DRP03_R2_KEY_AUTHOR_A_P4_H04_FRESH_SESSION_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 374 records acceptance of fresh H02 attempt 002 and H03 release. H02 attempt 002 passed every bounded postflight check. The acceptance operation took effect; subsequent bounded state verification showed H02 already accepted, and H03 preparation succeeded, independently confirming accepted predecessor state. H02 attempt 001 remains private/frozen/rejected/noncanonical. H03 is prepared with exact same-key frozen eligibility and released only to a fresh per-event held-out Claude Code session. The verifier-compatible fresh-per-event policy remains active unless separately requalified; H04-H11 remain gated. Research 348's Runtime-Bridge-only public-repository constraint remains active."
+    "notes": "Research 375 records acceptance of fresh H03 attempt 001 and H04 release. H03 attempt 001 passed every bounded postflight check and was accepted through the qualified private-operation capability. H04 is prepared with exact same-key frozen eligibility and released only to a fresh per-event held-out Claude Code session. The verifier-compatible fresh-per-event policy remains active unless separately requalified; H05-H11 remain gated. Research 348's Runtime-Bridge-only public-repository constraint remains active."
   },
   "last_transition": {
-    "transition_id": "mc0029-p4-h02-accepted-h03-release",
+    "transition_id": "mc0029-p4-h03-accepted-h04-release",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Fresh H02 attempt 002 passes the complete bounded postflight and is accepted; H03 is prepared through the qualified private-operation capability and released to a fresh per-event held-out session.",
-    "repository_head": "81a5ca2ac803320fdf87a533ebca1b5ed4287f13"
+    "reason": "Fresh H03 attempt 001 passes the complete bounded postflight and is accepted; H04 is prepared through the qualified private-operation capability and released to a fresh per-event held-out session.",
+    "repository_head": "90e48e092b446961dbf9ff7956e08cd9d5ec14f6"
   }
 }
