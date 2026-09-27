@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_AUTHOR_A_P4_BIRTH_GROUPING_OWNER_AUTHORIZATION_REQUIRED",
+  "phase": "DRP03_R2_KEY_AUTHOR_A_P4_D01_FRESH_SESSION_OWNER_LAUNCH_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 363 prospectively defines P4 as the complete BIRTH grouping phase after all BIRTH classification and the post-freeze attention-quality gate passed. P4 contains 13 event-scoped grouping batches: two development events followed by eleven held-out events, with a mandatory fresh session at P4 start and another at the development-to-held-out boundary. Every constrained pair requires individual confirmation; unreviewed pairs remain UNCONSTRAINED; no floor padding or classification repair is permitted. P4 is ready but not authorized. Research 348's Runtime-Bridge-only repository constraint remains active."
+    "notes": "Research 364 records the owner's explicit P4 authorization. P4 is BIRTH grouping only: two development grouping events followed by eleven held-out grouping events under event-level task-owner gates. A fresh Claude Code session is mandatory at P4 start, and only development D01 (EVP-ca475c9a5a9d, 199 unique semantic items) is released now. D02 and H01-H11 remain task-owner gated. Frozen classification artifacts and attention mappings remain hidden from the semantic author; no classification repair, LEGACY, canonical-key work, migration or authority switch is authorized. Research 348's Runtime-Bridge-only repository constraint remains active."
   },
   "last_transition": {
-    "transition_id": "mc0029-key-a-p4-birth-grouping-design-ready",
+    "transition_id": "mc0029-key-a-p4-owner-authorization-d01-release",
     "from_state": "WAITING",
     "to_state": "WAITING",
-    "actor": "chatgpt",
-    "reason": "Research 363 freezes the prospective P4 BIRTH grouping execution design, including event-level gating, development/held-out session separation, pair-level confirmation, hidden classification-consistency checks and owner authorization boundary.",
-    "repository_head": "2ae41f245cf72b58963b09b2f397d620fe9532b3"
+    "actor": "human",
+    "reason": "The project owner explicitly authorizes the prospectively defined P4 BIRTH grouping phase. Research 364 binds the fresh-session start and releases development grouping D01 only; every later grouping event remains behind a task-owner acceptance gate.",
+    "repository_head": "3325fc667f0912fbff79f5a1cccc22cd3f81f9fa"
   }
 }

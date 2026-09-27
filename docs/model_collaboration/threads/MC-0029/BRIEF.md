@@ -1393,3 +1393,30 @@ Current authorization:
 Next:
 
     owner P4 authorization decision
+
+## Key Author A P4 owner authorization
+
+Research 364 records the owner's explicit authorization of the complete prospectively defined P4 BIRTH grouping phase.
+
+The authorization preserves the Research 363 event-level gates:
+
+    13 grouping events total
+    2 development events
+    11 held-out events
+    fresh session required at P4 start
+    fresh session required at development-to-held-out boundary
+    only one event exposed at a time
+    every later event requires ChatGPT task-owner acceptance/release
+
+Immediate release:
+
+    grouping batch D01
+    packet event EVP-ca475c9a5a9d
+    199 unique semantic items
+    birth_development.json lines 9-1810 only
+
+The semantic author remains blind to frozen classification artifacts and attention provenance. No label repair, LEGACY, canonical Key A assembly, scoring, migration or authority switch is authorized.
+
+Next:
+
+    owner launches fresh P4 D01 session

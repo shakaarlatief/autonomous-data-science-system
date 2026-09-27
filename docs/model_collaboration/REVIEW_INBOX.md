@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-26
-**Status:** MC-0029 OPEN / KEY-A P4 BIRTH GROUPING READY / OWNER AUTHORIZATION REQUIRED / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / KEY-A P4 AUTHORIZED / DEVELOPMENT D01 FRESH SESSION OWNER LAUNCH NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -105,9 +105,11 @@ Research 361 accepts final Batch 13 as PASS and freezes all BIRTH classification
 
 Research 362 executes the mandatory post-freeze BIRTH attention-consistency quality gate and records PASS with no Key Author A replacement required.
 
-Research 363 now defines P4 BIRTH grouping prospectively. P4 contains 13 event-scoped grouping batches: two development events, then a mandatory fresh-session boundary, then eleven held-out events. Every stored MUST_JOIN/MUST_SPLIT pair must be individually confirmed; all unreviewed pairs remain UNCONSTRAINED; floor padding and classification repair are prohibited. P4 is ready but not authorized.
+Research 363 defines P4 BIRTH grouping prospectively. P4 contains 13 event-scoped grouping batches: two development events, then a mandatory fresh-session boundary, then eleven held-out events. Every stored MUST_JOIN/MUST_SPLIT pair must be individually confirmed; all unreviewed pairs remain UNCONSTRAINED; floor padding and classification repair are prohibited.
 
-Next: project owner explicitly authorizes or declines P4 before any grouping catalog is exposed to the semantic author.
+Research 364 records the project owner's explicit P4 authorization. P4 must start in a fresh Claude Code session. Only development D01 (EVP-ca475c9a5a9d, 199 unique semantic items) is released now; D02 and held-out H01-H11 remain task-owner gated. Classification artifacts and attention mappings remain hidden, and no later semantic phase is authorized.
+
+Next: owner launches a fresh standalone P4 Claude Code D01 session and returns only the bounded report.
 
 Owner decision and all production/migration/authority actions remain held.
 
