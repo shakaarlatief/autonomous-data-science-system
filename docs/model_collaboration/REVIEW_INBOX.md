@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-26
-**Status:** MC-0029 OPEN / KEY-A P4 AUTHORIZED / DEVELOPMENT D01 FRESH SESSION OWNER LAUNCH NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / KEY-A P4 D01 ATTEMPT 001 HOLD / FRESH REPLACEMENT OWNER LAUNCH NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -107,9 +107,11 @@ Research 362 executes the mandatory post-freeze BIRTH attention-consistency qual
 
 Research 363 defines P4 BIRTH grouping prospectively. P4 contains 13 event-scoped grouping batches: two development events, then a mandatory fresh-session boundary, then eleven held-out events. Every stored MUST_JOIN/MUST_SPLIT pair must be individually confirmed; all unreviewed pairs remain UNCONSTRAINED; floor padding and classification repair are prohibited.
 
-Research 364 records the project owner's explicit P4 authorization. P4 must start in a fresh Claude Code session. Only development D01 (EVP-ca475c9a5a9d, 199 unique semantic items) is released now; D02 and held-out H01-H11 remain task-owner gated. Classification artifacts and attention mappings remain hidden, and no later semantic phase is authorized.
+Research 364 records the project owner's explicit P4 authorization. P4 began with development D01 only.
 
-Next: owner launches a fresh standalone P4 Claude Code D01 session and returns only the bounded report.
+Research 365 rejects D01 attempt 001 at the prospectively frozen hidden endpoint-eligibility gate. All non-hidden schema/source/session/tool checks passed, but one or more constrained endpoints were inconsistent with already-frozen primary realization-required truth. The magnitude and identities remain private. No label repair is authorized, D02 was not exposed, and the frozen attempt-001 artifact remains immutable and rejected. Research 365 identifies a missing executor-side eligibility prerequisite, corrects it prospectively without exposing prior labels, quarantines the attempt-specific precedent through private erratum, retires the attempt-001 session and releases a fresh D01 replacement under the existing P4 authorization.
+
+Next: owner launches the fresh D01 replacement session and returns only the bounded report.
 
 Owner decision and all production/migration/authority actions remain held.
 

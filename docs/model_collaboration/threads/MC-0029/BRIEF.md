@@ -1420,3 +1420,51 @@ The semantic author remains blind to frozen classification artifacts and attenti
 Next:
 
     owner launches fresh P4 D01 session
+
+## P4 D01 attempt-001 task-owner HOLD and correction
+
+Research 365 records that D01 attempt 001 is not accepted despite the executor PASS report.
+
+Task-owner review found:
+
+    non-hidden artifact/schema checks
+        PASS
+
+    source/session/tool boundary
+        PASS
+
+    compaction
+        NONE
+
+    hidden endpoint eligibility
+        FAIL
+
+At least one constrained endpoint did not map to frozen primary realization_required=true truth. Exact identities and magnitude remain private.
+
+Disposition:
+
+    attempt-001 artifact
+        PRIVATE / FROZEN / REJECTED
+
+    classification repair
+        PROHIBITED
+
+    D02 exposure
+        NONE
+
+    attempt-specific precedent
+        preserved append-only but quarantined by private erratum
+
+Research 365 corrects the missing author-side prerequisite prospectively: before storing any pair, the grouping author must independently judge both endpoints realization-required from the current event text and procedural sources, without reading frozen labels. If either endpoint is non-eligible or uncertain, the pair remains UNCONSTRAINED. The hidden task-owner gate is unchanged.
+
+Replacement:
+
+    fresh Claude Code session required
+    same D01 event/range only
+    prior attempt artifact/transcript forbidden
+    distinct replacement artifact path
+    D02 remains gated
+
+Next:
+
+    owner launches fresh P4 D01 replacement session

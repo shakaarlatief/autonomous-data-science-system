@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_AUTHOR_A_P4_D01_FRESH_SESSION_OWNER_LAUNCH_NEXT",
+  "phase": "DRP03_R2_KEY_AUTHOR_A_P4_D01_ATTEMPT_001_HOLD_REPLACEMENT_READY",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 364 records the owner's explicit P4 authorization. P4 is BIRTH grouping only: two development grouping events followed by eleven held-out grouping events under event-level task-owner gates. A fresh Claude Code session is mandatory at P4 start, and only development D01 (EVP-ca475c9a5a9d, 199 unique semantic items) is released now. D02 and H01-H11 remain task-owner gated. Frozen classification artifacts and attention mappings remain hidden from the semantic author; no classification repair, LEGACY, canonical-key work, migration or authority switch is authorized. Research 348's Runtime-Bridge-only repository constraint remains active."
+    "notes": "Research 365 records P4 D01 attempt 001 as task-owner HOLD: non-hidden schema/source/session/tool checks passed, but the hidden endpoint-consistency gate found one or more constrained endpoints inconsistent with frozen primary realization_required=true truth. No identities, magnitudes or labels are exposed. The frozen attempt-001 artifact is rejected and immutable; D02 was not exposed. The root cause is an executor-instruction omission: Research 363 froze an endpoint-eligibility acceptance gate while the D01 prompt did not explicitly require independent author-side realization-required eligibility before storing a pair. The correction adds that prerequisite without exposing prior labels, quarantines the attempt-specific precedent through private erratum, retires the old D01 session, and authorizes a fresh D01 replacement under the existing P4 authorization. Research 348's Runtime-Bridge-only repository constraint remains active."
   },
   "last_transition": {
-    "transition_id": "mc0029-key-a-p4-owner-authorization-d01-release",
+    "transition_id": "mc0029-key-a-p4-d01-attempt001-hold-replacement-ready",
     "from_state": "WAITING",
     "to_state": "WAITING",
-    "actor": "human",
-    "reason": "The project owner explicitly authorizes the prospectively defined P4 BIRTH grouping phase. Research 364 binds the fresh-session start and releases development grouping D01 only; every later grouping event remains behind a task-owner acceptance gate.",
-    "repository_head": "3325fc667f0912fbff79f5a1cccc22cd3f81f9fa"
+    "actor": "chatgpt",
+    "reason": "Task-owner review rejects P4 D01 attempt 001 at the prospectively frozen hidden endpoint-eligibility gate. Research 365 preserves the frozen rejected artifact, prohibits label repair, corrects the missing author-side eligibility instruction prospectively, and releases a fresh D01 replacement under existing P4 authorization.",
+    "repository_head": "a3507d9c671a70ce1b09984ace703a2dfec2bff9"
   }
 }
