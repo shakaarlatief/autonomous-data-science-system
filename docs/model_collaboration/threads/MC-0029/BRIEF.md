@@ -1702,8 +1702,42 @@ The same capability has prepared H02:
     projection exact frozen eligibility
         true
 
-H02 semantic execution is released to the accepted held-out grouping session. The frozen P4 design permits the same held-out session to continue after an accepted event. H03-H11 remain task-owner gated.
+H02 attempt 001 was executed in the accepted H01 held-out session.
+
+Independent postflight showed:
+
+    progressPhaseOk
+        true
+
+    projection / artifact / pair / eligibility checks
+        PASS
+
+    transcript identity / tool boundary / write-once / append-only checks
+        PASS
+
+    catalogReadsBounded
+        false
+
+    noForbiddenSourceRead
+        false
+
+Inspection of the already-qualified p4-private-ops-v2 implementation establishes the cause: its transcript verifier scans the complete session transcript. When one session is reused across accepted held-out events, previously authorized H01 catalog and grouping-artifact activity is re-evaluated under H02's event-local source boundary and therefore produces a verifier-scope false positive.
+
+This is a bounded verifier/session-scope incompatibility, not evidence that the H02 attempt itself performed a prohibited H02 read.
+
+H02 attempt 001 is nevertheless not acceptable under the current qualified gate and remains:
+
+    PRIVATE / FROZEN / REJECTED / NONCANONICAL
+    reason: POSTFLIGHT_FAIL
+
+The task owner re-prepared H02 and again verified exact same-key frozen eligibility.
+
+The existing P4 design already permits a fresh replacement session at an accepted-event boundary. Therefore no semantic grouping rule is amended. Operationally, H02 attempt 002 is released to a fresh standalone held-out session.
+
+To avoid repeating the verifier incompatibility, H02-H11 will use fresh per-event Claude Code sessions unless the verifier is separately requalified.
+
+H03-H11 remain gated.
 
 Next:
 
-    owner continues the accepted P4 held-out grouping session with H02
+    owner launches fresh P4 held-out H02 attempt 002
