@@ -1654,16 +1654,47 @@ Development grouping is therefore complete.
 
 All development grouping sessions now retire.
 
-The bounded capability has prepared held-out H01:
+The bounded capability prepared held-out H01 and the mandatory fresh held-out session executed it.
+
+H01 attempt sequence:
+
+    attempt 001
+        REJECTED / POSTFLIGHT_FAIL
+        sole failing check: progressPhaseOk
+
+    attempt 002 initial postflight
+        FAIL
+        sole failing check: progressPhaseOk
+
+    attempt 002 progress-only correction
+        PASS
+        exact qualified runtime phase:
+            P4_BIRTH_GROUPING_H01_ATTEMPT_002_COMPLETE_AWAITING_REVIEW
+        grouping artifact modified:
+            false
+        semantic source read:
+            false
+        next event exposed:
+            false
+
+    attempt 002 rerun postflight
+        PASS / ALL BOUNDED CHECKS
+
+    attempt 002
+        ACCEPTED
+
+The qualified bounded acceptance operation reran postflight and accepted H01.
+
+The same capability has prepared H02:
 
     packet event
-        EVP-1b6edca704fa
+        EVP-1b53b3b00c6c
 
     unique semantic items
-        15
+        216
 
     catalog range
-        birth_heldout.json lines 9-154
+        birth_heldout.json lines 155-2109
 
     projection preparation
         PASS
@@ -1671,8 +1702,8 @@ The bounded capability has prepared held-out H01:
     projection exact frozen eligibility
         true
 
-H01 semantic execution is released only to the mandatory fresh standalone held-out Claude Code session. No development grouping session may continue into held-out grouping. H02-H11 remain task-owner gated.
+H02 semantic execution is released to the accepted held-out grouping session. The frozen P4 design permits the same held-out session to continue after an accepted event. H03-H11 remain task-owner gated.
 
 Next:
 
-    owner launches the mandatory fresh P4 held-out H01 session
+    owner continues the accepted P4 held-out grouping session with H02

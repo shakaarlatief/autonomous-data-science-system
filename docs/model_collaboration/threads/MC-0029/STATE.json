@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_AUTHOR_A_P4_H01_OWNER_LAUNCH_FRESH_HELDOUT_SESSION_NEXT",
+  "phase": "DRP03_R2_KEY_AUTHOR_A_P4_H02_OWNER_CONTINUE_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 371 records completion of Key Author A P4 development grouping. D02 attempt 001 remains private/frozen/rejected under SOURCE_BOUNDARY and attempt 002 remains private/frozen/rejected under ARTIFACT_INVALID. Fresh D02 attempt 003 passed every bounded mechanical postflight check and is task-owner accepted. Development grouping is complete and its sessions retire. The bounded private operation prepared H01 and verified its same-key frozen eligibility projection exactly. H01 semantic execution is released only to the mandatory fresh standalone held-out grouping session; H02-H11 remain gated. Research 348's Runtime-Bridge-only public-repository constraint remains active."
+    "notes": "Research 372 records H01 acceptance and H02 release. H01 attempt 001 remains private/frozen/rejected after a postflight failure confined to progressPhaseOk. Attempt 002 initially reproduced that same sole mechanical phase-label failure; the already-qualified p4-private-ops-v2 contract established the exact attempt-aware completion phase. A same-session progress-only correction changed no grouping artifact, read no semantic source and exposed no next event. The rerun passed every bounded postflight check and H01 attempt 002 is task-owner accepted. The bounded private operation prepared H02 and verified its same-key frozen eligibility projection exactly. H02 semantic execution is released to the accepted held-out grouping session; H03-H11 remain gated. Research 348's Runtime-Bridge-only public-repository constraint remains active."
   },
   "last_transition": {
-    "transition_id": "mc0029-p4-d02-accepted-h01-release",
+    "transition_id": "mc0029-p4-h01-accepted-h02-release",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "D02 attempt 003 passes the complete bounded postflight after two preserved rejected attempts; the task owner accepts D02, closes development grouping, prepares H01 through the qualified private-operation capability, and releases H01 only to the mandatory fresh held-out session.",
-    "repository_head": "2df1bc6fc363c3da927869bff6ac0ff9ed061b8d"
+    "reason": "H01 attempt 002 passes complete bounded postflight after an exact non-semantic progress-phase correction; the task owner accepts H01, prepares H02 through the qualified private-operation capability, and releases H02 to the accepted held-out grouping session.",
+    "repository_head": "f5cfcd4eb2955bd0c04a3464fa3a67f5bd76f358"
   }
 }
