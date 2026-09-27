@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-26
-**Status:** MC-0029 OPEN / D01 PROJECTION PREPARATION PASS / FRESH ATTEMPT 003 OWNER LAUNCH NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / D01 ATTEMPT 003 ACCEPTED / D02 OWNER CONTINUE NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -115,7 +115,11 @@ Research 366 records that D01 attempt 002 also fails the hidden endpoint-consist
 
 Research 367 records the project owner's explicit AMEND decision and freezes P4 eligibility projection interface V0.1.
 
-Research 368 records PASS for the owner-run deterministic D01 eligibility-projection preparation. The projection was mechanically verified exact against Key A's own frozen primary realization_required=true truth without publishing eligible IDs or counts. Attempts 001 and 002 remain private/frozen/rejected. Fresh D01 attempt 003 is released; endpoint eligibility is supplied only by the frozen projection, while pairwise MUST_JOIN/MUST_SPLIT/UNCONSTRAINED judgments remain semantic and individually reviewed. D02 and held-out grouping remain gated.
+Research 368 records PASS for the deterministic D01 eligibility-projection preparation and releases attempt 003.
+
+Research 369 records qualification and activation of the bounded P4 private operations Runtime Bridge capability. It performs only fixed-root P4 prepare/postflight/accept/reject operations and returns privacy-preserving receipts; it does not grant generic shell semantics or expose hidden eligibility/pair/classification information.
+
+Research 370 records D01 attempt 003 postflight PASS and task-owner acceptance under the amended eligibility-projection interface. Attempts 001 and 002 remain private/frozen/rejected. The bounded capability then prepares D02 and verifies its exact same-key frozen eligibility projection. D02 semantic execution is released to the existing development-grouping Claude session. Held-out grouping remains gated and requires the mandatory fresh session after D02 acceptance.
 
 Next: owner launches the fresh D01 replacement session and returns only the bounded report.
 

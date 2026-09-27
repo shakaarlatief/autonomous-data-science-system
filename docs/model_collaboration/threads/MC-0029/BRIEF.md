@@ -1568,3 +1568,79 @@ Current authority:
         NOT RELEASED
 
 Attempt 003 must use a fresh standalone Claude Code session, may read only the current D01 event range plus the D01 eligibility projection and common P4 procedural sources, must not reread either rejected grouping attempt, and must stop after freezing its distinct attempt-003 artifact.
+
+## Bounded P4 private operations capability
+
+Research 369 records qualification and activation of a purpose-specific Runtime Bridge capability for repeated P4 private mechanical operations.
+
+The capability is fixed to the private Key-A root and supports only:
+
+    prepare_event
+    postflight_attempt
+    accept_attempt
+    reject_attempt
+
+It accepts no arbitrary path or command and returns no eligibility IDs/counts, pair identities/counts/reasons, classifications, attention mappings, transcript semantic content or private digests.
+
+Qualified runtime evidence:
+
+    local-runtime commit
+        ee574111c6c1fac8a13deb999ee15dab8ad6afb1
+
+    release
+        p4-private-ops-v2
+
+    target tool count
+        173
+
+    managed publication
+        PASS
+
+    managed restart/activation
+        PASS
+
+    post-activation release verification
+        PASS / mismatchCount=0
+
+The broader successor-architecture question of generic capability-scoped private workspace access remains deferred; this tool solves only the bounded P4 workflow.
+
+## P4 D01 attempt-003 acceptance and D02 release
+
+Research 370 records independent bounded postflight for D01 attempt 003:
+
+    overallPostflight
+        PASS
+
+Every mechanical projection, artifact, source-boundary, transcript, tool-boundary and write-once/append-only check passed without exposing hidden semantic details.
+
+The task owner then accepted:
+
+    D01 attempt 003
+        ACCEPTED
+
+Attempts 001 and 002 remain private/frozen/rejected and noncanonical.
+
+The same bounded capability prepared D02:
+
+    packet event
+        EVP-362b09ec98e9
+
+    unique semantic items
+        256
+
+    catalog range
+        birth_development.json lines 1811-4125
+
+    projection preparation
+        PASS
+
+    projection exact frozen eligibility
+        true
+
+D02 is released to the existing development-grouping Claude session.
+
+Held-out grouping remains unexposed. After D02 acceptance the development session must retire and held-out grouping must begin in the already-required fresh Claude Code session.
+
+Next:
+
+    owner continues the existing P4 development-grouping session with D02
