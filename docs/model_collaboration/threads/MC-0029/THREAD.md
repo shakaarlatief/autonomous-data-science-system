@@ -1,14 +1,14 @@
 # MC-0029 Thread: Specification 028 Reconciliation and AO-10 Realization Design
 
 **Thread:** MC-0029
-**Status:** OPEN / P4 D01 ATTEMPT 003 ACCEPTED / D02 OWNER CONTINUE NEXT
+**Status:** OPEN / P4 DEVELOPMENT GROUPING ACCEPTED / H01 FRESH HELD-OUT SESSION NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** 0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
-**Task owner:** ChatGPT / chatgpt-31
+**Task owner:** ChatGPT / chatgpt-32
 **Independent reviewer/designer:** Claude / claude-04
 **Active Claude conversation:** 04 - Assurance and Delivery Architecture Design
-**Active ChatGPT conversation:** 31 - Assurance Architecture Qualification and Semantic Evidence
+**Active ChatGPT conversation:** 32 - Semantic Qualification and Independent Evaluation
 **Authority:** Collaboration evidence only.
 
 ## Interaction provenance
@@ -60,7 +60,7 @@ Independently derive Specification 028 reconciliation and AO-10 realization arch
     Key A P2 BIRTH development classification    COMPLETE / PASS / 2 PRIVATE FROZEN BATCHES / Research 344
     Key A P3 BIRTH held-out classification       COMPLETE / PASS / 13 PRIVATE FROZEN BATCHES / Research 361
     Key A BIRTH attention quality                PASS / NO REPLACEMENT / Research 362
-    Key A P4 BIRTH grouping                      D01 ATTEMPT 003 ACCEPTED / D02 RELEASED / Research 370
+    Key A P4 BIRTH grouping                      DEVELOPMENT COMPLETE / D02 ATTEMPT 003 ACCEPTED / H01 RELEASED / Research 371
     Key A later semantic phases                   NOT AUTHORIZED
     Fresh private Key Author B                    AFTER A COMMITMENT / BLIND TO A
     Key construct-validity gate                   AFTER BOTH COMMITMENTS
@@ -92,7 +92,7 @@ Claude may write only:
     docs/model_collaboration/threads/MC-0029/messages/**
 
     MC0029=OPEN
-    PHASE=DRP03_R2_KEY_AUTHOR_A_P4_D02_OWNER_CONTINUE_NEXT
+    PHASE=DRP03_R2_KEY_AUTHOR_A_P4_H01_OWNER_LAUNCH_FRESH_HELDOUT_SESSION_NEXT
     INDEPENDENT_BASE=0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
     CHATGPT_CANDIDATE=RESEARCH312
     CLAUDE_MESSAGE_001=COMPLETE
@@ -224,8 +224,14 @@ Claude may write only:
     KEY_A_P4_D01_ATTEMPT003=ACCEPTED
     KEY_A_P4_PRIVATE_OPERATIONS=ACTIVE_QUALIFIED
     KEY_A_P4_D02_PREPARATION=PASS
-    KEY_A_P4_D02_EXECUTION=RELEASED
-    KEY_A_P4_HELDOUT_RELEASED=false
+    KEY_A_P4_D02_ATTEMPT001=HOLD_REJECTED_SOURCE_BOUNDARY
+    KEY_A_P4_D02_ATTEMPT002=HOLD_REJECTED_ARTIFACT_INVALID
+    KEY_A_P4_D02_ATTEMPT003=ACCEPTED
+    KEY_A_P4_DEVELOPMENT=COMPLETE
+    KEY_A_P4_DEVELOPMENT_SESSION=RETIRED
     KEY_A_P4_HELDOUT_FRESH_SESSION_REQUIRED=true
+    KEY_A_P4_H01_PREPARATION=PASS
+    KEY_A_P4_H01_EXECUTION=RELEASED_FRESH_SESSION_ONLY
+    KEY_A_P4_HELDOUT_RELEASED=true_H01_ONLY
     KEY_A_P4_LATER_EVENTS=TASK_OWNER_GATED
-    NEXT=OWNER_CONTINUE_P4_DEVELOPMENT_D02
+    NEXT=OWNER_LAUNCH_FRESH_P4_HELDOUT_H01

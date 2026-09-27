@@ -1637,10 +1637,42 @@ The same bounded capability prepared D02:
     projection exact frozen eligibility
         true
 
-D02 is released to the existing development-grouping Claude session.
+D02 was released to the development-grouping workflow and required three frozen attempts:
 
-Held-out grouping remains unexposed. After D02 acceptance the development session must retire and held-out grouping must begin in the already-required fresh Claude Code session.
+    attempt 001
+        REJECTED / SOURCE_BOUNDARY
+
+    attempt 002
+        REJECTED / ARTIFACT_INVALID
+
+    attempt 003
+        PASS / ACCEPTED
+
+For accepted attempt 003, every bounded postflight check passes, including progress state, projection exactness, artifact and pair shape, endpoint scope and eligibility, transcript identity, bounded catalog reads, no forbidden source/tool use, ERRATA-before-PRECEDENTS ordering, write-once artifact behavior and append-only shared-state behavior.
+
+Development grouping is therefore complete.
+
+All development grouping sessions now retire.
+
+The bounded capability has prepared held-out H01:
+
+    packet event
+        EVP-1b6edca704fa
+
+    unique semantic items
+        15
+
+    catalog range
+        birth_heldout.json lines 9-154
+
+    projection preparation
+        PASS
+
+    projection exact frozen eligibility
+        true
+
+H01 semantic execution is released only to the mandatory fresh standalone held-out Claude Code session. No development grouping session may continue into held-out grouping. H02-H11 remain task-owner gated.
 
 Next:
 
-    owner continues the existing P4 development-grouping session with D02
+    owner launches the mandatory fresh P4 held-out H01 session
