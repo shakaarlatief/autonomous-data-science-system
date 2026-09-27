@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-26
-**Status:** MC-0029 OPEN / KEY-A P4 D01 ATTEMPT 001 HOLD / FRESH REPLACEMENT OWNER LAUNCH NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / KEY-A P4 D01 ATTEMPT 002 HOLD / ELIGIBILITY INTERFACE OWNER AMENDMENT DECISION / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -109,7 +109,9 @@ Research 363 defines P4 BIRTH grouping prospectively. P4 contains 13 event-scope
 
 Research 364 records the project owner's explicit P4 authorization. P4 began with development D01 only.
 
-Research 365 rejects D01 attempt 001 at the prospectively frozen hidden endpoint-eligibility gate. All non-hidden schema/source/session/tool checks passed, but one or more constrained endpoints were inconsistent with already-frozen primary realization-required truth. The magnitude and identities remain private. No label repair is authorized, D02 was not exposed, and the frozen attempt-001 artifact remains immutable and rejected. Research 365 identifies a missing executor-side eligibility prerequisite, corrects it prospectively without exposing prior labels, quarantines the attempt-specific precedent through private erratum, retires the attempt-001 session and releases a fresh D01 replacement under the existing P4 authorization.
+Research 365 rejects D01 attempt 001 at the prospectively frozen hidden endpoint-eligibility gate and releases a corrected fresh replacement.
+
+Research 366 records that D01 attempt 002 also fails the same hidden endpoint-consistency gate even though every observable execution/schema/source/tool/progress condition in the owner-run postflight passed. No hidden identities, labels, pair outcomes or counts are published. Because attempt 002 already used the corrected independent realization-required eligibility instruction, no third blind retry is released. The P4 grouping/classification interface is reopened for explicit owner amendment. The preferred amendment is a minimal projection of each key author's own frozen realization-required eligibility into grouping scope, while keeping all other prior labels and mappings hidden and preserving independent pairwise grouping judgments. D02 remains unreleased. Research 366 also records, for later architecture work only, the need to examine owner-authorized capability-scoped access to private local workspaces.
 
 Next: owner launches the fresh D01 replacement session and returns only the bounded report.
 

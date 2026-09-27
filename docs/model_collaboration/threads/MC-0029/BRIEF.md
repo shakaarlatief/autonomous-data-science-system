@@ -1468,3 +1468,37 @@ Replacement:
 Next:
 
     owner launches fresh P4 D01 replacement session
+
+## P4 D01 attempt-002 HOLD and eligibility-interface decision
+
+Research 366 records the owner-run deterministic postflight for D01 attempt 002.
+
+All observable checks passed, including artifact structure, event scope, transcript/session identity, bounded source reads, no forbidden tools/sources, progress state, quarantine erratum, and write-once artifact behavior.
+
+The hidden endpoint-consistency gate failed again.
+
+No hidden endpoint identity, pair identity, count, prior label, reason or attention mapping is disclosed.
+
+Because attempt 002 already executed the Research 365 correction requiring independent grouping-time realization-required eligibility, a third blind retry is not released. Repeating the same event while tuning instructions toward an unseen acceptance result would weaken construct validity.
+
+Research 366 therefore reopens the grouping/classification interface.
+
+Preferred amendment:
+
+    freeze P2/P3 classifications unchanged
+    mechanically project only each author's own frozen realization-required eligibility into grouping scope
+    reveal no other classification field or attention mapping
+    author MUST_JOIN / MUST_SPLIT judgments remain semantic and pairwise
+    every stored pair remains individually reviewed
+    apply the same mechanism to Key B using Key B's own frozen classifications
+    freeze the amended mechanism before held-out grouping
+
+This changes Research 363's strict no-classification-derived-input rule and therefore requires explicit owner amendment.
+
+D02 remains gated.
+
+A separate deferred architecture note records that capability-scoped, owner-authorized access to private local workspaces should be revisited in the future Project Development System/tooling architecture.
+
+Next:
+
+    owner P4 eligibility-interface amendment decision
