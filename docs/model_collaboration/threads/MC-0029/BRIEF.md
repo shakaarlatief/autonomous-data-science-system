@@ -1732,12 +1732,72 @@ H02 attempt 001 is nevertheless not acceptable under the current qualified gate 
 
 The task owner re-prepared H02 and again verified exact same-key frozen eligibility.
 
-The existing P4 design already permits a fresh replacement session at an accepted-event boundary. Therefore no semantic grouping rule is amended. Operationally, H02 attempt 002 is released to a fresh standalone held-out session.
+The existing P4 design already permits a fresh replacement session at an accepted-event boundary. Therefore no semantic grouping rule is amended. Operationally, H02 attempt 002 was released to a fresh standalone held-out session.
 
-To avoid repeating the verifier incompatibility, H02-H11 will use fresh per-event Claude Code sessions unless the verifier is separately requalified.
+Fresh H02 attempt 002 then passed every bounded postflight check:
 
-H03-H11 remain gated.
+    progress / authorization / event-order checks
+        PASS
+
+    projection provenance/schema/exactness
+        PASS
+
+    artifact / pair / endpoint checks
+        PASS
+
+    transcript session/model/permission checks
+        PASS
+
+    no compaction / no prohibited tool
+        PASS
+
+    bounded catalog reads
+        PASS
+
+    eligibility projection read
+        PASS
+
+    no forbidden source read
+        PASS
+
+    ERRATA-before-PRECEDENTS
+        PASS
+
+    artifact written once
+        PASS
+
+    PRECEDENTS / ERRATA append-only
+        PASS
+
+The bounded acceptance operation took effect. Subsequent bounded state verification showed the target already accepted, and H03 preparation succeeded, independently confirming accepted predecessor state.
+
+H02 attempt 002 is therefore:
+
+    ACCEPTED
+
+The bounded capability prepared H03:
+
+    packet event
+        EVP-819a9953b12b
+
+    unique semantic items
+        371
+
+    catalog range
+        birth_heldout.json lines 2110-5464
+
+    projection preparation
+        PASS
+
+    projection exact frozen eligibility
+        true
+
+H03 is released only to a fresh standalone held-out Claude Code session.
+
+The fresh-per-event held-out session policy remains active unless the verifier is separately requalified.
+
+H04-H11 remain gated.
 
 Next:
 
-    owner launches fresh P4 held-out H02 attempt 002
+    owner launches fresh P4 held-out H03 attempt 001
