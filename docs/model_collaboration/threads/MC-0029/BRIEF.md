@@ -1502,3 +1502,43 @@ A separate deferred architecture note records that capability-scoped, owner-auth
 Next:
 
     owner P4 eligibility-interface amendment decision
+
+## P4 eligibility projection amendment accepted
+
+Research 367 records the project owner's explicit:
+
+    AMEND
+
+The P4 grouping/classification interface is now frozen as eligibility projection V0.1.
+
+For each current grouping event, the task owner mechanically derives only:
+
+    semantic item IDs whose same-key frozen primary classification has
+    realization_required=true
+
+The grouping author may read that event-scoped eligibility projection.
+
+The author still may not read:
+
+    prior classification artifacts
+    attention mappings
+    normative labels or kinds
+    materiality/restatement/delta fields
+    classification rationales
+    pair candidates or pair outcomes
+    the other key
+
+Grouping therefore becomes an explicitly downstream semantic stage:
+
+    frozen classification owns endpoint eligibility
+    grouping owns relation truth among eligible endpoints
+
+Every stored MUST_JOIN/MUST_SPLIT pair still requires individual semantic review; all other pairs remain UNCONSTRAINED.
+
+Attempts 001 and 002 remain frozen/rejected and must not be reread.
+
+Immediate next step:
+
+    owner runs deterministic D01 eligibility-projection preparation
+
+D01 attempt 003 semantic execution is not released until that preparation receipt passes task-owner review.

@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_AUTHOR_A_P4_D01_ATTEMPT_002_HOLD_ELIGIBILITY_AMENDMENT_DECISION",
+  "phase": "DRP03_R2_KEY_AUTHOR_A_P4_D01_ATTEMPT_003_PREPARATION",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 366 records D01 attempt 002 as HOLD after the owner-run deterministic postflight: every observable execution/schema/source/tool/progress condition passed, while the hidden endpoint-consistency gate again failed. No hidden identities, labels, pair outcomes or counts are published. Because attempt 002 already used the corrected independent realization-required eligibility instruction from Research 365, repeated blind retry is stopped. The P4 grouping/classification interface is reopened for owner amendment. Preferred direction is a minimal projection of each key author's own frozen realization-required eligibility into grouping scope, while keeping all other classification labels and mappings hidden and preserving pairwise semantic authorship. D02 remains unreleased. A separate deferred architecture observation records the need for capability-scoped owner-authorized access to private local workspaces in the future Project Development System/tooling architecture. Research 348's Runtime-Bridge-only repository constraint remains active."
+    "notes": "Research 367 records the project owner's explicit AMEND decision. P4 eligibility projection interface V0.1 is frozen: grouping now consumes only a minimal same-key projection of frozen primary realization_required=true semantic item IDs for the current event, while all other classification fields, attention mappings, rationales and pair outcomes remain hidden. Pairwise grouping judgments remain independently authored and individually reviewed. Attempts 001 and 002 stay private/frozen/rejected. D01 attempt 003 semantic execution is not yet released; only deterministic private projection preparation is authorized. D02 and held-out grouping remain gated. The same projection schema/algorithm must later apply symmetrically to Key B using Key B's own frozen classifications. Research 348's Runtime-Bridge-only repository constraint remains active."
   },
   "last_transition": {
-    "transition_id": "mc0029-key-a-p4-d01-attempt002-hold-eligibility-amendment-decision",
+    "transition_id": "mc0029-p4-eligibility-projection-v01-owner-amendment",
     "from_state": "WAITING",
     "to_state": "WAITING",
-    "actor": "chatgpt",
-    "reason": "Owner-run attempt-002 postflight passed all observable controls but failed the hidden endpoint-consistency gate again. Research 366 stops blind retries and reopens the P4 grouping/classification interface for explicit owner amendment before any further semantic execution.",
-    "repository_head": "4ee4875a0ff2e9a73a7b06ae4c72d75c89f69d20"
+    "actor": "human",
+    "reason": "The project owner explicitly AMENDs the P4 grouping/classification interface. Research 367 freezes a minimal same-key frozen eligibility projection and authorizes deterministic D01 attempt-003 preparation while keeping semantic execution and later events task-owner gated.",
+    "repository_head": "e6e4f9c8fc92a89a7a518ddc66330bae30f14af9"
   }
 }

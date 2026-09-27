@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-26
-**Status:** MC-0029 OPEN / KEY-A P4 D01 ATTEMPT 002 HOLD / ELIGIBILITY INTERFACE OWNER AMENDMENT DECISION / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / P4 ELIGIBILITY PROJECTION V0.1 FROZEN / D01 ATTEMPT 003 PREPARATION NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -111,7 +111,9 @@ Research 364 records the project owner's explicit P4 authorization. P4 began wit
 
 Research 365 rejects D01 attempt 001 at the prospectively frozen hidden endpoint-eligibility gate and releases a corrected fresh replacement.
 
-Research 366 records that D01 attempt 002 also fails the same hidden endpoint-consistency gate even though every observable execution/schema/source/tool/progress condition in the owner-run postflight passed. No hidden identities, labels, pair outcomes or counts are published. Because attempt 002 already used the corrected independent realization-required eligibility instruction, no third blind retry is released. The P4 grouping/classification interface is reopened for explicit owner amendment. The preferred amendment is a minimal projection of each key author's own frozen realization-required eligibility into grouping scope, while keeping all other prior labels and mappings hidden and preserving independent pairwise grouping judgments. D02 remains unreleased. Research 366 also records, for later architecture work only, the need to examine owner-authorized capability-scoped access to private local workspaces.
+Research 366 records that D01 attempt 002 also fails the hidden endpoint-consistency gate while all observable execution controls pass, and stops further blind retry.
+
+Research 367 records the project owner's explicit AMEND decision and freezes P4 eligibility projection interface V0.1. Grouping now consumes only a minimal same-key projection of the current event's semantic item IDs whose frozen primary classification has realization_required=true. No other classification field, attention mapping, rationale, pair candidate or pair result is exposed. Pairwise MUST_JOIN/MUST_SPLIT/UNCONSTRAINED judgments remain independently authored and individually reviewed. Attempts 001 and 002 remain private/frozen/rejected. Deterministic D01 attempt-003 projection preparation is authorized; semantic execution is not yet released. D02 and held-out grouping remain gated. The same projection mechanism must later apply symmetrically to Key B using Key B's own frozen classifications.
 
 Next: owner launches the fresh D01 replacement session and returns only the bounded report.
 
