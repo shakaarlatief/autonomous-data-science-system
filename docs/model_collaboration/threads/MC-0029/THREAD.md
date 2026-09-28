@@ -1,7 +1,7 @@
 # MC-0029 Thread: Specification 028 Reconciliation and AO-10 Realization Design
 
 **Thread:** MC-0029
-**Status:** OPEN / P4 H04 ACCEPTED / H05 FRESH HELD-OUT SESSION NEXT
+**Status:** OPEN / P4 H05 ACCEPTED / H06 FRESH HELD-OUT SESSION NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** 0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
@@ -60,7 +60,7 @@ Independently derive Specification 028 reconciliation and AO-10 realization arch
     Key A P2 BIRTH development classification    COMPLETE / PASS / 2 PRIVATE FROZEN BATCHES / Research 344
     Key A P3 BIRTH held-out classification       COMPLETE / PASS / 13 PRIVATE FROZEN BATCHES / Research 361
     Key A BIRTH attention quality                PASS / NO REPLACEMENT / Research 362
-    Key A P4 BIRTH grouping                      DEVELOPMENT COMPLETE / H04 ATTEMPT 001 ACCEPTED / H05 RELEASED / Research 376
+    Key A P4 BIRTH grouping                      DEVELOPMENT COMPLETE / H05 ATTEMPT 001 ACCEPTED / H06 RELEASED / Research 377
     Key A later semantic phases                   NOT AUTHORIZED
     Fresh private Key Author B                    AFTER A COMMITMENT / BLIND TO A
     Key construct-validity gate                   AFTER BOTH COMMITMENTS
@@ -92,7 +92,7 @@ Claude may write only:
     docs/model_collaboration/threads/MC-0029/messages/**
 
     MC0029=OPEN
-    PHASE=DRP03_R2_KEY_AUTHOR_A_P4_H05_FRESH_SESSION_NEXT
+    PHASE=DRP03_R2_KEY_AUTHOR_A_P4_H06_FRESH_SESSION_NEXT
     INDEPENDENT_BASE=0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
     CHATGPT_CANDIDATE=RESEARCH312
     CLAUDE_MESSAGE_001=COMPLETE
@@ -242,8 +242,10 @@ Claude may write only:
     KEY_A_P4_H04_PREPARATION=PASS
     KEY_A_P4_H04_ATTEMPT001=ACCEPTED
     KEY_A_P4_H05_PREPARATION=PASS
-    KEY_A_P4_H05_ATTEMPT001=RELEASED_FRESH_SESSION
+    KEY_A_P4_H05_ATTEMPT001=ACCEPTED
+    KEY_A_P4_H06_PREPARATION=PASS
+    KEY_A_P4_H06_ATTEMPT001=RELEASED_FRESH_SESSION
     KEY_A_P4_REMAINING_HELDOUT_SESSION_POLICY=FRESH_PER_EVENT_UNLESS_VERIFIER_REQUALIFIED
-    KEY_A_P4_HELDOUT_RELEASED=H01_H02_H03_H04_ACCEPTED_H05_RELEASED
+    KEY_A_P4_HELDOUT_RELEASED=H01_H02_H03_H04_H05_ACCEPTED_H06_RELEASED
     KEY_A_P4_LATER_EVENTS=TASK_OWNER_GATED
-    NEXT=OWNER_LAUNCH_FRESH_P4_HELDOUT_H05_ATTEMPT001
+    NEXT=OWNER_LAUNCH_FRESH_P4_HELDOUT_H06_ATTEMPT001
