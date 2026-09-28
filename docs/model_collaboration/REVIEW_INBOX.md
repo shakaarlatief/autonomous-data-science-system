@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-27
-**Status:** MC-0029 OPEN / KEY A P4 BIRTH GROUPING PASS / POST-P4 PHASE DESIGN NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / KEY A P5 LEGACY CLASSIFICATION DESIGNED / OWNER AUTHORIZATION REQUIRED / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -131,9 +131,9 @@ Research 374 records that fresh H02 attempt 002 passes every bounded postflight 
 
 Next: owner launches fresh H03 attempt 001 and returns only the bounded report.
 
-Research 383 records that fresh H11 attempt 001 passes every bounded postflight check and is task-owner accepted, completing all 13 P4 BIRTH grouping events. The frozen held-out grouping floors are then evaluated mechanically without exposing hidden pair counts: the MUST_JOIN floor passes, the total-constrained-pair floor passes, and the overall grouping-floor result is PASS. Private progress advances to P4_BIRTH_GROUPING_COMPLETE_AWAITING_REVIEW. A purpose-specific bounded Runtime Bridge extension was qualified for terminal floor evaluation; this changes no grouping semantics or later-phase authority. P4 authorizes no later semantic phase.
+Research 384 prospectively defines Key Author A P5 as LEGACY classification only. The frozen workload is 17 sources / 3088 unique semantic items / 18 classification batches / 3210 presentations. P5 uses one fresh standalone Claude Code session per batch, exact sequential line-bounded exposure and task-owner acceptance before the next batch. candidate_gap, evidence_refs, witness/control selection, attention mapping, source provenance, the unique LEGACY grouping catalog and frozen-revision repository evidence are deliberately deferred until classification freezes and the component attention gate passes. A bounded private-operation capability must be qualified before P5 launch. No LEGACY semantic execution has been authorized.
 
-Next: prospectively define the post-P4 / LEGACY phase before any LEGACY semantic execution.
+Next: owner decides ACCEPT / AMEND / HOLD on Research 384 P5 design.
 
 Owner decision and all production/migration/authority actions remain held.
 

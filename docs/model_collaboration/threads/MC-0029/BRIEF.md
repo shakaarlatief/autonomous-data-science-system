@@ -1829,10 +1829,44 @@ Final active runtime support release:
 
 P4 BIRTH grouping is therefore complete with PASS evidence.
 
-P4 does not authorize any later phase.
+Research 384 now prospectively defines P5 as LEGACY classification only:
 
-LEGACY, canonical Key A assembly, commitment generation, Key Author B, scoring, implementation and migration remain gated.
+    frozen sources
+        17
+
+    unique semantic items
+        3088
+
+    frozen classification batches
+        18
+
+    frozen classification presentations
+        3210
+
+    session policy
+        one fresh standalone Claude Code session per batch
+
+P5 classification authors only presentation-level normative, normative_kind, material and realization_required fields.
+
+P5 does not expose or author:
+
+    candidate_gap
+    evidence_refs
+    witness/control identities
+    attention mapping
+    LEGACY unique grouping catalog
+    source provenance / negative-control identities
+    frozen-revision repository evidence
+    LEGACY grouping
+
+Those remain for a separately designed later phase after all P5 batches freeze and the LEGACY attention-quality gate passes.
+
+A purpose-specific bounded Runtime Bridge private-operation surface must be qualified before the first P5 batch is released.
+
+P5 is not yet authorized.
+
+LEGACY evidence/grouping, canonical Key A assembly, commitment generation, Key Author B, scoring, implementation and migration remain gated.
 
 Next:
 
-    prospectively define the post-P4 / LEGACY execution phase before any LEGACY semantic execution
+    owner decides ACCEPT / AMEND / HOLD on Research 384 P5 design

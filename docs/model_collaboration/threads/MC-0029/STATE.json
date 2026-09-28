@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_AUTHOR_A_P4_COMPLETE_POST_P4_DESIGN_NEXT",
+  "phase": "DRP03_R2_KEY_AUTHOR_A_P5_LEGACY_CLASSIFICATION_OWNER_DECISION",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -60,7 +60,7 @@
       ]
     }
   ],
-  "next_expected_actor": "chatgpt",
+  "next_expected_actor": "human",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 383 records successful H11 attempt 001 postflight and acceptance, completing all 13 P4 BIRTH grouping events. The frozen held-out grouping floors were evaluated mechanically without exposing pair identities, reasons or counts: MUST_JOIN floor PASS, total-constrained-pair floor PASS, overall grouping-floor result PASS. Private progress is P4_BIRTH_GROUPING_COMPLETE_AWAITING_REVIEW. A purpose-specific Runtime Bridge floor-evaluation extension was qualified and activated; this is operational only and does not amend grouping semantics or authorize later phases. LEGACY, canonical Key A assembly, commitment generation, Key Author B, scoring, implementation and migration remain gated. Research 348's Runtime-Bridge-only public-repository constraint remains active."
+    "notes": "Research 384 prospectively defines Key Author A P5 as LEGACY classification only over the frozen 17-source / 3088-item / 18-batch / 3210-presentation surface. P5 uses one fresh standalone Claude Code session per batch and sequential line-bounded exposure. candidate_gap, evidence_refs, witness/control selection, attention mapping, source provenance, the unique LEGACY grouping catalog, frozen-revision repository evidence and LEGACY grouping remain withheld until classification freezes and the attention-quality gate passes. P5 semantic execution requires explicit owner authorization and a qualified purpose-specific bounded private-operation capability. No later phase is authorized. Research 348's Runtime-Bridge-only public-repository constraint remains active."
   },
   "last_transition": {
-    "transition_id": "mc0029-p4-complete-floor-pass",
+    "transition_id": "mc0029-p5-legacy-classification-designed",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Final H11 attempt 001 passes bounded postflight and is accepted; all P4 events are accepted and both frozen held-out grouping floors pass without hidden semantic disclosure.",
-    "repository_head": "b22294cbef767d7c0fcddb5589a5568eb0a71949"
+    "reason": "Research 384 prospectively defines P5 LEGACY classification with fresh per-batch sessions and deferred evidence/grouping; explicit owner authorization and bounded private-operation readiness are required before semantic launch.",
+    "repository_head": "03ea45f9cb7460c0636cb35408a508d47cc97927"
   }
 }
