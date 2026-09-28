@@ -1792,9 +1792,9 @@ The bounded capability prepared H03:
     projection exact frozen eligibility
         true
 
-H05 was executed in a fresh standalone held-out Claude Code session and independently postflighted.
+H06 was executed in a fresh standalone held-out Claude Code session and independently postflighted.
 
-H05 attempt 001:
+H06 attempt 001:
 
     postflight
         PASS / ALL BOUNDED CHECKS
@@ -1802,16 +1802,16 @@ H05 attempt 001:
     task-owner acceptance
         ACCEPTED
 
-The bounded capability then prepared H06:
+The bounded capability then prepared H07:
 
     packet event
-        EVP-dca0fcb4fb4d
+        EVP-838a4c21407b
 
     unique semantic items
         124
 
     catalog range
-        birth_heldout.json lines 6639-7765
+        birth_heldout.json lines 7766-8892
 
     projection preparation
         PASS
@@ -1819,12 +1819,12 @@ The bounded capability then prepared H06:
     projection exact frozen eligibility
         true
 
-H06 is released only to a fresh standalone held-out Claude Code session.
+H07 is released only to a fresh standalone held-out Claude Code session.
 
 The fresh-per-event held-out session policy remains active unless the verifier is separately requalified.
 
-H07-H11 remain gated.
+H08-H11 remain gated.
 
 Next:
 
-    owner launches fresh P4 held-out H06 attempt 001
+    owner launches fresh P4 held-out H07 attempt 001
