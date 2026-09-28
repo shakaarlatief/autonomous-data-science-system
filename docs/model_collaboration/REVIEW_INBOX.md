@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-28
-**Status:** MC-0029 OPEN / KEY A P5 L01 RELEASED / SEMANTIC RUN NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / KEY A P5 L01 ACCEPTED / L02 RELEASED / SEMANTIC RUN NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -131,9 +131,11 @@ Research 374 accepts fresh H02 attempt 002 and releases H03. Research 375 throug
 
 Research 384 prospectively defines P5 as LEGACY classification only across 18 fresh per-batch sessions and explicitly defers candidate_gap, evidence_refs, witness/control selection, unique-item grouping, attention/provenance exposure and repository evidence. Research 385 records the project owner's explicit ACCEPT decision for that P5 design, subject to bounded private-operation readiness.
 
-Research 386 qualifies and activates the purpose-specific `p5-private-ops-v3` Runtime Bridge control plane. Research 387 records the fresh chatgpt-33 tool-surface reconciliation: `activate_phase` observes P5 already active with zero accepted batches and L01 next, and `prepare_batch L01` passes for 297 presentations on frozen lines 1-2984 without hidden semantic disclosure. L01 attempt 001 is now task-owner released to one fresh standalone `claude-opus-5-5` session. No LEGACY label has yet been created and L02-L18 remain gated.
+Research 386 qualifies and activates the purpose-specific `p5-private-ops-v3` Runtime Bridge control plane. Research 387 records the fresh chatgpt-33 tool-surface reconciliation and L01 release.
 
-Next: owner launches the fresh P5 L01 attempt-001 semantic session and returns only the bounded non-secret report for task-owner postflight.
+Research 388 records L01 attempt 001 PASS from fresh session `0c45e7c2-c448-46d7-9811-fe222d3d1925`. The bounded postflight passes every mechanical, transcript, source-boundary, schema, fresh-session, one-write and append-only check without hidden semantic disclosure. L01 is accepted private-frozen. The bounded control plane then prepares exact next batch L02 successfully for 156 presentations on frozen lines 2985-4551. L02 attempt 001 is task-owner released to one fresh standalone `claude-opus-5-5` session; L03-L18 remain gated.
+
+Next: owner launches the fresh P5 L02 attempt-001 semantic session and returns only the bounded non-secret report for task-owner postflight.
 
 Production implementation, migration and authority switching remain held.
 
