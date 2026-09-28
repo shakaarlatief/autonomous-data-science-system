@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_AUTHOR_A_P5_PRIVATE_OPS_QUALIFICATION_NEXT",
+  "phase": "DRP03_R2_KEY_AUTHOR_A_P5_PRIVATE_OPS_QUALIFIED_REFRESH_REQUIRED",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -60,7 +60,7 @@
       ]
     }
   ],
-  "next_expected_actor": "chatgpt",
+  "next_expected_actor": "human",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 385 records the owner's explicit ACCEPT of Research 384. P5 LEGACY classification is authorized exactly as designed, but semantic launch remains gated on a qualified purpose-specific bounded Runtime Bridge private-operation capability. No LEGACY semantic label has been created. candidate_gap, evidence_refs, witness/control selection, attention mapping, source provenance, the unique LEGACY grouping catalog, frozen-revision repository evidence and LEGACY grouping remain deferred. Research 348's Runtime-Bridge-only public-repository constraint remains active."
+    "notes": "Research 386 records that the purpose-specific bounded P5 Runtime Bridge private-operation capability is qualified and active through p5-private-ops-v3 / 0.1.1-preview.53-p5-private-ops-public with staged regressions PASS, release verification mismatchCount 0 and successful runtime restart. The current ChatGPT interaction still exposes its pre-refresh tool schema and does not expose codex.p5_private_operation, so Batch 1 remains unreleased and generic private-workspace access is not an authorized substitute. No LEGACY semantic label has been created. candidate_gap, evidence_refs, witness/control selection, attention mapping, source provenance, the unique LEGACY grouping catalog, frozen-revision repository evidence and LEGACY grouping remain deferred. Research 348's Runtime-Bridge-only public-repository constraint remains active."
   },
   "last_transition": {
-    "transition_id": "mc0029-p5-owner-authorized-private-ops-next",
+    "transition_id": "mc0029-p5-private-ops-qualified-refresh-next",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Owner explicitly accepts Research 384 P5 design; P5 semantic scope is authorized while Batch 1 remains blocked until bounded private operations are qualified and active.",
-    "repository_head": "70eef073a07cca6d11c902ed9ec63f39c2ba96bd"
+    "reason": "Bounded P5 private operations are qualified and active at the runtime level, but this interaction's tool registry has not refreshed; a fresh ChatGPT interaction is required before bounded phase activation and L01 preparation.",
+    "repository_head": "f81b0de09ab6b4295700075ac59a882e1bc4c3e2"
   }
 }

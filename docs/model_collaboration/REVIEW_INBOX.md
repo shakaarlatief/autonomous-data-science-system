@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
-**Date:** 2026-09-27
-**Status:** MC-0029 OPEN / KEY A P5 AUTHORIZED / PRIVATE OPS QUALIFICATION NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Date:** 2026-09-28
+**Status:** MC-0029 OPEN / KEY A P5 PRIVATE OPS QUALIFIED / TOOL-SURFACE REFRESH NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -131,9 +131,9 @@ Research 374 records that fresh H02 attempt 002 passes every bounded postflight 
 
 Next: owner launches fresh H03 attempt 001 and returns only the bounded report.
 
-Research 385 records the owner's explicit ACCEPT of Research 384. P5 LEGACY classification is now authorized exactly as designed, but Batch 1 remains gated until a purpose-specific bounded Runtime Bridge private-operation capability is qualified and active. No LEGACY semantic label exists yet; candidate_gap, evidence_refs, witness/control selection, unique-item grouping, attention mapping, provenance and repository evidence remain deferred.
+Research 386 records that the purpose-specific bounded P5 Runtime Bridge private-operation capability is now qualified and active through `p5-private-ops-v3` / `0.1.1-preview.53-p5-private-ops-public`; staged regressions pass, release verification reports zero mismatches, and the Runtime Bridge restart succeeded. The currently open ChatGPT interaction still exposes its pre-refresh tool schema and does not expose `codex.p5_private_operation`. No LEGACY semantic label exists and Batch 1 remains unreleased; generic private-workspace access is not an authorized substitute. candidate_gap, evidence_refs, witness/control selection, unique-item grouping, attention mapping, provenance and repository evidence remain deferred.
 
-Next: qualify the bounded P5 private-operation capability, then release Batch 1 only if that gate passes.
+Next: continue in a fresh ChatGPT interaction with refreshed Runtime Bridge tool schema, confirm the bounded P5 action is callable, then perform bounded P5 activation and L01 preparation before semantic release.
 
 Owner decision and all production/migration/authority actions remain held.
 

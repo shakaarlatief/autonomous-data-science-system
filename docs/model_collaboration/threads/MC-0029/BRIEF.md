@@ -1865,14 +1865,20 @@ A purpose-specific bounded Runtime Bridge private-operation surface must be qual
 
 Research 385 records the owner's explicit ACCEPT of Research 384.
 
-P5 is now authorized exactly as designed.
+P5 is authorized exactly as designed.
 
-Semantic launch remains blocked until the purpose-specific bounded Runtime Bridge private-operation capability is qualified and active.
+Research 386 now qualifies and activates the purpose-specific bounded Runtime Bridge P5 private-operation capability through `p5-private-ops-v3` / `0.1.1-preview.53-p5-private-ops-public`. The staged regression suite passes, governed release verification reports zero mismatches, and the Runtime Bridge restart succeeds.
 
-No LEGACY classification label has been created yet.
+The currently open ChatGPT interaction still exposes its pre-refresh Runtime Bridge tool schema and therefore does not expose `codex.p5_private_operation`. The bounded capability must not be replaced with generic shell/private-workspace access.
+
+No LEGACY classification label has been created and Batch 1 has not been released.
 
 LEGACY evidence/grouping, canonical Key A assembly, commitment generation, Key Author B, scoring, implementation and migration remain gated.
 
 Next:
 
-    qualify bounded P5 private operations, then release Batch 1 only on PASS
+    fresh ChatGPT tool-surface refresh
+    confirm bounded P5 action is callable
+    bounded activate_phase
+    bounded prepare_batch L01
+    only then release L01 semantic execution
