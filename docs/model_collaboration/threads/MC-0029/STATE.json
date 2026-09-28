@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_AUTHOR_A_P4_H10_FRESH_SESSION_NEXT",
+  "phase": "DRP03_R2_KEY_AUTHOR_A_P4_H11_FRESH_SESSION_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 381 records acceptance of fresh H09 attempt 001 and H10 release. H09 attempt 001 passed every bounded postflight check and was accepted through the qualified private-operation capability. H10 is prepared with exact same-key frozen eligibility and released only to a fresh per-event held-out Claude Code session. The verifier-compatible fresh-per-event policy remains active unless separately requalified; H11 remains gated. Research 348's Runtime-Bridge-only public-repository constraint remains active."
+    "notes": "Research 382 records acceptance of fresh H10 attempt 001 and final held-out event H11 release. H10 attempt 001 passed every bounded postflight check and was accepted through the qualified private-operation capability. H11 is prepared with exact same-key frozen eligibility and released only to a fresh per-event held-out Claude Code session. The verifier-compatible fresh-per-event policy remains active through H11. No later P4 held-out event is released. Research 348's Runtime-Bridge-only public-repository constraint remains active."
   },
   "last_transition": {
-    "transition_id": "mc0029-p4-h09-accepted-h10-release",
+    "transition_id": "mc0029-p4-h10-accepted-h11-release",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Fresh H09 attempt 001 passes the complete bounded postflight and is accepted; H10 is prepared through the qualified private-operation capability and released to a fresh per-event held-out session.",
-    "repository_head": "50e2718f433456b58aa8dfdbcfc5059b5233fa69"
+    "reason": "Fresh H10 attempt 001 passes the complete bounded postflight and is accepted; final held-out event H11 is prepared through the qualified private-operation capability and released to a fresh per-event held-out session.",
+    "repository_head": "d743226f9f56062ae2376f17decf3ea854dea0e1"
   }
 }
