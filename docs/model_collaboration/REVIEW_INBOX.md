@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-28
-**Status:** MC-0029 OPEN / KEY A P5 PRIVATE OPS QUALIFIED / TOOL-SURFACE REFRESH NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / KEY A P5 L01 RELEASED / SEMANTIC RUN NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -127,15 +127,15 @@ Research 372 records H01 recovery and acceptance. Attempt 001 is private/frozen/
 
 Research 373 records that H02 attempt 001 cannot pass the current bounded verifier when H01 and H02 share one Claude Code transcript. Every event-local semantic/artifact/tool check passes except catalogReadsBounded and noForbiddenSourceRead, because p4-private-ops-v2 scans the complete session transcript and re-observes H01's earlier authorized source/artifact activity under H02's rules. Attempt 001 is therefore private/frozen/rejected under POSTFLIGHT_FAIL. The frozen P4 design already permits fresh replacement at an accepted-event boundary, so H02 is re-prepared and attempt 002 is released to a fresh standalone held-out session.
 
-Research 374 records that fresh H02 attempt 002 passes every bounded postflight check and is accepted. Subsequent bounded state verification confirms H02 already accepted, and H03 preparation succeeds with exact same-key frozen eligibility. H03 is released only to a fresh per-event held-out Claude Code session under the temporary verifier-compatible policy; H04-H11 remain gated.
+Research 374 accepts fresh H02 attempt 002 and releases H03. Research 375 through Research 382 then accept H03 through H11 sequentially under the fresh per-event held-out policy. Research 383 closes P4 BIRTH grouping with all 13 events accepted and the held-out grouping floors passing.
 
-Next: owner launches fresh H03 attempt 001 and returns only the bounded report.
+Research 384 prospectively defines P5 as LEGACY classification only across 18 fresh per-batch sessions and explicitly defers candidate_gap, evidence_refs, witness/control selection, unique-item grouping, attention/provenance exposure and repository evidence. Research 385 records the project owner's explicit ACCEPT decision for that P5 design, subject to bounded private-operation readiness.
 
-Research 386 records that the purpose-specific bounded P5 Runtime Bridge private-operation capability is now qualified and active through `p5-private-ops-v3` / `0.1.1-preview.53-p5-private-ops-public`; staged regressions pass, release verification reports zero mismatches, and the Runtime Bridge restart succeeded. The currently open ChatGPT interaction still exposes its pre-refresh tool schema and does not expose `codex.p5_private_operation`. No LEGACY semantic label exists and Batch 1 remains unreleased; generic private-workspace access is not an authorized substitute. candidate_gap, evidence_refs, witness/control selection, unique-item grouping, attention mapping, provenance and repository evidence remain deferred.
+Research 386 qualifies and activates the purpose-specific `p5-private-ops-v3` Runtime Bridge control plane. Research 387 records the fresh chatgpt-33 tool-surface reconciliation: `activate_phase` observes P5 already active with zero accepted batches and L01 next, and `prepare_batch L01` passes for 297 presentations on frozen lines 1-2984 without hidden semantic disclosure. L01 attempt 001 is now task-owner released to one fresh standalone `claude-opus-5-5` session. No LEGACY label has yet been created and L02-L18 remain gated.
 
-Next: continue in a fresh ChatGPT interaction with refreshed Runtime Bridge tool schema, confirm the bounded P5 action is callable, then perform bounded P5 activation and L01 preparation before semantic release.
+Next: owner launches the fresh P5 L01 attempt-001 semantic session and returns only the bounded non-secret report for task-owner postflight.
 
-Owner decision and all production/migration/authority actions remain held.
+Production implementation, migration and authority switching remain held.
 
 ## Most recently completed obligation
 

@@ -1,7 +1,7 @@
 # MC-0029 Thread: Specification 028 Reconciliation and AO-10 Realization Design
 
 **Thread:** MC-0029
-**Status:** OPEN / KEY A P5 AUTHORIZED / PRIVATE OPS QUALIFICATION NEXT
+**Status:** OPEN / KEY A P5 L01 RELEASED / SEMANTIC RUN NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** 0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
@@ -61,7 +61,8 @@ Independently derive Specification 028 reconciliation and AO-10 realization arch
     Key A P3 BIRTH held-out classification       COMPLETE / PASS / 13 PRIVATE FROZEN BATCHES / Research 361
     Key A BIRTH attention quality                PASS / NO REPLACEMENT / Research 362
     Key A P4 BIRTH grouping                      COMPLETE / ALL 13 EVENTS ACCEPTED / HELD-OUT FLOORS PASS / Research 383
-    Key A later semantic phases                   NOT AUTHORIZED
+    Key A P5 LEGACY classification                L01 RELEASED / FRESH SEMANTIC RUN NEXT / Research 387
+    Key A post-classification LEGACY phases        NOT AUTHORIZED
     Fresh private Key Author B                    AFTER A COMMITMENT / BLIND TO A
     Key construct-validity gate                   AFTER BOTH COMMITMENTS
     DRP-03 R2                                    AFTER HARNESS FREEZE
@@ -273,13 +274,21 @@ Claude may write only:
     KEY_A_P5_PRIVATE_OPS_VERSION=0.1.1-preview.53-p5-private-ops-public
     KEY_A_P5_PRIVATE_OPS_VERIFY_MISMATCH_COUNT=0
     KEY_A_P5_RUNTIME_RESTART=SUCCEEDED
-    KEY_A_P5_CURRENT_CHAT_TOOL_EXPOSED=false
-    KEY_A_P5_PRIVATE_PHASE_ACTIVATED=false
-    KEY_A_P5_BATCH1_RELEASED=false
-    KEY_A_P5_LABELS=NONE
+    KEY_A_P5_CURRENT_CHAT_TOOL_EXPOSED=true
+    KEY_A_P5_ACTIVATION_OBSERVATION=ALREADY_ACTIVE
+    KEY_A_P5_ACCEPTED_BATCH_COUNT=0
+    KEY_A_P5_PRIVATE_PHASE_ACTIVATED=true
+    KEY_A_P5_L01_PREPARATION=PASS
+    KEY_A_P5_L01_BATCH_ID=LBAT-93e997b85fbc
+    KEY_A_P5_L01_PRESENTATIONS=297
+    KEY_A_P5_L01_SOURCE_LINES=1-2984
+    KEY_A_P5_L01_ATTEMPT=001
+    KEY_A_P5_BATCH1_RELEASED=true
+    KEY_A_P5_BATCH2_RELEASED=false
+    KEY_A_P5_LABELS=NONE_YET
     KEY_A_LEGACY_CANDIDATE_GAP=NOT_STARTED
     KEY_A_LEGACY_EVIDENCE=NOT_STARTED
     KEY_A_LEGACY_GROUPING=NOT_STARTED
     KEY_A_CANONICAL_ASSEMBLY_AUTHORIZED=false
     KEY_A_COMMITMENT_AUTHORIZED=false
-    NEXT=FRESH_CHATGPT_TOOL_SURFACE_THEN_BOUNDED_P5_ACTIVATION_AND_L01_PREPARATION
+    NEXT=OWNER_LAUNCH_FRESH_P5_L01_ATTEMPT001

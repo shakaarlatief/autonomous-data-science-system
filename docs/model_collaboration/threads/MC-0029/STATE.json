@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_AUTHOR_A_P5_PRIVATE_OPS_QUALIFIED_REFRESH_REQUIRED",
+  "phase": "DRP03_R2_KEY_AUTHOR_A_P5_L01_RELEASED_AWAITING_SEMANTIC_RUN",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 386 records that the purpose-specific bounded P5 Runtime Bridge private-operation capability is qualified and active through p5-private-ops-v3 / 0.1.1-preview.53-p5-private-ops-public with staged regressions PASS, release verification mismatchCount 0 and successful runtime restart. The current ChatGPT interaction still exposes its pre-refresh tool schema and does not expose codex.p5_private_operation, so Batch 1 remains unreleased and generic private-workspace access is not an authorized substitute. No LEGACY semantic label has been created. candidate_gap, evidence_refs, witness/control selection, attention mapping, source provenance, the unique LEGACY grouping catalog, frozen-revision repository evidence and LEGACY grouping remain deferred. Research 348's Runtime-Bridge-only public-repository constraint remains active."
+    "notes": "Research 387 records that fresh interaction chatgpt-33 exposes the qualified codex.p5_private_operation surface. The bounded activate_phase receipt returned ALREADY_ACTIVE with zero accepted P5 batches and L01 next; prepare_batch L01 then passed for LBAT-93e997b85fbc / LSP-157dfb537436, part 1, 297 presentations, frozen lines 1-2984, without hidden semantic disclosure. L01 attempt 001 is task-owner released to one fresh standalone claude-opus-5-5 session; no LEGACY label has yet been created and L02-L18 remain gated. candidate_gap, evidence_refs, witness/control selection, attention/provenance, LEGACY grouping, canonical Key A assembly, commitment generation, Key Author B, scoring, implementation and migration remain unauthorized. Research 348's Runtime-Bridge-only public-repository constraint remains active."
   },
   "last_transition": {
-    "transition_id": "mc0029-p5-private-ops-qualified-refresh-next",
+    "transition_id": "mc0029-p5-l01-released",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Bounded P5 private operations are qualified and active at the runtime level, but this interaction's tool registry has not refreshed; a fresh ChatGPT interaction is required before bounded phase activation and L01 preparation.",
-    "repository_head": "f81b0de09ab6b4295700075ac59a882e1bc4c3e2"
+    "reason": "Fresh chatgpt-33 exposed the qualified bounded P5 tool; activation observed the private P5 interface already active with zero accepted batches, L01 preparation passed, and task-owner release now awaits one fresh L01 semantic session.",
+    "repository_head": "8cc3f2ad1e5ea8fc832a50d1c566147b68cc7952"
   }
 }
