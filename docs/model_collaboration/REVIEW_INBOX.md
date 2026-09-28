@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-27
-**Status:** MC-0029 OPEN / P4 H10 ACCEPTED / H11 FINAL FRESH HELD-OUT SESSION NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / KEY A P4 BIRTH GROUPING PASS / POST-P4 PHASE DESIGN NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -131,9 +131,9 @@ Research 374 records that fresh H02 attempt 002 passes every bounded postflight 
 
 Next: owner launches fresh H03 attempt 001 and returns only the bounded report.
 
-Research 382 records that fresh H10 attempt 001 passes every bounded postflight check and is task-owner accepted. The bounded capability then prepares final held-out event H11 and verifies its exact same-key frozen eligibility projection. H11 is released only to a fresh per-event held-out Claude Code session. No later P4 held-out event is released.
+Research 383 records that fresh H11 attempt 001 passes every bounded postflight check and is task-owner accepted, completing all 13 P4 BIRTH grouping events. The frozen held-out grouping floors are then evaluated mechanically without exposing hidden pair counts: the MUST_JOIN floor passes, the total-constrained-pair floor passes, and the overall grouping-floor result is PASS. Private progress advances to P4_BIRTH_GROUPING_COMPLETE_AWAITING_REVIEW. A purpose-specific bounded Runtime Bridge extension was qualified for terminal floor evaluation; this changes no grouping semantics or later-phase authority. P4 authorizes no later semantic phase.
 
-Next: owner launches fresh H11 attempt 001 and returns only the bounded report.
+Next: prospectively define the post-P4 / LEGACY phase before any LEGACY semantic execution.
 
 Owner decision and all production/migration/authority actions remain held.
 

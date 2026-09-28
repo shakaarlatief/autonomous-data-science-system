@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_AUTHOR_A_P4_H11_FRESH_SESSION_NEXT",
+  "phase": "DRP03_R2_KEY_AUTHOR_A_P4_COMPLETE_POST_P4_DESIGN_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -60,7 +60,7 @@
       ]
     }
   ],
-  "next_expected_actor": "human",
+  "next_expected_actor": "chatgpt",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 382 records acceptance of fresh H10 attempt 001 and final held-out event H11 release. H10 attempt 001 passed every bounded postflight check and was accepted through the qualified private-operation capability. H11 is prepared with exact same-key frozen eligibility and released only to a fresh per-event held-out Claude Code session. The verifier-compatible fresh-per-event policy remains active through H11. No later P4 held-out event is released. Research 348's Runtime-Bridge-only public-repository constraint remains active."
+    "notes": "Research 383 records successful H11 attempt 001 postflight and acceptance, completing all 13 P4 BIRTH grouping events. The frozen held-out grouping floors were evaluated mechanically without exposing pair identities, reasons or counts: MUST_JOIN floor PASS, total-constrained-pair floor PASS, overall grouping-floor result PASS. Private progress is P4_BIRTH_GROUPING_COMPLETE_AWAITING_REVIEW. A purpose-specific Runtime Bridge floor-evaluation extension was qualified and activated; this is operational only and does not amend grouping semantics or authorize later phases. LEGACY, canonical Key A assembly, commitment generation, Key Author B, scoring, implementation and migration remain gated. Research 348's Runtime-Bridge-only public-repository constraint remains active."
   },
   "last_transition": {
-    "transition_id": "mc0029-p4-h10-accepted-h11-release",
+    "transition_id": "mc0029-p4-complete-floor-pass",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Fresh H10 attempt 001 passes the complete bounded postflight and is accepted; final held-out event H11 is prepared through the qualified private-operation capability and released to a fresh per-event held-out session.",
-    "repository_head": "d743226f9f56062ae2376f17decf3ea854dea0e1"
+    "reason": "Final H11 attempt 001 passes bounded postflight and is accepted; all P4 events are accepted and both frozen held-out grouping floors pass without hidden semantic disclosure.",
+    "repository_head": "b22294cbef767d7c0fcddb5589a5568eb0a71949"
   }
 }

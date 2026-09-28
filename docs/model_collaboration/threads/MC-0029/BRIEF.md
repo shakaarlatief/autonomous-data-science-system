@@ -1792,9 +1792,9 @@ The bounded capability prepared H03:
     projection exact frozen eligibility
         true
 
-H10 was executed in a fresh standalone held-out Claude Code session and independently postflighted.
+H11 was executed in a fresh standalone held-out Claude Code session and independently postflighted.
 
-H10 attempt 001:
+H11 attempt 001:
 
     postflight
         PASS / ALL BOUNDED CHECKS
@@ -1802,29 +1802,37 @@ H10 attempt 001:
     task-owner acceptance
         ACCEPTED
 
-The bounded capability then prepared final held-out event H11:
+All 13 P4 BIRTH grouping events are now accepted.
 
-    packet event
-        EVP-63516d4b5c63
+The frozen Research 363 held-out grouping floors were evaluated mechanically after H11 acceptance without publishing hidden pair identities, reasons or counts:
 
-    unique semantic items
-        696
-
-    catalog range
-        birth_heldout.json lines 14151-20440
-
-    projection preparation
+    MUST_JOIN floor
         PASS
 
-    projection exact frozen eligibility
-        true
+    total constrained-pair floor
+        PASS
 
-H11 is released only to a fresh standalone held-out Claude Code session.
+    overall grouping-floor result
+        PASS
 
-The fresh-per-event held-out session policy remains active through H11.
+Private progress is now:
 
-No later P4 held-out event is released.
+    P4_BIRTH_GROUPING_COMPLETE_AWAITING_REVIEW
+
+The bounded floor evaluation required a purpose-specific Runtime Bridge extension because the previously qualified P4 capability stopped at ALL_EVENTS_ACCEPTED_AWAITING_FLOOR_CHECK. The extension preserves the fixed private root and hidden-semantic non-disclosure boundary and introduces no generic private-workspace shell authority.
+
+Final active runtime support release:
+
+    p4-private-ops-v4
+    0.1.1-preview.50-p4-floor-compat-public
+    post-activation verification mismatchCount = 0
+
+P4 BIRTH grouping is therefore complete with PASS evidence.
+
+P4 does not authorize any later phase.
+
+LEGACY, canonical Key A assembly, commitment generation, Key Author B, scoring, implementation and migration remain gated.
 
 Next:
 
-    owner launches fresh P4 held-out H11 attempt 001
+    prospectively define the post-P4 / LEGACY execution phase before any LEGACY semantic execution
