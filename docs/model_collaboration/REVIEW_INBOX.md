@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-27
-**Status:** MC-0029 OPEN / KEY A P5 LEGACY CLASSIFICATION DESIGNED / OWNER AUTHORIZATION REQUIRED / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / KEY A P5 AUTHORIZED / PRIVATE OPS QUALIFICATION NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -131,9 +131,9 @@ Research 374 records that fresh H02 attempt 002 passes every bounded postflight 
 
 Next: owner launches fresh H03 attempt 001 and returns only the bounded report.
 
-Research 384 prospectively defines Key Author A P5 as LEGACY classification only. The frozen workload is 17 sources / 3088 unique semantic items / 18 classification batches / 3210 presentations. P5 uses one fresh standalone Claude Code session per batch, exact sequential line-bounded exposure and task-owner acceptance before the next batch. candidate_gap, evidence_refs, witness/control selection, attention mapping, source provenance, the unique LEGACY grouping catalog and frozen-revision repository evidence are deliberately deferred until classification freezes and the component attention gate passes. A bounded private-operation capability must be qualified before P5 launch. No LEGACY semantic execution has been authorized.
+Research 385 records the owner's explicit ACCEPT of Research 384. P5 LEGACY classification is now authorized exactly as designed, but Batch 1 remains gated until a purpose-specific bounded Runtime Bridge private-operation capability is qualified and active. No LEGACY semantic label exists yet; candidate_gap, evidence_refs, witness/control selection, unique-item grouping, attention mapping, provenance and repository evidence remain deferred.
 
-Next: owner decides ACCEPT / AMEND / HOLD on Research 384 P5 design.
+Next: qualify the bounded P5 private-operation capability, then release Batch 1 only if that gate passes.
 
 Owner decision and all production/migration/authority actions remain held.
 

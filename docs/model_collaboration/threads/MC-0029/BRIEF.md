@@ -1863,10 +1863,16 @@ Those remain for a separately designed later phase after all P5 batches freeze a
 
 A purpose-specific bounded Runtime Bridge private-operation surface must be qualified before the first P5 batch is released.
 
-P5 is not yet authorized.
+Research 385 records the owner's explicit ACCEPT of Research 384.
+
+P5 is now authorized exactly as designed.
+
+Semantic launch remains blocked until the purpose-specific bounded Runtime Bridge private-operation capability is qualified and active.
+
+No LEGACY classification label has been created yet.
 
 LEGACY evidence/grouping, canonical Key A assembly, commitment generation, Key Author B, scoring, implementation and migration remain gated.
 
 Next:
 
-    owner decides ACCEPT / AMEND / HOLD on Research 384 P5 design
+    qualify bounded P5 private operations, then release Batch 1 only on PASS
