@@ -3,6 +3,8 @@
 **Date:** 2026-09-29
 **Status:** L07 POSTFLIGHT PASS / L07 ACCEPTED / L08 PREPARATION PASS / FRESH L08 ATTEMPT 001 RELEASED
 **Parent:** Research 393
+**Scope:** Preserve bounded L07 postflight and acceptance, exact-next L08 preparation, and task-owner release of L08 attempt 001 only.
+**Authority:** L07 acceptance and L08 attempt-001 semantic execution only. L09-L18 and all later LEGACY phases remain gated.
 
 L07 attempt 001 completed in fresh session `045624ea-ea12-40e7-a824-4f71b8a38c0e` with 128/128 presentations. The bounded postflight returned `PASS` for every mechanical verifier check and exposed no hidden semantic details. Bounded acceptance then froze L07 as accepted private state and advanced the exact next batch key to L08.
 

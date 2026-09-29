@@ -4,8 +4,13 @@
 **Status:** L07 POSTFLIGHT PASS / L07 ACCEPTED / L08 PREPARATION PASS / FRESH L08 ATTEMPT 001 RELEASED
 **Checkpoint class:** EMPIRICAL_SEMANTIC_EXECUTION_RELEASE
 **Project stage:** AO-10 decision qualification
+**Scope:** Preserve Research 394, bounded L07 postflight/acceptance, and task-owner release of L08 attempt 001.
+**Authority:** L07 acceptance and L08 attempt-001 semantic execution only.
+**Interaction environment:** ChatGPT
+**Project / workspace:** Autonomous Data Science System
 **Interaction session:** chatgpt-33
 **Conversation title:** 33 - Semantic Qualification and Architecture Evolution
+**Primary collaborator:** ChatGPT
 
     prior checkpoint                         730
     L07 executor result                      PASS
