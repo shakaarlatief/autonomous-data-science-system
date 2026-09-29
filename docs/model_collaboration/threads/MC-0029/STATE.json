@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_AUTHOR_A_LEGACY_ATTENTION_PASS_POST_CLASSIFICATION_PHASE_DESIGN_NEXT",
+  "phase": "DRP03_R2_KEY_AUTHOR_A_P6_DESIGN_FROZEN_AUTOMATED_CONTROL_PLANE_IMPLEMENTATION_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 409 records qualified managed release p5-private-ops-v5 at local-runtime commit be36965d4a0e507212fcf16deea56ee19a7f1057 and the resulting bounded Key A LEGACY attention gate PASS. Binary normative consistency is 1.0 and normative-kind consistency is 1.0; replacementRequired=false and hiddenSemanticDetailsExposed=false. The accepted P5 labels remain unchanged. Research 384 now makes the unique LEGACY catalog eligible, not authorized, for a prospectively designed post-classification candidate-gap/evidence/grouping phase. That design is next and must bind unique-item reconstruction, frozen-horizon evidence, hidden witnesses/controls, within-source grouping, semantic exposure, lifecycle/session strategy, bounded control-plane operations, and the owner automation requirement. Canonical Key A assembly, commitment generation, Key Author B, scoring, successor implementation and migration remain unauthorized. Research 348's Runtime-Bridge-only public-repository constraint remains active."
+    "notes": "Research 410 freezes P6 before any new Key A LEGACY semantic work. P6A candidate-gap authoring is isolated from repository evidence; P6B independently substantiates frozen-horizon repository status without seeing P6A values; P6C groups within one source without seeing P5 labels, P6A, P6B, material truth or control roles. Unique reconstruction, eligibility projection, witness/control derivation and cross-pass joins are bounded mechanical operations. The evidence horizon remains 0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d and the existing >=6 material-gap / >=10 already-realized-control floors remain unchanged with no retry-to-green. Research 410 also replaces the P5 manual clipboard/scheduler loop with a qualified headless sequential runner using one fresh Claude Code process per semantic job, stop-on-exception, automatic bounded postflight and phase-level public bookkeeping. P6 semantic execution remains unauthorized until that control plane is implemented/qualified/activated and the owner explicitly authorizes it. Canonical Key A assembly, commitment generation, Key Author B, scoring, successor implementation and migration remain unauthorized. Research 348's Runtime-Bridge-only public-repository constraint remains active."
   },
   "last_transition": {
-    "transition_id": "mc0029-legacy-attention-gate-pass",
+    "transition_id": "mc0029-p6-post-classification-design-frozen",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "The qualified V5 remediation enabled the bounded live LEGACY attention gate, which passed both frozen consistency thresholds with no replacement required; post-classification LEGACY phase design is next.",
-    "repository_head": "f79c74a469850b3590104cd0ac198ab26f47d7c1"
+    "reason": "Research 410 freezes the separated P6A/P6B/P6C semantic design and automated sequential runner architecture; non-semantic control-plane implementation/qualification is next and P6 execution remains unauthorized.",
+    "repository_head": "530fa9b13ac7e79a2821ea012f5193de9938a913"
   }
 }

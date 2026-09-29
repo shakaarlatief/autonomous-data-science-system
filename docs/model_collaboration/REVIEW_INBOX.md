@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-29
-**Status:** MC-0029 OPEN / KEY A LEGACY ATTENTION PASS / POST-CLASSIFICATION LEGACY PHASE DESIGN NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / KEY A P6 DESIGN FROZEN / AUTOMATED CONTROL PLANE IMPLEMENTATION NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -177,7 +177,9 @@ Research 408 records the missing private control-input failure and prospectively
 
 Research 409 records V5 remediation qualification and the bounded live LEGACY attention gate PASS: binary consistency 1.0, normative-kind consistency 1.0, no replacement required, no hidden semantic details exposed, and frozen P5 labels unchanged.
 
-Next: prospectively design the post-classification LEGACY candidate-gap/evidence/grouping phase. The unique catalog is eligible but not yet authorized; canonical assembly, Key A commitment and Key Author B remain gated.
+Research 410 now freezes the post-classification Key Author A P6 design before any new semantic work. P6A candidate-gap authoring, P6B independent frozen-horizon evidence substantiation and P6C within-source grouping are deliberately separated so later evidence or grouping cannot rewrite earlier semantic judgments. Research 410 also selects a headless sequential Claude Code runner with one fresh process per semantic job, automatic bounded postflight, stop-on-exception behavior and phase-level public bookkeeping, removing the P5 manual clipboard/scheduler loop without introducing parallel semantic workers or retry-to-green.
+
+Next: implement and regression-qualify the bounded automated P6 control plane on synthetic fixtures. P6 semantic execution remains unauthorized until the control plane is active and the owner explicitly authorizes the frozen design. Canonical assembly, Key A commitment and Key Author B remain gated.
 
 Production implementation, migration and authority switching remain held.
 
