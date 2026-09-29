@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-29
-**Status:** MC-0029 OPEN / KEY A P5 COMPLETE / LEGACY ATTENTION EVALUATOR DESIGN FROZEN / IMPLEMENTATION NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / KEY A P5 COMPLETE / LEGACY ATTENTION EVALUATOR QUALIFIED / LIVE GATE NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -169,9 +169,11 @@ Research 404 records L17 attempt 001 PASS, bounded postflight PASS, private-froz
 
 Research 405 records final L18 PASS and acceptance, completing P5 LEGACY classification at 18/18 accepted batches and 3210/3210 accepted presentations.
 
-Research 406 prospectively freezes the deterministic bounded LEGACY attention-quality evaluator before any live Key A attention metric is observed. The evaluator is bound to the frozen provenance digest and accepted artifact surface, with exact 0.95 binary and 0.90 normative-kind gates, no semantic author involvement and no hidden mapping disclosure.
+Research 406 prospectively freezes the deterministic bounded LEGACY attention-quality evaluator before any live Key A attention metric is observed.
 
-Next: implement, regression-qualify, publish and activate the bounded attention evaluator. Candidate-gap/evidence/grouping work and Key Author B remain unauthorized.
+Research 407 records release `p5-private-ops-v4` at local-runtime commit `699a2927f81ba8569444a1707e9ed578f1f00ef4` as regression-qualified, published, verified at mismatchCount 0, activated by successful bounded Runtime Bridge restart, and verified again post-activation. No live Key A metric has been observed; the current ChatGPT turn retained the pre-release client schema and rejected `evaluate_attention` before server dispatch.
+
+Next: refresh host Runtime Bridge tool metadata and execute exactly the bounded `evaluate_attention` action. Candidate-gap/evidence/grouping work and Key Author B remain unauthorized.
 
 Production implementation, migration and authority switching remain held.
 
