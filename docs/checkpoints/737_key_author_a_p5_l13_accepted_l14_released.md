@@ -5,10 +5,12 @@
 **Checkpoint class:** EMPIRICAL_SEMANTIC_EXECUTION_RELEASE
 **Project stage:** AO-10 decision qualification
 **Scope:** Preserve Research 400 and the L13 to L14 governed transition.
+**Authority:** L13 acceptance and L14 attempt-001 semantic execution only.
 **Interaction environment:** ChatGPT
 **Project / workspace:** Autonomous Data Science System
 **Interaction session:** chatgpt-33
 **Conversation title:** 33 - Semantic Qualification and Architecture Evolution
+**Primary collaborator:** ChatGPT
 
     prior checkpoint          736
     L13 presentations         120 / 120
