@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_AUTHOR_A_P5_L17_ACCEPTED_L18_RELEASED_AWAITING_SEMANTIC_RUN",
+  "phase": "DRP03_R2_KEY_AUTHOR_A_P5_CLASSIFICATION_COMPLETE_ATTENTION_GATE_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -60,7 +60,7 @@
       ]
     }
   ],
-  "next_expected_actor": "human",
+  "next_expected_actor": "chatgpt",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 404 records bounded L17 postflight PASS and task-owner acceptance for fresh session ab975cdb-0a67-49ba-883e-9dadc2c1aed8. All mechanical, transcript, source-boundary, artifact-schema, predecessor-freeze, fresh-session, one-write and append-only checks passed without hidden semantic disclosure. L01-L17 are accepted/private-frozen and the accepted P5 batch count is 17. The bounded control plane then prepared L18 successfully for LBAT-68f304a3388d / LSP-5d0a24d52fe4, part 1, 268 presentations, frozen lines 29547-32235. L18 attempt 001 is task-owner released to one fresh standalone claude-opus-5-5 session and is the final P5 classification batch. candidate_gap, evidence_refs, witness/control selection, attention/provenance, LEGACY grouping, canonical Key A assembly, commitment generation, Key Author B, scoring, implementation and migration remain unauthorized. Research 348's Runtime-Bridge-only public-repository constraint remains active."
+    "notes": "Research 405 records bounded L18 postflight PASS and task-owner acceptance for fresh session 782185c0-171c-4872-b7c2-753972326877. All mechanical, transcript, source-boundary, artifact-schema, predecessor-freeze, fresh-session, one-write and append-only checks passed without hidden semantic disclosure. L01-L18 are accepted/private-frozen: P5 LEGACY classification is complete at 18/18 batches and 3210/3210 presentations, with no next classification batch. Research 384 now permits the frozen LEGACY attention mapping to be exposed only to a mechanical evaluator, not to the semantic author. The public Runtime Bridge has no purpose-specific bounded attention-evaluation action yet, so design and qualification of that deterministic evaluator is next. candidate_gap, evidence_refs, witness/control selection, LEGACY grouping, canonical Key A assembly, commitment generation, Key Author B, scoring, implementation and migration remain unauthorized. The owner's orchestration-cost concern is preserved as a prospective Key B requirement: retain semantic safeguards while eliminating unnecessary manual clipboard/scheduling/bookkeeping work. Research 348's Runtime-Bridge-only public-repository constraint remains active."
   },
   "last_transition": {
-    "transition_id": "mc0029-p5-l17-accepted-l18-released",
+    "transition_id": "mc0029-p5-classification-complete-attention-gate-next",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "L17 bounded postflight passed and attempt 001 was accepted private-frozen; exact next and final P5 classification batch L18 prepared successfully and is task-owner released to a fresh semantic session.",
-    "repository_head": "8f92eacf6d26b35b3e11c51e0a043121af479de6"
+    "reason": "L18 bounded postflight passed and attempt 001 was accepted private-frozen; all 18 P5 classification batches are accepted and the preregistered mechanical LEGACY attention-quality gate is next.",
+    "repository_head": "53e051e2631c613a6d4b6cb245b75de1af235ea3"
   }
 }

@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-29
-**Status:** MC-0029 OPEN / KEY A P5 L17 ACCEPTED / L18 RELEASED / FINAL P5 CLASSIFICATION RUN NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / KEY A P5 CLASSIFICATION COMPLETE / ATTENTION QUALITY GATE NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -165,9 +165,11 @@ Research 402 records L15 attempt 001 PASS, bounded postflight PASS, private-froz
 
 Research 403 records L16 attempt 001 PASS, bounded postflight PASS, private-frozen acceptance, and L17 release.
 
-Research 404 records L17 attempt 001 PASS from fresh session `ab975cdb-0a67-49ba-883e-9dadc2c1aed8`. The bounded postflight passes every mechanical, transcript, source-boundary, schema, predecessor-freeze, fresh-session, one-write and append-only check without hidden semantic disclosure. L17 is accepted private-frozen, so the accepted prefix is exactly L01-L17. The bounded control plane then prepares exact next batch L18 successfully for 268 presentations on frozen lines 29547-32235. L18 attempt 001 is task-owner released to one fresh standalone `claude-opus-5-5` session and is the final P5 classification batch.
+Research 404 records L17 attempt 001 PASS, bounded postflight PASS, private-frozen acceptance, and final L18 release.
 
-Next: owner launches the fresh P5 L18 attempt-001 semantic session and returns only the bounded non-secret report for task-owner postflight.
+Research 405 records L18 attempt 001 PASS from fresh session `782185c0-171c-4872-b7c2-753972326877`. The bounded postflight passes every mechanical, transcript, source-boundary, schema, predecessor-freeze, fresh-session, one-write and append-only check without hidden semantic disclosure. L18 is accepted private-frozen. P5 LEGACY classification is complete at exactly 18/18 accepted batches and 3210/3210 accepted presentations, with no next classification batch.
+
+Next: design and qualify the bounded deterministic LEGACY attention-quality evaluator required before the frozen attention mapping is inspected. Candidate-gap/evidence/grouping work and Key Author B remain unauthorized.
 
 Production implementation, migration and authority switching remain held.
 
