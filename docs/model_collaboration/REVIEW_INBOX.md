@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-29
-**Status:** MC-0029 OPEN / KEY A P5 COMPLETE / ATTENTION INPUT STAGING REMEDIATION FROZEN / IMPLEMENTATION NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / KEY A LEGACY ATTENTION PASS / POST-CLASSIFICATION LEGACY PHASE DESIGN NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -173,9 +173,11 @@ Research 406 prospectively freezes the deterministic bounded LEGACY attention-qu
 
 Research 407 records release `p5-private-ops-v4` as regression-qualified, published, verified and activated.
 
-Research 408 records the first refreshed-schema live attention-gate dispatch. The request reached Codexless but failed closed with `ENOENT` because the fixed private attention-provenance copy was absent. No live metric or hidden semantic information was observed. The remediation is frozen before any result: the bounded evaluator may internally stage only the exact public preregistered provenance bytes, verified at SHA-256 `bfc35235ab1aa0a325018fe66c03b14facf43f9ab710ec587ad3901850b459f6`, into the exact private target when missing and must fail closed on any source or target drift.
+Research 408 records the missing private control-input failure and prospectively freezes exact digest-bound staging remediation before any metric observation.
 
-Next: implement, regression-qualify, publish and activate the bounded staging remediation. Candidate-gap/evidence/grouping work and Key Author B remain unauthorized.
+Research 409 records V5 remediation qualification and the bounded live LEGACY attention gate PASS: binary consistency 1.0, normative-kind consistency 1.0, no replacement required, no hidden semantic details exposed, and frozen P5 labels unchanged.
+
+Next: prospectively design the post-classification LEGACY candidate-gap/evidence/grouping phase. The unique catalog is eligible but not yet authorized; canonical assembly, Key A commitment and Key Author B remain gated.
 
 Production implementation, migration and authority switching remain held.
 
