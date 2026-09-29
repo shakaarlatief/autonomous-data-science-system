@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-29
-**Status:** MC-0029 OPEN / KEY A P5 CLASSIFICATION COMPLETE / ATTENTION QUALITY GATE NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / KEY A P5 COMPLETE / LEGACY ATTENTION EVALUATOR DESIGN FROZEN / IMPLEMENTATION NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -167,9 +167,11 @@ Research 403 records L16 attempt 001 PASS, bounded postflight PASS, private-froz
 
 Research 404 records L17 attempt 001 PASS, bounded postflight PASS, private-frozen acceptance, and final L18 release.
 
-Research 405 records L18 attempt 001 PASS from fresh session `782185c0-171c-4872-b7c2-753972326877`. The bounded postflight passes every mechanical, transcript, source-boundary, schema, predecessor-freeze, fresh-session, one-write and append-only check without hidden semantic disclosure. L18 is accepted private-frozen. P5 LEGACY classification is complete at exactly 18/18 accepted batches and 3210/3210 accepted presentations, with no next classification batch.
+Research 405 records final L18 PASS and acceptance, completing P5 LEGACY classification at 18/18 accepted batches and 3210/3210 accepted presentations.
 
-Next: design and qualify the bounded deterministic LEGACY attention-quality evaluator required before the frozen attention mapping is inspected. Candidate-gap/evidence/grouping work and Key Author B remain unauthorized.
+Research 406 prospectively freezes the deterministic bounded LEGACY attention-quality evaluator before any live Key A attention metric is observed. The evaluator is bound to the frozen provenance digest and accepted artifact surface, with exact 0.95 binary and 0.90 normative-kind gates, no semantic author involvement and no hidden mapping disclosure.
+
+Next: implement, regression-qualify, publish and activate the bounded attention evaluator. Candidate-gap/evidence/grouping work and Key Author B remain unauthorized.
 
 Production implementation, migration and authority switching remain held.
 

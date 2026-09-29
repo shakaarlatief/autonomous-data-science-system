@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_AUTHOR_A_P5_CLASSIFICATION_COMPLETE_ATTENTION_GATE_NEXT",
+  "phase": "DRP03_R2_KEY_AUTHOR_A_LEGACY_ATTENTION_EVALUATOR_DESIGN_FROZEN_IMPLEMENTATION_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 405 records bounded L18 postflight PASS and task-owner acceptance for fresh session 782185c0-171c-4872-b7c2-753972326877. All mechanical, transcript, source-boundary, artifact-schema, predecessor-freeze, fresh-session, one-write and append-only checks passed without hidden semantic disclosure. L01-L18 are accepted/private-frozen: P5 LEGACY classification is complete at 18/18 batches and 3210/3210 presentations, with no next classification batch. Research 384 now permits the frozen LEGACY attention mapping to be exposed only to a mechanical evaluator, not to the semantic author. The public Runtime Bridge has no purpose-specific bounded attention-evaluation action yet, so design and qualification of that deterministic evaluator is next. candidate_gap, evidence_refs, witness/control selection, LEGACY grouping, canonical Key A assembly, commitment generation, Key Author B, scoring, implementation and migration remain unauthorized. The owner's orchestration-cost concern is preserved as a prospective Key B requirement: retain semantic safeguards while eliminating unnecessary manual clipboard/scheduling/bookkeeping work. Research 348's Runtime-Bridge-only public-repository constraint remains active."
+    "notes": "Research 406 freezes the deterministic LEGACY attention evaluator before live Key A metric observation. The evaluator is fixed to the frozen attention-provenance digest and the exact 18 accepted artifacts, pairs each duplicate to its unique same-item primary, evaluates binary normative consistency over all valid pairs and normative-kind consistency over canonically normative primary items, applies exact 0.95/0.90 thresholds without rounded decisions, and exposes no mapping identities or private denominators. No live metric has been observed. Implementation, staged regression qualification, publication and runtime activation are next. candidate_gap, evidence_refs, witness/control selection, LEGACY grouping, canonical Key A assembly, commitment generation, Key Author B, scoring, implementation and migration remain unauthorized. The owner's Key B orchestration-cost requirement remains preserved. Research 348's Runtime-Bridge-only public-repository constraint remains active."
   },
   "last_transition": {
-    "transition_id": "mc0029-p5-classification-complete-attention-gate-next",
+    "transition_id": "mc0029-legacy-attention-evaluator-design-frozen",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "L18 bounded postflight passed and attempt 001 was accepted private-frozen; all 18 P5 classification batches are accepted and the preregistered mechanical LEGACY attention-quality gate is next.",
-    "repository_head": "53e051e2631c613a6d4b6cb245b75de1af235ea3"
+    "reason": "Research 406 freezes the bounded LEGACY attention evaluator before live Key A metric observation; implementation and qualification are next.",
+    "repository_head": "6f0070da1b57d944ac6567028b277f667fb13377"
   }
 }

@@ -1,7 +1,7 @@
 # MC-0029 Thread: Specification 028 Reconciliation and AO-10 Realization Design
 
 **Thread:** MC-0029
-**Status:** OPEN / KEY A P5 CLASSIFICATION COMPLETE / ATTENTION QUALITY GATE NEXT
+**Status:** OPEN / KEY A P5 COMPLETE / LEGACY ATTENTION EVALUATOR DESIGN FROZEN / IMPLEMENTATION NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** 0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
@@ -61,7 +61,8 @@ Independently derive Specification 028 reconciliation and AO-10 realization arch
     Key A P3 BIRTH held-out classification       COMPLETE / PASS / 13 PRIVATE FROZEN BATCHES / Research 361
     Key A BIRTH attention quality                PASS / NO REPLACEMENT / Research 362
     Key A P4 BIRTH grouping                      COMPLETE / ALL 13 EVENTS ACCEPTED / HELD-OUT FLOORS PASS / Research 383
-    Key A P5 LEGACY classification                COMPLETE / 18 OF 18 ACCEPTED / ATTENTION GATE NEXT / Research 405
+    Key A P5 LEGACY classification                COMPLETE / 18 OF 18 ACCEPTED / Research 405
+    Key A LEGACY attention evaluator               DESIGN FROZEN / IMPLEMENTATION NEXT / Research 406
     Key A post-classification LEGACY phases        NOT AUTHORIZED
     Fresh private Key Author B                    AFTER A COMMITMENT / BLIND TO A
     Key construct-validity gate                   AFTER BOTH COMMITMENTS
@@ -93,7 +94,7 @@ Claude may write only:
     docs/model_collaboration/threads/MC-0029/messages/**
 
     MC0029=OPEN
-    PHASE=DRP03_R2_KEY_AUTHOR_A_P5_CLASSIFICATION_COMPLETE_ATTENTION_GATE_NEXT
+    PHASE=DRP03_R2_KEY_AUTHOR_A_LEGACY_ATTENTION_EVALUATOR_DESIGN_FROZEN_IMPLEMENTATION_NEXT
     INDEPENDENT_BASE=0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
     CHATGPT_CANDIDATE=RESEARCH312
     CLAUDE_MESSAGE_001=COMPLETE
@@ -408,9 +409,11 @@ Claude may write only:
     KEY_A_P5_CLASSIFICATION=COMPLETE
     KEY_A_P5_ALL_CLASSIFICATION_BATCHES_ACCEPTED=true
     KEY_A_P5_ATTENTION_GATE=NEXT
+    KEY_A_P5_ATTENTION_EVALUATOR_DESIGN=FROZEN
+    KEY_A_P5_LIVE_ATTENTION_METRIC_OBSERVED=false
     KEY_A_LEGACY_CANDIDATE_GAP=NOT_STARTED
     KEY_A_LEGACY_EVIDENCE=NOT_STARTED
     KEY_A_LEGACY_GROUPING=NOT_STARTED
     KEY_A_CANONICAL_ASSEMBLY_AUTHORIZED=false
     KEY_A_COMMITMENT_AUTHORIZED=false
-    NEXT=DESIGN_AND_QUALIFY_BOUNDED_LEGACY_ATTENTION_EVALUATOR
+    NEXT=IMPLEMENT_QUALIFY_PUBLISH_AND_ACTIVATE_BOUNDED_ATTENTION_EVALUATOR
