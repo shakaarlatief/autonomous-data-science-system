@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_AUTHOR_A_P5_L09_ACCEPTED_L10_RELEASED_AWAITING_SEMANTIC_RUN",
+  "phase": "DRP03_R2_KEY_AUTHOR_A_P5_L10_ACCEPTED_L11_RELEASED_AWAITING_SEMANTIC_RUN",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 396 records bounded L09 postflight PASS and task-owner acceptance for fresh session 8e851c7f-5bba-474b-90be-b61a9d4c5ab7. All mechanical, transcript, source-boundary, artifact-schema, predecessor-freeze, fresh-session, one-write and append-only checks passed without hidden semantic disclosure. L01-L09 are accepted/private-frozen and the accepted P5 batch count is 9. The bounded control plane then prepared L10 successfully for LBAT-c0e5a21d1114 / LSP-ff70bc5bdc8e, part 1, 392 presentations, frozen lines 16501-20427. L10 attempt 001 is task-owner released to one fresh standalone claude-opus-5-5 session; L11-L18 remain gated. candidate_gap, evidence_refs, witness/control selection, attention/provenance, LEGACY grouping, canonical Key A assembly, commitment generation, Key Author B, scoring, implementation and migration remain unauthorized. Research 348's Runtime-Bridge-only public-repository constraint remains active."
+    "notes": "Research 397 records bounded L10 postflight PASS and task-owner acceptance for fresh session 94a316e3-b1ef-44a4-acd2-8c47a3ce81e8. All mechanical, transcript, source-boundary, artifact-schema, predecessor-freeze, fresh-session, one-write and append-only checks passed without hidden semantic disclosure. L01-L10 are accepted/private-frozen and the accepted P5 batch count is 10. The bounded control plane then prepared L11 successfully for LBAT-858bbaa320f9 / LSP-ff70bc5bdc8e, part 2, 80 presentations, frozen lines 20428-21234. L11 attempt 001 is task-owner released to one fresh standalone claude-opus-5-5 session; L12-L18 remain gated. candidate_gap, evidence_refs, witness/control selection, attention/provenance, LEGACY grouping, canonical Key A assembly, commitment generation, Key Author B, scoring, implementation and migration remain unauthorized. Research 348's Runtime-Bridge-only public-repository constraint remains active."
   },
   "last_transition": {
-    "transition_id": "mc0029-p5-l09-accepted-l10-released",
+    "transition_id": "mc0029-p5-l10-accepted-l11-released",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "L09 bounded postflight passed and attempt 001 was accepted private-frozen; exact next batch L10 prepared successfully and is task-owner released to a fresh semantic session.",
-    "repository_head": "c21773d82ebb5a187dc8cfb5cb5e199a58ac29e7"
+    "reason": "L10 bounded postflight passed and attempt 001 was accepted private-frozen; exact next batch L11 prepared successfully and is task-owner released to a fresh semantic session.",
+    "repository_head": "b8627f192d8b75f36a5e2e7cabe7c26514e7e0d7"
   }
 }
