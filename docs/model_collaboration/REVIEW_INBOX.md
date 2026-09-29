@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-29
-**Status:** MC-0029 OPEN / KEY A P5 COMPLETE / LEGACY ATTENTION EVALUATOR QUALIFIED / LIVE GATE NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / KEY A P5 COMPLETE / ATTENTION INPUT STAGING REMEDIATION FROZEN / IMPLEMENTATION NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -171,9 +171,11 @@ Research 405 records final L18 PASS and acceptance, completing P5 LEGACY classif
 
 Research 406 prospectively freezes the deterministic bounded LEGACY attention-quality evaluator before any live Key A attention metric is observed.
 
-Research 407 records release `p5-private-ops-v4` at local-runtime commit `699a2927f81ba8569444a1707e9ed578f1f00ef4` as regression-qualified, published, verified at mismatchCount 0, activated by successful bounded Runtime Bridge restart, and verified again post-activation. No live Key A metric has been observed; the current ChatGPT turn retained the pre-release client schema and rejected `evaluate_attention` before server dispatch.
+Research 407 records release `p5-private-ops-v4` as regression-qualified, published, verified and activated.
 
-Next: refresh host Runtime Bridge tool metadata and execute exactly the bounded `evaluate_attention` action. Candidate-gap/evidence/grouping work and Key Author B remain unauthorized.
+Research 408 records the first refreshed-schema live attention-gate dispatch. The request reached Codexless but failed closed with `ENOENT` because the fixed private attention-provenance copy was absent. No live metric or hidden semantic information was observed. The remediation is frozen before any result: the bounded evaluator may internally stage only the exact public preregistered provenance bytes, verified at SHA-256 `bfc35235ab1aa0a325018fe66c03b14facf43f9ab710ec587ad3901850b459f6`, into the exact private target when missing and must fail closed on any source or target drift.
+
+Next: implement, regression-qualify, publish and activate the bounded staging remediation. Candidate-gap/evidence/grouping work and Key Author B remain unauthorized.
 
 Production implementation, migration and authority switching remain held.
 

@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_AUTHOR_A_LEGACY_ATTENTION_EVALUATOR_QUALIFIED_LIVE_GATE_NEXT",
+  "phase": "DRP03_R2_KEY_AUTHOR_A_ATTENTION_INPUT_STAGING_REMEDIATION_FROZEN_IMPLEMENTATION_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 407 records that release p5-private-ops-v4 at local-runtime commit 699a2927f81ba8569444a1707e9ed578f1f00ef4 is regression-qualified, published, verified at mismatchCount 0, activated by successful bounded Runtime Bridge restart, and verified again post-activation. The purpose-specific P5 operation now has the bounded evaluate_attention action in the activated server. No live Key A metric has been observed because this already-running ChatGPT turn retained the pre-release client-side tool schema and rejected evaluate_attention before server dispatch. Exact next is refreshed host tool metadata followed by the single bounded live attention-gate action. candidate_gap, evidence_refs, witness/control selection, LEGACY grouping, canonical Key A assembly, commitment generation, Key Author B, scoring, implementation and migration remain unauthorized. The owner's Key B automation requirement remains preserved. Research 348's Runtime-Bridge-only public-repository constraint remains active."
+    "notes": "Research 408 records that the first refreshed-schema live evaluate_attention dispatch reached the purpose-specific Runtime Bridge but failed closed with ENOENT because the exact fixed private LEGACY attention-provenance copy was absent. No live metric or hidden semantic information was observed. The public frozen source remains bound at SHA-256 bfc35235ab1aa0a325018fe66c03b14facf43f9ab710ec587ad3901850b459f6 and 540084 bytes. Research 408 freezes the remediation before any result: evaluate_attention may internally stage only that exact byte sequence to the exact fixed private target when missing, with digest verification before and after atomic staging and fail-closed behavior on drift. Generic private copying is not authorized. Gate thresholds and denominator semantics are unchanged. Implementation and qualification of a successor managed runtime release are next. candidate_gap, evidence_refs, witness/control selection, LEGACY grouping, canonical Key A assembly, commitment generation, Key Author B, scoring, implementation and migration remain unauthorized. The owner's Key B automation requirement remains preserved. Research 348's Runtime-Bridge-only public-repository constraint remains active."
   },
   "last_transition": {
-    "transition_id": "mc0029-legacy-attention-evaluator-qualified-activated",
+    "transition_id": "mc0029-attention-input-staging-remediation-frozen",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "The bounded LEGACY attention evaluator is regression-qualified, published, verified and activated; no live metric has been observed and bounded gate execution is next after host tool-schema refresh.",
-    "repository_head": "e43970da4a35514b677b973b6a310af5b9256454"
+    "reason": "The first refreshed-schema live attention dispatch failed closed on missing fixed private provenance; Research 408 freezes exact digest-bound internal staging remediation before any metric observation.",
+    "repository_head": "1606a8c27d69df65e5de4de08babd221667a4c0f"
   }
 }
