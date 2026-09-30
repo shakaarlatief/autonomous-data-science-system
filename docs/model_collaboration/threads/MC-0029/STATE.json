@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_AUTHOR_A_P6A_HOLD_TRANSCRIPT_SLUG_REMEDIATION_FROZEN_IMPLEMENTATION_NEXT",
+  "phase": "DRP03_R2_KEY_AUTHOR_A_P6A_HOLD_STRUCTURED_OUTPUT_REMEDIATION_FROZEN_IMPLEMENTATION_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 412 records the owner's explicit ACCEPT of Research 410 and the bounded P6 authorization/start. Research 413 records the first live P6A run stopping in HOLD with ENOENT before any source was accepted. Mechanical diagnosis, without inspecting transcript content or candidate-gap output, found every staged input present, Claude Code available, and the failed session transcript preserved. Root cause is the V2 transcript verifier's project-slug reconstruction: Claude normalizes the p6_jobs cwd component to p6-jobs, while the verifier normalized only colon and path separators. Research 413 freezes the minimal underscore-to-hyphen remediation before any replacement attempt. The accepted prefix is zero; no canonical P6A artifact was accepted; P6B/P6C remain not started. After the successor release is qualified and activated, resume_after_hold may start a fresh replacement session under the already accepted Research 410 scope. Canonical Key A assembly, commitment generation, Key Author B, scoring, successor implementation and migration remain unauthorized. Research 348's Runtime-Bridge-only public-repository constraint remains active."
+    "notes": "Research 414 records the transcript-slug remediation as qualified, published and activated through p6-private-ops-v3 at local-runtime commit f44d868385e4bbbada78884957857e567bef0b7b, followed by governed P6A resumption with the zero-length accepted prefix preserved. Research 415 records the replacement attempt stopping in HOLD with P6_TRANSCRIPT_POSTFLIGHT_FAILED before any source was accepted. Mechanical diagnosis, without reading semantic output values or response text, found exact session/cwd/model/permission agreement, no compaction, no outside-workspace tool paths, and transcript tool names Read plus exactly one built-in StructuredOutput. Because P6 uses --json-schema, StructuredOutput is the schema-bound final-output carrier rather than a semantic capability tool. Research 415 freezes the minimal verifier remediation: semantic allowlists remain unchanged, exactly one StructuredOutput with the exact phase top-level schema keys is required, and missing/duplicate/wrong-key output or any other forbidden tool fails closed. Accepted P6A prefix remains zero; P6B/P6C remain not started. After successor qualification and activation, resume_after_hold may start another fresh replacement session under the already accepted Research 410 scope. Canonical Key A assembly, commitment generation, Key Author B, scoring, successor implementation and migration remain unauthorized. Research 348's Runtime-Bridge-only public-repository constraint remains active."
   },
   "last_transition": {
-    "transition_id": "mc0029-p6a-hold-transcript-slug-remediation-frozen",
+    "transition_id": "mc0029-p6a-hold-structured-output-remediation-frozen",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "The first live P6A run stopped in governed HOLD before any source was accepted; Research 413 freezes the mechanical transcript-slug remediation before a fresh replacement attempt.",
-    "repository_head": "27fc996e416f3739bbb9fa0c02d532f79629cd5d"
+    "reason": "The post-slug-fix P6A replacement attempt stopped in governed HOLD before any source was accepted; Research 415 freezes the StructuredOutput postflight remediation before another fresh replacement attempt.",
+    "repository_head": "2573c96109d8b8f6782f3d646deb6adc39690a20"
   }
 }

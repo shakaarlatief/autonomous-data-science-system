@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-30
-**Status:** MC-0029 OPEN / KEY A P6A HOLD / TRANSCRIPT-SLUG REMEDIATION NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / KEY A P6A HOLD / STRUCTURED-OUTPUT REMEDIATION NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -179,11 +179,11 @@ Research 409 records V5 remediation qualification and the bounded live LEGACY at
 
 Research 410 freezes the post-classification Key Author A P6 design before any new semantic work. P6A candidate-gap authoring, P6B independent frozen-horizon evidence substantiation and P6C within-source grouping remain deliberately separated.
 
-Research 411 records the bounded automated P6 control plane as implemented, regression-qualified, published, verified and activated through managed release `p6-private-ops-v2` at local-runtime commit `e522a4bbe05083b03290a33f1fbb56e7ce081d94`.
+Research 411 records the bounded automated P6 control plane as implemented, regression-qualified, published, verified and activated through managed release `p6-private-ops-v2`.
 
-Research 412 records the owner's explicit ACCEPT of Research 410, successful bounded P6 preparation/authorization, and the start of automated P6A. Research 413 records the first live P6A HOLD: `ENOENT` occurred before any source was accepted. Mechanical diagnosis found every staged job input present, Claude Code available, and the failed session transcript preserved. The V2 transcript verifier reconstructed the Claude project slug without converting the `p6_jobs` underscore to the hyphen used by Claude Code, so it searched the wrong transcript directory. No transcript content or candidate-gap output was inspected; no canonical P6A artifact was accepted. The minimal underscore-to-hyphen path remediation is frozen before any replacement attempt.
+Research 412 records the owner's explicit ACCEPT of Research 410 and the bounded P6 authorization/start. Research 413 records the first live P6A HOLD with zero accepted sources and freezes the transcript-slug remediation. Research 414 records that remediation as qualified, published and activated through `p6-private-ops-v3`, followed by governed fresh-session resumption. Research 415 records the second live P6A HOLD: `P6_TRANSCRIPT_POSTFLIGHT_FAILED` occurred before any source was accepted because real Claude Code transcript output contains one built-in `StructuredOutput` event from `--json-schema`, while the verifier treated every tool-use event outside Read/Glob/Grep as forbidden. Mechanical diagnosis inspected only non-semantic transcript metadata. No candidate-gap value or Claude response text was read, and no canonical P6A artifact was accepted.
 
-Next: implement, regression-qualify, publish, verify and activate the transcript-slug remediation, then use the governed `resume_after_hold` action with a fresh Claude session. P6B/P6C, canonical assembly, Key A commitment and Key Author B remain gated.
+Next: implement, regression-qualify, publish, verify and activate the frozen StructuredOutput postflight remediation, then use the governed `resume_after_hold` action with a fresh Claude session. P6B/P6C, canonical assembly, Key A commitment and Key Author B remain gated.
 
 Production implementation, migration and authority switching remain held.
 
