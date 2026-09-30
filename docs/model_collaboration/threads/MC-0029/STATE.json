@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_AUTHOR_A_P6_CONTROL_PLANE_QUALIFIED_PREPARE_NEXT",
+  "phase": "DRP03_R2_KEY_AUTHOR_A_P6A_HOLD_TRANSCRIPT_SLUG_REMEDIATION_FROZEN_IMPLEMENTATION_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 411 records the Research 410 P6 automation design as implemented, regression-qualified, published, verified and activated through managed release p6-private-ops-v2 at local-runtime commit e522a4bbe05083b03290a33f1fbb56e7ce081d94. Direct P6 regression passes the exact 17-source / 3088-item / three-subphase workload with 51 fresh sessions, the headless runner smoke passes, and retained P5/P4 regressions pass. Managed release publication succeeded and verification reports mismatchCount 0 before and after successful Runtime Bridge activation. The action-only codex.p6_private_operation structurally keeps live semantic execution behind authorize_phase. No P6 semantic packet has been exposed and no candidate-gap, evidence or grouping output exists. The current host tool metadata must refresh before the bounded non-semantic prepare action can run. Preparation must preserve p6_authorized=false, after which the owner must explicitly ACCEPT / AMEND / HOLD Research 410 before authorize_phase. Canonical Key A assembly, commitment generation, Key Author B, scoring, successor implementation and migration remain unauthorized. Research 348's Runtime-Bridge-only public-repository constraint remains active."
+    "notes": "Research 412 records the owner's explicit ACCEPT of Research 410 and the bounded P6 authorization/start. Research 413 records the first live P6A run stopping in HOLD with ENOENT before any source was accepted. Mechanical diagnosis, without inspecting transcript content or candidate-gap output, found every staged input present, Claude Code available, and the failed session transcript preserved. Root cause is the V2 transcript verifier's project-slug reconstruction: Claude normalizes the p6_jobs cwd component to p6-jobs, while the verifier normalized only colon and path separators. Research 413 freezes the minimal underscore-to-hyphen remediation before any replacement attempt. The accepted prefix is zero; no canonical P6A artifact was accepted; P6B/P6C remain not started. After the successor release is qualified and activated, resume_after_hold may start a fresh replacement session under the already accepted Research 410 scope. Canonical Key A assembly, commitment generation, Key Author B, scoring, successor implementation and migration remain unauthorized. Research 348's Runtime-Bridge-only public-repository constraint remains active."
   },
   "last_transition": {
-    "transition_id": "mc0029-p6-control-plane-qualified-activated",
+    "transition_id": "mc0029-p6a-hold-transcript-slug-remediation-frozen",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 411 records the bounded P6 control plane as regression-qualified, published, verified and activated; host tool-schema refresh and non-semantic P6 preparation are next while semantic execution remains unauthorized.",
-    "repository_head": "e679c87430851008553091faacaf99aff707db23"
+    "reason": "The first live P6A run stopped in governed HOLD before any source was accepted; Research 413 freezes the mechanical transcript-slug remediation before a fresh replacement attempt.",
+    "repository_head": "27fc996e416f3739bbb9fa0c02d532f79629cd5d"
   }
 }
