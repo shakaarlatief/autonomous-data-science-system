@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-30
-**Status:** MC-0029 OPEN / KEY A P6A RUNNING / STRUCTUREDOUTPUT REMEDIATION QUALIFIED / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / KEY A P6A PASS / P6B HOLD / PROMPT-SEPARATOR REMEDIATION NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -183,9 +183,11 @@ Research 411 records the bounded automated P6 control plane as implemented, regr
 
 Research 412 records the owner's explicit ACCEPT of Research 410 and the bounded P6 authorization/start. Research 413 records the first live P6A HOLD with zero accepted sources and freezes the transcript-slug remediation. Research 414 records that remediation as qualified, published and activated through `p6-private-ops-v3`, followed by governed fresh-session resumption. Research 415 records the second live P6A HOLD caused by the verifier treating Claude Code's schema-bound `StructuredOutput` carrier as a semantic capability tool, and freezes the minimal postflight remediation without inspecting semantic values.
 
-Research 416 records that remediation as implemented, regression-qualified, published, verified and activated through `p6-private-ops-v4` at local-runtime commit `56f3e6b451e10323b0074bbe8bd8e069e8cbc87c`. The strengthened P6 regression, headless smoke and retained P5/P4 regressions pass; managed publication succeeds and mismatchCount is 0 before and after activation. The held orchestration has been resumed with the zero-length accepted prefix preserved. Current bounded status is P6A RUNNING with no HOLD or error.
+Research 416 records that remediation as implemented, regression-qualified, published, verified and activated through `p6-private-ops-v4` at local-runtime commit `56f3e6b451e10323b0074bbe8bd8e069e8cbc87c`. The strengthened P6 regression, headless smoke and retained P5/P4 regressions pass; managed publication succeeds and mismatchCount is 0 before and after activation.
 
-Next: poll only the bounded P6 status until P6A reaches COMPLETE or HOLD. P6B/P6C, canonical assembly, Key A commitment and Key Author B remain gated.
+Research 417 records P6A reaching COMPLETE and being frozen as PASS through the bounded finalizer, then the first P6B job stopping with `P6_CLAUDE_EXIT` before a transcript or accepted source existed. Synthetic CLI reproduction identifies a variadic `--add-dir` parsing defect: the positional prompt was consumed as another directory. The minimal remediation is frozen as `--add-dir <fixedEvidenceRoot> -- <prompt>` for P6B only; P6A/P6C invocation and all semantic/evidence rules remain unchanged. No P6B semantic output has been accepted or inspected.
+
+Next: implement, regression-qualify, publish, verify and activate the P6B prompt-separator remediation, then use the governed `resume_after_hold` action with a fresh P6B session. P6C, canonical assembly, Key A commitment and Key Author B remain gated.
 
 Production implementation, migration and authority switching remain held.
 

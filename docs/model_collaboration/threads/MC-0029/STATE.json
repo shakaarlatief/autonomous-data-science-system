@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_AUTHOR_A_P6A_RUNNING_AFTER_STRUCTURED_OUTPUT_REMEDIATION",
+  "phase": "DRP03_R2_KEY_AUTHOR_A_P6A_PASS_P6B_HOLD_PROMPT_SEPARATOR_REMEDIATION_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 416 records the Research 415 StructuredOutput remediation as implemented, regression-qualified, published, verified and activated through p6-private-ops-v4 at local-runtime commit 56f3e6b451e10323b0074bbe8bd8e069e8cbc87c, version 0.1.1-preview.59-p6-structured-output-public. Direct P6 regression passes the 17-source / 3088-item / three-subphase workload with 51 fresh sessions, the headless smoke now includes the real-style StructuredOutput carrier, and retained P5/P4 regressions pass. Managed publication succeeded and verification reports mismatchCount 0 before and after successful Runtime Bridge activation. The semantic CLI tool allowlists remain unchanged; transcript postflight now requires exactly one schema-bound StructuredOutput with exact phase top-level keys and continues to reject every other forbidden tool. The held P6A orchestration was resumed with acceptedPrefixPreserved=true. Current bounded status is P6A RUNNING with no HOLD or error and boundaryReady=false. P6B/P6C remain not started. Canonical Key A assembly, commitment generation, Key Author B, scoring, successor implementation and migration remain unauthorized. Research 348's Runtime-Bridge-only public-repository constraint remains active."
+    "notes": "Research 417 records P6A completion and bounded finalization as PASS without exposing candidate-gap values. The authorized workflow advanced to P6B, whose first automated source job stopped fail closed with P6_CLAUDE_EXIT before a Claude transcript or accepted source existed; the accepted P6B prefix is zero and no P6B semantic output was accepted or inspected. Synthetic non-semantic CLI reproduction identified the mechanical cause: Claude Code declares --add-dir <directories...> as variadic, so the current P6B invocation consumed the positional prompt as another directory and exited because --print had no prompt. Inserting the standard -- option terminator after the fixed evidence root removes the immediate parse failure. Research 417 freezes this P6B-only remediation as --add-dir <fixedEvidenceRoot> -- <prompt>; P6A/P6C invocation, model, effort, evidence horizon, semantic tool allowlists, evidence rules, thresholds and owner authorization remain unchanged. P6A is PASS/FROZEN and must not be rerun. P6C remains not started. Canonical Key A assembly, commitment generation, Key Author B, scoring, successor implementation and migration remain unauthorized. Research 348's Runtime-Bridge-only public-repository constraint remains active."
   },
   "last_transition": {
-    "transition_id": "mc0029-p6a-structured-output-remediation-qualified-resumed",
+    "transition_id": "mc0029-p6a-pass-p6b-prompt-separator-hold",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 416 records the StructuredOutput verifier remediation as qualified, published, verified and activated; the governed P6A orchestration has resumed and is currently RUNNING with no HOLD or error.",
-    "repository_head": "629cfb30"
+    "reason": "Research 417 records P6A PASS and a fail-closed first P6B launch before semantic execution; the P6B-only --add-dir prompt-separator remediation is frozen for qualification before governed resumption.",
+    "repository_head": "de1ba114ece2969c136c71a1a615377f9cc260a9"
   }
 }
