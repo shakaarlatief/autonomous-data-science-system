@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
-**Date:** 2026-09-29
-**Status:** MC-0029 OPEN / KEY A P6 DESIGN FROZEN / AUTOMATED CONTROL PLANE IMPLEMENTATION NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Date:** 2026-09-30
+**Status:** MC-0029 OPEN / KEY A P6 CONTROL PLANE QUALIFIED / PREPARE NEXT / SEMANTIC EXECUTION HELD / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -177,9 +177,11 @@ Research 408 records the missing private control-input failure and prospectively
 
 Research 409 records V5 remediation qualification and the bounded live LEGACY attention gate PASS: binary consistency 1.0, normative-kind consistency 1.0, no replacement required, no hidden semantic details exposed, and frozen P5 labels unchanged.
 
-Research 410 now freezes the post-classification Key Author A P6 design before any new semantic work. P6A candidate-gap authoring, P6B independent frozen-horizon evidence substantiation and P6C within-source grouping are deliberately separated so later evidence or grouping cannot rewrite earlier semantic judgments. Research 410 also selects a headless sequential Claude Code runner with one fresh process per semantic job, automatic bounded postflight, stop-on-exception behavior and phase-level public bookkeeping, removing the P5 manual clipboard/scheduler loop without introducing parallel semantic workers or retry-to-green.
+Research 410 freezes the post-classification Key Author A P6 design before any new semantic work. P6A candidate-gap authoring, P6B independent frozen-horizon evidence substantiation and P6C within-source grouping remain deliberately separated.
 
-Next: implement and regression-qualify the bounded automated P6 control plane on synthetic fixtures. P6 semantic execution remains unauthorized until the control plane is active and the owner explicitly authorizes the frozen design. Canonical assembly, Key A commitment and Key Author B remain gated.
+Research 411 records the bounded automated P6 control plane as implemented, regression-qualified, published, verified and activated through managed release `p6-private-ops-v2` at local-runtime commit `e522a4bbe05083b03290a33f1fbb56e7ce081d94`. Direct P6 regression passes the exact 17-source / 3088-item / three-subphase synthetic workload with 51 fresh sessions, the headless runner smoke passes, and retained P5/P4 regressions pass. Managed publication succeeded, verification reports mismatchCount 0 before and after successful Runtime Bridge activation. No live P6 semantic source has been exposed and no P6 semantic output exists.
+
+Next: refresh the host Runtime Bridge tool metadata and invoke only the bounded non-semantic `prepare` action. Preparation must leave P6 unauthorized. Then return to the owner for explicit ACCEPT / AMEND / HOLD of Research 410 before `authorize_phase` can permit live P6 semantics. Canonical assembly, Key A commitment and Key Author B remain gated.
 
 Production implementation, migration and authority switching remain held.
 
