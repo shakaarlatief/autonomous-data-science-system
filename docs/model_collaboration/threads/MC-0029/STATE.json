@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_AUTHOR_A_P6A_HOLD_STRUCTURED_OUTPUT_REMEDIATION_FROZEN_IMPLEMENTATION_NEXT",
+  "phase": "DRP03_R2_KEY_AUTHOR_A_P6A_RUNNING_AFTER_STRUCTURED_OUTPUT_REMEDIATION",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 414 records the transcript-slug remediation as qualified, published and activated through p6-private-ops-v3 at local-runtime commit f44d868385e4bbbada78884957857e567bef0b7b, followed by governed P6A resumption with the zero-length accepted prefix preserved. Research 415 records the replacement attempt stopping in HOLD with P6_TRANSCRIPT_POSTFLIGHT_FAILED before any source was accepted. Mechanical diagnosis, without reading semantic output values or response text, found exact session/cwd/model/permission agreement, no compaction, no outside-workspace tool paths, and transcript tool names Read plus exactly one built-in StructuredOutput. Because P6 uses --json-schema, StructuredOutput is the schema-bound final-output carrier rather than a semantic capability tool. Research 415 freezes the minimal verifier remediation: semantic allowlists remain unchanged, exactly one StructuredOutput with the exact phase top-level schema keys is required, and missing/duplicate/wrong-key output or any other forbidden tool fails closed. Accepted P6A prefix remains zero; P6B/P6C remain not started. After successor qualification and activation, resume_after_hold may start another fresh replacement session under the already accepted Research 410 scope. Canonical Key A assembly, commitment generation, Key Author B, scoring, successor implementation and migration remain unauthorized. Research 348's Runtime-Bridge-only public-repository constraint remains active."
+    "notes": "Research 416 records the Research 415 StructuredOutput remediation as implemented, regression-qualified, published, verified and activated through p6-private-ops-v4 at local-runtime commit 56f3e6b451e10323b0074bbe8bd8e069e8cbc87c, version 0.1.1-preview.59-p6-structured-output-public. Direct P6 regression passes the 17-source / 3088-item / three-subphase workload with 51 fresh sessions, the headless smoke now includes the real-style StructuredOutput carrier, and retained P5/P4 regressions pass. Managed publication succeeded and verification reports mismatchCount 0 before and after successful Runtime Bridge activation. The semantic CLI tool allowlists remain unchanged; transcript postflight now requires exactly one schema-bound StructuredOutput with exact phase top-level keys and continues to reject every other forbidden tool. The held P6A orchestration was resumed with acceptedPrefixPreserved=true. Current bounded status is P6A RUNNING with no HOLD or error and boundaryReady=false. P6B/P6C remain not started. Canonical Key A assembly, commitment generation, Key Author B, scoring, successor implementation and migration remain unauthorized. Research 348's Runtime-Bridge-only public-repository constraint remains active."
   },
   "last_transition": {
-    "transition_id": "mc0029-p6a-hold-structured-output-remediation-frozen",
+    "transition_id": "mc0029-p6a-structured-output-remediation-qualified-resumed",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "The post-slug-fix P6A replacement attempt stopped in governed HOLD before any source was accepted; Research 415 freezes the StructuredOutput postflight remediation before another fresh replacement attempt.",
-    "repository_head": "2573c96109d8b8f6782f3d646deb6adc39690a20"
+    "reason": "Research 416 records the StructuredOutput verifier remediation as qualified, published, verified and activated; the governed P6A orchestration has resumed and is currently RUNNING with no HOLD or error.",
+    "repository_head": "629cfb30"
   }
 }
