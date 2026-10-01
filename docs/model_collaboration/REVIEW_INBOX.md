@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-10-01
-**Status:** MC-0029 OPEN / KEY B STATE + CLASSIFICATION PREFIX 1 ACCEPTED / SEMANTIC-OUTPUT HOLD / FRESH REPLACEMENT NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / KEY B CLASSIFICATION PREFIX 3 ACCEPTED / OUTPUT-CONTRACT HARNESS INVALID / P8 REPAIR NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -198,6 +198,8 @@ Research 423 prospectively freezes the fresh Key B STATE+BIRTH automated control
 Research 424 records P8 implementation and managed deployment. Active release `p8-key-b-ops-v3` at private local-runtime source head `056a11807e1e0ff652fa4797657e37072b85631d` targets `0.1.1-preview.65-p8-key-b-live-smoke` with 177 server tools; publication, restart/activation and exact post-activation verification pass with mismatchCount=0. The prior V2 activation failed closed on a replacement-contract mismatch and recovered automatically before the corrected V3 release. P8 `prepare` now owns the mandatory server-side live non-semantic Claude smoke, but this existing ChatGPT interaction has not refreshed its connector schema to expose `codex.p8_key_b_operation`. Key B semantics remain unstarted; next is provider-local tool-schema refresh, then bounded P8 `status` and `prepare` without generic-command bypass.
 
 Research 425 records successful P8 tool refresh, live smoke PASS, preparation PASS, explicit authorization, accepted Key B STATE, one accepted BIRTH classification batch, and a fail-closed `P8_SEMANTIC_OUTPUT_INVALID` HOLD before attention/grouping. Hidden semantics remain uninspected. The qualified P8 contract makes this error resumable while reserving non-resumable status for the attention-quality and grouping-floor gates. Exactly one fresh `resume_after_hold` attempt is dispositioned with the accepted prefix preserved; recurrence before the next accepted semantic unit must stop for prospective contract diagnosis.
+
+Research 426 records the repeated P8 classification validation hold, the mechanically identified schema/validator contract mismatch, preservation of the 3/15 accepted prefix, and the prospective P8 schema repair.
 
 Production implementation, migration and authority switching remain held.
 
