@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_B_P8_V5_COMPACT_SCHEMA_DEPLOYED_RESUME_READY",
+  "phase": "DRP03_R2_KEY_B_P8_GROUPING_OUTPUT_CONTRACT_HARNESS_REPAIR",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 428 records qualified and deployed P8 V5 compact classification-schema transport at local-runtime source head 1298ee37770dd1a8e39dac8f10f8ce2e0e43836f. Managed publication/restart/exact verification pass with mismatchCount=0. The compact schema preserves exact batch count, current-batch presentation-ID domain and the frozen normative/normative_kind conditional while the existing post-validator remains unchanged. Accepted STATE and the 3/15 BIRTH prefix remain frozen, hidden semantics remain unexposed, and governed resume_after_hold is next."
+    "notes": "Research 429 records that Key B completed STATE, all 15 BIRTH classification batches and the hidden attention gate, then accepted 10/13 grouping events before a P8_SEMANTIC_OUTPUT_INVALID HOLD. Mechanical inspection of the active P8 implementation, without opening held semantic output, shows the grouping generation schema is less strict than the post-validator for eligible IDs, pair orientation, pair-list ordering and cross-list collision. The held grouping attempt is HARNESS_INVALID. The accepted prefix remains frozen. A narrow prospective P8 V6 grouping-contract repair is authorized before one fresh resume."
   },
   "last_transition": {
-    "transition_id": "mc0029-p8-v5-compact-schema-deployed-resume-ready",
+    "transition_id": "mc0029-key-b-grouping-output-contract-harness-repair",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 428 preserves successful P8 V5 compact-schema qualification and deployment before the governed Key B resume.",
-    "repository_head": "0674d8969c09a162cea8d18e31a4ab3c452300a5"
+    "reason": "Research 429 identifies a non-semantic grouping schema/validator contract mismatch after the late P8 grouping HOLD and freezes the narrow prospective repair.",
+    "repository_head": "a020ad1a2b1dbf3adc2c520886164daeb56d6a89"
   }
 }
