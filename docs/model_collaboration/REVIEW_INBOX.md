@@ -207,6 +207,8 @@ Research 428 records compact P8 V5 qualification and deployment. The active runt
 
 Research 429 records completion of all 15 Key B BIRTH classification batches, attention PASS, 10/13 accepted grouping events, and a fail-closed P8_SEMANTIC_OUTPUT_INVALID grouping HOLD. Mechanical source inspection identifies a grouping generation-schema/post-validator non-isomorphism without opening held semantic output. The held grouping attempt is therefore HARNESS_INVALID. The accepted prefix is preserved and a narrow prospective P8 V6 grouping-contract repair is authorized before one fresh resume.
 
+Research 430 records recovery of the Codexless Runtime Bridge after the current Codex Windows runtime exceeded the compatibility probe's former 10-second outer RPC deadline. Direct reproduction shows the exact probe succeeds in about 13 seconds while retaining its original 5-second command budget. Managed release `codex-command-exec-rpc-timeout-v2` preserves that command budget, raises only the compatibility RPC deadline to 45 seconds, publishes and activates successfully, and verifies with 177 tools and mismatchCount=0 at private local-runtime source `8eaa65b87f0489c75b3b68aa864840e2082fc950`. Public Research 429 publication is reconciled at `43f71d9bb098316714e8f834a3db972a8d77324d`. Key B remains frozen at STATE accepted, 15/15 classifications, attention PASS and 10/13 groupings. P8 V6 remains next.
+
 Production implementation, migration and authority switching remain held.
 
 ## Most recently completed obligation

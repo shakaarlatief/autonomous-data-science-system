@@ -74,6 +74,7 @@ Independently derive Specification 028 reconciliation and AO-10 realization arch
     Key B P8 V5 compact schema                          QUALIFIED + DEPLOYED + VERIFIED / Research 428
     Key B semantic progress                             STATE ACCEPTED / CLASSIFICATION 15 OF 15 / ATTENTION PASS / GROUPING 10 OF 13
     Key B grouping output contract                      HARNESS_INVALID / Research 429 / P8 V6 REPAIR NEXT
+    Codexless command/exec compatibility recovery       QUALIFIED + MANAGED RELEASE VERIFIED / Research 430 / mismatchCount 0
     Fresh private Key Author B                       SEMANTIC EXECUTION STARTED / CURRENTLY HOLD / BLIND TO A
     Key construct-validity gate                   AFTER BOTH COMMITMENTS
     DRP-03 R2                                    AFTER HARNESS FREEZE
