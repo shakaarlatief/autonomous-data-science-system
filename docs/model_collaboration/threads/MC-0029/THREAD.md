@@ -1,7 +1,7 @@
 # MC-0029 Thread: Specification 028 Reconciliation and AO-10 Realization Design
 
 **Thread:** MC-0029
-**Status:** OPEN / KEY A COMPONENT COMMITMENT FROZEN / KEY B CONTROL-PLANE IMPLEMENTATION NEXT
+**Status:** OPEN / KEY A COMPONENT COMMITMENT FROZEN / P8 KEY B CONTROL PLANE DEPLOYED + VERIFIED / LIVE SMOKE TOOL-SCHEMA REFRESH NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** 0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
@@ -66,7 +66,8 @@ Independently derive Specification 028 reconciliation and AO-10 realization arch
     Key A P6 post-classification LEGACY             P6A PASS / P6B 17 OF 17 / EVIDENCE_INSUFFICIENT / GOVERNANCE NEXT / Research 419
     Component-scoped continuation amendment          ACCEPTED / Research 421 / OWNER ACCEPTED
     Key A component-scoped commitment               FROZEN / Research 422 / STATE+BIRTH ONLY
-    Key B automated control-plane design             FROZEN / Research 423 / IMPLEMENTATION NEXT
+    Key B automated control-plane design             FROZEN / Research 423
+    Key B P8 control-plane implementation             DEPLOYED + VERIFIED / Research 424 / LIVE SMOKE TOOL-SCHEMA REFRESH NEXT
     Fresh private Key Author B                       SEMANTIC EXECUTION NOT STARTED / BLIND TO A
     Key construct-validity gate                   AFTER BOTH COMMITMENTS
     DRP-03 R2                                    AFTER HARNESS FREEZE
@@ -444,3 +445,17 @@ Claude may write only:
     KEY_A_P6B_HOLD_ROOT_CAUSE=VARIADIC_ADD_DIR_CONSUMED_POSITIONAL_PROMPT
     KEY_A_P6B_PROMPT_SEPARATOR_REMEDIATION=FROZEN
     NEXT=IMPLEMENT_QUALIFY_PUBLISH_ACTIVATE_P6B_PROMPT_SEPARATOR_REMEDIATION
+
+Current P8 boundary:
+
+    RESEARCH424=P8_DEPLOYED_VERIFIED
+    P8_ACTIVE_RELEASE=p8-key-b-ops-v3
+    P8_ACTIVE_RUNTIME_VERSION=0.1.1-preview.65-p8-key-b-live-smoke
+    P8_SERVER_TOOL_COUNT=177
+    P8_POST_ACTIVATION_VERIFY=PASS
+    P8_MISMATCH_COUNT=0
+    P8_LIVE_NON_SEMANTIC_SMOKE=PENDING_PURPOSE_SPECIFIC_PREPARE
+    CURRENT_CHAT_P8_TOOL_SCHEMA=NOT_EXPOSED
+    KEY_B_SEMANTIC_EXECUTION=NOT_STARTED
+    HIDDEN_SEMANTIC_DETAILS_EXPOSED=false
+    NEXT=REFRESH_PROVIDER_TOOL_SCHEMA_THEN_RUN_P8_STATUS_AND_PREPARE

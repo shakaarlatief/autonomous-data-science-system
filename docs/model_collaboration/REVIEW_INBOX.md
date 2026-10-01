@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-10-01
-**Status:** MC-0029 OPEN / KEY A COMPONENT COMMITMENT FROZEN / KEY B CONTROL-PLANE DESIGN FROZEN / IMPLEMENTATION NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / KEY A COMPONENT COMMITMENT FROZEN / P8 KEY B CONTROL PLANE DEPLOYED + VERIFIED / LIVE SMOKE TOOL-SCHEMA REFRESH NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -194,6 +194,8 @@ Research 421 records the owner's ACCEPT decision on the Research 420 component-s
 Research 422 records the qualified and frozen Key A STATE+BIRTH component commitment after Research 421 owner acceptance. The public-safe commitment is `b632dd680208eb0bba9f3a9c571266b094e640016ea8d635d5cf1606f65b37bb` over 643247 canonical bytes; BIRTH attention and grouping-floor gates pass, LEGACY remains terminal INCONCLUSIVE with its negative-control failure unchanged, P6C remains not run, and no hidden Key A semantics were exposed.
 
 Research 423 prospectively freezes the fresh Key B STATE+BIRTH automated control-plane design before any B semantics. It requires a clean fixed B root, exact frozen public inputs, stdin-only zero-tool fresh Claude sessions, no persistent or resumed session context, sequential STATE/classification/grouping execution, hidden mechanical attention checking, Key-B-own grouping eligibility projections, fail-closed HOLDs, and component commitment freeze before comparison. Research 421 authorizes implementation and qualification; live Key B semantics remain held until qualification passes.
+
+Research 424 records P8 implementation and managed deployment. Active release `p8-key-b-ops-v3` at private local-runtime source head `056a11807e1e0ff652fa4797657e37072b85631d` targets `0.1.1-preview.65-p8-key-b-live-smoke` with 177 server tools; publication, restart/activation and exact post-activation verification pass with mismatchCount=0. The prior V2 activation failed closed on a replacement-contract mismatch and recovered automatically before the corrected V3 release. P8 `prepare` now owns the mandatory server-side live non-semantic Claude smoke, but this existing ChatGPT interaction has not refreshed its connector schema to expose `codex.p8_key_b_operation`. Key B semantics remain unstarted; next is provider-local tool-schema refresh, then bounded P8 `status` and `prepare` without generic-command bypass.
 
 Production implementation, migration and authority switching remain held.
 
