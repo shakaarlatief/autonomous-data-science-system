@@ -1,7 +1,7 @@
 # MC-0029 Thread: Specification 028 Reconciliation and AO-10 Realization Design
 
 **Thread:** MC-0029
-**Status:** OPEN / KEY B PREFIX 3 PRESERVED / P8 V4 TRANSPORT HARNESS INVALID / COMPACT V5 NEXT
+**Status:** OPEN / P8 V5 COMPACT SCHEMA VERIFIED / KEY B PREFIX 3 PRESERVED / RESUME NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** 0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
@@ -70,7 +70,8 @@ Independently derive Specification 028 reconciliation and AO-10 realization arch
     Key B P8 control-plane implementation             DEPLOYED + VERIFIED / Research 424
     Key B P8 live execution                            STATE ACCEPTED / CLASSIFICATION 3 OF 15 / HOLD P8_SEMANTIC_OUTPUT_INVALID / Research 426
     Key B P8 classification output contract            HARNESS_INVALID / Research 426
-    Key B P8 V4 schema transport                        HARNESS_INVALID / ENAMETOOLONG / Research 427 / COMPACT V5 NEXT
+    Key B P8 V4 schema transport                        HARNESS_INVALID / ENAMETOOLONG / Research 427
+    Key B P8 V5 compact schema                          QUALIFIED + DEPLOYED + VERIFIED / Research 428 / RESUME NEXT
     Fresh private Key Author B                       SEMANTIC EXECUTION STARTED / CURRENTLY HOLD / BLIND TO A
     Key construct-validity gate                   AFTER BOTH COMMITMENTS
     DRP-03 R2                                    AFTER HARNESS FREEZE

@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_B_P8_V4_SCHEMA_TRANSPORT_HARNESS_FAILURE_V5_REPAIR",
+  "phase": "DRP03_R2_KEY_B_P8_V5_COMPACT_SCHEMA_DEPLOYED_RESUME_READY",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 427 records that the verified P8 V4 schema-contract repair preserved STATE and the 3/15 accepted BIRTH prefix but failed immediately with P8_WORKER_FAILURE. Mechanical public-input analysis shows the next frozen batch generates a 236899-character positional schema passed as one command-line argument; a non-semantic same-length spawn reproduction returns ENAMETOOLONG, which explains the P8 error class without inspecting semantic output. V4 transport is HARNESS_INVALID. Compact V5 schema transport is next."
+    "notes": "Research 428 records qualified and deployed P8 V5 compact classification-schema transport at local-runtime source head 1298ee37770dd1a8e39dac8f10f8ce2e0e43836f. Managed publication/restart/exact verification pass with mismatchCount=0. The compact schema preserves exact batch count, current-batch presentation-ID domain and the frozen normative/normative_kind conditional while the existing post-validator remains unchanged. Accepted STATE and the 3/15 BIRTH prefix remain frozen, hidden semantics remain unexposed, and governed resume_after_hold is next."
   },
   "last_transition": {
-    "transition_id": "mc0029-p8-v4-schema-transport-harness-failure",
+    "transition_id": "mc0029-p8-v5-compact-schema-deployed-resume-ready",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 427 freezes the mechanical ENAMETOOLONG diagnosis and compact V5 repair boundary while preserving the Key B accepted prefix.",
-    "repository_head": "8d5584c9dab0e2ae4ba61ee3c7e21a44220eee2c"
+    "reason": "Research 428 preserves successful P8 V5 compact-schema qualification and deployment before the governed Key B resume.",
+    "repository_head": "0674d8969c09a162cea8d18e31a4ab3c452300a5"
   }
 }

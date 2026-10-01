@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-10-01
-**Status:** MC-0029 OPEN / KEY B PREFIX 3 PRESERVED / P8 V4 TRANSPORT HARNESS INVALID / COMPACT V5 NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / P8 V5 COMPACT SCHEMA VERIFIED / KEY B PREFIX 3 PRESERVED / RESUME NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -202,6 +202,8 @@ Research 425 records successful P8 tool refresh, live smoke PASS, preparation PA
 Research 426 records the repeated P8 classification validation hold, the mechanically identified schema/validator contract mismatch, preservation of the 3/15 accepted prefix, and the prospective P8 schema repair.
 
 Research 427 records the verified V4 deployment and immediate P8_WORKER_FAILURE caused mechanically by oversized command-line transport of the expanded classification schema. The next frozen batch produces a 236899-character schema and a same-length non-semantic spawn reproduction returns ENAMETOOLONG. Accepted STATE and the 3/15 BIRTH prefix remain frozen. Compact V5 schema transport is next.
+
+Research 428 records compact P8 V5 qualification and deployment. The active runtime now uses a transport-safe batch schema that preserves the existing post-validator, exact batch count and current-batch ID domain while retaining the frozen normative/normative_kind conditional. Managed publication, restart and exact verification pass with mismatchCount=0. Accepted STATE and the 3/15 BIRTH classification prefix remain frozen. Governed resume_after_hold is next.
 
 Production implementation, migration and authority switching remain held.
 
