@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
-**Date:** 2026-09-30
-**Status:** MC-0029 OPEN / KEY A P6A PASS / P6B HOLD / PROMPT-SEPARATOR REMEDIATION NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Date:** 2026-10-01
+**Status:** MC-0029 OPEN / KEY A P6A PASS / P6B PREFIX 3 ACCEPTED / EVIDENCE-QUERY HOLD / FRESH REPLACEMENT NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -187,7 +187,9 @@ Research 416 records that remediation as implemented, regression-qualified, publ
 
 Research 417 records P6A reaching COMPLETE and being frozen as PASS through the bounded finalizer, then the first P6B job stopping with `P6_CLAUDE_EXIT` before a transcript or accepted source existed. Synthetic CLI reproduction identifies a variadic `--add-dir` parsing defect: the positional prompt was consumed as another directory. The minimal remediation is frozen as `--add-dir <fixedEvidenceRoot> -- <prompt>` for P6B only; P6A/P6C invocation and all semantic/evidence rules remain unchanged. No P6B semantic output has been accepted or inspected.
 
-Next: implement, regression-qualify, publish, verify and activate the P6B prompt-separator remediation, then use the governed `resume_after_hold` action with a fresh P6B session. P6C, canonical assembly, Key A commitment and Key Author B remain gated.
+Research 418 reconciles the activated prompt-separator remediation with the subsequent live P6B run. The first three frozen P6B sources are accepted/private-frozen; the fourth source stopped with `P6_GIT_QUERY_FAILED` before its artifact was accepted. Because evidence-root verification precedes the source loop, this is bounded as a post-semantic-request mechanical evidence-query HOLD rather than a recurrence of the prompt-launch defect. Hidden semantic output remains uninspected. The task-owner disposition permits exactly one fresh `resume_after_hold` attempt with the accepted prefix preserved; a repeated query HOLD must stop for prospective diagnosis rather than retry looping.
+
+Next: invoke the already-qualified governed `resume_after_hold` action exactly once, preserving the three-source accepted prefix and starting a fresh P6B replacement session. If `P6_GIT_QUERY_FAILED` recurs before the source is accepted, stop again for bounded query-contract/runtime diagnosis. P6C, canonical assembly, Key A commitment and Key Author B remain gated.
 
 Production implementation, migration and authority switching remain held.
 
