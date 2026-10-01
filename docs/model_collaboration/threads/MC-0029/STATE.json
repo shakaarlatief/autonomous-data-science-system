@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_B_P8_CLASSIFICATION_OUTPUT_CONTRACT_HARNESS_REPAIR",
+  "phase": "DRP03_R2_KEY_B_P8_V4_SCHEMA_TRANSPORT_HARNESS_FAILURE_V5_REPAIR",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 426 records recurrence of P8_SEMANTIC_OUTPUT_INVALID after the fresh replacement advanced the accepted Key B BIRTH classification prefix to 3/15. Mechanical inspection of the active P8 implementation, without opening failed semantic output, shows the generation JSON schema is less strict than the post-output validator: it does not bind exact current-batch IDs/count and does not encode the normative/normative_kind conditional. The failed-attempt classification output-contract layer is HARNESS_INVALID. Accepted STATE and the three accepted BIRTH batches remain frozen. Prospective repair is limited to making the structured-output schema project the existing validator constraints before one fresh resume."
+    "notes": "Research 427 records that the verified P8 V4 schema-contract repair preserved STATE and the 3/15 accepted BIRTH prefix but failed immediately with P8_WORKER_FAILURE. Mechanical public-input analysis shows the next frozen batch generates a 236899-character positional schema passed as one command-line argument; a non-semantic same-length spawn reproduction returns ENAMETOOLONG, which explains the P8 error class without inspecting semantic output. V4 transport is HARNESS_INVALID. Compact V5 schema transport is next."
   },
   "last_transition": {
-    "transition_id": "mc0029-key-b-classification-output-contract-harness-repair",
+    "transition_id": "mc0029-p8-v4-schema-transport-harness-failure",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 426 identifies a non-semantic schema/validator contract mismatch after repeated P8 validation HOLD and freezes the narrow prospective harness repair.",
-    "repository_head": "db2d454e0bdafe5bb66b1f341eb7a90c7b1b721e"
+    "reason": "Research 427 freezes the mechanical ENAMETOOLONG diagnosis and compact V5 repair boundary while preserving the Key B accepted prefix.",
+    "repository_head": "8d5584c9dab0e2ae4ba61ee3c7e21a44220eee2c"
   }
 }
