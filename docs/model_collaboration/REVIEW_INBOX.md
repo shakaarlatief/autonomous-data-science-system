@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-10-01
-**Status:** MC-0029 OPEN / COMPONENT-SCOPED CONTINUATION CANDIDATE / OWNER DECISION REQUIRED / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / COMPONENT-SCOPED CONTINUATION ACCEPTED / IMPLEMENTATION + QUALIFICATION NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -189,7 +189,7 @@ Research 417 records P6A reaching COMPLETE and being frozen as PASS through the 
 
 Research 419 records the completed P6B execution and bounded finalization. All 17 frozen P6B sources are accepted/private-frozen. The material-gap witness floor and already-realized false-gap control floor pass, while the hidden source-level negative-control check fails, so `finalize_subphase` returns `EVIDENCE_INSUFFICIENT` and the purpose-specific control plane stops at governance without releasing P6C. The result is not currently classified as `HARNESS_INVALID`; same-corpus semantic retry and label repair remain prohibited. Research 419 identifies a new component-boundary question because LEGACY is frozen as non-gating for BIRTH/STATE owner-decision readiness, while the current monolithic Key A commitment sequence would make this failed LEGACY control block Key B and therefore BIRTH/STATE construct comparison.
 
-Research 420 freezes the component-scoped continuation amendment candidate for owner decision. The recommendation is ACCEPT: preserve historical Key A LEGACY as terminal INCONCLUSIVE with P6C not run, while permitting only STATE+BIRTH component-scoped commitment and later blind Key B work after prospective implementation and qualification. No continuation execution is authorized before the owner decision.
+Research 421 records the owner's ACCEPT decision on the Research 420 component-scoped continuation amendment. Historical Key A LEGACY remains terminal INCONCLUSIVE with P6C not run and no same-corpus semantic retry. Prospective implementation and qualification of STATE+BIRTH-only Key A commitment machinery and a clean isolated Key B control plane are now authorized. Key B semantic execution remains held until those controls qualify.
 
 Production implementation, migration and authority switching remain held.
 
