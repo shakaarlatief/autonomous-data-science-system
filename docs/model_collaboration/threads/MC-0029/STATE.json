@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_COMPONENT_SCOPED_CONTINUATION_IMPLEMENTATION",
+  "phase": "DRP03_R2_KEY_A_COMMITMENT_FROZEN_KEY_B_CONTROL_PLANE_IMPLEMENTATION",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 421 records owner ACCEPT of the Research 420 component-scoped continuation amendment. Historical Key A LEGACY remains terminal INCONCLUSIVE with P6C NOT_RUN and no same-corpus semantic retry. Prospective implementation/qualification of a STATE+BIRTH-only Key A commitment and an isolated Key B control plane is authorized. Key B semantic execution remains held until those controls qualify."
+    "notes": "Research 422 records a mechanically qualified and frozen Key A STATE+BIRTH component commitment without exposing hidden semantic bytes. LEGACY remains terminal INCONCLUSIVE with the negative-control failure unchanged and P6C NOT_RUN. Research 423 freezes the fresh Key B STATE+BIRTH control-plane design before any Key B semantic output exists. The design uses a fixed clean B root, exact public-frozen inputs, zero-tool stdin-only fresh Claude processes, no resume/continue or session persistence, hidden attention checks, Key-B-own grouping eligibility projections and fail-closed sequential automation. Research 421 authorizes implementation and qualification; Key B semantic execution has not started."
   },
   "last_transition": {
-    "transition_id": "mc0029-component-scoped-continuation-accepted",
+    "transition_id": "mc0029-key-a-component-commitment-frozen-key-b-control-designed",
     "from_state": "WAITING",
     "to_state": "WAITING",
-    "actor": "human",
-    "reason": "Owner explicitly accepted Research 420; prospective component-scoped implementation and qualification are authorized while Key B semantic execution remains held.",
-    "repository_head": "d39c1effc0f3f21da4f31653077f144b1d6be91a"
+    "actor": "chatgpt",
+    "reason": "Research 422 freezes the public-safe Key A component commitment and Research 423 freezes the pre-semantic Key B control-plane design; implementation and qualification are next.",
+    "repository_head": "92c46a76c4634bd1394cac581e33fa8d7baac9cf"
   }
 }

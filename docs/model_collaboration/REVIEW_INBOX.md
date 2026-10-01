@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-10-01
-**Status:** MC-0029 OPEN / COMPONENT-SCOPED CONTINUATION ACCEPTED / IMPLEMENTATION + QUALIFICATION NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / KEY A COMPONENT COMMITMENT FROZEN / KEY B CONTROL-PLANE DESIGN FROZEN / IMPLEMENTATION NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -190,6 +190,10 @@ Research 417 records P6A reaching COMPLETE and being frozen as PASS through the 
 Research 419 records the completed P6B execution and bounded finalization. All 17 frozen P6B sources are accepted/private-frozen. The material-gap witness floor and already-realized false-gap control floor pass, while the hidden source-level negative-control check fails, so `finalize_subphase` returns `EVIDENCE_INSUFFICIENT` and the purpose-specific control plane stops at governance without releasing P6C. The result is not currently classified as `HARNESS_INVALID`; same-corpus semantic retry and label repair remain prohibited. Research 419 identifies a new component-boundary question because LEGACY is frozen as non-gating for BIRTH/STATE owner-decision readiness, while the current monolithic Key A commitment sequence would make this failed LEGACY control block Key B and therefore BIRTH/STATE construct comparison.
 
 Research 421 records the owner's ACCEPT decision on the Research 420 component-scoped continuation amendment. Historical Key A LEGACY remains terminal INCONCLUSIVE with P6C not run and no same-corpus semantic retry. Prospective implementation and qualification of STATE+BIRTH-only Key A commitment machinery and a clean isolated Key B control plane are now authorized. Key B semantic execution remains held until those controls qualify.
+
+Research 422 records the qualified and frozen Key A STATE+BIRTH component commitment after Research 421 owner acceptance. The public-safe commitment is `b632dd680208eb0bba9f3a9c571266b094e640016ea8d635d5cf1606f65b37bb` over 643247 canonical bytes; BIRTH attention and grouping-floor gates pass, LEGACY remains terminal INCONCLUSIVE with its negative-control failure unchanged, P6C remains not run, and no hidden Key A semantics were exposed.
+
+Research 423 prospectively freezes the fresh Key B STATE+BIRTH automated control-plane design before any B semantics. It requires a clean fixed B root, exact frozen public inputs, stdin-only zero-tool fresh Claude sessions, no persistent or resumed session context, sequential STATE/classification/grouping execution, hidden mechanical attention checking, Key-B-own grouping eligibility projections, fail-closed HOLDs, and component commitment freeze before comparison. Research 421 authorizes implementation and qualification; live Key B semantics remain held until qualification passes.
 
 Production implementation, migration and authority switching remain held.
 
