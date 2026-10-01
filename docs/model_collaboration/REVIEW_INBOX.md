@@ -211,6 +211,8 @@ Research 430 records recovery of the Codexless Runtime Bridge after the current 
 
 Research 431 records the qualified P8 V6 grouping-contract repair. Release `p8-key-b-ops-v6` at private local-runtime source `a192ed3637ec96b4d492f712116c9b977e35965b` derives grouping schema endpoints from the mechanically supplied eligible-ID domain and deterministically canonicalizes pair orientation and pair-list ordering while preserving semantic join/split categories and fail-closed eligibility, self-pair, duplicate and cross-list-collision checks. The focused grouping regressions plus inherited P8/P7/P6/P5/P4, headless, public-surface, bounded-Git, compatibility and runtime-release regressions pass through managed preparation. Publication, restart and post-activation verification succeed with 177 tools and mismatchCount=0. P8 state remains 15/15 classification, attention PASS and 10/13 grouping; exactly one Research-429-authorized fresh resume_after_hold is next.
 
+Research 432 records successful use of that one fresh resume and freeze of the Key B STATE+BIRTH component commitment. The accepted prefix is preserved; Key B reaches 13/13 grouping events and grouping-floor PASS. The purpose-specific finalizer freezes commitment `fe12b806ff28d81171af87d435172495f51a6f45c2164f2eecbc8b58f2f23e84` over 548226 canonical bytes, with attention PASS, grouping-floor PASS, LEGACY excluded/INCONCLUSIVE and hidden details unexposed. Both STATE+BIRTH commitments now exist. Construct-comparison control-plane design/qualification is next; comparison must remain STATE+BIRTH-only and preserve hidden-key concealment.
+
 Production implementation, migration and authority switching remain held.
 
 ## Most recently completed obligation

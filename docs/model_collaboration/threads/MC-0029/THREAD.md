@@ -76,6 +76,7 @@ Independently derive Specification 028 reconciliation and AO-10 realization arch
     Key B grouping output contract                      HARNESS_INVALID / Research 429 / P8 V6 REPAIR NEXT
     Codexless command/exec compatibility recovery       QUALIFIED + MANAGED RELEASE VERIFIED / Research 430 / mismatchCount 0
     Key B P8 V6 grouping contract repair                 QUALIFIED + DEPLOYED + VERIFIED / Research 431 / ONE FRESH RESUME NEXT
+    Key B component-scoped commitment                    FROZEN / Research 432 / STATE+BIRTH ONLY / CONSTRUCT COMPARISON NEXT
     Fresh private Key Author B                       SEMANTIC EXECUTION STARTED / CURRENTLY HOLD / BLIND TO A
     Key construct-validity gate                   AFTER BOTH COMMITMENTS
     DRP-03 R2                                    AFTER HARNESS FREEZE
