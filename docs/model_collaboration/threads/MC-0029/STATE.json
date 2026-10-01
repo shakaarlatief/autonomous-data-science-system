@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_AUTHOR_A_P6B_EVIDENCE_INSUFFICIENT_GOVERNANCE",
+  "phase": "DRP03_R2_COMPONENT_SCOPED_CONTINUATION_OWNER_DECISION",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -60,7 +60,7 @@
       ]
     }
   ],
-  "next_expected_actor": "chatgpt",
+  "next_expected_actor": "human",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 419 records Key Author A P6B completion at 17/17 accepted sources followed by frozen finalization to EVIDENCE_INSUFFICIENT. The material-gap witness floor and already-realized false-gap control floor pass; the hidden source-level negative-control check fails. Hidden semantic details remain unexposed. The qualified control plane stops at P6B_EVIDENCE_INSUFFICIENT_AWAITING_GOVERNANCE and does not release P6C. Same-corpus semantic retry, label repair, selective rerun, control-role changes, threshold relaxation, evidence-horizon widening and control-plane bypass are prohibited. The result is not currently HARNESS_INVALID. Research 419 opens governed reconciliation of a newly exposed interaction between Research 330 component independence and Research 410/332 whole-key sequencing. P6C, Key A assembly/commitment, Key Author B, construct comparison and scoring remain unauthorized."
+    "notes": "Research 420 freezes a prospective component-scoped continuation amendment candidate after the observed Key A LEGACY evidence insufficiency. The candidate preserves Key A LEGACY as terminal INCONCLUSIVE, keeps P6C NOT_RUN, preserves the negative-control failure and all private artifacts, and prohibits same-corpus semantic retry. It proposes allowing a cryptographically bound STATE+BIRTH-only Key A commitment, followed only after prospective implementation/qualification by a fresh blind Key Author B over the same STATE+BIRTH scope. Historical LEGACY construct validity would remain NOT_ESTABLISHED and LEGACY-dependent lineage/migration/oracle-retirement uses remain blocked. No amendment execution, commitment, Key B session, construct comparison, or scoring is authorized before the owner decision."
   },
   "last_transition": {
-    "transition_id": "mc0029-p6b-evidence-insufficient-governance",
+    "transition_id": "mc0029-component-scoped-continuation-owner-decision",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 419 preserves the P6B EVIDENCE_INSUFFICIENT boundary and opens component-boundary governance without exposing or repairing hidden semantic outputs.",
-    "repository_head": "156c76cae54289cb7f08dcb5ad81dd14137deeb1"
+    "reason": "Research 420 freezes the component-scoped continuation candidate and routes the post-P6B governance question to explicit owner acceptance or rejection.",
+    "repository_head": "68cde76f1d4da417e9c7fdcad99008b07ef5d3d7"
   }
 }

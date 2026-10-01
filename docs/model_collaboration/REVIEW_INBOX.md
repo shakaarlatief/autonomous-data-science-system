@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-10-01
-**Status:** MC-0029 OPEN / KEY A P6B EVIDENCE_INSUFFICIENT / NEGATIVE-CONTROL CHECK FAIL / GOVERNANCE NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / COMPONENT-SCOPED CONTINUATION CANDIDATE / OWNER DECISION REQUIRED / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -189,7 +189,7 @@ Research 417 records P6A reaching COMPLETE and being frozen as PASS through the 
 
 Research 419 records the completed P6B execution and bounded finalization. All 17 frozen P6B sources are accepted/private-frozen. The material-gap witness floor and already-realized false-gap control floor pass, while the hidden source-level negative-control check fails, so `finalize_subphase` returns `EVIDENCE_INSUFFICIENT` and the purpose-specific control plane stops at governance without releasing P6C. The result is not currently classified as `HARNESS_INVALID`; same-corpus semantic retry and label repair remain prohibited. Research 419 identifies a new component-boundary question because LEGACY is frozen as non-gating for BIRTH/STATE owner-decision readiness, while the current monolithic Key A commitment sequence would make this failed LEGACY control block Key B and therefore BIRTH/STATE construct comparison.
 
-Next: governed component-boundary reconciliation. Do not rerun P5/P6 semantics, do not bypass the P6 control plane, and do not start P6C or Key Author B. Determine whether the accepted protocol should remain whole-sequence terminating or be prospectively amended with a quarantined/component-bounded continuation that preserves the failed LEGACY result while preventing LEGACY from silently gating independent BIRTH/STATE construct-validity work.
+Research 420 freezes the component-scoped continuation amendment candidate for owner decision. The recommendation is ACCEPT: preserve historical Key A LEGACY as terminal INCONCLUSIVE with P6C not run, while permitting only STATE+BIRTH component-scoped commitment and later blind Key B work after prospective implementation and qualification. No continuation execution is authorized before the owner decision.
 
 Production implementation, migration and authority switching remain held.
 
