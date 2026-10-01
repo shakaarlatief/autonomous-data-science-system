@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_AUTHOR_A_P6B_PREFIX3_EVIDENCE_QUERY_HOLD_FRESH_REPLACEMENT_NEXT",
+  "phase": "DRP03_R2_KEY_AUTHOR_A_P6B_EVIDENCE_INSUFFICIENT_GOVERNANCE",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 418 reconciles the live P6B state after the Research 417 prompt-separator remediation. P6A remains PASS/FROZEN. The live P6B runner accepted the first three frozen sources, then held on LSP-816d7caf56ea with P6_GIT_QUERY_FAILED before a fourth-source artifact was accepted. Evidence-root verification occurs before the source loop, so the new HOLD is classified only as a post-semantic-request mechanical evidence-query failure; the hidden request and failed semantic output were not inspected. The task-owner disposition is FRESH_REPLACEMENT_ALLOWED with the accepted prefix of three preserved and exactly one governed resume_after_hold attempt permitted. A repeated P6_GIT_QUERY_FAILED must stop for prospective diagnosis rather than automatic retry. P6C remains not started. Canonical Key A assembly, commitment generation, Key Author B, scoring, successor implementation and migration remain unauthorized. Research 348's Runtime-Bridge-only public-repository constraint remains active."
+    "notes": "Research 419 records Key Author A P6B completion at 17/17 accepted sources followed by frozen finalization to EVIDENCE_INSUFFICIENT. The material-gap witness floor and already-realized false-gap control floor pass; the hidden source-level negative-control check fails. Hidden semantic details remain unexposed. The qualified control plane stops at P6B_EVIDENCE_INSUFFICIENT_AWAITING_GOVERNANCE and does not release P6C. Same-corpus semantic retry, label repair, selective rerun, control-role changes, threshold relaxation, evidence-horizon widening and control-plane bypass are prohibited. The result is not currently HARNESS_INVALID. Research 419 opens governed reconciliation of a newly exposed interaction between Research 330 component independence and Research 410/332 whole-key sequencing. P6C, Key A assembly/commitment, Key Author B, construct comparison and scoring remain unauthorized."
   },
   "last_transition": {
-    "transition_id": "mc0029-p6b-prefix3-query-hold-replacement-authorized",
+    "transition_id": "mc0029-p6b-evidence-insufficient-governance",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 418 preserves the three-source accepted P6B prefix, classifies the fourth-source P6_GIT_QUERY_FAILED as a bounded evidence-query HOLD, and authorizes exactly one fresh governed replacement without semantic inspection.",
-    "repository_head": "2de84869c189f4cff770ff7a5b39d5cd1991fa39"
+    "reason": "Research 419 preserves the P6B EVIDENCE_INSUFFICIENT boundary and opens component-boundary governance without exposing or repairing hidden semantic outputs.",
+    "repository_head": "156c76cae54289cb7f08dcb5ad81dd14137deeb1"
   }
 }

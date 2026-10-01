@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-10-01
-**Status:** MC-0029 OPEN / KEY A P6A PASS / P6B PREFIX 3 ACCEPTED / EVIDENCE-QUERY HOLD / FRESH REPLACEMENT NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / KEY A P6B EVIDENCE_INSUFFICIENT / NEGATIVE-CONTROL CHECK FAIL / GOVERNANCE NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -187,9 +187,9 @@ Research 416 records that remediation as implemented, regression-qualified, publ
 
 Research 417 records P6A reaching COMPLETE and being frozen as PASS through the bounded finalizer, then the first P6B job stopping with `P6_CLAUDE_EXIT` before a transcript or accepted source existed. Synthetic CLI reproduction identifies a variadic `--add-dir` parsing defect: the positional prompt was consumed as another directory. The minimal remediation is frozen as `--add-dir <fixedEvidenceRoot> -- <prompt>` for P6B only; P6A/P6C invocation and all semantic/evidence rules remain unchanged. No P6B semantic output has been accepted or inspected.
 
-Research 418 reconciles the activated prompt-separator remediation with the subsequent live P6B run. The first three frozen P6B sources are accepted/private-frozen; the fourth source stopped with `P6_GIT_QUERY_FAILED` before its artifact was accepted. Because evidence-root verification precedes the source loop, this is bounded as a post-semantic-request mechanical evidence-query HOLD rather than a recurrence of the prompt-launch defect. Hidden semantic output remains uninspected. The task-owner disposition permits exactly one fresh `resume_after_hold` attempt with the accepted prefix preserved; a repeated query HOLD must stop for prospective diagnosis rather than retry looping.
+Research 419 records the completed P6B execution and bounded finalization. All 17 frozen P6B sources are accepted/private-frozen. The material-gap witness floor and already-realized false-gap control floor pass, while the hidden source-level negative-control check fails, so `finalize_subphase` returns `EVIDENCE_INSUFFICIENT` and the purpose-specific control plane stops at governance without releasing P6C. The result is not currently classified as `HARNESS_INVALID`; same-corpus semantic retry and label repair remain prohibited. Research 419 identifies a new component-boundary question because LEGACY is frozen as non-gating for BIRTH/STATE owner-decision readiness, while the current monolithic Key A commitment sequence would make this failed LEGACY control block Key B and therefore BIRTH/STATE construct comparison.
 
-Next: invoke the already-qualified governed `resume_after_hold` action exactly once, preserving the three-source accepted prefix and starting a fresh P6B replacement session. If `P6_GIT_QUERY_FAILED` recurs before the source is accepted, stop again for bounded query-contract/runtime diagnosis. P6C, canonical assembly, Key A commitment and Key Author B remain gated.
+Next: governed component-boundary reconciliation. Do not rerun P5/P6 semantics, do not bypass the P6 control plane, and do not start P6C or Key Author B. Determine whether the accepted protocol should remain whole-sequence terminating or be prospectively amended with a quarantined/component-bounded continuation that preserves the failed LEGACY result while preventing LEGACY from silently gating independent BIRTH/STATE construct-validity work.
 
 Production implementation, migration and authority switching remain held.
 

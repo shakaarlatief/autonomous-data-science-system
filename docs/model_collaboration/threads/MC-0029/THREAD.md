@@ -1,7 +1,7 @@
 # MC-0029 Thread: Specification 028 Reconciliation and AO-10 Realization Design
 
 **Thread:** MC-0029
-**Status:** OPEN / KEY A P6A PASS / P6B PREFIX 3 ACCEPTED / EVIDENCE-QUERY HOLD / FRESH REPLACEMENT NEXT
+**Status:** OPEN / KEY A P6B EVIDENCE_INSUFFICIENT / NEGATIVE-CONTROL CHECK FAIL / GOVERNANCE NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** 0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
@@ -63,7 +63,7 @@ Independently derive Specification 028 reconciliation and AO-10 realization arch
     Key A P4 BIRTH grouping                      COMPLETE / ALL 13 EVENTS ACCEPTED / HELD-OUT FLOORS PASS / Research 383
     Key A P5 LEGACY classification                COMPLETE / 18 OF 18 ACCEPTED / Research 405
     Key A LEGACY attention quality                 PASS / 1.0 BINARY / 1.0 KIND / NO REPLACEMENT / Research 409
-    Key A P6 post-classification LEGACY             P6A PASS / P6B PREFIX 3 ACCEPTED / EVIDENCE-QUERY HOLD / FRESH REPLACEMENT NEXT / Research 418
+    Key A P6 post-classification LEGACY             P6A PASS / P6B 17 OF 17 / EVIDENCE_INSUFFICIENT / GOVERNANCE NEXT / Research 419
     Fresh private Key Author B                    AFTER A COMMITMENT / BLIND TO A
     Key construct-validity gate                   AFTER BOTH COMMITMENTS
     DRP-03 R2                                    AFTER HARNESS FREEZE
