@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_B_P8_DEPLOYED_LIVE_SMOKE_TOOL_SCHEMA_REFRESH",
+  "phase": "DRP03_R2_KEY_B_P8_SEMANTIC_OUTPUT_HOLD_FRESH_REPLACEMENT_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 422 records the frozen Key A STATE+BIRTH component commitment without exposing hidden semantic bytes. Research 423 freezes the fresh Key B STATE+BIRTH control-plane design. Research 424 records implementation and managed deployment of purpose-specific P8 release p8-key-b-ops-v3 at private local-runtime source head 056a11807e1e0ff652fa4797657e37072b85631d, target version 0.1.1-preview.65-p8-key-b-live-smoke and 177 server tools. Publication, restart/activation and exact post-activation verification pass with mismatchCount=0; the prior V2 replacement-contract failure recovered fail-closed. The mandatory live non-semantic P8 prepare smoke has not run because this existing ChatGPT interaction has not refreshed its connector schema to expose codex.p8_key_b_operation. Generic command bypass remains prohibited. Key B semantic execution has not started and hidden semantic details remain unexposed."
+    "notes": "Research 425 records successful production P8 live smoke/preparation and explicit Key B authorization, followed by accepted STATE and one accepted BIRTH classification batch. The P8 runner then stopped fail-closed with P8_SEMANTIC_OUTPUT_INVALID before attention/grouping. Hidden Key B semantic output remains uninspected. The qualified P8 contract treats this as a resumable technical/attempt HOLD rather than the non-resumable attention-quality/grouping-floor gates. Exactly one fresh resume_after_hold is dispositioned with the accepted prefix preserved; recurrence before the next accepted semantic unit requires prospective prompt/schema diagnosis."
   },
   "last_transition": {
-    "transition_id": "mc0029-p8-key-b-control-deployed-live-smoke-tool-schema-refresh",
+    "transition_id": "mc0029-key-b-p8-semantic-output-hold-fresh-replacement",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 424 records P8 implementation and exact managed-release activation/verification while preserving the pre-semantic boundary; provider-local P8 tool-schema refresh and then bounded status/prepare are next.",
-    "repository_head": "64507dd8a67083a6bfe61f7697a2f0c12d9fb805"
+    "reason": "Research 425 preserves the first Key B P8 semantic-output validation HOLD and dispositions one fresh replacement without exposing or editing hidden semantics.",
+    "repository_head": "afa4dbd539ba49d81179cc9f538970c49e159a15"
   }
 }
