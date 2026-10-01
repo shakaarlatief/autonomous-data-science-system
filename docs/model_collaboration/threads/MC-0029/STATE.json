@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_KEY_B_P8_V6_IMPLEMENTATION_READY_AFTER_RUNTIME_RECOVERY",
+  "phase": "DRP03_R2_KEY_B_P8_V6_DEPLOYED_ONE_FRESH_RESUME_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 429 records that Key B completed STATE, all 15 BIRTH classification batches and the hidden attention gate, then accepted 10/13 grouping events before a P8_SEMANTIC_OUTPUT_INVALID HOLD. Mechanical inspection of the active P8 implementation, without opening held semantic output, shows the grouping generation schema is less strict than the post-validator for eligible IDs, pair orientation, pair-list ordering and cross-list collision. The held grouping attempt is HARNESS_INVALID. The accepted prefix remains frozen. Research 430 records complete recovery of the Codexless command/exec compatibility incident through managed release codex-command-exec-rpc-timeout-v2, with the 5-second command budget preserved, only the compatibility RPC deadline raised to 45 seconds, managed activation verified, mismatchCount 0, and P8 state unchanged. A narrow prospective P8 V6 grouping-contract repair remains authorized before one fresh resume."
+    "notes": "Research 429 records that Key B completed STATE, all 15 BIRTH classification batches and the hidden attention gate, then accepted 10/13 grouping events before a P8_SEMANTIC_OUTPUT_INVALID HOLD. Mechanical inspection of the active P8 implementation, without opening held semantic output, shows the grouping generation schema is less strict than the post-validator for eligible IDs, pair orientation, pair-list ordering and cross-list collision. The held grouping attempt is HARNESS_INVALID. The accepted prefix remains frozen. Research 430 records complete recovery of the Codexless command/exec compatibility incident. Research 431 records P8 V6 grouping-contract repair as qualified, published, activated and verified with mismatchCount 0, while live P8 state remains unchanged. Exactly one Research-429-authorized fresh resume_after_hold is now next."
   },
   "last_transition": {
-    "transition_id": "mc0029-codex-command-exec-compatibility-recovery",
+    "transition_id": "mc0029-p8-v6-grouping-contract-repair-deployed",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 430 records qualified recovery of the Codexless compatibility timeout incident, verifies P8 state preservation, and restores the governed path to the already-authorized P8 V6 repair.",
-    "repository_head": "43f71d9bb098316714e8f834a3db972a8d77324d"
+    "reason": "Research 431 records P8 V6 grouping-contract repair as qualified, deployed and verified with the accepted Key B prefix unchanged, satisfying the prerequisite for one fresh resume_after_hold.",
+    "repository_head": "f8ded73e84bfe2243eeae49aa306a9be698db715"
   }
 }
