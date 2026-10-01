@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_BOTH_COMPONENT_KEYS_FROZEN_CONSTRUCT_COMPARISON_CONTROL_NEXT",
+  "phase": "DRP03_R2_P9_CONSTRUCT_COMPARISON_DESIGN_FROZEN_IMPLEMENTATION_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 429 records the grouping HARNESS_INVALID boundary and authorizes one fresh post-V6 resume. Research 430 records Codexless compatibility recovery. Research 431 records P8 V6 as qualified and deployed with mismatchCount 0. Research 432 records that the single authorized resume completed all 13 grouping events, passed the grouping floor and froze Key B STATE+BIRTH commitment fe12b806ff28d81171af87d435172495f51a6f45c2164f2eecbc8b58f2f23e84 over 548226 canonical bytes without exposing hidden semantics. Both Key A and Key B STATE+BIRTH commitments are now frozen. Construct-comparison control-plane design and qualification is next; LEGACY remains INCONCLUSIVE and excluded."
+    "notes": "Research 429 records the grouping HARNESS_INVALID boundary and the one fresh post-V6 resume. Research 430 records Codexless compatibility recovery. Research 431 records P8 V6 qualification/deployment. Research 432 records completion of the single resume and frozen Key B STATE+BIRTH commitment fe12b806ff28d81171af87d435172495f51a6f45c2164f2eecbc8b58f2f23e84. Both A/B component commitments are frozen. Research 433 freezes the model-free purpose-specific P9 construct-comparison control plane before any comparison, including exact aggregate metric formulas, STATE-REF structural comparison, hidden-detail restrictions, fail-closed undefined-metric behavior and separate private comparison storage. P9 implementation and qualification are next; live comparison has not run. LEGACY remains INCONCLUSIVE and excluded."
   },
   "last_transition": {
-    "transition_id": "mc0029-key-b-component-commitment-frozen",
+    "transition_id": "mc0029-p9-construct-comparison-design-frozen",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 432 records successful completion of the single authorized resume, Key B grouping-floor PASS and frozen STATE+BIRTH component commitment; both component keys are now frozen before construct comparison.",
-    "repository_head": "76b5750ccef71844476238f35cbb0e94eb51318f"
+    "reason": "Research 433 freezes the purpose-specific model-free P9 STATE+BIRTH construct-comparison control plane before any hidden-key comparison and authorizes implementation and mechanical qualification.",
+    "repository_head": "3d7648df594ec5fdfd71a78d168543da0149f7a7"
   }
 }

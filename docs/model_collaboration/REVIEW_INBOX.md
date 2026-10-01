@@ -213,6 +213,8 @@ Research 431 records the qualified P8 V6 grouping-contract repair. Release `p8-k
 
 Research 432 records successful use of that one fresh resume and freeze of the Key B STATE+BIRTH component commitment. The accepted prefix is preserved; Key B reaches 13/13 grouping events and grouping-floor PASS. The purpose-specific finalizer freezes commitment `fe12b806ff28d81171af87d435172495f51a6f45c2164f2eecbc8b58f2f23e84` over 548226 canonical bytes, with attention PASS, grouping-floor PASS, LEGACY excluded/INCONCLUSIVE and hidden details unexposed. Both STATE+BIRTH commitments now exist. Construct-comparison control-plane design/qualification is next; comparison must remain STATE+BIRTH-only and preserve hidden-key concealment.
 
+Research 433 freezes the prospective P9 construct-comparison control plane before any live A/B comparison. The model-free action-only surface binds the exact frozen A/B commitments and STATE+BIRTH scope server-side, computes only the Research 330 aggregate agreement metrics and STATE-REF structural comparison, preserves item-level hidden semantics in a separate private comparison root, and fails closed on structural drift or undefined gate metrics. The ambiguity numerator is frozen conservatively as normative-union items marked ambiguous by either author because Research 330 fixes the denominator/cap but does not name a separate numerator operator. Implementation and mechanical qualification are authorized; live comparison remains not run.
+
 Production implementation, migration and authority switching remain held.
 
 ## Most recently completed obligation
