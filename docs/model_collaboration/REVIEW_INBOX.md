@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
-**Date:** 2026-10-01
-**Status:** MC-0029 OPEN / KEY B CLASSIFICATION COMPLETE + ATTENTION PASS / GROUPING 10 OF 13 / GROUPING OUTPUT-CONTRACT HARNESS INVALID / P8 V6 REPAIR NEXT / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Date:** 2026-10-02
+**Status:** MC-0029 OPEN + BLOCKED / DRP-03 R2 CONSTRUCT_UNDERDETERMINED / GOVERNED STOP / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -25,13 +25,15 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ### MC-0029: Specification 028 reconciliation and AO-10 integrated Project-system design
 
-MC-0029 remains OPEN. Independent/comparative architecture design is complete through Research 315 / Integrated Project-System V0.3.
+MC-0029 remains OPEN but is blocked at the DRP-03 R2 construct-validity boundary. Independent/comparative architecture design is complete through Research 315 / Integrated Project-System V0.3.
+
+Research 435 records the single authorized P9 live comparison and freezes the result as `CONSTRUCT_UNDERDETERMINED`. Required BIRTH gates fail for binary normativity kappa (0.774540330104 < 0.80), normative-kind kappa (0.502907383797 < 0.75), material positive specific agreement (0.841737393909 < 0.90) and grouping-constraint agreement (0.068333333333 < 0.80); the overall ambiguity fraction is 0.104333868379 > 0.10. STATE-REF has 18/24 exact structural agreements, with one fact-validity disagreement fixture and five final-state disagreement fixtures. The deterministic private comparison record is frozen at SHA-256 `156622e2e3790a2f810adb2b9038256706ce9d82861c696c4f4c5e1db34e67b0` over 297787 bytes. Hidden semantic details remain unexposed. Research 433 therefore requires a governed stop: no retry, relabeling, threshold tuning, final-key creation or owner-adjudication rescue. MC-0029 remains open but blocked at this construct-validity boundary pending an explicit owner route.
 
 Research 316 now freezes the complete decision-relevant empirical program before any result is observed. Decision probes are DRP-01 shared semantic substrate, DRP-02 semantic navigation, DRP-03 obligation units/birth, DRP-04 KA-R51 precision, DRP-05a ActionShape classifiability, DRP-05b mediation/interceptability, DRP-06 bounded orientation, DRP-07 Specification 028 lineage/contract partition, DRP-08 adoption economics and DRP-09 assurance-request claim integrity.
 
 The protocol freezes result classes, no-tuning rules, fixture/corpus rules, thresholds, falsifiers, cross-probe dependencies and execution order. Every concrete probe still requires a fixture/harness freeze before execution.
 
-No result has been observed. No Claude obligation is currently pending. Fresh independent collaboration will be introduced where the frozen protocol requires it.
+Decision-probe results have been observed only under their frozen protocols. No Claude obligation is currently pending. Fresh independent collaboration is introduced only where the governing protocol requires it.
 
 Research 317 froze the DRP-09 fixture/harness. Research 318 records a valid PASS: 13/13 cases and both seeded claim-suppression defects caught. The V0.3 AO/WARRANT-F seam is retained without amendment.
 
@@ -216,6 +218,8 @@ Research 432 records successful use of that one fresh resume and freeze of the K
 Research 433 freezes the prospective P9 construct-comparison control plane before any live A/B comparison. The model-free action-only surface binds the exact frozen A/B commitments and STATE+BIRTH scope server-side, computes only the Research 330 aggregate agreement metrics and STATE-REF structural comparison, preserves item-level hidden semantics in a separate private comparison root, and fails closed on structural drift or undefined gate metrics. The ambiguity numerator is frozen conservatively as normative-union items marked ambiguous by either author because Research 330 fixes the denominator/cap but does not name a separate numerator operator. Implementation and mechanical qualification are authorized; live comparison remains not run.
 
 Research 434 records P9 qualification and deployment. V1 failed closed only because two inherited bounded-Git tests still asserted the pre-P9 tool count of 177; no construct comparison ran. Fresh V2 updates those cardinality assertions to 178, passes the dedicated P9 and complete inherited regressions, and is published, restarted and verified at private local-runtime source `4596045e4dab239dca931c7027e17f4e83790877` as `p9-construct-comparison-v2` / `0.1.1-preview.72-p9-construct-comparison`, manifest `02f0f7978ec16592681c6c14104ea8f9f58301c76c2affde227be9c7503b60f5`, with 178 tools and mismatchCount=0. Live comparison remains not run; P9 status then run_comparison is next under Research 433 authority.
+
+Research 435 records the single authorized P9 live comparison and freezes the result as `CONSTRUCT_UNDERDETERMINED`. Required BIRTH gates fail for binary normativity kappa (0.774540330104 < 0.80), normative-kind kappa (0.502907383797 < 0.75), material positive specific agreement (0.841737393909 < 0.90) and grouping-constraint agreement (0.068333333333 < 0.80); the overall ambiguity fraction is 0.104333868379 > 0.10. STATE-REF has 18/24 exact structural agreements, with one fact-validity disagreement fixture and five final-state disagreement fixtures. The deterministic private comparison record is frozen at SHA-256 `156622e2e3790a2f810adb2b9038256706ce9d82861c696c4f4c5e1db34e67b0` over 297787 bytes. Hidden semantic details remain unexposed. Research 433 therefore requires a governed stop: no retry, relabeling, threshold tuning, final-key creation or owner-adjudication rescue. MC-0029 remains open but blocked at this construct-validity boundary pending an explicit owner route.
 
 Production implementation, migration and authority switching remain held.
 

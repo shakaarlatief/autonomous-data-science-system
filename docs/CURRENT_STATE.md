@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 770
+**Checkpoint:** 771
 **Date:** 2026-10-02
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -13,8 +13,8 @@
 ```text
 Interaction environment  ChatGPT
 Project / workspace      Autonomous Data Science System
-Interaction session      chatgpt-34
-Conversation title       34 - Semantic Qualification and Empirical Validation
+Interaction session      chatgpt-35
+Conversation title       35 - Semantic Qualification and Reconciliation
 Primary collaborator     ChatGPT
 ```
 
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: Specification 028 reconciliation + AO-10 realization design / MC-0029 independent review
+## Current active stage: DRP-03 R2 construct-underdetermined stop / Specification 028 reconciliation
+
+Checkpoint 771 / Research 435 records the single authorized P9 live STATE+BIRTH construct comparison. P9 verified both frozen commitments, aligned 2709 BIRTH items and froze comparison record `156622e2e3790a2f810adb2b9038256706ce9d82861c696c4f4c5e1db34e67b0` over 297787 bytes without exposing hidden semantic details. The preregistered construct gate fails: binary normativity kappa is 0.774540330104 < 0.80, normative-kind kappa is 0.502907383797 < 0.75, material positive specific agreement is 0.841737393909 < 0.90, grouping-constraint agreement is 0.068333333333 < 0.80, and the overall ambiguity fraction is 0.104333868379 > 0.10; normative positive specific agreement alone passes at 0.865209471767 >= 0.80. STATE-REF also disagrees materially, with 18/24 exact structural agreements, one fact-validity disagreement fixture and five final-state disagreement fixtures. The frozen overall outcome is `CONSTRUCT_UNDERDETERMINED`. Under Research 433 the sequence stops: no retry, relabeling, threshold tuning, final-key creation or owner adjudication as a rescue path is permitted. Historical LEGACY remains INCONCLUSIVE / excluded and P6C remains NOT_RUN. Any continuation now requires an explicit new owner route that respects the failed construct gate.
 
 Checkpoint 770 / Research 434 records P9 construct-comparison control-plane qualification and deployment. Immutable V1 at local-runtime source `de409fee98f38526578bed257e452c2fafd68534` prepared successfully but failed closed during managed publication because two inherited bounded-Git regressions still asserted the pre-P9 public tool count of 177. No semantic comparison ran. Fresh immutable V2 at source `4596045e4dab239dca931c7027e17f4e83790877` prospectively updates only those cardinality assertions to 178, passes the complete dedicated and inherited regression set, and is published, restarted and post-activation verified as `p9-construct-comparison-v2` / `0.1.1-preview.72-p9-construct-comparison` with 178 tools and mismatchCount=0. P9 remains model-free, STATE+BIRTH-only and public-safe; historical LEGACY remains INCONCLUSIVE / construct validity NOT_ESTABLISHED / P6C NOT_RUN. The live A/B comparison has not run. Research 433 already authorizes P9 status followed by the mechanical run_comparison after verified deployment.
 Checkpoint 769 / Research 433 freezes the purpose-specific P9 STATE+BIRTH construct-comparison control-plane design before any A/B comparison. P9 is model-free, binds the exact frozen Key A and Key B commitments server-side, reads both key roots without exposing their semantic bytes, writes only to a separate fixed comparison root, and may return only preregistered aggregate construct metrics and bounded control state. The frozen BIRTH metrics are normative prevalence, binary Cohen kappa, normative positive specific agreement, normative-kind kappa, material positive specific agreement and grouping-constraint agreement under Research 330 thresholds; ambiguity uses the Research 330 normative-union denominator with a conservatively frozen either-author ambiguity numerator. STATE-REF compares only the material structural expected outputs, excluding free-text reason. Any failed or undefined pre-adjudication metric or material STATE disagreement yields CONSTRUCT_UNDERDETERMINED; owner adjudication cannot rescue a failed gate. Implementation and qualification are authorized; live comparison has not run.
