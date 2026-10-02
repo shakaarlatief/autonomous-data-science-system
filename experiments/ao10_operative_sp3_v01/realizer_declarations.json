@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "realizers": [
+    {
+      "realizer_id": "SP3-A",
+      "artifact_ref": "acceptance_bundle_prototype.json",
+      "artifact_sha256": "6308f8fccbae04fdb5e992c074d9828a573d66892896660ebbb2cf07471ffbe7",
+      "realizer_owner": "governance-development",
+      "scope_ref": "OPERATIVE-V0.2",
+      "realizes": [
+        {
+          "clause_ref": "SP3-R1",
+          "coverage_mode": "FULL"
+        },
+        {
+          "clause_ref": "SP3-R3",
+          "coverage_mode": "FULL"
+        },
+        {
+          "clause_ref": "SP3-R4",
+          "coverage_mode": "FULL"
+        }
+      ]
+    },
+    {
+      "realizer_id": "SP3-B",
+      "artifact_ref": "predicate_engine_bundle.json",
+      "artifact_sha256": "2ed7e3dc1d160f54991ccb33210938b3b0661526b429fcf146a8af55420e4835",
+      "realizer_owner": "project-system-verification",
+      "scope_ref": "OPERATIVE-V0.2",
+      "realizes": [
+        {
+          "clause_ref": "SP3-R2",
+          "coverage_mode": "FULL"
+        },
+        {
+          "clause_ref": "SP3-R3",
+          "coverage_mode": "FULL"
+        }
+      ]
+    },
+    {
+      "realizer_id": "SP3-C",
+      "artifact_ref": "domain_reference_prototype.json",
+      "artifact_sha256": "f8e23c283b25961c69c6e949684c93557c7d9f7d29e0829eab442a8dee60e649",
+      "realizer_owner": "domain-contract-integration",
+      "scope_ref": "OPERATIVE-V0.2",
+      "realizes": [
+        {
+          "clause_ref": "SP3-R3",
+          "coverage_mode": "FULL"
+        },
+        {
+          "clause_ref": "SP3-R4",
+          "coverage_mode": "FULL"
+        }
+      ]
+    }
+  ]
+}

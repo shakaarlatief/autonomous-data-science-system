@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "artifact_id": "SP3-A-ARTIFACT",
+  "kind": "development_acceptance_bundle",
+  "accepted_meaning_boundary": {
+    "human_carrier_ref": "research:442",
+    "operative_component_ref": "sp3:requirements",
+    "domain_contract_refs": [
+      "WARRANT-F",
+      "AO-control",
+      "Git-lifecycle"
+    ],
+    "component_revisions_bound": true
+  },
+  "typed_reference_mode": true
+}

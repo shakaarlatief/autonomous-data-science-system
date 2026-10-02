@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "requirements": [
+    {
+      "clause_ref": "SP3-R1",
+      "origin": "SP2-C3/C3-CL01",
+      "active": true,
+      "scope_ref": "OPERATIVE-V0.2"
+    },
+    {
+      "clause_ref": "SP3-R2",
+      "origin": "SP2-C2/C2-CL03",
+      "active": true,
+      "scope_ref": "OPERATIVE-V0.2"
+    },
+    {
+      "clause_ref": "SP3-R3",
+      "origin": "SP2-C3/C3-CL03",
+      "active": true,
+      "scope_ref": "OPERATIVE-V0.2"
+    },
+    {
+      "clause_ref": "SP3-R4",
+      "origin": "SP2-C3/C3-CL04",
+      "active": true,
+      "scope_ref": "OPERATIVE-V0.2"
+    }
+  ]
+}

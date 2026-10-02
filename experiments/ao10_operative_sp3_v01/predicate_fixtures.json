@@ -1,0 +1,389 @@
+{
+  "schema_version": 1,
+  "fixtures": [
+    {
+      "fixture_id": "F01",
+      "facts": {
+        "clause_active": true,
+        "coverage_edges_present": true,
+        "coverage_edges_valid": true,
+        "deferral_present": false,
+        "deferral_authorized": false,
+        "deferral_scope_valid": false,
+        "deferral_temporally_valid": false,
+        "evidence_required": false,
+        "evidence_present": false,
+        "evidence_exact_subject": false,
+        "evidence_fresh": false,
+        "qualification_required": false,
+        "qualification_passed": false,
+        "activation_required": false,
+        "activation_effective": false,
+        "conflict_present": false
+      },
+      "expected": {
+        "coverage_present": true,
+        "coverage_valid": true,
+        "deferral_effective": false,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "conflict_present": false,
+        "realization_satisfied": true,
+        "review_required": false
+      }
+    },
+    {
+      "fixture_id": "F02",
+      "facts": {
+        "clause_active": true,
+        "coverage_edges_present": true,
+        "coverage_edges_valid": true,
+        "deferral_present": false,
+        "deferral_authorized": false,
+        "deferral_scope_valid": false,
+        "deferral_temporally_valid": false,
+        "evidence_required": true,
+        "evidence_present": true,
+        "evidence_exact_subject": true,
+        "evidence_fresh": true,
+        "qualification_required": true,
+        "qualification_passed": true,
+        "activation_required": true,
+        "activation_effective": true,
+        "conflict_present": false
+      },
+      "expected": {
+        "coverage_present": true,
+        "coverage_valid": true,
+        "deferral_effective": false,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "conflict_present": false,
+        "realization_satisfied": true,
+        "review_required": false
+      }
+    },
+    {
+      "fixture_id": "F03",
+      "facts": {
+        "clause_active": true,
+        "coverage_edges_present": false,
+        "coverage_edges_valid": false,
+        "deferral_present": false,
+        "deferral_authorized": false,
+        "deferral_scope_valid": false,
+        "deferral_temporally_valid": false,
+        "evidence_required": false,
+        "evidence_present": false,
+        "evidence_exact_subject": false,
+        "evidence_fresh": false,
+        "qualification_required": false,
+        "qualification_passed": false,
+        "activation_required": false,
+        "activation_effective": false,
+        "conflict_present": false
+      },
+      "expected": {
+        "coverage_present": false,
+        "coverage_valid": false,
+        "deferral_effective": false,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "conflict_present": false,
+        "realization_satisfied": false,
+        "review_required": false
+      }
+    },
+    {
+      "fixture_id": "F04",
+      "facts": {
+        "clause_active": true,
+        "coverage_edges_present": true,
+        "coverage_edges_valid": false,
+        "deferral_present": false,
+        "deferral_authorized": false,
+        "deferral_scope_valid": false,
+        "deferral_temporally_valid": false,
+        "evidence_required": false,
+        "evidence_present": false,
+        "evidence_exact_subject": false,
+        "evidence_fresh": false,
+        "qualification_required": false,
+        "qualification_passed": false,
+        "activation_required": false,
+        "activation_effective": false,
+        "conflict_present": false
+      },
+      "expected": {
+        "coverage_present": true,
+        "coverage_valid": false,
+        "deferral_effective": false,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "conflict_present": false,
+        "realization_satisfied": false,
+        "review_required": true
+      }
+    },
+    {
+      "fixture_id": "F05",
+      "facts": {
+        "clause_active": true,
+        "coverage_edges_present": false,
+        "coverage_edges_valid": false,
+        "deferral_present": true,
+        "deferral_authorized": true,
+        "deferral_scope_valid": true,
+        "deferral_temporally_valid": true,
+        "evidence_required": false,
+        "evidence_present": false,
+        "evidence_exact_subject": false,
+        "evidence_fresh": false,
+        "qualification_required": false,
+        "qualification_passed": false,
+        "activation_required": false,
+        "activation_effective": false,
+        "conflict_present": false
+      },
+      "expected": {
+        "coverage_present": false,
+        "coverage_valid": false,
+        "deferral_effective": true,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "conflict_present": false,
+        "realization_satisfied": true,
+        "review_required": false
+      }
+    },
+    {
+      "fixture_id": "F06",
+      "facts": {
+        "clause_active": true,
+        "coverage_edges_present": false,
+        "coverage_edges_valid": false,
+        "deferral_present": true,
+        "deferral_authorized": false,
+        "deferral_scope_valid": true,
+        "deferral_temporally_valid": true,
+        "evidence_required": false,
+        "evidence_present": false,
+        "evidence_exact_subject": false,
+        "evidence_fresh": false,
+        "qualification_required": false,
+        "qualification_passed": false,
+        "activation_required": false,
+        "activation_effective": false,
+        "conflict_present": false
+      },
+      "expected": {
+        "coverage_present": false,
+        "coverage_valid": false,
+        "deferral_effective": false,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "conflict_present": false,
+        "realization_satisfied": false,
+        "review_required": true
+      }
+    },
+    {
+      "fixture_id": "F07",
+      "facts": {
+        "clause_active": true,
+        "coverage_edges_present": true,
+        "coverage_edges_valid": true,
+        "deferral_present": false,
+        "deferral_authorized": false,
+        "deferral_scope_valid": false,
+        "deferral_temporally_valid": false,
+        "evidence_required": true,
+        "evidence_present": true,
+        "evidence_exact_subject": true,
+        "evidence_fresh": false,
+        "qualification_required": false,
+        "qualification_passed": false,
+        "activation_required": false,
+        "activation_effective": false,
+        "conflict_present": false
+      },
+      "expected": {
+        "coverage_present": true,
+        "coverage_valid": true,
+        "deferral_effective": false,
+        "evidence_valid": false,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "conflict_present": false,
+        "realization_satisfied": false,
+        "review_required": false
+      }
+    },
+    {
+      "fixture_id": "F08",
+      "facts": {
+        "clause_active": true,
+        "coverage_edges_present": true,
+        "coverage_edges_valid": true,
+        "deferral_present": false,
+        "deferral_authorized": false,
+        "deferral_scope_valid": false,
+        "deferral_temporally_valid": false,
+        "evidence_required": false,
+        "evidence_present": false,
+        "evidence_exact_subject": false,
+        "evidence_fresh": false,
+        "qualification_required": true,
+        "qualification_passed": false,
+        "activation_required": false,
+        "activation_effective": false,
+        "conflict_present": false
+      },
+      "expected": {
+        "coverage_present": true,
+        "coverage_valid": true,
+        "deferral_effective": false,
+        "evidence_valid": true,
+        "qualification_complete": false,
+        "activation_effective": true,
+        "conflict_present": false,
+        "realization_satisfied": false,
+        "review_required": false
+      }
+    },
+    {
+      "fixture_id": "F09",
+      "facts": {
+        "clause_active": true,
+        "coverage_edges_present": true,
+        "coverage_edges_valid": true,
+        "deferral_present": false,
+        "deferral_authorized": false,
+        "deferral_scope_valid": false,
+        "deferral_temporally_valid": false,
+        "evidence_required": false,
+        "evidence_present": false,
+        "evidence_exact_subject": false,
+        "evidence_fresh": false,
+        "qualification_required": false,
+        "qualification_passed": false,
+        "activation_required": true,
+        "activation_effective": false,
+        "conflict_present": false
+      },
+      "expected": {
+        "coverage_present": true,
+        "coverage_valid": true,
+        "deferral_effective": false,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": false,
+        "conflict_present": false,
+        "realization_satisfied": false,
+        "review_required": false
+      }
+    },
+    {
+      "fixture_id": "F10",
+      "facts": {
+        "clause_active": true,
+        "coverage_edges_present": true,
+        "coverage_edges_valid": true,
+        "deferral_present": false,
+        "deferral_authorized": false,
+        "deferral_scope_valid": false,
+        "deferral_temporally_valid": false,
+        "evidence_required": false,
+        "evidence_present": false,
+        "evidence_exact_subject": false,
+        "evidence_fresh": false,
+        "qualification_required": false,
+        "qualification_passed": false,
+        "activation_required": false,
+        "activation_effective": false,
+        "conflict_present": true
+      },
+      "expected": {
+        "coverage_present": true,
+        "coverage_valid": true,
+        "deferral_effective": false,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "conflict_present": true,
+        "realization_satisfied": false,
+        "review_required": true
+      }
+    },
+    {
+      "fixture_id": "F11",
+      "facts": {
+        "clause_active": false,
+        "coverage_edges_present": true,
+        "coverage_edges_valid": true,
+        "deferral_present": false,
+        "deferral_authorized": false,
+        "deferral_scope_valid": false,
+        "deferral_temporally_valid": false,
+        "evidence_required": false,
+        "evidence_present": false,
+        "evidence_exact_subject": false,
+        "evidence_fresh": false,
+        "qualification_required": false,
+        "qualification_passed": false,
+        "activation_required": false,
+        "activation_effective": false,
+        "conflict_present": false
+      },
+      "expected": {
+        "coverage_present": true,
+        "coverage_valid": true,
+        "deferral_effective": false,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "conflict_present": false,
+        "realization_satisfied": false,
+        "review_required": false
+      }
+    },
+    {
+      "fixture_id": "F12",
+      "facts": {
+        "clause_active": true,
+        "coverage_edges_present": true,
+        "coverage_edges_valid": true,
+        "deferral_present": false,
+        "deferral_authorized": false,
+        "deferral_scope_valid": false,
+        "deferral_temporally_valid": false,
+        "evidence_required": true,
+        "evidence_present": true,
+        "evidence_exact_subject": false,
+        "evidence_fresh": true,
+        "qualification_required": false,
+        "qualification_passed": false,
+        "activation_required": false,
+        "activation_effective": false,
+        "conflict_present": false
+      },
+      "expected": {
+        "coverage_present": true,
+        "coverage_valid": true,
+        "deferral_effective": false,
+        "evidence_valid": false,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "conflict_present": false,
+        "realization_satisfied": false,
+        "review_required": false
+      }
+    }
+  ]
+}

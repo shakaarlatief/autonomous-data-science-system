@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "probe_id": "OPERATIVE-SP3-V01",
+  "protocol_commit": "687959734c2f17a39a4eb3aaa3365ea6b5b257e0",
+  "executed": false,
+  "files": {
+    "requirements.json": "a3039866b086ae8d815c939bfc43beaa7210f1fcb6b644ce0e77a3cdbe956a22",
+    "acceptance_bundle_prototype.json": "6308f8fccbae04fdb5e992c074d9828a573d66892896660ebbb2cf07471ffbe7",
+    "domain_reference_prototype.json": "f8e23c283b25961c69c6e949684c93557c7d9f7d29e0829eab442a8dee60e649",
+    "predicate_fixtures.json": "d23d019375d264a567595e5ff3d7ff5c374046005046b1a06fec16f2951160d1",
+    "predicate_engine_a.py": "a9caef49f68ac9db48e167cf3f12b6693e0326495f747ef8db9d8a58cae04ee1",
+    "predicate_engine_b.py": "993a7d2b711ea2c0443bbc16a3b2009532cb7a10fbb48b40e9ed275f31e7ff4b",
+    "predicate_engine_bundle.json": "2ed7e3dc1d160f54991ccb33210938b3b0661526b429fcf146a8af55420e4835",
+    "realizer_declarations.json": "94c3d5678b5e198d5930fc6938db247ce16e2803f10be451709797ec9cf335e8",
+    "coverage_negative_controls.json": "2979a5a047061789ebccdf71fe858a028b681cb2b1752f3a0eb38aa4f9525bbe",
+    "coverage_validator.py": "5d01d56a21ef0effa280ffb22727df6c77db9d4bee4713bbd5a8ef2486b7c186",
+    "run_sp3.py": "b5275185fa9332ff4075d85122e4ecfc8fcab7a949c8d6ee5cf74ef88699dc2f"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "artifact_id": "SP3-B-ARTIFACT",
+  "kind": "development_predicate_engine_bundle",
+  "engine_a": {
+    "path": "predicate_engine_a.py",
+    "sha256": "a9caef49f68ac9db48e167cf3f12b6693e0326495f747ef8db9d8a58cae04ee1"
+  },
+  "engine_b": {
+    "path": "predicate_engine_b.py",
+    "sha256": "993a7d2b711ea2c0443bbc16a3b2009532cb7a10fbb48b40e9ed275f31e7ff4b"
+  },
+  "fixture_contract_ref": "predicate_fixtures.json",
+  "typed_reference_mode": true
+}

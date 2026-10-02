@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "controls": [
+    {
+      "id": "N01_UNKNOWN_CLAUSE",
+      "base_realizer": "SP3-A",
+      "mutation": {
+        "clause_ref": "SP3-R999"
+      },
+      "expected_valid": false
+    },
+    {
+      "id": "N02_STALE_SHA",
+      "base_realizer": "SP3-A",
+      "mutation": {
+        "artifact_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "expected_valid": false
+    },
+    {
+      "id": "N03_WRONG_OWNER",
+      "base_realizer": "SP3-B",
+      "mutation": {
+        "realizer_owner": "wrong-owner"
+      },
+      "expected_valid": false
+    },
+    {
+      "id": "N04_SCOPE_MISMATCH",
+      "base_realizer": "SP3-C",
+      "mutation": {
+        "scope_ref": "OTHER-SCOPE"
+      },
+      "expected_valid": false
+    }
+  ]
+}

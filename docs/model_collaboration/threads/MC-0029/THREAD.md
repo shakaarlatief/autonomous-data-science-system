@@ -911,3 +911,25 @@ Current boundary:
     HIDDEN_R2_ITEM_DETAILS=SEALED
     OWNER_PARTICIPATION_REQUIRED=false
     NEXT=IMPLEMENT_AND_EXECUTE_SP3
+
+## OPERATIVE SP-3 implementation freeze
+
+Research 448 freezes the exact SP-3 implementation before execution.
+
+    implementation manifest SHA-256
+        336bf4629ffeb590aab05197971975b469357b9001f8956c2dae7b05626c8b48
+
+    pre-result files
+        11
+
+    business-rule execution observed
+        no
+
+Only syntax parsing and manifest-hash verification have occurred.
+
+Current boundary:
+
+    PHASE=DRP03_OPERATIVE_SP3_FROZEN_RUN
+    SP3_EXECUTED=false
+    OWNER_PARTICIPATION_REQUIRED=false
+    NEXT=EXECUTE_SP3_ONCE

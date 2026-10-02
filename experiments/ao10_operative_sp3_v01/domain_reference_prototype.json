@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "artifact_id": "SP3-C-ARTIFACT",
+  "kind": "development_domain_reference_prototype",
+  "references": [
+    {
+      "consumer": "OPERATIVE",
+      "domain_owner": "WARRANT-F",
+      "contract_ref": "warrant-f:effective-policy",
+      "copied_semantics": false
+    },
+    {
+      "consumer": "OPERATIVE",
+      "domain_owner": "Git-lifecycle",
+      "contract_ref": "git:integration-contract",
+      "copied_semantics": false
+    },
+    {
+      "consumer": "OPERATIVE",
+      "domain_owner": "AO-control",
+      "contract_ref": "ao:action-contract",
+      "copied_semantics": false
+    }
+  ],
+  "typed_reference_mode": true
+}
