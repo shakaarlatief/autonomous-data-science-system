@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "UNRESOLVED",
-  "phase": "DRP03_OPERATIVE_SP4_CLAUDE_DETECTOR",
+  "phase": "DRP03_OPERATIVE_SP5_PROTOCOL_FREEZE",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -60,7 +60,7 @@
       ]
     }
   ],
-  "next_expected_actor": "claude",
+  "next_expected_actor": "chatgpt",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,7 +81,7 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 435 remains frozen CONSTRUCT_UNDERDETERMINED and hidden R2 item-level semantics remain sealed. Research 449 records SP3_MECHANISM_PLAUSIBLE. Research 450 now prospectively freezes SP-4 before any annotation: 24 shuffled recital excerpts, hidden balanced 12/12 LEAK key, qualified-project-detector contract, fixed scorer thresholds, and a frozen lexical baseline. Claude interaction claude-04 is the next actor for one blind pass. Claude may read DETECTOR_PACKET.md, reviewer_packet.json, annotation_schema.json and current MC-0029 routing only. Before committing Message 013 Claude must not inspect evaluator_key.json, lexical_baseline.py, score_sp4.py, future SP-4 result material, or hidden R2 item-level semantics. The required write surface is docs/model_collaboration/threads/MC-0029/messages/013_claude_sp4_recital_leak_annotation.json. No owner normative judgment is required."
+    "notes": "Research 435 remains frozen CONSTRUCT_UNDERDETERMINED and hidden R2 item-level semantics remain sealed. Claude Message 013 was committed blind at 692da0f31d47a3c7a226ab80f2d764eff1f936cf and changed only the permitted annotation file. Research 451 scores SP-4 as SP4_DETECTOR_PLAUSIBLE: Claude TP=12/FN=0/FP=0/TN=12, recall=precision=specificity=1.0; the frozen crude lexical baseline has recall=0.75, precision=0.6923, specificity=0.6667. SP-4 supports an advisory semantic leak detector without granting detector authority or selecting a model technology. The 24 items are development-burned. Next actor is ChatGPT to freeze the SP-5 seeded-error owner-review efficacy protocol. Explicit informed owner authorization is required before any seeded-error review execution or owner-facing seeded packet."
   },
   "last_transition": {
     "transition_id": "mc0029-drp03-r2-construct-underdetermined",

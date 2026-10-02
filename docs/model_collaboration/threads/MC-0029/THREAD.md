@@ -1000,3 +1000,36 @@ Current boundary:
     PHASE=DRP03_OPERATIVE_SP4_CLAUDE_DETECTOR
     NEXT_ACTOR=claude
     NEXT=CLAUDE_MESSAGE013_SP4_RECITAL_LEAK_ANNOTATION
+
+## OPERATIVE SP-4 result
+
+Claude Message 013 was committed blind and changed only the permitted annotation file.
+
+Frozen scoring:
+
+    Claude detector
+        TP 12 / FN 0 / FP 0 / TN 12
+        recall       1.0
+        precision    1.0
+        specificity  1.0
+
+    crude lexical baseline
+        TP 9 / FN 3 / FP 4 / TN 8
+        recall       0.75
+        precision    0.692307692308
+        specificity  0.666666666667
+
+Result:
+
+    SP4_DETECTOR_PLAUSIBLE
+
+The semantic detector remains advisory and non-authoritative.
+
+All 24 cases are development-burned.
+
+Current boundary:
+
+    PHASE=DRP03_OPERATIVE_SP5_PROTOCOL_FREEZE
+    OWNER_PARTICIPATION_REQUIRED_NOW=false
+    SEEDED_OWNER_REVIEW_EXECUTION_AUTHORIZED=false
+    NEXT=FREEZE_SP5_OWNER_REVIEW_EFFICACY_PROTOCOL
