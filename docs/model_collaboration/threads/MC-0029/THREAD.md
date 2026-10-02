@@ -885,3 +885,29 @@ Current boundary:
     OWNER_PARTICIPATION_REQUIRED=false
     HIDDEN_R2_ITEM_DETAILS=SEALED
     NEXT=FREEZE_SP3_REALIZER_COVERAGE_EXECUTABLE_PREDICATE_PROTOCOL
+
+## OPERATIVE SP-3 protocol freeze
+
+Research 447 freezes SP-3 before implementation.
+
+Probe surface:
+
+    requirement fixtures            4
+    development realizers           3
+    explicit many-to-many coverage  yes
+    predicate fixtures              12
+    independent implementations     2
+    coverage negative controls      4
+
+Coverage must be explicitly declared by the development realizer and validated through exact clause/artifact/owner/scope identity.
+
+The predicate evaluators consume bounded source facts only.
+
+No canonical grouping and no free-text semantic inference are allowed.
+
+Current boundary:
+
+    PHASE=DRP03_OPERATIVE_SP3_EXECUTION
+    HIDDEN_R2_ITEM_DETAILS=SEALED
+    OWNER_PARTICIPATION_REQUIRED=false
+    NEXT=IMPLEMENT_AND_EXECUTE_SP3
