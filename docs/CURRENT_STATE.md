@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 775
+**Checkpoint:** 776
 **Date:** 2026-10-02
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: OPERATIVE SP-0 execution / Specification 028 reconciliation
+## Current active stage: OPERATIVE SP-1 competency inventory / Specification 028 reconciliation
+
+Checkpoint 776 / Research 440 records SP-0 = MIXED_EXISTING_IDIOM. Across Research 300-437, 123/138 records (0.8913) have a trailing assignment-style block, strongly confirming the existing compact operative-summary habit. However, the prospectively selected eight-record review found 70 consequential effect groups represented in terminal blocks and 39 consequential effect groups only in prose, for prose-only share 0.3578. Therefore current closing blocks are common but not exhaustive machine-operative contracts. OPERATIVE's low-cost formalization hypothesis is only partially supported: a future operative grammar would need selective additional authoring/generation for consequential controls that current summaries omit. The SP-1 protocol remains unchanged from Research 439 and executes next to determine which omitted semantics machines actually need and whether a bounded grammar is plausible. Hidden R2 details remain sealed and owner participation is not required.
 
 Checkpoint 775 / Research 439 prospectively freezes the first two OPERATIVE development probes against exact public evidence base 8e8aed19cf3e1c159f74fdef787070688634a221 before either result is observed. SP-0 measures the existing trailing KEY=value operative idiom across Research 300-437 and uses a prospectively hash-selected eight-record stratified sample to estimate explicit consequential effects that remain prose-only. SP-1 inventories only machine-consequential competency questions from AO-3 through AO-7, WARRANT-F, DRP-09, KA-R51/52 and Specification 028 cutover requirements, then derives the minimum bounded clause/slot surface without privileging Claude's illustrative grammar. Both probes are development-only, hidden R2 item-level semantics remain sealed, and no production target is selected. Owner participation is not required for SP-0/SP-1. SP-0 executes first; its result may not alter the already-frozen SP-1 extraction rules.
 

@@ -1,0 +1,232 @@
+{
+  "schema_version": 1,
+  "probe_id": "OPERATIVE-SP0-V01",
+  "fixed_evidence_base": "8e8aed19cf3e1c159f74fdef787070688634a221",
+  "corpus": {
+    "range": "Research 300-437",
+    "records": 138,
+    "records_with_trailing_assignment_block": 123,
+    "prevalence": 0.8913043478260869,
+    "assignment_count": 1570,
+    "unique_keys": 695,
+    "assignment_lines": {
+      "min": 1,
+      "median": 13,
+      "mean": 12.764227642276422,
+      "max": 33
+    }
+  },
+  "effect_type_coding_note": "Conservative deterministic keyword coding; OTHER absorbs ambiguous key/value pairs. Descriptive only, not a gate.",
+  "effect_type_counts": {
+    "OTHER": 687,
+    "AUTHORIZATION_PERMISSION": 307,
+    "RESULT_STATUS": 285,
+    "ROUTING_NEXT_ACTION": 110,
+    "EVIDENCE_PROVENANCE": 68,
+    "IMPLEMENTATION_MIGRATION": 58,
+    "HOLD_PROHIBITION": 44,
+    "ASSURANCE_QUALIFICATION": 9,
+    "AUTHORITY_LIFECYCLE": 2
+  },
+  "sampled_omission_review": {
+    "granularity": "unique consequential semantic effect groups; duplicate/restated body/header/tail expressions collapsed",
+    "records": [
+      {
+        "path": "docs/research/315_mc0029_message003_reconciliation_integrated_project_system_v03.md",
+        "block_represented": [
+          "Research 314 is amended by Research 315",
+          "Integrated Project-System V0.3 is frozen as a pre-decision candidate",
+          "R5-R8C is not reopened",
+          "Specification 028 whole-disposition candidate is SUPERSEDE",
+          "shared-substrate admission remains seam-justified pending DRP-01",
+          "role granularity remains semantic-unit-scoped pending DRP-01",
+          "logical-position design remains a DRP-02 arm rather than selected target",
+          "obligation birth is an acceptance-postflight candidate",
+          "owner-decision temporal validity is not contingent on bookkeeping",
+          "realization state is a fully derived candidate",
+          "AO mediation/prevention claims are mediation-scoped",
+          "WARRANT effective claims are policy-derived and AO cannot suppress required claims",
+          "transition management belongs to permanent C1/C2 while R8 instance transition is C3",
+          "rollback candidate requires zero loss of Project facts",
+          "adoption economics is a first-class decision criterion",
+          "early orientation relief requires a separate AO-4 case before execution",
+          "decision probes are DRP-01 through DRP-09 and realization probes RQP-01 through RQP-07",
+          "owner decision is not ready and production/shadow/compaction/migration/oracle-retirement/authority-switch remain unauthorized",
+          "next route is DRP-01 through DRP-09 preregistration"
+        ],
+        "prose_only": [
+          "every governed acceptance event must emit or validate an ObligationDeclarationSet or explicit creates-no-obligation declaration",
+          "missing obligation declaration is a control defect that may hold dependent action and requires immediate reconciliation without invalidating the owner decision",
+          "RealizationState authorship is forbidden and exact source-owned facts drive the derived state ladder",
+          "MEDIATED/COOPERATIVE/UNMEDIATED paths carry different prevention versus detective guarantees",
+          "AO profile/context may not remove or suppress policy-required WARRANT-F claims",
+          "every target metadata/control element must be generated, natural-event-authored, or consequence-justified",
+          "rollback-window closure requires explicit owner decision after qualification and external irreversible effects need separate compensation semantics",
+          "CURRENT_STATE compaction requires reproducible baseline, explicit history retention, routing/reference integrity, rollback, and frozen DRP-06 comparison fixtures"
+        ],
+        "block_represented_count": 19,
+        "prose_only_count": 8,
+        "ambiguous_count": 0
+      },
+      {
+        "path": "docs/research/321_drp01_shared_semantic_substrate_review_harness_freeze.md",
+        "block_represented": [
+          "DRP-09 PASS",
+          "DRP-05a PASS",
+          "DRP-05b PASS_DETECTIVE_FIRST",
+          "DRP-01 corpus frozen at 30 carriers",
+          "DRP-01 harness frozen",
+          "both reviewer annotations and DRP-01 result remain not started/none",
+          "owner decision is held",
+          "production implementation, physical migration, and authority switch remain unauthorized",
+          "next action is ChatGPT blind annotation"
+        ],
+        "prose_only": [
+          "ChatGPT and Claude must annotate independently and neither may read the other annotation before committing",
+          "admitted-primitive-set Jaccard must be at least 0.80 in addition to reviewer-specific Research 316 checks",
+          "PASS/AMEND/HARNESS_INVALID decision classes are bound to the frozen scoring and validity rules",
+          "the eight-step independence sequence fixes commit/order/exposure constraints before comparison"
+        ],
+        "block_represented_count": 9,
+        "prose_only_count": 4,
+        "ambiguous_count": 0
+      },
+      {
+        "path": "docs/research/346_key_author_a_p3_explicit_owner_authorization.md",
+        "block_represented": [
+          "P3 is ready and explicitly authorized for BIRTH held-out classification",
+          "P3 Batch 1 is authorized for execution",
+          "P3 Batches 2-13 are authorized in principle but task-owner gated",
+          "BIRTH grouping remains unauthorized",
+          "LEGACY remains unauthorized",
+          "complete Key A bytes do not exist",
+          "next action is owner launch of a fresh P3 Batch-1 session"
+        ],
+        "prose_only": [
+          "P3 must start in a new Claude Code session and must not resume/continue the P2 session",
+          "Batch-1 source line ranges are bounded and later ranges are forbidden before acceptance",
+          "allowed and forbidden common P3 sources are explicitly constrained",
+          "shell/Git/Python/terminal/external-process execution are prohibited and need for shell means STOP/HOLD",
+          "exact private progress transition must occur before semantic judgment and may not introduce P4 authorization",
+          "exactly one Batch-1 semantic artifact with the frozen schema may be written and no additional semantic output is authorized",
+          "post-freeze artifact rewrite, Batch-2 exposure, and semantic-detail return are prohibited"
+        ],
+        "block_represented_count": 7,
+        "prose_only_count": 7,
+        "ambiguous_count": 0
+      },
+      {
+        "path": "docs/research/366_key_author_a_p4_d01_attempt002_hold_eligibility_interface_reopened.md",
+        "block_represented": [
+          "P1/P2/P3 and BIRTH attention quality remain PASS",
+          "P4 remains authorized",
+          "D01 attempts 001 and 002 are HOLD",
+          "the repeated failure is hidden endpoint eligibility",
+          "no third retry is released",
+          "D02 is not released",
+          "the grouping/classification interface is reopened for owner amendment",
+          "classification repair, LEGACY, canonical assembly, and migration remain unauthorized",
+          "next action is owner decision on the P4 eligibility-interface amendment"
+        ],
+        "prose_only": [
+          "no hidden endpoint identity/pair/count/label/reason/attention mapping may be published",
+          "the deferred private-workspace capability observation does not modify P4 or authorize present Runtime Bridge changes"
+        ],
+        "block_represented_count": 9,
+        "prose_only_count": 2,
+        "ambiguous_count": 0
+      },
+      {
+        "path": "docs/research/376_key_author_a_p4_h04_accepted_h05_released.md",
+        "block_represented": [
+          "P4 remains authorized with eligibility interface V0.1 frozen",
+          "H01-H04 accepted attempts are recorded",
+          "H05 projection preparation PASS",
+          "H05 semantic execution released to a fresh session",
+          "remaining held-out session policy is fresh-per-event unless verifier requalified",
+          "H06-H11 remain unreleased",
+          "classification repair, LEGACY, canonical assembly, and migration remain unauthorized",
+          "next action is owner launch of fresh H05 attempt 001"
+        ],
+        "prose_only": [],
+        "block_represented_count": 8,
+        "prose_only_count": 0,
+        "ambiguous_count": 0
+      },
+      {
+        "path": "docs/research/395_key_author_a_p5_l08_accepted_l09_released.md",
+        "block_represented": [
+          "L01-L08 are accepted/private-frozen and accepted-batch count is eight",
+          "L09 preparation PASS",
+          "L09 batch identity/presentation count/source range/attempt are bound",
+          "L09 attempt 001 is released",
+          "L10 remains unreleased",
+          "next action is owner launch of fresh L09 attempt 001"
+        ],
+        "prose_only": [
+          "L11-L18 and all post-classification LEGACY/canonical-assembly/commitment/Key-B/scoring/implementation/migration phases remain gated or unauthorized"
+        ],
+        "block_represented_count": 6,
+        "prose_only_count": 1,
+        "ambiguous_count": 0
+      },
+      {
+        "path": "docs/research/412_key_author_a_p6_owner_acceptance_and_p6a_automation_start.md",
+        "block_represented": [
+          "Research 410 owner decision is ACCEPT",
+          "P6 is prepared and authorized",
+          "P6A is running",
+          "P6B and P6C are not started",
+          "canonical assembly and Key Author B remain unauthorized",
+          "next action is wait for bounded P6A COMPLETE or HOLD boundary"
+        ],
+        "prose_only": [
+          "P6 semantic jobs require one fresh high-effort Claude process per job, sequentially, with no resume/continue or parallel semantic workers",
+          "P6A excludes repository evidence and uses bounded structured output with automatic postflight",
+          "any source-level failure must stop orchestration and produce HOLD and failed semantic attempts cannot be edited into acceptance",
+          "fine-grained execution bookkeeping stays in the private ledger while public records remain phase-level",
+          "task owner may poll only the bounded status surface and may finalize only after COMPLETE; manual semantic-label inspection and later-phase starts remain prohibited"
+        ],
+        "block_represented_count": 6,
+        "prose_only_count": 5,
+        "ambiguous_count": 0
+      },
+      {
+        "path": "docs/research/433_drp03_r2_construct_comparison_control_plane_design.md",
+        "block_represented": [
+          "Key A and Key B component commitments are frozen",
+          "hidden semantic details remain unexposed",
+          "P9 comparison design is frozen",
+          "P9 implementation is authorized",
+          "P9 qualification is authorized",
+          "live construct comparison is not run and next action is implement/qualify/deploy P9"
+        ],
+        "prose_only": [
+          "P9 activation is conditional on exact immutable commitment/scope bindings",
+          "P9 exposes only status/run actions with all roots, IDs, thresholds, formulas, scope, and paths fixed server-side",
+          "public-safe output may expose only preregistered aggregate information and must conceal item-level semantic details",
+          "structural commitment/alignment/grouping checks must pass before semantic metrics and mechanical failures cannot masquerade as semantic disagreement",
+          "binary normativity kappa, positive-specific agreement, normative-kind kappa, material agreement, and grouping agreement use exact frozen formulas and thresholds",
+          "ambiguity uses the frozen normative-union denominator and either-author ambiguity numerator",
+          "failed/undefined BIRTH gates force CONSTRUCT_UNDERDETERMINED and owner adjudication cannot rescue the failed construct gate",
+          "STATE fixtures require exact material structural agreement and any material disagreement makes STATE_REF underdetermined",
+          "private comparison artifact is deterministic, immutable/idempotent, and bound to exact commitments/protocol/algorithm",
+          "synthetic known-answer, boundary, concealment, drift, alignment, idempotence, and inherited regression qualifications must pass before live comparison",
+          "after successful deployment/verification the task owner may invoke run_comparison mechanically without another semantic vote",
+          "CONSTRUCT_UNDERDETERMINED requires stop with no retry, relabeling, threshold tuning, or final-key creation"
+        ],
+        "block_represented_count": 6,
+        "prose_only_count": 12,
+        "ambiguous_count": 0
+      }
+    ],
+    "totals": {
+      "block_represented": 70,
+      "prose_only": 39,
+      "ambiguous": 0,
+      "prose_only_share": 0.3577981651376147
+    }
+  },
+  "interpretation": "MIXED_EXISTING_IDIOM",
+  "routing_consequence": "Existing trailing blocks are common, but sampled records retain a material amount of machine-consequential control semantics only in prose. OPERATIVE cannot treat current closing blocks as already-complete operative contracts; grammar/minimum-surface design must proceed through SP-1 and likely requires redesign/authoring changes before SP-2."
+}

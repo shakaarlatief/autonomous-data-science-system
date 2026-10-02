@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "UNRESOLVED",
-  "phase": "DRP03_OPERATIVE_SP0_EXECUTION",
+  "phase": "DRP03_OPERATIVE_SP1_COMPETENCY_INVENTORY",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,7 +81,7 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 435 remains the frozen R2 CONSTRUCT_UNDERDETERMINED result; hidden R2 item-level semantics remain sealed. Research 438 / Message 012 reconcile Claude Message 011 and make OPERATIVE V0.1 the leading development candidate without production selection. Research 439 now prospectively freezes SP-0 operative-idiom census and SP-1 competency-question inventory at exact public evidence base 8e8aed19cf3e1c159f74fdef787070688634a221. SP-0 executes first. Its result cannot change the frozen SP-1 extraction rules. Both are development-only public-evidence probes and require no owner participation. SP-2 owner-faithfulness judgments and SP-5 seeded-error owner-review remain outside the current boundary and require direct owner participation/authorization."
+    "notes": "Research 435 remains frozen CONSTRUCT_UNDERDETERMINED and hidden R2 item-level semantics remain sealed. Research 438 makes OPERATIVE V0.1 the leading development candidate without target selection. Research 439 froze SP-0/SP-1 before execution. Research 440 completes SP-0 as MIXED_EXISTING_IDIOM: 123/138 recent research records have trailing assignment blocks, but the eight-record prospective sample contains 39 prose-only consequential effect groups versus 70 block-represented groups (prose-only share 0.3578). Current blocks therefore support an operative-summary culture but not a complete machine-operative contract. The already-frozen SP-1 competency-question inventory now executes unchanged to determine which structured semantics real consumers require. Owner participation is not required."
   },
   "last_transition": {
     "transition_id": "mc0029-drp03-r2-construct-underdetermined",

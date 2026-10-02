@@ -638,3 +638,33 @@ Current boundary:
     SP1_EXECUTED=false
     OWNER_PARTICIPATION_REQUIRED=false
     NEXT=EXECUTE_SP0
+
+## OPERATIVE SP-0 result
+
+Research 440 completes SP-0 under the frozen Research 439 protocol.
+
+Observed:
+
+    trailing assignment blocks    123 / 138 = 0.891304347826
+    sampled represented effects   70
+    sampled prose-only effects    39
+    prose-only share              0.357798165138
+    result                        MIXED_EXISTING_IDIOM
+
+Interpretation:
+
+    compact assignment-style operational summaries are already common
+    but they are not exhaustive of machine-consequential control semantics
+
+The existing idiom therefore supports OPERATIVE culturally but does not establish low/no additional authoring cost.
+
+SP-1 remains exactly as frozen and is next.
+
+Current boundary:
+
+    PHASE=DRP03_OPERATIVE_SP1_COMPETENCY_INVENTORY
+    SP0=COMPLETE_MIXED_EXISTING_IDIOM
+    SP1_PROTOCOL=FROZEN_UNCHANGED
+    HIDDEN_R2_ITEM_DETAILS=SEALED
+    OWNER_PARTICIPATION_REQUIRED=false
+    NEXT=EXECUTE_SP1
