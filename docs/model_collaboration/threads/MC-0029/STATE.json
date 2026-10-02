@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "UNRESOLVED",
-  "phase": "DRP03_OPERATIVE_SP2_OWNER_REVIEW",
+  "phase": "DRP03_OPERATIVE_SP2_OWNER_BURDEN_REVIEW",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,7 +81,7 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 435 remains frozen CONSTRUCT_UNDERDETERMINED and hidden R2 item-level semantics remain sealed. Research 443 froze the SP-2 protocol before drafting. Research 444 now freezes the complete three-case owner-review package with SHA-256 d523b9783c69c369b358df97b01dc8215766122c9cc91a82145435a3efe2b865: 52 consequence-ledger items and 17 candidate clauses over Research 436/438/442. No seeded errors are used. The package is immutable during review. The next actor is the owner for C1/C2/C3 faithfulness verdicts and an overall review-burden rating. No SP-3 freeze or downstream progression occurs before this owner review is reconciled."
+    "notes": "Research 435 remains frozen CONSTRUCT_UNDERDETERMINED and hidden R2 item-level semantics remain sealed. Research 444 froze the immutable three-case SP-2 package. Research 445 records the owner's explicit verdict 'I ACCEPT C1, C2 and C3': C1/C2/C3 are ACCEPT with no semantic corrections stated. Four owner interaction turns occurred from first package presentation through the verdict, including three clarification turns. Those are interface evidence, not semantic corrections. The protocol-required qualitative review burden has not been supplied and is not inferred. Next actor remains the owner to provide LOW/MODERATE/HIGH burden. No SP-2 closure or SP-3 freeze occurs before that field is recorded and reconciled."
   },
   "last_transition": {
     "transition_id": "mc0029-drp03-r2-construct-underdetermined",

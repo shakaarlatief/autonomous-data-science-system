@@ -822,3 +822,32 @@ Current boundary:
     PHASE=DRP03_OPERATIVE_SP2_OWNER_REVIEW
     OWNER_PARTICIPATION_REQUIRED=true
     NEXT=OWNER_REVIEW_SP2_C1_C2_C3
+
+## SP-2 owner case verdicts
+
+Against the unchanged Research 444 package, the owner stated:
+
+    I ACCEPT C1, C2 and C3
+
+Recorded:
+
+    C1=ACCEPT
+    C2=ACCEPT
+    C3=ACCEPT
+    CORRECTIONS=NONE_STATED
+
+The accepts are faithfulness-development evidence only and do not select OPERATIVE for production.
+
+The required overall burden field remains explicitly unresolved:
+
+    REVIEW_BURDEN=PENDING_OWNER_RATING
+
+Descriptive interaction count from first package presentation through verdict:
+
+    OWNER_INTERACTION_TURNS=4
+
+Current boundary:
+
+    PHASE=DRP03_OPERATIVE_SP2_OWNER_BURDEN_REVIEW
+    OWNER_PARTICIPATION_REQUIRED=true
+    NEXT=OWNER_SUPPLY_SP2_REVIEW_BURDEN

@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "probe_id": "OPERATIVE-SP2-V01",
+  "frozen_package_sha256": "d523b9783c69c369b358df97b01dc8215766122c9cc91a82145435a3efe2b865",
+  "owner_verbatim": "I ACCEPT C1, C2 and C3",
+  "case_verdicts": {
+    "C1": "ACCEPT",
+    "C2": "ACCEPT",
+    "C3": "ACCEPT"
+  },
+  "corrections": {
+    "C1": [],
+    "C2": [],
+    "C3": []
+  },
+  "review_burden": null,
+  "review_burden_status": "PENDING_OWNER_RATING",
+  "owner_interaction_turns_to_verdict": 4,
+  "hidden_r2_details_used": false
+}
