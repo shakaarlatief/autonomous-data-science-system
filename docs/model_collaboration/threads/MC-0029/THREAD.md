@@ -1,7 +1,7 @@
 # MC-0029 Thread: Specification 028 Reconciliation and AO-10 Realization Design
 
 **Thread:** MC-0029
-**Status:** OPEN / SUCCESSOR CANDIDATE FAMILIES FROZEN / CLAUDE COUNTER-DESIGN NEXT / R2 UNDERDETERMINED PRESERVED
+**Status:** OPEN / MESSAGE 011 RECONCILED / OPERATIVE DEVELOPMENT CANDIDATE / SP-0 + SP-1 FREEZE NEXT / R2 UNDERDETERMINED PRESERVED
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** 0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
@@ -559,3 +559,54 @@ Current boundary:
     PILOT_AUTHORIZED=false
     DEPENDENT_DECISION_PROGRESSION=HELD
     NEXT=CLAUDE_MESSAGE011_SUCCESSOR_CONSTRUCT_COUNTERDESIGN
+
+## Claude counter-design reconciliation
+
+Claude Message 011 is frozen at commit eb3c35d518e02641efab9950050e3a389e8a95ba and explicitly used only public evidence.
+
+Research 438 / Message 012 reconcile RC-1 through RC-8.
+
+Accepted central amendment:
+
+    AX-7 JUDGMENT TIMING AND OWNERSHIP
+
+    J1 governing meaning
+        governing author / owner acceptance
+
+    J2 realization mapping
+        natural realizing owner when realization is known
+
+    J3 operational truth
+        executable derivation from explicit facts
+
+Current leading development candidate:
+
+    OPERATIVE V0.1
+        G operative-clause drafting
+        + H realizer-declared coverage
+        + I executable derivation rules
+        + K competency-question scoping
+        + J for naturally verifiable claims
+        compared against N detective-only baseline
+
+Retired from the active successor route:
+
+    Family A repair-as-target
+    authoritative birth-time grouping
+    inferred exclusive normative kind
+    generic authored materiality
+    separately authoritative semantic declaration
+    one global realization-state enum
+
+The reconciliation does not select OPERATIVE for production. It routes it into cheap development evidence.
+
+Current boundary:
+
+    PHASE=DRP03_OPERATIVE_DEVELOPMENT_PROBE_FREEZE
+    RESEARCH438=MESSAGE011_RECONCILED
+    OPERATIVE_V01=LEADING_DEVELOPMENT_CANDIDATE
+    TARGET_SELECTED=false
+    HIDDEN_R2_ITEM_DETAILS=SEALED
+    SP0_SP1_EXECUTED=false
+    OWNER_PARTICIPATION_REQUIRED_NOW=false
+    NEXT=PROSPECTIVE_SP0_SP1_DEVELOPMENT_PROBE_FREEZE

@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 773
+**Checkpoint:** 774
 **Date:** 2026-10-02
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: DRP-03 successor candidate counter-design / Specification 028 reconciliation
+## Current active stage: OPERATIVE development-probe freeze / Specification 028 reconciliation
+
+Checkpoint 774 / Research 438 / MC-0029 Message 012 reconcile Claude Message 011 at commit eb3c35d518e02641efab9950050e3a389e8a95ba. The central amendment is accepted: judgment timing and ownership is now a first-class design axis separating J1 governing meaning at authoring/acceptance, J2 realization mapping at the natural realizing owner, and J3 deterministic operational truth from explicit facts and executable rules. OPERATIVE V0.1 becomes the leading development candidate, not a selected production target. Family A, authoritative birth-time grouping, inferred exclusive normative kind, generic authored materiality, a separately authoritative semantic declaration and a global realization-state enum are retired from the active route. Claude's G/H/I/J/K mechanisms and detective-only null baseline N are admitted with refinements. ChatGPT also narrows four points: machine-operative meaning need not exhaust human-governing meaning; one artifact means one governing acceptance object rather than a frozen physical representation; DEFER validity requires deterministic authority/scope/temporal checks beyond parsing; and the DRP-01 obligation_reference seam is not silently renamed without requalification. Hidden R2 item-level material remains sealed. The next work is a prospective freeze of the small public-evidence SP-0 operative-idiom census and SP-1 competency-question inventory before either is executed. Owner participation is not required for SP-0/SP-1; later SP-2 faithfulness judgments and any SP-5 seeded-error review require direct owner participation/authorization.
 
 Checkpoint 773 / Research 437 freezes the first public-evidence-only requirements/failure decomposition and a deliberately plural successor design space before independent counter-design. It separates the operational questions the Project system actually must answer from inherited DRP-03 implementation assumptions, then preserves six non-selected candidate families: a strengthened declaration-unit comparator; orthogonal normative atoms; relation-first consequence semantics without mandatory canonical grouping; a minimal operational control contract; domain-native contracts composed through shared references; and accepted semantic atoms/relations with deterministic operational projections. The families may be combined and none has preservation privilege or selection status. Candidate cheap development discriminators cover category-versus-dimensions, grouping-versus-relations, state-enum-versus-predicates, minimal-control sufficiency and semantic-author contract. No pilot is authorized yet and hidden R2 item-level semantics remain sealed. MC-0029 Message 010 freezes the ChatGPT handoff; Claude/claude-04 is next for adversarial requirements critique, missing candidate generation, whole-system counter-design and cheap falsifier design before comparative reconciliation.
 
