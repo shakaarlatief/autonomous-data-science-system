@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 774
+**Checkpoint:** 775
 **Date:** 2026-10-02
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: OPERATIVE development-probe freeze / Specification 028 reconciliation
+## Current active stage: OPERATIVE SP-0 execution / Specification 028 reconciliation
+
+Checkpoint 775 / Research 439 prospectively freezes the first two OPERATIVE development probes against exact public evidence base 8e8aed19cf3e1c159f74fdef787070688634a221 before either result is observed. SP-0 measures the existing trailing KEY=value operative idiom across Research 300-437 and uses a prospectively hash-selected eight-record stratified sample to estimate explicit consequential effects that remain prose-only. SP-1 inventories only machine-consequential competency questions from AO-3 through AO-7, WARRANT-F, DRP-09, KA-R51/52 and Specification 028 cutover requirements, then derives the minimum bounded clause/slot surface without privileging Claude's illustrative grammar. Both probes are development-only, hidden R2 item-level semantics remain sealed, and no production target is selected. Owner participation is not required for SP-0/SP-1. SP-0 executes first; its result may not alter the already-frozen SP-1 extraction rules.
 
 Checkpoint 774 / Research 438 / MC-0029 Message 012 reconcile Claude Message 011 at commit eb3c35d518e02641efab9950050e3a389e8a95ba. The central amendment is accepted: judgment timing and ownership is now a first-class design axis separating J1 governing meaning at authoring/acceptance, J2 realization mapping at the natural realizing owner, and J3 deterministic operational truth from explicit facts and executable rules. OPERATIVE V0.1 becomes the leading development candidate, not a selected production target. Family A, authoritative birth-time grouping, inferred exclusive normative kind, generic authored materiality, a separately authoritative semantic declaration and a global realization-state enum are retired from the active route. Claude's G/H/I/J/K mechanisms and detective-only null baseline N are admitted with refinements. ChatGPT also narrows four points: machine-operative meaning need not exhaust human-governing meaning; one artifact means one governing acceptance object rather than a frozen physical representation; DEFER validity requires deterministic authority/scope/temporal checks beyond parsing; and the DRP-01 obligation_reference seam is not silently renamed without requalification. Hidden R2 item-level material remains sealed. The next work is a prospective freeze of the small public-evidence SP-0 operative-idiom census and SP-1 competency-question inventory before either is executed. Owner participation is not required for SP-0/SP-1; later SP-2 faithfulness judgments and any SP-5 seeded-error review require direct owner participation/authorization.
 

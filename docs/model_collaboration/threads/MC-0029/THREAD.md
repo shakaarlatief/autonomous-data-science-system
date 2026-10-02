@@ -610,3 +610,31 @@ Current boundary:
     SP0_SP1_EXECUTED=false
     OWNER_PARTICIPATION_REQUIRED_NOW=false
     NEXT=PROSPECTIVE_SP0_SP1_DEVELOPMENT_PROBE_FREEZE
+
+## OPERATIVE SP-0 / SP-1 prospective freeze
+
+Research 439 freezes the first two development probes before execution at public evidence base:
+
+    8e8aed19cf3e1c159f74fdef787070688634a221
+
+SP-0:
+
+    operative-idiom census over Research 300-437
+    prospectively stratified eight-record omission review
+
+SP-1:
+
+    competency-question inventory from named AO/WARRANT-F/DRP-09/KA-R51/KA-R52/cutover consumers
+    minimum bounded semantic surface derived only after the question inventory
+
+The probes are development-only. Hidden R2 material remains sealed. No target architecture is selected.
+
+Current boundary:
+
+    PHASE=DRP03_OPERATIVE_SP0_EXECUTION
+    RESEARCH439=SP0_SP1_PREREGISTRATION_FROZEN
+    FIXED_EVIDENCE_BASE=8e8aed19cf3e1c159f74fdef787070688634a221
+    SP0_EXECUTED=false
+    SP1_EXECUTED=false
+    OWNER_PARTICIPATION_REQUIRED=false
+    NEXT=EXECUTE_SP0
