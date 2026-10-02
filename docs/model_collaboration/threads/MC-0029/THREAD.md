@@ -1,7 +1,7 @@
 # MC-0029 Thread: Specification 028 Reconciliation and AO-10 Realization Design
 
 **Thread:** MC-0029
-**Status:** OPEN / DRP-03 R2 CONSTRUCT_UNDERDETERMINED / GOVERNED STOP
+**Status:** OPEN / DRP-03 SUCCESSOR CONSTRUCT REDESIGN / R2 UNDERDETERMINED PRESERVED
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** 0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
@@ -485,3 +485,48 @@ Current P9 construct-comparison boundary:
     HISTORICAL_LEGACY=INCONCLUSIVE_EXCLUDED
     P6C=NOT_RUN
     NEXT=STOP_AND_OWNER_ROUTE_FROM_CONSTRUCT_UNDERDETERMINED
+
+## Current successor-construct route
+
+Research 436 records the explicit owner route beyond the Research 435 stop.
+
+The R2 result remains frozen and unchanged. The successor program is not an R2 retry and does not inspect hidden R2 item-level disagreement material during initial redesign.
+
+The owner-authorized design principles are:
+
+    ARCHITECTURAL_PRESERVATION_RIGHT=false
+    WHOLE_SYSTEM_OPTIMUM=OBJECTIVE
+    PROGRESSIVE_REALISTIC_DEVELOPMENT_TESTING=true
+    DEVELOPMENT_CONFIRMATION_SEPARATION=REQUIRED
+    R2_HIDDEN_SEMANTICS=SEALED_DURING_INITIAL_REDESIGN
+    R2_RETRY_AUTHORIZED=false
+
+The next sequence is:
+
+    public-evidence requirements/failure decomposition
+        ->
+    ChatGPT materially different successor candidate families
+        ->
+    freeze initial candidate-family record
+        ->
+    Claude adversarial critique/counter-design
+        ->
+    comparative reconciliation
+        ->
+    small realistic development probes chosen by decision value
+        ->
+    larger development stress only when justified
+        ->
+    untouched confirmatory preregistration
+        ->
+    dependent-program reconciliation
+
+Current boundary:
+
+    PHASE=DRP03_SUCCESSOR_CONSTRUCT_REDESIGN
+    RESEARCH436=OWNER_ROUTE_ACTIVE
+    DRP03_R2=CONSTRUCT_UNDERDETERMINED_PRESERVED
+    HIDDEN_R2_ITEM_DETAILS=SEALED
+    FINAL_KEY_CREATION_AUTHORIZED=false
+    DEPENDENT_DECISION_PROGRESSION=HELD
+    NEXT=CHATGPT_FIRST_PRINCIPLES_REQUIREMENTS_FAILURE_DECOMPOSITION

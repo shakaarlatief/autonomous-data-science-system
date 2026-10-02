@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "UNRESOLVED",
-  "phase": "DRP03_R2_CONSTRUCT_UNDERDETERMINED_GOVERNED_STOP",
+  "phase": "DRP03_SUCCESSOR_CONSTRUCT_REDESIGN",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -60,7 +60,7 @@
       ]
     }
   ],
-  "next_expected_actor": "human",
+  "next_expected_actor": "chatgpt",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,7 +81,7 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 435 records the single authorized P9 STATE+BIRTH comparison. Both frozen commitments verified and the deterministic comparison completed without exposing hidden semantic detail. The frozen overall result is CONSTRUCT_UNDERDETERMINED: binary normativity kappa, normative-kind kappa, material positive specific agreement and grouping-constraint agreement fail their preregistered thresholds; the overall ambiguity cap also fails; STATE-REF has material structural disagreement. Research 433 requires STOP with no retry, relabeling, threshold tuning, final-key creation or owner-adjudication rescue. LEGACY remains INCONCLUSIVE/excluded and P6C remains NOT_RUN. MC-0029 is blocked at this construct-validity boundary pending an explicit owner route."
+    "notes": "Research 435 remains the frozen DRP-03 R2 CONSTRUCT_UNDERDETERMINED result and cannot be rescued by retry, relabeling, threshold tuning, final-key construction or owner adjudication. Research 436 records the owner's explicit successor route: reopen the relevant semantic/Project-system design space without preservation privilege, combine first-principles architecture freedom with progressive realistic development probes, and preserve strict development/confirmation separation. Hidden R2 item-level semantic disagreements remain sealed during initial redesign. ChatGPT is next for public-evidence requirements/failure decomposition and materially different successor candidate families. Claude adversarial counter-design is planned only after the initial ChatGPT candidate-family record is frozen. LEGACY remains INCONCLUSIVE/excluded and P6C remains NOT_RUN."
   },
   "last_transition": {
     "transition_id": "mc0029-drp03-r2-construct-underdetermined",

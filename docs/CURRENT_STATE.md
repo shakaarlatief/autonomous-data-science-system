@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 771
+**Checkpoint:** 772
 **Date:** 2026-10-02
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: DRP-03 R2 construct-underdetermined stop / Specification 028 reconciliation
+## Current active stage: DRP-03 successor construct redesign / Specification 028 reconciliation
+
+Checkpoint 772 / Research 436 records the project owner's explicit route from the frozen DRP-03 R2 `CONSTRUCT_UNDERDETERMINED` boundary. The failed R2 result remains unchanged and its hidden item-level semantics remain sealed. The successor program now reopens the relevant semantic and Project-system design space without preservation privilege for the current obligation ontology, normative-kind taxonomy, grouping model, STATE model, LLM role, test architecture or surrounding responsibility boundaries. The owner also adopts progressive qualification as a design principle: use the smallest realistic and discriminating development probes that can change a decision, scale only when earlier evidence justifies it, and keep development evidence strictly separate from later untouched confirmation. Initial redesign must use public R1/R2 evidence and first-principles requirements without inspecting hidden R2 disagreement identities. The immediate next task is first-principles requirements/failure decomposition followed by materially different successor construct families; dependent DRP progression remains held.
 
 Checkpoint 771 / Research 435 records the single authorized P9 live STATE+BIRTH construct comparison. P9 verified both frozen commitments, aligned 2709 BIRTH items and froze comparison record `156622e2e3790a2f810adb2b9038256706ce9d82861c696c4f4c5e1db34e67b0` over 297787 bytes without exposing hidden semantic details. The preregistered construct gate fails: binary normativity kappa is 0.774540330104 < 0.80, normative-kind kappa is 0.502907383797 < 0.75, material positive specific agreement is 0.841737393909 < 0.90, grouping-constraint agreement is 0.068333333333 < 0.80, and the overall ambiguity fraction is 0.104333868379 > 0.10; normative positive specific agreement alone passes at 0.865209471767 >= 0.80. STATE-REF also disagrees materially, with 18/24 exact structural agreements, one fact-validity disagreement fixture and five final-state disagreement fixtures. The frozen overall outcome is `CONSTRUCT_UNDERDETERMINED`. Under Research 433 the sequence stops: no retry, relabeling, threshold tuning, final-key creation or owner adjudication as a rescue path is permitted. Historical LEGACY remains INCONCLUSIVE / excluded and P6C remains NOT_RUN. Any continuation now requires an explicit new owner route that respects the failed construct gate.
 
