@@ -1,0 +1,602 @@
+{
+  "schema_version": 1,
+  "probe_id": "OPERATIVE-SP2-V01",
+  "protocol": "Research 443",
+  "frozen_input_commit": "0660655bb71a34ec0c785dc67c4ceb232f9bec5d",
+  "candidate": "OPERATIVE V0.2 / Research 442",
+  "drafter": "ChatGPT / chatgpt-35",
+  "hidden_r2_details_used": false,
+  "cases": [
+    {
+      "case_id": "SP2-C1",
+      "source": "docs/research/436_drp03_construct_underdetermination_owner_route_and_progressive_semantic_redesign.md",
+      "source_sha256": "50edfbc0cefaff158fc5791f3d1d00de7647ff3ada9fe7f7fb4bdadf638cecef",
+      "synopsis": "Owner-authorized route after R2 construct underdetermination: reopen the relevant design space without preservation bias, preserve R2/history/authority evidence, use progressive development before confirmation, keep hidden R2 item semantics sealed, and hold dependent progression until successor reconciliation.",
+      "ledger": [
+        [
+          "C1-E01",
+          "HUMAN_GOVERNING_ONLY",
+          "The objective is the strongest coherent Project system, not minimum change from existing architecture."
+        ],
+        [
+          "C1-E02",
+          "DOMAIN_CONTRACT",
+          "Research 436 owns the progressive-development and development-vs-confirmation scientific process."
+        ],
+        [
+          "C1-E03",
+          "ACCEPTED_CLAUSE",
+          "R2 may not be retried, relabeled, threshold-tuned, converted to a final key, or rescued by owner adjudication."
+        ],
+        [
+          "C1-E04",
+          "GENERATED_CONTROL",
+          "Historical LEGACY remains INCONCLUSIVE/EXCLUDED and P6C remains NOT_RUN as current result state derived from the frozen R2 record."
+        ],
+        [
+          "C1-E05",
+          "ACCEPTED_CLAUSE",
+          "Specification 028 remains current operational/migration authority until prospectively changed."
+        ],
+        [
+          "C1-E06",
+          "ACCEPTED_CLAUSE",
+          "This successor-research route does not authorize physical migration or an authority switch."
+        ],
+        [
+          "C1-E07",
+          "HUMAN_GOVERNING_ONLY",
+          "No current DRP-03 mechanism has preservation rights merely because it exists or was expensive."
+        ],
+        [
+          "C1-E08",
+          "DOMAIN_CONTRACT",
+          "Truthful R1/R2 history, provenance, maturity distinctions and development/confirmation separation are process requirements owned by research governance."
+        ],
+        [
+          "C1-E09",
+          "ACCEPTED_CLAUSE",
+          "Hidden R2 item-level semantic material remains sealed during initial redesign."
+        ],
+        [
+          "C1-E10",
+          "DOMAIN_CONTRACT",
+          "Any future hidden-R2 exposure proposal must first document why exposure is needed, burned evidence, retired concealment boundaries, and replacement confirmatory evidence."
+        ],
+        [
+          "C1-E11",
+          "DOMAIN_CONTRACT",
+          "Successor stages S1-S7 define the current development/reconciliation program and its dependent-program return path."
+        ],
+        [
+          "C1-E12",
+          "DOMAIN_CONTRACT",
+          "Scaling to a larger experiment requires a stated new property/uncertainty/integration reason; size alone is not justification."
+        ],
+        [
+          "C1-E13",
+          "DOMAIN_CONTRACT",
+          "Every development probe records its question, candidate version, evidence role, change permissions, burn status and abandonment condition before execution."
+        ],
+        [
+          "C1-E14",
+          "ACCEPTED_CLAUSE",
+          "Dependent DRP progression remains gated until successor semantics are sufficiently qualified or the dependency is explicitly removed by architecture change."
+        ],
+        [
+          "C1-E15",
+          "ADVISORY_DETECTION",
+          "Preservation-bias or retry-to-green patterns are useful control observations but do not themselves create authority."
+        ]
+      ],
+      "clauses": [
+        {
+          "id": "C1-CL01",
+          "form": "AUTHORIZE",
+          "meaning": "Authorize DRP-03 successor design/development work under the Research 436 route only.",
+          "slots": {
+            "authorized_action_or_phase_ref": "DRP03_SUCCESSOR_DEVELOPMENT",
+            "scope_ref": "MC-0029/DRP-03-successor",
+            "authorizing_decision_ref": "research:436",
+            "effective_boundary": "research:436"
+          }
+        },
+        {
+          "id": "C1-CL02",
+          "form": "PROHIBIT",
+          "meaning": "Prohibit any operation that treats frozen R2 as rerunnable/rescorable/relabelable/rescuable or creates an R2 final key.",
+          "slots": {
+            "action_or_consequence_ref": "R2_RESULT_MUTATION_OR_RESCUE",
+            "scope_ref": "DRP03-R2",
+            "effective_boundary": "research:436"
+          }
+        },
+        {
+          "id": "C1-CL03",
+          "form": "GATE",
+          "meaning": "Hidden R2 item-level semantic exposure requires a separate prospective owner route satisfying the Research 436 exposure contract.",
+          "slots": {
+            "transition_or_consequence_ref": "EXPOSE_R2_HIDDEN_ITEM_SEMANTICS",
+            "predicate_or_decision_refs": [
+              "owner_route_exists",
+              "exposure_purpose_declared",
+              "burn_consequence_declared",
+              "replacement_confirmation_declared"
+            ],
+            "scope_ref": "DRP03-R2-hidden"
+          }
+        },
+        {
+          "id": "C1-CL04",
+          "form": "GATE",
+          "meaning": "Physical migration or operational authority switch requires separately governed authority; the Research 436 successor route is insufficient.",
+          "slots": {
+            "transition_or_consequence_ref": "PHYSICAL_MIGRATION_OR_AUTHORITY_SWITCH",
+            "predicate_or_decision_refs": [
+              "separate_governing_authorization"
+            ],
+            "scope_ref": "ADS-project"
+          }
+        },
+        {
+          "id": "C1-CL05",
+          "form": "GATE",
+          "meaning": "Dependent DRP progression requires successor semantic qualification/reconciliation or an explicit architecture change removing the dependency.",
+          "slots": {
+            "transition_or_consequence_ref": "RESUME_DEPENDENT_DRP_PROGRESSION",
+            "predicate_or_decision_refs": [
+              "successor_semantics_sufficiently_qualified_or_dependency_removed"
+            ],
+            "scope_ref": "DRP04|DRP06|DRP07|DRP08"
+          }
+        }
+      ],
+      "domain_contract_refs": [
+        "research:436#scientific-process",
+        "specification:028",
+        "research:435#frozen-r2-result"
+      ],
+      "generated_control": [
+        "R2_RESULT=CONSTRUCT_UNDERDETERMINED",
+        "R2_HIDDEN_SEMANTICS=SEALED",
+        "DEPENDENT_DRP_PROGRESSION=HELD"
+      ],
+      "human_governing_only": [
+        "unrestricted architecture freedom",
+        "optimize for strongest coherent system rather than minimum change"
+      ],
+      "advisory_detection": [
+        "preservation-bias candidate",
+        "retry-to-green candidate"
+      ],
+      "ambiguities": [
+        "Production semantic reference syntax for predicate/action/scope refs is not frozen; SP-2 uses development-stable symbolic refs only."
+      ],
+      "counts": {
+        "ACCEPTED_CLAUSE": 5,
+        "DOMAIN_CONTRACT": 6,
+        "GENERATED_CONTROL": 1,
+        "HUMAN_GOVERNING_ONLY": 2,
+        "ADVISORY_DETECTION": 1
+      }
+    },
+    {
+      "case_id": "SP2-C2",
+      "source": "docs/research/438_mc0029_message011_reconciliation_operative_development_candidate_v01.md",
+      "source_sha256": "f8ff876107c170728c10db30b1dc91720f846b0edcb189ea460421657a8fb97d",
+      "synopsis": "Reconciliation that makes OPERATIVE V0.1 the leading development candidate while retiring key inferred-ontology assumptions, introducing J1/J2/J3 ownership timing, preserving owner review and human-governing meaning, requiring executable deterministic semantics, and freezing the SP development route and null baseline.",
+      "ledger": [
+        [
+          "C2-E01",
+          "ACCEPTED_CLAUSE",
+          "Research 438 prospectively amends Research 437 for the affected successor-design scope."
+        ],
+        [
+          "C2-E02",
+          "GENERATED_CONTROL",
+          "OPERATIVE becomes leading development candidate but is not a selected production target."
+        ],
+        [
+          "C2-E03",
+          "DOMAIN_CONTRACT",
+          "J1 governing meaning, J2 realization coverage and J3 operational truth allocation is owned by the architecture-development contract."
+        ],
+        [
+          "C2-E04",
+          "DOMAIN_CONTRACT",
+          "G/H/I/J/K/N candidate-mechanism statuses and family dispositions are architecture-development state."
+        ],
+        [
+          "C2-E05",
+          "DOMAIN_CONTRACT",
+          "Owner-faithfulness, grammar validity, deterministic behavior, leak detection, CQ sufficiency and adoption cost replace fresh-author agreement as authored-semantics development criteria."
+        ],
+        [
+          "C2-E06",
+          "ACCEPTED_CLAUSE",
+          "Machine-operative meaning is deliberately narrower than all human-governing meaning; non-operative human authority is not erased."
+        ],
+        [
+          "C2-E07",
+          "ACCEPTED_CLAUSE",
+          "Machine-operative authoring requires an explicit proposal/acceptance boundary and review legitimacy."
+        ],
+        [
+          "C2-E08",
+          "DOMAIN_CONTRACT",
+          "Expressiveness limits and clause lifecycle are development questions owned by the successor architecture program."
+        ],
+        [
+          "C2-E09",
+          "ACCEPTED_CLAUSE",
+          "Any deterministic consequential derived decision/predicate claimed by the Project system must have an executable normative definition and regression tests."
+        ],
+        [
+          "C2-E10",
+          "DOMAIN_CONTRACT",
+          "DRP-01 shared primitive specialization cannot silently rename/rewrite the passed seam and requires requalification."
+        ],
+        [
+          "C2-E11",
+          "DOMAIN_CONTRACT",
+          "Family A, birth-time grouping, inferred exclusive normative kind, generic materiality boolean, global realization-state enum and fresh-author validity for authored meaning are retired from the active successor route."
+        ],
+        [
+          "C2-E12",
+          "ACCEPTED_CLAUSE",
+          "Human-readable governing meaning and machine-operative clauses belong to one accepted meaning boundary; generated projections do not gain separate semantic authority."
+        ],
+        [
+          "C2-E13",
+          "DOMAIN_CONTRACT",
+          "SP-0 through SP-6 sequence, corpus discipline and development-burn rules are owned by the development-probe program."
+        ],
+        [
+          "C2-E14",
+          "DOMAIN_CONTRACT",
+          "Hidden R2 remains sealed by the already-governing Research 436/435 boundary rather than being re-authored here."
+        ],
+        [
+          "C2-E15",
+          "ACCEPTED_CLAUSE",
+          "A seeded-error SP-5 owner-review efficacy run requires explicit informed owner authorization before execution."
+        ],
+        [
+          "C2-E16",
+          "ACCEPTED_CLAUSE",
+          "Any adoption-economics claim for structured normative machinery must compare with the detective-only null baseline N."
+        ],
+        [
+          "C2-E17",
+          "ACCEPTED_CLAUSE",
+          "LLM-produced semantic drafts/diagnostics are non-authoritative until admitted through the proper governing or natural-owner path."
+        ],
+        [
+          "C2-E18",
+          "HUMAN_GOVERNING_ONLY",
+          "The architecture should not redefine human authority merely because a meaning is deliberately non-operative."
+        ],
+        [
+          "C2-E19",
+          "GENERATED_CONTROL",
+          "Dependent DRPs remain held and their successor dependencies are remapped only after later OPERATIVE development stages."
+        ]
+      ],
+      "clauses": [
+        {
+          "id": "C2-CL01",
+          "form": "LIFECYCLE",
+          "meaning": "Amend Research 437 by Research 438 for the reconciled successor-design scope.",
+          "slots": {
+            "operation": "AMEND",
+            "target_ref": "research:437",
+            "scope_ref": "DRP03-successor-design",
+            "effective_boundary": "research:438",
+            "decision_ref": "research:438",
+            "successor_ref": "research:438"
+          }
+        },
+        {
+          "id": "C2-CL02",
+          "form": "REQUIRE",
+          "meaning": "One governed acceptance boundary must bind human-governing meaning and admitted machine-operative semantics; generated projections are not independent authority.",
+          "slots": {
+            "subject_or_scope_ref": "governing_acceptance_object",
+            "responsible_domain_or_owner_ref": "governance/acceptance",
+            "effective_boundary": "research:438"
+          }
+        },
+        {
+          "id": "C2-CL03",
+          "form": "REQUIRE",
+          "meaning": "Deterministic consequential Project-system predicates/decisions must be defined executably and regression-tested.",
+          "slots": {
+            "subject_or_scope_ref": "deterministic_consequential_derived_decisions",
+            "responsible_domain_or_owner_ref": "project/system+verification",
+            "effective_boundary": "research:438"
+          }
+        },
+        {
+          "id": "C2-CL04",
+          "form": "GATE",
+          "meaning": "SP-5 seeded-error owner-review efficacy execution requires explicit informed owner authorization.",
+          "slots": {
+            "transition_or_consequence_ref": "EXECUTE_SP5_SEEDED_OWNER_REVIEW",
+            "predicate_or_decision_refs": [
+              "explicit_owner_authorization_for_seeded_setup"
+            ],
+            "scope_ref": "SP5"
+          }
+        },
+        {
+          "id": "C2-CL05",
+          "form": "GATE",
+          "meaning": "An adoption-economics claim for structured normative machinery requires the detective-only null baseline N.",
+          "slots": {
+            "transition_or_consequence_ref": "MAKE_STRUCTURED_SEMANTICS_ADOPTION_ECONOMICS_CLAIM",
+            "predicate_or_decision_refs": [
+              "detective_only_null_baseline_completed"
+            ],
+            "scope_ref": "DRP08|OPERATIVE-adoption"
+          }
+        },
+        {
+          "id": "C2-CL06",
+          "form": "PROHIBIT",
+          "meaning": "Model/LLM semantic output may not become governing machine authority merely because it was generated.",
+          "slots": {
+            "action_or_consequence_ref": "PROMOTE_UNACCEPTED_MODEL_SEMANTICS_TO_AUTHORITY",
+            "scope_ref": "OPERATIVE-semantics",
+            "effective_boundary": "research:438"
+          }
+        }
+      ],
+      "domain_contract_refs": [
+        "research:438#development-program",
+        "research:436#r2-seal",
+        "research:323#DRP01-pass",
+        "future:SP5-protocol",
+        "future:SP6-null-baseline"
+      ],
+      "generated_control": [
+        "OPERATIVE=LEADING_DEVELOPMENT_CANDIDATE",
+        "OPERATIVE=NOT_PRODUCTION_TARGET",
+        "DEPENDENT_DRPS=HELD"
+      ],
+      "human_governing_only": [
+        "human authority may exceed deliberately machine-operative meaning",
+        "design rationale for J1/J2/J3 decomposition"
+      ],
+      "advisory_detection": [
+        "recital-leak detection",
+        "independent-draft grammar diagnostics"
+      ],
+      "ambiguities": [
+        "The exact accepted-object physical representation and production clause-reference type remain intentionally open."
+      ],
+      "counts": {
+        "ACCEPTED_CLAUSE": 8,
+        "DOMAIN_CONTRACT": 8,
+        "GENERATED_CONTROL": 2,
+        "HUMAN_GOVERNING_ONLY": 1,
+        "ADVISORY_DETECTION": 0
+      }
+    },
+    {
+      "case_id": "SP2-C3",
+      "source": "docs/research/442_operative_v02_thin_governing_semantics_and_compiled_control_projection_candidate.md",
+      "source_sha256": "e92f517479daab1279daeeb0fd9e609cee132fd1bfb53d05213f5b54cf112469",
+      "synopsis": "Exact V0.2 candidate: thin typed governing clauses plus exact domain-native contract references form one acceptance boundary; accepted semantics compile with current authoritative facts into disposable non-authoritative control projections; realization moves to natural owners; deterministic truth is executable; model inference remains advisory until accepted.",
+      "ledger": [
+        [
+          "C3-E01",
+          "HUMAN_GOVERNING_ONLY",
+          "V0.2 intentionally chooses a thin governing-semantics architecture rather than a universal requirements database."
+        ],
+        [
+          "C3-E02",
+          "ACCEPTED_CLAUSE",
+          "One governed acceptance object may bind multiple exact physical components/revisions as one meaning boundary."
+        ],
+        [
+          "C3-E03",
+          "ACCEPTED_CLAUSE",
+          "Generated JSON/index/database/control projections do not gain independent semantic authority."
+        ],
+        [
+          "C3-E04",
+          "GENERATED_CONTROL",
+          "Accepted-component inconsistency causes validation failure or later defect/evolution handling; future LLM guesswork is not a resolver."
+        ],
+        [
+          "C3-E05",
+          "DOMAIN_CONTRACT",
+          "The five-condition thin-clause admission algorithm belongs to the OPERATIVE grammar/admission contract."
+        ],
+        [
+          "C3-E06",
+          "DOMAIN_CONTRACT",
+          "The seven candidate clause forms and their slot schemas belong to the OPERATIVE grammar contract."
+        ],
+        [
+          "C3-E07",
+          "DOMAIN_CONTRACT",
+          "INVARIANT/ASSIGN/ROUTE are deliberately absent as standalone forms unless later competency evidence justifies them."
+        ],
+        [
+          "C3-E08",
+          "ACCEPTED_CLAUSE",
+          "Machine-critical deterministic behavior must bind bounded typed references, not later interpretation of free text."
+        ],
+        [
+          "C3-E09",
+          "ACCEPTED_CLAUSE",
+          "When one domain already owns exact machine semantics, generic operative clauses reference that domain contract rather than duplicate it."
+        ],
+        [
+          "C3-E10",
+          "DOMAIN_CONTRACT",
+          "Compiler/projection implementation owns versioning, exact-input binding, staleness invalidation, conflict fail-visible behavior and rebuildability."
+        ],
+        [
+          "C3-E11",
+          "GENERATED_CONTROL",
+          "ActionContract, ControlObligationSet, gate inputs and coverage expectations are disposable projections compiled from authority + current facts."
+        ],
+        [
+          "C3-E12",
+          "DOMAIN_CONTRACT",
+          "J2 realization coverage is declared by natural realizing owners; no canonical birth-time grouping is inferred."
+        ],
+        [
+          "C3-E13",
+          "DOMAIN_CONTRACT",
+          "J3 operational truth is computed from source-owned facts through executable predicates; no global authored realization-state truth."
+        ],
+        [
+          "C3-E14",
+          "ACCEPTED_CLAUSE",
+          "Unaccepted model inference cannot become governing authority, choose normative owner decisions, override deterministic policy, or resolve authority conflict by confidence."
+        ],
+        [
+          "C3-E15",
+          "ADVISORY_DETECTION",
+          "Models/classifiers may nominate event hypotheses, leaks, legacy candidates, coverage suggestions and explanations subject to later policy."
+        ],
+        [
+          "C3-E16",
+          "HUMAN_GOVERNING_ONLY",
+          "The near-zero authoring-cost hypothesis is withdrawn; only a weaker affordability hypothesis remains."
+        ],
+        [
+          "C3-E17",
+          "DOMAIN_CONTRACT",
+          "V0.2 falsifiers F1-F8 govern development learning but are not confirmatory thresholds."
+        ],
+        [
+          "C3-E18",
+          "ACCEPTED_CLAUSE",
+          "SP-2 review/reconciliation must occur before SP-3 is frozen against a surviving exact grammar."
+        ]
+      ],
+      "clauses": [
+        {
+          "id": "C3-CL01",
+          "form": "REQUIRE",
+          "meaning": "A governing acceptance binds human carrier, operative component and referenced domain-contract revisions as one accepted meaning boundary.",
+          "slots": {
+            "subject_or_scope_ref": "governing_acceptance_object",
+            "responsible_domain_or_owner_ref": "governance/acceptance",
+            "effective_boundary": "OPERATIVE-V0.2-development"
+          }
+        },
+        {
+          "id": "C3-CL02",
+          "form": "PROHIBIT",
+          "meaning": "Generated projections/indexes/compiled ActionContracts may not be treated as independent semantic authority.",
+          "slots": {
+            "action_or_consequence_ref": "TREAT_GENERATED_CONTROL_AS_SEMANTIC_AUTHORITY",
+            "scope_ref": "OPERATIVE-generated-control",
+            "effective_boundary": "OPERATIVE-V0.2-development"
+          }
+        },
+        {
+          "id": "C3-CL03",
+          "form": "REQUIRE",
+          "meaning": "Machine-critical deterministic clause semantics use bounded typed references; unresolved free-text dependence routes to review/human governance instead of hidden inference.",
+          "slots": {
+            "subject_or_scope_ref": "operative_machine_critical_slots",
+            "responsible_domain_or_owner_ref": "OPERATIVE-grammar",
+            "effective_boundary": "OPERATIVE-V0.2-development"
+          }
+        },
+        {
+          "id": "C3-CL04",
+          "form": "REQUIRE",
+          "meaning": "When a domain-native accepted contract fully owns a detail, cross-domain OPERATIVE semantics reference that contract rather than restating its machine meaning.",
+          "slots": {
+            "subject_or_scope_ref": "cross_domain_machine_governing_semantics",
+            "responsible_domain_or_owner_ref": "OPERATIVE-grammar+domain-owner",
+            "effective_boundary": "OPERATIVE-V0.2-development"
+          }
+        },
+        {
+          "id": "C3-CL05",
+          "form": "PROHIBIT",
+          "meaning": "Unaccepted model inference may not create governing authority, silently decide normative owner choices, override deterministic policy, or settle authority conflict by confidence.",
+          "slots": {
+            "action_or_consequence_ref": "MODEL_INFERENCE_AUTHORITY_ESCALATION",
+            "scope_ref": "OPERATIVE/model-assisted-surfaces",
+            "effective_boundary": "OPERATIVE-V0.2-development"
+          }
+        },
+        {
+          "id": "C3-CL06",
+          "form": "SEQUENCE",
+          "meaning": "SP-2 must complete and V0.2 must survive/reconcile before SP-3 protocol freeze.",
+          "slots": {
+            "ordered_step_refs": [
+              "SP2_OWNER_FAITHFULNESS_REVIEW",
+              "V02_RECONCILIATION",
+              "SP3_PROTOCOL_FREEZE"
+            ],
+            "scope_ref": "OPERATIVE-development"
+          }
+        }
+      ],
+      "domain_contract_refs": [
+        "research:442#operative-grammar",
+        "future:operative-compiler-contract",
+        "WARRANT-F",
+        "AO/continuity/Git natural-owner contracts",
+        "research:443#SP2-protocol"
+      ],
+      "generated_control": [
+        "ActionContract",
+        "ControlObligationSet",
+        "gate inputs",
+        "coverage expectations",
+        "stale/conflict/orientation views"
+      ],
+      "human_governing_only": [
+        "thin-architecture preference/rationale",
+        "affordability hypothesis and broader design rationale"
+      ],
+      "advisory_detection": [
+        "event hypothesis nomination",
+        "recital-leak candidate",
+        "legacy candidate",
+        "coverage suggestion"
+      ],
+      "ambiguities": [
+        "A production canonical type system for action/consequence/predicate/scope references does not yet exist; this is intentionally deferred development work rather than filled with free text."
+      ],
+      "counts": {
+        "ACCEPTED_CLAUSE": 6,
+        "DOMAIN_CONTRACT": 7,
+        "GENERATED_CONTROL": 2,
+        "HUMAN_GOVERNING_ONLY": 2,
+        "ADVISORY_DETECTION": 1
+      }
+    }
+  ],
+  "owner_review": {
+    "per_case_verdicts": [
+      "ACCEPT",
+      "AMEND",
+      "REJECT",
+      "CANNOT_JUDGE"
+    ],
+    "overall_burden": [
+      "LOW",
+      "MODERATE",
+      "HIGH"
+    ],
+    "instruction": "Judge whether each proposed routing + clause set faithfully preserves the intended governing meaning for this development purpose. Corrections are welcome. Do not infer that ACCEPT selects OPERATIVE for production."
+  },
+  "descriptive_totals": {
+    "ledger_items": 52,
+    "clauses": 17,
+    "routing_ambiguities": 3
+  }
+}

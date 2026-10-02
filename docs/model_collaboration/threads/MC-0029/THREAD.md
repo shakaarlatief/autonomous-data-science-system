@@ -786,3 +786,39 @@ Current boundary:
     PHASE=DRP03_OPERATIVE_SP2_REVIEW_PACKAGE_DRAFTING
     OWNER_PARTICIPATION_REQUIRED_NOW=false
     NEXT=DRAFT_AND_FREEZE_SP2_OWNER_REVIEW_PACKAGE
+
+## OPERATIVE SP-2 owner-review boundary
+
+Research 444 freezes the complete owner-facing SP-2 package.
+
+    package SHA-256
+        d523b9783c69c369b358df97b01dc8215766122c9cc91a82145435a3efe2b865
+
+    cases
+        C1 Research 436
+        C2 Research 438
+        C3 Research 442
+
+    consequence-ledger items
+        52
+
+    candidate clauses
+        17
+
+No seeded errors are present. Hidden R2 item-level semantics remain sealed.
+
+The package is immutable while owner review is pending.
+
+Required owner response:
+
+    C1 = ACCEPT | AMEND | REJECT | CANNOT_JUDGE
+    C2 = ACCEPT | AMEND | REJECT | CANNOT_JUDGE
+    C3 = ACCEPT | AMEND | REJECT | CANNOT_JUDGE
+    corrections = optional natural prose
+    burden = LOW | MODERATE | HIGH
+
+Current boundary:
+
+    PHASE=DRP03_OPERATIVE_SP2_OWNER_REVIEW
+    OWNER_PARTICIPATION_REQUIRED=true
+    NEXT=OWNER_REVIEW_SP2_C1_C2_C3
