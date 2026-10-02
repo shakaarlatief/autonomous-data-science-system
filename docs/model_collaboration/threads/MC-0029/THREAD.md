@@ -1033,3 +1033,36 @@ Current boundary:
     OWNER_PARTICIPATION_REQUIRED_NOW=false
     SEEDED_OWNER_REVIEW_EXECUTION_AUTHORIZED=false
     NEXT=FREEZE_SP5_OWNER_REVIEW_EFFICACY_PROTOCOL
+
+## OPERATIVE SP-5 protocol freeze
+
+Research 452 freezes the owner-review efficacy protocol without creating any seeded packet.
+
+Planned review:
+
+    source units       6
+    deliberately seeded errors  3
+    clean items        3
+
+Error classes:
+
+    WRONG_OWNER
+    MISSING_GATE_CONDITION
+    INVERTED_OR_BROKEN_PROHIBITION_SCOPE
+
+Exact placement is not chosen before consent.
+
+After explicit owner authorization, placement is derived deterministically from the authorization-record commit.
+
+The owner will be told that exactly three of six review cards are intentionally false, but not which ones during review.
+
+SP-5 answers have no governing effect.
+
+Current boundary:
+
+    PHASE=DRP03_OPERATIVE_SP5_OWNER_AUTHORIZATION
+    SEEDED_PACKET_CREATED=false
+    SEEDED_PACKET_SHOWN=false
+    OWNER_EXPLICIT_INFORMED_AUTHORIZATION=false
+    NEXT_ACTOR=human
+    NEXT=OWNER_DECIDE_SP5_SEEDED_ERROR_AUTHORIZATION
