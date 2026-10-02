@@ -78,6 +78,7 @@ Independently derive Specification 028 reconciliation and AO-10 realization arch
     Key B P8 V6 grouping contract repair                 QUALIFIED + DEPLOYED + VERIFIED / Research 431 / ONE FRESH RESUME NEXT
     Key B component-scoped commitment                    FROZEN / Research 432 / STATE+BIRTH ONLY / CONSTRUCT COMPARISON NEXT
     P9 construct-comparison control-plane design         FROZEN / Research 433 / IMPLEMENT + QUALIFY NEXT / COMPARISON NOT RUN
+    P9 construct-comparison control-plane deployment     QUALIFIED + DEPLOYED + VERIFIED / Research 434 / 178 tools / mismatchCount 0 / LIVE COMPARISON NEXT
     Fresh private Key Author B                       SEMANTIC EXECUTION STARTED / CURRENTLY HOLD / BLIND TO A
     Key construct-validity gate                   AFTER BOTH COMMITMENTS
     DRP-03 R2                                    AFTER HARNESS FREEZE

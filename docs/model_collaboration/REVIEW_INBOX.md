@@ -215,6 +215,8 @@ Research 432 records successful use of that one fresh resume and freeze of the K
 
 Research 433 freezes the prospective P9 construct-comparison control plane before any live A/B comparison. The model-free action-only surface binds the exact frozen A/B commitments and STATE+BIRTH scope server-side, computes only the Research 330 aggregate agreement metrics and STATE-REF structural comparison, preserves item-level hidden semantics in a separate private comparison root, and fails closed on structural drift or undefined gate metrics. The ambiguity numerator is frozen conservatively as normative-union items marked ambiguous by either author because Research 330 fixes the denominator/cap but does not name a separate numerator operator. Implementation and mechanical qualification are authorized; live comparison remains not run.
 
+Research 434 records P9 qualification and deployment. V1 failed closed only because two inherited bounded-Git tests still asserted the pre-P9 tool count of 177; no construct comparison ran. Fresh V2 updates those cardinality assertions to 178, passes the dedicated P9 and complete inherited regressions, and is published, restarted and verified at private local-runtime source `4596045e4dab239dca931c7027e17f4e83790877` as `p9-construct-comparison-v2` / `0.1.1-preview.72-p9-construct-comparison`, manifest `02f0f7978ec16592681c6c14104ea8f9f58301c76c2affde227be9c7503b60f5`, with 178 tools and mismatchCount=0. Live comparison remains not run; P9 status then run_comparison is next under Research 433 authority.
+
 Production implementation, migration and authority switching remain held.
 
 ## Most recently completed obligation

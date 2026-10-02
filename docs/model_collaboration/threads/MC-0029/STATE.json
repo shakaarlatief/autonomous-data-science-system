@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "WAITING",
-  "phase": "DRP03_R2_P9_CONSTRUCT_COMPARISON_DESIGN_FROZEN_IMPLEMENTATION_NEXT",
+  "phase": "DRP03_R2_P9_CONSTRUCT_COMPARISON_DEPLOYED_LIVE_COMPARISON_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,14 +81,14 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 429 records the grouping HARNESS_INVALID boundary and the one fresh post-V6 resume. Research 430 records Codexless compatibility recovery. Research 431 records P8 V6 qualification/deployment. Research 432 records completion of the single resume and frozen Key B STATE+BIRTH commitment fe12b806ff28d81171af87d435172495f51a6f45c2164f2eecbc8b58f2f23e84. Both A/B component commitments are frozen. Research 433 freezes the model-free purpose-specific P9 construct-comparison control plane before any comparison, including exact aggregate metric formulas, STATE-REF structural comparison, hidden-detail restrictions, fail-closed undefined-metric behavior and separate private comparison storage. P9 implementation and qualification are next; live comparison has not run. LEGACY remains INCONCLUSIVE and excluded."
+    "notes": "Research 429 records the grouping HARNESS_INVALID boundary and one fresh post-V6 resume. Research 430 records Codexless compatibility recovery. Research 431 records P8 V6 deployment. Research 432 records the frozen Key B STATE+BIRTH commitment. Research 433 freezes the model-free P9 comparison design. Research 434 records immutable V1 publication failure from two inherited 177-tool cardinality assertions and fresh V2 qualification/deployment at source 4596045e4dab239dca931c7027e17f4e83790877, runtime 0.1.1-preview.72-p9-construct-comparison, 178 tools, mismatchCount 0. No live A/B comparison has run and no hidden semantic detail has been exposed. P9 status then run_comparison is next. LEGACY remains INCONCLUSIVE and excluded."
   },
   "last_transition": {
-    "transition_id": "mc0029-p9-construct-comparison-design-frozen",
+    "transition_id": "mc0029-p9-construct-comparison-deployed",
     "from_state": "WAITING",
     "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Research 433 freezes the purpose-specific model-free P9 STATE+BIRTH construct-comparison control plane before any hidden-key comparison and authorizes implementation and mechanical qualification.",
-    "repository_head": "3d7648df594ec5fdfd71a78d168543da0149f7a7"
+    "reason": "Research 434 records P9 V2 as qualified, published, restarted and verified with 178 tools and mismatchCount 0 after V1 failed closed on inherited tool-count assertions; live comparison is next.",
+    "repository_head": "0e3fab6212aa6d321c1a9014c274660870e573fd"
   }
 }
