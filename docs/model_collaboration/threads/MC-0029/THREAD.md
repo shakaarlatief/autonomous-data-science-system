@@ -712,3 +712,40 @@ Current boundary:
     HIDDEN_R2_ITEM_DETAILS=SEALED
     OWNER_PARTICIPATION_REQUIRED=false
     NEXT=DESIGN_OPERATIVE_V02_FROM_SP0_SP1
+
+## OPERATIVE V0.2
+
+Research 442 revises V0.1 from the combined SP-0/SP-1 evidence.
+
+V0.2 boundary:
+
+    governing acceptance
+        human-governing meaning
+        + thin typed operative clauses
+        + exact domain-native contract refs
+            ->
+    deterministic non-authoritative control projection
+            ->
+    natural-owner runtime facts
+            ->
+    executable predicates / assurance decisions
+
+Key rules:
+
+    operative clauses are not a universal Project-system schema
+    domain-native contracts are referenced, not duplicated
+    machine-critical slots use typed refs, not later prose interpretation
+    generated control output has no semantic authority
+    realization mapping remains at the realizer
+    hidden R2 material remains sealed
+
+V0.2 is not the selected production target.
+
+SP-2 is frozen/run before SP-3 because SP-2 is explicitly allowed to revise this development grammar.
+
+Current boundary:
+
+    PHASE=DRP03_OPERATIVE_SP2_PROTOCOL_FREEZE
+    OPERATIVE_V02=FROZEN_DEVELOPMENT_CANDIDATE
+    OWNER_PARTICIPATION_REQUIRED_NOW=false
+    NEXT=FREEZE_SP2_OWNER_FAITHFULNESS_MICRO_REPLAY
