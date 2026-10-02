@@ -965,3 +965,38 @@ Current boundary:
     HIDDEN_R2_ITEM_DETAILS=SEALED
     OWNER_PARTICIPATION_REQUIRED=false
     NEXT=FREEZE_SP4_RECITAL_LEAK_DETECTOR_PROTOCOL
+
+## OPERATIVE SP-4 detector freeze
+
+Research 450 freezes the SP-4 recital-leak detector probe before Claude annotation.
+
+    reviewer items          24
+    hidden LEAK             12
+    hidden NO_LEAK          12
+    detector contract       QUALIFIED_PROJECT_DETECTOR
+    detector                Claude / claude-04
+    annotation observed     false
+
+Reviewer-facing files:
+
+    experiments/ao10_operative_sp4_v01/DETECTOR_PACKET.md
+    experiments/ao10_operative_sp4_v01/reviewer_packet.json
+    experiments/ao10_operative_sp4_v01/annotation_schema.json
+
+Blinded from Claude until annotation commit:
+
+    evaluator_key.json
+    lexical_baseline.py
+    score_sp4.py
+    future result material
+    hidden R2 semantic material
+
+Required artifact:
+
+    docs/model_collaboration/threads/MC-0029/messages/013_claude_sp4_recital_leak_annotation.json
+
+Current boundary:
+
+    PHASE=DRP03_OPERATIVE_SP4_CLAUDE_DETECTOR
+    NEXT_ACTOR=claude
+    NEXT=CLAUDE_MESSAGE013_SP4_RECITAL_LEAK_ANNOTATION

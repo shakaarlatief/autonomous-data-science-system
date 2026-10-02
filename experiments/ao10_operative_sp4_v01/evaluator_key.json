@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "probe_id": "OPERATIVE-SP4-V01",
+  "labels": [
+    {
+      "item_id": "S001",
+      "label": "NO_LEAK",
+      "source_case": "C3"
+    },
+    {
+      "item_id": "S002",
+      "label": "NO_LEAK",
+      "source_case": "C2"
+    },
+    {
+      "item_id": "S003",
+      "label": "LEAK",
+      "source_case": "C1"
+    },
+    {
+      "item_id": "S004",
+      "label": "LEAK",
+      "source_case": "C3"
+    },
+    {
+      "item_id": "S005",
+      "label": "NO_LEAK",
+      "source_case": "C1"
+    },
+    {
+      "item_id": "S006",
+      "label": "LEAK",
+      "source_case": "C2"
+    },
+    {
+      "item_id": "S007",
+      "label": "LEAK",
+      "source_case": "C1"
+    },
+    {
+      "item_id": "S008",
+      "label": "LEAK",
+      "source_case": "C3"
+    },
+    {
+      "item_id": "S009",
+      "label": "NO_LEAK",
+      "source_case": "C3"
+    },
+    {
+      "item_id": "S010",
+      "label": "NO_LEAK",
+      "source_case": "C3"
+    },
+    {
+      "item_id": "S011",
+      "label": "NO_LEAK",
+      "source_case": "C1"
+    },
+    {
+      "item_id": "S012",
+      "label": "LEAK",
+      "source_case": "C3"
+    },
+    {
+      "item_id": "S013",
+      "label": "NO_LEAK",
+      "source_case": "C3"
+    },
+    {
+      "item_id": "S014",
+      "label": "NO_LEAK",
+      "source_case": "C1"
+    },
+    {
+      "item_id": "S015",
+      "label": "LEAK",
+      "source_case": "C3"
+    },
+    {
+      "item_id": "S016",
+      "label": "LEAK",
+      "source_case": "C2"
+    },
+    {
+      "item_id": "S017",
+      "label": "NO_LEAK",
+      "source_case": "C3"
+    },
+    {
+      "item_id": "S018",
+      "label": "NO_LEAK",
+      "source_case": "C1"
+    },
+    {
+      "item_id": "S019",
+      "label": "NO_LEAK",
+      "source_case": "C3"
+    },
+    {
+      "item_id": "S020",
+      "label": "LEAK",
+      "source_case": "C1"
+    },
+    {
+      "item_id": "S021",
+      "label": "LEAK",
+      "source_case": "C2"
+    },
+    {
+      "item_id": "S022",
+      "label": "LEAK",
+      "source_case": "C3"
+    },
+    {
+      "item_id": "S023",
+      "label": "NO_LEAK",
+      "source_case": "C2"
+    },
+    {
+      "item_id": "S024",
+      "label": "LEAK",
+      "source_case": "C3"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "probe_id": "OPERATIVE-SP4-V01",
+  "fixed_evidence_base": "e74d60e9651952dbaa8bc050bc9ca1d4e1a55d30",
+  "annotation_observed": false,
+  "files": {
+    "reviewer_packet.json": "0956ffef749244c27f5656a8449beb4406ef824784af2a4ef18671e15a826c64",
+    "evaluator_key.json": "60ddfb77c758d6c3b93f3d8c4e5909c3567778fa0bd7b6b9109f4cd8b70d607f",
+    "DETECTOR_PACKET.md": "569ec71f460ee8a01789de7c3609df2912ab83dc4288dcfef887f5efdd02b82a",
+    "annotation_schema.json": "6368ad7e4c5fbe8af87fb0efca83c0dcd870960b7d056d17b8a0e9fdcc24ccf7",
+    "lexical_baseline.py": "3d5f19106645fdd43fb4c3733f0ea390102b04e551eb32bc0c506ccd62b6ae81",
+    "score_sp4.py": "1252e379aed7aa13aa888a8e5f808cd7047ec30cdf9c7deda7534ccfd3b6d15a"
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "probe_id": "OPERATIVE-SP4-V01",
+  "instruction": "Classify each recital excerpt as LEAK or NO_LEAK using DETECTOR_PACKET.md. Treat every excerpt as text located outside the machine-operative block of an otherwise accepted governing artifact.",
+  "items": [
+    {
+      "item_id": "S001",
+      "text": "The diagram uses one box for the governing object for readability; it is not asserting that the accepted meaning must live in one physical file."
+    },
+    {
+      "item_id": "S002",
+      "text": "The owner may find a compact natural-language consequence view easier to review than the raw structured representation."
+    },
+    {
+      "item_id": "S003",
+      "text": "Dependent DRPs remain blocked until successor semantics are sufficiently qualified or an explicit architecture change removes their dependency."
+    },
+    {
+      "item_id": "S004",
+      "text": "A coverage declaration bound to a stale artifact revision is invalid."
+    },
+    {
+      "item_id": "S005",
+      "text": "We considered blocking every downstream DRP immediately, but rejected that option as broader than the dependency actually required."
+    },
+    {
+      "item_id": "S006",
+      "text": "No adoption-economics claim for the structured semantic layer is admissible before the detective-only null baseline has been run."
+    },
+    {
+      "item_id": "S007",
+      "text": "Physical migration must not begin until a separate governing authorization is recorded."
+    },
+    {
+      "item_id": "S008",
+      "text": "Machine-critical conditions use bounded typed references; when no bounded predicate or decision can support a deterministic gate, the consequence routes to review rather than free-text interpretation."
+    },
+    {
+      "item_id": "S009",
+      "text": "For illustration only, a future clause syntax could render a rule as 'GATE authority-switch ON qualification-pass'."
+    },
+    {
+      "item_id": "S010",
+      "text": "If a bounded classifier is evaluated later, its confidence score could be useful for prioritizing advisory review."
+    },
+    {
+      "item_id": "S011",
+      "text": "The phrase 'physical migration must not begin' appears in several earlier migration discussions and is quoted here only to explain the history of the decision."
+    },
+    {
+      "item_id": "S012",
+      "text": "SP-3 protocol freeze occurs only after SP-2 owner review has been reconciled."
+    },
+    {
+      "item_id": "S013",
+      "text": "One reason to keep generated projections disposable is that rebuildability makes recovery and debugging easier."
+    },
+    {
+      "item_id": "S014",
+      "text": "A core design principle is to optimize for the strongest coherent Project system rather than preserving the current mechanism because it already exists."
+    },
+    {
+      "item_id": "S015",
+      "text": "When a domain-native accepted contract already owns the detailed machine semantics, OPERATIVE references that exact contract and does not create a second authoritative copy."
+    },
+    {
+      "item_id": "S016",
+      "text": "Any deterministic consequential Project-system predicate must have an executable normative definition and regression qualification before it is used for admission."
+    },
+    {
+      "item_id": "S017",
+      "text": "A future implementation might serialize clause references in JSON, a database, or another representation; V0.2 intentionally leaves that physical choice open."
+    },
+    {
+      "item_id": "S018",
+      "text": "The failed R2 experiment showed that retrospective semantic reconstruction can remain difficult even after extensive protocol controls."
+    },
+    {
+      "item_id": "S019",
+      "text": "An open development question is whether typed-reference authoring remains affordable once the mechanism is used across more domains."
+    },
+    {
+      "item_id": "S020",
+      "text": "The only valid path to expose hidden R2 item-level semantics is a prospective owner route that records the exposure purpose, the evidence that becomes burned, and the replacement confirmation plan."
+    },
+    {
+      "item_id": "S021",
+      "text": "SP-5 may not execute without explicit informed owner authorization for the seeded-error review setup."
+    },
+    {
+      "item_id": "S022",
+      "text": "A realizing artifact declares the accepted clause identities it covers before that requirement can be treated as realized."
+    },
+    {
+      "item_id": "S023",
+      "text": "Research 438 records that SP-5 requires explicit informed owner authorization; this paragraph only explains why that earlier gate exists."
+    },
+    {
+      "item_id": "S024",
+      "text": "Generated control projections are not semantic authority and cannot override the accepted governing object."
+    }
+  ]
+}
