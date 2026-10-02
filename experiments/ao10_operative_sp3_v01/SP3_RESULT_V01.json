@@ -1,0 +1,425 @@
+{
+  "coverage": {
+    "negatives": {
+      "N01_UNKNOWN_CLAUSE": false,
+      "N02_STALE_SHA": false,
+      "N03_WRONG_OWNER": false,
+      "N04_SCOPE_MISMATCH": false
+    },
+    "positives": {
+      "SP3-A": true,
+      "SP3-B": true,
+      "SP3-C": true
+    }
+  },
+  "expected": {
+    "F01": {
+      "activation_effective": true,
+      "conflict_present": false,
+      "coverage_present": true,
+      "coverage_valid": true,
+      "deferral_effective": false,
+      "evidence_valid": true,
+      "qualification_complete": true,
+      "realization_satisfied": true,
+      "review_required": false
+    },
+    "F02": {
+      "activation_effective": true,
+      "conflict_present": false,
+      "coverage_present": true,
+      "coverage_valid": true,
+      "deferral_effective": false,
+      "evidence_valid": true,
+      "qualification_complete": true,
+      "realization_satisfied": true,
+      "review_required": false
+    },
+    "F03": {
+      "activation_effective": true,
+      "conflict_present": false,
+      "coverage_present": false,
+      "coverage_valid": false,
+      "deferral_effective": false,
+      "evidence_valid": true,
+      "qualification_complete": true,
+      "realization_satisfied": false,
+      "review_required": false
+    },
+    "F04": {
+      "activation_effective": true,
+      "conflict_present": false,
+      "coverage_present": true,
+      "coverage_valid": false,
+      "deferral_effective": false,
+      "evidence_valid": true,
+      "qualification_complete": true,
+      "realization_satisfied": false,
+      "review_required": true
+    },
+    "F05": {
+      "activation_effective": true,
+      "conflict_present": false,
+      "coverage_present": false,
+      "coverage_valid": false,
+      "deferral_effective": true,
+      "evidence_valid": true,
+      "qualification_complete": true,
+      "realization_satisfied": true,
+      "review_required": false
+    },
+    "F06": {
+      "activation_effective": true,
+      "conflict_present": false,
+      "coverage_present": false,
+      "coverage_valid": false,
+      "deferral_effective": false,
+      "evidence_valid": true,
+      "qualification_complete": true,
+      "realization_satisfied": false,
+      "review_required": true
+    },
+    "F07": {
+      "activation_effective": true,
+      "conflict_present": false,
+      "coverage_present": true,
+      "coverage_valid": true,
+      "deferral_effective": false,
+      "evidence_valid": false,
+      "qualification_complete": true,
+      "realization_satisfied": false,
+      "review_required": false
+    },
+    "F08": {
+      "activation_effective": true,
+      "conflict_present": false,
+      "coverage_present": true,
+      "coverage_valid": true,
+      "deferral_effective": false,
+      "evidence_valid": true,
+      "qualification_complete": false,
+      "realization_satisfied": false,
+      "review_required": false
+    },
+    "F09": {
+      "activation_effective": false,
+      "conflict_present": false,
+      "coverage_present": true,
+      "coverage_valid": true,
+      "deferral_effective": false,
+      "evidence_valid": true,
+      "qualification_complete": true,
+      "realization_satisfied": false,
+      "review_required": false
+    },
+    "F10": {
+      "activation_effective": true,
+      "conflict_present": true,
+      "coverage_present": true,
+      "coverage_valid": true,
+      "deferral_effective": false,
+      "evidence_valid": true,
+      "qualification_complete": true,
+      "realization_satisfied": false,
+      "review_required": true
+    },
+    "F11": {
+      "activation_effective": true,
+      "conflict_present": false,
+      "coverage_present": true,
+      "coverage_valid": true,
+      "deferral_effective": false,
+      "evidence_valid": true,
+      "qualification_complete": true,
+      "realization_satisfied": false,
+      "review_required": false
+    },
+    "F12": {
+      "activation_effective": true,
+      "conflict_present": false,
+      "coverage_present": true,
+      "coverage_valid": true,
+      "deferral_effective": false,
+      "evidence_valid": false,
+      "qualification_complete": true,
+      "realization_satisfied": false,
+      "review_required": false
+    }
+  },
+  "fixture_count": 12,
+  "implementation_a": {
+    "F01": {
+      "activation_effective": true,
+      "conflict_present": false,
+      "coverage_present": true,
+      "coverage_valid": true,
+      "deferral_effective": false,
+      "evidence_valid": true,
+      "qualification_complete": true,
+      "realization_satisfied": true,
+      "review_required": false
+    },
+    "F02": {
+      "activation_effective": true,
+      "conflict_present": false,
+      "coverage_present": true,
+      "coverage_valid": true,
+      "deferral_effective": false,
+      "evidence_valid": true,
+      "qualification_complete": true,
+      "realization_satisfied": true,
+      "review_required": false
+    },
+    "F03": {
+      "activation_effective": true,
+      "conflict_present": false,
+      "coverage_present": false,
+      "coverage_valid": false,
+      "deferral_effective": false,
+      "evidence_valid": true,
+      "qualification_complete": true,
+      "realization_satisfied": false,
+      "review_required": false
+    },
+    "F04": {
+      "activation_effective": true,
+      "conflict_present": false,
+      "coverage_present": true,
+      "coverage_valid": false,
+      "deferral_effective": false,
+      "evidence_valid": true,
+      "qualification_complete": true,
+      "realization_satisfied": false,
+      "review_required": true
+    },
+    "F05": {
+      "activation_effective": true,
+      "conflict_present": false,
+      "coverage_present": false,
+      "coverage_valid": false,
+      "deferral_effective": true,
+      "evidence_valid": true,
+      "qualification_complete": true,
+      "realization_satisfied": true,
+      "review_required": false
+    },
+    "F06": {
+      "activation_effective": true,
+      "conflict_present": false,
+      "coverage_present": false,
+      "coverage_valid": false,
+      "deferral_effective": false,
+      "evidence_valid": true,
+      "qualification_complete": true,
+      "realization_satisfied": false,
+      "review_required": true
+    },
+    "F07": {
+      "activation_effective": true,
+      "conflict_present": false,
+      "coverage_present": true,
+      "coverage_valid": true,
+      "deferral_effective": false,
+      "evidence_valid": false,
+      "qualification_complete": true,
+      "realization_satisfied": false,
+      "review_required": false
+    },
+    "F08": {
+      "activation_effective": true,
+      "conflict_present": false,
+      "coverage_present": true,
+      "coverage_valid": true,
+      "deferral_effective": false,
+      "evidence_valid": true,
+      "qualification_complete": false,
+      "realization_satisfied": false,
+      "review_required": false
+    },
+    "F09": {
+      "activation_effective": false,
+      "conflict_present": false,
+      "coverage_present": true,
+      "coverage_valid": true,
+      "deferral_effective": false,
+      "evidence_valid": true,
+      "qualification_complete": true,
+      "realization_satisfied": false,
+      "review_required": false
+    },
+    "F10": {
+      "activation_effective": true,
+      "conflict_present": true,
+      "coverage_present": true,
+      "coverage_valid": true,
+      "deferral_effective": false,
+      "evidence_valid": true,
+      "qualification_complete": true,
+      "realization_satisfied": false,
+      "review_required": true
+    },
+    "F11": {
+      "activation_effective": true,
+      "conflict_present": false,
+      "coverage_present": true,
+      "coverage_valid": true,
+      "deferral_effective": false,
+      "evidence_valid": true,
+      "qualification_complete": true,
+      "realization_satisfied": false,
+      "review_required": false
+    },
+    "F12": {
+      "activation_effective": true,
+      "conflict_present": false,
+      "coverage_present": true,
+      "coverage_valid": true,
+      "deferral_effective": false,
+      "evidence_valid": false,
+      "qualification_complete": true,
+      "realization_satisfied": false,
+      "review_required": false
+    }
+  },
+  "implementation_a_matches_expected": true,
+  "implementation_b": {
+    "F01": {
+      "activation_effective": true,
+      "conflict_present": false,
+      "coverage_present": true,
+      "coverage_valid": true,
+      "deferral_effective": false,
+      "evidence_valid": true,
+      "qualification_complete": true,
+      "realization_satisfied": true,
+      "review_required": false
+    },
+    "F02": {
+      "activation_effective": true,
+      "conflict_present": false,
+      "coverage_present": true,
+      "coverage_valid": true,
+      "deferral_effective": false,
+      "evidence_valid": true,
+      "qualification_complete": true,
+      "realization_satisfied": true,
+      "review_required": false
+    },
+    "F03": {
+      "activation_effective": true,
+      "conflict_present": false,
+      "coverage_present": false,
+      "coverage_valid": false,
+      "deferral_effective": false,
+      "evidence_valid": true,
+      "qualification_complete": true,
+      "realization_satisfied": false,
+      "review_required": false
+    },
+    "F04": {
+      "activation_effective": true,
+      "conflict_present": false,
+      "coverage_present": true,
+      "coverage_valid": false,
+      "deferral_effective": false,
+      "evidence_valid": true,
+      "qualification_complete": true,
+      "realization_satisfied": false,
+      "review_required": true
+    },
+    "F05": {
+      "activation_effective": true,
+      "conflict_present": false,
+      "coverage_present": false,
+      "coverage_valid": false,
+      "deferral_effective": true,
+      "evidence_valid": true,
+      "qualification_complete": true,
+      "realization_satisfied": true,
+      "review_required": false
+    },
+    "F06": {
+      "activation_effective": true,
+      "conflict_present": false,
+      "coverage_present": false,
+      "coverage_valid": false,
+      "deferral_effective": false,
+      "evidence_valid": true,
+      "qualification_complete": true,
+      "realization_satisfied": false,
+      "review_required": true
+    },
+    "F07": {
+      "activation_effective": true,
+      "conflict_present": false,
+      "coverage_present": true,
+      "coverage_valid": true,
+      "deferral_effective": false,
+      "evidence_valid": false,
+      "qualification_complete": true,
+      "realization_satisfied": false,
+      "review_required": false
+    },
+    "F08": {
+      "activation_effective": true,
+      "conflict_present": false,
+      "coverage_present": true,
+      "coverage_valid": true,
+      "deferral_effective": false,
+      "evidence_valid": true,
+      "qualification_complete": false,
+      "realization_satisfied": false,
+      "review_required": false
+    },
+    "F09": {
+      "activation_effective": false,
+      "conflict_present": false,
+      "coverage_present": true,
+      "coverage_valid": true,
+      "deferral_effective": false,
+      "evidence_valid": true,
+      "qualification_complete": true,
+      "realization_satisfied": false,
+      "review_required": false
+    },
+    "F10": {
+      "activation_effective": true,
+      "conflict_present": true,
+      "coverage_present": true,
+      "coverage_valid": true,
+      "deferral_effective": false,
+      "evidence_valid": true,
+      "qualification_complete": true,
+      "realization_satisfied": false,
+      "review_required": true
+    },
+    "F11": {
+      "activation_effective": true,
+      "conflict_present": false,
+      "coverage_present": true,
+      "coverage_valid": true,
+      "deferral_effective": false,
+      "evidence_valid": true,
+      "qualification_complete": true,
+      "realization_satisfied": false,
+      "review_required": false
+    },
+    "F12": {
+      "activation_effective": true,
+      "conflict_present": false,
+      "coverage_present": true,
+      "coverage_valid": true,
+      "deferral_effective": false,
+      "evidence_valid": false,
+      "qualification_complete": true,
+      "realization_satisfied": false,
+      "review_required": false
+    }
+  },
+  "implementation_b_matches_expected": true,
+  "implementations_identical": true,
+  "negative_control_count": 4,
+  "negative_controls_all_fail": true,
+  "positive_realizer_count": 3,
+  "positive_realizers_all_valid": true
+}
