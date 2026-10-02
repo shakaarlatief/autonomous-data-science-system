@@ -1,0 +1,1262 @@
+{
+  "schema_version": 1,
+  "probe_id": "OPERATIVE-SP1-V01",
+  "protocol": "Research 439",
+  "fixed_evidence_base": "8e8aed19cf3e1c159f74fdef787070688634a221",
+  "primary_sources": [
+    "Research 222",
+    "Research 223",
+    "Research 224",
+    "Research 225",
+    "Research 226",
+    "Research 257",
+    "Research 258",
+    "Research 276",
+    "Research 315",
+    "Research 318",
+    "Specification 028 §42"
+  ],
+  "support_sources_used": [],
+  "inventory_count": 37,
+  "consequence_class_counts": {
+    "ROUTING": 7,
+    "AUTHORITY": 4,
+    "ADMISSION": 8,
+    "EVOLUTION": 5,
+    "CONTINUITY_RECOVERY": 7,
+    "OPERATIONAL_PREDICATE": 2,
+    "REALIZATION_COVERAGE": 2,
+    "OBSERVABILITY": 1,
+    "CUTOVER_MIGRATION": 1
+  },
+  "answer_shape_counts": {
+    "STRUCTURED_DECISION": 19,
+    "REFERENCE_SET": 7,
+    "ENUM": 7,
+    "BOOLEAN": 4
+  },
+  "competency_questions": [
+    {
+      "cq_id": "CQ-AO-01",
+      "normalized_question": "What explicit owner directives constrain/permit/prohibit/bound the current cycle?",
+      "named_consumer": "AO event ingress",
+      "source_refs": [
+        "R222 §4"
+      ],
+      "consequence_class": "ROUTING",
+      "answer_shape": "STRUCTURED_DECISION",
+      "minimum_authoritative_inputs": [
+        "current event",
+        "owner authority context"
+      ],
+      "requires_machine_determinism": false,
+      "current_source_of_truth": "owner event + EventInterpretation",
+      "candidate_structured_need": "bounded explicit directives separate from inferred hypotheses",
+      "candidate_clause_form": null,
+      "candidate_slots": [
+        "directive_id",
+        "source_event_ref",
+        "directive_kind",
+        "scope_ref",
+        "unresolved_flag"
+      ],
+      "unresolved_interpretation": "language extraction may be model-assisted; material uncertainty blocks consequence"
+    },
+    {
+      "cq_id": "CQ-AO-02",
+      "normalized_question": "Do event + bounded context activate mandatory control obligations or the fast path?",
+      "named_consumer": "AO control screening",
+      "source_refs": [
+        "R222 §§5-7"
+      ],
+      "consequence_class": "ROUTING",
+      "answer_shape": "REFERENCE_SET",
+      "minimum_authoritative_inputs": [
+        "EventInterpretation",
+        "bounded control context",
+        "trigger/policy rules"
+      ],
+      "requires_machine_determinism": true,
+      "current_source_of_truth": "Progressive Control Closure",
+      "candidate_structured_need": "ControlObligationSet",
+      "candidate_clause_form": null,
+      "candidate_slots": [
+        "obligation_type",
+        "reason_ref",
+        "mandatory",
+        "satisfaction_ref",
+        "failure_behavior"
+      ],
+      "unresolved_interpretation": "model signals may nominate; policy makes obligations mandatory"
+    },
+    {
+      "cq_id": "CQ-AO-03",
+      "normalized_question": "Which governing/risk/supporting sources must be reconstructed before closure?",
+      "named_consumer": "AO reconstruction",
+      "source_refs": [
+        "R222 §8"
+      ],
+      "consequence_class": "ROUTING",
+      "answer_shape": "REFERENCE_SET",
+      "minimum_authoritative_inputs": [
+        "ControlObligationSet",
+        "source/authority indexes",
+        "freshness"
+      ],
+      "requires_machine_determinism": true,
+      "current_source_of_truth": "ReconstructionContract",
+      "candidate_structured_need": "bounded source roles/freshness/failure semantics",
+      "candidate_clause_form": null,
+      "candidate_slots": [
+        "source_ref",
+        "load_role",
+        "freshness",
+        "obligation_ref",
+        "fail_if_unavailable"
+      ],
+      "unresolved_interpretation": null
+    },
+    {
+      "cq_id": "CQ-AO-04",
+      "normalized_question": "What process/workstream/collaboration/execution route is valid?",
+      "named_consumer": "AO routing",
+      "source_refs": [
+        "R222 §9",
+        "R276 §23"
+      ],
+      "consequence_class": "ROUTING",
+      "answer_shape": "STRUCTURED_DECISION",
+      "minimum_authoritative_inputs": [
+        "closed obligations",
+        "workstream state",
+        "capability requirements",
+        "eligible surfaces",
+        "routing policy"
+      ],
+      "requires_machine_determinism": true,
+      "current_source_of_truth": "RouteDecision + capability model",
+      "candidate_structured_need": "provider-neutral bounded RouteDecision",
+      "candidate_clause_form": null,
+      "candidate_slots": [
+        "process_kind",
+        "workstream_ref",
+        "collaboration_mode",
+        "capabilities",
+        "executor_ref"
+      ],
+      "unresolved_interpretation": null
+    },
+    {
+      "cq_id": "CQ-AO-05",
+      "normalized_question": "Can governing authority be resolved for the exact subject/revision/consequence?",
+      "named_consumer": "AO authority resolver",
+      "source_refs": [
+        "R222 §10",
+        "R226 §5"
+      ],
+      "consequence_class": "AUTHORITY",
+      "answer_shape": "STRUCTURED_DECISION",
+      "minimum_authoritative_inputs": [
+        "subject/revision",
+        "consequence",
+        "authority sources",
+        "freshness/private requirements"
+      ],
+      "requires_machine_determinism": true,
+      "current_source_of_truth": "AuthorityReceipt",
+      "candidate_structured_need": "exact authority binding or fail-visible unresolved",
+      "candidate_clause_form": null,
+      "candidate_slots": [
+        "subject_ref",
+        "revision",
+        "consequence_ref",
+        "governing_refs",
+        "freshness",
+        "private_refs",
+        "status"
+      ],
+      "unresolved_interpretation": null
+    },
+    {
+      "cq_id": "CQ-AO-06",
+      "normalized_question": "Which permissions/prohibitions/gates/sequencing/required effects govern the exact action?",
+      "named_consumer": "AO ActionContract",
+      "source_refs": [
+        "R222 §10",
+        "R226 §9"
+      ],
+      "consequence_class": "AUTHORITY",
+      "answer_shape": "REFERENCE_SET",
+      "minimum_authoritative_inputs": [
+        "AuthorityReceipt",
+        "accepted clauses/policy",
+        "intended action"
+      ],
+      "requires_machine_determinism": true,
+      "current_source_of_truth": "ActionContract",
+      "candidate_structured_need": "generated contract from accepted clauses/policy",
+      "candidate_clause_form": "REQUIRE|PROHIBIT|GATE|AUTHORIZE|SEQUENCE",
+      "candidate_slots": [
+        "governing_clause_refs",
+        "action_ref",
+        "scope_ref",
+        "ordered_constraints",
+        "postconditions"
+      ],
+      "unresolved_interpretation": null
+    },
+    {
+      "cq_id": "CQ-AO-07",
+      "normalized_question": "Does proposed dispatch/mutation preserve all mandatory constraints/order/prohibitions/postconditions?",
+      "named_consumer": "AO conformance gate",
+      "source_refs": [
+        "R222 §10"
+      ],
+      "consequence_class": "ADMISSION",
+      "answer_shape": "ENUM",
+      "minimum_authoritative_inputs": [
+        "ActionContract",
+        "typed action/result",
+        "exact revision"
+      ],
+      "requires_machine_determinism": true,
+      "current_source_of_truth": "AO conformance",
+      "candidate_structured_need": "ADMIT/REFUSE/REVIEW_REQUIRED",
+      "candidate_clause_form": "GATE|PROHIBIT|SEQUENCE",
+      "candidate_slots": [
+        "contract_ref",
+        "action_shape",
+        "revision",
+        "decision",
+        "failure_refs"
+      ],
+      "unresolved_interpretation": null
+    },
+    {
+      "cq_id": "CQ-AO-08",
+      "normalized_question": "What postflight control consequences become mandatory?",
+      "named_consumer": "AO postflight",
+      "source_refs": [
+        "R222 §§12-13"
+      ],
+      "consequence_class": "ROUTING",
+      "answer_shape": "REFERENCE_SET",
+      "minimum_authoritative_inputs": [
+        "execution/handoff receipt",
+        "ActionContract",
+        "postconditions",
+        "workstream state"
+      ],
+      "requires_machine_determinism": true,
+      "current_source_of_truth": "AO postflight",
+      "candidate_structured_need": "postflight ControlObligationSet",
+      "candidate_clause_form": null,
+      "candidate_slots": [
+        "result_ref",
+        "postconditions",
+        "obligation_refs",
+        "resume_ref",
+        "observation_refs"
+      ],
+      "unresolved_interpretation": null
+    },
+    {
+      "cq_id": "CQ-EV-01",
+      "normalized_question": "Is observed pressure a conformance defect or an architecture-evolution question?",
+      "named_consumer": "AO-4 evolution classifier",
+      "source_refs": [
+        "R223 §5"
+      ],
+      "consequence_class": "EVOLUTION",
+      "answer_shape": "ENUM",
+      "minimum_authoritative_inputs": [
+        "trigger evidence",
+        "accepted contract/revision",
+        "conformance criteria"
+      ],
+      "requires_machine_determinism": false,
+      "current_source_of_truth": "EvolutionCase",
+      "candidate_structured_need": "bounded candidate classification + REVIEW",
+      "candidate_clause_form": null,
+      "candidate_slots": [
+        "trigger_ref",
+        "contract_ref",
+        "classification",
+        "review_required"
+      ],
+      "unresolved_interpretation": "architecture judgment may require review"
+    },
+    {
+      "cq_id": "CQ-EV-02",
+      "normalized_question": "Which exact accepted contract/revision and narrow scope are affected?",
+      "named_consumer": "AO-4 scope binding",
+      "source_refs": [
+        "R223 §§2,10,12"
+      ],
+      "consequence_class": "EVOLUTION",
+      "answer_shape": "REFERENCE_SET",
+      "minimum_authoritative_inputs": [
+        "trigger evidence",
+        "authority/lifecycle index",
+        "accepted architecture"
+      ],
+      "requires_machine_determinism": true,
+      "current_source_of_truth": "EvolutionCase + authority resolver",
+      "candidate_structured_need": "exact affected semantic refs/revisions",
+      "candidate_clause_form": null,
+      "candidate_slots": [
+        "trigger_ref",
+        "contract_ref",
+        "revision",
+        "scope_refs"
+      ],
+      "unresolved_interpretation": null
+    },
+    {
+      "cq_id": "CQ-EV-03",
+      "normalized_question": "What accepted evolution disposition governs the case?",
+      "named_consumer": "AO-4 disposition",
+      "source_refs": [
+        "R223 §§4,14"
+      ],
+      "consequence_class": "EVOLUTION",
+      "answer_shape": "ENUM",
+      "minimum_authoritative_inputs": [
+        "case evidence",
+        "review",
+        "owner decision where normative"
+      ],
+      "requires_machine_determinism": false,
+      "current_source_of_truth": "accepted AO-4 disposition",
+      "candidate_structured_need": "record/validate accepted disposition",
+      "candidate_clause_form": "LIFECYCLE",
+      "candidate_slots": [
+        "disposition",
+        "owner_decision_ref",
+        "contract_ref",
+        "effective_boundary"
+      ],
+      "unresolved_interpretation": "may terminate in OWNER_DECISION_REQUIRED"
+    },
+    {
+      "cq_id": "CQ-EV-04",
+      "normalized_question": "What hold/realization/migration/review/qualification consequences follow an accepted disposition?",
+      "named_consumer": "AO-4 consequence router",
+      "source_refs": [
+        "R223 §§8-10,17-18"
+      ],
+      "consequence_class": "EVOLUTION",
+      "answer_shape": "STRUCTURED_DECISION",
+      "minimum_authoritative_inputs": [
+        "accepted disposition",
+        "affected dependencies",
+        "qualification policy"
+      ],
+      "requires_machine_determinism": true,
+      "current_source_of_truth": "AO-4 realization chain",
+      "candidate_structured_need": "generated consequence references",
+      "candidate_clause_form": "REQUIRE|GATE|LIFECYCLE",
+      "candidate_slots": [
+        "disposition_ref",
+        "realization_refs",
+        "qualification_refs",
+        "migration_refs",
+        "hold_scope"
+      ],
+      "unresolved_interpretation": null
+    },
+    {
+      "cq_id": "CQ-EV-05",
+      "normalized_question": "Is a prospective effective boundary established without rewriting historical acceptance?",
+      "named_consumer": "governing lifecycle",
+      "source_refs": [
+        "R223 §15"
+      ],
+      "consequence_class": "AUTHORITY",
+      "answer_shape": "BOOLEAN",
+      "minimum_authoritative_inputs": [
+        "old/new authority refs",
+        "effective boundary",
+        "provenance"
+      ],
+      "requires_machine_determinism": true,
+      "current_source_of_truth": "lifecycle owner",
+      "candidate_structured_need": "explicit lifecycle relation",
+      "candidate_clause_form": "LIFECYCLE",
+      "candidate_slots": [
+        "operation",
+        "old_ref",
+        "new_ref",
+        "scope_ref",
+        "effective_from",
+        "provenance_ref"
+      ],
+      "unresolved_interpretation": null
+    },
+    {
+      "cq_id": "CQ-CT-01",
+      "normalized_question": "Does an interaction boundary require non-authoritative continuity state?",
+      "named_consumer": "AO-5 continuity",
+      "source_refs": [
+        "R224 §§2,4,6"
+      ],
+      "consequence_class": "CONTINUITY_RECOVERY",
+      "answer_shape": "BOOLEAN",
+      "minimum_authoritative_inputs": [
+        "unresolved marker",
+        "pending handoff",
+        "in-flight flag",
+        "durable anchor"
+      ],
+      "requires_machine_determinism": true,
+      "current_source_of_truth": "continuity policy",
+      "candidate_structured_need": "continuity-needed predicate",
+      "candidate_clause_form": null,
+      "candidate_slots": [
+        "durable_anchor",
+        "unresolved",
+        "pending_handoff",
+        "in_flight",
+        "receipt_required"
+      ],
+      "unresolved_interpretation": null
+    },
+    {
+      "cq_id": "CQ-CT-02",
+      "normalized_question": "What unresolved material/handoff/recoverability/return state must survive?",
+      "named_consumer": "AO-5 continuity",
+      "source_refs": [
+        "R224 §§4-6"
+      ],
+      "consequence_class": "CONTINUITY_RECOVERY",
+      "answer_shape": "STRUCTURED_DECISION",
+      "minimum_authoritative_inputs": [
+        "interaction state",
+        "durable anchor",
+        "handoff state",
+        "content accessibility"
+      ],
+      "requires_machine_determinism": true,
+      "current_source_of_truth": "InteractionContinuityEnvelope",
+      "candidate_structured_need": "bounded anchor-first continuity record",
+      "candidate_clause_form": null,
+      "candidate_slots": [
+        "anchor",
+        "purpose",
+        "workstream_ref",
+        "recoverability",
+        "unresolved_class",
+        "handoff_ref",
+        "return_condition",
+        "closure"
+      ],
+      "unresolved_interpretation": null
+    },
+    {
+      "cq_id": "CQ-CT-03",
+      "normalized_question": "Is ordinary reconstruction sufficient or is abnormal-execution recovery required?",
+      "named_consumer": "AO-5 recovery router",
+      "source_refs": [
+        "R224 §§8-9"
+      ],
+      "consequence_class": "CONTINUITY_RECOVERY",
+      "answer_shape": "ENUM",
+      "minimum_authoritative_inputs": [
+        "mutation-in-flight evidence",
+        "HEAD",
+        "trusted boundary",
+        "execution receipts"
+      ],
+      "requires_machine_determinism": true,
+      "current_source_of_truth": "AO-5 recovery routing",
+      "candidate_structured_need": "fail-safe recovery mode",
+      "candidate_clause_form": null,
+      "candidate_slots": [
+        "mode",
+        "head",
+        "trusted_boundary_ref",
+        "receipt_refs",
+        "uncertainty"
+      ],
+      "unresolved_interpretation": null
+    },
+    {
+      "cq_id": "CQ-CT-04",
+      "normalized_question": "Is recovery authority reachable independently of the failed component?",
+      "named_consumer": "AO-5 break-glass",
+      "source_refs": [
+        "R224 §§11-12"
+      ],
+      "consequence_class": "CONTINUITY_RECOVERY",
+      "answer_shape": "STRUCTURED_DECISION",
+      "minimum_authoritative_inputs": [
+        "failed capability",
+        "recovery authority ref/revision",
+        "available access capabilities"
+      ],
+      "requires_machine_determinism": true,
+      "current_source_of_truth": "RecoveryCase",
+      "candidate_structured_need": "authority + independent transport or fail-visible",
+      "candidate_clause_form": null,
+      "candidate_slots": [
+        "failed_ref",
+        "authority_ref",
+        "revision",
+        "transport_ref",
+        "independence",
+        "decision"
+      ],
+      "unresolved_interpretation": null
+    },
+    {
+      "cq_id": "CQ-CT-05",
+      "normalized_question": "What degraded mode is permitted when a required/optional capability is unavailable?",
+      "named_consumer": "AO-5 degraded mode",
+      "source_refs": [
+        "R224 §13"
+      ],
+      "consequence_class": "CONTINUITY_RECOVERY",
+      "answer_shape": "STRUCTURED_DECISION",
+      "minimum_authoritative_inputs": [
+        "failed capability",
+        "consequence",
+        "mandatory requirements",
+        "fallback capabilities"
+      ],
+      "requires_machine_determinism": true,
+      "current_source_of_truth": "degraded-mode policy",
+      "candidate_structured_need": "consequence-scoped fallback/block",
+      "candidate_clause_form": "GATE|PROHIBIT",
+      "candidate_slots": [
+        "failed_ref",
+        "consequence_ref",
+        "mandatory_refs",
+        "fallback_ref",
+        "decision"
+      ],
+      "unresolved_interpretation": null
+    },
+    {
+      "cq_id": "CQ-GIT-01",
+      "normalized_question": "Which purpose-bound Git lifecycle action applies?",
+      "named_consumer": "AO-6 Git/workstream orchestration",
+      "source_refs": [
+        "R225 §§3-4,19"
+      ],
+      "consequence_class": "ROUTING",
+      "answer_shape": "ENUM",
+      "minimum_authoritative_inputs": [
+        "GitExecutionBinding",
+        "workstream purpose/state",
+        "integration target",
+        "Git state",
+        "policy"
+      ],
+      "requires_machine_determinism": true,
+      "current_source_of_truth": "GitLifecycleDecision",
+      "candidate_structured_need": "bounded lifecycle action",
+      "candidate_clause_form": null,
+      "candidate_slots": [
+        "repository_ref",
+        "branch_ref",
+        "purpose_ref",
+        "workstream_refs",
+        "base",
+        "head",
+        "target_ref",
+        "action"
+      ],
+      "unresolved_interpretation": null
+    },
+    {
+      "cq_id": "CQ-GIT-02",
+      "normalized_question": "Must qualified local work be published or is a bounded local-only exception valid?",
+      "named_consumer": "AO-6 publication policy",
+      "source_refs": [
+        "R225 §§5-7"
+      ],
+      "consequence_class": "ROUTING",
+      "answer_shape": "STRUCTURED_DECISION",
+      "minimum_authoritative_inputs": [
+        "qualified commit state",
+        "recovery risk",
+        "collaboration need",
+        "publication policy",
+        "exception"
+      ],
+      "requires_machine_determinism": true,
+      "current_source_of_truth": "publication policy",
+      "candidate_structured_need": "publication obligation/exception",
+      "candidate_clause_form": "REQUIRE|DEFER",
+      "candidate_slots": [
+        "commit_refs",
+        "publication_required",
+        "exception_ref",
+        "recheck_ref"
+      ],
+      "unresolved_interpretation": null
+    },
+    {
+      "cq_id": "CQ-GIT-03",
+      "normalized_question": "Can the exact desired delta be integrated into the current target head?",
+      "named_consumer": "AO-6 integration gate",
+      "source_refs": [
+        "R225 §11"
+      ],
+      "consequence_class": "ADMISSION",
+      "answer_shape": "STRUCTURED_DECISION",
+      "minimum_authoritative_inputs": [
+        "delta",
+        "source revision",
+        "target/head",
+        "qualification evidence",
+        "authority"
+      ],
+      "requires_machine_determinism": true,
+      "current_source_of_truth": "GitLifecycleDecision + receipts",
+      "candidate_structured_need": "stale-head fail-closed integration gate",
+      "candidate_clause_form": "GATE|AUTHORIZE",
+      "candidate_slots": [
+        "delta_ref",
+        "source_revision",
+        "target_ref",
+        "expected_head",
+        "qualification_ref",
+        "authority_ref",
+        "decision"
+      ],
+      "unresolved_interpretation": null
+    },
+    {
+      "cq_id": "CQ-GIT-04",
+      "normalized_question": "May a ref be retired or history rewritten without losing live work/evidence/provenance?",
+      "named_consumer": "AO-6 destructive gate",
+      "source_refs": [
+        "R225 §§12-13"
+      ],
+      "consequence_class": "ADMISSION",
+      "answer_shape": "STRUCTURED_DECISION",
+      "minimum_authoritative_inputs": [
+        "workstream refs",
+        "review refs",
+        "reachability",
+        "routing refs",
+        "authority"
+      ],
+      "requires_machine_determinism": true,
+      "current_source_of_truth": "AO-6 destructive policy",
+      "candidate_structured_need": "retirement/rewrite gate",
+      "candidate_clause_form": "GATE|AUTHORIZE|LIFECYCLE",
+      "candidate_slots": [
+        "branch_ref",
+        "reachable_commits",
+        "dependent_refs",
+        "action",
+        "exception_authority_ref",
+        "decision"
+      ],
+      "unresolved_interpretation": null
+    },
+    {
+      "cq_id": "CQ-GIT-05",
+      "normalized_question": "What durable anchor/return condition/resume target governs paused or child work?",
+      "named_consumer": "AO-6 resume",
+      "source_refs": [
+        "R225 §§8,10"
+      ],
+      "consequence_class": "CONTINUITY_RECOVERY",
+      "answer_shape": "STRUCTURED_DECISION",
+      "minimum_authoritative_inputs": [
+        "workstream state",
+        "Git anchor",
+        "durable commit",
+        "return edge",
+        "step receipts"
+      ],
+      "requires_machine_determinism": true,
+      "current_source_of_truth": "workstream + continuity + Git binding",
+      "candidate_structured_need": "explicit resume binding",
+      "candidate_clause_form": "SEQUENCE",
+      "candidate_slots": [
+        "workstream_ref",
+        "execution_anchor",
+        "commit_ref",
+        "return_condition_ref",
+        "resume_target_ref",
+        "receipts",
+        "next_action_ref"
+      ],
+      "unresolved_interpretation": null
+    },
+    {
+      "cq_id": "CQ-BR-01",
+      "normalized_question": "What bridge mode is active and what architecture currently owns operational authority?",
+      "named_consumer": "AO-7 bridge",
+      "source_refs": [
+        "R226 §§2-4"
+      ],
+      "consequence_class": "AUTHORITY",
+      "answer_shape": "STRUCTURED_DECISION",
+      "minimum_authoritative_inputs": [
+        "authority state",
+        "bridge activation state"
+      ],
+      "requires_machine_determinism": true,
+      "current_source_of_truth": "current authority + bridge state",
+      "candidate_structured_need": "separate bridge-mode and authority-state fields",
+      "candidate_clause_form": null,
+      "candidate_slots": [
+        "bridge_mode",
+        "authority_ref",
+        "authority_switch_allowed"
+      ],
+      "unresolved_interpretation": null
+    },
+    {
+      "cq_id": "CQ-BR-02",
+      "normalized_question": "May the bridge drive this consequence while remaining subordinate to current authority?",
+      "named_consumer": "AO-7 bridge consequence gate",
+      "source_refs": [
+        "R226 §§5,9,14"
+      ],
+      "consequence_class": "ADMISSION",
+      "answer_shape": "STRUCTURED_DECISION",
+      "minimum_authoritative_inputs": [
+        "bridge mode",
+        "AuthorityReceipt",
+        "ActionContract",
+        "consequence",
+        "mutation authority"
+      ],
+      "requires_machine_determinism": true,
+      "current_source_of_truth": "AO-7 write path",
+      "candidate_structured_need": "current-authority-gated bridge action",
+      "candidate_clause_form": "GATE|AUTHORIZE",
+      "candidate_slots": [
+        "bridge_mode",
+        "authority_receipt_ref",
+        "action_contract_ref",
+        "consequence_ref",
+        "decision"
+      ],
+      "unresolved_interpretation": null
+    },
+    {
+      "cq_id": "CQ-BR-03",
+      "normalized_question": "Has drift/conflict invalidated a derived bridge/control plan?",
+      "named_consumer": "AO-7 staleness checker",
+      "source_refs": [
+        "R226 §§10-11"
+      ],
+      "consequence_class": "OPERATIONAL_PREDICATE",
+      "answer_shape": "BOOLEAN",
+      "minimum_authoritative_inputs": [
+        "plan bindings",
+        "current authority/state",
+        "expected revisions"
+      ],
+      "requires_machine_determinism": true,
+      "current_source_of_truth": "bridge snapshot + current authority",
+      "candidate_structured_need": "stale/conflict predicate",
+      "candidate_clause_form": null,
+      "candidate_slots": [
+        "plan_ref",
+        "bound_revisions",
+        "current_revisions",
+        "conflict",
+        "stale"
+      ],
+      "unresolved_interpretation": null
+    },
+    {
+      "cq_id": "CQ-BR-04",
+      "normalized_question": "What fallback/block behavior is permitted when bridge/authority is unavailable?",
+      "named_consumer": "AO-7 fallback",
+      "source_refs": [
+        "R226 §12"
+      ],
+      "consequence_class": "CONTINUITY_RECOVERY",
+      "answer_shape": "STRUCTURED_DECISION",
+      "minimum_authoritative_inputs": [
+        "failed capability",
+        "current continuity",
+        "required authority availability",
+        "consequence"
+      ],
+      "requires_machine_determinism": true,
+      "current_source_of_truth": "AO-7 fallback + AO-5 recovery",
+      "candidate_structured_need": "fallback current continuity or block affected consequence",
+      "candidate_clause_form": "GATE|PROHIBIT",
+      "candidate_slots": [
+        "failed_ref",
+        "continuity_ref",
+        "authority_ref",
+        "consequence_ref",
+        "fallback_or_block"
+      ],
+      "unresolved_interpretation": null
+    },
+    {
+      "cq_id": "CQ-BR-05",
+      "normalized_question": "Is a bridge enable/disable transition admissible?",
+      "named_consumer": "AO-7 bridge lifecycle",
+      "source_refs": [
+        "R226 §13"
+      ],
+      "consequence_class": "ADMISSION",
+      "answer_shape": "BOOLEAN",
+      "minimum_authoritative_inputs": [
+        "current mode",
+        "qualification evidence",
+        "current-authority decision"
+      ],
+      "requires_machine_determinism": true,
+      "current_source_of_truth": "bridge activation contract",
+      "candidate_structured_need": "qualified authority-controlled transition",
+      "candidate_clause_form": "GATE|AUTHORIZE|LIFECYCLE",
+      "candidate_slots": [
+        "from_mode",
+        "to_mode",
+        "qualification_ref",
+        "decision_ref",
+        "admissible"
+      ],
+      "unresolved_interpretation": null
+    },
+    {
+      "cq_id": "CQ-AS-01",
+      "normalized_question": "Which assurance claims are mandatory for the exact consequence regardless of request/profile omissions?",
+      "named_consumer": "WARRANT-F policy resolver",
+      "source_refs": [
+        "R276 §§9,21",
+        "R318 §§2-4"
+      ],
+      "consequence_class": "ADMISSION",
+      "answer_shape": "REFERENCE_SET",
+      "minimum_authoritative_inputs": [
+        "subject/revision",
+        "consequence",
+        "effective policy/base",
+        "governed extensions"
+      ],
+      "requires_machine_determinism": true,
+      "current_source_of_truth": "effective gate policy",
+      "candidate_structured_need": "policy-derived required claims",
+      "candidate_clause_form": null,
+      "candidate_slots": [
+        "subject_ref",
+        "revision",
+        "consequence_ref",
+        "policy_ref",
+        "required_claim_refs",
+        "supplemental_claim_refs"
+      ],
+      "unresolved_interpretation": null
+    },
+    {
+      "cq_id": "CQ-AS-02",
+      "normalized_question": "Does each required claim have exact/fresh/trusted/threshold-satisfying warranted evidence?",
+      "named_consumer": "WARRANT-F evaluator",
+      "source_refs": [
+        "R276 §§9-10",
+        "R318 §3"
+      ],
+      "consequence_class": "ADMISSION",
+      "answer_shape": "STRUCTURED_DECISION",
+      "minimum_authoritative_inputs": [
+        "claims",
+        "floors",
+        "evidence",
+        "warrants",
+        "trust/freshness/threshold policy"
+      ],
+      "requires_machine_determinism": true,
+      "current_source_of_truth": "WARRANT-F evaluator",
+      "candidate_structured_need": "per-claim predicate vector",
+      "candidate_clause_form": "GATE",
+      "candidate_slots": [
+        "claim_ref",
+        "evidence_ref",
+        "warrant_ref",
+        "trust",
+        "freshness",
+        "threshold",
+        "result"
+      ],
+      "unresolved_interpretation": null
+    },
+    {
+      "cq_id": "CQ-AS-03",
+      "normalized_question": "What deterministic assurance decision applies: ADMIT, REFUSE, or REVIEW_REQUIRED?",
+      "named_consumer": "WARRANT-F decision kernel",
+      "source_refs": [
+        "R276 §§9,19",
+        "R318 §§2-4"
+      ],
+      "consequence_class": "ADMISSION",
+      "answer_shape": "ENUM",
+      "minimum_authoritative_inputs": [
+        "effective policy",
+        "claim results",
+        "subject/base revision",
+        "consequence"
+      ],
+      "requires_machine_determinism": true,
+      "current_source_of_truth": "WARRANT-F DECISION",
+      "candidate_structured_need": "deterministic gate decision consumed by AO",
+      "candidate_clause_form": "GATE",
+      "candidate_slots": [
+        "subject_ref",
+        "base_revision",
+        "consequence_ref",
+        "policy_ref",
+        "claim_results",
+        "decision"
+      ],
+      "unresolved_interpretation": null
+    },
+    {
+      "cq_id": "CQ-AS-04",
+      "normalized_question": "Does assurance-policy change weaken/preserve/strengthen base protection and require review?",
+      "named_consumer": "WARRANT-F ratchet",
+      "source_refs": [
+        "R276 §11"
+      ],
+      "consequence_class": "EVOLUTION",
+      "answer_shape": "ENUM",
+      "minimum_authoritative_inputs": [
+        "base policy",
+        "candidate policy",
+        "lineage/witness carry-forward"
+      ],
+      "requires_machine_determinism": true,
+      "current_source_of_truth": "policy ratchet",
+      "candidate_structured_need": "bounded delta classification",
+      "candidate_clause_form": null,
+      "candidate_slots": [
+        "base_policy_ref",
+        "candidate_policy_ref",
+        "delta_class",
+        "review_required",
+        "witness_refs"
+      ],
+      "unresolved_interpretation": null
+    },
+    {
+      "cq_id": "CQ-REAL-01",
+      "normalized_question": "Which currently effective accepted requirements require realization/coverage tracking?",
+      "named_consumer": "KA-R52 traceability",
+      "source_refs": [
+        "R257 §9",
+        "R258 CL-7",
+        "R315 §6"
+      ],
+      "consequence_class": "REALIZATION_COVERAGE",
+      "answer_shape": "REFERENCE_SET",
+      "minimum_authoritative_inputs": [
+        "accepted clause identities/lifecycle",
+        "scope/effective boundary",
+        "deferrals"
+      ],
+      "requires_machine_determinism": true,
+      "current_source_of_truth": "governance knowledge + active-clause index",
+      "candidate_structured_need": "active REQUIRE clause set",
+      "candidate_clause_form": "REQUIRE|DEFER|LIFECYCLE",
+      "candidate_slots": [
+        "clause_ref",
+        "effective_scope",
+        "lifecycle",
+        "deferral_ref"
+      ],
+      "unresolved_interpretation": null
+    },
+    {
+      "cq_id": "CQ-REAL-02",
+      "normalized_question": "Does each active realization-requiring requirement have valid coverage or valid governed deferral?",
+      "named_consumer": "KA-R52 coverage checker",
+      "source_refs": [
+        "R258 CL-7",
+        "R315 §7",
+        "R438 §11.3"
+      ],
+      "consequence_class": "REALIZATION_COVERAGE",
+      "answer_shape": "STRUCTURED_DECISION",
+      "minimum_authoritative_inputs": [
+        "active REQUIRE refs",
+        "coverage facts",
+        "deferrals",
+        "authority/scope/time validity"
+      ],
+      "requires_machine_determinism": true,
+      "current_source_of_truth": "derived Project-system control state",
+      "candidate_structured_need": "coverage predicate over clause IDs",
+      "candidate_clause_form": "REQUIRE|DEFER",
+      "candidate_slots": [
+        "clause_ref",
+        "realizer_ref",
+        "coverage_ref",
+        "deferral_ref",
+        "validity"
+      ],
+      "unresolved_interpretation": null
+    },
+    {
+      "cq_id": "CQ-REAL-03",
+      "normalized_question": "Which realization/evidence/qualification/activation/deferral/conflict predicates hold now?",
+      "named_consumer": "realization predicate engine",
+      "source_refs": [
+        "R258 CL-7",
+        "R315 §7"
+      ],
+      "consequence_class": "OPERATIONAL_PREDICATE",
+      "answer_shape": "STRUCTURED_DECISION",
+      "minimum_authoritative_inputs": [
+        "realization relations",
+        "deferrals",
+        "evidence/warrants",
+        "qualification",
+        "activation",
+        "exact revisions"
+      ],
+      "requires_machine_determinism": true,
+      "current_source_of_truth": "source-owned facts + executable derivation",
+      "candidate_structured_need": "independent executable predicates",
+      "candidate_clause_form": null,
+      "candidate_slots": [
+        "clause_ref",
+        "coverage_present",
+        "deferral_effective",
+        "evidence_valid",
+        "qualification_complete",
+        "activation_effective",
+        "conflict_present",
+        "review_required"
+      ],
+      "unresolved_interpretation": "old global enum remains retired from active route"
+    },
+    {
+      "cq_id": "CQ-OBS-01",
+      "normalized_question": "Has a control miss/owner-reminder dependency/uncovered required consequence/realization gap occurred?",
+      "named_consumer": "KA-R51 observability",
+      "source_refs": [
+        "R222 §13",
+        "R257 §9",
+        "R315 §6"
+      ],
+      "consequence_class": "OBSERVABILITY",
+      "answer_shape": "STRUCTURED_DECISION",
+      "minimum_authoritative_inputs": [
+        "expected controls/requirements",
+        "actual route/execution",
+        "reminder/detector evidence",
+        "coverage"
+      ],
+      "requires_machine_determinism": true,
+      "current_source_of_truth": "ControlObservation",
+      "candidate_structured_need": "typed observation pointing to expected rule and actual miss",
+      "candidate_clause_form": null,
+      "candidate_slots": [
+        "observation_type",
+        "expected_ref",
+        "actual_event_ref",
+        "scope_ref",
+        "consequence",
+        "evolution_candidate"
+      ],
+      "unresolved_interpretation": null
+    },
+    {
+      "cq_id": "CQ-CUT-01",
+      "normalized_question": "Has W7 revalidated every required cutover-qualification class against actual production/migrated state?",
+      "named_consumer": "Specification 028 W7",
+      "source_refs": [
+        "Spec028 §42"
+      ],
+      "consequence_class": "CUTOVER_MIGRATION",
+      "answer_shape": "STRUCTURED_DECISION",
+      "minimum_authoritative_inputs": [
+        "production/migrated revision",
+        "67 requirements results",
+        "continuation/portability/budget/authority/conflict/workstream/privacy/capture/identity/rebuild/equivalence/parity/rollback/integrity evidence"
+      ],
+      "requires_machine_determinism": true,
+      "current_source_of_truth": "Specification 028 W7",
+      "candidate_structured_need": "bounded qualification checklist/claim set",
+      "candidate_clause_form": "GATE|REQUIRE",
+      "candidate_slots": [
+        "cutover_subject_ref",
+        "qualification_refs",
+        "evidence_refs",
+        "all_required_pass",
+        "decision"
+      ],
+      "unresolved_interpretation": null
+    }
+  ],
+  "candidate_grammar": {
+    "form_count": 7,
+    "forms": [
+      {
+        "form": "REQUIRE",
+        "purpose": "Accepted required effect/control/realization obligation with trackable identity/coverage.",
+        "machine_critical_slots": [
+          "clause_id",
+          "subject_or_scope_ref",
+          "responsible_domain_or_owner_ref",
+          "effective_boundary"
+        ],
+        "optional_bounded_slots": [
+          "acceptance_or_claim_ref",
+          "required_by_transition_ref"
+        ],
+        "rule": "Automated gates may not depend on reinterpretation of human-readable requirement text."
+      },
+      {
+        "form": "PROHIBIT",
+        "purpose": "Bounded action/consequence is inadmissible, optionally until a bounded predicate.",
+        "machine_critical_slots": [
+          "clause_id",
+          "action_or_consequence_ref",
+          "scope_ref",
+          "effective_boundary"
+        ],
+        "optional_bounded_slots": [
+          "until_predicate_ref",
+          "exception_authority_ref"
+        ]
+      },
+      {
+        "form": "GATE",
+        "purpose": "Bind transition/consequence to bounded predicates, assurance decisions, qualification claims, or prerequisites.",
+        "machine_critical_slots": [
+          "clause_id",
+          "transition_or_consequence_ref",
+          "predicate_or_decision_refs",
+          "scope_ref"
+        ],
+        "optional_bounded_slots": [
+          "failure_behavior",
+          "review_route_ref"
+        ]
+      },
+      {
+        "form": "AUTHORIZE",
+        "purpose": "Explicit bounded permission where absence of prohibition is not sufficient.",
+        "machine_critical_slots": [
+          "clause_id",
+          "authorized_action_or_phase_ref",
+          "scope_ref",
+          "authorizing_decision_ref",
+          "effective_boundary"
+        ],
+        "optional_bounded_slots": [
+          "expiry_or_revocation_ref",
+          "constraint_refs"
+        ]
+      },
+      {
+        "form": "DEFER",
+        "purpose": "Govern temporary non-realization/non-advancement without treating arbitrary prose holds as deferral.",
+        "machine_critical_slots": [
+          "clause_id",
+          "target_clause_or_consequence_ref",
+          "scope_ref",
+          "authorizing_decision_ref",
+          "reactivation_predicate_ref"
+        ],
+        "optional_bounded_slots": [
+          "evidence_requirement_ref",
+          "expiry_ref"
+        ]
+      },
+      {
+        "form": "LIFECYCLE",
+        "purpose": "Accepted AMEND/SUPERSEDE/RETIRE/REOPEN against exact identities/revisions/effective boundaries.",
+        "machine_critical_slots": [
+          "clause_id",
+          "operation",
+          "target_ref",
+          "scope_ref",
+          "effective_boundary",
+          "decision_ref"
+        ],
+        "optional_bounded_slots": [
+          "successor_ref",
+          "transition_ref",
+          "rollback_ref"
+        ]
+      },
+      {
+        "form": "SEQUENCE",
+        "purpose": "Consequential ordering/return/resume constraints that must not be reconstructed from prose.",
+        "machine_critical_slots": [
+          "clause_id",
+          "ordered_step_refs",
+          "scope_ref"
+        ],
+        "optional_bounded_slots": [
+          "precondition_refs",
+          "return_target_ref"
+        ]
+      }
+    ],
+    "removed_as_separate_forms": [
+      {
+        "form": "INVARIANT",
+        "reason": "Checkable invariants belong to WARRANT-F claims/policy or referenced predicates."
+      },
+      {
+        "form": "ASSIGN",
+        "reason": "Responsibility is a bounded slot/natural-owner fact; no admitted question requires a universal standalone assignment clause."
+      },
+      {
+        "form": "ROUTE/NEXT",
+        "reason": "Routing is normally derived control state; mandatory order can use REQUIRE/SEQUENCE/GATE."
+      }
+    ],
+    "non_clause_structured_surfaces_needed": [
+      "EventInterpretation",
+      "ControlObligationSet",
+      "ReconstructionContract",
+      "RouteDecision",
+      "AuthorityReceipt",
+      "ActionContract",
+      "Execution/Handoff/Continuation receipts",
+      "EvolutionCase",
+      "RecoveryCase / InteractionContinuityEnvelope",
+      "GitExecutionBinding / GitLifecycleDecision",
+      "WARRANT-F policy/claim/warrant/evidence/decision records",
+      "realizer-declared coverage facts",
+      "executable predicates / ControlObservation"
+    ],
+    "key_boundary": "OPERATIVE clauses encode accepted machine-governing consequences, not the whole Project-system data model."
+  },
+  "findings": {
+    "all_machine_critical_questions_have_bounded_operational_answer_shape": true,
+    "clause_form_count": 7,
+    "clause_form_limit": 10,
+    "required_clause_slot_needs_unconstrained_prose_interpretation": false,
+    "event_ingress_still_may_use_model_assisted_language_interpretation": true,
+    "event_ingress_is_not_authoritative_governing_semantics": true,
+    "owner_normative_decisions_remain_human_governed": true,
+    "clause_grammar_alone_is_sufficient_for_whole_project_system": false,
+    "natural_owner_control_records_are_required": true
+  },
+  "interpretation": "OPERATIVE_GRAMMAR_PLAUSIBLE",
+  "interpretation_reason": [
+    "All admitted questions terminate in bounded decisions/references/predicates once natural-owner inputs exist.",
+    "Seven governing-clause forms suffice at this development level when machine-critical semantics use typed references rather than prose reinterpretation.",
+    "Many Project-system questions belong to runtime/control/assurance/realization records rather than clauses.",
+    "Natural-language event interpretation may remain model-assisted because its bounded hypotheses are non-authoritative and uncertainty is fail-visible.",
+    "Normative owner decisions remain owner-governed; the machine records/routes rather than silently deciding them."
+  ],
+  "caveats": [
+    "Desk development inventory, not proof authors can write faithful clauses.",
+    "Seven forms/slots are development candidates, not target architecture.",
+    "A REQUIRE may contain human-readable text, but automated admission needs explicit bounded predicates/claims/references or must route to human review.",
+    "SP-0 showed current terminal summaries omit material controls, so plausible grammar does not imply low authoring cost.",
+    "SP-2/SP-3 remain necessary for faithfulness, coverage, executable predicates, and burden."
+  ],
+  "combined_route_with_sp0": "REVISE_OPERATIVE_BEFORE_SP2",
+  "combined_route_reason": "SP-1 is plausible, but Research 439 requires revision before owner-facing work because SP-0 was MIXED_EXISTING_IDIOM."
+}

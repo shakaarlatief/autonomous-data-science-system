@@ -668,3 +668,47 @@ Current boundary:
     HIDDEN_R2_ITEM_DETAILS=SEALED
     OWNER_PARTICIPATION_REQUIRED=false
     NEXT=EXECUTE_SP1
+
+## OPERATIVE SP-1 result
+
+Research 441 completes SP-1 under the Research 439 frozen protocol.
+
+Observed:
+
+    competency questions       37
+    bounded answer shapes      PASS
+    candidate clause forms     7
+    prose-dependent machine-critical clause slots  NONE
+    result                     OPERATIVE_GRAMMAR_PLAUSIBLE
+
+Candidate forms:
+
+    REQUIRE
+    PROHIBIT
+    GATE
+    AUTHORIZE
+    DEFER
+    LIFECYCLE
+    SEQUENCE
+
+Key boundary:
+
+    OPERATIVE accepted clauses
+        !=
+    universal Project-system data model
+
+Runtime/control records, continuity/Git state, WARRANT-F assurance semantics, natural-owner realization facts and executable predicates keep their own semantic ownership.
+
+Combined route:
+
+    SP0 = MIXED_EXISTING_IDIOM
+    SP1 = OPERATIVE_GRAMMAR_PLAUSIBLE
+        ->
+    revise OPERATIVE before SP-2
+
+Current boundary:
+
+    PHASE=DRP03_OPERATIVE_V02_CANDIDATE_REVISION
+    HIDDEN_R2_ITEM_DETAILS=SEALED
+    OWNER_PARTICIPATION_REQUIRED=false
+    NEXT=DESIGN_OPERATIVE_V02_FROM_SP0_SP1
