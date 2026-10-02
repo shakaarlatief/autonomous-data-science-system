@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "probe_id": "OPERATIVE-SP4-V01",
+  "detector": "Claude / interaction claude-04 / conversation 04 - Assurance and Delivery Architecture Design; single pass using only DETECTOR_PACKET.md, reviewer_packet.json and annotation_schema.json",
+  "annotations": [
+    {
+      "item_id": "S001",
+      "label": "NO_LEAK",
+      "confidence": 0.95,
+      "reason": "Explanatory note about a diagram's readability choice; explicitly asserts no binding consequence."
+    },
+    {
+      "item_id": "S002",
+      "label": "NO_LEAK",
+      "confidence": 0.95,
+      "reason": "Prediction about owner review convenience; establishes no gate, prohibition or required effect."
+    },
+    {
+      "item_id": "S003",
+      "label": "LEAK",
+      "confidence": 0.85,
+      "reason": "Asserts a current hold on dependent DRPs with a release condition, i.e. a gate a consumer would otherwise infer from recital text."
+    },
+    {
+      "item_id": "S004",
+      "label": "LEAK",
+      "confidence": 0.85,
+      "reason": "Establishes a machine-validity rule: coverage declarations bound to stale artifact revisions are invalid."
+    },
+    {
+      "item_id": "S005",
+      "label": "NO_LEAK",
+      "confidence": 0.95,
+      "reason": "Describes a considered and rejected option; no current consequence is asserted."
+    },
+    {
+      "item_id": "S006",
+      "label": "LEAK",
+      "confidence": 0.75,
+      "reason": "Establishes an admissibility gate and sequence: economics claims are inadmissible until the null baseline has run."
+    },
+    {
+      "item_id": "S007",
+      "label": "LEAK",
+      "confidence": 0.95,
+      "reason": "Asserts a current prohibition on physical migration until a separate governing authorization is recorded."
+    },
+    {
+      "item_id": "S008",
+      "label": "LEAK",
+      "confidence": 0.65,
+      "reason": "States a binding routing/validity rule: machine-critical conditions without a bounded predicate must route to review rather than free-text interpretation."
+    },
+    {
+      "item_id": "S009",
+      "label": "NO_LEAK",
+      "confidence": 0.95,
+      "reason": "Explicitly illustrative example syntax for a possible future clause; not a binding rule."
+    },
+    {
+      "item_id": "S010",
+      "label": "NO_LEAK",
+      "confidence": 0.95,
+      "reason": "Hypothetical about a possible future classifier's usefulness; no binding consequence."
+    },
+    {
+      "item_id": "S011",
+      "label": "NO_LEAK",
+      "confidence": 0.95,
+      "reason": "Quotes earlier wording solely to explain decision history; the excerpt itself establishes nothing."
+    },
+    {
+      "item_id": "S012",
+      "label": "LEAK",
+      "confidence": 0.8,
+      "reason": "Establishes a sequencing gate: SP-3 protocol freeze may occur only after SP-2 owner review is reconciled."
+    },
+    {
+      "item_id": "S013",
+      "label": "NO_LEAK",
+      "confidence": 0.9,
+      "reason": "Rationale explaining why disposable generated projections are beneficial."
+    },
+    {
+      "item_id": "S014",
+      "label": "NO_LEAK",
+      "confidence": 0.9,
+      "reason": "Human-governing design principle with no direct deterministic machine consequence."
+    },
+    {
+      "item_id": "S015",
+      "label": "LEAK",
+      "confidence": 0.6,
+      "reason": "Sets an authority/validity rule for clause authoring: reference the owning domain contract and never create a second authoritative copy."
+    },
+    {
+      "item_id": "S016",
+      "label": "LEAK",
+      "confidence": 0.85,
+      "reason": "Establishes a gate: consequential predicates require an executable normative definition and regression qualification before admission use."
+    },
+    {
+      "item_id": "S017",
+      "label": "NO_LEAK",
+      "confidence": 0.9,
+      "reason": "States that a physical representation choice is deliberately left open; no binding consequence."
+    },
+    {
+      "item_id": "S018",
+      "label": "NO_LEAK",
+      "confidence": 0.95,
+      "reason": "Historical evidence summary of the R2 experiment."
+    },
+    {
+      "item_id": "S019",
+      "label": "NO_LEAK",
+      "confidence": 0.95,
+      "reason": "Open development question about future authoring affordability."
+    },
+    {
+      "item_id": "S020",
+      "label": "LEAK",
+      "confidence": 0.8,
+      "reason": "Asserts an authorization rule: hidden R2 semantics may be exposed only via a prospective owner route with stated contents."
+    },
+    {
+      "item_id": "S021",
+      "label": "LEAK",
+      "confidence": 0.9,
+      "reason": "Asserts a current prohibition: SP-5 may not execute without explicit informed owner authorization."
+    },
+    {
+      "item_id": "S022",
+      "label": "LEAK",
+      "confidence": 0.85,
+      "reason": "Establishes a lifecycle/validity condition: a requirement is treated as realized only after a realizing artifact declares covered clause identities."
+    },
+    {
+      "item_id": "S023",
+      "label": "NO_LEAK",
+      "confidence": 0.9,
+      "reason": "Explicitly explains an earlier recorded gate; authority stays in the referenced record."
+    },
+    {
+      "item_id": "S024",
+      "label": "LEAK",
+      "confidence": 0.6,
+      "reason": "Asserts an authority-precedence rule that consumers must apply: generated projections cannot override the accepted governing object."
+    }
+  ]
+}
