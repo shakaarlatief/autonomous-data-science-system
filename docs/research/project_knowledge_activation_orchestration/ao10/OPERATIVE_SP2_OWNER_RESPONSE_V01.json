@@ -13,8 +13,9 @@
     "C2": [],
     "C3": []
   },
-  "review_burden": null,
-  "review_burden_status": "PENDING_OWNER_RATING",
+  "review_burden": "LOW",
+  "review_burden_status": "SUPPLIED",
   "owner_interaction_turns_to_verdict": 4,
-  "hidden_r2_details_used": false
+  "hidden_r2_details_used": false,
+  "owner_burden_verbatim": "LOW"
 }

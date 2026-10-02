@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "UNRESOLVED",
-  "phase": "DRP03_OPERATIVE_SP2_OWNER_BURDEN_REVIEW",
+  "phase": "DRP03_OPERATIVE_SP3_PROTOCOL_FREEZE",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -60,7 +60,7 @@
       ]
     }
   ],
-  "next_expected_actor": "human",
+  "next_expected_actor": "chatgpt",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,7 +81,7 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 435 remains frozen CONSTRUCT_UNDERDETERMINED and hidden R2 item-level semantics remain sealed. Research 444 froze the immutable three-case SP-2 package. Research 445 records the owner's explicit verdict 'I ACCEPT C1, C2 and C3': C1/C2/C3 are ACCEPT with no semantic corrections stated. Four owner interaction turns occurred from first package presentation through the verdict, including three clarification turns. Those are interface evidence, not semantic corrections. The protocol-required qualitative review burden has not been supplied and is not inferred. Next actor remains the owner to provide LOW/MODERATE/HIGH burden. No SP-2 closure or SP-3 freeze occurs before that field is recorded and reconciled."
+    "notes": "Research 435 remains frozen CONSTRUCT_UNDERDETERMINED and hidden R2 item-level semantics remain sealed. Research 444 froze the SP-2 package; Research 445 recorded C1/C2/C3=ACCEPT with no corrections. Research 446 now closes SP-2 after owner REVIEW_BURDEN=LOW. SP-2 result is V02_MICRO_SURVIVES: F1-F4 were not triggered, and LOW burden means F7 is not triggered by this micro-replay, though SP-6 remains required for comparative adoption economics. The owner needed clarification of the first review presentation, so interface clarity is preserved as NEEDS_IMPROVEMENT without changing the semantic verdict. Next actor is ChatGPT to prospectively freeze SP-3 realizer-coverage + executable-predicate development protocol before execution."
   },
   "last_transition": {
     "transition_id": "mc0029-drp03-r2-construct-underdetermined",
