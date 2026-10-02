@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "UNRESOLVED",
-  "phase": "DRP03_OPERATIVE_SP2_PROTOCOL_FREEZE",
+  "phase": "DRP03_OPERATIVE_SP2_REVIEW_PACKAGE_DRAFTING",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,7 +81,7 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 435 remains frozen CONSTRUCT_UNDERDETERMINED and hidden R2 item-level semantics remain sealed. SP-0 is MIXED_EXISTING_IDIOM and SP-1 is OPERATIVE_GRAMMAR_PLAUSIBLE. Research 442 freezes OPERATIVE V0.2 as a thin governing-semantics development candidate: accepted typed clauses plus exact domain-native contract references compile with authoritative current facts into non-authoritative disposable control projections. The operative layer is not a universal Project-system schema. Detailed assurance, protocol, migration, recovery, Git/workstream and realization semantics stay with natural owners. V0.2 retains seven candidate forms and typed machine-critical references. Because SP-0 forced material revision, SP-2 is frozen/run before SP-3. Next actor is ChatGPT to prospectively freeze the SP-2 owner-faithfulness/burden micro-replay. Owner judgment will be required only when SP-2 execution reaches the review step."
+    "notes": "Research 435 remains frozen CONSTRUCT_UNDERDETERMINED and hidden R2 item-level semantics remain sealed. Research 442 fixes OPERATIVE V0.2 as the current development input. Research 443 now prospectively freezes SP-2 before drafting or owner judgment: three real public cases (Research 436, 438, 442), five consequence-routing buckets, seven fixed candidate clause forms, exact owner verdict interface, and development falsifier mapping. ChatGPT may now draft and freeze the complete owner-review package. Owner participation is required only after that package is frozen and shown."
   },
   "last_transition": {
     "transition_id": "mc0029-drp03-r2-construct-underdetermined",

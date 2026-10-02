@@ -749,3 +749,40 @@ Current boundary:
     OPERATIVE_V02=FROZEN_DEVELOPMENT_CANDIDATE
     OWNER_PARTICIPATION_REQUIRED_NOW=false
     NEXT=FREEZE_SP2_OWNER_FAITHFULNESS_MICRO_REPLAY
+
+## OPERATIVE SP-2 protocol freeze
+
+Research 443 freezes SP-2 before packet drafting.
+
+Cases:
+
+    C1 Research 436 owner route
+    C2 Research 438 OPERATIVE reconciliation
+    C3 Research 442 OPERATIVE V0.2
+
+For each case, consequential effects are routed to exactly one primary bucket:
+
+    ACCEPTED_CLAUSE
+    DOMAIN_CONTRACT
+    GENERATED_CONTROL
+    HUMAN_GOVERNING_ONLY
+    ADVISORY_DETECTION
+
+Only the seven V0.2 candidate forms may be drafted.
+
+The entire three-case review package must be frozen before owner judgment.
+
+Owner verdicts:
+
+    ACCEPT
+    AMEND
+    REJECT
+    CANNOT_JUDGE
+
+No hidden seeded errors are used. Hidden R2 item-level semantics remain sealed.
+
+Current boundary:
+
+    PHASE=DRP03_OPERATIVE_SP2_REVIEW_PACKAGE_DRAFTING
+    OWNER_PARTICIPATION_REQUIRED_NOW=false
+    NEXT=DRAFT_AND_FREEZE_SP2_OWNER_REVIEW_PACKAGE
