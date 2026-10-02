@@ -1,7 +1,7 @@
 # MC-0029 Thread: Specification 028 Reconciliation and AO-10 Realization Design
 
 **Thread:** MC-0029
-**Status:** OPEN / DRP-03 SUCCESSOR CONSTRUCT REDESIGN / R2 UNDERDETERMINED PRESERVED
+**Status:** OPEN / SUCCESSOR CANDIDATE FAMILIES FROZEN / CLAUDE COUNTER-DESIGN NEXT / R2 UNDERDETERMINED PRESERVED
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** 0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d
@@ -530,3 +530,32 @@ Current boundary:
     FINAL_KEY_CREATION_AUTHORIZED=false
     DEPENDENT_DECISION_PROGRESSION=HELD
     NEXT=CHATGPT_FIRST_PRINCIPLES_REQUIREMENTS_FAILURE_DECOMPOSITION
+
+## ChatGPT successor candidate-family freeze and Claude handoff
+
+Research 437 completes Research 436 S1/S2 using public evidence only.
+
+It freezes six materially different successor candidate families without selection:
+
+    A  strengthened declaration-unit model
+    B  normative atoms with orthogonal dimensions
+    C  relation-first normative consequence graph
+    D  minimal operational control contract
+    E  domain-native contracts with shared references
+    F  accepted semantic atoms + generated operational projection
+
+Candidate development discriminators SX-01 through SX-05 are design options only. No pilot is authorized.
+
+MC-0029 Message 010 freezes the handoff to Claude/claude-04. Claude is asked to challenge the operational requirements, reopen any supposedly evidence-backed invariant with reasons, propose missing candidate families, identify designs that can be abandoned on first principles, analyze whole-system consequences, and propose the cheapest realistic falsifiers. Hidden R2 item-level semantics remain sealed.
+
+Current boundary:
+
+    PHASE=DRP03_SUCCESSOR_CANDIDATE_FAMILIES_FROZEN_AWAITING_CLAUDE
+    RESEARCH436=OWNER_ROUTE_ACTIVE
+    RESEARCH437=CHATGPT_INITIAL_CANDIDATE_FAMILIES_FROZEN
+    MC0029_MESSAGE010=CHATGPT_HANDOFF_FROZEN
+    SUCCESSOR_FAMILY_SELECTION=NONE
+    HIDDEN_R2_ITEM_DETAILS=SEALED
+    PILOT_AUTHORIZED=false
+    DEPENDENT_DECISION_PROGRESSION=HELD
+    NEXT=CLAUDE_MESSAGE011_SUCCESSOR_CONSTRUCT_COUNTERDESIGN

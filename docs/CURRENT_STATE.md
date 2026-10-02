@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 772
+**Checkpoint:** 773
 **Date:** 2026-10-02
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: DRP-03 successor construct redesign / Specification 028 reconciliation
+## Current active stage: DRP-03 successor candidate counter-design / Specification 028 reconciliation
+
+Checkpoint 773 / Research 437 freezes the first public-evidence-only requirements/failure decomposition and a deliberately plural successor design space before independent counter-design. It separates the operational questions the Project system actually must answer from inherited DRP-03 implementation assumptions, then preserves six non-selected candidate families: a strengthened declaration-unit comparator; orthogonal normative atoms; relation-first consequence semantics without mandatory canonical grouping; a minimal operational control contract; domain-native contracts composed through shared references; and accepted semantic atoms/relations with deterministic operational projections. The families may be combined and none has preservation privilege or selection status. Candidate cheap development discriminators cover category-versus-dimensions, grouping-versus-relations, state-enum-versus-predicates, minimal-control sufficiency and semantic-author contract. No pilot is authorized yet and hidden R2 item-level semantics remain sealed. MC-0029 Message 010 freezes the ChatGPT handoff; Claude/claude-04 is next for adversarial requirements critique, missing candidate generation, whole-system counter-design and cheap falsifier design before comparative reconciliation.
 
 Checkpoint 772 / Research 436 records the project owner's explicit route from the frozen DRP-03 R2 `CONSTRUCT_UNDERDETERMINED` boundary. The failed R2 result remains unchanged and its hidden item-level semantics remain sealed. The successor program now reopens the relevant semantic and Project-system design space without preservation privilege for the current obligation ontology, normative-kind taxonomy, grouping model, STATE model, LLM role, test architecture or surrounding responsibility boundaries. The owner also adopts progressive qualification as a design principle: use the smallest realistic and discriminating development probes that can change a decision, scale only when earlier evidence justifies it, and keep development evidence strictly separate from later untouched confirmation. Initial redesign must use public R1/R2 evidence and first-principles requirements without inspecting hidden R2 disagreement identities. The immediate next task is first-principles requirements/failure decomposition followed by materially different successor construct families; dependent DRP progression remains held.
 

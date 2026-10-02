@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "UNRESOLVED",
-  "phase": "DRP03_SUCCESSOR_CONSTRUCT_REDESIGN",
+  "phase": "DRP03_SUCCESSOR_CANDIDATE_FAMILIES_FROZEN_AWAITING_CLAUDE",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -60,7 +60,7 @@
       ]
     }
   ],
-  "next_expected_actor": "chatgpt",
+  "next_expected_actor": "claude",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,7 +81,7 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 435 remains the frozen DRP-03 R2 CONSTRUCT_UNDERDETERMINED result and cannot be rescued by retry, relabeling, threshold tuning, final-key construction or owner adjudication. Research 436 records the owner's explicit successor route: reopen the relevant semantic/Project-system design space without preservation privilege, combine first-principles architecture freedom with progressive realistic development probes, and preserve strict development/confirmation separation. Hidden R2 item-level semantic disagreements remain sealed during initial redesign. ChatGPT is next for public-evidence requirements/failure decomposition and materially different successor candidate families. Claude adversarial counter-design is planned only after the initial ChatGPT candidate-family record is frozen. LEGACY remains INCONCLUSIVE/excluded and P6C remains NOT_RUN."
+    "notes": "Research 435 remains the frozen DRP-03 R2 CONSTRUCT_UNDERDETERMINED result and cannot be rescued by retry, relabeling, threshold tuning, final-key construction or owner adjudication. Research 436 records the owner's successor route: no architectural preservation privilege, progressive realistic development probes, strict development/confirmation separation, and hidden R2 item-level semantics sealed during initial redesign. Research 437 freezes ChatGPT's public-evidence-only requirements/failure decomposition and six materially different non-selected successor candidate families, with candidate cheap discriminators but no pilot authorization. MC-0029 Message 010 is the frozen handoff to Claude/claude-04. Claude is next for adversarial requirements critique, missing-candidate counter-design, early-abandonment analysis, whole-system consequences and cheap falsifier design. Claude must not inspect or request hidden R2 semantic disagreement material. LEGACY remains INCONCLUSIVE/excluded and P6C remains NOT_RUN."
   },
   "last_transition": {
     "transition_id": "mc0029-drp03-r2-construct-underdetermined",
