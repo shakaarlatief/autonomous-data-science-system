@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "probe_id": "HYBRID_D3_DEPENDENCY_V01",
+  "protocol_commit": "b79d842b119b21877bbac28e11b5522d9cea6cb0",
+  "files": [
+    {
+      "path": "graph.json",
+      "sha256": "6a9368386138f14fdc4150fe2fa512dd29515d30d5a031a04a8ef1dcba8a1ed6",
+      "bytes": 2518
+    },
+    {
+      "path": "predicate_registry.json",
+      "sha256": "0443ef0ca711a30ba37ca12ee639139e724c56d5e439c5c0729f986cad3157f3",
+      "bytes": 566
+    },
+    {
+      "path": "negative_controls.json",
+      "sha256": "2aad30f7b341e0e469728c2dfdab599310970433051fea2fb0f0813c1d349e90",
+      "bytes": 1384
+    },
+    {
+      "path": "check_dependency.py",
+      "sha256": "5b4752ca4a4c6c9d78d8e32c13007a5c7f55fde59cd9c47bf2b0d671d8e2c96d",
+      "bytes": 5470
+    },
+    {
+      "path": "static_validate.py",
+      "sha256": "de318cd2b65bcc7c648ea40d1c74e9991a0364e073a6c41440a1eebb77bd8edb",
+      "bytes": 511
+    }
+  ]
+}

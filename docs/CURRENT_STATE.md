@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 816
+**Checkpoint:** 817
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: V0.2 cross-plane dependency proof / Specification 028 reconciliation
+## Current active stage: V0.2 frozen cross-plane dependency proof execution / Specification 028 reconciliation
+
+Checkpoint 817 / Research 480 freezes the exact HYBRID_D3_DEPENDENCY_V01 graph, predicate registry, negative controls and checker before proof execution. The pre-result manifest SHA-256 is af306ed8b728883221714d9eb971a9c2010524df0ea07ca2b194d538c203d715; static validation passed and result.json was absent. Exactly one proof execution is next.
 
 Checkpoint 816 / Research 479 prospectively freezes HYBRID_D3_DEPENDENCY_V01. The proof separates same-revision evaluation dependencies from next-revision operational feedback, fixes fourteen same-revision nodes, freezes the lineage -> active set -> shared predicates/WARRANT-F -> J3 -> orientation/control ordering, and requires one shared evidence/freshness predicate registry. Five negative controls test forbidden same-revision feedback/cycles and predicate-definition duplication. No owner participation is required.
 

@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "predicates": [
+    {
+      "predicate_id": "EVIDENCE_VALIDITY_V1",
+      "definition_revision": 1,
+      "executable_definition_digest": "sha256:ev-v1-fixed",
+      "consumers": [
+        "WARRANT_F_BASE_DECISIONS",
+        "J3_REQUIREMENT_TRUTH"
+      ]
+    },
+    {
+      "predicate_id": "EVIDENCE_FRESHNESS_V1",
+      "definition_revision": 1,
+      "executable_definition_digest": "sha256:ef-v1-fixed",
+      "consumers": [
+        "WARRANT_F_BASE_DECISIONS",
+        "J3_REQUIREMENT_TRUTH"
+      ]
+    }
+  ]
+}

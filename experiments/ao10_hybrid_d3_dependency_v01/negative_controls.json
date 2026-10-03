@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "controls": [
+    {
+      "id": "N1_META_TO_J3",
+      "kind": "add_same_revision_edge",
+      "edge": [
+        "WARRANT_F_META_ON_J3_SNAPSHOT",
+        "J3_REQUIREMENT_TRUTH"
+      ],
+      "expected_valid": false
+    },
+    {
+      "id": "N2_DELIVERY_TO_FACTS_SAME_REV",
+      "kind": "add_same_revision_edge",
+      "edge": [
+        "DELIVERY_EXECUTION",
+        "NATURAL_OWNER_SOURCE_FACTS"
+      ],
+      "expected_valid": false
+    },
+    {
+      "id": "N3_DUPLICATE_PREDICATE_DIFFERENT_DIGEST",
+      "kind": "duplicate_predicate",
+      "predicate": {
+        "predicate_id": "EVIDENCE_FRESHNESS_V1",
+        "definition_revision": 1,
+        "executable_definition_digest": "sha256:different",
+        "consumers": [
+          "J3_REQUIREMENT_TRUTH"
+        ]
+      },
+      "expected_valid": false
+    },
+    {
+      "id": "N4_ORIENTATION_TO_LINEAGE",
+      "kind": "add_same_revision_edge",
+      "edge": [
+        "GENERATED_ORIENTATION",
+        "LINEAGE_RESOLUTION"
+      ],
+      "expected_valid": false
+    },
+    {
+      "id": "N5_NEXT_REVISION_DELIVERY_TO_FACTS",
+      "kind": "next_revision_edge",
+      "edge": {
+        "source": "DELIVERY_EXECUTION",
+        "target": "NATURAL_OWNER_SOURCE_FACTS",
+        "revision_delta": 1
+      },
+      "expected_valid": true
+    }
+  ]
+}

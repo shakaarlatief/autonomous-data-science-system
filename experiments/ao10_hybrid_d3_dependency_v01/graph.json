@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "probe_id": "HYBRID_D3_DEPENDENCY_V01",
+  "nodes": [
+    "J1_ACCEPTED_GOVERNING_MEANING",
+    "LINEAGE_RESOLUTION",
+    "CURRENT_ACTIVE_REQUIREMENT_SET",
+    "NATURAL_OWNER_SOURCE_FACTS",
+    "SHARED_EVIDENCE_FRESHNESS_PREDICATES",
+    "WARRANT_F_BASE_DECISIONS",
+    "J3_REQUIREMENT_TRUTH",
+    "WARRANT_F_META_ON_J3_SNAPSHOT",
+    "GENERATED_ORIENTATION",
+    "CONTROL_COMPILATION",
+    "AO_PRE_DISPATCH_CONFORMANCE",
+    "DELIVERY_EXECUTION",
+    "REVIEW_ROUTING",
+    "DETECTIVE_OBSERVATION"
+  ],
+  "same_revision_edges": [
+    [
+      "J1_ACCEPTED_GOVERNING_MEANING",
+      "LINEAGE_RESOLUTION"
+    ],
+    [
+      "LINEAGE_RESOLUTION",
+      "CURRENT_ACTIVE_REQUIREMENT_SET"
+    ],
+    [
+      "CURRENT_ACTIVE_REQUIREMENT_SET",
+      "J3_REQUIREMENT_TRUTH"
+    ],
+    [
+      "NATURAL_OWNER_SOURCE_FACTS",
+      "SHARED_EVIDENCE_FRESHNESS_PREDICATES"
+    ],
+    [
+      "SHARED_EVIDENCE_FRESHNESS_PREDICATES",
+      "WARRANT_F_BASE_DECISIONS"
+    ],
+    [
+      "SHARED_EVIDENCE_FRESHNESS_PREDICATES",
+      "J3_REQUIREMENT_TRUTH"
+    ],
+    [
+      "WARRANT_F_BASE_DECISIONS",
+      "J3_REQUIREMENT_TRUTH"
+    ],
+    [
+      "J3_REQUIREMENT_TRUTH",
+      "WARRANT_F_META_ON_J3_SNAPSHOT"
+    ],
+    [
+      "J3_REQUIREMENT_TRUTH",
+      "GENERATED_ORIENTATION"
+    ],
+    [
+      "J3_REQUIREMENT_TRUTH",
+      "CONTROL_COMPILATION"
+    ],
+    [
+      "WARRANT_F_META_ON_J3_SNAPSHOT",
+      "CONTROL_COMPILATION"
+    ],
+    [
+      "GENERATED_ORIENTATION",
+      "REVIEW_ROUTING"
+    ],
+    [
+      "CONTROL_COMPILATION",
+      "AO_PRE_DISPATCH_CONFORMANCE"
+    ],
+    [
+      "AO_PRE_DISPATCH_CONFORMANCE",
+      "DELIVERY_EXECUTION"
+    ],
+    [
+      "NATURAL_OWNER_SOURCE_FACTS",
+      "DETECTIVE_OBSERVATION"
+    ],
+    [
+      "J1_ACCEPTED_GOVERNING_MEANING",
+      "DETECTIVE_OBSERVATION"
+    ],
+    [
+      "DETECTIVE_OBSERVATION",
+      "REVIEW_ROUTING"
+    ]
+  ],
+  "next_revision_feedback": [
+    {
+      "source": "DELIVERY_EXECUTION",
+      "target": "NATURAL_OWNER_SOURCE_FACTS",
+      "revision_delta": 1
+    },
+    {
+      "source": "REVIEW_ROUTING",
+      "target": "J1_ACCEPTED_GOVERNING_MEANING",
+      "revision_delta": 1,
+      "meaning": "after accepted review resolution"
+    },
+    {
+      "source": "REVIEW_ROUTING",
+      "target": "NATURAL_OWNER_SOURCE_FACTS",
+      "revision_delta": 1,
+      "meaning": "after factual/domain correction"
+    }
+  ]
+}
