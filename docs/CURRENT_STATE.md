@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 809
+**Checkpoint:** 810
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: thin-centred hybrid C9 owner-review package freeze / Specification 028 reconciliation
+## Current active stage: thin-centred hybrid C9 owner review / Specification 028 reconciliation
+
+Checkpoint 810 / Research 474 freezes the exact three-card HYBRID_C9_OWNER_BURDEN_V01 review package before owner judgment. The package SHA-256 is 721b39cf7d66fceee6ef36c35b3f6279f3ff432fffd57e981f3a1168c0e0f0dc and contains no prefilled owner verdicts. The owner now reviews only incremental J1 acceptance information, not implementation/schema internals, and supplies per-card ACCEPTABLE / NEEDS_SIMPLIFICATION / CANNOT_JUDGE plus one LOW / MODERATE / HIGH burden rating.
 
 Checkpoint 809 / Research 473 prospectively freezes HYBRID_C9_OWNER_BURDEN_V01 before drafting the owner-facing package. The probe tests only the incremental J1 owner-reviewed information that survived C4-C8: stable effect identity, explicit realization tracking, governing completion criteria/authority, and compact lineage summaries when meaning changes. J2/J3/generated facts are explicitly excluded from owner burden. Three compact natural-language cards are fixed, and the Project may not infer the owner's card verdicts or LOW/MODERATE/HIGH burden rating.
 

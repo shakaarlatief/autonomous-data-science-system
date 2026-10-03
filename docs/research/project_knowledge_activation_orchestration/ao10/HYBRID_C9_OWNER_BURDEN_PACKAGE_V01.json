@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "probe_id": "HYBRID_C9_OWNER_BURDEN_V01",
+  "protocol": "Research 473",
+  "frozen_input_commit": "ac4922c0610ead195a0db6d81ed25e31ff9e60f8",
+  "prior_thin_review_burden": "LOW",
+  "hidden_r2_details_used": false,
+  "purpose": "Measure only the incremental owner-review burden of the richer J1 metadata that survived C4-C8.",
+  "owner_task": "For each card, decide whether the extra information is a reasonable amount and type of information for you to review when making the governing decision. You are not being asked to understand internal schema, JSON, graph mechanics, or implementation details.",
+  "verdict_options": {
+    "ACCEPTABLE": "This is a reasonable amount/type of extra information to review with the governing decision.",
+    "NEEDS_SIMPLIFICATION": "The underlying information is useful, but the owner-facing review should be simpler or smaller.",
+    "CANNOT_JUDGE": "This still requires architecture/schema knowledge that should not be necessary."
+  },
+  "burden_options": {
+    "LOW": "The extra review feels small and straightforward.",
+    "MODERATE": "It is noticeable additional review, but still practical for consequential governing decisions.",
+    "HIGH": "It is burdensome enough that this should not normally be required."
+  },
+  "cards": [
+    {
+      "card_id": "C9-A",
+      "source_anchor": "SP2-C2 / C2-CL03",
+      "source": "docs/research/438_mc0029_message011_reconciliation_operative_development_candidate_v01.md",
+      "previously_accepted_meaning": "Deterministic consequential Project-system predicates/decisions must be defined executably and regression-tested.",
+      "extra_owner_visible_information": [
+        "This is a tracked governing requirement with a stable identity.",
+        "It counts as complete only when an executable normative definition exists and the required regression verification passes.",
+        "The completion rule is set by the governing decision or an accepted verification contract, not by the implementer who claims the work is done."
+      ],
+      "not_owner_reviewed": [
+        "which implementation files realize it",
+        "runtime coverage calculations",
+        "generated status labels"
+      ]
+    },
+    {
+      "card_id": "C9-B",
+      "source_anchor": "SP2-C3 / C3-CL01",
+      "source": "docs/research/442_operative_v02_thin_governing_semantics_and_compiled_control_projection_candidate.md",
+      "previously_accepted_meaning": "A governing acceptance binds the human carrier, operative component and exact referenced domain-contract revisions as one accepted meaning boundary.",
+      "extra_owner_visible_information": [
+        "This is a tracked governing requirement with a stable identity.",
+        "It counts as complete only when the required human carrier, operative component and referenced domain-contract revisions are all bound exactly and acceptance validation passes.",
+        "The requirement cannot silently disappear from tracking. It must remain open, become satisfied, be validly deferred, or later be changed/retired through a governed decision."
+      ],
+      "not_owner_reviewed": [
+        "generated realization-status computation",
+        "realizer-to-artifact coverage edges",
+        "internal storage layout"
+      ]
+    },
+    {
+      "card_id": "C9-C",
+      "source_anchor": "SP2-C2 / C2-CL01",
+      "source": "docs/research/438_mc0029_message011_reconciliation_operative_development_candidate_v01.md",
+      "previously_accepted_meaning": "Research 438 prospectively amends Research 437 for the reconciled successor-design scope.",
+      "extra_owner_visible_information": [
+        "The owner-facing lifecycle summary says which earlier governing meaning is being changed and which newer governing meaning replaces it for the stated scope.",
+        "Anything outside that stated scope is not silently changed by this decision.",
+        "If part of an older requirement has no successor, that loss/retirement must be shown explicitly rather than disappearing from the lineage."
+      ],
+      "not_owner_reviewed": [
+        "graph traversal",
+        "internal relation IDs",
+        "topological ordering implementation"
+      ]
+    }
+  ],
+  "owner_response_template": {
+    "C9-A": "ACCEPTABLE | NEEDS_SIMPLIFICATION | CANNOT_JUDGE",
+    "C9-B": "ACCEPTABLE | NEEDS_SIMPLIFICATION | CANNOT_JUDGE",
+    "C9-C": "ACCEPTABLE | NEEDS_SIMPLIFICATION | CANNOT_JUDGE",
+    "overall_burden": "LOW | MODERATE | HIGH",
+    "optional_comment": "free text"
+  },
+  "owner_judgments_observed": false
+}

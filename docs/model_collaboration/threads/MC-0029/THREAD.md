@@ -1498,3 +1498,19 @@ Current boundary:
     NEXT_ACTOR=chatgpt
     HIDDEN_R2_ITEM_DETAILS=SEALED
     NEXT=FREEZE_C9_OWNER_REVIEW_PACKAGE
+
+## HYBRID C9 owner package freeze
+
+Research 474 freezes the exact owner-facing review package.
+
+    probe                    HYBRID_C9_OWNER_BURDEN_V01
+    cards                    3
+    package SHA-256          721b39cf7d66fceee6ef36c35b3f6279f3ff432fffd57e981f3a1168c0e0f0dc
+    judgments observed       no
+
+Current boundary:
+
+    PHASE=DRP03_HYBRID_C9_OWNER_REVIEW
+    NEXT_ACTOR=human
+    HIDDEN_R2_ITEM_DETAILS=SEALED
+    NEXT=OWNER_REVIEW_C9_A_B_C_AND_BURDEN
