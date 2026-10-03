@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "entrypoint": "evaluate(accepted_j1, source_facts) -> dict",
+  "required_output_fields": [
+    "fixture_id",
+    "acceptance_binding_valid",
+    "source_fact_contract_valid",
+    "shared_predicates",
+    "lineage_relation_valid",
+    "current_effect_ids",
+    "realization_initialization",
+    "requirement_satisfied",
+    "realization_orientation",
+    "next_gap",
+    "standing_prohibition_enforcement",
+    "authorization_exercise_status",
+    "review_required",
+    "review_owner"
+  ],
+  "shared_predicate_fields": [
+    "transport_attested_github_connector",
+    "authorized_path_only",
+    "commit_receipt_bound_to_correction_head",
+    "runtime_bridge_prohibition_not_violated",
+    "evidence_valid",
+    "qualification_complete",
+    "authorization_exercise_valid",
+    "lineage_transition_valid"
+  ],
+  "realization_initialization_fields": [
+    "effect_id",
+    "mode"
+  ],
+  "allowed_initialization_modes": [
+    "OPEN_RESET"
+  ],
+  "allowed_orientation": [
+    "REVIEW_REQUIRED",
+    "DEFERRED",
+    "OPEN",
+    "SATISFIED"
+  ],
+  "allowed_next_gap": [
+    "REVIEW",
+    "UNOWNED",
+    "DEPENDENCY",
+    "COVERAGE",
+    "EVIDENCE",
+    "QUALIFICATION",
+    "ACTIVATION",
+    "NONE"
+  ],
+  "allowed_standing_prohibition_enforcement": [
+    "DETECTIVE_ONLY_COMPLIANT",
+    "DETECTIVE_ONLY_VIOLATION",
+    "UNBOUND_REVIEW_REQUIRED"
+  ],
+  "allowed_authorization_exercise_status": [
+    "EXERCISED_VALID",
+    "EXERCISED_INVALID",
+    "NOT_EXERCISED"
+  ],
+  "allowed_review_owner": [
+    null,
+    "GOVERNING_OWNER",
+    "INTEGRATION_OWNER",
+    "ASSURANCE_OWNER"
+  ],
+  "sorting": {
+    "current_effect_ids": "lexical",
+    "shared_predicates": "exact field set; JSON key order non-semantic"
+  },
+  "diagnostic_reason_codes": "not part of this D-1 contract"
+}

@@ -1834,3 +1834,21 @@ Current boundary:
     NEXT_ACTOR=chatgpt
     HIDDEN_R2_ITEM_DETAILS=SEALED
     NEXT=FREEZE_D1_POST_ACCEPTANCE_REPLAY_SPECIFICATION
+
+## D-1 post-acceptance replay specification freeze
+
+Research 492 freezes:
+
+    J1 accepted              yes
+    J2 real source facts     frozen
+    shared predicates        frozen
+    evaluator contract       frozen
+    hidden semantic key      frozen
+    evaluator A/B            absent
+
+Current boundary:
+
+    PHASE=DRP03_HYBRID_D1_EVALUATOR_A_FREEZE
+    NEXT_ACTOR=chatgpt
+    HIDDEN_R2_ITEM_DETAILS=SEALED
+    NEXT=AUTHOR_AND_FREEZE_D1_CHATGPT_EVALUATOR_A

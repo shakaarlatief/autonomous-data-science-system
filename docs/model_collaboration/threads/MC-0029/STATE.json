@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "UNRESOLVED",
-  "phase": "DRP03_HYBRID_D1_POSTACCEPT_FREEZE",
+  "phase": "DRP03_HYBRID_D1_EVALUATOR_A_FREEZE",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,7 +81,7 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 491 records the owner's exact ACCEPT decision against D-1 owner packet SHA-256 2ac7ec839138189b5657da4c8f78f8c938ac3227da1c7af7f3c6f3fda7ae4fb4. The four J1 effects are accepted unchanged for the development replay. Acceptance binds governing meaning only; actual Message 018/Git J2 facts and J3 truth remain to be frozen and derived independently. Next actor is ChatGPT to freeze the post-acceptance replay specification, source-fact fixture, shared predicates, public diagnostic vocabulary and evaluator key before either evaluator implementation."
+    "notes": "Research 492 freezes accepted_j1.json, actual Message 018 source_facts.json, public deterministic definitions.json, evaluator_contract.json and a hidden evaluator_key.json before either D-1 evaluator implementation. All D-1 output fields are material and exact. ChatGPT Evaluator A is next and must be authored from accepted_j1/source_facts/definitions/contract, not from the hidden key. After A is frozen and unexecuted, Claude will independently author Evaluator B while blind to A, the hidden key, A output and all D-1 results. Hidden R2 item-level material remains sealed."
   },
   "last_transition": {
     "transition_id": "mc0029-drp03-r2-construct-underdetermined",

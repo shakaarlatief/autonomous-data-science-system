@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 828
+**Checkpoint:** 829
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: V0.2 D-1 post-acceptance replay specification freeze / Specification 028 reconciliation
+## Current active stage: V0.2 D-1 ChatGPT evaluator A freeze / Specification 028 reconciliation
+
+Checkpoint 829 / Research 492 freezes the D-1 post-acceptance replay inputs before evaluator implementation: accepted J1, actual Claude/Git J2 source facts, shared deterministic predicates, currentness/lineage/orientation rules, exact evaluator contract and hidden semantic key. Every output field is material in D-1; there is no diagnostic reason-code exception. ChatGPT now authors Evaluator A against only the frozen reviewer-facing inputs; Claude Evaluator B will be authored independently after A is frozen and unexecuted.
 
 Checkpoint 828 / Research 491 records the owner's exact ACCEPT decision against the frozen D-1 packet SHA-256 2ac7ec839138189b5657da4c8f78f8c938ac3227da1c7af7f3c6f3fda7ae4fb4. The four J1 effects are accepted unchanged for this development replay. This acceptance binds governing meaning only; actual J2/Git facts and J3 truth remain to be derived independently. The next step is to freeze the post-acceptance replay specification, source facts, shared predicates, output vocabulary and evaluator key before evaluator implementation.
 

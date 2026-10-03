@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "fixture_id": "REAL_CLAUDE_MESSAGE018_TRANSPORT_CORRECTION",
+  "replay_event": "Research 485 correction followed by actual Claude Message 018 collaboration write",
+  "correction": {
+    "commit": "73f54c6a96b7a9172376b4c88deb9a5a400506d0",
+    "claude_runtime_bridge_available": false,
+    "authorized_transport": "CLAUDE_SIDE_GITHUB_CONNECTOR",
+    "authorized_path": "docs/model_collaboration/threads/MC-0029/messages/018_claude_d2_lineage_evaluator_b.md",
+    "predecessor_rule_id": "R484-S5-CLAUDE-RUNTIME-BRIDGE-REQUIREMENT",
+    "successor_rule_id": "D1-E01-D2-CLAUDE-WRITE-REQUIREMENT",
+    "lineage_relation": "REPLACE",
+    "realization_succession": "OPEN_RESET"
+  },
+  "action": {
+    "commit": "cd0cf087a4d0ddb30920a8c753e478da8f92295c",
+    "parent": "73f54c6a96b7a9172376b4c88deb9a5a400506d0",
+    "changed_paths": [
+      "docs/model_collaboration/threads/MC-0029/messages/018_claude_d2_lineage_evaluator_b.md"
+    ],
+    "message_transport_attestation": "CLAUDE_SIDE_GITHUB_CONNECTOR",
+    "message_only_authorized_path_written_attestation": true,
+    "action_scope": "D2_EVALUATOR_B_MESSAGE018"
+  },
+  "evidence": {
+    "git_commit_receipt_present": true,
+    "commit_parent_observed": true,
+    "changed_paths_observed": true,
+    "message_transport_attestation_present": true
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "expected": {
+    "fixture_id": "REAL_CLAUDE_MESSAGE018_TRANSPORT_CORRECTION",
+    "acceptance_binding_valid": true,
+    "source_fact_contract_valid": true,
+    "shared_predicates": {
+      "transport_attested_github_connector": true,
+      "authorized_path_only": true,
+      "commit_receipt_bound_to_correction_head": true,
+      "runtime_bridge_prohibition_not_violated": true,
+      "evidence_valid": true,
+      "qualification_complete": true,
+      "authorization_exercise_valid": true,
+      "lineage_transition_valid": true
+    },
+    "lineage_relation_valid": true,
+    "current_effect_ids": [
+      "D1-E01-D2-CLAUDE-WRITE-REQUIREMENT",
+      "D1-E02-NO-CLAUDE-RUNTIME-BRIDGE"
+    ],
+    "realization_initialization": {
+      "effect_id": "D1-E01-D2-CLAUDE-WRITE-REQUIREMENT",
+      "mode": "OPEN_RESET"
+    },
+    "requirement_satisfied": true,
+    "realization_orientation": "SATISFIED",
+    "next_gap": "NONE",
+    "standing_prohibition_enforcement": "DETECTIVE_ONLY_COMPLIANT",
+    "authorization_exercise_status": "EXERCISED_VALID",
+    "review_required": false,
+    "review_owner": null
+  }
+}

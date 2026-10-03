@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "probe_id": "HYBRID_D1_REAL_EVENT_REPLAY_V01",
+  "currentness": {
+    "after_action_current_effect_ids": [
+      "D1-E01-D2-CLAUDE-WRITE-REQUIREMENT",
+      "D1-E02-NO-CLAUDE-RUNTIME-BRIDGE"
+    ],
+    "note": "The bounded AUTHORIZE is consumed by the one Message 018 action; the LIFECYCLE effect executes the replacement and becomes historical. The standing REQUIRE and PROHIBIT remain current."
+  },
+  "shared_predicates": {
+    "transport_attested_github_connector": "action.message_transport_attestation == correction.authorized_transport == CLAUDE_SIDE_GITHUB_CONNECTOR",
+    "authorized_path_only": "action.changed_paths is exactly [correction.authorized_path] and action.message_only_authorized_path_written_attestation is true",
+    "commit_receipt_bound_to_correction_head": "action.parent == correction.commit and evidence.git_commit_receipt_present is true",
+    "runtime_bridge_prohibition_not_violated": "correction.claude_runtime_bridge_available is false and action.message_transport_attestation == CLAUDE_SIDE_GITHUB_CONNECTOR",
+    "evidence_valid": "all four evidence booleans are true",
+    "qualification_complete": "transport_attested_github_connector and authorized_path_only and commit_receipt_bound_to_correction_head and runtime_bridge_prohibition_not_violated",
+    "authorization_exercise_valid": "transport_attested_github_connector and authorized_path_only and commit_receipt_bound_to_correction_head",
+    "lineage_transition_valid": "correction.lineage_relation == REPLACE and predecessor/successor IDs match accepted D1-E04 lineage and realization_succession == OPEN_RESET"
+  },
+  "j3": {
+    "requirement_satisfied": "accepted D1-E01 completion rule is ALL_REQUIRED and all three required completion-component predicates are true and evidence_valid and qualification_complete",
+    "realization_orientation": {
+      "SATISFIED": "requirement_satisfied",
+      "REVIEW_REQUIRED": "acceptance/source/lineage invalid or contradictory",
+      "OPEN": "valid but requirement not satisfied and not deferred",
+      "DEFERRED": "not used in this accepted replay"
+    },
+    "next_gap_when_satisfied": "NONE"
+  },
+  "standing_prohibition_enforcement": {
+    "DETECTIVE_ONLY_COMPLIANT": "accepted D1-E02 mode is DETECTIVE_ONLY and runtime_bridge_prohibition_not_violated is true",
+    "DETECTIVE_ONLY_VIOLATION": "accepted D1-E02 mode is DETECTIVE_ONLY and predicate is false",
+    "UNBOUND_REVIEW_REQUIRED": "accepted standing prohibition lacks a control mode/reference"
+  },
+  "authorization_exercise_status": {
+    "EXERCISED_VALID": "accepted D1-E03 exists and authorization_exercise_valid is true",
+    "EXERCISED_INVALID": "action exists but authorization_exercise_valid is false",
+    "NOT_EXERCISED": "no action exists"
+  },
+  "review_routing": {
+    "none": "all acceptance/source/lineage/requirement predicates valid",
+    "GOVERNING_OWNER": "acceptance or lineage semantic binding invalid",
+    "INTEGRATION_OWNER": "Git receipt/path/parent facts invalid",
+    "ASSURANCE_OWNER": "evidence/qualification predicates invalid"
+  }
+}

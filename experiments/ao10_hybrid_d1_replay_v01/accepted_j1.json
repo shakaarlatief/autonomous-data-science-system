@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "probe_id": "HYBRID_D1_REAL_EVENT_REPLAY_V01",
+  "source_authority": "docs/research/485_claude_collaboration_transport_correction.md",
+  "source_correction_commit": "73f54c6a96b7a9172376b4c88deb9a5a400506d0",
+  "owner_packet_sha256": "2ac7ec839138189b5657da4c8f78f8c938ac3227da1c7af7f3c6f3fda7ae4fb4",
+  "owner_decision": "ACCEPT",
+  "owner_decision_record": "docs/research/491_d1_owner_acceptance_and_j1_binding.md",
+  "effects": [
+    {
+      "accepted_effect_id": "D1-E01-D2-CLAUDE-WRITE-REQUIREMENT",
+      "type": "REQUIRE",
+      "accepted_effect_statement": "For the D-2 Evaluator B collaboration write, Claude must use the Claude-side GitHub connector and change only the authorized MC-0029 Message 018 path.",
+      "accounting_disposition": "REALIZATION_TRACKED",
+      "completion_contract": {
+        "authority": "GOVERNING_ACCEPTANCE",
+        "composition_rule": "ALL_REQUIRED",
+        "required_components": [
+          "TRANSPORT_ATTESTED_GITHUB_CONNECTOR",
+          "AUTHORIZED_PATH_ONLY",
+          "COMMIT_RECEIPT_BOUND_TO_CORRECTION_HEAD"
+        ],
+        "evidence_required": true,
+        "qualification_required": true,
+        "activation_required": false
+      }
+    },
+    {
+      "accepted_effect_id": "D1-E02-NO-CLAUDE-RUNTIME-BRIDGE",
+      "type": "PROHIBIT",
+      "accepted_effect_statement": "The D-2 Claude action must not be routed through or depend on the ChatGPT-only Codexless Runtime Bridge.",
+      "accounting_disposition": "NO_REALIZATION_REQUIRED",
+      "accounting_reason": "STANDING_CONTROL_CONSEQUENCE",
+      "standing_enforcement": {
+        "mode": "DETECTIVE_ONLY",
+        "control_ref": "D1-HANDOFF-TRANSPORT-AUDIT"
+      }
+    },
+    {
+      "accepted_effect_id": "D1-E03-MESSAGE018-AUTHORIZATION",
+      "type": "AUTHORIZE",
+      "accepted_effect_statement": "Claude is authorized to create exactly MC-0029 Message 018 through the Claude-side GitHub connector for the blinded D-2 Evaluator B task.",
+      "accounting_disposition": "NO_REALIZATION_REQUIRED",
+      "accounting_reason": "SELF_EXECUTING_DISPOSITION",
+      "exercise_contract": {
+        "exact_authorized_path": "docs/model_collaboration/threads/MC-0029/messages/018_claude_d2_lineage_evaluator_b.md",
+        "governed_receipt_required_when_exercised": true
+      }
+    },
+    {
+      "accepted_effect_id": "D1-E04-TRANSPORT-CORRECTION-LIFECYCLE",
+      "type": "LIFECYCLE",
+      "accepted_effect_statement": "The incorrect Research 484 Section 5 Claude Runtime-Bridge requirement is replaced by the corrected Claude-side transport rule, and Research 477's transport-nonconformance finding is withdrawn while its substantive architecture reconciliation remains unchanged.",
+      "accounting_disposition": "NO_REALIZATION_REQUIRED",
+      "accounting_reason": "SELF_EXECUTING_DISPOSITION",
+      "lineage": {
+        "relation": "REPLACE",
+        "predecessor_id": "R484-S5-CLAUDE-RUNTIME-BRIDGE-REQUIREMENT",
+        "successor_id": "D1-E01-D2-CLAUDE-WRITE-REQUIREMENT",
+        "realization_succession": "OPEN_RESET"
+      }
+    }
+  ]
+}
