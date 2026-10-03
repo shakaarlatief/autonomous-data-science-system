@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 837
+**Checkpoint:** 838
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: THIN_CENTRED_HYBRID_V03 owner-decision package freeze / Specification 028 reconciliation
+## Current active stage: THIN_CENTRED_HYBRID_V03 owner architecture decision / Specification 028 reconciliation
+
+Checkpoint 838 / Research 501 freezes the exact owner architecture-decision package for THIN_CENTRED_HYBRID_V03. The candidate is bound to commit 07d49fd642fd58fa2bababbf872b7e6386d50419 and Git-blob SHA-256 48f7faf2aab0aa6f86a9f36adfb03f6ff97252c58fcca7c173ec1a7e1628d6c3. The decision packet is bound to Git-blob SHA-256 89b2fa01358dff55fa1861dfa793ee87806099c8a4be17c0620dd05a08e7f72e. ChatGPT recommends ACCEPT. The owner decision selects or rejects the architecture target only; Specification 028 remains authoritative and migration/activation remain unauthorized until later governed stages.
 
 Checkpoint 837 / Research 500 freezes THIN_CENTRED_HYBRID_V03 as the final pre-owner-decision candidate. V03 preserves the V02 authority/completion/J2/J3/orientation/legacy architecture, incorporates D-3 acyclic cross-plane stratification, D-2 qualified N:M lineage and realization succession, and the D-1 bounded amendment that realization_initialization is an ordered zero-to-many collection. All Research 477 pre-owner discriminators are now complete or reconciled, so the architecture decision is ready. Specification 028 remains authoritative, production is not selected, and migration remains unauthorized until a separate owner decision and subsequent governed stages.
 

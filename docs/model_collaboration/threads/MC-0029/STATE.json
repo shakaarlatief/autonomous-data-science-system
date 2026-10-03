@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "UNRESOLVED",
-  "phase": "DRP03_HYBRID_OWNER_DECISION_PACKAGE_FREEZE",
+  "phase": "DRP03_HYBRID_OWNER_DECISION",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -60,7 +60,7 @@
       ]
     }
   ],
-  "next_expected_actor": "chatgpt",
+  "next_expected_actor": "human",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,7 +81,7 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 500 freezes THIN_CENTRED_HYBRID_V03 as the final pre-owner-decision candidate. D-3 passed, D-2 is plausible with independent 14/14 semantic agreement, and D-1 is reconciled as a bounded interface amendment: realization_initialization is an ordered zero-to-many collection aligned with qualified N:M lineage semantics. All Research 477 pre-owner discriminators are complete or reconciled. Owner architecture decision is ready, but production selection, Specification 028 supersession, migration and dependent-DRP resumption remain unauthorized. Next actor is ChatGPT to freeze the exact owner decision package."
+    "notes": "Research 501 freezes the exact owner architecture-decision package for THIN_CENTRED_HYBRID_V03. Candidate Git-blob SHA-256 is 48f7faf2aab0aa6f86a9f36adfb03f6ff97252c58fcca7c173ec1a7e1628d6c3; owner packet Git-blob SHA-256 is 89b2fa01358dff55fa1861dfa793ee87806099c8a4be17c0620dd05a08e7f72e. D-1, D-2 and D-3 required pre-owner evidence is complete or reconciled. ChatGPT task-owner recommendation is ACCEPT. Next actor is the human project owner. Acceptance selects the intended architecture target but does not supersede Specification 028, authorize physical migration, activate production, or automatically resume dependent DRPs."
   },
   "last_transition": {
     "transition_id": "mc0029-drp03-r2-construct-underdetermined",
