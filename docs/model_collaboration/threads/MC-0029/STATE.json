@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "UNRESOLVED",
-  "phase": "DRP03_HYBRID_D1_EVALUATOR_A_FREEZE",
+  "phase": "DRP03_HYBRID_D1_EVALUATOR_B_HANDOFF",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,7 +81,7 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 492 freezes accepted_j1.json, actual Message 018 source_facts.json, public deterministic definitions.json, evaluator_contract.json and a hidden evaluator_key.json before either D-1 evaluator implementation. All D-1 output fields are material and exact. ChatGPT Evaluator A is next and must be authored from accepted_j1/source_facts/definitions/contract, not from the hidden key. After A is frozen and unexecuted, Claude will independently author Evaluator B while blind to A, the hidden key, A output and all D-1 results. Hidden R2 item-level material remains sealed."
+    "notes": "Research 493 freezes ChatGPT D-1 Evaluator A at SHA-256 082e1dce1a1af5504ae51b95e640878c61f4484d2065043e8e80b4470f9e46fd. Only AST validation has occurred; A is unexecuted and no D-1 result exists. Claude Evaluator B must be authored independently from accepted_j1.json, source_facts.json, definitions.json and evaluator_contract.json while blind to evaluator_key.json, evaluator_chatgpt_a.py, any A output and any D-1 result. Next actor is ChatGPT to freeze the exact bounded Claude handoff, after which Claude becomes next actor."
   },
   "last_transition": {
     "transition_id": "mc0029-drp03-r2-construct-underdetermined",

@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 829
+**Checkpoint:** 830
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: V0.2 D-1 ChatGPT evaluator A freeze / Specification 028 reconciliation
+## Current active stage: V0.2 D-1 Claude evaluator B handoff / Specification 028 reconciliation
+
+Checkpoint 830 / Research 493 freezes ChatGPT Evaluator A for D-1 at SHA-256 082e1dce1a1af5504ae51b95e640878c61f4484d2065043e8e80b4470f9e46fd. Only AST validation was performed; Evaluator A has not executed against the replay facts and no D-1 result exists. Claude must next author an independent Evaluator B from accepted_j1.json, source_facts.json, definitions.json and evaluator_contract.json while remaining blind to the hidden key, Evaluator A, A output and all D-1 results.
 
 Checkpoint 829 / Research 492 freezes the D-1 post-acceptance replay inputs before evaluator implementation: accepted J1, actual Claude/Git J2 source facts, shared deterministic predicates, currentness/lineage/orientation rules, exact evaluator contract and hidden semantic key. Every output field is material in D-1; there is no diagnostic reason-code exception. ChatGPT now authors Evaluator A against only the frozen reviewer-facing inputs; Claude Evaluator B will be authored independently after A is frozen and unexecuted.
 
