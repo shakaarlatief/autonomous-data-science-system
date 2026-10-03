@@ -1428,3 +1428,20 @@ Current boundary:
     NEXT_ACTOR=chatgpt
     HIDDEN_R2_ITEM_DETAILS=SEALED
     NEXT=FREEZE_HYBRID_C8_ORIENTATION_STATUS_MICROPROBE
+
+## HYBRID C8 orientation protocol
+
+Research 470 freezes the minimal generated realization-orientation probe.
+
+    probe                    HYBRID_C8_ORIENTATION_V01
+    fixtures                 11
+    top-level states         4
+    next-gap values          6
+    evaluators               2
+
+Current boundary:
+
+    PHASE=DRP03_HYBRID_C8_IMPLEMENTATION_FREEZE
+    NEXT_ACTOR=chatgpt
+    HIDDEN_R2_ITEM_DETAILS=SEALED
+    NEXT=IMPLEMENT_AND_FREEZE_HYBRID_C8_ORIENTATION_V01

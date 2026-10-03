@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 805
+**Checkpoint:** 806
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: thin-centred hybrid C8 orientation/status probe freeze / Specification 028 reconciliation
+## Current active stage: thin-centred hybrid C8 orientation implementation freeze / Specification 028 reconciliation
+
+Checkpoint 806 / Research 470 prospectively freezes HYBRID_C8_ORIENTATION_V01 before implementation. The candidate compresses realization orientation into four generated top-level states, REVIEW_REQUIRED / DEFERRED / OPEN / SATISFIED, plus an orthogonal next-gap field for REVIEW / COVERAGE / EVIDENCE / QUALIFICATION / ACTIVATION / NONE. Eleven fixtures test the full action-relevant progression, precedence, valid deferral, invalid facts/conflict and a bogus authored OPERATIONAL negative control. Governing lifecycle remains separate and no owner participation is required.
 
 Checkpoint 805 / Research 469 records the single frozen HYBRID_C7_LINEAGE_V01 execution as C7_LINEAGE_MECHANISM_PLAUSIBLE. All twelve fixtures matched frozen expectations in both separately encoded evaluators; N:M successor targets were correct, unmapped predecessors/conflicts/cycles/authority failures/stale boundaries were detected, and semantic-digest change could not pass as carry-forward. The mechanism fits DRP-01 shared primitives at mechanism level and provides a stronger basis for later DRP-07 Specification 028 lineage reconciliation. C8 shared generated orientation/status semantics is next.
 
