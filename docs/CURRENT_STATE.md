@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 818
+**Checkpoint:** 819
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: V0.2 D-2 lineage extension protocol freeze / Specification 028 reconciliation
+## Current active stage: V0.2 D-2 ChatGPT evaluator A freeze / Specification 028 reconciliation
+
+Checkpoint 819 / Research 482 prospectively freezes HYBRID_D2_LINEAGE_EXTENSION_V01 before either model evaluator is executed. The package has fourteen structured lineage fixtures covering crossing REPARTITION, atomic effective-boundary constraints, REINSTATE, default realization reset, governed carry/revalidation and deferral rebinding. The reviewer fixture SHA-256 is 46b2ef98fde976f3659884e0de91e120d580ddfeeacdab9c983a5f55bd7cf464; the hidden evaluator-key SHA-256 is 3306aa976671768aaa8ba974eb206c131392b81b2cb86171b3edf9c7a286c11f. Claude must remain blind to the key and ChatGPT Evaluator A. ChatGPT authors and freezes Evaluator A next.
 
 Checkpoint 818 / Research 481 records the single frozen HYBRID_D3_DEPENDENCY_V01 execution as D3_DEPENDENCY_PROOF_PASSES. All eight proof obligations passed, all five frozen controls behaved as expected, same-revision evaluation is acyclic, operational feedback is revision-separated, and J3/WARRANT-F share one evidence/freshness predicate identity. D-3 is closed at development-proof level. D-1 and D-2 remain required; D-2 lineage extension is next.
 

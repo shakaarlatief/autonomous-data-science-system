@@ -1,0 +1,832 @@
+{
+  "schema_version": 1,
+  "probe_id": "HYBRID_D2_LINEAGE_EXTENSION_V01",
+  "fixtures": [
+    {
+      "fixture_id": "F01_CROSSING_REPARTITION_SYNC",
+      "relation_type": "REPARTITION",
+      "predecessors": [
+        {
+          "effect_id": "P1",
+          "status": "ACTIVE",
+          "source_portions": [
+            "a",
+            "b"
+          ],
+          "realization_components": [],
+          "deferral_active": false
+        },
+        {
+          "effect_id": "P2",
+          "status": "ACTIVE",
+          "source_portions": [
+            "c",
+            "d"
+          ],
+          "realization_components": [],
+          "deferral_active": false
+        }
+      ],
+      "successors": [
+        {
+          "effect_id": "S1",
+          "target_portions": [
+            "x",
+            "y"
+          ],
+          "effective_boundary": 10,
+          "required_components": [],
+          "qualification_required": false
+        },
+        {
+          "effect_id": "S2",
+          "target_portions": [
+            "z",
+            "w"
+          ],
+          "effective_boundary": 10,
+          "required_components": [],
+          "qualification_required": false
+        }
+      ],
+      "mapping": [
+        {
+          "source_effect_id": "P1",
+          "source_portion": "a",
+          "target_effect_id": "S1",
+          "target_portion": "x"
+        },
+        {
+          "source_effect_id": "P1",
+          "source_portion": "b",
+          "target_effect_id": "S2",
+          "target_portion": "z"
+        },
+        {
+          "source_effect_id": "P2",
+          "source_portion": "c",
+          "target_effect_id": "S1",
+          "target_portion": "y"
+        },
+        {
+          "source_effect_id": "P2",
+          "source_portion": "d",
+          "target_effect_id": "S2",
+          "target_portion": "w"
+        }
+      ],
+      "retired_source_portions": [],
+      "unaffected_source_portions": [],
+      "evaluation_boundary": 15,
+      "semantic_digest_unchanged": null,
+      "carrier_revision_valid": null,
+      "source_realization_facts_current": true,
+      "source_realization_facts_fresh": true,
+      "carry": {
+        "present": false,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "component_mapping": [],
+        "qualification_rechecked": false
+      },
+      "successor_deferral_reaccepted": {}
+    },
+    {
+      "fixture_id": "F02_CROSSING_REPARTITION_STAGGERED_INVALID",
+      "relation_type": "REPARTITION",
+      "predecessors": [
+        {
+          "effect_id": "P1",
+          "status": "ACTIVE",
+          "source_portions": [
+            "a",
+            "b"
+          ],
+          "realization_components": [],
+          "deferral_active": false
+        },
+        {
+          "effect_id": "P2",
+          "status": "ACTIVE",
+          "source_portions": [
+            "c",
+            "d"
+          ],
+          "realization_components": [],
+          "deferral_active": false
+        }
+      ],
+      "successors": [
+        {
+          "effect_id": "S1",
+          "target_portions": [
+            "x",
+            "y"
+          ],
+          "effective_boundary": 10,
+          "required_components": [],
+          "qualification_required": false
+        },
+        {
+          "effect_id": "S2",
+          "target_portions": [
+            "z",
+            "w"
+          ],
+          "effective_boundary": 20,
+          "required_components": [],
+          "qualification_required": false
+        }
+      ],
+      "mapping": [
+        {
+          "source_effect_id": "P1",
+          "source_portion": "a",
+          "target_effect_id": "S1",
+          "target_portion": "x"
+        },
+        {
+          "source_effect_id": "P1",
+          "source_portion": "b",
+          "target_effect_id": "S2",
+          "target_portion": "z"
+        },
+        {
+          "source_effect_id": "P2",
+          "source_portion": "c",
+          "target_effect_id": "S1",
+          "target_portion": "y"
+        },
+        {
+          "source_effect_id": "P2",
+          "source_portion": "d",
+          "target_effect_id": "S2",
+          "target_portion": "w"
+        }
+      ],
+      "retired_source_portions": [],
+      "unaffected_source_portions": [],
+      "evaluation_boundary": 15,
+      "semantic_digest_unchanged": null,
+      "carrier_revision_valid": null,
+      "source_realization_facts_current": true,
+      "source_realization_facts_fresh": true,
+      "carry": {
+        "present": false,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "component_mapping": [],
+        "qualification_rechecked": false
+      },
+      "successor_deferral_reaccepted": {}
+    },
+    {
+      "fixture_id": "F03_DISJOINT_REPARTITION_STAGED_VALID",
+      "relation_type": "REPARTITION",
+      "predecessors": [
+        {
+          "effect_id": "P1",
+          "status": "ACTIVE",
+          "source_portions": [
+            "a"
+          ],
+          "realization_components": [],
+          "deferral_active": false
+        },
+        {
+          "effect_id": "P2",
+          "status": "ACTIVE",
+          "source_portions": [
+            "c"
+          ],
+          "realization_components": [],
+          "deferral_active": false
+        }
+      ],
+      "successors": [
+        {
+          "effect_id": "S1",
+          "target_portions": [
+            "x"
+          ],
+          "effective_boundary": 10,
+          "required_components": [],
+          "qualification_required": false
+        },
+        {
+          "effect_id": "S2",
+          "target_portions": [
+            "z"
+          ],
+          "effective_boundary": 20,
+          "required_components": [],
+          "qualification_required": false
+        }
+      ],
+      "mapping": [
+        {
+          "source_effect_id": "P1",
+          "source_portion": "a",
+          "target_effect_id": "S1",
+          "target_portion": "x"
+        },
+        {
+          "source_effect_id": "P2",
+          "source_portion": "c",
+          "target_effect_id": "S2",
+          "target_portion": "z"
+        }
+      ],
+      "retired_source_portions": [],
+      "unaffected_source_portions": [],
+      "evaluation_boundary": 15,
+      "semantic_digest_unchanged": null,
+      "carrier_revision_valid": null,
+      "source_realization_facts_current": true,
+      "source_realization_facts_fresh": true,
+      "carry": {
+        "present": false,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "component_mapping": [],
+        "qualification_rechecked": false
+      },
+      "successor_deferral_reaccepted": {}
+    },
+    {
+      "fixture_id": "F04_UNACCOUNTED_SOURCE_PORTION",
+      "relation_type": "REPARTITION",
+      "predecessors": [
+        {
+          "effect_id": "P1",
+          "status": "ACTIVE",
+          "source_portions": [
+            "a",
+            "b"
+          ],
+          "realization_components": [],
+          "deferral_active": false
+        },
+        {
+          "effect_id": "P2",
+          "status": "ACTIVE",
+          "source_portions": [
+            "c"
+          ],
+          "realization_components": [],
+          "deferral_active": false
+        }
+      ],
+      "successors": [
+        {
+          "effect_id": "S1",
+          "target_portions": [
+            "x"
+          ],
+          "effective_boundary": 10,
+          "required_components": [],
+          "qualification_required": false
+        },
+        {
+          "effect_id": "S2",
+          "target_portions": [
+            "z"
+          ],
+          "effective_boundary": 10,
+          "required_components": [],
+          "qualification_required": false
+        }
+      ],
+      "mapping": [
+        {
+          "source_effect_id": "P1",
+          "source_portion": "a",
+          "target_effect_id": "S1",
+          "target_portion": "x"
+        },
+        {
+          "source_effect_id": "P2",
+          "source_portion": "c",
+          "target_effect_id": "S2",
+          "target_portion": "z"
+        }
+      ],
+      "retired_source_portions": [],
+      "unaffected_source_portions": [],
+      "evaluation_boundary": 15,
+      "semantic_digest_unchanged": null,
+      "carrier_revision_valid": null,
+      "source_realization_facts_current": true,
+      "source_realization_facts_fresh": true,
+      "carry": {
+        "present": false,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "component_mapping": [],
+        "qualification_rechecked": false
+      },
+      "successor_deferral_reaccepted": {}
+    },
+    {
+      "fixture_id": "F05_SOURCE_PORTION_DOUBLE_MAPPED",
+      "relation_type": "REPARTITION",
+      "predecessors": [
+        {
+          "effect_id": "P1",
+          "status": "ACTIVE",
+          "source_portions": [
+            "a"
+          ],
+          "realization_components": [],
+          "deferral_active": false
+        },
+        {
+          "effect_id": "P2",
+          "status": "ACTIVE",
+          "source_portions": [
+            "c"
+          ],
+          "realization_components": [],
+          "deferral_active": false
+        }
+      ],
+      "successors": [
+        {
+          "effect_id": "S1",
+          "target_portions": [
+            "x",
+            "y"
+          ],
+          "effective_boundary": 10,
+          "required_components": [],
+          "qualification_required": false
+        },
+        {
+          "effect_id": "S2",
+          "target_portions": [
+            "z"
+          ],
+          "effective_boundary": 10,
+          "required_components": [],
+          "qualification_required": false
+        }
+      ],
+      "mapping": [
+        {
+          "source_effect_id": "P1",
+          "source_portion": "a",
+          "target_effect_id": "S1",
+          "target_portion": "x"
+        },
+        {
+          "source_effect_id": "P1",
+          "source_portion": "a",
+          "target_effect_id": "S2",
+          "target_portion": "z"
+        },
+        {
+          "source_effect_id": "P2",
+          "source_portion": "c",
+          "target_effect_id": "S1",
+          "target_portion": "y"
+        }
+      ],
+      "retired_source_portions": [],
+      "unaffected_source_portions": [],
+      "evaluation_boundary": 15,
+      "semantic_digest_unchanged": null,
+      "carrier_revision_valid": null,
+      "source_realization_facts_current": true,
+      "source_realization_facts_fresh": true,
+      "carry": {
+        "present": false,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "component_mapping": [],
+        "qualification_rechecked": false
+      },
+      "successor_deferral_reaccepted": {}
+    },
+    {
+      "fixture_id": "F06_REINSTATE_NEW_ID",
+      "relation_type": "REINSTATE",
+      "predecessors": [
+        {
+          "effect_id": "P1",
+          "status": "RETIRED",
+          "source_portions": [],
+          "realization_components": [],
+          "deferral_active": false
+        }
+      ],
+      "successors": [
+        {
+          "effect_id": "R1",
+          "target_portions": [],
+          "effective_boundary": 10,
+          "required_components": [],
+          "qualification_required": false
+        }
+      ],
+      "mapping": [],
+      "retired_source_portions": [],
+      "unaffected_source_portions": [],
+      "evaluation_boundary": 15,
+      "semantic_digest_unchanged": null,
+      "carrier_revision_valid": null,
+      "source_realization_facts_current": true,
+      "source_realization_facts_fresh": true,
+      "carry": {
+        "present": false,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "component_mapping": [],
+        "qualification_rechecked": false
+      },
+      "successor_deferral_reaccepted": {}
+    },
+    {
+      "fixture_id": "F07_REINSTATE_REUSES_ID_INVALID",
+      "relation_type": "REINSTATE",
+      "predecessors": [
+        {
+          "effect_id": "P1",
+          "status": "RETIRED",
+          "source_portions": [],
+          "realization_components": [],
+          "deferral_active": false
+        }
+      ],
+      "successors": [
+        {
+          "effect_id": "P1",
+          "target_portions": [],
+          "effective_boundary": 10,
+          "required_components": [],
+          "qualification_required": false
+        }
+      ],
+      "mapping": [],
+      "retired_source_portions": [],
+      "unaffected_source_portions": [],
+      "evaluation_boundary": 15,
+      "semantic_digest_unchanged": null,
+      "carrier_revision_valid": null,
+      "source_realization_facts_current": true,
+      "source_realization_facts_fresh": true,
+      "carry": {
+        "present": false,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "component_mapping": [],
+        "qualification_rechecked": false
+      },
+      "successor_deferral_reaccepted": {}
+    },
+    {
+      "fixture_id": "F08_REPLACE_DEFAULT_OPEN_RESET",
+      "relation_type": "REPLACE",
+      "predecessors": [
+        {
+          "effect_id": "P1",
+          "status": "ACTIVE",
+          "source_portions": [],
+          "realization_components": [
+            "c1",
+            "c2"
+          ],
+          "deferral_active": false
+        }
+      ],
+      "successors": [
+        {
+          "effect_id": "S1",
+          "target_portions": [],
+          "effective_boundary": 10,
+          "required_components": [
+            "r1",
+            "r2"
+          ],
+          "qualification_required": false
+        }
+      ],
+      "mapping": [],
+      "retired_source_portions": [],
+      "unaffected_source_portions": [],
+      "evaluation_boundary": 15,
+      "semantic_digest_unchanged": null,
+      "carrier_revision_valid": null,
+      "source_realization_facts_current": true,
+      "source_realization_facts_fresh": true,
+      "carry": {
+        "present": false,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "component_mapping": [],
+        "qualification_rechecked": false
+      },
+      "successor_deferral_reaccepted": {}
+    },
+    {
+      "fixture_id": "F09_REPLACE_VALID_REALIZATION_CARRY",
+      "relation_type": "REPLACE",
+      "predecessors": [
+        {
+          "effect_id": "P1",
+          "status": "ACTIVE",
+          "source_portions": [],
+          "realization_components": [
+            "c1",
+            "c2"
+          ],
+          "deferral_active": false
+        }
+      ],
+      "successors": [
+        {
+          "effect_id": "S1",
+          "target_portions": [],
+          "effective_boundary": 10,
+          "required_components": [
+            "r1",
+            "r2"
+          ],
+          "qualification_required": true
+        }
+      ],
+      "mapping": [],
+      "retired_source_portions": [],
+      "unaffected_source_portions": [],
+      "evaluation_boundary": 15,
+      "semantic_digest_unchanged": null,
+      "carrier_revision_valid": null,
+      "source_realization_facts_current": true,
+      "source_realization_facts_fresh": true,
+      "carry": {
+        "present": true,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "component_mapping": [
+          {
+            "source_effect_id": "P1",
+            "source_component": "c1",
+            "target_effect_id": "S1",
+            "target_component": "r1"
+          },
+          {
+            "source_effect_id": "P1",
+            "source_component": "c2",
+            "target_effect_id": "S1",
+            "target_component": "r2"
+          }
+        ],
+        "qualification_rechecked": true
+      },
+      "successor_deferral_reaccepted": {}
+    },
+    {
+      "fixture_id": "F10_REPLACE_STALE_CARRY_FACTS",
+      "relation_type": "REPLACE",
+      "predecessors": [
+        {
+          "effect_id": "P1",
+          "status": "ACTIVE",
+          "source_portions": [],
+          "realization_components": [
+            "c1",
+            "c2"
+          ],
+          "deferral_active": false
+        }
+      ],
+      "successors": [
+        {
+          "effect_id": "S1",
+          "target_portions": [],
+          "effective_boundary": 10,
+          "required_components": [
+            "r1",
+            "r2"
+          ],
+          "qualification_required": true
+        }
+      ],
+      "mapping": [],
+      "retired_source_portions": [],
+      "unaffected_source_portions": [],
+      "evaluation_boundary": 15,
+      "semantic_digest_unchanged": null,
+      "carrier_revision_valid": null,
+      "source_realization_facts_current": true,
+      "source_realization_facts_fresh": false,
+      "carry": {
+        "present": true,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "component_mapping": [
+          {
+            "source_effect_id": "P1",
+            "source_component": "c1",
+            "target_effect_id": "S1",
+            "target_component": "r1"
+          },
+          {
+            "source_effect_id": "P1",
+            "source_component": "c2",
+            "target_effect_id": "S1",
+            "target_component": "r2"
+          }
+        ],
+        "qualification_rechecked": true
+      },
+      "successor_deferral_reaccepted": {}
+    },
+    {
+      "fixture_id": "F11_REPLACE_INVALID_CARRY_AUTHORITY",
+      "relation_type": "REPLACE",
+      "predecessors": [
+        {
+          "effect_id": "P1",
+          "status": "ACTIVE",
+          "source_portions": [],
+          "realization_components": [
+            "c1",
+            "c2"
+          ],
+          "deferral_active": false
+        }
+      ],
+      "successors": [
+        {
+          "effect_id": "S1",
+          "target_portions": [],
+          "effective_boundary": 10,
+          "required_components": [
+            "r1",
+            "r2"
+          ],
+          "qualification_required": true
+        }
+      ],
+      "mapping": [],
+      "retired_source_portions": [],
+      "unaffected_source_portions": [],
+      "evaluation_boundary": 15,
+      "semantic_digest_unchanged": null,
+      "carrier_revision_valid": null,
+      "source_realization_facts_current": true,
+      "source_realization_facts_fresh": true,
+      "carry": {
+        "present": true,
+        "authority_valid": false,
+        "effective_boundary_valid": true,
+        "component_mapping": [
+          {
+            "source_effect_id": "P1",
+            "source_component": "c1",
+            "target_effect_id": "S1",
+            "target_component": "r1"
+          },
+          {
+            "source_effect_id": "P1",
+            "source_component": "c2",
+            "target_effect_id": "S1",
+            "target_component": "r2"
+          }
+        ],
+        "qualification_rechecked": true
+      },
+      "successor_deferral_reaccepted": {}
+    },
+    {
+      "fixture_id": "F12_DEFERRAL_NOT_AUTO_CARRIED",
+      "relation_type": "REPLACE",
+      "predecessors": [
+        {
+          "effect_id": "P1",
+          "status": "ACTIVE",
+          "source_portions": [],
+          "realization_components": [
+            "c1"
+          ],
+          "deferral_active": true
+        }
+      ],
+      "successors": [
+        {
+          "effect_id": "S1",
+          "target_portions": [],
+          "effective_boundary": 10,
+          "required_components": [
+            "r1"
+          ],
+          "qualification_required": false
+        }
+      ],
+      "mapping": [],
+      "retired_source_portions": [],
+      "unaffected_source_portions": [],
+      "evaluation_boundary": 15,
+      "semantic_digest_unchanged": null,
+      "carrier_revision_valid": null,
+      "source_realization_facts_current": true,
+      "source_realization_facts_fresh": true,
+      "carry": {
+        "present": false,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "component_mapping": [],
+        "qualification_rechecked": false
+      },
+      "successor_deferral_reaccepted": {}
+    },
+    {
+      "fixture_id": "F13_DEFERRAL_EXPLICITLY_REBOUND",
+      "relation_type": "REPLACE",
+      "predecessors": [
+        {
+          "effect_id": "P1",
+          "status": "ACTIVE",
+          "source_portions": [],
+          "realization_components": [
+            "c1"
+          ],
+          "deferral_active": true
+        }
+      ],
+      "successors": [
+        {
+          "effect_id": "S1",
+          "target_portions": [],
+          "effective_boundary": 10,
+          "required_components": [
+            "r1"
+          ],
+          "qualification_required": false
+        }
+      ],
+      "mapping": [],
+      "retired_source_portions": [],
+      "unaffected_source_portions": [],
+      "evaluation_boundary": 15,
+      "semantic_digest_unchanged": null,
+      "carrier_revision_valid": null,
+      "source_realization_facts_current": true,
+      "source_realization_facts_fresh": true,
+      "carry": {
+        "present": false,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "component_mapping": [],
+        "qualification_rechecked": false
+      },
+      "successor_deferral_reaccepted": {
+        "S1": true
+      }
+    },
+    {
+      "fixture_id": "F14_CARRY_FORWARD_CONTINUITY",
+      "relation_type": "CARRY_FORWARD",
+      "predecessors": [
+        {
+          "effect_id": "P1",
+          "status": "ACTIVE",
+          "source_portions": [],
+          "realization_components": [
+            "c1",
+            "c2"
+          ],
+          "deferral_active": false
+        }
+      ],
+      "successors": [
+        {
+          "effect_id": "P1",
+          "target_portions": [],
+          "effective_boundary": 10,
+          "required_components": [
+            "c1",
+            "c2"
+          ],
+          "qualification_required": false
+        }
+      ],
+      "mapping": [],
+      "retired_source_portions": [],
+      "unaffected_source_portions": [],
+      "evaluation_boundary": 15,
+      "semantic_digest_unchanged": true,
+      "carrier_revision_valid": true,
+      "source_realization_facts_current": true,
+      "source_realization_facts_fresh": true,
+      "carry": {
+        "present": false,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "component_mapping": [],
+        "qualification_rechecked": false
+      },
+      "successor_deferral_reaccepted": {}
+    }
+  ]
+}

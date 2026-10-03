@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "entrypoint": "evaluate_fixture(fixture) -> dict",
+  "required_output_fields": [
+    "fixture_id",
+    "relation_valid",
+    "current_effect_ids",
+    "successor_initialization",
+    "review_required",
+    "reason_codes"
+  ],
+  "successor_initialization_fields": [
+    "successor_id",
+    "mode",
+    "carried_components",
+    "deferral_rebound"
+  ],
+  "allowed_modes": [
+    "CONTINUITY",
+    "OPEN_RESET",
+    "CARRY_FACTS_FOR_REVALIDATION"
+  ],
+  "sorting": {
+    "current_effect_ids": "lexical",
+    "successor_initialization": "successor_id lexical",
+    "carried_components": "lexical",
+    "reason_codes": "lexical"
+  },
+  "no_file_writes": true,
+  "no_free_text_semantic_adjudication": true
+}

@@ -1657,3 +1657,22 @@ Current boundary:
     NEXT_ACTOR=chatgpt
     HIDDEN_R2_ITEM_DETAILS=SEALED
     NEXT=FREEZE_D2_LINEAGE_EXTENSION_PROTOCOL
+
+## D-2 lineage extension protocol and blinded fixtures
+
+Research 482 freezes:
+
+    PROBE=HYBRID_D2_LINEAGE_EXTENSION_V01
+    FIXTURES=14
+    REVIEWER_FIXTURES_SHA256=46b2ef98fde976f3659884e0de91e120d580ddfeeacdab9c983a5f55bd7cf464
+    HIDDEN_KEY_SHA256=3306aa976671768aaa8ba974eb206c131392b81b2cb86171b3edf9c7a286c11f
+    EVALUATORS=ChatGPT_A + Claude_B
+
+Claude must remain blind to the key and Evaluator A.
+
+Current boundary:
+
+    PHASE=DRP03_HYBRID_D2_EVALUATOR_A_FREEZE
+    NEXT_ACTOR=chatgpt
+    HIDDEN_R2_ITEM_DETAILS=SEALED
+    NEXT=AUTHOR_AND_FREEZE_CHATGPT_EVALUATOR_A
