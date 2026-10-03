@@ -1885,3 +1885,20 @@ Current boundary:
     CLAUDE_BLIND_TO_KEY_AND_A=true
     HIDDEN_R2_ITEM_DETAILS=SEALED
     NEXT=CLAUDE_MESSAGE020_D1_EVALUATOR_B
+
+## D-1 hash-basis correction
+
+Research 495 corrects only the frozen-artifact digest basis.
+
+    authoritative hash basis    GIT_BLOB_BYTES_AT_COMMIT
+    D1 content changed           no
+    hidden key changed           no
+    evaluator A executed         no
+    evaluator B materialized     no
+
+Current boundary:
+
+    PHASE=DRP03_HYBRID_D1_EVALUATOR_B_MATERIALIZATION
+    NEXT_ACTOR=chatgpt
+    HIDDEN_R2_ITEM_DETAILS=SEALED
+    NEXT=MATERIALIZE_AND_FREEZE_D1_CLAUDE_EVALUATOR_B

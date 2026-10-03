@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 831
+**Checkpoint:** 832
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: V0.2 D-1 blinded Claude evaluator B / Specification 028 reconciliation
+## Current active stage: V0.2 D-1 Claude evaluator B materialization / Specification 028 reconciliation
+
+Checkpoint 832 / Research 495 corrects the D-1 frozen-artifact hash basis before any ChatGPT-side execution. Research 492's digest strings were Windows worktree/CRLF hashes, not committed Git-blob hashes. The authoritative reproducibility basis is now GIT_BLOB_BYTES_AT_COMMIT; all D-1 content, evaluator key, scoring expectations and evaluator sources remain unchanged. Claude Evaluator B materialization is next.
 
 Checkpoint 831 / Research 494 / MC-0029 Message 019 freezes the blinded Claude Evaluator B handoff for D-1. Claude may read only accepted_j1.json, source_facts.json, definitions.json, evaluator_contract.json plus the bounded explanatory/routing records, and must remain blind to evaluator_key.json, evaluator_chatgpt_a.py, A output and all D-1 results. Claude may write only MC-0029 Message 020 through the Claude-side GitHub connector.
 
