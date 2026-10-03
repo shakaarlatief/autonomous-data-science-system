@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "decision_id": "AO10_THIN_CENTRED_HYBRID_ARCHITECTURE_DECISION_V01",
+  "candidate_id": "THIN_CENTRED_HYBRID_V03",
+  "candidate_commit": "07d49fd642fd58fa2bababbf872b7e6386d50419",
+  "candidate_path": "docs/research/500_thin_centred_hybrid_v03_owner_decision_candidate.md",
+  "candidate_git_blob_sha256": "48f7faf2aab0aa6f86a9f36adfb03f6ff97252c58fcca7c173ec1a7e1628d6c3",
+  "decision_question": "Should THIN_CENTRED_HYBRID_V03 be selected as the successor Project semantic/control architecture target for the next governed implementation and migration-qualification stages?",
+  "evidence": {
+    "d1": {
+      "disposition": "D1_AMEND_RECONCILED",
+      "raw_outcome": "D1_MISMATCH_REQUIRES_RECONCILIATION",
+      "material_mismatch_fields": 1,
+      "material_field_count": 14,
+      "substantive_semantic_mismatch": false,
+      "amendment": "realization_initialization is an ordered zero-to-many collection"
+    },
+    "d2": {
+      "disposition": "D2_LINEAGE_EXTENSION_PLAUSIBLE",
+      "independent_semantic_agreement": "14/14"
+    },
+    "d3": {
+      "disposition": "D3_DEPENDENCY_PROOF_PASSES",
+      "proof_checks": "8/8",
+      "controls": "5/5"
+    },
+    "owner_burden": "LOW",
+    "null_baseline": "OPERATIVE_INCREMENTAL_CONTROL_VALUE"
+  },
+  "decision_options": {
+    "ACCEPT": {
+      "meaning": "Select THIN_CENTRED_HYBRID_V03 as the successor architecture target for the next governed implementation/migration-qualification stage.",
+      "immediate_effects": [
+        "ARCHITECTURE_TARGET_SELECTED=true",
+        "PRODUCTION_TARGET_SELECTED=true",
+        "Specification 028 remains operational authority until separately superseded",
+        "physical migration remains unauthorized",
+        "production activation remains unauthorized",
+        "dependent DRPs remain paused until separately routed"
+      ]
+    },
+    "AMEND": {
+      "meaning": "Do not select the candidate yet. State the architecture changes required, then freeze a revised candidate before another decision."
+    },
+    "REJECT": {
+      "meaning": "Do not select THIN_CENTRED_HYBRID_V03. Return the architecture to redesign/recomparison."
+    }
+  },
+  "task_owner_recommendation": "ACCEPT",
+  "recommendation_basis": [
+    "The pre-owner discriminator program required by Research 477 is complete.",
+    "D-3 passed its frozen dependency proof.",
+    "D-2 achieved independent 14/14 semantic agreement across extended lineage cases.",
+    "D-1 exercised a real end-to-end governing event; its only independent-evaluator mismatch was an under-specified collection container, which is reconciled prospectively in V03 and aligns with D-2 N:M semantics.",
+    "No materially better whole architecture was identified in the final comparative critique."
+  ],
+  "non_effects_of_acceptance": [
+    "Does not supersede Specification 028.",
+    "Does not migrate legacy knowledge.",
+    "Does not authorize production activation.",
+    "Does not authorize physical file/folder migration.",
+    "Does not imply untouched confirmation has passed.",
+    "Does not resolve concrete implementation/storage/UI choices."
+  ],
+  "owner_decision_observed": false
+}
