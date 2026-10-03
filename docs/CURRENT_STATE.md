@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 819
+**Checkpoint:** 820
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: V0.2 D-2 ChatGPT evaluator A freeze / Specification 028 reconciliation
+## Current active stage: V0.2 D-2 Claude evaluator B handoff / Specification 028 reconciliation
+
+Checkpoint 820 / Research 483 freezes ChatGPT Evaluator A for HYBRID_D2_LINEAGE_EXTENSION_V01 before any evaluator execution or Claude Evaluator B exists. Evaluator A SHA-256 is 26b63dcc0968b73927145bdd495865091a5ef1847feb28213549d7eb6c914e6f and only AST parsing was performed. Claude must now independently author Evaluator B from the frozen reviewer-facing protocol, fixtures and output contract while remaining blind to evaluator_key.json, evaluator_chatgpt_a.py and all D-2 outputs/results.
 
 Checkpoint 819 / Research 482 prospectively freezes HYBRID_D2_LINEAGE_EXTENSION_V01 before either model evaluator is executed. The package has fourteen structured lineage fixtures covering crossing REPARTITION, atomic effective-boundary constraints, REINSTATE, default realization reset, governed carry/revalidation and deferral rebinding. The reviewer fixture SHA-256 is 46b2ef98fde976f3659884e0de91e120d580ddfeeacdab9c983a5f55bd7cf464; the hidden evaluator-key SHA-256 is 3306aa976671768aaa8ba974eb206c131392b81b2cb86171b3edf9c7a286c11f. Claude must remain blind to the key and ChatGPT Evaluator A. ChatGPT authors and freezes Evaluator A next.
 

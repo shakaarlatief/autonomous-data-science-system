@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "UNRESOLVED",
-  "phase": "DRP03_HYBRID_D2_EVALUATOR_A_FREEZE",
+  "phase": "DRP03_HYBRID_D2_EVALUATOR_B_HANDOFF",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,7 +81,7 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 482 prospectively freezes HYBRID_D2_LINEAGE_EXTENSION_V01 with 14 structured fixtures before either evaluator is executed. Reviewer fixtures SHA-256 is 46b2ef98fde976f3659884e0de91e120d580ddfeeacdab9c983a5f55bd7cf464; output contract SHA-256 is bb5125eed59a432d0d7f22e7db4b66350d1f56dc2da8a19c3039c090caec1989; hidden evaluator-key SHA-256 is 3306aa976671768aaa8ba974eb206c131392b81b2cb86171b3edf9c7a286c11f. Evaluator A is authored by ChatGPT. Evaluator B must later be authored independently by Claude from only Research 482, reviewer_fixtures.json and evaluator_contract.json; Claude must not inspect evaluator_key.json, evaluator_chatgpt_a.py, or any D-2 result. Hidden R2 item-level material remains sealed."
+    "notes": "Research 483 freezes ChatGPT Evaluator A at SHA-256 26b63dcc0968b73927145bdd495865091a5ef1847feb28213549d7eb6c914e6f before any D-2 evaluator execution. Claude Evaluator B does not yet exist. Claude must be handed only Research 482, reviewer_fixtures.json, evaluator_contract.json and routing context, and must remain blind to evaluator_key.json, evaluator_chatgpt_a.py and all D-2 outputs/results. Hidden R2 item-level material remains sealed. Next actor is ChatGPT to freeze the exact blinded Message 018 handoff, after which Claude becomes next actor."
   },
   "last_transition": {
     "transition_id": "mc0029-drp03-r2-construct-underdetermined",
