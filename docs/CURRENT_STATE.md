@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 821
+**Checkpoint:** 822
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: V0.2 D-2 blinded Claude evaluator B / Specification 028 reconciliation
+## Current active stage: V0.2 D-2 blinded Claude evaluator B / corrected Claude transport / Specification 028 reconciliation
+
+Checkpoint 822 / Research 485 corrects a task-owner transport mistake without changing any D-2 semantics or blindness boundary. Claude never had the custom ChatGPT Codexless Runtime Bridge; Research 348 names it specifically as the authorized ChatGPT execution surface. Claude's bounded MC-0029 collaboration writes use the GitHub connector available in Claude, restricted to the authorized message path. Research 477's transport-nonconformance finding is withdrawn as factual error, and Research 484 Section 5 is superseded. Claude remains next for Message 018.
 
 Checkpoint 821 / Research 484 freezes the exact blinded Claude Evaluator B handoff for HYBRID_D2_LINEAGE_EXTENSION_V01. Claude may read only Research 482, reviewer_fixtures.json, evaluator_contract.json and routing context, and must remain blind to evaluator_key.json, evaluator_chatgpt_a.py and every D-2 output/result. Claude may write only MC-0029 Message 018 containing one complete Python evaluator source block. If the purpose-specific Runtime Bridge is unavailable, Claude must stop rather than substitute a generic GitHub write path.
 

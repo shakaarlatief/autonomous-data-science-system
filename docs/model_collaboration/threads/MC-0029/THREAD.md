@@ -1710,3 +1710,24 @@ Current boundary:
     CLAUDE_BLIND_TO_KEY_AND_A=true
     HIDDEN_R2_ITEM_DETAILS=SEALED
     NEXT=CLAUDE_MESSAGE018_D2_EVALUATOR_B
+
+## Claude collaboration transport correction
+
+Research 485 corrects the handoff transport rule.
+
+    ChatGPT repository operations   Codexless Runtime Bridge
+    Claude collaboration writes     Claude-side GitHub connector
+    Claude write boundary           MC-0029 messages/** only
+    D-2 permitted output            Message 018 only
+
+Research 477's transport-nonconformance finding is withdrawn as factual error.
+
+Research 484 Section 5 is superseded; all D-2 blindness and evaluator requirements remain unchanged.
+
+Current boundary:
+
+    PHASE=DRP03_HYBRID_D2_EVALUATOR_B_CORRECTED_HANDOFF
+    NEXT_ACTOR=claude
+    CLAUDE_BLIND_TO_KEY_AND_A=true
+    HIDDEN_R2_ITEM_DETAILS=SEALED
+    NEXT=CLAUDE_MESSAGE018_D2_EVALUATOR_B
