@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "probe_id": "HYBRID_D2_LINEAGE_EXTENSION_V01",
+  "freeze_commit_parent": "c9b5387b837507bb0f61eae2f0fdbc5560d96375",
+  "files": [
+    {
+      "path": "reviewer_fixtures.json",
+      "sha256": "46b2ef98fde976f3659884e0de91e120d580ddfeeacdab9c983a5f55bd7cf464",
+      "bytes": 23030
+    },
+    {
+      "path": "evaluator_contract.json",
+      "sha256": "bb5125eed59a432d0d7f22e7db4b66350d1f56dc2da8a19c3039c090caec1989",
+      "bytes": 759
+    },
+    {
+      "path": "evaluator_key.json",
+      "sha256": "3306aa976671768aaa8ba974eb206c131392b81b2cb86171b3edf9c7a286c11f",
+      "bytes": 6084
+    },
+    {
+      "path": "evaluator_chatgpt_a.py",
+      "sha256": "26b63dcc0968b73927145bdd495865091a5ef1847feb28213549d7eb6c914e6f",
+      "bytes": 12117
+    },
+    {
+      "path": "evaluator_claude_b.py",
+      "sha256": "b4c8ff134ce51f7c833600a8e87849205cf1f2554102314f5ff1ea30aba3ee3b",
+      "bytes": 14472
+    },
+    {
+      "path": "run_two_model_comparison.py",
+      "sha256": "7d6e761ea71c082c18ec85683f56d7219a177c13849621138b5e5696b972419c",
+      "bytes": 5281
+    },
+    {
+      "path": "static_validate_comparison.py",
+      "sha256": "da4f4b671fc31e1fd9e5270fd1695c43482c00750cc1a72c7f1fed7925fa2709",
+      "bytes": 1031
+    }
+  ]
+}

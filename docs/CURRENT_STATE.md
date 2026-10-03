@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 824
+**Checkpoint:** 825
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: V0.2 D-2 two-model comparison execution / Specification 028 reconciliation
+## Current active stage: V0.2 D-2 frozen two-model comparison execution / Specification 028 reconciliation
+
+Checkpoint 825 / Research 488 freezes the exact HYBRID_D2_LINEAGE_EXTENSION_V01 comparison runner and all bound inputs before either evaluator is executed by ChatGPT. The comparison manifest SHA-256 is b5519a885a9d9b00b7627c8bc799d644666cb386a861fea791529708e5779200 and result.json is absent. The runner reports full-object diagnostic equality and strict semantic equality with only reason_codes removed under Research 486. Exactly one comparison execution is next.
 
 Checkpoint 824 / Research 487 materializes Claude Message 018's single Python block into evaluator_claude_b.py with only line-ending/final-newline normalization and freezes it before any ChatGPT-side D-2 execution. Evaluator B SHA-256 is b4c8ff134ce51f7c833600a8e87849205cf1f2554102314f5ff1ea30aba3ee3b; AST validation passed. Evaluator A and B are now frozen, independently authored by different models, and unexecuted by ChatGPT. One comparison execution is next under Research 486's semantic scoring rule.
 

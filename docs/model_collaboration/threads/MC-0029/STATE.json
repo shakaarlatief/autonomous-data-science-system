@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "UNRESOLVED",
-  "phase": "DRP03_HYBRID_D2_TWO_MODEL_EXECUTION",
+  "phase": "DRP03_HYBRID_D2_COMPARISON_EXECUTION",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,7 +81,7 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 487 materializes and freezes Claude Evaluator B from Message 018 with only line-ending/final-newline normalization. Evaluator B SHA-256 is b4c8ff134ce51f7c833600a8e87849205cf1f2554102314f5ff1ea30aba3ee3b; AST validation passed and no fixture was executed during ChatGPT materialization. Evaluator A remains SHA-256 26b63dcc0968b73927145bdd495865091a5ef1847feb28213549d7eb6c914e6f. Both evaluators are frozen and independently authored. Research 486 governs scoring: all semantic fields strict, reason_codes diagnostic only. Next actor is ChatGPT for one two-model comparison execution."
+    "notes": "Research 488 freezes the exact HYBRID_D2_LINEAGE_EXTENSION_V01 comparison harness. Manifest SHA-256 is b5519a885a9d9b00b7627c8bc799d644666cb386a861fea791529708e5779200 and result.json is absent. The runner executes frozen ChatGPT A and independently authored Claude B against the 14 frozen fixtures and key. Research 486 governs outcome scoring: all semantic fields are strict; reason_codes exact strings are diagnostic only. Next actor is ChatGPT for exactly one execution."
   },
   "last_transition": {
     "transition_id": "mc0029-drp03-r2-construct-underdetermined",
