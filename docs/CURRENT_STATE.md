@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 817
+**Checkpoint:** 818
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: V0.2 frozen cross-plane dependency proof execution / Specification 028 reconciliation
+## Current active stage: V0.2 D-2 lineage extension protocol freeze / Specification 028 reconciliation
+
+Checkpoint 818 / Research 481 records the single frozen HYBRID_D3_DEPENDENCY_V01 execution as D3_DEPENDENCY_PROOF_PASSES. All eight proof obligations passed, all five frozen controls behaved as expected, same-revision evaluation is acyclic, operational feedback is revision-separated, and J3/WARRANT-F share one evidence/freshness predicate identity. D-3 is closed at development-proof level. D-1 and D-2 remain required; D-2 lineage extension is next.
 
 Checkpoint 817 / Research 480 freezes the exact HYBRID_D3_DEPENDENCY_V01 graph, predicate registry, negative controls and checker before proof execution. The pre-result manifest SHA-256 is af306ed8b728883221714d9eb971a9c2010524df0ea07ca2b194d538c203d715; static validation passed and result.json was absent. Exactly one proof execution is next.
 

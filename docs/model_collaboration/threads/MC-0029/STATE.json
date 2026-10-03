@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "UNRESOLVED",
-  "phase": "DRP03_HYBRID_D3_DEPENDENCY_PROOF_EXECUTION",
+  "phase": "DRP03_HYBRID_D2_PROTOCOL_FREEZE",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,7 +81,7 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 480 freezes the exact HYBRID_D3_DEPENDENCY_V01 proof harness. Manifest SHA-256 is af306ed8b728883221714d9eb971a9c2010524df0ea07ca2b194d538c203d715. Static validation passed without executing the proof and result.json was absent. The checker validates the same-revision DAG, precedence, forbidden feedback, detective review-only behavior and shared predicate registry against five frozen controls. Hidden R2 item-level material remains sealed. Next actor is ChatGPT for one proof execution."
+    "notes": "Research 481 records D3_DEPENDENCY_PROOF_PASSES. All eight frozen dependency checks passed and all five controls matched expectations. Same-revision evaluation is acyclic, feedback is revision-separated, and J3/WARRANT-F consume shared evidence/freshness predicate identities. D-3 is closed at development-proof level. D-1 and D-2 remain required. Hidden R2 item-level material remains sealed. Next actor is ChatGPT to prospectively freeze the D-2 lineage-extension protocol and shared fixtures before independent model implementations."
   },
   "last_transition": {
     "transition_id": "mc0029-drp03-r2-construct-underdetermined",
