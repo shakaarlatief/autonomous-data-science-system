@@ -1935,3 +1935,18 @@ Current boundary:
     NEXT_ACTOR=chatgpt
     HIDDEN_R2_ITEM_DETAILS=SEALED
     NEXT=EXECUTE_D1_TWO_MODEL_COMPARISON_ONCE
+
+## D-1 comparison runner hash correction
+
+Research 498 records:
+
+    RUNNER_GIT_BLOB_SHA256=24483ab0d1a6ee09428c77c21b7e517ff62f2f00e99015950a12585f49fec384
+    runner changed            no
+    result exists             no
+
+Current boundary:
+
+    PHASE=DRP03_HYBRID_D1_COMPARISON_EXECUTION
+    NEXT_ACTOR=chatgpt
+    HIDDEN_R2_ITEM_DETAILS=SEALED
+    NEXT=EXECUTE_D1_TWO_MODEL_COMPARISON_ONCE

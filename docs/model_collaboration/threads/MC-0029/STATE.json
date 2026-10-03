@@ -81,7 +81,7 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 497 freezes the exact D-1 two-model comparison runner. Both independently authored evaluators remain unexecuted by ChatGPT and result.json is absent. Every D-1 output field is material: A must equal the frozen key, B must equal the frozen key, and A/B must agree exactly. No post-result normalization is authorized. Next actor is ChatGPT for exactly one comparison execution after verifying the committed runner Git-blob hash."
+    "notes": "Research 498 corrects only the frozen D-1 runner hash basis: the authoritative committed Git-blob SHA-256 is 24483ab0d1a6ee09428c77c21b7e517ff62f2f00e99015950a12585f49fec384. Runner source, evaluators, key and scoring logic are unchanged. Neither evaluator has been executed by ChatGPT and result.json is absent. Exactly one comparison execution remains next."
   },
   "last_transition": {
     "transition_id": "mc0029-drp03-r2-construct-underdetermined",

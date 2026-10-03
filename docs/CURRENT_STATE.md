@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 834
+**Checkpoint:** 835
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -23,6 +23,8 @@ Repository artifacts remain authoritative across chats and models.
 ---
 
 ## Current active stage: V0.2 D-1 frozen two-model comparison execution / Specification 028 reconciliation
+
+Checkpoint 835 / Research 498 corrects the frozen D-1 comparison-runner identity to committed Git-blob bytes before execution. The runner source is unchanged; the authoritative SHA-256 is 24483ab0d1a6ee09428c77c21b7e517ff62f2f00e99015950a12585f49fec384. No evaluator has been executed and result.json remains absent. Exactly one comparison execution remains next.
 
 Checkpoint 834 / Research 497 freezes the exact D-1 comparison runner before either evaluator is executed by ChatGPT. The runner requires exact A-to-key, B-to-key and A-to-B equality over every material D-1 output field, plus output ordering checks. No field is diagnostic-only and no post-result normalization is permitted. Exactly one comparison execution is next.
 
