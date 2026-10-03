@@ -1552,3 +1552,19 @@ Current boundary:
     NEXT_ACTOR=chatgpt
     HIDDEN_R2_ITEM_DETAILS=SEALED
     NEXT=FREEZE_FINAL_CROSS_MODEL_CRITIQUE_HANDOFF
+
+## Final integrated-hybrid critique handoff
+
+MC-0029 Message 016 freezes the adversarial review request against:
+
+    candidate                THIN_CENTRED_HYBRID_V01
+    candidate commit         5199ac2e404716add76d7f503a28f01df1daadef
+    reviewer                 claude / claude-04
+    permitted output         Message 017 only
+
+Current boundary:
+
+    PHASE=DRP03_HYBRID_FINAL_CRITIQUE
+    NEXT_ACTOR=claude
+    HIDDEN_R2_ITEM_DETAILS=SEALED
+    NEXT=CLAUDE_MESSAGE017_FINAL_INTEGRATED_HYBRID_CRITIQUE

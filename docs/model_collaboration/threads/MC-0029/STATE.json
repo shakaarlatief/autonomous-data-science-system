@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "UNRESOLVED",
-  "phase": "DRP03_HYBRID_FINAL_CRITIQUE_HANDOFF",
+  "phase": "DRP03_HYBRID_FINAL_CRITIQUE",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -60,7 +60,7 @@
       ]
     }
   ],
-  "next_expected_actor": "chatgpt",
+  "next_expected_actor": "claude",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,7 +81,7 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 476 freezes THIN_CENTRED_HYBRID_V01 as the exact integrated successor candidate after C1-C9. It combines thin typed governing semantics with closed realization accounting, governing completion criteria, natural-owner realization, deterministic J3 satisfaction, governed N:M lineage, compact generated orientation and an independent detective safety net. The candidate explicitly does not restore universal ObligationUnits, birth-time grouping, authored global realization-state truth or model-inferred authority. No production target is selected and hidden R2 item-level material remains sealed. Next actor is ChatGPT to freeze a bounded final cross-model critique handoff for Claude before any owner architecture decision or larger pilot."
+    "notes": "Research 476 freezes THIN_CENTRED_HYBRID_V01 at commit 5199ac2e404716add76d7f503a28f01df1daadef. MC-0029 Message 016 now freezes the final adversarial whole-design critique request. Claude must read current routing/state, then critique the exact integrated candidate for authority coherence, J1/J2/J3 structure, completion semantics, N:M lineage, generated orientation, whole-system domain boundaries, detective controls, evidence generalization and missing alternatives. Claude may write only Message 017. Hidden R2 item-level material remains sealed. No production selection, owner decision, larger pilot, migration or dependent-DRP resumption is authorized."
   },
   "last_transition": {
     "transition_id": "mc0029-drp03-r2-construct-underdetermined",
