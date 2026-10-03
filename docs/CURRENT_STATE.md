@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 797
+**Checkpoint:** 798
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: corrected thin-versus-rich competency comparison freeze / Specification 028 reconciliation
+## Current active stage: corrected thin-versus-rich competency desk comparison / Specification 028 reconciliation
+
+Checkpoint 798 / Research 462 prospectively freezes the corrected comparison demanded by the Message 015 reconciliation. THIN_V02 remains the unamended Research 442 arm; RICH_V05_ACCEPTED is now instantiated fairly from Research 327 V0.5 with natural-owner realization facts and derived state, not from R1 reviewer scaffolding. The protocol re-audits all 37 SP-1 questions with per-question reasoning and adds six source-bounded candidate questions covering KA-R52 completeness, governing completion criteria, PARTIAL composition, N:M requirement lineage, owner accounting/orientation, and cross-decision conflict. The result class is frozen before execution and no owner participation is required.
 
 Checkpoint 797 / Research 461 reconciles Claude Message 015 as ACCEPT_WITH_REFINEMENTS and amends Research 460 for routing. Claude correctly identified that the first rich comparator used R1 annotation scaffolding rather than the later Research 327 V0.5 natural-owner/derived-state model, that the 37-CQ audit was under-discriminating, and that the SP-1 source boundary was not broad enough to settle the final semantic core. The leading amended development candidate is now THIN_CENTRED_HYBRID, not a revival of the old ObligationUnit core: completeness accounting, governing-side completion criteria, J1 requirement granularity, N:M requirement lineage and one governed derived orientation definition are now explicit candidate additions. HYBRID_REQUIRED remains plausible rather than final until a corrected fair-rich / expanded-competency comparison is prospectively frozen and executed. Hidden R2 item-level semantics remain sealed.
 

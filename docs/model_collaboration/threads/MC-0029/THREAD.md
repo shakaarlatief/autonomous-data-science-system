@@ -1294,3 +1294,21 @@ Current boundary:
     NEXT_ACTOR=chatgpt
     HIDDEN_R2_ITEM_DETAILS=SEALED
     NEXT=FREEZE_CORRECTED_THIN_RICH_COMPETENCY_COMPARISON
+
+## Corrected thin-rich comparison protocol
+
+Research 462 freezes the post-Message-015 comparison.
+
+    THIN arm             Research 442 V0.2, unamended
+    RICH arm             Research 327 V0.5 + owner acceptance
+    original CQs         37
+    expanded candidates   6
+
+The protocol explicitly corrects the earlier unfair rich instantiation and requires per-question reasoning.
+
+Current boundary:
+
+    PHASE=DRP03_CORRECTED_THIN_RICH_DESK_COMPARISON
+    NEXT_ACTOR=chatgpt
+    HIDDEN_R2_ITEM_DETAILS=SEALED
+    NEXT=EXECUTE_CORRECTED_THIN_RICH_DESK_COMPARISON
