@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 820
+**Checkpoint:** 821
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: V0.2 D-2 Claude evaluator B handoff / Specification 028 reconciliation
+## Current active stage: V0.2 D-2 blinded Claude evaluator B / Specification 028 reconciliation
+
+Checkpoint 821 / Research 484 freezes the exact blinded Claude Evaluator B handoff for HYBRID_D2_LINEAGE_EXTENSION_V01. Claude may read only Research 482, reviewer_fixtures.json, evaluator_contract.json and routing context, and must remain blind to evaluator_key.json, evaluator_chatgpt_a.py and every D-2 output/result. Claude may write only MC-0029 Message 018 containing one complete Python evaluator source block. If the purpose-specific Runtime Bridge is unavailable, Claude must stop rather than substitute a generic GitHub write path.
 
 Checkpoint 820 / Research 483 freezes ChatGPT Evaluator A for HYBRID_D2_LINEAGE_EXTENSION_V01 before any evaluator execution or Claude Evaluator B exists. Evaluator A SHA-256 is 26b63dcc0968b73927145bdd495865091a5ef1847feb28213549d7eb6c914e6f and only AST parsing was performed. Claude must now independently author Evaluator B from the frozen reviewer-facing protocol, fixtures and output contract while remaining blind to evaluator_key.json, evaluator_chatgpt_a.py and all D-2 outputs/results.
 

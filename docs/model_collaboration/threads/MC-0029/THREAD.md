@@ -1693,3 +1693,20 @@ Current boundary:
     CLAUDE_BLIND_TO_KEY_AND_A=true
     HIDDEN_R2_ITEM_DETAILS=SEALED
     NEXT=FREEZE_CLAUDE_EVALUATOR_B_HANDOFF
+
+## D-2 blinded Claude Evaluator B handoff
+
+Research 484 freezes the independent-author handoff.
+
+    reviewer-facing inputs    Research 482 + reviewer fixtures + evaluator contract
+    forbidden                 evaluator key + ChatGPT Evaluator A + D-2 outputs/results
+    permitted output          Message 018 only
+    governed transport        Runtime Bridge required
+
+Current boundary:
+
+    PHASE=DRP03_HYBRID_D2_EVALUATOR_B
+    NEXT_ACTOR=claude
+    CLAUDE_BLIND_TO_KEY_AND_A=true
+    HIDDEN_R2_ITEM_DETAILS=SEALED
+    NEXT=CLAUDE_MESSAGE018_D2_EVALUATOR_B
