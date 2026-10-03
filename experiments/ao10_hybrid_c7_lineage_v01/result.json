@@ -1,0 +1,649 @@
+{
+  "probe_id": "HYBRID_C7_LINEAGE_V01",
+  "rows": [
+    {
+      "fixture_id": "L1_CARRY_FORWARD_SAME_ID",
+      "expected": {
+        "valid": true,
+        "review_required": false,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {
+          "P1": [
+            "P1"
+          ]
+        },
+        "retired": [],
+        "retired_remainder_refs": []
+      },
+      "evaluator_a": {
+        "valid": true,
+        "review_required": false,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {
+          "P1": [
+            "P1"
+          ]
+        },
+        "retired": [],
+        "retired_remainder_refs": []
+      },
+      "evaluator_b": {
+        "valid": true,
+        "review_required": false,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {
+          "P1": [
+            "P1"
+          ]
+        },
+        "retired": [],
+        "retired_remainder_refs": []
+      },
+      "a_matches_expected": true,
+      "b_matches_expected": true,
+      "evaluators_agree": true
+    },
+    {
+      "fixture_id": "L2_ONE_TO_ONE_REPLACE",
+      "expected": {
+        "valid": true,
+        "review_required": false,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {
+          "P1": [
+            "S1"
+          ]
+        },
+        "retired": [],
+        "retired_remainder_refs": []
+      },
+      "evaluator_a": {
+        "valid": true,
+        "review_required": false,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {
+          "P1": [
+            "S1"
+          ]
+        },
+        "retired": [],
+        "retired_remainder_refs": []
+      },
+      "evaluator_b": {
+        "valid": true,
+        "review_required": false,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {
+          "P1": [
+            "S1"
+          ]
+        },
+        "retired": [],
+        "retired_remainder_refs": []
+      },
+      "a_matches_expected": true,
+      "b_matches_expected": true,
+      "evaluators_agree": true
+    },
+    {
+      "fixture_id": "L3_ONE_TO_MANY_SPLIT",
+      "expected": {
+        "valid": true,
+        "review_required": false,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {
+          "P1": [
+            "S1",
+            "S2"
+          ]
+        },
+        "retired": [],
+        "retired_remainder_refs": []
+      },
+      "evaluator_a": {
+        "valid": true,
+        "review_required": false,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {
+          "P1": [
+            "S1",
+            "S2"
+          ]
+        },
+        "retired": [],
+        "retired_remainder_refs": []
+      },
+      "evaluator_b": {
+        "valid": true,
+        "review_required": false,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {
+          "P1": [
+            "S1",
+            "S2"
+          ]
+        },
+        "retired": [],
+        "retired_remainder_refs": []
+      },
+      "a_matches_expected": true,
+      "b_matches_expected": true,
+      "evaluators_agree": true
+    },
+    {
+      "fixture_id": "L4_MANY_TO_ONE_MERGE",
+      "expected": {
+        "valid": true,
+        "review_required": false,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {
+          "P1": [
+            "S1"
+          ],
+          "P2": [
+            "S1"
+          ]
+        },
+        "retired": [],
+        "retired_remainder_refs": []
+      },
+      "evaluator_a": {
+        "valid": true,
+        "review_required": false,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {
+          "P1": [
+            "S1"
+          ],
+          "P2": [
+            "S1"
+          ]
+        },
+        "retired": [],
+        "retired_remainder_refs": []
+      },
+      "evaluator_b": {
+        "valid": true,
+        "review_required": false,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {
+          "P1": [
+            "S1"
+          ],
+          "P2": [
+            "S1"
+          ]
+        },
+        "retired": [],
+        "retired_remainder_refs": []
+      },
+      "a_matches_expected": true,
+      "b_matches_expected": true,
+      "evaluators_agree": true
+    },
+    {
+      "fixture_id": "L5_PARTIAL_REPLACE_WITH_RETIREMENT",
+      "expected": {
+        "valid": true,
+        "review_required": false,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {
+          "P1": [
+            "S1"
+          ]
+        },
+        "retired": [],
+        "retired_remainder_refs": [
+          "R-REM"
+        ]
+      },
+      "evaluator_a": {
+        "valid": true,
+        "review_required": false,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {
+          "P1": [
+            "S1"
+          ]
+        },
+        "retired": [],
+        "retired_remainder_refs": [
+          "R-REM"
+        ]
+      },
+      "evaluator_b": {
+        "valid": true,
+        "review_required": false,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {
+          "P1": [
+            "S1"
+          ]
+        },
+        "retired": [],
+        "retired_remainder_refs": [
+          "R-REM"
+        ]
+      },
+      "a_matches_expected": true,
+      "b_matches_expected": true,
+      "evaluators_agree": true
+    },
+    {
+      "fixture_id": "L6_EXPLICIT_RETIRE",
+      "expected": {
+        "valid": true,
+        "review_required": false,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {
+          "P1": []
+        },
+        "retired": [
+          "P1"
+        ],
+        "retired_remainder_refs": []
+      },
+      "evaluator_a": {
+        "valid": true,
+        "review_required": false,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {
+          "P1": []
+        },
+        "retired": [
+          "P1"
+        ],
+        "retired_remainder_refs": []
+      },
+      "evaluator_b": {
+        "valid": true,
+        "review_required": false,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {
+          "P1": []
+        },
+        "retired": [
+          "P1"
+        ],
+        "retired_remainder_refs": []
+      },
+      "a_matches_expected": true,
+      "b_matches_expected": true,
+      "evaluators_agree": true
+    },
+    {
+      "fixture_id": "L7_UNMAPPED_LIVE_PREDECESSOR",
+      "expected": {
+        "valid": false,
+        "review_required": true,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [
+          "P2"
+        ],
+        "current_targets_by_predecessor": {},
+        "retired": [],
+        "retired_remainder_refs": []
+      },
+      "evaluator_a": {
+        "valid": false,
+        "review_required": true,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [
+          "P2"
+        ],
+        "current_targets_by_predecessor": {},
+        "retired": [],
+        "retired_remainder_refs": []
+      },
+      "evaluator_b": {
+        "valid": false,
+        "review_required": true,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [
+          "P2"
+        ],
+        "current_targets_by_predecessor": {},
+        "retired": [],
+        "retired_remainder_refs": []
+      },
+      "a_matches_expected": true,
+      "b_matches_expected": true,
+      "evaluators_agree": true
+    },
+    {
+      "fixture_id": "L8_COMPETING_OUTGOING_RELATIONS",
+      "expected": {
+        "valid": false,
+        "review_required": true,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": true,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {},
+        "retired": [],
+        "retired_remainder_refs": []
+      },
+      "evaluator_a": {
+        "valid": false,
+        "review_required": true,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": true,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {},
+        "retired": [],
+        "retired_remainder_refs": []
+      },
+      "evaluator_b": {
+        "valid": false,
+        "review_required": true,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": true,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {},
+        "retired": [],
+        "retired_remainder_refs": []
+      },
+      "a_matches_expected": true,
+      "b_matches_expected": true,
+      "evaluators_agree": true
+    },
+    {
+      "fixture_id": "L9_CYCLE",
+      "expected": {
+        "valid": false,
+        "review_required": true,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": true,
+        "unmapped": [],
+        "current_targets_by_predecessor": {},
+        "retired": [],
+        "retired_remainder_refs": []
+      },
+      "evaluator_a": {
+        "valid": false,
+        "review_required": true,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": true,
+        "unmapped": [],
+        "current_targets_by_predecessor": {},
+        "retired": [],
+        "retired_remainder_refs": []
+      },
+      "evaluator_b": {
+        "valid": false,
+        "review_required": true,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": true,
+        "unmapped": [],
+        "current_targets_by_predecessor": {},
+        "retired": [],
+        "retired_remainder_refs": []
+      },
+      "a_matches_expected": true,
+      "b_matches_expected": true,
+      "evaluators_agree": true
+    },
+    {
+      "fixture_id": "L10_UNAUTHORIZED_RELATION",
+      "expected": {
+        "valid": false,
+        "review_required": true,
+        "authority_valid": false,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {},
+        "retired": [],
+        "retired_remainder_refs": []
+      },
+      "evaluator_a": {
+        "valid": false,
+        "review_required": true,
+        "authority_valid": false,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {},
+        "retired": [],
+        "retired_remainder_refs": []
+      },
+      "evaluator_b": {
+        "valid": false,
+        "review_required": true,
+        "authority_valid": false,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {},
+        "retired": [],
+        "retired_remainder_refs": []
+      },
+      "a_matches_expected": true,
+      "b_matches_expected": true,
+      "evaluators_agree": true
+    },
+    {
+      "fixture_id": "L11_STALE_EFFECTIVE_BOUNDARY",
+      "expected": {
+        "valid": false,
+        "review_required": true,
+        "authority_valid": true,
+        "effective_boundary_valid": false,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {},
+        "retired": [],
+        "retired_remainder_refs": []
+      },
+      "evaluator_a": {
+        "valid": false,
+        "review_required": true,
+        "authority_valid": true,
+        "effective_boundary_valid": false,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {},
+        "retired": [],
+        "retired_remainder_refs": []
+      },
+      "evaluator_b": {
+        "valid": false,
+        "review_required": true,
+        "authority_valid": true,
+        "effective_boundary_valid": false,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {},
+        "retired": [],
+        "retired_remainder_refs": []
+      },
+      "a_matches_expected": true,
+      "b_matches_expected": true,
+      "evaluators_agree": true
+    },
+    {
+      "fixture_id": "L12_INVALID_CARRY_FORWARD_DIGEST",
+      "expected": {
+        "valid": false,
+        "review_required": true,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": false,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {},
+        "retired": [],
+        "retired_remainder_refs": []
+      },
+      "evaluator_a": {
+        "valid": false,
+        "review_required": true,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": false,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {},
+        "retired": [],
+        "retired_remainder_refs": []
+      },
+      "evaluator_b": {
+        "valid": false,
+        "review_required": true,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": false,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {},
+        "retired": [],
+        "retired_remainder_refs": []
+      },
+      "a_matches_expected": true,
+      "b_matches_expected": true,
+      "evaluators_agree": true
+    }
+  ],
+  "summary": {
+    "fixture_total": 12,
+    "all_match": true,
+    "evaluators_agree_all": true,
+    "negative_controls_visible": true,
+    "nm_targets_correct": true,
+    "outcome": "C7_LINEAGE_MECHANISM_PLAUSIBLE"
+  }
+}
