@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 804
+**Checkpoint:** 805
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: thin-centred hybrid C7 frozen execution / Specification 028 reconciliation
+## Current active stage: thin-centred hybrid C8 orientation/status probe freeze / Specification 028 reconciliation
+
+Checkpoint 805 / Research 469 records the single frozen HYBRID_C7_LINEAGE_V01 execution as C7_LINEAGE_MECHANISM_PLAUSIBLE. All twelve fixtures matched frozen expectations in both separately encoded evaluators; N:M successor targets were correct, unmapped predecessors/conflicts/cycles/authority failures/stale boundaries were detected, and semantic-digest change could not pass as carry-forward. The mechanism fits DRP-01 shared primitives at mechanism level and provides a stronger basis for later DRP-07 Specification 028 lineage reconciliation. C8 shared generated orientation/status semantics is next.
 
 Checkpoint 804 / Research 468 freezes the exact HYBRID_C7_LINEAGE_V01 implementation before business-rule execution. The manifest SHA-256 is 9a3f4df5be021bd3cf8c3d3d37a77eea78776796026c4e129d6b8ee4cbe4ebed. Static validation passed without importing either evaluator, result.json is absent, and the frozen harness contains twelve lineage fixtures plus two separately encoded evaluators. One execution is next.
 

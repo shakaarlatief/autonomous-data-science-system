@@ -1408,3 +1408,23 @@ Current boundary:
     NEXT_ACTOR=chatgpt
     HIDDEN_R2_ITEM_DETAILS=SEALED
     NEXT=EXECUTE_HYBRID_C7_LINEAGE_V01_ONCE
+
+## HYBRID C7 lineage result
+
+Research 469 records:
+
+    C7_LINEAGE_MECHANISM_PLAUSIBLE
+
+Observed:
+
+    fixtures                 12 / 12
+    evaluator agreement      exact
+    N:M target derivation    correct
+    safety controls          visible
+
+Current boundary:
+
+    PHASE=DRP03_HYBRID_C8_PROTOCOL_FREEZE
+    NEXT_ACTOR=chatgpt
+    HIDDEN_R2_ITEM_DETAILS=SEALED
+    NEXT=FREEZE_HYBRID_C8_ORIENTATION_STATUS_MICROPROBE
