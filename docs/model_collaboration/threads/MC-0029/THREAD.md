@@ -1210,3 +1210,32 @@ Current boundary:
 
     PHASE=DRP03_THIN_VS_RICH_ACCEPTED_PROTOCOL_FREEZE
     NEXT=FREEZE_THIN_VS_RICH_ACCEPTED_COMPARISON
+
+## THIN_ACCEPTED versus RICH_ACCEPTED protocol freeze
+
+Research 459 freezes the comparison prompted by the owner's architectural observation.
+
+RICH_ACCEPTED is a fair rescue candidate:
+
+    model drafts rich semantics
+    -> source meaning + proposal shown to owner
+    -> owner accepts/amends/rejects
+    -> accepted structure becomes authority
+
+It is not the failed later-inference-as-authority design.
+
+Comparison dimensions:
+
+    37 admitted competency questions
+    J1/J2/J3 timing
+    canonicality
+    control power
+    structural burden
+    failure modes
+
+Current boundary:
+
+    PHASE=DRP03_THIN_VS_RICH_ACCEPTED_DESK_COMPARISON
+    HIDDEN_R2_ITEM_DETAILS=SEALED
+    OWNER_PARTICIPATION_REQUIRED=false
+    NEXT=EXECUTE_THIN_VS_RICH_ACCEPTED_DESK_COMPARISON

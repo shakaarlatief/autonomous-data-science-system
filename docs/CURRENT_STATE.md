@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 794
+**Checkpoint:** 795
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: thin-versus-rich accepted-semantics comparison freeze / Specification 028 reconciliation
+## Current active stage: thin-versus-rich accepted-semantics desk comparison / Specification 028 reconciliation
+
+Checkpoint 795 / Research 459 prospectively freezes a fair THIN_ACCEPTED versus RICH_ACCEPTED comparison after the owner's observation that owner acceptance could rescue the earlier rich semantic family's authority problem. RICH_ACCEPTED is not the failed inference-authoritative design: model-generated rich semantics become authoritative only through source-plus-interpretation owner acceptance. The desk comparison will audit all 37 admitted competency questions, J1/J2/J3 timing, canonicality, control power, structural burden and failure modes. R2 remains valid evidence against later unaccepted inference as authority, and hidden R2 item semantics remain sealed.
 
 Checkpoint 794 / Research 458 completes SP-6 as OPERATIVE_INCREMENTAL_CONTROL_VALUE. The detective-only null baseline correctly accounts for all three known historical gaps and all three realized controls, so structured semantics are not required merely to detect these misses. However, two positive gaps were discovered only retrospectively and N remains advisory; the counterfactual OPERATIVE mechanism adds generic continuous requirement-to-realizer lineage and deterministic governed consequence power already demanded by admitted competency questions. The comparison therefore supports continued structured-control development without selecting production adoption. The owner's recent observation also reopens a materially different candidate: richer structured semantics that become authoritative only after explicit source-plus-interpretation owner acceptance. This is not the failed later-inference architecture. Thin OPERATIVE has not yet been shown superior to this RICH_ACCEPTED candidate, so that comparison is next.
 
