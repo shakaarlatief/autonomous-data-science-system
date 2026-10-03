@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "UNRESOLVED",
-  "phase": "DRP03_HYBRID_D1_PROTOCOL_FREEZE",
+  "phase": "DRP03_HYBRID_D1_OWNER_REVIEW",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -60,7 +60,7 @@
       ]
     }
   ],
-  "next_expected_actor": "chatgpt",
+  "next_expected_actor": "human",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,7 +81,7 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 489 records D2_LINEAGE_EXTENSION_PLAUSIBLE. ChatGPT Evaluator A and independently authored Claude Evaluator B each match all 14 frozen semantic-key outputs and agree exactly on all 14 material semantic objects. The only full-object differences are reason_codes, which Research 486 prospectively classified as diagnostic because no public vocabulary was frozen. D-2 and D-3 are closed at development mechanism/proof level. D-1 integrated real-event micro-replay is the only remaining pre-owner-decision discriminator. Hidden R2 item-level material remains sealed."
+    "notes": "Research 490 freezes HYBRID_D1_REAL_EVENT_REPLAY_V01 and owner packet SHA-256 2ac7ec839138189b5657da4c8f78f8c938ac3227da1c7af7f3c6f3fda7ae4fb4 before owner judgment. The source is the real Research 485 Claude collaboration-transport correction. The four proposed effects are one realization-tracked REQUIRE, one DETECTIVE_ONLY standing PROHIBIT, one bounded AUTHORIZE and one LIFECYCLE REPLACE with OPEN_RESET realization succession. The owner performs ordinary semantic-faithfulness ACCEPT/AMEND/REJECT review; no hidden error exists. D-2 and D-3 are closed, so D-1 is the only remaining Research 477 discriminator. Hidden R2 item-level material remains sealed."
   },
   "last_transition": {
     "transition_id": "mc0029-drp03-r2-construct-underdetermined",

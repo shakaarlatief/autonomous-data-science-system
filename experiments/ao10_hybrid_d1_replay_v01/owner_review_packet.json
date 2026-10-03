@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "probe_id": "HYBRID_D1_REAL_EVENT_REPLAY_V01",
+  "replay_event_id": "CLAUDE_D2_TRANSPORT_CORRECTION_REAL_EVENT",
+  "purpose": "Replay one real recent governing act through the integrated THIN_CENTRED_HYBRID_V02 path. This is an ordinary semantic-faithfulness review, not an owner-error-detection test.",
+  "source_authority": {
+    "governing_correction": "docs/research/485_claude_collaboration_transport_correction.md",
+    "superseded_rule": "docs/research/484_d2_claude_evaluator_b_handoff_freeze.md Section 5",
+    "corrected_prior_finding": "docs/research/477_mc0029_message017_final_critique_reconciliation.md Section 1"
+  },
+  "source_meaning": [
+    "The Codexless Runtime Bridge is a custom ChatGPT-side execution surface. Claude never had that custom Runtime Bridge in its separate interaction.",
+    "For bounded MC-0029 collaboration writes, Claude uses the GitHub connector available in the Claude interaction and may write only the explicitly authorized collaboration-message path.",
+    "For D-2 Evaluator B, the authorized write was exactly docs/model_collaboration/threads/MC-0029/messages/018_claude_d2_lineage_evaluator_b.md.",
+    "Research 485 superseded the incorrect Research 484 Section 5 transport requirement and withdrew Research 477's transport-nonconformance classification without changing the substantive architecture reconciliation."
+  ],
+  "proposed_j1_effects": [
+    {
+      "accepted_effect_id": "D1-E01-D2-CLAUDE-WRITE-REQUIREMENT",
+      "type": "REQUIRE",
+      "accepted_effect_statement": "For the D-2 Evaluator B collaboration write, Claude must use the Claude-side GitHub connector and change only the authorized MC-0029 Message 018 path.",
+      "accounting_disposition": "REALIZATION_TRACKED",
+      "completion_contract": {
+        "authority": "GOVERNING_ACCEPTANCE",
+        "composition_rule": "ALL_REQUIRED",
+        "required_components": [
+          "TRANSPORT_ATTESTED_GITHUB_CONNECTOR",
+          "AUTHORIZED_PATH_ONLY",
+          "COMMIT_RECEIPT_BOUND_TO_CORRECTION_HEAD"
+        ],
+        "evidence_required": true,
+        "qualification_required": true,
+        "activation_required": false
+      }
+    },
+    {
+      "accepted_effect_id": "D1-E02-NO-CLAUDE-RUNTIME-BRIDGE",
+      "type": "PROHIBIT",
+      "accepted_effect_statement": "The D-2 Claude action must not be routed through or depend on the ChatGPT-only Codexless Runtime Bridge.",
+      "accounting_disposition": "NO_REALIZATION_REQUIRED",
+      "accounting_reason": "STANDING_CONTROL_CONSEQUENCE",
+      "standing_enforcement": {
+        "mode": "DETECTIVE_ONLY",
+        "control_ref": "D1-HANDOFF-TRANSPORT-AUDIT"
+      }
+    },
+    {
+      "accepted_effect_id": "D1-E03-MESSAGE018-AUTHORIZATION",
+      "type": "AUTHORIZE",
+      "accepted_effect_statement": "Claude is authorized to create exactly MC-0029 Message 018 through the Claude-side GitHub connector for the blinded D-2 Evaluator B task.",
+      "accounting_disposition": "NO_REALIZATION_REQUIRED",
+      "accounting_reason": "SELF_EXECUTING_DISPOSITION",
+      "exercise_contract": {
+        "exact_authorized_path": "docs/model_collaboration/threads/MC-0029/messages/018_claude_d2_lineage_evaluator_b.md",
+        "governed_receipt_required_when_exercised": true
+      }
+    },
+    {
+      "accepted_effect_id": "D1-E04-TRANSPORT-CORRECTION-LIFECYCLE",
+      "type": "LIFECYCLE",
+      "accepted_effect_statement": "The incorrect Research 484 Section 5 Claude Runtime-Bridge requirement is replaced by the corrected Claude-side transport rule, and Research 477's transport-nonconformance finding is withdrawn while its substantive architecture reconciliation remains unchanged.",
+      "accounting_disposition": "NO_REALIZATION_REQUIRED",
+      "accounting_reason": "SELF_EXECUTING_DISPOSITION",
+      "lineage": {
+        "relation": "REPLACE",
+        "predecessor_id": "R484-S5-CLAUDE-RUNTIME-BRIDGE-REQUIREMENT",
+        "successor_id": "D1-E01-D2-CLAUDE-WRITE-REQUIREMENT",
+        "realization_succession": "OPEN_RESET"
+      }
+    }
+  ],
+  "owner_review_question": "Does this proposed J1 package faithfully represent the source governing correction, at an acceptable level of semantic detail, for this development replay?",
+  "owner_verdict_options": [
+    "ACCEPT",
+    "AMEND",
+    "REJECT"
+  ],
+  "post_acceptance_replay_plan": [
+    "Bind the exact accepted package digest and the owner's exact decision payload.",
+    "Use the actual Claude Message 018 Git commit and message attestation as natural-owner J2 facts.",
+    "Derive shared predicates, J3 requirement truth, realization orientation, authorization exercise status, standing-prohibition enforcement visibility and lineage/realization succession.",
+    "Compare two independently authored evaluator implementations, one by ChatGPT and one by Claude."
+  ],
+  "authority_boundary": "The owner verdict governs only the D-1 development replay package. It does not change Research 485's existing authority, select production architecture, authorize migration, or resume dependent DRPs.",
+  "owner_decision_observed": false
+}

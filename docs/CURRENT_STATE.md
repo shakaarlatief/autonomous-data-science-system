@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 826
+**Checkpoint:** 827
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: V0.2 D-1 integrated real-event micro-replay freeze / Specification 028 reconciliation
+## Current active stage: V0.2 D-1 integrated real-event owner review / Specification 028 reconciliation
+
+Checkpoint 827 / Research 490 freezes HYBRID_D1_REAL_EVENT_REPLAY_V01 and its exact four-effect owner package before owner judgment. The replay uses the real Research 485 Claude-transport correction and, after acceptance, the actual Claude Message 018 commit as natural-owner J2 facts. The owner now performs an ordinary source-plus-proposal semantic-faithfulness review, not an error-detection test. D-1 is the only remaining Research 477 discriminator before owner architecture decision.
 
 Checkpoint 826 / Research 489 records HYBRID_D2_LINEAGE_EXTENSION_V01 as D2_LINEAGE_EXTENSION_PLAUSIBLE. Both independently authored evaluators matched the frozen key on all 14 material semantic outputs and agreed exactly with one another on all 14; the eight full-object differences were confined to the prospectively de-scored reason_codes vocabulary. D-2 and D-3 are now closed at development mechanism/proof level. D-1 integrated real-event replay is the only remaining Research 477 discriminator before an owner architecture decision.
 
