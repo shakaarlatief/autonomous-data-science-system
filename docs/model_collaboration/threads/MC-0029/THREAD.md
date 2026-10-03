@@ -1868,3 +1868,20 @@ Current boundary:
     NEXT_ACTOR=chatgpt
     HIDDEN_R2_ITEM_DETAILS=SEALED
     NEXT=FREEZE_D1_CLAUDE_EVALUATOR_B_HANDOFF
+
+## D-1 blinded Claude Evaluator B handoff
+
+MC-0029 Message 019 freezes:
+
+    reviewer inputs          accepted J1 + real source facts + definitions + contract
+    forbidden                hidden key + ChatGPT A + A output + D1 results
+    permitted output         Message 020 only
+    transport                Claude-side GitHub connector
+
+Current boundary:
+
+    PHASE=DRP03_HYBRID_D1_EVALUATOR_B
+    NEXT_ACTOR=claude
+    CLAUDE_BLIND_TO_KEY_AND_A=true
+    HIDDEN_R2_ITEM_DETAILS=SEALED
+    NEXT=CLAUDE_MESSAGE020_D1_EVALUATOR_B

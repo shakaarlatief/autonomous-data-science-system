@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 830
+**Checkpoint:** 831
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: V0.2 D-1 Claude evaluator B handoff / Specification 028 reconciliation
+## Current active stage: V0.2 D-1 blinded Claude evaluator B / Specification 028 reconciliation
+
+Checkpoint 831 / Research 494 / MC-0029 Message 019 freezes the blinded Claude Evaluator B handoff for D-1. Claude may read only accepted_j1.json, source_facts.json, definitions.json, evaluator_contract.json plus the bounded explanatory/routing records, and must remain blind to evaluator_key.json, evaluator_chatgpt_a.py, A output and all D-1 results. Claude may write only MC-0029 Message 020 through the Claude-side GitHub connector.
 
 Checkpoint 830 / Research 493 freezes ChatGPT Evaluator A for D-1 at SHA-256 082e1dce1a1af5504ae51b95e640878c61f4484d2065043e8e80b4470f9e46fd. Only AST validation was performed; Evaluator A has not executed against the replay facts and no D-1 result exists. Claude must next author an independent Evaluator B from accepted_j1.json, source_facts.json, definitions.json and evaluator_contract.json while remaining blind to the hidden key, Evaluator A, A output and all D-1 results.
 
