@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 807
+**Checkpoint:** 808
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: thin-centred hybrid C8 frozen execution / Specification 028 reconciliation
+## Current active stage: thin-centred hybrid C9 owner-burden protocol freeze / Specification 028 reconciliation
+
+Checkpoint 808 / Research 472 records the single frozen HYBRID_C8_ORIENTATION_V01 execution as C8_ORIENTATION_MECHANISM_PLAUSIBLE. All eleven fixtures and aggregate outputs matched frozen expectations in both separately encoded evaluators, and a bogus authored OPERATIONAL label had no effect. The supported projection uses four generated top-level states plus one orthogonal next-gap field while keeping governing lifecycle separate. The remaining explicit hybrid qualification item is C9 owner burden for the surviving richer acceptance metadata.
 
 Checkpoint 807 / Research 471 freezes the exact HYBRID_C8_ORIENTATION_V01 implementation before business-rule execution. The manifest SHA-256 is 7137a3bacc9449dc73e6b158c43fd787614c44da17690e15eae0c974307027c8. Static validation passed without importing either evaluator, result.json is absent, and the frozen harness contains eleven orientation fixtures plus two separately encoded evaluators. One execution is next.
 

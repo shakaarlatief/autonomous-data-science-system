@@ -1462,3 +1462,23 @@ Current boundary:
     NEXT_ACTOR=chatgpt
     HIDDEN_R2_ITEM_DETAILS=SEALED
     NEXT=EXECUTE_HYBRID_C8_ORIENTATION_V01_ONCE
+
+## HYBRID C8 orientation result
+
+Research 472 records:
+
+    C8_ORIENTATION_MECHANISM_PLAUSIBLE
+
+Observed:
+
+    fixtures                 11 / 11
+    evaluator agreement      exact
+    aggregate agreement      exact
+    reported state ignored   yes
+
+Current boundary:
+
+    PHASE=DRP03_HYBRID_C9_PROTOCOL_FREEZE
+    NEXT_ACTOR=chatgpt
+    HIDDEN_R2_ITEM_DETAILS=SEALED
+    NEXT=FREEZE_HYBRID_C9_OWNER_BURDEN_PROTOCOL
