@@ -1374,3 +1374,20 @@ Current boundary:
     NEXT_ACTOR=chatgpt
     HIDDEN_R2_ITEM_DETAILS=SEALED
     NEXT=FREEZE_HYBRID_C7_REQUIREMENT_LINEAGE_MICROPROBE
+
+## HYBRID C7 lineage protocol
+
+Research 467 freezes the N:M requirement-lineage mechanism probe.
+
+    probe                    HYBRID_C7_LINEAGE_V01
+    fixtures                 12
+    evaluators               2
+
+The probe keeps semantic identity immutable, treats CARRY_FORWARD as continuity, and represents semantic change through governed REPLACE/SPLIT/MERGE/RETIRE relations.
+
+Current boundary:
+
+    PHASE=DRP03_HYBRID_C7_IMPLEMENTATION_FREEZE
+    NEXT_ACTOR=chatgpt
+    HIDDEN_R2_ITEM_DETAILS=SEALED
+    NEXT=IMPLEMENT_AND_FREEZE_HYBRID_C7_LINEAGE_V01

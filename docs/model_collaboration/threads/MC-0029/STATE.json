@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "UNRESOLVED",
-  "phase": "DRP03_HYBRID_C7_PROTOCOL_FREEZE",
+  "phase": "DRP03_HYBRID_C7_IMPLEMENTATION_FREEZE",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,7 +81,7 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 466 records the single frozen HYBRID_C4_C6_V01 execution as C4_C6_MECHANISM_PLAUSIBLE. All 4 granularity fixtures and all 10 completion/PARTIAL fixtures matched frozen expectations in both separately encoded evaluators; agreement was exact, negative controls were visible and self-certified FULL had no governing effect. The leading hybrid now has a qualified mechanism for J1 effect identity, governing completion criteria and bounded ALL_REQUIRED multi-artifact composition. Hidden R2 item-level material remains sealed. Next actor is ChatGPT to prospectively freeze C7 N:M requirement-lineage qualification."
+    "notes": "Research 467 freezes HYBRID_C7_LINEAGE_V01 before implementation. The probe tests immutable accepted requirement identities plus governed CARRY_FORWARD, REPLACE, SPLIT, MERGE and RETIRE relations using DRP-01-compatible semantic identity/governed-relation references. Twelve fixtures test valid N:M lineage and failures for unmapped live predecessors, competing relations, cycles, unauthorized relations, stale boundaries and invalid semantic continuity. Two separately encoded evaluators are required. Hidden R2 item-level material remains sealed. Next actor is ChatGPT to implement and freeze the exact C7 harness."
   },
   "last_transition": {
     "transition_id": "mc0029-drp03-r2-construct-underdetermined",

@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 802
+**Checkpoint:** 803
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: thin-centred hybrid C7 requirement-lineage probe freeze / Specification 028 reconciliation
+## Current active stage: thin-centred hybrid C7 lineage implementation freeze / Specification 028 reconciliation
+
+Checkpoint 803 / Research 467 prospectively freezes HYBRID_C7_LINEAGE_V01 before implementation. The probe tests immutable accepted requirement identity plus governed CARRY_FORWARD, REPLACE, SPLIT, MERGE and RETIRE relations against DRP-01's admitted shared primitives and DRP-07 lineage needs. Twelve fixtures cover one-to-one, one-to-many, many-to-one, partial replacement with explicit retirement, explicit retirement, unmapped live predecessors, competing transitions, cycles, authority failure, stale effective boundaries and invalid carry-forward semantic continuity. Two separately encoded evaluators are required; no owner participation is required.
 
 Checkpoint 802 / Research 466 records the single frozen HYBRID_C4_C6_V01 execution as C4_C6_MECHANISM_PLAUSIBLE. All four granularity fixtures and all ten completion/PARTIAL fixtures matched frozen expectations in both separately encoded evaluators, evaluator agreement was exact, negative controls remained visible, and realizer self-certification was blocked. The supported mechanism is one REQUIRE per independently acceptable governing effect, completion criteria owned by governing acceptance or an exact accepted domain contract, and deterministic component-set composition for bounded ALL_REQUIRED completion. Coverage remains distinct from qualification, activation and final satisfaction. The next bounded question is C7 N:M requirement lineage.
 
