@@ -1445,3 +1445,20 @@ Current boundary:
     NEXT_ACTOR=chatgpt
     HIDDEN_R2_ITEM_DETAILS=SEALED
     NEXT=IMPLEMENT_AND_FREEZE_HYBRID_C8_ORIENTATION_V01
+
+## HYBRID C8 implementation freeze
+
+Research 471 freezes the exact pre-result orientation harness.
+
+    probe                    HYBRID_C8_ORIENTATION_V01
+    manifest SHA-256         7137a3bacc9449dc73e6b158c43fd787614c44da17690e15eae0c974307027c8
+    fixtures                 11
+    evaluators               2
+    result.json              absent at freeze
+
+Current boundary:
+
+    PHASE=DRP03_HYBRID_C8_EXECUTION
+    NEXT_ACTOR=chatgpt
+    HIDDEN_R2_ITEM_DETAILS=SEALED
+    NEXT=EXECUTE_HYBRID_C8_ORIENTATION_V01_ONCE

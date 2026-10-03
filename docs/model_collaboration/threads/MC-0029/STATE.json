@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "UNRESOLVED",
-  "phase": "DRP03_HYBRID_C8_IMPLEMENTATION_FREEZE",
+  "phase": "DRP03_HYBRID_C8_EXECUTION",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,7 +81,7 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 470 freezes HYBRID_C8_ORIENTATION_V01 before implementation. The candidate is a generated non-authoritative realization projection with four top-level states (REVIEW_REQUIRED, DEFERRED, OPEN, SATISFIED) and an orthogonal next-gap field (REVIEW, COVERAGE, EVIDENCE, QUALIFICATION, ACTIVATION, NONE). Eleven fixtures test action-relevant distinctions and ensure reported/authored state cannot override source facts. Governing lifecycle remains separate. Hidden R2 item-level material remains sealed. Next actor is ChatGPT to implement and freeze the C8 harness."
+    "notes": "Research 471 freezes the exact HYBRID_C8_ORIENTATION_V01 implementation. Manifest SHA-256 is 7137a3bacc9449dc73e6b158c43fd787614c44da17690e15eae0c974307027c8 over six pre-result files. Static validation passed without importing either evaluator and result.json is absent. The harness contains eleven orientation fixtures and two separately encoded evaluators. Hidden R2 item-level material remains sealed. Next actor is ChatGPT for exactly one frozen execution."
   },
   "last_transition": {
     "transition_id": "mc0029-drp03-r2-construct-underdetermined",

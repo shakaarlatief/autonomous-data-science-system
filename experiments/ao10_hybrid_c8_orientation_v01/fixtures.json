@@ -1,0 +1,321 @@
+{
+  "schema_version": 1,
+  "fixtures": [
+    {
+      "fixture_id": "O1_NO_COVERAGE",
+      "requirement_id": "R-O1",
+      "facts": {
+        "requirement_active": true,
+        "source_facts_valid": true,
+        "conflict_present": false,
+        "deferral_present": false,
+        "deferral_valid": false,
+        "coverage_present": false,
+        "coverage_complete": false,
+        "evidence_required": true,
+        "evidence_valid": false,
+        "qualification_required": true,
+        "qualification_complete": false,
+        "activation_required": true,
+        "activation_effective": false,
+        "requirement_satisfied": false,
+        "reported_state": null
+      },
+      "expected": {
+        "requirement_id": "R-O1",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "OPEN",
+        "next_gap": "COVERAGE"
+      }
+    },
+    {
+      "fixture_id": "O2_PARTIAL_COVERAGE",
+      "requirement_id": "R-O2",
+      "facts": {
+        "requirement_active": true,
+        "source_facts_valid": true,
+        "conflict_present": false,
+        "deferral_present": false,
+        "deferral_valid": false,
+        "coverage_present": true,
+        "coverage_complete": false,
+        "evidence_required": true,
+        "evidence_valid": false,
+        "qualification_required": true,
+        "qualification_complete": false,
+        "activation_required": true,
+        "activation_effective": false,
+        "requirement_satisfied": false,
+        "reported_state": null
+      },
+      "expected": {
+        "requirement_id": "R-O2",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "OPEN",
+        "next_gap": "COVERAGE"
+      }
+    },
+    {
+      "fixture_id": "O3_COVERAGE_COMPLETE_EVIDENCE_MISSING",
+      "requirement_id": "R-O3",
+      "facts": {
+        "requirement_active": true,
+        "source_facts_valid": true,
+        "conflict_present": false,
+        "deferral_present": false,
+        "deferral_valid": false,
+        "coverage_present": true,
+        "coverage_complete": true,
+        "evidence_required": true,
+        "evidence_valid": false,
+        "qualification_required": true,
+        "qualification_complete": false,
+        "activation_required": true,
+        "activation_effective": false,
+        "requirement_satisfied": false,
+        "reported_state": null
+      },
+      "expected": {
+        "requirement_id": "R-O3",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "OPEN",
+        "next_gap": "EVIDENCE"
+      }
+    },
+    {
+      "fixture_id": "O4_EVIDENCE_VALID_QUALIFICATION_MISSING",
+      "requirement_id": "R-O4",
+      "facts": {
+        "requirement_active": true,
+        "source_facts_valid": true,
+        "conflict_present": false,
+        "deferral_present": false,
+        "deferral_valid": false,
+        "coverage_present": true,
+        "coverage_complete": true,
+        "evidence_required": true,
+        "evidence_valid": true,
+        "qualification_required": true,
+        "qualification_complete": false,
+        "activation_required": true,
+        "activation_effective": false,
+        "requirement_satisfied": false,
+        "reported_state": null
+      },
+      "expected": {
+        "requirement_id": "R-O4",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "OPEN",
+        "next_gap": "QUALIFICATION"
+      }
+    },
+    {
+      "fixture_id": "O5_QUALIFIED_ACTIVATION_MISSING",
+      "requirement_id": "R-O5",
+      "facts": {
+        "requirement_active": true,
+        "source_facts_valid": true,
+        "conflict_present": false,
+        "deferral_present": false,
+        "deferral_valid": false,
+        "coverage_present": true,
+        "coverage_complete": true,
+        "evidence_required": true,
+        "evidence_valid": true,
+        "qualification_required": true,
+        "qualification_complete": true,
+        "activation_required": true,
+        "activation_effective": false,
+        "requirement_satisfied": false,
+        "reported_state": null
+      },
+      "expected": {
+        "requirement_id": "R-O5",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "OPEN",
+        "next_gap": "ACTIVATION"
+      }
+    },
+    {
+      "fixture_id": "O6_SATISFIED",
+      "requirement_id": "R-O6",
+      "facts": {
+        "requirement_active": true,
+        "source_facts_valid": true,
+        "conflict_present": false,
+        "deferral_present": false,
+        "deferral_valid": false,
+        "coverage_present": true,
+        "coverage_complete": true,
+        "evidence_required": true,
+        "evidence_valid": true,
+        "qualification_required": true,
+        "qualification_complete": true,
+        "activation_required": true,
+        "activation_effective": true,
+        "requirement_satisfied": true,
+        "reported_state": null
+      },
+      "expected": {
+        "requirement_id": "R-O6",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "SATISFIED",
+        "next_gap": "NONE"
+      }
+    },
+    {
+      "fixture_id": "O7_VALID_DEFERRAL",
+      "requirement_id": "R-O7",
+      "facts": {
+        "requirement_active": true,
+        "source_facts_valid": true,
+        "conflict_present": false,
+        "deferral_present": true,
+        "deferral_valid": true,
+        "coverage_present": false,
+        "coverage_complete": false,
+        "evidence_required": true,
+        "evidence_valid": false,
+        "qualification_required": true,
+        "qualification_complete": false,
+        "activation_required": true,
+        "activation_effective": false,
+        "requirement_satisfied": false,
+        "reported_state": null
+      },
+      "expected": {
+        "requirement_id": "R-O7",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "DEFERRED",
+        "next_gap": "NONE"
+      }
+    },
+    {
+      "fixture_id": "O8_INVALID_DEFERRAL",
+      "requirement_id": "R-O8",
+      "facts": {
+        "requirement_active": true,
+        "source_facts_valid": true,
+        "conflict_present": false,
+        "deferral_present": true,
+        "deferral_valid": false,
+        "coverage_present": false,
+        "coverage_complete": false,
+        "evidence_required": true,
+        "evidence_valid": false,
+        "qualification_required": true,
+        "qualification_complete": false,
+        "activation_required": true,
+        "activation_effective": false,
+        "requirement_satisfied": false,
+        "reported_state": null
+      },
+      "expected": {
+        "requirement_id": "R-O8",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "REVIEW_REQUIRED",
+        "next_gap": "REVIEW"
+      }
+    },
+    {
+      "fixture_id": "O9_CONFLICT",
+      "requirement_id": "R-O9",
+      "facts": {
+        "requirement_active": true,
+        "source_facts_valid": true,
+        "conflict_present": true,
+        "deferral_present": false,
+        "deferral_valid": false,
+        "coverage_present": true,
+        "coverage_complete": true,
+        "evidence_required": true,
+        "evidence_valid": false,
+        "qualification_required": true,
+        "qualification_complete": false,
+        "activation_required": true,
+        "activation_effective": false,
+        "requirement_satisfied": false,
+        "reported_state": null
+      },
+      "expected": {
+        "requirement_id": "R-O9",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "REVIEW_REQUIRED",
+        "next_gap": "REVIEW"
+      }
+    },
+    {
+      "fixture_id": "O10_INVALID_SOURCE_FACTS",
+      "requirement_id": "R-O10",
+      "facts": {
+        "requirement_active": true,
+        "source_facts_valid": false,
+        "conflict_present": false,
+        "deferral_present": false,
+        "deferral_valid": false,
+        "coverage_present": false,
+        "coverage_complete": false,
+        "evidence_required": true,
+        "evidence_valid": false,
+        "qualification_required": true,
+        "qualification_complete": false,
+        "activation_required": true,
+        "activation_effective": false,
+        "requirement_satisfied": false,
+        "reported_state": null
+      },
+      "expected": {
+        "requirement_id": "R-O10",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "REVIEW_REQUIRED",
+        "next_gap": "REVIEW"
+      }
+    },
+    {
+      "fixture_id": "O11_BOGUS_REPORTED_OPERATIONAL",
+      "requirement_id": "R-O11",
+      "facts": {
+        "requirement_active": true,
+        "source_facts_valid": true,
+        "conflict_present": false,
+        "deferral_present": false,
+        "deferral_valid": false,
+        "coverage_present": true,
+        "coverage_complete": false,
+        "evidence_required": true,
+        "evidence_valid": false,
+        "qualification_required": true,
+        "qualification_complete": false,
+        "activation_required": true,
+        "activation_effective": false,
+        "requirement_satisfied": false,
+        "reported_state": "OPERATIONAL"
+      },
+      "expected": {
+        "requirement_id": "R-O11",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "OPEN",
+        "next_gap": "COVERAGE"
+      }
+    }
+  ],
+  "expected_aggregate": {
+    "state_counts": {
+      "DEFERRED": 1,
+      "OPEN": 6,
+      "REVIEW_REQUIRED": 3,
+      "SATISFIED": 1
+    },
+    "open_gap_counts": {
+      "ACTIVATION": 1,
+      "COVERAGE": 3,
+      "EVIDENCE": 1,
+      "QUALIFICATION": 1
+    },
+    "attention_required_ids": [
+      "R-O10",
+      "R-O8",
+      "R-O9"
+    ]
+  }
+}

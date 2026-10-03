@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 806
+**Checkpoint:** 807
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: thin-centred hybrid C8 orientation implementation freeze / Specification 028 reconciliation
+## Current active stage: thin-centred hybrid C8 frozen execution / Specification 028 reconciliation
+
+Checkpoint 807 / Research 471 freezes the exact HYBRID_C8_ORIENTATION_V01 implementation before business-rule execution. The manifest SHA-256 is 7137a3bacc9449dc73e6b158c43fd787614c44da17690e15eae0c974307027c8. Static validation passed without importing either evaluator, result.json is absent, and the frozen harness contains eleven orientation fixtures plus two separately encoded evaluators. One execution is next.
 
 Checkpoint 806 / Research 470 prospectively freezes HYBRID_C8_ORIENTATION_V01 before implementation. The candidate compresses realization orientation into four generated top-level states, REVIEW_REQUIRED / DEFERRED / OPEN / SATISFIED, plus an orthogonal next-gap field for REVIEW / COVERAGE / EVIDENCE / QUALIFICATION / ACTIVATION / NONE. Eleven fixtures test the full action-relevant progression, precedence, valid deferral, invalid facts/conflict and a bogus authored OPERATIONAL negative control. Governing lifecycle remains separate and no owner participation is required.
 

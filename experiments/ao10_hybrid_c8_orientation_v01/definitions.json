@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "probe_id": "HYBRID_C8_ORIENTATION_V01",
+  "projection_version": "HYBRID_C8_V01",
+  "top_level_states": [
+    "REVIEW_REQUIRED",
+    "DEFERRED",
+    "OPEN",
+    "SATISFIED"
+  ],
+  "next_gaps": [
+    "REVIEW",
+    "COVERAGE",
+    "EVIDENCE",
+    "QUALIFICATION",
+    "ACTIVATION",
+    "NONE"
+  ],
+  "reported_state_authoritative": false,
+  "governing_lifecycle_separate": true
+}
