@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 833
+**Checkpoint:** 834
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: V0.2 D-1 two-model comparison harness freeze / Specification 028 reconciliation
+## Current active stage: V0.2 D-1 frozen two-model comparison execution / Specification 028 reconciliation
+
+Checkpoint 834 / Research 497 freezes the exact D-1 comparison runner before either evaluator is executed by ChatGPT. The runner requires exact A-to-key, B-to-key and A-to-B equality over every material D-1 output field, plus output ordering checks. No field is diagnostic-only and no post-result normalization is permitted. Exactly one comparison execution is next.
 
 Checkpoint 833 / Research 496 materializes and freezes Claude D-1 Evaluator B from Message 020 with no semantic edits. Evaluator B SHA-256 is d6899286ac281b4e26097accfca39e79acdd8253f6f9ab2d3f6f757be05ac463 and AST validation passed. Evaluator A and B are independently authored and unexecuted by ChatGPT. Message 020's reviewer-facing ambiguities remain material; no scoring relaxation is introduced. The exact comparison harness freeze is next.
 

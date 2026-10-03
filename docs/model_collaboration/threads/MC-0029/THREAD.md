@@ -1919,3 +1919,19 @@ Current boundary:
     NEXT_ACTOR=chatgpt
     HIDDEN_R2_ITEM_DETAILS=SEALED
     NEXT=FREEZE_D1_TWO_MODEL_COMPARISON_HARNESS
+
+## D-1 two-model comparison harness freeze
+
+Research 497 freezes:
+
+    runner pre-commit SHA256=b3f327271024d645c22f9753e17959ffb5d8b4e63b4710d4593b2504a794e1a4
+    evaluator A executed       no
+    evaluator B executed       no
+    result exists              no
+
+Current boundary:
+
+    PHASE=DRP03_HYBRID_D1_COMPARISON_EXECUTION
+    NEXT_ACTOR=chatgpt
+    HIDDEN_R2_ITEM_DETAILS=SEALED
+    NEXT=EXECUTE_D1_TWO_MODEL_COMPARISON_ONCE
