@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "probe_id": "HYBRID_D1_REAL_EVENT_REPLAY_V01",
+  "checks": {
+    "a_matches_key_exact": true,
+    "b_matches_key_exact": false,
+    "a_b_agree_exact": false,
+    "a_field_order": true,
+    "b_field_order": true,
+    "key_field_order": true,
+    "a_current_sorted": true,
+    "b_current_sorted": true
+  },
+  "material_field_differences": {
+    "realization_initialization": {
+      "expected": {
+        "effect_id": "D1-E01-D2-CLAUDE-WRITE-REQUIREMENT",
+        "mode": "OPEN_RESET"
+      },
+      "a": {
+        "effect_id": "D1-E01-D2-CLAUDE-WRITE-REQUIREMENT",
+        "mode": "OPEN_RESET"
+      },
+      "b": [
+        {
+          "effect_id": "D1-E01-D2-CLAUDE-WRITE-REQUIREMENT",
+          "mode": "OPEN_RESET"
+        }
+      ]
+    }
+  },
+  "expected": {
+    "fixture_id": "REAL_CLAUDE_MESSAGE018_TRANSPORT_CORRECTION",
+    "acceptance_binding_valid": true,
+    "source_fact_contract_valid": true,
+    "shared_predicates": {
+      "transport_attested_github_connector": true,
+      "authorized_path_only": true,
+      "commit_receipt_bound_to_correction_head": true,
+      "runtime_bridge_prohibition_not_violated": true,
+      "evidence_valid": true,
+      "qualification_complete": true,
+      "authorization_exercise_valid": true,
+      "lineage_transition_valid": true
+    },
+    "lineage_relation_valid": true,
+    "current_effect_ids": [
+      "D1-E01-D2-CLAUDE-WRITE-REQUIREMENT",
+      "D1-E02-NO-CLAUDE-RUNTIME-BRIDGE"
+    ],
+    "realization_initialization": {
+      "effect_id": "D1-E01-D2-CLAUDE-WRITE-REQUIREMENT",
+      "mode": "OPEN_RESET"
+    },
+    "requirement_satisfied": true,
+    "realization_orientation": "SATISFIED",
+    "next_gap": "NONE",
+    "standing_prohibition_enforcement": "DETECTIVE_ONLY_COMPLIANT",
+    "authorization_exercise_status": "EXERCISED_VALID",
+    "review_required": false,
+    "review_owner": null
+  },
+  "evaluator_a": {
+    "fixture_id": "REAL_CLAUDE_MESSAGE018_TRANSPORT_CORRECTION",
+    "acceptance_binding_valid": true,
+    "source_fact_contract_valid": true,
+    "shared_predicates": {
+      "transport_attested_github_connector": true,
+      "authorized_path_only": true,
+      "commit_receipt_bound_to_correction_head": true,
+      "runtime_bridge_prohibition_not_violated": true,
+      "evidence_valid": true,
+      "qualification_complete": true,
+      "authorization_exercise_valid": true,
+      "lineage_transition_valid": true
+    },
+    "lineage_relation_valid": true,
+    "current_effect_ids": [
+      "D1-E01-D2-CLAUDE-WRITE-REQUIREMENT",
+      "D1-E02-NO-CLAUDE-RUNTIME-BRIDGE"
+    ],
+    "realization_initialization": {
+      "effect_id": "D1-E01-D2-CLAUDE-WRITE-REQUIREMENT",
+      "mode": "OPEN_RESET"
+    },
+    "requirement_satisfied": true,
+    "realization_orientation": "SATISFIED",
+    "next_gap": "NONE",
+    "standing_prohibition_enforcement": "DETECTIVE_ONLY_COMPLIANT",
+    "authorization_exercise_status": "EXERCISED_VALID",
+    "review_required": false,
+    "review_owner": null
+  },
+  "evaluator_b": {
+    "fixture_id": "REAL_CLAUDE_MESSAGE018_TRANSPORT_CORRECTION",
+    "acceptance_binding_valid": true,
+    "source_fact_contract_valid": true,
+    "shared_predicates": {
+      "transport_attested_github_connector": true,
+      "authorized_path_only": true,
+      "commit_receipt_bound_to_correction_head": true,
+      "runtime_bridge_prohibition_not_violated": true,
+      "evidence_valid": true,
+      "qualification_complete": true,
+      "authorization_exercise_valid": true,
+      "lineage_transition_valid": true
+    },
+    "lineage_relation_valid": true,
+    "current_effect_ids": [
+      "D1-E01-D2-CLAUDE-WRITE-REQUIREMENT",
+      "D1-E02-NO-CLAUDE-RUNTIME-BRIDGE"
+    ],
+    "realization_initialization": [
+      {
+        "effect_id": "D1-E01-D2-CLAUDE-WRITE-REQUIREMENT",
+        "mode": "OPEN_RESET"
+      }
+    ],
+    "requirement_satisfied": true,
+    "realization_orientation": "SATISFIED",
+    "next_gap": "NONE",
+    "standing_prohibition_enforcement": "DETECTIVE_ONLY_COMPLIANT",
+    "authorization_exercise_status": "EXERCISED_VALID",
+    "review_required": false,
+    "review_owner": null
+  },
+  "summary": {
+    "material_field_count": 14,
+    "material_mismatch_field_count": 1,
+    "all_material_match": false,
+    "raw_outcome": "D1_MISMATCH_REQUIRES_RECONCILIATION"
+  }
+}
