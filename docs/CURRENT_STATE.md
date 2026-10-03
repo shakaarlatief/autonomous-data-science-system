@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 832
+**Checkpoint:** 833
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: V0.2 D-1 Claude evaluator B materialization / Specification 028 reconciliation
+## Current active stage: V0.2 D-1 two-model comparison harness freeze / Specification 028 reconciliation
+
+Checkpoint 833 / Research 496 materializes and freezes Claude D-1 Evaluator B from Message 020 with no semantic edits. Evaluator B SHA-256 is d6899286ac281b4e26097accfca39e79acdd8253f6f9ab2d3f6f757be05ac463 and AST validation passed. Evaluator A and B are independently authored and unexecuted by ChatGPT. Message 020's reviewer-facing ambiguities remain material; no scoring relaxation is introduced. The exact comparison harness freeze is next.
 
 Checkpoint 832 / Research 495 corrects the D-1 frozen-artifact hash basis before any ChatGPT-side execution. Research 492's digest strings were Windows worktree/CRLF hashes, not committed Git-blob hashes. The authoritative reproducibility basis is now GIT_BLOB_BYTES_AT_COMMIT; all D-1 content, evaluator key, scoring expectations and evaluator sources remain unchanged. Claude Evaluator B materialization is next.
 

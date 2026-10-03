@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "UNRESOLVED",
-  "phase": "DRP03_HYBRID_D1_EVALUATOR_B_MATERIALIZATION",
+  "phase": "DRP03_HYBRID_D1_COMPARISON_FREEZE",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,7 +81,7 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Message 020 is durably present and preserves Claude's blinded D-1 Evaluator B authorship. Research 495 corrects only the D-1 digest byte basis before ChatGPT executes either evaluator: GIT_BLOB_BYTES_AT_COMMIT is authoritative; Research 492's earlier hashes were CRLF worktree-byte hashes. No D-1 semantic content, hidden key, evaluator source or scoring expectation changed. Evaluator A remains frozen/unexecuted. Next actor is ChatGPT to materialize Message 020's single Python block verbatim apart from line-ending/final-newline normalization and freeze Evaluator B before comparison."
+    "notes": "Research 496 materializes and freezes Claude D-1 Evaluator B from Message 020 at SHA-256 d6899286ac281b4e26097accfca39e79acdd8253f6f9ab2d3f6f757be05ac463. ChatGPT Evaluator A remains frozen/unexecuted at SHA-256 082e1dce1a1af5504ae51b95e640878c61f4484d2065043e8e80b4470f9e46fd. Both are independently authored. Message 020's ambiguities concern material fields and remain strict; no scoring relaxation is introduced. Next actor is ChatGPT to freeze the exact two-model comparison harness."
   },
   "last_transition": {
     "transition_id": "mc0029-drp03-r2-construct-underdetermined",
