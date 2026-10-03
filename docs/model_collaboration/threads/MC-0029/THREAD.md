@@ -1066,3 +1066,31 @@ Current boundary:
     OWNER_EXPLICIT_INFORMED_AUTHORIZATION=false
     NEXT_ACTOR=human
     NEXT=OWNER_DECIDE_SP5_SEEDED_ERROR_AUTHORIZATION
+
+## SP-5 explicit owner authorization
+
+After the informed-consent disclosure, the owner stated:
+
+    I AUTHORIZE SP-5.
+
+This authorizes the Research 452 development experiment only.
+
+No seeded statement has governing effect.
+
+No seed placement is computed in the authorization record.
+
+Required sequence:
+
+    authorization commit
+    -> deterministic algorithm + full corruption-template library freeze
+    -> placement execution
+    -> blinded packet freeze
+    -> owner review
+
+Current boundary:
+
+    PHASE=DRP03_OPERATIVE_SP5_SEED_ALGORITHM_FREEZE
+    OWNER_EXPLICIT_INFORMED_AUTHORIZATION=true
+    SEED_PLACEMENT_COMPUTED=false
+    SEEDED_PACKET_CREATED=false
+    NEXT=FREEZE_SP5_DETERMINISTIC_SEED_ALGORITHM

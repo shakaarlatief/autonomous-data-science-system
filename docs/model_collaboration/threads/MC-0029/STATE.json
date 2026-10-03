@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "UNRESOLVED",
-  "phase": "DRP03_OPERATIVE_SP5_OWNER_AUTHORIZATION",
+  "phase": "DRP03_OPERATIVE_SP5_SEED_ALGORITHM_FREEZE",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -60,7 +60,7 @@
       ]
     }
   ],
-  "next_expected_actor": "human",
+  "next_expected_actor": "chatgpt",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,7 +81,7 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 435 remains frozen CONSTRUCT_UNDERDETERMINED and hidden R2 item-level semantics remain sealed. Research 451 records SP4_DETECTOR_PLAUSIBLE. Research 452 now freezes the SP-5 owner-review efficacy protocol before any seeded packet exists. Six previously owner-accepted semantic units will eventually produce three clean and three deliberately corrupted review cards, using one each of WRONG_OWNER, MISSING_GATE_CONDITION and INVERTED_OR_BROKEN_PROHIBITION_SCOPE. Exact placement is not chosen yet and will be derived deterministically from the future authorization-record commit. The owner must give explicit informed authorization knowing that some review cards will intentionally be false, placements will remain blinded during review, and accepting a seeded error has no governing effect. A generic earlier proceed does not count. No seeded packet may be created or shown until that authorization is durably recorded."
+    "notes": "Research 435 remains frozen CONSTRUCT_UNDERDETERMINED and hidden R2 item-level semantics remain sealed. Research 452 froze the SP-5 seeded-error owner-review protocol before any seed placement existed. The owner then explicitly stated 'I AUTHORIZE SP-5.' after the informed-consent disclosure. Research 453 records that authorization without computing placement. The authorization permits only the development experiment and has no governing semantic effect. Next actor is ChatGPT to freeze and push the deterministic placement algorithm plus the complete compatible corruption-template library using the authorization-record commit SHA as the seed input. No placement may be computed or seeded packet created/shown before that algorithm/template freeze is durably committed."
   },
   "last_transition": {
     "transition_id": "mc0029-drp03-r2-construct-underdetermined",
