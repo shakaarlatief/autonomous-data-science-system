@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 814
+**Checkpoint:** 815
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: amended thin-centred hybrid V0.2 freeze / Specification 028 reconciliation
+## Current active stage: V0.2 cross-plane dependency proof freeze / Specification 028 reconciliation
+
+Checkpoint 815 / Research 478 freezes THIN_CENTRED_HYBRID_V02 as the amended integrated candidate after Message 017 reconciliation. V0.2 adds exact acceptance-record binding, complete effect accounting, standing-consequence enforcement accounting, pinned domain-contract revisions, accepted effect statements/digests, temporal satisfaction/regression, extended orientation gaps, REPARTITION/REINSTATE candidate lineage semantics, realization-succession rules, scoped legacy transition handling and explicit cross-plane stratification. It remains a development candidate. D-1, D-2 and D-3 are required before owner architecture decision; D-3 dependency proof is next.
 
 Checkpoint 814 / Research 477 reconciles Claude Message 017 as ACCEPT_WITH_REFINEMENTS and accepts its AMEND_INTEGRATED_CANDIDATE_BEFORE_OWNER_DECISION routing. Five integration gaps are admitted with refinements: standing-consequence enforcement accounting, domain-contract self-certification/revision binding, cross-plane dependency cycles, realization succession across lineage, and acceptance-record authenticity. The owner-efficacy portion of G-5 is not treated as a coherence defect, consistent with Research 456. AM-1..AM-14 are dispositioned, with AM-11 advisory rather than authoritative and AM-13 revised so legacy IN_FORCE obligations are not silently downgraded. D-1 integrated micro-replay, D-2 lineage extension and D-3 dependency proof are required before owner architecture decision.
 

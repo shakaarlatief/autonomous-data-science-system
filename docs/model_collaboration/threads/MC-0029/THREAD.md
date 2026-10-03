@@ -1590,3 +1590,23 @@ Current boundary:
     NEXT_ACTOR=chatgpt
     HIDDEN_R2_ITEM_DETAILS=SEALED
     NEXT=FREEZE_THIN_CENTRED_HYBRID_V02
+
+## THIN_CENTRED_HYBRID_V02 freeze
+
+Research 478 freezes the amended integrated candidate:
+
+    CANDIDATE=THIN_CENTRED_HYBRID_V02
+    STATUS=AMENDED_DEVELOPMENT_CANDIDATE
+
+Remaining pre-owner-decision work:
+
+    D-1 integrated micro-replay
+    D-2 lineage extension
+    D-3 cross-plane dependency proof
+
+Current boundary:
+
+    PHASE=DRP03_HYBRID_D3_DEPENDENCY_PROOF_FREEZE
+    NEXT_ACTOR=chatgpt
+    HIDDEN_R2_ITEM_DETAILS=SEALED
+    NEXT=FREEZE_D3_CROSS_PLANE_DEPENDENCY_PROOF
