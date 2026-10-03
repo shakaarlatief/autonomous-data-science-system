@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 793
+**Checkpoint:** 794
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: OPERATIVE SP-6 null-baseline desk replay / Specification 028 reconciliation
+## Current active stage: thin-versus-rich accepted-semantics comparison freeze / Specification 028 reconciliation
+
+Checkpoint 794 / Research 458 completes SP-6 as OPERATIVE_INCREMENTAL_CONTROL_VALUE. The detective-only null baseline correctly accounts for all three known historical gaps and all three realized controls, so structured semantics are not required merely to detect these misses. However, two positive gaps were discovered only retrospectively and N remains advisory; the counterfactual OPERATIVE mechanism adds generic continuous requirement-to-realizer lineage and deterministic governed consequence power already demanded by admitted competency questions. The comparison therefore supports continued structured-control development without selecting production adoption. The owner's recent observation also reopens a materially different candidate: richer structured semantics that become authoritative only after explicit source-plus-interpretation owner acceptance. This is not the failed later-inference architecture. Thin OPERATIVE has not yet been shown superior to this RICH_ACCEPTED candidate, so that comparison is next.
 
 Checkpoint 793 / Research 457 prospectively freezes SP-6 before the desk comparison. The mandatory null baseline N is detective-only with no structured cross-domain obligation layer; it may use repository search, semantic detection, targeted policy/claim checks and periodic audit, but detector inference is advisory rather than governing authority. The comparison uses exactly three public historical realization gaps named in Claude Message 011 plus three realized controls from the same Specification 028 package family. OPERATIVE is replayed counterfactually using only the SP-2/SP-3-surviving clause, coverage and executable-predicate mechanism. Outcome is evaluated as a burden/control vector rather than an arbitrary weighted cost score. No owner participation is required.
 

@@ -1181,3 +1181,32 @@ Current boundary:
     HIDDEN_R2_ITEM_DETAILS=SEALED
     OWNER_PARTICIPATION_REQUIRED=false
     NEXT=EXECUTE_SP6_DESK_REPLAY
+
+## OPERATIVE SP-6 result
+
+Research 458 completes the detective-only null-baseline comparison.
+
+    N known gaps                 3 / 3
+    N realized controls          3 / 3
+    SP6                          OPERATIVE_INCREMENTAL_CONTROL_VALUE
+
+N is a credible detection baseline.
+
+OPERATIVE is not required for raw detection, but adds generic continuous requirement-to-realizer lineage and deterministic governed consequence power.
+
+No production target is selected.
+
+The owner's recent observation reopens a different comparator:
+
+    RICH_ACCEPTED
+        richer machine semantics
+        drafted with assistance
+        source meaning shown beside interpretation
+        human acceptance establishes authority
+
+This is not the failed inference-authoritative design.
+
+Current boundary:
+
+    PHASE=DRP03_THIN_VS_RICH_ACCEPTED_PROTOCOL_FREEZE
+    NEXT=FREEZE_THIN_VS_RICH_ACCEPTED_COMPARISON

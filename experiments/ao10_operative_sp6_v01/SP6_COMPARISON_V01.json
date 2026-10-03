@@ -1,0 +1,240 @@
+{
+  "schema_version": 1,
+  "probe_id": "OPERATIVE-SP6-V01",
+  "protocol": "Research 457",
+  "fixed_evidence_base": "db8cab965d68690c8eaaacf9bc9cd21c2face553",
+  "historical_snapshot": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
+  "cases": [
+    {
+      "case_id": "H1_SPEC028_PACKAGE_RESPONSIBILITIES",
+      "truth": "GAP",
+      "sources": [
+        "Specification 028 section 3",
+        "Claude Message 001 E3"
+      ],
+      "n": {
+        "result": "GAP",
+        "correct": true,
+        "timing": "LATER_RETROSPECTIVE",
+        "determinism": "INFERENTIAL_OR_AUDIT",
+        "consequence_power": "ADVISORY_ONLY",
+        "exact_lineage_without_prose_reinterpretation": false,
+        "generality": "ONE_OFF_AUDIT",
+        "observed_route": "Claude independent architecture audit compared accepted package responsibilities with historical repository realization."
+      },
+      "operative": {
+        "result": "GAP",
+        "correct": true,
+        "timing": "CONTINUOUS_AFTER_ACCEPTANCE",
+        "determinism": "DETERMINISTIC_FROM_BOUND_SOURCE_FACTS",
+        "consequence_power": "ELIGIBLE_FOR_GOVERNED_ADMISSION_OR_BLOCK",
+        "exact_lineage_without_prose_reinterpretation": true,
+        "generality": "GENERIC_MECHANISM",
+        "counterfactual": true,
+        "representation": "Accepted requirement reference to the Spec028 package-surface domain contract, governed deferral/lifecycle while implementation is pending, and generic realizer coverage/qualification predicates. Missing required realization remains mechanically visible and blocks only at its governed gate."
+      }
+    },
+    {
+      "case_id": "H2_RECONSTRUCTION_PLANNER",
+      "truth": "GAP",
+      "sources": [
+        "Specification 028 section 26",
+        "Research 178",
+        "Research 179",
+        "Research 220 section 7"
+      ],
+      "n": {
+        "result": "GAP",
+        "correct": true,
+        "timing": "LATER_RETROSPECTIVE",
+        "determinism": "INFERENTIAL_OR_AUDIT",
+        "consequence_power": "ADVISORY_ONLY",
+        "exact_lineage_without_prose_reinterpretation": false,
+        "generality": "ONE_OFF_AUDIT",
+        "observed_route": "AO-1 retrospective completeness audit reconstructed the selected requirement and compared it with production implementation state."
+      },
+      "operative": {
+        "result": "GAP",
+        "correct": true,
+        "timing": "CONTINUOUS_AFTER_ACCEPTANCE",
+        "determinism": "DETERMINISTIC_FROM_BOUND_SOURCE_FACTS",
+        "consequence_power": "ELIGIBLE_FOR_GOVERNED_ADMISSION_OR_BLOCK",
+        "exact_lineage_without_prose_reinterpretation": true,
+        "generality": "GENERIC_MECHANISM",
+        "counterfactual": true,
+        "representation": "Accepted reconstruction-planner requirement identity references the domain contract. A governed deferral can keep implementation-pending state valid, but absent qualified realizer coverage remains visible and fails the later realization/cutover gate."
+      }
+    },
+    {
+      "case_id": "H3_AO6_ROTATE_REALIZATION",
+      "truth": "GAP",
+      "sources": [
+        "Research 225",
+        "Research 226",
+        "AO9 P3 R11",
+        "Research 234"
+      ],
+      "n": {
+        "result": "GAP",
+        "correct": true,
+        "timing": "SAME_BOUNDARY",
+        "determinism": "MIXED",
+        "consequence_power": "ADVISORY_ONLY",
+        "exact_lineage_without_prose_reinterpretation": false,
+        "generality": "ONE_OFF_AUDIT",
+        "observed_route": "The live ROTATE attempt itself failed at local attach/switch, so the capability gap was observed immediately and later preserved by AO-9 R11. The failure fact was mechanical; its realization-obligation interpretation was governed/audited."
+      },
+      "operative": {
+        "result": "GAP",
+        "correct": true,
+        "timing": "SAME_BOUNDARY",
+        "determinism": "DETERMINISTIC_FROM_BOUND_SOURCE_FACTS",
+        "consequence_power": "ELIGIBLE_FOR_GOVERNED_ADMISSION_OR_BLOCK",
+        "exact_lineage_without_prose_reinterpretation": true,
+        "generality": "GENERIC_MECHANISM",
+        "counterfactual": true,
+        "representation": "Selected ROTATE creates/references an accepted completion requirement. No valid attach/switch realizer receipt means the completion predicate remains false, so selected action cannot be represented as completed."
+      }
+    },
+    {
+      "case_id": "C1_IDENTITY_RESPONSIBILITY",
+      "truth": "NO_GAP",
+      "sources": [
+        "Specification 028 section 3",
+        "historical tree at 0a68787...: tools/project_knowledge/identity.py"
+      ],
+      "n": {
+        "result": "NO_GAP",
+        "correct": true,
+        "timing": "SAME_BOUNDARY",
+        "determinism": "DETERMINISTIC_FROM_BOUND_SOURCE_FACTS",
+        "consequence_power": "ADVISORY_ONLY",
+        "exact_lineage_without_prose_reinterpretation": false,
+        "generality": "TARGETED_CHECK",
+        "observed_route": "Desk control: exact historical package surface contains identity.py."
+      },
+      "operative": {
+        "result": "NO_GAP",
+        "correct": true,
+        "timing": "CONTINUOUS_AFTER_ACCEPTANCE",
+        "determinism": "DETERMINISTIC_FROM_BOUND_SOURCE_FACTS",
+        "consequence_power": "ELIGIBLE_FOR_GOVERNED_ADMISSION_OR_BLOCK",
+        "exact_lineage_without_prose_reinterpretation": true,
+        "generality": "GENERIC_MECHANISM",
+        "counterfactual": true,
+        "representation": "Requirement has valid realizer coverage."
+      }
+    },
+    {
+      "case_id": "C2_AUTHORITY_RESPONSIBILITY",
+      "truth": "NO_GAP",
+      "sources": [
+        "Specification 028 section 3",
+        "historical tree at 0a68787...: tools/project_knowledge/authority.py"
+      ],
+      "n": {
+        "result": "NO_GAP",
+        "correct": true,
+        "timing": "SAME_BOUNDARY",
+        "determinism": "DETERMINISTIC_FROM_BOUND_SOURCE_FACTS",
+        "consequence_power": "ADVISORY_ONLY",
+        "exact_lineage_without_prose_reinterpretation": false,
+        "generality": "TARGETED_CHECK",
+        "observed_route": "Desk control: exact historical package surface contains authority.py."
+      },
+      "operative": {
+        "result": "NO_GAP",
+        "correct": true,
+        "timing": "CONTINUOUS_AFTER_ACCEPTANCE",
+        "determinism": "DETERMINISTIC_FROM_BOUND_SOURCE_FACTS",
+        "consequence_power": "ELIGIBLE_FOR_GOVERNED_ADMISSION_OR_BLOCK",
+        "exact_lineage_without_prose_reinterpretation": true,
+        "generality": "GENERIC_MECHANISM",
+        "counterfactual": true,
+        "representation": "Requirement has valid realizer coverage."
+      }
+    },
+    {
+      "case_id": "C3_WORKSTREAM_RESPONSIBILITY",
+      "truth": "NO_GAP",
+      "sources": [
+        "Specification 028 section 3",
+        "historical tree at 0a68787...: tools/project_knowledge/workstreams.py"
+      ],
+      "n": {
+        "result": "NO_GAP",
+        "correct": true,
+        "timing": "SAME_BOUNDARY",
+        "determinism": "DETERMINISTIC_FROM_BOUND_SOURCE_FACTS",
+        "consequence_power": "ADVISORY_ONLY",
+        "exact_lineage_without_prose_reinterpretation": false,
+        "generality": "TARGETED_CHECK",
+        "observed_route": "Desk control: exact historical package surface contains workstreams.py."
+      },
+      "operative": {
+        "result": "NO_GAP",
+        "correct": true,
+        "timing": "CONTINUOUS_AFTER_ACCEPTANCE",
+        "determinism": "DETERMINISTIC_FROM_BOUND_SOURCE_FACTS",
+        "consequence_power": "ELIGIBLE_FOR_GOVERNED_ADMISSION_OR_BLOCK",
+        "exact_lineage_without_prose_reinterpretation": true,
+        "generality": "GENERIC_MECHANISM",
+        "counterfactual": true,
+        "representation": "Requirement has valid realizer coverage."
+      }
+    }
+  ],
+  "burden": {
+    "operative_fixed_observed": {
+      "coverage_validator_nonblank_loc": 55,
+      "predicate_engine_a_nonblank_loc": 56,
+      "independent_qualification_engine_b_nonblank_loc": 40,
+      "comparison_runner_nonblank_loc": 29,
+      "interpretation": "111 nonblank lines form the minimum observed mechanism prototype; 69 further lines were independent-development qualification overhead, not necessarily production runtime burden."
+    },
+    "operative_marginal_minimum": {
+      "accepted_requirement_identities": 6,
+      "exact_domain_references": 6,
+      "owner_review_events_assumption": 2,
+      "owner_review_event_assumption_basis": "One integrated source+consequence review for Specification 028 family and one for AO-6 family; SP-2 is the only observed review-burden evidence and was LOW.",
+      "positive_realizer_coverage_declarations": 3,
+      "gap_cases_with_no_valid_coverage": 3,
+      "new_predicate_definitions": 0,
+      "correction_rounds": "NOT_OBSERVED_COUNTERFACTUAL",
+      "leak_review_events": 0
+    },
+    "n_fixed": {
+      "persistent_cross_domain_obligation_layer": 0,
+      "existing_capabilities": [
+        "repository retrieval/search",
+        "semantic detector/audit",
+        "targeted policy/claim checks",
+        "human/agent audit"
+      ]
+    },
+    "n_marginal_observed": {
+      "positive_gap_discovery_judgments_minimum": 3,
+      "positive_gap_same_boundary": 1,
+      "positive_gap_later_retrospective": 2,
+      "post_discovery_targeted_regressions": [
+        "AO9 R7 for selected Specification 028 realization gaps",
+        "AO9 R11 for selected ROTATE != completed rotation"
+      ],
+      "persistent_per_obligation_structured_records": 0,
+      "owner_machine_semantics_review_events": 0
+    }
+  },
+  "summary": {
+    "n_positive_detection": "3/3",
+    "n_negative_controls": "3/3",
+    "operative_counterfactual_positive_detection": "3/3",
+    "operative_counterfactual_negative_controls": "3/3",
+    "n_later_retrospective_positive_cases": 2,
+    "n_same_boundary_positive_cases": 1,
+    "operative_generic_exact_lineage": true,
+    "n_generic_exact_lineage": false,
+    "operative_governed_admission_capability": true,
+    "n_detector_authority": false,
+    "result_class": "OPERATIVE_INCREMENTAL_CONTROL_VALUE"
+  }
+}
