@@ -1,0 +1,485 @@
+{
+  "probe_id": "HYBRID_C4_C6_V01",
+  "granularity_rows": [
+    {
+      "fixture_id": "G1_SINGLE_EFFECT",
+      "expected": {
+        "granularity_valid": true,
+        "split_required": false,
+        "missing_effects": [],
+        "duplicate_effects": [],
+        "invalid_multi_effect_requirements": [],
+        "sequence_valid": true,
+        "outcome": "VALID"
+      },
+      "evaluator_a": {
+        "granularity_valid": true,
+        "split_required": false,
+        "missing_effects": [],
+        "duplicate_effects": [],
+        "invalid_multi_effect_requirements": [],
+        "sequence_valid": true,
+        "outcome": "VALID"
+      },
+      "evaluator_b": {
+        "granularity_valid": true,
+        "split_required": false,
+        "missing_effects": [],
+        "duplicate_effects": [],
+        "invalid_multi_effect_requirements": [],
+        "sequence_valid": true,
+        "outcome": "VALID"
+      },
+      "a_matches_expected": true,
+      "b_matches_expected": true,
+      "evaluators_agree": true
+    },
+    {
+      "fixture_id": "G2_TWO_INDEPENDENT_EFFECTS_SAME_SOURCE",
+      "expected": {
+        "granularity_valid": false,
+        "split_required": true,
+        "missing_effects": [],
+        "duplicate_effects": [],
+        "invalid_multi_effect_requirements": [
+          "R-E1-E2"
+        ],
+        "sequence_valid": true,
+        "outcome": "SPLIT_REQUIRED"
+      },
+      "evaluator_a": {
+        "granularity_valid": false,
+        "split_required": true,
+        "missing_effects": [],
+        "duplicate_effects": [],
+        "invalid_multi_effect_requirements": [
+          "R-E1-E2"
+        ],
+        "sequence_valid": true,
+        "outcome": "SPLIT_REQUIRED"
+      },
+      "evaluator_b": {
+        "granularity_valid": false,
+        "split_required": true,
+        "missing_effects": [],
+        "duplicate_effects": [],
+        "invalid_multi_effect_requirements": [
+          "R-E1-E2"
+        ],
+        "sequence_valid": true,
+        "outcome": "SPLIT_REQUIRED"
+      },
+      "a_matches_expected": true,
+      "b_matches_expected": true,
+      "evaluators_agree": true
+    },
+    {
+      "fixture_id": "G3_ONE_EFFECT_WITH_EVIDENCE_CONDITIONS",
+      "expected": {
+        "granularity_valid": true,
+        "split_required": false,
+        "missing_effects": [],
+        "duplicate_effects": [],
+        "invalid_multi_effect_requirements": [],
+        "sequence_valid": true,
+        "outcome": "VALID"
+      },
+      "evaluator_a": {
+        "granularity_valid": true,
+        "split_required": false,
+        "missing_effects": [],
+        "duplicate_effects": [],
+        "invalid_multi_effect_requirements": [],
+        "sequence_valid": true,
+        "outcome": "VALID"
+      },
+      "evaluator_b": {
+        "granularity_valid": true,
+        "split_required": false,
+        "missing_effects": [],
+        "duplicate_effects": [],
+        "invalid_multi_effect_requirements": [],
+        "sequence_valid": true,
+        "outcome": "VALID"
+      },
+      "a_matches_expected": true,
+      "b_matches_expected": true,
+      "evaluators_agree": true
+    },
+    {
+      "fixture_id": "G4_EFFECT_PLUS_SEQUENCING_CONSEQUENCE",
+      "expected": {
+        "granularity_valid": true,
+        "split_required": false,
+        "missing_effects": [],
+        "duplicate_effects": [],
+        "invalid_multi_effect_requirements": [],
+        "sequence_valid": true,
+        "outcome": "VALID_WITH_SEPARATE_SEQUENCE"
+      },
+      "evaluator_a": {
+        "granularity_valid": true,
+        "split_required": false,
+        "missing_effects": [],
+        "duplicate_effects": [],
+        "invalid_multi_effect_requirements": [],
+        "sequence_valid": true,
+        "outcome": "VALID_WITH_SEPARATE_SEQUENCE"
+      },
+      "evaluator_b": {
+        "granularity_valid": true,
+        "split_required": false,
+        "missing_effects": [],
+        "duplicate_effects": [],
+        "invalid_multi_effect_requirements": [],
+        "sequence_valid": true,
+        "outcome": "VALID_WITH_SEPARATE_SEQUENCE"
+      },
+      "a_matches_expected": true,
+      "b_matches_expected": true,
+      "evaluators_agree": true
+    }
+  ],
+  "completion_rows": [
+    {
+      "fixture_id": "P1_SINGLE_PARTIAL",
+      "expected": {
+        "completion_contract_valid": true,
+        "coverage_complete": false,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "requirement_satisfied": false,
+        "review_required": false
+      },
+      "evaluator_a": {
+        "completion_contract_valid": true,
+        "coverage_complete": false,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "requirement_satisfied": false,
+        "review_required": false
+      },
+      "evaluator_b": {
+        "completion_contract_valid": true,
+        "coverage_complete": false,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "requirement_satisfied": false,
+        "review_required": false
+      },
+      "a_matches_expected": true,
+      "b_matches_expected": true,
+      "evaluators_agree": true
+    },
+    {
+      "fixture_id": "P2_TWO_PARTIALS_COMPLETE_BUT_UNQUALIFIED",
+      "expected": {
+        "completion_contract_valid": true,
+        "coverage_complete": true,
+        "evidence_valid": true,
+        "qualification_complete": false,
+        "activation_effective": true,
+        "requirement_satisfied": false,
+        "review_required": false
+      },
+      "evaluator_a": {
+        "completion_contract_valid": true,
+        "coverage_complete": true,
+        "evidence_valid": true,
+        "qualification_complete": false,
+        "activation_effective": true,
+        "requirement_satisfied": false,
+        "review_required": false
+      },
+      "evaluator_b": {
+        "completion_contract_valid": true,
+        "coverage_complete": true,
+        "evidence_valid": true,
+        "qualification_complete": false,
+        "activation_effective": true,
+        "requirement_satisfied": false,
+        "review_required": false
+      },
+      "a_matches_expected": true,
+      "b_matches_expected": true,
+      "evaluators_agree": true
+    },
+    {
+      "fixture_id": "P3_TWO_PARTIALS_COMPLETE_AND_QUALIFIED",
+      "expected": {
+        "completion_contract_valid": true,
+        "coverage_complete": true,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "requirement_satisfied": true,
+        "review_required": false
+      },
+      "evaluator_a": {
+        "completion_contract_valid": true,
+        "coverage_complete": true,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "requirement_satisfied": true,
+        "review_required": false
+      },
+      "evaluator_b": {
+        "completion_contract_valid": true,
+        "coverage_complete": true,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "requirement_satisfied": true,
+        "review_required": false
+      },
+      "a_matches_expected": true,
+      "b_matches_expected": true,
+      "evaluators_agree": true
+    },
+    {
+      "fixture_id": "P4_SELF_CERTIFIED_FULL_MISSING_COMPONENT",
+      "expected": {
+        "completion_contract_valid": true,
+        "coverage_complete": false,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "requirement_satisfied": false,
+        "review_required": false
+      },
+      "evaluator_a": {
+        "completion_contract_valid": true,
+        "coverage_complete": false,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "requirement_satisfied": false,
+        "review_required": false
+      },
+      "evaluator_b": {
+        "completion_contract_valid": true,
+        "coverage_complete": false,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "requirement_satisfied": false,
+        "review_required": false
+      },
+      "a_matches_expected": true,
+      "b_matches_expected": true,
+      "evaluators_agree": true
+    },
+    {
+      "fixture_id": "P5_REALIZER_SUPPLIED_CRITERION",
+      "expected": {
+        "completion_contract_valid": false,
+        "coverage_complete": false,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "requirement_satisfied": false,
+        "review_required": true
+      },
+      "evaluator_a": {
+        "completion_contract_valid": false,
+        "coverage_complete": false,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "requirement_satisfied": false,
+        "review_required": true
+      },
+      "evaluator_b": {
+        "completion_contract_valid": false,
+        "coverage_complete": false,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "requirement_satisfied": false,
+        "review_required": true
+      },
+      "a_matches_expected": true,
+      "b_matches_expected": true,
+      "evaluators_agree": true
+    },
+    {
+      "fixture_id": "P6_ACCEPTED_DOMAIN_CRITERION",
+      "expected": {
+        "completion_contract_valid": true,
+        "coverage_complete": true,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "requirement_satisfied": true,
+        "review_required": false
+      },
+      "evaluator_a": {
+        "completion_contract_valid": true,
+        "coverage_complete": true,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "requirement_satisfied": true,
+        "review_required": false
+      },
+      "evaluator_b": {
+        "completion_contract_valid": true,
+        "coverage_complete": true,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "requirement_satisfied": true,
+        "review_required": false
+      },
+      "a_matches_expected": true,
+      "b_matches_expected": true,
+      "evaluators_agree": true
+    },
+    {
+      "fixture_id": "P7_STALE_CRITERION_REVISION",
+      "expected": {
+        "completion_contract_valid": false,
+        "coverage_complete": false,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "requirement_satisfied": false,
+        "review_required": true
+      },
+      "evaluator_a": {
+        "completion_contract_valid": false,
+        "coverage_complete": false,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "requirement_satisfied": false,
+        "review_required": true
+      },
+      "evaluator_b": {
+        "completion_contract_valid": false,
+        "coverage_complete": false,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "requirement_satisfied": false,
+        "review_required": true
+      },
+      "a_matches_expected": true,
+      "b_matches_expected": true,
+      "evaluators_agree": true
+    },
+    {
+      "fixture_id": "P8_DUPLICATE_PARTIALS",
+      "expected": {
+        "completion_contract_valid": true,
+        "coverage_complete": false,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "requirement_satisfied": false,
+        "review_required": false
+      },
+      "evaluator_a": {
+        "completion_contract_valid": true,
+        "coverage_complete": false,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "requirement_satisfied": false,
+        "review_required": false
+      },
+      "evaluator_b": {
+        "completion_contract_valid": true,
+        "coverage_complete": false,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "requirement_satisfied": false,
+        "review_required": false
+      },
+      "a_matches_expected": true,
+      "b_matches_expected": true,
+      "evaluators_agree": true
+    },
+    {
+      "fixture_id": "P9_UNKNOWN_COMPONENT",
+      "expected": {
+        "completion_contract_valid": true,
+        "coverage_complete": false,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "requirement_satisfied": false,
+        "review_required": true
+      },
+      "evaluator_a": {
+        "completion_contract_valid": true,
+        "coverage_complete": false,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "requirement_satisfied": false,
+        "review_required": true
+      },
+      "evaluator_b": {
+        "completion_contract_valid": true,
+        "coverage_complete": false,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "requirement_satisfied": false,
+        "review_required": true
+      },
+      "a_matches_expected": true,
+      "b_matches_expected": true,
+      "evaluators_agree": true
+    },
+    {
+      "fixture_id": "P10_COMPLETE_COVERAGE_ACTIVATION_MISSING",
+      "expected": {
+        "completion_contract_valid": true,
+        "coverage_complete": true,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": false,
+        "requirement_satisfied": false,
+        "review_required": false
+      },
+      "evaluator_a": {
+        "completion_contract_valid": true,
+        "coverage_complete": true,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": false,
+        "requirement_satisfied": false,
+        "review_required": false
+      },
+      "evaluator_b": {
+        "completion_contract_valid": true,
+        "coverage_complete": true,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": false,
+        "requirement_satisfied": false,
+        "review_required": false
+      },
+      "a_matches_expected": true,
+      "b_matches_expected": true,
+      "evaluators_agree": true
+    }
+  ],
+  "summary": {
+    "granularity_total": 4,
+    "granularity_all_match": true,
+    "completion_total": 10,
+    "completion_all_match": true,
+    "self_certification_blocked": true,
+    "negative_controls_visible": true,
+    "evaluators_agree_all": true,
+    "outcome": "C4_C6_MECHANISM_PLAUSIBLE"
+  }
+}
