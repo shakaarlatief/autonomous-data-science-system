@@ -1312,3 +1312,27 @@ Current boundary:
     NEXT_ACTOR=chatgpt
     HIDDEN_R2_ITEM_DETAILS=SEALED
     NEXT=EXECUTE_CORRECTED_THIN_RICH_DESK_COMPARISON
+
+## Corrected comparison result
+
+Research 463 result:
+
+    THIN_CENTRED_HYBRID_REQUIRED
+
+Corrected audit:
+
+    original CQs              37
+    discriminating            18
+    non-discriminating        19
+    expanded admitted          6
+
+Neither frozen arm is sufficient as-is.
+
+The full rich core is not required. Select rich-origin concepts survive for completeness accounting, N:M requirement lineage and generated shared orientation semantics, while THIN's typed action/consequence grammar remains the stronger governing core.
+
+Current boundary:
+
+    PHASE=DRP03_HYBRID_C4_C6_PROTOCOL_FREEZE
+    NEXT_ACTOR=chatgpt
+    HIDDEN_R2_ITEM_DETAILS=SEALED
+    NEXT=FREEZE_HYBRID_C4_C6_CLOSURE_MICROPROBE

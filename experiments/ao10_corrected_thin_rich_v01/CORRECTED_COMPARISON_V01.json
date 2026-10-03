@@ -1,0 +1,882 @@
+{
+  "schema_version": 1,
+  "comparison_id": "CORRECTED-THIN-RICH-V01",
+  "protocol": "Research 462",
+  "fixed_evidence_base": "01e8be70569c78748961722847faf9b92976e936",
+  "arms": {
+    "THIN_V02": "Research 442, unamended",
+    "RICH_V05_ACCEPTED": "Research 327 V0.5 functional model with source-plus-proposal owner acceptance"
+  },
+  "original_cq_rows": [
+    {
+      "cq_id": "CQ-AO-01",
+      "question": "What explicit owner directives constrain/permit/prohibit/bound the current cycle?",
+      "consequence_class": "ROUTING",
+      "answer_shape": "STRUCTURED_DECISION",
+      "discrimination": "NON_DISCRIMINATING",
+      "current_dependency_state": "ACCEPTED_DOMAIN_OR_CONTROL_OBJECT",
+      "thin_v02": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "The answer is owned by owner event + EventInterpretation; THIN supplies bounded governing references where needed but does not replace this natural control/domain object.",
+        "deficiency": null
+      },
+      "rich_v05_accepted": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "The answer is likewise owned by owner event + EventInterpretation; V0.5 accepted semantics may reference or constrain it but do not replace this natural control/domain object.",
+        "deficiency": null
+      },
+      "unique_contribution": "NONE_REQUIRED"
+    },
+    {
+      "cq_id": "CQ-AO-02",
+      "question": "Do event + bounded context activate mandatory control obligations or the fast path?",
+      "consequence_class": "ROUTING",
+      "answer_shape": "REFERENCE_SET",
+      "discrimination": "NON_DISCRIMINATING",
+      "current_dependency_state": "ACCEPTED_DOMAIN_OR_CONTROL_OBJECT",
+      "thin_v02": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "The answer is owned by Progressive Control Closure; THIN supplies bounded governing references where needed but does not replace this natural control/domain object.",
+        "deficiency": null
+      },
+      "rich_v05_accepted": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "The answer is likewise owned by Progressive Control Closure; V0.5 accepted semantics may reference or constrain it but do not replace this natural control/domain object.",
+        "deficiency": null
+      },
+      "unique_contribution": "NONE_REQUIRED"
+    },
+    {
+      "cq_id": "CQ-AO-03",
+      "question": "Which governing/risk/supporting sources must be reconstructed before closure?",
+      "consequence_class": "ROUTING",
+      "answer_shape": "REFERENCE_SET",
+      "discrimination": "NON_DISCRIMINATING",
+      "current_dependency_state": "ACCEPTED_DOMAIN_OR_CONTROL_OBJECT",
+      "thin_v02": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "The answer is owned by ReconstructionContract; THIN supplies bounded governing references where needed but does not replace this natural control/domain object.",
+        "deficiency": null
+      },
+      "rich_v05_accepted": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "The answer is likewise owned by ReconstructionContract; V0.5 accepted semantics may reference or constrain it but do not replace this natural control/domain object.",
+        "deficiency": null
+      },
+      "unique_contribution": "NONE_REQUIRED"
+    },
+    {
+      "cq_id": "CQ-AO-04",
+      "question": "What process/workstream/collaboration/execution route is valid?",
+      "consequence_class": "ROUTING",
+      "answer_shape": "STRUCTURED_DECISION",
+      "discrimination": "NON_DISCRIMINATING",
+      "current_dependency_state": "ACCEPTED_DOMAIN_OR_CONTROL_OBJECT",
+      "thin_v02": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "The answer is owned by RouteDecision + capability model; THIN supplies bounded governing references where needed but does not replace this natural control/domain object.",
+        "deficiency": null
+      },
+      "rich_v05_accepted": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "The answer is likewise owned by RouteDecision + capability model; V0.5 accepted semantics may reference or constrain it but do not replace this natural control/domain object.",
+        "deficiency": null
+      },
+      "unique_contribution": "NONE_REQUIRED"
+    },
+    {
+      "cq_id": "CQ-AO-05",
+      "question": "Can governing authority be resolved for the exact subject/revision/consequence?",
+      "consequence_class": "AUTHORITY",
+      "answer_shape": "STRUCTURED_DECISION",
+      "discrimination": "NON_DISCRIMINATING",
+      "current_dependency_state": "ACCEPTED_DOMAIN_OR_CONTROL_OBJECT",
+      "thin_v02": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "The answer is owned by AuthorityReceipt; THIN supplies bounded governing references where needed but does not replace this natural control/domain object.",
+        "deficiency": null
+      },
+      "rich_v05_accepted": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "The answer is likewise owned by AuthorityReceipt; V0.5 accepted semantics may reference or constrain it but do not replace this natural control/domain object.",
+        "deficiency": null
+      },
+      "unique_contribution": "NONE_REQUIRED"
+    },
+    {
+      "cq_id": "CQ-AO-06",
+      "question": "Which permissions/prohibitions/gates/sequencing/required effects govern the exact action?",
+      "consequence_class": "AUTHORITY",
+      "answer_shape": "REFERENCE_SET",
+      "discrimination": "DISCRIMINATING",
+      "current_dependency_state": "DIRECT_CORE_OR_CORE_TO_NATURAL_DOMAIN",
+      "thin_v02": {
+        "status": "DIRECT",
+        "mechanism": "Typed REQUIRE/PROHIBIT/GATE/AUTHORIZE/SEQUENCE clauses bind exact action, scope, ordered constraints and postconditions, so ActionContract compilation does not need prose reinterpretation.",
+        "deficiency": null
+      },
+      "rich_v05_accepted": {
+        "status": "PARTIAL",
+        "mechanism": "V0.5 can classify accepted items as OBLIGATION/CONSTRAINT/SEQUENCING and bind them at acceptance, but its core does not provide equivalent typed action/consequence permission/prohibition slots; deterministic ActionContract use still needs an added domain binding.",
+        "deficiency": "No V0.5 feature by itself replaces the typed cross-domain action semantics."
+      },
+      "unique_contribution": "THIN_ONLY"
+    },
+    {
+      "cq_id": "CQ-AO-07",
+      "question": "Does proposed dispatch/mutation preserve all mandatory constraints/order/prohibitions/postconditions?",
+      "consequence_class": "ADMISSION",
+      "answer_shape": "ENUM",
+      "discrimination": "DISCRIMINATING",
+      "current_dependency_state": "DIRECT_CORE_OR_CORE_TO_NATURAL_DOMAIN",
+      "thin_v02": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "The accepted GATE/PROHIBIT/SEQUENCE clause identities supply the normative constraints; AO conformance applies them to the typed ActionContract and exact revision.",
+        "deficiency": "AO conformance remains a shared control-domain mechanism."
+      },
+      "rich_v05_accepted": {
+        "status": "PARTIAL",
+        "mechanism": "Accepted CONSTRAINT/SEQUENCING items preserve that control exists, but V0.5 alone does not encode the exact typed action/postcondition contract consumed by conformance.",
+        "deficiency": "Requires an ActionContract-style domain binding comparable to THIN."
+      },
+      "unique_contribution": "THIN_ONLY"
+    },
+    {
+      "cq_id": "CQ-AO-08",
+      "question": "What postflight control consequences become mandatory?",
+      "consequence_class": "ROUTING",
+      "answer_shape": "REFERENCE_SET",
+      "discrimination": "NON_DISCRIMINATING",
+      "current_dependency_state": "ACCEPTED_DOMAIN_OR_CONTROL_OBJECT",
+      "thin_v02": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "The answer is owned by AO postflight; THIN supplies bounded governing references where needed but does not replace this natural control/domain object.",
+        "deficiency": null
+      },
+      "rich_v05_accepted": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "The answer is likewise owned by AO postflight; V0.5 accepted semantics may reference or constrain it but do not replace this natural control/domain object.",
+        "deficiency": null
+      },
+      "unique_contribution": "NONE_REQUIRED"
+    },
+    {
+      "cq_id": "CQ-EV-01",
+      "question": "Is observed pressure a conformance defect or an architecture-evolution question?",
+      "consequence_class": "EVOLUTION",
+      "answer_shape": "ENUM",
+      "discrimination": "NON_DISCRIMINATING",
+      "current_dependency_state": "ACCEPTED_DOMAIN_OR_CONTROL_OBJECT",
+      "thin_v02": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "The answer is owned by EvolutionCase; THIN supplies bounded governing references where needed but does not replace this natural control/domain object.",
+        "deficiency": null
+      },
+      "rich_v05_accepted": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "The answer is likewise owned by EvolutionCase; V0.5 accepted semantics may reference or constrain it but do not replace this natural control/domain object.",
+        "deficiency": null
+      },
+      "unique_contribution": "NONE_REQUIRED"
+    },
+    {
+      "cq_id": "CQ-EV-02",
+      "question": "Which exact accepted contract/revision and narrow scope are affected?",
+      "consequence_class": "EVOLUTION",
+      "answer_shape": "REFERENCE_SET",
+      "discrimination": "NON_DISCRIMINATING",
+      "current_dependency_state": "ACCEPTED_DOMAIN_OR_CONTROL_OBJECT",
+      "thin_v02": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "The answer is owned by EvolutionCase + authority resolver; THIN supplies bounded governing references where needed but does not replace this natural control/domain object.",
+        "deficiency": null
+      },
+      "rich_v05_accepted": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "The answer is likewise owned by EvolutionCase + authority resolver; V0.5 accepted semantics may reference or constrain it but do not replace this natural control/domain object.",
+        "deficiency": null
+      },
+      "unique_contribution": "NONE_REQUIRED"
+    },
+    {
+      "cq_id": "CQ-EV-03",
+      "question": "What accepted evolution disposition governs the case?",
+      "consequence_class": "EVOLUTION",
+      "answer_shape": "ENUM",
+      "discrimination": "DISCRIMINATING",
+      "current_dependency_state": "DIRECT_CORE_OR_CORE_TO_NATURAL_DOMAIN",
+      "thin_v02": {
+        "status": "DIRECT",
+        "mechanism": "LIFECYCLE explicitly binds operation/disposition, owner decision, contract, scope and effective boundary.",
+        "deficiency": null
+      },
+      "rich_v05_accepted": {
+        "status": "DIRECT",
+        "mechanism": "V0.5 DISPOSITION items are accepted semantic delta, change governing/lifecycle state, and are bound to the authority event with prospective correction rules.",
+        "deficiency": null
+      },
+      "unique_contribution": "SHARED"
+    },
+    {
+      "cq_id": "CQ-EV-04",
+      "question": "What hold/realization/migration/review/qualification consequences follow an accepted disposition?",
+      "consequence_class": "EVOLUTION",
+      "answer_shape": "STRUCTURED_DECISION",
+      "discrimination": "DISCRIMINATING",
+      "current_dependency_state": "DIRECT_CORE_OR_CORE_TO_NATURAL_DOMAIN",
+      "thin_v02": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "REQUIRE/GATE/LIFECYCLE clauses bind the accepted disposition to realization, qualification, migration and hold references; the detailed mechanics remain in their natural domains.",
+        "deficiency": null
+      },
+      "rich_v05_accepted": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "V0.5 can birth OBLIGATION/CONSTRAINT/SEQUENCING consequences from a disposition and later attach natural-owner realization/qualification/deferral facts; migration mechanics still come from the same domain contracts.",
+        "deficiency": null
+      },
+      "unique_contribution": "SHARED"
+    },
+    {
+      "cq_id": "CQ-EV-05",
+      "question": "Is a prospective effective boundary established without rewriting historical acceptance?",
+      "consequence_class": "AUTHORITY",
+      "answer_shape": "BOOLEAN",
+      "discrimination": "DISCRIMINATING",
+      "current_dependency_state": "DIRECT_CORE_OR_CORE_TO_NATURAL_DOMAIN",
+      "thin_v02": {
+        "status": "DIRECT",
+        "mechanism": "LIFECYCLE carries old/new refs, scope, effective_from and provenance, preserving prospective change without rewriting historical acceptance.",
+        "deficiency": null
+      },
+      "rich_v05_accepted": {
+        "status": "DIRECT",
+        "mechanism": "V0.5 keeps accepted payload immutable, treats normative rescope/replacement as governed successor relations, and requires correction through the original authority level.",
+        "deficiency": null
+      },
+      "unique_contribution": "SHARED"
+    },
+    {
+      "cq_id": "CQ-CT-01",
+      "question": "Does an interaction boundary require non-authoritative continuity state?",
+      "consequence_class": "CONTINUITY_RECOVERY",
+      "answer_shape": "BOOLEAN",
+      "discrimination": "NON_DISCRIMINATING",
+      "current_dependency_state": "ACCEPTED_DOMAIN_OR_CONTROL_OBJECT",
+      "thin_v02": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "The answer is owned by continuity policy; THIN supplies bounded governing references where needed but does not replace this natural control/domain object.",
+        "deficiency": null
+      },
+      "rich_v05_accepted": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "The answer is likewise owned by continuity policy; V0.5 accepted semantics may reference or constrain it but do not replace this natural control/domain object.",
+        "deficiency": null
+      },
+      "unique_contribution": "NONE_REQUIRED"
+    },
+    {
+      "cq_id": "CQ-CT-02",
+      "question": "What unresolved material/handoff/recoverability/return state must survive?",
+      "consequence_class": "CONTINUITY_RECOVERY",
+      "answer_shape": "STRUCTURED_DECISION",
+      "discrimination": "NON_DISCRIMINATING",
+      "current_dependency_state": "ACCEPTED_DOMAIN_OR_CONTROL_OBJECT",
+      "thin_v02": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "The answer is owned by InteractionContinuityEnvelope; THIN supplies bounded governing references where needed but does not replace this natural control/domain object.",
+        "deficiency": null
+      },
+      "rich_v05_accepted": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "The answer is likewise owned by InteractionContinuityEnvelope; V0.5 accepted semantics may reference or constrain it but do not replace this natural control/domain object.",
+        "deficiency": null
+      },
+      "unique_contribution": "NONE_REQUIRED"
+    },
+    {
+      "cq_id": "CQ-CT-03",
+      "question": "Is ordinary reconstruction sufficient or is abnormal-execution recovery required?",
+      "consequence_class": "CONTINUITY_RECOVERY",
+      "answer_shape": "ENUM",
+      "discrimination": "NON_DISCRIMINATING",
+      "current_dependency_state": "ACCEPTED_DOMAIN_OR_CONTROL_OBJECT",
+      "thin_v02": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "The answer is owned by AO-5 recovery routing; THIN supplies bounded governing references where needed but does not replace this natural control/domain object.",
+        "deficiency": null
+      },
+      "rich_v05_accepted": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "The answer is likewise owned by AO-5 recovery routing; V0.5 accepted semantics may reference or constrain it but do not replace this natural control/domain object.",
+        "deficiency": null
+      },
+      "unique_contribution": "NONE_REQUIRED"
+    },
+    {
+      "cq_id": "CQ-CT-04",
+      "question": "Is recovery authority reachable independently of the failed component?",
+      "consequence_class": "CONTINUITY_RECOVERY",
+      "answer_shape": "STRUCTURED_DECISION",
+      "discrimination": "NON_DISCRIMINATING",
+      "current_dependency_state": "ACCEPTED_DOMAIN_OR_CONTROL_OBJECT",
+      "thin_v02": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "The answer is owned by RecoveryCase; THIN supplies bounded governing references where needed but does not replace this natural control/domain object.",
+        "deficiency": null
+      },
+      "rich_v05_accepted": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "The answer is likewise owned by RecoveryCase; V0.5 accepted semantics may reference or constrain it but do not replace this natural control/domain object.",
+        "deficiency": null
+      },
+      "unique_contribution": "NONE_REQUIRED"
+    },
+    {
+      "cq_id": "CQ-CT-05",
+      "question": "What degraded mode is permitted when a required/optional capability is unavailable?",
+      "consequence_class": "CONTINUITY_RECOVERY",
+      "answer_shape": "STRUCTURED_DECISION",
+      "discrimination": "DISCRIMINATING",
+      "current_dependency_state": "DIRECT_CORE_OR_CORE_TO_NATURAL_DOMAIN",
+      "thin_v02": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "GATE/PROHIBIT can bind a failed capability and affected consequence to a governed degraded-mode policy and fallback/block decision.",
+        "deficiency": null
+      },
+      "rich_v05_accepted": {
+        "status": "PARTIAL",
+        "mechanism": "V0.5 CONSTRAINT/SEQUENCING can preserve that fallback or blocking is normative, but its generic core lacks the consequence-scoped fallback/prohibition slots needed for deterministic degraded-mode dispatch.",
+        "deficiency": "Needs the same degraded-mode domain contract plus an extra typed consequence binding."
+      },
+      "unique_contribution": "THIN_ONLY"
+    },
+    {
+      "cq_id": "CQ-GIT-01",
+      "question": "Which purpose-bound Git lifecycle action applies?",
+      "consequence_class": "ROUTING",
+      "answer_shape": "ENUM",
+      "discrimination": "NON_DISCRIMINATING",
+      "current_dependency_state": "ACCEPTED_DOMAIN_OR_CONTROL_OBJECT",
+      "thin_v02": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "The answer is owned by GitLifecycleDecision; THIN supplies bounded governing references where needed but does not replace this natural control/domain object.",
+        "deficiency": null
+      },
+      "rich_v05_accepted": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "The answer is likewise owned by GitLifecycleDecision; V0.5 accepted semantics may reference or constrain it but do not replace this natural control/domain object.",
+        "deficiency": null
+      },
+      "unique_contribution": "NONE_REQUIRED"
+    },
+    {
+      "cq_id": "CQ-GIT-02",
+      "question": "Must qualified local work be published or is a bounded local-only exception valid?",
+      "consequence_class": "ROUTING",
+      "answer_shape": "STRUCTURED_DECISION",
+      "discrimination": "DISCRIMINATING",
+      "current_dependency_state": "DIRECT_CORE_OR_CORE_TO_NATURAL_DOMAIN",
+      "thin_v02": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "REQUIRE/DEFER can reference publication policy, bounded exception authority and recheck condition while Git state remains domain-owned.",
+        "deficiency": null
+      },
+      "rich_v05_accepted": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "V0.5 OBLIGATION/CONSTRAINT plus governed DeferralRecord can represent publication duty or a valid exception while Git facts remain natural-owner state.",
+        "deficiency": null
+      },
+      "unique_contribution": "SHARED"
+    },
+    {
+      "cq_id": "CQ-GIT-03",
+      "question": "Can the exact desired delta be integrated into the current target head?",
+      "consequence_class": "ADMISSION",
+      "answer_shape": "STRUCTURED_DECISION",
+      "discrimination": "DISCRIMINATING",
+      "current_dependency_state": "DIRECT_CORE_OR_CORE_TO_NATURAL_DOMAIN",
+      "thin_v02": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "GATE/AUTHORIZE binds exact delta, source revision, target/head, qualification and authority to the integration decision.",
+        "deficiency": null
+      },
+      "rich_v05_accepted": {
+        "status": "PARTIAL",
+        "mechanism": "V0.5 can classify the governing constraint/sequencing and retain authority provenance, but does not itself encode the typed delta/head authorization contract; GitLifecycleDecision must add it.",
+        "deficiency": "Typed integration authorization is not supplied by V0.5 core alone."
+      },
+      "unique_contribution": "THIN_ONLY"
+    },
+    {
+      "cq_id": "CQ-GIT-04",
+      "question": "May a ref be retired or history rewritten without losing live work/evidence/provenance?",
+      "consequence_class": "ADMISSION",
+      "answer_shape": "STRUCTURED_DECISION",
+      "discrimination": "DISCRIMINATING",
+      "current_dependency_state": "DIRECT_CORE_OR_CORE_TO_NATURAL_DOMAIN",
+      "thin_v02": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "GATE/AUTHORIZE/LIFECYCLE can bind branch, dependent refs, destructive action, exception authority and lifecycle consequence while reachability is supplied by Git.",
+        "deficiency": null
+      },
+      "rich_v05_accepted": {
+        "status": "PARTIAL",
+        "mechanism": "V0.5 can express standing CONSTRAINT, DISPOSITION and successor history, but the exact destructive-action permission/gate still needs typed Git-domain semantics not present in the V0.5 core.",
+        "deficiency": "Typed destructive-action admission remains external."
+      },
+      "unique_contribution": "THIN_ONLY"
+    },
+    {
+      "cq_id": "CQ-GIT-05",
+      "question": "What durable anchor/return condition/resume target governs paused or child work?",
+      "consequence_class": "CONTINUITY_RECOVERY",
+      "answer_shape": "STRUCTURED_DECISION",
+      "discrimination": "DISCRIMINATING",
+      "current_dependency_state": "DIRECT_CORE_OR_CORE_TO_NATURAL_DOMAIN",
+      "thin_v02": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "SEQUENCE binds the authoritative ordering/return edge while workstream, durable commit and receipts stay in natural continuity/Git owners.",
+        "deficiency": null
+      },
+      "rich_v05_accepted": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "V0.5 SEQUENCING directly represents prerequisite/hold/order semantics, with natural workstream/Git facts providing anchors and receipts.",
+        "deficiency": null
+      },
+      "unique_contribution": "SHARED"
+    },
+    {
+      "cq_id": "CQ-BR-01",
+      "question": "What bridge mode is active and what architecture currently owns operational authority?",
+      "consequence_class": "AUTHORITY",
+      "answer_shape": "STRUCTURED_DECISION",
+      "discrimination": "NON_DISCRIMINATING",
+      "current_dependency_state": "ACCEPTED_DOMAIN_OR_CONTROL_OBJECT",
+      "thin_v02": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "The answer is owned by current authority + bridge state; THIN supplies bounded governing references where needed but does not replace this natural control/domain object.",
+        "deficiency": null
+      },
+      "rich_v05_accepted": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "The answer is likewise owned by current authority + bridge state; V0.5 accepted semantics may reference or constrain it but do not replace this natural control/domain object.",
+        "deficiency": null
+      },
+      "unique_contribution": "NONE_REQUIRED"
+    },
+    {
+      "cq_id": "CQ-BR-02",
+      "question": "May the bridge drive this consequence while remaining subordinate to current authority?",
+      "consequence_class": "ADMISSION",
+      "answer_shape": "STRUCTURED_DECISION",
+      "discrimination": "DISCRIMINATING",
+      "current_dependency_state": "DIRECT_CORE_OR_CORE_TO_NATURAL_DOMAIN",
+      "thin_v02": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "GATE/AUTHORIZE references bridge mode, AuthorityReceipt, ActionContract and exact consequence so bridge execution remains subordinate to current authority.",
+        "deficiency": null
+      },
+      "rich_v05_accepted": {
+        "status": "PARTIAL",
+        "mechanism": "V0.5 can preserve authority-bound CONSTRAINT/SEQUENCING semantics, but has no equivalent typed authorize-consequence primitive; AO-7 still needs an added bridge action contract.",
+        "deficiency": "Typed bounded permission is a THIN-core contribution."
+      },
+      "unique_contribution": "THIN_ONLY"
+    },
+    {
+      "cq_id": "CQ-BR-03",
+      "question": "Has drift/conflict invalidated a derived bridge/control plan?",
+      "consequence_class": "OPERATIONAL_PREDICATE",
+      "answer_shape": "BOOLEAN",
+      "discrimination": "NON_DISCRIMINATING",
+      "current_dependency_state": "ACCEPTED_DOMAIN_OR_CONTROL_OBJECT",
+      "thin_v02": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "The answer is owned by bridge snapshot + current authority; THIN supplies bounded governing references where needed but does not replace this natural control/domain object.",
+        "deficiency": null
+      },
+      "rich_v05_accepted": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "The answer is likewise owned by bridge snapshot + current authority; V0.5 accepted semantics may reference or constrain it but do not replace this natural control/domain object.",
+        "deficiency": null
+      },
+      "unique_contribution": "NONE_REQUIRED"
+    },
+    {
+      "cq_id": "CQ-BR-04",
+      "question": "What fallback/block behavior is permitted when bridge/authority is unavailable?",
+      "consequence_class": "CONTINUITY_RECOVERY",
+      "answer_shape": "STRUCTURED_DECISION",
+      "discrimination": "DISCRIMINATING",
+      "current_dependency_state": "DIRECT_CORE_OR_CORE_TO_NATURAL_DOMAIN",
+      "thin_v02": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "GATE/PROHIBIT binds failed capability, current continuity, authority and consequence to an exact fallback-or-block outcome.",
+        "deficiency": null
+      },
+      "rich_v05_accepted": {
+        "status": "PARTIAL",
+        "mechanism": "V0.5 can retain the governing constraint or sequencing rule, but its generic unit core does not itself encode consequence-scoped fallback versus prohibition behavior.",
+        "deficiency": "Requires extra AO-5/AO-7 typed behavior."
+      },
+      "unique_contribution": "THIN_ONLY"
+    },
+    {
+      "cq_id": "CQ-BR-05",
+      "question": "Is a bridge enable/disable transition admissible?",
+      "consequence_class": "ADMISSION",
+      "answer_shape": "BOOLEAN",
+      "discrimination": "DISCRIMINATING",
+      "current_dependency_state": "DIRECT_CORE_OR_CORE_TO_NATURAL_DOMAIN",
+      "thin_v02": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "GATE/AUTHORIZE/LIFECYCLE binds from/to bridge modes, qualification evidence and authority decision to admissibility.",
+        "deficiency": null
+      },
+      "rich_v05_accepted": {
+        "status": "PARTIAL",
+        "mechanism": "DISPOSITION/CONSTRAINT can represent that bridge lifecycle is governed, but exact enable/disable authorization and qualification gate need an added typed bridge-domain contract.",
+        "deficiency": "V0.5 core is not sufficient for the exact admissibility tuple."
+      },
+      "unique_contribution": "THIN_ONLY"
+    },
+    {
+      "cq_id": "CQ-AS-01",
+      "question": "Which assurance claims are mandatory for the exact consequence regardless of request/profile omissions?",
+      "consequence_class": "ADMISSION",
+      "answer_shape": "REFERENCE_SET",
+      "discrimination": "NON_DISCRIMINATING",
+      "current_dependency_state": "ACCEPTED_DOMAIN_OR_CONTROL_OBJECT",
+      "thin_v02": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "The answer is owned by effective gate policy; THIN supplies bounded governing references where needed but does not replace this natural control/domain object.",
+        "deficiency": null
+      },
+      "rich_v05_accepted": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "The answer is likewise owned by effective gate policy; V0.5 accepted semantics may reference or constrain it but do not replace this natural control/domain object.",
+        "deficiency": null
+      },
+      "unique_contribution": "NONE_REQUIRED"
+    },
+    {
+      "cq_id": "CQ-AS-02",
+      "question": "Does each required claim have exact/fresh/trusted/threshold-satisfying warranted evidence?",
+      "consequence_class": "ADMISSION",
+      "answer_shape": "STRUCTURED_DECISION",
+      "discrimination": "DISCRIMINATING",
+      "current_dependency_state": "DIRECT_CORE_OR_CORE_TO_NATURAL_DOMAIN",
+      "thin_v02": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "A GATE clause can bind the consequence to the exact WARRANT-F policy/decision while claim, evidence, warrant, trust, freshness and threshold evaluation stays in WARRANT-F.",
+        "deficiency": null
+      },
+      "rich_v05_accepted": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "A V0.5 CONSTRAINT/SEQUENCING item can require the same governed WARRANT-F evaluation; the exact claim predicates remain owned by WARRANT-F.",
+        "deficiency": null
+      },
+      "unique_contribution": "SHARED"
+    },
+    {
+      "cq_id": "CQ-AS-03",
+      "question": "What deterministic assurance decision applies: ADMIT, REFUSE, or REVIEW_REQUIRED?",
+      "consequence_class": "ADMISSION",
+      "answer_shape": "ENUM",
+      "discrimination": "DISCRIMINATING",
+      "current_dependency_state": "DIRECT_CORE_OR_CORE_TO_NATURAL_DOMAIN",
+      "thin_v02": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "GATE references exact policy and claim-result inputs; WARRANT-F deterministically returns ADMIT/REFUSE/REVIEW_REQUIRED.",
+        "deficiency": null
+      },
+      "rich_v05_accepted": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "V0.5 can bind the accepted requirement to the same assurance decision domain; the decision kernel is not a property of ObligationUnit grouping.",
+        "deficiency": null
+      },
+      "unique_contribution": "SHARED"
+    },
+    {
+      "cq_id": "CQ-AS-04",
+      "question": "Does assurance-policy change weaken/preserve/strengthen base protection and require review?",
+      "consequence_class": "EVOLUTION",
+      "answer_shape": "ENUM",
+      "discrimination": "NON_DISCRIMINATING",
+      "current_dependency_state": "ACCEPTED_DOMAIN_OR_CONTROL_OBJECT",
+      "thin_v02": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "The answer is owned by policy ratchet; THIN supplies bounded governing references where needed but does not replace this natural control/domain object.",
+        "deficiency": null
+      },
+      "rich_v05_accepted": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "The answer is likewise owned by policy ratchet; V0.5 accepted semantics may reference or constrain it but do not replace this natural control/domain object.",
+        "deficiency": null
+      },
+      "unique_contribution": "NONE_REQUIRED"
+    },
+    {
+      "cq_id": "CQ-REAL-01",
+      "question": "Which currently effective accepted requirements require realization/coverage tracking?",
+      "consequence_class": "REALIZATION_COVERAGE",
+      "answer_shape": "REFERENCE_SET",
+      "discrimination": "DISCRIMINATING",
+      "current_dependency_state": "DIRECT_CORE_OR_CORE_TO_NATURAL_DOMAIN",
+      "thin_v02": {
+        "status": "PARTIAL",
+        "mechanism": "THIN can enumerate active admitted REQUIRE clauses and their lifecycle/deferral state, but Research 442 admits clauses only when a named machine consequence is recognized and has no closed acceptance-event completeness accounting proving that every accepted governing MUST was represented.",
+        "deficiency": "Consumer-driven admission can leave an accepted MUST outside the active-clause index."
+      },
+      "rich_v05_accepted": {
+        "status": "DIRECT",
+        "mechanism": "V0.5 AcceptanceDeclarationSet accounts for each accepted normative delta and explicitly records resulting ObligationUnits or CREATES_NO_REALIZATION_UNITS, providing a closed acceptance-time tracking decision.",
+        "deficiency": null
+      },
+      "unique_contribution": "RICH_ONLY"
+    },
+    {
+      "cq_id": "CQ-REAL-02",
+      "question": "Does each active realization-requiring requirement have valid coverage or valid governed deferral?",
+      "consequence_class": "REALIZATION_COVERAGE",
+      "answer_shape": "STRUCTURED_DECISION",
+      "discrimination": "DISCRIMINATING",
+      "current_dependency_state": "DIRECT_CORE_OR_CORE_TO_NATURAL_DOMAIN",
+      "thin_v02": {
+        "status": "DIRECT",
+        "mechanism": "Active REQUIRE identities plus explicit realizer coverage and governed DEFER records provide the exact coverage-or-deferral check; SP-3 validated the structural mechanism for FULL coverage.",
+        "deficiency": null
+      },
+      "rich_v05_accepted": {
+        "status": "DIRECT",
+        "mechanism": "V0.5 natural-owner REALIZES/DEFERS facts plus DeferralRecord validity and derived state provide the same coverage-or-deferral answer.",
+        "deficiency": null
+      },
+      "unique_contribution": "SHARED"
+    },
+    {
+      "cq_id": "CQ-REAL-03",
+      "question": "Which realization/evidence/qualification/activation/deferral/conflict predicates hold now?",
+      "consequence_class": "OPERATIONAL_PREDICATE",
+      "answer_shape": "STRUCTURED_DECISION",
+      "discrimination": "NON_DISCRIMINATING",
+      "current_dependency_state": "ACCEPTED_DOMAIN_OR_CONTROL_OBJECT",
+      "thin_v02": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "The answer is owned by source-owned facts + executable derivation; THIN supplies bounded governing references where needed but does not replace this natural control/domain object.",
+        "deficiency": null
+      },
+      "rich_v05_accepted": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "The answer is likewise owned by source-owned facts + executable derivation; V0.5 accepted semantics may reference or constrain it but do not replace this natural control/domain object.",
+        "deficiency": null
+      },
+      "unique_contribution": "NONE_REQUIRED"
+    },
+    {
+      "cq_id": "CQ-OBS-01",
+      "question": "Has a control miss/owner-reminder dependency/uncovered required consequence/realization gap occurred?",
+      "consequence_class": "OBSERVABILITY",
+      "answer_shape": "STRUCTURED_DECISION",
+      "discrimination": "NON_DISCRIMINATING",
+      "current_dependency_state": "ACCEPTED_DOMAIN_OR_CONTROL_OBJECT",
+      "thin_v02": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "The answer is owned by ControlObservation; THIN supplies bounded governing references where needed but does not replace this natural control/domain object.",
+        "deficiency": null
+      },
+      "rich_v05_accepted": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "The answer is likewise owned by ControlObservation; V0.5 accepted semantics may reference or constrain it but do not replace this natural control/domain object.",
+        "deficiency": null
+      },
+      "unique_contribution": "NONE_REQUIRED"
+    },
+    {
+      "cq_id": "CQ-CUT-01",
+      "question": "Has W7 revalidated every required cutover-qualification class against actual production/migrated state?",
+      "consequence_class": "CUTOVER_MIGRATION",
+      "answer_shape": "STRUCTURED_DECISION",
+      "discrimination": "DISCRIMINATING",
+      "current_dependency_state": "DIRECT_CORE_OR_CORE_TO_NATURAL_DOMAIN",
+      "thin_v02": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "REQUIRE/GATE can bind W7 cutover to exact qualification/evidence refs and an all-required-pass decision while Specification 028 owns the qualification classes.",
+        "deficiency": null
+      },
+      "rich_v05_accepted": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "V0.5 OBLIGATION/CONSTRAINT/SEQUENCING can make the cutover obligation traceable, but the W7 class set and evidence evaluation still come from Specification 028 and assurance domains.",
+        "deficiency": null
+      },
+      "unique_contribution": "SHARED"
+    }
+  ],
+  "expanded_candidate_rows": [
+    {
+      "cq_id": "MC-1",
+      "name": "COMPLETENESS",
+      "admission": "ADMIT",
+      "admission_reason": "KA-R52 requires every accepted governing MUST-level obligation to be traceable to realization or governed deferral with no untracked third state; SP-1 CQ-REAL-01 only queries the active tracked set and does not close acceptance-event omission.",
+      "thin_v02": {
+        "status": "PARTIAL",
+        "mechanism": "THIN tracks admitted REQUIRE clauses well once created, but Research 442 has no deterministic acceptance-event completeness declaration proving every accepted governing MUST was either represented or explicitly non-realizing.",
+        "deficiency": "Add closed completeness accounting at governing acceptance."
+      },
+      "rich_v05_accepted": {
+        "status": "DIRECT",
+        "mechanism": "V0.5 AcceptanceDeclarationSet records the accepted normative delta, resulting units where required, standing bindings, or CREATES_NO_REALIZATION_UNITS.",
+        "deficiency": null
+      },
+      "unique_contribution": "RICH_ONLY"
+    },
+    {
+      "cq_id": "MC-2",
+      "name": "DONE_DEFINITION",
+      "admission": "ADMIT",
+      "admission_reason": "KA-R52 requires evidence and qualification status, and SP-3 consumes evidence_required/qualification_required/activation_required without defining which governing authority sets those requirements.",
+      "thin_v02": {
+        "status": "PARTIAL",
+        "mechanism": "THIN can reference evidence/qualification policy and SP-3 can evaluate bounded facts, but Research 442 makes acceptance_or_claim_ref optional and does not require a governing-side completion criterion for consequential REQUIRE satisfaction.",
+        "deficiency": "A realizer declaration must not define its own completion standard."
+      },
+      "rich_v05_accepted": {
+        "status": "PARTIAL",
+        "mechanism": "V0.5 grouping references common evidence and qualification closure and natural owners provide EVIDENCES/QUALIFIES, but V0.5 does not clearly make an explicit governing completion criterion a mandatory accepted field for every consequential unit.",
+        "deficiency": "The rich model also needs an explicit authority rule for completion criteria."
+      },
+      "unique_contribution": "NEITHER"
+    },
+    {
+      "cq_id": "MC-3",
+      "name": "PARTIAL_COMPLETION",
+      "admission": "ADMIT",
+      "admission_reason": "Research 447 explicitly permits PARTIAL edges but states that PARTIAL does not satisfy by itself unless a bounded composition rule exists; the probe used only FULL satisfying edges, so this remains an admitted unresolved machine question.",
+      "thin_v02": {
+        "status": "PARTIAL",
+        "mechanism": "THIN has PARTIAL as a declared coverage mode but no frozen composition semantics; multiple PARTIAL declarations cannot currently produce deterministic completion.",
+        "deficiency": "Needs governed composition or criterion-based completion."
+      },
+      "rich_v05_accepted": {
+        "status": "PARTIAL",
+        "mechanism": "V0.5 defines when accepted items share a realization/evidence/qualification boundary, but it does not specify how several artifacts partially realize one unit or when their combined evidence closes it.",
+        "deficiency": "Grouping does not solve multi-artifact partial completion."
+      },
+      "unique_contribution": "NEITHER"
+    },
+    {
+      "cq_id": "MC-4",
+      "name": "REQUIREMENT_LINEAGE",
+      "admission": "ADMIT",
+      "admission_reason": "Research 327 explicitly requires governed successor relations for split/merge/replacement and DRP-07 requires live normative lineage across contract partition/migration; the original SP-1 inventory does not test N:M requirement succession.",
+      "thin_v02": {
+        "status": "PARTIAL",
+        "mechanism": "THIN LIFECYCLE supports old/new references and prospective change, but Research 442 does not specify N:M SPLIT/MERGE/CARRY_FORWARD mapping or explicit unmapped-loss accounting.",
+        "deficiency": "Needs richer governed relation semantics in the identity/lifecycle layer."
+      },
+      "rich_v05_accepted": {
+        "status": "PARTIAL",
+        "mechanism": "V0.5 explicitly states that split, merge, rescope and replacement create governed successor relations, which is the right semantic concept, but the exact N:M representation and loss/unmapped accounting remain to be qualified under DRP-07.",
+        "deficiency": "Concept is present; executable relation contract is not yet qualified."
+      },
+      "unique_contribution": "RICH_ONLY"
+    },
+    {
+      "cq_id": "MC-5",
+      "name": "OWNER_ACCOUNTING",
+      "admission": "ADMIT",
+      "admission_reason": "DRP-06 requires bounded generated current orientation and KA-R52 requires visible realization accountability; no SP-1 CQ requires one governed versioned obligation-status derivation for that orientation.",
+      "thin_v02": {
+        "status": "PARTIAL",
+        "mechanism": "Research 442 permits generated orientation views and exact source predicates but deliberately selects no global status definition, so separate consumers could name equivalent states differently.",
+        "deficiency": "Needs one governed non-authoritative orientation derivation if DRP-06 shows the vocabulary is useful."
+      },
+      "rich_v05_accepted": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "V0.5 already defines a deterministic derived realization sequence over validated REALIZES/EVIDENCES/QUALIFIES/ACTIVATES/DEFERS facts; DRP-06 can project that source-owned state into a bounded non-authoritative view.",
+        "deficiency": "Exact final vocabulary still depends on DRP-06 needs."
+      },
+      "unique_contribution": "RICH_ONLY"
+    },
+    {
+      "cq_id": "MC-6",
+      "name": "CROSS_DECISION_CONFLICT",
+      "admission": "ADMIT",
+      "admission_reason": "KA-I06 requires unresolved governing-authority conflict to be surfaced rather than guessed away. Existing CQ-AO-05 and CQ-BR-03 cover authority resolution and stale plan conflict but do not explicitly test contradictory active machine consequences across accepted decisions.",
+      "thin_v02": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "Typed REQUIRE/PROHIBIT/AUTHORIZE/GATE scopes make machine consequences comparable and Research 442 already requires accepted-component inconsistency and projection conflict to fail visible; exact semantic incompatibility rules remain domain/authority-resolver policy.",
+        "deficiency": null
+      },
+      "rich_v05_accepted": {
+        "status": "DIRECT_WITH_SHARED_DOMAIN",
+        "mechanism": "Accepted V0.5 delta identities and kinds can participate in the same authority/conflict resolver, with source/declaration conflicts yielding REVIEW_REQUIRED; domain-specific incompatibility still needs the same resolver policy.",
+        "deficiency": null
+      },
+      "unique_contribution": "SHARED"
+    }
+  ],
+  "aggregates": {
+    "original_total": 37,
+    "original_discriminating": 18,
+    "original_non_discriminating": 19,
+    "expanded_candidates": 6,
+    "expanded_admitted": 6,
+    "thin_original_status_counts": {
+      "DIRECT": 4,
+      "DIRECT_WITH_SHARED_DOMAIN": 32,
+      "PARTIAL": 1,
+      "MISSING": 0,
+      "NOT_APPLICABLE": 0
+    },
+    "rich_original_status_counts": {
+      "DIRECT": 4,
+      "DIRECT_WITH_SHARED_DOMAIN": 25,
+      "PARTIAL": 8,
+      "MISSING": 0,
+      "NOT_APPLICABLE": 0
+    },
+    "thin_expanded_status_counts": {
+      "DIRECT": 0,
+      "DIRECT_WITH_SHARED_DOMAIN": 1,
+      "PARTIAL": 5,
+      "MISSING": 0,
+      "NOT_APPLICABLE": 0
+    },
+    "rich_expanded_status_counts": {
+      "DIRECT": 1,
+      "DIRECT_WITH_SHARED_DOMAIN": 2,
+      "PARTIAL": 3,
+      "MISSING": 0,
+      "NOT_APPLICABLE": 0
+    }
+  },
+  "unique_value_findings": {
+    "thin": [
+      "Typed cross-domain action/consequence semantics for REQUIRE/PROHIBIT/GATE/AUTHORIZE/SEQUENCE avoid relying on the coarser V0.5 normative-kind taxonomy for deterministic ActionContract-style control.",
+      "Typed clause slots bind exact actions, consequences, scopes and predicate/decision references without future prose reinterpretation."
+    ],
+    "rich": [
+      "AcceptanceDeclarationSet provides closed acceptance-time completeness accounting, including an explicit no-realization result.",
+      "V0.5 explicitly preserves governed split/merge/replacement successor semantics for requirement lineage.",
+      "V0.5 supplies one deterministic derived realization-status sequence over natural-owner source facts."
+    ]
+  },
+  "shared_gaps": [
+    "Neither frozen arm fully specifies who must author/own a governing completion criterion sufficient to prevent realizer self-certification for every consequential requirement.",
+    "Neither frozen arm defines and qualifies general multi-artifact PARTIAL coverage composition."
+  ],
+  "full_rich_core_required": false,
+  "full_thin_v02_sufficient": false,
+  "selective_hybrid_amendments_required": [
+    "closed acceptance-time completeness accounting for accepted governing realization obligations",
+    "governing-side or governed-domain completion criteria for consequential satisfaction",
+    "qualified J1 requirement granularity rule",
+    "PARTIAL multi-artifact completion semantics",
+    "N:M governed requirement lineage",
+    "one governed versioned non-authoritative owner-orientation/status derivation if justified by DRP-06"
+  ],
+  "routing_class": "THIN_CENTRED_HYBRID_REQUIRED",
+  "production_selected": false,
+  "hidden_r2_item_details_used": false
+}

@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 798
+**Checkpoint:** 799
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: corrected thin-versus-rich competency desk comparison / Specification 028 reconciliation
+## Current active stage: thin-centred hybrid closure micro-probe freeze / Specification 028 reconciliation
+
+Checkpoint 799 / Research 463 completes the corrected fair-rich / expanded-competency comparison as THIN_CENTRED_HYBRID_REQUIRED. All 37 original SP-1 questions were re-audited with per-question reasoning: 18 are discriminating and 19 are shared natural-domain/control questions. All six expanded requirement classes are admitted. Unamended THIN V0.2 is partial on acceptance completeness and several newly admitted concerns; fair Research 327 V0.5 contributes useful completeness, requirement-lineage and derived-orientation concepts but remains weaker than THIN on several exact typed action-control questions and does not solve governing completion criteria or PARTIAL composition by itself. The full rich core is therefore not required, but unamended thin is not sufficient. The next bounded work is a prospective coupled micro-probe for J1 granularity, governing completion criteria and PARTIAL multi-artifact composition.
 
 Checkpoint 798 / Research 462 prospectively freezes the corrected comparison demanded by the Message 015 reconciliation. THIN_V02 remains the unamended Research 442 arm; RICH_V05_ACCEPTED is now instantiated fairly from Research 327 V0.5 with natural-owner realization facts and derived state, not from R1 reviewer scaffolding. The protocol re-audits all 37 SP-1 questions with per-question reasoning and adds six source-bounded candidate questions covering KA-R52 completeness, governing completion criteria, PARTIAL composition, N:M requirement lineage, owner accounting/orientation, and cross-decision conflict. The result class is frozen before execution and no owner participation is required.
 
