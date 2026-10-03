@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 799
+**Checkpoint:** 800
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: thin-centred hybrid closure micro-probe freeze / Specification 028 reconciliation
+## Current active stage: thin-centred hybrid C4-C6 implementation freeze / Specification 028 reconciliation
+
+Checkpoint 800 / Research 464 prospectively freezes HYBRID_C4_C6_V01 before implementation. The probe couples J1 requirement granularity, governing completion-criterion authority and deterministic PARTIAL composition. It freezes four granularity fixtures, ten completion/coverage fixtures, two separately encoded evaluators, explicit anti-self-certification controls, and fixed outcome classes. The candidate rule is one stable REQUIRE per independently acceptable governing effect, an accepted governing/domain completion contract, and deterministic ALL_REQUIRED component closure from natural-owner coverage claims. Self-reported FULL has no governing effect. No owner participation is required.
 
 Checkpoint 799 / Research 463 completes the corrected fair-rich / expanded-competency comparison as THIN_CENTRED_HYBRID_REQUIRED. All 37 original SP-1 questions were re-audited with per-question reasoning: 18 are discriminating and 19 are shared natural-domain/control questions. All six expanded requirement classes are admitted. Unamended THIN V0.2 is partial on acceptance completeness and several newly admitted concerns; fair Research 327 V0.5 contributes useful completeness, requirement-lineage and derived-orientation concepts but remains weaker than THIN on several exact typed action-control questions and does not solve governing completion criteria or PARTIAL composition by itself. The full rich core is therefore not required, but unamended thin is not sufficient. The next bounded work is a prospective coupled micro-probe for J1 granularity, governing completion criteria and PARTIAL multi-artifact composition.
 
