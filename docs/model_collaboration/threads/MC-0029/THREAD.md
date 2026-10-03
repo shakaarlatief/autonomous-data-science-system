@@ -1162,3 +1162,22 @@ Current boundary:
     PHASE=DRP03_OPERATIVE_SP6_PROTOCOL_FREEZE
     HIDDEN_R2_ITEM_DETAILS=SEALED
     NEXT=FREEZE_SP6_DETECTIVE_ONLY_NULL_BASELINE_PROTOCOL
+
+## OPERATIVE SP-6 protocol freeze
+
+Research 457 freezes the mandatory comparison against null baseline N.
+
+    positive historical gaps   3
+    realized controls          3
+    null baseline              detective-only
+    OPERATIVE arm              counterfactual mechanism replay
+    weighted cost score        prohibited
+
+The comparison records detection, timing, determinism, consequence power, lineage, generality and burden separately.
+
+Current boundary:
+
+    PHASE=DRP03_OPERATIVE_SP6_DESK_REPLAY
+    HIDDEN_R2_ITEM_DETAILS=SEALED
+    OWNER_PARTICIPATION_REQUIRED=false
+    NEXT=EXECUTE_SP6_DESK_REPLAY

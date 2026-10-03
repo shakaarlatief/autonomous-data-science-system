@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "UNRESOLVED",
-  "phase": "DRP03_OPERATIVE_SP6_PROTOCOL_FREEZE",
+  "phase": "DRP03_OPERATIVE_SP6_DESK_REPLAY",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,7 +81,7 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 456 retires SP-5 as RETIRED_AS_NON_DISCRIMINATING with no score and no owner-review efficacy claim. The seeded packet mixed direct semantic faithfulness review with memory/project recall because it hid the accepted source meaning. Owner acceptance remains a governance responsibility supported by visible source meaning, proposed machine consequence, provenance and revision history; no human-infallibility claim is made. The SP-5 artifacts remain preserved and development-burned. Hidden R2 item-level semantics remain sealed. Next actor is ChatGPT to prospectively freeze SP-6, the mandatory comparison against detective-only null baseline N."
+    "notes": "Research 456 retires SP-5 without a score. Research 457 now freezes SP-6, the mandatory detective-only null-baseline comparison. Exactly three public historical realization gaps and three realized controls are fixed. N remains detector/audit-only and cannot gain governing authority from inference. OPERATIVE is replayed counterfactually using only the SP-2/SP-3-surviving accepted-clause, realizer-coverage and executable-predicate mechanism. Burden is reported as a vector; weighted cost scoring is prohibited. Hidden R2 item-level semantics remain sealed. Next actor is ChatGPT for the desk replay."
   },
   "last_transition": {
     "transition_id": "mc0029-drp03-r2-construct-underdetermined",

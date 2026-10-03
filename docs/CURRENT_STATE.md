@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 792
+**Checkpoint:** 793
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: OPERATIVE SP-6 null-baseline protocol freeze / Specification 028 reconciliation
+## Current active stage: OPERATIVE SP-6 null-baseline desk replay / Specification 028 reconciliation
+
+Checkpoint 793 / Research 457 prospectively freezes SP-6 before the desk comparison. The mandatory null baseline N is detective-only with no structured cross-domain obligation layer; it may use repository search, semantic detection, targeted policy/claim checks and periodic audit, but detector inference is advisory rather than governing authority. The comparison uses exactly three public historical realization gaps named in Claude Message 011 plus three realized controls from the same Specification 028 package family. OPERATIVE is replayed counterfactually using only the SP-2/SP-3-surviving clause, coverage and executable-predicate mechanism. Outcome is evaluated as a burden/control vector rather than an arbitrary weighted cost score. No owner participation is required.
 
 Checkpoint 792 / Research 456 retires SP-5 as RETIRED_AS_NON_DISCRIMINATING without scoring it. The owner correctly challenged that the seeded six-card design withheld the original governing source and therefore mixed semantic faithfulness review with memory/project recall. Human semantic acceptance is retained as an authority/responsibility boundary supported by side-by-side source/consequence review, provenance and revision history, not as an experimentally proven infallibility claim. No SP-5 owner-accuracy result is inferred. The frozen packet remains preserved and development-burned. After retirement, unblinding showed R04 was altered while R06 was clean under the previously accepted SP2-C1/C1-CL02 meaning; this is not scored and instead illustrates the recall confound. The next discriminating stage is SP-6 against detective-only null baseline N.
 
