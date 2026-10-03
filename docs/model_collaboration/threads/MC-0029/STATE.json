@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "UNRESOLVED",
-  "phase": "DRP03_HYBRID_C9_OWNER_REVIEW",
+  "phase": "DRP03_HYBRID_INTEGRATED_CANDIDATE_FREEZE",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -60,7 +60,7 @@
       ]
     }
   ],
-  "next_expected_actor": "human",
+  "next_expected_actor": "chatgpt",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,7 +81,7 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 474 freezes the exact HYBRID_C9_OWNER_BURDEN_V01 owner package before judgment. Package SHA-256 is 721b39cf7d66fceee6ef36c35b3f6279f3ff432fffd57e981f3a1168c0e0f0dc, three cards, no owner judgments observed. The owner reviews only incremental J1 information and provides per-card ACCEPTABLE / NEEDS_SIMPLIFICATION / CANNOT_JUDGE plus one LOW / MODERATE / HIGH burden rating. Hidden R2 item-level material remains sealed. Next actor is human."
+    "notes": "Research 475 records the owner's exact C9 verdicts: C9-A ACCEPTABLE, C9-B ACCEPTABLE, C9-C ACCEPTABLE, overall burden LOW. Under Research 473 this is C9_BURDEN_PLAUSIBLE. All C1-C9 pre-decision work from Research 461 is now complete at development level. No production target is selected and hidden R2 item-level material remains sealed. Next actor is ChatGPT to reconcile and freeze the exact integrated thin-centred hybrid successor candidate before any owner architecture decision or larger pilot."
   },
   "last_transition": {
     "transition_id": "mc0029-drp03-r2-construct-underdetermined",

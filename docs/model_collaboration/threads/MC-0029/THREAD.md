@@ -1514,3 +1514,25 @@ Current boundary:
     NEXT_ACTOR=human
     HIDDEN_R2_ITEM_DETAILS=SEALED
     NEXT=OWNER_REVIEW_C9_A_B_C_AND_BURDEN
+
+## HYBRID C9 owner-burden result
+
+Owner response:
+
+    C9-A                   ACCEPTABLE
+    C9-B                   ACCEPTABLE
+    C9-C                   ACCEPTABLE
+    overall burden         LOW
+
+Frozen-rule result:
+
+    C9_BURDEN_PLAUSIBLE
+
+All C1-C9 pre-decision items are now resolved at development level.
+
+Current boundary:
+
+    PHASE=DRP03_HYBRID_INTEGRATED_CANDIDATE_FREEZE
+    NEXT_ACTOR=chatgpt
+    HIDDEN_R2_ITEM_DETAILS=SEALED
+    NEXT=FREEZE_INTEGRATED_THIN_CENTRED_HYBRID_SUCCESSOR_CANDIDATE

@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 810
+**Checkpoint:** 811
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: thin-centred hybrid C9 owner review / Specification 028 reconciliation
+## Current active stage: integrated thin-centred hybrid successor candidate freeze / Specification 028 reconciliation
+
+Checkpoint 811 / Research 475 records the owner's exact C9 verdicts as ACCEPTABLE / ACCEPTABLE / ACCEPTABLE with overall burden LOW. Under the frozen Research 473 rule this yields C9_BURDEN_PLAUSIBLE. All C1-C9 pre-decision items from Research 461 are now resolved at development level, while no production target is selected. The next work is to reconcile the accumulated evidence into one exact integrated thin-centred hybrid successor candidate before any owner architecture decision or larger pilot.
 
 Checkpoint 810 / Research 474 freezes the exact three-card HYBRID_C9_OWNER_BURDEN_V01 review package before owner judgment. The package SHA-256 is 721b39cf7d66fceee6ef36c35b3f6279f3ff432fffd57e981f3a1168c0e0f0dc and contains no prefilled owner verdicts. The owner now reviews only incremental J1 acceptance information, not implementation/schema internals, and supplies per-card ACCEPTABLE / NEEDS_SIMPLIFICATION / CANNOT_JUDGE plus one LOW / MODERATE / HIGH burden rating.
 
