@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 823
+**Checkpoint:** 824
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: V0.2 D-2 Claude evaluator B materialization / Specification 028 reconciliation
+## Current active stage: V0.2 D-2 two-model comparison execution / Specification 028 reconciliation
+
+Checkpoint 824 / Research 487 materializes Claude Message 018's single Python block into evaluator_claude_b.py with only line-ending/final-newline normalization and freezes it before any ChatGPT-side D-2 execution. Evaluator B SHA-256 is b4c8ff134ce51f7c833600a8e87849205cf1f2554102314f5ff1ea30aba3ee3b; AST validation passed. Evaluator A and B are now frozen, independently authored by different models, and unexecuted by ChatGPT. One comparison execution is next under Research 486's semantic scoring rule.
 
 Checkpoint 823 / Research 486 prospectively clarifies D-2 scoring before any ChatGPT-side evaluator execution. Claude independently identified that reason_codes has no public frozen vocabulary, so exact reason-code strings are diagnostic only. All semantic fields remain strict and unchanged: relation validity, current effects, successor initialization, carried components, deferral rebound and review_required. No fixture, hidden-key value or evaluator source is changed. Claude Evaluator B materialization is next.
 
