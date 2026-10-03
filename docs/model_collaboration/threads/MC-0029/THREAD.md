@@ -1391,3 +1391,20 @@ Current boundary:
     NEXT_ACTOR=chatgpt
     HIDDEN_R2_ITEM_DETAILS=SEALED
     NEXT=IMPLEMENT_AND_FREEZE_HYBRID_C7_LINEAGE_V01
+
+## HYBRID C7 implementation freeze
+
+Research 468 freezes the exact pre-result lineage harness.
+
+    probe                    HYBRID_C7_LINEAGE_V01
+    manifest SHA-256         9a3f4df5be021bd3cf8c3d3d37a77eea78776796026c4e129d6b8ee4cbe4ebed
+    fixtures                 12
+    evaluators               2
+    result.json              absent at freeze
+
+Current boundary:
+
+    PHASE=DRP03_HYBRID_C7_EXECUTION
+    NEXT_ACTOR=chatgpt
+    HIDDEN_R2_ITEM_DETAILS=SEALED
+    NEXT=EXECUTE_HYBRID_C7_LINEAGE_V01_ONCE

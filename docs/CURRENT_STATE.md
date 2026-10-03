@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 803
+**Checkpoint:** 804
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: thin-centred hybrid C7 lineage implementation freeze / Specification 028 reconciliation
+## Current active stage: thin-centred hybrid C7 frozen execution / Specification 028 reconciliation
+
+Checkpoint 804 / Research 468 freezes the exact HYBRID_C7_LINEAGE_V01 implementation before business-rule execution. The manifest SHA-256 is 9a3f4df5be021bd3cf8c3d3d37a77eea78776796026c4e129d6b8ee4cbe4ebed. Static validation passed without importing either evaluator, result.json is absent, and the frozen harness contains twelve lineage fixtures plus two separately encoded evaluators. One execution is next.
 
 Checkpoint 803 / Research 467 prospectively freezes HYBRID_C7_LINEAGE_V01 before implementation. The probe tests immutable accepted requirement identity plus governed CARRY_FORWARD, REPLACE, SPLIT, MERGE and RETIRE relations against DRP-01's admitted shared primitives and DRP-07 lineage needs. Twelve fixtures cover one-to-one, one-to-many, many-to-one, partial replacement with explicit retirement, explicit retirement, unmapped live predecessors, competing transitions, cycles, authority failure, stale effective boundaries and invalid carry-forward semantic continuity. Two separately encoded evaluators are required; no owner participation is required.
 

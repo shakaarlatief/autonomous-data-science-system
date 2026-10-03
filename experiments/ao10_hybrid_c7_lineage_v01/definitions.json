@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "probe_id": "HYBRID_C7_LINEAGE_V01",
+  "relation_classes": [
+    "CARRY_FORWARD",
+    "REPLACE",
+    "SPLIT",
+    "MERGE",
+    "RETIRE"
+  ],
+  "predecessor_dispositions": [
+    "FULLY_MAPPED",
+    "PARTIAL_WITH_EXPLICIT_RETIREMENT"
+  ],
+  "derived_outputs": [
+    "valid",
+    "review_required",
+    "authority_valid",
+    "effective_boundary_valid",
+    "continuity_valid",
+    "conflict",
+    "cycle",
+    "unmapped",
+    "current_targets_by_predecessor",
+    "retired",
+    "retired_remainder_refs"
+  ]
+}

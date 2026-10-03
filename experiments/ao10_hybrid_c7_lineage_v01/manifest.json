@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "probe_id": "HYBRID_C7_LINEAGE_V01",
+  "protocol_commit": "be1dd3763d06af11bd2e1aeccd50b9e1da529230",
+  "files": [
+    {
+      "path": "definitions.json",
+      "sha256": "baee6594db407151aed781e00389477d6e2b6a75f73b9e09b923755ea561f8e1",
+      "bytes": 563
+    },
+    {
+      "path": "fixtures.json",
+      "sha256": "624dab16252d26b5d85d4312aa3a74e6160cfa9793bbc5cfce5ef31c3841eef2",
+      "bytes": 24877
+    },
+    {
+      "path": "evaluator_a.py",
+      "sha256": "1ba1bd35bc922de42bdd86238112bfb2f68d4c4d3b3791462c9cec7700919478",
+      "bytes": 6317
+    },
+    {
+      "path": "evaluator_b.py",
+      "sha256": "15c624b835393c9cf901097a31a725b6373dafa58d87d547286dcbbfb21d7001",
+      "bytes": 6612
+    },
+    {
+      "path": "run_comparison.py",
+      "sha256": "80403e50527056b59219ff465ae65c154dc0b719067c96253adc90ff60b44e5c",
+      "bytes": 2486
+    },
+    {
+      "path": "static_validate.py",
+      "sha256": "c98e538b93fcdac395ece48b26696280aebe871797bdf2d9c1425082f2f59fc2",
+      "bytes": 754
+    }
+  ]
+}

@@ -1,0 +1,891 @@
+{
+  "schema_version": 1,
+  "fixtures": [
+    {
+      "fixture_id": "L1_CARRY_FORWARD_SAME_ID",
+      "requirements": [
+        {
+          "requirement_id": "P1",
+          "semantic_digest": "D1",
+          "accepted": true
+        }
+      ],
+      "transition_scope_predecessors": [
+        "P1"
+      ],
+      "unaffected_predecessors": [],
+      "relations": [
+        {
+          "relation_id": "REL1",
+          "relation_class": "CARRY_FORWARD",
+          "predecessors": [
+            "P1"
+          ],
+          "successors": [
+            "P1"
+          ],
+          "governing_authority_ref": "AUTH-1",
+          "accepted_decision_ref": "DEC-1",
+          "source_revision_ref": "REV-OLD",
+          "target_revision_ref": "REV-NEW",
+          "effective_from": "2026-10-03T12:00:00Z",
+          "authority_valid": true,
+          "effective_boundary_valid": true,
+          "provenance": [
+            "Research 467 fixture"
+          ],
+          "predecessor_dispositions": {
+            "P1": {
+              "disposition": "FULLY_MAPPED",
+              "retirement_ref": null
+            }
+          },
+          "retirement_ref": null,
+          "retirement_evidence_ref": null,
+          "semantic_digest_before": "D1",
+          "semantic_digest_after": "D1"
+        }
+      ],
+      "expected": {
+        "valid": true,
+        "review_required": false,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {
+          "P1": [
+            "P1"
+          ]
+        },
+        "retired": [],
+        "retired_remainder_refs": []
+      }
+    },
+    {
+      "fixture_id": "L2_ONE_TO_ONE_REPLACE",
+      "requirements": [
+        {
+          "requirement_id": "P1",
+          "semantic_digest": "D1",
+          "accepted": true
+        },
+        {
+          "requirement_id": "S1",
+          "semantic_digest": "D2",
+          "accepted": true
+        }
+      ],
+      "transition_scope_predecessors": [
+        "P1"
+      ],
+      "unaffected_predecessors": [],
+      "relations": [
+        {
+          "relation_id": "REL1",
+          "relation_class": "REPLACE",
+          "predecessors": [
+            "P1"
+          ],
+          "successors": [
+            "S1"
+          ],
+          "governing_authority_ref": "AUTH-1",
+          "accepted_decision_ref": "DEC-1",
+          "source_revision_ref": "REV-OLD",
+          "target_revision_ref": "REV-NEW",
+          "effective_from": "2026-10-03T12:00:00Z",
+          "authority_valid": true,
+          "effective_boundary_valid": true,
+          "provenance": [
+            "Research 467 fixture"
+          ],
+          "predecessor_dispositions": {
+            "P1": {
+              "disposition": "FULLY_MAPPED",
+              "retirement_ref": null
+            }
+          },
+          "retirement_ref": null,
+          "retirement_evidence_ref": null,
+          "semantic_digest_before": null,
+          "semantic_digest_after": null
+        }
+      ],
+      "expected": {
+        "valid": true,
+        "review_required": false,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {
+          "P1": [
+            "S1"
+          ]
+        },
+        "retired": [],
+        "retired_remainder_refs": []
+      }
+    },
+    {
+      "fixture_id": "L3_ONE_TO_MANY_SPLIT",
+      "requirements": [
+        {
+          "requirement_id": "P1",
+          "semantic_digest": "D1",
+          "accepted": true
+        },
+        {
+          "requirement_id": "S1",
+          "semantic_digest": "D2",
+          "accepted": true
+        },
+        {
+          "requirement_id": "S2",
+          "semantic_digest": "D3",
+          "accepted": true
+        }
+      ],
+      "transition_scope_predecessors": [
+        "P1"
+      ],
+      "unaffected_predecessors": [],
+      "relations": [
+        {
+          "relation_id": "REL1",
+          "relation_class": "SPLIT",
+          "predecessors": [
+            "P1"
+          ],
+          "successors": [
+            "S1",
+            "S2"
+          ],
+          "governing_authority_ref": "AUTH-1",
+          "accepted_decision_ref": "DEC-1",
+          "source_revision_ref": "REV-OLD",
+          "target_revision_ref": "REV-NEW",
+          "effective_from": "2026-10-03T12:00:00Z",
+          "authority_valid": true,
+          "effective_boundary_valid": true,
+          "provenance": [
+            "Research 467 fixture"
+          ],
+          "predecessor_dispositions": {
+            "P1": {
+              "disposition": "FULLY_MAPPED",
+              "retirement_ref": null
+            }
+          },
+          "retirement_ref": null,
+          "retirement_evidence_ref": null,
+          "semantic_digest_before": null,
+          "semantic_digest_after": null
+        }
+      ],
+      "expected": {
+        "valid": true,
+        "review_required": false,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {
+          "P1": [
+            "S1",
+            "S2"
+          ]
+        },
+        "retired": [],
+        "retired_remainder_refs": []
+      }
+    },
+    {
+      "fixture_id": "L4_MANY_TO_ONE_MERGE",
+      "requirements": [
+        {
+          "requirement_id": "P1",
+          "semantic_digest": "D1",
+          "accepted": true
+        },
+        {
+          "requirement_id": "P2",
+          "semantic_digest": "D2",
+          "accepted": true
+        },
+        {
+          "requirement_id": "S1",
+          "semantic_digest": "D3",
+          "accepted": true
+        }
+      ],
+      "transition_scope_predecessors": [
+        "P1",
+        "P2"
+      ],
+      "unaffected_predecessors": [],
+      "relations": [
+        {
+          "relation_id": "REL1",
+          "relation_class": "MERGE",
+          "predecessors": [
+            "P1",
+            "P2"
+          ],
+          "successors": [
+            "S1"
+          ],
+          "governing_authority_ref": "AUTH-1",
+          "accepted_decision_ref": "DEC-1",
+          "source_revision_ref": "REV-OLD",
+          "target_revision_ref": "REV-NEW",
+          "effective_from": "2026-10-03T12:00:00Z",
+          "authority_valid": true,
+          "effective_boundary_valid": true,
+          "provenance": [
+            "Research 467 fixture"
+          ],
+          "predecessor_dispositions": {
+            "P1": {
+              "disposition": "FULLY_MAPPED",
+              "retirement_ref": null
+            },
+            "P2": {
+              "disposition": "FULLY_MAPPED",
+              "retirement_ref": null
+            }
+          },
+          "retirement_ref": null,
+          "retirement_evidence_ref": null,
+          "semantic_digest_before": null,
+          "semantic_digest_after": null
+        }
+      ],
+      "expected": {
+        "valid": true,
+        "review_required": false,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {
+          "P1": [
+            "S1"
+          ],
+          "P2": [
+            "S1"
+          ]
+        },
+        "retired": [],
+        "retired_remainder_refs": []
+      }
+    },
+    {
+      "fixture_id": "L5_PARTIAL_REPLACE_WITH_RETIREMENT",
+      "requirements": [
+        {
+          "requirement_id": "P1",
+          "semantic_digest": "D1",
+          "accepted": true
+        },
+        {
+          "requirement_id": "S1",
+          "semantic_digest": "D2",
+          "accepted": true
+        }
+      ],
+      "transition_scope_predecessors": [
+        "P1"
+      ],
+      "unaffected_predecessors": [],
+      "relations": [
+        {
+          "relation_id": "REL1",
+          "relation_class": "REPLACE",
+          "predecessors": [
+            "P1"
+          ],
+          "successors": [
+            "S1"
+          ],
+          "governing_authority_ref": "AUTH-1",
+          "accepted_decision_ref": "DEC-1",
+          "source_revision_ref": "REV-OLD",
+          "target_revision_ref": "REV-NEW",
+          "effective_from": "2026-10-03T12:00:00Z",
+          "authority_valid": true,
+          "effective_boundary_valid": true,
+          "provenance": [
+            "Research 467 fixture"
+          ],
+          "predecessor_dispositions": {
+            "P1": {
+              "disposition": "PARTIAL_WITH_EXPLICIT_RETIREMENT",
+              "retirement_ref": "R-REM"
+            }
+          },
+          "retirement_ref": null,
+          "retirement_evidence_ref": null,
+          "semantic_digest_before": null,
+          "semantic_digest_after": null
+        }
+      ],
+      "accepted_retirements": [
+        {
+          "retirement_ref": "R-REM",
+          "authority_valid": true,
+          "evidence_valid": true
+        }
+      ],
+      "expected": {
+        "valid": true,
+        "review_required": false,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {
+          "P1": [
+            "S1"
+          ]
+        },
+        "retired": [],
+        "retired_remainder_refs": [
+          "R-REM"
+        ]
+      }
+    },
+    {
+      "fixture_id": "L6_EXPLICIT_RETIRE",
+      "requirements": [
+        {
+          "requirement_id": "P1",
+          "semantic_digest": "D1",
+          "accepted": true
+        }
+      ],
+      "transition_scope_predecessors": [
+        "P1"
+      ],
+      "unaffected_predecessors": [],
+      "relations": [
+        {
+          "relation_id": "REL1",
+          "relation_class": "RETIRE",
+          "predecessors": [
+            "P1"
+          ],
+          "successors": [],
+          "governing_authority_ref": "AUTH-1",
+          "accepted_decision_ref": "DEC-1",
+          "source_revision_ref": "REV-OLD",
+          "target_revision_ref": "REV-NEW",
+          "effective_from": "2026-10-03T12:00:00Z",
+          "authority_valid": true,
+          "effective_boundary_valid": true,
+          "provenance": [
+            "Research 467 fixture"
+          ],
+          "predecessor_dispositions": {
+            "P1": {
+              "disposition": "FULLY_MAPPED",
+              "retirement_ref": null
+            }
+          },
+          "retirement_ref": "R-P1",
+          "retirement_evidence_ref": "E-P1",
+          "semantic_digest_before": null,
+          "semantic_digest_after": null
+        }
+      ],
+      "accepted_retirements": [
+        {
+          "retirement_ref": "R-P1",
+          "authority_valid": true,
+          "evidence_valid": true
+        }
+      ],
+      "expected": {
+        "valid": true,
+        "review_required": false,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {
+          "P1": []
+        },
+        "retired": [
+          "P1"
+        ],
+        "retired_remainder_refs": []
+      }
+    },
+    {
+      "fixture_id": "L7_UNMAPPED_LIVE_PREDECESSOR",
+      "requirements": [
+        {
+          "requirement_id": "P1",
+          "semantic_digest": "D1",
+          "accepted": true
+        },
+        {
+          "requirement_id": "P2",
+          "semantic_digest": "D2",
+          "accepted": true
+        },
+        {
+          "requirement_id": "S1",
+          "semantic_digest": "D3",
+          "accepted": true
+        }
+      ],
+      "transition_scope_predecessors": [
+        "P1",
+        "P2"
+      ],
+      "unaffected_predecessors": [],
+      "relations": [
+        {
+          "relation_id": "REL1",
+          "relation_class": "REPLACE",
+          "predecessors": [
+            "P1"
+          ],
+          "successors": [
+            "S1"
+          ],
+          "governing_authority_ref": "AUTH-1",
+          "accepted_decision_ref": "DEC-1",
+          "source_revision_ref": "REV-OLD",
+          "target_revision_ref": "REV-NEW",
+          "effective_from": "2026-10-03T12:00:00Z",
+          "authority_valid": true,
+          "effective_boundary_valid": true,
+          "provenance": [
+            "Research 467 fixture"
+          ],
+          "predecessor_dispositions": {
+            "P1": {
+              "disposition": "FULLY_MAPPED",
+              "retirement_ref": null
+            }
+          },
+          "retirement_ref": null,
+          "retirement_evidence_ref": null,
+          "semantic_digest_before": null,
+          "semantic_digest_after": null
+        }
+      ],
+      "expected": {
+        "valid": false,
+        "review_required": true,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [
+          "P2"
+        ],
+        "current_targets_by_predecessor": {},
+        "retired": [],
+        "retired_remainder_refs": []
+      }
+    },
+    {
+      "fixture_id": "L8_COMPETING_OUTGOING_RELATIONS",
+      "requirements": [
+        {
+          "requirement_id": "P1",
+          "semantic_digest": "D1",
+          "accepted": true
+        },
+        {
+          "requirement_id": "S1",
+          "semantic_digest": "D2",
+          "accepted": true
+        },
+        {
+          "requirement_id": "S2",
+          "semantic_digest": "D3",
+          "accepted": true
+        }
+      ],
+      "transition_scope_predecessors": [
+        "P1"
+      ],
+      "unaffected_predecessors": [],
+      "relations": [
+        {
+          "relation_id": "REL1",
+          "relation_class": "REPLACE",
+          "predecessors": [
+            "P1"
+          ],
+          "successors": [
+            "S1"
+          ],
+          "governing_authority_ref": "AUTH-1",
+          "accepted_decision_ref": "DEC-1",
+          "source_revision_ref": "REV-OLD",
+          "target_revision_ref": "REV-NEW",
+          "effective_from": "2026-10-03T12:00:00Z",
+          "authority_valid": true,
+          "effective_boundary_valid": true,
+          "provenance": [
+            "Research 467 fixture"
+          ],
+          "predecessor_dispositions": {
+            "P1": {
+              "disposition": "FULLY_MAPPED",
+              "retirement_ref": null
+            }
+          },
+          "retirement_ref": null,
+          "retirement_evidence_ref": null,
+          "semantic_digest_before": null,
+          "semantic_digest_after": null
+        },
+        {
+          "relation_id": "REL2",
+          "relation_class": "REPLACE",
+          "predecessors": [
+            "P1"
+          ],
+          "successors": [
+            "S2"
+          ],
+          "governing_authority_ref": "AUTH-1",
+          "accepted_decision_ref": "DEC-1",
+          "source_revision_ref": "REV-OLD",
+          "target_revision_ref": "REV-NEW",
+          "effective_from": "2026-10-03T12:00:00Z",
+          "authority_valid": true,
+          "effective_boundary_valid": true,
+          "provenance": [
+            "Research 467 fixture"
+          ],
+          "predecessor_dispositions": {
+            "P1": {
+              "disposition": "FULLY_MAPPED",
+              "retirement_ref": null
+            }
+          },
+          "retirement_ref": null,
+          "retirement_evidence_ref": null,
+          "semantic_digest_before": null,
+          "semantic_digest_after": null
+        }
+      ],
+      "expected": {
+        "valid": false,
+        "review_required": true,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": true,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {},
+        "retired": [],
+        "retired_remainder_refs": []
+      }
+    },
+    {
+      "fixture_id": "L9_CYCLE",
+      "requirements": [
+        {
+          "requirement_id": "P1",
+          "semantic_digest": "D1",
+          "accepted": true
+        },
+        {
+          "requirement_id": "S1",
+          "semantic_digest": "D2",
+          "accepted": true
+        }
+      ],
+      "transition_scope_predecessors": [
+        "P1",
+        "S1"
+      ],
+      "unaffected_predecessors": [],
+      "relations": [
+        {
+          "relation_id": "REL1",
+          "relation_class": "REPLACE",
+          "predecessors": [
+            "P1"
+          ],
+          "successors": [
+            "S1"
+          ],
+          "governing_authority_ref": "AUTH-1",
+          "accepted_decision_ref": "DEC-1",
+          "source_revision_ref": "REV-OLD",
+          "target_revision_ref": "REV-NEW",
+          "effective_from": "2026-10-03T12:00:00Z",
+          "authority_valid": true,
+          "effective_boundary_valid": true,
+          "provenance": [
+            "Research 467 fixture"
+          ],
+          "predecessor_dispositions": {
+            "P1": {
+              "disposition": "FULLY_MAPPED",
+              "retirement_ref": null
+            }
+          },
+          "retirement_ref": null,
+          "retirement_evidence_ref": null,
+          "semantic_digest_before": null,
+          "semantic_digest_after": null
+        },
+        {
+          "relation_id": "REL2",
+          "relation_class": "REPLACE",
+          "predecessors": [
+            "S1"
+          ],
+          "successors": [
+            "P1"
+          ],
+          "governing_authority_ref": "AUTH-1",
+          "accepted_decision_ref": "DEC-1",
+          "source_revision_ref": "REV-OLD",
+          "target_revision_ref": "REV-NEW",
+          "effective_from": "2026-10-03T12:00:00Z",
+          "authority_valid": true,
+          "effective_boundary_valid": true,
+          "provenance": [
+            "Research 467 fixture"
+          ],
+          "predecessor_dispositions": {
+            "S1": {
+              "disposition": "FULLY_MAPPED",
+              "retirement_ref": null
+            }
+          },
+          "retirement_ref": null,
+          "retirement_evidence_ref": null,
+          "semantic_digest_before": null,
+          "semantic_digest_after": null
+        }
+      ],
+      "expected": {
+        "valid": false,
+        "review_required": true,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": true,
+        "unmapped": [],
+        "current_targets_by_predecessor": {},
+        "retired": [],
+        "retired_remainder_refs": []
+      }
+    },
+    {
+      "fixture_id": "L10_UNAUTHORIZED_RELATION",
+      "requirements": [
+        {
+          "requirement_id": "P1",
+          "semantic_digest": "D1",
+          "accepted": true
+        },
+        {
+          "requirement_id": "S1",
+          "semantic_digest": "D2",
+          "accepted": true
+        }
+      ],
+      "transition_scope_predecessors": [
+        "P1"
+      ],
+      "unaffected_predecessors": [],
+      "relations": [
+        {
+          "relation_id": "REL1",
+          "relation_class": "REPLACE",
+          "predecessors": [
+            "P1"
+          ],
+          "successors": [
+            "S1"
+          ],
+          "governing_authority_ref": "AUTH-1",
+          "accepted_decision_ref": "DEC-1",
+          "source_revision_ref": "REV-OLD",
+          "target_revision_ref": "REV-NEW",
+          "effective_from": "2026-10-03T12:00:00Z",
+          "authority_valid": false,
+          "effective_boundary_valid": true,
+          "provenance": [
+            "Research 467 fixture"
+          ],
+          "predecessor_dispositions": {
+            "P1": {
+              "disposition": "FULLY_MAPPED",
+              "retirement_ref": null
+            }
+          },
+          "retirement_ref": null,
+          "retirement_evidence_ref": null,
+          "semantic_digest_before": null,
+          "semantic_digest_after": null
+        }
+      ],
+      "expected": {
+        "valid": false,
+        "review_required": true,
+        "authority_valid": false,
+        "effective_boundary_valid": true,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {},
+        "retired": [],
+        "retired_remainder_refs": []
+      }
+    },
+    {
+      "fixture_id": "L11_STALE_EFFECTIVE_BOUNDARY",
+      "requirements": [
+        {
+          "requirement_id": "P1",
+          "semantic_digest": "D1",
+          "accepted": true
+        },
+        {
+          "requirement_id": "S1",
+          "semantic_digest": "D2",
+          "accepted": true
+        }
+      ],
+      "transition_scope_predecessors": [
+        "P1"
+      ],
+      "unaffected_predecessors": [],
+      "relations": [
+        {
+          "relation_id": "REL1",
+          "relation_class": "REPLACE",
+          "predecessors": [
+            "P1"
+          ],
+          "successors": [
+            "S1"
+          ],
+          "governing_authority_ref": "AUTH-1",
+          "accepted_decision_ref": "DEC-1",
+          "source_revision_ref": "REV-OLD",
+          "target_revision_ref": "REV-NEW",
+          "effective_from": "2026-10-03T12:00:00Z",
+          "authority_valid": true,
+          "effective_boundary_valid": false,
+          "provenance": [
+            "Research 467 fixture"
+          ],
+          "predecessor_dispositions": {
+            "P1": {
+              "disposition": "FULLY_MAPPED",
+              "retirement_ref": null
+            }
+          },
+          "retirement_ref": null,
+          "retirement_evidence_ref": null,
+          "semantic_digest_before": null,
+          "semantic_digest_after": null
+        }
+      ],
+      "expected": {
+        "valid": false,
+        "review_required": true,
+        "authority_valid": true,
+        "effective_boundary_valid": false,
+        "continuity_valid": true,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {},
+        "retired": [],
+        "retired_remainder_refs": []
+      }
+    },
+    {
+      "fixture_id": "L12_INVALID_CARRY_FORWARD_DIGEST",
+      "requirements": [
+        {
+          "requirement_id": "P1",
+          "semantic_digest": "D1",
+          "accepted": true
+        }
+      ],
+      "transition_scope_predecessors": [
+        "P1"
+      ],
+      "unaffected_predecessors": [],
+      "relations": [
+        {
+          "relation_id": "REL1",
+          "relation_class": "CARRY_FORWARD",
+          "predecessors": [
+            "P1"
+          ],
+          "successors": [
+            "P1"
+          ],
+          "governing_authority_ref": "AUTH-1",
+          "accepted_decision_ref": "DEC-1",
+          "source_revision_ref": "REV-OLD",
+          "target_revision_ref": "REV-NEW",
+          "effective_from": "2026-10-03T12:00:00Z",
+          "authority_valid": true,
+          "effective_boundary_valid": true,
+          "provenance": [
+            "Research 467 fixture"
+          ],
+          "predecessor_dispositions": {
+            "P1": {
+              "disposition": "FULLY_MAPPED",
+              "retirement_ref": null
+            }
+          },
+          "retirement_ref": null,
+          "retirement_evidence_ref": null,
+          "semantic_digest_before": "D1",
+          "semantic_digest_after": "D2"
+        }
+      ],
+      "expected": {
+        "valid": false,
+        "review_required": true,
+        "authority_valid": true,
+        "effective_boundary_valid": true,
+        "continuity_valid": false,
+        "conflict": false,
+        "cycle": false,
+        "unmapped": [],
+        "current_targets_by_predecessor": {},
+        "retired": [],
+        "retired_remainder_refs": []
+      }
+    }
+  ]
+}
