@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 791
+**Checkpoint:** 792
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: OPERATIVE SP-5 owner review / Specification 028 reconciliation
+## Current active stage: OPERATIVE SP-6 null-baseline protocol freeze / Specification 028 reconciliation
+
+Checkpoint 792 / Research 456 retires SP-5 as RETIRED_AS_NON_DISCRIMINATING without scoring it. The owner correctly challenged that the seeded six-card design withheld the original governing source and therefore mixed semantic faithfulness review with memory/project recall. Human semantic acceptance is retained as an authority/responsibility boundary supported by side-by-side source/consequence review, provenance and revision history, not as an experimentally proven infallibility claim. No SP-5 owner-accuracy result is inferred. The frozen packet remains preserved and development-burned. After retirement, unblinding showed R04 was altered while R06 was clean under the previously accepted SP2-C1/C1-CL02 meaning; this is not scored and instead illustrates the recall confound. The next discriminating stage is SP-6 against detective-only null baseline N.
 
 Checkpoint 791 / Research 455 freezes the exact six-card SP-5 owner-review packet after one deterministic build. The owner packet SHA-256 is 40832f1451d75b3bb57769dc96a0540670b1ca1e30ee24664f4ce235c594047e. The packet is experimental and has no governing effect. Card identities and evaluator details remain blinded until the owner response is frozen. The human owner is next for one verdict per card.
 

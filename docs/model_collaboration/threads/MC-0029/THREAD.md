@@ -1140,3 +1140,25 @@ Current boundary:
     PHASE=DRP03_OPERATIVE_SP5_OWNER_REVIEW
     NEXT_ACTOR=human
     NEXT=OWNER_REVIEW_SP5_SIX_CARDS
+
+## SP-5 methodological retirement
+
+Research 456 retires SP-5 without scoring it.
+
+    SP5=RETIRED_AS_NON_DISCRIMINATING
+    OWNER_REVIEW_EFFICACY_RESULT=NONE
+
+Reason:
+
+    the owner-facing packet hid the original accepted source meaning
+    and therefore mixed semantic-review efficacy with memory/project recall.
+
+The mature review direction is source meaning + proposed machine consequence shown together.
+
+Human acceptance is a governing responsibility, not an experimentally proven infallibility mechanism.
+
+Current boundary:
+
+    PHASE=DRP03_OPERATIVE_SP6_PROTOCOL_FREEZE
+    HIDDEN_R2_ITEM_DETAILS=SEALED
+    NEXT=FREEZE_SP6_DETECTIVE_ONLY_NULL_BASELINE_PROTOCOL

@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "UNRESOLVED",
-  "phase": "DRP03_OPERATIVE_SP5_OWNER_REVIEW",
+  "phase": "DRP03_OPERATIVE_SP6_PROTOCOL_FREEZE",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -60,7 +60,7 @@
       ]
     }
   ],
-  "next_expected_actor": "human",
+  "next_expected_actor": "chatgpt",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,7 +81,7 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 455 freezes the exact six-card SP-5 owner packet after one deterministic build execution. The owner packet SHA-256 is 40832f1451d75b3bb57769dc96a0540670b1ca1e30ee24664f4ce235c594047e. Exactly three cards are experimental variants and three are clean; the mapping remains blinded until the owner response is durably frozen. The packet has no governing semantic effect. Next actor is the human owner for six card verdicts."
+    "notes": "Research 456 retires SP-5 as RETIRED_AS_NON_DISCRIMINATING with no score and no owner-review efficacy claim. The seeded packet mixed direct semantic faithfulness review with memory/project recall because it hid the accepted source meaning. Owner acceptance remains a governance responsibility supported by visible source meaning, proposed machine consequence, provenance and revision history; no human-infallibility claim is made. The SP-5 artifacts remain preserved and development-burned. Hidden R2 item-level semantics remain sealed. Next actor is ChatGPT to prospectively freeze SP-6, the mandatory comparison against detective-only null baseline N."
   },
   "last_transition": {
     "transition_id": "mc0029-drp03-r2-construct-underdetermined",
