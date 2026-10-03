@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 815
+**Checkpoint:** 816
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: V0.2 cross-plane dependency proof freeze / Specification 028 reconciliation
+## Current active stage: V0.2 cross-plane dependency proof / Specification 028 reconciliation
+
+Checkpoint 816 / Research 479 prospectively freezes HYBRID_D3_DEPENDENCY_V01. The proof separates same-revision evaluation dependencies from next-revision operational feedback, fixes fourteen same-revision nodes, freezes the lineage -> active set -> shared predicates/WARRANT-F -> J3 -> orientation/control ordering, and requires one shared evidence/freshness predicate registry. Five negative controls test forbidden same-revision feedback/cycles and predicate-definition duplication. No owner participation is required.
 
 Checkpoint 815 / Research 478 freezes THIN_CENTRED_HYBRID_V02 as the amended integrated candidate after Message 017 reconciliation. V0.2 adds exact acceptance-record binding, complete effect accounting, standing-consequence enforcement accounting, pinned domain-contract revisions, accepted effect statements/digests, temporal satisfaction/regression, extended orientation gaps, REPARTITION/REINSTATE candidate lineage semantics, realization-succession rules, scoped legacy transition handling and explicit cross-plane stratification. It remains a development candidate. D-1, D-2 and D-3 are required before owner architecture decision; D-3 dependency proof is next.
 
