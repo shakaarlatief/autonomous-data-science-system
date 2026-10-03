@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "probe_id": "OPERATIVE-SP5-V01",
+  "owner_instruction": "Exactly three of the six cards contain deliberate material semantic errors. For each card answer ACCEPT, AMEND, REJECT, or CANNOT_JUDGE. If you choose AMEND or REJECT, state what is semantically wrong or missing.",
+  "non_consequence_notice": "This is experimental review material only. Your responses do not change real project authority.",
+  "items": [
+    {
+      "review_item_id": "R01",
+      "context": "Model-generated semantic authority",
+      "proposed_consequence_view": "The model or provider that generated a semantic interpretation may decide that its output becomes governing authority when its confidence is sufficiently high."
+    },
+    {
+      "review_item_id": "R02",
+      "context": "Seeded owner-review authorization",
+      "proposed_consequence_view": "SP-5 seeded-error owner-review execution requires explicit informed owner authorization."
+    },
+    {
+      "review_item_id": "R03",
+      "context": "Domain-native semantic ownership",
+      "proposed_consequence_view": "When a domain-native accepted contract already owns detailed machine semantics, OPERATIVE references that contract rather than creating a second independent authority copy."
+    },
+    {
+      "review_item_id": "R04",
+      "context": "Successor-development authority boundary",
+      "proposed_consequence_view": "Research 436 successor development does not authorize operational authority switch, but it does authorize physical migration for development-only changes."
+    },
+    {
+      "review_item_id": "R05",
+      "context": "Hidden R2 evidence exposure",
+      "proposed_consequence_view": "Hidden R2 item-level semantics may be exposed after a separate prospective owner route records the exposure purpose and the evidence-burn consequence."
+    },
+    {
+      "review_item_id": "R06",
+      "context": "Frozen R2 result handling",
+      "proposed_consequence_view": "R2 may not be retried, relabeled, threshold-tuned, converted into a final key, or rescued by owner adjudication."
+    }
+  ]
+}

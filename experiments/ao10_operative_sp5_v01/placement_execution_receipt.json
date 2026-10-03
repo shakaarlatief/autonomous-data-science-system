@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "probe_id": "OPERATIVE-SP5-V01",
+  "authorization_commit": "b3f06a414697b8ac99fd57fcae04159ab01eb35c",
+  "mechanism_freeze_commit": "dad76617e87c58d1872c86ec3393fff2c01b263c",
+  "mechanism_manifest_sha256": "338a95a8c63f339bc5caf0c0d4eb53fcd2abf5b6bbeaa62585631de64d308d09",
+  "execution_count": 1,
+  "command": "python experiments/ao10_operative_sp5_v01/seed_algorithm.py",
+  "exit_code": 0,
+  "owner_packet_path": "experiments/ao10_operative_sp5_v01/owner_review_packet.json",
+  "owner_packet_sha256": "40832f1451d75b3bb57769dc96a0540670b1ca1e30ee24664f4ce235c594047e",
+  "evaluator_key_path": "experiments/ao10_operative_sp5_v01/evaluator_key.json",
+  "evaluator_key_sha256": "86bf71f2e02e1d8e6c5143e300776f92b1328c4dbefd7c06f021735679df0d46",
+  "item_count": 6,
+  "seeded_count": 3,
+  "clean_count": 3,
+  "placement_revealed_to_owner": false
+}

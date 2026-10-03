@@ -1116,3 +1116,27 @@ Current boundary:
     SEED_PLACEMENT_COMPUTED=false
     SEEDED_PACKET_CREATED=false
     NEXT=EXECUTE_SP5_SEED_PLACEMENT_ONCE
+
+## SP-5 owner-review packet freeze
+
+Research 455 freezes the exact six-card owner-review packet after one deterministic build.
+
+    owner packet SHA-256
+        40832f1451d75b3bb57769dc96a0540670b1ca1e30ee24664f4ce235c594047e
+
+    cards
+        6
+
+    experimental variants
+        3
+
+    clean
+        3
+
+The mapping remains blinded until the owner response is frozen.
+
+Current boundary:
+
+    PHASE=DRP03_OPERATIVE_SP5_OWNER_REVIEW
+    NEXT_ACTOR=human
+    NEXT=OWNER_REVIEW_SP5_SIX_CARDS

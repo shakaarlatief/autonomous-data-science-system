@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "probe_id": "OPERATIVE-SP5-V01",
+  "authorization_commit": "b3f06a414697b8ac99fd57fcae04159ab01eb35c",
+  "seed_material_sha256": "44de7f6191c56cfc4ee5698b8ec21d443df7c569918490b6b941174f91429d75",
+  "unit_permutation": [
+    "U5",
+    "U1",
+    "U2",
+    "U3",
+    "U4",
+    "U6"
+  ],
+  "placement": {
+    "E1_WRONG_OWNER": "U5",
+    "E2_MISSING_GATE_CONDITION": "U2",
+    "E3_BROKEN_PROHIBITION_SCOPE": "U3"
+  },
+  "packet_order": [
+    "U5",
+    "U4",
+    "U6",
+    "U3",
+    "U2",
+    "U1"
+  ],
+  "items": [
+    {
+      "review_item_id": "R01",
+      "unit_id": "U5",
+      "origin": "SP2-C2 / C2-CL06",
+      "seeded": true,
+      "error_class": "E1_WRONG_OWNER",
+      "clean_view": "Unaccepted model or LLM semantic output may not become governing authority merely because it was generated.",
+      "shown_view": "The model or provider that generated a semantic interpretation may decide that its output becomes governing authority when its confidence is sufficiently high.",
+      "detection_criterion": "Identify that model or provider confidence cannot confer governing authority; admission through the proper governing path is required."
+    },
+    {
+      "review_item_id": "R02",
+      "unit_id": "U4",
+      "origin": "SP2-C2 / C2-CL04",
+      "seeded": false,
+      "error_class": null,
+      "clean_view": "SP-5 seeded-error owner-review execution requires explicit informed owner authorization.",
+      "shown_view": "SP-5 seeded-error owner-review execution requires explicit informed owner authorization.",
+      "detection_criterion": null
+    },
+    {
+      "review_item_id": "R03",
+      "unit_id": "U6",
+      "origin": "SP2-C3 / C3-CL04",
+      "seeded": false,
+      "error_class": null,
+      "clean_view": "When a domain-native accepted contract already owns detailed machine semantics, OPERATIVE references that contract rather than creating a second independent authority copy.",
+      "shown_view": "When a domain-native accepted contract already owns detailed machine semantics, OPERATIVE references that contract rather than creating a second independent authority copy.",
+      "detection_criterion": null
+    },
+    {
+      "review_item_id": "R04",
+      "unit_id": "U3",
+      "origin": "SP2-C1 / C1-CL04",
+      "seeded": true,
+      "error_class": "E3_BROKEN_PROHIBITION_SCOPE",
+      "clean_view": "Research 436 successor development does not itself authorize physical migration or operational authority switch; either requires separate governing authorization.",
+      "shown_view": "Research 436 successor development does not authorize operational authority switch, but it does authorize physical migration for development-only changes.",
+      "detection_criterion": "Identify the improper narrowing that permits physical migration; Research 436 authorizes neither migration nor authority switch by itself."
+    },
+    {
+      "review_item_id": "R05",
+      "unit_id": "U2",
+      "origin": "SP2-C1 / C1-CL03",
+      "seeded": true,
+      "error_class": "E2_MISSING_GATE_CONDITION",
+      "clean_view": "Hidden R2 item-level semantics may be exposed only after a separate prospective owner route records the exposure purpose, the evidence-burn consequence, and the replacement-confirmation consequence.",
+      "shown_view": "Hidden R2 item-level semantics may be exposed after a separate prospective owner route records the exposure purpose and the evidence-burn consequence.",
+      "detection_criterion": "Identify the missing replacement-confirmation consequence or plan as a required exposure prerequisite."
+    },
+    {
+      "review_item_id": "R06",
+      "unit_id": "U1",
+      "origin": "SP2-C1 / C1-CL02",
+      "seeded": false,
+      "error_class": null,
+      "clean_view": "R2 may not be retried, relabeled, threshold-tuned, converted into a final key, or rescued by owner adjudication.",
+      "shown_view": "R2 may not be retried, relabeled, threshold-tuned, converted into a final key, or rescued by owner adjudication.",
+      "detection_criterion": null
+    }
+  ]
+}
