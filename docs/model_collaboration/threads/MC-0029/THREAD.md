@@ -1336,3 +1336,21 @@ Current boundary:
     NEXT_ACTOR=chatgpt
     HIDDEN_R2_ITEM_DETAILS=SEALED
     NEXT=FREEZE_HYBRID_C4_C6_CLOSURE_MICROPROBE
+
+## HYBRID C4-C6 implementation freeze
+
+Research 465 freezes the exact pre-result harness.
+
+    probe                    HYBRID_C4_C6_V01
+    manifest SHA-256         a40352df2216127fcbd18e3589115bb3fac2a56c68e633a68e8b8971ee3cbef4
+    granularity fixtures     4
+    completion fixtures      10
+    evaluators               2
+    result.json              absent at freeze
+
+Current boundary:
+
+    PHASE=DRP03_HYBRID_C4_C6_EXECUTION
+    NEXT_ACTOR=chatgpt
+    HIDDEN_R2_ITEM_DETAILS=SEALED
+    NEXT=EXECUTE_HYBRID_C4_C6_V01_ONCE

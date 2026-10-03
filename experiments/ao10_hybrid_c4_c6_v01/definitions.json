@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "probe_id": "HYBRID_C4_C6_V01",
+  "granularity_rule": {
+    "requirement_effect_cardinality": 1,
+    "effect_coverage": "EXACTLY_ONCE",
+    "implementation_grouping_at_j1": false,
+    "sequence_is_separate_form": true
+  },
+  "completion_contract": {
+    "allowed_authority_classes": [
+      "GOVERNING_ACCEPTANCE",
+      "ACCEPTED_DOMAIN_CONTRACT"
+    ],
+    "composition_rule": "ALL_REQUIRED",
+    "realizer_may_author_completion_contract": false,
+    "self_assessment_authoritative": false
+  },
+  "derived_predicates": [
+    "completion_contract_valid",
+    "coverage_complete",
+    "evidence_valid",
+    "qualification_complete",
+    "activation_effective",
+    "requirement_satisfied",
+    "review_required"
+  ]
+}

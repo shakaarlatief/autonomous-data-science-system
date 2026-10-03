@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 800
+**Checkpoint:** 801
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: thin-centred hybrid C4-C6 implementation freeze / Specification 028 reconciliation
+## Current active stage: thin-centred hybrid C4-C6 frozen execution / Specification 028 reconciliation
+
+Checkpoint 801 / Research 465 freezes the exact HYBRID_C4_C6_V01 implementation before any business-rule execution. The seven pre-result files are bound by manifest SHA-256 a40352df2216127fcbd18e3589115bb3fac2a56c68e633a68e8b8971ee3cbef4. Static validation passed without importing either evaluator; result.json did not exist at freeze time. The frozen harness contains four granularity fixtures, ten completion/PARTIAL fixtures, two separately encoded evaluators, and explicit checks that realizer self-assessment cannot define governing completion. One execution is next.
 
 Checkpoint 800 / Research 464 prospectively freezes HYBRID_C4_C6_V01 before implementation. The probe couples J1 requirement granularity, governing completion-criterion authority and deterministic PARTIAL composition. It freezes four granularity fixtures, ten completion/coverage fixtures, two separately encoded evaluators, explicit anti-self-certification controls, and fixed outcome classes. The candidate rule is one stable REQUIRE per independently acceptable governing effect, an accepted governing/domain completion contract, and deterministic ALL_REQUIRED component closure from natural-owner coverage claims. Self-reported FULL has no governing effect. No owner participation is required.
 

@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "probe_id": "HYBRID_C4_C6_V01",
+  "protocol_commit": "6cc806fb69c2d6e35edffaf8aaef3cc5df540e5b",
+  "files": [
+    {
+      "path": "definitions.json",
+      "sha256": "1ec5613a223b80f52630f185733dbf8a3b56bb60964a51f1d996a8e06fe03767",
+      "bytes": 773
+    },
+    {
+      "path": "granularity_fixtures.json",
+      "sha256": "773ef5165ffd015aa1bdc0a7f7d352ecaee32b07520d461994ca6038eb8ef5d1",
+      "bytes": 2880
+    },
+    {
+      "path": "completion_fixtures.json",
+      "sha256": "95ba87e95cdf8ccb6f44742c18b8e8822cb132ee55e45416a0c4893eaeaf0307",
+      "bytes": 17260
+    },
+    {
+      "path": "evaluator_a.py",
+      "sha256": "18583378abf4ff3ea6ca40ce6fe89d2cf8636c322a77b900bd1c4caccaf06df2",
+      "bytes": 4243
+    },
+    {
+      "path": "evaluator_b.py",
+      "sha256": "c8489cf71fa199f163b524aaf61944de0c97a62d81411ebca7fcaf9c3179434e",
+      "bytes": 4241
+    },
+    {
+      "path": "run_comparison.py",
+      "sha256": "efbaac2b0f618b364952a5e01e5ceb7cbf482c685bbe46f8caafe8d08997583c",
+      "bytes": 3924
+    },
+    {
+      "path": "static_validate.py",
+      "sha256": "ab6a139621c4bb9c23ade3bcf9e8c8d601655c8e5bda823139cb7248df5df5d6",
+      "bytes": 1055
+    }
+  ]
+}

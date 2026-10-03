@@ -1,0 +1,594 @@
+{
+  "schema_version": 1,
+  "fixtures": [
+    {
+      "fixture_id": "P1_SINGLE_PARTIAL",
+      "requirement_ref": "R1",
+      "bound_contract": {
+        "criterion_id": "CC-R1",
+        "revision": 3
+      },
+      "completion_contract": {
+        "criterion_id": "CC-R1",
+        "requirement_ref": "R1",
+        "authority_class": "GOVERNING_ACCEPTANCE",
+        "authority_ref": "ACC-1",
+        "revision": 3,
+        "required_components": [
+          "A",
+          "B"
+        ],
+        "composition_rule": "ALL_REQUIRED",
+        "evidence_required": true,
+        "qualification_required": true,
+        "activation_required": true
+      },
+      "realizer_declarations": [
+        {
+          "realizer_id": "RZ1",
+          "requirement_ref": "R1",
+          "covers_components": [
+            "A"
+          ],
+          "declaration_valid": true,
+          "self_assessment": null,
+          "completion_override": null
+        }
+      ],
+      "source_facts": {
+        "requirement_active": true,
+        "evidence_present": true,
+        "evidence_exact_subject": true,
+        "evidence_fresh": true,
+        "qualification_passed": true,
+        "activation_effective": true,
+        "conflict_present": false
+      },
+      "expected": {
+        "completion_contract_valid": true,
+        "coverage_complete": false,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "requirement_satisfied": false,
+        "review_required": false
+      }
+    },
+    {
+      "fixture_id": "P2_TWO_PARTIALS_COMPLETE_BUT_UNQUALIFIED",
+      "requirement_ref": "R1",
+      "bound_contract": {
+        "criterion_id": "CC-R1",
+        "revision": 3
+      },
+      "completion_contract": {
+        "criterion_id": "CC-R1",
+        "requirement_ref": "R1",
+        "authority_class": "GOVERNING_ACCEPTANCE",
+        "authority_ref": "ACC-1",
+        "revision": 3,
+        "required_components": [
+          "A",
+          "B"
+        ],
+        "composition_rule": "ALL_REQUIRED",
+        "evidence_required": true,
+        "qualification_required": true,
+        "activation_required": true
+      },
+      "realizer_declarations": [
+        {
+          "realizer_id": "RZ1",
+          "requirement_ref": "R1",
+          "covers_components": [
+            "A"
+          ],
+          "declaration_valid": true,
+          "self_assessment": null,
+          "completion_override": null
+        },
+        {
+          "realizer_id": "RZ2",
+          "requirement_ref": "R1",
+          "covers_components": [
+            "B"
+          ],
+          "declaration_valid": true,
+          "self_assessment": null,
+          "completion_override": null
+        }
+      ],
+      "source_facts": {
+        "requirement_active": true,
+        "evidence_present": true,
+        "evidence_exact_subject": true,
+        "evidence_fresh": true,
+        "qualification_passed": false,
+        "activation_effective": true,
+        "conflict_present": false
+      },
+      "expected": {
+        "completion_contract_valid": true,
+        "coverage_complete": true,
+        "evidence_valid": true,
+        "qualification_complete": false,
+        "activation_effective": true,
+        "requirement_satisfied": false,
+        "review_required": false
+      }
+    },
+    {
+      "fixture_id": "P3_TWO_PARTIALS_COMPLETE_AND_QUALIFIED",
+      "requirement_ref": "R1",
+      "bound_contract": {
+        "criterion_id": "CC-R1",
+        "revision": 3
+      },
+      "completion_contract": {
+        "criterion_id": "CC-R1",
+        "requirement_ref": "R1",
+        "authority_class": "GOVERNING_ACCEPTANCE",
+        "authority_ref": "ACC-1",
+        "revision": 3,
+        "required_components": [
+          "A",
+          "B"
+        ],
+        "composition_rule": "ALL_REQUIRED",
+        "evidence_required": true,
+        "qualification_required": true,
+        "activation_required": true
+      },
+      "realizer_declarations": [
+        {
+          "realizer_id": "RZ1",
+          "requirement_ref": "R1",
+          "covers_components": [
+            "A"
+          ],
+          "declaration_valid": true,
+          "self_assessment": null,
+          "completion_override": null
+        },
+        {
+          "realizer_id": "RZ2",
+          "requirement_ref": "R1",
+          "covers_components": [
+            "B"
+          ],
+          "declaration_valid": true,
+          "self_assessment": null,
+          "completion_override": null
+        }
+      ],
+      "source_facts": {
+        "requirement_active": true,
+        "evidence_present": true,
+        "evidence_exact_subject": true,
+        "evidence_fresh": true,
+        "qualification_passed": true,
+        "activation_effective": true,
+        "conflict_present": false
+      },
+      "expected": {
+        "completion_contract_valid": true,
+        "coverage_complete": true,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "requirement_satisfied": true,
+        "review_required": false
+      }
+    },
+    {
+      "fixture_id": "P4_SELF_CERTIFIED_FULL_MISSING_COMPONENT",
+      "requirement_ref": "R1",
+      "bound_contract": {
+        "criterion_id": "CC-R1",
+        "revision": 3
+      },
+      "completion_contract": {
+        "criterion_id": "CC-R1",
+        "requirement_ref": "R1",
+        "authority_class": "GOVERNING_ACCEPTANCE",
+        "authority_ref": "ACC-1",
+        "revision": 3,
+        "required_components": [
+          "A",
+          "B"
+        ],
+        "composition_rule": "ALL_REQUIRED",
+        "evidence_required": true,
+        "qualification_required": true,
+        "activation_required": true
+      },
+      "realizer_declarations": [
+        {
+          "realizer_id": "RZ1",
+          "requirement_ref": "R1",
+          "covers_components": [
+            "A"
+          ],
+          "declaration_valid": true,
+          "self_assessment": "FULL",
+          "completion_override": null
+        }
+      ],
+      "source_facts": {
+        "requirement_active": true,
+        "evidence_present": true,
+        "evidence_exact_subject": true,
+        "evidence_fresh": true,
+        "qualification_passed": true,
+        "activation_effective": true,
+        "conflict_present": false
+      },
+      "expected": {
+        "completion_contract_valid": true,
+        "coverage_complete": false,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "requirement_satisfied": false,
+        "review_required": false
+      }
+    },
+    {
+      "fixture_id": "P5_REALIZER_SUPPLIED_CRITERION",
+      "requirement_ref": "R1",
+      "bound_contract": {
+        "criterion_id": "CC-R1",
+        "revision": 3
+      },
+      "completion_contract": {
+        "criterion_id": "CC-R1",
+        "requirement_ref": "R1",
+        "authority_class": "GOVERNING_ACCEPTANCE",
+        "authority_ref": "ACC-1",
+        "revision": 3,
+        "required_components": [
+          "A",
+          "B"
+        ],
+        "composition_rule": "ALL_REQUIRED",
+        "evidence_required": true,
+        "qualification_required": true,
+        "activation_required": true
+      },
+      "realizer_declarations": [
+        {
+          "realizer_id": "RZ1",
+          "requirement_ref": "R1",
+          "covers_components": [
+            "A"
+          ],
+          "declaration_valid": true,
+          "self_assessment": "FULL",
+          "completion_override": {
+            "criterion_id": "LOCAL-RZ1",
+            "authority_class": "REALIZER",
+            "required_components": [
+              "A"
+            ],
+            "composition_rule": "ALL_REQUIRED"
+          }
+        }
+      ],
+      "source_facts": {
+        "requirement_active": true,
+        "evidence_present": true,
+        "evidence_exact_subject": true,
+        "evidence_fresh": true,
+        "qualification_passed": true,
+        "activation_effective": true,
+        "conflict_present": false
+      },
+      "expected": {
+        "completion_contract_valid": false,
+        "coverage_complete": false,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "requirement_satisfied": false,
+        "review_required": true
+      }
+    },
+    {
+      "fixture_id": "P6_ACCEPTED_DOMAIN_CRITERION",
+      "requirement_ref": "R1",
+      "bound_contract": {
+        "criterion_id": "CC-R1",
+        "revision": 3
+      },
+      "completion_contract": {
+        "criterion_id": "CC-R1",
+        "requirement_ref": "R1",
+        "authority_class": "ACCEPTED_DOMAIN_CONTRACT",
+        "authority_ref": "DOMAIN-POLICY-7",
+        "revision": 3,
+        "required_components": [
+          "A",
+          "B"
+        ],
+        "composition_rule": "ALL_REQUIRED",
+        "evidence_required": true,
+        "qualification_required": true,
+        "activation_required": true
+      },
+      "realizer_declarations": [
+        {
+          "realizer_id": "RZ1",
+          "requirement_ref": "R1",
+          "covers_components": [
+            "A",
+            "B"
+          ],
+          "declaration_valid": true,
+          "self_assessment": null,
+          "completion_override": null
+        }
+      ],
+      "source_facts": {
+        "requirement_active": true,
+        "evidence_present": true,
+        "evidence_exact_subject": true,
+        "evidence_fresh": true,
+        "qualification_passed": true,
+        "activation_effective": true,
+        "conflict_present": false
+      },
+      "expected": {
+        "completion_contract_valid": true,
+        "coverage_complete": true,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "requirement_satisfied": true,
+        "review_required": false
+      }
+    },
+    {
+      "fixture_id": "P7_STALE_CRITERION_REVISION",
+      "requirement_ref": "R1",
+      "bound_contract": {
+        "criterion_id": "CC-R1",
+        "revision": 3
+      },
+      "completion_contract": {
+        "criterion_id": "CC-R1",
+        "requirement_ref": "R1",
+        "authority_class": "GOVERNING_ACCEPTANCE",
+        "authority_ref": "ACC-1",
+        "revision": 2,
+        "required_components": [
+          "A",
+          "B"
+        ],
+        "composition_rule": "ALL_REQUIRED",
+        "evidence_required": true,
+        "qualification_required": true,
+        "activation_required": true
+      },
+      "realizer_declarations": [
+        {
+          "realizer_id": "RZ1",
+          "requirement_ref": "R1",
+          "covers_components": [
+            "A",
+            "B"
+          ],
+          "declaration_valid": true,
+          "self_assessment": null,
+          "completion_override": null
+        }
+      ],
+      "source_facts": {
+        "requirement_active": true,
+        "evidence_present": true,
+        "evidence_exact_subject": true,
+        "evidence_fresh": true,
+        "qualification_passed": true,
+        "activation_effective": true,
+        "conflict_present": false
+      },
+      "expected": {
+        "completion_contract_valid": false,
+        "coverage_complete": false,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "requirement_satisfied": false,
+        "review_required": true
+      }
+    },
+    {
+      "fixture_id": "P8_DUPLICATE_PARTIALS",
+      "requirement_ref": "R1",
+      "bound_contract": {
+        "criterion_id": "CC-R1",
+        "revision": 3
+      },
+      "completion_contract": {
+        "criterion_id": "CC-R1",
+        "requirement_ref": "R1",
+        "authority_class": "GOVERNING_ACCEPTANCE",
+        "authority_ref": "ACC-1",
+        "revision": 3,
+        "required_components": [
+          "A",
+          "B"
+        ],
+        "composition_rule": "ALL_REQUIRED",
+        "evidence_required": true,
+        "qualification_required": true,
+        "activation_required": true
+      },
+      "realizer_declarations": [
+        {
+          "realizer_id": "RZ1",
+          "requirement_ref": "R1",
+          "covers_components": [
+            "A"
+          ],
+          "declaration_valid": true,
+          "self_assessment": null,
+          "completion_override": null
+        },
+        {
+          "realizer_id": "RZ2",
+          "requirement_ref": "R1",
+          "covers_components": [
+            "A"
+          ],
+          "declaration_valid": true,
+          "self_assessment": null,
+          "completion_override": null
+        }
+      ],
+      "source_facts": {
+        "requirement_active": true,
+        "evidence_present": true,
+        "evidence_exact_subject": true,
+        "evidence_fresh": true,
+        "qualification_passed": true,
+        "activation_effective": true,
+        "conflict_present": false
+      },
+      "expected": {
+        "completion_contract_valid": true,
+        "coverage_complete": false,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "requirement_satisfied": false,
+        "review_required": false
+      }
+    },
+    {
+      "fixture_id": "P9_UNKNOWN_COMPONENT",
+      "requirement_ref": "R1",
+      "bound_contract": {
+        "criterion_id": "CC-R1",
+        "revision": 3
+      },
+      "completion_contract": {
+        "criterion_id": "CC-R1",
+        "requirement_ref": "R1",
+        "authority_class": "GOVERNING_ACCEPTANCE",
+        "authority_ref": "ACC-1",
+        "revision": 3,
+        "required_components": [
+          "A",
+          "B"
+        ],
+        "composition_rule": "ALL_REQUIRED",
+        "evidence_required": true,
+        "qualification_required": true,
+        "activation_required": true
+      },
+      "realizer_declarations": [
+        {
+          "realizer_id": "RZ1",
+          "requirement_ref": "R1",
+          "covers_components": [
+            "A"
+          ],
+          "declaration_valid": true,
+          "self_assessment": null,
+          "completion_override": null
+        },
+        {
+          "realizer_id": "RZ2",
+          "requirement_ref": "R1",
+          "covers_components": [
+            "C"
+          ],
+          "declaration_valid": true,
+          "self_assessment": null,
+          "completion_override": null
+        }
+      ],
+      "source_facts": {
+        "requirement_active": true,
+        "evidence_present": true,
+        "evidence_exact_subject": true,
+        "evidence_fresh": true,
+        "qualification_passed": true,
+        "activation_effective": true,
+        "conflict_present": false
+      },
+      "expected": {
+        "completion_contract_valid": true,
+        "coverage_complete": false,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": true,
+        "requirement_satisfied": false,
+        "review_required": true
+      }
+    },
+    {
+      "fixture_id": "P10_COMPLETE_COVERAGE_ACTIVATION_MISSING",
+      "requirement_ref": "R1",
+      "bound_contract": {
+        "criterion_id": "CC-R1",
+        "revision": 3
+      },
+      "completion_contract": {
+        "criterion_id": "CC-R1",
+        "requirement_ref": "R1",
+        "authority_class": "GOVERNING_ACCEPTANCE",
+        "authority_ref": "ACC-1",
+        "revision": 3,
+        "required_components": [
+          "A",
+          "B"
+        ],
+        "composition_rule": "ALL_REQUIRED",
+        "evidence_required": true,
+        "qualification_required": true,
+        "activation_required": true
+      },
+      "realizer_declarations": [
+        {
+          "realizer_id": "RZ1",
+          "requirement_ref": "R1",
+          "covers_components": [
+            "A"
+          ],
+          "declaration_valid": true,
+          "self_assessment": null,
+          "completion_override": null
+        },
+        {
+          "realizer_id": "RZ2",
+          "requirement_ref": "R1",
+          "covers_components": [
+            "B"
+          ],
+          "declaration_valid": true,
+          "self_assessment": null,
+          "completion_override": null
+        }
+      ],
+      "source_facts": {
+        "requirement_active": true,
+        "evidence_present": true,
+        "evidence_exact_subject": true,
+        "evidence_fresh": true,
+        "qualification_passed": true,
+        "activation_effective": false,
+        "conflict_present": false
+      },
+      "expected": {
+        "completion_contract_valid": true,
+        "coverage_complete": true,
+        "evidence_valid": true,
+        "qualification_complete": true,
+        "activation_effective": false,
+        "requirement_satisfied": false,
+        "review_required": false
+      }
+    }
+  ]
+}

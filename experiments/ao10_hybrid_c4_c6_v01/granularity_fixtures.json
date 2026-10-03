@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "fixtures": [
+    {
+      "fixture_id": "G1_SINGLE_EFFECT",
+      "accepted_effect_ids": [
+        "E1"
+      ],
+      "requirements": [
+        {
+          "requirement_id": "R-E1",
+          "effect_ids": [
+            "E1"
+          ]
+        }
+      ],
+      "required_sequences": [],
+      "sequences": [],
+      "expected": {
+        "granularity_valid": true,
+        "split_required": false,
+        "missing_effects": [],
+        "duplicate_effects": [],
+        "invalid_multi_effect_requirements": [],
+        "sequence_valid": true,
+        "outcome": "VALID"
+      }
+    },
+    {
+      "fixture_id": "G2_TWO_INDEPENDENT_EFFECTS_SAME_SOURCE",
+      "accepted_effect_ids": [
+        "E1",
+        "E2"
+      ],
+      "requirements": [
+        {
+          "requirement_id": "R-E1-E2",
+          "effect_ids": [
+            "E1",
+            "E2"
+          ]
+        }
+      ],
+      "required_sequences": [],
+      "sequences": [],
+      "expected": {
+        "granularity_valid": false,
+        "split_required": true,
+        "missing_effects": [],
+        "duplicate_effects": [],
+        "invalid_multi_effect_requirements": [
+          "R-E1-E2"
+        ],
+        "sequence_valid": true,
+        "outcome": "SPLIT_REQUIRED"
+      }
+    },
+    {
+      "fixture_id": "G3_ONE_EFFECT_WITH_EVIDENCE_CONDITIONS",
+      "accepted_effect_ids": [
+        "E1"
+      ],
+      "requirements": [
+        {
+          "requirement_id": "R-E1",
+          "effect_ids": [
+            "E1"
+          ]
+        }
+      ],
+      "required_sequences": [],
+      "sequences": [],
+      "expected": {
+        "granularity_valid": true,
+        "split_required": false,
+        "missing_effects": [],
+        "duplicate_effects": [],
+        "invalid_multi_effect_requirements": [],
+        "sequence_valid": true,
+        "outcome": "VALID"
+      }
+    },
+    {
+      "fixture_id": "G4_EFFECT_PLUS_SEQUENCING_CONSEQUENCE",
+      "accepted_effect_ids": [
+        "E1"
+      ],
+      "requirements": [
+        {
+          "requirement_id": "R-E1",
+          "effect_ids": [
+            "E1"
+          ]
+        }
+      ],
+      "required_sequences": [
+        {
+          "sequence_id": "S-Q1-E1",
+          "predecessor_ref": "Q1",
+          "successor_ref": "E1"
+        }
+      ],
+      "sequences": [
+        {
+          "sequence_id": "S-Q1-E1",
+          "predecessor_ref": "Q1",
+          "successor_ref": "E1"
+        }
+      ],
+      "expected": {
+        "granularity_valid": true,
+        "split_required": false,
+        "missing_effects": [],
+        "duplicate_effects": [],
+        "invalid_multi_effect_requirements": [],
+        "sequence_valid": true,
+        "outcome": "VALID_WITH_SEPARATE_SEQUENCE"
+      }
+    }
+  ]
+}

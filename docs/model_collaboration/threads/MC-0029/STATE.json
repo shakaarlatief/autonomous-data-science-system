@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "UNRESOLVED",
-  "phase": "DRP03_HYBRID_C4_C6_IMPLEMENTATION_FREEZE",
+  "phase": "DRP03_HYBRID_C4_C6_EXECUTION",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,7 +81,7 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 464 prospectively freezes HYBRID_C4_C6_V01. The probe tests one REQUIRE per independently acceptable J1 effect, completion-contract authority owned by governing acceptance or an accepted domain contract, deterministic ALL_REQUIRED component closure from natural-owner coverage, and anti-self-certification. Four granularity fixtures and ten completion/PARTIAL fixtures are frozen. Two separately encoded evaluators are required. Hidden R2 item-level material remains sealed. Next actor is ChatGPT to implement the frozen harness and freeze its exact bytes before execution."
+    "notes": "Research 465 freezes the exact HYBRID_C4_C6_V01 implementation. Manifest SHA-256 is a40352df2216127fcbd18e3589115bb3fac2a56c68e633a68e8b8971ee3cbef4 over seven pre-result files. Static validation passed without importing either evaluator and result.json did not exist at freeze time. The frozen harness contains four granularity fixtures, ten completion/PARTIAL fixtures and two separately encoded evaluators. Hidden R2 item-level material remains sealed. Next actor is ChatGPT for exactly one frozen execution."
   },
   "last_transition": {
     "transition_id": "mc0029-drp03-r2-construct-underdetermined",
