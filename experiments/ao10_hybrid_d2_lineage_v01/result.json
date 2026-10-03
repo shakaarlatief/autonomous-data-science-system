@@ -1,0 +1,949 @@
+{
+  "probe_id": "HYBRID_D2_LINEAGE_EXTENSION_V01",
+  "scoring_rule": "Research 486: semantic fields strict; reason_codes diagnostic only",
+  "rows": [
+    {
+      "fixture_id": "F01_CROSSING_REPARTITION_SYNC",
+      "expected": {
+        "fixture_id": "F01_CROSSING_REPARTITION_SYNC",
+        "relation_valid": true,
+        "current_effect_ids": [
+          "S1",
+          "S2"
+        ],
+        "successor_initialization": [
+          {
+            "successor_id": "S1",
+            "mode": "OPEN_RESET",
+            "carried_components": [],
+            "deferral_rebound": false
+          },
+          {
+            "successor_id": "S2",
+            "mode": "OPEN_RESET",
+            "carried_components": [],
+            "deferral_rebound": false
+          }
+        ],
+        "review_required": false,
+        "reason_codes": []
+      },
+      "evaluator_a": {
+        "fixture_id": "F01_CROSSING_REPARTITION_SYNC",
+        "relation_valid": true,
+        "current_effect_ids": [
+          "S1",
+          "S2"
+        ],
+        "successor_initialization": [
+          {
+            "successor_id": "S1",
+            "mode": "OPEN_RESET",
+            "carried_components": [],
+            "deferral_rebound": false
+          },
+          {
+            "successor_id": "S2",
+            "mode": "OPEN_RESET",
+            "carried_components": [],
+            "deferral_rebound": false
+          }
+        ],
+        "review_required": false,
+        "reason_codes": []
+      },
+      "evaluator_b": {
+        "fixture_id": "F01_CROSSING_REPARTITION_SYNC",
+        "relation_valid": true,
+        "current_effect_ids": [
+          "S1",
+          "S2"
+        ],
+        "successor_initialization": [
+          {
+            "successor_id": "S1",
+            "mode": "OPEN_RESET",
+            "carried_components": [],
+            "deferral_rebound": false
+          },
+          {
+            "successor_id": "S2",
+            "mode": "OPEN_RESET",
+            "carried_components": [],
+            "deferral_rebound": false
+          }
+        ],
+        "review_required": false,
+        "reason_codes": []
+      },
+      "semantic": {
+        "a_matches_key": true,
+        "b_matches_key": true,
+        "a_b_agree": true
+      },
+      "full_object_diagnostic": {
+        "a_matches_key": true,
+        "b_matches_key": true,
+        "a_b_agree": true
+      }
+    },
+    {
+      "fixture_id": "F02_CROSSING_REPARTITION_STAGGERED_INVALID",
+      "expected": {
+        "fixture_id": "F02_CROSSING_REPARTITION_STAGGERED_INVALID",
+        "relation_valid": false,
+        "current_effect_ids": [
+          "P1",
+          "P2"
+        ],
+        "successor_initialization": [],
+        "review_required": true,
+        "reason_codes": [
+          "ATOMIC_PREDECESSOR_STAGGER"
+        ]
+      },
+      "evaluator_a": {
+        "fixture_id": "F02_CROSSING_REPARTITION_STAGGERED_INVALID",
+        "relation_valid": false,
+        "current_effect_ids": [
+          "P1",
+          "P2"
+        ],
+        "successor_initialization": [],
+        "review_required": true,
+        "reason_codes": [
+          "ATOMIC_PREDECESSOR_STAGGER"
+        ]
+      },
+      "evaluator_b": {
+        "fixture_id": "F02_CROSSING_REPARTITION_STAGGERED_INVALID",
+        "relation_valid": false,
+        "current_effect_ids": [
+          "P1",
+          "P2"
+        ],
+        "successor_initialization": [],
+        "review_required": true,
+        "reason_codes": [
+          "ATOMIC_PREDECESSOR_STAGGERED_BOUNDARY"
+        ]
+      },
+      "semantic": {
+        "a_matches_key": true,
+        "b_matches_key": true,
+        "a_b_agree": true
+      },
+      "full_object_diagnostic": {
+        "a_matches_key": true,
+        "b_matches_key": false,
+        "a_b_agree": false
+      }
+    },
+    {
+      "fixture_id": "F03_DISJOINT_REPARTITION_STAGED_VALID",
+      "expected": {
+        "fixture_id": "F03_DISJOINT_REPARTITION_STAGED_VALID",
+        "relation_valid": true,
+        "current_effect_ids": [
+          "P2",
+          "S1"
+        ],
+        "successor_initialization": [
+          {
+            "successor_id": "S1",
+            "mode": "OPEN_RESET",
+            "carried_components": [],
+            "deferral_rebound": false
+          },
+          {
+            "successor_id": "S2",
+            "mode": "OPEN_RESET",
+            "carried_components": [],
+            "deferral_rebound": false
+          }
+        ],
+        "review_required": false,
+        "reason_codes": []
+      },
+      "evaluator_a": {
+        "fixture_id": "F03_DISJOINT_REPARTITION_STAGED_VALID",
+        "relation_valid": true,
+        "current_effect_ids": [
+          "P2",
+          "S1"
+        ],
+        "successor_initialization": [
+          {
+            "successor_id": "S1",
+            "mode": "OPEN_RESET",
+            "carried_components": [],
+            "deferral_rebound": false
+          },
+          {
+            "successor_id": "S2",
+            "mode": "OPEN_RESET",
+            "carried_components": [],
+            "deferral_rebound": false
+          }
+        ],
+        "review_required": false,
+        "reason_codes": []
+      },
+      "evaluator_b": {
+        "fixture_id": "F03_DISJOINT_REPARTITION_STAGED_VALID",
+        "relation_valid": true,
+        "current_effect_ids": [
+          "P2",
+          "S1"
+        ],
+        "successor_initialization": [
+          {
+            "successor_id": "S1",
+            "mode": "OPEN_RESET",
+            "carried_components": [],
+            "deferral_rebound": false
+          },
+          {
+            "successor_id": "S2",
+            "mode": "OPEN_RESET",
+            "carried_components": [],
+            "deferral_rebound": false
+          }
+        ],
+        "review_required": false,
+        "reason_codes": []
+      },
+      "semantic": {
+        "a_matches_key": true,
+        "b_matches_key": true,
+        "a_b_agree": true
+      },
+      "full_object_diagnostic": {
+        "a_matches_key": true,
+        "b_matches_key": true,
+        "a_b_agree": true
+      }
+    },
+    {
+      "fixture_id": "F04_UNACCOUNTED_SOURCE_PORTION",
+      "expected": {
+        "fixture_id": "F04_UNACCOUNTED_SOURCE_PORTION",
+        "relation_valid": false,
+        "current_effect_ids": [
+          "P1",
+          "P2"
+        ],
+        "successor_initialization": [],
+        "review_required": true,
+        "reason_codes": [
+          "UNACCOUNTED_SOURCE_PORTION"
+        ]
+      },
+      "evaluator_a": {
+        "fixture_id": "F04_UNACCOUNTED_SOURCE_PORTION",
+        "relation_valid": false,
+        "current_effect_ids": [
+          "P1",
+          "P2"
+        ],
+        "successor_initialization": [],
+        "review_required": true,
+        "reason_codes": [
+          "UNACCOUNTED_SOURCE_PORTION"
+        ]
+      },
+      "evaluator_b": {
+        "fixture_id": "F04_UNACCOUNTED_SOURCE_PORTION",
+        "relation_valid": false,
+        "current_effect_ids": [
+          "P1",
+          "P2"
+        ],
+        "successor_initialization": [],
+        "review_required": true,
+        "reason_codes": [
+          "SOURCE_PORTION_UNACCOUNTED"
+        ]
+      },
+      "semantic": {
+        "a_matches_key": true,
+        "b_matches_key": true,
+        "a_b_agree": true
+      },
+      "full_object_diagnostic": {
+        "a_matches_key": true,
+        "b_matches_key": false,
+        "a_b_agree": false
+      }
+    },
+    {
+      "fixture_id": "F05_SOURCE_PORTION_DOUBLE_MAPPED",
+      "expected": {
+        "fixture_id": "F05_SOURCE_PORTION_DOUBLE_MAPPED",
+        "relation_valid": false,
+        "current_effect_ids": [
+          "P1",
+          "P2"
+        ],
+        "successor_initialization": [],
+        "review_required": true,
+        "reason_codes": [
+          "SOURCE_PORTION_DOUBLE_MAPPED"
+        ]
+      },
+      "evaluator_a": {
+        "fixture_id": "F05_SOURCE_PORTION_DOUBLE_MAPPED",
+        "relation_valid": false,
+        "current_effect_ids": [
+          "P1",
+          "P2"
+        ],
+        "successor_initialization": [],
+        "review_required": true,
+        "reason_codes": [
+          "SOURCE_PORTION_DOUBLE_MAPPED"
+        ]
+      },
+      "evaluator_b": {
+        "fixture_id": "F05_SOURCE_PORTION_DOUBLE_MAPPED",
+        "relation_valid": false,
+        "current_effect_ids": [
+          "P1",
+          "P2"
+        ],
+        "successor_initialization": [],
+        "review_required": true,
+        "reason_codes": [
+          "SOURCE_PORTION_MAPPED_TWICE"
+        ]
+      },
+      "semantic": {
+        "a_matches_key": true,
+        "b_matches_key": true,
+        "a_b_agree": true
+      },
+      "full_object_diagnostic": {
+        "a_matches_key": true,
+        "b_matches_key": false,
+        "a_b_agree": false
+      }
+    },
+    {
+      "fixture_id": "F06_REINSTATE_NEW_ID",
+      "expected": {
+        "fixture_id": "F06_REINSTATE_NEW_ID",
+        "relation_valid": true,
+        "current_effect_ids": [
+          "R1"
+        ],
+        "successor_initialization": [
+          {
+            "successor_id": "R1",
+            "mode": "OPEN_RESET",
+            "carried_components": [],
+            "deferral_rebound": false
+          }
+        ],
+        "review_required": false,
+        "reason_codes": []
+      },
+      "evaluator_a": {
+        "fixture_id": "F06_REINSTATE_NEW_ID",
+        "relation_valid": true,
+        "current_effect_ids": [
+          "R1"
+        ],
+        "successor_initialization": [
+          {
+            "successor_id": "R1",
+            "mode": "OPEN_RESET",
+            "carried_components": [],
+            "deferral_rebound": false
+          }
+        ],
+        "review_required": false,
+        "reason_codes": []
+      },
+      "evaluator_b": {
+        "fixture_id": "F06_REINSTATE_NEW_ID",
+        "relation_valid": true,
+        "current_effect_ids": [
+          "R1"
+        ],
+        "successor_initialization": [
+          {
+            "successor_id": "R1",
+            "mode": "OPEN_RESET",
+            "carried_components": [],
+            "deferral_rebound": false
+          }
+        ],
+        "review_required": false,
+        "reason_codes": []
+      },
+      "semantic": {
+        "a_matches_key": true,
+        "b_matches_key": true,
+        "a_b_agree": true
+      },
+      "full_object_diagnostic": {
+        "a_matches_key": true,
+        "b_matches_key": true,
+        "a_b_agree": true
+      }
+    },
+    {
+      "fixture_id": "F07_REINSTATE_REUSES_ID_INVALID",
+      "expected": {
+        "fixture_id": "F07_REINSTATE_REUSES_ID_INVALID",
+        "relation_valid": false,
+        "current_effect_ids": [],
+        "successor_initialization": [],
+        "review_required": true,
+        "reason_codes": [
+          "REINSTATE_REUSES_RETIRED_ID"
+        ]
+      },
+      "evaluator_a": {
+        "fixture_id": "F07_REINSTATE_REUSES_ID_INVALID",
+        "relation_valid": false,
+        "current_effect_ids": [],
+        "successor_initialization": [],
+        "review_required": true,
+        "reason_codes": [
+          "REINSTATE_REUSES_RETIRED_ID"
+        ]
+      },
+      "evaluator_b": {
+        "fixture_id": "F07_REINSTATE_REUSES_ID_INVALID",
+        "relation_valid": false,
+        "current_effect_ids": [],
+        "successor_initialization": [],
+        "review_required": true,
+        "reason_codes": [
+          "REINSTATE_REUSES_RETIRED_IDENTITY"
+        ]
+      },
+      "semantic": {
+        "a_matches_key": true,
+        "b_matches_key": true,
+        "a_b_agree": true
+      },
+      "full_object_diagnostic": {
+        "a_matches_key": true,
+        "b_matches_key": false,
+        "a_b_agree": false
+      }
+    },
+    {
+      "fixture_id": "F08_REPLACE_DEFAULT_OPEN_RESET",
+      "expected": {
+        "fixture_id": "F08_REPLACE_DEFAULT_OPEN_RESET",
+        "relation_valid": true,
+        "current_effect_ids": [
+          "S1"
+        ],
+        "successor_initialization": [
+          {
+            "successor_id": "S1",
+            "mode": "OPEN_RESET",
+            "carried_components": [],
+            "deferral_rebound": false
+          }
+        ],
+        "review_required": false,
+        "reason_codes": []
+      },
+      "evaluator_a": {
+        "fixture_id": "F08_REPLACE_DEFAULT_OPEN_RESET",
+        "relation_valid": true,
+        "current_effect_ids": [
+          "S1"
+        ],
+        "successor_initialization": [
+          {
+            "successor_id": "S1",
+            "mode": "OPEN_RESET",
+            "carried_components": [],
+            "deferral_rebound": false
+          }
+        ],
+        "review_required": false,
+        "reason_codes": []
+      },
+      "evaluator_b": {
+        "fixture_id": "F08_REPLACE_DEFAULT_OPEN_RESET",
+        "relation_valid": true,
+        "current_effect_ids": [
+          "S1"
+        ],
+        "successor_initialization": [
+          {
+            "successor_id": "S1",
+            "mode": "OPEN_RESET",
+            "carried_components": [],
+            "deferral_rebound": false
+          }
+        ],
+        "review_required": false,
+        "reason_codes": []
+      },
+      "semantic": {
+        "a_matches_key": true,
+        "b_matches_key": true,
+        "a_b_agree": true
+      },
+      "full_object_diagnostic": {
+        "a_matches_key": true,
+        "b_matches_key": true,
+        "a_b_agree": true
+      }
+    },
+    {
+      "fixture_id": "F09_REPLACE_VALID_REALIZATION_CARRY",
+      "expected": {
+        "fixture_id": "F09_REPLACE_VALID_REALIZATION_CARRY",
+        "relation_valid": true,
+        "current_effect_ids": [
+          "S1"
+        ],
+        "successor_initialization": [
+          {
+            "successor_id": "S1",
+            "mode": "CARRY_FACTS_FOR_REVALIDATION",
+            "carried_components": [
+              "r1",
+              "r2"
+            ],
+            "deferral_rebound": false
+          }
+        ],
+        "review_required": false,
+        "reason_codes": []
+      },
+      "evaluator_a": {
+        "fixture_id": "F09_REPLACE_VALID_REALIZATION_CARRY",
+        "relation_valid": true,
+        "current_effect_ids": [
+          "S1"
+        ],
+        "successor_initialization": [
+          {
+            "successor_id": "S1",
+            "mode": "CARRY_FACTS_FOR_REVALIDATION",
+            "carried_components": [
+              "r1",
+              "r2"
+            ],
+            "deferral_rebound": false
+          }
+        ],
+        "review_required": false,
+        "reason_codes": []
+      },
+      "evaluator_b": {
+        "fixture_id": "F09_REPLACE_VALID_REALIZATION_CARRY",
+        "relation_valid": true,
+        "current_effect_ids": [
+          "S1"
+        ],
+        "successor_initialization": [
+          {
+            "successor_id": "S1",
+            "mode": "CARRY_FACTS_FOR_REVALIDATION",
+            "carried_components": [
+              "r1",
+              "r2"
+            ],
+            "deferral_rebound": false
+          }
+        ],
+        "review_required": false,
+        "reason_codes": []
+      },
+      "semantic": {
+        "a_matches_key": true,
+        "b_matches_key": true,
+        "a_b_agree": true
+      },
+      "full_object_diagnostic": {
+        "a_matches_key": true,
+        "b_matches_key": true,
+        "a_b_agree": true
+      }
+    },
+    {
+      "fixture_id": "F10_REPLACE_STALE_CARRY_FACTS",
+      "expected": {
+        "fixture_id": "F10_REPLACE_STALE_CARRY_FACTS",
+        "relation_valid": true,
+        "current_effect_ids": [
+          "S1"
+        ],
+        "successor_initialization": [
+          {
+            "successor_id": "S1",
+            "mode": "OPEN_RESET",
+            "carried_components": [],
+            "deferral_rebound": false
+          }
+        ],
+        "review_required": true,
+        "reason_codes": [
+          "CARRY_STALE_FACTS"
+        ]
+      },
+      "evaluator_a": {
+        "fixture_id": "F10_REPLACE_STALE_CARRY_FACTS",
+        "relation_valid": true,
+        "current_effect_ids": [
+          "S1"
+        ],
+        "successor_initialization": [
+          {
+            "successor_id": "S1",
+            "mode": "OPEN_RESET",
+            "carried_components": [],
+            "deferral_rebound": false
+          }
+        ],
+        "review_required": true,
+        "reason_codes": [
+          "CARRY_STALE_FACTS"
+        ]
+      },
+      "evaluator_b": {
+        "fixture_id": "F10_REPLACE_STALE_CARRY_FACTS",
+        "relation_valid": true,
+        "current_effect_ids": [
+          "S1"
+        ],
+        "successor_initialization": [
+          {
+            "successor_id": "S1",
+            "mode": "OPEN_RESET",
+            "carried_components": [],
+            "deferral_rebound": false
+          }
+        ],
+        "review_required": true,
+        "reason_codes": [
+          "CARRY_REJECTED",
+          "CARRY_SOURCE_FACTS_STALE"
+        ]
+      },
+      "semantic": {
+        "a_matches_key": true,
+        "b_matches_key": true,
+        "a_b_agree": true
+      },
+      "full_object_diagnostic": {
+        "a_matches_key": true,
+        "b_matches_key": false,
+        "a_b_agree": false
+      }
+    },
+    {
+      "fixture_id": "F11_REPLACE_INVALID_CARRY_AUTHORITY",
+      "expected": {
+        "fixture_id": "F11_REPLACE_INVALID_CARRY_AUTHORITY",
+        "relation_valid": true,
+        "current_effect_ids": [
+          "S1"
+        ],
+        "successor_initialization": [
+          {
+            "successor_id": "S1",
+            "mode": "OPEN_RESET",
+            "carried_components": [],
+            "deferral_rebound": false
+          }
+        ],
+        "review_required": true,
+        "reason_codes": [
+          "CARRY_AUTHORITY_INVALID"
+        ]
+      },
+      "evaluator_a": {
+        "fixture_id": "F11_REPLACE_INVALID_CARRY_AUTHORITY",
+        "relation_valid": true,
+        "current_effect_ids": [
+          "S1"
+        ],
+        "successor_initialization": [
+          {
+            "successor_id": "S1",
+            "mode": "OPEN_RESET",
+            "carried_components": [],
+            "deferral_rebound": false
+          }
+        ],
+        "review_required": true,
+        "reason_codes": [
+          "CARRY_AUTHORITY_INVALID"
+        ]
+      },
+      "evaluator_b": {
+        "fixture_id": "F11_REPLACE_INVALID_CARRY_AUTHORITY",
+        "relation_valid": true,
+        "current_effect_ids": [
+          "S1"
+        ],
+        "successor_initialization": [
+          {
+            "successor_id": "S1",
+            "mode": "OPEN_RESET",
+            "carried_components": [],
+            "deferral_rebound": false
+          }
+        ],
+        "review_required": true,
+        "reason_codes": [
+          "CARRY_AUTHORITY_INVALID",
+          "CARRY_REJECTED"
+        ]
+      },
+      "semantic": {
+        "a_matches_key": true,
+        "b_matches_key": true,
+        "a_b_agree": true
+      },
+      "full_object_diagnostic": {
+        "a_matches_key": true,
+        "b_matches_key": false,
+        "a_b_agree": false
+      }
+    },
+    {
+      "fixture_id": "F12_DEFERRAL_NOT_AUTO_CARRIED",
+      "expected": {
+        "fixture_id": "F12_DEFERRAL_NOT_AUTO_CARRIED",
+        "relation_valid": true,
+        "current_effect_ids": [
+          "S1"
+        ],
+        "successor_initialization": [
+          {
+            "successor_id": "S1",
+            "mode": "OPEN_RESET",
+            "carried_components": [],
+            "deferral_rebound": false
+          }
+        ],
+        "review_required": false,
+        "reason_codes": []
+      },
+      "evaluator_a": {
+        "fixture_id": "F12_DEFERRAL_NOT_AUTO_CARRIED",
+        "relation_valid": true,
+        "current_effect_ids": [
+          "S1"
+        ],
+        "successor_initialization": [
+          {
+            "successor_id": "S1",
+            "mode": "OPEN_RESET",
+            "carried_components": [],
+            "deferral_rebound": false
+          }
+        ],
+        "review_required": false,
+        "reason_codes": []
+      },
+      "evaluator_b": {
+        "fixture_id": "F12_DEFERRAL_NOT_AUTO_CARRIED",
+        "relation_valid": true,
+        "current_effect_ids": [
+          "S1"
+        ],
+        "successor_initialization": [
+          {
+            "successor_id": "S1",
+            "mode": "OPEN_RESET",
+            "carried_components": [],
+            "deferral_rebound": false
+          }
+        ],
+        "review_required": false,
+        "reason_codes": [
+          "DEFERRAL_NOT_CARRIED"
+        ]
+      },
+      "semantic": {
+        "a_matches_key": true,
+        "b_matches_key": true,
+        "a_b_agree": true
+      },
+      "full_object_diagnostic": {
+        "a_matches_key": true,
+        "b_matches_key": false,
+        "a_b_agree": false
+      }
+    },
+    {
+      "fixture_id": "F13_DEFERRAL_EXPLICITLY_REBOUND",
+      "expected": {
+        "fixture_id": "F13_DEFERRAL_EXPLICITLY_REBOUND",
+        "relation_valid": true,
+        "current_effect_ids": [
+          "S1"
+        ],
+        "successor_initialization": [
+          {
+            "successor_id": "S1",
+            "mode": "OPEN_RESET",
+            "carried_components": [],
+            "deferral_rebound": true
+          }
+        ],
+        "review_required": false,
+        "reason_codes": []
+      },
+      "evaluator_a": {
+        "fixture_id": "F13_DEFERRAL_EXPLICITLY_REBOUND",
+        "relation_valid": true,
+        "current_effect_ids": [
+          "S1"
+        ],
+        "successor_initialization": [
+          {
+            "successor_id": "S1",
+            "mode": "OPEN_RESET",
+            "carried_components": [],
+            "deferral_rebound": true
+          }
+        ],
+        "review_required": false,
+        "reason_codes": []
+      },
+      "evaluator_b": {
+        "fixture_id": "F13_DEFERRAL_EXPLICITLY_REBOUND",
+        "relation_valid": true,
+        "current_effect_ids": [
+          "S1"
+        ],
+        "successor_initialization": [
+          {
+            "successor_id": "S1",
+            "mode": "OPEN_RESET",
+            "carried_components": [],
+            "deferral_rebound": true
+          }
+        ],
+        "review_required": false,
+        "reason_codes": [
+          "DEFERRAL_REBOUND"
+        ]
+      },
+      "semantic": {
+        "a_matches_key": true,
+        "b_matches_key": true,
+        "a_b_agree": true
+      },
+      "full_object_diagnostic": {
+        "a_matches_key": true,
+        "b_matches_key": false,
+        "a_b_agree": false
+      }
+    },
+    {
+      "fixture_id": "F14_CARRY_FORWARD_CONTINUITY",
+      "expected": {
+        "fixture_id": "F14_CARRY_FORWARD_CONTINUITY",
+        "relation_valid": true,
+        "current_effect_ids": [
+          "P1"
+        ],
+        "successor_initialization": [
+          {
+            "successor_id": "P1",
+            "mode": "CONTINUITY",
+            "carried_components": [
+              "c1",
+              "c2"
+            ],
+            "deferral_rebound": false
+          }
+        ],
+        "review_required": false,
+        "reason_codes": []
+      },
+      "evaluator_a": {
+        "fixture_id": "F14_CARRY_FORWARD_CONTINUITY",
+        "relation_valid": true,
+        "current_effect_ids": [
+          "P1"
+        ],
+        "successor_initialization": [
+          {
+            "successor_id": "P1",
+            "mode": "CONTINUITY",
+            "carried_components": [
+              "c1",
+              "c2"
+            ],
+            "deferral_rebound": false
+          }
+        ],
+        "review_required": false,
+        "reason_codes": []
+      },
+      "evaluator_b": {
+        "fixture_id": "F14_CARRY_FORWARD_CONTINUITY",
+        "relation_valid": true,
+        "current_effect_ids": [
+          "P1"
+        ],
+        "successor_initialization": [
+          {
+            "successor_id": "P1",
+            "mode": "CONTINUITY",
+            "carried_components": [
+              "c1",
+              "c2"
+            ],
+            "deferral_rebound": false
+          }
+        ],
+        "review_required": false,
+        "reason_codes": []
+      },
+      "semantic": {
+        "a_matches_key": true,
+        "b_matches_key": true,
+        "a_b_agree": true
+      },
+      "full_object_diagnostic": {
+        "a_matches_key": true,
+        "b_matches_key": true,
+        "a_b_agree": true
+      }
+    }
+  ],
+  "substantive_fixture_conditions": {
+    "F01_CROSSING_REPARTITION_SYNC": true,
+    "F02_CROSSING_REPARTITION_STAGGERED_INVALID": true,
+    "F03_DISJOINT_REPARTITION_STAGED_VALID": true,
+    "F06_REINSTATE_NEW_ID": true,
+    "F07_REINSTATE_REUSES_ID_INVALID": true,
+    "F08_REPLACE_DEFAULT_OPEN_RESET": true,
+    "F09_REPLACE_VALID_REALIZATION_CARRY": true,
+    "F10_REPLACE_STALE_CARRY_FACTS": true,
+    "F11_REPLACE_INVALID_CARRY_AUTHORITY": true,
+    "F12_DEFERRAL_NOT_AUTO_CARRIED": true,
+    "F13_DEFERRAL_EXPLICITLY_REBOUND": true,
+    "F14_CARRY_FORWARD_CONTINUITY": true
+  },
+  "summary": {
+    "fixture_total": 14,
+    "semantic_a_matches_key": 14,
+    "semantic_b_matches_key": 14,
+    "semantic_a_b_agree": 14,
+    "semantic_all_match": true,
+    "full_object_a_matches_key": 14,
+    "full_object_b_matches_key": 6,
+    "full_object_a_b_agree": 6,
+    "substantive_conditions_pass": true,
+    "outcome": "D2_LINEAGE_EXTENSION_PLAUSIBLE"
+  }
+}
