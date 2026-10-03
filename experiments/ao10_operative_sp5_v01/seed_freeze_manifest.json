@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "probe_id": "OPERATIVE-SP5-V01",
+  "authorization_commit": "b3f06a414697b8ac99fd57fcae04159ab01eb35c",
+  "placement_executed": false,
+  "files": {
+    "clean_units.json": "dc7bc193c25b33a1cc7067b868ad97085403c45cca49d46811950ed042888b3b",
+    "corruption_templates.json": "aa1fa9f2140585537cf1b733afeab1e81434fe52f266f6cb34a01f8f7a3a772e",
+    "seed_algorithm.py": "8acd9f490cce6bbee3a30c0efdd0e07a4a664ab4942f2155cf1a33c5e71c4bd5"
+  }
+}

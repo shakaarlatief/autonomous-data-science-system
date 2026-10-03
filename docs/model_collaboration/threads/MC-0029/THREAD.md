@@ -1094,3 +1094,25 @@ Current boundary:
     SEED_PLACEMENT_COMPUTED=false
     SEEDED_PACKET_CREATED=false
     NEXT=FREEZE_SP5_DETERMINISTIC_SEED_ALGORITHM
+
+## SP-5 deterministic seed mechanism freeze
+
+Research 454 freezes the placement implementation before any placement is computed.
+
+    authorization commit
+        b3f06a414697b8ac99fd57fcae04159ab01eb35c
+
+    compatible alteration templates
+        12
+
+    freeze manifest SHA-256
+        338a95a8c63f339bc5caf0c0d4eb53fcd2abf5b6bbeaa62585631de64d308d09
+
+The placement code has only been syntax-checked, not executed.
+
+Current boundary:
+
+    PHASE=DRP03_OPERATIVE_SP5_SEED_PLACEMENT_RUN
+    SEED_PLACEMENT_COMPUTED=false
+    SEEDED_PACKET_CREATED=false
+    NEXT=EXECUTE_SP5_SEED_PLACEMENT_ONCE

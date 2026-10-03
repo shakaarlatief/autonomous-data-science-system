@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "probe_id": "OPERATIVE-SP5-V01",
+  "error_order": [
+    "E1_WRONG_OWNER",
+    "E2_MISSING_GATE_CONDITION",
+    "E3_BROKEN_PROHIBITION_SCOPE"
+  ],
+  "compatibility": {
+    "E1_WRONG_OWNER": [
+      "U2",
+      "U3",
+      "U4",
+      "U5",
+      "U6"
+    ],
+    "E2_MISSING_GATE_CONDITION": [
+      "U2",
+      "U3",
+      "U4"
+    ],
+    "E3_BROKEN_PROHIBITION_SCOPE": [
+      "U1",
+      "U3",
+      "U4",
+      "U5"
+    ]
+  },
+  "templates": {
+    "E1_WRONG_OWNER": {
+      "U2": {
+        "seeded_view": "The semantic detector or reviewer may authorize hidden R2 item-level exposure when it judges exposure useful, with any evidence-burn consequences recorded afterward.",
+        "detection_criterion": "Identify that a detector or reviewer is not the authority that may authorize hidden R2 exposure; the separate prospective owner-governance route is required."
+      },
+      "U3": {
+        "seeded_view": "The delivery or engineering workstream may authorize physical migration or operational authority switch once it judges successor development technically ready.",
+        "detection_criterion": "Identify that delivery or engineering technical readiness does not own or grant migration or authority-switch authorization; separate governing authorization is required."
+      },
+      "U4": {
+        "seeded_view": "The ChatGPT task owner may authorize SP-5 seeded-error owner-review execution once the development protocol is frozen.",
+        "detection_criterion": "Identify that ChatGPT or task-owner authorization is insufficient; explicit informed authorization must come from the human owner."
+      },
+      "U5": {
+        "seeded_view": "The model or provider that generated a semantic interpretation may decide that its output becomes governing authority when its confidence is sufficiently high.",
+        "detection_criterion": "Identify that model or provider confidence cannot confer governing authority; admission through the proper governing path is required."
+      },
+      "U6": {
+        "seeded_view": "The generic OPERATIVE layer owns the detailed machine semantics and may override a domain-native accepted contract when cross-domain consistency requires it.",
+        "detection_criterion": "Identify that detailed semantics remain owned by the domain-native accepted contract; OPERATIVE references rather than overrides that authority."
+      }
+    },
+    "E2_MISSING_GATE_CONDITION": {
+      "U2": {
+        "seeded_view": "Hidden R2 item-level semantics may be exposed after a separate prospective owner route records the exposure purpose and the evidence-burn consequence.",
+        "detection_criterion": "Identify the missing replacement-confirmation consequence or plan as a required exposure prerequisite."
+      },
+      "U3": {
+        "seeded_view": "Physical migration or operational authority switch may proceed once successor semantic development is complete.",
+        "detection_criterion": "Identify that completion of successor semantic development is not sufficient; separate governing authorization is still required."
+      },
+      "U4": {
+        "seeded_view": "SP-5 seeded-error owner-review execution may begin once the seeded packet and scoring rules are frozen.",
+        "detection_criterion": "Identify the missing explicit informed human-owner authorization prerequisite."
+      }
+    },
+    "E3_BROKEN_PROHIBITION_SCOPE": {
+      "U1": {
+        "seeded_view": "R2 may not be retried, relabeled, threshold-tuned, or converted into a final key, but owner adjudication may rescue the result if the construct remains underdetermined.",
+        "detection_criterion": "Identify the unauthorized owner-adjudication rescue exception; owner adjudication may not rescue the failed R2 construct gate."
+      },
+      "U3": {
+        "seeded_view": "Research 436 successor development does not authorize operational authority switch, but it does authorize physical migration for development-only changes.",
+        "detection_criterion": "Identify the improper narrowing that permits physical migration; Research 436 authorizes neither migration nor authority switch by itself."
+      },
+      "U4": {
+        "seeded_view": "SP-5 seeded-error owner review requires explicit informed owner authorization unless the errors are confined to development-only material.",
+        "detection_criterion": "Identify the unauthorized development-only exception; explicit informed owner authorization remains required."
+      },
+      "U5": {
+        "seeded_view": "Unaccepted model or LLM semantic output may not become governing authority unless a sufficiently high confidence threshold is met.",
+        "detection_criterion": "Identify the unauthorized confidence-based exception; unaccepted model output cannot become authority by confidence alone."
+      }
+    }
+  }
+}

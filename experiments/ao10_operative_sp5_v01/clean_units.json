@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "probe_id": "OPERATIVE-SP5-V01",
+  "authorization_commit": "b3f06a414697b8ac99fd57fcae04159ab01eb35c",
+  "units": [
+    {
+      "unit_id": "U1",
+      "context": "Frozen R2 result handling",
+      "origin": "SP2-C1 / C1-CL02",
+      "clean_view": "R2 may not be retried, relabeled, threshold-tuned, converted into a final key, or rescued by owner adjudication."
+    },
+    {
+      "unit_id": "U2",
+      "context": "Hidden R2 evidence exposure",
+      "origin": "SP2-C1 / C1-CL03",
+      "clean_view": "Hidden R2 item-level semantics may be exposed only after a separate prospective owner route records the exposure purpose, the evidence-burn consequence, and the replacement-confirmation consequence."
+    },
+    {
+      "unit_id": "U3",
+      "context": "Successor-development authority boundary",
+      "origin": "SP2-C1 / C1-CL04",
+      "clean_view": "Research 436 successor development does not itself authorize physical migration or operational authority switch; either requires separate governing authorization."
+    },
+    {
+      "unit_id": "U4",
+      "context": "Seeded owner-review authorization",
+      "origin": "SP2-C2 / C2-CL04",
+      "clean_view": "SP-5 seeded-error owner-review execution requires explicit informed owner authorization."
+    },
+    {
+      "unit_id": "U5",
+      "context": "Model-generated semantic authority",
+      "origin": "SP2-C2 / C2-CL06",
+      "clean_view": "Unaccepted model or LLM semantic output may not become governing authority merely because it was generated."
+    },
+    {
+      "unit_id": "U6",
+      "context": "Domain-native semantic ownership",
+      "origin": "SP2-C3 / C3-CL04",
+      "clean_view": "When a domain-native accepted contract already owns detailed machine semantics, OPERATIVE references that contract rather than creating a second independent authority copy."
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-10-02
-**Status:** MC-0029 OPEN / OPERATIVE SP-5 OWNER AUTHORIZED / SEED ALGORITHM FREEZE NEXT / NO PLACEMENT COMPUTED / R2 UNDERDETERMINED PRESERVED / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / OPERATIVE SP-5 PLACEMENT MECHANISM FROZEN / ONE PLACEMENT RUN NEXT / NO OWNER PACKET SHOWN / R2 UNDERDETERMINED PRESERVED / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
