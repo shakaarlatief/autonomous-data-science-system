@@ -1354,3 +1354,23 @@ Current boundary:
     NEXT_ACTOR=chatgpt
     HIDDEN_R2_ITEM_DETAILS=SEALED
     NEXT=EXECUTE_HYBRID_C4_C6_V01_ONCE
+
+## HYBRID C4-C6 result
+
+Research 466 records:
+
+    C4_C6_MECHANISM_PLAUSIBLE
+
+Observed:
+
+    granularity fixtures       4 / 4
+    completion fixtures        10 / 10
+    evaluator agreement        exact
+    self-certification blocked yes
+
+Current boundary:
+
+    PHASE=DRP03_HYBRID_C7_PROTOCOL_FREEZE
+    NEXT_ACTOR=chatgpt
+    HIDDEN_R2_ITEM_DETAILS=SEALED
+    NEXT=FREEZE_HYBRID_C7_REQUIREMENT_LINEAGE_MICROPROBE

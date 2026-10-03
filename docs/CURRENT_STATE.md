@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 801
+**Checkpoint:** 802
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: thin-centred hybrid C4-C6 frozen execution / Specification 028 reconciliation
+## Current active stage: thin-centred hybrid C7 requirement-lineage probe freeze / Specification 028 reconciliation
+
+Checkpoint 802 / Research 466 records the single frozen HYBRID_C4_C6_V01 execution as C4_C6_MECHANISM_PLAUSIBLE. All four granularity fixtures and all ten completion/PARTIAL fixtures matched frozen expectations in both separately encoded evaluators, evaluator agreement was exact, negative controls remained visible, and realizer self-certification was blocked. The supported mechanism is one REQUIRE per independently acceptable governing effect, completion criteria owned by governing acceptance or an exact accepted domain contract, and deterministic component-set composition for bounded ALL_REQUIRED completion. Coverage remains distinct from qualification, activation and final satisfaction. The next bounded question is C7 N:M requirement lineage.
 
 Checkpoint 801 / Research 465 freezes the exact HYBRID_C4_C6_V01 implementation before any business-rule execution. The seven pre-result files are bound by manifest SHA-256 a40352df2216127fcbd18e3589115bb3fac2a56c68e633a68e8b8971ee3cbef4. Static validation passed without importing either evaluator; result.json did not exist at freeze time. The frozen harness contains four granularity fixtures, ten completion/PARTIAL fixtures, two separately encoded evaluators, and explicit checks that realizer self-assessment cannot define governing completion. One execution is next.
 
