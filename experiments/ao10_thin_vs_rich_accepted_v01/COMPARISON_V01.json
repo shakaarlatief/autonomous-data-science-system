@@ -1,0 +1,594 @@
+{
+  "schema_version": 1,
+  "comparison_id": "THIN-RICH-ACCEPTED-V01",
+  "protocol": "Research 459",
+  "fixed_evidence_base": "63ab32e93b3c6d99f2c4df64f795446b26e1ad6d",
+  "cq_count": 37,
+  "cq_audit": [
+    {
+      "cq_id": "CQ-AO-01",
+      "question": "What explicit owner directives constrain/permit/prohibit/bound the current cycle?",
+      "consequence_class": "ROUTING",
+      "answer_shape": "STRUCTURED_DECISION",
+      "thin_answerable": true,
+      "thin_route": "NATURAL_DOMAIN_OR_CONTROL_OBJECT",
+      "rich_answerable": true,
+      "rich_unique_required": false,
+      "reason": "SP-1 assigns the answer to a bounded natural-owner/control object rather than requiring a universal governing-unit field."
+    },
+    {
+      "cq_id": "CQ-AO-02",
+      "question": "Do event + bounded context activate mandatory control obligations or the fast path?",
+      "consequence_class": "ROUTING",
+      "answer_shape": "REFERENCE_SET",
+      "thin_answerable": true,
+      "thin_route": "NATURAL_DOMAIN_OR_CONTROL_OBJECT",
+      "rich_answerable": true,
+      "rich_unique_required": false,
+      "reason": "SP-1 assigns the answer to a bounded natural-owner/control object rather than requiring a universal governing-unit field."
+    },
+    {
+      "cq_id": "CQ-AO-03",
+      "question": "Which governing/risk/supporting sources must be reconstructed before closure?",
+      "consequence_class": "ROUTING",
+      "answer_shape": "REFERENCE_SET",
+      "thin_answerable": true,
+      "thin_route": "NATURAL_DOMAIN_OR_CONTROL_OBJECT",
+      "rich_answerable": true,
+      "rich_unique_required": false,
+      "reason": "SP-1 assigns the answer to a bounded natural-owner/control object rather than requiring a universal governing-unit field."
+    },
+    {
+      "cq_id": "CQ-AO-04",
+      "question": "What process/workstream/collaboration/execution route is valid?",
+      "consequence_class": "ROUTING",
+      "answer_shape": "STRUCTURED_DECISION",
+      "thin_answerable": true,
+      "thin_route": "NATURAL_DOMAIN_OR_CONTROL_OBJECT",
+      "rich_answerable": true,
+      "rich_unique_required": false,
+      "reason": "SP-1 assigns the answer to a bounded natural-owner/control object rather than requiring a universal governing-unit field."
+    },
+    {
+      "cq_id": "CQ-AO-05",
+      "question": "Can governing authority be resolved for the exact subject/revision/consequence?",
+      "consequence_class": "AUTHORITY",
+      "answer_shape": "STRUCTURED_DECISION",
+      "thin_answerable": true,
+      "thin_route": "NATURAL_DOMAIN_OR_CONTROL_OBJECT",
+      "rich_answerable": true,
+      "rich_unique_required": false,
+      "reason": "SP-1 assigns the answer to a bounded natural-owner/control object rather than requiring a universal governing-unit field."
+    },
+    {
+      "cq_id": "CQ-AO-06",
+      "question": "Which permissions/prohibitions/gates/sequencing/required effects govern the exact action?",
+      "consequence_class": "AUTHORITY",
+      "answer_shape": "REFERENCE_SET",
+      "thin_answerable": true,
+      "thin_route": "ACCEPTED_TYPED_CLAUSE_PLUS_BOUND_DOMAIN_INPUTS",
+      "rich_answerable": true,
+      "rich_unique_required": false,
+      "reason": "SP-1 already maps this machine-consequential question to one or more bounded clause forms plus explicit inputs."
+    },
+    {
+      "cq_id": "CQ-AO-07",
+      "question": "Does proposed dispatch/mutation preserve all mandatory constraints/order/prohibitions/postconditions?",
+      "consequence_class": "ADMISSION",
+      "answer_shape": "ENUM",
+      "thin_answerable": true,
+      "thin_route": "ACCEPTED_TYPED_CLAUSE_PLUS_BOUND_DOMAIN_INPUTS",
+      "rich_answerable": true,
+      "rich_unique_required": false,
+      "reason": "SP-1 already maps this machine-consequential question to one or more bounded clause forms plus explicit inputs."
+    },
+    {
+      "cq_id": "CQ-AO-08",
+      "question": "What postflight control consequences become mandatory?",
+      "consequence_class": "ROUTING",
+      "answer_shape": "REFERENCE_SET",
+      "thin_answerable": true,
+      "thin_route": "NATURAL_DOMAIN_OR_CONTROL_OBJECT",
+      "rich_answerable": true,
+      "rich_unique_required": false,
+      "reason": "SP-1 assigns the answer to a bounded natural-owner/control object rather than requiring a universal governing-unit field."
+    },
+    {
+      "cq_id": "CQ-EV-01",
+      "question": "Is observed pressure a conformance defect or an architecture-evolution question?",
+      "consequence_class": "EVOLUTION",
+      "answer_shape": "ENUM",
+      "thin_answerable": true,
+      "thin_route": "NATURAL_DOMAIN_OR_CONTROL_OBJECT",
+      "rich_answerable": true,
+      "rich_unique_required": false,
+      "reason": "SP-1 assigns the answer to a bounded natural-owner/control object rather than requiring a universal governing-unit field."
+    },
+    {
+      "cq_id": "CQ-EV-02",
+      "question": "Which exact accepted contract/revision and narrow scope are affected?",
+      "consequence_class": "EVOLUTION",
+      "answer_shape": "REFERENCE_SET",
+      "thin_answerable": true,
+      "thin_route": "NATURAL_DOMAIN_OR_CONTROL_OBJECT",
+      "rich_answerable": true,
+      "rich_unique_required": false,
+      "reason": "SP-1 assigns the answer to a bounded natural-owner/control object rather than requiring a universal governing-unit field."
+    },
+    {
+      "cq_id": "CQ-EV-03",
+      "question": "What accepted evolution disposition governs the case?",
+      "consequence_class": "EVOLUTION",
+      "answer_shape": "ENUM",
+      "thin_answerable": true,
+      "thin_route": "ACCEPTED_TYPED_CLAUSE_PLUS_BOUND_DOMAIN_INPUTS",
+      "rich_answerable": true,
+      "rich_unique_required": false,
+      "reason": "SP-1 already maps this machine-consequential question to one or more bounded clause forms plus explicit inputs."
+    },
+    {
+      "cq_id": "CQ-EV-04",
+      "question": "What hold/realization/migration/review/qualification consequences follow an accepted disposition?",
+      "consequence_class": "EVOLUTION",
+      "answer_shape": "STRUCTURED_DECISION",
+      "thin_answerable": true,
+      "thin_route": "ACCEPTED_TYPED_CLAUSE_PLUS_BOUND_DOMAIN_INPUTS",
+      "rich_answerable": true,
+      "rich_unique_required": false,
+      "reason": "SP-1 already maps this machine-consequential question to one or more bounded clause forms plus explicit inputs."
+    },
+    {
+      "cq_id": "CQ-EV-05",
+      "question": "Is a prospective effective boundary established without rewriting historical acceptance?",
+      "consequence_class": "AUTHORITY",
+      "answer_shape": "BOOLEAN",
+      "thin_answerable": true,
+      "thin_route": "ACCEPTED_TYPED_CLAUSE_PLUS_BOUND_DOMAIN_INPUTS",
+      "rich_answerable": true,
+      "rich_unique_required": false,
+      "reason": "SP-1 already maps this machine-consequential question to one or more bounded clause forms plus explicit inputs."
+    },
+    {
+      "cq_id": "CQ-CT-01",
+      "question": "Does an interaction boundary require non-authoritative continuity state?",
+      "consequence_class": "CONTINUITY_RECOVERY",
+      "answer_shape": "BOOLEAN",
+      "thin_answerable": true,
+      "thin_route": "NATURAL_DOMAIN_OR_CONTROL_OBJECT",
+      "rich_answerable": true,
+      "rich_unique_required": false,
+      "reason": "SP-1 assigns the answer to a bounded natural-owner/control object rather than requiring a universal governing-unit field."
+    },
+    {
+      "cq_id": "CQ-CT-02",
+      "question": "What unresolved material/handoff/recoverability/return state must survive?",
+      "consequence_class": "CONTINUITY_RECOVERY",
+      "answer_shape": "STRUCTURED_DECISION",
+      "thin_answerable": true,
+      "thin_route": "NATURAL_DOMAIN_OR_CONTROL_OBJECT",
+      "rich_answerable": true,
+      "rich_unique_required": false,
+      "reason": "SP-1 assigns the answer to a bounded natural-owner/control object rather than requiring a universal governing-unit field."
+    },
+    {
+      "cq_id": "CQ-CT-03",
+      "question": "Is ordinary reconstruction sufficient or is abnormal-execution recovery required?",
+      "consequence_class": "CONTINUITY_RECOVERY",
+      "answer_shape": "ENUM",
+      "thin_answerable": true,
+      "thin_route": "NATURAL_DOMAIN_OR_CONTROL_OBJECT",
+      "rich_answerable": true,
+      "rich_unique_required": false,
+      "reason": "SP-1 assigns the answer to a bounded natural-owner/control object rather than requiring a universal governing-unit field."
+    },
+    {
+      "cq_id": "CQ-CT-04",
+      "question": "Is recovery authority reachable independently of the failed component?",
+      "consequence_class": "CONTINUITY_RECOVERY",
+      "answer_shape": "STRUCTURED_DECISION",
+      "thin_answerable": true,
+      "thin_route": "NATURAL_DOMAIN_OR_CONTROL_OBJECT",
+      "rich_answerable": true,
+      "rich_unique_required": false,
+      "reason": "SP-1 assigns the answer to a bounded natural-owner/control object rather than requiring a universal governing-unit field."
+    },
+    {
+      "cq_id": "CQ-CT-05",
+      "question": "What degraded mode is permitted when a required/optional capability is unavailable?",
+      "consequence_class": "CONTINUITY_RECOVERY",
+      "answer_shape": "STRUCTURED_DECISION",
+      "thin_answerable": true,
+      "thin_route": "ACCEPTED_TYPED_CLAUSE_PLUS_BOUND_DOMAIN_INPUTS",
+      "rich_answerable": true,
+      "rich_unique_required": false,
+      "reason": "SP-1 already maps this machine-consequential question to one or more bounded clause forms plus explicit inputs."
+    },
+    {
+      "cq_id": "CQ-GIT-01",
+      "question": "Which purpose-bound Git lifecycle action applies?",
+      "consequence_class": "ROUTING",
+      "answer_shape": "ENUM",
+      "thin_answerable": true,
+      "thin_route": "NATURAL_DOMAIN_OR_CONTROL_OBJECT",
+      "rich_answerable": true,
+      "rich_unique_required": false,
+      "reason": "SP-1 assigns the answer to a bounded natural-owner/control object rather than requiring a universal governing-unit field."
+    },
+    {
+      "cq_id": "CQ-GIT-02",
+      "question": "Must qualified local work be published or is a bounded local-only exception valid?",
+      "consequence_class": "ROUTING",
+      "answer_shape": "STRUCTURED_DECISION",
+      "thin_answerable": true,
+      "thin_route": "ACCEPTED_TYPED_CLAUSE_PLUS_BOUND_DOMAIN_INPUTS",
+      "rich_answerable": true,
+      "rich_unique_required": false,
+      "reason": "SP-1 already maps this machine-consequential question to one or more bounded clause forms plus explicit inputs."
+    },
+    {
+      "cq_id": "CQ-GIT-03",
+      "question": "Can the exact desired delta be integrated into the current target head?",
+      "consequence_class": "ADMISSION",
+      "answer_shape": "STRUCTURED_DECISION",
+      "thin_answerable": true,
+      "thin_route": "ACCEPTED_TYPED_CLAUSE_PLUS_BOUND_DOMAIN_INPUTS",
+      "rich_answerable": true,
+      "rich_unique_required": false,
+      "reason": "SP-1 already maps this machine-consequential question to one or more bounded clause forms plus explicit inputs."
+    },
+    {
+      "cq_id": "CQ-GIT-04",
+      "question": "May a ref be retired or history rewritten without losing live work/evidence/provenance?",
+      "consequence_class": "ADMISSION",
+      "answer_shape": "STRUCTURED_DECISION",
+      "thin_answerable": true,
+      "thin_route": "ACCEPTED_TYPED_CLAUSE_PLUS_BOUND_DOMAIN_INPUTS",
+      "rich_answerable": true,
+      "rich_unique_required": false,
+      "reason": "SP-1 already maps this machine-consequential question to one or more bounded clause forms plus explicit inputs."
+    },
+    {
+      "cq_id": "CQ-GIT-05",
+      "question": "What durable anchor/return condition/resume target governs paused or child work?",
+      "consequence_class": "CONTINUITY_RECOVERY",
+      "answer_shape": "STRUCTURED_DECISION",
+      "thin_answerable": true,
+      "thin_route": "ACCEPTED_TYPED_CLAUSE_PLUS_BOUND_DOMAIN_INPUTS",
+      "rich_answerable": true,
+      "rich_unique_required": false,
+      "reason": "SP-1 already maps this machine-consequential question to one or more bounded clause forms plus explicit inputs."
+    },
+    {
+      "cq_id": "CQ-BR-01",
+      "question": "What bridge mode is active and what architecture currently owns operational authority?",
+      "consequence_class": "AUTHORITY",
+      "answer_shape": "STRUCTURED_DECISION",
+      "thin_answerable": true,
+      "thin_route": "NATURAL_DOMAIN_OR_CONTROL_OBJECT",
+      "rich_answerable": true,
+      "rich_unique_required": false,
+      "reason": "SP-1 assigns the answer to a bounded natural-owner/control object rather than requiring a universal governing-unit field."
+    },
+    {
+      "cq_id": "CQ-BR-02",
+      "question": "May the bridge drive this consequence while remaining subordinate to current authority?",
+      "consequence_class": "ADMISSION",
+      "answer_shape": "STRUCTURED_DECISION",
+      "thin_answerable": true,
+      "thin_route": "ACCEPTED_TYPED_CLAUSE_PLUS_BOUND_DOMAIN_INPUTS",
+      "rich_answerable": true,
+      "rich_unique_required": false,
+      "reason": "SP-1 already maps this machine-consequential question to one or more bounded clause forms plus explicit inputs."
+    },
+    {
+      "cq_id": "CQ-BR-03",
+      "question": "Has drift/conflict invalidated a derived bridge/control plan?",
+      "consequence_class": "OPERATIONAL_PREDICATE",
+      "answer_shape": "BOOLEAN",
+      "thin_answerable": true,
+      "thin_route": "NATURAL_DOMAIN_OR_CONTROL_OBJECT",
+      "rich_answerable": true,
+      "rich_unique_required": false,
+      "reason": "SP-1 assigns the answer to a bounded natural-owner/control object rather than requiring a universal governing-unit field."
+    },
+    {
+      "cq_id": "CQ-BR-04",
+      "question": "What fallback/block behavior is permitted when bridge/authority is unavailable?",
+      "consequence_class": "CONTINUITY_RECOVERY",
+      "answer_shape": "STRUCTURED_DECISION",
+      "thin_answerable": true,
+      "thin_route": "ACCEPTED_TYPED_CLAUSE_PLUS_BOUND_DOMAIN_INPUTS",
+      "rich_answerable": true,
+      "rich_unique_required": false,
+      "reason": "SP-1 already maps this machine-consequential question to one or more bounded clause forms plus explicit inputs."
+    },
+    {
+      "cq_id": "CQ-BR-05",
+      "question": "Is a bridge enable/disable transition admissible?",
+      "consequence_class": "ADMISSION",
+      "answer_shape": "BOOLEAN",
+      "thin_answerable": true,
+      "thin_route": "ACCEPTED_TYPED_CLAUSE_PLUS_BOUND_DOMAIN_INPUTS",
+      "rich_answerable": true,
+      "rich_unique_required": false,
+      "reason": "SP-1 already maps this machine-consequential question to one or more bounded clause forms plus explicit inputs."
+    },
+    {
+      "cq_id": "CQ-AS-01",
+      "question": "Which assurance claims are mandatory for the exact consequence regardless of request/profile omissions?",
+      "consequence_class": "ADMISSION",
+      "answer_shape": "REFERENCE_SET",
+      "thin_answerable": true,
+      "thin_route": "NATURAL_DOMAIN_OR_CONTROL_OBJECT",
+      "rich_answerable": true,
+      "rich_unique_required": false,
+      "reason": "SP-1 assigns the answer to a bounded natural-owner/control object rather than requiring a universal governing-unit field."
+    },
+    {
+      "cq_id": "CQ-AS-02",
+      "question": "Does each required claim have exact/fresh/trusted/threshold-satisfying warranted evidence?",
+      "consequence_class": "ADMISSION",
+      "answer_shape": "STRUCTURED_DECISION",
+      "thin_answerable": true,
+      "thin_route": "ACCEPTED_TYPED_CLAUSE_PLUS_BOUND_DOMAIN_INPUTS",
+      "rich_answerable": true,
+      "rich_unique_required": false,
+      "reason": "SP-1 already maps this machine-consequential question to one or more bounded clause forms plus explicit inputs."
+    },
+    {
+      "cq_id": "CQ-AS-03",
+      "question": "What deterministic assurance decision applies: ADMIT, REFUSE, or REVIEW_REQUIRED?",
+      "consequence_class": "ADMISSION",
+      "answer_shape": "ENUM",
+      "thin_answerable": true,
+      "thin_route": "ACCEPTED_TYPED_CLAUSE_PLUS_BOUND_DOMAIN_INPUTS",
+      "rich_answerable": true,
+      "rich_unique_required": false,
+      "reason": "SP-1 already maps this machine-consequential question to one or more bounded clause forms plus explicit inputs."
+    },
+    {
+      "cq_id": "CQ-AS-04",
+      "question": "Does assurance-policy change weaken/preserve/strengthen base protection and require review?",
+      "consequence_class": "EVOLUTION",
+      "answer_shape": "ENUM",
+      "thin_answerable": true,
+      "thin_route": "NATURAL_DOMAIN_OR_CONTROL_OBJECT",
+      "rich_answerable": true,
+      "rich_unique_required": false,
+      "reason": "SP-1 assigns the answer to a bounded natural-owner/control object rather than requiring a universal governing-unit field."
+    },
+    {
+      "cq_id": "CQ-REAL-01",
+      "question": "Which currently effective accepted requirements require realization/coverage tracking?",
+      "consequence_class": "REALIZATION_COVERAGE",
+      "answer_shape": "REFERENCE_SET",
+      "thin_answerable": true,
+      "thin_route": "ACCEPTED_TYPED_CLAUSE_PLUS_BOUND_DOMAIN_INPUTS",
+      "rich_answerable": true,
+      "rich_unique_required": false,
+      "reason": "SP-1 already maps this machine-consequential question to one or more bounded clause forms plus explicit inputs."
+    },
+    {
+      "cq_id": "CQ-REAL-02",
+      "question": "Does each active realization-requiring requirement have valid coverage or valid governed deferral?",
+      "consequence_class": "REALIZATION_COVERAGE",
+      "answer_shape": "STRUCTURED_DECISION",
+      "thin_answerable": true,
+      "thin_route": "ACCEPTED_TYPED_CLAUSE_PLUS_BOUND_DOMAIN_INPUTS",
+      "rich_answerable": true,
+      "rich_unique_required": false,
+      "reason": "SP-1 already maps this machine-consequential question to one or more bounded clause forms plus explicit inputs."
+    },
+    {
+      "cq_id": "CQ-REAL-03",
+      "question": "Which realization/evidence/qualification/activation/deferral/conflict predicates hold now?",
+      "consequence_class": "OPERATIONAL_PREDICATE",
+      "answer_shape": "STRUCTURED_DECISION",
+      "thin_answerable": true,
+      "thin_route": "NATURAL_DOMAIN_OR_CONTROL_OBJECT",
+      "rich_answerable": true,
+      "rich_unique_required": false,
+      "reason": "SP-1 assigns the answer to a bounded natural-owner/control object rather than requiring a universal governing-unit field."
+    },
+    {
+      "cq_id": "CQ-OBS-01",
+      "question": "Has a control miss/owner-reminder dependency/uncovered required consequence/realization gap occurred?",
+      "consequence_class": "OBSERVABILITY",
+      "answer_shape": "STRUCTURED_DECISION",
+      "thin_answerable": true,
+      "thin_route": "NATURAL_DOMAIN_OR_CONTROL_OBJECT",
+      "rich_answerable": true,
+      "rich_unique_required": false,
+      "reason": "SP-1 assigns the answer to a bounded natural-owner/control object rather than requiring a universal governing-unit field."
+    },
+    {
+      "cq_id": "CQ-CUT-01",
+      "question": "Has W7 revalidated every required cutover-qualification class against actual production/migrated state?",
+      "consequence_class": "CUTOVER_MIGRATION",
+      "answer_shape": "STRUCTURED_DECISION",
+      "thin_answerable": true,
+      "thin_route": "ACCEPTED_TYPED_CLAUSE_PLUS_BOUND_DOMAIN_INPUTS",
+      "rich_answerable": true,
+      "rich_unique_required": false,
+      "reason": "SP-1 already maps this machine-consequential question to one or more bounded clause forms plus explicit inputs."
+    }
+  ],
+  "component_audit": [
+    {
+      "component": "stable_semantic_identity",
+      "rich_role": "stable unit identity",
+      "stage": "J1_KNOWABLE",
+      "thin_equivalent": "stable clause/domain-contract identity",
+      "unique_cq_ids": [],
+      "disposition": "SHARED_CORE_REQUIRED",
+      "canonicality": "STABLE_GOVERNING_FACT"
+    },
+    {
+      "component": "source_revision_anchor",
+      "rich_role": "source/revision/section anchors",
+      "stage": "J1_KNOWABLE",
+      "thin_equivalent": "governing acceptance binds exact carrier/component revisions",
+      "unique_cq_ids": [],
+      "disposition": "SHARED_CORE_REQUIRED",
+      "canonicality": "STABLE_GOVERNING_FACT"
+    },
+    {
+      "component": "accepted_proposition_decomposition",
+      "rich_role": "propositions inside ObligationUnit",
+      "stage": "J1_KNOWABLE",
+      "thin_equivalent": "human-governing source plus selectively admitted accepted consequence clauses",
+      "unique_cq_ids": [],
+      "disposition": "SELECTIVE_NOT_UNIVERSAL",
+      "canonicality": "MULTIPLE_VALID_DECOMPOSITIONS_POSSIBLE"
+    },
+    {
+      "component": "normative_or_consequence_classification",
+      "rich_role": "normative/kind-style classification used to form units",
+      "stage": "J1_KNOWABLE",
+      "thin_equivalent": "typed clause form encodes exact machine consequence where needed",
+      "unique_cq_ids": [],
+      "disposition": "REDUNDANT_AS_GENERIC_CORE",
+      "canonicality": "CONSEQUENCE_SPECIFIC"
+    },
+    {
+      "component": "generic_materiality",
+      "rich_role": "generic material boolean",
+      "stage": "OPTIONAL_DIAGNOSTIC",
+      "thin_equivalent": "consequence-specific admission/gate/authority rules",
+      "unique_cq_ids": [],
+      "disposition": "REJECT_AS_GENERIC_CORE",
+      "canonicality": "CONTEXT_DEPENDENT_NOT_SINGLE_GLOBAL_FACT"
+    },
+    {
+      "component": "unit_grouping",
+      "rich_role": "smallest proposition group sharing realization boundary/evidence path",
+      "stage": "J2_NATURAL_OWNER",
+      "thin_equivalent": "many-to-many clause-to-realizer coverage without canonical birth-time partition",
+      "unique_cq_ids": [],
+      "disposition": "REJECT_AS_MANDATORY_J1_CANONICAL_GROUP",
+      "canonicality": "MANY_TO_MANY_RELATION_NOT_STABLE_PARTITION"
+    },
+    {
+      "component": "responsible_semantic_owner",
+      "rich_role": "mandatory unit field",
+      "stage": "J1_OR_J2_SELECTIVE",
+      "thin_equivalent": "responsible_domain_or_owner_ref where a consequence needs it; otherwise natural domain ownership",
+      "unique_cq_ids": [],
+      "disposition": "SELECTIVE_SHARED_REFERENCE",
+      "canonicality": "STABLE_WHEN_GOVERNINGLY_ASSIGNED"
+    },
+    {
+      "component": "realization_boundary",
+      "rich_role": "mandatory unit field",
+      "stage": "J2_NATURAL_OWNER",
+      "thin_equivalent": "realizer coverage plus domain contract/predicate at realization time",
+      "unique_cq_ids": [],
+      "disposition": "MOVE_TO_NATURAL_OWNER_NOT_MANDATORY_J1",
+      "canonicality": "MAY_NOT_EXIST_AT_GOVERNING_BIRTH"
+    },
+    {
+      "component": "expected_evidence_path",
+      "rich_role": "mandatory unit field",
+      "stage": "J2_NATURAL_OWNER",
+      "thin_equivalent": "WARRANT-F/domain evidence contract and realizer declaration",
+      "unique_cq_ids": [],
+      "disposition": "MOVE_TO_DOMAIN_CONTRACT_NOT_MANDATORY_J1",
+      "canonicality": "DOMAIN_OWNED"
+    },
+    {
+      "component": "activation_effective_boundary",
+      "rich_role": "mandatory unit field",
+      "stage": "J1_OR_J2_SELECTIVE",
+      "thin_equivalent": "LIFECYCLE/GATE effective boundary or natural-owner activation fact",
+      "unique_cq_ids": [],
+      "disposition": "SELECTIVE_SHARED_FACT",
+      "canonicality": "GOVERNING_IF_KNOWN_OTHERWISE_RUNTIME"
+    },
+    {
+      "component": "governed_deferral",
+      "rich_role": "deferral refs/reason/dependency/reactivation",
+      "stage": "J1_KNOWABLE",
+      "thin_equivalent": "DEFER clause plus exact domain refs/predicate",
+      "unique_cq_ids": [],
+      "disposition": "SHARED_CORE_WHERE_APPLICABLE",
+      "canonicality": "STABLE_GOVERNING_FACT"
+    },
+    {
+      "component": "realization_evidence_qualification_activation_refs",
+      "rich_role": "realization_facts lists",
+      "stage": "J2_NATURAL_OWNER",
+      "thin_equivalent": "realizer coverage plus evidence/warrant/qualification/activation source facts",
+      "unique_cq_ids": [],
+      "disposition": "SHARED_INFORMATION_DIFFERENT_OWNER",
+      "canonicality": "RUNTIME_FACTS"
+    },
+    {
+      "component": "global_realization_state",
+      "rich_role": "UNLINKED/LINKED/EVIDENCED/QUALIFIED/OPERATIONAL/DEFERRED",
+      "stage": "J3_DERIVED",
+      "thin_equivalent": "consumer-specific executable predicates/views over source facts",
+      "unique_cq_ids": [],
+      "disposition": "GENERATED_VIEW_NOT_GOVERNING_CORE",
+      "canonicality": "SUMMARY_VIEW_CAN_GO_STALE"
+    }
+  ],
+  "counts": {
+    "thin_answerable": 37,
+    "rich_answerable": 37,
+    "rich_unique_required_cqs": 0,
+    "rich_components_with_unique_cqs": 0,
+    "components_audited": 13
+  },
+  "structural_burden": {
+    "rich_functional_schema": {
+      "required_machine_field_groups_excluding_experiment_witness_tags": [
+        "unit_id",
+        "source_anchor",
+        "propositions",
+        "responsible_semantic_owner",
+        "realization_boundary",
+        "expected_evidence_path",
+        "activation_boundary",
+        "realization_facts"
+      ],
+      "realization_fact_lists": [
+        "realization_relation_refs",
+        "deferral_refs",
+        "evidence_refs",
+        "qualification_refs",
+        "activation_refs"
+      ],
+      "additional_semantic_operation": "owner-accepted unit boundary/grouping"
+    },
+    "thin_core": {
+      "rule": "admit only machine-consequential accepted clauses needed by competency questions; keep detailed semantics in natural domain contracts; add J2 coverage and J3 predicates later",
+      "forms": [
+        "REQUIRE",
+        "PROHIBIT",
+        "GATE",
+        "AUTHORIZE",
+        "DEFER",
+        "LIFECYCLE",
+        "SEQUENCE"
+      ],
+      "owner_review_observation": "SP-2 burden LOW after clarification"
+    },
+    "burden_finding": "RICH_ACCEPTED requires a broader mandatory J1 review surface unless later-owned fields are made optional/deferred. Making those fields selective/deferred causes the design to converge toward THIN_ACCEPTED's J1/J2/J3 allocation."
+  },
+  "control_power": {
+    "thin": "All 37 admitted CQs remain answerable through accepted clauses, domain-native contracts, generated control objects, natural-owner runtime facts and executable predicates.",
+    "rich": "Can also support the same control when embedded in the same broader Project system.",
+    "rich_unique": "No currently admitted CQ requires the richer unit fields as a second authoritative copy."
+  },
+  "key_findings": [
+    "Owner acceptance removes the original inference-authority/reproducibility objection for RICH_ACCEPTED.",
+    "Owner acceptance does not make birth-time unit grouping canonical when realization is naturally many-to-many or only known later.",
+    "Owner acceptance does not make J2 realization/evidence facts naturally knowable at J1.",
+    "A global realization-state enum is better treated as a derived view over source facts than as independent governing truth.",
+    "Rich fields with demonstrated value survive selectively in natural owners or as clause slots; they do not require the full rich unit model.",
+    "No current admitted competency question demonstrates unique required capability from the full RICH_ACCEPTED core."
+  ],
+  "routing_class": "THIN_ACCEPTED_SUFFICIENT_RICH_OPTIONAL",
+  "secondary_finding": "OWNER_ACCEPTANCE_RESCUES_AUTHORITY_NOT_FULL_SCHEMA_NECESSITY",
+  "production_selected": false
+}

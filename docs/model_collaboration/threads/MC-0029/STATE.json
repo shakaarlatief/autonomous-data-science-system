@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "UNRESOLVED",
-  "phase": "DRP03_THIN_VS_RICH_ACCEPTED_DESK_COMPARISON",
+  "phase": "DRP03_THIN_VS_RICH_ACCEPTED_CLAUDE_CRITIQUE",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -60,7 +60,7 @@
       ]
     }
   ],
-  "next_expected_actor": "chatgpt",
+  "next_expected_actor": "claude",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,7 +81,7 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 458 completes SP-6 as OPERATIVE_INCREMENTAL_CONTROL_VALUE without production selection. Research 459 freezes a fair comparison between THIN_ACCEPTED and RICH_ACCEPTED. RICH_ACCEPTED preserves the earlier functional ObligationUnit family but changes authority semantics: model output is only a draft, the owner reviews it beside governing source meaning, and only accepted structure becomes authoritative. The failed R2 inference-authority assumption is not reopened. The comparison must audit all 37 admitted SP-1 competency questions, J1/J2/J3 timing, canonicality, control power, structural burden and failure modes. Hidden R2 item-level semantics remain sealed. Next actor is ChatGPT for the desk comparison."
+    "notes": "Research 460 completes the frozen ChatGPT desk comparison as THIN_ACCEPTED_SUFFICIENT_RICH_OPTIONAL, with the explicit secondary finding that owner acceptance rescues the earlier rich family's authority objection but does not establish necessity of the full schema. All 37 admitted SP-1 questions are answerable by both candidates in the desk audit and no current CQ requires a rich-only field. Because this materially revisits a family Claude previously helped retire under an inference-authority assumption, Message 014 requests comparative critique from Claude. Claude may inspect Research 459/460, their public artifact, Research 314, the old functional ObligationUnit definitions/schema, Research 441/442/458, and Messages 011/012. Hidden R2 item-level material remains sealed. Claude must write only Message 015 and then stop. No production target or larger pilot is selected."
   },
   "last_transition": {
     "transition_id": "mc0029-drp03-r2-construct-underdetermined",

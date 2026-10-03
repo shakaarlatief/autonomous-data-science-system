@@ -1239,3 +1239,31 @@ Current boundary:
     HIDDEN_R2_ITEM_DETAILS=SEALED
     OWNER_PARTICIPATION_REQUIRED=false
     NEXT=EXECUTE_THIN_VS_RICH_ACCEPTED_DESK_COMPARISON
+
+## Thin-versus-rich accepted comparison result and Claude route
+
+Research 460 result:
+
+    THIN_ACCEPTED_SUFFICIENT_RICH_OPTIONAL
+
+Secondary finding:
+
+    OWNER_ACCEPTANCE_RESCUES_AUTHORITY_NOT_FULL_SCHEMA_NECESSITY
+
+Desk audit:
+
+    admitted CQs               37
+    thin answerable            37
+    rich answerable            37
+    rich-only required CQs      0
+
+This does not select a production target.
+
+Message 014 routes the comparison to Claude for adversarial comparative critique before owner decision or larger pilot.
+
+Current boundary:
+
+    PHASE=DRP03_THIN_VS_RICH_ACCEPTED_CLAUDE_CRITIQUE
+    NEXT_ACTOR=claude
+    EXPECTED_OUTPUT=messages/015_claude_thin_vs_rich_accepted_critique.md
+    HIDDEN_R2_ITEM_DETAILS=SEALED

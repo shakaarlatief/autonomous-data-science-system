@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 795
+**Checkpoint:** 796
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: thin-versus-rich accepted-semantics desk comparison / Specification 028 reconciliation
+## Current active stage: thin-versus-rich accepted-semantics Claude critique / Specification 028 reconciliation
+
+Checkpoint 796 / Research 460 completes ChatGPT's prospectively frozen desk comparison as THIN_ACCEPTED_SUFFICIENT_RICH_OPTIONAL. All 37 admitted SP-1 questions remain answerable under both candidates, and no current question demonstrates a rich-only required field. The important correction is preserved: source-plus-interpretation owner acceptance removes the main R2 authority/reproducibility objection to a richer design, but does not by itself make birth-time grouping, J2 realization facts or global state necessary governing-core fields. Because this materially revisits the family Claude previously helped retire under different assumptions, Message 014 routes a comparative critique to Claude before any owner architecture decision or larger pilot.
 
 Checkpoint 795 / Research 459 prospectively freezes a fair THIN_ACCEPTED versus RICH_ACCEPTED comparison after the owner's observation that owner acceptance could rescue the earlier rich semantic family's authority problem. RICH_ACCEPTED is not the failed inference-authoritative design: model-generated rich semantics become authoritative only through source-plus-interpretation owner acceptance. The desk comparison will audit all 37 admitted competency questions, J1/J2/J3 timing, canonicality, control power, structural burden and failure modes. R2 remains valid evidence against later unaccepted inference as authority, and hidden R2 item semantics remain sealed.
 
