@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 808
+**Checkpoint:** 809
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: thin-centred hybrid C9 owner-burden protocol freeze / Specification 028 reconciliation
+## Current active stage: thin-centred hybrid C9 owner-review package freeze / Specification 028 reconciliation
+
+Checkpoint 809 / Research 473 prospectively freezes HYBRID_C9_OWNER_BURDEN_V01 before drafting the owner-facing package. The probe tests only the incremental J1 owner-reviewed information that survived C4-C8: stable effect identity, explicit realization tracking, governing completion criteria/authority, and compact lineage summaries when meaning changes. J2/J3/generated facts are explicitly excluded from owner burden. Three compact natural-language cards are fixed, and the Project may not infer the owner's card verdicts or LOW/MODERATE/HIGH burden rating.
 
 Checkpoint 808 / Research 472 records the single frozen HYBRID_C8_ORIENTATION_V01 execution as C8_ORIENTATION_MECHANISM_PLAUSIBLE. All eleven fixtures and aggregate outputs matched frozen expectations in both separately encoded evaluators, and a bogus authored OPERATIONAL label had no effect. The supported projection uses four generated top-level states plus one orthogonal next-gap field while keeping governing lifecycle separate. The remaining explicit hybrid qualification item is C9 owner burden for the surviving richer acceptance metadata.
 

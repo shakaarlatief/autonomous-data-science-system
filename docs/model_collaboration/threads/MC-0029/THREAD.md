@@ -1482,3 +1482,19 @@ Current boundary:
     NEXT_ACTOR=chatgpt
     HIDDEN_R2_ITEM_DETAILS=SEALED
     NEXT=FREEZE_HYBRID_C9_OWNER_BURDEN_PROTOCOL
+
+## HYBRID C9 owner-burden protocol
+
+Research 473 freezes the incremental owner-review burden probe.
+
+    probe                    HYBRID_C9_OWNER_BURDEN_V01
+    cards                    3
+    prior thin burden        LOW
+    owner participation      required
+
+Current boundary:
+
+    PHASE=DRP03_HYBRID_C9_PACKAGE_FREEZE
+    NEXT_ACTOR=chatgpt
+    HIDDEN_R2_ITEM_DETAILS=SEALED
+    NEXT=FREEZE_C9_OWNER_REVIEW_PACKAGE
