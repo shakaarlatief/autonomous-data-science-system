@@ -1,0 +1,334 @@
+{
+  "probe_id": "HYBRID_C8_ORIENTATION_V01",
+  "rows": [
+    {
+      "fixture_id": "O1_NO_COVERAGE",
+      "expected": {
+        "requirement_id": "R-O1",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "OPEN",
+        "next_gap": "COVERAGE"
+      },
+      "evaluator_a": {
+        "requirement_id": "R-O1",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "OPEN",
+        "next_gap": "COVERAGE"
+      },
+      "evaluator_b": {
+        "requirement_id": "R-O1",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "OPEN",
+        "next_gap": "COVERAGE"
+      },
+      "a_matches_expected": true,
+      "b_matches_expected": true,
+      "evaluators_agree": true
+    },
+    {
+      "fixture_id": "O2_PARTIAL_COVERAGE",
+      "expected": {
+        "requirement_id": "R-O2",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "OPEN",
+        "next_gap": "COVERAGE"
+      },
+      "evaluator_a": {
+        "requirement_id": "R-O2",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "OPEN",
+        "next_gap": "COVERAGE"
+      },
+      "evaluator_b": {
+        "requirement_id": "R-O2",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "OPEN",
+        "next_gap": "COVERAGE"
+      },
+      "a_matches_expected": true,
+      "b_matches_expected": true,
+      "evaluators_agree": true
+    },
+    {
+      "fixture_id": "O3_COVERAGE_COMPLETE_EVIDENCE_MISSING",
+      "expected": {
+        "requirement_id": "R-O3",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "OPEN",
+        "next_gap": "EVIDENCE"
+      },
+      "evaluator_a": {
+        "requirement_id": "R-O3",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "OPEN",
+        "next_gap": "EVIDENCE"
+      },
+      "evaluator_b": {
+        "requirement_id": "R-O3",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "OPEN",
+        "next_gap": "EVIDENCE"
+      },
+      "a_matches_expected": true,
+      "b_matches_expected": true,
+      "evaluators_agree": true
+    },
+    {
+      "fixture_id": "O4_EVIDENCE_VALID_QUALIFICATION_MISSING",
+      "expected": {
+        "requirement_id": "R-O4",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "OPEN",
+        "next_gap": "QUALIFICATION"
+      },
+      "evaluator_a": {
+        "requirement_id": "R-O4",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "OPEN",
+        "next_gap": "QUALIFICATION"
+      },
+      "evaluator_b": {
+        "requirement_id": "R-O4",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "OPEN",
+        "next_gap": "QUALIFICATION"
+      },
+      "a_matches_expected": true,
+      "b_matches_expected": true,
+      "evaluators_agree": true
+    },
+    {
+      "fixture_id": "O5_QUALIFIED_ACTIVATION_MISSING",
+      "expected": {
+        "requirement_id": "R-O5",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "OPEN",
+        "next_gap": "ACTIVATION"
+      },
+      "evaluator_a": {
+        "requirement_id": "R-O5",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "OPEN",
+        "next_gap": "ACTIVATION"
+      },
+      "evaluator_b": {
+        "requirement_id": "R-O5",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "OPEN",
+        "next_gap": "ACTIVATION"
+      },
+      "a_matches_expected": true,
+      "b_matches_expected": true,
+      "evaluators_agree": true
+    },
+    {
+      "fixture_id": "O6_SATISFIED",
+      "expected": {
+        "requirement_id": "R-O6",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "SATISFIED",
+        "next_gap": "NONE"
+      },
+      "evaluator_a": {
+        "requirement_id": "R-O6",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "SATISFIED",
+        "next_gap": "NONE"
+      },
+      "evaluator_b": {
+        "requirement_id": "R-O6",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "SATISFIED",
+        "next_gap": "NONE"
+      },
+      "a_matches_expected": true,
+      "b_matches_expected": true,
+      "evaluators_agree": true
+    },
+    {
+      "fixture_id": "O7_VALID_DEFERRAL",
+      "expected": {
+        "requirement_id": "R-O7",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "DEFERRED",
+        "next_gap": "NONE"
+      },
+      "evaluator_a": {
+        "requirement_id": "R-O7",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "DEFERRED",
+        "next_gap": "NONE"
+      },
+      "evaluator_b": {
+        "requirement_id": "R-O7",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "DEFERRED",
+        "next_gap": "NONE"
+      },
+      "a_matches_expected": true,
+      "b_matches_expected": true,
+      "evaluators_agree": true
+    },
+    {
+      "fixture_id": "O8_INVALID_DEFERRAL",
+      "expected": {
+        "requirement_id": "R-O8",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "REVIEW_REQUIRED",
+        "next_gap": "REVIEW"
+      },
+      "evaluator_a": {
+        "requirement_id": "R-O8",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "REVIEW_REQUIRED",
+        "next_gap": "REVIEW"
+      },
+      "evaluator_b": {
+        "requirement_id": "R-O8",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "REVIEW_REQUIRED",
+        "next_gap": "REVIEW"
+      },
+      "a_matches_expected": true,
+      "b_matches_expected": true,
+      "evaluators_agree": true
+    },
+    {
+      "fixture_id": "O9_CONFLICT",
+      "expected": {
+        "requirement_id": "R-O9",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "REVIEW_REQUIRED",
+        "next_gap": "REVIEW"
+      },
+      "evaluator_a": {
+        "requirement_id": "R-O9",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "REVIEW_REQUIRED",
+        "next_gap": "REVIEW"
+      },
+      "evaluator_b": {
+        "requirement_id": "R-O9",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "REVIEW_REQUIRED",
+        "next_gap": "REVIEW"
+      },
+      "a_matches_expected": true,
+      "b_matches_expected": true,
+      "evaluators_agree": true
+    },
+    {
+      "fixture_id": "O10_INVALID_SOURCE_FACTS",
+      "expected": {
+        "requirement_id": "R-O10",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "REVIEW_REQUIRED",
+        "next_gap": "REVIEW"
+      },
+      "evaluator_a": {
+        "requirement_id": "R-O10",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "REVIEW_REQUIRED",
+        "next_gap": "REVIEW"
+      },
+      "evaluator_b": {
+        "requirement_id": "R-O10",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "REVIEW_REQUIRED",
+        "next_gap": "REVIEW"
+      },
+      "a_matches_expected": true,
+      "b_matches_expected": true,
+      "evaluators_agree": true
+    },
+    {
+      "fixture_id": "O11_BOGUS_REPORTED_OPERATIONAL",
+      "expected": {
+        "requirement_id": "R-O11",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "OPEN",
+        "next_gap": "COVERAGE"
+      },
+      "evaluator_a": {
+        "requirement_id": "R-O11",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "OPEN",
+        "next_gap": "COVERAGE"
+      },
+      "evaluator_b": {
+        "requirement_id": "R-O11",
+        "projection_version": "HYBRID_C8_V01",
+        "state": "OPEN",
+        "next_gap": "COVERAGE"
+      },
+      "a_matches_expected": true,
+      "b_matches_expected": true,
+      "evaluators_agree": true
+    }
+  ],
+  "aggregate_expected": {
+    "state_counts": {
+      "DEFERRED": 1,
+      "OPEN": 6,
+      "REVIEW_REQUIRED": 3,
+      "SATISFIED": 1
+    },
+    "open_gap_counts": {
+      "ACTIVATION": 1,
+      "COVERAGE": 3,
+      "EVIDENCE": 1,
+      "QUALIFICATION": 1
+    },
+    "attention_required_ids": [
+      "R-O10",
+      "R-O8",
+      "R-O9"
+    ]
+  },
+  "aggregate_a": {
+    "state_counts": {
+      "DEFERRED": 1,
+      "OPEN": 6,
+      "REVIEW_REQUIRED": 3,
+      "SATISFIED": 1
+    },
+    "open_gap_counts": {
+      "ACTIVATION": 1,
+      "COVERAGE": 3,
+      "EVIDENCE": 1,
+      "QUALIFICATION": 1
+    },
+    "attention_required_ids": [
+      "R-O10",
+      "R-O8",
+      "R-O9"
+    ]
+  },
+  "aggregate_b": {
+    "state_counts": {
+      "DEFERRED": 1,
+      "OPEN": 6,
+      "REVIEW_REQUIRED": 3,
+      "SATISFIED": 1
+    },
+    "open_gap_counts": {
+      "ACTIVATION": 1,
+      "COVERAGE": 3,
+      "EVIDENCE": 1,
+      "QUALIFICATION": 1
+    },
+    "attention_required_ids": [
+      "R-O10",
+      "R-O8",
+      "R-O9"
+    ]
+  },
+  "summary": {
+    "fixture_total": 11,
+    "all_match": true,
+    "evaluators_agree_all": true,
+    "aggregate_matches": true,
+    "reported_state_ignored": true,
+    "outcome": "C8_ORIENTATION_MECHANISM_PLAUSIBLE"
+  }
+}
