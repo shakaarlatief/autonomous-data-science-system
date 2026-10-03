@@ -1815,3 +1815,22 @@ Current boundary:
     NEXT_ACTOR=human
     HIDDEN_R2_ITEM_DETAILS=SEALED
     NEXT=OWNER_REVIEW_D1_REAL_EVENT_J1_PACKAGE
+
+## D-1 owner acceptance
+
+Owner decision:
+
+    ACCEPT
+
+Bound packet:
+
+    SHA256=2ac7ec839138189b5657da4c8f78f8c938ac3227da1c7af7f3c6f3fda7ae4fb4
+
+The four J1 effects are accepted unchanged for the replay.
+
+Current boundary:
+
+    PHASE=DRP03_HYBRID_D1_POSTACCEPT_FREEZE
+    NEXT_ACTOR=chatgpt
+    HIDDEN_R2_ITEM_DETAILS=SEALED
+    NEXT=FREEZE_D1_POST_ACCEPTANCE_REPLAY_SPECIFICATION

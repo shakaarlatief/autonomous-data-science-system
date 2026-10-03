@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 827
+**Checkpoint:** 828
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: V0.2 D-1 integrated real-event owner review / Specification 028 reconciliation
+## Current active stage: V0.2 D-1 post-acceptance replay specification freeze / Specification 028 reconciliation
+
+Checkpoint 828 / Research 491 records the owner's exact ACCEPT decision against the frozen D-1 packet SHA-256 2ac7ec839138189b5657da4c8f78f8c938ac3227da1c7af7f3c6f3fda7ae4fb4. The four J1 effects are accepted unchanged for this development replay. This acceptance binds governing meaning only; actual J2/Git facts and J3 truth remain to be derived independently. The next step is to freeze the post-acceptance replay specification, source facts, shared predicates, output vocabulary and evaluator key before evaluator implementation.
 
 Checkpoint 827 / Research 490 freezes HYBRID_D1_REAL_EVENT_REPLAY_V01 and its exact four-effect owner package before owner judgment. The replay uses the real Research 485 Claude-transport correction and, after acceptance, the actual Claude Message 018 commit as natural-owner J2 facts. The owner now performs an ordinary source-plus-proposal semantic-faithfulness review, not an error-detection test. D-1 is the only remaining Research 477 discriminator before owner architecture decision.
 
