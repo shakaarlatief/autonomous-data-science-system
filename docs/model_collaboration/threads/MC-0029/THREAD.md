@@ -1568,3 +1568,25 @@ Current boundary:
     NEXT_ACTOR=claude
     HIDDEN_R2_ITEM_DETAILS=SEALED
     NEXT=CLAUDE_MESSAGE017_FINAL_INTEGRATED_HYBRID_CRITIQUE
+
+## Message 017 reconciliation
+
+Research 477 records:
+
+    MESSAGE017=ACCEPT_WITH_REFINEMENTS
+    ROUTING=AMEND_INTEGRATED_CANDIDATE_BEFORE_OWNER_DECISION
+
+The thin-centred hybrid remains the strongest current direction, but V0.1 requires bounded integration amendments before owner decision.
+
+Required remaining discriminators:
+
+    D-1 integrated end-to-end micro-replay
+    D-2 extended lineage qualification
+    D-3 cross-plane dependency proof
+
+Current boundary:
+
+    PHASE=DRP03_HYBRID_V02_FREEZE
+    NEXT_ACTOR=chatgpt
+    HIDDEN_R2_ITEM_DETAILS=SEALED
+    NEXT=FREEZE_THIN_CENTRED_HYBRID_V02

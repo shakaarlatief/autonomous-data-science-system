@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "UNRESOLVED",
-  "phase": "DRP03_HYBRID_FINAL_CRITIQUE",
+  "phase": "DRP03_HYBRID_V02_FREEZE",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -60,7 +60,7 @@
       ]
     }
   ],
-  "next_expected_actor": "claude",
+  "next_expected_actor": "chatgpt",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,7 +81,7 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 476 freezes THIN_CENTRED_HYBRID_V01 at commit 5199ac2e404716add76d7f503a28f01df1daadef. MC-0029 Message 016 now freezes the final adversarial whole-design critique request. Claude must read current routing/state, then critique the exact integrated candidate for authority coherence, J1/J2/J3 structure, completion semantics, N:M lineage, generated orientation, whole-system domain boundaries, detective controls, evidence generalization and missing alternatives. Claude may write only Message 017. Hidden R2 item-level material remains sealed. No production selection, owner decision, larger pilot, migration or dependent-DRP resumption is authorized."
+    "notes": "Research 477 reconciles Claude Message 017 as ACCEPT_WITH_REFINEMENTS and accepts AMEND_INTEGRATED_CANDIDATE_BEFORE_OWNER_DECISION. THIN_CENTRED_HYBRID_V01 remains the predecessor candidate; the next candidate is V0.2 incorporating refined AM-1..AM-14. D-1 integrated micro-replay, D-2 lineage extension and D-3 cross-plane dependency proof are required before owner architecture decision. Owner-review efficacy is not reopened as a coherence experiment; acceptance authenticity is a separate accepted design requirement. Message 017's direct GitHub write is admitted after exact one-file/parent verification but recorded as a transport nonconformance. Hidden R2 item-level material remains sealed."
   },
   "last_transition": {
     "transition_id": "mc0029-drp03-r2-construct-underdetermined",

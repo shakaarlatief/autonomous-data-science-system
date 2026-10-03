@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 813
+**Checkpoint:** 814
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: integrated thin-centred hybrid final comparative critique / Specification 028 reconciliation
+## Current active stage: amended thin-centred hybrid V0.2 freeze / Specification 028 reconciliation
+
+Checkpoint 814 / Research 477 reconciles Claude Message 017 as ACCEPT_WITH_REFINEMENTS and accepts its AMEND_INTEGRATED_CANDIDATE_BEFORE_OWNER_DECISION routing. Five integration gaps are admitted with refinements: standing-consequence enforcement accounting, domain-contract self-certification/revision binding, cross-plane dependency cycles, realization succession across lineage, and acceptance-record authenticity. The owner-efficacy portion of G-5 is not treated as a coherence defect, consistent with Research 456. AM-1..AM-14 are dispositioned, with AM-11 advisory rather than authoritative and AM-13 revised so legacy IN_FORCE obligations are not silently downgraded. D-1 integrated micro-replay, D-2 lineage extension and D-3 dependency proof are required before owner architecture decision.
 
 Checkpoint 813 freezes MC-0029 Message 016 as the final adversarial cross-model critique handoff against exact candidate THIN_CENTRED_HYBRID_V01 at commit 5199ac2e404716add76d7f503a28f01df1daadef. The critique explicitly audits authority coherence, J1 object identity, completeness and completion contracts, J2 complexity displacement, J3 operational truth, N:M lineage, compact orientation, domain seams, whole-system integration, detective controls, evidence generalization and missing alternatives. Claude is now the next actor and may write only Message 017. No production selection, owner architecture decision, larger pilot, migration, dependent-DRP resumption or hidden-R2 inspection is authorized.
 

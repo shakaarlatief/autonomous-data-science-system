@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-10-02
-**Status:** MC-0029 OPEN / INTEGRATED HYBRID CANDIDATE FROZEN / MESSAGE 016 FINAL CRITIQUE HANDOFF FROZEN / CLAUDE MESSAGE 017 NEXT / NO PRODUCTION SELECTION / R2 UNDERDETERMINED PRESERVED / MC-0028 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0029 OPEN / MESSAGE 017 RECONCILED / V0.1 AMENDMENT REQUIRED / V0.2 FREEZE NEXT / D1-D3 REQUIRED BEFORE OWNER DECISION / NO PRODUCTION SELECTION / R2 UNDERDETERMINED PRESERVED / MC-0028 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
