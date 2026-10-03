@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 835
+**Checkpoint:** 836
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: V0.2 D-1 frozen two-model comparison execution / Specification 028 reconciliation
+## Current active stage: D-1 bounded amendment reconciliation / V0.3 candidate freeze / Specification 028 reconciliation
+
+Checkpoint 836 / Research 499 preserves the single frozen D-1 result and reconciles it as D1_AMEND. The two independent evaluators and key agreed on every substantive D-1 value; the only material mismatch was whether realization_initialization is a singleton object or a singleton array. Because the frozen contract did not specify container cardinality and D-2 already qualifies N:M successor semantics, the candidate is amended prospectively so realization_initialization is an ordered array of zero or more {effect_id, mode} records. The raw V01 result remains a mismatch and is not normalized after the fact. D-1, D-2 and D-3 evidence gathering is complete; the amended V0.3 candidate must now be frozen before owner architecture decision.
 
 Checkpoint 835 / Research 498 corrects the frozen D-1 comparison-runner identity to committed Git-blob bytes before execution. The runner source is unchanged; the authoritative SHA-256 is 24483ab0d1a6ee09428c77c21b7e517ff62f2f00e99015950a12585f49fec384. No evaluator has been executed and result.json remains absent. Exactly one comparison execution remains next.
 

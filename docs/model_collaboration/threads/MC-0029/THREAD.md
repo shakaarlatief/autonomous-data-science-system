@@ -1950,3 +1950,22 @@ Current boundary:
     NEXT_ACTOR=chatgpt
     HIDDEN_R2_ITEM_DETAILS=SEALED
     NEXT=EXECUTE_D1_TWO_MODEL_COMPARISON_ONCE
+
+## D-1 integrated replay result reconciliation
+
+Research 499 records:
+
+    D1_RAW_RESULT=D1_MISMATCH_REQUIRES_RECONCILIATION
+    D1_RECONCILED_DISPOSITION=D1_AMEND
+    MATERIAL_MISMATCH_FIELDS=1 / 14
+    SUBSTANTIVE_SEMANTIC_MISMATCH=false
+    AMENDMENT=realization_initialization is ordered 0..N collection
+
+The raw result remains unchanged. The amendment is prospective and aligns the integrated output with the already-qualified D-2 N:M lineage semantics.
+
+Current boundary:
+
+    PHASE=DRP03_HYBRID_V03_FREEZE
+    NEXT_ACTOR=chatgpt
+    HIDDEN_R2_ITEM_DETAILS=SEALED
+    NEXT=FREEZE_THIN_CENTRED_HYBRID_V03
