@@ -1,0 +1,74 @@
+{
+  "probe_id": "HYBRID_D3_DEPENDENCY_V01",
+  "base_details": {
+    "dag": true,
+    "topological_order": [
+      "J1_ACCEPTED_GOVERNING_MEANING",
+      "NATURAL_OWNER_SOURCE_FACTS",
+      "LINEAGE_RESOLUTION",
+      "DETECTIVE_OBSERVATION",
+      "SHARED_EVIDENCE_FRESHNESS_PREDICATES",
+      "CURRENT_ACTIVE_REQUIREMENT_SET",
+      "WARRANT_F_BASE_DECISIONS",
+      "J3_REQUIREMENT_TRUTH",
+      "GENERATED_ORIENTATION",
+      "WARRANT_F_META_ON_J3_SNAPSHOT",
+      "REVIEW_ROUTING",
+      "CONTROL_COMPILATION",
+      "AO_PRE_DISPATCH_CONFORMANCE",
+      "DELIVERY_EXECUTION"
+    ],
+    "precedence": true,
+    "forbidden_same_revision_feedback_absent": true,
+    "detective_routes_review_only": true,
+    "predicate_registry_valid": true
+  },
+  "controls": [
+    {
+      "id": "N1_META_TO_J3",
+      "expected_valid": false,
+      "observed_valid": false,
+      "matches": true
+    },
+    {
+      "id": "N2_DELIVERY_TO_FACTS_SAME_REV",
+      "expected_valid": false,
+      "observed_valid": false,
+      "matches": true
+    },
+    {
+      "id": "N3_DUPLICATE_PREDICATE_DIFFERENT_DIGEST",
+      "expected_valid": false,
+      "observed_valid": false,
+      "matches": true
+    },
+    {
+      "id": "N4_ORIENTATION_TO_LINEAGE",
+      "expected_valid": false,
+      "observed_valid": false,
+      "matches": true
+    },
+    {
+      "id": "N5_NEXT_REVISION_DELIVERY_TO_FACTS",
+      "expected_valid": true,
+      "observed_valid": true,
+      "matches": true
+    }
+  ],
+  "summary": {
+    "base_valid": true,
+    "next_revision_feedback_valid": true,
+    "negative_controls_all_match": true,
+    "proof_checks": {
+      "P1_same_revision_dag": true,
+      "P2_lineage_active_j3_orientation_precedence": true,
+      "P3_meta_assurance_no_same_snapshot_feedback": true,
+      "P4_feedback_revision_increment": true,
+      "P5_predicate_registry_unique": true,
+      "P6_shared_predicate_consumers": true,
+      "P7_generated_outputs_downstream": true,
+      "P8_detective_review_only": true
+    },
+    "outcome": "D3_DEPENDENCY_PROOF_PASSES"
+  }
+}
