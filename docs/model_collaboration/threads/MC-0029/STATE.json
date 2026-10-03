@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "UNRESOLVED",
-  "phase": "DRP03_HYBRID_D2_EVALUATOR_B_CORRECTED_HANDOFF",
+  "phase": "DRP03_HYBRID_D2_EVALUATOR_B_MATERIALIZATION",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -60,7 +60,7 @@
       ]
     }
   ],
-  "next_expected_actor": "claude",
+  "next_expected_actor": "chatgpt",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,7 +81,7 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 485 corrects the D-2 Claude transport instructions without changing the blinded semantic/evaluator boundary. The Codexless Runtime Bridge is a ChatGPT-side custom execution surface; Claude has never had it. Claude's bounded MC-0029 message writes use the GitHub connector available in the Claude interaction and remain restricted to the exact authorized message path. Research 477's collaborator transport-nonconformance classification is withdrawn as factual error, and Research 484 Section 5 is superseded. Claude may read only Research 482, reviewer_fixtures.json, evaluator_contract.json and routing context; before Message 018 Claude must not inspect evaluator_key.json, evaluator_chatgpt_a.py, any D-2 output/result, or hidden R2 item-level material."
+    "notes": "Message 018 is durably present and preserves Claude's blinded evaluator-B authorship. Research 486 freezes a pre-score clarification before any ChatGPT-side D-2 evaluator execution: reason_codes exact strings are diagnostic only because the reviewer-facing contract supplied no public vocabulary. All other semantic output fields remain strict with no normalization. Fixtures, evaluator key, Evaluator A and Claude source remain unchanged. Next actor is ChatGPT to materialize Message 018's single Python block verbatim, syntax-check only, and freeze Evaluator B before comparison."
   },
   "last_transition": {
     "transition_id": "mc0029-drp03-r2-construct-underdetermined",

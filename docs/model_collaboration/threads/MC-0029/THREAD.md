@@ -1731,3 +1731,20 @@ Current boundary:
     CLAUDE_BLIND_TO_KEY_AND_A=true
     HIDDEN_R2_ITEM_DETAILS=SEALED
     NEXT=CLAUDE_MESSAGE018_D2_EVALUATOR_B
+
+## D-2 pre-score output-contract clarification
+
+Research 486 freezes the only scoring clarification before ChatGPT executes either D-2 evaluator:
+
+    reason_codes             diagnostic only
+    all semantic fields      strict
+    fixtures/key             unchanged
+    evaluator sources        unchanged
+    D2 result                absent
+
+Current boundary:
+
+    PHASE=DRP03_HYBRID_D2_EVALUATOR_B_MATERIALIZATION
+    NEXT_ACTOR=chatgpt
+    HIDDEN_R2_ITEM_DETAILS=SEALED
+    NEXT=MATERIALIZE_AND_FREEZE_CLAUDE_EVALUATOR_B

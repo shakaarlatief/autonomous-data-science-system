@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 822
+**Checkpoint:** 823
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: V0.2 D-2 blinded Claude evaluator B / corrected Claude transport / Specification 028 reconciliation
+## Current active stage: V0.2 D-2 Claude evaluator B materialization / Specification 028 reconciliation
+
+Checkpoint 823 / Research 486 prospectively clarifies D-2 scoring before any ChatGPT-side evaluator execution. Claude independently identified that reason_codes has no public frozen vocabulary, so exact reason-code strings are diagnostic only. All semantic fields remain strict and unchanged: relation validity, current effects, successor initialization, carried components, deferral rebound and review_required. No fixture, hidden-key value or evaluator source is changed. Claude Evaluator B materialization is next.
 
 Checkpoint 822 / Research 485 corrects a task-owner transport mistake without changing any D-2 semantics or blindness boundary. Claude never had the custom ChatGPT Codexless Runtime Bridge; Research 348 names it specifically as the authorized ChatGPT execution surface. Claude's bounded MC-0029 collaboration writes use the GitHub connector available in Claude, restricted to the authorized message path. Research 477's transport-nonconformance finding is withdrawn as factual error, and Research 484 Section 5 is superseded. Claude remains next for Message 018.
 
