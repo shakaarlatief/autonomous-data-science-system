@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 836
+**Checkpoint:** 837
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: D-1 bounded amendment reconciliation / V0.3 candidate freeze / Specification 028 reconciliation
+## Current active stage: THIN_CENTRED_HYBRID_V03 owner-decision package freeze / Specification 028 reconciliation
+
+Checkpoint 837 / Research 500 freezes THIN_CENTRED_HYBRID_V03 as the final pre-owner-decision candidate. V03 preserves the V02 authority/completion/J2/J3/orientation/legacy architecture, incorporates D-3 acyclic cross-plane stratification, D-2 qualified N:M lineage and realization succession, and the D-1 bounded amendment that realization_initialization is an ordered zero-to-many collection. All Research 477 pre-owner discriminators are now complete or reconciled, so the architecture decision is ready. Specification 028 remains authoritative, production is not selected, and migration remains unauthorized until a separate owner decision and subsequent governed stages.
 
 Checkpoint 836 / Research 499 preserves the single frozen D-1 result and reconciles it as D1_AMEND. The two independent evaluators and key agreed on every substantive D-1 value; the only material mismatch was whether realization_initialization is a singleton object or a singleton array. Because the frozen contract did not specify container cardinality and D-2 already qualifies N:M successor semantics, the candidate is amended prospectively so realization_initialization is an ordered array of zero or more {effect_id, mode} records. The raw V01 result remains a mismatch and is not normalized after the fact. D-1, D-2 and D-3 evidence gathering is complete; the amended V0.3 candidate must now be frozen before owner architecture decision.
 

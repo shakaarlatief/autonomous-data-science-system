@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "UNRESOLVED",
-  "phase": "DRP03_HYBRID_V03_FREEZE",
+  "phase": "DRP03_HYBRID_OWNER_DECISION_PACKAGE_FREEZE",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,7 +81,7 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 499 preserves the frozen D-1 raw mismatch and reconciles it as D1_AMEND. Exactly one of 14 material fields differed: realization_initialization used the same effect_id and OPEN_RESET payload but ChatGPT/key emitted one object while Claude emitted a singleton array. No post-result normalization is applied. The reviewer-facing contract did not specify container cardinality, and D-2 already qualifies N:M successor semantics, so the candidate is amended prospectively to an ordered array of zero or more initialization records. D-1, D-2 and D-3 required evidence gathering is complete. Next actor is ChatGPT to freeze THIN_CENTRED_HYBRID_V03 before owner architecture decision."
+    "notes": "Research 500 freezes THIN_CENTRED_HYBRID_V03 as the final pre-owner-decision candidate. D-3 passed, D-2 is plausible with independent 14/14 semantic agreement, and D-1 is reconciled as a bounded interface amendment: realization_initialization is an ordered zero-to-many collection aligned with qualified N:M lineage semantics. All Research 477 pre-owner discriminators are complete or reconciled. Owner architecture decision is ready, but production selection, Specification 028 supersession, migration and dependent-DRP resumption remain unauthorized. Next actor is ChatGPT to freeze the exact owner decision package."
   },
   "last_transition": {
     "transition_id": "mc0029-drp03-r2-construct-underdetermined",
