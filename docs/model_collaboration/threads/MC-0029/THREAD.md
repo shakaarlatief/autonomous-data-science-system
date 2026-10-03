@@ -1780,3 +1780,21 @@ Current boundary:
     NEXT_ACTOR=chatgpt
     HIDDEN_R2_ITEM_DETAILS=SEALED
     NEXT=EXECUTE_D2_TWO_MODEL_COMPARISON_ONCE
+
+## D-2 extended lineage result
+
+Research 489 records:
+
+    D2_LINEAGE_EXTENSION_PLAUSIBLE
+    semantic A -> key       14 / 14
+    semantic B -> key       14 / 14
+    semantic A <-> B        14 / 14
+    full-object B -> key      6 / 14
+    full-object differences   reason_codes only
+
+Current boundary:
+
+    PHASE=DRP03_HYBRID_D1_PROTOCOL_FREEZE
+    NEXT_ACTOR=chatgpt
+    HIDDEN_R2_ITEM_DETAILS=SEALED
+    NEXT=FREEZE_D1_INTEGRATED_REAL_EVENT_MICROREPLAY_PROTOCOL

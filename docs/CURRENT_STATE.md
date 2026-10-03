@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 825
+**Checkpoint:** 826
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: V0.2 D-2 frozen two-model comparison execution / Specification 028 reconciliation
+## Current active stage: V0.2 D-1 integrated real-event micro-replay freeze / Specification 028 reconciliation
+
+Checkpoint 826 / Research 489 records HYBRID_D2_LINEAGE_EXTENSION_V01 as D2_LINEAGE_EXTENSION_PLAUSIBLE. Both independently authored evaluators matched the frozen key on all 14 material semantic outputs and agreed exactly with one another on all 14; the eight full-object differences were confined to the prospectively de-scored reason_codes vocabulary. D-2 and D-3 are now closed at development mechanism/proof level. D-1 integrated real-event replay is the only remaining Research 477 discriminator before an owner architecture decision.
 
 Checkpoint 825 / Research 488 freezes the exact HYBRID_D2_LINEAGE_EXTENSION_V01 comparison runner and all bound inputs before either evaluator is executed by ChatGPT. The comparison manifest SHA-256 is b5519a885a9d9b00b7627c8bc799d644666cb386a861fea791529708e5779200 and result.json is absent. The runner reports full-object diagnostic equality and strict semantic equality with only reason_codes removed under Research 486. Exactly one comparison execution is next.
 

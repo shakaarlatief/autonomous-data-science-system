@@ -3,7 +3,7 @@
   "thread_id": "MC-0029",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "UNRESOLVED",
-  "phase": "DRP03_HYBRID_D2_COMPARISON_EXECUTION",
+  "phase": "DRP03_HYBRID_D1_PROTOCOL_FREEZE",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "0a68787aee5f2c6332d6ee1fb6adbf0efe92a41d",
@@ -81,7 +81,7 @@
       "DRP-03 reviewer-facing materials are REVIEWER_PACKET.md, review_scope.json, implementation_snapshot.json, definitions.json, annotation_schema.json, and the frozen source/support carriers at 870689734673e6e8c2212035afcdf27daf733c15.",
       "P1 owner-pasted Claude Code console output exposed a limited Key A STATE semantic preview to the human owner and chatgpt-31 after P1 output freeze. This did not enter Git or reviewer storage. chatgpt-31 is therefore not eligible as a fresh decision reviewer, and future Key Author B must not receive access to this conversation."
     ],
-    "notes": "Research 488 freezes the exact HYBRID_D2_LINEAGE_EXTENSION_V01 comparison harness. Manifest SHA-256 is b5519a885a9d9b00b7627c8bc799d644666cb386a861fea791529708e5779200 and result.json is absent. The runner executes frozen ChatGPT A and independently authored Claude B against the 14 frozen fixtures and key. Research 486 governs outcome scoring: all semantic fields are strict; reason_codes exact strings are diagnostic only. Next actor is ChatGPT for exactly one execution."
+    "notes": "Research 489 records D2_LINEAGE_EXTENSION_PLAUSIBLE. ChatGPT Evaluator A and independently authored Claude Evaluator B each match all 14 frozen semantic-key outputs and agree exactly on all 14 material semantic objects. The only full-object differences are reason_codes, which Research 486 prospectively classified as diagnostic because no public vocabulary was frozen. D-2 and D-3 are closed at development mechanism/proof level. D-1 integrated real-event micro-replay is the only remaining pre-owner-decision discriminator. Hidden R2 item-level material remains sealed."
   },
   "last_transition": {
     "transition_id": "mc0029-drp03-r2-construct-underdetermined",
