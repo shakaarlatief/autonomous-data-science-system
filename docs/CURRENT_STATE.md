@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 811
+**Checkpoint:** 812
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: integrated thin-centred hybrid successor candidate freeze / Specification 028 reconciliation
+## Current active stage: integrated thin-centred hybrid final comparative critique handoff / Specification 028 reconciliation
+
+Checkpoint 812 / Research 476 freezes THIN_CENTRED_HYBRID_V01 as the exact integrated successor candidate after the complete C1-C9 development program. The candidate preserves thin typed governing consequences, closed realization accounting, governing completion criteria, natural-owner many-to-many realization, deterministic satisfaction, governed N:M requirement lineage, compact generated orientation, and an independent detective safety net. It explicitly does not restore universal ObligationUnits, birth-time grouping, authored global realization state, or model-inferred authority. No production architecture is selected. The next step is a final bounded cross-model critique of this exact frozen whole candidate before any owner architecture decision or larger pilot.
 
 Checkpoint 811 / Research 475 records the owner's exact C9 verdicts as ACCEPTABLE / ACCEPTABLE / ACCEPTABLE with overall burden LOW. Under the frozen Research 473 rule this yields C9_BURDEN_PLAUSIBLE. All C1-C9 pre-decision items from Research 461 are now resolved at development level, while no production target is selected. The next work is to reconcile the accumulated evidence into one exact integrated thin-centred hybrid successor candidate before any owner architecture decision or larger pilot.
 

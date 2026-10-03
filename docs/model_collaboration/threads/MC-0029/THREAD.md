@@ -1536,3 +1536,19 @@ Current boundary:
     NEXT_ACTOR=chatgpt
     HIDDEN_R2_ITEM_DETAILS=SEALED
     NEXT=FREEZE_INTEGRATED_THIN_CENTRED_HYBRID_SUCCESSOR_CANDIDATE
+
+## Integrated thin-centred hybrid candidate freeze
+
+Research 476 freezes:
+
+    CANDIDATE=THIN_CENTRED_HYBRID_V01
+    STATUS=FROZEN_FOR_FINAL_COMPARATIVE_CRITIQUE
+
+The candidate integrates the full C1-C9 development evidence without selecting production.
+
+Current boundary:
+
+    PHASE=DRP03_HYBRID_FINAL_CRITIQUE_HANDOFF
+    NEXT_ACTOR=chatgpt
+    HIDDEN_R2_ITEM_DETAILS=SEALED
+    NEXT=FREEZE_FINAL_CROSS_MODEL_CRITIQUE_HANDOFF
