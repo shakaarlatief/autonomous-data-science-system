@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 796
+**Checkpoint:** 797
 **Date:** 2026-10-03
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: thin-versus-rich accepted-semantics Claude critique / Specification 028 reconciliation
+## Current active stage: corrected thin-versus-rich competency comparison freeze / Specification 028 reconciliation
+
+Checkpoint 797 / Research 461 reconciles Claude Message 015 as ACCEPT_WITH_REFINEMENTS and amends Research 460 for routing. Claude correctly identified that the first rich comparator used R1 annotation scaffolding rather than the later Research 327 V0.5 natural-owner/derived-state model, that the 37-CQ audit was under-discriminating, and that the SP-1 source boundary was not broad enough to settle the final semantic core. The leading amended development candidate is now THIN_CENTRED_HYBRID, not a revival of the old ObligationUnit core: completeness accounting, governing-side completion criteria, J1 requirement granularity, N:M requirement lineage and one governed derived orientation definition are now explicit candidate additions. HYBRID_REQUIRED remains plausible rather than final until a corrected fair-rich / expanded-competency comparison is prospectively frozen and executed. Hidden R2 item-level semantics remain sealed.
 
 Checkpoint 796 / Research 460 completes ChatGPT's prospectively frozen desk comparison as THIN_ACCEPTED_SUFFICIENT_RICH_OPTIONAL. All 37 admitted SP-1 questions remain answerable under both candidates, and no current question demonstrates a rich-only required field. The important correction is preserved: source-plus-interpretation owner acceptance removes the main R2 authority/reproducibility objection to a richer design, but does not by itself make birth-time grouping, J2 realization facts or global state necessary governing-core fields. Because this materially revisits the family Claude previously helped retire under different assumptions, Message 014 routes a comparative critique to Claude before any owner architecture decision or larger pilot.
 

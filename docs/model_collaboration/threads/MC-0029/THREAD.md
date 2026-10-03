@@ -1267,3 +1267,30 @@ Current boundary:
     NEXT_ACTOR=claude
     EXPECTED_OUTPUT=messages/015_claude_thin_vs_rich_accepted_critique.md
     HIDDEN_R2_ITEM_DETAILS=SEALED
+
+## Message 015 reconciliation
+
+Research 461 accepts Claude Message 015 with refinements.
+
+    Research 460 routing            AMENDED
+    leading candidate               THIN_CENTRED_HYBRID
+    HYBRID_REQUIRED                 plausible, not final
+    production target               not selected
+
+Accepted critique classes:
+
+    fair RICH comparator must use Research 327 V0.5, not R1 annotation scaffolding
+    discriminating CQs require per-question reasoning
+    final CQ boundary must include KA-R52, lineage and orientation requirements
+    realizer coverage cannot self-certify governing satisfaction
+    requirement granularity needs a J1 rule
+    PARTIAL composition remains undefined
+    requirement succession needs N:M lineage
+    owner orientation needs a governed versioned derivation definition
+
+Current boundary:
+
+    PHASE=DRP03_CORRECTED_THIN_RICH_COMPARISON_FREEZE
+    NEXT_ACTOR=chatgpt
+    HIDDEN_R2_ITEM_DETAILS=SEALED
+    NEXT=FREEZE_CORRECTED_THIN_RICH_COMPETENCY_COMPARISON
