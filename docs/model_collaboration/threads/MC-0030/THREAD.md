@@ -90,3 +90,16 @@ Claude remains blind to Research 504 / Checkpoint 841.
     PHASE=R0_CHARTER_AMENDMENT
     NEXT_ACTOR=chatgpt
     NEXT=FREEZE_NEUTRAL_R0_AMENDMENT
+
+
+## Neutral R0 amendment and ChatGPT addendum
+
+Research 507 now explicitly adds semantic organization/navigation and external execution infrastructure to the neutral charter.
+
+Research 508 extends ChatGPT Candidate A against those requirements and remains hidden from Claude.
+
+The previously frozen Research 505 handoff is now stale and must be superseded before Claude is prompted.
+
+    PHASE=R0_CLAUDE_HANDOFF_REFRESH
+    NEXT_ACTOR=chatgpt
+    NEXT=FREEZE_REFRESHED_CLAUDE_HANDOFF

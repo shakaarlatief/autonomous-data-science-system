@@ -418,9 +418,9 @@ RESEARCH_217 = EMPIRICAL_EVIDENCE / COMPARATOR
 OLD_18_SUBJECT_VOCABULARY = NO PRESERVATION RIGHT
 ```
 
-### Required correction to the current R0 program
+### R0 correction now completed
 
-Before final physical architecture selection, the R0 program should explicitly include a dedicated semantic-organization/navigation obligation.
+Research 507 now explicitly adds a dedicated semantic-organization/navigation obligation to the neutral R0 charter before Claude's independent design.
 
 That work should:
 
@@ -436,7 +436,7 @@ That work should:
 10. test architecture-evolution support;
 11. either select a target or explicitly preserve a bounded unresolved choice.
 
-This should be made explicit in the R0 charter/handoff before Claude's independent physical-design response.
+This is now explicit through Research 507. ChatGPT Candidate A has also been extended independently through Research 508; Claude remains blind to Research 504 and 508 until its own Message 001 is frozen.
 
 ---
 
@@ -1012,14 +1012,21 @@ decision-relevant probes
 physical target decision
 ```
 
-Important correction before Claude:
+The pre-Claude correction is now complete:
 
 ```text
-explicitly add semantic organization/navigation
-as a named R0 obligation
+Research 507
+    semantic organization/navigation = explicit neutral R0 obligation
+    external executor / Runtime Bridge boundary = explicit neutral R0 obligation
+
+Research 508
+    ChatGPT Candidate-A addendum against the amended neutral charter
+
+Claude
+    remains blind to Research 504 and 508
 ```
 
-so Claude and ChatGPT are both solving the whole intended Project System problem.
+A refreshed Claude handoff is the only remaining step before the independent pass.
 
 ---
 
@@ -1053,8 +1060,9 @@ so Claude and ChatGPT are both solving the whole intended Project System problem
 
 ### Explicitly still open before physical-target selection
 
-- [ ] Amend/strengthen R0 so semantic organization/navigation is an explicit named obligation
-- [ ] Add the Runtime Bridge/external-executor ownership boundary explicitly to the neutral R0 charter
+- [x] Amend/strengthen R0 so semantic organization/navigation is an explicit named obligation
+- [x] Add the Runtime Bridge/external-executor ownership boundary explicitly to the neutral R0 charter
+- [ ] Freeze refreshed Claude blind handoff against Research 503 + 506 + 507
 - [ ] Run Claude blind independent R0 whole-system design
 - [ ] Compare independent ChatGPT and Claude physical/system architectures
 - [ ] Reconcile into one candidate or bounded finalist set
@@ -1207,6 +1215,12 @@ Research 503
 Research 506
     Codexless Runtime Bridge standalone-product boundary and extraction obligation
 
+Research 507
+    neutral R0 semantic-organization and external-execution amendment
+
+Research 508
+    hidden ChatGPT Candidate-A addendum for the amended requirements
+
 Specification 028
     current operational implementation/migration authority
 
@@ -1249,11 +1263,11 @@ MAJOR LOGICAL ARCHITECTURE
 V03 semantic/control kernel
     selected
             ↓
-remaining semantic-organization obligation
-    still open
+semantic-organization + external-execution obligations
+    explicitly added to R0
             ↓
 R0 integrated physical/software architecture
-    CURRENT
+    CURRENT / refreshed Claude handoff next
             ↓
 independent designs
             ↓

@@ -3,7 +3,7 @@
   "thread_id": "MC-0030",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "OPEN",
-  "phase": "R0_CHARTER_AMENDMENT",
+  "phase": "R0_CLAUDE_HANDOFF_REFRESH",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -60,16 +60,17 @@
       "Research 503 and MC-0030 BRIEF/THREAD/STATE are neutral task specifications and may be read from current routing.",
       "No ChatGPT R0 physical architecture candidate exists at thread creation.",
       "After ChatGPT candidate freeze, Claude must remain blind to that candidate until Claude Message 001 is durably committed.",
-      "ChatGPT R0-CANDIDATE-A is frozen in Research 504 / Checkpoint 841 but must remain hidden from Claude until Claude Message 001 is durably committed."
+      "ChatGPT R0-CANDIDATE-A is frozen in Research 504 / Checkpoint 841 but must remain hidden from Claude until Claude Message 001 is durably committed.",
+      "Research 507 is a neutral R0 amendment and may be exposed to Claude. Research 508 is part of ChatGPT Candidate A and must remain hidden until Claude Message 001 is committed."
     ],
-    "notes": "Owner discussion after Checkpoint 842 identified two neutral R0 scope obligations that must be made explicit before Claude's blind design: first-principles semantic organization/navigation, and the generic external-execution boundary in which Codexless Runtime Bridge is treated as reusable infrastructure rather than ADS-owned product code. Claude remains blind to Research 504 / Checkpoint 841. ChatGPT is temporarily next to freeze the neutral amendment and its own bounded addendum before a refreshed Claude handoff."
+    "notes": "Research 507 now makes semantic organization/navigation and the external executor/Runtime Bridge boundary explicit for both independent designs. Research 508 extends ChatGPT Candidate A against that neutral amendment and remains hidden with Research 504. Claude may read Research 503, 506 and 507 in the refreshed handoff, but must remain blind to Research 504, Research 508, Checkpoint 841 and any Candidate-A derivative until Message 001 is durably committed."
   },
   "last_transition": {
-    "transition_id": "mc0030-r0-charter-amendment-before-claude",
+    "transition_id": "mc0030-r0-amendment-chatgpt-addendum-frozen",
     "from_state": "OPEN",
     "to_state": "OPEN",
-    "actor": "human",
-    "reason": "Owner discussion clarified the Runtime Bridge standalone-product boundary and confirmed the need to make the previously preserved semantic-organization obligation explicit before Claude's independent R0 design.",
-    "repository_head": "630bdd04e3b3275b5ffd342cd844f7060f6f5ed0"
+    "actor": "chatgpt",
+    "reason": "Research 507 freezes the neutral amended R0 requirements and Research 508 freezes ChatGPT's hidden addendum so both independent designers address the same semantic-organization and external-execution obligations.",
+    "repository_head": "286d6c9c98dd13c1d62f9a5e01e53a0177a521f0"
   }
 }

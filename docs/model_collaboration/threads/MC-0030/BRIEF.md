@@ -5,7 +5,7 @@
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen substantive evidence base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
 **Selected logical target:** THIN_CENTRED_HYBRID_V03
-**Neutral realization charter:** Research 503
+**Neutral realization charter:** Research 503 + Research 507
 **Task owner:** ChatGPT / chatgpt-35
 **Independent reviewer/designer:** Claude / claude-05
 **Authority:** Collaboration evidence only.
@@ -16,7 +16,7 @@ Independently design the strongest physical/software realization architecture fo
 
 The design must cover the whole Project-system realization, not only semantic storage.
 
-Use Research 503 as the neutral R0 requirements charter.
+Use Research 503 together with Research 507 as the neutral R0 requirements charter. Research 506 is neutral ownership-boundary input for the external execution infrastructure question.
 
 ## Critical design freedom
 
@@ -108,3 +108,23 @@ Claude must not inspect either file, any summary of Candidate A, or any later co
 The independent task remains exactly the neutral problem defined above.
 
 After Message 001 is committed, comparative exposure may be authorized explicitly.
+
+
+## Neutral R0 amendment before Claude
+
+Research 507 adds explicit requirements for:
+
+    first-principles semantic organization / discovery / navigation
+    external provider-neutral execution infrastructure
+    Codexless Runtime Bridge as reusable external infrastructure rather than ADS-owned generic product code.
+
+Claude may read:
+
+    docs/research/506_codexless_runtime_bridge_standalone_product_boundary.md
+    docs/research/507_r0_semantic_organization_and_external_execution_amendment.md
+
+Claude must additionally remain blind to:
+
+    docs/research/508_chatgpt_r0_candidate_a_amended_requirements_addendum.md
+
+along with the previously hidden Research 504 / Checkpoint 841 material.
