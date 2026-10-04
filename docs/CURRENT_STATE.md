@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 850
+**Checkpoint:** 851
 **Date:** 2026-10-04
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: R0-P02 bounded authority-admission candidate implementation
+## Current active stage: R0-P02 Attempt 002 bounded output-contract repair implementation
+
+Checkpoint 851 / Research 515 / MC-0030 Message 007 preserve R0-P02 Attempt 001 as HARNESS_INVALID after the exact scorer result was frozen. Candidate commit 4d045aba282dc1ca609698c1b6d27e3365fa5fd9 was pushed before the single actual scorer execution; the observed FAIL / 57-error result was then frozen at result commit 53871536bf3f65684c77d6248f75729d3b9e973e before interpretation. Post-result inspection showed the scorer required exact outcome/latestness vocabulary that the blinded candidate contract had not published: the 57 errors are 19 primary result-classification mismatches repeated across the base and two metamorphic runs, with no valid architecture inference. The fixture, oracle, scorer, thresholds, negative controls and GOVERNED_LEDGER_KERNEL_V02 mechanism remain unchanged. Attempt 002 is now prospectively refrozen through attempt_002_output_contract.md, which publishes only the missing canonical result vocabulary and general normalization rules. The next task is one bounded manual Codex-relay edit of candidate.py only under that contract; the implementer remains blind to oracle.json, score.py and Attempt 001 result evidence. The live-host leg remains held until a valid deterministic attempt passes. No physical target is selected; production implementation, migration, Specification 028 amendment, Runtime Bridge extraction and authority switch remain unauthorized.
 
 Checkpoint 850 / Research 514 / MC-0030 Message 006 freeze the exact R0-P02 authority-admission experiment before implementation or result observation. The frozen surface contains 20 deterministic cases, an expected-result oracle, candidate implementation contract, deterministic scorer with renamed-case and alternate-context metamorphic checks, an explicit oracle/scorer blindness boundary, and a bounded real-GitHub squash-transport leg that never mutates the coordination branch. The probe deliberately uses synthetic HMAC signing and probe-only compact JSON so P02 isolates admission/order/staleness/tamper semantics; real owner cryptography remains R0-P01 and production canonicalization remains R1. The fresh-verifier limitation is frozen explicitly: a repository-only chain may be valid as presented while latestness remains unproven without a prior/out-of-band witness. No candidate.py existed at freeze time and no P02 result has been observed. The next task is one bounded Codex implementation of candidate.py, blind to oracle.json and score.py, followed by ChatGPT postflight before scoring. No physical target is selected; production implementation, migration, Specification 028 amendment, Runtime Bridge extraction and authority switch remain unauthorized.
 
