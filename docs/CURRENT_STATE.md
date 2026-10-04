@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 851
+**Checkpoint:** 852
 **Date:** 2026-10-04
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: R0-P02 Attempt 002 bounded output-contract repair implementation
+## Current active stage: R0-P02 live-host transport qualification
+
+Checkpoint 852 / Research 516 / MC-0030 Message 008 preserve the valid R0-P02 Attempt 002 deterministic-core PASS. The revised candidate was frozen at 83f9fad87e910b75299a3f478cf2b294d9d4ff7a and the single scorer execution returned PASS with 20 cases, 0 errors, both metamorphic checks passing, and exit 0. The raw result was frozen before further interpretation at result commit 3cc196f12903725ee703ac2c12ce2e6f2cbd06a9. All Research 514 deterministic-core gates are therefore satisfied. The full R0-P02 classification remains open because the preregistered live-host squash/transport leg is still mandatory. The exact next action is that live-host leg through Runtime Bridge GitHub connector surfaces using temporary refs only; the coordination branch must remain unchanged. No physical target is selected; production implementation, migration, Specification 028 amendment, Runtime Bridge extraction and authority switch remain unauthorized.
 
 Checkpoint 851 / Research 515 / MC-0030 Message 007 preserve R0-P02 Attempt 001 as HARNESS_INVALID after the exact scorer result was frozen. Candidate commit 4d045aba282dc1ca609698c1b6d27e3365fa5fd9 was pushed before the single actual scorer execution; the observed FAIL / 57-error result was then frozen at result commit 53871536bf3f65684c77d6248f75729d3b9e973e before interpretation. Post-result inspection showed the scorer required exact outcome/latestness vocabulary that the blinded candidate contract had not published: the 57 errors are 19 primary result-classification mismatches repeated across the base and two metamorphic runs, with no valid architecture inference. The fixture, oracle, scorer, thresholds, negative controls and GOVERNED_LEDGER_KERNEL_V02 mechanism remain unchanged. Attempt 002 is now prospectively refrozen through attempt_002_output_contract.md, which publishes only the missing canonical result vocabulary and general normalization rules. The next task is one bounded manual Codex-relay edit of candidate.py only under that contract; the implementer remains blind to oracle.json, score.py and Attempt 001 result evidence. The live-host leg remains held until a valid deterministic attempt passes. No physical target is selected; production implementation, migration, Specification 028 amendment, Runtime Bridge extraction and authority switch remain unauthorized.
 
