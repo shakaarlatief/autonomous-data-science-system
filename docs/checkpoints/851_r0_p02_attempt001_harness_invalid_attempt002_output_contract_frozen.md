@@ -3,6 +3,9 @@
 **Date:** 2026-10-04
 **Status:** ATTEMPT 001 HARNESS_INVALID / NO ARCHITECTURE INFERENCE / ATTEMPT 002 PROSPECTIVELY REFROZEN
 **Checkpoint class:** R0 PHYSICAL-ARCHITECTURE DECISION PROBE / HARNESS REPAIR
+**Project stage:** R0 physical-architecture decision probes
+**Scope:** Preserve Attempt 001 as a harness-invalid result and prospectively freeze the bounded Attempt 002 output-classification repair.
+**Authority:** Probe-harness repair checkpoint only. No architecture selection, production implementation, migration, live-host qualification, Specification 028 amendment, or authority switch is authorized.
 **Research:** Research 515
 **Probe:** R0-P02
 **Candidate:** GOVERNED_LEDGER_KERNEL_V02
