@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / GOVERNED LEDGER KERNEL V0.1 FROZEN / CLAUDE COMPARATIVE CRITIQUE NEXT
+**Status:** OPEN / GOVERNED LEDGER KERNEL V0.2 FROZEN / R0-P01..P03 PREREGISTRATION NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -26,8 +26,10 @@ The physical architecture is not.
     Claude independent physical design              COMPLETE / Message 001 / 071d4b5a...
     comparative exposure                            AUTHORIZED / BOTH POSITIONS FROZEN
     ChatGPT comparative reconciliation              COMPLETE / Research 511 / Message 002
-    Claude comparative critique                     NEXT / Message 003
-    discriminating probes                           AFTER RECONCILIATION / AS NEEDED
+    Claude comparative critique                     COMPLETE / Message 003 / 72046958...
+    ChatGPT reconciliation                          COMPLETE / Research 512 / Message 004
+    probe preregistration                           NEXT / R0-P01..R0-P03
+    discriminating probes                           AFTER PROTOCOL FREEZE
     physical-target owner decision                  ONLY WHEN READY
 
 ## Independence
@@ -188,3 +190,46 @@ Comparative blindness has ended. Claude / claude-04 may now inspect Research 504
     PHYSICAL_ARCHITECTURE_SELECTED=false
     OWNER_DECISION=NOT_READY
     NEXT=CLAUDE_MESSAGE_003
+
+## Claude critique reconciliation
+
+Claude Message 003 is frozen at:
+
+    72046958ce4f5c1f79375bb71dfa2291607e1ba9
+
+Research 512 / MC-0030 Message 004 reconcile it as ACCEPT_WITH_REFINEMENTS and freeze:
+
+    GOVERNED_LEDGER_KERNEL_V02
+
+Material changes from V0.1 include:
+
+    semantic-base rather than whole-repository stale binding
+    canonical anti-replay signed acceptance statement
+    sign-what-you-see owner flow
+    governed trust-root / rotation / recovery / compromise semantics
+    in-ledger hash-chained admission order rather than Git topology as authority
+    explicit anti-rollback witness question inside R0-P02
+    OBSERVABLE / RELATIONAL / EPHEMERAL J2 fact classes
+    relation substrate selected while navigation architecture remains a probe question
+    mandatory connector-readable derived orientation service level
+    explicit project/system versus project/engineering direction rules
+    provider-native executor contracts translated by ADS adapters
+    capability-scoped idempotency and recovery
+    private-J1 public consequence skeleton
+    explicit owner/developer workflow
+    Git / Python / R8-A assumptions made explicit and falsifiable
+
+The three decision-critical probes remain:
+
+    R0-P01 owner authenticity and acceptance burden
+    R0-P02 authority admission / ordering / concurrency / tamper evidence
+    R0-P03 semantic navigation / fresh-agent reconstruction
+
+No probe has run.
+
+    PHASE=R0_PROBE_PROTOCOL_PREREGISTRATION
+    NEXT_ACTOR=chatgpt
+    RECONCILED_CANDIDATE=GOVERNED_LEDGER_KERNEL_V02
+    PHYSICAL_ARCHITECTURE_SELECTED=false
+    PROBE_PROTOCOLS=NOT_YET_FROZEN
+    NEXT=R0_P01_TO_P03_PROTOCOL_PREREGISTRATION

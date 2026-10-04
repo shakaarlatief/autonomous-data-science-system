@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 847
+**Checkpoint:** 848
 **Date:** 2026-10-04
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: R0 Claude adversarial critique of the reconciled physical/software architecture
+## Current active stage: R0 preregistration of the three remaining physical-architecture decision probes
+
+Checkpoint 848 / Research 512 / MC-0030 Message 004 reconcile Claude Message 003 at 72046958ce4f5c1f79375bb71dfa2291607e1ba9 as ACCEPT_WITH_REFINEMENTS and freeze GOVERNED_LEDGER_KERNEL_V02 as the single leading pre-probe physical/software candidate. V0.2 replaces whole-repository acceptance staleness with a semantic-base digest, binds owner-exclusive proof to a canonical anti-replay signed statement and sign-what-you-see rendering, moves semantic ledger order into a hash-chained in-ledger sequence with owner checkpoints, sharpens J2 into OBSERVABLE/RELATIONAL/EPHEMERAL fact classes, requires connector-readable derived orientation as an operability service level, clarifies the project/system versus project/engineering seam, keeps Runtime Bridge external through provider-native receipt translation, and adds public consequence skeletons for private J1 that changes public authority. Git remains the leading carrier but not the trust or ordering root; Python is only a provisional implementation default and the exact R8-A tree has no preservation right. The three remaining decision-critical probes are R0-P01 owner authenticity/burden, R0-P02 authority admission/order/concurrency/tamper evidence, and R0-P03 semantic navigation/fresh-agent reconstruction. Their detailed protocols are not yet frozen and none has run. No physical target is selected; implementation, migration, Specification 028 amendment, Runtime Bridge extraction and authority switch remain unauthorized.
 
 Checkpoint 847 / Research 511 / MC-0030 Message 002 completes ChatGPT's first comparative reconciliation of the independently frozen R0 designs. The two designs converge strongly and are amended into one candidate, GOVERNED_LEDGER_KERNEL_V01: repository-native immutable governing acceptances, natural-owner J2 facts, one deterministic kernel and shared predicate source, deterministic J3, non-authoritative derived indexes/orientation, a provider-neutral executor port with Runtime Bridge as external reusable infrastructure, guarded serialized authority admission, and semantic shadow before migration. The reconciliation strengthens acceptance authenticity so consequential owner decisions require owner-exclusive cryptographic proof bound to the semantic Acceptance Envelope rather than making Git commit identity itself the canonical proof. Three questions remain decision-critical before physical-target selection: owner authenticity/burden (R0-P01), real authority admission/order/concurrency (R0-P02), and semantic navigation/fresh-agent reconstruction against Research 217 and hybrid alternatives (R0-P03). Claude / claude-04 is now authorized for comparative exposure to Research 504 + 508 and Research 511 and is next for MC-0030 Message 003 adversarial critique. No physical architecture is selected; no probe execution, implementation, migration, Specification 028 amendment, Runtime Bridge extraction or authority switch is authorized.
 

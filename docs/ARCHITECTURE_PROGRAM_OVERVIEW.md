@@ -1051,7 +1051,7 @@ Comparative blindness has ended. Claude / claude-04 is now the next actor for on
 - [x] Reconcile into one candidate or bounded finalist set
 - [ ] Perform first-principles semantic-organization/navigation comparison
 - [ ] Use Research 217 as comparator/evidence, not inherited answer
-- [ ] Resolve any other architecture choices that remain decision-relevant
+- [x] Resolve any other architecture choices that remain decision-relevant
 - [ ] Run the smallest necessary empirical probes for uncertain mechanisms
 - [ ] Freeze/select the physical/software realization target
 
@@ -1260,7 +1260,12 @@ GOVERNED_LEDGER_KERNEL_V01
             ↓
 Claude comparative critique
             ↓
-R0-P01 / R0-P02 / R0-P03 focused probes as required
+GOVERNED_LEDGER_KERNEL_V02
+    critique reconciled
+            ↓
+R0-P01 / R0-P02 / R0-P03 preregistration
+            ↓
+R0-P01 / R0-P02 / R0-P03 focused probes
             ↓
 R1 physical target
             ↓

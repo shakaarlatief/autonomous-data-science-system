@@ -3,7 +3,7 @@
   "thread_id": "MC-0030",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "OPEN",
-  "phase": "R0_CLAUDE_COMPARATIVE_CRITIQUE",
+  "phase": "R0_PROBE_PROTOCOL_PREREGISTRATION",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -51,7 +51,7 @@
       ]
     }
   ],
-  "next_expected_actor": "claude",
+  "next_expected_actor": "chatgpt",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -69,16 +69,19 @@
       "Both independent positions are now durably frozen. Comparative exposure to ChatGPT Research 504 + 508 is authorized for the next MC-0030 comparative reconciliation stage.",
       "Research 511 and MC-0030 Message 002 freeze ChatGPT's first comparative reconciliation after both independent positions were durable.",
       "Comparative blindness has ended. Claude / claude-04 may now inspect ChatGPT Research 504 + 508 and the reconciled Research 511 for Message 003.",
-      "The reconciled candidate is GOVERNED_LEDGER_KERNEL_V01; no physical target is selected and the three decision-critical probes R0-P01 through R0-P03 remain unexecuted."
+      "The reconciled candidate is GOVERNED_LEDGER_KERNEL_V01; no physical target is selected and the three decision-critical probes R0-P01 through R0-P03 remain unexecuted.",
+      "Claude Message 003 is frozen at 72046958ce4f5c1f79375bb71dfa2291607e1ba9 and changes exactly one authorized collaboration-message path.",
+      "Research 512 / MC-0030 Message 004 reconcile Message 003 as ACCEPT_WITH_REFINEMENTS and freeze GOVERNED_LEDGER_KERNEL_V02.",
+      "The three decision-critical probes remain R0-P01, R0-P02 and R0-P03; none has been executed and their detailed protocols are not yet frozen."
     ],
-    "notes": "Both independent positions are frozen and comparative exposure is authorized. Research 511 / MC-0030 Message 002 reconcile them into GOVERNED_LEDGER_KERNEL_V01. Claude / claude-04 is next for comparative critique and may inspect Research 504, 508 and 511. No physical target, implementation, migration, Specification 028 amendment, Runtime Bridge extraction or authority switch is authorized."
+    "notes": "The independent and comparative design phases are complete through Research 512 / Message 004. GOVERNED_LEDGER_KERNEL_V02 is the single leading pre-probe candidate. Comparative blindness is over. ChatGPT / chatgpt-36 is next to preregister R0-P01 through R0-P03 before any probe result is observed. No physical target, implementation, migration, Specification 028 amendment, Runtime Bridge extraction or authority switch is authorized."
   },
   "last_transition": {
-    "transition_id": "mc0030-chatgpt-comparative-reconciliation-frozen",
+    "transition_id": "mc0030-message003-reconciled-v02-probe-preregistration",
     "from_state": "OPEN",
     "to_state": "OPEN",
     "actor": "chatgpt",
-    "reason": "Research 511 and Message 002 reconcile the independently frozen physical architectures into GOVERNED_LEDGER_KERNEL_V01 and route that candidate to Claude for adversarial comparative critique before any owner decision or probe execution.",
-    "repository_head": "0805cbf2a51b5bee2300ddc87df2715df33f0a32"
+    "reason": "Research 512 / Message 004 accept Claude Message 003 with refinements, freeze GOVERNED_LEDGER_KERNEL_V02 and advance MC-0030 to detailed preregistration of R0-P01 through R0-P03 before any probe execution.",
+    "repository_head": "72046958ce4f5c1f79375bb71dfa2291607e1ba9"
   }
 }

@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-10-04
-**Status:** MC-0030 OPEN / GOVERNED LEDGER KERNEL V0.1 FROZEN / CHATGPT MESSAGE 002 COMPLETE / CLAUDE COMPARATIVE CRITIQUE MESSAGE 003 NEXT / DECISION PROBES R0-P01..P03 PENDING / PHYSICAL TARGET NOT SELECTED / SPEC 028 AUTHORITY UNCHANGED / MIGRATION UNAUTHORIZED / MC-0029 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0030 OPEN / GOVERNED LEDGER KERNEL V0.2 FROZEN / MESSAGE 004 COMPLETE / R0-P01..P03 PROTOCOL PREREGISTRATION NEXT / PHYSICAL TARGET NOT SELECTED / SPEC 028 AUTHORITY UNCHANGED / MIGRATION UNAUTHORIZED / MC-0029 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -27,7 +27,7 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 MC-0030 is the active collaboration obligation. ChatGPT Candidate A is frozen in Research 504 + 508. Claude's blind independent Message 001 is frozen at commit 071d4b5a232c07aaa3e96a2b91ba3ae1fd1a9c2d and proposes LEDGER-KERNEL. Claude reports that the blindness boundary remained intact. The preallocated claude-05 coordination value was a clerical error; the actual persistent Claude interaction remains claude-04, conversation 04 - Assurance and Delivery Architecture Design.
 
-Research 511 / MC-0030 Message 002 now reconcile both independent positions into GOVERNED_LEDGER_KERNEL_V01. Comparative blindness has ended. Claude / claude-04 is next for one adversarial comparative critique as Message 003 and may inspect Research 504 + 508 and Research 511. R0-P01 owner authenticity/burden, R0-P02 authority admission/concurrency and R0-P03 semantic navigation remain unexecuted decision probes. No physical target has been selected and no implementation, migration, Specification 028 amendment, Runtime Bridge extraction or authority switch is authorized.
+Claude Message 003 is frozen at 72046958ce4f5c1f79375bb71dfa2291607e1ba9. Research 512 / MC-0030 Message 004 reconcile it as ACCEPT_WITH_REFINEMENTS and freeze GOVERNED_LEDGER_KERNEL_V02 as the single leading pre-probe candidate. ChatGPT / chatgpt-36 is next to preregister R0-P01 owner authenticity/burden, R0-P02 authority admission/order/concurrency/tamper evidence and R0-P03 semantic navigation/fresh-agent reconstruction. No probe has run, no physical target has been selected, and no implementation, migration, Specification 028 amendment, Runtime Bridge extraction or authority switch is authorized.
 
 ### MC-0029: Specification 028 reconciliation and AO-10 integrated Project-system design (resolved historical context)
 
