@@ -1027,3 +1027,96 @@ docs/research/145_candidate_01_requirements_v02_design_coverage_and_qualificatio
 docs/research/175_q10_final_multidimensional_qualification_result.md
 docs/checkpoints/520_q10_final_qualification_passed_target_selection_decision_next.md
 ```
+---
+
+## D-036. Select THIN_CENTRED_HYBRID_V03 as the successor Project semantic/control architecture target
+
+**Status:** Accepted / selected successor target / not yet operational authority
+**Date:** 2026-10-04
+
+The project owner explicitly selects `THIN_CENTRED_HYBRID_V03`, frozen in Research 500, as the successor logical semantic/control architecture target for the Project system.
+
+The selected target includes the accepted J1 governing boundary, thin typed machine consequences, closed effect accounting, governing completion authority, natural-owner J2 realization, shared executable predicates, deterministic J3 truth, governed N:M lineage and realization succession, generated non-authoritative orientation, explicit review ownership, detective safeguards, and explicit legacy-unreconciled handling.
+
+The owner decision is the exact payload:
+
+```text
+ACCEPT
+```
+
+bound through the Research 501 decision package and the durable owner-decision artifact.
+
+### Selection boundary
+
+This decision closes the current architecture-family selection under the qualified evidence boundary and authorizes the next governed realization and migration-qualification program.
+
+It does not make the selected architecture operational authority.
+
+```text
+selected successor target        THIN_CENTRED_HYBRID_V03
+architecture target selected     true
+production target selected       true
+current operational authority    Specification 028 / accepted continuity surfaces
+physical migration authorized    no
+production activation authorized no
+authority switch authorized      no
+dependent DRPs resumed           no
+```
+
+`production target selected` means selected as the intended production architecture target. It does not mean deployed, activated, migrated, or authoritative.
+
+### Physical realization freedom
+
+D-036 selects logical semantics and guarantees, not accidental current representation.
+
+The realization program is free to redesign from first principles:
+
+```text
+files and folders
+schemas and serialization
+packages and modules
+storage/indexing
+tests
+CI/CD
+branch and merge workflow
+collaboration procedures
+execution surfaces
+APIs/CLI/UI
+deployment topology
+migration and rollback mechanisms
+```
+
+Existing mechanisms remain evidence, compatibility constraints where genuinely live, and potential reusable material. They have no automatic preservation right.
+
+### Relationship to D-035 and Specification 028
+
+D-035 remains a historical accepted architecture-selection record. D-036 does not silently rewrite it.
+
+The realization program must explicitly reconcile surviving PKA-CANDIDATE-01 and Specification 028 mechanisms against V03.
+
+Specification 028 remains current operational implementation/migration authority until an explicit prospective amendment or successor is accepted and a later qualified cutover decision switches authority.
+
+### Realization and migration authorization
+
+This decision authorizes the next program to:
+
+1. define V03 realization requirements and compare physical architecture alternatives;
+2. freeze a concrete physical realization contract only after qualification;
+3. implement production-quality mechanisms behind that contract;
+4. inventory live legacy semantics by responsibility rather than by current file layout;
+5. run the successor in shadow mode while current authority remains in force;
+6. migrate in bounded reversible waves with semantic-parity and rollback evidence;
+7. perform untouched confirmation and cutover qualification;
+8. seek a separate explicit authority-switch decision only after those gates pass.
+
+The program must actively classify evidence that may challenge the selected architecture as CONFORMANCE_DEFECT, KEEP, CLARIFY, AMEND, SUPERSEDE, or REOPEN rather than silently changing architecture during implementation.
+
+See:
+
+```text
+docs/research/500_thin_centred_hybrid_v03_owner_decision_candidate.md
+docs/research/501_owner_architecture_decision_package_freeze.md
+docs/research/502_v03_owner_selection_and_realization_program_opening.md
+docs/checkpoints/838_owner_architecture_decision_package_frozen.md
+docs/checkpoints/839_v03_selected_realization_program_opened.md
+```

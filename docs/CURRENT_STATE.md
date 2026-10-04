@@ -1,7 +1,7 @@
 # Current State
 
-**Checkpoint:** 838
-**Date:** 2026-10-03
+**Checkpoint:** 839
+**Date:** 2026-10-04
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
 **Promoted V1 integration branch:** `v1-frontend-spike` at `2480109fadeee1e480ef03b82e335aacdf9adf91`
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: THIN_CENTRED_HYBRID_V03 owner architecture decision / Specification 028 reconciliation
+## Current active stage: THIN_CENTRED_HYBRID_V03 selected / realization and migration qualification opening
+
+Checkpoint 839 / Research 502 / D-036 records the owner's exact ACCEPT decision and selects THIN_CENTRED_HYBRID_V03 as the successor Project semantic/control architecture target. Architecture-target and intended-production-target selection are now true, but selection does not deploy or activate the architecture. Specification 028 and accepted continuity surfaces remain current operational authority; physical migration, production activation and authority switching remain unauthorized. The next stage is R0 realization requirements and physical-architecture design with explicit from-scratch freedom across files/folders, schemas, code, tests, CI/CD, branching/workflow, collaboration procedures, execution surfaces, storage and migration mechanics. MC-0029 is resolved; any new cross-model realization collaboration must use a new thread.
 
 Checkpoint 838 / Research 501 freezes the exact owner architecture-decision package for THIN_CENTRED_HYBRID_V03. The candidate is bound to commit 07d49fd642fd58fa2bababbf872b7e6386d50419 and Git-blob SHA-256 48f7faf2aab0aa6f86a9f36adfb03f6ff97252c58fcca7c173ec1a7e1628d6c3. The decision packet is bound to Git-blob SHA-256 89b2fa01358dff55fa1861dfa793ee87806099c8a4be17c0620dd05a08e7f72e. ChatGPT recommends ACCEPT. The owner decision selects or rejects the architecture target only; Specification 028 remains authoritative and migration/activation remain unauthorized until later governed stages.
 
