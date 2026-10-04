@@ -3,14 +3,11 @@
 PROBE_JSON_V01_SORTED_KEYS_COMPACT_UTF8_TEST_ONLY and
 TEST_HMAC_SHA256_NOT_PRODUCTION are synthetic probe machinery only.
 
-The permitted contract supplies operation kinds but does not enumerate result
-labels (apart from the fresh-verifier pair) or concrete record layouts. This
-candidate uses ADMITTED for admission, CHAIN_VALID for verified history,
-NOT_STARTED/DONE/PARTIAL/UNKNOWN for recovery, and explicit failure reasons.
-Latestness is NOT_APPLICABLE outside history verification, LATESTNESS_UNPROVEN
-without a trusted witness, WITNESS_CONFIRMED against a matching witness, or
-ROLLBACK_DETECTED against a newer witness. Records below are internal probe
-representations of the Research 512 fields, not a production schema selection.
+External result classes follow the prospectively frozen Attempt 002 output
+contract; internal diagnostic reasons remain more specific. Latestness is
+reported separately from admission, proof, chain and recovery outcomes.
+Records below are internal probe representations of the Research 512 fields,
+not a production schema selection.
 Each fixture case starts independently; concurrent proposals share one base.
 """
 
@@ -37,6 +34,20 @@ class _ProbeFailure(Exception):
 def _require(condition, reason):
     if not condition:
         raise _ProbeFailure(reason)
+
+
+def _failure_outcome(reason, *, chain_replay=False):
+    """Normalize diagnostics by semantic condition and verification context."""
+    if chain_replay and reason in {
+            "BROKEN_PREV_DIGEST", "ENTRY_DIGEST_MISMATCH",
+            "ENVELOPE_DIGEST_MISMATCH", "ENTRY_BINDING_MISMATCH"}:
+        return "CHAIN_BREAK"
+    if reason in {"ENVELOPE_DIGEST_MISMATCH", "SHOWN_DIGEST_MISMATCH",
+                  "DECISION_MISMATCH"}:
+        return "INVALID_SIGNATURE"
+    if reason == "PROJECT_MISMATCH":
+        return "WRONG_PROJECT"
+    return reason
 
 
 def _canonical(value):
@@ -319,10 +330,10 @@ def _verify_chain(entries, acceptances, checkpoints, fixture, witness=None):
         statement = _verify_checkpoint(witness, fixture)
         sequence = statement["sequence_no"]
         if sequence > len(entries):
-            return rebuilt, "ROLLBACK_DETECTED", "ROLLBACK_DETECTED"
+            return rebuilt, "ROLLBACK_DETECTED", "STALE"
         _require(entries[sequence - 1]["entry_digest"]
                  == statement["chain_head_digest"], "WITNESS_MISMATCH")
-        latestness = "WITNESS_CONFIRMED"
+        latestness = "VALID_AS_PRESENTED"
     return rebuilt, "CHAIN_VALID", latestness
 
 
@@ -366,7 +377,7 @@ def _rehash(entries):
 def _evaluate_case(case, fixture):
     ledger, genesis_checkpoint = _seed(fixture)
     kind = case["kind"]
-    latestness = "NOT_APPLICABLE"
+    latestness = "VALID_AS_PRESENTED"
     unverified_history = False
     try:
         if kind == "GENESIS_VALID":
@@ -423,8 +434,12 @@ def _evaluate_case(case, fixture):
                 prior_count = len(ledger.entries)
                 outcome = _recover(ledger, proposal, genesis_checkpoint)
                 _require(len(ledger.entries) == prior_count, "RECOVERY_MUTATED_LEDGER")
+                if outcome == "DONE":
+                    outcome = "DONE_NO_DUPLICATE"
             else:
                 outcome = ledger.admit(proposal)
+                if kind == "HOST_TRANSFORM_INVARIANT":
+                    outcome = "PROOF_UNCHANGED"
         elif kind in {"DUPLICATE_SEQUENCE_REJECT", "BROKEN_PREV_DIGEST_REJECT",
                       "MIDDLE_CHAIN_REWRITE_DETECT", "PRIOR_WITNESS_TRUNCATION_DETECT",
                       "FRESH_VERIFIER_TRUNCATION_LIMIT",
@@ -472,7 +487,9 @@ def _evaluate_case(case, fixture):
         _require(rebuilt.state == ledger.state and rebuilt.head == ledger.head,
                  "REBUILD_MISMATCH")
     except _ProbeFailure as failure:
-        outcome = failure.reason
+        outcome = _failure_outcome(failure.reason, chain_replay=unverified_history)
+        latestness = ("VALID_AS_PRESENTED" if outcome in {
+            "STALE_SEMANTIC_BASE", "DUPLICATE_ACCEPTANCE"} else "NOT_APPLICABLE")
     return {"case_id": case["case_id"], "outcome": outcome,
             "latestness": latestness,
             "semantic_state_digest": None if unverified_history else _digest(ledger.state),
