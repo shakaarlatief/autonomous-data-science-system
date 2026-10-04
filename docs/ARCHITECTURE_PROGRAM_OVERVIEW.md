@@ -1264,8 +1264,11 @@ GOVERNED_LEDGER_KERNEL_V02
     critique reconciled
             ↓
 R0-P01 / R0-P02 / R0-P03 preregistration
+    COMPLETE / Research 513
             ↓
-R0-P01 / R0-P02 / R0-P03 focused probes
+R0-P02 exact fixture/harness freeze
+            ↓
+R0-P02 / R0-P01 / R0-P03 focused probes
             ↓
 R1 physical target
             ↓

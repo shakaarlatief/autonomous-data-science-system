@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 848
+**Checkpoint:** 849
 **Date:** 2026-10-04
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: R0 preregistration of the three remaining physical-architecture decision probes
+## Current active stage: R0-P02 exact authority-admission fixture/harness freeze
+
+Checkpoint 849 / Research 513 / MC-0030 Message 005 prospectively freeze the protocol family for the three remaining GOVERNED_LEDGER_KERNEL_V02 architecture-decision probes before any result is observed. The preferred order is R0-P02 authority admission/order/concurrency/tamper evidence, then R0-P01 owner authenticity/acceptance burden, then R0-P03 semantic navigation/fresh-agent reconstruction. Research 513 freezes global no-tuning/attempt-integrity rules, P02 semantic-base and hash-chain controls including the fresh-verifier rollback limitation, P01 exact-statement security and owner-burden thresholds including migration-volume pressure, and P03 fair-arm rules that give Research 217 the same V03-native relation substrate as every successor arm. No probe has run. The next exact step is P02 fixture/harness freeze before any P02 implementation or result observation. No physical target is selected; production implementation, migration, Specification 028 amendment, Runtime Bridge extraction and authority switch remain unauthorized.
 
 Checkpoint 848 / Research 512 / MC-0030 Message 004 reconcile Claude Message 003 at 72046958ce4f5c1f79375bb71dfa2291607e1ba9 as ACCEPT_WITH_REFINEMENTS and freeze GOVERNED_LEDGER_KERNEL_V02 as the single leading pre-probe physical/software candidate. V0.2 replaces whole-repository acceptance staleness with a semantic-base digest, binds owner-exclusive proof to a canonical anti-replay signed statement and sign-what-you-see rendering, moves semantic ledger order into a hash-chained in-ledger sequence with owner checkpoints, sharpens J2 into OBSERVABLE/RELATIONAL/EPHEMERAL fact classes, requires connector-readable derived orientation as an operability service level, clarifies the project/system versus project/engineering seam, keeps Runtime Bridge external through provider-native receipt translation, and adds public consequence skeletons for private J1 that changes public authority. Git remains the leading carrier but not the trust or ordering root; Python is only a provisional implementation default and the exact R8-A tree has no preservation right. The three remaining decision-critical probes are R0-P01 owner authenticity/burden, R0-P02 authority admission/order/concurrency/tamper evidence, and R0-P03 semantic navigation/fresh-agent reconstruction. Their detailed protocols are not yet frozen and none has run. No physical target is selected; implementation, migration, Specification 028 amendment, Runtime Bridge extraction and authority switch remain unauthorized.
 

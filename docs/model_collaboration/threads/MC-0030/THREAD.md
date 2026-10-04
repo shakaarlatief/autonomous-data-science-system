@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / GOVERNED LEDGER KERNEL V0.2 FROZEN / R0-P01..P03 PREREGISTRATION NEXT
+**Status:** OPEN / R0-P01..P03 PROTOCOL FAMILY FROZEN / P02 FIXTURE-HARNESS FREEZE NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -28,8 +28,9 @@ The physical architecture is not.
     ChatGPT comparative reconciliation              COMPLETE / Research 511 / Message 002
     Claude comparative critique                     COMPLETE / Message 003 / 72046958...
     ChatGPT reconciliation                          COMPLETE / Research 512 / Message 004
-    probe preregistration                           NEXT / R0-P01..R0-P03
-    discriminating probes                           AFTER PROTOCOL FREEZE
+    probe preregistration                           COMPLETE / Research 513 / Message 005
+    R0-P02 exact fixture/harness freeze             NEXT
+    R0-P02 / P01 / P03 execution                   AFTER EXACT FREEZES
     physical-target owner decision                  ONLY WHEN READY
 
 ## Independence
@@ -233,3 +234,27 @@ No probe has run.
     PHYSICAL_ARCHITECTURE_SELECTED=false
     PROBE_PROTOCOLS=NOT_YET_FROZEN
     NEXT=R0_P01_TO_P03_PROTOCOL_PREREGISTRATION
+
+## Probe preregistration
+
+Research 513 / MC-0030 Message 005 freeze the protocol family for:
+
+    R0-P01 owner authenticity and acceptance burden
+    R0-P02 authority admission / ordering / concurrency / tamper evidence
+    R0-P03 semantic navigation / fresh-agent reconstruction
+
+No result has been observed.
+
+Preferred execution order:
+
+    R0-P02 -> R0-P01 -> R0-P03
+
+The next task is to freeze the exact P02 fixture, synthetic key handling, case list, harness boundary, witness variants, output schema and deterministic evaluator before any P02 implementation result is observed.
+
+    PHASE=R0_P02_FIXTURE_HARNESS_FREEZE
+    NEXT_ACTOR=chatgpt
+    PROBE_PROTOCOL=RESEARCH_513_V01
+    R0_P01=NOT_RUN
+    R0_P02=NOT_RUN
+    R0_P03=NOT_RUN
+    NEXT=R0_P02_EXACT_FIXTURE_HARNESS_FREEZE
