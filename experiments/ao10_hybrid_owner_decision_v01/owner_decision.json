@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "decision_id": "AO10_THIN_CENTRED_HYBRID_ARCHITECTURE_DECISION_V01",
+  "owner_decision": "ACCEPT",
+  "decision_payload": "ACCEPT",
+  "candidate_id": "THIN_CENTRED_HYBRID_V03",
+  "candidate_commit": "07d49fd642fd58fa2bababbf872b7e6386d50419",
+  "candidate_git_blob_sha256": "48f7faf2aab0aa6f86a9f36adfb03f6ff97252c58fcca7c173ec1a7e1628d6c3",
+  "owner_packet_commit": "9e41b73eb6506554ac8dea10709cd227702413a1",
+  "owner_packet_git_blob_sha256": "89b2fa01358dff55fa1861dfa793ee87806099c8a4be17c0620dd05a08e7f72e",
+  "consequences": {
+    "architecture_target_selected": true,
+    "production_target_selected": true,
+    "production_target_meaning": "Selected as the intended production architecture target, not deployed, activated, or authoritative.",
+    "specification_028_authority_unchanged": true,
+    "physical_migration_authorized": false,
+    "production_activation_authorized": false,
+    "dependent_drps_resumed": false,
+    "untouched_confirmation_complete": false
+  }
+}
