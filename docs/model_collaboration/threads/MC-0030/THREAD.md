@@ -1,12 +1,13 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / CHATGPT CANDIDATE FROZEN / CLAUDE BLIND INDEPENDENT DESIGN NEXT
+**Status:** OPEN / BOTH INDEPENDENT DESIGNS FROZEN / COMPARATIVE RECONCILIATION NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
-**Task owner:** ChatGPT / chatgpt-35
-**Independent reviewer/designer:** Claude / claude-05
+**Task owner:** ChatGPT / chatgpt-36
+**Independent reviewer/designer:** Claude / claude-04
+**Active Claude conversation:** 04 - Assurance and Delivery Architecture Design
 **Authority:** Collaboration evidence only.
 
 ## Purpose
@@ -21,9 +22,10 @@ The physical architecture is not.
 
     D-036 owner logical-architecture selection      COMPLETE
     Research 503 neutral R0 charter                 COMPLETE
-    ChatGPT independent R0 physical candidate       COMPLETE / Research 504
-    Claude independent physical design              NEXT / BLIND TO RESEARCH 504
-    comparative exposure                            AFTER BOTH INDEPENDENT POSITIONS
+    ChatGPT independent R0 physical candidate       COMPLETE / Research 504 + 508
+    Claude independent physical design              COMPLETE / Message 001 / 071d4b5a...
+    comparative exposure                            AUTHORIZED / BOTH POSITIONS FROZEN
+    ChatGPT comparative reconciliation              NEXT
     discriminating probes                           AS NEEDED
     physical-target owner decision                  ONLY WHEN READY
 
@@ -127,3 +129,30 @@ Claude must also avoid CURRENT_STATE and the temporary ARCHITECTURE_PROGRAM_OVER
     PHASE=R0_CLAUDE_INDEPENDENT_DESIGN_AMENDED
     NEXT_ACTOR=claude
     NEXT=CLAUDE_MESSAGE_001
+
+## Claude Message 001 intake and comparative transition
+
+Claude Message 001 is durably committed at:
+
+    071d4b5a232c07aaa3e96a2b91ba3ae1fd1a9c2d
+
+Exact path:
+
+    docs/model_collaboration/threads/MC-0030/messages/001_claude_independent_r0_physical_architecture.md
+
+The commit changes exactly that one collaboration-message file. Claude attests that the blind boundary remained intact and reports no accidental exposure. The message identifies LEDGER-KERNEL as Claude's preferred independent architecture and keeps physical-target selection, implementation, migration and Specification 028 authority unchanged.
+
+The pre-handoff coordination metadata incorrectly preallocated claude-05. No new Claude conversation was opened. The work was performed in the already-existing persistent Claude conversation 04 - Assurance and Delivery Architecture Design, whose provider-local interaction identity remains claude-04. PROVENANCE_CORRECTION.md records the bounded factual repair. The Claude-authored Message 001 is not rewritten; its disclosure accurately records the mismatch that existed when it was authored.
+
+Both independent positions are now durably frozen. Comparative exposure is authorized. ChatGPT / chatgpt-36 is the next actor for comparative reconciliation.
+
+    PHASE=R0_COMPARATIVE_RECONCILIATION
+    NEXT_ACTOR=chatgpt
+    CHATGPT_CANDIDATE=RESEARCH_504_PLUS_508
+    CLAUDE_MESSAGE_001=071d4b5a232c07aaa3e96a2b91ba3ae1fd1a9c2d
+    COMPARATIVE_EXPOSURE=AUTHORIZED
+    PHYSICAL_ARCHITECTURE_SELECTED=false
+    IMPLEMENTATION_STARTED=false
+    MIGRATION_AUTHORIZED=false
+    SPECIFICATION_028_AUTHORITY=UNCHANGED
+    NEXT=CHATGPT_COMPARATIVE_RECONCILIATION

@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
-**Date:** 2026-10-02
-**Status:** MC-0030 OPEN / REFRESHED CLAUDE BLIND HANDOFF FROZEN / NEUTRAL BASIS RESEARCH 503+506+507 / CHATGPT CANDIDATE RESEARCH 504+508 HIDDEN / CLAUDE MESSAGE 001 NEXT / SPEC 028 AUTHORITY UNCHANGED / MIGRATION UNAUTHORIZED / R2 UNDERDETERMINED PRESERVED / MC-0010 DEFERRED
+**Date:** 2026-10-04
+**Status:** MC-0030 OPEN / BOTH INDEPENDENT R0 DESIGNS FROZEN / CLAUDE MESSAGE 001 071d4b5a / CLAUDE SESSION CORRECTED TO claude-04 / COMPARATIVE EXPOSURE AUTHORIZED / CHATGPT COMPARATIVE RECONCILIATION NEXT / SPEC 028 AUTHORITY UNCHANGED / MIGRATION UNAUTHORIZED / MC-0029 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -23,9 +23,15 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Current active collaboration obligation
 
-### MC-0029: Specification 028 reconciliation and AO-10 integrated Project-system design
+### MC-0030: V03 physical/software realization architecture
 
-MC-0029 remains OPEN. The former Research 435 owner-route stop has been satisfied by the explicit project-owner instruction recorded in Research 436. Independent/comparative architecture design remains complete through Research 315 / Integrated Project-System V0.3, but the DRP-03 semantic construct and any affected surrounding architecture are now reopened from first principles rather than repaired under preservation pressure.
+MC-0030 is the active collaboration obligation. ChatGPT Candidate A is frozen in Research 504 + 508. Claude's blind independent Message 001 is frozen at commit 071d4b5a232c07aaa3e96a2b91ba3ae1fd1a9c2d and proposes LEDGER-KERNEL. Claude reports that the blindness boundary remained intact. The preallocated claude-05 coordination value was a clerical error; the actual persistent Claude interaction remains claude-04, conversation 04 - Assurance and Delivery Architecture Design.
+
+Both independent positions are now frozen and comparative exposure is authorized. ChatGPT / chatgpt-36 is next for comparative reconciliation. No physical target has been selected and no implementation, migration, Specification 028 amendment or authority switch is authorized.
+
+### MC-0029: Specification 028 reconciliation and AO-10 integrated Project-system design (resolved historical context)
+
+MC-0029 is RESOLVED by Research 502 / D-036. The material below is retained as historical collaboration context and does not represent a pending Claude obligation. The former Research 435 owner-route stop has been satisfied by the explicit project-owner instruction recorded in Research 436. Independent/comparative architecture design remains complete through Research 315 / Integrated Project-System V0.3, but the DRP-03 semantic construct and any affected surrounding architecture are now reopened from first principles rather than repaired under preservation pressure.
 
 Research 435 remains immutable evidence: the single authorized P9 comparison is `CONSTRUCT_UNDERDETERMINED`; required BIRTH gates fail for binary normativity kappa (0.774540330104 < 0.80), normative-kind kappa (0.502907383797 < 0.75), material positive specific agreement (0.841737393909 < 0.90) and grouping-constraint agreement (0.068333333333 < 0.80); the overall ambiguity fraction is 0.104333868379 > 0.10; and STATE-REF has 18/24 exact structural agreements with one fact-validity disagreement fixture and five final-state disagreement fixtures. The deterministic comparison record remains frozen at SHA-256 `156622e2e3790a2f810adb2b9038256706ce9d82861c696c4f4c5e1db34e67b0` over 297787 bytes. No retry, relabeling, threshold tuning, final-key creation or owner-adjudication rescue is authorized.
 

@@ -7,7 +7,7 @@
 **Selected logical target:** THIN_CENTRED_HYBRID_V03
 **Neutral realization charter:** Research 503 + Research 507
 **Task owner:** ChatGPT / chatgpt-35
-**Independent reviewer/designer:** Claude / claude-05
+**Independent reviewer/designer:** Claude / claude-04
 **Authority:** Collaboration evidence only.
 
 ## Task

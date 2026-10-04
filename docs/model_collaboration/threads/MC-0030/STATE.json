@@ -3,7 +3,7 @@
   "thread_id": "MC-0030",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "OPEN",
-  "phase": "R0_CLAUDE_INDEPENDENT_DESIGN_AMENDED",
+  "phase": "R0_COMPARATIVE_RECONCILIATION",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -16,7 +16,7 @@
     {
       "collaborator_id": "chatgpt",
       "interaction_environment": "ChatGPT",
-      "interaction_session": "chatgpt-35",
+      "interaction_session": "chatgpt-36",
       "roles": [
         "TASK_OWNER",
         "RESEARCHER",
@@ -26,7 +26,7 @@
     {
       "collaborator_id": "claude",
       "interaction_environment": "Claude",
-      "interaction_session": "claude-05",
+      "interaction_session": "claude-04",
       "roles": [
         "INDEPENDENT_REVIEWER",
         "COUNTER_DESIGNER",
@@ -51,9 +51,9 @@
       ]
     }
   ],
-  "next_expected_actor": "claude",
+  "next_expected_actor": "chatgpt",
   "independence": {
-    "status": "BLIND_TO_CANDIDATE",
+    "status": "COMPARATIVE_ONLY",
     "review_base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
     "known_exposures": [
       "Claude may know the complete logical architecture history through THIN_CENTRED_HYBRID_V03 and D-036 because that is the selected target being physically realized.",
@@ -62,16 +62,20 @@
       "After ChatGPT candidate freeze, Claude must remain blind to that candidate until Claude Message 001 is durably committed.",
       "ChatGPT R0-CANDIDATE-A is frozen in Research 504 / Checkpoint 841 but must remain hidden from Claude until Claude Message 001 is durably committed.",
       "Research 507 is a neutral R0 amendment and may be exposed to Claude. Research 508 is part of ChatGPT Candidate A and must remain hidden until Claude Message 001 is committed.",
-      "Research 509 supersedes Research 505 for launch. Claude may read neutral Research 506 and 507 but must remain blind to ChatGPT Research 504 and 508."
+      "Research 509 supersedes Research 505 for launch. Claude may read neutral Research 506 and 507 but must remain blind to ChatGPT Research 504 and 508.",
+      "The MC-0030 coordination files initially preallocated claude-05, but no new Claude conversation was opened. Claude Message 001 was authored in the existing persistent conversation 04 - Assurance and Delivery Architecture Design, so the correct provider-local session is claude-04; PROVENANCE_CORRECTION.md records the bounded repair.",
+      "Claude Message 001 was committed at 071d4b5a232c07aaa3e96a2b91ba3ae1fd1a9c2d before comparative exposure and changes exactly one authorized collaboration-message path.",
+      "Claude attests in Message 001 that it did not inspect Research 504, Research 508, Checkpoints 841/844, CURRENT_STATE, ARCHITECTURE_PROGRAM_OVERVIEW, or any comparative artifact before commit; no contradictory repository evidence was found.",
+      "Both independent positions are now durably frozen. Comparative exposure to ChatGPT Research 504 + 508 is authorized for the next MC-0030 comparative reconciliation stage."
     ],
-    "notes": "Refreshed blind handoff is frozen in Research 509. Claude's neutral basis is Research 503 + 506 + 507. Hidden ChatGPT position is Research 504 + 508. Claude must use exact-path reads for current neutral task files and the frozen historical base for broader evidence, avoiding CURRENT_STATE, ARCHITECTURE_PROGRAM_OVERVIEW, Checkpoint 841/844 and broad current-branch searches until Message 001 is committed."
+    "notes": "The independent phase is complete. ChatGPT Candidate A is frozen in Research 504 + 508, and Claude Message 001 is frozen at 071d4b5a232c07aaa3e96a2b91ba3ae1fd1a9c2d. The correct Claude interaction is claude-04 / 04 - Assurance and Delivery Architecture Design; the earlier claude-05 value was a clerical preallocation error. Comparative exposure is now authorized. No physical target is selected and no implementation, migration, Specification 028 amendment, or authority switch is authorized."
   },
   "last_transition": {
-    "transition_id": "mc0030-refreshed-blind-handoff-after-r0-amendment",
+    "transition_id": "mc0030-claude-independent-design-frozen-comparative-authorized",
     "from_state": "OPEN",
     "to_state": "OPEN",
     "actor": "chatgpt",
-    "reason": "Research 509 supersedes the pre-amendment handoff so Claude independently addresses the same semantic-organization and external-execution requirements as ChatGPT while remaining blind to Candidate A.",
-    "repository_head": "995d9cebcb257f710f089e79f862556ab40b95d8"
+    "reason": "Claude Message 001 is durably frozen with the blind boundary intact; both independent physical-architecture positions now exist, the Claude-session provenance is corrected to claude-04, and comparative reconciliation is the next governed stage.",
+    "repository_head": "071d4b5a232c07aaa3e96a2b91ba3ae1fd1a9c2d"
   }
 }
