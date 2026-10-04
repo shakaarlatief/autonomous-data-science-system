@@ -58,3 +58,11 @@ until MC-0030 Message 001 is durably committed.
 
     PHASE=R0_CLAUDE_INDEPENDENT_DESIGN
     NEXT_ACTOR=claude
+
+## Claude blind handoff freeze
+
+Research 505 / Checkpoint 842 freezes the exact Message 001 handoff.
+
+Claude must use the selected V03 logical architecture plus Research 503 and remain blind to Research 504 / Checkpoint 841 and any derivative Candidate-A material until Message 001 is durably committed.
+
+    NEXT=CLAUDE_MESSAGE_001

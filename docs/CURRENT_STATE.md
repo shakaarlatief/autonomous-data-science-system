@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 841
+**Checkpoint:** 842
 **Date:** 2026-10-04
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -23,6 +23,8 @@ Repository artifacts remain authoritative across chats and models.
 ---
 
 ## Current active stage: R0 Claude blind independent physical realization design
+
+Checkpoint 842 / Research 505 freezes the exact MC-0030 Claude blind handoff. Claude must independently design the R0 physical/software architecture from the selected THIN_CENTRED_HYBRID_V03 logical target plus neutral Research 503, while remaining blind to Research 504 / Checkpoint 841 and any derivative of ChatGPT R0-CANDIDATE-A until Message 001 is durably committed. Claude may write only under MC-0030/messages, should use exact-path reads for current neutral task files, and must stop after Message 001. No physical architecture is selected and implementation/migration remain unauthorized.
 
 Checkpoint 841 / Research 504 freezes ChatGPT's independent R0-CANDIDATE-A, Repository-Native Control Record Graph, before Claude exposure. The candidate uses immutable repository-native Acceptance Records, natural-owner J2 adapters, pure shared predicates, deterministic J3, derived orientation/control, and a disposable SQLite operational index rather than database authority. Claude now performs a blind independent physical/software design from THIN_CENTRED_HYBRID_V03 plus the neutral Research 503 charter and must not inspect Research 504 or Checkpoint 841 until Message 001 is durably frozen. No physical architecture is selected and implementation/migration remain unauthorized.
 
