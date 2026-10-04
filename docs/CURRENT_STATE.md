@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 852
+**Checkpoint:** 853
 **Date:** 2026-10-04
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: R0-P02 live-host transport qualification
+## Current active stage: R0-P01 owner-authenticity / acceptance-burden fixture and harness freeze
+
+Checkpoint 853 / Research 517 / MC-0030 Message 009 close R0-P02 as PASS after both preregistered legs completed successfully. Deterministic Attempt 002 passed all 20 frozen cases with 0 errors and both metamorphic checks; the live-host connector-only branch/PR/squash leg preserved exact payload bytes and detached synthetic proof validity across a changed commit identity, left the coordination branch unchanged, and cleaned both temporary refs. The explicit fresh-verifier limitation remains: a fresh verifier with no retained/out-of-band witness can prove only validity as presented, not absence of a suppressed newer valid checkpoint. The current Project threat model does not require an additional independent anti-rollback witness; consequence-triggered owner checkpoints plus prior-checkpoint comparison remain sufficient. GOVERNED_LEDGER_KERNEL_V02 therefore retains its Git-based governing substrate without amendment. The next stage is R0-P01 owner authenticity / acceptance burden exact fixture and harness freeze. No physical target is yet selected; production implementation, migration, Specification 028 amendment, Runtime Bridge extraction and authority switch remain unauthorized.
 
 Checkpoint 852 / Research 516 / MC-0030 Message 008 preserve the valid R0-P02 Attempt 002 deterministic-core PASS. The revised candidate was frozen at 83f9fad87e910b75299a3f478cf2b294d9d4ff7a and the single scorer execution returned PASS with 20 cases, 0 errors, both metamorphic checks passing, and exit 0. The raw result was frozen before further interpretation at result commit 3cc196f12903725ee703ac2c12ce2e6f2cbd06a9. All Research 514 deterministic-core gates are therefore satisfied. The full R0-P02 classification remains open because the preregistered live-host squash/transport leg is still mandatory. The exact next action is that live-host leg through Runtime Bridge GitHub connector surfaces using temporary refs only; the coordination branch must remain unchanged. No physical target is selected; production implementation, migration, Specification 028 amendment, Runtime Bridge extraction and authority switch remain unauthorized.
 
