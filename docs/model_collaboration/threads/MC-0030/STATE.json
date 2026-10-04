@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "thread_id": "MC-0030",
+  "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
+  "lifecycle_state": "OPEN",
+  "phase": "R0_CHATGPT_INDEPENDENT_CANDIDATE",
+  "target": {
+    "branch": "v1-source-vault-bootstrap-resume",
+    "base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
+    "description": "Independent then comparative physical/software realization design for owner-selected THIN_CENTRED_HYBRID_V03 under first-principles freedom across repository, software, workflow, CI/CD, storage, migration and operational realization.",
+    "write_paths": []
+  },
+  "task_owner": "chatgpt",
+  "target_write_owner": null,
+  "participants": [
+    {
+      "collaborator_id": "chatgpt",
+      "interaction_environment": "ChatGPT",
+      "interaction_session": "chatgpt-35",
+      "roles": [
+        "TASK_OWNER",
+        "RESEARCHER",
+        "CRITIC"
+      ]
+    },
+    {
+      "collaborator_id": "claude",
+      "interaction_environment": "Claude",
+      "interaction_session": "claude-05",
+      "roles": [
+        "INDEPENDENT_REVIEWER",
+        "COUNTER_DESIGNER",
+        "RESEARCHER",
+        "CRITIC"
+      ]
+    },
+    {
+      "collaborator_id": "human",
+      "interaction_environment": "Human",
+      "interaction_session": "project-owner",
+      "roles": [
+        "HUMAN_DECIDER"
+      ]
+    }
+  ],
+  "allowed_secondary_write_surfaces": [
+    {
+      "collaborator_id": "claude",
+      "paths": [
+        "docs/model_collaboration/threads/MC-0030/messages/**"
+      ]
+    }
+  ],
+  "next_expected_actor": "chatgpt",
+  "independence": {
+    "status": "BLIND_TO_CANDIDATE",
+    "review_base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
+    "known_exposures": [
+      "Claude may know the complete logical architecture history through THIN_CENTRED_HYBRID_V03 and D-036 because that is the selected target being physically realized.",
+      "Research 503 and MC-0030 BRIEF/THREAD/STATE are neutral task specifications and may be read from current routing.",
+      "No ChatGPT R0 physical architecture candidate exists at thread creation.",
+      "After ChatGPT candidate freeze, Claude must remain blind to that candidate until Claude Message 001 is durably committed."
+    ],
+    "notes": "From-scratch freedom applies to physical representation, repository structure, code, tests, CI/CD, branching/workflow, collaboration procedures, storage, execution surfaces and migration mechanics. Existing mechanisms are evidence and current-authority constraints where live, not target-design constraints."
+  },
+  "last_transition": {
+    "transition_id": "mc0030-open-r0-neutral-charter",
+    "from_state": "WAITING",
+    "to_state": "OPEN",
+    "actor": "chatgpt",
+    "reason": "D-036 selected THIN_CENTRED_HYBRID_V03 and Research 503 freezes a neutral first-principles physical-realization charter. The thread opens before any physical architecture candidate is selected.",
+    "repository_head": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc"
+  }
+}

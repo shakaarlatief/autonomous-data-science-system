@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 839
+**Checkpoint:** 840
 **Date:** 2026-10-04
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: THIN_CENTRED_HYBRID_V03 selected / realization and migration qualification opening
+## Current active stage: R0 first-principles physical realization architecture design
+
+Checkpoint 840 / Research 503 freezes the R0 physical-realization charter before any concrete physical target is selected. The charter defines 44 realization requirements and explicitly grants from-scratch freedom across repository layout, source representation, schemas, storage, code/package boundaries, tests, CI/CD, branch/merge workflow, collaboration procedures, execution surfaces, deployment, migration and rollback. MC-0030 is opened in INDEPENDENT_THEN_COMPARATIVE mode. ChatGPT authors its physical candidate first; Claude then independently designs from the same V03 + neutral charter while blind to the ChatGPT candidate. Specification 028 remains operational authority and no implementation or migration is authorized by R0 design work.
 
 Checkpoint 839 / Research 502 / D-036 records the owner's exact ACCEPT decision and selects THIN_CENTRED_HYBRID_V03 as the successor Project semantic/control architecture target. Architecture-target and intended-production-target selection are now true, but selection does not deploy or activate the architecture. Specification 028 and accepted continuity surfaces remain current operational authority; physical migration, production activation and authority switching remain unauthorized. The next stage is R0 realization requirements and physical-architecture design with explicit from-scratch freedom across files/folders, schemas, code, tests, CI/CD, branching/workflow, collaboration procedures, execution surfaces, storage and migration mechanics. MC-0029 is resolved; any new cross-model realization collaboration must use a new thread.
 
