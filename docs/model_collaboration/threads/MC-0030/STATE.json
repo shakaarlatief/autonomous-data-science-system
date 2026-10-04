@@ -3,7 +3,7 @@
   "thread_id": "MC-0030",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "OPEN",
-  "phase": "R0_CLAUDE_HANDOFF_REFRESH",
+  "phase": "R0_CLAUDE_INDEPENDENT_DESIGN_AMENDED",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -51,7 +51,7 @@
       ]
     }
   ],
-  "next_expected_actor": "chatgpt",
+  "next_expected_actor": "claude",
   "independence": {
     "status": "BLIND_TO_CANDIDATE",
     "review_base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -61,16 +61,17 @@
       "No ChatGPT R0 physical architecture candidate exists at thread creation.",
       "After ChatGPT candidate freeze, Claude must remain blind to that candidate until Claude Message 001 is durably committed.",
       "ChatGPT R0-CANDIDATE-A is frozen in Research 504 / Checkpoint 841 but must remain hidden from Claude until Claude Message 001 is durably committed.",
-      "Research 507 is a neutral R0 amendment and may be exposed to Claude. Research 508 is part of ChatGPT Candidate A and must remain hidden until Claude Message 001 is committed."
+      "Research 507 is a neutral R0 amendment and may be exposed to Claude. Research 508 is part of ChatGPT Candidate A and must remain hidden until Claude Message 001 is committed.",
+      "Research 509 supersedes Research 505 for launch. Claude may read neutral Research 506 and 507 but must remain blind to ChatGPT Research 504 and 508."
     ],
-    "notes": "Research 507 now makes semantic organization/navigation and the external executor/Runtime Bridge boundary explicit for both independent designs. Research 508 extends ChatGPT Candidate A against that neutral amendment and remains hidden with Research 504. Claude may read Research 503, 506 and 507 in the refreshed handoff, but must remain blind to Research 504, Research 508, Checkpoint 841 and any Candidate-A derivative until Message 001 is durably committed."
+    "notes": "Refreshed blind handoff is frozen in Research 509. Claude's neutral basis is Research 503 + 506 + 507. Hidden ChatGPT position is Research 504 + 508. Claude must use exact-path reads for current neutral task files and the frozen historical base for broader evidence, avoiding CURRENT_STATE, ARCHITECTURE_PROGRAM_OVERVIEW, Checkpoint 841/844 and broad current-branch searches until Message 001 is committed."
   },
   "last_transition": {
-    "transition_id": "mc0030-r0-amendment-chatgpt-addendum-frozen",
+    "transition_id": "mc0030-refreshed-blind-handoff-after-r0-amendment",
     "from_state": "OPEN",
     "to_state": "OPEN",
     "actor": "chatgpt",
-    "reason": "Research 507 freezes the neutral amended R0 requirements and Research 508 freezes ChatGPT's hidden addendum so both independent designers address the same semantic-organization and external-execution obligations.",
-    "repository_head": "286d6c9c98dd13c1d62f9a5e01e53a0177a521f0"
+    "reason": "Research 509 supersedes the pre-amendment handoff so Claude independently addresses the same semantic-organization and external-execution requirements as ChatGPT while remaining blind to Candidate A.",
+    "repository_head": "995d9cebcb257f710f089e79f862556ab40b95d8"
   }
 }

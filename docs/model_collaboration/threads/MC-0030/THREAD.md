@@ -103,3 +103,27 @@ The previously frozen Research 505 handoff is now stale and must be superseded b
     PHASE=R0_CLAUDE_HANDOFF_REFRESH
     NEXT_ACTOR=chatgpt
     NEXT=FREEZE_REFRESHED_CLAUDE_HANDOFF
+
+
+## Refreshed Claude handoff
+
+Research 509 supersedes Research 505 for launch.
+
+Neutral Claude basis:
+
+    Research 503
+    Research 506
+    Research 507
+
+Hidden ChatGPT independent position:
+
+    Research 504
+    Research 508
+    Checkpoint 841
+    Checkpoint 844
+
+Claude must also avoid CURRENT_STATE and the temporary ARCHITECTURE_PROGRAM_OVERVIEW until Message 001 is committed because those current orientation surfaces may summarize hidden Candidate-A work.
+
+    PHASE=R0_CLAUDE_INDEPENDENT_DESIGN_AMENDED
+    NEXT_ACTOR=claude
+    NEXT=CLAUDE_MESSAGE_001

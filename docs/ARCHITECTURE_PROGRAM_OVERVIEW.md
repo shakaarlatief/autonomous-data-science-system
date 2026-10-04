@@ -1026,7 +1026,7 @@ Claude
     remains blind to Research 504 and 508
 ```
 
-A refreshed Claude handoff is the only remaining step before the independent pass.
+The refreshed Claude handoff is now frozen in Research 509. Claude's blind independent design is the next step.
 
 ---
 
@@ -1062,7 +1062,7 @@ A refreshed Claude handoff is the only remaining step before the independent pas
 
 - [x] Amend/strengthen R0 so semantic organization/navigation is an explicit named obligation
 - [x] Add the Runtime Bridge/external-executor ownership boundary explicitly to the neutral R0 charter
-- [ ] Freeze refreshed Claude blind handoff against Research 503 + 506 + 507
+- [x] Freeze refreshed Claude blind handoff against Research 503 + 506 + 507
 - [ ] Run Claude blind independent R0 whole-system design
 - [ ] Compare independent ChatGPT and Claude physical/system architectures
 - [ ] Reconcile into one candidate or bounded finalist set
@@ -1221,6 +1221,9 @@ Research 507
 Research 508
     hidden ChatGPT Candidate-A addendum for the amended requirements
 
+Research 509
+    refreshed Claude blind handoff after the R0 amendment
+
 Specification 028
     current operational implementation/migration authority
 
@@ -1267,7 +1270,7 @@ semantic-organization + external-execution obligations
     explicitly added to R0
             ↓
 R0 integrated physical/software architecture
-    CURRENT / refreshed Claude handoff next
+    CURRENT / Claude blind independent design next
             ↓
 independent designs
             ↓
