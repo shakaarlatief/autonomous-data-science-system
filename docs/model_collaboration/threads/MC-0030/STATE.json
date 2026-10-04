@@ -3,7 +3,7 @@
   "thread_id": "MC-0030",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "OPEN",
-  "phase": "R0_CHATGPT_INDEPENDENT_CANDIDATE",
+  "phase": "R0_CLAUDE_INDEPENDENT_DESIGN",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -51,7 +51,7 @@
       ]
     }
   ],
-  "next_expected_actor": "chatgpt",
+  "next_expected_actor": "claude",
   "independence": {
     "status": "BLIND_TO_CANDIDATE",
     "review_base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -59,16 +59,17 @@
       "Claude may know the complete logical architecture history through THIN_CENTRED_HYBRID_V03 and D-036 because that is the selected target being physically realized.",
       "Research 503 and MC-0030 BRIEF/THREAD/STATE are neutral task specifications and may be read from current routing.",
       "No ChatGPT R0 physical architecture candidate exists at thread creation.",
-      "After ChatGPT candidate freeze, Claude must remain blind to that candidate until Claude Message 001 is durably committed."
+      "After ChatGPT candidate freeze, Claude must remain blind to that candidate until Claude Message 001 is durably committed.",
+      "ChatGPT R0-CANDIDATE-A is frozen in Research 504 / Checkpoint 841 but must remain hidden from Claude until Claude Message 001 is durably committed."
     ],
-    "notes": "From-scratch freedom applies to physical representation, repository structure, code, tests, CI/CD, branching/workflow, collaboration procedures, storage, execution surfaces and migration mechanics. Existing mechanisms are evidence and current-authority constraints where live, not target-design constraints."
+    "notes": "Claude's independent pass is intentionally blind to ChatGPT Research 504 and Checkpoint 841. Claude may use THIN_CENTRED_HYBRID_V03, D-036, Research 503 and MC-0030 routing/brief files. From-scratch freedom applies at every physical and working-procedure level. Existing mechanisms are evidence/current-authority constraints where live, not target constraints."
   },
   "last_transition": {
-    "transition_id": "mc0030-open-r0-neutral-charter",
-    "from_state": "WAITING",
+    "transition_id": "mc0030-chatgpt-candidate-frozen-claude-blind-next",
+    "from_state": "OPEN",
     "to_state": "OPEN",
     "actor": "chatgpt",
-    "reason": "D-036 selected THIN_CENTRED_HYBRID_V03 and Research 503 freezes a neutral first-principles physical-realization charter. The thread opens before any physical architecture candidate is selected.",
-    "repository_head": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc"
+    "reason": "Research 504 freezes ChatGPT R0-CANDIDATE-A. Claude must now independently derive a physical realization architecture from the selected logical target and neutral Research 503 charter while blind to the ChatGPT candidate.",
+    "repository_head": "c15d404126d1fd38acfc056fdb3d490d388338c2"
   }
 }

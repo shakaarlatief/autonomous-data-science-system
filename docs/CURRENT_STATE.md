@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 840
+**Checkpoint:** 841
 **Date:** 2026-10-04
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: R0 first-principles physical realization architecture design
+## Current active stage: R0 Claude blind independent physical realization design
+
+Checkpoint 841 / Research 504 freezes ChatGPT's independent R0-CANDIDATE-A, Repository-Native Control Record Graph, before Claude exposure. The candidate uses immutable repository-native Acceptance Records, natural-owner J2 adapters, pure shared predicates, deterministic J3, derived orientation/control, and a disposable SQLite operational index rather than database authority. Claude now performs a blind independent physical/software design from THIN_CENTRED_HYBRID_V03 plus the neutral Research 503 charter and must not inspect Research 504 or Checkpoint 841 until Message 001 is durably frozen. No physical architecture is selected and implementation/migration remain unauthorized.
 
 Checkpoint 840 / Research 503 freezes the R0 physical-realization charter before any concrete physical target is selected. The charter defines 44 realization requirements and explicitly grants from-scratch freedom across repository layout, source representation, schemas, storage, code/package boundaries, tests, CI/CD, branch/merge workflow, collaboration procedures, execution surfaces, deployment, migration and rollback. MC-0030 is opened in INDEPENDENT_THEN_COMPARATIVE mode. ChatGPT authors its physical candidate first; Claude then independently designs from the same V03 + neutral charter while blind to the ChatGPT candidate. Specification 028 remains operational authority and no implementation or migration is authorized by R0 design work.
 

@@ -95,3 +95,16 @@ Claude may write only:
     docs/model_collaboration/threads/MC-0030/messages/**
 
 during the independent pass.
+
+## Blindness after ChatGPT candidate freeze
+
+ChatGPT R0-CANDIDATE-A is now frozen in:
+
+    docs/research/504_chatgpt_independent_r0_physical_realization_candidate_a.md
+    docs/checkpoints/841_chatgpt_r0_physical_candidate_frozen.md
+
+Claude must not inspect either file, any summary of Candidate A, or any later comparative artifact before committing MC-0030 Message 001.
+
+The independent task remains exactly the neutral problem defined above.
+
+After Message 001 is committed, comparative exposure may be authorized explicitly.
