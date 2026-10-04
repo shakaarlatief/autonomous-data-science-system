@@ -3,7 +3,7 @@
   "thread_id": "MC-0030",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "OPEN",
-  "phase": "R0_P02_FIXTURE_HARNESS_FREEZE",
+  "phase": "R0_P02_CANDIDATE_IMPLEMENTATION",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -74,16 +74,18 @@
       "Research 512 / MC-0030 Message 004 reconcile Message 003 as ACCEPT_WITH_REFINEMENTS and freeze GOVERNED_LEDGER_KERNEL_V02.",
       "The three decision-critical probes remain R0-P01, R0-P02 and R0-P03; none has been executed and their detailed protocols are not yet frozen.",
       "Research 513 / MC-0030 Message 005 freeze the protocol family for R0-P01 through R0-P03 before any result observation.",
-      "Preferred execution order is R0-P02 -> R0-P01 -> R0-P03, with exact P02 fixture/harness freeze required before implementation or result observation."
+      "Preferred execution order is R0-P02 -> R0-P01 -> R0-P03, with exact P02 fixture/harness freeze required before implementation or result observation.",
+      "Research 514 / MC-0030 Message 006 freeze the exact R0-P02 fixture, oracle, candidate contract, scorer, blindness boundary and live-host leg before implementation.",
+      "R0-P02 candidate.py does not exist at the Research 514 freeze; no R0-P02 result has been observed."
     ],
-    "notes": "GOVERNED_LEDGER_KERNEL_V02 remains the single leading candidate. Research 513 freezes the three-probe preregistration family with no observed results. ChatGPT / chatgpt-36 is next to freeze the exact R0-P02 fixture/harness boundary. No probe execution, physical target selection, production implementation, migration, Specification 028 amendment, Runtime Bridge extraction or authority switch is authorized."
+    "notes": "GOVERNED_LEDGER_KERNEL_V02 remains under the frozen Research 513 probe family. Research 514 freezes the exact R0-P02 attempt boundary. ChatGPT / chatgpt-36 is next to dispatch one bounded Codex implementation of candidate.py under oracle/scorer blindness, then independently postflight it before scoring. No P02 result, physical target, production implementation, migration, Specification 028 amendment, Runtime Bridge extraction or authority switch is authorized."
   },
   "last_transition": {
-    "transition_id": "mc0030-r0-probe-protocol-family-frozen",
+    "transition_id": "mc0030-r0-p02-exact-fixture-frozen",
     "from_state": "OPEN",
     "to_state": "OPEN",
     "actor": "chatgpt",
-    "reason": "Research 513 / Message 005 prospectively freeze the R0-P01 through R0-P03 protocol family and advance to exact R0-P02 fixture/harness freeze before any result observation.",
-    "repository_head": "73079cdd72085e28b279bcc015717f6a421c1306"
+    "reason": "Research 514 / Message 006 freeze the exact R0-P02 deterministic fixture, oracle, implementation contract, scorer, blindness boundary and real-host leg before candidate implementation or result observation.",
+    "repository_head": "00aee5ad18a094db478e973a3bb3bbd57259bb3e"
   }
 }

@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / R0-P01..P03 PROTOCOL FAMILY FROZEN / P02 FIXTURE-HARNESS FREEZE NEXT
+**Status:** OPEN / R0-P02 EXACT FIXTURE FROZEN / BOUNDED CODEX IMPLEMENTATION NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -29,8 +29,10 @@ The physical architecture is not.
     Claude comparative critique                     COMPLETE / Message 003 / 72046958...
     ChatGPT reconciliation                          COMPLETE / Research 512 / Message 004
     probe preregistration                           COMPLETE / Research 513 / Message 005
-    R0-P02 exact fixture/harness freeze             NEXT
-    R0-P02 / P01 / P03 execution                   AFTER EXACT FREEZES
+    R0-P02 exact fixture/harness freeze             COMPLETE / Research 514 / Message 006
+    R0-P02 bounded candidate implementation         NEXT
+    R0-P02 score + live-host leg                   AFTER CANDIDATE FREEZE
+    R0-P01 / P03                                  AFTER P02
     physical-target owner decision                  ONLY WHEN READY
 
 ## Independence
@@ -258,3 +260,30 @@ The next task is to freeze the exact P02 fixture, synthetic key handling, case l
     R0_P02=NOT_RUN
     R0_P03=NOT_RUN
     NEXT=R0_P02_EXACT_FIXTURE_HARNESS_FREEZE
+
+## R0-P02 exact fixture/harness freeze
+
+Research 514 / MC-0030 Message 006 freeze the exact P02 deterministic surface:
+
+    20 fixture cases
+    frozen oracle
+    candidate implementation contract
+    deterministic scorer
+    two metamorphic checks
+    candidate blindness boundary
+    single-attempt repair rule
+    real-host squash-transport leg
+
+Frozen hashes:
+
+    fixture   dda68b1f4368dc982edffa2718330032f69842e7ac490dd84cbaaadcd4740d23
+    oracle    ea059f0482298b21e290aa2b87823122d2ff1c583728bacbaa0c0568a17fdba4
+    contract  bad3e5f0adb74c9887d0cb68d290e1a2534af5b836ad4a036bb0f4838106fa52
+    scorer    616bbce9571b69cbefd7419fb0ab64de4919309122fc5719fcec68fab4fa07d8
+
+No candidate.py exists at the freeze and no score has been observed.
+
+    PHASE=R0_P02_CANDIDATE_IMPLEMENTATION
+    NEXT_ACTOR=chatgpt
+    R0_P02_RESULT=NOT_OBSERVED
+    NEXT=BOUNDED_CODEX_R0_P02_CANDIDATE_IMPLEMENTATION

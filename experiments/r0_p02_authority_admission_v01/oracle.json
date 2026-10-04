@@ -1,0 +1,86 @@
+{
+  "expected": {
+    "C01_GENESIS_VALID": {
+      "latestness": "VALID_AS_PRESENTED",
+      "outcome": "ADMITTED"
+    },
+    "C02_BASE_ACCEPTANCE_VALID": {
+      "latestness": "VALID_AS_PRESENTED",
+      "outcome": "ADMITTED"
+    },
+    "C03_UNRELATED_NON_GOVERNING": {
+      "latestness": "VALID_AS_PRESENTED",
+      "outcome": "ADMITTED"
+    },
+    "C04_UNRELATED_GOVERNING": {
+      "latestness": "VALID_AS_PRESENTED",
+      "outcome": "ADMITTED"
+    },
+    "C05_CONFLICT_A_ADMITS": {
+      "latestness": "VALID_AS_PRESENTED",
+      "outcome": "ADMITTED"
+    },
+    "C06_CONFLICT_B_AFTER_A": {
+      "latestness": "VALID_AS_PRESENTED",
+      "outcome": "STALE_SEMANTIC_BASE"
+    },
+    "C07_FORGED_SIGNATURE": {
+      "latestness": "NOT_APPLICABLE",
+      "outcome": "INVALID_SIGNATURE"
+    },
+    "C08_CHANGED_ENVELOPE": {
+      "latestness": "NOT_APPLICABLE",
+      "outcome": "INVALID_SIGNATURE"
+    },
+    "C09_DECISION_SUBSTITUTION": {
+      "latestness": "NOT_APPLICABLE",
+      "outcome": "INVALID_SIGNATURE"
+    },
+    "C10_CROSS_PROJECT_REPLAY": {
+      "latestness": "NOT_APPLICABLE",
+      "outcome": "WRONG_PROJECT"
+    },
+    "C11_ACCEPTANCE_ID_REPLAY": {
+      "latestness": "VALID_AS_PRESENTED",
+      "outcome": "DUPLICATE_ACCEPTANCE"
+    },
+    "C12_DUPLICATE_SEQUENCE": {
+      "latestness": "NOT_APPLICABLE",
+      "outcome": "INVALID_SEQUENCE"
+    },
+    "C13_BROKEN_PREV_DIGEST": {
+      "latestness": "NOT_APPLICABLE",
+      "outcome": "CHAIN_BREAK"
+    },
+    "C14_MIDDLE_CHAIN_REWRITE": {
+      "latestness": "NOT_APPLICABLE",
+      "outcome": "CHAIN_BREAK"
+    },
+    "C15_HOST_TRANSFORM": {
+      "latestness": "VALID_AS_PRESENTED",
+      "outcome": "PROOF_UNCHANGED"
+    },
+    "C16_INTERRUPTED_BEFORE_ADMISSION": {
+      "latestness": "VALID_AS_PRESENTED",
+      "outcome": "NOT_STARTED"
+    },
+    "C17_INTERRUPTED_AFTER_ADMISSION": {
+      "latestness": "VALID_AS_PRESENTED",
+      "outcome": "DONE_NO_DUPLICATE"
+    },
+    "C18_PRIOR_WITNESS_TRUNCATION": {
+      "latestness": "STALE",
+      "outcome": "ROLLBACK_DETECTED"
+    },
+    "C19_FRESH_VERIFIER_TRUNCATION": {
+      "latestness": "LATESTNESS_UNPROVEN",
+      "outcome": "CHAIN_VALID"
+    },
+    "C20_OUT_OF_BAND_HEAD_WITNESS": {
+      "latestness": "STALE",
+      "outcome": "ROLLBACK_DETECTED"
+    }
+  },
+  "protocol": "R0-P02-V01",
+  "schema_version": 1
+}

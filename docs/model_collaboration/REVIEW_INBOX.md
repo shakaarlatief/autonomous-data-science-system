@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-10-04
-**Status:** MC-0030 OPEN / GOVERNED LEDGER KERNEL V0.2 / R0-P01..P03 PROTOCOL FAMILY FROZEN / P02 FIXTURE-HARNESS FREEZE NEXT / NO PROBE RESULTS / PHYSICAL TARGET NOT SELECTED / SPEC 028 AUTHORITY UNCHANGED / MIGRATION UNAUTHORIZED / MC-0029 RESOLVED / MC-0010 DEFERRED
+**Status:** MC-0030 OPEN / GOVERNED LEDGER KERNEL V0.2 / R0-P02 EXACT FIXTURE FROZEN / BOUNDED CODEX CANDIDATE IMPLEMENTATION NEXT / NO P02 RESULT / PHYSICAL TARGET NOT SELECTED / SPEC 028 AUTHORITY UNCHANGED / MIGRATION UNAUTHORIZED / MC-0029 RESOLVED / MC-0010 DEFERRED
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -27,7 +27,7 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 MC-0030 is the active collaboration obligation. ChatGPT Candidate A is frozen in Research 504 + 508. Claude's blind independent Message 001 is frozen at commit 071d4b5a232c07aaa3e96a2b91ba3ae1fd1a9c2d and proposes LEDGER-KERNEL. Claude reports that the blindness boundary remained intact. The preallocated claude-05 coordination value was a clerical error; the actual persistent Claude interaction remains claude-04, conversation 04 - Assurance and Delivery Architecture Design.
 
-Research 512 / MC-0030 Message 004 freeze GOVERNED_LEDGER_KERNEL_V02 as the single leading pre-probe candidate. Research 513 / Message 005 now prospectively freeze the R0-P01, R0-P02 and R0-P03 protocol family with no observed probe results. ChatGPT / chatgpt-36 is next to freeze the exact R0-P02 fixture/harness boundary. No physical target has been selected and no production implementation, migration, Specification 028 amendment, Runtime Bridge extraction or authority switch is authorized.
+Research 513 freezes the R0-P01/P02/P03 protocol family. Research 514 / MC-0030 Message 006 now freeze the exact R0-P02 fixture, oracle, candidate contract, scorer, blindness boundary and live-host leg before implementation. No candidate.py existed at freeze and no result has been observed. ChatGPT / chatgpt-36 is next to dispatch one bounded Codex implementation blind to oracle.json and score.py, then postflight it before scoring. No physical target has been selected and no production implementation, migration, Specification 028 amendment, Runtime Bridge extraction or authority switch is authorized.
 
 ### MC-0029: Specification 028 reconciliation and AO-10 integrated Project-system design (resolved historical context)
 

@@ -1,0 +1,127 @@
+{
+  "base_state": {
+    "effects": [
+      {
+        "contract_revision": "C-A@1",
+        "effect_id": "E-ALPHA",
+        "lineage_head": "L-ALPHA-0",
+        "status": "CURRENT"
+      },
+      {
+        "contract_revision": "C-B@1",
+        "effect_id": "E-BETA",
+        "lineage_head": "L-BETA-0",
+        "status": "CURRENT"
+      }
+    ],
+    "grammar_version": "G1",
+    "predicate_semantics_version": "P1"
+  },
+  "canonicalization_profile": "PROBE_JSON_V01_SORTED_KEYS_COMPACT_UTF8_TEST_ONLY",
+  "cases": [
+    {
+      "case_id": "C01_GENESIS_VALID",
+      "kind": "GENESIS_VALID"
+    },
+    {
+      "case_id": "C02_BASE_ACCEPTANCE_VALID",
+      "depends_on": [
+        "E-ALPHA"
+      ],
+      "kind": "BASE_ACCEPTANCE_VALID"
+    },
+    {
+      "case_id": "C03_UNRELATED_NON_GOVERNING",
+      "depends_on": [
+        "E-ALPHA"
+      ],
+      "kind": "UNRELATED_NON_GOVERNING_DOES_NOT_STALE"
+    },
+    {
+      "case_id": "C04_UNRELATED_GOVERNING",
+      "depends_on": [
+        "E-ALPHA"
+      ],
+      "kind": "UNRELATED_GOVERNING_DOES_NOT_STALE",
+      "unrelated_effect": "E-BETA"
+    },
+    {
+      "case_id": "C05_CONFLICT_A_ADMITS",
+      "depends_on": [
+        "E-ALPHA"
+      ],
+      "kind": "CONFLICT_A_ADMITS"
+    },
+    {
+      "case_id": "C06_CONFLICT_B_AFTER_A",
+      "depends_on": [
+        "E-ALPHA"
+      ],
+      "kind": "CONFLICT_B_STALE_AFTER_A"
+    },
+    {
+      "case_id": "C07_FORGED_SIGNATURE",
+      "kind": "FORGED_SIGNATURE_REJECT"
+    },
+    {
+      "case_id": "C08_CHANGED_ENVELOPE",
+      "kind": "CHANGED_ENVELOPE_REJECT"
+    },
+    {
+      "case_id": "C09_DECISION_SUBSTITUTION",
+      "kind": "DECISION_SUBSTITUTION_REJECT"
+    },
+    {
+      "case_id": "C10_CROSS_PROJECT_REPLAY",
+      "kind": "CROSS_PROJECT_REPLAY_REJECT"
+    },
+    {
+      "case_id": "C11_ACCEPTANCE_ID_REPLAY",
+      "kind": "ACCEPTANCE_ID_REPLAY_REJECT"
+    },
+    {
+      "case_id": "C12_DUPLICATE_SEQUENCE",
+      "kind": "DUPLICATE_SEQUENCE_REJECT"
+    },
+    {
+      "case_id": "C13_BROKEN_PREV_DIGEST",
+      "kind": "BROKEN_PREV_DIGEST_REJECT"
+    },
+    {
+      "case_id": "C14_MIDDLE_CHAIN_REWRITE",
+      "kind": "MIDDLE_CHAIN_REWRITE_DETECT"
+    },
+    {
+      "case_id": "C15_HOST_TRANSFORM",
+      "kind": "HOST_TRANSFORM_INVARIANT"
+    },
+    {
+      "case_id": "C16_INTERRUPTED_BEFORE_ADMISSION",
+      "kind": "RECOVER_NOT_STARTED"
+    },
+    {
+      "case_id": "C17_INTERRUPTED_AFTER_ADMISSION",
+      "kind": "RECOVER_DONE_NO_DUPLICATE"
+    },
+    {
+      "case_id": "C18_PRIOR_WITNESS_TRUNCATION",
+      "kind": "PRIOR_WITNESS_TRUNCATION_DETECT"
+    },
+    {
+      "case_id": "C19_FRESH_VERIFIER_TRUNCATION",
+      "kind": "FRESH_VERIFIER_TRUNCATION_LIMIT"
+    },
+    {
+      "case_id": "C20_OUT_OF_BAND_HEAD_WITNESS",
+      "kind": "EXTERNAL_HEAD_WITNESS_TRUNCATION_DETECT"
+    }
+  ],
+  "project_id": "ADS-R0-P02-SYNTHETIC",
+  "protocol": "R0-P02-V01",
+  "schema_version": 1,
+  "signature_profile": "TEST_HMAC_SHA256_NOT_PRODUCTION",
+  "signer_set_version": "SIGNERS-V1",
+  "test_secret": "R0-P02-SYNTHETIC-ONLY-NOT-A-REAL-SECRET",
+  "test_signer_id": "OWNER-TEST-1",
+  "wrong_project_id": "OTHER-PROJECT-SYNTHETIC"
+}

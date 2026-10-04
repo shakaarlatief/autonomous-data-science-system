@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 849
+**Checkpoint:** 850
 **Date:** 2026-10-04
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: R0-P02 exact authority-admission fixture/harness freeze
+## Current active stage: R0-P02 bounded authority-admission candidate implementation
+
+Checkpoint 850 / Research 514 / MC-0030 Message 006 freeze the exact R0-P02 authority-admission experiment before implementation or result observation. The frozen surface contains 20 deterministic cases, an expected-result oracle, candidate implementation contract, deterministic scorer with renamed-case and alternate-context metamorphic checks, an explicit oracle/scorer blindness boundary, and a bounded real-GitHub squash-transport leg that never mutates the coordination branch. The probe deliberately uses synthetic HMAC signing and probe-only compact JSON so P02 isolates admission/order/staleness/tamper semantics; real owner cryptography remains R0-P01 and production canonicalization remains R1. The fresh-verifier limitation is frozen explicitly: a repository-only chain may be valid as presented while latestness remains unproven without a prior/out-of-band witness. No candidate.py existed at freeze time and no P02 result has been observed. The next task is one bounded Codex implementation of candidate.py, blind to oracle.json and score.py, followed by ChatGPT postflight before scoring. No physical target is selected; production implementation, migration, Specification 028 amendment, Runtime Bridge extraction and authority switch remain unauthorized.
 
 Checkpoint 849 / Research 513 / MC-0030 Message 005 prospectively freeze the protocol family for the three remaining GOVERNED_LEDGER_KERNEL_V02 architecture-decision probes before any result is observed. The preferred order is R0-P02 authority admission/order/concurrency/tamper evidence, then R0-P01 owner authenticity/acceptance burden, then R0-P03 semantic navigation/fresh-agent reconstruction. Research 513 freezes global no-tuning/attempt-integrity rules, P02 semantic-base and hash-chain controls including the fresh-verifier rollback limitation, P01 exact-statement security and owner-burden thresholds including migration-volume pressure, and P03 fair-arm rules that give Research 217 the same V03-native relation substrate as every successor arm. No probe has run. The next exact step is P02 fixture/harness freeze before any P02 implementation or result observation. No physical target is selected; production implementation, migration, Specification 028 amendment, Runtime Bridge extraction and authority switch remain unauthorized.
 
