@@ -3,7 +3,7 @@
   "thread_id": "MC-0030",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "OPEN",
-  "phase": "R0_CLAUDE_INDEPENDENT_DESIGN",
+  "phase": "R0_CHARTER_AMENDMENT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -51,7 +51,7 @@
       ]
     }
   ],
-  "next_expected_actor": "claude",
+  "next_expected_actor": "chatgpt",
   "independence": {
     "status": "BLIND_TO_CANDIDATE",
     "review_base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -62,14 +62,14 @@
       "After ChatGPT candidate freeze, Claude must remain blind to that candidate until Claude Message 001 is durably committed.",
       "ChatGPT R0-CANDIDATE-A is frozen in Research 504 / Checkpoint 841 but must remain hidden from Claude until Claude Message 001 is durably committed."
     ],
-    "notes": "Claude's independent pass is intentionally blind to ChatGPT Research 504 and Checkpoint 841. Claude may use THIN_CENTRED_HYBRID_V03, D-036, Research 503 and MC-0030 routing/brief files. From-scratch freedom applies at every physical and working-procedure level. Existing mechanisms are evidence/current-authority constraints where live, not target constraints."
+    "notes": "Owner discussion after Checkpoint 842 identified two neutral R0 scope obligations that must be made explicit before Claude's blind design: first-principles semantic organization/navigation, and the generic external-execution boundary in which Codexless Runtime Bridge is treated as reusable infrastructure rather than ADS-owned product code. Claude remains blind to Research 504 / Checkpoint 841. ChatGPT is temporarily next to freeze the neutral amendment and its own bounded addendum before a refreshed Claude handoff."
   },
   "last_transition": {
-    "transition_id": "mc0030-chatgpt-candidate-frozen-claude-blind-next",
+    "transition_id": "mc0030-r0-charter-amendment-before-claude",
     "from_state": "OPEN",
     "to_state": "OPEN",
-    "actor": "chatgpt",
-    "reason": "Research 504 freezes ChatGPT R0-CANDIDATE-A. Claude must now independently derive a physical realization architecture from the selected logical target and neutral Research 503 charter while blind to the ChatGPT candidate.",
-    "repository_head": "c15d404126d1fd38acfc056fdb3d490d388338c2"
+    "actor": "human",
+    "reason": "Owner discussion clarified the Runtime Bridge standalone-product boundary and confirmed the need to make the previously preserved semantic-organization obligation explicit before Claude's independent R0 design.",
+    "repository_head": "630bdd04e3b3275b5ffd342cd844f7060f6f5ed0"
   }
 }

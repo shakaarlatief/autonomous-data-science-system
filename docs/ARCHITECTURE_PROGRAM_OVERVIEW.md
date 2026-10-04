@@ -173,6 +173,7 @@ docs/research/502_v03_owner_selection_and_realization_program_opening.md
 | **Whole Project Operating Architecture** | Composition of AO, knowledge/state/authority, assurance, delivery, recovery/evolution | Accepted high-level integration vision |
 | **THIN_CENTRED_HYBRID_V03** | Governing semantic/control kernel connecting J1, J2 and J3 | **Owner-selected successor logical target** |
 | **Semantic organization / subjects / navigation** | How knowledge is semantically organized, discovered, navigated, retrieved and activated | **Still intentionally unresolved** at final-target level |
+| **Codexless Runtime Bridge** | Reusable bounded local/developer execution infrastructure used by ADS and potentially other projects | Active tool today; **long-term standalone-product boundary now explicit**, extraction deferred |
 | **R0 physical/software realization architecture** | How the integrated Project System actually exists in code/repository/storage/workflow/CI/runtime | **Current active stage** |
 | **Production successor implementation** | Build the selected physical target | Not started |
 | **Semantic migration** | Reconcile current live knowledge/control into successor semantics | Not started |
@@ -781,7 +782,71 @@ This prevents speculative over-generalization.
 
 ---
 
-## 15. Exact forward plan
+## 15. Codexless Runtime Bridge ownership and future professionalization
+
+Codexless Runtime Bridge is now explicitly treated as **reusable external developer infrastructure**, not as a generic subsystem that ADS should canonically own forever.
+
+Its generic role is approximately:
+
+```text
+ChatGPT / compatible caller
+        ↓
+bounded trusted capability surface
+        ↓
+local machine / repositories / Git / GitHub / browser / tools / processes
+```
+
+The long-term ownership direction is:
+
+```text
+STANDALONE RUNTIME BRIDGE PRODUCT
+    generic source
+    architecture
+    security model
+    capability interfaces
+    tests / CI / releases / docs
+
+PRIVATE HOST / DEPLOYMENT STATE
+    credentials references
+    machine-specific deployment/configuration
+    private runtime evidence
+
+ADS
+    ADS requirements
+    ADS workspace/policy configuration
+    ADS-specific capability packs/adapters
+    qualified Runtime Bridge version
+    AO / WARRANT-F integration
+    ADS-specific qualification evidence
+```
+
+The current `autonomous-data-science-system-local-runtime` repository must be classified before deciding whether it should remain ADS-specific, be split, or become part of a more generic private deployment boundary.
+
+Runtime Bridge is related to PSMF only by analogy. PSMF materializes a project-sovereign Project System. Runtime Bridge is more naturally a reusable external execution/tool product that can be configured or extended for many projects.
+
+R0 must therefore define a provider-neutral execution/action-adapter boundary so that:
+
+```text
+Project System / AO
+    -> executor interface
+        -> Codexless Runtime Bridge
+        -> GitHub connector
+        -> Claude-side connector
+        -> local/direct executor
+        -> future executors
+```
+
+The dedicated Runtime Bridge extraction/professionalization program is **future work**, not the current R0 migration. Existing ADS Runtime Bridge research remains valid historical evidence and should not be rewritten.
+
+Authoritative design-input record:
+
+```text
+docs/research/506_codexless_runtime_bridge_standalone_product_boundary.md
+```
+
+---
+
+## 16. Exact forward plan
 
 ### R0: integrated realization requirements and physical/software architecture
 
@@ -917,7 +982,7 @@ After actual operational evidence, revisit PSMF / Generalizable Project Operatin
 
 ---
 
-## 16. Current independent-design plan
+## 17. Current independent-design plan
 
 The project opened MC-0030 using:
 
@@ -958,7 +1023,7 @@ so Claude and ChatGPT are both solving the whole intended Project System problem
 
 ---
 
-## 17. Completion checklist
+## 18. Completion checklist
 
 ### Completed or selected
 
@@ -984,10 +1049,12 @@ so Claude and ChatGPT are both solving the whole intended Project System problem
 - [x] R0 opened
 - [x] Neutral R0 physical-realization charter frozen
 - [x] ChatGPT independent R0 physical candidate frozen
+- [x] Runtime Bridge long-term standalone-product ownership boundary captured
 
 ### Explicitly still open before physical-target selection
 
 - [ ] Amend/strengthen R0 so semantic organization/navigation is an explicit named obligation
+- [ ] Add the Runtime Bridge/external-executor ownership boundary explicitly to the neutral R0 charter
 - [ ] Run Claude blind independent R0 whole-system design
 - [ ] Compare independent ChatGPT and Claude physical/system architectures
 - [ ] Reconcile into one candidate or bounded finalist set
@@ -1015,10 +1082,11 @@ so Claude and ChatGPT are both solving the whole intended Project System problem
 - [ ] Seek explicit owner cutover/authority-switch decision
 - [ ] Retire legacy compatibility/oracles only after qualified successor authority
 - [ ] Reassess generic PSMF/framework extraction after operational experience
+- [ ] Run a dedicated Codexless Runtime Bridge extraction/professionalization program after ADS's execution-interface requirements are stable
 
 ---
 
-## 18. "Do not confuse these" quick reference
+## 19. "Do not confuse these" quick reference
 
 ### V03 versus AO
 
@@ -1084,7 +1152,7 @@ cutover
 
 ---
 
-## 19. Key source map
+## 20. Key source map
 
 This overview is intentionally secondary. Important authoritative/evidence sources include:
 
@@ -1136,6 +1204,9 @@ Research 502
 Research 503
     R0 physical/software realization charter
 
+Research 506
+    Codexless Runtime Bridge standalone-product boundary and extraction obligation
+
 Specification 028
     current operational implementation/migration authority
 
@@ -1145,7 +1216,7 @@ docs/DECISIONS.md
 
 ---
 
-## 20. Update policy for this file
+## 21. Update policy for this file
 
 This file should remain deliberately lightweight in authority terms.
 
@@ -1169,7 +1240,7 @@ If the future Project System provides a better orientation/reconstruction view, 
 
 ---
 
-## 21. Current "you are here" marker
+## 22. Current "you are here" marker
 
 ```text
 MAJOR LOGICAL ARCHITECTURE

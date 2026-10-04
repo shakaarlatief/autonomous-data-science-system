@@ -66,3 +66,27 @@ Research 505 / Checkpoint 842 freezes the exact Message 001 handoff.
 Claude must use the selected V03 logical architecture plus Research 503 and remain blind to Research 504 / Checkpoint 841 and any derivative Candidate-A material until Message 001 is durably committed.
 
     NEXT=CLAUDE_MESSAGE_001
+
+
+## Owner scope clarification before Claude
+
+The owner confirmed the Runtime Bridge separation direction and asked that the architecture overview and R0 basis be made clear before proceeding.
+
+Research 506 now records:
+
+    generic Codexless Runtime Bridge
+        future standalone reusable product boundary
+
+    ADS
+        consumer / integration / policy / qualification owner
+
+    immediate extraction
+        not authorized
+
+The prior semantic-organization/navigation omission also remains to be corrected explicitly.
+
+Claude remains blind to Research 504 / Checkpoint 841.
+
+    PHASE=R0_CHARTER_AMENDMENT
+    NEXT_ACTOR=chatgpt
+    NEXT=FREEZE_NEUTRAL_R0_AMENDMENT
