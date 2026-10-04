@@ -6,6 +6,11 @@
 **Project stage:** R0 physical realization architecture design
 **Scope:** Freeze the amended Claude independent-design task after semantic-organization and external-execution requirements became explicit.
 **Authority:** Collaboration routing only.
+**Interaction environment:** ChatGPT
+**Project / workspace:** Autonomous Data Science System
+**Interaction session:** chatgpt-35
+**Conversation title:** 35 - Semantic Qualification and Reconciliation
+**Primary collaborator:** ChatGPT
 
     prior checkpoint                  844
     neutral R0 basis                  Research 503 + 506 + 507

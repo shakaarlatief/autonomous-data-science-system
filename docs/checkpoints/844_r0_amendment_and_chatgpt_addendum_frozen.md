@@ -6,6 +6,11 @@
 **Project stage:** R0 physical realization architecture design
 **Scope:** Freeze explicit semantic-organization and external-execution obligations and extend ChatGPT Candidate A against them before Claude's blind independent design.
 **Authority:** Design evidence only.
+**Interaction environment:** ChatGPT
+**Project / workspace:** Autonomous Data Science System
+**Interaction session:** chatgpt-35
+**Conversation title:** 35 - Semantic Qualification and Reconciliation
+**Primary collaborator:** ChatGPT
 
     prior checkpoint                  843
     base R0 requirements              44

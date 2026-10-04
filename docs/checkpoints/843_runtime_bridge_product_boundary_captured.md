@@ -6,6 +6,11 @@
 **Project stage:** R0 physical realization architecture design
 **Scope:** Preserve the owner-supported conclusion that generic Codexless Runtime Bridge belongs outside ADS long-term and pause the Claude handoff until the neutral R0 charter is updated for this boundary and the already-identified semantic-organization obligation.
 **Authority:** Design-scope checkpoint only. No extraction, implementation, migration, or authority switch is authorized.
+**Interaction environment:** ChatGPT
+**Project / workspace:** Autonomous Data Science System
+**Interaction session:** chatgpt-35
+**Conversation title:** 35 - Semantic Qualification and Reconciliation
+**Primary collaborator:** ChatGPT
 
     prior checkpoint                  842
     Runtime Bridge generic boundary   standalone reusable product
