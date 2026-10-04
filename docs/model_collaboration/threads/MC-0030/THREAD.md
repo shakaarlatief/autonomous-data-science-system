@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / BOTH INDEPENDENT DESIGNS FROZEN / COMPARATIVE RECONCILIATION NEXT
+**Status:** OPEN / GOVERNED LEDGER KERNEL V0.1 FROZEN / CLAUDE COMPARATIVE CRITIQUE NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -25,8 +25,9 @@ The physical architecture is not.
     ChatGPT independent R0 physical candidate       COMPLETE / Research 504 + 508
     Claude independent physical design              COMPLETE / Message 001 / 071d4b5a...
     comparative exposure                            AUTHORIZED / BOTH POSITIONS FROZEN
-    ChatGPT comparative reconciliation              NEXT
-    discriminating probes                           AS NEEDED
+    ChatGPT comparative reconciliation              COMPLETE / Research 511 / Message 002
+    Claude comparative critique                     NEXT / Message 003
+    discriminating probes                           AFTER RECONCILIATION / AS NEEDED
     physical-target owner decision                  ONLY WHEN READY
 
 ## Independence
@@ -156,3 +157,34 @@ Both independent positions are now durably frozen. Comparative exposure is autho
     MIGRATION_AUTHORIZED=false
     SPECIFICATION_028_AUTHORITY=UNCHANGED
     NEXT=CHATGPT_COMPARATIVE_RECONCILIATION
+
+## ChatGPT comparative reconciliation
+
+Research 511 and MC-0030 Message 002 compare both independently frozen R0 designs and reconcile them into:
+
+    GOVERNED_LEDGER_KERNEL_V01
+
+The comparison finds strong independent convergence on a repository-native immutable governing ledger, natural-owner J2, deterministic kernel/J3, disposable derived indexes, provider-neutral executor boundary, external Runtime Bridge ownership, guarded serialized authority admission, and shadow-before-migration discipline.
+
+Material refinements include:
+
+    owner-exclusive cryptographic proof binds the semantic Acceptance Envelope rather than requiring Git commit identity to be the canonical proof
+    generated-first J2 with source-owned realization manifests only where needed
+    relation-first deterministic navigation core with Research 217 / concerns / semantic retrieval still subject to a fair probe
+    optional derived publication channel rather than a correctness-critical derived ref
+    whole-repository Product / Project boundary with project/system and project/engineering separation
+
+Three probes remain decision-critical before physical-target selection:
+
+    R0-P01 owner authenticity and acceptance burden
+    R0-P02 authority admission / ordering / concurrency
+    R0-P03 semantic navigation / fresh-agent reconstruction
+
+Comparative blindness has ended. Claude / claude-04 may now inspect Research 504 + 508 and Research 511 and must author one adversarial comparative critique as Message 003.
+
+    PHASE=R0_CLAUDE_COMPARATIVE_CRITIQUE
+    NEXT_ACTOR=claude
+    RECONCILED_CANDIDATE=GOVERNED_LEDGER_KERNEL_V01
+    PHYSICAL_ARCHITECTURE_SELECTED=false
+    OWNER_DECISION=NOT_READY
+    NEXT=CLAUDE_MESSAGE_003

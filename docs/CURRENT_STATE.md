@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 846
+**Checkpoint:** 847
 **Date:** 2026-10-04
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: R0 comparative reconciliation of independent physical/software architectures
+## Current active stage: R0 Claude adversarial critique of the reconciled physical/software architecture
+
+Checkpoint 847 / Research 511 / MC-0030 Message 002 completes ChatGPT's first comparative reconciliation of the independently frozen R0 designs. The two designs converge strongly and are amended into one candidate, GOVERNED_LEDGER_KERNEL_V01: repository-native immutable governing acceptances, natural-owner J2 facts, one deterministic kernel and shared predicate source, deterministic J3, non-authoritative derived indexes/orientation, a provider-neutral executor port with Runtime Bridge as external reusable infrastructure, guarded serialized authority admission, and semantic shadow before migration. The reconciliation strengthens acceptance authenticity so consequential owner decisions require owner-exclusive cryptographic proof bound to the semantic Acceptance Envelope rather than making Git commit identity itself the canonical proof. Three questions remain decision-critical before physical-target selection: owner authenticity/burden (R0-P01), real authority admission/order/concurrency (R0-P02), and semantic navigation/fresh-agent reconstruction against Research 217 and hybrid alternatives (R0-P03). Claude / claude-04 is now authorized for comparative exposure to Research 504 + 508 and Research 511 and is next for MC-0030 Message 003 adversarial critique. No physical architecture is selected; no probe execution, implementation, migration, Specification 028 amendment, Runtime Bridge extraction or authority switch is authorized.
 
 Checkpoint 846 / Research 510 accepts the bounded intake of Claude MC-0030 Message 001 at 071d4b5a232c07aaa3e96a2b91ba3ae1fd1a9c2d. Claude's independent preferred architecture is LEDGER-KERNEL; the commit changes exactly one authorized collaboration-message file and Claude attests that the blind boundary remained intact with no accidental exposure. The MC-0030 coordination metadata had incorrectly preallocated claude-05; because no new Claude conversation was opened, the correct persistent interaction remains claude-04, conversation 04 - Assurance and Delivery Architecture Design. The bounded provenance repair is recorded without rewriting Claude's authored message. Both independent R0 positions are now durably frozen, comparative exposure is authorized, and ChatGPT / chatgpt-36 is next for comparative reconciliation. No physical architecture is selected; implementation, migration, Specification 028 amendment and authority switch remain unauthorized.
 

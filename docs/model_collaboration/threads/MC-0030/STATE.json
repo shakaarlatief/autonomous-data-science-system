@@ -3,7 +3,7 @@
   "thread_id": "MC-0030",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "OPEN",
-  "phase": "R0_COMPARATIVE_RECONCILIATION",
+  "phase": "R0_CLAUDE_COMPARATIVE_CRITIQUE",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -51,7 +51,7 @@
       ]
     }
   ],
-  "next_expected_actor": "chatgpt",
+  "next_expected_actor": "claude",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -66,16 +66,19 @@
       "The MC-0030 coordination files initially preallocated claude-05, but no new Claude conversation was opened. Claude Message 001 was authored in the existing persistent conversation 04 - Assurance and Delivery Architecture Design, so the correct provider-local session is claude-04; PROVENANCE_CORRECTION.md records the bounded repair.",
       "Claude Message 001 was committed at 071d4b5a232c07aaa3e96a2b91ba3ae1fd1a9c2d before comparative exposure and changes exactly one authorized collaboration-message path.",
       "Claude attests in Message 001 that it did not inspect Research 504, Research 508, Checkpoints 841/844, CURRENT_STATE, ARCHITECTURE_PROGRAM_OVERVIEW, or any comparative artifact before commit; no contradictory repository evidence was found.",
-      "Both independent positions are now durably frozen. Comparative exposure to ChatGPT Research 504 + 508 is authorized for the next MC-0030 comparative reconciliation stage."
+      "Both independent positions are now durably frozen. Comparative exposure to ChatGPT Research 504 + 508 is authorized for the next MC-0030 comparative reconciliation stage.",
+      "Research 511 and MC-0030 Message 002 freeze ChatGPT's first comparative reconciliation after both independent positions were durable.",
+      "Comparative blindness has ended. Claude / claude-04 may now inspect ChatGPT Research 504 + 508 and the reconciled Research 511 for Message 003.",
+      "The reconciled candidate is GOVERNED_LEDGER_KERNEL_V01; no physical target is selected and the three decision-critical probes R0-P01 through R0-P03 remain unexecuted."
     ],
-    "notes": "The independent phase is complete. ChatGPT Candidate A is frozen in Research 504 + 508, and Claude Message 001 is frozen at 071d4b5a232c07aaa3e96a2b91ba3ae1fd1a9c2d. The correct Claude interaction is claude-04 / 04 - Assurance and Delivery Architecture Design; the earlier claude-05 value was a clerical preallocation error. Comparative exposure is now authorized. No physical target is selected and no implementation, migration, Specification 028 amendment, or authority switch is authorized."
+    "notes": "Both independent positions are frozen and comparative exposure is authorized. Research 511 / MC-0030 Message 002 reconcile them into GOVERNED_LEDGER_KERNEL_V01. Claude / claude-04 is next for comparative critique and may inspect Research 504, 508 and 511. No physical target, implementation, migration, Specification 028 amendment, Runtime Bridge extraction or authority switch is authorized."
   },
   "last_transition": {
-    "transition_id": "mc0030-claude-independent-design-frozen-comparative-authorized",
+    "transition_id": "mc0030-chatgpt-comparative-reconciliation-frozen",
     "from_state": "OPEN",
     "to_state": "OPEN",
     "actor": "chatgpt",
-    "reason": "Claude Message 001 is durably frozen with the blind boundary intact; both independent physical-architecture positions now exist, the Claude-session provenance is corrected to claude-04, and comparative reconciliation is the next governed stage.",
-    "repository_head": "071d4b5a232c07aaa3e96a2b91ba3ae1fd1a9c2d"
+    "reason": "Research 511 and Message 002 reconcile the independently frozen physical architectures into GOVERNED_LEDGER_KERNEL_V01 and route that candidate to Claude for adversarial comparative critique before any owner decision or probe execution.",
+    "repository_head": "0805cbf2a51b5bee2300ddc87df2715df33f0a32"
   }
 }

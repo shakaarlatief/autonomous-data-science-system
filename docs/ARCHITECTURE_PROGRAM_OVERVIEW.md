@@ -982,51 +982,34 @@ After actual operational evidence, revisit PSMF / Generalizable Project Operatin
 
 ---
 
-## 17. Current independent-design plan
+## 17. Current comparative-design plan
 
-The project opened MC-0030 using:
+MC-0030 uses INDEPENDENT_THEN_COMPARATIVE.
 
-```text
-INDEPENDENT_THEN_COMPARATIVE
-```
+The independent phase is complete:
 
-Sequence:
+    Research 504 + 508
+        ChatGPT independent Repository-Native Control Record Graph
 
-```text
-neutral R0 requirements
-        ↓
-ChatGPT independent physical/system design
-        ↓
-freeze
-        ↓
-Claude independent design while blind to ChatGPT design
-        ↓
-freeze
-        ↓
-comparative exposure
-        ↓
-reconciliation
-        ↓
-decision-relevant probes
-        ↓
-physical target decision
-```
+    MC-0030 Message 001
+        Claude independent LEDGER-KERNEL
+        blind boundary intact
 
-The pre-Claude correction is now complete:
+    Research 511 / Message 002
+        comparative reconciliation
+        GOVERNED_LEDGER_KERNEL_V01
 
-```text
-Research 507
-    semantic organization/navigation = explicit neutral R0 obligation
-    external executor / Runtime Bridge boundary = explicit neutral R0 obligation
+Current sequence:
 
-Research 508
-    ChatGPT Candidate-A addendum against the amended neutral charter
+    neutral R0 requirements
+        -> ChatGPT independent design
+        -> Claude blind independent design
+        -> comparative reconciliation
+        -> Claude comparative critique
+        -> smallest decision-relevant probes
+        -> physical target decision
 
-Claude
-    remains blind to Research 504 and 508
-```
-
-The refreshed Claude handoff is now frozen in Research 509. Claude's blind independent design is the next step.
+Comparative blindness has ended. Claude / claude-04 is now the next actor for one adversarial comparative critique. The current reconciled candidate is not yet the selected physical target because R0-P01, R0-P02 and R0-P03 remain decision-relevant.
 
 ---
 
@@ -1063,9 +1046,9 @@ The refreshed Claude handoff is now frozen in Research 509. Claude's blind indep
 - [x] Amend/strengthen R0 so semantic organization/navigation is an explicit named obligation
 - [x] Add the Runtime Bridge/external-executor ownership boundary explicitly to the neutral R0 charter
 - [x] Freeze refreshed Claude blind handoff against Research 503 + 506 + 507
-- [ ] Run Claude blind independent R0 whole-system design
-- [ ] Compare independent ChatGPT and Claude physical/system architectures
-- [ ] Reconcile into one candidate or bounded finalist set
+- [x] Run Claude blind independent R0 whole-system design
+- [x] Compare independent ChatGPT and Claude physical/system architectures
+- [x] Reconcile into one candidate or bounded finalist set
 - [ ] Perform first-principles semantic-organization/navigation comparison
 - [ ] Use Research 217 as comparator/evidence, not inherited answer
 - [ ] Resolve any other architecture choices that remain decision-relevant
@@ -1270,11 +1253,14 @@ semantic-organization + external-execution obligations
     explicitly added to R0
             ↓
 R0 integrated physical/software architecture
-    CURRENT / Claude blind independent design next
+    CURRENT / independent designs complete
             ↓
-independent designs
+GOVERNED_LEDGER_KERNEL_V01
+    comparative candidate frozen
             ↓
-comparative reconciliation + focused probes
+Claude comparative critique
+            ↓
+R0-P01 / R0-P02 / R0-P03 focused probes as required
             ↓
 R1 physical target
             ↓
