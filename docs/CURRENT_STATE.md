@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 853
+**Checkpoint:** 854
 **Date:** 2026-10-04
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: R0-P01 owner-authenticity / acceptance-burden fixture and harness freeze
+## Current active stage: R0-P01 owner-authenticity / acceptance-burden harness implementation
+
+Checkpoint 854 / Research 518 / MC-0030 Message 010 freeze the exact R0-P01 owner-authenticity and acceptance-burden probe before any credential use. The prospective surface fixes OpenSSH Ed25519/passphrase Arm A, localhost WebAuthn ES256+UV Arm B, a ChatGPT owner-user-role digest-attestation Arm C comparator, the sign-what-you-see rendering contract, 13 public security controls, 1/2/4/30-effect owner trials, timing and burden gates, a deterministic A/B selection rule, and the hash-bound 97-acceptance / 157-effect legacy desk estimate. No P01 SSH key has been created, no WebAuthn registration/assertion has occurred, and no owner attestation has been requested. The next bounded step is manual-Codex implementation of harness.py, webauthn_server.mjs and score.py only, with no real owner credential operation during implementation. R0-P02 remains PASS; no physical target is selected and Specification 028 remains current operational authority.
 
 Checkpoint 853 / Research 517 / MC-0030 Message 009 close R0-P02 as PASS after both preregistered legs completed successfully. Deterministic Attempt 002 passed all 20 frozen cases with 0 errors and both metamorphic checks; the live-host connector-only branch/PR/squash leg preserved exact payload bytes and detached synthetic proof validity across a changed commit identity, left the coordination branch unchanged, and cleaned both temporary refs. The explicit fresh-verifier limitation remains: a fresh verifier with no retained/out-of-band witness can prove only validity as presented, not absence of a suppressed newer valid checkpoint. The current Project threat model does not require an additional independent anti-rollback witness; consequence-triggered owner checkpoints plus prior-checkpoint comparison remain sufficient. GOVERNED_LEDGER_KERNEL_V02 therefore retains its Git-based governing substrate without amendment. The next stage is R0-P01 owner authenticity / acceptance burden exact fixture and harness freeze. No physical target is yet selected; production implementation, migration, Specification 028 amendment, Runtime Bridge extraction and authority switch remain unauthorized.
 

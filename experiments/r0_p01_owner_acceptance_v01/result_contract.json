@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "protocol": "R0-P01-V01",
+  "realizability_values": [
+    "REALIZABLE",
+    "NOT_REALIZABLE"
+  ],
+  "control_values": [
+    "PASS",
+    "FAIL",
+    "NOT_APPLICABLE"
+  ],
+  "arm_class": {
+    "A": "OWNER_EXCLUSIVE_CRYPTOGRAPHIC",
+    "B": "OWNER_EXCLUSIVE_CRYPTOGRAPHIC",
+    "C": "PLATFORM_SEPARATED_WEAKER_COMPARATOR"
+  },
+  "required_arm_fields": [
+    "arm_id",
+    "realizability",
+    "setup_receipt",
+    "security_controls",
+    "small_trials",
+    "large_trial",
+    "secret_exposure",
+    "manual_metadata_edits",
+    "selection_eligible"
+  ],
+  "trial_fields": [
+    "trial_id",
+    "decision",
+    "semantic_review_seconds",
+    "mechanical_seconds",
+    "interaction_count",
+    "device_switches",
+    "success",
+    "friction_rating_1_to_5",
+    "friction_note"
+  ],
+  "cryptographic_eligibility": {
+    "all_13_security_controls": "PASS",
+    "manual_metadata_edits": 0,
+    "small_success_count": 3,
+    "median_small_mechanical_seconds_lte": 60,
+    "max_small_mechanical_seconds_lte": 120,
+    "large_mechanical_seconds_lte": 120,
+    "secret_exposure": false
+  },
+  "selection_rule_when_A_and_B_both_eligible": {
+    "material_small_difference_seconds": 10,
+    "material_large_difference_seconds": 15,
+    "rule": [
+      "if absolute median-small difference is at least 10 seconds, select the lower median",
+      "otherwise if absolute large-trial difference is at least 15 seconds, select the lower large-trial time",
+      "otherwise select arm B because exact WebAuthn binding provides owner-presence/user-verification without an RP-visible/exportable private-key file and preserves a mobile-capable path"
+    ]
+  },
+  "classification_rule": {
+    "INVALID": "credential/control leakage, result-affecting post-observation tuning, or attempt-integrity failure",
+    "REOPEN": "no owner-exclusive cryptographic arm satisfies cryptographic_proof_viability",
+    "AMEND": "at least one cryptographic arm satisfies cryptographic_proof_viability, but no arm is fully selection_eligible; or a fully eligible arm exists but projected acceptance count >100 or projected owner mechanical burden >90 minutes",
+    "PASS_WITH_SELECTION": "at least one cryptographic arm is fully selection_eligible, the selected arm is chosen by the frozen selection rule, and projected volume remains within both gates"
+  },
+  "arm_C_rule": "arm C can never by itself make the probe PASS_WITH_SELECTION and is never selection_eligible",
+  "cryptographic_proof_viability": {
+    "required_controls": [
+      "VALID_ACCEPTANCE",
+      "FORGED_OR_AGENT_PREPARED_PROOF_REJECTS",
+      "CHANGED_ENVELOPE_REJECTS",
+      "CHANGED_SHOWN_VIEW_REJECTS",
+      "DECISION_SUBSTITUTION_REJECTS",
+      "CROSS_PROJECT_REPLAY_REJECTS",
+      "ACCEPTANCE_ID_REPLAY_REJECTS",
+      "SEMANTIC_BASE_MISMATCH_REJECTS",
+      "UNRELATED_REPOSITORY_LANDING_DOES_NOT_INVALIDATE",
+      "SIGNER_SET_MISMATCH_REJECTS"
+    ],
+    "other_requirements": [
+      "realizability == REALIZABLE",
+      "at least one owner-authenticated small proof succeeds",
+      "secret_exposure == false"
+    ],
+    "meaning": "exact-statement owner-exclusive proof mechanism is viable even if burden or trust-root workflow still requires bounded amendment"
+  }
+}

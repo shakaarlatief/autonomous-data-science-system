@@ -1,0 +1,362 @@
+{
+  "schema_version": 1,
+  "protocol": "R0-P01-V01",
+  "project_id": "ADS-R0-P01-SYNTHETIC",
+  "wrong_project_id": "OTHER-PROJECT-SYNTHETIC",
+  "statement_context": "ADS-GOVERNING-ACCEPTANCE/v1",
+  "canonicalization_profile": "PROBE_JSON_V01_SORTED_KEYS_COMPACT_UTF8_TEST_ONLY",
+  "renderer_profile": "R0_P01_ASCII_OWNER_VIEW_V01",
+  "ssh_namespace": "ads-r0-p01-acceptance",
+  "signer_set_version": "SIGNERS-P01-V1",
+  "webauthn": {
+    "rp_id": "localhost",
+    "origin": "http://localhost:8765",
+    "port": 8765,
+    "public_key_algorithm": -7,
+    "algorithm_name": "ES256",
+    "user_verification": "required",
+    "attestation": "none",
+    "resident_key": "preferred",
+    "authenticator_attachment": null
+  },
+  "semantic_base": {
+    "grammar_version": "G1",
+    "predicate_semantics_version": "P1",
+    "source_revision": "R0-P01-SYNTHETIC-BASE-V1",
+    "effects": [
+      {
+        "effect_id": "BASE-A",
+        "status": "CURRENT",
+        "lineage_head": "BASE-A-0",
+        "contract_revision": "C-A@1"
+      },
+      {
+        "effect_id": "BASE-B",
+        "status": "CURRENT",
+        "lineage_head": "BASE-B-0",
+        "contract_revision": "C-B@1"
+      }
+    ]
+  },
+  "owner_trials": [
+    {
+      "trial_id": "S01",
+      "class": "SMALL",
+      "consequence": "LOW",
+      "issued_at": "2026-10-04T00:01:00Z",
+      "title": "Small owner trial 1",
+      "summary": "One-effect synthetic governing acceptance.",
+      "effects": [
+        {
+          "effect_id": "E-S01-001",
+          "grammar": "REQUIRE",
+          "subject": "SYNTHETIC-SMALL-001",
+          "text": "Synthetic low-consequence governing effect 001 for R0-P01 usability and exact-binding qualification.",
+          "independently_acceptable": true
+        }
+      ]
+    },
+    {
+      "trial_id": "S02",
+      "class": "SMALL",
+      "consequence": "LOW",
+      "issued_at": "2026-10-04T00:02:00Z",
+      "title": "Small owner trial 2",
+      "summary": "Two-effect synthetic governing acceptance.",
+      "effects": [
+        {
+          "effect_id": "E-S02-001",
+          "grammar": "REQUIRE",
+          "subject": "SYNTHETIC-SMALL-001",
+          "text": "Synthetic low-consequence governing effect 001 for R0-P01 usability and exact-binding qualification.",
+          "independently_acceptable": true
+        },
+        {
+          "effect_id": "E-S02-002",
+          "grammar": "REQUIRE",
+          "subject": "SYNTHETIC-SMALL-002",
+          "text": "Synthetic low-consequence governing effect 002 for R0-P01 usability and exact-binding qualification.",
+          "independently_acceptable": true
+        }
+      ]
+    },
+    {
+      "trial_id": "S03",
+      "class": "SMALL",
+      "consequence": "LOW",
+      "issued_at": "2026-10-04T00:03:00Z",
+      "title": "Small owner trial 3",
+      "summary": "Four-effect synthetic governing acceptance.",
+      "effects": [
+        {
+          "effect_id": "E-S03-001",
+          "grammar": "REQUIRE",
+          "subject": "SYNTHETIC-SMALL-001",
+          "text": "Synthetic low-consequence governing effect 001 for R0-P01 usability and exact-binding qualification.",
+          "independently_acceptable": true
+        },
+        {
+          "effect_id": "E-S03-002",
+          "grammar": "REQUIRE",
+          "subject": "SYNTHETIC-SMALL-002",
+          "text": "Synthetic low-consequence governing effect 002 for R0-P01 usability and exact-binding qualification.",
+          "independently_acceptable": true
+        },
+        {
+          "effect_id": "E-S03-003",
+          "grammar": "REQUIRE",
+          "subject": "SYNTHETIC-SMALL-003",
+          "text": "Synthetic low-consequence governing effect 003 for R0-P01 usability and exact-binding qualification.",
+          "independently_acceptable": true
+        },
+        {
+          "effect_id": "E-S03-004",
+          "grammar": "REQUIRE",
+          "subject": "SYNTHETIC-SMALL-004",
+          "text": "Synthetic low-consequence governing effect 004 for R0-P01 usability and exact-binding qualification.",
+          "independently_acceptable": true
+        }
+      ]
+    },
+    {
+      "trial_id": "L01",
+      "class": "LARGE",
+      "consequence": "LOW",
+      "issued_at": "2026-10-04T00:04:00Z",
+      "title": "Large owner trial",
+      "summary": "Thirty-effect synthetic governing acceptance used only to measure rendering and mechanical owner-authentication burden.",
+      "effects": [
+        {
+          "effect_id": "E-L01-001",
+          "grammar": "REQUIRE",
+          "subject": "SYNTHETIC-LARGE-001",
+          "text": "Synthetic low-consequence governing effect 001 for R0-P01 usability and exact-binding qualification.",
+          "independently_acceptable": true
+        },
+        {
+          "effect_id": "E-L01-002",
+          "grammar": "REQUIRE",
+          "subject": "SYNTHETIC-LARGE-002",
+          "text": "Synthetic low-consequence governing effect 002 for R0-P01 usability and exact-binding qualification.",
+          "independently_acceptable": true
+        },
+        {
+          "effect_id": "E-L01-003",
+          "grammar": "REQUIRE",
+          "subject": "SYNTHETIC-LARGE-003",
+          "text": "Synthetic low-consequence governing effect 003 for R0-P01 usability and exact-binding qualification.",
+          "independently_acceptable": true
+        },
+        {
+          "effect_id": "E-L01-004",
+          "grammar": "REQUIRE",
+          "subject": "SYNTHETIC-LARGE-004",
+          "text": "Synthetic low-consequence governing effect 004 for R0-P01 usability and exact-binding qualification.",
+          "independently_acceptable": true
+        },
+        {
+          "effect_id": "E-L01-005",
+          "grammar": "REQUIRE",
+          "subject": "SYNTHETIC-LARGE-005",
+          "text": "Synthetic low-consequence governing effect 005 for R0-P01 usability and exact-binding qualification.",
+          "independently_acceptable": true
+        },
+        {
+          "effect_id": "E-L01-006",
+          "grammar": "REQUIRE",
+          "subject": "SYNTHETIC-LARGE-006",
+          "text": "Synthetic low-consequence governing effect 006 for R0-P01 usability and exact-binding qualification.",
+          "independently_acceptable": true
+        },
+        {
+          "effect_id": "E-L01-007",
+          "grammar": "REQUIRE",
+          "subject": "SYNTHETIC-LARGE-007",
+          "text": "Synthetic low-consequence governing effect 007 for R0-P01 usability and exact-binding qualification.",
+          "independently_acceptable": true
+        },
+        {
+          "effect_id": "E-L01-008",
+          "grammar": "REQUIRE",
+          "subject": "SYNTHETIC-LARGE-008",
+          "text": "Synthetic low-consequence governing effect 008 for R0-P01 usability and exact-binding qualification.",
+          "independently_acceptable": true
+        },
+        {
+          "effect_id": "E-L01-009",
+          "grammar": "REQUIRE",
+          "subject": "SYNTHETIC-LARGE-009",
+          "text": "Synthetic low-consequence governing effect 009 for R0-P01 usability and exact-binding qualification.",
+          "independently_acceptable": true
+        },
+        {
+          "effect_id": "E-L01-010",
+          "grammar": "REQUIRE",
+          "subject": "SYNTHETIC-LARGE-010",
+          "text": "Synthetic low-consequence governing effect 010 for R0-P01 usability and exact-binding qualification.",
+          "independently_acceptable": true
+        },
+        {
+          "effect_id": "E-L01-011",
+          "grammar": "REQUIRE",
+          "subject": "SYNTHETIC-LARGE-011",
+          "text": "Synthetic low-consequence governing effect 011 for R0-P01 usability and exact-binding qualification.",
+          "independently_acceptable": true
+        },
+        {
+          "effect_id": "E-L01-012",
+          "grammar": "REQUIRE",
+          "subject": "SYNTHETIC-LARGE-012",
+          "text": "Synthetic low-consequence governing effect 012 for R0-P01 usability and exact-binding qualification.",
+          "independently_acceptable": true
+        },
+        {
+          "effect_id": "E-L01-013",
+          "grammar": "REQUIRE",
+          "subject": "SYNTHETIC-LARGE-013",
+          "text": "Synthetic low-consequence governing effect 013 for R0-P01 usability and exact-binding qualification.",
+          "independently_acceptable": true
+        },
+        {
+          "effect_id": "E-L01-014",
+          "grammar": "REQUIRE",
+          "subject": "SYNTHETIC-LARGE-014",
+          "text": "Synthetic low-consequence governing effect 014 for R0-P01 usability and exact-binding qualification.",
+          "independently_acceptable": true
+        },
+        {
+          "effect_id": "E-L01-015",
+          "grammar": "REQUIRE",
+          "subject": "SYNTHETIC-LARGE-015",
+          "text": "Synthetic low-consequence governing effect 015 for R0-P01 usability and exact-binding qualification.",
+          "independently_acceptable": true
+        },
+        {
+          "effect_id": "E-L01-016",
+          "grammar": "REQUIRE",
+          "subject": "SYNTHETIC-LARGE-016",
+          "text": "Synthetic low-consequence governing effect 016 for R0-P01 usability and exact-binding qualification.",
+          "independently_acceptable": true
+        },
+        {
+          "effect_id": "E-L01-017",
+          "grammar": "REQUIRE",
+          "subject": "SYNTHETIC-LARGE-017",
+          "text": "Synthetic low-consequence governing effect 017 for R0-P01 usability and exact-binding qualification.",
+          "independently_acceptable": true
+        },
+        {
+          "effect_id": "E-L01-018",
+          "grammar": "REQUIRE",
+          "subject": "SYNTHETIC-LARGE-018",
+          "text": "Synthetic low-consequence governing effect 018 for R0-P01 usability and exact-binding qualification.",
+          "independently_acceptable": true
+        },
+        {
+          "effect_id": "E-L01-019",
+          "grammar": "REQUIRE",
+          "subject": "SYNTHETIC-LARGE-019",
+          "text": "Synthetic low-consequence governing effect 019 for R0-P01 usability and exact-binding qualification.",
+          "independently_acceptable": true
+        },
+        {
+          "effect_id": "E-L01-020",
+          "grammar": "REQUIRE",
+          "subject": "SYNTHETIC-LARGE-020",
+          "text": "Synthetic low-consequence governing effect 020 for R0-P01 usability and exact-binding qualification.",
+          "independently_acceptable": true
+        },
+        {
+          "effect_id": "E-L01-021",
+          "grammar": "REQUIRE",
+          "subject": "SYNTHETIC-LARGE-021",
+          "text": "Synthetic low-consequence governing effect 021 for R0-P01 usability and exact-binding qualification.",
+          "independently_acceptable": true
+        },
+        {
+          "effect_id": "E-L01-022",
+          "grammar": "REQUIRE",
+          "subject": "SYNTHETIC-LARGE-022",
+          "text": "Synthetic low-consequence governing effect 022 for R0-P01 usability and exact-binding qualification.",
+          "independently_acceptable": true
+        },
+        {
+          "effect_id": "E-L01-023",
+          "grammar": "REQUIRE",
+          "subject": "SYNTHETIC-LARGE-023",
+          "text": "Synthetic low-consequence governing effect 023 for R0-P01 usability and exact-binding qualification.",
+          "independently_acceptable": true
+        },
+        {
+          "effect_id": "E-L01-024",
+          "grammar": "REQUIRE",
+          "subject": "SYNTHETIC-LARGE-024",
+          "text": "Synthetic low-consequence governing effect 024 for R0-P01 usability and exact-binding qualification.",
+          "independently_acceptable": true
+        },
+        {
+          "effect_id": "E-L01-025",
+          "grammar": "REQUIRE",
+          "subject": "SYNTHETIC-LARGE-025",
+          "text": "Synthetic low-consequence governing effect 025 for R0-P01 usability and exact-binding qualification.",
+          "independently_acceptable": true
+        },
+        {
+          "effect_id": "E-L01-026",
+          "grammar": "REQUIRE",
+          "subject": "SYNTHETIC-LARGE-026",
+          "text": "Synthetic low-consequence governing effect 026 for R0-P01 usability and exact-binding qualification.",
+          "independently_acceptable": true
+        },
+        {
+          "effect_id": "E-L01-027",
+          "grammar": "REQUIRE",
+          "subject": "SYNTHETIC-LARGE-027",
+          "text": "Synthetic low-consequence governing effect 027 for R0-P01 usability and exact-binding qualification.",
+          "independently_acceptable": true
+        },
+        {
+          "effect_id": "E-L01-028",
+          "grammar": "REQUIRE",
+          "subject": "SYNTHETIC-LARGE-028",
+          "text": "Synthetic low-consequence governing effect 028 for R0-P01 usability and exact-binding qualification.",
+          "independently_acceptable": true
+        },
+        {
+          "effect_id": "E-L01-029",
+          "grammar": "REQUIRE",
+          "subject": "SYNTHETIC-LARGE-029",
+          "text": "Synthetic low-consequence governing effect 029 for R0-P01 usability and exact-binding qualification.",
+          "independently_acceptable": true
+        },
+        {
+          "effect_id": "E-L01-030",
+          "grammar": "REQUIRE",
+          "subject": "SYNTHETIC-LARGE-030",
+          "text": "Synthetic low-consequence governing effect 030 for R0-P01 usability and exact-binding qualification.",
+          "independently_acceptable": true
+        }
+      ]
+    }
+  ],
+  "security_controls": [
+    "VALID_ACCEPTANCE",
+    "FORGED_OR_AGENT_PREPARED_PROOF_REJECTS",
+    "CHANGED_ENVELOPE_REJECTS",
+    "CHANGED_SHOWN_VIEW_REJECTS",
+    "DECISION_SUBSTITUTION_REJECTS",
+    "CROSS_PROJECT_REPLAY_REJECTS",
+    "ACCEPTANCE_ID_REPLAY_REJECTS",
+    "SEMANTIC_BASE_MISMATCH_REJECTS",
+    "UNRELATED_REPOSITORY_LANDING_DOES_NOT_INVALIDATE",
+    "SIGNER_SET_MISMATCH_REJECTS",
+    "TRUST_ROOT_ROTATION_DRY_RUN",
+    "RECOVERY_CREDENTIAL_DRY_RUN",
+    "COMPROMISE_BOUNDARY_DRY_RUN"
+  ],
+  "arm_ids": {
+    "A": "OPENSSH_ED25519_PASSPHRASE_V01",
+    "B": "LOCALHOST_WEBAUTHN_ES256_UV_V01",
+    "C": "CHATGPT_OWNER_USER_ROLE_DIGEST_ATTESTATION_V01"
+  }
+}

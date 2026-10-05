@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "protocol": "R0-P01-V01",
+  "source_path": "docs/model_collaboration/threads/MC-0029/messages/006_claude_drp03_obligation_units_a.json",
+  "source_sha256": "71fd3b691afb245e294e6012d29bc0780fe4d671fe7a4d09ef6a44845d3e0630",
+  "source_bytes": 119279,
+  "rule": {
+    "unit_selection": "all source_annotations[*].obligation_units[*] in the exact source artifact",
+    "acceptance_boundary": "one reviewed obligation_unit equals one projected migration/reconciliation governing acceptance; no cross-unit batching is assumed",
+    "effect_proxy": "each proposition inside an obligation_unit is counted as one projected governing effect for the distribution estimate",
+    "repeated_signing_count": "one owner proof per projected acceptance in the baseline migration pass",
+    "refreeze_on_source_mismatch": true
+  },
+  "frozen_inventory": {
+    "projected_acceptance_count": 97,
+    "projected_effect_count": 157,
+    "effects_per_acceptance_distribution": {
+      "1": 62,
+      "2": 17,
+      "3": 11,
+      "4": 7
+    },
+    "min_effects_per_acceptance": 1,
+    "median_effects_per_acceptance": 1,
+    "max_effects_per_acceptance": 4
+  },
+  "burden_formula": "projected_owner_mechanical_minutes = projected_acceptance_count * selected_arm_median_small_mechanical_seconds / 60",
+  "batch_trigger": {
+    "projected_acceptance_count_gt": 100,
+    "projected_owner_mechanical_minutes_gt": 90
+  }
+}
