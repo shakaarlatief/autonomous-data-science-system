@@ -1,7 +1,7 @@
 # Current State
 
-**Checkpoint:** 854
-**Date:** 2026-10-04
+**Checkpoint:** 855
+**Date:** 2026-10-05
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
 **Promoted V1 integration branch:** `v1-frontend-spike` at `2480109fadeee1e480ef03b82e335aacdf9adf91`
@@ -23,6 +23,8 @@ Repository artifacts remain authoritative across chats and models.
 ---
 
 ## Current active stage: R0-P01 owner-authenticity / acceptance-burden harness implementation
+
+Checkpoint 855 / Research 519 / Validation 212 / MC-0030 Message 011 preserve the Runtime Bridge reliability knowledge exposed while freezing R0-P01 without changing the P01 decision protocol. The bounded `codex.git_recover_commit_index` action is live under `commit-index-recovery-v4`; its first real public ADS invocation reconciled to the intended repository effect even though the client receipt timed out: HEAD/origin stayed fixed, the exact stranded P01 staged set became an empty index, and all working-tree changes were preserved. The owner then demonstrated that ChatGPT's **Tools vernieuwen** control refreshes a changed Runtime Bridge tool projection inside the same existing conversation, so a fresh chat is not automatically required after a schema-level tool addition. That control is now classified as a tool-schema projection refresh, not a general execution/concurrency recovery mechanism. Intermittent `bridge concurrency limit reached (1)` / uncertain-result behavior remains unexplained but is not established as systematic. R0-P01 therefore continues from pushed freeze commit `5f41625ad3811b6d769a112885ea2afcbd48952f`. If the same concurrency/uncertain-completion pattern recurs during an ordinary semantic Git operation, further project mutations must stop, repository state must be reconciled, and a bounded Runtime Bridge lifecycle diagnosis/qualification must occur before ordinary mutation work resumes. Otherwise the next action remains the bounded manual-Codex P01 harness implementation.
 
 Checkpoint 854 / Research 518 / MC-0030 Message 010 freeze the exact R0-P01 owner-authenticity and acceptance-burden probe before any credential use. The prospective surface fixes OpenSSH Ed25519/passphrase Arm A, localhost WebAuthn ES256+UV Arm B, a ChatGPT owner-user-role digest-attestation Arm C comparator, the sign-what-you-see rendering contract, 13 public security controls, 1/2/4/30-effect owner trials, timing and burden gates, a deterministic A/B selection rule, and the hash-bound 97-acceptance / 157-effect legacy desk estimate. No P01 SSH key has been created, no WebAuthn registration/assertion has occurred, and no owner attestation has been requested. The next bounded step is manual-Codex implementation of harness.py, webauthn_server.mjs and score.py only, with no real owner credential operation during implementation. R0-P02 remains PASS; no physical target is selected and Specification 028 remains current operational authority.
 

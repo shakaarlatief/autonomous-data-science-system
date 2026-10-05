@@ -2,7 +2,7 @@
 
 **Status:** Current evergreen subject library
 **Authority:** Navigation only. This file routes subjects to repository evidence and does not replace the authority of the routed artifacts.
-**Last reviewed:** 2026-09-22
+**Last reviewed:** 2026-10-05
 
 ## Purpose
 
@@ -746,6 +746,7 @@ docs/research/515_r0_p02_attempt001_hidden_output_vocabulary_harness_invalid_and
 docs/research/516_r0_p02_attempt002_deterministic_core_pass_live_host_next.md
 docs/research/517_r0_p02_full_reconciliation_and_pass.md
 docs/research/518_r0_p01_owner_authenticity_fixture_implementation_contract_freeze_v01.md
+docs/research/519_runtime_bridge_recovery_refresh_and_conditional_concurrency_followup.md
 docs/research/project_knowledge_activation_orchestration/AO10_SPEC028_RECONCILIATION_V01.json
 docs/checkpoints/570_whole_repository_physical_architecture_scope_clarified.md
 docs/checkpoints/571_whole_repository_r2_boundaries_identified.md
@@ -925,6 +926,7 @@ docs/local_execution/validation/208_browser_turn_ended_cleanup_contract_and_mode
 docs/local_execution/validation/209_windows_sandbox_managed_runtime_recovery_qualified.md
 docs/local_execution/validation/210_github_keyring_release_dependency_restart_recovery_qualified.md
 docs/local_execution/validation/211_native_github_and_codexless_same_conversation_coexistence_reobserved.md
+docs/local_execution/validation/212_runtime_bridge_commit_index_recovery_same_chat_refresh_and_concurrency_trigger.md
 docs/research/GITHUB_CONNECTOR_PARITY_MATRIX.md
 docs/research/GITHUB_CONNECTOR_SCHEMA_CAPTURE.md
 docs/research/github_connector_89_action_inventory.json
@@ -1458,7 +1460,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-854 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-855 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 
