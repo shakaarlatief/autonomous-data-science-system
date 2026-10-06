@@ -1,0 +1,79 @@
+{
+  "schema_version": 2,
+  "protocol": "R0-P01-V01",
+  "contract_revision": "R0-P01-CONTRACT-V02",
+  "golden_case": {
+    "arm": "A",
+    "trial_id": "S01",
+    "decision": "ACCEPT"
+  },
+  "fixture_sha256": "177dc3d7d071dd4ed2d34bc87f92e33d448e05a475af5c23c97014b928649f68",
+  "semantic_base": {
+    "grammar_version": "G1",
+    "predicate_semantics_version": "P1",
+    "dependencies": [
+      {
+        "effect_id": "BASE-A",
+        "status": "CURRENT",
+        "lineage_head": "BASE-A-0",
+        "contract_revision": "C-A@1"
+      },
+      {
+        "effect_id": "BASE-B",
+        "status": "CURRENT",
+        "lineage_head": "BASE-B-0",
+        "contract_revision": "C-B@1"
+      }
+    ]
+  },
+  "canonical_semantic_base_json": "{\"dependencies\":[{\"contract_revision\":\"C-A@1\",\"effect_id\":\"BASE-A\",\"lineage_head\":\"BASE-A-0\",\"status\":\"CURRENT\"},{\"contract_revision\":\"C-B@1\",\"effect_id\":\"BASE-B\",\"lineage_head\":\"BASE-B-0\",\"status\":\"CURRENT\"}],\"grammar_version\":\"G1\",\"predicate_semantics_version\":\"P1\"}",
+  "semantic_base_digest": "76a7391fafd9683566f011be522dd4c3bfbe6bcfb0f1963500d1776b77b4d7a6",
+  "envelope": {
+    "schema": "R0-P01-ENVELOPE-V01",
+    "project_id": "ADS-R0-P01-SYNTHETIC",
+    "acceptance_id": "R0-P01-A-S01",
+    "item_id": "S01",
+    "title": "Small owner trial 1",
+    "summary": "One-effect synthetic governing acceptance.",
+    "effects": [
+      {
+        "effect_id": "E-S01-001",
+        "grammar": "REQUIRE",
+        "subject": "SYNTHETIC-SMALL-001",
+        "text": "Synthetic low-consequence governing effect 001 for R0-P01 usability and exact-binding qualification.",
+        "independently_acceptable": true
+      }
+    ],
+    "dependency_selector": {
+      "grammar_version": "G1",
+      "predicate_semantics_version": "P1",
+      "dependencies": [
+        {
+          "effect_id": "BASE-A",
+          "contract_revision": "C-A@1"
+        },
+        {
+          "effect_id": "BASE-B",
+          "contract_revision": "C-B@1"
+        }
+      ]
+    }
+  },
+  "canonical_envelope_json": "{\"acceptance_id\":\"R0-P01-A-S01\",\"dependency_selector\":{\"dependencies\":[{\"contract_revision\":\"C-A@1\",\"effect_id\":\"BASE-A\"},{\"contract_revision\":\"C-B@1\",\"effect_id\":\"BASE-B\"}],\"grammar_version\":\"G1\",\"predicate_semantics_version\":\"P1\"},\"effects\":[{\"effect_id\":\"E-S01-001\",\"grammar\":\"REQUIRE\",\"independently_acceptable\":true,\"subject\":\"SYNTHETIC-SMALL-001\",\"text\":\"Synthetic low-consequence governing effect 001 for R0-P01 usability and exact-binding qualification.\"}],\"item_id\":\"S01\",\"project_id\":\"ADS-R0-P01-SYNTHETIC\",\"schema\":\"R0-P01-ENVELOPE-V01\",\"summary\":\"One-effect synthetic governing acceptance.\",\"title\":\"Small owner trial 1\"}",
+  "envelope_digest": "b4a274d82c6bc22b8c6168c2fdd7ee8b0b5dea8f6140907960022eb0fd6dc71c",
+  "owner_view": "R0-P01 OWNER VIEW V01\nProject: ADS-R0-P01-SYNTHETIC\nTrial: S01\nAcceptance: R0-P01-A-S01\nTitle: Small owner trial 1\nSummary: One-effect synthetic governing acceptance.\nSemantic base: 76a7391fafd9683566f011be522dd4c3bfbe6bcfb0f1963500d1776b77b4d7a6\nEffects: 1\n  [1] REQUIRE E-S01-001\n  Subject: SYNTHETIC-SMALL-001\n  Text: Synthetic low-consequence governing effect 001 for R0-P01 usability and exact-binding qualification.\nEND R0-P01 OWNER VIEW V01\n",
+  "shown_digest": "e55af5a611651ca0efaae4aba2a013df9b9c87cbe8e61f147a612cd94f7e6d1d",
+  "statement": {
+    "context": "ADS-GOVERNING-ACCEPTANCE/v1",
+    "project_id": "ADS-R0-P01-SYNTHETIC",
+    "acceptance_id": "R0-P01-A-S01",
+    "envelope_digest": "b4a274d82c6bc22b8c6168c2fdd7ee8b0b5dea8f6140907960022eb0fd6dc71c",
+    "shown_digest": "e55af5a611651ca0efaae4aba2a013df9b9c87cbe8e61f147a612cd94f7e6d1d",
+    "decision": "ACCEPT",
+    "semantic_base_digest": "76a7391fafd9683566f011be522dd4c3bfbe6bcfb0f1963500d1776b77b4d7a6",
+    "signer_set_version": "SIGNERS-P01-V1",
+    "issued_at": "2026-10-04T00:01:00Z"
+  },
+  "canonical_statement_json": "{\"acceptance_id\":\"R0-P01-A-S01\",\"context\":\"ADS-GOVERNING-ACCEPTANCE/v1\",\"decision\":\"ACCEPT\",\"envelope_digest\":\"b4a274d82c6bc22b8c6168c2fdd7ee8b0b5dea8f6140907960022eb0fd6dc71c\",\"issued_at\":\"2026-10-04T00:01:00Z\",\"project_id\":\"ADS-R0-P01-SYNTHETIC\",\"semantic_base_digest\":\"76a7391fafd9683566f011be522dd4c3bfbe6bcfb0f1963500d1776b77b4d7a6\",\"shown_digest\":\"e55af5a611651ca0efaae4aba2a013df9b9c87cbe8e61f147a612cd94f7e6d1d\",\"signer_set_version\":\"SIGNERS-P01-V1\"}",
+  "statement_sha256": "66b397b12d23d83b475e15e143272f68be7bd655d8432ff170de6985e87ade46"
+}

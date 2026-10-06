@@ -1,11 +1,11 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / R0-P02 EXACT FIXTURE FROZEN / BOUNDED CODEX IMPLEMENTATION NEXT
+**Status:** OPEN / R0-P01 V0.2 PROSPECTIVELY REFROZEN / BOUNDED HARNESS IMPLEMENTATION NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
-**Task owner:** ChatGPT / chatgpt-36
+**Task owner:** ChatGPT / chatgpt-37
 **Independent reviewer/designer:** Claude / claude-04
 **Active Claude conversation:** 04 - Assurance and Delivery Architecture Design
 **Authority:** Collaboration evidence only.
@@ -30,9 +30,14 @@ The physical architecture is not.
     ChatGPT reconciliation                          COMPLETE / Research 512 / Message 004
     probe preregistration                           COMPLETE / Research 513 / Message 005
     R0-P02 exact fixture/harness freeze             COMPLETE / Research 514 / Message 006
-    R0-P02 bounded candidate implementation         NEXT
-    R0-P02 score + live-host leg                   AFTER CANDIDATE FREEZE
-    R0-P01 / P03                                  AFTER P02
+    R0-P02 bounded candidate implementation         COMPLETE / Attempt 002
+    R0-P02 score + live-host leg                   PASS / Research 517
+    R0-P01 original fixture freeze                 COMPLETE / Research 518
+    R0-P01 read-only implementability audit        COMPLETE / Codex / 13 blocker groups
+    Claude P01 architectural triage                COMPLETE / Message 013 / 1fe674c...
+    P01 V0.2 reconciliation/refreeze               COMPLETE / Research 521 / Message 014
+    R0-P01 bounded harness implementation          NEXT / NO OWNER CREDENTIAL OPERATION
+    R0-P03                                        AFTER P01
     physical-target owner decision                  ONLY WHEN READY
 
 ## Independence
@@ -287,3 +292,22 @@ No candidate.py exists at the freeze and no score has been observed.
     NEXT_ACTOR=chatgpt
     R0_P02_RESULT=NOT_OBSERVED
     NEXT=BOUNDED_CODEX_R0_P02_CANDIDATE_IMPLEMENTATION
+
+## Current R0-P01 prospective refreeze
+
+The preceding transition sections preserve historical boundaries. R0-P02 is now PASS through Research 517 / Checkpoint 853. Research 518 / Checkpoint 854 froze the original P01 surface, and Research 520 / Checkpoint 856 closed the Runtime Bridge interruption.
+
+Codex stopped initial implementation before mutation because the contract was underdetermined. Its bounded read-only audit identified thirteen blocker groups. Claude Message 013 at 1fe674c3836b7c36fc62e62e85b8a8e765beda30 triaged the architecture-sensitive findings as PROBE_CLARIFICATION_ONLY. ChatGPT accepts that disposition. AC-1..AC-6 clarify GOVERNED_LEDGER_KERNEL_V02 rather than amend it; the compromise-declaration authority matrix remains non-P01-blocking R1 work.
+
+Research 521 / Checkpoint 857 / Message 014 prospectively refreeze P01 V0.2 through implementation_contract_addendum_v02.md, clarification_vectors_v02.json and the corrected Git-blob inventory rule. Historical V0.1 contracts and Claude's routing-lag disclosure remain unchanged. The explicit ChatGPT refinement starts Attempt 001 before the first real owner-sensitive setup/credential action; no real setup observation can guide an out-of-attempt repair.
+
+Research 521, Checkpoint 857 and Message 014 define the prospectively refrozen V0.2 contract after independent ChatGPT postflight. No P01 harness exists, no owner credential operation or attestation has occurred and no P01 result has been observed. The next action is bounded Codex implementation of harness.py, webauthn_server.mjs and score.py only, followed by independent implementation review/freeze before owner use. Specification 028 remains operational authority; production, migration, Runtime Bridge extraction and authority switch remain unauthorized.
+
+    PHASE=R0_P01_HARNESS_IMPLEMENTATION
+    NEXT_ACTOR=chatgpt
+    INTERACTION_SESSION=chatgpt-37
+    R0_P02=PASS
+    R0_P01_CONTRACT=V02
+    R0_P01_HARNESS=NOT_IMPLEMENTED
+    R0_P01_RESULT=NOT_OBSERVED
+    NEXT=BOUNDED_CODEX_R0_P01_HARNESS_IMPLEMENTATION

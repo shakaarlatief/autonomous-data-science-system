@@ -3,7 +3,7 @@
   "thread_id": "MC-0030",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "OPEN",
-  "phase": "R0_P02_CANDIDATE_IMPLEMENTATION",
+  "phase": "R0_P01_HARNESS_IMPLEMENTATION",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -16,7 +16,7 @@
     {
       "collaborator_id": "chatgpt",
       "interaction_environment": "ChatGPT",
-      "interaction_session": "chatgpt-36",
+      "interaction_session": "chatgpt-37",
       "roles": [
         "TASK_OWNER",
         "RESEARCHER",
@@ -76,16 +76,22 @@
       "Research 513 / MC-0030 Message 005 freeze the protocol family for R0-P01 through R0-P03 before any result observation.",
       "Preferred execution order is R0-P02 -> R0-P01 -> R0-P03, with exact P02 fixture/harness freeze required before implementation or result observation.",
       "Research 514 / MC-0030 Message 006 freeze the exact R0-P02 fixture, oracle, candidate contract, scorer, blindness boundary and live-host leg before implementation.",
-      "R0-P02 candidate.py does not exist at the Research 514 freeze; no R0-P02 result has been observed."
+      "R0-P02 candidate.py does not exist at the Research 514 freeze; no R0-P02 result has been observed.",
+      "Research 517 / Checkpoint 853 / Message 009 close R0-P02 as PASS after deterministic Attempt 002 and the live-host leg; earlier exposure entries describe their historical boundaries.",
+      "Research 518 / Checkpoint 854 / Message 010 originally froze R0-P01 before owner use; Research 520 / Checkpoint 856 / Message 012 closed the supporting Runtime Bridge interruption.",
+      "Codex stopped the initial P01 implementation before mutation, then completed one read-only implementability audit identifying thirteen blocker groups; no owner credential operation or P01 result occurred.",
+      "Claude Message 013 at 1fe674c3836b7c36fc62e62e85b8a8e765beda30 records PROBE_CLARIFICATION_ONLY and discloses the then-stale P02 routing; that authored disclosure is preserved unchanged.",
+      "Research 521 / Checkpoint 857 / Message 014 prospectively refreeze P01 V0.2 through AC-1..AC-6 and P01-C01..C16; these are V02 clarifications, not architecture amendments. The compromise-declaration authority matrix remains R1 work.",
+      "The current stage is bounded P01 harness implementation under V0.2. No harness, owner-sensitive setup, owner credential operation, attestation or P01 result exists at this local uncommitted refreeze."
     ],
-    "notes": "GOVERNED_LEDGER_KERNEL_V02 remains under the frozen Research 513 probe family. Research 514 freezes the exact R0-P02 attempt boundary. ChatGPT / chatgpt-36 is next to dispatch one bounded Codex implementation of candidate.py under oracle/scorer blindness, then independently postflight it before scoring. No P02 result, physical target, production implementation, migration, Specification 028 amendment, Runtime Bridge extraction or authority switch is authorized."
+    "notes": "Current: R0_P01_HARNESS_IMPLEMENTATION under Research 521 / Checkpoint 857 / Message 014 and the V0.2 addendum. ChatGPT / chatgpt-37 is next to dispatch bounded implementation of harness.py, webauthn_server.mjs and score.py only, then independently review/freeze before owner-sensitive setup. R0-P02 is PASS. Earlier known_exposures preserve historical stages. Claude Message 013 routing-lag disclosure remains unchanged. No P01 result, physical target, production, migration, Specification 028 amendment, Runtime Bridge extraction or authority switch is authorized."
   },
   "last_transition": {
-    "transition_id": "mc0030-r0-p02-exact-fixture-frozen",
+    "transition_id": "mc0030-r0-p01-contract-refrozen-v02",
     "from_state": "OPEN",
     "to_state": "OPEN",
     "actor": "chatgpt",
-    "reason": "Research 514 / Message 006 freeze the exact R0-P02 deterministic fixture, oracle, implementation contract, scorer, blindness boundary and real-host leg before candidate implementation or result observation.",
-    "repository_head": "00aee5ad18a094db478e973a3bb3bbd57259bb3e"
+    "reason": "Research 521 / Checkpoint 857 / Message 014 accept Claude Message 013 as PROBE_CLARIFICATION_ONLY, prospectively freeze AC-1..AC-6 and P01-C01..C16, correct inventory/routing and return to bounded P01 harness implementation before any owner-sensitive setup.",
+    "repository_head": "1fe674c3836b7c36fc62e62e85b8a8e765beda30"
   }
 }

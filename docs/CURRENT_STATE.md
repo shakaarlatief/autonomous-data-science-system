@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 856
+**Checkpoint:** 857
 **Date:** 2026-10-06
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,13 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: R0-P01 owner-authenticity / acceptance-burden harness implementation
+## Current active stage: R0-P01 owner-authenticity / acceptance-burden harness implementation under the V0.2 refreeze
+
+Checkpoint 857 / Research 521 / MC-0030 Message 014 prospectively refreeze R0-P01 V0.2 after Codex stopped initial implementation before writing because the V0.1 contract was underdetermined. The complete read-only implementability audit found thirteen blocker groups; Claude Message 013 at 1fe674c3836b7c36fc62e62e85b8a8e765beda30 completed bounded architectural triage as PROBE_CLARIFICATION_ONLY, and ChatGPT accepts that disposition. AC-1 through AC-6 clarify GOVERNED_LEDGER_KERNEL_V02 without an architecture amendment. The compromise-declaration authority matrix remains a genuine but non-P01-blocking R1 issue.
+
+The prospective implementation authority is now experiments/r0_p01_owner_acceptance_v01/implementation_contract_addendum_v02.md plus clarification_vectors_v02.json, the corrected Git-blob legacy_volume_inventory_rule.json, and the unchanged V0.1 fixture/security/result contracts where not explicitly superseded. Both Python and Node independently reproduce all four golden hashes; the inventory remains 97 acceptances / 157 effects. All three arms, thirteen controls, burden/volume thresholds and selection rules remain unchanged. Historical V0.1 files, Research 518, Checkpoint 854 and Claude's routing-lag disclosure are preserved.
+
+No P01 result has been observed and no real owner-sensitive setup, credential operation, WebAuthn registration/assertion or owner attestation has occurred. harness.py, webauthn_server.mjs and score.py remain absent. The next bounded action is Codex implementation of those three files only, with no owner credential invocation. Attempt 001 begins immediately before the first real owner-sensitive P01 setup/credential action, including probe-key creation or WebAuthn registration; implementation review/freeze must precede that boundary. The V0.2 refreeze has passed independent ChatGPT postflight and is the current prospective P01 implementation contract. Current routing is p-one-harness-implementation-refrozen; R0-P02 remains PASS and Specification 028 remains authoritative.
 
 Checkpoint 856 / Research 520 / Validation 213 / MC-0030 Message 012 close the Runtime Bridge recurrence trigger that had paused R0-P01. Recent-call evidence localized the former false-concurrency symptom to exact duplicate delivery of the same long-running semantic Git operation after the caller/host boundary crossed roughly 120 seconds. Release `semantic-git-retry-coalescing-v1` (`0.1.1-preview.80-semantic-git-retry-coalescing`) now coalesces only exact active semantic-operation duplicates in memory while preserving the global concurrency ceiling, unrelated-operation rejection, and original uncertainty semantics; a live 142.379-second semantic pull reproduced the duplicate delivery and completed without the prior false `bridge concurrency limit reached (1)` rejection. Publication then exposed a separate `runtime-private-bootstrap` scanner false positive in which an ordinary runtime expression after an `accessToken:` field was misclassified as a literal secret. Release `runtime-secret-scanner-fix-v3` (`0.1.1-preview.81-runtime-secret-scanner-fix`) narrows that generic heuristic while retaining known-token and secret-path detection, is live with 179 tools and zero verification mismatches, and passes the actual semantic push integrity gate as `RUNTIME_PRIVATE_BOOTSTRAP_SAFETY=PASS`. The previously local Checkpoint 855 commit `cd3558c2cd75c2c65c9c988b12ea8a9b7e90e199` is now pushed. One later long-running public push produced a separate terminal underlying tool error while duplicate coalescing still behaved correctly; after authoritative reconciliation and `PUBLIC_REPOSITORY_INTEGRITY=PASS`, a new semantic push succeeded. The Runtime Bridge blocker is therefore closed at the observed failure class, and R0-P01 resumes from freeze commit `5f41625ad3811b6d769a112885ea2afcbd48952f` with the bounded manual-Codex harness implementation next.
 

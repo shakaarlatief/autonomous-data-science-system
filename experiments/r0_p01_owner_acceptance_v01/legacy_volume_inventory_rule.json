@@ -2,8 +2,8 @@
   "schema_version": 1,
   "protocol": "R0-P01-V01",
   "source_path": "docs/model_collaboration/threads/MC-0029/messages/006_claude_drp03_obligation_units_a.json",
-  "source_sha256": "71fd3b691afb245e294e6012d29bc0780fe4d671fe7a4d09ef6a44845d3e0630",
-  "source_bytes": 119279,
+  "source_sha256": "2a3be898be6d7ac61d045a41492374d9fedb2ed3bf91734e4e07f0f20053355c",
+  "source_bytes": 119155,
   "rule": {
     "unit_selection": "all source_annotations[*].obligation_units[*] in the exact source artifact",
     "acceptance_boundary": "one reviewed obligation_unit equals one projected migration/reconciliation governing acceptance; no cross-unit batching is assumed",
@@ -28,5 +28,14 @@
   "batch_trigger": {
     "projected_acceptance_count_gt": 100,
     "projected_owner_mechanical_minutes_gt": 90
-  }
+  },
+  "superseded_basis": {
+    "status": "SUPERSEDED_WORKTREE_CRLF_BASIS",
+    "source_sha256": "71fd3b691afb245e294e6012d29bc0780fe4d671fe7a4d09ef6a44845d3e0630",
+    "source_bytes": 119279,
+    "source_byte_basis": "WORKTREE_CRLF"
+  },
+  "source_last_changing_commit": "b9fba658e422279d8f8b8193b8c1bda88302dcda",
+  "source_git_blob_oid": "56ecc1da7677a6be450b3b38beaa9266d6ffb8a8",
+  "source_byte_basis": "GIT_BLOB_LF"
 }
