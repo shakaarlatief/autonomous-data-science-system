@@ -3,7 +3,7 @@
   "thread_id": "MC-0030",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "OPEN",
-  "phase": "R0_P01_HARNESS_IMPLEMENTATION",
+  "phase": "R0_P01_OWNER_EXECUTION_READY",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -82,16 +82,17 @@
       "Codex stopped the initial P01 implementation before mutation, then completed one read-only implementability audit identifying thirteen blocker groups; no owner credential operation or P01 result occurred.",
       "Claude Message 013 at 1fe674c3836b7c36fc62e62e85b8a8e765beda30 records PROBE_CLARIFICATION_ONLY and discloses the then-stale P02 routing; that authored disclosure is preserved unchanged.",
       "Research 521 / Checkpoint 857 / Message 014 prospectively refreeze P01 V0.2 through AC-1..AC-6 and P01-C01..C16; these are V02 clarifications, not architecture amendments. The compromise-declaration authority matrix remains R1 work.",
-      "The current stage is bounded P01 harness implementation under V0.2. No harness, owner-sensitive setup, owner credential operation, attestation or P01 result exists at this local uncommitted refreeze."
+      "The current stage is bounded P01 harness implementation under V0.2. No harness, owner-sensitive setup, owner credential operation, attestation or P01 result exists at this local uncommitted refreeze.",
+      "Research 522 / Validation 214 / Checkpoint 858 / Message 015 qualify and freeze the exact three P01 implementation files after independent ChatGPT review and a bounded harness.py-only repair against P01-C16. The durable create-only non-secret Attempt-001 marker rejects existing/partial claims across processes and evidence directories. All earlier stage exposures remain historical. No production marker or real owner probe key exists; Attempt 001 is NOT_STARTED and no owner result is observed."
     ],
-    "notes": "Current: R0_P01_HARNESS_IMPLEMENTATION under Research 521 / Checkpoint 857 / Message 014 and the V0.2 addendum. ChatGPT / chatgpt-37 is next to dispatch bounded implementation of harness.py, webauthn_server.mjs and score.py only, then independently review/freeze before owner-sensitive setup. R0-P02 is PASS. Earlier known_exposures preserve historical stages. Claude Message 013 routing-lag disclosure remains unchanged. No P01 result, physical target, production, migration, Specification 028 amendment, Runtime Bridge extraction or authority switch is authorized."
+    "notes": "Current: R0_P01_OWNER_EXECUTION_READY under Research 522 / Validation 214 / Checkpoint 858 / Message 015; disposition ACCEPT_AFTER_BOUNDED_REPAIR. ChatGPT / chatgpt-37 independently qualified/froze harness.py, webauthn_server.mjs and score.py after the bounded Attempt-001 durability repair. Next is ChatGPT-orchestrated owner execution under the committed reviewed implementation. No owner execution or sensitive setup has occurred; production marker and owner probe keys are absent; Attempt 001 is NOT_STARTED and owner result NOT_OBSERVED. The first real owner-sensitive action requires the durable claim and preserved start snapshot; no result-guided implementation repair follows. R0-P02 remains PASS; R0-P03 pending; no physical target selected. Specification 028 remains authoritative, latest experiment outcome INCOMPLETE. Production implementation, migration, Runtime Bridge extraction and authority switch remain unauthorized. Earlier known_exposures and historical messages remain unchanged."
   },
   "last_transition": {
-    "transition_id": "mc0030-r0-p01-contract-refrozen-v02",
+    "transition_id": "mc0030-r0-p01-harness-qualified-owner-execution-ready",
     "from_state": "OPEN",
     "to_state": "OPEN",
     "actor": "chatgpt",
-    "reason": "Research 521 / Checkpoint 857 / Message 014 accept Claude Message 013 as PROBE_CLARIFICATION_ONLY, prospectively freeze AC-1..AC-6 and P01-C01..C16, correct inventory/routing and return to bounded P01 harness implementation before any owner-sensitive setup.",
-    "repository_head": "1fe674c3836b7c36fc62e62e85b8a8e765beda30"
+    "reason": "Research 522 / Validation 214 / Checkpoint 858 / Message 015 close implementation, independent pretrial adversarial qualification and the bounded Attempt-001 durability repair as ACCEPT_AFTER_BOUNDED_REPAIR; route to ChatGPT-orchestrated owner execution under the committed reviewed implementation, with Attempt 001 NOT_STARTED and no owner result.",
+    "repository_head": "fb19c4f9deebf1b667d64f2e4f82c68569ab2daf"
   }
 }

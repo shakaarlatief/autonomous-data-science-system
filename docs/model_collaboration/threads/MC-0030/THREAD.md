@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / R0-P01 V0.2 PROSPECTIVELY REFROZEN / BOUNDED HARNESS IMPLEMENTATION NEXT
+**Status:** OPEN / R0-P01 HARNESS QUALIFIED AND FROZEN / OWNER EXECUTION READY
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -36,7 +36,9 @@ The physical architecture is not.
     R0-P01 read-only implementability audit        COMPLETE / Codex / 13 blocker groups
     Claude P01 architectural triage                COMPLETE / Message 013 / 1fe674c...
     P01 V0.2 reconciliation/refreeze               COMPLETE / Research 521 / Message 014
-    R0-P01 bounded harness implementation          NEXT / NO OWNER CREDENTIAL OPERATION
+    R0-P01 bounded harness implementation          COMPLETE / THREE FILES
+    independent pretrial review + bounded repair   PASS / Research 522 / Validation 214 / Message 015
+    R0-P01 owner execution                         NEXT / ATTEMPT 001 NOT STARTED
     R0-P03                                        AFTER P01
     physical-target owner decision                  ONLY WHEN READY
 
@@ -293,7 +295,7 @@ No candidate.py exists at the freeze and no score has been observed.
     R0_P02_RESULT=NOT_OBSERVED
     NEXT=BOUNDED_CODEX_R0_P02_CANDIDATE_IMPLEMENTATION
 
-## Current R0-P01 prospective refreeze
+## Historical R0-P01 prospective refreeze (Checkpoint 857)
 
 The preceding transition sections preserve historical boundaries. R0-P02 is now PASS through Research 517 / Checkpoint 853. Research 518 / Checkpoint 854 froze the original P01 surface, and Research 520 / Checkpoint 856 closed the Runtime Bridge interruption.
 
@@ -311,3 +313,23 @@ Research 521, Checkpoint 857 and Message 014 define the prospectively refrozen V
     R0_P01_HARNESS=NOT_IMPLEMENTED
     R0_P01_RESULT=NOT_OBSERVED
     NEXT=BOUNDED_CODEX_R0_P01_HARNESS_IMPLEMENTATION
+
+## R0-P01 harness implementation qualified; owner execution next
+
+Research 522 / Validation 214 / Checkpoint 858 / Message 015 close the three-file harness implementation, independent ChatGPT adversarial pretrial review and bounded harness.py-only durability repair. ChatGPT / chatgpt-37 independently inspected the actual implementation and requalified the repair as ACCEPT_AFTER_BOUNDED_REPAIR. Exact qualified/frozen implementation hashes and byte lengths are recorded in those artifacts. Research 521 / Checkpoint 857 remain the prospective V0.2 contract freeze; historical collaboration evidence is preserved.
+
+The original cross-process Attempt-001 restart bug was an implementation defect against already-frozen P01-C16, not an architecture or contract defect. The production non-secret %LOCALAPPDATA%\ADS-R0-P01\attempt-001.started.json claim is create-only, flushed/fsynced, never automatically removed/overwritten and has no reset/retry flag. Existing/partial markers fail closed; temporary synthetic tests confirm SECOND_ATTEMPT_001_START_ALLOWED=false. No production marker or owner probe keys exist.
+
+Attempt 001 remains NOT STARTED. No real owner setup, WebAuthn registration/assertion, recovery signing, Arm C attestation or owner result occurred. Next is ChatGPT-orchestrated owner execution under the committed reviewed implementation. The durable claim and first raw snapshot must precede the first real owner-sensitive action; no result-guided implementation repair follows attempt start. This documentation task begins no owner execution and creates no commit.
+
+R0-P02 remains PASS; R0-P03 remains pending; no physical target is selected. Specification 028 remains authoritative. Production implementation, migration, Runtime Bridge extraction and authority switch remain unauthorized.
+
+    PHASE=R0_P01_OWNER_EXECUTION_READY
+    NEXT_ACTOR=chatgpt
+    INTERACTION_SESSION=chatgpt-37
+    R0_P02=PASS
+    R0_P01_CONTRACT=V02
+    R0_P01_HARNESS=QUALIFIED
+    R0_P01_ATTEMPT_001=NOT_STARTED
+    R0_P01_RESULT=NOT_OBSERVED
+    NEXT=ORCHESTRATE_R0_P01_OWNER_EXECUTION

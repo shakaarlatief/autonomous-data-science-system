@@ -752,6 +752,13 @@ docs/research/521_r0_p01_preimplementation_contract_audit_reconciliation_and_ref
 experiments/r0_p01_owner_acceptance_v01/implementation_contract_addendum_v02.md
 experiments/r0_p01_owner_acceptance_v01/clarification_vectors_v02.json
 docs/checkpoints/857_r0_p01_contract_clarified_refrozen_harness_implementation_next.md
+docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md
+docs/local_execution/validation/214_r0_p01_harness_pretrial_qualification.md
+experiments/r0_p01_owner_acceptance_v01/harness.py
+experiments/r0_p01_owner_acceptance_v01/webauthn_server.mjs
+experiments/r0_p01_owner_acceptance_v01/score.py
+docs/checkpoints/858_r0_p01_harness_implementation_qualified_owner_execution_next.md
+docs/model_collaboration/threads/MC-0030/messages/015_chatgpt_r0_p01_harness_implementation_qualification.md
 docs/research/project_knowledge_activation_orchestration/AO10_SPEC028_RECONCILIATION_V01.json
 docs/checkpoints/570_whole_repository_physical_architecture_scope_clarified.md
 docs/checkpoints/571_whole_repository_r2_boundaries_identified.md
@@ -1465,7 +1472,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-857 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-858 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 
