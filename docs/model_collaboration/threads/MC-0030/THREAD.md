@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / R0-P01 PROSPECTIVE TRIAGE COMPLETE / INDEPENDENT REVIEW NEXT
+**Status:** OPEN / R0-P01 CLAUDE CRITIQUE RECONCILED / PROSPECTIVE SUCCESSOR DESIGN
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -40,7 +40,9 @@ The physical architecture is not.
     independent pretrial review + bounded repair   PASS / Research 522 / Validation 214 / Message 015
     R0-P01 owner execution                         COMPLETE / ATTEMPT 001 AMEND, PERMANENTLY CONSUMED
     R0-P01 prospective AMEND triage                COMPLETE / Research 524 / Message 017
-    R0-P01 independent triage critique             NEXT / Claude / claude-04
+    R0-P01 independent triage critique             COMPLETE / Message 018 / c4de7bb5
+    R0-P01 ChatGPT critique reconciliation          COMPLETE / Research 525 / Message 019
+    R0-P01 exact successor protocol drafting       NEXT / UNFROZEN
     R0-P03                                        AFTER P01
     physical-target owner decision                  ONLY WHEN READY
 
@@ -364,3 +366,18 @@ This stage does not freeze, implement, execute or authorize a successor probe. C
     R0_P01_RESULT=AMEND
     FOLLOWUP_ATTEMPT=NOT_AUTHORIZED
     NEXT=CLAUDE_INDEPENDENT_TRIAGE_CRITIQUE
+
+
+## Claude Message 018 and independent ChatGPT reconciliation
+
+Claude Message 018 was committed at c4de7bb52c7f85d7ecf230a622e7ba69329a6121, changing only that allowed message path. Its AMEND_PROSPECTIVE_DIRECTION critique was reconciled in Research 525 / Checkpoint 861 / Message 019 as ACCEPT_WITH_QUALIFICATIONS. The original Attempt 001 AMEND and all failed security/timing observations remain unchanged.
+
+A complete separately identified successor is a candidate, not authorized. It requires a prospectively fixed stopping rule (no automatic Attempt 003), fresh keys and signed IDs, bounded SSH unlock opportunities with honest WebAuthn-opacity disclosure, safe ceremony guidance and independent scorer known answers. Cross-process resumability is not already supported by the old numbered snapshots; it requires a new independent recovery model or should be omitted. Validation 216 corrects Research 523 and Checkpoint 859 raw-file SHA-256 transcriptions by appended erratum, leaving historical documents intact. Research 525 tracks real owner-view contextual provenance and rare-key durability for future R1.
+
+ChatGPT / chatgpt-37 owns the next **non-executing contract draft**. Claude / claude-04 may be asked for a further bounded critique after drafting. No credential use, owner trial, refreeze, physical target, production implementation, migration or authority switch is authorized.
+
+    PHASE=R0_P01_SUCCESSOR_PROTOCOL_DESIGN_PENDING
+    NEXT_ACTOR=chatgpt
+    R0_P01_ATTEMPT_001=IMMUTABLE_AMEND
+    SUCCESSOR_PROTOCOL=UNFROZEN
+    NEXT=CHATGPT_EXACT_SUCCESSOR_CONTRACT_DRAFT

@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 860
+**Checkpoint:** 861
 **Date:** 2026-10-10
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,19 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: R0-P01 prospective AMEND triage complete; independent critique next
+## Current active stage: R0-P01 Claude critique reconciled; prospective successor draft next
+
+Checkpoint 861 / Research 525 / Validation 216 / MC-0030 Message 019 reconcile Claude Message 018 (`AMEND_PROSPECTIVE_DIRECTION`) as ACCEPT_WITH_QUALIFICATIONS. The original immutable Attempt 001 remains `AMEND / VIABLE_PROOF_WITHOUT_FULL_ELIGIBILITY`: A 12/13 security controls PASS with recovery FAIL; S02 130.849 seconds above its frozen 120-second individual gate; B/C unqualified. No evidence, keys, marker, original scorer, or old contracts were modified.
+
+The *candidate* successor requires an appropriately bounded native SSH unlock-attempt budget within the same proof event; WebAuthn platform-internal retries cannot be declared identical. Fresh owner-only probe credentials and attempt-bound signed statement identities, an ex-ante stopping/consequence rule with no automatic Attempt 003, frozen non-governing role guidance, nonexempting timing subintervals and verifier known-answer preflight are prospective design requirements. Simple browser opening is promising; Windows SIGINT and cross-process resume must not be claimed safe without independent tests. Previous snapshots are numbered exclusive JSON, not a hash-chained recovery journal. Real governing-decision context/history and dormant recovery-key durability are explicitly tracked downstream owner-experience/operational requirements.
+
+Validation 216 independently establishes the correct exact-file SHA-256 of both original and backup raw-0024.json: `A48E066ADEA499EB17E4D6240CB459DF315B91F444FDEE4F42AB880BDDC60296`. Research 523 and Checkpoint 859 have the same incorrect hex digit 58, while Validation 215 is correct. The historical records remain unchanged.
+
+Next: ChatGPT designs the exact *draft* successor contract and stopping rule for independent review. There is **no new trial freeze, no new owner credential setup or attempt authorization**, no physical-target selection, no production implementation/migration, no Runtime Bridge extraction or authority switch. R0-P02 remains PASS, R0-P03 pending, GOVERNED_LEDGER_KERNEL_V02 remains unselected, Specification 028 and unrelated scientific INCOMPLETE status unchanged.
+
+---
+
+## Historical checkpoint 860 stage: R0-P01 prospective AMEND triage complete; independent critique next
 
 Checkpoint 860 / Research 524 / MC-0030 Message 017 document a bounded prospective response to the immutable R0-P01 Attempt 001 AMEND outcome. The scorer result, 12/13 Arm-A controls, failed recovery control, 130.849-second S02 timing miss and interrupted B/C arms are unchanged. The owner explicitly regards selecting the primary instead of recovery passphrase as a minor mistake. A direct role cue and neutral timing/localhost procedure instructions are proportionate presentation candidates, not changes to trust/cryptographic policy. Genuine decision provenance, history and consequences remain a separate future owner-view requirement.
 
