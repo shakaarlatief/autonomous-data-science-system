@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 859
+**Checkpoint:** 860
 **Date:** 2026-10-10
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,17 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: R0-P01 Attempt 001 AMEND and prospective triage
+## Current active stage: R0-P01 prospective AMEND triage complete; independent critique next
+
+Checkpoint 860 / Research 524 / MC-0030 Message 017 document a bounded prospective response to the immutable R0-P01 Attempt 001 AMEND outcome. The scorer result, 12/13 Arm-A controls, failed recovery control, 130.849-second S02 timing miss and interrupted B/C arms are unchanged. The owner explicitly regards selecting the primary instead of recovery passphrase as a minor mistake. A direct role cue and neutral timing/localhost procedure instructions are proportionate presentation candidates, not changes to trust/cryptographic policy. Genuine decision provenance, history and consequences remain a separate future owner-view requirement.
+
+Research 524 compares five alternatives and prefers, **as an unapproved candidate**, a complete independent successor qualification under a separately frozen attempt identity, evidence boundary and unchanged hard controls/timing thresholds. It rejects retroactive PASS and selective P6/S02 retry-to-green. A future study must disclose prior participant learning, separately decide fresh versus reused probe credentials, bind signed views correctly and safeguard WebAuthn owner ceremonies. A legitimate fallback is keeping P01 AMEND while reversible P03 research continues without physical-target selection.
+
+Next is bounded independent adversarial critique of Research 524 / MC-0030 Message 017, preferably Claude / claude-04, followed by ChatGPT reconciliation. No successor trial or credential setup is yet authorized. R0-P02 PASS, R0-P03 pending, GOVERNED_LEDGER_KERNEL_V02 unselected, Specification 028 unchanged, and latest unrelated scientific experiment remains INCOMPLETE. No production implementation, migration, Runtime Bridge extraction or authority switch.
+
+---
+
+## Historical checkpoint 859 stage: R0-P01 Attempt 001 AMEND and prospective triage
 
 Checkpoint 859 / Research 523 / Validation 215 / MC-0030 Message 016 preserve the completed owner Attempt 001, its original append-only evidence and independent hash-matched backup. The permanent production attempt marker exists and Attempt 001 is consumed. The frozen score.py, independently run in a temporary-file-capable verifier environment against unchanged raw-0024.json, returned AMEND / VIABLE_PROOF_WITHOUT_FULL_ELIGIBILITY. Arm A: proof viable, 12/13 security controls PASS, RECOVERY_CREDENTIAL_DRY_RUN FAIL, and S02 exceeded the single-small-trial mechanical gate at 130.849 seconds with no recorded infrastructure exception. Arm B and C setup are interrupted and unqualified. No evidence/threshold correction or repeated owner ceremony occurred.
 

@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / R0-P01 ATTEMPT 001 AMEND / PROSPECTIVE TRIAGE
+**Status:** OPEN / R0-P01 PROSPECTIVE TRIAGE COMPLETE / INDEPENDENT REVIEW NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -38,7 +38,9 @@ The physical architecture is not.
     P01 V0.2 reconciliation/refreeze               COMPLETE / Research 521 / Message 014
     R0-P01 bounded harness implementation          COMPLETE / THREE FILES
     independent pretrial review + bounded repair   PASS / Research 522 / Validation 214 / Message 015
-    R0-P01 owner execution                         NEXT / ATTEMPT 001 NOT STARTED
+    R0-P01 owner execution                         COMPLETE / ATTEMPT 001 AMEND, PERMANENTLY CONSUMED
+    R0-P01 prospective AMEND triage                COMPLETE / Research 524 / Message 017
+    R0-P01 independent triage critique             NEXT / Claude / claude-04
     R0-P03                                        AFTER P01
     physical-target owner decision                  ONLY WHEN READY
 
@@ -349,3 +351,16 @@ No reset/retry-to-green, new owner attempt, production credential, physical targ
     R0_P01_RESULT=AMEND
     PHYSICAL_ARCHITECTURE_SELECTED=false
     NEXT=PROSPECTIVE_R0_P01_AMEND_TRIAGE
+
+
+## R0-P01 prospective AMEND triage completed; independent critique next
+
+Research 524 / Checkpoint 860 / Message 017 compare five prospectively legitimate ways forward after the preserved Attempt 001 AMEND. The preferred *candidate* is a full independently claimed successor qualification, not selective retries, while preserving every original security and timing gate. Owner feedback on minor recovery-key passphrase confusion supports a simple role cue rather than crypto architecture redesign. S02 timing miss and the interrupted B/C arms remain unqualified observations. Future real-decision context/provenance is a separate UX requirement.
+
+This stage does not freeze, implement, execute or authorize a successor probe. Claude / claude-04 is the preferred next independent reviewer under the established comparative collaboration boundary; it may write only a new MC-0030 message, not mutate contracts or observed owner evidence. ChatGPT remains task owner for comparative reconciliation after the review. R0-P02 PASS; R0-P03 pending; no physical target selected; Specification 028 unchanged.
+
+    PHASE=R0_P01_PROSPECTIVE_TRIAGE_PEER_REVIEW_PENDING
+    NEXT_ACTOR=claude
+    R0_P01_RESULT=AMEND
+    FOLLOWUP_ATTEMPT=NOT_AUTHORIZED
+    NEXT=CLAUDE_INDEPENDENT_TRIAGE_CRITIQUE

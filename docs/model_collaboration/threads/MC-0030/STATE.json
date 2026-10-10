@@ -3,7 +3,7 @@
   "thread_id": "MC-0030",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "OPEN",
-  "phase": "R0_P01_ATTEMPT_001_AMEND_PROSPECTIVE_TRIAGE",
+  "phase": "R0_P01_PROSPECTIVE_TRIAGE_PEER_REVIEW_PENDING",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -51,7 +51,7 @@
       ]
     }
   ],
-  "next_expected_actor": "chatgpt",
+  "next_expected_actor": "claude",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -84,16 +84,17 @@
       "Research 521 / Checkpoint 857 / Message 014 prospectively refreeze P01 V0.2 through AC-1..AC-6 and P01-C01..C16; these are V02 clarifications, not architecture amendments. The compromise-declaration authority matrix remains R1 work.",
       "The current stage is bounded P01 harness implementation under V0.2. No harness, owner-sensitive setup, owner credential operation, attestation or P01 result exists at this local uncommitted refreeze.",
       "Research 522 / Validation 214 / Checkpoint 858 / Message 015 qualify and freeze the exact three P01 implementation files after independent ChatGPT review and a bounded harness.py-only repair against P01-C16. The durable create-only non-secret Attempt-001 marker rejects existing/partial claims across processes and evidence directories. All earlier stage exposures remain historical. No production marker or real owner probe key exists; Attempt 001 is NOT_STARTED and no owner result is observed.",
-      "Research 523 / Validation 215 / Checkpoint 859 / MC-0030 Message 016 record the real R0-P01 Attempt 001 as AMEND: durable marker plus 25 hash-matched snapshots and owner backup; Arm A 12/13 security controls PASS with recovery FAIL, S02 timing gate miss; Arms B/C setup interrupted. Initial readOnly-sandbox INVALID was a temporary-file permission artifact, resolved by unchanged scorer AMEND in a suitable profile. Owner attributes P6 to using primary instead of recovery passphrase and prefers a minimal label; no evidence/threshold edits or retry authorized."
+      "Research 523 / Validation 215 / Checkpoint 859 / MC-0030 Message 016 record the real R0-P01 Attempt 001 as AMEND: durable marker plus 25 hash-matched snapshots and owner backup; Arm A 12/13 security controls PASS with recovery FAIL, S02 timing gate miss; Arms B/C setup interrupted. Initial readOnly-sandbox INVALID was a temporary-file permission artifact, resolved by unchanged scorer AMEND in a suitable profile. Owner attributes P6 to using primary instead of recovery passphrase and prefers a minimal label; no evidence/threshold edits or retry authorized.",
+      "Research 524 / Checkpoint 860 / MC-0030 Message 017 preserve ChatGPT prospective post-AMEND triage: do not retroactively rescue P01 Attempt 001, do not narrow-retry failed controls, preserve all thresholds; full independent successor is a candidate only. Claude may read these comparative artifacts for bounded critique, but no Claude response is yet observed."
     ],
-    "notes": "Current: R0_P01_ATTEMPT_001_AMEND_PROSPECTIVE_TRIAGE / Research 523 / Validation 215 / Checkpoint 859 / Message 016. Attempt 001 is permanently consumed, raw-0000..raw-0024 plus marker and independent backup verified. Authoritative frozen scorer result AMEND / VIABLE_PROOF_WITHOUT_FULL_ELIGIBILITY; A proof-viable, 12/13 security PASS, recovery FAIL and S02 >120 s; B/C setup interrupted. Owner reports wrong passphrase at recovery and regards a role label as sufficient potential UX change. No second owner attempt or result-guided repair is authorized. Next ChatGPT prospective AMEND triage, optional Claude critique before any separate refreeze. R0-P02 PASS; R0-P03 pending; no physical target, migration, Specification 028 amendment, or authority switch."
+    "notes": "Current: R0_P01_PROSPECTIVE_TRIAGE_PEER_REVIEW_PENDING. Research 524 / Checkpoint 860 / MC-0030 Message 017 record ChatGPT candidate triage of original immutable AMEND. Preferred prospective full new qualification is NOT AUTHORIZED. Next is Claude / claude-04 bounded adversarial critique (messages/** only), then ChatGPT reconciliation. No new owner credential setup, no refreeze, no physical target; P02 PASS, P03 pending, Specification 028 unchanged."
   },
   "last_transition": {
-    "transition_id": "mc0030-r0-p01-attempt-001-amend-prospective-triage",
+    "transition_id": "mc0030-r0-p01-triage-peer-review-pending",
     "from_state": "OPEN",
     "to_state": "OPEN",
     "actor": "chatgpt",
-    "reason": "Research 523 / Validation 215 / Checkpoint 859 / Message 016 preserve owner Attempt 001, hash-verified backup and frozen AMEND scorer result; route to prospective triage without retry-to-green.",
-    "repository_head": "89736b2515fa80f1c21be3350e112663e1e58a92"
+    "reason": "Research 524 / Checkpoint 860 / Message 017 freeze bounded prospective triage recommendations and route to independent Claude adversarial review before any successor experiment freeze.",
+    "repository_head": "bb1ccd291662fb0d782e8f873b7919481f0ac2a3"
   }
 }
