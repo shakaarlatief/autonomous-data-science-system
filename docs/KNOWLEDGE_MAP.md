@@ -780,6 +780,11 @@ docs/model_collaboration/threads/MC-0030/messages/021_claude_r0_p01_v03_draft_re
 docs/research/527_r0_p01_message_021_reconciliation_and_revised_v03_draft.md
 docs/checkpoints/863_r0_p01_message_021_reconciled_revised_draft_review_next.md
 docs/model_collaboration/threads/MC-0030/messages/022_chatgpt_r0_p01_message_021_reconciliation_and_rev02_review_request.md
+docs/model_collaboration/threads/MC-0030/messages/023_claude_r0_p01_v03_rev02_review.md
+docs/research/528_r0_p01_message_023_reconciliation_and_rev03_evidence_state_policy.md
+docs/local_execution/validation/217_r0_p01_v03_rev03_draft_policy_scenario_consistency.md
+docs/checkpoints/864_r0_p01_message_023_reconciled_targeted_review_next.md
+docs/model_collaboration/threads/MC-0030/messages/024_chatgpt_r0_p01_rev03_targeted_recheck_handoff.md
 docs/research/project_knowledge_activation_orchestration/AO10_SPEC028_RECONCILIATION_V01.json
 docs/checkpoints/570_whole_repository_physical_architecture_scope_clarified.md
 docs/checkpoints/571_whole_repository_r2_boundaries_identified.md
@@ -1493,7 +1498,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-863 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-864 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

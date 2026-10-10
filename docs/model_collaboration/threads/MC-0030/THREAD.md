@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / R0-P01 V03 REV02 UNFROZEN DRAFT / REVIEW NEXT
+**Status:** OPEN / R0-P01 V03 REV03 TARGETED REVIEW NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -44,7 +44,8 @@ The physical architecture is not.
     R0-P01 ChatGPT critique reconciliation          COMPLETE / Research 525 / Message 019
     R0-P01 exact successor protocol drafting       COMPLETE / Research 526 / Message 020
     R0-P01 successor contract draft critique       COMPLETE / Message 021 / AMEND_DRAFT_BEFORE_FREEZE
-    R0-P01 revised successor draft critique        NEXT / Claude / claude-04
+    R0-P01 revised successor draft critique        COMPLETE / Message 023 / AMEND_REVISED_DRAFT
+    R0-P01 REV03 targeted evidence-state review     NEXT / Claude / claude-04
     R0-P03                                        AFTER P01
     physical-target owner decision                  ONLY WHEN READY
 
@@ -411,3 +412,16 @@ Claude / claude-04 may perform only a new bounded critique in Message 023. No ot
     ATTEMPT_001=AMEND_IMMUTABLE
     ATTEMPT_002=NOT_AUTHORIZED
     NEXT=CLAUDE_V03_REV02_REVIEW
+
+
+## Claude Message 023 reconciled; R0-P01 V03 REV03 targeted recheck pending
+
+Claude Message 023 was committed as the sole changed file at 8783994f267718be6a24a86fb6c4151d0ca93249, yielding AMEND_REVISED_DRAFT. Research 528, Validation 217, Checkpoint 864 and Message 024 reconcile R1-R4 and bounded R5-R9 into the UNFROZEN candidate contract and policy. Per-arm proof evidence_state fixes false REOPEN; INVALID reasons now derive from fixed raw flags; VERIFIER_ERROR sets instrument not attempt-integrity; JSON blockers exactly match contract and policy is genuinely capped. The owner hash witness, snapshot atomicity and RP interrupt are future implementation obligations, not proved behavior.
+
+Next Claude / claude-04 may commit only a narrowly targeted Message 025 check. Neither G1/G2 Research 513 interpretation nor owner stopping-policy assent is granted. No contract/fixture freeze, Attempt 002, owner key, credential, production target or semantic authority switch has occurred. R0-P02 PASS; R0-P03 pending, Specification 028 unchanged.
+
+    PHASE=R0_P01_V03_REV03_TARGETED_RECHECK_PENDING
+    NEXT_ACTOR=claude
+    ATTEMPT_001=IMMUTABLE_AMEND
+    ATTEMPT_002=NOT_AUTHORIZED
+    NEXT=CLAUDE_MESSAGE025_TARGETED_RECHECK

@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 863
+**Checkpoint:** 864
 **Date:** 2026-10-10
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,19 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: R0-P01 V03 REV02 unfrozen successor draft; independent critique next
+## Current active stage: R0-P01 REV03 evidence-state policy corrected; targeted review next
+
+Checkpoint 864 / Research 528 / Validation 217 / MC-0030 Message 024 reconcile Claude Message 023 (`AMEND_REVISED_DRAFT`) with a **strictly targeted** update of the *unfrozen* successor V03 contract and JSON policy. Previous C1/C3/C4/C5 draft-level fixes remain; the revised G1/G2 guards now use per-arm proof `evidence_state`, not merely setup REALIZABLE. The scorer would derive completed evidence only from terminal P0/S01/S02/S03 events, and classify no-viable-but-incomplete A/B as INVALID_INCOMPLETE rather than false REOPEN. An eligible arm with unfinished comparator would report OTHER_ARM_INCOMPLETE, regardless of that comparator's setup success.
+
+INVALID subtypes are proposed as deterministic functions of enumerated immutable raw integrity/instrument flags. VERIFIER_ERROR sets independent instrument flags and does **not** set an attempt-integrity breach. Contract §11 and JSON now share one exact ten-ID blocker list; the seven-case policy retains at most two new claims, ALL_REQUIRED exceptions, no automatically started attempt and no further claim after PASS. Secondary prospective clarifications include explicit event stop vs whole-run Ctrl+C, crash-atomic snapshot writes and an owner-held hash/count witness, Node RP durable receipt/Windows interrupt requirements, and precise rejection-layer/browser test boundaries.
+
+Validation 217's nine simulated scenarios and static checks PASS, **not** runtime qualification of SSH, WebAuthn, a new harness or scorer. The original R0-P01 Attempt 001 remains immutable AMEND, including failed recovery and S02 130.849 seconds. Its marker, snapshots, backup, owner credentials and frozen V02 experiment files remain untouched. The revised V03 sources are **UNFROZEN**; no Attempt 002 claim, credential or owner trial is authorized.
+
+Next is bounded Claude Message 025 targeted recheck of REV03. If technical convergence is confirmed, *separate owner-facing decisions* on Research 513 prospective G1/G2 interpretation and stopping-policy approval are required **before** any protocol freeze. Another distinct owner execution authorization follows only after frozen implementation and comprehensive synthetic qualification. R0-P02 PASS, R0-P03 pending, GOVERNED_LEDGER_KERNEL_V02 still unselected; Specification 028 and unrelated scientific INCOMPLETE unchanged.
+
+---
+
+## Historical checkpoint 863 stage: R0-P01 V03 REV02 unfrozen successor draft; independent critique next
 
 Checkpoint 863 / Research 527 / MC-0030 Message 022 reconcile Claude Message 021's AMEND_DRAFT_BEFORE_FREEZE and revise only the **unfrozen** candidate V03 contract and stopping-policy JSON. The original Attempt 001 is unchanged AMEND, with failed recovery and S02 mechanical gate, preserved old owner credentials/evidence and frozen V02 implementation.
 
