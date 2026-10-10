@@ -1,7 +1,7 @@
 # Current State
 
-**Checkpoint:** 858
-**Date:** 2026-10-07
+**Checkpoint:** 859
+**Date:** 2026-10-10
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
 **Promoted V1 integration branch:** `v1-frontend-spike` at `2480109fadeee1e480ef03b82e335aacdf9adf91`
@@ -22,7 +22,17 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: R0-P01 owner-execution readiness after the qualified V0.2 harness freeze
+## Current active stage: R0-P01 Attempt 001 AMEND and prospective triage
+
+Checkpoint 859 / Research 523 / Validation 215 / MC-0030 Message 016 preserve the completed owner Attempt 001, its original append-only evidence and independent hash-matched backup. The permanent production attempt marker exists and Attempt 001 is consumed. The frozen score.py, independently run in a temporary-file-capable verifier environment against unchanged raw-0024.json, returned AMEND / VIABLE_PROOF_WITHOUT_FULL_ELIGIBILITY. Arm A: proof viable, 12/13 security controls PASS, RECOVERY_CREDENTIAL_DRY_RUN FAIL, and S02 exceeded the single-small-trial mechanical gate at 130.849 seconds with no recorded infrastructure exception. Arm B and C setup are interrupted and unqualified. No evidence/threshold correction or repeated owner ceremony occurred.
+
+The owner reports entering the primary passphrase where the recovery credential was required, regards it as a minor input mistake, and would favor a short role-specific prompt rather than an unjustified architecture redesign. The generic SSH prompt did not immediately identify the recovery passphrase. Contextual decision history/explanations are a separate prospective owner-experience observation. Neither is permission to replace the failed controls. An initial INVALID scorer report arose solely from a readOnly sandbox denying temporary files required for public SSH verification; the proper unchanged scorer run returned AMEND. See Validation 215 for the diagnostic.
+
+Current routing is p-one-attempt-001-amend-prospective-triage. Next is bounded prospective protocol/UX triage, with no reset/retry of Attempt 001, no code/harness/fixture/score changes against observed results, and no new credential action until separately authorized, prequalified future protocol. R0-P02 remains PASS; R0-P03 remains pending. GOVERNED_LEDGER_KERNEL_V02 remains an unselected physical candidate; Specification 028 is unchanged; production implementation, migration, Runtime Bridge extraction and authority switch remain unauthorized. The latest unrelated scientific experiment status remains INCOMPLETE.
+
+---
+
+## Historical checkpoint 858 stage: R0-P01 owner-execution readiness after the qualified V0.2 harness freeze
 
 Checkpoint 858 / Research 522 / Validation 214 / MC-0030 Message 015 close harness implementation, independent ChatGPT adversarial pretrial review and the bounded Attempt-001 durability repair. The final implementation is qualified/frozen with disposition ACCEPT_AFTER_BOUNDED_REPAIR. Current routing is p-one-owner-execution-ready; MC-0030 phase is R0_P01_OWNER_EXECUTION_READY and next_expected_actor is chatgpt / chatgpt-37. Next is ChatGPT-orchestrated owner execution under the committed reviewed implementation. This local documentation transition neither commits the files nor begins owner execution.
 

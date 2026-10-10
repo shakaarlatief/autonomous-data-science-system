@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / R0-P01 HARNESS QUALIFIED AND FROZEN / OWNER EXECUTION READY
+**Status:** OPEN / R0-P01 ATTEMPT 001 AMEND / PROSPECTIVE TRIAGE
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -333,3 +333,19 @@ R0-P02 remains PASS; R0-P03 remains pending; no physical target is selected. Spe
     R0_P01_ATTEMPT_001=NOT_STARTED
     R0_P01_RESULT=NOT_OBSERVED
     NEXT=ORCHESTRATE_R0_P01_OWNER_EXECUTION
+
+
+## R0-P01 Attempt 001 scored AMEND; prospective triage next
+
+Research 523 / Validation 215 / Checkpoint 859 / Message 016 close the real, permanently claimed Attempt 001 as AMEND / VIABLE_PROOF_WITHOUT_FULL_ELIGIBILITY. The durable marker and 25 append-only snapshots were preserved and hash-matched with an independent owner backup. Arm A exact-statement cryptography is proof-viable, but RECOVERY_CREDENTIAL_DRY_RUN failed (12/13 security controls PASS) and S02 recorded 130.849 seconds against the 120-second individual mechanical gate. Arm B WebAuthn registration and Arm C comparator were interrupted and remain unqualified. The original frozen evidence and control rules have not changed.
+
+The owner reports using the primary passphrase when the recovery credential was required and considers it a small mistake. A brief role-specific prompt is a candidate prospective UX clarification only; broader real-decision contextual presentation is a separate owner-experience requirement. An initial independent scorer INVALID stemmed from unsuitable readOnly temporary-file permissions; a proper unchanged scorer run reported AMEND. The exact diagnostic is in Validation 215.
+
+No reset/retry-to-green, new owner attempt, production credential, physical target, migration, or authority switch is authorized. R0-P02 remains PASS, R0-P03 pending, Specification 028 unchanged. ChatGPT / chatgpt-37 owns bounded prospective AMEND triage and may request architecture-sensitive Claude critique before any new refreeze.
+
+    PHASE=R0_P01_ATTEMPT_001_AMEND_PROSPECTIVE_TRIAGE
+    NEXT_ACTOR=chatgpt
+    R0_P01_ATTEMPT_001=CONSUMED_AND_PRESERVED
+    R0_P01_RESULT=AMEND
+    PHYSICAL_ARCHITECTURE_SELECTED=false
+    NEXT=PROSPECTIVE_R0_P01_AMEND_TRIAGE
