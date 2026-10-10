@@ -1,0 +1,6956 @@
+{
+  "schema_version": 1,
+  "status": "F1_CANDIDATE_ORACLE_DATA_UNREVIEWED_NOT_FROZEN",
+  "authority": "PROSPECTIVE_B01_B02_DECISION_TABLE_SEED_NOT_A_SCORER",
+  "inputs": "B01_ACCEPTED_G1_G2_AND_B02_ACCEPTED_FINITE_STOPPING",
+  "approved_contract_sha256": "9160a30c481c1c67c2ec857238f5a04b44f618b2ef589ef4f1c514eb3b3d6175",
+  "approved_policy_sha256": "9b5bbc4d2c4802fc80b46bcaa3d003640c33e8e4784d39ef7995dbf193dff86c",
+  "per_arm_predicate_options": [
+    {
+      "evidence_state": "NOT_REALIZABLE",
+      "proof_viable": false,
+      "selection_eligible": false
+    },
+    {
+      "evidence_state": "INCOMPLETE",
+      "proof_viable": false,
+      "selection_eligible": false
+    },
+    {
+      "evidence_state": "INCOMPLETE",
+      "proof_viable": true,
+      "selection_eligible": false
+    },
+    {
+      "evidence_state": "COMPLETED",
+      "proof_viable": false,
+      "selection_eligible": false
+    },
+    {
+      "evidence_state": "COMPLETED",
+      "proof_viable": true,
+      "selection_eligible": false
+    },
+    {
+      "evidence_state": "COMPLETED",
+      "proof_viable": true,
+      "selection_eligible": true
+    }
+  ],
+  "derivation_basis": "Candidate truth table independently review against Research 513 and approved REV04 B01 policy. No scorer code may import this generator; F1 table bytes must be reviewed and frozen before future scorer exists.",
+  "exclusions": "Does not encode real-valued mechanical tie-break comparisons, 13-control raw cryptographic verification, flag-source credibility or B02 postclaim exception authority. Those are distinct future oracle parts.",
+  "cases": [
+    {
+      "id": "CASE-001",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "REOPEN",
+        "reason": "NO_VIABLE_CRYPTOGRAPHIC_ARM_AFTER_COMPLETE_EVIDENCE",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-002",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "REOPEN",
+        "reason": "NO_VIABLE_CRYPTOGRAPHIC_ARM_AFTER_COMPLETE_EVIDENCE",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-003",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-004",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-005",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-006",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-007",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-008",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-009",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INCOMPLETE",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-010",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INCOMPLETE",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-011",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-012",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-013",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-014",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-015",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-016",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-017",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VIABLE_PROOF_WITHOUT_FULL_ELIGIBILITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-018",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VIABLE_PROOF_WITHOUT_FULL_ELIGIBILITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-019",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-020",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-021",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-022",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-023",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-024",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-025",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "REOPEN",
+        "reason": "NO_VIABLE_CRYPTOGRAPHIC_ARM_AFTER_COMPLETE_EVIDENCE",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-026",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "REOPEN",
+        "reason": "NO_VIABLE_CRYPTOGRAPHIC_ARM_AFTER_COMPLETE_EVIDENCE",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-027",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-028",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-029",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-030",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-031",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-032",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-033",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VIABLE_PROOF_WITHOUT_FULL_ELIGIBILITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-034",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VIABLE_PROOF_WITHOUT_FULL_ELIGIBILITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-035",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-036",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-037",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-038",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-039",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-040",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-041",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VOLUME_GATE",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-042",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "PASS_WITH_SELECTION",
+        "reason": "ELIGIBLE_SELECTED_WITHIN_VOLUME_GATES",
+        "arm_selection": "B",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-043",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-044",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-045",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-046",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-047",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-048",
+      "inputs": {
+        "A": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-049",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INCOMPLETE",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-050",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INCOMPLETE",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-051",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-052",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-053",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-054",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-055",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-056",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-057",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INCOMPLETE",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-058",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INCOMPLETE",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-059",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-060",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-061",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-062",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-063",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-064",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-065",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VIABLE_PROOF_WITHOUT_FULL_ELIGIBILITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-066",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VIABLE_PROOF_WITHOUT_FULL_ELIGIBILITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-067",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-068",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-069",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-070",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-071",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-072",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-073",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INCOMPLETE",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-074",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INCOMPLETE",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-075",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-076",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-077",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-078",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-079",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-080",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-081",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VIABLE_PROOF_WITHOUT_FULL_ELIGIBILITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-082",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VIABLE_PROOF_WITHOUT_FULL_ELIGIBILITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-083",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-084",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-085",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-086",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-087",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-088",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-089",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VOLUME_GATE",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-090",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "PASS_WITH_SELECTION",
+        "reason": "ELIGIBLE_SELECTED_WITHIN_VOLUME_GATES",
+        "arm_selection": "B",
+        "G2_OTHER_ARM_INCOMPLETE": true
+      }
+    },
+    {
+      "id": "CASE-091",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-092",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-093",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-094",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-095",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-096",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-097",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VIABLE_PROOF_WITHOUT_FULL_ELIGIBILITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-098",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VIABLE_PROOF_WITHOUT_FULL_ELIGIBILITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-099",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-100",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-101",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-102",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-103",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-104",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-105",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VIABLE_PROOF_WITHOUT_FULL_ELIGIBILITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-106",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VIABLE_PROOF_WITHOUT_FULL_ELIGIBILITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-107",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-108",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-109",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-110",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-111",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-112",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-113",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VIABLE_PROOF_WITHOUT_FULL_ELIGIBILITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-114",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VIABLE_PROOF_WITHOUT_FULL_ELIGIBILITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-115",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-116",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-117",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-118",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-119",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-120",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-121",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VIABLE_PROOF_WITHOUT_FULL_ELIGIBILITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-122",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VIABLE_PROOF_WITHOUT_FULL_ELIGIBILITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-123",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-124",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-125",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-126",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-127",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-128",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-129",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VIABLE_PROOF_WITHOUT_FULL_ELIGIBILITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-130",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VIABLE_PROOF_WITHOUT_FULL_ELIGIBILITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-131",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-132",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-133",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-134",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-135",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-136",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-137",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VOLUME_GATE",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-138",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "PASS_WITH_SELECTION",
+        "reason": "ELIGIBLE_SELECTED_WITHIN_VOLUME_GATES",
+        "arm_selection": "B",
+        "G2_OTHER_ARM_INCOMPLETE": true
+      }
+    },
+    {
+      "id": "CASE-139",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-140",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-141",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-142",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-143",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-144",
+      "inputs": {
+        "A": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-145",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "REOPEN",
+        "reason": "NO_VIABLE_CRYPTOGRAPHIC_ARM_AFTER_COMPLETE_EVIDENCE",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-146",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "REOPEN",
+        "reason": "NO_VIABLE_CRYPTOGRAPHIC_ARM_AFTER_COMPLETE_EVIDENCE",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-147",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-148",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-149",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-150",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-151",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-152",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-153",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INCOMPLETE",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-154",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INCOMPLETE",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-155",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-156",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-157",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-158",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-159",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-160",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-161",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VIABLE_PROOF_WITHOUT_FULL_ELIGIBILITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-162",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VIABLE_PROOF_WITHOUT_FULL_ELIGIBILITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-163",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-164",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-165",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-166",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-167",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-168",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-169",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "REOPEN",
+        "reason": "NO_VIABLE_CRYPTOGRAPHIC_ARM_AFTER_COMPLETE_EVIDENCE",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-170",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "REOPEN",
+        "reason": "NO_VIABLE_CRYPTOGRAPHIC_ARM_AFTER_COMPLETE_EVIDENCE",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-171",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-172",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-173",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-174",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-175",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-176",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-177",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VIABLE_PROOF_WITHOUT_FULL_ELIGIBILITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-178",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VIABLE_PROOF_WITHOUT_FULL_ELIGIBILITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-179",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-180",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-181",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-182",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-183",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-184",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-185",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VOLUME_GATE",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-186",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "PASS_WITH_SELECTION",
+        "reason": "ELIGIBLE_SELECTED_WITHIN_VOLUME_GATES",
+        "arm_selection": "B",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-187",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-188",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-189",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-190",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-191",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-192",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-193",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VIABLE_PROOF_WITHOUT_FULL_ELIGIBILITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-194",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VIABLE_PROOF_WITHOUT_FULL_ELIGIBILITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-195",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-196",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-197",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-198",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-199",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-200",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-201",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VIABLE_PROOF_WITHOUT_FULL_ELIGIBILITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-202",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VIABLE_PROOF_WITHOUT_FULL_ELIGIBILITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-203",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-204",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-205",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-206",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-207",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-208",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-209",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VIABLE_PROOF_WITHOUT_FULL_ELIGIBILITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-210",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VIABLE_PROOF_WITHOUT_FULL_ELIGIBILITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-211",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-212",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-213",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-214",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-215",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-216",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-217",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VIABLE_PROOF_WITHOUT_FULL_ELIGIBILITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-218",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VIABLE_PROOF_WITHOUT_FULL_ELIGIBILITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-219",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-220",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-221",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-222",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-223",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-224",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-225",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VIABLE_PROOF_WITHOUT_FULL_ELIGIBILITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-226",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VIABLE_PROOF_WITHOUT_FULL_ELIGIBILITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-227",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-228",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-229",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-230",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-231",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-232",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-233",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VOLUME_GATE",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-234",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "PASS_WITH_SELECTION",
+        "reason": "ELIGIBLE_SELECTED_WITHIN_VOLUME_GATES",
+        "arm_selection": "B",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-235",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-236",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-237",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-238",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-239",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-240",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-241",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VOLUME_GATE",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-242",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "PASS_WITH_SELECTION",
+        "reason": "ELIGIBLE_SELECTED_WITHIN_VOLUME_GATES",
+        "arm_selection": "A",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-243",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-244",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-245",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-246",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-247",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-248",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "NOT_REALIZABLE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-249",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VOLUME_GATE",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-250",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "PASS_WITH_SELECTION",
+        "reason": "ELIGIBLE_SELECTED_WITHIN_VOLUME_GATES",
+        "arm_selection": "A",
+        "G2_OTHER_ARM_INCOMPLETE": true
+      }
+    },
+    {
+      "id": "CASE-251",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-252",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-253",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-254",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-255",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-256",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-257",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VOLUME_GATE",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-258",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "PASS_WITH_SELECTION",
+        "reason": "ELIGIBLE_SELECTED_WITHIN_VOLUME_GATES",
+        "arm_selection": "A",
+        "G2_OTHER_ARM_INCOMPLETE": true
+      }
+    },
+    {
+      "id": "CASE-259",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-260",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-261",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-262",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-263",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-264",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "INCOMPLETE",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-265",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VOLUME_GATE",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-266",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "PASS_WITH_SELECTION",
+        "reason": "ELIGIBLE_SELECTED_WITHIN_VOLUME_GATES",
+        "arm_selection": "A",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-267",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-268",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-269",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-270",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-271",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-272",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": false,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-273",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VOLUME_GATE",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-274",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "PASS_WITH_SELECTION",
+        "reason": "ELIGIBLE_SELECTED_WITHIN_VOLUME_GATES",
+        "arm_selection": "A",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-275",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-276",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-277",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-278",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-279",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-280",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": false
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-281",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "AMEND",
+        "reason": "VOLUME_GATE",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-282",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": false,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "PASS_WITH_SELECTION",
+        "reason": "ELIGIBLE_SELECTED_WITHIN_VOLUME_GATES",
+        "arm_selection": "FROZEN_10S_SMALL_THEN_15S_LARGE_THEN_B",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-283",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-284",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": false,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-285",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-286",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": true,
+        "instrument_flag": false,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-287",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": false
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    },
+    {
+      "id": "CASE-288",
+      "inputs": {
+        "A": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "B": {
+          "evidence_state": "COMPLETED",
+          "proof_viable": true,
+          "selection_eligible": true
+        },
+        "integrity_flag": true,
+        "instrument_flag": true,
+        "volume_gate_pass": true
+      },
+      "expected": {
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY",
+        "arm_selection": "NONE",
+        "G2_OTHER_ARM_INCOMPLETE": false
+      }
+    }
+  ]
+}

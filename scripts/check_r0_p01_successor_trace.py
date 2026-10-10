@@ -21,11 +21,18 @@ import json
 from pathlib import Path
 from typing import Any
 
+try:
+    from scripts import r0_p01_clause_inventory as clause_inventory
+    from scripts import r0_p01_clause_guard as clause_guard
+except ModuleNotFoundError:
+    import r0_p01_clause_inventory as clause_inventory
+    import r0_p01_clause_guard as clause_guard
+
 
 ROOT = Path(__file__).resolve().parents[1]
 TRACE_PATH = (
     "docs/research/r0_p01_successor_design/"
-    "R0_P01_Q0_REQUIREMENTS_TRACE_UNFROZEN.json"
+    "R0_P01_Q0_REQUIREMENTS_TRACE_REV02_UNFROZEN.json"
 )
 RECEIPT_PATH = (
     "docs/research/r0_p01_successor_design/"
@@ -46,7 +53,7 @@ APPROVED_POLICY_SHA256 = (
 
 EXPECTED_REQUIREMENTS = {
     *(f"C{i:02d}" for i in range(1, 14)),
-    *(f"R{i:02d}" for i in range(1, 22)),
+    *(f"R{i:02d}" for i in range(1, 41)),
 }
 EXPECTED_EFFECT_COUNTS = {"S01": 1, "S02": 2, "S03": 4, "L01": 30}
 EXPECTED_VOLUME = {
@@ -97,7 +104,7 @@ def validate_documents(
     """
 
     issues: list[str] = []
-    if trace.get("status") != "Q0_CANDIDATE_TRACEABILITY_NOT_FROZEN":
+    if trace.get("status") != "Q0_REV02_PROVISIONAL_NOT_FROZEN":
         issues.append("Q0 trace may not claim a frozen or executable status")
     if trace.get("owner_claim_status") != "NOT_AUTHORIZED":
         issues.append("Q0 trace must not authorize owner claims")
@@ -184,6 +191,8 @@ def validate_documents(
 def check_repository(root: Path = ROOT) -> list[str]:
     """Verify source-byte identities and trace semantics in a read-only pass."""
 
+    if sha256(b"abc") != "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad":
+        return ["SHA256 known-answer self-test failed"]
     trace = read_json(root, TRACE_PATH)
     approval = read_json(root, RECEIPT_PATH)
     fixture = read_json(root, OLD_FIXTURE)
@@ -204,16 +213,17 @@ def check_repository(root: Path = ROOT) -> list[str]:
     if set(old_hashes) != expected_paths:
         issues.append("historical baseline artifact set differs")
     for path, expected_hash in old_hashes.items():
-        actual = sha256((root / path).read_bytes())
+        actual = sha256(clause_inventory.blob(root, path))
         if actual != expected_hash:
             issues.append(f"historical baseline byte mismatch: {path}")
 
     for arm in ("B01", "B02"):
         record = approval["decisions"][arm]
         path = record["source"]
-        actual = sha256((root / path).read_bytes())
+        actual = sha256(clause_inventory.blob(root, path))
         if actual != record["source_sha256"]:
             issues.append(f"{arm}: accepted prospective source bytes changed")
+    issues += clause_guard.validate_clause_index(trace, clause_inventory.source_units(root))
     return issues
 
 
@@ -227,7 +237,7 @@ def main() -> int:
         return 1
     print(
         "R0_P01_Q0_TRACE_GUARD=PASS "
-        "requirements=34 controls=13 trials=4 "
+        "requirements=53 controls=13 clauses=351 catalogued_tests=105 "
         "approved_sources=2 historical_artifacts=7"
     )
     print("QUALIFICATION_SCOPE=STATIC_TRACEABILITY_ONLY_NOT_OWNER_EXECUTION")

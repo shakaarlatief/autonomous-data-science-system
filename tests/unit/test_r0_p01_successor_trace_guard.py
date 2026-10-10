@@ -112,3 +112,94 @@ def test_duplicate_json_keys_are_rejected(tmp_path: Path) -> None:
     )
     with pytest.raises(ValueError, match="duplicate JSON key"):
         read_json(tmp_path, "malformed.json")
+
+
+def test_clause_inventory_detects_omitted_normative_unit(public_documents: dict) -> None:
+    """Dropping a source paragraph must fail, even if the row list is unchanged."""
+
+    from scripts.r0_p01_clause_guard import validate_clause_index
+    from scripts.r0_p01_clause_inventory import source_units
+
+    d = copy.deepcopy(public_documents["trace"])
+    d["normative_clause_index"].pop(5)
+    errors = validate_clause_index(d, source_units(ROOT))
+    assert any("clause index missing" in error for error in errors)
+
+
+def test_clause_inventory_detects_changed_approved_unit(public_documents: dict) -> None:
+    """Unit-level hashes bind mappings to immutable approved text and JSON."""
+
+    from scripts.r0_p01_clause_guard import validate_clause_index
+    from scripts.r0_p01_clause_inventory import source_units
+
+    d = copy.deepcopy(public_documents["trace"])
+    d["normative_clause_index"][0]["source_sha256"] = "0" * 64
+    errors = validate_clause_index(d, source_units(ROOT))
+    assert any("changed normative source clause" in error for error in errors)
+
+
+def test_clause_inventory_detects_orphan_requirement(public_documents: dict) -> None:
+    from scripts.r0_p01_clause_guard import validate_clause_index
+    from scripts.r0_p01_clause_inventory import source_units
+
+    d = copy.deepcopy(public_documents["trace"])
+    for clause in d["normative_clause_index"]:
+        clause["requirement_ids"] = [
+            x for x in clause["requirement_ids"] if x != "R40"
+        ]
+    assert any(
+        "orphan requirement" in error
+        for error in validate_clause_index(d, source_units(ROOT))
+    )
+
+
+def test_test_catalogue_detects_orphan_test(public_documents: dict) -> None:
+    from scripts.r0_p01_clause_guard import validate_clause_index
+    from scripts.r0_p01_clause_inventory import source_units
+
+    d = copy.deepcopy(public_documents["trace"])
+    d["test_catalogue"].pop()
+    assert any(
+        "catalogue and requirements" in error
+        for error in validate_clause_index(d, source_units(ROOT))
+    )
+
+
+def test_hard_control_key_position_is_checked(public_documents: dict) -> None:
+    from scripts.r0_p01_clause_guard import validate_clause_index
+    from scripts.r0_p01_clause_inventory import source_units
+
+    d = copy.deepcopy(public_documents["trace"])
+    d["security_control_key_bindings"]["C07"] = "VALID_ACCEPTANCE"
+    assert any(
+        "positional control key" in error
+        for error in validate_clause_index(d, source_units(ROOT))
+    )
+
+
+def test_source_hash_uses_committed_blob_not_checkout_line_endings() -> None:
+    """Source identity remains the same under Windows working-tree CRLF."""
+
+    from scripts.r0_p01_clause_inventory import CONTRACT, blob, h
+
+    committed = blob(ROOT, CONTRACT)
+    assert h(committed.decode("utf-8")) == (
+        "9160a30c481c1c67c2ec857238f5a04b44f618b2ef589ef4f1c514eb3b3d6175"
+    )
+    assert b"\r\n" not in committed
+    transformed_checkout = committed.replace(b"\n", b"\r\n")
+    assert h(transformed_checkout.decode("utf-8")) != h(committed.decode("utf-8"))
+
+
+def test_provisional_freezes_and_arm_b_p5_dependency_are_guarded(
+    public_documents: dict,
+) -> None:
+    from scripts.r0_p01_clause_guard import validate_clause_index
+    from scripts.r0_p01_clause_inventory import source_units
+
+    d = copy.deepcopy(public_documents["trace"])
+    d["freeze_boundaries"]["F2"]["status"] = "FROZEN"
+    d["B_arm_P5_rotation_dependency"]["if_absent"] = "PASS"
+    errors = validate_clause_index(d, source_units(ROOT))
+    assert any("prematurely frozen" in error for error in errors)
+    assert any("P5 missing-key dependency" in error for error in errors)

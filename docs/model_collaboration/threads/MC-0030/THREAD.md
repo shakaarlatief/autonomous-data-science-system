@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / R0-P01 Q0 QUALIFIED Q1 DESIGN INDEPENDENT REVIEW
+**Status:** OPEN / R0-P01 REV02 CLAUSE AND F1/F2 INDEPENDENT REVIEW
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -49,7 +49,8 @@ The physical architecture is not.
     R0-P01 REV04 T1-T3 reconciliation             COMPLETE / Research 529 / Message 026
     R0-P01 B01/B02 prefreeze decisions            COMPLETE / human ACCEPT_B01 + ACCEPT_B02
     R0-P01 Q0 nonsecret source trace and guards     COMPLETE / Research 531 / Validation 220
-    R0-P01 Q1 exact-freeze architecture critique    NEXT / Claude / claude-04
+    R0-P01 Q1 exact-freeze architecture critique    COMPLETE / Message 029 / AMEND_Q0_Q1_BEFORE_FREEZE
+    R0-P01 Q0 REV02 and F1/F2 review             NEXT / Claude / claude-04
     R0-P03                                        AFTER P01
     physical-target owner decision                  ONLY WHEN READY
 
@@ -468,4 +469,17 @@ Claude / claude-04 may critique only and write MC-0030 Message 029; cannot edit 
     B01=ACCEPTED
     B02=ACCEPTED
     Q1_FIXTURE=UNFROZEN
+    ATTEMPT_002=NOT_AUTHORIZED
+
+
+## Q0 REV02 and F1/F2 split after Claude Message 029
+
+Research 532 / Validation 221 / Checkpoint 868 / Message 030 accept Claude's three blocking findings. The mechanically indexed approved source has 351 units, 53 requirements and 105 future test IDs. The read-only committed-blob guard plus 17 negative tests pass; all mappings are provisional and 22 weak section-only links remain open for independent semantic review. F1 is exact **pre-implementation** fixture and independent expected-vector/decision oracle; F2 is exact **post-synthetic-qualification** implementation and source-site/Windows evidence. Neither is frozen. The B01 decision table has 288 candidate rows, not fully qualified; independent scorer and actual synthetic P01 run not started.
+
+Frozen V02 P01-C07 shows B P5 requires same-attempt A primary and recovery public members. Missing members produce FAIL/UNEXECUTED_ROTATION_TARGET_ABSENT with no prior-key substitution, as a future fixture clarification and without changing approved B01/B02. Next Claude message 031 focuses on coverage semantics and F1 suitability. Real owner Attempt 002 remains unauthorized; original Attempt 001 AMEND and physical candidate unresolved.
+
+    PHASE=R0_P01_Q0_REV02_F1_F2_INDEPENDENT_REVIEW_PENDING
+    NEXT_ACTOR=claude
+    F1=UNFROZEN
+    F2=UNFROZEN
     ATTEMPT_002=NOT_AUTHORIZED

@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 867
+**Checkpoint:** 868
 **Date:** 2026-10-10
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,19 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: R0-P01 Q0 static source trace qualified; Q1 design independent review next
+## Current active stage: R0-P01 Message 029 reconciled; REV02 clauses and F1/F2 review pending
+
+Checkpoint 868 / Research 532 / Validation 221 / MC-0030 Message 030 reconcile Claude's AMEND_Q0_Q1_BEFORE_FREEZE with three accepted blocking corrections. REV02 now has a source-unit extractor indexing 166 approved-contract textual units (sections 1–11), 185 normative policy JSON leaves, a total of 351 units; 53 explicit requirements, 13 positional hard-control identifiers, and 105 catalogued future synthetic tests. The read-only source guard hashes COMMITTED Git blob bytes, verifies a known SHA-256 answer and catches missing clause/test mappings. Seventeen static/mutation tests PASS. **Semantic mappings remain unapproved**, with 22 weak section-based associations; no F1 freeze is allowed merely because the guard passes.
+
+Q1's new independent-oracle amendment separates **F1**, exact fixture/golden vectors/error categories/independent decision table before implementation, from **F2**, actual scorer/owner harness/RP source hashes, generated exhaustive exception-site map, tool versions, Windows/browser receipts and full synthetic A/B/C after qualification. The provisional 288-row B01 predicate oracle is neither complete for numeric selection/B02 exceptions nor frozen. Dual independently authored canonical implementations, in-process SSHSIG scorer, Windows ConPTY/Node process, virtual WebAuthn, two evidence chains and all real successor implementation work remain ahead.
+
+Claude's Arm B P5 dependency is confirmed against frozen V02 P01-C07: when same-attempt Arm A PRIMARY/RECOVERY public members are unavailable, Arm B P5 is FAIL / UNEXECUTED_ROTATION_TARGET_ABSENT. This clarifies the prospective fixture and does not reopen accepted human B01/B02 semantics. Neither approved source's bytes are modified.
+
+**Next:** Claude bounded MC-0030 Message 031 critique of the provisional REV02 clause inventory/mapping, test catalogue, F1 decision table and F1/F2 separation. Original Attempt 001 immutable AMEND with evidence and owner private keys untouched; R0-P02 PASS, R0-P03 pending, physical candidate unselected, Specification 028 unchanged. No F1/F2 freeze, Attempt 002 start marker or real owner credential exists/authorized. The third separate human owner execution approval remains mandatory.
+
+---
+
+## Historical checkpoint 867 stage: R0-P01 Q0 static source trace qualified; Q1 design independent review next
 
 Checkpoint 867 / Research 531 / Validation 220 / MC-0030 Message 028 begin the **non-sensitive** successor qualification stage under explicit owner B01/B02 approvals. Q0 has a new unfrozen machine-readable trace of 34 distinct requirements including all 13 frozen security controls, 1/2/4/30 trial sizes, original projected migration burden and seven read-only frozen V02 source hashes. The approved V03 REV04 contract and B02 policy remain byte-identical; the independent human decision receipt is unchanged. A separate trace guard and ten in-memory mutation tests PASS. The first pytest attempts were blocked by Windows temporary-directory permissions, and the final isolated writable base run produced 10/10 PASS. This qualifies **static traceability only**; no cryptographic successor has been implemented or qualified.
 
