@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / R0-P01 B01+B02 APPROVED / SUCCESSOR QUALIFICATION PREPARATION
+**Status:** OPEN / R0-P01 Q0 QUALIFIED Q1 DESIGN INDEPENDENT REVIEW
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -48,7 +48,8 @@ The physical architecture is not.
     R0-P01 REV03 targeted evidence-state review     COMPLETE / Message 025 / AMEND_REV03_TARGETED
     R0-P01 REV04 T1-T3 reconciliation             COMPLETE / Research 529 / Message 026
     R0-P01 B01/B02 prefreeze decisions            COMPLETE / human ACCEPT_B01 + ACCEPT_B02
-    R0-P01 synthetic exact successor qualification  NEXT / ChatGPT task owner
+    R0-P01 Q0 nonsecret source trace and guards     COMPLETE / Research 531 / Validation 220
+    R0-P01 Q1 exact-freeze architecture critique    NEXT / Claude / claude-04
     R0-P03                                        AFTER P01
     physical-target owner decision                  ONLY WHEN READY
 
@@ -453,4 +454,18 @@ B01 is prospective Research 513 successor G1/G2 interpretation only, and B02 is 
     NEXT_ACTOR=chatgpt
     B01=ACCEPTED
     B02=ACCEPTED
+    ATTEMPT_002=NOT_AUTHORIZED
+
+
+## R0-P01 Q0 source trace and Q1 unfrozen design review
+
+Research 531 / Validation 220 / Checkpoint 867 / Message 028 record 34 requirements, all 13 controls, original trial/inventory and old source hashes, byte-bound B01/B02 approvals, an isolated read-only trace guard and ten passing synthetic in-memory mutation tests. Q1 proposes but does NOT freeze an independently reviewed exact fixture and implementation decomposition, with architecture/workflow freedom at every level. A full A/B/C synthetic owner-proof implementation has NOT started and no target Windows/Node/WebAuthn qualification has been claimed.
+
+Claude / claude-04 may critique only and write MC-0030 Message 029; cannot edit sources or run an owner ceremony. Owner Attempt 001 AMEND is preserved, real Attempt 002 still unauthorized, physical GOVERNED_LEDGER_KERNEL_V02 not selected. Separate third human execution authorization remains mandatory after full actual implementation qualification.
+
+    PHASE=R0_P01_Q0_QUALIFIED_Q1_DESIGN_REVIEW_PENDING
+    NEXT_ACTOR=claude
+    B01=ACCEPTED
+    B02=ACCEPTED
+    Q1_FIXTURE=UNFROZEN
     ATTEMPT_002=NOT_AUTHORIZED

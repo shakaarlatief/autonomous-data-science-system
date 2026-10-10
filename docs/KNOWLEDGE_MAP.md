@@ -798,6 +798,12 @@ docs/research/530_r0_p01_owner_b01_b02_acceptance_and_successor_qualification_en
 docs/local_execution/validation/219_r0_p01_b01_b02_human_approval_receipt_integrity.md
 docs/checkpoints/866_r0_p01_owner_b01_b02_accepted_qualification_preparation_next.md
 docs/model_collaboration/threads/MC-0030/messages/027_chatgpt_r0_p01_b01_b02_accepted_qualification_next.md
+docs/research/r0_p01_successor_design/R0_P01_Q0_REQUIREMENTS_TRACE_UNFROZEN.json
+docs/research/r0_p01_successor_design/R0_P01_Q1_IMPLEMENTATION_BOUNDARY_CANDIDATE.md
+docs/research/531_r0_p01_successor_q0_trace_and_q1_prefreeze_architecture_candidate.md
+docs/local_execution/validation/220_r0_p01_q0_trace_guard_and_synthetic_test_inventory.md
+docs/checkpoints/867_r0_p01_q0_source_trace_qualified_q1_review_next.md
+docs/model_collaboration/threads/MC-0030/messages/028_chatgpt_r0_p01_q0_trace_q1_design_review_handoff.md
 docs/research/project_knowledge_activation_orchestration/AO10_SPEC028_RECONCILIATION_V01.json
 docs/checkpoints/570_whole_repository_physical_architecture_scope_clarified.md
 docs/checkpoints/571_whole_repository_r2_boundaries_identified.md
@@ -1511,7 +1517,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-866 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-867 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

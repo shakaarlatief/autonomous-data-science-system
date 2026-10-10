@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 866
+**Checkpoint:** 867
 **Date:** 2026-10-10
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,17 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: human B01/B02 accepted; prospective successor technical qualification preparation next
+## Current active stage: R0-P01 Q0 static source trace qualified; Q1 design independent review next
+
+Checkpoint 867 / Research 531 / Validation 220 / MC-0030 Message 028 begin the **non-sensitive** successor qualification stage under explicit owner B01/B02 approvals. Q0 has a new unfrozen machine-readable trace of 34 distinct requirements including all 13 frozen security controls, 1/2/4/30 trial sizes, original projected migration burden and seven read-only frozen V02 source hashes. The approved V03 REV04 contract and B02 policy remain byte-identical; the independent human decision receipt is unchanged. A separate trace guard and ten in-memory mutation tests PASS. The first pytest attempts were blocked by Windows temporary-directory permissions, and the final isolated writable base run produced 10/10 PASS. This qualifies **static traceability only**; no cryptographic successor has been implemented or qualified.
+
+Q1 proposes a fully revisable exact-fixture and implementation boundary, comparing a compact coordinator with decomposed pure canonical/state semantics, native SSH and WebAuthn adapters, append-only evidence and independent scorer. The latter is provisionally attractive for testability but **not selected or frozen**. All existing repository layout, branching, CI/CD, tools and working practices can be redesigned on merit. The fixture must eventually freeze exact owner-view/canonical statement bytes, P5/P6 synthetic-key templates, independent expected proof/admission outcomes, B01 G1/G2/flag states, source-site exception taxonomy, Windows RP/snapshot timing/atomicity behavior, and B02 approval hash. Real synthetic crypto/Node/Windows A/B/C testing and independent scorer review remain fully pending.
+
+**Next:** bounded Claude Message 029 independent Q0/Q1 technical critique under MC-0030 Message 028, followed by ChatGPT reconciliation before any exact future fixture freeze. Historical Attempt 001 remains permanently AMEND, original frozen files/evidence/owner private material untouched; R0-P02 PASS, R0-P03 pending, physical candidate unselected, Specification 028 and project authority unchanged. Owner Attempt 002 is **NOT AUTHORIZED**; a later third separate human owner decision is mandatory after actual synthetic qualification.
+
+---
+
+## Historical checkpoint 866 stage: human B01/B02 accepted; prospective successor technical qualification preparation next
 
 Checkpoint 866 / Research 530 / Validation 219 / MC-0030 Message 027 record the project owner's explicit `ACCEPT_B01 and ACCEPT_B02` on 2026-10-10, as **two separate decisions**. B01 prospectively approves Research 513 R0-P01 G1/G2 evidence-state and mechanical INVALID interpretation for a newly frozen successor, **not** original Attempt 001. B02 approves the finite stopping policy, capped at two new claim events, with ALL_REQUIRED exceptional conditions, no automatic Attempt 003 and no post-PASS or same-policy post-INTEGRITY extra claim.
 

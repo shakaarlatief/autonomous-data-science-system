@@ -1,0 +1,737 @@
+{
+  "schema_version": 1,
+  "status": "Q0_CANDIDATE_TRACEABILITY_NOT_FROZEN",
+  "project": "Autonomous Data Science System",
+  "stage": "R0-P01_V03_successor_Q0",
+  "historical_commit": "323acf5238a344c4f27d3eded36ecd558efa135d",
+  "approved_sha256": {
+    "contract": "9160a30c481c1c67c2ec857238f5a04b44f618b2ef589ef4f1c514eb3b3d6175",
+    "policy": "9b5bbc4d2c4802fc80b46bcaa3d003640c33e8e4784d39ef7995dbf193dff86c"
+  },
+  "sources": {
+    "family": "docs/research/513_r0_physical_architecture_decision_probe_preregistration_v01.md",
+    "historical_fixture": "experiments/r0_p01_owner_acceptance_v01/fixture.json",
+    "historical_contract": "experiments/r0_p01_owner_acceptance_v01/result_contract.json",
+    "historical_addendum": "experiments/r0_p01_owner_acceptance_v01/implementation_contract_addendum_v02.md",
+    "approved_successor": "docs/research/r0_p01_successor_design/R0_P01_CONTRACT_V03_UNFROZEN_DRAFT.md",
+    "approved_policy": "docs/research/r0_p01_successor_design/R0_P01_OUTCOME_POLICY_V03_UNFROZEN_DRAFT.json",
+    "owner_decision": "docs/research/r0_p01_successor_design/R0_P01_PREFREEZE_OWNER_DECISIONS_RECEIPT_20261010.json"
+  },
+  "security_controls": [
+    "VALID_ACCEPTANCE",
+    "FORGED_OR_AGENT_PREPARED_PROOF_REJECTS",
+    "CHANGED_ENVELOPE_REJECTS",
+    "CHANGED_SHOWN_VIEW_REJECTS",
+    "DECISION_SUBSTITUTION_REJECTS",
+    "CROSS_PROJECT_REPLAY_REJECTS",
+    "ACCEPTANCE_ID_REPLAY_REJECTS",
+    "SEMANTIC_BASE_MISMATCH_REJECTS",
+    "UNRELATED_REPOSITORY_LANDING_DOES_NOT_INVALIDATE",
+    "SIGNER_SET_MISMATCH_REJECTS",
+    "TRUST_ROOT_ROTATION_DRY_RUN",
+    "RECOVERY_CREDENTIAL_DRY_RUN",
+    "COMPROMISE_BOUNDARY_DRY_RUN"
+  ],
+  "owner_trials": [
+    {
+      "trial_id": "S01",
+      "effects": 1
+    },
+    {
+      "trial_id": "S02",
+      "effects": 2
+    },
+    {
+      "trial_id": "S03",
+      "effects": 4
+    },
+    {
+      "trial_id": "L01",
+      "effects": 30
+    }
+  ],
+  "owner_claim_status": "NOT_AUTHORIZED",
+  "actual_successor_fixture_frozen": false,
+  "source_status": "PROSPECTIVE_REQUIREMENTS_NOT_IMPLEMENTATION_EVIDENCE",
+  "requirements": [
+    {
+      "id": "R01",
+      "area": "Identity",
+      "rule": "Nine canonical SignedAcceptanceStatement fields with exact successor context, project ID and acceptance-ID grammar and deterministic canonical serialization.",
+      "sources": [
+        "family",
+        "approved_successor",
+        "historical_addendum"
+      ],
+      "evidence_requirements": [
+        "exact canonical UTF-8 golden vectors",
+        "old context/project/acceptance prefix structurally rejected",
+        "same-instance immutable statement bytes"
+      ],
+      "synthetic_test_ids": [
+        "T-STATEMENT-GOLDEN",
+        "T-DOMAIN-REPLAY"
+      ],
+      "status": "QUALIFICATION_REQUIRED"
+    },
+    {
+      "id": "R02",
+      "area": "Owner view",
+      "rule": "Exactly displayed T1 governing view bytes are shown_digest-bound; envelope_digest binds canonical envelope, not view.",
+      "sources": [
+        "family",
+        "approved_successor",
+        "historical_addendum"
+      ],
+      "evidence_requirements": [
+        "renderer fixed-byte vectors including LF whitespace",
+        "T2 and T3 separations and negative mutation controls"
+      ],
+      "synthetic_test_ids": [
+        "T-RENDER-GOLDEN",
+        "T-VIEW-MUTATION"
+      ],
+      "status": "QUALIFICATION_REQUIRED"
+    },
+    {
+      "id": "R03",
+      "area": "Owner decision",
+      "rule": "Owner independently chooses ACCEPT AMEND REJECT; invalid uncaptured input re-prompts; decision capture starts mechanical interval.",
+      "sources": [
+        "family",
+        "approved_successor",
+        "historical_addendum"
+      ],
+      "evidence_requirements": [
+        "owner decision separate from transport and credential",
+        "fixed UX text and prompt action inventory"
+      ],
+      "synthetic_test_ids": [
+        "T-INPUT-REPROMPT",
+        "T-TIMER-BOUNDARY"
+      ],
+      "status": "QUALIFICATION_REQUIRED"
+    },
+    {
+      "id": "C01",
+      "area": "Security hard controls",
+      "rule": "Exact owner-authenticated P0 verifies and first sequential ledger ADMIT succeeds.",
+      "sources": [
+        "family",
+        "historical_fixture",
+        "historical_addendum",
+        "approved_successor"
+      ],
+      "evidence_requirements": [
+        "actual explicit per-arm control PASS/FAIL",
+        "negative-test rejection layer STRUCTURAL/CRYPTOGRAPHIC/ADMIT/NOT_EVALUATED where relevant",
+        "unchanged zero-miss eligibility"
+      ],
+      "synthetic_test_ids": [
+        "T-CTRL-01"
+      ],
+      "status": "QUALIFICATION_REQUIRED"
+    },
+    {
+      "id": "C02",
+      "area": "Security hard controls",
+      "rule": "Tampered or agent-prepared proof is rejected by actual verifier, not presumed.",
+      "sources": [
+        "family",
+        "historical_fixture",
+        "historical_addendum",
+        "approved_successor"
+      ],
+      "evidence_requirements": [
+        "actual explicit per-arm control PASS/FAIL",
+        "negative-test rejection layer STRUCTURAL/CRYPTOGRAPHIC/ADMIT/NOT_EVALUATED where relevant",
+        "unchanged zero-miss eligibility"
+      ],
+      "synthetic_test_ids": [
+        "T-CTRL-02"
+      ],
+      "status": "QUALIFICATION_REQUIRED"
+    },
+    {
+      "id": "C03",
+      "area": "Security hard controls",
+      "rule": "Mutated canonical envelope and corresponding statement with reused P0 fails independent verification.",
+      "sources": [
+        "family",
+        "historical_fixture",
+        "historical_addendum",
+        "approved_successor"
+      ],
+      "evidence_requirements": [
+        "actual explicit per-arm control PASS/FAIL",
+        "negative-test rejection layer STRUCTURAL/CRYPTOGRAPHIC/ADMIT/NOT_EVALUATED where relevant",
+        "unchanged zero-miss eligibility"
+      ],
+      "synthetic_test_ids": [
+        "T-CTRL-03"
+      ],
+      "status": "QUALIFICATION_REQUIRED"
+    },
+    {
+      "id": "C04",
+      "area": "Security hard controls",
+      "rule": "Mutated exactly shown owner view digest and reused proof fails independent verification.",
+      "sources": [
+        "family",
+        "historical_fixture",
+        "historical_addendum",
+        "approved_successor"
+      ],
+      "evidence_requirements": [
+        "actual explicit per-arm control PASS/FAIL",
+        "negative-test rejection layer STRUCTURAL/CRYPTOGRAPHIC/ADMIT/NOT_EVALUATED where relevant",
+        "unchanged zero-miss eligibility"
+      ],
+      "synthetic_test_ids": [
+        "T-CTRL-04"
+      ],
+      "status": "QUALIFICATION_REQUIRED"
+    },
+    {
+      "id": "C05",
+      "area": "Security hard controls",
+      "rule": "Changing ACCEPT to AMEND or REJECT with old proof fails verification.",
+      "sources": [
+        "family",
+        "historical_fixture",
+        "historical_addendum",
+        "approved_successor"
+      ],
+      "evidence_requirements": [
+        "actual explicit per-arm control PASS/FAIL",
+        "negative-test rejection layer STRUCTURAL/CRYPTOGRAPHIC/ADMIT/NOT_EVALUATED where relevant",
+        "unchanged zero-miss eligibility"
+      ],
+      "synthetic_test_ids": [
+        "T-CTRL-05"
+      ],
+      "status": "QUALIFICATION_REQUIRED"
+    },
+    {
+      "id": "C06",
+      "area": "Security hard controls",
+      "rule": "Different project or predecessor context with old proof fails structural/cryptographic verification.",
+      "sources": [
+        "family",
+        "historical_fixture",
+        "historical_addendum",
+        "approved_successor"
+      ],
+      "evidence_requirements": [
+        "actual explicit per-arm control PASS/FAIL",
+        "negative-test rejection layer STRUCTURAL/CRYPTOGRAPHIC/ADMIT/NOT_EVALUATED where relevant",
+        "unchanged zero-miss eligibility"
+      ],
+      "synthetic_test_ids": [
+        "T-CTRL-06"
+      ],
+      "status": "QUALIFICATION_REQUIRED"
+    },
+    {
+      "id": "C07",
+      "area": "Security hard controls",
+      "rule": "Different acceptance ID proof rejects and second ADMIT of same consumed ID rejects.",
+      "sources": [
+        "family",
+        "historical_fixture",
+        "historical_addendum",
+        "approved_successor"
+      ],
+      "evidence_requirements": [
+        "actual explicit per-arm control PASS/FAIL",
+        "negative-test rejection layer STRUCTURAL/CRYPTOGRAPHIC/ADMIT/NOT_EVALUATED where relevant",
+        "unchanged zero-miss eligibility"
+      ],
+      "synthetic_test_ids": [
+        "T-CTRL-07"
+      ],
+      "status": "QUALIFICATION_REQUIRED"
+    },
+    {
+      "id": "C08",
+      "area": "Security hard controls",
+      "rule": "Changed exact semantic-base projection/digest with old proof rejects.",
+      "sources": [
+        "family",
+        "historical_fixture",
+        "historical_addendum",
+        "approved_successor"
+      ],
+      "evidence_requirements": [
+        "actual explicit per-arm control PASS/FAIL",
+        "negative-test rejection layer STRUCTURAL/CRYPTOGRAPHIC/ADMIT/NOT_EVALUATED where relevant",
+        "unchanged zero-miss eligibility"
+      ],
+      "synthetic_test_ids": [
+        "T-CTRL-08"
+      ],
+      "status": "QUALIFICATION_REQUIRED"
+    },
+    {
+      "id": "C09",
+      "area": "Security hard controls",
+      "rule": "Unrelated repository-carrier metadata landing does not invalidate same exact owner proof.",
+      "sources": [
+        "family",
+        "historical_fixture",
+        "historical_addendum",
+        "approved_successor"
+      ],
+      "evidence_requirements": [
+        "actual explicit per-arm control PASS/FAIL",
+        "negative-test rejection layer STRUCTURAL/CRYPTOGRAPHIC/ADMIT/NOT_EVALUATED where relevant",
+        "unchanged zero-miss eligibility"
+      ],
+      "synthetic_test_ids": [
+        "T-CTRL-09"
+      ],
+      "status": "QUALIFICATION_REQUIRED"
+    },
+    {
+      "id": "C10",
+      "area": "Security hard controls",
+      "rule": "Changed signer-set version with reused proof rejects.",
+      "sources": [
+        "family",
+        "historical_fixture",
+        "historical_addendum",
+        "approved_successor"
+      ],
+      "evidence_requirements": [
+        "actual explicit per-arm control PASS/FAIL",
+        "negative-test rejection layer STRUCTURAL/CRYPTOGRAPHIC/ADMIT/NOT_EVALUATED where relevant",
+        "unchanged zero-miss eligibility"
+      ],
+      "synthetic_test_ids": [
+        "T-CTRL-10"
+      ],
+      "status": "QUALIFICATION_REQUIRED"
+    },
+    {
+      "id": "C11",
+      "area": "Security hard controls",
+      "rule": "Current PRIMARY must prove prospective rotation and new candidate signer alone cannot authorize its own promotion.",
+      "sources": [
+        "family",
+        "historical_fixture",
+        "historical_addendum",
+        "approved_successor"
+      ],
+      "evidence_requirements": [
+        "actual explicit per-arm control PASS/FAIL",
+        "negative-test rejection layer STRUCTURAL/CRYPTOGRAPHIC/ADMIT/NOT_EVALUATED where relevant",
+        "unchanged zero-miss eligibility"
+      ],
+      "synthetic_test_ids": [
+        "T-CTRL-11",
+        "T-TRANSITION-STATE"
+      ],
+      "status": "QUALIFICATION_REQUIRED"
+    },
+    {
+      "id": "C12",
+      "area": "Security hard controls",
+      "rule": "Current RECOVERY key signs P6, nonowner test key fails role ADMIT, prior P0 remains valid historically.",
+      "sources": [
+        "family",
+        "historical_fixture",
+        "historical_addendum",
+        "approved_successor"
+      ],
+      "evidence_requirements": [
+        "actual explicit per-arm control PASS/FAIL",
+        "negative-test rejection layer STRUCTURAL/CRYPTOGRAPHIC/ADMIT/NOT_EVALUATED where relevant",
+        "unchanged zero-miss eligibility"
+      ],
+      "synthetic_test_ids": [
+        "T-CTRL-12",
+        "T-TRANSITION-STATE"
+      ],
+      "status": "QUALIFICATION_REQUIRED"
+    },
+    {
+      "id": "C13",
+      "area": "Security hard controls",
+      "rule": "Postcompromise otherwise-valid S01 classified REVIEW_REQUIRED/GOVERNING_OWNER; preboundary accepted record remains historically accepted.",
+      "sources": [
+        "family",
+        "historical_fixture",
+        "historical_addendum",
+        "approved_successor"
+      ],
+      "evidence_requirements": [
+        "actual explicit per-arm control PASS/FAIL",
+        "negative-test rejection layer STRUCTURAL/CRYPTOGRAPHIC/ADMIT/NOT_EVALUATED where relevant",
+        "unchanged zero-miss eligibility"
+      ],
+      "synthetic_test_ids": [
+        "T-CTRL-13",
+        "T-TRANSITION-STATE"
+      ],
+      "status": "QUALIFICATION_REQUIRED"
+    },
+    {
+      "id": "R04",
+      "area": "Cryptographic arms",
+      "rule": "Arm A OpenSSH Ed25519 owner-exclusive PRIMARY/RECOVERY; Arm B localhost ES256 UV WebAuthn primary with same-attempt Arm A RECOVERY; Arm C weaker chat-role digest comparator nonselectable.",
+      "sources": [
+        "family",
+        "historical_fixture",
+        "approved_successor"
+      ],
+      "evidence_requirements": [
+        "distinct fresh owner-local members only after future explicit execution authorization",
+        "A/B independently verifiable; C role receipt never proof equivalence"
+      ],
+      "synthetic_test_ids": [
+        "T-ARM-IDENTITY",
+        "T-B-RECOVERY-DEPENDENCY",
+        "T-C-NONSELECTABLE"
+      ],
+      "status": "QUALIFICATION_REQUIRED"
+    },
+    {
+      "id": "R05",
+      "area": "OpenSSH retry",
+      "rule": "No stderr parsing; at most 3 native inherited-terminal sign invocations per immutable captured event with rechecked key/agent/statement and explicit R/S owner choice.",
+      "sources": [
+        "approved_successor"
+      ],
+      "evidence_requirements": [
+        "all invocations inside same clock",
+        "terminal outcome absent proof cannot be automatically retried",
+        "no private keys or passphrases in logs"
+      ],
+      "synthetic_test_ids": [
+        "T-SSH-PROMPT",
+        "T-SSH-RETRY-PRECONDITION",
+        "T-SSH-ABORT"
+      ],
+      "status": "QUALIFICATION_REQUIRED"
+    },
+    {
+      "id": "R06",
+      "area": "WebAuthn protocol",
+      "rule": "Real RP origin http://localhost:8765 rpId localhost ES256 algorithm -7 UP/UV; fixed challenge lifecycle, exact statement hash binding, one-shot assertion.",
+      "sources": [
+        "historical_fixture",
+        "historical_addendum",
+        "approved_successor"
+      ],
+      "evidence_requirements": [
+        "synthetic CDP CTAP2 virtual authenticator protocol receipts",
+        "cryptographic ES256 independently verified",
+        "no claim native Windows Hello qualified by a virtual test"
+      ],
+      "synthetic_test_ids": [
+        "T-WEB-RP",
+        "T-WEB-CHALLENGE",
+        "T-WEB-VIRTUAL"
+      ],
+      "status": "QUALIFICATION_REQUIRED"
+    },
+    {
+      "id": "R07",
+      "area": "WebAuthn cancellation",
+      "rule": "Durable issued-and-consumed assertion with NotAllowedError/cancel/timeout is terminal no-proof; NotSupportedError is capability only with receipt; other faults instrument.",
+      "sources": [
+        "approved_successor",
+        "approved_policy"
+      ],
+      "evidence_requirements": [
+        "unique attempt acceptance ID RP receipt",
+        "not completed without durable receipt"
+      ],
+      "synthetic_test_ids": [
+        "T-WEB-CANCEL",
+        "T-WEB-CAPABILITY",
+        "T-WEB-FAULT"
+      ],
+      "status": "QUALIFICATION_REQUIRED"
+    },
+    {
+      "id": "R08",
+      "area": "Timing",
+      "rule": "Small S01/S02/S03 effects 1/2/4 and large L01 30; mechanical end at deterministic verification including retries, median <=60 sec, each small <=120 sec and large <=120 sec.",
+      "sources": [
+        "family",
+        "historical_fixture",
+        "approved_policy"
+      ],
+      "evidence_requirements": [
+        "unrounded monotonic seconds",
+        "semantic review separate from mechanical clock",
+        "bounded documented small-only infrastructure receipt"
+      ],
+      "synthetic_test_ids": [
+        "T-TRIAL-CORPUS",
+        "T-TIMING-BOUNDARY",
+        "T-TIMING-GATES"
+      ],
+      "status": "QUALIFICATION_REQUIRED"
+    },
+    {
+      "id": "R09",
+      "area": "Volume",
+      "rule": "Approved historical inventory source 97 acceptances, 157 effects and distribution 62/17/11/7; threshold acceptance<=100 and projected minutes<=90.",
+      "sources": [
+        "family",
+        "approved_successor",
+        "approved_policy"
+      ],
+      "evidence_requirements": [
+        "original inventory hash checked, recompute exact projected minutes per median",
+        "never adjust projection after owner outcome"
+      ],
+      "synthetic_test_ids": [
+        "T-INVENTORY-FROZEN",
+        "T-VOLUME-GATE"
+      ],
+      "status": "QUALIFICATION_REQUIRED"
+    },
+    {
+      "id": "R10",
+      "area": "Selection",
+      "rule": "A/B independent eligibility all 13 controls PASS, zero edits/exposure, 3 small + 1 large valid; both eligible compare 10s small then 15s large then B tie break.",
+      "sources": [
+        "family",
+        "historical_contract",
+        "approved_policy"
+      ],
+      "evidence_requirements": [
+        "both-eligible cases and one-arm-ineligible",
+        "C never eligible"
+      ],
+      "synthetic_test_ids": [
+        "T-ELIGIBILITY",
+        "T-SELECTION-TIE",
+        "T-C-NONSELECTABLE"
+      ],
+      "status": "QUALIFICATION_REQUIRED"
+    },
+    {
+      "id": "R11",
+      "area": "Evidence state",
+      "rule": "A/B NOT_REALIZABLE only capability evidence; COMPLETED only each P0 S01 S02 S03 terminal; INCOMPLETE otherwise.",
+      "sources": [
+        "approved_successor",
+        "approved_policy",
+        "owner_decision"
+      ],
+      "evidence_requirements": [
+        "immutable per-event receipt with same attempt ID",
+        "setup complete alone never COMPLETED"
+      ],
+      "synthetic_test_ids": [
+        "T-EVIDENCE-G1",
+        "T-EVIDENCE-CANCEL"
+      ],
+      "status": "QUALIFICATION_REQUIRED"
+    },
+    {
+      "id": "R12",
+      "area": "Scorer outcome",
+      "rule": "Every claimed attempt eventually PASS_WITH_SELECTION, AMEND, REOPEN, INVALID; no-score before claim; temporary pending scoring not final.",
+      "sources": [
+        "family",
+        "approved_successor",
+        "approved_policy",
+        "owner_decision"
+      ],
+      "evidence_requirements": [
+        "G1 prevents false REOPEN",
+        "G2 uncontested selection disclosure with alternative INCOMPLETE"
+      ],
+      "synthetic_test_ids": [
+        "T-G1-G2-TABLE",
+        "T-SCORER-PRECEDENCE"
+      ],
+      "status": "QUALIFICATION_REQUIRED"
+    },
+    {
+      "id": "R13",
+      "area": "Flag provenance",
+      "rule": "Six integrity sources outrank three instrument sources; explicit HARNESS_RECORDED versus SCORER_DERIVED schema; missing final-head witness disclosure only.",
+      "sources": [
+        "approved_successor",
+        "approved_policy",
+        "owner_decision"
+      ],
+      "evidence_requirements": [
+        "11 source/derived flag origins",
+        "no generic exception -> integrity",
+        "instrument faults never inferred as bad owner proof"
+      ],
+      "synthetic_test_ids": [
+        "T-FLAG-PRECEDENCE",
+        "T-OWNER-INPUT",
+        "T-WITNESS-DISCLOSURE"
+      ],
+      "status": "QUALIFICATION_REQUIRED"
+    },
+    {
+      "id": "R14",
+      "area": "Verifier availability",
+      "rule": "Tri-state VALID INVALID VERIFIER_ERROR, synthetic SSH and WebAuthn positive/negative KAT in actual harness environment immediately before claim; scoring-only KAT must qualify independent verifier.",
+      "sources": [
+        "approved_successor"
+      ],
+      "evidence_requirements": [
+        "preclaim KAT failed creates no owner marker",
+        "verifier error preserves proof but emits instrument error",
+        "scoring pending never another attempt"
+      ],
+      "synthetic_test_ids": [
+        "T-KAT-SSH",
+        "T-KAT-WEBAUTHN",
+        "T-TRISTATE"
+      ],
+      "status": "QUALIFICATION_REQUIRED"
+    },
+    {
+      "id": "R15",
+      "area": "Exception-site coverage",
+      "rule": "Every future Python raise, subprocess exit, Node/client error and top-level handler mapped uniquely to owner re-prompt/event stop/abort/instrument/integrity/capability.",
+      "sources": [
+        "approved_successor"
+      ],
+      "evidence_requirements": [
+        "machine-diffable exhaustive source-site inventory zero unmatched",
+        "malformed owner input no integrity flag",
+        "unexpected intact-chain faults instrument"
+      ],
+      "synthetic_test_ids": [
+        "T-ERROR-SITE-INVENTORY",
+        "T-FAULT-INJECTION"
+      ],
+      "status": "QUALIFICATION_REQUIRED"
+    },
+    {
+      "id": "R16",
+      "area": "Evidence immutability",
+      "rule": "Exclusive claim, crash-atomic same-directory snapshot promotion and previous-final-file exact-byte hash links; owner final-head witness before scoring, absent witness disclosure only.",
+      "sources": [
+        "approved_successor",
+        "approved_policy"
+      ],
+      "evidence_requirements": [
+        "Windows no-overwrite behavior tested",
+        "independent witness count/hash only nonsecret",
+        "crash partial temp not final evidence"
+      ],
+      "synthetic_test_ids": [
+        "T-ATOMIC-SNAPSHOTS",
+        "T-HASH-CHAIN",
+        "T-WITNESS-DISCLOSURE"
+      ],
+      "status": "QUALIFICATION_REQUIRED"
+    },
+    {
+      "id": "R17",
+      "area": "Interruption",
+      "rule": "Ctrl+C ends entire consumed claimed attempt, including Node RP; event stop S does not stop process; no cross-process resumption or retry-to-green.",
+      "sources": [
+        "approved_successor",
+        "approved_policy"
+      ],
+      "evidence_requirements": [
+        "durable RP receipts before response",
+        "aborted event INCOMPLETE absent terminal record"
+      ],
+      "synthetic_test_ids": [
+        "T-CTRL-C-NODE",
+        "T-CTRL-C-SSH",
+        "T-NO-RESUME"
+      ],
+      "status": "QUALIFICATION_REQUIRED"
+    },
+    {
+      "id": "R18",
+      "area": "Finite stopping",
+      "rule": "Owner B02 accepted max two new claims 002 and at most independently approved exceptional 003; ALL_REQUIRED; no extra after PASS or integrity; explicit authorization each claim.",
+      "sources": [
+        "approved_policy",
+        "owner_decision"
+      ],
+      "evidence_requirements": [
+        "source/receipt SHA binding",
+        "no automatic retry from INVALID/AMEND/REOPEN",
+        "post-PASS no extra claim"
+      ],
+      "synthetic_test_ids": [
+        "T-CAP-EXCEPTIONS",
+        "T-NO-POST-PASS"
+      ],
+      "status": "QUALIFICATION_REQUIRED"
+    },
+    {
+      "id": "R19",
+      "area": "Secret separation",
+      "rule": "No owner private keys, passphrases, authenticator material or nonsecret receipt leak; read-only V02 source reference; new owner setup requires third approval.",
+      "sources": [
+        "family",
+        "approved_successor",
+        "owner_decision"
+      ],
+      "evidence_requirements": [
+        "test doubles isolated from owner-local keys",
+        "error/stdout/stderr may not capture sensitive native prompts"
+      ],
+      "synthetic_test_ids": [
+        "T-SECRET-REDACTION",
+        "T-OWNER-BOUNDARY"
+      ],
+      "status": "QUALIFICATION_REQUIRED"
+    },
+    {
+      "id": "R20",
+      "area": "Synthetic full run",
+      "rule": "Full A/B/C integrated dry-run with controls, proofs, transitions, trials, incomplete/fault branches, negative replay, independent scoring before exact source freeze/real owner use.",
+      "sources": [
+        "approved_successor"
+      ],
+      "evidence_requirements": [
+        "expected-outcome fixtures independent from implementation",
+        "qualified Windows and WebAuthn provenance",
+        "no production authority switch"
+      ],
+      "synthetic_test_ids": [
+        "T-SYNTHETIC-A-B-C",
+        "T-INDEPENDENT-SCORER"
+      ],
+      "status": "QUALIFICATION_REQUIRED"
+    },
+    {
+      "id": "R21",
+      "area": "Approval provenance",
+      "rule": "Human B01 and B02 distinct accepted receipt hashes; approved proposal is immutable even if stale draft flags remain; third future owner execution decision separate.",
+      "sources": [
+        "owner_decision",
+        "approved_policy"
+      ],
+      "evidence_requirements": [
+        "approved exact-file hashes checked",
+        "future manifest separates decision approval and executable freeze"
+      ],
+      "synthetic_test_ids": [
+        "T-APPROVAL-HASH",
+        "T-LIFECYCLE-GATES"
+      ],
+      "status": "QUALIFICATION_REQUIRED"
+    }
+  ],
+  "historical_artifacts": {
+    "experiments/r0_p01_owner_acceptance_v01/fixture.json": "177dc3d7d071dd4ed2d34bc87f92e33d448e05a475af5c23c97014b928649f68",
+    "experiments/r0_p01_owner_acceptance_v01/result_contract.json": "1f054d12e18499b36c26de79f9c94d5073c1d7978c68e62fc1f2b2b2725bd506",
+    "experiments/r0_p01_owner_acceptance_v01/legacy_volume_inventory_rule.json": "4b7c261fdcc1b6343f91ad3f76ce505fbbafffcc4a5bc81e377e8d1df0e26ac2",
+    "experiments/r0_p01_owner_acceptance_v01/harness.py": "0aede5baccaf88e176b3f6c53d69135953405c9f22416e23b017cbd1eb272846",
+    "experiments/r0_p01_owner_acceptance_v01/webauthn_server.mjs": "6ca17d7da0dbf65938ea7d9f98432ca200ca6233896f3895f10649a9bdc4edd8",
+    "experiments/r0_p01_owner_acceptance_v01/score.py": "9817febe60db6d68e3dd3887d0dbd2e5573fa398ef2398cd39ceccea7696509c",
+    "experiments/r0_p01_owner_acceptance_v01/implementation_contract_addendum_v02.md": "1d5344ad16498517c4178959d34d2c4966baa054d3ef1e1f5c75f4396dab0dd6"
+  }
+}
