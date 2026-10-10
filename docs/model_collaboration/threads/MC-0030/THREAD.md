@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / R0-P01 FIRST INHERITED CLAUSE AUDIT BATCH NEXT
+**Status:** OPEN / R0-P01 ONE-PROMPT REMAINING CLAUSE AUDIT NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -495,6 +495,19 @@ Next actor Claude / claude-04 for MC-0030 Message 033, batch Q0-AUDIT-001 (49 or
     PHASE=R0_P01_F1_INHERITED_AUDIT_BATCH001_PENDING
     NEXT_ACTOR=claude
     AUDIT_BATCH=Q0-AUDIT-001
+    F1=UNFROZEN
+    F2=UNFROZEN
+    ATTEMPT_002=NOT_AUTHORIZED
+
+## R0-P01 Batch 001 findings, one-prompt remainder audit
+
+Claude Message 033 committed at f3a01208e64eeae4a79bba24bada72e8e789ce03; 49/49 exact source IDs, 39 reviewer accepted, 10 pending. ChatGPT independently confirmed frozen control-design weaknesses C02 parser-only corruption, C09 unused metadata and C07 class A old ID grammar. Research 534 and Validation 223 distinguish this review from repaired security qualifications and prohibit retroactive scoring of Attempt 001. Proposed A1–A9 remediation remains prospective and unfrozen.
+
+The user's preference is **specific to high-volume audit batches**: ordinary manual ChatGPT–Claude relay is fine; do not make the user send 17 separate prompts for this one audit. Message 034 permits a single bounded, resumable Claude campaign over Q0-AUDIT-002..018 with per-batch SHA-bound message-only commits 035..051 and optional summary 052. Stop on real authority/identity/interpretation/tool blockers, not every normal pending mapping. All other collaboration authority and rules unchanged.
+
+    PHASE=R0_P01_REMAINING_CLAUSE_AUDIT_ONE_PROMPT_PENDING
+    NEXT_ACTOR=claude
+    START_BATCH=Q0-AUDIT-002
     F1=UNFROZEN
     F2=UNFROZEN
     ATTEMPT_002=NOT_AUTHORIZED

@@ -822,6 +822,13 @@ docs/research/533_r0_p01_message031_inherited_normative_inventory_and_f1_audit_g
 docs/local_execution/validation/222_r0_p01_f1_inherited_audit_inventory_guard_and_oracle_seed_checks.md
 docs/checkpoints/869_r0_p01_message031_reconciled_inherited_clause_audit_batch001_next.md
 docs/model_collaboration/threads/MC-0030/messages/032_chatgpt_r0_p01_message031_reconciliation_first_clause_audit_request.md
+docs/model_collaboration/threads/MC-0030/messages/033_claude_r0_p01_clause_audit_batch001.md
+docs/model_collaboration/threads/MC-0030/messages/034_chatgpt_r0_p01_message033_reconciliation_one_prompt_remaining_audit.md
+docs/research/534_r0_p01_message033_false_positive_security_controls_and_one_prompt_audit_plan.md
+docs/local_execution/validation/223_r0_p01_message033_receipt_check_and_c02_c09_c07_inspection.md
+docs/checkpoints/870_r0_p01_message033_security_control_false_positive_findings_one_prompt_audit.md
+scripts/check_r0_p01_clause_audit_receipts.py
+tests/unit/test_r0_p01_clause_audit_receipts.py
 docs/research/project_knowledge_activation_orchestration/AO10_SPEC028_RECONCILIATION_V01.json
 docs/checkpoints/570_whole_repository_physical_architecture_scope_clarified.md
 docs/checkpoints/571_whole_repository_r2_boundaries_identified.md
@@ -1535,7 +1542,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-869 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-870 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

@@ -3,7 +3,7 @@
   "thread_id": "MC-0030",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "OPEN",
-  "phase": "R0_P01_F1_INHERITED_AUDIT_BATCH001_PENDING",
+  "phase": "R0_P01_REMAINING_CLAUSE_AUDIT_ONE_PROMPT_PENDING",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -94,16 +94,17 @@
       "Human project owner explicitly accepted B01 and B02 in one message after Checkpoint 865. Research 530 / Validation 219 / Checkpoint 866 / Message 027 record separate approvals bound to exact REV04 approved bytes and source published HEAD 83619072f3c127b715252f909e042a7226b5780c. No owner Attempt 002 or implementation freeze authorized; Q0-Q5 synthetic qualification next.",
       "Research 531 / Validation 220 / Checkpoint 867 / ChatGPT Message 028 create unfrozen Q0 34-requirement source trace (13 controls), hash guard and 10 passing mutation tests; propose but do not freeze Q1 technical implementation boundary. Claude/claude-04 next for Message 029 bounded independent critique. No real credential or Attempt 002.",
       "Claude Message 029 committed 70018258 returned AMEND_Q0_Q1_BEFORE_FREEZE. ChatGPT Research 532 / Validation 221 / Checkpoint 868 / Message 030 accept Q-1/Q-2/Q-4 and P5 clarification, deliver 351 clause index/53 requirements/105 test catalogue and 17 static passing checks; semantic associations unreviewed (22 weak), B01 table 288 rows UNFROZEN, F1/F2 separately UNFROZEN.",
-      "Claude Message 031 at 313b1f4a independently recomputed 288/288 B01 predicate cases and returned AMEND_REV02_Q0_TARGETED. Research 533/Validation 222/Checkpoint 869/Message 032 prepare 1,022-unit inherited source audit in 18 batches, 117 planned-only test IDs and 31 unfrozen oracle seed cases with 12 passing structural/negative tests. No unit mapping independently approved; Claude reviewer cannot author blind oracle. Q0-AUDIT-001 49 V01 security-control units next."
+      "Claude Message 031 at 313b1f4a independently recomputed 288/288 B01 predicate cases and returned AMEND_REV02_Q0_TARGETED. Research 533/Validation 222/Checkpoint 869/Message 032 prepare 1,022-unit inherited source audit in 18 batches, 117 planned-only test IDs and 31 unfrozen oracle seed cases with 12 passing structural/negative tests. No unit mapping independently approved; Claude reviewer cannot author blind oracle. Q0-AUDIT-001 49 V01 security-control units next.",
+      "Claude Message 033 (f3a01208) independently audited 49 V01 controls: 39 reviewer ACCEPTED, 10 PENDING. ChatGPT accepted prospective remediations A1..A9 in Research 534, without F1 approval or source mutation. The 17 remaining batches (973 units) may be reviewed by Claude in one audit-specific bounded run, messages 035..051, optional 052, strict receipt checks and halt conditions. Claude cannot author the blind oracle or scorer."
     ],
-    "notes": "Current: R0_P01_F1_INHERITED_AUDIT_BATCH001_PENDING. B01/B02 approval immutable, F1/F2 both unfrozen; Claude Message 031 F-1..F-7 accepted at design level. 1,022 public source units, 18 SHA-bound audit batches, 117 test candidates, 31 numeric/B02 seeds; structural guard 12 negative tests PASS. Deep independent Claude audit begins batch 001, 49 inherited security-control units. Claude auditor not second blind oracle author. Attempt 001 remains permanent AMEND; real Attempt 002 needs third explicit future human execution approval. P02 PASS, P03 pending, physical target unselected."
+    "notes": "R0_P01_REMAINING_CLAUSE_AUDIT_ONE_PROMPT_PENDING. A1/C02 parser-only first-byte negative, A2/C09 inert no-op and A3/C07 old ID grammar are known test-sensitivity defects requiring prospective F1 remedy. 49 source units reviewed by claude-04, 39 ACCEPTED 10 PENDING. Remaining 17 audit batches may proceed from one user message, with per-batch message-only commits and mandatory stop on major blockers. Regular ChatGPT–Claude collaboration workflow unchanged. B01/B02 approved, F1/F2 unfrozen, Attempt 001 immutable AMEND, Attempt 002 not approved."
   },
   "last_transition": {
-    "transition_id": "mc0030-r0-p01-inherited-f1-clause-audit-first-batch",
+    "transition_id": "mc0030-r0-p01-remain-17-clause-batches-single-instruction",
     "from_state": "OPEN",
     "to_state": "OPEN",
     "actor": "chatgpt",
-    "reason": "Claude Message 031 semantic coverage findings reconciled with inherited V01/V02+REV04 public source inventory and explicit independent 18-batch audit. 12 static tests PASS; F1/F2 not frozen. Request Claude Message 033 batch 001 before any F1 approval.",
-    "repository_head": "313b1f4a4d1057360dbde0c59aa1d91868e5e341"
+    "reason": "One-off Claude autonomous remainder audit requested after Batch001 revealed control-test sensitivity gaps, with SHA-bound per-batch receipts, no expanded substantive authority, F1/F2 unfrozen.",
+    "repository_head": "f3a01208e64eeae4a79bba24bada72e8e789ce03"
   }
 }

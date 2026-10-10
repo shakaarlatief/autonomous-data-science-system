@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 869
+**Checkpoint:** 870
 **Date:** 2026-10-10
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,19 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: R0-P01 Message 031 reconciled; inherited clause-by-clause audit starts at batch 001
+## Current active stage: R0-P01 Message 033 reconciled; one-prompt remaining independent clause audit
+
+Checkpoint 870 / Research 534 / Validation 223 / MC-0030 Message 034 record Claude's independently committed and verified Batch 001 review. Its exact receipt covers **49/49** original V01 security-control units, with **39 reviewer ACCEPTED** and **10 PENDING** cases. Three formerly excluded preamble lines must become normative units. These are per-unit reviewer judgments, not executable security-test PASS results or task-owner semantic approval.
+
+Independent inspection confirms substantive control-test sensitivity gaps: frozen C02 first-byte mutation can be rejected structurally without exercising signature mathematics; frozen C09 adds unused in-memory metadata so it cannot detect whole-repository semantic-base binding; frozen C07 class A uses an old acceptance-ID grammar that the successor would reject structurally. Research 534 enumerates prospective A1–A9 and C05 amendments. All frozen V01/V02 source, approved B01/B02, old Attempt 001 evidence and outcome remain immutable. No repaired successor verifier or control test has run.
+
+The **remaining 17 batches / 973 units** are routed to a *single scoped Claude review campaign* with exact per-batch source hashes, full itemized receipts, bounded messages-only commits and explicit fail-closed halt rules. This avoids requiring the user to relay 17 ordinary batch prompts; it does **not** modify the general ChatGPT–Claude collaboration workflow. Script `scripts/check_r0_p01_clause_audit_receipts.py` provides read-only exact-batch receipt consistency checking; independent interpretation review by ChatGPT remains required before any approved F1 mapping. The current tally is **1/18 batches structurally receipted, 49/1022 units reviewed**, 39 ACCEPTED reviewer statuses and 10 PENDING. A batch containing truthful pending findings may be reviewed without being semantically cleared.
+
+F1 and F2 are **not frozen**; no owner Attempt 002 is authorized; the distinct third human execution approval remains mandatory after qualification. Original Attempt 001 AMEND, R0-P02 PASS, R0-P03 pending, physical architecture target unselected, Specification 028 and production authority unchanged. Next Claude Message 035 (batch 002), then autonomous batch-by-batch messages up to 051 if safely achievable, with optional Message 052 summary.
+
+---
+
+## Historical checkpoint 869 stage: R0-P01 Message 031 reconciled; inherited clause-by-clause audit starts at batch 001
 
 Checkpoint 869 / Research 533 / Validation 222 / MC-0030 Message 032 accept Claude Message 031's AMEND_REV02_Q0_TARGETED. The earlier 351-unit REV04-only inventory was structurally correct but **semantically incomplete**, omitting inherited security-control definitions, six normative policy roots, correct per-unit semantics, independence-qualified test metadata and numeric/volume/B02 oracles. The existing 288-row first-layer predicate table was independently recomputed 288/288 by Claude, but does **not** qualify final scorer oracles.
 
