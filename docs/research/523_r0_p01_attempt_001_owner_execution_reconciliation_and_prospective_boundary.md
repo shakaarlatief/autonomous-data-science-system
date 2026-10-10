@@ -4,6 +4,7 @@
 **Status:** OWNER ATTEMPT 001 PRESERVED / FROZEN SCORER AMEND / PROSPECTIVE TRIAGE NEXT
 **Parent:** Research 522 / Validation 214 / Checkpoint 858 / MC-0030 Message 015
 **Probe:** R0-P01, contract R0-P01-CONTRACT-V02
+**Scope:** Preserve the executed owner Attempt 001, exact immutable evidence, independent frozen scoring, owner feedback, and prospective R0-P01 AMEND boundary.
 **Candidate:** GOVERNED_LEDGER_KERNEL_V02, not selected as physical target
 **Authority:** Interpretation of completed owner observations only. No result-guided retroactive modification, re-execution, new attempt authorization, physical-target selection, production implementation, migration, Runtime Bridge extraction, Specification 028 amendment, or authority switch.
 **Interaction:** ChatGPT / chatgpt-37; owner-sensitive credential interactions performed solely by the human at native local prompts.
