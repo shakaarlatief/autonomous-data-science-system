@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 861
+**Checkpoint:** 862
 **Date:** 2026-10-10
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,17 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: R0-P01 Claude critique reconciled; prospective successor draft next
+## Current active stage: R0-P01 V03 unfrozen successor draft; independent peer critique next
+
+Checkpoint 862 / Research 526 / MC-0030 Message 020 present a complete *candidate* successor contract draft and machine-readable outcome/stopping policy. The draft sources are `docs/research/r0_p01_successor_design/R0_P01_CONTRACT_V03_UNFROZEN_DRAFT.md` and `R0_P01_OUTCOME_POLICY_V03_UNFROZEN_DRAFT.json`. This work is NOT a fixture/contract freeze, implementation authorization, start marker, fresh key generation or trial. It follows independent Claude Message 018 and ChatGPT's Research 525 / Message 019 reconciliation; original Attempt 001 remains immutable AMEND.
+
+The successor proposal keeps all original 13 controls, negative tests, 1/2/4/30 effects, the 60/120/120 mechanical limits, zero owner metadata edits, secret restrictions, projected volume and A/B/C selection semantics. It proposes a distinct Attempt 002 namespace, fresh owner-controlled keys, unique signed statement IDs, bounded SSH passphrase-unlock attempts under one proof/timer (WebAuthn native PIN retries remain opaque), fixed PRIMARY/RECOVERY procedural cues, browser-localhost safety, diagnostic timing and independent synthetic verifier known answers. **No cross-process resumption** is promised. A finite candidate stopping policy prevents automatic Attempt 003. The draft explicitly flags unresolved native Windows unlock-error classification, incomplete-run four-class taxonomy, browser/preflight and owner-consent requirements as blocking independent-review questions.
+
+Original owner evidence and old hash corrections remain as Research 523 / Validation 215 / Validation 216. Attempt 001 AMEND was not changed. Next: Claude / claude-04 bounded independent adversarial critique of Research 526 and the two drafts, then ChatGPT reconciliation. No physical target selected, R0-P02 PASS, R0-P03 pending, Specification 028 and unrelated scientific INCOMPLETE unchanged. No production implementation, migration, Runtime Bridge extraction or authority switch.
+
+---
+
+## Historical checkpoint 861 stage: R0-P01 Claude critique reconciled; prospective successor draft next
 
 Checkpoint 861 / Research 525 / Validation 216 / MC-0030 Message 019 reconcile Claude Message 018 (`AMEND_PROSPECTIVE_DIRECTION`) as ACCEPT_WITH_QUALIFICATIONS. The original immutable Attempt 001 remains `AMEND / VIABLE_PROOF_WITHOUT_FULL_ELIGIBILITY`: A 12/13 security controls PASS with recovery FAIL; S02 130.849 seconds above its frozen 120-second individual gate; B/C unqualified. No evidence, keys, marker, original scorer, or old contracts were modified.
 

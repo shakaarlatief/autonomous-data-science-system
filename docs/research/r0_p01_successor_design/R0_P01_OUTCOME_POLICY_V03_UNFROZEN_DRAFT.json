@@ -1,0 +1,116 @@
+{
+  "schema": "R0-P01-OUTCOME-POLICY-DRAFT-V03",
+  "status": "UNFROZEN_NOT_EXECUTABLE",
+  "authority": "CANDIDATE_ONLY_NOT_OWNER_AUTHORIZED",
+  "related_contract": "R0_P01_CONTRACT_V03_UNFROZEN_DRAFT.md",
+  "draft_date": "2026-10-10",
+  "predecessor": {
+    "id": "001",
+    "classification": "AMEND",
+    "reason": "VIABLE_PROOF_WITHOUT_FULL_ELIGIBILITY",
+    "immutable": true,
+    "security_control_recovery": "FAIL",
+    "S02_mechanical_seconds": 130.8491039001383
+  },
+  "successor_proposal": {
+    "attempt_id": "002",
+    "protocol": "R0-P01-V02",
+    "contract_revision": "R0-P01-CONTRACT-V03",
+    "marker_claimed": false,
+    "owner_approval": false,
+    "new_private_keys_created": false
+  },
+  "claim_cap": {
+    "old_started": 1,
+    "new_claims_permitted_only_after_separate_owner_approval": 1,
+    "no_default_attempt_003": true,
+    "exception_conditions": [
+      "new_falsifiable_hypothesis",
+      "bounded_governed_owner_decision",
+      "prospectively_changed_and_independently_reviewed_design",
+      "new_unreused_attempt_identity"
+    ]
+  },
+  "unchanged_eligibility": {
+    "security_controls_all_pass": 13,
+    "small_trials": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "large_trial": "L01",
+    "small_median_seconds_lte": 60,
+    "small_individual_seconds_lte": 120,
+    "large_seconds_lte": 120,
+    "manual_metadata_edits_eq": 0,
+    "secret_exposure_eq": false,
+    "acceptances_projected_max": 100,
+    "owner_mechanical_minutes_projected_max": 90,
+    "tiebreak_small_delta_seconds": 10,
+    "tiebreak_large_delta_seconds": 15,
+    "final_tiebreak": "B"
+  },
+  "run_dispositions": [
+    "COMPLETED_SCORED",
+    "TERMINATED_UNSCORED",
+    "ENVIRONMENT_PREFLIGHT_BLOCKED"
+  ],
+  "primary_scored_classifications": [
+    "INVALID",
+    "REOPEN",
+    "AMEND",
+    "PASS_WITH_SELECTION"
+  ],
+  "cases": [
+    {
+      "run": "COMPLETED_SCORED",
+      "class": "PASS_WITH_SELECTION",
+      "consequence": "QUALIFY_ONLY_UNDER_SUCCESSOR_FROZEN_CONTRACT;PRESERVE_001_AMEND;P03_AND_EXPLICIT_PHYSICAL_OWNER_DECISION_REQUIRED"
+    },
+    {
+      "run": "COMPLETED_SCORED",
+      "class": "AMEND",
+      "consequence": "STOP_NO_AUTOMATIC_003;GOVERNED_OWNER_DECISION_FOR_BOUNDED_NEW_HYPOTHESIS_OR_DEFERRAL"
+    },
+    {
+      "run": "COMPLETED_SCORED",
+      "class": "REOPEN",
+      "consequence": "REOPEN_LOAD_BEARING_OWNER_AUTHENTICITY_ASSUMPTIONS;STOP"
+    },
+    {
+      "run": "COMPLETED_SCORED",
+      "class": "INVALID",
+      "consequence": "PRESERVE_EVIDENCE;STOP;EXCEPTION_ONLY_AFTER_NEW_OWNER_AUTHORIZED_PROSPECTIVE_DEFECT_STUDY"
+    },
+    {
+      "run": "TERMINATED_UNSCORED",
+      "class": null,
+      "consequence": "PRESERVE_PARTIAL_EVIDENCE;NO_ARCHITECTURAL_INFERENCE_FROM_UNOBSERVED_ARM;NO_AUTOMATIC_RETRY"
+    },
+    {
+      "run": "ENVIRONMENT_PREFLIGHT_BLOCKED",
+      "class": null,
+      "consequence": "STOP_AND_QUALIFY_VERIFIER_ENVIRONMENT;IF_CLAIM_ALREADY_EXISTS_DO_NOT_RESET"
+    }
+  ],
+  "open_review_blockers": [
+    "NATIVE_WINDOWS_SSH_RECOVERABLE_UNLOCK_CLASSIFIER",
+    "RESEARCH_513_FOUR_CLASS_TAXONOMY_VERSUS_NO_RESULT",
+    "PREDECESSOR_STATEMENT_DIGEST_SET_COMPLETENESS",
+    "WEBAUTHN_NONCREDENTIAL_PREFLIGHT",
+    "OWNER_CONSENT_TO_FINITE_STOPPING_RULE",
+    "INCOMPLETE_ARM_EXECUTION_DISTINCTION",
+    "WINDOWS_SIGINT_AND_NO_RESUME_POLICY"
+  ],
+  "forbidden": [
+    "NO_CREDENTIAL_OPERATION",
+    "NO_REPAIR_OR_RESCORING_001",
+    "NO_POOLING_001_AND_002_PROOFS",
+    "NO_SILENT_GATE_CHANGES",
+    "NO_AUTOMATIC_003",
+    "NO_PRIVATE_KEY_OR_PASSPHRASE_ACCESS_BY_AGENT",
+    "NO_PHYSICAL_TARGET_SELECTION"
+  ],
+  "freeze_authorized": false,
+  "owner_execution_authorized": false
+}

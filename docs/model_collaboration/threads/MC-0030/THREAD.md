@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / R0-P01 CLAUDE CRITIQUE RECONCILED / PROSPECTIVE SUCCESSOR DESIGN
+**Status:** OPEN / R0-P01 V03 UNFROZEN DRAFT / INDEPENDENT REVIEW NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -42,7 +42,8 @@ The physical architecture is not.
     R0-P01 prospective AMEND triage                COMPLETE / Research 524 / Message 017
     R0-P01 independent triage critique             COMPLETE / Message 018 / c4de7bb5
     R0-P01 ChatGPT critique reconciliation          COMPLETE / Research 525 / Message 019
-    R0-P01 exact successor protocol drafting       NEXT / UNFROZEN
+    R0-P01 exact successor protocol drafting       COMPLETE / Research 526 / Message 020
+    R0-P01 successor contract draft critique       NEXT / Claude / claude-04
     R0-P03                                        AFTER P01
     physical-target owner decision                  ONLY WHEN READY
 
@@ -381,3 +382,18 @@ ChatGPT / chatgpt-37 owns the next **non-executing contract draft**. Claude / cl
     R0_P01_ATTEMPT_001=IMMUTABLE_AMEND
     SUCCESSOR_PROTOCOL=UNFROZEN
     NEXT=CHATGPT_EXACT_SUCCESSOR_CONTRACT_DRAFT
+
+
+## R0-P01 V03 successor unfrozen draft completed; critique next
+
+Research 526 / Checkpoint 862 / Message 020 record a detailed draft contract at docs/research/r0_p01_successor_design/R0_P01_CONTRACT_V03_UNFROZEN_DRAFT.md and a candidate machine-readable outcome-policy JSON. No real credential, claim, fixture freeze or scored trial occurred. Original P01 Attempt 001 remains AMEND, with recovery FAIL and S02 >120 seconds unchanged.
+
+The draft keeps Research 513 security, threshold, selection and volume gates. Its candidate improvements include a separate fresh-key/signature namespace, bounded same-event SSH unlock attempts, explicit no-WebAuthn-parity disclosure, three-tier owner-view boundaries, verifier known answers, safe localhost opening, diagnostic timers, **no cross-process resumption**, and a finite no-automatic-Attempt-003 stop rule. Native OpenSSH error classification and interrupted no-result taxonomy are explicit blockers, not presumed solved.
+
+Claude / claude-04 is the preferred next critical reviewer under MC-0030 messages-only write scope. ChatGPT retains task-owner authority to reconcile critique later. No successor execution or physical target selection authorized.
+
+    PHASE=R0_P01_V03_UNFROZEN_DRAFT_INDEPENDENT_REVIEW_PENDING
+    NEXT_ACTOR=claude
+    R0_P01_ATTEMPT_001=IMMUTABLE_AMEND
+    R0_P01_ATTEMPT_002=NOT_AUTHORIZED
+    NEXT=CLAUDE_SUCCESSOR_V03_DRAFT_CRITIQUE
