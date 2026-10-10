@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / R0-P01 V03 REV04 OWNER GOVERNANCE DECISIONS PENDING
+**Status:** OPEN / R0-P01 B01+B02 APPROVED / SUCCESSOR QUALIFICATION PREPARATION
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -47,7 +47,8 @@ The physical architecture is not.
     R0-P01 revised successor draft critique        COMPLETE / Message 023 / AMEND_REVISED_DRAFT
     R0-P01 REV03 targeted evidence-state review     COMPLETE / Message 025 / AMEND_REV03_TARGETED
     R0-P01 REV04 T1-T3 reconciliation             COMPLETE / Research 529 / Message 026
-    R0-P01 B01/B02 prefreeze decisions            NEXT / human owner
+    R0-P01 B01/B02 prefreeze decisions            COMPLETE / human ACCEPT_B01 + ACCEPT_B02
+    R0-P01 synthetic exact successor qualification  NEXT / ChatGPT task owner
     R0-P03                                        AFTER P01
     physical-target owner decision                  ONLY WHEN READY
 
@@ -439,4 +440,17 @@ The next actor is the human owner for **two separate governance choices**: B01 t
     NEXT_ACTOR=human
     B01=UNAPPROVED
     B02=UNAPPROVED
+    ATTEMPT_002=NOT_AUTHORIZED
+
+
+## B01 and B02 approved by human, prospective successor qualification preparation next
+
+The project owner explicitly replied ACCEPT_B01 and ACCEPT_B02. Research 530 / Validation 219 / Checkpoint 866 / Message 027 and separate owner acceptance records bind contract SHA-256 9160a30c481c1c67c2ec857238f5a04b44f618b2ef589ef4f1c514eb3b3d6175 and policy SHA-256 9b5bbc4d2c4802fc80b46bcaa3d003640c33e8e4784d39ef7995dbf193dff86c at published source parent 83619072f3c127b715252f909e042a7226b5780c.
+
+B01 is prospective Research 513 successor G1/G2 interpretation only, and B02 is exact finite stopping policy only. Neither authorizes a real Attempt 002 claim, SSH/WebAuthn owner credential action, signature, physical-target selection or project authority switch. Original Attempt 001 remains immutable AMEND. Next actor ChatGPT for Q0-Q5 separately versioned synthetic fixture/harness/scorer/Node and native-Windows qualification. A third distinct explicit human decision is required for any later real owner execution.
+
+    PHASE=R0_P01_B01_B02_OWNER_APPROVED_QUALIFICATION_PREPARATION
+    NEXT_ACTOR=chatgpt
+    B01=ACCEPTED
+    B02=ACCEPTED
     ATTEMPT_002=NOT_AUTHORIZED

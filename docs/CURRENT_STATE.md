@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 865
+**Checkpoint:** 866
 **Date:** 2026-10-10
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,19 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: R0-P01 V03 REV04 targeted reconciliation complete; two human prefreeze decisions pending
+## Current active stage: human B01/B02 accepted; prospective successor technical qualification preparation next
+
+Checkpoint 866 / Research 530 / Validation 219 / MC-0030 Message 027 record the project owner's explicit `ACCEPT_B01 and ACCEPT_B02` on 2026-10-10, as **two separate decisions**. B01 prospectively approves Research 513 R0-P01 G1/G2 evidence-state and mechanical INVALID interpretation for a newly frozen successor, **not** original Attempt 001. B02 approves the finite stopping policy, capped at two new claim events, with ALL_REQUIRED exceptional conditions, no automatic Attempt 003 and no post-PASS or same-policy post-INTEGRITY extra claim.
+
+The approved exact V03 REV04 contract SHA-256 is `9160a30c481c1c67c2ec857238f5a04b44f618b2ef589ef4f1c514eb3b3d6175`; exact policy SHA-256 is `9b5bbc4d2c4802fc80b46bcaa3d003640c33e8e4784d39ef7995dbf193dff86c`. Separate immutable owner decision records plus a machine-readable receipt reside under `docs/research/r0_p01_successor_design/`. The exact approved draft sources remain unchanged, including historical predecision `owner_stopping_policy_approved=false`; the new receipts supply later owner governance authority without breaking those hashes.
+
+**Next:** Research 530 Q0–Q5, a new exact prospective fixture/harness/scorer/Node contract, implementation under synthetic credentials, exhaustive source exception-site checks, Windows/OpenSSH/WebAuthn/Node and snapshot durability testing, full A/B/C synthetic qualification and independent review. No inherited project structure, branch/workflow, tooling or CI architecture is a constraint unless justified by the new technical task. **A distinct third explicit owner execution decision is required** before Attempt 002 marker, real new owner SSH keys, WebAuthn registration or real proof. The approved B01/B02 governance decisions do not authorize any of those operations.
+
+Attempt 001 remains permanently AMEND with old original raw snapshots, marker, owner-only private keys, frozen V02 implementation and independent backup preserved. R0-P02 PASS, R0-P03 pending, physical GOVERNED_LEDGER_KERNEL_V02 unselected, logical THIN_CENTRED_HYBRID_V03 selected, Specification 028 unchanged, scientific INCOMPLETE and project authority unchanged.
+
+---
+
+## Historical checkpoint 865 stage: R0-P01 V03 REV04 targeted reconciliation complete; two human prefreeze decisions pending
 
 Checkpoint 865 / Research 529 / Validation 218 / MC-0030 Message 026 reconcile Claude Message 025 (AMEND_REV03_TARGETED) and revise only the **unfrozen** successor V03 protocol/policy. WebAuthn NotAllowedError owner cancellations/timeouts are now terminal no-proof evidence when a matching durable consumed assertion receipt exists; NotSupportedError capability and other client/RP instrument failures remain distinct. The successor draft §8.6 explicitly separates malformed uncaptured owner input, genuine integrity violations, instrument/tool/Node failures and whole-attempt Ctrl+C. The V02 exception-to-integrity catch-all cannot be inherited unchanged. Each future implementation raise site must pass an independent exhaustive mapping audit. The scorer-derived evidence.final_head_witness_absent flag is disclosure-only, not a change to scored result, and eleven source/derived flag origins are specified.
 

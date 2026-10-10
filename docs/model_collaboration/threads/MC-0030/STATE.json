@@ -3,7 +3,7 @@
   "thread_id": "MC-0030",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "OPEN",
-  "phase": "R0_P01_V03_REV04_GOVERNED_PREFREEZE_OWNER_DECISIONS_PENDING",
+  "phase": "R0_P01_B01_B02_OWNER_APPROVED_QUALIFICATION_PREPARATION",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -51,7 +51,7 @@
       ]
     }
   ],
-  "next_expected_actor": "human",
+  "next_expected_actor": "chatgpt",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -90,16 +90,17 @@
       "Research 526 / Checkpoint 862 / MC-0030 Message 020 record a non-executing detailed V03 candidate protocol draft and machine-readable outcome policy. Claude may critique comparative draft, but original 001 remains AMEND; no successor approved. Unresolved native SSH classification, scoring taxonomy and owner consent are blockers.",
       "Claude Message 021 added at e431b4de as the sole change, with AMEND_DRAFT_BEFORE_FREEZE; Research 527 / Checkpoint 863 / ChatGPT Message 022 reconcile C1-C5 and revise only unfrozen V03 proposal. G1/G2 family-level and owner stopping-policy consent still unapproved. Next Claude revised-draft critique.",
       "Claude Message 023 reviewed REV02 and returned AMEND_REVISED_DRAFT. Research 528 / Validation 217 / Checkpoint 864 / ChatGPT Message 024 reconcile R1-R4 and R5-R9 prospectively, retaining all old P01 evidence. REV03 static nine-case checks pass; no harness qualification, Research 513 interpretation or owner consent yet.",
-      "Claude Message 025 at 1a331cf2 returned AMEND_REV03_TARGETED; Research 529 / Validation 218 / Checkpoint 865 / Message 026 reconcile T1-T3 prospectively into unfrozen V03 REV04. Fourteen static design cases pass, but no implementation/owner qualification. B01 Research 513 interpretation and B02 stopping policy remain explicit unapproved human decisions."
+      "Claude Message 025 at 1a331cf2 returned AMEND_REV03_TARGETED; Research 529 / Validation 218 / Checkpoint 865 / Message 026 reconcile T1-T3 prospectively into unfrozen V03 REV04. Fourteen static design cases pass, but no implementation/owner qualification. B01 Research 513 interpretation and B02 stopping policy remain explicit unapproved human decisions.",
+      "Human project owner explicitly accepted B01 and B02 in one message after Checkpoint 865. Research 530 / Validation 219 / Checkpoint 866 / Message 027 record separate approvals bound to exact REV04 approved bytes and source published HEAD 83619072f3c127b715252f909e042a7226b5780c. No owner Attempt 002 or implementation freeze authorized; Q0-Q5 synthetic qualification next."
     ],
-    "notes": "Current: R0_P01_V03_REV04_GOVERNED_PREFREEZE_OWNER_DECISIONS_PENDING. Exact unfrozen REV04 contract/policy and UNAPPROVED human decision packet published via Research 529 / Validation 218 / Checkpoint 865 / Message 026. Original Attempt 001 AMEND permanent. No Research 513 interpretation or stopping-policy approval. No new owner credential/trial/freeze/physical target. Human owner next for independent B01/B02 governance choices. P02 PASS, P03 pending, Specification 028 unchanged."
+    "notes": "Current: R0_P01_B01_B02_OWNER_APPROVED_QUALIFICATION_PREPARATION. Human ACCEPT_B01 and ACCEPT_B02 independently govern prospective successor Research 513 interpretation and exact finite policy. Accepted V03 REV04 source bytes untouched; separate receipts are human authority. Next ChatGPT Q0-Q5 precise prospective fixture and synthetic Windows SSH/WebAuthn/Node/scorer qualification; third explicit owner execution authorization mandatory. Original Attempt 001 AMEND, P02 PASS, P03 pending, physical target unselected, Specification 028 unchanged."
   },
   "last_transition": {
-    "transition_id": "mc0030-r0-p01-rev04-human-governance-next",
+    "transition_id": "mc0030-r0-p01-owner-b01-b02-accepted",
     "from_state": "OPEN",
     "to_state": "OPEN",
-    "actor": "chatgpt",
-    "reason": "Research 529 / Validation 218 / Checkpoint 865 / Message 026 complete targeted Claude 025 T1-T3 prospective reconciliation and route independent B01/B02 prefreeze policy decisions to human, without any trial authorization.",
-    "repository_head": "1a331cf2997a2048a2209d89053e1dd6ea2b45ba"
+    "actor": "human",
+    "reason": "Human explicitly accepted both independent B01 and B02 prospective governance decisions. Task owner recorded Research 530, Validation 219, Checkpoint 866 and Message 027; real owner Attempt 002 still prohibited.",
+    "repository_head": "83619072f3c127b715252f909e042a7226b5780c"
   }
 }
