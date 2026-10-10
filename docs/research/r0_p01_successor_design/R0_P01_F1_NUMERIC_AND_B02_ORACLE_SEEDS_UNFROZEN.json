@@ -1,0 +1,498 @@
+{
+  "schema_version": 1,
+  "status": "F1_DATA_ORACLE_BOUNDARY_SEEDS_ONLY_UNFROZEN",
+  "authority": "Candidate independently reviewable expected vectors, NOT frozen oracle or executable scorer",
+  "approved_policy_sha256": "9b5bbc4d2c4802fc80b46bcaa3d003640c33e8e4784d39ef7995dbf193dff86c",
+  "derivation": "Frozen result contract selection semantics, original 97-volume count, accepted prospective B01/B02",
+  "selected_arm_volume_median_ceiling_exact": "5400/97",
+  "numeric_comparison": "Exact mathematical rational representation, future runtime IEEE-754 normalization separately qualified",
+  "selection_and_volume_seeds": [
+    {
+      "id": "SEL-001",
+      "precondition": "BOTH_ARMS_SELECTION_ELIGIBLE",
+      "A": {
+        "median_small_seconds": "54",
+        "large_seconds": "70"
+      },
+      "B": {
+        "median_small_seconds": "58",
+        "large_seconds": "72"
+      },
+      "projected_acceptances": 97,
+      "frozen_selection": "B",
+      "selected_projected_minutes_exact": "2813/30",
+      "volume_gate_90min_pass": false,
+      "expected_class": "AMEND",
+      "explanation": "B selected by frozen B tie-break then fails selected-arm 90-minute gate even though A would pass"
+    },
+    {
+      "id": "SEL-002",
+      "precondition": "BOTH_ARMS_SELECTION_ELIGIBLE",
+      "A": {
+        "median_small_seconds": "50",
+        "large_seconds": "70"
+      },
+      "B": {
+        "median_small_seconds": "60",
+        "large_seconds": "72"
+      },
+      "projected_acceptances": 97,
+      "frozen_selection": "A",
+      "selected_projected_minutes_exact": "485/6",
+      "volume_gate_90min_pass": true,
+      "expected_class": "PASS_WITH_SELECTION",
+      "explanation": "Exactly 10 seconds small delta selects A, equality qualifies material difference"
+    },
+    {
+      "id": "SEL-003",
+      "precondition": "BOTH_ARMS_SELECTION_ELIGIBLE",
+      "A": {
+        "median_small_seconds": "55",
+        "large_seconds": "85"
+      },
+      "B": {
+        "median_small_seconds": "50",
+        "large_seconds": "70"
+      },
+      "projected_acceptances": 97,
+      "frozen_selection": "B",
+      "selected_projected_minutes_exact": "485/6",
+      "volume_gate_90min_pass": true,
+      "expected_class": "PASS_WITH_SELECTION",
+      "explanation": "Small delta 5 then exact 15 large delta selects B"
+    },
+    {
+      "id": "SEL-004",
+      "precondition": "BOTH_ARMS_SELECTION_ELIGIBLE",
+      "A": {
+        "median_small_seconds": "50",
+        "large_seconds": "70"
+      },
+      "B": {
+        "median_small_seconds": "55",
+        "large_seconds": "85"
+      },
+      "projected_acceptances": 97,
+      "frozen_selection": "A",
+      "selected_projected_minutes_exact": "485/6",
+      "volume_gate_90min_pass": true,
+      "expected_class": "PASS_WITH_SELECTION",
+      "explanation": "Small delta 5 then exact 15 large delta selects A"
+    },
+    {
+      "id": "SEL-005",
+      "precondition": "BOTH_ARMS_SELECTION_ELIGIBLE",
+      "A": {
+        "median_small_seconds": "54",
+        "large_seconds": "75"
+      },
+      "B": {
+        "median_small_seconds": "55",
+        "large_seconds": "74"
+      },
+      "projected_acceptances": 97,
+      "frozen_selection": "B",
+      "selected_projected_minutes_exact": "1067/12",
+      "volume_gate_90min_pass": true,
+      "expected_class": "PASS_WITH_SELECTION",
+      "explanation": "Both deltas below thresholds, B tie-break, B volume under limit"
+    },
+    {
+      "id": "SEL-006",
+      "precondition": "BOTH_ARMS_SELECTION_ELIGIBLE",
+      "A": {
+        "median_small_seconds": "55",
+        "large_seconds": "70"
+      },
+      "B": {
+        "median_small_seconds": "56",
+        "large_seconds": "70"
+      },
+      "projected_acceptances": 97,
+      "frozen_selection": "B",
+      "selected_projected_minutes_exact": "1358/15",
+      "volume_gate_90min_pass": false,
+      "expected_class": "AMEND",
+      "explanation": "Both eligible, B tie-break but selected median 56 exceeds 5400/97"
+    },
+    {
+      "id": "SEL-007",
+      "precondition": "BOTH_ARMS_SELECTION_ELIGIBLE",
+      "A": {
+        "median_small_seconds": "50",
+        "large_seconds": "50"
+      },
+      "B": {
+        "median_small_seconds": "60",
+        "large_seconds": "50"
+      },
+      "projected_acceptances": 97,
+      "frozen_selection": "A",
+      "selected_projected_minutes_exact": "485/6",
+      "volume_gate_90min_pass": true,
+      "expected_class": "PASS_WITH_SELECTION",
+      "explanation": "Exactly 10 seconds small boundary selects A despite large tie"
+    }
+  ],
+  "viability_eligibility_seeds": [
+    {
+      "id": "ELIG-BASE",
+      "small": [
+        "55",
+        "55",
+        "55"
+      ],
+      "large": "120",
+      "infra_receipt": "NONE",
+      "controls_1_to_13": "ALL_PASS",
+      "successes": "S01_S02_S03_L01",
+      "friction_rating": 3,
+      "note": "",
+      "expected_viable": true,
+      "expected_eligible": true
+    },
+    {
+      "id": "ELIG-MEDIAN-EQUAL-60",
+      "small": [
+        "60",
+        "60",
+        "60"
+      ],
+      "large": "120",
+      "infra_receipt": "NONE",
+      "expected_viable": true,
+      "expected_eligible": true
+    },
+    {
+      "id": "ELIG-MEDIAN-ABOVE-60",
+      "small": [
+        "60.000001",
+        "60.000001",
+        "60.000001"
+      ],
+      "large": "120",
+      "infra_receipt": "NONE",
+      "expected_viable": true,
+      "expected_eligible": false
+    },
+    {
+      "id": "ELIG-SMALL-EQUAL-120",
+      "small": [
+        "50",
+        "50",
+        "120"
+      ],
+      "large": "120",
+      "infra_receipt": "NONE",
+      "expected_viable": true,
+      "expected_eligible": true
+    },
+    {
+      "id": "ELIG-SMALL-OVER-120",
+      "small": [
+        "50",
+        "50",
+        "120.000001"
+      ],
+      "large": "120",
+      "infra_receipt": "NONE",
+      "expected_viable": true,
+      "expected_eligible": false
+    },
+    {
+      "id": "ELIG-SMALL-OVER-120-QUALIFIED-INFRA",
+      "small": [
+        "50",
+        "50",
+        "120.000001"
+      ],
+      "large": "120",
+      "infra_receipt": "CONTEMPORANEOUS_QUALIFIED_FOR_S03",
+      "expected_viable": true,
+      "expected_eligible": true
+    },
+    {
+      "id": "ELIG-LARGE-OVER-120-INFRA-IRRELEVANT",
+      "small": [
+        "50",
+        "50",
+        "50"
+      ],
+      "large": "120.000001",
+      "infra_receipt": "CONTEMPORANEOUS_QUALIFIED_FOR_L01",
+      "expected_viable": true,
+      "expected_eligible": false
+    },
+    {
+      "id": "ELIG-NULL-SMALL",
+      "small": [
+        "50",
+        null,
+        "50"
+      ],
+      "large": "100",
+      "infra_receipt": "NONE",
+      "expected_viable": true,
+      "expected_eligible": false
+    },
+    {
+      "id": "ELIG-FRICTION-NOTE-EMPTY",
+      "small": [
+        "55",
+        "55",
+        "55"
+      ],
+      "large": "90",
+      "infra_receipt": "NONE",
+      "friction_rating": 4,
+      "note": "",
+      "expected_viable": true,
+      "expected_eligible": true
+    },
+    {
+      "id": "ELIG-FRICTION-RATING-MISSING",
+      "small": [
+        "55",
+        "55",
+        "55"
+      ],
+      "large": "90",
+      "infra_receipt": "NONE",
+      "friction_rating": null,
+      "note": "some note",
+      "expected_viable": true,
+      "expected_eligible": false
+    },
+    {
+      "id": "ELIG-CONTROL-11-FAIL",
+      "small": [
+        "55",
+        "55",
+        "55"
+      ],
+      "large": "90",
+      "infra_receipt": "NONE",
+      "controls_1_to_10": "ALL_PASS",
+      "control_11": "FAIL",
+      "expected_viable": true,
+      "expected_eligible": false
+    },
+    {
+      "id": "ELIG-CONTROL-10-FAIL",
+      "small": [
+        "55",
+        "55",
+        "55"
+      ],
+      "large": "90",
+      "infra_receipt": "NONE",
+      "controls_1_to_9": "ALL_PASS",
+      "control_10": "FAIL",
+      "expected_viable": false,
+      "expected_eligible": false
+    }
+  ],
+  "B02_claim_stopping_seeds": [
+    {
+      "id": "STOP-001",
+      "claim_state": "BEFORE_CLAIM_DECLINED",
+      "new_claims_used": 0,
+      "previous_primary_class": "NOT_RUN_PRECLAIM",
+      "previous_reason": "NONE",
+      "hypothesis_type": "NONE",
+      "exception_conditions": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "expected_next_action": "NO_CLAIM_STARTED"
+    },
+    {
+      "id": "STOP-002",
+      "claim_state": "AFTER_CLAIM",
+      "new_claims_used": 1,
+      "previous_primary_class": "PASS_WITH_SELECTION",
+      "previous_reason": "NONE",
+      "hypothesis_type": "NONE",
+      "exception_conditions": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "expected_next_action": "NO_FURTHER_CLAIM"
+    },
+    {
+      "id": "STOP-003",
+      "claim_state": "AFTER_CLAIM",
+      "new_claims_used": 1,
+      "previous_primary_class": "INVALID",
+      "previous_reason": "INVALID_INTEGRITY",
+      "hypothesis_type": "INSTRUMENT_REPAIR",
+      "exception_conditions": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "expected_next_action": "NO_EXCEPTION"
+    },
+    {
+      "id": "STOP-004",
+      "claim_state": "AFTER_CLAIM",
+      "new_claims_used": 2,
+      "previous_primary_class": "INVALID",
+      "previous_reason": "INVALID_INSTRUMENT",
+      "hypothesis_type": "INSTRUMENT_REPAIR",
+      "exception_conditions": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "expected_next_action": "ABSOLUTE_CAP_DENIES"
+    },
+    {
+      "id": "STOP-005",
+      "claim_state": "AFTER_CLAIM",
+      "new_claims_used": 1,
+      "previous_primary_class": "INVALID",
+      "previous_reason": "INVALID_INSTRUMENT",
+      "hypothesis_type": "INSTRUMENT_REPAIR",
+      "exception_conditions": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "expected_next_action": "REQUIRES_SEPARATE_OWNER_GOVERNED_EXCEPTION"
+    },
+    {
+      "id": "STOP-006",
+      "claim_state": "AFTER_CLAIM",
+      "new_claims_used": 1,
+      "previous_primary_class": "INVALID",
+      "previous_reason": "INVALID_INSTRUMENT",
+      "hypothesis_type": "INSTRUMENT_REPAIR",
+      "exception_conditions": [
+        true,
+        true,
+        true,
+        true,
+        false
+      ],
+      "expected_next_action": "ALL_REQUIRED_NOT_MET"
+    },
+    {
+      "id": "STOP-007",
+      "claim_state": "AFTER_CLAIM",
+      "new_claims_used": 1,
+      "previous_primary_class": "AMEND",
+      "previous_reason": "NONE",
+      "hypothesis_type": "NEW_FALSIFIABLE_MECHANISM",
+      "exception_conditions": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "expected_next_action": "REQUIRES_SEPARATE_OWNER_GOVERNED_EXCEPTION"
+    },
+    {
+      "id": "STOP-008",
+      "claim_state": "AFTER_CLAIM",
+      "new_claims_used": 1,
+      "previous_primary_class": "AMEND",
+      "previous_reason": "NONE",
+      "hypothesis_type": "SAME_MECHANISM_RETRY",
+      "exception_conditions": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "expected_next_action": "RETRY_TO_GREEN_DENIED"
+    },
+    {
+      "id": "STOP-009",
+      "claim_state": "AFTER_CLAIM",
+      "new_claims_used": 1,
+      "previous_primary_class": "REOPEN",
+      "previous_reason": "NONE",
+      "hypothesis_type": "NEW_FALSIFIABLE_MECHANISM",
+      "exception_conditions": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "expected_next_action": "REQUIRES_SEPARATE_OWNER_GOVERNED_EXCEPTION"
+    },
+    {
+      "id": "STOP-010",
+      "claim_state": "AFTER_CLAIM",
+      "new_claims_used": 1,
+      "previous_primary_class": "INVALID",
+      "previous_reason": "INVALID_INCOMPLETE",
+      "hypothesis_type": "NEW_FALSIFIABLE_MECHANISM",
+      "exception_conditions": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "expected_next_action": "REQUIRES_SEPARATE_OWNER_GOVERNED_EXCEPTION"
+    },
+    {
+      "id": "STOP-011",
+      "claim_state": "AFTER_CLAIM",
+      "new_claims_used": 1,
+      "previous_primary_class": "AMEND",
+      "previous_reason": "NONE",
+      "hypothesis_type": "NEW_FALSIFIABLE_MECHANISM",
+      "exception_conditions": [
+        true,
+        true,
+        true,
+        false,
+        true
+      ],
+      "expected_next_action": "ALL_REQUIRED_NOT_MET"
+    },
+    {
+      "id": "STOP-012",
+      "claim_state": "AFTER_CLAIM",
+      "new_claims_used": 1,
+      "previous_primary_class": "PASS_WITH_SELECTION_G2",
+      "previous_reason": "NONE",
+      "hypothesis_type": "NEW_FALSIFIABLE_MECHANISM",
+      "exception_conditions": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "expected_next_action": "NO_FURTHER_CLAIM"
+    }
+  ],
+  "omissions": [
+    "Full per-control per-arm set of PASS/FAIL/UNEXECUTED combinations not yet enumerated",
+    "Error flag causality/evidence-state receipts not yet fully modeled",
+    "Full B02 stopping policy table not yet exhaustive",
+    "Exact numeric output/golden canonical JSON serialization not yet F1 qualified"
+  ],
+  "F1_frozen": false,
+  "expected_oracle_independent_reviewer_approved": false,
+  "owner_attempt_002_authorized": false
+}

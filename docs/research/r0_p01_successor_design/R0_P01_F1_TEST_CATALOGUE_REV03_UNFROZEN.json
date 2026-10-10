@@ -1,0 +1,1434 @@
+{
+  "schema_version": 1,
+  "status": "F1_F2_TEST_CONTRACT_CANDIDATE_UNREVIEWED_UNFROZEN",
+  "source_trace": "R0_P01_Q0_REQUIREMENTS_TRACE_REV02_UNFROZEN.json",
+  "provenance": "Clauses inherited from V01/V02 and REV04, plus Claude Message 031 findings F-3/F-4/F-5/F-6/F-7",
+  "meaning_expected_value_origin": "Proposed independently authored source of expected answer; REVIEW_PENDING is not an actual verified vector",
+  "meaning_must_not_derive_from": "Source modules the expectation/oracle cannot read or import; modules under test may be executed by the test",
+  "independent_expected_vectors_exist": false,
+  "author_roles": {
+    "clause_semantic_auditor": "claude-04; shall not author independent golden implementation",
+    "primary_implementation": "Future separately versioned implementation by ChatGPT orchestration and a primary coding agent; no implementation started",
+    "blind_golden_oracle": "Future separately prompted/isolated coding agent or different collaborator, no exposure to primary implementation source or outputs until oracle commit",
+    "scorer_implementation": "Future independent implementation isolated by static import graph and crypto negatives, not yet assigned",
+    "role_attestations_required_before_F1": true
+  },
+  "tests": [
+    {
+      "test_id": "T-APPROVAL-HASH",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-ARM-IDENTITY",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-ATOMIC-SNAPSHOTS",
+      "layer": "WINDOWS_NATIVE",
+      "expected_value_origin": "F1_INDEPENDENT_SECURITY_CONTROL_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner",
+        "p01_rp"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-B-P5-TARGET-DEPENDENCY",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-B-RECOVERY-DEPENDENCY",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-C-EXACT",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-C-NONSELECTABLE",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-C-RECEIPT",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-CAP-EXCEPTIONS",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-CATALOGUE-BIDIRECTIONAL",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-CLAIM-BINDING",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-CLAUSE-COVERAGE",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-CONSULT-BEFORE-DECISION",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-CONTROL-KEY-BINDING",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-CROSS-ARM-REPLAY",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-CTRL-01",
+      "layer": "INTEGRATED_SYNTHETIC",
+      "expected_value_origin": "F1_INDEPENDENT_SECURITY_CONTROL_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner",
+        "p01_rp"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-CTRL-02",
+      "layer": "INTEGRATED_SYNTHETIC",
+      "expected_value_origin": "F1_INDEPENDENT_SECURITY_CONTROL_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner",
+        "p01_rp"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-CTRL-03",
+      "layer": "INTEGRATED_SYNTHETIC",
+      "expected_value_origin": "F1_INDEPENDENT_SECURITY_CONTROL_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner",
+        "p01_rp"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-CTRL-04",
+      "layer": "INTEGRATED_SYNTHETIC",
+      "expected_value_origin": "F1_INDEPENDENT_SECURITY_CONTROL_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner",
+        "p01_rp"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-CTRL-05",
+      "layer": "INTEGRATED_SYNTHETIC",
+      "expected_value_origin": "F1_INDEPENDENT_SECURITY_CONTROL_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner",
+        "p01_rp"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-CTRL-06",
+      "layer": "INTEGRATED_SYNTHETIC",
+      "expected_value_origin": "F1_INDEPENDENT_SECURITY_CONTROL_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner",
+        "p01_rp"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-CTRL-07",
+      "layer": "INTEGRATED_SYNTHETIC",
+      "expected_value_origin": "F1_INDEPENDENT_SECURITY_CONTROL_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner",
+        "p01_rp"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-CTRL-08",
+      "layer": "INTEGRATED_SYNTHETIC",
+      "expected_value_origin": "F1_INDEPENDENT_SECURITY_CONTROL_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner",
+        "p01_rp"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-CTRL-09",
+      "layer": "INTEGRATED_SYNTHETIC",
+      "expected_value_origin": "F1_INDEPENDENT_SECURITY_CONTROL_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner",
+        "p01_rp"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-CTRL-10",
+      "layer": "INTEGRATED_SYNTHETIC",
+      "expected_value_origin": "F1_INDEPENDENT_SECURITY_CONTROL_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner",
+        "p01_rp"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-CTRL-11",
+      "layer": "INTEGRATED_SYNTHETIC",
+      "expected_value_origin": "F1_INDEPENDENT_SECURITY_CONTROL_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner",
+        "p01_rp"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-CTRL-12",
+      "layer": "INTEGRATED_SYNTHETIC",
+      "expected_value_origin": "F1_INDEPENDENT_SECURITY_CONTROL_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner",
+        "p01_rp"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-CTRL-13",
+      "layer": "INTEGRATED_SYNTHETIC",
+      "expected_value_origin": "F1_INDEPENDENT_SECURITY_CONTROL_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner",
+        "p01_rp"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-CTRL-C-NODE",
+      "layer": "WINDOWS_NATIVE",
+      "expected_value_origin": "F1_INDEPENDENT_SECURITY_CONTROL_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner",
+        "p01_rp"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-CTRL-C-SSH",
+      "layer": "WINDOWS_NATIVE",
+      "expected_value_origin": "F1_INDEPENDENT_SECURITY_CONTROL_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner",
+        "p01_rp"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-DECISION-TABLE-EXHAUSTIVE",
+      "layer": "SCORER_ORACLE",
+      "expected_value_origin": "F1_SEPARATELY_REVIEWED_DECISION_OR_CRYPTO_ORACLE_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_score"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-DEPENDENCY-ABSENT",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-DEPENDENCY-HASHES",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-DOMAIN-REPLAY",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-ELIGIBILITY",
+      "layer": "PURE",
+      "expected_value_origin": "F1_SEPARATELY_REVIEWED_DECISION_OR_CRYPTO_ORACLE_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_score"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-ERROR-SITE-INVENTORY",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-EVENT-CONTINUATION",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-EVIDENCE-CANCEL",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-EVIDENCE-G1",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-F1-F2-BINDING",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-FAULT-INJECTION",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-FLAG-PRECEDENCE",
+      "layer": "PURE",
+      "expected_value_origin": "F1_SEPARATELY_REVIEWED_DECISION_OR_CRYPTO_ORACLE_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_score"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-G1-G2-TABLE",
+      "layer": "PURE",
+      "expected_value_origin": "F1_SEPARATELY_REVIEWED_DECISION_OR_CRYPTO_ORACLE_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_score"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-GUARD-BLOB-BASIS",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-GUARD-KAT",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-HASH-CHAIN",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-HISTORICAL-DIGESTS",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-INDEPENDENT-SCORER",
+      "layer": "SCORER_ORACLE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-INPUT-REPROMPT",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-INTERACTION-FLOOR",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-INVENTORY-FROZEN",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-KAT-SSH",
+      "layer": "INTEGRATED_SYNTHETIC",
+      "expected_value_origin": "F1_FIXED_SCENARIO_NEGATIVE_ORACLE_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner",
+        "p01_rp"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-KAT-WEBAUTHN",
+      "layer": "INTEGRATED_SYNTHETIC",
+      "expected_value_origin": "F1_FIXED_SCENARIO_NEGATIVE_ORACLE_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner",
+        "p01_rp"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-LANDMARKS",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-LIFECYCLE-GATES",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-NO-POOL",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-NO-POST-PASS",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-NO-RESUME",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-OLD-PUBLIC-ID",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-OWNER-BOUNDARY",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-OWNER-INPUT",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-PAUSE-ABORT",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-PRACTICE-DISCLOSE",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-PRECLAIM-API",
+      "layer": "BROWSER_VIRTUAL",
+      "expected_value_origin": "F1_INDEPENDENT_WEBAUTHN_EXPECTED_VECTORS_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_rp",
+        "p01_core"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-PRECLAIM-REACHABILITY",
+      "layer": "BROWSER_VIRTUAL",
+      "expected_value_origin": "F1_INDEPENDENT_WEBAUTHN_EXPECTED_VECTORS_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_rp",
+        "p01_core"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-PRECLAIM-UA",
+      "layer": "BROWSER_VIRTUAL",
+      "expected_value_origin": "F1_INDEPENDENT_WEBAUTHN_EXPECTED_VECTORS_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_rp",
+        "p01_core"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-RENDER-GOLDEN",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-RP-STREAM-CROSSCHAIN",
+      "layer": "INTEGRATED_SYNTHETIC",
+      "expected_value_origin": "F1_INDEPENDENT_SECURITY_CONTROL_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner",
+        "p01_rp"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-SCORER-DETERMINISM-XOS",
+      "layer": "SCORER_ORACLE",
+      "expected_value_origin": "F1_SEPARATELY_REVIEWED_DECISION_OR_CRYPTO_ORACLE_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_score"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-SCORER-IMPORT-ISOLATION",
+      "layer": "SCORER_ORACLE",
+      "expected_value_origin": "F1_SEPARATELY_REVIEWED_DECISION_OR_CRYPTO_ORACLE_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_score"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-SCORER-PRECEDENCE",
+      "layer": "SCORER_ORACLE",
+      "expected_value_origin": "F1_SEPARATELY_REVIEWED_DECISION_OR_CRYPTO_ORACLE_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_score"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-SECRET-REDACTION",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-SECURITY-NONACCEPT",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-SELECTION-TIE",
+      "layer": "PURE",
+      "expected_value_origin": "F1_SEPARATELY_REVIEWED_DECISION_OR_CRYPTO_ORACLE_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_score"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-SSH-ABORT",
+      "layer": "WINDOWS_NATIVE",
+      "expected_value_origin": "F1_INDEPENDENT_SECURITY_CONTROL_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner",
+        "p01_rp"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-SSH-PROMPT",
+      "layer": "WINDOWS_NATIVE",
+      "expected_value_origin": "F1_INDEPENDENT_SECURITY_CONTROL_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner",
+        "p01_rp"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-SSH-RETRY-PRECONDITION",
+      "layer": "WINDOWS_NATIVE",
+      "expected_value_origin": "F1_INDEPENDENT_SECURITY_CONTROL_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner",
+        "p01_rp"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-SSHSIG-INPROCESS-VERIFY",
+      "layer": "SCORER_ORACLE",
+      "expected_value_origin": "F1_SEPARATELY_REVIEWED_DECISION_OR_CRYPTO_ORACLE_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_score"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-STATEMENT-GOLDEN",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-SYNTHETIC-A-B-C",
+      "layer": "INTEGRATED_SYNTHETIC",
+      "expected_value_origin": "F1_FIXED_SCENARIO_NEGATIVE_ORACLE_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner",
+        "p01_rp"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-SYNTHETIC-SECRET-SCAN",
+      "layer": "INTEGRATED_SYNTHETIC",
+      "expected_value_origin": "F1_FIXED_SCENARIO_NEGATIVE_ORACLE_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner",
+        "p01_rp"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-TARGET-MACHINE-SYNTHETIC",
+      "layer": "OWNER_MACHINE_MANUAL",
+      "expected_value_origin": "F2_REAL_SYNTHETIC_WINDOWS_RECEIPT_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_rp",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-TEMPLATE-REINSTANTIATE",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-TIMER-BOUNDARY",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-TIMING-BOUNDARY",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-TIMING-GATES",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-TRANSITION-STATE",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-TRIAL-CORPUS",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-TRISTATE",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-VECTOR-NVERSION",
+      "layer": "SCORER_ORACLE",
+      "expected_value_origin": "F1_TWO_BLINDLY_AUTHORED_BYTE_VECTORS_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-VIEW-MUTATION",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-VOLUME-GATE",
+      "layer": "PURE",
+      "expected_value_origin": "F1_SEPARATELY_REVIEWED_DECISION_OR_CRYPTO_ORACLE_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_score"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-WEB-CANCEL",
+      "layer": "BROWSER_VIRTUAL",
+      "expected_value_origin": "F1_INDEPENDENT_WEBAUTHN_EXPECTED_VECTORS_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_rp",
+        "p01_core"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-WEB-CAPABILITY",
+      "layer": "BROWSER_VIRTUAL",
+      "expected_value_origin": "F1_INDEPENDENT_WEBAUTHN_EXPECTED_VECTORS_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_rp",
+        "p01_core"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-WEB-CHALLENGE",
+      "layer": "BROWSER_VIRTUAL",
+      "expected_value_origin": "F1_INDEPENDENT_WEBAUTHN_EXPECTED_VECTORS_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_rp",
+        "p01_core"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-WEB-FAULT",
+      "layer": "BROWSER_VIRTUAL",
+      "expected_value_origin": "F1_INDEPENDENT_WEBAUTHN_EXPECTED_VECTORS_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_rp",
+        "p01_core"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-WEB-FOREIGN-CRED",
+      "layer": "BROWSER_VIRTUAL",
+      "expected_value_origin": "F1_INDEPENDENT_WEBAUTHN_EXPECTED_VECTORS_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_rp",
+        "p01_core"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-WEB-PRESENCE-TIMEOUT",
+      "layer": "BROWSER_VIRTUAL",
+      "expected_value_origin": "F1_INDEPENDENT_WEBAUTHN_EXPECTED_VECTORS_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_rp",
+        "p01_core"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-WEB-RP",
+      "layer": "BROWSER_VIRTUAL",
+      "expected_value_origin": "F1_INDEPENDENT_WEBAUTHN_EXPECTED_VECTORS_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_rp",
+        "p01_core"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-WEB-UV-FALSE",
+      "layer": "BROWSER_VIRTUAL",
+      "expected_value_origin": "F1_INDEPENDENT_WEBAUTHN_EXPECTED_VECTORS_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_rp",
+        "p01_core"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-WEB-VIRTUAL",
+      "layer": "BROWSER_VIRTUAL",
+      "expected_value_origin": "F1_INDEPENDENT_WEBAUTHN_EXPECTED_VECTORS_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_rp",
+        "p01_core"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-WIN-CONPTY-SSH",
+      "layer": "WINDOWS_NATIVE",
+      "expected_value_origin": "F2_REAL_SYNTHETIC_WINDOWS_RECEIPT_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-WIN-MOVEFILE-WRITETHROUGH",
+      "layer": "WINDOWS_NATIVE",
+      "expected_value_origin": "F2_REAL_SYNTHETIC_WINDOWS_RECEIPT_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_rp",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-WIN-NODE-GROUP",
+      "layer": "WINDOWS_NATIVE",
+      "expected_value_origin": "F2_REAL_SYNTHETIC_WINDOWS_RECEIPT_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_rp",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-WITNESS-DISCLOSURE",
+      "layer": "PURE",
+      "expected_value_origin": "F1_INDEPENDENT_EXPECTED_FIXTURE_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_core",
+        "p01_owner"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-NATIVE-PROMPT-VISIBILITY",
+      "layer": "OWNER_MACHINE_MANUAL",
+      "expected_value_origin": "F2_OWNER_LOCAL_NONSECRET_RECEIPT_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_owner",
+        "p01_core"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-RP-TAIL-AFTER-CRASH",
+      "layer": "WINDOWS_NATIVE",
+      "expected_value_origin": "F2_WINDOWS_SYNTHETIC_RECEIPT_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_owner",
+        "p01_core"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-AGENT-PRESIGN-CHECK-CLASSIFICATION",
+      "layer": "INTEGRATED_SYNTHETIC",
+      "expected_value_origin": "F1_INDEPENDENT_DECISION_BOUNDARY_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_owner",
+        "p01_core"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-VOLUME-SELECTED-TIE",
+      "layer": "SCORER_ORACLE",
+      "expected_value_origin": "F1_INDEPENDENT_DECISION_BOUNDARY_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_score"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-SELECT-EXACT-10",
+      "layer": "SCORER_ORACLE",
+      "expected_value_origin": "F1_INDEPENDENT_DECISION_BOUNDARY_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_score"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-SELECT-EXACT-15",
+      "layer": "SCORER_ORACLE",
+      "expected_value_origin": "F1_INDEPENDENT_DECISION_BOUNDARY_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_score"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-VIABILITY-MEDIAN-60",
+      "layer": "SCORER_ORACLE",
+      "expected_value_origin": "F1_INDEPENDENT_DECISION_BOUNDARY_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_score"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-VIABILITY-SMALL-120",
+      "layer": "SCORER_ORACLE",
+      "expected_value_origin": "F1_INDEPENDENT_DECISION_BOUNDARY_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_score"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-VIABILITY-NULL",
+      "layer": "SCORER_ORACLE",
+      "expected_value_origin": "F1_INDEPENDENT_DECISION_BOUNDARY_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_score"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-B02-4-OF-5-DENIED",
+      "layer": "SCORER_ORACLE",
+      "expected_value_origin": "F1_INDEPENDENT_DECISION_BOUNDARY_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_score"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-B02-POST-PASS-DENIED",
+      "layer": "SCORER_ORACLE",
+      "expected_value_origin": "F1_INDEPENDENT_DECISION_BOUNDARY_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_score"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    },
+    {
+      "test_id": "T-B02-CAP-DENIED",
+      "layer": "SCORER_ORACLE",
+      "expected_value_origin": "F1_INDEPENDENT_DECISION_BOUNDARY_VECTOR_REVIEW_PENDING",
+      "must_not_derive_from": [
+        "p01_score"
+      ],
+      "expected_vector_or_decision_id": null,
+      "status": "PLANNED_NOT_IMPLEMENTED",
+      "review_status": "PENDING_INDEPENDENT_TEST_CONTRACT_REVIEW"
+    }
+  ],
+  "F1_ready": false,
+  "F2_ready": false,
+  "review_obligations": [
+    "Every test needs exact expected_vector_or_decision_id before F1/F2 acceptance",
+    "Review every layer including owner-machine manual",
+    "Confirm expectation does not derive from code under test",
+    "Retain proposal and rejected dispositions as evidence"
+  ]
+}

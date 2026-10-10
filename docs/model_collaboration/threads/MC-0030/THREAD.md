@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / R0-P01 REV02 CLAUSE AND F1/F2 INDEPENDENT REVIEW
+**Status:** OPEN / R0-P01 FIRST INHERITED CLAUSE AUDIT BATCH NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -50,7 +50,8 @@ The physical architecture is not.
     R0-P01 B01/B02 prefreeze decisions            COMPLETE / human ACCEPT_B01 + ACCEPT_B02
     R0-P01 Q0 nonsecret source trace and guards     COMPLETE / Research 531 / Validation 220
     R0-P01 Q1 exact-freeze architecture critique    COMPLETE / Message 029 / AMEND_Q0_Q1_BEFORE_FREEZE
-    R0-P01 Q0 REV02 and F1/F2 review             NEXT / Claude / claude-04
+    R0-P01 Q0 REV02 and F1/F2 review             COMPLETE / Message 031 / AMEND_REV02_Q0_TARGETED
+    R0-P01 Q0-AUDIT-001 source control audit       NEXT / Claude / claude-04
     R0-P03                                        AFTER P01
     physical-target owner decision                  ONLY WHEN READY
 
@@ -480,6 +481,20 @@ Frozen V02 P01-C07 shows B P5 requires same-attempt A primary and recovery publi
 
     PHASE=R0_P01_Q0_REV02_F1_F2_INDEPENDENT_REVIEW_PENDING
     NEXT_ACTOR=claude
+    F1=UNFROZEN
+    F2=UNFROZEN
+    ATTEMPT_002=NOT_AUTHORIZED
+
+
+## R0-P01 inherited normative audit started: Q0-AUDIT-001 next
+
+Claude Message 031 at 313b1f4a4d1057360dbde0c59aa1d91868e5e341 returned AMEND_REV02_Q0_TARGETED and independently checked all 288 first-layer B01 expected classes, but identified inherited V02/V01 controls, six policy roots, section-default mappings, placeholder test contracts and missing numeric/volume/B02 oracle layers. Research 533, Validation 222, Checkpoint 869 and Message 032 reconcile at design level. A new read-only 1,022-unit inherited audit inventory, 18 SHA-bound batches, 117 planned-only tests and 31 F1 numeric/B02 candidate seeds are structurally guarded, with 12 passing fault-injection tests. No semantic review is attributed to source extraction or prior automatic suggestions. All source units need independent review; 38 omitted lines are explicit review obligations.
+
+Next actor Claude / claude-04 for MC-0030 Message 033, batch Q0-AUDIT-001 (49 original V01 security-control units). Claude is independent clause reviewer and cannot author the blind second canonical implementation. No frozen F1/F2, real owner credentials or Attempt 002. Historical Attempt 001 AMEND and accepted B01/B02 unchanged; P02 PASS, P03 pending, physical target unselected.
+
+    PHASE=R0_P01_F1_INHERITED_AUDIT_BATCH001_PENDING
+    NEXT_ACTOR=claude
+    AUDIT_BATCH=Q0-AUDIT-001
     F1=UNFROZEN
     F2=UNFROZEN
     ATTEMPT_002=NOT_AUTHORIZED

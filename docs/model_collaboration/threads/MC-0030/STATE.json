@@ -3,7 +3,7 @@
   "thread_id": "MC-0030",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "OPEN",
-  "phase": "R0_P01_Q0_REV02_F1_F2_INDEPENDENT_REVIEW_PENDING",
+  "phase": "R0_P01_F1_INHERITED_AUDIT_BATCH001_PENDING",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -93,16 +93,17 @@
       "Claude Message 025 at 1a331cf2 returned AMEND_REV03_TARGETED; Research 529 / Validation 218 / Checkpoint 865 / Message 026 reconcile T1-T3 prospectively into unfrozen V03 REV04. Fourteen static design cases pass, but no implementation/owner qualification. B01 Research 513 interpretation and B02 stopping policy remain explicit unapproved human decisions.",
       "Human project owner explicitly accepted B01 and B02 in one message after Checkpoint 865. Research 530 / Validation 219 / Checkpoint 866 / Message 027 record separate approvals bound to exact REV04 approved bytes and source published HEAD 83619072f3c127b715252f909e042a7226b5780c. No owner Attempt 002 or implementation freeze authorized; Q0-Q5 synthetic qualification next.",
       "Research 531 / Validation 220 / Checkpoint 867 / ChatGPT Message 028 create unfrozen Q0 34-requirement source trace (13 controls), hash guard and 10 passing mutation tests; propose but do not freeze Q1 technical implementation boundary. Claude/claude-04 next for Message 029 bounded independent critique. No real credential or Attempt 002.",
-      "Claude Message 029 committed 70018258 returned AMEND_Q0_Q1_BEFORE_FREEZE. ChatGPT Research 532 / Validation 221 / Checkpoint 868 / Message 030 accept Q-1/Q-2/Q-4 and P5 clarification, deliver 351 clause index/53 requirements/105 test catalogue and 17 static passing checks; semantic associations unreviewed (22 weak), B01 table 288 rows UNFROZEN, F1/F2 separately UNFROZEN."
+      "Claude Message 029 committed 70018258 returned AMEND_Q0_Q1_BEFORE_FREEZE. ChatGPT Research 532 / Validation 221 / Checkpoint 868 / Message 030 accept Q-1/Q-2/Q-4 and P5 clarification, deliver 351 clause index/53 requirements/105 test catalogue and 17 static passing checks; semantic associations unreviewed (22 weak), B01 table 288 rows UNFROZEN, F1/F2 separately UNFROZEN.",
+      "Claude Message 031 at 313b1f4a independently recomputed 288/288 B01 predicate cases and returned AMEND_REV02_Q0_TARGETED. Research 533/Validation 222/Checkpoint 869/Message 032 prepare 1,022-unit inherited source audit in 18 batches, 117 planned-only test IDs and 31 unfrozen oracle seed cases with 12 passing structural/negative tests. No unit mapping independently approved; Claude reviewer cannot author blind oracle. Q0-AUDIT-001 49 V01 security-control units next."
     ],
-    "notes": "Current: R0_P01_Q0_REV02_F1_F2_INDEPENDENT_REVIEW_PENDING. B01/B02 accepted and source bytes preserved; 351 normative units structurally indexed, 53 requirement IDs, 105 planned tests, 17 static guard tests PASS. 22 provisional weak mappings and incomplete F1 288-row oracle require independent semantic critique. Claude Message 031 next. No F1/F2 freeze, no owner Attempt 002, old Attempt 001 AMEND unchanged. P02 PASS, P03 pending, physical target unselected."
+    "notes": "Current: R0_P01_F1_INHERITED_AUDIT_BATCH001_PENDING. B01/B02 approval immutable, F1/F2 both unfrozen; Claude Message 031 F-1..F-7 accepted at design level. 1,022 public source units, 18 SHA-bound audit batches, 117 test candidates, 31 numeric/B02 seeds; structural guard 12 negative tests PASS. Deep independent Claude audit begins batch 001, 49 inherited security-control units. Claude auditor not second blind oracle author. Attempt 001 remains permanent AMEND; real Attempt 002 needs third explicit future human execution approval. P02 PASS, P03 pending, physical target unselected."
   },
   "last_transition": {
-    "transition_id": "mc0030-r0-p01-q0-rev02-f1-f2-review",
+    "transition_id": "mc0030-r0-p01-inherited-f1-clause-audit-first-batch",
     "from_state": "OPEN",
     "to_state": "OPEN",
     "actor": "chatgpt",
-    "reason": "Claude Message 029 blockers reconciled prospectively into Q0 REV02, explicit scorer/oracle independence and F1/F2 split. 17 static tests pass, semantic clause mapping remains unreviewed. Route Message 031 independent critique before F1.",
-    "repository_head": "70018258784eb70be9e9034e226aa59bfe006c51"
+    "reason": "Claude Message 031 semantic coverage findings reconciled with inherited V01/V02+REV04 public source inventory and explicit independent 18-batch audit. 12 static tests PASS; F1/F2 not frozen. Request Claude Message 033 batch 001 before any F1 approval.",
+    "repository_head": "313b1f4a4d1057360dbde0c59aa1d91868e5e341"
   }
 }

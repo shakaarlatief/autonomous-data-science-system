@@ -812,6 +812,16 @@ docs/research/532_r0_p01_message_029_q0_rev02_clause_independence_f1_f2_reconcil
 docs/local_execution/validation/221_r0_p01_q0_rev02_clause_guard_and_f1_candidate_consistency.md
 docs/checkpoints/868_r0_p01_message029_q0_rev02_f1_f2_review_next.md
 docs/model_collaboration/threads/MC-0030/messages/030_chatgpt_r0_p01_message029_reconciliation_q0_rev02_f1_f2_recheck.md
+docs/model_collaboration/threads/MC-0030/messages/031_claude_r0_p01_q0_rev02_f1_f2_review.md
+docs/research/r0_p01_successor_design/R0_P01_F1_NORMATIVE_AUDIT_INVENTORY_REV03_UNFROZEN.json
+docs/research/r0_p01_successor_design/R0_P01_F1_NORMATIVE_AUDIT_BATCH_PLAN_REV03_UNFROZEN.json
+docs/research/r0_p01_successor_design/R0_P01_F1_TEST_CATALOGUE_REV03_UNFROZEN.json
+docs/research/r0_p01_successor_design/R0_P01_F1_NUMERIC_AND_B02_ORACLE_SEEDS_UNFROZEN.json
+docs/research/r0_p01_successor_design/R0_P01_F1_CLAUSE_AUDIT_RESOLUTION_PLAN_UNFROZEN.md
+docs/research/533_r0_p01_message031_inherited_normative_inventory_and_f1_audit_gates.md
+docs/local_execution/validation/222_r0_p01_f1_inherited_audit_inventory_guard_and_oracle_seed_checks.md
+docs/checkpoints/869_r0_p01_message031_reconciled_inherited_clause_audit_batch001_next.md
+docs/model_collaboration/threads/MC-0030/messages/032_chatgpt_r0_p01_message031_reconciliation_first_clause_audit_request.md
 docs/research/project_knowledge_activation_orchestration/AO10_SPEC028_RECONCILIATION_V01.json
 docs/checkpoints/570_whole_repository_physical_architecture_scope_clarified.md
 docs/checkpoints/571_whole_repository_r2_boundaries_identified.md
@@ -1525,7 +1535,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-868 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-869 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

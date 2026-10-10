@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 868
+**Checkpoint:** 869
 **Date:** 2026-10-10
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,21 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: R0-P01 Message 029 reconciled; REV02 clauses and F1/F2 review pending
+## Current active stage: R0-P01 Message 031 reconciled; inherited clause-by-clause audit starts at batch 001
+
+Checkpoint 869 / Research 533 / Validation 222 / MC-0030 Message 032 accept Claude Message 031's AMEND_REV02_Q0_TARGETED. The earlier 351-unit REV04-only inventory was structurally correct but **semantically incomplete**, omitting inherited security-control definitions, six normative policy roots, correct per-unit semantics, independence-qualified test metadata and numeric/volume/B02 oracles. The existing 288-row first-layer predicate table was independently recomputed 288/288 by Claude, but does **not** qualify final scorer oracles.
+
+The new *unfrozen* read-only inherited audit inventory indexes **1,022 exact committed source units** across approved REV04 contract/policy, inherited frozen V02 addendum, V01 security-control and implementation contracts, and old fixture/result JSON. It explicitly accounts for 23 provisionally normative and 13 metadata policy roots; excludes seven Markdown header rows and seven separator rows as syntax/context; flags another 38 nonblank lines outside numbered scope for auditor resolution. Every unit remains PENDING_INDEPENDENT_SEMANTIC_AUDIT. The 13 hard control IDs now have explicit candidate links to the actual frozen V01 control definitions, not generic REV04 sentences. No inherited clause disposition has yet been accepted.
+
+The 18 reviewer batches (each at most 65 source units) partition the 1,022 units; **Q0-AUDIT-001 is 49 inherited security-control units** and is next for Claude / claude-04, the independent clause auditor. Claude must not author the future blind second golden-vector implementation or independent scorer. A new 117-ID **planned-only** F1/F2 test catalogue includes named per-test independence constraints and owner-machine manual prompt visibility; exact expected vector IDs are NOT assigned or validated. The extra 31 F1 oracle seeds (7 selection/volume, 12 viability/eligibility, 12 B02) include the exact selected median volume ceiling 5400/97 seconds and the A54/B58 tie-break-to-AMEND case. Neither those seeds nor the prior 288-row data are frozen full oracles. The proposed RP crash-tail and pre-sign identity-versus-instrument discrepancy resolutions await F1 semantic approval and later Windows F2 tests.
+
+The new F1 audit guard and **12 in-memory mutation tests PASS**, establishing **structural audit readiness only**. Older Q0 guards remain separately available. The approved B01/B02 contract/policy SHA-256 bytes, original frozen V02 code and Attempt 001 AMEND/evidence/credentials remain untouched. No F1 or F2 freeze, actual successor scorer, full synthetic A/B/C qualification, real Attempt 002 authorization or physical-target selection has occurred. R0-P02 PASS, R0-P03 pending, Specification 028 and project authority unchanged. A third separate explicit human owner execution decision remains mandatory after synthetic F2 qualification.
+
+Next: Claude MC-0030 Message 033 per-unit independent audit of Q0-AUDIT-001, then task-owner reconciliation before further batches or prospective F1 design progress.
+
+---
+
+## Historical checkpoint 868 stage: R0-P01 Message 029 reconciled; REV02 clauses and F1/F2 review pending
 
 Checkpoint 868 / Research 532 / Validation 221 / MC-0030 Message 030 reconcile Claude's AMEND_Q0_Q1_BEFORE_FREEZE with three accepted blocking corrections. REV02 now has a source-unit extractor indexing 166 approved-contract textual units (sections 1–11), 185 normative policy JSON leaves, a total of 351 units; 53 explicit requirements, 13 positional hard-control identifiers, and 105 catalogued future synthetic tests. The read-only source guard hashes COMMITTED Git blob bytes, verifies a known SHA-256 answer and catches missing clause/test mappings. Seventeen static/mutation tests PASS. **Semantic mappings remain unapproved**, with 22 weak section-based associations; no F1 freeze is allowed merely because the guard passes.
 
