@@ -3,7 +3,7 @@
   "thread_id": "MC-0030",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "OPEN",
-  "phase": "R0_P01_V03_REV03_TARGETED_RECHECK_PENDING",
+  "phase": "R0_P01_V03_REV04_GOVERNED_PREFREEZE_OWNER_DECISIONS_PENDING",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -51,7 +51,7 @@
       ]
     }
   ],
-  "next_expected_actor": "claude",
+  "next_expected_actor": "human",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -89,16 +89,17 @@
       "Claude Message 018 at c4de7bb5 objectively reviewed Research 524 and returned AMEND_PROSPECTIVE_DIRECTION; ChatGPT Research 525 / Checkpoint 861 / Message 019 independently reconcile it as ACCEPT_WITH_QUALIFICATIONS. A new exact successor is only draft-next. Validation 216 records the correct original/backup raw SHA-256 and erratum for Research 523 and Checkpoint 859.",
       "Research 526 / Checkpoint 862 / MC-0030 Message 020 record a non-executing detailed V03 candidate protocol draft and machine-readable outcome policy. Claude may critique comparative draft, but original 001 remains AMEND; no successor approved. Unresolved native SSH classification, scoring taxonomy and owner consent are blockers.",
       "Claude Message 021 added at e431b4de as the sole change, with AMEND_DRAFT_BEFORE_FREEZE; Research 527 / Checkpoint 863 / ChatGPT Message 022 reconcile C1-C5 and revise only unfrozen V03 proposal. G1/G2 family-level and owner stopping-policy consent still unapproved. Next Claude revised-draft critique.",
-      "Claude Message 023 reviewed REV02 and returned AMEND_REVISED_DRAFT. Research 528 / Validation 217 / Checkpoint 864 / ChatGPT Message 024 reconcile R1-R4 and R5-R9 prospectively, retaining all old P01 evidence. REV03 static nine-case checks pass; no harness qualification, Research 513 interpretation or owner consent yet."
+      "Claude Message 023 reviewed REV02 and returned AMEND_REVISED_DRAFT. Research 528 / Validation 217 / Checkpoint 864 / ChatGPT Message 024 reconcile R1-R4 and R5-R9 prospectively, retaining all old P01 evidence. REV03 static nine-case checks pass; no harness qualification, Research 513 interpretation or owner consent yet.",
+      "Claude Message 025 at 1a331cf2 returned AMEND_REV03_TARGETED; Research 529 / Validation 218 / Checkpoint 865 / Message 026 reconcile T1-T3 prospectively into unfrozen V03 REV04. Fourteen static design cases pass, but no implementation/owner qualification. B01 Research 513 interpretation and B02 stopping policy remain explicit unapproved human decisions."
     ],
-    "notes": "Current: R0_P01_V03_REV03_TARGETED_RECHECK_PENDING / Research 528 / Validation 217 / Checkpoint 864 / Message 024. Only targeted design recheck is next, not a full redesigned protocol or owner trial. Claude / claude-04 may commit Message 025 only. Research 513 G1/G2 interpretation and owner stopping-policy approval remain unapproved, attempt 002 not authorized, P02 PASS, P03 pending, physical target unselected, Spec 028 unchanged."
+    "notes": "Current: R0_P01_V03_REV04_GOVERNED_PREFREEZE_OWNER_DECISIONS_PENDING. Exact unfrozen REV04 contract/policy and UNAPPROVED human decision packet published via Research 529 / Validation 218 / Checkpoint 865 / Message 026. Original Attempt 001 AMEND permanent. No Research 513 interpretation or stopping-policy approval. No new owner credential/trial/freeze/physical target. Human owner next for independent B01/B02 governance choices. P02 PASS, P03 pending, Specification 028 unchanged."
   },
   "last_transition": {
-    "transition_id": "mc0030-r0-p01-v03-rev03-targeted-recheck",
+    "transition_id": "mc0030-r0-p01-rev04-human-governance-next",
     "from_state": "OPEN",
     "to_state": "OPEN",
     "actor": "chatgpt",
-    "reason": "Research 528 / Validation 217 / Checkpoint 864 / Message 024 reconcile Claude Message 023 and narrow remaining R1-R4 correctness errors in unfrozen successor REV03; targeted peer check next, owner execution forbidden.",
-    "repository_head": "8783994f267718be6a24a86fb6c4151d0ca93249"
+    "reason": "Research 529 / Validation 218 / Checkpoint 865 / Message 026 complete targeted Claude 025 T1-T3 prospective reconciliation and route independent B01/B02 prefreeze policy decisions to human, without any trial authorization.",
+    "repository_head": "1a331cf2997a2048a2209d89053e1dd6ea2b45ba"
   }
 }

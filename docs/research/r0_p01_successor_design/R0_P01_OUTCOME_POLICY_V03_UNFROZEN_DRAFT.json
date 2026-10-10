@@ -141,8 +141,8 @@
   ],
   "freeze_authorized": false,
   "owner_execution_authorized": false,
-  "draft_revision": "DRAFT_REV_03_POST_MESSAGE_023",
-  "review_disposition": "AMEND_REVISED_DRAFT_R1_R4_RECONCILED_TARGETED_RECHECK_PENDING",
+  "draft_revision": "DRAFT_REV_04_POST_MESSAGE_025",
+  "review_disposition": "MESSAGE_025_T1_T3_RECONCILED_GOVERNED_DECISION_PREPARATION_ONLY",
   "processing_states": [
     "SCORING_PENDING_QUALIFIED_ENVIRONMENT"
   ],
@@ -206,7 +206,7 @@
   "scorer_identity_interpretation": "PROPOSED_RESEARCH_513_G1_G2_NOT_APPROVED",
   "raw_flag_schema": {
     "default_missing_flags": "SCHEMA_MISMATCH_FAIL_CLOSED_NO_FAVORABLE_INSTRUMENT_EXCEPTION",
-    "source_values": "immutable_boolean_event_flags_from_owner_run",
+    "source_values": "HARNESS_RECORDED and SCORER_DERIVED as explicitly declared in flag_origin; no free-text source-to-reason coercion",
     "integrity_sources_any_true": [
       "integrity.secret_exposure",
       "integrity.post_observation_tuning",
@@ -223,8 +223,30 @@
     "instrument_summary": "integrity.instrument_failure = OR(instrument_sources_any_true)",
     "instrument_failure_kind": "enumerated_first_true_in_order_verifier_error_then_harness_exception_with_intact_chain_then_node_rp_failure; store complete true-source set as well",
     "verifier_error_assignment": "VERIFIER_ERROR sets integrity.verifier_error and integrity.instrument_failure, never integrity.attempt_integrity_failure",
-    "unclassified_anomaly": "integrity.attempt_integrity_failure=true; INVALID_INTEGRITY; never reinterpret as repairable instrument without new preregistration",
-    "no_free_text_scoring": "owner/model/independent_reviewer cannot override computed INVALID reason"
+    "no_free_text_scoring": "owner/model/independent_reviewer cannot override computed INVALID reason",
+    "flag_origin": {
+      "integrity.secret_exposure": "HARNESS_RECORDED",
+      "integrity.attempt_integrity_failure": "HARNESS_RECORDED",
+      "integrity.verifier_error": "HARNESS_RECORDED",
+      "integrity.node_rp_failure": "HARNESS_RECORDED",
+      "integrity.post_observation_tuning": "SCORER_DERIVED",
+      "integrity.evidence_chain_break": "SCORER_DERIVED",
+      "integrity.start_marker_conflict": "SCORER_DERIVED",
+      "integrity.provenance_mismatch": "SCORER_DERIVED",
+      "integrity.harness_exception_with_intact_chain": "SCORER_DERIVED",
+      "integrity.instrument_failure": "SCORER_DERIVED",
+      "evidence.final_head_witness_absent": "SCORER_DERIVED_DISCLOSURE_ONLY"
+    },
+    "owner_input_before_decision_capture": "invalid decision/CONFIRM/setup/friction input re-prompts fixed T3 without statement or proof; no integrity or instrument flag",
+    "owner_retry_input": "R rechecks same statement and timer; S/other non-R stops proof event; Ctrl+C aborts full claim",
+    "harness_exception_with_intact_chain": "any caught unexpected harness exception not mapped to integrity/owner input/interruption/event terminal/capability and independently verified intact snapshot chain",
+    "attempt_integrity_failure": "only explicit contract/identity/secret/evidence integrity checks, not generic exception or a VERIFIER_ERROR",
+    "node_rp_failure": "unexpected RP process exit or failed RPC observed before any owner KeyboardInterrupt/abort was recorded for this run; owner abort first suppresses this instrumental classification",
+    "unmatched_exception": "scorer derives harness_exception_with_intact_chain if chain is intact; if chain compromised, independently derived evidence_chain_break/provenance_mismatch has highest precedence; never a generic attempt_integrity_failure",
+    "site_inventory_qualification": "before code freeze enumerate every future successor Python raise, Node/browser exception, subprocess exit and top-level handler with exact row in contract section 8.6; no unmatched sites",
+    "malformed_final_file": "SCORER_DERIVED integrity.provenance_mismatch; cannot be asserted by malformed file itself",
+    "true_hash_link_mismatch": "SCORER_DERIVED integrity.evidence_chain_break",
+    "witness_missing": "SCORER_DERIVED evidence.final_head_witness_absent=true; disclosure-only; never changes primary class, claim cap or exception eligibility"
   },
   "evidence_state": {
     "derivation": "scorer_only_from_raw_immutable_receipts",
@@ -233,17 +255,18 @@
       "COMPLETED",
       "INCOMPLETE"
     ],
-    "not_realizable": "frozen genuinely unavailable capability with evidence, not owner refusal or setup not reached",
-    "completed": "setup REALIZABLE and each P0,S01,S02,S03 has unique same-attempt event_terminal true with valid enumerated terminal_outcome",
+    "not_realizable": "frozen genuinely unavailable capability with evidence, not owner refusal or setup not reached; NotSupportedError only with frozen independent capability receipt",
+    "completed": "setup REALIZABLE and each P0,S01,S02,S03 has unique same-attempt event_terminal true with valid enumerated terminal_outcome; on WebAuthn, durable consumed RP assertion ending NotAllowedError or timeout is event_terminal with WEBAUTHN_ASSERTION_NOT_COMPLETED",
     "terminal_outcomes": [
       "VALID",
       "INVALID",
       "P0_NON_ACCEPT_DECISION",
       "OWNER_S_EVENT_STOP",
       "SSH_UNLOCK_BUDGET_EXHAUSTED",
-      "PARTIAL_OR_INCONSISTENT_OUTPUT"
+      "PARTIAL_OR_INCONSISTENT_OUTPUT",
+      "WEBAUTHN_ASSERTION_NOT_COMPLETED"
     ],
-    "incomplete": "all other states, including setup success then Ctrl+C, crash, verifier error or any missing terminal event",
+    "incomplete": "all other states, including setup success then Ctrl+C, crash, verifier error or any missing terminal event; NotAllowedError without a durable issued-and-consumed assertion receipt does not count terminal",
     "proof_viability_basis": "original frozen positive/negative controls and valid small proof requirements, not changed by evidence_state",
     "not_eligibility": "L01/P5/P6/control13 remain in full eligibility gates but are not required to determine viability-evidence completion"
   },
@@ -279,5 +302,40 @@
   ],
   "preclaim_browser_forbidden_scan_scope": "static_preclaim_served_page_and_routes_only;synthetic_KAT_and_postclaim_RP_module_not_forbidden",
   "old_digest_set_scope": "all_canonical_statements_in_original_final_raw_0024_including_mutated_negative_and_nonowner_synthetic_copies",
-  "synthetic_webauthn_test": "Chromium_CDP_Playwright_CTAP2_virtual_authenticator_is_not_Windows_Hello_UX"
+  "synthetic_webauthn_test": "Chromium_CDP_Playwright_CTAP2_virtual_authenticator_is_not_Windows_Hello_UX",
+  "webauthn_assertion_failure_table": {
+    "NotAllowedError_or_owner_cancel_or_timeout": {
+      "outcome": "WEBAUTHN_ASSERTION_NOT_COMPLETED",
+      "requires": "durable_issued_consumed_pending_assertion_receipt_bound_to_same_attempt_acceptance_id",
+      "event_terminal": true,
+      "valid_proof": false,
+      "run_continues": true,
+      "retry_same_assertion": false
+    },
+    "NotSupportedError": {
+      "outcome": "CAPABILITY_NOT_REALIZABLE",
+      "requires": "frozen_signed_or_local_independent_capability_receipt",
+      "event_terminal": false,
+      "proof_viability_receipt": "NOT_REALIZABLE"
+    },
+    "other_DOMException_or_client_RP_error": {
+      "outcome": "INSTRUMENT",
+      "requires": "source_labelled_client_or_RP_error_receipt",
+      "flag": "integrity.node_rp_failure_or_integrity.harness_exception_with_intact_chain",
+      "not_owner_cancellation": true
+    }
+  },
+  "evidence_disclosures": {
+    "evidence.final_head_witness_absent": {
+      "origin": "SCORER_DERIVED",
+      "type": "DISCLOSURE_ONLY",
+      "affects_primary_class": false,
+      "can_authorize_new_attempt": false,
+      "must_report": true,
+      "meaning": "independently held final SHA256/count/marker receipt unavailable before scoring; tamper assurance weaker"
+    }
+  },
+  "optional_nonbinding_diagnostics": {
+    "pre_fault_counterfactual_class": "NOT_REQUIRED_NONBINDING_MAY_BE_ADDED_ONLY_WITH_PROSPECTIVE_DEFINED_BASIS"
+  }
 }

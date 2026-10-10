@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / R0-P01 V03 REV03 TARGETED REVIEW NEXT
+**Status:** OPEN / R0-P01 V03 REV04 OWNER GOVERNANCE DECISIONS PENDING
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -45,7 +45,9 @@ The physical architecture is not.
     R0-P01 exact successor protocol drafting       COMPLETE / Research 526 / Message 020
     R0-P01 successor contract draft critique       COMPLETE / Message 021 / AMEND_DRAFT_BEFORE_FREEZE
     R0-P01 revised successor draft critique        COMPLETE / Message 023 / AMEND_REVISED_DRAFT
-    R0-P01 REV03 targeted evidence-state review     NEXT / Claude / claude-04
+    R0-P01 REV03 targeted evidence-state review     COMPLETE / Message 025 / AMEND_REV03_TARGETED
+    R0-P01 REV04 T1-T3 reconciliation             COMPLETE / Research 529 / Message 026
+    R0-P01 B01/B02 prefreeze decisions            NEXT / human owner
     R0-P03                                        AFTER P01
     physical-target owner decision                  ONLY WHEN READY
 
@@ -425,3 +427,16 @@ Next Claude / claude-04 may commit only a narrowly targeted Message 025 check. N
     ATTEMPT_001=IMMUTABLE_AMEND
     ATTEMPT_002=NOT_AUTHORIZED
     NEXT=CLAUDE_MESSAGE025_TARGETED_RECHECK
+
+
+## R0-P01 REV04 reconciled: governed human prefreeze decisions pending
+
+Claude Message 025, commit 1a331cf2997a2048a2209d89053e1dd6ea2b45ba, flagged three narrow T1-T3 classifications, while accepting prior R1-R4 and R5-R9 substantially. Research 529, Validation 218, Checkpoint 865 and Message 026 reconcile all three in the **unfrozen** successor contract/policy. T1 adds durable WebAuthn owner cancel/timeouts as terminal no-proof events; T2 remaps noncaptured owner inputs versus instrument exceptions versus actual integrity breaches; T3 defines disclosure-only final-head-witness absence and all flag origins. Fourteen static design checks PASS, not live owner implementation qualification.
+
+The next actor is the human owner for **two separate governance choices**: B01 the prospective Research 513 G1/G2 interpretation, B02 the exact V03 REV04 finite stopping policy. The accompanying UNAPPROVED decision packet explains the choices and consequences. No owner approval, future trial, key generation, WebAuthn registration, code freeze, physical target, Spec 028 amendment, migration or authority switch is inferred. Historical Attempt 001 AMEND and R0-P02 PASS remain unchanged; R0-P03 pending.
+
+    PHASE=R0_P01_REV04_GOVERNED_PREFREEZE_OWNER_DECISIONS_PENDING
+    NEXT_ACTOR=human
+    B01=UNAPPROVED
+    B02=UNAPPROVED
+    ATTEMPT_002=NOT_AUTHORIZED

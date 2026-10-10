@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 864
+**Checkpoint:** 865
 **Date:** 2026-10-10
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,19 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: R0-P01 REV03 evidence-state policy corrected; targeted review next
+## Current active stage: R0-P01 V03 REV04 targeted reconciliation complete; two human prefreeze decisions pending
+
+Checkpoint 865 / Research 529 / Validation 218 / MC-0030 Message 026 reconcile Claude Message 025 (AMEND_REV03_TARGETED) and revise only the **unfrozen** successor V03 protocol/policy. WebAuthn NotAllowedError owner cancellations/timeouts are now terminal no-proof evidence when a matching durable consumed assertion receipt exists; NotSupportedError capability and other client/RP instrument failures remain distinct. The successor draft §8.6 explicitly separates malformed uncaptured owner input, genuine integrity violations, instrument/tool/Node failures and whole-attempt Ctrl+C. The V02 exception-to-integrity catch-all cannot be inherited unchanged. Each future implementation raise site must pass an independent exhaustive mapping audit. The scorer-derived evidence.final_head_witness_absent flag is disclosure-only, not a change to scored result, and eleven source/derived flag origins are specified.
+
+Validation 218's fourteen static design cases PASS; this is **not** proof of correct future Windows/OpenSSH/WebAuthn runtime, actual scorer, atomic snapshot implementation or owner ceremony. Original Attempt 001 remains permanently AMEND, with old marker, raw records, backup, owner private keys and frozen V02 files preserved.
+
+The next boundary is **two independent human decisions**, explained in docs/research/r0_p01_successor_design/R0_P01_GOVERNED_PREFREEZE_DECISIONS_UNAPPROVED.md: B01 prospective Research 513 G1/G2 evidence-state/INVALID interpretation; B02 the exact finite V03 REV04 stopping policy (maximum two new claims, no automatic Attempt 003, ALL_REQUIRED exceptions, no claim after PASS/integrity). Both remain **UNAPPROVED**, with no inference from a generic "proceed." Even if approved, fresh experiment implementation must first be prospectively frozen and qualified with complete synthetic A/B/C evidence, followed by a **third separate owner execution authorization**. No Attempt 002 marker, key, registration, signature or owner proof exists.
+
+R0-P02 PASS, R0-P03 pending, physical GOVERNED_LEDGER_KERNEL_V02 unselected, logical THIN_CENTRED_HYBRID_V03 selected, Specification 028 unchanged, scientific experiment INCOMPLETE, no production implementation/migration or authority switch.
+
+---
+
+## Historical checkpoint 864 stage: R0-P01 REV03 evidence-state policy corrected; targeted review next
 
 Checkpoint 864 / Research 528 / Validation 217 / MC-0030 Message 024 reconcile Claude Message 023 (`AMEND_REVISED_DRAFT`) with a **strictly targeted** update of the *unfrozen* successor V03 contract and JSON policy. Previous C1/C3/C4/C5 draft-level fixes remain; the revised G1/G2 guards now use per-arm proof `evidence_state`, not merely setup REALIZABLE. The scorer would derive completed evidence only from terminal P0/S01/S02/S03 events, and classify no-viable-but-incomplete A/B as INVALID_INCOMPLETE rather than false REOPEN. An eligible arm with unfinished comparator would report OTHER_ARM_INCOMPLETE, regardless of that comparator's setup success.
 
