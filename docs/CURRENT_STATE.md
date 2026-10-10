@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 862
+**Checkpoint:** 863
 **Date:** 2026-10-10
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,19 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: R0-P01 V03 unfrozen successor draft; independent peer critique next
+## Current active stage: R0-P01 V03 REV02 unfrozen successor draft; independent critique next
+
+Checkpoint 863 / Research 527 / MC-0030 Message 022 reconcile Claude Message 021's AMEND_DRAFT_BEFORE_FREEZE and revise only the **unfrozen** candidate V03 contract and stopping-policy JSON. The original Attempt 001 is unchanged AMEND, with failed recovery and S02 mechanical gate, preserved old owner credentials/evidence and frozen V02 implementation.
+
+The revised draft removes native OpenSSH stderr/passphrase parsing and uses explicit owner-selected bounded SSH re-invocation with precondition rechecks, an unchanged statement and no timer reset. It proposes one eventual scored P01 class for every claimed attempt (G1 incomplete INVALID and G2 uncontested selection disclosure), a tri-state in-trial verifier plus preclaim synthetic known answers, exact structural statement domain isolation with synthetic P5/P6 templates, and a two-new-claim absolute cap with ALL_REQUIRED exception conditions. INVALID_INSTRUMENT, INVALID_INCOMPLETE and INVALID_INTEGRITY are distinct. Additional proposed hardening includes static non-credential WebAuthn preflight, matched browser launch, previous-snapshot byte-hash links, interaction floor and explicit same-attempt recovery-key dependency; no cross-process resume and no SIGINT confirmation handler.
+
+**The Research 513 G1/G2 interpretation and owner stopping rule are NOT approved.** New protocol name R0-P01-V01-I1 remains provisional. The revised draft is NOT a fixture/implementation freeze, is not executable, and has neither permission for a new owner trial nor owner credential access. Reviewer task: bounded Claude / claude-04 re-critique the revised exact draft and JSON; ChatGPT to reconcile, then request separately governed policy/family interpretation only if technically warranted.
+
+R0-P02 PASS; R0-P03 pending; GOVERNED_LEDGER_KERNEL_V02 unselected; Specification 028 and unrelated scientific INCOMPLETE unchanged. No production implementation, migration, Runtime Bridge extraction, or semantic authority switch.
+
+---
+
+## Historical checkpoint 862 stage: R0-P01 V03 unfrozen successor draft; independent peer critique next
 
 Checkpoint 862 / Research 526 / MC-0030 Message 020 present a complete *candidate* successor contract draft and machine-readable outcome/stopping policy. The draft sources are `docs/research/r0_p01_successor_design/R0_P01_CONTRACT_V03_UNFROZEN_DRAFT.md` and `R0_P01_OUTCOME_POLICY_V03_UNFROZEN_DRAFT.json`. This work is NOT a fixture/contract freeze, implementation authorization, start marker, fresh key generation or trial. It follows independent Claude Message 018 and ChatGPT's Research 525 / Message 019 reconciliation; original Attempt 001 remains immutable AMEND.
 

@@ -14,22 +14,32 @@
   },
   "successor_proposal": {
     "attempt_id": "002",
-    "protocol": "R0-P01-V02",
+    "protocol": "R0-P01-V01-I1_PROPOSED_UNAPPROVED",
     "contract_revision": "R0-P01-CONTRACT-V03",
     "marker_claimed": false,
     "owner_approval": false,
-    "new_private_keys_created": false
+    "new_private_keys_created": false,
+    "family_interpretation_status": "RESEARCH_513_INTERPRETATION_APPROVAL_PENDING"
   },
   "claim_cap": {
-    "old_started": 1,
-    "new_claims_permitted_only_after_separate_owner_approval": 1,
-    "no_default_attempt_003": true,
+    "historical_claims_prior_to_successor_family": 1,
+    "prospective_family_start": "ATTEMPT_002",
+    "absolute_new_claim_cap": 2,
+    "first_new_claim": "ATTEMPT_002_ONLY_AFTER_OWNER_APPROVES_STOP_POLICY_AND_EXECUTION",
+    "second_and_final_possible_new_claim": "ATTEMPT_003_EXCEPTION_ONLY",
+    "no_automatic_attempt_003": true,
+    "exception_conditions_operator": "ALL_REQUIRED",
     "exception_conditions": [
-      "new_falsifiable_hypothesis",
-      "bounded_governed_owner_decision",
-      "prospectively_changed_and_independently_reviewed_design",
-      "new_unreused_attempt_identity"
-    ]
+      "bounded_documented_specific_cause_and_explicit_testable_remedy",
+      "new_owner_authorization_for_exact_exception",
+      "independent_prospective_review_and_new_frozen_artifacts",
+      "new_exclusive_claim_unique_keys_namespace_and_complete_evidence",
+      "within_absolute_new_claim_cap"
+    ],
+    "instrument_exception": "MAY_RETAIN_ORIGINAL_MECHANISM_HYPOTHESIS_ONLY_IF_A_SUBSTANTIATED_VERIFIER_OR_HARNESS_DEFECT_IS_FIXED_AND_PRESPECIFIED",
+    "other_exception": "REQUIRES_GENUINELY_NEW_FALSIFIABLE_MECHANISM_HYPOTHESIS",
+    "integrity_breach_exception": "FORBIDDEN_IN_THIS_FOLLOWUP_POLICY",
+    "beyond_cap": "SEPARATE_RESEARCH_513_FAMILY_PREREGISTRATION_AMENDMENT_AND_OWNER_DECISION_REQUIRED"
   },
   "unchanged_eligibility": {
     "security_controls_all_pass": 13,
@@ -51,9 +61,8 @@
     "final_tiebreak": "B"
   },
   "run_dispositions": [
-    "COMPLETED_SCORED",
-    "TERMINATED_UNSCORED",
-    "ENVIRONMENT_PREFLIGHT_BLOCKED"
+    "NOT_RUN_PRECLAIM",
+    "CLAIMED_REQUIRES_FINAL_CLASS"
   ],
   "primary_scored_classifications": [
     "INVALID",
@@ -63,34 +72,56 @@
   ],
   "cases": [
     {
-      "run": "COMPLETED_SCORED",
-      "class": "PASS_WITH_SELECTION",
-      "consequence": "QUALIFY_ONLY_UNDER_SUCCESSOR_FROZEN_CONTRACT;PRESERVE_001_AMEND;P03_AND_EXPLICIT_PHYSICAL_OWNER_DECISION_REQUIRED"
+      "when": {
+        "claim": "NOT_RUN_PRECLAIM",
+        "class": null
+      },
+      "next": "OWNER_DECLINED_OR_DEFERRED_NO_NEW_CLAIM;ATTEMPT_001_REMAINS_AMEND;NO_PHYSICAL_TARGET_SELECTED"
     },
     {
-      "run": "COMPLETED_SCORED",
-      "class": "AMEND",
-      "consequence": "STOP_NO_AUTOMATIC_003;GOVERNED_OWNER_DECISION_FOR_BOUNDED_NEW_HYPOTHESIS_OR_DEFERRAL"
+      "when": {
+        "claim": "CLAIMED",
+        "class": "PASS_WITH_SELECTION"
+      },
+      "next": "REPORT_ONLY_SUCCESSOR_QUALIFICATION_WITH_PRIOR_AMEND;DISCLOSE_G2_UNCONTESTED_IF_APPLICABLE;WAIT_FOR_P03_AND_OWNER_PHYSICAL_TARGET_DECISION"
     },
     {
-      "run": "COMPLETED_SCORED",
-      "class": "REOPEN",
-      "consequence": "REOPEN_LOAD_BEARING_OWNER_AUTHENTICITY_ASSUMPTIONS;STOP"
+      "when": {
+        "claim": "CLAIMED",
+        "class": "AMEND"
+      },
+      "next": "STOP_NO_AUTOMATIC_ATTEMPT_003;OWNER_MAY_DEFER_OR_GOVERN_SPECIFIC_NEW_HYPOTHESIS_WITHIN_CAP"
     },
     {
-      "run": "COMPLETED_SCORED",
-      "class": "INVALID",
-      "consequence": "PRESERVE_EVIDENCE;STOP;EXCEPTION_ONLY_AFTER_NEW_OWNER_AUTHORIZED_PROSPECTIVE_DEFECT_STUDY"
+      "when": {
+        "claim": "CLAIMED",
+        "class": "REOPEN"
+      },
+      "next": "STOP;REOPEN_RELEVANT_OWNER_AUTHENTICITY_ASSUMPTIONS;NO_AUTOMATIC_NEW_CLAIM"
     },
     {
-      "run": "TERMINATED_UNSCORED",
-      "class": null,
-      "consequence": "PRESERVE_PARTIAL_EVIDENCE;NO_ARCHITECTURAL_INFERENCE_FROM_UNOBSERVED_ARM;NO_AUTOMATIC_RETRY"
+      "when": {
+        "claim": "CLAIMED",
+        "class": "INVALID",
+        "reason": "INVALID_INSTRUMENT"
+      },
+      "next": "PRESERVE;STOP;AT_MOST_ONE_OWNER_APPROVED_PROSPECTIVELY_QUALIFIED_INSTRUMENT_REPAIR_CLAIM_IF_WITHIN_CAP"
     },
     {
-      "run": "ENVIRONMENT_PREFLIGHT_BLOCKED",
-      "class": null,
-      "consequence": "STOP_AND_QUALIFY_VERIFIER_ENVIRONMENT;IF_CLAIM_ALREADY_EXISTS_DO_NOT_RESET"
+      "when": {
+        "claim": "CLAIMED",
+        "class": "INVALID",
+        "reason": "INVALID_INCOMPLETE"
+      },
+      "next": "PRESERVE;STOP;NO_DEFAULT_RETRY_AFTER_OWNER_ABORT;ANY_EXCEPTION_REQUIRES_GENUINE_NEW_FALSIFIABLE_HYPOTHESIS_AND_ALL_REQUIRED_CONDITIONS"
+    },
+    {
+      "when": {
+        "claim": "CLAIMED",
+        "class": "INVALID",
+        "reason": "INVALID_INTEGRITY"
+      },
+      "next": "PRESERVE;STOP;NO_EXCEPTION_WITHIN_THIS_FOLLOWUP_POLICY;NEW_RESEARCH_513_PREREGISTRATION_REQUIRED"
     }
   ],
   "open_review_blockers": [
@@ -112,5 +143,50 @@
     "NO_PHYSICAL_TARGET_SELECTION"
   ],
   "freeze_authorized": false,
-  "owner_execution_authorized": false
+  "owner_execution_authorized": false,
+  "draft_revision": "DRAFT_REV_02_POST_MESSAGE_021",
+  "review_disposition": "AMEND_DRAFT_BEFORE_FREEZE_RECONCILED_PENDING_NEW_REVIEW",
+  "processing_states": [
+    "SCORING_PENDING_QUALIFIED_ENVIRONMENT"
+  ],
+  "invalid_reason_subclasses": {
+    "INVALID_INSTRUMENT": "substantiated verifier/harness/tool fault or irrecoverably unverifiable captured evidence, never automatically a bad owner signature",
+    "INVALID_INCOMPLETE": "neither A nor B proof-viable while at least one arm unresolved, including owner abort; no technical-infeasibility inference",
+    "INVALID_INTEGRITY": "secret exposure, post-result tuning, tampering, untrusted identity/provenance or control leakage"
+  },
+  "guards": {
+    "G1_REOPEN": "REOPEN iff BOTH cryptographic arms have resolved realizability and neither is proof-viable; if neither viable and at least one unresolved, INVALID with INVALID_INCOMPLETE, unless higher-priority integrity/instrument fault",
+    "G2_UNCONTESTED_SELECTION": "when one arm eligible and other unresolved due to interruption, selection rule unchanged but selection_uncontested_reason=OTHER_ARM_INCOMPLETE, mandatory explicit owner-target-decision disclosure",
+    "scorer_precedence": [
+      "INVALID_INTEGRITY",
+      "INVALID_INSTRUMENT",
+      "G1_INVALID_INCOMPLETE_OR_REOPEN",
+      "AMEND_WHEN_NO_ELIGIBLE_ARM_BUT_AT_LEAST_ONE_VIABLE",
+      "AMEND_WHEN_VOLUME_GATE_BREACHED",
+      "PASS_WITH_SELECTION_ON_UNCHANGED_SELECTION_RULE"
+    ],
+    "C_arm_never_eligible": true
+  },
+  "unresolved_blockers": [
+    "EXPLICIT_RESEARCH_513_FAMILY_INTERPRETATION_APPROVAL_G1_G2",
+    "OWNER_ACCEPTANCE_OF_STOP_POLICY_BEFORE_FREEZE",
+    "IN_TRIAL_TRISTATE_VERIFIER_AND_PRECLAIM_KAT_CONTRACT",
+    "WINDOWS_OWNER_RETRY_PROMPT_NATIVE_TTY_AND_PRECONDITION_TEST",
+    "PREDECESSOR_RUNTIME_DIGEST_SET_AND_P5_P6_SYNTHETIC_VECTORS",
+    "WEBAUTHN_NONCREDENTIAL_PREFLIGHT_AND_LAUNCH_RECEIPT",
+    "FULL_SYNTHETIC_A_B_C_DRY_RUN_AND_EVIDENCE_INTEGRITY"
+  ],
+  "reporting": [
+    "one_final_class_for_every_claimed_attempt_after_qualified_scoring",
+    "pending_verifier_environment_is_nonterminal_processing_state",
+    "not_run_preclaim_is_not_a_scored_claim",
+    "display_attempt_001_amend_side_by_side",
+    "never_pool_prior_owner_proofs",
+    "report_uncontested_eligible_selection",
+    "native_platform_uv_retries_unobservable",
+    "no_scorer_threshold_changes",
+    "no_missing_measurement_to_zero",
+    "declare_repeat_owner_practice_effect"
+  ],
+  "owner_stopping_policy_approved": false
 }

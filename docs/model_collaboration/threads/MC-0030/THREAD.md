@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / R0-P01 V03 UNFROZEN DRAFT / INDEPENDENT REVIEW NEXT
+**Status:** OPEN / R0-P01 V03 REV02 UNFROZEN DRAFT / REVIEW NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -43,7 +43,8 @@ The physical architecture is not.
     R0-P01 independent triage critique             COMPLETE / Message 018 / c4de7bb5
     R0-P01 ChatGPT critique reconciliation          COMPLETE / Research 525 / Message 019
     R0-P01 exact successor protocol drafting       COMPLETE / Research 526 / Message 020
-    R0-P01 successor contract draft critique       NEXT / Claude / claude-04
+    R0-P01 successor contract draft critique       COMPLETE / Message 021 / AMEND_DRAFT_BEFORE_FREEZE
+    R0-P01 revised successor draft critique        NEXT / Claude / claude-04
     R0-P03                                        AFTER P01
     physical-target owner decision                  ONLY WHEN READY
 
@@ -397,3 +398,16 @@ Claude / claude-04 is the preferred next critical reviewer under MC-0030 message
     R0_P01_ATTEMPT_001=IMMUTABLE_AMEND
     R0_P01_ATTEMPT_002=NOT_AUTHORIZED
     NEXT=CLAUDE_SUCCESSOR_V03_DRAFT_CRITIQUE
+
+
+## Claude Message 021 reconciled, successor draft REV02 independent review pending
+
+Claude Message 021, e431b4de38949a6e9014b02a1212bcc6039815f7, added exactly that review message and returned AMEND_DRAFT_BEFORE_FREEZE. Research 527 / Checkpoint 863 / ChatGPT Message 022 reconcile all five blocking findings and revise the two unfrozen V03 candidate artifacts. Native SSH stderr classifier removed; owner R/S invocations and preconditions proposed. Every claimed attempt scored under prospective G1/G2, tri-state verification with preclaim KAT, structural signed context+ID, synthetic P5/P6 member templates, and genuinely finite two-new-claim policy proposed. G1/G2 family interpretation and owner stopping-policy approval remain outstanding. Original Attempt 001, V02 frozen code and evidence untouched.
+
+Claude / claude-04 may perform only a new bounded critique in Message 023. No other authoring permission, key operation, new claim, owner proof, freeze or physical target authorization.
+
+    PHASE=R0_P01_V03_REV02_UNFROZEN_PEER_REVIEW_PENDING
+    NEXT_ACTOR=claude
+    ATTEMPT_001=AMEND_IMMUTABLE
+    ATTEMPT_002=NOT_AUTHORIZED
+    NEXT=CLAUDE_V03_REV02_REVIEW

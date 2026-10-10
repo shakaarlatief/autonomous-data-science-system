@@ -3,7 +3,7 @@
   "thread_id": "MC-0030",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "OPEN",
-  "phase": "R0_P01_V03_UNFROZEN_DRAFT_INDEPENDENT_REVIEW_PENDING",
+  "phase": "R0_P01_V03_REV02_UNFROZEN_PEER_REVIEW_PENDING",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -87,16 +87,17 @@
       "Research 523 / Validation 215 / Checkpoint 859 / MC-0030 Message 016 record the real R0-P01 Attempt 001 as AMEND: durable marker plus 25 hash-matched snapshots and owner backup; Arm A 12/13 security controls PASS with recovery FAIL, S02 timing gate miss; Arms B/C setup interrupted. Initial readOnly-sandbox INVALID was a temporary-file permission artifact, resolved by unchanged scorer AMEND in a suitable profile. Owner attributes P6 to using primary instead of recovery passphrase and prefers a minimal label; no evidence/threshold edits or retry authorized.",
       "Research 524 / Checkpoint 860 / MC-0030 Message 017 preserve ChatGPT prospective post-AMEND triage: do not retroactively rescue P01 Attempt 001, do not narrow-retry failed controls, preserve all thresholds; full independent successor is a candidate only. Claude may read these comparative artifacts for bounded critique, but no Claude response is yet observed.",
       "Claude Message 018 at c4de7bb5 objectively reviewed Research 524 and returned AMEND_PROSPECTIVE_DIRECTION; ChatGPT Research 525 / Checkpoint 861 / Message 019 independently reconcile it as ACCEPT_WITH_QUALIFICATIONS. A new exact successor is only draft-next. Validation 216 records the correct original/backup raw SHA-256 and erratum for Research 523 and Checkpoint 859.",
-      "Research 526 / Checkpoint 862 / MC-0030 Message 020 record a non-executing detailed V03 candidate protocol draft and machine-readable outcome policy. Claude may critique comparative draft, but original 001 remains AMEND; no successor approved. Unresolved native SSH classification, scoring taxonomy and owner consent are blockers."
+      "Research 526 / Checkpoint 862 / MC-0030 Message 020 record a non-executing detailed V03 candidate protocol draft and machine-readable outcome policy. Claude may critique comparative draft, but original 001 remains AMEND; no successor approved. Unresolved native SSH classification, scoring taxonomy and owner consent are blockers.",
+      "Claude Message 021 added at e431b4de as the sole change, with AMEND_DRAFT_BEFORE_FREEZE; Research 527 / Checkpoint 863 / ChatGPT Message 022 reconcile C1-C5 and revise only unfrozen V03 proposal. G1/G2 family-level and owner stopping-policy consent still unapproved. Next Claude revised-draft critique."
     ],
-    "notes": "Current: R0_P01_V03_UNFROZEN_DRAFT_INDEPENDENT_REVIEW_PENDING. Research 526 and Checkpoint 862 record draft-only candidate successor contract and finite stopping policy with unresolved blockers. Next Claude / claude-04 critique under messages-only write boundary. No Attempt 002, no new owner keys/credentials/proofs, no protocol freeze, no physical target. P02 PASS, P03 pending, Specification 028 unchanged."
+    "notes": "Current: R0_P01_V03_REV02_UNFROZEN_PEER_REVIEW_PENDING / Research 527 / Checkpoint 863 / Message 022. Original Attempt 001 immutable AMEND. Revision removes SSH stderr classifier, requires owner-controlled bounded invocations, proposed G1/G2 and tri-state preclaim KAT, structure-bound signature identity and finite policy. Neither family interpretation nor owner stop policy accepted. No owner trial/freeze/physical target. Next Claude Message 023 scoped critique."
   },
   "last_transition": {
-    "transition_id": "mc0030-r0-p01-v03-unfrozen-draft-review",
+    "transition_id": "mc0030-r0-p01-v03-rev02-review",
     "from_state": "OPEN",
     "to_state": "OPEN",
     "actor": "chatgpt",
-    "reason": "Research 526 / Checkpoint 862 / Message 020 deliver detailed V03 successor contract draft and candidate stopping-policy JSON; bounded independent Claude review next, no owner trial authorized.",
-    "repository_head": "636d4375594929501f223310093f9c855f5dbcff"
+    "reason": "Research 527 / Checkpoint 863 / Message 022 reconcile Claude Message 021 and route revised unfrozen V03 contract/policy for peer critique, with no owner authorization.",
+    "repository_head": "e431b4de38949a6e9014b02a1212bcc6039815f7"
   }
 }
