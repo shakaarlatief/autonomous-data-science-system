@@ -1,0 +1,935 @@
+{
+  "schema_version": 2,
+  "status": "REV02_UNFROZEN_INDEPENDENT_AMENDMENT_REVIEW_PENDING",
+  "authority": "Prospective technical design only; approved B01/B02 unchanged; not a complete/scored F1 oracle or authorization for any owner experiment.",
+  "source_contract": "docs/research/r0_p01_successor_design/R0_P01_CONTRACT_V03_UNFROZEN_DRAFT.md",
+  "source_policy": "docs/research/r0_p01_successor_design/R0_P01_OUTCOME_POLICY_V03_UNFROZEN_DRAFT.json",
+  "approved_source_sha256": {
+    "contract": "9160a30c481c1c67c2ec857238f5a04b44f618b2ef589ef4f1c514eb3b3d6175",
+    "policy": "9b5bbc4d2c4802fc80b46bcaa3d003640c33e8e4784d39ef7995dbf193dff86c"
+  },
+  "accepted_decisions": [
+    "B01",
+    "B02"
+  ],
+  "claude_audit_results": {
+    "reviewed": 1022,
+    "reviewer_accepted": 967,
+    "reviewer_pending": 55
+  },
+  "gate_order": [
+    "B05-A1",
+    "B07-A3",
+    "B08-A1",
+    "B11-A1"
+  ],
+  "determination_types": [
+    "SOURCE_DETERMINED",
+    "CANDIDATE_BLOCKED"
+  ],
+  "scenario_fields": [
+    "id",
+    "gate",
+    "slug",
+    "determination",
+    "source_basis",
+    "conditions",
+    "source_grounded_conclusion",
+    "f1_evidence_or_test",
+    "qualification_boundary",
+    "review_055_status",
+    "claim_scope",
+    "premises",
+    "blocked_reason",
+    "owner_policy_interpretation",
+    "f1_decision_record"
+  ],
+  "cases": [
+    {
+      "id": "S1-01",
+      "gate": "B05-A1",
+      "slug": "OWNER_REFUSAL_NOT_CAPABILITY",
+      "determination": "SOURCE_DETERMINED",
+      "source_basis": [
+        "REV04_CONTRACT-L0108",
+        "REV04_CONTRACT-L0150",
+        "REV04_POLICY:evidence_state.not_realizable"
+      ],
+      "conditions": "Refusal of setup or registration, NOT a P0 non-ACCEPT decision; no P0 terminal receipt; no qualifying frozen independent platform capability receipt.",
+      "source_grounded_conclusion": "NOT_REALIZABLE must not be assigned; INCOMPLETE applies if no valid terminal P0 and no independently evidenced higher-priority failure",
+      "f1_evidence_or_test": "No REOPEN solely because Arm B was refused or not visited",
+      "qualification_boundary": "Non-ACCEPT P0 is an explicitly enumerated event terminal; without fixed other-arm viability and raw flags no global INVALID/REOPEN class follows.",
+      "review_055_status": "CONFIRMED_AS_STATED",
+      "claim_scope": "EVENT_OR_ARM_EVIDENCE_ONLY",
+      "premises": {
+        "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+        "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+        "raw_flags": "NO_SILENT_INFERENCE",
+        "process_isolation": "NOT_CLAIMED",
+        "flag_origin": "SOURCE_FLAG_RULE",
+        "receipt_producer": "STATED_IN_CONDITIONS_OR_REQUIRES_F1_RECEIPT"
+      },
+      "blocked_reason": null,
+      "owner_policy_interpretation": "NOT_REQUESTED_NO_OWNER_POLICY_CHANGE",
+      "f1_decision_record": "NEEDS_INDEPENDENT_TECHNICAL_REVIEW"
+    },
+    {
+      "id": "S1-02",
+      "gate": "B05-A1",
+      "slug": "DURABLY_CONSUMED_NOTALLOWED",
+      "determination": "SOURCE_DETERMINED",
+      "source_basis": [
+        "REV04_CONTRACT-L0151",
+        "REV04_CONTRACT-L0154",
+        "REV04_POLICY:webauthn_assertion_failure_table.NotAllowedError_or_owner_cancel_or_timeout.outcome",
+        "REV04_CONTRACT-L0108",
+        "REV04_POLICY:webauthn_assertion_failure_table.NotAllowedError_or_owner_cancel_or_timeout.requires"
+      ],
+      "conditions": "RP challenge issued AND delivered to the browser; same-attempt acceptance ID; trusted browser invocation of navigator.credentials.get() durably recorded; RP pending assertion consumed once with NotAllowedError/cancel/timeout receipt.",
+      "source_grounded_conclusion": "WEBAUTHN_ASSERTION_NOT_COMPLETED is an event-terminal no-proof result under B01 only after actual owner assertion ceremony and required independent RP/client evidence.",
+      "f1_evidence_or_test": "Require correlated client-call invocation (not just RP timeout) and RP consumed-receipt; absence does not automatically prove a ceremony; NotAllowedError cause may be ambiguous and must be disclosed.",
+      "qualification_boundary": "Owner-approved B01 NotAllowedError still counts as terminal when all accepted prerequisites hold; no silent narrowing to voluntary owner cancellation.",
+      "review_055_status": "AMEND_PRECONDITION_OR_CONCLUSION",
+      "claim_scope": "EVENT_OR_ARM_EVIDENCE_ONLY",
+      "premises": {
+        "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+        "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+        "raw_flags": "NO_SILENT_INFERENCE",
+        "process_isolation": "NOT_CLAIMED",
+        "flag_origin": "SOURCE_FLAG_RULE",
+        "receipt_producer": "RP_AND_CLIENT"
+      },
+      "blocked_reason": null,
+      "owner_policy_interpretation": "NOT_REQUESTED_NO_OWNER_POLICY_CHANGE",
+      "f1_decision_record": "NEEDS_INDEPENDENT_TECHNICAL_REVIEW"
+    },
+    {
+      "id": "S1-03",
+      "gate": "B05-A1",
+      "slug": "NOTALLOWED_WITHOUT_RECEIPT",
+      "determination": "SOURCE_DETERMINED",
+      "source_basis": [
+        "REV04_CONTRACT-L0152",
+        "REV04_CONTRACT-L0154",
+        "REV04_POLICY:evidence_state.incomplete"
+      ],
+      "conditions": "Browser claims NotAllowedError but no durable same-attempt pending assertion consumed receipt, while P0 remains without an enumerated terminal outcome",
+      "source_grounded_conclusion": "P0 cannot be counted event_terminal; incomplete evidence; not capability impossibility",
+      "f1_evidence_or_test": "G1 REOPEN cannot rely on the missing P0 event",
+      "qualification_boundary": "Missing receipt integrity flags may have higher precedence; no automatic permission for retry",
+      "review_055_status": "CONFIRMED_AS_STATED",
+      "claim_scope": "EVENT_OR_ARM_EVIDENCE_ONLY",
+      "premises": {
+        "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+        "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+        "raw_flags": "NO_SILENT_INFERENCE",
+        "process_isolation": "NOT_CLAIMED",
+        "flag_origin": "SOURCE_FLAG_RULE",
+        "receipt_producer": "RP"
+      },
+      "blocked_reason": null,
+      "owner_policy_interpretation": "NOT_REQUESTED_NO_OWNER_POLICY_CHANGE",
+      "f1_decision_record": "NEEDS_INDEPENDENT_TECHNICAL_REVIEW"
+    },
+    {
+      "id": "S1-04",
+      "gate": "B05-A1",
+      "slug": "NOTSUPPORTED_AFTER_REGISTERED",
+      "determination": "CANDIDATE_BLOCKED",
+      "source_basis": [
+        "REV04_CONTRACT-L0108",
+        "REV04_CONTRACT-L0150",
+        "REV04_CONTRACT-L0200",
+        "REV04_POLICY:webauthn_assertion_failure_table.NotSupportedError.outcome",
+        "REV04_POLICY:webauthn_assertion_failure_table.NotSupportedError.requires",
+        "V01_CONTRACT-L0223",
+        "V01_CONTRACT-L0231",
+        "REV04_CONTRACT-L0112",
+        "REV04_POLICY:webauthn_assertion_failure_table.NotSupportedError.event_terminal",
+        "REV04_POLICY:webauthn_assertion_failure_table.NotSupportedError.proof_viability_receipt"
+      ],
+      "conditions": "Arm B successfully completed same-attempt UV/ES256 registration; later assertion returns NotSupportedError; NO independent frozen capability receipt from the relevant operation/site exists.",
+      "source_grounded_conclusion": "Without the stipulated receipt, NOT_REALIZABLE is excluded, the NotSupportedError is event_terminal=false, and absent independent higher-priority fault evidence B evidence_state is INCOMPLETE. G1 REOPEN is excluded; instrument fault is NOT automatically inferred.",
+      "f1_evidence_or_test": "Define a reproducible independent assertion-capability probe tied to browser/OS/site and phase; test after successful registration, changed browser/profile/policy, and a missing or self-asserted receipt.",
+      "qualification_boundary": "Still blocked: whether a later independently proved assertion incapability may override earlier registration success, and exact receipt semantics. Do not infer global INVALID_INCOMPLETE if A eligible or integrity flag present.",
+      "review_055_status": "AMEND_PRECONDITION_OR_CONCLUSION",
+      "claim_scope": "EVENT_OR_ARM_EVIDENCE_ONLY",
+      "premises": {
+        "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+        "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+        "raw_flags": "NO_SILENT_INFERENCE",
+        "process_isolation": "NOT_CLAIMED",
+        "flag_origin": "SOURCE_FLAG_RULE",
+        "receipt_producer": "FROZEN_INDEPENDENT_CAPABILITY_PROBE"
+      },
+      "blocked_reason": "Exact evidence/classification predicate remains unapproved; do not use as a frozen expected-score oracle.",
+      "owner_policy_interpretation": "NOT_REQUESTED_NO_OWNER_POLICY_CHANGE",
+      "f1_decision_record": "NEEDS_INDEPENDENT_TECHNICAL_REVIEW"
+    },
+    {
+      "id": "S1-05",
+      "gate": "B05-A1",
+      "slug": "FROZEN_CAPABILITY_RECEIPT",
+      "determination": "CANDIDATE_BLOCKED",
+      "source_basis": [
+        "REV04_CONTRACT-L0150",
+        "REV04_POLICY:evidence_state.not_realizable",
+        "V01_CONTRACT-L0223",
+        "V01_CONTRACT-L0231",
+        "REV04_POLICY:webauthn_assertion_failure_table.NotSupportedError.proof_viability_receipt"
+      ],
+      "conditions": "Known independently produced capability receipt with closed tests and verifiable negative support, but receipt grammar/signature/site not yet specified",
+      "source_grounded_conclusion": "If a future approved predicate is satisfied, NOT_REALIZABLE is potentially admissible",
+      "f1_evidence_or_test": "F1 closed receipt must identify producer and independent witness; browser, profile, OS, authenticator scope, registration vs assertion, attempt/acceptance binding, measurement clocks and replayable probe, with refusal/cancel/timeout/not-visited/expired negative cases.",
+      "qualification_boundary": "A hypothetical receipt cannot be treated as already valid or owner-approved",
+      "review_055_status": "CONFIRMED_AS_STATED",
+      "claim_scope": "EVENT_OR_ARM_EVIDENCE_ONLY",
+      "premises": {
+        "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+        "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+        "raw_flags": "NO_SILENT_INFERENCE",
+        "process_isolation": "NOT_CLAIMED",
+        "flag_origin": "SOURCE_FLAG_RULE",
+        "receipt_producer": "FROZEN_INDEPENDENT_CAPABILITY_PROBE"
+      },
+      "blocked_reason": "Exact evidence/classification predicate remains unapproved; do not use as a frozen expected-score oracle.",
+      "owner_policy_interpretation": "NOT_REQUESTED_NO_OWNER_POLICY_CHANGE",
+      "f1_decision_record": "NEEDS_INDEPENDENT_TECHNICAL_REVIEW"
+    },
+    {
+      "id": "S2-01",
+      "gate": "B07-A3",
+      "slug": "VERIFIED_PUBLIC_KEY_SWAP",
+      "determination": "SOURCE_DETERMINED",
+      "source_basis": [
+        "REV04_CONTRACT-L0066",
+        "REV04_CONTRACT-L0206",
+        "REV04_CONTRACT-L0164",
+        "REV04_POLICY:raw_flag_schema.attempt_integrity_failure",
+        "REV04_POLICY:raw_flag_schema.flag_origin.integrity.attempt_integrity_failure"
+      ],
+      "conditions": "Same-attempt registered public identity was already bound; trusted harness observation proves actual key-content/public-ID replacement after binding (not merely unreadable or AV-locked bytes).",
+      "source_grounded_conclusion": "INTEGRITY source flag true; INVALID / INVALID_INTEGRITY highest precedence",
+      "f1_evidence_or_test": "Never downgrade to event-terminal owner stop or instrument repair simply because signing did not start",
+      "qualification_boundary": "Flag provenance and trusted invariant identity must be mechanically demonstrated",
+      "review_055_status": "CONFIRMED_AS_STATED",
+      "claim_scope": "CONDITIONAL_ATTEMPT_CLASS",
+      "premises": {
+        "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+        "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+        "raw_flags": "INTEGRITY_SOURCE_TRUE",
+        "process_isolation": "NOT_CLAIMED",
+        "flag_origin": "HARNESS_RECORDED_IF_POSITIVELY_EVIDENCED",
+        "receipt_producer": "STATED_IN_CONDITIONS_OR_REQUIRES_F1_RECEIPT"
+      },
+      "blocked_reason": null,
+      "owner_policy_interpretation": "NOT_REQUESTED_NO_OWNER_POLICY_CHANGE",
+      "f1_decision_record": "NEEDS_INDEPENDENT_TECHNICAL_REVIEW"
+    },
+    {
+      "id": "S2-02",
+      "gate": "B07-A3",
+      "slug": "SSH_RUNTIME_UNAVAILABLE_POSTCLAIM",
+      "determination": "SOURCE_DETERMINED",
+      "source_basis": [
+        "REV04_CONTRACT-L0203",
+        "REV04_CONTRACT-L0165",
+        "REV04_POLICY:raw_flag_schema.harness_exception_with_intact_chain",
+        "REV04_CONTRACT-L0066",
+        "REV04_CONTRACT-L0213"
+      ],
+      "conditions": "After consumed claim, source-inventoried native ssh-keygen process creation is attempted and fails without any child exit status. Trusted statement, key and witness chain intact, and no earlier integrity flags.",
+      "source_grounded_conclusion": "This specifically matches the postclaim process-launch INSTRUMENT site under REV04 L0203 and §8.6, subject to scorer-verified intact chain; other failure sites have different rules.",
+      "f1_evidence_or_test": "Pin independent precheck-versus-launch instrument sites: precheck inability, process-creation failure, and executed nonzero/no-signature are three different outcomes; no generic catch-all.",
+      "qualification_boundary": "Source-determined only for process creation failure at a §8.6 INVENTORIED site; not for a failed precheck or a native nonzero exit; global class conditional on absence of higher-priority integrity.",
+      "review_055_status": "AMEND_PRECONDITION_OR_CONCLUSION",
+      "claim_scope": "CONDITIONAL_ATTEMPT_CLASS",
+      "premises": {
+        "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+        "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+        "raw_flags": "NO_HIGHER_PRIORITY_INTEGRITY",
+        "process_isolation": "NOT_CLAIMED",
+        "flag_origin": "SCORER_DERIVED_ONLY_AFTER_HARNESS_SITE_AND_INTACT_CHAIN",
+        "receipt_producer": "STATED_IN_CONDITIONS_OR_REQUIRES_F1_RECEIPT"
+      },
+      "blocked_reason": null,
+      "owner_policy_interpretation": "NOT_REQUESTED_NO_OWNER_POLICY_CHANGE",
+      "f1_decision_record": "NEEDS_INDEPENDENT_TECHNICAL_REVIEW"
+    },
+    {
+      "id": "S2-03",
+      "gate": "B07-A3",
+      "slug": "PRECHECK_FAIL_UNCLASSIFIED",
+      "determination": "CANDIDATE_BLOCKED",
+      "source_basis": [
+        "REV04_CONTRACT-L0066",
+        "REV04_CONTRACT-L0151",
+        "REV04_CONTRACT-L0206",
+        "REV04_POLICY:evidence_state.completed",
+        "REV04_CONTRACT-L0203"
+      ],
+      "conditions": "Generic pre-sign failure with insufficient reliable source-specific evidence to distinguish real changed public identity/header/agent from unreadable bytes, missing executable or unexpected file.",
+      "source_grounded_conclusion": "No generic precheck terminal outcome can be added to B01-approved COMPLETED vocabulary. Proven identity/contract violations are integrity, independently evidenced tool failures instrument, and unsupported/missing receipts cannot prove COMPLETED.",
+      "f1_evidence_or_test": "Create closed precheck-site list with proof of property mismatch versus unreadable check, evidence origin and phase, precise integrity/instrument flags, and no speculative new terminal_outcome.",
+      "qualification_boundary": "Blocked on evidence sufficiency and exact source site, not on the already approved integrity precedence. Adding PRECHECK_FAILED as a new terminal outcome would require a separately approved policy change.",
+      "review_055_status": "AMEND_PRECONDITION_OR_CONCLUSION",
+      "claim_scope": "EVENT_OR_ARM_EVIDENCE_ONLY",
+      "premises": {
+        "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+        "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+        "raw_flags": "NO_SILENT_INFERENCE",
+        "process_isolation": "NOT_CLAIMED",
+        "flag_origin": "HARNESS_RECORDED_IF_POSITIVELY_EVIDENCED",
+        "receipt_producer": "STATED_IN_CONDITIONS_OR_REQUIRES_F1_RECEIPT"
+      },
+      "blocked_reason": "Exact evidence/classification predicate remains unapproved; do not use as a frozen expected-score oracle.",
+      "owner_policy_interpretation": "NOT_REQUESTED_NO_OWNER_POLICY_CHANGE",
+      "f1_decision_record": "NEEDS_INDEPENDENT_TECHNICAL_REVIEW"
+    },
+    {
+      "id": "S2-04",
+      "gate": "B07-A3",
+      "slug": "PRECHECK_HEADER_ALTERED",
+      "determination": "SOURCE_DETERMINED",
+      "source_basis": [
+        "REV04_CONTRACT-L0066",
+        "REV04_CONTRACT-L0206",
+        "REV04_CONTRACT-L0164",
+        "REV04_CONTRACT-L0064"
+      ],
+      "conditions": "After registered postclaim key setup, pre-sign check proves the private key is no longer encrypted or wrong key type, OR the corresponding registered PUBLIC key header/member ID actually changed. Do not interpret simple KDF salt/passphrase re-encryption byte changes as unencrypted without a defined property check.",
+      "source_grounded_conclusion": "Only violation of the approved key-encryption property or registered public identity implies integrity. Byte change alone is insufficient for the L0206 public-header invariant.",
+      "f1_evidence_or_test": "Test same public key with changed passphrase and changed KDF salt, versus genuinely unencrypted key, wrong type and different public key. Disclose ambiguous mid-attempt passphrase-change policy.",
+      "qualification_boundary": "Any literal prohibition on passphrase changes during this attempt must be explicitly defined and disclosed; do not pretend an unproven private-header byte difference establishes public-key substitution.",
+      "review_055_status": "AMEND_PRECONDITION_OR_CONCLUSION",
+      "claim_scope": "CONDITIONAL_ATTEMPT_CLASS",
+      "premises": {
+        "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+        "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+        "raw_flags": "PROVEN_INTEGRITY_SOURCE_TRUE",
+        "process_isolation": "NOT_CLAIMED",
+        "flag_origin": "HARNESS_RECORDED_PROVEN_CONTRACT_VIOLATION",
+        "receipt_producer": "STATED_IN_CONDITIONS_OR_REQUIRES_F1_RECEIPT"
+      },
+      "blocked_reason": null,
+      "owner_policy_interpretation": "NOT_REQUESTED_NO_OWNER_POLICY_CHANGE",
+      "f1_decision_record": "NEEDS_INDEPENDENT_TECHNICAL_REVIEW"
+    },
+    {
+      "id": "S3-01",
+      "gate": "B08-A1",
+      "slug": "OWNER_ABORT_PROVED_EARLIER",
+      "determination": "SOURCE_DETERMINED",
+      "source_basis": [
+        "REV04_CONTRACT-L0112",
+        "REV04_CONTRACT-L0114",
+        "REV04_CONTRACT-L0198",
+        "REV04_POLICY:raw_flag_schema.node_rp_failure",
+        "REV04_POLICY:raw_flag_schema.flag_origin.integrity.node_rp_failure",
+        "REV04_POLICY:browser_node_interrupt.candidate_process_isolation"
+      ],
+      "conditions": "Verified Windows process-group/console isolation is in effect; HARNESS durable stream proves owner abort, then harness-initiated cleanup, then observed RP process exit; no earlier independent RP fault flag.",
+      "source_grounded_conclusion": "Harness abort-caused child termination is not a separately observed unexpected RP fault. When no cryptographic arm viable and P0/event missing without higher flags, G1 uses incomplete evidence, not a favorable instrument exception.",
+      "f1_evidence_or_test": "Test same-harness-stream event ordering with process isolation, Ctrl+C during blocked RPC, no isolation negative and true earlier harness-observed RP fault.",
+      "qualification_boundary": "Without verified isolation or reliable harness-order evidence this becomes the still-blocked S3-03 race, not an unconditional INVALID_INCOMPLETE.",
+      "review_055_status": "AMEND_PRECONDITION_OR_CONCLUSION",
+      "claim_scope": "CONDITIONAL_ATTEMPT_CLASS",
+      "premises": {
+        "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+        "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+        "raw_flags": "NO_HIGHER_PRIORITY_SOURCES_TRUE",
+        "process_isolation": "VERIFIED_WINDOWS_ISOLATION",
+        "flag_origin": "HARNESS_OBSERVATION_ONLY",
+        "receipt_producer": "HARNESS"
+      },
+      "blocked_reason": null,
+      "owner_policy_interpretation": "NOT_REQUESTED_NO_OWNER_POLICY_CHANGE",
+      "f1_decision_record": "NEEDS_INDEPENDENT_TECHNICAL_REVIEW"
+    },
+    {
+      "id": "S3-02",
+      "gate": "B08-A1",
+      "slug": "UNPROVOKED_NODE_FAILURE_EARLIER",
+      "determination": "SOURCE_DETERMINED",
+      "source_basis": [
+        "REV04_CONTRACT-L0202",
+        "REV04_CONTRACT-L0165",
+        "REV04_POLICY:browser_node_interrupt.unexpected_node_failure",
+        "REV04_POLICY:raw_flag_schema.flag_origin.integrity.node_rp_failure"
+      ],
+      "conditions": "Verified Windows process isolation; HARNESS_RECORDED unexpected RP failure observed before any harness-recorded owner abort, with source-labelled no-owner-cause diagnosis; independent evidence chain intact and no integrity source flags.",
+      "source_grounded_conclusion": "Harness-recorded pre-abort independent RP fault sets node_rp_failure. Scorer may not derive that flag from RP-only stream or uncontrolled console-close effects. With no integrity flag the conditional result is INVALID_INSTRUMENT.",
+      "f1_evidence_or_test": "Negative test: RP self-reports crash without harness receipt, console CTRL_CLOSE_EVENT with no harness abort record, and true RP fault after A already eligible. Preserve flag-origin authority.",
+      "qualification_boundary": "A false RP-origin or unverified isolation may confer impermissible B02 instrument exception. Source site and cause must be independently evidenced.",
+      "review_055_status": "AMEND_PRECONDITION_OR_CONCLUSION",
+      "claim_scope": "CONDITIONAL_ATTEMPT_CLASS",
+      "premises": {
+        "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+        "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+        "raw_flags": "NO_HIGHER_PRIORITY_INTEGRITY",
+        "process_isolation": "VERIFIED_WINDOWS_ISOLATION",
+        "flag_origin": "HARNESS_RECORDED_NODE_RP_FAILURE",
+        "receipt_producer": "HARNESS"
+      },
+      "blocked_reason": null,
+      "owner_policy_interpretation": "NOT_REQUESTED_NO_OWNER_POLICY_CHANGE",
+      "f1_decision_record": "NEEDS_INDEPENDENT_TECHNICAL_REVIEW"
+    },
+    {
+      "id": "S3-03",
+      "gate": "B08-A1",
+      "slug": "NODE_ABORT_ORDER_UNPROVABLE",
+      "determination": "CANDIDATE_BLOCKED",
+      "source_basis": [
+        "REV04_CONTRACT-L0215",
+        "REV04_POLICY:browser_node_interrupt.owner_ctrl_c",
+        "REV04_POLICY:browser_node_interrupt.unexpected_node_failure",
+        "REV04_POLICY:raw_flag_schema.node_rp_failure",
+        "REV04_CONTRACT-L0242",
+        "REV04_POLICY:raw_flag_schema.default_missing_flags"
+      ],
+      "conditions": "Owner Ctrl+C and RP process exit are durably observed on different streams; no verified happens-before relation or independently established harness-observed unprovoked fault meeting isolation preconditions.",
+      "source_grounded_conclusion": "R4 L0215 requires a prospectively frozen deterministic INCOMPLETE-versus-INSTRUMENT rule; no favorable repairable INSTRUMENT may be inferred solely from uncertainty.",
+      "f1_evidence_or_test": "Test unknown temporal order, abort before cleanup, verified independent RP failure before abort, and Node exit during owner Ctrl+C with no verified isolation.",
+      "qualification_boundary": "INCOMPLETE-on-unorderable-race with specified rebuttal burden remains reviewer-proposed until independent technical decision. INSTRUMENT-by-ambiguity could alter B02 exception eligibility.",
+      "review_055_status": "CONFIRMED_AS_STATED",
+      "claim_scope": "CONDITIONAL_ATTEMPT_CLASS",
+      "premises": {
+        "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+        "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+        "raw_flags": "UNKNOWN_FAULT_OR_ORDER_NO_FAVORABLE_INSTRUMENT_INFERENCE",
+        "process_isolation": "NOT_PROVED",
+        "flag_origin": "HARNESS_OBSERVATION_ONLY",
+        "receipt_producer": "HARNESS"
+      },
+      "blocked_reason": "Exact evidence/classification predicate remains unapproved; do not use as a frozen expected-score oracle.",
+      "owner_policy_interpretation": "NOT_REQUESTED_NO_OWNER_POLICY_CHANGE",
+      "f1_decision_record": "NEEDS_INDEPENDENT_TECHNICAL_REVIEW"
+    },
+    {
+      "id": "S3-04",
+      "gate": "B08-A1",
+      "slug": "RP_TAIL_RECEIPT_AFTER_HARNESS_STOP",
+      "determination": "SOURCE_DETERMINED",
+      "source_basis": [
+        "REV04_CONTRACT-L0112",
+        "REV04_CONTRACT-L0154",
+        "REV04_POLICY:browser_node_interrupt.durable_event_receipt",
+        "REV04_CONTRACT-L0094",
+        "REV04_CONTRACT-L0114",
+        "REV04_CONTRACT-L0128"
+      ],
+      "conditions": "A signed or unsigned assertion RP receipt is recovered after a harness interruption; the harness has not recorded completed in-run VERIFY for this particular event.",
+      "source_grounded_conclusion": "No newly recovered successful assertion is allowed to become a retrospectively verified terminal VALID owner proof. Preserve bytes for later disclosure/check without changing consumed-attempt scored evidence. Proven earlier NotAllowedError event may remain terminal no-proof.",
+      "f1_evidence_or_test": "Synthetic RP-tail recovery tests: durable consumed no-proof with in-run event receipt vs late success without harness VERIFY; no cross-process resumption or favorable score change.",
+      "qualification_boundary": "Late RP evidence never substitutes for missing in-run VERIFY and cannot create proof viability ex post.",
+      "review_055_status": "AMEND_PRECONDITION_OR_CONCLUSION",
+      "claim_scope": "EVENT_OR_ARM_EVIDENCE_ONLY",
+      "premises": {
+        "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+        "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+        "raw_flags": "NO_SILENT_INFERENCE",
+        "process_isolation": "NOT_CLAIMED",
+        "flag_origin": "SOURCE_FLAG_RULE",
+        "receipt_producer": "STATED_IN_CONDITIONS_OR_REQUIRES_F1_RECEIPT"
+      },
+      "blocked_reason": null,
+      "owner_policy_interpretation": "NOT_REQUESTED_NO_OWNER_POLICY_CHANGE",
+      "f1_decision_record": "NEEDS_INDEPENDENT_TECHNICAL_REVIEW"
+    },
+    {
+      "id": "S4-01",
+      "gate": "B11-A1",
+      "slug": "THREE_NO_PROOF_EXHAUSTED",
+      "determination": "SOURCE_DETERMINED",
+      "source_basis": [
+        "REV04_CONTRACT-L0068",
+        "REV04_CONTRACT-L0070",
+        "REV04_POLICY:evidence_state.terminal_outcomes[4]",
+        "REV04_CONTRACT-L0151",
+        "REV04_CONTRACT-L0154"
+      ],
+      "conditions": "Three native SSH sign invocations have trusted per-invocation nonzero exit/no-signature receipts; after 1 and 2 owner chose exact R; there was no Ctrl+C overlapping any in-flight call, no fourth call and no changed statement, decision, key or timer.",
+      "source_grounded_conclusion": "B01 budget-exhaustion event is terminal without proof. Preserve raw contract token PROOF_NOT_CREATED and normalize the same three-call event losslessly to the approved policy enumeration SSH_UNLOCK_BUDGET_EXHAUSTED.",
+      "f1_evidence_or_test": "Positive three-call receipts + R,R; negatives one/two calls, owner S/non-R, partial file, zero exit, fourth call, missing receipt or Ctrl+C during third call. Canonical event token must be frozen as a representation-only alias.",
+      "qualification_boundary": "This does not expand COMPLETED or change the scoring class; a genuine Ctrl+C overrides alias to in-flight incomplete. Requires independent reviewer confirmation but no new owner interpretation.",
+      "review_055_status": "AMEND_PRECONDITION_OR_CONCLUSION",
+      "claim_scope": "EVENT_OR_ARM_EVIDENCE_ONLY",
+      "premises": {
+        "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+        "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+        "raw_flags": "NO_SILENT_INFERENCE",
+        "process_isolation": "NOT_CLAIMED",
+        "flag_origin": "SOURCE_FLAG_RULE",
+        "receipt_producer": "STATED_IN_CONDITIONS_OR_REQUIRES_F1_RECEIPT"
+      },
+      "blocked_reason": null,
+      "owner_policy_interpretation": "NOT_REQUESTED_NO_OWNER_POLICY_CHANGE",
+      "f1_decision_record": "PROPOSED_REPRESENTATION_ALIAS_REVIEW_PENDING"
+    },
+    {
+      "id": "S4-02",
+      "gate": "B11-A1",
+      "slug": "OWNER_STOPS_AFTER_FAILURE",
+      "determination": "SOURCE_DETERMINED",
+      "source_basis": [
+        "REV04_CONTRACT-L0069",
+        "REV04_CONTRACT-L0197",
+        "REV04_POLICY:evidence_state.terminal_outcomes[3]"
+      ],
+      "conditions": "One or two nonzero no-signature invocations; owner chooses S/non-R at retry prompt; no Ctrl+C",
+      "source_grounded_conclusion": "OWNER_S_EVENT_STOP, not proof-budget exhaustion; event terminal no-proof",
+      "f1_evidence_or_test": "Continue scheduled run without repeating failed event",
+      "qualification_boundary": "Only exactly uppercase R with no extra whitespace permits re-invocation. Lowercase r or R with trailing whitespace is non-R and ends the event; disclose the UX explicitly.",
+      "review_055_status": "CONFIRMED_AS_STATED",
+      "claim_scope": "EVENT_OR_ARM_EVIDENCE_ONLY",
+      "premises": {
+        "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+        "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+        "raw_flags": "NO_SILENT_INFERENCE",
+        "process_isolation": "NOT_CLAIMED",
+        "flag_origin": "SOURCE_FLAG_RULE",
+        "receipt_producer": "STATED_IN_CONDITIONS_OR_REQUIRES_F1_RECEIPT"
+      },
+      "blocked_reason": null,
+      "owner_policy_interpretation": "NOT_REQUESTED_NO_OWNER_POLICY_CHANGE",
+      "f1_decision_record": "NEEDS_INDEPENDENT_TECHNICAL_REVIEW"
+    },
+    {
+      "id": "S4-03",
+      "gate": "B11-A1",
+      "slug": "PARTIAL_FILE_INCONSISTENCY",
+      "determination": "SOURCE_DETERMINED",
+      "source_basis": [
+        "REV04_CONTRACT-L0068",
+        "REV04_CONTRACT-L0205",
+        "REV04_POLICY:evidence_state.terminal_outcomes[5]"
+      ],
+      "conditions": "Native SSH invocation exits nonzero with an unexpected signature file or exits zero without exactly one expected file",
+      "source_grounded_conclusion": "PARTIAL_OR_INCONSISTENT_OUTPUT; terminal event, not retryable budget exhaustion",
+      "f1_evidence_or_test": "Without separate identity breach, not automatically attempt-level integrity",
+      "qualification_boundary": "Check all integrity/instrument source flags independently before the final whole-claim scored class; the event-local terminal outcome does not settle B01/B02.",
+      "review_055_status": "CONFIRMED_AS_STATED",
+      "claim_scope": "EVENT_OR_ARM_EVIDENCE_ONLY",
+      "premises": {
+        "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+        "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+        "raw_flags": "NO_SILENT_INFERENCE",
+        "process_isolation": "NOT_CLAIMED",
+        "flag_origin": "SOURCE_FLAG_RULE",
+        "receipt_producer": "STATED_IN_CONDITIONS_OR_REQUIRES_F1_RECEIPT"
+      },
+      "blocked_reason": null,
+      "owner_policy_interpretation": "NOT_REQUESTED_NO_OWNER_POLICY_CHANGE",
+      "f1_decision_record": "NEEDS_INDEPENDENT_TECHNICAL_REVIEW"
+    },
+    {
+      "id": "S4-04",
+      "gate": "B11-A1",
+      "slug": "EXHAUSTION_RECEIPT_MISSING",
+      "determination": "SOURCE_DETERMINED",
+      "source_basis": [
+        "REV04_CONTRACT-L0154",
+        "REV04_POLICY:evidence_state.completed",
+        "REV04_POLICY:evidence_state.terminal_outcomes[4]"
+      ],
+      "conditions": "A free-text claim of three failed signing invocations, without trustworthy individual invocation/event terminal receipts",
+      "source_grounded_conclusion": "Cannot mark the corresponding proof event COMPLETED solely on a free-text exhaustion label",
+      "f1_evidence_or_test": "Missing required evidence may also trigger scorer-derived integrity flags; those flags have precedence",
+      "qualification_boundary": "Only trusted invocation receipts and event terminal evidence count; a narrative string never supplies completion, with independently derived integrity flags retaining precedence.",
+      "review_055_status": "CONFIRMED_AS_STATED",
+      "claim_scope": "EVENT_OR_ARM_EVIDENCE_ONLY",
+      "premises": {
+        "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+        "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+        "raw_flags": "NO_SILENT_INFERENCE",
+        "process_isolation": "NOT_CLAIMED",
+        "flag_origin": "SOURCE_FLAG_RULE",
+        "receipt_producer": "STATED_IN_CONDITIONS_OR_REQUIRES_F1_RECEIPT"
+      },
+      "blocked_reason": null,
+      "owner_policy_interpretation": "NOT_REQUESTED_NO_OWNER_POLICY_CHANGE",
+      "f1_decision_record": "NEEDS_INDEPENDENT_TECHNICAL_REVIEW"
+    },
+    {
+      "id": "X1",
+      "gate": "B08-A1",
+      "slug": "CTRLC_RACES_THIRD_SSH_CALL",
+      "determination": "CANDIDATE_BLOCKED",
+      "source_basis": [
+        "REV04_CONTRACT-L0067",
+        "REV04_CONTRACT-L0075",
+        "REV04_POLICY:attempt_terminal_vs_event_terminal.ctrl_c_or_crash",
+        "REV04_POLICY:evidence_state.completed"
+      ],
+      "conditions": "During native inherited-console SSH attempt 3, owner Ctrl+C causes child exit nonzero/no sig before harness KeyboardInterrupt is observed.",
+      "source_grounded_conclusion": "A third-call nonzero must not by itself turn a whole-run Ctrl+C into SSH budget exhaustion and false COMPLETED/REOPEN. Exact receipt/interrupt precedence is not yet frozen.",
+      "f1_evidence_or_test": "Test observed Windows console propagation, in-flight marker, signal/exit order, R selections and post-interrupt snapshot, including no false event completion.",
+      "qualification_boundary": "Block favorable classification on race without a prospective independently reviewed interrupt ordering/terminal rule.",
+      "review_055_status": "NEW_CROSS_FAMILY_CASE",
+      "claim_scope": "EVENT_OR_ARM_EVIDENCE_ONLY",
+      "premises": {
+        "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+        "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+        "raw_flags": "NO_SILENT_INFERENCE",
+        "process_isolation": "NOT_CLAIMED",
+        "flag_origin": "SOURCE_FLAG_RULE",
+        "receipt_producer": "SPECIFIC_P0_OR_EVENT_RECEIPT"
+      },
+      "blocked_reason": "Cross-family observation requires frozen proof/causal and interruption-evidence rules; cannot qualify a scored oracle yet.",
+      "owner_policy_interpretation": "NOT_REQUESTED_NO_OWNER_POLICY_CHANGE",
+      "f1_decision_record": "NEEDS_INDEPENDENT_TECHNICAL_REVIEW"
+    },
+    {
+      "id": "X2",
+      "gate": "B05-A1",
+      "slug": "RP_ONLY_TIMEOUT_NO_CLIENT_CEREMONY",
+      "determination": "SOURCE_DETERMINED",
+      "source_basis": [
+        "REV04_CONTRACT-L0108",
+        "REV04_CONTRACT-L0151",
+        "REV04_CONTRACT-L0154",
+        "REV04_POLICY:webauthn_assertion_failure_table.NotAllowedError_or_owner_cancel_or_timeout.requires"
+      ],
+      "conditions": "RP issues a challenge then expires it without durable evidence the browser ever invoked navigator.credentials.get(); no owner assertion event receipt exists.",
+      "source_grounded_conclusion": "No evidenced owner ceremony event can be counted COMPLETED from a timer alone; pending state/other DOM client site error remains separately classified.",
+      "f1_evidence_or_test": "Distinguish server expiry-only from browser-invoked timeout, with shared acceptance ID and client/RP receipts; prevent G1 false REOPEN.",
+      "qualification_boundary": "Sufficient client-invocation evidence standard is a prospective technical qualification and must be independently reviewed.",
+      "review_055_status": "NEW_CROSS_FAMILY_CASE",
+      "claim_scope": "EVENT_OR_ARM_EVIDENCE_ONLY",
+      "premises": {
+        "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+        "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+        "raw_flags": "NO_SILENT_INFERENCE",
+        "process_isolation": "NOT_CLAIMED",
+        "flag_origin": "SOURCE_FLAG_RULE",
+        "receipt_producer": "SPECIFIC_P0_OR_EVENT_RECEIPT"
+      },
+      "blocked_reason": null,
+      "owner_policy_interpretation": "NOT_REQUESTED_NO_OWNER_POLICY_CHANGE",
+      "f1_decision_record": "NEEDS_INDEPENDENT_TECHNICAL_REVIEW"
+    },
+    {
+      "id": "X3",
+      "gate": "B08-A1",
+      "slug": "CTRLC_DURING_SNAPSHOT_PROMOTION",
+      "determination": "CANDIDATE_BLOCKED",
+      "source_basis": [
+        "REV04_CONTRACT-L0136",
+        "REV04_CONTRACT-L0209",
+        "REV04_POLICY:snapshot_evidence.write_protocol",
+        "REV04_POLICY:raw_flag_schema.malformed_final_file"
+      ],
+      "conditions": "Owner Ctrl+C occurs while a same-directory temporary evidence snapshot is being promoted to the unique final filename on Windows; crash-atomic no-overwrite semantics not yet qualified.",
+      "source_grounded_conclusion": "An observed malformed final snapshot must not silently be repaired or relabelled as an owner abort. Genuine integrity flags have precedence, so Windows atomicity must be qualified.",
+      "f1_evidence_or_test": "Crash-injection test of preflush, fsync, exclusive rename and postrename states, distinguishing orphan temporary file from malformed published final file.",
+      "qualification_boundary": "Until Windows write/rename atomicity and evidence integrity are independently qualified, cannot assume incomplete rather than integrity.",
+      "review_055_status": "NEW_CROSS_FAMILY_CASE",
+      "claim_scope": "EVENT_OR_ARM_EVIDENCE_ONLY",
+      "premises": {
+        "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+        "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+        "raw_flags": "NO_SILENT_INFERENCE",
+        "process_isolation": "NOT_CLAIMED",
+        "flag_origin": "SOURCE_FLAG_RULE",
+        "receipt_producer": "SPECIFIC_P0_OR_EVENT_RECEIPT"
+      },
+      "blocked_reason": "Cross-family observation requires frozen proof/causal and interruption-evidence rules; cannot qualify a scored oracle yet.",
+      "owner_policy_interpretation": "NOT_REQUESTED_NO_OWNER_POLICY_CHANGE",
+      "f1_decision_record": "NEEDS_INDEPENDENT_TECHNICAL_REVIEW"
+    },
+    {
+      "id": "X4",
+      "gate": "B05-A1",
+      "slug": "FALSE_CAPABILITY_RECEIPT_SUPPRESSES_G2",
+      "determination": "CANDIDATE_BLOCKED",
+      "source_basis": [
+        "REV04_CONTRACT-L0158",
+        "REV04_POLICY:guards.G2_UNCONTESTED_SELECTION.when_one_arm_selection_eligible_and_other_evidence_state",
+        "REV04_POLICY:evidence_state.not_realizable",
+        "V01_CONTRACT-L0231"
+      ],
+      "conditions": "Arm A is eligible, B registered successfully then NotSupportedError is self-labelled capability unavailable without an independently frozen assertion-capability proof.",
+      "source_grounded_conclusion": "False B NOT_REALIZABLE suppresses required OTHER_ARM_INCOMPLETE G2 disclosure and can end the family with PASS; B cannot be marked NOT_REALIZABLE without approved receipt.",
+      "f1_evidence_or_test": "Counterexample compare B=INCOMPLETE versus qualifying B=NOT_REALIZABLE while A=eligible, with same attempt and higher-priority flags fixed false.",
+      "qualification_boundary": "B capability receipt protocol and postregistration causal criterion remain blocked; G2 owner disclosure must not be omitted.",
+      "review_055_status": "NEW_CROSS_FAMILY_CASE",
+      "claim_scope": "EVENT_OR_ARM_EVIDENCE_ONLY",
+      "premises": {
+        "other_arm_evidence": "FIXED_CONDITIONAL",
+        "proof_viability": "FIXED_CONDITIONAL",
+        "raw_flags": "NO_SILENT_INFERENCE",
+        "process_isolation": "NOT_CLAIMED",
+        "flag_origin": "SOURCE_FLAG_RULE",
+        "receipt_producer": "SPECIFIC_P0_OR_EVENT_RECEIPT"
+      },
+      "blocked_reason": "Cross-family observation requires frozen proof/causal and interruption-evidence rules; cannot qualify a scored oracle yet.",
+      "owner_policy_interpretation": "NOT_REQUESTED_NO_OWNER_POLICY_CHANGE",
+      "f1_decision_record": "NEEDS_INDEPENDENT_TECHNICAL_REVIEW"
+    },
+    {
+      "id": "X5",
+      "gate": "B08-A1",
+      "slug": "REAL_RP_FAULT_AFTER_ELIGIBLE_A",
+      "determination": "SOURCE_DETERMINED",
+      "source_basis": [
+        "REV04_CONTRACT-L0165",
+        "REV04_CONTRACT-L0170",
+        "REV04_POLICY:raw_flag_schema.flag_origin.integrity.node_rp_failure",
+        "REV04_POLICY:guards.scorer_precedence[1]"
+      ],
+      "conditions": "A completes eligible proofs, no integrity flag; a separately source-labelled unprovoked RP fault occurs, with verified isolation and HARNESS_RECORDED fault before any owner abort.",
+      "source_grounded_conclusion": "Valid instrument source has precedence over possible PASS and yields INVALID_INSTRUMENT. A mere RP crash/no harness evidence is insufficient.",
+      "f1_evidence_or_test": "Positive/negative harness-origin and isolation tests after completed eligible Arm A; preserve B02 exception significance, avoid false favorable instrument.",
+      "qualification_boundary": "Conditional global class: every earlier integrity flag independently false, genuine unprovoked fault documented, claim already consumed.",
+      "review_055_status": "NEW_CROSS_FAMILY_CASE",
+      "claim_scope": "CONDITIONAL_ATTEMPT_CLASS",
+      "premises": {
+        "other_arm_evidence": "FIXED_CONDITIONAL",
+        "proof_viability": "FIXED_CONDITIONAL",
+        "raw_flags": "HIGHER_INTEGRITY_FALSE",
+        "process_isolation": "VERIFIED_WINDOWS_ISOLATION",
+        "flag_origin": "HARNESS_RECORDED",
+        "receipt_producer": "HARNESS"
+      },
+      "blocked_reason": null,
+      "owner_policy_interpretation": "NOT_REQUESTED_NO_OWNER_POLICY_CHANGE",
+      "f1_decision_record": "NEEDS_INDEPENDENT_TECHNICAL_REVIEW"
+    },
+    {
+      "id": "X6",
+      "gate": "B07-A3",
+      "slug": "TOOL_ERROR_EXHAUSTS_SSH_BUDGET",
+      "determination": "SOURCE_DETERMINED",
+      "source_basis": [
+        "REV04_CONTRACT-L0069",
+        "REV04_CONTRACT-L0070",
+        "REV04_CONTRACT-L0204",
+        "REV04_POLICY:evidence_state.terminal_outcomes[4]"
+      ],
+      "conditions": "After successful preclaim KAT, executable starts all three times and returns nonzero with no signature; owner enters exact R after calls 1 and 2, no exceptional launch/precheck/verification fault and no Ctrl+C.",
+      "source_grounded_conclusion": "Under the expressly permitted recurring native subprocess no-proof behavior, a three-call budget exhaustion may be event-terminal without proving wrong passphrase or a valid signature.",
+      "f1_evidence_or_test": "Synthetic contrast between process-launch failure (instrument) and deterministic no-signature native exit (budget); record timing, ensure no auto retry.",
+      "qualification_boundary": "Must not turn a true independently classified executable fault into a successful proof or recategorize B02 eligibility.",
+      "review_055_status": "NEW_CROSS_FAMILY_CASE",
+      "claim_scope": "EVENT_OR_ARM_EVIDENCE_ONLY",
+      "premises": {
+        "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+        "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+        "raw_flags": "NO_SILENT_INFERENCE",
+        "process_isolation": "NOT_CLAIMED",
+        "flag_origin": "SOURCE_FLAG_RULE",
+        "receipt_producer": "SPECIFIC_P0_OR_EVENT_RECEIPT"
+      },
+      "blocked_reason": null,
+      "owner_policy_interpretation": "NOT_REQUESTED_NO_OWNER_POLICY_CHANGE",
+      "f1_decision_record": "NEEDS_INDEPENDENT_TECHNICAL_REVIEW"
+    },
+    {
+      "id": "X7",
+      "gate": "B05-A1",
+      "slug": "ARM_C_OUTSIDE_G1_EVIDENCE_STATES",
+      "determination": "SOURCE_DETERMINED",
+      "source_basis": [
+        "REV04_CONTRACT-L0156",
+        "REV04_POLICY:guards.G1_REOPEN.REOPEN_only_if_all_arms_evidence_state_in[0]",
+        "REV04_POLICY:guards.C_arm_never_eligible"
+      ],
+      "conditions": "A and B each nonviable with independently evidenced COMPLETED or NOT_REALIZABLE state, no higher-priority faults. Arm C has attestations but no A/B cryptographic evidence_state.",
+      "source_grounded_conclusion": "G1 both-arm predicate refers to A and B only; Arm C cannot block or create REOPEN, and cannot become selected eligible cryptographic arm.",
+      "f1_evidence_or_test": "Case with Arm C missing/present affirm same G1 branch when A/B and flags fixed; control negative owner role remains not eligible.",
+      "qualification_boundary": "Use only exact A/B G1 states; Arm C behavior does not waive completed-evidence requirement.",
+      "review_055_status": "NEW_CROSS_FAMILY_CASE",
+      "claim_scope": "CONDITIONAL_ATTEMPT_CLASS",
+      "premises": {
+        "other_arm_evidence": "FIXED_CONDITIONAL",
+        "proof_viability": "FIXED_CONDITIONAL",
+        "raw_flags": "HIGHER_INTEGRITY_FALSE",
+        "process_isolation": "NOT_CLAIMED",
+        "flag_origin": "SOURCE_FLAG_RULE",
+        "receipt_producer": "SPECIFIC_P0_OR_EVENT_RECEIPT"
+      },
+      "blocked_reason": null,
+      "owner_policy_interpretation": "NOT_REQUESTED_NO_OWNER_POLICY_CHANGE",
+      "f1_decision_record": "NEEDS_INDEPENDENT_TECHNICAL_REVIEW"
+    }
+  ],
+  "independent_review": "MC-0030_MESSAGE055_AMEND_REV01_TARGETED",
+  "source_predecessors": [
+    "experiments/r0_p01_owner_acceptance_v01/implementation_contract.md",
+    "experiments/r0_p01_owner_acceptance_v01/implementation_contract_addendum_v02.md"
+  ],
+  "source_owner_decisions": [
+    "docs/research/r0_p01_successor_design/R0_P01_B01_OWNER_ACCEPTANCE_20261010.md",
+    "docs/research/r0_p01_successor_design/R0_P01_B02_OWNER_ACCEPTANCE_20261010.md"
+  ],
+  "reviewer_risk_register": "docs/research/r0_p01_successor_design/R0_P01_F1_PENDING_AUDIT_RECONCILIATION_REV01_UNFROZEN.json",
+  "open_gate_pending_coverage": [
+    {
+      "unit_id": "REV04_CONTRACT-L0066",
+      "case_ids": [
+        "S2-01",
+        "S2-02",
+        "S2-03",
+        "S2-04"
+      ],
+      "resolution": "CITED_PENDING_F1_REVIEW",
+      "reason": "Source basis inspected; exact technical evidence/rule interpretation remains unfrozen, not task-owner approved."
+    },
+    {
+      "unit_id": "REV04_CONTRACT-L0108",
+      "case_ids": [
+        "S1-01",
+        "S1-02",
+        "S1-04",
+        "X2"
+      ],
+      "resolution": "CITED_PENDING_F1_REVIEW",
+      "reason": "Source basis inspected; exact technical evidence/rule interpretation remains unfrozen, not task-owner approved."
+    },
+    {
+      "unit_id": "REV04_CONTRACT-L0150",
+      "case_ids": [
+        "S1-01",
+        "S1-04",
+        "S1-05"
+      ],
+      "resolution": "CITED_PENDING_F1_REVIEW",
+      "reason": "Source basis inspected; exact technical evidence/rule interpretation remains unfrozen, not task-owner approved."
+    },
+    {
+      "unit_id": "REV04_CONTRACT-L0200",
+      "case_ids": [
+        "S1-04"
+      ],
+      "resolution": "CITED_PENDING_F1_REVIEW",
+      "reason": "Source basis inspected; exact technical evidence/rule interpretation remains unfrozen, not task-owner approved."
+    },
+    {
+      "unit_id": "REV04_CONTRACT-L0206",
+      "case_ids": [
+        "S2-01",
+        "S2-03",
+        "S2-04"
+      ],
+      "resolution": "CITED_PENDING_F1_REVIEW",
+      "reason": "Source basis inspected; exact technical evidence/rule interpretation remains unfrozen, not task-owner approved."
+    },
+    {
+      "unit_id": "REV04_CONTRACT-L0215",
+      "case_ids": [
+        "S3-03"
+      ],
+      "resolution": "CITED_PENDING_F1_REVIEW",
+      "reason": "Source basis inspected; exact technical evidence/rule interpretation remains unfrozen, not task-owner approved."
+    },
+    {
+      "unit_id": "REV04_POLICY:browser_node_interrupt.owner_ctrl_c",
+      "case_ids": [
+        "S3-03"
+      ],
+      "resolution": "CITED_PENDING_F1_REVIEW",
+      "reason": "Source basis inspected; exact technical evidence/rule interpretation remains unfrozen, not task-owner approved."
+    },
+    {
+      "unit_id": "REV04_POLICY:browser_node_interrupt.unexpected_node_failure",
+      "case_ids": [
+        "S3-02",
+        "S3-03"
+      ],
+      "resolution": "CITED_PENDING_F1_REVIEW",
+      "reason": "Source basis inspected; exact technical evidence/rule interpretation remains unfrozen, not task-owner approved."
+    },
+    {
+      "unit_id": "REV04_POLICY:evidence_state.completed",
+      "case_ids": [
+        "S2-03",
+        "S4-04",
+        "X1"
+      ],
+      "resolution": "CITED_PENDING_F1_REVIEW",
+      "reason": "Source basis inspected; exact technical evidence/rule interpretation remains unfrozen, not task-owner approved."
+    },
+    {
+      "unit_id": "REV04_POLICY:evidence_state.not_realizable",
+      "case_ids": [
+        "S1-01",
+        "S1-05",
+        "X4"
+      ],
+      "resolution": "CITED_PENDING_F1_REVIEW",
+      "reason": "Source basis inspected; exact technical evidence/rule interpretation remains unfrozen, not task-owner approved."
+    },
+    {
+      "unit_id": "REV04_POLICY:evidence_state.terminal_outcomes[4]",
+      "case_ids": [
+        "S4-01",
+        "S4-04",
+        "X6"
+      ],
+      "resolution": "CITED_PENDING_F1_REVIEW",
+      "reason": "Source basis inspected; exact technical evidence/rule interpretation remains unfrozen, not task-owner approved."
+    },
+    {
+      "unit_id": "REV04_POLICY:raw_flag_schema.attempt_integrity_failure",
+      "case_ids": [
+        "S2-01"
+      ],
+      "resolution": "CITED_PENDING_F1_REVIEW",
+      "reason": "Source basis inspected; exact technical evidence/rule interpretation remains unfrozen, not task-owner approved."
+    },
+    {
+      "unit_id": "REV04_POLICY:raw_flag_schema.node_rp_failure",
+      "case_ids": [
+        "S3-01",
+        "S3-03"
+      ],
+      "resolution": "CITED_PENDING_F1_REVIEW",
+      "reason": "Source basis inspected; exact technical evidence/rule interpretation remains unfrozen, not task-owner approved."
+    },
+    {
+      "unit_id": "REV04_POLICY:webauthn_assertion_failure_table.NotSupportedError.outcome",
+      "case_ids": [
+        "S1-04"
+      ],
+      "resolution": "CITED_PENDING_F1_REVIEW",
+      "reason": "Source basis inspected; exact technical evidence/rule interpretation remains unfrozen, not task-owner approved."
+    },
+    {
+      "unit_id": "REV04_POLICY:webauthn_assertion_failure_table.NotSupportedError.proof_viability_receipt",
+      "case_ids": [
+        "S1-04",
+        "S1-05"
+      ],
+      "resolution": "CITED_PENDING_F1_REVIEW",
+      "reason": "Source basis inspected; exact technical evidence/rule interpretation remains unfrozen, not task-owner approved."
+    },
+    {
+      "unit_id": "REV04_POLICY:webauthn_assertion_failure_table.NotSupportedError.requires",
+      "case_ids": [
+        "S1-04"
+      ],
+      "resolution": "CITED_PENDING_F1_REVIEW",
+      "reason": "Source basis inspected; exact technical evidence/rule interpretation remains unfrozen, not task-owner approved."
+    },
+    {
+      "unit_id": "V01_CONTRACT-L0223",
+      "case_ids": [
+        "S1-04",
+        "S1-05"
+      ],
+      "resolution": "CITED_PENDING_F1_REVIEW",
+      "reason": "Source basis inspected; exact technical evidence/rule interpretation remains unfrozen, not task-owner approved."
+    },
+    {
+      "unit_id": "V01_CONTRACT-L0231",
+      "case_ids": [
+        "S1-04",
+        "S1-05",
+        "X4"
+      ],
+      "resolution": "CITED_PENDING_F1_REVIEW",
+      "reason": "Source basis inspected; exact technical evidence/rule interpretation remains unfrozen, not task-owner approved."
+    }
+  ]
+}

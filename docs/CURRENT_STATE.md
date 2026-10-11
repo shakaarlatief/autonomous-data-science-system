@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 873
+**Checkpoint:** 874
 **Date:** 2026-10-11
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,21 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: R0-P01 F1 scoring-boundary source matrix for independent review
+## Current active stage: R0-P01 Message 055 reconciled, REV02 scoring-boundary review pending
+
+Checkpoint 874 / Research 538 / Validation 227 / MC-0030 Message 056 reconcile Claude's Message 055 targeted verdict AMEND_REV01_TARGETED. Message 055 committed only its allowed standalone review file at `19ea777ee191cac6c46bc1aac7c0edffb9093d1f`. The human B01/B02-approved REV04 contract/policy, frozen Attempt 001 and 18-batch audit messages remain unchanged. The former untracked `.tmp` test artifacts were **preserved, not deleted**, by moving the entire folder to the existing ignored local-only `.venv/.ads-preserved-untracked-temp-pre-message055-20261011` before the controlled Git fast-forward pull.
+
+Claude confirmed eight of the 17 original scenario cases, requested nine targeted amendments and seven new cross-family scenarios, rejected none and identified no mandatory owner interpretation. Research 538 and distinct unfrozen **REV02** JSON now contain 24 source-bound cases, 17 narrow `SOURCE_DETERMINED` implications and seven explicitly `CANDIDATE_BLOCKED` evidence/interpretation decisions. Crucially: Ctrl+C during a third native SSH call cannot be mistaken for ordinary exhausted SSH budget; RP-only timeout with no client invocation cannot automatically prove a completed owner ceremony; postregistration NotSupportedError needs a frozen independent capability receipt; RP-fault exceptional classification requires HARNESS-recorded evidence and verified Windows isolation; late successful RP receipts cannot create posthoc verified owner proofs. These remain prospective technical proposals for independent review, not scored oracles.
+
+The REV02 fail-closed structural guard pins exact scenario identities and dispositions, independent Message 055 reviewer-status provenance, actual owner receipt-bound source hashes, V01/V02 predecessor citations, precise conditional scoring premises and all **18/18** independent reviewer-pending source rows tied to the four classification-sensitive gates. None of the historical **55 pending** reviewer units is task-owner-approved. The pending register's historical CRLF-vs-LF defect was repaired by reading **committed Git blobs**, not checkout bytes. The regenerated 55-row register retains all source-unit identities and open resolutions.
+
+Validation 227 records **72/72 focused audit/scoring-structure regression tests passed**, including sixteen new tests for relabelled/missing protected cases, misleading conditional flags, source drift, pending citation changes and the Git blob SHA basis. These tests do **not** implement or qualify the 117 F1 synthetic experiment tests, cryptographic owner probes or independent scored seven-row oracle. The next actor is independent Claude, limited to Message 057 review of the nine amendments, seven new cross-family cases, guard and blob provenance. General ChatGPT–Claude relay remains manual and unchanged.
+
+No fresh owner-policy interpretation is presently requested; any real change to B01/B02 requires a separate explicit human approval. F1/F2 unfrozen, Attempt 001 immutable AMEND and Attempt 002 not authorized; later owner-execution assent remains separate. R0-P02 PASS, R0-P03 pending; physical architecture unselected, Specification 028 unchanged.
+
+---
+
+## Historical checkpoint 873 stage: R0-P01 F1 scoring-boundary source matrix for independent review
 
 Checkpoint 873 / Research 537 / Validation 226 / MC-0030 Message 054 move from the completed 1,022-unit independent clause audit to source-sensitive **F1 classification-boundary analysis**, without attempting real owner authentication, modifying B01/B02, or freezing a scorer. Original 18/18 batch records and their 967 reviewer ACCEPTED / 55 PENDING findings remain immutable. The pending register continues to report zero task-owner resolutions.
 

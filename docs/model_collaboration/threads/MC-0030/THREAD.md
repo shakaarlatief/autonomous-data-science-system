@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / F1 SCORING-BOUNDARY REV01 INDEPENDENT CHALLENGE NEXT
+**Status:** OPEN / F1 SCORING-BOUNDARY REV02 FOCUSED TECHNICAL CONFIRMATION NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -555,4 +555,19 @@ Claude / claude-04 now performs one independent semantic counterexample review, 
     NEXT_MESSAGE=055
     SCENARIOS=17
     F1_F2=UNFROZEN
+    ATTEMPT_002=NOT_AUTHORIZED
+
+## Message 055 independently challenged REV01; source-sensitive REV02 review pending
+
+Claude Message 055 at 19ea777ee191cac6c46bc1aac7c0edffb9093d1f is the only changed file after Checkpoint 873, with 8 confirmed, 9 amended, zero rejected and no mandatory new owner interpretation. ChatGPT Research 538 preserves those decisions and prepares a **distinct** 24-case REV02 matrix with 17 narrow SOURCE_DETERMINED claims and 7 CANDIDATE_BLOCKED causal/evidence decisions. Its X1–X7 cross-family risks include owner Ctrl+C on third SSH invocation, RP-only timeout, interrupted snapshot promotion, G2 disclosure suppression, late RP instrument after eligible A, recurring no-proof tool exits, and Arm C's A/B-only G1 scope.
+
+The separate REV02 guard verifies all exact case IDs/statuses and reviewed source identities, plus all 18 reviewer-pending source units relevant to four scoring gates; all 55 original pending task-owner resolutions stay UNRESOLVED. The pending register now uses platform-invariant exact Git committed reviewer blob hashes (not Windows checkout-converted CRLF). Validation 227 records 72 passing tests: checkers are structural, not an implemented scorer/known-answer oracle.
+
+MC-0030 Message 056 requests a single normal-procedure independent Claude review, authorized to commit only Message 057. No 18-batch audit campaign, change to normal collaboration workflow, F1/F2 freeze, live Attempt 002, or owner-sensitive ceremony is authorized. The reviewer is not the blind second scoring/oracle author.
+
+    PHASE=R0_P01_F1_SCORING_BOUNDARY_REV02_FOCUSED_REVIEW_PENDING
+    NEXT_ACTOR=claude
+    NEXT_MESSAGE=057
+    F1=UNFROZEN
+    F2=UNFROZEN
     ATTEMPT_002=NOT_AUTHORIZED

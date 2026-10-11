@@ -854,6 +854,14 @@ docs/research/537_r0_p01_f1_scoring_boundary_cross_source_matrix_rev01.md
 docs/research/r0_p01_successor_design/R0_P01_F1_SCORING_BOUNDARY_CANDIDATES_REV01_UNFROZEN.json
 docs/local_execution/validation/226_r0_p01_scoring_boundary_candidate_source_guard_qualification.md
 docs/checkpoints/873_r0_p01_scoring_boundary_matrix_for_independent_challenge.md
+docs/model_collaboration/threads/MC-0030/messages/055_claude_r0_p01_scoring_boundary_rev01_independent_review.md
+docs/model_collaboration/threads/MC-0030/messages/056_chatgpt_r0_p01_message055_targeted_reconciliation_rev02_review_request.md
+docs/research/538_r0_p01_message055_targeted_reconciliation_and_f1_scoring_rev02.md
+docs/research/r0_p01_successor_design/R0_P01_F1_SCORING_BOUNDARY_CANDIDATES_REV02_UNFROZEN.json
+docs/local_execution/validation/227_r0_p01_message055_rev02_scenario_guard_and_git_blob_hash_regression.md
+docs/checkpoints/874_r0_p01_message055_reconciled_f1_scoring_rev02_next.md
+scripts/check_r0_p01_scoring_boundary_rev02.py
+tests/unit/test_r0_p01_scoring_boundary_rev02.py
 docs/model_collaboration/threads/MC-0030/messages/054_chatgpt_r0_p01_scoring_boundary_rev01_independent_review_request.md
 scripts/check_r0_p01_scoring_boundary_candidates.py
 tests/unit/test_r0_p01_scoring_boundary_candidates.py
@@ -1577,7 +1585,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-873 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-874 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

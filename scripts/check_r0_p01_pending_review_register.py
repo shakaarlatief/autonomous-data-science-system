@@ -13,6 +13,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import subprocess
 from pathlib import Path
 
 try:
@@ -27,6 +28,30 @@ except ModuleNotFoundError:
 DEST = Path("docs/research/r0_p01_successor_design/R0_P01_F1_PENDING_AUDIT_RECONCILIATION_REV01_UNFROZEN.json")
 
 
+def _committed_bytes(root: Path, relative_path: Path) -> bytes:
+    """Hash Git-committed blob bytes, not platform-translated working-tree bytes.
+
+    Windows text checkout may convert LF source to CRLF. SHA-256 over an
+    individual working-tree file would then differ from the historical Git
+    blob on Linux/CI even when its semantic text and commit are unchanged.
+    This helper uses the read-only HEAD:path lookup. It will fail closed when
+    Git cannot establish the pinned public source and cannot be substituted
+    with a normalizing text decoder or an uncommitted local checkout.
+    """
+    rel = relative_path.as_posix()
+    result = subprocess.run(
+        ["git", "show", f"HEAD:{rel}"],
+        cwd=root,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        check=False,
+        timeout=15,
+    )
+    if result.returncode:
+        raise ValueError(f"cannot read committed Git blob {rel}: {result.stderr[:180]!r}")
+    return result.stdout
+
+
 def manifest(root: Path = ROOT) -> dict:
     """Transcribe all independently reviewed but unresolved source units.
 
@@ -38,8 +63,9 @@ def manifest(root: Path = ROOT) -> dict:
     if status["batch_count"] != 18 or status["reviewed_units"] != 1022:
         raise ValueError("partial audit: do not manufacture a complete pending register")
     plan = json.loads((root / PLAN.relative_to(ROOT)).read_text(encoding="utf-8"))
-    inv_path = root / INVENTORY.relative_to(ROOT)
-    inventory = json.loads(inv_path.read_text(encoding="utf-8"))
+    inv_rel = INVENTORY.relative_to(ROOT)
+    inv_path = root / inv_rel
+    inventory = json.loads(_committed_bytes(root, inv_rel).decode("utf-8"))
     units = {u["id"]: u for u in inventory["units"]}
     entries = []
     source_messages = []
@@ -48,8 +74,9 @@ def manifest(root: Path = ROOT) -> dict:
         name = ("033_claude_r0_p01_clause_audit_batch001.md"
                 if batch_no == 1 else
                 f"{batch_no+33:03}_claude_r0_p01_clause_audit_batch{batch_no:03}.md")
-        path = root / MESSAGE_DIR.relative_to(ROOT) / name
-        sha = hashlib.sha256(path.read_bytes()).hexdigest()
+        rel = MESSAGE_DIR.relative_to(ROOT) / name
+        path = root / rel
+        sha = hashlib.sha256(_committed_bytes(root, rel)).hexdigest()
         source_messages.append({"batch_id": batch["batch_id"],
                                 "message_path": str((MESSAGE_DIR / name).relative_to(root)).replace("\\", "/"),
                                 "message_sha256": sha})
@@ -87,7 +114,8 @@ def manifest(root: Path = ROOT) -> dict:
         "authority": "Indexes Claude independent audit receipts; cannot approve normative semantics, change accepted B01/B02 policy or authorize an experiment.",
         "source_audit_plan": str(PLAN.relative_to(root)).replace("\\", "/"),
         "source_audit_inventory": str(INVENTORY.relative_to(root)).replace("\\", "/"),
-        "source_audit_inventory_sha256": hashlib.sha256(inv_path.read_bytes()).hexdigest(),
+        "source_audit_inventory_sha256": hashlib.sha256(_committed_bytes(root, inv_rel)).hexdigest(),
+        "hash_basis": "COMMITTED_GIT_BLOB_BYTES_HEAD_RELATIVE_PATH",
         "audit_summary": {
             "batches": status["batch_count"],
             "reviewed_units": status["reviewed_units"],
