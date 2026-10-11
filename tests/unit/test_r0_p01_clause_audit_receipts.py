@@ -12,12 +12,12 @@ from scripts.check_r0_p01_clause_audit_receipts import (
 )
 
 
-def test_existing_batch001_receipt_is_complete_and_not_f1_authorization() -> None:
+def test_committed_batch_prefix_is_complete_and_not_f1_authorization() -> None:
     actual=audit_summary()
-    assert actual["batch_count"]==1
-    assert actual["reviewed_units"]==49
-    assert actual["accepted"]==39
-    assert actual["pending"]==10
+    assert actual["batch_count"]==9
+    assert actual["reviewed_units"]==472
+    assert actual["accepted"]==428
+    assert actual["pending"]==44
     assert actual["F1_frozen"] is False
     assert actual["attempt_002_authorized"] is False
 
@@ -78,3 +78,67 @@ def test_pending_without_blocker_rejected(tmp_path: Path) -> None:
     path.write_text("Reviewer: claude-04\nBEGIN_AUDIT_RECEIPT\n"+row+"\nEND_AUDIT_RECEIPT\n",encoding="utf-8")
     with pytest.raises(ValueError,match="pending reason"):
         parse_receipt(path,2)
+
+
+@pytest.mark.parametrize("batch_number", [10,14,18])
+def test_json_path_ids_are_parsed_for_all_remaining_source_types(
+    tmp_path: Path, batch_number: int,
+) -> None:
+    """Prove that real lowercase, array-indexed JSON-path IDs survive parsing.
+
+    This does not attest semantic accuracy of fabricated synthetic receipt rows.
+    The representative receipts include every original assigned source-unit ID,
+    not a hand-picked simplified prefix.
+    """
+    plan=json.loads(PLAN.read_text(encoding="utf-8"))
+    inventory=json.loads(INVENTORY.read_text(encoding="utf-8"))
+    batch=plan["audit_batches"][batch_number-1]
+    assert batch["source_id"] in {"REV04_POLICY","V01_FIXTURE","V01_RESULT"}
+    assert all(":" in uid for uid in batch["unit_ids"])
+    path=tmp_path/f"{batch_number+33:03}_claude_r0_p01_clause_audit_batch{batch_number:03}.md"
+    rows=[
+        f"{uid}|INHERITED_UNCHANGED|R01|PENDING|SYNTHETIC_STRUCTURE_ONLY|{batch['source_id']};test"
+        for uid in batch["unit_ids"]
+    ]
+    path.write_text(
+        "Reviewer: claude-04\nBEGIN_AUDIT_RECEIPT\n"
+        +"\n".join(rows)
+        +"\nEND_AUDIT_RECEIPT\n",
+        encoding="utf-8",
+    )
+    parsed=parse_receipt(path,batch_number)
+    assert set(parsed)==set(batch["unit_ids"])
+    assert verify_batch(batch_number,path,plan,inventory)["units"]==len(batch["unit_ids"])
+
+
+def test_json_path_receipt_does_not_silently_drop_one_unit(tmp_path: Path) -> None:
+    """A partial lowercase JSON receipt must fail instead of returning a PASS."""
+    plan=json.loads(PLAN.read_text(encoding="utf-8"))
+    inventory=json.loads(INVENTORY.read_text(encoding="utf-8"))
+    batch=plan["audit_batches"][9]
+    path=tmp_path/"043_claude_r0_p01_clause_audit_batch010.md"
+    rows=[
+        f"{uid}|INHERITED_UNCHANGED|R01|PENDING|SYNTHETIC_ONLY|REV04_POLICY;test"
+        for uid in batch["unit_ids"][:-1]
+    ]
+    path.write_text(
+        "Reviewer: claude-04\nBEGIN_AUDIT_RECEIPT\n"
+        +"\n".join(rows)
+        +"\nEND_AUDIT_RECEIPT\n",
+        encoding="utf-8",
+    )
+    with pytest.raises(ValueError,match="incomplete"):
+        verify_batch(10,path,plan,inventory)
+
+def test_future_receipt_rejects_unrecognized_nonempty_row(tmp_path: Path) -> None:
+    """Malformed receipt rows must not disappear silently from audit evidence."""
+    path=tmp_path/"043_claude_r0_p01_clause_audit_batch010.md"
+    valid="REV04_POLICY:claim_cap.absolute_new_claim_cap|INHERITED_UNCHANGED|R01|PENDING|TEST|REV04_POLICY;test"
+    path.write_text(
+        "Reviewer: claude-04\nBEGIN_AUDIT_RECEIPT\n"
+        +valid
+        +"\nREV04_POLICY:unexpected/path|INHERITED_UNCHANGED|R01|PENDING|TEST|TEST"
+        +"\nEND_AUDIT_RECEIPT\n",encoding="utf-8",
+    )
+    with pytest.raises(ValueError,match="unsupported receipt row"):
+        parse_receipt(path,10)

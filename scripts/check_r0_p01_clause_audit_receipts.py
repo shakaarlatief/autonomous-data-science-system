@@ -17,7 +17,7 @@ PLAN = ROOT / "docs/research/r0_p01_successor_design/R0_P01_F1_NORMATIVE_AUDIT_B
 INVENTORY = ROOT / "docs/research/r0_p01_successor_design/R0_P01_F1_NORMATIVE_AUDIT_INVENTORY_REV03_UNFROZEN.json"
 MESSAGE_DIR = ROOT / "docs/model_collaboration/threads/MC-0030/messages"
 AUDIT_FNAME = re.compile(r"^(\d{3})_claude_r0_p01_clause_audit_batch(\d{3})\.md$")
-FUTURE_ROW = re.compile(r"^[A-Z0-9_:\-\[\]\.]+[|]")
+FUTURE_ROW = re.compile(r"^[A-Za-z0-9_:\-\[\]\.]+[|]")
 DISPOSITIONS = {"INHERITED_UNCHANGED", "NOT_APPLICABLE_TO_SUCCESSOR", "SUPERSEDED_BY_REV04"}
 STATUSES = {"ACCEPTED", "PENDING"}
 FIRST_RECEIPT_HEADER = "## 4. Machine-checkable receipt"
@@ -35,7 +35,16 @@ def parse_receipt(path: Path, batch_number: int) -> dict[str, tuple[str, str, st
     out: dict[str, tuple[str, str, str, str, str]] = {}
     for line in block.splitlines():
         line=line.strip()
-        if not line or not FUTURE_ROW.match(line):
+        if not line:
+            continue
+        if not FUTURE_ROW.match(line):
+            # The first reviewer receipt is embedded in a human-readable
+            # section, but all successor batches have delimited receipt-only
+            # blocks. Silent skipping here would allow malformed or newly
+            # unsupported JSON-path IDs to disappear without affecting the
+            # expected set comparison.
+            if batch_number > 1:
+                raise ValueError(f"{path.name}: unsupported receipt row {line[:100]!r}")
             continue
         if batch_number==1 and not line.startswith("V01_CONTROLS-L"):
             continue

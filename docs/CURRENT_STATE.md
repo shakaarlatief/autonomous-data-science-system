@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 870
+**Checkpoint:** 871
 **Date:** 2026-10-10
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,21 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: R0-P01 Message 033 reconciled; one-prompt remaining independent clause audit
+## Current active stage: R0-P01 independent audit stopped safely; JSON receipts fixed, Batch 010 resumes
+
+Checkpoint 871 / Research 535 / Validation 224 reconcile Claude's MC-0030 Messages 035–042 and interim stop summary Message 052, committed on top of Checkpoint 870 without other source mutations. The independent clause-audit receipts now cover **nine of eighteen batches**, 472/1022 source units, 428 independent reviewer ACCEPTED and 44 PENDING (still not task-owner semantic approval, test PASS or F1 qualification). The V01 controls, V02 addendum, V01 implementation contract and REV04 successor contract batches are reviewed; **550 JSON leaves** across the REV04 policy, original fixture and result contract remain unaudited.
+
+Claude stopped before Batch 010 when `scripts/check_r0_p01_clause_audit_receipts.py` failed to parse lowercase JSON-path source IDs. ChatGPT repaired its restricted uppercase-only receipt pattern, preserved legacy Batch 001 parsing, and made malformed nonempty rows in all later delimited receipts explicitly fail-closed instead of silently vanishing. Complete assigned-ID synthetic receipts were tested for Batches 010 (policy), 014 (fixture with array positions) and 018 (result), plus partial/malformed receipt negatives. The combined suite passes **42/42**. No source or fixture semantics changed.
+
+Important unresolved findings include B05-A1 missing NOT_REALIZABLE capability-evidence predicate, B07-A3 SSH pre-sign event-versus-INTEGRITY classification, and B08-A1 ambiguous abort/Node-exit ordering, each potentially affecting B02 exception rights. Also pending are C02 cryptographic test sensitivity, C09 metamorphic repository perturbation, C07 successor grammar, stale-base/signer ADMIT negatives, independent oracle and scorer, source-role/read-list conflicts and F1 exact-vector policy. None is silently adjudicated or frozen. Research 535 records their status and their prospective remediation boundaries.
+
+The earlier MC-0030 Message 034 remains the exceptional **audit-specific one-prompt** authority for Claudes remaining Batch 010–018, using already-reserved reviewer Messages 043–051. Historical Message 052 remains the stop summary (not final completion); no general ChatGPT–Claude collaboration process redesign. Claude must read latest public HEAD, revalidate 9 committed batches, and resume only if receipt guard PASS and exact source hashes hold. Any future completion summary needs separate authorized numbering after 052; do not overwrite history.
+
+B01/B02 accepted and immutable, F1/F2 unfrozen, original Attempt 001 immutable AMEND, real Attempt 002 still unauthorized and subject to third separate explicit human approval. R0-P02 PASS, R0-P03 pending; Specification 028 and project authority unchanged; physical realization unselected.
+
+---
+
+## Historical checkpoint 870 stage: R0-P01 Message 033 reconciled; one-prompt remaining independent clause audit
 
 Checkpoint 870 / Research 534 / Validation 223 / MC-0030 Message 034 record Claude's independently committed and verified Batch 001 review. Its exact receipt covers **49/49** original V01 security-control units, with **39 reviewer ACCEPTED** and **10 PENDING** cases. Three formerly excluded preamble lines must become normative units. These are per-unit reviewer judgments, not executable security-test PASS results or task-owner semantic approval.
 

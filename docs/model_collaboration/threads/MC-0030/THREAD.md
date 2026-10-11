@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / R0-P01 ONE-PROMPT REMAINING CLAUSE AUDIT NEXT
+**Status:** OPEN / R0-P01 JSON AUDIT RECEIPT FIX QUALIFIED / BATCH 010 NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -508,6 +508,23 @@ The user's preference is **specific to high-volume audit batches**: ordinary man
     PHASE=R0_P01_REMAINING_CLAUSE_AUDIT_ONE_PROMPT_PENDING
     NEXT_ACTOR=claude
     START_BATCH=Q0-AUDIT-002
+    F1=UNFROZEN
+    F2=UNFROZEN
+    ATTEMPT_002=NOT_AUTHORIZED
+
+
+## Audit campaign safely stopped and resumed: JSON receipt validator repair
+
+Claude's eight sequential batches 002–009 were durably committed as Messages 035–042, alongside immutable interim stop Message 052. The public commit series ends at dc96718bd8df53dd9f7e3d3e2d67aada82285a09; no authority outside message files was changed. Source-unit receipt coverage is 9/18, 472/1022 units, 428 reviewer ACCEPTED and 44 reviewer PENDING.
+
+Message 052's stop was legitimate: the uppercase-only JSON receipt pattern omitted all lowercase JSON-path unit IDs and would prevent validating the remaining 550 units. ChatGPT's bounded repair adds lowercase matching, fail-closed nonempty future receipt lines, representative full-batch JSON tests and coverage baseline updates. Validation 224 records 42/42 PASS. Research 535 preserves B05-A1 capability-evidence, B07-A3 SSH pre-sign integrity and B08-A1 Node/abort ordering as material policy questions, unresolved before F1.
+
+Continue the existing Message 034 **single-prompt audit-specific delegation**, not a general collaboration workflow change. The next Claude receipt is Batch 010 / Message 043, potentially through Batch 018 / Message 051. Already committed Message 052 remains an interim stop summary, not a new final report. Claude has no script/test/source/routing mutation authority, is not the independent scorer or blind oracle author, and cannot freeze F1/F2 or start Attempt 002.
+
+    PHASE=R0_P01_JSON_CLAUSE_AUDIT_RESUME_BATCH010_PENDING
+    NEXT_ACTOR=claude
+    AUDIT_BATCH=Q0-AUDIT-010
+    CLAUDE_MESSAGES=043_THROUGH_051_RESERVED
     F1=UNFROZEN
     F2=UNFROZEN
     ATTEMPT_002=NOT_AUTHORIZED

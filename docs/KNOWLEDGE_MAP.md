@@ -824,6 +824,18 @@ docs/checkpoints/869_r0_p01_message031_reconciled_inherited_clause_audit_batch00
 docs/model_collaboration/threads/MC-0030/messages/032_chatgpt_r0_p01_message031_reconciliation_first_clause_audit_request.md
 docs/model_collaboration/threads/MC-0030/messages/033_claude_r0_p01_clause_audit_batch001.md
 docs/model_collaboration/threads/MC-0030/messages/034_chatgpt_r0_p01_message033_reconciliation_one_prompt_remaining_audit.md
+docs/model_collaboration/threads/MC-0030/messages/035_claude_r0_p01_clause_audit_batch002.md
+docs/model_collaboration/threads/MC-0030/messages/036_claude_r0_p01_clause_audit_batch003.md
+docs/model_collaboration/threads/MC-0030/messages/037_claude_r0_p01_clause_audit_batch004.md
+docs/model_collaboration/threads/MC-0030/messages/038_claude_r0_p01_clause_audit_batch005.md
+docs/model_collaboration/threads/MC-0030/messages/039_claude_r0_p01_clause_audit_batch006.md
+docs/model_collaboration/threads/MC-0030/messages/040_claude_r0_p01_clause_audit_batch007.md
+docs/model_collaboration/threads/MC-0030/messages/041_claude_r0_p01_clause_audit_batch008.md
+docs/model_collaboration/threads/MC-0030/messages/042_claude_r0_p01_clause_audit_batch009.md
+docs/model_collaboration/threads/MC-0030/messages/052_claude_r0_p01_remaining_clause_audit_summary.md
+docs/research/535_r0_p01_message052_audit_campaign_stop_reconciliation_and_json_receipt_fix.md
+docs/local_execution/validation/224_r0_p01_json_receipt_validator_repair_and_inherited_regression.md
+docs/checkpoints/871_r0_p01_message052_stop_reconciled_json_receipt_fix_resume_batch010.md
 docs/research/534_r0_p01_message033_false_positive_security_controls_and_one_prompt_audit_plan.md
 docs/local_execution/validation/223_r0_p01_message033_receipt_check_and_c02_c09_c07_inspection.md
 docs/checkpoints/870_r0_p01_message033_security_control_false_positive_findings_one_prompt_audit.md
@@ -1542,7 +1554,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-870 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-871 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 
