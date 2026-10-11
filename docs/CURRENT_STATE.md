@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 881
+**Checkpoint:** 882
 **Date:** 2026-10-11
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,17 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: trusted synthetic durable run issuance and one-time admission
+## Current active stage: governed synthetic run authorization and preserved interruption evidence
+
+Checkpoint 882 / Research 546 / Validation 234 expand the replaceable synthetic trusted claim store with a governed mode that requires a distinct affirmative synthetic controller approval before issuing a new run claim. Permission is saved atomically with the cryptographically bound nonce. Interruption, error and completion observations preserve synthetic elapsed milliseconds, interaction count and a short note without changing cryptographic claim admission. A replacement retains the previous interrupted claim and requires its own run-specific authorization and valid SSHSIG or synthetic ES256 signature.
+
+Forty-four new executable cases PASS, and 217 focused regressions PASS: 133 synthetic executable cryptographic, issuance and evidence tests plus 84 prior structural/source guards. The older ungoverned prototype remains available under a different genesis, while the expanded persistent test schema is version 2. The actual owner's previously approved simplified accident/replacement policy remains in force and does not require forensic proof of Ctrl+C to grant a new run.
+
+A synthetic controller approval record is NOT proof of real human-owner identity, and supplied synthetic durations are not independently measured live owner effort. Notes are not guaranteed redacted or secret-safe. Original Attempt 001 AMEND, historical B01/B02 signed bytes and human source-audit receipts remain unchanged. F1/F2 unfrozen; real Attempt 002 not authorized. Actual SSH/Windows Hello ceremony, full scorer, adversarial storage rollback and genuine owner measurements remain unqualified. Next work is bounded synthetic measurement/outcome rehearsal. R0-P02 PASS, R0-P03 pending, final ADS architecture open.
+
+---
+
+## Historical checkpoint 881 stage: trusted synthetic durable run issuance and one-time admission
 
 Checkpoint 881 / Research 545 / Validation 233 integrate the run-bound signed nonce of Checkpoint 880 with a replaceable synthetic issuer and admission store. Trusted public genesis, random unique signed run identities, exact independently reconstructed expected statements, issued/superseded/admitted lifecycle and accepted proof evidence are committed in SQLite transactions. New issuance supersedes any unfinished prior claim. Admission requires the trusted selected run nonce, its exact expected statement, enrolled public signer and real Ed25519 SSHSIG or synthetic WebAuthn-shaped ES256 verification. Restarts reconstruct and verify every accepted signed proof and refuse to recreate missing journal state.
 

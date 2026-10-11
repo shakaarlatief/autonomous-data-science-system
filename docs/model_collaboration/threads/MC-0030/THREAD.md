@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / P01 SYNTHETIC TRUSTED DURABLE CLAIM ADMISSION PASS / RUN CONSENT NEXT
+**Status:** OPEN / P01 SYNTHETIC GOVERNED RUN EVIDENCE PASS / MEASUREMENT NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -660,5 +660,18 @@ The implementation is an experiment, not final production architecture or real o
     PHASE=R0_P01_SYNTHETIC_DURABLE_TRUSTED_CLAIM_ADMISSION_PASS
     NEXT_ACTOR=chatgpt
     NEXT_BOUNDARY=p-one-authorized-run-initiation-and-evidence
+    F1_F2=UNFROZEN
+    ATTEMPT_002=NOT_AUTHORIZED
+
+
+## Synthetic run-specific approval and observation integration
+
+Research 546 / Validation 234 / Checkpoint 882 extend the previously tested claim journal in a narrowly bounded synthetic governed mode. A separate affirmative synthetic controller record is transactionally bound to the fresh signed run nonce, and nonsecret interruption/error/completion observations survive restarts and replacements without changing cryptographic acceptance. Forty-four new executable tests pass, including accident/replacement sequences for both signature mechanisms. Total focused checks: 217 PASS, split into 133 synthetic execution-facing and 84 historical structural.
+
+The synthetic-controller source label does not authenticate the human owner; actual Attempt 002 requires separate real run authorization. Existing owner-approved simple replacement policy, historical Attempt 001 AMEND and source evidence remain unchanged. True owner effort timing and outcome oracle remain pending. No automatic Claude review is requested.
+
+    PHASE=R0_P01_SYNTHETIC_GOVERNED_ISSUANCE_EVIDENCE_PASS
+    NEXT_ACTOR=chatgpt
+    NEXT_BOUNDARY=p-one-synthetic-measurement-and-outcome-rehearsal
     F1_F2=UNFROZEN
     ATTEMPT_002=NOT_AUTHORIZED
