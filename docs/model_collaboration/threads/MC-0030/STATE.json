@@ -3,7 +3,7 @@
   "thread_id": "MC-0030",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "OPEN",
-  "phase": "R0_P01_SIGNED_UNAUTHORIZED_SYNTHETIC_ADMISSION_PASS",
+  "phase": "R0_P01_SYNTHETIC_DURABLE_ADMISSION_PASS",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -103,16 +103,17 @@
       "Claude Message 057 accepted REV02 as design basis with seven Q qualifications. ChatGPT at Checkpoint 875 authored 15-row prospective source-site/receipt decision candidates and committed-reviewed case semantic-text hash pins against Checkpoint 874 exact Git blobs, with native Windows L0075/L0136 branches blocked and 12 new negative tests. Claude may review through Message 059 only, not author blind scorer or oracle.",
       "Claude Message 059 at 8b4b3739 reviewed old F1 technical-site candidates. Before further iterative review, the owner explicitly approved changing R0-P01 procedural restart governance: a declared accidental/technical interruption plus express fresh owner consent permits a new research execution. Historical B02 cap/exceptions prospectively superseded for this case, original B01/B02 bytes and Attempt 001 remain unchanged, no actual Attempt 002 consent. Message 060 informs Claude without dispatching Message 061; next actor ChatGPT for proportionate security/measurement triage.",
       "Checkpoint 877 / Research 541 / Validation 229 added 8 actual non-owner synthetic cryptographic tests: Ed25519 valid and well-framed tampered/foreign-signer OpenSSH verification, ES256 valid and DER-preserving tampered/foreign-signer Node verification, plus governing semantic-base metamorphism. The historical V02 code and owner evidence were untouched. Claude no automatic Message 061; next ChatGPT work signed-but-unauthorized synthetic admission.",
-      "Checkpoint 878 / Research 542 / Validation 230 added 19 actual synthetic valid-signature unauthorized/replay/stale-context/recovery-role tests against historical V02 Ledger.admit for both Ed25519 and ES256. Full mutable trust-state snapshots are unchanged after every rejected action; 111 total regressions passed (27 executable crypto/admission + 84 provenance tests). Next meaningful risk is persistent consumed-ID/trust-history across process restart. Owner retry decision and F1/F2 boundary unchanged."
+      "Checkpoint 878 / Research 542 / Validation 230 added 19 actual synthetic valid-signature unauthorized/replay/stale-context/recovery-role tests against historical V02 Ledger.admit for both Ed25519 and ES256. Full mutable trust-state snapshots are unchanged after every rejected action; 111 total regressions passed (27 executable crypto/admission + 84 provenance tests). Next meaningful risk is persistent consumed-ID/trust-history across process restart. Owner retry decision and F1/F2 boundary unchanged.",
+      "Checkpoint 879 / Research 543 / Validation 231: 15 real synthetic durability/restart/concurrency tests PASS on bounded replaceable SQLite journal, 126 total tests PASS (42 execution-facing; 84 structural). Historical V02 signed statement lacks fresh run nonce and admits old valid proof into separate new-run database; deliberate negative observation remains an open essential successor security requirement. No owner credentials, F1/F2 freeze or Attempt 002."
     ],
-    "notes": "Owner-approved simple accidental/technical replacement still governs fresh research test consent. Checkpoint 878 adds 19 valid-cryptographic-signature but unauthorized ledger admission synthetic negatives with exact state-invariance assertions; 27 total executable synthetic cases and 84 provenance guards PASS. Next ChatGPT durable ledger replay qualification for successor; no automatic Claude or owner key operation, Attempt 002 not authorized."
+    "notes": "Owner-approved replacement governance preserved while durable same-run replay resistance is tested synthetically. 15 new tests pass on independent child restarts/crashes, concurrent signature acceptance and signer-set rebuild, but this does not qualify full successor. Critical observed cross-run old-signature acceptance due to missing signed run nonce must be fixed next; public SQLite hash chain not malicious rollback-resistant. Claude no automatic review, Attempt 002 not authorized."
   },
   "last_transition": {
-    "transition_id": "mc0030-r0-p01-synthetic-admission-state-invariance",
+    "transition_id": "mc0030-r0-p01-durable-restart-and-cross-run-gap",
     "from_state": "OPEN",
     "to_state": "OPEN",
     "actor": "chatgpt",
-    "reason": "Extend executable non-owner cryptographic security tests into valid-signed but unauthorized/replayed/stale acceptance, prove no mutation across trust ledger, and identify durable replay next.",
-    "repository_head": "325a6ad2e8464347b7c89a86507f2141de1d5bcc"
+    "reason": "Implement synthetic per-run persisted admission and prove crash-safe consumption, then expose missing claim nonce in historical signed messages rather than overclaim cross-run replay safety.",
+    "repository_head": "da839dcf1149c04619de97dc4d759fc049f8df1b"
   }
 }

@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 878
+**Checkpoint:** 879
 **Date:** 2026-10-11
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,19 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: verified synthetic authorized-admission and rejected-state invariance
+## Current active stage: synthetic restart-safe admission verified, signed cross-run nonce next
+
+**Checkpoint 879 / Research 543 / Validation 231** provide a bounded new executable synthetic durability prototype, not an imposed ADS storage architecture. Its public SQLite journal serializes accepted records with atomic consumption/head updates, reconstructs trusted state by actual cryptographic verification of historical V02 signed records, and requires explicitly fresh initialization. Opening a missing or corrupt journal **fails closed** rather than silently recreating empty consumed-ID history.
+
+**15 executable restart/crash/concurrency tests pass**, including separate Python process restart, abrupt exit before and after commit, racing same-signature claims, restoration of signer roles after P5 transition, corrupt or missing persistent data and reject-state invariance for Ed25519 and ES256 synthetic owners. The combined focused R0-P01 regression is **126/126 PASS**, comprising 42 executable synthetic tests and 84 audit/source-provenance tests. Original V02 source, human owner keys, frozen experiment artifacts, B01/B02 and Attempt 001 evidence are not modified.
+
+The testing **explicitly reproduces a remaining severe cross-run trust gap** in historical V02: its signed statement lacks a unique claimed research-run nonce. Thus an old valid signature can be accepted into a separate newly initialized database despite a changed external run ID. A real successor must bind fresh run identity in actual signed bytes and enforce cross-run replay negatives. SQLite's public hash chain does **not** defend against malicious whole-database rollback, and no real Windows Hello hardware ceremony or full successor scorer has been qualified.
+
+Owner-approved accidental/technical replacement permission (Checkpoint 876) continues to require **separately fresh explicit run authorization** and no retroactive rewriting or green-only reporting. The owner-governance simplification never weakens signature authenticity or reused-proposal denial. F1/F2 remain unfrozen and Attempt 002 not authorized. R0-P02 PASS, R0-P03 pending, physical ADS architecture and implementation technology choice fully open.
+
+---
+
+## Historical checkpoint 878 stage: verified synthetic authorized-admission and rejected-state invariance
 
 Checkpoint 878 / Research 542 / Validation 230 add **19 executable non-owner signed-but-unauthorized admission regressions** against the historical V02 trust ledger, following the eight actual cryptographic sensitivity tests of Checkpoint 877. Across Arm A Ed25519 and Arm B ES256 primary identities, each signed denial first confirms genuine proof validity, then checks rejection of duplicate consumed IDs, recovery-key ordinary-signing attempts, valid but unregistered signers, stale signed dependencies, wrong owner views/event identities, and old signer-set versions after actual P5 rotation. Genuine P6 recovery transitions and new authorized signer admissions serve as controls. REJECT/AMEND decisions consume once without applying ACCEPT effects. Every denied action must leave **all mutable trusted state unchanged** (entries, consumed IDs, effects, signer members/version, dependencies and bound target credentials).
 

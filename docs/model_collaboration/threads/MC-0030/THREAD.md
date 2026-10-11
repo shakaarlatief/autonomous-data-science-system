@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / P01 SYNTHETIC SIGNED ADMISSION CHECKS PASS / DURABLE REPLAY NEXT
+**Status:** OPEN / P01 SYNTHETIC RESTART REPLAY PASS / SIGNED CROSS-RUN NONCE NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -621,5 +621,19 @@ The next meaningful security question is **durable consumed-ID/trust-state persi
     PHASE=R0_P01_SIGNED_UNAUTHORIZED_SYNTHETIC_ADMISSION_PASS
     NEXT_ACTOR=chatgpt
     NEXT_BOUNDARY=p-one-durable-replay-across-process
+    F1_F2=UNFROZEN
+    ATTEMPT_002=NOT_AUTHORIZED
+
+## Synthetic restart-safe admission and necessary cross-run signed identity
+
+Research 543 / Validation 231 / Checkpoint 879 test an isolated, **replaceable** synthetic SQLite journal with the historical public trust ledger and actual OpenSSH/ES256 proof verification. 15 new executable tests demonstrate persistently consumed IDs after child-process restart, crash-before-commit rollback, crash-after-commit idempotency, two competing processes admitting at most one signed event, restored signer rotation, and fail-closed missing/corrupt state. 126 total focused regressions pass (42 actual synthetic crypto/admission/crash tests and 84 source/guard tests).
+
+An essential historical cross-run replay weakness is also **demonstrated, not hidden**: V02 signatures have no run-specific nonce, so a new independent journal could accept an old signed decision under a different externally supplied run label. The real successor must cryptographically bind fresh claim identity into the statement, and separately address whole-database anti-rollback evidence where the threat model requires. No freeze of SQLite, legacy file organization or a particular storage model follows.
+
+The owner-authorized simple replacement procedure remains in force, but a new replacement research run never authorizes reusing a previous cryptographic proof. The immediate actor is ChatGPT for implementation-first synthetic signed claim identity. Claude remains available for concrete bounded review only when substantively useful, not automatically.
+
+    PHASE=R0_P01_SYNTHETIC_DURABLE_ADMISSION_PASS
+    NEXT_ACTOR=chatgpt
+    NEXT_BOUNDARY=p-one-signed-fresh-run-identity
     F1_F2=UNFROZEN
     ATTEMPT_002=NOT_AUTHORIZED
