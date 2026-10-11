@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 876
+**Checkpoint:** 877
 **Date:** 2026-10-11
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,11 +22,23 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: owner-approved simple replacement procedure; proportionality triage before Attempt 002
+## Current active stage: synthetic cryptographic security tests, admission-security implementation next
+
+**Checkpoint 877 / Research 541 / Validation 229** move the owner-authorized R0-P01 proportionality reset into **actual executable, non-owner security regression**. The new test module `tests/unit/test_r0_p01_cryptographic_sensitivity.py` uses only fresh in-memory synthetic Node signer keys and public temporary files: original V02 Ed25519 SSHSIG plus Windows OpenSSH verification and synthetic ES256 WebAuthn Node verification. **Eight executable synthetic tests pass**, including valid positive controls, structurally valid cryptographic forgeries, signer substitution and actual semantic-base mutation sensitivity. The historical C02 broken-header negative and C09 no-op unrelated metadata weakness are explicitly characterized and replaced with stronger separate tests, without modifying the original V02 harness or its owner evidence.
+
+The initial SSH baseline rejected in the bridge's read-only profile only because the temp directory for public verifier input could not be created; the same valid signature passed under allowed workspace execution. This is an environment permission failure, not a crypto defect. The new real tests require the appropriately authorized non-owner scratch execution context. These eight results **do not freeze F1/F2** or validate the successor/Windows Hello device, and must not be reported as all 13 security controls or official Attempt 002 passing.
+
+The revised **critical path** is documented in Research 541: validate cryptographically signed but unauthorized/replayed acceptance and unchanged admission state; verify WebAuthn owner-proof/evidence boundaries; synthetic process cleanup and durable failure evidence; usable burden/time metrics; and independent actual scorer vectors on the successor. Targeted Windows/platform qualification stays where it changes safe execution or real proof classification. We do **not** restart the speculative D01-D15 review cycle or automatically turn 55 inherited audit findings into 55 new approvals.
+
+The explicit human-approved replacement procedure from Checkpoint 876 remains operative for declared accidents/technical interruptions. Earlier B01/B02 approved bytes and Attempt 001 AMEND remain immutable; a replacement still needs **fresh owner execution consent**, which is not currently authorized. R0-P02 PASS, R0-P03 pending, physical ADS architecture unselected and no technology/file-layout assumptions fixed.
+
+---
+
+## Historical checkpoint 876 stage: owner-approved simple replacement procedure; proportionality triage before Attempt 002
 
 **Checkpoint 876 / Research 540 / MC-0030 Message 060** record the human owner's explicit prospective approval to simplify R0-P01 after repeated reviews overoptimized the procedural claim cap instead of asking whether that constraint was wanted. The owner wants excellent ADS architecture, however much genuine work it requires, but not unnecessary engineering around a disposable experiment's self-imposed retry bureaucracy.
 
-**Effective new owner decision:** For an owner-declared accidental operator mistake or technical interruption, the owner may state what happened in ordinary language and **separately authorize a fresh experiment execution**. There is no need to cryptographically prove the accident to permit research replacement, and the historical B02 fixed two-new-claim cap / narrow \`ALL_REQUIRED\` exception gate are **prospectively superseded for this limited category**. An accident explanation governs retry permission, not a valid cryptographic proof. Preserve each run, its original score/evidence and its reliability/usability contribution; never forge a PASS or hide negative results. Any actual new run still requires a separate, fresh explicit owner execution approval.
+**Effective new owner decision:** For an owner-declared accidental operator mistake or technical interruption, the owner may state what happened in ordinary language and **separately authorize a fresh experiment execution**. There is no need to cryptographically prove the accident to permit research replacement, and the historical B02 fixed two-new-claim cap / narrow `ALL_REQUIRED` exception gate are **prospectively superseded for this limited category**. An accident explanation governs retry permission, not a valid cryptographic proof. Preserve each run, its original score/evidence and its reliability/usability contribution; never forge a PASS or hide negative results. Any actual new run still requires a separate, fresh explicit owner execution approval.
 
 Historical B01/B02 records and approved source bytes remain intact as decisions made then. Attempt 001 remains immutable AMEND, and no new owner SSH/WebAuthn proof attempt has occurred. The R0-P01 architectural question still requires real forgery/replay/sign-what-you-see security controls, faithful evidence, fair owner-time measurements, representative failures and honest reporting, with no post-result tuning-to-green.
 

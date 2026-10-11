@@ -3,7 +3,7 @@
   "thread_id": "MC-0030",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "OPEN",
-  "phase": "R0_P01_OWNER_REPLACEMENT_POLICY_APPROVED_PROPORTIONALITY_TRIAGE",
+  "phase": "R0_P01_EXECUTION_FACING_SYNTHETIC_SECURITY_REGRESSION",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -101,16 +101,17 @@
       "Research 537 and Message 054 authored by ChatGPT: source-bound 17-case F1 scoring-boundary candidate analysis under approved original REV04 contract/policy hashes. 12 narrowly SOURCE_DETERMINED, 5 CANDIDATE_BLOCKED. Claude may independently challenge as clause reviewer in Message 055 only and remains barred from blind second canonicalizer/scorer. B01/B02 approved bytes and 55 pending reviewer findings unchanged.",
       "Claude Message 055 commit 19ea777ee completed REV01 independent challenge: 8 confirmed, 9 amended, 0 rejected/mandatory owner. ChatGPT Research 538/Message 056 authored new REV02 24-case matrix (17 source-determined, 7 candidate blocked), independent source-gate trace guard and exact committed-Git-blob hash correction to all 55 pending review rows. Claude Message 057 is limited to focused technical challenge; it remains ineligible as blind second oracle/scorer author.",
       "Claude Message 057 accepted REV02 as design basis with seven Q qualifications. ChatGPT at Checkpoint 875 authored 15-row prospective source-site/receipt decision candidates and committed-reviewed case semantic-text hash pins against Checkpoint 874 exact Git blobs, with native Windows L0075/L0136 branches blocked and 12 new negative tests. Claude may review through Message 059 only, not author blind scorer or oracle.",
-      "Claude Message 059 at 8b4b3739 reviewed old F1 technical-site candidates. Before further iterative review, the owner explicitly approved changing R0-P01 procedural restart governance: a declared accidental/technical interruption plus express fresh owner consent permits a new research execution. Historical B02 cap/exceptions prospectively superseded for this case, original B01/B02 bytes and Attempt 001 remain unchanged, no actual Attempt 002 consent. Message 060 informs Claude without dispatching Message 061; next actor ChatGPT for proportionate security/measurement triage."
+      "Claude Message 059 at 8b4b3739 reviewed old F1 technical-site candidates. Before further iterative review, the owner explicitly approved changing R0-P01 procedural restart governance: a declared accidental/technical interruption plus express fresh owner consent permits a new research execution. Historical B02 cap/exceptions prospectively superseded for this case, original B01/B02 bytes and Attempt 001 remain unchanged, no actual Attempt 002 consent. Message 060 informs Claude without dispatching Message 061; next actor ChatGPT for proportionate security/measurement triage.",
+      "Checkpoint 877 / Research 541 / Validation 229 added 8 actual non-owner synthetic cryptographic tests: Ed25519 valid and well-framed tampered/foreign-signer OpenSSH verification, ES256 valid and DER-preserving tampered/foreign-signer Node verification, plus governing semantic-base metamorphism. The historical V02 code and owner evidence were untouched. Claude no automatic Message 061; next ChatGPT work signed-but-unauthorized synthetic admission."
     ],
-    "notes": "The human project owner explicitly changed the R0-P01 restart procedure after identifying unnecessary review of self-imposed B02 numerical/exception limits. Original historical policy and 55 pending audit findings preserved; revised replacement permission needs owner declaration and fresh explicit execution consent, but no independent forensic proof of accidental keypress. Keep true cryptographic controls, research observations, no retroactive scoring or post-hoc green selection. Claude Message 060 informational only; no new review dispatched. F1/F2 unfrozen, Attempt 002 unauthorized."
+    "notes": "Owner simplified R0-P01 accidental/technical replacement procedure remains authoritative for fresh owner-authorized research reruns, not cryptographic proof or automatic start. Historical B01/B02 and Attempt 001 untouched. Checkpoint 877 executes 8 real nonsecret crypto sensitivity tests against old V02 while leaving F1/F2 UNFROZEN and Attempt 002 NOT AUTHORIZED. Focus next on signed-but-unauthorized admission and evidence, avoid review-driven procedure inflation."
   },
   "last_transition": {
-    "transition_id": "mc0030-r0-p01-human-owner-procedural-replacement-and-proportionality-reset",
+    "transition_id": "mc0030-r0-p01-owner-replacement-to-actual-crypto-sensitivity",
     "from_state": "OPEN",
     "to_state": "OPEN",
     "actor": "chatgpt",
-    "reason": "Human owner explicitly approves prospective simple accident/technical-interruption replacement instead of old B02 fixed retry cap; pause automatic technical-table review loop and prioritize material safety and evidence.",
-    "repository_head": "8b4b37396974a88a003ccad1027414b04c827a90"
+    "reason": "Following owner procedural simplification, replace repetitive speculative scoring review with actual synthetic crypto positive/negative security tests and proportionate admission next step.",
+    "repository_head": "df24909c2d78ac715563e2a4cb0192259ad1e750"
   }
 }

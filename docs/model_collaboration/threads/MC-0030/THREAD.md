@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / OWNER-APPROVED ACCIDENT REPLACEMENT / PROPORTIONATE R0-P01 TRIAGE NEXT
+**Status:** OPEN / P01 SYNTHETIC CRYPTO CHECKS PASS / ADMISSION NEGATIVES NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -596,5 +596,17 @@ The error was not effort toward high-quality architecture. It was designing elab
     PHASE=R0_P01_OWNER_REPLACEMENT_POLICY_APPROVED_PROPORTIONALITY_TRIAGE
     NEXT_ACTOR=chatgpt
     CLAUDE_NEXT_MESSAGE=NOT_REQUESTED
+    F1_F2=UNFROZEN
+    ATTEMPT_002=NOT_AUTHORIZED
+
+## Actual synthetic cryptographic regression instead of another review campaign
+
+Research 541 / Validation 229 / Checkpoint 877 contain **eight executable synthetic security tests** against the historical V02 verifier, not eight further source-receipt guard tests. Temporary non-owner Ed25519 and ES256 keys live only inside a Node process, with actual OpenSSH `-Y verify` and actual Node WebAuthn signature verification checking positive and structurally valid tampered/other-signer negatives. The suite separately tests real semantic-base derivation against unrelated revision and governing dependency mutations. The readOnly profile's temporary public-file restriction was isolated; the legitimate baseline passes in workspace execution. Original real owner credentials and Attempt 001 artifacts are not accessed or changed.
+
+Focus next on genuine signed-but-unauthorized and replay admission checks with unchanged ledger state, then successor security/evidence/measurement implementation. No automatic Message 061 to Claude and no repeated D01-D15 semantic cycle. Owner-approved procedure for declared accidental/technical interruption allows fresh separately authorized research executions, but not silent retuning, concealed failures, owner-proof substitution or the real Attempt 002 today.
+
+    PHASE=R0_P01_EXECUTION_FACING_SYNTHETIC_SECURITY_REGRESSION
+    NEXT_ACTOR=chatgpt
+    NEXT_BOUNDARY=p-one-synthetic-admission-security
     F1_F2=UNFROZEN
     ATTEMPT_002=NOT_AUTHORIZED
