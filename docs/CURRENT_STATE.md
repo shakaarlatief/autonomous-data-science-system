@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 874
+**Checkpoint:** 875
 **Date:** 2026-10-11
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,21 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: R0-P01 Message 055 reconciled, REV02 scoring-boundary review pending
+## Current active stage: R0-P01 Message 057 qualified with Q1-Q7; technical site/receipt decision table under independent review
+
+Checkpoint 875 / Research 539 / Validation 228 / MC-0030 Message 058 reconcile Claude's independent Message 057 `ACCEPT_REV02_WITH_PRECISE_QUALIFICATIONS`. The accepted B01/B02 contracts and policies remain byte-identical and the independent audit remains exactly 1,022 source units, 967 reviewer-accepted / **55 still pending task-owner resolution**. F1/F2 remain unfrozen and real Attempt 002 is not authorized.
+
+A new **unfrozen** 15-row prospective F1 site/receipt decision table D01–D15 covers qualifications Q1–Q7 and every one of seven originally blocked REV02 cases S1-04, S1-05, S2-03, S3-03, X1, X3, X4. Source-site evidence and classification distinctions include native OpenSSH Ctrl+C during third signing call, RP timeout without client get(), postregistration NotSupportedError, native OpenSSH postclaim replacement, Windows missing-DLL loader nonzero, ssh-agent and passphrase re-encryption, atomic snapshot promotion and RP/owner abort races. These are conditional technical decision **candidates**, not full expected-score vectors or reviewed implementations.
+
+The target-Windows L0075 native prompt Ctrl+C observability test and L0136 crash-atomic snapshot test remain unperformed, with dependent outcomes specifically blocked. No owner policy interpretation is needed now. Only if Ctrl+C cannot be observed even after a safe technical mitigation must a separate human interpretation of the unconditional abort guarantee be requested, distinct from any later real owner trial approval.
+
+All **24 independently reviewed REV02 scenario semantic texts and their exact premise values** now have committed-Git-blob SHA-256 pins and an independent historic commit reference, guarded against silently changed conditions, conclusions or local pins. A separate 15-row site decision guard checks Q1–Q7 and all seven blocked sources; 12 new negative unit tests pass. These static guards do not prove the unreviewed table semantics or replace a seven-precedence-class scorer oracle.
+
+MC-0030 Message 058 requests one bounded Claude Message 059 independent technical critique of the 15 site rows and semantic-pinning. No re-audit campaign, independent scorer/blind oracle code or actual owner experiment is authorized. Original Attempt 001 remains immutable AMEND; R0-P02 PASS, R0-P03 pending; project architecture remains free for improvement at every level with physical target unselected.
+
+---
+
+## Historical checkpoint 874 stage: R0-P01 Message 055 reconciled, REV02 scoring-boundary review pending
 
 Checkpoint 874 / Research 538 / Validation 227 / MC-0030 Message 056 reconcile Claude's Message 055 targeted verdict AMEND_REV01_TARGETED. Message 055 committed only its allowed standalone review file at `19ea777ee191cac6c46bc1aac7c0edffb9093d1f`. The human B01/B02-approved REV04 contract/policy, frozen Attempt 001 and 18-batch audit messages remain unchanged. The former untracked `.tmp` test artifacts were **preserved, not deleted**, by moving the entire folder to the existing ignored local-only `.venv/.ads-preserved-untracked-temp-pre-message055-20261011` before the controlled Git fast-forward pull.
 

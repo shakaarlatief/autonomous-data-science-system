@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / F1 SCORING-BOUNDARY REV02 FOCUSED TECHNICAL CONFIRMATION NEXT
+**Status:** OPEN / F1 Q1-Q7 TECHNICAL SITE/RECEIPT TABLE INDEPENDENT REVIEW NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -570,4 +570,16 @@ MC-0030 Message 056 requests a single normal-procedure independent Claude review
     NEXT_MESSAGE=057
     F1=UNFROZEN
     F2=UNFROZEN
+    ATTEMPT_002=NOT_AUTHORIZED
+
+## Message 057 qualification accepted, Q1–Q7 site/receipt table pending review
+
+Claude Message 057 at ad5c1a16a0f336b54593987b93f0f54079b4bdfc independently accepted the 24-case REV02 basis with seven mandatory qualifications Q1–Q7, no current owner-policy question, and critical Windows L0075 native Ctrl+C and L0136 snapshot atomicity tests still unqualified. Research 539/Validation 228/Checkpoint 875 create a **15-site prospective rule/evidence candidate table** covering all Q1–Q7 and all seven originally blocked REV02 cases, with exact frozen source citations and explicit technical review or native-test blockers. Original owner-approved B01/B02 sources unchanged; historical 55 pending findings remain unresolved.
+
+A distinct pin manifest plus source guard ties each of 24 independently reviewed REV02 scenario text meanings/premise values to the exact Checkpoint 874 Git commit blob. This prevents silently rewriting accepted text or pin files; it cannot certify new technical decisions. Twelve new synthetic mutation tests pass. Message 058 asks Claude claude-04 to perform one focused independent semantic review and commit only Message 059. General manual collaboration unchanged; Claude still cannot author blind scorer/oracle.
+
+    PHASE=R0_P01_F1_TECHNICAL_SITE_TABLE_INDEPENDENT_REVIEW_PENDING
+    NEXT_ACTOR=claude
+    NEXT_MESSAGE=059
+    F1_F2=UNFROZEN
     ATTEMPT_002=NOT_AUTHORIZED

@@ -1,0 +1,495 @@
+{
+  "schema_version": 1,
+  "status": "UNFROZEN_SOURCE_SITE_AND_RECEIPT_DECISION_CANDIDATES",
+  "approved_sources": {
+    "contract": "9160a30c481c1c67c2ec857238f5a04b44f618b2ef589ef4f1c514eb3b3d6175",
+    "policy": "9b5bbc4d2c4802fc80b46bcaa3d003640c33e8e4784d39ef7995dbf193dff86c"
+  },
+  "review_anchor": "MC-0030_MESSAGE057_ACCEPT_REV02_WITH_PRECISE_QUALIFICATIONS",
+  "qualifications": [
+    "Q1",
+    "Q2",
+    "Q3",
+    "Q4",
+    "Q5",
+    "Q6",
+    "Q7"
+  ],
+  "blocked_rev02_cases": [
+    "S1-04",
+    "S1-05",
+    "S2-03",
+    "S3-03",
+    "X1",
+    "X3",
+    "X4"
+  ],
+  "owner_policy_interpretation": "NONE_CURRENTLY_REQUIRED",
+  "native_qualification_required": [
+    "REV04_CONTRACT-L0075",
+    "REV04_CONTRACT-L0136"
+  ],
+  "rows": [
+    {
+      "id": "D01",
+      "qualification": [
+        "Q1"
+      ],
+      "scenario_ids": [
+        "X1",
+        "S4-01"
+      ],
+      "site": "SSH_NATIVE_CTRLC_INVOCATION",
+      "phase": "CLAIMED_SSH_EVENT",
+      "predicate": "Native OpenSSH prompts on inherited actual Windows console, Ctrl+C overlaps any signing invocation",
+      "evidence_required": [
+        "target_Windows_L0075_synthetic_prompt_receipt",
+        "harness_abort_observation",
+        "subprocess_exit_and_event_seal_order"
+      ],
+      "source_basis": [
+        "REV04_CONTRACT-L0067",
+        "REV04_CONTRACT-L0069",
+        "REV04_CONTRACT-L0070",
+        "REV04_CONTRACT-L0075",
+        "REV04_POLICY:attempt_terminal_vs_event_terminal.ctrl_c_or_crash"
+      ],
+      "decision_if_proven": "If the harness durably observes abort before sealing the event, terminate entire attempt, P0/event INCOMPLETE, not SSH unlock exhaustion. If Ctrl+C never reaches harness, no reliable rule can infer it from nonzero exit alone.",
+      "unproven_or_exception": "NATIVE_PROMPT_INTERRUPT_UNOBSERVABLE: do not claim successful classification. Mitigate technically; if impossible, request separate owner interpretation before any owner trial.",
+      "expected_class": "CONDITIONAL_ON_TARGET_WINDOWS_TEST",
+      "decision_status": "BLOCKED_NATIVE_WINDOWS_TEST",
+      "owner_action": "CONDITIONAL_ONLY_IF_NO_TECHNICAL_OBSERVABILITY_MITIGATION"
+    },
+    {
+      "id": "D02",
+      "qualification": [
+        "Q2"
+      ],
+      "scenario_ids": [
+        "S1-02",
+        "X2"
+      ],
+      "site": "WEBAUTHN_RP_TIMEOUT_NO_CLIENT_INVOCATION",
+      "phase": "CLAIMED_WEBAUTHN_P0",
+      "predicate": "RP challenge created or expired but browser get() invocation never durably evidenced",
+      "evidence_required": [
+        "challenge_issued_or_delivery_state",
+        "client_get_invoked_same_acceptance_id_or_absence",
+        "rp_consumed_event_receipt_or_absence"
+      ],
+      "source_basis": [
+        "REV04_CONTRACT-L0108",
+        "REV04_CONTRACT-L0151",
+        "REV04_CONTRACT-L0154",
+        "REV04_POLICY:evidence_state.completed"
+      ],
+      "decision_if_proven": "No evidenced client get() invocation: no client ceremony terminal, B evidence_state INCOMPLETE if remaining required event not terminal. Merely absent because challenge never delivered is not itself provenance INTEGRITY.",
+      "unproven_or_exception": "If separate frozen evidence-chain invariant is proven violated, independent provenance integrity flag takes precedence; do not classify an RP-only timeout as client NotAllowedError.",
+      "expected_class": "ARM_INCOMPLETE_UNLESS_HIGHER_FLAG_OR_OTHER_ARM",
+      "decision_status": "CANDIDATE_TECHNICAL_REVIEW",
+      "owner_action": "NONE_PRESERVE_B01_NOTALLOWED_SCOPE"
+    },
+    {
+      "id": "D03",
+      "qualification": [
+        "Q2"
+      ],
+      "scenario_ids": [
+        "S1-02"
+      ],
+      "site": "WEBAUTHN_CONSUMED_NOTALLOWED_AFTER_CLIENT_GET",
+      "phase": "CLAIMED_WEBAUTHN_P0",
+      "predicate": "Same-acceptance-ID client get() invoked, RP durable consumed receipt binds NotAllowedError/cancel/timeout to event",
+      "evidence_required": [
+        "client_get_invocation",
+        "rp_pending_and_consumed",
+        "same_acceptance_id",
+        "event_receipt_integrity"
+      ],
+      "source_basis": [
+        "REV04_CONTRACT-L0108",
+        "REV04_CONTRACT-L0151",
+        "REV04_CONTRACT-L0154",
+        "REV04_CONTRACT-L0199"
+      ],
+      "decision_if_proven": "WEBAUTHN_ASSERTION_NOT_COMPLETED is an event-terminal no-proof outcome regardless of why browser returned NotAllowedError; does not establish the whole arm COMPLETED without all required events.",
+      "unproven_or_exception": "Do not require owner presence/focus/voluntary cancel, which would narrow approved B01.",
+      "expected_class": "EVENT_TERMINAL_NOT_PROOF",
+      "decision_status": "CANDIDATE_TECHNICAL_REVIEW",
+      "owner_action": "NONE"
+    },
+    {
+      "id": "D04",
+      "qualification": [
+        "Q3",
+        "Q7"
+      ],
+      "scenario_ids": [
+        "S1-04",
+        "S1-05",
+        "X4"
+      ],
+      "site": "WEBAUTHN_NOTSUPPORTED_POST_VERIFIED_REGISTRATION",
+      "phase": "CLAIMED_WEBAUTHN_ASSERTION",
+      "predicate": "Same-attempt registration verified ES256+UV; assertion returns NotSupportedError; no owner-credential replacement or independent setup-phase impossibility proof",
+      "evidence_required": [
+        "verified_registration_receipt",
+        "client_assertion_error",
+        "capability_probe_phase",
+        "proof_no_replacement_assertion"
+      ],
+      "source_basis": [
+        "REV04_CONTRACT-L0089",
+        "REV04_CONTRACT-L0108",
+        "REV04_CONTRACT-L0112",
+        "REV04_CONTRACT-L0150",
+        "REV04_POLICY:webauthn_assertion_failure_table.NotSupportedError.event_terminal",
+        "V01_CONTRACT-L0231"
+      ],
+      "decision_if_proven": "Proposed conservative rule: at assertion phase, B evidence_state INCOMPLETE independent of whether A succeeds. Raw higher-precedence flags affect final class, not B evidence_state.",
+      "unproven_or_exception": "Predecessor V01 permits NOT_REALIZABLE for genuine assertion challenge inability. Independently confirm phase restriction against accepted REV04 and B01; if inconsistent, do not adopt or freeze.",
+      "expected_class": "ARM_INCOMPLETE_CANDIDATE_NOT_GLOBAL_SCORE",
+      "decision_status": "NEEDS_INDEPENDENT_TECHNICAL_DECISION",
+      "owner_action": "NONE_UNLESS_REVIEW_FINDS_APPROVED_POLICY_CHANGE"
+    },
+    {
+      "id": "D05",
+      "qualification": [
+        "Q3"
+      ],
+      "scenario_ids": [
+        "S1-05",
+        "S1-04",
+        "X4"
+      ],
+      "site": "WEBAUTHN_SETUP_CAPABILITY_RECEIPT",
+      "phase": "POSTCLAIM_SETUP_PRE_OWNER_ASSERTION",
+      "predicate": "Independent noncredential frozen setup capability probe shows genuine inability before verified registration and P0",
+      "evidence_required": [
+        "independent_producer_identity",
+        "browser_os_authenticator_scope",
+        "operation_phase",
+        "claim_and_clock_bound_receipt",
+        "frozen_probe_definition",
+        "repeatability_and_negative_controls"
+      ],
+      "source_basis": [
+        "REV04_CONTRACT-L0108",
+        "REV04_CONTRACT-L0112",
+        "REV04_CONTRACT-L0150",
+        "V01_CONTRACT-L0223",
+        "V01_CONTRACT-L0231",
+        "REV04_POLICY:evidence_state.not_realizable"
+      ],
+      "decision_if_proven": "NOT_REALIZABLE candidate only with exact complete frozen capability predicate; refusal, timeout, no visit, browser assertion cancellation and missing record never satisfy it.",
+      "unproven_or_exception": "No owner credential probe, replayed owner challenge, or replacement WebAuthn assertion allowed.",
+      "expected_class": "ARM_NOT_REALIZABLE_IF_APPROVED_CLOSED_PREDICATE",
+      "decision_status": "NEEDS_INDEPENDENT_TECHNICAL_DECISION",
+      "owner_action": "NONE"
+    },
+    {
+      "id": "D06",
+      "qualification": [
+        "Q4"
+      ],
+      "scenario_ids": [
+        "S2-02",
+        "S2-03"
+      ],
+      "site": "OPENSSH_PINNED_RUNTIME_REPLACED_AFTER_CLAIM",
+      "phase": "CLAIMED_SSH_PRECHECK",
+      "predicate": "OS update replaces pinned ssh-keygen bytes/hash/version postclaim; harness/fixture/scorer and evidence chain independently intact",
+      "evidence_required": [
+        "trusted_preclaim_binary_hash",
+        "postclaim_binary_hash_and_path",
+        "os_update_or_substitution_provenance",
+        "intact_evidence_chain",
+        "approved_runtime_identity"
+      ],
+      "source_basis": [
+        "REV04_CONTRACT-L0066",
+        "REV04_CONTRACT-L0120",
+        "REV04_CONTRACT-L0203",
+        "REV04_CONTRACT-L0206"
+      ],
+      "decision_if_proven": "Technical candidate: the specific native runtime unavailability/mismatch site yields INSTRUMENT with intact evidence, not identity/tuning INTEGRITY, provided no independently proven protected harness/fixture/scorer violation.",
+      "unproven_or_exception": "Distinct from tampered frozen harness/scorer or malicious fixture substitution, which must retain integrity precedence; ambiguity needs site inventory independent review.",
+      "expected_class": "INVALID_INSTRUMENT_CANDIDATE_NO_HIGHER_INTEGRITY",
+      "decision_status": "NEEDS_INDEPENDENT_TECHNICAL_DECISION",
+      "owner_action": "NONE_IF_SPECIFIC_SOURCE_DISAMBIGUATION_ACCEPTED"
+    },
+    {
+      "id": "D07",
+      "qualification": [
+        "Q5"
+      ],
+      "scenario_ids": [
+        "S2-02",
+        "X6"
+      ],
+      "site": "SSH_PROCESS_CREATION_FAILURE",
+      "phase": "POSTCLAIM_NATIVE_LAUNCH",
+      "predicate": "Process creation fails without native process exit status; preclaim KAT passed, claimed attempt active, source site inventoried",
+      "evidence_required": [
+        "harness_invocation_attempt",
+        "process_create_error_no_exit",
+        "source_site_inventory",
+        "evidence_chain_verified_intact"
+      ],
+      "source_basis": [
+        "REV04_CONTRACT-L0203",
+        "REV04_CONTRACT-L0213",
+        "REV04_CONTRACT-L0165"
+      ],
+      "decision_if_proven": "After-claim INSTRUMENT when the exact launch source site is in frozen inventory and independent chain intact. Preclaim inability blocks without consuming claim.",
+      "unproven_or_exception": "A launched process returning nonzero is not this case. No generic exception-to-INSTRUMENT mapping absent source evidence.",
+      "expected_class": "INVALID_INSTRUMENT_CONDITIONAL_NO_INTEGRITY",
+      "decision_status": "CANDIDATE_TECHNICAL_REVIEW",
+      "owner_action": "NONE"
+    },
+    {
+      "id": "D08",
+      "qualification": [
+        "Q5"
+      ],
+      "scenario_ids": [
+        "S2-02",
+        "X6",
+        "S4-01"
+      ],
+      "site": "SSH_PROCESS_STARTED_MISSING_DLL_NONZERO",
+      "phase": "POSTCLAIM_NATIVE_EXECUTION",
+      "predicate": "Windows process starts but loader fails with NTSTATUS-range nonzero exit; exactly no expected signature and no source-labelled earlier launcher fault",
+      "evidence_required": [
+        "created_child_handle",
+        "actual_native_exit_code",
+        "expected_signature_absent",
+        "owner_R_after_1_and_2_if_applicable",
+        "preclaim_KAT"
+      ],
+      "source_basis": [
+        "REV04_CONTRACT-L0068",
+        "REV04_CONTRACT-L0069",
+        "REV04_CONTRACT-L0070",
+        "REV04_CONTRACT-L0204"
+      ],
+      "decision_if_proven": "Under existing accepted contract, native nonzero/no-signature follows owner R/S and bounded budget; exact two owner R choices may reach terminal no-proof exhaustion. This is not a successful signature and not an inferred passphrase error.",
+      "unproven_or_exception": "Optional loader-specific INSTRUMENT site would be a prospective source-site change with B02 consequences; do not silently take it.",
+      "expected_class": "EVENT_NO_PROOF_RETRY_OR_TERMINAL",
+      "decision_status": "CANDIDATE_TECHNICAL_REVIEW",
+      "owner_action": "NONE"
+    },
+    {
+      "id": "D09",
+      "qualification": [
+        "Q6"
+      ],
+      "scenario_ids": [
+        "S2-03",
+        "S2-04"
+      ],
+      "site": "SSH_AGENT_LOADED_BEFORE_P0",
+      "phase": "CLAIMED_SSH_PRECHECK",
+      "predicate": "Owner loads key into ssh-agent after postclaim keygen but before first invocation; precheck sees agent cache and compares to registered no-agent invariant",
+      "evidence_required": [
+        "baseline_agent_state_after_setup",
+        "agent_query_receipt_without_secrets",
+        "harness_recorded_change_site",
+        "key_identity_and_phase"
+      ],
+      "source_basis": [
+        "REV04_CONTRACT-L0066",
+        "REV04_CONTRACT-L0206",
+        "REV04_CONTRACT-L0254"
+      ],
+      "decision_if_proven": "No-agent precondition blocks signing; a proven protected agent-state change meeting L0206 is a candidate attempt-level INTEGRITY source under approved literal invariant.",
+      "unproven_or_exception": "Whether a pre-existing agent load counts as a postclaim 'change' needs a closed before/after state predicate, independently reviewed; never infer integrity from an unreadable agent state.",
+      "expected_class": "INTEGRITY_IF_PROVEN_CHANGE_OTHERWISE_BLOCKED",
+      "decision_status": "NEEDS_INDEPENDENT_TECHNICAL_DECISION",
+      "owner_action": "DISCLOSURE_REQUIRED_NO_OI3_SILENT_WEAKENING"
+    },
+    {
+      "id": "D10",
+      "qualification": [
+        "Q6"
+      ],
+      "scenario_ids": [
+        "S2-04"
+      ],
+      "site": "SSH_PRIVATE_KEY_PASSPHRASE_REENCRYPTION",
+      "phase": "CLAIMED_SSH_PRECHECK",
+      "predicate": "Private Ed25519 key passphrase changed, KDF salt/header bytes change but encrypted property and registered public identity remain the same",
+      "evidence_required": [
+        "encrypted_property_check",
+        "public_key_identity_proof",
+        "nonsecret_before_after_header_properties",
+        "agent_baseline_if_any"
+      ],
+      "source_basis": [
+        "REV04_CONTRACT-L0066",
+        "REV04_CONTRACT-L0206"
+      ],
+      "decision_if_proven": "Bytewise difference alone does not prove public header/registered public-key identity change. Positive evidence of encryption violation or altered registered public ID is a distinct integrity case.",
+      "unproven_or_exception": "Whether passphrase rotation itself is forbidden remains a separately disclosed same-attempt invariant candidate; do not silently weaken approved identity rules.",
+      "expected_class": "NO_INTEGRITY_FROM_BYTES_ALONE",
+      "decision_status": "NEEDS_INDEPENDENT_TECHNICAL_DECISION",
+      "owner_action": "DISCLOSE_BEFORE_OWNER_RUN"
+    },
+    {
+      "id": "D11",
+      "qualification": [
+        "Q1"
+      ],
+      "scenario_ids": [
+        "X1",
+        "S4-01"
+      ],
+      "site": "SSH_BUDGET_NORMAL_THREE_INVOCATIONS",
+      "phase": "CLAIMED_SSH_EVENT",
+      "predicate": "Three separately recorded native nonzero/no-sig calls; exact R after first and second; no owner Ctrl+C overlap established by target-Windows qualification; same original decision/key/statement/timer",
+      "evidence_required": [
+        "native_L0075_interrupt_observability_pass",
+        "three_exit_and_absent_signature_receipts",
+        "two_exact_owner_R_receipts",
+        "no_interrupt_overlap_evidence",
+        "same_event_digest_and_timestamps"
+      ],
+      "source_basis": [
+        "REV04_CONTRACT-L0068",
+        "REV04_CONTRACT-L0069",
+        "REV04_CONTRACT-L0070",
+        "REV04_POLICY:evidence_state.terminal_outcomes[4]"
+      ],
+      "decision_if_proven": "Raw source PROOF_NOT_CREATED maps losslessly to approved SSH_UNLOCK_BUDGET_EXHAUSTED event-terminal without proof only after all prerequisites; never after an interrupted attempt.",
+      "unproven_or_exception": "If Ctrl+C can be swallowed during native prompt, an unobserved overlapping interrupt cannot be disambiguated; block this terminal classification for owner execution until technical mitigation or separately approved policy interpretation.",
+      "expected_class": "EVENT_TERMINAL_NO_PROOF_CONDITIONAL",
+      "decision_status": "BLOCKED_NATIVE_WINDOWS_TEST",
+      "owner_action": "CONDITIONAL_ONLY_IF_NATIVE_INTERRUPT_UNOBSERVABLE"
+    },
+    {
+      "id": "D12",
+      "qualification": [
+        "Q1"
+      ],
+      "scenario_ids": [
+        "X1",
+        "X3"
+      ],
+      "site": "SNAPSHOT_PROMOTION_CRASH_ATOMICITY",
+      "phase": "POSTCLAIM_EVIDENCE_SNAPSHOT",
+      "predicate": "Ctrl+C while temporary evidence snapshot is flushed or promoted to final name",
+      "evidence_required": [
+        "target_Windows_L0136_crash_atomic_no_overwrite_test",
+        "temp_final_orphan_inventory",
+        "fsync_and_rename_receipts",
+        "trusted_owner_postflight_digest"
+      ],
+      "source_basis": [
+        "REV04_CONTRACT-L0136",
+        "REV04_CONTRACT-L0138",
+        "REV04_CONTRACT-L0209",
+        "REV04_POLICY:snapshot_evidence.write_protocol"
+      ],
+      "decision_if_proven": "After an independently qualified write protocol, an orphan temporary file is not a malformed published final file; missing in-flight event remains incomplete absent higher flag. A genuinely malformed final record remains provenance integrity.",
+      "unproven_or_exception": "Before a verified atomic write test, do not assume crash only makes orphan temp, or downgrade evidence corruption to incomplete.",
+      "expected_class": "BLOCKED_UNTIL_WINDOWS_WRITE_PROTOCOL_VERIFIED",
+      "decision_status": "BLOCKED_NATIVE_WINDOWS_TEST",
+      "owner_action": "NONE"
+    },
+    {
+      "id": "D13",
+      "qualification": [
+        "Q2",
+        "Q7"
+      ],
+      "scenario_ids": [
+        "S3-03",
+        "S3-01",
+        "S3-02",
+        "X5"
+      ],
+      "site": "RP_OWNER_ABORT_NODE_EXIT_UNORDERABLE",
+      "phase": "CLAIMED_WEBAUTHN_PROCESS",
+      "predicate": "Owner Ctrl+C and RP process exit observed without verified same-harness-stream causal order or qualified Windows isolation",
+      "evidence_required": [
+        "harness_event_sequence",
+        "node_process_isolation_qualification",
+        "harness_recorded_node_failure_flag_or_absence",
+        "independent_causal_receipt",
+        "RP_tail_receipt_presence"
+      ],
+      "source_basis": [
+        "REV04_CONTRACT-L0112",
+        "REV04_CONTRACT-L0215",
+        "REV04_CONTRACT-L0242",
+        "REV04_POLICY:raw_flag_schema.flag_origin.integrity.node_rp_failure"
+      ],
+      "decision_if_proven": "Conservative technical candidate: absent a proven unprovoked HARNESS_RECORDED fault, do not invent a favorable node_rp_failure flag. Incomplete event remains incomplete; actual independent RP fault proven before abort retains instrument precedence.",
+      "unproven_or_exception": "INSTRUMENT on an unorderable race could widen B02 repair exceptions and requires separate owner interpretation; never use RP-only crash as HARNESS_RECORDED evidence.",
+      "expected_class": "ARM_INCOMPLETE_UNLESS_PROVEN_FLAG_AND_OTHER_ARM",
+      "decision_status": "NEEDS_INDEPENDENT_TECHNICAL_DECISION",
+      "owner_action": "NONE_FOR_CONSERVATIVE_RULE"
+    },
+    {
+      "id": "D14",
+      "qualification": [
+        "Q1"
+      ],
+      "scenario_ids": [
+        "S3-04"
+      ],
+      "site": "WEBAUTHN_LATE_SUCCESS_AFTER_HARNESS_STOP",
+      "phase": "POSTINTERRUPT_RECOVERED_RP_RECEIPT",
+      "predicate": "Late successful RP assertion proof bytes durably recovered but harness never completed in-run VERIFY before attempt exit",
+      "evidence_required": [
+        "in_run_verify_status",
+        "harness_exit_receipt",
+        "RP_consumed_and_tail_receipts",
+        "same_claim_identity"
+      ],
+      "source_basis": [
+        "REV04_CONTRACT-L0094",
+        "REV04_CONTRACT-L0114",
+        "REV04_CONTRACT-L0128",
+        "REV04_CONTRACT-L0154"
+      ],
+      "decision_if_proven": "Proof bytes retained for disclosure; no retroactive VALID event or proof viability can be created by new postrun VERIFY.",
+      "unproven_or_exception": "Earlier in-run verified events retain their actual results; do not misclassify all RP tail evidence as absent.",
+      "expected_class": "NO_RETROACTIVE_PROOF_VIABILITY",
+      "decision_status": "CANDIDATE_TECHNICAL_REVIEW",
+      "owner_action": "NONE"
+    },
+    {
+      "id": "D15",
+      "qualification": [
+        "Q3"
+      ],
+      "scenario_ids": [
+        "X4"
+      ],
+      "site": "G2_UNCONTESTED_SELECTION_FALSE_CAPABILITY",
+      "phase": "POSTCLAIM_SCORING",
+      "predicate": "Arm A eligible and B assertion NotSupportedError after successful registration but no frozen capability receipt; all higher flags false",
+      "evidence_required": [
+        "A_eligibility_and_scored_proof",
+        "B_registration_and_notsupported",
+        "B_capability_receipt_absent",
+        "no_other_higher_fault_flags"
+      ],
+      "source_basis": [
+        "REV04_CONTRACT-L0156",
+        "REV04_CONTRACT-L0158",
+        "REV04_POLICY:guards.G2_UNCONTESTED_SELECTION.when_one_arm_selection_eligible_and_other_evidence_state"
+      ],
+      "decision_if_proven": "B remains INCOMPLETE under reviewed conservative Q3 candidate, so PASS must carry selection_uncontested_reason OTHER_ARM_INCOMPLETE rather than suppress owner disclosure with unproven NOT_REALIZABLE.",
+      "unproven_or_exception": "Dependent on independent acceptance of Q3 setup-only capability predicate; no final scorer oracle from this row.",
+      "expected_class": "PASS_G2_CONDITIONAL_IF_ALL_GATES_PASS",
+      "decision_status": "NEEDS_INDEPENDENT_TECHNICAL_DECISION",
+      "owner_action": "NONE"
+    }
+  ],
+  "completion": "REQUIRES_INDEPENDENT_SOURCE_AND_POLICY_REVIEW_BEFORE_SEVEN_CLASS_VECTORS",
+  "F1_frozen": false,
+  "F2_frozen": false,
+  "attempt_002_authorized": false
+}

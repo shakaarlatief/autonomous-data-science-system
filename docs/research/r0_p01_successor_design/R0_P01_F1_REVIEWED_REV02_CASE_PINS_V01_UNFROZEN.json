@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "reviewed_commit": "41e8b0c3af10f789a24e8c708a3a2ad11c990fee",
+  "reviewer_message": "MC-0030_MESSAGE057",
+  "source_path": "docs/research/r0_p01_successor_design/R0_P01_F1_SCORING_BOUNDARY_CANDIDATES_REV02_UNFROZEN.json",
+  "committed_git_blob_sha256": "9466563ed0094c2a57c7d6b97b151e28af31a6c729b63e3cd16c32518e83456a",
+  "canonical_fields": [
+    "conditions",
+    "source_grounded_conclusion",
+    "qualification_boundary",
+    "premises",
+    "source_basis"
+  ],
+  "canonical_encoding": "json.dumps(ensure_ascii=False,sort_keys=True,separators=(comma,colon)).encode(utf-8)",
+  "pinned_case_sha256": {
+    "S1-01": "a85ca131110433c79e62fcb7d257e664d9c8c0f68a91250dce8d66f4563d2b87",
+    "S1-02": "1b24210b80ca03e2a3dc43454d6df61c1ca7db7eb30d4540c2e70327446524af",
+    "S1-03": "addba64f95134504fedf59f58546fd251be29409741eadcc43e9a867fb613c5b",
+    "S1-04": "51b28e1c2e3ce7f3f31131dc99a4ee52fac9891c0aac9a7e9a2370995862efbe",
+    "S1-05": "45d074cbd77cbeb1715bda44d2ce7ec42152344b952f2b7cf677dc9c284595d1",
+    "S2-01": "acda38df8eef0ef6106492e225564ab1c2c8ec5bc6639355ddab0b9338b02300",
+    "S2-02": "fadab6bdee199278e62b285f39f88997e62a76ca285319effae515c3397473fb",
+    "S2-03": "7696d03d50c8facc5847cd3fe3dd82f388f9223f45c0c9cc44f8ca312e64ae28",
+    "S2-04": "ba20c6aacf637760f2a72d434986b14e2510e0c44bf7fcd2d4f2c30bb8791706",
+    "S3-01": "448978a6e86b1b1f1d762dab52f79891a51e22d243f35f953a15b89fe3ae5511",
+    "S3-02": "66897f873cecee2a559291b6208f45ba2e99573225a6f9caf1f877bcd1b60695",
+    "S3-03": "b1562a78980fbd5759a59f23f24e1ca31cba639229d5d43b403b5cb314b834e4",
+    "S3-04": "095c213101c3d81c855600f752d1c040ff3740506aeffb9b923f6db9f3182c74",
+    "S4-01": "a38e528c91273cfe5d08d847238d78274ad0d4d600bd3ebab0f88f7478947cb1",
+    "S4-02": "0a7cb3a3940bc624896add79fe0a663b52ac038df2f70facbe78ca039cca101b",
+    "S4-03": "bdc775092a6427be671c3f8d46b20b67c2e2201810fdf32b899d129648c542a6",
+    "S4-04": "cb61ec5531de205ba2cb6274980e9fe13a7aee6ff1d3ee5541e63959c0136708",
+    "X1": "9941c36a3d7861847bedf5225900ffa6a100f4ea77a4c850b69b8ea767825085",
+    "X2": "058ec5ea68536c06819bfae0b27896f95b6f10e4d397d9578b7c5989fd89f019",
+    "X3": "b780929f494a1d47f12d49b01b757e1f1b715ecca071f339fc15652f8a6b95a2",
+    "X4": "26455bf0cff617ba4f8d6d8b415290ce7415e9dbd0a65f16921d9cd3565970e9",
+    "X5": "16a568135bf65f8712b95f863aff6e01e79ec03d7dca06850a4b4afdd24e2979",
+    "X6": "58846f6d4b08a768f83484a9ecbe4885cc2115fb5429692dc44a64f3c884abb7",
+    "X7": "54de87af4c415620ca39dac0611851a26a3f37f1b2061896adbfea8d6c3a9939"
+  },
+  "case_premises_exact": {
+    "S1-01": {
+      "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+      "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+      "raw_flags": "NO_SILENT_INFERENCE",
+      "process_isolation": "NOT_CLAIMED",
+      "flag_origin": "SOURCE_FLAG_RULE",
+      "receipt_producer": "STATED_IN_CONDITIONS_OR_REQUIRES_F1_RECEIPT"
+    },
+    "S1-02": {
+      "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+      "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+      "raw_flags": "NO_SILENT_INFERENCE",
+      "process_isolation": "NOT_CLAIMED",
+      "flag_origin": "SOURCE_FLAG_RULE",
+      "receipt_producer": "RP_AND_CLIENT"
+    },
+    "S1-03": {
+      "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+      "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+      "raw_flags": "NO_SILENT_INFERENCE",
+      "process_isolation": "NOT_CLAIMED",
+      "flag_origin": "SOURCE_FLAG_RULE",
+      "receipt_producer": "RP"
+    },
+    "S1-04": {
+      "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+      "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+      "raw_flags": "NO_SILENT_INFERENCE",
+      "process_isolation": "NOT_CLAIMED",
+      "flag_origin": "SOURCE_FLAG_RULE",
+      "receipt_producer": "FROZEN_INDEPENDENT_CAPABILITY_PROBE"
+    },
+    "S1-05": {
+      "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+      "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+      "raw_flags": "NO_SILENT_INFERENCE",
+      "process_isolation": "NOT_CLAIMED",
+      "flag_origin": "SOURCE_FLAG_RULE",
+      "receipt_producer": "FROZEN_INDEPENDENT_CAPABILITY_PROBE"
+    },
+    "S2-01": {
+      "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+      "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+      "raw_flags": "INTEGRITY_SOURCE_TRUE",
+      "process_isolation": "NOT_CLAIMED",
+      "flag_origin": "HARNESS_RECORDED_IF_POSITIVELY_EVIDENCED",
+      "receipt_producer": "STATED_IN_CONDITIONS_OR_REQUIRES_F1_RECEIPT"
+    },
+    "S2-02": {
+      "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+      "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+      "raw_flags": "NO_HIGHER_PRIORITY_INTEGRITY",
+      "process_isolation": "NOT_CLAIMED",
+      "flag_origin": "SCORER_DERIVED_ONLY_AFTER_HARNESS_SITE_AND_INTACT_CHAIN",
+      "receipt_producer": "STATED_IN_CONDITIONS_OR_REQUIRES_F1_RECEIPT"
+    },
+    "S2-03": {
+      "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+      "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+      "raw_flags": "NO_SILENT_INFERENCE",
+      "process_isolation": "NOT_CLAIMED",
+      "flag_origin": "HARNESS_RECORDED_IF_POSITIVELY_EVIDENCED",
+      "receipt_producer": "STATED_IN_CONDITIONS_OR_REQUIRES_F1_RECEIPT"
+    },
+    "S2-04": {
+      "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+      "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+      "raw_flags": "PROVEN_INTEGRITY_SOURCE_TRUE",
+      "process_isolation": "NOT_CLAIMED",
+      "flag_origin": "HARNESS_RECORDED_PROVEN_CONTRACT_VIOLATION",
+      "receipt_producer": "STATED_IN_CONDITIONS_OR_REQUIRES_F1_RECEIPT"
+    },
+    "S3-01": {
+      "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+      "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+      "raw_flags": "NO_HIGHER_PRIORITY_SOURCES_TRUE",
+      "process_isolation": "VERIFIED_WINDOWS_ISOLATION",
+      "flag_origin": "HARNESS_OBSERVATION_ONLY",
+      "receipt_producer": "HARNESS"
+    },
+    "S3-02": {
+      "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+      "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+      "raw_flags": "NO_HIGHER_PRIORITY_INTEGRITY",
+      "process_isolation": "VERIFIED_WINDOWS_ISOLATION",
+      "flag_origin": "HARNESS_RECORDED_NODE_RP_FAILURE",
+      "receipt_producer": "HARNESS"
+    },
+    "S3-03": {
+      "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+      "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+      "raw_flags": "UNKNOWN_FAULT_OR_ORDER_NO_FAVORABLE_INSTRUMENT_INFERENCE",
+      "process_isolation": "NOT_PROVED",
+      "flag_origin": "HARNESS_OBSERVATION_ONLY",
+      "receipt_producer": "HARNESS"
+    },
+    "S3-04": {
+      "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+      "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+      "raw_flags": "NO_SILENT_INFERENCE",
+      "process_isolation": "NOT_CLAIMED",
+      "flag_origin": "SOURCE_FLAG_RULE",
+      "receipt_producer": "STATED_IN_CONDITIONS_OR_REQUIRES_F1_RECEIPT"
+    },
+    "S4-01": {
+      "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+      "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+      "raw_flags": "NO_SILENT_INFERENCE",
+      "process_isolation": "NOT_CLAIMED",
+      "flag_origin": "SOURCE_FLAG_RULE",
+      "receipt_producer": "STATED_IN_CONDITIONS_OR_REQUIRES_F1_RECEIPT"
+    },
+    "S4-02": {
+      "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+      "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+      "raw_flags": "NO_SILENT_INFERENCE",
+      "process_isolation": "NOT_CLAIMED",
+      "flag_origin": "SOURCE_FLAG_RULE",
+      "receipt_producer": "STATED_IN_CONDITIONS_OR_REQUIRES_F1_RECEIPT"
+    },
+    "S4-03": {
+      "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+      "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+      "raw_flags": "NO_SILENT_INFERENCE",
+      "process_isolation": "NOT_CLAIMED",
+      "flag_origin": "SOURCE_FLAG_RULE",
+      "receipt_producer": "STATED_IN_CONDITIONS_OR_REQUIRES_F1_RECEIPT"
+    },
+    "S4-04": {
+      "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+      "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+      "raw_flags": "NO_SILENT_INFERENCE",
+      "process_isolation": "NOT_CLAIMED",
+      "flag_origin": "SOURCE_FLAG_RULE",
+      "receipt_producer": "STATED_IN_CONDITIONS_OR_REQUIRES_F1_RECEIPT"
+    },
+    "X1": {
+      "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+      "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+      "raw_flags": "NO_SILENT_INFERENCE",
+      "process_isolation": "NOT_CLAIMED",
+      "flag_origin": "SOURCE_FLAG_RULE",
+      "receipt_producer": "SPECIFIC_P0_OR_EVENT_RECEIPT"
+    },
+    "X2": {
+      "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+      "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+      "raw_flags": "NO_SILENT_INFERENCE",
+      "process_isolation": "NOT_CLAIMED",
+      "flag_origin": "SOURCE_FLAG_RULE",
+      "receipt_producer": "SPECIFIC_P0_OR_EVENT_RECEIPT"
+    },
+    "X3": {
+      "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+      "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+      "raw_flags": "NO_SILENT_INFERENCE",
+      "process_isolation": "NOT_CLAIMED",
+      "flag_origin": "SOURCE_FLAG_RULE",
+      "receipt_producer": "SPECIFIC_P0_OR_EVENT_RECEIPT"
+    },
+    "X4": {
+      "other_arm_evidence": "FIXED_CONDITIONAL",
+      "proof_viability": "FIXED_CONDITIONAL",
+      "raw_flags": "NO_SILENT_INFERENCE",
+      "process_isolation": "NOT_CLAIMED",
+      "flag_origin": "SOURCE_FLAG_RULE",
+      "receipt_producer": "SPECIFIC_P0_OR_EVENT_RECEIPT"
+    },
+    "X5": {
+      "other_arm_evidence": "FIXED_CONDITIONAL",
+      "proof_viability": "FIXED_CONDITIONAL",
+      "raw_flags": "HIGHER_INTEGRITY_FALSE",
+      "process_isolation": "VERIFIED_WINDOWS_ISOLATION",
+      "flag_origin": "HARNESS_RECORDED",
+      "receipt_producer": "HARNESS"
+    },
+    "X6": {
+      "other_arm_evidence": "UNFIXED_NO_GLOBAL_SCORE",
+      "proof_viability": "UNFIXED_NO_GLOBAL_SCORE",
+      "raw_flags": "NO_SILENT_INFERENCE",
+      "process_isolation": "NOT_CLAIMED",
+      "flag_origin": "SOURCE_FLAG_RULE",
+      "receipt_producer": "SPECIFIC_P0_OR_EVENT_RECEIPT"
+    },
+    "X7": {
+      "other_arm_evidence": "FIXED_CONDITIONAL",
+      "proof_viability": "FIXED_CONDITIONAL",
+      "raw_flags": "HIGHER_INTEGRITY_FALSE",
+      "process_isolation": "NOT_CLAIMED",
+      "flag_origin": "SOURCE_FLAG_RULE",
+      "receipt_producer": "SPECIFIC_P0_OR_EVENT_RECEIPT"
+    }
+  },
+  "review_status": "PINS_REVIEWED_REV02_TEXT_DO_NOT_AUTOMATICALLY_APPROVE_F1"
+}

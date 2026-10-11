@@ -3,7 +3,7 @@
   "thread_id": "MC-0030",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "OPEN",
-  "phase": "R0_P01_F1_SCORING_BOUNDARY_REV02_FOCUSED_REVIEW_PENDING",
+  "phase": "R0_P01_F1_TECHNICAL_SITE_TABLE_INDEPENDENT_REVIEW_PENDING",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -99,16 +99,17 @@
       "Claude Message 052 at dc96718b conservatively stopped after batches 002-009: 9/18 audited, 472 source units, 428 accepted reviewer, 44 pending. Lowercase JSON receipt schema defect fixed and 42 synthetic checks PASS at Checkpoint 871. Messages 043-051 remain reserved for 010-018 under existing Message 034 one-prompt task-specific authority. Message 052 is historical interim stop. Claude not scorer or blind second oracle author. F1/F2 unfrozen.",
       "Claude audit Q0-AUDIT-010..018 committed as Message 043..051, ending bacabf65 after 9 message-only commits; full 18/18 1022 units, 967 reviewer accepted and 55 pending. Checkpoint 872/Research 536/Validation 225/Message 053 form task-owner next-stage F1 scoring-boundary reconciliation, with 47/47 focused regression PASS and a 55-unit immutable-reviewer-derived pending register. Claude remains independent reviewer, not blind canonicalizer or scorer.",
       "Research 537 and Message 054 authored by ChatGPT: source-bound 17-case F1 scoring-boundary candidate analysis under approved original REV04 contract/policy hashes. 12 narrowly SOURCE_DETERMINED, 5 CANDIDATE_BLOCKED. Claude may independently challenge as clause reviewer in Message 055 only and remains barred from blind second canonicalizer/scorer. B01/B02 approved bytes and 55 pending reviewer findings unchanged.",
-      "Claude Message 055 commit 19ea777ee completed REV01 independent challenge: 8 confirmed, 9 amended, 0 rejected/mandatory owner. ChatGPT Research 538/Message 056 authored new REV02 24-case matrix (17 source-determined, 7 candidate blocked), independent source-gate trace guard and exact committed-Git-blob hash correction to all 55 pending review rows. Claude Message 057 is limited to focused technical challenge; it remains ineligible as blind second oracle/scorer author."
+      "Claude Message 055 commit 19ea777ee completed REV01 independent challenge: 8 confirmed, 9 amended, 0 rejected/mandatory owner. ChatGPT Research 538/Message 056 authored new REV02 24-case matrix (17 source-determined, 7 candidate blocked), independent source-gate trace guard and exact committed-Git-blob hash correction to all 55 pending review rows. Claude Message 057 is limited to focused technical challenge; it remains ineligible as blind second oracle/scorer author.",
+      "Claude Message 057 accepted REV02 as design basis with seven Q qualifications. ChatGPT at Checkpoint 875 authored 15-row prospective source-site/receipt decision candidates and committed-reviewed case semantic-text hash pins against Checkpoint 874 exact Git blobs, with native Windows L0075/L0136 branches blocked and 12 new negative tests. Claude may review through Message 059 only, not author blind scorer or oracle."
     ],
-    "notes": "R0_P01_F1_SCORING_BOUNDARY_REV02_FOCUSED_REVIEW_PENDING. Preserve 24-case source-bound REV02 and 72 PASS structural tests; 18 relevant pending gate source units cited, but all 55 reviewer-pending task-owner resolutions remain UNRESOLVED. Message 055 high risk owner Ctrl+C SSH call3 and RP-only timeout false completion; guard and blob hashes corrected, Message 057 review only, no F1/F2 freeze or Attempt 002 consent."
+    "notes": "R0_P01_F1_TECHNICAL_SITE_TABLE_INDEPENDENT_REVIEW_PENDING. 15 provisional technical rows D01–D15 cover Q1–Q7 and all seven blocked source-review cases. 24 separately reviewed REV02 text/premise pins matched to original Git commit blob. Q1 Ctrl+C native key prompt and X3 snapshot atomicity remain dependent on unperformed target Windows tests. All 55 audit findings still UNRESOLVED, B01/B02 unchanged, F1/F2 UNFROZEN, Attempt 002 unauthorized. Claude Message 059 independent challenge only."
   },
   "last_transition": {
-    "transition_id": "mc0030-r0-p01-rev02-cross-family-scoring-technical-review",
+    "transition_id": "mc0030-r0-p01-q1-q7-technical-site-review",
     "from_state": "OPEN",
     "to_state": "OPEN",
     "actor": "chatgpt",
-    "reason": "Claude Message 055 independent critique reconciled into 24-case REV02 and exact Git blob reviewer provenance; bounded independent Message 057 technical confirmation required before scorer vectors.",
-    "repository_head": "19ea777ee191cac6c46bc1aac7c0edffb9093d1f"
+    "reason": "Claude Message 057 accepted REV02 with precise qualifications; task owner prepares 15-site source/receipt decision candidates, exact reviewed REV02 semantics pins and scoped next independent Message 059 review.",
+    "repository_head": "ad5c1a16a0f336b54593987b93f0f54079b4bdfc"
   }
 }
