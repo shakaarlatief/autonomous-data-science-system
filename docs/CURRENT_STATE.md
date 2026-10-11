@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 875
+**Checkpoint:** 876
 **Date:** 2026-10-11
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,21 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: R0-P01 Message 057 qualified with Q1-Q7; technical site/receipt decision table under independent review
+## Current active stage: owner-approved simple replacement procedure; proportionality triage before Attempt 002
+
+**Checkpoint 876 / Research 540 / MC-0030 Message 060** record the human owner's explicit prospective approval to simplify R0-P01 after repeated reviews overoptimized the procedural claim cap instead of asking whether that constraint was wanted. The owner wants excellent ADS architecture, however much genuine work it requires, but not unnecessary engineering around a disposable experiment's self-imposed retry bureaucracy.
+
+**Effective new owner decision:** For an owner-declared accidental operator mistake or technical interruption, the owner may state what happened in ordinary language and **separately authorize a fresh experiment execution**. There is no need to cryptographically prove the accident to permit research replacement, and the historical B02 fixed two-new-claim cap / narrow \`ALL_REQUIRED\` exception gate are **prospectively superseded for this limited category**. An accident explanation governs retry permission, not a valid cryptographic proof. Preserve each run, its original score/evidence and its reliability/usability contribution; never forge a PASS or hide negative results. Any actual new run still requires a separate, fresh explicit owner execution approval.
+
+Historical B01/B02 records and approved source bytes remain intact as decisions made then. Attempt 001 remains immutable AMEND, and no new owner SSH/WebAuthn proof attempt has occurred. The R0-P01 architectural question still requires real forgery/replay/sign-what-you-see security controls, faithful evidence, fair owner-time measurements, representative failures and honest reporting, with no post-result tuning-to-green.
+
+Claude Message 059 is preserved as useful technical critique, but **the automatic succession of scenario-table revisions, additional pinning and independent review rounds is paused**. The next work is proportionate risk triage: determine which actual cryptographic/security, Windows cleanup/evidence, WebAuthn capability and measurement requirements are necessary for a trustworthy comparison, then move to targeted synthetic implementation and qualification. Fine-grained Ctrl+C/Node races **solely to decide exception eligibility** are not the new procedural critical path. Claude has been informed by informational Message 060, with no further response requested. This does not freeze F1/F2 or approve Attempt 002.
+
+R0-P02 PASS, R0-P03 pending, physical ADS architecture remains open for redesign at every level, Specification 028 unchanged.
+
+---
+
+## Historical checkpoint 875 stage: R0-P01 Message 057 qualified with Q1-Q7; technical site/receipt decision table under independent review
 
 Checkpoint 875 / Research 539 / Validation 228 / MC-0030 Message 058 reconcile Claude's independent Message 057 `ACCEPT_REV02_WITH_PRECISE_QUALIFICATIONS`. The accepted B01/B02 contracts and policies remain byte-identical and the independent audit remains exactly 1,022 source units, 967 reviewer-accepted / **55 still pending task-owner resolution**. F1/F2 remain unfrozen and real Attempt 002 is not authorized.
 

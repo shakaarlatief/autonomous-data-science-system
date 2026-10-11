@@ -3,7 +3,7 @@
   "thread_id": "MC-0030",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "OPEN",
-  "phase": "R0_P01_F1_TECHNICAL_SITE_TABLE_INDEPENDENT_REVIEW_PENDING",
+  "phase": "R0_P01_OWNER_REPLACEMENT_POLICY_APPROVED_PROPORTIONALITY_TRIAGE",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -51,7 +51,7 @@
       ]
     }
   ],
-  "next_expected_actor": "claude",
+  "next_expected_actor": "chatgpt",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -100,16 +100,17 @@
       "Claude audit Q0-AUDIT-010..018 committed as Message 043..051, ending bacabf65 after 9 message-only commits; full 18/18 1022 units, 967 reviewer accepted and 55 pending. Checkpoint 872/Research 536/Validation 225/Message 053 form task-owner next-stage F1 scoring-boundary reconciliation, with 47/47 focused regression PASS and a 55-unit immutable-reviewer-derived pending register. Claude remains independent reviewer, not blind canonicalizer or scorer.",
       "Research 537 and Message 054 authored by ChatGPT: source-bound 17-case F1 scoring-boundary candidate analysis under approved original REV04 contract/policy hashes. 12 narrowly SOURCE_DETERMINED, 5 CANDIDATE_BLOCKED. Claude may independently challenge as clause reviewer in Message 055 only and remains barred from blind second canonicalizer/scorer. B01/B02 approved bytes and 55 pending reviewer findings unchanged.",
       "Claude Message 055 commit 19ea777ee completed REV01 independent challenge: 8 confirmed, 9 amended, 0 rejected/mandatory owner. ChatGPT Research 538/Message 056 authored new REV02 24-case matrix (17 source-determined, 7 candidate blocked), independent source-gate trace guard and exact committed-Git-blob hash correction to all 55 pending review rows. Claude Message 057 is limited to focused technical challenge; it remains ineligible as blind second oracle/scorer author.",
-      "Claude Message 057 accepted REV02 as design basis with seven Q qualifications. ChatGPT at Checkpoint 875 authored 15-row prospective source-site/receipt decision candidates and committed-reviewed case semantic-text hash pins against Checkpoint 874 exact Git blobs, with native Windows L0075/L0136 branches blocked and 12 new negative tests. Claude may review through Message 059 only, not author blind scorer or oracle."
+      "Claude Message 057 accepted REV02 as design basis with seven Q qualifications. ChatGPT at Checkpoint 875 authored 15-row prospective source-site/receipt decision candidates and committed-reviewed case semantic-text hash pins against Checkpoint 874 exact Git blobs, with native Windows L0075/L0136 branches blocked and 12 new negative tests. Claude may review through Message 059 only, not author blind scorer or oracle.",
+      "Claude Message 059 at 8b4b3739 reviewed old F1 technical-site candidates. Before further iterative review, the owner explicitly approved changing R0-P01 procedural restart governance: a declared accidental/technical interruption plus express fresh owner consent permits a new research execution. Historical B02 cap/exceptions prospectively superseded for this case, original B01/B02 bytes and Attempt 001 remain unchanged, no actual Attempt 002 consent. Message 060 informs Claude without dispatching Message 061; next actor ChatGPT for proportionate security/measurement triage."
     ],
-    "notes": "R0_P01_F1_TECHNICAL_SITE_TABLE_INDEPENDENT_REVIEW_PENDING. 15 provisional technical rows D01–D15 cover Q1–Q7 and all seven blocked source-review cases. 24 separately reviewed REV02 text/premise pins matched to original Git commit blob. Q1 Ctrl+C native key prompt and X3 snapshot atomicity remain dependent on unperformed target Windows tests. All 55 audit findings still UNRESOLVED, B01/B02 unchanged, F1/F2 UNFROZEN, Attempt 002 unauthorized. Claude Message 059 independent challenge only."
+    "notes": "The human project owner explicitly changed the R0-P01 restart procedure after identifying unnecessary review of self-imposed B02 numerical/exception limits. Original historical policy and 55 pending audit findings preserved; revised replacement permission needs owner declaration and fresh explicit execution consent, but no independent forensic proof of accidental keypress. Keep true cryptographic controls, research observations, no retroactive scoring or post-hoc green selection. Claude Message 060 informational only; no new review dispatched. F1/F2 unfrozen, Attempt 002 unauthorized."
   },
   "last_transition": {
-    "transition_id": "mc0030-r0-p01-q1-q7-technical-site-review",
+    "transition_id": "mc0030-r0-p01-human-owner-procedural-replacement-and-proportionality-reset",
     "from_state": "OPEN",
     "to_state": "OPEN",
     "actor": "chatgpt",
-    "reason": "Claude Message 057 accepted REV02 with precise qualifications; task owner prepares 15-site source/receipt decision candidates, exact reviewed REV02 semantics pins and scoped next independent Message 059 review.",
-    "repository_head": "ad5c1a16a0f336b54593987b93f0f54079b4bdfc"
+    "reason": "Human owner explicitly approves prospective simple accident/technical-interruption replacement instead of old B02 fixed retry cap; pause automatic technical-table review loop and prioritize material safety and evidence.",
+    "repository_head": "8b4b37396974a88a003ccad1027414b04c827a90"
   }
 }

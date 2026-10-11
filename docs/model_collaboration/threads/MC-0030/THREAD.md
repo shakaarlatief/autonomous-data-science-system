@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / F1 Q1-Q7 TECHNICAL SITE/RECEIPT TABLE INDEPENDENT REVIEW NEXT
+**Status:** OPEN / OWNER-APPROVED ACCIDENT REPLACEMENT / PROPORTIONATE R0-P01 TRIAGE NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -581,5 +581,20 @@ A distinct pin manifest plus source guard ties each of 24 independently reviewed
     PHASE=R0_P01_F1_TECHNICAL_SITE_TABLE_INDEPENDENT_REVIEW_PENDING
     NEXT_ACTOR=claude
     NEXT_MESSAGE=059
+    F1_F2=UNFROZEN
+    ATTEMPT_002=NOT_AUTHORIZED
+
+
+## Human-approved procedural simplification and proportionality reset
+
+Claude Message 059 independently reviewed the former 15-row site table and found targeted semantic changes needed. Before creating yet another review round, the human owner challenged the **root governance restriction itself**: why spend so much effort on Ctrl+C exception eligibility when the owner could simply explain an accidental error and authorize a fresh test? After comparison of the existing B02 protocol with actual Research 513 goals, the owner **explicitly approved** a simple prospective replacement procedure.
+
+Research 540 and the separate 2026-10-11 owner decision record preserve that approval, scope, and authority distinction. A human explanation and new express approval suffices to permit a **fresh** research execution after an accident or technical interruption; the old B02 fixed two-new-claim cap and narrow exceptional retry gate are superseded for that purpose. Earlier outcomes, original B01/B02 accepted bytes, Attempt 001 AMEND, security tests, actual signature verification, complete trial records, timing and fair scientific comparison stay protected. Policy approval does NOT authorize new owner credentials, Attempt 002, a production signature, a freeze or a physical target.
+
+The error was not effort toward high-quality architecture. It was designing elaborate technical workarounds for procedural constraints **without inviting a human-owner alternative**. Future work must seek simpler owner-governed options before multiplying reviews, and choose security tests based on material risk rather than static receipt count. Message 060 is informational to Claude, not a Message 061 review request. ChatGPT is next for bounded risk triage and practical qualification planning.
+
+    PHASE=R0_P01_OWNER_REPLACEMENT_POLICY_APPROVED_PROPORTIONALITY_TRIAGE
+    NEXT_ACTOR=chatgpt
+    CLAUDE_NEXT_MESSAGE=NOT_REQUESTED
     F1_F2=UNFROZEN
     ATTEMPT_002=NOT_AUTHORIZED

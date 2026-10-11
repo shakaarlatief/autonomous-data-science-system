@@ -867,6 +867,11 @@ docs/research/r0_p01_successor_design/R0_P01_F1_TECHNICAL_SITE_RECEIPT_DECISIONS
 docs/research/r0_p01_successor_design/R0_P01_F1_REVIEWED_REV02_CASE_PINS_V01_UNFROZEN.json
 docs/local_execution/validation/228_r0_p01_message057_site_table_pins_and_guard_regression.md
 docs/checkpoints/875_r0_p01_message057_technical_site_decision_table_next_peer_review.md
+docs/model_collaboration/threads/MC-0030/messages/059_claude_r0_p01_site_decision_table_rev01_independent_review.md
+docs/research/r0_p01_successor_design/R0_P01_OWNER_AUTHORIZED_INTERRUPTION_REPLACEMENT_DECISION_20261011.md
+docs/research/540_r0_p01_owner_authorized_replacement_and_proportionality_reassessment.md
+docs/checkpoints/876_r0_p01_owner_authorized_interruption_replacement_procedure.md
+docs/model_collaboration/threads/MC-0030/messages/060_chatgpt_r0_p01_owner_authorized_replacement_and_proportionality_reset.md
 scripts/check_r0_p01_f1_site_decisions.py
 tests/unit/test_r0_p01_f1_site_decisions.py
 scripts/check_r0_p01_scoring_boundary_rev02.py
@@ -1594,7 +1599,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-875 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-876 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 
