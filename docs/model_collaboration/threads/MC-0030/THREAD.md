@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / P01 SIGNED RUN NONCE NEGATIVES PASS / DURABLE CLAIM ISSUANCE NEXT
+**Status:** OPEN / P01 SYNTHETIC TRUSTED DURABLE CLAIM ADMISSION PASS / RUN CONSENT NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -647,5 +647,18 @@ The missing V02 cross-run nonce reproduced at Checkpoint 879 is mitigated at the
     PHASE=R0_P01_SYNTHETIC_SIGNED_RUN_NONCE_PASS
     NEXT_ACTOR=chatgpt
     NEXT_BOUNDARY=p-one-trusted-durable-claim-issuance
+    F1_F2=UNFROZEN
+    ATTEMPT_002=NOT_AUTHORIZED
+
+
+## Durable synthetic trusted claim issuance and one-time admission completed
+
+Research 545 / Validation 233 / Checkpoint 881 test the explicit signed claim nonce against durable SQLite issuance and acceptance, using a trusted synthetic issuer genesis. Twenty-six new executable tests verify Ed25519 and synthetic ES256 genuine signed approvals, separately restarted verification, pre/post-commit crashes, concurrency, old-claim invalidation on new issuance, rejection without mutation, and integrity against saved statement/proof tampering. The full focused suite is 173 PASS (89 executable synthetic security tests, 84 source/audit structural guards).
+
+The implementation is an experiment, not final production architecture or real owner-facing authentication. Actual authority to initiate a run, public-signer enrollment, hardware Windows Hello, scorer/evidence semantics and hostile database rollback remain unqualified. Owner-approved uncomplicated accidental replacement remains effective but requires separate fresh owner execution authorization. Claude is not automatically tasked with another paper review.
+
+    PHASE=R0_P01_SYNTHETIC_DURABLE_TRUSTED_CLAIM_ADMISSION_PASS
+    NEXT_ACTOR=chatgpt
+    NEXT_BOUNDARY=p-one-authorized-run-initiation-and-evidence
     F1_F2=UNFROZEN
     ATTEMPT_002=NOT_AUTHORIZED

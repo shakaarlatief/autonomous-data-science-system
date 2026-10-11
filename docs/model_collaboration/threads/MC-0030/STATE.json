@@ -3,7 +3,7 @@
   "thread_id": "MC-0030",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "OPEN",
-  "phase": "R0_P01_SYNTHETIC_SIGNED_RUN_NONCE_PASS",
+  "phase": "R0_P01_SYNTHETIC_DURABLE_TRUSTED_CLAIM_ADMISSION_PASS",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -105,16 +105,17 @@
       "Checkpoint 877 / Research 541 / Validation 229 added 8 actual non-owner synthetic cryptographic tests: Ed25519 valid and well-framed tampered/foreign-signer OpenSSH verification, ES256 valid and DER-preserving tampered/foreign-signer Node verification, plus governing semantic-base metamorphism. The historical V02 code and owner evidence were untouched. Claude no automatic Message 061; next ChatGPT work signed-but-unauthorized synthetic admission.",
       "Checkpoint 878 / Research 542 / Validation 230 added 19 actual synthetic valid-signature unauthorized/replay/stale-context/recovery-role tests against historical V02 Ledger.admit for both Ed25519 and ES256. Full mutable trust-state snapshots are unchanged after every rejected action; 111 total regressions passed (27 executable crypto/admission + 84 provenance tests). Next meaningful risk is persistent consumed-ID/trust-history across process restart. Owner retry decision and F1/F2 boundary unchanged.",
       "Checkpoint 879 / Research 543 / Validation 231: 15 real synthetic durability/restart/concurrency tests PASS on bounded replaceable SQLite journal, 126 total tests PASS (42 execution-facing; 84 structural). Historical V02 signed statement lacks fresh run nonce and admits old valid proof into separate new-run database; deliberate negative observation remains an open essential successor security requirement. No owner credentials, F1/F2 freeze or Attempt 002.",
-      "Checkpoint 880 / Research 544 / Validation 232: 21 real Ed25519 OpenSSH and synthetic WebAuthn-shaped ES256 cross-run signed-nonce negative tests PASS using dedicated successor protocol fields, trusted expected statement and non-owner ephemeral signing. 63 actual execution-facing tests plus 84 structural tests passed independently (147 total). Run nonce now bound in signed bytes, but no durable trusted nonce issuance or successor ledger integration yet. No owner run/secret and no F1/F2 freeze."
+      "Checkpoint 880 / Research 544 / Validation 232: 21 real Ed25519 OpenSSH and synthetic WebAuthn-shaped ES256 cross-run signed-nonce negative tests PASS using dedicated successor protocol fields, trusted expected statement and non-owner ephemeral signing. 63 actual execution-facing tests plus 84 structural tests passed independently (147 total). Run nonce now bound in signed bytes, but no durable trusted nonce issuance or successor ledger integration yet. No owner run/secret and no F1/F2 freeze.",
+      "Checkpoint 881 / Research 545 / Validation 233: 26 new end-to-end non-owner synthetic durable claim issuance and admission tests PASS across Ed25519 and synthetic ES256. Issued signed nonce and exact expected statement persisted with immutable public-signer genesis; prior unfinished claim superseded, one-time accepted proofs reverified after restart. 89 executable and 84 structural = 173 passing focused tests. Owner execution consent, real hardware, scorer and malicious whole-file rollback not qualified."
     ],
-    "notes": "Owner-governance simplified accident replacement remains unchanged and requires separate authorization. Checkpoint 880 signature-layer claim_nonce+protocol fields cryptographically prevent old-run proof replay under trusted newer run expectation, in two synthetic mechanisms; next implement durable trusted issuer and full admission. No owner hardware, scorer or real Attempt 002; B01/B02 remain historically unchanged, F1/F2 unfrozen. Avoid speculative policy-review loops."
+    "notes": "Owner-approved simple accidental/technical replacement governance remains in force. Checkpoint 881 implements a replaceable synthetic durable nonce issuer and one-time signature admission, with 26 new tests and 173 overall tests PASS. The real owner-run initiation authority, enrolled public signer trust, hardware WebAuthn, multi-event scoring and hostile whole-file rollback remain outside this test. Attempt 001 unchanged, B01/B02 preserved, F1/F2 unfrozen and Attempt 002 unauthorized; no automatic Claude review."
   },
   "last_transition": {
-    "transition_id": "mc0030-r0-p01-synthetic-signed-cross-run-claim-binding",
+    "transition_id": "mc0030-r0-p01-synthetic-trusted-durable-claim-issuance",
     "from_state": "OPEN",
     "to_state": "OPEN",
     "actor": "chatgpt",
-    "reason": "Fix reproduced original V02 cross-run replay weakness at cryptographic statement layer using explicit fresh signed nonce and actual SSHSIG/ES256 synthetic proof negatives; prepare durable trusted claim issuer next.",
-    "repository_head": "d0c95972df5ab95a82964de24898c36b25c9bff0"
+    "reason": "Integrate cryptographically signed run nonce with persistent trusted synthetic issuer, exact expected-statement replay, one-time admission and actual multi-process crash/concurrency tests, avoiding needless additional owner-retry policy review.",
+    "repository_head": "750ef0782984b6943907441e0fdbe225efd74e53"
   }
 }

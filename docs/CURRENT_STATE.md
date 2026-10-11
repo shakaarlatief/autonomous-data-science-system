@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 880
+**Checkpoint:** 881
 **Date:** 2026-10-11
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,19 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: actual signed run identity rejects cross-run proof replay; durable issuance next
+## Current active stage: trusted synthetic durable run issuance and one-time admission
+
+Checkpoint 881 / Research 545 / Validation 233 integrate the run-bound signed nonce of Checkpoint 880 with a replaceable synthetic issuer and admission store. Trusted public genesis, random unique signed run identities, exact independently reconstructed expected statements, issued/superseded/admitted lifecycle and accepted proof evidence are committed in SQLite transactions. New issuance supersedes any unfinished prior claim. Admission requires the trusted selected run nonce, its exact expected statement, enrolled public signer and real Ed25519 SSHSIG or synthetic WebAuthn-shaped ES256 verification. Restarts reconstruct and verify every accepted signed proof and refuse to recreate missing journal state.
+
+**26 new executable synthetic tests pass**, covering both mechanisms, pre/post-commit crashes for issuance and admission, racing issuers/admitters, old-claim replay, unknown or tampered claim, wrong signer and changed persisted records. **173 focused tests pass**, split into 89 executable synthetic integration/security tests and 84 structural source/review guards.
+
+These results do not prove a trusted real-owner enrollment process, owner consent to issue, real Windows Hello authentication, the full multi-event experiment/scorer, or resistance to malicious whole-database rollback. Storage choices and implementation boundaries remain replaceable, and this is not a qualification of Attempt 002. The next engineering task is authorized run initiation and truthful end-to-end nonsecret evidence/measurement integration, not another speculative review of the superseded retry cap.
+
+The approved owner-authorized replacement policy remains in force with separate fresh authorization required for a real run. Original Attempt 001 remains AMEND, B01/B02 historical bytes are unchanged, 55 source-audit pending notes remain preserved, F1/F2 remain UNFROZEN and Attempt 002 remains NOT AUTHORIZED. R0-P02 PASS, R0-P03 pending and physical ADS target undecided.
+
+---
+
+## Historical checkpoint 880 stage: actual signed run identity rejects cross-run proof replay; durable issuance next
 
 **Checkpoint 880 / Research 544 / Validation 232** implement and test a **separate synthetic successor signed statement** with explicit `protocol` and cryptographically random 256-bit `claim_nonce` fields. Both are in the exact bytes signed by ephemeral Ed25519 SSHSIG or synthetic WebAuthn-shaped ES256 credentials. The trusted verifier receives an **independent expected entire statement for the intended run**; it never accepts an old submitted proof's self-selected run as authority.
 
