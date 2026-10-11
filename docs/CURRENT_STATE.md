@@ -1,7 +1,7 @@
 # Current State
 
-**Checkpoint:** 872
-**Date:** 2026-10-10
+**Checkpoint:** 873
+**Date:** 2026-10-11
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
 **Promoted V1 integration branch:** `v1-frontend-spike` at `2480109fadeee1e480ef03b82e335aacdf9adf91`
@@ -22,7 +22,21 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: R0-P01 full independent source audit complete; F1 scoring semantics reconciliation
+## Current active stage: R0-P01 F1 scoring-boundary source matrix for independent review
+
+Checkpoint 873 / Research 537 / Validation 226 / MC-0030 Message 054 move from the completed 1,022-unit independent clause audit to source-sensitive **F1 classification-boundary analysis**, without attempting real owner authentication, modifying B01/B02, or freezing a scorer. Original 18/18 batch records and their 967 reviewer ACCEPTED / 55 PENDING findings remain immutable. The pending register continues to report zero task-owner resolutions.
+
+Research 537 provides a technically grounded, non-executable S1-S4 analysis for the four highest-risk cross-document scoring issues: B05-A1 capability proof, B07-A3 pre-sign check versus integrity, B08-A1 owner abort versus independent Node/RP process failure, and B11-A1 SSH budget-exhaustion terminal naming. A distinct UNFROZEN JSON candidate matrix records **17 exact source-bound cases**: 12 narrow SOURCE_DETERMINED implications under explicit trusted evidence and **5 CANDIDATE_BLOCKED** interpretations requiring further independent review or governed policy clarification. Source-determined does NOT mean a final scored class absent fixed other-arm evidence and precedence flags.
+
+The read-only structural guard rechecks actual B01/B02-bound contract and policy hashes, all referenced source-unit IDs, the review-status boundary and each of four gate families. Its nine new synthetic negative tests plus the forty-seven preserved audit checks total **56/56 passing**. These are static research/regression checks, not the 117 proposed future F1 runtime tests, and they cannot approve a scored oracle.
+
+The immediate next actor is independent Claude reviewer claude-04, solely to challenge the 17-case matrix and propose precise, cited amendments via Message 055. Message 054 authorizes one message-only review; Claude is not the blind second golden/scorer author. Human owner permission must be sought separately only if an exact interpretation materially changes approved B01/B02. No change to ordinary manual ChatGPT–Claude collaboration workflow.
+
+F1/F2 UNFROZEN, Attempt 001 AMEND preserved, Attempt 002 not authorized and still subject to later third explicit owner execution consent. R0-P02 PASS, R0-P03 pending, physical realization unselected, Specification 028 unchanged.
+
+---
+
+## Historical checkpoint 872 stage: R0-P01 full independent source audit complete; F1 scoring semantics reconciliation
 
 Checkpoint 872 / Research 536 / Validation 225 / MC-0030 Message 053 record completion of **all 18 bounded independent clause-audit batches**. Claude's Messages 043–051 added precisely nine message files after Checkpoint 871; the previous Message 052 remains an immutable interim stop summary. All 1,022/1,022 committed normative-source units now have exact reviewer receipts. Independent reviewer dispositions are 967 ACCEPTED and 55 PENDING. Review acceptance is **not** task-owner semantic approval, 967 passing tests, or a frozen F1 scorer.
 

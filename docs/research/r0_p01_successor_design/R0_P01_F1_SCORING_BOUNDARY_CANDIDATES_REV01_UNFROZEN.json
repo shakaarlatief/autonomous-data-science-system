@@ -1,0 +1,303 @@
+{
+  "schema_version": 1,
+  "status": "UNFROZEN_PROSPECTIVE_SOURCE_COMPARISON",
+  "authority": "Source-bound decision aid only; NOT approved F1 oracle, not a policy reinterpretation or owner-run consent",
+  "source_contract": "docs/research/r0_p01_successor_design/R0_P01_CONTRACT_V03_UNFROZEN_DRAFT.md",
+  "source_policy": "docs/research/r0_p01_successor_design/R0_P01_OUTCOME_POLICY_V03_UNFROZEN_DRAFT.json",
+  "approved_source_sha256": {
+    "contract": "9160a30c481c1c67c2ec857238f5a04b44f618b2ef589ef4f1c514eb3b3d6175",
+    "policy": "9b5bbc4d2c4802fc80b46bcaa3d003640c33e8e4784d39ef7995dbf193dff86c"
+  },
+  "accepted_decisions": [
+    "B01",
+    "B02"
+  ],
+  "claude_audit_results": {
+    "reviewed": 1022,
+    "reviewer_accepted": 967,
+    "reviewer_pending": 55
+  },
+  "gate_order": [
+    "B05-A1",
+    "B07-A3",
+    "B08-A1",
+    "B11-A1"
+  ],
+  "determination_types": [
+    "SOURCE_DETERMINED",
+    "CANDIDATE_BLOCKED"
+  ],
+  "scenario_fields": [
+    "id",
+    "gate",
+    "slug",
+    "determination",
+    "source_basis",
+    "conditions",
+    "source_grounded_conclusion",
+    "f1_evidence_or_test",
+    "qualification_boundary"
+  ],
+  "cases": [
+    {
+      "id": "S1-01",
+      "gate": "B05-A1",
+      "slug": "OWNER_REFUSAL_NOT_CAPABILITY",
+      "determination": "SOURCE_DETERMINED",
+      "source_basis": [
+        "REV04_CONTRACT-L0108",
+        "REV04_CONTRACT-L0150",
+        "REV04_POLICY:evidence_state.not_realizable"
+      ],
+      "conditions": "Owner refusal or capability probe never visited, with P0 terminal evidence absent",
+      "source_grounded_conclusion": "NOT_REALIZABLE must not be assigned; INCOMPLETE applies if no valid terminal P0 and no independently evidenced higher-priority failure",
+      "f1_evidence_or_test": "No REOPEN solely because Arm B was refused or not visited",
+      "qualification_boundary": "No claim that the score is INVALID unless the opposite-arm viability and higher precedence are fixed"
+    },
+    {
+      "id": "S1-02",
+      "gate": "B05-A1",
+      "slug": "DURABLY_CONSUMED_NOTALLOWED",
+      "determination": "SOURCE_DETERMINED",
+      "source_basis": [
+        "REV04_CONTRACT-L0151",
+        "REV04_CONTRACT-L0154",
+        "REV04_POLICY:webauthn_assertion_failure_table.NotAllowedError_or_owner_cancel_or_timeout.outcome"
+      ],
+      "conditions": "Same-attempt acceptance ID; RP-pending assertion issued and consumed; durable NotAllowedError/timeout/cancel receipt",
+      "source_grounded_conclusion": "WEBAUTHN_ASSERTION_NOT_COMPLETED; terminal no-proof event; no assertion replacement",
+      "f1_evidence_or_test": "Event terminal is not a valid proof and does not alone establish COMPLETED for the whole arm",
+      "qualification_boundary": "Independent RP receipt required; all P0/S01/S02/S03 terminal outcomes still required"
+    },
+    {
+      "id": "S1-03",
+      "gate": "B05-A1",
+      "slug": "NOTALLOWED_WITHOUT_RECEIPT",
+      "determination": "SOURCE_DETERMINED",
+      "source_basis": [
+        "REV04_CONTRACT-L0152",
+        "REV04_CONTRACT-L0154",
+        "REV04_POLICY:evidence_state.incomplete"
+      ],
+      "conditions": "Browser claims NotAllowedError but no durable same-attempt pending assertion consumed receipt, while P0 remains without an enumerated terminal outcome",
+      "source_grounded_conclusion": "P0 cannot be counted event_terminal; incomplete evidence; not capability impossibility",
+      "f1_evidence_or_test": "G1 REOPEN cannot rely on the missing P0 event",
+      "qualification_boundary": "Missing receipt integrity flags may have higher precedence; no automatic permission for retry"
+    },
+    {
+      "id": "S1-04",
+      "gate": "B05-A1",
+      "slug": "NOTSUPPORTED_AFTER_REGISTERED",
+      "determination": "CANDIDATE_BLOCKED",
+      "source_basis": [
+        "REV04_CONTRACT-L0108",
+        "REV04_CONTRACT-L0150",
+        "REV04_CONTRACT-L0200",
+        "REV04_POLICY:webauthn_assertion_failure_table.NotSupportedError.outcome",
+        "REV04_POLICY:webauthn_assertion_failure_table.NotSupportedError.requires"
+      ],
+      "conditions": "Arm B registration previously verified successful, later assertion raises NotSupportedError, independent assertion-capability proof unspecified",
+      "source_grounded_conclusion": "NOT_REALIZABLE cannot be assumed from exception name alone; distinction between capability loss and instrument/site error is unresolved",
+      "f1_evidence_or_test": "Require separately frozen capability dimensions, provenance and temporal/causal receipt rule",
+      "qualification_boundary": "Do not select REOPEN/INVALID_INSTRUMENT without a reviewed interpretation compatible with B01/B02"
+    },
+    {
+      "id": "S1-05",
+      "gate": "B05-A1",
+      "slug": "FROZEN_CAPABILITY_RECEIPT",
+      "determination": "CANDIDATE_BLOCKED",
+      "source_basis": [
+        "REV04_CONTRACT-L0150",
+        "REV04_POLICY:evidence_state.not_realizable"
+      ],
+      "conditions": "Known independently produced capability receipt with closed tests and verifiable negative support, but receipt grammar/signature/site not yet specified",
+      "source_grounded_conclusion": "If a future approved predicate is satisfied, NOT_REALIZABLE is potentially admissible",
+      "f1_evidence_or_test": "Define who measures/signs, actual platform/browser/API/clock, reproducible steps, negative counterexamples, phase before/after registration",
+      "qualification_boundary": "A hypothetical receipt cannot be treated as already valid or owner-approved"
+    },
+    {
+      "id": "S2-01",
+      "gate": "B07-A3",
+      "slug": "VERIFIED_PUBLIC_KEY_SWAP",
+      "determination": "SOURCE_DETERMINED",
+      "source_basis": [
+        "REV04_CONTRACT-L0066",
+        "REV04_CONTRACT-L0206",
+        "REV04_CONTRACT-L0164",
+        "REV04_POLICY:raw_flag_schema.attempt_integrity_failure"
+      ],
+      "conditions": "After claim, registered public key is independently proven replaced before the next SSH invocation, with reliable unchanged-source comparison",
+      "source_grounded_conclusion": "INTEGRITY source flag true; INVALID / INVALID_INTEGRITY highest precedence",
+      "f1_evidence_or_test": "Never downgrade to event-terminal owner stop or instrument repair simply because signing did not start",
+      "qualification_boundary": "Flag provenance and trusted invariant identity must be mechanically demonstrated"
+    },
+    {
+      "id": "S2-02",
+      "gate": "B07-A3",
+      "slug": "SSH_RUNTIME_UNAVAILABLE_POSTCLAIM",
+      "determination": "SOURCE_DETERMINED",
+      "source_basis": [
+        "REV04_CONTRACT-L0203",
+        "REV04_CONTRACT-L0165",
+        "REV04_POLICY:raw_flag_schema.harness_exception_with_intact_chain"
+      ],
+      "conditions": "Claim consumed; pinned OpenSSH binary cannot launch; trusted statement/key unchanged; evidence chain independently intact",
+      "source_grounded_conclusion": "INSTRUMENT, unless a higher-priority integrity source exists",
+      "f1_evidence_or_test": "Not a failed owner signature, integrity breach or exhausted budget",
+      "qualification_boundary": "Distinguish preclaim KAT block, which consumes no claim"
+    },
+    {
+      "id": "S2-03",
+      "gate": "B07-A3",
+      "slug": "PRECHECK_FAIL_UNCLASSIFIED",
+      "determination": "CANDIDATE_BLOCKED",
+      "source_basis": [
+        "REV04_CONTRACT-L0066",
+        "REV04_CONTRACT-L0151",
+        "REV04_CONTRACT-L0206",
+        "REV04_POLICY:evidence_state.completed"
+      ],
+      "conditions": "Pre-sign check reports failed without enough evidence to tell header/key/agent identity breach from verifier/tool inability",
+      "source_grounded_conclusion": "Do not equate generic terminal check result with COMPLETED or INTEGRITY automatically",
+      "f1_evidence_or_test": "Require explicit check-site table, evidence fields, integrity/source flags and completed-terminal vocabulary",
+      "qualification_boundary": "Owner-approved integrity no-exception gate constrains any resolution"
+    },
+    {
+      "id": "S2-04",
+      "gate": "B07-A3",
+      "slug": "PRECHECK_HEADER_ALTERED",
+      "determination": "SOURCE_DETERMINED",
+      "source_basis": [
+        "REV04_CONTRACT-L0066",
+        "REV04_CONTRACT-L0206",
+        "REV04_CONTRACT-L0164"
+      ],
+      "conditions": "Verified encrypted-key header was registered during postclaim key setup, then independently proven altered before a later signing invocation.",
+      "source_grounded_conclusion": "Identity/contract INTEGRITY violation; INVALID_INTEGRITY has precedence",
+      "f1_evidence_or_test": "A failed owner signing opportunity is not a substitute diagnosis",
+      "qualification_boundary": "Missing provenance/malformed evidence may independently imply integrity"
+    },
+    {
+      "id": "S3-01",
+      "gate": "B08-A1",
+      "slug": "OWNER_ABORT_PROVED_EARLIER",
+      "determination": "SOURCE_DETERMINED",
+      "source_basis": [
+        "REV04_CONTRACT-L0112",
+        "REV04_CONTRACT-L0114",
+        "REV04_CONTRACT-L0198",
+        "REV04_POLICY:raw_flag_schema.node_rp_failure"
+      ],
+      "conditions": "Durable owner abort receipt happens-before child cleanup/process exit; missing P0 event; no other higher-precedence flags",
+      "source_grounded_conclusion": "The abort-induced Node exit must not itself set node_rp_failure; missing P0 remains INCOMPLETE",
+      "f1_evidence_or_test": "With no A/B proof-viable arm and other arm resolved, G1 gives INVALID_INCOMPLETE",
+      "qualification_boundary": "Must have an independently established happens-before, not merely wall-clock guess"
+    },
+    {
+      "id": "S3-02",
+      "gate": "B08-A1",
+      "slug": "UNPROVOKED_NODE_FAILURE_EARLIER",
+      "determination": "SOURCE_DETERMINED",
+      "source_basis": [
+        "REV04_CONTRACT-L0202",
+        "REV04_CONTRACT-L0165",
+        "REV04_POLICY:browser_node_interrupt.unexpected_node_failure"
+      ],
+      "conditions": "Trusted RP process-failure receipt is provably before any owner abort and caused independently of it; intact chain and no integrity flag",
+      "source_grounded_conclusion": "node_rp_failure instrument source true; INVALID_INSTRUMENT",
+      "f1_evidence_or_test": "No owner Ctrl+C interpretation may erase proven pre-abort instrument fault",
+      "qualification_boundary": "Source identity, causal evidence and event ordering must be independently checkable"
+    },
+    {
+      "id": "S3-03",
+      "gate": "B08-A1",
+      "slug": "NODE_ABORT_ORDER_UNPROVABLE",
+      "determination": "CANDIDATE_BLOCKED",
+      "source_basis": [
+        "REV04_CONTRACT-L0215",
+        "REV04_POLICY:browser_node_interrupt.owner_ctrl_c",
+        "REV04_POLICY:browser_node_interrupt.unexpected_node_failure",
+        "REV04_POLICY:raw_flag_schema.node_rp_failure"
+      ],
+      "conditions": "Owner Ctrl+C and RP exit observed by different clocks with no durable cross-stream order proof",
+      "source_grounded_conclusion": "Neither temporal node_rp_failure nor causal unprovoked failure can be asserted from these facts alone",
+      "f1_evidence_or_test": "Freeze causal ordering/tie-break, evidence burden, suppression/rebuttal and source flags via independently reviewed interpretation",
+      "qualification_boundary": "Avoid favorable repair-exception class by default; Claude's INCOMPLETE suggestion is unapproved; exact class selection is BLOCKED until independent normative review."
+    },
+    {
+      "id": "S3-04",
+      "gate": "B08-A1",
+      "slug": "RP_TAIL_RECEIPT_AFTER_HARNESS_STOP",
+      "determination": "SOURCE_DETERMINED",
+      "source_basis": [
+        "REV04_CONTRACT-L0112",
+        "REV04_CONTRACT-L0154",
+        "REV04_POLICY:browser_node_interrupt.durable_event_receipt"
+      ],
+      "conditions": "Valid durably ordered RP-consumed assertion receipt is independently recovered after harness interruption; other events may be missing",
+      "source_grounded_conclusion": "Count only actually evidenced terminal assertion; missing other terminal events keep the arm INCOMPLETE",
+      "f1_evidence_or_test": "Do not convert later receipt into a replacement ceremony or process-resume",
+      "qualification_boundary": "Final class remains governed by all flags and other-arm evidence"
+    },
+    {
+      "id": "S4-01",
+      "gate": "B11-A1",
+      "slug": "THREE_NO_PROOF_EXHAUSTED",
+      "determination": "CANDIDATE_BLOCKED",
+      "source_basis": [
+        "REV04_CONTRACT-L0068",
+        "REV04_CONTRACT-L0070",
+        "REV04_POLICY:evidence_state.terminal_outcomes[4]"
+      ],
+      "conditions": "Exactly 3 recorded native invocations, each nonzero and no signature; owner explicitly chose R after invocations 1 and 2; no S or Ctrl+C. Original decision, key, statement and monotonic timer unchanged.",
+      "source_grounded_conclusion": "Contract terminal PROOF_NOT_CREATED; approved policy lists SSH_UNLOCK_BUDGET_EXHAUSTED for the same budget case",
+      "f1_evidence_or_test": "Propose a lossless single canonical event token plus an explicit representation alias, preserving raw source token and no fourth invocation",
+      "qualification_boundary": "No silent class shift solely from mismatched label; exact schema/alias requires independent review"
+    },
+    {
+      "id": "S4-02",
+      "gate": "B11-A1",
+      "slug": "OWNER_STOPS_AFTER_FAILURE",
+      "determination": "SOURCE_DETERMINED",
+      "source_basis": [
+        "REV04_CONTRACT-L0069",
+        "REV04_CONTRACT-L0197",
+        "REV04_POLICY:evidence_state.terminal_outcomes[3]"
+      ],
+      "conditions": "One or two nonzero no-signature invocations; owner chooses S/non-R at retry prompt; no Ctrl+C",
+      "source_grounded_conclusion": "OWNER_S_EVENT_STOP, not proof-budget exhaustion; event terminal no-proof",
+      "f1_evidence_or_test": "Continue scheduled run without repeating failed event",
+      "qualification_boundary": "Original decision/timer preserved"
+    },
+    {
+      "id": "S4-03",
+      "gate": "B11-A1",
+      "slug": "PARTIAL_FILE_INCONSISTENCY",
+      "determination": "SOURCE_DETERMINED",
+      "source_basis": [
+        "REV04_CONTRACT-L0068",
+        "REV04_CONTRACT-L0205",
+        "REV04_POLICY:evidence_state.terminal_outcomes[5]"
+      ],
+      "conditions": "Native SSH invocation exits nonzero with an unexpected signature file or exits zero without exactly one expected file",
+      "source_grounded_conclusion": "PARTIAL_OR_INCONSISTENT_OUTPUT; terminal event, not retryable budget exhaustion",
+      "f1_evidence_or_test": "Without separate identity breach, not automatically attempt-level integrity",
+      "qualification_boundary": "Check source flags independently before final scored class"
+    },
+    {
+      "id": "S4-04",
+      "gate": "B11-A1",
+      "slug": "EXHAUSTION_RECEIPT_MISSING",
+      "determination": "SOURCE_DETERMINED",
+      "source_basis": [
+        "REV04_CONTRACT-L0154",
+        "REV04_POLICY:evidence_state.completed",
+        "REV04_POLICY:evidence_state.terminal_outcomes[4]"
+      ],
+      "conditions": "A free-text claim of three failed signing invocations, without trustworthy individual invocation/event terminal receipts",
+      "source_grounded_conclusion": "Cannot mark the corresponding proof event COMPLETED solely on a free-text exhaustion label",
+      "f1_evidence_or_test": "Missing required evidence may also trigger scorer-derived integrity flags; those flags have precedence",
+      "qualification_boundary": "Preserve missing-evidence provenance and no inference of valid proof"
+    }
+  ]
+}

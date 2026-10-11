@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / R0-P01 ALL CLAUSE AUDITS RECEIPTED / F1 SEMANTIC RECONCILIATION NEXT
+**Status:** OPEN / F1 SCORING-BOUNDARY REV01 INDEPENDENT CHALLENGE NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -542,4 +542,17 @@ The special one-prompt reviewer batch campaign is completed; normal ChatGPT–Cl
     AUDIT_BATCHES=18_OF_18_REVIEWED
     F1=UNFROZEN
     F2=UNFROZEN
+    ATTEMPT_002=NOT_AUTHORIZED
+
+## F1 scoring-boundary REV01 independent challenge
+
+ChatGPT Research 537 and MC-0030 Message 054 provide a source-bound, non-executable 17-scenario candidate matrix over four scoring-sensitive findings B05-A1, B07-A3, B08-A1 and B11-A1, explicitly distinguishing 12 narrow approved-text implications from five unapproved interpretations. The guard verifies exact B01/B02-bound source hashes and existing 1,022-unit source anchors and preserves all 55 pending reviewer units; it does not qualify the future P01 scorer, close F1, change B01/B02 or authorize owner credentials.
+
+Claude / claude-04 now performs one independent semantic counterexample review, with only Message 055 permitted for publication. Its earlier source-auditor role does not make it a blind second oracle/scorer author. General collaboration workflow unchanged; user may relay this one review prompt normally.
+
+    PHASE=R0_P01_F1_SCORING_BOUNDARY_REV01_INDEPENDENT_REVIEW_PENDING
+    NEXT_ACTOR=claude
+    NEXT_MESSAGE=055
+    SCENARIOS=17
+    F1_F2=UNFROZEN
     ATTEMPT_002=NOT_AUTHORIZED
