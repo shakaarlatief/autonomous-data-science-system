@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 871
+**Checkpoint:** 872
 **Date:** 2026-10-10
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,19 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: R0-P01 independent audit stopped safely; JSON receipts fixed, Batch 010 resumes
+## Current active stage: R0-P01 full independent source audit complete; F1 scoring semantics reconciliation
+
+Checkpoint 872 / Research 536 / Validation 225 / MC-0030 Message 053 record completion of **all 18 bounded independent clause-audit batches**. Claude's Messages 043–051 added precisely nine message files after Checkpoint 871; the previous Message 052 remains an immutable interim stop summary. All 1,022/1,022 committed normative-source units now have exact reviewer receipts. Independent reviewer dispositions are 967 ACCEPTED and 55 PENDING. Review acceptance is **not** task-owner semantic approval, 967 passing tests, or a frozen F1 scorer.
+
+ChatGPT corrected the stale 9-batch fixture test to assert the complete 18-batch corpus and preserve the earlier 472/428/44 subtotal. The separate UNFROZEN F1 pending reconciliation register faithfully indexes the 55 unresolved source units with their source and reviewer-message hashes, original reviewer blockers/IDs, and task-owner resolution explicitly UNRESOLVED. The combined receipt/inventory/legacy trace suite has **47/47 passing tests**. The registration is read-only checked against all immutable reviewer receipts and the source corpus; no historical owner data or approved B01/B02 source bytes were touched.
+
+**Next stage:** task-owner technical semantic reconciliation. Score-changing ambiguities B05-A1 (NOT_REALIZABLE evidence), B07-A3 (pre-signing event stop versus integrity), B08-A1 (owner Ctrl+C versus RP/Node failure ordering) and B11-A1 (SSH proof-budget terminal vocabulary) must be expressed as exact evidence and classification rules before a frozen F1 expected oracle. Subsequently remedy C02/C09/C07 falsely passing vectors, ordinary recovery ADMIT/stale signed-state negatives, exact successor fixture/role/ID/T3 and golden vectors, V01 implementation-constraint versus scorer-independence conflict, and source trace/preamble obligations. The owner-approved B01/B02 interpretation cannot be silently rewritten to close these gaps.
+
+No new 18-batch audit or user-mediated Claude handoff is required. The one-off audit workflow is over; ordinary ChatGPT–Claude collaboration remains unchanged. F1 and F2 are **UNFROZEN**, Attempt 001 is immutable AMEND, and Attempt 002 still requires a separate third explicit human execution approval after qualification. P02 PASS, P03 pending, physical target unselected, Specification 028 and broader project authority unchanged.
+
+---
+
+## Historical checkpoint 871 stage: R0-P01 independent audit stopped safely; JSON receipts fixed, Batch 010 resumes
 
 Checkpoint 871 / Research 535 / Validation 224 reconcile Claude's MC-0030 Messages 035–042 and interim stop summary Message 052, committed on top of Checkpoint 870 without other source mutations. The independent clause-audit receipts now cover **nine of eighteen batches**, 472/1022 source units, 428 independent reviewer ACCEPTED and 44 PENDING (still not task-owner semantic approval, test PASS or F1 qualification). The V01 controls, V02 addendum, V01 implementation contract and REV04 successor contract batches are reviewed; **550 JSON leaves** across the REV04 policy, original fixture and result contract remain unaudited.
 

@@ -1,0 +1,1072 @@
+{
+  "schema_version": 1,
+  "status": "UNFROZEN_REVIEWER_FINDINGS_TASK_OWNER_RECONCILIATION_PENDING",
+  "authority": "Indexes Claude independent audit receipts; cannot approve normative semantics, change accepted B01/B02 policy or authorize an experiment.",
+  "source_audit_plan": "docs/research/r0_p01_successor_design/R0_P01_F1_NORMATIVE_AUDIT_BATCH_PLAN_REV03_UNFROZEN.json",
+  "source_audit_inventory": "docs/research/r0_p01_successor_design/R0_P01_F1_NORMATIVE_AUDIT_INVENTORY_REV03_UNFROZEN.json",
+  "source_audit_inventory_sha256": "ca6907123ae7b616599f50117742000017609973a0870ed62e5b33e279a80b79",
+  "audit_summary": {
+    "batches": 18,
+    "reviewed_units": 1022,
+    "reviewer_accepted_units": 967,
+    "pending_units": 55,
+    "open_blocker_field_values": 33
+  },
+  "reviewer_message_digests": [
+    {
+      "batch_id": "Q0-AUDIT-001",
+      "message_path": "docs/model_collaboration/threads/MC-0030/messages/033_claude_r0_p01_clause_audit_batch001.md",
+      "message_sha256": "f6f8a87690860d047c50ab8d0a1ad3a3ff5a325144f7218645f9c2cd56429842"
+    },
+    {
+      "batch_id": "Q0-AUDIT-002",
+      "message_path": "docs/model_collaboration/threads/MC-0030/messages/035_claude_r0_p01_clause_audit_batch002.md",
+      "message_sha256": "c89b4df308b782133f585291868949a2cee796556ae659b45cb356ada32e099f"
+    },
+    {
+      "batch_id": "Q0-AUDIT-003",
+      "message_path": "docs/model_collaboration/threads/MC-0030/messages/036_claude_r0_p01_clause_audit_batch003.md",
+      "message_sha256": "1da1405789eeeb940a10550639a5de9c2341ee9f8bb5a7ef4e92f7fd4182d1d0"
+    },
+    {
+      "batch_id": "Q0-AUDIT-004",
+      "message_path": "docs/model_collaboration/threads/MC-0030/messages/037_claude_r0_p01_clause_audit_batch004.md",
+      "message_sha256": "e4a9ea845dbc3942dbed6e6319272105bbefc7ae07a07472affa8720aa15aeca"
+    },
+    {
+      "batch_id": "Q0-AUDIT-005",
+      "message_path": "docs/model_collaboration/threads/MC-0030/messages/038_claude_r0_p01_clause_audit_batch005.md",
+      "message_sha256": "0ac3a4ecc5a8eb3fe50625e06244278a5008feb7282f79f675d0001490e2b15d"
+    },
+    {
+      "batch_id": "Q0-AUDIT-006",
+      "message_path": "docs/model_collaboration/threads/MC-0030/messages/039_claude_r0_p01_clause_audit_batch006.md",
+      "message_sha256": "45d8c904ab83f2134f0fbd3b235f57305ac4c2b523c71a2d823bba2aa7fdda9a"
+    },
+    {
+      "batch_id": "Q0-AUDIT-007",
+      "message_path": "docs/model_collaboration/threads/MC-0030/messages/040_claude_r0_p01_clause_audit_batch007.md",
+      "message_sha256": "4269a3a2f46c57f14ceb13cefcd9223c682cd7c8032a0951792200851d7cfbd2"
+    },
+    {
+      "batch_id": "Q0-AUDIT-008",
+      "message_path": "docs/model_collaboration/threads/MC-0030/messages/041_claude_r0_p01_clause_audit_batch008.md",
+      "message_sha256": "a37478dd74620746b9abae37eb2b5737db4c5d14c325f016944e6b19b97ef342"
+    },
+    {
+      "batch_id": "Q0-AUDIT-009",
+      "message_path": "docs/model_collaboration/threads/MC-0030/messages/042_claude_r0_p01_clause_audit_batch009.md",
+      "message_sha256": "1754847f80b3b1171f3b90069a4c8b69ba99948ceda4ce5f5cb9a8e5b7b5356a"
+    },
+    {
+      "batch_id": "Q0-AUDIT-010",
+      "message_path": "docs/model_collaboration/threads/MC-0030/messages/043_claude_r0_p01_clause_audit_batch010.md",
+      "message_sha256": "d47fcdb5120df0a2b20a4100ea2523e4880f8676ecbefa01c87e91eba36a5d67"
+    },
+    {
+      "batch_id": "Q0-AUDIT-011",
+      "message_path": "docs/model_collaboration/threads/MC-0030/messages/044_claude_r0_p01_clause_audit_batch011.md",
+      "message_sha256": "127aa3225bb9a9f086df1564e103609485673c04d25e01205773ad3472b298c2"
+    },
+    {
+      "batch_id": "Q0-AUDIT-012",
+      "message_path": "docs/model_collaboration/threads/MC-0030/messages/045_claude_r0_p01_clause_audit_batch012.md",
+      "message_sha256": "59a95cec21dda85e574ba1f7bbd932a4e7b5407908d83e0e07bf5100410bf3db"
+    },
+    {
+      "batch_id": "Q0-AUDIT-013",
+      "message_path": "docs/model_collaboration/threads/MC-0030/messages/046_claude_r0_p01_clause_audit_batch013.md",
+      "message_sha256": "24a8486e6554d5ba37ec2d2de521a1cefb94a526ee7132de53f7e5374b06e8a4"
+    },
+    {
+      "batch_id": "Q0-AUDIT-014",
+      "message_path": "docs/model_collaboration/threads/MC-0030/messages/047_claude_r0_p01_clause_audit_batch014.md",
+      "message_sha256": "b1ff98354580bb733d29730a76a2a9661ce0abbd679e860f76cfedbc27aec36d"
+    },
+    {
+      "batch_id": "Q0-AUDIT-015",
+      "message_path": "docs/model_collaboration/threads/MC-0030/messages/048_claude_r0_p01_clause_audit_batch015.md",
+      "message_sha256": "2cbcefd83f7a49de0907b2214f25635a77c4af1f193a130ad6b937f0f0968b61"
+    },
+    {
+      "batch_id": "Q0-AUDIT-016",
+      "message_path": "docs/model_collaboration/threads/MC-0030/messages/049_claude_r0_p01_clause_audit_batch016.md",
+      "message_sha256": "4e60b55e007cd766b79a414c59ffe8b6ea652f53e2c5a3ff100db4882a069a1a"
+    },
+    {
+      "batch_id": "Q0-AUDIT-017",
+      "message_path": "docs/model_collaboration/threads/MC-0030/messages/050_claude_r0_p01_clause_audit_batch017.md",
+      "message_sha256": "939923f7bb7ddd51af4768c3ddbaadeb0745739d3d967065780799d18b448f46"
+    },
+    {
+      "batch_id": "Q0-AUDIT-018",
+      "message_path": "docs/model_collaboration/threads/MC-0030/messages/051_claude_r0_p01_clause_audit_batch018.md",
+      "message_sha256": "3e3a9cad5b3b4f2161d57fbc1745fce7495e429d8ce4b2f43027ca45896c395d"
+    }
+  ],
+  "pending": [
+    {
+      "batch_id": "Q0-AUDIT-001",
+      "unit_id": "V01_CONTROLS-L0019",
+      "source_id": "V01_CONTROLS",
+      "source_text_sha256": "b11c6db296326aa332c443fbcf0e1967aeec428bfa891adf95efc606b383c939",
+      "review_message": "033_claude_r0_p01_clause_audit_batch001.md",
+      "review_message_sha256": "f6f8a87690860d047c50ab8d0a1ad3a3ff5a325144f7218645f9c2cd56429842",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "C02"
+      ],
+      "blocker": "A1",
+      "reviewed_basis": "LEGACY_MESSAGE033_HUMAN_PER_UNIT_TABLE",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-001",
+      "unit_id": "V01_CONTROLS-L0021",
+      "source_id": "V01_CONTROLS",
+      "source_text_sha256": "eb378b8db0797fd791dd7a7609e91796e5cf62f982047b7c25c7dcee0e531df8",
+      "review_message": "033_claude_r0_p01_clause_audit_batch001.md",
+      "review_message_sha256": "f6f8a87690860d047c50ab8d0a1ad3a3ff5a325144f7218645f9c2cd56429842",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "C02",
+        "R14"
+      ],
+      "blocker": "A1",
+      "reviewed_basis": "LEGACY_MESSAGE033_HUMAN_PER_UNIT_TABLE",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-001",
+      "unit_id": "V01_CONTROLS-L0045",
+      "source_id": "V01_CONTROLS",
+      "source_text_sha256": "d0810e4e31e267faf7773041433d9592e7394fe757241479b499d9cf44f4bc74",
+      "review_message": "033_claude_r0_p01_clause_audit_batch001.md",
+      "review_message_sha256": "f6f8a87690860d047c50ab8d0a1ad3a3ff5a325144f7218645f9c2cd56429842",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "C05"
+      ],
+      "blocker": "C05_AMEND_VECTOR_DECISION",
+      "reviewed_basis": "LEGACY_MESSAGE033_HUMAN_PER_UNIT_TABLE",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-001",
+      "unit_id": "V01_CONTROLS-L0057",
+      "source_id": "V01_CONTROLS",
+      "source_text_sha256": "0697f3c53d1cf4950477234c54af0763a5b74de3708674dad9041040abfb1fca",
+      "review_message": "033_claude_r0_p01_clause_audit_batch001.md",
+      "review_message_sha256": "f6f8a87690860d047c50ab8d0a1ad3a3ff5a325144f7218645f9c2cd56429842",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "C07",
+        "R01"
+      ],
+      "blocker": "A3",
+      "reviewed_basis": "LEGACY_MESSAGE033_HUMAN_PER_UNIT_TABLE",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-001",
+      "unit_id": "V01_CONTROLS-L0073",
+      "source_id": "V01_CONTROLS",
+      "source_text_sha256": "09b71d0bc0c35f0843b1bc4dec8f7f546d826805c03a151ae05257d7f7f55530",
+      "review_message": "033_claude_r0_p01_clause_audit_batch001.md",
+      "review_message_sha256": "f6f8a87690860d047c50ab8d0a1ad3a3ff5a325144f7218645f9c2cd56429842",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "C09"
+      ],
+      "blocker": "A2",
+      "reviewed_basis": "LEGACY_MESSAGE033_HUMAN_PER_UNIT_TABLE",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-001",
+      "unit_id": "V01_CONTROLS-L0075",
+      "source_id": "V01_CONTROLS",
+      "source_text_sha256": "1ce8bc25619ebf20f5ac6ddf91466a95a4f86246b7aa44a8bf59d39853858fb9",
+      "review_message": "033_claude_r0_p01_clause_audit_batch001.md",
+      "review_message_sha256": "f6f8a87690860d047c50ab8d0a1ad3a3ff5a325144f7218645f9c2cd56429842",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "C09"
+      ],
+      "blocker": "A2",
+      "reviewed_basis": "LEGACY_MESSAGE033_HUMAN_PER_UNIT_TABLE",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-001",
+      "unit_id": "V01_CONTROLS-L0100",
+      "source_id": "V01_CONTROLS",
+      "source_text_sha256": "53b03e75beab05515a0755fd10a341e225e5c5afa23757f122b6c959cb6fb02f",
+      "review_message": "033_claude_r0_p01_clause_audit_batch001.md",
+      "review_message_sha256": "f6f8a87690860d047c50ab8d0a1ad3a3ff5a325144f7218645f9c2cd56429842",
+      "reviewer_disposition": "SUPERSEDED_BY_REV04:REV04_CONTRACT-L0023(+V02_ADDENDUM-L0215)",
+      "reviewed_requirement_ids": [
+        "C11",
+        "R33"
+      ],
+      "blocker": "A8",
+      "reviewed_basis": "LEGACY_MESSAGE033_HUMAN_PER_UNIT_TABLE",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-001",
+      "unit_id": "V01_CONTROLS-L0102",
+      "source_id": "V01_CONTROLS",
+      "source_text_sha256": "7616936cdd4e0d99b013a9087cc2f8d1288331788ee86806115ad0e4a176374f",
+      "review_message": "033_claude_r0_p01_clause_audit_batch001.md",
+      "review_message_sha256": "f6f8a87690860d047c50ab8d0a1ad3a3ff5a325144f7218645f9c2cd56429842",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "C11",
+        "R20"
+      ],
+      "blocker": "A6",
+      "reviewed_basis": "LEGACY_MESSAGE033_HUMAN_PER_UNIT_TABLE",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-001",
+      "unit_id": "V01_CONTROLS-L0120",
+      "source_id": "V01_CONTROLS",
+      "source_text_sha256": "f0a87b18605857ba1a4431534518fc2f9c46c9bf0f2d89cf8a1c5279d65a38df",
+      "review_message": "033_claude_r0_p01_clause_audit_batch001.md",
+      "review_message_sha256": "f6f8a87690860d047c50ab8d0a1ad3a3ff5a325144f7218645f9c2cd56429842",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "C12",
+        "R20"
+      ],
+      "blocker": "A6",
+      "reviewed_basis": "LEGACY_MESSAGE033_HUMAN_PER_UNIT_TABLE",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-001",
+      "unit_id": "V01_CONTROLS-L0145",
+      "source_id": "V01_CONTROLS",
+      "source_text_sha256": "e4e0b06c7fdaf7602696fc41cd55da4e527519d5fc4b70f707b07e3dfce17d03",
+      "review_message": "033_claude_r0_p01_clause_audit_batch001.md",
+      "review_message_sha256": "f6f8a87690860d047c50ab8d0a1ad3a3ff5a325144f7218645f9c2cd56429842",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "R10",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "blocker": "A6",
+      "reviewed_basis": "LEGACY_MESSAGE033_HUMAN_PER_UNIT_TABLE",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-002",
+      "unit_id": "V02_ADDENDUM-L0032",
+      "source_id": "V02_ADDENDUM",
+      "source_text_sha256": "fd6aee4d9fb322a311cae41792e2f2d50b6440b7e81259dc4e2956f300a9fe0c",
+      "review_message": "035_claude_r0_p01_clause_audit_batch002.md",
+      "review_message_sha256": "c89b4df308b782133f585291868949a2cee796556ae659b45cb356ada32e099f",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "C10",
+        "C11",
+        "R01"
+      ],
+      "blocker": "B02-A1_ADMIT_STALE_SIGNER_SET_NEGATIVE_MISSING",
+      "reviewed_basis": "V02_ADDENDUM-L0032;V02_ADDENDUM-L0194",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-002",
+      "unit_id": "V02_ADDENDUM-L0046",
+      "source_id": "V02_ADDENDUM",
+      "source_text_sha256": "d5b8386f0d29d29d6629a62003c344af489e723479a1d8aca512cc8f898229c6",
+      "review_message": "035_claude_r0_p01_clause_audit_batch002.md",
+      "review_message_sha256": "c89b4df308b782133f585291868949a2cee796556ae659b45cb356ada32e099f",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "C01",
+        "C07",
+        "C10",
+        "C12",
+        "R36"
+      ],
+      "blocker": "B02-A1_ADMIT_NEGATIVES_SIGNER_SET_BASE_ROLE_MISSING",
+      "reviewed_basis": "V02_ADDENDUM-L0046",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-002",
+      "unit_id": "V02_ADDENDUM-L0060",
+      "source_id": "V02_ADDENDUM",
+      "source_text_sha256": "8cb5c7c921906bcf84b2a9235cc84ca562689bf26a77e3dce18cacf580212646",
+      "review_message": "035_claude_r0_p01_clause_audit_batch002.md",
+      "review_message_sha256": "c89b4df308b782133f585291868949a2cee796556ae659b45cb356ada32e099f",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "C11",
+        "C12",
+        "R04"
+      ],
+      "blocker": "A9_RECOVERY_ORDINARY_ADMIT_DENIAL_TEST_MISSING",
+      "reviewed_basis": "V02_ADDENDUM-L0060",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-002",
+      "unit_id": "V02_ADDENDUM-L0074",
+      "source_id": "V02_ADDENDUM",
+      "source_text_sha256": "f234b32bd16c289cb2cf4b0c39024e8ad2c83d2ac8f4629a1f32529f3e01f30b",
+      "review_message": "035_claude_r0_p01_clause_audit_batch002.md",
+      "review_message_sha256": "c89b4df308b782133f585291868949a2cee796556ae659b45cb356ada32e099f",
+      "reviewer_disposition": "SUPERSEDED_BY_REV04:REV04_CONTRACT-L0025",
+      "reviewed_requirement_ids": [
+        "R01",
+        "C03"
+      ],
+      "blocker": "B02-A3_SUCCESSOR_ACCEPTANCE_ID_STRINGS_NOT_ENUMERATED",
+      "reviewed_basis": "V02_ADDENDUM-L0074;REV04_CONTRACT-L0025;REV04_CONTRACT-L0132",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-002",
+      "unit_id": "V02_ADDENDUM-L0137",
+      "source_id": "V02_ADDENDUM",
+      "source_text_sha256": "d2689b80e96f5fd00e92ac4e8fc7aefd0822b623d841de4152427fd8cb223e95",
+      "review_message": "035_claude_r0_p01_clause_audit_batch002.md",
+      "review_message_sha256": "c89b4df308b782133f585291868949a2cee796556ae659b45cb356ada32e099f",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "C01",
+        "C07",
+        "C11",
+        "C12",
+        "C13",
+        "R20"
+      ],
+      "blocker": "B02-A2_SCENARIO_ISOLATION_RULE_TEXT_MISSING;A6_NO_PRODUCTION_LEDGER_RULE",
+      "reviewed_basis": "V02_ADDENDUM-L0137",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-002",
+      "unit_id": "V02_ADDENDUM-L0163",
+      "source_id": "V02_ADDENDUM",
+      "source_text_sha256": "dda19564251611aea78cd1365172e1d70e7b51c96744a73afd65a4e2c3b37f70",
+      "review_message": "035_claude_r0_p01_clause_audit_batch002.md",
+      "review_message_sha256": "c89b4df308b782133f585291868949a2cee796556ae659b45cb356ada32e099f",
+      "reviewer_disposition": "SUPERSEDED_BY_REV04:REV04_CONTRACT-L0025",
+      "reviewed_requirement_ids": [
+        "C01",
+        "R01",
+        "R25"
+      ],
+      "blocker": "B02-A3_SUCCESSOR_ACCEPTANCE_ID_STRINGS_NOT_ENUMERATED",
+      "reviewed_basis": "V02_ADDENDUM-L0163;REV04_CONTRACT-L0025",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-002",
+      "unit_id": "V02_ADDENDUM-L0186",
+      "source_id": "V02_ADDENDUM",
+      "source_text_sha256": "b2d88c01cf225dabc6e4d6f29f771cdbc25642a258e6a86e03cb745e840d8d44",
+      "review_message": "035_claude_r0_p01_clause_audit_batch002.md",
+      "review_message_sha256": "c89b4df308b782133f585291868949a2cee796556ae659b45cb356ada32e099f",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "C02"
+      ],
+      "blocker": "A1_C02_STRUCTURAL_ONLY_VECTOR",
+      "reviewed_basis": "V02_ADDENDUM-L0186;REV04_CONTRACT-L0180",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-002",
+      "unit_id": "V02_ADDENDUM-L0189",
+      "source_id": "V02_ADDENDUM",
+      "source_text_sha256": "68599738df51b124ea8146ccb879870108cdcdc35ac6deba6f0ad93cab066bc8",
+      "review_message": "035_claude_r0_p01_clause_audit_batch002.md",
+      "review_message_sha256": "c89b4df308b782133f585291868949a2cee796556ae659b45cb356ada32e099f",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "C05"
+      ],
+      "blocker": "C05_AMEND_VECTOR_DECISION",
+      "reviewed_basis": "V02_ADDENDUM-L0189",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-002",
+      "unit_id": "V02_ADDENDUM-L0191",
+      "source_id": "V02_ADDENDUM",
+      "source_text_sha256": "c2e1757c489c80213eee42a964540a0d77d6587c3219404f785ba16ca02bfef4",
+      "review_message": "035_claude_r0_p01_clause_audit_batch002.md",
+      "review_message_sha256": "c89b4df308b782133f585291868949a2cee796556ae659b45cb356ada32e099f",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "C07",
+        "R01"
+      ],
+      "blocker": "A3_C07A_OLD_GRAMMAR_ID",
+      "reviewed_basis": "V02_ADDENDUM-L0191;REV04_CONTRACT-L0132",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-002",
+      "unit_id": "V02_ADDENDUM-L0193",
+      "source_id": "V02_ADDENDUM",
+      "source_text_sha256": "00bf2d49c838cf03cdd7264d32d17c2bf4f1d45b52e5432f94b4e2e33768bd07",
+      "review_message": "035_claude_r0_p01_clause_audit_batch002.md",
+      "review_message_sha256": "c89b4df308b782133f585291868949a2cee796556ae659b45cb356ada32e099f",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "C09"
+      ],
+      "blocker": "A2_C09_INERT_METADATA_VECTOR",
+      "reviewed_basis": "V02_ADDENDUM-L0193",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-002",
+      "unit_id": "V02_ADDENDUM-L0202",
+      "source_id": "V02_ADDENDUM",
+      "source_text_sha256": "b3f02ba4375f0cc54fa644c0ad3b8f6e98cb5a9756528b7a1efa29049c2bdb4e",
+      "review_message": "035_claude_r0_p01_clause_audit_batch002.md",
+      "review_message_sha256": "c89b4df308b782133f585291868949a2cee796556ae659b45cb356ada32e099f",
+      "reviewer_disposition": "SUPERSEDED_BY_REV04:REV04_CONTRACT-L0025",
+      "reviewed_requirement_ids": [
+        "C11",
+        "R33",
+        "R01"
+      ],
+      "blocker": "B02-A3_SUCCESSOR_ACCEPTANCE_ID_STRINGS_NOT_ENUMERATED",
+      "reviewed_basis": "V02_ADDENDUM-L0202;REV04_CONTRACT-L0025;REV04_CONTRACT-L0026",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-002",
+      "unit_id": "V02_ADDENDUM-L0215",
+      "source_id": "V02_ADDENDUM",
+      "source_text_sha256": "6ae25e21a1d3f27e2062f0de851d014a78af315ace4485a4bb62efc69534874f",
+      "review_message": "035_claude_r0_p01_clause_audit_batch002.md",
+      "review_message_sha256": "c89b4df308b782133f585291868949a2cee796556ae659b45cb356ada32e099f",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "C11",
+        "R33",
+        "R04"
+      ],
+      "blocker": "A8_B_P5_SAME_ATTEMPT_TARGET_RULE_NOT_CITABLE",
+      "reviewed_basis": "V02_ADDENDUM-L0215;REV04_CONTRACT-L0023;REV04_CONTRACT-L0024",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-003",
+      "unit_id": "V02_ADDENDUM-L0223",
+      "source_id": "V02_ADDENDUM",
+      "source_text_sha256": "5d8bb52ddc165f7c14992f0ccdc2df6feee1b23856f092215cc612b87cef0a64",
+      "review_message": "036_claude_r0_p01_clause_audit_batch003.md",
+      "review_message_sha256": "1da1405789eeeb940a10550639a5de9c2341ee9f8bb5a7ef4e92f7fd4182d1d0",
+      "reviewer_disposition": "SUPERSEDED_BY_REV04:REV04_CONTRACT-L0025",
+      "reviewed_requirement_ids": [
+        "C12",
+        "R33",
+        "R01"
+      ],
+      "blocker": "B02-A3_SUCCESSOR_ACCEPTANCE_ID_STRINGS_NOT_ENUMERATED",
+      "reviewed_basis": "V02_ADDENDUM-L0223;REV04_CONTRACT-L0025;REV04_CONTRACT-L0026",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-003",
+      "unit_id": "V02_ADDENDUM-L0268",
+      "source_id": "V02_ADDENDUM",
+      "source_text_sha256": "775428eb186785a5fe4eb955372baee8611ff79bcb06ded66555c59f875961ba",
+      "review_message": "036_claude_r0_p01_clause_audit_batch003.md",
+      "review_message_sha256": "1da1405789eeeb940a10550639a5de9c2341ee9f8bb5a7ef4e92f7fd4182d1d0",
+      "reviewer_disposition": "SUPERSEDED_BY_REV04:REV04_CONTRACT-L0089",
+      "reviewed_requirement_ids": [
+        "R30",
+        "R01"
+      ],
+      "blocker": "B02-A3_SUCCESSOR_ARM_C_IDS_AND_ATTEST_LINE_NOT_ENUMERATED",
+      "reviewed_basis": "V02_ADDENDUM-L0268;REV04_CONTRACT-L0089",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-004",
+      "unit_id": "V01_CONTRACT-L0010",
+      "source_id": "V01_CONTRACT",
+      "source_text_sha256": "6ead4a776ff1ff3856483a7d1200d1cb94ca29d2588ac7b16d70f23e32da87cb",
+      "review_message": "037_claude_r0_p01_clause_audit_batch004.md",
+      "review_message_sha256": "e4a9ea845dbc3942dbed6e6319272105bbefc7ae07a07472affa8720aa15aeca",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "R12"
+      ],
+      "blocker": "A6_NONPRODUCTION_BOUNDARY_RULE_TEXT_MISSING",
+      "reviewed_basis": "V01_CONTRACT-L0010;REV04_CONTRACT-L0132;REV04_CONTRACT-L0247",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-004",
+      "unit_id": "V01_CONTRACT-L0092",
+      "source_id": "V01_CONTRACT",
+      "source_text_sha256": "d74daf78a22525cfb4fa0bafaddbcdf0d8de7324b3c3113a73093ab824daa218",
+      "review_message": "037_claude_r0_p01_clause_audit_batch004.md",
+      "review_message_sha256": "e4a9ea845dbc3942dbed6e6319272105bbefc7ae07a07472affa8720aa15aeca",
+      "reviewer_disposition": "SUPERSEDED_BY_REV04:REV04_CONTRACT-L0025",
+      "reviewed_requirement_ids": [
+        "R01"
+      ],
+      "blocker": "B02-A3_SUCCESSOR_ACCEPTANCE_ID_STRINGS_NOT_ENUMERATED",
+      "reviewed_basis": "REV04_CONTRACT-L0025;REV04_CONTRACT-L0132",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-004",
+      "unit_id": "V01_CONTRACT-L0098",
+      "source_id": "V01_CONTRACT",
+      "source_text_sha256": "c4b066a001df602003d13f9c0b47055cee25eea3563cf289e4b2aabb35820a25",
+      "review_message": "037_claude_r0_p01_clause_audit_batch004.md",
+      "review_message_sha256": "e4a9ea845dbc3942dbed6e6319272105bbefc7ae07a07472affa8720aa15aeca",
+      "reviewer_disposition": "SUPERSEDED_BY_REV04:REV04_CONTRACT-L0025",
+      "reviewed_requirement_ids": [
+        "R01",
+        "R37"
+      ],
+      "blocker": "B02-A3_SUCCESSOR_ACCEPTANCE_ID_STRINGS_NOT_ENUMERATED",
+      "reviewed_basis": "REV04_CONTRACT-L0025;REV04_CONTRACT-L0132",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-005",
+      "unit_id": "V01_CONTRACT-L0223",
+      "source_id": "V01_CONTRACT",
+      "source_text_sha256": "11f38e45952f66fd1fbd88f894318cbb9dd196e9d6f0bf600891b8316d56ae8a",
+      "review_message": "038_claude_r0_p01_clause_audit_batch005.md",
+      "review_message_sha256": "0ac3a4ecc5a8eb3fe50625e06244278a5008feb7282f79f675d0001490e2b15d",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "R06",
+        "R11"
+      ],
+      "blocker": "B05-A1_CAPABILITY_PREDICATE_AND_RECEIPT_NOT_ENUMERATED",
+      "reviewed_basis": "V01_CONTRACT-L0223;REV04_CONTRACT-L0108;REV04_CONTRACT-L0200",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-005",
+      "unit_id": "V01_CONTRACT-L0231",
+      "source_id": "V01_CONTRACT",
+      "source_text_sha256": "09de46abd39bc58b9be34a8553ce57b63ce79d8dc706215bd9bd8c77b1bc1582",
+      "review_message": "038_claude_r0_p01_clause_audit_batch005.md",
+      "review_message_sha256": "0ac3a4ecc5a8eb3fe50625e06244278a5008feb7282f79f675d0001490e2b15d",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "R06",
+        "R11"
+      ],
+      "blocker": "B05-A1_CAPABILITY_PREDICATE_AND_RECEIPT_NOT_ENUMERATED",
+      "reviewed_basis": "V01_CONTRACT-L0231;REV04_CONTRACT-L0150;REV04_CONTRACT-L0156",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-005",
+      "unit_id": "V01_CONTRACT-L0255",
+      "source_id": "V01_CONTRACT",
+      "source_text_sha256": "710f7f800826f61476ac53a5664be3e7fc4d80b658074699733d00d4bde294f2",
+      "review_message": "038_claude_r0_p01_clause_audit_batch005.md",
+      "review_message_sha256": "0ac3a4ecc5a8eb3fe50625e06244278a5008feb7282f79f675d0001490e2b15d",
+      "reviewer_disposition": "SUPERSEDED_BY_REV04:REV04_CONTRACT-L0089",
+      "reviewed_requirement_ids": [
+        "R30",
+        "R01"
+      ],
+      "blocker": "B02-A3_SUCCESSOR_ARM_C_IDS_AND_ATTEST_LINE_NOT_ENUMERATED",
+      "reviewed_basis": "V01_CONTRACT-L0255;REV04_CONTRACT-L0089",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-006",
+      "unit_id": "V01_CONTRACT-L0424",
+      "source_id": "V01_CONTRACT",
+      "source_text_sha256": "d627178cb5385d2dc2d599e3500e0856b9bf8553cfa032fdd82478a083adc769",
+      "review_message": "039_claude_r0_p01_clause_audit_batch006.md",
+      "review_message_sha256": "45d8c904ab83f2134f0fbd3b235f57305ac4c2b523c71a2d823bba2aa7fdda9a",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "R34",
+        "R36",
+        "R37"
+      ],
+      "blocker": "B06-A1_SUCCESSOR_IMPLEMENTATION_BOUNDARY_NOT_APPROVED",
+      "reviewed_basis": "V01_CONTRACT-L0424",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-006",
+      "unit_id": "V01_CONTRACT-L0426",
+      "source_id": "V01_CONTRACT",
+      "source_text_sha256": "9ecea51a74077dd2768c93d8ec7ec9ed4cb9159cf86e708c29ca307bd8936a94",
+      "review_message": "039_claude_r0_p01_clause_audit_batch006.md",
+      "review_message_sha256": "45d8c904ab83f2134f0fbd3b235f57305ac4c2b523c71a2d823bba2aa7fdda9a",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "R34",
+        "R36",
+        "R37"
+      ],
+      "blocker": "B06-A1_SUCCESSOR_IMPLEMENTATION_BOUNDARY_NOT_APPROVED",
+      "reviewed_basis": "V01_CONTRACT-L0426",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-006",
+      "unit_id": "V01_CONTRACT-L0430",
+      "source_id": "V01_CONTRACT",
+      "source_text_sha256": "6356e092a62bb24c1133e67adfe90356e8894991f50da8402a8275fb6d9bbed2",
+      "review_message": "039_claude_r0_p01_clause_audit_batch006.md",
+      "review_message_sha256": "45d8c904ab83f2134f0fbd3b235f57305ac4c2b523c71a2d823bba2aa7fdda9a",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "R06",
+        "R22",
+        "R34"
+      ],
+      "blocker": "B06-A1_SUCCESSOR_IMPLEMENTATION_BOUNDARY_NOT_APPROVED",
+      "reviewed_basis": "V01_CONTRACT-L0430;REV04_CONTRACT-L0104;REV04_CONTRACT-L0184",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-006",
+      "unit_id": "V01_CONTRACT-L0432",
+      "source_id": "V01_CONTRACT",
+      "source_text_sha256": "a188e95c07eb9f673e96915c51e452fdf7bca45d3c4f25560f6505ed75154109",
+      "review_message": "039_claude_r0_p01_clause_audit_batch006.md",
+      "review_message_sha256": "45d8c904ab83f2134f0fbd3b235f57305ac4c2b523c71a2d823bba2aa7fdda9a",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "R39"
+      ],
+      "blocker": "B02-A4_DEPENDENCY_POLICY_STDLIB_VS_R36_R39",
+      "reviewed_basis": "V01_CONTRACT-L0432",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-006",
+      "unit_id": "V01_CONTRACT-L0434",
+      "source_id": "V01_CONTRACT",
+      "source_text_sha256": "a65433a0524560bb46071407939a58385ae6c69b1274343c3240a5095f2b7666",
+      "review_message": "039_claude_r0_p01_clause_audit_batch006.md",
+      "review_message_sha256": "45d8c904ab83f2134f0fbd3b235f57305ac4c2b523c71a2d823bba2aa7fdda9a",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "R39",
+        "R36"
+      ],
+      "blocker": "B02-A4_DEPENDENCY_POLICY_STDLIB_VS_R36_R39",
+      "reviewed_basis": "V01_CONTRACT-L0434",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-006",
+      "unit_id": "V01_CONTRACT-L0438",
+      "source_id": "V01_CONTRACT",
+      "source_text_sha256": "1bbbf3e03ea5feb751494a7319c5c961c4fe0813ea84c93ede64deb1b569b54e",
+      "review_message": "039_claude_r0_p01_clause_audit_batch006.md",
+      "review_message_sha256": "45d8c904ab83f2134f0fbd3b235f57305ac4c2b523c71a2d823bba2aa7fdda9a",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "R36",
+        "R34"
+      ],
+      "blocker": "B06-A1_PER_ROLE_READ_LISTS_NOT_APPROVED",
+      "reviewed_basis": "V01_CONTRACT-L0438",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-007",
+      "unit_id": "REV04_CONTRACT-L0025",
+      "source_id": "REV04_CONTRACT",
+      "source_text_sha256": "b75418a86d8120cd9b39b02f2b2daa4ac149b3fedcd2f8ef4f10be3a55b04f4b",
+      "review_message": "040_claude_r0_p01_clause_audit_batch007.md",
+      "review_message_sha256": "4269a3a2f46c57f14ceb13cefcd9223c682cd7c8032a0951792200851d7cfbd2",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "R01",
+        "C06",
+        "C07"
+      ],
+      "blocker": "B02-A3_SUCCESSOR_ACCEPTANCE_ID_STRINGS_NOT_ENUMERATED",
+      "reviewed_basis": "REV04_CONTRACT-L0025;REV04_CONTRACT-L0132",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-007",
+      "unit_id": "REV04_CONTRACT-L0039",
+      "source_id": "REV04_CONTRACT",
+      "source_text_sha256": "c922c9dfca21eac41bec9c15f927d9c0056855e51b285c0daded898180bd31db",
+      "review_message": "040_claude_r0_p01_clause_audit_batch007.md",
+      "review_message_sha256": "4269a3a2f46c57f14ceb13cefcd9223c682cd7c8032a0951792200851d7cfbd2",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "R02",
+        "R28",
+        "R17",
+        "R19"
+      ],
+      "blocker": "B07-A2_T3_TABLE_SSH_ONLY_CANDIDATE_NO_B_C_ROWS",
+      "reviewed_basis": "REV04_CONTRACT-L0039;REV04_CONTRACT-L0033;REV04_CONTRACT-L0138",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-007",
+      "unit_id": "REV04_CONTRACT-L0066",
+      "source_id": "REV04_CONTRACT",
+      "source_text_sha256": "9ce3d46b359b84dd7a85d24d6009d9a3587a2da7980573ec9d7fe2fa743177ae",
+      "review_message": "040_claude_r0_p01_clause_audit_batch007.md",
+      "review_message_sha256": "4269a3a2f46c57f14ceb13cefcd9223c682cd7c8032a0951792200851d7cfbd2",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "R05",
+        "R15"
+      ],
+      "blocker": "B07-A3_PRECHECK_FAILURE_EVENT_TERMINAL_VS_INTEGRITY_AMBIGUOUS",
+      "reviewed_basis": "REV04_CONTRACT-L0066;REV04_CONTRACT-L0206;REV04_CONTRACT-L0241",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-007",
+      "unit_id": "REV04_CONTRACT-L0108",
+      "source_id": "REV04_CONTRACT",
+      "source_text_sha256": "10ceabe892e6859cca1e32d5234f5344c66b5e6fb8386569457e3ed162569dd7",
+      "review_message": "040_claude_r0_p01_clause_audit_batch007.md",
+      "review_message_sha256": "4269a3a2f46c57f14ceb13cefcd9223c682cd7c8032a0951792200851d7cfbd2",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "R06",
+        "R07",
+        "R11",
+        "R22"
+      ],
+      "blocker": "B05-A1_CAPABILITY_PREDICATE_AND_RECEIPT_NOT_ENUMERATED",
+      "reviewed_basis": "REV04_CONTRACT-L0108;V01_CONTRACT-L0231",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-007",
+      "unit_id": "REV04_CONTRACT-L0150",
+      "source_id": "REV04_CONTRACT",
+      "source_text_sha256": "7092bdab2c86cc3c5c62f99b68fbc79a8a1f0a16d90e4b36db0f4e0a61574f26",
+      "review_message": "040_claude_r0_p01_clause_audit_batch007.md",
+      "review_message_sha256": "4269a3a2f46c57f14ceb13cefcd9223c682cd7c8032a0951792200851d7cfbd2",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "R11"
+      ],
+      "blocker": "B05-A1_CAPABILITY_PREDICATE_AND_RECEIPT_NOT_ENUMERATED",
+      "reviewed_basis": "REV04_CONTRACT-L0150;REV04_CONTRACT-L0156",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-008",
+      "unit_id": "REV04_CONTRACT-L0200",
+      "source_id": "REV04_CONTRACT",
+      "source_text_sha256": "c4d9f2e2af64cada8b6edeb7f5e099d033b40eae9119c69fc416aca76b06bbd6",
+      "review_message": "041_claude_r0_p01_clause_audit_batch008.md",
+      "review_message_sha256": "a37478dd74620746b9abae37eb2b5737db4c5d14c325f016944e6b19b97ef342",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "R15",
+        "R11"
+      ],
+      "blocker": "B05-A1_CAPABILITY_PREDICATE_AND_RECEIPT_NOT_ENUMERATED",
+      "reviewed_basis": "REV04_CONTRACT-L0200;REV04_CONTRACT-L0150",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-008",
+      "unit_id": "REV04_CONTRACT-L0206",
+      "source_id": "REV04_CONTRACT",
+      "source_text_sha256": "063f8c1389ce2c1bc6d9380bf588efb2197751041771e18f3e30d0171e3263f7",
+      "review_message": "041_claude_r0_p01_clause_audit_batch008.md",
+      "review_message_sha256": "a37478dd74620746b9abae37eb2b5737db4c5d14c325f016944e6b19b97ef342",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "R15",
+        "R13",
+        "R37"
+      ],
+      "blocker": "B07-A3_PRECHECK_FAILURE_EVENT_TERMINAL_VS_INTEGRITY_AMBIGUOUS",
+      "reviewed_basis": "REV04_CONTRACT-L0206;REV04_CONTRACT-L0066",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-008",
+      "unit_id": "REV04_CONTRACT-L0215",
+      "source_id": "REV04_CONTRACT",
+      "source_text_sha256": "9cb21c9998b9467bac06932743d715c76f4bc4533f96e72ea945f25e8b747847",
+      "review_message": "041_claude_r0_p01_clause_audit_batch008.md",
+      "review_message_sha256": "a37478dd74620746b9abae37eb2b5737db4c5d14c325f016944e6b19b97ef342",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "R13",
+        "R15",
+        "R17"
+      ],
+      "blocker": "B08-A1_AMBIGUOUS_ABORT_VS_NODE_EXIT_RULE_NOT_FROZEN",
+      "reviewed_basis": "REV04_CONTRACT-L0215;REV04_CONTRACT-L0112;REV04_CONTRACT-L0241",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-010",
+      "unit_id": "REV04_POLICY:browser_node_interrupt.owner_ctrl_c",
+      "source_id": "REV04_POLICY",
+      "source_text_sha256": "8330637758adeee54a01d44285e45a4dcb3ba7720119d26012bcd6348c11a968",
+      "review_message": "043_claude_r0_p01_clause_audit_batch010.md",
+      "review_message_sha256": "d47fcdb5120df0a2b20a4100ea2523e4880f8676ecbefa01c87e91eba36a5d67",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "R17",
+        "R13"
+      ],
+      "blocker": "B08-A1_ABORT_VS_NODE_EXIT_TIEBREAK_NOT_FROZEN_DEFAULT_REBUTTAL_UNDEFINED",
+      "reviewed_basis": "REV04_POLICY:browser_node_interrupt.owner_ctrl_c;REV04_CONTRACT-L0215",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-010",
+      "unit_id": "REV04_POLICY:browser_node_interrupt.unexpected_node_failure",
+      "source_id": "REV04_POLICY",
+      "source_text_sha256": "4c18d3a73f06f407364e6fab15018530d8a30044207db3636a64d1664ac440ab",
+      "review_message": "043_claude_r0_p01_clause_audit_batch010.md",
+      "review_message_sha256": "d47fcdb5120df0a2b20a4100ea2523e4880f8676ecbefa01c87e91eba36a5d67",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "R13",
+        "R35"
+      ],
+      "blocker": "B08-A1_NODE_RP_FAILURE_CAUSAL_VS_TEMPORAL_PREDICATE",
+      "reviewed_basis": "REV04_POLICY:browser_node_interrupt.unexpected_node_failure;REV04_POLICY:raw_flag_schema.node_rp_failure;REV04_CONTRACT-L0215",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-011",
+      "unit_id": "REV04_POLICY:evidence_state.completed",
+      "source_id": "REV04_POLICY",
+      "source_text_sha256": "13939a3fdb5fc3b2d8768c9556060a6ac7c44ad8105ed7802d3f031b63b57ffe",
+      "review_message": "044_claude_r0_p01_clause_audit_batch011.md",
+      "review_message_sha256": "127aa3225bb9a9f086df1564e103609485673c04d25e01205773ad3472b298c2",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "R11",
+        "R07"
+      ],
+      "blocker": "B07-A3_PRECHECK_FAILURE_HAS_NO_ENUMERATED_TERMINAL_OUTCOME",
+      "reviewed_basis": "REV04_POLICY:evidence_state.completed;REV04_CONTRACT-L0151;REV04_CONTRACT-L0066",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-011",
+      "unit_id": "REV04_POLICY:evidence_state.not_realizable",
+      "source_id": "REV04_POLICY",
+      "source_text_sha256": "f3331ca0c3273bfe81b558a27e5be6cd756176c7035c19bbd66a5c1a4b001199",
+      "review_message": "044_claude_r0_p01_clause_audit_batch011.md",
+      "review_message_sha256": "127aa3225bb9a9f086df1564e103609485673c04d25e01205773ad3472b298c2",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "R11"
+      ],
+      "blocker": "B05-A1_CAPABILITY_PREDICATE_AND_RECEIPT_NOT_ENUMERATED",
+      "reviewed_basis": "REV04_POLICY:evidence_state.not_realizable;REV04_CONTRACT-L0150",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-011",
+      "unit_id": "REV04_POLICY:evidence_state.terminal_outcomes[4]",
+      "source_id": "REV04_POLICY",
+      "source_text_sha256": "7aa761104696e219860ce8f7d210bf70f5c9753a6433c7e460d853cc3c75612d",
+      "review_message": "044_claude_r0_p01_clause_audit_batch011.md",
+      "review_message_sha256": "127aa3225bb9a9f086df1564e103609485673c04d25e01205773ad3472b298c2",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "R11",
+        "R05"
+      ],
+      "blocker": "B11-A1_TERMINAL_OUTCOME_NAME_CONTRACT_POLICY_MISMATCH",
+      "reviewed_basis": "REV04_POLICY:evidence_state.terminal_outcomes[4];REV04_CONTRACT-L0070;REV04_CONTRACT-L0151",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-011",
+      "unit_id": "REV04_POLICY:raw_flag_schema.attempt_integrity_failure",
+      "source_id": "REV04_POLICY",
+      "source_text_sha256": "f9df045187f7198b72a64dbf89cc84ba8763cff365b39a3f21c8cd2ef4bfb1f6",
+      "review_message": "044_claude_r0_p01_clause_audit_batch011.md",
+      "review_message_sha256": "127aa3225bb9a9f086df1564e103609485673c04d25e01205773ad3472b298c2",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "R13",
+        "R15"
+      ],
+      "blocker": "B07-A3_IDENTITY_PRECHECK_INTEGRITY_BOUNDARY_UNDEFINED",
+      "reviewed_basis": "REV04_POLICY:raw_flag_schema.attempt_integrity_failure;REV04_CONTRACT-L0206;REV04_CONTRACT-L0066",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-012",
+      "unit_id": "REV04_POLICY:raw_flag_schema.node_rp_failure",
+      "source_id": "REV04_POLICY",
+      "source_text_sha256": "b6027f2d04b86ebe9b791e84db8e5b75d8b00a97418fc3128c1e1470857a4caf",
+      "review_message": "045_claude_r0_p01_clause_audit_batch012.md",
+      "review_message_sha256": "59a95cec21dda85e574ba1f7bbd932a4e7b5407908d83e0e07bf5100410bf3db",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "R13",
+        "R35",
+        "R17"
+      ],
+      "blocker": "B08-A1_ABORT_VS_NODE_EXIT_TIEBREAK_NOT_FROZEN",
+      "reviewed_basis": "REV04_POLICY:raw_flag_schema.node_rp_failure;REV04_CONTRACT-L0215;REV04_POLICY:browser_node_interrupt.unexpected_node_failure",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-012",
+      "unit_id": "REV04_POLICY:scorer_identity_interpretation",
+      "source_id": "REV04_POLICY",
+      "source_text_sha256": "b7b2c24c30e6311555b18006324440d80dab109d59d4d62e581f5098c2d80011",
+      "review_message": "045_claude_r0_p01_clause_audit_batch012.md",
+      "review_message_sha256": "59a95cec21dda85e574ba1f7bbd932a4e7b5407908d83e0e07bf5100410bf3db",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "R21",
+        "R11",
+        "R12"
+      ],
+      "blocker": "B12-A1_NORMATIVE_ROOT_CARRIES_STALE_G1_G2_NOT_APPROVED_VALUE",
+      "reviewed_basis": "REV04_POLICY:scorer_identity_interpretation;REV04_CONTRACT-L0289;R0_P01_B01_OWNER_ACCEPTANCE_20261010.md",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-013",
+      "unit_id": "REV04_POLICY:webauthn_assertion_failure_table.NotSupportedError.outcome",
+      "source_id": "REV04_POLICY",
+      "source_text_sha256": "bb03008e05ea9255a20f4f9c200d0b3aeb42af50bb0bcab14fb531ad5d33ebe7",
+      "review_message": "046_claude_r0_p01_clause_audit_batch013.md",
+      "review_message_sha256": "24a8486e6554d5ba37ec2d2de521a1cefb94a526ee7132de53f7e5374b06e8a4",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "R07",
+        "R11"
+      ],
+      "blocker": "B05-A1_ASSERTION_TIME_NOTSUPPORTED_PREDICATE_NOT_ENUMERATED",
+      "reviewed_basis": "REV04_POLICY:webauthn_assertion_failure_table.NotSupportedError.outcome;REV04_CONTRACT-L0200;REV04_CONTRACT-L0150",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-013",
+      "unit_id": "REV04_POLICY:webauthn_assertion_failure_table.NotSupportedError.proof_viability_receipt",
+      "source_id": "REV04_POLICY",
+      "source_text_sha256": "64149686344c8bba5097ef4e3af3de5d588e43325be4ae9e4456de57f06dabab",
+      "review_message": "046_claude_r0_p01_clause_audit_batch013.md",
+      "review_message_sha256": "24a8486e6554d5ba37ec2d2de521a1cefb94a526ee7132de53f7e5374b06e8a4",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "R11"
+      ],
+      "blocker": "B05-A1_CAPABILITY_PREDICATE_AND_RECEIPT_NOT_ENUMERATED",
+      "reviewed_basis": "REV04_POLICY:webauthn_assertion_failure_table.NotSupportedError.proof_viability_receipt;REV04_CONTRACT-L0156",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    },
+    {
+      "batch_id": "Q0-AUDIT-013",
+      "unit_id": "REV04_POLICY:webauthn_assertion_failure_table.NotSupportedError.requires",
+      "source_id": "REV04_POLICY",
+      "source_text_sha256": "79e80e541600862e4ea9451a75851f65515e46d112768c129556d6b151753b9d",
+      "review_message": "046_claude_r0_p01_clause_audit_batch013.md",
+      "review_message_sha256": "24a8486e6554d5ba37ec2d2de521a1cefb94a526ee7132de53f7e5374b06e8a4",
+      "reviewer_disposition": "INHERITED_UNCHANGED",
+      "reviewed_requirement_ids": [
+        "R11",
+        "R16"
+      ],
+      "blocker": "B05-A1_CAPABILITY_RECEIPT_SCHEMA_SIGNER_UNDEFINED",
+      "reviewed_basis": "REV04_POLICY:webauthn_assertion_failure_table.NotSupportedError.requires;REV04_CONTRACT-L0108",
+      "task_owner_resolution": "UNRESOLVED",
+      "prospective_f1_status": "NOT_QUALIFIED"
+    }
+  ],
+  "warning": "A reviewer ACCEPTED row is NOT an independently qualified implemented security control. The pending register is not a complete inventory of all future F1/F2 deficiencies.",
+  "F1_frozen": false,
+  "F2_frozen": false,
+  "owner_attempt_002_authorized": false
+}

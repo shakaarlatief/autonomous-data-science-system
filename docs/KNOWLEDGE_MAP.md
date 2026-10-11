@@ -836,6 +836,22 @@ docs/model_collaboration/threads/MC-0030/messages/052_claude_r0_p01_remaining_cl
 docs/research/535_r0_p01_message052_audit_campaign_stop_reconciliation_and_json_receipt_fix.md
 docs/local_execution/validation/224_r0_p01_json_receipt_validator_repair_and_inherited_regression.md
 docs/checkpoints/871_r0_p01_message052_stop_reconciled_json_receipt_fix_resume_batch010.md
+docs/model_collaboration/threads/MC-0030/messages/043_claude_r0_p01_clause_audit_batch010.md
+docs/model_collaboration/threads/MC-0030/messages/044_claude_r0_p01_clause_audit_batch011.md
+docs/model_collaboration/threads/MC-0030/messages/045_claude_r0_p01_clause_audit_batch012.md
+docs/model_collaboration/threads/MC-0030/messages/046_claude_r0_p01_clause_audit_batch013.md
+docs/model_collaboration/threads/MC-0030/messages/047_claude_r0_p01_clause_audit_batch014.md
+docs/model_collaboration/threads/MC-0030/messages/048_claude_r0_p01_clause_audit_batch015.md
+docs/model_collaboration/threads/MC-0030/messages/049_claude_r0_p01_clause_audit_batch016.md
+docs/model_collaboration/threads/MC-0030/messages/050_claude_r0_p01_clause_audit_batch017.md
+docs/model_collaboration/threads/MC-0030/messages/051_claude_r0_p01_clause_audit_batch018.md
+docs/model_collaboration/threads/MC-0030/messages/053_chatgpt_r0_p01_full_clause_audit_completion_and_f1_scoring_boundary_reconciliation.md
+docs/research/r0_p01_successor_design/R0_P01_F1_PENDING_AUDIT_RECONCILIATION_REV01_UNFROZEN.json
+docs/research/536_r0_p01_full_independent_clause_audit_reconciliation_and_f1_semantic_gates.md
+docs/local_execution/validation/225_r0_p01_complete_18_batch_receipts_and_pending_register_regression.md
+docs/checkpoints/872_r0_p01_full_clause_audit_complete_f1_semantic_reconciliation_next.md
+scripts/check_r0_p01_pending_review_register.py
+tests/unit/test_r0_p01_pending_review_register.py
 docs/research/534_r0_p01_message033_false_positive_security_controls_and_one_prompt_audit_plan.md
 docs/local_execution/validation/223_r0_p01_message033_receipt_check_and_c02_c09_c07_inspection.md
 docs/checkpoints/870_r0_p01_message033_security_control_false_positive_findings_one_prompt_audit.md
@@ -1554,7 +1570,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-871 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-872 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

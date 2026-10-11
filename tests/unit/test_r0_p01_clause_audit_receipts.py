@@ -12,13 +12,28 @@ from scripts.check_r0_p01_clause_audit_receipts import (
 )
 
 
-def test_committed_batch_prefix_is_complete_and_not_f1_authorization() -> None:
+def test_completed_campaign_receipts_are_complete_and_not_f1_authorization() -> None:
+    """Pin the entire independent audit campaign without confusing it with F1.
+
+    Counts describe reviewer-issued ACCEPTED/PENDING semantic audit statuses.
+    They are not the count of implemented controls, passing tests, or frozen
+    requirements. A later change to the committed reviewer corpus must be
+    explicitly reconciled here rather than silently accepted as historical
+    approval.
+    """
     actual=audit_summary()
-    assert actual["batch_count"]==9
-    assert actual["reviewed_units"]==472
-    assert actual["accepted"]==428
-    assert actual["pending"]==44
+    plan=json.loads(PLAN.read_text(encoding="utf-8"))
+    assert actual["batch_count"]==plan["batch_count"]==18
+    assert actual["reviewed_units"]==plan["total_units"]==1022
+    assert actual["accepted"]==967
+    assert actual["pending"]==55
+    assert actual["accepted"]+actual["pending"]==actual["reviewed_units"]
+    assert sum(x["units"] for x in actual["results"][:9])==472
+    assert sum(x["accepted"] for x in actual["results"][:9])==428
+    assert sum(x["pending"] for x in actual["results"][:9])==44
+    assert actual["semantic_review_by_task_owner"]=="NOT_AUTOMATICALLY_APPROVED"
     assert actual["F1_frozen"] is False
+    assert actual["F2_frozen"] is False
     assert actual["attempt_002_authorized"] is False
 
 
