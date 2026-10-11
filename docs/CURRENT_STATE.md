@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 879
+**Checkpoint:** 880
 **Date:** 2026-10-11
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,21 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: synthetic restart-safe admission verified, signed cross-run nonce next
+## Current active stage: actual signed run identity rejects cross-run proof replay; durable issuance next
+
+**Checkpoint 880 / Research 544 / Validation 232** implement and test a **separate synthetic successor signed statement** with explicit `protocol` and cryptographically random 256-bit `claim_nonce` fields. Both are in the exact bytes signed by ephemeral Ed25519 SSHSIG or synthetic WebAuthn-shaped ES256 credentials. The trusted verifier receives an **independent expected entire statement for the intended run**; it never accepts an old submitted proof's self-selected run as authority.
+
+**21 new executable synthetic tests PASS** against actual Windows OpenSSH signature verification and Node P-256 cryptography. Correct signatures for two different run nonces succeed; a valid prior-run signature for the **same signer and same acceptance ID** cannot authorize the later run; changing the nonce, decision or semantic digest without resigning is rejected. Protocol/nonce field shape, wrong-signer public keys and old V02 protocol separation are explicitly tested. No owner credentials, real Windows Hello hardware/ceremony or owner trial marker is used.
+
+The combined R0-P01 focused validation is **147/147 PASS**, counted accurately as 63 executable synthetic security/durability tests and 84 source-review structural guards. An all-in-one invocation timed out at the Runtime Bridge; the two separated groups of 63 and 84 individually passed and are recorded in Validation 232. Historic V02 implementation and B01/B02 approval receipts remain unchanged.
+
+**Key limitation:** This closes the historical cross-run replay weakness **at the signature-binding layer only**. The future trusted issuer must durably allocate and preserve unique run nonces and independently recover the expected signed statement; that must be integrated with durable consumed-ID admission, recovery roles, truthful evidence and the eventual scorer. The synthetic WebAuthn-shaped ES256 proof is not a Windows Hello or platform-credential result. Current SQLite and Node prototypes remain replaceable engineering experiments, not fixed physical architecture.
+
+The human owner's simplified authorization of new research runs after documented accidents/technical interruptions stays in effect, with a **separate fresh explicit owner execution authorization** still required for each real run. Attempt 001 remains immutable AMEND, F1/F2 unfrozen and Attempt 002 not authorized. R0-P02 PASS, R0-P03 pending, Specification 028 and physical architecture selection unchanged.
+
+---
+
+## Historical checkpoint 879 stage: synthetic restart-safe admission verified, signed cross-run nonce next
 
 **Checkpoint 879 / Research 543 / Validation 231** provide a bounded new executable synthetic durability prototype, not an imposed ADS storage architecture. Its public SQLite journal serializes accepted records with atomic consumption/head updates, reconstructs trusted state by actual cryptographic verification of historical V02 signed records, and requires explicitly fresh initialization. Opening a missing or corrupt journal **fails closed** rather than silently recreating empty consumed-ID history.
 

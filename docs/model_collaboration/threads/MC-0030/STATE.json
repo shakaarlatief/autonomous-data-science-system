@@ -3,7 +3,7 @@
   "thread_id": "MC-0030",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "OPEN",
-  "phase": "R0_P01_SYNTHETIC_DURABLE_ADMISSION_PASS",
+  "phase": "R0_P01_SYNTHETIC_SIGNED_RUN_NONCE_PASS",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -104,16 +104,17 @@
       "Claude Message 059 at 8b4b3739 reviewed old F1 technical-site candidates. Before further iterative review, the owner explicitly approved changing R0-P01 procedural restart governance: a declared accidental/technical interruption plus express fresh owner consent permits a new research execution. Historical B02 cap/exceptions prospectively superseded for this case, original B01/B02 bytes and Attempt 001 remain unchanged, no actual Attempt 002 consent. Message 060 informs Claude without dispatching Message 061; next actor ChatGPT for proportionate security/measurement triage.",
       "Checkpoint 877 / Research 541 / Validation 229 added 8 actual non-owner synthetic cryptographic tests: Ed25519 valid and well-framed tampered/foreign-signer OpenSSH verification, ES256 valid and DER-preserving tampered/foreign-signer Node verification, plus governing semantic-base metamorphism. The historical V02 code and owner evidence were untouched. Claude no automatic Message 061; next ChatGPT work signed-but-unauthorized synthetic admission.",
       "Checkpoint 878 / Research 542 / Validation 230 added 19 actual synthetic valid-signature unauthorized/replay/stale-context/recovery-role tests against historical V02 Ledger.admit for both Ed25519 and ES256. Full mutable trust-state snapshots are unchanged after every rejected action; 111 total regressions passed (27 executable crypto/admission + 84 provenance tests). Next meaningful risk is persistent consumed-ID/trust-history across process restart. Owner retry decision and F1/F2 boundary unchanged.",
-      "Checkpoint 879 / Research 543 / Validation 231: 15 real synthetic durability/restart/concurrency tests PASS on bounded replaceable SQLite journal, 126 total tests PASS (42 execution-facing; 84 structural). Historical V02 signed statement lacks fresh run nonce and admits old valid proof into separate new-run database; deliberate negative observation remains an open essential successor security requirement. No owner credentials, F1/F2 freeze or Attempt 002."
+      "Checkpoint 879 / Research 543 / Validation 231: 15 real synthetic durability/restart/concurrency tests PASS on bounded replaceable SQLite journal, 126 total tests PASS (42 execution-facing; 84 structural). Historical V02 signed statement lacks fresh run nonce and admits old valid proof into separate new-run database; deliberate negative observation remains an open essential successor security requirement. No owner credentials, F1/F2 freeze or Attempt 002.",
+      "Checkpoint 880 / Research 544 / Validation 232: 21 real Ed25519 OpenSSH and synthetic WebAuthn-shaped ES256 cross-run signed-nonce negative tests PASS using dedicated successor protocol fields, trusted expected statement and non-owner ephemeral signing. 63 actual execution-facing tests plus 84 structural tests passed independently (147 total). Run nonce now bound in signed bytes, but no durable trusted nonce issuance or successor ledger integration yet. No owner run/secret and no F1/F2 freeze."
     ],
-    "notes": "Owner-approved replacement governance preserved while durable same-run replay resistance is tested synthetically. 15 new tests pass on independent child restarts/crashes, concurrent signature acceptance and signer-set rebuild, but this does not qualify full successor. Critical observed cross-run old-signature acceptance due to missing signed run nonce must be fixed next; public SQLite hash chain not malicious rollback-resistant. Claude no automatic review, Attempt 002 not authorized."
+    "notes": "Owner-governance simplified accident replacement remains unchanged and requires separate authorization. Checkpoint 880 signature-layer claim_nonce+protocol fields cryptographically prevent old-run proof replay under trusted newer run expectation, in two synthetic mechanisms; next implement durable trusted issuer and full admission. No owner hardware, scorer or real Attempt 002; B01/B02 remain historically unchanged, F1/F2 unfrozen. Avoid speculative policy-review loops."
   },
   "last_transition": {
-    "transition_id": "mc0030-r0-p01-durable-restart-and-cross-run-gap",
+    "transition_id": "mc0030-r0-p01-synthetic-signed-cross-run-claim-binding",
     "from_state": "OPEN",
     "to_state": "OPEN",
     "actor": "chatgpt",
-    "reason": "Implement synthetic per-run persisted admission and prove crash-safe consumption, then expose missing claim nonce in historical signed messages rather than overclaim cross-run replay safety.",
-    "repository_head": "da839dcf1149c04619de97dc4d759fc049f8df1b"
+    "reason": "Fix reproduced original V02 cross-run replay weakness at cryptographic statement layer using explicit fresh signed nonce and actual SSHSIG/ES256 synthetic proof negatives; prepare durable trusted claim issuer next.",
+    "repository_head": "d0c95972df5ab95a82964de24898c36b25c9bff0"
   }
 }

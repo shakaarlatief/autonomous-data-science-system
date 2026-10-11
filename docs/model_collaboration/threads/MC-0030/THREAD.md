@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / P01 SYNTHETIC RESTART REPLAY PASS / SIGNED CROSS-RUN NONCE NEXT
+**Status:** OPEN / P01 SIGNED RUN NONCE NEGATIVES PASS / DURABLE CLAIM ISSUANCE NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -635,5 +635,17 @@ The owner-authorized simple replacement procedure remains in force, but a new re
     PHASE=R0_P01_SYNTHETIC_DURABLE_ADMISSION_PASS
     NEXT_ACTOR=chatgpt
     NEXT_BOUNDARY=p-one-signed-fresh-run-identity
+    F1_F2=UNFROZEN
+    ATTEMPT_002=NOT_AUTHORIZED
+
+## Signed cross-run identity tested with two distinct synthetic cryptographic mechanisms
+
+Research 544 / Validation 232 / Checkpoint 880 create an explicitly new, test-only signed message schema with \`protocol\` and 256-bit \`claim_nonce\` inside the Ed25519 SSHSIG and WebAuthn-shaped ES256 signed bytes. **21 real executable tests pass**: valid positive controls under two new nonces, wrong-run replay of an otherwise correctly signed identical acceptance ID, nonce tampering without re-signing, changed decision/semantic digest, wrong signer key and old-protocol separation. The expected statement for the run must be independently trusted. Across all prior work **63 executable crypto/admission/durability tests** and **84 structural guard tests** pass, separately after a single all-in-one bridge timeout.
+
+The missing V02 cross-run nonce reproduced at Checkpoint 879 is mitigated at the **signature verification layer only**. The actual successor still needs a durable trusted nonce issuer and integrated journal/trust-role admission, plus independent evidence and scorer qualification. No real hardware WebAuthn, owner SSH/WebAuthn credential use or Attempt 002 execution. The owner-approved uncomplicated accidental/technical replacement procedure remains in effect; it never permits cryptographic replay of a prior signed acceptance. No automatic Claude review is required.
+
+    PHASE=R0_P01_SYNTHETIC_SIGNED_RUN_NONCE_PASS
+    NEXT_ACTOR=chatgpt
+    NEXT_BOUNDARY=p-one-trusted-durable-claim-issuance
     F1_F2=UNFROZEN
     ATTEMPT_002=NOT_AUTHORIZED
