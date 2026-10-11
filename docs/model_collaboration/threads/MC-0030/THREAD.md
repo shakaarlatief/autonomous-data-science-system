@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / P01 SYNTHETIC CRYPTO CHECKS PASS / ADMISSION NEGATIVES NEXT
+**Status:** OPEN / P01 SYNTHETIC SIGNED ADMISSION CHECKS PASS / DURABLE REPLAY NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -608,5 +608,18 @@ Focus next on genuine signed-but-unauthorized and replay admission checks with u
     PHASE=R0_P01_EXECUTION_FACING_SYNTHETIC_SECURITY_REGRESSION
     NEXT_ACTOR=chatgpt
     NEXT_BOUNDARY=p-one-synthetic-admission-security
+    F1_F2=UNFROZEN
+    ATTEMPT_002=NOT_AUTHORIZED
+
+
+## Executed valid-signature unauthorized-state tests
+
+Research 542 / Validation 230 / Checkpoint 878 record 19 new *actual* synthetic signed-but-unauthorized ledger-admission tests (SSH Ed25519 and WebAuthn ES256) in addition to Checkpoint 877's eight synthetic real signature tests. Cryptographic validity is established before denial of valid-but-unauthorized actions. Replay, stale dependency, signer role/recovery, amended owner view and old signer-set situations must not modify any trust-ledger state; signed non-ACCEPT trials can consume exactly once but never apply ACCEPT effects. Positive P5/P6 trust transitions and new current-signers establish the test discrimination. The combined R0-P01 focused regression is 111/111, of which 27 are these real synthetic crypto/admission tests.
+
+The next meaningful security question is **durable consumed-ID/trust-state persistence across process restart**, not additional speculative documents about the old B02 exceptional retry rules. The human-approved replacement process is unchanged and still requires fresh run-specific authorization. No new Claude review requested, no actual owner credential used, F1/F2 UNFROZEN and Attempt 002 not authorized.
+
+    PHASE=R0_P01_SIGNED_UNAUTHORIZED_SYNTHETIC_ADMISSION_PASS
+    NEXT_ACTOR=chatgpt
+    NEXT_BOUNDARY=p-one-durable-replay-across-process
     F1_F2=UNFROZEN
     ATTEMPT_002=NOT_AUTHORIZED

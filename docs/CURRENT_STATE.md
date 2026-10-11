@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 877
+**Checkpoint:** 878
 **Date:** 2026-10-11
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,19 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: synthetic cryptographic security tests, admission-security implementation next
+## Current active stage: verified synthetic authorized-admission and rejected-state invariance
+
+Checkpoint 878 / Research 542 / Validation 230 add **19 executable non-owner signed-but-unauthorized admission regressions** against the historical V02 trust ledger, following the eight actual cryptographic sensitivity tests of Checkpoint 877. Across Arm A Ed25519 and Arm B ES256 primary identities, each signed denial first confirms genuine proof validity, then checks rejection of duplicate consumed IDs, recovery-key ordinary-signing attempts, valid but unregistered signers, stale signed dependencies, wrong owner views/event identities, and old signer-set versions after actual P5 rotation. Genuine P6 recovery transitions and new authorized signer admissions serve as controls. REJECT/AMEND decisions consume once without applying ACCEPT effects. Every denied action must leave **all mutable trusted state unchanged** (entries, consumed IDs, effects, signer members/version, dependencies and bound target credentials).
+
+The 19 new tests pass and the combined focused regression suite is **111/111 PASS**: 27 genuine executable synthetic cryptographic/admission tests plus 84 provenance/specification guards. The tests run in the appropriate non-owner workspace execution profile and use ephemeral in-memory synthetic Node keys, temporary public OpenSSH verification files and the unchanged historical V02 harness. They **do not** qualify the unfinished successor F1/F2 or run an official trial.
+
+The newly identified next substantive risk is durable replay/trust-history semantics across process restart: an in-memory ledger preventing replay within one process does not prove the same after crash/restart. Next work should implement and verify a proportionate synthetic durable-state mechanism in the successor without uncritically preserving historical code layout, technology or a sprawling review program.
+
+The prospective owner-authorized accidental/technical interruption replacement procedure remains approved; original B01/B02 and permanent Attempt 001 AMEND unchanged. Further R0-P01 trials still require fresh explicit owner consent; Attempt 002 is NOT authorized. All 55 pending independent reviewer units are retained and risk-triaged rather than triggering automatic audit rounds. R0-P02 PASS, R0-P03 pending, physical ADS architecture open and Specification 028 unchanged.
+
+---
+
+## Historical checkpoint 877 stage: synthetic cryptographic security tests, admission-security implementation next
 
 **Checkpoint 877 / Research 541 / Validation 229** move the owner-authorized R0-P01 proportionality reset into **actual executable, non-owner security regression**. The new test module `tests/unit/test_r0_p01_cryptographic_sensitivity.py` uses only fresh in-memory synthetic Node signer keys and public temporary files: original V02 Ed25519 SSHSIG plus Windows OpenSSH verification and synthetic ES256 WebAuthn Node verification. **Eight executable synthetic tests pass**, including valid positive controls, structurally valid cryptographic forgeries, signer substitution and actual semantic-base mutation sensitivity. The historical C02 broken-header negative and C09 no-op unrelated metadata weakness are explicitly characterized and replaced with stronger separate tests, without modifying the original V02 harness or its owner evidence.
 
