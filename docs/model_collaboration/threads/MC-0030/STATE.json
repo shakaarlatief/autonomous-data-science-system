@@ -3,7 +3,7 @@
   "thread_id": "MC-0030",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "OPEN",
-  "phase": "R0_P01_F1_INDEPENDENT_SSH_AND_SYNTHETIC_ES256_COMPONENTS_PASS",
+  "phase": "R0_OWNER_AUTHENTICATION_GATE_AMENDED_P03_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -115,16 +115,17 @@
       "Checkpoint 887 / Research 551 / Validation 239: first actual Windows OpenSSH SSHSIG verification-source observation over synthetic run-bound statements and public signer identity; 15 new executable cases plus prior B01 references passed. A real valid-foreign-signer negative caused a classifier repair before final testing. No durable producer-origin attestation, RP/browser lifecycle, true owner presence, full F1/F2 scoring or Attempt 002. Claude remains an independent reviewer, without an automatic new review cycle.",
       "Checkpoint 888 / Research 552 / Validation 240: 22 new tests qualify a separate read-only consumer of the existing synthetic issued/admitted SSH journal. The selected nonce and trust context are independently supplied, journal rows are checked and admitted proofs reverified by actual OpenSSH including a fresh-process replay. 431 focused tests PASS. No independent journal writer attestation, anti-rollback witness, authentic owner/event lifecycle, full F1/F2 freeze or Attempt 002. One source-tamper negative demonstrates that a valid signed proof can be inserted into an ADMITTED local row without a trusted issuer admission, so producer authentication is not established.",
       "Checkpoint 889 / Research 553 / Validation 241: 31 new verification-only Node SSHSIG parser/Ed25519 tests, cross-checked against real OpenSSH with public synthetic proof material. 462 focused checks PASS. Scorer cryptographic primitive independent from owner OpenSSH verifier, but authored and tested in same ChatGPT session; source authentication, browser/RP event provenance, independently frozen scorer oracle, full F1/F2 and Attempt 002 remain open.",
-      "Checkpoint 890 / Research 554 / Validation 242: 47 new verification-only synthetic WebAuthn ES256 tests PASS; 509 focused checks PASS. Separate Node implementation checks RP origin/hash, client challenge, credential trust and P-256 signature without importing historical RP. Synthetic-only marker/credential, same Node cryptography backend, no browser/Windows Hello source-origin evidence, no blind independent author, no full scorer, no F1/F2 freeze or Attempt 002."
+      "Checkpoint 890 / Research 554 / Validation 242: 47 new verification-only synthetic WebAuthn ES256 tests PASS; 509 focused checks PASS. Separate Node implementation checks RP origin/hash, client challenge, credential trust and P-256 signature without importing historical RP. Synthetic-only marker/credential, same Node cryptography backend, no browser/Windows Hello source-origin evidence, no blind independent author, no full scorer, no F1/F2 freeze or Attempt 002.",
+      "Checkpoint 891 / Research 555: owner explicitly directed recorded-chat authentication for CURRENT architecture development, preserving best-architecture design principles. Detached cryptographic J1 proof remains future-selectable/unactivated, and the Research 513 conjunctive P01 PASS_WITH_SELECTION preselection requirement is prospectively superseded. P01 Attempt 001 remains AMEND, F1/F2 unfrozen, real Attempt 002 deferred/unapproved. Research 517 P02 PASS remains limited to synthetic proof and actual Git transport. R0-P03 is next under its prospective fixture requirements. Research 503 R0-R02 remains NOT DEMONSTRATED by chat; no production activation or physical target selected."
     ],
-    "notes": "F1 progress at Checkpoint 886 includes bounded synthetic evidence completeness and partial source-flag reference, 63 new tests, 394 focused total. Synthetic RP/browser receipt booleans are not independently trustworthy: genuine producer binding remains the next task. No independently verifiable NOT_REALIZABLE capability probe yet. F1/F2 UNFROZEN and Attempt 002 NOT AUTHORIZED. The 2026-10-11 owner-approved simplified accidental replacement rule remains separate from scoring; avoid 55-note mandatory review bureaucracy or automatic Claude loops."
+    "notes": "Checkpoint 891 governs R0 preselection routing: continue recorded conversational owner decisions in present development, keep cryptographic proof architecture future-selectable but unactivated; no implied production signature or automatic R0-P01 retry. P02 PASS is preserved only in its tested synthetic/Git scope; P03 fixture preparation next. R0-R02 independent authenticity unresolved and must be explicitly dispositioned before physical target acceptance. Best whole-system architecture objective unchanged."
   },
   "last_transition": {
-    "transition_id": "mc0030-r0-p01-independent-synthetic-es256-verifier-component",
+    "transition_id": "mc0030-owner-authentication-prospective-probe-gate-amendment",
     "from_state": "OPEN",
     "to_state": "OPEN",
     "actor": "chatgpt",
-    "reason": "Qualify separate synthetic WebAuthn public ES256 proof verification without trusting RP outcome, while keeping browser/event-source and owner-sensitive evidence boundaries open.",
-    "repository_head": "32f317a56c0f794a45ef5508f41d9258b5874e53"
+    "reason": "Owner-authorized narrow amendment to R0 P01 gating and present-development chat authorization, preserving P02 result scope and enabling P03, without claiming independently authenticated J1 production authority.",
+    "repository_head": "8705034ce584cb40cb4b4d7ec3dd520c46dd1e64"
   }
 }

@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 890
+**Checkpoint:** 891
 **Date:** 2026-10-12
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,17 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: independently verified SSH and synthetic WebAuthn proof components; event-source qualification next
+## Current active stage: prospective R0 owner-authentication direction adopted; R0-P03 fixture preparation next
+
+**Checkpoint 891 / Research 555 / Validation 243** record the owner's narrowly scoped decision to continue **current architecture development** with explicit conversational human approvals preserved in project records, while preserving an **unactivated/future-selectable** detached owner-proof design without requiring R0-P01 Attempt 002 to finish before the physical architecture can be selected. The owner explicitly reaffirmed that ADS seeks the **best whole-system architecture**, not merely minimal engineering. This is a prospective change to R0 probe sequencing and selection preparation, **not** a general change to the project philosophy or a retroactive edit of Research 503/512/513.
+
+R0-P02 **PASS remains intact within its synthetic-proof and Git-host experiment scope**; it does not authenticate real chat approvals or establish production owner cryptography. R0-P03 **NEXT** under its existing prospective-fairness, task and comparator constraints. Before a final physical-target decision, the owner must receive an explicit authentication-dependency disposition explaining the still-unproven Research 503 R0-R02 independent-authenticity assurance, deployed trust assumptions, and any eventual activation requirements. The historical conjunctive R0-P01 PASS_WITH_SELECTION preselection gate is **prospectively superseded**, not scored as passed. This is a bounded sequencing/selection amendment, not an automatic architecture selection.
+
+Historical R0-P01 Attempt 001 remains **AMEND**; B01/B02 and the owner-approved simplified accidental replacement rule are unchanged. F1/F2 are **UNFROZEN**, and real Attempt 002 is **DEFERRED / NOT AUTHORIZED**. The experimental cryptographic implementations remain reference/candidate material, not production authority. No future SSH/WebAuthn activation is mandated by this decision. Specification 028 remains operationally authoritative; no R0-P03 experiment has yet run and D-036 physical target remains open.
+
+---
+
+## Historical checkpoint 890 stage: independently verified SSH and synthetic WebAuthn proof components; event-source qualification next
 
 **Checkpoint 890 / Research 554 / Validation 242** add a separate verification-only synthetic WebAuthn ES256 scorer primitive. It independently checks the expected signed statement, enrolled P-256 public key and credential ID, WebAuthn `clientDataJSON` origin/challenge, strict JSON keys and UTF-8, authenticator RP ID hash/UP/UV flags and DER signature, without importing the legacy RP or trusting its reported verdict. **47 new non-owner tests PASS; 509/509 focused checks PASS** (425 executable and 84 structural). Together with Checkpoint 889's independent SSHSIG verifier, both proof arms now have bounded scorer-side cryptographic checks.
 
