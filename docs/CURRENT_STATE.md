@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 883
+**Checkpoint:** 884
 **Date:** 2026-10-12
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,19 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: actual measured synthetic operation and descriptive outcome evidence
+## Current active stage: atomic synthetic accepted-signature and timing finalization
+
+Checkpoint 884 / Research 548 / Validation 236 close the specific postadmission/preobservation crash gap identified at Checkpoint 883 for the bounded synthetic measured-admission path. Existing governed SyntheticClaimStore.admit now supports an optional monotonic start value. It verifies the real synthetic Ed25519 SSHSIG or WebAuthn-shaped ES256 proof, then computes elapsed technical-operation time and commits the accepted signature, consumed claim and nonsecret completion observation together in ONE SQLite transaction. The runner no longer writes a second completion observation after measured acceptance; no new database or schema change is introduced.
+
+22 new executable tests PASS, including child processes terminated before commit (neither signature nor observation persists) and after commit but before acknowledgment (both persist and replay remains denied). Tampered signatures and invalid/future starts leave the trusted state unchanged. The legacy unmeasured API still exposes MISSING observation coverage rather than falsely claiming complete evidence. Focused regressions are 179 executable synthetic security and measurement tests plus 84 structural guards, 263 PASS across three bounded groups. An attempted larger combined bridge invocation timed out and was not counted.
+
+The measured interval ends immediately before SQLite commit, excluding commit/fsync, human effort, actual Windows Hello ceremony, passphrase input and owner gestures. The timer start is caller-supplied synthetic instrumentation. Independent F1 scientific scoring, malicious rollback security and real owner authority/device qualification remain pending. Next meaningful task: independently expected successor-specific outcome vectors, not more B02 exception review.
+
+The owner-approved simplified accidental replacement policy remains intact. Original Attempt 001 AMEND, B01/B02 bytes and audit history preserved. F1/F2 UNFROZEN; Attempt 002 NOT AUTHORIZED. R0-P02 PASS, R0-P03 pending, physical ADS architecture free to redesign.
+
+---
+
+## Historical checkpoint 883 stage: actual measured synthetic operation and descriptive outcome evidence
 
 **Checkpoint 883 / Research 547 / Validation 235** provide a bounded real synthetic-measurement rehearsal. The new synthetic_measurement.py times a scripted Ed25519 SSHSIG or WebAuthn-shaped ES256 signing/admission operation with the host monotonic perf_counter_ns clock, records measured milliseconds and the known number of scripted signer calls, and preserves interrupted/replaced run observations in the existing governed synthetic journal.
 

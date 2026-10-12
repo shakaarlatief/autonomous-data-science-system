@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / P01 SYNTHETIC ACTUAL OPERATION TIMING PASS / EVIDENCE FINALIZATION NEXT
+**Status:** OPEN / P01 ATOMIC SYNTHETIC MEASURED ADMISSION PASS / OUTCOME VECTORS NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -686,5 +686,18 @@ A directly observed evidence gap is preserved: a crash after successful cryptogr
     PHASE=R0_P01_SYNTHETIC_ACTUAL_OPERATION_MEASUREMENT_PASS
     NEXT_ACTOR=chatgpt
     NEXT_BOUNDARY=p-one-measurement-finalization-and-recovery
+    F1_F2=UNFROZEN
+    ATTEMPT_002=NOT_AUTHORIZED
+
+
+## Synthetic acceptance and measured timing now commit together
+
+Research 548 / Validation 236 / Checkpoint 884 extend the existing governed synthetic admission API with optional monotonic-clock start. After actual Ed25519 SSHSIG or synthetic ES256 proof validation, the consumed acceptance and measured completion observation commit in one SQLite transaction. In real separate-process crash tests, before commit neither persists; after commit both persist despite lost acknowledgment, and replay is denied. Existing unmeasured admission continues to report MISSING observation coverage.
+
+22 new executable cases pass. Across all focused tests: 179 runnable synthetic security and measurement cases and 84 historical structural checks, 263 PASS in bounded groups. The interval excludes SQLite fsync and genuine owner time. Owner-approved simplified accidental replacement still requires separately authorized real execution, never fabricates a signature. No actual Attempt 002 or owner credentials used, no Claude review automatically scheduled. Next actor ChatGPT for independent expected successor outcome vectors.
+
+    PHASE=R0_P01_SYNTHETIC_ATOMIC_MEASUREMENT_FINALIZATION_PASS
+    NEXT_ACTOR=chatgpt
+    NEXT_BOUNDARY=p-one-independent-successor-outcome-vectors
     F1_F2=UNFROZEN
     ATTEMPT_002=NOT_AUTHORIZED

@@ -62,6 +62,7 @@ def run_measured_synthetic_case(
     start_ns = time.perf_counter_ns()
     calls = 0
     admitted = False
+    atomically_observed = False
     kind = KINDS[mode]
     note = NOTES[mode]
 
@@ -78,8 +79,12 @@ def run_measured_synthetic_case(
                 result = store.admit(
                     node=node, claim_nonce=nonce, presented=presented,
                     proof=material["proof"], credential=material["credential"],
+                    measurement_started_ns=(start_ns if mode == "VALID" else None),
                 )
                 admitted = result["admitted"] is True
+                if admitted and mode == "VALID":
+                    atomically_observed = True
+                    measured_ms = result["measured_elapsed_ms"]
             else:
                 kind = "ERROR"
                 note = "Synthetic signature used a nonenrolled public credential"
@@ -94,13 +99,14 @@ def run_measured_synthetic_case(
     elapsed_ns = time.perf_counter_ns() - start_ns
     if elapsed_ns < 0:
         raise RuntimeError("nonmonotonic measurement clock")
-    elapsed_ms = elapsed_ns // 1_000_000
-    recorded = store.record_observation(
-        node=node, claim_nonce=nonce, kind=kind, elapsed_ms=elapsed_ms,
-        interactions=calls, note=note,
-    )
-    if recorded["recorded"] is not True:
-        raise RuntimeError("synthetic measurement could not be preserved")
+    elapsed_ms = measured_ms if atomically_observed else elapsed_ns // 1_000_000
+    if not atomically_observed:
+        recorded = store.record_observation(
+            node=node, claim_nonce=nonce, kind=kind, elapsed_ms=elapsed_ms,
+            interactions=calls, note=note,
+        )
+        if recorded["recorded"] is not True:
+            raise RuntimeError("synthetic measurement could not be preserved")
     return {
         "claim_nonce": nonce,
         "mode": mode,

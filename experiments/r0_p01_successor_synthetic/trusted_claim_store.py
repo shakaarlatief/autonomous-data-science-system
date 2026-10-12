@@ -31,6 +31,7 @@ import copy
 import hashlib
 import re
 import sqlite3
+import time
 from contextlib import closing
 from pathlib import Path
 
@@ -393,13 +394,28 @@ class SyntheticClaimStore:
                 conn.rollback()
                 raise
 
-    def admit(self,*,claim_nonce:str,presented:dict,proof:dict,credential:dict,node):
+    def admit(
+        self, *, claim_nonce: str, presented: dict, proof: dict,
+        credential: dict, node, measurement_started_ns: int | None = None,
+    ):
         """Admit only the trusted active claim exactly once, atomically.
 
         The claim_nonce is selected by the caller's trusted run controller,
         not recovered from the proof. The persisted expected statement is
         independently reconstructed from genesis and journal nonce.
+
+        For the bounded synthetic measured-admission path, the controller
+        passes a monotonic start time captured just before signing. The
+        verified proof and elapsed time are committed together, removing the
+        admission-then-observation gap. The duration ends before commit,
+        therefore it does NOT measure SQLite fsync or the complete human
+        ceremony. A caller-supplied start time is not an authenticated metric.
         """
+        if measurement_started_ns is not None:
+            if not self.require_governed_issuance:
+                raise ValueError("measured admission requires governed synthetic issuer")
+            if type(measurement_started_ns) is not int or measurement_started_ns <= 0:
+                raise ValueError("invalid synthetic monotonic measurement start")
         with closing(self._connection()) as conn:
             try:
                 conn.execute("BEGIN IMMEDIATE")
@@ -430,8 +446,30 @@ class SyntheticClaimStore:
                 )
                 if conn.execute("SELECT changes()").fetchone()[0]!=1:
                     raise ClaimStoreError("admission compare-and-set failed")
+                result={"admitted":True,"claim_nonce":claim_nonce}
+                if measurement_started_ns is not None:
+                    elapsed_ns=time.perf_counter_ns()-measurement_started_ns
+                    if elapsed_ns < 0 or elapsed_ns//1_000_000 > 86_400_000:
+                        raise ClaimStoreError("invalid synthetic measurement duration")
+                    elapsed_ms=elapsed_ns//1_000_000
+                    observation={
+                        "claim_nonce":claim_nonce, "kind":"COMPLETED",
+                        "elapsed_ms":elapsed_ms, "interactions":1,
+                        "note":"Synthetic signature and admission operation completed",
+                    }
+                    if not self._valid_observation(observation):
+                        raise ClaimStoreError("invalid synthetic completion observation")
+                    observation_blob=legacy.canonical(observation)
+                    observation_seq=len(self._observations_cache)+1
+                    conn.execute(
+                        "INSERT INTO observations VALUES(?,?,?,?,?)",
+                        (observation_seq,claim_nonce,"COMPLETED",observation_blob,
+                         hashlib.sha256(observation_blob).hexdigest()),
+                    )
+                    result["measured_elapsed_ms"]=elapsed_ms
+                    result["observation_sequence"]=observation_seq
                 self._commit(conn)
-                return {"admitted":True,"claim_nonce":claim_nonce}
+                return result
             except Exception:
                 conn.rollback()
                 raise
