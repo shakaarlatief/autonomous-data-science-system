@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / P01 B01 INDEPENDENT DERIVED OUTCOMES PASS / RAW EVIDENCE NEXT
+**Status:** OPEN / P01 SYNTHETIC RECEIPT AND FLAG REFERENCE PASS / TRUSTED PRODUCERS NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -712,5 +712,18 @@ The existing synthetic security/measurement suites (179 runnable) and historical
     PHASE=R0_P01_F1_B01_DERIVED_PREDICATE_REFERENCE_PASS
     NEXT_ACTOR=chatgpt
     NEXT_BOUNDARY=p-one-raw-evidence-flag-independence
+    F1_F2=UNFROZEN
+    ATTEMPT_002=NOT_AUTHORIZED
+
+
+## Bounded F1 source-shaped evidence-state and flag reference
+
+Research 550 / Validation 238 / Checkpoint 886 add a second test-only independent reference checking four same-attempt terminal P0/S01/S02/S03 event receipts, the SSH owner-stop versus whole-run interruption distinction, WebAuthn cancelled-assertion RP/client issuance/invocation/consumption correlation and a narrow set of source-derived faults. RP exit after recorded owner abort is not automatically instrumental; tri-state verifier ERROR differs from INVALID owner proof; actual snapshot bytes expose real hash-link mismatch; missing optional final-head witness remains disclosure only. A self-declared inability or NotSupportedError cannot earn NOT_REALIZABLE: no genuine independent capability producer has been qualified.
+
+63 new synthetic reference tests PASS, as do 68 existing B01 expected-score reference cases, 179 earlier executable synthetic security/measurement checks and 84 historical structural regressions: 394 focused PASS. **These are still synthetic source-shaped receipts** and do not authenticate their real SSH/browser/RP origin or independently verify all frozen scorer flags. The next engineering boundary is real source-bound receipt production/verification, then complete F1 outcome qualification and F2. The already approved simplified accidental replacement governance remains separate from cryptographic proof, with no automatic Claude review or real Attempt 002 authorization.
+
+    PHASE=R0_P01_F1_SYNTHETIC_RECEIPT_FLAG_REFERENCE_PASS
+    NEXT_ACTOR=chatgpt
+    NEXT_BOUNDARY=p-one-trusted-receipt-producer-binding
     F1_F2=UNFROZEN
     ATTEMPT_002=NOT_AUTHORIZED

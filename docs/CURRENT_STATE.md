@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 885
+**Checkpoint:** 886
 **Date:** 2026-10-12
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,19 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: bounded independent B01 scoring reference; raw-evidence qualification next
+## Current active stage: bounded synthetic raw-event and source-flag evidence reference
+
+**Checkpoint 886 / Research 550 / Validation 238** add a second small, synthetic-only independent F1 reference for raw-event evidence completeness and a narrow source-flag subset. A complete arm requires REALIZABLE setup and distinct, same-attempt P0/S01/S02/S03 terminal receipts. SSH owner-stop/exhausted-budget and WebAuthn consumed cancellation can count as terminal no-proof events without any successful signature. RP/browser cancellation requires correlated issuance, delivery, invocation and consumption fields; owner Ctrl+C, missing terminal events, skipped setup and claimed incapability cannot silently become COMPLETED or NOT_REALIZABLE. **No independently qualified platform capability producer exists in this test reference**, and purported capability proofs fail closed.
+
+Selected source-site expectations derive tri-state verifier ERROR separately from INVALID proof, RP failure from actual receipt ordering around owner abort, hash-link breaks from previous exact snapshot bytes and optional witness absence as disclosure-only. The records are **source-shaped synthetic inputs, not independently verified producer-authentic evidence**. This stage does not prove actual RP/browser authenticity, physical owner presence, full platform inability, all raw integrity flags, proof-viability/eligibility or complete F1 scoring.
+
+**63 new F1 receipt/source tests PASS**, adding to 68 prior B01 predicate/numeric tests and 179 existing executable security/measurement tests. Prior structural guards also pass 84/84. **394 focused checks PASS** (310 executable and 84 structural). The next task is source-authenticated claim-bound receipts and complete F1 scoring qualification using actual mechanisms, not additional speculative owner-retry requirements.
+
+The owner-approved simplified accidental replacement procedure, historical B01/B02 byte-bound acceptance and Attempt 001 AMEND remain preserved. F1/F2 UNFROZEN; real Attempt 002 NOT AUTHORIZED. R0-P02 PASS, R0-P03 pending; physical ADS architecture is not fixed by these candidate experiments.
+
+---
+
+## Historical checkpoint 885 stage: bounded independent B01 scoring reference; raw-evidence qualification next
 
 Checkpoint 885 / Research 549 / Validation 237 introduce a **test-only derived-predicate B01 reference** independent of the owner harness, successor runtime/scorer and old 288-row draft generator. Twenty-three literal expected classifications cover INVALID source-flag precedence, G1 incomplete/no viable evidence, viability versus eligibility, G2 uncontested-arm disclosure and selected-arm volume failure. Exact Fraction arithmetic checks frozen 10-second small, 15-second large and B final tie-break thresholds and 97-acceptance/90-minute projection. A claimed case with both arms eligible **cannot be scored without actual selected-arm numeric evidence**.
 
