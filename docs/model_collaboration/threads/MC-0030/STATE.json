@@ -3,7 +3,7 @@
   "thread_id": "MC-0030",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "OPEN",
-  "phase": "R0_P01_SYNTHETIC_ATOMIC_MEASUREMENT_FINALIZATION_PASS",
+  "phase": "R0_P01_F1_B01_DERIVED_PREDICATE_REFERENCE_PASS",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -109,16 +109,17 @@
       "Checkpoint 881 / Research 545 / Validation 233: 26 new end-to-end non-owner synthetic durable claim issuance and admission tests PASS across Ed25519 and synthetic ES256. Issued signed nonce and exact expected statement persisted with immutable public-signer genesis; prior unfinished claim superseded, one-time accepted proofs reverified after restart. 89 executable and 84 structural = 173 passing focused tests. Owner execution consent, real hardware, scorer and malicious whole-file rollback not qualified.",
       "Checkpoint 882 / Research 546 / Validation 234: synthetic governed issuance transactionally links affirmative source-labelled mock procedural permission to signed fresh run claim. Append-only-at-API nonsecret interruption/effort observations preserve interrupted history after replacement without changing cryptographic acceptance. 44 new real synthetic tests PASS; 133 executable and 84 structural = 217 focused PASS. Mock source label cannot establish true human owner approval. F1/F2 unfrozen, Attempt 002 not authorized.",
       "Checkpoint 883 / Research 547 / Validation 235: actual perf_counter_ns timing of synthetic Ed25519 OpenSSH and ES256 Node signer/admission, durable nonsecret elapsed and scripted call evidence, independent verified-journal descriptive assessment. 24 new tests PASS, 157 executable synthetic and 84 structural = 241 focused PASS. A post-admission/pre-observation crash can leave valid proof with missing timing; explicit observation_coverage=MISSING now flags, full finalization unqualified. No real human measurements or Attempt 002.",
-      "Checkpoint 884 / Research 548 / Validation 236: 22 additional executable Ed25519 and synthetic ES256 measured-admission tests PASS. Existing SQLite journal now atomically commits acceptance and monotonic technical-operation completion observation in optional governed measured admission path. Forced child exit before commit retains neither; after commit retains both and no replay. 179 synthetic tests and 84 structural tests = 263 focused PASS. Old unmeasured admission still flags MISSING; timing excludes commit/fsync/human work. No owner credentials or Attempt 002."
+      "Checkpoint 884 / Research 548 / Validation 236: 22 additional executable Ed25519 and synthetic ES256 measured-admission tests PASS. Existing SQLite journal now atomically commits acceptance and monotonic technical-operation completion observation in optional governed measured admission path. Forced child exit before commit retains neither; after commit retains both and no replay. 179 synthetic tests and 84 structural tests = 263 focused PASS. Old unmeasured admission still flags MISSING; timing excludes commit/fsync/human work. No owner credentials or Attempt 002.",
+      "Checkpoint 885 / Research 549 / Validation 237: 68 new independent-from-harness B01 derived-predicate and numeric boundary tests PASS. 286 existing unreviewed candidate B01 rows agree where predicates are sufficient; CASE-281 and CASE-282 need numeric winner input. 179 existing runnable synthetic and 84 structural guards pass, 331 focused total. Reference authored and tested by same collaborator, so not independently reviewed F1 freeze; raw evidence/site flags and complete scorer remain open."
     ],
-    "notes": "Owner-approved simplified accident/replacement policy remains distinct from cryptographic acceptance. Checkpoint 884 closes specifically observed success-commit/observation gap for the synthetic measured path, using actual forced process exits and signature verification. Not a full human measurement or successor scored oracle. 263 focused tests pass, F1/F2 UNFROZEN, Attempt 002 NOT AUTHORIZED. No automatic Claude review."
+    "notes": "The owner-approved simple accident/technical replacement procedure supersedes the historical B02 retry cap for that category only and does not influence scientific score. Checkpoint 885 implements a bounded separate B01 reference and manual expected cases. 68 new tests PASS (331 focused total), 286 predicate-complete historical draft cases agree, 2 need numeric selection. Remaining genuine F1 prerequisite is source-specific raw evidence to derived arm/flag semantics and independent complete expected scoring; no automatic full 55-unit review. F1/F2 unfrozen, Attempt 002 unauthorized."
   },
   "last_transition": {
-    "transition_id": "mc0030-r0-p01-synthetic-atomic-measurement-finalization",
+    "transition_id": "mc0030-r0-p01-b01-independent-derived-outcome-reference",
     "from_state": "OPEN",
     "to_state": "OPEN",
     "actor": "chatgpt",
-    "reason": "Close observed synthetic postacceptance/preobservation crash gap in the existing ledger, verifying atomic proof and observation commit across real process exits without reviving retry bureaucracy.",
-    "repository_head": "66cbc9e2bbbe3d4f3ef8b922b8d0148b6ec9a628"
+    "reason": "Implement 68 independent-from-runtime test-only B01 predicate/numeric expected cases and identify two missing numeric inputs in the 288-case unreviewed seed, without freezing policy or restarting retry review bureaucracy.",
+    "repository_head": "25485b0c1b16c777f5791e131292dbb1cde3268f"
   }
 }

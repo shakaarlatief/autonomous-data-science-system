@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 884
+**Checkpoint:** 885
 **Date:** 2026-10-12
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,19 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: atomic synthetic accepted-signature and timing finalization
+## Current active stage: bounded independent B01 scoring reference; raw-evidence qualification next
+
+Checkpoint 885 / Research 549 / Validation 237 introduce a **test-only derived-predicate B01 reference** independent of the owner harness, successor runtime/scorer and old 288-row draft generator. Twenty-three literal expected classifications cover INVALID source-flag precedence, G1 incomplete/no viable evidence, viability versus eligibility, G2 uncontested-arm disclosure and selected-arm volume failure. Exact Fraction arithmetic checks frozen 10-second small, 15-second large and B final tie-break thresholds and 97-acceptance/90-minute projection. A claimed case with both arms eligible **cannot be scored without actual selected-arm numeric evidence**.
+
+**68 new executable F1 reference tests PASS.** Diagnostic comparison against the existing unreviewed 288-row predicate table yields **286 predicate-complete agreements**; **CASE-281 and CASE-282** are underdetermined because numerical selection is absent from their inputs, and must not be prematurely frozen. The draft remains historically unchanged and unreviewed. Prior synthetic security/measurement suites rerun **179/179 PASS**; older source/provenance guards **84/84 PASS**. This gives **331 focused PASS** in bounded groups, not a fully independent frozen scored experiment.
+
+Crucial distinction: the new reference evaluates **already-derived** arm states and flags. It has not independently verified actual owner proof/terminal receipt semantics, genuine platform capability, flag provenance, 13 controls or the complete F1 scorer/oracle. The next practical development boundary is risk-focused raw-evidence-to-state/flag expected tests; the still-pending historical audit units are not automatically 55 individual freeze blockers. The same engineering collaborator authored the reference and test expectations: cross-author/scorer independence is not yet satisfied.
+
+The later explicitly owner-approved simple accidental/technical replacement procedure supersedes historical B02 retry caps for those replacements without changing a past trial score or cryptographic proof. Attempt 001 AMEND, historical B01/B02 bytes and audit receipts preserved. F1/F2 UNFROZEN, Attempt 002 NOT AUTHORIZED. R0-P02 PASS, R0-P03 pending; ADS physical architecture and work procedures remain unrestricted.
+
+---
+
+## Historical checkpoint 884 stage: atomic synthetic accepted-signature and timing finalization
 
 Checkpoint 884 / Research 548 / Validation 236 close the specific postadmission/preobservation crash gap identified at Checkpoint 883 for the bounded synthetic measured-admission path. Existing governed SyntheticClaimStore.admit now supports an optional monotonic start value. It verifies the real synthetic Ed25519 SSHSIG or WebAuthn-shaped ES256 proof, then computes elapsed technical-operation time and commits the accepted signature, consumed claim and nonsecret completion observation together in ONE SQLite transaction. The runner no longer writes a second completion observation after measured acceptance; no new database or schema change is introduced.
 

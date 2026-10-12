@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / P01 ATOMIC SYNTHETIC MEASURED ADMISSION PASS / OUTCOME VECTORS NEXT
+**Status:** OPEN / P01 B01 INDEPENDENT DERIVED OUTCOMES PASS / RAW EVIDENCE NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -699,5 +699,18 @@ Research 548 / Validation 236 / Checkpoint 884 extend the existing governed synt
     PHASE=R0_P01_SYNTHETIC_ATOMIC_MEASUREMENT_FINALIZATION_PASS
     NEXT_ACTOR=chatgpt
     NEXT_BOUNDARY=p-one-independent-successor-outcome-vectors
+    F1_F2=UNFROZEN
+    ATTEMPT_002=NOT_AUTHORIZED
+
+
+## Bounded B01 outcome reference and unresolved numeric input boundaries
+
+Checkpoint 885 / Research 549 / Validation 237 add a test-only prospective B01 reference module with no dependency on the older 288-row candidate table, owner harness or synthetic runtime scorer. Sixty-eight new explicitly stated tests verify derived-predicate integrity/instrument precedence, G1 incomplete evidence, G2 disclosure, exact 10s/15s/B tie-break and 97-acceptance/90-minute projected volume. Diagnostic comparison finds 286 of 288 predicate-complete draft rows agree; the remaining CASE-281 and CASE-282 do not include numeric winner inputs and therefore cannot be frozen as complete decisions. They are underdetermined, not disproved; the old draft remains unchanged.
+
+The existing synthetic security/measurement suites (179 runnable) and historical structural/source guards (84) also pass: 331 focused tests total. The same engineer authored the test-only reference and manually authored expectations; no F1 review/freeze, separate-language scorer, raw flag attribution or real owner effort has been qualified. The later human simplified accidental/technical replacement approval supersedes old B02 retry caps for that governed category, not the recorded score or signature requirements. No automatic Claude review is requested. Next task is bounded source-specific raw evidence and flag/state expected cases.
+
+    PHASE=R0_P01_F1_B01_DERIVED_PREDICATE_REFERENCE_PASS
+    NEXT_ACTOR=chatgpt
+    NEXT_BOUNDARY=p-one-raw-evidence-flag-independence
     F1_F2=UNFROZEN
     ATTEMPT_002=NOT_AUTHORIZED
