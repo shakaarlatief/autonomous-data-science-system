@@ -3,7 +3,7 @@
   "thread_id": "MC-0030",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "OPEN",
-  "phase": "R0_P01_F1_SYNTHETIC_RECEIPT_FLAG_REFERENCE_PASS",
+  "phase": "R0_P01_F1_NATIVE_SSH_VERIFIER_OBSERVATION_PASS",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -16,7 +16,7 @@
     {
       "collaborator_id": "chatgpt",
       "interaction_environment": "ChatGPT",
-      "interaction_session": "chatgpt-37",
+      "interaction_session": "chatgpt-38",
       "roles": [
         "TASK_OWNER",
         "RESEARCHER",
@@ -111,16 +111,17 @@
       "Checkpoint 883 / Research 547 / Validation 235: actual perf_counter_ns timing of synthetic Ed25519 OpenSSH and ES256 Node signer/admission, durable nonsecret elapsed and scripted call evidence, independent verified-journal descriptive assessment. 24 new tests PASS, 157 executable synthetic and 84 structural = 241 focused PASS. A post-admission/pre-observation crash can leave valid proof with missing timing; explicit observation_coverage=MISSING now flags, full finalization unqualified. No real human measurements or Attempt 002.",
       "Checkpoint 884 / Research 548 / Validation 236: 22 additional executable Ed25519 and synthetic ES256 measured-admission tests PASS. Existing SQLite journal now atomically commits acceptance and monotonic technical-operation completion observation in optional governed measured admission path. Forced child exit before commit retains neither; after commit retains both and no replay. 179 synthetic tests and 84 structural tests = 263 focused PASS. Old unmeasured admission still flags MISSING; timing excludes commit/fsync/human work. No owner credentials or Attempt 002.",
       "Checkpoint 885 / Research 549 / Validation 237: 68 new independent-from-harness B01 derived-predicate and numeric boundary tests PASS. 286 existing unreviewed candidate B01 rows agree where predicates are sufficient; CASE-281 and CASE-282 need numeric winner input. 179 existing runnable synthetic and 84 structural guards pass, 331 focused total. Reference authored and tested by same collaborator, so not independently reviewed F1 freeze; raw evidence/site flags and complete scorer remain open.",
-      "Checkpoint 886 / Research 550 / Validation 238: 63 new synthetic terminal-event and narrow source-flag independent-from-harness expected cases PASS. Four same-claim P0/S01/S02/S03 receipts required; WebAuthn cancellation needs correlated RP/browser issue/invoke/consume; NOT_REALIZABLE blocked without real independent capability producer; verifier ERROR distinct from INVALID, owner abort before Node exit suppresses instrument flag, exact old snapshot hash link and optional witness tested. 310 executable reference/security tests plus 84 structural = 394 passing. Actual RP/browser/SSH producer authenticity and full F1 remain unqualified."
+      "Checkpoint 886 / Research 550 / Validation 238: 63 new synthetic terminal-event and narrow source-flag independent-from-harness expected cases PASS. Four same-claim P0/S01/S02/S03 receipts required; WebAuthn cancellation needs correlated RP/browser issue/invoke/consume; NOT_REALIZABLE blocked without real independent capability producer; verifier ERROR distinct from INVALID, owner abort before Node exit suppresses instrument flag, exact old snapshot hash link and optional witness tested. 310 executable reference/security tests plus 84 structural = 394 passing. Actual RP/browser/SSH producer authenticity and full F1 remain unqualified.",
+      "Checkpoint 887 / Research 551 / Validation 239: first actual Windows OpenSSH SSHSIG verification-source observation over synthetic run-bound statements and public signer identity; 15 new executable cases plus prior B01 references passed. A real valid-foreign-signer negative caused a classifier repair before final testing. No durable producer-origin attestation, RP/browser lifecycle, true owner presence, full F1/F2 scoring or Attempt 002. Claude remains an independent reviewer, without an automatic new review cycle."
     ],
     "notes": "F1 progress at Checkpoint 886 includes bounded synthetic evidence completeness and partial source-flag reference, 63 new tests, 394 focused total. Synthetic RP/browser receipt booleans are not independently trustworthy: genuine producer binding remains the next task. No independently verifiable NOT_REALIZABLE capability probe yet. F1/F2 UNFROZEN and Attempt 002 NOT AUTHORIZED. The 2026-10-11 owner-approved simplified accidental replacement rule remains separate from scoring; avoid 55-note mandatory review bureaucracy or automatic Claude loops."
   },
   "last_transition": {
-    "transition_id": "mc0030-r0-p01-synthetic-source-shaped-receipts-and-flags",
+    "transition_id": "mc0030-r0-p01-native-ssh-verification-source-observation",
     "from_state": "OPEN",
     "to_state": "OPEN",
     "actor": "chatgpt",
-    "reason": "Add narrow source-shaped evidence-state and flag expected tests, guarding false WebAuthn terminal completion and false capability REOPEN without claiming host-trusted receipt origin or enlarging owner retry bureaucracy.",
-    "repository_head": "e6a886701f8f57fe968f97513baed98dd37d7ab1"
+    "reason": "Real non-owner OpenSSH proof verification observation with conservative invalid-versus-instrument-error interpretation; later producer and event provenance remains explicitly unqualified.",
+    "repository_head": "114f80c43fbb7cced495df82136cab65025ddbcb"
   }
 }

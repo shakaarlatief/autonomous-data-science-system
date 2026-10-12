@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 886
+**Checkpoint:** 887
 **Date:** 2026-10-12
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -13,8 +13,8 @@
 ```text
 Interaction environment  ChatGPT
 Project / workspace      Autonomous Data Science System
-Interaction session      chatgpt-37
-Conversation title       37 - Project System Realization Architecture and Qualification
+Interaction session      chatgpt-38
+Conversation title       38 - Trusted Evidence and Physical Realization Qualification
 Primary collaborator     ChatGPT
 ```
 
@@ -22,7 +22,19 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: bounded synthetic raw-event and source-flag evidence reference
+## Current active stage: bounded native SSH verification observation; independent producer authenticity next
+
+**Checkpoint 887 / Research 551 / Validation 239** introduce an execution-facing synthetic F1 SSH verification observer. Unlike the prior source-shaped receipt reference, it derives a local cryptographic verdict from a **real Windows OpenSSH subprocess** operating on the exact independently supplied expected run-bound statement, trusted enrolled public signer and presented public SSHSIG bytes. It records reproducible statement/proof digests, trusted signer identity, the verifier's actual exit status and a constrained failure classification.
+
+Native verification now distinguishes a real positive, mismatched signed message, disallowed signer, malformed proof, unknown verifier failure and process outage. The original 15-test pass was 14/15: a valid foreign-key signature produced a genuine OpenSSH refusal with empty stderr. That negative was classified correctly after inspecting the CLI output, and **15 new source-facing cases now PASS**. Prior F1 expectation checks and security/measurement regressions pass: 325 executable plus 84 structural tests, **409 focused PASS**. The aggregate public integrity gate also PASSES on the updated worktree. These are targeted/subsystem checks, not full integrated V3 or a frozen scored experiment; see Validation 239.
+
+**Scope boundary:** an in-process verifier observation is not authenticated durable provenance for an external receipt producer. Actual terminal event issuance, RP/browser WebAuthn correlation, complete independent capability evidence, all source flags, the full scorer and genuinely independent F1/F2 qualification remain open. No owner keys or attempt are involved. The next high-value boundary is independently re-verifiable claim-bound source artifacts and event-lifecycle receipts, not another owner-retry paperwork loop.
+
+B01/B02 original approvals and the simplified human-authorized accidental replacement policy remain preserved. Attempt 001 AMEND, F1/F2 UNFROZEN, real Attempt 002 NOT AUTHORIZED. R0-P02 PASS and R0-P03 pending; the physical Project System realization remains freely redesignable under D-036.
+
+---
+
+## Historical checkpoint 886 stage: bounded synthetic raw-event and source-flag evidence reference
 
 **Checkpoint 886 / Research 550 / Validation 238** add a second small, synthetic-only independent F1 reference for raw-event evidence completeness and a narrow source-flag subset. A complete arm requires REALIZABLE setup and distinct, same-attempt P0/S01/S02/S03 terminal receipts. SSH owner-stop/exhausted-budget and WebAuthn consumed cancellation can count as terminal no-proof events without any successful signature. RP/browser cancellation requires correlated issuance, delivery, invocation and consumption fields; owner Ctrl+C, missing terminal events, skipped setup and claimed incapability cannot silently become COMPLETED or NOT_REALIZABLE. **No independently qualified platform capability producer exists in this test reference**, and purported capability proofs fail closed.
 
