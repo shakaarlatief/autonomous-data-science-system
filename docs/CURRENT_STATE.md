@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 891
+**Checkpoint:** 892
 **Date:** 2026-10-12
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,17 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: prospective R0 owner-authentication direction adopted; R0-P03 fixture preparation next
+## Current active stage: R0-P03 whole-system navigation research and prospective fixture design
+
+**Checkpoint 892 / Research 556 / Validation 244** reconstruct the integrated Product/Project, J1/J2/J3, AO, WARRANT-F, source-authority, architecture-evolution and migration context and reconcile it with Research 217's historically successful controlled-subject navigation. Research 313 and 507 explicitly remove target-preservation rights from the old subject architecture. Therefore R0-P03 must compare B0 (selected V03 relation substrate plus lexical search and derived orientation), B1 (Research 217 subjects), B2 (additional carrier-to-governing links), B3 (selective concerns), and conditionally B4 (semantic retrieval) without preferring any arm.
+
+Read-only Git-tracked corpus audit found all 65/65 old W5 T1 carrier paths and all 36/36 distinct must-retrieve source paths in its nine scenarios still present. **Existence is not current authority or prospective benchmark validity.** The physical successor V03 common substrate is not deployed; any comparison must use source-bound neutral test facts with exact roles/status and identical shared capabilities. Preserve Research 513's 12 new tasks, 9 legacy cases, 60/20 role-aware build/holdout target, two fresh evaluators and fair comparable arm treatment without freezing a new task/oracle prematurely.
+
+**Next:** derive a prospective common-substrate, eligible-source and sample/split contract candidate, and use bounded independent design critique where it adds value before the exact P03 fixture freeze. R0-P02 remains PASS; R0-P01 Attempt 001 AMEND and successor 002 deferred; the Research 555 narrow owner-authentication governance choice is unchanged. No scored P03 experiment, physical target selection, migration, or authority switch.
+
+---
+
+## Historical checkpoint 891 stage: prospective R0 owner-authentication direction adopted; R0-P03 fixture preparation next
 
 **Checkpoint 891 / Research 555 / Validation 243** record the owner's narrowly scoped decision to continue **current architecture development** with explicit conversational human approvals preserved in project records, while preserving an **unactivated/future-selectable** detached owner-proof design without requiring R0-P01 Attempt 002 to finish before the physical architecture can be selected. The owner explicitly reaffirmed that ADS seeks the **best whole-system architecture**, not merely minimal engineering. This is a prospective change to R0 probe sequencing and selection preparation, **not** a general change to the project philosophy or a retroactive edit of Research 503/512/513.
 

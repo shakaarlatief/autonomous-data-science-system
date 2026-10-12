@@ -3,7 +3,7 @@
   "thread_id": "MC-0030",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "OPEN",
-  "phase": "R0_OWNER_AUTHENTICATION_GATE_AMENDED_P03_NEXT",
+  "phase": "R0_P03_SOURCE_RECONCILED_COMMON_SUBSTRATE_PREFREEZE_NEXT",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -116,16 +116,17 @@
       "Checkpoint 888 / Research 552 / Validation 240: 22 new tests qualify a separate read-only consumer of the existing synthetic issued/admitted SSH journal. The selected nonce and trust context are independently supplied, journal rows are checked and admitted proofs reverified by actual OpenSSH including a fresh-process replay. 431 focused tests PASS. No independent journal writer attestation, anti-rollback witness, authentic owner/event lifecycle, full F1/F2 freeze or Attempt 002. One source-tamper negative demonstrates that a valid signed proof can be inserted into an ADMITTED local row without a trusted issuer admission, so producer authentication is not established.",
       "Checkpoint 889 / Research 553 / Validation 241: 31 new verification-only Node SSHSIG parser/Ed25519 tests, cross-checked against real OpenSSH with public synthetic proof material. 462 focused checks PASS. Scorer cryptographic primitive independent from owner OpenSSH verifier, but authored and tested in same ChatGPT session; source authentication, browser/RP event provenance, independently frozen scorer oracle, full F1/F2 and Attempt 002 remain open.",
       "Checkpoint 890 / Research 554 / Validation 242: 47 new verification-only synthetic WebAuthn ES256 tests PASS; 509 focused checks PASS. Separate Node implementation checks RP origin/hash, client challenge, credential trust and P-256 signature without importing historical RP. Synthetic-only marker/credential, same Node cryptography backend, no browser/Windows Hello source-origin evidence, no blind independent author, no full scorer, no F1/F2 freeze or Attempt 002.",
-      "Checkpoint 891 / Research 555: owner explicitly directed recorded-chat authentication for CURRENT architecture development, preserving best-architecture design principles. Detached cryptographic J1 proof remains future-selectable/unactivated, and the Research 513 conjunctive P01 PASS_WITH_SELECTION preselection requirement is prospectively superseded. P01 Attempt 001 remains AMEND, F1/F2 unfrozen, real Attempt 002 deferred/unapproved. Research 517 P02 PASS remains limited to synthetic proof and actual Git transport. R0-P03 is next under its prospective fixture requirements. Research 503 R0-R02 remains NOT DEMONSTRATED by chat; no production activation or physical target selected."
+      "Checkpoint 891 / Research 555: owner explicitly directed recorded-chat authentication for CURRENT architecture development, preserving best-architecture design principles. Detached cryptographic J1 proof remains future-selectable/unactivated, and the Research 513 conjunctive P01 PASS_WITH_SELECTION preselection requirement is prospectively superseded. P01 Attempt 001 remains AMEND, F1/F2 unfrozen, real Attempt 002 deferred/unapproved. Research 517 P02 PASS remains limited to synthetic proof and actual Git transport. R0-P03 is next under its prospective fixture requirements. Research 503 R0-R02 remains NOT DEMONSTRATED by chat; no production activation or physical target selected.",
+      "Checkpoint 892 / Research 556 re-establish the complete ADS architecture context and read Research 217 old scenarios/corpus before any P03 fixture freeze. ChatGPT/chatgpt-38 has seen old B1 fixture answer keys and must not serve as an unexposed primary task author or fresh blind evaluator without exact limitations. Claude/claude-04 has extensive prior R0 design and critique exposure and may be used as a comparative critic, not automatically as fresh blind evaluator. No P03 corpus, source oracle or task prompts frozen and no P03 arm executed."
     ],
-    "notes": "Checkpoint 891 governs R0 preselection routing: continue recorded conversational owner decisions in present development, keep cryptographic proof architecture future-selectable but unactivated; no implied production signature or automatic R0-P01 retry. P02 PASS is preserved only in its tested synthetic/Git scope; P03 fixture preparation next. R0-R02 independent authenticity unresolved and must be explicitly dispositioned before physical target acceptance. Best whole-system architecture objective unchanged."
+    "notes": "Checkpoint 892 / Research 556: P03 whole-system source/frame preparation only. Next is neutral common V03 substrate + eligible-source/corpus sampling contract candidate, before prospective freeze and independent review. Old W5 corpus 65/65 paths and legacy must-retrieve 36/36 exist but authority currentness unverified; B0-B4 untouched, no score. P01 deferred by Research 555, P02 PASS unchanged."
   },
   "last_transition": {
-    "transition_id": "mc0030-owner-authentication-prospective-probe-gate-amendment",
+    "transition_id": "mc0030-r0-p03-whole-system-source-reconciliation-prefreeze",
     "from_state": "OPEN",
     "to_state": "OPEN",
     "actor": "chatgpt",
-    "reason": "Owner-authorized narrow amendment to R0 P01 gating and present-development chat authorization, preserving P02 result scope and enabling P03, without claiming independently authenticated J1 production authority.",
-    "repository_head": "8705034ce584cb40cb4b4d7ec3dd520c46dd1e64"
+    "reason": "Record prefreeze R0-P03 source and full-system architecture context, preserving old subject-baseline evidence and evaluator independence while defining next common-substrate/corpus design boundary.",
+    "repository_head": "72d70a7cb2658a1ccfe72d82090b6e0130d4e2b7"
   }
 }
