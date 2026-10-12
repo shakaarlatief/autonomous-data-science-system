@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 888
+**Checkpoint:** 889
 **Date:** 2026-10-12
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,19 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: read-only SSH claim-source verification; producer-origin attestation next
+## Current active stage: independent SSHSIG scorer verification component; integrated F1 next
+
+**Checkpoint 889 / Research 553 / Validation 241** add a standalone verification-only Node SSHSIG parser and Ed25519 verifier that does **not** reuse the owner harness's `ssh-keygen -Y verify` routine or import the synthetic signer worker. Its inputs include a separately supplied trusted run-bound statement and enrolled public SSH key/identity. It validates the complete SSHSIG frame, protocol namespace, hash algorithm, reserved field and public signer, independently reconstructs the signed message and verifies the signature with built-in Node cryptography.
+
+**31 new tests PASS and 462/462 focused checks PASS** (378 executable and 84 structural). Actual synthetic signatures are cross-compared with Windows OpenSSH. A test-only assertion correction was needed after a correctly rejected signature included additional diagnostic hashes; no verifier code or security threshold was weakened.
+
+This is **one scorer component**, not an integrated or independently frozen F1 scorer. The scoring caller's trust inputs, authentic RP/browser and owner event receipts, true capability evidence, complete source-flag derivation, dual-author golden expectations, Windows F2 proof and whole A/B/C experiment remain open. The Node verifier is independent of the owner harness's OpenSSH verification implementation, but this same interaction session authored its implementation and tests. It does not establish independent reviewer qualification or source-origin authenticity.
+
+**Next:** prioritize the smallest source-bound integrated F1 scoring and real event-lifecycle qualification that permits a fair, safe Attempt 002, rather than creating additional synthetic journal layers. Preserve R0-P01 scientific validity and proportionate review. Historical Attempt 001 AMEND and accepted B01/B02/procedural replacement remain unchanged; R0-P02 PASS, R0-P03 pending, F1/F2 UNFROZEN and Attempt 002 NOT AUTHORIZED. D-036 physical architecture remains open.
+
+---
+
+## Historical checkpoint 888 stage: read-only SSH claim-source verification; producer-origin attestation next
 
 **Checkpoint 888 / Research 552 / Validation 240** add a distinct, read-only, source-aware consumer that binds an externally supplied synthetic issuer identity, public signer, contract template, exact acceptance ID and selected nonce to the current durable `SyntheticClaimStore` journal. It checks the stored genesis, sequence, full claim roster, expected statement bytes, status, admission payload and auxiliary source records, then **re-verifies every recorded SSH admission using actual Windows OpenSSH**. A fresh verifier process can assess an admitted signature without access to the ephemeral signer. Unadmitted/superseded claims are NOT_RUN, and forged status, tampered proof, changed semantic claim, missing source and corrupt historical rows fail closed.
 

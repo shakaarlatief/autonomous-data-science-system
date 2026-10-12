@@ -3,7 +3,7 @@
   "thread_id": "MC-0030",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "OPEN",
-  "phase": "R0_P01_F1_SSH_CLAIM_SOURCE_AS_PRESENTED_PASS",
+  "phase": "R0_P01_F1_INDEPENDENT_SSHSIG_VERIFIER_COMPONENT_PASS",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -113,16 +113,17 @@
       "Checkpoint 885 / Research 549 / Validation 237: 68 new independent-from-harness B01 derived-predicate and numeric boundary tests PASS. 286 existing unreviewed candidate B01 rows agree where predicates are sufficient; CASE-281 and CASE-282 need numeric winner input. 179 existing runnable synthetic and 84 structural guards pass, 331 focused total. Reference authored and tested by same collaborator, so not independently reviewed F1 freeze; raw evidence/site flags and complete scorer remain open.",
       "Checkpoint 886 / Research 550 / Validation 238: 63 new synthetic terminal-event and narrow source-flag independent-from-harness expected cases PASS. Four same-claim P0/S01/S02/S03 receipts required; WebAuthn cancellation needs correlated RP/browser issue/invoke/consume; NOT_REALIZABLE blocked without real independent capability producer; verifier ERROR distinct from INVALID, owner abort before Node exit suppresses instrument flag, exact old snapshot hash link and optional witness tested. 310 executable reference/security tests plus 84 structural = 394 passing. Actual RP/browser/SSH producer authenticity and full F1 remain unqualified.",
       "Checkpoint 887 / Research 551 / Validation 239: first actual Windows OpenSSH SSHSIG verification-source observation over synthetic run-bound statements and public signer identity; 15 new executable cases plus prior B01 references passed. A real valid-foreign-signer negative caused a classifier repair before final testing. No durable producer-origin attestation, RP/browser lifecycle, true owner presence, full F1/F2 scoring or Attempt 002. Claude remains an independent reviewer, without an automatic new review cycle.",
-      "Checkpoint 888 / Research 552 / Validation 240: 22 new tests qualify a separate read-only consumer of the existing synthetic issued/admitted SSH journal. The selected nonce and trust context are independently supplied, journal rows are checked and admitted proofs reverified by actual OpenSSH including a fresh-process replay. 431 focused tests PASS. No independent journal writer attestation, anti-rollback witness, authentic owner/event lifecycle, full F1/F2 freeze or Attempt 002. One source-tamper negative demonstrates that a valid signed proof can be inserted into an ADMITTED local row without a trusted issuer admission, so producer authentication is not established."
+      "Checkpoint 888 / Research 552 / Validation 240: 22 new tests qualify a separate read-only consumer of the existing synthetic issued/admitted SSH journal. The selected nonce and trust context are independently supplied, journal rows are checked and admitted proofs reverified by actual OpenSSH including a fresh-process replay. 431 focused tests PASS. No independent journal writer attestation, anti-rollback witness, authentic owner/event lifecycle, full F1/F2 freeze or Attempt 002. One source-tamper negative demonstrates that a valid signed proof can be inserted into an ADMITTED local row without a trusted issuer admission, so producer authentication is not established.",
+      "Checkpoint 889 / Research 553 / Validation 241: 31 new verification-only Node SSHSIG parser/Ed25519 tests, cross-checked against real OpenSSH with public synthetic proof material. 462 focused checks PASS. Scorer cryptographic primitive independent from owner OpenSSH verifier, but authored and tested in same ChatGPT session; source authentication, browser/RP event provenance, independently frozen scorer oracle, full F1/F2 and Attempt 002 remain open."
     ],
     "notes": "F1 progress at Checkpoint 886 includes bounded synthetic evidence completeness and partial source-flag reference, 63 new tests, 394 focused total. Synthetic RP/browser receipt booleans are not independently trustworthy: genuine producer binding remains the next task. No independently verifiable NOT_REALIZABLE capability probe yet. F1/F2 UNFROZEN and Attempt 002 NOT AUTHORIZED. The 2026-10-11 owner-approved simplified accidental replacement rule remains separate from scoring; avoid 55-note mandatory review bureaucracy or automatic Claude loops."
   },
   "last_transition": {
-    "transition_id": "mc0030-r0-p01-readonly-ssh-source-reverification",
+    "transition_id": "mc0030-r0-p01-independent-sshsig-verifier-component",
     "from_state": "OPEN",
     "to_state": "OPEN",
     "actor": "chatgpt",
-    "reason": "Verify already-admitted synthetic SSH proof against trusted expected claim and durable source as presented, while leaving producer-origin authenticity and real event lifecycles explicitly unqualified.",
-    "repository_head": "27bfc20bc31e3b9d3267fb2a67cd25bcfb71efb4"
+    "reason": "Qualify a separate SSHSIG parsing and Ed25519 public-key proof-verification path for the future independent scorer without claiming full F1/F2 or issuer provenance.",
+    "repository_head": "6167ade5793a0c505cc3c7922511769032d031a9"
   }
 }
