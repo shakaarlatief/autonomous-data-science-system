@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "contract_id": "R0_P03_SHARED_V03_COMPARISON_CANDIDATE_V01",
+  "state": "UNFROZEN_NONEXECUTING",
+  "authority": "P03 experiment design representation only. Not a deployed J1/J2/J3 source, production schema, governing acceptance, or scored input.",
+  "source_ref": "22a63604e382f73b7fe661937ed4852ecf7da672",
+  "exact_record_contract": {
+    "carrier": {
+      "required": [
+        "source_path",
+        "git_commit",
+        "git_blob_oid",
+        "information_role",
+        "natural_owner",
+        "evidence_class",
+        "authority_currentness_basis"
+      ],
+      "optional": [
+        "governing_identity_reference",
+        "historical_successor_reference",
+        "source_scope",
+        "historical_effective_time",
+        "privacy_projection"
+      ],
+      "restrictions": [
+        "A Git path, filename, age, or presence in the corpus cannot imply semantic identity or current governing authority.",
+        "Source authority and currentness must be source-cited; unknown status is explicit rather than inferred from directory location.",
+        "Git blob identity is source-byte provenance, not an accepted effect identifier."
+      ]
+    },
+    "governing_effect": {
+      "required": [
+        "effect_reference",
+        "exact_subject_reference",
+        "governing_status",
+        "scope",
+        "lineage_reference",
+        "source_provenance"
+      ],
+      "restrictions": [
+        "Acceptance and effect references used in the probe must be grounded in actual accepted records or explicitly marked synthetic V03 analogues.",
+        "Exact governed subjects are NOT Research 217 topical subjects or B3 navigation concerns."
+      ]
+    },
+    "shared_relation": {
+      "required": [
+        "source_reference",
+        "target_reference",
+        "semantic_relation_family",
+        "source_provenance",
+        "authority_basis"
+      ],
+      "illustrative_families": [
+        "accepted_governing_relation",
+        "lineage_currentness",
+        "completion",
+        "j2_realization_coverage",
+        "evidence_receipt",
+        "ao_activation_dependency"
+      ],
+      "restrictions": [
+        "Illustrative family labels are not a new selected production enum.",
+        "Only relations supported by source evidence or explicitly labeled synthetic fixture facts may be supplied.",
+        "Derived reverse/closure edges must preserve their source edge and cannot acquire new authority."
+      ]
+    },
+    "derived_orientation": {
+      "required": [
+        "source_head_or_checkpoint",
+        "generated_from_source_digests",
+        "derived_non_authoritative_label",
+        "current_governing_summary",
+        "navigation_entry_points",
+        "staleness_visible"
+      ],
+      "restrictions": [
+        "The exact same bounded connector-readable representation and access methods must be supplied to all arms.",
+        "Deleted derived indexes can reduce discovery but must not alter governing validity or current state."
+      ]
+    }
+  },
+  "shared_capabilities": {
+    "all_arms": [
+      "information_role_and_natural_owner",
+      "accepted_effect_id_and_exact_governed_subject",
+      "lineage_and_currentness",
+      "completion",
+      "j2_coverage",
+      "evidence_receipts",
+      "authority_class_labels",
+      "lexical_full_text",
+      "connector_readable_derived_orientation"
+    ],
+    "not_common_by_default": [
+      "research217_topical_memberships",
+      "extra_editorial_about_links",
+      "prospective_governed_navigation_concerns",
+      "semantic_similarity_rankings"
+    ]
+  },
+  "comparison_augmentations": {
+    "B0": {
+      "additional_signals": [],
+      "cannot_be_removed": [
+        "shared_relations",
+        "lexical_full_text",
+        "derived_orientation"
+      ]
+    },
+    "B1": {
+      "additional_signals": [
+        "controlled_topical_vocabulary",
+        "source_owned_topical_memberships",
+        "semantic_polyhierarchy",
+        "optional_preferred_route"
+      ],
+      "historical_source": "Research 217 / W5 T1 V02",
+      "no_auto_win": true
+    },
+    "B2": {
+      "additional_signals": [
+        "editorial_carrier_to_governing_about_links"
+      ],
+      "admission_rule": "May only add a source-owned discovery/about relation not already contained in the common J1/J2/lineage/coverage/receipt substrate. Such links are navigation references, not new governing acceptance or J2 realization.",
+      "collapse_rule": "If every purported extra link duplicates a common relation, classify the arm as non-distinct before scoring rather than fabricating a difference."
+    },
+    "B3": {
+      "additional_signals": [
+        "bounded_cross_cutting_concern_vocabulary",
+        "explicit_concern_assignments"
+      ],
+      "admission_rule": "Navigation concerns are independently maintained concepts, not accepted-effect exact subjects, natural owner roles, authority statuses or general purpose semantic identities."
+    },
+    "B4": {
+      "additional_signals": [
+        "ranked_semantic_candidate_retrieval"
+      ],
+      "admission_rule": "Adds only labeled non-authoritative retrieval candidates to one prospectively selected justified structured arm, with matched retrieval budgets and explicit source provenance.",
+      "conditional": true
+    }
+  },
+  "fairness_invariants": [
+    "Identical source revision, source-role/currentness ground truth, common relations and derived orientation for every arm.",
+    "No generated navigation value, search rank or editorial about-link may create J1 authority.",
+    "All comparative authoring, maintenance and tool budgets are counted; historical B1 authoring is reported rather than credited as free.",
+    "No selected corpus, gold answer, evaluator transcript, candidate implementation or navigation score is provided by this design-only contract."
+  ],
+  "open_validation_questions": [
+    "How will an independently reviewed oracle map actual current source authority and historical supersession into shared records without treating the future V03 software as already deployed?",
+    "Which physical public projection can all evaluators read through equivalent connector contracts?",
+    "Can non-duplicate B2 and genuinely distinct B3 additions be instantiated for the representative corpus?",
+    "How are optional B4 equalized engineering and index behavior qualified before inclusion?"
+  ]
+}

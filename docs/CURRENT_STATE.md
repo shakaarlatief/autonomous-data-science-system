@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 892
+**Checkpoint:** 893
 **Date:** 2026-10-12
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,17 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: R0-P03 whole-system navigation research and prospective fixture design
+## Current active stage: R0-P03 comparator substrate and Git-bound source-frame candidate qualified; independent design challenge next
+
+**Checkpoint 893 / Research 557 / Validation 245** create a source-equal V03 semantic comparison contract for R0-P03's B0-B4 arms and an executable, read-only exact-Git candidate source census. The common comparison layer contains the selected V03 meaning/relations, typed provenance, authority/currentness basis, lexical retrieval and connector-readable **derived** orientation. Research 217 topics, extra editorial about-links, cross-cutting concerns and potential semantic retrieval remain distinct optional comparator additions. B2 cannot gain experimental credit for restoring relations withheld artificially from B0.
+
+**11/11 non-scored candidate tests PASS.** A census bound to Checkpoint 892 source ref `22a63604e382f73b7fe661937ed4852ecf7da672` yields **1533 disjoint tracked Markdown candidate source paths in ten strata** and proposes 6 build + 2 held-out per stratum (60/20). These are sampling population candidates, **not** semantic roles or current governing records. Build anchors are prospective and public; **no exact corpus, heldout identities, sampling seed, 12 task oracles, scoring or arm trial has been frozen**. Later separated fixture custody and substantive relevance/currentness review are required before arm realization.
+
+**Next:** a bounded independent design challenge on the neutral substrate and stratum representativeness, B2/B3 nonduplication and prospective heldout/task-oracle independence, followed by a targeted reconciliation. This is not an automatic broad review campaign. The accepted whole-system best-architecture ambition remains unchanged. R0-P02 PASS and R0-P01 AMEND/deferred are preserved, as is Research 555's owner-authentication decision. No final physical target, migration, production implementation or cutover is authorized.
+
+---
+
+## Historical checkpoint 892 stage: R0-P03 whole-system navigation research and prospective fixture design
 
 **Checkpoint 892 / Research 556 / Validation 244** reconstruct the integrated Product/Project, J1/J2/J3, AO, WARRANT-F, source-authority, architecture-evolution and migration context and reconcile it with Research 217's historically successful controlled-subject navigation. Research 313 and 507 explicitly remove target-preservation rights from the old subject architecture. Therefore R0-P03 must compare B0 (selected V03 relation substrate plus lexical search and derived orientation), B1 (Research 217 subjects), B2 (additional carrier-to-governing links), B3 (selective concerns), and conditionally B4 (semantic retrieval) without preferring any arm.
 
