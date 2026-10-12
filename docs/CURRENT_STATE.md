@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 889
+**Checkpoint:** 890
 **Date:** 2026-10-12
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,17 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: independent SSHSIG scorer verification component; integrated F1 next
+## Current active stage: independently verified SSH and synthetic WebAuthn proof components; event-source qualification next
+
+**Checkpoint 890 / Research 554 / Validation 242** add a separate verification-only synthetic WebAuthn ES256 scorer primitive. It independently checks the expected signed statement, enrolled P-256 public key and credential ID, WebAuthn `clientDataJSON` origin/challenge, strict JSON keys and UTF-8, authenticator RP ID hash/UP/UV flags and DER signature, without importing the legacy RP or trusting its reported verdict. **47 new non-owner tests PASS; 509/509 focused checks PASS** (425 executable and 84 structural). Together with Checkpoint 889's independent SSHSIG verifier, both proof arms now have bounded scorer-side cryptographic checks.
+
+These checks are **not** a full or frozen F1 scorer. The test credentials are ephemeral and synthetic. No real browser/RP `navigator.credentials` event, native Windows Hello capability, issuer/source-origin attestation, four same-attempt terminal events, owner participation or accurate complete A/B/C burden comparison has been established. The ES256 candidate's `synthetic_non_owner` proof field is a test profile only, not a finalized real browser evidence grammar. Both Node verifier components use built-in cryptography, so no independent backend/library provenance is claimed.
+
+**Next priority:** genuine claim-bound RP/browser event production, robust terminal/failure/capability observation and its integration with independently checked cryptography and full F1 scoring. Avoid unrelated synthetic infrastructure expansion; re-evaluate practical sufficiency for Attempt 002. Historical B01/B02, simpler approved interruption replacement and Attempt 001 AMEND remain untouched. F1/F2 UNFROZEN, Attempt 002 NOT AUTHORIZED, R0-P02 PASS, R0-P03 pending, and the D-036 physical ADS realization remains fully open.
+
+---
+
+## Historical checkpoint 889 stage: independent SSHSIG scorer verification component; integrated F1 next
 
 **Checkpoint 889 / Research 553 / Validation 241** add a standalone verification-only Node SSHSIG parser and Ed25519 verifier that does **not** reuse the owner harness's `ssh-keygen -Y verify` routine or import the synthetic signer worker. Its inputs include a separately supplied trusted run-bound statement and enrolled public SSH key/identity. It validates the complete SSHSIG frame, protocol namespace, hash algorithm, reserved field and public signer, independently reconstructs the signed message and verifies the signature with built-in Node cryptography.
 

@@ -910,6 +910,11 @@ docs/checkpoints/888_r0_p01_ssh_source_reverification_and_producer_origin_next.m
 docs/research/553_r0_p01_independent_sshsig_ed25519_verifier_candidate.md
 docs/local_execution/validation/241_r0_p01_independent_sshsig_crypto_verifier.md
 docs/checkpoints/889_r0_p01_independent_sshsig_verification_and_integrated_f1_next.md
+docs/research/554_r0_p01_independent_webauthn_es256_verifier_candidate.md
+docs/local_execution/validation/242_r0_p01_independent_webauthn_es256_verification.md
+docs/checkpoints/890_r0_p01_independent_webauthn_verification_and_event_source_next.md
+experiments/r0_p01_successor_synthetic/independent_webauthn_es256_verify.mjs
+tests/unit/test_r0_p01_independent_webauthn_es256_verifier.py
 experiments/r0_p01_successor_synthetic/independent_sshsig_verify.mjs
 tests/unit/test_r0_p01_independent_sshsig_verifier.py
 experiments/r0_p01_successor_synthetic/independent_ssh_claim_source.py
@@ -1661,7 +1666,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-889 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-890 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 
