@@ -1,7 +1,7 @@
 # Current State
 
-**Checkpoint:** 882
-**Date:** 2026-10-11
+**Checkpoint:** 883
+**Date:** 2026-10-12
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
 **Promoted V1 integration branch:** `v1-frontend-spike` at `2480109fadeee1e480ef03b82e335aacdf9adf91`
@@ -22,7 +22,19 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: governed synthetic run authorization and preserved interruption evidence
+## Current active stage: actual measured synthetic operation and descriptive outcome evidence
+
+**Checkpoint 883 / Research 547 / Validation 235** provide a bounded real synthetic-measurement rehearsal. The new synthetic_measurement.py times a scripted Ed25519 SSHSIG or WebAuthn-shaped ES256 signing/admission operation with the host monotonic perf_counter_ns clock, records measured milliseconds and the known number of scripted signer calls, and preserves interrupted/replaced run observations in the existing governed synthetic journal.
+
+The verified-journal assessment derives descriptive outcomes from **cryptographically reverified admission status**, not the words COMPLETED or ERROR. It retains superseded interrupted trials, recorded elapsed effort, authorization references, and actual single-use signer outcomes. Explicit observation_coverage=PRESENT/MISSING marks accepted signatures whose measurement was not recorded. **24 new executable tests PASS**; **157 synthetic execution-facing tests PASS** and **84 structural source/review guards PASS**, giving **241 focused PASS**. Both mechanisms are tested with synthetic ephemeral keys, actual installed cryptographic verification and an independent new-process report.
+
+The test clock measures local synthetic signing/admission operation latency, **not real human owner time**. Scripted calls are not human gestures and an automatically described verified signature is not a complete scientific attempt PASS. A crash after atomic admission but before the separate observation commit can still leave incomplete timing evidence: the report flags this missing coverage but the final evidence-finalization/recovery behavior remains unqualified. The next engineering boundary is bounded durable measurement finalization and honest failure/recovery, followed by independent outcome expected-case checks; no speculative B02 exceptional-retry review cycle should be resumed.
+
+The simplified owner-authorized accidental/technical replacement procedure remains authoritative only for fresh separately consented research execution, never cryptographic proof. Real Attempt 002 NOT AUTHORIZED, F1/F2 UNFROZEN; historical Attempt 001 AMEND, accepted B01/B02 source bytes and legacy audits preserved. R0-P02 PASS, R0-P03 pending; physical ADS architecture remains freely revisable.
+
+---
+
+## Historical checkpoint 882 stage: governed synthetic run authorization and preserved interruption evidence
 
 Checkpoint 882 / Research 546 / Validation 234 expand the replaceable synthetic trusted claim store with a governed mode that requires a distinct affirmative synthetic controller approval before issuing a new run claim. Permission is saved atomically with the cryptographically bound nonce. Interruption, error and completion observations preserve synthetic elapsed milliseconds, interaction count and a short note without changing cryptographic claim admission. A replacement retains the previous interrupted claim and requires its own run-specific authorization and valid SSHSIG or synthetic ES256 signature.
 

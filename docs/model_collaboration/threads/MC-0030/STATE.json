@@ -3,7 +3,7 @@
   "thread_id": "MC-0030",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "OPEN",
-  "phase": "R0_P01_SYNTHETIC_GOVERNED_ISSUANCE_EVIDENCE_PASS",
+  "phase": "R0_P01_SYNTHETIC_ACTUAL_OPERATION_MEASUREMENT_PASS",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -107,16 +107,17 @@
       "Checkpoint 879 / Research 543 / Validation 231: 15 real synthetic durability/restart/concurrency tests PASS on bounded replaceable SQLite journal, 126 total tests PASS (42 execution-facing; 84 structural). Historical V02 signed statement lacks fresh run nonce and admits old valid proof into separate new-run database; deliberate negative observation remains an open essential successor security requirement. No owner credentials, F1/F2 freeze or Attempt 002.",
       "Checkpoint 880 / Research 544 / Validation 232: 21 real Ed25519 OpenSSH and synthetic WebAuthn-shaped ES256 cross-run signed-nonce negative tests PASS using dedicated successor protocol fields, trusted expected statement and non-owner ephemeral signing. 63 actual execution-facing tests plus 84 structural tests passed independently (147 total). Run nonce now bound in signed bytes, but no durable trusted nonce issuance or successor ledger integration yet. No owner run/secret and no F1/F2 freeze.",
       "Checkpoint 881 / Research 545 / Validation 233: 26 new end-to-end non-owner synthetic durable claim issuance and admission tests PASS across Ed25519 and synthetic ES256. Issued signed nonce and exact expected statement persisted with immutable public-signer genesis; prior unfinished claim superseded, one-time accepted proofs reverified after restart. 89 executable and 84 structural = 173 passing focused tests. Owner execution consent, real hardware, scorer and malicious whole-file rollback not qualified.",
-      "Checkpoint 882 / Research 546 / Validation 234: synthetic governed issuance transactionally links affirmative source-labelled mock procedural permission to signed fresh run claim. Append-only-at-API nonsecret interruption/effort observations preserve interrupted history after replacement without changing cryptographic acceptance. 44 new real synthetic tests PASS; 133 executable and 84 structural = 217 focused PASS. Mock source label cannot establish true human owner approval. F1/F2 unfrozen, Attempt 002 not authorized."
+      "Checkpoint 882 / Research 546 / Validation 234: synthetic governed issuance transactionally links affirmative source-labelled mock procedural permission to signed fresh run claim. Append-only-at-API nonsecret interruption/effort observations preserve interrupted history after replacement without changing cryptographic acceptance. 44 new real synthetic tests PASS; 133 executable and 84 structural = 217 focused PASS. Mock source label cannot establish true human owner approval. F1/F2 unfrozen, Attempt 002 not authorized.",
+      "Checkpoint 883 / Research 547 / Validation 235: actual perf_counter_ns timing of synthetic Ed25519 OpenSSH and ES256 Node signer/admission, durable nonsecret elapsed and scripted call evidence, independent verified-journal descriptive assessment. 24 new tests PASS, 157 executable synthetic and 84 structural = 241 focused PASS. A post-admission/pre-observation crash can leave valid proof with missing timing; explicit observation_coverage=MISSING now flags, full finalization unqualified. No real human measurements or Attempt 002."
     ],
-    "notes": "Owner-approved simple declared-accident replacement process preserved without separate forensic Ctrl+C proof. New schema-v2 synthetic governed store records separate mock controller permission and durable observations; older signed decisions never accepted by a replacement. This is not proof of actual owner consent, secret-safe notes, measured live owner effort or full scoring. No automatic Claude review. Historical Attempt 001/B01/B02 unchanged, F1/F2 unfrozen and real Attempt 002 unauthorized."
+    "notes": "The approved owner simple accident-replacement procedure remains intact; a successful new synthetic trial does not erase interrupted effort. Checkpoint 883 records real monotonic synthetic host-operation measurements and descriptive cryptographically verified admission outcomes, not final F1 scientific scoring or human burden. Missing observation coverage after an admitted proof is explicitly exposed. All 241 focused tests PASS, F1/F2 UNFROZEN, Attempt 002 NOT AUTHORIZED. No automatic Claude review."
   },
   "last_transition": {
-    "transition_id": "mc0030-r0-p01-synthetic-governed-permission-and-incident-evidence",
+    "transition_id": "mc0030-r0-p01-synthetic-monotonic-measurement-and-descriptive-outcome",
     "from_state": "OPEN",
     "to_state": "OPEN",
     "actor": "chatgpt",
-    "reason": "Preserve interruption observations and run-specific synthetic controller approvals with actual cryptographic claim issuance while keeping human research governance separate from cryptographic proof.",
-    "repository_head": "b69c88d4eb456090fe64686bcd8d5222082c3fce"
+    "reason": "Replace only caller-reported synthetic effort with real measured technical operation time and derive descriptive results from reverified signed admissions while flagging missing postcommit observations, without overengineering policy.",
+    "repository_head": "7990c01215ad62a96f0508185851280e13a39af6"
   }
 }

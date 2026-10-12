@@ -889,6 +889,11 @@ docs/checkpoints/881_r0_p01_trusted_durable_synthetic_issuer_and_one_time_admiss
 docs/research/546_r0_p01_synthetic_owner_governed_run_evidence.md
 docs/local_execution/validation/234_r0_p01_synthetic_governed_run_and_incident_evidence.md
 docs/checkpoints/882_r0_p01_synthetic_governed_initiation_and_preserved_observations.md
+docs/research/547_r0_p01_monotonic_synthetic_measurement_and_descriptive_evidence.md
+docs/local_execution/validation/235_r0_p01_actual_synthetic_timing_and_descriptive_evidence.md
+docs/checkpoints/883_r0_p01_measured_synthetic_operation_and_missing_evidence_next.md
+experiments/r0_p01_successor_synthetic/synthetic_measurement.py
+tests/unit/test_r0_p01_synthetic_measurement.py
 tests/unit/test_r0_p01_governed_run_evidence.py
 experiments/r0_p01_successor_synthetic/trusted_claim_store.py
 tests/unit/test_r0_p01_trusted_claim_store.py
@@ -1627,7 +1632,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-882 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-883 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

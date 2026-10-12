@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / P01 SYNTHETIC GOVERNED RUN EVIDENCE PASS / MEASUREMENT NEXT
+**Status:** OPEN / P01 SYNTHETIC ACTUAL OPERATION TIMING PASS / EVIDENCE FINALIZATION NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -673,5 +673,18 @@ The synthetic-controller source label does not authenticate the human owner; act
     PHASE=R0_P01_SYNTHETIC_GOVERNED_ISSUANCE_EVIDENCE_PASS
     NEXT_ACTOR=chatgpt
     NEXT_BOUNDARY=p-one-synthetic-measurement-and-outcome-rehearsal
+    F1_F2=UNFROZEN
+    ATTEMPT_002=NOT_AUTHORIZED
+
+
+## Synthetic monotonic operation timing and descriptive evidence assessment
+
+Checkpoint 883 / Research 547 / Validation 235 provide actual non-owner local timing of synthetic SSH Ed25519 and WebAuthn-shaped ES256 signer/admission operations. The descriptive assessor derives outcomes from the journal's independently reverified cryptographic admission state, not from caller-provided completion notes. A synthetic interrupted run retains its measured elapsed effort after separately approved replacement. Twenty-four new executable test cases PASS, including a delayed-signing sensitivity check and cross-process reconstruction of the assessment; 157 synthetic executable tests and 84 provenance/structural guards = 241 focused PASS.
+
+A directly observed evidence gap is preserved: a crash after successful cryptographic admission but before the separate timing-observation commit can yield a valid proof with missing duration information. The report now explicitly flags observation coverage MISSING; finalization/recovery remains outstanding. No actual owner time, hardware user presence, independent complete F1 scorer or Attempt 002 run was measured. The owner-approved simple accident-replacement procedure remains unchanged. No automatic Claude review is requested.
+
+    PHASE=R0_P01_SYNTHETIC_ACTUAL_OPERATION_MEASUREMENT_PASS
+    NEXT_ACTOR=chatgpt
+    NEXT_BOUNDARY=p-one-measurement-finalization-and-recovery
     F1_F2=UNFROZEN
     ATTEMPT_002=NOT_AUTHORIZED
