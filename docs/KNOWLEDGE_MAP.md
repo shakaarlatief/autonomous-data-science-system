@@ -904,6 +904,11 @@ docs/checkpoints/886_r0_p01_bounded_receipt_flags_and_producer_authenticity_next
 docs/research/551_r0_p01_native_openssh_verification_observation.md
 docs/local_execution/validation/239_r0_p01_native_openssh_verification_observation.md
 docs/checkpoints/887_r0_p01_native_ssh_verification_and_source_binding_next.md
+docs/research/552_r0_p01_readonly_claim_source_ssh_reverification.md
+docs/local_execution/validation/240_r0_p01_readonly_ssh_claim_source_reverification.md
+docs/checkpoints/888_r0_p01_ssh_source_reverification_and_producer_origin_next.md
+experiments/r0_p01_successor_synthetic/independent_ssh_claim_source.py
+tests/unit/test_r0_p01_independent_ssh_claim_source.py
 experiments/r0_p01_successor_synthetic/trusted_ssh_observation.py
 tests/unit/test_r0_p01_trusted_ssh_observation.py
 experiments/r0_p01_successor_synthetic/independent_receipt_reference.py
@@ -1651,7 +1656,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-887 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-888 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

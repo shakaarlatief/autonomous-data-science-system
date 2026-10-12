@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 887
+**Checkpoint:** 888
 **Date:** 2026-10-12
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,21 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: bounded native SSH verification observation; independent producer authenticity next
+## Current active stage: read-only SSH claim-source verification; producer-origin attestation next
+
+**Checkpoint 888 / Research 552 / Validation 240** add a distinct, read-only, source-aware consumer that binds an externally supplied synthetic issuer identity, public signer, contract template, exact acceptance ID and selected nonce to the current durable `SyntheticClaimStore` journal. It checks the stored genesis, sequence, full claim roster, expected statement bytes, status, admission payload and auxiliary source records, then **re-verifies every recorded SSH admission using actual Windows OpenSSH**. A fresh verifier process can assess an admitted signature without access to the ephemeral signer. Unadmitted/superseded claims are NOT_RUN, and forged status, tampered proof, changed semantic claim, missing source and corrupt historical rows fail closed.
+
+**22 new source tests PASS; 431/431 focused checks PASS** (347 executable, 84 structural). This is scoped implementation and regression evidence, not a complete integrated V3 qualification or independently frozen scored F1 experiment. The previous Checkpoint 887 native SSH observer remains the upstream mechanism, and existing issuer, historical harness, original B01/B02 contract bytes and old owner evidence remain unchanged.
+
+An adversarial test deliberately inserts an already-valid synthetic signature into an ADMITTED journal row without a real issuer admission, showing why a verified signature does not authenticate its journal producer.
+
+**Trust limitation:** the result verifies signed evidence and a coherent issuer journal **as presented**. It does NOT cryptographically attest which process wrote that journal, verify actual human owner consent, prove externally current issuer history against complete rollback, or authenticate an actual P0/S01/S02/S03 terminal lifecycle. `source_origin_authenticated=False` remains explicit. The next meaningful task is producer/issuer authentication and genuine event-lifecycle evidence with proportionate WebAuthn RP/browser source checks where required, followed by independently qualified full F1 scoring.
+
+Owner-approved simplified accident replacement and historical Attempt 001 AMEND are preserved. F1/F2 UNFROZEN, real Attempt 002 NOT AUTHORIZED. R0-P02 PASS, R0-P03 pending; the D-036 physical architecture target remains completely open.
+
+---
+
+## Historical checkpoint 887 stage: bounded native SSH verification observation; independent producer authenticity next
 
 **Checkpoint 887 / Research 551 / Validation 239** introduce an execution-facing synthetic F1 SSH verification observer. Unlike the prior source-shaped receipt reference, it derives a local cryptographic verdict from a **real Windows OpenSSH subprocess** operating on the exact independently supplied expected run-bound statement, trusted enrolled public signer and presented public SSHSIG bytes. It records reproducible statement/proof digests, trusted signer identity, the verifier's actual exit status and a constrained failure classification.
 
