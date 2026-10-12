@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 893
+**Checkpoint:** 894
 **Date:** 2026-10-12
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,17 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: R0-P03 comparator substrate and Git-bound source-frame candidate qualified; independent design challenge next
+## Current active stage: R0-P03 source-frame design challenged; bounded Claude comparative review requested
+
+**Checkpoint 894 / Research 558 / Validation 246 / MC-0030 Message 061** preserve a non-scored adversarial audit of the R0-P03 experiment design and prepare one targeted review by Claude/claude-04. The Checkpoint 893 common-substrate and Markdown-only census remain *candidate*, not frozen/accepted. Exact `git ls-tree` inspection at the Checkpoint 893 source ref finds **2,231 Markdown, 485 JSON, 274 Python and 38 other files** across the scoped tracked `docs/tools/src/schemas/tests/experiments` paths. These are file counts, not automatic inclusion or semantic authority. The candidate frame covers **1,533 tracked Markdown paths**, leaving an important question about machine-readable natural-owner J2/code/evidence and whole-system navigation.
+
+The requested adversarial critique targets: source modality/eligibility, ten equal path-family sampling quotas, real authority/currentness in a neutral nondeployed V03 representation, B0/B2 and B1/B3 distinguishability, held-out/task/evaluator independence, and fair B4 feasibility. It must identify what could actually change the architecture choice and propose proportionate remedies without inventing review campaigns. Research 513's 12+9 cases, scientific thresholds and original B0-B4 arms remain unchanged.
+
+**Next actor: Claude / claude-04**, permitted to commit **only MC-0030 Message 062** as a comparative review, not as a fresh blind scorer. **No Claude execution or response has occurred from this ChatGPT chat**, and no scored task or held-out cohort exists. An external collaborator relay is still needed for that review. After intake, ChatGPT will reconcile concrete findings and prepare an exact, source-grounded P03 fixture prospectively. R0-P02 PASS, R0-P01 AMEND/deferred, best whole-system architecture design freedom and Specification 028 operational authority remain unchanged. No physical target selection or production cutover.
+
+---
+
+## Historical checkpoint 893 stage: R0-P03 comparator substrate and Git-bound source-frame candidate qualified; independent design challenge next
 
 **Checkpoint 893 / Research 557 / Validation 245** create a source-equal V03 semantic comparison contract for R0-P03's B0-B4 arms and an executable, read-only exact-Git candidate source census. The common comparison layer contains the selected V03 meaning/relations, typed provenance, authority/currentness basis, lexical retrieval and connector-readable **derived** orientation. Research 217 topics, extra editorial about-links, cross-cutting concerns and potential semantic retrieval remain distinct optional comparator additions. B2 cannot gain experimental credit for restoring relations withheld artificially from B0.
 

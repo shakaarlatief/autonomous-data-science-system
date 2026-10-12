@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / P01 SYNTHETIC RECEIPT AND FLAG REFERENCE PASS / TRUSTED PRODUCERS NEXT
+**Status:** OPEN / R0-P03 PREFREEZE COMPARATIVE DESIGN CRITIQUE MESSAGE062 PENDING
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -727,3 +727,18 @@ Research 550 / Validation 238 / Checkpoint 886 add a second test-only independen
     NEXT_BOUNDARY=p-one-trusted-receipt-producer-binding
     F1_F2=UNFROZEN
     ATTEMPT_002=NOT_AUTHORIZED
+
+
+## R0-P03 common-substrate and source-frame challenge, Claude Message 062 next
+
+Research 555 / Checkpoint 891 prospectively deferred P01 as a *mandatory R0 selection gate* under the owner's specific choice to continue current research development with recorded conversational authorizations; R0-P02 PASS remains bounded and unchanged. Checkpoints 892/893 and Research 556/557 reconstruct the full ADS Project architecture and prepare the source-grounded, unfrozen B0-B4 comparison contract plus a Git-bound candidate corpus census.
+
+Research 558 / Checkpoint 894 / MC-0030 Message 061 identify a material risk: the 1,533-path Markdown-only source frame may omit other natural-owner J2/machine-readable evidence, while ten equal path-family quotas and speculative sealed held-out custody are not proven to improve experimental validity. The message requests one targeted Claude comparative critique of source eligibility, shared V03 truth, arm distinguishability, fair evaluation and minimum proportionate refinements. This is **not** a repeated full independent architecture design and Claude is **not** a fresh blind scored evaluator.
+
+The request exists in Git for external relay. This ChatGPT tool surface does not directly invoke Claude. Do not claim a Claude result until Message 062 is actually received and committed under its bounded allowed path. No score, corpus freeze, hidden answer key, P01 repeat, implementation or physical target selection.
+
+    PHASE=R0_P03_TARGETED_CLAUDE_CRITIQUE_MESSAGE062_PENDING
+    NEXT_ACTOR=claude
+    NEXT=CLAUDE_MESSAGE_062
+    P03_FIXTURE=UNFROZEN
+    P03_SCORE=NOT_OBSERVED

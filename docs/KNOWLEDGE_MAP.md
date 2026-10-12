@@ -916,6 +916,10 @@ docs/checkpoints/890_r0_p01_independent_webauthn_verification_and_event_source_n
 docs/research/555_r0_owner_authentication_direction_and_probe_gate_amendment.md
 docs/research/556_r0_p03_source_reconciliation_and_prefreeze_design.md
 docs/research/557_r0_p03_common_substrate_and_source_census_candidate.md
+docs/research/558_r0_p03_prefreeze_adversarial_source_audit_and_review_boundary.md
+docs/model_collaboration/threads/MC-0030/messages/061_chatgpt_r0_p03_prefreeze_comparator_design_review_request.md
+docs/local_execution/validation/246_r0_p03_source_modality_and_collaboration_handoff.md
+docs/checkpoints/894_r0_p03_source_adversarial_review_handoff_prepared.md
 docs/local_execution/validation/245_r0_p03_source_census_and_shared_substrate_candidate.md
 docs/checkpoints/893_r0_p03_source_frame_contract_and_independent_review_next.md
 experiments/r0_p03_navigation_probe/source_census.py
@@ -1678,7 +1682,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-893 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-894 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

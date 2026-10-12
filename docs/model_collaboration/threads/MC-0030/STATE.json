@@ -3,7 +3,7 @@
   "thread_id": "MC-0030",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "OPEN",
-  "phase": "R0_P03_SOURCE_FRAME_AND_COMMON_SUBSTRATE_CANDIDATE_QUALIFIED",
+  "phase": "R0_P03_TARGETED_CLAUDE_CRITIQUE_MESSAGE062_PENDING",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -51,7 +51,7 @@
       ]
     }
   ],
-  "next_expected_actor": "chatgpt",
+  "next_expected_actor": "claude",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -118,16 +118,17 @@
       "Checkpoint 890 / Research 554 / Validation 242: 47 new verification-only synthetic WebAuthn ES256 tests PASS; 509 focused checks PASS. Separate Node implementation checks RP origin/hash, client challenge, credential trust and P-256 signature without importing historical RP. Synthetic-only marker/credential, same Node cryptography backend, no browser/Windows Hello source-origin evidence, no blind independent author, no full scorer, no F1/F2 freeze or Attempt 002.",
       "Checkpoint 891 / Research 555: owner explicitly directed recorded-chat authentication for CURRENT architecture development, preserving best-architecture design principles. Detached cryptographic J1 proof remains future-selectable/unactivated, and the Research 513 conjunctive P01 PASS_WITH_SELECTION preselection requirement is prospectively superseded. P01 Attempt 001 remains AMEND, F1/F2 unfrozen, real Attempt 002 deferred/unapproved. Research 517 P02 PASS remains limited to synthetic proof and actual Git transport. R0-P03 is next under its prospective fixture requirements. Research 503 R0-R02 remains NOT DEMONSTRATED by chat; no production activation or physical target selected.",
       "Checkpoint 892 / Research 556 re-establish the complete ADS architecture context and read Research 217 old scenarios/corpus before any P03 fixture freeze. ChatGPT/chatgpt-38 has seen old B1 fixture answer keys and must not serve as an unexposed primary task author or fresh blind evaluator without exact limitations. Claude/claude-04 has extensive prior R0 design and critique exposure and may be used as a comparative critic, not automatically as fresh blind evaluator. No P03 corpus, source oracle or task prompts frozen and no P03 arm executed.",
-      "Checkpoint 893 / Research 557 / Validation 245: ChatGPT authored a non-executing common-substrate B0-B4 contract and read-only ten-stratum Git source census over previously published Checkpoint 892 revision. The 1533-path public frame has proposed 60 build/20 heldout quotas but no cohort, seed, task answers, evaluator outputs or scored navigation arm. Eleven candidate tests PASS. ChatGPT is exposed to prospective build anchors and comparator design and is not a fresh blind P03 evaluator. No Claude critique received yet; next actor ChatGPT to coordinate targeted independent critique if supported, then reconcile before exact P03 fixture freeze."
+      "Checkpoint 893 / Research 557 / Validation 245: ChatGPT authored a non-executing common-substrate B0-B4 contract and read-only ten-stratum Git source census over previously published Checkpoint 892 revision. The 1533-path public frame has proposed 60 build/20 heldout quotas but no cohort, seed, task answers, evaluator outputs or scored navigation arm. Eleven candidate tests PASS. ChatGPT is exposed to prospective build anchors and comparator design and is not a fresh blind P03 evaluator. No Claude critique received yet; next actor ChatGPT to coordinate targeted independent critique if supported, then reconcile before exact P03 fixture freeze.",
+      "Checkpoint 894 / Research 558 / MC-0030 Message 061: ChatGPT audited actual fixed-source modalities (2231 Markdown, 485 JSON, 274 Python and 38 others) against the existing 1533-path Markdown-only P03 source frame, and exposed its sampling, currentness, B0/B2-B1/B3 distinction and heldout protocol limitations in an open comparative design critique. Claude/claude-04 is REQUESTED as an already-exposed R0 design critic to produce Message 062 only. No direct Claude tool execution, external relay, review response, independent blind scorer or P03 scored observation is claimed."
     ],
-    "notes": "Checkpoint 893: proposed V03 shared common comparison substrate and 10-stratum source frame validated (1533 tracked Markdown candidate paths; 11/11 non-scored checks). No source currentness oracle, exact corpus/split, private sampling seed, scored tasks or arm implementations. P03 independent contract critique/reconciliation next. Research 555 P01 deferral and P02 PASS unchanged."
+    "notes": "Message 061 queued a one-response targeted comparative design critique for Claude/claude-04, based on published Checkpoint 893 and Research 558. Claude is not a fresh blind scorer. Next actor Claude Message 062. Original R0-P03 fixture, sample, oracles and scores remain unfrozen/unobserved; no new P01 obligation; P02 PASS preserved."
   },
   "last_transition": {
-    "transition_id": "mc0030-p03-common-substrate-census-candidate-qualified",
+    "transition_id": "mc0030-p03-source-frame-risk-critique-handoff-061",
     "from_state": "OPEN",
     "to_state": "OPEN",
     "actor": "chatgpt",
-    "reason": "Qualify read-only Git-bound P03 source census and explicit B0-B4 shared semantic/provenance boundary; defer sealed heldout allocation and independent evaluation until controlled fixture review.",
-    "repository_head": "22a63604e382f73b7fe661937ed4852ecf7da672"
+    "reason": "Request bounded comparative Claude review of R0-P03 source modality, fair corpus frame, V03 substrate fidelity, navigation-arm distinctions and independence without starting scored experiment or creating additional mandatory gates.",
+    "repository_head": "bc1df6b35895df6605643efc161d796f24331ce1"
   }
 }
