@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / R0-P03 ROLE FRAME AND SOURCE WITNESS CANDIDATE / INDEPENDENT TASK REFERENCE NEXT
+**Status:** OPEN / R0-P03 SCRUBBED LEGACY REVIEWER INTAKE READY / FRESH REFERENCE REVIEWER UNASSIGNED
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -771,5 +771,21 @@ Next: prospectively qualify independent source-status/task/legacy answer authors
     PHASE=R0_P03_ROLE_FRAME_AND_SOURCE_WITNESS_CANDIDATE_QUALIFIED
     NEXT_ACTOR=chatgpt
     NEXT_BOUNDARY=p-three-independent-task-reference-method
+    P03_FIXTURE=UNFROZEN
+    P03_SCORE=NOT_OBSERVED
+
+
+## R0-P03 independent legacy reviewer intake and primary-task method
+
+Checkpoint 897 / Research 561 / Validation 249 provide a source-bound **65-historical-carrier / nine-neutral-case-theme** intake, with B1 subject-membership, required-source, rejected-source and preferred-route data deliberately absent. The nine subject-derived historical theme hints are not original independently authored user questions. The W5 corpus itself remains B1-originated, so neutral new references are not an excuse to claim a globally unbiased historical cohort.
+
+The owner-approved Option A remains approved but unexecuted. A fresh, demonstrably unexposed neutralizer/adjudicator, a complete independently restricted durable gold packet with public digest, and a 12-primary-task authoring route (fresh non-arm author or prospectively mechanical owner-event selection) are NOT QUALIFIED yet. No arm author may access gold before metadata freeze. No secret seed/custodian is created merely for a heldout draw; the gold-access problem is a distinct obligation.
+
+No historical fixture, Research 513 thresholds, Checkpoint 896 specimen, B0-B4 arm, scored result or whole-system physical target changed.
+
+    PHASE=R0_P03_INDEPENDENT_REFERENCE_INTAKE_METHOD_PREPARED
+    NEXT_ACTOR=chatgpt
+    NEXT_BOUNDARY=p-three-independent-reference-readiness
+    LEGACY_REFERENCES=OWNER_OPTION_A_AUTHOR_UNASSIGNED
     P03_FIXTURE=UNFROZEN
     P03_SCORE=NOT_OBSERVED

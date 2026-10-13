@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 896
+**Checkpoint:** 897
 **Date:** 2026-10-13
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,17 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: R0-P03 role-aware source-frame and exact-Git neutral analogue candidate verified
+## Current active stage: R0-P03 independent legacy reference intake and task-authoring readiness method
+
+**Checkpoint 897 / Research 561 / Validation 249** provide a **non-scored** source-bound, scrubbed historical reviewer-input capsule for the owner's approved Option A. Exact original W5 historical source revision `4b94ffe183ff7af72cef6ee7492b4ba2f30c11ef` contains **65 corpus carriers**. The candidate intake exposes their Git blob identities and **nine neutral numbered aliases plus B1-derived topic hints**, but **no original B1 memberships, must-retrieve or distractor lists, new natural-language questions, gold answers or scores**. Those topics are not independently authored user questions, so a genuinely fresh reviewer must interpret and adjudicate them; the historical 65-file selection remains B1-originated and residual bias must be reported.
+
+The read-only intake generator, full manifest, unexecuted authoring/custody contract and future-reviewer brief exist as candidate artifacts. **No independent reviewer, task author or restricted gold-version store has been assigned or qualified.** The 12 new primary tasks remain to be produced either by a fresh arm-independent author or a prospectively locked objective owner-event selector, with exact source/authority closure before build corpus draw. An exact source-ref scan observed 36 numbered decision headings, which is *not* evidence of 12 independently answerable cross-plane tasks. Publicly committing plaintext gold before arm freeze would leak answers; a digest without a durably preserved independently restricted complete packet is also insufficient. Research 513's original 12+9 gates and all historical W5 evidence remain untouched.
+
+**Next:** qualify a genuinely fresh independent annotation/primary task process and proportionate restricted complete-answer preservation, then freeze the evidence-grounded source closure and experimental worlds prospectively. R0-P01 AMEND/deferred, R0-P02 PASS, V03 selected logical target, and Specification 028 current operational authority remain. No physical target, exact new file system, migration, hidden heldout or scored P03 result exists.
+
+---
+
+## Historical checkpoint 896 stage: R0-P03 role-aware source-frame and exact-Git neutral analogue candidate verified
 
 **Checkpoint 896 / Research 560 / Validation 248** extend the frozen Checkpoint 895 owner Option A and Claude Message 062 reconciliation with a strictly **non-scored** multimodal Project source census and source-cited ten-record V03 analogue. At exact source commit `c57556a8bf993a1d327e9197acb7b7c745071cd8`, nine repository roots contain **3,304 tracked paths**: **2,883 textual role-review candidates**, **380 historical auxiliary fixture paths**, **23 unsupported/nontext**, and **18 explicitly excluded contemporary R0-P03 design/leakage paths**. Source roles include incumbent J1/structured governing, source-owned J2 realizer/schema/test, derived J3, operational routing, research/proposals, Product context, migration and evidence. These *path-derived role hints are not semantic eligibility or accepted authority*. Current navigation/overview files are marked for possible scoring contamination.
 

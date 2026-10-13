@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "method_id": "R0_P03_INDEPENDENT_TASK_AND_REFERENCE_METHOD_CANDIDATE_V01",
+  "status": "PREFREEZE_METHOD_ONLY_NO_GOLD_NO_TASKS_NO_SCORING",
+  "source_anchors": {
+    "initial_p03_ref": "54b603c5fe550af963aac808b1fe7cacb516c6d4",
+    "historical_world_ref": "4b94ffe183ff7af72cef6ee7492b4ba2f30c11ef",
+    "research513": "docs/research/513_r0_physical_architecture_decision_probe_preregistration_v01.md",
+    "owner_option_a": "docs/research/559_r0_p03_claude_critique_reconciliation_and_owner_accepted_legacy_gold_amendment.md",
+    "scrubbed_intake": "experiments/r0_p03_navigation_probe/legacy_blinded_intake_candidate.json"
+  },
+  "original_gate": {
+    "primary_total": 12,
+    "primary_categories": {
+      "cold_start_current_orientation": 3,
+      "cross_plane_discovery": 3,
+      "impact_analysis_evolution": 3,
+      "exact_source_authority_recovery": 3
+    },
+    "legacy_total": 9,
+    "build_target": 60,
+    "heldout_target": 20,
+    "primary_pass_min": 10,
+    "legacy_pass_min": 8,
+    "false_authority_tolerance": 0
+  },
+  "roles": {
+    "method_designer": {
+      "allowed": [
+        "design_preprospective_sampling_and_reference_method",
+        "inspect_published_historical_fixtures"
+      ],
+      "forbidden": [
+        "serve_as_fresh_reference_annotator",
+        "serve_as_fresh_scored_evaluator",
+        "author_scored_primary_gold"
+      ]
+    },
+    "historical_theme_neutralizer": {
+      "requires": [
+        "fresh_unexposed_to_original_B1_scenario_gold_and_subject_memberships",
+        "receives_only_isolated_historical_world_and_scrubbed_theme_hints",
+        "cannot_design_any_B0_B4_arm"
+      ],
+      "produces": [
+        "nine_meaningful_arm_neutral_information_need_questions",
+        "source_world_bound_provenance_and_applicability_rationale"
+      ]
+    },
+    "reference_adjudicator": {
+      "requires": [
+        "no_arm_authorship",
+        "not_exposed_to_B1_old_answer_keys_or_arm_outputs",
+        "isolated_source_world",
+        "independence_attestation"
+      ],
+      "produces": [
+        "source_cited_required_claims_and_source_revision",
+        "relevance_and_distractor_justifications",
+        "authority_currentness_negative_controls",
+        "historical_NA_decisions_if_any"
+      ]
+    },
+    "primary_task_author": {
+      "allowed_modes": [
+        "FRESH_AUTHOR_NOT_ARM_DESIGNER",
+        "FROZEN_MECHANICAL_OWNER_EVENT_RULE"
+      ],
+      "produces": [
+        "twelve_source_answerable_information_needs_four_groups_of_three",
+        "independent_source_closure_and_authority_verdict"
+      ]
+    },
+    "source_status_extractor": {
+      "requires": [
+        "not_an_arm_designer",
+        "not_a_primary_task_author",
+        "uses_source_citations_and_explicit_synthetic_analogues"
+      ],
+      "produces": [
+        "equal_V03_native_base_for_all_arms"
+      ]
+    },
+    "arm_authors": {
+      "requires": [
+        "no_access_to_private_gold",
+        "equal_build_source_world_and_capabilities",
+        "no_access_to_heldout_cohort_during_authoring"
+      ],
+      "produces": [
+        "frozen_metadata_vocabularies_and_arm_configuration"
+      ]
+    },
+    "scored_evaluators": {
+      "count_min": 2,
+      "requires": [
+        "fresh_to_arm_outputs",
+        "no_authored_arm",
+        "isolated_identical_tool_budget",
+        "disagreement_rule_frozen_before_scoring"
+      ]
+    }
+  },
+  "staged_sequence": [
+    "STAGE_0_LOCK_SOURCE_FAMILY_ELIGIBILITY_AND_EXPOSURE_CHECKS",
+    "STAGE_1_FRESH_NEUTRALIZER_AND_REFERENCE_ADJUDICATOR_PRODUCE_NINE_LEGACY_ANSWERS_IN_SEPARATE_HISTORICAL_WORLD",
+    "STAGE_2_FRESH_PRIMARY_AUTHOR_OR_FROZEN_MECHANICAL_OWNER_EVENT_SELECTOR_PRODUCES_TWELVE_TASKS_AND_SOURCE_CLOSURES",
+    "STAGE_3_FREEZE_COMPLETE_GOLD_PACKET_IN_RESTRICTED_DURABLE_VERSIONED_BOUNDARY_AND_PUBLISH_SOURCE_BOUND_HASH_COMMITMENT_BEFORE_ARM_AUTHORING",
+    "STAGE_4_BUILD_SOURCE_CLOSURE_THEN_ROLE_LIFECYCLE_HASH_FILL_WITHIN_SIXTY_TARGET",
+    "STAGE_5_SOURCE_CITED_EQUAL_V03_SUBSTRATE_AND_FROZEN_ARM_METADATA",
+    "STAGE_6_PUBLIC_COMMIT_DERIVED_HELDOUT_DRAW_AFTER_ALL_ARM_AUTHORING_FROZEN",
+    "STAGE_7_CLOSED_WORLD_EQUAL_BUDGET_FRESH_EVALUATION_NO_POST_RESULT_TUNING"
+  ],
+  "gold_visibility": {
+    "public_commit_rule": "Before any arm authoring: (1) freeze and durably version the COMPLETE neutral reference packet in access-restricted storage unavailable to arm authors, with its immutable identity and independent-annotator attestation, and (2) publish the exact byte digest and source-bound commitment in the public protocol. A public digest alone is NOT a committed gold packet.",
+    "access_limitation": "No restricted storage, private Gold packet, author, attestation or immutable restricted commit has yet been established or executed. Without an independently verified restricted commit and integrity-bound digest, HALT before arm construction. No extra bespoke cryptographic/secret custody infrastructure is presumed.",
+    "disclosure": "The actual scoring packet remains inaccessible to arm authors through authoring freeze; a separately documented scorer/evaluator access rule and exact hash verification must precede scored runs. Later public disclosure is a distinct scientifically governed post-evaluation choice."
+  },
+  "legacy_world": {
+    "immutable_ref": "4b94ffe183ff7af72cef6ee7492b4ba2f30c11ef",
+    "fixed_sources": 65,
+    "topics": 9,
+    "question_limitation": "The W5 fixture contains B1 subject identifiers and old answer lists, not independently authored natural-language owner questions.",
+    "positive_action": "fresh_neutralizer_must_resolve_meaning_and_intended_scope",
+    "negative_action": "do_not_treat_subject_id_or_old_subject_memberships_as_neutral_gold",
+    "residual_bias": "The 65-carrier source corpus and original theme lineage were selected for historical B1 research; independent gold re-adjudication does not undo corpus selection bias. Treat the nine cases as a bounded historical regression, never as an independent test of whole-repository representativeness."
+  },
+  "primary_world": {
+    "author_selection": "UNRESOLVED",
+    "historical_event_rule": "NOT_FROZEN",
+    "source_closure_limit": "NOT_FROZEN",
+    "task_questions": "NOT_AUTHORED",
+    "gold_answers": "NOT_AUTHORED",
+    "acceptable_rule": "Either independent author or objectively specified historical owner-query/event selector per Research513 6.5; no exposed designer hand-picked examples.",
+    "mechanical_event_pool_observation": "Fixed Checkpoint 896 source docs/DECISIONS.md contains 36 numbered D-xxx headers. This is feasibility of a source/event pool, not 12 information needs nor a proof of cross-plane/authority task coverage."
+  },
+  "failure_halts": [
+    "cannot_demonstrate_fresh_neutral_annotator_or_evaluator",
+    "cannot_isolate_original_B1_gold_from_neutralizer",
+    "independently_source_bound_gold_not_available",
+    "task_closure_exceeds_prospective_build_capacity",
+    "public_answer_keys_leak_before_arm_freeze",
+    "legacy_scenario_information_need_not_reconstructable_from_theme_and_historical_sources",
+    "relevance_disagreement_not_resolved_by_predeclared_policy",
+    "post_result_change_to_rules_or_thresholds",
+    "complete_independent_gold_packet_not_durably_versioned_under_verified_access_boundary_before_arm_authoring"
+  ],
+  "explicitly_not_authorized": [
+    "new_P03_answer_key",
+    "task_prompt_selection",
+    "hidden_heldout_selection",
+    "B0_B4_implementation",
+    "scored_run",
+    "Research513_other_arm_redefinition",
+    "final_physical_target_selection",
+    "repository_migration",
+    "production_authority_switch"
+  ]
+}

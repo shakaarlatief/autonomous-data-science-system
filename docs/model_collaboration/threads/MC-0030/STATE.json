@@ -3,7 +3,7 @@
   "thread_id": "MC-0030",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "OPEN",
-  "phase": "R0_P03_ROLE_FRAME_AND_SOURCE_WITNESS_CANDIDATE_QUALIFIED",
+  "phase": "R0_P03_INDEPENDENT_REFERENCE_INTAKE_METHOD_PREPARED",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -121,16 +121,17 @@
       "Checkpoint 893 / Research 557 / Validation 245: ChatGPT authored a non-executing common-substrate B0-B4 contract and read-only ten-stratum Git source census over previously published Checkpoint 892 revision. The 1533-path public frame has proposed 60 build/20 heldout quotas but no cohort, seed, task answers, evaluator outputs or scored navigation arm. Eleven candidate tests PASS. ChatGPT is exposed to prospective build anchors and comparator design and is not a fresh blind P03 evaluator. No Claude critique received yet; next actor ChatGPT to coordinate targeted independent critique if supported, then reconcile before exact P03 fixture freeze.",
       "Checkpoint 894 / Research 558 / MC-0030 Message 061: ChatGPT audited actual fixed-source modalities (2231 Markdown, 485 JSON, 274 Python and 38 others) against the existing 1533-path Markdown-only P03 source frame, and exposed its sampling, currentness, B0/B2-B1/B3 distinction and heldout protocol limitations in an open comparative design critique. Claude/claude-04 is REQUESTED as an already-exposed R0 design critic to produce Message 062 only. No direct Claude tool execution, external relay, review response, independent blind scorer or P03 scored observation is claimed.",
       "Claude/claude-04 Message 062 at 2e6aefb9c1f2e134b994c510d4f977fcd392b904 is an EXPOSED comparative critique, not an independent gold/scoring contribution; only that message path was added. ChatGPT/chatgpt-38 reviewed its full content and the original Research 217 historical fixture metadata. The human owner explicitly accepted Option A: independently re-adjudicate arm-neutral legacy reference answers for the prospective R0-P03 nine-case packet without modifying historical W5 sources/results. Research 559 records a narrow Section 6.6/6.10 prospective legacy-gold amendment, not wider scoring or architecture authorization. Exact fixture/gold/holdout and scored runs remain absent. NEXT ChatGPT role-aware source/substrate specimen.",
-      "Checkpoint 896 / Research 560: ChatGPT/chatgpt-38 authored a Git-bound source role-frame feasibility census across docs/tools/schemas/src/tests/scripts/frontend/migrations/experiments and a ten-record source-line witness (selected D-035/D-036, Spec 028, R254, J2 source examples, J3 derived stale view, routing). These are exposed task-owner hypotheses, NOT independent adjudicated gold, fixture, arm implementation or scored evaluation. The owner-approved independent neutral legacy reference re-adjudication remains NOT STARTED; next ChatGPT method/author-independence design."
+      "Checkpoint 896 / Research 560: ChatGPT/chatgpt-38 authored a Git-bound source role-frame feasibility census across docs/tools/schemas/src/tests/scripts/frontend/migrations/experiments and a ten-record source-line witness (selected D-035/D-036, Spec 028, R254, J2 source examples, J3 derived stale view, routing). These are exposed task-owner hypotheses, NOT independent adjudicated gold, fixture, arm implementation or scored evaluation. The owner-approved independent neutral legacy reference re-adjudication remains NOT STARTED; next ChatGPT method/author-independence design.",
+      "Checkpoint 897 / Research 561 / Validation 249: Exposed ChatGPT prepared a reproducible historical 65-carrier source-intake and nine subject-origin theme hints with numbered alias IDs only, removing legacy per-theme required/rejected sources, B1 memberships and explicit old answer-file paths. This is reviewer-intake preparation, NOT independent neutral prompts, gold or qualification. Exact historical 65-world selection remains B1-originated; a fresh independent annotator and genuinely separated durable gold storage and 12-task route remain unassigned; no arm/scoring/freeze."
     ],
     "notes": "Message 061 queued a one-response targeted comparative design critique for Claude/claude-04, based on published Checkpoint 893 and Research 558. Claude is not a fresh blind scorer. Next actor Claude Message 062. Original R0-P03 fixture, sample, oracles and scores remain unfrozen/unobserved; no new P01 obligation; P02 PASS preserved."
   },
   "last_transition": {
-    "transition_id": "mc0030-p03-role-census-neutral-source-witness",
+    "transition_id": "mc0030-p03-independent-reference-input-method-candidate",
     "from_state": "OPEN",
     "to_state": "OPEN",
     "actor": "chatgpt",
-    "reason": "Prove role and modality feasibility with exact Git source, synthetic-labelled V03 analogue and no scored fixture, without adopting the prior Markdown-only sample or changing any original protocol.",
-    "repository_head": "c57556a8bf993a1d327e9197acb7b7c745071cd8"
+    "reason": "Create exact-Git W5 historical source-only reviewer intake with neutral numbered aliases, no old B1 relevance gold, and an explicit fail-closed fresh-annotator/custody/primary-task method prior to exact fixture freeze.",
+    "repository_head": "54b603c5fe550af963aac808b1fe7cacb516c6d4"
   }
 }
