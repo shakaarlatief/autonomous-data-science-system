@@ -1,7 +1,7 @@
 # Current State
 
-**Checkpoint:** 894
-**Date:** 2026-10-12
+**Checkpoint:** 895
+**Date:** 2026-10-13
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
 **Promoted V1 integration branch:** `v1-frontend-spike` at `2480109fadeee1e480ef03b82e335aacdf9adf91`
@@ -22,7 +22,17 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: R0-P03 source-frame design challenged; bounded Claude comparative review requested
+## Current active stage: R0-P03 owner Option A prospective legacy-reference amendment; Claude Message 062 reconciled
+
+**Checkpoint 895 / Research 559 / Validation 247 / MC-0030 Message 063** record the owner's explicit acceptance of Option A following Claude's 452-line independent comparative Message 062 at `2e6aefb9c1f2e134b994c510d4f977fcd392b904`. Research 217's original 65-carrier corpus, nine B1-subject-authored historical scenarios, fixtures and original W5 scores remain untouched. Their original annotator did not claim independence, and original historical pass criteria used perfect source recall and distractor rejection. The **only owner-approved prospective Research 513 alteration is independent, arm-neutral legacy reference-answer re-adjudication** and separately versioned neutral information-need/answer packet; retain nine historical scenarios and the >=8/9 hard gate, without retroactive rewriting or treating old 9/9 and 4/9 as prospective R0-P03 scores.
+
+Claude's **AMEND_CANDIDATE_BEFORE_FREEZE** identifies other substantive biases in candidate source-frame modalities, ten equal quotas and 21 hand-selected anchors, task/source closure, neutral V03 substrate extraction, heldout conditioning, closed-world parity, navigation-arm distinction, conditional B4 and run variance. ChatGPT accepts the need to **resolve these together in one prefixture design iteration**, without silently amending other original arm definitions, metrics or gates. Source role/currentness must govern the future eligibility frame, not file extension. No new heldout, gold, candidate implementation, final P03 corpus, scored arm, physical target, migration or authority cutover exists.
+
+**Next:** a source-grounded role/lifecycle eligibility proposal and small neutral, synthetic-labelled V03-analogue witness, followed by independent task/legacy gold preparation and exact prospective fixture freeze when qualified. R0-P02 PASS and owner-deferred R0-P01 AMEND are preserved. Specification 028 still governs current operations. The Architecture Program Overview remains a non-authoritative orientation and can be refreshed as a separate coherent stage without inventing a missing filesystem-design phase.
+
+---
+
+## Historical checkpoint 894 stage: R0-P03 source-frame design challenged; bounded Claude comparative review requested
 
 **Checkpoint 894 / Research 558 / Validation 246 / MC-0030 Message 061** preserve a non-scored adversarial audit of the R0-P03 experiment design and prepare one targeted review by Claude/claude-04. The Checkpoint 893 common-substrate and Markdown-only census remain *candidate*, not frozen/accepted. Exact `git ls-tree` inspection at the Checkpoint 893 source ref finds **2,231 Markdown, 485 JSON, 274 Python and 38 other files** across the scoped tracked `docs/tools/src/schemas/tests/experiments` paths. These are file counts, not automatic inclusion or semantic authority. The candidate frame covers **1,533 tracked Markdown paths**, leaving an important question about machine-readable natural-owner J2/code/evidence and whole-system navigation.
 
