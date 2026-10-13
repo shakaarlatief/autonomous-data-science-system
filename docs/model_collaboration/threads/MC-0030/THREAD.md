@@ -808,3 +808,20 @@ ChatGPT/chatgpt-38 retains task ownership and independently inspects this uncomm
     PRIMARY_TASKS=NOT_AUTHORED
     P03_FIXTURE=UNFROZEN
     P03_SCORE=NOT_OBSERVED
+
+
+## Checkpoint 898 follow-up: source-access API and reviewer-route feasibility
+
+Research 563 / Validation 252 preserve the next owner-relayed engineering unit at published starting HEAD `35eb45064006c8fbfd2acce59d10ce32948146bf`. Codex/codex-01 remains exposed. The new in-memory source-access candidate checks the fixed 65 historical path@blob carriers and original content commitment, rejects noncorpus/link/malformed access and provides bounded deterministic list/read/literal-search operations. All **90 focused tests PASS**: 44 new API cases and 46 unchanged prior P03 cases. No model/MCP service or permanent infrastructure was deployed.
+
+Actual bridge `:read-only` execution successfully read original W5 annotations, current P03 design and `.git/HEAD`; it does not supply reviewer source-only confinement. A capsule-directory context probe returned EPERM, Docker engine inspection was unavailable and WSL enumeration denied. Installed Claude Code restricted controls provide a concrete prospective host configuration, but fresh exposure, effective tools/managed policy, denied access, network and restricted complete-output retention were not tested inside that host. The source API tests do not establish those boundaries.
+
+The decision ledger has uneven owner-event provenance, superseded/scoped and selected-but-nonoperational decisions, and references extending into other source planes. An exact D-036 owner-artifact chain is verified; no three-per-category eligibility or answerable closure rule is established. No twelve tasks or answers were authored. Private companion/runtime roles remain unchanged, with no gold storage allocated.
+
+Next: ChatGPT independent inspection, then owner-controlled non-semantic preflight of an accessible exclusive-tool/confined host and a designated restricted output custodian. Return only a sanitized qualification receipt; do not launch reference adjudication. Checkpoint 898 and its routing boundary remain current because end-to-end reviewer execution remains unqualified. No evaluator, gold, heldout, score, physical selection, migration, commit or push.
+
+    SOURCE_ACCESS_API=MECHANICS_QUALIFIED_ONLY
+    FRESH_REVIEWER_ROUTE=NOT_QUALIFIED
+    NEXT_ACTOR=chatgpt
+    NEXT_BOUNDARY=p-three-reviewer-execution-authority-qualification
+    CHECKPOINT=898_UNCHANGED
