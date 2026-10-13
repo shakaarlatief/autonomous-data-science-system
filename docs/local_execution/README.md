@@ -113,9 +113,10 @@ Do not manipulate Codex Desktop private catalog/session databases to improve vis
 ```text
 docs/local_execution/validation/209_windows_sandbox_managed_runtime_recovery_qualified.md
 docs/local_execution/validation/210_github_keyring_release_dependency_restart_recovery_qualified.md
+docs/local_execution/validation/251_codexless_helper_restart_and_uncertain_commit_recovery.md
 ```
 
-Validation 209 owns the Windows managed-runtime quarantine recovery. Validation 210 owns the GitHub keyring failure caused by a directly launched worker missing its active-release runtime dependency binding. Both reusable recovery procedures are incorporated into the evergreen operations runbook.
+Validation 209 owns the Windows managed-runtime quarantine recovery. Validation 210 owns the GitHub keyring failure caused by a directly launched worker missing its active-release runtime dependency binding. Both reusable recovery procedures are incorporated into the evergreen operations runbook. Validation 251 records the 2026-10-13 helper-launch recurrence, failed first managed restart, successful cold-bootstrap plus managed dependency recovery, uncertain Git commit reconciliation, tunnel response-deadline warnings, and reproduced inline-code command-guard false positive; its open causal questions remain unresolved.
 
 Validation records preserve what was tested and observed. They do not replace the evergreen operational procedures, and historical validation commands should not automatically be treated as the current operational method.
 

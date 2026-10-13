@@ -492,6 +492,31 @@ Then require durable `status=succeeded` and verify one fresh read-only command. 
 
 Do not claim that an app refresh/update caused the generation transition unless independent product evidence establishes that causal link. The observed filesystem timing is correlation evidence only.
 
+#### If a semantic restart is armed but the service does not return
+
+The 2026-10-13 recurrence (Validation 251) showed that an accepted/armed `codex.runtime_maintenance` request can subsequently end with durable `status=failed`, `errorCode=RUNTIME_STARTUP_TIMEOUT`. A successful initial acknowledgment does not prove service recovery.
+
+1. Preserve the original `requestId`. When the bridge is reachable, obtain its **terminal** durable `status` instead of assuming success from an armed response.
+2. If Codexless is unreachable, confirm port `7690` listener/process identity and inspect the current startup evidence. Keep a healthy managed tunnel running.
+3. When no Codexless worker is callable, follow the documented **Cold/manual bootstrap fallback** above using the installed `codexless-http.cmd` launcher. Do not kill unrelated npm- or Desktop-managed Codex processes based on age or co-occurrence alone.
+4. Once Runtime Bridge is reachable, use a **new** idempotency key for the bounded semantic restart that restores active-release dependencies; reconcile its terminal outcome.
+5. After the managed restart, prove both a fresh read-only `codex.command_exec` and a dependency-backed GitHub read succeed. HTTP health and tool count alone do not prove these paths.
+
+This cold-bootstrap-then-managed-restart sequence succeeded on 2026-10-13 after the first managed restart failed. The precise initial startup-timeout cause and original helper-path transition remain unproven.
+
+#### Tunnel response deadlines and uncertain Git outcomes
+
+A tunnel message such as `command response deadline reached; dropping without posting a response` means the posting deadline was missed. It is **not** evidence that the underlying command failed, stopped, or made no repository changes. The 2026-10-13 guarded Checkpoint 898 commit returned an internal tool error but was independently confirmed as an actual, exact-path commit before push. The available screenshot did not correlate a specific tunnel deadline line to that commit.
+
+For uncertain semantic Git mutation outcomes, **do not blindly replay**. Let the original operation settle, then reconcile exact local HEAD and parent, declared changed paths, staging index, working tree, tracking branch and independent remote state before deciding whether further mutation is necessary. If ordinary deadline/uncertain-result behavior recurs, separately collect correlated tunnel request IDs, Codexless operation receipts, caller and server lifetimes, access profiles and Git effects. Do not merely increase deadlines or concurrency to suppress warnings; and do not attribute the warning to a regression of the already qualified exact-duplicate coalescing repair without matching evidence.
+
+#### Inline-code model-invocation guard: quoted-literal false positive
+
+Validation 251 also reproduced a separate guard false positive: a harmless `node -e` program printing the word `Codex` was rejected as a supposed model/control invocation, while printing `HELLO` passed. Source review localized a plausible lexical-token match over embedded inline script text. This does **not** authorize launching a Codex model from the model-free command lane or disabling the security guard.
+
+For ordinary documentation, prefer the existing guarded `codex.precise_edit` API for literal content rather than embedding a full Markdown report into a shell/interpreter command argument. Any eventual guard refinement requires separate regression evidence preserving rejection of actual nested Codex invocations.
+
+
 ### Semantic Git reports a `.git` metadata-write denial
 
 Do not respond by making `.git` generally writable or broadening Windows ACLs. Semantic Git repository-metadata mutation is a distinct bounded authority class. The accepted implementation keeps read-only preflight/postflight through ordinary Codex authority while routing exact `git add` and `git commit` operations through the pre-existing bounded host Git substrate.
