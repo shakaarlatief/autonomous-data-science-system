@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 897
+**Checkpoint:** 898
 **Date:** 2026-10-13
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -11,18 +11,28 @@
 ## Active interaction context
 
 ```text
-Interaction environment  ChatGPT
+Interaction environment  Codex desktop (owner-relayed engineering unit)
 Project / workspace      Autonomous Data Science System
-Interaction session      chatgpt-38
-Conversation title       38 - Trusted Evidence and Physical Realization Qualification
-Primary collaborator     ChatGPT
+Interaction session      codex-01
+Conversation title       01 - R0-P03 Source Capsule Verification
+Primary collaborator     Codex; ChatGPT / chatgpt-38 retains task ownership and subsequent acceptance
 ```
 
 Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: R0-P03 independent legacy reference intake and task-authoring readiness method
+## Current active stage: R0-P03 source-only capsule prepared; reviewer execution and authority qualification
+
+**Checkpoint 898 / Research 562 / Validation 250** independently inspect the existing capsule implementation and verify **65 original Git-bound historical carriers / 1,725,920 bytes / nine neutral numbered topic hints**. The source-content digest is `baf2b893435c1951b52814a3de897f7684890b1449bb437b46948cc868d304d3`. Bounded repairs reject raw noncanonical/Windows source paths and verify saved bytes before issuing an integrity receipt. The capsule contains only sources and two intake/integrity JSON files, with no original W5 answer fixtures, B1 relevance sets or Git history. Fresh destinations remain under ignored `.venv` and existing destinations are refused.
+
+**Source integrity does not establish reviewer isolation.** This owner-relayed Codex engineering session can access the full public repository, Git history and P03 design, so it is not a fresh reference annotator or scored evaluator. Independent reviewer execution/exposure qualification, authorized restricted preservation of a complete versioned gold packet, and one qualified twelve-primary-task route remain unresolved. The already verified private companion's role remains knowledge preservation; technical write access does not authorize an experimental answer store. Thirty-six D-xxx headings establish only a candidate historical event population. No private repository was modified.
+
+**Next actor: ChatGPT/chatgpt-38** for independent inspection of this uncommitted unit, then concrete reviewer execution, gold-custody authority and task-method qualification at `p-three-reviewer-execution-authority-qualification`. Owner Option A remains approved but unexecuted. Research 217/W5, original Research 513, nine legacy cases and >=8/9, twelve primary cases and >=10/12, and zero false-authority tolerance remain unchanged. No new task/answer packet, heldout, exact fixture freeze, score, physical selection or cutover. R0-P01 AMEND/deferred, R0-P02 PASS and Specification 028 operational authority remain. Commit/push and task-owner acceptance have not occurred.
+
+---
+
+## Historical checkpoint 897 stage: R0-P03 independent legacy reference intake and task-authoring readiness method
 
 **Checkpoint 897 / Research 561 / Validation 249** provide a **non-scored** source-bound, scrubbed historical reviewer-input capsule for the owner's approved Option A. Exact original W5 historical source revision `4b94ffe183ff7af72cef6ee7492b4ba2f30c11ef` contains **65 corpus carriers**. The candidate intake exposes their Git blob identities and **nine neutral numbered aliases plus B1-derived topic hints**, but **no original B1 memberships, must-retrieve or distractor lists, new natural-language questions, gold answers or scores**. Those topics are not independently authored user questions, so a genuinely fresh reviewer must interpret and adjudicate them; the historical 65-file selection remains B1-originated and residual bias must be reported.
 

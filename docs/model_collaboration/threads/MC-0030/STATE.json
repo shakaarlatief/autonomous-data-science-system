@@ -3,7 +3,7 @@
   "thread_id": "MC-0030",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "OPEN",
-  "phase": "R0_P03_INDEPENDENT_REFERENCE_INTAKE_METHOD_PREPARED",
+  "phase": "R0_P03_SOURCE_ONLY_CAPSULE_PREPARED_REVIEWER_EXECUTION_UNQUALIFIED",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc",
@@ -33,6 +33,12 @@
         "RESEARCHER",
         "CRITIC"
       ]
+    },
+    {
+      "collaborator_id": "codex",
+      "interaction_environment": "Codex desktop",
+      "interaction_session": "codex-01",
+      "roles": ["IMPLEMENTER", "VERIFIER"]
     },
     {
       "collaborator_id": "human",
@@ -122,16 +128,17 @@
       "Checkpoint 894 / Research 558 / MC-0030 Message 061: ChatGPT audited actual fixed-source modalities (2231 Markdown, 485 JSON, 274 Python and 38 others) against the existing 1533-path Markdown-only P03 source frame, and exposed its sampling, currentness, B0/B2-B1/B3 distinction and heldout protocol limitations in an open comparative design critique. Claude/claude-04 is REQUESTED as an already-exposed R0 design critic to produce Message 062 only. No direct Claude tool execution, external relay, review response, independent blind scorer or P03 scored observation is claimed.",
       "Claude/claude-04 Message 062 at 2e6aefb9c1f2e134b994c510d4f977fcd392b904 is an EXPOSED comparative critique, not an independent gold/scoring contribution; only that message path was added. ChatGPT/chatgpt-38 reviewed its full content and the original Research 217 historical fixture metadata. The human owner explicitly accepted Option A: independently re-adjudicate arm-neutral legacy reference answers for the prospective R0-P03 nine-case packet without modifying historical W5 sources/results. Research 559 records a narrow Section 6.6/6.10 prospective legacy-gold amendment, not wider scoring or architecture authorization. Exact fixture/gold/holdout and scored runs remain absent. NEXT ChatGPT role-aware source/substrate specimen.",
       "Checkpoint 896 / Research 560: ChatGPT/chatgpt-38 authored a Git-bound source role-frame feasibility census across docs/tools/schemas/src/tests/scripts/frontend/migrations/experiments and a ten-record source-line witness (selected D-035/D-036, Spec 028, R254, J2 source examples, J3 derived stale view, routing). These are exposed task-owner hypotheses, NOT independent adjudicated gold, fixture, arm implementation or scored evaluation. The owner-approved independent neutral legacy reference re-adjudication remains NOT STARTED; next ChatGPT method/author-independence design.",
-      "Checkpoint 897 / Research 561 / Validation 249: Exposed ChatGPT prepared a reproducible historical 65-carrier source-intake and nine subject-origin theme hints with numbered alias IDs only, removing legacy per-theme required/rejected sources, B1 memberships and explicit old answer-file paths. This is reviewer-intake preparation, NOT independent neutral prompts, gold or qualification. Exact historical 65-world selection remains B1-originated; a fresh independent annotator and genuinely separated durable gold storage and 12-task route remain unassigned; no arm/scoring/freeze."
+      "Checkpoint 897 / Research 561 / Validation 249: Exposed ChatGPT prepared a reproducible historical 65-carrier source-intake and nine subject-origin theme hints with numbered alias IDs only, removing legacy per-theme required/rejected sources, B1 memberships and explicit old answer-file paths. This is reviewer-intake preparation, NOT independent neutral prompts, gold or qualification. Exact historical 65-world selection remains B1-originated; a fresh independent annotator and genuinely separated durable gold storage and 12-task route remain unassigned; no arm/scoring/freeze.",
+      "Checkpoint 898 / Research 562 / Validation 250: Owner-relayed Codex/codex-01 inspected the existing source capsule and corrected demonstrated raw-path and saved-byte verification defects. The 65 historical sources total 1725920 bytes with independently recomputed content digest baf2b893435c1951b52814a3de897f7684890b1449bb437b46948cc868d304d3; nine numbered topic hints are not questions or gold. Codex has full public repository/history/design access and is not a fresh annotator or evaluator. No isolated reviewer execution, restricted complete-gold custody, primary-task route, exact fixture or score was qualified. Private companion authority remains knowledge preservation only. ChatGPT retains task ownership and independently inspects the uncommitted unit next."
     ],
-    "notes": "Message 061 queued a one-response targeted comparative design critique for Claude/claude-04, based on published Checkpoint 893 and Research 558. Claude is not a fresh blind scorer. Next actor Claude Message 062. Original R0-P03 fixture, sample, oracles and scores remain unfrozen/unobserved; no new P01 obligation; P02 PASS preserved."
+    "notes": "Message 062 was received and reconciled in Research 559; its earlier pending status is historical. Checkpoint 898 prepares verified source content only. Next actor ChatGPT/chatgpt-38 for independent unit inspection, then reviewer execution and gold-custody authority qualification at p-three-reviewer-execution-authority-qualification. Codex/codex-01 is the owner-relayed engineering verifier, not an independent reference actor. No automatic Claude review, evaluator launch, private repository mutation, task/gold/heldout selection, exact fixture freeze or score. P01 AMEND/deferred and P02 PASS remain."
   },
   "last_transition": {
-    "transition_id": "mc0030-p03-independent-reference-input-method-candidate",
+    "transition_id": "mc0030-p03-source-capsule-reviewer-execution-readiness",
     "from_state": "OPEN",
     "to_state": "OPEN",
-    "actor": "chatgpt",
-    "reason": "Create exact-Git W5 historical source-only reviewer intake with neutral numbered aliases, no old B1 relevance gold, and an explicit fail-closed fresh-annotator/custody/primary-task method prior to exact fixture freeze.",
-    "repository_head": "54b603c5fe550af963aac808b1fe7cacb516c6d4"
+    "actor": "codex",
+    "reason": "Complete the owner-relayed bounded source-capsule engineering/documentation unit; preserve source integrity versus actual reviewer isolation and private repository authority, with ChatGPT independent inspection and publication pending.",
+    "repository_head": "159de980266e183cf24ee08d0ab2e9f7d4f1e1ba"
   }
 }

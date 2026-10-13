@@ -1,11 +1,12 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / R0-P03 SCRUBBED LEGACY REVIEWER INTAKE READY / FRESH REFERENCE REVIEWER UNASSIGNED
+**Status:** OPEN / R0-P03 SOURCE-ONLY CAPSULE PREPARED / REVIEWER EXECUTION AND GOLD CUSTODY UNQUALIFIED
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
-**Task owner:** ChatGPT / chatgpt-37
+**Task owner:** ChatGPT / chatgpt-38
+**Current engineering executor:** Codex / codex-01; owner-relayed Checkpoint 898 unit, not an independent reference reviewer
 **Independent reviewer/designer:** Claude / claude-04
 **Active Claude conversation:** 04 - Assurance and Delivery Architecture Design
 **Authority:** Collaboration evidence only.
@@ -787,5 +788,23 @@ No historical fixture, Research 513 thresholds, Checkpoint 896 specimen, B0-B4 a
     NEXT_ACTOR=chatgpt
     NEXT_BOUNDARY=p-three-independent-reference-readiness
     LEGACY_REFERENCES=OWNER_OPTION_A_AUTHOR_UNASSIGNED
+    P03_FIXTURE=UNFROZEN
+    P03_SCORE=NOT_OBSERVED
+
+
+## R0-P03 source-only capsule verified; reviewer execution and authority unresolved
+
+Checkpoint 898 / Research 562 / Validation 250 record an owner-relayed Codex/codex-01 engineering inspection of the two existing capsule files at published Checkpoint 897 HEAD `159de980266e183cf24ee08d0ab2e9f7d4f1e1ba`. The original 36 focused tests passed. Targeted regressions demonstrated noncanonical/Windows path acceptance and missing saved-byte verification; narrow repairs plus commitment/determinism checks bring the requested suite to **46 PASS**. The historical 65 sources total **1,725,920 bytes**, with source-content digest `baf2b893435c1951b52814a3de897f7684890b1449bb437b46948cc868d304d3`. The capsule contains only historical sources and intake/integrity JSON, with nine numbered topic hints and no original answer fixtures, relevance sets or Git history.
+
+This verifies source preparation only. Codex has full public repository/history/design access and is not a fresh reference annotator or scored evaluator. An actually isolated fresh reviewer, independently restricted complete-gold preservation and one twelve-primary-task route remain unqualified. Existing private companion capabilities do not authorize an experimental answer-store charter; no private repository was changed. Thirty-six decision headings remain only a candidate event population. Original W5 and Research 513, all thresholds, previous checkpoints and unrelated code are unchanged; no task/answer key, heldout, score, exact fixture freeze, physical selection or cutover.
+
+ChatGPT/chatgpt-38 retains task ownership and independently inspects this uncommitted unit next. No separate Claude review or evaluator launch is requested. Historical entries above retain their original chronology; the previously stale STATE independence note about Message 062 pending is corrected to its already reconciled status. No commit/push or task-owner acceptance is claimed.
+
+    PHASE=R0_P03_SOURCE_ONLY_CAPSULE_PREPARED_REVIEWER_EXECUTION_UNQUALIFIED
+    NEXT_ACTOR=chatgpt
+    NEXT_BOUNDARY=p-three-reviewer-execution-authority-qualification
+    REVIEWER_EXECUTION=NOT_QUALIFIED
+    RESTRICTED_COMPLETE_GOLD=NOT_QUALIFIED
+    PRIMARY_TASKS=NOT_AUTHORED
     P03_FIXTURE=UNFROZEN
     P03_SCORE=NOT_OBSERVED
