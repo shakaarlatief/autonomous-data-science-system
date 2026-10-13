@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / R0-P03 CLAUDE MESSAGE062 RECONCILED / OWNER OPTION A ACCEPTED
+**Status:** OPEN / R0-P03 ROLE FRAME AND SOURCE WITNESS CANDIDATE / INDEPENDENT TASK REFERENCE NEXT
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -756,5 +756,20 @@ The other F2-F11 critique refinements are reconciled as a *unified prefixture de
     NEXT_ACTOR=chatgpt
     NEXT_BOUNDARY=p-three-role-aware-source-specimen
     LEGACY_REFERENCE_AMENDMENT=OWNER_ACCEPTED_PROSPECTIVE
+    P03_FIXTURE=UNFROZEN
+    P03_SCORE=NOT_OBSERVED
+
+
+## R0-P03 multimodal source eligibility and neutral analogue feasibility
+
+Checkpoint 896 / Research 560 / Validation 248 extend the prospective owner Option A decision without touching Research 513 or original W5 fixtures. The read-only exact-Git source-frame candidate covers code, tests, structured JSON, schemas, derived J3, Product context, research and operational routing, rather than treating only Markdown as potential knowledge. Its aggregates are **path-derived review hints**, not accepted-current semantic authority, and it does not choose 60 build / 20 heldout carriers.
+
+A ten-record specimen is byte/line-bound to the Checkpoint 895 Git ref and demonstrates actual current-versus-selected authority, unaccepted proposal, J2 code/schema/test, derived index and stale orientation. The only directory-level J2 relation is explicitly `SYNTHETIC_V03_ANALOGUE_NOT_GOVERNING_J2`; no production V03 truth, independent gold or scored task is asserted. The historical Markdown census remains a mechanically valid but superseded **candidate selection direction**, with its original code and tests preserved.
+
+Next: prospectively qualify independent source-status/task/legacy answer authorship, source-closure boundaries, scoring isolation and task selection methodology. No automatic new Claude review and no final fixture or score.
+
+    PHASE=R0_P03_ROLE_FRAME_AND_SOURCE_WITNESS_CANDIDATE_QUALIFIED
+    NEXT_ACTOR=chatgpt
+    NEXT_BOUNDARY=p-three-independent-task-reference-method
     P03_FIXTURE=UNFROZEN
     P03_SCORE=NOT_OBSERVED

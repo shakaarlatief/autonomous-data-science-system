@@ -1,7 +1,7 @@
 # Architecture Program Overview and Working Roadmap
 
 **Status:** TEMPORARY HUMAN ORIENTATION / NON-AUTHORITATIVE / NON-GOVERNING  
-**Date:** 2026-10-04  
+**Date:** 2026-10-13
 **Purpose:** Provide one standalone overview of the architecture program, what has been completed, what remains open, where the project is now, and what the forward plan is.  
 **Important:** This file is not part of the intended future Project System architecture. It is not a source of governing truth, does not supersede accepted research/specifications/decisions, and may be revised or deleted later. If this overview conflicts with an authoritative decision, specification, research acceptance, current routing record, or owner decision, the authoritative source wins.
 
@@ -9,7 +9,7 @@
 
 ## 1. Current position in one paragraph
 
-The project has completed most of the major **logical architecture** work for the ADS Project System, including the Product/Project split, Project bounded responsibilities, Project information architecture, Project-system materialization direction, Activation/Orchestration, assurance/admission through WARRANT-F, and the governing semantic/control kernel now selected as **THIN_CENTRED_HYBRID_V03**. The project is **not** yet at final implementation or migration. It has entered **R0**, whose purpose is to determine the best concrete physical/software realization of the integrated Project System before implementation. Some architectural questions remain intentionally open, most importantly the final semantic organization/navigation architecture that historically used Research 217's subject hierarchy. That old subject system is evidence, not an inherited target. The current plan is to make that remaining semantic obligation explicit, complete independent physical/system design, reconcile alternatives, run decision-relevant probes where needed, select the physical target, implement it, inventory and migrate current live semantics in bounded waves, run shadow/untouched qualification, and only then consider an explicit authority switch.
+The owner-selected logical semantic/control target is **THIN_CENTRED_HYBRID_V03**, with current **Specification 028 and accepted continuity** remaining operational authority until a separately qualified cutover. R0 independent ChatGPT and Claude physical/system designs have been completed and reconciled into leading, **not-yet-selected** `GOVERNED_LEDGER_KERNEL_V02`. The bounded R0-P02 Git-admission proof **PASS** and R0-P01 historical owner trial **AMEND** are preserved; under Research 555, further P01 owner-proof experimentation is deferred without a surrogate PASS, and any future final physical-target decision must disclose its unresolved authentication dependency. R0-P03 is active. Following Claude Message 062's **AMEND_CANDIDATE_BEFORE_FREEZE** finding and the owner's explicit Option A decision to independently re-adjudicate neutral legacy answers, Checkpoint 896 provides an exact-Git, role-aware source census and ten-record *unscored* common-substrate witness. No P03 final corpus, task gold, heldout, scored comparison, final physical/filesystem target, production implementation, migration or authority switch exists. R0 may redesign every physical level, including files, schemas, storage, repository topology, workflow and CI/CD; R1 will specify the selected physical realization, then R2 implementation and R3-R7 migration, qualification and possible cutover follow only when justified.
 
 ---
 
@@ -860,6 +860,7 @@ Goals:
 - independently design whole-system realizations;
 - reconcile AO, V03, WARRANT-F, information architecture, WMR-H, engineering, workflow, recovery and migration;
 - run focused probes where real uncertainty remains.
+- determine which source-record forms, natural-owner carriers, schemas, repository and storage boundaries, exact file/folder choices and generated representations best realize the *entire* Project System; do not inherit the existing physical tree without merit.
 
 ### R1: accepted physical realization contract
 
@@ -878,6 +879,9 @@ Expected output should make it possible to answer:
 - how is semantic organization implemented?
 - how are tests and CI/CD structured?
 - how is the successor migrated and recovered?
+- what canonical governing record formats and immutable acceptance carriers exist, and how are they located and versioned?
+- which exact knowledge files, folders, manifests, schemas, modules and storage/index components exist, who authors or owns them, and how do they interrelate?
+- which views are generated and rebuildable, how is source-currentness proven and exposed, and how can neither a derived view nor a search result become governing truth?
 
 ### Prospective specification/authority reconciliation
 
@@ -1009,7 +1013,7 @@ Current sequence:
         -> smallest decision-relevant probes
         -> physical target decision
 
-Comparative blindness has ended. Claude / claude-04 is now the next actor for one adversarial comparative critique. The current reconciled candidate is not yet the selected physical target because R0-P01, R0-P02 and R0-P03 remain decision-relevant.
+Comparative blindness has ended. Claude/claude-04 completed the bounded Message 062 R0-P03 prefreeze review; Research 559 / MC-0030 Message 063 reconciled it, including the owner-approved prospective independent neutral legacy-answer re-adjudication. R0-P02 already passed within its bounded proof scope. R0-P01 remains a historical AMEND with further trials deferred by owner direction and an explicit future authentication-dependency disposition required before physical target selection. R0-P03 remains unscored; Checkpoint 896 is only a source-role/neutral-substrate feasibility candidate. `GOVERNED_LEDGER_KERNEL_V02` is still a leading physical candidate, not the selected or implemented target.
 
 ---
 
@@ -1244,44 +1248,36 @@ If the future Project System provides a better orientation/reconstruction view, 
 
 ```text
 MAJOR LOGICAL ARCHITECTURE
-    mostly established
+    THIN_CENTRED_HYBRID_V03 selected / D-036
             ↓
-V03 semantic/control kernel
-    selected
+R0 integrated independent ChatGPT / Claude physical designs
+    COMPLETE / GOVERNED_LEDGER_KERNEL_V02 leading candidate
             ↓
-semantic-organization + external-execution obligations
-    explicitly added to R0
+R0-P02 Git authority admission / ordering
+    PASS within bounded synthetic and Git evidence
             ↓
-R0 integrated physical/software architecture
-    CURRENT / independent designs complete
+R0-P01 real owner proof and usability
+    Historical AMEND / later experiment deferred by owner decision
+    Final target still needs explicit authentication-dependency disposition
             ↓
-GOVERNED_LEDGER_KERNEL_V01
-    comparative candidate frozen
+R0-P03 semantic navigation and source organization
+    CURRENT / Research 559 owner Option A legacy-answer amendment
+    Checkpoint 896 source-role frame + 10-record neutral analogue
+    EXACT FIXTURE / GOLD / SCORING NOT YET FROZEN
             ↓
-Claude comparative critique
+R0 final whole-system physical target decision
+    OPEN / filesystem and storage choices fully redesignable
             ↓
-GOVERNED_LEDGER_KERNEL_V02
-    critique reconciled
+R1 accepted physical realization contract
+    exact file/folder/carrier/storage/schema/module/workflow boundaries
             ↓
-R0-P01 / R0-P02 / R0-P03 preregistration
-    COMPLETE / Research 513
+R2 production-quality successor implementation
             ↓
-R0-P02 exact fixture/harness freeze
-    COMPLETE / Research 514
+R3 historical/current semantic inventory
             ↓
-R0-P02 bounded implementation + score + live-host leg
+R4 shadow and semantic parity
             ↓
-R0-P01 / R0-P03 focused probes
-            ↓
-R1 physical target
-            ↓
-R2 implementation
-            ↓
-R3 semantic migration inventory
-            ↓
-R4 shadow
-            ↓
-R5 bounded migration
+R5 bounded reversible migration
             ↓
 R6 untouched confirmation
             ↓
@@ -1289,5 +1285,5 @@ R7 explicit authority switch
             ↓
 operate / learn / evolve
             ↓
-eventual generic framework extraction if justified
+reusable framework extraction if later justified
 ```

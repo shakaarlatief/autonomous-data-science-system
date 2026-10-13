@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "specimen_id": "R0_P03_10_RECORD_NEUTRAL_SUBSTRATE_CANDIDATE",
+  "state": "UNFROZEN_NONSCORING_TASK_OWNER_AUTHORED_NOT_INDEPENDENTLY_QUALIFIED",
+  "source_ref": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+  "role_claim_rule": "All evidence is taken from exact Git blobs; status interpretations are explicit task-owner hypotheses pending independent non-arm validation; no deployed V03 ledger or accepted J2 coverage is asserted.",
+  "records": [
+    {
+      "id": "GOV_D035",
+      "role": "accepted_historical_architecture_selection",
+      "status": "ACCEPTED_HISTORICAL_SELECTION_NOT_CURRENT_V03_OPERATIONAL",
+      "limitations": "D-035 selected the old architecture target; current implementation authority must be established with other governing sources.",
+      "source_path": "docs/DECISIONS.md",
+      "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+      "line_start": 928,
+      "line_end": 928,
+      "exact_source_line": "## D-035. Select PKA-CANDIDATE-01 as the successor project-development knowledge architecture target"
+    },
+    {
+      "id": "GOV_D036",
+      "role": "accepted_successor_logical_target_decision",
+      "status": "SELECTED_SUCCESSOR_NOT_OPERATIONAL",
+      "limitations": "D-036 selects V03 logical semantics and explicitly does not activate them or specify a final physical layout.",
+      "source_path": "docs/DECISIONS.md",
+      "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+      "line_start": 1059,
+      "line_end": 1059,
+      "exact_source_line": "current operational authority    Specification 028 / accepted continuity surfaces"
+    },
+    {
+      "id": "INCUMBENT_SPEC028",
+      "role": "incumbent_governing_contract",
+      "status": "INCUMBENT_OPERATIONAL_CONTEXT_AS_IDENTIFIED_BY_D036",
+      "limitations": "The specification alone does not switch operational authority; apply D-036 and current continuity for currentness.",
+      "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "git_blob_oid": "70db025eefa69a8dec43b04dfdae87f5700754c9",
+      "line_start": 6,
+      "line_end": 6,
+      "exact_source_line": "**Authority:** Frozen implementation contract subordinate to D-035 and Requirements V0.2. It does not switch operational authority. Existing continuity remains authoritative until a later explicit qualified authority-switch decision."
+    },
+    {
+      "id": "PROPOSAL_R254",
+      "role": "unaccepted_physical_tree_research_proposal",
+      "status": "CANDIDATE_NOT_GOVERNING_TARGET",
+      "limitations": "A proposal discussing a potential replacement does not establish accepted supersession or an authoritative replacement.",
+      "source_path": "docs/research/254_r7b_target_project_information_hierarchy_and_research218_supersession_candidate.md",
+      "git_blob_oid": "1a55bc9b492c625b32c30711dc8bfeb43b4e944b",
+      "line_start": 4,
+      "line_end": 4,
+      "exact_source_line": "**Status:** R7 TARGET HIERARCHY RECOMMENDED / RESEARCH 218 PHYSICAL TREE SUPERSESSION CANDIDATE / OWNER DECISION REQUIRED / NO PHYSICAL MIGRATION"
+    },
+    {
+      "id": "J2_AUTHORITY_MODULE",
+      "role": "realizer_source_candidate",
+      "status": "IMPLEMENTATION_SOURCE_NOT_ACCEPTANCE_PROOF",
+      "limitations": "The module exists and implements described behavior, but it cannot by itself prove accepted J1 effect coverage or verification.",
+      "source_path": "tools/project_knowledge/authority.py",
+      "git_blob_oid": "e4b74a7efa0adbde16e49d411dd831be3f83e164",
+      "line_start": 1,
+      "line_end": 1,
+      "exact_source_line": "\"\"\"G007: deterministic authority over an explicit, closed candidate corpus."
+    },
+    {
+      "id": "J2_SEMANTIC_SCHEMA",
+      "role": "realization_schema_candidate",
+      "status": "SCHEMA_SOURCE_NOT_ACCEPTED_GOVERNING_EFFECT",
+      "limitations": "A schema encodes validation constraints but is not a source of new governing acceptance.",
+      "source_path": "schemas/project_knowledge/semantic_source.v1.schema.json",
+      "git_blob_oid": "f202757950601411d7e2e4584a7f66a4215c21f7",
+      "line_start": 4,
+      "line_end": 4,
+      "exact_source_line": "  \"title\": \"Project knowledge semantic_source V1\","
+    },
+    {
+      "id": "J2_AUTHORITY_TEST",
+      "role": "test_implementation_source",
+      "status": "TEST_CODE_NOT_TEST_PASS_RECEIPT",
+      "limitations": "Presence of a test source cannot imply that it passed at the exact source revision or qualified all requirements.",
+      "source_path": "tests/unit/test_project_knowledge_authority.py",
+      "git_blob_oid": "30354978662caf1189b3341193162c8939349bd5",
+      "line_start": 1,
+      "line_end": 1,
+      "exact_source_line": "\"\"\"G007 contract fixtures plus read-only translations of qualified evidence."
+    },
+    {
+      "id": "J3_IDENTITY_INDEX",
+      "role": "incumbent_generated_identity_projection",
+      "status": "DERIVED_NONAUTHORITATIVE_FRESHNESS_UNVERIFIED",
+      "limitations": "The content is an index projection, not governing acceptance; currentness depends on source digests and generator evidence.",
+      "source_path": "docs/project_knowledge/generated/identity_index.json",
+      "git_blob_oid": "735dcf0e95c37c4e4442550b479f97c4c386cdff",
+      "line_start": 2,
+      "line_end": 2,
+      "exact_source_line": "  \"authority_class\": \"derived\","
+    },
+    {
+      "id": "J3_STALE_CORE",
+      "role": "incumbent_generated_current_state_projection",
+      "status": "DERIVED_STALE_RELATIVE_TO_ROUTING_895",
+      "limitations": "A derived core naming checkpoint 564 cannot override live current routing at checkpoint 895.",
+      "source_path": "docs/project_knowledge/generated/current_state_core.json",
+      "git_blob_oid": "cd41acfc898b1875e552c7122efd53e393cfdc5a",
+      "line_start": 4,
+      "line_end": 4,
+      "exact_source_line": "      \"checkpoint\": 564,"
+    },
+    {
+      "id": "ROUTING_895",
+      "role": "current_project_routing_source",
+      "status": "ROUTING_895_NOT_LEGACY_CORE_564",
+      "limitations": "This is an operational pointer under current authority, not a future V03 J1 acceptance ledger entry.",
+      "source_path": "docs/current_routing.json",
+      "git_blob_oid": "132012e85922097eb01c94397a0b24943a7eb4ed",
+      "line_start": 3,
+      "line_end": 3,
+      "exact_source_line": "    \"current_checkpoint\": 895,"
+    }
+  ],
+  "synthetic_relations": [
+    {
+      "id": "J2_ANALOGUE_SPEC028_PACKAGE_SCOPE",
+      "status": "SYNTHETIC_V03_ANALOGUE_NOT_GOVERNING_J2",
+      "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "quote": "tools/project_knowledge/",
+      "declared_relationship": "Specification 028 prescribes the package location tools/project_knowledge/; the candidate analogue connects its stated implementation-package boundary to the governing specification only for a neutral experimental substrate.",
+      "not_claimed": "No REALIZES/COVERS acceptance for a particular module, component or effect; no proof of production conformance; no selected future V03 J2 manifest.",
+      "git_blob_oid": "70db025eefa69a8dec43b04dfdae87f5700754c9",
+      "line_start": 59,
+      "source_line": "tools/project_knowledge/"
+    }
+  ],
+  "negative_assertions": [
+    "A J3 derived view cannot serve as normative acceptance or override current_routing.json.",
+    "Research 254's candidate replacement status cannot be promoted into accepted lineage or physical-target authority.",
+    "A proposed B2 editorial about-link cannot create J1 authority or J2 implementation coverage.",
+    "A file path, search match or Git object ID alone does not establish operational status or compliance."
+  ],
+  "usage_prohibition": "This is NOT an exact R0-P03 scored corpus, gold answers, task authored packet, historical benchmark relabel, future V03 production schema or independent oracle."
+}

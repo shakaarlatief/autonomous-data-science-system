@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 895
+**Checkpoint:** 896
 **Date:** 2026-10-13
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,17 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: R0-P03 owner Option A prospective legacy-reference amendment; Claude Message 062 reconciled
+## Current active stage: R0-P03 role-aware source-frame and exact-Git neutral analogue candidate verified
+
+**Checkpoint 896 / Research 560 / Validation 248** extend the frozen Checkpoint 895 owner Option A and Claude Message 062 reconciliation with a strictly **non-scored** multimodal Project source census and source-cited ten-record V03 analogue. At exact source commit `c57556a8bf993a1d327e9197acb7b7c745071cd8`, nine repository roots contain **3,304 tracked paths**: **2,883 textual role-review candidates**, **380 historical auxiliary fixture paths**, **23 unsupported/nontext**, and **18 explicitly excluded contemporary R0-P03 design/leakage paths**. Source roles include incumbent J1/structured governing, source-owned J2 realizer/schema/test, derived J3, operational routing, research/proposals, Product context, migration and evidence. These *path-derived role hints are not semantic eligibility or accepted authority*. Current navigation/overview files are marked for possible scoring contamination.
+
+The proposed ten-record source witness references actual Git blob IDs and exact source lines: D-035 historical selection, D-036 V03 selected but not operational, current Specification 028 context, Research 254 unaccepted proposal, project authority code and schema/test, a derived identity index, and stale generated checkpoint-564 state against current routing checkpoint 895. One directory-level J2 relation is **SYNTHETIC_V03_ANALOGUE**, not a true accepted source-owned REALIZES assertion. The specimen is authored by exposed ChatGPT and is **not independently authored gold**. Research 557's older Markdown-only ten-stratum census remains historical mechanical evidence, not the sampling policy.
+
+**Next:** establish a genuinely independent arm-neutral legacy and 12-primary-task/gold methodology and source-closure procedure; then freeze an exact 60/20 / historical-65 closed-world fixture when qualified. **No historical W5 source, Research 513 frozen text, original tests or scored outputs have been changed.** Owner Option A still authorizes only prospective independent re-adjudication, and the legacy nine-case >=8/9 gate remains. R0-P02 PASS and R0-P01 AMEND/deferred remain; Specification 028 operational authority and wholly redesignable R0/R1 physical filesystem architecture are unchanged.
+
+---
+
+## Historical checkpoint 895 stage: R0-P03 owner Option A prospective legacy-reference amendment; Claude Message 062 reconciled
 
 **Checkpoint 895 / Research 559 / Validation 247 / MC-0030 Message 063** record the owner's explicit acceptance of Option A following Claude's 452-line independent comparative Message 062 at `2e6aefb9c1f2e134b994c510d4f977fcd392b904`. Research 217's original 65-carrier corpus, nine B1-subject-authored historical scenarios, fixtures and original W5 scores remain untouched. Their original annotator did not claim independence, and original historical pass criteria used perfect source recall and distractor rejection. The **only owner-approved prospective Research 513 alteration is independent, arm-neutral legacy reference-answer re-adjudication** and separately versioned neutral information-need/answer packet; retain nine historical scenarios and the >=8/9 hard gate, without retroactive rewriting or treating old 9/9 and 4/9 as prospective R0-P03 scores.
 
