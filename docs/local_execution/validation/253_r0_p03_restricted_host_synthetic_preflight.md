@@ -1,7 +1,7 @@
 # Validation 253: R0-P03 restricted-host synthetic preflight
 
 **Date:** 2026-10-14
-**Status:** SYNTHETIC_HARNESS_TESTS_PASS / HOST_INFERENCE_TRANSPORT_BLOCKED / REVIEWER_ROUTE_NOT_QUALIFIED
+**Status:** INITIAL_HOST_TRANSPORT_BLOCKED / OWNER_TERMINAL_SYNTHETIC_ENFORCEMENT_OBSERVED / FULL_REVIEWER_ROUTE_NOT_QUALIFIED
 **Scope:** Preserve actual synthetic host startup/transport/retention receipts and tests of the fixture/evidence parser; do not substitute harness tests for real Claude enforcement.
 **Parent:** Research 564 / Research 563 / Validation 252 / published Checkpoint 898.
 **Starting branch / HEAD:** `v1-source-vault-bootstrap-resume` / `30024cb40cf6159fd176d72389cd2eb5de459706`, initially clean index/worktree.
@@ -51,6 +51,34 @@ Prior source-only API code/tests were left unchanged; their published qualificat
 ## Independent ChatGPT postflight
 
 The task owner independently inspected all nine handoff paths, the public sanitized receipt, and the actual gate logic. The original 21 focused tests reproduced. A review-discovered junction-route attribution ambiguity was corrected in the future receipt assessor, without changing any original synthetic run/evidence. A negative test now distinguishes a direct target read from a request through the real junction. Revised synthetic harness tests: **22/22 PASS**. The existing source-only access tests: **44/44 PASS**. A longer previous-P03 regression attempt did not yield a result before the bridge execution timeout and is not reported as passing. All six repository-integrity components passed. These are test-suite checks only; real Claude filesystem and context isolation remain **NOT_EXERCISED**.
+
+## Owner-terminal live continuation and independent parser postflight (2026-10-14)
+
+After publication of the original `ECONNREFUSED` preflight, the owner verified restricted Claude connectivity in ordinary PowerShell and launched exactly one fresh **synthetic-only** harness inference, without copying project knowledge, old W5 answers or private data into the test. The owner-relayed invocation summary recorded `exit_code=0`, `timed_out=false`, 41 JSONL events, 14 tool invocations with corresponding results, no synthetic hook execution and no unexpected MCP startup. The initial `--assess` failed on a valid stream event whose `message` was a string. Its raw execution evidence remained untouched.
+
+ChatGPT patched only the assessor and its unit tests: skip non-dictionary messages/content, accept only well-formed correlated tool blocks, report per-operation synthetic route and error state, count unrecognized Read paths, and check exact synthetic inherited-instruction, forbidden and requested output markers in model text. Additional negative tests cover malformed event shapes, permitted/forbidden Glob/Grep result classifications, unexpected Read routing and marker detection. Final focused suite: **26/26 PASS**. All six repository-integrity checks PASS and `git diff --check` PASS, with only routine LF/CRLF warnings. **No additional Claude inference was performed by ChatGPT.**
+
+The owner reran `--assess` against the original 41-event capture and provided the complete generated console JSON. The reported interpretation is:
+
+```text
+advertised tools: Glob, Grep, Read; mcp_servers=[]; skills=[]
+built-in plugins: agents-md, telemetry; permission mode=dontAsk
+permitted Read: 2/2 exact canaries observed
+forbidden Read: 8/8 correlated denials observed
+forbidden Glob/Grep: 2/2 correlated denials observed
+allowed Glob/Grep: 2 results, is_error omitted; contents not independently validated
+total tool uses/results: 14/14
+unexpected Read routes: 0
+forbidden canary in tool result / model text: false / false
+CLAUDE.md and AGENTS.md instruction markers in assistant text: all false
+requested output marker in assistant text: true
+provider error: null; retries: 0; cost: USD 0.0746632
+overall reviewer route: NOT_QUALIFIED
+```
+
+The Runtime Bridge's workspace-limited host execution could not independently open the Temp evidence directory; raw stream, hashes, model context and transcript-retention scope remain owner-local. No attempt to widen bridge access was made. The initial published sanitized receipt reflects the earlier **failed** attempt, not this successful one. The owner's derived assessment is important live host evidence, but not proof of universal host confinement, provider/internal context exclusion, independent reference authorship, output custody or the actual R0-P03 comparison. The omitted success `is_error` fields are conservatively reported as `RESULT_WITHOUT_BOOLEAN_ERROR_STATUS`; allowed Read correctness has separate exact-canary verification.
+
+**Disposition:** accept and preserve this bounded live synthetic evidence and parser fixes; no repeat inference, no task/gold/scorer publication or final reviewer qualification. Continue with proportionate separate output-custody/exposure method qualification. Checkpoint 898 and routing unchanged.
 
 ## Repository integrity and preservation
 

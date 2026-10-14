@@ -844,3 +844,22 @@ Independent ChatGPT inspection accepted the bounded failed-preflight evidence an
     NEXT_ACTOR=chatgpt
     NEXT_BOUNDARY=p-three-reviewer-execution-authority-qualification
     CHECKPOINT=898_UNCHANGED
+
+
+## Owner-terminal restricted Claude synthetic file-enforcement evidence
+
+On 2026-10-14, the human owner verified ordinary-terminal Claude connectivity and launched one **different, fresh standalone synthetic** run after the earlier Codex-host transport failure. The inference exited zero and produced 41 stream events, including 14 paired model tool calls/results. The first saved-output assessor crashed on a string-valued stream event. ChatGPT then patched only the assessor and tests; the owner reran analysis against the same saved output, with no new inference.
+
+The owner-relayed assessment reports both allowed Read exact canaries, denials for all eight forbidden Read routes (parent/sibling/absolute/fake answers/design/Git/junction) and both forbidden Glob/Grep routes, no unexpected Read routes, and no forbidden canaries in tool results or assistant text. Both allowed Glob/Grep calls returned results without explicit is_error booleans and were not content-validated. Advertised tools remained Read/Glob/Grep, with no MCP/skills, while built-in agents-md/telemetry plugins remained. None of four synthetic instruction markers appeared in assistant text; this does not prove inherited context absence. The synthetic output marker appeared; this is not output custody.
+
+The bridge cannot read the owner Temp evidence path from its workspace permission profile. The owner-relayed assessment is not a separately audited raw trace, and the prior public receipt belongs to the failed run. ChatGPT's revised parser/harness suite passes **26/26**; repository integrity passes **6/6**. No real W5 reference, primary task, independent annotator, score, private gold store or extra Claude invocation. Reviewer isolation and restricted durable complete-output custody remain unqualified.
+
+Proceed to a proportionate exposure/custody design decision, not repetition of the successful synthetic test or unauthorized production of gold. All previous Research 513/559 gates, owner Option A, Checkpoint 898, and active routing remain unchanged.
+
+    HOST_SYNTHETIC_FILE_RESTRICTIONS=TESTED_POSITIVE
+    HOST_GLOBAL_ISOLATION=NOT_QUALIFIED
+    GOLD_CUSTODY=NOT_QUALIFIED
+    FRESH_REVIEWER_ROUTE=NOT_QUALIFIED
+    NEXT_ACTOR=chatgpt
+    NEXT_BOUNDARY=p-three-reviewer-execution-authority-qualification
+    CHECKPOINT=898_UNCHANGED
