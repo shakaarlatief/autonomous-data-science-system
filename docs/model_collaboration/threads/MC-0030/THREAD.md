@@ -934,3 +934,21 @@ The next step requires the owner to create a harmless, random synthetic canary i
     NEXT_ACTOR=chatgpt
     NEXT_BOUNDARY=p-three-reviewer-execution-authority-qualification
     CHECKPOINT=898_UNCHANGED
+
+
+## Owner synthetic canary: bounded reader denial but generic sandbox command read
+
+Research 569 / Validation 258 preserve the owner-initiated first cross-tool test. The human owner created a real randomized fake canary in a disposable local application-data folder and confirmed it was readable. The Runtime Bridge's `codex_read_many` denied the exact absolute file as outside the trusted workspace, but **`codex_command_exec` with read-only access successfully read the same 47-byte file** under the `CodexSandboxOffline` principal. Its computed SHA-256 matched the owner's displayed prefix, and the known synthetic marker format was verified without printing the marker. A subsequent read-only ACL check showed that the folder inherits a general Windows group read-and-execute permission. The inherited ACE is a plausible cause, but exact group-token evaluation was not tested.
+
+**Disposition: current proposed B0–B4 arm sandbox FAILS actual owner-file exclusion.** A tool-specific root check does not protect against every other tool; nominal read-only command execution still reads host files. The earlier narrower synthetic Claude Read/Glob/Grep test is preserved with its original scope. No real gold or secret exists, and no Windows ACL, access account, workspace registry, provider or Git authority changed. The approved *P03-only* author restriction remains; actual host qualification is withheld.
+
+Next owner action is, if approved, a disposable second fake canary folder with *owner-controlled protected, noninherited ACL*, followed by both bounded-reader and actual command-exec negative tests. Missing files are not denials. Further private-key, reviewer-output and full tool/context-custody boundaries remain. Checkpoint 898 and routing unchanged.
+
+    OWNER_CANARY=OWNER_POSITIVE_AND_SANDBOX_READ_POSITIVE
+    P03_BOUNDED_READER_OUTSIDE_ROOT=DENIED
+    P03_GENERIC_COMMAND_EXEC_OWNER_FILE=READ_SUCCEEDED
+    P03_CURRENT_ARM_SANDBOX=NOT_QUALIFIED
+    OWNER_ACL_CHANGE=NOT_AUTHORIZED_NOT_PERFORMED
+    NEXT_ACTOR=chatgpt
+    NEXT_BOUNDARY=p-three-reviewer-execution-authority-qualification
+    CHECKPOINT=898_UNCHANGED
