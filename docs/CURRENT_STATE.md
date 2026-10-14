@@ -1,7 +1,7 @@
 # Current State
 
 **Checkpoint:** 898
-**Date:** 2026-10-13
+**Date:** 2026-10-14
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
 **Promoted V1 integration branch:** `v1-frontend-spike` at `2480109fadeee1e480ef03b82e335aacdf9adf91`
@@ -31,6 +31,8 @@ Repository artifacts remain authoritative across chats and models.
 **Next actor: ChatGPT/chatgpt-38** for concrete reviewer execution, gold-custody authority and task-method qualification at `p-three-reviewer-execution-authority-qualification`. Owner Option A remains approved but unexecuted. Research 217/W5, original Research 513, nine legacy cases and >=8/9, twelve primary cases and >=10/12, and zero false-authority tolerance remain unchanged. No new task/answer packet, heldout, exact fixture freeze, score, physical selection or cutover. R0-P01 AMEND/deferred, R0-P02 PASS and Specification 028 operational authority remain.
 
 **Bounded follow-up, Research 563 / Validation 252:** published Checkpoint 898 is preserved at `b154de82`, with supporting recovery documentation at starting HEAD `35eb45064006c8fbfd2acce59d10ce32948146bf`. The new source-only list/read/search API verifies the fixed historical corpus and serves immutable memory with bounded output and exact blob identities; **90 focused tests PASS**. Its API restrictions are not a model/OS/network isolation certificate. A live bridge `:read-only` probe successfully read old W5 annotations, current design and `.git/HEAD`; Docker/WSL inspection was unavailable to this sandbox, and effective fresh-reviewer tools/exposure/output custody remain unqualified. Installed restricted Claude Code controls are a concrete preflight candidate, not a verified reviewer route. Decision-ledger provenance/status/closure checks do not establish twelve primary tasks. Next obtain an accessible exclusive-tool or confined host plus an owner-designated restricted output custodian for non-semantic access/inventory/retention preflight. No reviewer or store was created. This bounded follow-up passed independent ChatGPT engineering review; Checkpoint 898 and current routing remain unchanged.
+
+**Synthetic host preflight, Research 564 / Validation 253:** native Codex execution at published basis `30024cb40cf6159fd176d72389cd2eb5de459706` created only harmless standalone temporary fixtures. Claude Code 2.1.283 accepted the restricted configuration and advertised exactly Read/Glob/Grep, no MCP or skills, but retained built-in agents-md/telemetry plugins. The single synthetic inference invocation failed with ECONNREFUSED after automatic CLI retries, reporting zero tokens/cost and no tool calls/results. Authorized reads and forbidden path/Git/junction operations therefore remain NOT_EXERCISED, not denied. **21 original synthetic harness/receipt tests PASS; 22 after independent ChatGPT junction-route regression**. Neither set qualifies the host. Same-account synthetic retention was readable from the development cwd, and limited no-session-artifact checks do not establish gold custody. Next provide working owner-approved Claude transport for the same restricted command, then finish real enforcement/context/retention tests; do not widen source access or create credentials merely to obtain a pass. The bounded synthetic result was independently reviewed by ChatGPT and is retained without qualifying reviewer isolation. Checkpoint 898, routing and operational/scientific authority remain unchanged.
 
 ---
 

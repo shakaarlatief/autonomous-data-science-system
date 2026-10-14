@@ -825,3 +825,22 @@ Next: ChatGPT independent inspection, then owner-controlled non-semantic preflig
     NEXT_ACTOR=chatgpt
     NEXT_BOUNDARY=p-three-reviewer-execution-authority-qualification
     CHECKPOINT=898_UNCHANGED
+
+
+## Restricted Claude synthetic startup observed; provider transport blocked
+
+Research 564 / Validation 253 record the owner's native-execution synthetic unit at published HEAD `30024cb40cf6159fd176d72389cd2eb5de459706`. A fresh standalone OS temporary workspace outside ADS worktrees contained only harmless sources, forbidden neighbors, fake answers/design, Git/instruction canaries and a real Windows junction. Expected conditions were written and hashed before execution.
+
+Claude Code 2.1.283 accepted zero-inference restricted initialization. The single synthetic inference invocation advertised only Read/Glob/Grep, empty MCP/skills, dontAsk and built-in agents-md/telemetry plugins, then failed with ECONNREFUSED. It reported zero tokens/cost after ten automatic retry events, with no tool uses/results. Thus authorized reads and forbidden path/Git/link tests remain NOT_EXERCISED. Neither inventory advertisement nor a provider connection error proves source-only enforcement. No further inference, elevation, credential change or source-access widening followed.
+
+Twenty-one original synthetic harness/receipt tests PASS, and 22/22 pass after one independent ChatGPT junction-route attribution correction; these are not Claude confinement tests. Same-account synthetic retention was readable from another development cwd, and the limited profile-artifact absence check is not complete transcript or custody qualification. The reusable fixture adds an AGENTS.md canary for future runs after the observed built-in plugin; the original run is preserved accurately. No actual W5 gold/source corpus was copied into the host, reference answers/tasks authored, private store allocated, scored run or evaluator invoked.
+
+Independent ChatGPT inspection accepted the bounded failed-preflight evidence and corrected junction-route attribution in the future assessor. The smallest owner action remains working permitted provider transport for the same restricted native command. Then finish actual synthetic enforcement, context and retention tests. Checkpoint 898, routing, original scientific controls and private repository roles remain unchanged. No commit or push.
+
+    HOST_STARTUP=ADVERTISED_TOOLS_OBSERVED_ONLY
+    HOST_ENFORCEMENT=NOT_EXERCISED
+    PROVIDER_TRANSPORT=ECONNREFUSED
+    FRESH_REVIEWER_ROUTE=NOT_QUALIFIED
+    NEXT_ACTOR=chatgpt
+    NEXT_BOUNDARY=p-three-reviewer-execution-authority-qualification
+    CHECKPOINT=898_UNCHANGED
