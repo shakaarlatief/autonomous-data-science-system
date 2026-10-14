@@ -916,3 +916,21 @@ The remaining essential owner-level choice is which tools/Windows principals B0-
     NEXT_ACTOR=chatgpt
     NEXT_BOUNDARY=p-three-reviewer-execution-authority-qualification
     CHECKPOINT=898_UNCHANGED
+
+
+## Owner-approved R0-P03 arm sandbox policy and AES-GCM synthetic recipient preflight
+
+The owner explicitly approved restricting **only the B0–B4 experimental arm authors/runs** to a subsequently **verified** sandbox, with ordinary ADS development workflows unchanged. This is the prospective role policy, not proof that Codex, Claude, or any current model host qualifies. The model-facing tool inventory, code execution, other workspaces/connectors, source history, chat context and private-key access must all be bounded; an isolated child process with an exposed author agent is insufficient.
+
+Research 568 / Validation 257 record a disposable fake-only OpenSSL CMS AES-256-GCM trial. A public certificate sufficed for encrypting an in-memory fictional packet, while the temporary private key stayed out of the mock encryptor folder. Exact recovery and SHA-256 integrity succeeded; tampering failed. A further negative check showed that OpenSSL can emit **provisional stdout even on unsuccessful CMS decryption**. A recovery gate now returns plaintext only after both process success and expected-digest match, with **4/4 passing new focused tests**. Crucially both mock folders and keys were accessible to the same sandbox Windows principal, so **no genuine cross-principal exclusion** or owner-held key qualification has been demonstrated.
+
+The next step requires the owner to create a harmless, random synthetic canary in an unregistered local folder (without changing existing permissions), verify its positive existence, and permit actual read attempts by the proposed confined B0–B4 arm tool route. Root-policy denial vs OS ACL denial must be distinguished, and unrestricted desktop-user Claude must remain outside experimental arm authoring unless separately qualified. No real references, holdout, tasks, B0-B4 implementation, score, new key, storage charter or checkpoint transition occurred.
+
+    EXPERIMENT_ARM_AUTHOR_SANDBOX=OWNER_APPROVED_SCOPE_NOT_YET_QUALIFIED_HOST
+    SYNTHETIC_CMS_AES_256_GCM=MECHANICS_PASS
+    OWNER_LOCAL_CANARY_DENIAL=NOT_TESTED
+    OWNER_ONLY_PRIVATE_KEY=NOT_QUALIFIED
+    GOLD_PACKET=NONE
+    NEXT_ACTOR=chatgpt
+    NEXT_BOUNDARY=p-three-reviewer-execution-authority-qualification
+    CHECKPOINT=898_UNCHANGED
