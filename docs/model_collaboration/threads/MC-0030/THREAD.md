@@ -899,3 +899,20 @@ Next: identify and qualify the exact future output-collector/custodian identity,
     NEXT_ACTOR=chatgpt
     NEXT_BOUNDARY=p-three-reviewer-execution-authority-qualification
     CHECKPOINT=898_UNCHANGED
+
+
+## R0-P03 reviewer/custodian principal scope and public-recipient encryption feasibility
+
+Research 567 / Validation 256 record the read-only finding that Codexless's effective command principal is a distinct `CodexSandboxOffline` Windows identity; its registered workspace roots include multiple non-ADS contexts. A future ordinary-terminal Claude Code author must not be assumed to share the same sandbox. A workspace-root denial cannot be silently represented as a Windows ACL denial or protection against other installed tools and connected apps. Bridge command requests transiently timed out then recovered without trust changes.
+
+OpenSSL 3.2.3 is installed as part of Git for Windows outside PATH and advertises CMS recipient-certificate encryption/decryption; Windows PowerShell also exposes CMS protection cmdlets. An owner-held private key and public-only encryptor could avoid placing a production passphrase into the reviewer-side collector. This is a **prospective candidate**, not a proven authenticated packet, test certificate or real key-storage procedure. Standard 7-Zip synthetic findings remain valid but do not determine the final realization.
+
+The remaining essential owner-level choice is which tools/Windows principals B0-B4 arm authors may run under. Until this scope is declared and actually tested against an owner-created synthetic canary, no owner-only vault path, separate key, long-term gold custodian or independent scored evaluator is qualified. No new certificate, account, ACL, credential, source world, gold or score was created, and no inference call was made. Checkpoint 898 and `p-three-reviewer-execution-authority-qualification` remain active.
+
+    P03_BRIDGE_SANDBOX_IDENTITY=DISTINCT_OBSERVED
+    P03_AUTHOR_EXECUTION_SCOPE=UNRESOLVED
+    P03_PUBLIC_RECIPIENT_ENCRYPTION=CANDIDATE_ONLY
+    P03_REAL_GOLD_CUSTODY=NOT_QUALIFIED
+    NEXT_ACTOR=chatgpt
+    NEXT_BOUNDARY=p-three-reviewer-execution-authority-qualification
+    CHECKPOINT=898_UNCHANGED
