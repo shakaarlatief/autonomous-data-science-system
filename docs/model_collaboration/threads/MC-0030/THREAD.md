@@ -863,3 +863,22 @@ Proceed to a proportionate exposure/custody design decision, not repetition of t
     NEXT_ACTOR=chatgpt
     NEXT_BOUNDARY=p-three-reviewer-execution-authority-qualification
     CHECKPOINT=898_UNCHANGED
+
+
+## Independent reference custody and actor-qualification candidate
+
+Research 565 / Validation 254 reconcile the successful synthetic source-access evidence against the still-unmet requirements for a fresh unexposed legacy neutralizer, twelve new independent tasks or qualified mechanical owner-event route, a complete restricted **versioned** reference packet, and later separate fresh scored evaluators. The prior failed transport and later successful owner-terminal inference remain separate historical evidence; no raw Temp review or universal context exclusion is invented.
+
+Three conditional candidate custody methods remain: C1 owner-designated versioned access-restricted store with a real separate custodian principal and verified arm-author denial; C2 established authenticated-encryption sealed packet with an owner-isolated recoverable key; C3 a segregated reviewer/custodian process if simpler barriers fail. No candidate is qualified, selected as production, or authorized to repurpose the existing private preservation companion. A public digest without complete retained bytes, same-account private folder, generic GitHub-private visibility, unreviewed stdout/logs or nominal CLI restriction is not sufficient. No encryption tool/key/repository role was created, and no further Claude inference ran.
+
+Read-only installed-tool discovery then found an existing 7-Zip 26.02 GUI/CLI outside PATH. An entirely fabricated temporary JSON packet passed 7zAES encrypted create/restore and SHA-256 equality, rejected a bad password and a tampered archive, hid a filename from a bad-password listing, and left no matching temporary folders. **Standard 7zAES is not AEAD**, and the synthetic throwaway password was passed as a CLI argument, which is not acceptable for any real key. This qualifies only a candidate confidentiality/archive primitive; it does not establish separate owner-only key entry, plaintext output containment, arm-author denial, full versioned custody or independent author qualification.
+
+Next owner-controlled sealed-packet/direct-output-handling design and an owner-designated **synthetic-only** retention/denial/recovery qualification. Fresh gold authoring, actual tasks, corpus and arms remain blocked pending that qualification. Checkpoint 898, current routed boundary, Research 513 metrics and Research 559 Option A unchanged.
+
+    P03_CUSTODY_ARCHITECTURE=CANDIDATE_COMPARISON_ONLY
+    P03_REFERENCE_AUTHOR=NOT_QUALIFIED
+    P03_COMPLETE_GOLD=NOT_AUTHORED
+    P03_GOLD_CUSTODY=NOT_QUALIFIED
+    NEXT_ACTOR=chatgpt
+    NEXT_BOUNDARY=p-three-reviewer-execution-authority-qualification
+    CHECKPOINT=898_UNCHANGED
