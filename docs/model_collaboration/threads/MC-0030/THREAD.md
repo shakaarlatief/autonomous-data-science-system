@@ -882,3 +882,20 @@ Next owner-controlled sealed-packet/direct-output-handling design and an owner-d
     NEXT_ACTOR=chatgpt
     NEXT_BOUNDARY=p-three-reviewer-execution-authority-qualification
     CHECKPOINT=898_UNCHANGED
+
+
+## Fake-only reviewer final-output pipe qualification
+
+Research 566 / Validation 255 record a strictly fabricated final-output collector that parses a simulated Claude stream, accepts only one successful final result with exact fake nine-plus-twelve slots, rejects malformed/duplicate/failed and non-synthetic payloads, and seals directly from memory through 7-Zip stdin without an intermediate plaintext packet file. The temporary archive and throwaway password are deleted; separate subprocess extraction recovers exact bytes and a wrong password fails. Seventeen focused tests PASS after correcting an overly permissive scratch-path check.
+
+The test dummy password was deliberately passed in subprocess argv and this is **not** a production secret flow. No genuine Claude inference, new real source, reference answer, fresh adjudicator, owner-held key, private store, durable complete gold, scorer or later B0-B4 author principal-access test occurred. Claimed success is limited to simulated output-pipe/encryption mechanics; provider/local transcripts, inherited context, real password concealment and authorized recovery remain unqualified.
+
+Next: identify and qualify the exact future output-collector/custodian identity, owner-only secret entry and real arm-author exclusion with a bounded synthetic-only end-to-end trial before considering actual reference generation. Checkpoint 898, Research 513 numeric/source controls and Research 559 legacy Option A remain unchanged.
+
+    SYNTHETIC_FINAL_OUTPUT_PIPE=MECHANICS_POSITIVE
+    ACTUAL_CLAUDE_OUTPUT_CUSTODY=NOT_QUALIFIED
+    REAL_REFERENCE_AUTHOR=NOT_QUALIFIED
+    FULL_GOLD_PACKET=NOT_AUTHORED
+    NEXT_ACTOR=chatgpt
+    NEXT_BOUNDARY=p-three-reviewer-execution-authority-qualification
+    CHECKPOINT=898_UNCHANGED
