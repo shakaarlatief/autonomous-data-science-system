@@ -1019,3 +1019,14 @@ The next work is pragmatic **Level B controlled-independence protocol design** a
     NEXT_ACTOR=chatgpt
     NEXT_BOUNDARY=p-three-reviewer-execution-authority-qualification
     CHECKPOINT=898_UNCHANGED
+
+## Pragmatic Level B role/exposure contract candidate
+
+Research 575 is a **proposed, not yet owner-accepted** replacement for the experiment-specific Research 568 sandbox-only author-host requirement. It provides a concrete matrix for exposed coordinators, neutral legacy gold, mechanical-or-fresh primary tasks, owner-side complete versioned gold custody, B0–B4 authors, arm runs and two genuinely fresh judgment evaluators; a frozen closed source world and actual known-channel access checks are required. A fresh conversation or prompt promise does not itself prove isolation. Known gold exposure, unequal source/budget treatment or failed reference recovery disqualifies scored independence. Level C remains exploratory only. The original Research 513/559 B0–B4 arms, 12/9 tasks, 60/20, source authority, numeric/zero-false-authority and evaluation gates are unchanged.
+
+No owner amendment acceptance, fresh gold custodian/author, task packet, arm implementation, scored run or checkpoint occurred. Unscored role/lifecycle source eligibility and four-category task-answerability capacity work can proceed now. Next task owner presents Research 575's narrow substitute for an explicit ACCEPT / AMEND / REJECT decision before any author role operates under Level B.
+
+    LEVEL_B_CANDIDATE=RESEARCH_575_NOT_ACCEPTED
+    OWNER_AMENDMENT_REQUIRED=TRUE
+    NEXT_ACTOR=chatgpt
+    CHECKPOINT=898_UNCHANGED
