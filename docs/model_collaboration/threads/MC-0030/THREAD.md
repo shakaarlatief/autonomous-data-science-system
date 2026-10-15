@@ -5,8 +5,8 @@
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
-**Task owner:** ChatGPT / chatgpt-38
-**Current engineering executor:** Codex / codex-01; owner-relayed Checkpoint 898 unit, not an independent reference reviewer
+**Task owner:** ChatGPT / chatgpt-39
+**Current engineering executor:** Codex / codex-01; owner-relayed R0-P03 engineering through Research 571, not an independent reference reviewer or scored arm author
 **Independent reviewer/designer:** Claude / claude-04
 **Active Claude conversation:** 04 - Assurance and Delivery Architecture Design
 **Authority:** Collaboration evidence only.
@@ -971,6 +971,22 @@ Next prepare a bounded, explicit R0-P03 arm-author tool/context profile and inde
     BOUNDED_READER=ROOT_POLICY_DENIED
     TESTED_ACL_EXCLUSION=POSITIVE
     FULL_ARM_AGENT_AND_COMPLETE_GOLD=NOT_QUALIFIED
+    NEXT_ACTOR=chatgpt
+    NEXT_BOUNDARY=p-three-reviewer-execution-authority-qualification
+    CHECKPOINT=898_UNCHANGED
+
+
+## Native arm-author controlled-write boundary investigation
+
+Research 571 / Validation 260: At clean published 97a311a6c59ee999c11afa9a9896178ac7fa0de5, exposed native Desktop Codex/codex-01 observed useful synthetic read/search/write/modify/build/report capabilities under CodexSandboxOffline, but all fabricated forbidden parent/sibling/absolute/Git/junction/key/log reads, alternate shell/history routes and outside-artifact output writes succeeded. The native investigator surface fails the proposed source/output boundary; this does not contradict the distinct protected owner-canary ACL denial. Installed npm Codex 0.154.0 parsed a tighter root-deny/source-read/artifact-write profile through zero-turn App Server config/read in a temporary home with no copied auth files, without a thread or sandbox launch. Failed host plugin-cache HTTPS attempts are not command egress or a bridge network regression. No new inference or protected-canary access. Native CRLF receipt comparisons were corrected from saved evidence, without repeating successful probes. 95 focused tests PASS, with one pytest-cache permission warning. No complete author host, fresh context, owner key, full gold custody or scoring qualified. Next owner reviews/authorizes the exact synthetic sandbox backend/setup/ACL scope and dedicated home before one model-free enforcement trial; all original scientific/authority gates remain. ChatGPT/chatgpt-39 owns independent acceptance.
+
+The CLI metadata process is distinct from Desktop and bridge commands; no thread/turn or tighter sandbox command was launched. Potential Windows ACL/setup effects are outside current authorization. The retained original CRLF-mismatched receipt and corrected hash-based assessment are distinct. No ADS commit/push, private repository mutation, real reference/task/arm, protected-canary access or security-policy change. Current task owner provenance is ChatGPT/chatgpt-39, 39 - Architecture Qualification and Realization Readiness; existing Codex/codex-01 identity retained.
+
+    NATIVE_WRITE_BUILD=OBSERVED
+    NATIVE_PROPOSED_SOURCE_OUTPUT_BOUNDARY=FAIL
+    TIGHTER_CLI_PROFILE=METADATA_ONLY
+    COMPLETE_ARM_AUTHOR_HOST=NOT_QUALIFIED
+    NEW_MODEL_INFERENCE=0
     NEXT_ACTOR=chatgpt
     NEXT_BOUNDARY=p-three-reviewer-execution-authority-qualification
     CHECKPOINT=898_UNCHANGED
