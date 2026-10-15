@@ -11,11 +11,11 @@
 ## Active interaction context
 
 ```text
-Interaction environment  Codex desktop (owner-relayed engineering unit)
+Interaction environment  ChatGPT
 Project / workspace      Autonomous Data Science System
-Interaction session      codex-01
-Conversation title       01 - R0-P03 Source Capsule Verification
-Primary collaborator     Codex; ChatGPT / chatgpt-38 retains task ownership and subsequent acceptance
+Interaction session      chatgpt-39
+Conversation title       39 - Architecture Qualification and Realization Readiness
+Primary collaborator     ChatGPT; Codex Desktop work is owner-relayed by default
 ```
 
 Repository artifacts remain authoritative across chats and models.

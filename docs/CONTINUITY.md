@@ -424,6 +424,8 @@ docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md
 
 When choosing a Codex model or reasoning level, use `docs/DEVELOPMENT_METHOD.md` under **Codex model and reasoning routing**. Do not reconstruct model/effort choice from prior-chat habit and do not mechanically maximize reasoning: preserve the documented quality-per-complete-engineering-loop strategy and verify named model/effort options against the current catalog.
 
+For ChatGPT-to-Codex collaboration, also apply **Default Codex relay workflow** in that same document. The ordinary route is for ChatGPT to prepare a bounded prompt, the owner to submit it through Codex Desktop, and ChatGPT to independently review the relayed result. Availability of direct Codex model dispatch does not itself authorize switching away from that default; use a different delegation route when the owner explicitly chooses it or an accepted workflow requires it. Distinguish model delegation from model-free Runtime Bridge repository operations governed by the active execution-surface constraint.
+
 ## Recovery after unplanned context loss
 
 When a chat ends unexpectedly without evidence of a partially executed mutation:
