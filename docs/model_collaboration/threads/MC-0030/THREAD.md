@@ -1004,3 +1004,18 @@ No new validation number or checkpoint: this unit is metadata plus a conditional
 Research 573: Native read-only capability census at published 4f0589ddd2c65105357d63cba43de3b9889f97fa found Home/Core edition (25H2, build 26200.9445), no Windows Sandbox/Hyper-V tools in checked discovery, and no verified usable local Windows guest. WMI/optional-feature queries and WSL inventory were permission-denied, not absent/disabled. Docker Desktop 4.35.1 is installed; three checked local engine pipes were absent. Native process view reported 15.69 GiB RAM, 0.54 GiB available, 12 logical processors and 227.84 GiB disk free; SLAT/firmware feature indicators false do not establish BIOS cause. Preferred conditional route is an already available recoverable Windows VM/separate machine designated by the owner, with no host-data sharing and equal clean resets; availability remains unknown. Linux Docker/WSL is only a conditional fallback if the platform is acceptable and an existing backend works. No install/feature/guest/security/model operation or new infrastructure. Host separation does not itself enforce allowed model inputs/network/context; ordinary guest writes/tests are legitimate when gold/keys/prior answers are absent. Prior Claude, protected-canary and synthetic CMS successes are retained. All scientific/authority gates, Checkpoint 898 and routing unchanged; ChatGPT/chatgpt-39 independently reviews.
 
 No new checkpoint or validation number. Next owner-side step identifies an already available Windows VM/separate machine, or confirms whether the installed Docker/WSL backend and a common Linux substrate are acceptable. No deployment, purchase, model authentication or feature enabling is implied. Research 573 records observed failures, resource snapshot, transfer/clipboard/network/context/reset obligations and a future synthetic-only preflight.
+
+## Owner-directed pragmatic R0-P03 execution and isolation closeout
+
+Research 574 consolidates original Research 562–573 / Validation 250–260 and the later restricted-bridge Docker checks into an explicit **observed / falsified / not exercised** register. Docker CLI is installed, but Docker Desktop/backend and Linux container functionality were never verified in the owner's ordinary Windows account; restricted WSL inventory remains denied. An additional PowerShell dynamic pipe-check compilation failed on denied temporary-file creation, so that check does not establish pipe availability. The owner has no available second computer/VM and has decided to **defer Docker/WSL, elevated Windows sandboxing and VM exploration**, not declare them impossible.
+
+The next work is pragmatic **Level B controlled-independence protocol design** and substantive unscored source eligibility, task-answerability, neutral-substrate and B0–B4 comparison preparation. Research 568's previously accepted sandbox rule remains in force until a concrete prospective substitute with bounded controls and evidentiary qualifications is explicitly accepted by the owner. Level C is a separately disclosed exploratory fallback, never an automatic scored PASS. No answer-bearing gold or actual arm run, protocol fixture freeze, gold/host qualification, scored result, private authority or physical migration. Research 513/559 scoring and fairness remain unchanged; Checkpoint 898 and routing preserved.
+
+    OWNER_DIRECTION=PRAGMATIC_LEVEL_B_DESIGN
+    DOCKER_OWNER_SESSION=UNTESTED_AND_DEFERRED
+    INFRASTRUCTURE_REOPEN_ONLY_FOR_CONCRETE_VALIDITY_BLOCKER=true
+    PROSPECTIVE_LEVEL_B_AMENDMENT=NOT_YET_FROZEN_OR_ACCEPTED
+    R0_P03_RESULT=NONE
+    NEXT_ACTOR=chatgpt
+    NEXT_BOUNDARY=p-three-reviewer-execution-authority-qualification
+    CHECKPOINT=898_UNCHANGED
