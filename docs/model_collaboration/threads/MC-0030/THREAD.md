@@ -952,3 +952,25 @@ Next owner action is, if approved, a disposable second fake canary folder with *
     NEXT_ACTOR=chatgpt
     NEXT_BOUNDARY=p-three-reviewer-execution-authority-qualification
     CHECKPOINT=898_UNCHANGED
+
+
+## Owner protected canary: bounded Windows ACL exclusion confirmed
+
+Research 570 / Validation 259 record the owner's **separate** newly created synthetic canary, this time under a directory whose inherited permissions were disabled. The owner reported both `OwnerCanRead=True` and `InheritanceProtected=True`. We tested the exact owner-provided absolute path without printing its contents or publishing the account-local coordinates.
+
+The bounded `codex_read_many` tool again refused the outside-workspace path. Unlike the previous unprotected case, **`codex_command_exec(access=readOnly)` as `CodexSandboxOffline` received `UnauthorizedAccessException` on an actual PowerShell byte-read attempt**. A second read-only sandbox command using Python's `Path.open('rb')` independently produced `PermissionError`. Both were actual OS read denials under the same sandbox principal, **not separate principals**, and the owner separately confirmed the file exists and is readable. The contrast with Research 569 is preserved rather than overwriting the first failed observation.
+
+This qualifies **the tested one-file/one-principal Windows ACL read restriction only**. It does not prove that an actual authoring model is fully confined to this principal, that other connectors or owner-user Claude cannot access the file, that provider/debug transcripts are hidden, or that a complete versioned reference packet and private recovery key can be securely held. No ADS agent changed ACLs, accounts, secrets, registered roots, or the global ADS workflow.
+
+Next prepare a bounded, explicit R0-P03 arm-author tool/context profile and independently qualify owner-controlled fake-only key/output retention and recovery. Preserve Checkpoint 898 and the legacy Option A/Research 513 task, heldout, source and scoring obligations.
+
+    OWNER_PROTECTED_CANARY=OWNER_POSITIVE
+    OWNER_ACL_INHERITANCE=PROTECTED
+    SANDBOX_POWERSHELL_FILE_READ=WINDOWS_DENIED
+    SANDBOX_PYTHON_FILE_READ=WINDOWS_DENIED
+    BOUNDED_READER=ROOT_POLICY_DENIED
+    TESTED_ACL_EXCLUSION=POSITIVE
+    FULL_ARM_AGENT_AND_COMPLETE_GOLD=NOT_QUALIFIED
+    NEXT_ACTOR=chatgpt
+    NEXT_BOUNDARY=p-three-reviewer-execution-authority-qualification
+    CHECKPOINT=898_UNCHANGED
