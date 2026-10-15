@@ -1030,3 +1030,15 @@ No owner amendment acceptance, fresh gold custodian/author, task packet, arm imp
     OWNER_AMENDMENT_REQUIRED=TRUE
     NEXT_ACTOR=chatgpt
     CHECKPOINT=898_UNCHANGED
+
+## Owner ACCEPT: R0-P03 practical controlled independence is prospectively effective
+
+The owner explicitly answered **`I ACCEPT.`** to ChatGPT's Research 575 Level B substitution proposal. Research 576 records the exact prospective scope: for R0-P03's future B0–B4 authors/runs, the historical Research 568 mandatory whole-agent sandbox condition is superseded by **Level B role/context/source restrictions and evidence-backed known-channel exclusion**. Research 568 remains intact as historical experimental authority/evidence, and ordinary ADS development is unaffected. The original Research 513/559 independent arm-neutral historical gold, twelve objective answerable primary cases, versioned complete recoverable hidden answers, fresh evaluators, equal worlds/budgets, zero false authority and unchanged numeric gates continue to apply.
+
+This is authorization of the **method**, not certification of a particular model, custodian, source fixture, complete hidden packet or scoring attempt. Known gold exposure cannot be excused by asking an agent to ignore it. Level C is only exploratory. No actual arm/gold/task/score or owner credential has been executed. The next implementation is the already-scoped unscored four-category task-answerability capacity plus B0 shared-substrate parity evidence using Research 560/561 mechanics, not further broad VM/Docker investigation.
+
+    LEVEL_B_EXECUTION_METHOD=OWNER_ACCEPTED_RESEARCH_576
+    RESEARCH_568_SANDBOX_MANDATE=HISTORICALLY_RETAINED_PROSPECTIVELY_SUPERSEDED_FOR_P03_ARMS
+    ACTUAL_GOLD_CUSTODY_AUTHOR_MODEL_AND_SCORED_READINESS=NOT_QUALIFIED
+    NEXT_ACTOR=chatgpt
+    CHECKPOINT=898_UNCHANGED
