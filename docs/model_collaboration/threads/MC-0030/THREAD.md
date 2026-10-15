@@ -990,3 +990,10 @@ The CLI metadata process is distinct from Desktop and bridge commands; no thread
     NEXT_ACTOR=chatgpt
     NEXT_BOUNDARY=p-three-reviewer-execution-authority-qualification
     CHECKPOINT=898_UNCHANGED
+
+
+## Windows restricted author-host scope, read-only preflight
+
+Research 572 read-only scope preflight: at published e0a14048f2978d88881873c13781c9f609398881, Codex/codex-01 verified installed CLI 0.154.0 and its unchanged binary/candidate hashes. Embedded diagnostics require elevated for deny-read restrictions, but the original unpinned backend default, complete minimal/runtime ACL expansion, global principal/firewall effects and supported rollback are unresolved. Named CodexSandboxOffline/Online accounts already exist; a dedicated home does not isolate global security state. The ADS venv injects src through a .pth file; standalone Python 3.13.1 with -I -S -B excludes that site context. A concrete prospective root/layout/backend-pinned profile/command and conditional recovery plan are retained, all NOT EXECUTED. No sandbox/setup/readiness/doctor execution, inference, protected canary, repeated 570/571 tests, credentials or security-policy mutation. Obtain a version-matched read-only effect/rollback manifest or a separately owner-designated recoverable isolated Windows instance before security-sensitive authorization. Full author host/gold/science remains unqualified; Checkpoint 898 and routing unchanged. ChatGPT/chatgpt-39 retains independent review.
+
+No new validation number or checkpoint: this unit is metadata plus a conditional execution/authorization plan, not an actual sandbox result. Normal ADS development and protected owner canary remain untouched. See Research 572 for the exact prospective command, runtime exceptions, incomplete helper-effect scope and fail-closed recovery boundary.
