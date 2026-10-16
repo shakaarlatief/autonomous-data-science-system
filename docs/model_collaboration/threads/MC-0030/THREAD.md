@@ -1053,3 +1053,18 @@ Research 577 / Validation 261: Native exposed Codex/codex-01 at published 912d67
     LEVEL_B_METHOD=OWNER_ACCEPTED_RESEARCH_576
     NEXT_ACTOR=chatgpt
     CHECKPOINT=898_UNCHANGED
+
+## Source-grounded category, closure and neutral carrier assessment
+
+Research 578 / Validation 262: Native exposed Codex/codex-01 at published 213e6db7d02debfbde37f8e45b4297849bc6089a retained content pin c57556a8bf993a1d327e9197acb7b7c745071cd8 and assessed all 36 decision records plus 89 Product/Project Python files (106 read sources). Twenty-two docstring edges include 14 candidate Product associations across six contracts/thirteen components, two within-Project associations, one build-toolchain association and five generic mentions; eight scoped-supersession links are explicit. Local witnesses use one to three files, not a minimum task corpus; origin, category independence, normative applicability and question-dependent closure remain unknown. Seventy-five mapped records preserve source identities/statuses, incumbent declarations and explicit owner/effect/completion/coverage unknowns. Independent review corrected the provisional common graph from 25 to **eight source-declared scoped-supersession assertions**; the seventeen unqualified code-to-contract links and five generic mentions remain audit-only, not implicitly credited to B0. Category-analysis labels remain audit-only; B2 novelty versus accepted common J2 is still unqualified. All nine B0 capabilities and optional B4 remain, with no accepted J2 or new governing authority invented. 130 focused tests/regressions pass. Research 576 Level B, Research 513/559 science, Checkpoint 898, routing and operational authority unchanged. No tasks/gold/corpus selection/scoring, model dispatch, security work or private mutation. ChatGPT independently reviewed and corrected common-graph admission without changing the source findings. Next: prospective historical-event/fresh-author eligibility decision, then task-dependent closure and neutral-fact adjudication before fixture selection.
+
+    CANDIDATE_SOURCE_RELATIONS=SOURCE_BOUND_NOT_INDEPENDENT_TASKS
+    LOCAL_WITNESS_BUNDLES=AVAILABLE_NOT_MINIMUM_TASK_CLOSURE
+    NEUTRAL_CARRIER_SHAPE=COMPLETE_WITH_EXPLICIT_SEMANTIC_UNKNOWNS
+    COMMON_GRAPH=8_SOURCE_DECLARED_SCOPED_SUCCESSION_ASSERTIONS
+    CODE_TO_CONTRACT_ASSOCIATIONS=17_AUDIT_ONLY_PENDING_B0_VS_B2_ADMISSION
+    GENERIC_MENTIONS=5_AUDIT_ONLY
+    INDEPENDENT_NEEDS_AND_RUNTIME_PARITY=NOT_QUALIFIED
+    LEVEL_B_METHOD=OWNER_ACCEPTED_RESEARCH_576
+    NEXT_ACTOR=chatgpt
+    CHECKPOINT=898_UNCHANGED

@@ -199,6 +199,11 @@ NAVIGATION_KEYS = frozenset({
     "research217_topical_memberships", "extra_editorial_about_links",
     "prospective_governed_navigation_concerns", "semantic_similarity_rankings",
     "topical_memberships", "preferred_subject", "concern_assignments", "semantic_rank",
+    "controlled_topical_vocabulary", "source_owned_topical_memberships", "semantic_polyhierarchy",
+    "optional_preferred_route", "editorial_carrier_to_governing_about_links",
+    "bounded_cross_cutting_concern_vocabulary", "explicit_concern_assignments",
+    "ranked_semantic_candidate_retrieval",
+    "category_evidence", "cross_plane_relevance", "contract_scope_review", "supported_predicate_families",
 })
 
 
