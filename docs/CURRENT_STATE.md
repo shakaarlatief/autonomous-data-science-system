@@ -20,6 +20,8 @@ Primary collaborator     ChatGPT; Codex Desktop work is owner-relayed by default
 
 Repository artifacts remain authoritative across chats and models.
 
+**Runtime Bridge operational timeout retest (Research 580, 2026-10-16):** The owner requested a repair/check while R0-P03 science remains paused. Bridge repository file reads and workspace-authority discovery worked; ordinary read-only `command/exec` calls using 10–12-second deadlines timed out, whereas four independent read-only command calls with `timeoutMs: 30000` succeeded, including HEAD `1e575ac0` and a clean synchronized Git status. Two measured successful command round trips took approximately 12.9 and 13.3 seconds. Research 430 recorded earlier approximately 13-second Codex App Server command round trips, but the present underlying latency cause is unproven. Operational recovery is the explicitly longer supported per-call deadline; no runtime, tunnel, security, registry, source/science or checkpoint mutation, and no permanent latency fix claimed. Uncertain future mutations still require Git postflight before replay.
+
 ---
 
 ## Current active stage: R0-P03 source-only capsule prepared; reviewer execution and authority qualification
