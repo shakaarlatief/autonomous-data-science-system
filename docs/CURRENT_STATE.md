@@ -1,7 +1,7 @@
 # Current State
 
 **Checkpoint:** 898
-**Date:** 2026-10-15
+**Date:** 2026-10-16
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
 **Promoted V1 integration branch:** `v1-frontend-spike` at `2480109fadeee1e480ef03b82e335aacdf9adf91`
@@ -59,6 +59,12 @@ Repository artifacts remain authoritative across chats and models.
 **Level B execution protocol candidate, Research 575 (2026-10-15):** The owner-directed Research 574 return to substantive R0-P03 has produced a prospective, concrete role/exposure and closed-world comparison control matrix. It retains neutral independent legacy gold, twelve independently answerable tasks, source/authority parity, complete versioned owner-controlled reference recovery and original Research 513 numerical/scientific gates. Known gold exposure and unequal arm inputs remain disqualifying; fresh sessions and source-only tools do not certify perfect host isolation. Research 568's sandbox-only requirement is **still in force** until the owner separately ACCEPTs/AMENDs the exact pragmatic substitute. No gold, tasks, arms, scoring, sandbox, Docker, checkpoint or routing change. Immediate unscored work may refine role/authority source eligibility, objective four-category answerability capacity and the common-substrate parity contract.
 
 **Owner ACCEPTED pragmatic Level B execution method, Research 576 (2026-10-15):** After the published Research 575 proposal, the owner explicitly responded `I ACCEPT.` to its R0-P03-only substitution. Effective prospectively: the former Research 568 mandatory technically verified *whole-agent sandbox* for B0–B4 authoring is replaced by Level B controlled-independence safeguards and role/exposure admission from Research 575; Research 568 remains unchanged as historical evidence. No Docker, VM, blanket OS isolation or new security setup is automatically required. **Known gold exposure, independently authored/source-bound gold, versioned restricted complete-packet custody, fresh and separate reviewers/evaluators, identical closed source/tool budgets, and original Research 513/559 science/thresholds are not waived.** The exact agent/custodian/fixture readiness is still unqualified; owner acceptance of the method does not authorize scored arms or assert any result. Next execute unscored four-category objective task-answerability capacity and neutral shared substrate parity engineering, not another infrastructure survey. Checkpoint 898, active routing and operational authority unchanged.
+
+---
+
+## Non-scored four-category capacity and common-substrate diagnostic
+
+Research 577 / Validation 261: Native exposed Codex/codex-01 at published 912d6709e8f83591c0a5446531a8b0e38a59007d added a non-scored exact-Git task-capacity/common-substrate diagnostic at retained content pin c57556a8bf993a1d327e9197acb7b7c745071cd8. All 36 ledger events and 74 source-header carriers were inspected; hinted/cited category counts 21/14, 7/6, 12/8, 17/12 and matching ceiling 12 do not establish three independently answerable needs per category. All ten specimen plus one synthetic-relation citations match; required carrier mapping is incomplete, accepted J2 is not demonstrated by this specimen, derived checkpoint 564 is stale against historical source routing 895, and actual semantic/runtime parity remains unqualified. Synthetic equality/navigation/authority/J2/B2/freshness guards retain all nine B0 capabilities and optional B4. Research 576 Level B is effective; original Research 513/559 science, Checkpoint 898, live routing and operational authority unchanged. No tasks/gold/selection/scoring, model dispatch, security work or private mutation. Next ChatGPT independently reviews findings, then prospectively defines category eligibility and minimal source/authority closure plus neutral source-owned carrier mapping before final fixture design.
 
 ---
 

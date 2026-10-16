@@ -1042,3 +1042,14 @@ This is authorization of the **method**, not certification of a particular model
     ACTUAL_GOLD_CUSTODY_AUTHOR_MODEL_AND_SCORED_READINESS=NOT_QUALIFIED
     NEXT_ACTOR=chatgpt
     CHECKPOINT=898_UNCHANGED
+
+## Non-scored primary capacity and common-substrate parity diagnostic
+
+Research 577 / Validation 261: Native exposed Codex/codex-01 at published 912d6709e8f83591c0a5446531a8b0e38a59007d added a non-scored exact-Git task-capacity/common-substrate diagnostic at retained content pin c57556a8bf993a1d327e9197acb7b7c745071cd8. All 36 ledger events and 74 source-header carriers were inspected; hinted/cited category counts 21/14, 7/6, 12/8, 17/12 and matching ceiling 12 do not establish three independently answerable needs per category. All ten specimen plus one synthetic-relation citations match; required carrier mapping is incomplete, accepted J2 is not demonstrated by this specimen, derived checkpoint 564 is stale against historical source routing 895, and actual semantic/runtime parity remains unqualified. Synthetic equality/navigation/authority/J2/B2/freshness guards retain all nine B0 capabilities and optional B4. Research 576 Level B is effective; original Research 513/559 science, Checkpoint 898, live routing and operational authority unchanged. No tasks/gold/selection/scoring, model dispatch, security work or private mutation. Next ChatGPT independently reviews findings, then prospectively defines category eligibility and minimal source/authority closure plus neutral source-owned carrier mapping before final fixture design.
+
+    TASK_CAPACITY_3_PER_CATEGORY=NOT_ESTABLISHED
+    SPECIMEN_CITATION_INTEGRITY=11_EXACT
+    ACTUAL_COMMON_RUNTIME_PARITY=NOT_QUALIFIED
+    LEVEL_B_METHOD=OWNER_ACCEPTED_RESEARCH_576
+    NEXT_ACTOR=chatgpt
+    CHECKPOINT=898_UNCHANGED

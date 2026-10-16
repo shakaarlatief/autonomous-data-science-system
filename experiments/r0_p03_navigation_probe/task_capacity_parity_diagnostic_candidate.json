@@ -1,0 +1,4065 @@
+{
+  "classification": "EXPOSED_ENGINEERING_DIAGNOSTIC_NOT_TASKS_GOLD_OR_FIXTURE",
+  "engineering_design_ref": "912d6709e8f83591c0a5446531a8b0e38a59007d",
+  "engineering_design_input_blobs": {
+    "experiments/r0_p03_navigation_probe/common_substrate_contract_candidate.json": "2d0780f57d4fc9fbf883da071be399f9154a786a",
+    "experiments/r0_p03_navigation_probe/independent_reference_method_candidate.json": "0b0f98962a0338d9eb9e05ef21001af5d9e9cf06",
+    "experiments/r0_p03_navigation_probe/neutral_substrate_specimen_candidate.json": "88255a79a37aa9ddfa6e2807ba25e04176476ed0"
+  },
+  "retained_scientific_gates": {
+    "primary_total": 12,
+    "primary_categories": {
+      "cold_start_current_orientation": 3,
+      "cross_plane_discovery": 3,
+      "impact_analysis_evolution": 3,
+      "exact_source_authority_recovery": 3
+    },
+    "legacy_total": 9,
+    "build_target": 60,
+    "heldout_target": 20,
+    "primary_pass_min": 10,
+    "legacy_pass_min": 8,
+    "false_authority_tolerance": 0
+  },
+  "source_ref": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+  "ledger_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+  "event_count": 36,
+  "category_signal_rules_not_eligibility": {
+    "cold_start_current_orientation": "\\b(?:continuity|reconstruct\\w*|current|orientation)\\b",
+    "cross_plane_discovery": "\\b(?:cross[- ]plane|cross[- ]system|product|source[- ]universe|interoperability|interchange)\\b",
+    "impact_analysis_evolution": "\\b(?:supersed\\w*|evol\\w*|migrat\\w*|revis\\w*|impact|successor)\\b",
+    "exact_source_authority_recovery": "\\b(?:authority|provenance|recover\\w*|rollback|exact|integrity|verif\\w*)\\b"
+  },
+  "raw_status_counts": {
+    "Accepted": 20,
+    "Superseded in current repository state; the repository is now public": 1,
+    "Superseded for the V1 persistence/retrieval architecture by D-028, persistence tooling by D-029, Python project/dependency tooling by D-030, reusable-knowledge interchange by D-031, initial reasoning runtime by D-032, source-universe substrate by D-033, and project-development knowledge architecture by D-035; still applicable to implementation subsystems not yet selected": 1,
+    "Accepted at the conceptual level": 1,
+    "Superseded in architectural-uncertainty scope by D-033; durable public-Git exclusion outcome retained": 1,
+    "Accepted and executed": 1,
+    "Accepted for the current stage": 1,
+    "Accepted and frozen for Prototype V0 operational use": 1,
+    "Accepted for the remaining Prototype V0 treatment-execution phase": 1,
+    "Accepted for V1": 6,
+    "Accepted / selected successor target / not yet operational authority": 2
+  },
+  "category_capacity": {
+    "cold_start_current_orientation": {
+      "lexical_hint_events": 21,
+      "hint_with_resolved_citation_events": 14,
+      "independently_answerable_task_count": null,
+      "qualification": "NOT_ESTABLISHED_SOURCE_CLOSURE_AND_INDEPENDENT_METHOD_REQUIRED"
+    },
+    "cross_plane_discovery": {
+      "lexical_hint_events": 7,
+      "hint_with_resolved_citation_events": 6,
+      "independently_answerable_task_count": null,
+      "qualification": "NOT_ESTABLISHED_SOURCE_CLOSURE_AND_INDEPENDENT_METHOD_REQUIRED"
+    },
+    "impact_analysis_evolution": {
+      "lexical_hint_events": 12,
+      "hint_with_resolved_citation_events": 8,
+      "independently_answerable_task_count": null,
+      "qualification": "NOT_ESTABLISHED_SOURCE_CLOSURE_AND_INDEPENDENT_METHOD_REQUIRED"
+    },
+    "exact_source_authority_recovery": {
+      "lexical_hint_events": 17,
+      "hint_with_resolved_citation_events": 12,
+      "independently_answerable_task_count": null,
+      "qualification": "NOT_ESTABLISHED_SOURCE_CLOSURE_AND_INDEPENDENT_METHOD_REQUIRED"
+    }
+  },
+  "distinct_event_signal_capacity_upper_bound": 12,
+  "events": [
+    {
+      "event_id": "D-001",
+      "line_start": 7,
+      "line_end": 19,
+      "raw_status": "Accepted",
+      "raw_date": "2026-08-07",
+      "lexical_signal_lines": {
+        "cold_start_current_orientation": [],
+        "cross_plane_discovery": [],
+        "impact_analysis_evolution": [],
+        "exact_source_authority_recovery": []
+      },
+      "owner_mentioned": false,
+      "references": [],
+      "source_provenance": {
+        "source_path": "docs/DECISIONS.md",
+        "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+        "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8"
+      },
+      "referenced_path_role_hints": {},
+      "observed_reference_neighborhood": {
+        "direct_files": 0,
+        "two_hop_files": 1,
+        "direct_outside_role_frame": [],
+        "direct_auxiliary_or_quarantined": [],
+        "two_hop_auxiliary_or_quarantined_count": 0,
+        "two_hop_exceeds_sixty": false,
+        "complete_task_closure": false
+      },
+      "gaps": [
+        "NO_INDEPENDENT_INFORMATION_NEED_OR_MINIMAL_SOURCE_CLOSURE",
+        "STATUS_DATE_OWNER_MENTION_ARE_NOT_VERBATIM_OWNER_EVENT_ATTESTATION",
+        "NUMBER_SHORTHAND_AND_LOCAL_D_IDS_NOT_EXPANDED; TWO_HOP_FRONTIER_NOT_CLOSED",
+        "NO_RESOLVED_EXTERNAL_FILE_CITATION"
+      ]
+    },
+    {
+      "event_id": "D-002",
+      "line_start": 20,
+      "line_end": 32,
+      "raw_status": "Accepted",
+      "raw_date": "2026-08-07",
+      "lexical_signal_lines": {
+        "cold_start_current_orientation": [
+          29
+        ],
+        "cross_plane_discovery": [],
+        "impact_analysis_evolution": [],
+        "exact_source_authority_recovery": [
+          29
+        ]
+      },
+      "owner_mentioned": false,
+      "references": [],
+      "source_provenance": {
+        "source_path": "docs/DECISIONS.md",
+        "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+        "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8"
+      },
+      "referenced_path_role_hints": {},
+      "observed_reference_neighborhood": {
+        "direct_files": 0,
+        "two_hop_files": 1,
+        "direct_outside_role_frame": [],
+        "direct_auxiliary_or_quarantined": [],
+        "two_hop_auxiliary_or_quarantined_count": 0,
+        "two_hop_exceeds_sixty": false,
+        "complete_task_closure": false
+      },
+      "gaps": [
+        "NO_INDEPENDENT_INFORMATION_NEED_OR_MINIMAL_SOURCE_CLOSURE",
+        "STATUS_DATE_OWNER_MENTION_ARE_NOT_VERBATIM_OWNER_EVENT_ATTESTATION",
+        "NUMBER_SHORTHAND_AND_LOCAL_D_IDS_NOT_EXPANDED; TWO_HOP_FRONTIER_NOT_CLOSED",
+        "NO_RESOLVED_EXTERNAL_FILE_CITATION"
+      ]
+    },
+    {
+      "event_id": "D-003",
+      "line_start": 33,
+      "line_end": 48,
+      "raw_status": "Superseded in current repository state; the repository is now public",
+      "raw_date": "2026-08-07",
+      "lexical_signal_lines": {
+        "cold_start_current_orientation": [
+          35,
+          39,
+          45
+        ],
+        "cross_plane_discovery": [],
+        "impact_analysis_evolution": [
+          35,
+          37
+        ],
+        "exact_source_authority_recovery": [
+          37,
+          45
+        ]
+      },
+      "owner_mentioned": false,
+      "references": [],
+      "source_provenance": {
+        "source_path": "docs/DECISIONS.md",
+        "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+        "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8"
+      },
+      "referenced_path_role_hints": {},
+      "observed_reference_neighborhood": {
+        "direct_files": 0,
+        "two_hop_files": 1,
+        "direct_outside_role_frame": [],
+        "direct_auxiliary_or_quarantined": [],
+        "two_hop_auxiliary_or_quarantined_count": 0,
+        "two_hop_exceeds_sixty": false,
+        "complete_task_closure": false
+      },
+      "gaps": [
+        "NO_INDEPENDENT_INFORMATION_NEED_OR_MINIMAL_SOURCE_CLOSURE",
+        "STATUS_DATE_OWNER_MENTION_ARE_NOT_VERBATIM_OWNER_EVENT_ATTESTATION",
+        "NUMBER_SHORTHAND_AND_LOCAL_D_IDS_NOT_EXPANDED; TWO_HOP_FRONTIER_NOT_CLOSED",
+        "NO_RESOLVED_EXTERNAL_FILE_CITATION"
+      ]
+    },
+    {
+      "event_id": "D-004",
+      "line_start": 49,
+      "line_end": 61,
+      "raw_status": "Accepted",
+      "raw_date": "2026-08-07",
+      "lexical_signal_lines": {
+        "cold_start_current_orientation": [
+          58
+        ],
+        "cross_plane_discovery": [],
+        "impact_analysis_evolution": [],
+        "exact_source_authority_recovery": []
+      },
+      "owner_mentioned": false,
+      "references": [],
+      "source_provenance": {
+        "source_path": "docs/DECISIONS.md",
+        "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+        "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8"
+      },
+      "referenced_path_role_hints": {},
+      "observed_reference_neighborhood": {
+        "direct_files": 0,
+        "two_hop_files": 1,
+        "direct_outside_role_frame": [],
+        "direct_auxiliary_or_quarantined": [],
+        "two_hop_auxiliary_or_quarantined_count": 0,
+        "two_hop_exceeds_sixty": false,
+        "complete_task_closure": false
+      },
+      "gaps": [
+        "NO_INDEPENDENT_INFORMATION_NEED_OR_MINIMAL_SOURCE_CLOSURE",
+        "STATUS_DATE_OWNER_MENTION_ARE_NOT_VERBATIM_OWNER_EVENT_ATTESTATION",
+        "NUMBER_SHORTHAND_AND_LOCAL_D_IDS_NOT_EXPANDED; TWO_HOP_FRONTIER_NOT_CLOSED",
+        "NO_RESOLVED_EXTERNAL_FILE_CITATION"
+      ]
+    },
+    {
+      "event_id": "D-005",
+      "line_start": 62,
+      "line_end": 76,
+      "raw_status": "Accepted",
+      "raw_date": "2026-08-07",
+      "lexical_signal_lines": {
+        "cold_start_current_orientation": [
+          73
+        ],
+        "cross_plane_discovery": [],
+        "impact_analysis_evolution": [],
+        "exact_source_authority_recovery": []
+      },
+      "owner_mentioned": false,
+      "references": [],
+      "source_provenance": {
+        "source_path": "docs/DECISIONS.md",
+        "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+        "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8"
+      },
+      "referenced_path_role_hints": {},
+      "observed_reference_neighborhood": {
+        "direct_files": 0,
+        "two_hop_files": 1,
+        "direct_outside_role_frame": [],
+        "direct_auxiliary_or_quarantined": [],
+        "two_hop_auxiliary_or_quarantined_count": 0,
+        "two_hop_exceeds_sixty": false,
+        "complete_task_closure": false
+      },
+      "gaps": [
+        "NO_INDEPENDENT_INFORMATION_NEED_OR_MINIMAL_SOURCE_CLOSURE",
+        "STATUS_DATE_OWNER_MENTION_ARE_NOT_VERBATIM_OWNER_EVENT_ATTESTATION",
+        "NUMBER_SHORTHAND_AND_LOCAL_D_IDS_NOT_EXPANDED; TWO_HOP_FRONTIER_NOT_CLOSED",
+        "NO_RESOLVED_EXTERNAL_FILE_CITATION"
+      ]
+    },
+    {
+      "event_id": "D-006",
+      "line_start": 77,
+      "line_end": 89,
+      "raw_status": "Accepted",
+      "raw_date": "2026-08-07",
+      "lexical_signal_lines": {
+        "cold_start_current_orientation": [
+          82
+        ],
+        "cross_plane_discovery": [],
+        "impact_analysis_evolution": [
+          86
+        ],
+        "exact_source_authority_recovery": []
+      },
+      "owner_mentioned": false,
+      "references": [],
+      "source_provenance": {
+        "source_path": "docs/DECISIONS.md",
+        "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+        "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8"
+      },
+      "referenced_path_role_hints": {},
+      "observed_reference_neighborhood": {
+        "direct_files": 0,
+        "two_hop_files": 1,
+        "direct_outside_role_frame": [],
+        "direct_auxiliary_or_quarantined": [],
+        "two_hop_auxiliary_or_quarantined_count": 0,
+        "two_hop_exceeds_sixty": false,
+        "complete_task_closure": false
+      },
+      "gaps": [
+        "NO_INDEPENDENT_INFORMATION_NEED_OR_MINIMAL_SOURCE_CLOSURE",
+        "STATUS_DATE_OWNER_MENTION_ARE_NOT_VERBATIM_OWNER_EVENT_ATTESTATION",
+        "NUMBER_SHORTHAND_AND_LOCAL_D_IDS_NOT_EXPANDED; TWO_HOP_FRONTIER_NOT_CLOSED",
+        "NO_RESOLVED_EXTERNAL_FILE_CITATION"
+      ]
+    },
+    {
+      "event_id": "D-007",
+      "line_start": 90,
+      "line_end": 102,
+      "raw_status": "Accepted",
+      "raw_date": "2026-08-07",
+      "lexical_signal_lines": {
+        "cold_start_current_orientation": [
+          95
+        ],
+        "cross_plane_discovery": [],
+        "impact_analysis_evolution": [],
+        "exact_source_authority_recovery": [
+          95
+        ]
+      },
+      "owner_mentioned": false,
+      "references": [],
+      "source_provenance": {
+        "source_path": "docs/DECISIONS.md",
+        "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+        "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8"
+      },
+      "referenced_path_role_hints": {},
+      "observed_reference_neighborhood": {
+        "direct_files": 0,
+        "two_hop_files": 1,
+        "direct_outside_role_frame": [],
+        "direct_auxiliary_or_quarantined": [],
+        "two_hop_auxiliary_or_quarantined_count": 0,
+        "two_hop_exceeds_sixty": false,
+        "complete_task_closure": false
+      },
+      "gaps": [
+        "NO_INDEPENDENT_INFORMATION_NEED_OR_MINIMAL_SOURCE_CLOSURE",
+        "STATUS_DATE_OWNER_MENTION_ARE_NOT_VERBATIM_OWNER_EVENT_ATTESTATION",
+        "NUMBER_SHORTHAND_AND_LOCAL_D_IDS_NOT_EXPANDED; TWO_HOP_FRONTIER_NOT_CLOSED",
+        "NO_RESOLVED_EXTERNAL_FILE_CITATION"
+      ]
+    },
+    {
+      "event_id": "D-008",
+      "line_start": 103,
+      "line_end": 119,
+      "raw_status": "Accepted",
+      "raw_date": "2026-08-07",
+      "lexical_signal_lines": {
+        "cold_start_current_orientation": [
+          103,
+          108,
+          110,
+          116
+        ],
+        "cross_plane_discovery": [],
+        "impact_analysis_evolution": [],
+        "exact_source_authority_recovery": []
+      },
+      "owner_mentioned": false,
+      "references": [
+        {
+          "line": 116,
+          "token": "docs/CONTINUITY.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/CONTINUITY.md"
+          ]
+        }
+      ],
+      "source_provenance": {
+        "source_path": "docs/DECISIONS.md",
+        "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+        "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8"
+      },
+      "referenced_path_role_hints": {
+        "navigation_or_orientation": 1
+      },
+      "observed_reference_neighborhood": {
+        "direct_files": 1,
+        "two_hop_files": 29,
+        "direct_outside_role_frame": [],
+        "direct_auxiliary_or_quarantined": [],
+        "two_hop_auxiliary_or_quarantined_count": 0,
+        "two_hop_exceeds_sixty": false,
+        "complete_task_closure": false
+      },
+      "gaps": [
+        "NO_INDEPENDENT_INFORMATION_NEED_OR_MINIMAL_SOURCE_CLOSURE",
+        "STATUS_DATE_OWNER_MENTION_ARE_NOT_VERBATIM_OWNER_EVENT_ATTESTATION",
+        "NUMBER_SHORTHAND_AND_LOCAL_D_IDS_NOT_EXPANDED; TWO_HOP_FRONTIER_NOT_CLOSED"
+      ]
+    },
+    {
+      "event_id": "D-009",
+      "line_start": 120,
+      "line_end": 132,
+      "raw_status": "Accepted",
+      "raw_date": "2026-08-07",
+      "lexical_signal_lines": {
+        "cold_start_current_orientation": [],
+        "cross_plane_discovery": [],
+        "impact_analysis_evolution": [],
+        "exact_source_authority_recovery": []
+      },
+      "owner_mentioned": false,
+      "references": [],
+      "source_provenance": {
+        "source_path": "docs/DECISIONS.md",
+        "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+        "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8"
+      },
+      "referenced_path_role_hints": {},
+      "observed_reference_neighborhood": {
+        "direct_files": 0,
+        "two_hop_files": 1,
+        "direct_outside_role_frame": [],
+        "direct_auxiliary_or_quarantined": [],
+        "two_hop_auxiliary_or_quarantined_count": 0,
+        "two_hop_exceeds_sixty": false,
+        "complete_task_closure": false
+      },
+      "gaps": [
+        "NO_INDEPENDENT_INFORMATION_NEED_OR_MINIMAL_SOURCE_CLOSURE",
+        "STATUS_DATE_OWNER_MENTION_ARE_NOT_VERBATIM_OWNER_EVENT_ATTESTATION",
+        "NUMBER_SHORTHAND_AND_LOCAL_D_IDS_NOT_EXPANDED; TWO_HOP_FRONTIER_NOT_CLOSED",
+        "NO_RESOLVED_EXTERNAL_FILE_CITATION"
+      ]
+    },
+    {
+      "event_id": "D-010",
+      "line_start": 133,
+      "line_end": 145,
+      "raw_status": "Accepted",
+      "raw_date": "2026-08-07",
+      "lexical_signal_lines": {
+        "cold_start_current_orientation": [
+          138
+        ],
+        "cross_plane_discovery": [],
+        "impact_analysis_evolution": [
+          142
+        ],
+        "exact_source_authority_recovery": []
+      },
+      "owner_mentioned": false,
+      "references": [],
+      "source_provenance": {
+        "source_path": "docs/DECISIONS.md",
+        "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+        "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8"
+      },
+      "referenced_path_role_hints": {},
+      "observed_reference_neighborhood": {
+        "direct_files": 0,
+        "two_hop_files": 1,
+        "direct_outside_role_frame": [],
+        "direct_auxiliary_or_quarantined": [],
+        "two_hop_auxiliary_or_quarantined_count": 0,
+        "two_hop_exceeds_sixty": false,
+        "complete_task_closure": false
+      },
+      "gaps": [
+        "NO_INDEPENDENT_INFORMATION_NEED_OR_MINIMAL_SOURCE_CLOSURE",
+        "STATUS_DATE_OWNER_MENTION_ARE_NOT_VERBATIM_OWNER_EVENT_ATTESTATION",
+        "NUMBER_SHORTHAND_AND_LOCAL_D_IDS_NOT_EXPANDED; TWO_HOP_FRONTIER_NOT_CLOSED",
+        "NO_RESOLVED_EXTERNAL_FILE_CITATION"
+      ]
+    },
+    {
+      "event_id": "D-011",
+      "line_start": 146,
+      "line_end": 159,
+      "raw_status": "Superseded for the V1 persistence/retrieval architecture by D-028, persistence tooling by D-029, Python project/dependency tooling by D-030, reusable-knowledge interchange by D-031, initial reasoning runtime by D-032, source-universe substrate by D-033, and project-development knowledge architecture by D-035; still applicable to implementation subsystems not yet selected",
+      "raw_date": "2026-08-07",
+      "lexical_signal_lines": {
+        "cold_start_current_orientation": [],
+        "cross_plane_discovery": [
+          148
+        ],
+        "impact_analysis_evolution": [
+          148,
+          150
+        ],
+        "exact_source_authority_recovery": []
+      },
+      "owner_mentioned": false,
+      "references": [],
+      "source_provenance": {
+        "source_path": "docs/DECISIONS.md",
+        "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+        "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8"
+      },
+      "referenced_path_role_hints": {},
+      "observed_reference_neighborhood": {
+        "direct_files": 0,
+        "two_hop_files": 1,
+        "direct_outside_role_frame": [],
+        "direct_auxiliary_or_quarantined": [],
+        "two_hop_auxiliary_or_quarantined_count": 0,
+        "two_hop_exceeds_sixty": false,
+        "complete_task_closure": false
+      },
+      "gaps": [
+        "NO_INDEPENDENT_INFORMATION_NEED_OR_MINIMAL_SOURCE_CLOSURE",
+        "STATUS_DATE_OWNER_MENTION_ARE_NOT_VERBATIM_OWNER_EVENT_ATTESTATION",
+        "NUMBER_SHORTHAND_AND_LOCAL_D_IDS_NOT_EXPANDED; TWO_HOP_FRONTIER_NOT_CLOSED",
+        "NO_RESOLVED_EXTERNAL_FILE_CITATION"
+      ]
+    },
+    {
+      "event_id": "D-012",
+      "line_start": 160,
+      "line_end": 174,
+      "raw_status": "Accepted at the conceptual level",
+      "raw_date": "2026-08-07",
+      "lexical_signal_lines": {
+        "cold_start_current_orientation": [],
+        "cross_plane_discovery": [],
+        "impact_analysis_evolution": [],
+        "exact_source_authority_recovery": []
+      },
+      "owner_mentioned": false,
+      "references": [],
+      "source_provenance": {
+        "source_path": "docs/DECISIONS.md",
+        "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+        "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8"
+      },
+      "referenced_path_role_hints": {},
+      "observed_reference_neighborhood": {
+        "direct_files": 0,
+        "two_hop_files": 1,
+        "direct_outside_role_frame": [],
+        "direct_auxiliary_or_quarantined": [],
+        "two_hop_auxiliary_or_quarantined_count": 0,
+        "two_hop_exceeds_sixty": false,
+        "complete_task_closure": false
+      },
+      "gaps": [
+        "NO_INDEPENDENT_INFORMATION_NEED_OR_MINIMAL_SOURCE_CLOSURE",
+        "STATUS_DATE_OWNER_MENTION_ARE_NOT_VERBATIM_OWNER_EVENT_ATTESTATION",
+        "NUMBER_SHORTHAND_AND_LOCAL_D_IDS_NOT_EXPANDED; TWO_HOP_FRONTIER_NOT_CLOSED",
+        "NO_RESOLVED_EXTERNAL_FILE_CITATION"
+      ]
+    },
+    {
+      "event_id": "D-013",
+      "line_start": 175,
+      "line_end": 187,
+      "raw_status": "Accepted",
+      "raw_date": "2026-08-07",
+      "lexical_signal_lines": {
+        "cold_start_current_orientation": [],
+        "cross_plane_discovery": [],
+        "impact_analysis_evolution": [],
+        "exact_source_authority_recovery": []
+      },
+      "owner_mentioned": false,
+      "references": [],
+      "source_provenance": {
+        "source_path": "docs/DECISIONS.md",
+        "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+        "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8"
+      },
+      "referenced_path_role_hints": {},
+      "observed_reference_neighborhood": {
+        "direct_files": 0,
+        "two_hop_files": 1,
+        "direct_outside_role_frame": [],
+        "direct_auxiliary_or_quarantined": [],
+        "two_hop_auxiliary_or_quarantined_count": 0,
+        "two_hop_exceeds_sixty": false,
+        "complete_task_closure": false
+      },
+      "gaps": [
+        "NO_INDEPENDENT_INFORMATION_NEED_OR_MINIMAL_SOURCE_CLOSURE",
+        "STATUS_DATE_OWNER_MENTION_ARE_NOT_VERBATIM_OWNER_EVENT_ATTESTATION",
+        "NUMBER_SHORTHAND_AND_LOCAL_D_IDS_NOT_EXPANDED; TWO_HOP_FRONTIER_NOT_CLOSED",
+        "NO_RESOLVED_EXTERNAL_FILE_CITATION"
+      ]
+    },
+    {
+      "event_id": "D-014",
+      "line_start": 188,
+      "line_end": 200,
+      "raw_status": "Accepted",
+      "raw_date": "2026-08-07",
+      "lexical_signal_lines": {
+        "cold_start_current_orientation": [],
+        "cross_plane_discovery": [],
+        "impact_analysis_evolution": [],
+        "exact_source_authority_recovery": []
+      },
+      "owner_mentioned": false,
+      "references": [],
+      "source_provenance": {
+        "source_path": "docs/DECISIONS.md",
+        "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+        "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8"
+      },
+      "referenced_path_role_hints": {},
+      "observed_reference_neighborhood": {
+        "direct_files": 0,
+        "two_hop_files": 1,
+        "direct_outside_role_frame": [],
+        "direct_auxiliary_or_quarantined": [],
+        "two_hop_auxiliary_or_quarantined_count": 0,
+        "two_hop_exceeds_sixty": false,
+        "complete_task_closure": false
+      },
+      "gaps": [
+        "NO_INDEPENDENT_INFORMATION_NEED_OR_MINIMAL_SOURCE_CLOSURE",
+        "STATUS_DATE_OWNER_MENTION_ARE_NOT_VERBATIM_OWNER_EVENT_ATTESTATION",
+        "NUMBER_SHORTHAND_AND_LOCAL_D_IDS_NOT_EXPANDED; TWO_HOP_FRONTIER_NOT_CLOSED",
+        "NO_RESOLVED_EXTERNAL_FILE_CITATION"
+      ]
+    },
+    {
+      "event_id": "D-015",
+      "line_start": 201,
+      "line_end": 216,
+      "raw_status": "Superseded in architectural-uncertainty scope by D-033; durable public-Git exclusion outcome retained",
+      "raw_date": "2026-08-07",
+      "lexical_signal_lines": {
+        "cold_start_current_orientation": [],
+        "cross_plane_discovery": [],
+        "impact_analysis_evolution": [
+          203,
+          205
+        ],
+        "exact_source_authority_recovery": []
+      },
+      "owner_mentioned": false,
+      "references": [
+        {
+          "line": 213,
+          "token": "Checkpoint 196",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/checkpoints/196_source_substrate_accepted_first_corpus_validated.md"
+          ]
+        },
+        {
+          "line": 213,
+          "token": "Foundation 021",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md"
+          ]
+        },
+        {
+          "line": 213,
+          "token": "Specification 023",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/specifications/023_v1_source_universe_substrate.md"
+          ]
+        }
+      ],
+      "source_provenance": {
+        "source_path": "docs/DECISIONS.md",
+        "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+        "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8"
+      },
+      "referenced_path_role_hints": {
+        "historical_progress_evidence": 1,
+        "foundation": 1,
+        "specification_carrier": 1
+      },
+      "observed_reference_neighborhood": {
+        "direct_files": 3,
+        "two_hop_files": 10,
+        "direct_outside_role_frame": [],
+        "direct_auxiliary_or_quarantined": [],
+        "two_hop_auxiliary_or_quarantined_count": 0,
+        "two_hop_exceeds_sixty": false,
+        "complete_task_closure": false
+      },
+      "gaps": [
+        "NO_INDEPENDENT_INFORMATION_NEED_OR_MINIMAL_SOURCE_CLOSURE",
+        "STATUS_DATE_OWNER_MENTION_ARE_NOT_VERBATIM_OWNER_EVENT_ATTESTATION",
+        "NUMBER_SHORTHAND_AND_LOCAL_D_IDS_NOT_EXPANDED; TWO_HOP_FRONTIER_NOT_CLOSED"
+      ]
+    },
+    {
+      "event_id": "D-016",
+      "line_start": 217,
+      "line_end": 229,
+      "raw_status": "Accepted and executed",
+      "raw_date": "2026-08-07",
+      "lexical_signal_lines": {
+        "cold_start_current_orientation": [],
+        "cross_plane_discovery": [],
+        "impact_analysis_evolution": [],
+        "exact_source_authority_recovery": []
+      },
+      "owner_mentioned": false,
+      "references": [
+        {
+          "line": 217,
+          "token": "Checkpoint 0",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/checkpoints/000_checkpoint_0.md"
+          ]
+        }
+      ],
+      "source_provenance": {
+        "source_path": "docs/DECISIONS.md",
+        "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+        "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8"
+      },
+      "referenced_path_role_hints": {
+        "historical_progress_evidence": 1
+      },
+      "observed_reference_neighborhood": {
+        "direct_files": 1,
+        "two_hop_files": 10,
+        "direct_outside_role_frame": [],
+        "direct_auxiliary_or_quarantined": [],
+        "two_hop_auxiliary_or_quarantined_count": 0,
+        "two_hop_exceeds_sixty": false,
+        "complete_task_closure": false
+      },
+      "gaps": [
+        "NO_INDEPENDENT_INFORMATION_NEED_OR_MINIMAL_SOURCE_CLOSURE",
+        "STATUS_DATE_OWNER_MENTION_ARE_NOT_VERBATIM_OWNER_EVENT_ATTESTATION",
+        "NUMBER_SHORTHAND_AND_LOCAL_D_IDS_NOT_EXPANDED; TWO_HOP_FRONTIER_NOT_CLOSED"
+      ]
+    },
+    {
+      "event_id": "D-017",
+      "line_start": 230,
+      "line_end": 248,
+      "raw_status": "Accepted",
+      "raw_date": "2026-08-08",
+      "lexical_signal_lines": {
+        "cold_start_current_orientation": [],
+        "cross_plane_discovery": [],
+        "impact_analysis_evolution": [],
+        "exact_source_authority_recovery": [
+          245
+        ]
+      },
+      "owner_mentioned": false,
+      "references": [],
+      "source_provenance": {
+        "source_path": "docs/DECISIONS.md",
+        "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+        "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8"
+      },
+      "referenced_path_role_hints": {},
+      "observed_reference_neighborhood": {
+        "direct_files": 0,
+        "two_hop_files": 1,
+        "direct_outside_role_frame": [],
+        "direct_auxiliary_or_quarantined": [],
+        "two_hop_auxiliary_or_quarantined_count": 0,
+        "two_hop_exceeds_sixty": false,
+        "complete_task_closure": false
+      },
+      "gaps": [
+        "NO_INDEPENDENT_INFORMATION_NEED_OR_MINIMAL_SOURCE_CLOSURE",
+        "STATUS_DATE_OWNER_MENTION_ARE_NOT_VERBATIM_OWNER_EVENT_ATTESTATION",
+        "NUMBER_SHORTHAND_AND_LOCAL_D_IDS_NOT_EXPANDED; TWO_HOP_FRONTIER_NOT_CLOSED",
+        "NO_RESOLVED_EXTERNAL_FILE_CITATION"
+      ]
+    },
+    {
+      "event_id": "D-018",
+      "line_start": 249,
+      "line_end": 267,
+      "raw_status": "Accepted",
+      "raw_date": "2026-08-08",
+      "lexical_signal_lines": {
+        "cold_start_current_orientation": [
+          256,
+          260
+        ],
+        "cross_plane_discovery": [],
+        "impact_analysis_evolution": [],
+        "exact_source_authority_recovery": []
+      },
+      "owner_mentioned": false,
+      "references": [
+        {
+          "line": 264,
+          "token": "docs/DEVELOPMENT_METHOD.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/DEVELOPMENT_METHOD.md"
+          ]
+        }
+      ],
+      "source_provenance": {
+        "source_path": "docs/DECISIONS.md",
+        "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+        "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8"
+      },
+      "referenced_path_role_hints": {
+        "other_project_document": 1
+      },
+      "observed_reference_neighborhood": {
+        "direct_files": 1,
+        "two_hop_files": 39,
+        "direct_outside_role_frame": [],
+        "direct_auxiliary_or_quarantined": [],
+        "two_hop_auxiliary_or_quarantined_count": 0,
+        "two_hop_exceeds_sixty": false,
+        "complete_task_closure": false
+      },
+      "gaps": [
+        "NO_INDEPENDENT_INFORMATION_NEED_OR_MINIMAL_SOURCE_CLOSURE",
+        "STATUS_DATE_OWNER_MENTION_ARE_NOT_VERBATIM_OWNER_EVENT_ATTESTATION",
+        "NUMBER_SHORTHAND_AND_LOCAL_D_IDS_NOT_EXPANDED; TWO_HOP_FRONTIER_NOT_CLOSED"
+      ]
+    },
+    {
+      "event_id": "D-019",
+      "line_start": 268,
+      "line_end": 288,
+      "raw_status": "Accepted",
+      "raw_date": "2026-08-08",
+      "lexical_signal_lines": {
+        "cold_start_current_orientation": [],
+        "cross_plane_discovery": [],
+        "impact_analysis_evolution": [],
+        "exact_source_authority_recovery": [
+          285
+        ]
+      },
+      "owner_mentioned": false,
+      "references": [],
+      "source_provenance": {
+        "source_path": "docs/DECISIONS.md",
+        "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+        "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8"
+      },
+      "referenced_path_role_hints": {},
+      "observed_reference_neighborhood": {
+        "direct_files": 0,
+        "two_hop_files": 1,
+        "direct_outside_role_frame": [],
+        "direct_auxiliary_or_quarantined": [],
+        "two_hop_auxiliary_or_quarantined_count": 0,
+        "two_hop_exceeds_sixty": false,
+        "complete_task_closure": false
+      },
+      "gaps": [
+        "NO_INDEPENDENT_INFORMATION_NEED_OR_MINIMAL_SOURCE_CLOSURE",
+        "STATUS_DATE_OWNER_MENTION_ARE_NOT_VERBATIM_OWNER_EVENT_ATTESTATION",
+        "NUMBER_SHORTHAND_AND_LOCAL_D_IDS_NOT_EXPANDED; TWO_HOP_FRONTIER_NOT_CLOSED",
+        "NO_RESOLVED_EXTERNAL_FILE_CITATION"
+      ]
+    },
+    {
+      "event_id": "D-020",
+      "line_start": 289,
+      "line_end": 309,
+      "raw_status": "Accepted",
+      "raw_date": "2026-08-08",
+      "lexical_signal_lines": {
+        "cold_start_current_orientation": [
+          294,
+          296,
+          298,
+          300,
+          304,
+          306
+        ],
+        "cross_plane_discovery": [],
+        "impact_analysis_evolution": [],
+        "exact_source_authority_recovery": [
+          300,
+          304
+        ]
+      },
+      "owner_mentioned": false,
+      "references": [
+        {
+          "line": 298,
+          "token": "docs/CURRENT_STATE.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "line": 306,
+          "token": "docs/CONTINUITY.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/CONTINUITY.md"
+          ]
+        }
+      ],
+      "source_provenance": {
+        "source_path": "docs/DECISIONS.md",
+        "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+        "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8"
+      },
+      "referenced_path_role_hints": {
+        "navigation_or_orientation": 2
+      },
+      "observed_reference_neighborhood": {
+        "direct_files": 2,
+        "two_hop_files": 1008,
+        "direct_outside_role_frame": [],
+        "direct_auxiliary_or_quarantined": [],
+        "two_hop_auxiliary_or_quarantined_count": 8,
+        "two_hop_exceeds_sixty": true,
+        "complete_task_closure": false
+      },
+      "gaps": [
+        "NO_INDEPENDENT_INFORMATION_NEED_OR_MINIMAL_SOURCE_CLOSURE",
+        "STATUS_DATE_OWNER_MENTION_ARE_NOT_VERBATIM_OWNER_EVENT_ATTESTATION",
+        "NUMBER_SHORTHAND_AND_LOCAL_D_IDS_NOT_EXPANDED; TWO_HOP_FRONTIER_NOT_CLOSED"
+      ]
+    },
+    {
+      "event_id": "D-021",
+      "line_start": 310,
+      "line_end": 328,
+      "raw_status": "Accepted",
+      "raw_date": "2026-08-18",
+      "lexical_signal_lines": {
+        "cold_start_current_orientation": [
+          315
+        ],
+        "cross_plane_discovery": [],
+        "impact_analysis_evolution": [],
+        "exact_source_authority_recovery": []
+      },
+      "owner_mentioned": false,
+      "references": [
+        {
+          "line": 321,
+          "token": "Checkpoint 22",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/checkpoints/022_system_level_abstraction_and_reusable_reasoning_vision.md"
+          ]
+        },
+        {
+          "line": 325,
+          "token": "Foundation 014",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md"
+          ]
+        },
+        {
+          "line": 325,
+          "token": "docs/DEVELOPMENT_METHOD.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/DEVELOPMENT_METHOD.md"
+          ]
+        }
+      ],
+      "source_provenance": {
+        "source_path": "docs/DECISIONS.md",
+        "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+        "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8"
+      },
+      "referenced_path_role_hints": {
+        "other_project_document": 1,
+        "historical_progress_evidence": 1,
+        "foundation": 1
+      },
+      "observed_reference_neighborhood": {
+        "direct_files": 3,
+        "two_hop_files": 40,
+        "direct_outside_role_frame": [],
+        "direct_auxiliary_or_quarantined": [],
+        "two_hop_auxiliary_or_quarantined_count": 0,
+        "two_hop_exceeds_sixty": false,
+        "complete_task_closure": false
+      },
+      "gaps": [
+        "NO_INDEPENDENT_INFORMATION_NEED_OR_MINIMAL_SOURCE_CLOSURE",
+        "STATUS_DATE_OWNER_MENTION_ARE_NOT_VERBATIM_OWNER_EVENT_ATTESTATION",
+        "NUMBER_SHORTHAND_AND_LOCAL_D_IDS_NOT_EXPANDED; TWO_HOP_FRONTIER_NOT_CLOSED"
+      ]
+    },
+    {
+      "event_id": "D-022",
+      "line_start": 329,
+      "line_end": 351,
+      "raw_status": "Accepted",
+      "raw_date": "2026-08-18",
+      "lexical_signal_lines": {
+        "cold_start_current_orientation": [
+          340
+        ],
+        "cross_plane_discovery": [],
+        "impact_analysis_evolution": [],
+        "exact_source_authority_recovery": []
+      },
+      "owner_mentioned": false,
+      "references": [
+        {
+          "line": 337,
+          "token": "docs/KNOWLEDGE_MAP.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/KNOWLEDGE_MAP.md"
+          ]
+        }
+      ],
+      "source_provenance": {
+        "source_path": "docs/DECISIONS.md",
+        "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+        "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8"
+      },
+      "referenced_path_role_hints": {
+        "navigation_or_orientation": 1
+      },
+      "observed_reference_neighborhood": {
+        "direct_files": 1,
+        "two_hop_files": 1309,
+        "direct_outside_role_frame": [],
+        "direct_auxiliary_or_quarantined": [],
+        "two_hop_auxiliary_or_quarantined_count": 34,
+        "two_hop_exceeds_sixty": true,
+        "complete_task_closure": false
+      },
+      "gaps": [
+        "NO_INDEPENDENT_INFORMATION_NEED_OR_MINIMAL_SOURCE_CLOSURE",
+        "STATUS_DATE_OWNER_MENTION_ARE_NOT_VERBATIM_OWNER_EVENT_ATTESTATION",
+        "NUMBER_SHORTHAND_AND_LOCAL_D_IDS_NOT_EXPANDED; TWO_HOP_FRONTIER_NOT_CLOSED"
+      ]
+    },
+    {
+      "event_id": "D-023",
+      "line_start": 352,
+      "line_end": 372,
+      "raw_status": "Accepted",
+      "raw_date": "2026-08-18",
+      "lexical_signal_lines": {
+        "cold_start_current_orientation": [
+          352,
+          357,
+          367
+        ],
+        "cross_plane_discovery": [],
+        "impact_analysis_evolution": [],
+        "exact_source_authority_recovery": []
+      },
+      "owner_mentioned": false,
+      "references": [
+        {
+          "line": 359,
+          "token": "docs/CURRENT_STATE.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "line": 362,
+          "token": "docs/experiments/prototype_v0/HELD_OUT_STATUS.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/experiments/prototype_v0/HELD_OUT_STATUS.md"
+          ]
+        },
+        {
+          "line": 367,
+          "token": "docs/CURRENT_STATE.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/CURRENT_STATE.md"
+          ]
+        },
+        {
+          "line": 369,
+          "token": "Foundation 014",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md"
+          ]
+        }
+      ],
+      "source_provenance": {
+        "source_path": "docs/DECISIONS.md",
+        "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+        "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8"
+      },
+      "referenced_path_role_hints": {
+        "navigation_or_orientation": 1,
+        "other_project_document": 1,
+        "foundation": 1
+      },
+      "observed_reference_neighborhood": {
+        "direct_files": 3,
+        "two_hop_files": 1002,
+        "direct_outside_role_frame": [],
+        "direct_auxiliary_or_quarantined": [],
+        "two_hop_auxiliary_or_quarantined_count": 8,
+        "two_hop_exceeds_sixty": true,
+        "complete_task_closure": false
+      },
+      "gaps": [
+        "NO_INDEPENDENT_INFORMATION_NEED_OR_MINIMAL_SOURCE_CLOSURE",
+        "STATUS_DATE_OWNER_MENTION_ARE_NOT_VERBATIM_OWNER_EVENT_ATTESTATION",
+        "NUMBER_SHORTHAND_AND_LOCAL_D_IDS_NOT_EXPANDED; TWO_HOP_FRONTIER_NOT_CLOSED"
+      ]
+    },
+    {
+      "event_id": "D-024",
+      "line_start": 373,
+      "line_end": 391,
+      "raw_status": "Accepted for the current stage",
+      "raw_date": "2026-08-18",
+      "lexical_signal_lines": {
+        "cold_start_current_orientation": [
+          373,
+          375
+        ],
+        "cross_plane_discovery": [],
+        "impact_analysis_evolution": [],
+        "exact_source_authority_recovery": [
+          384
+        ]
+      },
+      "owner_mentioned": false,
+      "references": [
+        {
+          "line": 388,
+          "token": "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md"
+          ]
+        }
+      ],
+      "source_provenance": {
+        "source_path": "docs/DECISIONS.md",
+        "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+        "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8"
+      },
+      "referenced_path_role_hints": {
+        "foundation": 1
+      },
+      "observed_reference_neighborhood": {
+        "direct_files": 1,
+        "two_hop_files": 7,
+        "direct_outside_role_frame": [],
+        "direct_auxiliary_or_quarantined": [],
+        "two_hop_auxiliary_or_quarantined_count": 0,
+        "two_hop_exceeds_sixty": false,
+        "complete_task_closure": false
+      },
+      "gaps": [
+        "NO_INDEPENDENT_INFORMATION_NEED_OR_MINIMAL_SOURCE_CLOSURE",
+        "STATUS_DATE_OWNER_MENTION_ARE_NOT_VERBATIM_OWNER_EVENT_ATTESTATION",
+        "NUMBER_SHORTHAND_AND_LOCAL_D_IDS_NOT_EXPANDED; TWO_HOP_FRONTIER_NOT_CLOSED"
+      ]
+    },
+    {
+      "event_id": "D-025",
+      "line_start": 392,
+      "line_end": 412,
+      "raw_status": "Accepted",
+      "raw_date": "2026-08-18",
+      "lexical_signal_lines": {
+        "cold_start_current_orientation": [],
+        "cross_plane_discovery": [],
+        "impact_analysis_evolution": [],
+        "exact_source_authority_recovery": []
+      },
+      "owner_mentioned": false,
+      "references": [
+        {
+          "line": 400,
+          "token": "docs/MAJOR_CHANGES.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/MAJOR_CHANGES.md"
+          ]
+        }
+      ],
+      "source_provenance": {
+        "source_path": "docs/DECISIONS.md",
+        "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+        "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8"
+      },
+      "referenced_path_role_hints": {
+        "other_project_document": 1
+      },
+      "observed_reference_neighborhood": {
+        "direct_files": 1,
+        "two_hop_files": 85,
+        "direct_outside_role_frame": [],
+        "direct_auxiliary_or_quarantined": [],
+        "two_hop_auxiliary_or_quarantined_count": 0,
+        "two_hop_exceeds_sixty": true,
+        "complete_task_closure": false
+      },
+      "gaps": [
+        "NO_INDEPENDENT_INFORMATION_NEED_OR_MINIMAL_SOURCE_CLOSURE",
+        "STATUS_DATE_OWNER_MENTION_ARE_NOT_VERBATIM_OWNER_EVENT_ATTESTATION",
+        "NUMBER_SHORTHAND_AND_LOCAL_D_IDS_NOT_EXPANDED; TWO_HOP_FRONTIER_NOT_CLOSED"
+      ]
+    },
+    {
+      "event_id": "D-026",
+      "line_start": 413,
+      "line_end": 440,
+      "raw_status": "Accepted and frozen for Prototype V0 operational use",
+      "raw_date": "2026-08-18",
+      "lexical_signal_lines": {
+        "cold_start_current_orientation": [],
+        "cross_plane_discovery": [],
+        "impact_analysis_evolution": [],
+        "exact_source_authority_recovery": [
+          425,
+          433
+        ]
+      },
+      "owner_mentioned": false,
+      "references": [
+        {
+          "line": 421,
+          "token": "prototype_v0/src/ads_v0/heldout_supervisor.py",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "prototype_v0/src/ads_v0/heldout_supervisor.py"
+          ]
+        },
+        {
+          "line": 422,
+          "token": "prototype_v0/src/ads_v0/heldout_verifier.py",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "prototype_v0/src/ads_v0/heldout_verifier.py"
+          ]
+        },
+        {
+          "line": 437,
+          "token": "Checkpoint 82",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/checkpoints/082_held_out_supervisor_retroactively_validated_and_frozen_for_live_use.md"
+          ]
+        },
+        {
+          "line": 437,
+          "token": "Foundation 015",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/foundations/015_held_out_supervision_and_mechanical_verification_architecture.md"
+          ]
+        }
+      ],
+      "source_provenance": {
+        "source_path": "docs/DECISIONS.md",
+        "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+        "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8"
+      },
+      "referenced_path_role_hints": {
+        "historical_progress_evidence": 1,
+        "foundation": 1,
+        "other_project_document": 2
+      },
+      "observed_reference_neighborhood": {
+        "direct_files": 4,
+        "two_hop_files": 9,
+        "direct_outside_role_frame": [
+          "prototype_v0/src/ads_v0/heldout_supervisor.py",
+          "prototype_v0/src/ads_v0/heldout_verifier.py"
+        ],
+        "direct_auxiliary_or_quarantined": [],
+        "two_hop_auxiliary_or_quarantined_count": 0,
+        "two_hop_exceeds_sixty": false,
+        "complete_task_closure": false
+      },
+      "gaps": [
+        "NO_INDEPENDENT_INFORMATION_NEED_OR_MINIMAL_SOURCE_CLOSURE",
+        "STATUS_DATE_OWNER_MENTION_ARE_NOT_VERBATIM_OWNER_EVENT_ATTESTATION",
+        "NUMBER_SHORTHAND_AND_LOCAL_D_IDS_NOT_EXPANDED; TWO_HOP_FRONTIER_NOT_CLOSED"
+      ]
+    },
+    {
+      "event_id": "D-027",
+      "line_start": 441,
+      "line_end": 467,
+      "raw_status": "Accepted for the remaining Prototype V0 treatment-execution phase",
+      "raw_date": "2026-08-18",
+      "lexical_signal_lines": {
+        "cold_start_current_orientation": [],
+        "cross_plane_discovery": [],
+        "impact_analysis_evolution": [],
+        "exact_source_authority_recovery": [
+          452,
+          458,
+          460
+        ]
+      },
+      "owner_mentioned": false,
+      "references": [
+        {
+          "line": 464,
+          "token": "Checkpoint 83",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/checkpoints/083_first_live_supervisor_batch_validated_and_unattended_execution_authorized.md"
+          ]
+        },
+        {
+          "line": 464,
+          "token": "Foundation 015",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/foundations/015_held_out_supervision_and_mechanical_verification_architecture.md"
+          ]
+        }
+      ],
+      "source_provenance": {
+        "source_path": "docs/DECISIONS.md",
+        "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+        "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8"
+      },
+      "referenced_path_role_hints": {
+        "historical_progress_evidence": 1,
+        "foundation": 1
+      },
+      "observed_reference_neighborhood": {
+        "direct_files": 2,
+        "two_hop_files": 8,
+        "direct_outside_role_frame": [],
+        "direct_auxiliary_or_quarantined": [],
+        "two_hop_auxiliary_or_quarantined_count": 0,
+        "two_hop_exceeds_sixty": false,
+        "complete_task_closure": false
+      },
+      "gaps": [
+        "NO_INDEPENDENT_INFORMATION_NEED_OR_MINIMAL_SOURCE_CLOSURE",
+        "STATUS_DATE_OWNER_MENTION_ARE_NOT_VERBATIM_OWNER_EVENT_ATTESTATION",
+        "NUMBER_SHORTHAND_AND_LOCAL_D_IDS_NOT_EXPANDED; TWO_HOP_FRONTIER_NOT_CLOSED"
+      ]
+    },
+    {
+      "event_id": "D-028",
+      "line_start": 468,
+      "line_end": 531,
+      "raw_status": "Accepted for V1",
+      "raw_date": "2026-08-20",
+      "lexical_signal_lines": {
+        "cold_start_current_orientation": [
+          514,
+          518
+        ],
+        "cross_plane_discovery": [
+          512,
+          520
+        ],
+        "impact_analysis_evolution": [
+          479,
+          483,
+          504,
+          506
+        ],
+        "exact_source_authority_recovery": [
+          481,
+          483,
+          490,
+          508,
+          514,
+          516
+        ]
+      },
+      "owner_mentioned": false,
+      "references": [
+        {
+          "line": 512,
+          "token": "Checkpoint 107",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md"
+          ]
+        },
+        {
+          "line": 514,
+          "token": "Checkpoint 108",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/checkpoints/108_v1_architecture_comparison_and_sqlite_centered_selection.md"
+          ]
+        },
+        {
+          "line": 525,
+          "token": "docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md"
+          ]
+        },
+        {
+          "line": 526,
+          "token": "docs/checkpoints/108_v1_architecture_comparison_and_sqlite_centered_selection.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/checkpoints/108_v1_architecture_comparison_and_sqlite_centered_selection.md"
+          ]
+        },
+        {
+          "line": 527,
+          "token": "experiments/architecture_spikes/sqlite_v1_viability.py",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "experiments/architecture_spikes/sqlite_v1_viability.py"
+          ]
+        }
+      ],
+      "source_provenance": {
+        "source_path": "docs/DECISIONS.md",
+        "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+        "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8"
+      },
+      "referenced_path_role_hints": {
+        "historical_progress_evidence": 2,
+        "historical_fixture_or_probe": 1
+      },
+      "observed_reference_neighborhood": {
+        "direct_files": 3,
+        "two_hop_files": 8,
+        "direct_outside_role_frame": [],
+        "direct_auxiliary_or_quarantined": [
+          "experiments/architecture_spikes/sqlite_v1_viability.py"
+        ],
+        "two_hop_auxiliary_or_quarantined_count": 1,
+        "two_hop_exceeds_sixty": false,
+        "complete_task_closure": false
+      },
+      "gaps": [
+        "NO_INDEPENDENT_INFORMATION_NEED_OR_MINIMAL_SOURCE_CLOSURE",
+        "STATUS_DATE_OWNER_MENTION_ARE_NOT_VERBATIM_OWNER_EVENT_ATTESTATION",
+        "NUMBER_SHORTHAND_AND_LOCAL_D_IDS_NOT_EXPANDED; TWO_HOP_FRONTIER_NOT_CLOSED"
+      ]
+    },
+    {
+      "event_id": "D-029",
+      "line_start": 532,
+      "line_end": 577,
+      "raw_status": "Accepted for V1",
+      "raw_date": "2026-08-20",
+      "lexical_signal_lines": {
+        "cold_start_current_orientation": [
+          561
+        ],
+        "cross_plane_discovery": [],
+        "impact_analysis_evolution": [
+          537,
+          539,
+          548,
+          551,
+          553,
+          561,
+          563
+        ],
+        "exact_source_authority_recovery": [
+          563
+        ]
+      },
+      "owner_mentioned": false,
+      "references": [
+        {
+          "line": 541,
+          "token": "Specification 001",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/specifications/001_v1_sqlite_technical_architecture.md"
+          ]
+        },
+        {
+          "line": 551,
+          "token": "tests/spikes",
+          "status": "MISSING",
+          "targets": []
+        },
+        {
+          "line": 570,
+          "token": "docs/specifications/002_v1_persistence_tooling_standard.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/specifications/002_v1_persistence_tooling_standard.md"
+          ]
+        },
+        {
+          "line": 571,
+          "token": "docs/checkpoints/112_v1_persistence_tooling_selected_and_validated.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/checkpoints/112_v1_persistence_tooling_selected_and_validated.md"
+          ]
+        },
+        {
+          "line": 572,
+          "token": "experiments/architecture_spikes/tooling_sqlalchemy_core_alembic_spike.py",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "experiments/architecture_spikes/tooling_sqlalchemy_core_alembic_spike.py"
+          ]
+        },
+        {
+          "line": 573,
+          "token": "experiments/architecture_spikes/V1_PERSISTENCE_TOOLING_RESULT.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "experiments/architecture_spikes/V1_PERSISTENCE_TOOLING_RESULT.md"
+          ]
+        }
+      ],
+      "source_provenance": {
+        "source_path": "docs/DECISIONS.md",
+        "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+        "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8"
+      },
+      "referenced_path_role_hints": {
+        "historical_progress_evidence": 1,
+        "specification_carrier": 2,
+        "historical_fixture_or_probe": 2
+      },
+      "observed_reference_neighborhood": {
+        "direct_files": 5,
+        "two_hop_files": 18,
+        "direct_outside_role_frame": [],
+        "direct_auxiliary_or_quarantined": [
+          "experiments/architecture_spikes/V1_PERSISTENCE_TOOLING_RESULT.md",
+          "experiments/architecture_spikes/tooling_sqlalchemy_core_alembic_spike.py"
+        ],
+        "two_hop_auxiliary_or_quarantined_count": 7,
+        "two_hop_exceeds_sixty": false,
+        "complete_task_closure": false
+      },
+      "gaps": [
+        "NO_INDEPENDENT_INFORMATION_NEED_OR_MINIMAL_SOURCE_CLOSURE",
+        "STATUS_DATE_OWNER_MENTION_ARE_NOT_VERBATIM_OWNER_EVENT_ATTESTATION",
+        "NUMBER_SHORTHAND_AND_LOCAL_D_IDS_NOT_EXPANDED; TWO_HOP_FRONTIER_NOT_CLOSED",
+        "MISSING_AMBIGUOUS_OR_DIRECTORY_REFERENCE"
+      ]
+    },
+    {
+      "event_id": "D-030",
+      "line_start": 578,
+      "line_end": 621,
+      "raw_status": "Accepted for V1",
+      "raw_date": "2026-08-20",
+      "lexical_signal_lines": {
+        "cold_start_current_orientation": [
+          583,
+          585
+        ],
+        "cross_plane_discovery": [
+          602
+        ],
+        "impact_analysis_evolution": [],
+        "exact_source_authority_recovery": []
+      },
+      "owner_mentioned": false,
+      "references": [
+        {
+          "line": 583,
+          "token": "pyproject.toml",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "pyproject.toml"
+          ]
+        },
+        {
+          "line": 602,
+          "token": "pyproject.toml",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "pyproject.toml"
+          ]
+        },
+        {
+          "line": 615,
+          "token": "docs/specifications/003_v1_python_project_and_dependency_tooling.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/specifications/003_v1_python_project_and_dependency_tooling.md"
+          ]
+        },
+        {
+          "line": 616,
+          "token": "docs/checkpoints/113_v1_python_project_tooling_validated.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/checkpoints/113_v1_python_project_tooling_validated.md"
+          ]
+        },
+        {
+          "line": 617,
+          "token": "experiments/architecture_spikes/V1_PYTHON_PROJECT_TOOLING_RESULT.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "experiments/architecture_spikes/V1_PYTHON_PROJECT_TOOLING_RESULT.md"
+          ]
+        }
+      ],
+      "source_provenance": {
+        "source_path": "docs/DECISIONS.md",
+        "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+        "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8"
+      },
+      "referenced_path_role_hints": {
+        "historical_progress_evidence": 1,
+        "specification_carrier": 1,
+        "historical_fixture_or_probe": 1,
+        "other_project_document": 1
+      },
+      "observed_reference_neighborhood": {
+        "direct_files": 4,
+        "two_hop_files": 9,
+        "direct_outside_role_frame": [
+          "pyproject.toml"
+        ],
+        "direct_auxiliary_or_quarantined": [
+          "experiments/architecture_spikes/V1_PYTHON_PROJECT_TOOLING_RESULT.md"
+        ],
+        "two_hop_auxiliary_or_quarantined_count": 1,
+        "two_hop_exceeds_sixty": false,
+        "complete_task_closure": false
+      },
+      "gaps": [
+        "NO_INDEPENDENT_INFORMATION_NEED_OR_MINIMAL_SOURCE_CLOSURE",
+        "STATUS_DATE_OWNER_MENTION_ARE_NOT_VERBATIM_OWNER_EVENT_ATTESTATION",
+        "NUMBER_SHORTHAND_AND_LOCAL_D_IDS_NOT_EXPANDED; TWO_HOP_FRONTIER_NOT_CLOSED"
+      ]
+    },
+    {
+      "event_id": "D-031",
+      "line_start": 622,
+      "line_end": 665,
+      "raw_status": "Accepted for V1",
+      "raw_date": "2026-08-20",
+      "lexical_signal_lines": {
+        "cold_start_current_orientation": [],
+        "cross_plane_discovery": [
+          622,
+          627,
+          639,
+          647
+        ],
+        "impact_analysis_evolution": [
+          639,
+          641
+        ],
+        "exact_source_authority_recovery": [
+          639,
+          641,
+          647,
+          653
+        ]
+      },
+      "owner_mentioned": false,
+      "references": [
+        {
+          "line": 647,
+          "token": "Foundation 020",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md"
+          ]
+        },
+        {
+          "line": 658,
+          "token": "docs/specifications/004_v1_reusable_knowledge_interchange.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/specifications/004_v1_reusable_knowledge_interchange.md"
+          ]
+        },
+        {
+          "line": 659,
+          "token": "docs/checkpoints/115_reusable_knowledge_interchange_contract_validated.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/checkpoints/115_reusable_knowledge_interchange_contract_validated.md"
+          ]
+        },
+        {
+          "line": 660,
+          "token": "experiments/architecture_spikes/V1_KNOWLEDGE_INTERCHANGE_RESULT.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "experiments/architecture_spikes/V1_KNOWLEDGE_INTERCHANGE_RESULT.md"
+          ]
+        },
+        {
+          "line": 661,
+          "token": "schemas/reusable_knowledge_bundle_v1.schema.json",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "schemas/reusable_knowledge_bundle_v1.schema.json"
+          ]
+        }
+      ],
+      "source_provenance": {
+        "source_path": "docs/DECISIONS.md",
+        "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+        "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8"
+      },
+      "referenced_path_role_hints": {
+        "historical_progress_evidence": 1,
+        "foundation": 1,
+        "specification_carrier": 1,
+        "historical_fixture_or_probe": 1,
+        "machine_schema_realization": 1
+      },
+      "observed_reference_neighborhood": {
+        "direct_files": 5,
+        "two_hop_files": 16,
+        "direct_outside_role_frame": [],
+        "direct_auxiliary_or_quarantined": [
+          "experiments/architecture_spikes/V1_KNOWLEDGE_INTERCHANGE_RESULT.md"
+        ],
+        "two_hop_auxiliary_or_quarantined_count": 1,
+        "two_hop_exceeds_sixty": false,
+        "complete_task_closure": false
+      },
+      "gaps": [
+        "NO_INDEPENDENT_INFORMATION_NEED_OR_MINIMAL_SOURCE_CLOSURE",
+        "STATUS_DATE_OWNER_MENTION_ARE_NOT_VERBATIM_OWNER_EVENT_ATTESTATION",
+        "NUMBER_SHORTHAND_AND_LOCAL_D_IDS_NOT_EXPANDED; TWO_HOP_FRONTIER_NOT_CLOSED"
+      ]
+    },
+    {
+      "event_id": "D-032",
+      "line_start": 666,
+      "line_end": 777,
+      "raw_status": "Accepted for V1",
+      "raw_date": "2026-08-22",
+      "lexical_signal_lines": {
+        "cold_start_current_orientation": [
+          738,
+          744
+        ],
+        "cross_plane_discovery": [
+          722
+        ],
+        "impact_analysis_evolution": [
+          711
+        ],
+        "exact_source_authority_recovery": [
+          702,
+          711,
+          716,
+          736,
+          740
+        ]
+      },
+      "owner_mentioned": false,
+      "references": [
+        {
+          "line": 726,
+          "token": "Specification 005",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md"
+          ]
+        },
+        {
+          "line": 744,
+          "token": "Research 015",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/research/015_langgraph_complete_candidate_three_way_runtime_comparison_and_stop_rule.md"
+          ]
+        },
+        {
+          "line": 761,
+          "token": "docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md"
+          ]
+        },
+        {
+          "line": 762,
+          "token": "docs/research/010_2026_runtime_bakeoff_preimplementation_refresh.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/research/010_2026_runtime_bakeoff_preimplementation_refresh.md"
+          ]
+        },
+        {
+          "line": 763,
+          "token": "docs/research/013_openai_agents_complete_candidate_evidence_and_direct_call_comparison.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/research/013_openai_agents_complete_candidate_evidence_and_direct_call_comparison.md"
+          ]
+        },
+        {
+          "line": 764,
+          "token": "docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md"
+          ]
+        },
+        {
+          "line": 765,
+          "token": "docs/research/015_langgraph_complete_candidate_three_way_runtime_comparison_and_stop_rule.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/research/015_langgraph_complete_candidate_three_way_runtime_comparison_and_stop_rule.md"
+          ]
+        },
+        {
+          "line": 767,
+          "token": "docs/checkpoints/129_direct_model_call_runtime_control_cross_platform_gate_passed.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/checkpoints/129_direct_model_call_runtime_control_cross_platform_gate_passed.md"
+          ]
+        },
+        {
+          "line": 768,
+          "token": "docs/checkpoints/131_openai_agents_complete_runtime_candidate_cross_platform_gate_passed.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/checkpoints/131_openai_agents_complete_runtime_candidate_cross_platform_gate_passed.md"
+          ]
+        },
+        {
+          "line": 769,
+          "token": "docs/checkpoints/132_langgraph_durability_comparator_cross_platform_gate_passed.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/checkpoints/132_langgraph_durability_comparator_cross_platform_gate_passed.md"
+          ]
+        },
+        {
+          "line": 771,
+          "token": "experiments/runtime_bakeoff/DIRECT_CALL_CONTROL_RESULT.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "experiments/runtime_bakeoff/DIRECT_CALL_CONTROL_RESULT.md"
+          ]
+        },
+        {
+          "line": 772,
+          "token": "experiments/runtime_bakeoff/candidates/openai_agents/COMPLETE_RESULT.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "experiments/runtime_bakeoff/candidates/openai_agents/COMPLETE_RESULT.md"
+          ]
+        },
+        {
+          "line": 773,
+          "token": "experiments/runtime_bakeoff/candidates/langgraph_runtime/COMPLETE_RESULT.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "experiments/runtime_bakeoff/candidates/langgraph_runtime/COMPLETE_RESULT.md"
+          ]
+        }
+      ],
+      "source_provenance": {
+        "source_path": "docs/DECISIONS.md",
+        "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+        "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8"
+      },
+      "referenced_path_role_hints": {
+        "historical_progress_evidence": 3,
+        "research_proposal_or_result": 4,
+        "specification_carrier": 1,
+        "historical_fixture_or_probe": 3
+      },
+      "observed_reference_neighborhood": {
+        "direct_files": 11,
+        "two_hop_files": 21,
+        "direct_outside_role_frame": [],
+        "direct_auxiliary_or_quarantined": [
+          "experiments/runtime_bakeoff/DIRECT_CALL_CONTROL_RESULT.md",
+          "experiments/runtime_bakeoff/candidates/langgraph_runtime/COMPLETE_RESULT.md",
+          "experiments/runtime_bakeoff/candidates/openai_agents/COMPLETE_RESULT.md"
+        ],
+        "two_hop_auxiliary_or_quarantined_count": 5,
+        "two_hop_exceeds_sixty": false,
+        "complete_task_closure": false
+      },
+      "gaps": [
+        "NO_INDEPENDENT_INFORMATION_NEED_OR_MINIMAL_SOURCE_CLOSURE",
+        "STATUS_DATE_OWNER_MENTION_ARE_NOT_VERBATIM_OWNER_EVENT_ATTESTATION",
+        "NUMBER_SHORTHAND_AND_LOCAL_D_IDS_NOT_EXPANDED; TWO_HOP_FRONTIER_NOT_CLOSED"
+      ]
+    },
+    {
+      "event_id": "D-033",
+      "line_start": 778,
+      "line_end": 840,
+      "raw_status": "Accepted for V1",
+      "raw_date": "2026-08-25",
+      "lexical_signal_lines": {
+        "cold_start_current_orientation": [],
+        "cross_plane_discovery": [
+          778,
+          783,
+          819
+        ],
+        "impact_analysis_evolution": [],
+        "exact_source_authority_recovery": [
+          789,
+          795,
+          804,
+          806,
+          817,
+          819,
+          823,
+          825
+        ]
+      },
+      "owner_mentioned": false,
+      "references": [
+        {
+          "line": 823,
+          "token": "Foundation 021",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md"
+          ]
+        },
+        {
+          "line": 823,
+          "token": "Specification 023",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/specifications/023_v1_source_universe_substrate.md"
+          ]
+        },
+        {
+          "line": 832,
+          "token": "docs/foundations/021_source_universe_artifact_integrity_and_evidence_provenance.md",
+          "status": "MISSING",
+          "targets": []
+        },
+        {
+          "line": 833,
+          "token": "docs/research/034_source_universe_and_evidence_substrate_architecture.md",
+          "status": "MISSING",
+          "targets": []
+        },
+        {
+          "line": 834,
+          "token": "docs/specifications/023_v1_source_universe_substrate.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/specifications/023_v1_source_universe_substrate.md"
+          ]
+        },
+        {
+          "line": 835,
+          "token": "docs/source_universe/validation/001_vu_machine_learning_source_substrate_result.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/source_universe/validation/001_vu_machine_learning_source_substrate_result.md"
+          ]
+        },
+        {
+          "line": 836,
+          "token": "docs/checkpoints/196_source_substrate_accepted_first_corpus_validated.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/checkpoints/196_source_substrate_accepted_first_corpus_validated.md"
+          ]
+        }
+      ],
+      "source_provenance": {
+        "source_path": "docs/DECISIONS.md",
+        "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+        "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8"
+      },
+      "referenced_path_role_hints": {
+        "historical_progress_evidence": 1,
+        "foundation": 1,
+        "domain_or_structured_project_source": 1,
+        "specification_carrier": 1
+      },
+      "observed_reference_neighborhood": {
+        "direct_files": 4,
+        "two_hop_files": 11,
+        "direct_outside_role_frame": [],
+        "direct_auxiliary_or_quarantined": [],
+        "two_hop_auxiliary_or_quarantined_count": 0,
+        "two_hop_exceeds_sixty": false,
+        "complete_task_closure": false
+      },
+      "gaps": [
+        "NO_INDEPENDENT_INFORMATION_NEED_OR_MINIMAL_SOURCE_CLOSURE",
+        "STATUS_DATE_OWNER_MENTION_ARE_NOT_VERBATIM_OWNER_EVENT_ATTESTATION",
+        "NUMBER_SHORTHAND_AND_LOCAL_D_IDS_NOT_EXPANDED; TWO_HOP_FRONTIER_NOT_CLOSED",
+        "MISSING_AMBIGUOUS_OR_DIRECTORY_REFERENCE"
+      ]
+    },
+    {
+      "event_id": "D-034",
+      "line_start": 841,
+      "line_end": 927,
+      "raw_status": "Accepted",
+      "raw_date": "2026-08-26",
+      "lexical_signal_lines": {
+        "cold_start_current_orientation": [
+          880,
+          915
+        ],
+        "cross_plane_discovery": [
+          880
+        ],
+        "impact_analysis_evolution": [
+          900,
+          905
+        ],
+        "exact_source_authority_recovery": [
+          851,
+          859,
+          860,
+          863,
+          878,
+          897
+        ]
+      },
+      "owner_mentioned": true,
+      "references": [
+        {
+          "line": 868,
+          "token": "Specification 024",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/specifications/024_v1_model_collaboration_state_guard.md"
+          ]
+        },
+        {
+          "line": 892,
+          "token": "Specification 024",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/specifications/024_v1_model_collaboration_state_guard.md"
+          ]
+        },
+        {
+          "line": 914,
+          "token": "docs/DEVELOPMENT_METHOD.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/DEVELOPMENT_METHOD.md"
+          ]
+        },
+        {
+          "line": 915,
+          "token": "docs/CONTINUITY.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/CONTINUITY.md"
+          ]
+        },
+        {
+          "line": 916,
+          "token": "docs/model_collaboration/README.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/model_collaboration/README.md"
+          ]
+        },
+        {
+          "line": 917,
+          "token": "docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md"
+          ]
+        },
+        {
+          "line": 918,
+          "token": "docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md"
+          ]
+        },
+        {
+          "line": 919,
+          "token": "docs/model_collaboration/threads/MC-0001/RESOLUTION.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/model_collaboration/threads/MC-0001/RESOLUTION.md"
+          ]
+        },
+        {
+          "line": 920,
+          "token": "docs/specifications/024_v1_model_collaboration_state_guard.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/specifications/024_v1_model_collaboration_state_guard.md"
+          ]
+        },
+        {
+          "line": 921,
+          "token": "docs/model_collaboration/threads/MC-0002/RESOLUTION.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/model_collaboration/threads/MC-0002/RESOLUTION.md"
+          ]
+        },
+        {
+          "line": 922,
+          "token": "docs/model_collaboration/threads/MC-0003/RESOLUTION.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/model_collaboration/threads/MC-0003/RESOLUTION.md"
+          ]
+        },
+        {
+          "line": 923,
+          "token": "docs/checkpoints/204_multimodel_collaboration_method_promoted.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/checkpoints/204_multimodel_collaboration_method_promoted.md"
+          ]
+        }
+      ],
+      "source_provenance": {
+        "source_path": "docs/DECISIONS.md",
+        "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+        "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8"
+      },
+      "referenced_path_role_hints": {
+        "navigation_or_orientation": 1,
+        "other_project_document": 1,
+        "historical_progress_evidence": 1,
+        "engineering_or_collaboration_evidence": 6,
+        "specification_carrier": 1
+      },
+      "observed_reference_neighborhood": {
+        "direct_files": 10,
+        "two_hop_files": 56,
+        "direct_outside_role_frame": [],
+        "direct_auxiliary_or_quarantined": [],
+        "two_hop_auxiliary_or_quarantined_count": 0,
+        "two_hop_exceeds_sixty": false,
+        "complete_task_closure": false
+      },
+      "gaps": [
+        "NO_INDEPENDENT_INFORMATION_NEED_OR_MINIMAL_SOURCE_CLOSURE",
+        "STATUS_DATE_OWNER_MENTION_ARE_NOT_VERBATIM_OWNER_EVENT_ATTESTATION",
+        "NUMBER_SHORTHAND_AND_LOCAL_D_IDS_NOT_EXPANDED; TWO_HOP_FRONTIER_NOT_CLOSED"
+      ]
+    },
+    {
+      "event_id": "D-035",
+      "line_start": 928,
+      "line_end": 1031,
+      "raw_status": "Accepted / selected successor target / not yet operational authority",
+      "raw_date": "2026-09-15",
+      "lexical_signal_lines": {
+        "cold_start_current_orientation": [
+          957,
+          976,
+          979,
+          995,
+          999,
+          1007,
+          1008,
+          1015,
+          1017
+        ],
+        "cross_plane_discovery": [],
+        "impact_analysis_evolution": [
+          928,
+          930,
+          957,
+          959,
+          986,
+          994,
+          999,
+          1001,
+          1007,
+          1010,
+          1015
+        ],
+        "exact_source_authority_recovery": [
+          930,
+          945,
+          957,
+          974,
+          980,
+          983,
+          984,
+          986,
+          989,
+          991,
+          995,
+          996,
+          999,
+          1008,
+          1011,
+          1017
+        ]
+      },
+      "owner_mentioned": true,
+      "references": [
+        {
+          "line": 946,
+          "token": "research:175",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/research/175_q10_final_multidimensional_qualification_result.md"
+          ]
+        },
+        {
+          "line": 947,
+          "token": "checkpoint:520",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/checkpoints/520_q10_final_qualification_passed_target_selection_decision_next.md"
+          ]
+        },
+        {
+          "line": 950,
+          "token": "research:144",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/research/144_whole_architecture_candidate_repository_native_semantic_sources.md"
+          ]
+        },
+        {
+          "line": 951,
+          "token": "research:176",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/research/176_candidate01_owner_selection_and_implementation_migration_program_opening.md"
+          ]
+        },
+        {
+          "line": 952,
+          "token": "specification:028",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md"
+          ]
+        },
+        {
+          "line": 957,
+          "token": "Research 144",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/research/144_whole_architecture_candidate_repository_native_semantic_sources.md"
+          ]
+        },
+        {
+          "line": 961,
+          "token": "Research 175",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/research/175_q10_final_multidimensional_qualification_result.md"
+          ]
+        },
+        {
+          "line": 1015,
+          "token": "Research 124",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md"
+          ]
+        },
+        {
+          "line": 1024,
+          "token": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md"
+          ]
+        },
+        {
+          "line": 1025,
+          "token": "docs/research/144_whole_architecture_candidate_repository_native_semantic_sources.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/research/144_whole_architecture_candidate_repository_native_semantic_sources.md"
+          ]
+        },
+        {
+          "line": 1026,
+          "token": "docs/research/145_candidate_01_requirements_v02_design_coverage_and_qualification_plan.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/research/145_candidate_01_requirements_v02_design_coverage_and_qualification_plan.md"
+          ]
+        },
+        {
+          "line": 1027,
+          "token": "docs/research/175_q10_final_multidimensional_qualification_result.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/research/175_q10_final_multidimensional_qualification_result.md"
+          ]
+        },
+        {
+          "line": 1028,
+          "token": "docs/checkpoints/520_q10_final_qualification_passed_target_selection_decision_next.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/checkpoints/520_q10_final_qualification_passed_target_selection_decision_next.md"
+          ]
+        }
+      ],
+      "source_provenance": {
+        "source_path": "docs/DECISIONS.md",
+        "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+        "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8"
+      },
+      "referenced_path_role_hints": {
+        "historical_progress_evidence": 1,
+        "research_proposal_or_result": 5,
+        "specification_carrier": 1
+      },
+      "observed_reference_neighborhood": {
+        "direct_files": 7,
+        "two_hop_files": 138,
+        "direct_outside_role_frame": [],
+        "direct_auxiliary_or_quarantined": [],
+        "two_hop_auxiliary_or_quarantined_count": 0,
+        "two_hop_exceeds_sixty": true,
+        "complete_task_closure": false
+      },
+      "gaps": [
+        "NO_INDEPENDENT_INFORMATION_NEED_OR_MINIMAL_SOURCE_CLOSURE",
+        "STATUS_DATE_OWNER_MENTION_ARE_NOT_VERBATIM_OWNER_EVENT_ATTESTATION",
+        "NUMBER_SHORTHAND_AND_LOCAL_D_IDS_NOT_EXPANDED; TWO_HOP_FRONTIER_NOT_CLOSED"
+      ]
+    },
+    {
+      "event_id": "D-036",
+      "line_start": 1032,
+      "line_end": 1122,
+      "raw_status": "Accepted / selected successor target / not yet operational authority",
+      "raw_date": "2026-10-04",
+      "lexical_signal_lines": {
+        "cold_start_current_orientation": [
+          1039,
+          1051,
+          1059,
+          1070,
+          1097,
+          1106,
+          1107
+        ],
+        "cross_plane_discovery": [],
+        "impact_analysis_evolution": [
+          1032,
+          1034,
+          1037,
+          1051,
+          1056,
+          1060,
+          1066,
+          1086,
+          1097,
+          1099,
+          1107,
+          1108,
+          1112
+        ],
+        "exact_source_authority_recovery": [
+          1034,
+          1039,
+          1041,
+          1053,
+          1059,
+          1062,
+          1086,
+          1097,
+          1107,
+          1108,
+          1110
+        ]
+      },
+      "owner_mentioned": true,
+      "references": [
+        {
+          "line": 1037,
+          "token": "Research 500",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/research/500_thin_centred_hybrid_v03_owner_decision_candidate.md"
+          ]
+        },
+        {
+          "line": 1047,
+          "token": "Research 501",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/research/501_owner_architecture_decision_package_freeze.md"
+          ]
+        },
+        {
+          "line": 1059,
+          "token": "Specification 028",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md"
+          ]
+        },
+        {
+          "line": 1091,
+          "token": "Specification 028",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md"
+          ]
+        },
+        {
+          "line": 1095,
+          "token": "Specification 028",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md"
+          ]
+        },
+        {
+          "line": 1097,
+          "token": "Specification 028",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md"
+          ]
+        },
+        {
+          "line": 1117,
+          "token": "docs/research/500_thin_centred_hybrid_v03_owner_decision_candidate.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/research/500_thin_centred_hybrid_v03_owner_decision_candidate.md"
+          ]
+        },
+        {
+          "line": 1118,
+          "token": "docs/research/501_owner_architecture_decision_package_freeze.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/research/501_owner_architecture_decision_package_freeze.md"
+          ]
+        },
+        {
+          "line": 1119,
+          "token": "docs/research/502_v03_owner_selection_and_realization_program_opening.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/research/502_v03_owner_selection_and_realization_program_opening.md"
+          ]
+        },
+        {
+          "line": 1120,
+          "token": "docs/checkpoints/838_owner_architecture_decision_package_frozen.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/checkpoints/838_owner_architecture_decision_package_frozen.md"
+          ]
+        },
+        {
+          "line": 1121,
+          "token": "docs/checkpoints/839_v03_selected_realization_program_opened.md",
+          "status": "RESOLVED_FILE",
+          "targets": [
+            "docs/checkpoints/839_v03_selected_realization_program_opened.md"
+          ]
+        }
+      ],
+      "source_provenance": {
+        "source_path": "docs/DECISIONS.md",
+        "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+        "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8"
+      },
+      "referenced_path_role_hints": {
+        "historical_progress_evidence": 2,
+        "research_proposal_or_result": 3,
+        "specification_carrier": 1
+      },
+      "observed_reference_neighborhood": {
+        "direct_files": 6,
+        "two_hop_files": 40,
+        "direct_outside_role_frame": [],
+        "direct_auxiliary_or_quarantined": [],
+        "two_hop_auxiliary_or_quarantined_count": 1,
+        "two_hop_exceeds_sixty": false,
+        "complete_task_closure": false
+      },
+      "gaps": [
+        "NO_INDEPENDENT_INFORMATION_NEED_OR_MINIMAL_SOURCE_CLOSURE",
+        "STATUS_DATE_OWNER_MENTION_ARE_NOT_VERBATIM_OWNER_EVENT_ATTESTATION",
+        "NUMBER_SHORTHAND_AND_LOCAL_D_IDS_NOT_EXPANDED; TWO_HOP_FRONTIER_NOT_CLOSED"
+      ]
+    }
+  ],
+  "source_header_observations": {
+    "docs/CONTINUITY.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "b0475a6b80f240aa4241d0d617d104299587fa8a",
+      "path_role_hint": "navigation_or_orientation",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Status:** Current canonical continuity procedure  "
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/CURRENT_STATE.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "5de23494558b01d3110b7f08c37937ac9c557162",
+      "path_role_hint": "navigation_or_orientation",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 4,
+          "text": "**Date:** 2026-10-13"
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/DECISIONS.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+      "path_role_hint": "governing_decision_carrier",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 9,
+          "text": "**Status:** Accepted  "
+        },
+        {
+          "line": 10,
+          "text": "**Date:** 2026-08-07"
+        },
+        {
+          "line": 22,
+          "text": "**Status:** Accepted  "
+        },
+        {
+          "line": 23,
+          "text": "**Date:** 2026-08-07"
+        },
+        {
+          "line": 35,
+          "text": "**Status:** Superseded in current repository state; the repository is now public  "
+        },
+        {
+          "line": 36,
+          "text": "**Date:** 2026-08-07  "
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/DEVELOPMENT_METHOD.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "89940bde33d933c3117c5a71aaffe5620e965155",
+      "path_role_hint": "other_project_document",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Status:** Current canonical project-development method  "
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/KNOWLEDGE_MAP.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "b1f5fc9bf43e1cf31d3c37bb4df2898bc91e809e",
+      "path_role_hint": "navigation_or_orientation",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Status:** Current evergreen subject library"
+        },
+        {
+          "line": 4,
+          "text": "**Authority:** Navigation only. This file routes subjects to repository evidence and does not replace the authority of the routed artifacts."
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/MAJOR_CHANGES.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "5f43490e1e235598f37a7b5c1734430e59521f81",
+      "path_role_hint": "other_project_document",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Status:** Current selective structural history  "
+        },
+        {
+          "line": 4,
+          "text": "**Authority:** Navigation and project-history aid. Detailed decisions, foundations, specifications, checkpoints, final experiment reports, and Git history remain authoritative for their own scope.  "
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/checkpoints/000_checkpoint_0.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "1151ad2db13853c84205dacec06956d7c0147c29",
+      "path_role_hint": "historical_progress_evidence",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-08-07  "
+        },
+        {
+          "line": 4,
+          "text": "**Status:** Historical design checkpoint  "
+        },
+        {
+          "line": 7,
+          "text": "**Scope:** Records the historical milestone described by this checkpoint: Checkpoint 0.  "
+        },
+        {
+          "line": 8,
+          "text": "**Authority:** Historical provenance; current canonical documents and promoted sources govern current interpretation.  "
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/checkpoints/022_system_level_abstraction_and_reusable_reasoning_vision.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "486e80b916aa9410ce83034c2cdb4ff5edea1c48",
+      "path_role_hint": "historical_progress_evidence",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-08-09  "
+        },
+        {
+          "line": 4,
+          "text": "**Status:** Historical design checkpoint  "
+        },
+        {
+          "line": 7,
+          "text": "**Scope:** Records the historical milestone described by this checkpoint: System-Level Abstraction and Reusable Reasoning Vision.  "
+        },
+        {
+          "line": 8,
+          "text": "**Authority:** Historical provenance; current canonical documents and promoted sources govern current interpretation.  "
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/checkpoints/082_held_out_supervisor_retroactively_validated_and_frozen_for_live_use.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "5b91de7b02e160a264adf3d8cd99ba346807d325",
+      "path_role_hint": "historical_progress_evidence",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-08-18  "
+        },
+        {
+          "line": 4,
+          "text": "**Status:** Completed infrastructure-validation checkpoint  "
+        },
+        {
+          "line": 7,
+          "text": "**Scope:** External held-out supervision and mechanical verification only. No B0, B1, P0, benchmark, protocol, evaluator, or judge behavior changed.  "
+        },
+        {
+          "line": 8,
+          "text": "**Authority:** Historical provenance for the recorded experiment milestone; frozen experiment contracts and final experiment conclusions govern their declared scopes.  "
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/checkpoints/083_first_live_supervisor_batch_validated_and_unattended_execution_authorized.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "33384edae1fb280177cb335c1fbac9b71213d2b2",
+      "path_role_hint": "historical_progress_evidence",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-08-18  "
+        },
+        {
+          "line": 4,
+          "text": "**Status:** Complete  "
+        },
+        {
+          "line": 7,
+          "text": "**Scope:** Prototype V0 external held-out supervision only. No treatment, benchmark, scoring, budget, run-order, replacement, or semantic-judge rule changed.  "
+        },
+        {
+          "line": 8,
+          "text": "**Authority:** Historical provenance for the recorded experiment milestone; frozen experiment contracts and final experiment conclusions govern their declared scopes.  "
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "fe9eba89dc6c11b7f80d84b2a7bb71fb14eee3dd",
+      "path_role_hint": "historical_progress_evidence",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-08-20  "
+        },
+        {
+          "line": 4,
+          "text": "**Status:** Historical design checkpoint  "
+        },
+        {
+          "line": 7,
+          "text": "**Scope:** Derives technology-neutral implementation requirements from Foundations 018-020 before comparing persistence, retrieval, rule-evaluation, or backend architecture options.  "
+        },
+        {
+          "line": 8,
+          "text": "**Authority:** Historical provenance and active implementation-requirements hypothesis. Foundation 020 and current canonical documents govern conceptual meaning; no technology choice is made here.  "
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/checkpoints/108_v1_architecture_comparison_and_sqlite_centered_selection.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "88b13dcf1092007ed98d458dfb824f4508f28418",
+      "path_role_hint": "historical_progress_evidence",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-08-20  "
+        },
+        {
+          "line": 4,
+          "text": "**Status:** Historical architecture-selection checkpoint  "
+        },
+        {
+          "line": 7,
+          "text": "**Scope:** Compares plausible technology families against Checkpoint 107 requirements, records targeted external research and a synthetic SQLite viability spike, and selects the smallest currently justified V1 persistence/retrieval architecture.  "
+        },
+        {
+          "line": 8,
+          "text": "**Authority:** Historical provenance and rationale for the V1 architecture decision. `docs/DECISIONS.md` records the accepted decision; future technical specifications govern exact physical schema and implementation details.  "
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/checkpoints/112_v1_persistence_tooling_selected_and_validated.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "fd523623c0f726c7af7a6e59faab0fa04e1d3aab",
+      "path_role_hint": "historical_progress_evidence",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-08-20  "
+        },
+        {
+          "line": 4,
+          "text": "**Status:** Historical design and tooling-selection checkpoint  "
+        },
+        {
+          "line": 7,
+          "text": "**Scope:** Compares raw DBAPI, SQLAlchemy Core, and SQLAlchemy ORM approaches; records current official-tooling research and a dual-backend spike; selects SQLAlchemy Core + Alembic for V1 persistence implementation.  "
+        },
+        {
+          "line": 8,
+          "text": "**Authority:** Historical rationale and evidence. D-029 and Specification 002 are the current accepted sources for this tooling scope.  "
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/checkpoints/113_v1_python_project_tooling_validated.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "8393a98246998e4cec6f0da3e4c0beab65e6d5cb",
+      "path_role_hint": "historical_progress_evidence",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-08-20  "
+        },
+        {
+          "line": 4,
+          "text": "**Status:** Historical tooling-selection and reproducibility checkpoint  "
+        },
+        {
+          "line": 7,
+          "text": "**Scope:** Selects and validates the V1 Python project-management, lockfile, build-backend, source-layout, and cross-platform interpreter support contract.  "
+        },
+        {
+          "line": 8,
+          "text": "**Authority:** Historical rationale and validation evidence. D-030 and Specification 003 are the current accepted sources for this scope.  "
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/checkpoints/115_reusable_knowledge_interchange_contract_validated.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "1aed2b7da45948e8405ec072af9034d2df3f8a2d",
+      "path_role_hint": "historical_progress_evidence",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-08-20  "
+        },
+        {
+          "line": 4,
+          "text": "**Status:** Historical design, implementation, and verification checkpoint  "
+        },
+        {
+          "line": 7,
+          "text": "**Scope:** Records the selection and executable validation of the V1 deterministic reusable-knowledge interchange contract and representative heterogeneous benchmark corpus.  "
+        },
+        {
+          "line": 8,
+          "text": "**Authority:** Historical rationale and validation evidence. Foundation 020 remains the conceptual authority; Specification 004 and D-031 become the current implementation/interchange authority after promotion.  "
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/checkpoints/129_direct_model_call_runtime_control_cross_platform_gate_passed.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "6e54aacb591e82ed43c04b4b4b19bd9b52f5fd6d",
+      "path_role_hint": "historical_progress_evidence",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-08-21  "
+        },
+        {
+          "line": 4,
+          "text": "**Status:** Historical experiment-verification record  "
+        },
+        {
+          "line": 7,
+          "text": "**Scope:** Preserves the first executable no-framework control for Specification 005 after deterministic Ubuntu and Windows validation.  "
+        },
+        {
+          "line": 8,
+          "text": "**Authority:** Historical runtime-bakeoff evidence. Specification 005 remains the candidate evaluation contract; no runtime is selected by this checkpoint.  "
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/checkpoints/131_openai_agents_complete_runtime_candidate_cross_platform_gate_passed.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "f3c7cc87bd2458373898b6e98ccb41c6940244da",
+      "path_role_hint": "historical_progress_evidence",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-08-22  "
+        },
+        {
+          "line": 4,
+          "text": "**Status:** Historical experiment-verification record; runtime selection remains open  "
+        },
+        {
+          "line": 7,
+          "text": "**Scope:** Preserves the complete OpenAI Agents SDK 0.19.4 candidate after all Specification 005 mandatory gates passed on Ubuntu and Windows.  "
+        },
+        {
+          "line": 8,
+          "text": "**Authority:** Historical runtime-bakeoff evidence. Specification 005 remains the evaluation contract; this checkpoint does not select a runtime.  "
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/checkpoints/132_langgraph_durability_comparator_cross_platform_gate_passed.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "f58f7d28d23e300af192bc0a5ae7e7418d152373",
+      "path_role_hint": "historical_progress_evidence",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-08-22  "
+        },
+        {
+          "line": 4,
+          "text": "**Status:** Historical experiment-verification record  "
+        },
+        {
+          "line": 7,
+          "text": "**Scope:** Preserves the complete LangGraph 1.2.10 durability comparator after Ubuntu and Windows validation.  "
+        },
+        {
+          "line": 8,
+          "text": "**Authority:** Historical runtime-bakeoff evidence. Runtime selection is a separate promotion decision.  "
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/checkpoints/196_source_substrate_accepted_first_corpus_validated.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "7353407003937b67bbbd911662f6d4dd473d2c7c",
+      "path_role_hint": "historical_progress_evidence",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-08-25  "
+        },
+        {
+          "line": 4,
+          "text": "**Status:** `SOURCE_SUBSTRATE_ACCEPTED`  "
+        },
+        {
+          "line": 7,
+          "text": "**Scope:** Specification 023 provider-free source substrate, cross-platform validation, VU Amsterdam Machine Learning first-corpus exercise, duplicate/variant behavior, integrity, backup, and clean restore  "
+        },
+        {
+          "line": 8,
+          "text": "**Authority:** Historical acceptance record for the bounded Specification 023 implementation. Foundation 021 remains the conceptual source/evidence authority and Specification 023 remains the frozen implementation contract for this slice.  "
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/checkpoints/204_multimodel_collaboration_method_promoted.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "5f5f7542f287e0731c3289dbb9db5b08c92a9e12",
+      "path_role_hint": "historical_progress_evidence",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-08-26  "
+        },
+        {
+          "line": 4,
+          "text": "**Status:** Multi-model development-method promotion checkpoint  "
+        },
+        {
+          "line": 7,
+          "text": "**Scope:** Classifies Specification 024, resolves MC-0002 and MC-0003, promotes the reviewed collaboration architecture into Development Method v0.5 and provider-neutral continuity/provenance, and preserves residual mechanization triggers without opening Specification 025.  "
+        },
+        {
+          "line": 8,
+          "text": "**Authority:** Historical promotion boundary. Development Method v0.5, Continuity, accepted Specification 024, and canonical model-collaboration protocol govern current interpretation.  "
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/checkpoints/520_q10_final_qualification_passed_target_selection_decision_next.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "3b99347522e225888271f4d9a237e2bcce129e82",
+      "path_role_hint": "historical_progress_evidence",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-09-15"
+        },
+        {
+          "line": 4,
+          "text": "**Status:** CANDIDATE 01 FINAL QUALIFICATION 67/67 PASS / TARGET SELECTION ELIGIBLE / TARGET NOT SELECTED / OWNER DECISION NEXT"
+        },
+        {
+          "line": 7,
+          "text": "**Scope:** Preserve the Q10 first-run and oracle comparison, record 67/67 final qualification, and stop before owner target selection."
+        },
+        {
+          "line": 8,
+          "text": "**Authority:** Qualification evidence only. Current continuity remains operational authority."
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/checkpoints/838_owner_architecture_decision_package_frozen.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "326adf70ff0091b0218fb396ea3ea11483c01ae7",
+      "path_role_hint": "historical_progress_evidence",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-10-03"
+        },
+        {
+          "line": 4,
+          "text": "**Status:** OWNER ARCHITECTURE DECISION REQUIRED"
+        },
+        {
+          "line": 7,
+          "text": "**Scope:** Freeze the exact THIN_CENTRED_HYBRID_V03 architecture-selection package before owner judgment."
+        },
+        {
+          "line": 8,
+          "text": "**Authority:** Owner-decision boundary only."
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/checkpoints/839_v03_selected_realization_program_opened.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "d3258f2275be3838cf116359f103e584582ea02a",
+      "path_role_hint": "historical_progress_evidence",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-10-04"
+        },
+        {
+          "line": 4,
+          "text": "**Status:** V03 OWNER-SELECTED TARGET / REALIZATION PROGRAM OPEN / CURRENT AUTHORITY UNCHANGED"
+        },
+        {
+          "line": 7,
+          "text": "**Scope:** Record the owner's ACCEPT decision and open the V03 realization program without switching operational authority."
+        },
+        {
+          "line": 8,
+          "text": "**Authority:** D-036 selects the successor target. Specification 028 and accepted continuity surfaces remain operational authority until later explicit qualification and cutover."
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/current_routing.json": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "132012e85922097eb01c94397a0b24943a7eb4ed",
+      "path_role_hint": "operational_routing_source",
+      "literal_metadata_first_forty_lines": [],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/experiments/prototype_v0/HELD_OUT_STATUS.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "73cf31283e4d6895a688c70221b7a0843fe96f61",
+      "path_role_hint": "other_project_document",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Status:** Complete  "
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "20c8ed53d6a2955b7cda2ae6ceada05e2629d6c9",
+      "path_role_hint": "foundation",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-08-18  "
+        },
+        {
+          "line": 4,
+          "text": "**Status:** Foundational design memo  "
+        },
+        {
+          "line": 6,
+          "text": "**Scope:** How this project preserves, promotes, discovers, reconciles, and evolves its own knowledge. This does not change Prototype V0 treatment behavior."
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/foundations/015_held_out_supervision_and_mechanical_verification_architecture.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "7e7da45d540dc4b82494e4b319791987994c3b07",
+      "path_role_hint": "foundation",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-08-18  "
+        },
+        {
+          "line": 4,
+          "text": "**Status:** Validated and frozen operational experiment infrastructure for the remainder of Prototype V0 held-out execution  "
+        },
+        {
+          "line": 5,
+          "text": "**Scope:** Condition-neutral orchestration and post-run mechanical verification only. This document does not modify the frozen B0, B1, or P0 treatments."
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "d682dd29a6b62e3e8cecfcaa334e2cec662f7933",
+      "path_role_hint": "foundation",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-08-20  "
+        },
+        {
+          "line": 4,
+          "text": "**Status:** Foundational methodological-knowledge representation direction  "
+        },
+        {
+          "line": 5,
+          "text": "**Scope:** Long-term Autonomous Data Science System methodological-knowledge layer. This foundation defines durable conceptual separations and representation requirements, not a final ontology, physical schema, storage engine, retrieval engine, rules engine, backend stack, or V1 implementation."
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "2c1c39c975ad207712f5ad34d6d822ef4763f5df",
+      "path_role_hint": "foundation",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-08-20  "
+        },
+        {
+          "line": 4,
+          "text": "**Status:** Foundational product-interface and experience design  "
+        },
+        {
+          "line": 5,
+          "text": "**Scope:** Long-term product interface and V1 frontend direction; does not freeze a specific frontend framework, component library, chart library, desktop wrapper, or agent-UI protocol  "
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "2d1f8e816b00900f71d7982b072b6027728f5ab2",
+      "path_role_hint": "engineering_or_collaboration_evidence",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-08-26  "
+        },
+        {
+          "line": 4,
+          "text": "**Status:** Accepted operational collaboration protocol  "
+        },
+        {
+          "line": 5,
+          "text": "**Authority:** Canonical collaboration-method supplement under Development Method v0.5. Frozen specifications and accepted project decisions remain stronger within their declared scopes.  "
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "3172f194927f85f4e1f0b185da2a6020297fa359",
+      "path_role_hint": "engineering_or_collaboration_evidence",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Status:** Accepted collaboration/continuity convention  "
+        },
+        {
+          "line": 6,
+          "text": "**Authority:** Canonical provider-neutral interaction-provenance convention under Development Method v0.5 and `docs/checkpoints/README.md`  "
+        },
+        {
+          "line": 7,
+          "text": "**Scope:** Preserve which concrete interaction environment, workspace, session, and conversation produced ADS development artifacts without making chat history authoritative."
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/model_collaboration/README.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "3791dd4243976765e0fae7a1d5caf6ee59199232",
+      "path_role_hint": "engineering_or_collaboration_evidence",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Status:** Current canonical model-collaboration protocol  "
+        },
+        {
+          "line": 5,
+          "text": "**Authority:** Canonical operational collaboration protocol, initially promoted with Development Method v0.5 and retained by the current Development Method v0.7. It does not override accepted project specifications or decisions outside its scope.  "
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/model_collaboration/threads/MC-0001/RESOLUTION.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "c755c85a0c726714badead5e37cdf8b627429af6",
+      "path_role_hint": "engineering_or_collaboration_evidence",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 4,
+          "text": "**Status:** RESOLVED  "
+        },
+        {
+          "line": 7,
+          "text": "**Authority:** Collaboration-resolution provenance. Canonical development-method authority changes only through the normal promotion audit."
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/model_collaboration/threads/MC-0002/RESOLUTION.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "ef16ace81645106c507410cf9910af9b547d5627",
+      "path_role_hint": "engineering_or_collaboration_evidence",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 4,
+          "text": "**Status:** RESOLVED / CLOSED  "
+        },
+        {
+          "line": 7,
+          "text": "**Authority:** Collaboration-resolution provenance. Specification 024 and the canonical development method govern after promotion."
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/model_collaboration/threads/MC-0003/RESOLUTION.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "f454875cee40fe2e2f7b5f2f91c661594a6bb663",
+      "path_role_hint": "engineering_or_collaboration_evidence",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 4,
+          "text": "**Status:** RESOLVED / CLOSED  "
+        },
+        {
+          "line": 7,
+          "text": "**Authority:** Collaboration-resolution provenance. The promoted collaboration protocol and Development Method govern current operation."
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/project_knowledge/generated/current_state_core.json": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "cd41acfc898b1875e552c7122efd53e393cfdc5a",
+      "path_role_hint": "derived_project_knowledge_view",
+      "literal_metadata_first_forty_lines": [],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/project_knowledge/generated/identity_index.json": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "735dcf0e95c37c4e4442550b479f97c4c386cdff",
+      "path_role_hint": "derived_project_knowledge_view",
+      "literal_metadata_first_forty_lines": [],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/research/010_2026_runtime_bakeoff_preimplementation_refresh.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "11413ea7bb0d5a1e1294d4c957888b65a0bd2187",
+      "path_role_hint": "research_proposal_or_result",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-08-21  "
+        },
+        {
+          "line": 4,
+          "text": "**Status:** Current external-ecosystem implementation research  "
+        },
+        {
+          "line": 5,
+          "text": "**Scope:** Fresh official-source audit of Specification 005 candidates immediately before executable runtime-bakeoff implementation  "
+        },
+        {
+          "line": 6,
+          "text": "**Authority:** Current implementation guidance only. Specification 005 remains the candidate evaluation contract; no runtime is selected by this memo. Rapidly changing external API details must be rechecked when adapter code is written.  "
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/research/013_openai_agents_complete_candidate_evidence_and_direct_call_comparison.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "8a78b6a05893240d2c86abe5f0d99ca79e5427c0",
+      "path_role_hint": "research_proposal_or_result",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-08-22  "
+        },
+        {
+          "line": 4,
+          "text": "**Status:** Current runtime-bakeoff evidence; no runtime selection  "
+        },
+        {
+          "line": 5,
+          "text": "**Scope:** Interprets the complete executable OpenAI Agents SDK 0.19.4 candidate against the previously validated direct model-call control under Specification 005.  "
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "f159e7ee508b9fce12d9db6be5d5e4c73db0f775",
+      "path_role_hint": "research_proposal_or_result",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-08-22  "
+        },
+        {
+          "line": 4,
+          "text": "**Status:** Current pre-implementation runtime-bakeoff evidence; no runtime selection  "
+        },
+        {
+          "line": 5,
+          "text": "**Scope:** Verifies the currently released LangGraph ecosystem and narrows the ADS durability comparator before implementation.  "
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/research/015_langgraph_complete_candidate_three_way_runtime_comparison_and_stop_rule.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "f8d6d751cb0b00c6619fb9a34e31efa7dd1831a3",
+      "path_role_hint": "research_proposal_or_result",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-08-22  "
+        },
+        {
+          "line": 4,
+          "text": "**Status:** Current runtime-selection evidence  "
+        },
+        {
+          "line": 5,
+          "text": "**Scope:** Interprets the complete LangGraph 1.2.10 comparator alongside the validated direct-call control and OpenAI Agents SDK 0.19.4 candidate, then evaluates whether Microsoft Agent Framework or Google ADK 2.0 remain decision-relevant under Specification 005.  "
+        },
+        {
+          "line": 6,
+          "text": "**Authority:** Selection rationale only until promoted through an explicit decision.  "
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "65550ec01b176ad5a1bb70a310415954fe6a7bd4",
+      "path_role_hint": "research_proposal_or_result",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-09-13"
+        },
+        {
+          "line": 4,
+          "text": "**Status:** ACTIVE / PKA-CANDIDATE-01 OWNER-SELECTED / W0 SUBSTRATE SLICE 1 ACCEPTED / PKA-G001..G005 PASS / IDENTITY+AUTHORITY ENGINES NEXT / CURRENT CONTINUITY STILL AUTHORITY"
+        },
+        {
+          "line": 5,
+          "text": "**Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself."
+        },
+        {
+          "line": 6,
+          "text": "**Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts."
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/research/144_whole_architecture_candidate_repository_native_semantic_sources.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "fb16859ebe94cc09acf2e37b4afee27380946adf",
+      "path_role_hint": "research_proposal_or_result",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-09-14"
+        },
+        {
+          "line": 4,
+          "text": "**Status:** OWNER-SELECTED SUCCESSOR TARGET / SPECIFICATION 028 FROZEN / NOT YET OPERATIONAL AUTHORITY"
+        },
+        {
+          "line": 6,
+          "text": "**Scope:** Synthesize one serious successor architecture from the complete Research 124 evidence field after the H1/H2 mechanism probes, real-corpus independent review, MC-0014/MC-0015 corrections, D1-D8 external evidence and owner-provided ICM evaluation. Define enough logical structure, authority semantics, typed source responsibilities, derived-view behavior, activation, lifecycle, validation, scaling and migration behavior to qualify the candidate systematically against Requirements V0.2."
+        },
+        {
+          "line": 7,
+          "text": "**Authority:** Candidate architecture research only. Requirements V0.2 remain the frozen acceptance authority. This record does not select the target architecture, migrate current authority, or authorize implementation as the production continuity system."
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/research/145_candidate_01_requirements_v02_design_coverage_and_qualification_plan.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "90283c74c962d08516177a66d2fc67d963fe0455",
+      "path_role_hint": "research_proposal_or_result",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-09-14"
+        },
+        {
+          "line": 4,
+          "text": "**Status:** 50/50 KA-R + 17/17 KA-I FINAL PASS / PKA-CANDIDATE-01 OWNER-SELECTED / SPECIFICATION 028 FROZEN / W0 NEXT"
+        },
+        {
+          "line": 6,
+          "text": "**Scope:** Systematically map the whole-architecture candidate against every frozen Requirements V0.2 requirement/invariant, distinguish design coverage from actual qualification evidence, identify selection-blocking proof clusters, and freeze the minimum implementation/behavioral evidence needed before target selection."
+        },
+        {
+          "line": 7,
+          "text": "**Authority:** Candidate qualification planning only. Requirements V0.2 remain the acceptance authority. A mapped design mechanism is not a qualified pass."
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/research/175_q10_final_multidimensional_qualification_result.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "796146eb18ce70ffcf41066c5e26699a8054bc53",
+      "path_role_hint": "research_proposal_or_result",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-09-15"
+        },
+        {
+          "line": 4,
+          "text": "**Status:** Q10 FINAL QUALIFICATION PASSED 67/67 / TARGET SELECTION ELIGIBLE / TARGET NOT YET SELECTED / AUTHORITY SWITCH NOT ALLOWED"
+        },
+        {
+          "line": 10,
+          "text": "**Scope:** Preserve the oracle-blind Q10 first run, compare it with the separately frozen oracle, grant explicit final dispositions to all 67 frozen requirements/invariants, and determine whether Candidate 01 is eligible for a separate owner target-selection decision."
+        },
+        {
+          "line": 11,
+          "text": "**Authority:** Final qualification evidence only. Candidate 01 is not selected by this research record and current continuity remains operational authority."
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/research/176_candidate01_owner_selection_and_implementation_migration_program_opening.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "648f008289d46c2306ac65cd32b2f4120f4759ab",
+      "path_role_hint": "research_proposal_or_result",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-09-15"
+        },
+        {
+          "line": 4,
+          "text": "**Status:** PKA-CANDIDATE-01 SELECTED SUCCESSOR TARGET / SPECIFICATION 028 FROZEN / W0 SUBSTRATE SLICE 1 ACCEPTED / PKA-G001..G005 PASS / CURRENT CONTINUITY STILL AUTHORITY"
+        },
+        {
+          "line": 8,
+          "text": "**Scope:** Convert the selected logical project-development knowledge architecture into a concrete physical implementation and migration program without prematurely switching authority or freezing accidental details of the current representation."
+        },
+        {
+          "line": 9,
+          "text": "**Authority:** Program-opening record. D-035 selects the target architecture; current continuity remains operational authority until a later explicit qualified cutover."
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/research/254_r7b_target_project_information_hierarchy_and_research218_supersession_candidate.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "1a55bc9b492c625b32c30711dc8bfeb43b4e944b",
+      "path_role_hint": "research_proposal_or_result",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-09-22"
+        },
+        {
+          "line": 4,
+          "text": "**Status:** R7 TARGET HIERARCHY RECOMMENDED / RESEARCH 218 PHYSICAL TREE SUPERSESSION CANDIDATE / OWNER DECISION REQUIRED / NO PHYSICAL MIGRATION"
+        },
+        {
+          "line": 8,
+          "text": "**Scope:** Convert the accepted R7-A information model into a coherent physical Project information hierarchy, authoring decision tree and compatibility/supersession plan. This is a target recommendation only."
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/research/500_thin_centred_hybrid_v03_owner_decision_candidate.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "22c8083d7c6114f1efd2b7f2593c87adc682c075",
+      "path_role_hint": "research_proposal_or_result",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-10-03"
+        },
+        {
+          "line": 4,
+          "text": "**Status:** FINAL PRE-OWNER-DECISION CANDIDATE FROZEN"
+        },
+        {
+          "line": 8,
+          "text": "**Scope:** Freeze the integrated successor semantic/control architecture after completion and reconciliation of D-1, D-2 and D-3, so the project owner can make the architecture-selection decision from one bounded candidate."
+        },
+        {
+          "line": 9,
+          "text": "**Authority:** Development architecture candidate only. No production activation, physical migration, Specification 028 supersession, dependent-DRP resumption, or hidden-R2 exposure occurs by this freeze."
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/research/501_owner_architecture_decision_package_freeze.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "8b056f5b7c7c8b3af9e4b5debb82276a93fccfda",
+      "path_role_hint": "research_proposal_or_result",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-10-03"
+        },
+        {
+          "line": 4,
+          "text": "**Status:** OWNER DECISION PACKAGE FROZEN / OWNER DECISION REQUIRED"
+        },
+        {
+          "line": 13,
+          "text": "**Scope:** Freeze the exact architecture-selection question, evidence summary, decision meanings and non-effects before the project owner decides whether to select THIN_CENTRED_HYBRID_V03 as the successor semantic/control architecture target."
+        },
+        {
+          "line": 14,
+          "text": "**Authority:** Decision package only. No selection occurs until the owner decides."
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/research/502_v03_owner_selection_and_realization_program_opening.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "6bbe947eb92f67cfd2eab8da13e25b99b5688690",
+      "path_role_hint": "research_proposal_or_result",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-10-04"
+        },
+        {
+          "line": 4,
+          "text": "**Status:** THIN_CENTRED_HYBRID_V03 OWNER-SELECTED SUCCESSOR TARGET / REALIZATION PROGRAM OPEN / SPECIFICATION 028 STILL AUTHORITY"
+        },
+        {
+          "line": 14,
+          "text": "**Scope:** Record the project owner's explicit selection of THIN_CENTRED_HYBRID_V03 and open the next governed implementation and migration-qualification program without changing operational authority or prematurely freezing physical realization choices."
+        },
+        {
+          "line": 15,
+          "text": "**Authority:** Architecture-selection and program-opening record. Specification 028 remains current operational implementation/migration authority until an explicit prospective successor/amendment and later qualified authority switch."
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/source_universe/validation/001_vu_machine_learning_source_substrate_result.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "4f1cf707dfd235dd5c1234e91561fc5d25e11fc6",
+      "path_role_hint": "domain_or_structured_project_source",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-08-25  "
+        },
+        {
+          "line": 4,
+          "text": "**Status:** PASS, provider-free implementation and first-corpus validation  "
+        },
+        {
+          "line": 6,
+          "text": "**Scope:** Exact-artifact preservation, source-registry behavior, duplicate handling, deterministic export, integrity audit, backup/restore, and first real VU Machine Learning corpus exercise  "
+        },
+        {
+          "line": 7,
+          "text": "**Authority:** Validation evidence for Specification 023. This result does not make the current ChatGPT/runtime filesystem the canonical long-term source vault, does not authorize redistribution of source binaries, and does not promote source content into accepted methodological knowledge."
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/specifications/001_v1_sqlite_technical_architecture.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "3f1b5751590640072f316fc378f443b355af2cf9",
+      "path_role_hint": "specification_carrier",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-08-20  "
+        },
+        {
+          "line": 4,
+          "text": "**Status:** Accepted V1 technical specification v1.1  "
+        },
+        {
+          "line": 5,
+          "text": "**Scope:** V1 methodological-knowledge, project-state, retrieval, rule-evaluation, context-assembly, provenance, and operational persistence architecture  "
+        },
+        {
+          "line": 6,
+          "text": "**Authority:** Current V1 technical architecture contract for this scope. It implements D-028 and Foundations 017-020. Later revisions must preserve explicit migration/history semantics rather than silently changing the contract.  "
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/specifications/002_v1_persistence_tooling_standard.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "0a37a1c00c3cf61a405837fb7939f3c6e2d059be",
+      "path_role_hint": "specification_carrier",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-08-20  "
+        },
+        {
+          "line": 4,
+          "text": "**Status:** Accepted V1 technical specification v1.1 after governed-roundtrip portability closure  "
+        },
+        {
+          "line": 5,
+          "text": "**Scope:** Python persistence toolkit and schema-migration tooling for Specification 001's SQLite-centered architecture and its PostgreSQL migration seam  "
+        },
+        {
+          "line": 6,
+          "text": "**Authority:** Current V1 technical contract for persistence-tool implementation. Subordinate to D-028, Specification 001, and Foundations 017-020.  "
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/specifications/003_v1_python_project_and_dependency_tooling.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "f041be50c86dd70ccc86895174d218729ce05411",
+      "path_role_hint": "specification_carrier",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-08-20  "
+        },
+        {
+          "line": 4,
+          "text": "**Status:** Accepted V1 technical specification v1.0  "
+        },
+        {
+          "line": 5,
+          "text": "**Scope:** Python project metadata, dependency resolution/locking, package build, source layout, and reproducible development/CI environment for the V1 application package  "
+        },
+        {
+          "line": 6,
+          "text": "**Authority:** Current V1 technical contract for Python project/dependency/build tooling. Subordinate to current project architecture and Specifications 001-002.  "
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/specifications/004_v1_reusable_knowledge_interchange.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "40adafeb14059e0c58fd2e5b7237a708644ca964",
+      "path_role_hint": "specification_carrier",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-08-20  "
+        },
+        {
+          "line": 4,
+          "text": "**Status:** Accepted V1 technical specification v1.0  "
+        },
+        {
+          "line": 5,
+          "text": "**Scope:** Human-readable, deterministic, storage-neutral interchange for reusable methodological knowledge revisions, components, rules, relations, provenance references, and representative benchmark fixtures  "
+        },
+        {
+          "line": 6,
+          "text": "**Authority:** Accepted implementation contract for its declared interchange scope, subordinate to Foundations 019-020 and Specifications 001-003. Promotion is supported by KI-01 through KI-10 recorded in Checkpoint 115 and the committed interchange validation evidence.  "
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "3d31b4a6d84b8b74af5bfd7c17f937d85d7b4fa8",
+      "path_role_hint": "specification_carrier",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-08-20  "
+        },
+        {
+          "line": 4,
+          "text": "**Status:** Completed V1 evaluation specification v0.2; runtime outcome promoted through D-032 on 2026-08-22  "
+        },
+        {
+          "line": 5,
+          "text": "**Scope:** Empirical selection of the first V1 reasoning/agent runtime and validation of MCP/HITL/durability/domain-isolation boundaries  "
+        },
+        {
+          "line": 6,
+          "text": "**Authority:** Executed evaluation contract and historical selection evidence. The accepted V1 runtime decision is D-032; this specification remains the gate definition and comparison record.  "
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/specifications/023_v1_source_universe_substrate.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "9acd8782427fc96478a21cd4cde801299bbeec91",
+      "path_role_hint": "specification_carrier",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-08-25  "
+        },
+        {
+          "line": 4,
+          "text": "**Status:** Frozen prospective V1 implementation contract  "
+        },
+        {
+          "line": 5,
+          "text": "**Scope:** Minimal governed source registry, exact source-artifact preservation, deterministic registry export, integrity verification, bounded derived-artifact lineage, and first real-corpus recovery validation  "
+        },
+        {
+          "line": 6,
+          "text": "**Authority:** Frozen implementation contract for the first source-substrate vertical slice. Subordinate to Foundation 021 and existing V1 persistence/interchange decisions. Does not define final source ontology, final evidence-link vocabulary, final backup provider, final parser stack, or accepted methodological knowledge.  "
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/specifications/024_v1_model_collaboration_state_guard.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "b7b1ee25e152df6a7d50c96530d120e76f483cc7",
+      "path_role_hint": "specification_carrier",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-08-25  "
+        },
+        {
+          "line": 4,
+          "text": "**Status:** Accepted V1 implementation contract  "
+        },
+        {
+          "line": 7,
+          "text": "**Scope:** Provider-neutral machine-readable coordination state for governed multi-model development tasks  "
+        },
+        {
+          "line": 9,
+          "text": "**Authority:** Accepted V1 implementation contract for the model-collaboration state coherence guard. The original MC-G01 through MC-G16 gates remain the frozen acceptance basis."
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "70db025eefa69a8dec43b04dfdae87f5700754c9",
+      "path_role_hint": "specification_carrier",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-09-15"
+        },
+        {
+          "line": 4,
+          "text": "**Status:** FROZEN / IMPLEMENTATION PENDING"
+        },
+        {
+          "line": 5,
+          "text": "**Scope:** Production implementation and staged migration contract for the owner-selected `PKA-CANDIDATE-01` project-development knowledge architecture, including repository-local tooling, structured semantic declarations, deterministic derived views, authority resolution, workstream continuation, reconstruction planning, capture/promotion, validation, professional architecture documentation, compatibility migration, rollback, and cutover qualification."
+        },
+        {
+          "line": 6,
+          "text": "**Authority:** Frozen implementation contract subordinate to D-035 and Requirements V0.2. It does not switch operational authority. Existing continuity remains authoritative until a later explicit qualified authority-switch decision."
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "experiments/architecture_spikes/V1_KNOWLEDGE_INTERCHANGE_RESULT.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "d961ad8479edf1c12e927fc198c4dc44a2b3bc6d",
+      "path_role_hint": "historical_fixture_or_probe",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Status:** PASS  "
+        },
+        {
+          "line": 5,
+          "text": "**Scope:** Executable validation evidence for Specification 004 candidate interchange contract"
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "experiments/architecture_spikes/V1_PERSISTENCE_TOOLING_RESULT.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "586991b3aa5d4fd621fffa0b3900085c1b8b273a",
+      "path_role_hint": "historical_fixture_or_probe",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Status:** PASS  "
+        },
+        {
+          "line": 5,
+          "text": "**Scope:** SQLAlchemy Core + Alembic viability for Specification 001 on SQLite and PostgreSQL"
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "experiments/architecture_spikes/V1_PYTHON_PROJECT_TOOLING_RESULT.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "7f4a25f2bd142ea96ba440c2c300efa8c236ee55",
+      "path_role_hint": "historical_fixture_or_probe",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Status:** PASS  "
+        },
+        {
+          "line": 5,
+          "text": "**Scope:** Reproducible project/dependency/build foundation for the V1 application package"
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "experiments/architecture_spikes/sqlite_v1_viability.py": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "da2e875d1250a1dd17dd7449c19cb83edbaa1afb",
+      "path_role_hint": "historical_fixture_or_probe",
+      "literal_metadata_first_forty_lines": [],
+      "authority_or_task_eligibility_certified": false
+    },
+    "experiments/architecture_spikes/tooling_sqlalchemy_core_alembic_spike.py": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "008e118a666b242e9f9d0b4732a6ed74059ba644",
+      "path_role_hint": "historical_fixture_or_probe",
+      "literal_metadata_first_forty_lines": [],
+      "authority_or_task_eligibility_certified": false
+    },
+    "experiments/runtime_bakeoff/DIRECT_CALL_CONTROL_RESULT.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "65cbfb9ea7d065bea4f2e0411855c33ac182712c",
+      "path_role_hint": "historical_fixture_or_probe",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Status:** PASS  "
+        },
+        {
+          "line": 4,
+          "text": "**Date:** 2026-08-21  "
+        },
+        {
+          "line": 5,
+          "text": "**Scope:** Deterministic no-framework control for the Specification 005 representative runtime workload  "
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "experiments/runtime_bakeoff/candidates/langgraph_runtime/COMPLETE_RESULT.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "9f00d100eecfdda9402b458ec177a1c31db85363",
+      "path_role_hint": "historical_fixture_or_probe",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Date:** 2026-08-22  "
+        },
+        {
+          "line": 4,
+          "text": "**Status:** COMPLETE CANDIDATE PASS  "
+        },
+        {
+          "line": 5,
+          "text": "**Scope:** Specification 005 deterministic ADS-shaped runtime bakeoff  "
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "experiments/runtime_bakeoff/candidates/openai_agents/COMPLETE_RESULT.md": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "75797f941332213fe39ceabba50114369afdd937",
+      "path_role_hint": "historical_fixture_or_probe",
+      "literal_metadata_first_forty_lines": [
+        {
+          "line": 3,
+          "text": "**Status:** PASS for Specification 005 mandatory candidate gates  "
+        },
+        {
+          "line": 4,
+          "text": "**Date:** 2026-08-22  "
+        }
+      ],
+      "authority_or_task_eligibility_certified": false
+    },
+    "prototype_v0/src/ads_v0/heldout_supervisor.py": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "ef6ffbea671d4f177e41002becfd8751e176ddad",
+      "path_role_hint": "other_project_document",
+      "literal_metadata_first_forty_lines": [],
+      "authority_or_task_eligibility_certified": false
+    },
+    "prototype_v0/src/ads_v0/heldout_verifier.py": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "03fb33280f87d0056a3dbb264a63651df9ffb431",
+      "path_role_hint": "other_project_document",
+      "literal_metadata_first_forty_lines": [],
+      "authority_or_task_eligibility_certified": false
+    },
+    "pyproject.toml": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "33d39519a77e7f42088d5b59651d851a1e612c16",
+      "path_role_hint": "other_project_document",
+      "literal_metadata_first_forty_lines": [],
+      "authority_or_task_eligibility_certified": false
+    },
+    "schemas/project_knowledge/semantic_source.v1.schema.json": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "f202757950601411d7e2e4584a7f66a4215c21f7",
+      "path_role_hint": "machine_schema_realization",
+      "literal_metadata_first_forty_lines": [],
+      "authority_or_task_eligibility_certified": false
+    },
+    "schemas/reusable_knowledge_bundle_v1.schema.json": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "3cc9ea31301460177788e2ffbc2865d6659277ca",
+      "path_role_hint": "machine_schema_realization",
+      "literal_metadata_first_forty_lines": [],
+      "authority_or_task_eligibility_certified": false
+    },
+    "tests/unit/test_project_knowledge_authority.py": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "30354978662caf1189b3341193162c8939349bd5",
+      "path_role_hint": "verification_or_test_carrier",
+      "literal_metadata_first_forty_lines": [],
+      "authority_or_task_eligibility_certified": false
+    },
+    "tools/project_knowledge/authority.py": {
+      "git_commit": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+      "git_blob_oid": "e4b74a7efa0adbde16e49d411dd831be3f83e164",
+      "path_role_hint": "project_tool_realizer_candidate",
+      "literal_metadata_first_forty_lines": [],
+      "authority_or_task_eligibility_certified": false
+    }
+  },
+  "substrate_audit": {
+    "contract_id": "R0_P03_SHARED_V03_COMPARISON_CANDIDATE_V01",
+    "contract_design_basis_ref": "22a63604e382f73b7fe661937ed4852ecf7da672",
+    "contract_design_basis_differs_from_content_pin": true,
+    "shared_capabilities_complete": true,
+    "shared_capabilities": [
+      "information_role_and_natural_owner",
+      "accepted_effect_id_and_exact_governed_subject",
+      "lineage_and_currentness",
+      "completion",
+      "j2_coverage",
+      "evidence_receipts",
+      "authority_class_labels",
+      "lexical_full_text",
+      "connector_readable_derived_orientation"
+    ],
+    "source_citation_witnesses": [
+      {
+        "id": "GOV_D035",
+        "source_path": "docs/DECISIONS.md",
+        "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+        "line": 928,
+        "citation_exact": true,
+        "candidate_status": "ACCEPTED_HISTORICAL_SELECTION_NOT_CURRENT_V03_OPERATIONAL",
+        "authority_claim_issues": []
+      },
+      {
+        "id": "GOV_D036",
+        "source_path": "docs/DECISIONS.md",
+        "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+        "line": 1059,
+        "citation_exact": true,
+        "candidate_status": "SELECTED_SUCCESSOR_NOT_OPERATIONAL",
+        "authority_claim_issues": []
+      },
+      {
+        "id": "INCUMBENT_SPEC028",
+        "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+        "git_blob_oid": "70db025eefa69a8dec43b04dfdae87f5700754c9",
+        "line": 6,
+        "citation_exact": true,
+        "candidate_status": "INCUMBENT_OPERATIONAL_CONTEXT_AS_IDENTIFIED_BY_D036",
+        "authority_claim_issues": []
+      },
+      {
+        "id": "PROPOSAL_R254",
+        "source_path": "docs/research/254_r7b_target_project_information_hierarchy_and_research218_supersession_candidate.md",
+        "git_blob_oid": "1a55bc9b492c625b32c30711dc8bfeb43b4e944b",
+        "line": 4,
+        "citation_exact": true,
+        "candidate_status": "CANDIDATE_NOT_GOVERNING_TARGET",
+        "authority_claim_issues": []
+      },
+      {
+        "id": "J2_AUTHORITY_MODULE",
+        "source_path": "tools/project_knowledge/authority.py",
+        "git_blob_oid": "e4b74a7efa0adbde16e49d411dd831be3f83e164",
+        "line": 1,
+        "citation_exact": true,
+        "candidate_status": "IMPLEMENTATION_SOURCE_NOT_ACCEPTANCE_PROOF",
+        "authority_claim_issues": []
+      },
+      {
+        "id": "J2_SEMANTIC_SCHEMA",
+        "source_path": "schemas/project_knowledge/semantic_source.v1.schema.json",
+        "git_blob_oid": "f202757950601411d7e2e4584a7f66a4215c21f7",
+        "line": 4,
+        "citation_exact": true,
+        "candidate_status": "SCHEMA_SOURCE_NOT_ACCEPTED_GOVERNING_EFFECT",
+        "authority_claim_issues": []
+      },
+      {
+        "id": "J2_AUTHORITY_TEST",
+        "source_path": "tests/unit/test_project_knowledge_authority.py",
+        "git_blob_oid": "30354978662caf1189b3341193162c8939349bd5",
+        "line": 1,
+        "citation_exact": true,
+        "candidate_status": "TEST_CODE_NOT_TEST_PASS_RECEIPT",
+        "authority_claim_issues": []
+      },
+      {
+        "id": "J3_IDENTITY_INDEX",
+        "source_path": "docs/project_knowledge/generated/identity_index.json",
+        "git_blob_oid": "735dcf0e95c37c4e4442550b479f97c4c386cdff",
+        "line": 2,
+        "citation_exact": true,
+        "candidate_status": "DERIVED_NONAUTHORITATIVE_FRESHNESS_UNVERIFIED",
+        "authority_claim_issues": []
+      },
+      {
+        "id": "J3_STALE_CORE",
+        "source_path": "docs/project_knowledge/generated/current_state_core.json",
+        "git_blob_oid": "cd41acfc898b1875e552c7122efd53e393cfdc5a",
+        "line": 4,
+        "citation_exact": true,
+        "candidate_status": "DERIVED_STALE_RELATIVE_TO_ROUTING_895",
+        "authority_claim_issues": []
+      },
+      {
+        "id": "ROUTING_895",
+        "source_path": "docs/current_routing.json",
+        "git_blob_oid": "132012e85922097eb01c94397a0b24943a7eb4ed",
+        "line": 3,
+        "citation_exact": true,
+        "candidate_status": "ROUTING_895_NOT_LEGACY_CORE_564",
+        "authority_claim_issues": []
+      },
+      {
+        "id": "J2_ANALOGUE_SPEC028_PACKAGE_SCOPE",
+        "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+        "git_blob_oid": "70db025eefa69a8dec43b04dfdae87f5700754c9",
+        "line": 59,
+        "citation_exact": true,
+        "candidate_status": "SYNTHETIC_V03_ANALOGUE_NOT_GOVERNING_J2",
+        "authority_claim_issues": []
+      }
+    ],
+    "carrier_required_fields_absent_in_specimen": {
+      "source_path": 0,
+      "git_commit": 10,
+      "git_blob_oid": 0,
+      "information_role": 10,
+      "natural_owner": 10,
+      "evidence_class": 10,
+      "authority_currentness_basis": 10
+    },
+    "synthetic_j2_analogues": 1,
+    "accepted_j2_coverage_demonstrated_by_specimen": false,
+    "derived_checkpoint_status": "STALE_CHECKPOINT_MISMATCH",
+    "derived_checkpoint": 564,
+    "source_routing_checkpoint": 895,
+    "B2_actual_additions": "NOT_AUTHORED_OR_QUALIFIED",
+    "B1_B3_semantic_distinctness": "NOT_INFERRED_FROM_DIFFERENT_LABELS",
+    "B4": "CONDITIONAL_NOT_IMPLEMENTED_OR_EQUALIZED",
+    "independent_semantics_and_runtime_parity": "NOT_QUALIFIED"
+  },
+  "limitations": [
+    "All 36 ledger events are examined; lexical signals and path-role hints are not answerability or cross-plane facts. No tasks, prompts, labels, answers or selected twelve are emitted.",
+    "Maximum matching is a cardinality ceiling over cited lexical hints, not a chosen task set or independent capacity proof.",
+    "Direct and two-hop reference neighborhoods are neither minimal necessary task closures nor complete dependency closures. Exceeding 60 warns against naive ingestion, not that every task is impossible.",
+    "Raw accepted/superseded/proposed/implementation/test/derived interpretations and source identities remain separate. Citation equality does not establish semantic entailment or J2 acceptance.",
+    "Literal source-header observations expose declared status/scope/authority, including missing headers; they are bounded to forty lines and are not source adjudication or a test-result receipt.",
+    "Shared-view and B2 guards are diagnostic validators, not B0-B4 implementations, independent authority or a scorer. No runtime arm parity claim.",
+    "Pinned source routing checkpoint 895 is historical evidence, not live Checkpoint 898. Level B acceptance governs this engineering work; no security infrastructure or gold custody operation occurs."
+  ]
+}
