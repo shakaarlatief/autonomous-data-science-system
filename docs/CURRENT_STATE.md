@@ -74,6 +74,12 @@ Research 578 / Validation 262: Native exposed Codex/codex-01 at published 213e6d
 
 ---
 
+## Primary-task origin and selection-route decision
+
+Research 579: At published af8f6b37543605a3f61382871cae2484c68d4324, native exposed Codex/codex-01 completed one bounded primary-task origin/selection-route decision without a new census. Decision FRESH_INDEPENDENT_TASK_AUTHOR_REQUIRED under the current evidence: all 36 assessed event records retain unknown independent-need status; two reported owner selections and fourteen candidate Product associations do not establish three needs in each category. A deterministic candidate origin/admission/deduplication/hash-order/category-balance rule stops before ordering or assignment with insufficient verified inputs; no tasks or answers emitted. This is not zero historical capacity or a prohibition on a future genuinely qualified mechanical rule. Stop widening the mechanical investigation; next ChatGPT qualifies one genuinely fresh non-arm author with a neutral closed source brief and actual exposure evidence, then independent reference/closure admission before fixture construction. Corrected B0 remains eight provisional succession assertions, all 22 unqualified associations audit-only; 22 promotion rejections and 44 focused no-census regressions pass. Research 513/559/576, original source pins, Checkpoint 898, routing, operational authority and existing role ownership unchanged. No author/model dispatch, new gold, source draw, arm, scoring, private mutation or infrastructure work.
+
+---
+
 ## Historical checkpoint 897 stage: R0-P03 independent legacy reference intake and task-authoring readiness method
 
 **Checkpoint 897 / Research 561 / Validation 249** provide a **non-scored** source-bound, scrubbed historical reviewer-input capsule for the owner's approved Option A. Exact original W5 historical source revision `4b94ffe183ff7af72cef6ee7492b4ba2f30c11ef` contains **65 corpus carriers**. The candidate intake exposes their Git blob identities and **nine neutral numbered aliases plus B1-derived topic hints**, but **no original B1 memberships, must-retrieve or distractor lists, new natural-language questions, gold answers or scores**. Those topics are not independently authored user questions, so a genuinely fresh reviewer must interpret and adjudicate them; the historical 65-file selection remains B1-originated and residual bias must be reported.

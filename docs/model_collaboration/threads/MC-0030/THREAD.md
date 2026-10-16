@@ -1068,3 +1068,15 @@ Research 578 / Validation 262: Native exposed Codex/codex-01 at published 213e6d
     LEVEL_B_METHOD=OWNER_ACCEPTED_RESEARCH_576
     NEXT_ACTOR=chatgpt
     CHECKPOINT=898_UNCHANGED
+
+## Bounded primary-task origin and route decision
+
+Research 579: At published af8f6b37543605a3f61382871cae2484c68d4324, native exposed Codex/codex-01 completed one bounded primary-task origin/selection-route decision without a new census. Decision FRESH_INDEPENDENT_TASK_AUTHOR_REQUIRED under the current evidence: all 36 assessed event records retain unknown independent-need status; two reported owner selections and fourteen candidate Product associations do not establish three needs in each category. A deterministic candidate origin/admission/deduplication/hash-order/category-balance rule stops before ordering or assignment with insufficient verified inputs; no tasks or answers emitted. This is not zero historical capacity or a prohibition on a future genuinely qualified mechanical rule. Stop widening the mechanical investigation; next ChatGPT qualifies one genuinely fresh non-arm author with a neutral closed source brief and actual exposure evidence, then independent reference/closure admission before fixture construction. Corrected B0 remains eight provisional succession assertions, all 22 unqualified associations audit-only; 22 promotion rejections and 44 focused no-census regressions pass. Research 513/559/576, original source pins, Checkpoint 898, routing, operational authority and existing role ownership unchanged. No author/model dispatch, new gold, source draw, arm, scoring, private mutation or infrastructure work.
+
+    PRIMARY_TASK_ROUTE=FRESH_INDEPENDENT_TASK_AUTHOR_REQUIRED
+    MECHANICAL_SELECTOR=NOT_QUALIFIED_NOT_EXECUTED
+    AUTHOR_ADMISSION=NEXT_NOT_COMPLETED
+    CORRECTED_B0_GRAPH=8_SUCCESSION_ASSERTIONS_22_ASSOCIATIONS_AUDIT_ONLY
+    NO_NEW_CENSUS_TASKS_GOLD_ARMS_OR_SCORES=true
+    NEXT_ACTOR=chatgpt
+    CHECKPOINT=898_UNCHANGED
