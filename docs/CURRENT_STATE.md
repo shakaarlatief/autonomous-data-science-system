@@ -1,7 +1,7 @@
 # Current State
 
 **Checkpoint:** 898
-**Date:** 2026-10-16
+**Date:** 2026-10-17
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
 **Promoted V1 integration branch:** `v1-frontend-spike` at `2480109fadeee1e480ef03b82e335aacdf9adf91`
@@ -21,6 +21,8 @@ Primary collaborator     ChatGPT; Codex Desktop work is owner-relayed by default
 Repository artifacts remain authoritative across chats and models.
 
 **Runtime Bridge operational timeout retest (Research 580, 2026-10-16):** The owner requested a repair/check while R0-P03 science remains paused. Bridge repository file reads and workspace-authority discovery worked; ordinary read-only `command/exec` calls using 10–12-second deadlines timed out, whereas four independent read-only command calls with `timeoutMs: 30000` succeeded, including HEAD `1e575ac0` and a clean synchronized Git status. Two measured successful command round trips took approximately 12.9 and 13.3 seconds. Research 430 recorded earlier approximately 13-second Codex App Server command round trips, but the present underlying latency cause is unproven. Operational recovery is the explicitly longer supported per-call deadline; no runtime, tunnel, security, registry, source/science or checkpoint mutation, and no permanent latency fix claimed. Uncertain future mutations still require Git postflight before replay.
+
+**Windows Codex generation helper recovery (Research 581, 2026-10-17):** Read-only `command/exec` subsequently failed with an exact Windows `orchestrator_helper_launch_failed` / missing `codex-windows-sandbox-setup.exe`, unrelated to the preceding short command timeout. Owner inventory found running generation `2e5e00daee91c61d` missing helper/runner alongside complete `e78bad9887fa50cf`, matching qualified historical Validation 127. One bounded Codexless-only restart (no release/configuration/security edits) was submitted; the durable maintenance operation recorded `failed / RUNTIME_STARTUP_TIMEOUT`, not a successful maintenance receipt. Nonetheless source reads resumed, four independent post-reconnection read-only command calls succeeded, and the active Codex process inventory listed complete `e78bad...` rather than incomplete `2e5e...`. Command execution is functionally recovered; the maintenance startup-timeout discrepancy remains separate/unresolved. Public HEAD `de7065f9` and tracked tree were clean/synchronized at postflight. R0-P03 science, Checkpoint 898 and routing unchanged.
 
 ---
 
