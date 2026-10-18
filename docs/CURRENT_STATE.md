@@ -13,12 +13,14 @@
 ```text
 Interaction environment  ChatGPT
 Project / workspace      Autonomous Data Science System
-Interaction session      chatgpt-39
-Conversation title       39 - Architecture Qualification and Realization Readiness
+Interaction session      chatgpt-40
+Conversation title       40 - Project System Architecture and Realization
 Primary collaborator     ChatGPT; Codex Desktop work is owner-relayed by default
 ```
 
 Repository artifacts remain authoritative across chats and models.
+
+**Prospective source-status review method candidate (Research 592, 2026-10-18):** The exposed coordinator has specified a source-cited, non-arm adjudication process for all prospective author sources and the 2,133 remaining historical evidence records. The proposed review dispositions distinguish complete, excerpted, auxiliary, prohibited, held and unsupported sources, without admitting any by lexical flag. An actual independent source-status reviewer, complete source-role/currentness reconciliation and the final neutral author input remain unqualified. This is an UNFROZEN METHOD CANDIDATE, not a scored source admission, gold, task authoring or architectural result. Research 591, Checkpoint 898, routing, Research 513/559/576 and Specification 028 remain unchanged.
 
 **Historical source evidence admission review population prepared (Research 591, 2026-10-18):** Building on published Research 590's 406-source, unscored, exact-Git candidate, a new deterministic review-only inventory enumerates **2,133 excluded historical evidence files** across 898 checkpoints, 858 research records, 247 execution validations, 48 scripts, 80 other test sources and 2 other schemas. It verifies pinned Git identities and supported text hashes, records only role hypotheses/lexical risk flags, and admits **zero** records automatically. The local ignored manifest is 869,820 bytes, SHA-256 `d06ce9b97ceea82323fc31511d275492285c9a9e173e9ccd9027de73cdcb3e33`. 115 text sources had explicit screening signals, 2,008 had none of those signals but remain review-only, and 10 had unsupported representations. Negative lexical screens do **not** certify independence, and flagged records are not assumed irrelevant. This avoids both depriving scored questions of real historical source closure and exposing R0-P03/old W5 answer designs by blindly attaching everything. Next: prospective qualified non-arm **source-status and contamination adjudication**, neutral author-world freeze, then separate fresh primary task-author and hidden-reference adjudication. Research 589's actual fictional encrypted handoff remains COMPLETE and closed, with no repeated crypto. No scored tasks, gold, B0-B4 arms or Checkpoint 898/routing/Specification 028 changes; Research 513/559/576 remain binding.
 
