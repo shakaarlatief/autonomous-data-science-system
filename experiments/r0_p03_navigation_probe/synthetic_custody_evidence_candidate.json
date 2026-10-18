@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "synthetic_marker": "SYNTHETIC_ONLY_R0_P03_NO_REAL_GOLD",
+  "owner_report": {
+    "create_result": "PASS",
+    "new_process_readback": "PASS",
+    "case_distribution": {
+      "legacy": 9,
+      "primary": 12
+    },
+    "claimed_sha256": "681a62e12187586f99c60a7a93119bf25fedde8af27c274026283828db90f393",
+    "real_gold_or_keys_used": false
+  },
+  "bridge_observations": {
+    "bounded_reader": "WORKSPACE_ROOT_REFUSAL",
+    "read_only_sandbox_open": "PLATFORM_SAFETY_BLOCKED_BEFORE_EXECUTION",
+    "inherit_sandbox_open": "PLATFORM_SAFETY_BLOCKED_BEFORE_EXECUTION",
+    "git_status_after": "PASS"
+  },
+  "research_boundary": "R0_P03_UNSCORED_FAKE_C1_CUSTODY_ONLY"
+}

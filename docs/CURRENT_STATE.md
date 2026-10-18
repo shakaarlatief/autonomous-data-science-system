@@ -1,7 +1,7 @@
 # Current State
 
 **Checkpoint:** 898
-**Date:** 2026-10-17
+**Date:** 2026-10-18
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
 **Promoted V1 integration branch:** `v1-frontend-spike` at `2480109fadeee1e480ef03b82e335aacdf9adf91`
@@ -19,6 +19,8 @@ Primary collaborator     ChatGPT; Codex Desktop work is owner-relayed by default
 ```
 
 Repository artifacts remain authoritative across chats and models.
+
+**Owner synthetic custody postflight reconciled (Research 585, 2026-10-18):** The owner's ordinary Windows PowerShell returned exact 21-case fabricated reference packet creation and new-process complete readback PASS; matching nonsecret SHA-256 `681a62e12187586f99c60a7a93119bf25fedde8af27c274026283828db90f393`, no real gold/keys. The Runtime Bridge's scoped read tool independently rejected the exact synthetic file outside the registered workspace; **this is a tool-root refusal, not Windows OS ACL denial**. Attempts to open synthetic file bytes from the readOnly and inherit Codex command routes were **blocked by platform safety before execution**, so two-principal OS denial for this folder was NOT EXERCISED. A subsequent ordinary read-only Git status passed: the Bridge is functioning. A new strictly synthetic metadata-only evidence classifier and regressions forbid upgrading blocked tests to OS-denial/Level B custody qualification. Do not publish the owner-local folder identity, repeat blocked probes by other means, or treat the prior separate-canary Research 570 result as this new target's denial. Next substantive work: qualify complete, recoverable owner-only reference-output delivery with fake bytes before fresh scored authorship. Research 513/559/576, Checkpoint 898, routing and Specification 028 remain unchanged.
 
 **Owner-approved R0-P03 synthetic reference custody (Research 584, 2026-10-18):** The owner approved one fresh, owner-protected, synthetic-only full 9+12 reference-packet custody trial. A guarded owner-executed Windows PowerShell procedure and non-mutating tests have been prepared and self-tested. The Codexless command identities are sandbox principals, not the owner's desktop identity, so they cannot honestly create the owner-controlled folder. Next: one ordinary non-elevated owner PowerShell Create invocation, separate owner-process exact-byte/ACL readback, followed by bounded direct model-free sandbox read-denial checks on the exact synthetic file. **Owner creation and real access postflight have NOT yet happened; no real gold, keys, scored tasks or arm models.** Research 513/559/576, Checkpoint 898, routing and Specification 028 unchanged.
 
