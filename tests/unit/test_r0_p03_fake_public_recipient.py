@@ -41,6 +41,10 @@ def test_owner_procedure_has_explicit_fake_only_boundaries() -> None:
     assert "SYNTHETIC_R0P03_DEMONSTRATION_ONLY" in body
     assert 'Write-Output "REAL_GOLD_OR_PRODUCTION_KEYS=TRUE"' not in body
     assert "R0_P03_FAKE_AUTHOR_PACKET.cms" in body
+    assert "Invoke-FakeCertificateGeneration -PrivateKey $key -Certificate $cert" in body
+    assert "$process.BeginErrorReadLine()" in body
+    assert "$process.WaitForExit(25000)" in body
+    assert '& $OpenSsl @args 2>$null' not in body
 
 
 @pytest.mark.skipif(os.name != "nt" or shutil.which("powershell.exe") is None,
@@ -92,3 +96,80 @@ def test_prepare_refuses_caller_chosen_existing_folder_without_mutation() -> Non
         or "PREPARE_FORBIDS_CALLER_CHOSEN_TARGET" in call.stderr
         or "NON_ELEVATED_OWNER_POWERSHELL_REQUIRED" in call.stderr
     )
+
+
+def _invoke_owner_keygen_function_without_owner_acl(tmp_path: Path, *, failing: bool) -> subprocess.CompletedProcess[str]:
+    """Run exactly the repository's PowerShell keygen function in disposable scratch.
+
+    Extract only the function definition from the trusted PowerShell AST.
+    No Prepare branch is executed, so this cannot create an owner-local
+    protected folder or export a certificate to Downloads.
+    """
+    ps = shutil.which("powershell.exe")
+    assert ps is not None
+    openssl = Path(r"C:\Program Files\Git\usr\bin\openssl.exe")
+    assert openssl.is_file()
+    private = tmp_path / ("nonexistent-parent" if failing else ".") / "fake-private.pem"
+    public = tmp_path / "fake-public.pem"
+
+    def quote(value: str) -> str:
+        return "'" + value.replace("'", "''") + "'"
+
+    script = (
+        "$ErrorActionPreference='Stop';"
+        "$tokens=$null;$errors=$null;"
+        f"$ast=[Management.Automation.Language.Parser]::ParseFile({quote(str(SCRIPT))},"
+        "[ref]$tokens,[ref]$errors);"
+        "if($errors.Count){throw 'KEYGEN_FUNCTION_PARSER_FAILED'};"
+        "$fn=$ast.Find({param($n) $n -is "
+        "[Management.Automation.Language.FunctionDefinitionAst] -and "
+        "$n.Name -eq 'Invoke-FakeCertificateGeneration'},$true);"
+        "if($null -eq $fn){throw 'KEYGEN_FUNCTION_NOT_FOUND'};"
+        "Invoke-Expression $fn.Extent.Text;"
+        "function Fail([string]$Code){throw $Code};"
+        f"$OpenSsl={quote(str(openssl))};"
+    )
+    invoke = (
+        f"Invoke-FakeCertificateGeneration -PrivateKey {quote(str(private))} "
+        f"-Certificate {quote(str(public))};"
+    )
+    if failing:
+        script += (
+            "try{"
+            + invoke
+            + "throw 'NATIVE_FAILURE_WAS_NOT_DETECTED'"
+            "}catch{"
+            "if($_.Exception.Message -ne 'FAKE_CERTIFICATE_GENERATION_FAILED'){throw};"
+            "Write-Output 'OPENSSL_NONZERO_EXIT=REJECTED'"
+            "}"
+        )
+    else:
+        script += invoke + "Write-Output 'OPENSSL_PROGRESS_STDERR_CAPTURED=PASS'"
+    result = subprocess.run(
+        [ps, "-NoProfile", "-NonInteractive", "-Command", script],
+        cwd=SCRIPT.parents[1], capture_output=True, text=True, timeout=30, check=False,
+    )
+    if not failing and result.returncode == 0:
+        assert private.exists() and public.exists()
+        assert "-----BEGIN PRIVATE KEY-----" in private.read_text(encoding="utf-8")
+        assert "-----BEGIN CERTIFICATE-----" in public.read_text(encoding="utf-8")
+    return result
+
+
+@pytest.mark.skipif(os.name != "nt" or shutil.which("powershell.exe") is None,
+                    reason="Native Windows PowerShell 5.1 required")
+def test_openssl_progress_stderr_is_not_powershell_stop_error(tmp_path: Path) -> None:
+    result = _invoke_owner_keygen_function_without_owner_acl(tmp_path, failing=False)
+    assert result.returncode == 0, result.stderr
+    assert "OPENSSL_PROGRESS_STDERR_CAPTURED=PASS" in result.stdout
+    assert "NativeCommandError" not in result.stderr
+    assert "++++" not in result.stderr
+
+
+@pytest.mark.skipif(os.name != "nt" or shutil.which("powershell.exe") is None,
+                    reason="Native Windows PowerShell 5.1 required")
+def test_openssl_genuine_nonzero_exit_remains_a_failure(tmp_path: Path) -> None:
+    result = _invoke_owner_keygen_function_without_owner_acl(tmp_path, failing=True)
+    assert result.returncode == 0, result.stderr
+    assert "OPENSSL_NONZERO_EXIT=REJECTED" in result.stdout
+    assert "NativeCommandError" not in result.stderr

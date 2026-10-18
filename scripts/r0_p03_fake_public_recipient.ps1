@@ -162,6 +162,37 @@ function Confirm-Fictional([byte[]]$Raw) {
     }
     return (Digest -Body $Raw)
 }
+function Invoke-FakeCertificateGeneration([string]$PrivateKey, [string]$Certificate) {
+    # Windows PowerShell 5.1 can promote native OpenSSL key-generation
+    # progress on stderr to an error record when ErrorActionPreference=Stop.
+    # Consume both redirected streams asynchronously, and decide success
+    # exclusively from the native process exit code and bounded completion.
+    $start = [Diagnostics.ProcessStartInfo]::new()
+    $start.FileName = $OpenSsl
+    $start.Arguments = ('req -new -x509 -newkey rsa:2048 -nodes -keyout "{0}" -out "{1}" -subj /CN=ADS-P03-SYNTHETIC-OWNER-ONLY -days 7' -f
+        $PrivateKey,$Certificate)
+    $start.RedirectStandardOutput = $true
+    $start.RedirectStandardError = $true
+    $start.UseShellExecute = $false
+    $start.CreateNoWindow = $true
+    $process = [Diagnostics.Process]::new()
+    $process.StartInfo = $start
+    try {
+        if (-not $process.Start()) { Fail "FAKE_CERTIFICATE_PROCESS_START_FAILED" }
+        # Drain both pipes without printing progress or native stderr. Using
+        # asynchronous drains avoids blocking a process on a full pipe.
+        $process.BeginOutputReadLine()
+        $process.BeginErrorReadLine()
+        if (-not $process.WaitForExit(25000)) {
+            $process.Kill()
+            $process.WaitForExit()
+            Fail "FAKE_CERTIFICATE_GENERATION_TIMEOUT"
+        }
+        $process.WaitForExit()
+        if ($process.ExitCode -ne 0) { Fail "FAKE_CERTIFICATE_GENERATION_FAILED" }
+    }
+    finally { $process.Dispose() }
+}
 function Decode-Cms([string]$Source,[string]$Certificate,[string]$PrivateKey) {
     $p = [Diagnostics.ProcessStartInfo]::new()
     $p.FileName = $OpenSsl
@@ -254,10 +285,7 @@ if ($Action -eq "Prepare") {
     New-OwnerDirectory -Folder $folder -Sid $sid
     $key = Join-Path $folder $PrivateName
     $cert = Join-Path $folder $CertName
-    $args = @("req","-new","-x509","-newkey","rsa:2048","-nodes",
-        "-keyout",$key,"-out",$cert,"-subj","/CN=ADS-P03-SYNTHETIC-OWNER-ONLY","-days","7")
-    & $OpenSsl @args 2>$null | Out-Null
-    if ($LASTEXITCODE -ne 0) { Fail "FAKE_CERTIFICATE_GENERATION_FAILED" }
+    Invoke-FakeCertificateGeneration -PrivateKey $key -Certificate $cert
     $null = Confirm-Recipient -Folder $folder -Sid $sid
     $pubName = ("R0_P03_FAKE_RECIPIENT_CERT_{0}.pem" -f
         ([IO.Path]::GetFileName($folder).Substring($Prefix.Length)))
