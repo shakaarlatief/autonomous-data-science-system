@@ -1,0 +1,560 @@
+# R0-P03 Non-Arm Source-Status Reviewer Intake
+
+Synthetic-only calibration report
+
+Assessment date: 2026-10-19 Candidate document: V0.1, dated 2026-10-18 Scope: F1–F10 exclusively Scoring: None Real-source admission: None
+
+## 1. Actual pre-action inventory
+
+This inventory was established before conducting the fictional source-status assessments.
+
+### 1.1 Session identity and independence
+
+| Question                                                                               | Actual status                                                                                             |
+| -------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| Is this a new conversation from my visible perspective?                                | YES. No earlier user-assistant exchanges appear in the visible conversation.                              |
+| Is this a verified independent reviewer session?                                       | UNKNOWN. Conversation visibility does not establish identity separation or complete historical isolation. |
+| Is an independent human or organizational reviewer assigned?                           | NOT ESTABLISHED.                                                                                          |
+| Have I participated in actual ADS historical review work in this visible conversation? | NO.                                                                                                       |
+| Can I certify no prior exposure through training or inaccessible contexts?             | NO.                                                                                                       |
+| Can I claim qualification as a blinded historical-source reviewer?                     | NO.                                                                                                       |
+
+My available context includes the current user request, the supplied attachment, and operational instructions governing this session. I have no earlier conversation history visible within this thread.
+
+The attachment identifies itself as having been prepared by an exposed coordinator and states that no real reviewer is assigned. These are claims in the supplied document, not independently verified project-state facts.&#x20;
+
+NON_ARM_SOURCE_STATUS_REVIEWER_INTAKE_CANDIDATE.md
+
+
+
+### 1.2 Prior exposure inventory
+
+| Subject                                                | Actual exposure                                                                                      |
+| ------------------------------------------------------ | ---------------------------------------------------------------------------------------------------- |
+| Autonomous Data Science System (ADS)                   | Current request and attached intake brief only, insofar as visible conversation evidence establishes |
+| Research 217 / W5 relevance or gold                    | References and cautions in the current materials; no underlying records inspected                    |
+| R0-P03 comparator designs                              | General role references and the fictional calibration examples; no actual design artifacts inspected |
+| Research 592 / Research 593                            | Referenced as methodological provenance; underlying research records not inspected                   |
+| Actual ADS source population                           | Only aggregate planning figures stated in the brief; no individual historical records inspected      |
+| Historical answers, hidden references, scored fixtures | None accessed in this session                                                                        |
+| Any other prior exposure                               | UNKNOWN beyond visible session evidence                                                              |
+
+I cannot establish the complete absence of latent model-training exposure, inaccessible conversation history, or other unobservable prior exposure. I will not treat their absence as proven.
+
+### 1.3 Available tools and actual tests
+
+| Capability                                      | Availability / test result                                                                                    |
+| ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| Uploaded attachment                             | TESTED: Successfully read the specified Markdown file                                                         |
+| Local filesystem and shell                      | TESTED: Used local command execution to read and check the supplied attachment                                |
+| Python execution                                | Available; local Python file-reading operation tested                                                         |
+| Conversation file retrieval tools               | Exposed, but not separately used for this assessment                                                          |
+| External web search                             | Tool available; not used                                                                                      |
+| External repositories / Git                     | No repository accessed or verified accessible/inaccessible                                                    |
+| Connected apps / account-backed Library         | Reported disabled in this temporary-chat environment; not independently tested                                |
+| Project knowledge and cross-conversation memory | Not consulted; no project-memory content visible or accessed                                                  |
+| Image-generation tool                           | Not available in this environment                                                                             |
+| External source authentication                  | Not performed                                                                                                 |
+| Reviewer-only persistent storage                | NOT VERIFIED                                                                                                  |
+| Durable local output                            | Local file writing is available, but reviewer-only custody, retention and access controls are not established |
+
+Important distinction: A tool deliberately not used is not necessarily inaccessible. Likewise, locally reading a supplied file does not establish permission or capability to inspect a separate historical repository.
+
+No external search, connected account, other conversation, project-memory source, or historical ADS artifact has been accessed for this calibration.
+
+### 1.4 Supplied material and completeness
+
+I successfully read the attached `NON_ARM_SOURCE_STATUS_REVIEWER_INTAKE_CANDIDATE.md` from its specified local path.
+
+Local file size
+
+## 11,462 bytes
+
+Physical lines
+
+## 169
+
+Fictional examples present
+
+## 10 / 10
+
+Detected local read truncation
+
+## None
+
+SHA-256 of locally read attachment
+
+`62b889126969a7a0d4395ea8782994f429f3e46e0347ef58a71324094244158a`
+
+All ten numbered example blocks are present: F1–F5 and F7–F10 contain three numbered lines each; F6 contains four. Exact text and local line labels are available.
+
+This verifies completeness relative to the supplied attachment's structure. It does not independently authenticate its authorship, upstream provenance, or any historical source population.
+
+### 1.5 Role-separation acknowledgement
+
+ACCEPTED. If I subsequently review actual potentially answer-bearing historical sources or actual experiment-design material, I must not serve as the blinded fresh primary task author, neutral reference annotator, or scored evaluator for that run.
+
+A successful evaluation of these invented examples neither qualifies me for those roles nor establishes independent real-source reviewer status.
+
+The following assessments therefore address only fictional evidence and potential workflow failure modes. No historical source decisions are being made.
+
+## 2. Ten fictional source-status assessments
+
+### Assessment conventions
+
+Every assessment uses the requested fields: `evidence_read`, `source_claim`, `claim_time_or_unknown`, `assessment_as_of_or_unknown`, `role`, `contamination_or_unknown`, `disposition_candidate`, `context_needed`, and `unresolved_limitations`.
+
+The underlying six candidate disposition definitions from Research 592 were not supplied. I therefore use descriptive, provisional treatment labels rather than claiming to apply that unseen classification scheme.
+
+All observations concern invented material only. A candidate treatment is not author admission.
+
+### F1 — Selection is not operation
+
+Evidence read: F1, local lines 1–3, complete.&#x20;
+
+NON_ARM_SOURCE_STATUS_REVIEWER_INTAKE_CANDIDATE.md
+
+
+
+Source claim: An owner selected Q as a logical successor; P continues as the operational contract until a separately accepted cutover. No cutover receipt accompanies the example.
+
+Claim time or unknown: UNKNOWN. Selection, contractual applicability and possible cutover dates are unspecified.
+
+Assessment as-of or unknown: UNKNOWN. No assessment date or independently bounded cutover history is supplied.
+
+Role: Fictional design-selection statement and conditional operational-contract statement. Selection is not deployment evidence.
+
+Contamination or unknown: Potential architecture-selection leakage, depending on recipient and evaluation role. No actual experiment result is supplied.
+
+Disposition candidate: Preserve the logical-selection claim as historically useful evidence only within an appropriately authorized source-status context. Keep operational authority conditional and place any unconditional claim of completed cutover on HOLD.
+
+Context needed: Selection provenance, contract authority, effective dates, accepted cutover record, any later reversals, requested as-of date and evidence horizon.
+
+Unresolved limitations: The packet cannot establish whether or when cutover happened.
+
+False-admission challenge: Treating Q's selection as proof that Q operates would promote a design decision into deployment authority.
+
+False-exclusion challenge: Discarding the selection statement altogether would lose potentially legitimate original evidence of what the owner decided. Its historical significance does not depend on proving deployment.
+
+### F2 — Effective time and historical currentness
+
+Evidence read: F2, local lines 1–3, complete.&#x20;
+
+NON_ARM_SOURCE_STATUS_REVIEWER_INTAKE_CANDIDATE.md
+
+
+
+Source claim: P was recorded as ACTIVE on January 4, 2025. A May 12, 2025 record establishes a supersession of P by R for new registrations effective June 1, 2025.
+
+Claim time or unknown: Two record dates and one prospective effective date are explicitly available. Any subsequent policy changes are unknown.
+
+Assessment as-of or unknown: UNKNOWN. The example explicitly leaves the requested assessment date unspecified. The actual date of this calibration, October 19, 2026, must not automatically substitute for that requested date.
+
+Role: Dated registry-status assertion and prospective policy-supersession assertion.
+
+Contamination or unknown: No explicit answer or comparator spoiler is present. Temporal contamination remains possible if a later record is used to answer a task restricted to an earlier evidence horizon.
+
+Disposition candidate: Conditionally preserve both dated claims with their effective scope; HOLD any unqualified statement of current policy.
+
+Context needed: Requested as-of date, pinned evidence horizon, accepted policy authority, applicability to existing versus new registrations, and subsequent amendments or reversals.
+
+Unresolved limitations: No evidence supports a global statement that P ceased to govern every registration, or that R remains authoritative at all later dates.
+
+False-admission challenge: Applying R retroactively to January or treating the prospective change as immediately effective in May would erase temporal boundaries.
+
+False-exclusion challenge: Excluding the January status because a later record exists would destroy a useful historical fact. Both records may be relevant to different assessment dates.
+
+### F3 — Implementation declaration is not a test result
+
+Evidence read: F3, local lines 1–3, complete.&#x20;
+
+NON_ARM_SOURCE_STATUS_REVIEWER_INTAKE_CANDIDATE.md
+
+
+
+Source claim: Handler H is intended to implement interface I, and test source contains an assertion comparing handler output with an expected result.
+
+Claim time or unknown: UNKNOWN. No commit date, test execution time or deployment timestamp is supplied.
+
+Assessment as-of or unknown: UNKNOWN.
+
+Role: Implementation-intent documentation and test-source code. Neither constitutes an observed execution result.
+
+Contamination or unknown: The test assertion could expose expected behavior in an answer-bearing evaluation context. Its relevance to any protected evaluation is unknown.
+
+Disposition candidate: Conditionally retain the intent and test-existence facts, explicitly labeled. HOLD any assertion of test success, deployed correctness or operational conformance.
+
+Context needed: Exact implementation revision, test-source provenance, execution logs, pass/fail receipts, test environment, deployment receipt and relationship between tested and deployed versions.
+
+Unresolved limitations: No observed behavior, test outcome or production state is established.
+
+False-admission challenge: Promoting an assertion's presence to proof it executed and passed confuses test specification with test evidence.
+
+False-exclusion challenge: Rejecting both records for lack of execution receipts would discard legitimate evidence of intended behavior and the existence of a particular test.
+
+### F4 — Derived view can be stale
+
+Evidence read: F4, local lines 1–3, complete.&#x20;
+
+NON_ARM_SOURCE_STATUS_REVIEWER_INTAKE_CANDIDATE.md
+
+
+
+Source claim: A generated orientation view describes revision 14, while later underlying accepted-effect evidence describes conflicting revision 15. No regenerated orientation view is supplied.
+
+Claim time or unknown: Relative ordering is available; absolute timestamps, applicability and validity intervals are unknown.
+
+Assessment as-of or unknown: UNKNOWN.
+
+Role: Derived orientation projection versus underlying accepted-effect evidence. They have distinct evidentiary functions.
+
+Contamination or unknown: No explicit evaluation spoiler is present. The principal hazard is stale or incorrectly promoted authority, with any other contamination unknown.
+
+Disposition candidate: Treat the orientation view as a potentially useful historical projection, not a self-authenticating current authority. Preserve the revision-15 evidence in its stated role, subject to provenance and governing-context verification. HOLD an unqualified current-revision assertion.
+
+Context needed: Generation inputs, receipt timestamps, accepted-effect scope, applicable authority hierarchy, regeneration history, later changes and assessment date.
+
+Unresolved limitations: The scenario reports a conflict but cannot establish full registry authority or the continued applicability of revision 15.
+
+False-admission challenge: Either accepting the generated view as current solely because it says "Current," or treating revision 15 as independently verified governing truth for all purposes, would exceed the evidence.
+
+False-exclusion challenge: A stale projection can remain valuable evidence of what a reader would have seen at its generation point. It need not be discarded as historically meaningless.
+
+### F5 — Synthetic answer-bearing instruction
+
+Evidence read: F5, local lines 1–3, complete. The invented answer cue was read but is intentionally not reproduced in this report.&#x20;
+
+NON_ARM_SOURCE_STATUS_REVIEWER_INTAKE_CANDIDATE.md
+
+
+
+Source claim: A historical evaluation-designer note identifies an expected answer for a fictional quiz, created to support grading anticipation.
+
+Claim time or unknown: Historical-design context is asserted; actual creation and applicability times are UNKNOWN.
+
+Assessment as-of or unknown: Not a current-operational-status claim; historical provenance and permitted use remain unresolved.
+
+Role: Evaluation-design / expected-answer instruction. It is not independent ground truth.
+
+Contamination or unknown: Direct synthetic answer contamination. The note and potentially its metadata would compromise a neutral author packet if disclosed.
+
+Disposition candidate: Reviewer-private restriction or quarantine from neutral author materials. Preserve the note's existence and source-role classification only within an authorized private review, without promoting its suggested answer into independent evidence.
+
+Context needed: Authorship, intended recipients, permitted custody, creation time, relationship to any independent factual source and approved safe-reporting rules.
+
+Unresolved limitations: The example cannot establish that the designer's expectation is correct, independently measured or legitimately disclosable.
+
+False-admission challenge: Treating the note as an authoritative reference would collapse the separation between expected answer and independently established source truth.
+
+False-exclusion challenge: Removing the note from every audit record would conceal evidence of evaluation-design contamination. It may remain relevant to a restricted provenance audit even though it is unsuitable for neutral author consumption.
+
+### F6 — Mixed source and qualifier omission
+
+Evidence read: F6, local lines 1–4, complete.&#x20;
+
+NON_ARM_SOURCE_STATUS_REVIEWER_INTAKE_CANDIDATE.md
+
+
+
+Source claim: A design team accepted an index as an experiment candidate, expressly withheld operational-authority approval, and recorded a comparator expectation. The packet lacks a production-release record.
+
+Claim time or unknown: UNKNOWN for acceptance, experiment memo and potential production state.
+
+Assessment as-of or unknown: UNKNOWN.
+
+Role: Mixed experiment-candidate decision, restrictive authority qualification, predictive experiment memo and packet-completeness statement.
+
+Contamination or unknown: Direct comparator-expectation contamination in line 3. Excerpt-context contamination arises when line 2 is omitted.
+
+Disposition candidate: Preserve a restricted, source-faithful treatment of the historical candidate decision, while withholding comparator-predictive content from neutral materials. No proposed excerpt is automatically author-admitted.
+
+Requested exact-excerpt tests
+
+| Line 1 alone | HOLD<br>Omits the explicit operational-authority limitation. A literal quotation could still produce a misleading impression.                                                                                |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Lines 1–2    | Conditional<br>Retains the central qualification and avoids the line-3 comparator expectation. Potentially useful only for the limited experiment-candidate claim, pending authorization and context checks. |
+| Lines 1–4    | Restrict<br>Retains the qualification but also includes comparator-predictive material. Not suitable as an unrestricted neutral excerpt.                                                                     |
+
+Context needed: Full source boundaries, whether other surrounding material modifies the qualification, intended audience, temporal ordering, author permissions, and any separately accepted production release.
+
+Unresolved limitations: Line 4 only establishes absence of a release record from this packet, not absence of a release in reality. Even lines 1–2 cannot be certified safe for every downstream use without context.
+
+False-admission challenge: A line-1-only excerpt risks authority inflation; a lines-1–4 excerpt risks comparator leakage.
+
+False-exclusion challenge: Treating the entire source as useless solely because it contains a restricted comparator expectation would lose an otherwise valid historical candidate-status claim.
+
+The method must allow a source to contain both useful evidence and restricted information without silently rewriting the source into a supposedly safer paraphrase.
+
+### F7 — Semantic spoiler without tested keywords
+
+Evidence read: F7, local lines 1–3, complete.&#x20;
+
+NON_ARM_SOURCE_STATUS_REVIEWER_INTAKE_CANDIDATE.md
+
+
+
+Source claim: A committee-facing passage recommends a particular approach and calls it the winner without establishing an independent measurement basis.
+
+Claim time or unknown: UNKNOWN.
+
+Assessment as-of or unknown: UNKNOWN; the passage supplies no defensible evaluation timestamp or outcome horizon.
+
+Role: Advocacy or prescriptive comparison language, not independently demonstrated performance evidence.
+
+Contamination or unknown: Semantic comparator contamination, notwithstanding the absence of literal protected keywords.
+
+Disposition candidate: Restrict from neutral task-author or adjudication materials. Conditionally retain as evidence of historical advocacy in an authorized, role-limited provenance review.
+
+Context needed: Authorship, intended audience, whether any actual committee decision occurred, underlying measurement records, source provenance and downstream audience.
+
+Unresolved limitations: No independent result, winning criterion, measurement protocol or governing decision is established.
+
+False-admission challenge: A keyword-only exclusion rule would overlook this passage and potentially introduce a preselected conclusion as if it were neutral source evidence.
+
+False-exclusion challenge: The passage can still document that a preference was advocated. It need not be treated as nonexistent merely because its claims cannot support a performance conclusion.
+
+### F8 — Unsupported modality
+
+Evidence read: F8, local lines 1–3, complete. Only the fictional manifest description was supplied; the depicted binary artifact was not supplied or inspected.&#x20;
+
+NON_ARM_SOURCE_STATUS_REVIEWER_INTAKE_CANDIDATE.md
+
+
+
+Source claim: A manifest describes a binary diagram of 9,408 bytes. It does not establish the diagram's visual or semantic content.
+
+Claim time or unknown: UNKNOWN.
+
+Assessment as-of or unknown: UNKNOWN.
+
+Role: Source-manifest metadata, not inspected diagram evidence.
+
+Contamination or unknown: UNKNOWN. The diagram may contain a governing transition, unrelated content or restricted information; none is established.
+
+Disposition candidate: Unsupported/uninspected representation — HOLD content classification and source-admission treatment pending accessible, integrity-preserving inspection.
+
+Context needed: Exact source bytes, verified hash, format specifications, a suitable renderer or decoder, representation-fidelity checks, complete source provenance and a qualified reviewer.
+
+Unresolved limitations: The filename and byte count cannot prove what the diagram depicts or whether it is relevant, authoritative or safe.
+
+False-admission challenge: Inferring a governing transition from the manifest would invent unseen source content.
+
+False-exclusion challenge: Permanently excluding the diagram as irrelevant merely because this interface lacks a suitable renderer would improperly equate unsupported modality with lack of evidentiary value.
+
+### F9 — Incomplete batch
+
+Evidence read: F9, local lines 1–3, complete. This is a description of a fictional four-document transfer, not four delivered source bodies.&#x20;
+
+NON_ARM_SOURCE_STATUS_REVIEWER_INTAKE_CANDIDATE.md
+
+
+
+Source claim: Four documents appear in a manifest; two reportedly arrived completely, one was truncated, and one never arrived.
+
+Claim time or unknown: UNKNOWN for document creation and transfer.
+
+Assessment as-of or unknown: UNKNOWN.
+
+Role: Batch manifest and delivery-status narrative.
+
+Contamination or unknown: UNKNOWN for all document bodies. Delivery completeness does not establish content safety.
+
+Disposition candidate: Batch-level completeness HOLD. Record individual transfer states without claiming complete four-document review.
+
+| Fictional document | Stated delivery | Content assessment justified here            |
+| ------------------ | --------------- | -------------------------------------------- |
+| 1                  | Complete        | None — body not included in this calibration |
+| 2                  | Complete        | None — body not included in this calibration |
+| 3                  | Truncated       | None — incomplete source                     |
+| 4                  | Not delivered   | None — source not inspected                  |
+
+Context needed: Exact roster, per-file expected sizes and hashes, actual delivered bytes, transfer receipts, resumption procedure, version consistency and a complete-batch reconciliation.
+
+Unresolved limitations: The fictional scenario's first two delivery claims cannot be independently byte-verified here. The remaining sources' contents are unknown.
+
+False-admission challenge: Reporting four documents as reviewed would transform manifest membership into completed inspection. Calling the truncated document reviewed would also conceal an unknown tail.
+
+False-exclusion challenge: Missing or truncated records must not be dismissed as irrelevant. Previously validated full documents may remain usable within a correctly documented partial-progress ledger, but cannot justify a completed-batch claim.
+
+### F10 — Metadata-only leakage
+
+Evidence read: F10, local lines 1–3, complete. The example's private answer-cue filename was read but is not reproduced.&#x20;
+
+NON_ARM_SOURCE_STATUS_REVIEWER_INTAKE_CANDIDATE.md
+
+
+
+Source claim: A private reviewer ledger excludes an artifact with an answer-bearing filename, while the proposed public summary would disclose excluded paths and exact explanatory lines.
+
+Claim time or unknown: UNKNOWN for ledger creation and proposed public release.
+
+Assessment as-of or unknown: Not applicable to an operational-state claim. Disclosure authorization and custody requirements remain unresolved.
+
+Role: Reviewer-private exclusion ledger and proposed public audit output.
+
+Contamination or unknown: Direct metadata-level answer leakage risk. Omitting bodies does not neutralize filenames, paths, exclusion reasons or potentially linkable identifiers.
+
+Disposition candidate: Keep the detailed ledger reviewer-private under qualified custody. HOLD the proposed public summary. Permit only a separately approved, spoiler-screened digest that does not reveal answer-bearing identifiers, reasons or reversible mappings.
+
+Context needed: Recipient roles, public-release policy, approved output schema, identifier-linkability checks, metadata sanitizer, custody controls and a pre-release spoiler review.
+
+Unresolved limitations: Even an apparently opaque identifier may be unsafe if recipients can join it to a private roster. No such linkage assessment or custody authorization is supplied.
+
+False-admission challenge: Publishing precise excluded paths and explanation lines could disclose the protected answer while technically excluding every source body.
+
+False-exclusion challenge: A complete suppression of all audit information would unnecessarily sacrifice accountability. Counts, non-revealing reason categories and integrity receipts may be useful where they are independently checked for leakage and properly authorized.
+
+## 3. Counterexamples to the proposed review method
+
+The ten fictional cases expose several ways an apparently careful source-status workflow could produce incorrect admissions, unjustified exclusions, or unauthorized leakage.
+
+These are potential method failures illustrated by synthetic examples, not defects observed in actual ADS records.
+
+### 3.1 Specific weaknesses and additional safeguards
+
+| Method weakness                                                     | Fictional counterexample | Recommended safeguard                                                                                                           |
+| ------------------------------------------------------------------- | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
+| Confusing selection, operation and observed success                 | F1, F3                   | Separate decision, intended behavior, executed test, accepted deployment and operational authority into distinct evidence roles |
+| Flattening multiple temporal meanings into one "current" status     | F2, F4                   | Record source creation time, claim time, effective interval, requested as-of date and pinned evidence horizon separately        |
+| Trusting a generated summary over underlying evidence               | F4                       | Preserve derivation provenance, input revision and regeneration receipts; require conflict escalation                           |
+| Treating expected answers as independent ground truth               | F5                       | Restrict design-origin answer cues and require independently qualified factual evidence                                         |
+| Assuming an exact quotation is safe without its controlling context | F6                       | Review both original spans and context dependencies; require explicit excerpt-level clearance                                   |
+| Relying on keyword-based spoiler detection                          | F7                       | Add semantic contamination review for conclusions, preferences and preselected outcomes                                         |
+| Equating inaccessible formats with irrelevant content               | F8                       | Track unsupported modalities separately and require fidelity-preserving inspection                                              |
+| Confusing a manifest roster with completed inspection               | F9                       | Reconcile expected, received, integrity-verified, reviewed and unresolved records separately                                    |
+| Assuming body removal prevents all leakage                          | F10                      | Perform metadata, filename, explanation and linkability checks on every public output                                           |
+| Allowing one reviewer to occupy incompatible roles                  | F5–F7, F10               | Require identity and role separation with explicit future-role exclusions                                                       |
+
+### 3.2 Four particularly consequential counterexamples
+
+A. An accurate excerpt can still be misleading. F6 demonstrates that byte-perfect quotation is insufficient when omitted neighboring material qualifies the source claim. Requiring exact spans is necessary, but not sufficient. A suitable schema needs both a quoted span and its controlling context, with independent review of whether the proposed excerpt communicates the source's actual limited meaning.
+
+B. Temporal correctness is conditional on the question being asked. F2 shows that different status claims can be legitimate at different dates, while F4 shows that later underlying evidence may conflict with a derived view. A reviewer should be allowed to produce multiple time-bounded assessments or HOLD, rather than force one universal status. The requested assessment date must not be inferred merely from the date of review.
+
+C. Exclusion can itself become an answer channel. F5 and F10 jointly establish a leakage path: privately classify an answer-bearing item as excluded, then reveal the answer through a filename or reason in the public audit digest. The release boundary must protect derived metadata as well as raw content. A keyword-only check of source bodies would not address this.
+
+D. A complete-looking batch may be incomplete. F9 shows that manifest presence, received bytes and successful content inspection are different states. F8 adds that byte availability would still not guarantee semantic inspection of an unsupported format. A batch cannot pass merely because every listed record has received some administrative treatment.
+
+### 3.3 Additional method requirements
+
+The proposed later-review gates in section E of the candidate brief are directionally appropriate, but their existence as written requirements does not prove implementation.&#x20;
+
+NON_ARM_SOURCE_STATUS_REVIEWER_INTAKE_CANDIDATE.md
+
+
+
+I would add or make explicit the following controls:
+
+1. Two-level disposition tracking. Separate the source's historical evidentiary role from its permission to appear in a specific downstream packet. A source can be historically meaningful yet restricted from a neutral author.
+2. Unknown-preserving review schema. Do not force a binary authoritative/non-authoritative or relevant/irrelevant decision when governing context, effective date, inspection capability or provenance is missing.
+3. Context-complete excerpt testing. Store the exact source span, required adjacent qualifiers and reviewer justification. A filtered excerpt must never silently acquire stronger meaning than its original.
+4. Semantic and metadata leakage tests. Inspect filenames, paths, comments, headings, exclusion explanations, derived summaries and other source-adjacent material—not only raw paragraphs.
+5. Batch accounting and recovery controls. Use a complete roster, byte-level integrity receipts, explicit unsupported states, deterministic ordering and interruption/resumption records. A resumed review should preserve the same source identities and revision boundaries.
+6. Independent challenge before downstream release. Challenge candidate inclusion and exclusion decisions on both sides, and separately challenge the public digest for spoiler leakage. This should occur without granting the challenge reviewer inappropriate future author or evaluator roles.
+
+The calibration also reveals an important schema limitation: the six Research 592 candidate dispositions are mentioned but not defined in the supplied brief. Their precise use, mutual exclusivity and treatment of mixed-role or unsupported sources cannot be validated here. Their definitions would need to be supplied and qualified in an authorized later phase, not guessed in this calibration.
+
+## 4. Intake feasibility
+
+Synthetic document read and structural inspection
+
+Completed
+
+Real-source reviewer qualification
+
+HOLD
+
+### 4.1 Demonstrated capabilities
+
+| Check                                                    | Result                |
+| -------------------------------------------------------- | --------------------- |
+| All F1–F10 texts actually read                           | YES                   |
+| All supplied example lines present                       | YES                   |
+| Local attachment decoding                                | Successful UTF-8 read |
+| Detectable local truncation                              | None                  |
+| Exact local text and line labels available               | YES                   |
+| Local attachment SHA-256 calculated                      | YES                   |
+| Candidate-level source-role reasoning completed          | YES                   |
+| False-admission and false-exclusion challenges completed | YES                   |
+| External sources accessed                                | NO                    |
+| Real ADS records inspected                               | NO                    |
+| Independent source provenance verified                   | NO                    |
+| Reviewer-only output destination tested                  | NO                    |
+| Real historical source-admission capability qualified    | NO                    |
+
+The byte count, physical-line count and hash in section 1 give a reproducible fingerprint of the attachment actually read. They do not independently authenticate the file against an upstream owner-approved version.
+
+All ten fictional texts were available without detected truncation. The limits identified for F8 and F9 are inside their fictional scenarios, not failures of the present attachment transfer.
+
+### 4.2 Audit and custody assessment
+
+A limited, reproducible local read audit was demonstrated: successful file access, structural enumeration, exact textual inspection and hashing.
+
+The completed calibration is returned through this conversation. I have not created a separate reviewer-private companion ledger or attempted to transfer this report to an external repository.
+
+The following have not been demonstrated:
+
+- Immutable, owner-verified source transport with a complete authenticated roster.
+- Reviewer identity credentials and access-control segregation.
+- Reviewer-only storage with fixed destination, access recovery and verifiable retention.
+- Automated source-span validation or reproducible classification decisions across independent reviewers.
+- Approved public-digest sanitizer and independent leakage-release test.
+- Persistent interruption/resumption controls for a real source batch.
+
+A chat response should not be represented as a qualified reviewer-only custody system. Its downstream recipients, retention properties, export pathways and role-based disclosure controls have not been established in this intake.
+
+### 4.3 Bounded outcome
+
+The fictional calibration supports the narrower conclusion that the source-status review workflow can be rehearsed using the supplied examples, with identifiable decision criteria, failure modes and missing-evidence handling.
+
+It does not establish that a separate reviewer has been qualified, that the actual historical archive can be read faithfully, that an actual source packet is neutral, or that any future review will be independent.
+
+No scored classification, scored task, reference answer, architecture comparison or real-source admission was produced.
+
+## 5. Explicit HOLD summary
+
+The following conditions remain unsatisfied or unverified for any later real-content review.
+
+| Gate                                | Classification | Reason                                                                                                    |
+| ----------------------------------- | -------------- | --------------------------------------------------------------------------------------------------------- |
+| Reviewer identity and independence  | HOLD           | No verified separate reviewer identity, cross-context exposure audit or binding role assignment           |
+| Real-source access authorization    | HOLD           | Current authorization covers only fictional material; no separate permission for historical records       |
+| Source transport and integrity      | HOLD           | No owner-verified immutable historical batch, full roster or per-record integrity receipts inspected      |
+| Historical source-status schema     | HOLD           | Underlying disposition definitions, controlling-context rules and temporal schema not fully available     |
+| Actual source inspection capability | HOLD           | Real source coverage, supported formats, source fidelity and truncation controls not demonstrated         |
+| Reviewer-only output custody        | HOLD           | No fixed protected destination, approved private-ledger handling or access/recovery demonstration         |
+| Public metadata leakage prevention  | HOLD           | No approved digest-release procedure tested against semantic and metadata spoilers                        |
+| Independent author-packet admission | HOLD           | No separately qualified source-packet construction and leakage-testing gate                               |
+| Blind-role separation               | HOLD           | No demonstrated organizational mechanism preventing reviewer/task-author/adjudicator/evaluator collisions |
+
+### Conditions for releasing the real-content HOLD
+
+The HOLD should remain until the coordinator and owner provide directly verifiable evidence of all applicable controls: separate reviewer identity and exposure qualification, role exclusions, authorized and complete source transport, supported source inspection, temporal and role-aware classification rules, deterministic batch accounting, a protected reviewer-only output destination, a safe public receipt mechanism, and independently gated author-packet admission.
+
+The future source identifier and historical-population counts in the intake brief are identification and planning statements only. They were not used to access or validate any historical material.
+
+### Final bounded status
+
+```
+CALIBRATION_WORLD=FICTIONAL_ONLY
+SYNTHETIC_EXAMPLES_READ=10_OF_10
+LOCAL_ATTACHMENT_TRUNCATION=NONE_DETECTED
+SYNTHETIC_ASSESSMENT=COMPLETED
+SCORED_EVALUATION=NONE
+
+ACTUAL_REVIEWER_ASSIGNED=NOT_ESTABLISHED
+REVIEWER_INDEPENDENCE=NOT_VERIFIED
+ACTUAL_HISTORICAL_SOURCE_ACCESS=NOT_AUTHORIZED_HERE
+ACTUAL_HISTORICAL_SOURCES_INSPECTED=NONE
+FRESH_PRIMARY_TASK_AUTHOR=SEPARATE_FUTURE_ROLE
+REVIEWER_ONLY_CUSTODY=NOT_QUALIFIED
+AUTHOR_SOURCE_ADMISSION=NONE
+
+REAL_SOURCE_REVIEW=HOLD
+REAL_AUTHOR_PACKET_CONSTRUCTION=HOLD
+REAL_SCORED_EVALUATION=NOT_PERFORMED
+```
+
+Final determination: The ten fictional examples were completely available and support a bounded synthetic workflow rehearsal. They identify concrete safeguards against false authority promotion, unnecessary historical exclusion, temporal conflation, unsupported content inference, incomplete-batch reporting, semantic spoilers and metadata leakage.
+
+The synthetic intake assessment is complete. Real historical-source review remains on HOLD. No reviewer-independence guarantee, real-source access guarantee, reviewer-only custody qualification or author-source admission is established by this report.

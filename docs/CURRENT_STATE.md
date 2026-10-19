@@ -1,7 +1,7 @@
 # Current State
 
 **Checkpoint:** 898
-**Date:** 2026-10-18
+**Date:** 2026-10-19
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
 **Promoted V1 integration branch:** `v1-frontend-spike` at `2480109fadeee1e480ef03b82e335aacdf9adf91`
@@ -19,6 +19,8 @@ Primary collaborator     ChatGPT; Codex Desktop work is owner-relayed by default
 ```
 
 Repository artifacts remain authoritative across chats and models.
+
+**Separate-session fictional source-status reviewer intake reconciled (Research 594, 2026-10-19):** The owner provided a 560-line Temporary Chat synthetic F1–F10 report. The original 11,462-byte intake brief and its SHA-256 were independently verified through Runtime Bridge; the complete unscored response is preserved under `experiments/r0_p03_navigation_probe/reviewer_intake_evidence/` with original and LF-normalized hashes. The external session reported full fictional input reads and conservative assessments of temporal currentness, qualifier-dependent excerpts, implementation versus validation, unsupported media, incomplete batches and answer-bearing metadata; the coordinator classifies the **synthetic-only workflow as FUNCTIONAL_PASS_WITH_LIMITATIONS**, not a real reviewer admission. The V0.1 brief omitted Research 592's six disposition definitions, so enum-specific classification was NOT tested. A distinct prospective V0.2 contract now spells out all six dispositions and separate inspection/role/temporal/context/release requirements, but has NOT received independent challenge. Real reviewer identity/source access, complete reviewer-only storage/recovery and safe author-input freeze remain unqualified and real source review remains HOLD. No tasks, new author-facing source admissions, hidden gold or B0-B4 scores; Research 513/559/576, historical Research 217, Checkpoint 898, routing and Specification 028 unchanged.
 
 **Source-status method critique and separate reviewer-intake candidate (Research 593, 2026-10-18):** The exposed coordinator has challenged Research 592 against temporal-currentness collapse, qualification-stripping excerpts, spoiler-bearing metadata, unsafe lexical-negative assumptions, source-authority/realization conflation, review-scale omissions and actor-role collision. The combined 406 plus 2,133 candidate/review records require explicitly accounted-for coverage, not blanket inspection or automatic admission. An owner-relayed, genuinely separate non-arm source-status reviewer route and a self-contained ten-example fictional-only intake brief are proposed, but no reviewer has been assigned and no calibration has run. A reviewer-only output/custody boundary and safe author-packet construction must be qualified before real historical review. Disposition: AMEND_METHOD_BEFORE_INDEPENDENT_REAL_SOURCE_REVIEW, not method acceptance or experiment authorization. Research 513/559/576, Checkpoint 898, routing and Specification 028 remain unchanged; tasks, gold, author-source admission and B0-B4 scoring remain absent.
 
