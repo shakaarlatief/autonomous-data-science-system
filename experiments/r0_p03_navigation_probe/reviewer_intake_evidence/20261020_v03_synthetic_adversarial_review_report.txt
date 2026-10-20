@@ -1,0 +1,483 @@
+# Independent adversarial review — R0-P03 source-status reviewer contract V0.3
+
+AMEND — synthetic methodology only
+
+Overall finding: V0.3 substantially strengthens the conceptual source-status methodology, but it does not yet resolve all material release-decision ambiguities within its stated scope.
+
+The strongest improvements concern scoped dispositions, complete-file inspection, treatment of nonnormative historical evidence, temporal applicability, reviewer-only context, and packet-level leakage. However, new and residual ambiguities permit both false candidate admissions and unnecessary exclusions. Several rules can also yield incompatible classifications when applied literally.
+
+Recommendation: AMEND V0.3 prospectively, retain the real-review HOLD, and subject the corrected version to a bounded independent synthetic challenge. This review does not authorize any source admission or scientific experiment.
+
+## 1. Evidence boundary and verification
+
+I read the entire supplied Markdown document directly from the uploaded file: 22,585 bytes, 147 physical text lines, UTF-8 readable, with no sections omitted from this inspection.
+
+The document identifies itself as a prospective coordinator draft, explicitly lacking independent acceptance, reviewer-only custody, a qualified real reviewer, and an authorized author world.&#x20;
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V03.md
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V03.md
+
+
+
+My evidence categories are:
+
+- Verified: the wording, structure, internal consistency, and bytes of this attached V0.3 document.
+- Document assertions, not independently verified: previous research identifiers, historical population counts, evidence pins, earlier challenges, and scientific checkpoints.
+- Synthetic inference: the fictional failure cases, interpretations, and proposed corrections developed below. These are analytical tests, not claims about actual historical sources.
+
+I have not inspected any real source population, protected gold, previous contract version, repository, earlier conversation, or historical experiment. My review is independent of those artifacts in its visible inputs, but it is not an independently qualified review under V0.3's intended custody and role-isolation standard.
+
+## 2. What V0.3 successfully improves
+
+V0.3 makes several important conceptual repairs.
+
+| Target defect                         | Finding                                                                                                                                                    |
+| ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Disposition precedence                | Partial resolution. A guard order exists, but candidate eligibility and release authorization conflict.                                                    |
+| Complete-file inspection              | Substantial resolution in principle. Whole-file coverage cannot be inferred from hashing or relevant excerpts. Exposure boundaries remain underspecified.  |
+| Material uncertainty                  | Partial resolution. Scoped uncertainty avoids some blanket exclusions, but the materiality test remains discretionary.                                     |
+| Mixed-source treatment                | Substantial resolution in principle. Prohibited whole files can have separately assessable safe spans, with reviewer utility kept independent.             |
+| Temporal applicability                | Substantial conceptual improvement. Selection, activation, observation and assessment-as-of are distinguished. Conflict adjudication remains incomplete.   |
+| Controlling context                   | Partial resolution. Dependency witnesses are required, but proving complete closure is not operationally specified.                                        |
+| Reviewer-only evidence                | Sound separation in principle. Private reviewer knowledge cannot substitute for permitted author evidence. Custody and authorization remain unqualified.   |
+| Metadata and assembled-packet leakage | Strong recognition, incomplete enforcement. Packet joins and public-history differencing are identified without a sufficiently deterministic release test. |
+
+The particularly valuable rule is that a source can support a narrowly framed historical assertion without thereby proving present operational authority. Similarly, confirmed protected material does not automatically contaminate an independently defensible, separately disclosed span.&#x20;
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V03.md
+
+
+
+These are genuine methodological improvements, but a coherent conceptual safeguard is not necessarily a complete decision procedure.
+
+## 3. Concrete contradictions and ambiguous precedence
+
+These are more than missing implementation details. They affect how V0.3 instructs a reviewer to classify the same evidence.
+
+### D1. Candidate eligibility conflicts with missing authorization
+
+Severity: Material — direct procedural contradiction
+
+Section 3 places missing release authorization among the conditions requiring `HOLD_FOR_SOURCE_REVIEW`. But Step F says candidates are initially only `PROPOSED`, with authorization occurring later.&#x20;
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V03.md
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V03.md
+
+
+
+Consider a fictional, completely inspected and uncontaminated maintenance note with independently available controlling context.
+
+Two careful reviewers could conclude:
+
+| Reviewer | Literal V0.3 interpretation                                                                                        |
+| -------- | ------------------------------------------------------------------------------------------------------------------ |
+| A        | `CANDIDATE_FULL / PROPOSED`: the source meets semantic eligibility requirements, though nobody may release it yet. |
+| B        | `HOLD_FOR_SOURCE_REVIEW`: authorization is missing, and missing authorization is explicitly a HOLD condition.      |
+
+Both can justify their answer from the text. Reviewer B's interpretation also makes the candidate classes potentially unreachable before authorization.
+
+Required correction: Separate semantic eligibility from release permission unambiguously. Remove missing release authorization from the reasons that determine the source's primary semantic disposition. Put it solely in the independent release gate.
+
+A semantically eligible candidate must be capable of existing in a non-authorized state without contradiction. A missing challenge, custody proof or authorization blocks exposure, not necessarily semantic candidacy.
+
+### D2. The six-token type system is incomplete for several declared scopes
+
+Severity: Material — type-domain ambiguity
+
+Section 2 declares five disclosure-scope types and one primary proposed disposition for each. However, the precedence table provides positive candidate outcomes only for `COMPLETE_FILE` and `EXACT_SPAN`. Section 4 then assigns metadata and packets a separate three-state gate. Section 6 additionally introduces `HOLD_SOURCE_WORLD_INCOMPLETE`, whose type is not defined.&#x20;
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V03.md
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V03.md
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V03.md
+
+
+
+A fictional author's source manifest contains safe descriptive metadata but no source excerpt. One reviewer treats the metadata as an independent scope requiring a six-token disposition. Another records only a release-gate determination. Neither has a definitive rule for a positive, non-authorized metadata proposal.
+
+This creates incompatible representations of the same decision, even when both reviewers agree that the metadata is safe.
+
+Required correction: Define an explicit type matrix for every scope. Specify which tokens are legal for complete files, spans, representation components, metadata, reviewer-only audit and packets.
+
+`HOLD_SOURCE_WORLD_INCOMPLETE` should be explicitly declared as a reason for `RELEASE_HOLD`, not an additional primary disposition.
+
+### D3. Confirmed prohibition and incomplete delivery compete for primary precedence
+
+Severity: Material — ambiguous controlling status
+
+Section 3 says a confirmed protected component blocks any exposure containing it. Step D likewise requires prohibition when confirmed protected content is within the disclosed material.
+
+Yet the precedence table puts incomplete delivery before confirmed protection. Its explanatory note requires retaining both facts, but does not fully resolve which one is the primary disposition.&#x20;
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V03.md
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V03.md
+
+
+
+New fictional counterexample — the partially delivered archive.
+
+A source bundle has three sections. Section one was received and independently confirmed to contain protected answer material. Section two is ordinary evidence. Section three is missing. The proposed exposure is the complete bundle.
+
+Reviewer A chooses HOLD because expected delivery is incomplete and that guard appears first. Reviewer B chooses PROHIBIT because the proposed bundle definitely includes a confirmed prohibited component.
+
+Both prevent release, but their primary decisions differ. That matters for coverage accounting, challenge routing, invalidation and determining whether subsequent delivery could cure the block.
+
+Required correction: Establish a deterministic dual-record rule:
+
+A confirmed protected component within the proposed exposure imposes an unconditional prohibition veto, even when other delivery deficiencies coexist. Keep the incomplete-delivery deficit as a separate blocking reason.
+
+Specify one deterministic primary-token selection rule for compound failures. Do not permit a later repair of missing bytes to erase a confirmed prohibition.
+
+### D4. Auxiliary-only classification can become an undefined exclusion route
+
+Severity: Material — false-exclusion risk
+
+V0.3 commendably rejects the equation of nonnormative evidence with auxiliary-only evidence. But `AUXILIARY_EVIDENCE_ONLY` remains dependent on a “separately justified author-exclusion rule” without defining what counts as such a rule.&#x20;
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V03.md
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V03.md
+
+
+
+New fictional counterexample — the harmless inspection diary.
+
+An original historical diary contains a precise observation from one morning, with no claim of governing status, no protected material and no material uncertainty. It is not needed for the coordinator's preferred release narrative, but it could legitimately support a historical observation.
+
+Reviewer A classifies it as a candidate. Reviewer B excludes it as auxiliary because it is not needed in the planned author collection.
+
+V0.3 does not expressly establish whether narrative selection is a legitimate auxiliary-only exclusion reason.
+
+Required correction: Define a closed or governed taxonomy of author-exclusion reasons, and separate safe-source eligibility from optional packet selection. A safe source not selected for a particular packet is not thereby reviewer-only evidence.
+
+## 4. Independent fictional adversarial counterexamples
+
+The following probes are newly constructed for this review. They do not rely on V0.3's H1–H9 scenarios and assert nothing about actual historical material.
+
+FALSE ADMISSION = insufficiently justified eligibility or release. FALSE EXCLUSION = eligible historical evidence unnecessarily withheld.
+
+### A. Changing content behind an unchanged source hash
+
+The live illustration
+
+False admission
+
+A fully inspected Markdown operations handbook contains an externally loaded illustration. At inspection time, the image shows an ordinary schematic. At author-view time, the same URL resolves to an image containing a protected preference annotation. The Markdown blob and its hash have not changed.
+
+Why V0.3 remains ambiguous: Sections 4 and 5 require faithful handling of linked content, but do not establish whether links are inert references, navigable disclosures, transitive source dependencies or immutable loaded assets.&#x20;
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V03.md
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V03.md
+
+
+
+One reviewer could certify the source bytes and observed rendering. Another could withhold candidacy because the future rendering is not bounded.
+
+Correction: Define a disclosure-surface closure policy covering loaded assets, redirects, alternative renderings and source-viewer navigation. Freeze necessary assets or disable unfrozen loading. Revalidate the exact author-facing rendering before release.
+
+### B. A harmless reference becomes an infinite inspection dependency
+
+The inert archive link
+
+False exclusion
+
+A historical field note has a footnote linking to an inaccessible photographic archive. The original note independently records an observed water level, and the photograph is neither disclosed nor necessary to support that narrow observation.
+
+One reviewer requires inspection of every linked document before `CANDIDATE_FULL`; another interprets the link as a bounded, inactive reference and permits candidacy.
+
+Correction: Distinguish actually loaded/disclosed content, navigable content, material context dependencies and inert citations. An inaccessible but nonmaterial citation should not automatically block an otherwise supported historical assertion. If the author can navigate through the link, that exposure must be separately controlled.
+
+### C. Mutually dependent, jointly sufficient sources
+
+The two-part canal ordinance
+
+False exclusion / decision deadlock
+
+Fictional record A states a night-access rule and explicitly delegates its exceptions to record B. Record B defines those exceptions, identifies the same historical scope and incorporates A. Neither is misleading when released together, and both are uncontaminated.
+
+Step E demands that required context already be available in independently permitted author-visible sources. One reviewer treats both records as HOLD because neither has yet been independently admitted. Another proposes the pair as an atomic candidate bundle.
+
+Correction: Permit conditional joint candidacy for a fully enumerated, context-closed dependency bundle. Evaluate cycles in the dependency graph as one proposed release unit. This must not itself authorize either component.
+
+This addresses a dependency deadlock that a simple record-by-record context check cannot resolve.&#x20;
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V03.md
+
+
+
+### D. Operational applicability differs across sites
+
+The staggered depot cutover
+
+False admission
+
+A fictional deployment register records a selected operational procedure, an activation date at Depot North, a later observation at North, and an unconfirmed planned activation at Depot South.
+
+The author-visible heading says “Procedure in service.” Reviewer A treats North's observation as enough to support the generic heading. Reviewer B considers that heading misleading because applicability at South remains unknown.
+
+V0.3 distinguishes selection from operational realization, but provides insufficient rules for combining site, audience, version, applicability interval and partial rollout into a controlling assertion.
+
+Correction: Every material operational claim needs an explicit applicability domain: location or environment, affected population, valid-time interval, record-time provenance, operational event and exception boundaries. Preserve narrower supported claims without upgrading them to universal deployment assertions.&#x20;
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V03.md
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V03.md
+
+
+
+### E. An excluded source contains an undiscovered controlling exception
+
+The unreviewed amendment cabinet
+
+False admission
+
+A completely inspected fictional manual states a general operating rule. Somewhere in an unreviewed excluded-record population sits a contemporaneous, authoritative exception that would materially limit that rule. The reviewer has no evidence yet identifying that particular exception.
+
+V0.3 calls for cross-source context closure and accounting for uninspected records, but it does not specify what coverage evidence is sufficient to conclude that no undiscovered controlling exception remains.
+
+A reviewer could mark the manual context-complete because no conflict was encountered. Another could require further bounded coverage evidence. Both could plausibly claim to be applying its materiality standard.
+
+Correction: Introduce a context-search and coverage witness: the eligible source universe, searched strata, relevant excluded categories, unresolved discovery gaps and the justification for a bounded negative finding. Do not infer context completeness from the absence of known conflicts.
+
+This follows directly from the still-unreviewed populations acknowledged in the draft.&#x20;
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V03.md
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V03.md
+
+
+
+### F. Reviewer-irrelevant uncertainty is mistaken for release-irrelevant leakage
+
+The incidental recommendation field
+
+False admission
+
+A fictional maintenance register supports a narrow historical claim about an inspection date. Elsewhere on the same page, an ambiguous field resembles a protected preference or evaluation expectation.
+
+Reviewer A considers that ambiguity nonmaterial because it does not affect the inspection date. Reviewer B treats it as material to the author's exposure, even though it is irrelevant to the proposed historical claim.
+
+Correction: Require separate materiality determinations for claim reliability and disclosure contamination. A cue can be irrelevant to the proposed factual claim yet still unsafe to show a fresh author.
+
+V0.3's scoped uncertainty rule is useful, but the distinction between these two materiality dimensions needs to be explicit.&#x20;
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V03.md
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V03.md
+
+
+
+### G. A safe alias leaks its protected origin through the viewer
+
+The automatic citation title
+
+False admission
+
+A candidate excerpt is given a neutral display alias. The reviewed packet contains no unsafe path. But the author's document viewer automatically places the original filename into download headers, hover previews or generated citations, exposing a protected relationship.
+
+The contract recognizes paths, labels and aliases as leakage surfaces, but does not require an explicit end-to-end verification of every author-visible interface-generated field.
+
+Correction: Require a byte- and rendering-bound author-view witness covering document content, manifests, search results, snippets, citation labels, downloads and viewer-generated metadata. A neutral alias is adequate only if the actual author-facing interface preserves the intended separation.&#x20;
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V03.md
+
+
+
+### H. Two individually safe public receipts disclose a private category
+
+The one-record aggregate
+
+False admission
+
+A fictional public progress report gives an aggregate count for a broad source family. A later report gives the changed count. Publicly visible scheduling information establishes that only one record could account for the change. Neither receipt contains a private name or explicit reason.
+
+Together, they disclose that record's protected classification.
+
+V0.3 correctly identifies public-history differencing. What remains absent is a release criterion for small groups, changing denominators, stable category identifiers and cumulative disclosures.
+
+Correction: Require a cumulative publication-history and adversarial-join review before each receipt. Suppress or coarsen potentially isolating counts, and prohibit disclosures that become identifying when combined with previously published receipts.&#x20;
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V03.md
+
+
+
+### I. A narrow historical claim is excluded because later applicability is unknown
+
+The cancelled rehearsal
+
+False exclusion
+
+A fictional schedule establishes that a rehearsal was planned on a certain day. Later records show it was cancelled. An unrelated operational transition remains uncertain.
+
+A reviewer holding the historical statement because the rehearsal was never performed would conflate the existence of a plan with its realization. V0.3 explicitly rejects that conflation, but needs an enforceable rule against importing nonmaterial future uncertainty into narrowly stated historical assertions.
+
+Correction: In the epistemic witness, separate the event recorded, the event planned, and the event observed. Test uncertainty against the exact proposed assertion. Do not let a failed or unknown implementation erase historical evidence of a proposal.&#x20;
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V03.md
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V03.md
+
+
+
+These examples establish two different types of weakness. The source-classification contradictions require normative text changes. The other failures arise from underspecified dependency, completeness or disclosure tests that could let reviewers apply reasonable but incompatible interpretations.
+
+## 5. Remaining missing dependencies
+
+Beyond individual counterexamples, four methodology-level dependencies require correction.
+
+### 5.1 Materiality needs a reproducible decision criterion
+
+V0.3 requires materiality findings but does not define how reviewers should distinguish:
+
+- Material uncertainty about the truth or scope of a proposed assertion.
+- Material uncertainty about what a fresh author could infer from the exposure.
+- Nonmaterial uncertainty that can safely remain unresolved.
+
+The words material, confirmed, possible and independently evidenced must remain semantically informed judgments; they cannot be reduced to simple keywords. Nevertheless, reviewers need a common procedural test.
+
+A suitable correction is to require a witness identifying the precise uncertain proposition, its affected exposure, the potential consequence if the uncertainty resolves adversely, and why the uncertainty is or is not material. Where the consequential interpretation cannot be excluded, the affected exposure remains held. Where the uncertainty has demonstrably no bearing on the narrow claim or exposure risk, it need not prevent candidacy.
+
+This would reduce discretionary false admissions without imposing a universal hold for every unknown.
+
+### 5.2 Controlling context needs explicit conflict and coverage rules
+
+Section 5 specifies strong witness fields, including authority, supersession, negation, cross-source qualification and author-world accessibility. It does not fully say how to adjudicate opposing claims when no governing hierarchy is established.&#x20;
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V03.md
+
+
+
+The correction should distinguish an evidenced authority hierarchy from a mere document label, and an observed local practice from a universally effective policy. It should also define what constitutes sufficiently complete context searching for a proposed source family and historical assertion.
+
+If the record supports only the existence of incompatible contemporary assertions, that historical disagreement may itself be supportable. It does not justify choosing one assertion as governing without additional evidence.
+
+An unresolved controlling conflict blocks the stronger claim, but need not erase accurately bounded evidence of the conflict's existence.
+
+### 5.3 Source eligibility, packet membership and world sufficiency must remain distinct
+
+The text requires a context-complete author-visible world, but individual candidate evaluation also references already permitted author-visible evidence. This creates the circular-dependency problem demonstrated above.
+
+The corrected method needs at least three distinct decisions:
+
+| Decision                 | Question                                                                                                                                      |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| Source or span candidacy | Is this original evidence semantically and contamination-wise eligible, possibly subject to declared co-release dependencies?                 |
+| Packet membership        | Can this exact source or dependent bundle be assembled with safe metadata and all required qualifiers?                                        |
+| Author-world sufficiency | Does the eventual frozen collection give a fresh author adequate, uncontaminated original evidence for its intended bounded research purpose? |
+
+A packet consisting entirely of individually safe candidates can still fail packet safety or author-world completeness. Conversely, a source can be eligible without having to appear in every future packet.
+
+### 5.4 The synthetic exit criterion is too closely tied to V0.2
+
+Section 8 limits the next bounded challenge to V0.2's identified interaction gaps. That is useful for scope control, but V0.3 introduces additional decisions concerning scope types, authorization, bundled dependencies and packet gates. Those new interfaces deserve direct adversarial testing.&#x20;
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V03.md
+
+
+
+Required correction: Retain a bounded S0 challenge, but define its scope as V0.3's entire release-interaction decision discipline, including newly introduced rules. The challenge should include positive eligibility, negative contamination, uncertain evidence, compound blockers, conditional co-release, and false-exclusion controls.
+
+A synthetic exit should require that remaining uncertainties are either resolved or demonstrably nonmaterial to methodology safety—not merely that the earlier fictional examples have been answered consistently.
+
+## 6. Candidate soundness, challenge, authorization and author-world construction
+
+This distinction is essential and should become a formal part of the contract rather than an implication spread across Sections 4, 6 and 7.
+
+1. Semantically sound candidate proposal
+
+   The proposed source scope has defensible identity, coverage, evidence-role, materiality, temporal and dependency witnesses. This establishes possible eligibility only. It does not grant author access.
+2. Independent challenge and adjudication
+
+   A separately qualified challenger tests the proposal and records acceptance, rejection or unresolved disagreement without overwriting the original evidence. An unresolved material objection must continue blocking exposure. Challenge completion does not by itself authorize release.
+3. Actual release authorization
+
+   An explicitly authorized actor or process verifies custody, the adjudicated candidate, exact bytes, declared dependencies, assembled packet, exposed metadata, rendered author interface and relevant publication history. Only successful verification permits the exact bounded release.
+4. Complete author-world construction
+
+   The final frozen collection contains sufficient permitted original evidence, necessary controlling context and required family coverage without protected leakage. The collection must itself be independently accepted. Individually authorized sources do not automatically establish a complete world.
+
+V0.3 largely recognizes these separations, but the authorization actor, required sign-offs, unresolved-dissent handling and readback proof are not operationally defined. Its append-only ledger is expressly unimplemented.&#x20;
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V03.md
+
+
+
+A prospective correction should include a formal transition scheme with separate semantic, challenge and release states. An `AUTHORIZED` label must not mean merely that a reviewer recommended approval. It must be tied to a specific immutable exposure manifest and an independently evidenced authorization event.
+
+An invalidated dependency must automatically render any dependent authorization unusable until the affected release boundary is rechecked. V0.3's invalidation principle supports this, but the implementation dependency is outstanding.
+
+## 7. Proposed V0.4 correction register
+
+The following register consolidates the required amendments into implementable methodological requirements.
+
+| Priority | Required V0.4 correction                                          | Acceptance evidence in synthetic review                                                                                        |
+| -------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| P0       | Separate candidate disposition from release authorization         | An eligible unapproved source can be `CANDIDATE_FULL / PROPOSED` while exposure remains blocked, without contradictory HOLD    |
+| P0       | Define permitted disposition types for every scope                | Every component, metadata and packet case has an unambiguous legal decision representation                                     |
+| P0       | Define compound-blocker precedence and independent vetoes         | Partial delivery plus confirmed protected content cannot produce different controlling primary statuses                        |
+| P0       | Distinguish claim materiality from disclosure materiality         | An irrelevant-to-claim spoiler cannot enter the author exposure through a nonmateriality determination                         |
+| P0       | Define author-view exposure closure                               | Immutable source bytes and tested author-visible content correspond, including linked/rendered surfaces and metadata           |
+| P0       | Specify conditional atomic release for co-dependent sources       | Safe, jointly sufficient sources do not deadlock; incomplete or unsafe bundles do not qualify                                  |
+| P1       | Define bounded source-coverage and negative-context witnesses     | Unreviewed records cannot silently be treated as proof that no controlling exception exists                                    |
+| P1       | Formalize temporal applicability and authority conflicts          | Narrow historical assertions survive while unsupported universal operational claims remain held                                |
+| P1       | Specify permitted auxiliary-only exclusion reasons                | Nonnormative, historically useful evidence is not excluded for unspecified curation reasons                                    |
+| P1       | Define publication-history and metadata leakage tests             | Individually innocuous releases cannot bypass cumulative disclosure review                                                     |
+| P1       | Formalize challenge, adjudication, invalidation and authorization | Every state transition has a responsible actor, required evidence and explicit consequences for unresolved objections          |
+| P1       | Expand bounded S0 challenge to V0.3-specific interactions         | New adversarial cases test both false admissions and false exclusions rather than merely reproducing earlier expected examples |
+
+These corrections do not require actual historical content, answers or scored evaluations to be designed and synthetically tested.
+
+## 8. What remains unqualified for real historical-source review
+
+Even if every semantic amendment above were accepted, the supplied V0.3 does not establish the following as operationally ready:
+
+| Boundary                           | Current evidentiary finding                                                                                                           |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| Actual reviewer independence       | No qualified reviewer identity, isolation or complete prior-exposure assessment is established here.                                  |
+| Source delivery                    | No actual historical source batch, immutable identity reconciliation or source-to-representation fidelity inspection was performed.   |
+| Population coverage                | The declared source populations and frontend exclusions have not been independently verified or adjudicated in this review.           |
+| Reviewer-only custody              | No qualified confidential ledger, permission boundary, persistence/readback or resumption implementation has been demonstrated.       |
+| Independent challenger             | No authorized, separated challenger or formal adjudication process has been demonstrated.                                             |
+| Source-specific semantic decisions | No actual source eligibility or prohibition decisions have been made.                                                                 |
+| Metadata and packet safety         | No real assembled packet, interface exposure or cumulative publication history was audited.                                           |
+| Release authority                  | No actor or implemented process has demonstrated authorization of exact source bytes for fresh-author use.                            |
+| Frozen author world                | No complete, independently accepted author-source collection exists in the evidence available to this review.                         |
+| Later scientific gates             | Reference/gold custody, fresh authorship, annotation, evaluation and all downstream experimental controls remain outside this review. |
+
+These findings are consistent with the document's own S0–S4 boundaries. Its references to earlier research, Checkpoint 898 and Specification 028 are internal assertions here; those external materials have not been read or validated.&#x20;
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V03.md
+
+
+
+## 9. Final recommendation
+
+## AMEND
+
+Synthetic methodology
+
+V0.3 is conceptually stronger than the deficiencies it describes, but its candidate/release contradiction, incomplete scope typing, competing primary-status guards and insufficiently specified dependency closure remain material.
+
+The newly constructed examples also demonstrate credible false-admission routes involving dynamic disclosure surfaces, partial temporal authority, unreviewed controlling context and generated metadata, alongside false-exclusion routes involving inert dependencies, coupled source evidence and overly broad uncertainty.
+
+The appropriate disposition is AMEND, not PASS. A wholesale HOLD on further fictional methodological work is unnecessary because the issues can be addressed synthetically without accessing historical evidence.
+
+Recommended boundary decisions:
+
+| Boundary                                                          | Decision          |
+| ----------------------------------------------------------------- | ----------------- |
+| Continue synthetic contract refinement                            | AMEND — permitted |
+| Treat V0.3 as independently accepted methodology                  | Not justified     |
+| Begin actual historical source-status inspection                  | HOLD              |
+| Make real author-visible source admissions                        | HOLD              |
+| Assert completed author-world construction                        | HOLD              |
+| Proceed to scored or downstream scientific work under this review | Not authorized    |
+
+The next version should first resolve the P0 contradictions, then demonstrate a deterministic decision model under independent synthetic challenge. It should preserve the important flexibility of V0.3: narrow historical evidence can remain useful even when broader operational authority is unproved, and mixed files need not be excluded indiscriminately.
+
+Bottom line: V0.3 substantially improves the conceptual safety boundary, but it has not yet made that boundary sufficiently deterministic, closed under dependencies, or release-complete to merit a synthetic PASS. Nothing in this review qualifies the methodology for real historical-source inspection or author-world release.
