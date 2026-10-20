@@ -7,6 +7,8 @@
 **Actor:** A suitably qualified *non-arm* source-status reviewer, prospectively selected; explicitly ineligible thereafter as the blind primary task author, neutral legacy gold adjudicator, scored evaluator or B0–B4 arm author.
 **Authority:** Draft workflow specification only. No source admission, reviewer/custodian assignment, new encrypted key, file attachment, private storage approval, real historical-body access, Checkpoint 898/routing/Specification 028 amendment, or scoring.
 
+**2026-10-20 scoped engineering update (Research 601/Validation 268):** A standalone fictional-only reviewer-report CMS sender/verify utility now passes 19 combined local tests with the existing fake CMS regressions. It supports a complete three-item **invented** source-status record with variable disposition/HOLD and closed fake private-note codes, encrypts to a supplied public certificate, prints a nonanswer-bearing ciphertext receipt and checks full owner-side fake contents without printing them. This is **not** a separate Temporary Chat or owner-restricted storage test. The strict old 9+12 PowerShell recipient script is incompatible and must not be repurposed without a separately reviewed owner-side route. No real reviewer-specific recipient or output destination has been selected or authorized; the first cross-session owner test remains pending.
+
 ## A. Proposed route in one diagram
 
 ```text
