@@ -1,0 +1,3 @@
+# Preserve exact source-free S1 A2 attachment test bytes on every checkout.
+experiments/r0_p03_navigation_probe/a2_source_free_fidelity_unicode_crlf.txt -text whitespace=cr-at-eol
+experiments/r0_p03_navigation_probe/a2_source_free_fidelity_pattern.png binary

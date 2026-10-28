@@ -1,0 +1,237 @@
+# S1 A2 — Candidate Reviewer Actual Environment Intake Report
+
+Version 0.1 · 28 October 2026 · Source-free session observation
+
+Intake result: `INTAKE_LIMITED`
+
+Scope: Prospective non-arm source-status reviewer environment assessment. No reviewer appointment, source adjudication, independence certification, or security validation is asserted.
+
+This report is based exclusively on the supplied intake document and capabilities visible in the present session. No external systems, historical materials, repositories, previous conversations, or connected accounts were accessed for this assessment.
+
+## A. Observed input and session facts
+
+### A1. Actual session type
+
+The available runtime context identifies this conversation as an unpersonalized Temporary Chat.
+
+That identification is visible environmental information, but I cannot independently inspect the account interface, administrative configuration, or server-side session metadata to certify its status.
+
+| Question                                    | Finding                                             |
+| ------------------------------------------- | --------------------------------------------------- |
+| Temporary Chat designation                  | OBSERVED — described as such by the current runtime |
+| Non-Project membership                      | UNKNOWN — no independent Project membership check   |
+| Account conversation history visible        | NO, in the context supplied to me                   |
+| Saved memory content visible                | NO                                                  |
+| Independent session identity established    | NO                                                  |
+| Prior model-training exposure excluded      | NO — cannot establish                               |
+| Prior implicit exposure to project evidence | UNKNOWN                                             |
+
+The absence of visible account history is not evidence that no provider-side context, training exposure, or prior session influence exists.
+
+### A2. Material actually supplied
+
+One user-supplied Markdown document was presented:
+
+`S1_A2_CANDIDATE_REVIEWER_LIVE_ENVIRONMENT_INTAKE_V01.md`
+
+I was able to read its instructions and source-free intake declarations.
+
+The document describes the Research 606 S1 A2 actor gate and references Research 608 and Validation 274. Those references were not opened, retrieved, or independently evaluated.
+
+The document declares, among other things:
+
+- Historical source records delivered: `ZERO`
+- Private ledger handoff: `NOT_REQUESTED`
+- Actual reviewer admission: `PENDING`
+- Actual challenger admission: `PENDING`
+- Author world: `UNFROZEN`
+- Gold: `NONE`
+- Scoring: `NOT_STARTED`
+
+These are statements supplied by the intake document, not independently verified facts about the wider project.
+
+### A3. Other visible information
+
+No additional project-specific files, historical evidence, reference/gold artifacts, source-status records, owner credentials, reviewer ledger, or actual source findings were supplied in my visible context.
+
+General platform instructions and tool descriptions are also present, but these are not equivalent to project evidence.
+
+I cannot establish whether undisclosed provider-side context exists.
+
+## B. Visible tools, capabilities, and exposure inventory
+
+The following distinctions are used:
+
+- `TESTED`: Actual behavior directly observed in this intake.
+- `VISIBLE_UNTESTED`: Capability exposed or described but not exercised.
+- `UNAVAILABLE`: Explicitly described as disabled or unavailable.
+- `UNKNOWN`: Insufficient evidence to establish access or denial.
+
+| Surface or capability                                   | Classification     | Actual observation or limitation                                                                  |
+| ------------------------------------------------------- | ------------------ | ------------------------------------------------------------------------------------------------- |
+| Current Markdown attachment                             | `TESTED`           | Document content was successfully delivered and readable                                          |
+| Current conversation messages                           | `TESTED`           | Current user request and attachment context visible                                               |
+| Local Python execution                                  | `VISIBLE_UNTESTED` | Execution interface exposed; not invoked                                                          |
+| Container and filesystem operations                     | `VISIBLE_UNTESTED` | Local execution interface exposed; no exploratory filesystem access                               |
+| Conversation file retrieval                             | `VISIBLE_UNTESTED` | File operations are described; no search of other files performed                                 |
+| Web search and network lookup                           | `VISIBLE_UNTESTED` | Web capability exposed, but not invoked                                                           |
+| Current-session utility interfaces                      | `VISIBLE_UNTESTED` | Certain utility interfaces exposed; no calls performed                                            |
+| Prior-conversation information route                    | `VISIBLE_UNTESTED` | A limited conversation-summary interface is exposed; it was not invoked                           |
+| Connected applications and account-backed Library files | `UNAVAILABLE`      | Explicitly described as disabled for this unpersonalized Temporary Chat; no access test performed |
+| Image-generation capability                             | `UNAVAILABLE`      | Explicitly described as inaccessible in this session                                              |
+| Exact binary attachment fidelity                        | `UNKNOWN`          | No nontext source asset tested                                                                    |
+| Binary file creation/export                             | `VISIBLE_UNTESTED` | Local file-generation tools appear available; successful output not demonstrated                  |
+| Cryptographic encryption and secure delivery            | `UNKNOWN`          | No encryption operation, private key, or protected delivery route verified                        |
+| Reviewer-only storage or recipient                      | `UNKNOWN`          | No independently authenticated private reviewer destination established                           |
+| Repository authorization or access denial               | `UNKNOWN`          | No repository route was probed                                                                    |
+
+### B1. What was actually exercised
+
+The only substantive input-processing capability observed was receipt and reading of the current intake text.
+
+I did not deliberately invoke tools to inspect accounts, project repositories, historical files, previous chats, internet resources, or local private materials.
+
+Accordingly, the tool inventory describes visible affordances, not a tested permissions map.
+
+### B2. Observed controls versus voluntary compliance
+
+There is a material difference between a route being technically denied and my following an instruction not to use it.
+
+For this intake:
+
+- Avoiding web and repository access was behavioral compliance, not proof of network isolation.
+- Not retrieving previous conversations was compliance, not proof that all historical retrieval mechanisms are technically blocked.
+- The stated disabling of personalized connected-app and Library access is environment-level information, but was not independently tested.
+- Not displaying project evidence does not prove that such evidence is absent from every provider-side context surface.
+
+No broad host-level access-denial claim is justified.
+
+## C. Prior exposure, independence, and security limits
+
+### C1. Previous project exposure
+
+Prior exposure status: `UNKNOWN`
+
+I have no visible evidence in this conversation that I previously received the project's actual historical source records, private reviewer ledger, scoring decisions, or gold artifacts.
+
+However, I also cannot exclude previous training exposure, implicit context influence, or other provider-side pathways.
+
+The correct conclusion is that actual project-specific exposure was not observed in the supplied current-session context, rather than that all exposure is absent.
+
+### C2. Independence from a project-exposed coordinator
+
+Independent reviewer identity has not been established.
+
+I cannot verify:
+
+- Whether this runtime shares relevant infrastructure, account context, or retained state with a project-exposed coordinator.
+- Whether another reviewer or candidate session previously received overlapping material.
+- Whether future author sessions would be isolated from a reviewer environment.
+- Whether a different model label or chat instance corresponds to a genuinely separated principal.
+- Whether an external provider could access, retain, or reuse submitted information under applicable service arrangements.
+
+A Temporary Chat designation does not constitute an independence certificate.
+
+### C3. Confidentiality of reviewer findings
+
+This current conversation is not demonstrated to be a reviewer-only reporting channel.
+
+Anything I report directly in this conversation should be treated as visible to the conversation recipient. I have no verified means here to ensure that protected findings would be withheld from a project-exposed coordinator.
+
+I therefore cannot certify that confidential source-status findings could be prepared and delivered through a segregated recipient channel.
+
+### C4. Security and privilege separation
+
+No owner-controlled access-control verification, separate reviewer credential, protected reviewer ledger, encryption handoff, or negative-access test has occurred.
+
+The following remain unverified:
+
+- Effective read/write permissions
+- Cross-session access separation
+- Provider-side retention boundaries
+- Attachment and output storage isolation
+- Recipient authentication
+- Encryption key custody
+- Auditability of source access and report delivery
+
+Security conclusion: Neither successful isolation nor a particular security failure has been demonstrated. The necessary evidence has not been collected.
+
+## D. Potential workflow and next safe capability test
+
+### D1. Potential reviewer workflow — not executed
+
+The exposed environment appears potentially capable of reading supplied text files, processing documents using local computational tools, and generating structured versioned reports.
+
+However, three critical workflow requirements remain unproven.
+
+| Requirement                                     | Assessment                                                                                    |
+| ----------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| Receive complete exact source files             | Text attachment intake observed; exact binary fidelity and completeness untested              |
+| Handle nontext assets                           | Potentially supported through file-processing tools; no actual asset test                     |
+| Produce complete versioned reviewer-only output | Report drafting plausible; protected file output and independent recipient routing unverified |
+
+No real source files should be delivered on the strength of these observations.
+
+No keys, evidence files, private source notes, or encrypted artifacts were generated during this intake.
+
+### D2. Recommended next specific safe test
+
+Test: Owner-authorized, source-free attachment-and-report round trip in a separately designated candidate reviewer environment.
+
+The test should use newly created, non-sensitive fixtures rather than project material. It should verify:
+
+1. Exact receipt and reading of a synthetic text fixture and a harmless binary fixture, including completeness checks.
+2. Generation and retrieval of a versioned dummy reviewer report without real findings.
+3. Delivery only to an owner-designated test reviewer destination.
+4. An independently performed negative-access check showing whether the project-exposed coordinator can access that output.
+5. Recording the test results and any unverifiable controls without treating successful functional behavior as reviewer admission.
+
+Required approval: Explicit project-owner authorization identifying the permitted dummy fixtures, approved test environment, authorized recipient, acceptable access checks, and test boundaries.
+
+The owner would also need to authorize any credential or encryption testing through a controlled mechanism. No production keys or historical source material are necessary for this proposed test.
+
+This test is a recommendation only. It has not been executed.
+
+## E. Intake reporting-quality result
+
+`INTAKE_LIMITED`
+
+Limited observation
+
+Basis: The current source-free document was received and readable, the visible environment and tool categories could be inventoried, and material unknowns could be identified without accessing prohibited resources.
+
+Reason for limitation: Independence, exact source-file handling, private output routing, security isolation, and prior-exposure boundaries have not been technically verified.
+
+This reporting-quality result does not certify a reviewer environment, privilege segregation, confidentiality, source-handling fitness, or appointment.
+
+`INTAKE_OBSERVED` would risk overstating the range of actual technical observations. `INPUT_HOLD` is not necessary to describe the present reporting exercise because the intake instruction document was successfully received and a bounded report could be completed.
+
+The present result therefore reflects an actual but limited environment observation.
+
+## F. Admission status and final boundary statement
+
+| Project boundary                                   | Reported status                                                |
+| -------------------------------------------------- | -------------------------------------------------------------- |
+| Intake reporting quality                           | `INTAKE_LIMITED`                                               |
+| Historical source records delivered in this intake | `ZERO` observed                                                |
+| Private ledger handoff                             | `NOT_REQUESTED`                                                |
+| Actual independent reviewer admission              | `PENDING`                                                      |
+| Actual challenger admission                        | `PENDING`                                                      |
+| Author world                                       | `UNFROZEN` — intake declaration, not independently verified    |
+| Gold                                               | `NONE` — intake declaration, not independently verified        |
+| Scoring                                            | `NOT_STARTED` — intake declaration, not independently verified |
+| Secure reviewer-only output route                  | `UNKNOWN`                                                      |
+| Prior exposure                                     | `UNKNOWN`                                                      |
+| Independence certification                         | `NOT_ESTABLISHED`                                              |
+
+Final determination
+
+This session has completed a source-free, actual visible-environment intake with limited capability observations. The available evidence is sufficient to describe the current text-input route and the exposed but largely untested tool surfaces. It is insufficient to certify independence, secure reviewer-only communication, historical exposure boundaries, or complete handling of exact source files.
+
+I have not acted as a source-status adjudicator, challenger, arm author, primary task author, or scored evaluator. No project claim was reviewed or scored.
+
+Actual reviewer admission remains `PENDING`. Actual challenger admission remains `PENDING`.
+
+No permission to receive historical project sources or private adjudication material is inferred from this report.
+
+End of S1 A2 candidate reviewer actual environment intake report · V0.1

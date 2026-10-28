@@ -1,0 +1,6 @@
+# Source-free A2 fixture
+Line A: café / naïve / Δ / 雪 / مرحبا
+Line B: tab=	; literal slash=\; punctuation: [] {}
+Line C: intentionally blank next line
+
+END-SOURCE-FREE-A2-FIXTURE
