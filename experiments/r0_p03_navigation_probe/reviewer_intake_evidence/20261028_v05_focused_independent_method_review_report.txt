@@ -1,0 +1,336 @@
+# V0.5 — Source-free M1/M2 methodological critique
+
+## 1. Observed inputs, tools, access and exposure
+
+Scope: The two supplied documents only. This is a synthetic method-text assessment, not an exercise of real reviewer authority or a validation of historical sources.
+
+### Input integrity
+
+Both attached files were accessible as local UTF-8 text. I used the local container's Python runtime to read the files and calculate byte counts and SHA-256 hashes.
+
+| Input                    | Observed bytes | SHA-256                                                            |
+| ------------------------ | -------------- | ------------------------------------------------------------------ |
+| V0.5 reviewer contract   | 28,270         | `1c787fe7daa1222b2923c06891b4db72717a0d9c32126ebaac846d31c27ae79a` |
+| V0.1 focused check brief | 5,676          | `1bdccf3510e5df9b4953386246884ecea1b9472866d5fea1ff0dbb22fc74b284` |
+
+The V0.5 byte count and hash exactly match those specified in the review brief. Both files decoded without UTF-8 errors. Their locally read contents comprised 167 and 50 lines respectively, excluding any additional terminal empty line.
+
+The complete V0.5 contract, not merely its amendment paragraphs, is the basis for this assessment. Neither input was found missing or incomplete at the file level.
+
+### Actual access and limitations
+
+- Observed: Two attached local Markdown files and local file-reading/hash computation.
+- Not accessed: Repositories, other conversations, connected applications, historical source bodies, previous review records or external websites.
+- Not performed: Real source adjudication, protected evidence readback, independent reviewer challenge, author-interface testing, gold construction or scoring.
+- Not established: My independence from possible latent prior model exposure, a certified session identity, confidential custody, or qualification as an actual reviewer or challenger.
+
+The V0.5 historical population figures, source pin and descriptions of earlier critiques are treated strictly as statements inside the supplied contract, not independently verified historical facts.
+
+All examples below are invented. They describe fictional records and hypothetical exposures, not real project source content.
+
+## 2. M1 — Positive original-context dependencies
+
+### M1-A: Valid, complete, but unchallenged atomic proposal
+
+Consider two fictional original records with these exact proposed author-facing spans:
+
+Fictional record A · lines 4–5
+
+“On 14 May 2031, Option Juniper was proposed for Gate 3, subject to the paired scope note.”
+
+Fictional record B · lines 2–3
+
+“The Gate 3 proposal in record A was a Site R evaluation only, not an activation decision.”
+
+Record A identifies the proposition that B qualifies. Record B supplies the scope and activation qualification needed to interpret A. Both original spans are necessary to the intended claim.
+
+Assume, for this invented test only, that both source representations are complete, their original context is faithfully inspected, their provenance is established, their exact metadata and exposure surfaces are screened, and the bounded negative-search witness is substantively adequate. Neither contains or jointly reveals protected material. Neither has been independently challenged or authorized.
+
+Expected V0.5 result:
+
+| Typed subject                 | Correct result                                                    |
+| ----------------------------- | ----------------------------------------------------------------- |
+| A, `EXACT_SPAN`               | `CANDIDATE_EXCERPT`, `PROPOSED`                                   |
+| B, `EXACT_SPAN`               | `CANDIDATE_EXCERPT`, `PROPOSED`                                   |
+| Dependency closure            | `CONDITIONALLY_CLOSED`, attached to the exact A+B bundle manifest |
+| Independent review            | `CHALLENGE_PENDING`                                               |
+| Bundle exposure               | `RELEASE_HOLD`                                                    |
+| Actual task-author disclosure | None permitted                                                    |
+
+This is internally supported by several exact provisions:
+
+- Section 1, line 23: “A complete, substantively inspected dependency bundle may be recorded as `CONDITIONALLY_CLOSED`” and only as a typed dependency attribute.
+- Section 3, line 47: “this attribute does not imply already accepted or authorized context.”
+- Section 5, line 82: “independent acceptance is not required to record that proposal.”
+- Section 7, line 108: “No bundle member is individually or atomically released at proposal stage.”&#x20;
+
+  NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V05.md
+
+  NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V05.md
+
+  NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V05.md
+
+  NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V05.md
+
+
+
+Finding: The intended M1 proposal-stage repair works. The source dispositions, dependency closure attribute, pending challenge and release gate are distinct. The contract does not require already accepted context before it can be proposed.
+
+This assessment establishes a valid fictional application of the written rule, not an independently accepted source proposal.
+
+### M1-B: Disqualifying and adversarial variants
+
+| Perturbation                                                                         | Required decision                                                                                                                                          |
+| ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Record B is not delivered                                                            | A's dependent exposure is `HOLD_FOR_SOURCE_REVIEW`; B has a delivery HOLD. No `CONDITIONALLY_CLOSED`. Bundle `RELEASE_HOLD`.                               |
+| B is delivered, but a controlling original footnote is materially uninspected        | A and the affected B proposal remain semantically held. Complete dependency closure cannot be claimed.                                                     |
+| B's required span contains confirmed protected expected-answer material              | B is `PROHIBIT_DESIGN_OR_GOLD`; A remains held because its necessary permitted context is unavailable. The proposed A+B exposure is `PROHIBITED_EXPOSURE`. |
+| B's required qualification is in a received but unreadable component                 | The component receives `UNSUPPORTED_REPRESENTATION`; materially dependent source and bundle exposures remain held.                                         |
+| Both spans are individually safe but their combination reveals protected information | The assembled exposure is blocked even though the individual content screens appeared clean.                                                               |
+
+These are not counterexamples that defeat V0.5; they are adverse probes the current text already addresses.
+
+Section 1 explicitly states that a “missing, prohibited, unsupported, incompletely inspected or materially uncertain context member” imposes a scoped semantic HOLD/prohibition. Section 4 gives confirmed protected content a persistent veto for exposures guaranteed to include it, and distinguishes missing bytes from received but unsupported representations. Section 7 refuses conditional closure based on uninspected placeholders.&#x20;
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V05.md
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V05.md
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V05.md
+
+
+
+A useful additional negative test is a prohibited complete file containing a clean, separately inspectable original excerpt. Section 2, line 42, explicitly allows that narrower excerpt to be assessed without removing the parent file's veto. Thus, the rule does not improperly convert a scoped prohibition into a universal ban.&#x20;
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V05.md
+
+
+
+M1 result: The core positive-context precedence defect is textually repaired. Missing or unsafe controlling context cannot be made acceptable merely by assigning `CONDITIONALLY_CLOSED`.
+
+A separate possible defect concerning disclosure after bundle authorization is examined in Section 4 below.
+
+## 3. M2 — Bounded negative-search coverage
+
+### M2-A: Valid historical proposition, adequate witness, challenge pending
+
+Consider fictional record C with this exact author-facing span:
+
+Fictional record C · lines 7–8
+
+“On 9 June 2032, the council recorded Proposal H as a draft for the East test site.”
+
+The claim is deliberately narrow: a dated draft proposition was recorded. It does not claim that the proposal was activated, remained operative, or applied to other sites.
+
+Assume a fictional frozen source universe with nine records, spanning meeting records, revisions, policy/exception records and a separate telemetry stratum. The evidence witness identifies every record and its actual inspection depth, verifies the relevant original minutes and controlling exceptions, examines chronology and provenance, and documents why the partly unreviewed telemetry material cannot reasonably alter this specific historical claim. The justification is substantive rather than a keyword-negative assertion.
+
+No independent challenger has yet acted.
+
+| Decision layer                | Required outcome                                      |
+| ----------------------------- | ----------------------------------------------------- |
+| Source C, `EXACT_SPAN`        | `CANDIDATE_EXCERPT`, `PROPOSED`                       |
+| Negative-search witness       | Substantively adequate, not independently accepted    |
+| Challenge                     | `CHALLENGE_PENDING`                                   |
+| Corresponding author exposure | `RELEASE_HOLD`                                        |
+| World                         | No automatic freeze or family-completeness acceptance |
+
+Section 7, line 106, expressly states that where substantive adequacy exists but independent challenge has not occurred, the reviewer must “preserve the supported source disposition at `PROPOSED`” and record `CHALLENGE_PENDING` while holding exposure at `RELEASE_HOLD`.
+
+Section 9, line 127, reinforces that “pending challenge alone preserves a supported `PROPOSED` source candidate”.&#x20;
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V05.md
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V05.md
+
+
+
+Finding: The intended M2 repair works. Missing independent acceptance does not become an invented substantive deficiency.
+
+### M2-B: Inadequate coverage and claim-specific limits
+
+| Perturbation                                                                                                | Required decision                                                                                             |
+| ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| An unreviewed meeting-record family could contain an amendment contradicting whether the draft was recorded | `HOLD_FOR_SOURCE_REVIEW` for the affected claim/span, with a separate exposure hold.                          |
+| The witness consists only of a partial ledger and negative keyword searches                                 | Semantic HOLD: substantive coverage adequacy is not established.                                              |
+| A controlling exception is present in a materially uninspected representation                               | Component-level unsupported result where appropriate; affected source/span HOLD.                              |
+| Evidence fully supports the historical recording but later operational status is uncertain                  | Preserve candidacy for the historical recording; HOLD the stronger operational claim.                         |
+| Source C is substantively qualified, but the overall packet lacks adequate required source-family coverage  | Preserve C's scoped candidate status; packet/world `RELEASE_HOLD` with reason `HOLD_SOURCE_WORLD_INCOMPLETE`. |
+
+Exact controlling language:
+
+- Section 7, line 104, rejects closure “solely from keyword-negative scans, a partial ledger or the absence of known exceptions.”
+- Section 7, line 106, requires substantive adequacy and imposes semantic HOLD for “a material gap, plausible controlling exception, unsupported coverage or uninspected dependency”.
+- Section 3, line 50, says an unrelated future deployment uncertainty need not block a supported past proposal claim.
+- Section 6, line 93, preserves a supportable historical statement while holding the stronger operational claim.&#x20;
+
+  NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V05.md
+
+  NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V05.md
+
+  NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V05.md
+
+
+
+The method also avoids a type error: Section 7 identifies `HOLD_SOURCE_WORLD_INCOMPLETE` as a packet/world release-hold reason, not a seventh source disposition. This protects well-supported narrow propositions from being incorrectly reclassified merely because the full author world is not yet sufficient.&#x20;
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V05.md
+
+
+
+M2 result: The source-level repair is internally determinate for these cases. Substantive coverage inadequacy blocks a candidate; lack of independent challenge alone does not. World insufficiency remains a separate gate.
+
+## 4. Material finding — Atomic-bundle authorization versus complete author-world freeze
+
+Material stage-order ambiguity
+
+The core M1/M2 repairs survive the direct tests. However, the full V0.5 text leaves one consequential ambiguity at the boundary between independently authorized atomic-bundle disclosure and the separate complete author-world freeze.
+
+This is a textual counterexample, not an observed implementation failure. It affects M1's release path and can also affect an M2-qualified source included in a partial packet.
+
+### 4.1 Exact V0.5 anchors
+
+Path A — Authorization can appear sufficient for disclosure of an atomic bundle
+
+Section 7, line 108:
+
+> “Independently challenge, accept and authorize the exact atomic bundle before disclosure”
+
+Section 9, line 129, defines a release transition from `RELEASE_HOLD` to `AUTHORIZATION_GRANTED`, conditioned on the approved authority, immutable exposure manifest, challenged packet, protected custody, rendering and cumulative-public-history checks.
+
+Section 2, line 37, lists `CONDITIONAL_BUNDLE` and `ASSEMBLED_AUTHOR_PACKET` together and calls author-world sufficiency “additional”.&#x20;
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V05.md
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V05.md
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V05.md
+
+
+
+Path B — Complete author-world acceptance is separately required
+
+Section 9, line 130, defines `WORLD_UNFROZEN` to `WORLD_FROZEN` only after permitted coverage, four-family answerability, neutral context and independent acceptance.
+
+Section 11, line 150, describes S3 as a:
+
+> “frozen author-world admitted exact source/excerpt packet with independently accepted family completeness and unexposed new task author.”
+
+Section 8 independently requires world-sufficiency assessment beyond individual packet safety.&#x20;
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V05.md
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V05.md
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V05.md
+
+
+
+### 4.2 Smallest reproducing fictional case
+
+Reuse records A and B from M1, but advance their procedural state:
+
+1. Both source spans and their complete context have been substantively examined.
+2. Their exact atomic bundle and negative-search witness have passed independent challenge.
+3. A separately approved authority has granted `AUTHORIZATION_GRANTED` for that exact bundle, with all specified rendering, custody and cumulative-disclosure checks completed.
+4. The full prospective author-world packet has not completed independent four-family sufficiency acceptance. `WORLD_UNFROZEN` remains.
+5. No specific missing source family has yet been demonstrated; the outstanding defect is incomplete world-level acceptance, not an identified semantic deficiency in A or B.
+
+Proposed author exposure: The neutral primary task author is shown the exact A+B original spans through the authorized author interface before the complete world is frozen.
+
+This is not a release attempt at `PROPOSED`. All local bundle acceptance and authorization gates have been satisfied.
+
+### 4.3 Competing decision paths
+
+Decision path A: Sections 7 and 9 can be read to permit disclosure after atomic-bundle challenge, acceptance and authorization. The exact bundle has obtained `AUTHORIZATION_GRANTED`.
+
+Decision path B: Sections 8, 9 and 11 preserve complete author-world sufficiency as a distinct requirement for S3. The neutral task author should not receive an incomplete or not-yet-accepted author world while the world remains `WORLD_UNFROZEN`.
+
+Both interpretations are possible because V0.5 does not explicitly state whether `WORLD_FROZEN` is a prerequisite to primary task-author disclosure, rather than only to the formal world-freeze outcome.
+
+### 4.4 Why the existing precedence rule does not conclusively close it
+
+Section 1, line 23, expressly governs Sections 3, 5, 7 and 9. It requires independent context acceptance and exact exposure authorization “before any author disclosure or world freeze”. That establishes necessary prerequisites for both events, but does not specify that world freeze must precede disclosure.
+
+Section 7, line 106, provides `HOLD_SOURCE_WORLD_INCOMPLETE` when source-family sufficiency is inadequate. The fictional case instead has substantively adequate local evidence with world-level independent acceptance pending. Pending acceptance is not equivalent to a demonstrated incomplete source family.&#x20;
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V05.md
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V05.md
+
+
+
+The existing rules therefore do not unambiguously distinguish:
+
+- Internal authorization of a reviewed atomic component for inclusion in a future world.
+- Final authorization to expose that component to the neutral primary task author.
+
+This is material because an early partial-world disclosure could defeat the intended frozen-author-world boundary, even though the individually released original spans are safe and accurately qualified.
+
+It does not invalidate the legitimate unchallenged `PROPOSED / CONDITIONALLY_CLOSED / CHALLENGE_PENDING / RELEASE_HOLD` paths demonstrated in M1 and M2.
+
+### 4.5 Single method-text correction recommended
+
+Insert the following normative qualification into Section 1's precedence rule, and make Section 9's release transition subject to it:
+
+> Atomic-bundle authorization versus task-author disclosure: Independent acceptance and authorization of an exact conditional bundle qualify that bundle for inclusion in a prospective author world; they do not, by themselves, authorize disclosure to the neutral primary task author. Such disclosure is prohibited until the complete exact assembled author-world packet has independently satisfied its required source-family, context, answerability and disclosure gates and has reached `WORLD_FROZEN`. Qualified reviewer-only rendering or boundary testing before world freeze may occur only under its separately authorized protected-access scope and does not constitute primary task-author release. Source-level candidacy, `CONDITIONALLY_CLOSED`, challenge outcomes and substantive HOLD/prohibition rules remain unchanged.
+
+Counter-risk: If applied to all inspection and rendering, this amendment could create another deadlock by preventing the independent author-view testing needed before freeze. The reviewer-only testing exception is therefore essential. It must not become a route for disclosing content to the primary task author.
+
+This correction targets one precise stage-order issue. It does not require rewriting the M1/M2 semantic proposal rules.
+
+### 4.6 Other attempted counterexamples already closed
+
+The remaining inspected provisions resolve several potential objections without further amendment:
+
+| Attempted counterexample                                                        | Existing controlling provision                                                         |
+| ------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| Missing independent challenger incorrectly forces semantic HOLD                 | Sections 1, 7 and 9 expressly distinguish substantive adequacy from pending challenge. |
+| `CONDITIONALLY_CLOSED` becomes a seventh primary disposition                    | Sections 1, 3 and 7 explicitly define it as a typed dependency attribute.              |
+| A confirmed protected span becomes releasable after delivery repair             | Section 4 preserves the prohibition veto across missing-byte repairs.                  |
+| An unreadable component is confused with missing delivery                       | Sections 3–4 distinguish received unsupported representation from absent bytes.        |
+| Reviewer-private explanation substitutes for necessary original context         | Sections 5 and 7 explicitly prohibit that substitution.                                |
+| Unknown later activation invalidates an otherwise supported historical proposal | Sections 3 and 6 preserve properly bounded historical propositions.                    |
+| Pairwise safe sources automatically produce a safe packet                       | Section 8 requires a separate assembled-exposure leakage screen.                       |
+| A candidate's rejection from packet selection proves source irrelevance         | Sections 2 and 8 distinguish `NOT_SELECTED_FOR_PACKET` from source dispositions.       |
+
+These are negative findings: no additional material contradiction was established by the corresponding fictional tests.&#x20;
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V05.md
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V05.md
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V05.md
+
+
+
+## 5. Single verdict
+
+`AMEND_MATERIAL_STAGE_DEFECT`
+
+Basis: The two targeted prechallenge repairs are substantively sound under the fictional positive and disqualifying tests. Nevertheless, a remaining stage-order ambiguity allows atomic-bundle release authorization to be interpreted as sufficient for primary task-author disclosure before independent acceptance and freezing of the complete author world.
+
+This warrants one focused textual correction. It does not warrant reopening the earlier fictional test suite or weakening semantic candidacy.
+
+I cannot establish whether the ambiguity is newly introduced by V0.5 or inherited from an earlier version, because earlier versions were outside the permitted input boundary.
+
+## 6. Limits and separate S1–S4 holds
+
+The result is confined to internal determinacy of the supplied V0.5 method text. The fictional cases are analytical counterexamples, not actual review records, experiments or implementation observations.
+
+| Stage                                           | Status after this check                                                                                                                        |
+| ----------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| S0 — Synthetic method assessment                | Source-free critique supplied; method-text amendment recommended. No independently certified method acceptance.                                |
+| S1 — Real reviewer and protected infrastructure | `NOT_QUALIFIED` — no verified actor assignment, transport, confidential custody/readback, access controls or actual author-view qualification. |
+| S2 — Real source-specific review                | `NOT_STARTED` — no historical source inspection or adjudication.                                                                               |
+| S3 — Author-world formation                     | `WORLD_UNFROZEN` — no author-source admissions, independently accepted complete packet or primary task authoring.                              |
+| S4 — Gold and scoring                           | `GOLD=NONE`; `B0_B4_SCORING=NOT_STARTED`. Existing scientific gates remain outside this exercise.                                              |
+
+These statuses reflect the supplied contract's stated baseline and what this check did not change; they are not independently verified operational states.&#x20;
+
+NON_ARM_SOURCE_STATUS_REVIEWER_CONTRACT_CANDIDATE_V05.md
+
+
+
+The substantive M1/M2 proposal-stage fixes should be preserved. The single remaining recommended action is to make the complete-world-freeze prerequisite for primary task-author disclosure explicit, while preserving separately authorized reviewer-only testing.
+
+No real-source permission, reviewer independence, historical-source completeness, author-world acceptance, gold validity or scoring authority follows from this critique.
