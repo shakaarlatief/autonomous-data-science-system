@@ -105,6 +105,73 @@ def test_each_fresh_report_has_new_private_canaries_without_public_defaults() ->
     )
 
 
+@pytest.mark.parametrize("candidate", [b"x", b"short", b"seven77"])
+def test_existing_nonempty_short_passphrase_reaches_next_validation_gate(
+    candidate: bytes,
+) -> None:
+    """Reader must not impose a password-length policy absent from key creation."""
+    # Invented non-existent inputs ensure that the next expected rejection is
+    # the ordinary file-admission gate, never an owner credential operation.
+    with pytest.raises(probe.ProbeHold, match="^OWNER_INPUT_NOT_AVAILABLE$"):
+        probe.owner_verify_ciphertext(
+            Path("invented-missing-ciphertext.cms"),
+            Path("invented-missing-public-cert.pem"),
+            Path("invented-missing-private-key.pem"),
+            "0" * 64,
+            passphrase=candidate,
+        )
+
+
+@pytest.mark.parametrize("candidate", [
+    b"", b"x" * 257, b"line\nbreak", b"line\rbreak",
+    "not-byte-input",
+])
+def test_owner_passphrase_stdin_transport_still_rejects_invalid_forms(
+    candidate: object,
+) -> None:
+    """Unusable transport bytes remain a source-free fail-closed hold."""
+    with pytest.raises(probe.ProbeHold, match="^OWNER_PASSPHRASE_INPUT_INVALID$"):
+        probe.owner_verify_ciphertext(
+            Path("invented-missing-ciphertext.cms"),
+            Path("invented-missing-public-cert.pem"),
+            Path("invented-missing-private-key.pem"),
+            "0" * 64,
+            passphrase=candidate,
+        )
+
+
+@pytest.mark.skipif(not OPENSSL, reason="OpenSSL CMS not available in test environment")
+def test_short_existing_passphrase_openssl_cms_owner_readback(tmp_path: Path) -> None:
+    """A short passphrase accepted at key creation must recover the CMS report."""
+    # The known public six-byte test constant is never an actual owner secret.
+    fake_password = b"test42"
+    key = tmp_path / "short-test-only-encrypted-key.pem"
+    cert = tmp_path / "short-test-only-public-cert.pem"
+    created = subprocess.run(
+        [OPENSSL, "req", "-new", "-x509", "-newkey", "rsa:2048",
+         "-passout", "pass:test42", "-keyout", str(key), "-out", str(cert),
+         "-subj", "/CN=ADS-A2-SHORT-PASSPHRASE-TEST-ONLY", "-days", "1"],
+        capture_output=True, timeout=25, check=False,
+    )
+    assert created.returncode == 0, "synthetic short-passphrase test keygen failed"
+    assert key.read_bytes().startswith(b"-----BEGIN ENCRYPTED PRIVATE KEY-----")
+    output = tmp_path / probe.OUTPUT_NAME
+    sent = probe.seal_report(_report(3), cert, output, executable=OPENSSL)
+    recovered = probe.owner_verify_ciphertext(
+        output, cert, key, sent["ciphertext_sha256"],
+        passphrase=fake_password, executable=OPENSSL,
+    )
+    assert recovered["owner_full_readback"] == "PASS"
+    assert recovered["report_schema_and_manifest"] == "PASS"
+    assert recovered["record_count"] == 5
+    assert recovered["author_route_access_denial_proven"] is False
+    with pytest.raises(probe.ProbeHold, match="^CMS_AUTHENTICATION_FAILED$"):
+        probe.owner_verify_ciphertext(
+            output, cert, key, sent["ciphertext_sha256"],
+            passphrase=b"wrong", executable=OPENSSL,
+        )
+
+
 @pytest.mark.skipif(not OPENSSL, reason="OpenSSL CMS not available in test environment")
 def test_actual_source_free_cms_encrypt_and_owner_readback(tmp_path: Path) -> None:
     """The old hardcoded three-record fake recipient is not reused here."""

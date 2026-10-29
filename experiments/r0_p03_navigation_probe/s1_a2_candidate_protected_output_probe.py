@@ -310,7 +310,11 @@ def owner_verify_ciphertext(ciphertext: Path, cert: Path, private_key: Path,
     if not isinstance(expected_cipher_sha256, str) or \
        not HEX64.fullmatch(expected_cipher_sha256):
         raise ProbeHold("CIPHERTEXT_DIGEST_ARGUMENT_INVALID")
-    if not isinstance(passphrase, bytes) or not 8 <= len(passphrase) <= 256 or \
+    # The owner key already exists and its passphrase was accepted by OpenSSL
+    # during creation. Do not impose a new eight-byte minimum when reading it:
+    # authentication of the encrypted key and CMS report remains mandatory.
+    # Still reject empty/line-delimited stdin input and unbounded input size.
+    if not isinstance(passphrase, bytes) or not 1 <= len(passphrase) <= 256 or \
        b"\n" in passphrase or b"\r" in passphrase:
         raise ProbeHold("OWNER_PASSPHRASE_INPUT_INVALID")
     if ciphertext.name != OUTPUT_NAME or not ciphertext.is_file() or \
