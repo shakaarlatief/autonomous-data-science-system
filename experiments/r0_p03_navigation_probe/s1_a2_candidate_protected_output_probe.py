@@ -62,6 +62,35 @@ RECORD_FIELDS = frozenset({
     "fixture_id", "delivered", "inspected", "byte_count",
     "source_sha256", "representation", "disposition", "private_canary",
 })
+# Only these source-free diagnostic identifiers may leave the owner's private
+# verifier. Exception text, OpenSSL stderr, decrypted data, key paths, report
+# contents and passphrase properties must never be printed.
+OWNER_SAFE_HOLD_CODES = frozenset({
+    "OWNER_PASSPHRASE_INPUT_INVALID",
+    "OWNER_INPUT_NOT_AVAILABLE",
+    "CIPHERTEXT_INTEGRITY_MISMATCH",
+    "PUBLIC_CERT_NOT_READABLE",
+    "PUBLIC_CERT_FORMAT_INVALID",
+    "PUBLIC_CERT_VERIFICATION_ERROR",
+    "PUBLIC_CERT_VERIFICATION_FAILED",
+    "CMS_DECRYPTION_EXECUTION_FAILED",
+    "CMS_AUTHENTICATION_FAILED",
+    "REPORT_SIZE_INVALID",
+    "REPORT_JSON_INVALID",
+    "SCHEMA_FIELDS_INVALID",
+    "DUPLICATE_JSON_FIELD",
+    "NONCANONICAL_REPORT",
+    "REPORT_IDENTITY_INVALID",
+    "ROLE_OR_SOURCE_HOLD_MISSING",
+    "REPORT_NONCE_INVALID",
+    "RECORD_COMPLETENESS_INVALID",
+    "PRIVATE_RECORD_ID_INVALID",
+    "REQUIRED_FAKE_RECORD_INVALID",
+    "OPTIONAL_FAKE_HOLD_INVALID",
+    "PRIVATE_CANARY_DUPLICATED",
+    "OPENSSL_NOT_AVAILABLE",
+    "CIPHERTEXT_DIGEST_ARGUMENT_INVALID",
+})
 
 
 class ProbeHold(ValueError):
@@ -361,7 +390,17 @@ def main() -> int:
             )
         print(_canonical(receipt).decode("ascii"))
         return 0
-    except (ProbeHold, FileNotFoundError, FileExistsError, OSError, ValueError):
+    except ProbeHold as exc:
+        # Diagnostic-only stage identifier: a static allowlist of synthetic
+        # verifier errors. Never print arbitrary exception text or OpenSSL
+        # stderr because they may contain owner-only paths or private output.
+        if args.command == "owner-verify":
+            code = str(exc)
+            safe_code = code if code in OWNER_SAFE_HOLD_CODES else "OWNER_UNCLASSIFIED_HOLD"
+            print(f"SOURCE_FREE_A2_OWNER_HOLD_CODE={safe_code}", file=sys.stderr)
+        print("SOURCE_FREE_A2_PROBE_HOLD", file=sys.stderr)
+        return 2
+    except (FileNotFoundError, FileExistsError, OSError, ValueError):
         # No exception messages: a process or path error could contain an
         # owner-only directory, private filename, or certificate material.
         print("SOURCE_FREE_A2_PROBE_HOLD", file=sys.stderr)

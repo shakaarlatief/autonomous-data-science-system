@@ -165,6 +165,52 @@ def test_actual_source_free_cms_encrypt_and_owner_readback(tmp_path: Path) -> No
         )
 
 
+@pytest.mark.parametrize(
+    ("failure_code", "expected_code"),
+    [
+        ("OWNER_PASSPHRASE_INPUT_INVALID", "OWNER_PASSPHRASE_INPUT_INVALID"),
+        ("CMS_AUTHENTICATION_FAILED", "CMS_AUTHENTICATION_FAILED"),
+        ("RECORD_COMPLETENESS_INVALID", "RECORD_COMPLETENESS_INVALID"),
+        ("private-path-and-canary-DO-NOT-PRINT", "OWNER_UNCLASSIFIED_HOLD"),
+    ],
+)
+def test_owner_cli_emits_only_allowlisted_source_free_diagnostic(
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+    failure_code: str,
+    expected_code: str,
+) -> None:
+    """No owner key, credential or decrypted report enters this CLI test."""
+    import io
+
+    class OwnerStdin(io.StringIO):
+        def isatty(self) -> bool:
+            return True
+
+    monkeypatch.setattr(probe.sys, "stdin", OwnerStdin())
+    monkeypatch.setattr(probe.sys, "argv", [
+        "source-free-probe.py", "owner-verify",
+        "--ciphertext", "fictional.cms",
+        "--recipient-public-cert", "fictional-public.pem",
+        "--recipient-private-key", "fictional-encrypted-key.pem",
+        "--expected-ciphertext-sha256", "a" * 64,
+    ])
+    monkeypatch.setattr(probe.getpass, "getpass", lambda _prompt: "test-only-passphrase")
+
+    def synthetic_owner_hold(*_args: object, **_kwargs: object) -> None:
+        raise probe.ProbeHold(failure_code)
+
+    monkeypatch.setattr(probe, "owner_verify_ciphertext", synthetic_owner_hold)
+    assert probe.main() == 2
+    out = capsys.readouterr()
+    assert out.out == ""
+    assert out.err == (
+        f"SOURCE_FREE_A2_OWNER_HOLD_CODE={expected_code}\\n"
+        "SOURCE_FREE_A2_PROBE_HOLD\\n"
+    ).replace("\\n", "\n")
+    assert "private-path-and-canary" not in out.err
+
+
 def test_public_script_does_not_qualify_custody_or_real_source_intake() -> None:
     raw = Path(probe.__file__).read_text(encoding="utf-8")
     assert 'owner_exclusive_access_proven": False' in raw
