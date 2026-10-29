@@ -22,6 +22,43 @@ The owner must first select and explicitly approve the **actual private recipien
 
 Before sending the packet to the candidate, require owner-side choices for key custody, recipient authorization, restricted artifact retention/recovery, and which genuine future primary-author interface will be used for negative access tests. If these are undecided, remain in `OWNER_RECIPIENT_SELECTION_HOLD`. Do not create actual owner credentials through the exposed coordinator as a shortcut.
 
+## Bounded owner-operated M1 trial on the current PC
+
+Research 574 and Research 600 already selected a proportionate owner-mediated M1 route as the preferred next trial. **Another device, Windows account, VM or reviewer service is not required merely to run this source-free handoff.** For this specific fictional-only qualification, the owner may opt in to a fresh recipient on the current PC by running the reviewed `scripts/r0_p03_s1_a2_owner_source_free_recipient.ps1` locally in their ordinary interactive PowerShell terminal. This is a bounded test of the chosen route, **not** proof of OS-wide or provider-wide reviewer confidentiality. The separate author-route negative-access qualification remains held.
+
+First, in the owner's own PowerShell window, run:
+
+```powershell
+cd C:\Projects_Data\autonomous-data-science-system
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\r0_p03_s1_a2_owner_source_free_recipient.ps1 -Action SelfTest
+```
+
+This must return `S1_A2_OWNER_SOURCE_FREE_PREFLIGHT=PASS`, and it creates **no credentials**. Only if the owner agrees to create a disposable, passphrase-encrypted source-free test key on the current PC, they separately and explicitly invoke:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\r0_p03_s1_a2_owner_source_free_recipient.ps1 -Action Prepare
+```
+
+OpenSSL asks for a **new** encryption passphrase in the owner's interactive console. The passphrase must never be pasted into ChatGPT, any AI tool, logs, command-line arguments, environment variables or a shared file. The command checks that the private key has an encrypted PEM header, keeps it under a fresh owner-side LocalAppData directory with owner+SYSTEM-only ACL rules, and exports **only** its public certificate to Downloads. The owner should retain the displayed recipient ID and public certificate SHA-256. The owner may send the **public certificate file alone** to the same candidate Temporary Chat. Do not attach any private PEM or owner directory. A failed or cancelled key-generation step is HOLD; do not guess or bypass it.
+
+After the candidate produces `a2_candidate_protected_source_free_v1.cms` and a public-safe ciphertext SHA-256, the owner downloads that encrypted file, keeps its filename unchanged, and in the same private PowerShell session uses the resulting ID and digest:
+
+```powershell
+$RecipientId = "<the-new-32-character-owner-recipient-id>"
+$CipherSha256 = "<the-candidate-reported-64-character-ciphertext-sha256>"
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\r0_p03_s1_a2_owner_source_free_recipient.ps1 -Action Receive -RecipientId $RecipientId -Ciphertext "$HOME\Downloads\a2_candidate_protected_source_free_v1.cms" -ExpectedSha256 $CipherSha256
+```
+
+The owner-side command verifies the transferred ciphertext hash and byte count, creates an exclusive persistent source-free ciphertext copy plus a minimal receipt under the owner-side directory, then calls the existing `owner-verify` implementation with an interactive passphrase prompt. It prints **only sanitized aggregate verification results**, not the actual private report/canaries.
+
+For independently repeatable readback from saved bytes, in a separate invocation (including after restarting PowerShell) run:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\r0_p03_s1_a2_owner_source_free_recipient.ps1 -Action Verify -RecipientId $RecipientId
+```
+
+Owner `Receive` and `Verify` were **not** executed during coordinator-side preparation, and no actual owner key was created there. Their live behavior and recovery are precisely the **next evidence to observe**, not an existing PASS. If the owner wishes to report the outcome here, report only the public-safe PASS/HOLD markers, recipient ID if desired, and candidate ciphertext SHA-256. Do not disclose the owner key, password, private folder path or private report contents. If the actual candidate Temporary Chat is no longer accessible, that is a continuity hold: a newly opened candidate session requires renewed session-intake qualification and must not inherit the previous session's identity claim.
+
 ## Exact candidate session packet
 
 Supply to the SAME prospective reviewer Temporary Chat, after owner approval, only:
