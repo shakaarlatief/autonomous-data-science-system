@@ -1,0 +1,153 @@
+# R0-P03 S1 A2 — Future Author-View Route Intake Report V0.1
+
+TEST-ONLY · INTAKE_REPORTED_ONLY
+
+Assessment date: 2026-10-29\
+Scope: Supplied brief and directly observable capabilities in this conversation only\
+Authority: Observation and capability inventory, not an access-denial certificate or author appointment
+
+## A. Supplied input inventory and exact public positive marker
+
+The observable user-supplied inputs consist of:
+
+1. One user message instructing this test-only intake.
+2. One attached Markdown file: `S1_A2_FUTURE_AUTHOR_VIEW_ROUTE_INTAKE_V01.md`.
+
+No additional user-supplied project files, historical source packs, reviewer records, comparator materials, or prior conversation transcripts are visible in this conversation.
+
+Exact public positive marker:
+
+`ADS_A2_AUTHOR_VIEW_INTAKE_PUBLIC_V01`
+
+Marker successfully verified in the attached brief.
+
+The following operations were actually performed:
+
+- Read the supplied document text visible in the conversation.
+- Used the available Python environment to read the attached file's raw bytes from its explicitly supplied attachment path.
+- Decoded those bytes as UTF-8.
+- Confirmed the public marker exists in the decoded content.
+- Computed a SHA-256 digest from the bytes actually read.
+
+RAW-FILE READ EVIDENCE
+
+Bytes read: 5,684
+
+UTF-8 decode: Successful
+
+Marker present: YES
+
+SHA-256
+
+090ccfc8e6a78fa1bb841deb4e8c074ea65446312da20af75a8bcd5cbb49b67e
+
+This digest is evidence of the supplied brief's observed raw bytes only. It does not establish the authenticity or provenance of the document.
+
+No other file was read.
+
+## B. Actually visible tool categories with evidence classes
+
+The following classifications describe what is actually exposed or tested in this conversation. `UNAVAILABLE` describes a reported or visibly absent interface route, not an independently verified access-control denial.
+
+| Tool/data category                   | Evidence class     | Observation                                                                                                                                                               |
+| ------------------------------------ | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Attached-file readers                | `TESTED`           | Python successfully read the supplied brief. A conversation-file reader interface is also visible but was not separately tested.                                          |
+| Local code/filesystem                | `TESTED`           | Python executed successfully and read the authorized attachment. Other filesystem locations and permissions were not examined.                                            |
+| Codex / Runtime Bridge               | `UNKNOWN`          | No identifiable Codex or Runtime Bridge route is exposed in the visible tools. No direct access or denial test occurred.                                                  |
+| GitHub / repository                  | `UNKNOWN`          | No dedicated repository connector is visible. Repository accessibility was not tested.                                                                                    |
+| Cloud drive / connected applications | `UNAVAILABLE`      | The session environment describes personalized connected-app and Library access as disabled. This was not independently verified through an access-denial test.           |
+| Web                                  | `VISIBLE_UNTESTED` | Web search, browsing and related functions are exposed. None was invoked.                                                                                                 |
+| Memory / conversation retrieval      | `VISIBLE_UNTESTED` | A previous-turn summary-reading function is described, but was not called. Personal memory updates are described as disabled. Other-session retrieval remains unverified. |
+| Other tool surfaces                  | `VISIBLE_UNTESTED` | Tool orchestration, bundled-skill reading and UI utilities are described. None was used to obtain external or historical information.                                     |
+
+Classification limitations: Testing Python against the attached brief establishes access to that particular authorized attachment. It does not establish filesystem-wide access, repository access, access to owner-held directories, or the ability to retrieve other conversations.
+
+The absence of a dedicated route in the visible tool descriptions is not evidence of a successfully enforced access restriction.
+
+## C. Session and provider exposure unknowns
+
+| Property                              | Finding                                                                                                      |
+| ------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Product interface                     | ChatGPT tool-enabled conversation environment                                                                |
+| Temporary Chat status                 | `UNKNOWN` — environment description indicates a temporary chat, but UI state was not independently inspected |
+| Project membership                    | `UNKNOWN` — no independent Project-membership verification                                                   |
+| Account identity                      | `UNKNOWN` — not inspected                                                                                    |
+| Hidden provider context               | `UNKNOWN`                                                                                                    |
+| Personal memory/history exposure      | `UNKNOWN` beyond the reported disabled surfaces                                                              |
+| Previous conversation availability    | `UNKNOWN` — no cross-conversation access tested                                                              |
+| Repository/account connection state   | `UNKNOWN` beyond visible route descriptions                                                                  |
+| Actual independent-author eligibility | `NO` — this session is explicitly test-only                                                                  |
+
+The model can observe its supplied runtime instructions, visible tool descriptions, user message, and attached brief. It cannot independently audit the complete provider-side context assembly process.
+
+Consequently, the absence of visible prior project information does not prove zero historical exposure, memory influence, or provider-side information leakage.
+
+The session's apparent temporary status is not treated as an authentication certificate or negative-access witness.
+
+## D. Material exposure or role conflict
+
+No unexpected project-private exposure was observed during the authorized inspection.
+
+The only visible project-specific identifiers and methodological context are those supplied in the attached intake brief itself.
+
+No historical ADS source, private reviewer evidence, prior comparator response, owner-held record, or scoring material was delivered as an additional visible user input.
+
+No search or read operation targeting historical project material was performed.
+
+The following role constraint applies:
+
+This test actor is permanently ineligible to serve later as the actual blind primary task author, reference annotator, scored arm author, reviewer, challenger, or evaluator.
+
+That ineligibility follows the supplied brief's test-only designation; it is not an inference about model independence.
+
+No unexpected role conflict was identified beyond this explicit prohibition.
+
+The absence of unexpected material exposure does not establish the stronger claim that provider-side historical exposure is impossible.
+
+## E. Source-free actual access-denial observation
+
+Current finding: `NEGATIVE_ACCESS_TEST_NOT_INSTRUMENTABLE`
+
+The present test does not contain an authorized invented denial target, a documented access-control boundary for such a target, or an instrumented future-author route against which an actual denied read could be observed.
+
+A later owner-authorized negative-access observation would require:
+
+1. A separately created, invented, nonsecret target with a known access policy.
+2. The precise tool route actually exposed to the proposed future-author interface.
+3. An explicit authorization to test that route against the invented target.
+4. An observable attempt and recorded result, such as a returned access-denied response, supported by suitable instrumentation.
+
+A successful denial under those conditions could support a narrowly scoped claim about that target and route. It would not automatically prove universal isolation from other accounts, tools, memories, files, or histories.
+
+In the current session:
+
+- No restricted reviewer or owner-held target was requested.
+- No forbidden access was attempted.
+- No access-denied response was observed.
+- No independent negative-access certificate was produced.
+- No A2-R07 `PASS` determination is justified.
+
+The authorized file-read test in Section A is a positive-access observation, not a negative-access test.
+
+## F. Final safe markers
+
+Final intake outcome
+
+INTAKE_REPORTED_ONLY
+
+This outcome records the available capability observations without claiming author independence, historical isolation, or proven restricted-access denial.
+
+```
+A2_R07_TEST_ACTOR=NON_AUTHOR_SOURCE_FREE
+A2_R07_PUBLIC_BRIEF_VISIBLE=YES
+A2_R07_AUTHOR_VIEW_INTAKE=INTAKE_REPORTED_ONLY
+A2_R07_OWNER_RESTRICTED_TARGET_REQUESTED=NO
+A2_R07_DIRECT_AUTHOR_ACCESS_DENIAL=NOT_TESTED
+A2_R07_ACTUAL_PRIMARY_AUTHOR_ADMITTED=NO
+A2_R07_HISTORICAL_SOURCES_DELIVERED=ZERO
+A2_R07_SCORING=NOT_STARTED
+```
+
+Final determination: The supplied public brief was successfully read and its marker verified against the actual attached bytes. The limited positive file-access capability was tested, while other tool routes remain either untested, reported unavailable, or unknown.
+
+The intake is reportable as `INTAKE_REPORTED_ONLY`. A2-R07 remains on hold pending any separately authorized, instrumented access-denial assessment. No primary-author appointment, independence certification, or scoring activity has occurred.
