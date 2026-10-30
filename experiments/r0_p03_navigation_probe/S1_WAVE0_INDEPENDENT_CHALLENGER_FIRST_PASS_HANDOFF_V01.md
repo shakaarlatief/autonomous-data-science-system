@@ -6,6 +6,7 @@
 **Historical source pin:** `c57556a8bf993a1d327e9197acb7b7c745071cd8`.
 **First reviewer CMS digest for linkage only:** `9194093b4a4b452b90638bf80eb491d0898c0a7330a77275be74ac9f4aa5a366` (do not attach the ciphertext to the first-pass challenger).
 **Authority:** Preparation only. The first reviewer's restricted findings remain owner-held. The new second actor is not automatically appointed or verified independent by a new chat title. No author source release, gold, arm work or scoring.
+**Later explicit owner authorization, 2026-10-30 (Validation 295):** The owner answered **"I authorize"** to the exact second-session Wave0 ten-source ZIP transfer for one new independent challenger first pass, with only the four public-safe companion attachments listed below, including the existing owner **public** certificate. This authorization **does not include** first-reviewer private findings or complete the adversarial challenge. Historical prospective status markers below describe the preparation stage before this approval.
 
 ## Purpose and independence
 
