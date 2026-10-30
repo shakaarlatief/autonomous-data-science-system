@@ -123,6 +123,31 @@ def test_original_report_hash_and_canonical_constraints(monkeypatch):
         challenge.validate_report(raw + b"\n", rows)
 
 
+def test_flat_attached_modules_load_without_repository_package(tmp_path: Path):
+    """Verify two attached flat Python files import in isolated interpreter."""
+    import shutil
+    import sys
+
+    candidate = tmp_path / "s1_wave0_independent_challenger_first_pass.py"
+    dependency = tmp_path / "s1_source_status_protected_route.py"
+    shutil.copyfile(Path(challenge.__file__), candidate)
+    shutil.copyfile(Path(original.__file__), dependency)
+    statement = (
+        "import importlib.util, sys; "
+        "s=importlib.util.spec_from_file_location('isolated_challenger',sys.argv[1]); "
+        "m=importlib.util.module_from_spec(s); s.loader.exec_module(m); "
+        "assert m.original.FORMAT=='ads-r0-p03-s1-source-status-restricted-v1'; "
+        "print('INDEPENDENT_TWO_FLAT_ATTACHMENTS=PASS')"
+    )
+    observed = subprocess.run(
+        [sys.executable, "-I", "-B", "-c", statement, str(candidate)],
+        cwd=tmp_path, capture_output=True, text=True,
+        check=False, timeout=20,
+    )
+    assert observed.returncode == 0, observed.stderr
+    assert observed.stdout.strip() == "INDEPENDENT_TWO_FLAT_ATTACHMENTS=PASS"
+
+
 def test_actual_openssl_fake_cms_roundtrip(monkeypatch, tmp_path: Path):
     z, rows = fake_batch(monkeypatch)
     openssl = original.openssl_path()

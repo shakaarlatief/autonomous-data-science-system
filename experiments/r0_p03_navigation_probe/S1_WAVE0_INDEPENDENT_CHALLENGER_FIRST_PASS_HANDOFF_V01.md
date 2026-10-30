@@ -45,6 +45,8 @@ After owner approval of this second-session source scope, owner attaches **only*
 4. The **same existing owner-only public certificate** `S1_REAL_REVIEW_OWNER_PUBLIC_<original recipient ID>.pem`, copied from the earlier reviewer setup, **not** the private key/cert-store path or passphrase.
 5. The original's **public-safe code library module** `experiments/r0_p03_navigation_probe/s1_source_status_protected_route.py`, because the challenger module imports its batch-verification and per-source validator functions. This file contains no reviewer-private conclusions.
 
+**Standalone attachment compatibility (2026-10-30):** The challenger module now supports the two public Python files delivered side-by-side in a flat Temporary Chat file directory. It first attempts the ADS project package import when that package is available, and otherwise loads only the named sibling `s1_source_status_protected_route.py`. This fallback was tested in an isolated Python interpreter with both files copied as independent attachments. No repository checkout, connected app or web search is needed to resolve the dependency.
+
 **Do not attach** the existing first-reviewer ciphertext `R0_P03_S1_WAVE0_OWNER_REVIEW.cms`, its owner-private receipt, a decrypted private report, any selected source-status mapping, old gold, full project research docs, or a prior reviewer chat transcript. The first reviewer CMS SHA-256 may be used solely as an opaque fixed linkage field.
 
 ### Exact input contract

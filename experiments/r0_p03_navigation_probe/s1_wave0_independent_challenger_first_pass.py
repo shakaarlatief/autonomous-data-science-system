@@ -23,9 +23,28 @@ import re
 import subprocess
 import sys
 
-from experiments.r0_p03_navigation_probe import (
-    s1_source_status_protected_route as original,
-)
+try:
+    from experiments.r0_p03_navigation_probe import (
+        s1_source_status_protected_route as original,
+    )
+except ModuleNotFoundError as exc:
+    if exc.name not in ("experiments", "experiments.r0_p03_navigation_probe"):
+        raise
+    # Independent Temporary Chat attachments are flat files rather than a
+    # checked-out Python package. Permit exactly the supplied sibling module,
+    # without importing the rest of the project or searching the network.
+    from importlib.util import module_from_spec, spec_from_file_location
+
+    sibling = Path(__file__).resolve().parent / "s1_source_status_protected_route.py"
+    if not sibling.is_file() or sibling.is_symlink():
+        raise ModuleNotFoundError(
+            "Required attached Wave0 source-status validator is missing"
+        ) from exc
+    spec = spec_from_file_location("_r0_p03_wave0_attached_source_validator", sibling)
+    if spec is None or spec.loader is None:
+        raise ModuleNotFoundError("Cannot load attached Wave0 source validator") from exc
+    original = module_from_spec(spec)
+    spec.loader.exec_module(original)
 
 FORMAT = "ads-r0-p03-s1-independent-challenger-first-pass-v1"
 OUTPUT_NAME = "R0_P03_S1_WAVE0_OWNER_CHALLENGER_FIRST_PASS.cms"
