@@ -139,6 +139,36 @@ def compare(case: dict, *, action: str, password: bytes = b"fictional-only") -> 
     )
 
 
+
+def test_owner_wrapper_launches_repository_module_from_root() -> None:
+    """Guard the real PowerShell invocation that failed before CMS decryption.
+
+    The owner script must not use an absolute .py argument with imports of
+    experiments.*, because Python otherwise starts with the nested script
+    folder on sys.path instead of the repository root. This test executes the
+    exact -m entry point harmlessly with --help using the repo root.
+    """
+    import sys
+
+    root = Path(__file__).resolve().parents[2]
+    wrapper = root / "scripts" / "r0_p03_s1_owner_wave0_private_compare.ps1"
+    text = wrapper.read_text(encoding="utf-8")
+    assert '$Module="experiments.r0_p03_navigation_probe.s1_wave0_owner_private_compare"' in text
+    assert '$args=@("-B","-m",$Module,"--action",$Action' in text
+    assert text.count("Push-Location -LiteralPath $Repo") >= 2
+    assert 'OWNER_COMPARISON_MODULE_LAUNCH_FAILED' in text
+    observed = subprocess.run(
+        [sys.executable, "-B", "-m",
+         "experiments.r0_p03_navigation_probe.s1_wave0_owner_private_compare",
+         "--help"],
+        cwd=root, capture_output=True, text=True, timeout=20, check=False,
+    )
+    assert observed.returncode == 0, observed.stderr
+    assert "--action {Compare,Verify}" in observed.stdout
+    assert "--reviewer-cms" in observed.stdout
+    assert "--challenger-cms" in observed.stdout
+
+
 def test_synthetic_full_seal_then_recompute_and_keep_inputs_unchanged(
     monkeypatch: pytest.MonkeyPatch, tmp_path: Path,
 ) -> None:

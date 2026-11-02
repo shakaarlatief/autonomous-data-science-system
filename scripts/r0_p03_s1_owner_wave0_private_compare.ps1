@@ -24,6 +24,7 @@ $Repo=Split-Path -Parent $PSScriptRoot
 $Python=Join-Path $Repo ".venv\Scripts\python.exe"
 $OpenSsl="C:\Program Files\Git\usr\bin\openssl.exe"
 $Tool=Join-Path $Repo "experiments\r0_p03_navigation_probe\s1_wave0_owner_private_compare.py"
+$Module="experiments.r0_p03_navigation_probe.s1_wave0_owner_private_compare"
 $Wave=Join-Path $Repo ".venv\.r0_p03_source_status_wave0\R0_P03_SOURCE_STATUS_FIRST_WAVE_REVIEW_ONLY.zip"
 $WaveSha="c90c2d7120ffd32657e6506f876acd10e9779dc968ba9da8fb7f12604aa58387"
 $ReviewerSha="9194093b4a4b452b90638bf80eb491d0898c0a7330a77275be74ac9f4aa5a366"
@@ -48,6 +49,18 @@ foreach($p in @($Python,$OpenSsl,$Tool)) { Require-File $p "OWNER_COMPARISON_PRE
 Require-Hash $Wave $WaveSha "OWNER_COMPARISON_WAVE0_SOURCE_DRIFT"
 if ($Action -eq "SelfTest") {
     if ($RecipientId) { Fail "OWNER_COMPARISON_SELFTEST_ARGUMENTS_INVALID" }
+    # Verify the actual module launcher and both imports before any owner
+    # protected report or key is opened. This is safe even when run without
+    # an owner recipient. Direct script execution cannot import experiments.
+    Push-Location -LiteralPath $Repo
+    try {
+        & $Python -B -m $Module --help | Out-Null
+        $probeCode=$LASTEXITCODE
+    } finally {
+        Pop-Location
+    }
+    if ($probeCode -ne 0) { Fail "OWNER_COMPARISON_MODULE_LAUNCH_FAILED" }
+    Write-Output "S1_WAVE0_OWNER_PRIVATE_COMPARISON_MODULE_LAUNCH=PASS"
     Write-Output "S1_WAVE0_OWNER_PRIVATE_COMPARISON_PREFLIGHT=PASS"
     Write-Output "S1_WAVE0_OWNER_PRIVATE_COMPARISON_NEW_KEYS=NO"
     Write-Output "S1_WAVE0_OWNER_PRIVATE_COMPARISON_REPORTS_OPENED=NO"
@@ -87,15 +100,23 @@ if (-not [IO.File]::ReadAllText($Key).StartsWith("-----BEGIN ENCRYPTED PRIVATE K
 Require-Hash $Reviewer $ReviewerSha "OWNER_COMPARISON_REVIEWER_CMS_MISMATCH"
 Require-Hash $Challenger $ChallengerSha "OWNER_COMPARISON_CHALLENGER_CMS_MISMATCH"
 
-$args=@($Tool,"--action",$Action,"--batch-zip",$Wave,
+# Execute through -m from repository root. When executing a .py path,
+# Python puts the script directory (not the repository root) on sys.path,
+# and the absolute experiments import fails before opening any owner file.
+$args=@("-B","-m",$Module,"--action",$Action,"--batch-zip",$Wave,
     "--reviewer-cms",$Reviewer,"--challenger-cms",$Challenger,
     "--public-cert",$Cert,"--private-key",$Key,
     "--comparison-cms",$Comparison,"--openssl",$OpenSsl)
 $old=$ErrorActionPreference
 try {
     $ErrorActionPreference="Continue"
-    & $Python @args
-    $code=$LASTEXITCODE
+    Push-Location -LiteralPath $Repo
+    try {
+        & $Python @args
+        $code=$LASTEXITCODE
+    } finally {
+        Pop-Location
+    }
 } finally {
     $ErrorActionPreference=$old
 }
