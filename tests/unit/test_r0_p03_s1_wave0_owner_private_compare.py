@@ -19,6 +19,8 @@ from experiments.r0_p03_navigation_probe import (
     s1_source_status_protected_route as r,
     s1_wave0_independent_challenger_first_pass as c,
     s1_wave0_owner_private_compare as p,
+    s1_wave0_adversarial_packet as outbound,
+    s1_wave0_adversarial_challenge_report as challenged,
 )
 
 
@@ -244,3 +246,256 @@ def test_tampered_dossier_recheck_fails_and_does_not_overwrite(
     with pytest.raises(r.RouteHold, match="OWNER_COMPARISON_CMS_AUTHENTICATION_FAILED"):
         compare(case, action="Verify")
     assert case["out"].read_bytes() != before
+
+
+def setup_adversarial_synthetic(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path,
+) -> dict:
+    """Qualify the entire real-code path using invented-only source evidence."""
+    fixture = setup_fixture(monkeypatch, tmp_path)
+    compare(fixture, action="Compare")
+    comparison_digest = sha256(fixture["out"].read_bytes()).hexdigest()
+    monkeypatch.setattr(outbound, "COMPARISON_SHA256", comparison_digest)
+    monkeypatch.setattr(challenged, "PAIRED_CIPHERTEXT_HASH", comparison_digest)
+    monkeypatch.setattr(challenged, "SOURCE_HASH", r.BATCH_ZIP_SHA256)
+    monkeypatch.setattr(challenged, "FIRST_HASH", p.REVIEWER_SHA)
+    monkeypatch.setattr(challenged, "SECOND_HASH", p.CHALLENGER_SHA)
+    fixture["sender"] = (
+        Path(__file__).resolve().parents[2] / "experiments" /
+        "r0_p03_navigation_probe" / "s1_wave0_adversarial_challenge_report.py"
+    )
+    fixture["packet"] = tmp_path / outbound.NAME
+    return fixture
+
+
+def export_synthetic(fixture: dict, action: str = "Export") -> dict:
+    return outbound.run_owner(
+        action=action, batch=fixture["batch"], reviewer=fixture["first"],
+        independent=fixture["second"], comparison=fixture["out"],
+        cert=fixture["cert"], key=fixture["key"],
+        sender=fixture["sender"], output=fixture["packet"],
+        password=b"fictional-only", openssl=fixture["openssl"],
+    )
+
+
+def invented_substantive_report(packet: bytes) -> dict:
+    manifest, pair, rows, _ = challenged.packet_inputs(packet)
+    records = []
+    for index, row in enumerate(rows):
+        records.append({
+            "path": row["path"], "git_blob_oid": row["git_blob_oid"],
+            "sha256": row["sha256"],
+            "original_source_inspected": True,
+            "first_reviewer_reasoning_examined": True,
+            "independent_first_pass_reasoning_examined": True,
+            "first_reviewer_assessment": "DISPUTED" if index == 0 else "SUPPORTED",
+            "independent_first_pass_assessment": "DISPUTED" if index == 0 else "SUPPORTED",
+            "material_disagreement": "YES" if index == 0 else "UNCERTAIN",
+            "shared_blindspot": "YES" if index == 0 else "UNCERTAIN",
+            "strongest_counterargument": (
+                "FICTIONAL counterargument against both original source proposals."
+            ),
+            "source_grounded_evidence": (
+                "FICTIONAL evidence from an invented ten-source test file."
+            ),
+            "missing_or_uninspectable_context": (
+                "No missing context was demonstrated in this fabricated fixture."
+            ),
+            "claim_materiality": (
+                "FICTIONAL claim materiality: a contrary interpretation changes scope."
+            ),
+            "disclosure_materiality": (
+                "FICTIONAL disclosure materiality: possible historical answer exposure."
+            ),
+            "provisional_outcome": "HOLD_FOR_EVIDENCE" if index == 0
+                else "SUPPORTED_PROVISIONALLY",
+            "restricted_reasoning": (
+                "FICTIONAL RESTRICTED challenge reason; no actual source evaluated."
+            ),
+        })
+    return {
+        "format": challenged.FORMAT, "source_ref": challenged.SOURCE_REF,
+        "source_zip_sha256": challenged.SOURCE_HASH,
+        "private_paired_evidence_sha256": manifest["private_paired_evidence_sha256"],
+        "input_packet_sha256": challenged.sha(packet),
+        "role": "NON_ARM_SOURCE_STATUS_ADVERSARIAL_CHALLENGER",
+        "stage": "AFTER_TWO_PRESERVED_BLIND_FIRST_PASSES",
+        "first_reviewer_reasoning_seen": True,
+        "independent_first_pass_reasoning_seen": True,
+        "independence_limitations": (
+            "FICTIONAL session, not proof of isolated model/provider identity."
+        ),
+        "session_exposure_notes": (
+            "FICTIONAL exposure audit, no connected apps in invented exercise."
+        ),
+        "report_nonce": "c" * 32,
+        "records": records,
+        "challenge_state": "SUBSTANTIVE_CHALLENGE_REPORTED_NOT_ADJUDICATED",
+        "author_world": "WORLD_UNFROZEN",
+        "source_admissions": 0,
+    }
+
+
+def test_synthetic_adversarial_owner_export_and_recomputation(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path,
+) -> None:
+    fixture = setup_adversarial_synthetic(monkeypatch, tmp_path)
+    prior_hashes = {
+        k: sha256(fixture[k].read_bytes()).hexdigest()
+        for k in ("first", "second", "out")
+    }
+    result = export_synthetic(fixture)
+    assert result["owner_adversarial_input"] == "RESTRICTED_PLAINTEXT_PACKET_CREATED"
+    assert result["pinned_original_sources"] == 10
+    assert result["source_specific_content_printed"] is False
+    assert result["packet_sha256"] == sha256(fixture["packet"].read_bytes()).hexdigest()
+    with ZipFile(fixture["packet"]) as archive:
+        assert len(archive.namelist()) == 6
+        assert b"FICTIONAL_PRIVATE_REASON" in archive.read(
+            outbound.PAIRED_MEMBER
+        )
+        assert archive.read(outbound.SOURCE_ZIP_MEMBER) == fixture["batch"].read_bytes()
+    independently_recomputed = export_synthetic(fixture, action="VerifyExport")
+    assert independently_recomputed["owner_adversarial_input"] == (
+        "INDEPENDENT_PACKET_RECOMPUTATION_PASS"
+    )
+    assert independently_recomputed["packet_sha256"] == result["packet_sha256"]
+    assert {
+        k: sha256(fixture[k].read_bytes()).hexdigest()
+        for k in ("first", "second", "out")
+    } == prior_hashes
+    with pytest.raises(r.RouteHold, match="CHALLENGE_PACKET_ALREADY_EXISTS"):
+        export_synthetic(fixture)
+
+
+def test_synthetic_challenger_seals_report_and_owner_authenticates(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path,
+) -> None:
+    fixture = setup_adversarial_synthetic(monkeypatch, tmp_path)
+    export_synthetic(fixture)
+    pack = fixture["packet"].read_bytes()
+    report = invented_substantive_report(pack)
+    assert len(report["records"]) == 10
+    plaintext = challenged.validate_report(report, pack)
+    encrypted = challenged.seal(report, pack, openssl=fixture["openssl"])
+    assert plaintext not in encrypted
+    assert b"FICTIONAL RESTRICTED challenge reason" not in encrypted
+    safe = challenged.owner_verify(
+        encrypted, pack, fixture["cert"], fixture["key"],
+        b"fictional-only", openssl=fixture["openssl"],
+    )
+    assert safe["owner_challenge_cms_authenticated"] == "PASS"
+    assert safe["exact_challenge_packet_bound"] == "PASS"
+    assert safe["complete_source_challenge_records"] == 10
+    assert safe["semantic_acceptance"] == "NOT_YET_ADJUDICATED"
+    assert safe["source_specific_findings_printed"] is False
+
+
+def test_synthetic_challenge_is_rejected_if_prior_comparison_tampered(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path,
+) -> None:
+    fixture = setup_adversarial_synthetic(monkeypatch, tmp_path)
+    before = fixture["out"].read_bytes()
+    fixture["out"].write_bytes(before[:-1] + bytes([before[-1] ^ 0x80]))
+    with pytest.raises(r.RouteHold, match="PRIVATE_CIPHERTEXT_IDENTITY_INVALID"):
+        export_synthetic(fixture)
+    assert not fixture["packet"].exists()
+
+
+def test_synthetic_challenge_requires_complete_and_real_inspection_claims(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path,
+) -> None:
+    fixture = setup_adversarial_synthetic(monkeypatch, tmp_path)
+    export_synthetic(fixture)
+    pack = fixture["packet"].read_bytes()
+    report = invented_substantive_report(pack)
+    report["records"][0]["original_source_inspected"] = False
+    with pytest.raises(challenged.Hold, match="CHALLENGE_SOURCE_RECORD_INVALID"):
+        challenged.validate_report(report, pack)
+    report["records"][0]["original_source_inspected"] = True
+    report["records"].pop()
+    with pytest.raises(challenged.Hold, match="CHALLENGE_RECORD_COUNT_INVALID"):
+        challenged.validate_report(report, pack)
+    report = invented_substantive_report(pack)
+    report["records"][0]["restricted_reasoning"] = ""
+    with pytest.raises(challenged.Hold, match="SUBSTANTIVE_REASONING_MISSING"):
+        challenged.validate_report(report, pack)
+
+
+def test_synthetic_challenge_wrong_key_and_ciphertext_tamper_rejected(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path,
+) -> None:
+    fixture = setup_adversarial_synthetic(monkeypatch, tmp_path)
+    export_synthetic(fixture)
+    pack = fixture["packet"].read_bytes()
+    encrypted = challenged.seal(
+        invented_substantive_report(pack), pack, openssl=fixture["openssl"]
+    )
+    with pytest.raises(challenged.Hold, match="CHALLENGE_OWNER_CMS_AUTHENTICATION_FAILED"):
+        challenged.owner_verify(
+            encrypted, pack, fixture["cert"], fixture["key"],
+            b"not-the-passphrase", openssl=fixture["openssl"],
+        )
+    tampered = encrypted[:-1] + bytes([encrypted[-1] ^ 0x01])
+    with pytest.raises(challenged.Hold, match="CHALLENGE_OWNER_CMS_AUTHENTICATION_FAILED"):
+        challenged.owner_verify(
+            tampered, pack, fixture["cert"], fixture["key"],
+            b"fictional-only", openssl=fixture["openssl"],
+        )
+
+
+def test_synthetic_challenge_owner_launcher_uses_module_and_no_public_export() -> None:
+    """Control plane and Python module-import regression, no owner files opened."""
+    import sys
+    root = Path(__file__).resolve().parents[2]
+    wrapper = root / "scripts" / "r0_p03_s1_owner_wave0_adversarial_challenge.ps1"
+    content = wrapper.read_text(encoding="utf-8")
+    assert 'S1_WAVE0_OWNER_RESTRICTED_ADVERSARIAL_EXPORT_RECHECK=PASS' in content
+    assert "Run-Python @(" in content
+    assert 'Push-Location -LiteralPath $Repo' in content
+    assert 'OWNER_EXPORT_CONFIRMATION_REQUIRED' in content
+    assert 'CHALLENGE_OWNER_VERSION_ALREADY_STORED' in content
+    for module in (
+        "s1_wave0_adversarial_packet",
+        "s1_wave0_adversarial_challenge_report",
+    ):
+        result = subprocess.run([
+            sys.executable, "-B", "-m",
+            "experiments.r0_p03_navigation_probe." + module, "--help",
+        ], cwd=root, capture_output=True, text=True, timeout=15, check=False)
+        assert result.returncode == 0, result.stderr
+        assert result.stdout.startswith("usage:")
+
+
+def test_synthetic_export_recheck_refuses_modified_plaintext_packet(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path,
+) -> None:
+    fixture = setup_adversarial_synthetic(monkeypatch, tmp_path)
+    export_synthetic(fixture)
+    raw = fixture["packet"].read_bytes()
+    fixture["packet"].write_bytes(raw[:-1] + bytes([raw[-1] ^ 1]))
+    with pytest.raises(r.RouteHold, match="CHALLENGE_PACKET_RECOMPUTATION_MISMATCH"):
+        export_synthetic(fixture, action="VerifyExport")
+
+
+def test_synthetic_challenge_packet_hash_and_owner_cert_binding(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path,
+) -> None:
+    fixture = setup_adversarial_synthetic(monkeypatch, tmp_path)
+    export_synthetic(fixture)
+    packet = fixture["packet"].read_bytes()
+    report = invented_substantive_report(packet)
+    report["input_packet_sha256"] = "0" * 64
+    with pytest.raises(challenged.Hold, match="CHALLENGE_ROLE_OR_STATE_INVALID"):
+        challenged.validate_report(report, packet)
+    report["input_packet_sha256"] = challenged.sha(packet)
+    encrypted = challenged.seal(
+        report, packet, openssl=fixture["openssl"]
+    )
+    unrelated_cert = tmp_path / "synthetic-different-cert.pem"
+    unrelated_cert.write_bytes(b"-----BEGIN CERTIFICATE-----\nFICTIONAL-NOT-VALID\n")
+    with pytest.raises(challenged.Hold, match="CHALLENGE_OWNER_CERT_BINDING_INVALID"):
+        challenged.owner_verify(
+            encrypted, packet, unrelated_cert, fixture["key"],
+            b"fictional-only", openssl=fixture["openssl"],
+        )
