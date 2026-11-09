@@ -21,6 +21,8 @@ from experiments.r0_p03_navigation_probe import (
     s1_wave0_owner_private_compare as p,
     s1_wave0_adversarial_packet as outbound,
     s1_wave0_adversarial_challenge_report as challenged,
+    s1_wave0_semantic_adjudication_packet as semantic_packet,
+    s1_wave0_semantic_decision_report as semantic_report,
 )
 
 
@@ -499,3 +501,251 @@ def test_synthetic_challenge_packet_hash_and_owner_cert_binding(
             encrypted, packet, unrelated_cert, fixture["key"],
             b"fictional-only", openssl=fixture["openssl"],
         )
+
+
+def semantic_synthetic_setup(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path,
+) -> dict:
+    """All sources, assessments, keypairs and adversarial claims are fictional."""
+    fixture = setup_adversarial_synthetic(monkeypatch, tmp_path)
+    export_synthetic(fixture)
+    challenge_obj = invented_substantive_report(fixture["packet"].read_bytes())
+    cipher = challenged.seal(
+        challenge_obj, fixture["packet"].read_bytes(), openssl=fixture["openssl"]
+    )
+    fixture["challenge_cms"] = tmp_path / challenged.REPORT_NAME
+    fixture["challenge_cms"].write_bytes(cipher)
+    fixture["semantic_packet"] = tmp_path / semantic_packet.PACKET_NAME
+    root = Path(__file__).resolve().parents[2]
+    fixture["semantic_sender"] = (
+        root / "experiments" / "r0_p03_navigation_probe" /
+        "s1_wave0_semantic_decision_report.py"
+    )
+    monkeypatch.setattr(semantic_packet, "CHALLENGE_SHA256", sha256(cipher).hexdigest())
+    monkeypatch.setattr(semantic_packet, "CHALLENGE_BYTES", len(cipher))
+    monkeypatch.setattr(semantic_report, "CHALLENGE_CMS_SHA", sha256(cipher).hexdigest())
+    monkeypatch.setattr(
+        semantic_report, "COMPARISON_CMS_SHA", outbound.COMPARISON_SHA256
+    )
+    monkeypatch.setattr(semantic_report, "ORIGINAL_SOURCE_SHA", r.BATCH_ZIP_SHA256)
+    return fixture
+
+
+def semantic_synthetic_export(fixture: dict, action: str = "Export") -> dict:
+    return semantic_packet.owner_export(
+        action=action, source_zip=fixture["batch"], first=fixture["first"],
+        independent=fixture["second"], comparison=fixture["out"],
+        challenge_packet=fixture["packet"],
+        challenge_cms=fixture["challenge_cms"],
+        cert=fixture["cert"], key=fixture["key"],
+        previous_sender=fixture["sender"], sender=fixture["semantic_sender"],
+        output=fixture["semantic_packet"], password=b"fictional-only",
+        openssl=fixture["openssl"],
+    )
+
+
+def invented_semantic_decisions(packet: bytes) -> dict:
+    manifest, rows, _ = semantic_report.inspect_packet(packet)
+    records = []
+    for index, row in enumerate(rows):
+        records.append({
+            "path": row["path"],
+            "git_blob_oid": row["git_blob_oid"],
+            "sha256": row["sha256"],
+            "original_source_inspected": True,
+            "two_first_pass_records_inspected": True,
+            "adversarial_challenge_inspected": True,
+            "historical_authority_and_version": (
+                "FICTIONAL historical authority limited to this synthetic blob."
+            ),
+            "supported_prior_evidence": (
+                "FICTIONAL: some earlier reasoning matches this invented text."
+            ),
+            "disputed_or_unproven_prior_evidence": (
+                "FICTIONAL: linked references were never provided by the fixture."
+            ),
+            "strongest_counterinterpretation": (
+                "FICTIONAL counterclaim for both earlier source-status positions."
+            ),
+            "claim_materiality": (
+                "FICTIONAL potential difference in stated project lifecycle."
+            ),
+            "disclosure_materiality": (
+                "FICTIONAL protected answer-leakage assessment remains uncertain."
+            ),
+            "evidence_gaps_and_missing_representations": (
+                "FICTIONAL source reference missing; evidence not available here."
+            ),
+            "decision": "HOLD_FOR_MATERIAL_EVIDENCE" if index == 0
+                else "AUXILIARY_ONLY_EXCLUDED_FROM_AUTHOR",
+            "decision_rationale": (
+                "FICTIONAL decision based on bounded invented original text."
+            ),
+            "falsification_or_resolution_trigger": (
+                "FICTIONAL exact missing reference may falsify this reasoning."
+            ),
+            "required_next_action": (
+                "FICTIONAL hold until reference can be verified" if index == 0
+                else "FICTIONAL preserve exclusion pending source-world audit"
+            ),
+            "author_release": "NONE",
+        })
+    return {
+        "format": semantic_report.FORMAT,
+        "input_packet_sha256": semantic_report.sha(packet),
+        "original_source_sha256": semantic_report.ORIGINAL_SOURCE_SHA,
+        "paired_plaintext_sha256": manifest["paired_plaintext_sha256"],
+        "challenge_plaintext_sha256": manifest["challenge_plaintext_sha256"],
+        "source_ref": semantic_report.SOURCE_REF,
+        "role": "NON_ARM_SOURCE_STATUS_SEMANTIC_ADJUDICATOR",
+        "session_exposure_and_independence_limitations": (
+            "FICTIONAL separate role with no actual model independence demonstrated."
+        ),
+        "decision_basis_and_limits": (
+            "FICTIONAL first and second reports plus challenge were invented."
+        ),
+        "report_nonce": "d" * 32,
+        "records": records,
+        "source_world": "WORLD_UNFROZEN",
+        "author_release": "NONE",
+        "record_status": "PROPOSED_DECISIONS_REQUIRE_OWNER_QUALIFICATION",
+    }
+
+
+def test_synthetic_semantic_packet_exact_recompute_and_evidence_layers(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path,
+) -> None:
+    fixture = semantic_synthetic_setup(monkeypatch, tmp_path)
+    unchanged = {
+        name: sha256(fixture[name].read_bytes()).hexdigest()
+        for name in ("first", "second", "out", "challenge_cms")
+    }
+    result = semantic_synthetic_export(fixture)
+    assert result["owner_semantic_packet"] == "RESTRICTED_SEMANTIC_PACKET_CREATED"
+    assert result["exact_source_count"] == 10
+    assert result["private_source_specific_findings_printed"] is False
+    assert semantic_synthetic_export(fixture, action="VerifyExport")[
+        "owner_semantic_packet"] == "RESTRICTED_PACKET_INDEPENDENT_RECOMPUTATION_PASS"
+    with ZipFile(fixture["semantic_packet"]) as archive:
+        assert len(archive.namelist()) == 7
+        assert b"FICTIONAL_PRIVATE_REASON" in archive.read("PAIRED_FIRST_PASSES.json")
+        assert b"FICTIONAL RESTRICTED challenge reason" in archive.read(
+            "SUBSTANTIVE_CHALLENGE.json"
+        )
+        assert archive.read("ORIGINAL_WAVE0_SOURCES.zip") == fixture["batch"].read_bytes()
+    assert {
+        name: sha256(fixture[name].read_bytes()).hexdigest()
+        for name in ("first", "second", "out", "challenge_cms")
+    } == unchanged
+    with pytest.raises(r.RouteHold, match="ADJUDICATION_PACKET_ALREADY_EXISTS"):
+        semantic_synthetic_export(fixture)
+
+
+def test_synthetic_semantic_decisions_seal_and_owner_authenticate(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path,
+) -> None:
+    fixture = semantic_synthetic_setup(monkeypatch, tmp_path)
+    semantic_synthetic_export(fixture)
+    packet = fixture["semantic_packet"].read_bytes()
+    obj = invented_semantic_decisions(packet)
+    raw = semantic_report.validate_report(obj, packet)
+    sealed = semantic_report.seal(obj, packet, openssl=fixture["openssl"])
+    assert raw not in sealed
+    assert b"FICTIONAL decision" not in sealed
+    summary = semantic_report.owner_verify(
+        sealed, packet, fixture["cert"], fixture["key"],
+        b"fictional-only", openssl=fixture["openssl"],
+    )
+    assert summary["owner_adjudication_cms_authenticated"] == "PASS"
+    assert summary["complete_source_decisions_or_holds"] == 10
+    assert summary["author_release"] == "NONE"
+    assert summary["final_owner_acceptance"] == "PENDING"
+
+
+def test_synthetic_semantic_rejects_missing_source_and_auto_release(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path,
+) -> None:
+    fixture = semantic_synthetic_setup(monkeypatch, tmp_path)
+    semantic_synthetic_export(fixture)
+    packet = fixture["semantic_packet"].read_bytes()
+    obj = invented_semantic_decisions(packet)
+    obj["records"].pop()
+    with pytest.raises(semantic_report.Hold, match="ADJUDICATION_RECORD_COUNT_INVALID"):
+        semantic_report.validate_report(obj, packet)
+    obj = invented_semantic_decisions(packet)
+    obj["records"][0]["author_release"] = "ADMITTED"
+    with pytest.raises(semantic_report.Hold, match="ADJUDICATION_SOURCE_RECORD_INVALID"):
+        semantic_report.validate_report(obj, packet)
+    obj = invented_semantic_decisions(packet)
+    obj["records"][0]["original_source_inspected"] = False
+    with pytest.raises(semantic_report.Hold, match="ADJUDICATION_SOURCE_RECORD_INVALID"):
+        semantic_report.validate_report(obj, packet)
+    obj = invented_semantic_decisions(packet)
+    obj["records"][0]["required_next_action"] = "NONE"
+    with pytest.raises(semantic_report.Hold, match="HOLD_REQUIRES_ACTION_OR_LIMITATION"):
+        semantic_report.validate_report(obj, packet)
+
+
+def test_synthetic_semantic_challenge_tamper_and_packet_mutation_rejected(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path,
+) -> None:
+    fixture = semantic_synthetic_setup(monkeypatch, tmp_path)
+    raw = fixture["challenge_cms"].read_bytes()
+    fixture["challenge_cms"].write_bytes(raw[:-1] + bytes([raw[-1] ^ 0x02]))
+    with pytest.raises(r.RouteHold, match="ADJUDICATION_PRIOR_CHALLENGE_INPUT_INVALID"):
+        semantic_synthetic_export(fixture)
+    assert not fixture["semantic_packet"].exists()
+    fixture["challenge_cms"].write_bytes(raw)
+    semantic_synthetic_export(fixture)
+    packet = fixture["semantic_packet"].read_bytes()
+    fixture["semantic_packet"].write_bytes(
+        packet[:-1] + bytes([packet[-1] ^ 0x02])
+    )
+    with pytest.raises(r.RouteHold, match="ADJUDICATION_PACKET_RECOMPUTATION_MISMATCH"):
+        semantic_synthetic_export(fixture, action="VerifyExport")
+
+
+def test_synthetic_semantic_wrong_password_and_wrong_cert_rejected(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path,
+) -> None:
+    fixture = semantic_synthetic_setup(monkeypatch, tmp_path)
+    semantic_synthetic_export(fixture)
+    packet = fixture["semantic_packet"].read_bytes()
+    sealed = semantic_report.seal(
+        invented_semantic_decisions(packet), packet, openssl=fixture["openssl"],
+    )
+    with pytest.raises(semantic_report.Hold, match="OWNER_ADJUDICATION_CMS_AUTHENTICATION_FAILED"):
+        semantic_report.owner_verify(
+            sealed, packet, fixture["cert"], fixture["key"], b"bad-passphrase",
+            openssl=fixture["openssl"],
+        )
+    bad_cert = tmp_path / "another-public-cert.pem"
+    bad_cert.write_bytes(b"-----BEGIN CERTIFICATE-----\nFICTIONAL\n")
+    with pytest.raises(semantic_report.Hold, match="OWNER_CERTIFICATE_MISMATCH"):
+        semantic_report.owner_verify(
+            sealed, packet, bad_cert, fixture["key"], b"fictional-only",
+            openssl=fixture["openssl"],
+        )
+
+
+def test_synthetic_semantic_owner_launcher_imports_and_explicit_disclosure() -> None:
+    import sys
+
+    root = Path(__file__).resolve().parents[2]
+    wrapper = root / "scripts" / "r0_p03_s1_owner_wave0_semantic_adjudication.ps1"
+    text = wrapper.read_text(encoding="utf-8")
+    assert "AUTHORIZE WAVE0 SEMANTIC ADJUDICATION EXPORT" in text
+    assert "SEMANTIC_OWNER_VERSION_ALREADY_EXISTS" in text
+    assert "S1_WAVE0_OWNER_SEMANTIC_EXPORT_RECHECK=PASS" in text
+    assert "S1_WAVE0_OWNER_SEMANTIC_ADJUDICATION_RECHECK=PASS" in text
+    assert "Push-Location -LiteralPath $Repo" in text
+    for name in (
+        "s1_wave0_semantic_adjudication_packet",
+        "s1_wave0_semantic_decision_report",
+    ):
+        process = subprocess.run([
+            sys.executable, "-B", "-m",
+            "experiments.r0_p03_navigation_probe." + name, "--help",
+        ], cwd=root, capture_output=True, text=True, timeout=20, check=False)
+        assert process.returncode == 0, process.stderr
+        assert process.stdout.startswith("usage:")
