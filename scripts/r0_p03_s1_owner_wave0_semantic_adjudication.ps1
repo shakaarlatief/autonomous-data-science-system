@@ -9,6 +9,7 @@ VerifyExport  independently recomputes and byte-verifies the saved packet
 Receive       stores the new encrypted decision register with no overwrite,
               adds a receipt and authenticates its ten-record schema
 Verify        separately reauthenticates the saved decision register/receipt
+Review        creates one OWNER-PRIVATE plaintext source/decision reading dossier
 
 Only the OWNER executes protected actions in ordinary interactive PowerShell.
 NEVER invoke actual private operations through Codexless Runtime Bridge.
@@ -16,7 +17,7 @@ Do not share restricted packet, private key, passphrase or findings here.
 #>
 [CmdletBinding()]
 param(
-    [ValidateSet("SelfTest","Export","VerifyExport","Receive","Verify")]
+    [ValidateSet("SelfTest","Export","VerifyExport","Receive","Verify","Review")]
     [string]$Action="SelfTest",
     [ValidatePattern('^[0-9a-f]{32}$')]
     [string]$RecipientId,
@@ -31,8 +32,10 @@ $Python=Join-Path $Repo ".venv\Scripts\python.exe"
 $OpenSsl="C:\Program Files\Git\usr\bin\openssl.exe"
 $Exporter="experiments.r0_p03_navigation_probe.s1_wave0_semantic_adjudication_packet"
 $Decision="experiments.r0_p03_navigation_probe.s1_wave0_semantic_decision_report"
+$ReviewModule="experiments.r0_p03_navigation_probe.s1_wave0_owner_private_decision_review"
 $ExporterCode=Join-Path $Repo "experiments\r0_p03_navigation_probe\s1_wave0_semantic_adjudication_packet.py"
 $DecisionCode=Join-Path $Repo "experiments\r0_p03_navigation_probe\s1_wave0_semantic_decision_report.py"
+$ReviewCode=Join-Path $Repo "experiments\r0_p03_navigation_probe\s1_wave0_owner_private_decision_review.py"
 $PreviousSender=Join-Path $Repo "experiments\r0_p03_navigation_probe\s1_wave0_adversarial_challenge_report.py"
 $Original=Join-Path $Repo ".venv\.r0_p03_source_status_wave0\R0_P03_SOURCE_STATUS_FIRST_WAVE_REVIEW_ONLY.zip"
 $OriginalHash="c90c2d7120ffd32657e6506f876acd10e9779dc968ba9da8fb7f12604aa58387"
@@ -72,7 +75,7 @@ function Run-Module([string[]]$Arguments) {
     } finally { $ErrorActionPreference=$old }
     if ($code -ne 0) { Hold "SEMANTIC_PYTHON_OPERATION_FAILED" }
 }
-foreach($f in @($Python,$OpenSsl,$ExporterCode,$DecisionCode,$PreviousSender)) {
+foreach($f in @($Python,$OpenSsl,$ExporterCode,$DecisionCode,$ReviewCode,$PreviousSender)) {
     Require-File $f "SEMANTIC_PREREQUISITE_MISSING"
 }
 Require-Hash $Original $OriginalHash "SEMANTIC_SOURCE_ZIP_DRIFT"
@@ -84,6 +87,7 @@ if ($Action -eq "SelfTest") {
     # Validate real module imports without entering the protected owner area.
     Run-Module @("-B","-m",$Exporter,"--help")
     Run-Module @("-B","-m",$Decision,"--help")
+    Run-Module @("-B","-m",$ReviewModule,"--help")
     Write-Output "S1_WAVE0_SEMANTIC_OWNER_MODULE_IMPORTS=PASS"
     Write-Output "S1_WAVE0_SEMANTIC_OWNER_PREFLIGHT=PASS"
     Write-Output "S1_WAVE0_SEMANTIC_OWNER_PRIVATE_EVIDENCE_OPENED=NO"
@@ -125,6 +129,7 @@ $Challenge=Join-Path $Folder "R0_P03_S1_WAVE0_OWNER_ADVERSARIAL_CHALLENGE.cms"
 $Packet=Join-Path $Folder $PacketName
 $Adjudication=Join-Path $Folder $AdjudicationName
 $Receipt=Join-Path $Folder $ReceiptName
+$ReviewOutput=Join-Path $Folder "R0_P03_S1_WAVE0_OWNER_PRIVATE_DECISION_REVIEW.md"
 Require-File $Key "SEMANTIC_OWNER_ENCRYPTED_KEY_MISSING"
 Require-File $Cert "SEMANTIC_OWNER_PUBLIC_CERT_MISSING"
 if (-not [IO.File]::ReadAllText($Key).StartsWith("-----BEGIN ENCRYPTED PRIVATE KEY-----")) {
@@ -215,6 +220,25 @@ if (
 ) { Hold "SEMANTIC_RECEIPT_SCHEMA_INVALID" }
 Require-Hash $Packet $receipt.packet_sha256 "SEMANTIC_PACKET_HASH_DRIFT"
 Require-Hash $Adjudication $receipt.ciphertext_sha256 "SEMANTIC_OWNER_CMS_HASH_DRIFT"
+if ($Action -eq "Review") {
+    if ([IO.File]::Exists($ReviewOutput)) {
+        Hold "SEMANTIC_PRIVATE_REVIEW_ALREADY_EXISTS"
+    }
+    Write-Output "RESTRICTED: This creates plaintext original sources and all three private assessment layers."
+    Write-Output "Only the owner should open the review inside the existing protected directory."
+    $consent=(Read-Host 'Type GENERATE PRIVATE WAVE0 REVIEW').Trim()
+    if ($consent -cne "GENERATE PRIVATE WAVE0 REVIEW") {
+        Hold "SEMANTIC_REVIEW_CONFIRMATION_REQUIRED"
+    }
+    $reviewArgs=@("-B","-m",$ReviewModule,
+        "--packet",$Packet,"--ciphertext",$Adjudication,
+        "--public-cert",$Cert,"--private-key",$Key,
+        "--expected-sha256",$receipt.ciphertext_sha256,
+        "--output",$ReviewOutput,"--openssl",$OpenSsl)
+    Run-Module $reviewArgs
+    Write-Output "S1_WAVE0_OWNER_PRIVATE_DECISION_REVIEW_CREATED=PASS"
+    return
+}
 $cmd=@("-B","-m",$Decision,"owner-verify",
     "--packet",$Packet,"--public-cert",$Cert,"--private-key",$Key,
     "--ciphertext",$Adjudication,"--expected-sha256",$receipt.ciphertext_sha256,

@@ -23,6 +23,7 @@ from experiments.r0_p03_navigation_probe import (
     s1_wave0_adversarial_challenge_report as challenged,
     s1_wave0_semantic_adjudication_packet as semantic_packet,
     s1_wave0_semantic_decision_report as semantic_report,
+    s1_wave0_owner_private_decision_review as owner_review,
 )
 
 
@@ -749,3 +750,104 @@ def test_synthetic_semantic_owner_launcher_imports_and_explicit_disclosure() -> 
         ], cwd=root, capture_output=True, text=True, timeout=20, check=False)
         assert process.returncode == 0, process.stderr
         assert process.stdout.startswith("usage:")
+
+
+def test_synthetic_owner_private_decision_review_contains_all_evidence_layers(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path,
+) -> None:
+    fixture = semantic_synthetic_setup(monkeypatch, tmp_path)
+    semantic_synthetic_export(fixture)
+    packet = fixture["semantic_packet"].read_bytes()
+    proposed = invented_semantic_decisions(packet)
+    sealed = semantic_report.seal(proposed, packet, openssl=fixture["openssl"])
+    ciphertext = tmp_path / semantic_report.REPORT_NAME
+    ciphertext.write_bytes(sealed)
+    destination = tmp_path / owner_review.NAME
+    receipts = owner_review.create_review(
+        packet=fixture["semantic_packet"], ciphertext=ciphertext,
+        cert=fixture["cert"], key=fixture["key"], output=destination,
+        expected_sha256=sha256(sealed).hexdigest(),
+        password=b"fictional-only", openssl=fixture["openssl"],
+    )
+    assert receipts["private_review_created"] == "PASS"
+    assert receipts["source_bound_decision_records"] == 10
+    assert receipts["source_specific_findings_printed"] is False
+    assert receipts["owner_scientific_acceptance"] == "PENDING"
+    raw = destination.read_bytes()
+    text = raw.decode("utf-8")
+    assert text.count("### Source ") == 10
+    assert "FICTIONAL RESTRICTED challenge reason" in text
+    assert "REVIEWER_FICTIONAL_PRIVATE_REASON" in text
+    assert "FICTIONAL decision based on bounded invented original text" in text
+    assert "FICTIONAL 0" in text
+    assert "OWNER PRIVATE" in text
+    assert "Owner finding:** PENDING" in text
+    assert sha256(raw).hexdigest() == receipts["output_sha256"]
+    with pytest.raises(semantic_report.Hold, match="OWNER_REVIEW_FILE_SCOPE_INVALID"):
+        owner_review.create_review(
+            packet=fixture["semantic_packet"], ciphertext=ciphertext,
+            cert=fixture["cert"], key=fixture["key"], output=destination,
+            expected_sha256=sha256(sealed).hexdigest(),
+            password=b"fictional-only", openssl=fixture["openssl"],
+        )
+
+
+def test_synthetic_owner_private_decision_review_rejects_wrong_identity_and_key(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path,
+) -> None:
+    fixture = semantic_synthetic_setup(monkeypatch, tmp_path)
+    semantic_synthetic_export(fixture)
+    packet = fixture["semantic_packet"].read_bytes()
+    sealed = semantic_report.seal(
+        invented_semantic_decisions(packet), packet, openssl=fixture["openssl"],
+    )
+    cipher = tmp_path / semantic_report.REPORT_NAME
+    cipher.write_bytes(sealed)
+    destination = tmp_path / owner_review.NAME
+    with pytest.raises(
+        semantic_report.Hold, match="OWNER_REVIEW_CIPHERTEXT_IDENTITY_INVALID"
+    ):
+        owner_review.create_review(
+            packet=fixture["semantic_packet"], ciphertext=cipher,
+            cert=fixture["cert"], key=fixture["key"], output=destination,
+            expected_sha256="0" * 64, password=b"fictional-only",
+            openssl=fixture["openssl"],
+        )
+    with pytest.raises(
+        semantic_report.Hold, match="OWNER_ADJUDICATION_CMS_AUTHENTICATION_FAILED"
+    ):
+        owner_review.create_review(
+            packet=fixture["semantic_packet"], ciphertext=cipher,
+            cert=fixture["cert"], key=fixture["key"], output=destination,
+            expected_sha256=sha256(sealed).hexdigest(),
+            password=b"incorrect-fictional-key", openssl=fixture["openssl"],
+        )
+    assert not destination.exists()
+
+
+def test_synthetic_owner_private_review_escapes_embedded_markdown_fences() -> None:
+    source = "Original source with " + (chr(96) * 6) + " fence delimiter."
+    block = owner_review.fence(source, "text")
+    lines = block.splitlines()
+    assert len(lines[0]) == 11
+    assert lines[0].endswith("text")
+    assert lines[-1] == chr(96) * 7
+    assert source in block
+
+
+def test_owner_private_review_wrapper_and_help_synthetic_only() -> None:
+    import sys
+
+    root = Path(__file__).resolve().parents[2]
+    wrapper = root / "scripts" / "r0_p03_s1_owner_wave0_semantic_adjudication.ps1"
+    text = wrapper.read_text(encoding="utf-8")
+    assert '[ValidateSet("SelfTest","Export","VerifyExport","Receive","Verify","Review")]' in text
+    assert "GENERATE PRIVATE WAVE0 REVIEW" in text
+    assert "S1_WAVE0_OWNER_PRIVATE_DECISION_REVIEW_CREATED=PASS" in text
+    assert 'Run-Module @("-B","-m",$ReviewModule,"--help")' in text
+    process = subprocess.run([
+        sys.executable, "-B", "-m",
+        "experiments.r0_p03_navigation_probe.s1_wave0_owner_private_decision_review",
+        "--help",
+    ], cwd=root, capture_output=True, text=True, timeout=15, check=False)
+    assert process.returncode == 0, process.stderr
