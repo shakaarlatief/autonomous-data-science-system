@@ -6,3 +6,5 @@ experiments/r0_p03_navigation_probe/R0_P03_CALIBRATION_FAMILY_RULE_SOURCE_FREE.m
 experiments/r0_p03_navigation_probe/R0_P03_SOURCE_FAMILY_FALSIFICATION_INTERPRETATION_V01.md -text
 # Preserve exactly the independently returned source-free falsification result bytes.
 experiments/r0_p03_navigation_probe/R0_P03_SOURCE_FAMILY_FALSIFICATION_SOURCE_FREE_SUMMARY.md -text
+# Retain the exact independent 80-original source-world capacity outcome bytes.
+experiments/r0_p03_navigation_probe/R0_P03_EIGHTY_SOURCE_RELEASE_AGGREGATE.md -text
