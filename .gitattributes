@@ -11,3 +11,4 @@ experiments/r0_p03_navigation_probe/R0_P03_EIGHTY_SOURCE_RELEASE_AGGREGATE.md -t
 # Preserve exact bytes of the two neutral independent-author input documents.
 experiments/r0_p03_navigation_probe/NEED_ORIGINATION_NEUTRAL_CONTEXT_V01.md -text
 experiments/r0_p03_navigation_probe/NEED_ORIGINATION_INDEPENDENT_AUTHOR_BRIEF_V01.md -text
+experiments/r0_p03_navigation_probe/NEED_ORIGINATION_INDEPENDENT_AUTHOR_BRIEF_V02.md -text
