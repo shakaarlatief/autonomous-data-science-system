@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "identifier": "R0_P03_SOURCE_FAMILY_FALSIFICATION_METHOD_FREEZE_V01",
+  "owner_decision": {
+    "date": "2026-11-10",
+    "verbatim_acceptance": "I ACCEPT.",
+    "accepted_scope": "Freeze the exact original rule and companion interpretation solely for the independently blinded 16-case source-family falsification.",
+    "authorized_disclosure": "Only the previously generated 16-case falsification ZIP to one NEW, DIFFERENT non-arm reviewer, together with exactly the public frozen rule and interpretation.",
+    "not_authorized": [
+      "Calibration source packet",
+      "Restricted calibration case assessments",
+      "Owner-private Wave0 source decisions",
+      "Full repository/connected apps",
+      "Prospective primary task authors or gold writers",
+      "B0-B4 arm builders or evaluators",
+      "Public repository publication of holdout",
+      "Automatic source admissions"
+    ]
+  },
+  "frozen_method": {
+    "state": "OWNER_ACCEPTED_FROZEN_FOR_FALSIFICATION_ONLY",
+    "original_rule": {
+      "path": "experiments/r0_p03_navigation_probe/R0_P03_CALIBRATION_FAMILY_RULE_SOURCE_FREE.md",
+      "bytes": 18580,
+      "sha256": "9e402bbaa5f190d72b55e76f38979ea032f90c724e2385e99c20da3e0a4b1268",
+      "identity": "UNCHANGED_121_LINE_CALIBRATION_AUTHOR_TEXT",
+      "embedded_status": "PROPOSED_NOT_FROZEN_AT_AUTHORING_TIME"
+    },
+    "companion_interpretation": {
+      "path": "experiments/r0_p03_navigation_probe/R0_P03_SOURCE_FAMILY_FALSIFICATION_INTERPRETATION_V01.md",
+      "bytes": 8178,
+      "sha256": "7594b420f215c311c4075a98c2775857c0e359e712efbec397d3ac969d8862ff",
+      "identity": "UNCHANGED_PREHOLDOUT_SOURCE_FREE_APPLICATION_CONTRACT",
+      "embedded_status": "NOT_OWNER_FROZEN_AT_AUTHORING_TIME"
+    },
+    "frozen_by_this_separate_manifest": true,
+    "intended_author_audience": "Fresh blind primary information-need author",
+    "evidence_test": "Independent non-arm source-family rule falsification, not scored navigation or author admission"
+  },
+  "heldout_packet": {
+    "filename": "R0_P03_SOURCE_QUALIFICATION_FALSIFICATION_RESTRICTED.zip",
+    "bytes": 1384419,
+    "sha256": "3d7236f3b69d496fd99d597f452ac5dec108716655b0724f80bbc2971c66c4b3",
+    "cases": 16,
+    "strata": 8,
+    "status": "EXACT_LOCAL_FILE_HASH_REVERIFIED_WITHOUT_INSPECTING_SOURCE_CONTENT",
+    "transfer_status": "AUTHORIZED_NOT_YET_CONFIRMED_TRANSFERRED"
+  },
+  "custody_and_outcome": {
+    "original_rule_or_companion_modified": false,
+    "calibration_private_material_exposed_to_challenger": false,
+    "source_admissions": 0,
+    "author_world": "WORLD_UNFROZEN",
+    "scored_tasks": "NOT_STARTED",
+    "gold": "NOT_STARTED",
+    "b0_b4_scoring": "NOT_STARTED",
+    "scientific_truth_of_method": "NOT_YET_FALSIFIED_OR_VALIDATED",
+    "checkpoint": "898_UNCHANGED",
+    "specification": "028_UNCHANGED"
+  }
+}

@@ -3,3 +3,4 @@ experiments/r0_p03_navigation_probe/a2_source_free_fidelity_unicode_crlf.txt -te
 experiments/r0_p03_navigation_probe/a2_source_free_fidelity_pattern.png binary
 # Preserve exact independently received public calibration-rule bytes across worktrees.
 experiments/r0_p03_navigation_probe/R0_P03_CALIBRATION_FAMILY_RULE_SOURCE_FREE.md -text
+experiments/r0_p03_navigation_probe/R0_P03_SOURCE_FAMILY_FALSIFICATION_INTERPRETATION_V01.md -text
