@@ -1,7 +1,7 @@
 # R0-P03: bounded non-arm source-family qualification handoff
 
 **Date:** 2026-11-10
-**Status:** TWO_EXACT_LOCAL_REVIEW_PACKETS_CREATED_AND_VERIFIED / NEW_EXTERNAL_DISCLOSURE_NOT_YET_AUTHORIZED
+**Status:** CALIBRATION_DISCLOSURE_TO_ONE_SEPARATE_NON_ARM_REVIEWER_OWNER_AUTHORIZED / CALIBRATION_FILE_HASH_REVERIFIED / HOLDOUT_DISCLOSURE_NOT_AUTHORIZED / ACTUAL_REVIEW_PENDING
 **Purpose:** Test a source-family evidence-qualification method, not certify the whole 2,539-source world by sampling and not author new scored tasks.
 
 ## 1. Owner-controlled local inputs
@@ -15,7 +15,7 @@ All paths are relative to the repository. Two real, deterministic files exist in
     R0_P03_SOURCE_QUALIFICATION_PILOT.safe-receipt.json
 ```
 
-These ZIPs contain original historical source bytes that may include old navigation conclusions, model-arm comparison design, historical task hints and sensitive experimental context. They are *not* a future author-facing source world. They must not be committed, attached to this coordination chat, exposed to future scored primary authors, or sent to an external model without a **new explicit owner authorization scoped to this additional disclosure**. The previous Wave0 authorization applied only to its ten sources and does not automatically cover these packets.
+These ZIPs contain original historical source bytes that may include old navigation conclusions, model-arm comparison design, historical task hints and sensitive experimental context. They are *not* a future author-facing source world. They must not be committed, attached to this coordination chat, or exposed to future scored primary authors. The owner **explicitly authorized on 2026-11-10 only the calibration ZIP's disclosure to one new separate non-arm reviewer for rule development and confidential source-case assessment**. The previous Wave0 authorization did not cover these packets; this new authorization does **not** include the heldout falsification ZIP, owner-private Wave0 reports, scored authors, arm builders or reference/scoring roles.
 
 Calibration ZIP SHA-256:
 
@@ -81,10 +81,44 @@ Set-Location 'C:\Projects_Data\autonomous-data-science-system'
 
 The output must contain `SOURCE_QUALIFICATION_PILOT_REPRODUCIBILITY=PASS` and source-free hashes/stratum totals. **Do not rerun the creation command**, which is no-overwrite and the same packets already exist.
 
-A model reviewer must not receive all repository access, the local `.venv` directory, the Wave0 owner-private CMS/dossier, both packets simultaneously, or the downstream scored reference/candidate arms. If new authorization is granted, the owner personally transfers **only the calibration ZIP** to the new, isolated role. The challenge remains sealed from that role until the prospective rule is frozen.
+A model reviewer must not receive all repository access, the local `.venv` directory, the Wave0 owner-private CMS/dossier, both packets simultaneously, or the downstream scored reference/candidate arms. The required calibration-only authorization was granted on 2026-11-10. The owner now personally transfers **only the calibration ZIP** to the new, isolated reviewer role. The challenge remains withheld from that role until the prospective rule is frozen; holdout disclosure is **not** authorized at this stage.
 
 ## 5. Acceptance must remain substantive
 
 This workflow prepares a **testable source eligibility rule**, not a mechanism for retroactively rationalizing arbitrary admission. Source family classification still needs independent substantiation against exact pinned evidence, accepted/current authority, genuine implementation receipts, inherited links, temporal qualifiers and combined document-exposure leakage.
 
 A good pilot result supports scoped expansion and targeted review rather than author-world freeze by itself. The actual R0-P03 objective remains prospective 12-task authorship, nine separate neutralized legacy cases, independent protected gold and fair B0–B4 model-arm evaluation under Research 513 and 559.
+## 6. Owner-authorized first calibration transfer and separate-role instructions
+
+On 2026-11-10, the owner replied "Yes, I authorize" to the exact request to share **only the 16-case calibration ZIP** with **one new separate non-arm source-family rule developer and confidential case reviewer**. This scope includes the original 53 readable source/context files and two unsupported-representation HOLD cases. This authorization excludes the later falsification ZIP, the owner-private Wave0 reports, future primary task authors, gold annotators, arm builders, and evaluators.
+
+The calibration archive was rechecked with a metadata/hash-only operation in the original local repository and returned CALIBRATION_PACKET_LOCAL_IDENTITY=PASS, with exact original size 800193 bytes and SHA-256 4b4e8a60eabdb7cb033c165bad5ae40b2f0ae8fc009ba6ab3d4c3b7b840dcc27.
+
+**External transfer has not occurred.** The exposed coordinating chat cannot create a separate ChatGPT Temporary Chat or serve as this independent reviewer. The owner personally attaches only R0_P03_SOURCE_QUALIFICATION_CALIBRATION_RESTRICTED.zip to a new Temporary Chat outside this Project, with no connected apps or earlier restricted/scored context. The falsification packet must remain local and undisclosed.
+
+### Exact new independent reviewer request
+
+You are a separately authorized, **NON-ARM R0-P03 source-family qualification rule calibration reviewer**. You may receive only the attached 16-case historical calibration ZIP and its contained original pinned Git source/context bytes, MANIFEST.json, and REVIEW_BRIEF.txt.
+
+This is a **real non-scored source qualification exercise**, not a scored architecture experiment, hidden-gold annotation, future task authorship, author-world admission or source-world freeze. You must not later become a B0-B4 arm author, primary-task author, independent gold annotator or scored evaluator.
+
+**Before source inspection**, report your actual file tools and original source-access limitations, nested ZIP support, and any material prior exposure relevant to independence. Use only the attached ZIP. Do not access websites, repositories, connected apps, user accounts, project memory, other chats or external sources. Where the original evidence is not inspectable, explicitly mark it inaccessible rather than inventing a finding.
+
+Verify the attached ZIP's exact SHA-256 4b4e8a60eabdb7cb033c165bad5ae40b2f0ae8fc009ba6ab3d4c3b7b840dcc27 and size 800193 bytes if your tools support it. Read the brief and manifest and actually inspect all 16 calibration cases, including their available source/context members and version identities. Do not assume a lexical citation proves semantic dependency, authority or validation success.
+
+Propose a **source-independent, prospective, falsifiable family-level qualification rule** for whole-file candidate, auxiliary-only, exposure prohibition or evidence-dependent HOLD. Evaluate original source identity, historical versus governing currentness, proposed versus realized effects, actual execution/validation receipts, source ownership, old question/answer leakage, comparator/design exposure, combined-source exposure, missing source links and unsupported representations. Include falsification tests for both wrongful admission and wrongful exclusion. Source names, sample order, old task answers, preferred arm and citation proximity must never directly decide statuses.
+
+For each of the 16 calibration source cases, write a **restricted full case assessment**, providing exact source identity and version, actual support and contrary evidence, strongest alternate interpretation, claim and author-disclosure materiality, unresolved evidence, proposed decision or material HOLD, specific falsifier and necessary next action. Absence of material context must not be silently filled in. A status remains PROPOSED and does not admit a source.
+
+**Return two distinct downloadable artifacts:**
+
+1. R0_P03_CALIBRATION_FAMILY_RULE_SOURCE_FREE.md: a complete reusable source-free proposed rule with definitions, decision procedure, materiality and threshold distinctions, authority/currentness requirements, exclusion and HOLD logic, false-exclusion controls, coverage limitations and scope of application. It must contain **no real case paths, source IDs, quotations, case outcomes, prior gold or task-answer hints**.
+2. R0_P03_CALIBRATION_CASE_ASSESSMENTS_RESTRICTED.md, or equivalent restricted ZIP: full source-specific assessments for all 16 cases. Keep this separate and confidential. This artifact is for **owner-private custody**, not public Git or this coordinating Project chat.
+
+Respond in chat only with a **safe receipt** listing both artifact filenames, byte lengths, SHA-256 values, how many real original cases and context files were actually inspected, known technical/evidence limitations, and these exact states: RULE=PROPOSED_NOT_FROZEN; SOURCE_ADMISSIONS=ZERO; AUTHOR_WORLD=WORLD_UNFROZEN; FALSIFICATION_HOLDOUT=NOT_ACCESSED. Do not disclose source-specific findings or status counts in the chat response.
+
+If you cannot inspect the evidence or produce actual downloadable files, report the precise limitation and do not claim completion. **Do not request or examine the falsification packet.** A different isolated non-arm reviewer will later test the exact rule frozen from this calibration stage.
+
+### Result custody and next gate
+
+The owner should bring back only the safe receipt and, after review that it is genuinely source-free, the public family-rule artifact. The case-specific assessment remains owner-private. Before revealing the falsification holdout, the coordinating workflow must fix the exact accepted source-free rule bytes and digest, check that the rule does not contain sensitive source-specific leakage, and preserve reviewer separation. Publication of a proposed rule is not scientific acceptance or permission to make author-visible admissions.
