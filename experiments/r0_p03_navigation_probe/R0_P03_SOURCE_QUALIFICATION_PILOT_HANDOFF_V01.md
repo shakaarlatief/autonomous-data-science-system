@@ -1,7 +1,7 @@
 # R0-P03: bounded non-arm source-family qualification handoff
 
 **Date:** 2026-11-10
-**Status:** CALIBRATION_DISCLOSURE_TO_ONE_SEPARATE_NON_ARM_REVIEWER_OWNER_AUTHORIZED / CALIBRATION_FILE_HASH_REVERIFIED / HOLDOUT_DISCLOSURE_NOT_AUTHORIZED / ACTUAL_REVIEW_PENDING
+**Status:** FIRST_SEPARATE_CALIBRATION_REVIEWER_REPORTED_16_CASES_COMPLETE / TWO_MARKDOWN_ARTIFACT_IDENTITIES_REPORTED / PUBLIC_RULE_CONTENT_INSPECTION_AND_FREEZE_PENDING / HOLDOUT_WITHHELD
 **Purpose:** Test a source-family evidence-qualification method, not certify the whole 2,539-source world by sampling and not author new scored tasks.
 
 ## 1. Owner-controlled local inputs
@@ -121,4 +121,6 @@ If you cannot inspect the evidence or produce actual downloadable files, report 
 
 ### Result custody and next gate
 
-The owner should bring back only the safe receipt and, after review that it is genuinely source-free, the public family-rule artifact. The case-specific assessment remains owner-private. Before revealing the falsification holdout, the coordinating workflow must fix the exact accepted source-free rule bytes and digest, check that the rule does not contain sensitive source-specific leakage, and preserve reviewer separation. Publication of a proposed rule is not scientific acceptance or permission to make author-visible admissions.
+**Actual calibration completion receipt returned on 2026-11-10 (Validation 315):** The separate reviewer reports both Markdown artifacts created and all 16 calibration cases assessed, including two cases whose original representations were unavailable. The self-reported source-free rule is `R0_P03_CALIBRATION_FAMILY_RULE_SOURCE_FREE.md`, 18,580 bytes, SHA-256 `9e402bbaa5f190d72b55e76f38979ea032f90c724e2385e99c20da3e0a4b1268`. The private case evidence is `R0_P03_CALIBRATION_CASE_ASSESSMENTS_RESTRICTED.md`, 64,186 bytes, SHA-256 `2052d5662055f3efbc2eb4d6f98d42a9caf2239ea32bf192f905f983107289cf`. These are reviewer-reported identities, not yet locally independently read back. No real file contents have been accessed by this coordinating session.
+
+**Next action:** Owner downloads and checks both files, keeps confidential case assessments private, and provides **only the actual source-free rule** to this coordinating session for an independent substantive and leakage review. Neither the safe receipt nor the reviewer's self-certification allows freezing or promoting the rule. A qualified rule must be explicitly accepted by evidence, canonical bytes/digest fixed, and access isolation confirmed before the second falsification packet is disclosed to a *different* independent non-arm reviewer under a separately qualified scope. The original calibration authorization does not include holdout disclosure. No source can be admitted solely because its family rule was proposed.
