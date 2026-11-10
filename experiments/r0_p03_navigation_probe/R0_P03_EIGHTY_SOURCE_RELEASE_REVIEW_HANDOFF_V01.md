@@ -1,7 +1,7 @@
 # R0-P03: one bounded actual-source release review
 
 **Date:** 2026-11-10
-**Status:** REAL_80_SOURCE_CANDIDATE_REPRODUCIBLE / EXTERNAL_REVIEW_NOT_AUTHORIZED / AUTHOR_WORLD_UNFROZEN
+**Status:** EXACT_80_SOURCE_DISCLOSURE_TO_ONE_NEW_INDEPENDENT_NON_ARM_RELEASE_REVIEWER_OWNER_AUTHORIZED / THREE_FILE_HASHES_REVERIFIED / ACTUAL_REVIEW_NOT_YET_STARTED / AUTHOR_WORLD_UNFROZEN
 **Scope:** Assess a single real historical source collection for release to a fresh blind R0-P03 primary information-need author. Do not author questions, gold or B0-B4 treatments.
 
 ## Exact local-only evidence
@@ -31,7 +31,7 @@ The owner-frozen interpretation is:
 experiments/r0_p03_navigation_probe/R0_P03_SOURCE_FAMILY_FALSIFICATION_INTERPRETATION_V01.md
 8,178 bytes; SHA-256 7594b420f215c311c4075a98c2775857c0e359e712efbec397d3ac969d8862ff.
 
-Only the 80-original ZIP and these two **public** method documents may be transferred under a new owner authorization. Never transfer private Wave0, calibration, falsification or gold case files.
+**Owner authorization received on 2026-11-10:** in direct response to the three-file request, the owner stated "I authorize." The authorization permits **one new independent non-arm source-world release reviewer** to receive **exactly the existing 80-source restricted ZIP and these two frozen public method documents**, solely for original-source release assessment. It does **not** authorize another reviewer, broader repository access, private Wave0/calibration/falsification case evidence, future primary-task authors, gold writers, B0-B4 arm developers or scorers, or any actual source admission. No handoff has been performed automatically.
 
 ## Reviewer prompt
 
@@ -71,4 +71,4 @@ A successful source-review result is NOT automatic release. The owner/coordinato
 
 ## Authorization
 
-No external disclosure has been authorized for this new 80-source original ZIP. Previous owner permissions concerned earlier distinct 16-source calibration/falsification reviews. The owner must explicitly authorize transferring this particular ZIP to one distinct reviewer. The task-author world remains WORLD_UNFROZEN and all 80 sources remain NOT_ADMITTED.
+**Authorized, but not yet transferred:** The owner explicitly authorized precisely the three listed files to one new separate non-arm source-release reviewer on 2026-11-10. The owner should personally attach only those files to a fresh Temporary Chat outside the ADS Project, without connected apps or earlier private/scored evidence. The owner keeps the restricted source-specific return report in private custody and returns here only the safe receipt and publicly shareable aggregate. The reviewer must disclose any prior exposure or inability to inspect all original members. The task-author world remains WORLD_UNFROZEN and all 80 sources remain NOT_ADMITTED.
