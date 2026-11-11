@@ -18,3 +18,5 @@ experiments/r0_p03_navigation_probe/NEED_SOURCE_ADJUDICATION_AGGREGATE.md -text 
 experiments/r0_p03_navigation_probe/NEED_SOURCE_ADJUDICATION_AGGREGATE_VERIFIED_V02.md -text
 # Preserve exact source-free six-HOLD witness aggregate UTF-8 bytes.
 experiments/r0_p03_navigation_probe/NEED_MATERIAL_HOLD_WITNESS_AGGREGATE_VERIFIED_V01.md -text
+# Preserve independent V02 six-original witness aggregate exactly, without CRLF normalization.
+experiments/r0_p03_navigation_probe/NEED_MATERIAL_HOLD_WITNESS_AGGREGATE_VERIFIED_V02.md -text
