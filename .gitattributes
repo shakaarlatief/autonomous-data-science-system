@@ -16,3 +16,5 @@ experiments/r0_p03_navigation_probe/NEED_ORIGINATION_INDEPENDENT_AUTHOR_BRIEF_V0
 experiments/r0_p03_navigation_probe/NEED_SOURCE_ADJUDICATION_AGGREGATE.md -text whitespace=-blank-at-eof
 # Preserve the byte-verified independent adjudicator's updated source-free result.
 experiments/r0_p03_navigation_probe/NEED_SOURCE_ADJUDICATION_AGGREGATE_VERIFIED_V02.md -text
+# Preserve exact source-free six-HOLD witness aggregate UTF-8 bytes.
+experiments/r0_p03_navigation_probe/NEED_MATERIAL_HOLD_WITNESS_AGGREGATE_VERIFIED_V01.md -text
