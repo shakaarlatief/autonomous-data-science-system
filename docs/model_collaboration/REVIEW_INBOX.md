@@ -21,6 +21,10 @@ docs/current_routing.json
 
 This inbox intentionally does not duplicate that state except where needed to explain collaboration obligations.
 
+## Optional exposed R0-P03 semantics critique prepared, not dispatched
+
+MC-0030 Message 063 prepares a bounded exposed Claude/claude-04 review of the executed Checkpoints 905-911 and the V01/V02 source-provenance/declared-reference semantics. It is **not yet dispatched**, is not independent blind gold and does not block bounded exploratory engineering work. The owner relay must name repository `shakaarlatief/autonomous-data-science-system`, coordination branch `v1-source-vault-bootstrap-resume`, and the **exact immutable Checkpoint 911 publishing commit SHA**. Claude may author only MC-0030 Message 064 after verifying the exact V01/V02 file hashes. The canonical thread state remains task-owner ChatGPT until an actual dispatched collaboration transition is recorded.
+
 ## Current active collaboration obligation
 
 ### MC-0030: V03 physical/software realization architecture

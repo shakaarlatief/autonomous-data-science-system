@@ -34,6 +34,10 @@ experiments/r0_p03_navigation_probe/exploratory_hybrid_fusion_and_routing_result
 experiments/r0_p03_navigation_probe/exploratory_directed_relation_retrieval_result_v01.json -text
 # Preserve exact 719-query paraphrase and unsupported-claim outcome bytes.
 experiments/r0_p03_navigation_probe/exploratory_paraphrase_scope_and_abstention_result_v01.json -text
+# Exact original source-line evidence audit is immutable even across Windows checkouts.
+experiments/r0_p03_navigation_probe/exploratory_reference_provenance_audit_result_v01.json -text
+# Distinct versioned correction of source-owned declared-reference indicators.
+experiments/r0_p03_navigation_probe/exploratory_reference_declaration_correction_result_v02.json -text
 # Retain the source-free 12-need independent adjudication report byte-for-byte.
 experiments/r0_p03_navigation_probe/NEED_SOURCE_ADJUDICATION_AGGREGATE.md -text whitespace=-blank-at-eof
 # Preserve the byte-verified independent adjudicator's updated source-free result.

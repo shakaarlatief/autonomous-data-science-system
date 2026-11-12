@@ -1052,6 +1052,16 @@ docs/research/644_r0_p03_mechanical_heading_query_stress_reveals_query_family_de
 docs/research/645_r0_p03_real_hybrid_fusion_ablation_and_query_routing_execution.md
 docs/research/646_r0_p03_executed_directed_reference_retrieval_and_negative_evidence_controls.md
 docs/research/647_r0_p03_719_query_paraphrase_scope_and_abstention_execution.md
+docs/research/648_r0_p03_source_reference_context_evidence_and_declared_reference_qualification.md
+docs/local_execution/validation/347_r0_p03_real_source_reference_provenance_audit_and_versioned_correction.md
+docs/checkpoints/911_r0_p03_reference_evidence_context_audit_and_versioned_declared_source_subset.md
+experiments/r0_p03_navigation_probe/EXPLORATORY_REFERENCE_PROVENANCE_AUDIT_CONTRACT_V01.md
+experiments/r0_p03_navigation_probe/exploratory_reference_provenance_audit_v01.py
+experiments/r0_p03_navigation_probe/exploratory_reference_provenance_audit_result_v01.json
+experiments/r0_p03_navigation_probe/EXPLORATORY_REFERENCE_DECLARATION_CORRECTION_CONTRACT_V02.md
+experiments/r0_p03_navigation_probe/exploratory_reference_declaration_correction_v02.py
+experiments/r0_p03_navigation_probe/exploratory_reference_declaration_correction_result_v02.json
+docs/model_collaboration/threads/MC-0030/messages/063_chatgpt_r0_p03_exploratory_source_semantics_review_request.md
 docs/local_execution/validation/346_r0_p03_actual_719_paraphrase_and_semantic_scope_boundary_execution.md
 docs/checkpoints/910_r0_p03_paraphrase_failure_and_evidence_scope_abstention_execution.md
 experiments/r0_p03_navigation_probe/EXPLORATORY_PARAPHRASE_SCOPE_AND_ABSTENTION_CONTRACT_V01.md
@@ -2031,7 +2041,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-910 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-911 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

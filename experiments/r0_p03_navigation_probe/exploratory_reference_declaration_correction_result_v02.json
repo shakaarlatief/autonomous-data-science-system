@@ -1,0 +1,4174 @@
+{
+  "alternate_exact_path_enumeration": {
+    "known_legacy_regex_terminal_period_blind_spot": true,
+    "matching_original_directed_pairs": 110,
+    "matching_original_occurrences": 146,
+    "new_occurrences_in_this_pinned_corpus": 0
+  },
+  "change_scope": "PATH_SELECTOR adjacency and DECLARED_REFERENCES_FIELD only",
+  "changed_occurrence_flag_records": 18,
+  "classification": "VERSIONED_CORRECTION_AND_SOURCE_OWNED_REFERENCE_DECLARATION_SYNTAX",
+  "contract": "EXPLORATORY_REFERENCE_DECLARATION_CORRECTION_CONTRACT_V02.md",
+  "formal_r0_p03_scored": false,
+  "historical_git_pin": "4b94ffe183ff7af72cef6ee7492b4ba2f30c11ef",
+  "identifier": "R0_P03_EXPLORATORY_SOURCE_OWNED_REFERENCE_FIELD_CORRECTION_V02",
+  "limitations": [
+    "Declared references are source-authored references, NOT governing/editorial J2/B2 authoritative relations.",
+    "Some explicit normative prose uses inline-code paths but no declared path: metadata; no syntax filter determines its authority.",
+    "Original corpus has identical 146 literal occurrences under challenger match, not proof of no legacy parser blind spot in new corpora.",
+    "V01 is immutable; previous 909/910 source reference self-consistency claims remain only structural.",
+    "No new independently adjudicated reference gold, B3/B4 method, scored R0-P03 or physical architecture selection."
+  ],
+  "metadata": {
+    "adjacent_path_selector": {
+      "distinct_directed_pairs": 18,
+      "occurrence_count": 18,
+      "occurrence_indices": [
+        79,
+        80,
+        81,
+        88,
+        90,
+        114,
+        115,
+        116,
+        117,
+        119,
+        120,
+        121,
+        122,
+        131,
+        132,
+        136,
+        137,
+        139
+      ],
+      "semantic_authority_accepted": false,
+      "source_count": 12,
+      "target_count": 10
+    },
+    "source_declared_references_field": {
+      "distinct_directed_pairs": 11,
+      "occurrence_count": 11,
+      "occurrence_indices": [
+        114,
+        115,
+        116,
+        117,
+        119,
+        120,
+        121,
+        122,
+        131,
+        132,
+        139
+      ],
+      "semantic_authority_accepted": false,
+      "source_count": 6,
+      "target_count": 7
+    }
+  },
+  "occurrences": [
+    {
+      "char_end": 26,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 43,
+      "raw_original_line": "docs/DEVELOPMENT_METHOD.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/CONTINUITY.md",
+      "source_blob_sha1": "ec14613d013453766b82dc71d9639c2fb7b2bd37",
+      "source_line_sha256": "9bc305508a4ad6587be20b283ae1edbb54516f185f91a2daa7b2ac02371d37b4",
+      "source_sha256": "37b48c032bd372d75fded27ffdf46fe3a43c3e3215d408d4ca7ea49c5f106ebe",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/DEVELOPMENT_METHOD.md"
+    },
+    {
+      "char_end": 67,
+      "char_start": 41,
+      "indicators": [
+        "GOVERNANCE_WORDING"
+      ],
+      "line_number": 377,
+      "raw_original_line": "Risk-scaled verification is governed by `docs/DEVELOPMENT_METHOD.md`.",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/CONTINUITY.md",
+      "source_blob_sha1": "ec14613d013453766b82dc71d9639c2fb7b2bd37",
+      "source_line_sha256": "e132bb6f0665bea5a60bc195d295d95860e1e71e18a0d49a84b556cf02a18626",
+      "source_sha256": "37b48c032bd372d75fded27ffdf46fe3a43c3e3215d408d4ca7ea49c5f106ebe",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/DEVELOPMENT_METHOD.md"
+    },
+    {
+      "char_end": 34,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 403,
+      "raw_original_line": "docs/model_collaboration/README.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/CONTINUITY.md",
+      "source_blob_sha1": "ec14613d013453766b82dc71d9639c2fb7b2bd37",
+      "source_line_sha256": "a4d5870ba7277defbaf39f844baddfcb0891564a958513af673aef5a4936beb0",
+      "source_sha256": "37b48c032bd372d75fded27ffdf46fe3a43c3e3215d408d4ca7ea49c5f106ebe",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/model_collaboration/README.md"
+    },
+    {
+      "char_end": 79,
+      "char_start": 53,
+      "indicators": [],
+      "line_number": 407,
+      "raw_original_line": "When choosing a Codex model or reasoning level, use `docs/DEVELOPMENT_METHOD.md` under **Codex model and reasoning routing**. Do not reconstruct model/effort choice from prior-chat habit and do not mechanically maximize reasoning: preserve the documented quality-per-complete-engineering-loop strategy and verify named model/effort options against the current catalog.",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/CONTINUITY.md",
+      "source_blob_sha1": "ec14613d013453766b82dc71d9639c2fb7b2bd37",
+      "source_line_sha256": "00a9646a28389655f08997cbf4c2682d339a2dd997f6a0b390b75e5922636ab4",
+      "source_sha256": "37b48c032bd372d75fded27ffdf46fe3a43c3e3215d408d4ca7ea49c5f106ebe",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/DEVELOPMENT_METHOD.md"
+    },
+    {
+      "char_end": 73,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 515,
+      "raw_original_line": "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/CONTINUITY.md",
+      "source_blob_sha1": "ec14613d013453766b82dc71d9639c2fb7b2bd37",
+      "source_line_sha256": "4548280f90e607f65353b518ab65a1f9f33fc7f51d1aa20e6441f6378b4e301f",
+      "source_sha256": "37b48c032bd372d75fded27ffdf46fe3a43c3e3215d408d4ca7ea49c5f106ebe",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md"
+    },
+    {
+      "char_end": 89,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 516,
+      "raw_original_line": "docs/research/064_rapid_iteration_repository_preservation_audit_and_checkpoint_hygiene.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/CONTINUITY.md",
+      "source_blob_sha1": "ec14613d013453766b82dc71d9639c2fb7b2bd37",
+      "source_line_sha256": "6c5e72266e102d270f1b8d08ddd9612a7062ca86ace3d47eeed7dc86045acb54",
+      "source_sha256": "37b48c032bd372d75fded27ffdf46fe3a43c3e3215d408d4ca7ea49c5f106ebe",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/research/064_rapid_iteration_repository_preservation_audit_and_checkpoint_hygiene.md"
+    },
+    {
+      "char_end": 92,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 517,
+      "raw_original_line": "docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/CONTINUITY.md",
+      "source_blob_sha1": "ec14613d013453766b82dc71d9639c2fb7b2bd37",
+      "source_line_sha256": "dbcd93f1307c0c2698c67436b18d9958ff69c574cec529e0f99970a17f0d6eac",
+      "source_sha256": "37b48c032bd372d75fded27ffdf46fe3a43c3e3215d408d4ca7ea49c5f106ebe",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md"
+    },
+    {
+      "char_end": 100,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 518,
+      "raw_original_line": "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/CONTINUITY.md",
+      "source_blob_sha1": "ec14613d013453766b82dc71d9639c2fb7b2bd37",
+      "source_line_sha256": "5019f5597ec98f01266bec7d3de534b2807ce75b5675223e573fc7745e5af2e0",
+      "source_sha256": "37b48c032bd372d75fded27ffdf46fe3a43c3e3215d408d4ca7ea49c5f106ebe",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md"
+    },
+    {
+      "char_end": 78,
+      "char_start": 5,
+      "indicators": [
+        "NAVIGATION_WORDING"
+      ],
+      "line_number": 388,
+      "raw_original_line": "See `docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`.",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/DECISIONS.md",
+      "source_blob_sha1": "3e3658a4afd6ea54cd994033177b44bbb5fc0295",
+      "source_line_sha256": "9f47f13a456e772da73b4fdcf71dbd58f386f60ae0ff110344c14c309ffa80d6",
+      "source_sha256": "8111fb7631c1e931b223645b8b755c1b97f54cc31434dcf4e14a0fe917edeef7",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md"
+    },
+    {
+      "char_end": 21,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 400,
+      "raw_original_line": "docs/MAJOR_CHANGES.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/DECISIONS.md",
+      "source_blob_sha1": "3e3658a4afd6ea54cd994033177b44bbb5fc0295",
+      "source_line_sha256": "35449bb8d557c507809caa441f29579a2fc3fdf3373faadefa9dd20804db4253",
+      "source_sha256": "8111fb7631c1e931b223645b8b755c1b97f54cc31434dcf4e14a0fe917edeef7",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/MAJOR_CHANGES.md"
+    },
+    {
+      "char_end": 26,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 914,
+      "raw_original_line": "docs/DEVELOPMENT_METHOD.md version 0.5",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/DECISIONS.md",
+      "source_blob_sha1": "3e3658a4afd6ea54cd994033177b44bbb5fc0295",
+      "source_line_sha256": "4d8abe931183ae99e70cb4006f53665ac089e5cfc494e166231921d3b60b0b67",
+      "source_sha256": "8111fb7631c1e931b223645b8b755c1b97f54cc31434dcf4e14a0fe917edeef7",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/DEVELOPMENT_METHOD.md"
+    },
+    {
+      "char_end": 18,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 915,
+      "raw_original_line": "docs/CONTINUITY.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/DECISIONS.md",
+      "source_blob_sha1": "3e3658a4afd6ea54cd994033177b44bbb5fc0295",
+      "source_line_sha256": "e201d01b685fc9a2a94c11d46e634b577cf7981c30080a78c984abc688eaabd7",
+      "source_sha256": "8111fb7631c1e931b223645b8b755c1b97f54cc31434dcf4e14a0fe917edeef7",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/CONTINUITY.md"
+    },
+    {
+      "char_end": 34,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 916,
+      "raw_original_line": "docs/model_collaboration/README.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/DECISIONS.md",
+      "source_blob_sha1": "3e3658a4afd6ea54cd994033177b44bbb5fc0295",
+      "source_line_sha256": "a4d5870ba7277defbaf39f844baddfcb0891564a958513af673aef5a4936beb0",
+      "source_sha256": "8111fb7631c1e931b223645b8b755c1b97f54cc31434dcf4e14a0fe917edeef7",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/model_collaboration/README.md"
+    },
+    {
+      "char_end": 91,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 1024,
+      "raw_original_line": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/DECISIONS.md",
+      "source_blob_sha1": "3e3658a4afd6ea54cd994033177b44bbb5fc0295",
+      "source_line_sha256": "37084c0e50aebbba388b89704ac89a5b7db2eecd33fd0beb46bee61eba9ac3f2",
+      "source_sha256": "8111fb7631c1e931b223645b8b755c1b97f54cc31434dcf4e14a0fe917edeef7",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md"
+    },
+    {
+      "char_end": 18,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 61,
+      "raw_original_line": "docs/CONTINUITY.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/DEVELOPMENT_METHOD.md",
+      "source_blob_sha1": "4f814c1109da423b501303e3d4697db4a3796b99",
+      "source_line_sha256": "e201d01b685fc9a2a94c11d46e634b577cf7981c30080a78c984abc688eaabd7",
+      "source_sha256": "83491531f87b79bd84e9fe099686778657c46e58b6e75a1fbab7c68c783694f3",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/CONTINUITY.md"
+    },
+    {
+      "char_end": 21,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 67,
+      "raw_original_line": "docs/MAJOR_CHANGES.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/DEVELOPMENT_METHOD.md",
+      "source_blob_sha1": "4f814c1109da423b501303e3d4697db4a3796b99",
+      "source_line_sha256": "35449bb8d557c507809caa441f29579a2fc3fdf3373faadefa9dd20804db4253",
+      "source_sha256": "83491531f87b79bd84e9fe099686778657c46e58b6e75a1fbab7c68c783694f3",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/MAJOR_CHANGES.md"
+    },
+    {
+      "char_end": 34,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 493,
+      "raw_original_line": "docs/model_collaboration/README.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/DEVELOPMENT_METHOD.md",
+      "source_blob_sha1": "4f814c1109da423b501303e3d4697db4a3796b99",
+      "source_line_sha256": "a4d5870ba7277defbaf39f844baddfcb0891564a958513af673aef5a4936beb0",
+      "source_sha256": "83491531f87b79bd84e9fe099686778657c46e58b6e75a1fbab7c68c783694f3",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/model_collaboration/README.md"
+    },
+    {
+      "char_end": 72,
+      "char_start": 54,
+      "indicators": [
+        "GOVERNANCE_WORDING"
+      ],
+      "line_number": 609,
+      "raw_original_line": "Canonical cross-session reconstruction is defined in `docs/CONTINUITY.md`.",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/DEVELOPMENT_METHOD.md",
+      "source_blob_sha1": "4f814c1109da423b501303e3d4697db4a3796b99",
+      "source_line_sha256": "f972cfce762fb2e57bda645391b040eee094b0deeebc702e20e44966df0bd6af",
+      "source_sha256": "83491531f87b79bd84e9fe099686778657c46e58b6e75a1fbab7c68c783694f3",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/CONTINUITY.md"
+    },
+    {
+      "char_end": 72,
+      "char_start": 54,
+      "indicators": [
+        "GOVERNANCE_WORDING",
+        "NAVIGATION_WORDING"
+      ],
+      "line_number": 611,
+      "raw_original_line": "Bootstrap-critical reconstruction must directly read `docs/CONTINUITY.md` as the third mandatory first-read after `README.md` and `docs/README.md`; it must not depend on an indirect routing hop.",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/DEVELOPMENT_METHOD.md",
+      "source_blob_sha1": "4f814c1109da423b501303e3d4697db4a3796b99",
+      "source_line_sha256": "d5d3d60668ccbaa5759e7a73cdb1f14b50d2e0a656656f8f595dc7b20faf1d4a",
+      "source_sha256": "83491531f87b79bd84e9fe099686778657c46e58b6e75a1fbab7c68c783694f3",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/CONTINUITY.md"
+    },
+    {
+      "char_end": 26,
+      "char_start": 8,
+      "indicators": [
+        "NAVIGATION_WORDING"
+      ],
+      "line_number": 667,
+      "raw_original_line": "- made `docs/CONTINUITY.md` an explicit mandatory bootstrap read;",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/DEVELOPMENT_METHOD.md",
+      "source_blob_sha1": "4f814c1109da423b501303e3d4697db4a3796b99",
+      "source_line_sha256": "b160947d29f648f2353359237ba292c01af7a7039a2f426866b383eaf34107b7",
+      "source_sha256": "83491531f87b79bd84e9fe099686778657c46e58b6e75a1fbab7c68c783694f3",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/CONTINUITY.md"
+    },
+    {
+      "char_end": 90,
+      "char_start": 17,
+      "indicators": [],
+      "line_number": 701,
+      "raw_original_line": "Deep rationale: `docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`.",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/DEVELOPMENT_METHOD.md",
+      "source_blob_sha1": "4f814c1109da423b501303e3d4697db4a3796b99",
+      "source_line_sha256": "ef61657334002d7f9b618d9f674b74ba56e3030ee892b5f88936991517246305",
+      "source_sha256": "83491531f87b79bd84e9fe099686778657c46e58b6e75a1fbab7c68c783694f3",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md"
+    },
+    {
+      "char_end": 17,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 24,
+      "raw_original_line": "docs/DECISIONS.md, D-001 through D-020",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/MAJOR_CHANGES.md",
+      "source_blob_sha1": "5f43490e1e235598f37a7b5c1734430e59521f81",
+      "source_line_sha256": "cc99427c035da0c5a5cf183a476ee334f5f332da200d43e5131df1cf6c6cb3ea",
+      "source_sha256": "95cc55f86f1810f965d17481acf43376d5228025797e7ea9d2fd0ed6df98c76b",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/DECISIONS.md"
+    },
+    {
+      "char_end": 26,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 25,
+      "raw_original_line": "docs/DEVELOPMENT_METHOD.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/MAJOR_CHANGES.md",
+      "source_blob_sha1": "5f43490e1e235598f37a7b5c1734430e59521f81",
+      "source_line_sha256": "9bc305508a4ad6587be20b283ae1edbb54516f185f91a2daa7b2ac02371d37b4",
+      "source_sha256": "95cc55f86f1810f965d17481acf43376d5228025797e7ea9d2fd0ed6df98c76b",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/DEVELOPMENT_METHOD.md"
+    },
+    {
+      "char_end": 18,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 26,
+      "raw_original_line": "docs/CONTINUITY.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/MAJOR_CHANGES.md",
+      "source_blob_sha1": "5f43490e1e235598f37a7b5c1734430e59521f81",
+      "source_line_sha256": "e201d01b685fc9a2a94c11d46e634b577cf7981c30080a78c984abc688eaabd7",
+      "source_sha256": "95cc55f86f1810f965d17481acf43376d5228025797e7ea9d2fd0ed6df98c76b",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/CONTINUITY.md"
+    },
+    {
+      "char_end": 68,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 38,
+      "raw_original_line": "docs/foundations/002_epistemic_integrity_and_project_constitution.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/MAJOR_CHANGES.md",
+      "source_blob_sha1": "5f43490e1e235598f37a7b5c1734430e59521f81",
+      "source_line_sha256": "3333da97e4b17afcfe5a08a1e58a75079cef07618a4b333e0ce148da3318343b",
+      "source_sha256": "95cc55f86f1810f965d17481acf43376d5228025797e7ea9d2fd0ed6df98c76b",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/foundations/002_epistemic_integrity_and_project_constitution.md"
+    },
+    {
+      "char_end": 56,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 39,
+      "raw_original_line": "docs/foundations/003_admissibility_risk_and_assurance.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/MAJOR_CHANGES.md",
+      "source_blob_sha1": "5f43490e1e235598f37a7b5c1734430e59521f81",
+      "source_line_sha256": "5fb8ba550fab51e88959cadfe0e160ddc5d0a190a2825e5801fc575a6279adc8",
+      "source_sha256": "95cc55f86f1810f965d17481acf43376d5228025797e7ea9d2fd0ed6df98c76b",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/foundations/003_admissibility_risk_and_assurance.md"
+    },
+    {
+      "char_end": 79,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 40,
+      "raw_original_line": "docs/foundations/004_project_state_dependency_and_state_driven_orchestration.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/MAJOR_CHANGES.md",
+      "source_blob_sha1": "5f43490e1e235598f37a7b5c1734430e59521f81",
+      "source_line_sha256": "f0fc088b6cabb39f170a72f4047797f3326c788517e62b255693a7e830f20ae8",
+      "source_sha256": "95cc55f86f1810f965d17481acf43376d5228025797e7ea9d2fd0ed6df98c76b",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/foundations/004_project_state_dependency_and_state_driven_orchestration.md"
+    },
+    {
+      "char_end": 69,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 42,
+      "raw_original_line": "docs/foundations/006_knowledge_activation_and_open_world_reasoning.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/MAJOR_CHANGES.md",
+      "source_blob_sha1": "5f43490e1e235598f37a7b5c1734430e59521f81",
+      "source_line_sha256": "9f057a7e41bfc39715b447bd2b9d49b81e2f56892ab4bf0be034bc6c71f0eadc",
+      "source_sha256": "95cc55f86f1810f965d17481acf43376d5228025797e7ea9d2fd0ed6df98c76b",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/foundations/006_knowledge_activation_and_open_world_reasoning.md"
+    },
+    {
+      "char_end": 77,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 45,
+      "raw_original_line": "docs/foundations/009_behavioral_reasoning_regression_and_system_evaluation.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/MAJOR_CHANGES.md",
+      "source_blob_sha1": "5f43490e1e235598f37a7b5c1734430e59521f81",
+      "source_line_sha256": "7c6b60bc7ec0d859947e905033ef0f763769cd81bf5b4c56c703678f619d75df",
+      "source_sha256": "95cc55f86f1810f965d17481acf43376d5228025797e7ea9d2fd0ed6df98c76b",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/foundations/009_behavioral_reasoning_regression_and_system_evaluation.md"
+    },
+    {
+      "char_end": 73,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 85,
+      "raw_original_line": "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/MAJOR_CHANGES.md",
+      "source_blob_sha1": "5f43490e1e235598f37a7b5c1734430e59521f81",
+      "source_line_sha256": "4548280f90e607f65353b518ab65a1f9f33fc7f51d1aa20e6441f6378b4e301f",
+      "source_sha256": "95cc55f86f1810f965d17481acf43376d5228025797e7ea9d2fd0ed6df98c76b",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md"
+    },
+    {
+      "char_end": 26,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 86,
+      "raw_original_line": "docs/DEVELOPMENT_METHOD.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/MAJOR_CHANGES.md",
+      "source_blob_sha1": "5f43490e1e235598f37a7b5c1734430e59521f81",
+      "source_line_sha256": "9bc305508a4ad6587be20b283ae1edbb54516f185f91a2daa7b2ac02371d37b4",
+      "source_sha256": "95cc55f86f1810f965d17481acf43376d5228025797e7ea9d2fd0ed6df98c76b",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/DEVELOPMENT_METHOD.md"
+    },
+    {
+      "char_end": 92,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 113,
+      "raw_original_line": "docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/MAJOR_CHANGES.md",
+      "source_blob_sha1": "5f43490e1e235598f37a7b5c1734430e59521f81",
+      "source_line_sha256": "118fa9f73e43fd3d8e949c64ed4c3dd3136d9232c12b4a6474d02bcfd6f06e1d",
+      "source_sha256": "95cc55f86f1810f965d17481acf43376d5228025797e7ea9d2fd0ed6df98c76b",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md"
+    },
+    {
+      "char_end": 82,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 137,
+      "raw_original_line": "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/MAJOR_CHANGES.md",
+      "source_blob_sha1": "5f43490e1e235598f37a7b5c1734430e59521f81",
+      "source_line_sha256": "7a08cece69fa298a795b9f1238cfcab80e15a219dc09aaa02a33d37afb2db5f5",
+      "source_sha256": "95cc55f86f1810f965d17481acf43376d5228025797e7ea9d2fd0ed6df98c76b",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md"
+    },
+    {
+      "char_end": 95,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 271,
+      "raw_original_line": "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/MAJOR_CHANGES.md",
+      "source_blob_sha1": "5f43490e1e235598f37a7b5c1734430e59521f81",
+      "source_line_sha256": "800df55ffa05c163be34191cc82a7d0116fd41d6ee7dbc6b74f37bd3954652b7",
+      "source_sha256": "95cc55f86f1810f965d17481acf43376d5228025797e7ea9d2fd0ed6df98c76b",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md"
+    },
+    {
+      "char_end": 80,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 272,
+      "raw_original_line": "docs/research/034_durable_source_universe_and_evidence_substrate_architecture.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/MAJOR_CHANGES.md",
+      "source_blob_sha1": "5f43490e1e235598f37a7b5c1734430e59521f81",
+      "source_line_sha256": "d68af1f821d1d058eabdb4cb12748bf4730e5428faeaa333b236d3d1e687e4b2",
+      "source_sha256": "95cc55f86f1810f965d17481acf43376d5228025797e7ea9d2fd0ed6df98c76b",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/research/034_durable_source_universe_and_evidence_substrate_architecture.md"
+    },
+    {
+      "char_end": 49,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 336,
+      "raw_original_line": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/MAJOR_CHANGES.md",
+      "source_blob_sha1": "5f43490e1e235598f37a7b5c1734430e59521f81",
+      "source_line_sha256": "5a571ee5d75a7d4131af7fed70bf72b983c77d6ab316ecf431eb714185faa2b8",
+      "source_sha256": "95cc55f86f1810f965d17481acf43376d5228025797e7ea9d2fd0ed6df98c76b",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+    },
+    {
+      "char_end": 17,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 370,
+      "raw_original_line": "docs/DECISIONS.md, D-034",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/MAJOR_CHANGES.md",
+      "source_blob_sha1": "5f43490e1e235598f37a7b5c1734430e59521f81",
+      "source_line_sha256": "7226be4a4c8b56feb8502ed88acdf0846c88b4e79bcc4f382653cda3849e7420",
+      "source_sha256": "95cc55f86f1810f965d17481acf43376d5228025797e7ea9d2fd0ed6df98c76b",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/DECISIONS.md"
+    },
+    {
+      "char_end": 34,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 372,
+      "raw_original_line": "docs/model_collaboration/README.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/MAJOR_CHANGES.md",
+      "source_blob_sha1": "5f43490e1e235598f37a7b5c1734430e59521f81",
+      "source_line_sha256": "a4d5870ba7277defbaf39f844baddfcb0891564a958513af673aef5a4936beb0",
+      "source_sha256": "95cc55f86f1810f965d17481acf43376d5228025797e7ea9d2fd0ed6df98c76b",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/model_collaboration/README.md"
+    },
+    {
+      "char_end": 97,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 402,
+      "raw_original_line": "docs/research/089_cockpit_implementation_provenance_recovery_completion_and_exact_history_gate.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/MAJOR_CHANGES.md",
+      "source_blob_sha1": "5f43490e1e235598f37a7b5c1734430e59521f81",
+      "source_line_sha256": "48d2ad0ab17ea4b1f5883a9fa6fb9b0ab8796d930ed19025ced49709e0405039",
+      "source_sha256": "95cc55f86f1810f965d17481acf43376d5228025797e7ea9d2fd0ed6df98c76b",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/research/089_cockpit_implementation_provenance_recovery_completion_and_exact_history_gate.md"
+    },
+    {
+      "char_end": 48,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 407,
+      "raw_original_line": "docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/MAJOR_CHANGES.md",
+      "source_blob_sha1": "5f43490e1e235598f37a7b5c1734430e59521f81",
+      "source_line_sha256": "187e79cd8c942f24e557dd97b43227d84eadca9c7603693411d3525cd0507159",
+      "source_sha256": "95cc55f86f1810f965d17481acf43376d5228025797e7ea9d2fd0ed6df98c76b",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md"
+    },
+    {
+      "char_end": 18,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 435,
+      "raw_original_line": "docs/CONTINUITY.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/MAJOR_CHANGES.md",
+      "source_blob_sha1": "5f43490e1e235598f37a7b5c1734430e59521f81",
+      "source_line_sha256": "e201d01b685fc9a2a94c11d46e634b577cf7981c30080a78c984abc688eaabd7",
+      "source_sha256": "95cc55f86f1810f965d17481acf43376d5228025797e7ea9d2fd0ed6df98c76b",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/CONTINUITY.md"
+    },
+    {
+      "char_end": 26,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 438,
+      "raw_original_line": "docs/DEVELOPMENT_METHOD.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/MAJOR_CHANGES.md",
+      "source_blob_sha1": "5f43490e1e235598f37a7b5c1734430e59521f81",
+      "source_line_sha256": "9bc305508a4ad6587be20b283ae1edbb54516f185f91a2daa7b2ac02371d37b4",
+      "source_sha256": "95cc55f86f1810f965d17481acf43376d5228025797e7ea9d2fd0ed6df98c76b",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/DEVELOPMENT_METHOD.md"
+    },
+    {
+      "char_end": 26,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 455,
+      "raw_original_line": "docs/DEVELOPMENT_METHOD.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/MAJOR_CHANGES.md",
+      "source_blob_sha1": "5f43490e1e235598f37a7b5c1734430e59521f81",
+      "source_line_sha256": "9bc305508a4ad6587be20b283ae1edbb54516f185f91a2daa7b2ac02371d37b4",
+      "source_sha256": "95cc55f86f1810f965d17481acf43376d5228025797e7ea9d2fd0ed6df98c76b",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/DEVELOPMENT_METHOD.md"
+    },
+    {
+      "char_end": 18,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 456,
+      "raw_original_line": "docs/CONTINUITY.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/MAJOR_CHANGES.md",
+      "source_blob_sha1": "5f43490e1e235598f37a7b5c1734430e59521f81",
+      "source_line_sha256": "e201d01b685fc9a2a94c11d46e634b577cf7981c30080a78c984abc688eaabd7",
+      "source_sha256": "95cc55f86f1810f965d17481acf43376d5228025797e7ea9d2fd0ed6df98c76b",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/CONTINUITY.md"
+    },
+    {
+      "char_end": 92,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 458,
+      "raw_original_line": "docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/MAJOR_CHANGES.md",
+      "source_blob_sha1": "5f43490e1e235598f37a7b5c1734430e59521f81",
+      "source_line_sha256": "dbcd93f1307c0c2698c67436b18d9958ff69c574cec529e0f99970a17f0d6eac",
+      "source_sha256": "95cc55f86f1810f965d17481acf43376d5228025797e7ea9d2fd0ed6df98c76b",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md"
+    },
+    {
+      "char_end": 100,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 459,
+      "raw_original_line": "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/MAJOR_CHANGES.md",
+      "source_blob_sha1": "5f43490e1e235598f37a7b5c1734430e59521f81",
+      "source_line_sha256": "5019f5597ec98f01266bec7d3de534b2807ce75b5675223e573fc7745e5af2e0",
+      "source_sha256": "95cc55f86f1810f965d17481acf43376d5228025797e7ea9d2fd0ed6df98c76b",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md"
+    },
+    {
+      "char_end": 17,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 485,
+      "raw_original_line": "docs/DECISIONS.md, D-035",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/MAJOR_CHANGES.md",
+      "source_blob_sha1": "5f43490e1e235598f37a7b5c1734430e59521f81",
+      "source_line_sha256": "a2268109dd9840905ecb76159e317a9fbb4ed34229951c64a838910792513b18",
+      "source_sha256": "95cc55f86f1810f965d17481acf43376d5228025797e7ea9d2fd0ed6df98c76b",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/DECISIONS.md"
+    },
+    {
+      "char_end": 91,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 486,
+      "raw_original_line": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/MAJOR_CHANGES.md",
+      "source_blob_sha1": "5f43490e1e235598f37a7b5c1734430e59521f81",
+      "source_line_sha256": "37084c0e50aebbba388b89704ac89a5b7db2eecd33fd0beb46bee61eba9ac3f2",
+      "source_sha256": "95cc55f86f1810f965d17481acf43376d5228025797e7ea9d2fd0ed6df98c76b",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md"
+    },
+    {
+      "char_end": 98,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 516,
+      "raw_original_line": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/MAJOR_CHANGES.md",
+      "source_blob_sha1": "5f43490e1e235598f37a7b5c1734430e59521f81",
+      "source_line_sha256": "adada20becdffb0c0bb9aa63b8a0780f884555ce8f83f01b111c867000b5767a",
+      "source_sha256": "95cc55f86f1810f965d17481acf43376d5228025797e7ea9d2fd0ed6df98c76b",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md"
+    },
+    {
+      "char_end": 285,
+      "char_start": 263,
+      "indicators": [],
+      "line_number": 5,
+      "raw_original_line": "**Authority:** Planning and retrieval index only. This file preserves future ideas, intended investigations, explicitly deferred engineering directions, and continuation obligations so they are not lost across chats. It does not replace `docs/CURRENT_STATE.md`, `docs/OPEN_QUESTIONS.md`, accepted specifications/decisions, or the evidence artifacts linked from each item.",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/OPEN_ARCHITECTURE_BACKLOG.md",
+      "source_blob_sha1": "09686805ec0db7adc67682d8f8c15be3c64cb962",
+      "source_line_sha256": "a384bbbb8f3228247b2dcdee8f16e577361bd32da1792909d717a09a7655c5a8",
+      "source_sha256": "d409f7104ccad304e762ac7335f20514fe28d5f28063d8ac54a767ac4012a013",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/OPEN_QUESTIONS.md"
+    },
+    {
+      "char_end": 287,
+      "char_start": 253,
+      "indicators": [
+        "GOVERNANCE_WORDING",
+        "NAVIGATION_WORDING"
+      ],
+      "line_number": 626,
+      "raw_original_line": "A concrete failure was reproduced at the start of `chatgpt-17` after an unexpected context-limit termination. The new session correctly performed the canonical public bootstrap reads and reconstructed Checkpoint 283 / Research 117, but it did not read `docs/local_execution/OPERATIONS.md` before giving the next operational restart instructions. This happened even though:",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/OPEN_ARCHITECTURE_BACKLOG.md",
+      "source_blob_sha1": "09686805ec0db7adc67682d8f8c15be3c64cb962",
+      "source_line_sha256": "b2d8bac4a20024c55eece8e47c0482c33a8efca830af6149abbea54286ccbbc3",
+      "source_sha256": "d409f7104ccad304e762ac7335f20514fe28d5f28063d8ac54a767ac4012a013",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/local_execution/OPERATIONS.md"
+    },
+    {
+      "char_end": 45,
+      "char_start": 11,
+      "indicators": [],
+      "line_number": 630,
+      "raw_original_line": "    listed docs/local_execution/OPERATIONS.md in Minimum reading for continuation",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/OPEN_ARCHITECTURE_BACKLOG.md",
+      "source_blob_sha1": "09686805ec0db7adc67682d8f8c15be3c64cb962",
+      "source_line_sha256": "a1c8fe3e529328bd3f1dcf052936d442da4af144b36a2bf1e3d2731f9cfa3dba",
+      "source_sha256": "d409f7104ccad304e762ac7335f20514fe28d5f28063d8ac54a767ac4012a013",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/local_execution/OPERATIONS.md"
+    },
+    {
+      "char_end": 250,
+      "char_start": 228,
+      "indicators": [],
+      "line_number": 683,
+      "raw_original_line": "The project owner explicitly requested a follow-up audit of whether `docs/OPEN_ARCHITECTURE_BACKLOG.md` itself is sufficiently clear, easy to discover and reliably used, including whether its role is clearly distinguished from `docs/OPEN_QUESTIONS.md` and other current-state/research surfaces.",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/OPEN_ARCHITECTURE_BACKLOG.md",
+      "source_blob_sha1": "09686805ec0db7adc67682d8f8c15be3c64cb962",
+      "source_line_sha256": "4e343237777fa4d514e497d2a3a9471a47b54e5f9adb66a0fc1e44aacd815bea",
+      "source_sha256": "d409f7104ccad304e762ac7335f20514fe28d5f28063d8ac54a767ac4012a013",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/OPEN_QUESTIONS.md"
+    },
+    {
+      "char_end": 362,
+      "char_start": 328,
+      "indicators": [
+        "GOVERNANCE_WORDING"
+      ],
+      "line_number": 724,
+      "raw_original_line": "The concrete `chatgpt-17` wording that triggered this audit also exposed a smaller manifestation of the same problem: after publication, the collaborator suggested to \"refresh the connector/app if that surface supports it\" instead of immediately following the already-preserved exact ChatGPT developer-MCP refresh procedure in `docs/local_execution/OPERATIONS.md`. The repository already records the observed path (`Settings -> Plug-ins -> ADS Codexless Local Bridge -> Vernieuwen`) and the invariant that refresh occurs only after Codexless and tunnel readiness are healthy. This should be included in the eventual routing regression together with the incorrect restart order: task-relevant operational knowledge existed, but generic fallback wording was produced because the governing runbook had not been consumed.",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/OPEN_ARCHITECTURE_BACKLOG.md",
+      "source_blob_sha1": "09686805ec0db7adc67682d8f8c15be3c64cb962",
+      "source_line_sha256": "e96d1a2270d84a5db2542b83ec2cf3447cf6be9fa2fe8046cebae0b78d541ac9",
+      "source_sha256": "d409f7104ccad304e762ac7335f20514fe28d5f28063d8ac54a767ac4012a013",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/local_execution/OPERATIONS.md"
+    },
+    {
+      "char_end": 80,
+      "char_start": 62,
+      "indicators": [
+        "NAVIGATION_WORDING"
+      ],
+      "line_number": 787,
+      "raw_original_line": "Primary context: Foundation 014, Research 103, Research 104, `docs/CONTINUITY.md`, `docs/KNOWLEDGE_MAP.md`, and AB-022.",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/OPEN_ARCHITECTURE_BACKLOG.md",
+      "source_blob_sha1": "09686805ec0db7adc67682d8f8c15be3c64cb962",
+      "source_line_sha256": "38806de06272f1df808666d8f33dce8fa7d397416a39d70d12dbc988d0a3a2a8",
+      "source_sha256": "d409f7104ccad304e762ac7335f20514fe28d5f28063d8ac54a767ac4012a013",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/CONTINUITY.md"
+    },
+    {
+      "char_end": 90,
+      "char_start": 72,
+      "indicators": [
+        "NAVIGATION_WORDING"
+      ],
+      "line_number": 877,
+      "raw_original_line": "Primary context: `docs/current_routing.json`, `docs/CURRENT_STATE.md`, `docs/CONTINUITY.md`, Foundation 014, Research 104, AB-022, AB-024, and CO-003.",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/OPEN_ARCHITECTURE_BACKLOG.md",
+      "source_blob_sha1": "09686805ec0db7adc67682d8f8c15be3c64cb962",
+      "source_line_sha256": "7314a1d064d2233542a1298598998e916dafc64381df24b04bbab719b0ea6f39",
+      "source_sha256": "d409f7104ccad304e762ac7335f20514fe28d5f28063d8ac54a767ac4012a013",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/CONTINUITY.md"
+    },
+    {
+      "char_end": 241,
+      "char_start": 207,
+      "indicators": [
+        "NAVIGATION_WORDING"
+      ],
+      "line_number": 1513,
+      "raw_original_line": "Primary context: Specification 028 reconstruction/capture/workstream architecture, Research 179, AB-022, AB-023, AB-024, AB-025, AB-027, `docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md`, and `docs/local_execution/OPERATIONS.md`.",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/OPEN_ARCHITECTURE_BACKLOG.md",
+      "source_blob_sha1": "09686805ec0db7adc67682d8f8c15be3c64cb962",
+      "source_line_sha256": "fb6c3125c8ce389877e9f131e531a27a612df24f8155d78ed76d99b1bc38edba",
+      "source_sha256": "d409f7104ccad304e762ac7335f20514fe28d5f28063d8ac54a767ac4012a013",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/local_execution/OPERATIONS.md"
+    },
+    {
+      "char_end": 116,
+      "char_start": 98,
+      "indicators": [
+        "NAVIGATION_WORDING"
+      ],
+      "line_number": 1548,
+      "raw_original_line": "Primary context: Candidate 01 `workstream.v1` execution anchors, `PROJECT-INTEGRATION-BOUNDARY`, `docs/CONTINUITY.md` branch continuity rules, Specification 028 migration/cutover semantics, and AB-031.",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/OPEN_ARCHITECTURE_BACKLOG.md",
+      "source_blob_sha1": "09686805ec0db7adc67682d8f8c15be3c64cb962",
+      "source_line_sha256": "d087e1ef1e5776be5c0bba55d03ad505b0282f477f480c7cf930cb4cdec934bb",
+      "source_sha256": "d409f7104ccad304e762ac7335f20514fe28d5f28063d8ac54a767ac4012a013",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/CONTINUITY.md"
+    },
+    {
+      "char_end": 69,
+      "char_start": 20,
+      "indicators": [],
+      "line_number": 1593,
+      "raw_original_line": "Primary procedure: `docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md`.",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/OPEN_ARCHITECTURE_BACKLOG.md",
+      "source_blob_sha1": "09686805ec0db7adc67682d8f8c15be3c64cb962",
+      "source_line_sha256": "f34274f507c3df9b2acb75300c6b47846e5acf661b457cf99cc81805ef5b28d8",
+      "source_sha256": "d409f7104ccad304e762ac7335f20514fe28d5f28063d8ac54a767ac4012a013",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+    },
+    {
+      "char_end": 29,
+      "char_start": 7,
+      "indicators": [],
+      "line_number": 1618,
+      "raw_original_line": "   -> `docs/OPEN_QUESTIONS.md` may be the stronger owner; link instead of duplicating.",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/OPEN_ARCHITECTURE_BACKLOG.md",
+      "source_blob_sha1": "09686805ec0db7adc67682d8f8c15be3c64cb962",
+      "source_line_sha256": "488956cbd914e957dcd30bd8810ce798fe6f3e76554c953e523a1553b70f46aa",
+      "source_sha256": "d409f7104ccad304e762ac7335f20514fe28d5f28063d8ac54a767ac4012a013",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/OPEN_QUESTIONS.md"
+    },
+    {
+      "char_end": 95,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 441,
+      "raw_original_line": "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/OPEN_QUESTIONS.md",
+      "source_blob_sha1": "0ad283fbc3c45fb55d0417d2876a3a653ca8fa46",
+      "source_line_sha256": "800df55ffa05c163be34191cc82a7d0116fd41d6ee7dbc6b74f37bd3954652b7",
+      "source_sha256": "575202fcddf43b58f570d76ce34eae45148f881faeb817c4b6921d5b5e398d22",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md"
+    },
+    {
+      "char_end": 49,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 443,
+      "raw_original_line": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/OPEN_QUESTIONS.md",
+      "source_blob_sha1": "0ad283fbc3c45fb55d0417d2876a3a653ca8fa46",
+      "source_line_sha256": "5a571ee5d75a7d4131af7fed70bf72b983c77d6ab316ecf431eb714185faa2b8",
+      "source_sha256": "575202fcddf43b58f570d76ce34eae45148f881faeb817c4b6921d5b5e398d22",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+    },
+    {
+      "char_end": 45,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 444,
+      "raw_original_line": "docs/methodological_knowledge/COVERAGE_MAP.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/OPEN_QUESTIONS.md",
+      "source_blob_sha1": "0ad283fbc3c45fb55d0417d2876a3a653ca8fa46",
+      "source_line_sha256": "0eb25776f96389f7feb9b3bd3f4fde386da45aa477fdd547a60df5017bd8efc5",
+      "source_sha256": "575202fcddf43b58f570d76ce34eae45148f881faeb817c4b6921d5b5e398d22",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/methodological_knowledge/COVERAGE_MAP.md"
+    },
+    {
+      "char_end": 97,
+      "char_start": 5,
+      "indicators": [
+        "NAVIGATION_WORDING"
+      ],
+      "line_number": 167,
+      "raw_original_line": "See `docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md`.",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/PRINCIPLES.md",
+      "source_blob_sha1": "7a39753d6c7c6618648d5d90ecc4497613e71566",
+      "source_line_sha256": "b2895fab85d099ca53e365044feaa68d6692fb67560c9b60658250af02f58629",
+      "source_sha256": "6979492efd5b71b10b7328bde3c9ded3262195cae27952e8c02cf3e7ce2c192f",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md"
+    },
+    {
+      "char_end": 97,
+      "char_start": 5,
+      "indicators": [
+        "NAVIGATION_WORDING"
+      ],
+      "line_number": 177,
+      "raw_original_line": "See `docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md`.",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/PRINCIPLES.md",
+      "source_blob_sha1": "7a39753d6c7c6618648d5d90ecc4497613e71566",
+      "source_line_sha256": "b2895fab85d099ca53e365044feaa68d6692fb67560c9b60658250af02f58629",
+      "source_sha256": "6979492efd5b71b10b7328bde3c9ded3262195cae27952e8c02cf3e7ce2c192f",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md"
+    },
+    {
+      "char_end": 83,
+      "char_start": 5,
+      "indicators": [
+        "NAVIGATION_WORDING"
+      ],
+      "line_number": 207,
+      "raw_original_line": "See `docs/research/001_2026_agentic_ecosystem_and_integration_architecture_audit.md`.",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/PRINCIPLES.md",
+      "source_blob_sha1": "7a39753d6c7c6618648d5d90ecc4497613e71566",
+      "source_line_sha256": "2e7bdfda6ed1de9f04824785ecdaa1e789318faafff03cfb1c4159abb994a667",
+      "source_sha256": "6979492efd5b71b10b7328bde3c9ded3262195cae27952e8c02cf3e7ce2c192f",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/research/001_2026_agentic_ecosystem_and_integration_architecture_audit.md"
+    },
+    {
+      "char_end": 92,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 166,
+      "raw_original_line": "docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/VISION.md",
+      "source_blob_sha1": "8cbec9bae6d8edd5c89528dc5a9a1bb18c9e0217",
+      "source_line_sha256": "118fa9f73e43fd3d8e949c64ed4c3dd3136d9232c12b4a6474d02bcfd6f06e1d",
+      "source_sha256": "716e58ecac8c95b99acb2576ce68b9a4c66ff1005b9272813bd483ec086d4b76",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md"
+    },
+    {
+      "char_end": 92,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 247,
+      "raw_original_line": "docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/VISION.md",
+      "source_blob_sha1": "8cbec9bae6d8edd5c89528dc5a9a1bb18c9e0217",
+      "source_line_sha256": "118fa9f73e43fd3d8e949c64ed4c3dd3136d9232c12b4a6474d02bcfd6f06e1d",
+      "source_sha256": "716e58ecac8c95b99acb2576ce68b9a4c66ff1005b9272813bd483ec086d4b76",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md"
+    },
+    {
+      "char_end": 82,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 287,
+      "raw_original_line": "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/VISION.md",
+      "source_blob_sha1": "8cbec9bae6d8edd5c89528dc5a9a1bb18c9e0217",
+      "source_line_sha256": "7a08cece69fa298a795b9f1238cfcab80e15a219dc09aaa02a33d37afb2db5f5",
+      "source_sha256": "716e58ecac8c95b99acb2576ce68b9a4c66ff1005b9272813bd483ec086d4b76",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md"
+    },
+    {
+      "char_end": 95,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 348,
+      "raw_original_line": "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/VISION.md",
+      "source_blob_sha1": "8cbec9bae6d8edd5c89528dc5a9a1bb18c9e0217",
+      "source_line_sha256": "800df55ffa05c163be34191cc82a7d0116fd41d6ee7dbc6b74f37bd3954652b7",
+      "source_sha256": "716e58ecac8c95b99acb2576ce68b9a4c66ff1005b9272813bd483ec086d4b76",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md"
+    },
+    {
+      "char_end": 45,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 350,
+      "raw_original_line": "docs/methodological_knowledge/COVERAGE_MAP.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/VISION.md",
+      "source_blob_sha1": "8cbec9bae6d8edd5c89528dc5a9a1bb18c9e0217",
+      "source_line_sha256": "0eb25776f96389f7feb9b3bd3f4fde386da45aa477fdd547a60df5017bd8efc5",
+      "source_sha256": "716e58ecac8c95b99acb2576ce68b9a4c66ff1005b9272813bd483ec086d4b76",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/methodological_knowledge/COVERAGE_MAP.md"
+    },
+    {
+      "char_end": 22,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 450,
+      "raw_original_line": "docs/OPEN_QUESTIONS.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/VISION.md",
+      "source_blob_sha1": "8cbec9bae6d8edd5c89528dc5a9a1bb18c9e0217",
+      "source_line_sha256": "12725925f13cb63bd93f2a532fa4caa050204f148417c0dc73d9083b52591798",
+      "source_sha256": "716e58ecac8c95b99acb2576ce68b9a4c66ff1005b9272813bd483ec086d4b76",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/OPEN_QUESTIONS.md"
+    },
+    {
+      "char_end": 92,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 543,
+      "raw_original_line": "docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/VISION.md",
+      "source_blob_sha1": "8cbec9bae6d8edd5c89528dc5a9a1bb18c9e0217",
+      "source_line_sha256": "118fa9f73e43fd3d8e949c64ed4c3dd3136d9232c12b4a6474d02bcfd6f06e1d",
+      "source_sha256": "716e58ecac8c95b99acb2576ce68b9a4c66ff1005b9272813bd483ec086d4b76",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md"
+    },
+    {
+      "char_end": 82,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 544,
+      "raw_original_line": "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/VISION.md",
+      "source_blob_sha1": "8cbec9bae6d8edd5c89528dc5a9a1bb18c9e0217",
+      "source_line_sha256": "7a08cece69fa298a795b9f1238cfcab80e15a219dc09aaa02a33d37afb2db5f5",
+      "source_sha256": "716e58ecac8c95b99acb2576ce68b9a4c66ff1005b9272813bd483ec086d4b76",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md"
+    },
+    {
+      "char_end": 95,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 547,
+      "raw_original_line": "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/VISION.md",
+      "source_blob_sha1": "8cbec9bae6d8edd5c89528dc5a9a1bb18c9e0217",
+      "source_line_sha256": "800df55ffa05c163be34191cc82a7d0116fd41d6ee7dbc6b74f37bd3954652b7",
+      "source_sha256": "716e58ecac8c95b99acb2576ce68b9a4c66ff1005b9272813bd483ec086d4b76",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md"
+    },
+    {
+      "char_end": 18,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 549,
+      "raw_original_line": "docs/PRINCIPLES.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/VISION.md",
+      "source_blob_sha1": "8cbec9bae6d8edd5c89528dc5a9a1bb18c9e0217",
+      "source_line_sha256": "c361cd0a21aedc9a6ae326a125db172c087be54cd2fb645122660546632d3b7d",
+      "source_sha256": "716e58ecac8c95b99acb2576ce68b9a4c66ff1005b9272813bd483ec086d4b76",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/PRINCIPLES.md"
+    },
+    {
+      "char_end": 17,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 550,
+      "raw_original_line": "docs/DECISIONS.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/VISION.md",
+      "source_blob_sha1": "8cbec9bae6d8edd5c89528dc5a9a1bb18c9e0217",
+      "source_line_sha256": "1ea199fcea0d29740c9df691b542888c877d1c76a4fda36b130b92c9039f5433",
+      "source_sha256": "716e58ecac8c95b99acb2576ce68b9a4c66ff1005b9272813bd483ec086d4b76",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/DECISIONS.md"
+    },
+    {
+      "char_end": 22,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 551,
+      "raw_original_line": "docs/OPEN_QUESTIONS.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/VISION.md",
+      "source_blob_sha1": "8cbec9bae6d8edd5c89528dc5a9a1bb18c9e0217",
+      "source_line_sha256": "12725925f13cb63bd93f2a532fa4caa050204f148417c0dc73d9083b52591798",
+      "source_sha256": "716e58ecac8c95b99acb2576ce68b9a4c66ff1005b9272813bd483ec086d4b76",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/OPEN_QUESTIONS.md"
+    },
+    {
+      "char_end": 258,
+      "char_start": 236,
+      "indicators": [],
+      "line_number": 17,
+      "raw_original_line": "This target does not resume or promote the Cockpit. Resume requires the project owner to explicitly return to frontend work, then verify the exact frozen head or create an explicit continuation from it and follow the recovery route in `docs/cockpit/README.md`. Production `/cockpit` remains untouched until a separate promotion boundary is earned.",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/cockpit/COCKPIT_DESIGN_RESUME_TARGET.md",
+      "source_blob_sha1": "570192e52666d59352caba2b7a0e98c4cba90c93",
+      "source_line_sha256": "d742b732c5172369d3c2a6939697f8727f41ed06630c911b25a8e729d3871e8f",
+      "source_sha256": "74e919bc8a3f817d08a82d8d523cb9656d310af9873bd31b39b8b9f1ffb46b69",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/cockpit/README.md"
+    },
+    {
+      "char_end": 32,
+      "char_start": 10,
+      "indicators": [
+        "PATH_SELECTOR"
+      ],
+      "line_number": 37,
+      "raw_original_line": "    \"path:docs/cockpit/README.md\",",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/cockpit/COCKPIT_DESIGN_RESUME_TARGET.md",
+      "source_blob_sha1": "570192e52666d59352caba2b7a0e98c4cba90c93",
+      "source_line_sha256": "39145076476142ec88e1940deaa757e7cc2018cf661b428b8df0eb8b4908d480",
+      "source_sha256": "74e919bc8a3f817d08a82d8d523cb9656d310af9873bd31b39b8b9f1ffb46b69",
+      "syntax_context": "OTHER_TEXT",
+      "target": "docs/cockpit/README.md"
+    },
+    {
+      "char_end": 58,
+      "char_start": 10,
+      "indicators": [
+        "PATH_SELECTOR"
+      ],
+      "line_number": 38,
+      "raw_original_line": "    \"path:docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md\",",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/cockpit/COCKPIT_DESIGN_RESUME_TARGET.md",
+      "source_blob_sha1": "570192e52666d59352caba2b7a0e98c4cba90c93",
+      "source_line_sha256": "dd398b1ace3d2fda230c3672402ef3b81b458174d0670c7dc5d83b1d2bc0485d",
+      "source_sha256": "74e919bc8a3f817d08a82d8d523cb9656d310af9873bd31b39b8b9f1ffb46b69",
+      "syntax_context": "OTHER_TEXT",
+      "target": "docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md"
+    },
+    {
+      "char_end": 58,
+      "char_start": 10,
+      "indicators": [
+        "PATH_SELECTOR"
+      ],
+      "line_number": 38,
+      "raw_original_line": "    \"path:docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md\",",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/cockpit/README.md",
+      "source_blob_sha1": "1719ed23c62315078a0f35267001b8a3e2ce8b97",
+      "source_line_sha256": "dd398b1ace3d2fda230c3672402ef3b81b458174d0670c7dc5d83b1d2bc0485d",
+      "source_sha256": "08726acc6541e23fa568d1b444f98124456ac5863fc263498af5e5115f8a90c3",
+      "syntax_context": "OTHER_TEXT",
+      "target": "docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md"
+    },
+    {
+      "char_end": 51,
+      "char_start": 3,
+      "indicators": [],
+      "line_number": 149,
+      "raw_original_line": "8. docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/cockpit/README.md",
+      "source_blob_sha1": "1719ed23c62315078a0f35267001b8a3e2ce8b97",
+      "source_line_sha256": "2b386080c0b929fa2c88af7fbd66fead3578f7aa133d068ac4a0e16b3eb45dfa",
+      "source_sha256": "08726acc6541e23fa568d1b444f98124456ac5863fc263498af5e5115f8a90c3",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md"
+    },
+    {
+      "char_end": 101,
+      "char_start": 4,
+      "indicators": [],
+      "line_number": 152,
+      "raw_original_line": "11. docs/research/089_cockpit_implementation_provenance_recovery_completion_and_exact_history_gate.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/cockpit/README.md",
+      "source_blob_sha1": "1719ed23c62315078a0f35267001b8a3e2ce8b97",
+      "source_line_sha256": "ba1f255f64f231180b96ba4f850abd363026a0c9c1b821194b0e90961744a790",
+      "source_sha256": "08726acc6541e23fa568d1b444f98124456ac5863fc263498af5e5115f8a90c3",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/research/089_cockpit_implementation_provenance_recovery_completion_and_exact_history_gate.md"
+    },
+    {
+      "char_end": 22,
+      "char_start": 1,
+      "indicators": [],
+      "line_number": 320,
+      "raw_original_line": "`docs/MAJOR_CHANGES.md` therefore records only changes that materially alter one of the following:",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md",
+      "source_blob_sha1": "20c8ed53d6a2955b7cda2ae6ceada05e2629d6c9",
+      "source_line_sha256": "240fb38c17f2a4f2f5486f524e7ef1bf4919360d2333d848c65a327a89fac17a",
+      "source_sha256": "d93720c72673dc99f2b5b9f61453c20a536993b6ddd989a21608f32cbb653f77",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/MAJOR_CHANGES.md"
+    },
+    {
+      "char_end": 34,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 13,
+      "raw_original_line": "docs/local_execution/OPERATIONS.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/local_execution/README.md",
+      "source_blob_sha1": "535aa007281b7ffaf14f932887524f373aea0c4c",
+      "source_line_sha256": "1c0cb0146c34b9bf098dee0886f7f6e2002ab32ea9407ada2b4d38d6ee570fa9",
+      "source_sha256": "b27327f276d1a9db10c0f614bc69af6cef45cdd00385cbd19d601a2abc63c5fe",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/local_execution/OPERATIONS.md"
+    },
+    {
+      "char_end": 103,
+      "char_start": 26,
+      "indicators": [
+        "GOVERNANCE_WORDING"
+      ],
+      "line_number": 6,
+      "raw_original_line": "**Governing framework:** `docs/research/033_methodological_knowledge_universe_construction_framework.md`",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/methodological_knowledge/COVERAGE_MAP.md",
+      "source_blob_sha1": "80fd76e2d2fdf6e05982ed42820023399890ebd1",
+      "source_line_sha256": "fd943e90e83161c9f2b706c5b10241ee1e4b028100de1818dd9f49932b3dedb4",
+      "source_sha256": "0a056ac875cbad7646587151ad48a7cc9d366f3f48f047a6ef1c121184f5703e",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/research/033_methodological_knowledge_universe_construction_framework.md"
+    },
+    {
+      "char_end": 278,
+      "char_start": 252,
+      "indicators": [
+        "GOVERNANCE_WORDING"
+      ],
+      "line_number": 347,
+      "raw_original_line": "Model, effort level, and product surface are operational choices rather than fixed architecture. The current canonical Codex model/reasoning routing policy, including the quality-per-complete-engineering-loop rule and Sol/Astra effort tiers, lives in `docs/DEVELOPMENT_METHOD.md` under **Codex model and reasoning routing**. This collaboration protocol does not duplicate those model-specific defaults.",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/model_collaboration/README.md",
+      "source_blob_sha1": "3791dd4243976765e0fae7a1d5caf6ee59199232",
+      "source_line_sha256": "810667105eb0c2b9834bebd6170a2218e6cfbe0509392dba041c48451c543085",
+      "source_sha256": "cb7fb9ae6444457bf10e72f54f52f390d07821487f114195b14229017a828234",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/DEVELOPMENT_METHOD.md"
+    },
+    {
+      "char_end": 43,
+      "char_start": 10,
+      "indicators": [
+        "PATH_SELECTOR"
+      ],
+      "line_number": 39,
+      "raw_original_line": "    \"path:docs/OPEN_ARCHITECTURE_BACKLOG.md#AB-032\"",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/project_knowledge/project_integration_boundary.md",
+      "source_blob_sha1": "f81a9da2907926a21fc468e291da6351e1425383",
+      "source_line_sha256": "794da489617174e772323ee6d33474f5f3a4a6cde2e8f1ef1989aa79474a01a1",
+      "source_sha256": "a06d2734d4ff8298f60ed52aa5ff02a9a373c4a02937a8e3d7ba4a01b2993549",
+      "syntax_context": "OTHER_TEXT",
+      "target": "docs/OPEN_ARCHITECTURE_BACKLOG.md"
+    },
+    {
+      "char_end": 51,
+      "char_start": 34,
+      "indicators": [
+        "GOVERNANCE_WORDING"
+      ],
+      "line_number": 5,
+      "raw_original_line": "**Governing decision:** D-035 in `docs/DECISIONS.md`",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/project_knowledge/selected_architecture_workstream.md",
+      "source_blob_sha1": "d4e751febd48dc7fb5778883e08482bf79c96441",
+      "source_line_sha256": "e0b40b9f42ccd1501a234be5133a3fa8747a3c009683ee041bd6cf26fa9046b4",
+      "source_sha256": "600a43ea95f980a97a77c624bbbb1115fb7e427ca3e6f956688674714d9caa1c",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/DECISIONS.md"
+    },
+    {
+      "char_end": 27,
+      "char_start": 10,
+      "indicators": [
+        "PATH_SELECTOR"
+      ],
+      "line_number": 43,
+      "raw_original_line": "    \"path:docs/DECISIONS.md#D-035\",",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/project_knowledge/selected_architecture_workstream.md",
+      "source_blob_sha1": "d4e751febd48dc7fb5778883e08482bf79c96441",
+      "source_line_sha256": "f8915cb6203e96cc14927092ff53cdcec83a8d293134aec5923f18c4857fd6ca",
+      "source_sha256": "600a43ea95f980a97a77c624bbbb1115fb7e427ca3e6f956688674714d9caa1c",
+      "syntax_context": "OTHER_TEXT",
+      "target": "docs/DECISIONS.md"
+    },
+    {
+      "char_end": 45,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 198,
+      "raw_original_line": "docs/methodological_knowledge/COVERAGE_MAP.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/033_methodological_knowledge_universe_construction_framework.md",
+      "source_blob_sha1": "f69cc58a3265118ebfe07a75aec84a735bde1147",
+      "source_line_sha256": "0eb25776f96389f7feb9b3bd3f4fde386da45aa477fdd547a60df5017bd8efc5",
+      "source_sha256": "90d9a923a456bef4d1cc423f83210da36b10b50975495803a3a0b5e8ddd549b9",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/methodological_knowledge/COVERAGE_MAP.md"
+    },
+    {
+      "char_end": 66,
+      "char_start": 40,
+      "indicators": [
+        "GOVERNANCE_WORDING"
+      ],
+      "line_number": 7,
+      "raw_original_line": "**Authority:** Research proposal only. `docs/DEVELOPMENT_METHOD.md`, `docs/CONTINUITY.md`, current repository governance, and accepted project decisions remain authoritative until this proposal is reviewed and explicitly promoted.  ",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/035_multi_model_development_collaboration_architecture.md",
+      "source_blob_sha1": "8101e7531fbc31228c608aed0c1682685e13788f",
+      "source_line_sha256": "86a0b3af0eabe4a5bc7ddd059f72925fee18270e8d28d17ef6cae2a60ad08c46",
+      "source_sha256": "7e0156c58de721e8f77d6019903fb0932f7d7cdaddb90179d23bff1c4b1c7ff1",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/DEVELOPMENT_METHOD.md"
+    },
+    {
+      "char_end": 88,
+      "char_start": 70,
+      "indicators": [
+        "GOVERNANCE_WORDING"
+      ],
+      "line_number": 7,
+      "raw_original_line": "**Authority:** Research proposal only. `docs/DEVELOPMENT_METHOD.md`, `docs/CONTINUITY.md`, current repository governance, and accepted project decisions remain authoritative until this proposal is reviewed and explicitly promoted.  ",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/035_multi_model_development_collaboration_architecture.md",
+      "source_blob_sha1": "8101e7531fbc31228c608aed0c1682685e13788f",
+      "source_line_sha256": "86a0b3af0eabe4a5bc7ddd059f72925fee18270e8d28d17ef6cae2a60ad08c46",
+      "source_sha256": "7e0156c58de721e8f77d6019903fb0932f7d7cdaddb90179d23bff1c4b1c7ff1",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/CONTINUITY.md"
+    },
+    {
+      "char_end": 34,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 883,
+      "raw_original_line": "docs/model_collaboration/README.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/035_multi_model_development_collaboration_architecture.md",
+      "source_blob_sha1": "8101e7531fbc31228c608aed0c1682685e13788f",
+      "source_line_sha256": "a4d5870ba7277defbaf39f844baddfcb0891564a958513af673aef5a4936beb0",
+      "source_sha256": "7e0156c58de721e8f77d6019903fb0932f7d7cdaddb90179d23bff1c4b1c7ff1",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/model_collaboration/README.md"
+    },
+    {
+      "char_end": 195,
+      "char_start": 169,
+      "indicators": [
+        "GOVERNANCE_WORDING"
+      ],
+      "line_number": 6,
+      "raw_original_line": "**Authority:** Development-method evidence. The canonical checkpoint-format contract remains `docs/checkpoints/README.md`; canonical project-development method remains `docs/DEVELOPMENT_METHOD.md`.",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/064_rapid_iteration_repository_preservation_audit_and_checkpoint_hygiene.md",
+      "source_blob_sha1": "a48d0129113c8d54f423419f12fc6cc4bfe46245",
+      "source_line_sha256": "6222a52c4df383def01918b0cc2e64da196094835d6048752eeaccb49e76b128",
+      "source_sha256": "3a77556ff50955e6395f8648108d03a1ed38e6bf530544be4c34ca7ecdf72bb3",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/DEVELOPMENT_METHOD.md"
+    },
+    {
+      "char_end": 48,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 43,
+      "raw_original_line": "docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/089_cockpit_implementation_provenance_recovery_completion_and_exact_history_gate.md",
+      "source_blob_sha1": "e6502f5de4352206eb497519e3df8fe3238a9bd5",
+      "source_line_sha256": "187e79cd8c942f24e557dd97b43227d84eadca9c7603693411d3525cd0507159",
+      "source_sha256": "f16ce1530dd701cda8e0a91cfa4243977af65e335c5bad2bce34da47f144850e",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md"
+    },
+    {
+      "char_end": 26,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 26,
+      "raw_original_line": "docs/DEVELOPMENT_METHOD.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md",
+      "source_blob_sha1": "36e36f8ccd4183296159cb7f8a29425128e2aa92",
+      "source_line_sha256": "9bc305508a4ad6587be20b283ae1edbb54516f185f91a2daa7b2ac02371d37b4",
+      "source_sha256": "712506b9a83d65896258a8c6daa6d70d69dc558d480fa55f54b2191ea423ec70",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/DEVELOPMENT_METHOD.md"
+    },
+    {
+      "char_end": 18,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 27,
+      "raw_original_line": "docs/CONTINUITY.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md",
+      "source_blob_sha1": "36e36f8ccd4183296159cb7f8a29425128e2aa92",
+      "source_line_sha256": "e201d01b685fc9a2a94c11d46e634b577cf7981c30080a78c984abc688eaabd7",
+      "source_sha256": "712506b9a83d65896258a8c6daa6d70d69dc558d480fa55f54b2191ea423ec70",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/CONTINUITY.md"
+    },
+    {
+      "char_end": 73,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 28,
+      "raw_original_line": "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md",
+      "source_blob_sha1": "36e36f8ccd4183296159cb7f8a29425128e2aa92",
+      "source_line_sha256": "4548280f90e607f65353b518ab65a1f9f33fc7f51d1aa20e6441f6378b4e301f",
+      "source_sha256": "712506b9a83d65896258a8c6daa6d70d69dc558d480fa55f54b2191ea423ec70",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md"
+    },
+    {
+      "char_end": 89,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 29,
+      "raw_original_line": "docs/research/064_rapid_iteration_repository_preservation_audit_and_checkpoint_hygiene.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md",
+      "source_blob_sha1": "36e36f8ccd4183296159cb7f8a29425128e2aa92",
+      "source_line_sha256": "6c5e72266e102d270f1b8d08ddd9612a7062ca86ace3d47eeed7dc86045acb54",
+      "source_sha256": "712506b9a83d65896258a8c6daa6d70d69dc558d480fa55f54b2191ea423ec70",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/research/064_rapid_iteration_repository_preservation_audit_and_checkpoint_hygiene.md"
+    },
+    {
+      "char_end": 48,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 39,
+      "raw_original_line": "docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md",
+      "source_blob_sha1": "36e36f8ccd4183296159cb7f8a29425128e2aa92",
+      "source_line_sha256": "187e79cd8c942f24e557dd97b43227d84eadca9c7603693411d3525cd0507159",
+      "source_sha256": "712506b9a83d65896258a8c6daa6d70d69dc558d480fa55f54b2191ea423ec70",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md"
+    },
+    {
+      "char_end": 45,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 40,
+      "raw_original_line": "docs/methodological_knowledge/COVERAGE_MAP.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md",
+      "source_blob_sha1": "36e36f8ccd4183296159cb7f8a29425128e2aa92",
+      "source_line_sha256": "0eb25776f96389f7feb9b3bd3f4fde386da45aa477fdd547a60df5017bd8efc5",
+      "source_sha256": "712506b9a83d65896258a8c6daa6d70d69dc558d480fa55f54b2191ea423ec70",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/methodological_knowledge/COVERAGE_MAP.md"
+    },
+    {
+      "char_end": 49,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 41,
+      "raw_original_line": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md",
+      "source_blob_sha1": "36e36f8ccd4183296159cb7f8a29425128e2aa92",
+      "source_line_sha256": "5a571ee5d75a7d4131af7fed70bf72b983c77d6ab316ecf431eb714185faa2b8",
+      "source_sha256": "712506b9a83d65896258a8c6daa6d70d69dc558d480fa55f54b2191ea423ec70",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+    },
+    {
+      "char_end": 40,
+      "char_start": 22,
+      "indicators": [],
+      "line_number": 237,
+      "raw_original_line": "The audit also found `docs/CONTINUITY.md` still naming an older ChatGPT session while current routing had already moved to `chatgpt-10`.",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md",
+      "source_blob_sha1": "36e36f8ccd4183296159cb7f8a29425128e2aa92",
+      "source_line_sha256": "df76160a84e3e7bc29d46cf7e036e0385d85359c28ef2289e6e4a2751dfb483d",
+      "source_sha256": "712506b9a83d65896258a8c6daa6d70d69dc558d480fa55f54b2191ea423ec70",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/CONTINUITY.md"
+    },
+    {
+      "char_end": 18,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 35,
+      "raw_original_line": "docs/CONTINUITY.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md",
+      "source_blob_sha1": "d3f850beb65f0807622a562068039658ff608d15",
+      "source_line_sha256": "e201d01b685fc9a2a94c11d46e634b577cf7981c30080a78c984abc688eaabd7",
+      "source_sha256": "ed13eb45390f684529194268d2d1283ab7aa105bc2e4a57e09477569e7689410",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/CONTINUITY.md"
+    },
+    {
+      "char_end": 26,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 36,
+      "raw_original_line": "docs/DEVELOPMENT_METHOD.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md",
+      "source_blob_sha1": "d3f850beb65f0807622a562068039658ff608d15",
+      "source_line_sha256": "9bc305508a4ad6587be20b283ae1edbb54516f185f91a2daa7b2ac02371d37b4",
+      "source_sha256": "ed13eb45390f684529194268d2d1283ab7aa105bc2e4a57e09477569e7689410",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/DEVELOPMENT_METHOD.md"
+    },
+    {
+      "char_end": 21,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 37,
+      "raw_original_line": "docs/MAJOR_CHANGES.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md",
+      "source_blob_sha1": "d3f850beb65f0807622a562068039658ff608d15",
+      "source_line_sha256": "35449bb8d557c507809caa441f29579a2fc3fdf3373faadefa9dd20804db4253",
+      "source_sha256": "ed13eb45390f684529194268d2d1283ab7aa105bc2e4a57e09477569e7689410",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/MAJOR_CHANGES.md"
+    },
+    {
+      "char_end": 45,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 206,
+      "raw_original_line": "docs/methodological_knowledge/COVERAGE_MAP.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md",
+      "source_blob_sha1": "d3f850beb65f0807622a562068039658ff608d15",
+      "source_line_sha256": "0eb25776f96389f7feb9b3bd3f4fde386da45aa477fdd547a60df5017bd8efc5",
+      "source_sha256": "ed13eb45390f684529194268d2d1283ab7aa105bc2e4a57e09477569e7689410",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/methodological_knowledge/COVERAGE_MAP.md"
+    },
+    {
+      "char_end": 48,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 208,
+      "raw_original_line": "docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md",
+      "source_blob_sha1": "d3f850beb65f0807622a562068039658ff608d15",
+      "source_line_sha256": "187e79cd8c942f24e557dd97b43227d84eadca9c7603693411d3525cd0507159",
+      "source_sha256": "ed13eb45390f684529194268d2d1283ab7aa105bc2e4a57e09477569e7689410",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md"
+    },
+    {
+      "char_end": 49,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 209,
+      "raw_original_line": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md",
+      "source_blob_sha1": "d3f850beb65f0807622a562068039658ff608d15",
+      "source_line_sha256": "5a571ee5d75a7d4131af7fed70bf72b983c77d6ab316ecf431eb714185faa2b8",
+      "source_sha256": "ed13eb45390f684529194268d2d1283ab7aa105bc2e4a57e09477569e7689410",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+    },
+    {
+      "char_end": 18,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 235,
+      "raw_original_line": "docs/CONTINUITY.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md",
+      "source_blob_sha1": "d3f850beb65f0807622a562068039658ff608d15",
+      "source_line_sha256": "e201d01b685fc9a2a94c11d46e634b577cf7981c30080a78c984abc688eaabd7",
+      "source_sha256": "ed13eb45390f684529194268d2d1283ab7aa105bc2e4a57e09477569e7689410",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/CONTINUITY.md"
+    },
+    {
+      "char_end": 26,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 238,
+      "raw_original_line": "docs/DEVELOPMENT_METHOD.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md",
+      "source_blob_sha1": "d3f850beb65f0807622a562068039658ff608d15",
+      "source_line_sha256": "9bc305508a4ad6587be20b283ae1edbb54516f185f91a2daa7b2ac02371d37b4",
+      "source_sha256": "ed13eb45390f684529194268d2d1283ab7aa105bc2e4a57e09477569e7689410",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/DEVELOPMENT_METHOD.md"
+    },
+    {
+      "char_end": 21,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 241,
+      "raw_original_line": "docs/MAJOR_CHANGES.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md",
+      "source_blob_sha1": "d3f850beb65f0807622a562068039658ff608d15",
+      "source_line_sha256": "35449bb8d557c507809caa441f29579a2fc3fdf3373faadefa9dd20804db4253",
+      "source_sha256": "ed13eb45390f684529194268d2d1283ab7aa105bc2e4a57e09477569e7689410",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/MAJOR_CHANGES.md"
+    },
+    {
+      "char_end": 197,
+      "char_start": 163,
+      "indicators": [
+        "DECLARED_REFERENCES_FIELD",
+        "NAVIGATION_WORDING",
+        "PATH_SELECTOR"
+      ],
+      "line_number": 7,
+      "raw_original_line": "**Declared references:** `research:105`, `research:109`, `research:110`, `research:111`, `research:112`, `research:123`, `checkpoint:275`, `checkpoint:370`, `path:docs/local_execution/OPERATIONS.md`, `path:docs/model_collaboration/README.md`",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md",
+      "source_blob_sha1": "2e386d270e64188696d30c50fee420a8ba0af148",
+      "source_line_sha256": "978fbabe7f7519b3f1f765d2952ad5c6d143f49fe5c2d13660e204240775c5e9",
+      "source_sha256": "417026aea2f087217f5c566adad8449464b9e895bb899dfbbcb59209be6c9a45",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/local_execution/OPERATIONS.md"
+    },
+    {
+      "char_end": 240,
+      "char_start": 206,
+      "indicators": [
+        "DECLARED_REFERENCES_FIELD",
+        "NAVIGATION_WORDING",
+        "PATH_SELECTOR"
+      ],
+      "line_number": 7,
+      "raw_original_line": "**Declared references:** `research:105`, `research:109`, `research:110`, `research:111`, `research:112`, `research:123`, `checkpoint:275`, `checkpoint:370`, `path:docs/local_execution/OPERATIONS.md`, `path:docs/model_collaboration/README.md`",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md",
+      "source_blob_sha1": "2e386d270e64188696d30c50fee420a8ba0af148",
+      "source_line_sha256": "978fbabe7f7519b3f1f765d2952ad5c6d143f49fe5c2d13660e204240775c5e9",
+      "source_sha256": "417026aea2f087217f5c566adad8449464b9e895bb899dfbbcb59209be6c9a45",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/model_collaboration/README.md"
+    },
+    {
+      "char_end": 348,
+      "char_start": 314,
+      "indicators": [
+        "DECLARED_REFERENCES_FIELD",
+        "NAVIGATION_WORDING",
+        "PATH_SELECTOR"
+      ],
+      "line_number": 7,
+      "raw_original_line": "**Declared references:** `research:113`, `research:116`, `checkpoint:370`, `path:docs/local_execution/validation/034_chatgpt_tool_projection_refresh_and_connector_coexistence_observations.md`, `path:docs/local_execution/validation/128_github_connector_capability_parity_baseline_and_coexistence_recheck.md`, `path:docs/local_execution/OPERATIONS.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/123_github_connector_capability_parity_and_codexless_runtime_bridge_architecture.md",
+      "source_blob_sha1": "df749a1d7ea259eb12da4aa082ced8525dbd2641",
+      "source_line_sha256": "754697f00434354c710befdaaa2022bc55cc0b335b80d3e677ca09e59a2f9ac8",
+      "source_sha256": "c9bffcb7abadcb37b8b79f0b4d406983d19643659d223168b52100e412c83eab",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/local_execution/OPERATIONS.md"
+    },
+    {
+      "char_end": 390,
+      "char_start": 357,
+      "indicators": [
+        "DECLARED_REFERENCES_FIELD",
+        "NAVIGATION_WORDING",
+        "PATH_SELECTOR"
+      ],
+      "line_number": 7,
+      "raw_original_line": "**Declared references:** `research:113`, `research:116`, `checkpoint:370`, `path:docs/local_execution/validation/034_chatgpt_tool_projection_refresh_and_connector_coexistence_observations.md`, `path:docs/local_execution/validation/128_github_connector_capability_parity_baseline_and_coexistence_recheck.md`, `path:docs/local_execution/OPERATIONS.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/123_github_connector_capability_parity_and_codexless_runtime_bridge_architecture.md",
+      "source_blob_sha1": "df749a1d7ea259eb12da4aa082ced8525dbd2641",
+      "source_line_sha256": "754697f00434354c710befdaaa2022bc55cc0b335b80d3e677ca09e59a2f9ac8",
+      "source_sha256": "c9bffcb7abadcb37b8b79f0b4d406983d19643659d223168b52100e412c83eab",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/OPEN_ARCHITECTURE_BACKLOG.md"
+    },
+    {
+      "char_end": 111,
+      "char_start": 93,
+      "indicators": [
+        "GOVERNANCE_WORDING",
+        "NAVIGATION_WORDING"
+      ],
+      "line_number": 769,
+      "raw_original_line": "The qualification derived the blob SHA for `github.fetch_blob` from the preceding canonical `docs/CONTINUITY.md` read rather than guessing it. Installed-repository search kept native search-index enrichment explicitly disabled. `github.search` returned a valid zero-match response with `incompleteResults=true`, and `github.search_commits` returned a valid zero-match response; both were preserved as successful bounded reads without retry.",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/123_github_connector_capability_parity_and_codexless_runtime_bridge_architecture.md",
+      "source_blob_sha1": "df749a1d7ea259eb12da4aa082ced8525dbd2641",
+      "source_line_sha256": "0f70a2ce2147fb58e2807189cf2874296f32b3bf3ed79a2150cabb84b95f3b28",
+      "source_sha256": "c9bffcb7abadcb37b8b79f0b4d406983d19643659d223168b52100e412c83eab",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/CONTINUITY.md"
+    },
+    {
+      "char_end": 218,
+      "char_start": 145,
+      "indicators": [
+        "DECLARED_REFERENCES_FIELD",
+        "NAVIGATION_WORDING",
+        "PATH_SELECTOR"
+      ],
+      "line_number": 7,
+      "raw_original_line": "**Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+      "source_blob_sha1": "65550ec01b176ad5a1bb70a310415954fe6a7bd4",
+      "source_line_sha256": "85ddfc306b1ca416a371b2f1676ca4a762f7de045b3fee88a7a93e817902756d",
+      "source_sha256": "bd76181dffce2d941b6f802054cc5d2827bbfd1e63c8cfc022cb933fb0a824c5",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md"
+    },
+    {
+      "char_end": 260,
+      "char_start": 227,
+      "indicators": [
+        "DECLARED_REFERENCES_FIELD",
+        "NAVIGATION_WORDING",
+        "PATH_SELECTOR"
+      ],
+      "line_number": 7,
+      "raw_original_line": "**Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+      "source_blob_sha1": "65550ec01b176ad5a1bb70a310415954fe6a7bd4",
+      "source_line_sha256": "85ddfc306b1ca416a371b2f1676ca4a762f7de045b3fee88a7a93e817902756d",
+      "source_sha256": "bd76181dffce2d941b6f802054cc5d2827bbfd1e63c8cfc022cb933fb0a824c5",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/OPEN_ARCHITECTURE_BACKLOG.md"
+    },
+    {
+      "char_end": 287,
+      "char_start": 269,
+      "indicators": [
+        "DECLARED_REFERENCES_FIELD",
+        "NAVIGATION_WORDING",
+        "PATH_SELECTOR"
+      ],
+      "line_number": 7,
+      "raw_original_line": "**Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+      "source_blob_sha1": "65550ec01b176ad5a1bb70a310415954fe6a7bd4",
+      "source_line_sha256": "85ddfc306b1ca416a371b2f1676ca4a762f7de045b3fee88a7a93e817902756d",
+      "source_sha256": "bd76181dffce2d941b6f802054cc5d2827bbfd1e63c8cfc022cb933fb0a824c5",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/CONTINUITY.md"
+    },
+    {
+      "char_end": 322,
+      "char_start": 296,
+      "indicators": [
+        "DECLARED_REFERENCES_FIELD",
+        "NAVIGATION_WORDING",
+        "PATH_SELECTOR"
+      ],
+      "line_number": 7,
+      "raw_original_line": "**Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+      "source_blob_sha1": "65550ec01b176ad5a1bb70a310415954fe6a7bd4",
+      "source_line_sha256": "85ddfc306b1ca416a371b2f1676ca4a762f7de045b3fee88a7a93e817902756d",
+      "source_sha256": "bd76181dffce2d941b6f802054cc5d2827bbfd1e63c8cfc022cb933fb0a824c5",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/DEVELOPMENT_METHOD.md"
+    },
+    {
+      "char_end": 18,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 457,
+      "raw_original_line": "docs/CONTINUITY.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+      "source_blob_sha1": "65550ec01b176ad5a1bb70a310415954fe6a7bd4",
+      "source_line_sha256": "e201d01b685fc9a2a94c11d46e634b577cf7981c30080a78c984abc688eaabd7",
+      "source_sha256": "bd76181dffce2d941b6f802054cc5d2827bbfd1e63c8cfc022cb933fb0a824c5",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/CONTINUITY.md"
+    },
+    {
+      "char_end": 121,
+      "char_start": 99,
+      "indicators": [],
+      "line_number": 580,
+      "raw_original_line": "The repository already contains several specialized navigation surfaces. The strongest example is `docs/cockpit/README.md`, which preserves:",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+      "source_blob_sha1": "65550ec01b176ad5a1bb70a310415954fe6a7bd4",
+      "source_line_sha256": "5b771e85988631210db901da7b98db1375addb48a3418a508236c8388ebb128c",
+      "source_sha256": "bd76181dffce2d941b6f802054cc5d2827bbfd1e63c8cfc022cb933fb0a824c5",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/cockpit/README.md"
+    },
+    {
+      "char_end": 31,
+      "char_start": 1,
+      "indicators": [],
+      "line_number": 593,
+      "raw_original_line": "`docs/local_execution/README.md`, `docs/model_collaboration/README.md` and the methodological-knowledge coverage map provide similar domain-specific routing for their own scopes.",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+      "source_blob_sha1": "65550ec01b176ad5a1bb70a310415954fe6a7bd4",
+      "source_line_sha256": "8f3feacecde81c5cc1c6c53bb5330b4227a82111070c9264ea2bd0e30f309f15",
+      "source_sha256": "bd76181dffce2d941b6f802054cc5d2827bbfd1e63c8cfc022cb933fb0a824c5",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/local_execution/README.md"
+    },
+    {
+      "char_end": 69,
+      "char_start": 35,
+      "indicators": [],
+      "line_number": 593,
+      "raw_original_line": "`docs/local_execution/README.md`, `docs/model_collaboration/README.md` and the methodological-knowledge coverage map provide similar domain-specific routing for their own scopes.",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+      "source_blob_sha1": "65550ec01b176ad5a1bb70a310415954fe6a7bd4",
+      "source_line_sha256": "8f3feacecde81c5cc1c6c53bb5330b4227a82111070c9264ea2bd0e30f309f15",
+      "source_sha256": "bd76181dffce2d941b6f802054cc5d2827bbfd1e63c8cfc022cb933fb0a824c5",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/model_collaboration/README.md"
+    },
+    {
+      "char_end": 414,
+      "char_start": 380,
+      "indicators": [],
+      "line_number": 1263,
+      "raw_original_line": "Immediately after Phase B, the project owner requested that Claude join the foundational discussion before architecture design proceeds. The first ChatGPT response incorrectly reverted to an ad hoc human-relay pattern: it drafted a large task prompt for the owner to copy into Claude instead of first using the repository-native model-collaboration protocol already preserved in `docs/model_collaboration/README.md`, `REVIEW_INBOX.md` and the `MC-*` thread machinery.",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+      "source_blob_sha1": "65550ec01b176ad5a1bb70a310415954fe6a7bd4",
+      "source_line_sha256": "3ea230409ac2709369d731a80787bb034933bd7b4446dfd3e9cf5d8c03b6d456",
+      "source_sha256": "bd76181dffce2d941b6f802054cc5d2827bbfd1e63c8cfc022cb933fb0a824c5",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/model_collaboration/README.md"
+    },
+    {
+      "char_end": 139,
+      "char_start": 105,
+      "indicators": [
+        "GOVERNANCE_WORDING"
+      ],
+      "line_number": 1886,
+      "raw_original_line": "The fresh collaborator successfully recognized the operational task, discovered and materially consumed `docs/local_execution/OPERATIONS.md`, and selected the correct authority class. The historical `KF-SD-01` failure therefore did not reproduce as a simple governing-procedure activation miss.",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+      "source_blob_sha1": "65550ec01b176ad5a1bb70a310415954fe6a7bd4",
+      "source_line_sha256": "15256b200776a4ccf7eafcab0f17ce240fed69037fa210e4c719b622a7d8bc5e",
+      "source_sha256": "bd76181dffce2d941b6f802054cc5d2827bbfd1e63c8cfc022cb933fb0a824c5",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/local_execution/OPERATIONS.md"
+    },
+    {
+      "char_end": 77,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 2559,
+      "raw_original_line": "docs/research/126_knowledge_identity_and_multi_axis_organization_deep_dive.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+      "source_blob_sha1": "65550ec01b176ad5a1bb70a310415954fe6a7bd4",
+      "source_line_sha256": "edd3eb943b63287961912cc172a2a740e52748ce0500c12a1605f0c012f5c04c",
+      "source_sha256": "bd76181dffce2d941b6f802054cc5d2827bbfd1e63c8cfc022cb933fb0a824c5",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/research/126_knowledge_identity_and_multi_axis_organization_deep_dive.md"
+    },
+    {
+      "char_end": 87,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 2706,
+      "raw_original_line": "docs/research/127_capture_consolidation_promotion_and_source_derived_state_deep_dive.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+      "source_blob_sha1": "65550ec01b176ad5a1bb70a310415954fe6a7bd4",
+      "source_line_sha256": "3efa23f96e5096bc9c88138a86d0959df82ca761e481489781a44e0087fca713",
+      "source_sha256": "bd76181dffce2d941b6f802054cc5d2827bbfd1e63c8cfc022cb933fb0a824c5",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/research/127_capture_consolidation_promotion_and_source_derived_state_deep_dive.md"
+    },
+    {
+      "char_end": 141,
+      "char_start": 115,
+      "indicators": [
+        "DECLARED_REFERENCES_FIELD",
+        "NAVIGATION_WORDING",
+        "PATH_SELECTOR"
+      ],
+      "line_number": 7,
+      "raw_original_line": "**Declared references:** `research:124`, `research:125`, `research:126`, `checkpoint:464`, `checkpoint:465`, `path:docs/DEVELOPMENT_METHOD.md`",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/127_capture_consolidation_promotion_and_source_derived_state_deep_dive.md",
+      "source_blob_sha1": "9a2b05a08e5035dbe6dcbcf3d0426d11c60764b2",
+      "source_line_sha256": "1f2d803f0c8dabf1d3166b8ee68a13d82cb750be61787acf52ca561ac3ed2a79",
+      "source_sha256": "e15930665abb808862bc393ee265080249a5ff91956faec72d633a2b44961771",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/DEVELOPMENT_METHOD.md"
+    },
+    {
+      "char_end": 195,
+      "char_start": 177,
+      "indicators": [
+        "DECLARED_REFERENCES_FIELD",
+        "NAVIGATION_WORDING",
+        "PATH_SELECTOR"
+      ],
+      "line_number": 9,
+      "raw_original_line": "**Declared references:** `research:124`, `research:144`, `research:153`, `research:155`, `checkpoint:500`, `path:docs/CURRENT_STATE.md`, `path:docs/current_routing.json`, `path:docs/CONTINUITY.md`, `path:docs/KNOWLEDGE_MAP.md`",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+      "source_blob_sha1": "cbdbdbb5414a6bc981024494ec0449883401388a",
+      "source_line_sha256": "6f6b1756cd0093d80c4aea4d0667335c7f09b0407549627de52a0fb84ebd2ebb",
+      "source_sha256": "eec95b8356b61513e571e312ad626f49f456c565b625eccdac7aad03e6e22382",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/CONTINUITY.md"
+    },
+    {
+      "char_end": 34,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 100,
+      "raw_original_line": "docs/local_execution/OPERATIONS.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+      "source_blob_sha1": "cbdbdbb5414a6bc981024494ec0449883401388a",
+      "source_line_sha256": "1c0cb0146c34b9bf098dee0886f7f6e2002ab32ea9407ada2b4d38d6ee570fa9",
+      "source_sha256": "eec95b8356b61513e571e312ad626f49f456c565b625eccdac7aad03e6e22382",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/local_execution/OPERATIONS.md"
+    },
+    {
+      "char_end": 91,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 189,
+      "raw_original_line": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+      "source_blob_sha1": "cbdbdbb5414a6bc981024494ec0449883401388a",
+      "source_line_sha256": "37084c0e50aebbba388b89704ac89a5b7db2eecd33fd0beb46bee61eba9ac3f2",
+      "source_sha256": "eec95b8356b61513e571e312ad626f49f456c565b625eccdac7aad03e6e22382",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md"
+    },
+    {
+      "char_end": 75,
+      "char_start": 26,
+      "indicators": [
+        "GOVERNANCE_WORDING"
+      ],
+      "line_number": 5,
+      "raw_original_line": "**Governing procedure:** `docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md`",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/source_universe/SOURCE_VAULT_BOOTSTRAP_WORKSTREAM.md",
+      "source_blob_sha1": "1afd6255f529b05f9c14e2f4cfa1c389097eb83f",
+      "source_line_sha256": "830e109a52953f801804fc471fa2ef7029ea1a805175442197cf1339840f1931",
+      "source_sha256": "8af6602abbc25ff7eac8d8021239841231b32d28fe0880c859b3be2a7c30ea2a",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+    },
+    {
+      "char_end": 59,
+      "char_start": 10,
+      "indicators": [
+        "PATH_SELECTOR"
+      ],
+      "line_number": 71,
+      "raw_original_line": "    \"path:docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md\",",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/source_universe/SOURCE_VAULT_BOOTSTRAP_WORKSTREAM.md",
+      "source_blob_sha1": "1afd6255f529b05f9c14e2f4cfa1c389097eb83f",
+      "source_line_sha256": "aa151fff270fedba2bbcd6158bffda45044c6012d55aa5a1d555eb6798377181",
+      "source_sha256": "8af6602abbc25ff7eac8d8021239841231b32d28fe0880c859b3be2a7c30ea2a",
+      "syntax_context": "OTHER_TEXT",
+      "target": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+    },
+    {
+      "char_end": 59,
+      "char_start": 10,
+      "indicators": [
+        "PATH_SELECTOR"
+      ],
+      "line_number": 33,
+      "raw_original_line": "    \"path:docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md\",",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/source_universe/SOURCE_VAULT_REVIEWED_INGESTION.md",
+      "source_blob_sha1": "e239046eba5c2e56657c9e981649ca502f2168e7",
+      "source_line_sha256": "aa151fff270fedba2bbcd6158bffda45044c6012d55aa5a1d555eb6798377181",
+      "source_sha256": "8e5515bbdab42fe1ba9de7bd374207ebadc26e89cddcd8085ad7962495f3eeea",
+      "syntax_context": "OTHER_TEXT",
+      "target": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+    },
+    {
+      "char_end": 66,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 41,
+      "raw_original_line": "docs/research/029_dependency_backed_recommendation_value_design.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/specifications/021_v1_dependency_backed_recommendation_action_value_vertical_slice.md",
+      "source_blob_sha1": "ec9e433ef7c2ca2273ffe65b12c8dc69441ecdb2",
+      "source_line_sha256": "e5e335e6064489feb7e69b9c51c1645d7258c7abb9a68a369bca2b0a6bbe09cc",
+      "source_sha256": "323ed61331b99cf23458afd15bff1f22f0c741e89088a65e5c26eebdea0ad6dc",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/research/029_dependency_backed_recommendation_value_design.md"
+    },
+    {
+      "char_end": 48,
+      "char_start": 31,
+      "indicators": [
+        "DECLARED_REFERENCES_FIELD",
+        "NAVIGATION_WORDING",
+        "PATH_SELECTOR"
+      ],
+      "line_number": 7,
+      "raw_original_line": "**Declared references:** `path:docs/DECISIONS.md`, `research:144`, `research:145`, `research:175`, `research:176`, `research:177`, `checkpoint:522`, `path:docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md`, `path:docs/research/project_knowledge_candidate_01/QUALIFICATION_MATRIX_V01.json`, `path:pyproject.toml`",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "source_blob_sha1": "70db025eefa69a8dec43b04dfdae87f5700754c9",
+      "source_line_sha256": "2b8ef9de0ff5d0f652d17fbf747aa95e2134e084ee5add085099e883ce442513",
+      "source_sha256": "7651707b5d590efd7686a77dca20597dc731bfafa1fabc2358775bef7b9d2ffe",
+      "syntax_context": "INLINE_CODE",
+      "target": "docs/DECISIONS.md"
+    },
+    {
+      "char_end": 17,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 108,
+      "raw_original_line": "docs/DECISIONS.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "source_blob_sha1": "70db025eefa69a8dec43b04dfdae87f5700754c9",
+      "source_line_sha256": "1ea199fcea0d29740c9df691b542888c877d1c76a4fda36b130b92c9039f5433",
+      "source_sha256": "7651707b5d590efd7686a77dca20597dc731bfafa1fabc2358775bef7b9d2ffe",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/DECISIONS.md"
+    },
+    {
+      "char_end": 18,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 712,
+      "raw_original_line": "docs/CONTINUITY.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "source_blob_sha1": "70db025eefa69a8dec43b04dfdae87f5700754c9",
+      "source_line_sha256": "e201d01b685fc9a2a94c11d46e634b577cf7981c30080a78c984abc688eaabd7",
+      "source_sha256": "7651707b5d590efd7686a77dca20597dc731bfafa1fabc2358775bef7b9d2ffe",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/CONTINUITY.md"
+    },
+    {
+      "char_end": 57,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 747,
+      "raw_original_line": "docs/project_knowledge/architecture/whole_architecture.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "source_blob_sha1": "70db025eefa69a8dec43b04dfdae87f5700754c9",
+      "source_line_sha256": "c83c187ecd8bf5195d9a1699f16c51c1244eef4f752d88dd636456c307bfa35d",
+      "source_sha256": "7651707b5d590efd7686a77dca20597dc731bfafa1fabc2358775bef7b9d2ffe",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/project_knowledge/architecture/whole_architecture.md"
+    },
+    {
+      "char_end": 63,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 748,
+      "raw_original_line": "docs/project_knowledge/architecture/semantic_authority_model.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "source_blob_sha1": "70db025eefa69a8dec43b04dfdae87f5700754c9",
+      "source_line_sha256": "502bf2d18c74dc8527c81792f323ebb239b0b52438b1d00f59114f4e16b1d550",
+      "source_sha256": "7651707b5d590efd7686a77dca20597dc731bfafa1fabc2358775bef7b9d2ffe",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/project_knowledge/architecture/semantic_authority_model.md"
+    },
+    {
+      "char_end": 58,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 749,
+      "raw_original_line": "docs/project_knowledge/architecture/knowledge_lifecycle.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "source_blob_sha1": "70db025eefa69a8dec43b04dfdae87f5700754c9",
+      "source_line_sha256": "1c1d731f490fb21bb993a2008a96c8da722bba7f41e6ad443b5987e7ef656bee",
+      "source_sha256": "7651707b5d590efd7686a77dca20597dc731bfafa1fabc2358775bef7b9d2ffe",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/project_knowledge/architecture/knowledge_lifecycle.md"
+    },
+    {
+      "char_end": 60,
+      "char_start": 0,
+      "indicators": [],
+      "line_number": 751,
+      "raw_original_line": "docs/project_knowledge/architecture/migration_and_cutover.md",
+      "semantic_authority_disposition": "NOT_ADJUDICATED",
+      "source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "source_blob_sha1": "70db025eefa69a8dec43b04dfdae87f5700754c9",
+      "source_line_sha256": "bdc6872868db22b3b76cd2fdee6c9103ee3eeed478431e8f75ce5f7b3627bd67",
+      "source_sha256": "7651707b5d590efd7686a77dca20597dc731bfafa1fabc2358775bef7b9d2ffe",
+      "syntax_context": "FENCED_CODE",
+      "target": "docs/project_knowledge/architecture/migration_and_cutover.md"
+    }
+  ],
+  "source_fingerprint_sha256": "01206bdb2fdc3517627a94bdf6587efaa2f5d9ed10ad220f5799c496353c5a09",
+  "source_line_identity_unchanged": true,
+  "summary": {
+    "directed_pairs_total": 110,
+    "edge_evidence_inventory": [
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE",
+          "INLINE_CODE"
+        ],
+        "occurrence_indices": [
+          0,
+          1,
+          3
+        ],
+        "source": "docs/CONTINUITY.md",
+        "target": "docs/DEVELOPMENT_METHOD.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          4
+        ],
+        "source": "docs/CONTINUITY.md",
+        "target": "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          2
+        ],
+        "source": "docs/CONTINUITY.md",
+        "target": "docs/model_collaboration/README.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          5
+        ],
+        "source": "docs/CONTINUITY.md",
+        "target": "docs/research/064_rapid_iteration_repository_preservation_audit_and_checkpoint_hygiene.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          6
+        ],
+        "source": "docs/CONTINUITY.md",
+        "target": "docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          7
+        ],
+        "source": "docs/CONTINUITY.md",
+        "target": "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          11
+        ],
+        "source": "docs/DECISIONS.md",
+        "target": "docs/CONTINUITY.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          10
+        ],
+        "source": "docs/DECISIONS.md",
+        "target": "docs/DEVELOPMENT_METHOD.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          9
+        ],
+        "source": "docs/DECISIONS.md",
+        "target": "docs/MAJOR_CHANGES.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "INLINE_CODE"
+        ],
+        "occurrence_indices": [
+          8
+        ],
+        "source": "docs/DECISIONS.md",
+        "target": "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          12
+        ],
+        "source": "docs/DECISIONS.md",
+        "target": "docs/model_collaboration/README.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          13
+        ],
+        "source": "docs/DECISIONS.md",
+        "target": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE",
+          "INLINE_CODE"
+        ],
+        "occurrence_indices": [
+          14,
+          17,
+          18,
+          19
+        ],
+        "source": "docs/DEVELOPMENT_METHOD.md",
+        "target": "docs/CONTINUITY.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          15
+        ],
+        "source": "docs/DEVELOPMENT_METHOD.md",
+        "target": "docs/MAJOR_CHANGES.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "INLINE_CODE"
+        ],
+        "occurrence_indices": [
+          20
+        ],
+        "source": "docs/DEVELOPMENT_METHOD.md",
+        "target": "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          16
+        ],
+        "source": "docs/DEVELOPMENT_METHOD.md",
+        "target": "docs/model_collaboration/README.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          23,
+          40,
+          43
+        ],
+        "source": "docs/MAJOR_CHANGES.md",
+        "target": "docs/CONTINUITY.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          21,
+          36,
+          46
+        ],
+        "source": "docs/MAJOR_CHANGES.md",
+        "target": "docs/DECISIONS.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          22,
+          30,
+          41,
+          42
+        ],
+        "source": "docs/MAJOR_CHANGES.md",
+        "target": "docs/DEVELOPMENT_METHOD.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          39
+        ],
+        "source": "docs/MAJOR_CHANGES.md",
+        "target": "docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          24
+        ],
+        "source": "docs/MAJOR_CHANGES.md",
+        "target": "docs/foundations/002_epistemic_integrity_and_project_constitution.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          25
+        ],
+        "source": "docs/MAJOR_CHANGES.md",
+        "target": "docs/foundations/003_admissibility_risk_and_assurance.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          26
+        ],
+        "source": "docs/MAJOR_CHANGES.md",
+        "target": "docs/foundations/004_project_state_dependency_and_state_driven_orchestration.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          27
+        ],
+        "source": "docs/MAJOR_CHANGES.md",
+        "target": "docs/foundations/006_knowledge_activation_and_open_world_reasoning.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          28
+        ],
+        "source": "docs/MAJOR_CHANGES.md",
+        "target": "docs/foundations/009_behavioral_reasoning_regression_and_system_evaluation.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          29
+        ],
+        "source": "docs/MAJOR_CHANGES.md",
+        "target": "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          31
+        ],
+        "source": "docs/MAJOR_CHANGES.md",
+        "target": "docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          32
+        ],
+        "source": "docs/MAJOR_CHANGES.md",
+        "target": "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          33
+        ],
+        "source": "docs/MAJOR_CHANGES.md",
+        "target": "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          37
+        ],
+        "source": "docs/MAJOR_CHANGES.md",
+        "target": "docs/model_collaboration/README.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          34
+        ],
+        "source": "docs/MAJOR_CHANGES.md",
+        "target": "docs/research/034_durable_source_universe_and_evidence_substrate_architecture.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          38
+        ],
+        "source": "docs/MAJOR_CHANGES.md",
+        "target": "docs/research/089_cockpit_implementation_provenance_recovery_completion_and_exact_history_gate.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          44
+        ],
+        "source": "docs/MAJOR_CHANGES.md",
+        "target": "docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          45
+        ],
+        "source": "docs/MAJOR_CHANGES.md",
+        "target": "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          47
+        ],
+        "source": "docs/MAJOR_CHANGES.md",
+        "target": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          35
+        ],
+        "source": "docs/MAJOR_CHANGES.md",
+        "target": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          48
+        ],
+        "source": "docs/MAJOR_CHANGES.md",
+        "target": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "INLINE_CODE"
+        ],
+        "occurrence_indices": [
+          54,
+          55,
+          57
+        ],
+        "source": "docs/OPEN_ARCHITECTURE_BACKLOG.md",
+        "target": "docs/CONTINUITY.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE",
+          "INLINE_CODE"
+        ],
+        "occurrence_indices": [
+          49,
+          52,
+          59
+        ],
+        "source": "docs/OPEN_ARCHITECTURE_BACKLOG.md",
+        "target": "docs/OPEN_QUESTIONS.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE",
+          "INLINE_CODE"
+        ],
+        "occurrence_indices": [
+          50,
+          51,
+          53,
+          56
+        ],
+        "source": "docs/OPEN_ARCHITECTURE_BACKLOG.md",
+        "target": "docs/local_execution/OPERATIONS.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "INLINE_CODE"
+        ],
+        "occurrence_indices": [
+          58
+        ],
+        "source": "docs/OPEN_ARCHITECTURE_BACKLOG.md",
+        "target": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          60
+        ],
+        "source": "docs/OPEN_QUESTIONS.md",
+        "target": "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          62
+        ],
+        "source": "docs/OPEN_QUESTIONS.md",
+        "target": "docs/methodological_knowledge/COVERAGE_MAP.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          61
+        ],
+        "source": "docs/OPEN_QUESTIONS.md",
+        "target": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "INLINE_CODE"
+        ],
+        "occurrence_indices": [
+          63,
+          64
+        ],
+        "source": "docs/PRINCIPLES.md",
+        "target": "docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "INLINE_CODE"
+        ],
+        "occurrence_indices": [
+          65
+        ],
+        "source": "docs/PRINCIPLES.md",
+        "target": "docs/research/001_2026_agentic_ecosystem_and_integration_architecture_audit.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          76
+        ],
+        "source": "docs/VISION.md",
+        "target": "docs/DECISIONS.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          71,
+          77
+        ],
+        "source": "docs/VISION.md",
+        "target": "docs/OPEN_QUESTIONS.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          75
+        ],
+        "source": "docs/VISION.md",
+        "target": "docs/PRINCIPLES.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          66,
+          67,
+          72
+        ],
+        "source": "docs/VISION.md",
+        "target": "docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          68,
+          73
+        ],
+        "source": "docs/VISION.md",
+        "target": "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          69,
+          74
+        ],
+        "source": "docs/VISION.md",
+        "target": "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          70
+        ],
+        "source": "docs/VISION.md",
+        "target": "docs/methodological_knowledge/COVERAGE_MAP.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "OTHER_TEXT"
+        ],
+        "occurrence_indices": [
+          80
+        ],
+        "source": "docs/cockpit/COCKPIT_DESIGN_RESUME_TARGET.md",
+        "target": "docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "INLINE_CODE",
+          "OTHER_TEXT"
+        ],
+        "occurrence_indices": [
+          78,
+          79
+        ],
+        "source": "docs/cockpit/COCKPIT_DESIGN_RESUME_TARGET.md",
+        "target": "docs/cockpit/README.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE",
+          "OTHER_TEXT"
+        ],
+        "occurrence_indices": [
+          81,
+          82
+        ],
+        "source": "docs/cockpit/README.md",
+        "target": "docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          83
+        ],
+        "source": "docs/cockpit/README.md",
+        "target": "docs/research/089_cockpit_implementation_provenance_recovery_completion_and_exact_history_gate.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "INLINE_CODE"
+        ],
+        "occurrence_indices": [
+          84
+        ],
+        "source": "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md",
+        "target": "docs/MAJOR_CHANGES.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          85
+        ],
+        "source": "docs/local_execution/README.md",
+        "target": "docs/local_execution/OPERATIONS.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "INLINE_CODE"
+        ],
+        "occurrence_indices": [
+          86
+        ],
+        "source": "docs/methodological_knowledge/COVERAGE_MAP.md",
+        "target": "docs/research/033_methodological_knowledge_universe_construction_framework.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "INLINE_CODE"
+        ],
+        "occurrence_indices": [
+          87
+        ],
+        "source": "docs/model_collaboration/README.md",
+        "target": "docs/DEVELOPMENT_METHOD.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "OTHER_TEXT"
+        ],
+        "occurrence_indices": [
+          88
+        ],
+        "source": "docs/project_knowledge/project_integration_boundary.md",
+        "target": "docs/OPEN_ARCHITECTURE_BACKLOG.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "INLINE_CODE",
+          "OTHER_TEXT"
+        ],
+        "occurrence_indices": [
+          89,
+          90
+        ],
+        "source": "docs/project_knowledge/selected_architecture_workstream.md",
+        "target": "docs/DECISIONS.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          91
+        ],
+        "source": "docs/research/033_methodological_knowledge_universe_construction_framework.md",
+        "target": "docs/methodological_knowledge/COVERAGE_MAP.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "INLINE_CODE"
+        ],
+        "occurrence_indices": [
+          93
+        ],
+        "source": "docs/research/035_multi_model_development_collaboration_architecture.md",
+        "target": "docs/CONTINUITY.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "INLINE_CODE"
+        ],
+        "occurrence_indices": [
+          92
+        ],
+        "source": "docs/research/035_multi_model_development_collaboration_architecture.md",
+        "target": "docs/DEVELOPMENT_METHOD.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          94
+        ],
+        "source": "docs/research/035_multi_model_development_collaboration_architecture.md",
+        "target": "docs/model_collaboration/README.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "INLINE_CODE"
+        ],
+        "occurrence_indices": [
+          95
+        ],
+        "source": "docs/research/064_rapid_iteration_repository_preservation_audit_and_checkpoint_hygiene.md",
+        "target": "docs/DEVELOPMENT_METHOD.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          96
+        ],
+        "source": "docs/research/089_cockpit_implementation_provenance_recovery_completion_and_exact_history_gate.md",
+        "target": "docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE",
+          "INLINE_CODE"
+        ],
+        "occurrence_indices": [
+          98,
+          104
+        ],
+        "source": "docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md",
+        "target": "docs/CONTINUITY.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          97
+        ],
+        "source": "docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md",
+        "target": "docs/DEVELOPMENT_METHOD.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          101
+        ],
+        "source": "docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md",
+        "target": "docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          99
+        ],
+        "source": "docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md",
+        "target": "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          102
+        ],
+        "source": "docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md",
+        "target": "docs/methodological_knowledge/COVERAGE_MAP.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          100
+        ],
+        "source": "docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md",
+        "target": "docs/research/064_rapid_iteration_repository_preservation_audit_and_checkpoint_hygiene.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          103
+        ],
+        "source": "docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md",
+        "target": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          105,
+          111
+        ],
+        "source": "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md",
+        "target": "docs/CONTINUITY.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          106,
+          112
+        ],
+        "source": "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md",
+        "target": "docs/DEVELOPMENT_METHOD.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          107,
+          113
+        ],
+        "source": "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md",
+        "target": "docs/MAJOR_CHANGES.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          109
+        ],
+        "source": "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md",
+        "target": "docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          108
+        ],
+        "source": "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md",
+        "target": "docs/methodological_knowledge/COVERAGE_MAP.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          110
+        ],
+        "source": "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md",
+        "target": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "INLINE_CODE"
+        ],
+        "occurrence_indices": [
+          114
+        ],
+        "source": "docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md",
+        "target": "docs/local_execution/OPERATIONS.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "INLINE_CODE"
+        ],
+        "occurrence_indices": [
+          115
+        ],
+        "source": "docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md",
+        "target": "docs/model_collaboration/README.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "INLINE_CODE"
+        ],
+        "occurrence_indices": [
+          118
+        ],
+        "source": "docs/research/123_github_connector_capability_parity_and_codexless_runtime_bridge_architecture.md",
+        "target": "docs/CONTINUITY.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "INLINE_CODE"
+        ],
+        "occurrence_indices": [
+          117
+        ],
+        "source": "docs/research/123_github_connector_capability_parity_and_codexless_runtime_bridge_architecture.md",
+        "target": "docs/OPEN_ARCHITECTURE_BACKLOG.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "INLINE_CODE"
+        ],
+        "occurrence_indices": [
+          116
+        ],
+        "source": "docs/research/123_github_connector_capability_parity_and_codexless_runtime_bridge_architecture.md",
+        "target": "docs/local_execution/OPERATIONS.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE",
+          "INLINE_CODE"
+        ],
+        "occurrence_indices": [
+          121,
+          123
+        ],
+        "source": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+        "target": "docs/CONTINUITY.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "INLINE_CODE"
+        ],
+        "occurrence_indices": [
+          122
+        ],
+        "source": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+        "target": "docs/DEVELOPMENT_METHOD.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "INLINE_CODE"
+        ],
+        "occurrence_indices": [
+          120
+        ],
+        "source": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+        "target": "docs/OPEN_ARCHITECTURE_BACKLOG.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "INLINE_CODE"
+        ],
+        "occurrence_indices": [
+          124
+        ],
+        "source": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+        "target": "docs/cockpit/README.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "INLINE_CODE"
+        ],
+        "occurrence_indices": [
+          119
+        ],
+        "source": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+        "target": "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "INLINE_CODE"
+        ],
+        "occurrence_indices": [
+          128
+        ],
+        "source": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+        "target": "docs/local_execution/OPERATIONS.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "INLINE_CODE"
+        ],
+        "occurrence_indices": [
+          125
+        ],
+        "source": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+        "target": "docs/local_execution/README.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "INLINE_CODE"
+        ],
+        "occurrence_indices": [
+          126,
+          127
+        ],
+        "source": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+        "target": "docs/model_collaboration/README.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          129
+        ],
+        "source": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+        "target": "docs/research/126_knowledge_identity_and_multi_axis_organization_deep_dive.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          130
+        ],
+        "source": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+        "target": "docs/research/127_capture_consolidation_promotion_and_source_derived_state_deep_dive.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "INLINE_CODE"
+        ],
+        "occurrence_indices": [
+          131
+        ],
+        "source": "docs/research/127_capture_consolidation_promotion_and_source_derived_state_deep_dive.md",
+        "target": "docs/DEVELOPMENT_METHOD.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "INLINE_CODE"
+        ],
+        "occurrence_indices": [
+          132
+        ],
+        "source": "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+        "target": "docs/CONTINUITY.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          133
+        ],
+        "source": "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+        "target": "docs/local_execution/OPERATIONS.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          134
+        ],
+        "source": "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+        "target": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "INLINE_CODE",
+          "OTHER_TEXT"
+        ],
+        "occurrence_indices": [
+          135,
+          136
+        ],
+        "source": "docs/source_universe/SOURCE_VAULT_BOOTSTRAP_WORKSTREAM.md",
+        "target": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "OTHER_TEXT"
+        ],
+        "occurrence_indices": [
+          137
+        ],
+        "source": "docs/source_universe/SOURCE_VAULT_REVIEWED_INGESTION.md",
+        "target": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          138
+        ],
+        "source": "docs/specifications/021_v1_dependency_backed_recommendation_action_value_vertical_slice.md",
+        "target": "docs/research/029_dependency_backed_recommendation_value_design.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          141
+        ],
+        "source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+        "target": "docs/CONTINUITY.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE",
+          "INLINE_CODE"
+        ],
+        "occurrence_indices": [
+          139,
+          140
+        ],
+        "source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+        "target": "docs/DECISIONS.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          144
+        ],
+        "source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+        "target": "docs/project_knowledge/architecture/knowledge_lifecycle.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          145
+        ],
+        "source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+        "target": "docs/project_knowledge/architecture/migration_and_cutover.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          143
+        ],
+        "source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+        "target": "docs/project_knowledge/architecture/semantic_authority_model.md"
+      },
+      {
+        "authority_qualified": false,
+        "observed_contexts": [
+          "FENCED_CODE"
+        ],
+        "occurrence_indices": [
+          142
+        ],
+        "source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+        "target": "docs/project_knowledge/architecture/whole_architecture.md"
+      }
+    ],
+    "edge_pairs_exclusive_to_context": {
+      "FENCED_CODE": 70,
+      "INLINE_CODE": 26,
+      "OTHER_TEXT": 3
+    },
+    "edge_pairs_with_mixed_contexts": 11,
+    "nested_differences": {
+      "other_text_not_markdown_link": 7,
+      "outside_fence_not_other_text": 33,
+      "raw_not_outside_fence": 70
+    },
+    "occurrences_by_context": {
+      "FENCED_CODE": 93,
+      "INLINE_CODE": 46,
+      "OTHER_TEXT": 7
+    },
+    "occurrences_total": 146,
+    "occurrences_with_indicator": {
+      "GOVERNANCE_WORDING": 14,
+      "MARKDOWN_INLINE_LINK": 0,
+      "NAVIGATION_WORDING": 23,
+      "PATH_SELECTOR": 18
+    },
+    "source_coverage_by_projection": {
+      "MARKDOWN_LINKS_ONLY": {
+        "distinct_directed_edges": 0,
+        "distinct_sources_with_outgoing": 0,
+        "distinct_targets_with_incoming": 0,
+        "dropped_raw_edges": 110,
+        "edges": []
+      },
+      "OTHER_TEXT_ONLY": {
+        "distinct_directed_edges": 7,
+        "distinct_sources_with_outgoing": 6,
+        "distinct_targets_with_incoming": 5,
+        "dropped_raw_edges": 103,
+        "edges": [
+          [
+            "docs/cockpit/COCKPIT_DESIGN_RESUME_TARGET.md",
+            "docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md"
+          ],
+          [
+            "docs/cockpit/COCKPIT_DESIGN_RESUME_TARGET.md",
+            "docs/cockpit/README.md"
+          ],
+          [
+            "docs/cockpit/README.md",
+            "docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md"
+          ],
+          [
+            "docs/project_knowledge/project_integration_boundary.md",
+            "docs/OPEN_ARCHITECTURE_BACKLOG.md"
+          ],
+          [
+            "docs/project_knowledge/selected_architecture_workstream.md",
+            "docs/DECISIONS.md"
+          ],
+          [
+            "docs/source_universe/SOURCE_VAULT_BOOTSTRAP_WORKSTREAM.md",
+            "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+          ],
+          [
+            "docs/source_universe/SOURCE_VAULT_REVIEWED_INGESTION.md",
+            "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+          ]
+        ]
+      },
+      "OUTSIDE_FENCE": {
+        "distinct_directed_edges": 40,
+        "distinct_sources_with_outgoing": 23,
+        "distinct_targets_with_incoming": 16,
+        "dropped_raw_edges": 70,
+        "edges": [
+          [
+            "docs/CONTINUITY.md",
+            "docs/DEVELOPMENT_METHOD.md"
+          ],
+          [
+            "docs/DECISIONS.md",
+            "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md"
+          ],
+          [
+            "docs/DEVELOPMENT_METHOD.md",
+            "docs/CONTINUITY.md"
+          ],
+          [
+            "docs/DEVELOPMENT_METHOD.md",
+            "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md"
+          ],
+          [
+            "docs/OPEN_ARCHITECTURE_BACKLOG.md",
+            "docs/CONTINUITY.md"
+          ],
+          [
+            "docs/OPEN_ARCHITECTURE_BACKLOG.md",
+            "docs/OPEN_QUESTIONS.md"
+          ],
+          [
+            "docs/OPEN_ARCHITECTURE_BACKLOG.md",
+            "docs/local_execution/OPERATIONS.md"
+          ],
+          [
+            "docs/OPEN_ARCHITECTURE_BACKLOG.md",
+            "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+          ],
+          [
+            "docs/PRINCIPLES.md",
+            "docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md"
+          ],
+          [
+            "docs/PRINCIPLES.md",
+            "docs/research/001_2026_agentic_ecosystem_and_integration_architecture_audit.md"
+          ],
+          [
+            "docs/cockpit/COCKPIT_DESIGN_RESUME_TARGET.md",
+            "docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md"
+          ],
+          [
+            "docs/cockpit/COCKPIT_DESIGN_RESUME_TARGET.md",
+            "docs/cockpit/README.md"
+          ],
+          [
+            "docs/cockpit/README.md",
+            "docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md"
+          ],
+          [
+            "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md",
+            "docs/MAJOR_CHANGES.md"
+          ],
+          [
+            "docs/methodological_knowledge/COVERAGE_MAP.md",
+            "docs/research/033_methodological_knowledge_universe_construction_framework.md"
+          ],
+          [
+            "docs/model_collaboration/README.md",
+            "docs/DEVELOPMENT_METHOD.md"
+          ],
+          [
+            "docs/project_knowledge/project_integration_boundary.md",
+            "docs/OPEN_ARCHITECTURE_BACKLOG.md"
+          ],
+          [
+            "docs/project_knowledge/selected_architecture_workstream.md",
+            "docs/DECISIONS.md"
+          ],
+          [
+            "docs/research/035_multi_model_development_collaboration_architecture.md",
+            "docs/CONTINUITY.md"
+          ],
+          [
+            "docs/research/035_multi_model_development_collaboration_architecture.md",
+            "docs/DEVELOPMENT_METHOD.md"
+          ],
+          [
+            "docs/research/064_rapid_iteration_repository_preservation_audit_and_checkpoint_hygiene.md",
+            "docs/DEVELOPMENT_METHOD.md"
+          ],
+          [
+            "docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md",
+            "docs/CONTINUITY.md"
+          ],
+          [
+            "docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md",
+            "docs/local_execution/OPERATIONS.md"
+          ],
+          [
+            "docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md",
+            "docs/model_collaboration/README.md"
+          ],
+          [
+            "docs/research/123_github_connector_capability_parity_and_codexless_runtime_bridge_architecture.md",
+            "docs/CONTINUITY.md"
+          ],
+          [
+            "docs/research/123_github_connector_capability_parity_and_codexless_runtime_bridge_architecture.md",
+            "docs/OPEN_ARCHITECTURE_BACKLOG.md"
+          ],
+          [
+            "docs/research/123_github_connector_capability_parity_and_codexless_runtime_bridge_architecture.md",
+            "docs/local_execution/OPERATIONS.md"
+          ],
+          [
+            "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+            "docs/CONTINUITY.md"
+          ],
+          [
+            "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+            "docs/DEVELOPMENT_METHOD.md"
+          ],
+          [
+            "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+            "docs/OPEN_ARCHITECTURE_BACKLOG.md"
+          ],
+          [
+            "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+            "docs/cockpit/README.md"
+          ],
+          [
+            "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+            "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md"
+          ],
+          [
+            "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+            "docs/local_execution/OPERATIONS.md"
+          ],
+          [
+            "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+            "docs/local_execution/README.md"
+          ],
+          [
+            "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+            "docs/model_collaboration/README.md"
+          ],
+          [
+            "docs/research/127_capture_consolidation_promotion_and_source_derived_state_deep_dive.md",
+            "docs/DEVELOPMENT_METHOD.md"
+          ],
+          [
+            "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+            "docs/CONTINUITY.md"
+          ],
+          [
+            "docs/source_universe/SOURCE_VAULT_BOOTSTRAP_WORKSTREAM.md",
+            "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+          ],
+          [
+            "docs/source_universe/SOURCE_VAULT_REVIEWED_INGESTION.md",
+            "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+          ],
+          [
+            "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+            "docs/DECISIONS.md"
+          ]
+        ]
+      },
+      "RAW_PATH_MENTIONS": {
+        "distinct_directed_edges": 110,
+        "distinct_sources_with_outgoing": 31,
+        "distinct_targets_with_incoming": 39,
+        "dropped_raw_edges": 0,
+        "edges": [
+          [
+            "docs/CONTINUITY.md",
+            "docs/DEVELOPMENT_METHOD.md"
+          ],
+          [
+            "docs/CONTINUITY.md",
+            "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md"
+          ],
+          [
+            "docs/CONTINUITY.md",
+            "docs/model_collaboration/README.md"
+          ],
+          [
+            "docs/CONTINUITY.md",
+            "docs/research/064_rapid_iteration_repository_preservation_audit_and_checkpoint_hygiene.md"
+          ],
+          [
+            "docs/CONTINUITY.md",
+            "docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md"
+          ],
+          [
+            "docs/CONTINUITY.md",
+            "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md"
+          ],
+          [
+            "docs/DECISIONS.md",
+            "docs/CONTINUITY.md"
+          ],
+          [
+            "docs/DECISIONS.md",
+            "docs/DEVELOPMENT_METHOD.md"
+          ],
+          [
+            "docs/DECISIONS.md",
+            "docs/MAJOR_CHANGES.md"
+          ],
+          [
+            "docs/DECISIONS.md",
+            "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md"
+          ],
+          [
+            "docs/DECISIONS.md",
+            "docs/model_collaboration/README.md"
+          ],
+          [
+            "docs/DECISIONS.md",
+            "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md"
+          ],
+          [
+            "docs/DEVELOPMENT_METHOD.md",
+            "docs/CONTINUITY.md"
+          ],
+          [
+            "docs/DEVELOPMENT_METHOD.md",
+            "docs/MAJOR_CHANGES.md"
+          ],
+          [
+            "docs/DEVELOPMENT_METHOD.md",
+            "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md"
+          ],
+          [
+            "docs/DEVELOPMENT_METHOD.md",
+            "docs/model_collaboration/README.md"
+          ],
+          [
+            "docs/MAJOR_CHANGES.md",
+            "docs/CONTINUITY.md"
+          ],
+          [
+            "docs/MAJOR_CHANGES.md",
+            "docs/DECISIONS.md"
+          ],
+          [
+            "docs/MAJOR_CHANGES.md",
+            "docs/DEVELOPMENT_METHOD.md"
+          ],
+          [
+            "docs/MAJOR_CHANGES.md",
+            "docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md"
+          ],
+          [
+            "docs/MAJOR_CHANGES.md",
+            "docs/foundations/002_epistemic_integrity_and_project_constitution.md"
+          ],
+          [
+            "docs/MAJOR_CHANGES.md",
+            "docs/foundations/003_admissibility_risk_and_assurance.md"
+          ],
+          [
+            "docs/MAJOR_CHANGES.md",
+            "docs/foundations/004_project_state_dependency_and_state_driven_orchestration.md"
+          ],
+          [
+            "docs/MAJOR_CHANGES.md",
+            "docs/foundations/006_knowledge_activation_and_open_world_reasoning.md"
+          ],
+          [
+            "docs/MAJOR_CHANGES.md",
+            "docs/foundations/009_behavioral_reasoning_regression_and_system_evaluation.md"
+          ],
+          [
+            "docs/MAJOR_CHANGES.md",
+            "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md"
+          ],
+          [
+            "docs/MAJOR_CHANGES.md",
+            "docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md"
+          ],
+          [
+            "docs/MAJOR_CHANGES.md",
+            "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md"
+          ],
+          [
+            "docs/MAJOR_CHANGES.md",
+            "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md"
+          ],
+          [
+            "docs/MAJOR_CHANGES.md",
+            "docs/model_collaboration/README.md"
+          ],
+          [
+            "docs/MAJOR_CHANGES.md",
+            "docs/research/034_durable_source_universe_and_evidence_substrate_architecture.md"
+          ],
+          [
+            "docs/MAJOR_CHANGES.md",
+            "docs/research/089_cockpit_implementation_provenance_recovery_completion_and_exact_history_gate.md"
+          ],
+          [
+            "docs/MAJOR_CHANGES.md",
+            "docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md"
+          ],
+          [
+            "docs/MAJOR_CHANGES.md",
+            "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md"
+          ],
+          [
+            "docs/MAJOR_CHANGES.md",
+            "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md"
+          ],
+          [
+            "docs/MAJOR_CHANGES.md",
+            "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+          ],
+          [
+            "docs/MAJOR_CHANGES.md",
+            "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md"
+          ],
+          [
+            "docs/OPEN_ARCHITECTURE_BACKLOG.md",
+            "docs/CONTINUITY.md"
+          ],
+          [
+            "docs/OPEN_ARCHITECTURE_BACKLOG.md",
+            "docs/OPEN_QUESTIONS.md"
+          ],
+          [
+            "docs/OPEN_ARCHITECTURE_BACKLOG.md",
+            "docs/local_execution/OPERATIONS.md"
+          ],
+          [
+            "docs/OPEN_ARCHITECTURE_BACKLOG.md",
+            "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+          ],
+          [
+            "docs/OPEN_QUESTIONS.md",
+            "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md"
+          ],
+          [
+            "docs/OPEN_QUESTIONS.md",
+            "docs/methodological_knowledge/COVERAGE_MAP.md"
+          ],
+          [
+            "docs/OPEN_QUESTIONS.md",
+            "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+          ],
+          [
+            "docs/PRINCIPLES.md",
+            "docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md"
+          ],
+          [
+            "docs/PRINCIPLES.md",
+            "docs/research/001_2026_agentic_ecosystem_and_integration_architecture_audit.md"
+          ],
+          [
+            "docs/VISION.md",
+            "docs/DECISIONS.md"
+          ],
+          [
+            "docs/VISION.md",
+            "docs/OPEN_QUESTIONS.md"
+          ],
+          [
+            "docs/VISION.md",
+            "docs/PRINCIPLES.md"
+          ],
+          [
+            "docs/VISION.md",
+            "docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md"
+          ],
+          [
+            "docs/VISION.md",
+            "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md"
+          ],
+          [
+            "docs/VISION.md",
+            "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md"
+          ],
+          [
+            "docs/VISION.md",
+            "docs/methodological_knowledge/COVERAGE_MAP.md"
+          ],
+          [
+            "docs/cockpit/COCKPIT_DESIGN_RESUME_TARGET.md",
+            "docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md"
+          ],
+          [
+            "docs/cockpit/COCKPIT_DESIGN_RESUME_TARGET.md",
+            "docs/cockpit/README.md"
+          ],
+          [
+            "docs/cockpit/README.md",
+            "docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md"
+          ],
+          [
+            "docs/cockpit/README.md",
+            "docs/research/089_cockpit_implementation_provenance_recovery_completion_and_exact_history_gate.md"
+          ],
+          [
+            "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md",
+            "docs/MAJOR_CHANGES.md"
+          ],
+          [
+            "docs/local_execution/README.md",
+            "docs/local_execution/OPERATIONS.md"
+          ],
+          [
+            "docs/methodological_knowledge/COVERAGE_MAP.md",
+            "docs/research/033_methodological_knowledge_universe_construction_framework.md"
+          ],
+          [
+            "docs/model_collaboration/README.md",
+            "docs/DEVELOPMENT_METHOD.md"
+          ],
+          [
+            "docs/project_knowledge/project_integration_boundary.md",
+            "docs/OPEN_ARCHITECTURE_BACKLOG.md"
+          ],
+          [
+            "docs/project_knowledge/selected_architecture_workstream.md",
+            "docs/DECISIONS.md"
+          ],
+          [
+            "docs/research/033_methodological_knowledge_universe_construction_framework.md",
+            "docs/methodological_knowledge/COVERAGE_MAP.md"
+          ],
+          [
+            "docs/research/035_multi_model_development_collaboration_architecture.md",
+            "docs/CONTINUITY.md"
+          ],
+          [
+            "docs/research/035_multi_model_development_collaboration_architecture.md",
+            "docs/DEVELOPMENT_METHOD.md"
+          ],
+          [
+            "docs/research/035_multi_model_development_collaboration_architecture.md",
+            "docs/model_collaboration/README.md"
+          ],
+          [
+            "docs/research/064_rapid_iteration_repository_preservation_audit_and_checkpoint_hygiene.md",
+            "docs/DEVELOPMENT_METHOD.md"
+          ],
+          [
+            "docs/research/089_cockpit_implementation_provenance_recovery_completion_and_exact_history_gate.md",
+            "docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md"
+          ],
+          [
+            "docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md",
+            "docs/CONTINUITY.md"
+          ],
+          [
+            "docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md",
+            "docs/DEVELOPMENT_METHOD.md"
+          ],
+          [
+            "docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md",
+            "docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md"
+          ],
+          [
+            "docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md",
+            "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md"
+          ],
+          [
+            "docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md",
+            "docs/methodological_knowledge/COVERAGE_MAP.md"
+          ],
+          [
+            "docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md",
+            "docs/research/064_rapid_iteration_repository_preservation_audit_and_checkpoint_hygiene.md"
+          ],
+          [
+            "docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md",
+            "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+          ],
+          [
+            "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md",
+            "docs/CONTINUITY.md"
+          ],
+          [
+            "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md",
+            "docs/DEVELOPMENT_METHOD.md"
+          ],
+          [
+            "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md",
+            "docs/MAJOR_CHANGES.md"
+          ],
+          [
+            "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md",
+            "docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md"
+          ],
+          [
+            "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md",
+            "docs/methodological_knowledge/COVERAGE_MAP.md"
+          ],
+          [
+            "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md",
+            "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+          ],
+          [
+            "docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md",
+            "docs/local_execution/OPERATIONS.md"
+          ],
+          [
+            "docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md",
+            "docs/model_collaboration/README.md"
+          ],
+          [
+            "docs/research/123_github_connector_capability_parity_and_codexless_runtime_bridge_architecture.md",
+            "docs/CONTINUITY.md"
+          ],
+          [
+            "docs/research/123_github_connector_capability_parity_and_codexless_runtime_bridge_architecture.md",
+            "docs/OPEN_ARCHITECTURE_BACKLOG.md"
+          ],
+          [
+            "docs/research/123_github_connector_capability_parity_and_codexless_runtime_bridge_architecture.md",
+            "docs/local_execution/OPERATIONS.md"
+          ],
+          [
+            "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+            "docs/CONTINUITY.md"
+          ],
+          [
+            "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+            "docs/DEVELOPMENT_METHOD.md"
+          ],
+          [
+            "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+            "docs/OPEN_ARCHITECTURE_BACKLOG.md"
+          ],
+          [
+            "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+            "docs/cockpit/README.md"
+          ],
+          [
+            "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+            "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md"
+          ],
+          [
+            "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+            "docs/local_execution/OPERATIONS.md"
+          ],
+          [
+            "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+            "docs/local_execution/README.md"
+          ],
+          [
+            "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+            "docs/model_collaboration/README.md"
+          ],
+          [
+            "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+            "docs/research/126_knowledge_identity_and_multi_axis_organization_deep_dive.md"
+          ],
+          [
+            "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+            "docs/research/127_capture_consolidation_promotion_and_source_derived_state_deep_dive.md"
+          ],
+          [
+            "docs/research/127_capture_consolidation_promotion_and_source_derived_state_deep_dive.md",
+            "docs/DEVELOPMENT_METHOD.md"
+          ],
+          [
+            "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+            "docs/CONTINUITY.md"
+          ],
+          [
+            "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+            "docs/local_execution/OPERATIONS.md"
+          ],
+          [
+            "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+            "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md"
+          ],
+          [
+            "docs/source_universe/SOURCE_VAULT_BOOTSTRAP_WORKSTREAM.md",
+            "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+          ],
+          [
+            "docs/source_universe/SOURCE_VAULT_REVIEWED_INGESTION.md",
+            "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+          ],
+          [
+            "docs/specifications/021_v1_dependency_backed_recommendation_action_value_vertical_slice.md",
+            "docs/research/029_dependency_backed_recommendation_value_design.md"
+          ],
+          [
+            "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+            "docs/CONTINUITY.md"
+          ],
+          [
+            "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+            "docs/DECISIONS.md"
+          ],
+          [
+            "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+            "docs/project_knowledge/architecture/knowledge_lifecycle.md"
+          ],
+          [
+            "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+            "docs/project_knowledge/architecture/migration_and_cutover.md"
+          ],
+          [
+            "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+            "docs/project_knowledge/architecture/semantic_authority_model.md"
+          ],
+          [
+            "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+            "docs/project_knowledge/architecture/whole_architecture.md"
+          ]
+        ]
+      }
+    }
+  },
+  "v01_exact_bytes": 177638,
+  "v01_exact_sha256": "e935edf01c6298b2c55950236c18eab6a9d4f712cfeca1ce3c7c48f69376d299"
+}
