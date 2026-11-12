@@ -16,6 +16,8 @@ experiments/r0_p03_navigation_probe/NEED_ORIGINATION_INDEPENDENT_AUTHOR_BRIEF_V0
 experiments/r0_p03_navigation_probe/PROSPECTIVE_C02_INDEPENDENT_NEED_AUTHOR_BRIEF_V01.md -text
 # Preserve exact independent-originator C02 source-free completion receipt across checkouts.
 experiments/r0_p03_navigation_probe/NEED_ORIGINATION_C02_SAFE_RECEIPT_VERIFIED_V01.md -text whitespace=-blank-at-eol
+# Preserve independently authenticated source-free Phase A cross-cohort equivalence evidence exactly.
+experiments/r0_p03_navigation_probe/C02_CROSS_COHORT_EQUIVALENCE_AGGREGATE_VERIFIED_V01.md -text
 # Retain the source-free 12-need independent adjudication report byte-for-byte.
 experiments/r0_p03_navigation_probe/NEED_SOURCE_ADJUDICATION_AGGREGATE.md -text whitespace=-blank-at-eof
 # Preserve the byte-verified independent adjudicator's updated source-free result.

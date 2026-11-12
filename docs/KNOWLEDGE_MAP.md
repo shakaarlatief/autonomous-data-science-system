@@ -1043,6 +1043,11 @@ docs/research/635_r0_p03_completed_witness_capacity_hold_and_prospective_protoco
 docs/research/636_r0_p03_direct_scored_execution_readiness_audit_and_minimal_critical_path.md
 docs/research/637_r0_p03_owner_accepted_prospective_c02_independent_need_origination.md
 docs/research/638_r0_p03_c02_independent_origination_received_and_protected_adjudication_transition.md
+docs/research/639_r0_p03_c02_phase_a_verified_equivalence_capacity_and_phase_b_boundary.md
+docs/local_execution/validation/338_r0_p03_c02_actual_phase_a_equivalence_aggregate_and_task_capacity.md
+docs/checkpoints/902_r0_p03_c02_phase_a_equivalence_result_and_capacity_hold.md
+experiments/r0_p03_navigation_probe/C02_CROSS_COHORT_EQUIVALENCE_AGGREGATE_VERIFIED_V01.md
+experiments/r0_p03_navigation_probe/R0_P03_C02_PHASE_B_EVIDENCE_FEASIBILITY_HANDOFF_V01.md
 docs/local_execution/validation/337_r0_p03_c02_actual_source_free_origination_receipt_verified.md
 docs/checkpoints/901_r0_p03_c02_independent_origination_complete_and_protected_review_boundary.md
 experiments/r0_p03_navigation_probe/NEED_ORIGINATION_C02_SAFE_RECEIPT_VERIFIED_V01.md
@@ -1980,7 +1985,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-901 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-902 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 
