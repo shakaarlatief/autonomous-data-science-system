@@ -24,6 +24,8 @@ experiments/r0_p03_navigation_probe/C02_EVIDENCE_FEASIBILITY_AGGREGATE_VERIFIED_
 experiments/r0_p03_navigation_probe/C02_DIRECT_ORIGINAL_EVIDENCE_REVIEW_AGGREGATE_VERIFIED_V01.md -text
 # Preserve exact execution-result JSON bytes for the bounded exploratory navigation comparison.
 experiments/r0_p03_navigation_probe/exploratory_legacy_b0_b1_live_result_v01.json -text
+# Preserve exact immutable JSON output of the executed citation-link proxy.
+experiments/r0_p03_navigation_probe/exploratory_legacy_b2_source_link_proxy_result_v01.json -text
 # Retain the source-free 12-need independent adjudication report byte-for-byte.
 experiments/r0_p03_navigation_probe/NEED_SOURCE_ADJUDICATION_AGGREGATE.md -text whitespace=-blank-at-eof
 # Preserve the byte-verified independent adjudicator's updated source-free result.

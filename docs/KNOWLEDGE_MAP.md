@@ -1047,6 +1047,12 @@ docs/research/639_r0_p03_c02_phase_a_verified_equivalence_capacity_and_phase_b_b
 docs/research/640_r0_p03_c02_phase_b_ledger_only_evidence_capacity_and_next_scientific_gate.md
 docs/research/641_r0_p03_c02_direct_original_evidence_exhaustion_and_prospective_reference_decision.md
 docs/research/642_r0_p03_execution_first_exploratory_legacy_b0_b1_results_and_protocol_boundary.md
+docs/research/643_r0_p03_exploratory_real_source_citation_proxy_incremental_comparison.md
+docs/local_execution/validation/342_r0_p03_executed_b2_source_citation_proxy_result.md
+docs/checkpoints/906_r0_p03_real_source_citation_proxy_exploratory_execution.md
+experiments/r0_p03_navigation_probe/EXPLORATORY_LEGACY_B2_SOURCE_LINK_PROXY_CONTRACT_V01.md
+experiments/r0_p03_navigation_probe/exploratory_legacy_b2_source_link_proxy.py
+experiments/r0_p03_navigation_probe/exploratory_legacy_b2_source_link_proxy_result_v01.json
 docs/local_execution/validation/341_r0_p03_actual_live_exploratory_b0_b1_legacy_navigation_result.md
 docs/checkpoints/905_r0_p03_actual_exploratory_legacy_b0_b1_live_navigation_execution.md
 experiments/r0_p03_navigation_probe/exploratory_legacy_b0_b1_live_comparison.py
@@ -2001,7 +2007,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-905 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-906 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

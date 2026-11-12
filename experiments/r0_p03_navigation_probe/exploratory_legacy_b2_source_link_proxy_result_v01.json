@@ -1,0 +1,626 @@
+{
+  "aggregate": {
+    "b0_like": {
+      "explicit_negative_intrusions": 4,
+      "macro_recall_at_10": 0.738889,
+      "micro_recall_at_10": 0.717949,
+      "relevant_instances_found_at_10": 28,
+      "returned_slots": 90,
+      "scenario_count": 9,
+      "strict_complete_scenario_passes": 1,
+      "total_relevant_instances": 39
+    },
+    "b1_like": {
+      "explicit_negative_intrusions": 0,
+      "macro_recall_at_10": 1.0,
+      "micro_recall_at_10": 1.0,
+      "relevant_instances_found_at_10": 39,
+      "returned_slots": 51,
+      "scenario_count": 9,
+      "strict_complete_scenario_passes": 9,
+      "total_relevant_instances": 39
+    },
+    "b2_citation_proxy": {
+      "explicit_negative_intrusions": 6,
+      "macro_recall_at_10": 0.672222,
+      "micro_recall_at_10": 0.641026,
+      "relevant_instances_found_at_10": 25,
+      "returned_slots": 90,
+      "scenario_count": 9,
+      "strict_complete_scenario_passes": 2,
+      "total_relevant_instances": 39
+    }
+  },
+  "citation_directed_edge_count": 110,
+  "citation_expansion_seed_budget": 5,
+  "citation_retrieval_slots_added_across_scenarios": 33,
+  "citation_source_documents": 31,
+  "classification": "POSTHOC_EXPLORATORY_REAL_SOURCE_CITATION_PROXY_COMPARISON",
+  "identifier": "R0_P03_EXPLORATORY_LEGACY_B2_EXPLICIT_CITATION_PROXY_V01",
+  "limitations": [
+    "B2-like explicit path citation proxy, NOT actual governed editorial B2 CARRIER_LINKS",
+    "B1 reused authored W5 V0.2 fixture; not independent or blind",
+    "No B3/B4, accepted V03 common substrate, fresh 12-primary, independently re-adjudicated legacy gold, current authority or scored architecture decision"
+  ],
+  "literal_source_path_mentions_are_not_governing_links": true,
+  "observations": [
+    {
+      "b0_like": {
+        "explicit_negative_count": 5,
+        "explicit_negative_intrusions": 0,
+        "positives": 5,
+        "recall_at_10": 0.8,
+        "returned_count": 10,
+        "strict_pass": false,
+        "true_positive_count": 4
+      },
+      "b0_ranked_paths": [
+        "docs/CONTINUITY.md",
+        "docs/project_knowledge/architecture/whole_architecture.md",
+        "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+        "docs/research/127_capture_consolidation_promotion_and_source_derived_state_deep_dive.md",
+        "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+        "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+        "docs/OPEN_ARCHITECTURE_BACKLOG.md",
+        "docs/MAJOR_CHANGES.md",
+        "docs/research/089_cockpit_implementation_provenance_recovery_completion_and_exact_history_gate.md",
+        "docs/DEVELOPMENT_METHOD.md"
+      ],
+      "b1_like": {
+        "explicit_negative_count": 5,
+        "explicit_negative_intrusions": 0,
+        "positives": 5,
+        "recall_at_10": 1.0,
+        "returned_count": 10,
+        "strict_pass": true,
+        "true_positive_count": 5
+      },
+      "b1_ranked_paths": [
+        "docs/project_knowledge/architecture/whole_architecture.md",
+        "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+        "docs/research/127_capture_consolidation_promotion_and_source_derived_state_deep_dive.md",
+        "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+        "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+        "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md",
+        "docs/research/126_knowledge_identity_and_multi_axis_organization_deep_dive.md",
+        "docs/project_knowledge/architecture/knowledge_lifecycle.md",
+        "docs/research/208_w5_physical_authoring_v02_freeze_and_empirical_gate_program.md",
+        "docs/project_knowledge/architecture/semantic_authority_model.md"
+      ],
+      "b2_citation_proxy": {
+        "explicit_negative_count": 5,
+        "explicit_negative_intrusions": 1,
+        "positives": 5,
+        "recall_at_10": 0.6,
+        "returned_count": 10,
+        "strict_pass": false,
+        "true_positive_count": 3
+      },
+      "b2_ranked_paths": [
+        "docs/CONTINUITY.md",
+        "docs/project_knowledge/architecture/whole_architecture.md",
+        "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+        "docs/research/127_capture_consolidation_promotion_and_source_derived_state_deep_dive.md",
+        "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+        "docs/DEVELOPMENT_METHOD.md",
+        "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md",
+        "docs/model_collaboration/README.md",
+        "docs/local_execution/OPERATIONS.md",
+        "docs/OPEN_ARCHITECTURE_BACKLOG.md"
+      ],
+      "citation_added_to_seeds": 5,
+      "human_label_query": "Project-knowledge architecture and reconstruction",
+      "scenario": "project-knowledge-architecture"
+    },
+    {
+      "b0_like": {
+        "explicit_negative_count": 5,
+        "explicit_negative_intrusions": 0,
+        "positives": 5,
+        "recall_at_10": 0.4,
+        "returned_count": 10,
+        "strict_pass": false,
+        "true_positive_count": 2
+      },
+      "b0_ranked_paths": [
+        "docs/research/001_2026_agentic_ecosystem_and_integration_architecture_audit.md",
+        "docs/VISION.md",
+        "docs/model_collaboration/README.md",
+        "docs/MAJOR_CHANGES.md",
+        "docs/DECISIONS.md",
+        "docs/PRINCIPLES.md",
+        "docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md",
+        "docs/research/105_codexless_local_execution_bridge_evaluation.md",
+        "docs/OPEN_ARCHITECTURE_BACKLOG.md",
+        "docs/local_execution/OPERATIONS.md"
+      ],
+      "b1_like": {
+        "explicit_negative_count": 5,
+        "explicit_negative_intrusions": 0,
+        "positives": 5,
+        "recall_at_10": 1.0,
+        "returned_count": 6,
+        "strict_pass": true,
+        "true_positive_count": 5
+      },
+      "b1_ranked_paths": [
+        "docs/research/001_2026_agentic_ecosystem_and_integration_architecture_audit.md",
+        "docs/research/105_codexless_local_execution_bridge_evaluation.md",
+        "docs/local_execution/OPERATIONS.md",
+        "docs/local_execution/README.md",
+        "docs/research/123_github_connector_capability_parity_and_codexless_runtime_bridge_architecture.md",
+        "docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md"
+      ],
+      "b2_citation_proxy": {
+        "explicit_negative_count": 5,
+        "explicit_negative_intrusions": 1,
+        "positives": 5,
+        "recall_at_10": 0.0,
+        "returned_count": 10,
+        "strict_pass": false,
+        "true_positive_count": 0
+      },
+      "b2_ranked_paths": [
+        "docs/research/001_2026_agentic_ecosystem_and_integration_architecture_audit.md",
+        "docs/VISION.md",
+        "docs/model_collaboration/README.md",
+        "docs/MAJOR_CHANGES.md",
+        "docs/DECISIONS.md",
+        "docs/DEVELOPMENT_METHOD.md",
+        "docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md",
+        "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md",
+        "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+        "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md"
+      ],
+      "citation_added_to_seeds": 5,
+      "human_label_query": "Developer tooling, local execution and external integrations",
+      "scenario": "tooling-integrations"
+    },
+    {
+      "b0_like": {
+        "explicit_negative_count": 5,
+        "explicit_negative_intrusions": 0,
+        "positives": 5,
+        "recall_at_10": 0.6,
+        "returned_count": 10,
+        "strict_pass": false,
+        "true_positive_count": 3
+      },
+      "b0_ranked_paths": [
+        "docs/MAJOR_CHANGES.md",
+        "docs/research/034_durable_source_universe_and_evidence_substrate_architecture.md",
+        "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+        "docs/OPEN_QUESTIONS.md",
+        "docs/DECISIONS.md",
+        "docs/project_knowledge/architecture/migration_and_cutover.md",
+        "docs/VISION.md",
+        "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+        "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+        "docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md"
+      ],
+      "b1_like": {
+        "explicit_negative_count": 5,
+        "explicit_negative_intrusions": 0,
+        "positives": 5,
+        "recall_at_10": 1.0,
+        "returned_count": 5,
+        "strict_pass": true,
+        "true_positive_count": 5
+      },
+      "b1_ranked_paths": [
+        "docs/research/034_durable_source_universe_and_evidence_substrate_architecture.md",
+        "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+        "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+        "docs/source_universe/SOURCE_VAULT_BOOTSTRAP_WORKSTREAM.md",
+        "docs/source_universe/SOURCE_VAULT_REVIEWED_INGESTION.md"
+      ],
+      "b2_citation_proxy": {
+        "explicit_negative_count": 5,
+        "explicit_negative_intrusions": 2,
+        "positives": 5,
+        "recall_at_10": 0.6,
+        "returned_count": 10,
+        "strict_pass": false,
+        "true_positive_count": 3
+      },
+      "b2_ranked_paths": [
+        "docs/MAJOR_CHANGES.md",
+        "docs/research/034_durable_source_universe_and_evidence_substrate_architecture.md",
+        "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+        "docs/OPEN_QUESTIONS.md",
+        "docs/DECISIONS.md",
+        "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+        "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+        "docs/CONTINUITY.md",
+        "docs/DEVELOPMENT_METHOD.md",
+        "docs/model_collaboration/README.md"
+      ],
+      "citation_added_to_seeds": 5,
+      "human_label_query": "Source Universe and evidence substrate",
+      "scenario": "source-universe"
+    },
+    {
+      "b0_like": {
+        "explicit_negative_count": 5,
+        "explicit_negative_intrusions": 1,
+        "positives": 3,
+        "recall_at_10": 1.0,
+        "returned_count": 10,
+        "strict_pass": false,
+        "true_positive_count": 3
+      },
+      "b0_ranked_paths": [
+        "docs/research/035_multi_model_development_collaboration_architecture.md",
+        "docs/model_collaboration/README.md",
+        "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+        "docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md",
+        "docs/DEVELOPMENT_METHOD.md",
+        "docs/research/001_2026_agentic_ecosystem_and_integration_architecture_audit.md",
+        "docs/research/046_work_unit_category_and_silhouette_visual_grammar_experiment.md",
+        "docs/CONTINUITY.md",
+        "docs/local_execution/OPERATIONS.md",
+        "docs/OPEN_ARCHITECTURE_BACKLOG.md"
+      ],
+      "b1_like": {
+        "explicit_negative_count": 5,
+        "explicit_negative_intrusions": 0,
+        "positives": 3,
+        "recall_at_10": 1.0,
+        "returned_count": 3,
+        "strict_pass": true,
+        "true_positive_count": 3
+      },
+      "b1_ranked_paths": [
+        "docs/research/035_multi_model_development_collaboration_architecture.md",
+        "docs/model_collaboration/README.md",
+        "docs/DEVELOPMENT_METHOD.md"
+      ],
+      "b2_citation_proxy": {
+        "explicit_negative_count": 5,
+        "explicit_negative_intrusions": 1,
+        "positives": 3,
+        "recall_at_10": 1.0,
+        "returned_count": 10,
+        "strict_pass": false,
+        "true_positive_count": 3
+      },
+      "b2_ranked_paths": [
+        "docs/research/035_multi_model_development_collaboration_architecture.md",
+        "docs/model_collaboration/README.md",
+        "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+        "docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md",
+        "docs/DEVELOPMENT_METHOD.md",
+        "docs/CONTINUITY.md",
+        "docs/local_execution/OPERATIONS.md",
+        "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md",
+        "docs/OPEN_ARCHITECTURE_BACKLOG.md",
+        "docs/MAJOR_CHANGES.md"
+      ],
+      "citation_added_to_seeds": 5,
+      "human_label_query": "Multi-model collaboration and review protocol",
+      "scenario": "model-collaboration"
+    },
+    {
+      "b0_like": {
+        "explicit_negative_count": 5,
+        "explicit_negative_intrusions": 1,
+        "positives": 4,
+        "recall_at_10": 1.0,
+        "returned_count": 10,
+        "strict_pass": false,
+        "true_positive_count": 4
+      },
+      "b0_ranked_paths": [
+        "docs/research/037_project_cockpit_next_generation_visual_interaction_design_exploration_map.md",
+        "docs/research/079_conversation_workspace_presentation_architecture_experiment.md",
+        "docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md",
+        "docs/research/089_cockpit_implementation_provenance_recovery_completion_and_exact_history_gate.md",
+        "docs/cockpit/README.md",
+        "docs/VISION.md",
+        "docs/MAJOR_CHANGES.md",
+        "docs/research/062_current_process_focus_lens_and_context_suppression_experiment.md",
+        "docs/research/064_rapid_iteration_repository_preservation_audit_and_checkpoint_hygiene.md",
+        "docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md"
+      ],
+      "b1_like": {
+        "explicit_negative_count": 5,
+        "explicit_negative_intrusions": 0,
+        "positives": 4,
+        "recall_at_10": 1.0,
+        "returned_count": 4,
+        "strict_pass": true,
+        "true_positive_count": 4
+      },
+      "b1_ranked_paths": [
+        "docs/research/079_conversation_workspace_presentation_architecture_experiment.md",
+        "docs/research/062_current_process_focus_lens_and_context_suppression_experiment.md",
+        "docs/research/037_project_cockpit_next_generation_visual_interaction_design_exploration_map.md",
+        "docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md"
+      ],
+      "b2_citation_proxy": {
+        "explicit_negative_count": 5,
+        "explicit_negative_intrusions": 1,
+        "positives": 4,
+        "recall_at_10": 1.0,
+        "returned_count": 10,
+        "strict_pass": false,
+        "true_positive_count": 4
+      },
+      "b2_ranked_paths": [
+        "docs/research/037_project_cockpit_next_generation_visual_interaction_design_exploration_map.md",
+        "docs/research/079_conversation_workspace_presentation_architecture_experiment.md",
+        "docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md",
+        "docs/research/089_cockpit_implementation_provenance_recovery_completion_and_exact_history_gate.md",
+        "docs/cockpit/README.md",
+        "docs/VISION.md",
+        "docs/MAJOR_CHANGES.md",
+        "docs/research/062_current_process_focus_lens_and_context_suppression_experiment.md",
+        "docs/research/064_rapid_iteration_repository_preservation_audit_and_checkpoint_hygiene.md",
+        "docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md"
+      ],
+      "citation_added_to_seeds": 0,
+      "human_label_query": "Cockpit interaction, focus and conversation workspace",
+      "scenario": "cockpit-interaction"
+    },
+    {
+      "b0_like": {
+        "explicit_negative_count": 5,
+        "explicit_negative_intrusions": 0,
+        "positives": 5,
+        "recall_at_10": 1.0,
+        "returned_count": 10,
+        "strict_pass": true,
+        "true_positive_count": 5
+      },
+      "b0_ranked_paths": [
+        "docs/specifications/016_v1_disposition_semantics_failure_attribution_diagnostic.md",
+        "docs/specifications/020_v1_recommended_vs_blocking_required_calibration_diagnostic.md",
+        "docs/research/022_first_recommendation_action_value_vertical_slice_design.md",
+        "docs/specifications/021_v1_dependency_backed_recommendation_action_value_vertical_slice.md",
+        "docs/research/029_dependency_backed_recommendation_value_design.md",
+        "docs/OPEN_QUESTIONS.md",
+        "docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md",
+        "docs/specifications/022_v1_project_state_methodological_horizon_coverage_diagnostic.md",
+        "docs/MAJOR_CHANGES.md",
+        "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md"
+      ],
+      "b1_like": {
+        "explicit_negative_count": 5,
+        "explicit_negative_intrusions": 0,
+        "positives": 5,
+        "recall_at_10": 1.0,
+        "returned_count": 5,
+        "strict_pass": true,
+        "true_positive_count": 5
+      },
+      "b1_ranked_paths": [
+        "docs/specifications/016_v1_disposition_semantics_failure_attribution_diagnostic.md",
+        "docs/specifications/020_v1_recommended_vs_blocking_required_calibration_diagnostic.md",
+        "docs/research/022_first_recommendation_action_value_vertical_slice_design.md",
+        "docs/specifications/021_v1_dependency_backed_recommendation_action_value_vertical_slice.md",
+        "docs/research/029_dependency_backed_recommendation_value_design.md"
+      ],
+      "b2_citation_proxy": {
+        "explicit_negative_count": 5,
+        "explicit_negative_intrusions": 0,
+        "positives": 5,
+        "recall_at_10": 1.0,
+        "returned_count": 10,
+        "strict_pass": true,
+        "true_positive_count": 5
+      },
+      "b2_ranked_paths": [
+        "docs/specifications/016_v1_disposition_semantics_failure_attribution_diagnostic.md",
+        "docs/specifications/020_v1_recommended_vs_blocking_required_calibration_diagnostic.md",
+        "docs/research/022_first_recommendation_action_value_vertical_slice_design.md",
+        "docs/specifications/021_v1_dependency_backed_recommendation_action_value_vertical_slice.md",
+        "docs/research/029_dependency_backed_recommendation_value_design.md",
+        "docs/OPEN_QUESTIONS.md",
+        "docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md",
+        "docs/specifications/022_v1_project_state_methodological_horizon_coverage_diagnostic.md",
+        "docs/MAJOR_CHANGES.md",
+        "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md"
+      ],
+      "citation_added_to_seeds": 0,
+      "human_label_query": "Recommendation, disposition and action semantics",
+      "scenario": "recommendation-action"
+    },
+    {
+      "b0_like": {
+        "explicit_negative_count": 5,
+        "explicit_negative_intrusions": 0,
+        "positives": 5,
+        "recall_at_10": 0.6,
+        "returned_count": 10,
+        "strict_pass": false,
+        "true_positive_count": 3
+      },
+      "b0_ranked_paths": [
+        "docs/research/019_first_methodological_horizon_application_seam.md",
+        "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md",
+        "docs/foundations/006_knowledge_activation_and_open_world_reasoning.md",
+        "docs/OPEN_QUESTIONS.md",
+        "docs/research/016_production_retrieval_and_methodological_horizon_benchmark_design.md",
+        "docs/research/022_first_recommendation_action_value_vertical_slice_design.md",
+        "docs/VISION.md",
+        "docs/project_knowledge/architecture/semantic_authority_model.md",
+        "docs/foundations/004_project_state_dependency_and_state_driven_orchestration.md",
+        "docs/PRINCIPLES.md"
+      ],
+      "b1_like": {
+        "explicit_negative_count": 5,
+        "explicit_negative_intrusions": 0,
+        "positives": 5,
+        "recall_at_10": 1.0,
+        "returned_count": 6,
+        "strict_pass": true,
+        "true_positive_count": 5
+      },
+      "b1_ranked_paths": [
+        "docs/research/019_first_methodological_horizon_application_seam.md",
+        "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md",
+        "docs/research/016_production_retrieval_and_methodological_horizon_benchmark_design.md",
+        "docs/specifications/022_v1_project_state_methodological_horizon_coverage_diagnostic.md",
+        "docs/foundations/006_knowledge_activation_and_open_world_reasoning.md",
+        "docs/research/028_system_identity_methodological_navigation_and_knowledge_universe_construction.md"
+      ],
+      "b2_citation_proxy": {
+        "explicit_negative_count": 5,
+        "explicit_negative_intrusions": 0,
+        "positives": 5,
+        "recall_at_10": 0.6,
+        "returned_count": 10,
+        "strict_pass": false,
+        "true_positive_count": 3
+      },
+      "b2_ranked_paths": [
+        "docs/research/019_first_methodological_horizon_application_seam.md",
+        "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md",
+        "docs/foundations/006_knowledge_activation_and_open_world_reasoning.md",
+        "docs/OPEN_QUESTIONS.md",
+        "docs/research/016_production_retrieval_and_methodological_horizon_benchmark_design.md",
+        "docs/methodological_knowledge/COVERAGE_MAP.md",
+        "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+        "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+        "docs/research/022_first_recommendation_action_value_vertical_slice_design.md",
+        "docs/VISION.md"
+      ],
+      "citation_added_to_seeds": 3,
+      "human_label_query": "Retrieval, relevance and selective reasoning context",
+      "scenario": "retrieval-context"
+    },
+    {
+      "b0_like": {
+        "explicit_negative_count": 5,
+        "explicit_negative_intrusions": 1,
+        "positives": 4,
+        "recall_at_10": 0.25,
+        "returned_count": 10,
+        "strict_pass": false,
+        "true_positive_count": 1
+      },
+      "b0_ranked_paths": [
+        "docs/MAJOR_CHANGES.md",
+        "docs/VISION.md",
+        "docs/methodological_knowledge/COVERAGE_MAP.md",
+        "docs/foundations/003_admissibility_risk_and_assurance.md",
+        "docs/foundations/002_epistemic_integrity_and_project_constitution.md",
+        "docs/OPEN_QUESTIONS.md",
+        "docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md",
+        "docs/foundations/006_knowledge_activation_and_open_world_reasoning.md",
+        "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+        "docs/DECISIONS.md"
+      ],
+      "b1_like": {
+        "explicit_negative_count": 5,
+        "explicit_negative_intrusions": 0,
+        "positives": 4,
+        "recall_at_10": 1.0,
+        "returned_count": 9,
+        "strict_pass": true,
+        "true_positive_count": 4
+      },
+      "b1_ranked_paths": [
+        "docs/foundations/009_behavioral_reasoning_regression_and_system_evaluation.md",
+        "docs/foundations/003_admissibility_risk_and_assurance.md",
+        "docs/foundations/002_epistemic_integrity_and_project_constitution.md",
+        "docs/specifications/022_v1_project_state_methodological_horizon_coverage_diagnostic.md",
+        "docs/specifications/016_v1_disposition_semantics_failure_attribution_diagnostic.md",
+        "docs/research/016_production_retrieval_and_methodological_horizon_benchmark_design.md",
+        "docs/research/022_first_recommendation_action_value_vertical_slice_design.md",
+        "docs/specifications/020_v1_recommended_vs_blocking_required_calibration_diagnostic.md",
+        "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md"
+      ],
+      "b2_citation_proxy": {
+        "explicit_negative_count": 5,
+        "explicit_negative_intrusions": 0,
+        "positives": 4,
+        "recall_at_10": 0.25,
+        "returned_count": 10,
+        "strict_pass": false,
+        "true_positive_count": 1
+      },
+      "b2_ranked_paths": [
+        "docs/MAJOR_CHANGES.md",
+        "docs/VISION.md",
+        "docs/methodological_knowledge/COVERAGE_MAP.md",
+        "docs/foundations/003_admissibility_risk_and_assurance.md",
+        "docs/foundations/002_epistemic_integrity_and_project_constitution.md",
+        "docs/DECISIONS.md",
+        "docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md",
+        "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md",
+        "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+        "docs/OPEN_QUESTIONS.md"
+      ],
+      "citation_added_to_seeds": 5,
+      "human_label_query": "Evaluation, falsification, assurance and execution integrity",
+      "scenario": "evaluation-assurance"
+    },
+    {
+      "b0_like": {
+        "explicit_negative_count": 5,
+        "explicit_negative_intrusions": 1,
+        "positives": 3,
+        "recall_at_10": 1.0,
+        "returned_count": 10,
+        "strict_pass": false,
+        "true_positive_count": 3
+      },
+      "b0_ranked_paths": [
+        "docs/foundations/003_admissibility_risk_and_assurance.md",
+        "docs/foundations/002_epistemic_integrity_and_project_constitution.md",
+        "docs/foundations/004_project_state_dependency_and_state_driven_orchestration.md",
+        "docs/VISION.md",
+        "docs/OPEN_QUESTIONS.md",
+        "docs/foundations/009_behavioral_reasoning_regression_and_system_evaluation.md",
+        "docs/specifications/016_v1_disposition_semantics_failure_attribution_diagnostic.md",
+        "docs/foundations/006_knowledge_activation_and_open_world_reasoning.md",
+        "docs/MAJOR_CHANGES.md",
+        "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md"
+      ],
+      "b1_like": {
+        "explicit_negative_count": 5,
+        "explicit_negative_intrusions": 0,
+        "positives": 3,
+        "recall_at_10": 1.0,
+        "returned_count": 3,
+        "strict_pass": true,
+        "true_positive_count": 3
+      },
+      "b1_ranked_paths": [
+        "docs/foundations/003_admissibility_risk_and_assurance.md",
+        "docs/foundations/002_epistemic_integrity_and_project_constitution.md",
+        "docs/VISION.md"
+      ],
+      "b2_citation_proxy": {
+        "explicit_negative_count": 5,
+        "explicit_negative_intrusions": 0,
+        "positives": 3,
+        "recall_at_10": 1.0,
+        "returned_count": 10,
+        "strict_pass": true,
+        "true_positive_count": 3
+      },
+      "b2_ranked_paths": [
+        "docs/foundations/003_admissibility_risk_and_assurance.md",
+        "docs/foundations/002_epistemic_integrity_and_project_constitution.md",
+        "docs/foundations/004_project_state_dependency_and_state_driven_orchestration.md",
+        "docs/VISION.md",
+        "docs/OPEN_QUESTIONS.md",
+        "docs/methodological_knowledge/COVERAGE_MAP.md",
+        "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+        "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md",
+        "docs/DECISIONS.md",
+        "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+      ],
+      "citation_added_to_seeds": 5,
+      "human_label_query": "Admissibility, constraints and action authority",
+      "scenario": "admissibility-authority"
+    }
+  ],
+  "original_executed_v01_sha256": "498bb12d906639642da943e8366194ec8b0c7f6817d20ae5b8fa89a43f8a2acb",
+  "retrieval_limit": 10,
+  "same_historical_original_count": 65,
+  "scenario_count": 9,
+  "source_revision": "4b94ffe183ff7af72cef6ee7492b4ba2f30c11ef"
+}
