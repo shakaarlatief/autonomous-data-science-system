@@ -1041,6 +1041,12 @@ docs/research/634_r0_p03_six_hold_witness_feasibility_and_targeted_recovery.md
 docs/local_execution/validation/333_r0_p03_material_hold_witness_aggregate_and_indexed_recovery.md
 docs/research/635_r0_p03_completed_witness_capacity_hold_and_prospective_protocol_decision.md
 docs/research/636_r0_p03_direct_scored_execution_readiness_audit_and_minimal_critical_path.md
+docs/research/637_r0_p03_owner_accepted_prospective_c02_independent_need_origination.md
+docs/local_execution/validation/336_r0_p03_owner_accepted_c02_neutral_packet_and_handoff.md
+docs/checkpoints/900_r0_p03_owner_accepted_prospective_c02_cohort_and_neutral_author_input.md
+experiments/r0_p03_navigation_probe/R0_P03_C02_INDEPENDENT_NEED_ORIGINATION_HANDOFF_V01.md
+experiments/r0_p03_navigation_probe/PROSPECTIVE_C02_INDEPENDENT_NEED_AUTHOR_BRIEF_V01.md
+experiments/r0_p03_navigation_probe/prospective_c02_need_origination_packet_v01.py
 docs/local_execution/validation/335_r0_p03_execution_readiness_evidence_and_blocker_audit.md
 docs/local_execution/validation/334_r0_p03_actual_v02_witness_and_capacity_boundary.md
 docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md
@@ -1968,7 +1974,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-899 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-900 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

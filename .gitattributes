@@ -12,6 +12,8 @@ experiments/r0_p03_navigation_probe/R0_P03_EIGHTY_SOURCE_RELEASE_AGGREGATE.md -t
 experiments/r0_p03_navigation_probe/NEED_ORIGINATION_NEUTRAL_CONTEXT_V01.md -text
 experiments/r0_p03_navigation_probe/NEED_ORIGINATION_INDEPENDENT_AUTHOR_BRIEF_V01.md -text
 experiments/r0_p03_navigation_probe/NEED_ORIGINATION_INDEPENDENT_AUTHOR_BRIEF_V02.md -text
+# Preserve the exact C02 prospective independent-author brief across Windows and POSIX checkouts.
+experiments/r0_p03_navigation_probe/PROSPECTIVE_C02_INDEPENDENT_NEED_AUTHOR_BRIEF_V01.md -text
 # Retain the source-free 12-need independent adjudication report byte-for-byte.
 experiments/r0_p03_navigation_probe/NEED_SOURCE_ADJUDICATION_AGGREGATE.md -text whitespace=-blank-at-eof
 # Preserve the byte-verified independent adjudicator's updated source-free result.
