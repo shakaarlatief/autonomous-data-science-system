@@ -20,6 +20,8 @@ experiments/r0_p03_navigation_probe/NEED_ORIGINATION_C02_SAFE_RECEIPT_VERIFIED_V
 experiments/r0_p03_navigation_probe/C02_CROSS_COHORT_EQUIVALENCE_AGGREGATE_VERIFIED_V01.md -text
 # Preserve the exact independent Phase B source-free ledger-only evidence result.
 experiments/r0_p03_navigation_probe/C02_EVIDENCE_FEASIBILITY_AGGREGATE_VERIFIED_V01.md -text
+# Preserve exact bytes of the independent C02 direct-original source-free review.
+experiments/r0_p03_navigation_probe/C02_DIRECT_ORIGINAL_EVIDENCE_REVIEW_AGGREGATE_VERIFIED_V01.md -text
 # Retain the source-free 12-need independent adjudication report byte-for-byte.
 experiments/r0_p03_navigation_probe/NEED_SOURCE_ADJUDICATION_AGGREGATE.md -text whitespace=-blank-at-eof
 # Preserve the byte-verified independent adjudicator's updated source-free result.
