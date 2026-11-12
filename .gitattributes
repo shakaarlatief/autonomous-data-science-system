@@ -14,6 +14,8 @@ experiments/r0_p03_navigation_probe/NEED_ORIGINATION_INDEPENDENT_AUTHOR_BRIEF_V0
 experiments/r0_p03_navigation_probe/NEED_ORIGINATION_INDEPENDENT_AUTHOR_BRIEF_V02.md -text
 # Preserve the exact C02 prospective independent-author brief across Windows and POSIX checkouts.
 experiments/r0_p03_navigation_probe/PROSPECTIVE_C02_INDEPENDENT_NEED_AUTHOR_BRIEF_V01.md -text
+# Preserve exact independent-originator C02 source-free completion receipt across checkouts.
+experiments/r0_p03_navigation_probe/NEED_ORIGINATION_C02_SAFE_RECEIPT_VERIFIED_V01.md -text whitespace=-blank-at-eol
 # Retain the source-free 12-need independent adjudication report byte-for-byte.
 experiments/r0_p03_navigation_probe/NEED_SOURCE_ADJUDICATION_AGGREGATE.md -text whitespace=-blank-at-eof
 # Preserve the byte-verified independent adjudicator's updated source-free result.
