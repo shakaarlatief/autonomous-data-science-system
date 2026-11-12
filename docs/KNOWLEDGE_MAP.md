@@ -1050,6 +1050,12 @@ docs/research/642_r0_p03_execution_first_exploratory_legacy_b0_b1_results_and_pr
 docs/research/643_r0_p03_exploratory_real_source_citation_proxy_incremental_comparison.md
 docs/research/644_r0_p03_mechanical_heading_query_stress_reveals_query_family_dependence.md
 docs/research/645_r0_p03_real_hybrid_fusion_ablation_and_query_routing_execution.md
+docs/research/646_r0_p03_executed_directed_reference_retrieval_and_negative_evidence_controls.md
+docs/local_execution/validation/345_r0_p03_actual_directed_reference_query_negative_evidence_execution.md
+docs/checkpoints/909_r0_p03_source_reference_navigation_and_abstention_real_execution.md
+experiments/r0_p03_navigation_probe/EXPLORATORY_DIRECTED_RELATION_RETRIEVAL_CONTRACT_V01.md
+experiments/r0_p03_navigation_probe/exploratory_directed_relation_retrieval_v01.py
+experiments/r0_p03_navigation_probe/exploratory_directed_relation_retrieval_result_v01.json
 docs/local_execution/validation/344_r0_p03_actual_hybrid_fusion_routing_and_ablation_execution.md
 docs/checkpoints/908_r0_p03_hybrid_fusion_and_query_routing_real_experiment.md
 experiments/r0_p03_navigation_probe/EXPLORATORY_HYBRID_FUSION_AND_QUERY_ROUTING_CONTRACT_V01.md
@@ -2019,7 +2025,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-908 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-909 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 
