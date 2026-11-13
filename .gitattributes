@@ -82,3 +82,5 @@ experiments/r0_p03_navigation_probe/NEED_SOURCE_ADJUDICATION_AGGREGATE_VERIFIED_
 experiments/r0_p03_navigation_probe/NEED_MATERIAL_HOLD_WITNESS_AGGREGATE_VERIFIED_V01.md -text
 # Preserve independent V02 six-original witness aggregate exactly, without CRLF normalization.
 experiments/r0_p03_navigation_probe/NEED_MATERIAL_HOLD_WITNESS_AGGREGATE_VERIFIED_V02.md -text
+# Keep the objective source-path-only need-origination pilot index immutable across Windows checkouts.
+experiments/r0_p03_navigation_probe/fresh_reference_need_index_pilot_v01.json -text

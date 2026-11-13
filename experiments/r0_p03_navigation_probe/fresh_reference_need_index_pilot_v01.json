@@ -1,0 +1,344 @@
+{
+  "eligible_stratum_population_counts": {
+    "CHECKPOINT": 902,
+    "FOUNDATION": 25,
+    "RESEARCH": 724,
+    "SPECIFICATION": 28,
+    "VALIDATION": 335
+  },
+  "existing_twelve_B0_B1_questions_or_answers_present": false,
+  "id": "R0_P03_NONSCORING_FRESH_QUESTION_ORIGINATION_INDEX_V01",
+  "items": [
+    {
+      "original_blob_oid": "f79f0380df8fcb79894ee6685e7c08484902554c",
+      "original_git_path": "docs/foundations/012_preregistered_held_out_evaluation_protocol.md",
+      "sampling_rank": 1,
+      "stratum": "FOUNDATION"
+    },
+    {
+      "original_blob_oid": "34836afdc3bfa47d508062cec3c24ea3fbbb4da8",
+      "original_git_path": "docs/foundations/003_admissibility_risk_and_assurance.md",
+      "sampling_rank": 2,
+      "stratum": "FOUNDATION"
+    },
+    {
+      "original_blob_oid": "589b74e64ecfd4d2379ec70c852d81696dd864a5",
+      "original_git_path": "docs/foundations/005_project_initialization_and_universal_bootstrap.md",
+      "sampling_rank": 3,
+      "stratum": "FOUNDATION"
+    },
+    {
+      "original_blob_oid": "8c13b6f3d74c66b8c6ec6141fd09f7de22720f1b",
+      "original_git_path": "docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md",
+      "sampling_rank": 4,
+      "stratum": "FOUNDATION"
+    },
+    {
+      "original_blob_oid": "5067f1fd91a0685b6f106e5ca409060459f7254b",
+      "original_git_path": "docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md",
+      "sampling_rank": 5,
+      "stratum": "FOUNDATION"
+    },
+    {
+      "original_blob_oid": "85b474846961ec75e8391504f3133fd42a9e8059",
+      "original_git_path": "docs/foundations/historical/021_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+      "sampling_rank": 6,
+      "stratum": "FOUNDATION"
+    },
+    {
+      "original_blob_oid": "71822751dd8e7e594bda8e17c041013e0e49f6d0",
+      "original_git_path": "docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md",
+      "sampling_rank": 7,
+      "stratum": "FOUNDATION"
+    },
+    {
+      "original_blob_oid": "a26ff6b7f2291385b610290bde2ac44c4f7f8fb3",
+      "original_git_path": "docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md",
+      "sampling_rank": 8,
+      "stratum": "FOUNDATION"
+    },
+    {
+      "original_blob_oid": "e5efaea5e599e74e5d4cc2ab9415db6056cb2051",
+      "original_git_path": "docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md",
+      "sampling_rank": 9,
+      "stratum": "FOUNDATION"
+    },
+    {
+      "original_blob_oid": "39ffa55db61398137b5eedf314fcaf929f319ad6",
+      "original_git_path": "docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md",
+      "sampling_rank": 10,
+      "stratum": "FOUNDATION"
+    },
+    {
+      "original_blob_oid": "0a37a1c00c3cf61a405837fb7939f3c6e2d059be",
+      "original_git_path": "docs/specifications/002_v1_persistence_tooling_standard.md",
+      "sampling_rank": 1,
+      "stratum": "SPECIFICATION"
+    },
+    {
+      "original_blob_oid": "3d82910848c5e87dfba034e8590d2283cc7b1325",
+      "original_git_path": "docs/specifications/012_v1_first_methodological_horizon_builder.md",
+      "sampling_rank": 2,
+      "stratum": "SPECIFICATION"
+    },
+    {
+      "original_blob_oid": "bc8af01f0579a712f3cbecc7effec7c57263bcf3",
+      "original_git_path": "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+      "sampling_rank": 3,
+      "stratum": "SPECIFICATION"
+    },
+    {
+      "original_blob_oid": "4ba3e01f8f722f9c3c663d841153631e2356d41f",
+      "original_git_path": "docs/specifications/011_v1_rrf_hybrid_retrieval_comparator.md",
+      "sampling_rank": 4,
+      "stratum": "SPECIFICATION"
+    },
+    {
+      "original_blob_oid": "40adafeb14059e0c58fd2e5b7237a708644ca964",
+      "original_git_path": "docs/specifications/004_v1_reusable_knowledge_interchange.md",
+      "sampling_rank": 5,
+      "stratum": "SPECIFICATION"
+    },
+    {
+      "original_blob_oid": "56b397a8c984c8d8f5a38702c7c65b4883ce3de8",
+      "original_git_path": "docs/specifications/010_v1_exact_semantic_retrieval_comparator.md",
+      "sampling_rank": 6,
+      "stratum": "SPECIFICATION"
+    },
+    {
+      "original_blob_oid": "63c2290d4da31ec8b7901212974591aa7d3b449c",
+      "original_git_path": "docs/specifications/022_v1_project_state_methodological_horizon_coverage_diagnostic.md",
+      "sampling_rank": 7,
+      "stratum": "SPECIFICATION"
+    },
+    {
+      "original_blob_oid": "f041be50c86dd70ccc86895174d218729ce05411",
+      "original_git_path": "docs/specifications/003_v1_python_project_and_dependency_tooling.md",
+      "sampling_rank": 8,
+      "stratum": "SPECIFICATION"
+    },
+    {
+      "original_blob_oid": "f36969ce44020d33689fd1b90822f0c03ecf6c40",
+      "original_git_path": "docs/specifications/008_v1_project_cockpit_interaction_architecture.md",
+      "sampling_rank": 9,
+      "stratum": "SPECIFICATION"
+    },
+    {
+      "original_blob_oid": "4bc5da961ac95b0ea4258a9f9a361243a4c469d6",
+      "original_git_path": "docs/specifications/014_v1_reasoning_context_value_vertical_slice.md",
+      "sampling_rank": 10,
+      "stratum": "SPECIFICATION"
+    },
+    {
+      "original_blob_oid": "f98b090f4c9f9506feb8699b3ded57c9f8fb1426",
+      "original_git_path": "docs/research/187_w0_capture_validation_g011_result.md",
+      "sampling_rank": 1,
+      "stratum": "RESEARCH"
+    },
+    {
+      "original_blob_oid": "1746a5df724a715d7277b6e8e9ae269cb383cc37",
+      "original_git_path": "docs/research/552_r0_p01_readonly_claim_source_ssh_reverification.md",
+      "sampling_rank": 2,
+      "stratum": "RESEARCH"
+    },
+    {
+      "original_blob_oid": "e0d5c870c375d959c56699c563db40030af9564c",
+      "original_git_path": "docs/research/334_drp03_r2_local_claude_code_key_author_execution_reconciliation.md",
+      "sampling_rank": 3,
+      "stratum": "RESEARCH"
+    },
+    {
+      "original_blob_oid": "33ab5436f1ddaa2f4916f8fced0f91f7947d3efd",
+      "original_git_path": "docs/research/036_deferred_asynchronous_review_and_catchup_architecture.md",
+      "sampling_rank": 4,
+      "stratum": "RESEARCH"
+    },
+    {
+      "original_blob_oid": "3055860ef4cf6370fb0c7ae8ae8edb7d74c3ce86",
+      "original_git_path": "docs/research/311_warrant_f_v02_owner_acceptance_r8c_closure_and_ao10_reconciliation_entry.md",
+      "sampling_rank": 5,
+      "stratum": "RESEARCH"
+    },
+    {
+      "original_blob_oid": "0a5418b67f536b7436e1cc4c611031be951649ff",
+      "original_git_path": "docs/research/302_p_d4_successor_contract_v02_completeness_amendment.md",
+      "sampling_rank": 6,
+      "stratum": "RESEARCH"
+    },
+    {
+      "original_blob_oid": "61fcc3c4880e5d0bc4f3c01cf2d49fc2c55f662e",
+      "original_git_path": "docs/research/246_whole_repository_r5_owner_acceptance_and_from_scratch_lower_level_boundary.md",
+      "sampling_rank": 7,
+      "stratum": "RESEARCH"
+    },
+    {
+      "original_blob_oid": "352675973587e7fc76cb28ec477721214b20f1c6",
+      "original_git_path": "docs/research/076_claude_informed_factorized_deep_focus_transition_experiment.md",
+      "sampling_rank": 8,
+      "stratum": "RESEARCH"
+    },
+    {
+      "original_blob_oid": "90eb26b9b9ce127d8e6fa50939d1248bbcaf9d42",
+      "original_git_path": "docs/research/616_r0_p03_s1_a2_author_route_risk_resolution_and_distinct_challenger_candidate.md",
+      "sampling_rank": 9,
+      "stratum": "RESEARCH"
+    },
+    {
+      "original_blob_oid": "18fbf76f3efb307f53c26218af83836ae0a21dfc",
+      "original_git_path": "docs/research/project_knowledge_candidate_01_q1_q2_cross_provider_v01/PORTABLE_PROVIDER_PACKET_V01.md",
+      "sampling_rank": 10,
+      "stratum": "RESEARCH"
+    },
+    {
+      "original_blob_oid": "88c732d26fa08b4d042e4557bcdda7b798e0c8a1",
+      "original_git_path": "docs/checkpoints/291_document_file_handoff_publication_preflight_qualified.md",
+      "sampling_rank": 1,
+      "stratum": "CHECKPOINT"
+    },
+    {
+      "original_blob_oid": "5094aeeb3bd6de5501996fae9081f1669c0e383f",
+      "original_git_path": "docs/checkpoints/017_duplicate_structured_output_normalization.md",
+      "sampling_rank": 2,
+      "stratum": "CHECKPOINT"
+    },
+    {
+      "original_blob_oid": "71ebb53f176be971c15adf5ea92ee9e560f45e39",
+      "original_git_path": "docs/checkpoints/377_github_native_schema_capture_batch4_preserved.md",
+      "sampling_rank": 3,
+      "stratum": "CHECKPOINT"
+    },
+    {
+      "original_blob_oid": "81c8f783250314dfc1c6173a9166ac157bdad58c",
+      "original_git_path": "docs/checkpoints/intermediate_2026-08-28_source_faithful_reintegration_interaction_integrity_gate.md",
+      "sampling_rank": 4,
+      "stratum": "CHECKPOINT"
+    },
+    {
+      "original_blob_oid": "d68909d0330142eb23e3637aa44e9d57c000d3f0",
+      "original_git_path": "docs/checkpoints/653_ao10_decision_probe_program_preregistered.md",
+      "sampling_rank": 5,
+      "stratum": "CHECKPOINT"
+    },
+    {
+      "original_blob_oid": "560e1ada0aa6d59c41b456e379ffdb0361b39bee",
+      "original_git_path": "docs/checkpoints/662_drp03_both_reviewers_frozen.md",
+      "sampling_rank": 6,
+      "stratum": "CHECKPOINT"
+    },
+    {
+      "original_blob_oid": "5f5f7542f287e0731c3289dbb9db5b08c92a9e12",
+      "original_git_path": "docs/checkpoints/204_multimodel_collaboration_method_promoted.md",
+      "sampling_rank": 7,
+      "stratum": "CHECKPOINT"
+    },
+    {
+      "original_blob_oid": "d77273452e3bdc87e884b8f60c6c9999cee8acf1",
+      "original_git_path": "docs/checkpoints/298_large_pdf_resource_link_publication_passed_restart_pending.md",
+      "sampling_rank": 8,
+      "stratum": "CHECKPOINT"
+    },
+    {
+      "original_blob_oid": "b251c1b3acef77ec8982cf0dab682091559d7d39",
+      "original_git_path": "docs/checkpoints/329_non_pdf_office_handoff_reuse_first_research_opened.md",
+      "sampling_rank": 9,
+      "stratum": "CHECKPOINT"
+    },
+    {
+      "original_blob_oid": "21951bf5df1cf6e93257f67eb7a3a717a909d1a5",
+      "original_git_path": "docs/checkpoints/416_github_pr_review_mutation_preview36_live_surface_qualified_fresh_host_next.md",
+      "sampling_rank": 10,
+      "stratum": "CHECKPOINT"
+    },
+    {
+      "original_blob_oid": "fd7c13cba2a47d7841178850f3276d3e1c457a5f",
+      "original_git_path": "docs/local_execution/validation/210_github_keyring_release_dependency_restart_recovery_qualified.md",
+      "sampling_rank": 1,
+      "stratum": "VALIDATION"
+    },
+    {
+      "original_blob_oid": "6a3e11b7c09af475046ec5e956afac08fb44eb87",
+      "original_git_path": "docs/local_execution/validation/129_private_companion_runtime_bridge_authority_and_semantic_git_qualified.md",
+      "sampling_rank": 2,
+      "stratum": "VALIDATION"
+    },
+    {
+      "original_blob_oid": "9d9d741e6fedb96f16fa58132ab9ce0d1fa47458",
+      "original_git_path": "docs/local_execution/validation/242_r0_p01_independent_webauthn_es256_verification.md",
+      "sampling_rank": 3,
+      "stratum": "VALIDATION"
+    },
+    {
+      "original_blob_oid": "5761dd7d75f837b6772c55752badd6fa1607dcd2",
+      "original_git_path": "docs/local_execution/validation/324_r0_p03_neutral_independent_need_origination_input_and_one_file_handoff.md",
+      "sampling_rank": 4,
+      "stratum": "VALIDATION"
+    },
+    {
+      "original_blob_oid": "1f963a4e428420d6fca49ed1115c167d8f86de47",
+      "original_git_path": "docs/local_execution/validation/087_non_pdf_office_handoff_reuse_first_research_baseline.md",
+      "sampling_rank": 5,
+      "stratum": "VALIDATION"
+    },
+    {
+      "original_blob_oid": "0d4bf558733d0e69bd228d3e0ea659e4f08d9b79",
+      "original_git_path": "docs/local_execution/validation/047_document_render_live_chatgpt_vision_qualified.md",
+      "sampling_rank": 6,
+      "stratum": "VALIDATION"
+    },
+    {
+      "original_blob_oid": "8e028fe283ada66623a600cd566fbe0449d2dfe8",
+      "original_git_path": "docs/local_execution/validation/103_runtime_maintenance_preview18_live_source_published_restart_pending.md",
+      "sampling_rank": 7,
+      "stratum": "VALIDATION"
+    },
+    {
+      "original_blob_oid": "e8b1a66973771e16a5eeb8fe696ba60c1d880e54",
+      "original_git_path": "docs/local_execution/validation/261_r0_p03_task_capacity_and_common_substrate_parity_diagnostic.md",
+      "sampling_rank": 8,
+      "stratum": "VALIDATION"
+    },
+    {
+      "original_blob_oid": "c4e5201d7afaa2b8e121f4588eba26ad7064963f",
+      "original_git_path": "docs/local_execution/validation/310_r0_p03_wave0_owner_private_scientific_review_created.md",
+      "sampling_rank": 9,
+      "stratum": "VALIDATION"
+    },
+    {
+      "original_blob_oid": "aa6dac967fb0657ab760e7dae6e59061eb13f034",
+      "original_git_path": "docs/local_execution/validation/304_r0_p03_wave0_substantive_adversarial_challenge_owner_authenticated.md",
+      "sampling_rank": 10,
+      "stratum": "VALIDATION"
+    },
+    {
+      "original_blob_oid": "30f55d85b396beed2bda461f6c96b64bbbe395cb",
+      "original_git_path": "docs/CURRENT_STATE.md",
+      "sampling_rank": 0,
+      "stratum": "ORIENTATION_ANCHOR"
+    },
+    {
+      "original_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+      "original_git_path": "docs/DECISIONS.md",
+      "sampling_rank": 0,
+      "stratum": "ORIENTATION_ANCHOR"
+    }
+  ],
+  "original_R0_P03_scoring_result": "INCOMPLETE",
+  "original_answer_text_present": false,
+  "original_source_bodies_present": false,
+  "original_source_git_pin": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+  "path_index_only": true,
+  "scientific_class": "UNSCORED_SOURCE_PATH_ONLY_NEED_ORIGINATION_FEASIBILITY_PILOT",
+  "selection_basis": "exact_blob_path_SHA256_order_v01_no_source_content",
+  "selection_per_stratum": 10,
+  "source_role_labels_are_not_authority_evidence": true,
+  "the_four_need_categories": [
+    "COLD_START_CURRENT_ORIENTATION",
+    "CROSS_PLANE_DISCOVERY",
+    "IMPACT_ANALYSIS_ARCHITECTURE_EVOLUTION",
+    "EXACT_SOURCE_AUTHORITY_RECOVERY"
+  ],
+  "two_additional_orientation_path_anchors": [
+    "docs/CURRENT_STATE.md",
+    "docs/DECISIONS.md"
+  ]
+}
