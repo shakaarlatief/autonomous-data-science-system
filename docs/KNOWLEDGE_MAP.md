@@ -1064,6 +1064,12 @@ docs/research/656_r0_p03_route_b_distinct_b1_b2_b3_real_navigation_mechanisms_an
 docs/research/657_r0_p03_route_b_b4_classical_latent_semantic_embedding_execution_and_neural_access_hold.md
 docs/research/658_r0_p03_route_b_actual_extractive_answer_evidence_and_citation_comparison.md
 docs/research/659_r0_p03_route_b_exposed_gpt6_reasoned_original_b0_b1_answer_comparison.md
+docs/research/660_r0_p03_three_masked_claude_review_complete_and_unmasked_answer_support_assessment.md
+docs/local_execution/validation/359_r0_p03_three_claude_review_consolidation_and_original_git_source_lines.md
+docs/checkpoints/923_r0_p03_three_claude_masked_answer_reviews_completed_and_unmasked.md
+experiments/r0_p03_navigation_probe/route_b_three_claude_masked_review_consolidation_v01.py
+experiments/r0_p03_navigation_probe/route_b_three_claude_masked_review_consolidation_result_v01.json
+tests/unit/test_r0_p03_route_b_three_claude_masked_review_consolidation_v01.py
 docs/local_execution/validation/358_r0_p03_route_b_exposed_gpt6_twenty_four_model_answers_and_cited_original_lines.md
 docs/checkpoints/922_r0_p03_route_b_actual_exposed_gpt6_source_bounded_reasoned_answer_pairs.md
 experiments/r0_p03_navigation_probe/ROUTE_B_EXPOSED_MODEL_REASONED_B0_B1_CONTRACT_V01.md
@@ -2132,7 +2138,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-922 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-923 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

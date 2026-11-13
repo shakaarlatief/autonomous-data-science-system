@@ -1,0 +1,722 @@
+{
+  "complete_per_question_unmasked_after_reviewer_submission": [
+    {
+      "claim_verdicts": [
+        {
+          "claim_id": "C01",
+          "verdict": "SUPPORTED"
+        }
+      ],
+      "current_operative_authority_test_outcome": "NO_FALSE_ASSERTIONS_REPORTED_BY_CLAUDE",
+      "independent_model_excerpt_entailment_grade": "PROPER_ABSTENTION",
+      "input_review_file": "067_claude_r0_p03_masked_b0_b1_p01_p04_claim_review.md",
+      "not_independent_answer_gold": true,
+      "original_author_self_coverage": "ABSTAIN",
+      "original_method_revealed_after_all_three_reviews": "B0_ORIGINAL",
+      "original_source_paths": [
+        "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+        "docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md",
+        "docs/DECISIONS.md"
+      ],
+      "question_id": "P01",
+      "variant": "VARIANT_A"
+    },
+    {
+      "claim_verdicts": [
+        {
+          "claim_id": "C01",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "claim_id": "C02",
+          "verdict": "SUPPORTED"
+        }
+      ],
+      "current_operative_authority_test_outcome": "NO_FALSE_ASSERTIONS_REPORTED_BY_CLAUDE",
+      "independent_model_excerpt_entailment_grade": "FULLY_SUPPORTED",
+      "input_review_file": "067_claude_r0_p03_masked_b0_b1_p01_p04_claim_review.md",
+      "not_independent_answer_gold": true,
+      "original_author_self_coverage": "SUPPORTED",
+      "original_method_revealed_after_all_three_reviews": "B1_EXPOSED_SUBJECT_B0",
+      "original_source_paths": [
+        "docs/DECISIONS.md",
+        "docs/checkpoints/447_repository_branch_safety_complete_canonical_protection_decision_next.md",
+        "docs/CURRENT_STATE.md"
+      ],
+      "question_id": "P01",
+      "variant": "VARIANT_B"
+    },
+    {
+      "claim_verdicts": [
+        {
+          "claim_id": "C01",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "claim_id": "C02",
+          "verdict": "PARTIAL"
+        }
+      ],
+      "current_operative_authority_test_outcome": "NO_FALSE_ASSERTIONS_REPORTED_BY_CLAUDE",
+      "independent_model_excerpt_entailment_grade": "FULLY_SUPPORTED",
+      "input_review_file": "067_claude_r0_p03_masked_b0_b1_p01_p04_claim_review.md",
+      "not_independent_answer_gold": true,
+      "original_author_self_coverage": "PARTIAL",
+      "original_method_revealed_after_all_three_reviews": "B1_EXPOSED_SUBJECT_B0",
+      "original_source_paths": [
+        "docs/DECISIONS.md",
+        "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+        "docs/research/356_key_author_a_p3_batch9_compaction_hold_fresh_replacement_authorized.md"
+      ],
+      "question_id": "P02",
+      "variant": "VARIANT_A"
+    },
+    {
+      "claim_verdicts": [
+        {
+          "claim_id": "C01",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "claim_id": "C02",
+          "verdict": "SUPPORTED"
+        }
+      ],
+      "current_operative_authority_test_outcome": "NO_FALSE_ASSERTIONS_REPORTED_BY_CLAUDE",
+      "independent_model_excerpt_entailment_grade": "FULLY_SUPPORTED",
+      "input_review_file": "067_claude_r0_p03_masked_b0_b1_p01_p04_claim_review.md",
+      "not_independent_answer_gold": true,
+      "original_author_self_coverage": "PARTIAL",
+      "original_method_revealed_after_all_three_reviews": "B0_ORIGINAL",
+      "original_source_paths": [
+        "docs/DECISIONS.md",
+        "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+        "docs/research/356_key_author_a_p3_batch9_compaction_hold_fresh_replacement_authorized.md"
+      ],
+      "question_id": "P02",
+      "variant": "VARIANT_B"
+    },
+    {
+      "claim_verdicts": [
+        {
+          "claim_id": "C01",
+          "verdict": "SUPPORTED"
+        }
+      ],
+      "current_operative_authority_test_outcome": "NO_FALSE_ASSERTIONS_REPORTED_BY_CLAUDE",
+      "independent_model_excerpt_entailment_grade": "PROPER_ABSTENTION",
+      "input_review_file": "067_claude_r0_p03_masked_b0_b1_p01_p04_claim_review.md",
+      "not_independent_answer_gold": true,
+      "original_author_self_coverage": "ABSTAIN",
+      "original_method_revealed_after_all_three_reviews": "B0_ORIGINAL",
+      "original_source_paths": [
+        "docs/research/357_key_author_a_p3_batch9_replacement_pass_batch10_fresh_session_released.md",
+        "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+        "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md"
+      ],
+      "question_id": "P03",
+      "variant": "VARIANT_A"
+    },
+    {
+      "claim_verdicts": [
+        {
+          "claim_id": "C01",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "claim_id": "C02",
+          "verdict": "SUPPORTED"
+        }
+      ],
+      "current_operative_authority_test_outcome": "NO_FALSE_ASSERTIONS_REPORTED_BY_CLAUDE",
+      "independent_model_excerpt_entailment_grade": "PARTIALLY_SUPPORTED",
+      "input_review_file": "067_claude_r0_p03_masked_b0_b1_p01_p04_claim_review.md",
+      "not_independent_answer_gold": true,
+      "original_author_self_coverage": "PARTIAL",
+      "original_method_revealed_after_all_three_reviews": "B1_EXPOSED_SUBJECT_B0",
+      "original_source_paths": [
+        "docs/checkpoints/550_pka_g108_current_authority_confirmed_integrity_next.md",
+        "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+        "docs/checkpoints/497_candidate01_real_repository_shadow_v01_fixture_frozen.md"
+      ],
+      "question_id": "P03",
+      "variant": "VARIANT_B"
+    },
+    {
+      "claim_verdicts": [
+        {
+          "claim_id": "C01",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "claim_id": "C02",
+          "verdict": "SUPPORTED"
+        }
+      ],
+      "current_operative_authority_test_outcome": "NO_FALSE_ASSERTIONS_REPORTED_BY_CLAUDE",
+      "independent_model_excerpt_entailment_grade": "FULLY_SUPPORTED",
+      "input_review_file": "067_claude_r0_p03_masked_b0_b1_p01_p04_claim_review.md",
+      "not_independent_answer_gold": true,
+      "original_author_self_coverage": "SUPPORTED",
+      "original_method_revealed_after_all_three_reviews": "B1_EXPOSED_SUBJECT_B0",
+      "original_source_paths": [
+        "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+        "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+        "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md"
+      ],
+      "question_id": "P04",
+      "variant": "VARIANT_A"
+    },
+    {
+      "claim_verdicts": [
+        {
+          "claim_id": "C01",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "claim_id": "C02",
+          "verdict": "SUPPORTED"
+        }
+      ],
+      "current_operative_authority_test_outcome": "NO_FALSE_ASSERTIONS_REPORTED_BY_CLAUDE",
+      "independent_model_excerpt_entailment_grade": "FULLY_SUPPORTED",
+      "input_review_file": "067_claude_r0_p03_masked_b0_b1_p01_p04_claim_review.md",
+      "not_independent_answer_gold": true,
+      "original_author_self_coverage": "SUPPORTED",
+      "original_method_revealed_after_all_three_reviews": "B0_ORIGINAL",
+      "original_source_paths": [
+        "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+        "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+        "docs/DECISIONS.md"
+      ],
+      "question_id": "P04",
+      "variant": "VARIANT_B"
+    },
+    {
+      "claim_verdicts": [
+        {
+          "claim_id": "C01",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "claim_id": "C02",
+          "verdict": "SUPPORTED"
+        }
+      ],
+      "current_operative_authority_test_outcome": "NO_FALSE_ASSERTIONS_REPORTED_BY_CLAUDE",
+      "independent_model_excerpt_entailment_grade": "FULLY_SUPPORTED",
+      "input_review_file": "069_claude_r0_p03_masked_b0_b1_p05_p08_claim_review.md",
+      "not_independent_answer_gold": true,
+      "original_author_self_coverage": "SUPPORTED",
+      "original_method_revealed_after_all_three_reviews": "B0_ORIGINAL",
+      "original_source_paths": [
+        "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+        "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+        "docs/checkpoints/550_pka_g108_current_authority_confirmed_integrity_next.md"
+      ],
+      "question_id": "P05",
+      "variant": "VARIANT_A"
+    },
+    {
+      "claim_verdicts": [
+        {
+          "claim_id": "C01",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "claim_id": "C02",
+          "verdict": "SUPPORTED"
+        }
+      ],
+      "current_operative_authority_test_outcome": "NO_FALSE_ASSERTIONS_REPORTED_BY_CLAUDE",
+      "independent_model_excerpt_entailment_grade": "FULLY_SUPPORTED",
+      "input_review_file": "069_claude_r0_p03_masked_b0_b1_p05_p08_claim_review.md",
+      "not_independent_answer_gold": true,
+      "original_author_self_coverage": "SUPPORTED",
+      "original_method_revealed_after_all_three_reviews": "B1_EXPOSED_SUBJECT_B0",
+      "original_source_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+        "docs/DECISIONS.md"
+      ],
+      "question_id": "P05",
+      "variant": "VARIANT_B"
+    },
+    {
+      "claim_verdicts": [
+        {
+          "claim_id": "C01",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "claim_id": "C02",
+          "verdict": "SUPPORTED"
+        }
+      ],
+      "current_operative_authority_test_outcome": "NO_FALSE_ASSERTIONS_REPORTED_BY_CLAUDE",
+      "independent_model_excerpt_entailment_grade": "FULLY_SUPPORTED",
+      "input_review_file": "069_claude_r0_p03_masked_b0_b1_p05_p08_claim_review.md",
+      "not_independent_answer_gold": true,
+      "original_author_self_coverage": "SUPPORTED",
+      "original_method_revealed_after_all_three_reviews": "B1_EXPOSED_SUBJECT_B0",
+      "original_source_paths": [
+        "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+        "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+        "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md"
+      ],
+      "question_id": "P06",
+      "variant": "VARIANT_A"
+    },
+    {
+      "claim_verdicts": [
+        {
+          "claim_id": "C01",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "claim_id": "C02",
+          "verdict": "SUPPORTED"
+        }
+      ],
+      "current_operative_authority_test_outcome": "NO_FALSE_ASSERTIONS_REPORTED_BY_CLAUDE",
+      "independent_model_excerpt_entailment_grade": "FULLY_SUPPORTED",
+      "input_review_file": "069_claude_r0_p03_masked_b0_b1_p05_p08_claim_review.md",
+      "not_independent_answer_gold": true,
+      "original_author_self_coverage": "SUPPORTED",
+      "original_method_revealed_after_all_three_reviews": "B0_ORIGINAL",
+      "original_source_paths": [
+        "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+        "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+        "docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md"
+      ],
+      "question_id": "P06",
+      "variant": "VARIANT_B"
+    },
+    {
+      "claim_verdicts": [
+        {
+          "claim_id": "C01",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "claim_id": "C02",
+          "verdict": "SUPPORTED"
+        }
+      ],
+      "current_operative_authority_test_outcome": "NO_FALSE_ASSERTIONS_REPORTED_BY_CLAUDE",
+      "independent_model_excerpt_entailment_grade": "FULLY_SUPPORTED",
+      "input_review_file": "069_claude_r0_p03_masked_b0_b1_p05_p08_claim_review.md",
+      "not_independent_answer_gold": true,
+      "original_author_self_coverage": "SUPPORTED",
+      "original_method_revealed_after_all_three_reviews": "B0_ORIGINAL",
+      "original_source_paths": [
+        "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+        "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+        "docs/research/591_r0_p03_historical_evidence_review_population_and_author_admission_boundary.md"
+      ],
+      "question_id": "P07",
+      "variant": "VARIANT_A"
+    },
+    {
+      "claim_verdicts": [
+        {
+          "claim_id": "C01",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "claim_id": "C02",
+          "verdict": "SUPPORTED"
+        }
+      ],
+      "current_operative_authority_test_outcome": "NO_FALSE_ASSERTIONS_REPORTED_BY_CLAUDE",
+      "independent_model_excerpt_entailment_grade": "FULLY_SUPPORTED",
+      "input_review_file": "069_claude_r0_p03_masked_b0_b1_p05_p08_claim_review.md",
+      "not_independent_answer_gold": true,
+      "original_author_self_coverage": "SUPPORTED",
+      "original_method_revealed_after_all_three_reviews": "B1_EXPOSED_SUBJECT_B0",
+      "original_source_paths": [
+        "docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md",
+        "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+        "docs/research/503_r0_realization_requirements_and_independent_design_charter.md"
+      ],
+      "question_id": "P07",
+      "variant": "VARIANT_B"
+    },
+    {
+      "claim_verdicts": [
+        {
+          "claim_id": "C01",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "claim_id": "C02",
+          "verdict": "SUPPORTED"
+        }
+      ],
+      "current_operative_authority_test_outcome": "NO_FALSE_ASSERTIONS_REPORTED_BY_CLAUDE",
+      "independent_model_excerpt_entailment_grade": "FULLY_SUPPORTED",
+      "input_review_file": "069_claude_r0_p03_masked_b0_b1_p05_p08_claim_review.md",
+      "not_independent_answer_gold": true,
+      "original_author_self_coverage": "SUPPORTED",
+      "original_method_revealed_after_all_three_reviews": "B1_EXPOSED_SUBJECT_B0",
+      "original_source_paths": [
+        "docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md",
+        "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+        "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md"
+      ],
+      "question_id": "P08",
+      "variant": "VARIANT_A"
+    },
+    {
+      "claim_verdicts": [
+        {
+          "claim_id": "C01",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "claim_id": "C02",
+          "verdict": "SUPPORTED"
+        }
+      ],
+      "current_operative_authority_test_outcome": "NO_FALSE_ASSERTIONS_REPORTED_BY_CLAUDE",
+      "independent_model_excerpt_entailment_grade": "FULLY_SUPPORTED",
+      "input_review_file": "069_claude_r0_p03_masked_b0_b1_p05_p08_claim_review.md",
+      "not_independent_answer_gold": true,
+      "original_author_self_coverage": "SUPPORTED",
+      "original_method_revealed_after_all_three_reviews": "B0_ORIGINAL",
+      "original_source_paths": [
+        "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+        "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+        "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md"
+      ],
+      "question_id": "P08",
+      "variant": "VARIANT_B"
+    },
+    {
+      "claim_verdicts": [
+        {
+          "claim_id": "C01",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "claim_id": "C02",
+          "verdict": "SUPPORTED"
+        }
+      ],
+      "current_operative_authority_test_outcome": "NO_FALSE_ASSERTIONS_REPORTED_BY_CLAUDE",
+      "independent_model_excerpt_entailment_grade": "FULLY_SUPPORTED",
+      "input_review_file": "071_claude_r0_p03_masked_b0_b1_p09_p12_claim_review.md",
+      "not_independent_answer_gold": true,
+      "original_author_self_coverage": "SUPPORTED",
+      "original_method_revealed_after_all_three_reviews": "B0_ORIGINAL",
+      "original_source_paths": [
+        "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md",
+        "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+        "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md"
+      ],
+      "question_id": "P09",
+      "variant": "VARIANT_A"
+    },
+    {
+      "claim_verdicts": [
+        {
+          "claim_id": "C01",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "claim_id": "C02",
+          "verdict": "SUPPORTED"
+        }
+      ],
+      "current_operative_authority_test_outcome": "NO_FALSE_ASSERTIONS_REPORTED_BY_CLAUDE",
+      "independent_model_excerpt_entailment_grade": "FULLY_SUPPORTED",
+      "input_review_file": "071_claude_r0_p03_masked_b0_b1_p09_p12_claim_review.md",
+      "not_independent_answer_gold": true,
+      "original_author_self_coverage": "SUPPORTED",
+      "original_method_revealed_after_all_three_reviews": "B1_EXPOSED_SUBJECT_B0",
+      "original_source_paths": [
+        "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+        "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+        "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md"
+      ],
+      "question_id": "P09",
+      "variant": "VARIANT_B"
+    },
+    {
+      "claim_verdicts": [
+        {
+          "claim_id": "C01",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "claim_id": "C02",
+          "verdict": "SUPPORTED"
+        }
+      ],
+      "current_operative_authority_test_outcome": "NO_FALSE_ASSERTIONS_REPORTED_BY_CLAUDE",
+      "independent_model_excerpt_entailment_grade": "FULLY_SUPPORTED",
+      "input_review_file": "071_claude_r0_p03_masked_b0_b1_p09_p12_claim_review.md",
+      "not_independent_answer_gold": true,
+      "original_author_self_coverage": "SUPPORTED",
+      "original_method_revealed_after_all_three_reviews": "B1_EXPOSED_SUBJECT_B0",
+      "original_source_paths": [
+        "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+        "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+        "docs/checkpoints/884_r0_p01_atomic_synthetic_finalization_and_independent_outcome_vectors_next.md"
+      ],
+      "question_id": "P10",
+      "variant": "VARIANT_A"
+    },
+    {
+      "claim_verdicts": [
+        {
+          "claim_id": "C01",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "claim_id": "C02",
+          "verdict": "SUPPORTED"
+        }
+      ],
+      "current_operative_authority_test_outcome": "NO_FALSE_ASSERTIONS_REPORTED_BY_CLAUDE",
+      "independent_model_excerpt_entailment_grade": "FULLY_SUPPORTED",
+      "input_review_file": "071_claude_r0_p03_masked_b0_b1_p09_p12_claim_review.md",
+      "not_independent_answer_gold": true,
+      "original_author_self_coverage": "SUPPORTED",
+      "original_method_revealed_after_all_three_reviews": "B0_ORIGINAL",
+      "original_source_paths": [
+        "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+        "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+        "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md"
+      ],
+      "question_id": "P10",
+      "variant": "VARIANT_B"
+    },
+    {
+      "claim_verdicts": [
+        {
+          "claim_id": "C01",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "claim_id": "C02",
+          "verdict": "SUPPORTED"
+        }
+      ],
+      "current_operative_authority_test_outcome": "NO_FALSE_ASSERTIONS_REPORTED_BY_CLAUDE",
+      "independent_model_excerpt_entailment_grade": "FULLY_SUPPORTED",
+      "input_review_file": "071_claude_r0_p03_masked_b0_b1_p09_p12_claim_review.md",
+      "not_independent_answer_gold": true,
+      "original_author_self_coverage": "SUPPORTED",
+      "original_method_revealed_after_all_three_reviews": "B0_ORIGINAL",
+      "original_source_paths": [
+        "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+        "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+        "docs/CURRENT_STATE.md"
+      ],
+      "question_id": "P11",
+      "variant": "VARIANT_A"
+    },
+    {
+      "claim_verdicts": [
+        {
+          "claim_id": "C01",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "claim_id": "C02",
+          "verdict": "PARTIAL"
+        }
+      ],
+      "current_operative_authority_test_outcome": "NO_FALSE_ASSERTIONS_REPORTED_BY_CLAUDE",
+      "independent_model_excerpt_entailment_grade": "PARTIALLY_SUPPORTED",
+      "input_review_file": "071_claude_r0_p03_masked_b0_b1_p09_p12_claim_review.md",
+      "not_independent_answer_gold": true,
+      "original_author_self_coverage": "SUPPORTED",
+      "original_method_revealed_after_all_three_reviews": "B1_EXPOSED_SUBJECT_B0",
+      "original_source_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+        "docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md"
+      ],
+      "question_id": "P11",
+      "variant": "VARIANT_B"
+    },
+    {
+      "claim_verdicts": [
+        {
+          "claim_id": "C01",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "claim_id": "C02",
+          "verdict": "SUPPORTED"
+        }
+      ],
+      "current_operative_authority_test_outcome": "NO_FALSE_ASSERTIONS_REPORTED_BY_CLAUDE",
+      "independent_model_excerpt_entailment_grade": "FULLY_SUPPORTED",
+      "input_review_file": "071_claude_r0_p03_masked_b0_b1_p09_p12_claim_review.md",
+      "not_independent_answer_gold": true,
+      "original_author_self_coverage": "SUPPORTED",
+      "original_method_revealed_after_all_three_reviews": "B1_EXPOSED_SUBJECT_B0",
+      "original_source_paths": [
+        "docs/research/619_r0_p03_wave0_independent_blind_second_assessment_and_owner_comparison_route.md",
+        "docs/CURRENT_STATE.md",
+        "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md"
+      ],
+      "question_id": "P12",
+      "variant": "VARIANT_A"
+    },
+    {
+      "claim_verdicts": [
+        {
+          "claim_id": "C01",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "claim_id": "C02",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "claim_id": "C03",
+          "verdict": "SUPPORTED"
+        }
+      ],
+      "current_operative_authority_test_outcome": "NO_FALSE_ASSERTIONS_REPORTED_BY_CLAUDE",
+      "independent_model_excerpt_entailment_grade": "FULLY_SUPPORTED",
+      "input_review_file": "071_claude_r0_p03_masked_b0_b1_p09_p12_claim_review.md",
+      "not_independent_answer_gold": true,
+      "original_author_self_coverage": "SUPPORTED",
+      "original_method_revealed_after_all_three_reviews": "B0_ORIGINAL",
+      "original_source_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+        "docs/research/585_r0_p03_owner_fake_custody_report_and_access_boundary.md"
+      ],
+      "question_id": "P12",
+      "variant": "VARIANT_B"
+    }
+  ],
+  "counts": {
+    "B0_ORIGINAL": {
+      "answers": 12,
+      "author_self_assessment_counts": {
+        "ABSTAIN": 2,
+        "PARTIAL": 1,
+        "SUPPORTED": 9
+      },
+      "claim_verdict_counts": {
+        "PARTIAL": 0,
+        "SUPPORTED": 23,
+        "UNSUPPORTED": 0
+      },
+      "whole_answer_grade_counts": {
+        "FULLY_SUPPORTED": 10,
+        "MISLEADING_OR_UNSUPPORTED": 0,
+        "PARTIALLY_SUPPORTED": 0,
+        "PROPER_ABSTENTION": 2
+      }
+    },
+    "B1_EXPOSED_SUBJECT_B0": {
+      "answers": 12,
+      "author_self_assessment_counts": {
+        "ABSTAIN": 0,
+        "PARTIAL": 2,
+        "SUPPORTED": 10
+      },
+      "claim_verdict_counts": {
+        "PARTIAL": 2,
+        "SUPPORTED": 22,
+        "UNSUPPORTED": 0
+      },
+      "whole_answer_grade_counts": {
+        "FULLY_SUPPORTED": 10,
+        "MISLEADING_OR_UNSUPPORTED": 0,
+        "PARTIALLY_SUPPORTED": 2,
+        "PROPER_ABSTENTION": 0
+      }
+    },
+    "all": {
+      "answers": 24,
+      "author_self_assessment_counts": {
+        "ABSTAIN": 2,
+        "PARTIAL": 3,
+        "SUPPORTED": 19
+      },
+      "claim_verdict_counts": {
+        "PARTIAL": 2,
+        "SUPPORTED": 45,
+        "UNSUPPORTED": 0
+      },
+      "whole_answer_grade_counts": {
+        "FULLY_SUPPORTED": 20,
+        "MISLEADING_OR_UNSUPPORTED": 0,
+        "PARTIALLY_SUPPORTED": 2,
+        "PROPER_ABSTENTION": 2
+      }
+    }
+  },
+  "different_reviewer_model_families": 1,
+  "formal_original_R0_P03_scored": false,
+  "id": "R0_P03_ROUTE_B_THREE_SEPARATE_CLAUDE_MASKED_SOURCE_REVIEW_CONSOLIDATION_V01",
+  "independently_authored_reference_gold": false,
+  "interpretation_limits": [
+    "Claude graded entailment against the limited source lines already retrieved and selected by the exposed author, not correctness against complete independently judged source truth.",
+    "Three fresh Claude Code sessions reused one model family; no inter-rater across different models, no independent reference answer, and project/runtime context exposure was disclosed.",
+    "The question origin, 12-query test selection, B1 metadata authoring and answer construction were nonindependent; grades do not constitute formal primary 10/12 score.",
+    "A proper abstention means the evidence did not allow a full answer; it is not a successful complete answer. A partially supported answer is not a full answer.",
+    "The unmasking and aggregation happened after all three original reviewer messages were fixed; no retroactive model input changes, answer changes or altered source budgets occurred.",
+    "A zero false-operative-authority finding within 24 author responses and selected excerpts is not the original formal zero-false-authority independent-gold gate.",
+    "The B4 original pretrained neural encoder and qualified common V03-native substrate, original neutral nine-case legacy cohort and heldout maintenance F1 remain untested formally.",
+    "R0-P03 Research513/559/576 outcome remains INCOMPLETE; no physical target selection, migration or current owner-governance change is authorized."
+  ],
+  "method": "RETROSPECTIVE_DESCRIPTIVE_RECONCILIATION_OF_THREE_PREVIOUSLY_SEALED_REVIEWS",
+  "original_git_exact_source_lines_verified_with_multiplicity": 360,
+  "original_git_source_paths_verified": 28,
+  "prior_exposed_author_gpt6_answer_sha256": "5e8848f444fee4234fe885d9350e872393ac20f24a043c2347e615dafccdc388",
+  "prior_gold_free_source_packet_sha256": "60ec37969aa3319ce195353a6f9cddb2103640b0e4f748564e0be4a4d839b508",
+  "reviewed_and_sealed_input_files": [
+    {
+      "case_ids": [
+        "P01",
+        "P02",
+        "P03",
+        "P04"
+      ],
+      "packet_sha256": "6f76a9d8cb11beb64e0b8493230bf24e3b6f87920c562368ac14e2cd458bdb3b",
+      "review_file": "067_claude_r0_p03_masked_b0_b1_p01_p04_claim_review.md",
+      "review_packet": "route_b_treatment_masked_claim_review_p01_to_p04_v01.json",
+      "review_sha256": "528c386865b311f899e2d41c98e29ccfdb879a01e8b2553433aa7c6524ec336f"
+    },
+    {
+      "case_ids": [
+        "P05",
+        "P06",
+        "P07",
+        "P08"
+      ],
+      "packet_sha256": "0615031623d83c7bb6aba74588d18fa9fca5877d72828bd735f5f503b1751623",
+      "review_file": "069_claude_r0_p03_masked_b0_b1_p05_p08_claim_review.md",
+      "review_packet": "route_b_treatment_masked_claim_review_p05_to_p08_v01.json",
+      "review_sha256": "aac51653f23d85dba319a5bcd8c78410a880a840d5d2b85240edda2bd30eb42c"
+    },
+    {
+      "case_ids": [
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "packet_sha256": "e63afe2ebe79fc7e6ec3751d61971c6794d71cc1904057f2ee7aa691f9636804",
+      "review_file": "071_claude_r0_p03_masked_b0_b1_p09_p12_claim_review.md",
+      "review_packet": "route_b_treatment_masked_claim_review_p09_to_p12_v01.json",
+      "review_sha256": "4b3d77528e9aef20ef0e38ad5b3d38990757d4cb9d7796efdc782fc9ea1764c1"
+    }
+  ],
+  "reviewer_fresh_sessions_reported": 3,
+  "reviewer_has_full_original_source": false,
+  "selected_physical_architecture": false,
+  "source_authorship_independent": false,
+  "source_excerpt_judgments_separate_model": true,
+  "source_git_horizon": "47ed6344a9153dcf366769e95722840fbf1a8f8b"
+}
