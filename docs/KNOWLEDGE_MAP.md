@@ -1062,6 +1062,13 @@ docs/research/654_r0_p03_objective_git_event_and_external_ci_evidence_ladder_aud
 docs/research/655_r0_p03_route_b_first_twelve_source_answer_primary_b0_execution.md
 docs/research/656_r0_p03_route_b_distinct_b1_b2_b3_real_navigation_mechanisms_and_costs.md
 docs/research/657_r0_p03_route_b_b4_classical_latent_semantic_embedding_execution_and_neural_access_hold.md
+docs/research/658_r0_p03_route_b_actual_extractive_answer_evidence_and_citation_comparison.md
+docs/local_execution/validation/357_r0_p03_route_b_actual_extractive_84_answer_citation_evidence_execution.md
+docs/checkpoints/921_r0_p03_route_b_actual_extractive_answer_citations_and_reference_evidence_execution.md
+experiments/r0_p03_navigation_probe/ROUTE_B_PRIMARY_EXTRACTIVE_ANSWER_EVIDENCE_CONTRACT_V01.md
+experiments/r0_p03_navigation_probe/route_b_extractively_cited_answer_evidence_v01.py
+experiments/r0_p03_navigation_probe/route_b_extractively_cited_answer_evidence_result_v01.json
+tests/unit/test_r0_p03_route_b_extractively_cited_answer_evidence_v01.py
 docs/local_execution/validation/356_r0_p03_route_b_b4_classical_lsa_embedding_execution_and_exact_provenance.md
 docs/checkpoints/920_r0_p03_route_b_actual_classical_lsa_semantic_embedding_experiment_and_neural_access_hold.md
 experiments/r0_p03_navigation_probe/ROUTE_B_B4_LOCAL_LSA_EMBEDDING_CONTRACT_V01.md
@@ -2117,7 +2124,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-920 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-921 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 
