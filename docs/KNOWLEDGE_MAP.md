@@ -1053,6 +1053,17 @@ docs/research/645_r0_p03_real_hybrid_fusion_ablation_and_query_routing_execution
 docs/research/646_r0_p03_executed_directed_reference_retrieval_and_negative_evidence_controls.md
 docs/research/647_r0_p03_719_query_paraphrase_scope_and_abstention_execution.md
 docs/research/648_r0_p03_source_reference_context_evidence_and_declared_reference_qualification.md
+docs/research/649_r0_p03_claude_message064_reconciliation_native_source_parsers_and_scientific_boundary.md
+docs/local_execution/validation/348_r0_p03_native_declared_reference_evidence_and_model_message_identity_reconciliation.md
+docs/checkpoints/912_r0_p03_exposed_claude_critique_reconciliation_and_governed_reference_grammar_repair.md
+docs/model_collaboration/threads/MC-0030/messages/064_claude_r0_p03_source_semantics_and_fusion_critique.md
+docs/model_collaboration/threads/MC-0030/messages/065_chatgpt_r0_p03_message064_reconciliation_and_063_identity_collision_disposition.md
+experiments/r0_p03_navigation_probe/EXPLORATORY_GOVERNED_DECLARATION_REFERENCE_AUDIT_CONTRACT_V03.md
+experiments/r0_p03_navigation_probe/exploratory_governed_reference_audit_v03.py
+experiments/r0_p03_navigation_probe/exploratory_governed_reference_audit_result_v03.json
+scripts/check_model_collaboration_state.py
+tests/unit/test_model_collaboration_message_identity.py
+tests/unit/test_r0_p03_governed_reference_audit_v03.py
 docs/local_execution/validation/347_r0_p03_real_source_reference_provenance_audit_and_versioned_correction.md
 docs/checkpoints/911_r0_p03_reference_evidence_context_audit_and_versioned_declared_source_subset.md
 experiments/r0_p03_navigation_probe/EXPLORATORY_REFERENCE_PROVENANCE_AUDIT_CONTRACT_V01.md
@@ -2041,7 +2052,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-911 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-912 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

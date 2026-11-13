@@ -1,0 +1,2807 @@
+{
+  "classification": "EXPOSED_GOVERNED_PARSER_SOURCE_DECLARATION_AUDIT_NOT_GOLD",
+  "contract": "EXPLORATORY_GOVERNED_DECLARATION_REFERENCE_AUDIT_CONTRACT_V03.md",
+  "formal_r0_p03_scored": false,
+  "historical_revision": "4b94ffe183ff7af72cef6ee7492b4ba2f30c11ef",
+  "identifier": "EXPLORATORY_SOURCE_OWNED_DECLARATION_AUDIT_V03",
+  "limitations": [
+    "Existing parser acceptance is not complete schema/semantic/currentness validation.",
+    "Source declarations from exposed 65 documents are not independent user gold.",
+    "References and provenance are separate relation classes, not one authority claim.",
+    "Missing target from sampled 65 is not missing target from repository.",
+    "Fragment is preserved as a selector, not authenticated as accepted decision identity.",
+    "Reviewer's provisional 29/10 and independently observed 31/12 require trace-level reconciliation.",
+    "No original R0-P03 B0-B4 score, production implementation or physical target selection."
+  ],
+  "other_header_relationship_fields": [
+    {
+      "authority_qualified": false,
+      "header_field": "Companion collaboration thread",
+      "raw_value": "MC-0004",
+      "source": "docs/research/037_project_cockpit_next_generation_visual_interaction_design_exploration_map.md",
+      "target_syntax": [
+        "thread",
+        "MC-0004"
+      ]
+    },
+    {
+      "authority_qualified": false,
+      "header_field": "Companion collaboration thread",
+      "raw_value": "MC-0004",
+      "source": "docs/research/046_work_unit_category_and_silhouette_visual_grammar_experiment.md",
+      "target_syntax": [
+        "thread",
+        "MC-0004"
+      ]
+    },
+    {
+      "authority_qualified": false,
+      "header_field": "Companion collaboration thread",
+      "raw_value": "`MC-0004`",
+      "source": "docs/research/089_cockpit_implementation_provenance_recovery_completion_and_exact_history_gate.md",
+      "target_syntax": [
+        "thread",
+        "MC-0004"
+      ]
+    }
+  ],
+  "parsed_source_owned_entries": [
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "semantic_source.v1",
+      "grammar_slot": "SPEC028_PROVENANCE",
+      "raw_typed_token": "checkpoint:520",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "3e3658a4afd6ea54cd994033177b44bbb5fc0295",
+      "source_path": "docs/DECISIONS.md",
+      "source_sha256": "8111fb7631c1e931b223645b8b755c1b97f54cc31434dcf4e14a0fe917edeef7",
+      "source_witnesses": [
+        {
+          "line_number": 947,
+          "line_sha256": "32834c3fc746ddb9b270a0e3b9ed707c602fbe38d2c22f1c73dd1719ef3215f5",
+          "original_line": "    \"checkpoint:520\""
+        }
+      ],
+      "target_family": "checkpoint",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "checkpoint:520",
+      "target_selector": "520"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "semantic_source.v1",
+      "grammar_slot": "SPEC028_PROVENANCE",
+      "raw_typed_token": "research:175",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "3e3658a4afd6ea54cd994033177b44bbb5fc0295",
+      "source_path": "docs/DECISIONS.md",
+      "source_sha256": "8111fb7631c1e931b223645b8b755c1b97f54cc31434dcf4e14a0fe917edeef7",
+      "source_witnesses": [
+        {
+          "line_number": 946,
+          "line_sha256": "6fbed66972145e1b11b3c3683b398c51f0fd8b7d392d372b884a112b9b61c733",
+          "original_line": "    \"research:175\","
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:175",
+      "target_selector": "175"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "semantic_source.v1",
+      "grammar_slot": "SPEC028_REFERENCES",
+      "raw_typed_token": "research:144",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "3e3658a4afd6ea54cd994033177b44bbb5fc0295",
+      "source_path": "docs/DECISIONS.md",
+      "source_sha256": "8111fb7631c1e931b223645b8b755c1b97f54cc31434dcf4e14a0fe917edeef7",
+      "source_witnesses": [
+        {
+          "line_number": 950,
+          "line_sha256": "ab99fb4a300cb0751d27467e5dedf32fa9c2ae7ae1ed1e4d084d5aa146c1587f",
+          "original_line": "    \"research:144\","
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:144",
+      "target_selector": "144"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "semantic_source.v1",
+      "grammar_slot": "SPEC028_REFERENCES",
+      "raw_typed_token": "research:176",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "3e3658a4afd6ea54cd994033177b44bbb5fc0295",
+      "source_path": "docs/DECISIONS.md",
+      "source_sha256": "8111fb7631c1e931b223645b8b755c1b97f54cc31434dcf4e14a0fe917edeef7",
+      "source_witnesses": [
+        {
+          "line_number": 951,
+          "line_sha256": "f3b191b3674f6f8eae175a81ba45fb3964c92b2f86f1b048129a6bb43e65f371",
+          "original_line": "    \"research:176\","
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:176",
+      "target_selector": "176"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "semantic_source.v1",
+      "grammar_slot": "SPEC028_REFERENCES",
+      "raw_typed_token": "specification:028",
+      "resolution_state": "RESOLVED_IN_65",
+      "source_blob_sha1": "3e3658a4afd6ea54cd994033177b44bbb5fc0295",
+      "source_path": "docs/DECISIONS.md",
+      "source_sha256": "8111fb7631c1e931b223645b8b755c1b97f54cc31434dcf4e14a0fe917edeef7",
+      "source_witnesses": [
+        {
+          "line_number": 952,
+          "line_sha256": "b87f6ed9ecf58e4fbb5e8b18c66b86dea502fc9e2c4a6c98e24374c248c1265a",
+          "original_line": "    \"specification:028\""
+        }
+      ],
+      "target_family": "specification",
+      "target_fragment": null,
+      "target_member_in_sample": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "target_original_token": "specification:028",
+      "target_selector": "028"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "semantic_source.v1",
+      "grammar_slot": "SPEC028_PROVENANCE",
+      "raw_typed_token": "checkpoint:267",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "570192e52666d59352caba2b7a0e98c4cba90c93",
+      "source_path": "docs/cockpit/COCKPIT_DESIGN_RESUME_TARGET.md",
+      "source_sha256": "74e919bc8a3f817d08a82d8d523cb9656d310af9873bd31b39b8b9f1ffb46b69",
+      "source_witnesses": [
+        {
+          "line_number": 32,
+          "line_sha256": "38f7491366925a14f168b96e32ca149570624fed6ee064d6c21f1072fff329e5",
+          "original_line": "    \"checkpoint:267\","
+        }
+      ],
+      "target_family": "checkpoint",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "checkpoint:267",
+      "target_selector": "267"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "semantic_source.v1",
+      "grammar_slot": "SPEC028_PROVENANCE",
+      "raw_typed_token": "research:169",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "570192e52666d59352caba2b7a0e98c4cba90c93",
+      "source_path": "docs/cockpit/COCKPIT_DESIGN_RESUME_TARGET.md",
+      "source_sha256": "74e919bc8a3f817d08a82d8d523cb9656d310af9873bd31b39b8b9f1ffb46b69",
+      "source_witnesses": [
+        {
+          "line_number": 33,
+          "line_sha256": "ad7aeac63d868aa074c571c1074639e10d75f91e686ba9d0163867e2be613839",
+          "original_line": "    \"research:169\","
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:169",
+      "target_selector": "169"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "semantic_source.v1",
+      "grammar_slot": "SPEC028_PROVENANCE",
+      "raw_typed_token": "research:170",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "570192e52666d59352caba2b7a0e98c4cba90c93",
+      "source_path": "docs/cockpit/COCKPIT_DESIGN_RESUME_TARGET.md",
+      "source_sha256": "74e919bc8a3f817d08a82d8d523cb9656d310af9873bd31b39b8b9f1ffb46b69",
+      "source_witnesses": [
+        {
+          "line_number": 34,
+          "line_sha256": "34b68d99d0905cae9d542bc3c0adfeeb6c9fb47696cbda9e2aabbcce81a7a5dd",
+          "original_line": "    \"research:170\""
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:170",
+      "target_selector": "170"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "semantic_source.v1",
+      "grammar_slot": "SPEC028_REFERENCES",
+      "raw_typed_token": "path:docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md",
+      "resolution_state": "RESOLVED_IN_65",
+      "source_blob_sha1": "570192e52666d59352caba2b7a0e98c4cba90c93",
+      "source_path": "docs/cockpit/COCKPIT_DESIGN_RESUME_TARGET.md",
+      "source_sha256": "74e919bc8a3f817d08a82d8d523cb9656d310af9873bd31b39b8b9f1ffb46b69",
+      "source_witnesses": [
+        {
+          "line_number": 38,
+          "line_sha256": "dd398b1ace3d2fda230c3672402ef3b81b458174d0670c7dc5d83b1d2bc0485d",
+          "original_line": "    \"path:docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md\","
+        }
+      ],
+      "target_family": "path",
+      "target_fragment": null,
+      "target_member_in_sample": "docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md",
+      "target_original_token": "path:docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md",
+      "target_selector": "docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "semantic_source.v1",
+      "grammar_slot": "SPEC028_REFERENCES",
+      "raw_typed_token": "path:docs/cockpit/PHASE_C_DECISION_LEDGER.md",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "570192e52666d59352caba2b7a0e98c4cba90c93",
+      "source_path": "docs/cockpit/COCKPIT_DESIGN_RESUME_TARGET.md",
+      "source_sha256": "74e919bc8a3f817d08a82d8d523cb9656d310af9873bd31b39b8b9f1ffb46b69",
+      "source_witnesses": [
+        {
+          "line_number": 39,
+          "line_sha256": "0084e43baa73e6c4810006de3ea5f9a89c08615aa9e628b9328702d65280a63b",
+          "original_line": "    \"path:docs/cockpit/PHASE_C_DECISION_LEDGER.md\""
+        }
+      ],
+      "target_family": "path",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "path:docs/cockpit/PHASE_C_DECISION_LEDGER.md",
+      "target_selector": "docs/cockpit/PHASE_C_DECISION_LEDGER.md"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "semantic_source.v1",
+      "grammar_slot": "SPEC028_REFERENCES",
+      "raw_typed_token": "path:docs/cockpit/README.md",
+      "resolution_state": "RESOLVED_IN_65",
+      "source_blob_sha1": "570192e52666d59352caba2b7a0e98c4cba90c93",
+      "source_path": "docs/cockpit/COCKPIT_DESIGN_RESUME_TARGET.md",
+      "source_sha256": "74e919bc8a3f817d08a82d8d523cb9656d310af9873bd31b39b8b9f1ffb46b69",
+      "source_witnesses": [
+        {
+          "line_number": 37,
+          "line_sha256": "39145076476142ec88e1940deaa757e7cc2018cf661b428b8df0eb8b4908d480",
+          "original_line": "    \"path:docs/cockpit/README.md\","
+        }
+      ],
+      "target_family": "path",
+      "target_fragment": null,
+      "target_member_in_sample": "docs/cockpit/README.md",
+      "target_original_token": "path:docs/cockpit/README.md",
+      "target_selector": "docs/cockpit/README.md"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "workstream.v1",
+      "grammar_slot": "SPEC028_PROVENANCE",
+      "raw_typed_token": "checkpoint:267",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "1719ed23c62315078a0f35267001b8a3e2ce8b97",
+      "source_path": "docs/cockpit/README.md",
+      "source_sha256": "08726acc6541e23fa568d1b444f98124456ac5863fc263498af5e5115f8a90c3",
+      "source_witnesses": [
+        {
+          "line_number": 33,
+          "line_sha256": "38f7491366925a14f168b96e32ca149570624fed6ee064d6c21f1072fff329e5",
+          "original_line": "    \"checkpoint:267\","
+        }
+      ],
+      "target_family": "checkpoint",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "checkpoint:267",
+      "target_selector": "267"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "workstream.v1",
+      "grammar_slot": "SPEC028_PROVENANCE",
+      "raw_typed_token": "research:169",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "1719ed23c62315078a0f35267001b8a3e2ce8b97",
+      "source_path": "docs/cockpit/README.md",
+      "source_sha256": "08726acc6541e23fa568d1b444f98124456ac5863fc263498af5e5115f8a90c3",
+      "source_witnesses": [
+        {
+          "line_number": 34,
+          "line_sha256": "ad7aeac63d868aa074c571c1074639e10d75f91e686ba9d0163867e2be613839",
+          "original_line": "    \"research:169\","
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:169",
+      "target_selector": "169"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "workstream.v1",
+      "grammar_slot": "SPEC028_PROVENANCE",
+      "raw_typed_token": "research:170",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "1719ed23c62315078a0f35267001b8a3e2ce8b97",
+      "source_path": "docs/cockpit/README.md",
+      "source_sha256": "08726acc6541e23fa568d1b444f98124456ac5863fc263498af5e5115f8a90c3",
+      "source_witnesses": [
+        {
+          "line_number": 35,
+          "line_sha256": "34b68d99d0905cae9d542bc3c0adfeeb6c9fb47696cbda9e2aabbcce81a7a5dd",
+          "original_line": "    \"research:170\""
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:170",
+      "target_selector": "170"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "workstream.v1",
+      "grammar_slot": "SPEC028_REFERENCES",
+      "raw_typed_token": "path:docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md",
+      "resolution_state": "RESOLVED_IN_65",
+      "source_blob_sha1": "1719ed23c62315078a0f35267001b8a3e2ce8b97",
+      "source_path": "docs/cockpit/README.md",
+      "source_sha256": "08726acc6541e23fa568d1b444f98124456ac5863fc263498af5e5115f8a90c3",
+      "source_witnesses": [
+        {
+          "line_number": 38,
+          "line_sha256": "dd398b1ace3d2fda230c3672402ef3b81b458174d0670c7dc5d83b1d2bc0485d",
+          "original_line": "    \"path:docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md\","
+        }
+      ],
+      "target_family": "path",
+      "target_fragment": null,
+      "target_member_in_sample": "docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md",
+      "target_original_token": "path:docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md",
+      "target_selector": "docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "workstream.v1",
+      "grammar_slot": "SPEC028_REFERENCES",
+      "raw_typed_token": "path:docs/cockpit/PHASE_C_DECISION_LEDGER.md",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "1719ed23c62315078a0f35267001b8a3e2ce8b97",
+      "source_path": "docs/cockpit/README.md",
+      "source_sha256": "08726acc6541e23fa568d1b444f98124456ac5863fc263498af5e5115f8a90c3",
+      "source_witnesses": [
+        {
+          "line_number": 40,
+          "line_sha256": "7c69f23530f77bb9f53fa885ee1c37bc27535eec3c136f39d60ddb274af4901a",
+          "original_line": "    \"path:docs/cockpit/PHASE_C_DECISION_LEDGER.md\","
+        }
+      ],
+      "target_family": "path",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "path:docs/cockpit/PHASE_C_DECISION_LEDGER.md",
+      "target_selector": "docs/cockpit/PHASE_C_DECISION_LEDGER.md"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "workstream.v1",
+      "grammar_slot": "SPEC028_REFERENCES",
+      "raw_typed_token": "path:docs/cockpit/accepted_implementation_manifest.json",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "1719ed23c62315078a0f35267001b8a3e2ce8b97",
+      "source_path": "docs/cockpit/README.md",
+      "source_sha256": "08726acc6541e23fa568d1b444f98124456ac5863fc263498af5e5115f8a90c3",
+      "source_witnesses": [
+        {
+          "line_number": 39,
+          "line_sha256": "1d081e979642589f85d6084879518def4a57504ab1da22ac33cc1c754771621c",
+          "original_line": "    \"path:docs/cockpit/accepted_implementation_manifest.json\","
+        }
+      ],
+      "target_family": "path",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "path:docs/cockpit/accepted_implementation_manifest.json",
+      "target_selector": "docs/cockpit/accepted_implementation_manifest.json"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "workstream.v1",
+      "grammar_slot": "SPEC028_REFERENCES",
+      "raw_typed_token": "research:097",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "1719ed23c62315078a0f35267001b8a3e2ce8b97",
+      "source_path": "docs/cockpit/README.md",
+      "source_sha256": "08726acc6541e23fa568d1b444f98124456ac5863fc263498af5e5115f8a90c3",
+      "source_witnesses": [
+        {
+          "line_number": 41,
+          "line_sha256": "6cfebd405f3fab019be72d053e9d410ad53a41a0c4cc3aecb0bada64f1829151",
+          "original_line": "    \"research:097\""
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:097",
+      "target_selector": "097"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "project_boundary.v1",
+      "grammar_slot": "SPEC028_PROVENANCE",
+      "raw_typed_token": "path:docs/OPEN_ARCHITECTURE_BACKLOG.md#AB-032",
+      "resolution_state": "RESOLVED_IN_65",
+      "source_blob_sha1": "f81a9da2907926a21fc468e291da6351e1425383",
+      "source_path": "docs/project_knowledge/project_integration_boundary.md",
+      "source_sha256": "a06d2734d4ff8298f60ed52aa5ff02a9a373c4a02937a8e3d7ba4a01b2993549",
+      "source_witnesses": [
+        {
+          "line_number": 39,
+          "line_sha256": "794da489617174e772323ee6d33474f5f3a4a6cde2e8f1ef1989aa79474a01a1",
+          "original_line": "    \"path:docs/OPEN_ARCHITECTURE_BACKLOG.md#AB-032\""
+        }
+      ],
+      "target_family": "path",
+      "target_fragment": "AB-032",
+      "target_member_in_sample": "docs/OPEN_ARCHITECTURE_BACKLOG.md",
+      "target_original_token": "path:docs/OPEN_ARCHITECTURE_BACKLOG.md#AB-032",
+      "target_selector": "docs/OPEN_ARCHITECTURE_BACKLOG.md"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "project_boundary.v1",
+      "grammar_slot": "SPEC028_PROVENANCE",
+      "raw_typed_token": "path:docs/current_routing.json",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "f81a9da2907926a21fc468e291da6351e1425383",
+      "source_path": "docs/project_knowledge/project_integration_boundary.md",
+      "source_sha256": "a06d2734d4ff8298f60ed52aa5ff02a9a373c4a02937a8e3d7ba4a01b2993549",
+      "source_witnesses": [
+        {
+          "line_number": 37,
+          "line_sha256": "6b27d89465e1a1e30d5a535fb269390892b844b4ed7c8ce4c83a13a0fb12f095",
+          "original_line": "    \"path:docs/current_routing.json\","
+        }
+      ],
+      "target_family": "path",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "path:docs/current_routing.json",
+      "target_selector": "docs/current_routing.json"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "project_boundary.v1",
+      "grammar_slot": "SPEC028_PROVENANCE",
+      "raw_typed_token": "path:docs/project_knowledge/captures/historical/w4_branch_boundary_scope.json",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "f81a9da2907926a21fc468e291da6351e1425383",
+      "source_path": "docs/project_knowledge/project_integration_boundary.md",
+      "source_sha256": "a06d2734d4ff8298f60ed52aa5ff02a9a373c4a02937a8e3d7ba4a01b2993549",
+      "source_witnesses": [
+        {
+          "line_number": 38,
+          "line_sha256": "9fb324c21c62950d5ab780dd92cc485b1c29cd498f0504a3f6762a53428fbeeb",
+          "original_line": "    \"path:docs/project_knowledge/captures/historical/w4_branch_boundary_scope.json\","
+        }
+      ],
+      "target_family": "path",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "path:docs/project_knowledge/captures/historical/w4_branch_boundary_scope.json",
+      "target_selector": "docs/project_knowledge/captures/historical/w4_branch_boundary_scope.json"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "project_boundary.v1",
+      "grammar_slot": "SPEC028_PROVENANCE",
+      "raw_typed_token": "research:153",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "f81a9da2907926a21fc468e291da6351e1425383",
+      "source_path": "docs/project_knowledge/project_integration_boundary.md",
+      "source_sha256": "a06d2734d4ff8298f60ed52aa5ff02a9a373c4a02937a8e3d7ba4a01b2993549",
+      "source_witnesses": [
+        {
+          "line_number": 34,
+          "line_sha256": "a9521891a4201f7fc945679e5a2e79b8d373095214ce8f2988ecbcbfbdfa4a00",
+          "original_line": "    \"research:153\","
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:153",
+      "target_selector": "153"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "project_boundary.v1",
+      "grammar_slot": "SPEC028_PROVENANCE",
+      "raw_typed_token": "research:155",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "f81a9da2907926a21fc468e291da6351e1425383",
+      "source_path": "docs/project_knowledge/project_integration_boundary.md",
+      "source_sha256": "a06d2734d4ff8298f60ed52aa5ff02a9a373c4a02937a8e3d7ba4a01b2993549",
+      "source_witnesses": [
+        {
+          "line_number": 35,
+          "line_sha256": "f6771bbe4efb2ecd438c09a1d6dc0e3cabebd23d19dc3420e301d8b79dc2cfe1",
+          "original_line": "    \"research:155\","
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:155",
+      "target_selector": "155"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "project_boundary.v1",
+      "grammar_slot": "SPEC028_PROVENANCE",
+      "raw_typed_token": "research:185",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "f81a9da2907926a21fc468e291da6351e1425383",
+      "source_path": "docs/project_knowledge/project_integration_boundary.md",
+      "source_sha256": "a06d2734d4ff8298f60ed52aa5ff02a9a373c4a02937a8e3d7ba4a01b2993549",
+      "source_witnesses": [
+        {
+          "line_number": 36,
+          "line_sha256": "4c69c5cd63970b77e06d9eb2f6884fb59bd187794026a8073457b70f9eb396b8",
+          "original_line": "    \"research:185\","
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:185",
+      "target_selector": "185"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "workstream.v1",
+      "grammar_slot": "SPEC028_PROVENANCE",
+      "raw_typed_token": "checkpoint:542",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "d4e751febd48dc7fb5778883e08482bf79c96441",
+      "source_path": "docs/project_knowledge/selected_architecture_workstream.md",
+      "source_sha256": "600a43ea95f980a97a77c624bbbb1115fb7e427ca3e6f956688674714d9caa1c",
+      "source_witnesses": [
+        {
+          "line_number": 47,
+          "line_sha256": "07bda268013115c5bd8f6c7f719b5791c8cc5ef5b1281e5e785e16bbe8fd6e22",
+          "original_line": "    \"checkpoint:542\""
+        }
+      ],
+      "target_family": "checkpoint",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "checkpoint:542",
+      "target_selector": "542"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "workstream.v1",
+      "grammar_slot": "SPEC028_PROVENANCE",
+      "raw_typed_token": "path:docs/DECISIONS.md#D-035",
+      "resolution_state": "RESOLVED_IN_65",
+      "source_blob_sha1": "d4e751febd48dc7fb5778883e08482bf79c96441",
+      "source_path": "docs/project_knowledge/selected_architecture_workstream.md",
+      "source_sha256": "600a43ea95f980a97a77c624bbbb1115fb7e427ca3e6f956688674714d9caa1c",
+      "source_witnesses": [
+        {
+          "line_number": 43,
+          "line_sha256": "f8915cb6203e96cc14927092ff53cdcec83a8d293134aec5923f18c4857fd6ca",
+          "original_line": "    \"path:docs/DECISIONS.md#D-035\","
+        }
+      ],
+      "target_family": "path",
+      "target_fragment": "D-035",
+      "target_member_in_sample": "docs/DECISIONS.md",
+      "target_original_token": "path:docs/DECISIONS.md#D-035",
+      "target_selector": "docs/DECISIONS.md"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "workstream.v1",
+      "grammar_slot": "SPEC028_PROVENANCE",
+      "raw_typed_token": "research:176",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "d4e751febd48dc7fb5778883e08482bf79c96441",
+      "source_path": "docs/project_knowledge/selected_architecture_workstream.md",
+      "source_sha256": "600a43ea95f980a97a77c624bbbb1115fb7e427ca3e6f956688674714d9caa1c",
+      "source_witnesses": [
+        {
+          "line_number": 44,
+          "line_sha256": "f3b191b3674f6f8eae175a81ba45fb3964c92b2f86f1b048129a6bb43e65f371",
+          "original_line": "    \"research:176\","
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:176",
+      "target_selector": "176"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "workstream.v1",
+      "grammar_slot": "SPEC028_PROVENANCE",
+      "raw_typed_token": "research:177",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "d4e751febd48dc7fb5778883e08482bf79c96441",
+      "source_path": "docs/project_knowledge/selected_architecture_workstream.md",
+      "source_sha256": "600a43ea95f980a97a77c624bbbb1115fb7e427ca3e6f956688674714d9caa1c",
+      "source_witnesses": [
+        {
+          "line_number": 45,
+          "line_sha256": "1b012e06d39ed065ab890ab84401dd8edb367021a8f35e37ecbc78764baed45c",
+          "original_line": "    \"research:177\","
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:177",
+      "target_selector": "177"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "workstream.v1",
+      "grammar_slot": "SPEC028_PROVENANCE",
+      "raw_typed_token": "specification:028",
+      "resolution_state": "RESOLVED_IN_65",
+      "source_blob_sha1": "d4e751febd48dc7fb5778883e08482bf79c96441",
+      "source_path": "docs/project_knowledge/selected_architecture_workstream.md",
+      "source_sha256": "600a43ea95f980a97a77c624bbbb1115fb7e427ca3e6f956688674714d9caa1c",
+      "source_witnesses": [
+        {
+          "line_number": 46,
+          "line_sha256": "e1ffacdc71a56eaa8795b65ce2a63f2ef04aed9d24ec8dbd961d41259066f75e",
+          "original_line": "    \"specification:028\","
+        }
+      ],
+      "target_family": "specification",
+      "target_fragment": null,
+      "target_member_in_sample": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "target_original_token": "specification:028",
+      "target_selector": "028"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "workstream.v1",
+      "grammar_slot": "SPEC028_REFERENCES",
+      "raw_typed_token": "path:docs/project_knowledge/architecture/README.md",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "d4e751febd48dc7fb5778883e08482bf79c96441",
+      "source_path": "docs/project_knowledge/selected_architecture_workstream.md",
+      "source_sha256": "600a43ea95f980a97a77c624bbbb1115fb7e427ca3e6f956688674714d9caa1c",
+      "source_witnesses": [
+        {
+          "line_number": 50,
+          "line_sha256": "aac406d1e20ac5193d78378ad68ef889524c02e9fd59bb2f4e37e148ae04707d",
+          "original_line": "    \"path:docs/project_knowledge/architecture/README.md\""
+        }
+      ],
+      "target_family": "path",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "path:docs/project_knowledge/architecture/README.md",
+      "target_selector": "docs/project_knowledge/architecture/README.md"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "checkpoint:275",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "2e386d270e64188696d30c50fee420a8ba0af148",
+      "source_path": "docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md",
+      "source_sha256": "417026aea2f087217f5c566adad8449464b9e895bb899dfbbcb59209be6c9a45",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "978fbabe7f7519b3f1f765d2952ad5c6d143f49fe5c2d13660e204240775c5e9",
+          "original_line": "**Declared references:** `research:105`, `research:109`, `research:110`, `research:111`, `research:112`, `research:123`, `checkpoint:275`, `checkpoint:370`, `path:docs/local_execution/OPERATIONS.md`, `path:docs/model_collaboration/README.md`"
+        }
+      ],
+      "target_family": "checkpoint",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "checkpoint:275",
+      "target_selector": "275"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "checkpoint:370",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "2e386d270e64188696d30c50fee420a8ba0af148",
+      "source_path": "docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md",
+      "source_sha256": "417026aea2f087217f5c566adad8449464b9e895bb899dfbbcb59209be6c9a45",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "978fbabe7f7519b3f1f765d2952ad5c6d143f49fe5c2d13660e204240775c5e9",
+          "original_line": "**Declared references:** `research:105`, `research:109`, `research:110`, `research:111`, `research:112`, `research:123`, `checkpoint:275`, `checkpoint:370`, `path:docs/local_execution/OPERATIONS.md`, `path:docs/model_collaboration/README.md`"
+        }
+      ],
+      "target_family": "checkpoint",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "checkpoint:370",
+      "target_selector": "370"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "path:docs/local_execution/OPERATIONS.md",
+      "resolution_state": "RESOLVED_IN_65",
+      "source_blob_sha1": "2e386d270e64188696d30c50fee420a8ba0af148",
+      "source_path": "docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md",
+      "source_sha256": "417026aea2f087217f5c566adad8449464b9e895bb899dfbbcb59209be6c9a45",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "978fbabe7f7519b3f1f765d2952ad5c6d143f49fe5c2d13660e204240775c5e9",
+          "original_line": "**Declared references:** `research:105`, `research:109`, `research:110`, `research:111`, `research:112`, `research:123`, `checkpoint:275`, `checkpoint:370`, `path:docs/local_execution/OPERATIONS.md`, `path:docs/model_collaboration/README.md`"
+        }
+      ],
+      "target_family": "path",
+      "target_fragment": null,
+      "target_member_in_sample": "docs/local_execution/OPERATIONS.md",
+      "target_original_token": "path:docs/local_execution/OPERATIONS.md",
+      "target_selector": "docs/local_execution/OPERATIONS.md"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "path:docs/model_collaboration/README.md",
+      "resolution_state": "RESOLVED_IN_65",
+      "source_blob_sha1": "2e386d270e64188696d30c50fee420a8ba0af148",
+      "source_path": "docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md",
+      "source_sha256": "417026aea2f087217f5c566adad8449464b9e895bb899dfbbcb59209be6c9a45",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "978fbabe7f7519b3f1f765d2952ad5c6d143f49fe5c2d13660e204240775c5e9",
+          "original_line": "**Declared references:** `research:105`, `research:109`, `research:110`, `research:111`, `research:112`, `research:123`, `checkpoint:275`, `checkpoint:370`, `path:docs/local_execution/OPERATIONS.md`, `path:docs/model_collaboration/README.md`"
+        }
+      ],
+      "target_family": "path",
+      "target_fragment": null,
+      "target_member_in_sample": "docs/model_collaboration/README.md",
+      "target_original_token": "path:docs/model_collaboration/README.md",
+      "target_selector": "docs/model_collaboration/README.md"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "research:105",
+      "resolution_state": "RESOLVED_IN_65",
+      "source_blob_sha1": "2e386d270e64188696d30c50fee420a8ba0af148",
+      "source_path": "docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md",
+      "source_sha256": "417026aea2f087217f5c566adad8449464b9e895bb899dfbbcb59209be6c9a45",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "978fbabe7f7519b3f1f765d2952ad5c6d143f49fe5c2d13660e204240775c5e9",
+          "original_line": "**Declared references:** `research:105`, `research:109`, `research:110`, `research:111`, `research:112`, `research:123`, `checkpoint:275`, `checkpoint:370`, `path:docs/local_execution/OPERATIONS.md`, `path:docs/model_collaboration/README.md`"
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": "docs/research/105_codexless_local_execution_bridge_evaluation.md",
+      "target_original_token": "research:105",
+      "target_selector": "105"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "research:109",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "2e386d270e64188696d30c50fee420a8ba0af148",
+      "source_path": "docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md",
+      "source_sha256": "417026aea2f087217f5c566adad8449464b9e895bb899dfbbcb59209be6c9a45",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "978fbabe7f7519b3f1f765d2952ad5c6d143f49fe5c2d13660e204240775c5e9",
+          "original_line": "**Declared references:** `research:105`, `research:109`, `research:110`, `research:111`, `research:112`, `research:123`, `checkpoint:275`, `checkpoint:370`, `path:docs/local_execution/OPERATIONS.md`, `path:docs/model_collaboration/README.md`"
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:109",
+      "target_selector": "109"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "research:110",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "2e386d270e64188696d30c50fee420a8ba0af148",
+      "source_path": "docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md",
+      "source_sha256": "417026aea2f087217f5c566adad8449464b9e895bb899dfbbcb59209be6c9a45",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "978fbabe7f7519b3f1f765d2952ad5c6d143f49fe5c2d13660e204240775c5e9",
+          "original_line": "**Declared references:** `research:105`, `research:109`, `research:110`, `research:111`, `research:112`, `research:123`, `checkpoint:275`, `checkpoint:370`, `path:docs/local_execution/OPERATIONS.md`, `path:docs/model_collaboration/README.md`"
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:110",
+      "target_selector": "110"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "research:111",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "2e386d270e64188696d30c50fee420a8ba0af148",
+      "source_path": "docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md",
+      "source_sha256": "417026aea2f087217f5c566adad8449464b9e895bb899dfbbcb59209be6c9a45",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "978fbabe7f7519b3f1f765d2952ad5c6d143f49fe5c2d13660e204240775c5e9",
+          "original_line": "**Declared references:** `research:105`, `research:109`, `research:110`, `research:111`, `research:112`, `research:123`, `checkpoint:275`, `checkpoint:370`, `path:docs/local_execution/OPERATIONS.md`, `path:docs/model_collaboration/README.md`"
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:111",
+      "target_selector": "111"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "research:112",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "2e386d270e64188696d30c50fee420a8ba0af148",
+      "source_path": "docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md",
+      "source_sha256": "417026aea2f087217f5c566adad8449464b9e895bb899dfbbcb59209be6c9a45",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "978fbabe7f7519b3f1f765d2952ad5c6d143f49fe5c2d13660e204240775c5e9",
+          "original_line": "**Declared references:** `research:105`, `research:109`, `research:110`, `research:111`, `research:112`, `research:123`, `checkpoint:275`, `checkpoint:370`, `path:docs/local_execution/OPERATIONS.md`, `path:docs/model_collaboration/README.md`"
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:112",
+      "target_selector": "112"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "research:123",
+      "resolution_state": "RESOLVED_IN_65",
+      "source_blob_sha1": "2e386d270e64188696d30c50fee420a8ba0af148",
+      "source_path": "docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md",
+      "source_sha256": "417026aea2f087217f5c566adad8449464b9e895bb899dfbbcb59209be6c9a45",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "978fbabe7f7519b3f1f765d2952ad5c6d143f49fe5c2d13660e204240775c5e9",
+          "original_line": "**Declared references:** `research:105`, `research:109`, `research:110`, `research:111`, `research:112`, `research:123`, `checkpoint:275`, `checkpoint:370`, `path:docs/local_execution/OPERATIONS.md`, `path:docs/model_collaboration/README.md`"
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": "docs/research/123_github_connector_capability_parity_and_codexless_runtime_bridge_architecture.md",
+      "target_original_token": "research:123",
+      "target_selector": "123"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "checkpoint:370",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "df749a1d7ea259eb12da4aa082ced8525dbd2641",
+      "source_path": "docs/research/123_github_connector_capability_parity_and_codexless_runtime_bridge_architecture.md",
+      "source_sha256": "c9bffcb7abadcb37b8b79f0b4d406983d19643659d223168b52100e412c83eab",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "754697f00434354c710befdaaa2022bc55cc0b335b80d3e677ca09e59a2f9ac8",
+          "original_line": "**Declared references:** `research:113`, `research:116`, `checkpoint:370`, `path:docs/local_execution/validation/034_chatgpt_tool_projection_refresh_and_connector_coexistence_observations.md`, `path:docs/local_execution/validation/128_github_connector_capability_parity_baseline_and_coexistence_recheck.md`, `path:docs/local_execution/OPERATIONS.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`"
+        }
+      ],
+      "target_family": "checkpoint",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "checkpoint:370",
+      "target_selector": "370"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "path:docs/OPEN_ARCHITECTURE_BACKLOG.md",
+      "resolution_state": "RESOLVED_IN_65",
+      "source_blob_sha1": "df749a1d7ea259eb12da4aa082ced8525dbd2641",
+      "source_path": "docs/research/123_github_connector_capability_parity_and_codexless_runtime_bridge_architecture.md",
+      "source_sha256": "c9bffcb7abadcb37b8b79f0b4d406983d19643659d223168b52100e412c83eab",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "754697f00434354c710befdaaa2022bc55cc0b335b80d3e677ca09e59a2f9ac8",
+          "original_line": "**Declared references:** `research:113`, `research:116`, `checkpoint:370`, `path:docs/local_execution/validation/034_chatgpt_tool_projection_refresh_and_connector_coexistence_observations.md`, `path:docs/local_execution/validation/128_github_connector_capability_parity_baseline_and_coexistence_recheck.md`, `path:docs/local_execution/OPERATIONS.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`"
+        }
+      ],
+      "target_family": "path",
+      "target_fragment": null,
+      "target_member_in_sample": "docs/OPEN_ARCHITECTURE_BACKLOG.md",
+      "target_original_token": "path:docs/OPEN_ARCHITECTURE_BACKLOG.md",
+      "target_selector": "docs/OPEN_ARCHITECTURE_BACKLOG.md"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "path:docs/local_execution/OPERATIONS.md",
+      "resolution_state": "RESOLVED_IN_65",
+      "source_blob_sha1": "df749a1d7ea259eb12da4aa082ced8525dbd2641",
+      "source_path": "docs/research/123_github_connector_capability_parity_and_codexless_runtime_bridge_architecture.md",
+      "source_sha256": "c9bffcb7abadcb37b8b79f0b4d406983d19643659d223168b52100e412c83eab",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "754697f00434354c710befdaaa2022bc55cc0b335b80d3e677ca09e59a2f9ac8",
+          "original_line": "**Declared references:** `research:113`, `research:116`, `checkpoint:370`, `path:docs/local_execution/validation/034_chatgpt_tool_projection_refresh_and_connector_coexistence_observations.md`, `path:docs/local_execution/validation/128_github_connector_capability_parity_baseline_and_coexistence_recheck.md`, `path:docs/local_execution/OPERATIONS.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`"
+        }
+      ],
+      "target_family": "path",
+      "target_fragment": null,
+      "target_member_in_sample": "docs/local_execution/OPERATIONS.md",
+      "target_original_token": "path:docs/local_execution/OPERATIONS.md",
+      "target_selector": "docs/local_execution/OPERATIONS.md"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "path:docs/local_execution/validation/034_chatgpt_tool_projection_refresh_and_connector_coexistence_observations.md",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "df749a1d7ea259eb12da4aa082ced8525dbd2641",
+      "source_path": "docs/research/123_github_connector_capability_parity_and_codexless_runtime_bridge_architecture.md",
+      "source_sha256": "c9bffcb7abadcb37b8b79f0b4d406983d19643659d223168b52100e412c83eab",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "754697f00434354c710befdaaa2022bc55cc0b335b80d3e677ca09e59a2f9ac8",
+          "original_line": "**Declared references:** `research:113`, `research:116`, `checkpoint:370`, `path:docs/local_execution/validation/034_chatgpt_tool_projection_refresh_and_connector_coexistence_observations.md`, `path:docs/local_execution/validation/128_github_connector_capability_parity_baseline_and_coexistence_recheck.md`, `path:docs/local_execution/OPERATIONS.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`"
+        }
+      ],
+      "target_family": "path",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "path:docs/local_execution/validation/034_chatgpt_tool_projection_refresh_and_connector_coexistence_observations.md",
+      "target_selector": "docs/local_execution/validation/034_chatgpt_tool_projection_refresh_and_connector_coexistence_observations.md"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "path:docs/local_execution/validation/128_github_connector_capability_parity_baseline_and_coexistence_recheck.md",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "df749a1d7ea259eb12da4aa082ced8525dbd2641",
+      "source_path": "docs/research/123_github_connector_capability_parity_and_codexless_runtime_bridge_architecture.md",
+      "source_sha256": "c9bffcb7abadcb37b8b79f0b4d406983d19643659d223168b52100e412c83eab",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "754697f00434354c710befdaaa2022bc55cc0b335b80d3e677ca09e59a2f9ac8",
+          "original_line": "**Declared references:** `research:113`, `research:116`, `checkpoint:370`, `path:docs/local_execution/validation/034_chatgpt_tool_projection_refresh_and_connector_coexistence_observations.md`, `path:docs/local_execution/validation/128_github_connector_capability_parity_baseline_and_coexistence_recheck.md`, `path:docs/local_execution/OPERATIONS.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`"
+        }
+      ],
+      "target_family": "path",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "path:docs/local_execution/validation/128_github_connector_capability_parity_baseline_and_coexistence_recheck.md",
+      "target_selector": "docs/local_execution/validation/128_github_connector_capability_parity_baseline_and_coexistence_recheck.md"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "research:113",
+      "resolution_state": "RESOLVED_IN_65",
+      "source_blob_sha1": "df749a1d7ea259eb12da4aa082ced8525dbd2641",
+      "source_path": "docs/research/123_github_connector_capability_parity_and_codexless_runtime_bridge_architecture.md",
+      "source_sha256": "c9bffcb7abadcb37b8b79f0b4d406983d19643659d223168b52100e412c83eab",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "754697f00434354c710befdaaa2022bc55cc0b335b80d3e677ca09e59a2f9ac8",
+          "original_line": "**Declared references:** `research:113`, `research:116`, `checkpoint:370`, `path:docs/local_execution/validation/034_chatgpt_tool_projection_refresh_and_connector_coexistence_observations.md`, `path:docs/local_execution/validation/128_github_connector_capability_parity_baseline_and_coexistence_recheck.md`, `path:docs/local_execution/OPERATIONS.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`"
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": "docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md",
+      "target_original_token": "research:113",
+      "target_selector": "113"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "research:116",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "df749a1d7ea259eb12da4aa082ced8525dbd2641",
+      "source_path": "docs/research/123_github_connector_capability_parity_and_codexless_runtime_bridge_architecture.md",
+      "source_sha256": "c9bffcb7abadcb37b8b79f0b4d406983d19643659d223168b52100e412c83eab",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "754697f00434354c710befdaaa2022bc55cc0b335b80d3e677ca09e59a2f9ac8",
+          "original_line": "**Declared references:** `research:113`, `research:116`, `checkpoint:370`, `path:docs/local_execution/validation/034_chatgpt_tool_projection_refresh_and_connector_coexistence_observations.md`, `path:docs/local_execution/validation/128_github_connector_capability_parity_baseline_and_coexistence_recheck.md`, `path:docs/local_execution/OPERATIONS.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`"
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:116",
+      "target_selector": "116"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "checkpoint:448",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "65550ec01b176ad5a1bb70a310415954fe6a7bd4",
+      "source_path": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+      "source_sha256": "bd76181dffce2d941b6f802054cc5d2827bbfd1e63c8cfc022cb933fb0a824c5",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "85ddfc306b1ca416a371b2f1676ca4a762f7de045b3fee88a7a93e817902756d",
+          "original_line": "**Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`"
+        }
+      ],
+      "target_family": "checkpoint",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "checkpoint:448",
+      "target_selector": "448"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "path:docs/CONTINUITY.md",
+      "resolution_state": "RESOLVED_IN_65",
+      "source_blob_sha1": "65550ec01b176ad5a1bb70a310415954fe6a7bd4",
+      "source_path": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+      "source_sha256": "bd76181dffce2d941b6f802054cc5d2827bbfd1e63c8cfc022cb933fb0a824c5",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "85ddfc306b1ca416a371b2f1676ca4a762f7de045b3fee88a7a93e817902756d",
+          "original_line": "**Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`"
+        }
+      ],
+      "target_family": "path",
+      "target_fragment": null,
+      "target_member_in_sample": "docs/CONTINUITY.md",
+      "target_original_token": "path:docs/CONTINUITY.md",
+      "target_selector": "docs/CONTINUITY.md"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "path:docs/DEVELOPMENT_METHOD.md",
+      "resolution_state": "RESOLVED_IN_65",
+      "source_blob_sha1": "65550ec01b176ad5a1bb70a310415954fe6a7bd4",
+      "source_path": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+      "source_sha256": "bd76181dffce2d941b6f802054cc5d2827bbfd1e63c8cfc022cb933fb0a824c5",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "85ddfc306b1ca416a371b2f1676ca4a762f7de045b3fee88a7a93e817902756d",
+          "original_line": "**Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`"
+        }
+      ],
+      "target_family": "path",
+      "target_fragment": null,
+      "target_member_in_sample": "docs/DEVELOPMENT_METHOD.md",
+      "target_original_token": "path:docs/DEVELOPMENT_METHOD.md",
+      "target_selector": "docs/DEVELOPMENT_METHOD.md"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "path:docs/KNOWLEDGE_MAP.md",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "65550ec01b176ad5a1bb70a310415954fe6a7bd4",
+      "source_path": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+      "source_sha256": "bd76181dffce2d941b6f802054cc5d2827bbfd1e63c8cfc022cb933fb0a824c5",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "85ddfc306b1ca416a371b2f1676ca4a762f7de045b3fee88a7a93e817902756d",
+          "original_line": "**Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`"
+        }
+      ],
+      "target_family": "path",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "path:docs/KNOWLEDGE_MAP.md",
+      "target_selector": "docs/KNOWLEDGE_MAP.md"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "path:docs/OPEN_ARCHITECTURE_BACKLOG.md",
+      "resolution_state": "RESOLVED_IN_65",
+      "source_blob_sha1": "65550ec01b176ad5a1bb70a310415954fe6a7bd4",
+      "source_path": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+      "source_sha256": "bd76181dffce2d941b6f802054cc5d2827bbfd1e63c8cfc022cb933fb0a824c5",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "85ddfc306b1ca416a371b2f1676ca4a762f7de045b3fee88a7a93e817902756d",
+          "original_line": "**Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`"
+        }
+      ],
+      "target_family": "path",
+      "target_fragment": null,
+      "target_member_in_sample": "docs/OPEN_ARCHITECTURE_BACKLOG.md",
+      "target_original_token": "path:docs/OPEN_ARCHITECTURE_BACKLOG.md",
+      "target_selector": "docs/OPEN_ARCHITECTURE_BACKLOG.md"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md",
+      "resolution_state": "RESOLVED_IN_65",
+      "source_blob_sha1": "65550ec01b176ad5a1bb70a310415954fe6a7bd4",
+      "source_path": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+      "source_sha256": "bd76181dffce2d941b6f802054cc5d2827bbfd1e63c8cfc022cb933fb0a824c5",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "85ddfc306b1ca416a371b2f1676ca4a762f7de045b3fee88a7a93e817902756d",
+          "original_line": "**Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`"
+        }
+      ],
+      "target_family": "path",
+      "target_fragment": null,
+      "target_member_in_sample": "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md",
+      "target_original_token": "path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md",
+      "target_selector": "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "research:064",
+      "resolution_state": "RESOLVED_IN_65",
+      "source_blob_sha1": "65550ec01b176ad5a1bb70a310415954fe6a7bd4",
+      "source_path": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+      "source_sha256": "bd76181dffce2d941b6f802054cc5d2827bbfd1e63c8cfc022cb933fb0a824c5",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "85ddfc306b1ca416a371b2f1676ca4a762f7de045b3fee88a7a93e817902756d",
+          "original_line": "**Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`"
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": "docs/research/064_rapid_iteration_repository_preservation_audit_and_checkpoint_hygiene.md",
+      "target_original_token": "research:064",
+      "target_selector": "064"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "research:103",
+      "resolution_state": "RESOLVED_IN_65",
+      "source_blob_sha1": "65550ec01b176ad5a1bb70a310415954fe6a7bd4",
+      "source_path": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+      "source_sha256": "bd76181dffce2d941b6f802054cc5d2827bbfd1e63c8cfc022cb933fb0a824c5",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "85ddfc306b1ca416a371b2f1676ca4a762f7de045b3fee88a7a93e817902756d",
+          "original_line": "**Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`"
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": "docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md",
+      "target_original_token": "research:103",
+      "target_selector": "103"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "research:104",
+      "resolution_state": "RESOLVED_IN_65",
+      "source_blob_sha1": "65550ec01b176ad5a1bb70a310415954fe6a7bd4",
+      "source_path": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+      "source_sha256": "bd76181dffce2d941b6f802054cc5d2827bbfd1e63c8cfc022cb933fb0a824c5",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "85ddfc306b1ca416a371b2f1676ca4a762f7de045b3fee88a7a93e817902756d",
+          "original_line": "**Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`"
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md",
+      "target_original_token": "research:104",
+      "target_selector": "104"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "research:106",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "65550ec01b176ad5a1bb70a310415954fe6a7bd4",
+      "source_path": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+      "source_sha256": "bd76181dffce2d941b6f802054cc5d2827bbfd1e63c8cfc022cb933fb0a824c5",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "85ddfc306b1ca416a371b2f1676ca4a762f7de045b3fee88a7a93e817902756d",
+          "original_line": "**Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`"
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:106",
+      "target_selector": "106"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "research:107",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "65550ec01b176ad5a1bb70a310415954fe6a7bd4",
+      "source_path": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+      "source_sha256": "bd76181dffce2d941b6f802054cc5d2827bbfd1e63c8cfc022cb933fb0a824c5",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "85ddfc306b1ca416a371b2f1676ca4a762f7de045b3fee88a7a93e817902756d",
+          "original_line": "**Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`"
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:107",
+      "target_selector": "107"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "research:108",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "65550ec01b176ad5a1bb70a310415954fe6a7bd4",
+      "source_path": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+      "source_sha256": "bd76181dffce2d941b6f802054cc5d2827bbfd1e63c8cfc022cb933fb0a824c5",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "85ddfc306b1ca416a371b2f1676ca4a762f7de045b3fee88a7a93e817902756d",
+          "original_line": "**Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`"
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:108",
+      "target_selector": "108"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "checkpoint:463",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "4ab9513b2758104c064c64127ef5969a5879d6c3",
+      "source_path": "docs/research/126_knowledge_identity_and_multi_axis_organization_deep_dive.md",
+      "source_sha256": "ff75d7a0b9a46a70a2cd255873a95b420393b25a2d8f8b2f371ae93be928bf16",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "8f2e53c408f080c2464f9cb917b1b5e099b9de5ffcdc4e2b32ca23c4ac79cf11",
+          "original_line": "**Declared references:** `research:124`, `research:125`, `checkpoint:463`, `checkpoint:464`, `path:docs/KNOWLEDGE_MAP.md`"
+        }
+      ],
+      "target_family": "checkpoint",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "checkpoint:463",
+      "target_selector": "463"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "checkpoint:464",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "4ab9513b2758104c064c64127ef5969a5879d6c3",
+      "source_path": "docs/research/126_knowledge_identity_and_multi_axis_organization_deep_dive.md",
+      "source_sha256": "ff75d7a0b9a46a70a2cd255873a95b420393b25a2d8f8b2f371ae93be928bf16",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "8f2e53c408f080c2464f9cb917b1b5e099b9de5ffcdc4e2b32ca23c4ac79cf11",
+          "original_line": "**Declared references:** `research:124`, `research:125`, `checkpoint:463`, `checkpoint:464`, `path:docs/KNOWLEDGE_MAP.md`"
+        }
+      ],
+      "target_family": "checkpoint",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "checkpoint:464",
+      "target_selector": "464"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "path:docs/KNOWLEDGE_MAP.md",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "4ab9513b2758104c064c64127ef5969a5879d6c3",
+      "source_path": "docs/research/126_knowledge_identity_and_multi_axis_organization_deep_dive.md",
+      "source_sha256": "ff75d7a0b9a46a70a2cd255873a95b420393b25a2d8f8b2f371ae93be928bf16",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "8f2e53c408f080c2464f9cb917b1b5e099b9de5ffcdc4e2b32ca23c4ac79cf11",
+          "original_line": "**Declared references:** `research:124`, `research:125`, `checkpoint:463`, `checkpoint:464`, `path:docs/KNOWLEDGE_MAP.md`"
+        }
+      ],
+      "target_family": "path",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "path:docs/KNOWLEDGE_MAP.md",
+      "target_selector": "docs/KNOWLEDGE_MAP.md"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "research:124",
+      "resolution_state": "RESOLVED_IN_65",
+      "source_blob_sha1": "4ab9513b2758104c064c64127ef5969a5879d6c3",
+      "source_path": "docs/research/126_knowledge_identity_and_multi_axis_organization_deep_dive.md",
+      "source_sha256": "ff75d7a0b9a46a70a2cd255873a95b420393b25a2d8f8b2f371ae93be928bf16",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "8f2e53c408f080c2464f9cb917b1b5e099b9de5ffcdc4e2b32ca23c4ac79cf11",
+          "original_line": "**Declared references:** `research:124`, `research:125`, `checkpoint:463`, `checkpoint:464`, `path:docs/KNOWLEDGE_MAP.md`"
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+      "target_original_token": "research:124",
+      "target_selector": "124"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "research:125",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "4ab9513b2758104c064c64127ef5969a5879d6c3",
+      "source_path": "docs/research/126_knowledge_identity_and_multi_axis_organization_deep_dive.md",
+      "source_sha256": "ff75d7a0b9a46a70a2cd255873a95b420393b25a2d8f8b2f371ae93be928bf16",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "8f2e53c408f080c2464f9cb917b1b5e099b9de5ffcdc4e2b32ca23c4ac79cf11",
+          "original_line": "**Declared references:** `research:124`, `research:125`, `checkpoint:463`, `checkpoint:464`, `path:docs/KNOWLEDGE_MAP.md`"
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:125",
+      "target_selector": "125"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "checkpoint:464",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "9a2b05a08e5035dbe6dcbcf3d0426d11c60764b2",
+      "source_path": "docs/research/127_capture_consolidation_promotion_and_source_derived_state_deep_dive.md",
+      "source_sha256": "e15930665abb808862bc393ee265080249a5ff91956faec72d633a2b44961771",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "1f2d803f0c8dabf1d3166b8ee68a13d82cb750be61787acf52ca561ac3ed2a79",
+          "original_line": "**Declared references:** `research:124`, `research:125`, `research:126`, `checkpoint:464`, `checkpoint:465`, `path:docs/DEVELOPMENT_METHOD.md`"
+        }
+      ],
+      "target_family": "checkpoint",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "checkpoint:464",
+      "target_selector": "464"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "checkpoint:465",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "9a2b05a08e5035dbe6dcbcf3d0426d11c60764b2",
+      "source_path": "docs/research/127_capture_consolidation_promotion_and_source_derived_state_deep_dive.md",
+      "source_sha256": "e15930665abb808862bc393ee265080249a5ff91956faec72d633a2b44961771",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "1f2d803f0c8dabf1d3166b8ee68a13d82cb750be61787acf52ca561ac3ed2a79",
+          "original_line": "**Declared references:** `research:124`, `research:125`, `research:126`, `checkpoint:464`, `checkpoint:465`, `path:docs/DEVELOPMENT_METHOD.md`"
+        }
+      ],
+      "target_family": "checkpoint",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "checkpoint:465",
+      "target_selector": "465"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "path:docs/DEVELOPMENT_METHOD.md",
+      "resolution_state": "RESOLVED_IN_65",
+      "source_blob_sha1": "9a2b05a08e5035dbe6dcbcf3d0426d11c60764b2",
+      "source_path": "docs/research/127_capture_consolidation_promotion_and_source_derived_state_deep_dive.md",
+      "source_sha256": "e15930665abb808862bc393ee265080249a5ff91956faec72d633a2b44961771",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "1f2d803f0c8dabf1d3166b8ee68a13d82cb750be61787acf52ca561ac3ed2a79",
+          "original_line": "**Declared references:** `research:124`, `research:125`, `research:126`, `checkpoint:464`, `checkpoint:465`, `path:docs/DEVELOPMENT_METHOD.md`"
+        }
+      ],
+      "target_family": "path",
+      "target_fragment": null,
+      "target_member_in_sample": "docs/DEVELOPMENT_METHOD.md",
+      "target_original_token": "path:docs/DEVELOPMENT_METHOD.md",
+      "target_selector": "docs/DEVELOPMENT_METHOD.md"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "research:124",
+      "resolution_state": "RESOLVED_IN_65",
+      "source_blob_sha1": "9a2b05a08e5035dbe6dcbcf3d0426d11c60764b2",
+      "source_path": "docs/research/127_capture_consolidation_promotion_and_source_derived_state_deep_dive.md",
+      "source_sha256": "e15930665abb808862bc393ee265080249a5ff91956faec72d633a2b44961771",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "1f2d803f0c8dabf1d3166b8ee68a13d82cb750be61787acf52ca561ac3ed2a79",
+          "original_line": "**Declared references:** `research:124`, `research:125`, `research:126`, `checkpoint:464`, `checkpoint:465`, `path:docs/DEVELOPMENT_METHOD.md`"
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+      "target_original_token": "research:124",
+      "target_selector": "124"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "research:125",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "9a2b05a08e5035dbe6dcbcf3d0426d11c60764b2",
+      "source_path": "docs/research/127_capture_consolidation_promotion_and_source_derived_state_deep_dive.md",
+      "source_sha256": "e15930665abb808862bc393ee265080249a5ff91956faec72d633a2b44961771",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "1f2d803f0c8dabf1d3166b8ee68a13d82cb750be61787acf52ca561ac3ed2a79",
+          "original_line": "**Declared references:** `research:124`, `research:125`, `research:126`, `checkpoint:464`, `checkpoint:465`, `path:docs/DEVELOPMENT_METHOD.md`"
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:125",
+      "target_selector": "125"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "research:126",
+      "resolution_state": "RESOLVED_IN_65",
+      "source_blob_sha1": "9a2b05a08e5035dbe6dcbcf3d0426d11c60764b2",
+      "source_path": "docs/research/127_capture_consolidation_promotion_and_source_derived_state_deep_dive.md",
+      "source_sha256": "e15930665abb808862bc393ee265080249a5ff91956faec72d633a2b44961771",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "1f2d803f0c8dabf1d3166b8ee68a13d82cb750be61787acf52ca561ac3ed2a79",
+          "original_line": "**Declared references:** `research:124`, `research:125`, `research:126`, `checkpoint:464`, `checkpoint:465`, `path:docs/DEVELOPMENT_METHOD.md`"
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": "docs/research/126_knowledge_identity_and_multi_axis_organization_deep_dive.md",
+      "target_original_token": "research:126",
+      "target_selector": "126"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "checkpoint:500",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "cbdbdbb5414a6bc981024494ec0449883401388a",
+      "source_path": "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+      "source_sha256": "eec95b8356b61513e571e312ad626f49f456c565b625eccdac7aad03e6e22382",
+      "source_witnesses": [
+        {
+          "line_number": 9,
+          "line_sha256": "6f6b1756cd0093d80c4aea4d0667335c7f09b0407549627de52a0fb84ebd2ebb",
+          "original_line": "**Declared references:** `research:124`, `research:144`, `research:153`, `research:155`, `checkpoint:500`, `path:docs/CURRENT_STATE.md`, `path:docs/current_routing.json`, `path:docs/CONTINUITY.md`, `path:docs/KNOWLEDGE_MAP.md`"
+        }
+      ],
+      "target_family": "checkpoint",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "checkpoint:500",
+      "target_selector": "500"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "path:docs/CONTINUITY.md",
+      "resolution_state": "RESOLVED_IN_65",
+      "source_blob_sha1": "cbdbdbb5414a6bc981024494ec0449883401388a",
+      "source_path": "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+      "source_sha256": "eec95b8356b61513e571e312ad626f49f456c565b625eccdac7aad03e6e22382",
+      "source_witnesses": [
+        {
+          "line_number": 9,
+          "line_sha256": "6f6b1756cd0093d80c4aea4d0667335c7f09b0407549627de52a0fb84ebd2ebb",
+          "original_line": "**Declared references:** `research:124`, `research:144`, `research:153`, `research:155`, `checkpoint:500`, `path:docs/CURRENT_STATE.md`, `path:docs/current_routing.json`, `path:docs/CONTINUITY.md`, `path:docs/KNOWLEDGE_MAP.md`"
+        }
+      ],
+      "target_family": "path",
+      "target_fragment": null,
+      "target_member_in_sample": "docs/CONTINUITY.md",
+      "target_original_token": "path:docs/CONTINUITY.md",
+      "target_selector": "docs/CONTINUITY.md"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "path:docs/CURRENT_STATE.md",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "cbdbdbb5414a6bc981024494ec0449883401388a",
+      "source_path": "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+      "source_sha256": "eec95b8356b61513e571e312ad626f49f456c565b625eccdac7aad03e6e22382",
+      "source_witnesses": [
+        {
+          "line_number": 9,
+          "line_sha256": "6f6b1756cd0093d80c4aea4d0667335c7f09b0407549627de52a0fb84ebd2ebb",
+          "original_line": "**Declared references:** `research:124`, `research:144`, `research:153`, `research:155`, `checkpoint:500`, `path:docs/CURRENT_STATE.md`, `path:docs/current_routing.json`, `path:docs/CONTINUITY.md`, `path:docs/KNOWLEDGE_MAP.md`"
+        }
+      ],
+      "target_family": "path",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "path:docs/CURRENT_STATE.md",
+      "target_selector": "docs/CURRENT_STATE.md"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "path:docs/KNOWLEDGE_MAP.md",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "cbdbdbb5414a6bc981024494ec0449883401388a",
+      "source_path": "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+      "source_sha256": "eec95b8356b61513e571e312ad626f49f456c565b625eccdac7aad03e6e22382",
+      "source_witnesses": [
+        {
+          "line_number": 9,
+          "line_sha256": "6f6b1756cd0093d80c4aea4d0667335c7f09b0407549627de52a0fb84ebd2ebb",
+          "original_line": "**Declared references:** `research:124`, `research:144`, `research:153`, `research:155`, `checkpoint:500`, `path:docs/CURRENT_STATE.md`, `path:docs/current_routing.json`, `path:docs/CONTINUITY.md`, `path:docs/KNOWLEDGE_MAP.md`"
+        }
+      ],
+      "target_family": "path",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "path:docs/KNOWLEDGE_MAP.md",
+      "target_selector": "docs/KNOWLEDGE_MAP.md"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "path:docs/current_routing.json",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "cbdbdbb5414a6bc981024494ec0449883401388a",
+      "source_path": "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+      "source_sha256": "eec95b8356b61513e571e312ad626f49f456c565b625eccdac7aad03e6e22382",
+      "source_witnesses": [
+        {
+          "line_number": 9,
+          "line_sha256": "6f6b1756cd0093d80c4aea4d0667335c7f09b0407549627de52a0fb84ebd2ebb",
+          "original_line": "**Declared references:** `research:124`, `research:144`, `research:153`, `research:155`, `checkpoint:500`, `path:docs/CURRENT_STATE.md`, `path:docs/current_routing.json`, `path:docs/CONTINUITY.md`, `path:docs/KNOWLEDGE_MAP.md`"
+        }
+      ],
+      "target_family": "path",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "path:docs/current_routing.json",
+      "target_selector": "docs/current_routing.json"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "research:124",
+      "resolution_state": "RESOLVED_IN_65",
+      "source_blob_sha1": "cbdbdbb5414a6bc981024494ec0449883401388a",
+      "source_path": "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+      "source_sha256": "eec95b8356b61513e571e312ad626f49f456c565b625eccdac7aad03e6e22382",
+      "source_witnesses": [
+        {
+          "line_number": 9,
+          "line_sha256": "6f6b1756cd0093d80c4aea4d0667335c7f09b0407549627de52a0fb84ebd2ebb",
+          "original_line": "**Declared references:** `research:124`, `research:144`, `research:153`, `research:155`, `checkpoint:500`, `path:docs/CURRENT_STATE.md`, `path:docs/current_routing.json`, `path:docs/CONTINUITY.md`, `path:docs/KNOWLEDGE_MAP.md`"
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+      "target_original_token": "research:124",
+      "target_selector": "124"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "research:144",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "cbdbdbb5414a6bc981024494ec0449883401388a",
+      "source_path": "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+      "source_sha256": "eec95b8356b61513e571e312ad626f49f456c565b625eccdac7aad03e6e22382",
+      "source_witnesses": [
+        {
+          "line_number": 9,
+          "line_sha256": "6f6b1756cd0093d80c4aea4d0667335c7f09b0407549627de52a0fb84ebd2ebb",
+          "original_line": "**Declared references:** `research:124`, `research:144`, `research:153`, `research:155`, `checkpoint:500`, `path:docs/CURRENT_STATE.md`, `path:docs/current_routing.json`, `path:docs/CONTINUITY.md`, `path:docs/KNOWLEDGE_MAP.md`"
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:144",
+      "target_selector": "144"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "research:153",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "cbdbdbb5414a6bc981024494ec0449883401388a",
+      "source_path": "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+      "source_sha256": "eec95b8356b61513e571e312ad626f49f456c565b625eccdac7aad03e6e22382",
+      "source_witnesses": [
+        {
+          "line_number": 9,
+          "line_sha256": "6f6b1756cd0093d80c4aea4d0667335c7f09b0407549627de52a0fb84ebd2ebb",
+          "original_line": "**Declared references:** `research:124`, `research:144`, `research:153`, `research:155`, `checkpoint:500`, `path:docs/CURRENT_STATE.md`, `path:docs/current_routing.json`, `path:docs/CONTINUITY.md`, `path:docs/KNOWLEDGE_MAP.md`"
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:153",
+      "target_selector": "153"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "research:155",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "cbdbdbb5414a6bc981024494ec0449883401388a",
+      "source_path": "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+      "source_sha256": "eec95b8356b61513e571e312ad626f49f456c565b625eccdac7aad03e6e22382",
+      "source_witnesses": [
+        {
+          "line_number": 9,
+          "line_sha256": "6f6b1756cd0093d80c4aea4d0667335c7f09b0407549627de52a0fb84ebd2ebb",
+          "original_line": "**Declared references:** `research:124`, `research:144`, `research:153`, `research:155`, `checkpoint:500`, `path:docs/CURRENT_STATE.md`, `path:docs/current_routing.json`, `path:docs/CONTINUITY.md`, `path:docs/KNOWLEDGE_MAP.md`"
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:155",
+      "target_selector": "155"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "governing_procedure.v1",
+      "grammar_slot": "SPEC028_PROVENANCE",
+      "raw_typed_token": "path:docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md#13",
+      "resolution_state": "SELF_REFERENCE",
+      "source_blob_sha1": "73492b62b08fd1cb4d0179d0691f6107bdabab96",
+      "source_path": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+      "source_sha256": "4cf4205cd5f800a43ab32f74db3b3f4c557f6f9bf65e97c6dbbb98f214f413bf",
+      "source_witnesses": [
+        {
+          "line_number": 65,
+          "line_sha256": "be89f2a89da60c113090ae614c56be6a046b0f9f97aa270a6de4896dbc461349",
+          "original_line": "    \"path:docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md#13\","
+        }
+      ],
+      "target_family": "path",
+      "target_fragment": "13",
+      "target_member_in_sample": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+      "target_original_token": "path:docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md#13",
+      "target_selector": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "governing_procedure.v1",
+      "grammar_slot": "SPEC028_PROVENANCE",
+      "raw_typed_token": "research:167",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "73492b62b08fd1cb4d0179d0691f6107bdabab96",
+      "source_path": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+      "source_sha256": "4cf4205cd5f800a43ab32f74db3b3f4c557f6f9bf65e97c6dbbb98f214f413bf",
+      "source_witnesses": [
+        {
+          "line_number": 66,
+          "line_sha256": "85d845b137d49d7d03f762930e43396c34693e112debfbb3f6b3cbfb34aa12bc",
+          "original_line": "    \"research:167\","
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:167",
+      "target_selector": "167"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "governing_procedure.v1",
+      "grammar_slot": "SPEC028_PROVENANCE",
+      "raw_typed_token": "research:168",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "73492b62b08fd1cb4d0179d0691f6107bdabab96",
+      "source_path": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+      "source_sha256": "4cf4205cd5f800a43ab32f74db3b3f4c557f6f9bf65e97c6dbbb98f214f413bf",
+      "source_witnesses": [
+        {
+          "line_number": 67,
+          "line_sha256": "dca0be1500303896d4f15393a262f7aae601fb75f64734a122f3eed8b5685160",
+          "original_line": "    \"research:168\""
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:168",
+      "target_selector": "168"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "workstream.v1",
+      "grammar_slot": "SPEC028_PROVENANCE",
+      "raw_typed_token": "checkpoint:448",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "1afd6255f529b05f9c14e2f4cfa1c389097eb83f",
+      "source_path": "docs/source_universe/SOURCE_VAULT_BOOTSTRAP_WORKSTREAM.md",
+      "source_sha256": "8af6602abbc25ff7eac8d8021239841231b32d28fe0880c859b3be2a7c30ea2a",
+      "source_witnesses": [
+        {
+          "line_number": 67,
+          "line_sha256": "160930f0bf9e7662788a0012bdb340fd6e6b0bec691a517c8e7570d7c984ea98",
+          "original_line": "    \"checkpoint:448\","
+        }
+      ],
+      "target_family": "checkpoint",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "checkpoint:448",
+      "target_selector": "448"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "workstream.v1",
+      "grammar_slot": "SPEC028_PROVENANCE",
+      "raw_typed_token": "checkpoint:544",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "1afd6255f529b05f9c14e2f4cfa1c389097eb83f",
+      "source_path": "docs/source_universe/SOURCE_VAULT_BOOTSTRAP_WORKSTREAM.md",
+      "source_sha256": "8af6602abbc25ff7eac8d8021239841231b32d28fe0880c859b3be2a7c30ea2a",
+      "source_witnesses": [
+        {
+          "line_number": 68,
+          "line_sha256": "aa8af2315f3609875bf859ef9a9faee0eaf29456323b4d4e51c6908a547207d2",
+          "original_line": "    \"checkpoint:544\""
+        }
+      ],
+      "target_family": "checkpoint",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "checkpoint:544",
+      "target_selector": "544"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "workstream.v1",
+      "grammar_slot": "SPEC028_PROVENANCE",
+      "raw_typed_token": "research:156",
+      "resolution_state": "RESOLVED_IN_65",
+      "source_blob_sha1": "1afd6255f529b05f9c14e2f4cfa1c389097eb83f",
+      "source_path": "docs/source_universe/SOURCE_VAULT_BOOTSTRAP_WORKSTREAM.md",
+      "source_sha256": "8af6602abbc25ff7eac8d8021239841231b32d28fe0880c859b3be2a7c30ea2a",
+      "source_witnesses": [
+        {
+          "line_number": 63,
+          "line_sha256": "778ee12b7b60adcf71c7831cbb0220561b93de78c171406fd8003b36dd7d601f",
+          "original_line": "    \"research:156\","
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+      "target_original_token": "research:156",
+      "target_selector": "156"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "workstream.v1",
+      "grammar_slot": "SPEC028_PROVENANCE",
+      "raw_typed_token": "research:157",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "1afd6255f529b05f9c14e2f4cfa1c389097eb83f",
+      "source_path": "docs/source_universe/SOURCE_VAULT_BOOTSTRAP_WORKSTREAM.md",
+      "source_sha256": "8af6602abbc25ff7eac8d8021239841231b32d28fe0880c859b3be2a7c30ea2a",
+      "source_witnesses": [
+        {
+          "line_number": 64,
+          "line_sha256": "f80e3c180a9fed971caf3f5368ab46e3de5ce7f9503107df5792f8686de42618",
+          "original_line": "    \"research:157\","
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:157",
+      "target_selector": "157"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "workstream.v1",
+      "grammar_slot": "SPEC028_PROVENANCE",
+      "raw_typed_token": "research:158",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "1afd6255f529b05f9c14e2f4cfa1c389097eb83f",
+      "source_path": "docs/source_universe/SOURCE_VAULT_BOOTSTRAP_WORKSTREAM.md",
+      "source_sha256": "8af6602abbc25ff7eac8d8021239841231b32d28fe0880c859b3be2a7c30ea2a",
+      "source_witnesses": [
+        {
+          "line_number": 65,
+          "line_sha256": "8ac74de1c90849b14cc4d1ba6d16c2f34c534cbf389150925d683bf0a3266d9e",
+          "original_line": "    \"research:158\","
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:158",
+      "target_selector": "158"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "workstream.v1",
+      "grammar_slot": "SPEC028_PROVENANCE",
+      "raw_typed_token": "research:168",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "1afd6255f529b05f9c14e2f4cfa1c389097eb83f",
+      "source_path": "docs/source_universe/SOURCE_VAULT_BOOTSTRAP_WORKSTREAM.md",
+      "source_sha256": "8af6602abbc25ff7eac8d8021239841231b32d28fe0880c859b3be2a7c30ea2a",
+      "source_witnesses": [
+        {
+          "line_number": 66,
+          "line_sha256": "fe29c849e7edeffbb39e7e8764a560b70a1ba38737e71c61efcd5bb829c41e03",
+          "original_line": "    \"research:168\","
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:168",
+      "target_selector": "168"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "workstream.v1",
+      "grammar_slot": "SPEC028_REFERENCES",
+      "raw_typed_token": "path:docs/checkpoints/274_archive_unarchive_reacquire_verified_source_vault_ingestion_resumed.md",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "1afd6255f529b05f9c14e2f4cfa1c389097eb83f",
+      "source_path": "docs/source_universe/SOURCE_VAULT_BOOTSTRAP_WORKSTREAM.md",
+      "source_sha256": "8af6602abbc25ff7eac8d8021239841231b32d28fe0880c859b3be2a7c30ea2a",
+      "source_witnesses": [
+        {
+          "line_number": 74,
+          "line_sha256": "799faa7c42f19b4f8b3e46a9263b2cbd07d67b1e3254d3d0bec1866434dd03ef",
+          "original_line": "    \"path:docs/checkpoints/274_archive_unarchive_reacquire_verified_source_vault_ingestion_resumed.md\""
+        }
+      ],
+      "target_family": "path",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "path:docs/checkpoints/274_archive_unarchive_reacquire_verified_source_vault_ingestion_resumed.md",
+      "target_selector": "docs/checkpoints/274_archive_unarchive_reacquire_verified_source_vault_ingestion_resumed.md"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "workstream.v1",
+      "grammar_slot": "SPEC028_REFERENCES",
+      "raw_typed_token": "path:docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+      "resolution_state": "RESOLVED_IN_65",
+      "source_blob_sha1": "1afd6255f529b05f9c14e2f4cfa1c389097eb83f",
+      "source_path": "docs/source_universe/SOURCE_VAULT_BOOTSTRAP_WORKSTREAM.md",
+      "source_sha256": "8af6602abbc25ff7eac8d8021239841231b32d28fe0880c859b3be2a7c30ea2a",
+      "source_witnesses": [
+        {
+          "line_number": 71,
+          "line_sha256": "aa151fff270fedba2bbcd6158bffda45044c6012d55aa5a1d555eb6798377181",
+          "original_line": "    \"path:docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md\","
+        }
+      ],
+      "target_family": "path",
+      "target_fragment": null,
+      "target_member_in_sample": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+      "target_original_token": "path:docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+      "target_selector": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "workstream.v1",
+      "grammar_slot": "SPEC028_REFERENCES",
+      "raw_typed_token": "path:docs/source_universe/validation/003_permanent_source_registry_migrated.md",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "1afd6255f529b05f9c14e2f4cfa1c389097eb83f",
+      "source_path": "docs/source_universe/SOURCE_VAULT_BOOTSTRAP_WORKSTREAM.md",
+      "source_sha256": "8af6602abbc25ff7eac8d8021239841231b32d28fe0880c859b3be2a7c30ea2a",
+      "source_witnesses": [
+        {
+          "line_number": 72,
+          "line_sha256": "e8563db5133ae52f0c517233e0c13bd502d95049a893c4fe32c35bdb4bb5d32a",
+          "original_line": "    \"path:docs/source_universe/validation/003_permanent_source_registry_migrated.md\","
+        }
+      ],
+      "target_family": "path",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "path:docs/source_universe/validation/003_permanent_source_registry_migrated.md",
+      "target_selector": "docs/source_universe/validation/003_permanent_source_registry_migrated.md"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "workstream.v1",
+      "grammar_slot": "SPEC028_REFERENCES",
+      "raw_typed_token": "path:docs/source_universe/validation/004_permanent_first_corpus_prospective_compare_all_match.md",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "1afd6255f529b05f9c14e2f4cfa1c389097eb83f",
+      "source_path": "docs/source_universe/SOURCE_VAULT_BOOTSTRAP_WORKSTREAM.md",
+      "source_sha256": "8af6602abbc25ff7eac8d8021239841231b32d28fe0880c859b3be2a7c30ea2a",
+      "source_witnesses": [
+        {
+          "line_number": 73,
+          "line_sha256": "d63ab1ec2447aba10a38a2246f2645f072c5c50af60dcf4ae5a14381a93d7b90",
+          "original_line": "    \"path:docs/source_universe/validation/004_permanent_first_corpus_prospective_compare_all_match.md\","
+        }
+      ],
+      "target_family": "path",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "path:docs/source_universe/validation/004_permanent_first_corpus_prospective_compare_all_match.md",
+      "target_selector": "docs/source_universe/validation/004_permanent_first_corpus_prospective_compare_all_match.md"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "semantic_source.v1",
+      "grammar_slot": "SPEC028_PROVENANCE",
+      "raw_typed_token": "checkpoint:271",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "e239046eba5c2e56657c9e981649ca502f2168e7",
+      "source_path": "docs/source_universe/SOURCE_VAULT_REVIEWED_INGESTION.md",
+      "source_sha256": "8e5515bbdab42fe1ba9de7bd374207ebadc26e89cddcd8085ad7962495f3eeea",
+      "source_witnesses": [
+        {
+          "line_number": 27,
+          "line_sha256": "b6ee2a8b2c80647dca417ba1a30bc0c753377507a2bfebfd9d120f295f96c66a",
+          "original_line": "    \"checkpoint:271\","
+        }
+      ],
+      "target_family": "checkpoint",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "checkpoint:271",
+      "target_selector": "271"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "semantic_source.v1",
+      "grammar_slot": "SPEC028_PROVENANCE",
+      "raw_typed_token": "checkpoint:274",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "e239046eba5c2e56657c9e981649ca502f2168e7",
+      "source_path": "docs/source_universe/SOURCE_VAULT_REVIEWED_INGESTION.md",
+      "source_sha256": "8e5515bbdab42fe1ba9de7bd374207ebadc26e89cddcd8085ad7962495f3eeea",
+      "source_witnesses": [
+        {
+          "line_number": 28,
+          "line_sha256": "06dbcb2211faf73eafcf278c61779405026a8ad926ead882fa1ea71c1aeb0225",
+          "original_line": "    \"checkpoint:274\","
+        }
+      ],
+      "target_family": "checkpoint",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "checkpoint:274",
+      "target_selector": "274"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "semantic_source.v1",
+      "grammar_slot": "SPEC028_PROVENANCE",
+      "raw_typed_token": "checkpoint:276",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "e239046eba5c2e56657c9e981649ca502f2168e7",
+      "source_path": "docs/source_universe/SOURCE_VAULT_REVIEWED_INGESTION.md",
+      "source_sha256": "8e5515bbdab42fe1ba9de7bd374207ebadc26e89cddcd8085ad7962495f3eeea",
+      "source_witnesses": [
+        {
+          "line_number": 29,
+          "line_sha256": "e95ebfeee29e7cc81f9405dbad4165944f1530ac232fbed613e030fd51e4490e",
+          "original_line": "    \"checkpoint:276\","
+        }
+      ],
+      "target_family": "checkpoint",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "checkpoint:276",
+      "target_selector": "276"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "semantic_source.v1",
+      "grammar_slot": "SPEC028_PROVENANCE",
+      "raw_typed_token": "research:158",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "e239046eba5c2e56657c9e981649ca502f2168e7",
+      "source_path": "docs/source_universe/SOURCE_VAULT_REVIEWED_INGESTION.md",
+      "source_sha256": "8e5515bbdab42fe1ba9de7bd374207ebadc26e89cddcd8085ad7962495f3eeea",
+      "source_witnesses": [
+        {
+          "line_number": 30,
+          "line_sha256": "0395e8ac4fb7dc2be0c392336b578821988120f2d3a1bfaa4db6c0de25e82a8f",
+          "original_line": "    \"research:158\""
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:158",
+      "target_selector": "158"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "semantic_source.v1",
+      "grammar_slot": "SPEC028_REFERENCES",
+      "raw_typed_token": "path:docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+      "resolution_state": "RESOLVED_IN_65",
+      "source_blob_sha1": "e239046eba5c2e56657c9e981649ca502f2168e7",
+      "source_path": "docs/source_universe/SOURCE_VAULT_REVIEWED_INGESTION.md",
+      "source_sha256": "8e5515bbdab42fe1ba9de7bd374207ebadc26e89cddcd8085ad7962495f3eeea",
+      "source_witnesses": [
+        {
+          "line_number": 33,
+          "line_sha256": "aa151fff270fedba2bbcd6158bffda45044c6012d55aa5a1d555eb6798377181",
+          "original_line": "    \"path:docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md\","
+        }
+      ],
+      "target_family": "path",
+      "target_fragment": null,
+      "target_member_in_sample": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+      "target_original_token": "path:docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+      "target_selector": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "semantic_source.v1",
+      "grammar_slot": "SPEC028_REFERENCES",
+      "raw_typed_token": "path:docs/source_universe/validation/004_permanent_first_corpus_prospective_compare_all_match.md",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "e239046eba5c2e56657c9e981649ca502f2168e7",
+      "source_path": "docs/source_universe/SOURCE_VAULT_REVIEWED_INGESTION.md",
+      "source_sha256": "8e5515bbdab42fe1ba9de7bd374207ebadc26e89cddcd8085ad7962495f3eeea",
+      "source_witnesses": [
+        {
+          "line_number": 34,
+          "line_sha256": "358fab334260c58e723be93cac58b4d33871b20ff7200d6118c9e170ad6e2a67",
+          "original_line": "    \"path:docs/source_universe/validation/004_permanent_first_corpus_prospective_compare_all_match.md\""
+        }
+      ],
+      "target_family": "path",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "path:docs/source_universe/validation/004_permanent_first_corpus_prospective_compare_all_match.md",
+      "target_selector": "docs/source_universe/validation/004_permanent_first_corpus_prospective_compare_all_match.md"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "checkpoint:522",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "70db025eefa69a8dec43b04dfdae87f5700754c9",
+      "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "source_sha256": "7651707b5d590efd7686a77dca20597dc731bfafa1fabc2358775bef7b9d2ffe",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "2b8ef9de0ff5d0f652d17fbf747aa95e2134e084ee5add085099e883ce442513",
+          "original_line": "**Declared references:** `path:docs/DECISIONS.md`, `research:144`, `research:145`, `research:175`, `research:176`, `research:177`, `checkpoint:522`, `path:docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md`, `path:docs/research/project_knowledge_candidate_01/QUALIFICATION_MATRIX_V01.json`, `path:pyproject.toml`"
+        }
+      ],
+      "target_family": "checkpoint",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "checkpoint:522",
+      "target_selector": "522"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "path:docs/DECISIONS.md",
+      "resolution_state": "RESOLVED_IN_65",
+      "source_blob_sha1": "70db025eefa69a8dec43b04dfdae87f5700754c9",
+      "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "source_sha256": "7651707b5d590efd7686a77dca20597dc731bfafa1fabc2358775bef7b9d2ffe",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "2b8ef9de0ff5d0f652d17fbf747aa95e2134e084ee5add085099e883ce442513",
+          "original_line": "**Declared references:** `path:docs/DECISIONS.md`, `research:144`, `research:145`, `research:175`, `research:176`, `research:177`, `checkpoint:522`, `path:docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md`, `path:docs/research/project_knowledge_candidate_01/QUALIFICATION_MATRIX_V01.json`, `path:pyproject.toml`"
+        }
+      ],
+      "target_family": "path",
+      "target_fragment": null,
+      "target_member_in_sample": "docs/DECISIONS.md",
+      "target_original_token": "path:docs/DECISIONS.md",
+      "target_selector": "docs/DECISIONS.md"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "path:docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "70db025eefa69a8dec43b04dfdae87f5700754c9",
+      "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "source_sha256": "7651707b5d590efd7686a77dca20597dc731bfafa1fabc2358775bef7b9d2ffe",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "2b8ef9de0ff5d0f652d17fbf747aa95e2134e084ee5add085099e883ce442513",
+          "original_line": "**Declared references:** `path:docs/DECISIONS.md`, `research:144`, `research:145`, `research:175`, `research:176`, `research:177`, `checkpoint:522`, `path:docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md`, `path:docs/research/project_knowledge_candidate_01/QUALIFICATION_MATRIX_V01.json`, `path:pyproject.toml`"
+        }
+      ],
+      "target_family": "path",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "path:docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md",
+      "target_selector": "docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "path:docs/research/project_knowledge_candidate_01/QUALIFICATION_MATRIX_V01.json",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "70db025eefa69a8dec43b04dfdae87f5700754c9",
+      "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "source_sha256": "7651707b5d590efd7686a77dca20597dc731bfafa1fabc2358775bef7b9d2ffe",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "2b8ef9de0ff5d0f652d17fbf747aa95e2134e084ee5add085099e883ce442513",
+          "original_line": "**Declared references:** `path:docs/DECISIONS.md`, `research:144`, `research:145`, `research:175`, `research:176`, `research:177`, `checkpoint:522`, `path:docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md`, `path:docs/research/project_knowledge_candidate_01/QUALIFICATION_MATRIX_V01.json`, `path:pyproject.toml`"
+        }
+      ],
+      "target_family": "path",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "path:docs/research/project_knowledge_candidate_01/QUALIFICATION_MATRIX_V01.json",
+      "target_selector": "docs/research/project_knowledge_candidate_01/QUALIFICATION_MATRIX_V01.json"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "path:pyproject.toml",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "70db025eefa69a8dec43b04dfdae87f5700754c9",
+      "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "source_sha256": "7651707b5d590efd7686a77dca20597dc731bfafa1fabc2358775bef7b9d2ffe",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "2b8ef9de0ff5d0f652d17fbf747aa95e2134e084ee5add085099e883ce442513",
+          "original_line": "**Declared references:** `path:docs/DECISIONS.md`, `research:144`, `research:145`, `research:175`, `research:176`, `research:177`, `checkpoint:522`, `path:docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md`, `path:docs/research/project_knowledge_candidate_01/QUALIFICATION_MATRIX_V01.json`, `path:pyproject.toml`"
+        }
+      ],
+      "target_family": "path",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "path:pyproject.toml",
+      "target_selector": "pyproject.toml"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "research:144",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "70db025eefa69a8dec43b04dfdae87f5700754c9",
+      "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "source_sha256": "7651707b5d590efd7686a77dca20597dc731bfafa1fabc2358775bef7b9d2ffe",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "2b8ef9de0ff5d0f652d17fbf747aa95e2134e084ee5add085099e883ce442513",
+          "original_line": "**Declared references:** `path:docs/DECISIONS.md`, `research:144`, `research:145`, `research:175`, `research:176`, `research:177`, `checkpoint:522`, `path:docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md`, `path:docs/research/project_knowledge_candidate_01/QUALIFICATION_MATRIX_V01.json`, `path:pyproject.toml`"
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:144",
+      "target_selector": "144"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "research:145",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "70db025eefa69a8dec43b04dfdae87f5700754c9",
+      "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "source_sha256": "7651707b5d590efd7686a77dca20597dc731bfafa1fabc2358775bef7b9d2ffe",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "2b8ef9de0ff5d0f652d17fbf747aa95e2134e084ee5add085099e883ce442513",
+          "original_line": "**Declared references:** `path:docs/DECISIONS.md`, `research:144`, `research:145`, `research:175`, `research:176`, `research:177`, `checkpoint:522`, `path:docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md`, `path:docs/research/project_knowledge_candidate_01/QUALIFICATION_MATRIX_V01.json`, `path:pyproject.toml`"
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:145",
+      "target_selector": "145"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "research:175",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "70db025eefa69a8dec43b04dfdae87f5700754c9",
+      "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "source_sha256": "7651707b5d590efd7686a77dca20597dc731bfafa1fabc2358775bef7b9d2ffe",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "2b8ef9de0ff5d0f652d17fbf747aa95e2134e084ee5add085099e883ce442513",
+          "original_line": "**Declared references:** `path:docs/DECISIONS.md`, `research:144`, `research:145`, `research:175`, `research:176`, `research:177`, `checkpoint:522`, `path:docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md`, `path:docs/research/project_knowledge_candidate_01/QUALIFICATION_MATRIX_V01.json`, `path:pyproject.toml`"
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:175",
+      "target_selector": "175"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "research:176",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "70db025eefa69a8dec43b04dfdae87f5700754c9",
+      "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "source_sha256": "7651707b5d590efd7686a77dca20597dc731bfafa1fabc2358775bef7b9d2ffe",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "2b8ef9de0ff5d0f652d17fbf747aa95e2134e084ee5add085099e883ce442513",
+          "original_line": "**Declared references:** `path:docs/DECISIONS.md`, `research:144`, `research:145`, `research:175`, `research:176`, `research:177`, `checkpoint:522`, `path:docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md`, `path:docs/research/project_knowledge_candidate_01/QUALIFICATION_MATRIX_V01.json`, `path:pyproject.toml`"
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:176",
+      "target_selector": "176"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": null,
+      "declared_profile": null,
+      "grammar_slot": "SPEC025_DECLARED_REFERENCES",
+      "raw_typed_token": "research:177",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "70db025eefa69a8dec43b04dfdae87f5700754c9",
+      "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "source_sha256": "7651707b5d590efd7686a77dca20597dc731bfafa1fabc2358775bef7b9d2ffe",
+      "source_witnesses": [
+        {
+          "line_number": 7,
+          "line_sha256": "2b8ef9de0ff5d0f652d17fbf747aa95e2134e084ee5add085099e883ce442513",
+          "original_line": "**Declared references:** `path:docs/DECISIONS.md`, `research:144`, `research:145`, `research:175`, `research:176`, `research:177`, `checkpoint:522`, `path:docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md`, `path:docs/research/project_knowledge_candidate_01/QUALIFICATION_MATRIX_V01.json`, `path:pyproject.toml`"
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:177",
+      "target_selector": "177"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "semantic_source.v1",
+      "grammar_slot": "SPEC028_PROVENANCE",
+      "raw_typed_token": "D-035",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "70db025eefa69a8dec43b04dfdae87f5700754c9",
+      "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "source_sha256": "7651707b5d590efd7686a77dca20597dc731bfafa1fabc2358775bef7b9d2ffe",
+      "source_witnesses": [
+        {
+          "line_number": 20,
+          "line_sha256": "2b76ee52d23117e959e8dcf195f708e5cde2cf5370a99bef5d955d268c933ed8",
+          "original_line": "    \"D-035\","
+        }
+      ],
+      "target_family": "UNTYPED_IDENTITY",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "D-035",
+      "target_selector": "D-035"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "semantic_source.v1",
+      "grammar_slot": "SPEC028_PROVENANCE",
+      "raw_typed_token": "checkpoint:522",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "70db025eefa69a8dec43b04dfdae87f5700754c9",
+      "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "source_sha256": "7651707b5d590efd7686a77dca20597dc731bfafa1fabc2358775bef7b9d2ffe",
+      "source_witnesses": [
+        {
+          "line_number": 21,
+          "line_sha256": "8bc40ec0434e0b0d8174ed33124b803cfe8c1148444a87c58d911d767815e952",
+          "original_line": "    \"checkpoint:522\""
+        }
+      ],
+      "target_family": "checkpoint",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "checkpoint:522",
+      "target_selector": "522"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "semantic_source.v1",
+      "grammar_slot": "SPEC028_REFERENCES",
+      "raw_typed_token": "research:176",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "70db025eefa69a8dec43b04dfdae87f5700754c9",
+      "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "source_sha256": "7651707b5d590efd7686a77dca20597dc731bfafa1fabc2358775bef7b9d2ffe",
+      "source_witnesses": [
+        {
+          "line_number": 24,
+          "line_sha256": "f3b191b3674f6f8eae175a81ba45fb3964c92b2f86f1b048129a6bb43e65f371",
+          "original_line": "    \"research:176\","
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:176",
+      "target_selector": "176"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "semantic_source.v1",
+      "grammar_slot": "SPEC028_REFERENCES",
+      "raw_typed_token": "research:177",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "70db025eefa69a8dec43b04dfdae87f5700754c9",
+      "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "source_sha256": "7651707b5d590efd7686a77dca20597dc731bfafa1fabc2358775bef7b9d2ffe",
+      "source_witnesses": [
+        {
+          "line_number": 25,
+          "line_sha256": "1b012e06d39ed065ab890ab84401dd8edb367021a8f35e37ecbc78764baed45c",
+          "original_line": "    \"research:177\","
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:177",
+      "target_selector": "177"
+    },
+    {
+      "authority_qualified": false,
+      "declared_authority_class": "canonical",
+      "declared_profile": "semantic_source.v1",
+      "grammar_slot": "SPEC028_REFERENCES",
+      "raw_typed_token": "research:179",
+      "resolution_state": "OUTSIDE_SAMPLED_65_OR_UNRESOLVED",
+      "source_blob_sha1": "70db025eefa69a8dec43b04dfdae87f5700754c9",
+      "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "source_sha256": "7651707b5d590efd7686a77dca20597dc731bfafa1fabc2358775bef7b9d2ffe",
+      "source_witnesses": [
+        {
+          "line_number": 26,
+          "line_sha256": "066c314f671d28eb9e15190e7adeab687b9d99413b37689c8b2161d85e0ab545",
+          "original_line": "    \"research:179\""
+        }
+      ],
+      "target_family": "research",
+      "target_fragment": null,
+      "target_member_in_sample": null,
+      "target_original_token": "research:179",
+      "target_selector": "179"
+    }
+  ],
+  "prior_v01_sha256": "e935edf01c6298b2c55950236c18eab6a9d4f712cfeca1ce3c7c48f69376d299",
+  "prior_v02_sha256": "25b26e66e3bb03232d4ee7931e66aceb6bd6eaf28d2f5ae0ff207713c333831d",
+  "source_fingerprint_sha256": "01206bdb2fdc3517627a94bdf6587efaa2f5d9ed10ad220f5799c496353c5a09",
+  "structured_profile_claims": [
+    {
+      "declared_authority_class": "canonical",
+      "declared_semantic_id": "D-035",
+      "declared_state": "ACTIVE",
+      "profile": "semantic_source.v1",
+      "relations_slot_count": 0,
+      "source": "docs/DECISIONS.md"
+    },
+    {
+      "declared_authority_class": "canonical",
+      "declared_semantic_id": "COCKPIT:DESIGN-EXPLORATION-RESUME",
+      "declared_state": "ACTIVE",
+      "profile": "semantic_source.v1",
+      "relations_slot_count": 0,
+      "source": "docs/cockpit/COCKPIT_DESIGN_RESUME_TARGET.md"
+    },
+    {
+      "declared_authority_class": "canonical",
+      "declared_semantic_id": "WS-COCKPIT-DESIGN",
+      "declared_state": "PAUSED",
+      "profile": "workstream.v1",
+      "relations_slot_count": 0,
+      "source": "docs/cockpit/README.md"
+    },
+    {
+      "declared_authority_class": "canonical",
+      "declared_semantic_id": "PROJECT-INTEGRATION-BOUNDARY",
+      "declared_state": "ACTIVE",
+      "profile": "project_boundary.v1",
+      "relations_slot_count": 0,
+      "source": "docs/project_knowledge/project_integration_boundary.md"
+    },
+    {
+      "declared_authority_class": "canonical",
+      "declared_semantic_id": "WS-PKA-CURRENT",
+      "declared_state": "ACTIVE",
+      "profile": "workstream.v1",
+      "relations_slot_count": 0,
+      "source": "docs/project_knowledge/selected_architecture_workstream.md"
+    },
+    {
+      "declared_authority_class": "canonical",
+      "declared_semantic_id": "PROCEDURE:PERMANENT-SOURCE-VAULT-BOOTSTRAP",
+      "declared_state": "ACTIVE",
+      "profile": "governing_procedure.v1",
+      "relations_slot_count": 0,
+      "source": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md"
+    },
+    {
+      "declared_authority_class": "canonical",
+      "declared_semantic_id": "WS-SOURCE-VAULT-BOOTSTRAP",
+      "declared_state": "PAUSED",
+      "profile": "workstream.v1",
+      "relations_slot_count": 0,
+      "source": "docs/source_universe/SOURCE_VAULT_BOOTSTRAP_WORKSTREAM.md"
+    },
+    {
+      "declared_authority_class": "canonical",
+      "declared_semantic_id": "SOURCE-VAULT:REVIEWED-INGESTION",
+      "declared_state": "ACTIVE",
+      "profile": "semantic_source.v1",
+      "relations_slot_count": 0,
+      "source": "docs/source_universe/SOURCE_VAULT_REVIEWED_INGESTION.md"
+    },
+    {
+      "declared_authority_class": "canonical",
+      "declared_semantic_id": "SPECIFICATION:028",
+      "declared_state": null,
+      "profile": "semantic_source.v1",
+      "relations_slot_count": 0,
+      "source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md"
+    }
+  ],
+  "summary": {
+    "all_tokens_by_grammar_slot": {
+      "SPEC025_DECLARED_REFERENCES": 59,
+      "SPEC028_PROVENANCE": 34,
+      "SPEC028_REFERENCES": 20
+    },
+    "header_declaring_documents": 7,
+    "in_corpus_distinct_declared_pairs": 31,
+    "in_corpus_pairs_also_in_old_110_path_graph": 19,
+    "in_corpus_pairs_missing_from_old_path_graph": 12,
+    "in_corpus_tokens_by_grammar_slot": {
+      "SPEC025_DECLARED_REFERENCES": 21,
+      "SPEC028_PROVENANCE": 4,
+      "SPEC028_REFERENCES": 6
+    },
+    "missing_from_old_path_graph": [
+      {
+        "source": "docs/DECISIONS.md",
+        "target": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md"
+      },
+      {
+        "source": "docs/project_knowledge/selected_architecture_workstream.md",
+        "target": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md"
+      },
+      {
+        "source": "docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md",
+        "target": "docs/research/105_codexless_local_execution_bridge_evaluation.md"
+      },
+      {
+        "source": "docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md",
+        "target": "docs/research/123_github_connector_capability_parity_and_codexless_runtime_bridge_architecture.md"
+      },
+      {
+        "source": "docs/research/123_github_connector_capability_parity_and_codexless_runtime_bridge_architecture.md",
+        "target": "docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md"
+      },
+      {
+        "source": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+        "target": "docs/research/064_rapid_iteration_repository_preservation_audit_and_checkpoint_hygiene.md"
+      },
+      {
+        "source": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+        "target": "docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md"
+      },
+      {
+        "source": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+        "target": "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md"
+      },
+      {
+        "source": "docs/research/126_knowledge_identity_and_multi_axis_organization_deep_dive.md",
+        "target": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md"
+      },
+      {
+        "source": "docs/research/127_capture_consolidation_promotion_and_source_derived_state_deep_dive.md",
+        "target": "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md"
+      },
+      {
+        "source": "docs/research/127_capture_consolidation_promotion_and_source_derived_state_deep_dive.md",
+        "target": "docs/research/126_knowledge_identity_and_multi_axis_organization_deep_dive.md"
+      },
+      {
+        "source": "docs/source_universe/SOURCE_VAULT_BOOTSTRAP_WORKSTREAM.md",
+        "target": "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md"
+      }
+    ],
+    "old_empty_forward_sources_with_declared_in_corpus_references": [
+      "docs/research/126_knowledge_identity_and_multi_axis_organization_deep_dive.md"
+    ],
+    "old_empty_reverse_sources_with_declared_in_corpus_references": [
+      "docs/research/105_codexless_local_execution_bridge_evaluation.md",
+      "docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md",
+      "docs/research/123_github_connector_capability_parity_and_codexless_runtime_bridge_architecture.md",
+      "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md"
+    ],
+    "old_path_graph_directed_pairs": 110,
+    "out_of_sample_or_unresolved_tokens": 81,
+    "source_documents": 65,
+    "source_owned_tokens": 113,
+    "structured_declaring_documents": 9,
+    "tokens_with_preserved_fragments": 3
+  }
+}

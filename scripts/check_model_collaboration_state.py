@@ -11,6 +11,7 @@ the user's GitHub authority.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 import sys
@@ -23,6 +24,54 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 SCHEMA_PATH = REPO_ROOT / "schemas" / "model_collaboration_thread_state_v1.schema.json"
 ACTIVE_STATES = {"OPEN", "ACTIVE", "WAITING"}
 GLOB_CHARS = {"*", "?", "["}
+
+# Exactly one historically duplicated message number is preserved as
+# append-only evidence. The exception applies only to these original paths
+# and exact SHA-256 identities, never to another collision or changed content.
+# See MC-0030 Message 065 for the explicit disambiguation.
+LEGACY_MESSAGE_COLLISION_063 = {
+    "063_chatgpt_r0_p03_message062_reconciliation_and_owner_option_a.md":
+        "8f50259dd5065adb7ecade17064f3aac93fbbf26969bc29be6d960cb40fe7cc4",
+    "063_chatgpt_r0_p03_exploratory_source_semantics_review_request.md":
+        "7603a96f1bfea2d898ae82c2a7f0377611ba2d6b8b72489ffefb71aeb0bfdedf",
+}
+MESSAGE_NAME_RE = re.compile(r"^(?P<number>\d{3})_.+\.md$")
+
+
+def validate_message_identities(repo_root: Path) -> list[str]:
+    """Check thread-local numeric message IDs, preserving one exact historical collision.
+
+    This guard covers guarded and unguarded threads, and is not an authenticated
+    model-author identity check. No existing file is renamed or rewritten.
+    """
+    root = repo_root / "docs" / "model_collaboration" / "threads"
+    errors: list[str] = []
+    if not root.is_dir():
+        return errors
+    for thread in sorted(root.glob("MC-[0-9][0-9][0-9][0-9]")):
+        messages = thread / "messages"
+        if not messages.is_dir():
+            continue
+        seen: dict[int, list[Path]] = {}
+        for item in sorted(messages.glob("*.md")):
+            match = MESSAGE_NAME_RE.fullmatch(item.name)
+            if match is not None:
+                seen.setdefault(int(match["number"]), []).append(item)
+        for number, files in sorted(seen.items()):
+            if len(files) <= 1:
+                continue
+            if thread.name == "MC-0030" and number == 63 and len(files) == 2:
+                actual = {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in files}
+                if actual == LEGACY_MESSAGE_COLLISION_063:
+                    continue
+            names = ", ".join(p.name for p in files)
+            errors.append(
+                f"{thread.name} Message {number:03d}: duplicate durable message identity "
+                f"({names}); only the two exact MC-0030 Message 063 historical files are exempt"
+            )
+    return errors
+
+
 
 
 def _load_json(path: Path) -> Any:
@@ -223,9 +272,9 @@ def main(argv: list[str] | None = None) -> int:
     paths = args.paths or discover_state_files(REPO_ROOT)
     if not paths:
         print("No guarded model-collaboration STATE.json files found.")
-        return 0
 
-    errors = validate_many(paths)
+    errors = validate_many(paths) if paths else []
+    errors.extend(validate_message_identities(REPO_ROOT))
     if errors:
         for error in errors:
             print(error, file=sys.stderr)
