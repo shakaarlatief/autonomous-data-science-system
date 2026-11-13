@@ -1,0 +1,210 @@
+{
+  "schema_version": 1,
+  "id": "R0_P03_T2_NO_ID_MANUALLY_AUTHORED_TOPIC_REQUESTS_V01",
+  "author": "chatgpt-42_EXPOSED_COORDINATOR_NOT_INDEPENDENT",
+  "authored_at": "2026-11-13",
+  "source_revision_s0": "4b94ffe183ff7af72cef6ee7492b4ba2f30c11ef",
+  "source_revision_s1": "6d484dd5d35884f55a9bb15dd1adf8b1e3afc3d3",
+  "evidence_limits": [
+    "Question author inspected the decision ledger and previous results before authoring; none is blind independent gold.",
+    "Evaluation identities are kept in the manifest for outcome evaluation only and must not be passed into candidate retrievers or assertion gates.",
+    "No question contains an explicit D-NNN reference. Two snapshots are tested identically; D-036 is not recorded in S0.",
+    "No-target controls are hypotheses about the covered decision ledger only, not assertions of worldwide nonexistence."
+  ],
+  "positive": [
+    {
+      "id": "Q01",
+      "query": "Should the automated data science platform be a standalone project or sit inside each individual analysis project?",
+      "expected_id_for_evaluation_only": "D-001",
+      "topic_family": "project_boundary"
+    },
+    {
+      "id": "Q02",
+      "query": "Where should the persistent master copy of the system live so future sessions can recover it?",
+      "expected_id_for_evaluation_only": "D-002",
+      "topic_family": "durable_repository"
+    },
+    {
+      "id": "Q03",
+      "query": "Was keeping the code repository private a permanent requirement, or was that early restriction later replaced?",
+      "expected_id_for_evaluation_only": "D-003",
+      "topic_family": "supersession_visibility"
+    },
+    {
+      "id": "Q04",
+      "query": "Which medium is the official source of stable project facts, repository artifacts or chat discussions?",
+      "expected_id_for_evaluation_only": "D-004",
+      "topic_family": "repository_authority"
+    },
+    {
+      "id": "Q05",
+      "query": "Can old conversation transcripts be treated as authoritative specifications just because they were saved?",
+      "expected_id_for_evaluation_only": "D-007",
+      "topic_family": "historical_provenance"
+    },
+    {
+      "id": "Q06",
+      "query": "How can development resume correctly when a new conversation starts without the previous discussion context?",
+      "expected_id_for_evaluation_only": "D-008",
+      "topic_family": "chat_continuity"
+    },
+    {
+      "id": "Q07",
+      "query": "Was the initial policy against picking an implementation stack later revised for selected subsystems?",
+      "expected_id_for_evaluation_only": "D-011",
+      "topic_family": "partial_supersession"
+    },
+    {
+      "id": "Q08",
+      "query": "Must every data science project follow the same predetermined linear pipeline?",
+      "expected_id_for_evaluation_only": "D-012",
+      "topic_family": "methodology_flexibility"
+    },
+    {
+      "id": "Q09",
+      "query": "What was decided about copying third-party learning notes and PDF sources into the public code repository?",
+      "expected_id_for_evaluation_only": "D-015",
+      "topic_family": "public_source_exclusion"
+    },
+    {
+      "id": "Q10",
+      "query": "Who should notice when development knowledge ought to be captured as a checkpoint?",
+      "expected_id_for_evaluation_only": "D-018",
+      "topic_family": "checkpoint_detection"
+    },
+    {
+      "id": "Q11",
+      "query": "How should stable findings be considered for promotion into canonical artifacts after a major checkpoint?",
+      "expected_id_for_evaluation_only": "D-021",
+      "topic_family": "promotion_audit"
+    },
+    {
+      "id": "Q12",
+      "query": "Did the project decide to deploy a graph or vector database immediately for durable knowledge preservation?",
+      "expected_id_for_evaluation_only": "D-024",
+      "topic_family": "storage_deferral"
+    },
+    {
+      "id": "Q13",
+      "query": "Where should a short register of major architectural and methodological changes be maintained?",
+      "expected_id_for_evaluation_only": "D-025",
+      "topic_family": "major_changes"
+    },
+    {
+      "id": "Q14",
+      "query": "What local-first storage technology was chosen for operational methodological knowledge and project metadata?",
+      "expected_id_for_evaluation_only": "D-028",
+      "topic_family": "database_architecture"
+    },
+    {
+      "id": "Q15",
+      "query": "Which libraries were approved for relational SQL operations and migration history?",
+      "expected_id_for_evaluation_only": "D-029",
+      "topic_family": "persistence_implementation"
+    },
+    {
+      "id": "Q16",
+      "query": "What tool manages Python environments and dependency locks for the initial implementation?",
+      "expected_id_for_evaluation_only": "D-030",
+      "topic_family": "python_dependency_manager"
+    },
+    {
+      "id": "Q17",
+      "query": "Which structured data representation and validation approach supports reusable methodological knowledge exchange?",
+      "expected_id_for_evaluation_only": "D-031",
+      "topic_family": "knowledge_interchange"
+    },
+    {
+      "id": "Q18",
+      "query": "What initial agent framework was chosen, and is it isolated behind an internal runtime abstraction?",
+      "expected_id_for_evaluation_only": "D-032",
+      "topic_family": "reasoning_runtime"
+    },
+    {
+      "id": "Q19",
+      "query": "How are external evidence files preserved outside the normal reusable knowledge catalogue?",
+      "expected_id_for_evaluation_only": "D-033",
+      "topic_family": "source_universe"
+    },
+    {
+      "id": "Q20",
+      "query": "Is collaboration among multiple model providers a recognized development practice for this system?",
+      "expected_id_for_evaluation_only": "D-034",
+      "topic_family": "multi_model_governance"
+    },
+    {
+      "id": "Q21",
+      "query": "Has the successor project knowledge architecture only been selected, or has it actually been activated?",
+      "expected_id_for_evaluation_only": "D-035",
+      "topic_family": "selection_not_operation"
+    },
+    {
+      "id": "Q22",
+      "query": "Does the selected semantic control design already govern runtime behavior, or is it still a target?",
+      "expected_id_for_evaluation_only": "D-036",
+      "topic_family": "selected_control_not_operational"
+    },
+    {
+      "id": "Q23",
+      "query": "Who decides when long design conversations should be rotated to a fresh chat?",
+      "expected_id_for_evaluation_only": "D-020",
+      "topic_family": "session_rotation"
+    },
+    {
+      "id": "Q24",
+      "query": "How do we periodically reconcile decisions, open questions and stale documentation across the knowledge repository?",
+      "expected_id_for_evaluation_only": "D-023",
+      "topic_family": "knowledge_reconciliation"
+    },
+    {
+      "id": "Q25",
+      "query": "Should process quality be optimized using one universal objective or adapted to what each project needs?",
+      "expected_id_for_evaluation_only": "D-017",
+      "topic_family": "project_relative_quality"
+    },
+    {
+      "id": "Q26",
+      "query": "Are historical decisions about supervising large experimental batches conditional on the initial smoke test?",
+      "expected_id_for_evaluation_only": "D-027",
+      "topic_family": "experimental_supervisor"
+    }
+  ],
+  "negative": [
+    {
+      "id": "N01",
+      "query": "What production Kubernetes operator has been formally approved to run the system?",
+      "expected_id_for_evaluation_only": null,
+      "topic_family": "unsupported_kubernetes"
+    },
+    {
+      "id": "N02",
+      "query": "Which commercial SaaS billing provider was officially selected for customer subscription payments?",
+      "expected_id_for_evaluation_only": null,
+      "topic_family": "unsupported_billing"
+    },
+    {
+      "id": "N03",
+      "query": "What GPU cluster region was confirmed as the live serving deployment?",
+      "expected_id_for_evaluation_only": null,
+      "topic_family": "unsupported_gpu_deployment"
+    },
+    {
+      "id": "N04",
+      "query": "Who signed off the release of a production mobile app to public stores?",
+      "expected_id_for_evaluation_only": null,
+      "topic_family": "unsupported_mobile_release"
+    },
+    {
+      "id": "N05",
+      "query": "What enterprise data warehouse contract governs all customer telemetry today?",
+      "expected_id_for_evaluation_only": null,
+      "topic_family": "unsupported_data_warehouse"
+    },
+    {
+      "id": "N06",
+      "query": "Which external penetration testing company certified the deployed system?",
+      "expected_id_for_evaluation_only": null,
+      "topic_family": "unsupported_security_certification"
+    }
+  ]
+}
