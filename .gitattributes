@@ -68,6 +68,10 @@ experiments/r0_p03_navigation_probe/route_b_extractively_cited_answer_evidence_r
 # Preserve exact original B0/B1 model-facing source packet and exposed GPT-6-authored answer bytes.
 experiments/r0_p03_navigation_probe/route_b_reasoned_b0_b1_gold_free_source_packet_v01.json -text
 experiments/r0_p03_navigation_probe/route_b_reasoned_b0_b1_gpt6_exposed_answers_v01.json -text
+# Preserve frozen treatment-masked reviewer packets and original source-line citations.
+experiments/r0_p03_navigation_probe/route_b_treatment_masked_claim_review_p01_to_p04_v01.json -text
+experiments/r0_p03_navigation_probe/route_b_treatment_masked_claim_review_p05_to_p08_v01.json -text
+experiments/r0_p03_navigation_probe/route_b_treatment_masked_claim_review_p09_to_p12_v01.json -text
 # Retain the source-free 12-need independent adjudication report byte-for-byte.
 experiments/r0_p03_navigation_probe/NEED_SOURCE_ADJUDICATION_AGGREGATE.md -text whitespace=-blank-at-eof
 # Preserve the byte-verified independent adjudicator's updated source-free result.

@@ -1,0 +1,1089 @@
+{
+  "case_span": [
+    "P05",
+    "P08"
+  ],
+  "cases": [
+    {
+      "case_id": "P05",
+      "question": "Which specification addresses governed repository integrity and continuity bootstrap while still awaiting implementation?",
+      "variants": [
+        {
+          "answer": "Specification 025, \u201cV1 Governed Repository Integrity and Continuity Hardening\u201d, is the record. Its archived status is \u201cFROZEN / IMPLEMENTATION PENDING\u201d; its scope includes governed repository-integrity contracts, branch-scoped freshness and explicit continuity bootstrap routing. It is a pending contract, not evidence of a completed deployment.",
+          "available_evidence": [
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "1f289be963caf69e7875e7984d5a1523c2f97aaf6c7c74929cd05f2c3a6ec07a",
+                  "original_source_line": "# Specification 025 \u2014 V1 Governed Repository Integrity and Continuity Hardening"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "b0a98edfab5a38d9b1ca44a85954c5ea37b56b8b9585fc4eb8331fd34f2e0105",
+                  "original_source_line": "**Status:** FROZEN / IMPLEMENTATION PENDING  "
+                },
+                {
+                  "line": 5,
+                  "original_line_sha256": "25136d45a915e895afe9136e911fd430356036219fcc371ef938d3155782730a",
+                  "original_source_line": "**Scope:** Prospective typed repository-integrity contracts, branch-scoped live-state freshness, explicit continuity bootstrap routing, public/private integrity separation, deterministic validation, and chat-rotation preflight.  "
+                },
+                {
+                  "line": 10,
+                  "original_line_sha256": "193b6c108e9021df60b5431ed2e0b1499ddaedff51ecf9a387d8ae1bb0d7e62d",
+                  "original_source_line": "This specification freezes the first implementation boundary derived from Research 106 and the resolved MC-0008 repository-integrity review."
+                },
+                {
+                  "line": 16,
+                  "original_line_sha256": "0770b56eb25a7591186dae949de9d9f65f6639820bb1f53428134c70236c044f",
+                  "original_source_line": "No implementation conforming to this specification may weaken the Source Vault bootstrap gates or change source-artifact authority. Repository integrity hardening and Source Universe ingestion remain separate concerns."
+                }
+              ],
+              "original_source_sha256": "788e3162fc823d21eca176646e7e5c96090cfd7dd971f3f3e918414c278b5cdd",
+              "path": "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+              "source_rank": 1
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "7950297f9ecdd4c76a70c624eef07260e8ae64c22585362a8fe37907815febed",
+                  "original_source_line": "# Research 156: Real CURRENT_STATE Decomposition and Source-Ownership Audit"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "adb15ab8bc9813d6f86e96a4432a9d85241dbfd72be53e58889dc32c85180dfe",
+                  "original_source_line": "**Status:** COMPLETE BLOCK-LEVEL AUDIT / REAL DRIFT REPRODUCED / SOURCE-VAULT WORKSTREAM MIGRATION NEED IDENTIFIED / CURRENT AUTHORITY NOT SWITCHED"
+                },
+                {
+                  "line": 7,
+                  "original_line_sha256": "7ef5f59437ce0eb0a8be9fe7f0108ac67d0c51c87376c93a712b82e8bd5db9d8",
+                  "original_source_line": "**Scope:** Decompose the real `docs/CURRENT_STATE.md` by future semantic role, bind every audited block to exact source bytes, reproduce current-state drift against stronger repository authority, and identify which material current facts need a new canonical owner before Candidate 01 may treat the global surface as derived."
+                },
+                {
+                  "line": 8,
+                  "original_line_sha256": "63328c8443a39a57391d50b5a45e3a4df79f743a9fbce13292f0b94db62a3ee8",
+                  "original_source_line": "**Authority:** Architecture/migration evidence only. The current `CURRENT_STATE.md` remains operational authority until an explicit qualified transition."
+                },
+                {
+                  "line": 130,
+                  "original_line_sha256": "557bc22ee7bef81ba3d658b0a16b6eb9c9dfa949ee914a31c187a39954860832",
+                  "original_source_line": "> Create one durable Source Vault bootstrap workstream source that owns current state, pause reason, return condition, dependencies, resume target and current anchor while retaining links to the runbook/checkpoint evidence."
+                }
+              ],
+              "original_source_sha256": "51cef534cdf40a72fda8be52b098ce48a9a42c1954f780550acb41c301d2faf2",
+              "path": "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+              "source_rank": 2
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "73e81e9c2fd979ccee84a9c8774565f8b4595972f8ac2cee137deaab5ee38749",
+                  "original_source_line": "# Checkpoint 550: PKA-G108 Current Authority Confirmed, Integrity Next"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "d04fbeed47b4c9e22c16e57b4795b169806306a390651c2483df0281c0c54d8e",
+                  "original_source_line": "**Status:** PKA-G108 ACCEPTED / PKA-G101..PKA-G108 PASS / W1 IN PROGRESS / G109 NEXT"
+                },
+                {
+                  "line": 7,
+                  "original_line_sha256": "2b5ded0ad756f6d34782443409387852b448544b80bdb2eae9ed58163fbdea40",
+                  "original_source_line": "**Scope:** Accept the explicit current-continuity operational-authority boundary after W1 live semantic migration; stop before final W1 gate PKA-G109."
+                },
+                {
+                  "line": 8,
+                  "original_line_sha256": "a77b27372570929c172044770ac1cad2ddfe641a6779afc57917b013ef6d1455",
+                  "original_source_line": "**Authority:** Specification 028 remains governing. Research 201 records G108 evidence. Current continuity remains operational authority."
+                },
+                {
+                  "line": 30,
+                  "original_line_sha256": "1b90768b7dbad11877ec3048d323cebf96cb24f4786232d33c390237c6bc6f7a",
+                  "original_source_line": "W1 successor semantic owners and derived views remain subordinate to the current continuity architecture. The architecture documentation now reflects the actual W0/W1 implementation state without changing the W8-only authority-switch contract."
+                }
+              ],
+              "original_source_sha256": "54427409aa5200a0feef027ec138f32d7dbcf021d2277f69238f17f051dedfbb",
+              "path": "docs/checkpoints/550_pka_g108_current_authority_confirmed_integrity_next.md",
+              "source_rank": 3
+            }
+          ],
+          "claims": [
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 1,
+                  "source_rank": 1
+                },
+                {
+                  "line": 5,
+                  "source_rank": 1
+                }
+              ],
+              "claim_id": "C01",
+              "statement": "Specification 025 is the governed integrity/continuity source."
+            },
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 4,
+                  "source_rank": 1
+                }
+              ],
+              "claim_id": "C02",
+              "statement": "Its historical status is frozen with implementation pending."
+            }
+          ],
+          "variant": "VARIANT_A"
+        },
+        {
+          "answer": "The matching source is Specification 025, \u201cV1 Governed Repository Integrity and Continuity Hardening\u201d. The selected original lines identify continuity bootstrap and repository-integrity requirements and mark the specification \u201cFROZEN / IMPLEMENTATION PENDING\u201d. That describes an archived implementation contract, not a completed installation.",
+          "available_evidence": [
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "0e346beaa790fb777bdca66486b12ef7eb766f4793a4852e9976dffe6b31c221",
+                  "original_source_line": "# Current State"
+                },
+                {
+                  "line": 3,
+                  "original_line_sha256": "8576398fa1dd4cfc9dd9d68bc582befab4b74ffea3a0ad0a4d600dd6f07fdbc5",
+                  "original_source_line": "**Checkpoint:** 899"
+                },
+                {
+                  "line": 5,
+                  "original_line_sha256": "9534ca61c709f51870dec81ddb00445527c1d6c40a2b97414c3c36ceca5cace2",
+                  "original_source_line": "**Active development branch:** `v1-source-vault-bootstrap-resume`"
+                },
+                {
+                  "line": 8,
+                  "original_line_sha256": "4fe809b524b09445b109d2f0a83da404e89f6ee0de86d6a1c45a4280bbcba72e",
+                  "original_source_line": "**Latest specification:** Specification 028"
+                },
+                {
+                  "line": 9,
+                  "original_line_sha256": "86bf116a7370aa4230af3f2a7b21fe68b49871b488d2caa1c1f5fd9e08092909",
+                  "original_source_line": "**Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no GENERIC / ADS_HORIZON / ORACLE_HORIZON comparison may be inferred."
+                }
+              ],
+              "original_source_sha256": "54bcb132f12ceffd330540006a8099179a260f751da7b4269253b6aef87edcaa",
+              "path": "docs/CURRENT_STATE.md",
+              "source_rank": 1
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "1f289be963caf69e7875e7984d5a1523c2f97aaf6c7c74929cd05f2c3a6ec07a",
+                  "original_source_line": "# Specification 025 \u2014 V1 Governed Repository Integrity and Continuity Hardening"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "b0a98edfab5a38d9b1ca44a85954c5ea37b56b8b9585fc4eb8331fd34f2e0105",
+                  "original_source_line": "**Status:** FROZEN / IMPLEMENTATION PENDING  "
+                },
+                {
+                  "line": 5,
+                  "original_line_sha256": "25136d45a915e895afe9136e911fd430356036219fcc371ef938d3155782730a",
+                  "original_source_line": "**Scope:** Prospective typed repository-integrity contracts, branch-scoped live-state freshness, explicit continuity bootstrap routing, public/private integrity separation, deterministic validation, and chat-rotation preflight.  "
+                },
+                {
+                  "line": 10,
+                  "original_line_sha256": "193b6c108e9021df60b5431ed2e0b1499ddaedff51ecf9a387d8ae1bb0d7e62d",
+                  "original_source_line": "This specification freezes the first implementation boundary derived from Research 106 and the resolved MC-0008 repository-integrity review."
+                },
+                {
+                  "line": 16,
+                  "original_line_sha256": "0770b56eb25a7591186dae949de9d9f65f6639820bb1f53428134c70236c044f",
+                  "original_source_line": "No implementation conforming to this specification may weaken the Source Vault bootstrap gates or change source-artifact authority. Repository integrity hardening and Source Universe ingestion remain separate concerns."
+                }
+              ],
+              "original_source_sha256": "788e3162fc823d21eca176646e7e5c96090cfd7dd971f3f3e918414c278b5cdd",
+              "path": "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+              "source_rank": 2
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "55014cace8283815b0bfbc6e5801a9d15504e5591676af506cdce60239b3dec8",
+                  "original_source_line": "# Decisions"
+                },
+                {
+                  "line": 9,
+                  "original_line_sha256": "7734c2c2403936056b0dd10e14a218429f18882736e1fac1ad584b487a07d443",
+                  "original_source_line": "**Status:** Accepted  "
+                },
+                {
+                  "line": 22,
+                  "original_line_sha256": "7734c2c2403936056b0dd10e14a218429f18882736e1fac1ad584b487a07d443",
+                  "original_source_line": "**Status:** Accepted  "
+                },
+                {
+                  "line": 35,
+                  "original_line_sha256": "2bdf688d6c37e715045f1f6503a2da19bdae46b657cb78128123239b621f58d5",
+                  "original_source_line": "**Status:** Superseded in current repository state; the repository is now public  "
+                },
+                {
+                  "line": 51,
+                  "original_line_sha256": "7734c2c2403936056b0dd10e14a218429f18882736e1fac1ad584b487a07d443",
+                  "original_source_line": "**Status:** Accepted  "
+                }
+              ],
+              "original_source_sha256": "1cb6dd610536781e6bdbd02ab30891f922610a90437a02c36057ca264a8a09b5",
+              "path": "docs/DECISIONS.md",
+              "source_rank": 3
+            }
+          ],
+          "claims": [
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 1,
+                  "source_rank": 2
+                },
+                {
+                  "line": 5,
+                  "source_rank": 2
+                }
+              ],
+              "claim_id": "C01",
+              "statement": "Specification 025 covers integrity contracts and explicit continuity bootstrap routing."
+            },
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 4,
+                  "source_rank": 2
+                }
+              ],
+              "claim_id": "C02",
+              "statement": "Its source header records implementation pending."
+            }
+          ],
+          "variant": "VARIANT_B"
+        }
+      ]
+    },
+    {
+      "case_id": "P06",
+      "question": "What was the outcome of the controlled-subject navigation architecture experiment, and was its subject model accepted?",
+      "variants": [
+        {
+          "answer": "The retrieved Research 217 result says T1 was accepted and the controlled-subject architecture was frozen. That acceptance applies to the W5 design and calibration, not to production deployment: its authority clause explicitly excludes new production navigation metadata and a change of source or operational authority.",
+          "available_evidence": [
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "7950297f9ecdd4c76a70c624eef07260e8ae64c22585362a8fe37907815febed",
+                  "original_source_line": "# Research 156: Real CURRENT_STATE Decomposition and Source-Ownership Audit"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "adb15ab8bc9813d6f86e96a4432a9d85241dbfd72be53e58889dc32c85180dfe",
+                  "original_source_line": "**Status:** COMPLETE BLOCK-LEVEL AUDIT / REAL DRIFT REPRODUCED / SOURCE-VAULT WORKSTREAM MIGRATION NEED IDENTIFIED / CURRENT AUTHORITY NOT SWITCHED"
+                },
+                {
+                  "line": 7,
+                  "original_line_sha256": "7ef5f59437ce0eb0a8be9fe7f0108ac67d0c51c87376c93a712b82e8bd5db9d8",
+                  "original_source_line": "**Scope:** Decompose the real `docs/CURRENT_STATE.md` by future semantic role, bind every audited block to exact source bytes, reproduce current-state drift against stronger repository authority, and identify which material current facts need a new canonical owner before Candidate 01 may treat the global surface as derived."
+                },
+                {
+                  "line": 8,
+                  "original_line_sha256": "63328c8443a39a57391d50b5a45e3a4df79f743a9fbce13292f0b94db62a3ee8",
+                  "original_source_line": "**Authority:** Architecture/migration evidence only. The current `CURRENT_STATE.md` remains operational authority until an explicit qualified transition."
+                },
+                {
+                  "line": 86,
+                  "original_line_sha256": "6ab1a8f1b516bf633d81c94317d559a59981ca8cd6eadd4a8354ed8425a10adc",
+                  "original_source_line": "The interaction/session block is useful provenance but is not durable project truth. The latest free-form stage paragraph is useful human/model orientation but must not be the unique home of accepted facts."
+                }
+              ],
+              "original_source_sha256": "51cef534cdf40a72fda8be52b098ce48a9a42c1954f780550acb41c301d2faf2",
+              "path": "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+              "source_rank": 1
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "03e3c31facf5d13227861d9f7101818bd4fbd2d6a47771469034a7a3f059e160",
+                  "original_source_line": "# Research 217: W5 T1 V0.2 Controlled Subject Architecture Acceptance"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "f862c96f5d49daf2950462246a0903cf9ea4b3be569abfc7d14fd0c5ae6e4009",
+                  "original_source_line": "**Status:** T1 ACCEPTED / CONTROLLED SUBJECT ARCHITECTURE FROZEN"
+                },
+                {
+                  "line": 11,
+                  "original_line_sha256": "3f78ec3ba6a6ad95516f89a9bc744ad56d11eac750daa4153a663328ee9e60e1",
+                  "original_source_line": "**Scope:** Reconcile the V0.2 deterministic 65-carrier experiment and the second blind 24-carrier calibration, freeze the V1 semantic-subject contract, and identify bounded definition clarifications for production realization."
+                },
+                {
+                  "line": 12,
+                  "original_line_sha256": "2c4f487ff9a7844bf8e65321fb7525ca6b550ee1baeff45c82eeb35a1bfc2a50",
+                  "original_source_line": "**Authority:** W5 design result only. This does not yet add navigation metadata to production sources, change source authority, replace the legacy Knowledge Map, begin broad semantic migration, or switch operational authority."
+                },
+                {
+                  "line": 18,
+                  "original_line_sha256": "cc58cf70a8686c08b938863d19964670aba163cc6dfafab1fe507801971279e1",
+                  "original_source_line": "T1 therefore tested whether a small controlled semantic-subject vocabulary could organize real repository knowledge without:"
+                }
+              ],
+              "original_source_sha256": "1a45aa417851c65be8b2455b9a81a32c2e2273a529b5716c6ebb4c1f736e73d4",
+              "path": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+              "source_rank": 2
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "a895409692b2062c1c86c602c548e36df43168a94f2d8c20b0081b2c5e2de2e4",
+                  "original_source_line": "# Research 312: Specification 028 Reconciliation and AO-10 Realization Candidate V0.1"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "337f8cc9d5c5a00a475faf72d4a4915d08ee89b822059c5f22a7b2d14fef25a1",
+                  "original_source_line": "**Status:** SPECIFICATION 028 RECONCILIATION V0.1 FROZEN / AO-10 REALIZATION CANDIDATE V0.1 FROZEN / MC-0029 INDEPENDENT REVIEW OPENED / NO PRODUCTION IMPLEMENTATION / NO PHYSICAL MIGRATION"
+                },
+                {
+                  "line": 6,
+                  "original_line_sha256": "ea59e6b8e9358e59a5b47ae94ac00693b2ad67c1d15d9b5df189a6fa2dbf2166",
+                  "original_source_line": "**Accepted architecture inputs:** Research 256, Research 259, Research 272, Research 276, Research 309, Research 310, Research 311"
+                },
+                {
+                  "line": 11,
+                  "original_line_sha256": "90576cfc81b9ddee0545e4ef8c3bfb787b7ede2ae2b19eb9c91df1588cf035fc",
+                  "original_source_line": "**Scope:** Reconcile every numbered section of Specification 028 against the accepted R5-R8 architecture and AO-3 through AO-9 decisions, derive a concrete AO-10 realization candidate without inheriting current implementation mechanisms by default, and freeze an independent-review target before any production mutation."
+                },
+                {
+                  "line": 12,
+                  "original_line_sha256": "642b837bf544a60b4a2a6a3ad19918294bf1ae7ac6be519cb81f6f8dfa60e113",
+                  "original_source_line": "**Authority:** Research candidate only. Specification 028 remains current implementation/migration authority until an explicit prospective successor or amendment is accepted."
+                }
+              ],
+              "original_source_sha256": "58a77b5e9fed4008b9b7ed78a972d8063ca4be7d9dbf557256203572f275ec33",
+              "path": "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+              "source_rank": 3
+            }
+          ],
+          "claims": [
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 1,
+                  "source_rank": 2
+                },
+                {
+                  "line": 4,
+                  "source_rank": 2
+                }
+              ],
+              "claim_id": "C01",
+              "statement": "Research 217 records T1 accepted and the subject model frozen."
+            },
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 11,
+                  "source_rank": 2
+                },
+                {
+                  "line": 12,
+                  "source_rank": 2
+                }
+              ],
+              "claim_id": "C02",
+              "statement": "The source's authority scope excludes production metadata installation and authority replacement."
+            }
+          ],
+          "variant": "VARIANT_A"
+        },
+        {
+          "answer": "Research 217 records the W5 T1 V0.2 controlled-subject navigation result as \u201cT1 ACCEPTED / CONTROLLED SUBJECT ARCHITECTURE FROZEN\u201d. Its accepted scope was a design experiment and subject contract. The source explicitly says this did not yet install navigation metadata in production sources or switch operational authority.",
+          "available_evidence": [
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "03e3c31facf5d13227861d9f7101818bd4fbd2d6a47771469034a7a3f059e160",
+                  "original_source_line": "# Research 217: W5 T1 V0.2 Controlled Subject Architecture Acceptance"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "f862c96f5d49daf2950462246a0903cf9ea4b3be569abfc7d14fd0c5ae6e4009",
+                  "original_source_line": "**Status:** T1 ACCEPTED / CONTROLLED SUBJECT ARCHITECTURE FROZEN"
+                },
+                {
+                  "line": 11,
+                  "original_line_sha256": "3f78ec3ba6a6ad95516f89a9bc744ad56d11eac750daa4153a663328ee9e60e1",
+                  "original_source_line": "**Scope:** Reconcile the V0.2 deterministic 65-carrier experiment and the second blind 24-carrier calibration, freeze the V1 semantic-subject contract, and identify bounded definition clarifications for production realization."
+                },
+                {
+                  "line": 12,
+                  "original_line_sha256": "2c4f487ff9a7844bf8e65321fb7525ca6b550ee1baeff45c82eeb35a1bfc2a50",
+                  "original_source_line": "**Authority:** W5 design result only. This does not yet add navigation metadata to production sources, change source authority, replace the legacy Knowledge Map, begin broad semantic migration, or switch operational authority."
+                },
+                {
+                  "line": 18,
+                  "original_line_sha256": "cc58cf70a8686c08b938863d19964670aba163cc6dfafab1fe507801971279e1",
+                  "original_source_line": "T1 therefore tested whether a small controlled semantic-subject vocabulary could organize real repository knowledge without:"
+                }
+              ],
+              "original_source_sha256": "1a45aa417851c65be8b2455b9a81a32c2e2273a529b5716c6ebb4c1f736e73d4",
+              "path": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+              "source_rank": 1
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "7950297f9ecdd4c76a70c624eef07260e8ae64c22585362a8fe37907815febed",
+                  "original_source_line": "# Research 156: Real CURRENT_STATE Decomposition and Source-Ownership Audit"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "adb15ab8bc9813d6f86e96a4432a9d85241dbfd72be53e58889dc32c85180dfe",
+                  "original_source_line": "**Status:** COMPLETE BLOCK-LEVEL AUDIT / REAL DRIFT REPRODUCED / SOURCE-VAULT WORKSTREAM MIGRATION NEED IDENTIFIED / CURRENT AUTHORITY NOT SWITCHED"
+                },
+                {
+                  "line": 7,
+                  "original_line_sha256": "7ef5f59437ce0eb0a8be9fe7f0108ac67d0c51c87376c93a712b82e8bd5db9d8",
+                  "original_source_line": "**Scope:** Decompose the real `docs/CURRENT_STATE.md` by future semantic role, bind every audited block to exact source bytes, reproduce current-state drift against stronger repository authority, and identify which material current facts need a new canonical owner before Candidate 01 may treat the global surface as derived."
+                },
+                {
+                  "line": 8,
+                  "original_line_sha256": "63328c8443a39a57391d50b5a45e3a4df79f743a9fbce13292f0b94db62a3ee8",
+                  "original_source_line": "**Authority:** Architecture/migration evidence only. The current `CURRENT_STATE.md` remains operational authority until an explicit qualified transition."
+                },
+                {
+                  "line": 86,
+                  "original_line_sha256": "6ab1a8f1b516bf633d81c94317d559a59981ca8cd6eadd4a8354ed8425a10adc",
+                  "original_source_line": "The interaction/session block is useful provenance but is not durable project truth. The latest free-form stage paragraph is useful human/model orientation but must not be the unique home of accepted facts."
+                }
+              ],
+              "original_source_sha256": "51cef534cdf40a72fda8be52b098ce48a9a42c1954f780550acb41c301d2faf2",
+              "path": "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+              "source_rank": 2
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "e647503f499c17c0364bb8d7efeb05fb204cdf400a05aaf4a023d104c7d3838b",
+                  "original_source_line": "# Foundation 010: Minimum Falsification Prototype and Experimental Contract"
+                },
+                {
+                  "line": 5,
+                  "original_line_sha256": "6e5cd488806b1124896026a3f7bbe99cfa991e752a29117ada82d2b7fc311601",
+                  "original_source_line": "This foundation defines the smallest end-to-end experimental prototype that can test whether the core semantic architecture of the Autonomous Data Science System is worth its added complexity."
+                },
+                {
+                  "line": 9,
+                  "original_line_sha256": "b3acc72bcc59e42a657582fa5e75970203ec54cd3a5c75445400a696acf055dc",
+                  "original_source_line": "The next step is not a production implementation. It is a controlled experiment."
+                },
+                {
+                  "line": 15,
+                  "original_line_sha256": "ccfab3148409b91c7b797f234669c9d75f5d1e782ec6a7715436db3ad17ddc66",
+                  "original_source_line": "The prototype should test this question while minimizing unrelated architecture."
+                },
+                {
+                  "line": 43,
+                  "original_line_sha256": "71a8f3c4f9e49401c40ba7bb8900089320a56d55ea4872fe408f8377b525944e",
+                  "original_source_line": "The intellectual claim under test is whether this semantic spine adds reliability beyond a strong general-purpose reasoning model."
+                }
+              ],
+              "original_source_sha256": "c08de226ff2878e1da1dae7a6cc55114000c881da021c94439288868706e2379",
+              "path": "docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md",
+              "source_rank": 3
+            }
+          ],
+          "claims": [
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 1,
+                  "source_rank": 1
+                },
+                {
+                  "line": 4,
+                  "source_rank": 1
+                }
+              ],
+              "claim_id": "C01",
+              "statement": "The T1 controlled-subject architecture was accepted and its design frozen."
+            },
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 11,
+                  "source_rank": 1
+                },
+                {
+                  "line": 12,
+                  "source_rank": 1
+                }
+              ],
+              "claim_id": "C02",
+              "statement": "Acceptance was limited to W5 design, not production source metadata or an authority switch."
+            }
+          ],
+          "variant": "VARIANT_B"
+        }
+      ]
+    },
+    {
+      "case_id": "P07",
+      "question": "What document establishes the physical architecture realization requirements and the independent design charter?",
+      "variants": [
+        {
+          "answer": "Research 503, \u201cR0 realization requirements and independent physical-architecture design charter\u201d, is the requested document. It freezes the realization-stage requirements and independent-design protocol, but records physical design as the next step rather than a completed owner-selected target. Specification 028 remains the authority described in that archived charter.",
+          "available_evidence": [
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "3190ed181b0cf6242306dc82f324662905d8a4663779f487f819f54bdaf00a42",
+                  "original_source_line": "# Research 503: R0 realization requirements and independent physical-architecture design charter"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "1822b7a3cd75a0d4a101c2f03c825c5645102dcd79e9131370a981ba59829ce1",
+                  "original_source_line": "**Status:** R0 CHARTER FROZEN / INDEPENDENT PHYSICAL ARCHITECTURE DESIGN NEXT"
+                },
+                {
+                  "line": 9,
+                  "original_line_sha256": "251faff40473b681faef473262741c283dd7e4429f42bd5a7882e1ce174d85bd",
+                  "original_source_line": "**Scope:** Freeze the realization-stage requirements, design freedom, evaluation dimensions, and independent-design protocol before any concrete physical architecture candidate is selected."
+                },
+                {
+                  "line": 10,
+                  "original_line_sha256": "42c420375c93d4f6140a9c33bddacf60b10af40bca1fc148ebbd08b658a76f96",
+                  "original_source_line": "**Authority:** Realization-design charter only. Specification 028 remains current operational authority. No physical architecture, implementation, migration wave, branch strategy, storage choice, or cutover is selected here."
+                },
+                {
+                  "line": 14,
+                  "original_line_sha256": "ebcb95c44abcef2d18da8c213252e3c1882322ea1c61c1804771dbb87c1736c7",
+                  "original_source_line": "R0 converts the selected logical architecture into a professional physical/software realization design."
+                }
+              ],
+              "original_source_sha256": "eadf86eb4803ed442643ecd656bc2c8d44b281ba9f0dc20b8948eb85c437fcaa",
+              "path": "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+              "source_rank": 1
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "7d31a20c74d7962fc66cd130bbf4062ac90f7897b88348af9c3acbd6687d6078",
+                  "original_source_line": "# Research 272: WMR-H V0.3 Owner Acceptance, MC-0027 Closure, and Assurance-Architecture Entry"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "db187712aa8befcb9fc23e93f6587e5da7567c6f8a7c1cd0b3536565a03e89e2",
+                  "original_source_line": "**Status:** R8-B REPRESENTATION ARCHITECTURE ACCEPTED / MC-0027 RESOLVED / ASSURANCE ARCHITECTURE UNBLOCKED / NO PHYSICAL MIGRATION"
+                },
+                {
+                  "line": 6,
+                  "original_line_sha256": "c1f8babb67780f018c53800b5f149217a0f9a321e7310f8e5f1fd008d9738bcc",
+                  "original_source_line": "**Representation requirements:** Research 260"
+                },
+                {
+                  "line": 13,
+                  "original_line_sha256": "cf06ba630fa7ecc7efad695f8f130ee085be731ed9b88d1c12949661c0c155d2",
+                  "original_source_line": "**Scope:** Record the project owner's explicit acceptance of WMR-H V0.3 as the target R8-B representation architecture direction, resolve MC-0027, preserve the exact meaning and limits of that acceptance, and unblock first-principles assurance / verification / CI-CD architecture design."
+                },
+                {
+                  "line": 29,
+                  "original_line_sha256": "e30434f7f339c9f5efddcfa71094063c7f7faf84c93ffe4ce9fdd2c17babb615",
+                  "original_source_line": "        independent architecture candidates"
+                }
+              ],
+              "original_source_sha256": "0cc45f3d9b6903e16b1ad7503518b40c5705e1cd82430e761feaf409d0373432",
+              "path": "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+              "source_rank": 2
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "82d19e704365e7bc6bd988261e1b7d2ec637fbeead66145fe24658195d699a1a",
+                  "original_source_line": "# Research 591: R0-P03 historical evidence review population and scored-author boundary"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "b64c0394c818016cac614c87f4e42df7a66e04d664e50748a3ad4743b4f0bee4",
+                  "original_source_line": "**Status:** 2133_PINNED_REVIEW_RECORDS_REPRODUCIBLE / NONE_ADMITTED / INDEPENDENT_SOURCE_ADJUDICATION_PENDING"
+                },
+                {
+                  "line": 5,
+                  "original_line_sha256": "3c42b6f0784cae571cd40b676d157fcb498d82e2ee4b3ed02927d1213b76b346",
+                  "original_source_line": "**Scope:** After Research 590's whole-frontend source-family repair, identify exact historical checkpoint/research/validation evidence missing from the non-scored 406-source candidate. Prevent either blanket exclusion of necessary evidence or blanket inclusion of prior experiment designs and old relevance labels."
+                },
+                {
+                  "line": 12,
+                  "original_line_sha256": "44db91a12181437bf595a760d0b7f70fda7027c7dd8f9a120a030734dc7a82c1",
+                  "original_source_line": "The prior 406-carrier candidate now includes all 210 textual historical frontend files but excludes many other source classes necessary to distinguish proposed architecture from actual realization, status, validation and recovery. The broad Research 560 path-role census already assessed wider sources; this work instead measures the *remaining* review obligations relative to the specific 406-source candidate. It does not redefine source authority, invent tasks, or replace the common 60/20 scored corpus method."
+                },
+                {
+                  "line": 44,
+                  "original_line_sha256": "1ee81063746db7a5e119daed7614e48fb59c5b6fae05abaafad0d2c5fffd33a3",
+                  "original_source_line": "Multiple lexical signals in one document count as one flagged record; absence of those signals is **not** a source-neutrality certificate, and a flagged document is not automatically irrelevant to a real task. The ten unsupported formats are not a finding that their content is unnecessary. Old W5/Research 217 gold, prospective R0-P03 design, Research 513, known comparison indicators and test-result terms require semantic exposure review, not lexical scoring."
+                }
+              ],
+              "original_source_sha256": "de313a7bc8f493213e9eab6e20517399b9b82f1a6698a58d3796b00bc958dfe9",
+              "path": "docs/research/591_r0_p03_historical_evidence_review_population_and_author_admission_boundary.md",
+              "source_rank": 3
+            }
+          ],
+          "claims": [
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 1,
+                  "source_rank": 1
+                },
+                {
+                  "line": 9,
+                  "source_rank": 1
+                }
+              ],
+              "claim_id": "C01",
+              "statement": "Research 503 is the R0 independent physical-design charter."
+            },
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 4,
+                  "source_rank": 1
+                },
+                {
+                  "line": 10,
+                  "source_rank": 1
+                }
+              ],
+              "claim_id": "C02",
+              "statement": "The source freezes the charter but says no physical architecture or migration is selected."
+            }
+          ],
+          "variant": "VARIANT_A"
+        },
+        {
+          "answer": "The relevant record is Research 503, the R0 realization requirements and independent physical-architecture design charter. It defines the design freedom, evaluation dimensions and independent-design process; its status is a frozen charter with design next, not a selected physical realization or cutover.",
+          "available_evidence": [
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "9f8ac6ab6794367a8e08484a0ee49904a13b5e423536f2e04dcb939a81a180fe",
+                  "original_source_line": "# Foundation 023: User-Configurable Cockpit Appearance and Semantic Invariants"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "bb1618e1493d08a007044363dd7b08f3aed7e51c619a49947f989922c6ef81e1",
+                  "original_source_line": "**Status:** Foundational product-interface direction  "
+                },
+                {
+                  "line": 5,
+                  "original_line_sha256": "db7f26da3b94b2f089a78ea160c53fd93a84970632dd530947833ba9ba02dc52",
+                  "original_source_line": "**Scope:** Durable separation between Cockpit semantic meaning and user-configurable visual presentation. Does not freeze final settings persistence, theme inventory, team-sharing behavior, or final production component implementation.  "
+                },
+                {
+                  "line": 10,
+                  "original_line_sha256": "a6fc5630e544ccf6deaf8a75f26d7f3aec2693a64ff9738b1131322075e4006d",
+                  "original_source_line": "**Conversation title:** 08 - Project Cockpit Design Exploration"
+                },
+                {
+                  "line": 47,
+                  "original_line_sha256": "c44c907784624fa0aa2e5db6d05a2c635084a9a6adf6b1fd8df01a5eefa6e6a3",
+                  "original_source_line": "Current evidence establishes the following work-unit category marker mapping for the active design direction:"
+                }
+              ],
+              "original_source_sha256": "0d670019e7c86decb33fb193aea84db1faae49251a50fd9786a6a4a529bc551e",
+              "path": "docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md",
+              "source_rank": 1
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "0b19a276bd9e8c713bffcc8bfd511b0fe48042482feb8d5a94738f709ebdf9e4",
+                  "original_source_line": "# Foundation 022: Source Universe, Artifact Integrity, and Evidence Provenance Architecture"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "734d0372e2098ea359f3b4c5f6e883aca6470b64ccb37cf331ea83f1cd093faf",
+                  "original_source_line": "**Status:** Accepted conceptual foundation for the source/evidence substrate  "
+                },
+                {
+                  "line": 5,
+                  "original_line_sha256": "3c266f2b8a30dc0fa16754869652f103916aa75a3b24ae93eb5d8c576367a482",
+                  "original_source_line": "**Authority:** Current architectural foundation for source identity, original-artifact preservation, derived-source lineage, and evidence provenance. It is subordinate to current project-wide principles and does not freeze the final storage provider, complete source ontology, parser stack, or knowledge-evidence vocabulary.  "
+                },
+                {
+                  "line": 7,
+                  "original_line_sha256": "ec84c29c51f9470c37180715e99db021a5d24e6557b3566e7c1853993cfdd6a6",
+                  "original_source_line": "**Numbering note:** This foundation is the canonical renumbering of the source-universe foundation originally drafted as Foundation 021. Foundation 021 was already occupied by the professional product/interface foundation. The renumbering is administrative only and does not change the accepted source architecture."
+                },
+                {
+                  "line": 85,
+                  "original_line_sha256": "c79702112de3e8e3ee868e483b2dc908d7785f81dc5c5ad875ccc147fd15e0b4",
+                  "original_source_line": "Courses, reading lists, evidence bundles, standards families, and similar groupings are represented as source collections rather than physical folders becoming semantic truth."
+                }
+              ],
+              "original_source_sha256": "7c1387f15b2781ca0a40d341803b143dedfe4f7251fbc79f97d180fde0523938",
+              "path": "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+              "source_rank": 2
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "3190ed181b0cf6242306dc82f324662905d8a4663779f487f819f54bdaf00a42",
+                  "original_source_line": "# Research 503: R0 realization requirements and independent physical-architecture design charter"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "1822b7a3cd75a0d4a101c2f03c825c5645102dcd79e9131370a981ba59829ce1",
+                  "original_source_line": "**Status:** R0 CHARTER FROZEN / INDEPENDENT PHYSICAL ARCHITECTURE DESIGN NEXT"
+                },
+                {
+                  "line": 9,
+                  "original_line_sha256": "251faff40473b681faef473262741c283dd7e4429f42bd5a7882e1ce174d85bd",
+                  "original_source_line": "**Scope:** Freeze the realization-stage requirements, design freedom, evaluation dimensions, and independent-design protocol before any concrete physical architecture candidate is selected."
+                },
+                {
+                  "line": 10,
+                  "original_line_sha256": "42c420375c93d4f6140a9c33bddacf60b10af40bca1fc148ebbd08b658a76f96",
+                  "original_source_line": "**Authority:** Realization-design charter only. Specification 028 remains current operational authority. No physical architecture, implementation, migration wave, branch strategy, storage choice, or cutover is selected here."
+                },
+                {
+                  "line": 14,
+                  "original_line_sha256": "ebcb95c44abcef2d18da8c213252e3c1882322ea1c61c1804771dbb87c1736c7",
+                  "original_source_line": "R0 converts the selected logical architecture into a professional physical/software realization design."
+                }
+              ],
+              "original_source_sha256": "eadf86eb4803ed442643ecd656bc2c8d44b281ba9f0dc20b8948eb85c437fcaa",
+              "path": "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+              "source_rank": 3
+            }
+          ],
+          "claims": [
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 1,
+                  "source_rank": 3
+                },
+                {
+                  "line": 9,
+                  "source_rank": 3
+                }
+              ],
+              "claim_id": "C01",
+              "statement": "Research 503 defines the independent physical-architecture realization charter."
+            },
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 4,
+                  "source_rank": 3
+                },
+                {
+                  "line": 10,
+                  "source_rank": 3
+                }
+              ],
+              "claim_id": "C02",
+              "statement": "The source explicitly withholds physical-target selection and migration authority."
+            }
+          ],
+          "variant": "VARIANT_B"
+        }
+      ]
+    },
+    {
+      "case_id": "P08",
+      "question": "After the Claude design critique, which governed ledger kernel candidate was retained, and was the owner physical architecture decision ready?",
+      "variants": [
+        {
+          "answer": "The retained post-critique governed-ledger candidate was `GOVERNED_LEDGER_KERNEL_V02`, recorded in Research 512. The owner physical-architecture decision was explicitly \u201cNOT READY\u201d; this was a comparative candidate only, with no production implementation, migration or authority switch.",
+          "available_evidence": [
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "9f8ac6ab6794367a8e08484a0ee49904a13b5e423536f2e04dcb939a81a180fe",
+                  "original_source_line": "# Foundation 023: User-Configurable Cockpit Appearance and Semantic Invariants"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "bb1618e1493d08a007044363dd7b08f3aed7e51c619a49947f989922c6ef81e1",
+                  "original_source_line": "**Status:** Foundational product-interface direction  "
+                },
+                {
+                  "line": 5,
+                  "original_line_sha256": "db7f26da3b94b2f089a78ea160c53fd93a84970632dd530947833ba9ba02dc52",
+                  "original_source_line": "**Scope:** Durable separation between Cockpit semantic meaning and user-configurable visual presentation. Does not freeze final settings persistence, theme inventory, team-sharing behavior, or final production component implementation.  "
+                },
+                {
+                  "line": 10,
+                  "original_line_sha256": "a6fc5630e544ccf6deaf8a75f26d7f3aec2693a64ff9738b1131322075e4006d",
+                  "original_source_line": "**Conversation title:** 08 - Project Cockpit Design Exploration"
+                },
+                {
+                  "line": 24,
+                  "original_line_sha256": "9445728e308d98a07b9973cfeb81d7e17697d1feb80413512f98f7ed640bc760",
+                  "original_source_line": "The architecture should preserve the distinction:"
+                }
+              ],
+              "original_source_sha256": "0d670019e7c86decb33fb193aea84db1faae49251a50fd9786a6a4a529bc551e",
+              "path": "docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md",
+              "source_rank": 1
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "2377b5474e21c6583e51496b51bf94a9b2a684ef1f60d5bb550369ed027e499a",
+                  "original_source_line": "# Research 512: MC-0030 Claude critique reconciliation and Governed Ledger Kernel V0.2"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "7a9233dac206d0ca98a3cbf7fd7fc2156bbf3b4c62917125812a821e9e496f0d",
+                  "original_source_line": "**Status:** CLAUDE MESSAGE 003 RECONCILED / GOVERNED LEDGER KERNEL V0.2 FROZEN / THREE-PROBE PROGRAM RETAINED / PROBE PROTOCOL PREREGISTRATION NEXT / OWNER DECISION NOT READY"
+                },
+                {
+                  "line": 8,
+                  "original_line_sha256": "c107c564107f9b9f6bc137c1e27de741ba7e5664c960b77d2a47f2ff5e12b10f",
+                  "original_source_line": "**Reconciled candidate:** GOVERNED_LEDGER_KERNEL_V02"
+                },
+                {
+                  "line": 10,
+                  "original_line_sha256": "d3e76b3a03d0d665c1b57b05658316e27831f300d6bd0398d14ca9949aac5172",
+                  "original_source_line": "**Scope:** Reconcile Claude Message 003 into the first comparative candidate, repair the acceptance/order/J2/publication/executor/private-state interfaces before probe design, and freeze the smallest decision-relevant R0 probe set without executing any probe."
+                },
+                {
+                  "line": 11,
+                  "original_line_sha256": "42928c552c1fa59b925f9dbf4bbe85435e998136a18035ec3162e51264a8d02c",
+                  "original_source_line": "**Authority:** Comparative architecture candidate only. No physical target, implementation, migration, Specification 028 amendment, Runtime Bridge extraction, production activation, or authority switch is authorized."
+                }
+              ],
+              "original_source_sha256": "40bf71219aaf9eee311241e0eabd7b034f52e0a40fe7b18a8437ea3fdfe4edf4",
+              "path": "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+              "source_rank": 2
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "017f137767ff200f696d0409c2f3dff17d2fa577896bb484d0b28bca0fa4918d",
+                  "original_source_line": "# Checkpoint 853: R0-P02 passed, R0-P01 fixture freeze next"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "2de3b80b7a0c01aede9bf7cb40cb6e4fcded698a00e037d51eba90d7f99396ad",
+                  "original_source_line": "**Status:** R0-P02 PASS / GIT GOVERNING SUBSTRATE RETAINED / R0-P01 NEXT"
+                },
+                {
+                  "line": 5,
+                  "original_line_sha256": "f612589622d48c5c9a1c58f4b1d91a5d295a8f67534dbc498ed6b620860e139f",
+                  "original_source_line": "**Checkpoint class:** R0 PHYSICAL-ARCHITECTURE DECISION PROBE CLOSURE"
+                },
+                {
+                  "line": 6,
+                  "original_line_sha256": "59f62eebf1781245ad73d9a6c961956d91b91baa11b8b54cf93fa019c3405035",
+                  "original_source_line": "**Project stage:** R0 physical-architecture decision probes"
+                },
+                {
+                  "line": 7,
+                  "original_line_sha256": "0625794f098cef27f59ce94bc5f45cce8dbc85cb750a8266115a936935a7c1ba",
+                  "original_source_line": "**Scope:** Close R0-P02 after deterministic-core and live-host PASS and route to R0-P01."
+                }
+              ],
+              "original_source_sha256": "5d3f9fdd27a761775b99f1971623ddc973ee87192f9f1faa32112660c228a0bb",
+              "path": "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+              "source_rank": 3
+            }
+          ],
+          "claims": [
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 1,
+                  "source_rank": 2
+                },
+                {
+                  "line": 8,
+                  "source_rank": 2
+                }
+              ],
+              "claim_id": "C01",
+              "statement": "Research 512 names the reconciled candidate."
+            },
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 4,
+                  "source_rank": 2
+                },
+                {
+                  "line": 11,
+                  "source_rank": 2
+                }
+              ],
+              "claim_id": "C02",
+              "statement": "The same source records owner decision not ready and limits authority to comparison."
+            }
+          ],
+          "variant": "VARIANT_A"
+        },
+        {
+          "answer": "Research 512 retained the reconciled candidate `GOVERNED_LEDGER_KERNEL_V02` after the Claude critique. Its archived status says the owner decision was not ready. The record is expressly comparative design evidence, not an accepted physical target, implementation authorization or operational authority switch.",
+          "available_evidence": [
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "2377b5474e21c6583e51496b51bf94a9b2a684ef1f60d5bb550369ed027e499a",
+                  "original_source_line": "# Research 512: MC-0030 Claude critique reconciliation and Governed Ledger Kernel V0.2"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "7a9233dac206d0ca98a3cbf7fd7fc2156bbf3b4c62917125812a821e9e496f0d",
+                  "original_source_line": "**Status:** CLAUDE MESSAGE 003 RECONCILED / GOVERNED LEDGER KERNEL V0.2 FROZEN / THREE-PROBE PROGRAM RETAINED / PROBE PROTOCOL PREREGISTRATION NEXT / OWNER DECISION NOT READY"
+                },
+                {
+                  "line": 8,
+                  "original_line_sha256": "c107c564107f9b9f6bc137c1e27de741ba7e5664c960b77d2a47f2ff5e12b10f",
+                  "original_source_line": "**Reconciled candidate:** GOVERNED_LEDGER_KERNEL_V02"
+                },
+                {
+                  "line": 10,
+                  "original_line_sha256": "d3e76b3a03d0d665c1b57b05658316e27831f300d6bd0398d14ca9949aac5172",
+                  "original_source_line": "**Scope:** Reconcile Claude Message 003 into the first comparative candidate, repair the acceptance/order/J2/publication/executor/private-state interfaces before probe design, and freeze the smallest decision-relevant R0 probe set without executing any probe."
+                },
+                {
+                  "line": 11,
+                  "original_line_sha256": "42928c552c1fa59b925f9dbf4bbe85435e998136a18035ec3162e51264a8d02c",
+                  "original_source_line": "**Authority:** Comparative architecture candidate only. No physical target, implementation, migration, Specification 028 amendment, Runtime Bridge extraction, production activation, or authority switch is authorized."
+                }
+              ],
+              "original_source_sha256": "40bf71219aaf9eee311241e0eabd7b034f52e0a40fe7b18a8437ea3fdfe4edf4",
+              "path": "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+              "source_rank": 1
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "017f137767ff200f696d0409c2f3dff17d2fa577896bb484d0b28bca0fa4918d",
+                  "original_source_line": "# Checkpoint 853: R0-P02 passed, R0-P01 fixture freeze next"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "2de3b80b7a0c01aede9bf7cb40cb6e4fcded698a00e037d51eba90d7f99396ad",
+                  "original_source_line": "**Status:** R0-P02 PASS / GIT GOVERNING SUBSTRATE RETAINED / R0-P01 NEXT"
+                },
+                {
+                  "line": 5,
+                  "original_line_sha256": "f612589622d48c5c9a1c58f4b1d91a5d295a8f67534dbc498ed6b620860e139f",
+                  "original_source_line": "**Checkpoint class:** R0 PHYSICAL-ARCHITECTURE DECISION PROBE CLOSURE"
+                },
+                {
+                  "line": 6,
+                  "original_line_sha256": "59f62eebf1781245ad73d9a6c961956d91b91baa11b8b54cf93fa019c3405035",
+                  "original_source_line": "**Project stage:** R0 physical-architecture decision probes"
+                },
+                {
+                  "line": 7,
+                  "original_line_sha256": "0625794f098cef27f59ce94bc5f45cce8dbc85cb750a8266115a936935a7c1ba",
+                  "original_source_line": "**Scope:** Close R0-P02 after deterministic-core and live-host PASS and route to R0-P01."
+                }
+              ],
+              "original_source_sha256": "5d3f9fdd27a761775b99f1971623ddc973ee87192f9f1faa32112660c228a0bb",
+              "path": "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+              "source_rank": 2
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "6cbc617baf3dd7408bfd47b43171926799742765d8636b9dba098e0574bc5ccf",
+                  "original_source_line": "# Research 522: R0-P01 harness implementation qualification and freeze"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "9d4696b6e347186ae3a30da8a97f11ab8261993cb0bfc1b9455a0955c88d6c52",
+                  "original_source_line": "**Status:** ACCEPT_AFTER_BOUNDED_REPAIR / HARNESS QUALIFIED AND FROZEN / OWNER EXECUTION NEXT"
+                },
+                {
+                  "line": 6,
+                  "original_line_sha256": "1240bfcd78af90eba28a1cf479da970f296f2af1a0a65b5817babdecaf859627",
+                  "original_source_line": "**Candidate:** GOVERNED_LEDGER_KERNEL_V02"
+                },
+                {
+                  "line": 9,
+                  "original_line_sha256": "779e293ae8c6e15feb2fdaf3bce1bc806b3cb0ebecb5af6716b2c7da429b4286",
+                  "original_source_line": "**Authority:** Probe implementation qualification only. No owner execution or P01 result; no physical-target selection, production implementation, migration, Runtime Bridge extraction, Specification 028 amendment or authority switch."
+                },
+                {
+                  "line": 22,
+                  "original_line_sha256": "5493c3b71de0fbbfb09197d04870dd24d99604d770b8ba7aec3b84647fd4f0eb",
+                  "original_source_line": "This violated the already-frozen P01-C16 attempt boundary. It was an implementation defect, not an architecture or contract defect. No owner execution had begun and no P01 result had been observed, so a bounded pretrial repair was legitimate. Codex repaired only harness.py; score.py, webauthn_server.mjs and the frozen contracts were unchanged. ChatGPT independently inspected and requalified the repair with disposition ACCEPT_AFTER_BOUNDED_REPAIR."
+                }
+              ],
+              "original_source_sha256": "b06302ff4c2d87987d976e149d964f52c8772808a055cb952433566790094869",
+              "path": "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+              "source_rank": 3
+            }
+          ],
+          "claims": [
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 1,
+                  "source_rank": 1
+                },
+                {
+                  "line": 8,
+                  "source_rank": 1
+                }
+              ],
+              "claim_id": "C01",
+              "statement": "The reconciled candidate is GOVERNED_LEDGER_KERNEL_V02."
+            },
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 4,
+                  "source_rank": 1
+                },
+                {
+                  "line": 11,
+                  "source_rank": 1
+                }
+              ],
+              "claim_id": "C02",
+              "statement": "The owner decision was not ready and the candidate had no physical selection or migration authority."
+            }
+          ],
+          "variant": "VARIANT_B"
+        }
+      ]
+    }
+  ],
+  "contains_model_author_self_coverage": false,
+  "contains_original_reference_answers": false,
+  "independent_reviewer_has_prior_original_gold": false,
+  "packet_id": "R0_P03_ROUTE_B_MASKED_REVIEW_P05_TO_P08_V01",
+  "question_source_arms": 2,
+  "review_protocol": "ROUTE_B_TREATMENT_MASKED_CLAIM_REVIEW_CONTRACT_V01.md",
+  "source_git_pin": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+  "treatment_labels_masked": true,
+  "warning": "Only these cited original source lines may support judgments; do not supplement from repository, outside context or previous answers."
+}

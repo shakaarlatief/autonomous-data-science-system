@@ -1,0 +1,1033 @@
+{
+  "case_span": [
+    "P01",
+    "P04"
+  ],
+  "cases": [
+    {
+      "case_id": "P01",
+      "question": "At the archived project state, what checkpoint was current and which branch was being used for ongoing development?",
+      "variants": [
+        {
+          "answer": "The retrieved excerpts do not establish the checkpoint or active development branch at the archived revision. Specification 025 discusses a prospective system for branch-scoped freshness and continuity routing, rather than recording those two values.",
+          "available_evidence": [
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "1f289be963caf69e7875e7984d5a1523c2f97aaf6c7c74929cd05f2c3a6ec07a",
+                  "original_source_line": "# Specification 025 \u2014 V1 Governed Repository Integrity and Continuity Hardening"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "b0a98edfab5a38d9b1ca44a85954c5ea37b56b8b9585fc4eb8331fd34f2e0105",
+                  "original_source_line": "**Status:** FROZEN / IMPLEMENTATION PENDING  "
+                },
+                {
+                  "line": 5,
+                  "original_line_sha256": "25136d45a915e895afe9136e911fd430356036219fcc371ef938d3155782730a",
+                  "original_source_line": "**Scope:** Prospective typed repository-integrity contracts, branch-scoped live-state freshness, explicit continuity bootstrap routing, public/private integrity separation, deterministic validation, and chat-rotation preflight.  "
+                },
+                {
+                  "line": 6,
+                  "original_line_sha256": "84696d1ee66d15e0c78dc790eb1337664c98f65e419fb9c03997166894fd0697",
+                  "original_source_line": "**Declared references:** `research:106`, `specification:024`, `checkpoint:268`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/current_routing.json`, `path:docs/CURRENT_STATE.md`, `path:docs/KNOWLEDGE_MAP.md`, `path:scripts/check_current_routing.py`, `path:scripts/check_checkpoint_metadata.py`, `path:scripts/check_model_collaboration_state.py`, `path:scripts/check_knowledge_map.py`"
+                },
+                {
+                  "line": 79,
+                  "original_line_sha256": "039e685f569f2ee478a52f610a2b8ca6d50db0a00d71ffa521200bf683f590d9",
+                  "original_source_line": "Checkpoint metadata remains governed by the existing checkpoint contract and validator. This specification MUST NOT silently redefine that schema."
+                }
+              ],
+              "original_source_sha256": "788e3162fc823d21eca176646e7e5c96090cfd7dd971f3f3e918414c278b5cdd",
+              "path": "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+              "source_rank": 1
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "8398f9b71327bbe7bfe2872e3c0a24b9c2ed6540f1de8576434938600eb85ebe",
+                  "original_source_line": "# Foundation 020: Reusable Methodological Knowledge Representation Architecture"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "013d9466e992a3f830b4faa38e989f6df987a1fae133e88cf86f397c08bcb34f",
+                  "original_source_line": "**Status:** Foundational methodological-knowledge representation direction  "
+                },
+                {
+                  "line": 5,
+                  "original_line_sha256": "410bfcbee6d8514969e86860117fd44fab4193952d3b32d4d58ee1647e1c494a",
+                  "original_source_line": "**Scope:** Long-term Autonomous Data Science System methodological-knowledge layer. This foundation defines durable conceptual separations and representation requirements, not a final ontology, physical schema, storage engine, retrieval engine, rules engine, backend stack, or V1 implementation."
+                },
+                {
+                  "line": 23,
+                  "original_line_sha256": "e3911687560c8e70999d5ea2522b647258593dec503784d06188c5593d0870dd",
+                  "original_source_line": "The first stage used five deliberately different examples:"
+                },
+                {
+                  "line": 33,
+                  "original_line_sha256": "bfd0783ee9d570e5035986871c9e81ae48431f929c672bbd5cd1a6cce70b37a7",
+                  "original_source_line": "Checkpoint 102 proposed the first explicit contract. Checkpoint 104 then attacked it adversarially. That review found important defects in the single-role vocabulary, the asset-versus-facet binary, the use of pairwise relations for conditional branch logic, the candidate Assessment object, and the conflation of retrieval with applicability."
+                }
+              ],
+              "original_source_sha256": "fe3aed150fd06604aac3d37db1ee5ae092817d0cfb7cc5643f70edd561138ba3",
+              "path": "docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md",
+              "source_rank": 2
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "55014cace8283815b0bfbc6e5801a9d15504e5591676af506cdce60239b3dec8",
+                  "original_source_line": "# Decisions"
+                },
+                {
+                  "line": 9,
+                  "original_line_sha256": "7734c2c2403936056b0dd10e14a218429f18882736e1fac1ad584b487a07d443",
+                  "original_source_line": "**Status:** Accepted  "
+                },
+                {
+                  "line": 22,
+                  "original_line_sha256": "7734c2c2403936056b0dd10e14a218429f18882736e1fac1ad584b487a07d443",
+                  "original_source_line": "**Status:** Accepted  "
+                },
+                {
+                  "line": 35,
+                  "original_line_sha256": "2bdf688d6c37e715045f1f6503a2da19bdae46b657cb78128123239b621f58d5",
+                  "original_source_line": "**Status:** Superseded in current repository state; the repository is now public  "
+                },
+                {
+                  "line": 39,
+                  "original_line_sha256": "666b466e3e8e4542e28d50c05ac0d530c6af65c148d9fc3f9a708a361b7c8fed",
+                  "original_source_line": "The repository was kept private during the early design stage. The current GitHub repository is public, so this early-stage visibility decision no longer describes present repository state."
+                }
+              ],
+              "original_source_sha256": "1cb6dd610536781e6bdbd02ab30891f922610a90437a02c36057ca264a8a09b5",
+              "path": "docs/DECISIONS.md",
+              "source_rank": 3
+            }
+          ],
+          "claims": [
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 5,
+                  "source_rank": 1
+                }
+              ],
+              "claim_id": "C01",
+              "statement": "Specification 025 describes prospective branch-scoped live-state freshness and continuity bootstrap routing."
+            }
+          ],
+          "variant": "VARIANT_A"
+        },
+        {
+          "answer": "The archived Current State document records Checkpoint 899 and identifies `v1-source-vault-bootstrap-resume` as the active development branch. Those are values reported by that historical source, not a statement about the present checkout.",
+          "available_evidence": [
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "55014cace8283815b0bfbc6e5801a9d15504e5591676af506cdce60239b3dec8",
+                  "original_source_line": "# Decisions"
+                },
+                {
+                  "line": 9,
+                  "original_line_sha256": "7734c2c2403936056b0dd10e14a218429f18882736e1fac1ad584b487a07d443",
+                  "original_source_line": "**Status:** Accepted  "
+                },
+                {
+                  "line": 22,
+                  "original_line_sha256": "7734c2c2403936056b0dd10e14a218429f18882736e1fac1ad584b487a07d443",
+                  "original_source_line": "**Status:** Accepted  "
+                },
+                {
+                  "line": 35,
+                  "original_line_sha256": "2bdf688d6c37e715045f1f6503a2da19bdae46b657cb78128123239b621f58d5",
+                  "original_source_line": "**Status:** Superseded in current repository state; the repository is now public  "
+                },
+                {
+                  "line": 39,
+                  "original_line_sha256": "666b466e3e8e4542e28d50c05ac0d530c6af65c148d9fc3f9a708a361b7c8fed",
+                  "original_source_line": "The repository was kept private during the early design stage. The current GitHub repository is public, so this early-stage visibility decision no longer describes present repository state."
+                }
+              ],
+              "original_source_sha256": "1cb6dd610536781e6bdbd02ab30891f922610a90437a02c36057ca264a8a09b5",
+              "path": "docs/DECISIONS.md",
+              "source_rank": 1
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "7c77c51edb1f89125a5970736328096bab947618ae09e5df7c769d9c2a955061",
+                  "original_source_line": "# Checkpoint 447: Repository Branch-Safety Complete, Canonical Protection Decision Next"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "94e4fe34c988904ead1c22dd4e9ce5f166c947e5b4dba33c3e78a55157132b1d",
+                  "original_source_line": "**Status:** PASS / FIFTH FAMILY COMPLETE END TO END / DISPOSABLE FIXTURE CLEANED / CANONICAL POLICY DECISION NEXT"
+                },
+                {
+                  "line": 7,
+                  "original_line_sha256": "36be194b7c01f80316f21fa5522e84f6141bbf296e7f9468efc382f27171beb4",
+                  "original_source_line": "**Scope:** Preserve successful positive-live qualification of the final important GitHub extension family and move Research 123 to its final canonical branch-protection decision."
+                },
+                {
+                  "line": 8,
+                  "original_line_sha256": "169f8a9d274e6175113f68420285409033f5573840c9af63d5073e3925305791",
+                  "original_source_line": "**Authority:** Validation 204 owns the disposable positive-live qualification. Validation 203 owns fresh-host qualification. Validation 202 owns preview.44 local-live qualification. Validation 201 owns the fixed branch-safety policy design."
+                },
+                {
+                  "line": 72,
+                  "original_line_sha256": "3403da6ad5ca63f1651f6ab0461c9cbfe5f44ef6a13610477db97a91ec0d79e7",
+                  "original_source_line": "Permanent canonical protection remains separately unauthorized. Before any positive canonical policy mutation, Runtime Bridge must reread the exact current head and protection state of each branch. If either branch has acquired protection or its state differs from the expected unprotected baseline, stop and reconcile rather than overwrite it."
+                }
+              ],
+              "original_source_sha256": "569ec542ebca2baa5a6c3112a3a4bb2d4d486df860dd4fb68fd9db4d1c53957e",
+              "path": "docs/checkpoints/447_repository_branch_safety_complete_canonical_protection_decision_next.md",
+              "source_rank": 2
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "0e346beaa790fb777bdca66486b12ef7eb766f4793a4852e9976dffe6b31c221",
+                  "original_source_line": "# Current State"
+                },
+                {
+                  "line": 3,
+                  "original_line_sha256": "8576398fa1dd4cfc9dd9d68bc582befab4b74ffea3a0ad0a4d600dd6f07fdbc5",
+                  "original_source_line": "**Checkpoint:** 899"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "dd89a2288a986466c20b0178e141e671e5cd766ca76385add7c06e4174ab298e",
+                  "original_source_line": "**Date:** 2026-11-11"
+                },
+                {
+                  "line": 5,
+                  "original_line_sha256": "9534ca61c709f51870dec81ddb00445527c1d6c40a2b97414c3c36ceca5cace2",
+                  "original_source_line": "**Active development branch:** `v1-source-vault-bootstrap-resume`"
+                },
+                {
+                  "line": 7,
+                  "original_line_sha256": "ac879bf227d75dcc2719987f0767141854867d62b654b84643fbf92a925f9c97",
+                  "original_source_line": "**Promoted V1 integration branch:** `v1-frontend-spike` at `2480109fadeee1e480ef03b82e335aacdf9adf91`"
+                }
+              ],
+              "original_source_sha256": "54bcb132f12ceffd330540006a8099179a260f751da7b4269253b6aef87edcaa",
+              "path": "docs/CURRENT_STATE.md",
+              "source_rank": 3
+            }
+          ],
+          "claims": [
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 1,
+                  "source_rank": 3
+                },
+                {
+                  "line": 3,
+                  "source_rank": 3
+                }
+              ],
+              "claim_id": "C01",
+              "statement": "The historical continuity source reports Checkpoint 899."
+            },
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 5,
+                  "source_rank": 3
+                }
+              ],
+              "claim_id": "C02",
+              "statement": "It identifies the active development branch as v1-source-vault-bootstrap-resume."
+            }
+          ],
+          "variant": "VARIANT_B"
+        }
+      ]
+    },
+    {
+      "case_id": "P02",
+      "question": "Where can a new collaborator find the explicit project-wide decisions, and can those decisions be revised later?",
+      "variants": [
+        {
+          "answer": "The answer-bearing retrieved file is `docs/DECISIONS.md`, whose original heading is \u201cDecisions\u201d. The source permits later explicit revision, with preservation of what changed and why. The excerpt is sufficient for the revision rule, but its global project-wide coverage is not separately documented in these selected lines.",
+          "available_evidence": [
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "55014cace8283815b0bfbc6e5801a9d15504e5591676af506cdce60239b3dec8",
+                  "original_source_line": "# Decisions"
+                },
+                {
+                  "line": 5,
+                  "original_line_sha256": "6f931f2c113eb828ec219fcb1ed41e267df77e1f0a5a5c4efc88fe759d62fbb0",
+                  "original_source_line": "A decision is stronger than an idea or design hypothesis. Decisions may still be revised later, but revisions should be explicit and should preserve the history of what changed and why."
+                },
+                {
+                  "line": 9,
+                  "original_line_sha256": "7734c2c2403936056b0dd10e14a218429f18882736e1fac1ad584b487a07d443",
+                  "original_source_line": "**Status:** Accepted  "
+                },
+                {
+                  "line": 22,
+                  "original_line_sha256": "7734c2c2403936056b0dd10e14a218429f18882736e1fac1ad584b487a07d443",
+                  "original_source_line": "**Status:** Accepted  "
+                },
+                {
+                  "line": 35,
+                  "original_line_sha256": "2bdf688d6c37e715045f1f6503a2da19bdae46b657cb78128123239b621f58d5",
+                  "original_source_line": "**Status:** Superseded in current repository state; the repository is now public  "
+                }
+              ],
+              "original_source_sha256": "1cb6dd610536781e6bdbd02ab30891f922610a90437a02c36057ca264a8a09b5",
+              "path": "docs/DECISIONS.md",
+              "source_rank": 1
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "7d31a20c74d7962fc66cd130bbf4062ac90f7897b88348af9c3acbd6687d6078",
+                  "original_source_line": "# Research 272: WMR-H V0.3 Owner Acceptance, MC-0027 Closure, and Assurance-Architecture Entry"
+                },
+                {
+                  "line": 3,
+                  "original_line_sha256": "99abba94e0f7c303dadf1cad8e2742c76e9f3362311f75c47218ce104c657e16",
+                  "original_source_line": "**Date:** 2026-09-23"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "db187712aa8befcb9fc23e93f6587e5da7567c6f8a7c1cd0b3536565a03e89e2",
+                  "original_source_line": "**Status:** R8-B REPRESENTATION ARCHITECTURE ACCEPTED / MC-0027 RESOLVED / ASSURANCE ARCHITECTURE UNBLOCKED / NO PHYSICAL MIGRATION"
+                },
+                {
+                  "line": 5,
+                  "original_line_sha256": "0d32d82ed3ea0f0e21bc83031ffc73f84f1f735185165e7e09d291bd12509f12",
+                  "original_source_line": "**Parent program:** Research 240"
+                },
+                {
+                  "line": 13,
+                  "original_line_sha256": "cf06ba630fa7ecc7efad695f8f130ee085be731ed9b88d1c12949661c0c155d2",
+                  "original_source_line": "**Scope:** Record the project owner's explicit acceptance of WMR-H V0.3 as the target R8-B representation architecture direction, resolve MC-0027, preserve the exact meaning and limits of that acceptance, and unblock first-principles assurance / verification / CI-CD architecture design."
+                }
+              ],
+              "original_source_sha256": "0cc45f3d9b6903e16b1ad7503518b40c5705e1cd82430e761feaf409d0373432",
+              "path": "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+              "source_rank": 2
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "84ea32d6898530e21b8befb0b1c089196b9af020c66c05466c7e970411546267",
+                  "original_source_line": "# Research 356: Key Author A P3 Batch 9 Compaction HOLD and Fresh Replacement Authorization"
+                },
+                {
+                  "line": 3,
+                  "original_line_sha256": "90efe58eaef5f2e1a37afe0047f83c3f0146d763282042f7c62dfd315d09ec72",
+                  "original_source_line": "**Date:** 2026-09-26"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "e8ebe745712c74f3ee13c119c02d615eede97f12f5d620e14f21ffadb82ee3d3",
+                  "original_source_line": "**Status:** P3 BATCH 9 HOLD / OPEN-BATCH COMPACTION CONFIRMED / PRIOR ATTEMPT ABANDONED / FRESH REPLACEMENT SESSION AUTHORIZED"
+                },
+                {
+                  "line": 6,
+                  "original_line_sha256": "ae92b94e1dfb45a0272782c9d4d52a769d5d3cc8f111b097151fc7753ee3d81a",
+                  "original_source_line": "**Scope:** Reconcile the Batch 9 open-batch compaction event, verify what was and was not exposed or persisted, preserve the authorized append-only precedent addition, retire the compacted session from further semantic execution, and authorize a fresh replacement P3 session to restart Batch 9 from scratch under the existing P3 authorization."
+                },
+                {
+                  "line": 7,
+                  "original_line_sha256": "e3d18b1f046c5af261aa78bc22912cfffb4287d2cdf4b8c6909e04476bc0ff73",
+                  "original_source_line": "**Authority:** Batch 9 HOLD disposition and fresh replacement execution only. Batch 10 remains task-owner gated. This does not authorize BIRTH grouping, attention-consistency reconciliation, LEGACY, canonical Key A assembly, commitment generation, Key Author B, scoring, reviewer execution, production implementation, migration, oracle retirement, or authority switching."
+                }
+              ],
+              "original_source_sha256": "97349b88f4c0ca0345c23629c2426bf34c155192bd30c1ed5d13ff7a598ae649",
+              "path": "docs/research/356_key_author_a_p3_batch9_compaction_hold_fresh_replacement_authorized.md",
+              "source_rank": 3
+            }
+          ],
+          "claims": [
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 1,
+                  "source_rank": 1
+                }
+              ],
+              "claim_id": "C01",
+              "statement": "The original file heading identifies the decisions register."
+            },
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 5,
+                  "source_rank": 1
+                }
+              ],
+              "claim_id": "C02",
+              "statement": "The revision rule requires explicit, historically preserved changes."
+            }
+          ],
+          "variant": "VARIANT_A"
+        },
+        {
+          "answer": "The retrieved `docs/DECISIONS.md` is headed \u201cDecisions\u201d. Its text says decisions can be revised, but revisions should be explicit and retain the history of what changed and why. The selected excerpt does not independently spell out the register's project-wide scope, beyond the file identity and heading.",
+          "available_evidence": [
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "55014cace8283815b0bfbc6e5801a9d15504e5591676af506cdce60239b3dec8",
+                  "original_source_line": "# Decisions"
+                },
+                {
+                  "line": 5,
+                  "original_line_sha256": "6f931f2c113eb828ec219fcb1ed41e267df77e1f0a5a5c4efc88fe759d62fbb0",
+                  "original_source_line": "A decision is stronger than an idea or design hypothesis. Decisions may still be revised later, but revisions should be explicit and should preserve the history of what changed and why."
+                },
+                {
+                  "line": 9,
+                  "original_line_sha256": "7734c2c2403936056b0dd10e14a218429f18882736e1fac1ad584b487a07d443",
+                  "original_source_line": "**Status:** Accepted  "
+                },
+                {
+                  "line": 22,
+                  "original_line_sha256": "7734c2c2403936056b0dd10e14a218429f18882736e1fac1ad584b487a07d443",
+                  "original_source_line": "**Status:** Accepted  "
+                },
+                {
+                  "line": 35,
+                  "original_line_sha256": "2bdf688d6c37e715045f1f6503a2da19bdae46b657cb78128123239b621f58d5",
+                  "original_source_line": "**Status:** Superseded in current repository state; the repository is now public  "
+                }
+              ],
+              "original_source_sha256": "1cb6dd610536781e6bdbd02ab30891f922610a90437a02c36057ca264a8a09b5",
+              "path": "docs/DECISIONS.md",
+              "source_rank": 1
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "7d31a20c74d7962fc66cd130bbf4062ac90f7897b88348af9c3acbd6687d6078",
+                  "original_source_line": "# Research 272: WMR-H V0.3 Owner Acceptance, MC-0027 Closure, and Assurance-Architecture Entry"
+                },
+                {
+                  "line": 3,
+                  "original_line_sha256": "99abba94e0f7c303dadf1cad8e2742c76e9f3362311f75c47218ce104c657e16",
+                  "original_source_line": "**Date:** 2026-09-23"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "db187712aa8befcb9fc23e93f6587e5da7567c6f8a7c1cd0b3536565a03e89e2",
+                  "original_source_line": "**Status:** R8-B REPRESENTATION ARCHITECTURE ACCEPTED / MC-0027 RESOLVED / ASSURANCE ARCHITECTURE UNBLOCKED / NO PHYSICAL MIGRATION"
+                },
+                {
+                  "line": 5,
+                  "original_line_sha256": "0d32d82ed3ea0f0e21bc83031ffc73f84f1f735185165e7e09d291bd12509f12",
+                  "original_source_line": "**Parent program:** Research 240"
+                },
+                {
+                  "line": 13,
+                  "original_line_sha256": "cf06ba630fa7ecc7efad695f8f130ee085be731ed9b88d1c12949661c0c155d2",
+                  "original_source_line": "**Scope:** Record the project owner's explicit acceptance of WMR-H V0.3 as the target R8-B representation architecture direction, resolve MC-0027, preserve the exact meaning and limits of that acceptance, and unblock first-principles assurance / verification / CI-CD architecture design."
+                }
+              ],
+              "original_source_sha256": "0cc45f3d9b6903e16b1ad7503518b40c5705e1cd82430e761feaf409d0373432",
+              "path": "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+              "source_rank": 2
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "84ea32d6898530e21b8befb0b1c089196b9af020c66c05466c7e970411546267",
+                  "original_source_line": "# Research 356: Key Author A P3 Batch 9 Compaction HOLD and Fresh Replacement Authorization"
+                },
+                {
+                  "line": 3,
+                  "original_line_sha256": "90efe58eaef5f2e1a37afe0047f83c3f0146d763282042f7c62dfd315d09ec72",
+                  "original_source_line": "**Date:** 2026-09-26"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "e8ebe745712c74f3ee13c119c02d615eede97f12f5d620e14f21ffadb82ee3d3",
+                  "original_source_line": "**Status:** P3 BATCH 9 HOLD / OPEN-BATCH COMPACTION CONFIRMED / PRIOR ATTEMPT ABANDONED / FRESH REPLACEMENT SESSION AUTHORIZED"
+                },
+                {
+                  "line": 6,
+                  "original_line_sha256": "ae92b94e1dfb45a0272782c9d4d52a769d5d3cc8f111b097151fc7753ee3d81a",
+                  "original_source_line": "**Scope:** Reconcile the Batch 9 open-batch compaction event, verify what was and was not exposed or persisted, preserve the authorized append-only precedent addition, retire the compacted session from further semantic execution, and authorize a fresh replacement P3 session to restart Batch 9 from scratch under the existing P3 authorization."
+                },
+                {
+                  "line": 7,
+                  "original_line_sha256": "e3d18b1f046c5af261aa78bc22912cfffb4287d2cdf4b8c6909e04476bc0ff73",
+                  "original_source_line": "**Authority:** Batch 9 HOLD disposition and fresh replacement execution only. Batch 10 remains task-owner gated. This does not authorize BIRTH grouping, attention-consistency reconciliation, LEGACY, canonical Key A assembly, commitment generation, Key Author B, scoring, reviewer execution, production implementation, migration, oracle retirement, or authority switching."
+                }
+              ],
+              "original_source_sha256": "97349b88f4c0ca0345c23629c2426bf34c155192bd30c1ed5d13ff7a598ae649",
+              "path": "docs/research/356_key_author_a_p3_batch9_compaction_hold_fresh_replacement_authorized.md",
+              "source_rank": 3
+            }
+          ],
+          "claims": [
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 1,
+                  "source_rank": 1
+                }
+              ],
+              "claim_id": "C01",
+              "statement": "The retrieved file is the decisions register by path and original heading."
+            },
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 5,
+                  "source_rank": 1
+                }
+              ],
+              "claim_id": "C02",
+              "statement": "Decisions may be revised explicitly while preserving the change history and rationale."
+            }
+          ],
+          "variant": "VARIANT_B"
+        }
+      ]
+    },
+    {
+      "case_id": "P03",
+      "question": "What is the recorded implementation status of the governed project-knowledge architecture migration contract?",
+      "variants": [
+        {
+          "answer": "I cannot determine the migration contract's recorded implementation status from these excerpts. Research 512 calls a separate governed-ledger design a comparison candidate and explicitly says it does not amend Specification 028 or authorize implementation or migration. That is not the status header of the specification being asked about.",
+          "available_evidence": [
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "4e428c1fc60f15067b73d9c7f8ab55aea2642d2ce6aca2ba05b6d02197da5c47",
+                  "original_source_line": "# Research 357: Key Author A P3 Batch 9 Replacement Pass with Bounded Count-Query Deviation and Batch 10 Fresh-Session Release"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "0ca06ec4d09349d98c9f19a842de689d48198457c4747b2b626bed18ab6aa374",
+                  "original_source_line": "**Status:** P3 BATCH 9 PASS / PRIVATE FROZEN / BOUNDED NON-SEMANTIC TOOL-SCOPE DEVIATION RECORDED / BATCH 10 FRESH SESSION RELEASED"
+                },
+                {
+                  "line": 6,
+                  "original_line_sha256": "0f2682c5d6e474f2bd90ce25b49045b1aeedddb1cd7912ca2fcae55d9af23299",
+                  "original_source_line": "**Scope:** Reconcile the fresh replacement execution of BIRTH held-out Batch 9, mechanically validate the frozen private artifact, adjudicate one disclosed whole-source count-only Grep after all Batch 9 labels were already written, preserve the sequential-exposure construct, retire the replacement session after the deviation, and release Batch 10 to a fresh sequential P3 session under the existing P3 authorization."
+                },
+                {
+                  "line": 7,
+                  "original_line_sha256": "9c8a4085ba5a5d9a07bee02871d52628fd816be4dbb5d47e3009d0d38b405f2b",
+                  "original_source_line": "**Authority:** P3 Batch 9 acceptance and Batch 10 fresh-session continuation release only. This does not authorize Batch 11, BIRTH grouping, attention-consistency reconciliation, LEGACY, canonical Key A assembly, commitment generation, Key Author B, scoring, reviewer execution, production implementation, migration, oracle retirement, or authority switching."
+                },
+                {
+                  "line": 49,
+                  "original_line_sha256": "16ce1ce0e8935c56f1d9dad63dfec7580be78041c6c80918f802851d6ce5183d",
+                  "original_source_line": "    compaction_events recorded"
+                }
+              ],
+              "original_source_sha256": "ad291003dfb2bbfdc54c5812f32834cc062571359d0fdf566e50ffea72d66177",
+              "path": "docs/research/357_key_author_a_p3_batch9_replacement_pass_batch10_fresh_session_released.md",
+              "source_rank": 1
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "e3531e66f3c03f03215ca03d954d167057879e743f5e171f5c36ccdcab79378d",
+                  "original_source_line": "# Checkpoint 891: owner-approved authentication deferral; R0-P03 may resume"
+                },
+                {
+                  "line": 5,
+                  "original_line_sha256": "dea7035a38ecf2b53d3890b1658658bb9297d94d2bd1c682818a5a93e9d72095",
+                  "original_source_line": "**Project stage:** R0 physical architecture decision probes"
+                },
+                {
+                  "line": 11,
+                  "original_line_sha256": "53e170201c9dbc0b7e6b015847d269e73f02a3c8424ea19b9bebebe38dc151ae",
+                  "original_source_line": "**Status:** PROSPECTIVE_R0_AUTHENTICATION_GATE_AMENDED / P03_FIXTURE_NEXT"
+                },
+                {
+                  "line": 15,
+                  "original_line_sha256": "76e58502f097a18589b98068c6ef2a61688d6071ce857f2123632d445979cd01",
+                  "original_source_line": "**Owner direction:** Explicit chat-governed continuation with future cryptographic acceptance optional and unactivated; best-architecture principle unchanged."
+                },
+                {
+                  "line": 18,
+                  "original_line_sha256": "a3482b205f11e1d60e52f3feaa3d88926cda4faf1c6dee7c17ec40b3175d0c92",
+                  "original_source_line": "The owner has directed that architecture development continue with explicit, recorded conversational approvals, and that the R0-P01 remaining live owner cryptographic trial and F1/F2 program no longer automatically block physical design selection. This is **specific** to owner authentication and does not endorse minimizing engineering effort across ADS."
+                }
+              ],
+              "original_source_sha256": "7a604ec607b1aa7a8135504dc9a24576e463c5a5f392c1a1ebefa0e2e518e7f7",
+              "path": "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+              "source_rank": 2
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "2377b5474e21c6583e51496b51bf94a9b2a684ef1f60d5bb550369ed027e499a",
+                  "original_source_line": "# Research 512: MC-0030 Claude critique reconciliation and Governed Ledger Kernel V0.2"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "7a9233dac206d0ca98a3cbf7fd7fc2156bbf3b4c62917125812a821e9e496f0d",
+                  "original_source_line": "**Status:** CLAUDE MESSAGE 003 RECONCILED / GOVERNED LEDGER KERNEL V0.2 FROZEN / THREE-PROBE PROGRAM RETAINED / PROBE PROTOCOL PREREGISTRATION NEXT / OWNER DECISION NOT READY"
+                },
+                {
+                  "line": 8,
+                  "original_line_sha256": "c107c564107f9b9f6bc137c1e27de741ba7e5664c960b77d2a47f2ff5e12b10f",
+                  "original_source_line": "**Reconciled candidate:** GOVERNED_LEDGER_KERNEL_V02"
+                },
+                {
+                  "line": 10,
+                  "original_line_sha256": "d3e76b3a03d0d665c1b57b05658316e27831f300d6bd0398d14ca9949aac5172",
+                  "original_source_line": "**Scope:** Reconcile Claude Message 003 into the first comparative candidate, repair the acceptance/order/J2/publication/executor/private-state interfaces before probe design, and freeze the smallest decision-relevant R0 probe set without executing any probe."
+                },
+                {
+                  "line": 11,
+                  "original_line_sha256": "42928c552c1fa59b925f9dbf4bbe85435e998136a18035ec3162e51264a8d02c",
+                  "original_source_line": "**Authority:** Comparative architecture candidate only. No physical target, implementation, migration, Specification 028 amendment, Runtime Bridge extraction, production activation, or authority switch is authorized."
+                }
+              ],
+              "original_source_sha256": "40bf71219aaf9eee311241e0eabd7b034f52e0a40fe7b18a8437ea3fdfe4edf4",
+              "path": "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+              "source_rank": 3
+            }
+          ],
+          "claims": [
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 1,
+                  "source_rank": 3
+                },
+                {
+                  "line": 11,
+                  "source_rank": 3
+                }
+              ],
+              "claim_id": "C01",
+              "statement": "Research 512 is comparative candidate evidence, not a Specification 028 implementation-status record."
+            }
+          ],
+          "variant": "VARIANT_A"
+        },
+        {
+          "answer": "The retrieved Checkpoint 550 reports W1 project-knowledge semantic migration in progress, with successor semantic owners and views still subordinate to existing continuity authority. It does not supply the specific archived implementation-status header of the governed migration contract, so that exact status cannot be verified from this answer context.",
+          "available_evidence": [
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "73e81e9c2fd979ccee84a9c8774565f8b4595972f8ac2cee137deaab5ee38749",
+                  "original_source_line": "# Checkpoint 550: PKA-G108 Current Authority Confirmed, Integrity Next"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "d04fbeed47b4c9e22c16e57b4795b169806306a390651c2483df0281c0c54d8e",
+                  "original_source_line": "**Status:** PKA-G108 ACCEPTED / PKA-G101..PKA-G108 PASS / W1 IN PROGRESS / G109 NEXT"
+                },
+                {
+                  "line": 5,
+                  "original_line_sha256": "ed2b61dcc651e31593d4d5796a4b892da5988783bab314f1c74c844590d11ac0",
+                  "original_source_line": "**Checkpoint class:** MIGRATION / VALIDATION / PROJECT_KNOWLEDGE"
+                },
+                {
+                  "line": 6,
+                  "original_line_sha256": "84b1d2e0bfb9875717b1d4b949377c209e7fa6f40345bc1584bfb841162c7d39",
+                  "original_source_line": "**Project stage:** Selected project-development knowledge architecture W1 live-control semantic migration"
+                },
+                {
+                  "line": 30,
+                  "original_line_sha256": "1b90768b7dbad11877ec3048d323cebf96cb24f4786232d33c390237c6bc6f7a",
+                  "original_source_line": "W1 successor semantic owners and derived views remain subordinate to the current continuity architecture. The architecture documentation now reflects the actual W0/W1 implementation state without changing the W8-only authority-switch contract."
+                }
+              ],
+              "original_source_sha256": "54427409aa5200a0feef027ec138f32d7dbcf021d2277f69238f17f051dedfbb",
+              "path": "docs/checkpoints/550_pka_g108_current_authority_confirmed_integrity_next.md",
+              "source_rank": 1
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "2377b5474e21c6583e51496b51bf94a9b2a684ef1f60d5bb550369ed027e499a",
+                  "original_source_line": "# Research 512: MC-0030 Claude critique reconciliation and Governed Ledger Kernel V0.2"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "7a9233dac206d0ca98a3cbf7fd7fc2156bbf3b4c62917125812a821e9e496f0d",
+                  "original_source_line": "**Status:** CLAUDE MESSAGE 003 RECONCILED / GOVERNED LEDGER KERNEL V0.2 FROZEN / THREE-PROBE PROGRAM RETAINED / PROBE PROTOCOL PREREGISTRATION NEXT / OWNER DECISION NOT READY"
+                },
+                {
+                  "line": 8,
+                  "original_line_sha256": "c107c564107f9b9f6bc137c1e27de741ba7e5664c960b77d2a47f2ff5e12b10f",
+                  "original_source_line": "**Reconciled candidate:** GOVERNED_LEDGER_KERNEL_V02"
+                },
+                {
+                  "line": 10,
+                  "original_line_sha256": "d3e76b3a03d0d665c1b57b05658316e27831f300d6bd0398d14ca9949aac5172",
+                  "original_source_line": "**Scope:** Reconcile Claude Message 003 into the first comparative candidate, repair the acceptance/order/J2/publication/executor/private-state interfaces before probe design, and freeze the smallest decision-relevant R0 probe set without executing any probe."
+                },
+                {
+                  "line": 11,
+                  "original_line_sha256": "42928c552c1fa59b925f9dbf4bbe85435e998136a18035ec3162e51264a8d02c",
+                  "original_source_line": "**Authority:** Comparative architecture candidate only. No physical target, implementation, migration, Specification 028 amendment, Runtime Bridge extraction, production activation, or authority switch is authorized."
+                }
+              ],
+              "original_source_sha256": "40bf71219aaf9eee311241e0eabd7b034f52e0a40fe7b18a8437ea3fdfe4edf4",
+              "path": "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+              "source_rank": 2
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "c12f9912e7cdc0646d34581bf3f33da8ad8a1c6e9e6009f481c4f55fc751f34e",
+                  "original_source_line": "# Checkpoint 497: Candidate 01 Real-Repository Shadow V0.1 Fixture Frozen"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "8fe6f6282d2358ebe9a7246fca339eac47b95d5fb53b85e73ea18f5e3195cdd5",
+                  "original_source_line": "**Status:** REAL-REPOSITORY SHADOW FIXTURE + ORACLE FROZEN / IMPLEMENTATION NEXT / TARGET ARCHITECTURE NOT SELECTED"
+                },
+                {
+                  "line": 5,
+                  "original_line_sha256": "36fa6acaa7216a9e5cebec3d9b746daa3871eea0360f20ae1bdec14e0e174b80",
+                  "original_source_line": "**Checkpoint class:** ARCHITECTURE_RESEARCH / REAL_REPOSITORY_SHADOW / EXPERIMENT_FREEZE"
+                },
+                {
+                  "line": 6,
+                  "original_line_sha256": "258283fe2de72763d2ba9bb7d91e5856c632880248dcdf53c5663c83a1db5c00",
+                  "original_source_line": "**Project stage:** Research 124 project-development knowledge architecture redesign"
+                },
+                {
+                  "line": 7,
+                  "original_line_sha256": "09591e99e6a2855e1dbbdfd2186f5ba972a302fcb9544d6cbd7b41dd09c3fde1",
+                  "original_source_line": "**Scope:** Freeze the first Candidate 01 real-repository parity/behavior fixture before implementation and preserve the measured migration-seeding burden rather than hiding it behind current global views."
+                }
+              ],
+              "original_source_sha256": "5f02b97fc40f8d1a85b335a181fa7849f66b6a0f134bf595eb380592313a41fe",
+              "path": "docs/checkpoints/497_candidate01_real_repository_shadow_v01_fixture_frozen.md",
+              "source_rank": 3
+            }
+          ],
+          "claims": [
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 1,
+                  "source_rank": 1
+                },
+                {
+                  "line": 4,
+                  "source_rank": 1
+                }
+              ],
+              "claim_id": "C01",
+              "statement": "Checkpoint 550 reports W1 in progress and G109 as the next gate."
+            },
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 30,
+                  "source_rank": 1
+                }
+              ],
+              "claim_id": "C02",
+              "statement": "It states successor semantic owners remain subordinate to existing continuity authority."
+            }
+          ],
+          "variant": "VARIANT_B"
+        }
+      ]
+    },
+    {
+      "case_id": "P04",
+      "question": "Which foundation explains source artifact preservation, lineage and evidence provenance across the knowledge system?",
+      "variants": [
+        {
+          "answer": "The relevant foundation is Foundation 022, \u201cSource Universe, Artifact Integrity, and Evidence Provenance Architecture\u201d. It is recorded as an accepted conceptual foundation for preserving source identity, original artifacts, derived-source lineage and evidence provenance, while leaving implementation choices such as storage and parsers open.",
+          "available_evidence": [
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "0b19a276bd9e8c713bffcc8bfd511b0fe48042482feb8d5a94738f709ebdf9e4",
+                  "original_source_line": "# Foundation 022: Source Universe, Artifact Integrity, and Evidence Provenance Architecture"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "734d0372e2098ea359f3b4c5f6e883aca6470b64ccb37cf331ea83f1cd093faf",
+                  "original_source_line": "**Status:** Accepted conceptual foundation for the source/evidence substrate  "
+                },
+                {
+                  "line": 5,
+                  "original_line_sha256": "3c266f2b8a30dc0fa16754869652f103916aa75a3b24ae93eb5d8c576367a482",
+                  "original_source_line": "**Authority:** Current architectural foundation for source identity, original-artifact preservation, derived-source lineage, and evidence provenance. It is subordinate to current project-wide principles and does not freeze the final storage provider, complete source ontology, parser stack, or knowledge-evidence vocabulary.  "
+                },
+                {
+                  "line": 47,
+                  "original_line_sha256": "3dc04520e7e5cfde3567dbb807f3ee0bc8580cb34a65849c034401eaee898128",
+                  "original_source_line": "A source artifact is evidence. It does not become accepted reusable methodological knowledge merely because ADS possesses or parses it."
+                },
+                {
+                  "line": 49,
+                  "original_line_sha256": "f8daf3290cf7feabdacf0d0a49003b7fe67ed1a51a8031042a26b1f4f3656c02",
+                  "original_source_line": "Conversely, reusable methodological knowledge should be able to retain fine-grained provenance to the evidence supporting it."
+                }
+              ],
+              "original_source_sha256": "7c1387f15b2781ca0a40d341803b143dedfe4f7251fbc79f97d180fde0523938",
+              "path": "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+              "source_rank": 1
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "3190ed181b0cf6242306dc82f324662905d8a4663779f487f819f54bdaf00a42",
+                  "original_source_line": "# Research 503: R0 realization requirements and independent physical-architecture design charter"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "1822b7a3cd75a0d4a101c2f03c825c5645102dcd79e9131370a981ba59829ce1",
+                  "original_source_line": "**Status:** R0 CHARTER FROZEN / INDEPENDENT PHYSICAL ARCHITECTURE DESIGN NEXT"
+                },
+                {
+                  "line": 9,
+                  "original_line_sha256": "251faff40473b681faef473262741c283dd7e4429f42bd5a7882e1ce174d85bd",
+                  "original_source_line": "**Scope:** Freeze the realization-stage requirements, design freedom, evaluation dimensions, and independent-design protocol before any concrete physical architecture candidate is selected."
+                },
+                {
+                  "line": 10,
+                  "original_line_sha256": "42c420375c93d4f6140a9c33bddacf60b10af40bca1fc148ebbd08b658a76f96",
+                  "original_source_line": "**Authority:** Realization-design charter only. Specification 028 remains current operational authority. No physical architecture, implementation, migration wave, branch strategy, storage choice, or cutover is selected here."
+                },
+                {
+                  "line": 24,
+                  "original_line_sha256": "319d4f32a3bfea6ed075c1ae91f5707876a11c74f9a8dee2312f141aff72b98a",
+                  "original_source_line": "Current implementation and repository structure are evidence, migration inputs, and compatibility constraints where genuinely live."
+                }
+              ],
+              "original_source_sha256": "eadf86eb4803ed442643ecd656bc2c8d44b281ba9f0dc20b8948eb85c437fcaa",
+              "path": "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+              "source_rank": 2
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "a895409692b2062c1c86c602c548e36df43168a94f2d8c20b0081b2c5e2de2e4",
+                  "original_source_line": "# Research 312: Specification 028 Reconciliation and AO-10 Realization Candidate V0.1"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "337f8cc9d5c5a00a475faf72d4a4915d08ee89b822059c5f22a7b2d14fef25a1",
+                  "original_source_line": "**Status:** SPECIFICATION 028 RECONCILIATION V0.1 FROZEN / AO-10 REALIZATION CANDIDATE V0.1 FROZEN / MC-0029 INDEPENDENT REVIEW OPENED / NO PRODUCTION IMPLEMENTATION / NO PHYSICAL MIGRATION"
+                },
+                {
+                  "line": 9,
+                  "original_line_sha256": "b1fdc4e5d453238ad113ceba8e275b080740c712fabd33422fc0279ca620fe26",
+                  "original_source_line": "**Machine reconciliation:** docs/research/project_knowledge_activation_orchestration/AO10_SPEC028_RECONCILIATION_V01.json"
+                },
+                {
+                  "line": 11,
+                  "original_line_sha256": "90576cfc81b9ddee0545e4ef8c3bfb787b7ede2ae2b19eb9c91df1588cf035fc",
+                  "original_source_line": "**Scope:** Reconcile every numbered section of Specification 028 against the accepted R5-R8 architecture and AO-3 through AO-9 decisions, derive a concrete AO-10 realization candidate without inheriting current implementation mechanisms by default, and freeze an independent-review target before any production mutation."
+                },
+                {
+                  "line": 12,
+                  "original_line_sha256": "642b837bf544a60b4a2a6a3ad19918294bf1ae7ac6be519cb81f6f8dfa60e113",
+                  "original_source_line": "**Authority:** Research candidate only. Specification 028 remains current implementation/migration authority until an explicit prospective successor or amendment is accepted."
+                }
+              ],
+              "original_source_sha256": "58a77b5e9fed4008b9b7ed78a972d8063ca4be7d9dbf557256203572f275ec33",
+              "path": "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+              "source_rank": 3
+            }
+          ],
+          "claims": [
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 1,
+                  "source_rank": 1
+                },
+                {
+                  "line": 4,
+                  "source_rank": 1
+                }
+              ],
+              "claim_id": "C01",
+              "statement": "Foundation 022 is the accepted conceptual foundation."
+            },
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 5,
+                  "source_rank": 1
+                }
+              ],
+              "claim_id": "C02",
+              "statement": "Its scope includes original artifacts, lineage and provenance but does not select the final technical stack."
+            }
+          ],
+          "variant": "VARIANT_A"
+        },
+        {
+          "answer": "Foundation 022, \u201cSource Universe, Artifact Integrity, and Evidence Provenance Architecture\u201d, is the cited conceptual foundation. It addresses source identity, original-artifact preservation, derived-source lineage and evidence provenance. Its authority text also makes clear that this does not freeze the final storage provider or parser architecture.",
+          "available_evidence": [
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "0b19a276bd9e8c713bffcc8bfd511b0fe48042482feb8d5a94738f709ebdf9e4",
+                  "original_source_line": "# Foundation 022: Source Universe, Artifact Integrity, and Evidence Provenance Architecture"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "734d0372e2098ea359f3b4c5f6e883aca6470b64ccb37cf331ea83f1cd093faf",
+                  "original_source_line": "**Status:** Accepted conceptual foundation for the source/evidence substrate  "
+                },
+                {
+                  "line": 5,
+                  "original_line_sha256": "3c266f2b8a30dc0fa16754869652f103916aa75a3b24ae93eb5d8c576367a482",
+                  "original_source_line": "**Authority:** Current architectural foundation for source identity, original-artifact preservation, derived-source lineage, and evidence provenance. It is subordinate to current project-wide principles and does not freeze the final storage provider, complete source ontology, parser stack, or knowledge-evidence vocabulary.  "
+                },
+                {
+                  "line": 47,
+                  "original_line_sha256": "3dc04520e7e5cfde3567dbb807f3ee0bc8580cb34a65849c034401eaee898128",
+                  "original_source_line": "A source artifact is evidence. It does not become accepted reusable methodological knowledge merely because ADS possesses or parses it."
+                },
+                {
+                  "line": 49,
+                  "original_line_sha256": "f8daf3290cf7feabdacf0d0a49003b7fe67ed1a51a8031042a26b1f4f3656c02",
+                  "original_source_line": "Conversely, reusable methodological knowledge should be able to retain fine-grained provenance to the evidence supporting it."
+                }
+              ],
+              "original_source_sha256": "7c1387f15b2781ca0a40d341803b143dedfe4f7251fbc79f97d180fde0523938",
+              "path": "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+              "source_rank": 1
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "3190ed181b0cf6242306dc82f324662905d8a4663779f487f819f54bdaf00a42",
+                  "original_source_line": "# Research 503: R0 realization requirements and independent physical-architecture design charter"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "1822b7a3cd75a0d4a101c2f03c825c5645102dcd79e9131370a981ba59829ce1",
+                  "original_source_line": "**Status:** R0 CHARTER FROZEN / INDEPENDENT PHYSICAL ARCHITECTURE DESIGN NEXT"
+                },
+                {
+                  "line": 9,
+                  "original_line_sha256": "251faff40473b681faef473262741c283dd7e4429f42bd5a7882e1ce174d85bd",
+                  "original_source_line": "**Scope:** Freeze the realization-stage requirements, design freedom, evaluation dimensions, and independent-design protocol before any concrete physical architecture candidate is selected."
+                },
+                {
+                  "line": 10,
+                  "original_line_sha256": "42c420375c93d4f6140a9c33bddacf60b10af40bca1fc148ebbd08b658a76f96",
+                  "original_source_line": "**Authority:** Realization-design charter only. Specification 028 remains current operational authority. No physical architecture, implementation, migration wave, branch strategy, storage choice, or cutover is selected here."
+                },
+                {
+                  "line": 24,
+                  "original_line_sha256": "319d4f32a3bfea6ed075c1ae91f5707876a11c74f9a8dee2312f141aff72b98a",
+                  "original_source_line": "Current implementation and repository structure are evidence, migration inputs, and compatibility constraints where genuinely live."
+                }
+              ],
+              "original_source_sha256": "eadf86eb4803ed442643ecd656bc2c8d44b281ba9f0dc20b8948eb85c437fcaa",
+              "path": "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+              "source_rank": 2
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "55014cace8283815b0bfbc6e5801a9d15504e5591676af506cdce60239b3dec8",
+                  "original_source_line": "# Decisions"
+                },
+                {
+                  "line": 9,
+                  "original_line_sha256": "7734c2c2403936056b0dd10e14a218429f18882736e1fac1ad584b487a07d443",
+                  "original_source_line": "**Status:** Accepted  "
+                },
+                {
+                  "line": 22,
+                  "original_line_sha256": "7734c2c2403936056b0dd10e14a218429f18882736e1fac1ad584b487a07d443",
+                  "original_source_line": "**Status:** Accepted  "
+                },
+                {
+                  "line": 35,
+                  "original_line_sha256": "2bdf688d6c37e715045f1f6503a2da19bdae46b657cb78128123239b621f58d5",
+                  "original_source_line": "**Status:** Superseded in current repository state; the repository is now public  "
+                },
+                {
+                  "line": 51,
+                  "original_line_sha256": "7734c2c2403936056b0dd10e14a218429f18882736e1fac1ad584b487a07d443",
+                  "original_source_line": "**Status:** Accepted  "
+                }
+              ],
+              "original_source_sha256": "1cb6dd610536781e6bdbd02ab30891f922610a90437a02c36057ca264a8a09b5",
+              "path": "docs/DECISIONS.md",
+              "source_rank": 3
+            }
+          ],
+          "claims": [
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 1,
+                  "source_rank": 1
+                },
+                {
+                  "line": 4,
+                  "source_rank": 1
+                }
+              ],
+              "claim_id": "C01",
+              "statement": "Foundation 022 is the named original source/evidence foundation."
+            },
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 5,
+                  "source_rank": 1
+                }
+              ],
+              "claim_id": "C02",
+              "statement": "Its authority scope includes artifact preservation, derived lineage and provenance without fixing storage or parser choices."
+            }
+          ],
+          "variant": "VARIANT_B"
+        }
+      ]
+    }
+  ],
+  "contains_model_author_self_coverage": false,
+  "contains_original_reference_answers": false,
+  "independent_reviewer_has_prior_original_gold": false,
+  "packet_id": "R0_P03_ROUTE_B_MASKED_REVIEW_P01_TO_P04_V01",
+  "question_source_arms": 2,
+  "review_protocol": "ROUTE_B_TREATMENT_MASKED_CLAIM_REVIEW_CONTRACT_V01.md",
+  "source_git_pin": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+  "treatment_labels_masked": true,
+  "warning": "Only these cited original source lines may support judgments; do not supplement from repository, outside context or previous answers."
+}

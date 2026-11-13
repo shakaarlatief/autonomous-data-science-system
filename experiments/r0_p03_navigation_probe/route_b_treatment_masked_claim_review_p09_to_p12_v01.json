@@ -1,0 +1,1091 @@
+{
+  "case_span": [
+    "P09",
+    "P12"
+  ],
+  "cases": [
+    {
+      "case_id": "P09",
+      "question": "Did the AO-10 realization candidate authorize production implementation or physical migration?",
+      "variants": [
+        {
+          "answer": "No. Research 312 describes the AO-10 realization as a frozen candidate under independent review and explicitly says there was \u201cNO PRODUCTION IMPLEMENTATION / NO PHYSICAL MIGRATION\u201d. Its authority statement leaves Specification 028 as the existing implementation/migration contract pending a separate accepted successor or amendment.",
+          "available_evidence": [
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "b217fecb132fef0cee82fe0fc7a6808a2005bd7e3546641d5566bb61fd0164e6",
+                  "original_source_line": "# Checkpoint 644: General Architecture Vision Preserved and Evolution Boundary Clarified"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "fc660bd45e007cea5a22761d0a528e153e97786842d38bf587eebedac6639824",
+                  "original_source_line": "**Status:** GENERALIZABLE ARCHITECTURE VISION PRESERVED / AO-WARRANT-F COMPOSITION CLARIFIED / AO-4 EVOLUTION OWNERSHIP CONFIRMED / R8-C OWNER DECISION PENDING / NO PHYSICAL MIGRATION"
+                },
+                {
+                  "line": 8,
+                  "original_line_sha256": "52939b699736de90541f26ce9b4c1ac28d7d6fcd16494b11208875013a91f629",
+                  "original_source_line": "**Authority:** Research 309. This checkpoint does not accept WARRANT-F V0.2 or authorize implementation/migration/cutover."
+                },
+                {
+                  "line": 30,
+                  "original_line_sha256": "9836038f188ae97c48cc6fcd7e7f48d4e23de10e20ad3307bccadb00dc45c7a9",
+                  "original_source_line": "    AO-10                                HELD"
+                },
+                {
+                  "line": 32,
+                  "original_line_sha256": "0a238374fe45ff498d6152193b66d329bc3dd8e6d31a895c11745911b076d44e",
+                  "original_source_line": "    physical migration authorized        false"
+                }
+              ],
+              "original_source_sha256": "d23dbd9ad20c14f93ded350575dff6e4ac734b9268d4befc760fcfbf5eec4412",
+              "path": "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md",
+              "source_rank": 1
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "a895409692b2062c1c86c602c548e36df43168a94f2d8c20b0081b2c5e2de2e4",
+                  "original_source_line": "# Research 312: Specification 028 Reconciliation and AO-10 Realization Candidate V0.1"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "337f8cc9d5c5a00a475faf72d4a4915d08ee89b822059c5f22a7b2d14fef25a1",
+                  "original_source_line": "**Status:** SPECIFICATION 028 RECONCILIATION V0.1 FROZEN / AO-10 REALIZATION CANDIDATE V0.1 FROZEN / MC-0029 INDEPENDENT REVIEW OPENED / NO PRODUCTION IMPLEMENTATION / NO PHYSICAL MIGRATION"
+                },
+                {
+                  "line": 11,
+                  "original_line_sha256": "90576cfc81b9ddee0545e4ef8c3bfb787b7ede2ae2b19eb9c91df1588cf035fc",
+                  "original_source_line": "**Scope:** Reconcile every numbered section of Specification 028 against the accepted R5-R8 architecture and AO-3 through AO-9 decisions, derive a concrete AO-10 realization candidate without inheriting current implementation mechanisms by default, and freeze an independent-review target before any production mutation."
+                },
+                {
+                  "line": 12,
+                  "original_line_sha256": "642b837bf544a60b4a2a6a3ad19918294bf1ae7ac6be519cb81f6f8dfa60e113",
+                  "original_source_line": "**Authority:** Research candidate only. Specification 028 remains current implementation/migration authority until an explicit prospective successor or amendment is accepted."
+                },
+                {
+                  "line": 27,
+                  "original_line_sha256": "647647aab1597cb14e89b4be398a65e6627097407700df9811e3ef7c2f3b54ae",
+                  "original_source_line": "Specification 028 predates those decisions and mixes still-valid semantic contracts with older physical, representation, package, assurance, migration and compatibility choices. Implementing AO-10 directly from it would reintroduce the architecture-inheritance problem the owner explicitly rejected."
+                }
+              ],
+              "original_source_sha256": "58a77b5e9fed4008b9b7ed78a972d8063ca4be7d9dbf557256203572f275ec33",
+              "path": "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+              "source_rank": 2
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "7d31a20c74d7962fc66cd130bbf4062ac90f7897b88348af9c3acbd6687d6078",
+                  "original_source_line": "# Research 272: WMR-H V0.3 Owner Acceptance, MC-0027 Closure, and Assurance-Architecture Entry"
+                },
+                {
+                  "line": 3,
+                  "original_line_sha256": "99abba94e0f7c303dadf1cad8e2742c76e9f3362311f75c47218ce104c657e16",
+                  "original_source_line": "**Date:** 2026-09-23"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "db187712aa8befcb9fc23e93f6587e5da7567c6f8a7c1cd0b3536565a03e89e2",
+                  "original_source_line": "**Status:** R8-B REPRESENTATION ARCHITECTURE ACCEPTED / MC-0027 RESOLVED / ASSURANCE ARCHITECTURE UNBLOCKED / NO PHYSICAL MIGRATION"
+                },
+                {
+                  "line": 13,
+                  "original_line_sha256": "cf06ba630fa7ecc7efad695f8f130ee085be731ed9b88d1c12949661c0c155d2",
+                  "original_source_line": "**Scope:** Record the project owner's explicit acceptance of WMR-H V0.3 as the target R8-B representation architecture direction, resolve MC-0027, preserve the exact meaning and limits of that acceptance, and unblock first-principles assurance / verification / CI-CD architecture design."
+                },
+                {
+                  "line": 51,
+                  "original_line_sha256": "3449cd429cba46c94c0b3f6c42051e38ed73ba1c80677b72e7870d5e528a85ef",
+                  "original_source_line": "    post-freeze candidate changes none"
+                }
+              ],
+              "original_source_sha256": "0cc45f3d9b6903e16b1ad7503518b40c5705e1cd82430e761feaf409d0373432",
+              "path": "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+              "source_rank": 3
+            }
+          ],
+          "claims": [
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 1,
+                  "source_rank": 2
+                },
+                {
+                  "line": 4,
+                  "source_rank": 2
+                }
+              ],
+              "claim_id": "C01",
+              "statement": "Research 312's status explicitly excludes production implementation and physical migration."
+            },
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 12,
+                  "source_rank": 2
+                }
+              ],
+              "claim_id": "C02",
+              "statement": "The candidate does not displace Specification 028 implementation authority."
+            }
+          ],
+          "variant": "VARIANT_A"
+        },
+        {
+          "answer": "No. The AO-10 realization proposal in Research 312 was a frozen candidate for independent review, not authorization to implement or physically migrate. The source expressly preserves Specification 028's existing implementation/migration authority until a prospective amendment or successor is accepted.",
+          "available_evidence": [
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "a895409692b2062c1c86c602c548e36df43168a94f2d8c20b0081b2c5e2de2e4",
+                  "original_source_line": "# Research 312: Specification 028 Reconciliation and AO-10 Realization Candidate V0.1"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "337f8cc9d5c5a00a475faf72d4a4915d08ee89b822059c5f22a7b2d14fef25a1",
+                  "original_source_line": "**Status:** SPECIFICATION 028 RECONCILIATION V0.1 FROZEN / AO-10 REALIZATION CANDIDATE V0.1 FROZEN / MC-0029 INDEPENDENT REVIEW OPENED / NO PRODUCTION IMPLEMENTATION / NO PHYSICAL MIGRATION"
+                },
+                {
+                  "line": 11,
+                  "original_line_sha256": "90576cfc81b9ddee0545e4ef8c3bfb787b7ede2ae2b19eb9c91df1588cf035fc",
+                  "original_source_line": "**Scope:** Reconcile every numbered section of Specification 028 against the accepted R5-R8 architecture and AO-3 through AO-9 decisions, derive a concrete AO-10 realization candidate without inheriting current implementation mechanisms by default, and freeze an independent-review target before any production mutation."
+                },
+                {
+                  "line": 12,
+                  "original_line_sha256": "642b837bf544a60b4a2a6a3ad19918294bf1ae7ac6be519cb81f6f8dfa60e113",
+                  "original_source_line": "**Authority:** Research candidate only. Specification 028 remains current implementation/migration authority until an explicit prospective successor or amendment is accepted."
+                },
+                {
+                  "line": 27,
+                  "original_line_sha256": "647647aab1597cb14e89b4be398a65e6627097407700df9811e3ef7c2f3b54ae",
+                  "original_source_line": "Specification 028 predates those decisions and mixes still-valid semantic contracts with older physical, representation, package, assurance, migration and compatibility choices. Implementing AO-10 directly from it would reintroduce the architecture-inheritance problem the owner explicitly rejected."
+                }
+              ],
+              "original_source_sha256": "58a77b5e9fed4008b9b7ed78a972d8063ca4be7d9dbf557256203572f275ec33",
+              "path": "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+              "source_rank": 1
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "3190ed181b0cf6242306dc82f324662905d8a4663779f487f819f54bdaf00a42",
+                  "original_source_line": "# Research 503: R0 realization requirements and independent physical-architecture design charter"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "1822b7a3cd75a0d4a101c2f03c825c5645102dcd79e9131370a981ba59829ce1",
+                  "original_source_line": "**Status:** R0 CHARTER FROZEN / INDEPENDENT PHYSICAL ARCHITECTURE DESIGN NEXT"
+                },
+                {
+                  "line": 9,
+                  "original_line_sha256": "251faff40473b681faef473262741c283dd7e4429f42bd5a7882e1ce174d85bd",
+                  "original_source_line": "**Scope:** Freeze the realization-stage requirements, design freedom, evaluation dimensions, and independent-design protocol before any concrete physical architecture candidate is selected."
+                },
+                {
+                  "line": 10,
+                  "original_line_sha256": "42c420375c93d4f6140a9c33bddacf60b10af40bca1fc148ebbd08b658a76f96",
+                  "original_source_line": "**Authority:** Realization-design charter only. Specification 028 remains current operational authority. No physical architecture, implementation, migration wave, branch strategy, storage choice, or cutover is selected here."
+                },
+                {
+                  "line": 14,
+                  "original_line_sha256": "ebcb95c44abcef2d18da8c213252e3c1882322ea1c61c1804771dbb87c1736c7",
+                  "original_source_line": "R0 converts the selected logical architecture into a professional physical/software realization design."
+                }
+              ],
+              "original_source_sha256": "eadf86eb4803ed442643ecd656bc2c8d44b281ba9f0dc20b8948eb85c437fcaa",
+              "path": "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+              "source_rank": 2
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "03e3c31facf5d13227861d9f7101818bd4fbd2d6a47771469034a7a3f059e160",
+                  "original_source_line": "# Research 217: W5 T1 V0.2 Controlled Subject Architecture Acceptance"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "f862c96f5d49daf2950462246a0903cf9ea4b3be569abfc7d14fd0c5ae6e4009",
+                  "original_source_line": "**Status:** T1 ACCEPTED / CONTROLLED SUBJECT ARCHITECTURE FROZEN"
+                },
+                {
+                  "line": 5,
+                  "original_line_sha256": "6bf42498346fcaf4788efb7ec45fddfa552035d912e187a9e56a0790c80692e4",
+                  "original_source_line": "**Selected architecture:** `PKA-CANDIDATE-01`"
+                },
+                {
+                  "line": 11,
+                  "original_line_sha256": "3f78ec3ba6a6ad95516f89a9bc744ad56d11eac750daa4153a663328ee9e60e1",
+                  "original_source_line": "**Scope:** Reconcile the V0.2 deterministic 65-carrier experiment and the second blind 24-carrier calibration, freeze the V1 semantic-subject contract, and identify bounded definition clarifications for production realization."
+                },
+                {
+                  "line": 12,
+                  "original_line_sha256": "2c4f487ff9a7844bf8e65321fb7525ca6b550ee1baeff45c82eeb35a1bfc2a50",
+                  "original_source_line": "**Authority:** W5 design result only. This does not yet add navigation metadata to production sources, change source authority, replace the legacy Knowledge Map, begin broad semantic migration, or switch operational authority."
+                }
+              ],
+              "original_source_sha256": "1a45aa417851c65be8b2455b9a81a32c2e2273a529b5716c6ebb4c1f736e73d4",
+              "path": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+              "source_rank": 3
+            }
+          ],
+          "claims": [
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 1,
+                  "source_rank": 1
+                },
+                {
+                  "line": 4,
+                  "source_rank": 1
+                }
+              ],
+              "claim_id": "C01",
+              "statement": "Research 312 explicitly says no production implementation or physical migration."
+            },
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 12,
+                  "source_rank": 1
+                }
+              ],
+              "claim_id": "C02",
+              "statement": "The recorded authority scope leaves the existing Specification 028 contract in place."
+            }
+          ],
+          "variant": "VARIANT_B"
+        }
+      ]
+    },
+    {
+      "case_id": "P10",
+      "question": "Which checkpoint records the R0-P02 probe passing, and which architectural probe was scheduled next?",
+      "variants": [
+        {
+          "answer": "Checkpoint 853 is the historical R0-P02 PASS record and says \u201cR0-P01 NEXT\u201d, with the Git governing substrate retained. The selected later Checkpoint 891 excerpt states that R0-P01's mandatory preselection gate was prospectively superseded, so the archived next-step instruction should not be treated as an unchanging current rule.",
+          "available_evidence": [
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "017f137767ff200f696d0409c2f3dff17d2fa577896bb484d0b28bca0fa4918d",
+                  "original_source_line": "# Checkpoint 853: R0-P02 passed, R0-P01 fixture freeze next"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "2de3b80b7a0c01aede9bf7cb40cb6e4fcded698a00e037d51eba90d7f99396ad",
+                  "original_source_line": "**Status:** R0-P02 PASS / GIT GOVERNING SUBSTRATE RETAINED / R0-P01 NEXT"
+                },
+                {
+                  "line": 5,
+                  "original_line_sha256": "f612589622d48c5c9a1c58f4b1d91a5d295a8f67534dbc498ed6b620860e139f",
+                  "original_source_line": "**Checkpoint class:** R0 PHYSICAL-ARCHITECTURE DECISION PROBE CLOSURE"
+                },
+                {
+                  "line": 7,
+                  "original_line_sha256": "0625794f098cef27f59ce94bc5f45cce8dbc85cb750a8266115a936935a7c1ba",
+                  "original_source_line": "**Scope:** Close R0-P02 after deterministic-core and live-host PASS and route to R0-P01."
+                },
+                {
+                  "line": 8,
+                  "original_line_sha256": "8def535ead32cbf8f122c5d856cec8eeb594c26cfd3a206045407f8fdf3f36a1",
+                  "original_source_line": "**Authority:** R0-P02 result checkpoint only. No full physical-target selection, production implementation, migration, Specification 028 amendment, or authority switch is authorized."
+                }
+              ],
+              "original_source_sha256": "5d3f9fdd27a761775b99f1971623ddc973ee87192f9f1faa32112660c228a0bb",
+              "path": "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+              "source_rank": 1
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "e3531e66f3c03f03215ca03d954d167057879e743f5e171f5c36ccdcab79378d",
+                  "original_source_line": "# Checkpoint 891: owner-approved authentication deferral; R0-P03 may resume"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "bfed8a4692fdb2ec08137f07adef86ef66a2d14eb02c21a7af1a996591b57070",
+                  "original_source_line": "**Checkpoint class:** PROSPECTIVE R0 OWNER GOVERNANCE AND PROBE-SEQUENCING AMENDMENT"
+                },
+                {
+                  "line": 5,
+                  "original_line_sha256": "dea7035a38ecf2b53d3890b1658658bb9297d94d2bd1c682818a5a93e9d72095",
+                  "original_source_line": "**Project stage:** R0 physical architecture decision probes"
+                },
+                {
+                  "line": 11,
+                  "original_line_sha256": "53e170201c9dbc0b7e6b015847d269e73f02a3c8424ea19b9bebebe38dc151ae",
+                  "original_source_line": "**Status:** PROSPECTIVE_R0_AUTHENTICATION_GATE_AMENDED / P03_FIXTURE_NEXT"
+                },
+                {
+                  "line": 16,
+                  "original_line_sha256": "64dd4e4e242468ee8325ae50ea36e34a63381ed773c0e5d70b47e2808963edb7",
+                  "original_source_line": "**Authority:** Prospective supersession of the **R0-P01 mandatory preselection gate**, not alteration of past experiment results, current Specification 028 authority, physical-target selection or production authorization."
+                }
+              ],
+              "original_source_sha256": "7a604ec607b1aa7a8135504dc9a24576e463c5a5f392c1a1ebefa0e2e518e7f7",
+              "path": "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+              "source_rank": 2
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "86030a7d335a85824760ed4e18bb4e66b16966a5d6ebe0472e074e06789aa15f",
+                  "original_source_line": "# Checkpoint 884: R0-P01 atomic synthetic measurement finalization pass"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "dc4cfae21f31782211e4975d85340f5fde680ea8f08152868d6d636072b2933c",
+                  "original_source_line": "**Checkpoint class:** R0-P01 owner-authenticity experiment / synthetic measured acceptance crash consistency"
+                },
+                {
+                  "line": 5,
+                  "original_line_sha256": "59f62eebf1781245ad73d9a6c961956d91b91baa11b8b54cf93fa019c3405035",
+                  "original_source_line": "**Project stage:** R0 physical-architecture decision probes"
+                },
+                {
+                  "line": 11,
+                  "original_line_sha256": "c75638aac1f953fff613ad3e6856b2637b4e5b06c6f3f6dcfa1fb45ee034ffaa",
+                  "original_source_line": "**Status:** SYNTHETIC_MEASURED_ACCEPTANCE_ATOMICITY_PASS / INDEPENDENT_SUCCESSOR_OUTCOME_VECTORS_NEXT"
+                },
+                {
+                  "line": 23,
+                  "original_line_sha256": "cdb1badec8e4afc4f0fb7160ffc9312936ee693b7fe7edabd797688097329811",
+                  "original_source_line": "The next meaningful work is independent expected-outcome vectors and score qualification on the successor, after accurately separating signature admission, missing measurement, operator accidental interruption and study-level outcomes. Prior work on synthetic procedural authorization and the owner-approved simple replacement rule remain intact; no new broad Claude audit campaign or exceptional-retry bureaucracy is required. R0-P02 PASS, R0-P03 pending, physical realization architecture still unselected and freely revisable."
+                }
+              ],
+              "original_source_sha256": "70116235e0fa5f3ee33c8324eb784d68334acf06f330d1511201146d3f10ae07",
+              "path": "docs/checkpoints/884_r0_p01_atomic_synthetic_finalization_and_independent_outcome_vectors_next.md",
+              "source_rank": 3
+            }
+          ],
+          "claims": [
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 1,
+                  "source_rank": 1
+                },
+                {
+                  "line": 4,
+                  "source_rank": 1
+                },
+                {
+                  "line": 7,
+                  "source_rank": 1
+                }
+              ],
+              "claim_id": "C01",
+              "statement": "Checkpoint 853 identifies both R0-P02 PASS and R0-P01 as the next probe."
+            },
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 16,
+                  "source_rank": 2
+                }
+              ],
+              "claim_id": "C02",
+              "statement": "The R0-P01 mandatory preselection gate was prospectively superseded later."
+            }
+          ],
+          "variant": "VARIANT_A"
+        },
+        {
+          "answer": "Checkpoint 853 records R0-P02 PASS and retention of the Git governing substrate; at that checkpoint, R0-P01 fixture freeze was scheduled next. That is the historical sequence, not a claim that R0-P01 remained a mandatory gate indefinitely: the later retrieved Checkpoint 891 prospectively superseded that mandatory preselection requirement.",
+          "available_evidence": [
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "017f137767ff200f696d0409c2f3dff17d2fa577896bb484d0b28bca0fa4918d",
+                  "original_source_line": "# Checkpoint 853: R0-P02 passed, R0-P01 fixture freeze next"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "2de3b80b7a0c01aede9bf7cb40cb6e4fcded698a00e037d51eba90d7f99396ad",
+                  "original_source_line": "**Status:** R0-P02 PASS / GIT GOVERNING SUBSTRATE RETAINED / R0-P01 NEXT"
+                },
+                {
+                  "line": 5,
+                  "original_line_sha256": "f612589622d48c5c9a1c58f4b1d91a5d295a8f67534dbc498ed6b620860e139f",
+                  "original_source_line": "**Checkpoint class:** R0 PHYSICAL-ARCHITECTURE DECISION PROBE CLOSURE"
+                },
+                {
+                  "line": 7,
+                  "original_line_sha256": "0625794f098cef27f59ce94bc5f45cce8dbc85cb750a8266115a936935a7c1ba",
+                  "original_source_line": "**Scope:** Close R0-P02 after deterministic-core and live-host PASS and route to R0-P01."
+                },
+                {
+                  "line": 8,
+                  "original_line_sha256": "8def535ead32cbf8f122c5d856cec8eeb594c26cfd3a206045407f8fdf3f36a1",
+                  "original_source_line": "**Authority:** R0-P02 result checkpoint only. No full physical-target selection, production implementation, migration, Specification 028 amendment, or authority switch is authorized."
+                }
+              ],
+              "original_source_sha256": "5d3f9fdd27a761775b99f1971623ddc973ee87192f9f1faa32112660c228a0bb",
+              "path": "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+              "source_rank": 1
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "e3531e66f3c03f03215ca03d954d167057879e743f5e171f5c36ccdcab79378d",
+                  "original_source_line": "# Checkpoint 891: owner-approved authentication deferral; R0-P03 may resume"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "bfed8a4692fdb2ec08137f07adef86ef66a2d14eb02c21a7af1a996591b57070",
+                  "original_source_line": "**Checkpoint class:** PROSPECTIVE R0 OWNER GOVERNANCE AND PROBE-SEQUENCING AMENDMENT"
+                },
+                {
+                  "line": 5,
+                  "original_line_sha256": "dea7035a38ecf2b53d3890b1658658bb9297d94d2bd1c682818a5a93e9d72095",
+                  "original_source_line": "**Project stage:** R0 physical architecture decision probes"
+                },
+                {
+                  "line": 11,
+                  "original_line_sha256": "53e170201c9dbc0b7e6b015847d269e73f02a3c8424ea19b9bebebe38dc151ae",
+                  "original_source_line": "**Status:** PROSPECTIVE_R0_AUTHENTICATION_GATE_AMENDED / P03_FIXTURE_NEXT"
+                },
+                {
+                  "line": 16,
+                  "original_line_sha256": "64dd4e4e242468ee8325ae50ea36e34a63381ed773c0e5d70b47e2808963edb7",
+                  "original_source_line": "**Authority:** Prospective supersession of the **R0-P01 mandatory preselection gate**, not alteration of past experiment results, current Specification 028 authority, physical-target selection or production authorization."
+                }
+              ],
+              "original_source_sha256": "7a604ec607b1aa7a8135504dc9a24576e463c5a5f392c1a1ebefa0e2e518e7f7",
+              "path": "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+              "source_rank": 2
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "2377b5474e21c6583e51496b51bf94a9b2a684ef1f60d5bb550369ed027e499a",
+                  "original_source_line": "# Research 512: MC-0030 Claude critique reconciliation and Governed Ledger Kernel V0.2"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "7a9233dac206d0ca98a3cbf7fd7fc2156bbf3b4c62917125812a821e9e496f0d",
+                  "original_source_line": "**Status:** CLAUDE MESSAGE 003 RECONCILED / GOVERNED LEDGER KERNEL V0.2 FROZEN / THREE-PROBE PROGRAM RETAINED / PROBE PROTOCOL PREREGISTRATION NEXT / OWNER DECISION NOT READY"
+                },
+                {
+                  "line": 10,
+                  "original_line_sha256": "d3e76b3a03d0d665c1b57b05658316e27831f300d6bd0398d14ca9949aac5172",
+                  "original_source_line": "**Scope:** Reconcile Claude Message 003 into the first comparative candidate, repair the acceptance/order/J2/publication/executor/private-state interfaces before probe design, and freeze the smallest decision-relevant R0 probe set without executing any probe."
+                },
+                {
+                  "line": 11,
+                  "original_line_sha256": "42928c552c1fa59b925f9dbf4bbe85435e998136a18035ec3162e51264a8d02c",
+                  "original_source_line": "**Authority:** Comparative architecture candidate only. No physical target, implementation, migration, Specification 028 amendment, Runtime Bridge extraction, production activation, or authority switch is authorized."
+                },
+                {
+                  "line": 35,
+                  "original_line_sha256": "80d9cd2b8a227211865edfda39abd3c51dabe877771292a6df7d9a5d7ff807c4",
+                  "original_source_line": "    R0-P02 authority admission / ordering / concurrency / tamper evidence"
+                }
+              ],
+              "original_source_sha256": "40bf71219aaf9eee311241e0eabd7b034f52e0a40fe7b18a8437ea3fdfe4edf4",
+              "path": "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+              "source_rank": 3
+            }
+          ],
+          "claims": [
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 1,
+                  "source_rank": 1
+                },
+                {
+                  "line": 4,
+                  "source_rank": 1
+                },
+                {
+                  "line": 7,
+                  "source_rank": 1
+                }
+              ],
+              "claim_id": "C01",
+              "statement": "Checkpoint 853 reports R0-P02 PASS and R0-P01 next."
+            },
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 16,
+                  "source_rank": 2
+                }
+              ],
+              "claim_id": "C02",
+              "statement": "Later Checkpoint 891 prospectively supersedes R0-P01 as a mandatory preselection gate."
+            }
+          ],
+          "variant": "VARIANT_B"
+        }
+      ]
+    },
+    {
+      "case_id": "P11",
+      "question": "Which checkpoint documents the owner-approved deferral of authentication and permission to resume R0-P03 fixture work?",
+      "variants": [
+        {
+          "answer": "Checkpoint 891 documents the owner-directed prospective authentication deferral and permission to proceed with R0-P03 fixture work. Its status is `PROSPECTIVE_R0_AUTHENTICATION_GATE_AMENDED / P03_FIXTURE_NEXT`; the same source explains that the actual owner-authentication trial was deferred, not successfully deployed or used for production authority.",
+          "available_evidence": [
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "e3531e66f3c03f03215ca03d954d167057879e743f5e171f5c36ccdcab79378d",
+                  "original_source_line": "# Checkpoint 891: owner-approved authentication deferral; R0-P03 may resume"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "bfed8a4692fdb2ec08137f07adef86ef66a2d14eb02c21a7af1a996591b57070",
+                  "original_source_line": "**Checkpoint class:** PROSPECTIVE R0 OWNER GOVERNANCE AND PROBE-SEQUENCING AMENDMENT"
+                },
+                {
+                  "line": 11,
+                  "original_line_sha256": "53e170201c9dbc0b7e6b015847d269e73f02a3c8424ea19b9bebebe38dc151ae",
+                  "original_source_line": "**Status:** PROSPECTIVE_R0_AUTHENTICATION_GATE_AMENDED / P03_FIXTURE_NEXT"
+                },
+                {
+                  "line": 14,
+                  "original_line_sha256": "8d347d06a52615d335c1be6190c9c2708816ab47124b388741b3f55cce1965e4",
+                  "original_source_line": "**Scope:** Owner-directed narrow prospective selection-gate and research-authentication routing amendment; no cryptographic feature deployment or real owner trial."
+                },
+                {
+                  "line": 22,
+                  "original_line_sha256": "2d6892f163a65857142813a25857e211f646325d79b7801255e88071f743a03f",
+                  "original_source_line": "R0-P01 Attempt 001 remains AMEND; old approved B01/B02 and owner-authorized accidental replacement policy are unmodified; F1/F2 UNFROZEN; real Attempt 002 NOT AUTHORIZED and now DEFERRED. Old test code, evidence and frozen Research 513 remain immutable as history. No live owner credentials, browser ceremony, production ledger admission, or R0-P03 scoring occurred."
+                }
+              ],
+              "original_source_sha256": "7a604ec607b1aa7a8135504dc9a24576e463c5a5f392c1a1ebefa0e2e518e7f7",
+              "path": "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+              "source_rank": 1
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "20ed93f3c60634b1836cc4f9581d94482ba8deac82e205c580a39ac82674d890",
+                  "original_source_line": "# Checkpoint 899: R0-P03 bounded historical evidence-capacity HOLD and prospective decision boundary"
+                },
+                {
+                  "line": 8,
+                  "original_line_sha256": "d477df291cf60c27e2fcc0c8f92460c06d7cf9b6a21779250ac5d6d2a46ec390",
+                  "original_source_line": "**Authority:** Historical scientific/continuity boundary; Research 513 and the accepted scoped R0-P03 decisions retain their own frozen contract authority. Independent aggregate reports provenance, not an architecture winner or proof that missing events never occurred."
+                },
+                {
+                  "line": 29,
+                  "original_line_sha256": "831dcbfc3af58f46318a2c1065a08d312c06f20cc7d521bdf5e5401cfb05aec6",
+                  "original_source_line": "**Next human decision:** determine whether to (a) authorize a separately preregistered, genuinely fresh independent reference route that does not retrospectively falsify the six historical HOLDs, or (b) defer R0-P03 scoring while preserving its open evidence boundary. A later specific newly attested original witness could justify a separately owner-authorized exception, but the eight remaining uninspected indexed metadata leads do not themselves justify searching again."
+                },
+                {
+                  "line": 31,
+                  "original_line_sha256": "b452e5f2858c57a2637618b7987a6386c3eb7824d2621fd89eafd8590c71d8be",
+                  "original_source_line": "No owner adoption of a future protocol change or deferral is represented by this checkpoint. No scientific result, comparison treatment, task selection, frozen specification, or production authority switch is changed."
+                },
+                {
+                  "line": 37,
+                  "original_line_sha256": "a48c51494993ce5899d881eb448fd21f37115e80573e78868ba8e2d00d09e98d",
+                  "original_source_line": "    CHECKPOINT_899=R0_P03_EVIDENCE_CAPACITY_HOLD"
+                }
+              ],
+              "original_source_sha256": "fd9ee485c0671f4950ea050f21fc029683dc05412921fcc21107091619f0ac9f",
+              "path": "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+              "source_rank": 2
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "0e346beaa790fb777bdca66486b12ef7eb766f4793a4852e9976dffe6b31c221",
+                  "original_source_line": "# Current State"
+                },
+                {
+                  "line": 3,
+                  "original_line_sha256": "8576398fa1dd4cfc9dd9d68bc582befab4b74ffea3a0ad0a4d600dd6f07fdbc5",
+                  "original_source_line": "**Checkpoint:** 899"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "dd89a2288a986466c20b0178e141e671e5cd766ca76385add7c06e4174ab298e",
+                  "original_source_line": "**Date:** 2026-11-11"
+                },
+                {
+                  "line": 5,
+                  "original_line_sha256": "9534ca61c709f51870dec81ddb00445527c1d6c40a2b97414c3c36ceca5cace2",
+                  "original_source_line": "**Active development branch:** `v1-source-vault-bootstrap-resume`"
+                },
+                {
+                  "line": 6,
+                  "original_line_sha256": "f2b5fd64a86af9670b471c987cdc3d98b8f4c541953d99e398c662e66aeb09ec",
+                  "original_source_line": "**Active PR:** none"
+                }
+              ],
+              "original_source_sha256": "54bcb132f12ceffd330540006a8099179a260f751da7b4269253b6aef87edcaa",
+              "path": "docs/CURRENT_STATE.md",
+              "source_rank": 3
+            }
+          ],
+          "claims": [
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 1,
+                  "source_rank": 1
+                },
+                {
+                  "line": 11,
+                  "source_rank": 1
+                },
+                {
+                  "line": 14,
+                  "source_rank": 1
+                }
+              ],
+              "claim_id": "C01",
+              "statement": "Checkpoint 891 records the authentication-gate amendment and P03 fixture next."
+            },
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 22,
+                  "source_rank": 1
+                }
+              ],
+              "claim_id": "C02",
+              "statement": "Real authentication Attempt 002 remained unauthorized/deferred and no production ledger admission occurred."
+            }
+          ],
+          "variant": "VARIANT_A"
+        },
+        {
+          "answer": "The requested record is Checkpoint 891, which marks the owner-directed R0 authentication gate as prospectively amended and R0-P03 fixture preparation as next. It does not claim that an owner-cryptographic trial or production authorization happened: the cited historical note specifically defers Attempt 002 and records no credential admission.",
+          "available_evidence": [
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "0e346beaa790fb777bdca66486b12ef7eb766f4793a4852e9976dffe6b31c221",
+                  "original_source_line": "# Current State"
+                },
+                {
+                  "line": 3,
+                  "original_line_sha256": "8576398fa1dd4cfc9dd9d68bc582befab4b74ffea3a0ad0a4d600dd6f07fdbc5",
+                  "original_source_line": "**Checkpoint:** 899"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "dd89a2288a986466c20b0178e141e671e5cd766ca76385add7c06e4174ab298e",
+                  "original_source_line": "**Date:** 2026-11-11"
+                },
+                {
+                  "line": 5,
+                  "original_line_sha256": "9534ca61c709f51870dec81ddb00445527c1d6c40a2b97414c3c36ceca5cace2",
+                  "original_source_line": "**Active development branch:** `v1-source-vault-bootstrap-resume`"
+                },
+                {
+                  "line": 6,
+                  "original_line_sha256": "f2b5fd64a86af9670b471c987cdc3d98b8f4c541953d99e398c662e66aeb09ec",
+                  "original_source_line": "**Active PR:** none"
+                }
+              ],
+              "original_source_sha256": "54bcb132f12ceffd330540006a8099179a260f751da7b4269253b6aef87edcaa",
+              "path": "docs/CURRENT_STATE.md",
+              "source_rank": 1
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "e3531e66f3c03f03215ca03d954d167057879e743f5e171f5c36ccdcab79378d",
+                  "original_source_line": "# Checkpoint 891: owner-approved authentication deferral; R0-P03 may resume"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "bfed8a4692fdb2ec08137f07adef86ef66a2d14eb02c21a7af1a996591b57070",
+                  "original_source_line": "**Checkpoint class:** PROSPECTIVE R0 OWNER GOVERNANCE AND PROBE-SEQUENCING AMENDMENT"
+                },
+                {
+                  "line": 11,
+                  "original_line_sha256": "53e170201c9dbc0b7e6b015847d269e73f02a3c8424ea19b9bebebe38dc151ae",
+                  "original_source_line": "**Status:** PROSPECTIVE_R0_AUTHENTICATION_GATE_AMENDED / P03_FIXTURE_NEXT"
+                },
+                {
+                  "line": 14,
+                  "original_line_sha256": "8d347d06a52615d335c1be6190c9c2708816ab47124b388741b3f55cce1965e4",
+                  "original_source_line": "**Scope:** Owner-directed narrow prospective selection-gate and research-authentication routing amendment; no cryptographic feature deployment or real owner trial."
+                },
+                {
+                  "line": 22,
+                  "original_line_sha256": "2d6892f163a65857142813a25857e211f646325d79b7801255e88071f743a03f",
+                  "original_source_line": "R0-P01 Attempt 001 remains AMEND; old approved B01/B02 and owner-authorized accidental replacement policy are unmodified; F1/F2 UNFROZEN; real Attempt 002 NOT AUTHORIZED and now DEFERRED. Old test code, evidence and frozen Research 513 remain immutable as history. No live owner credentials, browser ceremony, production ledger admission, or R0-P03 scoring occurred."
+                }
+              ],
+              "original_source_sha256": "7a604ec607b1aa7a8135504dc9a24576e463c5a5f392c1a1ebefa0e2e518e7f7",
+              "path": "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+              "source_rank": 2
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "9d4dfa6779aea514a71d7c2e7a08d8e111ffab51f1bd441daf3dc8fdef96506e",
+                  "original_source_line": "# Research 014: LangGraph 1.2.10 released durability comparator audit"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "efe19fb4a0e3747ef8e4b8a17ab2df195bf0e72865ab1dcaa9f1d465c4775743",
+                  "original_source_line": "**Status:** Current pre-implementation runtime-bakeoff evidence; no runtime selection  "
+                },
+                {
+                  "line": 5,
+                  "original_line_sha256": "0a5081fd9790108b32556db5d351d64ecb0006a16d75cf6d97a820db0ab7098b",
+                  "original_source_line": "**Scope:** Verifies the currently released LangGraph ecosystem and narrows the ADS durability comparator before implementation.  "
+                },
+                {
+                  "line": 26,
+                  "original_line_sha256": "acce9a6c95a373cf275cef6f8ffdd14ae57919d62b95dc5e7714b9bbae659acd",
+                  "original_source_line": "The LangGraph package currently declares Python >=3.10 and depends on the LangGraph checkpoint package family, LangChain Core, LangGraph SDK, and prebuilt support. SQLite checkpoint persistence remains a separate installable package."
+                },
+                {
+                  "line": 65,
+                  "original_line_sha256": "f66bc4f64ed9872eff8f034daaa812eafb11f4536245dd7a69204e731df11111",
+                  "original_source_line": "This distinction is mandatory. LangGraph checkpoint state must not become the project source of truth."
+                }
+              ],
+              "original_source_sha256": "eb61bbd64974cc8f02b6f346e58cd90bc1c04d66abd69c0a224efacd99087b3d",
+              "path": "docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md",
+              "source_rank": 3
+            }
+          ],
+          "claims": [
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 1,
+                  "source_rank": 2
+                },
+                {
+                  "line": 11,
+                  "source_rank": 2
+                },
+                {
+                  "line": 14,
+                  "source_rank": 2
+                }
+              ],
+              "claim_id": "C01",
+              "statement": "Checkpoint 891 is the owner-directed authentication deferral document and points to P03 fixture."
+            },
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 22,
+                  "source_rank": 2
+                }
+              ],
+              "claim_id": "C02",
+              "statement": "The real owner trial and production authority were not completed there."
+            }
+          ],
+          "variant": "VARIANT_B"
+        }
+      ]
+    },
+    {
+      "case_id": "P12",
+      "question": "What was the documented reason the independent R0-P03 reference cohort could not yet be scored in the earlier evidence-capacity review?",
+      "variants": [
+        {
+          "answer": "The earlier evidence-capacity review is recorded in Checkpoint 899. Its status says the independent witness review was complete but verified reference capacity remained insufficient, leaving R0-P03 unscored. The source explicitly distinguishes that HOLD from a passed, failed or scored architecture comparison.",
+          "available_evidence": [
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "57b734923955613c60afdc57e204237eba6bfbf4587ab81bef7ed6ec23a9f6fe",
+                  "original_source_line": "# Research 619: Genuine Wave0 challenger route after authenticated first-reviewer recovery"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "e043c044b7196c102784efc855464647a3cb9e2dbac529d76946b0ec0405c4f9",
+                  "original_source_line": "**Status:** FIRST_REVIEWER_OWNER_AUTHENTICATED_RECOVERY_PASS / INDEPENDENT_CHALLENGER_BLIND_FIRST_PASS_READY_NOT_DELIVERED / OWNER_PRIVATE_COMPARISON_AND_TARGETED_ADVERSARIAL_CHALLENGE_FUTURE"
+                },
+                {
+                  "line": 25,
+                  "original_line_sha256": "d01449192d0fe5181371829077bf7a0f68cff115470082a3e73989d0e9085d35",
+                  "original_source_line": "This approach is lighter than a new VM/account/cryptographic principal but materially better than another actor simply reporting a tool list. It also creates a **real independent, blinded-to-first-review reference for later targeted challenge** rather than giving the second model all first-reviewer answers up front."
+                },
+                {
+                  "line": 29,
+                  "original_line_sha256": "b65ef66ca4120cf3289d4e86bc0ab14c1a409d42788e919fb0ae67651b436ced",
+                  "original_source_line": "- `experiments/r0_p03_navigation_probe/s1_wave0_independent_challenger_first_pass.py`: a **different** canonical restricted report format/actor, exact batch validation using the qualified Wave0 loader, original-source per-record status validators, bound original reviewer **ciphertext SHA-256 only**, no private first-reviewer content, OpenSSL AES-256-GCM CMS to the preexisting owner's public certificate, independent authenticated owner readback without private output."
+                },
+                {
+                  "line": 31,
+                  "original_line_sha256": "178a420e1fe2ab10d75f597e128ebf0c62b3645b8529339f6cdd1ee454dea748",
+                  "original_source_line": "- `experiments/r0_p03_navigation_probe/S1_WAVE0_INDEPENDENT_CHALLENGER_FIRST_PASS_HANDOFF_V01.md`: full task, five required attachments, role exclusion, original-history contamination boundary and strict `FIRST_PASS` rather than falsely completed challenge."
+                }
+              ],
+              "original_source_sha256": "c44efff1ff0a2bef4ee493a6b3583ad83dbe296b026ab744665f15db1f2f895c",
+              "path": "docs/research/619_r0_p03_wave0_independent_blind_second_assessment_and_owner_comparison_route.md",
+              "source_rank": 1
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "0e346beaa790fb777bdca66486b12ef7eb766f4793a4852e9976dffe6b31c221",
+                  "original_source_line": "# Current State"
+                },
+                {
+                  "line": 3,
+                  "original_line_sha256": "8576398fa1dd4cfc9dd9d68bc582befab4b74ffea3a0ad0a4d600dd6f07fdbc5",
+                  "original_source_line": "**Checkpoint:** 899"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "dd89a2288a986466c20b0178e141e671e5cd766ca76385add7c06e4174ab298e",
+                  "original_source_line": "**Date:** 2026-11-11"
+                },
+                {
+                  "line": 5,
+                  "original_line_sha256": "9534ca61c709f51870dec81ddb00445527c1d6c40a2b97414c3c36ceca5cace2",
+                  "original_source_line": "**Active development branch:** `v1-source-vault-bootstrap-resume`"
+                },
+                {
+                  "line": 6,
+                  "original_line_sha256": "f2b5fd64a86af9670b471c987cdc3d98b8f4c541953d99e398c662e66aeb09ec",
+                  "original_source_line": "**Active PR:** none"
+                }
+              ],
+              "original_source_sha256": "54bcb132f12ceffd330540006a8099179a260f751da7b4269253b6aef87edcaa",
+              "path": "docs/CURRENT_STATE.md",
+              "source_rank": 2
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "20ed93f3c60634b1836cc4f9581d94482ba8deac82e205c580a39ac82674d890",
+                  "original_source_line": "# Checkpoint 899: R0-P03 bounded historical evidence-capacity HOLD and prospective decision boundary"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "c4b1b3bc9fdcfe3e8a70e32ade802ab80abb1e684fb2296525ec0fc102c83952",
+                  "original_source_line": "**Status:** INDEPENDENT_WITNESS_REVIEW_COMPLETE / INSUFFICIENT_VERIFIED_REFERENCE_CAPACITY / EXPERIMENT_UNSCORED"
+                },
+                {
+                  "line": 6,
+                  "original_line_sha256": "cec6ec61233b1e981ae7ebae43c2dbb84e41691e9ea03f8eca5231fbf45d44f8",
+                  "original_source_line": "**Project stage:** R0-P03 prefixture independent reference and historical-evidence qualification"
+                },
+                {
+                  "line": 23,
+                  "original_line_sha256": "41afcd879c9c6f95b9e5b6e630d4107f55eb21355726ccb7d44d6658998b2bd2",
+                  "original_source_line": "The finite source-witness review is now complete, and no further source search was authorized. This is a completed **capacity assessment with a genuine HOLD**, not a valid R0-P03 architecture-comparison failure, pass or scored experiment. The original experimental need-set and source-independence/zero-false-authority constraints remain intact."
+                },
+                {
+                  "line": 29,
+                  "original_line_sha256": "831dcbfc3af58f46318a2c1065a08d312c06f20cc7d521bdf5e5401cfb05aec6",
+                  "original_source_line": "**Next human decision:** determine whether to (a) authorize a separately preregistered, genuinely fresh independent reference route that does not retrospectively falsify the six historical HOLDs, or (b) defer R0-P03 scoring while preserving its open evidence boundary. A later specific newly attested original witness could justify a separately owner-authorized exception, but the eight remaining uninspected indexed metadata leads do not themselves justify searching again."
+                }
+              ],
+              "original_source_sha256": "fd9ee485c0671f4950ea050f21fc029683dc05412921fcc21107091619f0ac9f",
+              "path": "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+              "source_rank": 3
+            }
+          ],
+          "claims": [
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 1,
+                  "source_rank": 3
+                },
+                {
+                  "line": 4,
+                  "source_rank": 3
+                }
+              ],
+              "claim_id": "C01",
+              "statement": "Checkpoint 899 reports completed witness review and insufficient verified reference capacity."
+            },
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 23,
+                  "source_rank": 3
+                }
+              ],
+              "claim_id": "C02",
+              "statement": "The report says this was a genuine capacity HOLD, not an R0-P03 architecture test result."
+            }
+          ],
+          "variant": "VARIANT_A"
+        },
+        {
+          "answer": "Checkpoint 899 records that the independent source-witness review had finished but there was insufficient verified reference capacity to score R0-P03. It classifies the outcome as an evidence-capacity HOLD and unscored experiment, not as a scientific pass or architecture failure. The record leaves a fresh independent-reference route or deferral as a later decision.",
+          "available_evidence": [
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "0e346beaa790fb777bdca66486b12ef7eb766f4793a4852e9976dffe6b31c221",
+                  "original_source_line": "# Current State"
+                },
+                {
+                  "line": 3,
+                  "original_line_sha256": "8576398fa1dd4cfc9dd9d68bc582befab4b74ffea3a0ad0a4d600dd6f07fdbc5",
+                  "original_source_line": "**Checkpoint:** 899"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "dd89a2288a986466c20b0178e141e671e5cd766ca76385add7c06e4174ab298e",
+                  "original_source_line": "**Date:** 2026-11-11"
+                },
+                {
+                  "line": 5,
+                  "original_line_sha256": "9534ca61c709f51870dec81ddb00445527c1d6c40a2b97414c3c36ceca5cace2",
+                  "original_source_line": "**Active development branch:** `v1-source-vault-bootstrap-resume`"
+                },
+                {
+                  "line": 6,
+                  "original_line_sha256": "f2b5fd64a86af9670b471c987cdc3d98b8f4c541953d99e398c662e66aeb09ec",
+                  "original_source_line": "**Active PR:** none"
+                }
+              ],
+              "original_source_sha256": "54bcb132f12ceffd330540006a8099179a260f751da7b4269253b6aef87edcaa",
+              "path": "docs/CURRENT_STATE.md",
+              "source_rank": 1
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "20ed93f3c60634b1836cc4f9581d94482ba8deac82e205c580a39ac82674d890",
+                  "original_source_line": "# Checkpoint 899: R0-P03 bounded historical evidence-capacity HOLD and prospective decision boundary"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "c4b1b3bc9fdcfe3e8a70e32ade802ab80abb1e684fb2296525ec0fc102c83952",
+                  "original_source_line": "**Status:** INDEPENDENT_WITNESS_REVIEW_COMPLETE / INSUFFICIENT_VERIFIED_REFERENCE_CAPACITY / EXPERIMENT_UNSCORED"
+                },
+                {
+                  "line": 6,
+                  "original_line_sha256": "cec6ec61233b1e981ae7ebae43c2dbb84e41691e9ea03f8eca5231fbf45d44f8",
+                  "original_source_line": "**Project stage:** R0-P03 prefixture independent reference and historical-evidence qualification"
+                },
+                {
+                  "line": 23,
+                  "original_line_sha256": "41afcd879c9c6f95b9e5b6e630d4107f55eb21355726ccb7d44d6658998b2bd2",
+                  "original_source_line": "The finite source-witness review is now complete, and no further source search was authorized. This is a completed **capacity assessment with a genuine HOLD**, not a valid R0-P03 architecture-comparison failure, pass or scored experiment. The original experimental need-set and source-independence/zero-false-authority constraints remain intact."
+                },
+                {
+                  "line": 29,
+                  "original_line_sha256": "831dcbfc3af58f46318a2c1065a08d312c06f20cc7d521bdf5e5401cfb05aec6",
+                  "original_source_line": "**Next human decision:** determine whether to (a) authorize a separately preregistered, genuinely fresh independent reference route that does not retrospectively falsify the six historical HOLDs, or (b) defer R0-P03 scoring while preserving its open evidence boundary. A later specific newly attested original witness could justify a separately owner-authorized exception, but the eight remaining uninspected indexed metadata leads do not themselves justify searching again."
+                }
+              ],
+              "original_source_sha256": "fd9ee485c0671f4950ea050f21fc029683dc05412921fcc21107091619f0ac9f",
+              "path": "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+              "source_rank": 2
+            },
+            {
+              "lines": [
+                {
+                  "line": 1,
+                  "original_line_sha256": "6dd448ff7c510bd39367f1062fb7c8ddbaae0d4ffcbeba369f1b126291ee9265",
+                  "original_source_line": "# Research 585: R0-P03 owner fake custody report and access-boundary disposition"
+                },
+                {
+                  "line": 4,
+                  "original_line_sha256": "e1eb60ac1aa03f1e3b6c90f0aeeddc811ec2e28b9200f298ab3b0347b47ebe32",
+                  "original_source_line": "**Status:** OWNER_FAKE_COMPLETE_PACKET_READBACK_REPORTED_PASS / TOOL_ROOT_REFUSAL_OBSERVED / DIRECT_SANDBOX_OS_DENIAL_NOT_EXERCISED / REAL_GOLD_CUSTODY_UNQUALIFIED"
+                },
+                {
+                  "line": 37,
+                  "original_line_sha256": "4da54e45390f144258a7ff1f8e1a7c071af6b5a3dd044df13c9c1ece15d1b005",
+                  "original_source_line": "- experiments/r0_p03_navigation_probe/synthetic_custody_evidence_candidate.json"
+                },
+                {
+                  "line": 38,
+                  "original_line_sha256": "a93001090736fbd2918f63bdaaf272e7b4051dd22e67b630f2524387077f0f39",
+                  "original_source_line": "- experiments/r0_p03_navigation_probe/synthetic_custody_evidence_candidate.py"
+                },
+                {
+                  "line": 39,
+                  "original_line_sha256": "e6f155706add641fe7e3a5df07224318dffca0a33644612525206fb611324bbb",
+                  "original_source_line": "- tests/unit/test_r0_p03_synthetic_custody_evidence_candidate.py"
+                }
+              ],
+              "original_source_sha256": "e8ecc8ba823b9cb4b037e8216a10bd4976b3419fb376e25f5328fe1b648050f6",
+              "path": "docs/research/585_r0_p03_owner_fake_custody_report_and_access_boundary.md",
+              "source_rank": 3
+            }
+          ],
+          "claims": [
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 1,
+                  "source_rank": 2
+                },
+                {
+                  "line": 4,
+                  "source_rank": 2
+                }
+              ],
+              "claim_id": "C01",
+              "statement": "Checkpoint 899 explicitly reports insufficient verified reference capacity and an unscored experiment."
+            },
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 23,
+                  "source_rank": 2
+                }
+              ],
+              "claim_id": "C02",
+              "statement": "The review was a capacity HOLD, not an architecture PASS or FAIL."
+            },
+            {
+              "cited_original_line_refs": [
+                {
+                  "line": 29,
+                  "source_rank": 2
+                }
+              ],
+              "claim_id": "C03",
+              "statement": "A separate fresh-reference route or deferral remained a future decision."
+            }
+          ],
+          "variant": "VARIANT_B"
+        }
+      ]
+    }
+  ],
+  "contains_model_author_self_coverage": false,
+  "contains_original_reference_answers": false,
+  "independent_reviewer_has_prior_original_gold": false,
+  "packet_id": "R0_P03_ROUTE_B_MASKED_REVIEW_P09_TO_P12_V01",
+  "question_source_arms": 2,
+  "review_protocol": "ROUTE_B_TREATMENT_MASKED_CLAIM_REVIEW_CONTRACT_V01.md",
+  "source_git_pin": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+  "treatment_labels_masked": true,
+  "warning": "Only these cited original source lines may support judgments; do not supplement from repository, outside context or previous answers."
+}
