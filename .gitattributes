@@ -42,6 +42,8 @@ experiments/r0_p03_navigation_probe/exploratory_reference_declaration_correction
 experiments/r0_p03_navigation_probe/exploratory_governed_reference_audit_result_v03.json -text
 # Preserve real 120-source T2 retrieval/answer pilot output bit-for-bit.
 experiments/r0_p03_navigation_probe/exploratory_t2_owner_status_guarded_retrieval_result_v01.json -text
+# Preserve full 118-query subject binding and authority challenge original result bytes.
+experiments/r0_p03_navigation_probe/exploratory_t2_subject_binding_and_unsupported_authority_result_v02.json -text
 # Retain the source-free 12-need independent adjudication report byte-for-byte.
 experiments/r0_p03_navigation_probe/NEED_SOURCE_ADJUDICATION_AGGREGATE.md -text whitespace=-blank-at-eof
 # Preserve the byte-verified independent adjudicator's updated source-free result.
