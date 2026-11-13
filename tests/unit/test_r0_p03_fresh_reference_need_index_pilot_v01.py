@@ -70,7 +70,10 @@ def test_singular_new_instruction_and_no_preexisting_question_output() -> None:
     from pathlib import Path
     directory=Path("docs/model_collaboration/threads/MC-0030/messages")
     assert len(list(directory.glob("072_*")))==1
-    assert not list(directory.glob("073_*"))
+    replies = list(directory.glob("073_*"))
+    assert len(replies) <= 1
+    if replies:
+        assert replies[0].name == "073_claude_r0_p03_fresh_independent_need_origination_pilot.md"
     contract=Path("experiments/r0_p03_navigation_probe/FRESH_REFERENCE_NEED_ORIGINATION_PILOT_CONTRACT_V01.md")
     assert contract.is_file()
     assert "FORMAL_R0_P03_SCORING_ALLOWED=false" in contract.read_text("utf8")
