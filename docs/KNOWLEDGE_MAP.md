@@ -1054,6 +1054,13 @@ docs/research/646_r0_p03_executed_directed_reference_retrieval_and_negative_evid
 docs/research/647_r0_p03_719_query_paraphrase_scope_and_abstention_execution.md
 docs/research/648_r0_p03_source_reference_context_evidence_and_declared_reference_qualification.md
 docs/research/649_r0_p03_claude_message064_reconciliation_native_source_parsers_and_scientific_boundary.md
+docs/research/650_r0_p03_t2_first_real_new_source_owner_status_and_evidence_guard_experiment.md
+docs/local_execution/validation/349_r0_p03_new_source_t2_24_question_owner_status_and_abstention_execution.md
+docs/checkpoints/913_r0_p03_actual_new_source_t2_owner_status_retrieval_and_guarded_evidence_execution.md
+experiments/r0_p03_navigation_probe/EXPLORATORY_T2_OWNER_STATUS_GUARDED_RETRIEVAL_CONTRACT_V01.md
+experiments/r0_p03_navigation_probe/exploratory_t2_owner_status_guarded_retrieval_v01.py
+experiments/r0_p03_navigation_probe/exploratory_t2_owner_status_guarded_retrieval_result_v01.json
+tests/unit/test_r0_p03_exploratory_t2_owner_status_guarded_retrieval.py
 docs/local_execution/validation/348_r0_p03_native_declared_reference_evidence_and_model_message_identity_reconciliation.md
 docs/checkpoints/912_r0_p03_exposed_claude_critique_reconciliation_and_governed_reference_grammar_repair.md
 docs/model_collaboration/threads/MC-0030/messages/064_claude_r0_p03_source_semantics_and_fusion_critique.md
@@ -2052,7 +2059,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-912 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-913 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

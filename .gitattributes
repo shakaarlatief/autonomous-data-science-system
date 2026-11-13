@@ -40,6 +40,8 @@ experiments/r0_p03_navigation_probe/exploratory_reference_provenance_audit_resul
 experiments/r0_p03_navigation_probe/exploratory_reference_declaration_correction_result_v02.json -text
 # Preserve exact native Specification 025/028 source-grammar audit evidence.
 experiments/r0_p03_navigation_probe/exploratory_governed_reference_audit_result_v03.json -text
+# Preserve real 120-source T2 retrieval/answer pilot output bit-for-bit.
+experiments/r0_p03_navigation_probe/exploratory_t2_owner_status_guarded_retrieval_result_v01.json -text
 # Retain the source-free 12-need independent adjudication report byte-for-byte.
 experiments/r0_p03_navigation_probe/NEED_SOURCE_ADJUDICATION_AGGREGATE.md -text whitespace=-blank-at-eof
 # Preserve the byte-verified independent adjudicator's updated source-free result.
