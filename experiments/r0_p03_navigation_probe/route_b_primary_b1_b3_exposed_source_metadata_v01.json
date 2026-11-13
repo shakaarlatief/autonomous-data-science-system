@@ -1,0 +1,1454 @@
+{
+  "author_exposure": "EXPOSED_COORDINATOR_ALREADY_SAW_TWELVE_QUESTIONS_AND_BASELINE_RESULTS",
+  "concern_vocabulary": {
+    "definitions": {
+      "execution-reproducibility": "Repeatable test/probe execution, attestation of test run state and retrievable results",
+      "migration-compatibility": "Migration, successor compatibility, cutover boundaries or rollback of existing source/semantic carriers",
+      "owner-approval-boundary": "Required owner gate, permissible decision/effect, authorization limits and nonoperative scope",
+      "source-evidence-integrity": "Exact source artifacts, declared provenance, evidence sufficiency, or verification of original records",
+      "temporal-currentness": "Applicability over time, revised records, staleness, successor/effective-date distinction"
+    },
+    "status": "EXPERIMENTAL_PROPOSED_CROSS_CUTTING_NON_GOVERNING"
+  },
+  "cost": {
+    "all_source_subject_and_concern_assignments_exposed_coordinator_authored": true,
+    "historically_annotated_carrier_overlap_at_prior_revision": 6,
+    "new_source_adjoining_concern_memberships": 78,
+    "new_source_adjoining_subject_memberships": 94,
+    "source_content_read_for_annotation": true
+  },
+  "id": "R0_P03_ROUTE_B_EXPOSED_SOURCE_ADJACENT_B1_B3_ANNOTATION_FREEZE_V01",
+  "limitations": [
+    "Source-adjacent annotation is an experimental overlay, not governed source-owned metadata. No production source is edited.",
+    "The coordinating annotator saw every twelve-task reference source and the B0 result before assigning subjects and concerns, so this is exploratory and can be biased.",
+    "Source witness lines prove what the original carrier says, not that a selected subject or concern interpretation is correct.",
+    "Historical W5 membership overlaps are informational only and source-bound to a different Git revision; no automatic promotion to current source-owned facts.",
+    "The five concern IDs are task-independent proposed source-control concerns, not owner-governed accepted concern identities.",
+    "A subject vocabulary contains no membership by itself; the 60 per-source experimental annotations are retained with carrier identity rather than in the catalog.",
+    "No source is granted operative authority by its annotation; no independent relevance gold, heldout F1, or formal P03 score is obtained."
+  ],
+  "sampled_60_metadata_entries": [
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "temporal-currentness",
+        "owner-approval-boundary"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/CURRENT_STATE.md",
+      "preferred_subject": "development-governance",
+      "primary_semantic_evidence": {
+        "line": 1,
+        "line_sha256": "0e346beaa790fb777bdca66486b12ef7eb766f4793a4852e9976dffe6b31c221",
+        "original_heading": "# Current State",
+        "verbatim_original_line": "# Current State"
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 920573,
+      "source_sha256": "54bcb132f12ceffd330540006a8099179a260f751da7b4269253b6aef87edcaa",
+      "subjects": [
+        "development-governance"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "temporal-currentness",
+        "owner-approval-boundary"
+      ],
+      "historical_w5_same_path_annotation": {
+        "historical_revision": "4b94ffe183ff7af72cef6ee7492b4ba2f30c11ef",
+        "not_original_current_revision": true,
+        "preferred_subject": "development-governance",
+        "subjects": [
+          "development-governance"
+        ]
+      },
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/DECISIONS.md",
+      "preferred_subject": "development-governance",
+      "primary_semantic_evidence": {
+        "line": 1,
+        "line_sha256": "55014cace8283815b0bfbc6e5801a9d15504e5591676af506cdce60239b3dec8",
+        "original_heading": "# Decisions",
+        "verbatim_original_line": "# Decisions"
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 56382,
+      "source_sha256": "1cb6dd610536781e6bdbd02ab30891f922610a90437a02c36057ca264a8a09b5",
+      "subjects": [
+        "development-governance"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "execution-reproducibility"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/checkpoints/050_real_held_out_run_plan_materialized_and_frozen_inputs_verified.md",
+      "preferred_subject": "evaluation-assurance",
+      "primary_semantic_evidence": {
+        "line": 7,
+        "line_sha256": "db46a1f4973991e6493aab55ea9fa40b42bfbdbcabb94356f5b50a3d31ead2a2",
+        "original_heading": "# Checkpoint 50: Real Held-Out Run Plan Materialized and Frozen Inputs Verified",
+        "verbatim_original_line": "**Scope:** Records the historical milestone described by this checkpoint: Real Held-Out Run Plan Materialized and Frozen Inputs Verified.  "
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 3888,
+      "source_sha256": "8cc72a75df94e0f2746c45f94a0a93adcc21bce96b7e15ede3b58917869afef3",
+      "subjects": [
+        "evaluation-assurance"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "execution-reproducibility"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/checkpoints/121_immersive_scale_cockpit_slice_automated_gate_passed.md",
+      "preferred_subject": "cockpit-implementation",
+      "primary_semantic_evidence": {
+        "line": 7,
+        "line_sha256": "adbe3c2519ada4b5959e8d8d8d279efabfdaa73f78e2e7a47eda4f02affc79e5",
+        "original_heading": "# Checkpoint 121: Immersive-Scale Cockpit Slice Automated Gate Passed",
+        "verbatim_original_line": "**Scope:** Records implementation and automated validation of the Specification 007 candidate v0.2 Cockpit scalability slice, including genuine two-dimensional project navigation, compact/collapsible chrome, collision-safe context surfaces, keyboard recovery, and browser fullscreen support.  "
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 13197,
+      "source_sha256": "697b1f172e060baf11cb0ada3ba48ab7912eab4ad4809d4de9209ef34d9d762d",
+      "subjects": [
+        "cockpit-implementation",
+        "cockpit-interaction"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "execution-reproducibility"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/checkpoints/358_runtime_release_preview20_fresh_chat_schema_qualified.md",
+      "preferred_subject": "tooling-integrations",
+      "primary_semantic_evidence": {
+        "line": 7,
+        "line_sha256": "3a6c56dc2b36b416138fa7a3886cd833cdc1c0a6b9b7342d186c08e31ca2e517",
+        "original_heading": "# Checkpoint 358: Runtime Release Preview.20 Fresh-Chat Schema Qualified",
+        "verbatim_original_line": "**Scope:** Preserves the refreshed disposable-chat host projection of the live preview.20 semantic runtime-release surface without invoking any ADS tool in that qualification chat."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 3715,
+      "source_sha256": "05fa009a9ce50414057e43eacb0f93468cdc3f762cbc482d05fa4311ae063a51",
+      "subjects": [
+        "tooling-integrations",
+        "evaluation-assurance"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "source-evidence-integrity"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/checkpoints/380_github_schema_reconciled_g0_and_targeted_evidence_ready.md",
+      "preferred_subject": "tooling-integrations",
+      "primary_semantic_evidence": {
+        "line": 7,
+        "line_sha256": "0732bb3cf1e8a14030f044376f4f497847bbe9752d7dfa1512c89dce5cf7e6d3",
+        "original_heading": "# Checkpoint 380: GitHub Schema Reconciled, G0 and Targeted Evidence Ready",
+        "verbatim_original_line": "**Scope:** Preserve the final 89-action schema reconciliation, localize projection loss, reject unnecessary broad native replay, and open the GitHub App/auth/API G0 kernel plus authoritative platform-contract mapping."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 3811,
+      "source_sha256": "af80d877b5a5b7f76dd6b478d1d0f05c3cde3175956caf6baf851c794a5a22b5",
+      "subjects": [
+        "tooling-integrations",
+        "development-governance"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "owner-approval-boundary",
+        "source-evidence-integrity"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/checkpoints/447_repository_branch_safety_complete_canonical_protection_decision_next.md",
+      "preferred_subject": "development-governance",
+      "primary_semantic_evidence": {
+        "line": 7,
+        "line_sha256": "36be194b7c01f80316f21fa5522e84f6141bbf296e7f9468efc382f27171beb4",
+        "original_heading": "# Checkpoint 447: Repository Branch-Safety Complete, Canonical Protection Decision Next",
+        "verbatim_original_line": "**Scope:** Preserve successful positive-live qualification of the final important GitHub extension family and move Research 123 to its final canonical branch-protection decision."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 4932,
+      "source_sha256": "569ec542ebca2baa5a6c3112a3a4bb2d4d486df860dd4fb68fd9db4d1c53957e",
+      "subjects": [
+        "development-governance",
+        "tooling-integrations"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "migration-compatibility"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/checkpoints/497_candidate01_real_repository_shadow_v01_fixture_frozen.md",
+      "preferred_subject": "project-knowledge-architecture",
+      "primary_semantic_evidence": {
+        "line": 7,
+        "line_sha256": "09591e99e6a2855e1dbbdfd2186f5ba972a302fcb9544d6cbd7b41dd09c3fde1",
+        "original_heading": "# Checkpoint 497: Candidate 01 Real-Repository Shadow V0.1 Fixture Frozen",
+        "verbatim_original_line": "**Scope:** Freeze the first Candidate 01 real-repository parity/behavior fixture before implementation and preserve the measured migration-seeding burden rather than hiding it behind current global views."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 1672,
+      "source_sha256": "5f02b97fc40f8d1a85b335a181fa7849f66b6a0f134bf595eb380592313a41fe",
+      "subjects": [
+        "project-knowledge-architecture",
+        "evaluation-assurance"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "migration-compatibility",
+        "owner-approval-boundary"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/checkpoints/544_pka_g102_project_boundary_accepted_source_vault_next.md",
+      "preferred_subject": "project-knowledge-architecture",
+      "primary_semantic_evidence": {
+        "line": 7,
+        "line_sha256": "a657cd544026a9f4d20a95713e94e3f136eb2568ffbcbeb5fc3b96daeac11efc",
+        "original_heading": "# Checkpoint 544: PKA-G102 Project Boundary Accepted, Source Vault Next",
+        "verbatim_original_line": "**Scope:** Accept one natural canonical semantic owner for the Project Integration Boundary; stop before PKA-G103."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 2557,
+      "source_sha256": "85dfeacd02db9aad901185ae18fd6d14c0b89a11945a4036da9270b2bba3b2cc",
+      "subjects": [
+        "project-knowledge-architecture"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "temporal-currentness",
+        "owner-approval-boundary"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/checkpoints/550_pka_g108_current_authority_confirmed_integrity_next.md",
+      "preferred_subject": "project-knowledge-architecture",
+      "primary_semantic_evidence": {
+        "line": 7,
+        "line_sha256": "2b5ded0ad756f6d34782443409387852b448544b80bdb2eae9ed58163fbdea40",
+        "original_heading": "# Checkpoint 550: PKA-G108 Current Authority Confirmed, Integrity Next",
+        "verbatim_original_line": "**Scope:** Accept the explicit current-continuity operational-authority boundary after W1 live semantic migration; stop before final W1 gate PKA-G109."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 2348,
+      "source_sha256": "54427409aa5200a0feef027ec138f32d7dbcf021d2277f69238f17f051dedfbb",
+      "subjects": [
+        "project-knowledge-architecture"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "migration-compatibility",
+        "source-evidence-integrity"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/checkpoints/552_pka_w2_shadow_views_accepted_compatibility_shadow_next.md",
+      "preferred_subject": "project-knowledge-architecture",
+      "primary_semantic_evidence": {
+        "line": 7,
+        "line_sha256": "d26bd7da9299569dbffb723c9b5c4eea7ccd4337030e190019290437b59ab511",
+        "original_heading": "# Checkpoint 552: PKA W2 Shadow Views Acceptance Boundary, Compatibility Shadow Next",
+        "verbatim_original_line": "**Scope:** Accept W2 after the complete persistent structural view set is rematerialized and requalified from this exact semantic boundary; preserve the boundary before W3 compatibility shadow work."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 3095,
+      "source_sha256": "8facea965d4c39ad1339a5801364c563cb9aaf5d683c5cac96b90ccc029f6fce",
+      "subjects": [
+        "project-knowledge-architecture"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "owner-approval-boundary",
+        "temporal-currentness"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md",
+      "preferred_subject": "development-governance",
+      "primary_semantic_evidence": {
+        "line": 7,
+        "line_sha256": "f15c7d196d155909053866f5d438a66f47e03cd7d4d4a0bdf16eef6461d07f5c",
+        "original_heading": "# Checkpoint 644: General Architecture Vision Preserved and Evolution Boundary Clarified",
+        "verbatim_original_line": "**Scope:** Preserve the owner's future professional public-architecture vision and the clarified composition between activation/orchestration, assurance, delivery and governed architecture evolution without changing the pending R8-C decision."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 2128,
+      "source_sha256": "d23dbd9ad20c14f93ded350575dff6e4ac734b9268d4befc760fcfbf5eec4412",
+      "subjects": [
+        "development-governance"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "execution-reproducibility"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/checkpoints/661_drp03_obligation_unit_review_harness_frozen.md",
+      "preferred_subject": "evaluation-assurance",
+      "primary_semantic_evidence": {
+        "line": 7,
+        "line_sha256": "1f715657268f1c856f86334976a560085fa0279be092afd885560ce44b8a199d",
+        "original_heading": "# Checkpoint 661: DRP-03 Review Harness Frozen",
+        "verbatim_original_line": "**Scope:** Freeze Research 324 and DRP-03 reviewer/evaluator machinery before either annotation."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 1294,
+      "source_sha256": "98f49e7c320c1acb25973d0599bf1499ea2c63f51a39394e1e883be915865aa3",
+      "subjects": [
+        "evaluation-assurance"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "source-evidence-integrity"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/checkpoints/700_key_author_a_p4_birth_grouping_phase_defined.md",
+      "preferred_subject": "knowledge-representation",
+      "primary_semantic_evidence": {
+        "line": 7,
+        "line_sha256": "a2395899e394267a7ac1b270402970f0952ee2c9729e6724a3ee2baf05286adc",
+        "original_heading": "# Checkpoint 700: Key Author A P4 BIRTH Grouping Phase Defined",
+        "verbatim_original_line": "**Scope:** Preserve Research 363 and the complete prospective P4 BIRTH grouping execution design before any grouping semantic work begins."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 1857,
+      "source_sha256": "0e2e21ede9aacdde21e0abf43c7d2ebb02ccb8bfd131072b60b878d65e8dfff3",
+      "subjects": [
+        "knowledge-representation",
+        "evaluation-assurance"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "source-evidence-integrity"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/checkpoints/718_key_author_a_p4_h09_accepted_h10_released.md",
+      "preferred_subject": "knowledge-representation",
+      "primary_semantic_evidence": {
+        "line": 7,
+        "line_sha256": "3363c7554b57aa2a4d3cfd91df332dfb4046c0e71aa8b4dbb2b7b407a689bfee",
+        "original_heading": "# Checkpoint 718: Key Author A P4 H09 Accepted and H10 Released",
+        "verbatim_original_line": "**Scope:** Preserve Research 381, H09 PASS and acceptance, H10 preparation, and fresh-session H10 release."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 1706,
+      "source_sha256": "0496aabb5cea20d11d144b97e7991cf0270e3633164db1f55f53fe1ea95247c2",
+      "subjects": [
+        "knowledge-representation",
+        "evaluation-assurance"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "owner-approval-boundary"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/checkpoints/722_key_author_a_p5_authorized_private_ops_next.md",
+      "preferred_subject": "knowledge-representation",
+      "primary_semantic_evidence": {
+        "line": 7,
+        "line_sha256": "c94c0c3b7a24f566985ef7a7fb2c70a1303e3991ade3418582d46717c71e66e9",
+        "original_heading": "# Checkpoint 722: Key Author A P5 Authorized, Private Ops Qualification Next",
+        "verbatim_original_line": "**Scope:** Preserve Research 385 owner acceptance of Research 384 and the remaining bounded private-operation launch gate."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 1238,
+      "source_sha256": "ee6d21e0aade1c3a6feb1c6447e47cca65c43d2980a391bb4d1dd8ffa90fe6c4",
+      "subjects": [
+        "knowledge-representation",
+        "evaluation-assurance"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "execution-reproducibility"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/checkpoints/792_sp5_retired_without_score_sp6_next.md",
+      "preferred_subject": "evaluation-assurance",
+      "primary_semantic_evidence": {
+        "line": 7,
+        "line_sha256": "446ade4da28f7ee196d86bced00ad454b64f20de4a22075df03cc4bad0f582d8",
+        "original_heading": "# Checkpoint 792: SP-5 retired without score, SP-6 next",
+        "verbatim_original_line": "**Scope:** Preserve the methodological retirement of SP-5 without manufacturing a pass/fail result."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 1206,
+      "source_sha256": "587b04787b66cae4b076a96f677a5d18cce0aa260a10488fa6222aa6fb6d2ba8",
+      "subjects": [
+        "evaluation-assurance"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "source-evidence-integrity"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+      "preferred_subject": "development-governance",
+      "primary_semantic_evidence": {
+        "line": 7,
+        "line_sha256": "0625794f098cef27f59ce94bc5f45cce8dbc85cb750a8266115a936935a7c1ba",
+        "original_heading": "# Checkpoint 853: R0-P02 passed, R0-P01 fixture freeze next",
+        "verbatim_original_line": "**Scope:** Close R0-P02 after deterministic-core and live-host PASS and route to R0-P01."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 1689,
+      "source_sha256": "5d3f9fdd27a761775b99f1971623ddc973ee87192f9f1faa32112660c228a0bb",
+      "subjects": [
+        "development-governance",
+        "evaluation-assurance"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "execution-reproducibility",
+        "owner-approval-boundary"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/checkpoints/884_r0_p01_atomic_synthetic_finalization_and_independent_outcome_vectors_next.md",
+      "preferred_subject": "development-governance",
+      "primary_semantic_evidence": {
+        "line": 14,
+        "line_sha256": "e86329abf61dc320455f49d4110312e789768b5c5bbca9007685da1b538be839",
+        "original_heading": "# Checkpoint 884: R0-P01 atomic synthetic measurement finalization pass",
+        "verbatim_original_line": "**Scope:** Verify atomic accepted-signature plus measured elapsed-time observation persistence using actual abrupt process-exit synthetic tests, without making extra demands on owner accident/retry permission."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 3445,
+      "source_sha256": "70116235e0fa5f3ee33c8324eb784d68334acf06f330d1511201146d3f10ae07",
+      "subjects": [
+        "development-governance",
+        "evaluation-assurance"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "owner-approval-boundary",
+        "temporal-currentness"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+      "preferred_subject": "development-governance",
+      "primary_semantic_evidence": {
+        "line": 14,
+        "line_sha256": "8d347d06a52615d335c1be6190c9c2708816ab47124b388741b3f55cce1965e4",
+        "original_heading": "# Checkpoint 891: owner-approved authentication deferral; R0-P03 may resume",
+        "verbatim_original_line": "**Scope:** Owner-directed narrow prospective selection-gate and research-authentication routing amendment; no cryptographic feature deployment or real owner trial."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 2797,
+      "source_sha256": "7a604ec607b1aa7a8135504dc9a24576e463c5a5f392c1a1ebefa0e2e518e7f7",
+      "subjects": [
+        "development-governance"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "source-evidence-integrity",
+        "owner-approval-boundary"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+      "preferred_subject": "development-governance",
+      "primary_semantic_evidence": {
+        "line": 7,
+        "line_sha256": "406ee0dc29389037546120158df3d943289187c8af9ea830139cc1e6bc73ae82",
+        "original_heading": "# Checkpoint 899: R0-P03 bounded historical evidence-capacity HOLD and prospective decision boundary",
+        "verbatim_original_line": "**Scope:** Preserve the completed finite six-HOLD authenticated-original witness review and a new explicit prospective-protocol or deferral decision boundary."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 4391,
+      "source_sha256": "fd9ee485c0671f4950ea050f21fc029683dc05412921fcc21107091619f0ac9f",
+      "subjects": [
+        "development-governance",
+        "evaluation-assurance"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "execution-reproducibility"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md",
+      "preferred_subject": "evaluation-assurance",
+      "primary_semantic_evidence": {
+        "line": 1,
+        "line_sha256": "e647503f499c17c0364bb8d7efeb05fb204cdf400a05aaf4a023d104c7d3838b",
+        "original_heading": "# Foundation 010: Minimum Falsification Prototype and Experimental Contract",
+        "verbatim_original_line": "# Foundation 010: Minimum Falsification Prototype and Experimental Contract"
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 33597,
+      "source_sha256": "c08de226ff2878e1da1dae7a6cc55114000c881da021c94439288868706e2379",
+      "subjects": [
+        "evaluation-assurance"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "source-evidence-integrity"
+      ],
+      "historical_w5_same_path_annotation": {
+        "historical_revision": "4b94ffe183ff7af72cef6ee7492b4ba2f30c11ef",
+        "not_original_current_revision": true,
+        "preferred_subject": "retrieval-context",
+        "subjects": [
+          "retrieval-context",
+          "methodological-knowledge"
+        ]
+      },
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md",
+      "preferred_subject": "retrieval-context",
+      "primary_semantic_evidence": {
+        "line": 5,
+        "line_sha256": "f6e493522d0b46462780bf88bf5c9ae99463c966154cbcde2e192b0f189566f7",
+        "original_heading": "# Foundation 019: Methodological Navigation Brain and Relevance Architecture",
+        "verbatim_original_line": "**Scope:** Long-term methodological-navigation layer; not a frozen V1 implementation"
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 15462,
+      "source_sha256": "25e22cd4b84f4f4b412c8a31f974b25a416dd2ef393b2b72f71facbb57760e3f",
+      "subjects": [
+        "retrieval-context",
+        "methodological-knowledge"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "temporal-currentness"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md",
+      "preferred_subject": "knowledge-representation",
+      "primary_semantic_evidence": {
+        "line": 5,
+        "line_sha256": "410bfcbee6d8514969e86860117fd44fab4193952d3b32d4d58ee1647e1c494a",
+        "original_heading": "# Foundation 020: Reusable Methodological Knowledge Representation Architecture",
+        "verbatim_original_line": "**Scope:** Long-term Autonomous Data Science System methodological-knowledge layer. This foundation defines durable conceptual separations and representation requirements, not a final ontology, physical schema, storage engine, retrieval engine, rules engine, backend stack, or V1 implementation."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 23698,
+      "source_sha256": "fe3aed150fd06604aac3d37db1ee5ae092817d0cfb7cc5643f70edd561138ba3",
+      "subjects": [
+        "knowledge-representation",
+        "methodological-knowledge"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "source-evidence-integrity"
+      ],
+      "historical_w5_same_path_annotation": {
+        "historical_revision": "4b94ffe183ff7af72cef6ee7492b4ba2f30c11ef",
+        "not_original_current_revision": true,
+        "preferred_subject": "source-universe",
+        "subjects": [
+          "source-universe",
+          "evaluation-assurance"
+        ]
+      },
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+      "preferred_subject": "source-universe",
+      "primary_semantic_evidence": {
+        "line": 1,
+        "line_sha256": "0b19a276bd9e8c713bffcc8bfd511b0fe48042482feb8d5a94738f709ebdf9e4",
+        "original_heading": "# Foundation 022: Source Universe, Artifact Integrity, and Evidence Provenance Architecture",
+        "verbatim_original_line": "# Foundation 022: Source Universe, Artifact Integrity, and Evidence Provenance Architecture"
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 10572,
+      "source_sha256": "7c1387f15b2781ca0a40d341803b143dedfe4f7251fbc79f97d180fde0523938",
+      "subjects": [
+        "source-universe",
+        "evaluation-assurance"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "migration-compatibility"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md",
+      "preferred_subject": "cockpit-product",
+      "primary_semantic_evidence": {
+        "line": 5,
+        "line_sha256": "db7f26da3b94b2f089a78ea160c53fd93a84970632dd530947833ba9ba02dc52",
+        "original_heading": "# Foundation 023: User-Configurable Cockpit Appearance and Semantic Invariants",
+        "verbatim_original_line": "**Scope:** Durable separation between Cockpit semantic meaning and user-configurable visual presentation. Does not freeze final settings persistence, theme inventory, team-sharing behavior, or final production component implementation.  "
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 7087,
+      "source_sha256": "0d670019e7c86decb33fb193aea84db1faae49251a50fd9786a6a4a529bc551e",
+      "subjects": [
+        "cockpit-product",
+        "cockpit-visual-language"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "execution-reproducibility"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md",
+      "preferred_subject": "runtime-persistence",
+      "primary_semantic_evidence": {
+        "line": 5,
+        "line_sha256": "0a5081fd9790108b32556db5d351d64ecb0006a16d75cf6d97a820db0ab7098b",
+        "original_heading": "# Research 014: LangGraph 1.2.10 released durability comparator audit",
+        "verbatim_original_line": "**Scope:** Verifies the currently released LangGraph ecosystem and narrows the ADS durability comparator before implementation.  "
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 8111,
+      "source_sha256": "eb61bbd64974cc8f02b6f346e58cd90bc1c04d66abd69c0a224efacd99087b3d",
+      "subjects": [
+        "runtime-persistence",
+        "tooling-integrations"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "owner-approval-boundary"
+      ],
+      "historical_w5_same_path_annotation": {
+        "historical_revision": "4b94ffe183ff7af72cef6ee7492b4ba2f30c11ef",
+        "not_original_current_revision": true,
+        "preferred_subject": "tooling-integrations",
+        "subjects": [
+          "tooling-integrations",
+          "runtime-persistence"
+        ]
+      },
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md",
+      "preferred_subject": "tooling-integrations",
+      "primary_semantic_evidence": {
+        "line": 5,
+        "line_sha256": "ab2782b2f8e9a1d965fbcfaa1183571b83383310b7d03dc9d59be4ef345d8d6a",
+        "original_heading": "# Research 113: Codex and Codexless Upstream Ecosystem Architecture Research Program",
+        "verbatim_original_line": "**Scope:** Establishes a broad evidence-driven research program over the current OpenAI Codex/App Server ecosystem, the public Codexless project, relevant issues, pull requests, discussions, and ADS's own experimentally verified local-execution architecture before further live-viewer or Codexless architecture work.  "
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 21100,
+      "source_sha256": "27d9434769571915d4e6cbdaed49dd7c9b0fa0170e2729ec213c4ad0d8ddb707",
+      "subjects": [
+        "tooling-integrations",
+        "development-governance"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "migration-compatibility",
+        "source-evidence-integrity"
+      ],
+      "historical_w5_same_path_annotation": {
+        "historical_revision": "4b94ffe183ff7af72cef6ee7492b4ba2f30c11ef",
+        "not_original_current_revision": true,
+        "preferred_subject": "project-knowledge-architecture",
+        "subjects": [
+          "project-knowledge-architecture"
+        ]
+      },
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+      "preferred_subject": "project-knowledge-architecture",
+      "primary_semantic_evidence": {
+        "line": 7,
+        "line_sha256": "7ef5f59437ce0eb0a8be9fe7f0108ac67d0c51c87376c93a712b82e8bd5db9d8",
+        "original_heading": "# Research 156: Real CURRENT_STATE Decomposition and Source-Ownership Audit",
+        "verbatim_original_line": "**Scope:** Decompose the real `docs/CURRENT_STATE.md` by future semantic role, bind every audited block to exact source bytes, reproduce current-state drift against stronger repository authority, and identify which material current facts need a new canonical owner before Candidate 01 may treat the global surface as derived."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 12028,
+      "source_sha256": "51cef534cdf40a72fda8be52b098ce48a9a42c1954f780550acb41c301d2faf2",
+      "subjects": [
+        "project-knowledge-architecture",
+        "development-governance"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "source-evidence-integrity"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/research/184_w0_derived_view_framework_g009_result.md",
+      "preferred_subject": "project-knowledge-architecture",
+      "primary_semantic_evidence": {
+        "line": 9,
+        "line_sha256": "83e76a0152fcb537c6016193c31ff65aef13a26eecc34f040bb59c0a440d4183",
+        "original_heading": "# Research 184: W0 Derived-View Framework G009 Result",
+        "verbatim_original_line": "**Scope:** Record the production G009 derived-view framework, the adversarial defects exposed before acceptance, the final execution-contract provenance repair, and complete verification evidence for deterministic manifests and stale binding detection."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 13310,
+      "source_sha256": "006dd8185524e35174ec6c47cf55f214871a49ee3db39cd41ed4fbc899e4becd",
+      "subjects": [
+        "project-knowledge-architecture"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "source-evidence-integrity"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+      "preferred_subject": "project-knowledge-architecture",
+      "primary_semantic_evidence": {
+        "line": 11,
+        "line_sha256": "3f78ec3ba6a6ad95516f89a9bc744ad56d11eac750daa4153a663328ee9e60e1",
+        "original_heading": "# Research 217: W5 T1 V0.2 Controlled Subject Architecture Acceptance",
+        "verbatim_original_line": "**Scope:** Reconcile the V0.2 deterministic 65-carrier experiment and the second blind 24-carrier calibration, freeze the V1 semantic-subject contract, and identify bounded definition clarifications for production realization."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 9486,
+      "source_sha256": "1a45aa417851c65be8b2455b9a81a32c2e2273a529b5716c6ebb4c1f736e73d4",
+      "subjects": [
+        "project-knowledge-architecture",
+        "retrieval-context"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "execution-reproducibility"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/research/230_ao9_p2_arm_contract_freeze.md",
+      "preferred_subject": "project-orchestration",
+      "primary_semantic_evidence": {
+        "line": 10,
+        "line_sha256": "508c5f0833c342a8f49426de7620d7ea270ce0a06e988ce56475d2971935e622",
+        "original_heading": "# Research 230: AO-9 P2 Arm-Contract Freeze",
+        "verbatim_original_line": "**Scope:** Freeze exact A/B/C/D mechanism contracts before any AO-9 scored trace so evaluator judgment cannot strengthen or weaken an arm after results are visible."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 4537,
+      "source_sha256": "238a8f1eebbc3b89176526be1373b64c0e8a4bbe9293f42467f8130b2aeff150",
+      "subjects": [
+        "project-orchestration",
+        "evaluation-assurance"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "execution-reproducibility"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/research/268_p_r8b_01_r2_harness_defect_and_replacement_freeze.md",
+      "preferred_subject": "evaluation-assurance",
+      "primary_semantic_evidence": {
+        "line": 11,
+        "line_sha256": "04ffe124f6cf81ba3740c2f79db444301910080003915dc134e8d8728026a842",
+        "original_heading": "# Research 268: P-R8B-01-R2 Harness Defect, Prospective Repair, and Replacement Freeze",
+        "verbatim_original_line": "**Scope:** Record the first corrected-run harness failure, classify it as a probe implementation defect, preserve unchanged architecture thresholds, and freeze the prospective repair before retry."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 3837,
+      "source_sha256": "7efa6fa9ec239b89fd12fd1c36a779cc2c286d46aa562c89535640751127f2ac",
+      "subjects": [
+        "evaluation-assurance"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "owner-approval-boundary",
+        "source-evidence-integrity"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+      "preferred_subject": "knowledge-representation",
+      "primary_semantic_evidence": {
+        "line": 13,
+        "line_sha256": "cf06ba630fa7ecc7efad695f8f130ee085be731ed9b88d1c12949661c0c155d2",
+        "original_heading": "# Research 272: WMR-H V0.3 Owner Acceptance, MC-0027 Closure, and Assurance-Architecture Entry",
+        "verbatim_original_line": "**Scope:** Record the project owner's explicit acceptance of WMR-H V0.3 as the target R8-B representation architecture direction, resolve MC-0027, preserve the exact meaning and limits of that acceptance, and unblock first-principles assurance / verification / CI-CD architecture design."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 10620,
+      "source_sha256": "0cc45f3d9b6903e16b1ad7503518b40c5705e1cd82430e761feaf409d0373432",
+      "subjects": [
+        "knowledge-representation",
+        "evaluation-assurance"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "execution-reproducibility"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/research/284_p_d3_attempt002_harness_invalid_and_repair.md",
+      "preferred_subject": "evaluation-assurance",
+      "primary_semantic_evidence": {
+        "line": 9,
+        "line_sha256": "a2b3f25996adb1aac959173d76d13ab87253215f9a15f4943f49f0810171049f",
+        "original_heading": "# Research 284: P-D3 Attempt 002 Harness Invalid and Negative-Control Repair",
+        "verbatim_original_line": "**Scope:** Preserve the second invalid P-D3 execution, identify the negative-control injection defect, and authorize only the repair needed to make the preregistered forbidden-dependency control discriminate."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 3236,
+      "source_sha256": "210bc062c9b8a43520094c2d8f9c1f000626829247ed2e61e40cff674d5db048",
+      "subjects": [
+        "evaluation-assurance"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "migration-compatibility",
+        "owner-approval-boundary"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+      "preferred_subject": "project-knowledge-architecture",
+      "primary_semantic_evidence": {
+        "line": 11,
+        "line_sha256": "90576cfc81b9ddee0545e4ef8c3bfb787b7ede2ae2b19eb9c91df1588cf035fc",
+        "original_heading": "# Research 312: Specification 028 Reconciliation and AO-10 Realization Candidate V0.1",
+        "verbatim_original_line": "**Scope:** Reconcile every numbered section of Specification 028 against the accepted R5-R8 architecture and AO-3 through AO-9 decisions, derive a concrete AO-10 realization candidate without inheriting current implementation mechanisms by default, and freeze an independent-review target before any production mutation."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 17059,
+      "source_sha256": "58a77b5e9fed4008b9b7ed78a972d8063ca4be7d9dbf557256203572f275ec33",
+      "subjects": [
+        "project-knowledge-architecture",
+        "knowledge-representation"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "source-evidence-integrity"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/research/356_key_author_a_p3_batch9_compaction_hold_fresh_replacement_authorized.md",
+      "preferred_subject": "knowledge-representation",
+      "primary_semantic_evidence": {
+        "line": 6,
+        "line_sha256": "ae92b94e1dfb45a0272782c9d4d52a769d5d3cc8f111b097151fc7753ee3d81a",
+        "original_heading": "# Research 356: Key Author A P3 Batch 9 Compaction HOLD and Fresh Replacement Authorization",
+        "verbatim_original_line": "**Scope:** Reconcile the Batch 9 open-batch compaction event, verify what was and was not exposed or persisted, preserve the authorized append-only precedent addition, retire the compacted session from further semantic execution, and authorize a fresh replacement P3 session to restart Batch 9 from scratch under the existing P3 authorization."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 8943,
+      "source_sha256": "97349b88f4c0ca0345c23629c2426bf34c155192bd30c1ed5d13ff7a598ae649",
+      "subjects": [
+        "knowledge-representation",
+        "evaluation-assurance"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "source-evidence-integrity"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/research/357_key_author_a_p3_batch9_replacement_pass_batch10_fresh_session_released.md",
+      "preferred_subject": "knowledge-representation",
+      "primary_semantic_evidence": {
+        "line": 6,
+        "line_sha256": "0f2682c5d6e474f2bd90ce25b49045b1aeedddb1cd7912ca2fcae55d9af23299",
+        "original_heading": "# Research 357: Key Author A P3 Batch 9 Replacement Pass with Bounded Count-Query Deviation and Batch 10 Fresh-Session Release",
+        "verbatim_original_line": "**Scope:** Reconcile the fresh replacement execution of BIRTH held-out Batch 9, mechanically validate the frozen private artifact, adjudicate one disclosed whole-source count-only Grep after all Batch 9 labels were already written, preserve the sequential-exposure construct, retire the replacement session after the deviation, and release Batch 10 to a fresh sequential P3 session under the existing P3 authorization."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 10685,
+      "source_sha256": "ad291003dfb2bbfdc54c5812f32834cc062571359d0fdf566e50ffea72d66177",
+      "subjects": [
+        "knowledge-representation",
+        "evaluation-assurance"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "source-evidence-integrity"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/research/373_key_author_a_p4_h02_attempt001_verifier_scope_hold_fresh_retry.md",
+      "preferred_subject": "knowledge-representation",
+      "primary_semantic_evidence": {
+        "line": 6,
+        "line_sha256": "b572972baef9cdd4856d0e7959d5fb9dc1b41dcbe34e752a5b97f69fe16a71a0",
+        "original_heading": "# Research 373: Key Author A P4 H02 Attempt 001 Verifier-Scope HOLD and Fresh Replacement Release",
+        "verbatim_original_line": "**Scope:** Reconcile the first H02 held-out grouping attempt, identify why the already-qualified P4 verifier cannot accept same-session continuation across event-local source boundaries, preserve the frozen attempt without semantic repair, and release a fresh H02 replacement under an execution pattern already permitted by the frozen P4 design."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 6250,
+      "source_sha256": "33e0943835e496a843edbb548d91c5cbe2fe4548261786d7b3cf3ad806ddeda4",
+      "subjects": [
+        "knowledge-representation",
+        "evaluation-assurance"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "execution-reproducibility"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/research/407_key_author_a_legacy_attention_evaluator_qualified_activated.md",
+      "preferred_subject": "knowledge-representation",
+      "primary_semantic_evidence": {
+        "line": 6,
+        "line_sha256": "bbfb196343251bdeedb1bc9150ab369f297c82737263b2ce01cc58a4046f121e",
+        "original_heading": "# Research 407: Key Author A LEGACY Attention Evaluator Qualified and Activated",
+        "verbatim_original_line": "**Scope:** Preserve implementation, regression qualification, publication, verification and activation of the prospectively frozen Key Author A LEGACY attention-quality evaluator without observing the live Key A attention metric."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 6286,
+      "source_sha256": "2f615fcf560698daca6ec7716e9ab1357dc0d94728731c09819f0ec68a689c0a",
+      "subjects": [
+        "knowledge-representation",
+        "evaluation-assurance"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "migration-compatibility"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+      "preferred_subject": "project-knowledge-architecture",
+      "primary_semantic_evidence": {
+        "line": 9,
+        "line_sha256": "251faff40473b681faef473262741c283dd7e4429f42bd5a7882e1ce174d85bd",
+        "original_heading": "# Research 503: R0 realization requirements and independent physical-architecture design charter",
+        "verbatim_original_line": "**Scope:** Freeze the realization-stage requirements, design freedom, evaluation dimensions, and independent-design protocol before any concrete physical architecture candidate is selected."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 12140,
+      "source_sha256": "eadf86eb4803ed442643ecd656bc2c8d44b281ba9f0dc20b8948eb85c437fcaa",
+      "subjects": [
+        "project-knowledge-architecture",
+        "development-governance"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "owner-approval-boundary"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+      "preferred_subject": "project-knowledge-architecture",
+      "primary_semantic_evidence": {
+        "line": 10,
+        "line_sha256": "d3e76b3a03d0d665c1b57b05658316e27831f300d6bd0398d14ca9949aac5172",
+        "original_heading": "# Research 512: MC-0030 Claude critique reconciliation and Governed Ledger Kernel V0.2",
+        "verbatim_original_line": "**Scope:** Reconcile Claude Message 003 into the first comparative candidate, repair the acceptance/order/J2/publication/executor/private-state interfaces before probe design, and freeze the smallest decision-relevant R0 probe set without executing any probe."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 29831,
+      "source_sha256": "40bf71219aaf9eee311241e0eabd7b034f52e0a40fe7b18a8437ea3fdfe4edf4",
+      "subjects": [
+        "project-knowledge-architecture",
+        "development-governance"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "owner-approval-boundary",
+        "execution-reproducibility"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+      "preferred_subject": "evaluation-assurance",
+      "primary_semantic_evidence": {
+        "line": 8,
+        "line_sha256": "05865f2451ab7bc79b88641921e34f26f51cb2339a15c4836b8e36e0cef1f941",
+        "original_heading": "# Research 522: R0-P01 harness implementation qualification and freeze",
+        "verbatim_original_line": "**Scope:** Preserve the independent implementation review, bounded Attempt-001 durability repair, exact qualified implementation identities and pretrial evidence, and route to owner-execution readiness."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 8688,
+      "source_sha256": "b06302ff4c2d87987d976e149d964f52c8772808a055cb952433566790094869",
+      "subjects": [
+        "evaluation-assurance",
+        "development-governance"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "execution-reproducibility"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/research/548_r0_p01_atomic_synthetic_admission_measurement_finalization.md",
+      "preferred_subject": "evaluation-assurance",
+      "primary_semantic_evidence": {
+        "line": 5,
+        "line_sha256": "3c94025a96fc6ab77222c000f5efa02adf0624af9dc781f66cdfe3d678c17129",
+        "original_heading": "# Research 548: atomic synthetic admission and measurement finalization",
+        "verbatim_original_line": "**Scope:** Close the tested successful-admission versus timing-observation commit gap from Research 547 without adding a new journal, replacing the physical ADS architecture, or complicating owner-authorized interrupted-run replacement."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 6697,
+      "source_sha256": "a19a3e417e529602bde4c86fcaab156c7036b64ac9303b6aa730c95c5c309442",
+      "subjects": [
+        "evaluation-assurance",
+        "development-governance"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "source-evidence-integrity"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/research/585_r0_p03_owner_fake_custody_report_and_access_boundary.md",
+      "preferred_subject": "evaluation-assurance",
+      "primary_semantic_evidence": {
+        "line": 5,
+        "line_sha256": "33be9984267afc6492b8324cfb99cb5b9efb3269334924c7e7109024c524fe7f",
+        "original_heading": "# Research 585: R0-P03 owner fake custody report and access-boundary disposition",
+        "verbatim_original_line": "**Scope:** Reconcile the owner's Research 584 approved synthetic-only full reference-packet creation and fresh-process readback, model-free tool-root refusal, blocked Windows read attempts and restored ordinary Bridge Git execution. Prevent overpromoting observed fake-data controls into Level B reference custody."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 7896,
+      "source_sha256": "e8ecc8ba823b9cb4b037e8216a10bd4976b3419fb376e25f5328fe1b648050f6",
+      "subjects": [
+        "evaluation-assurance",
+        "development-governance"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "source-evidence-integrity"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/research/591_r0_p03_historical_evidence_review_population_and_author_admission_boundary.md",
+      "preferred_subject": "evaluation-assurance",
+      "primary_semantic_evidence": {
+        "line": 5,
+        "line_sha256": "3c42b6f0784cae571cd40b676d157fcb498d82e2ee4b3ed02927d1213b76b346",
+        "original_heading": "# Research 591: R0-P03 historical evidence review population and scored-author boundary",
+        "verbatim_original_line": "**Scope:** After Research 590's whole-frontend source-family repair, identify exact historical checkpoint/research/validation evidence missing from the non-scored 406-source candidate. Prevent either blanket exclusion of necessary evidence or blanket inclusion of prior experiment designs and old relevance labels."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 6347,
+      "source_sha256": "de313a7bc8f493213e9eab6e20517399b9b82f1a6698a58d3796b00bc958dfe9",
+      "subjects": [
+        "evaluation-assurance"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "owner-approval-boundary"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/research/615_r0_p03_a2_r07_actual_test_only_author_view_intake_and_instrumentability.md",
+      "preferred_subject": "evaluation-assurance",
+      "primary_semantic_evidence": {
+        "line": 5,
+        "line_sha256": "25f8001f361eca19547c6adfcf7f0b95f807e0848205b609aec7201375d32dab",
+        "original_heading": "# Research 615: Actual test-only author-view intake and A2-R07 instrumentability decision",
+        "verbatim_original_line": "**Scope:** Reconcile the actual separate-session source-free future author-view intake returned in response to Research 614/Validation 284, preserve its evidentiary limits and select the next distinct operational qualification rather than repeating reviewer CMS or claiming an unobserved denial."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 10753,
+      "source_sha256": "f9cadac7f041baae12dcb5b658164c54208ffd8e4bde0ee9667290ad14fe38d6",
+      "subjects": [
+        "evaluation-assurance",
+        "tooling-integrations"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "source-evidence-integrity"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/research/619_r0_p03_wave0_independent_blind_second_assessment_and_owner_comparison_route.md",
+      "preferred_subject": "evaluation-assurance",
+      "primary_semantic_evidence": {
+        "line": 5,
+        "line_sha256": "5634546f20791a4c494233a45ff704d685adf90c30e5f611ef22008ba7a844f9",
+        "original_heading": "# Research 619: Genuine Wave0 challenger route after authenticated first-reviewer recovery",
+        "verbatim_original_line": "**Scope:** Prepare a proportionate, substantive second non-arm source-status assessment of the *same exact ten original historical sources* without revealing the first reviewer's protected judgments, followed by restricted owner-mediated disagreement detection and an actual independently reasoned challenge. Avoid more generic capability tests or source-free role self-inventories."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 9102,
+      "source_sha256": "c44efff1ff0a2bef4ee493a6b3583ad83dbe296b026ab744665f15db1f2f895c",
+      "subjects": [
+        "evaluation-assurance",
+        "model-collaboration"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "source-evidence-integrity"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/research/630_r0_p03_falsification_outcome_and_transition_to_source_world_closure.md",
+      "preferred_subject": "evaluation-assurance",
+      "primary_semantic_evidence": {
+        "line": 5,
+        "line_sha256": "dd64640fd4f279ba937e991cdb54619c8bb7ba8d3519e746cc1a2b48b629cceb",
+        "original_heading": "# Research 630: Bounded source-family rule falsification outcome and source-world closure transition",
+        "verbatim_original_line": "**Scope:** Interpret the actual independent falsification result of the *already frozen* source-family eligibility rule, distinguish non-falsification from proof or source release, and select the shortest justified route to an independently qualified primary-author source world."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 10822,
+      "source_sha256": "9b5b2c3b0b63bba006eb1362031ca50eadc94766a49c1c04f73e69bbbf8bc0a5",
+      "subjects": [
+        "evaluation-assurance"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "owner-approval-boundary"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/research/GITHUB_APP_EXTENDED_PERMISSION_REVIEW.md",
+      "preferred_subject": "tooling-integrations",
+      "primary_semantic_evidence": {
+        "line": 1,
+        "line_sha256": "635d0cfd2980a20b33135426a2af1fee43d21f6d7214ddcd774392265a290447",
+        "original_heading": "# GitHub App Extended Permission Review",
+        "verbatim_original_line": "# GitHub App Extended Permission Review"
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 15974,
+      "source_sha256": "4b78d6ee9ca7d6ab4de0d0f6150b86c726661ff951d551a46fefe635b5987266",
+      "subjects": [
+        "tooling-integrations"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "source-evidence-integrity"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/specifications/011_v1_rrf_hybrid_retrieval_comparator.md",
+      "preferred_subject": "retrieval-context",
+      "primary_semantic_evidence": {
+        "line": 6,
+        "line_sha256": "bd15b0528d47422ebfd790c152fb34ba7460a79f34ec99eb4f58b0a3eb7835e6",
+        "original_heading": "# Specification 011: V1 RRF Hybrid Retrieval Comparator",
+        "verbatim_original_line": "**Scope:** Tests whether the already-validated production lexical channel and the completed exact dense semantic candidate contain enough complementary signal for a simple deterministic hybrid retriever to improve frozen semantic coverage without regressing lexical coverage.  "
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 8979,
+      "source_sha256": "a9febcf4a401986e1c99f8208f9b7d91a7950fa4b73fc19cfe59723cbd02560d",
+      "subjects": [
+        "retrieval-context",
+        "evaluation-assurance"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "temporal-currentness"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/specifications/013_v1_horizon_relevance_and_selective_context.md",
+      "preferred_subject": "retrieval-context",
+      "primary_semantic_evidence": {
+        "line": 6,
+        "line_sha256": "29c22ee9e6b9aa3e2abd6e7f741e178f8598da997958a178f0d1930addfc1049",
+        "original_heading": "# Specification 013: V1 Horizon Relevance and Selective Context",
+        "verbatim_original_line": "**Scope:** Deterministic task-profile relevance filtering, bounded required-concept support closure, exact-revision methodological context projection, system-facing omission observability, hard context budgeting, and canonical model-facing context serialization.  "
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 19139,
+      "source_sha256": "b180a728ed4433c63bea87a5a7286383d3257b7548c7441fbdf6f1f4bcdfa28d",
+      "subjects": [
+        "retrieval-context"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "owner-approval-boundary"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/specifications/015_v1_recommendation_action_value_vertical_slice.md",
+      "preferred_subject": "recommendation-action",
+      "primary_semantic_evidence": {
+        "line": 6,
+        "line_sha256": "706b23aa9102c2030ed7501d47f3942a970de9b83fc722baf848a911dd99a0ce",
+        "original_heading": "# Specification 015: V1 Recommendation and Action Value Vertical Slice",
+        "verbatim_original_line": "**Scope:** First downstream comparison of recommendation disposition, blocking dependencies, unnecessary action expansion, and bounded action consequences across GENERIC, accepted SELECTIVE, and compact FULL_HORIZON methodological conditions.  "
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 31338,
+      "source_sha256": "a1c54cb6435f1df7fabc6d819693efa18528fa5379aeb8725c9ded929da66c0f",
+      "subjects": [
+        "recommendation-action"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "owner-approval-boundary",
+        "execution-reproducibility"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/specifications/018_v1_governed_autonomous_live_experiment_launcher.md",
+      "preferred_subject": "tooling-integrations",
+      "primary_semantic_evidence": {
+        "line": 1,
+        "line_sha256": "15c09555cab39c7b263c82e95cf4a586116b1d766bfe67d73d78d8969175aea7",
+        "original_heading": "# Specification 018: V1 Governed Autonomous Live Experiment Launcher",
+        "verbatim_original_line": "# Specification 018: V1 Governed Autonomous Live Experiment Launcher"
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 12556,
+      "source_sha256": "7dcc9f351a3ad6e5db633297229ebd59231bb3ce7666d19773cf3ac827e4e7bc",
+      "subjects": [
+        "tooling-integrations"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "source-evidence-integrity",
+        "temporal-currentness"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+      "preferred_subject": "development-governance",
+      "primary_semantic_evidence": {
+        "line": 5,
+        "line_sha256": "25136d45a915e895afe9136e911fd430356036219fcc371ef938d3155782730a",
+        "original_heading": "# Specification 025 \u2014 V1 Governed Repository Integrity and Continuity Hardening",
+        "verbatim_original_line": "**Scope:** Prospective typed repository-integrity contracts, branch-scoped live-state freshness, explicit continuity bootstrap routing, public/private integrity separation, deterministic validation, and chat-rotation preflight.  "
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 17662,
+      "source_sha256": "788e3162fc823d21eca176646e7e5c96090cfd7dd971f3f3e918414c278b5cdd",
+      "subjects": [
+        "development-governance"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "migration-compatibility",
+        "source-evidence-integrity"
+      ],
+      "historical_w5_same_path_annotation": {
+        "historical_revision": "4b94ffe183ff7af72cef6ee7492b4ba2f30c11ef",
+        "not_original_current_revision": true,
+        "preferred_subject": "project-knowledge-architecture",
+        "subjects": [
+          "project-knowledge-architecture"
+        ]
+      },
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "preferred_subject": "project-knowledge-architecture",
+      "primary_semantic_evidence": {
+        "line": 5,
+        "line_sha256": "51012899d2f5088b2e1f188da25c88dc6546e94ff3884279d440896b6f39be42",
+        "original_heading": "# Specification 028 \u2014 V1 Project-Knowledge Architecture Implementation and Migration Contract",
+        "verbatim_original_line": "**Scope:** Production implementation and staged migration contract for the owner-selected `PKA-CANDIDATE-01` project-development knowledge architecture, including repository-local tooling, structured semantic declarations, deterministic derived views, authority resolution, workstream continuation, reconstruction planning, capture/promotion, validation, professional architecture documentation, compatibility migration, rollback, and cutover qualification."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 38442,
+      "source_sha256": "a922486ebcc359b5b457a6d77ebad12bab0cc43cb0ea65ccd6b123b919d0bfa0",
+      "subjects": [
+        "project-knowledge-architecture"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "source-evidence-integrity"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "tools/project_knowledge/__main__.py",
+      "preferred_subject": "project-knowledge-architecture",
+      "primary_semantic_evidence": {
+        "line": 1,
+        "line_sha256": "95b633deedeb45485dc77229656cf2e994f0117ab2ff9a1b387adb9a07442902",
+        "original_heading": "",
+        "verbatim_original_line": "\"\"\"Module entry point for the project-knowledge command-line interface.\"\"\""
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 163,
+      "source_sha256": "7c6ef1cb9e935e479ea8f37837c0f4ee2909af7882d92ff68719d01588243bce",
+      "subjects": [
+        "project-knowledge-architecture"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "source-evidence-integrity"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "tools/project_knowledge/adapters/schema.py",
+      "preferred_subject": "project-knowledge-architecture",
+      "primary_semantic_evidence": {
+        "line": 14,
+        "line_sha256": "ebe44282959d9489a8906a1f6cad3dce5149f55d4cc1dc926888be174257afc8",
+        "original_heading": "# Durable validation requires this explicit schema closure. The ordinary",
+        "verbatim_original_line": "# Durable validation requires this explicit schema closure. The ordinary"
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 4459,
+      "source_sha256": "ead6766044c4ad3a08fbe4b5342e7d3c2c7c12203a458bf2722a265ce52bcf9d",
+      "subjects": [
+        "project-knowledge-architecture"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "source-evidence-integrity"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "tools/project_knowledge/services/discovery.py",
+      "preferred_subject": "project-knowledge-architecture",
+      "primary_semantic_evidence": {
+        "line": 1,
+        "line_sha256": "d01f3b32384e4d1c636f2454e5536f68e4adb0f2e258474572149874372cab53",
+        "original_heading": "",
+        "verbatim_original_line": "\"\"\"Centralized, observable discovery policy; no persistent source inventory.\"\"\""
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 6646,
+      "source_sha256": "753f6c2bbe8c54ce66a33924b759b77bccecc646c032f970d7d50c3a21ad72ba",
+      "subjects": [
+        "project-knowledge-architecture"
+      ]
+    },
+    {
+      "author_exposure": "coordinator_exposed_not_blind",
+      "concerns": [
+        "temporal-currentness",
+        "owner-approval-boundary"
+      ],
+      "historical_w5_same_path_annotation": null,
+      "ownership": "EXPERIMENTAL_SOURCE_ADJACENT_ANNOTATION_NOT_SOURCE_AUTHORED",
+      "path": "tools/project_knowledge/view_definitions/authority_index.py",
+      "preferred_subject": "project-knowledge-architecture",
+      "primary_semantic_evidence": {
+        "line": 7,
+        "line_sha256": "e20ce20834e17889f3d49e32631cd3e70a12005babee836f2f26301126593e3d",
+        "original_heading": "# Data-only declarations read from this view's own committed blob; the bound worker never imports this module.",
+        "verbatim_original_line": "# Data-only declarations read from this view's own committed blob; the bound worker never imports this module."
+      },
+      "source_git_revision": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+      "source_original_bytes": 2138,
+      "source_sha256": "ab0dc25f963488a7b6d35eafc04e9eac0e41544c46820f478903c060a7e1dc64",
+      "subjects": [
+        "project-knowledge-architecture"
+      ]
+    }
+  ],
+  "source_corpus": "route_b_primary_b0_baseline_result_v01.json",
+  "source_git_pin": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+  "source_vocabulary": "experiments/project_knowledge_subject_navigation_t1_v02/subject_catalog_candidate_v02.json",
+  "subject_definition_count": 18,
+  "vocabulary_sha256": "53c5cb65caccd1a9123f5d6da2e5738f618b383339c5bcfcf1d58fb9f5399495"
+}

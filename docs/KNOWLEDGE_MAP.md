@@ -1060,6 +1060,17 @@ docs/research/652_r0_p03_t2_real_decision_ledger_snapshot_supersession_and_opera
 docs/research/653_r0_p03_no_decision_id_competing_retrievers_rank_fusion_and_selective_evidence_probe.md
 docs/research/654_r0_p03_objective_git_event_and_external_ci_evidence_ladder_audit.md
 docs/research/655_r0_p03_route_b_first_twelve_source_answer_primary_b0_execution.md
+docs/research/656_r0_p03_route_b_distinct_b1_b2_b3_real_navigation_mechanisms_and_costs.md
+docs/local_execution/validation/355_r0_p03_route_b_exposed_subject_editorial_link_concern_method_comparison.md
+docs/checkpoints/919_r0_p03_route_b_actual_subject_editorial_link_concern_comparison.md
+experiments/r0_p03_navigation_probe/ROUTE_B_B1_B2_B3_ARM_EXECUTION_CONTRACT_V01.md
+experiments/r0_p03_navigation_probe/route_b_source_annotation_preparation_v01.py
+experiments/r0_p03_navigation_probe/route_b_primary_b1_b3_exposed_source_metadata_v01.json
+experiments/r0_p03_navigation_probe/route_b_b2_source_editorial_link_extraction_v01.py
+experiments/r0_p03_navigation_probe/route_b_primary_b2_source_editorial_link_witnesses_v01.json
+experiments/r0_p03_navigation_probe/route_b_distinct_b1_b2_b3_navigation_comparison_v01.py
+experiments/r0_p03_navigation_probe/route_b_distinct_b1_b2_b3_navigation_comparison_result_v01.json
+tests/unit/test_r0_p03_route_b_distinct_b1_b2_b3_navigation_v01.py
 docs/local_execution/validation/354_r0_p03_route_b_first_twelve_primary_source_answer_and_b0_execution.md
 docs/checkpoints/918_r0_p03_route_b_first_primary_twelve_task_b0_source_anchored_execution.md
 experiments/r0_p03_navigation_probe/ROUTE_B_PRIMARY_12_SOURCE_ANSWER_MANIFEST_V01.json
@@ -2099,7 +2110,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-918 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-919 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 
