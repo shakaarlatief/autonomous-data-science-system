@@ -1,0 +1,3302 @@
+{
+  "Gram_eigenpair_actual_residuals": [
+    {
+      "component_index": 1,
+      "fixed_power_steps": 160,
+      "normalised_eigenvector_residual_l2": 1.025079205553247e-15,
+      "rayleigh_eigenvalue": 6.952014023386305,
+      "relative_residual_to_rayleigh": 1.4745068150106148e-16
+    },
+    {
+      "component_index": 2,
+      "fixed_power_steps": 160,
+      "normalised_eigenvector_residual_l2": 2.2076699176994166e-16,
+      "rayleigh_eigenvalue": 2.2861541635559903,
+      "relative_residual_to_rayleigh": 9.65669749176278e-17
+    },
+    {
+      "component_index": 3,
+      "fixed_power_steps": 160,
+      "normalised_eigenvector_residual_l2": 7.058831473267627e-09,
+      "rayleigh_eigenvalue": 1.7122732509605447,
+      "relative_residual_to_rayleigh": 4.122491237486651e-09
+    },
+    {
+      "component_index": 4,
+      "fixed_power_steps": 160,
+      "normalised_eigenvector_residual_l2": 2.9134685269015913e-06,
+      "rayleigh_eigenvalue": 1.5226154139065586,
+      "relative_residual_to_rayleigh": 1.9134631767758972e-06
+    },
+    {
+      "component_index": 5,
+      "fixed_power_steps": 160,
+      "normalised_eigenvector_residual_l2": 4.4169164931759714e-05,
+      "rayleigh_eigenvalue": 1.4234040652502513,
+      "relative_residual_to_rayleigh": 3.103065813149427e-05
+    },
+    {
+      "component_index": 6,
+      "fixed_power_steps": 160,
+      "normalised_eigenvector_residual_l2": 4.512773947412041e-05,
+      "rayleigh_eigenvalue": 1.344097080740818,
+      "relative_residual_to_rayleigh": 3.3574761913215097e-05
+    },
+    {
+      "component_index": 7,
+      "fixed_power_steps": 160,
+      "normalised_eigenvector_residual_l2": 1.714276956944755e-05,
+      "rayleigh_eigenvalue": 1.2822825784413276,
+      "relative_residual_to_rayleigh": 1.3368948356364135e-05
+    },
+    {
+      "component_index": 8,
+      "fixed_power_steps": 160,
+      "normalised_eigenvector_residual_l2": 0.0002313586180746025,
+      "rayleigh_eigenvalue": 1.2023737006948065,
+      "relative_residual_to_rayleigh": 0.0001924182289922917
+    },
+    {
+      "component_index": 9,
+      "fixed_power_steps": 160,
+      "normalised_eigenvector_residual_l2": 0.0002353610784996289,
+      "rayleigh_eigenvalue": 1.1783498148973501,
+      "relative_residual_to_rayleigh": 0.0001997378669085054
+    },
+    {
+      "component_index": 10,
+      "fixed_power_steps": 160,
+      "normalised_eigenvector_residual_l2": 0.0001482778110856124,
+      "rayleigh_eigenvalue": 1.1116774872029336,
+      "relative_residual_to_rayleigh": 0.00013338204001836075
+    },
+    {
+      "component_index": 11,
+      "fixed_power_steps": 160,
+      "normalised_eigenvector_residual_l2": 7.234127503451696e-05,
+      "rayleigh_eigenvalue": 1.0613272579595423,
+      "relative_residual_to_rayleigh": 6.816113926405404e-05
+    },
+    {
+      "component_index": 12,
+      "fixed_power_steps": 160,
+      "normalised_eigenvector_residual_l2": 0.00014861980673942408,
+      "rayleigh_eigenvalue": 1.0613123482055153,
+      "relative_residual_to_rayleigh": 0.00014003399375378317
+    },
+    {
+      "component_index": 13,
+      "fixed_power_steps": 160,
+      "normalised_eigenvector_residual_l2": 0.0005280659057251915,
+      "rayleigh_eigenvalue": 1.0160430636921132,
+      "relative_residual_to_rayleigh": 0.0005197278782715148
+    },
+    {
+      "component_index": 14,
+      "fixed_power_steps": 160,
+      "normalised_eigenvector_residual_l2": 0.003095179335563943,
+      "rayleigh_eigenvalue": 0.9945470332539468,
+      "relative_residual_to_rayleigh": 0.003112149784849464
+    },
+    {
+      "component_index": 15,
+      "fixed_power_steps": 160,
+      "normalised_eigenvector_residual_l2": 0.005617197701425535,
+      "rayleigh_eigenvalue": 0.9827445767365284,
+      "relative_residual_to_rayleigh": 0.005715826710617903
+    },
+    {
+      "component_index": 16,
+      "fixed_power_steps": 160,
+      "normalised_eigenvector_residual_l2": 0.005289569640163104,
+      "rayleigh_eigenvalue": 0.9859928113454354,
+      "relative_residual_to_rayleigh": 0.0053647142040977236
+    }
+  ],
+  "Gram_eigenvalues": [
+    6.952014023386305,
+    2.2861541635559903,
+    1.7122732509605447,
+    1.5226154139065586,
+    1.4234040652502513,
+    1.344097080740818,
+    1.2822825784413276,
+    1.2023737006948065,
+    1.1783498148973501,
+    1.1116774872029336,
+    1.0613272579595423,
+    1.0613123482055153,
+    1.0160430636921132,
+    0.9945470332539468,
+    0.9827445767365284,
+    0.9859928113454354
+  ],
+  "cases": [
+    {
+      "dense_scored_top10_original_git_paths": [
+        {
+          "cosine_similarity": 0.7377193238851207,
+          "original_source_sha256": "5f02b97fc40f8d1a85b335a181fa7849f66b6a0f134bf595eb380592313a41fe",
+          "path": "docs/checkpoints/497_candidate01_real_repository_shadow_v01_fixture_frozen.md"
+        },
+        {
+          "cosine_similarity": 0.6783305176813567,
+          "original_source_sha256": "a1c54cb6435f1df7fabc6d819693efa18528fa5379aeb8725c9ded929da66c0f",
+          "path": "docs/specifications/015_v1_recommendation_action_value_vertical_slice.md"
+        },
+        {
+          "cosine_similarity": 0.6715113931113847,
+          "original_source_sha256": "7c1387f15b2781ca0a40d341803b143dedfe4f7251fbc79f97d180fde0523938",
+          "path": "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md"
+        },
+        {
+          "cosine_similarity": 0.6642245461590428,
+          "original_source_sha256": "788e3162fc823d21eca176646e7e5c96090cfd7dd971f3f3e918414c278b5cdd",
+          "path": "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md"
+        },
+        {
+          "cosine_similarity": 0.6487638730510441,
+          "original_source_sha256": "51cef534cdf40a72fda8be52b098ce48a9a42c1954f780550acb41c301d2faf2",
+          "path": "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md"
+        },
+        {
+          "cosine_similarity": 0.6264727969892437,
+          "original_source_sha256": "1cb6dd610536781e6bdbd02ab30891f922610a90437a02c36057ca264a8a09b5",
+          "path": "docs/DECISIONS.md"
+        },
+        {
+          "cosine_similarity": 0.6227300861260489,
+          "original_source_sha256": "c08de226ff2878e1da1dae7a6cc55114000c881da021c94439288868706e2379",
+          "path": "docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md"
+        },
+        {
+          "cosine_similarity": 0.617044664238525,
+          "original_source_sha256": "fe3aed150fd06604aac3d37db1ee5ae092817d0cfb7cc5643f70edd561138ba3",
+          "path": "docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md"
+        },
+        {
+          "cosine_similarity": 0.6105928664846088,
+          "original_source_sha256": "25e22cd4b84f4f4b412c8a31f974b25a416dd2ef393b2b72f71facbb57760e3f",
+          "path": "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md"
+        },
+        {
+          "cosine_similarity": 0.5823850737500338,
+          "original_source_sha256": "569ec542ebca2baa5a6c3112a3a4bb2d4d486df860dd4fb68fd9db4d1c53957e",
+          "path": "docs/checkpoints/447_repository_branch_safety_complete_canonical_protection_decision_next.md"
+        }
+      ],
+      "expected_source_sha256": "54bcb132f12ceffd330540006a8099179a260f751da7b4269253b6aef87edcaa",
+      "exposed_required_source_rank_after_retrieval": {
+        "B0_ORIGINAL": null,
+        "B4_LSA16_B0_RRF_EXPLORATORY": null,
+        "B4_LSA16_B2_RRF_EXPLORATORY": null,
+        "B4_LSA16_DENSE_ONLY_EXPLORATORY": null
+      },
+      "fit_question_token_witness": {
+        "query_latent_norm": 0.085980422663558,
+        "query_oov_token_count": 0,
+        "query_projection_has_known_terms": true,
+        "query_tokens_in_fitted_word_vocabulary": 9,
+        "unique_nonstopword_query_tokens": 9
+      },
+      "original_Git_required_source_for_exposed_evaluation_only": "docs/CURRENT_STATE.md",
+      "original_primary_category": "COLD_START_CURRENT_ORIENTATION",
+      "original_question": "At the archived project state, what checkpoint was current and which branch was being used for ongoing development?",
+      "query_latent_16_dimension_coordinates": [
+        -0.06411133383829251,
+        0.00334591799909482,
+        -0.020002945151680263,
+        -0.015449683158079522,
+        0.022985473439769897,
+        0.0073063795483136705,
+        0.0021717274956057054,
+        -0.01247419732279524,
+        -0.013288873814563512,
+        -0.0004044086024270257,
+        -0.02030623151033837,
+        0.015936730277843637,
+        -0.01186069620557672,
+        -0.003574690693033997,
+        0.021248752350089987,
+        -0.02103052459008226
+      ],
+      "question_id": "P01",
+      "rankings_before_exposed_source_lookup": {
+        "B0_ORIGINAL": [
+          "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+          "docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md",
+          "docs/DECISIONS.md",
+          "docs/specifications/013_v1_horizon_relevance_and_selective_context.md",
+          "docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md",
+          "docs/checkpoints/447_repository_branch_safety_complete_canonical_protection_decision_next.md",
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md",
+          "docs/specifications/018_v1_governed_autonomous_live_experiment_launcher.md",
+          "docs/research/585_r0_p03_owner_fake_custody_report_and_access_boundary.md"
+        ],
+        "B4_LSA16_B0_RRF_EXPLORATORY": [
+          "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+          "docs/DECISIONS.md",
+          "docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md",
+          "docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md",
+          "docs/checkpoints/447_repository_branch_safety_complete_canonical_protection_decision_next.md",
+          "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md",
+          "docs/checkpoints/497_candidate01_real_repository_shadow_v01_fixture_frozen.md",
+          "docs/specifications/015_v1_recommendation_action_value_vertical_slice.md",
+          "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+          "docs/specifications/013_v1_horizon_relevance_and_selective_context.md"
+        ],
+        "B4_LSA16_B2_RRF_EXPLORATORY": [
+          "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+          "docs/DECISIONS.md",
+          "docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md",
+          "docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md",
+          "docs/checkpoints/447_repository_branch_safety_complete_canonical_protection_decision_next.md",
+          "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md",
+          "docs/checkpoints/497_candidate01_real_repository_shadow_v01_fixture_frozen.md",
+          "docs/specifications/015_v1_recommendation_action_value_vertical_slice.md",
+          "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+          "docs/specifications/013_v1_horizon_relevance_and_selective_context.md"
+        ],
+        "B4_LSA16_DENSE_ONLY_EXPLORATORY": [
+          "docs/checkpoints/497_candidate01_real_repository_shadow_v01_fixture_frozen.md",
+          "docs/specifications/015_v1_recommendation_action_value_vertical_slice.md",
+          "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+          "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+          "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+          "docs/DECISIONS.md",
+          "docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md",
+          "docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md",
+          "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md",
+          "docs/checkpoints/447_repository_branch_safety_complete_canonical_protection_decision_next.md"
+        ]
+      },
+      "source_authority_or_operative_effect_asserted": false
+    },
+    {
+      "dense_scored_top10_original_git_paths": [
+        {
+          "cosine_similarity": 0.7037688534577856,
+          "original_source_sha256": "0e2e21ede9aacdde21e0abf43c7d2ebb02ccb8bfd131072b60b878d65e8dfff3",
+          "path": "docs/checkpoints/700_key_author_a_p4_birth_grouping_phase_defined.md"
+        },
+        {
+          "cosine_similarity": 0.6275370012157763,
+          "original_source_sha256": "fd9ee485c0671f4950ea050f21fc029683dc05412921fcc21107091619f0ac9f",
+          "path": "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md"
+        },
+        {
+          "cosine_similarity": 0.6165793810750811,
+          "original_source_sha256": "7a604ec607b1aa7a8135504dc9a24576e463c5a5f392c1a1ebefa0e2e518e7f7",
+          "path": "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md"
+        },
+        {
+          "cosine_similarity": 0.5946458575320382,
+          "original_source_sha256": "5f02b97fc40f8d1a85b335a181fa7849f66b6a0f134bf595eb380592313a41fe",
+          "path": "docs/checkpoints/497_candidate01_real_repository_shadow_v01_fixture_frozen.md"
+        },
+        {
+          "cosine_similarity": 0.5868711087878413,
+          "original_source_sha256": "788e3162fc823d21eca176646e7e5c96090cfd7dd971f3f3e918414c278b5cdd",
+          "path": "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md"
+        },
+        {
+          "cosine_similarity": 0.5663336201393291,
+          "original_source_sha256": "7c1387f15b2781ca0a40d341803b143dedfe4f7251fbc79f97d180fde0523938",
+          "path": "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md"
+        },
+        {
+          "cosine_similarity": 0.5658324364305736,
+          "original_source_sha256": "ad291003dfb2bbfdc54c5812f32834cc062571359d0fdf566e50ffea72d66177",
+          "path": "docs/research/357_key_author_a_p3_batch9_replacement_pass_batch10_fresh_session_released.md"
+        },
+        {
+          "cosine_similarity": 0.560595733249169,
+          "original_source_sha256": "97349b88f4c0ca0345c23629c2426bf34c155192bd30c1ed5d13ff7a598ae649",
+          "path": "docs/research/356_key_author_a_p3_batch9_compaction_hold_fresh_replacement_authorized.md"
+        },
+        {
+          "cosine_similarity": 0.5604546025174844,
+          "original_source_sha256": "eadf86eb4803ed442643ecd656bc2c8d44b281ba9f0dc20b8948eb85c437fcaa",
+          "path": "docs/research/503_r0_realization_requirements_and_independent_design_charter.md"
+        },
+        {
+          "cosine_similarity": 0.5377198050771497,
+          "original_source_sha256": "54bcb132f12ceffd330540006a8099179a260f751da7b4269253b6aef87edcaa",
+          "path": "docs/CURRENT_STATE.md"
+        }
+      ],
+      "expected_source_sha256": "1cb6dd610536781e6bdbd02ab30891f922610a90437a02c36057ca264a8a09b5",
+      "exposed_required_source_rank_after_retrieval": {
+        "B0_ORIGINAL": 1,
+        "B4_LSA16_B0_RRF_EXPLORATORY": 5,
+        "B4_LSA16_B2_RRF_EXPLORATORY": 5,
+        "B4_LSA16_DENSE_ONLY_EXPLORATORY": null
+      },
+      "fit_question_token_witness": {
+        "query_latent_norm": 0.10003699140359498,
+        "query_oov_token_count": 1,
+        "query_projection_has_known_terms": true,
+        "query_tokens_in_fitted_word_vocabulary": 6,
+        "unique_nonstopword_query_tokens": 7
+      },
+      "original_Git_required_source_for_exposed_evaluation_only": "docs/DECISIONS.md",
+      "original_primary_category": "COLD_START_CURRENT_ORIENTATION",
+      "original_question": "Where can a new collaborator find the explicit project-wide decisions, and can those decisions be revised later?",
+      "query_latent_16_dimension_coordinates": [
+        -0.06962921685631217,
+        0.0236233508477954,
+        0.016415247020606438,
+        -0.009270525427317234,
+        0.018589615116233086,
+        0.004289873369992742,
+        0.002140923936063004,
+        -0.03336178614232503,
+        0.018069061334260665,
+        -0.028493303157924973,
+        -0.025519073693301687,
+        -0.0007444664758001056,
+        -0.01078357521854526,
+        -0.018639051371881137,
+        0.02071629497212289,
+        -0.009007537453205698
+      ],
+      "question_id": "P02",
+      "rankings_before_exposed_source_lookup": {
+        "B0_ORIGINAL": [
+          "docs/DECISIONS.md",
+          "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+          "docs/research/356_key_author_a_p3_batch9_compaction_hold_fresh_replacement_authorized.md",
+          "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+          "docs/research/357_key_author_a_p3_batch9_replacement_pass_batch10_fresh_session_released.md",
+          "docs/CURRENT_STATE.md",
+          "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+          "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+          "docs/research/GITHUB_APP_EXTENDED_PERMISSION_REVIEW.md",
+          "docs/checkpoints/718_key_author_a_p4_h09_accepted_h10_released.md"
+        ],
+        "B4_LSA16_B0_RRF_EXPLORATORY": [
+          "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+          "docs/research/356_key_author_a_p3_batch9_compaction_hold_fresh_replacement_authorized.md",
+          "docs/research/357_key_author_a_p3_batch9_replacement_pass_batch10_fresh_session_released.md",
+          "docs/CURRENT_STATE.md",
+          "docs/DECISIONS.md",
+          "docs/checkpoints/700_key_author_a_p4_birth_grouping_phase_defined.md",
+          "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+          "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/checkpoints/497_candidate01_real_repository_shadow_v01_fixture_frozen.md"
+        ],
+        "B4_LSA16_B2_RRF_EXPLORATORY": [
+          "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+          "docs/CURRENT_STATE.md",
+          "docs/research/356_key_author_a_p3_batch9_compaction_hold_fresh_replacement_authorized.md",
+          "docs/research/357_key_author_a_p3_batch9_replacement_pass_batch10_fresh_session_released.md",
+          "docs/DECISIONS.md",
+          "docs/checkpoints/700_key_author_a_p4_birth_grouping_phase_defined.md",
+          "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+          "docs/checkpoints/497_candidate01_real_repository_shadow_v01_fixture_frozen.md"
+        ],
+        "B4_LSA16_DENSE_ONLY_EXPLORATORY": [
+          "docs/checkpoints/700_key_author_a_p4_birth_grouping_phase_defined.md",
+          "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/checkpoints/497_candidate01_real_repository_shadow_v01_fixture_frozen.md",
+          "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+          "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+          "docs/research/357_key_author_a_p3_batch9_replacement_pass_batch10_fresh_session_released.md",
+          "docs/research/356_key_author_a_p3_batch9_compaction_hold_fresh_replacement_authorized.md",
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "docs/CURRENT_STATE.md"
+        ]
+      },
+      "source_authority_or_operative_effect_asserted": false
+    },
+    {
+      "dense_scored_top10_original_git_paths": [
+        {
+          "cosine_similarity": 0.7721197886669726,
+          "original_source_sha256": "54427409aa5200a0feef027ec138f32d7dbcf021d2277f69238f17f051dedfbb",
+          "path": "docs/checkpoints/550_pka_g108_current_authority_confirmed_integrity_next.md"
+        },
+        {
+          "cosine_similarity": 0.7640652627229015,
+          "original_source_sha256": "8facea965d4c39ad1339a5801364c563cb9aaf5d683c5cac96b90ccc029f6fce",
+          "path": "docs/checkpoints/552_pka_w2_shadow_views_accepted_compatibility_shadow_next.md"
+        },
+        {
+          "cosine_similarity": 0.7476968796801485,
+          "original_source_sha256": "85dfeacd02db9aad901185ae18fd6d14c0b89a11945a4036da9270b2bba3b2cc",
+          "path": "docs/checkpoints/544_pka_g102_project_boundary_accepted_source_vault_next.md"
+        },
+        {
+          "cosine_similarity": 0.7342281142654684,
+          "original_source_sha256": "5f02b97fc40f8d1a85b335a181fa7849f66b6a0f134bf595eb380592313a41fe",
+          "path": "docs/checkpoints/497_candidate01_real_repository_shadow_v01_fixture_frozen.md"
+        },
+        {
+          "cosine_similarity": 0.5847188013333038,
+          "original_source_sha256": "5d3f9fdd27a761775b99f1971623ddc973ee87192f9f1faa32112660c228a0bb",
+          "path": "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md"
+        },
+        {
+          "cosine_similarity": 0.5384246353631342,
+          "original_source_sha256": "a922486ebcc359b5b457a6d77ebad12bab0cc43cb0ea65ccd6b123b919d0bfa0",
+          "path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md"
+        },
+        {
+          "cosine_similarity": 0.509020254580251,
+          "original_source_sha256": "d23dbd9ad20c14f93ded350575dff6e4ac734b9268d4befc760fcfbf5eec4412",
+          "path": "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md"
+        },
+        {
+          "cosine_similarity": 0.5081315939432803,
+          "original_source_sha256": "7a604ec607b1aa7a8135504dc9a24576e463c5a5f392c1a1ebefa0e2e518e7f7",
+          "path": "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md"
+        },
+        {
+          "cosine_similarity": 0.49002016432377143,
+          "original_source_sha256": "b06302ff4c2d87987d976e149d964f52c8772808a055cb952433566790094869",
+          "path": "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md"
+        },
+        {
+          "cosine_similarity": 0.4716658580499637,
+          "original_source_sha256": "788e3162fc823d21eca176646e7e5c96090cfd7dd971f3f3e918414c278b5cdd",
+          "path": "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md"
+        }
+      ],
+      "expected_source_sha256": "a922486ebcc359b5b457a6d77ebad12bab0cc43cb0ea65ccd6b123b919d0bfa0",
+      "exposed_required_source_rank_after_retrieval": {
+        "B0_ORIGINAL": 7,
+        "B4_LSA16_B0_RRF_EXPLORATORY": 3,
+        "B4_LSA16_B2_RRF_EXPLORATORY": 3,
+        "B4_LSA16_DENSE_ONLY_EXPLORATORY": 6
+      },
+      "fit_question_token_witness": {
+        "query_latent_norm": 0.20191499521954182,
+        "query_oov_token_count": 0,
+        "query_projection_has_known_terms": true,
+        "query_tokens_in_fitted_word_vocabulary": 8,
+        "unique_nonstopword_query_tokens": 8
+      },
+      "original_Git_required_source_for_exposed_evaluation_only": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "original_primary_category": "COLD_START_CURRENT_ORIENTATION",
+      "original_question": "What is the recorded implementation status of the governed project-knowledge architecture migration contract?",
+      "query_latent_16_dimension_coordinates": [
+        -0.12131314535795265,
+        0.08456419577998808,
+        -0.07075924981000248,
+        -0.025621622802306242,
+        -0.04365242230513965,
+        0.0010216665409012887,
+        0.005159756477984988,
+        0.010952264688254283,
+        -0.05308355654226093,
+        0.00044723606885578175,
+        -0.038270178748328845,
+        -0.008945661590233083,
+        -0.03272499270234416,
+        -0.02576703490156487,
+        -0.009173506709028383,
+        -0.07073525993868056
+      ],
+      "question_id": "P03",
+      "rankings_before_exposed_source_lookup": {
+        "B0_ORIGINAL": [
+          "docs/research/357_key_author_a_p3_batch9_replacement_pass_batch10_fresh_session_released.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+          "docs/research/407_key_author_a_legacy_attention_evaluator_qualified_activated.md",
+          "docs/research/356_key_author_a_p3_batch9_compaction_hold_fresh_replacement_authorized.md",
+          "docs/specifications/018_v1_governed_autonomous_live_experiment_launcher.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/checkpoints/050_real_held_out_run_plan_materialized_and_frozen_inputs_verified.md",
+          "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+          "docs/checkpoints/550_pka_g108_current_authority_confirmed_integrity_next.md"
+        ],
+        "B4_LSA16_B0_RRF_EXPLORATORY": [
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/checkpoints/550_pka_g108_current_authority_confirmed_integrity_next.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/research/357_key_author_a_p3_batch9_replacement_pass_batch10_fresh_session_released.md",
+          "docs/checkpoints/552_pka_w2_shadow_views_accepted_compatibility_shadow_next.md",
+          "docs/checkpoints/544_pka_g102_project_boundary_accepted_source_vault_next.md",
+          "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+          "docs/checkpoints/497_candidate01_real_repository_shadow_v01_fixture_frozen.md",
+          "docs/research/407_key_author_a_legacy_attention_evaluator_qualified_activated.md",
+          "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md"
+        ],
+        "B4_LSA16_B2_RRF_EXPLORATORY": [
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/checkpoints/550_pka_g108_current_authority_confirmed_integrity_next.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/research/357_key_author_a_p3_batch9_replacement_pass_batch10_fresh_session_released.md",
+          "docs/checkpoints/552_pka_w2_shadow_views_accepted_compatibility_shadow_next.md",
+          "docs/checkpoints/544_pka_g102_project_boundary_accepted_source_vault_next.md",
+          "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+          "docs/checkpoints/497_candidate01_real_repository_shadow_v01_fixture_frozen.md",
+          "docs/research/407_key_author_a_legacy_attention_evaluator_qualified_activated.md",
+          "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md"
+        ],
+        "B4_LSA16_DENSE_ONLY_EXPLORATORY": [
+          "docs/checkpoints/550_pka_g108_current_authority_confirmed_integrity_next.md",
+          "docs/checkpoints/552_pka_w2_shadow_views_accepted_compatibility_shadow_next.md",
+          "docs/checkpoints/544_pka_g102_project_boundary_accepted_source_vault_next.md",
+          "docs/checkpoints/497_candidate01_real_repository_shadow_v01_fixture_frozen.md",
+          "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+          "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md"
+        ]
+      },
+      "source_authority_or_operative_effect_asserted": false
+    },
+    {
+      "dense_scored_top10_original_git_paths": [
+        {
+          "cosine_similarity": 0.7902161759087674,
+          "original_source_sha256": "7c1387f15b2781ca0a40d341803b143dedfe4f7251fbc79f97d180fde0523938",
+          "path": "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md"
+        },
+        {
+          "cosine_similarity": 0.7662732091572938,
+          "original_source_sha256": "a922486ebcc359b5b457a6d77ebad12bab0cc43cb0ea65ccd6b123b919d0bfa0",
+          "path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md"
+        },
+        {
+          "cosine_similarity": 0.7417413423872888,
+          "original_source_sha256": "eadf86eb4803ed442643ecd656bc2c8d44b281ba9f0dc20b8948eb85c437fcaa",
+          "path": "docs/research/503_r0_realization_requirements_and_independent_design_charter.md"
+        },
+        {
+          "cosine_similarity": 0.7359794438497953,
+          "original_source_sha256": "fe3aed150fd06604aac3d37db1ee5ae092817d0cfb7cc5643f70edd561138ba3",
+          "path": "docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md"
+        },
+        {
+          "cosine_similarity": 0.7170155314325918,
+          "original_source_sha256": "1cb6dd610536781e6bdbd02ab30891f922610a90437a02c36057ca264a8a09b5",
+          "path": "docs/DECISIONS.md"
+        },
+        {
+          "cosine_similarity": 0.7049288655564274,
+          "original_source_sha256": "788e3162fc823d21eca176646e7e5c96090cfd7dd971f3f3e918414c278b5cdd",
+          "path": "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md"
+        },
+        {
+          "cosine_similarity": 0.66876539619234,
+          "original_source_sha256": "58a77b5e9fed4008b9b7ed78a972d8063ca4be7d9dbf557256203572f275ec33",
+          "path": "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md"
+        },
+        {
+          "cosine_similarity": 0.6549633499238949,
+          "original_source_sha256": "25e22cd4b84f4f4b412c8a31f974b25a416dd2ef393b2b72f71facbb57760e3f",
+          "path": "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md"
+        },
+        {
+          "cosine_similarity": 0.6527265639979537,
+          "original_source_sha256": "51cef534cdf40a72fda8be52b098ce48a9a42c1954f780550acb41c301d2faf2",
+          "path": "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md"
+        },
+        {
+          "cosine_similarity": 0.6076209788843391,
+          "original_source_sha256": "c08de226ff2878e1da1dae7a6cc55114000c881da021c94439288868706e2379",
+          "path": "docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md"
+        }
+      ],
+      "expected_source_sha256": "7c1387f15b2781ca0a40d341803b143dedfe4f7251fbc79f97d180fde0523938",
+      "exposed_required_source_rank_after_retrieval": {
+        "B0_ORIGINAL": 1,
+        "B4_LSA16_B0_RRF_EXPLORATORY": 1,
+        "B4_LSA16_B2_RRF_EXPLORATORY": 1,
+        "B4_LSA16_DENSE_ONLY_EXPLORATORY": 1
+      },
+      "fit_question_token_witness": {
+        "query_latent_norm": 0.11828615431693403,
+        "query_oov_token_count": 1,
+        "query_projection_has_known_terms": true,
+        "query_tokens_in_fitted_word_vocabulary": 8,
+        "unique_nonstopword_query_tokens": 9
+      },
+      "original_Git_required_source_for_exposed_evaluation_only": "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+      "original_primary_category": "CROSS_PLANE_DISCOVERY",
+      "original_question": "Which foundation explains source artifact preservation, lineage and evidence provenance across the knowledge system?",
+      "query_latent_16_dimension_coordinates": [
+        -0.08218710483983252,
+        -0.03535100358332354,
+        -0.039599026401492,
+        -0.014594480433986406,
+        -0.0004102981384469484,
+        0.0010549350665637438,
+        0.020634313518429686,
+        -0.010809955266047874,
+        -0.007673252777707854,
+        -0.03187643471474157,
+        -0.01823967089354184,
+        -0.008326599218765175,
+        0.006266869051951076,
+        0.002389859270307823,
+        -0.007321955549681283,
+        -0.0456794021483389
+      ],
+      "question_id": "P04",
+      "rankings_before_exposed_source_lookup": {
+        "B0_ORIGINAL": [
+          "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "docs/DECISIONS.md",
+          "docs/specifications/015_v1_recommendation_action_value_vertical_slice.md",
+          "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+          "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md",
+          "docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md",
+          "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+          "docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md",
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md"
+        ],
+        "B4_LSA16_B0_RRF_EXPLORATORY": [
+          "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "docs/DECISIONS.md",
+          "docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md",
+          "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+          "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md",
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/specifications/015_v1_recommendation_action_value_vertical_slice.md"
+        ],
+        "B4_LSA16_B2_RRF_EXPLORATORY": [
+          "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "docs/DECISIONS.md",
+          "docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md",
+          "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+          "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md",
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/specifications/015_v1_recommendation_action_value_vertical_slice.md"
+        ],
+        "B4_LSA16_DENSE_ONLY_EXPLORATORY": [
+          "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md",
+          "docs/DECISIONS.md",
+          "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md",
+          "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+          "docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md"
+        ]
+      },
+      "source_authority_or_operative_effect_asserted": false
+    },
+    {
+      "dense_scored_top10_original_git_paths": [
+        {
+          "cosine_similarity": 0.8530740131069299,
+          "original_source_sha256": "85dfeacd02db9aad901185ae18fd6d14c0b89a11945a4036da9270b2bba3b2cc",
+          "path": "docs/checkpoints/544_pka_g102_project_boundary_accepted_source_vault_next.md"
+        },
+        {
+          "cosine_similarity": 0.8320590860013591,
+          "original_source_sha256": "54427409aa5200a0feef027ec138f32d7dbcf021d2277f69238f17f051dedfbb",
+          "path": "docs/checkpoints/550_pka_g108_current_authority_confirmed_integrity_next.md"
+        },
+        {
+          "cosine_similarity": 0.8237047953210875,
+          "original_source_sha256": "8facea965d4c39ad1339a5801364c563cb9aaf5d683c5cac96b90ccc029f6fce",
+          "path": "docs/checkpoints/552_pka_w2_shadow_views_accepted_compatibility_shadow_next.md"
+        },
+        {
+          "cosine_similarity": 0.6347786541842888,
+          "original_source_sha256": "5f02b97fc40f8d1a85b335a181fa7849f66b6a0f134bf595eb380592313a41fe",
+          "path": "docs/checkpoints/497_candidate01_real_repository_shadow_v01_fixture_frozen.md"
+        },
+        {
+          "cosine_similarity": 0.6218830111950899,
+          "original_source_sha256": "51cef534cdf40a72fda8be52b098ce48a9a42c1954f780550acb41c301d2faf2",
+          "path": "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md"
+        },
+        {
+          "cosine_similarity": 0.5937145344176247,
+          "original_source_sha256": "a922486ebcc359b5b457a6d77ebad12bab0cc43cb0ea65ccd6b123b919d0bfa0",
+          "path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md"
+        },
+        {
+          "cosine_similarity": 0.5649079216120285,
+          "original_source_sha256": "006dd8185524e35174ec6c47cf55f214871a49ee3db39cd41ed4fbc899e4becd",
+          "path": "docs/research/184_w0_derived_view_framework_g009_result.md"
+        },
+        {
+          "cosine_similarity": 0.5281850667703772,
+          "original_source_sha256": "788e3162fc823d21eca176646e7e5c96090cfd7dd971f3f3e918414c278b5cdd",
+          "path": "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md"
+        },
+        {
+          "cosine_similarity": 0.5109676487331295,
+          "original_source_sha256": "eadf86eb4803ed442643ecd656bc2c8d44b281ba9f0dc20b8948eb85c437fcaa",
+          "path": "docs/research/503_r0_realization_requirements_and_independent_design_charter.md"
+        },
+        {
+          "cosine_similarity": 0.5004869061521697,
+          "original_source_sha256": "b06302ff4c2d87987d976e149d964f52c8772808a055cb952433566790094869",
+          "path": "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md"
+        }
+      ],
+      "expected_source_sha256": "788e3162fc823d21eca176646e7e5c96090cfd7dd971f3f3e918414c278b5cdd",
+      "exposed_required_source_rank_after_retrieval": {
+        "B0_ORIGINAL": 1,
+        "B4_LSA16_B0_RRF_EXPLORATORY": 3,
+        "B4_LSA16_B2_RRF_EXPLORATORY": 3,
+        "B4_LSA16_DENSE_ONLY_EXPLORATORY": 8
+      },
+      "fit_question_token_witness": {
+        "query_latent_norm": 0.13730728398829747,
+        "query_oov_token_count": 0,
+        "query_projection_has_known_terms": true,
+        "query_tokens_in_fitted_word_vocabulary": 10,
+        "unique_nonstopword_query_tokens": 10
+      },
+      "original_Git_required_source_for_exposed_evaluation_only": "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+      "original_primary_category": "CROSS_PLANE_DISCOVERY",
+      "original_question": "Which specification addresses governed repository integrity and continuity bootstrap while still awaiting implementation?",
+      "query_latent_16_dimension_coordinates": [
+        -0.08127328175260216,
+        0.03358501131704868,
+        -0.060633671737066776,
+        0.0038119692139445558,
+        -0.04051505484392672,
+        0.018921882061977577,
+        -0.01947684131221396,
+        -0.036094882706837604,
+        -0.05207276006563282,
+        -0.0018380560363332476,
+        -0.020505976959341175,
+        0.014468247361063098,
+        -0.0152732509498692,
+        -0.005418994724255033,
+        -0.005052671892401749,
+        -0.010694821947186918
+      ],
+      "question_id": "P05",
+      "rankings_before_exposed_source_lookup": {
+        "B0_ORIGINAL": [
+          "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+          "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+          "docs/checkpoints/550_pka_g108_current_authority_confirmed_integrity_next.md",
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+          "docs/research/184_w0_derived_view_framework_g009_result.md",
+          "docs/checkpoints/552_pka_w2_shadow_views_accepted_compatibility_shadow_next.md",
+          "docs/research/357_key_author_a_p3_batch9_replacement_pass_batch10_fresh_session_released.md",
+          "docs/checkpoints/544_pka_g102_project_boundary_accepted_source_vault_next.md",
+          "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md"
+        ],
+        "B4_LSA16_B0_RRF_EXPLORATORY": [
+          "docs/checkpoints/550_pka_g108_current_authority_confirmed_integrity_next.md",
+          "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+          "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+          "docs/checkpoints/544_pka_g102_project_boundary_accepted_source_vault_next.md",
+          "docs/checkpoints/552_pka_w2_shadow_views_accepted_compatibility_shadow_next.md",
+          "docs/research/184_w0_derived_view_framework_g009_result.md",
+          "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+          "docs/checkpoints/497_candidate01_real_repository_shadow_v01_fixture_frozen.md",
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md"
+        ],
+        "B4_LSA16_B2_RRF_EXPLORATORY": [
+          "docs/checkpoints/550_pka_g108_current_authority_confirmed_integrity_next.md",
+          "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+          "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+          "docs/checkpoints/544_pka_g102_project_boundary_accepted_source_vault_next.md",
+          "docs/checkpoints/552_pka_w2_shadow_views_accepted_compatibility_shadow_next.md",
+          "docs/research/184_w0_derived_view_framework_g009_result.md",
+          "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+          "docs/checkpoints/497_candidate01_real_repository_shadow_v01_fixture_frozen.md",
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md"
+        ],
+        "B4_LSA16_DENSE_ONLY_EXPLORATORY": [
+          "docs/checkpoints/544_pka_g102_project_boundary_accepted_source_vault_next.md",
+          "docs/checkpoints/550_pka_g108_current_authority_confirmed_integrity_next.md",
+          "docs/checkpoints/552_pka_w2_shadow_views_accepted_compatibility_shadow_next.md",
+          "docs/checkpoints/497_candidate01_real_repository_shadow_v01_fixture_frozen.md",
+          "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/research/184_w0_derived_view_framework_g009_result.md",
+          "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md"
+        ]
+      },
+      "source_authority_or_operative_effect_asserted": false
+    },
+    {
+      "dense_scored_top10_original_git_paths": [
+        {
+          "cosine_similarity": 0.7328917031097245,
+          "original_source_sha256": "1a45aa417851c65be8b2455b9a81a32c2e2273a529b5716c6ebb4c1f736e73d4",
+          "path": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md"
+        },
+        {
+          "cosine_similarity": 0.6744096417277414,
+          "original_source_sha256": "1cb6dd610536781e6bdbd02ab30891f922610a90437a02c36057ca264a8a09b5",
+          "path": "docs/DECISIONS.md"
+        },
+        {
+          "cosine_similarity": 0.6564960859356752,
+          "original_source_sha256": "fe3aed150fd06604aac3d37db1ee5ae092817d0cfb7cc5643f70edd561138ba3",
+          "path": "docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md"
+        },
+        {
+          "cosine_similarity": 0.653286343914384,
+          "original_source_sha256": "51cef534cdf40a72fda8be52b098ce48a9a42c1954f780550acb41c301d2faf2",
+          "path": "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md"
+        },
+        {
+          "cosine_similarity": 0.6347759511077985,
+          "original_source_sha256": "eadf86eb4803ed442643ecd656bc2c8d44b281ba9f0dc20b8948eb85c437fcaa",
+          "path": "docs/research/503_r0_realization_requirements_and_independent_design_charter.md"
+        },
+        {
+          "cosine_similarity": 0.6291214014854526,
+          "original_source_sha256": "a1c54cb6435f1df7fabc6d819693efa18528fa5379aeb8725c9ded929da66c0f",
+          "path": "docs/specifications/015_v1_recommendation_action_value_vertical_slice.md"
+        },
+        {
+          "cosine_similarity": 0.624660224497622,
+          "original_source_sha256": "9b5b2c3b0b63bba006eb1362031ca50eadc94766a49c1c04f73e69bbbf8bc0a5",
+          "path": "docs/research/630_r0_p03_falsification_outcome_and_transition_to_source_world_closure.md"
+        },
+        {
+          "cosine_similarity": 0.6218012587454084,
+          "original_source_sha256": "54bcb132f12ceffd330540006a8099179a260f751da7b4269253b6aef87edcaa",
+          "path": "docs/CURRENT_STATE.md"
+        },
+        {
+          "cosine_similarity": 0.6082883109368039,
+          "original_source_sha256": "40bf71219aaf9eee311241e0eabd7b034f52e0a40fe7b18a8437ea3fdfe4edf4",
+          "path": "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md"
+        },
+        {
+          "cosine_similarity": 0.6053466898977258,
+          "original_source_sha256": "fd9ee485c0671f4950ea050f21fc029683dc05412921fcc21107091619f0ac9f",
+          "path": "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md"
+        }
+      ],
+      "expected_source_sha256": "1a45aa417851c65be8b2455b9a81a32c2e2273a529b5716c6ebb4c1f736e73d4",
+      "exposed_required_source_rank_after_retrieval": {
+        "B0_ORIGINAL": 1,
+        "B4_LSA16_B0_RRF_EXPLORATORY": 1,
+        "B4_LSA16_B2_RRF_EXPLORATORY": 1,
+        "B4_LSA16_DENSE_ONLY_EXPLORATORY": 1
+      },
+      "fit_question_token_witness": {
+        "query_latent_norm": 0.10412678252527197,
+        "query_oov_token_count": 0,
+        "query_projection_has_known_terms": true,
+        "query_tokens_in_fitted_word_vocabulary": 8,
+        "unique_nonstopword_query_tokens": 8
+      },
+      "original_Git_required_source_for_exposed_evaluation_only": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+      "original_primary_category": "CROSS_PLANE_DISCOVERY",
+      "original_question": "What was the outcome of the controlled-subject navigation architecture experiment, and was its subject model accepted?",
+      "query_latent_16_dimension_coordinates": [
+        -0.0845299402812769,
+        -0.02157272136107344,
+        -0.005722912351226679,
+        0.02180056052090203,
+        0.013150835256371143,
+        -0.008703265163844663,
+        -0.006087497354210882,
+        0.000943585404131616,
+        -0.018683195973143937,
+        -0.0436491756310303,
+        -0.009152491501604333,
+        0.002681686837241936,
+        -0.00681314109762204,
+        -0.00524007446079788,
+        -0.004224282964851908,
+        -0.00021110404783963697
+      ],
+      "question_id": "P06",
+      "rankings_before_exposed_source_lookup": {
+        "B0_ORIGINAL": [
+          "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+          "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+          "docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md",
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+          "docs/checkpoints/884_r0_p01_atomic_synthetic_finalization_and_independent_outcome_vectors_next.md",
+          "docs/specifications/018_v1_governed_autonomous_live_experiment_launcher.md",
+          "docs/specifications/015_v1_recommendation_action_value_vertical_slice.md",
+          "docs/research/591_r0_p03_historical_evidence_review_population_and_author_admission_boundary.md",
+          "docs/research/548_r0_p01_atomic_synthetic_admission_measurement_finalization.md"
+        ],
+        "B4_LSA16_B0_RRF_EXPLORATORY": [
+          "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+          "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+          "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+          "docs/specifications/015_v1_recommendation_action_value_vertical_slice.md",
+          "docs/DECISIONS.md",
+          "docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md",
+          "docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md",
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "docs/checkpoints/884_r0_p01_atomic_synthetic_finalization_and_independent_outcome_vectors_next.md"
+        ],
+        "B4_LSA16_B2_RRF_EXPLORATORY": [
+          "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+          "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+          "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+          "docs/specifications/015_v1_recommendation_action_value_vertical_slice.md",
+          "docs/DECISIONS.md",
+          "docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md",
+          "docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md",
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "docs/checkpoints/884_r0_p01_atomic_synthetic_finalization_and_independent_outcome_vectors_next.md"
+        ],
+        "B4_LSA16_DENSE_ONLY_EXPLORATORY": [
+          "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+          "docs/DECISIONS.md",
+          "docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md",
+          "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "docs/specifications/015_v1_recommendation_action_value_vertical_slice.md",
+          "docs/research/630_r0_p03_falsification_outcome_and_transition_to_source_world_closure.md",
+          "docs/CURRENT_STATE.md",
+          "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+          "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md"
+        ]
+      },
+      "source_authority_or_operative_effect_asserted": false
+    },
+    {
+      "dense_scored_top10_original_git_paths": [
+        {
+          "cosine_similarity": 0.7686952729385846,
+          "original_source_sha256": "7a604ec607b1aa7a8135504dc9a24576e463c5a5f392c1a1ebefa0e2e518e7f7",
+          "path": "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md"
+        },
+        {
+          "cosine_similarity": 0.7310227073422563,
+          "original_source_sha256": "eadf86eb4803ed442643ecd656bc2c8d44b281ba9f0dc20b8948eb85c437fcaa",
+          "path": "docs/research/503_r0_realization_requirements_and_independent_design_charter.md"
+        },
+        {
+          "cosine_similarity": 0.6713236420582183,
+          "original_source_sha256": "d23dbd9ad20c14f93ded350575dff6e4ac734b9268d4befc760fcfbf5eec4412",
+          "path": "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md"
+        },
+        {
+          "cosine_similarity": 0.6652150737487584,
+          "original_source_sha256": "5d3f9fdd27a761775b99f1971623ddc973ee87192f9f1faa32112660c228a0bb",
+          "path": "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md"
+        },
+        {
+          "cosine_similarity": 0.6407410369867245,
+          "original_source_sha256": "0cc45f3d9b6903e16b1ad7503518b40c5705e1cd82430e761feaf409d0373432",
+          "path": "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md"
+        },
+        {
+          "cosine_similarity": 0.6152579336975306,
+          "original_source_sha256": "0d670019e7c86decb33fb193aea84db1faae49251a50fd9786a6a4a529bc551e",
+          "path": "docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md"
+        },
+        {
+          "cosine_similarity": 0.6081067126071618,
+          "original_source_sha256": "40bf71219aaf9eee311241e0eabd7b034f52e0a40fe7b18a8437ea3fdfe4edf4",
+          "path": "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md"
+        },
+        {
+          "cosine_similarity": 0.5672757267793475,
+          "original_source_sha256": "7c1387f15b2781ca0a40d341803b143dedfe4f7251fbc79f97d180fde0523938",
+          "path": "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md"
+        },
+        {
+          "cosine_similarity": 0.5633594230664993,
+          "original_source_sha256": "58a77b5e9fed4008b9b7ed78a972d8063ca4be7d9dbf557256203572f275ec33",
+          "path": "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md"
+        },
+        {
+          "cosine_similarity": 0.545954883694358,
+          "original_source_sha256": "b06302ff4c2d87987d976e149d964f52c8772808a055cb952433566790094869",
+          "path": "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md"
+        }
+      ],
+      "expected_source_sha256": "eadf86eb4803ed442643ecd656bc2c8d44b281ba9f0dc20b8948eb85c437fcaa",
+      "exposed_required_source_rank_after_retrieval": {
+        "B0_ORIGINAL": 1,
+        "B4_LSA16_B0_RRF_EXPLORATORY": 1,
+        "B4_LSA16_B2_RRF_EXPLORATORY": 1,
+        "B4_LSA16_DENSE_ONLY_EXPLORATORY": 2
+      },
+      "fit_question_token_witness": {
+        "query_latent_norm": 0.11198443930489714,
+        "query_oov_token_count": 0,
+        "query_projection_has_known_terms": true,
+        "query_tokens_in_fitted_word_vocabulary": 9,
+        "unique_nonstopword_query_tokens": 9
+      },
+      "original_Git_required_source_for_exposed_evaluation_only": "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+      "original_primary_category": "IMPACT_AND_ARCHITECTURE_EVOLUTION",
+      "original_question": "What document establishes the physical architecture realization requirements and the independent design charter?",
+      "query_latent_16_dimension_coordinates": [
+        -0.07226126935327866,
+        0.010001179349919998,
+        -0.0015546698717373369,
+        0.024838477888021453,
+        0.017211026067287978,
+        -0.047017777232859374,
+        0.033989759748263265,
+        -0.021353653433681227,
+        0.011663076065735533,
+        -0.020880086961610356,
+        -0.018741981577608598,
+        -0.007708164769281465,
+        -0.0005452064989687349,
+        -0.019294506524125676,
+        -0.031026457344041206,
+        -0.01278126013000785
+      ],
+      "question_id": "P07",
+      "rankings_before_exposed_source_lookup": {
+        "B0_ORIGINAL": [
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+          "docs/research/591_r0_p03_historical_evidence_review_population_and_author_admission_boundary.md",
+          "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+          "docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "docs/DECISIONS.md",
+          "docs/checkpoints/121_immersive_scale_cockpit_slice_automated_gate_passed.md"
+        ],
+        "B4_LSA16_B0_RRF_EXPLORATORY": [
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md",
+          "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md",
+          "docs/research/591_r0_p03_historical_evidence_review_population_and_author_admission_boundary.md",
+          "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md"
+        ],
+        "B4_LSA16_B2_RRF_EXPLORATORY": [
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md",
+          "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md",
+          "docs/research/591_r0_p03_historical_evidence_review_population_and_author_admission_boundary.md",
+          "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md"
+        ],
+        "B4_LSA16_DENSE_ONLY_EXPLORATORY": [
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md",
+          "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+          "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+          "docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md",
+          "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+          "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md"
+        ]
+      },
+      "source_authority_or_operative_effect_asserted": false
+    },
+    {
+      "dense_scored_top10_original_git_paths": [
+        {
+          "cosine_similarity": 0.869782766141494,
+          "original_source_sha256": "5d3f9fdd27a761775b99f1971623ddc973ee87192f9f1faa32112660c228a0bb",
+          "path": "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md"
+        },
+        {
+          "cosine_similarity": 0.759202540371371,
+          "original_source_sha256": "40bf71219aaf9eee311241e0eabd7b034f52e0a40fe7b18a8437ea3fdfe4edf4",
+          "path": "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md"
+        },
+        {
+          "cosine_similarity": 0.7163956155118303,
+          "original_source_sha256": "b06302ff4c2d87987d976e149d964f52c8772808a055cb952433566790094869",
+          "path": "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md"
+        },
+        {
+          "cosine_similarity": 0.7057772092435439,
+          "original_source_sha256": "d23dbd9ad20c14f93ded350575dff6e4ac734b9268d4befc760fcfbf5eec4412",
+          "path": "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md"
+        },
+        {
+          "cosine_similarity": 0.6608691622040046,
+          "original_source_sha256": "7a604ec607b1aa7a8135504dc9a24576e463c5a5f392c1a1ebefa0e2e518e7f7",
+          "path": "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md"
+        },
+        {
+          "cosine_similarity": 0.6331970983583239,
+          "original_source_sha256": "0cc45f3d9b6903e16b1ad7503518b40c5705e1cd82430e761feaf409d0373432",
+          "path": "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md"
+        },
+        {
+          "cosine_similarity": 0.6168781516260078,
+          "original_source_sha256": "eadf86eb4803ed442643ecd656bc2c8d44b281ba9f0dc20b8948eb85c437fcaa",
+          "path": "docs/research/503_r0_realization_requirements_and_independent_design_charter.md"
+        },
+        {
+          "cosine_similarity": 0.5758379547557758,
+          "original_source_sha256": "58a77b5e9fed4008b9b7ed78a972d8063ca4be7d9dbf557256203572f275ec33",
+          "path": "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md"
+        },
+        {
+          "cosine_similarity": 0.5596512367551651,
+          "original_source_sha256": "98f49e7c320c1acb25973d0599bf1499ea2c63f51a39394e1e883be915865aa3",
+          "path": "docs/checkpoints/661_drp03_obligation_unit_review_harness_frozen.md"
+        },
+        {
+          "cosine_similarity": 0.522177798329523,
+          "original_source_sha256": "238a8f1eebbc3b89176526be1373b64c0e8a4bbe9293f42467f8130b2aeff150",
+          "path": "docs/research/230_ao9_p2_arm_contract_freeze.md"
+        }
+      ],
+      "expected_source_sha256": "40bf71219aaf9eee311241e0eabd7b034f52e0a40fe7b18a8437ea3fdfe4edf4",
+      "exposed_required_source_rank_after_retrieval": {
+        "B0_ORIGINAL": 1,
+        "B4_LSA16_B0_RRF_EXPLORATORY": 2,
+        "B4_LSA16_B2_RRF_EXPLORATORY": 2,
+        "B4_LSA16_DENSE_ONLY_EXPLORATORY": 2
+      },
+      "fit_question_token_witness": {
+        "query_latent_norm": 0.18981036851424696,
+        "query_oov_token_count": 0,
+        "query_projection_has_known_terms": true,
+        "query_tokens_in_fitted_word_vocabulary": 13,
+        "unique_nonstopword_query_tokens": 13
+      },
+      "original_Git_required_source_for_exposed_evaluation_only": "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+      "original_primary_category": "IMPACT_AND_ARCHITECTURE_EVOLUTION",
+      "original_question": "After the Claude design critique, which governed ledger kernel candidate was retained, and was the owner physical architecture decision ready?",
+      "query_latent_16_dimension_coordinates": [
+        -0.11112754600898295,
+        0.06826234127887768,
+        0.0035359617759685743,
+        0.04807083718024109,
+        -0.025168461891345084,
+        -0.07886097847183077,
+        0.0402641546202896,
+        -0.03709654492640978,
+        0.017517507440678277,
+        0.015698923954452926,
+        0.009165395166806157,
+        0.028304037660420077,
+        -0.056157285563755543,
+        -0.0010985058938871729,
+        -0.03411922420778808,
+        -0.032989641967735905
+      ],
+      "question_id": "P08",
+      "rankings_before_exposed_source_lookup": {
+        "B0_ORIGINAL": [
+          "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+          "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+          "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+          "docs/checkpoints/380_github_schema_reconciled_g0_and_targeted_evidence_ready.md",
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/research/619_r0_p03_wave0_independent_blind_second_assessment_and_owner_comparison_route.md"
+        ],
+        "B4_LSA16_B0_RRF_EXPLORATORY": [
+          "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+          "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+          "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+          "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "docs/checkpoints/380_github_schema_reconciled_g0_and_targeted_evidence_ready.md",
+          "docs/checkpoints/661_drp03_obligation_unit_review_harness_frozen.md"
+        ],
+        "B4_LSA16_B2_RRF_EXPLORATORY": [
+          "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+          "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+          "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+          "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "docs/checkpoints/380_github_schema_reconciled_g0_and_targeted_evidence_ready.md",
+          "docs/checkpoints/661_drp03_obligation_unit_review_harness_frozen.md"
+        ],
+        "B4_LSA16_DENSE_ONLY_EXPLORATORY": [
+          "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+          "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+          "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+          "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "docs/checkpoints/661_drp03_obligation_unit_review_harness_frozen.md",
+          "docs/research/230_ao9_p2_arm_contract_freeze.md"
+        ]
+      },
+      "source_authority_or_operative_effect_asserted": false
+    },
+    {
+      "dense_scored_top10_original_git_paths": [
+        {
+          "cosine_similarity": 0.9303395054353819,
+          "original_source_sha256": "d23dbd9ad20c14f93ded350575dff6e4ac734b9268d4befc760fcfbf5eec4412",
+          "path": "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md"
+        },
+        {
+          "cosine_similarity": 0.8519525243012641,
+          "original_source_sha256": "98f49e7c320c1acb25973d0599bf1499ea2c63f51a39394e1e883be915865aa3",
+          "path": "docs/checkpoints/661_drp03_obligation_unit_review_harness_frozen.md"
+        },
+        {
+          "cosine_similarity": 0.7631706801958059,
+          "original_source_sha256": "587b04787b66cae4b076a96f677a5d18cce0aa260a10488fa6222aa6fb6d2ba8",
+          "path": "docs/checkpoints/792_sp5_retired_without_score_sp6_next.md"
+        },
+        {
+          "cosine_similarity": 0.6327251837693327,
+          "original_source_sha256": "5d3f9fdd27a761775b99f1971623ddc973ee87192f9f1faa32112660c228a0bb",
+          "path": "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md"
+        },
+        {
+          "cosine_similarity": 0.627220316976671,
+          "original_source_sha256": "0e2e21ede9aacdde21e0abf43c7d2ebb02ccb8bfd131072b60b878d65e8dfff3",
+          "path": "docs/checkpoints/700_key_author_a_p4_birth_grouping_phase_defined.md"
+        },
+        {
+          "cosine_similarity": 0.6185292933801069,
+          "original_source_sha256": "0cc45f3d9b6903e16b1ad7503518b40c5705e1cd82430e761feaf409d0373432",
+          "path": "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md"
+        },
+        {
+          "cosine_similarity": 0.5532019441453341,
+          "original_source_sha256": "5f02b97fc40f8d1a85b335a181fa7849f66b6a0f134bf595eb380592313a41fe",
+          "path": "docs/checkpoints/497_candidate01_real_repository_shadow_v01_fixture_frozen.md"
+        },
+        {
+          "cosine_similarity": 0.5116373715014229,
+          "original_source_sha256": "58a77b5e9fed4008b9b7ed78a972d8063ca4be7d9dbf557256203572f275ec33",
+          "path": "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md"
+        },
+        {
+          "cosine_similarity": 0.49059167744793303,
+          "original_source_sha256": "7a604ec607b1aa7a8135504dc9a24576e463c5a5f392c1a1ebefa0e2e518e7f7",
+          "path": "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md"
+        },
+        {
+          "cosine_similarity": 0.47204483430706484,
+          "original_source_sha256": "238a8f1eebbc3b89176526be1373b64c0e8a4bbe9293f42467f8130b2aeff150",
+          "path": "docs/research/230_ao9_p2_arm_contract_freeze.md"
+        }
+      ],
+      "expected_source_sha256": "58a77b5e9fed4008b9b7ed78a972d8063ca4be7d9dbf557256203572f275ec33",
+      "exposed_required_source_rank_after_retrieval": {
+        "B0_ORIGINAL": 2,
+        "B4_LSA16_B0_RRF_EXPLORATORY": 4,
+        "B4_LSA16_B2_RRF_EXPLORATORY": 4,
+        "B4_LSA16_DENSE_ONLY_EXPLORATORY": 8
+      },
+      "fit_question_token_witness": {
+        "query_latent_norm": 0.2459974033091664,
+        "query_oov_token_count": 0,
+        "query_projection_has_known_terms": true,
+        "query_tokens_in_fitted_word_vocabulary": 9,
+        "unique_nonstopword_query_tokens": 9
+      },
+      "original_Git_required_source_for_exposed_evaluation_only": "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+      "original_primary_category": "IMPACT_AND_ARCHITECTURE_EVOLUTION",
+      "original_question": "Did the AO-10 realization candidate authorize production implementation or physical migration?",
+      "query_latent_16_dimension_coordinates": [
+        -0.12395511114418772,
+        0.13341154136814484,
+        -0.014063929887624943,
+        -0.006496151470702712,
+        0.01020590623392692,
+        -0.08207175018530587,
+        0.11319083598251614,
+        -0.014048856478681914,
+        0.015649198957275613,
+        -0.010068790739425173,
+        0.017287035846651814,
+        -0.0612306167303629,
+        -0.04711750598594563,
+        -0.007620499367819877,
+        -0.024212295893961535,
+        0.001753937519316777
+      ],
+      "question_id": "P09",
+      "rankings_before_exposed_source_lookup": {
+        "B0_ORIGINAL": [
+          "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md",
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "docs/research/230_ao9_p2_arm_contract_freeze.md",
+          "docs/checkpoints/661_drp03_obligation_unit_review_harness_frozen.md",
+          "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+          "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+          "docs/checkpoints/884_r0_p01_atomic_synthetic_finalization_and_independent_outcome_vectors_next.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md"
+        ],
+        "B4_LSA16_B0_RRF_EXPLORATORY": [
+          "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md",
+          "docs/checkpoints/661_drp03_obligation_unit_review_harness_frozen.md",
+          "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+          "docs/research/230_ao9_p2_arm_contract_freeze.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/checkpoints/792_sp5_retired_without_score_sp6_next.md",
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "docs/checkpoints/700_key_author_a_p4_birth_grouping_phase_defined.md"
+        ],
+        "B4_LSA16_B2_RRF_EXPLORATORY": [
+          "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md",
+          "docs/checkpoints/661_drp03_obligation_unit_review_harness_frozen.md",
+          "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+          "docs/research/230_ao9_p2_arm_contract_freeze.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/checkpoints/792_sp5_retired_without_score_sp6_next.md",
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "docs/checkpoints/700_key_author_a_p4_birth_grouping_phase_defined.md"
+        ],
+        "B4_LSA16_DENSE_ONLY_EXPLORATORY": [
+          "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md",
+          "docs/checkpoints/661_drp03_obligation_unit_review_harness_frozen.md",
+          "docs/checkpoints/792_sp5_retired_without_score_sp6_next.md",
+          "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+          "docs/checkpoints/700_key_author_a_p4_birth_grouping_phase_defined.md",
+          "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+          "docs/checkpoints/497_candidate01_real_repository_shadow_v01_fixture_frozen.md",
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/research/230_ao9_p2_arm_contract_freeze.md"
+        ]
+      },
+      "source_authority_or_operative_effect_asserted": false
+    },
+    {
+      "dense_scored_top10_original_git_paths": [
+        {
+          "cosine_similarity": 0.868660680721726,
+          "original_source_sha256": "7a604ec607b1aa7a8135504dc9a24576e463c5a5f392c1a1ebefa0e2e518e7f7",
+          "path": "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md"
+        },
+        {
+          "cosine_similarity": 0.8658760902227481,
+          "original_source_sha256": "5d3f9fdd27a761775b99f1971623ddc973ee87192f9f1faa32112660c228a0bb",
+          "path": "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md"
+        },
+        {
+          "cosine_similarity": 0.8167483564827519,
+          "original_source_sha256": "b06302ff4c2d87987d976e149d964f52c8772808a055cb952433566790094869",
+          "path": "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md"
+        },
+        {
+          "cosine_similarity": 0.6031496268656735,
+          "original_source_sha256": "70116235e0fa5f3ee33c8324eb784d68334acf06f330d1511201146d3f10ae07",
+          "path": "docs/checkpoints/884_r0_p01_atomic_synthetic_finalization_and_independent_outcome_vectors_next.md"
+        },
+        {
+          "cosine_similarity": 0.5974515286302676,
+          "original_source_sha256": "fd9ee485c0671f4950ea050f21fc029683dc05412921fcc21107091619f0ac9f",
+          "path": "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md"
+        },
+        {
+          "cosine_similarity": 0.5968146638060369,
+          "original_source_sha256": "40bf71219aaf9eee311241e0eabd7b034f52e0a40fe7b18a8437ea3fdfe4edf4",
+          "path": "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md"
+        },
+        {
+          "cosine_similarity": 0.5735821324134216,
+          "original_source_sha256": "5f02b97fc40f8d1a85b335a181fa7849f66b6a0f134bf595eb380592313a41fe",
+          "path": "docs/checkpoints/497_candidate01_real_repository_shadow_v01_fixture_frozen.md"
+        },
+        {
+          "cosine_similarity": 0.5217515441546561,
+          "original_source_sha256": "d23dbd9ad20c14f93ded350575dff6e4ac734b9268d4befc760fcfbf5eec4412",
+          "path": "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md"
+        },
+        {
+          "cosine_similarity": 0.5136974645501098,
+          "original_source_sha256": "a19a3e417e529602bde4c86fcaab156c7036b64ac9303b6aa730c95c5c309442",
+          "path": "docs/research/548_r0_p01_atomic_synthetic_admission_measurement_finalization.md"
+        },
+        {
+          "cosine_similarity": 0.4939039710856351,
+          "original_source_sha256": "54bcb132f12ceffd330540006a8099179a260f751da7b4269253b6aef87edcaa",
+          "path": "docs/CURRENT_STATE.md"
+        }
+      ],
+      "expected_source_sha256": "5d3f9fdd27a761775b99f1971623ddc973ee87192f9f1faa32112660c228a0bb",
+      "exposed_required_source_rank_after_retrieval": {
+        "B0_ORIGINAL": 1,
+        "B4_LSA16_B0_RRF_EXPLORATORY": 1,
+        "B4_LSA16_B2_RRF_EXPLORATORY": 1,
+        "B4_LSA16_DENSE_ONLY_EXPLORATORY": 2
+      },
+      "fit_question_token_witness": {
+        "query_latent_norm": 0.1376515525695329,
+        "query_oov_token_count": 1,
+        "query_projection_has_known_terms": true,
+        "query_tokens_in_fitted_word_vocabulary": 8,
+        "unique_nonstopword_query_tokens": 9
+      },
+      "original_Git_required_source_for_exposed_evaluation_only": "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+      "original_primary_category": "EXACT_SOURCE_AUTHORITY_RECOVERY",
+      "original_question": "Which checkpoint records the R0-P02 probe passing, and which architectural probe was scheduled next?",
+      "query_latent_16_dimension_coordinates": [
+        -0.07907065739663792,
+        0.046877467329984525,
+        0.003457565143257332,
+        0.07294411448997369,
+        -0.008735113690105878,
+        -0.04795508868981094,
+        0.007008760449671854,
+        0.017496320005557356,
+        -0.005976742348598026,
+        0.0045590546266988784,
+        -0.023510024123271373,
+        0.021486741468444634,
+        -0.025725618757530135,
+        -0.017576980568556142,
+        -0.010615502278485092,
+        -0.01673004869547201
+      ],
+      "question_id": "P10",
+      "rankings_before_exposed_source_lookup": {
+        "B0_ORIGINAL": [
+          "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+          "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+          "docs/checkpoints/884_r0_p01_atomic_synthetic_finalization_and_independent_outcome_vectors_next.md",
+          "docs/research/548_r0_p01_atomic_synthetic_admission_measurement_finalization.md",
+          "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+          "docs/research/591_r0_p03_historical_evidence_review_population_and_author_admission_boundary.md",
+          "docs/research/619_r0_p03_wave0_independent_blind_second_assessment_and_owner_comparison_route.md",
+          "docs/research/585_r0_p03_owner_fake_custody_report_and_access_boundary.md"
+        ],
+        "B4_LSA16_B0_RRF_EXPLORATORY": [
+          "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+          "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+          "docs/checkpoints/884_r0_p01_atomic_synthetic_finalization_and_independent_outcome_vectors_next.md",
+          "docs/research/548_r0_p01_atomic_synthetic_admission_measurement_finalization.md",
+          "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+          "docs/checkpoints/497_candidate01_real_repository_shadow_v01_fixture_frozen.md",
+          "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+          "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md"
+        ],
+        "B4_LSA16_B2_RRF_EXPLORATORY": [
+          "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+          "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+          "docs/checkpoints/884_r0_p01_atomic_synthetic_finalization_and_independent_outcome_vectors_next.md",
+          "docs/research/548_r0_p01_atomic_synthetic_admission_measurement_finalization.md",
+          "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+          "docs/checkpoints/497_candidate01_real_repository_shadow_v01_fixture_frozen.md",
+          "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+          "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md"
+        ],
+        "B4_LSA16_DENSE_ONLY_EXPLORATORY": [
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+          "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+          "docs/checkpoints/884_r0_p01_atomic_synthetic_finalization_and_independent_outcome_vectors_next.md",
+          "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+          "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+          "docs/checkpoints/497_candidate01_real_repository_shadow_v01_fixture_frozen.md",
+          "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md",
+          "docs/research/548_r0_p01_atomic_synthetic_admission_measurement_finalization.md",
+          "docs/CURRENT_STATE.md"
+        ]
+      },
+      "source_authority_or_operative_effect_asserted": false
+    },
+    {
+      "dense_scored_top10_original_git_paths": [
+        {
+          "cosine_similarity": 0.8956683131331249,
+          "original_source_sha256": "7a604ec607b1aa7a8135504dc9a24576e463c5a5f392c1a1ebefa0e2e518e7f7",
+          "path": "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md"
+        },
+        {
+          "cosine_similarity": 0.7844143902329053,
+          "original_source_sha256": "fd9ee485c0671f4950ea050f21fc029683dc05412921fcc21107091619f0ac9f",
+          "path": "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md"
+        },
+        {
+          "cosine_similarity": 0.713077382123821,
+          "original_source_sha256": "54bcb132f12ceffd330540006a8099179a260f751da7b4269253b6aef87edcaa",
+          "path": "docs/CURRENT_STATE.md"
+        },
+        {
+          "cosine_similarity": 0.6533942738879429,
+          "original_source_sha256": "5d3f9fdd27a761775b99f1971623ddc973ee87192f9f1faa32112660c228a0bb",
+          "path": "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md"
+        },
+        {
+          "cosine_similarity": 0.6386229662458599,
+          "original_source_sha256": "70116235e0fa5f3ee33c8324eb784d68334acf06f330d1511201146d3f10ae07",
+          "path": "docs/checkpoints/884_r0_p01_atomic_synthetic_finalization_and_independent_outcome_vectors_next.md"
+        },
+        {
+          "cosine_similarity": 0.5864803325076053,
+          "original_source_sha256": "b06302ff4c2d87987d976e149d964f52c8772808a055cb952433566790094869",
+          "path": "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md"
+        },
+        {
+          "cosine_similarity": 0.5464629156215791,
+          "original_source_sha256": "a19a3e417e529602bde4c86fcaab156c7036b64ac9303b6aa730c95c5c309442",
+          "path": "docs/research/548_r0_p01_atomic_synthetic_admission_measurement_finalization.md"
+        },
+        {
+          "cosine_similarity": 0.5135818394777351,
+          "original_source_sha256": "9b5b2c3b0b63bba006eb1362031ca50eadc94766a49c1c04f73e69bbbf8bc0a5",
+          "path": "docs/research/630_r0_p03_falsification_outcome_and_transition_to_source_world_closure.md"
+        },
+        {
+          "cosine_similarity": 0.4515752609312338,
+          "original_source_sha256": "5f02b97fc40f8d1a85b335a181fa7849f66b6a0f134bf595eb380592313a41fe",
+          "path": "docs/checkpoints/497_candidate01_real_repository_shadow_v01_fixture_frozen.md"
+        },
+        {
+          "cosine_similarity": 0.4233690743866608,
+          "original_source_sha256": "de313a7bc8f493213e9eab6e20517399b9b82f1a6698a58d3796b00bc958dfe9",
+          "path": "docs/research/591_r0_p03_historical_evidence_review_population_and_author_admission_boundary.md"
+        }
+      ],
+      "expected_source_sha256": "7a604ec607b1aa7a8135504dc9a24576e463c5a5f392c1a1ebefa0e2e518e7f7",
+      "exposed_required_source_rank_after_retrieval": {
+        "B0_ORIGINAL": 1,
+        "B4_LSA16_B0_RRF_EXPLORATORY": 1,
+        "B4_LSA16_B2_RRF_EXPLORATORY": 1,
+        "B4_LSA16_DENSE_ONLY_EXPLORATORY": 1
+      },
+      "fit_question_token_witness": {
+        "query_latent_norm": 0.18665449009984503,
+        "query_oov_token_count": 0,
+        "query_projection_has_known_terms": true,
+        "query_tokens_in_fitted_word_vocabulary": 12,
+        "unique_nonstopword_query_tokens": 12
+      },
+      "original_Git_required_source_for_exposed_evaluation_only": "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+      "original_primary_category": "EXACT_SOURCE_AUTHORITY_RECOVERY",
+      "original_question": "Which checkpoint documents the owner-approved deferral of authentication and permission to resume R0-P03 fixture work?",
+      "query_latent_16_dimension_coordinates": [
+        -0.09130827675373347,
+        0.03743714356425307,
+        0.04630377609083477,
+        0.11053812691017947,
+        0.011413925051232895,
+        -0.025213538363206903,
+        -0.02347916950078705,
+        0.011501469590881223,
+        0.003917490531709289,
+        -0.04400367042712792,
+        -0.07735872511279694,
+        0.02758012906373786,
+        -0.0013604266390417502,
+        -0.018745814986796904,
+        -0.010208762375425616,
+        -0.011606213143315157
+      ],
+      "question_id": "P11",
+      "rankings_before_exposed_source_lookup": {
+        "B0_ORIGINAL": [
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+          "docs/CURRENT_STATE.md",
+          "docs/checkpoints/884_r0_p01_atomic_synthetic_finalization_and_independent_outcome_vectors_next.md",
+          "docs/research/585_r0_p03_owner_fake_custody_report_and_access_boundary.md",
+          "docs/research/591_r0_p03_historical_evidence_review_population_and_author_admission_boundary.md",
+          "docs/research/548_r0_p01_atomic_synthetic_admission_measurement_finalization.md",
+          "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+          "docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md",
+          "docs/research/619_r0_p03_wave0_independent_blind_second_assessment_and_owner_comparison_route.md"
+        ],
+        "B4_LSA16_B0_RRF_EXPLORATORY": [
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+          "docs/CURRENT_STATE.md",
+          "docs/checkpoints/884_r0_p01_atomic_synthetic_finalization_and_independent_outcome_vectors_next.md",
+          "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+          "docs/research/548_r0_p01_atomic_synthetic_admission_measurement_finalization.md",
+          "docs/research/591_r0_p03_historical_evidence_review_population_and_author_admission_boundary.md",
+          "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+          "docs/research/585_r0_p03_owner_fake_custody_report_and_access_boundary.md",
+          "docs/research/630_r0_p03_falsification_outcome_and_transition_to_source_world_closure.md"
+        ],
+        "B4_LSA16_B2_RRF_EXPLORATORY": [
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+          "docs/CURRENT_STATE.md",
+          "docs/checkpoints/884_r0_p01_atomic_synthetic_finalization_and_independent_outcome_vectors_next.md",
+          "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+          "docs/research/548_r0_p01_atomic_synthetic_admission_measurement_finalization.md",
+          "docs/research/591_r0_p03_historical_evidence_review_population_and_author_admission_boundary.md",
+          "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+          "docs/research/585_r0_p03_owner_fake_custody_report_and_access_boundary.md",
+          "docs/research/630_r0_p03_falsification_outcome_and_transition_to_source_world_closure.md"
+        ],
+        "B4_LSA16_DENSE_ONLY_EXPLORATORY": [
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+          "docs/CURRENT_STATE.md",
+          "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+          "docs/checkpoints/884_r0_p01_atomic_synthetic_finalization_and_independent_outcome_vectors_next.md",
+          "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+          "docs/research/548_r0_p01_atomic_synthetic_admission_measurement_finalization.md",
+          "docs/research/630_r0_p03_falsification_outcome_and_transition_to_source_world_closure.md",
+          "docs/checkpoints/497_candidate01_real_repository_shadow_v01_fixture_frozen.md",
+          "docs/research/591_r0_p03_historical_evidence_review_population_and_author_admission_boundary.md"
+        ]
+      },
+      "source_authority_or_operative_effect_asserted": false
+    },
+    {
+      "dense_scored_top10_original_git_paths": [
+        {
+          "cosine_similarity": 0.8945406722969169,
+          "original_source_sha256": "54bcb132f12ceffd330540006a8099179a260f751da7b4269253b6aef87edcaa",
+          "path": "docs/CURRENT_STATE.md"
+        },
+        {
+          "cosine_similarity": 0.8854948090390428,
+          "original_source_sha256": "fd9ee485c0671f4950ea050f21fc029683dc05412921fcc21107091619f0ac9f",
+          "path": "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md"
+        },
+        {
+          "cosine_similarity": 0.8570127926925271,
+          "original_source_sha256": "9b5b2c3b0b63bba006eb1362031ca50eadc94766a49c1c04f73e69bbbf8bc0a5",
+          "path": "docs/research/630_r0_p03_falsification_outcome_and_transition_to_source_world_closure.md"
+        },
+        {
+          "cosine_similarity": 0.7655544477564504,
+          "original_source_sha256": "de313a7bc8f493213e9eab6e20517399b9b82f1a6698a58d3796b00bc958dfe9",
+          "path": "docs/research/591_r0_p03_historical_evidence_review_population_and_author_admission_boundary.md"
+        },
+        {
+          "cosine_similarity": 0.7482822604718512,
+          "original_source_sha256": "f9cadac7f041baae12dcb5b658164c54208ffd8e4bde0ee9667290ad14fe38d6",
+          "path": "docs/research/615_r0_p03_a2_r07_actual_test_only_author_view_intake_and_instrumentability.md"
+        },
+        {
+          "cosine_similarity": 0.7172694581817538,
+          "original_source_sha256": "e8ecc8ba823b9cb4b037e8216a10bd4976b3419fb376e25f5328fe1b648050f6",
+          "path": "docs/research/585_r0_p03_owner_fake_custody_report_and_access_boundary.md"
+        },
+        {
+          "cosine_similarity": 0.6827687026111866,
+          "original_source_sha256": "c44efff1ff0a2bef4ee493a6b3583ad83dbe296b026ab744665f15db1f2f895c",
+          "path": "docs/research/619_r0_p03_wave0_independent_blind_second_assessment_and_owner_comparison_route.md"
+        },
+        {
+          "cosine_similarity": 0.5494215064225454,
+          "original_source_sha256": "7a604ec607b1aa7a8135504dc9a24576e463c5a5f392c1a1ebefa0e2e518e7f7",
+          "path": "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md"
+        },
+        {
+          "cosine_similarity": 0.4679123970178664,
+          "original_source_sha256": "5d3f9fdd27a761775b99f1971623ddc973ee87192f9f1faa32112660c228a0bb",
+          "path": "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md"
+        },
+        {
+          "cosine_similarity": 0.41520663581599027,
+          "original_source_sha256": "b06302ff4c2d87987d976e149d964f52c8772808a055cb952433566790094869",
+          "path": "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md"
+        }
+      ],
+      "expected_source_sha256": "fd9ee485c0671f4950ea050f21fc029683dc05412921fcc21107091619f0ac9f",
+      "exposed_required_source_rank_after_retrieval": {
+        "B0_ORIGINAL": 2,
+        "B4_LSA16_B0_RRF_EXPLORATORY": 2,
+        "B4_LSA16_B2_RRF_EXPLORATORY": 2,
+        "B4_LSA16_DENSE_ONLY_EXPLORATORY": 2
+      },
+      "fit_question_token_witness": {
+        "query_latent_norm": 0.13950723402751602,
+        "query_oov_token_count": 0,
+        "query_projection_has_known_terms": true,
+        "query_tokens_in_fitted_word_vocabulary": 12,
+        "unique_nonstopword_query_tokens": 12
+      },
+      "original_Git_required_source_for_exposed_evaluation_only": "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+      "original_primary_category": "EXACT_SOURCE_AUTHORITY_RECOVERY",
+      "original_question": "What was the documented reason the independent R0-P03 reference cohort could not yet be scored in the earlier evidence-capacity review?",
+      "query_latent_16_dimension_coordinates": [
+        -0.07242498834794708,
+        -0.0076552503946073144,
+        0.057724336559768184,
+        0.09011567180453899,
+        0.009214427321312469,
+        0.025206475329653408,
+        0.011790953520060607,
+        -0.021691028188911127,
+        0.009881918164003972,
+        -0.025930468701519462,
+        -0.006556806147701795,
+        0.0020621523170548006,
+        -0.009435469404126174,
+        0.01135945770564424,
+        -0.011839873124928572,
+        -0.014142849973454769
+      ],
+      "question_id": "P12",
+      "rankings_before_exposed_source_lookup": {
+        "B0_ORIGINAL": [
+          "docs/CURRENT_STATE.md",
+          "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+          "docs/research/585_r0_p03_owner_fake_custody_report_and_access_boundary.md",
+          "docs/research/619_r0_p03_wave0_independent_blind_second_assessment_and_owner_comparison_route.md",
+          "docs/research/591_r0_p03_historical_evidence_review_population_and_author_admission_boundary.md",
+          "docs/research/630_r0_p03_falsification_outcome_and_transition_to_source_world_closure.md",
+          "docs/research/548_r0_p01_atomic_synthetic_admission_measurement_finalization.md",
+          "docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md",
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md"
+        ],
+        "B4_LSA16_B0_RRF_EXPLORATORY": [
+          "docs/CURRENT_STATE.md",
+          "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+          "docs/research/585_r0_p03_owner_fake_custody_report_and_access_boundary.md",
+          "docs/research/630_r0_p03_falsification_outcome_and_transition_to_source_world_closure.md",
+          "docs/research/591_r0_p03_historical_evidence_review_population_and_author_admission_boundary.md",
+          "docs/research/619_r0_p03_wave0_independent_blind_second_assessment_and_owner_comparison_route.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/research/615_r0_p03_a2_r07_actual_test_only_author_view_intake_and_instrumentability.md",
+          "docs/research/548_r0_p01_atomic_synthetic_admission_measurement_finalization.md",
+          "docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md"
+        ],
+        "B4_LSA16_B2_RRF_EXPLORATORY": [
+          "docs/CURRENT_STATE.md",
+          "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+          "docs/research/585_r0_p03_owner_fake_custody_report_and_access_boundary.md",
+          "docs/research/630_r0_p03_falsification_outcome_and_transition_to_source_world_closure.md",
+          "docs/research/591_r0_p03_historical_evidence_review_population_and_author_admission_boundary.md",
+          "docs/research/619_r0_p03_wave0_independent_blind_second_assessment_and_owner_comparison_route.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/research/615_r0_p03_a2_r07_actual_test_only_author_view_intake_and_instrumentability.md",
+          "docs/research/548_r0_p01_atomic_synthetic_admission_measurement_finalization.md",
+          "docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md"
+        ],
+        "B4_LSA16_DENSE_ONLY_EXPLORATORY": [
+          "docs/CURRENT_STATE.md",
+          "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+          "docs/research/630_r0_p03_falsification_outcome_and_transition_to_source_world_closure.md",
+          "docs/research/591_r0_p03_historical_evidence_review_population_and_author_admission_boundary.md",
+          "docs/research/615_r0_p03_a2_r07_actual_test_only_author_view_intake_and_instrumentability.md",
+          "docs/research/585_r0_p03_owner_fake_custody_report_and_access_boundary.md",
+          "docs/research/619_r0_p03_wave0_independent_blind_second_assessment_and_owner_comparison_route.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+          "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md"
+        ]
+      },
+      "source_authority_or_operative_effect_asserted": false
+    }
+  ],
+  "contract": "ROUTE_B_B4_LOCAL_LSA_EMBEDDING_CONTRACT_V01.md",
+  "document_dense_vectors": [
+    {
+      "embedding": [
+        -0.40035470897841946,
+        -0.0364734615702339,
+        0.1906738938211798,
+        0.36657791279734897,
+        0.04124745495838491,
+        0.3007684982232631,
+        0.10591605935781594,
+        -0.05821753177821996,
+        0.045809659249895794,
+        -0.1592591119849307,
+        -0.13276714631411535,
+        0.1881806187754648,
+        -0.05684970076660243,
+        0.02789475215589304,
+        -0.023396449768120827,
+        0.025048877963459292
+      ],
+      "original_sha256": "54bcb132f12ceffd330540006a8099179a260f751da7b4269253b6aef87edcaa",
+      "path": "docs/CURRENT_STATE.md"
+    },
+    {
+      "embedding": [
+        -0.35256687832909706,
+        -0.1849080012320294,
+        -0.09858486730504933,
+        -0.06179477596543014,
+        0.20886456064255857,
+        -0.04870444449085785,
+        -0.02789484508020237,
+        -0.11187321907078447,
+        -0.009470598553148916,
+        -0.07718366600073481,
+        -0.20959922729963845,
+        -0.11135407164512386,
+        0.07728218999540123,
+        0.16192971277707996,
+        -0.03303619427161142,
+        0.015244911023466968
+      ],
+      "original_sha256": "1cb6dd610536781e6bdbd02ab30891f922610a90437a02c36057ca264a8a09b5",
+      "path": "docs/DECISIONS.md"
+    },
+    {
+      "embedding": [
+        -0.30196906585624145,
+        -0.011613110766250852,
+        0.05637164226504004,
+        -0.03394039784884878,
+        0.005761409073633282,
+        -0.0033814267774572348,
+        -0.04063647958164006,
+        0.18640495496908033,
+        -0.09319229441167153,
+        0.16599578789869882,
+        -0.030828643995009,
+        0.013821426479012657,
+        0.011540711999487837,
+        -0.25908189414436533,
+        0.18965847467516603,
+        -0.06093889890399354
+      ],
+      "original_sha256": "8cc72a75df94e0f2746c45f94a0a93adcc21bce96b7e15ede3b58917869afef3",
+      "path": "docs/checkpoints/050_real_held_out_run_plan_materialized_and_frozen_inputs_verified.md"
+    },
+    {
+      "embedding": [
+        -0.3324958889445506,
+        -0.12756128098276792,
+        -0.08075090771975249,
+        -0.08782763616495153,
+        0.13486223852689946,
+        -0.03689891350373132,
+        -0.08744884891848065,
+        0.0345362040475417,
+        0.0336783032478555,
+        -0.05409232007307253,
+        -0.18478712495821806,
+        -0.037977082496259904,
+        0.00713751186098345,
+        -0.16023189577261235,
+        -0.36603651708937407,
+        0.21352663063275956
+      ],
+      "original_sha256": "697b1f172e060baf11cb0ada3ba48ab7912eab4ad4809d4de9209ef34d9d762d",
+      "path": "docs/checkpoints/121_immersive_scale_cockpit_slice_automated_gate_passed.md"
+    },
+    {
+      "embedding": [
+        -0.2981859636068971,
+        0.06783086553143836,
+        0.03972429128300599,
+        -0.08794073208770992,
+        0.0257024259272721,
+        0.05562890611087413,
+        -0.242392368647054,
+        0.07908614079602475,
+        0.25654902889435555,
+        0.17749048422056862,
+        0.23484721710274872,
+        0.06591579330628695,
+        -0.0542778758153995,
+        0.07478408588959037,
+        -0.253796695398033,
+        0.040092694408027325
+      ],
+      "original_sha256": "05fa009a9ce50414057e43eacb0f93468cdc3f762cbc482d05fa4311ae063a51",
+      "path": "docs/checkpoints/358_runtime_release_preview20_fresh_chat_schema_qualified.md"
+    },
+    {
+      "embedding": [
+        -0.32622901465659243,
+        0.07832133433163233,
+        -0.01861595915553913,
+        -0.056472434455962166,
+        0.07387595526464906,
+        0.02537427588644298,
+        -0.16846053205073677,
+        -0.1002399631653774,
+        0.2682900032802245,
+        0.10954535319903326,
+        -0.01437470857749532,
+        0.15737686939183734,
+        -0.0032355262438841723,
+        0.21503650063107882,
+        0.1563024305256752,
+        0.12179758187733737
+      ],
+      "original_sha256": "af80d877b5a5b7f76dd6b478d1d0f05c3cde3175956caf6baf851c794a5a22b5",
+      "path": "docs/checkpoints/380_github_schema_reconciled_g0_and_targeted_evidence_ready.md"
+    },
+    {
+      "embedding": [
+        -0.30579909810702155,
+        0.09666669639554161,
+        0.010982391963575762,
+        -0.03967652635612511,
+        0.07222419647179146,
+        -0.00936696025888038,
+        -0.16320338454410221,
+        -0.02713916641470501,
+        0.2446069591567578,
+        0.21177842488198897,
+        -0.1883536857224663,
+        0.18359253025013586,
+        0.005800686728976303,
+        0.12125441434701892,
+        0.14444329257300006,
+        -0.09408727266636921
+      ],
+      "original_sha256": "569ec542ebca2baa5a6c3112a3a4bb2d4d486df860dd4fb68fd9db4d1c53957e",
+      "path": "docs/checkpoints/447_repository_branch_safety_complete_canonical_protection_decision_next.md"
+    },
+    {
+      "embedding": [
+        -0.3076123746046485,
+        0.2706131643195593,
+        -0.18601778791998455,
+        0.022213764196087914,
+        0.06397665911579167,
+        0.028261432009253913,
+        0.061541597901550005,
+        0.06726337454952527,
+        -0.057593542598177234,
+        -0.016669198601962844,
+        -0.18631772540914648,
+        0.038870935168814534,
+        -0.06287210602668154,
+        -0.002542211133187032,
+        0.17645796780809464,
+        0.019591036228821735
+      ],
+      "original_sha256": "5f02b97fc40f8d1a85b335a181fa7849f66b6a0f134bf595eb380592313a41fe",
+      "path": "docs/checkpoints/497_candidate01_real_repository_shadow_v01_fixture_frozen.md"
+    },
+    {
+      "embedding": [
+        -0.36651959748911217,
+        0.3831429377069031,
+        -0.38566921623451783,
+        0.007740907919432151,
+        -0.041961258413591496,
+        0.2576461301040541,
+        -0.21197751613143573,
+        -0.07514905995986103,
+        -0.216012914669931,
+        0.012934372887400911,
+        -0.02361538576501109,
+        -0.002633746271346776,
+        0.05045241164554248,
+        -0.0017095406659243916,
+        0.0019620279681142553,
+        -0.027901820128633126
+      ],
+      "original_sha256": "85dfeacd02db9aad901185ae18fd6d14c0b89a11945a4036da9270b2bba3b2cc",
+      "path": "docs/checkpoints/544_pka_g102_project_boundary_accepted_source_vault_next.md"
+    },
+    {
+      "embedding": [
+        -0.35334706456209947,
+        0.4428024776773501,
+        -0.40366993824629815,
+        0.0023411338131088485,
+        -0.04155735036867832,
+        0.24964578856306022,
+        -0.19154627644384228,
+        -0.08066901973155574,
+        -0.21629934743215584,
+        -0.001842113233287167,
+        -0.008458821108709762,
+        -0.047868470927986635,
+        0.04327127328001618,
+        -0.004977980666728007,
+        0.013811255441173963,
+        -0.0815380016884345
+      ],
+      "original_sha256": "54427409aa5200a0feef027ec138f32d7dbcf021d2277f69238f17f051dedfbb",
+      "path": "docs/checkpoints/550_pka_g108_current_authority_confirmed_integrity_next.md"
+    },
+    {
+      "embedding": [
+        -0.3366308215405699,
+        0.38339224747477935,
+        -0.3413057434975925,
+        -0.0020677596563502235,
+        -0.0919812271543262,
+        0.21367212526694893,
+        -0.20731170170958962,
+        -0.004341821667466875,
+        -0.20788930749899098,
+        -0.040280231688934943,
+        0.07078251347265155,
+        -0.01843556398183243,
+        0.037915255866838256,
+        -0.02251975475835561,
+        -0.024838645941845892,
+        -0.05117129865228812
+      ],
+      "original_sha256": "8facea965d4c39ad1339a5801364c563cb9aaf5d683c5cac96b90ccc029f6fce",
+      "path": "docs/checkpoints/552_pka_w2_shadow_views_accepted_compatibility_shadow_next.md"
+    },
+    {
+      "embedding": [
+        -0.2985135986953741,
+        0.3450366795683163,
+        -0.10403684512146934,
+        0.05837571621517997,
+        0.06256296586075916,
+        -0.16130286115548587,
+        0.22826140049139135,
+        -0.12349126658885867,
+        0.06719368783652482,
+        0.08928256178005038,
+        0.07075522127474383,
+        -0.22452402202577693,
+        -0.02202634474649918,
+        -0.010649113026321363,
+        -0.06790970008678289,
+        0.016152275988157043
+      ],
+      "original_sha256": "d23dbd9ad20c14f93ded350575dff6e4ac734b9268d4befc760fcfbf5eec4412",
+      "path": "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md"
+    },
+    {
+      "embedding": [
+        -0.2695848391097888,
+        0.42613873943729935,
+        -0.036551588550985566,
+        0.004822861758733876,
+        0.18612519063433802,
+        -0.0901506063605481,
+        0.2112124135615217,
+        0.0796494006219964,
+        0.10231916130350385,
+        0.15775732349875815,
+        0.04444497770589924,
+        -0.2350666446544751,
+        -0.24743969506757996,
+        -0.04372311542436911,
+        0.002239424954766525,
+        0.08886422516812204
+      ],
+      "original_sha256": "98f49e7c320c1acb25973d0599bf1499ea2c63f51a39394e1e883be915865aa3",
+      "path": "docs/checkpoints/661_drp03_obligation_unit_review_harness_frozen.md"
+    },
+    {
+      "embedding": [
+        -0.3279393901747278,
+        0.3688442564184648,
+        0.22933102949456238,
+        -0.2219147769199279,
+        0.07916724793810112,
+        0.0008806836217941986,
+        0.008000275473465436,
+        -0.02567622810949537,
+        0.010289957390945145,
+        -0.022651516980264772,
+        -0.001774478443213708,
+        -0.06126010165553285,
+        0.005418749239682772,
+        -0.03639034364076492,
+        0.05878170019069928,
+        0.014464016430579688
+      ],
+      "original_sha256": "0e2e21ede9aacdde21e0abf43c7d2ebb02ccb8bfd131072b60b878d65e8dfff3",
+      "path": "docs/checkpoints/700_key_author_a_p4_birth_grouping_phase_defined.md"
+    },
+    {
+      "embedding": [
+        -0.264060888694619,
+        0.37778199098377263,
+        0.22503931576508857,
+        -0.22597042494207834,
+        0.1482405018013974,
+        -0.008642616808800394,
+        0.1360721938874157,
+        0.10093098897586886,
+        0.1721518443567767,
+        -0.18480790092133642,
+        0.11774766244116455,
+        0.07860650677020913,
+        0.3501018177264507,
+        0.05655419276343963,
+        0.029588467464107846,
+        -0.028786798764372977
+      ],
+      "original_sha256": "0496aabb5cea20d11d144b97e7991cf0270e3633164db1f55f53fe1ea95247c2",
+      "path": "docs/checkpoints/718_key_author_a_p4_h09_accepted_h10_released.md"
+    },
+    {
+      "embedding": [
+        -0.2721427274246462,
+        0.3933753288410722,
+        0.1550629914721386,
+        -0.1476521701592604,
+        0.2105156963770685,
+        0.006348485765846747,
+        0.06951415399492147,
+        0.12144353685571636,
+        0.23681438354240186,
+        -0.09864727513349847,
+        0.08517653435293523,
+        0.08114706015407587,
+        0.2938939808671019,
+        -0.010831950936317584,
+        -0.01899856146455061,
+        0.017361358192930127
+      ],
+      "original_sha256": "ee6d21e0aade1c3a6feb1c6447e47cca65c43d2980a391bb4d1dd8ffa90fe6c4",
+      "path": "docs/checkpoints/722_key_author_a_p5_authorized_private_ops_next.md"
+    },
+    {
+      "embedding": [
+        -0.23525396437175314,
+        0.3184633752164038,
+        0.034210609744972253,
+        -0.04343078485636331,
+        0.21661736979317847,
+        -0.026890058167451138,
+        0.15281655206687159,
+        0.09076662038975551,
+        0.1232470088389474,
+        0.08202207836344488,
+        0.08729289895452139,
+        -0.1582409198630418,
+        -0.32526902975478433,
+        -0.09995460782539589,
+        -0.00975979832745572,
+        0.05680335486763057
+      ],
+      "original_sha256": "587b04787b66cae4b076a96f677a5d18cce0aa260a10488fa6222aa6fb6d2ba8",
+      "path": "docs/checkpoints/792_sp5_retired_without_score_sp6_next.md"
+    },
+    {
+      "embedding": [
+        -0.3354574186995129,
+        0.261998750739251,
+        -0.008657308530018223,
+        0.19154711949632153,
+        0.034444679069423105,
+        -0.1554586219901485,
+        0.14145812554555182,
+        0.026829992543336876,
+        0.03572157677395914,
+        0.030906405731027393,
+        -0.15244968405557985,
+        0.21660906884391665,
+        -0.28359474670398366,
+        0.021827868819025764,
+        -0.12315973675020912,
+        -0.13358471873535177
+      ],
+      "original_sha256": "5d3f9fdd27a761775b99f1971623ddc973ee87192f9f1faa32112660c228a0bb",
+      "path": "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md"
+    },
+    {
+      "embedding": [
+        -0.3140984543637363,
+        0.11423047804143757,
+        0.09723408212983087,
+        0.3011173673283002,
+        0.012490218461960419,
+        -0.4054071361785583,
+        -0.35127213270574914,
+        0.2644562175125252,
+        -0.09102138189351422,
+        -0.28323818975654774,
+        0.0298623946995486,
+        -0.1265014538548549,
+        0.04706442488252664,
+        -0.014627430125785585,
+        0.07138710469784225,
+        -0.03204049617114744
+      ],
+      "original_sha256": "70116235e0fa5f3ee33c8324eb784d68334acf06f330d1511201146d3f10ae07",
+      "path": "docs/checkpoints/884_r0_p01_atomic_synthetic_finalization_and_independent_outcome_vectors_next.md"
+    },
+    {
+      "embedding": [
+        -0.33972314744428006,
+        0.19370051623133488,
+        0.06586606438947623,
+        0.23476743465259745,
+        0.05283584530099385,
+        -0.21659938699743864,
+        0.020514949440523362,
+        0.029928206970793094,
+        0.0020484336062684062,
+        -0.0967907046516781,
+        -0.24879742367745306,
+        0.08927309425177982,
+        0.0715411245773198,
+        -0.10229259121784769,
+        0.008067864331174663,
+        -0.13072480248004117
+      ],
+      "original_sha256": "7a604ec607b1aa7a8135504dc9a24576e463c5a5f392c1a1ebefa0e2e518e7f7",
+      "path": "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md"
+    },
+    {
+      "embedding": [
+        -0.39431889285307137,
+        0.10749381750933479,
+        0.1788992053087643,
+        0.3497348956962077,
+        0.09212458153578926,
+        0.22903412927099948,
+        0.13297296128713257,
+        -0.07791856095608259,
+        0.06585543440307517,
+        -0.18427945492913683,
+        -0.17760602678109927,
+        0.17134534923828976,
+        -0.07458266116385036,
+        0.045712190781520896,
+        -0.060287829128351546,
+        -0.04183248078818006
+      ],
+      "original_sha256": "fd9ee485c0671f4950ea050f21fc029683dc05412921fcc21107091619f0ac9f",
+      "path": "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md"
+    },
+    {
+      "embedding": [
+        -0.34008185039275735,
+        -0.25578747804028784,
+        -0.07837026501763725,
+        -0.02885620989197132,
+        0.2626652418132445,
+        -0.01299264179998849,
+        0.0412890060206684,
+        0.011585685796961499,
+        -0.09690931900142202,
+        0.07469937228812576,
+        0.04324105631561022,
+        -0.176246117810728,
+        -0.057652740312195194,
+        0.1229695706695009,
+        0.1670619659587879,
+        -0.09649771494881451
+      ],
+      "original_sha256": "c08de226ff2878e1da1dae7a6cc55114000c881da021c94439288868706e2379",
+      "path": "docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md"
+    },
+    {
+      "embedding": [
+        -0.3035616088827725,
+        -0.2834642704609142,
+        -0.14396078640468188,
+        -0.09843567828047303,
+        0.38224450594443193,
+        -0.007245391862708374,
+        0.06623740548211302,
+        0.0828238402507225,
+        -0.1444947529846441,
+        -0.05457197882389876,
+        0.015541339178748052,
+        -0.10832166862797789,
+        0.06416935137066947,
+        0.06870786212591914,
+        0.1129528135015898,
+        -0.11460375573483626
+      ],
+      "original_sha256": "25e22cd4b84f4f4b412c8a31f974b25a416dd2ef393b2b72f71facbb57760e3f",
+      "path": "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md"
+    },
+    {
+      "embedding": [
+        -0.34360334180442453,
+        -0.279410200451208,
+        -0.1401755235039737,
+        -0.08536931234383068,
+        0.30829163454346126,
+        -0.006924192455620009,
+        0.1038403311315362,
+        0.08012179754398295,
+        -0.10005030128351172,
+        -0.08097875646796453,
+        0.05643249230267631,
+        -0.09230412742758827,
+        0.017716694503519752,
+        0.0322507983486255,
+        0.03044790683377887,
+        -0.09059830243614644
+      ],
+      "original_sha256": "fe3aed150fd06604aac3d37db1ee5ae092817d0cfb7cc5643f70edd561138ba3",
+      "path": "docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md"
+    },
+    {
+      "embedding": [
+        -0.347406494724781,
+        -0.19463032998207608,
+        -0.09587306615061009,
+        -0.02308966587339877,
+        0.05830458063928517,
+        -0.007159347748629714,
+        0.042041906890731985,
+        -0.13260597462410095,
+        0.022653569220002723,
+        0.029223445330528265,
+        -0.04532942807500421,
+        -0.07882334516142415,
+        0.09786475768284975,
+        -0.1942492353675911,
+        0.057290303529953415,
+        -0.1563906694140232
+      ],
+      "original_sha256": "7c1387f15b2781ca0a40d341803b143dedfe4f7251fbc79f97d180fde0523938",
+      "path": "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md"
+    },
+    {
+      "embedding": [
+        -0.28615168621818426,
+        -0.12349943903485157,
+        -0.09004933600232785,
+        -0.07775934567392626,
+        0.21443328820585222,
+        -0.053073592413152515,
+        -0.03252010226489422,
+        -0.038965288594353165,
+        0.1075904108883018,
+        -0.08894387403414773,
+        -0.235728446496817,
+        -0.16991787299123695,
+        0.07494846765645624,
+        -0.2424606052904134,
+        -0.3478544079117831,
+        0.0876375854257792
+      ],
+      "original_sha256": "0d670019e7c86decb33fb193aea84db1faae49251a50fd9786a6a4a529bc551e",
+      "path": "docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md"
+    },
+    {
+      "embedding": [
+        -0.3311144650585502,
+        -0.1484645901487334,
+        -0.042669841865573314,
+        -0.06488092535490753,
+        0.04388026102614357,
+        -0.052636724608699254,
+        -0.17267877997700845,
+        0.043159964846933345,
+        0.08009548082635513,
+        0.04258883715909483,
+        0.009088416928567836,
+        -0.00035985709031059586,
+        -0.08911463971802365,
+        0.15045366592657167,
+        -0.11071291854046315,
+        0.2675860019057873
+      ],
+      "original_sha256": "eb61bbd64974cc8f02b6f346e58cd90bc1c04d66abd69c0a224efacd99087b3d",
+      "path": "docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md"
+    },
+    {
+      "embedding": [
+        -0.3434228513767715,
+        -0.13413368991879945,
+        0.025990262432357695,
+        -0.08287847430895853,
+        0.048900177559801784,
+        -0.02152936653011272,
+        -0.2554249396463636,
+        -0.13753078308741085,
+        0.14487173047717114,
+        0.08605945987757477,
+        -0.1669941219481703,
+        0.013196229073040864,
+        -0.01367512802280299,
+        0.22139713053741503,
+        0.026314634406480814,
+        0.2054447788798845
+      ],
+      "original_sha256": "27d9434769571915d4e6cbdaed49dd7c9b0fa0170e2729ec213c4ad0d8ddb707",
+      "path": "docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md"
+    },
+    {
+      "embedding": [
+        -0.39782959646292854,
+        -0.06962921717275661,
+        -0.09347445122586272,
+        0.01167962786434603,
+        -0.03781115833574305,
+        -0.006986402665261418,
+        0.01983965051124538,
+        -0.13861033531007147,
+        -0.08732146182258674,
+        -0.0085427393494309,
+        -0.13394471719139528,
+        0.05804021770646343,
+        0.13709521102806407,
+        0.19727459090616575,
+        0.048286831673853725,
+        0.06860130880864834
+      ],
+      "original_sha256": "51cef534cdf40a72fda8be52b098ce48a9a42c1954f780550acb41c301d2faf2",
+      "path": "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md"
+    },
+    {
+      "embedding": [
+        -0.39140417315126974,
+        -0.08605301273743719,
+        -0.13491918835312577,
+        -0.012518911336661583,
+        -0.19523506870749346,
+        0.09765898420765207,
+        -0.1333267639561796,
+        0.0694465758550114,
+        -0.027668044394690904,
+        0.07324683338918467,
+        0.1429990792913598,
+        0.0606783794142214,
+        -0.033576010374788245,
+        0.1194651270132428,
+        -0.08648667422450339,
+        0.1698379748362212
+      ],
+      "original_sha256": "006dd8185524e35174ec6c47cf55f214871a49ee3db39cd41ed4fbc899e4becd",
+      "path": "docs/research/184_w0_derived_view_framework_g009_result.md"
+    },
+    {
+      "embedding": [
+        -0.3757844722179439,
+        -0.09285838251831431,
+        -0.11030166915821103,
+        -0.05283489754806836,
+        0.0066202099979216405,
+        0.005617796865956157,
+        0.04326059172264177,
+        -0.04746501676307185,
+        -0.02124834897767179,
+        -0.1491493036028576,
+        0.08331956742766976,
+        -0.05630651742263388,
+        0.015674743637848838,
+        -0.18823112795127594,
+        -0.028426741676199876,
+        0.18842237382937688
+      ],
+      "original_sha256": "1a45aa417851c65be8b2455b9a81a32c2e2273a529b5716c6ebb4c1f736e73d4",
+      "path": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md"
+    },
+    {
+      "embedding": [
+        -0.3325437117515421,
+        -0.008008623359273295,
+        -0.016504520896758846,
+        -0.040688968330176385,
+        -0.06988548019692663,
+        -0.09182121165710483,
+        0.07187141980687475,
+        -0.05998282420077987,
+        -0.013816478924845116,
+        0.002735563493594474,
+        0.20834708663135007,
+        -0.08888675858988238,
+        -0.2565470083883353,
+        0.25084473296168636,
+        0.1852695182468929,
+        -0.14593107258936006
+      ],
+      "original_sha256": "238a8f1eebbc3b89176526be1373b64c0e8a4bbe9293f42467f8130b2aeff150",
+      "path": "docs/research/230_ao9_p2_arm_contract_freeze.md"
+    },
+    {
+      "embedding": [
+        -0.2702202363825355,
+        0.04482485120426495,
+        0.03263702078490875,
+        0.025750996751293533,
+        -0.20823753138729773,
+        -0.13553940414273646,
+        0.2608292103758416,
+        0.12272796029574842,
+        -0.2814336877370234,
+        0.32883965124185044,
+        -0.1343476270106962,
+        0.02579204706601256,
+        0.18690082673192274,
+        -0.031291348632403536,
+        0.0017016385305626837,
+        0.209058231786097
+      ],
+      "original_sha256": "7efa6fa9ec239b89fd12fd1c36a779cc2c286d46aa562c89535640751127f2ac",
+      "path": "docs/research/268_p_r8b_01_r2_harness_defect_and_replacement_freeze.md"
+    },
+    {
+      "embedding": [
+        -0.4154021599039141,
+        -0.015519998322598481,
+        -0.12601456250018633,
+        -0.014841036512614451,
+        -0.22402308070236757,
+        -0.25550338357225244,
+        0.2892573300602661,
+        -0.20153654439688928,
+        0.06387423116870446,
+        -0.04641803834843786,
+        0.1591735879745204,
+        0.0029396917409564654,
+        0.09912045938365127,
+        0.008999828575474277,
+        0.005335621797357509,
+        0.0673335642926695
+      ],
+      "original_sha256": "0cc45f3d9b6903e16b1ad7503518b40c5705e1cd82430e761feaf409d0373432",
+      "path": "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md"
+    },
+    {
+      "embedding": [
+        -0.2729423168659951,
+        0.004101225192703029,
+        0.05840881671819716,
+        -0.006063495640143029,
+        -0.1347392504558527,
+        -0.2051169812418962,
+        0.22989592016325136,
+        0.19278427101116596,
+        -0.21522006049804612,
+        0.3338162952630399,
+        -0.23175745996973537,
+        -0.07565221456111534,
+        0.09551099465010532,
+        0.21745485153151017,
+        -0.0357462536656798,
+        0.19811575414917024
+      ],
+      "original_sha256": "210bc062c9b8a43520094c2d8f9c1f000626829247ed2e61e40cff674d5db048",
+      "path": "docs/research/284_p_d3_attempt002_harness_invalid_and_repair.md"
+    },
+    {
+      "embedding": [
+        -0.4405994727495984,
+        -0.05337679114446278,
+        -0.16373270365026538,
+        -0.061841415659995944,
+        -0.1927304947174549,
+        -0.17330129683664744,
+        0.13264612518710556,
+        -0.25568747623165844,
+        0.06225392171783367,
+        -0.1330052773095604,
+        0.20645055212220048,
+        -0.04570848295168928,
+        0.04277163543443552,
+        0.18083528453874934,
+        -0.06181554789068656,
+        -0.059850534463879265
+      ],
+      "original_sha256": "58a77b5e9fed4008b9b7ed78a972d8063ca4be7d9dbf557256203572f275ec33",
+      "path": "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md"
+    },
+    {
+      "embedding": [
+        -0.36632627122122635,
+        0.036623837974676006,
+        0.4535120255139987,
+        -0.3774038218049344,
+        -0.13101421418363093,
+        0.07182172981224048,
+        -0.09321614477341553,
+        -0.1662458674649225,
+        -0.26217945534279874,
+        -0.1526090258278795,
+        -0.18466476156325956,
+        -0.10140876767996512,
+        -0.21192714384730424,
+        -0.023048116986483902,
+        0.012837186058035487,
+        0.01933466710593416
+      ],
+      "original_sha256": "97349b88f4c0ca0345c23629c2426bf34c155192bd30c1ed5d13ff7a598ae649",
+      "path": "docs/research/356_key_author_a_p3_batch9_compaction_hold_fresh_replacement_authorized.md"
+    },
+    {
+      "embedding": [
+        -0.38595325081788673,
+        0.023643035767914985,
+        0.4587500295638649,
+        -0.38317790195879775,
+        -0.13506274789653444,
+        0.06713249905656297,
+        -0.08237070072089249,
+        -0.15995994521930731,
+        -0.22061476013732476,
+        -0.10686841473274174,
+        -0.08764176814440701,
+        -0.07152265276198176,
+        -0.2471509818201133,
+        -0.07626770364346395,
+        0.02355328408408557,
+        -0.006757736683530623
+      ],
+      "original_sha256": "ad291003dfb2bbfdc54c5812f32834cc062571359d0fdf566e50ffea72d66177",
+      "path": "docs/research/357_key_author_a_p3_batch9_replacement_pass_batch10_fresh_session_released.md"
+    },
+    {
+      "embedding": [
+        -0.29679965607790043,
+        0.07855443768626608,
+        0.28371462293515803,
+        -0.25963428817128137,
+        -0.07742077925737156,
+        0.016864467060023425,
+        0.0862040614496488,
+        0.02844845655295481,
+        -0.10275509432991389,
+        -0.10848048024003752,
+        0.09770271289925536,
+        0.11063047861229346,
+        0.3358522244535961,
+        0.11661265003282162,
+        -0.0065798124085034645,
+        -0.06394767717695557
+      ],
+      "original_sha256": "33e0943835e496a843edbb548d91c5cbe2fe4548261786d7b3cf3ad806ddeda4",
+      "path": "docs/research/373_key_author_a_p4_h02_attempt001_verifier_scope_hold_fresh_retry.md"
+    },
+    {
+      "embedding": [
+        -0.36252740152352225,
+        0.027868754104535248,
+        0.18257468074093122,
+        -0.13095779023249668,
+        -0.05758036870684584,
+        -0.02150105055016878,
+        -0.1561581719411694,
+        0.07102075255030627,
+        -0.05635666659183367,
+        0.19031917713959043,
+        0.21350359202618194,
+        0.0978319373515773,
+        -0.01724360320485908,
+        -0.03844383453233077,
+        -0.07280830432901171,
+        -0.05433452407232303
+      ],
+      "original_sha256": "2f615fcf560698daca6ec7716e9ab1357dc0d94728731c09819f0ec68a689c0a",
+      "path": "docs/research/407_key_author_a_legacy_attention_evaluator_qualified_activated.md"
+    },
+    {
+      "embedding": [
+        -0.393647794946922,
+        -0.11148515748140769,
+        -0.12486967707523422,
+        -0.008173034252345765,
+        -0.10783632620222143,
+        -0.15711574742333057,
+        0.03383659279950449,
+        -0.2723124446604973,
+        0.10826866483167273,
+        -0.11336529734966151,
+        0.05536250755275825,
+        -0.038878316424241936,
+        -0.016486668581174056,
+        -0.05598966885148827,
+        -0.1031862533762127,
+        -0.09004847485043307
+      ],
+      "original_sha256": "eadf86eb4803ed442643ecd656bc2c8d44b281ba9f0dc20b8948eb85c437fcaa",
+      "path": "docs/research/503_r0_realization_requirements_and_independent_design_charter.md"
+    },
+    {
+      "embedding": [
+        -0.41939362246198414,
+        -0.09601514971562607,
+        -0.040445365554054584,
+        0.0407186007047238,
+        -0.1790743081713057,
+        -0.2402812933734066,
+        0.024664693039893888,
+        -0.11454722471648156,
+        0.09910620494899529,
+        -0.0808240334049317,
+        0.04435612138997071,
+        0.2707509752859082,
+        -0.2140357003256006,
+        -0.029278453483964795,
+        -0.05147347328294468,
+        -0.0775505171742926
+      ],
+      "original_sha256": "40bf71219aaf9eee311241e0eabd7b034f52e0a40fe7b18a8437ea3fdfe4edf4",
+      "path": "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md"
+    },
+    {
+      "embedding": [
+        -0.38345311967507567,
+        0.06211530671718759,
+        0.038586918303972643,
+        0.1783897068437456,
+        -0.16110105093984448,
+        -0.18249045128093752,
+        -0.004805120813480549,
+        0.056590586853415475,
+        -0.07341951592412987,
+        0.14829467279132127,
+        0.010700500650958376,
+        0.16772996977260238,
+        0.03289506912977946,
+        -0.109875312744833,
+        -0.020070198215504268,
+        0.00414534986667871
+      ],
+      "original_sha256": "b06302ff4c2d87987d976e149d964f52c8772808a055cb952433566790094869",
+      "path": "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md"
+    },
+    {
+      "embedding": [
+        -0.33181622152074314,
+        -0.030039536733734856,
+        0.11359433448773279,
+        0.2634235674867622,
+        -0.06949024427384165,
+        -0.37290525574694516,
+        -0.38054696047528963,
+        0.26003654277330196,
+        -0.10697087771971982,
+        -0.2292657681319289,
+        0.07253715240866256,
+        -0.13977589389685047,
+        0.020373360379848576,
+        0.06539436328217514,
+        0.06165115809602545,
+        0.02745161371313172
+      ],
+      "original_sha256": "a19a3e417e529602bde4c86fcaab156c7036b64ac9303b6aa730c95c5c309442",
+      "path": "docs/research/548_r0_p01_atomic_synthetic_admission_measurement_finalization.md"
+    },
+    {
+      "embedding": [
+        -0.3863246776220437,
+        -0.09863431692574538,
+        0.20168695378048834,
+        0.24302203332275676,
+        -0.07172907764266007,
+        0.17287568677283022,
+        -0.07426662784013915,
+        -0.012527448486306214,
+        0.06672473632632182,
+        0.13914830712973816,
+        0.14920835625042897,
+        -0.11974962414700793,
+        0.03520563852696142,
+        -0.08282311081685685,
+        -0.08160428303971792,
+        -0.030408279579458526
+      ],
+      "original_sha256": "e8ecc8ba823b9cb4b037e8216a10bd4976b3419fb376e25f5328fe1b648050f6",
+      "path": "docs/research/585_r0_p03_owner_fake_custody_report_and_access_boundary.md"
+    },
+    {
+      "embedding": [
+        -0.35042618764972294,
+        -0.12229967873133672,
+        0.15348070592865973,
+        0.24981875264762687,
+        -0.00025272240346877687,
+        0.22623568436796643,
+        0.12575117270534286,
+        -0.01570048295451588,
+        -0.08133779506107783,
+        -0.030650381843096472,
+        0.0630394135578092,
+        -0.07821725722255042,
+        0.08022146593853445,
+        -0.010318273864963794,
+        0.05016336452297214,
+        0.11774779391148672
+      ],
+      "original_sha256": "de313a7bc8f493213e9eab6e20517399b9b82f1a6698a58d3796b00bc958dfe9",
+      "path": "docs/research/591_r0_p03_historical_evidence_review_population_and_author_admission_boundary.md"
+    },
+    {
+      "embedding": [
+        -0.3805173520249072,
+        -0.1041393223588181,
+        0.2111084742409101,
+        0.23099747788517205,
+        -0.010154123809540734,
+        0.15462245573026107,
+        -0.028096264598327193,
+        -0.024644839269615734,
+        0.03706341438848615,
+        0.11451694209400928,
+        0.15474614050924854,
+        -0.19941004737266965,
+        -0.01967328107940465,
+        0.0025179845767101592,
+        -0.06918299834046095,
+        -0.04617338540657158
+      ],
+      "original_sha256": "f9cadac7f041baae12dcb5b658164c54208ffd8e4bde0ee9667290ad14fe38d6",
+      "path": "docs/research/615_r0_p03_a2_r07_actual_test_only_author_view_intake_and_instrumentability.md"
+    },
+    {
+      "embedding": [
+        -0.3662839654478195,
+        -0.09306412086288741,
+        0.2082377673474132,
+        0.25489790071368623,
+        -0.0020679266897297398,
+        0.2010898648300097,
+        -0.010053264667529432,
+        -0.046022622879074326,
+        0.034493425815670546,
+        0.14332241240794938,
+        0.18270450322320572,
+        -0.2575111641924538,
+        0.1129790365922232,
+        -0.013685079807229909,
+        -0.009952531781743384,
+        -0.03262314270633989
+      ],
+      "original_sha256": "c44efff1ff0a2bef4ee493a6b3583ad83dbe296b026ab744665f15db1f2f895c",
+      "path": "docs/research/619_r0_p03_wave0_independent_blind_second_assessment_and_owner_comparison_route.md"
+    },
+    {
+      "embedding": [
+        -0.397032897499888,
+        -0.1398570397379337,
+        0.1655612385667431,
+        0.2776966368177791,
+        0.05526425330667949,
+        0.20356506674292404,
+        0.11852023881206772,
+        -0.07312734326515752,
+        -0.05971171010523256,
+        0.0066245739960206565,
+        -0.011309744077484906,
+        -0.0183167568663943,
+        0.05678930464510942,
+        0.12378522870210872,
+        0.036134209574886104,
+        0.004729029313892472
+      ],
+      "original_sha256": "9b5b2c3b0b63bba006eb1362031ca50eadc94766a49c1c04f73e69bbbf8bc0a5",
+      "path": "docs/research/630_r0_p03_falsification_outcome_and_transition_to_source_world_closure.md"
+    },
+    {
+      "embedding": [
+        -0.31769590989413865,
+        -0.14046938596332978,
+        -0.019299234679254967,
+        -0.06891194050924881,
+        0.04601915909057656,
+        -0.00638044553921733,
+        -0.23258137936193674,
+        -0.09872222961638627,
+        0.26574792391052454,
+        0.17353388211990514,
+        -0.14438634251641558,
+        -0.044904084033298486,
+        0.10096950561073338,
+        -0.1318357029592966,
+        0.2604027744337932,
+        0.08277261044502075
+      ],
+      "original_sha256": "4b78d6ee9ca7d6ab4de0d0f6150b86c726661ff951d551a46fefe635b5987266",
+      "path": "docs/research/GITHUB_APP_EXTENDED_PERMISSION_REVIEW.md"
+    },
+    {
+      "embedding": [
+        -0.3416381908379105,
+        -0.1413436711745196,
+        -0.06765178985135475,
+        -0.10115112156075648,
+        0.06059769139908978,
+        0.052245502964744166,
+        0.06119406946994362,
+        0.25143870916310185,
+        -0.1765234907833899,
+        -0.029603995782415335,
+        0.08554674697089655,
+        0.29793140709922317,
+        -0.06232918631400899,
+        0.057416307253241844,
+        -0.18860319999877692,
+        -0.08795127907356502
+      ],
+      "original_sha256": "a9febcf4a401986e1c99f8208f9b7d91a7950fa4b73fc19cfe59723cbd02560d",
+      "path": "docs/specifications/011_v1_rrf_hybrid_retrieval_comparator.md"
+    },
+    {
+      "embedding": [
+        -0.38155718850493237,
+        -0.23955680626048603,
+        -0.0853685269001809,
+        -0.1134919068916485,
+        0.17742812935936425,
+        0.09060746793808609,
+        0.09877106366716713,
+        0.21082849864882583,
+        -0.07192178514240934,
+        -0.052188573077798964,
+        0.16239397141869372,
+        0.2999880514195948,
+        -0.11742919054930756,
+        -0.05342588260604828,
+        -0.01818246379054513,
+        0.006597239074675875
+      ],
+      "original_sha256": "b180a728ed4433c63bea87a5a7286383d3257b7548c7441fbdf6f1f4bcdfa28d",
+      "path": "docs/specifications/013_v1_horizon_relevance_and_selective_context.md"
+    },
+    {
+      "embedding": [
+        -0.38377241056928235,
+        -0.23652711914918736,
+        -0.1085487843681858,
+        -0.10757394992713418,
+        0.28111561879188574,
+        0.009707669263504486,
+        0.06600171288913531,
+        0.17574734101946707,
+        -0.09322436149495418,
+        0.0051752532350633935,
+        0.0740067519270417,
+        0.12189917729628225,
+        -0.08139644940847522,
+        0.018098558651974756,
+        0.07319735873894594,
+        0.009332736217117088
+      ],
+      "original_sha256": "a1c54cb6435f1df7fabc6d819693efa18528fa5379aeb8725c9ded929da66c0f",
+      "path": "docs/specifications/015_v1_recommendation_action_value_vertical_slice.md"
+    },
+    {
+      "embedding": [
+        -0.3825741116247102,
+        -0.16085247506927947,
+        0.05833816464978098,
+        -0.1072593173170326,
+        -0.11173706018866503,
+        0.004905461479910301,
+        -0.09101641477710086,
+        0.13559208842770865,
+        0.06816260473680764,
+        0.3014891483553181,
+        -0.020547696642836566,
+        0.06077992036095492,
+        0.03679787838708175,
+        -0.23494093877174313,
+        -0.0055985376420398724,
+        -0.3193139003521472
+      ],
+      "original_sha256": "7dcc9f351a3ad6e5db633297229ebd59231bb3ce7666d19773cf3ac827e4e7bc",
+      "path": "docs/specifications/018_v1_governed_autonomous_live_experiment_launcher.md"
+    },
+    {
+      "embedding": [
+        -0.40732167058340446,
+        -0.16895461651525456,
+        -0.07320745442073608,
+        -0.004041155837935274,
+        -0.11156851228671198,
+        -0.0025595021893172034,
+        0.02220549678049535,
+        -0.1273297238085711,
+        0.051966865115356184,
+        0.053476277957281416,
+        -0.09911565025037519,
+        0.06895538674512187,
+        0.0794240738219369,
+        -0.22459558336875854,
+        0.09211735676545445,
+        -0.10720390450419698
+      ],
+      "original_sha256": "788e3162fc823d21eca176646e7e5c96090cfd7dd971f3f3e918414c278b5cdd",
+      "path": "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md"
+    },
+    {
+      "embedding": [
+        -0.43560994361781713,
+        -0.13073117198989728,
+        -0.20392456324102023,
+        -0.09502062162614189,
+        -0.21246152518141612,
+        -0.06180433948490948,
+        0.08311704097444544,
+        -0.12203971034437325,
+        0.0596996829775282,
+        -0.0840106619492174,
+        0.02906022272902404,
+        0.008232498406186924,
+        0.051153161605356254,
+        -0.15584002344953918,
+        0.07661440023542337,
+        -0.031670805906675654
+      ],
+      "original_sha256": "a922486ebcc359b5b457a6d77ebad12bab0cc43cb0ea65ccd6b123b919d0bfa0",
+      "path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md"
+    },
+    {
+      "embedding": [
+        -0.06901224516271301,
+        -0.06110884293231553,
+        -0.04785305848266127,
+        -0.13131463615550149,
+        -0.23941304537879754,
+        0.07558481301668164,
+        0.043688100042274504,
+        0.26390805790339444,
+        0.21087211195608635,
+        0.01632284825501341,
+        -0.2829588189541677,
+        -0.26285948616048177,
+        0.01957397973256055,
+        0.27083612030834503,
+        -0.21951583049844542,
+        -0.5199316322344556
+      ],
+      "original_sha256": "7c6ef1cb9e935e479ea8f37837c0f4ee2909af7882d92ff68719d01588243bce",
+      "path": "tools/project_knowledge/__main__.py"
+    },
+    {
+      "embedding": [
+        -0.17276984662843797,
+        -0.09266845965391918,
+        -0.09097246022627921,
+        -0.06561574339996079,
+        -0.25349062518983195,
+        0.13629904973921989,
+        0.09658147745903882,
+        0.2813656353175375,
+        0.2790634665560207,
+        -0.1897060678084065,
+        -0.008126144762872848,
+        -0.05206465949355238,
+        -0.07524222369336839,
+        -0.2177268941515409,
+        0.3243254034320695,
+        0.14324820517955578
+      ],
+      "original_sha256": "ead6766044c4ad3a08fbe4b5342e7d3c2c7c12203a458bf2722a265ce52bcf9d",
+      "path": "tools/project_knowledge/adapters/schema.py"
+    },
+    {
+      "embedding": [
+        -0.21670453882459656,
+        -0.05414165040421245,
+        -0.10666817440791572,
+        -0.04883203854407196,
+        -0.289389825683304,
+        0.1822232118391817,
+        0.11884600296373164,
+        0.2915432974534061,
+        0.17604600559964975,
+        -0.17636305067761116,
+        -0.13631679181421247,
+        -0.10029714921791706,
+        -0.09849651202210102,
+        0.13165607495704296,
+        0.2000519657564799,
+        0.13224980158586247
+      ],
+      "original_sha256": "753f6c2bbe8c54ce66a33924b759b77bccecc646c032f970d7d50c3a21ad72ba",
+      "path": "tools/project_knowledge/services/discovery.py"
+    },
+    {
+      "embedding": [
+        -0.1795649463931778,
+        -0.05317606114534244,
+        -0.12195500666137753,
+        -0.08790473402583786,
+        -0.29233406686121993,
+        0.20827962724376722,
+        0.09264629080968143,
+        0.2916871469151688,
+        0.09968055990140323,
+        -0.13491918698927094,
+        -0.0006127225059870881,
+        -0.10797714362849385,
+        0.0058880648792866705,
+        -0.0013997342821842468,
+        -0.2268087897317958,
+        0.11734126568905476
+      ],
+      "original_sha256": "ab0dc25f963488a7b6d35eafc04e9eac0e41544c46820f478903c060a7e1dc64",
+      "path": "tools/project_knowledge/view_definitions/authority_index.py"
+    }
+  ],
+  "fit_labels_or_reference_answers_used": false,
+  "fixed_power_iteration_steps_per_component": 160,
+  "formal_R0_P03_scored": false,
+  "heldout_original_files_excluded_from_fit": true,
+  "id": "R0_P03_ROUTE_B_CLASSICAL_DISTRIBUTIONAL_LSA_B4_EXPLORATORY_V01",
+  "metrics": {
+    "B0_ORIGINAL": {
+      "missing_source_at_top_10": [
+        "P01"
+      ],
+      "mrr_at_10": 0.7619047619047619,
+      "required_source_at_1": 8,
+      "required_source_at_10": 11,
+      "required_source_at_3": 10,
+      "required_source_at_5": 10
+    },
+    "B4_LSA16_B0_RRF_EXPLORATORY": {
+      "missing_source_at_top_10": [
+        "P01"
+      ],
+      "mrr_at_10": 0.5930555555555556,
+      "required_source_at_1": 5,
+      "required_source_at_10": 11,
+      "required_source_at_3": 9,
+      "required_source_at_5": 11
+    },
+    "B4_LSA16_B2_RRF_EXPLORATORY": {
+      "missing_source_at_top_10": [
+        "P01"
+      ],
+      "mrr_at_10": 0.5930555555555556,
+      "required_source_at_1": 5,
+      "required_source_at_10": 11,
+      "required_source_at_3": 9,
+      "required_source_at_5": 11
+    },
+    "B4_LSA16_DENSE_ONLY_EXPLORATORY": {
+      "missing_source_at_top_10": [
+        "P01",
+        "P02"
+      ],
+      "mrr_at_10": 0.4513888888888889,
+      "required_source_at_1": 3,
+      "required_source_at_10": 10,
+      "required_source_at_3": 7,
+      "required_source_at_5": 7
+    }
+  },
+  "model_cost": {
+    "fit_power_matrix_vector_multiplications": 2560,
+    "fitted_on_question_texts": false,
+    "fitted_on_reference_answers": false,
+    "neural_model_and_weights_download": false,
+    "nonzero_gram_off_diagonals": 3518,
+    "nonzero_source_term_features": 20098,
+    "original_word_posting_pair_updates": 138281,
+    "query_embeddings_float_values": 192,
+    "source_feature_policy": "unique_fixed_word_tokens_IDF_L2",
+    "source_original_character_cap": 12000,
+    "source_text_count": 60,
+    "stored_document_latent_float_values": 960,
+    "stored_eigenvector_float_values": 960,
+    "symmetric_gram_matrix_float_entries": 3600,
+    "vocabulary_size": 5084,
+    "wall_clock_latency_not_measured": true
+  },
+  "model_fitted_word_idf_sha256": "d8d82ea1f35dda8d20dde872877c1e015619f4d0b829e2be1b4c52907d3c2aaf",
+  "model_type": "UNSUPERVISED_CORPUS_TRAINED_CLASSICAL_LSA_NOT_PRETRAINED_NEURAL",
+  "original_B0_result_sha256": "59ab36aef96046f71e2ccacbcc2105918ab19ed4bbc1f013e9bb78539a9bd4ab",
+  "original_B123_result_sha256": "6a2b656432a5b8fbb963b0e8c14220411ed57bbad6127b8a550c05cf93ee0fa2",
+  "original_git_pin": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+  "physical_target_selected": false,
+  "random_seed": 20261113,
+  "rank_16_requested": 16,
+  "rank_actual": 16,
+  "scientific_limits": [
+    "LSA is a genuine corpus-trained latent word-semantic embedding but not a pretrained language/sentence model or a transformer.",
+    "The B4 formal arm is best justified structured architecture plus a fair pretrained/semantic embedding; this is a deliberately labelled exploratory semantic index and two bounded hybrids.",
+    "The model is fit on the same exact 60 original source bodies with no supervised answers; the experimenter nevertheless saw all B0 and B1/B2/B3 retrieval results and designed this method afterward.",
+    "Single coordinator-designated source per query is not independent, exhaustive relevance gold or evidence of a correct full answer.",
+    "The common V03-native relation/effect/lineage substrate is not fully represented in the B0 original source-text diagnostic.",
+    "No genuine externally pretrained neural embeddings were executable under authorized project access at this attempt; uv PyPI fetch was socket denied.",
+    "No original nine-case independent legacy score, fresh blinded answer review, heldout subject assignment F1, independently source-owned B1/B3 concern metadata or complete B2 governed links.",
+    "Original Git Status text and semantic vectors do not prove operative authority, deployment or acceptance.",
+    "No formal R0-P03 architecture selection score, threshold acceptance, owner physical target or migration change is supported."
+  ],
+  "source_character_cap": 12000,
+  "token_policy": "V04 unique fixed non-stopword tokens",
+  "trained_only_on_original_60_source_bodies": true,
+  "training_source_paths": [
+    "docs/CURRENT_STATE.md",
+    "docs/DECISIONS.md",
+    "docs/checkpoints/050_real_held_out_run_plan_materialized_and_frozen_inputs_verified.md",
+    "docs/checkpoints/121_immersive_scale_cockpit_slice_automated_gate_passed.md",
+    "docs/checkpoints/358_runtime_release_preview20_fresh_chat_schema_qualified.md",
+    "docs/checkpoints/380_github_schema_reconciled_g0_and_targeted_evidence_ready.md",
+    "docs/checkpoints/447_repository_branch_safety_complete_canonical_protection_decision_next.md",
+    "docs/checkpoints/497_candidate01_real_repository_shadow_v01_fixture_frozen.md",
+    "docs/checkpoints/544_pka_g102_project_boundary_accepted_source_vault_next.md",
+    "docs/checkpoints/550_pka_g108_current_authority_confirmed_integrity_next.md",
+    "docs/checkpoints/552_pka_w2_shadow_views_accepted_compatibility_shadow_next.md",
+    "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md",
+    "docs/checkpoints/661_drp03_obligation_unit_review_harness_frozen.md",
+    "docs/checkpoints/700_key_author_a_p4_birth_grouping_phase_defined.md",
+    "docs/checkpoints/718_key_author_a_p4_h09_accepted_h10_released.md",
+    "docs/checkpoints/722_key_author_a_p5_authorized_private_ops_next.md",
+    "docs/checkpoints/792_sp5_retired_without_score_sp6_next.md",
+    "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+    "docs/checkpoints/884_r0_p01_atomic_synthetic_finalization_and_independent_outcome_vectors_next.md",
+    "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+    "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+    "docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md",
+    "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md",
+    "docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md",
+    "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+    "docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md",
+    "docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md",
+    "docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md",
+    "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+    "docs/research/184_w0_derived_view_framework_g009_result.md",
+    "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+    "docs/research/230_ao9_p2_arm_contract_freeze.md",
+    "docs/research/268_p_r8b_01_r2_harness_defect_and_replacement_freeze.md",
+    "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+    "docs/research/284_p_d3_attempt002_harness_invalid_and_repair.md",
+    "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+    "docs/research/356_key_author_a_p3_batch9_compaction_hold_fresh_replacement_authorized.md",
+    "docs/research/357_key_author_a_p3_batch9_replacement_pass_batch10_fresh_session_released.md",
+    "docs/research/373_key_author_a_p4_h02_attempt001_verifier_scope_hold_fresh_retry.md",
+    "docs/research/407_key_author_a_legacy_attention_evaluator_qualified_activated.md",
+    "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+    "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+    "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+    "docs/research/548_r0_p01_atomic_synthetic_admission_measurement_finalization.md",
+    "docs/research/585_r0_p03_owner_fake_custody_report_and_access_boundary.md",
+    "docs/research/591_r0_p03_historical_evidence_review_population_and_author_admission_boundary.md",
+    "docs/research/615_r0_p03_a2_r07_actual_test_only_author_view_intake_and_instrumentability.md",
+    "docs/research/619_r0_p03_wave0_independent_blind_second_assessment_and_owner_comparison_route.md",
+    "docs/research/630_r0_p03_falsification_outcome_and_transition_to_source_world_closure.md",
+    "docs/research/GITHUB_APP_EXTENDED_PERMISSION_REVIEW.md",
+    "docs/specifications/011_v1_rrf_hybrid_retrieval_comparator.md",
+    "docs/specifications/013_v1_horizon_relevance_and_selective_context.md",
+    "docs/specifications/015_v1_recommendation_action_value_vertical_slice.md",
+    "docs/specifications/018_v1_governed_autonomous_live_experiment_launcher.md",
+    "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+    "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+    "tools/project_knowledge/__main__.py",
+    "tools/project_knowledge/adapters/schema.py",
+    "tools/project_knowledge/services/discovery.py",
+    "tools/project_knowledge/view_definitions/authority_index.py"
+  ]
+}

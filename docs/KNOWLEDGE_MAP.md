@@ -1061,6 +1061,13 @@ docs/research/653_r0_p03_no_decision_id_competing_retrievers_rank_fusion_and_sel
 docs/research/654_r0_p03_objective_git_event_and_external_ci_evidence_ladder_audit.md
 docs/research/655_r0_p03_route_b_first_twelve_source_answer_primary_b0_execution.md
 docs/research/656_r0_p03_route_b_distinct_b1_b2_b3_real_navigation_mechanisms_and_costs.md
+docs/research/657_r0_p03_route_b_b4_classical_latent_semantic_embedding_execution_and_neural_access_hold.md
+docs/local_execution/validation/356_r0_p03_route_b_b4_classical_lsa_embedding_execution_and_exact_provenance.md
+docs/checkpoints/920_r0_p03_route_b_actual_classical_lsa_semantic_embedding_experiment_and_neural_access_hold.md
+experiments/r0_p03_navigation_probe/ROUTE_B_B4_LOCAL_LSA_EMBEDDING_CONTRACT_V01.md
+experiments/r0_p03_navigation_probe/route_b_b4_local_lsa_embedding_comparison_v01.py
+experiments/r0_p03_navigation_probe/route_b_b4_local_lsa_embedding_comparison_result_v01.json
+tests/unit/test_r0_p03_route_b_b4_local_lsa_embedding_v01.py
 docs/local_execution/validation/355_r0_p03_route_b_exposed_subject_editorial_link_concern_method_comparison.md
 docs/checkpoints/919_r0_p03_route_b_actual_subject_editorial_link_concern_comparison.md
 experiments/r0_p03_navigation_probe/ROUTE_B_B1_B2_B3_ARM_EXECUTION_CONTRACT_V01.md
@@ -2110,7 +2117,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-919 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-920 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

@@ -61,6 +61,8 @@ experiments/r0_p03_navigation_probe/route_b_primary_b0_baseline_result_v01.json 
 experiments/r0_p03_navigation_probe/route_b_primary_b1_b3_exposed_source_metadata_v01.json -text
 experiments/r0_p03_navigation_probe/route_b_primary_b2_source_editorial_link_witnesses_v01.json -text
 experiments/r0_p03_navigation_probe/route_b_distinct_b1_b2_b3_navigation_comparison_result_v01.json -text
+# Preserve the original learned LSA semantic model, source vectors and complete query-ranking trace.
+experiments/r0_p03_navigation_probe/route_b_b4_local_lsa_embedding_comparison_result_v01.json -text
 # Retain the source-free 12-need independent adjudication report byte-for-byte.
 experiments/r0_p03_navigation_probe/NEED_SOURCE_ADJUDICATION_AGGREGATE.md -text whitespace=-blank-at-eof
 # Preserve the byte-verified independent adjudicator's updated source-free result.
