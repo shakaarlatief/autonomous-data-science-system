@@ -50,6 +50,10 @@ experiments/r0_p03_navigation_probe/exploratory_t2_decision_ledger_snapshot_and_
 experiments/r0_p03_navigation_probe/EXPLORATORY_T2_NO_ID_MANUAL_QUESTION_MANIFEST_V01.json -text
 # Preserve exact four-method/no-ID source retrieval and selective answer trace.
 experiments/r0_p03_navigation_probe/exploratory_t2_no_id_retrieval_and_selective_evidence_result_v04.json -text
+# Preserve Git-event sample and external provider-run/job/step receipt bytes.
+experiments/r0_p03_navigation_probe/exploratory_r0_source_event_witness_capacity_result_v01.json -text
+experiments/r0_p03_navigation_probe/exploratory_r0_source_event_external_ci_witness_result_v01.json -text
+experiments/r0_p03_navigation_probe/exploratory_r0_source_event_external_ci_step_witness_v01.json -text
 # Retain the source-free 12-need independent adjudication report byte-for-byte.
 experiments/r0_p03_navigation_probe/NEED_SOURCE_ADJUDICATION_AGGREGATE.md -text whitespace=-blank-at-eof
 # Preserve the byte-verified independent adjudicator's updated source-free result.

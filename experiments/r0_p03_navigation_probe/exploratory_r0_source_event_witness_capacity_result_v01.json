@@ -1,0 +1,578 @@
+{
+  "contract": "EXPLORATORY_R0_SOURCE_EVENT_WITNESS_CAPACITY_CONTRACT_V01.md",
+  "formal_r0_p03_scored": false,
+  "historical_git_pin": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+  "identifier": "R0_P03_EVIDENCE_FIRST_GIT_EVENT_SOURCE_WITNESS_CAPACITY_V01",
+  "limits": [
+    "This is a deterministic non-random, source-path-stratified feasibility sample, not a representative statistical survey.",
+    "The Git pin is only a public historical evidence horizon; not an admitted B0-B4 source corpus.",
+    "A Git commit/path establishes changed path membership, not source contents, test execution, signed owner acceptance, real deployment or temporal operative truth.",
+    "Some paths classified as implementation or tests can be examples or generated artifacts; semantics were intentionally not inspected.",
+    "Authored/committed timestamps are mutable Git metadata, not independently witnessed real event times.",
+    "External GitHub Actions or other independent execution receipts have not been queried in this source-only run.",
+    "Older C01 and new C02 private questions/reviewer evidence are not read, reused, replaced or solved by this output.",
+    "Further independently authored tasks, answerability qualification and protocol changes require a separately recorded owner-scoped decision.",
+    "No false-authority-rate, evidence-closure-rate, task completeness, scored B0-B4 outcome or physical architecture selection is inferred."
+  ],
+  "selected_source_event_witnesses": [
+    {
+      "authored_iso_metadata_only": "2026-08-20T11:58:59+02:00",
+      "changed_path_count": 6,
+      "changed_paths": [
+        ".github/workflows/v1-knowledge-interchange.yml",
+        "schemas/reusable_knowledge_bundle_v1.schema.json",
+        "src/ads_system/infrastructure/interchange/__init__.py",
+        "src/ads_system/infrastructure/interchange/knowledge_bundle.py",
+        "tests/fixtures/knowledge/reusable_knowledge_stress_v1.json",
+        "tests/unit/test_knowledge_interchange.py"
+      ],
+      "class_name": "WORKFLOW_CHANGE",
+      "commit_sha": "842676c04ce6d0305365de60bddec876a530e185",
+      "committed_iso_metadata_only": "2026-08-20T11:58:59+02:00",
+      "id": "WORKFLOW_CHANGE-01",
+      "parents": [
+        "45ae9dfd2b9943084f9a85db31467366cb2263ee"
+      ],
+      "ranked_priority_sha256": "01aa5ad39587ffd4fe72b54de3c5bf95e8a8ff4dad363dc137340330b7f9d1c0",
+      "source_proof": {
+        "external_ci_probe_performed": false,
+        "external_ci_run_verified": false,
+        "git_tree_path_change_proved": true,
+        "operative_deployment_proved_from_git_paths": false,
+        "original_diff_tree_paths_verified": true,
+        "original_diff_tree_stdout_bytes": 312,
+        "original_diff_tree_stdout_sha256": "e3298fe0b93a1305520a46af16b47f4ec088ef0da3a9e6350a3f560309bf11ff",
+        "original_git_object_type": "commit",
+        "owner_signed_governing_effect_proved_from_git_paths": false,
+        "reachable_in_exact_pin": true,
+        "real_test_execution_proved_from_git_paths": false,
+        "source_file_contents_read": false,
+        "source_semantic_accuracy_proved": false
+      }
+    },
+    {
+      "authored_iso_metadata_only": "2026-08-20T16:54:40+02:00",
+      "changed_path_count": 2,
+      "changed_paths": [
+        ".github/workflows/generate-frontend-visual-baselines.yml",
+        ".github/workflows/v1-frontend-spike.yml"
+      ],
+      "class_name": "WORKFLOW_CHANGE",
+      "commit_sha": "7e79902b86269c7674f719a7f3583b7a70bab3a3",
+      "committed_iso_metadata_only": "2026-08-20T16:54:40+02:00",
+      "id": "WORKFLOW_CHANGE-02",
+      "parents": [
+        "d78444284104c950b7572981007b13178180e3f5"
+      ],
+      "ranked_priority_sha256": "04e91157e02fe47ad511f8eb1d990e60e734c4ea331493e37f73ad0b9c09359b",
+      "source_proof": {
+        "external_ci_probe_performed": false,
+        "external_ci_run_verified": false,
+        "git_tree_path_change_proved": true,
+        "operative_deployment_proved_from_git_paths": false,
+        "original_diff_tree_paths_verified": true,
+        "original_diff_tree_stdout_bytes": 97,
+        "original_diff_tree_stdout_sha256": "b7778f1240153a908e6d3063895aee1d1ad7585030b30d3ec058d7592d25148e",
+        "original_git_object_type": "commit",
+        "owner_signed_governing_effect_proved_from_git_paths": false,
+        "reachable_in_exact_pin": true,
+        "real_test_execution_proved_from_git_paths": false,
+        "source_file_contents_read": false,
+        "source_semantic_accuracy_proved": false
+      }
+    },
+    {
+      "authored_iso_metadata_only": "2026-08-19T08:12:04+02:00",
+      "changed_path_count": 1,
+      "changed_paths": [
+        ".github/workflows/public-release-audit.yml"
+      ],
+      "class_name": "WORKFLOW_CHANGE",
+      "commit_sha": "300d5ba581cdd8904d8548b838865c78b6a6c9ca",
+      "committed_iso_metadata_only": "2026-08-19T08:12:04+02:00",
+      "id": "WORKFLOW_CHANGE-03",
+      "parents": [
+        "dea141e3a3f25d519d6e84e4651a76c83161e619"
+      ],
+      "ranked_priority_sha256": "0594371f93620f284d506b975876a7a395d90af8698159e473370de8eb3e1f15",
+      "source_proof": {
+        "external_ci_probe_performed": false,
+        "external_ci_run_verified": false,
+        "git_tree_path_change_proved": true,
+        "operative_deployment_proved_from_git_paths": false,
+        "original_diff_tree_paths_verified": true,
+        "original_diff_tree_stdout_bytes": 43,
+        "original_diff_tree_stdout_sha256": "c9c4b72ab35c5c27febb82253b025f4cf773659ce82f8144bfb2c3a794140b6c",
+        "original_git_object_type": "commit",
+        "owner_signed_governing_effect_proved_from_git_paths": false,
+        "reachable_in_exact_pin": true,
+        "real_test_execution_proved_from_git_paths": false,
+        "source_file_contents_read": false,
+        "source_semantic_accuracy_proved": false
+      }
+    },
+    {
+      "authored_iso_metadata_only": "2026-08-20T12:33:10+02:00",
+      "changed_path_count": 1,
+      "changed_paths": [
+        ".github/workflows/v1-knowledge-roundtrip-postgres-debug.yml"
+      ],
+      "class_name": "WORKFLOW_CHANGE",
+      "commit_sha": "3f57840ed092c4c36bcd9fd61e234f119a9c4824",
+      "committed_iso_metadata_only": "2026-08-20T12:33:10+02:00",
+      "id": "WORKFLOW_CHANGE-04",
+      "parents": [
+        "21620c39298d5c3e5d5dd58076a402b04af4e4ff"
+      ],
+      "ranked_priority_sha256": "10e03046df3ca5c4cc50a3083c3ed231467a8a940e2d9f7bdddc11c7a42e3723",
+      "source_proof": {
+        "external_ci_probe_performed": false,
+        "external_ci_run_verified": false,
+        "git_tree_path_change_proved": true,
+        "operative_deployment_proved_from_git_paths": false,
+        "original_diff_tree_paths_verified": true,
+        "original_diff_tree_stdout_bytes": 60,
+        "original_diff_tree_stdout_sha256": "85fc3224eff0e25ae783bed1266e8aa906b735752dada60ec6afe363d4526d32",
+        "original_git_object_type": "commit",
+        "owner_signed_governing_effect_proved_from_git_paths": false,
+        "reachable_in_exact_pin": true,
+        "real_test_execution_proved_from_git_paths": false,
+        "source_file_contents_read": false,
+        "source_semantic_accuracy_proved": false
+      }
+    },
+    {
+      "authored_iso_metadata_only": "2026-11-11T13:38:19+01:00",
+      "changed_path_count": 7,
+      "changed_paths": [
+        ".gitattributes",
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/local_execution/validation/332_r0_p03_independently_verified_31_original_payloads_and_six_material_holds.md",
+        "experiments/r0_p03_navigation_probe/NEED_SOURCE_ADJUDICATION_AGGREGATE_VERIFIED_V02.md",
+        "experiments/r0_p03_navigation_probe/R0_P03_SIX_MATERIAL_HOLDS_EVIDENCE_DISPOSITION_HANDOFF_V01.md",
+        "tests/unit/test_r0_p03_need_source_adjudication_verified_v02_identity.py"
+      ],
+      "class_name": "TEST_CHANGE",
+      "commit_sha": "0ac7283ec2b38c75383da9d3c35e2a5f58e590e6",
+      "committed_iso_metadata_only": "2026-11-11T13:38:19+01:00",
+      "id": "TEST_CHANGE-01",
+      "parents": [
+        "f3cd6d591e0453eef8b059320faa707ec3b6aba1"
+      ],
+      "ranked_priority_sha256": "0114fc260f387cce87591d4612152803d878ba4717a3739e8f23a9b2695f11b5",
+      "source_proof": {
+        "external_ci_probe_performed": false,
+        "external_ci_run_verified": false,
+        "git_tree_path_change_proved": true,
+        "operative_deployment_proved_from_git_paths": false,
+        "original_diff_tree_paths_verified": true,
+        "original_diff_tree_stdout_bytes": 430,
+        "original_diff_tree_stdout_sha256": "43372ee642a595260d3bfba953a5a1a2f50ca8fbbb75f5ab037e24a224211306",
+        "original_git_object_type": "commit",
+        "owner_signed_governing_effect_proved_from_git_paths": false,
+        "reachable_in_exact_pin": true,
+        "real_test_execution_proved_from_git_paths": false,
+        "source_file_contents_read": false,
+        "source_semantic_accuracy_proved": false
+      }
+    },
+    {
+      "authored_iso_metadata_only": "2026-08-23T20:55:43+02:00",
+      "changed_path_count": 1,
+      "changed_paths": [
+        "tests/unit/test_ads_live_experiment_launcher.py"
+      ],
+      "class_name": "TEST_CHANGE",
+      "commit_sha": "cf9cc03cf6883cbb7e0ccb7672802e828fbd9d39",
+      "committed_iso_metadata_only": "2026-08-23T20:55:43+02:00",
+      "id": "TEST_CHANGE-02",
+      "parents": [
+        "63fc42e17c0e760392041cbb91cc5e47f867bcc3"
+      ],
+      "ranked_priority_sha256": "012a2e529a29e8133214c8867c8800e55adf18d5e9e7f9fb691789bff511e4f2",
+      "source_proof": {
+        "external_ci_probe_performed": false,
+        "external_ci_run_verified": false,
+        "git_tree_path_change_proved": true,
+        "operative_deployment_proved_from_git_paths": false,
+        "original_diff_tree_paths_verified": true,
+        "original_diff_tree_stdout_bytes": 48,
+        "original_diff_tree_stdout_sha256": "744e0ccdd1be85b123cd668d3ec64c64e5cb21be9ea7cba44ad14c47c0b9eea1",
+        "original_git_object_type": "commit",
+        "owner_signed_governing_effect_proved_from_git_paths": false,
+        "reachable_in_exact_pin": true,
+        "real_test_execution_proved_from_git_paths": false,
+        "source_file_contents_read": false,
+        "source_semantic_accuracy_proved": false
+      }
+    },
+    {
+      "authored_iso_metadata_only": "2026-09-14T13:22:28+02:00",
+      "changed_path_count": 15,
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/510_q9_shadow_subsystem_support_passed_evidence_reconciliation_next.md",
+        "docs/current_routing.json",
+        "docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md",
+        "docs/research/144_whole_architecture_candidate_repository_native_semantic_sources.md",
+        "docs/research/145_candidate_01_requirements_v02_design_coverage_and_qualification_plan.md",
+        "docs/research/165_q9_migration_authority_switch_rollback_result.md",
+        "docs/research/project_knowledge_candidate_01/QUALIFICATION_MATRIX_V01.json",
+        "docs/research/project_knowledge_candidate_01_q9_migration_v01/FINAL_COMPARISON_V01.json",
+        "docs/research/project_knowledge_candidate_01_q9_migration_v01/FIRST_RUN_COMPARISON_V01.json",
+        "docs/research/project_knowledge_candidate_01_q9_migration_v01/FIRST_RUN_RESULTS_V01.json",
+        "docs/research/project_knowledge_candidate_01_q9_migration_v01/RESULTS_V01.json",
+        "scripts/research/project_knowledge_candidate01_q9_migration_v01.py",
+        "tests/unit/test_project_knowledge_candidate01_q9_migration_v01.py"
+      ],
+      "class_name": "TEST_CHANGE",
+      "commit_sha": "49d11284fa38f79e5f379797b872f409a617728c",
+      "committed_iso_metadata_only": "2026-09-14T13:22:28+02:00",
+      "id": "TEST_CHANGE-03",
+      "parents": [
+        "9305692b5c474ba3b637e83366916622c5bf675e"
+      ],
+      "ranked_priority_sha256": "0138944c109881c744f79171faef3e0c6042ed3e57765afd93027f8b35c2b3a1",
+      "source_proof": {
+        "external_ci_probe_performed": false,
+        "external_ci_run_verified": false,
+        "git_tree_path_change_proved": true,
+        "operative_deployment_proved_from_git_paths": false,
+        "original_diff_tree_paths_verified": true,
+        "original_diff_tree_stdout_bytes": 1048,
+        "original_diff_tree_stdout_sha256": "af24212c54022d44217a052897adde72691044b4105782a77a148fc58096cd89",
+        "original_git_object_type": "commit",
+        "owner_signed_governing_effect_proved_from_git_paths": false,
+        "reachable_in_exact_pin": true,
+        "real_test_execution_proved_from_git_paths": false,
+        "source_file_contents_read": false,
+        "source_semantic_accuracy_proved": false
+      }
+    },
+    {
+      "authored_iso_metadata_only": "2026-10-10T16:20:11+02:00",
+      "changed_path_count": 13,
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/867_r0_p01_q0_source_trace_qualified_q1_review_next.md",
+        "docs/current_routing.json",
+        "docs/local_execution/validation/220_r0_p01_q0_trace_guard_and_synthetic_test_inventory.md",
+        "docs/model_collaboration/threads/MC-0030/STATE.json",
+        "docs/model_collaboration/threads/MC-0030/THREAD.md",
+        "docs/model_collaboration/threads/MC-0030/messages/028_chatgpt_r0_p01_q0_trace_q1_design_review_handoff.md",
+        "docs/research/531_r0_p01_successor_q0_trace_and_q1_prefreeze_architecture_candidate.md",
+        "docs/research/r0_p01_successor_design/R0_P01_Q0_REQUIREMENTS_TRACE_UNFROZEN.json",
+        "docs/research/r0_p01_successor_design/R0_P01_Q1_IMPLEMENTATION_BOUNDARY_CANDIDATE.md",
+        "scripts/check_r0_p01_successor_trace.py",
+        "tests/unit/test_r0_p01_successor_trace_guard.py"
+      ],
+      "class_name": "TEST_CHANGE",
+      "commit_sha": "58cef4c634eb66655fcbac1820c51e76797c96d3",
+      "committed_iso_metadata_only": "2026-10-10T16:20:11+02:00",
+      "id": "TEST_CHANGE-04",
+      "parents": [
+        "323acf5238a344c4f27d3eded36ecd558efa135d"
+      ],
+      "ranked_priority_sha256": "0154c3d413107bdfc8a2204e06a70079adc3a8a3f7008635861c75b6e0d4deb5",
+      "source_proof": {
+        "external_ci_probe_performed": false,
+        "external_ci_run_verified": false,
+        "git_tree_path_change_proved": true,
+        "operative_deployment_proved_from_git_paths": false,
+        "original_diff_tree_paths_verified": true,
+        "original_diff_tree_stdout_bytes": 782,
+        "original_diff_tree_stdout_sha256": "bbec52ef880a8478dd146ab2c562749d1b7b266b604544d96710301827c4051f",
+        "original_git_object_type": "commit",
+        "owner_signed_governing_effect_proved_from_git_paths": false,
+        "reachable_in_exact_pin": true,
+        "real_test_execution_proved_from_git_paths": false,
+        "source_file_contents_read": false,
+        "source_semantic_accuracy_proved": false
+      }
+    },
+    {
+      "authored_iso_metadata_only": "2026-08-28T10:55:23+02:00",
+      "changed_path_count": 1,
+      "changed_paths": [
+        "frontend/design-lab/cockpit-reintegration.js"
+      ],
+      "class_name": "IMPLEMENTATION_CHANGE",
+      "commit_sha": "e44868d07cab41778dae9a4c72daefc5303b8558",
+      "committed_iso_metadata_only": "2026-08-28T10:55:23+02:00",
+      "id": "IMPLEMENTATION_CHANGE-01",
+      "parents": [
+        "74beb9444efeb5b1f5b2fa02cf54640357a60a10"
+      ],
+      "ranked_priority_sha256": "001c63c9358098aca33ad0a8cd74f0e8e4533f2985af25af1278f4e2590e4058",
+      "source_proof": {
+        "external_ci_probe_performed": false,
+        "external_ci_run_verified": false,
+        "git_tree_path_change_proved": true,
+        "operative_deployment_proved_from_git_paths": false,
+        "original_diff_tree_paths_verified": true,
+        "original_diff_tree_stdout_bytes": 45,
+        "original_diff_tree_stdout_sha256": "d13108b908cd7ef3322121ba3e1e54ec336a81eb178adce2d9a0d825262cd2df",
+        "original_git_object_type": "commit",
+        "owner_signed_governing_effect_proved_from_git_paths": false,
+        "reachable_in_exact_pin": true,
+        "real_test_execution_proved_from_git_paths": false,
+        "source_file_contents_read": false,
+        "source_semantic_accuracy_proved": false
+      }
+    },
+    {
+      "authored_iso_metadata_only": "2026-08-27T18:09:28+02:00",
+      "changed_path_count": 1,
+      "changed_paths": [
+        "frontend/design-lab/work-unit-selection-state.html"
+      ],
+      "class_name": "IMPLEMENTATION_CHANGE",
+      "commit_sha": "e8fee484859437f80208ce8ce491340066a33beb",
+      "committed_iso_metadata_only": "2026-08-27T18:09:28+02:00",
+      "id": "IMPLEMENTATION_CHANGE-02",
+      "parents": [
+        "a96cea644e6ece5677b61182670edf615333e4fa"
+      ],
+      "ranked_priority_sha256": "00f9268f39aa6319997e589a3ef05501863fa2264bb332769c83593cebe00d05",
+      "source_proof": {
+        "external_ci_probe_performed": false,
+        "external_ci_run_verified": false,
+        "git_tree_path_change_proved": true,
+        "operative_deployment_proved_from_git_paths": false,
+        "original_diff_tree_paths_verified": true,
+        "original_diff_tree_stdout_bytes": 51,
+        "original_diff_tree_stdout_sha256": "0d76744b27f0fc59cdd38bc713c9c29e70da03e8b7594a99fdb0f2cc6c813948",
+        "original_git_object_type": "commit",
+        "owner_signed_governing_effect_proved_from_git_paths": false,
+        "reachable_in_exact_pin": true,
+        "real_test_execution_proved_from_git_paths": false,
+        "source_file_contents_read": false,
+        "source_semantic_accuracy_proved": false
+      }
+    },
+    {
+      "authored_iso_metadata_only": "2026-08-27T19:22:04+02:00",
+      "changed_path_count": 1,
+      "changed_paths": [
+        "frontend/design-lab/work-unit-detail-expansion-x5-accepted.js"
+      ],
+      "class_name": "IMPLEMENTATION_CHANGE",
+      "commit_sha": "021ab5415ad62c2a597009678cdf71de27a096eb",
+      "committed_iso_metadata_only": "2026-08-27T19:22:04+02:00",
+      "id": "IMPLEMENTATION_CHANGE-03",
+      "parents": [
+        "8fc85f00e80a9a9181851bde37d6aa79933bf50d"
+      ],
+      "ranked_priority_sha256": "0120e0fcc194cbead87246ea870e6aaeae769644ee86b9cea4715eb8589ceeba",
+      "source_proof": {
+        "external_ci_probe_performed": false,
+        "external_ci_run_verified": false,
+        "git_tree_path_change_proved": true,
+        "operative_deployment_proved_from_git_paths": false,
+        "original_diff_tree_paths_verified": true,
+        "original_diff_tree_stdout_bytes": 62,
+        "original_diff_tree_stdout_sha256": "e036d56b9daa9503aa171d68d2ce9bbdc7ddb658cb61904c30efaa5be43c5335",
+        "original_git_object_type": "commit",
+        "owner_signed_governing_effect_proved_from_git_paths": false,
+        "reachable_in_exact_pin": true,
+        "real_test_execution_proved_from_git_paths": false,
+        "source_file_contents_read": false,
+        "source_semantic_accuracy_proved": false
+      }
+    },
+    {
+      "authored_iso_metadata_only": "2026-08-28T19:54:28+02:00",
+      "changed_path_count": 1,
+      "changed_paths": [
+        "frontend/design-lab/cockpit-product-surface-study.js"
+      ],
+      "class_name": "IMPLEMENTATION_CHANGE",
+      "commit_sha": "d7b30edaae0e74074bcd9c2a31d37503f157a2cb",
+      "committed_iso_metadata_only": "2026-08-28T19:54:28+02:00",
+      "id": "IMPLEMENTATION_CHANGE-04",
+      "parents": [
+        "8eab1f4fe64fa0716594fd7495a97a394ac9cde5"
+      ],
+      "ranked_priority_sha256": "052c2f479a696a824c16e885ddb302cb55591fd0ef10185ebd57a258e35bc4a7",
+      "source_proof": {
+        "external_ci_probe_performed": false,
+        "external_ci_run_verified": false,
+        "git_tree_path_change_proved": true,
+        "operative_deployment_proved_from_git_paths": false,
+        "original_diff_tree_paths_verified": true,
+        "original_diff_tree_stdout_bytes": 53,
+        "original_diff_tree_stdout_sha256": "45a3bfc58d25ad3362a7b6b58a8df9befd02efcba085c6438233c9337b70934f",
+        "original_git_object_type": "commit",
+        "owner_signed_governing_effect_proved_from_git_paths": false,
+        "reachable_in_exact_pin": true,
+        "real_test_execution_proved_from_git_paths": false,
+        "source_file_contents_read": false,
+        "source_semantic_accuracy_proved": false
+      }
+    },
+    {
+      "authored_iso_metadata_only": "2026-08-30T10:37:15+02:00",
+      "changed_path_count": 1,
+      "changed_paths": [
+        "docs/CONTINUITY.md"
+      ],
+      "class_name": "DOCUMENTATION_ONLY",
+      "commit_sha": "a8fcd9393cc3bfe6b6a0f8ef4fa5302122855551",
+      "committed_iso_metadata_only": "2026-08-30T10:37:15+02:00",
+      "id": "DOCUMENTATION_ONLY-01",
+      "parents": [
+        "24fd1fe0b8edda5d243b4a39c7d765c3cb6f9cb8"
+      ],
+      "ranked_priority_sha256": "0024b58917543e06c250c23d368e77d7c85ead9df06a276d5ddccad9970be4c2",
+      "source_proof": {
+        "external_ci_probe_performed": false,
+        "external_ci_run_verified": false,
+        "git_tree_path_change_proved": true,
+        "operative_deployment_proved_from_git_paths": false,
+        "original_diff_tree_paths_verified": true,
+        "original_diff_tree_stdout_bytes": 19,
+        "original_diff_tree_stdout_sha256": "a1d9624b4c6ab483da1dc83b4cbd51c49f257ee8e56a65ddc7b95fc5cae665c3",
+        "original_git_object_type": "commit",
+        "owner_signed_governing_effect_proved_from_git_paths": false,
+        "reachable_in_exact_pin": true,
+        "real_test_execution_proved_from_git_paths": false,
+        "source_file_contents_read": false,
+        "source_semantic_accuracy_proved": false
+      }
+    },
+    {
+      "authored_iso_metadata_only": "2026-09-21T08:32:22+02:00",
+      "changed_path_count": 4,
+      "changed_paths": [
+        "docs/research/219_activation_orchestration_self_hosting_bootstrap_program.md",
+        "docs/research/224_ao5_anchored_interaction_continuity_and_independent_recovery.md",
+        "docs/research/project_knowledge_activation_orchestration/AO5_INTERACTION_CONTINUITY_AND_RECOVERY_V01.json",
+        "docs/research/project_knowledge_activation_orchestration/README.md"
+      ],
+      "class_name": "DOCUMENTATION_ONLY",
+      "commit_sha": "69f2e502bc345161391925db747481fe2e58ba6d",
+      "committed_iso_metadata_only": "2026-09-21T08:32:22+02:00",
+      "id": "DOCUMENTATION_ONLY-02",
+      "parents": [
+        "bc2f2d050ac10d75f9aab6e15311dd8e1f32f6a2"
+      ],
+      "ranked_priority_sha256": "0036cb514feae14dada1b5d0b07fde033304dbf6446bb842a022ace89f871798",
+      "source_proof": {
+        "external_ci_probe_performed": false,
+        "external_ci_run_verified": false,
+        "git_tree_path_change_proved": true,
+        "operative_deployment_proved_from_git_paths": false,
+        "original_diff_tree_paths_verified": true,
+        "original_diff_tree_stdout_bytes": 332,
+        "original_diff_tree_stdout_sha256": "4cae08d1c6ad3e0c232c33660f749be9999798367d2947e89f61fc464d88a1b5",
+        "original_git_object_type": "commit",
+        "owner_signed_governing_effect_proved_from_git_paths": false,
+        "reachable_in_exact_pin": true,
+        "real_test_execution_proved_from_git_paths": false,
+        "source_file_contents_read": false,
+        "source_semantic_accuracy_proved": false
+      }
+    },
+    {
+      "authored_iso_metadata_only": "2026-08-08T23:10:59+02:00",
+      "changed_path_count": 1,
+      "changed_paths": [
+        "docs/checkpoints/016_first_real_model_calibration_output_budget.md"
+      ],
+      "class_name": "DOCUMENTATION_ONLY",
+      "commit_sha": "64f7dc19332dc701b1127726d2006fbc33a418f5",
+      "committed_iso_metadata_only": "2026-08-08T23:10:59+02:00",
+      "id": "DOCUMENTATION_ONLY-03",
+      "parents": [
+        "c02f765acc2c185f276a3b257136d2d64ab82460"
+      ],
+      "ranked_priority_sha256": "004f8bfaf5eba07df40ad2a60b47702901c0f3f24e3fa022ce41b5ea1d890e92",
+      "source_proof": {
+        "external_ci_probe_performed": false,
+        "external_ci_run_verified": false,
+        "git_tree_path_change_proved": true,
+        "operative_deployment_proved_from_git_paths": false,
+        "original_diff_tree_paths_verified": true,
+        "original_diff_tree_stdout_bytes": 67,
+        "original_diff_tree_stdout_sha256": "5506393f43df0172cbf515926ad11a4c60f7a5899fcb92e855aa3a60434c93aa",
+        "original_git_object_type": "commit",
+        "owner_signed_governing_effect_proved_from_git_paths": false,
+        "reachable_in_exact_pin": true,
+        "real_test_execution_proved_from_git_paths": false,
+        "source_file_contents_read": false,
+        "source_semantic_accuracy_proved": false
+      }
+    },
+    {
+      "authored_iso_metadata_only": "2026-09-26T11:42:01+02:00",
+      "changed_path_count": 9,
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/683_key_author_a_p3_explicitly_authorized_batch1_next.md",
+        "docs/current_routing.json",
+        "docs/model_collaboration/REVIEW_INBOX.md",
+        "docs/model_collaboration/threads/MC-0029/BRIEF.md",
+        "docs/model_collaboration/threads/MC-0029/STATE.json",
+        "docs/model_collaboration/threads/MC-0029/THREAD.md",
+        "docs/research/346_key_author_a_p3_explicit_owner_authorization.md"
+      ],
+      "class_name": "DOCUMENTATION_ONLY",
+      "commit_sha": "3429447be8a4be6d3daabf83608b4587efd77b6e",
+      "committed_iso_metadata_only": "2026-09-26T11:42:01+02:00",
+      "id": "DOCUMENTATION_ONLY-04",
+      "parents": [
+        "314b01c387cd18dbc2a5e95cc983f1c3aed2a99d"
+      ],
+      "ranked_priority_sha256": "0077a3fc8f7ac2eae44304158222fe197716070726dd79de6c7e4725262f2e67",
+      "source_proof": {
+        "external_ci_probe_performed": false,
+        "external_ci_run_verified": false,
+        "git_tree_path_change_proved": true,
+        "operative_deployment_proved_from_git_paths": false,
+        "original_diff_tree_paths_verified": true,
+        "original_diff_tree_stdout_bytes": 404,
+        "original_diff_tree_stdout_sha256": "37ee387d2bb5176830b85d2911662e3b530a29f497ecef9c0fae77837a02bc89",
+        "original_git_object_type": "commit",
+        "owner_signed_governing_effect_proved_from_git_paths": false,
+        "reachable_in_exact_pin": true,
+        "real_test_execution_proved_from_git_paths": false,
+        "source_file_contents_read": false,
+        "source_semantic_accuracy_proved": false
+      }
+    }
+  ],
+  "source_status": {
+    "C02_PRIVATE_REFERENCES": "NOT_INSPECTED",
+    "actual_test_execution": "UNVERIFIED",
+    "current_governing_authority": "UNVERIFIED",
+    "git_change_reproducibility": "ACTUAL_COMMIT_AND_DIFF_TREE_VERIFIED",
+    "github_actions_run_association": "NOT_QUERIED",
+    "human_owner_acceptance": "UNVERIFIED",
+    "operative_deployment": "UNVERIFIED",
+    "original_content_evidence": "NOT_READ_IN_THIS_SAMPLE"
+  },
+  "source_world": {
+    "all_reachable_nonmerge_commits": 3230,
+    "counts_by_exclusive_path_stratum": {
+      "DOCUMENTATION_ONLY": 2047,
+      "IMPLEMENTATION_CHANGE": 615,
+      "OTHER_OR_UNCLASSIFIED": 248,
+      "TEST_CHANGE": 203,
+      "WORKFLOW_CHANGE": 117
+    },
+    "file_contents_or_protected_gold_inspected": false,
+    "fixed_priority_prefix": "R0-SOURCE-EVENT-WITNESS-V01",
+    "sample_target_per_class": 4,
+    "sampled_by_stratum": {
+      "DOCUMENTATION_ONLY": 4,
+      "IMPLEMENTATION_CHANGE": 4,
+      "TEST_CHANGE": 4,
+      "WORKFLOW_CHANGE": 4
+    },
+    "unclassified_commits_retained_in_denominator": 248
+  }
+}

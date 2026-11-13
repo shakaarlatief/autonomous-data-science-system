@@ -1058,6 +1058,16 @@ docs/research/650_r0_p03_t2_first_real_new_source_owner_status_and_evidence_guar
 docs/research/651_r0_p03_t2_subject_identity_and_unsupported_governing_question_execution.md
 docs/research/652_r0_p03_t2_real_decision_ledger_snapshot_supersession_and_operational_authority_probe.md
 docs/research/653_r0_p03_no_decision_id_competing_retrievers_rank_fusion_and_selective_evidence_probe.md
+docs/research/654_r0_p03_objective_git_event_and_external_ci_evidence_ladder_audit.md
+docs/local_execution/validation/353_r0_p03_original_git_event_witness_and_external_ci_evidence_qualification.md
+docs/checkpoints/917_r0_p03_original_git_and_external_ci_execution_evidence_boundary.md
+experiments/r0_p03_navigation_probe/EXPLORATORY_R0_SOURCE_EVENT_WITNESS_CAPACITY_CONTRACT_V01.md
+experiments/r0_p03_navigation_probe/exploratory_r0_source_event_witness_capacity_v01.py
+experiments/r0_p03_navigation_probe/exploratory_r0_source_event_witness_capacity_result_v01.json
+experiments/r0_p03_navigation_probe/EXPLORATORY_R0_SOURCE_EVENT_EXTERNAL_CI_WITNESS_CONTRACT_V01.md
+experiments/r0_p03_navigation_probe/exploratory_r0_source_event_external_ci_witness_result_v01.json
+experiments/r0_p03_navigation_probe/exploratory_r0_source_event_external_ci_step_witness_v01.json
+tests/unit/test_r0_p03_source_event_witness_capacity_and_external_ci.py
 docs/local_execution/validation/352_r0_p03_no_id_t2_competing_lexical_character_fusion_and_source_status_tests.md
 docs/checkpoints/916_r0_p03_t2_no_id_query_method_comparison_and_consensus_source_status_hypotheses.md
 experiments/r0_p03_navigation_probe/EXPLORATORY_T2_NO_ID_MANUAL_QUESTION_MANIFEST_V01.json
@@ -2081,7 +2091,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-916 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-917 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

@@ -1,0 +1,214 @@
+{
+  "boundaries": [
+    "GitHub API reported steps only; step conclusion does not verify durable artifact contents.",
+    "Two failed-job steps and one successful-job step chosen for source-evidence construct demonstration, not statistical inference.",
+    "No private questions, original source contents, owner credentials or operative deployment evidence inspected."
+  ],
+  "formal_r0_p03_scored": false,
+  "id": "R0_P03_EXTERNAL_CI_PURPOSIVE_STEP_WITNESS_V01",
+  "job_ids": [
+    96387316689,
+    96395817325,
+    96387336750
+  ],
+  "observed_date_utc": "2026-11-13",
+  "repo": "shakaarlatief/autonomous-data-science-system",
+  "selection": "AFTER_OBSERVING_RUN_AND_JOB_OUTCOMES_PURPOSIVE_NOT_BLIND",
+  "source_run_receipt": "exploratory_r0_source_event_external_ci_witness_result_v01.json",
+  "step_evidence": [
+    {
+      "job_id": 96387316689,
+      "step_count": 5,
+      "steps": [
+        {
+          "completed_at": "2026-08-20T09:59:48Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "started_at": "2026-08-20T09:59:48Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-08-20T09:59:50Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v7",
+          "number": 2,
+          "started_at": "2026-08-20T09:59:48Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-08-20T09:59:50Z",
+          "conclusion": "failure",
+          "name": "Persist successful interchange evidence",
+          "number": 3,
+          "started_at": "2026-08-20T09:59:50Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-08-20T09:59:50Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v7",
+          "number": 6,
+          "started_at": "2026-08-20T09:59:50Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-08-20T09:59:50Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 7,
+          "started_at": "2026-08-20T09:59:50Z",
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "job_id": 96395817325,
+      "step_count": 9,
+      "steps": [
+        {
+          "completed_at": "2026-08-20T10:33:17Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "started_at": "2026-08-20T10:33:16Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-08-20T10:33:32Z",
+          "conclusion": "success",
+          "name": "Initialize containers",
+          "number": 2,
+          "started_at": "2026-08-20T10:33:17Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-08-20T10:33:33Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v7",
+          "number": 3,
+          "started_at": "2026-08-20T10:33:32Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-08-20T10:33:36Z",
+          "conclusion": "success",
+          "name": "Install uv",
+          "number": 4,
+          "started_at": "2026-08-20T10:33:33Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-08-20T10:33:42Z",
+          "conclusion": "failure",
+          "name": "Run and persist PostgreSQL diagnostic",
+          "number": 5,
+          "started_at": "2026-08-20T10:33:36Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-08-20T10:33:42Z",
+          "conclusion": "skipped",
+          "name": "Post Install uv",
+          "number": 8,
+          "started_at": "2026-08-20T10:33:42Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-08-20T10:33:42Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v7",
+          "number": 9,
+          "started_at": "2026-08-20T10:33:42Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-08-20T10:33:43Z",
+          "conclusion": "success",
+          "name": "Stop containers",
+          "number": 10,
+          "started_at": "2026-08-20T10:33:42Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-08-20T10:33:43Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 11,
+          "started_at": "2026-08-20T10:33:43Z",
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "job_id": 96387336750,
+      "step_count": 8,
+      "steps": [
+        {
+          "completed_at": "2026-08-20T09:59:54Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "started_at": "2026-08-20T09:59:53Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-08-20T09:59:56Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v7",
+          "number": 2,
+          "started_at": "2026-08-20T09:59:54Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-08-20T09:59:59Z",
+          "conclusion": "success",
+          "name": "Install uv",
+          "number": 3,
+          "started_at": "2026-08-20T09:59:56Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-08-20T10:00:03Z",
+          "conclusion": "success",
+          "name": "Lock, test, build, and export",
+          "number": 4,
+          "started_at": "2026-08-20T09:59:59Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-08-20T10:00:03Z",
+          "conclusion": "success",
+          "name": "Persist successful evidence and lockfile",
+          "number": 5,
+          "started_at": "2026-08-20T10:00:03Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-08-20T10:00:04Z",
+          "conclusion": "success",
+          "name": "Post Install uv",
+          "number": 9,
+          "started_at": "2026-08-20T10:00:03Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-08-20T10:00:04Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v7",
+          "number": 10,
+          "started_at": "2026-08-20T10:00:04Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-08-20T10:00:04Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 11,
+          "started_at": "2026-08-20T10:00:04Z",
+          "status": "completed"
+        }
+      ]
+    }
+  ]
+}

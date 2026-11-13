@@ -1,0 +1,737 @@
+{
+  "contract": "EXPLORATORY_R0_SOURCE_EVENT_EXTERNAL_CI_WITNESS_CONTRACT_V01.md",
+  "formal_r0_p03_scored": false,
+  "identifier": "R0_P03_HISTORICAL_SOURCE_EVENT_EXTERNAL_ACTIONS_WITNESS_V01",
+  "job_details": [
+    {
+      "first_page_only": true,
+      "jobs": [
+        {
+          "completedAt": "2026-08-20T09:59:19Z",
+          "conclusion": "success",
+          "htmlUrl": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/32356647189/job/96387164340",
+          "id": 96387164340,
+          "name": "interchange-contract (ubuntu-latest, 3.12)",
+          "runAttempt": 1,
+          "runId": 32356647189,
+          "startedAt": "2026-08-20T09:59:10Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-08-20T09:59:44Z",
+          "conclusion": "success",
+          "htmlUrl": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/32356647189/job/96387164599",
+          "id": 96387164599,
+          "name": "interchange-contract (windows-latest, 3.14)",
+          "runAttempt": 1,
+          "runId": 32356647189,
+          "startedAt": "2026-08-20T09:59:10Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-08-20T09:59:20Z",
+          "conclusion": "success",
+          "htmlUrl": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/32356647189/job/96387164619",
+          "id": 96387164619,
+          "name": "interchange-contract (ubuntu-latest, 3.14)",
+          "runAttempt": 1,
+          "runId": 32356647189,
+          "startedAt": "2026-08-20T09:59:11Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-08-20T09:59:31Z",
+          "conclusion": "success",
+          "htmlUrl": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/32356647189/job/96387164620",
+          "id": 96387164620,
+          "name": "interchange-contract (windows-latest, 3.12)",
+          "runAttempt": 1,
+          "runId": 32356647189,
+          "startedAt": "2026-08-20T09:59:10Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-08-20T09:59:34Z",
+          "conclusion": "success",
+          "htmlUrl": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/32356647189/job/96387164704",
+          "id": 96387164704,
+          "name": "interchange-contract (windows-latest, 3.13)",
+          "runAttempt": 1,
+          "runId": 32356647189,
+          "startedAt": "2026-08-20T09:59:11Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-08-20T09:59:23Z",
+          "conclusion": "success",
+          "htmlUrl": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/32356647189/job/96387164810",
+          "id": 96387164810,
+          "name": "interchange-contract (ubuntu-latest, 3.13)",
+          "runAttempt": 1,
+          "runId": 32356647189,
+          "startedAt": "2026-08-20T09:59:11Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-08-20T09:59:52Z",
+          "conclusion": "failure",
+          "htmlUrl": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/32356647189/job/96387316689",
+          "id": 96387316689,
+          "name": "persist-result",
+          "runAttempt": 1,
+          "runId": 32356647189,
+          "startedAt": "2026-08-20T09:59:47Z",
+          "status": "completed"
+        }
+      ],
+      "latest_attempt_only": true,
+      "returned_count": 7,
+      "run_id": 32356647189,
+      "total_count": 7
+    },
+    {
+      "first_page_only": true,
+      "jobs": [
+        {
+          "completedAt": "2026-08-20T10:33:45Z",
+          "conclusion": "failure",
+          "htmlUrl": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/32359491623/job/96395817325",
+          "id": 96395817325,
+          "name": "diagnose-postgres",
+          "runAttempt": 1,
+          "runId": 32359491623,
+          "startedAt": "2026-08-20T10:33:15Z",
+          "status": "completed"
+        }
+      ],
+      "latest_attempt_only": true,
+      "returned_count": 1,
+      "run_id": 32359491623,
+      "total_count": 1
+    },
+    {
+      "first_page_only": true,
+      "jobs": [
+        {
+          "completedAt": "2026-08-20T09:59:38Z",
+          "conclusion": "success",
+          "htmlUrl": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/32356647199/job/96387164360",
+          "id": 96387164360,
+          "name": "cross-platform-tests (windows-latest, 3.13)",
+          "runAttempt": 1,
+          "runId": 32356647199,
+          "startedAt": "2026-08-20T09:59:10Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-08-20T09:59:21Z",
+          "conclusion": "success",
+          "htmlUrl": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/32356647199/job/96387164570",
+          "id": 96387164570,
+          "name": "cross-platform-tests (ubuntu-latest, 3.13)",
+          "runAttempt": 1,
+          "runId": 32356647199,
+          "startedAt": "2026-08-20T09:59:10Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-08-20T09:59:49Z",
+          "conclusion": "success",
+          "htmlUrl": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/32356647199/job/96387164614",
+          "id": 96387164614,
+          "name": "cross-platform-tests (windows-latest, 3.14)",
+          "runAttempt": 1,
+          "runId": 32356647199,
+          "startedAt": "2026-08-20T09:59:10Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-08-20T09:59:35Z",
+          "conclusion": "success",
+          "htmlUrl": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/32356647199/job/96387164749",
+          "id": 96387164749,
+          "name": "cross-platform-tests (windows-latest, 3.12)",
+          "runAttempt": 1,
+          "runId": 32356647199,
+          "startedAt": "2026-08-20T09:59:11Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-08-20T09:59:22Z",
+          "conclusion": "success",
+          "htmlUrl": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/32356647199/job/96387164756",
+          "id": 96387164756,
+          "name": "cross-platform-tests (ubuntu-latest, 3.14)",
+          "runAttempt": 1,
+          "runId": 32356647199,
+          "startedAt": "2026-08-20T09:59:10Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-08-20T09:59:23Z",
+          "conclusion": "success",
+          "htmlUrl": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/32356647199/job/96387164776",
+          "id": 96387164776,
+          "name": "cross-platform-tests (ubuntu-latest, 3.12)",
+          "runAttempt": 1,
+          "runId": 32356647199,
+          "startedAt": "2026-08-20T09:59:11Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-08-20T10:00:07Z",
+          "conclusion": "success",
+          "htmlUrl": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/32356647199/job/96387336750",
+          "id": 96387336750,
+          "name": "persist-reproducibility-evidence",
+          "runAttempt": 1,
+          "runId": 32356647199,
+          "startedAt": "2026-08-20T09:59:52Z",
+          "status": "completed"
+        }
+      ],
+      "latest_attempt_only": true,
+      "returned_count": 7,
+      "run_id": 32356647199,
+      "total_count": 7
+    }
+  ],
+  "limitations": [
+    "Initial PR-only lookup returned zero for commits that have push-triggered runs; query scope matters.",
+    "GitHub API workflow and job conclusions are externally reported records, not independent replay or proof of completed deployment.",
+    "No matches from one endpoint cannot prove tests never ran locally or in other systems.",
+    "An overall workflow failure can include successful test jobs and failed evidence persistence; do not collapse job and run outcome.",
+    "Source sample was frozen prior to external API queries, but job-detail target choice followed inspection of failures and is purposive, not blind.",
+    "No private C01/C02 tasks, gold, source-specific restricted relevance, owner credentials or operative effect evidence was inspected.",
+    "No C02 answer closure, independent adjudication, source admission, scored R0-P03 outcome or physical target selected."
+  ],
+  "lookups": [
+    {
+      "category": "WORKFLOW_CHANGE",
+      "complete_single_page": true,
+      "http_status": 200,
+      "query_url": "https://api.github.com/repos/shakaarlatief/autonomous-data-science-system/actions/runs?head_sha=842676c04ce6d0305365de60bddec876a530e185&per_page=100",
+      "returned_count": 4,
+      "runs": [
+        {
+          "conclusion": "success",
+          "created_at": "2026-08-20T09:59:07Z",
+          "event": "push",
+          "head_sha": "842676c04ce6d0305365de60bddec876a530e185",
+          "html_url": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/32356647199",
+          "id": 32356647199,
+          "run_attempt": 1,
+          "status": "completed",
+          "updated_at": "2026-08-20T10:00:07Z",
+          "workflow_id": 338474257
+        },
+        {
+          "conclusion": "success",
+          "created_at": "2026-08-20T09:59:07Z",
+          "event": "push",
+          "head_sha": "842676c04ce6d0305365de60bddec876a530e185",
+          "html_url": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/32356647177",
+          "id": 32356647177,
+          "run_attempt": 1,
+          "status": "completed",
+          "updated_at": "2026-08-20T09:59:23Z",
+          "workflow_id": 337553633
+        },
+        {
+          "conclusion": "success",
+          "created_at": "2026-08-20T09:59:07Z",
+          "event": "push",
+          "head_sha": "842676c04ce6d0305365de60bddec876a530e185",
+          "html_url": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/32356647141",
+          "id": 32356647141,
+          "run_attempt": 1,
+          "status": "completed",
+          "updated_at": "2026-08-20T09:59:51Z",
+          "workflow_id": 338487655
+        },
+        {
+          "conclusion": "failure",
+          "created_at": "2026-08-20T09:59:07Z",
+          "event": "push",
+          "head_sha": "842676c04ce6d0305365de60bddec876a530e185",
+          "html_url": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/32356647189",
+          "id": 32356647189,
+          "run_attempt": 1,
+          "status": "completed",
+          "updated_at": "2026-08-20T09:59:53Z",
+          "workflow_id": 338500594
+        }
+      ],
+      "sha": "842676c04ce6d0305365de60bddec876a530e185",
+      "total_count": 4,
+      "zero_runs_meaning": "NO_MATCHES_IN_QUERY_NOT_GLOBAL_ABSENCE"
+    },
+    {
+      "category": "WORKFLOW_CHANGE",
+      "complete_single_page": true,
+      "http_status": 200,
+      "query_url": "https://api.github.com/repos/shakaarlatief/autonomous-data-science-system/actions/runs?head_sha=7e79902b86269c7674f719a7f3583b7a70bab3a3&per_page=100",
+      "returned_count": 2,
+      "runs": [
+        {
+          "conclusion": "success",
+          "created_at": "2026-08-20T14:55:03Z",
+          "event": "pull_request",
+          "head_sha": "7e79902b86269c7674f719a7f3583b7a70bab3a3",
+          "html_url": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/32383008263",
+          "id": 32383008263,
+          "run_attempt": 1,
+          "status": "completed",
+          "updated_at": "2026-08-20T14:56:40Z",
+          "workflow_id": 338586822
+        },
+        {
+          "conclusion": "success",
+          "created_at": "2026-08-20T14:55:01Z",
+          "event": "push",
+          "head_sha": "7e79902b86269c7674f719a7f3583b7a70bab3a3",
+          "html_url": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/32383003762",
+          "id": 32383003762,
+          "run_attempt": 1,
+          "status": "completed",
+          "updated_at": "2026-08-20T14:56:44Z",
+          "workflow_id": 338586822
+        }
+      ],
+      "sha": "7e79902b86269c7674f719a7f3583b7a70bab3a3",
+      "total_count": 2,
+      "zero_runs_meaning": "NO_MATCHES_IN_QUERY_NOT_GLOBAL_ABSENCE"
+    },
+    {
+      "category": "WORKFLOW_CHANGE",
+      "complete_single_page": true,
+      "http_status": 200,
+      "query_url": "https://api.github.com/repos/shakaarlatief/autonomous-data-science-system/actions/runs?head_sha=300d5ba581cdd8904d8548b838865c78b6a6c9ca&per_page=100",
+      "returned_count": 1,
+      "runs": [
+        {
+          "conclusion": "success",
+          "created_at": "2026-08-19T06:12:06Z",
+          "event": "push",
+          "head_sha": "300d5ba581cdd8904d8548b838865c78b6a6c9ca",
+          "html_url": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/32222410189",
+          "id": 32222410189,
+          "run_attempt": 1,
+          "status": "completed",
+          "updated_at": "2026-08-19T06:12:22Z",
+          "workflow_id": 337553633
+        }
+      ],
+      "sha": "300d5ba581cdd8904d8548b838865c78b6a6c9ca",
+      "total_count": 1,
+      "zero_runs_meaning": "NO_MATCHES_IN_QUERY_NOT_GLOBAL_ABSENCE"
+    },
+    {
+      "category": "WORKFLOW_CHANGE",
+      "complete_single_page": true,
+      "http_status": 200,
+      "query_url": "https://api.github.com/repos/shakaarlatief/autonomous-data-science-system/actions/runs?head_sha=3f57840ed092c4c36bcd9fd61e234f119a9c4824&per_page=100",
+      "returned_count": 2,
+      "runs": [
+        {
+          "conclusion": "success",
+          "created_at": "2026-08-20T10:33:12Z",
+          "event": "push",
+          "head_sha": "3f57840ed092c4c36bcd9fd61e234f119a9c4824",
+          "html_url": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/32359491657",
+          "id": 32359491657,
+          "run_attempt": 1,
+          "status": "completed",
+          "updated_at": "2026-08-20T10:33:25Z",
+          "workflow_id": 337553633
+        },
+        {
+          "conclusion": "failure",
+          "created_at": "2026-08-20T10:33:12Z",
+          "event": "push",
+          "head_sha": "3f57840ed092c4c36bcd9fd61e234f119a9c4824",
+          "html_url": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/32359491623",
+          "id": 32359491623,
+          "run_attempt": 1,
+          "status": "completed",
+          "updated_at": "2026-08-20T10:33:45Z",
+          "workflow_id": 338521595
+        }
+      ],
+      "sha": "3f57840ed092c4c36bcd9fd61e234f119a9c4824",
+      "total_count": 2,
+      "zero_runs_meaning": "NO_MATCHES_IN_QUERY_NOT_GLOBAL_ABSENCE"
+    },
+    {
+      "category": "TEST_CHANGE",
+      "complete_single_page": true,
+      "http_status": 200,
+      "query_url": "https://api.github.com/repos/shakaarlatief/autonomous-data-science-system/actions/runs?head_sha=0ac7283ec2b38c75383da9d3c35e2a5f58e590e6&per_page=100",
+      "returned_count": 3,
+      "runs": [
+        {
+          "conclusion": "success",
+          "created_at": "2026-11-11T12:39:24Z",
+          "event": "push",
+          "head_sha": "0ac7283ec2b38c75383da9d3c35e2a5f58e590e6",
+          "html_url": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/43022220929",
+          "id": 43022220929,
+          "run_attempt": 1,
+          "status": "completed",
+          "updated_at": "2026-11-11T12:39:59Z",
+          "workflow_id": 347295737
+        },
+        {
+          "conclusion": "success",
+          "created_at": "2026-11-11T12:39:24Z",
+          "event": "push",
+          "head_sha": "0ac7283ec2b38c75383da9d3c35e2a5f58e590e6",
+          "html_url": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/43022220912",
+          "id": 43022220912,
+          "run_attempt": 1,
+          "status": "completed",
+          "updated_at": "2026-11-11T12:39:34Z",
+          "workflow_id": 345308797
+        },
+        {
+          "conclusion": "success",
+          "created_at": "2026-11-11T12:39:24Z",
+          "event": "push",
+          "head_sha": "0ac7283ec2b38c75383da9d3c35e2a5f58e590e6",
+          "html_url": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/43022220919",
+          "id": 43022220919,
+          "run_attempt": 1,
+          "status": "completed",
+          "updated_at": "2026-11-11T12:39:47Z",
+          "workflow_id": 341120562
+        }
+      ],
+      "sha": "0ac7283ec2b38c75383da9d3c35e2a5f58e590e6",
+      "total_count": 3,
+      "zero_runs_meaning": "NO_MATCHES_IN_QUERY_NOT_GLOBAL_ABSENCE"
+    },
+    {
+      "category": "TEST_CHANGE",
+      "complete_single_page": true,
+      "http_status": 200,
+      "query_url": "https://api.github.com/repos/shakaarlatief/autonomous-data-science-system/actions/runs?head_sha=cf9cc03cf6883cbb7e0ccb7672802e828fbd9d39&per_page=100",
+      "returned_count": 0,
+      "runs": [],
+      "sha": "cf9cc03cf6883cbb7e0ccb7672802e828fbd9d39",
+      "total_count": 0,
+      "zero_runs_meaning": "NO_MATCHES_IN_QUERY_NOT_GLOBAL_ABSENCE"
+    },
+    {
+      "category": "TEST_CHANGE",
+      "complete_single_page": true,
+      "http_status": 200,
+      "query_url": "https://api.github.com/repos/shakaarlatief/autonomous-data-science-system/actions/runs?head_sha=49d11284fa38f79e5f379797b872f409a617728c&per_page=100",
+      "returned_count": 4,
+      "runs": [
+        {
+          "conclusion": "success",
+          "created_at": "2026-09-14T11:22:56Z",
+          "event": "push",
+          "head_sha": "49d11284fa38f79e5f379797b872f409a617728c",
+          "html_url": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/34837915092",
+          "id": 34837915092,
+          "run_attempt": 1,
+          "status": "completed",
+          "updated_at": "2026-09-14T11:23:06Z",
+          "workflow_id": 345308797
+        },
+        {
+          "conclusion": "success",
+          "created_at": "2026-09-14T11:22:56Z",
+          "event": "push",
+          "head_sha": "49d11284fa38f79e5f379797b872f409a617728c",
+          "html_url": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/34837915139",
+          "id": 34837915139,
+          "run_attempt": 1,
+          "status": "completed",
+          "updated_at": "2026-09-14T11:23:05Z",
+          "workflow_id": 338069547
+        },
+        {
+          "conclusion": "success",
+          "created_at": "2026-09-14T11:22:56Z",
+          "event": "push",
+          "head_sha": "49d11284fa38f79e5f379797b872f409a617728c",
+          "html_url": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/34837915229",
+          "id": 34837915229,
+          "run_attempt": 1,
+          "status": "completed",
+          "updated_at": "2026-09-14T11:23:25Z",
+          "workflow_id": 347295737
+        },
+        {
+          "conclusion": "success",
+          "created_at": "2026-09-14T11:22:56Z",
+          "event": "push",
+          "head_sha": "49d11284fa38f79e5f379797b872f409a617728c",
+          "html_url": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/34837915089",
+          "id": 34837915089,
+          "run_attempt": 1,
+          "status": "completed",
+          "updated_at": "2026-09-14T11:23:18Z",
+          "workflow_id": 341120562
+        }
+      ],
+      "sha": "49d11284fa38f79e5f379797b872f409a617728c",
+      "total_count": 4,
+      "zero_runs_meaning": "NO_MATCHES_IN_QUERY_NOT_GLOBAL_ABSENCE"
+    },
+    {
+      "category": "TEST_CHANGE",
+      "complete_single_page": true,
+      "http_status": 200,
+      "query_url": "https://api.github.com/repos/shakaarlatief/autonomous-data-science-system/actions/runs?head_sha=58cef4c634eb66655fcbac1820c51e76797c96d3&per_page=100",
+      "returned_count": 5,
+      "runs": [
+        {
+          "conclusion": "success",
+          "created_at": "2026-10-10T14:22:47Z",
+          "event": "push",
+          "head_sha": "58cef4c634eb66655fcbac1820c51e76797c96d3",
+          "html_url": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/38059369955",
+          "id": 38059369955,
+          "run_attempt": 1,
+          "status": "completed",
+          "updated_at": "2026-10-10T14:23:05Z",
+          "workflow_id": 341120562
+        },
+        {
+          "conclusion": "success",
+          "created_at": "2026-10-10T14:22:47Z",
+          "event": "push",
+          "head_sha": "58cef4c634eb66655fcbac1820c51e76797c96d3",
+          "html_url": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/38059369960",
+          "id": 38059369960,
+          "run_attempt": 1,
+          "status": "completed",
+          "updated_at": "2026-10-10T14:23:10Z",
+          "workflow_id": 342451668
+        },
+        {
+          "conclusion": "success",
+          "created_at": "2026-10-10T14:22:47Z",
+          "event": "push",
+          "head_sha": "58cef4c634eb66655fcbac1820c51e76797c96d3",
+          "html_url": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/38059369954",
+          "id": 38059369954,
+          "run_attempt": 1,
+          "status": "completed",
+          "updated_at": "2026-10-10T14:22:58Z",
+          "workflow_id": 345308797
+        },
+        {
+          "conclusion": "success",
+          "created_at": "2026-10-10T14:22:47Z",
+          "event": "push",
+          "head_sha": "58cef4c634eb66655fcbac1820c51e76797c96d3",
+          "html_url": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/38059369975",
+          "id": 38059369975,
+          "run_attempt": 1,
+          "status": "completed",
+          "updated_at": "2026-10-10T14:23:29Z",
+          "workflow_id": 347295737
+        },
+        {
+          "conclusion": "success",
+          "created_at": "2026-10-10T14:22:47Z",
+          "event": "push",
+          "head_sha": "58cef4c634eb66655fcbac1820c51e76797c96d3",
+          "html_url": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/38059369958",
+          "id": 38059369958,
+          "run_attempt": 1,
+          "status": "completed",
+          "updated_at": "2026-10-10T14:22:57Z",
+          "workflow_id": 338069547
+        }
+      ],
+      "sha": "58cef4c634eb66655fcbac1820c51e76797c96d3",
+      "total_count": 5,
+      "zero_runs_meaning": "NO_MATCHES_IN_QUERY_NOT_GLOBAL_ABSENCE"
+    },
+    {
+      "category": "IMPLEMENTATION_CHANGE",
+      "complete_single_page": true,
+      "http_status": 200,
+      "query_url": "https://api.github.com/repos/shakaarlatief/autonomous-data-science-system/actions/runs?head_sha=e44868d07cab41778dae9a4c72daefc5303b8558&per_page=100",
+      "returned_count": 0,
+      "runs": [],
+      "sha": "e44868d07cab41778dae9a4c72daefc5303b8558",
+      "total_count": 0,
+      "zero_runs_meaning": "NO_MATCHES_IN_QUERY_NOT_GLOBAL_ABSENCE"
+    },
+    {
+      "category": "IMPLEMENTATION_CHANGE",
+      "complete_single_page": true,
+      "http_status": 200,
+      "query_url": "https://api.github.com/repos/shakaarlatief/autonomous-data-science-system/actions/runs?head_sha=e8fee484859437f80208ce8ce491340066a33beb&per_page=100",
+      "returned_count": 0,
+      "runs": [],
+      "sha": "e8fee484859437f80208ce8ce491340066a33beb",
+      "total_count": 0,
+      "zero_runs_meaning": "NO_MATCHES_IN_QUERY_NOT_GLOBAL_ABSENCE"
+    },
+    {
+      "category": "IMPLEMENTATION_CHANGE",
+      "complete_single_page": true,
+      "http_status": 200,
+      "query_url": "https://api.github.com/repos/shakaarlatief/autonomous-data-science-system/actions/runs?head_sha=021ab5415ad62c2a597009678cdf71de27a096eb&per_page=100",
+      "returned_count": 0,
+      "runs": [],
+      "sha": "021ab5415ad62c2a597009678cdf71de27a096eb",
+      "total_count": 0,
+      "zero_runs_meaning": "NO_MATCHES_IN_QUERY_NOT_GLOBAL_ABSENCE"
+    },
+    {
+      "category": "IMPLEMENTATION_CHANGE",
+      "complete_single_page": true,
+      "http_status": 200,
+      "query_url": "https://api.github.com/repos/shakaarlatief/autonomous-data-science-system/actions/runs?head_sha=d7b30edaae0e74074bcd9c2a31d37503f157a2cb&per_page=100",
+      "returned_count": 0,
+      "runs": [],
+      "sha": "d7b30edaae0e74074bcd9c2a31d37503f157a2cb",
+      "total_count": 0,
+      "zero_runs_meaning": "NO_MATCHES_IN_QUERY_NOT_GLOBAL_ABSENCE"
+    },
+    {
+      "category": "DOCUMENTATION_ONLY",
+      "complete_single_page": true,
+      "http_status": 200,
+      "query_url": "https://api.github.com/repos/shakaarlatief/autonomous-data-science-system/actions/runs?head_sha=a8fcd9393cc3bfe6b6a0f8ef4fa5302122855551&per_page=100",
+      "returned_count": 1,
+      "runs": [
+        {
+          "conclusion": "success",
+          "created_at": "2026-08-30T08:37:17Z",
+          "event": "push",
+          "head_sha": "a8fcd9393cc3bfe6b6a0f8ef4fa5302122855551",
+          "html_url": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/33302034169",
+          "id": 33302034169,
+          "run_attempt": 1,
+          "status": "completed",
+          "updated_at": "2026-08-30T08:37:25Z",
+          "workflow_id": 345308797
+        }
+      ],
+      "sha": "a8fcd9393cc3bfe6b6a0f8ef4fa5302122855551",
+      "total_count": 1,
+      "zero_runs_meaning": "NO_MATCHES_IN_QUERY_NOT_GLOBAL_ABSENCE"
+    },
+    {
+      "category": "DOCUMENTATION_ONLY",
+      "complete_single_page": true,
+      "http_status": 200,
+      "query_url": "https://api.github.com/repos/shakaarlatief/autonomous-data-science-system/actions/runs?head_sha=69f2e502bc345161391925db747481fe2e58ba6d&per_page=100",
+      "returned_count": 0,
+      "runs": [],
+      "sha": "69f2e502bc345161391925db747481fe2e58ba6d",
+      "total_count": 0,
+      "zero_runs_meaning": "NO_MATCHES_IN_QUERY_NOT_GLOBAL_ABSENCE"
+    },
+    {
+      "category": "DOCUMENTATION_ONLY",
+      "complete_single_page": true,
+      "http_status": 200,
+      "query_url": "https://api.github.com/repos/shakaarlatief/autonomous-data-science-system/actions/runs?head_sha=64f7dc19332dc701b1127726d2006fbc33a418f5&per_page=100",
+      "returned_count": 0,
+      "runs": [],
+      "sha": "64f7dc19332dc701b1127726d2006fbc33a418f5",
+      "total_count": 0,
+      "zero_runs_meaning": "NO_MATCHES_IN_QUERY_NOT_GLOBAL_ABSENCE"
+    },
+    {
+      "category": "DOCUMENTATION_ONLY",
+      "complete_single_page": true,
+      "http_status": 200,
+      "query_url": "https://api.github.com/repos/shakaarlatief/autonomous-data-science-system/actions/runs?head_sha=3429447be8a4be6d3daabf83608b4587efd77b6e&per_page=100",
+      "returned_count": 5,
+      "runs": [
+        {
+          "conclusion": "success",
+          "created_at": "2026-09-26T09:43:03Z",
+          "event": "push",
+          "head_sha": "3429447be8a4be6d3daabf83608b4587efd77b6e",
+          "html_url": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/36233618164",
+          "id": 36233618164,
+          "run_attempt": 1,
+          "status": "completed",
+          "updated_at": "2026-09-26T09:43:26Z",
+          "workflow_id": 341120562
+        },
+        {
+          "conclusion": "success",
+          "created_at": "2026-09-26T09:43:02Z",
+          "event": "push",
+          "head_sha": "3429447be8a4be6d3daabf83608b4587efd77b6e",
+          "html_url": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/36233618080",
+          "id": 36233618080,
+          "run_attempt": 1,
+          "status": "completed",
+          "updated_at": "2026-09-26T09:43:12Z",
+          "workflow_id": 338069547
+        },
+        {
+          "conclusion": "success",
+          "created_at": "2026-09-26T09:43:02Z",
+          "event": "push",
+          "head_sha": "3429447be8a4be6d3daabf83608b4587efd77b6e",
+          "html_url": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/36233618133",
+          "id": 36233618133,
+          "run_attempt": 1,
+          "status": "completed",
+          "updated_at": "2026-09-26T09:43:11Z",
+          "workflow_id": 345308797
+        },
+        {
+          "conclusion": "success",
+          "created_at": "2026-09-26T09:43:02Z",
+          "event": "push",
+          "head_sha": "3429447be8a4be6d3daabf83608b4587efd77b6e",
+          "html_url": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/36233618089",
+          "id": 36233618089,
+          "run_attempt": 1,
+          "status": "completed",
+          "updated_at": "2026-09-26T09:43:31Z",
+          "workflow_id": 342451668
+        },
+        {
+          "conclusion": "success",
+          "created_at": "2026-09-26T09:43:02Z",
+          "event": "push",
+          "head_sha": "3429447be8a4be6d3daabf83608b4587efd77b6e",
+          "html_url": "https://github.com/shakaarlatief/autonomous-data-science-system/actions/runs/36233618142",
+          "id": 36233618142,
+          "run_attempt": 1,
+          "status": "completed",
+          "updated_at": "2026-09-26T09:43:34Z",
+          "workflow_id": 347295737
+        }
+      ],
+      "sha": "3429447be8a4be6d3daabf83608b4587efd77b6e",
+      "total_count": 5,
+      "zero_runs_meaning": "NO_MATCHES_IN_QUERY_NOT_GLOBAL_ABSENCE"
+    }
+  ],
+  "metrics": {
+    "commits_with_reported_actions": 9,
+    "commits_with_zero_results_in_exact_query": 7,
+    "failed_run_conclusions": 2,
+    "job_detail_failure": 2,
+    "job_detail_runs": 3,
+    "job_detail_success": 13,
+    "job_detail_total_jobs": 15,
+    "matched_workflow_runs": 27,
+    "other_run_conclusions": 0,
+    "sampled_commits": 16,
+    "successful_run_conclusions": 25
+  },
+  "observed_date_utc": "2026-11-13",
+  "query_scope": "GitHub Actions workflow runs at exact commit head SHA, all triggers; per_page 100, all observed result totals <=100",
+  "repo": "shakaarlatief/autonomous-data-science-system",
+  "source_sampling_pin": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+  "source_sampling_result": "experiments/r0_p03_navigation_probe/exploratory_r0_source_event_witness_capacity_result_v01.json"
+}
