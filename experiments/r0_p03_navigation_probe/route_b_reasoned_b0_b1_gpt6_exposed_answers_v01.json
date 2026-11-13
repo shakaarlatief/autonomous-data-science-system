@@ -1,0 +1,1062 @@
+{
+  "arm_comparisons": [
+    "B0_ORIGINAL",
+    "B1_EXPOSED_SUBJECT_B0"
+  ],
+  "author_role": "EXPOSED_NOT_FRESH_NOT_BLIND_NOT_SCORED",
+  "coverage_is_author_self_classification_not_evaluator_gold": true,
+  "formal_R0_P03_scored": false,
+  "id": "R0_P03_ROUTE_B_GPT6_EXPOSED_B0_B1_SOURCE_CONSTRAINED_PROSE_V01",
+  "limitations": [
+    "GPT-6 has prior source and reference exposure, so not independently constructed/fresh source answers.",
+    "Only previously available original source lines are cited; whether natural-language inferences are entailed by those sources is not independently scored.",
+    "Source-facing export contains no gold paths/answers, but model context cannot be retrospectively decontaminated.",
+    "Coverage classifications are self-judgments, not formal Research513 10/12 evidence of full answer correctness.",
+    "This specific model prose execution is B0 vs B1 only. B2/B3/B4 remain actually executed mechanical citation comparisons, not fresh reasoned prose.",
+    "Historical C01/C02 source/answer HOLD and nine legacy independent cases remain intact, private and unscored.",
+    "No accepted physical architecture, source authority switch or production migration follows."
+  ],
+  "model": "GPT-6 exposed coordinator, single authoring session",
+  "model_has_prior_reference_exposure": true,
+  "no_current_operational_authority_claims": true,
+  "original_source_git_pin": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+  "paired_responses": [
+    {
+      "answer": "The retrieved excerpts do not establish the checkpoint or active development branch at the archived revision. Specification 025 discusses a prospective system for branch-scoped freshness and continuity routing, rather than recording those two values.",
+      "arm": "B0_ORIGINAL",
+      "claims": [
+        {
+          "citations": [
+            {
+              "line": 5,
+              "original_line_sha256": "25136d45a915e895afe9136e911fd430356036219fcc371ef938d3155782730a",
+              "original_source_sha256": "788e3162fc823d21eca176646e7e5c96090cfd7dd971f3f3e918414c278b5cdd",
+              "path": "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+              "source_rank": 1
+            }
+          ],
+          "statement": "Specification 025 describes prospective branch-scoped live-state freshness and continuity bootstrap routing."
+        }
+      ],
+      "coverage": "ABSTAIN",
+      "id": "P01",
+      "question": "At the archived project state, what checkpoint was current and which branch was being used for ongoing development?",
+      "unresolved": "Neither requested archived value appears in the allowed cited lines."
+    },
+    {
+      "answer": "The archived Current State document records Checkpoint 899 and identifies `v1-source-vault-bootstrap-resume` as the active development branch. Those are values reported by that historical source, not a statement about the present checkout.",
+      "arm": "B1_EXPOSED_SUBJECT_B0",
+      "claims": [
+        {
+          "citations": [
+            {
+              "line": 1,
+              "original_line_sha256": "0e346beaa790fb777bdca66486b12ef7eb766f4793a4852e9976dffe6b31c221",
+              "original_source_sha256": "54bcb132f12ceffd330540006a8099179a260f751da7b4269253b6aef87edcaa",
+              "path": "docs/CURRENT_STATE.md",
+              "source_rank": 3
+            },
+            {
+              "line": 3,
+              "original_line_sha256": "8576398fa1dd4cfc9dd9d68bc582befab4b74ffea3a0ad0a4d600dd6f07fdbc5",
+              "original_source_sha256": "54bcb132f12ceffd330540006a8099179a260f751da7b4269253b6aef87edcaa",
+              "path": "docs/CURRENT_STATE.md",
+              "source_rank": 3
+            }
+          ],
+          "statement": "The historical continuity source reports Checkpoint 899."
+        },
+        {
+          "citations": [
+            {
+              "line": 5,
+              "original_line_sha256": "9534ca61c709f51870dec81ddb00445527c1d6c40a2b97414c3c36ceca5cace2",
+              "original_source_sha256": "54bcb132f12ceffd330540006a8099179a260f751da7b4269253b6aef87edcaa",
+              "path": "docs/CURRENT_STATE.md",
+              "source_rank": 3
+            }
+          ],
+          "statement": "It identifies the active development branch as v1-source-vault-bootstrap-resume."
+        }
+      ],
+      "coverage": "SUPPORTED",
+      "id": "P01",
+      "question": "At the archived project state, what checkpoint was current and which branch was being used for ongoing development?",
+      "unresolved": null
+    },
+    {
+      "answer": "The retrieved `docs/DECISIONS.md` is headed \u201cDecisions\u201d. Its text says decisions can be revised, but revisions should be explicit and retain the history of what changed and why. The selected excerpt does not independently spell out the register's project-wide scope, beyond the file identity and heading.",
+      "arm": "B0_ORIGINAL",
+      "claims": [
+        {
+          "citations": [
+            {
+              "line": 1,
+              "original_line_sha256": "55014cace8283815b0bfbc6e5801a9d15504e5591676af506cdce60239b3dec8",
+              "original_source_sha256": "1cb6dd610536781e6bdbd02ab30891f922610a90437a02c36057ca264a8a09b5",
+              "path": "docs/DECISIONS.md",
+              "source_rank": 1
+            }
+          ],
+          "statement": "The retrieved file is the decisions register by path and original heading."
+        },
+        {
+          "citations": [
+            {
+              "line": 5,
+              "original_line_sha256": "6f931f2c113eb828ec219fcb1ed41e267df77e1f0a5a5c4efc88fe759d62fbb0",
+              "original_source_sha256": "1cb6dd610536781e6bdbd02ab30891f922610a90437a02c36057ca264a8a09b5",
+              "path": "docs/DECISIONS.md",
+              "source_rank": 1
+            }
+          ],
+          "statement": "Decisions may be revised explicitly while preserving the change history and rationale."
+        }
+      ],
+      "coverage": "PARTIAL",
+      "id": "P02",
+      "question": "Where can a new collaborator find the explicit project-wide decisions, and can those decisions be revised later?",
+      "unresolved": "The precise project-wide scope is not stated in the selected original lines."
+    },
+    {
+      "answer": "The answer-bearing retrieved file is `docs/DECISIONS.md`, whose original heading is \u201cDecisions\u201d. The source permits later explicit revision, with preservation of what changed and why. The excerpt is sufficient for the revision rule, but its global project-wide coverage is not separately documented in these selected lines.",
+      "arm": "B1_EXPOSED_SUBJECT_B0",
+      "claims": [
+        {
+          "citations": [
+            {
+              "line": 1,
+              "original_line_sha256": "55014cace8283815b0bfbc6e5801a9d15504e5591676af506cdce60239b3dec8",
+              "original_source_sha256": "1cb6dd610536781e6bdbd02ab30891f922610a90437a02c36057ca264a8a09b5",
+              "path": "docs/DECISIONS.md",
+              "source_rank": 1
+            }
+          ],
+          "statement": "The original file heading identifies the decisions register."
+        },
+        {
+          "citations": [
+            {
+              "line": 5,
+              "original_line_sha256": "6f931f2c113eb828ec219fcb1ed41e267df77e1f0a5a5c4efc88fe759d62fbb0",
+              "original_source_sha256": "1cb6dd610536781e6bdbd02ab30891f922610a90437a02c36057ca264a8a09b5",
+              "path": "docs/DECISIONS.md",
+              "source_rank": 1
+            }
+          ],
+          "statement": "The revision rule requires explicit, historically preserved changes."
+        }
+      ],
+      "coverage": "PARTIAL",
+      "id": "P02",
+      "question": "Where can a new collaborator find the explicit project-wide decisions, and can those decisions be revised later?",
+      "unresolved": "Only the title and revision paragraph, not the source's separate opening project-level declaration, were provided."
+    },
+    {
+      "answer": "I cannot determine the migration contract's recorded implementation status from these excerpts. Research 512 calls a separate governed-ledger design a comparison candidate and explicitly says it does not amend Specification 028 or authorize implementation or migration. That is not the status header of the specification being asked about.",
+      "arm": "B0_ORIGINAL",
+      "claims": [
+        {
+          "citations": [
+            {
+              "line": 1,
+              "original_line_sha256": "2377b5474e21c6583e51496b51bf94a9b2a684ef1f60d5bb550369ed027e499a",
+              "original_source_sha256": "40bf71219aaf9eee311241e0eabd7b034f52e0a40fe7b18a8437ea3fdfe4edf4",
+              "path": "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+              "source_rank": 3
+            },
+            {
+              "line": 11,
+              "original_line_sha256": "42928c552c1fa59b925f9dbf4bbe85435e998136a18035ec3162e51264a8d02c",
+              "original_source_sha256": "40bf71219aaf9eee311241e0eabd7b034f52e0a40fe7b18a8437ea3fdfe4edf4",
+              "path": "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+              "source_rank": 3
+            }
+          ],
+          "statement": "Research 512 is comparative candidate evidence, not a Specification 028 implementation-status record."
+        }
+      ],
+      "coverage": "ABSTAIN",
+      "id": "P03",
+      "question": "What is the recorded implementation status of the governed project-knowledge architecture migration contract?",
+      "unresolved": "Specification 028 itself and its status header were not among the cited source lines."
+    },
+    {
+      "answer": "The retrieved Checkpoint 550 reports W1 project-knowledge semantic migration in progress, with successor semantic owners and views still subordinate to existing continuity authority. It does not supply the specific archived implementation-status header of the governed migration contract, so that exact status cannot be verified from this answer context.",
+      "arm": "B1_EXPOSED_SUBJECT_B0",
+      "claims": [
+        {
+          "citations": [
+            {
+              "line": 1,
+              "original_line_sha256": "73e81e9c2fd979ccee84a9c8774565f8b4595972f8ac2cee137deaab5ee38749",
+              "original_source_sha256": "54427409aa5200a0feef027ec138f32d7dbcf021d2277f69238f17f051dedfbb",
+              "path": "docs/checkpoints/550_pka_g108_current_authority_confirmed_integrity_next.md",
+              "source_rank": 1
+            },
+            {
+              "line": 4,
+              "original_line_sha256": "d04fbeed47b4c9e22c16e57b4795b169806306a390651c2483df0281c0c54d8e",
+              "original_source_sha256": "54427409aa5200a0feef027ec138f32d7dbcf021d2277f69238f17f051dedfbb",
+              "path": "docs/checkpoints/550_pka_g108_current_authority_confirmed_integrity_next.md",
+              "source_rank": 1
+            }
+          ],
+          "statement": "Checkpoint 550 reports W1 in progress and G109 as the next gate."
+        },
+        {
+          "citations": [
+            {
+              "line": 30,
+              "original_line_sha256": "1b90768b7dbad11877ec3048d323cebf96cb24f4786232d33c390237c6bc6f7a",
+              "original_source_sha256": "54427409aa5200a0feef027ec138f32d7dbcf021d2277f69238f17f051dedfbb",
+              "path": "docs/checkpoints/550_pka_g108_current_authority_confirmed_integrity_next.md",
+              "source_rank": 1
+            }
+          ],
+          "statement": "It states successor semantic owners remain subordinate to existing continuity authority."
+        }
+      ],
+      "coverage": "PARTIAL",
+      "id": "P03",
+      "question": "What is the recorded implementation status of the governed project-knowledge architecture migration contract?",
+      "unresolved": "The cited records do not include Specification 028's exact status field."
+    },
+    {
+      "answer": "Foundation 022, \u201cSource Universe, Artifact Integrity, and Evidence Provenance Architecture\u201d, is the cited conceptual foundation. It addresses source identity, original-artifact preservation, derived-source lineage and evidence provenance. Its authority text also makes clear that this does not freeze the final storage provider or parser architecture.",
+      "arm": "B0_ORIGINAL",
+      "claims": [
+        {
+          "citations": [
+            {
+              "line": 1,
+              "original_line_sha256": "0b19a276bd9e8c713bffcc8bfd511b0fe48042482feb8d5a94738f709ebdf9e4",
+              "original_source_sha256": "7c1387f15b2781ca0a40d341803b143dedfe4f7251fbc79f97d180fde0523938",
+              "path": "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+              "source_rank": 1
+            },
+            {
+              "line": 4,
+              "original_line_sha256": "734d0372e2098ea359f3b4c5f6e883aca6470b64ccb37cf331ea83f1cd093faf",
+              "original_source_sha256": "7c1387f15b2781ca0a40d341803b143dedfe4f7251fbc79f97d180fde0523938",
+              "path": "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+              "source_rank": 1
+            }
+          ],
+          "statement": "Foundation 022 is the named original source/evidence foundation."
+        },
+        {
+          "citations": [
+            {
+              "line": 5,
+              "original_line_sha256": "3c266f2b8a30dc0fa16754869652f103916aa75a3b24ae93eb5d8c576367a482",
+              "original_source_sha256": "7c1387f15b2781ca0a40d341803b143dedfe4f7251fbc79f97d180fde0523938",
+              "path": "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+              "source_rank": 1
+            }
+          ],
+          "statement": "Its authority scope includes artifact preservation, derived lineage and provenance without fixing storage or parser choices."
+        }
+      ],
+      "coverage": "SUPPORTED",
+      "id": "P04",
+      "question": "Which foundation explains source artifact preservation, lineage and evidence provenance across the knowledge system?",
+      "unresolved": null
+    },
+    {
+      "answer": "The relevant foundation is Foundation 022, \u201cSource Universe, Artifact Integrity, and Evidence Provenance Architecture\u201d. It is recorded as an accepted conceptual foundation for preserving source identity, original artifacts, derived-source lineage and evidence provenance, while leaving implementation choices such as storage and parsers open.",
+      "arm": "B1_EXPOSED_SUBJECT_B0",
+      "claims": [
+        {
+          "citations": [
+            {
+              "line": 1,
+              "original_line_sha256": "0b19a276bd9e8c713bffcc8bfd511b0fe48042482feb8d5a94738f709ebdf9e4",
+              "original_source_sha256": "7c1387f15b2781ca0a40d341803b143dedfe4f7251fbc79f97d180fde0523938",
+              "path": "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+              "source_rank": 1
+            },
+            {
+              "line": 4,
+              "original_line_sha256": "734d0372e2098ea359f3b4c5f6e883aca6470b64ccb37cf331ea83f1cd093faf",
+              "original_source_sha256": "7c1387f15b2781ca0a40d341803b143dedfe4f7251fbc79f97d180fde0523938",
+              "path": "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+              "source_rank": 1
+            }
+          ],
+          "statement": "Foundation 022 is the accepted conceptual foundation."
+        },
+        {
+          "citations": [
+            {
+              "line": 5,
+              "original_line_sha256": "3c266f2b8a30dc0fa16754869652f103916aa75a3b24ae93eb5d8c576367a482",
+              "original_source_sha256": "7c1387f15b2781ca0a40d341803b143dedfe4f7251fbc79f97d180fde0523938",
+              "path": "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+              "source_rank": 1
+            }
+          ],
+          "statement": "Its scope includes original artifacts, lineage and provenance but does not select the final technical stack."
+        }
+      ],
+      "coverage": "SUPPORTED",
+      "id": "P04",
+      "question": "Which foundation explains source artifact preservation, lineage and evidence provenance across the knowledge system?",
+      "unresolved": null
+    },
+    {
+      "answer": "Specification 025, \u201cV1 Governed Repository Integrity and Continuity Hardening\u201d, is the record. Its archived status is \u201cFROZEN / IMPLEMENTATION PENDING\u201d; its scope includes governed repository-integrity contracts, branch-scoped freshness and explicit continuity bootstrap routing. It is a pending contract, not evidence of a completed deployment.",
+      "arm": "B0_ORIGINAL",
+      "claims": [
+        {
+          "citations": [
+            {
+              "line": 1,
+              "original_line_sha256": "1f289be963caf69e7875e7984d5a1523c2f97aaf6c7c74929cd05f2c3a6ec07a",
+              "original_source_sha256": "788e3162fc823d21eca176646e7e5c96090cfd7dd971f3f3e918414c278b5cdd",
+              "path": "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+              "source_rank": 1
+            },
+            {
+              "line": 5,
+              "original_line_sha256": "25136d45a915e895afe9136e911fd430356036219fcc371ef938d3155782730a",
+              "original_source_sha256": "788e3162fc823d21eca176646e7e5c96090cfd7dd971f3f3e918414c278b5cdd",
+              "path": "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+              "source_rank": 1
+            }
+          ],
+          "statement": "Specification 025 is the governed integrity/continuity source."
+        },
+        {
+          "citations": [
+            {
+              "line": 4,
+              "original_line_sha256": "b0a98edfab5a38d9b1ca44a85954c5ea37b56b8b9585fc4eb8331fd34f2e0105",
+              "original_source_sha256": "788e3162fc823d21eca176646e7e5c96090cfd7dd971f3f3e918414c278b5cdd",
+              "path": "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+              "source_rank": 1
+            }
+          ],
+          "statement": "Its historical status is frozen with implementation pending."
+        }
+      ],
+      "coverage": "SUPPORTED",
+      "id": "P05",
+      "question": "Which specification addresses governed repository integrity and continuity bootstrap while still awaiting implementation?",
+      "unresolved": null
+    },
+    {
+      "answer": "The matching source is Specification 025, \u201cV1 Governed Repository Integrity and Continuity Hardening\u201d. The selected original lines identify continuity bootstrap and repository-integrity requirements and mark the specification \u201cFROZEN / IMPLEMENTATION PENDING\u201d. That describes an archived implementation contract, not a completed installation.",
+      "arm": "B1_EXPOSED_SUBJECT_B0",
+      "claims": [
+        {
+          "citations": [
+            {
+              "line": 1,
+              "original_line_sha256": "1f289be963caf69e7875e7984d5a1523c2f97aaf6c7c74929cd05f2c3a6ec07a",
+              "original_source_sha256": "788e3162fc823d21eca176646e7e5c96090cfd7dd971f3f3e918414c278b5cdd",
+              "path": "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+              "source_rank": 2
+            },
+            {
+              "line": 5,
+              "original_line_sha256": "25136d45a915e895afe9136e911fd430356036219fcc371ef938d3155782730a",
+              "original_source_sha256": "788e3162fc823d21eca176646e7e5c96090cfd7dd971f3f3e918414c278b5cdd",
+              "path": "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+              "source_rank": 2
+            }
+          ],
+          "statement": "Specification 025 covers integrity contracts and explicit continuity bootstrap routing."
+        },
+        {
+          "citations": [
+            {
+              "line": 4,
+              "original_line_sha256": "b0a98edfab5a38d9b1ca44a85954c5ea37b56b8b9585fc4eb8331fd34f2e0105",
+              "original_source_sha256": "788e3162fc823d21eca176646e7e5c96090cfd7dd971f3f3e918414c278b5cdd",
+              "path": "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+              "source_rank": 2
+            }
+          ],
+          "statement": "Its source header records implementation pending."
+        }
+      ],
+      "coverage": "SUPPORTED",
+      "id": "P05",
+      "question": "Which specification addresses governed repository integrity and continuity bootstrap while still awaiting implementation?",
+      "unresolved": null
+    },
+    {
+      "answer": "Research 217 records the W5 T1 V0.2 controlled-subject navigation result as \u201cT1 ACCEPTED / CONTROLLED SUBJECT ARCHITECTURE FROZEN\u201d. Its accepted scope was a design experiment and subject contract. The source explicitly says this did not yet install navigation metadata in production sources or switch operational authority.",
+      "arm": "B0_ORIGINAL",
+      "claims": [
+        {
+          "citations": [
+            {
+              "line": 1,
+              "original_line_sha256": "03e3c31facf5d13227861d9f7101818bd4fbd2d6a47771469034a7a3f059e160",
+              "original_source_sha256": "1a45aa417851c65be8b2455b9a81a32c2e2273a529b5716c6ebb4c1f736e73d4",
+              "path": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+              "source_rank": 1
+            },
+            {
+              "line": 4,
+              "original_line_sha256": "f862c96f5d49daf2950462246a0903cf9ea4b3be569abfc7d14fd0c5ae6e4009",
+              "original_source_sha256": "1a45aa417851c65be8b2455b9a81a32c2e2273a529b5716c6ebb4c1f736e73d4",
+              "path": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+              "source_rank": 1
+            }
+          ],
+          "statement": "The T1 controlled-subject architecture was accepted and its design frozen."
+        },
+        {
+          "citations": [
+            {
+              "line": 11,
+              "original_line_sha256": "3f78ec3ba6a6ad95516f89a9bc744ad56d11eac750daa4153a663328ee9e60e1",
+              "original_source_sha256": "1a45aa417851c65be8b2455b9a81a32c2e2273a529b5716c6ebb4c1f736e73d4",
+              "path": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+              "source_rank": 1
+            },
+            {
+              "line": 12,
+              "original_line_sha256": "2c4f487ff9a7844bf8e65321fb7525ca6b550ee1baeff45c82eeb35a1bfc2a50",
+              "original_source_sha256": "1a45aa417851c65be8b2455b9a81a32c2e2273a529b5716c6ebb4c1f736e73d4",
+              "path": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+              "source_rank": 1
+            }
+          ],
+          "statement": "Acceptance was limited to W5 design, not production source metadata or an authority switch."
+        }
+      ],
+      "coverage": "SUPPORTED",
+      "id": "P06",
+      "question": "What was the outcome of the controlled-subject navigation architecture experiment, and was its subject model accepted?",
+      "unresolved": null
+    },
+    {
+      "answer": "The retrieved Research 217 result says T1 was accepted and the controlled-subject architecture was frozen. That acceptance applies to the W5 design and calibration, not to production deployment: its authority clause explicitly excludes new production navigation metadata and a change of source or operational authority.",
+      "arm": "B1_EXPOSED_SUBJECT_B0",
+      "claims": [
+        {
+          "citations": [
+            {
+              "line": 1,
+              "original_line_sha256": "03e3c31facf5d13227861d9f7101818bd4fbd2d6a47771469034a7a3f059e160",
+              "original_source_sha256": "1a45aa417851c65be8b2455b9a81a32c2e2273a529b5716c6ebb4c1f736e73d4",
+              "path": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+              "source_rank": 2
+            },
+            {
+              "line": 4,
+              "original_line_sha256": "f862c96f5d49daf2950462246a0903cf9ea4b3be569abfc7d14fd0c5ae6e4009",
+              "original_source_sha256": "1a45aa417851c65be8b2455b9a81a32c2e2273a529b5716c6ebb4c1f736e73d4",
+              "path": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+              "source_rank": 2
+            }
+          ],
+          "statement": "Research 217 records T1 accepted and the subject model frozen."
+        },
+        {
+          "citations": [
+            {
+              "line": 11,
+              "original_line_sha256": "3f78ec3ba6a6ad95516f89a9bc744ad56d11eac750daa4153a663328ee9e60e1",
+              "original_source_sha256": "1a45aa417851c65be8b2455b9a81a32c2e2273a529b5716c6ebb4c1f736e73d4",
+              "path": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+              "source_rank": 2
+            },
+            {
+              "line": 12,
+              "original_line_sha256": "2c4f487ff9a7844bf8e65321fb7525ca6b550ee1baeff45c82eeb35a1bfc2a50",
+              "original_source_sha256": "1a45aa417851c65be8b2455b9a81a32c2e2273a529b5716c6ebb4c1f736e73d4",
+              "path": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+              "source_rank": 2
+            }
+          ],
+          "statement": "The source's authority scope excludes production metadata installation and authority replacement."
+        }
+      ],
+      "coverage": "SUPPORTED",
+      "id": "P06",
+      "question": "What was the outcome of the controlled-subject navigation architecture experiment, and was its subject model accepted?",
+      "unresolved": null
+    },
+    {
+      "answer": "Research 503, \u201cR0 realization requirements and independent physical-architecture design charter\u201d, is the requested document. It freezes the realization-stage requirements and independent-design protocol, but records physical design as the next step rather than a completed owner-selected target. Specification 028 remains the authority described in that archived charter.",
+      "arm": "B0_ORIGINAL",
+      "claims": [
+        {
+          "citations": [
+            {
+              "line": 1,
+              "original_line_sha256": "3190ed181b0cf6242306dc82f324662905d8a4663779f487f819f54bdaf00a42",
+              "original_source_sha256": "eadf86eb4803ed442643ecd656bc2c8d44b281ba9f0dc20b8948eb85c437fcaa",
+              "path": "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+              "source_rank": 1
+            },
+            {
+              "line": 9,
+              "original_line_sha256": "251faff40473b681faef473262741c283dd7e4429f42bd5a7882e1ce174d85bd",
+              "original_source_sha256": "eadf86eb4803ed442643ecd656bc2c8d44b281ba9f0dc20b8948eb85c437fcaa",
+              "path": "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+              "source_rank": 1
+            }
+          ],
+          "statement": "Research 503 is the R0 independent physical-design charter."
+        },
+        {
+          "citations": [
+            {
+              "line": 4,
+              "original_line_sha256": "1822b7a3cd75a0d4a101c2f03c825c5645102dcd79e9131370a981ba59829ce1",
+              "original_source_sha256": "eadf86eb4803ed442643ecd656bc2c8d44b281ba9f0dc20b8948eb85c437fcaa",
+              "path": "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+              "source_rank": 1
+            },
+            {
+              "line": 10,
+              "original_line_sha256": "42c420375c93d4f6140a9c33bddacf60b10af40bca1fc148ebbd08b658a76f96",
+              "original_source_sha256": "eadf86eb4803ed442643ecd656bc2c8d44b281ba9f0dc20b8948eb85c437fcaa",
+              "path": "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+              "source_rank": 1
+            }
+          ],
+          "statement": "The source freezes the charter but says no physical architecture or migration is selected."
+        }
+      ],
+      "coverage": "SUPPORTED",
+      "id": "P07",
+      "question": "What document establishes the physical architecture realization requirements and the independent design charter?",
+      "unresolved": null
+    },
+    {
+      "answer": "The relevant record is Research 503, the R0 realization requirements and independent physical-architecture design charter. It defines the design freedom, evaluation dimensions and independent-design process; its status is a frozen charter with design next, not a selected physical realization or cutover.",
+      "arm": "B1_EXPOSED_SUBJECT_B0",
+      "claims": [
+        {
+          "citations": [
+            {
+              "line": 1,
+              "original_line_sha256": "3190ed181b0cf6242306dc82f324662905d8a4663779f487f819f54bdaf00a42",
+              "original_source_sha256": "eadf86eb4803ed442643ecd656bc2c8d44b281ba9f0dc20b8948eb85c437fcaa",
+              "path": "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+              "source_rank": 3
+            },
+            {
+              "line": 9,
+              "original_line_sha256": "251faff40473b681faef473262741c283dd7e4429f42bd5a7882e1ce174d85bd",
+              "original_source_sha256": "eadf86eb4803ed442643ecd656bc2c8d44b281ba9f0dc20b8948eb85c437fcaa",
+              "path": "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+              "source_rank": 3
+            }
+          ],
+          "statement": "Research 503 defines the independent physical-architecture realization charter."
+        },
+        {
+          "citations": [
+            {
+              "line": 4,
+              "original_line_sha256": "1822b7a3cd75a0d4a101c2f03c825c5645102dcd79e9131370a981ba59829ce1",
+              "original_source_sha256": "eadf86eb4803ed442643ecd656bc2c8d44b281ba9f0dc20b8948eb85c437fcaa",
+              "path": "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+              "source_rank": 3
+            },
+            {
+              "line": 10,
+              "original_line_sha256": "42c420375c93d4f6140a9c33bddacf60b10af40bca1fc148ebbd08b658a76f96",
+              "original_source_sha256": "eadf86eb4803ed442643ecd656bc2c8d44b281ba9f0dc20b8948eb85c437fcaa",
+              "path": "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+              "source_rank": 3
+            }
+          ],
+          "statement": "The source explicitly withholds physical-target selection and migration authority."
+        }
+      ],
+      "coverage": "SUPPORTED",
+      "id": "P07",
+      "question": "What document establishes the physical architecture realization requirements and the independent design charter?",
+      "unresolved": null
+    },
+    {
+      "answer": "Research 512 retained the reconciled candidate `GOVERNED_LEDGER_KERNEL_V02` after the Claude critique. Its archived status says the owner decision was not ready. The record is expressly comparative design evidence, not an accepted physical target, implementation authorization or operational authority switch.",
+      "arm": "B0_ORIGINAL",
+      "claims": [
+        {
+          "citations": [
+            {
+              "line": 1,
+              "original_line_sha256": "2377b5474e21c6583e51496b51bf94a9b2a684ef1f60d5bb550369ed027e499a",
+              "original_source_sha256": "40bf71219aaf9eee311241e0eabd7b034f52e0a40fe7b18a8437ea3fdfe4edf4",
+              "path": "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+              "source_rank": 1
+            },
+            {
+              "line": 8,
+              "original_line_sha256": "c107c564107f9b9f6bc137c1e27de741ba7e5664c960b77d2a47f2ff5e12b10f",
+              "original_source_sha256": "40bf71219aaf9eee311241e0eabd7b034f52e0a40fe7b18a8437ea3fdfe4edf4",
+              "path": "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+              "source_rank": 1
+            }
+          ],
+          "statement": "The reconciled candidate is GOVERNED_LEDGER_KERNEL_V02."
+        },
+        {
+          "citations": [
+            {
+              "line": 4,
+              "original_line_sha256": "7a9233dac206d0ca98a3cbf7fd7fc2156bbf3b4c62917125812a821e9e496f0d",
+              "original_source_sha256": "40bf71219aaf9eee311241e0eabd7b034f52e0a40fe7b18a8437ea3fdfe4edf4",
+              "path": "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+              "source_rank": 1
+            },
+            {
+              "line": 11,
+              "original_line_sha256": "42928c552c1fa59b925f9dbf4bbe85435e998136a18035ec3162e51264a8d02c",
+              "original_source_sha256": "40bf71219aaf9eee311241e0eabd7b034f52e0a40fe7b18a8437ea3fdfe4edf4",
+              "path": "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+              "source_rank": 1
+            }
+          ],
+          "statement": "The owner decision was not ready and the candidate had no physical selection or migration authority."
+        }
+      ],
+      "coverage": "SUPPORTED",
+      "id": "P08",
+      "question": "After the Claude design critique, which governed ledger kernel candidate was retained, and was the owner physical architecture decision ready?",
+      "unresolved": null
+    },
+    {
+      "answer": "The retained post-critique governed-ledger candidate was `GOVERNED_LEDGER_KERNEL_V02`, recorded in Research 512. The owner physical-architecture decision was explicitly \u201cNOT READY\u201d; this was a comparative candidate only, with no production implementation, migration or authority switch.",
+      "arm": "B1_EXPOSED_SUBJECT_B0",
+      "claims": [
+        {
+          "citations": [
+            {
+              "line": 1,
+              "original_line_sha256": "2377b5474e21c6583e51496b51bf94a9b2a684ef1f60d5bb550369ed027e499a",
+              "original_source_sha256": "40bf71219aaf9eee311241e0eabd7b034f52e0a40fe7b18a8437ea3fdfe4edf4",
+              "path": "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+              "source_rank": 2
+            },
+            {
+              "line": 8,
+              "original_line_sha256": "c107c564107f9b9f6bc137c1e27de741ba7e5664c960b77d2a47f2ff5e12b10f",
+              "original_source_sha256": "40bf71219aaf9eee311241e0eabd7b034f52e0a40fe7b18a8437ea3fdfe4edf4",
+              "path": "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+              "source_rank": 2
+            }
+          ],
+          "statement": "Research 512 names the reconciled candidate."
+        },
+        {
+          "citations": [
+            {
+              "line": 4,
+              "original_line_sha256": "7a9233dac206d0ca98a3cbf7fd7fc2156bbf3b4c62917125812a821e9e496f0d",
+              "original_source_sha256": "40bf71219aaf9eee311241e0eabd7b034f52e0a40fe7b18a8437ea3fdfe4edf4",
+              "path": "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+              "source_rank": 2
+            },
+            {
+              "line": 11,
+              "original_line_sha256": "42928c552c1fa59b925f9dbf4bbe85435e998136a18035ec3162e51264a8d02c",
+              "original_source_sha256": "40bf71219aaf9eee311241e0eabd7b034f52e0a40fe7b18a8437ea3fdfe4edf4",
+              "path": "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+              "source_rank": 2
+            }
+          ],
+          "statement": "The same source records owner decision not ready and limits authority to comparison."
+        }
+      ],
+      "coverage": "SUPPORTED",
+      "id": "P08",
+      "question": "After the Claude design critique, which governed ledger kernel candidate was retained, and was the owner physical architecture decision ready?",
+      "unresolved": null
+    },
+    {
+      "answer": "No. Research 312 describes the AO-10 realization as a frozen candidate under independent review and explicitly says there was \u201cNO PRODUCTION IMPLEMENTATION / NO PHYSICAL MIGRATION\u201d. Its authority statement leaves Specification 028 as the existing implementation/migration contract pending a separate accepted successor or amendment.",
+      "arm": "B0_ORIGINAL",
+      "claims": [
+        {
+          "citations": [
+            {
+              "line": 1,
+              "original_line_sha256": "a895409692b2062c1c86c602c548e36df43168a94f2d8c20b0081b2c5e2de2e4",
+              "original_source_sha256": "58a77b5e9fed4008b9b7ed78a972d8063ca4be7d9dbf557256203572f275ec33",
+              "path": "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+              "source_rank": 2
+            },
+            {
+              "line": 4,
+              "original_line_sha256": "337f8cc9d5c5a00a475faf72d4a4915d08ee89b822059c5f22a7b2d14fef25a1",
+              "original_source_sha256": "58a77b5e9fed4008b9b7ed78a972d8063ca4be7d9dbf557256203572f275ec33",
+              "path": "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+              "source_rank": 2
+            }
+          ],
+          "statement": "Research 312's status explicitly excludes production implementation and physical migration."
+        },
+        {
+          "citations": [
+            {
+              "line": 12,
+              "original_line_sha256": "642b837bf544a60b4a2a6a3ad19918294bf1ae7ac6be519cb81f6f8dfa60e113",
+              "original_source_sha256": "58a77b5e9fed4008b9b7ed78a972d8063ca4be7d9dbf557256203572f275ec33",
+              "path": "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+              "source_rank": 2
+            }
+          ],
+          "statement": "The candidate does not displace Specification 028 implementation authority."
+        }
+      ],
+      "coverage": "SUPPORTED",
+      "id": "P09",
+      "question": "Did the AO-10 realization candidate authorize production implementation or physical migration?",
+      "unresolved": null
+    },
+    {
+      "answer": "No. The AO-10 realization proposal in Research 312 was a frozen candidate for independent review, not authorization to implement or physically migrate. The source expressly preserves Specification 028's existing implementation/migration authority until a prospective amendment or successor is accepted.",
+      "arm": "B1_EXPOSED_SUBJECT_B0",
+      "claims": [
+        {
+          "citations": [
+            {
+              "line": 1,
+              "original_line_sha256": "a895409692b2062c1c86c602c548e36df43168a94f2d8c20b0081b2c5e2de2e4",
+              "original_source_sha256": "58a77b5e9fed4008b9b7ed78a972d8063ca4be7d9dbf557256203572f275ec33",
+              "path": "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+              "source_rank": 1
+            },
+            {
+              "line": 4,
+              "original_line_sha256": "337f8cc9d5c5a00a475faf72d4a4915d08ee89b822059c5f22a7b2d14fef25a1",
+              "original_source_sha256": "58a77b5e9fed4008b9b7ed78a972d8063ca4be7d9dbf557256203572f275ec33",
+              "path": "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+              "source_rank": 1
+            }
+          ],
+          "statement": "Research 312 explicitly says no production implementation or physical migration."
+        },
+        {
+          "citations": [
+            {
+              "line": 12,
+              "original_line_sha256": "642b837bf544a60b4a2a6a3ad19918294bf1ae7ac6be519cb81f6f8dfa60e113",
+              "original_source_sha256": "58a77b5e9fed4008b9b7ed78a972d8063ca4be7d9dbf557256203572f275ec33",
+              "path": "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+              "source_rank": 1
+            }
+          ],
+          "statement": "The recorded authority scope leaves the existing Specification 028 contract in place."
+        }
+      ],
+      "coverage": "SUPPORTED",
+      "id": "P09",
+      "question": "Did the AO-10 realization candidate authorize production implementation or physical migration?",
+      "unresolved": null
+    },
+    {
+      "answer": "Checkpoint 853 records R0-P02 PASS and retention of the Git governing substrate; at that checkpoint, R0-P01 fixture freeze was scheduled next. That is the historical sequence, not a claim that R0-P01 remained a mandatory gate indefinitely: the later retrieved Checkpoint 891 prospectively superseded that mandatory preselection requirement.",
+      "arm": "B0_ORIGINAL",
+      "claims": [
+        {
+          "citations": [
+            {
+              "line": 1,
+              "original_line_sha256": "017f137767ff200f696d0409c2f3dff17d2fa577896bb484d0b28bca0fa4918d",
+              "original_source_sha256": "5d3f9fdd27a761775b99f1971623ddc973ee87192f9f1faa32112660c228a0bb",
+              "path": "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+              "source_rank": 1
+            },
+            {
+              "line": 4,
+              "original_line_sha256": "2de3b80b7a0c01aede9bf7cb40cb6e4fcded698a00e037d51eba90d7f99396ad",
+              "original_source_sha256": "5d3f9fdd27a761775b99f1971623ddc973ee87192f9f1faa32112660c228a0bb",
+              "path": "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+              "source_rank": 1
+            },
+            {
+              "line": 7,
+              "original_line_sha256": "0625794f098cef27f59ce94bc5f45cce8dbc85cb750a8266115a936935a7c1ba",
+              "original_source_sha256": "5d3f9fdd27a761775b99f1971623ddc973ee87192f9f1faa32112660c228a0bb",
+              "path": "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+              "source_rank": 1
+            }
+          ],
+          "statement": "Checkpoint 853 reports R0-P02 PASS and R0-P01 next."
+        },
+        {
+          "citations": [
+            {
+              "line": 16,
+              "original_line_sha256": "64dd4e4e242468ee8325ae50ea36e34a63381ed773c0e5d70b47e2808963edb7",
+              "original_source_sha256": "7a604ec607b1aa7a8135504dc9a24576e463c5a5f392c1a1ebefa0e2e518e7f7",
+              "path": "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+              "source_rank": 2
+            }
+          ],
+          "statement": "Later Checkpoint 891 prospectively supersedes R0-P01 as a mandatory preselection gate."
+        }
+      ],
+      "coverage": "SUPPORTED",
+      "id": "P10",
+      "question": "Which checkpoint records the R0-P02 probe passing, and which architectural probe was scheduled next?",
+      "unresolved": null
+    },
+    {
+      "answer": "Checkpoint 853 is the historical R0-P02 PASS record and says \u201cR0-P01 NEXT\u201d, with the Git governing substrate retained. The selected later Checkpoint 891 excerpt states that R0-P01's mandatory preselection gate was prospectively superseded, so the archived next-step instruction should not be treated as an unchanging current rule.",
+      "arm": "B1_EXPOSED_SUBJECT_B0",
+      "claims": [
+        {
+          "citations": [
+            {
+              "line": 1,
+              "original_line_sha256": "017f137767ff200f696d0409c2f3dff17d2fa577896bb484d0b28bca0fa4918d",
+              "original_source_sha256": "5d3f9fdd27a761775b99f1971623ddc973ee87192f9f1faa32112660c228a0bb",
+              "path": "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+              "source_rank": 1
+            },
+            {
+              "line": 4,
+              "original_line_sha256": "2de3b80b7a0c01aede9bf7cb40cb6e4fcded698a00e037d51eba90d7f99396ad",
+              "original_source_sha256": "5d3f9fdd27a761775b99f1971623ddc973ee87192f9f1faa32112660c228a0bb",
+              "path": "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+              "source_rank": 1
+            },
+            {
+              "line": 7,
+              "original_line_sha256": "0625794f098cef27f59ce94bc5f45cce8dbc85cb750a8266115a936935a7c1ba",
+              "original_source_sha256": "5d3f9fdd27a761775b99f1971623ddc973ee87192f9f1faa32112660c228a0bb",
+              "path": "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+              "source_rank": 1
+            }
+          ],
+          "statement": "Checkpoint 853 identifies both R0-P02 PASS and R0-P01 as the next probe."
+        },
+        {
+          "citations": [
+            {
+              "line": 16,
+              "original_line_sha256": "64dd4e4e242468ee8325ae50ea36e34a63381ed773c0e5d70b47e2808963edb7",
+              "original_source_sha256": "7a604ec607b1aa7a8135504dc9a24576e463c5a5f392c1a1ebefa0e2e518e7f7",
+              "path": "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+              "source_rank": 2
+            }
+          ],
+          "statement": "The R0-P01 mandatory preselection gate was prospectively superseded later."
+        }
+      ],
+      "coverage": "SUPPORTED",
+      "id": "P10",
+      "question": "Which checkpoint records the R0-P02 probe passing, and which architectural probe was scheduled next?",
+      "unresolved": null
+    },
+    {
+      "answer": "Checkpoint 891 documents the owner-directed prospective authentication deferral and permission to proceed with R0-P03 fixture work. Its status is `PROSPECTIVE_R0_AUTHENTICATION_GATE_AMENDED / P03_FIXTURE_NEXT`; the same source explains that the actual owner-authentication trial was deferred, not successfully deployed or used for production authority.",
+      "arm": "B0_ORIGINAL",
+      "claims": [
+        {
+          "citations": [
+            {
+              "line": 1,
+              "original_line_sha256": "e3531e66f3c03f03215ca03d954d167057879e743f5e171f5c36ccdcab79378d",
+              "original_source_sha256": "7a604ec607b1aa7a8135504dc9a24576e463c5a5f392c1a1ebefa0e2e518e7f7",
+              "path": "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+              "source_rank": 1
+            },
+            {
+              "line": 11,
+              "original_line_sha256": "53e170201c9dbc0b7e6b015847d269e73f02a3c8424ea19b9bebebe38dc151ae",
+              "original_source_sha256": "7a604ec607b1aa7a8135504dc9a24576e463c5a5f392c1a1ebefa0e2e518e7f7",
+              "path": "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+              "source_rank": 1
+            },
+            {
+              "line": 14,
+              "original_line_sha256": "8d347d06a52615d335c1be6190c9c2708816ab47124b388741b3f55cce1965e4",
+              "original_source_sha256": "7a604ec607b1aa7a8135504dc9a24576e463c5a5f392c1a1ebefa0e2e518e7f7",
+              "path": "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+              "source_rank": 1
+            }
+          ],
+          "statement": "Checkpoint 891 records the authentication-gate amendment and P03 fixture next."
+        },
+        {
+          "citations": [
+            {
+              "line": 22,
+              "original_line_sha256": "2d6892f163a65857142813a25857e211f646325d79b7801255e88071f743a03f",
+              "original_source_sha256": "7a604ec607b1aa7a8135504dc9a24576e463c5a5f392c1a1ebefa0e2e518e7f7",
+              "path": "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+              "source_rank": 1
+            }
+          ],
+          "statement": "Real authentication Attempt 002 remained unauthorized/deferred and no production ledger admission occurred."
+        }
+      ],
+      "coverage": "SUPPORTED",
+      "id": "P11",
+      "question": "Which checkpoint documents the owner-approved deferral of authentication and permission to resume R0-P03 fixture work?",
+      "unresolved": null
+    },
+    {
+      "answer": "The requested record is Checkpoint 891, which marks the owner-directed R0 authentication gate as prospectively amended and R0-P03 fixture preparation as next. It does not claim that an owner-cryptographic trial or production authorization happened: the cited historical note specifically defers Attempt 002 and records no credential admission.",
+      "arm": "B1_EXPOSED_SUBJECT_B0",
+      "claims": [
+        {
+          "citations": [
+            {
+              "line": 1,
+              "original_line_sha256": "e3531e66f3c03f03215ca03d954d167057879e743f5e171f5c36ccdcab79378d",
+              "original_source_sha256": "7a604ec607b1aa7a8135504dc9a24576e463c5a5f392c1a1ebefa0e2e518e7f7",
+              "path": "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+              "source_rank": 2
+            },
+            {
+              "line": 11,
+              "original_line_sha256": "53e170201c9dbc0b7e6b015847d269e73f02a3c8424ea19b9bebebe38dc151ae",
+              "original_source_sha256": "7a604ec607b1aa7a8135504dc9a24576e463c5a5f392c1a1ebefa0e2e518e7f7",
+              "path": "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+              "source_rank": 2
+            },
+            {
+              "line": 14,
+              "original_line_sha256": "8d347d06a52615d335c1be6190c9c2708816ab47124b388741b3f55cce1965e4",
+              "original_source_sha256": "7a604ec607b1aa7a8135504dc9a24576e463c5a5f392c1a1ebefa0e2e518e7f7",
+              "path": "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+              "source_rank": 2
+            }
+          ],
+          "statement": "Checkpoint 891 is the owner-directed authentication deferral document and points to P03 fixture."
+        },
+        {
+          "citations": [
+            {
+              "line": 22,
+              "original_line_sha256": "2d6892f163a65857142813a25857e211f646325d79b7801255e88071f743a03f",
+              "original_source_sha256": "7a604ec607b1aa7a8135504dc9a24576e463c5a5f392c1a1ebefa0e2e518e7f7",
+              "path": "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+              "source_rank": 2
+            }
+          ],
+          "statement": "The real owner trial and production authority were not completed there."
+        }
+      ],
+      "coverage": "SUPPORTED",
+      "id": "P11",
+      "question": "Which checkpoint documents the owner-approved deferral of authentication and permission to resume R0-P03 fixture work?",
+      "unresolved": null
+    },
+    {
+      "answer": "Checkpoint 899 records that the independent source-witness review had finished but there was insufficient verified reference capacity to score R0-P03. It classifies the outcome as an evidence-capacity HOLD and unscored experiment, not as a scientific pass or architecture failure. The record leaves a fresh independent-reference route or deferral as a later decision.",
+      "arm": "B0_ORIGINAL",
+      "claims": [
+        {
+          "citations": [
+            {
+              "line": 1,
+              "original_line_sha256": "20ed93f3c60634b1836cc4f9581d94482ba8deac82e205c580a39ac82674d890",
+              "original_source_sha256": "fd9ee485c0671f4950ea050f21fc029683dc05412921fcc21107091619f0ac9f",
+              "path": "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+              "source_rank": 2
+            },
+            {
+              "line": 4,
+              "original_line_sha256": "c4b1b3bc9fdcfe3e8a70e32ade802ab80abb1e684fb2296525ec0fc102c83952",
+              "original_source_sha256": "fd9ee485c0671f4950ea050f21fc029683dc05412921fcc21107091619f0ac9f",
+              "path": "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+              "source_rank": 2
+            }
+          ],
+          "statement": "Checkpoint 899 explicitly reports insufficient verified reference capacity and an unscored experiment."
+        },
+        {
+          "citations": [
+            {
+              "line": 23,
+              "original_line_sha256": "41afcd879c9c6f95b9e5b6e630d4107f55eb21355726ccb7d44d6658998b2bd2",
+              "original_source_sha256": "fd9ee485c0671f4950ea050f21fc029683dc05412921fcc21107091619f0ac9f",
+              "path": "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+              "source_rank": 2
+            }
+          ],
+          "statement": "The review was a capacity HOLD, not an architecture PASS or FAIL."
+        },
+        {
+          "citations": [
+            {
+              "line": 29,
+              "original_line_sha256": "831dcbfc3af58f46318a2c1065a08d312c06f20cc7d521bdf5e5401cfb05aec6",
+              "original_source_sha256": "fd9ee485c0671f4950ea050f21fc029683dc05412921fcc21107091619f0ac9f",
+              "path": "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+              "source_rank": 2
+            }
+          ],
+          "statement": "A separate fresh-reference route or deferral remained a future decision."
+        }
+      ],
+      "coverage": "SUPPORTED",
+      "id": "P12",
+      "question": "What was the documented reason the independent R0-P03 reference cohort could not yet be scored in the earlier evidence-capacity review?",
+      "unresolved": null
+    },
+    {
+      "answer": "The earlier evidence-capacity review is recorded in Checkpoint 899. Its status says the independent witness review was complete but verified reference capacity remained insufficient, leaving R0-P03 unscored. The source explicitly distinguishes that HOLD from a passed, failed or scored architecture comparison.",
+      "arm": "B1_EXPOSED_SUBJECT_B0",
+      "claims": [
+        {
+          "citations": [
+            {
+              "line": 1,
+              "original_line_sha256": "20ed93f3c60634b1836cc4f9581d94482ba8deac82e205c580a39ac82674d890",
+              "original_source_sha256": "fd9ee485c0671f4950ea050f21fc029683dc05412921fcc21107091619f0ac9f",
+              "path": "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+              "source_rank": 3
+            },
+            {
+              "line": 4,
+              "original_line_sha256": "c4b1b3bc9fdcfe3e8a70e32ade802ab80abb1e684fb2296525ec0fc102c83952",
+              "original_source_sha256": "fd9ee485c0671f4950ea050f21fc029683dc05412921fcc21107091619f0ac9f",
+              "path": "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+              "source_rank": 3
+            }
+          ],
+          "statement": "Checkpoint 899 reports completed witness review and insufficient verified reference capacity."
+        },
+        {
+          "citations": [
+            {
+              "line": 23,
+              "original_line_sha256": "41afcd879c9c6f95b9e5b6e630d4107f55eb21355726ccb7d44d6658998b2bd2",
+              "original_source_sha256": "fd9ee485c0671f4950ea050f21fc029683dc05412921fcc21107091619f0ac9f",
+              "path": "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+              "source_rank": 3
+            }
+          ],
+          "statement": "The report says this was a genuine capacity HOLD, not an R0-P03 architecture test result."
+        }
+      ],
+      "coverage": "SUPPORTED",
+      "id": "P12",
+      "question": "What was the documented reason the independent R0-P03 reference cohort could not yet be scored in the earlier evidence-capacity review?",
+      "unresolved": null
+    }
+  ],
+  "physical_architecture_selected": false,
+  "question_count": 12,
+  "reference_answers_used_as_explicit_input": false,
+  "self_coverage_counts": {
+    "B0_ORIGINAL": {
+      "ABSTAIN": 2,
+      "PARTIAL": 1,
+      "SUPPORTED": 9
+    },
+    "B1_EXPOSED_SUBJECT_B0": {
+      "ABSTAIN": 0,
+      "PARTIAL": 2,
+      "SUPPORTED": 10
+    }
+  },
+  "source_packet_sha256": "60ec37969aa3319ce195353a6f9cddb2103640b0e4f748564e0be4a4d839b508"
+}
