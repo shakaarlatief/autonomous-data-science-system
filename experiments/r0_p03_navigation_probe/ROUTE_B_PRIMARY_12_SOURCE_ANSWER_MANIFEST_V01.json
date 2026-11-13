@@ -1,0 +1,146 @@
+{
+  "id": "R0_P03_ROUTE_B_PROVISIONAL_PRIMARY_TASKS_12_V01",
+  "authored_by": "EXPOSED_COORDINATOR_CHATGPT_NOT_FRESH_OR_INDEPENDENT",
+  "authoring_status": "OWNER_CHOSE_PATH_B_2026_11_13_AND_ALLOWED_COORDINATOR_SOURCE_GROUNDED_ANSWERS",
+  "source_git_pin": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+  "scientific_scope": "PRAGMATIC_PRIMARY_BASELINE_EXECUTION_ONLY_NOT_FORMAL_RESEARCH_513_SCORING",
+  "primary_categories": [
+    "COLD_START_CURRENT_ORIENTATION",
+    "CROSS_PLANE_DISCOVERY",
+    "IMPACT_AND_ARCHITECTURE_EVOLUTION",
+    "EXACT_SOURCE_AUTHORITY_RECOVERY"
+  ],
+  "tasks": [
+    {
+      "id": "P01",
+      "category": "COLD_START_CURRENT_ORIENTATION",
+      "question": "At the archived project state, what checkpoint was current and which branch was being used for ongoing development?",
+      "reference_answer_for_evaluation_only": "At this Git snapshot the continuity file reports Checkpoint 899 on development branch v1-source-vault-bootstrap-resume. This is an as-of-source status, not an assertion about the present checkout.",
+      "required_source_for_evaluation_only": "docs/CURRENT_STATE.md",
+      "required_source_witness_lines": [
+        "**Checkpoint:** 899",
+        "**Active development branch:** `v1-source-vault-bootstrap-resume`"
+      ]
+    },
+    {
+      "id": "P02",
+      "category": "COLD_START_CURRENT_ORIENTATION",
+      "question": "Where can a new collaborator find the explicit project-wide decisions, and can those decisions be revised later?",
+      "reference_answer_for_evaluation_only": "The Decisions register records explicit project-level decisions; revisions remain possible but must be explicit and preserve why and what changed.",
+      "required_source_for_evaluation_only": "docs/DECISIONS.md",
+      "required_source_witness_lines": [
+        "This document records explicit project-level decisions that have already been made.",
+        "Decisions may still be revised later, but revisions should be explicit and should preserve the history of what changed and why."
+      ]
+    },
+    {
+      "id": "P03",
+      "category": "COLD_START_CURRENT_ORIENTATION",
+      "question": "What is the recorded implementation status of the governed project-knowledge architecture migration contract?",
+      "reference_answer_for_evaluation_only": "Specification 028 is marked FROZEN / IMPLEMENTATION PENDING in this archived original, not proof of a completed migration.",
+      "required_source_for_evaluation_only": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "required_source_witness_lines": [
+        "**Status:** FROZEN / IMPLEMENTATION PENDING"
+      ]
+    },
+    {
+      "id": "P04",
+      "category": "CROSS_PLANE_DISCOVERY",
+      "question": "Which foundation explains source artifact preservation, lineage and evidence provenance across the knowledge system?",
+      "reference_answer_for_evaluation_only": "Foundation 022 provides the accepted conceptual foundation for source identity, original-artifact preservation, derived-source lineage and evidence provenance, subordinate to broader principles.",
+      "required_source_for_evaluation_only": "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+      "required_source_witness_lines": [
+        "**Status:** Accepted conceptual foundation for the source/evidence substrate"
+      ]
+    },
+    {
+      "id": "P05",
+      "category": "CROSS_PLANE_DISCOVERY",
+      "question": "Which specification addresses governed repository integrity and continuity bootstrap while still awaiting implementation?",
+      "reference_answer_for_evaluation_only": "Specification 025 covers governed repository integrity and continuity hardening; its archived header records FROZEN / IMPLEMENTATION PENDING.",
+      "required_source_for_evaluation_only": "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+      "required_source_witness_lines": [
+        "**Status:** FROZEN / IMPLEMENTATION PENDING"
+      ]
+    },
+    {
+      "id": "P06",
+      "category": "CROSS_PLANE_DISCOVERY",
+      "question": "What was the outcome of the controlled-subject navigation architecture experiment, and was its subject model accepted?",
+      "reference_answer_for_evaluation_only": "Research 217 records T1 accepted and the controlled subject architecture frozen as a historical experiment, not an independently scored R0-P03 result.",
+      "required_source_for_evaluation_only": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+      "required_source_witness_lines": [
+        "**Status:** T1 ACCEPTED / CONTROLLED SUBJECT ARCHITECTURE FROZEN"
+      ]
+    },
+    {
+      "id": "P07",
+      "category": "IMPACT_AND_ARCHITECTURE_EVOLUTION",
+      "question": "What document establishes the physical architecture realization requirements and the independent design charter?",
+      "reference_answer_for_evaluation_only": "Research 503 freezes the R0 realization requirements and independent physical architecture design charter, while design is the next step at that historical snapshot.",
+      "required_source_for_evaluation_only": "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+      "required_source_witness_lines": [
+        "**Status:** R0 CHARTER FROZEN / INDEPENDENT PHYSICAL ARCHITECTURE DESIGN NEXT"
+      ]
+    },
+    {
+      "id": "P08",
+      "category": "IMPACT_AND_ARCHITECTURE_EVOLUTION",
+      "question": "After the Claude design critique, which governed ledger kernel candidate was retained, and was the owner physical architecture decision ready?",
+      "reference_answer_for_evaluation_only": "Research 512 records a reconciled GOVERNED_LEDGER_KERNEL_V02 candidate and explicitly says owner decision is not ready; it is not a deployed selection.",
+      "required_source_for_evaluation_only": "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+      "required_source_witness_lines": [
+        "**Reconciled candidate:** GOVERNED_LEDGER_KERNEL_V02"
+      ]
+    },
+    {
+      "id": "P09",
+      "category": "IMPACT_AND_ARCHITECTURE_EVOLUTION",
+      "question": "Did the AO-10 realization candidate authorize production implementation or physical migration?",
+      "reference_answer_for_evaluation_only": "Research 312 freezes a candidate reconciliation/realization, explicitly with no production implementation and no physical migration.",
+      "required_source_for_evaluation_only": "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+      "required_source_witness_lines": [
+        "**Status:** SPECIFICATION 028 RECONCILIATION V0.1 FROZEN / AO-10 REALIZATION CANDIDATE V0.1 FROZEN / MC-0029 INDEPENDENT REVIEW OPENED / NO PRODUCTION IMPLEMENTATION / NO PHYSICAL MIGRATION"
+      ]
+    },
+    {
+      "id": "P10",
+      "category": "EXACT_SOURCE_AUTHORITY_RECOVERY",
+      "question": "Which checkpoint records the R0-P02 probe passing, and which architectural probe was scheduled next?",
+      "reference_answer_for_evaluation_only": "Checkpoint 853 records R0-P02 PASS, retaining the Git governing substrate and moving to R0-P01 fixture freeze.",
+      "required_source_for_evaluation_only": "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+      "required_source_witness_lines": [
+        "**Status:** R0-P02 PASS / GIT GOVERNING SUBSTRATE RETAINED / R0-P01 NEXT"
+      ]
+    },
+    {
+      "id": "P11",
+      "category": "EXACT_SOURCE_AUTHORITY_RECOVERY",
+      "question": "Which checkpoint documents the owner-approved deferral of authentication and permission to resume R0-P03 fixture work?",
+      "reference_answer_for_evaluation_only": "Checkpoint 891 records a prospective owner-authentication gate amendment and resumption of R0-P03 fixture work. It does not itself prove accepted operational owner authentication.",
+      "required_source_for_evaluation_only": "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+      "required_source_witness_lines": [
+        "**Status:** PROSPECTIVE_R0_AUTHENTICATION_GATE_AMENDED / P03_FIXTURE_NEXT"
+      ]
+    },
+    {
+      "id": "P12",
+      "category": "EXACT_SOURCE_AUTHORITY_RECOVERY",
+      "question": "What was the documented reason the independent R0-P03 reference cohort could not yet be scored in the earlier evidence-capacity review?",
+      "reference_answer_for_evaluation_only": "Checkpoint 899 records insufficient verified reference capacity and an unscored experiment after independent witness review.",
+      "required_source_for_evaluation_only": "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+      "required_source_witness_lines": [
+        "**Status:** INDEPENDENT_WITNESS_REVIEW_COMPLETE / INSUFFICIENT_VERIFIED_REFERENCE_CAPACITY / EXPERIMENT_UNSCORED"
+      ]
+    }
+  ],
+  "limitations": [
+    "Question author already has extensive historical knowledge of source and prior retrieval outputs; questions are not blind independent.",
+    "Each reference is a bounded source-described fact, not an independently established global authority or implementation state.",
+    "Questions and expected source labels are frozen before any new 60/20 corpus draw or baseline run; no post-result editing.",
+    "One required source per task does not prove it is the only useful source; additional citations are not a negative.",
+    "Preliminary navigation pass checks source recall and evidence feasibility, not full fresh-agent answer or B0-B4 viability.",
+    "The nine legacy scenarios remain separate, unmodified and not scored.",
+    "The formal Research 513 thresholds are not changed and no original C02 holds are resolved."
+  ]
+}

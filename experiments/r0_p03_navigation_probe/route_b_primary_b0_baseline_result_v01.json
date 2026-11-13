@@ -1,0 +1,2136 @@
+{
+  "build_sources": [
+    "docs/CURRENT_STATE.md",
+    "docs/DECISIONS.md",
+    "docs/checkpoints/050_real_held_out_run_plan_materialized_and_frozen_inputs_verified.md",
+    "docs/checkpoints/121_immersive_scale_cockpit_slice_automated_gate_passed.md",
+    "docs/checkpoints/358_runtime_release_preview20_fresh_chat_schema_qualified.md",
+    "docs/checkpoints/380_github_schema_reconciled_g0_and_targeted_evidence_ready.md",
+    "docs/checkpoints/447_repository_branch_safety_complete_canonical_protection_decision_next.md",
+    "docs/checkpoints/497_candidate01_real_repository_shadow_v01_fixture_frozen.md",
+    "docs/checkpoints/544_pka_g102_project_boundary_accepted_source_vault_next.md",
+    "docs/checkpoints/550_pka_g108_current_authority_confirmed_integrity_next.md",
+    "docs/checkpoints/552_pka_w2_shadow_views_accepted_compatibility_shadow_next.md",
+    "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md",
+    "docs/checkpoints/661_drp03_obligation_unit_review_harness_frozen.md",
+    "docs/checkpoints/700_key_author_a_p4_birth_grouping_phase_defined.md",
+    "docs/checkpoints/718_key_author_a_p4_h09_accepted_h10_released.md",
+    "docs/checkpoints/722_key_author_a_p5_authorized_private_ops_next.md",
+    "docs/checkpoints/792_sp5_retired_without_score_sp6_next.md",
+    "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+    "docs/checkpoints/884_r0_p01_atomic_synthetic_finalization_and_independent_outcome_vectors_next.md",
+    "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+    "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+    "docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md",
+    "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md",
+    "docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md",
+    "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+    "docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md",
+    "docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md",
+    "docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md",
+    "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+    "docs/research/184_w0_derived_view_framework_g009_result.md",
+    "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+    "docs/research/230_ao9_p2_arm_contract_freeze.md",
+    "docs/research/268_p_r8b_01_r2_harness_defect_and_replacement_freeze.md",
+    "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+    "docs/research/284_p_d3_attempt002_harness_invalid_and_repair.md",
+    "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+    "docs/research/356_key_author_a_p3_batch9_compaction_hold_fresh_replacement_authorized.md",
+    "docs/research/357_key_author_a_p3_batch9_replacement_pass_batch10_fresh_session_released.md",
+    "docs/research/373_key_author_a_p4_h02_attempt001_verifier_scope_hold_fresh_retry.md",
+    "docs/research/407_key_author_a_legacy_attention_evaluator_qualified_activated.md",
+    "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+    "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+    "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+    "docs/research/548_r0_p01_atomic_synthetic_admission_measurement_finalization.md",
+    "docs/research/585_r0_p03_owner_fake_custody_report_and_access_boundary.md",
+    "docs/research/591_r0_p03_historical_evidence_review_population_and_author_admission_boundary.md",
+    "docs/research/615_r0_p03_a2_r07_actual_test_only_author_view_intake_and_instrumentability.md",
+    "docs/research/619_r0_p03_wave0_independent_blind_second_assessment_and_owner_comparison_route.md",
+    "docs/research/630_r0_p03_falsification_outcome_and_transition_to_source_world_closure.md",
+    "docs/research/GITHUB_APP_EXTENDED_PERMISSION_REVIEW.md",
+    "docs/specifications/011_v1_rrf_hybrid_retrieval_comparator.md",
+    "docs/specifications/013_v1_horizon_relevance_and_selective_context.md",
+    "docs/specifications/015_v1_recommendation_action_value_vertical_slice.md",
+    "docs/specifications/018_v1_governed_autonomous_live_experiment_launcher.md",
+    "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+    "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+    "tools/project_knowledge/__main__.py",
+    "tools/project_knowledge/adapters/schema.py",
+    "tools/project_knowledge/services/discovery.py",
+    "tools/project_knowledge/view_definitions/authority_index.py"
+  ],
+  "comparative_retrieval_trace": [
+    {
+      "B0_top_5_candidate_sources_with_original_SHA256": [
+        {
+          "path": "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+          "sha256": "788e3162fc823d21eca176646e7e5c96090cfd7dd971f3f3e918414c278b5cdd"
+        },
+        {
+          "path": "docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md",
+          "sha256": "fe3aed150fd06604aac3d37db1ee5ae092817d0cfb7cc5643f70edd561138ba3"
+        },
+        {
+          "path": "docs/DECISIONS.md",
+          "sha256": "1cb6dd610536781e6bdbd02ab30891f922610a90437a02c36057ca264a8a09b5"
+        },
+        {
+          "path": "docs/specifications/013_v1_horizon_relevance_and_selective_context.md",
+          "sha256": "b180a728ed4433c63bea87a5a7286383d3257b7548c7441fbdf6f1f4bcdfa28d"
+        },
+        {
+          "path": "docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md",
+          "sha256": "c08de226ff2878e1da1dae7a6cc55114000c881da021c94439288868706e2379"
+        }
+      ],
+      "category": "COLD_START_CURRENT_ORIENTATION",
+      "common_source_candidate_rankings": {
+        "B0_SUBSTRATE_LEXICAL_BASELINE": [
+          "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+          "docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md",
+          "docs/DECISIONS.md",
+          "docs/specifications/013_v1_horizon_relevance_and_selective_context.md",
+          "docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md",
+          "docs/checkpoints/447_repository_branch_safety_complete_canonical_protection_decision_next.md",
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md",
+          "docs/specifications/018_v1_governed_autonomous_live_experiment_launcher.md",
+          "docs/research/585_r0_p03_owner_fake_custody_report_and_access_boundary.md"
+        ],
+        "CHAR_TRIGRAM_DIAGNOSTIC": [
+          "docs/CURRENT_STATE.md",
+          "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+          "docs/checkpoints/550_pka_g108_current_authority_confirmed_integrity_next.md",
+          "docs/research/356_key_author_a_p3_batch9_compaction_hold_fresh_replacement_authorized.md",
+          "docs/checkpoints/497_candidate01_real_repository_shadow_v01_fixture_frozen.md",
+          "docs/checkpoints/792_sp5_retired_without_score_sp6_next.md",
+          "docs/checkpoints/544_pka_g102_project_boundary_accepted_source_vault_next.md",
+          "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+          "docs/checkpoints/552_pka_w2_shadow_views_accepted_compatibility_shadow_next.md",
+          "docs/checkpoints/722_key_author_a_p5_authorized_private_ops_next.md"
+        ],
+        "DIAGNOSTIC_THREE_WAY_RRF": [
+          "docs/CURRENT_STATE.md",
+          "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+          "docs/checkpoints/550_pka_g108_current_authority_confirmed_integrity_next.md",
+          "docs/checkpoints/447_repository_branch_safety_complete_canonical_protection_decision_next.md",
+          "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+          "docs/checkpoints/544_pka_g102_project_boundary_accepted_source_vault_next.md",
+          "docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md",
+          "docs/DECISIONS.md",
+          "docs/research/356_key_author_a_p3_batch9_compaction_hold_fresh_replacement_authorized.md",
+          "docs/specifications/013_v1_horizon_relevance_and_selective_context.md"
+        ],
+        "TITLE_LEXICAL_DIAGNOSTIC": [
+          "docs/CURRENT_STATE.md",
+          "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+          "docs/checkpoints/447_repository_branch_safety_complete_canonical_protection_decision_next.md",
+          "docs/checkpoints/550_pka_g108_current_authority_confirmed_integrity_next.md",
+          "docs/checkpoints/661_drp03_obligation_unit_review_harness_frozen.md",
+          "docs/checkpoints/121_immersive_scale_cockpit_slice_automated_gate_passed.md",
+          "docs/checkpoints/884_r0_p01_atomic_synthetic_finalization_and_independent_outcome_vectors_next.md",
+          "docs/checkpoints/358_runtime_release_preview20_fresh_chat_schema_qualified.md",
+          "docs/checkpoints/380_github_schema_reconciled_g0_and_targeted_evidence_ready.md",
+          "docs/checkpoints/544_pka_g102_project_boundary_accepted_source_vault_next.md"
+        ]
+      },
+      "id": "P01",
+      "intended_source_for_evaluation_only": "docs/CURRENT_STATE.md",
+      "question": "At the archived project state, what checkpoint was current and which branch was being used for ongoing development?",
+      "reference_source_rank_after_retrieval": {
+        "B0_SUBSTRATE_LEXICAL_BASELINE": null,
+        "CHAR_TRIGRAM_DIAGNOSTIC": 1,
+        "DIAGNOSTIC_THREE_WAY_RRF": 1,
+        "TITLE_LEXICAL_DIAGNOSTIC": 1
+      },
+      "source_status_gold_independent": false
+    },
+    {
+      "B0_top_5_candidate_sources_with_original_SHA256": [
+        {
+          "path": "docs/DECISIONS.md",
+          "sha256": "1cb6dd610536781e6bdbd02ab30891f922610a90437a02c36057ca264a8a09b5"
+        },
+        {
+          "path": "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+          "sha256": "0cc45f3d9b6903e16b1ad7503518b40c5705e1cd82430e761feaf409d0373432"
+        },
+        {
+          "path": "docs/research/356_key_author_a_p3_batch9_compaction_hold_fresh_replacement_authorized.md",
+          "sha256": "97349b88f4c0ca0345c23629c2426bf34c155192bd30c1ed5d13ff7a598ae649"
+        },
+        {
+          "path": "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+          "sha256": "7c1387f15b2781ca0a40d341803b143dedfe4f7251fbc79f97d180fde0523938"
+        },
+        {
+          "path": "docs/research/357_key_author_a_p3_batch9_replacement_pass_batch10_fresh_session_released.md",
+          "sha256": "ad291003dfb2bbfdc54c5812f32834cc062571359d0fdf566e50ffea72d66177"
+        }
+      ],
+      "category": "COLD_START_CURRENT_ORIENTATION",
+      "common_source_candidate_rankings": {
+        "B0_SUBSTRATE_LEXICAL_BASELINE": [
+          "docs/DECISIONS.md",
+          "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+          "docs/research/356_key_author_a_p3_batch9_compaction_hold_fresh_replacement_authorized.md",
+          "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+          "docs/research/357_key_author_a_p3_batch9_replacement_pass_batch10_fresh_session_released.md",
+          "docs/CURRENT_STATE.md",
+          "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+          "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+          "docs/research/GITHUB_APP_EXTENDED_PERMISSION_REVIEW.md",
+          "docs/checkpoints/718_key_author_a_p4_h09_accepted_h10_released.md"
+        ],
+        "CHAR_TRIGRAM_DIAGNOSTIC": [
+          "docs/DECISIONS.md",
+          "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+          "docs/checkpoints/884_r0_p01_atomic_synthetic_finalization_and_independent_outcome_vectors_next.md",
+          "docs/research/GITHUB_APP_EXTENDED_PERMISSION_REVIEW.md",
+          "docs/specifications/018_v1_governed_autonomous_live_experiment_launcher.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+          "docs/checkpoints/447_repository_branch_safety_complete_canonical_protection_decision_next.md",
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "tools/project_knowledge/adapters/schema.py"
+        ],
+        "DIAGNOSTIC_THREE_WAY_RRF": [
+          "docs/DECISIONS.md",
+          "tools/project_knowledge/adapters/schema.py",
+          "docs/research/GITHUB_APP_EXTENDED_PERMISSION_REVIEW.md",
+          "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+          "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+          "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+          "docs/checkpoints/884_r0_p01_atomic_synthetic_finalization_and_independent_outcome_vectors_next.md",
+          "docs/research/356_key_author_a_p3_batch9_compaction_hold_fresh_replacement_authorized.md",
+          "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+          "docs/research/357_key_author_a_p3_batch9_replacement_pass_batch10_fresh_session_released.md"
+        ],
+        "TITLE_LEXICAL_DIAGNOSTIC": [
+          "tools/project_knowledge/adapters/schema.py"
+        ]
+      },
+      "id": "P02",
+      "intended_source_for_evaluation_only": "docs/DECISIONS.md",
+      "question": "Where can a new collaborator find the explicit project-wide decisions, and can those decisions be revised later?",
+      "reference_source_rank_after_retrieval": {
+        "B0_SUBSTRATE_LEXICAL_BASELINE": 1,
+        "CHAR_TRIGRAM_DIAGNOSTIC": 1,
+        "DIAGNOSTIC_THREE_WAY_RRF": 1,
+        "TITLE_LEXICAL_DIAGNOSTIC": null
+      },
+      "source_status_gold_independent": false
+    },
+    {
+      "B0_top_5_candidate_sources_with_original_SHA256": [
+        {
+          "path": "docs/research/357_key_author_a_p3_batch9_replacement_pass_batch10_fresh_session_released.md",
+          "sha256": "ad291003dfb2bbfdc54c5812f32834cc062571359d0fdf566e50ffea72d66177"
+        },
+        {
+          "path": "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "sha256": "7a604ec607b1aa7a8135504dc9a24576e463c5a5f392c1a1ebefa0e2e518e7f7"
+        },
+        {
+          "path": "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+          "sha256": "40bf71219aaf9eee311241e0eabd7b034f52e0a40fe7b18a8437ea3fdfe4edf4"
+        },
+        {
+          "path": "docs/research/407_key_author_a_legacy_attention_evaluator_qualified_activated.md",
+          "sha256": "2f615fcf560698daca6ec7716e9ab1357dc0d94728731c09819f0ec68a689c0a"
+        },
+        {
+          "path": "docs/research/356_key_author_a_p3_batch9_compaction_hold_fresh_replacement_authorized.md",
+          "sha256": "97349b88f4c0ca0345c23629c2426bf34c155192bd30c1ed5d13ff7a598ae649"
+        }
+      ],
+      "category": "COLD_START_CURRENT_ORIENTATION",
+      "common_source_candidate_rankings": {
+        "B0_SUBSTRATE_LEXICAL_BASELINE": [
+          "docs/research/357_key_author_a_p3_batch9_replacement_pass_batch10_fresh_session_released.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+          "docs/research/407_key_author_a_legacy_attention_evaluator_qualified_activated.md",
+          "docs/research/356_key_author_a_p3_batch9_compaction_hold_fresh_replacement_authorized.md",
+          "docs/specifications/018_v1_governed_autonomous_live_experiment_launcher.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/checkpoints/050_real_held_out_run_plan_materialized_and_frozen_inputs_verified.md",
+          "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+          "docs/checkpoints/550_pka_g108_current_authority_confirmed_integrity_next.md"
+        ],
+        "CHAR_TRIGRAM_DIAGNOSTIC": [
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/checkpoints/544_pka_g102_project_boundary_accepted_source_vault_next.md",
+          "docs/checkpoints/550_pka_g108_current_authority_confirmed_integrity_next.md",
+          "docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md",
+          "docs/checkpoints/497_candidate01_real_repository_shadow_v01_fixture_frozen.md",
+          "docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md",
+          "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+          "docs/checkpoints/552_pka_w2_shadow_views_accepted_compatibility_shadow_next.md",
+          "docs/specifications/018_v1_governed_autonomous_live_experiment_launcher.md",
+          "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md"
+        ],
+        "DIAGNOSTIC_THREE_WAY_RRF": [
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/specifications/018_v1_governed_autonomous_live_experiment_launcher.md",
+          "docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md",
+          "docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md",
+          "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+          "docs/checkpoints/550_pka_g108_current_authority_confirmed_integrity_next.md",
+          "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+          "docs/research/357_key_author_a_p3_batch9_replacement_pass_batch10_fresh_session_released.md",
+          "docs/checkpoints/544_pka_g102_project_boundary_accepted_source_vault_next.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md"
+        ],
+        "TITLE_LEXICAL_DIAGNOSTIC": [
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md",
+          "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+          "docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md",
+          "docs/research/230_ao9_p2_arm_contract_freeze.md",
+          "docs/specifications/018_v1_governed_autonomous_live_experiment_launcher.md",
+          "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+          "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+          "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md",
+          "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md"
+        ]
+      },
+      "id": "P03",
+      "intended_source_for_evaluation_only": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "question": "What is the recorded implementation status of the governed project-knowledge architecture migration contract?",
+      "reference_source_rank_after_retrieval": {
+        "B0_SUBSTRATE_LEXICAL_BASELINE": 7,
+        "CHAR_TRIGRAM_DIAGNOSTIC": 1,
+        "DIAGNOSTIC_THREE_WAY_RRF": 1,
+        "TITLE_LEXICAL_DIAGNOSTIC": 1
+      },
+      "source_status_gold_independent": false
+    },
+    {
+      "B0_top_5_candidate_sources_with_original_SHA256": [
+        {
+          "path": "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+          "sha256": "7c1387f15b2781ca0a40d341803b143dedfe4f7251fbc79f97d180fde0523938"
+        },
+        {
+          "path": "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "sha256": "eadf86eb4803ed442643ecd656bc2c8d44b281ba9f0dc20b8948eb85c437fcaa"
+        },
+        {
+          "path": "docs/DECISIONS.md",
+          "sha256": "1cb6dd610536781e6bdbd02ab30891f922610a90437a02c36057ca264a8a09b5"
+        },
+        {
+          "path": "docs/specifications/015_v1_recommendation_action_value_vertical_slice.md",
+          "sha256": "a1c54cb6435f1df7fabc6d819693efa18528fa5379aeb8725c9ded929da66c0f"
+        },
+        {
+          "path": "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+          "sha256": "788e3162fc823d21eca176646e7e5c96090cfd7dd971f3f3e918414c278b5cdd"
+        }
+      ],
+      "category": "CROSS_PLANE_DISCOVERY",
+      "common_source_candidate_rankings": {
+        "B0_SUBSTRATE_LEXICAL_BASELINE": [
+          "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "docs/DECISIONS.md",
+          "docs/specifications/015_v1_recommendation_action_value_vertical_slice.md",
+          "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+          "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md",
+          "docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md",
+          "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+          "docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md",
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md"
+        ],
+        "CHAR_TRIGRAM_DIAGNOSTIC": [
+          "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+          "docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md",
+          "docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md",
+          "docs/checkpoints/544_pka_g102_project_boundary_accepted_source_vault_next.md",
+          "tools/project_knowledge/__main__.py",
+          "docs/DECISIONS.md",
+          "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md",
+          "docs/specifications/015_v1_recommendation_action_value_vertical_slice.md",
+          "docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md",
+          "docs/checkpoints/550_pka_g108_current_authority_confirmed_integrity_next.md"
+        ],
+        "DIAGNOSTIC_THREE_WAY_RRF": [
+          "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+          "docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md",
+          "docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md",
+          "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md",
+          "docs/DECISIONS.md",
+          "docs/specifications/015_v1_recommendation_action_value_vertical_slice.md",
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/checkpoints/380_github_schema_reconciled_g0_and_targeted_evidence_ready.md",
+          "docs/checkpoints/544_pka_g102_project_boundary_accepted_source_vault_next.md"
+        ],
+        "TITLE_LEXICAL_DIAGNOSTIC": [
+          "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+          "docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/checkpoints/380_github_schema_reconciled_g0_and_targeted_evidence_ready.md",
+          "docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md",
+          "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md",
+          "docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md",
+          "docs/research/591_r0_p03_historical_evidence_review_population_and_author_admission_boundary.md",
+          "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md"
+        ]
+      },
+      "id": "P04",
+      "intended_source_for_evaluation_only": "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+      "question": "Which foundation explains source artifact preservation, lineage and evidence provenance across the knowledge system?",
+      "reference_source_rank_after_retrieval": {
+        "B0_SUBSTRATE_LEXICAL_BASELINE": 1,
+        "CHAR_TRIGRAM_DIAGNOSTIC": 1,
+        "DIAGNOSTIC_THREE_WAY_RRF": 1,
+        "TITLE_LEXICAL_DIAGNOSTIC": 1
+      },
+      "source_status_gold_independent": false
+    },
+    {
+      "B0_top_5_candidate_sources_with_original_SHA256": [
+        {
+          "path": "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+          "sha256": "788e3162fc823d21eca176646e7e5c96090cfd7dd971f3f3e918414c278b5cdd"
+        },
+        {
+          "path": "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+          "sha256": "51cef534cdf40a72fda8be52b098ce48a9a42c1954f780550acb41c301d2faf2"
+        },
+        {
+          "path": "docs/checkpoints/550_pka_g108_current_authority_confirmed_integrity_next.md",
+          "sha256": "54427409aa5200a0feef027ec138f32d7dbcf021d2277f69238f17f051dedfbb"
+        },
+        {
+          "path": "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "sha256": "58a77b5e9fed4008b9b7ed78a972d8063ca4be7d9dbf557256203572f275ec33"
+        },
+        {
+          "path": "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+          "sha256": "b06302ff4c2d87987d976e149d964f52c8772808a055cb952433566790094869"
+        }
+      ],
+      "category": "CROSS_PLANE_DISCOVERY",
+      "common_source_candidate_rankings": {
+        "B0_SUBSTRATE_LEXICAL_BASELINE": [
+          "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+          "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+          "docs/checkpoints/550_pka_g108_current_authority_confirmed_integrity_next.md",
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+          "docs/research/184_w0_derived_view_framework_g009_result.md",
+          "docs/checkpoints/552_pka_w2_shadow_views_accepted_compatibility_shadow_next.md",
+          "docs/research/357_key_author_a_p3_batch9_replacement_pass_batch10_fresh_session_released.md",
+          "docs/checkpoints/544_pka_g102_project_boundary_accepted_source_vault_next.md",
+          "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md"
+        ],
+        "CHAR_TRIGRAM_DIAGNOSTIC": [
+          "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "docs/specifications/015_v1_recommendation_action_value_vertical_slice.md",
+          "docs/CURRENT_STATE.md",
+          "docs/specifications/018_v1_governed_autonomous_live_experiment_launcher.md",
+          "docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md",
+          "docs/checkpoints/550_pka_g108_current_authority_confirmed_integrity_next.md",
+          "docs/checkpoints/121_immersive_scale_cockpit_slice_automated_gate_passed.md",
+          "docs/specifications/011_v1_rrf_hybrid_retrieval_comparator.md"
+        ],
+        "DIAGNOSTIC_THREE_WAY_RRF": [
+          "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+          "docs/checkpoints/550_pka_g108_current_authority_confirmed_integrity_next.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "docs/specifications/018_v1_governed_autonomous_live_experiment_launcher.md",
+          "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+          "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+          "docs/specifications/011_v1_rrf_hybrid_retrieval_comparator.md",
+          "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+          "docs/specifications/015_v1_recommendation_action_value_vertical_slice.md"
+        ],
+        "TITLE_LEXICAL_DIAGNOSTIC": [
+          "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+          "docs/specifications/018_v1_governed_autonomous_live_experiment_launcher.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+          "docs/checkpoints/550_pka_g108_current_authority_confirmed_integrity_next.md",
+          "docs/checkpoints/447_repository_branch_safety_complete_canonical_protection_decision_next.md",
+          "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+          "docs/checkpoints/497_candidate01_real_repository_shadow_v01_fixture_frozen.md",
+          "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+          "docs/specifications/011_v1_rrf_hybrid_retrieval_comparator.md"
+        ]
+      },
+      "id": "P05",
+      "intended_source_for_evaluation_only": "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+      "question": "Which specification addresses governed repository integrity and continuity bootstrap while still awaiting implementation?",
+      "reference_source_rank_after_retrieval": {
+        "B0_SUBSTRATE_LEXICAL_BASELINE": 1,
+        "CHAR_TRIGRAM_DIAGNOSTIC": 1,
+        "DIAGNOSTIC_THREE_WAY_RRF": 1,
+        "TITLE_LEXICAL_DIAGNOSTIC": 1
+      },
+      "source_status_gold_independent": false
+    },
+    {
+      "B0_top_5_candidate_sources_with_original_SHA256": [
+        {
+          "path": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+          "sha256": "1a45aa417851c65be8b2455b9a81a32c2e2273a529b5716c6ebb4c1f736e73d4"
+        },
+        {
+          "path": "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+          "sha256": "51cef534cdf40a72fda8be52b098ce48a9a42c1954f780550acb41c301d2faf2"
+        },
+        {
+          "path": "docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md",
+          "sha256": "c08de226ff2878e1da1dae7a6cc55114000c881da021c94439288868706e2379"
+        },
+        {
+          "path": "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "sha256": "58a77b5e9fed4008b9b7ed78a972d8063ca4be7d9dbf557256203572f275ec33"
+        },
+        {
+          "path": "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+          "sha256": "40bf71219aaf9eee311241e0eabd7b034f52e0a40fe7b18a8437ea3fdfe4edf4"
+        }
+      ],
+      "category": "CROSS_PLANE_DISCOVERY",
+      "common_source_candidate_rankings": {
+        "B0_SUBSTRATE_LEXICAL_BASELINE": [
+          "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+          "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+          "docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md",
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+          "docs/checkpoints/884_r0_p01_atomic_synthetic_finalization_and_independent_outcome_vectors_next.md",
+          "docs/specifications/018_v1_governed_autonomous_live_experiment_launcher.md",
+          "docs/specifications/015_v1_recommendation_action_value_vertical_slice.md",
+          "docs/research/591_r0_p03_historical_evidence_review_population_and_author_admission_boundary.md",
+          "docs/research/548_r0_p01_atomic_synthetic_admission_measurement_finalization.md"
+        ],
+        "CHAR_TRIGRAM_DIAGNOSTIC": [
+          "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+          "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md",
+          "docs/DECISIONS.md",
+          "docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md",
+          "docs/specifications/018_v1_governed_autonomous_live_experiment_launcher.md",
+          "docs/research/356_key_author_a_p3_batch9_compaction_hold_fresh_replacement_authorized.md",
+          "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+          "docs/specifications/015_v1_recommendation_action_value_vertical_slice.md",
+          "docs/research/548_r0_p01_atomic_synthetic_admission_measurement_finalization.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md"
+        ],
+        "DIAGNOSTIC_THREE_WAY_RRF": [
+          "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+          "docs/specifications/018_v1_governed_autonomous_live_experiment_launcher.md",
+          "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md",
+          "docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md",
+          "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+          "docs/specifications/015_v1_recommendation_action_value_vertical_slice.md",
+          "docs/research/548_r0_p01_atomic_synthetic_admission_measurement_finalization.md",
+          "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+          "docs/DECISIONS.md",
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md"
+        ],
+        "TITLE_LEXICAL_DIAGNOSTIC": [
+          "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+          "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md",
+          "docs/specifications/018_v1_governed_autonomous_live_experiment_launcher.md",
+          "docs/research/630_r0_p03_falsification_outcome_and_transition_to_source_world_closure.md",
+          "docs/checkpoints/544_pka_g102_project_boundary_accepted_source_vault_next.md",
+          "docs/checkpoints/718_key_author_a_p4_h09_accepted_h10_released.md",
+          "docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md",
+          "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md",
+          "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+          "docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md"
+        ]
+      },
+      "id": "P06",
+      "intended_source_for_evaluation_only": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+      "question": "What was the outcome of the controlled-subject navigation architecture experiment, and was its subject model accepted?",
+      "reference_source_rank_after_retrieval": {
+        "B0_SUBSTRATE_LEXICAL_BASELINE": 1,
+        "CHAR_TRIGRAM_DIAGNOSTIC": 1,
+        "DIAGNOSTIC_THREE_WAY_RRF": 1,
+        "TITLE_LEXICAL_DIAGNOSTIC": 1
+      },
+      "source_status_gold_independent": false
+    },
+    {
+      "B0_top_5_candidate_sources_with_original_SHA256": [
+        {
+          "path": "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "sha256": "eadf86eb4803ed442643ecd656bc2c8d44b281ba9f0dc20b8948eb85c437fcaa"
+        },
+        {
+          "path": "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+          "sha256": "0cc45f3d9b6903e16b1ad7503518b40c5705e1cd82430e761feaf409d0373432"
+        },
+        {
+          "path": "docs/research/591_r0_p03_historical_evidence_review_population_and_author_admission_boundary.md",
+          "sha256": "de313a7bc8f493213e9eab6e20517399b9b82f1a6698a58d3796b00bc958dfe9"
+        },
+        {
+          "path": "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+          "sha256": "7c1387f15b2781ca0a40d341803b143dedfe4f7251fbc79f97d180fde0523938"
+        },
+        {
+          "path": "docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md",
+          "sha256": "0d670019e7c86decb33fb193aea84db1faae49251a50fd9786a6a4a529bc551e"
+        }
+      ],
+      "category": "IMPACT_AND_ARCHITECTURE_EVOLUTION",
+      "common_source_candidate_rankings": {
+        "B0_SUBSTRATE_LEXICAL_BASELINE": [
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+          "docs/research/591_r0_p03_historical_evidence_review_population_and_author_admission_boundary.md",
+          "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+          "docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "docs/DECISIONS.md",
+          "docs/checkpoints/121_immersive_scale_cockpit_slice_automated_gate_passed.md"
+        ],
+        "CHAR_TRIGRAM_DIAGNOSTIC": [
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md",
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/checkpoints/884_r0_p01_atomic_synthetic_finalization_and_independent_outcome_vectors_next.md",
+          "docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md",
+          "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+          "docs/DECISIONS.md"
+        ],
+        "DIAGNOSTIC_THREE_WAY_RRF": [
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md",
+          "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md",
+          "docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md",
+          "docs/DECISIONS.md"
+        ],
+        "TITLE_LEXICAL_DIAGNOSTIC": [
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md",
+          "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md",
+          "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md",
+          "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+          "docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md",
+          "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md"
+        ]
+      },
+      "id": "P07",
+      "intended_source_for_evaluation_only": "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+      "question": "What document establishes the physical architecture realization requirements and the independent design charter?",
+      "reference_source_rank_after_retrieval": {
+        "B0_SUBSTRATE_LEXICAL_BASELINE": 1,
+        "CHAR_TRIGRAM_DIAGNOSTIC": 1,
+        "DIAGNOSTIC_THREE_WAY_RRF": 1,
+        "TITLE_LEXICAL_DIAGNOSTIC": 1
+      },
+      "source_status_gold_independent": false
+    },
+    {
+      "B0_top_5_candidate_sources_with_original_SHA256": [
+        {
+          "path": "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+          "sha256": "40bf71219aaf9eee311241e0eabd7b034f52e0a40fe7b18a8437ea3fdfe4edf4"
+        },
+        {
+          "path": "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+          "sha256": "5d3f9fdd27a761775b99f1971623ddc973ee87192f9f1faa32112660c228a0bb"
+        },
+        {
+          "path": "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+          "sha256": "b06302ff4c2d87987d976e149d964f52c8772808a055cb952433566790094869"
+        },
+        {
+          "path": "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "sha256": "eadf86eb4803ed442643ecd656bc2c8d44b281ba9f0dc20b8948eb85c437fcaa"
+        },
+        {
+          "path": "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+          "sha256": "0cc45f3d9b6903e16b1ad7503518b40c5705e1cd82430e761feaf409d0373432"
+        }
+      ],
+      "category": "IMPACT_AND_ARCHITECTURE_EVOLUTION",
+      "common_source_candidate_rankings": {
+        "B0_SUBSTRATE_LEXICAL_BASELINE": [
+          "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+          "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+          "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+          "docs/checkpoints/380_github_schema_reconciled_g0_and_targeted_evidence_ready.md",
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/research/619_r0_p03_wave0_independent_blind_second_assessment_and_owner_comparison_route.md"
+        ],
+        "CHAR_TRIGRAM_DIAGNOSTIC": [
+          "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+          "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md",
+          "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+          "docs/DECISIONS.md",
+          "docs/specifications/011_v1_rrf_hybrid_retrieval_comparator.md",
+          "docs/specifications/018_v1_governed_autonomous_live_experiment_launcher.md",
+          "docs/research/356_key_author_a_p3_batch9_compaction_hold_fresh_replacement_authorized.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md"
+        ],
+        "DIAGNOSTIC_THREE_WAY_RRF": [
+          "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+          "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+          "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+          "docs/checkpoints/380_github_schema_reconciled_g0_and_targeted_evidence_ready.md",
+          "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md",
+          "docs/specifications/018_v1_governed_autonomous_live_experiment_launcher.md",
+          "docs/research/619_r0_p03_wave0_independent_blind_second_assessment_and_owner_comparison_route.md"
+        ],
+        "TITLE_LEXICAL_DIAGNOSTIC": [
+          "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+          "docs/checkpoints/380_github_schema_reconciled_g0_and_targeted_evidence_ready.md",
+          "docs/research/619_r0_p03_wave0_independent_blind_second_assessment_and_owner_comparison_route.md",
+          "docs/specifications/018_v1_governed_autonomous_live_experiment_launcher.md",
+          "docs/checkpoints/497_candidate01_real_repository_shadow_v01_fixture_frozen.md",
+          "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md"
+        ]
+      },
+      "id": "P08",
+      "intended_source_for_evaluation_only": "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+      "question": "After the Claude design critique, which governed ledger kernel candidate was retained, and was the owner physical architecture decision ready?",
+      "reference_source_rank_after_retrieval": {
+        "B0_SUBSTRATE_LEXICAL_BASELINE": 1,
+        "CHAR_TRIGRAM_DIAGNOSTIC": 1,
+        "DIAGNOSTIC_THREE_WAY_RRF": 1,
+        "TITLE_LEXICAL_DIAGNOSTIC": 1
+      },
+      "source_status_gold_independent": false
+    },
+    {
+      "B0_top_5_candidate_sources_with_original_SHA256": [
+        {
+          "path": "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md",
+          "sha256": "d23dbd9ad20c14f93ded350575dff6e4ac734b9268d4befc760fcfbf5eec4412"
+        },
+        {
+          "path": "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "sha256": "58a77b5e9fed4008b9b7ed78a972d8063ca4be7d9dbf557256203572f275ec33"
+        },
+        {
+          "path": "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+          "sha256": "0cc45f3d9b6903e16b1ad7503518b40c5705e1cd82430e761feaf409d0373432"
+        },
+        {
+          "path": "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "sha256": "eadf86eb4803ed442643ecd656bc2c8d44b281ba9f0dc20b8948eb85c437fcaa"
+        },
+        {
+          "path": "docs/research/230_ao9_p2_arm_contract_freeze.md",
+          "sha256": "238a8f1eebbc3b89176526be1373b64c0e8a4bbe9293f42467f8130b2aeff150"
+        }
+      ],
+      "category": "IMPACT_AND_ARCHITECTURE_EVOLUTION",
+      "common_source_candidate_rankings": {
+        "B0_SUBSTRATE_LEXICAL_BASELINE": [
+          "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md",
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "docs/research/230_ao9_p2_arm_contract_freeze.md",
+          "docs/checkpoints/661_drp03_obligation_unit_review_harness_frozen.md",
+          "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+          "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+          "docs/checkpoints/884_r0_p01_atomic_synthetic_finalization_and_independent_outcome_vectors_next.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md"
+        ],
+        "CHAR_TRIGRAM_DIAGNOSTIC": [
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+          "docs/specifications/011_v1_rrf_hybrid_retrieval_comparator.md",
+          "docs/checkpoints/497_candidate01_real_repository_shadow_v01_fixture_frozen.md",
+          "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+          "docs/checkpoints/722_key_author_a_p5_authorized_private_ops_next.md",
+          "docs/checkpoints/718_key_author_a_p4_h09_accepted_h10_released.md",
+          "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md"
+        ],
+        "DIAGNOSTIC_THREE_WAY_RRF": [
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/research/230_ao9_p2_arm_contract_freeze.md",
+          "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md",
+          "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+          "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+          "docs/checkpoints/497_candidate01_real_repository_shadow_v01_fixture_frozen.md",
+          "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+          "docs/specifications/011_v1_rrf_hybrid_retrieval_comparator.md"
+        ],
+        "TITLE_LEXICAL_DIAGNOSTIC": [
+          "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "docs/research/230_ao9_p2_arm_contract_freeze.md",
+          "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+          "docs/checkpoints/497_candidate01_real_repository_shadow_v01_fixture_frozen.md",
+          "docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md",
+          "docs/research/357_key_author_a_p3_batch9_replacement_pass_batch10_fresh_session_released.md"
+        ]
+      },
+      "id": "P09",
+      "intended_source_for_evaluation_only": "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+      "question": "Did the AO-10 realization candidate authorize production implementation or physical migration?",
+      "reference_source_rank_after_retrieval": {
+        "B0_SUBSTRATE_LEXICAL_BASELINE": 2,
+        "CHAR_TRIGRAM_DIAGNOSTIC": 1,
+        "DIAGNOSTIC_THREE_WAY_RRF": 1,
+        "TITLE_LEXICAL_DIAGNOSTIC": 1
+      },
+      "source_status_gold_independent": false
+    },
+    {
+      "B0_top_5_candidate_sources_with_original_SHA256": [
+        {
+          "path": "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+          "sha256": "5d3f9fdd27a761775b99f1971623ddc973ee87192f9f1faa32112660c228a0bb"
+        },
+        {
+          "path": "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "sha256": "7a604ec607b1aa7a8135504dc9a24576e463c5a5f392c1a1ebefa0e2e518e7f7"
+        },
+        {
+          "path": "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+          "sha256": "40bf71219aaf9eee311241e0eabd7b034f52e0a40fe7b18a8437ea3fdfe4edf4"
+        },
+        {
+          "path": "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+          "sha256": "b06302ff4c2d87987d976e149d964f52c8772808a055cb952433566790094869"
+        },
+        {
+          "path": "docs/checkpoints/884_r0_p01_atomic_synthetic_finalization_and_independent_outcome_vectors_next.md",
+          "sha256": "70116235e0fa5f3ee33c8324eb784d68334acf06f330d1511201146d3f10ae07"
+        }
+      ],
+      "category": "EXACT_SOURCE_AUTHORITY_RECOVERY",
+      "common_source_candidate_rankings": {
+        "B0_SUBSTRATE_LEXICAL_BASELINE": [
+          "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+          "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+          "docs/checkpoints/884_r0_p01_atomic_synthetic_finalization_and_independent_outcome_vectors_next.md",
+          "docs/research/548_r0_p01_atomic_synthetic_admission_measurement_finalization.md",
+          "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+          "docs/research/591_r0_p03_historical_evidence_review_population_and_author_admission_boundary.md",
+          "docs/research/619_r0_p03_wave0_independent_blind_second_assessment_and_owner_comparison_route.md",
+          "docs/research/585_r0_p03_owner_fake_custody_report_and_access_boundary.md"
+        ],
+        "CHAR_TRIGRAM_DIAGNOSTIC": [
+          "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/checkpoints/544_pka_g102_project_boundary_accepted_source_vault_next.md",
+          "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+          "docs/checkpoints/884_r0_p01_atomic_synthetic_finalization_and_independent_outcome_vectors_next.md",
+          "docs/checkpoints/358_runtime_release_preview20_fresh_chat_schema_qualified.md",
+          "docs/checkpoints/792_sp5_retired_without_score_sp6_next.md",
+          "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md",
+          "docs/checkpoints/550_pka_g108_current_authority_confirmed_integrity_next.md",
+          "docs/checkpoints/380_github_schema_reconciled_g0_and_targeted_evidence_ready.md"
+        ],
+        "DIAGNOSTIC_THREE_WAY_RRF": [
+          "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/checkpoints/884_r0_p01_atomic_synthetic_finalization_and_independent_outcome_vectors_next.md",
+          "docs/checkpoints/544_pka_g102_project_boundary_accepted_source_vault_next.md",
+          "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+          "docs/checkpoints/550_pka_g108_current_authority_confirmed_integrity_next.md",
+          "docs/checkpoints/792_sp5_retired_without_score_sp6_next.md",
+          "docs/checkpoints/447_repository_branch_safety_complete_canonical_protection_decision_next.md",
+          "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+          "docs/checkpoints/358_runtime_release_preview20_fresh_chat_schema_qualified.md"
+        ],
+        "TITLE_LEXICAL_DIAGNOSTIC": [
+          "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+          "docs/checkpoints/550_pka_g108_current_authority_confirmed_integrity_next.md",
+          "docs/checkpoints/447_repository_branch_safety_complete_canonical_protection_decision_next.md",
+          "docs/checkpoints/544_pka_g102_project_boundary_accepted_source_vault_next.md",
+          "docs/checkpoints/792_sp5_retired_without_score_sp6_next.md",
+          "docs/checkpoints/884_r0_p01_atomic_synthetic_finalization_and_independent_outcome_vectors_next.md",
+          "docs/checkpoints/552_pka_w2_shadow_views_accepted_compatibility_shadow_next.md",
+          "docs/checkpoints/722_key_author_a_p5_authorized_private_ops_next.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md"
+        ]
+      },
+      "id": "P10",
+      "intended_source_for_evaluation_only": "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+      "question": "Which checkpoint records the R0-P02 probe passing, and which architectural probe was scheduled next?",
+      "reference_source_rank_after_retrieval": {
+        "B0_SUBSTRATE_LEXICAL_BASELINE": 1,
+        "CHAR_TRIGRAM_DIAGNOSTIC": 1,
+        "DIAGNOSTIC_THREE_WAY_RRF": 1,
+        "TITLE_LEXICAL_DIAGNOSTIC": 1
+      },
+      "source_status_gold_independent": false
+    },
+    {
+      "B0_top_5_candidate_sources_with_original_SHA256": [
+        {
+          "path": "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "sha256": "7a604ec607b1aa7a8135504dc9a24576e463c5a5f392c1a1ebefa0e2e518e7f7"
+        },
+        {
+          "path": "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+          "sha256": "fd9ee485c0671f4950ea050f21fc029683dc05412921fcc21107091619f0ac9f"
+        },
+        {
+          "path": "docs/CURRENT_STATE.md",
+          "sha256": "54bcb132f12ceffd330540006a8099179a260f751da7b4269253b6aef87edcaa"
+        },
+        {
+          "path": "docs/checkpoints/884_r0_p01_atomic_synthetic_finalization_and_independent_outcome_vectors_next.md",
+          "sha256": "70116235e0fa5f3ee33c8324eb784d68334acf06f330d1511201146d3f10ae07"
+        },
+        {
+          "path": "docs/research/585_r0_p03_owner_fake_custody_report_and_access_boundary.md",
+          "sha256": "e8ecc8ba823b9cb4b037e8216a10bd4976b3419fb376e25f5328fe1b648050f6"
+        }
+      ],
+      "category": "EXACT_SOURCE_AUTHORITY_RECOVERY",
+      "common_source_candidate_rankings": {
+        "B0_SUBSTRATE_LEXICAL_BASELINE": [
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+          "docs/CURRENT_STATE.md",
+          "docs/checkpoints/884_r0_p01_atomic_synthetic_finalization_and_independent_outcome_vectors_next.md",
+          "docs/research/585_r0_p03_owner_fake_custody_report_and_access_boundary.md",
+          "docs/research/591_r0_p03_historical_evidence_review_population_and_author_admission_boundary.md",
+          "docs/research/548_r0_p01_atomic_synthetic_admission_measurement_finalization.md",
+          "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+          "docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md",
+          "docs/research/619_r0_p03_wave0_independent_blind_second_assessment_and_owner_comparison_route.md"
+        ],
+        "CHAR_TRIGRAM_DIAGNOSTIC": [
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+          "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+          "docs/research/GITHUB_APP_EXTENDED_PERMISSION_REVIEW.md",
+          "docs/research/548_r0_p01_atomic_synthetic_admission_measurement_finalization.md",
+          "docs/checkpoints/884_r0_p01_atomic_synthetic_finalization_and_independent_outcome_vectors_next.md",
+          "docs/research/585_r0_p03_owner_fake_custody_report_and_access_boundary.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md",
+          "docs/research/615_r0_p03_a2_r07_actual_test_only_author_view_intake_and_instrumentability.md"
+        ],
+        "DIAGNOSTIC_THREE_WAY_RRF": [
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+          "docs/research/585_r0_p03_owner_fake_custody_report_and_access_boundary.md",
+          "docs/checkpoints/884_r0_p01_atomic_synthetic_finalization_and_independent_outcome_vectors_next.md",
+          "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+          "docs/research/GITHUB_APP_EXTENDED_PERMISSION_REVIEW.md",
+          "docs/research/548_r0_p01_atomic_synthetic_admission_measurement_finalization.md",
+          "docs/research/591_r0_p03_historical_evidence_review_population_and_author_admission_boundary.md",
+          "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+          "docs/CURRENT_STATE.md"
+        ],
+        "TITLE_LEXICAL_DIAGNOSTIC": [
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/research/585_r0_p03_owner_fake_custody_report_and_access_boundary.md",
+          "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+          "docs/research/GITHUB_APP_EXTENDED_PERMISSION_REVIEW.md",
+          "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+          "docs/research/591_r0_p03_historical_evidence_review_population_and_author_admission_boundary.md",
+          "docs/checkpoints/497_candidate01_real_repository_shadow_v01_fixture_frozen.md",
+          "docs/checkpoints/884_r0_p01_atomic_synthetic_finalization_and_independent_outcome_vectors_next.md",
+          "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+          "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md"
+        ]
+      },
+      "id": "P11",
+      "intended_source_for_evaluation_only": "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+      "question": "Which checkpoint documents the owner-approved deferral of authentication and permission to resume R0-P03 fixture work?",
+      "reference_source_rank_after_retrieval": {
+        "B0_SUBSTRATE_LEXICAL_BASELINE": 1,
+        "CHAR_TRIGRAM_DIAGNOSTIC": 1,
+        "DIAGNOSTIC_THREE_WAY_RRF": 1,
+        "TITLE_LEXICAL_DIAGNOSTIC": 1
+      },
+      "source_status_gold_independent": false
+    },
+    {
+      "B0_top_5_candidate_sources_with_original_SHA256": [
+        {
+          "path": "docs/CURRENT_STATE.md",
+          "sha256": "54bcb132f12ceffd330540006a8099179a260f751da7b4269253b6aef87edcaa"
+        },
+        {
+          "path": "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+          "sha256": "fd9ee485c0671f4950ea050f21fc029683dc05412921fcc21107091619f0ac9f"
+        },
+        {
+          "path": "docs/research/585_r0_p03_owner_fake_custody_report_and_access_boundary.md",
+          "sha256": "e8ecc8ba823b9cb4b037e8216a10bd4976b3419fb376e25f5328fe1b648050f6"
+        },
+        {
+          "path": "docs/research/619_r0_p03_wave0_independent_blind_second_assessment_and_owner_comparison_route.md",
+          "sha256": "c44efff1ff0a2bef4ee493a6b3583ad83dbe296b026ab744665f15db1f2f895c"
+        },
+        {
+          "path": "docs/research/591_r0_p03_historical_evidence_review_population_and_author_admission_boundary.md",
+          "sha256": "de313a7bc8f493213e9eab6e20517399b9b82f1a6698a58d3796b00bc958dfe9"
+        }
+      ],
+      "category": "EXACT_SOURCE_AUTHORITY_RECOVERY",
+      "common_source_candidate_rankings": {
+        "B0_SUBSTRATE_LEXICAL_BASELINE": [
+          "docs/CURRENT_STATE.md",
+          "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+          "docs/research/585_r0_p03_owner_fake_custody_report_and_access_boundary.md",
+          "docs/research/619_r0_p03_wave0_independent_blind_second_assessment_and_owner_comparison_route.md",
+          "docs/research/591_r0_p03_historical_evidence_review_population_and_author_admission_boundary.md",
+          "docs/research/630_r0_p03_falsification_outcome_and_transition_to_source_world_closure.md",
+          "docs/research/548_r0_p01_atomic_synthetic_admission_measurement_finalization.md",
+          "docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md",
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md"
+        ],
+        "CHAR_TRIGRAM_DIAGNOSTIC": [
+          "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+          "docs/research/591_r0_p03_historical_evidence_review_population_and_author_admission_boundary.md",
+          "docs/DECISIONS.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+          "docs/research/585_r0_p03_owner_fake_custody_report_and_access_boundary.md",
+          "docs/research/GITHUB_APP_EXTENDED_PERMISSION_REVIEW.md",
+          "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md",
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md"
+        ],
+        "DIAGNOSTIC_THREE_WAY_RRF": [
+          "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+          "docs/research/591_r0_p03_historical_evidence_review_population_and_author_admission_boundary.md",
+          "docs/research/585_r0_p03_owner_fake_custody_report_and_access_boundary.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "docs/research/GITHUB_APP_EXTENDED_PERMISSION_REVIEW.md",
+          "docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md",
+          "docs/CURRENT_STATE.md",
+          "docs/DECISIONS.md",
+          "docs/research/619_r0_p03_wave0_independent_blind_second_assessment_and_owner_comparison_route.md"
+        ],
+        "TITLE_LEXICAL_DIAGNOSTIC": [
+          "docs/research/591_r0_p03_historical_evidence_review_population_and_author_admission_boundary.md",
+          "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+          "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+          "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+          "docs/research/585_r0_p03_owner_fake_custody_report_and_access_boundary.md",
+          "docs/research/GITHUB_APP_EXTENDED_PERMISSION_REVIEW.md",
+          "docs/checkpoints/661_drp03_obligation_unit_review_harness_frozen.md",
+          "docs/checkpoints/380_github_schema_reconciled_g0_and_targeted_evidence_ready.md",
+          "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+          "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md"
+        ]
+      },
+      "id": "P12",
+      "intended_source_for_evaluation_only": "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+      "question": "What was the documented reason the independent R0-P03 reference cohort could not yet be scored in the earlier evidence-capacity review?",
+      "reference_source_rank_after_retrieval": {
+        "B0_SUBSTRATE_LEXICAL_BASELINE": 2,
+        "CHAR_TRIGRAM_DIAGNOSTIC": 1,
+        "DIAGNOSTIC_THREE_WAY_RRF": 1,
+        "TITLE_LEXICAL_DIAGNOSTIC": 2
+      },
+      "source_status_gold_independent": false
+    }
+  ],
+  "contract": "ROUTE_B_FIRST_PRIMARY_BASELINE_EXECUTION_CONTRACT_V01.md",
+  "formal_R0_P03_scored": false,
+  "heldout_sources": [
+    "docs/checkpoints/013_instrumented_workspace_and_deterministic_evaluator.md",
+    "docs/checkpoints/074_prototype_v0_readme_refreshed_as_current_entry_point.md",
+    "docs/checkpoints/135_first_production_lexical_retrieval_baseline_cross_platform_passed.md",
+    "docs/checkpoints/202_mc_0001_resolved_specification_024_frozen_mc_0002_opened.md",
+    "docs/checkpoints/457_blind_baseline_scoped_to_chatgpt_only_pilot_next.md",
+    "docs/checkpoints/546_pka_g104_cockpit_accepted_d035_next.md",
+    "docs/checkpoints/637_p_d4_successor_contract_v02_frozen.md",
+    "docs/checkpoints/685_temporary_runtime_bridge_only_repository_constraint_activated.md",
+    "docs/foundations/012_preregistered_held_out_evaluation_protocol.md",
+    "docs/research/015_langgraph_complete_candidate_three_way_runtime_comparison_and_stop_rule.md",
+    "docs/research/026_system_owned_provenance_recommendation_action_value_design.md",
+    "docs/research/300_p_d4_formal_current_oracle_replay_result.md",
+    "docs/research/402_key_author_a_p5_l15_accepted_l16_released.md",
+    "docs/research/413_key_author_a_p6a_first_run_hold_transcript_slug_remediation.md",
+    "docs/research/423_fresh_key_author_b_state_birth_automated_control_plane_design.md",
+    "docs/research/477_mc0029_message017_final_critique_reconciliation.md",
+    "docs/research/488_d2_two_model_comparison_implementation_freeze.md",
+    "docs/specifications/001_v1_sqlite_technical_architecture.md",
+    "docs/specifications/021_v1_dependency_backed_recommendation_action_value_vertical_slice.md",
+    "tools/project_knowledge/pure_source_catalog.py"
+  ],
+  "id": "R0_P03_ROUTE_B_PRAGMATIC_PRIMARY_B0_EXECUTION_ATTEMPT_V01",
+  "metrics": {
+    "B0_SUBSTRATE_LEXICAL_BASELINE": {
+      "missing_required_source_at_10": [
+        "P01"
+      ],
+      "required_source_hit_at_1": 8,
+      "required_source_hit_at_10": 11,
+      "required_source_hit_at_3": 10,
+      "required_source_hit_at_5": 10,
+      "required_source_mrr_at_10": 0.7619047619047619,
+      "tasks": 12
+    },
+    "CHAR_TRIGRAM_DIAGNOSTIC": {
+      "missing_required_source_at_10": [],
+      "required_source_hit_at_1": 12,
+      "required_source_hit_at_10": 12,
+      "required_source_hit_at_3": 12,
+      "required_source_hit_at_5": 12,
+      "required_source_mrr_at_10": 1.0,
+      "tasks": 12
+    },
+    "DIAGNOSTIC_THREE_WAY_RRF": {
+      "missing_required_source_at_10": [],
+      "required_source_hit_at_1": 12,
+      "required_source_hit_at_10": 12,
+      "required_source_hit_at_3": 12,
+      "required_source_hit_at_5": 12,
+      "required_source_mrr_at_10": 1.0,
+      "tasks": 12
+    },
+    "TITLE_LEXICAL_DIAGNOSTIC": {
+      "missing_required_source_at_10": [
+        "P02"
+      ],
+      "required_source_hit_at_1": 10,
+      "required_source_hit_at_10": 11,
+      "required_source_hit_at_3": 11,
+      "required_source_hit_at_5": 11,
+      "required_source_mrr_at_10": 0.875,
+      "tasks": 12
+    }
+  },
+  "physical_architecture_selected": false,
+  "provisional_reference_answers": [
+    {
+      "category": "COLD_START_CURRENT_ORIENTATION",
+      "id": "P01",
+      "no_operative_deployment_inferred_from_header_status": true,
+      "question": "At the archived project state, what checkpoint was current and which branch was being used for ongoing development?",
+      "reference_answer_for_evaluation_only": "At this Git snapshot the continuity file reports Checkpoint 899 on development branch v1-source-vault-bootstrap-resume. This is an as-of-source status, not an assertion about the present checkout.",
+      "reference_status": "EXPOSED_COORDINATOR_SOURCE_CITED_PROVISIONAL",
+      "required_source_body_sha256": "54bcb132f12ceffd330540006a8099179a260f751da7b4269253b6aef87edcaa",
+      "required_source_for_evaluation_only": "docs/CURRENT_STATE.md",
+      "required_witnesses_original_source": [
+        {
+          "line_number": 3,
+          "original_line": "**Checkpoint:** 899",
+          "sha256_of_original_line": "8576398fa1dd4cfc9dd9d68bc582befab4b74ffea3a0ad0a4d600dd6f07fdbc5"
+        },
+        {
+          "line_number": 5,
+          "original_line": "**Active development branch:** `v1-source-vault-bootstrap-resume`",
+          "sha256_of_original_line": "9534ca61c709f51870dec81ddb00445527c1d6c40a2b97414c3c36ceca5cace2"
+        }
+      ]
+    },
+    {
+      "category": "COLD_START_CURRENT_ORIENTATION",
+      "id": "P02",
+      "no_operative_deployment_inferred_from_header_status": true,
+      "question": "Where can a new collaborator find the explicit project-wide decisions, and can those decisions be revised later?",
+      "reference_answer_for_evaluation_only": "The Decisions register records explicit project-level decisions; revisions remain possible but must be explicit and preserve why and what changed.",
+      "reference_status": "EXPOSED_COORDINATOR_SOURCE_CITED_PROVISIONAL",
+      "required_source_body_sha256": "1cb6dd610536781e6bdbd02ab30891f922610a90437a02c36057ca264a8a09b5",
+      "required_source_for_evaluation_only": "docs/DECISIONS.md",
+      "required_witnesses_original_source": [
+        {
+          "line_number": 3,
+          "original_line": "This document records explicit project-level decisions that have already been made.",
+          "sha256_of_original_line": "57380c2b3e4203421f7a2d2317e3fc36f713950e9e33eda500fffc36fa6f337f"
+        },
+        {
+          "line_number": 5,
+          "original_line": "A decision is stronger than an idea or design hypothesis. Decisions may still be revised later, but revisions should be explicit and should preserve the history of what changed and why.",
+          "sha256_of_original_line": "6f931f2c113eb828ec219fcb1ed41e267df77e1f0a5a5c4efc88fe759d62fbb0"
+        }
+      ]
+    },
+    {
+      "category": "COLD_START_CURRENT_ORIENTATION",
+      "id": "P03",
+      "no_operative_deployment_inferred_from_header_status": true,
+      "question": "What is the recorded implementation status of the governed project-knowledge architecture migration contract?",
+      "reference_answer_for_evaluation_only": "Specification 028 is marked FROZEN / IMPLEMENTATION PENDING in this archived original, not proof of a completed migration.",
+      "reference_status": "EXPOSED_COORDINATOR_SOURCE_CITED_PROVISIONAL",
+      "required_source_body_sha256": "a922486ebcc359b5b457a6d77ebad12bab0cc43cb0ea65ccd6b123b919d0bfa0",
+      "required_source_for_evaluation_only": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "required_witnesses_original_source": [
+        {
+          "line_number": 4,
+          "original_line": "**Status:** FROZEN / IMPLEMENTATION PENDING",
+          "sha256_of_original_line": "9256e02da151289f3c9c943202cafa78eef6ce9f71f8bc609b260b2b1c8aa163"
+        }
+      ]
+    },
+    {
+      "category": "CROSS_PLANE_DISCOVERY",
+      "id": "P04",
+      "no_operative_deployment_inferred_from_header_status": true,
+      "question": "Which foundation explains source artifact preservation, lineage and evidence provenance across the knowledge system?",
+      "reference_answer_for_evaluation_only": "Foundation 022 provides the accepted conceptual foundation for source identity, original-artifact preservation, derived-source lineage and evidence provenance, subordinate to broader principles.",
+      "reference_status": "EXPOSED_COORDINATOR_SOURCE_CITED_PROVISIONAL",
+      "required_source_body_sha256": "7c1387f15b2781ca0a40d341803b143dedfe4f7251fbc79f97d180fde0523938",
+      "required_source_for_evaluation_only": "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+      "required_witnesses_original_source": [
+        {
+          "line_number": 4,
+          "original_line": "**Status:** Accepted conceptual foundation for the source/evidence substrate  ",
+          "sha256_of_original_line": "734d0372e2098ea359f3b4c5f6e883aca6470b64ccb37cf331ea83f1cd093faf"
+        }
+      ]
+    },
+    {
+      "category": "CROSS_PLANE_DISCOVERY",
+      "id": "P05",
+      "no_operative_deployment_inferred_from_header_status": true,
+      "question": "Which specification addresses governed repository integrity and continuity bootstrap while still awaiting implementation?",
+      "reference_answer_for_evaluation_only": "Specification 025 covers governed repository integrity and continuity hardening; its archived header records FROZEN / IMPLEMENTATION PENDING.",
+      "reference_status": "EXPOSED_COORDINATOR_SOURCE_CITED_PROVISIONAL",
+      "required_source_body_sha256": "788e3162fc823d21eca176646e7e5c96090cfd7dd971f3f3e918414c278b5cdd",
+      "required_source_for_evaluation_only": "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+      "required_witnesses_original_source": [
+        {
+          "line_number": 4,
+          "original_line": "**Status:** FROZEN / IMPLEMENTATION PENDING  ",
+          "sha256_of_original_line": "b0a98edfab5a38d9b1ca44a85954c5ea37b56b8b9585fc4eb8331fd34f2e0105"
+        }
+      ]
+    },
+    {
+      "category": "CROSS_PLANE_DISCOVERY",
+      "id": "P06",
+      "no_operative_deployment_inferred_from_header_status": true,
+      "question": "What was the outcome of the controlled-subject navigation architecture experiment, and was its subject model accepted?",
+      "reference_answer_for_evaluation_only": "Research 217 records T1 accepted and the controlled subject architecture frozen as a historical experiment, not an independently scored R0-P03 result.",
+      "reference_status": "EXPOSED_COORDINATOR_SOURCE_CITED_PROVISIONAL",
+      "required_source_body_sha256": "1a45aa417851c65be8b2455b9a81a32c2e2273a529b5716c6ebb4c1f736e73d4",
+      "required_source_for_evaluation_only": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+      "required_witnesses_original_source": [
+        {
+          "line_number": 4,
+          "original_line": "**Status:** T1 ACCEPTED / CONTROLLED SUBJECT ARCHITECTURE FROZEN",
+          "sha256_of_original_line": "f862c96f5d49daf2950462246a0903cf9ea4b3be569abfc7d14fd0c5ae6e4009"
+        }
+      ]
+    },
+    {
+      "category": "IMPACT_AND_ARCHITECTURE_EVOLUTION",
+      "id": "P07",
+      "no_operative_deployment_inferred_from_header_status": true,
+      "question": "What document establishes the physical architecture realization requirements and the independent design charter?",
+      "reference_answer_for_evaluation_only": "Research 503 freezes the R0 realization requirements and independent physical architecture design charter, while design is the next step at that historical snapshot.",
+      "reference_status": "EXPOSED_COORDINATOR_SOURCE_CITED_PROVISIONAL",
+      "required_source_body_sha256": "eadf86eb4803ed442643ecd656bc2c8d44b281ba9f0dc20b8948eb85c437fcaa",
+      "required_source_for_evaluation_only": "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+      "required_witnesses_original_source": [
+        {
+          "line_number": 4,
+          "original_line": "**Status:** R0 CHARTER FROZEN / INDEPENDENT PHYSICAL ARCHITECTURE DESIGN NEXT",
+          "sha256_of_original_line": "1822b7a3cd75a0d4a101c2f03c825c5645102dcd79e9131370a981ba59829ce1"
+        }
+      ]
+    },
+    {
+      "category": "IMPACT_AND_ARCHITECTURE_EVOLUTION",
+      "id": "P08",
+      "no_operative_deployment_inferred_from_header_status": true,
+      "question": "After the Claude design critique, which governed ledger kernel candidate was retained, and was the owner physical architecture decision ready?",
+      "reference_answer_for_evaluation_only": "Research 512 records a reconciled GOVERNED_LEDGER_KERNEL_V02 candidate and explicitly says owner decision is not ready; it is not a deployed selection.",
+      "reference_status": "EXPOSED_COORDINATOR_SOURCE_CITED_PROVISIONAL",
+      "required_source_body_sha256": "40bf71219aaf9eee311241e0eabd7b034f52e0a40fe7b18a8437ea3fdfe4edf4",
+      "required_source_for_evaluation_only": "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+      "required_witnesses_original_source": [
+        {
+          "line_number": 8,
+          "original_line": "**Reconciled candidate:** GOVERNED_LEDGER_KERNEL_V02",
+          "sha256_of_original_line": "c107c564107f9b9f6bc137c1e27de741ba7e5664c960b77d2a47f2ff5e12b10f"
+        }
+      ]
+    },
+    {
+      "category": "IMPACT_AND_ARCHITECTURE_EVOLUTION",
+      "id": "P09",
+      "no_operative_deployment_inferred_from_header_status": true,
+      "question": "Did the AO-10 realization candidate authorize production implementation or physical migration?",
+      "reference_answer_for_evaluation_only": "Research 312 freezes a candidate reconciliation/realization, explicitly with no production implementation and no physical migration.",
+      "reference_status": "EXPOSED_COORDINATOR_SOURCE_CITED_PROVISIONAL",
+      "required_source_body_sha256": "58a77b5e9fed4008b9b7ed78a972d8063ca4be7d9dbf557256203572f275ec33",
+      "required_source_for_evaluation_only": "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+      "required_witnesses_original_source": [
+        {
+          "line_number": 4,
+          "original_line": "**Status:** SPECIFICATION 028 RECONCILIATION V0.1 FROZEN / AO-10 REALIZATION CANDIDATE V0.1 FROZEN / MC-0029 INDEPENDENT REVIEW OPENED / NO PRODUCTION IMPLEMENTATION / NO PHYSICAL MIGRATION",
+          "sha256_of_original_line": "337f8cc9d5c5a00a475faf72d4a4915d08ee89b822059c5f22a7b2d14fef25a1"
+        }
+      ]
+    },
+    {
+      "category": "EXACT_SOURCE_AUTHORITY_RECOVERY",
+      "id": "P10",
+      "no_operative_deployment_inferred_from_header_status": true,
+      "question": "Which checkpoint records the R0-P02 probe passing, and which architectural probe was scheduled next?",
+      "reference_answer_for_evaluation_only": "Checkpoint 853 records R0-P02 PASS, retaining the Git governing substrate and moving to R0-P01 fixture freeze.",
+      "reference_status": "EXPOSED_COORDINATOR_SOURCE_CITED_PROVISIONAL",
+      "required_source_body_sha256": "5d3f9fdd27a761775b99f1971623ddc973ee87192f9f1faa32112660c228a0bb",
+      "required_source_for_evaluation_only": "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+      "required_witnesses_original_source": [
+        {
+          "line_number": 4,
+          "original_line": "**Status:** R0-P02 PASS / GIT GOVERNING SUBSTRATE RETAINED / R0-P01 NEXT",
+          "sha256_of_original_line": "2de3b80b7a0c01aede9bf7cb40cb6e4fcded698a00e037d51eba90d7f99396ad"
+        }
+      ]
+    },
+    {
+      "category": "EXACT_SOURCE_AUTHORITY_RECOVERY",
+      "id": "P11",
+      "no_operative_deployment_inferred_from_header_status": true,
+      "question": "Which checkpoint documents the owner-approved deferral of authentication and permission to resume R0-P03 fixture work?",
+      "reference_answer_for_evaluation_only": "Checkpoint 891 records a prospective owner-authentication gate amendment and resumption of R0-P03 fixture work. It does not itself prove accepted operational owner authentication.",
+      "reference_status": "EXPOSED_COORDINATOR_SOURCE_CITED_PROVISIONAL",
+      "required_source_body_sha256": "7a604ec607b1aa7a8135504dc9a24576e463c5a5f392c1a1ebefa0e2e518e7f7",
+      "required_source_for_evaluation_only": "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+      "required_witnesses_original_source": [
+        {
+          "line_number": 11,
+          "original_line": "**Status:** PROSPECTIVE_R0_AUTHENTICATION_GATE_AMENDED / P03_FIXTURE_NEXT",
+          "sha256_of_original_line": "53e170201c9dbc0b7e6b015847d269e73f02a3c8424ea19b9bebebe38dc151ae"
+        }
+      ]
+    },
+    {
+      "category": "EXACT_SOURCE_AUTHORITY_RECOVERY",
+      "id": "P12",
+      "no_operative_deployment_inferred_from_header_status": true,
+      "question": "What was the documented reason the independent R0-P03 reference cohort could not yet be scored in the earlier evidence-capacity review?",
+      "reference_answer_for_evaluation_only": "Checkpoint 899 records insufficient verified reference capacity and an unscored experiment after independent witness review.",
+      "reference_status": "EXPOSED_COORDINATOR_SOURCE_CITED_PROVISIONAL",
+      "required_source_body_sha256": "fd9ee485c0671f4950ea050f21fc029683dc05412921fcc21107091619f0ac9f",
+      "required_source_for_evaluation_only": "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+      "required_witnesses_original_source": [
+        {
+          "line_number": 4,
+          "original_line": "**Status:** INDEPENDENT_WITNESS_REVIEW_COMPLETE / INSUFFICIENT_VERIFIED_REFERENCE_CAPACITY / EXPERIMENT_UNSCORED",
+          "sha256_of_original_line": "c4b1b3bc9fdcfe3e8a70e32ade802ab80abb1e684fb2296525ec0fc102c83952"
+        }
+      ]
+    }
+  ],
+  "runtime_indexes": {
+    "B0_uses_metadata_gold_for_ranking": false,
+    "char_index": {
+      "indexed_sections": 60,
+      "nonzero_document_3gram_weights": 19872,
+      "original_section_bytes": 436137,
+      "unique_3gram_features": 2949
+    },
+    "retrieval_top_k": 10,
+    "source_context_cap": 12000,
+    "sqlite_version": "3.45.3"
+  },
+  "sampling": {
+    "build_count": 60,
+    "build_filler_quotas": {
+      "checkpoint": 16,
+      "foundation": 4,
+      "research": 20,
+      "specification": 4,
+      "tool": 4
+    },
+    "eligible_path_counts_by_role": {
+      "checkpoint": 902,
+      "foundation": 24,
+      "research": 649,
+      "root_primary": 2,
+      "specification": 28,
+      "tool": 54
+    },
+    "heldout_count": 20,
+    "heldout_quotas": {
+      "checkpoint": 8,
+      "foundation": 1,
+      "research": 8,
+      "specification": 2,
+      "tool": 1
+    },
+    "original_eligible_source_path_count": 1659,
+    "representative_role_semantics_or_independently_heldout_gold_verified": false,
+    "source_required_closure_count": 12,
+    "strata_are_path_heuristics_not_source_authority": true
+  },
+  "scientific_limits": [
+    "First real primary-task B0 navigation retrieval execution under owner-approved pragmatic Path B, but coordinator-written reference answers are exposed and not independent.",
+    "A source-referenced answer and single required source are not a neutral exhaustive relevance gold set.",
+    "B0 is a source-text FTS5 diagnostic for the proposed common substrate, not a proven equalized complete V03 relation substrate.",
+    "Title-only, char-trigram and fused rankers are diagnostics and DO NOT IMPLEMENT B1/B2/B3/B4.",
+    "60/20 fixed candidate corpus is path-stratified and lacks independently verified representative role/effect/migration coverage or maintenance gold.",
+    "The initial 12 primary task slots are not formally qualified for Research 513 >=10/12 answer PASS scoring.",
+    "No nine-case independently neutralized legacy score, two blind independent evaluators, held-out agreement score or zero-authority safety certification.",
+    "No source status proves real-world operative authority, and no architecture family selection or source migration is supported.",
+    "Private C01/C02 references and historical HOLDs remain unchanged and inaccessible to this exposed arm coordinator."
+  ],
+  "source_git_pin": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+  "source_manifest_bytes": 9784,
+  "source_manifest_sha256": "c628555ef02f87499007ead3420a513cf43080262c7288cd347dc2479b4b0330",
+  "source_roster": [
+    {
+      "bytes": 920573,
+      "indexed_content_characters": 12000,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "54bcb132f12ceffd330540006a8099179a260f751da7b4269253b6aef87edcaa",
+      "path": "docs/CURRENT_STATE.md",
+      "title": "Current State"
+    },
+    {
+      "bytes": 56382,
+      "indexed_content_characters": 12000,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "1cb6dd610536781e6bdbd02ab30891f922610a90437a02c36057ca264a8a09b5",
+      "path": "docs/DECISIONS.md",
+      "title": "Decisions"
+    },
+    {
+      "bytes": 9267,
+      "indexed_content_characters": 9267,
+      "is_build": false,
+      "is_heldout": true,
+      "original_source_sha256": "0031e4f8985c72b534e771c82015cb0219b2c99736f311a8c17d12fa4b384b9b",
+      "path": "docs/checkpoints/013_instrumented_workspace_and_deterministic_evaluator.md",
+      "title": "Checkpoint 013: Instrumented Workspace and Deterministic Evaluator"
+    },
+    {
+      "bytes": 3888,
+      "indexed_content_characters": 3888,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "8cc72a75df94e0f2746c45f94a0a93adcc21bce96b7e15ede3b58917869afef3",
+      "path": "docs/checkpoints/050_real_held_out_run_plan_materialized_and_frozen_inputs_verified.md",
+      "title": "Checkpoint 50: Real Held-Out Run Plan Materialized and Frozen Inputs Verified"
+    },
+    {
+      "bytes": 3335,
+      "indexed_content_characters": 3335,
+      "is_build": false,
+      "is_heldout": true,
+      "original_source_sha256": "6330f3cf4d6e4582a42aec6aed8ea979b4981948f2aa30912c4d8c85cdb4a589",
+      "path": "docs/checkpoints/074_prototype_v0_readme_refreshed_as_current_entry_point.md",
+      "title": "Checkpoint 74: Prototype V0 README refreshed as current entry point"
+    },
+    {
+      "bytes": 13197,
+      "indexed_content_characters": 12000,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "697b1f172e060baf11cb0ada3ba48ab7912eab4ad4809d4de9209ef34d9d762d",
+      "path": "docs/checkpoints/121_immersive_scale_cockpit_slice_automated_gate_passed.md",
+      "title": "Checkpoint 121: Immersive-Scale Cockpit Slice Automated Gate Passed"
+    },
+    {
+      "bytes": 6582,
+      "indexed_content_characters": 6582,
+      "is_build": false,
+      "is_heldout": true,
+      "original_source_sha256": "5f033c2040370fa4f96a46d2fc709c8ba56e41cb5e65810282f2f939d64a38b0",
+      "path": "docs/checkpoints/135_first_production_lexical_retrieval_baseline_cross_platform_passed.md",
+      "title": "Checkpoint 135: First Production Lexical Retrieval Baseline Cross-Platform Passed"
+    },
+    {
+      "bytes": 5483,
+      "indexed_content_characters": 5483,
+      "is_build": false,
+      "is_heldout": true,
+      "original_source_sha256": "142824f12798e8104b16e7c87370205565c93017c7e224646fab200ba6273542",
+      "path": "docs/checkpoints/202_mc_0001_resolved_specification_024_frozen_mc_0002_opened.md",
+      "title": "Checkpoint 202: MC-0001 Resolved, Specification 024 Frozen, MC-0002 Opened"
+    },
+    {
+      "bytes": 3715,
+      "indexed_content_characters": 3715,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "05fa009a9ce50414057e43eacb0f93468cdc3f762cbc482d05fa4311ae063a51",
+      "path": "docs/checkpoints/358_runtime_release_preview20_fresh_chat_schema_qualified.md",
+      "title": "Checkpoint 358: Runtime Release Preview.20 Fresh-Chat Schema Qualified"
+    },
+    {
+      "bytes": 3811,
+      "indexed_content_characters": 3811,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "af80d877b5a5b7f76dd6b478d1d0f05c3cde3175956caf6baf851c794a5a22b5",
+      "path": "docs/checkpoints/380_github_schema_reconciled_g0_and_targeted_evidence_ready.md",
+      "title": "Checkpoint 380: GitHub Schema Reconciled, G0 and Targeted Evidence Ready"
+    },
+    {
+      "bytes": 4932,
+      "indexed_content_characters": 4932,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "569ec542ebca2baa5a6c3112a3a4bb2d4d486df860dd4fb68fd9db4d1c53957e",
+      "path": "docs/checkpoints/447_repository_branch_safety_complete_canonical_protection_decision_next.md",
+      "title": "Checkpoint 447: Repository Branch-Safety Complete, Canonical Protection Decision Next"
+    },
+    {
+      "bytes": 2660,
+      "indexed_content_characters": 2660,
+      "is_build": false,
+      "is_heldout": true,
+      "original_source_sha256": "fcb7699f8f2fbee63fcee6f3b4ffd1a860dc93f8fe87e6caffd5b7700be62fb7",
+      "path": "docs/checkpoints/457_blind_baseline_scoped_to_chatgpt_only_pilot_next.md",
+      "title": "Checkpoint 457: Blind Baseline Scoped to ChatGPT Only, Pilot Next"
+    },
+    {
+      "bytes": 1672,
+      "indexed_content_characters": 1672,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "5f02b97fc40f8d1a85b335a181fa7849f66b6a0f134bf595eb380592313a41fe",
+      "path": "docs/checkpoints/497_candidate01_real_repository_shadow_v01_fixture_frozen.md",
+      "title": "Checkpoint 497: Candidate 01 Real-Repository Shadow V0.1 Fixture Frozen"
+    },
+    {
+      "bytes": 2557,
+      "indexed_content_characters": 2557,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "85dfeacd02db9aad901185ae18fd6d14c0b89a11945a4036da9270b2bba3b2cc",
+      "path": "docs/checkpoints/544_pka_g102_project_boundary_accepted_source_vault_next.md",
+      "title": "Checkpoint 544: PKA-G102 Project Boundary Accepted, Source Vault Next"
+    },
+    {
+      "bytes": 2917,
+      "indexed_content_characters": 2917,
+      "is_build": false,
+      "is_heldout": true,
+      "original_source_sha256": "ab6ef0119f2be857e0d644d7bc22f2d9ca33ab4c4ae57f803c6487442aad46bb",
+      "path": "docs/checkpoints/546_pka_g104_cockpit_accepted_d035_next.md",
+      "title": "Checkpoint 546: PKA-G104 Cockpit Accepted, D-035 Next"
+    },
+    {
+      "bytes": 2348,
+      "indexed_content_characters": 2348,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "54427409aa5200a0feef027ec138f32d7dbcf021d2277f69238f17f051dedfbb",
+      "path": "docs/checkpoints/550_pka_g108_current_authority_confirmed_integrity_next.md",
+      "title": "Checkpoint 550: PKA-G108 Current Authority Confirmed, Integrity Next"
+    },
+    {
+      "bytes": 3095,
+      "indexed_content_characters": 3095,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "8facea965d4c39ad1339a5801364c563cb9aaf5d683c5cac96b90ccc029f6fce",
+      "path": "docs/checkpoints/552_pka_w2_shadow_views_accepted_compatibility_shadow_next.md",
+      "title": "Checkpoint 552: PKA W2 Shadow Views Acceptance Boundary, Compatibility Shadow Next"
+    },
+    {
+      "bytes": 1273,
+      "indexed_content_characters": 1273,
+      "is_build": false,
+      "is_heldout": true,
+      "original_source_sha256": "623e6d3391c7a691f91aa2103de283592f3d47d66f985628e4cb08882f52daf2",
+      "path": "docs/checkpoints/637_p_d4_successor_contract_v02_frozen.md",
+      "title": "Checkpoint 637: P-D4 Successor Contract V0.2 Frozen"
+    },
+    {
+      "bytes": 2128,
+      "indexed_content_characters": 2128,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "d23dbd9ad20c14f93ded350575dff6e4ac734b9268d4befc760fcfbf5eec4412",
+      "path": "docs/checkpoints/644_general_architecture_vision_preserved_and_evolution_boundary_clarified.md",
+      "title": "Checkpoint 644: General Architecture Vision Preserved and Evolution Boundary Clarified"
+    },
+    {
+      "bytes": 1294,
+      "indexed_content_characters": 1294,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "98f49e7c320c1acb25973d0599bf1499ea2c63f51a39394e1e883be915865aa3",
+      "path": "docs/checkpoints/661_drp03_obligation_unit_review_harness_frozen.md",
+      "title": "Checkpoint 661: DRP-03 Review Harness Frozen"
+    },
+    {
+      "bytes": 1662,
+      "indexed_content_characters": 1662,
+      "is_build": false,
+      "is_heldout": true,
+      "original_source_sha256": "baacbf4fa61f641e651ea97861ca3c74f80b2f82753b3765cc8e87d2acff880c",
+      "path": "docs/checkpoints/685_temporary_runtime_bridge_only_repository_constraint_activated.md",
+      "title": "Checkpoint 685: Temporary Runtime-Bridge-Only Repository Constraint Activated"
+    },
+    {
+      "bytes": 1857,
+      "indexed_content_characters": 1857,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "0e2e21ede9aacdde21e0abf43c7d2ebb02ccb8bfd131072b60b878d65e8dfff3",
+      "path": "docs/checkpoints/700_key_author_a_p4_birth_grouping_phase_defined.md",
+      "title": "Checkpoint 700: Key Author A P4 BIRTH Grouping Phase Defined"
+    },
+    {
+      "bytes": 1706,
+      "indexed_content_characters": 1706,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "0496aabb5cea20d11d144b97e7991cf0270e3633164db1f55f53fe1ea95247c2",
+      "path": "docs/checkpoints/718_key_author_a_p4_h09_accepted_h10_released.md",
+      "title": "Checkpoint 718: Key Author A P4 H09 Accepted and H10 Released"
+    },
+    {
+      "bytes": 1238,
+      "indexed_content_characters": 1238,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "ee6d21e0aade1c3a6feb1c6447e47cca65c43d2980a391bb4d1dd8ffa90fe6c4",
+      "path": "docs/checkpoints/722_key_author_a_p5_authorized_private_ops_next.md",
+      "title": "Checkpoint 722: Key Author A P5 Authorized, Private Ops Qualification Next"
+    },
+    {
+      "bytes": 1206,
+      "indexed_content_characters": 1206,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "587b04787b66cae4b076a96f677a5d18cce0aa260a10488fa6222aa6fb6d2ba8",
+      "path": "docs/checkpoints/792_sp5_retired_without_score_sp6_next.md",
+      "title": "Checkpoint 792: SP-5 retired without score, SP-6 next"
+    },
+    {
+      "bytes": 1689,
+      "indexed_content_characters": 1689,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "5d3f9fdd27a761775b99f1971623ddc973ee87192f9f1faa32112660c228a0bb",
+      "path": "docs/checkpoints/853_r0_p02_pass_r0_p01_fixture_freeze_next.md",
+      "title": "Checkpoint 853: R0-P02 passed, R0-P01 fixture freeze next"
+    },
+    {
+      "bytes": 3445,
+      "indexed_content_characters": 3445,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "70116235e0fa5f3ee33c8324eb784d68334acf06f330d1511201146d3f10ae07",
+      "path": "docs/checkpoints/884_r0_p01_atomic_synthetic_finalization_and_independent_outcome_vectors_next.md",
+      "title": "Checkpoint 884: R0-P01 atomic synthetic measurement finalization pass"
+    },
+    {
+      "bytes": 2797,
+      "indexed_content_characters": 2797,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "7a604ec607b1aa7a8135504dc9a24576e463c5a5f392c1a1ebefa0e2e518e7f7",
+      "path": "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md",
+      "title": "Checkpoint 891: owner-approved authentication deferral; R0-P03 may resume"
+    },
+    {
+      "bytes": 4391,
+      "indexed_content_characters": 4391,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "fd9ee485c0671f4950ea050f21fc029683dc05412921fcc21107091619f0ac9f",
+      "path": "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md",
+      "title": "Checkpoint 899: R0-P03 bounded historical evidence-capacity HOLD and prospective decision boundary"
+    },
+    {
+      "bytes": 33597,
+      "indexed_content_characters": 12000,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "c08de226ff2878e1da1dae7a6cc55114000c881da021c94439288868706e2379",
+      "path": "docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md",
+      "title": "Foundation 010: Minimum Falsification Prototype and Experimental Contract"
+    },
+    {
+      "bytes": 25793,
+      "indexed_content_characters": 12000,
+      "is_build": false,
+      "is_heldout": true,
+      "original_source_sha256": "ab82167cf0ef8b8e193fd9f08735f959593e47ff66f32c0e8f9f00053ea52c72",
+      "path": "docs/foundations/012_preregistered_held_out_evaluation_protocol.md",
+      "title": "Foundation 012: Preregistered Held-Out Evaluation Protocol"
+    },
+    {
+      "bytes": 15462,
+      "indexed_content_characters": 12000,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "25e22cd4b84f4f4b412c8a31f974b25a416dd2ef393b2b72f71facbb57760e3f",
+      "path": "docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md",
+      "title": "Foundation 019: Methodological Navigation Brain and Relevance Architecture"
+    },
+    {
+      "bytes": 23698,
+      "indexed_content_characters": 12000,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "fe3aed150fd06604aac3d37db1ee5ae092817d0cfb7cc5643f70edd561138ba3",
+      "path": "docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md",
+      "title": "Foundation 020: Reusable Methodological Knowledge Representation Architecture"
+    },
+    {
+      "bytes": 10572,
+      "indexed_content_characters": 10572,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "7c1387f15b2781ca0a40d341803b143dedfe4f7251fbc79f97d180fde0523938",
+      "path": "docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md",
+      "title": "Foundation 022: Source Universe, Artifact Integrity, and Evidence Provenance Architecture"
+    },
+    {
+      "bytes": 7087,
+      "indexed_content_characters": 7087,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "0d670019e7c86decb33fb193aea84db1faae49251a50fd9786a6a4a529bc551e",
+      "path": "docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md",
+      "title": "Foundation 023: User-Configurable Cockpit Appearance and Semantic Invariants"
+    },
+    {
+      "bytes": 8111,
+      "indexed_content_characters": 8111,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "eb61bbd64974cc8f02b6f346e58cd90bc1c04d66abd69c0a224efacd99087b3d",
+      "path": "docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md",
+      "title": "Research 014: LangGraph 1.2.10 released durability comparator audit"
+    },
+    {
+      "bytes": 14092,
+      "indexed_content_characters": 12000,
+      "is_build": false,
+      "is_heldout": true,
+      "original_source_sha256": "28c1e5abe2bf901206d8a01176c430881b0801446d66f10165ba5973ec9a87ac",
+      "path": "docs/research/015_langgraph_complete_candidate_three_way_runtime_comparison_and_stop_rule.md",
+      "title": "Research 015: LangGraph complete candidate, three-way runtime comparison, and bakeoff stop rule"
+    },
+    {
+      "bytes": 15845,
+      "indexed_content_characters": 12000,
+      "is_build": false,
+      "is_heldout": true,
+      "original_source_sha256": "ba027b502a74bb615bc2a454d7d4f95350a233ac99b6c1f7cdfff876d7e482e7",
+      "path": "docs/research/026_system_owned_provenance_recommendation_action_value_design.md",
+      "title": "Research 026: System-Owned Provenance Recommendation and Action Value Design"
+    },
+    {
+      "bytes": 21100,
+      "indexed_content_characters": 12000,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "27d9434769571915d4e6cbdaed49dd7c9b0fa0170e2729ec213c4ad0d8ddb707",
+      "path": "docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md",
+      "title": "Research 113: Codex and Codexless Upstream Ecosystem Architecture Research Program"
+    },
+    {
+      "bytes": 12028,
+      "indexed_content_characters": 12000,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "51cef534cdf40a72fda8be52b098ce48a9a42c1954f780550acb41c301d2faf2",
+      "path": "docs/research/156_real_current_state_decomposition_and_source_ownership_audit.md",
+      "title": "Research 156: Real CURRENT_STATE Decomposition and Source-Ownership Audit"
+    },
+    {
+      "bytes": 13310,
+      "indexed_content_characters": 12000,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "006dd8185524e35174ec6c47cf55f214871a49ee3db39cd41ed4fbc899e4becd",
+      "path": "docs/research/184_w0_derived_view_framework_g009_result.md",
+      "title": "Research 184: W0 Derived-View Framework G009 Result"
+    },
+    {
+      "bytes": 9486,
+      "indexed_content_characters": 9486,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "1a45aa417851c65be8b2455b9a81a32c2e2273a529b5716c6ebb4c1f736e73d4",
+      "path": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+      "title": "Research 217: W5 T1 V0.2 Controlled Subject Architecture Acceptance"
+    },
+    {
+      "bytes": 4537,
+      "indexed_content_characters": 4537,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "238a8f1eebbc3b89176526be1373b64c0e8a4bbe9293f42467f8130b2aeff150",
+      "path": "docs/research/230_ao9_p2_arm_contract_freeze.md",
+      "title": "Research 230: AO-9 P2 Arm-Contract Freeze"
+    },
+    {
+      "bytes": 3837,
+      "indexed_content_characters": 3837,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "7efa6fa9ec239b89fd12fd1c36a779cc2c286d46aa562c89535640751127f2ac",
+      "path": "docs/research/268_p_r8b_01_r2_harness_defect_and_replacement_freeze.md",
+      "title": "Research 268: P-R8B-01-R2 Harness Defect, Prospective Repair, and Replacement Freeze"
+    },
+    {
+      "bytes": 10620,
+      "indexed_content_characters": 10620,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "0cc45f3d9b6903e16b1ad7503518b40c5705e1cd82430e761feaf409d0373432",
+      "path": "docs/research/272_wmrh_v03_owner_acceptance_mc0027_closure_and_assurance_entry.md",
+      "title": "Research 272: WMR-H V0.3 Owner Acceptance, MC-0027 Closure, and Assurance-Architecture Entry"
+    },
+    {
+      "bytes": 3236,
+      "indexed_content_characters": 3236,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "210bc062c9b8a43520094c2d8f9c1f000626829247ed2e61e40cff674d5db048",
+      "path": "docs/research/284_p_d3_attempt002_harness_invalid_and_repair.md",
+      "title": "Research 284: P-D3 Attempt 002 Harness Invalid and Negative-Control Repair"
+    },
+    {
+      "bytes": 3954,
+      "indexed_content_characters": 3954,
+      "is_build": false,
+      "is_heldout": true,
+      "original_source_sha256": "279eca0d6b8ad30e70402581a1d4e533334e2a46ef0140fe6ee1cfbc6388d6da",
+      "path": "docs/research/300_p_d4_formal_current_oracle_replay_result.md",
+      "title": "Research 300: P-D4 Formal Current-Oracle Replay Result"
+    },
+    {
+      "bytes": 17059,
+      "indexed_content_characters": 12000,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "58a77b5e9fed4008b9b7ed78a972d8063ca4be7d9dbf557256203572f275ec33",
+      "path": "docs/research/312_spec028_reconciliation_and_ao10_realization_candidate_v01.md",
+      "title": "Research 312: Specification 028 Reconciliation and AO-10 Realization Candidate V0.1"
+    },
+    {
+      "bytes": 8943,
+      "indexed_content_characters": 8943,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "97349b88f4c0ca0345c23629c2426bf34c155192bd30c1ed5d13ff7a598ae649",
+      "path": "docs/research/356_key_author_a_p3_batch9_compaction_hold_fresh_replacement_authorized.md",
+      "title": "Research 356: Key Author A P3 Batch 9 Compaction HOLD and Fresh Replacement Authorization"
+    },
+    {
+      "bytes": 10685,
+      "indexed_content_characters": 10685,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "ad291003dfb2bbfdc54c5812f32834cc062571359d0fdf566e50ffea72d66177",
+      "path": "docs/research/357_key_author_a_p3_batch9_replacement_pass_batch10_fresh_session_released.md",
+      "title": "Research 357: Key Author A P3 Batch 9 Replacement Pass with Bounded Count-Query Deviation and Batch 10 Fresh-Session Release"
+    },
+    {
+      "bytes": 6250,
+      "indexed_content_characters": 6250,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "33e0943835e496a843edbb548d91c5cbe2fe4548261786d7b3cf3ad806ddeda4",
+      "path": "docs/research/373_key_author_a_p4_h02_attempt001_verifier_scope_hold_fresh_retry.md",
+      "title": "Research 373: Key Author A P4 H02 Attempt 001 Verifier-Scope HOLD and Fresh Replacement Release"
+    },
+    {
+      "bytes": 1152,
+      "indexed_content_characters": 1152,
+      "is_build": false,
+      "is_heldout": true,
+      "original_source_sha256": "1a1ef5c50bcefd276aa2dfe9ddc44e6a7a9109de0c18c005a5ec7c52b4d64e20",
+      "path": "docs/research/402_key_author_a_p5_l15_accepted_l16_released.md",
+      "title": "Research 402: Key Author A P5 L15 Accepted and L16 Released"
+    },
+    {
+      "bytes": 6286,
+      "indexed_content_characters": 6286,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "2f615fcf560698daca6ec7716e9ab1357dc0d94728731c09819f0ec68a689c0a",
+      "path": "docs/research/407_key_author_a_legacy_attention_evaluator_qualified_activated.md",
+      "title": "Research 407: Key Author A LEGACY Attention Evaluator Qualified and Activated"
+    },
+    {
+      "bytes": 5831,
+      "indexed_content_characters": 5831,
+      "is_build": false,
+      "is_heldout": true,
+      "original_source_sha256": "ffdaccf1c4931eb30850f7dc2ca487afea46e611b71679723be3a6d06f522bbd",
+      "path": "docs/research/413_key_author_a_p6a_first_run_hold_transcript_slug_remediation.md",
+      "title": "Research 413: Key Author A P6A First-Run HOLD and Transcript-Slug Remediation"
+    },
+    {
+      "bytes": 13611,
+      "indexed_content_characters": 12000,
+      "is_build": false,
+      "is_heldout": true,
+      "original_source_sha256": "956b2317bdec83cf31adc59e7c4d02c59d40ce58905fbf13ad09da1cdd674331",
+      "path": "docs/research/423_fresh_key_author_b_state_birth_automated_control_plane_design.md",
+      "title": "Research 423: Fresh Key Author B STATE+BIRTH Automated Control-Plane Design"
+    },
+    {
+      "bytes": 9284,
+      "indexed_content_characters": 9284,
+      "is_build": false,
+      "is_heldout": true,
+      "original_source_sha256": "b5f67853b40380ba95012b2b91a6ed07626e74526c9979b07fcba0d307d75066",
+      "path": "docs/research/477_mc0029_message017_final_critique_reconciliation.md",
+      "title": "Research 477: MC-0029 Message 017 final-critique reconciliation"
+    },
+    {
+      "bytes": 1973,
+      "indexed_content_characters": 1973,
+      "is_build": false,
+      "is_heldout": true,
+      "original_source_sha256": "ecdde3f5235040f3d8cf31959d28c3ecad9a3c343c650f2abe4fb5112e18d425",
+      "path": "docs/research/488_d2_two_model_comparison_implementation_freeze.md",
+      "title": "Research 488: D-2 two-model comparison implementation freeze"
+    },
+    {
+      "bytes": 12140,
+      "indexed_content_characters": 12000,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "eadf86eb4803ed442643ecd656bc2c8d44b281ba9f0dc20b8948eb85c437fcaa",
+      "path": "docs/research/503_r0_realization_requirements_and_independent_design_charter.md",
+      "title": "Research 503: R0 realization requirements and independent physical-architecture design charter"
+    },
+    {
+      "bytes": 29831,
+      "indexed_content_characters": 12000,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "40bf71219aaf9eee311241e0eabd7b034f52e0a40fe7b18a8437ea3fdfe4edf4",
+      "path": "docs/research/512_mc0030_claude_critique_reconciliation_governed_ledger_kernel_v02.md",
+      "title": "Research 512: MC-0030 Claude critique reconciliation and Governed Ledger Kernel V0.2"
+    },
+    {
+      "bytes": 8688,
+      "indexed_content_characters": 8688,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "b06302ff4c2d87987d976e149d964f52c8772808a055cb952433566790094869",
+      "path": "docs/research/522_r0_p01_harness_implementation_qualification_and_freeze.md",
+      "title": "Research 522: R0-P01 harness implementation qualification and freeze"
+    },
+    {
+      "bytes": 6697,
+      "indexed_content_characters": 6697,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "a19a3e417e529602bde4c86fcaab156c7036b64ac9303b6aa730c95c5c309442",
+      "path": "docs/research/548_r0_p01_atomic_synthetic_admission_measurement_finalization.md",
+      "title": "Research 548: atomic synthetic admission and measurement finalization"
+    },
+    {
+      "bytes": 7896,
+      "indexed_content_characters": 7892,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "e8ecc8ba823b9cb4b037e8216a10bd4976b3419fb376e25f5328fe1b648050f6",
+      "path": "docs/research/585_r0_p03_owner_fake_custody_report_and_access_boundary.md",
+      "title": "Research 585: R0-P03 owner fake custody report and access-boundary disposition"
+    },
+    {
+      "bytes": 6347,
+      "indexed_content_characters": 6347,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "de313a7bc8f493213e9eab6e20517399b9b82f1a6698a58d3796b00bc958dfe9",
+      "path": "docs/research/591_r0_p03_historical_evidence_review_population_and_author_admission_boundary.md",
+      "title": "Research 591: R0-P03 historical evidence review population and scored-author boundary"
+    },
+    {
+      "bytes": 10753,
+      "indexed_content_characters": 10749,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "f9cadac7f041baae12dcb5b658164c54208ffd8e4bde0ee9667290ad14fe38d6",
+      "path": "docs/research/615_r0_p03_a2_r07_actual_test_only_author_view_intake_and_instrumentability.md",
+      "title": "Research 615: Actual test-only author-view intake and A2-R07 instrumentability decision"
+    },
+    {
+      "bytes": 9102,
+      "indexed_content_characters": 9092,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "c44efff1ff0a2bef4ee493a6b3583ad83dbe296b026ab744665f15db1f2f895c",
+      "path": "docs/research/619_r0_p03_wave0_independent_blind_second_assessment_and_owner_comparison_route.md",
+      "title": "Research 619: Genuine Wave0 challenger route after authenticated first-reviewer recovery"
+    },
+    {
+      "bytes": 10822,
+      "indexed_content_characters": 10810,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "9b5b2c3b0b63bba006eb1362031ca50eadc94766a49c1c04f73e69bbbf8bc0a5",
+      "path": "docs/research/630_r0_p03_falsification_outcome_and_transition_to_source_world_closure.md",
+      "title": "Research 630: Bounded source-family rule falsification outcome and source-world closure transition"
+    },
+    {
+      "bytes": 15974,
+      "indexed_content_characters": 12000,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "4b78d6ee9ca7d6ab4de0d0f6150b86c726661ff951d551a46fefe635b5987266",
+      "path": "docs/research/GITHUB_APP_EXTENDED_PERMISSION_REVIEW.md",
+      "title": "GitHub App Extended Permission Review"
+    },
+    {
+      "bytes": 42316,
+      "indexed_content_characters": 12000,
+      "is_build": false,
+      "is_heldout": true,
+      "original_source_sha256": "4a47c09d8c3f3acfe1e2cae2b74851218baa36b153ab519a0c34a48d734215e5",
+      "path": "docs/specifications/001_v1_sqlite_technical_architecture.md",
+      "title": "Specification 001: V1 SQLite-Centered Technical Architecture"
+    },
+    {
+      "bytes": 8979,
+      "indexed_content_characters": 8979,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "a9febcf4a401986e1c99f8208f9b7d91a7950fa4b73fc19cfe59723cbd02560d",
+      "path": "docs/specifications/011_v1_rrf_hybrid_retrieval_comparator.md",
+      "title": "Specification 011: V1 RRF Hybrid Retrieval Comparator"
+    },
+    {
+      "bytes": 19139,
+      "indexed_content_characters": 12000,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "b180a728ed4433c63bea87a5a7286383d3257b7548c7441fbdf6f1f4bcdfa28d",
+      "path": "docs/specifications/013_v1_horizon_relevance_and_selective_context.md",
+      "title": "Specification 013: V1 Horizon Relevance and Selective Context"
+    },
+    {
+      "bytes": 31338,
+      "indexed_content_characters": 12000,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "a1c54cb6435f1df7fabc6d819693efa18528fa5379aeb8725c9ded929da66c0f",
+      "path": "docs/specifications/015_v1_recommendation_action_value_vertical_slice.md",
+      "title": "Specification 015: V1 Recommendation and Action Value Vertical Slice"
+    },
+    {
+      "bytes": 12556,
+      "indexed_content_characters": 12000,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "7dcc9f351a3ad6e5db633297229ebd59231bb3ce7666d19773cf3ac827e4e7bc",
+      "path": "docs/specifications/018_v1_governed_autonomous_live_experiment_launcher.md",
+      "title": "Specification 018: V1 Governed Autonomous Live Experiment Launcher"
+    },
+    {
+      "bytes": 28860,
+      "indexed_content_characters": 12000,
+      "is_build": false,
+      "is_heldout": true,
+      "original_source_sha256": "2c13cbd18bd84dbc47c66b959f45954902d53a2a9dfd43b99ecadfe414b4d920",
+      "path": "docs/specifications/021_v1_dependency_backed_recommendation_action_value_vertical_slice.md",
+      "title": "Specification 021: V1 Dependency-Backed Recommendation and Action Value Vertical Slice"
+    },
+    {
+      "bytes": 17662,
+      "indexed_content_characters": 12000,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "788e3162fc823d21eca176646e7e5c96090cfd7dd971f3f3e918414c278b5cdd",
+      "path": "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+      "title": "Specification 025 \u2014 V1 Governed Repository Integrity and Continuity Hardening"
+    },
+    {
+      "bytes": 38442,
+      "indexed_content_characters": 12000,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "a922486ebcc359b5b457a6d77ebad12bab0cc43cb0ea65ccd6b123b919d0bfa0",
+      "path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "title": "Specification 028 \u2014 V1 Project-Knowledge Architecture Implementation and Migration Contract"
+    },
+    {
+      "bytes": 163,
+      "indexed_content_characters": 163,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "7c6ef1cb9e935e479ea8f37837c0f4ee2909af7882d92ff68719d01588243bce",
+      "path": "tools/project_knowledge/__main__.py",
+      "title": ""
+    },
+    {
+      "bytes": 4459,
+      "indexed_content_characters": 4459,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "ead6766044c4ad3a08fbe4b5342e7d3c2c7c12203a458bf2722a265ce52bcf9d",
+      "path": "tools/project_knowledge/adapters/schema.py",
+      "title": "Durable validation requires this explicit schema closure. The ordinary"
+    },
+    {
+      "bytes": 767,
+      "indexed_content_characters": 767,
+      "is_build": false,
+      "is_heldout": true,
+      "original_source_sha256": "f08708e7d5fd124a32bda9a5cc9979912f3e23254105752a9fc91cafbb5df8cb",
+      "path": "tools/project_knowledge/pure_source_catalog.py",
+      "title": ""
+    },
+    {
+      "bytes": 6646,
+      "indexed_content_characters": 6646,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "753f6c2bbe8c54ce66a33924b759b77bccecc646c032f970d7d50c3a21ad72ba",
+      "path": "tools/project_knowledge/services/discovery.py",
+      "title": ""
+    },
+    {
+      "bytes": 2138,
+      "indexed_content_characters": 2138,
+      "is_build": true,
+      "is_heldout": false,
+      "original_source_sha256": "ab0dc25f963488a7b6d35eafc04e9eac0e41544c46820f478903c060a7e1dc64",
+      "path": "tools/project_knowledge/view_definitions/authority_index.py",
+      "title": "Data-only declarations read from this view's own committed blob; the bound worker never imports this module."
+    }
+  ]
+}
