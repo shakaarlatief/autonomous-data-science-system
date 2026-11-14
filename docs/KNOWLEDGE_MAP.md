@@ -1068,6 +1068,14 @@ docs/research/660_r0_p03_three_masked_claude_review_complete_and_unmasked_answer
 docs/research/661_r0_p03_four_need_reference_feasibility_and_evidence_boundary.md
 docs/research/662_r0_p03_private_reference_git_line_replay_and_literal_attribution_gaps.md
 docs/research/663_r0_p03_twelve_citation_review_and_four_need_gold_free_navigation_execution.md
+docs/research/664_r0_p03_two_frozen_source_answer_authors_and_case_local_boundary_limitation.md
+docs/local_execution/validation/363_r0_p03_two_actual_source_answer_commits_and_case_boundary_audit.md
+docs/checkpoints/927_r0_p03_frozen_two_author_source_answers_and_cross_case_evidence_boundary.md
+docs/model_collaboration/threads/MC-0030/messages/079_claude_r0_p03_fresh_need_packet_a_source_only_answers.md
+docs/model_collaboration/threads/MC-0030/messages/080_claude_r0_p03_fresh_need_packet_b_source_only_answers.md
+experiments/r0_p03_navigation_probe/four_need_source_only_answer_case_boundary_audit_v01.py
+experiments/r0_p03_navigation_probe/four_need_source_only_answer_case_boundary_audit_v01.json
+tests/unit/test_r0_p03_four_need_source_only_answer_case_boundary_v01.py
 docs/local_execution/validation/362_r0_p03_four_need_gold_free_actual_source_packet_retrieval_and_citation_integrity.md
 docs/checkpoints/926_r0_p03_twelve_quote_review_and_four_need_gold_free_source_packets_frozen.md
 docs/model_collaboration/threads/MC-0030/messages/076_chatgpt_r0_p03_twelve_literal_attribution_discrepancy_review_handoff.md
@@ -2176,7 +2184,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-926 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-927 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

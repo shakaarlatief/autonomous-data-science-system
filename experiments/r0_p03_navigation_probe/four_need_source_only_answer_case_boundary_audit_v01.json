@@ -1,0 +1,100 @@
+{
+  "architecture_selection": null,
+  "audit_id": "R0_P03_FOUR_NEED_SOURCE_ONLY_CASE_LOCAL_BOUNDARY_V01",
+  "author_answers_modified": false,
+  "class": "RETROSPECTIVE_EXPLICIT_SOURCE_REFERENCE_BOUNDARY_CHECK_UNSCORED",
+  "formal_r0_p03_score": null,
+  "full_citation_line_or_semantic_entailment_audited": false,
+  "limits": [
+    "A cross-case reference means the author used an identity not assigned to the question under the frozen per-case packet rule.",
+    "A valid case-local source reference does not independently verify its precise cited lines, claim truth or temporal authority.",
+    "Abbreviated shorthand needs a separate contextual review and is not counted as a fully specified source identity.",
+    "Self-described ANSWERED/PARTIAL/ABSTAIN labels are author judgments, not blind independent gold or architecture scores."
+  ],
+  "original_git_pin": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+  "original_git_source_bodies_read": false,
+  "private_original_reference_report_accessed": false,
+  "shorthand_references_completely_verified": false,
+  "source_packets_modified": false,
+  "treatments": {
+    "A": {
+      "aggregate_reference_counts": {
+        "case_local_full_source_reference_occurrences": 16,
+        "explicit_source_reference_occurrences": 16,
+        "same_blob_shorthand_mentions": 27
+      },
+      "author_answer_sha256": "618767905efe5c3f4ff67088a45b579a41b7b420679e20b7ec5870e6cd501b05",
+      "case_local_evidence_boundary_clean_for_explicit_full_references": true,
+      "case_local_reference_counts": {
+        "N01": {
+          "case_local_full_source_reference_occurrences": 4,
+          "explicit_source_reference_occurrences": 4,
+          "same_blob_shorthand_mentions": 3
+        },
+        "N02": {
+          "case_local_full_source_reference_occurrences": 4,
+          "explicit_source_reference_occurrences": 4,
+          "same_blob_shorthand_mentions": 11
+        },
+        "N03": {
+          "case_local_full_source_reference_occurrences": 4,
+          "explicit_source_reference_occurrences": 4,
+          "same_blob_shorthand_mentions": 8
+        },
+        "N04": {
+          "case_local_full_source_reference_occurrences": 4,
+          "explicit_source_reference_occurrences": 4,
+          "same_blob_shorthand_mentions": 5
+        }
+      },
+      "gold_free_packet_sha256": "3876a30dabc022c67483ea0de5c3ddfcbb75c43ed054f5e4668345df53fe9a37",
+      "self_described_unscored_outcomes": {
+        "N01": "ABSTAIN_INSUFFICIENT_EXCERPTS",
+        "N02": "PARTIAL_FROM_SUPPLIED_EXCERPTS",
+        "N03": "PARTIAL_FROM_SUPPLIED_EXCERPTS",
+        "N04": "PARTIAL_FROM_SUPPLIED_EXCERPTS"
+      },
+      "unique_source_references_available_across_packet": 16
+    },
+    "B": {
+      "aggregate_reference_counts": {
+        "case_local_full_source_reference_occurrences": 16,
+        "cross_case_full_source_reference_occurrences": 1,
+        "explicit_source_reference_occurrences": 17
+      },
+      "author_answer_sha256": "171a000daa1bd569ecac3cc5227c9239d9b513684b5ce35b04edc2db39584905",
+      "case_local_evidence_boundary_clean_for_explicit_full_references": false,
+      "case_local_reference_counts": {
+        "N01": {
+          "case_local_full_source_reference_occurrences": 4,
+          "explicit_source_reference_occurrences": 4,
+          "same_blob_shorthand_mentions": 0
+        },
+        "N02": {
+          "case_local_full_source_reference_occurrences": 4,
+          "explicit_source_reference_occurrences": 4,
+          "same_blob_shorthand_mentions": 0
+        },
+        "N03": {
+          "case_local_full_source_reference_occurrences": 4,
+          "cross_case_full_source_reference_occurrences": 1,
+          "explicit_source_reference_occurrences": 5,
+          "same_blob_shorthand_mentions": 0
+        },
+        "N04": {
+          "case_local_full_source_reference_occurrences": 4,
+          "explicit_source_reference_occurrences": 4,
+          "same_blob_shorthand_mentions": 0
+        }
+      },
+      "gold_free_packet_sha256": "a7ec96918330aa75b2ead92fcf6ad60b4324abc9d5f90ed1f82d1422fc6499d0",
+      "self_described_unscored_outcomes": {
+        "N01": "PARTIAL_FROM_SUPPLIED_EXCERPTS",
+        "N02": "PARTIAL_FROM_SUPPLIED_EXCERPTS",
+        "N03": "PARTIAL_FROM_SUPPLIED_EXCERPTS",
+        "N04": "PARTIAL_FROM_SUPPLIED_EXCERPTS"
+      },
+      "unique_source_references_available_across_packet": 16
+    }
+  }
+}
