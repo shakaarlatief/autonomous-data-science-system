@@ -1,0 +1,36 @@
+{
+  "accepted_effect_ids": [
+    "D1-E01-D2-CLAUDE-WRITE-REQUIREMENT",
+    "D1-E02-NO-CLAUDE-RUNTIME-BRIDGE",
+    "D1-E03-MESSAGE018-AUTHORIZATION",
+    "D1-E04-TRANSPORT-CORRECTION-LIFECYCLE"
+  ],
+  "accepted_j2_relations": [],
+  "accepted_scope": "REUSE_EXACT_FOUR_D1_EFFECT_STATEMENTS_AS_P03_EXPERIMENT_ONLY_J1_INPUTS",
+  "binding_id": "P03V2_D1_EXPERIMENT_OWNER_ACCEPTANCE_BINDING_V01",
+  "decision": "ACCEPT",
+  "decision_context": "Owner's immediate reply to the Checkpoint 936 question to ACCEPT, AMEND, or REJECT the exact experiment-only D1 reuse proposal; Research 675, Message 088",
+  "decision_date": "2026-11-14",
+  "decision_provenance_class": "CHAT_CONVERSATION_EXPLICIT_OWNER_REPLY_NOT_INDEPENDENTLY_AUTHENTICATED",
+  "excluded_authorizations": [
+    "PRODUCTION_J1_J2_ADMISSION",
+    "NATURAL_OWNER_RELATIONAL_J2_QUALIFICATION",
+    "INDEPENDENT_PROVIDER_CONNECTOR_PROOF",
+    "RETROACTIVE_D1_RESULT_CHANGE",
+    "FORMAL_P03_PRIMARY_TASK_OR_GOLD_CREATION",
+    "FORMAL_B0_B4_COMPARATOR_SCORING",
+    "PHYSICAL_ARCHITECTURE_SELECTION",
+    "MIGRATION_OR_CUTOVER",
+    "EXTERNAL_OWNER_IDENTITY_OR_CRYPTOGRAPHIC_AUTHENTICATION"
+  ],
+  "experimental_world_id": "P03V2_DEVELOPMENT_WORLD_CLAUDE_COLLABORATION_V01",
+  "formal_r0_p03_status": "INCOMPLETE",
+  "historical_d1_raw_outcome": "D1_AMEND",
+  "proposal_id": "R0_P03_V2_D1_REAL_EVENT_REUSE_CANDIDATE_001",
+  "schema_version": 1,
+  "source_proposal_canonical_json_sha256": "186c70ff487104f8ee5baee8d21b50ffd466e812c6b97debb20296c8bbf9451f",
+  "source_proposal_commit": "ff8bf4c4c504a17f5b26db630f83920d727ff51c",
+  "source_proposal_git_bytes_sha256": "d9220667ddb60d89d12259ee553c0c3666e0d37329723360e00be311299baddd",
+  "source_proposal_path": "experiments/r0_p03_navigation_probe/v03_d1_real_event_owner_proposal_v01.json",
+  "verbatim_owner_reply": "I ACCEPT."
+}

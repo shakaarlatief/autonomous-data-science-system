@@ -1080,6 +1080,14 @@ docs/research/672_r0_p03_post_x1_physical_discrimination_and_prospective_method_
 docs/research/673_r0_p03_owner_accepted_prospective_method_amendment.md
 docs/research/674_r0_p03_real_content_source_frame_preadmission_probe.md
 docs/research/675_r0_p03_real_event_semantic_admission_contract_and_owner_packet.md
+docs/research/676_r0_p03_owner_accepted_d1_experiment_reuse_binding_and_j2_boundary.md
+docs/model_collaboration/threads/MC-0030/messages/089_chatgpt_r0_p03_exact_d1_reuse_owner_acceptance_binding.md
+docs/local_execution/validation/373_r0_p03_d1_experiment_owner_binding_and_projection_verification.md
+docs/checkpoints/937_r0_p03_experimental_d1_effects_accepted_and_j2_qualification_pending.md
+experiments/r0_p03_navigation_probe/v03_d1_experiment_owner_acceptance_binding_v01.json
+experiments/r0_p03_navigation_probe/v03_d1_accepted_semantic_projection_v01.py
+experiments/r0_p03_navigation_probe/v03_d1_experiment_accepted_j1_projection_v01.json
+tests/unit/test_r0_p03_v03_d1_accepted_semantic_projection_v01.py
 docs/model_collaboration/threads/MC-0030/messages/088_chatgpt_r0_p03_d1_real_event_semantic_reuse_admission_proposal.md
 docs/local_execution/validation/372_r0_p03_real_event_owner_packet_and_semantic_integrity_checks.md
 docs/checkpoints/936_r0_p03_real_event_semantic_contract_candidate_and_owner_packet_hold.md
@@ -2248,7 +2256,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-936 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-937 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

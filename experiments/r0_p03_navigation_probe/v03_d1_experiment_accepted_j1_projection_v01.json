@@ -1,0 +1,185 @@
+{
+  "accepted_j1": {
+    "closed_accounting": {
+      "NO_REALIZATION_REQUIRED": 3,
+      "REALIZATION_TRACKED": 1
+    },
+    "count": 4,
+    "currentness_scope": "D1_HISTORICAL_EVENT_REPLAY_ONLY",
+    "effects": [
+      {
+        "accepted_effect_id": "D1-E01-D2-CLAUDE-WRITE-REQUIREMENT",
+        "accepted_effect_statement": "For the D-2 Evaluator B collaboration write, Claude must use the Claude-side GitHub connector and change only the authorized MC-0029 Message 018 path.",
+        "accounting_disposition": "REALIZATION_TRACKED",
+        "completion_contract": {
+          "activation_required": false,
+          "authority": "GOVERNING_ACCEPTANCE",
+          "composition_rule": "ALL_REQUIRED",
+          "evidence_required": true,
+          "qualification_required": true,
+          "required_components": [
+            "TRANSPORT_ATTESTED_GITHUB_CONNECTOR",
+            "AUTHORIZED_PATH_ONLY",
+            "COMMIT_RECEIPT_BOUND_TO_CORRECTION_HEAD"
+          ]
+        },
+        "type": "REQUIRE"
+      },
+      {
+        "accepted_effect_id": "D1-E02-NO-CLAUDE-RUNTIME-BRIDGE",
+        "accepted_effect_statement": "The D-2 Claude action must not be routed through or depend on the ChatGPT-only Codexless Runtime Bridge.",
+        "accounting_disposition": "NO_REALIZATION_REQUIRED",
+        "accounting_reason": "STANDING_CONTROL_CONSEQUENCE",
+        "standing_enforcement": {
+          "control_ref": "D1-HANDOFF-TRANSPORT-AUDIT",
+          "mode": "DETECTIVE_ONLY"
+        },
+        "type": "PROHIBIT"
+      },
+      {
+        "accepted_effect_id": "D1-E03-MESSAGE018-AUTHORIZATION",
+        "accepted_effect_statement": "Claude is authorized to create exactly MC-0029 Message 018 through the Claude-side GitHub connector for the blinded D-2 Evaluator B task.",
+        "accounting_disposition": "NO_REALIZATION_REQUIRED",
+        "accounting_reason": "SELF_EXECUTING_DISPOSITION",
+        "exercise_contract": {
+          "exact_authorized_path": "docs/model_collaboration/threads/MC-0029/messages/018_claude_d2_lineage_evaluator_b.md",
+          "governed_receipt_required_when_exercised": true
+        },
+        "type": "AUTHORIZE"
+      },
+      {
+        "accepted_effect_id": "D1-E04-TRANSPORT-CORRECTION-LIFECYCLE",
+        "accepted_effect_statement": "The incorrect Research 484 Section 5 Claude Runtime-Bridge requirement is replaced by the corrected Claude-side transport rule, and Research 477's transport-nonconformance finding is withdrawn while its substantive architecture reconciliation remains unchanged.",
+        "accounting_disposition": "NO_REALIZATION_REQUIRED",
+        "accounting_reason": "SELF_EXECUTING_DISPOSITION",
+        "lineage": {
+          "predecessor_id": "R484-S5-CLAUDE-RUNTIME-BRIDGE-REQUIREMENT",
+          "realization_succession": "OPEN_RESET",
+          "relation": "REPLACE",
+          "successor_id": "D1-E01-D2-CLAUDE-WRITE-REQUIREMENT"
+        },
+        "type": "LIFECYCLE"
+      }
+    ],
+    "source": "GIT_PINNED_OWNER_REVIEW_PACKET"
+  },
+  "formal_b0_b4_scores": null,
+  "historical_d1_rescored": false,
+  "historical_legacy_nine_gold_rejudged": false,
+  "j2_evidence": {
+    "git_observable": [
+      {
+        "claim": "The action commit has the exact correction parent and adds only Message 018",
+        "class": "OBSERVABLE",
+        "evidence_id": "J2OBS-D1-GIT-PATH",
+        "governing_completion_consequence": false,
+        "source": "git:cd0cf087a4d0ddb30920a8c753e478da8f92295c",
+        "verification": "GIT_OBJECT_VERIFIED"
+      }
+    ],
+    "natural_owner_relational_proposals_unadmitted": [
+      {
+        "claim": "The actual Claude message and Git action realize E01's three required completion components",
+        "class": "RELATIONAL_PROPOSAL",
+        "covered_components": [
+          "TRANSPORT_ATTESTED_GITHUB_CONNECTOR",
+          "AUTHORIZED_PATH_ONLY",
+          "COMMIT_RECEIPT_BOUND_TO_CORRECTION_HEAD"
+        ],
+        "evidence_id": "J2REL-D1-E01-COVERAGE",
+        "governing_completion_consequence": false,
+        "source": "docs/model_collaboration/threads/MC-0029/messages/018_claude_d2_lineage_evaluator_b.md",
+        "target_effect_id": "D1-E01-D2-CLAUDE-WRITE-REQUIREMENT",
+        "verification": "NOT_ADMITTED_AS_P03_NATURAL_OWNER_RELATION"
+      }
+    ],
+    "qualified_relational": [],
+    "qualified_relational_count": 0,
+    "source_reported_attestations": [
+      {
+        "claim": "Claude reports its own GitHub connector transport",
+        "class": "SOURCE_REPORTED_ATTESTATION",
+        "evidence_id": "J2ASSERT-D1-CLAUDE-TRANSPORT",
+        "governing_completion_consequence": false,
+        "source": "docs/model_collaboration/threads/MC-0029/messages/018_claude_d2_lineage_evaluator_b.md",
+        "verification": "MESSAGE_CONTENT_VERIFIED_PROVIDER_TRANSPORT_NOT_INDEPENDENTLY_OBSERVED"
+      }
+    ]
+  },
+  "j3": {
+    "derived_orientation": "REVIEW_REQUIRED",
+    "historical_non_governing_d1_preview": {
+      "d1_raw_v01_initialization_shape": "SINGLE_OBJECT",
+      "historical_d1_disposition": "D1_AMEND_NOT_FORMAL_P03_PASS",
+      "non_governing_d1_evaluator_projection": {
+        "acceptance_binding_valid": true,
+        "authorization_exercise_status": "EXERCISED_VALID",
+        "current_effect_ids": [
+          "D1-E01-D2-CLAUDE-WRITE-REQUIREMENT",
+          "D1-E02-NO-CLAUDE-RUNTIME-BRIDGE"
+        ],
+        "fixture_id": "REAL_CLAUDE_MESSAGE018_TRANSPORT_CORRECTION",
+        "lineage_relation_valid": true,
+        "next_gap": "NONE",
+        "realization_initialization": [
+          {
+            "effect_id": "D1-E01-D2-CLAUDE-WRITE-REQUIREMENT",
+            "mode": "OPEN_RESET"
+          }
+        ],
+        "realization_orientation": "SATISFIED",
+        "requirement_satisfied": true,
+        "review_owner": null,
+        "review_required": false,
+        "shared_predicates": {
+          "authorization_exercise_valid": true,
+          "authorized_path_only": true,
+          "commit_receipt_bound_to_correction_head": true,
+          "evidence_valid": true,
+          "lineage_transition_valid": true,
+          "qualification_complete": true,
+          "runtime_bridge_prohibition_not_violated": true,
+          "transport_attested_github_connector": true
+        },
+        "source_fact_contract_valid": true,
+        "standing_prohibition_enforcement": "DETECTIVE_ONLY_COMPLIANT"
+      },
+      "research_499_reconciled_initialization_shape": "ORDERED_LIST_BY_EFFECT_ID",
+      "source": "D1_HISTORICAL_EVALUATOR_A_DEVELOPMENT_REPLAY"
+    },
+    "new_experimental_completion_certified": false,
+    "new_experimental_requirement_satisfaction": "HOLD_J2_NATURAL_OWNER_QUALIFICATION"
+  },
+  "lineage": {
+    "accepted_experiment_semantics": {
+      "predecessor_id": "R484-S5-CLAUDE-RUNTIME-BRIDGE-REQUIREMENT",
+      "realization_succession": "OPEN_RESET",
+      "relation": "REPLACE",
+      "successor_id": "D1-E01-D2-CLAUDE-WRITE-REQUIREMENT"
+    },
+    "historical_d1_predicate_not_reexecuted_as_new_j3": true,
+    "source_role": "EXACT_OWNER_REVIEWED_EXPERIMENT_LINEAGE"
+  },
+  "migration_authorized": false,
+  "next_qualification": [
+    "Actual natural-owner J2 RELATIONAL coverage admission for the three E01 completion components",
+    "Independent or explicitly bounded source-attestation qualification for claimed provider transport",
+    "One integrated common J1/J2/lineage/J3 currentness executable world rather than historical D1 preview reuse",
+    "Sufficient real-source breadth, independent gold roles and formal B0-B4 common-substrate parity"
+  ],
+  "original_d1_raw_outcome": "D1_AMEND",
+  "owner_decision": {
+    "accepted_packet_canonical_sha256": "186c70ff487104f8ee5baee8d21b50ffd466e812c6b97debb20296c8bbf9451f",
+    "assurance": "CHAT_CONVERSATION_EXPLICIT_OWNER_REPLY_NOT_INDEPENDENTLY_AUTHENTICATED",
+    "binding_record_canonical_sha256": "95f99ba0f62f35408b4086d7ee0dd666be43b81a8d6ff69cad5d653b904cd9af",
+    "source_commit": "ff8bf4c4c504a17f5b26db630f83920d727ff51c",
+    "verbatim_reply": "I ACCEPT.",
+    "verdict": "ACCEPT"
+  },
+  "physical_architecture_selected": false,
+  "primary_tasks_originated": false,
+  "schema_version": 1,
+  "scope": "EXPERIMENT_ONLY_NON_OPERATIONAL",
+  "world_id": "P03V2_DEVELOPMENT_WORLD_CLAUDE_COLLABORATION_V01",
+  "world_status": "J1_EXPERIMENT_ACCEPTED_J2_RELATIONAL_AND_J3_QUALIFICATION_HOLD"
+}

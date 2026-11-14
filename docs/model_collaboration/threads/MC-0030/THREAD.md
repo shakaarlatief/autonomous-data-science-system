@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / R0-P03 REAL D1 SOURCE REUSE OWNER PACKET PREPARED / NO NEW J1/J2 ACCEPTED / FORMAL P03 INCOMPLETE
+**Status:** OPEN / R0-P03 EXACT FOUR EXPERIMENT-ONLY J1 EFFECTS OWNER ACCEPTED / J2 QUALIFICATION PENDING / FORMAL P03 INCOMPLETE
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -1156,5 +1156,21 @@ Research 675 verifies the actual original Research 485-491 four-effect D1 develo
     CHECKPOINT=936
     P03_ACCEPTED_J1_EFFECTS=0
     P03_QUALIFIED_J2_RELATIONS=0
+    FORMAL_P03=INCOMPLETE
+    PHYSICAL_TARGET_SELECTED=false
+
+## Owner explicitly accepts exact P03 experiment-only D1 J1 reuse, Checkpoint 937
+
+The owner answered "I ACCEPT." to the specific previously frozen Research 675 P03-V2 D1 four-effect proposal. Research 676 and Message 089 bind this verdict to the Git-published packet at ff8bf4c4 and its canonical SHA-256 186c70ff487104f8ee5baee8d21b50ffd466e812c6b97debb20296c8bbf9451f. Four exact J1 effects are accepted only for the P03 development world. Original historical D1_AMEND remains unchanged. Git path/parent is observable, Claude connector transport remains source-reported, and natural-owner J2 RELATIONAL coverage is still UNADMITTED. The new J3 completion decision is HOLD rather than inheriting the old D1 preview. Sixteen focused tests pass. No Claude review, independent scored P03 task, physical target or migration is scheduled by this state change.
+
+    CURRENT=R0_P03_EXPERIMENT_J1_ACCEPTED_J2_ADMISSION_PENDING
+    OWNER_VERDICT=ACCEPT_EXACT_FOUR_EFFECT_PACKET
+    RESEARCH=676
+    VALIDATION=373
+    CHECKPOINT=937
+    CHATGPT_MESSAGE=MC0030_MESSAGE089
+    P03_EXPERIMENT_ONLY_ACCEPTED_J1_EFFECTS=4
+    P03_QUALIFIED_NATURAL_OWNER_J2=0
+    NEW_J3_COMPLETION=HOLD
     FORMAL_P03=INCOMPLETE
     PHYSICAL_TARGET_SELECTED=false
