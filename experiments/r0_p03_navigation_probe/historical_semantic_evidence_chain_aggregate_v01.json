@@ -1,0 +1,70 @@
+{
+  "accepted_j1_effect_relations": 0,
+  "accepted_j2_realization_relations": 0,
+  "actual_v03_common_substrate_complete": false,
+  "architecture_reconsideration_triggers": [
+    "documented_contradiction_or_insufficient_authority_for_target_assumptions",
+    "needed_semantic_relation_not_representable_without_unjustified_promotion",
+    "unbounded_source_closure_or_unresolvable_natural_owner",
+    "implementation_or_receipt_cannot_be_proven_under_candidate_model",
+    "source_format_or_privacy_boundaries_require_substrate_redesign",
+    "real_common_arm_parity_fails_or_alternative_reduces_maintenance_complexity",
+    "repository_workflow_or_ci_prevents_reproducible_qualification"
+  ],
+  "candidate_owner_or_model_status": "EXPOSED_ENGINEERING_NOT_INDEPENDENT_REVIEW",
+  "derived_index_is_automatically_governing": false,
+  "documentary_relation_count": 11,
+  "documentary_relation_type_counts": {
+    "CURRENT_CONTRACT_CONTEXT_AS_REPORTED": 1,
+    "DERIVED_INDEX_NOT_GOVERNING_TRUTH": 1,
+    "HISTORICAL_GENERATED_STATE_OLDER_THAN_ROUTING": 1,
+    "HISTORICAL_SELECTION_RETAINED_AS_REPORTED": 1,
+    "NORMATIVE_COMPONENT_AND_CODE_PRESENCE": 1,
+    "PROPOSAL_EXPLICITLY_REQUIRES_OWNER_DECISION": 1,
+    "REPORTED_NO_OPERATIONAL_CUTOVER": 1,
+    "REPORTED_TEST_RESULTS_CONCORDANT": 1,
+    "RESEARCH_REPORT_NAMES_CODE_AND_TEST": 1,
+    "TEST_SOURCE_HAS_NEGATIVE_AUTHORITY_CASE": 1,
+    "TEST_SOURCE_IMPORTS_IMPLEMENTATION": 1
+  },
+  "formal_R0_P03_task_or_arm_scoring": false,
+  "historical_ci_execution_verified": "NOT_ESTABLISHED_BY_THIS_SOURCE_SET",
+  "historical_git_pin": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+  "id": "R0_P03_DOCUMENTARY_EVIDENCE_CHAIN_UNSCORED_V01",
+  "independently_attested_owner_decision": "NOT_ESTABLISHED_BY_THIS_SOURCE_SET",
+  "negative_original_checkpoint_comparison": {
+    "delta_checkpoints_not_time_or_semantic_staleness_proof": 331,
+    "generated_checkpoint_at_original_pin": 564,
+    "interpretation": "OLDER_GENERATED_CHECKPOINT_VALUE_NOT_OPERATIVE_AUTHORITY_VERDICT",
+    "routing_checkpoint_at_original_pin": 895
+  },
+  "next_required_proof_classes": [
+    "independently_qualified_owner_acceptance_and_currentness_scope",
+    "natural_owner_realization_semantics_and_acceptance",
+    "exact_historical_execution_or_receipt_bound_to_revision",
+    "source_specific_lineage_and_completion_closure",
+    "common_arm_substrate_semantic_parity_under_actual_release_controls"
+  ],
+  "original_git_blob_and_source_line_exactness": "PASS",
+  "physical_architecture_selected": false,
+  "private_result_bytes_receipt_only": 17802,
+  "private_result_sha256_receipt_only": "3bff868fb1a6122f00ee7db183eba71cbdeb4b84e0a62c360c72a31809bba120",
+  "private_selection_sha256": "0cb2495770e32d1f51cb4e3db7ad3fae5029820b7ac751af6de825fbb0cf186c",
+  "proposal_is_automatically_governing": false,
+  "recorded_test_source_is_actual_test_pass": false,
+  "reported_historical_test_result_is_independent_ci_receipt": false,
+  "source_carrier_count": 10,
+  "source_role_semantics_independently_adjudicated": false,
+  "source_witness_count": 19,
+  "witness_kind_counts": {
+    "CHECKPOINT_REPORT": 1,
+    "DECISION_RECORD_REPORT": 6,
+    "DERIVED_SOURCE": 2,
+    "HISTORICAL_ROUTING": 1,
+    "IMPLEMENTATION_SOURCE": 2,
+    "RESEARCH_RESULT_REPORT": 2,
+    "SPECIFICATION_TEXT": 2,
+    "TEST_SOURCE": 2,
+    "UNACCEPTED_PROPOSAL": 1
+  }
+}
