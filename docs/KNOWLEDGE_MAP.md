@@ -1070,6 +1070,13 @@ docs/research/662_r0_p03_private_reference_git_line_replay_and_literal_attributi
 docs/research/663_r0_p03_twelve_citation_review_and_four_need_gold_free_navigation_execution.md
 docs/research/664_r0_p03_two_frozen_source_answer_authors_and_case_local_boundary_limitation.md
 docs/research/665_r0_p03_four_need_masked_evidence_support_review_fixture_freeze.md
+docs/research/666_r0_p03_four_need_claim_support_synthesis_and_exploratory_stop_rule.md
+docs/local_execution/validation/365_r0_p03_masked_claim_review_receipt_and_source_free_reconciliation.md
+docs/checkpoints/929_r0_p03_four_need_masked_review_reconciled_and_exploratory_stop.md
+docs/model_collaboration/threads/MC-0030/messages/082_claude_r0_p03_masked_four_need_claim_support_review_result.md
+experiments/r0_p03_navigation_probe/four_need_public_claim_support_reconciliation_v01.py
+experiments/r0_p03_navigation_probe/four_need_public_claim_support_reconciliation_v01.json
+tests/unit/test_r0_p03_four_need_public_claim_support_reconciliation_v01.py
 docs/local_execution/validation/364_r0_p03_masked_case_local_original_excerpt_claim_review_fixture_qualified.md
 docs/checkpoints/928_r0_p03_masked_four_need_claim_support_review_packet_ready.md
 docs/model_collaboration/threads/MC-0030/messages/081_chatgpt_r0_p03_four_need_masked_claim_support_review_handoff.md
@@ -2193,7 +2200,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-928 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-929 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

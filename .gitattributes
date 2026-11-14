@@ -96,3 +96,5 @@ experiments/r0_p03_navigation_probe/four_need_source_only_answer_case_boundary_a
 # Keep the original model-facing four-need masked evidence review bytes and source-free lineage manifest immutable.
 experiments/r0_p03_navigation_probe/four_need_masked_source_excerpt_claim_review_packet_v01.json -text
 experiments/r0_p03_navigation_probe/four_need_masked_source_excerpt_claim_review_manifest_v01.json -text
+# Preserve the exact postreview, source-free original-claim reconciliation and stop-rule evidence.
+experiments/r0_p03_navigation_probe/four_need_public_claim_support_reconciliation_v01.json -text

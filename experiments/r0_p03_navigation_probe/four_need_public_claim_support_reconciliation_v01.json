@@ -1,0 +1,93 @@
+{
+  "candidate_masking_not_os_verified": true,
+  "claim_units_include_correct_abstentions_and_qualifications": true,
+  "eight_answers_reviewed": true,
+  "formal_R0_P03_scored": false,
+  "four_original_questions": true,
+  "id": "R0_P03_FOUR_NEED_POST_REVIEW_PUBLIC_RECONCILIATION_V01",
+  "next_scientific_focus": "STOP_AD_HOC_FOUR_NEED_RETRIEVAL_LOOP;QUALIFY_SOURCE_ROLE_AUTHORITY_CLOSURE_AND_COMMON_V03_SUBSTRATE_PARITY;REASSESS_FORMAL_RESEARCH_513_559_576_ADMISSION",
+  "original_case_source_audit_sha256": "975cba9fddbfcf74925fe33853955264ce358ba62467344af0c9e688d00352ad",
+  "original_question_fully_covered_count": 0,
+  "physical_architecture_selected": false,
+  "review_packet_sha256": "e53544ac31eacaf6fd64e74b67c920d9a2b0ec96bafb1a0951c5fdc43c3453a2",
+  "reviewer_abstention_quality_appropriate_across_eight_answers": true,
+  "scientific_limits": [
+    "The reviewer saw only selected case-local excerpts; neither full historical source nor private original-reference gold was used.",
+    "Claim units include supported source-attribution qualifiers, proper abstentions and other accurate limitations; supported proportion is NOT answer accuracy.",
+    "One B N03 answer used a source that belonged only to N04; nine assessed items depended on that out-of-case source.",
+    "The same Claude model family authored and interpreted the evidence, across separate sessions but without OS-level separation.",
+    "Question coverage, expected-source recall, owner/authority correctness and original context are not exhaustively established.",
+    "Body BM25 and body-plus-heading RRF are diagnostics; B is not original Research 513 B1 controlled subject architecture.",
+    "No original 12+9 formal tasks, 60/20 role-representative qualified parity cohort, neutral protected gold, real B0-B4 full arms, or scored independent evaluator agreement."
+  ],
+  "source_boundary_issue": "BODY_PLUS_HEADING_RRF_DIAGNOSTIC_N03_ONE_OUT_OF_CASE_SOURCE_NINE_ASSESSED_ITEMS",
+  "source_conditioned_observations": [
+    {
+      "candidate_P_claim_units": 25,
+      "candidate_P_out_of_case_or_unsupported": 0,
+      "candidate_P_supported_item_units": 23,
+      "candidate_Q_claim_units": 12,
+      "candidate_Q_out_of_case_or_unsupported": 0,
+      "candidate_Q_supported_item_units": 12,
+      "fully_covered_question": false,
+      "mask_candidate_P_original_method": "BODY_PLUS_HEADING_RRF_DIAGNOSTIC",
+      "mask_candidate_Q_original_method": "BODY_BM25",
+      "masked_comparison_label": "P_MORE_SUPPORTED_COVERAGE",
+      "original_need": "N01",
+      "source_conditioned_supported_coverage_favored_method": "BODY_PLUS_HEADING_RRF_DIAGNOSTIC"
+    },
+    {
+      "candidate_P_claim_units": 32,
+      "candidate_P_out_of_case_or_unsupported": 0,
+      "candidate_P_supported_item_units": 31,
+      "candidate_Q_claim_units": 29,
+      "candidate_Q_out_of_case_or_unsupported": 0,
+      "candidate_Q_supported_item_units": 26,
+      "fully_covered_question": false,
+      "mask_candidate_P_original_method": "BODY_BM25",
+      "mask_candidate_Q_original_method": "BODY_PLUS_HEADING_RRF_DIAGNOSTIC",
+      "masked_comparison_label": "SIMILAR_OR_INCOMPARABLE",
+      "original_need": "N02",
+      "source_conditioned_supported_coverage_favored_method": "NONE_OR_INCOMPARABLE"
+    },
+    {
+      "candidate_P_claim_units": 26,
+      "candidate_P_out_of_case_or_unsupported": 0,
+      "candidate_P_supported_item_units": 23,
+      "candidate_Q_claim_units": 26,
+      "candidate_Q_out_of_case_or_unsupported": 9,
+      "candidate_Q_supported_item_units": 13,
+      "fully_covered_question": false,
+      "mask_candidate_P_original_method": "BODY_BM25",
+      "mask_candidate_Q_original_method": "BODY_PLUS_HEADING_RRF_DIAGNOSTIC",
+      "masked_comparison_label": "P_MORE_SUPPORTED_COVERAGE",
+      "original_need": "N03",
+      "source_conditioned_supported_coverage_favored_method": "BODY_BM25"
+    },
+    {
+      "candidate_P_claim_units": 22,
+      "candidate_P_out_of_case_or_unsupported": 0,
+      "candidate_P_supported_item_units": 22,
+      "candidate_Q_claim_units": 20,
+      "candidate_Q_out_of_case_or_unsupported": 0,
+      "candidate_Q_supported_item_units": 20,
+      "fully_covered_question": false,
+      "mask_candidate_P_original_method": "BODY_PLUS_HEADING_RRF_DIAGNOSTIC",
+      "mask_candidate_Q_original_method": "BODY_BM25",
+      "masked_comparison_label": "P_MORE_SUPPORTED_COVERAGE",
+      "original_need": "N04",
+      "source_conditioned_supported_coverage_favored_method": "BODY_PLUS_HEADING_RRF_DIAGNOSTIC"
+    }
+  ],
+  "source_free_claim_items_by_reviewer": {
+    "contradicted": 0,
+    "insufficient": 2,
+    "items": 192,
+    "partial_or_overbroad": 11,
+    "supported": 170,
+    "unsupported_or_out_of_case": 9
+  },
+  "source_free_reviewer_report_sha256": "2227b5c172291951d5e874bf1d0cdcd4638c8f5b91c5aebdd3f3df47cb1f1fd5",
+  "source_packet_answer_author_confounding_not_separated": true,
+  "support_claims_are_interpretive_not_independent_gold": true
+}
