@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-11-14
-**Status:** MC-0030 OPEN / Research 680 source-verified typed J2 port over original D1 and real forward Git action implemented / 44 new tests PASS / two original E01 Git OBSERVABLE facts verified, original connector transport source attested provider unverified / forward COVERS targets only unaccepted probe criterion / no independent natural owner authentication or native provider receipt / original accepted experiment J1=4, new J1=0, qualified RELATIONAL J2=0, old E01 J3 HOLD / formal P03 INCOMPLETE / physical target unselected / Specification 028 unchanged / MC-0029 resolved / MC-0010 deferred
+**Status:** MC-0030 OPEN / Research 681 confirms GitHub-native CI execution receipts and fixes two failed Windows checks on Checkpoint 941 through exact LF-pinned Message 063 attributes and workflow trigger/test coverage; repair commit 36ab6cd3 has 4 green GitHub jobs / five sampled commits unsigned / source actor and original Claude connector API remain unverified / original experiment-only J1=4, new J1=0, qualified RELATIONAL J2=0, E01 J3 HOLD / formal P03 INCOMPLETE / physical target unselected / Specification 028 unchanged / MC-0029 resolved / MC-0010 deferred
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -20,6 +20,10 @@ docs/current_routing.json
 ```
 
 This inbox intentionally does not duplicate that state except where needed to explain collaboration obligations.
+
+## Current MC-0030 provider-native CI source evidence and Windows byte-identity repair, Checkpoint 942
+
+Research 681, Validation 378 and Message 095 document actual GitHub API results: two failed Windows Checkpoint 941 checks caused by CRLF conversion of the two original byte-pinned historical MC-0030 Message 063 sources; commits 66076d3d and 36ab6cd3 preserved original Git bytes and extended both workflows' Windows/Ubuntu trigger and test coverage. The second repair commit has four provider-native CI job successes, including both Windows jobs. GitHub's sampled original and recent commits were unsigned, so CI receipts are evidence of provider check execution, not origin model identity or original Claude connector use. Experiment-only J1=4, newly qualified RELATIONAL J2=0, original E01 J3 HOLD, formal P03 INCOMPLETE, physical target unselected. Next: test actual independent source-owner trust-root and provider execution receipt qualification; no retroactive Claude request or new J1 acceptance.
 
 ## Current MC-0030 source-verified typed J2 assurance port, Checkpoint 941
 

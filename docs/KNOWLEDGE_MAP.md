@@ -1085,6 +1085,13 @@ docs/research/677_r0_p03_j2_component_evidence_and_natural_owner_declaration_con
 docs/research/678_r0_p03_message091_evidence_reconciliation_and_j2_carrier_design_trigger.md
 docs/research/679_r0_p03_prospective_at_action_j2_source_owner_and_fact_class_probe.md
 docs/research/680_r0_p03_typed_j2_natural_owner_and_assurance_port_probe.md
+docs/research/681_r0_p03_github_native_assurance_and_ci_line_ending_requalification.md
+docs/local_execution/validation/378_r0_p03_github_provider_evidence_and_cross_platform_ci_repair.md
+docs/checkpoints/942_r0_p03_github_native_receipt_feasibility_and_ci_requalification.md
+docs/model_collaboration/threads/MC-0030/messages/095_chatgpt_r0_p03_provider_native_receipts_and_ci_repair.md
+.github/workflows/model-collaboration-state.yml
+.github/workflows/repository-integrity.yml
+tests/unit/test_model_collaboration_message_identity.py
 docs/local_execution/validation/377_r0_p03_typed_j2_source_assurance_contract_verification.md
 docs/checkpoints/941_r0_p03_typed_j2_assurance_port_and_qualification_gap.md
 docs/model_collaboration/threads/MC-0030/messages/094_chatgpt_r0_p03_typed_j2_port_recommendation.md
@@ -2286,7 +2293,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-941 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-942 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / TWO EVENT TYPED J2 PORT VERIFIED / GIT FACTS VERIFIED CLAIMS UNQUALIFIED / SOURCE OWNER PROVIDER ASSURANCE NEXT / FORMAL P03 INCOMPLETE
+**Status:** OPEN / GITHUB NATIVE CI RECEIPTS VERIFIED AND WINDOWS CI REPAIRED / ACTOR TRUST ROOT AND CONNECTOR PROOF UNQUALIFIED / FORMAL P03 INCOMPLETE
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -1249,6 +1249,31 @@ The hardcoded two-event port is an unscored prototype, not a generalized physica
     ORIGINAL_D1_GIT_OBSERVABLES=2_VERIFIED
     NEW_RELATIONAL_J2_QUALIFIED=0
     PROVIDER_NATIVE_RECEIPTS_QUALIFIED=0
+    HISTORICAL_E01_J3=HOLD
+    FORMAL_P03=INCOMPLETE
+    PHYSICAL_TARGET_SELECTED=false
+
+## Actual GitHub-native CI receipts and original Windows source-byte mismatch repaired, Checkpoint 942
+
+Research 681, Validation 378 and Message 095 close a critical external-evidence discrepancy. Although Checkpoint 941 was locally green and pushed, its GitHub-native check runs exposed two Windows failures (collaboration state and repository integrity), while six other checks passed. The Windows job logs showed a false rejection of the two historically preserved MC-0030 Message 063 files due to CRLF worktree conversion changing the byte-pinned SHA-256 identities. No original historical file or exception was rewritten.
+
+Two narrow commits remedied it. Commit 66076d3d pins the two historical Git-blob-backed sources with -text in .gitattributes and adds an exact source-identity regression. Commit 36ab6cd3 updates both CI workflow trigger paths and validation commands to exercise the byte-pinned identity guard on both Windows and Ubuntu. Seven dedicated tests and 73 combined local regressions passed. GitHub's own provider check-runs for commit 36ab6cd3 are now FOUR completed successes on the two OS matrices (workflow runs 43629997613 and 43629997620). Both Windows job details confirm success and zero annotations.
+
+Five relevant GitHub native commit-signature checks were unsigned. GitHub Actions checks are provider-backed source evidence of CI job execution, NOT authenticated evidence identifying which model/connector wrote a commit. Historical D1 transport remains unqualified and Claude Message 091 CANNOT_ATTEST remains intact. The observed development branch is unprotected; CI results do not demonstrate pre-push mandatory enforcement. Next examine actual source-owner trust roots and provider-specific transport evidence, with no automatic architecture/branch-policy selection.
+
+    CURRENT=R0_P03_NATIVE_PROVIDER_CI_VERIFIED_TRUST_ROOT_NEXT
+    RESEARCH=681
+    VALIDATION=378
+    CHECKPOINT=942
+    CHATGPT_MESSAGE=MC0030_MESSAGE095
+    REPAIR_CI_COMMIT=36ab6cd33a31d579c68b6b814ca70b1fae59fc40
+    GITHUB_CI_REPAIR_CHECKS=4_SUCCESS
+    ORIGINAL_GIT_SOURCE_FILES_CHANGED=false
+    PROVIDER_CI_CHECK_STATUS=VERIFIABLE
+    HISTORICAL_CLAUDE_CONNECTOR_TRANSPORT=UNKNOWN
+    INDEPENDENT_MODEL_ACTOR_IDENTITY=UNVERIFIED
+    ORIGINAL_P03_EXPERIMENT_ONLY_ACCEPTED_J1=4
+    NEW_QUALIFIED_RELATIONAL_J2=0
     HISTORICAL_E01_J3=HOLD
     FORMAL_P03=INCOMPLETE
     PHYSICAL_TARGET_SELECTED=false
