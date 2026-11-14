@@ -1,0 +1,75 @@
+{
+  "accepted_j1_count": 4,
+  "accepted_packet_sha256": "186c70ff487104f8ee5baee8d21b50ffd466e812c6b97debb20296c8bbf9451f",
+  "authorization_exercise": "GIT_SCOPED_ACTION_OBSERVED_PROVIDER_TRANSPORT_ATTESTED_ONLY",
+  "component_evidence": {
+    "AUTHORIZED_PATH_ONLY": {
+      "evidence_id": "J2OBS-D1-GIT-PATH",
+      "natural_owner_relational_coverage": "NOT_DECLARED_FOR_P03",
+      "source": "cd0cf087a4d0ddb30920a8c753e478da8f92295c",
+      "source_class": "OBSERVABLE_GIT_CHANGESET",
+      "status": "VERIFIED_GIT",
+      "value": [
+        "docs/model_collaboration/threads/MC-0029/messages/018_claude_d2_lineage_evaluator_b.md"
+      ]
+    },
+    "COMMIT_RECEIPT_BOUND_TO_CORRECTION_HEAD": {
+      "evidence_id": "J2OBS-D1-GIT-PATH",
+      "natural_owner_relational_coverage": "NOT_DECLARED_FOR_P03",
+      "source": "cd0cf087a4d0ddb30920a8c753e478da8f92295c",
+      "source_class": "OBSERVABLE_GIT_PARENT",
+      "status": "VERIFIED_GIT",
+      "value": "73f54c6a96b7a9172376b4c88deb9a5a400506d0"
+    },
+    "TRANSPORT_ATTESTED_GITHUB_CONNECTOR": {
+      "evidence_id": "J2ASSERT-D1-CLAUDE-TRANSPORT",
+      "natural_owner_relational_coverage": "NOT_DECLARED_FOR_P03",
+      "provider_transport_proof": "UNKNOWN_NOT_IN_GIT",
+      "source": "docs/model_collaboration/threads/MC-0029/messages/018_claude_d2_lineage_evaluator_b.md",
+      "source_class": "SOURCE_REPORTED_EPHEMERAL_ACTION_ATTESTATION",
+      "source_sha256": "890ea35d0e6ea99143e0918cb41ee93a8c28add9981d57add9f20dcc707cadaa",
+      "status": "ATTESTED_BY_SOURCE"
+    }
+  },
+  "formal_p03_score": null,
+  "git_verified_components": 2,
+  "j3_completion_certified": false,
+  "j3_satisfaction": "HOLD_J2_NATURAL_OWNER_QUALIFICATION",
+  "lineage_realization_succession": "OPEN_RESET",
+  "lineage_relation": "REPLACE",
+  "natural_owner_relation_assessment": "NO_SOURCE_OWNER_RELATIONAL_ADMISSION_PERFORMED",
+  "natural_owner_source": {
+    "action_commit": "cd0cf087a4d0ddb30920a8c753e478da8f92295c",
+    "action_parent": "73f54c6a96b7a9172376b4c88deb9a5a400506d0",
+    "author_claim_line": 6,
+    "changed_paths": [
+      "docs/model_collaboration/threads/MC-0029/messages/018_claude_d2_lineage_evaluator_b.md"
+    ],
+    "git_blob_oid": "2d8fdf1a50dba34427f72d4c01949504003d7037",
+    "natural_owner_role_claim": "CLAUDE_MESSAGE018_AUTHOR_IN_ORIGINAL_SOURCE",
+    "role_assurance": "SOURCE_REPORTED_AUTHOR_NOT_INDEPENDENTLY_AUTHENTICATED",
+    "source_commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+    "source_path": "docs/model_collaboration/threads/MC-0029/messages/018_claude_d2_lineage_evaluator_b.md",
+    "source_sha256": "890ea35d0e6ea99143e0918cb41ee93a8c28add9981d57add9f20dcc707cadaa",
+    "transport_assurance": "SOURCE_REPORTED_CLAUDE_CONNECTOR_NOT_PROVIDER_VERIFIED",
+    "transport_attestation_line": 13
+  },
+  "new_natural_owner_declarations_observed": 0,
+  "next_required_source": "Original Claude Message018 author must independently declare any P03-E01 COVERS relationship, with named components and uncertainty; a separately qualified source-provenance process must verify it",
+  "physical_target_selected": false,
+  "predecessor_realization_autocarried": false,
+  "provider_verified_transport_components": 0,
+  "qualified_relational_components": [],
+  "required_components": [
+    "TRANSPORT_ATTESTED_GITHUB_CONNECTOR",
+    "AUTHORIZED_PATH_ONLY",
+    "COMMIT_RECEIPT_BOUND_TO_CORRECTION_HEAD"
+  ],
+  "schema_version": 1,
+  "scope": "EXPERIMENT_ONLY_UNSCORED",
+  "source_attested_transport_components": 1,
+  "source_commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+  "standing_prohibition_compliance": "NOT_INDEPENDENTLY_DEMONSTRATED",
+  "status": "J2_SOURCE_FACTS_VERIFIED_RELATIONAL_OWNER_DECLARATION_PENDING",
+  "target_effect_id": "D1-E01-D2-CLAUDE-WRITE-REQUIREMENT"
+}

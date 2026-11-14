@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / R0-P03 EXACT FOUR EXPERIMENT-ONLY J1 EFFECTS OWNER ACCEPTED / J2 QUALIFICATION PENDING / FORMAL P03 INCOMPLETE
+**Status:** OPEN / R0-P03 J2 ORIGINAL GIT COMPONENT FACTS VERIFIED / NATURAL OWNER MESSAGE 090 PREPARED NOT DELIVERED / J3 HOLD / FORMAL P03 INCOMPLETE
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -1172,5 +1172,24 @@ The owner answered "I ACCEPT." to the specific previously frozen Research 675 P0
     P03_EXPERIMENT_ONLY_ACCEPTED_J1_EFFECTS=4
     P03_QUALIFIED_NATURAL_OWNER_J2=0
     NEW_J3_COMPLETION=HOLD
+    FORMAL_P03=INCOMPLETE
+    PHYSICAL_TARGET_SELECTED=false
+
+## J2 real-source component preflight and source-owner handoff, Checkpoint 938
+
+Research 677 verifies two Git-observable E01 components and one original Claude source-attested transport component. The original Git action's parent, only changed path, source blob and original author/transport statement are preserved. Thirty-three new regression cases pass, including rejection of fraudulent FULL claims, duplicate natural-owner declarations, false Git facts and provider-proof elevation. This is **not** a newly received COVERS declaration; new P03 J2 RELATIONAL remains zero qualified and new J3 is HOLD. REPLACE/OPEN_RESET prevents predecessor realization auto-carry.
+
+MC-0030 Message 090 requests a bounded explicit FULL/PARTIAL/CANNOT_ATTEST/CONTRADICTED declaration from the original Claude Message 018 author. It is PREPARED and NOT DELIVERED. No source-owner response, formal score, physical target or migration is represented as completed.
+
+    CURRENT=R0_P03_J2_NATURAL_OWNER_REPLY_PENDING
+    RESEARCH=677
+    VALIDATION=374
+    CHECKPOINT=938
+    CHATGPT_HANDOFF=MC0030_MESSAGE090_PREPARED_NOT_DELIVERED
+    ORIGINAL_GIT_FACTS=2_VERIFIED
+    CONNECTOR_TRANSPORT=SOURCE_ATTESTED_ONLY
+    P03_EXPERIMENT_ONLY_J1=4
+    P03_QUALIFIED_J2_RELATIONAL=0
+    P03_NEW_J3=HOLD
     FORMAL_P03=INCOMPLETE
     PHYSICAL_TARGET_SELECTED=false
