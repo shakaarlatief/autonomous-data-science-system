@@ -1069,6 +1069,15 @@ docs/research/661_r0_p03_four_need_reference_feasibility_and_evidence_boundary.m
 docs/research/662_r0_p03_private_reference_git_line_replay_and_literal_attribution_gaps.md
 docs/research/663_r0_p03_twelve_citation_review_and_four_need_gold_free_navigation_execution.md
 docs/research/664_r0_p03_two_frozen_source_answer_authors_and_case_local_boundary_limitation.md
+docs/research/665_r0_p03_four_need_masked_evidence_support_review_fixture_freeze.md
+docs/local_execution/validation/364_r0_p03_masked_case_local_original_excerpt_claim_review_fixture_qualified.md
+docs/checkpoints/928_r0_p03_masked_four_need_claim_support_review_packet_ready.md
+docs/model_collaboration/threads/MC-0030/messages/081_chatgpt_r0_p03_four_need_masked_claim_support_review_handoff.md
+experiments/r0_p03_navigation_probe/FOUR_NEED_MASKED_SOURCE_ONLY_CLAIM_SUPPORT_REVIEW_CONTRACT_V01.md
+experiments/r0_p03_navigation_probe/four_need_masked_source_excerpt_claim_review_v01.py
+experiments/r0_p03_navigation_probe/four_need_masked_source_excerpt_claim_review_packet_v01.json
+experiments/r0_p03_navigation_probe/four_need_masked_source_excerpt_claim_review_manifest_v01.json
+tests/unit/test_r0_p03_four_need_masked_source_excerpt_claim_review_v01.py
 docs/local_execution/validation/363_r0_p03_two_actual_source_answer_commits_and_case_boundary_audit.md
 docs/checkpoints/927_r0_p03_frozen_two_author_source_answers_and_cross_case_evidence_boundary.md
 docs/model_collaboration/threads/MC-0030/messages/079_claude_r0_p03_fresh_need_packet_a_source_only_answers.md
@@ -2184,7 +2193,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-927 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-928 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

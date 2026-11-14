@@ -93,3 +93,6 @@ experiments/r0_p03_navigation_probe/four_need_gold_free_source_packet_B_v02.json
 experiments/r0_p03_navigation_probe/four_need_gold_free_navigation_aggregate_v02.json -text
 # Preserve exact retrospective source-only per-case reference-boundary audit bytes.
 experiments/r0_p03_navigation_probe/four_need_source_only_answer_case_boundary_audit_v01.json -text
+# Keep the original model-facing four-need masked evidence review bytes and source-free lineage manifest immutable.
+experiments/r0_p03_navigation_probe/four_need_masked_source_excerpt_claim_review_packet_v01.json -text
+experiments/r0_p03_navigation_probe/four_need_masked_source_excerpt_claim_review_manifest_v01.json -text
