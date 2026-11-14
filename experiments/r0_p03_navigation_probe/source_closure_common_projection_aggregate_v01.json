@@ -1,0 +1,119 @@
+{
+  "candidate_archive_release_permitted": false,
+  "candidate_archive_sha256": "8d07e100dc9aef0934e49c089a9cbe20af3ef546eaa92f05c9e66a1ef3045e13",
+  "candidate_receipt_sha256": "e96fefa1eaae05fdba4e96550678eda6a83b9da9986c8567b3be5913c7113abe",
+  "conclusion": "80 exact original source carriers and FTS5 are mechanically usable; significant literal citation frontier is outside the candidate; none of the 80 carrier authority/realization statuses was independently admitted; five empty arm-interface slots preserve the same canonical non-authoritative source projection, but no real B0-B4 parity is proven.",
+  "formal_12_plus_9_tasks": "NONE",
+  "historical_owner_acts_confirmed": false,
+  "id": "R0_P03_SOURCE_CLOSURE_AND_NONAUTHORITATIVE_COMMON_PROJECTION_V01",
+  "independently_authored_source_role_gold": "NONE",
+  "original_bytes_verified_against_archive_and_git_tree": true,
+  "original_corpus_git_ref": "c57556a8bf993a1d327e9197acb7b7c745071cd8",
+  "original_source_census": {
+    "actual_current_authority": "NOT_ADJUDICATED",
+    "all_literal_external_targets_exist_at_exact_original_pin": true,
+    "distinct_inside_reference_target_count": 22,
+    "distinct_outside_reference_target_count": 199,
+    "family_path_hint_counts": {
+      "execution_evidence": {
+        "carrier_count": 9,
+        "inside_reference_occurrences": 1,
+        "outside_reference_occurrences": 14
+      },
+      "governing": {
+        "carrier_count": 12,
+        "inside_reference_occurrences": 17,
+        "outside_reference_occurrences": 94
+      },
+      "historical_status": {
+        "carrier_count": 10,
+        "inside_reference_occurrences": 15,
+        "outside_reference_occurrences": 127
+      },
+      "orientation": {
+        "carrier_count": 3,
+        "inside_reference_occurrences": 9,
+        "outside_reference_occurrences": 18
+      },
+      "other": {
+        "carrier_count": 3,
+        "inside_reference_occurrences": 0,
+        "outside_reference_occurrences": 5
+      },
+      "product_source": {
+        "carrier_count": 14,
+        "inside_reference_occurrences": 0,
+        "outside_reference_occurrences": 0
+      },
+      "project_source": {
+        "carrier_count": 12,
+        "inside_reference_occurrences": 0,
+        "outside_reference_occurrences": 0
+      },
+      "source_schema": {
+        "carrier_count": 3,
+        "inside_reference_occurrences": 0,
+        "outside_reference_occurrences": 0
+      },
+      "tooling": {
+        "carrier_count": 4,
+        "inside_reference_occurrences": 0,
+        "outside_reference_occurrences": 0
+      },
+      "verification": {
+        "carrier_count": 10,
+        "inside_reference_occurrences": 0,
+        "outside_reference_occurrences": 0
+      }
+    },
+    "git_tree_file_count": 3399,
+    "non_literal_dependency_closure": "NOT_ADJUDICATED",
+    "reference_totals": {
+      "inside_reference_occurrences": 42,
+      "outside_reference_occurrences": 258,
+      "sources_with_inside_reference": 16,
+      "sources_with_outside_reference": 33
+    },
+    "selected_carriers": 80,
+    "task_answerability_closure": "NOT_ADJUDICATED"
+  },
+  "physical_architecture_selected": false,
+  "private_report_bytes_receipt_only": 222948,
+  "private_report_sha256_receipt_only": "817df226babb9b14777ae4bd0f83839face0aeeff2dc479b704052f37f7122cf",
+  "real_arm_scoring": "NONE",
+  "selected_original_file_count": 80,
+  "shared_non_authoritative_source_projection": {
+    "accepted_governing_edges": 0,
+    "accepted_realization_edges": 0,
+    "accepted_receipt_edges": 0,
+    "all_empty_augmentations_have_byte_identical_common_view": true,
+    "arm_implementations_actually_tested": 0,
+    "historical_source_semantic_j1_j2_j3_closure": "UNKNOWN_NOT_PROVEN",
+    "lexical_fts5_index_constructed_from_all_80_original_documents": true,
+    "lexical_smoke_query_hit_counts": {
+      "authority": 49,
+      "source": 57,
+      "validation": 43
+    },
+    "real_b0_b4_common_parity_qualification": "NOT_PERFORMED",
+    "semantic_owner_authority_and_currentness_all_unproven": true,
+    "shared_projection_sha256": "ade69476181e5e019fc51f820aa8cf3ee5a9a148082d24dfdc2753c44455f931",
+    "simulated_interface_slot_count": 5,
+    "simulated_interface_slot_names": [
+      "B0",
+      "B1",
+      "B2",
+      "B3",
+      "B4"
+    ],
+    "source_metadata_schema_scope": "ORIGINAL_PROVENANCE_PLUS_UNADJUDICATED_LITERAL_CITATIONS_ONLY",
+    "source_role_family_status": "PATH_ONLY_HYPOTHESIS"
+  },
+  "source_admissions": 0,
+  "task_family_closure": {
+    "cold_start_orientation": "UNPROVEN_NEEDS_TRUE_CURRENT_STATE_AND_DECISION_OWNER_AUTHORITY",
+    "cross_plane_discovery": "UNPROVEN_NEEDS_SOURCE_OWNER_IMPLEMENTATION_AND_VALIDATION_JOIN",
+    "exact_source_authority_recovery": "UNPROVEN_NEEDS_FORMAL_SUCCESSOR_DECISION_AND_ACTUAL_WITNESS_LINES",
+    "impact_architecture_evolution": "UNPROVEN_NEEDS_VALID_EFFECT_AND_REALIZER_DEPENDENCIES"
+  }
+}
