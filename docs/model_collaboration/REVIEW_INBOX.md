@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-11-14
-**Status:** MC-0030 OPEN / Research 682 uses genuine GitHub API native source histories for 941 (6 PASS, 2 Windows FAIL) and 942 (8 PASS), with 52 source-bound offline adversarial receipt tests PASS / consistent forged all-green copy remains explicitly UNAUTHENTICATED / no model-exclusive owner identity or provider-origin detached receipt inferred / prior Windows CI repair remains green / experiment-only J1=4, new J1=0, qualified RELATIONAL J2=0, old E01 J3 HOLD / formal P03 INCOMPLETE / physical target unselected / Specification 028 unchanged / MC-0029 resolved / MC-0010 deferred
+**Status:** MC-0030 OPEN / Research 683 source-native repeated GitHub reads identify genuine Checkpoint 943 check/job status contradiction (in_progress with success conclusion and completed timestamp; parent and all steps completed success; 7 other checks completed success) / 53 new source-status reconciliation tests PASS / no qualified eighth completed check, no independent source actor identity or detached provider proof / existing accepted experiment-only J1=4, new J1=0, RELATIONAL J2=0, E01 J3 HOLD / formal P03 INCOMPLETE / physical target unselected / next provider-owned composite read or finite capability HOLD / Specification 028 unchanged / MC-0029 resolved / MC-0010 deferred
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -20,6 +20,10 @@ docs/current_routing.json
 ```
 
 This inbox intentionally does not duplicate that state except where needed to explain collaboration obligations.
+
+## Current MC-0030 actual GitHub provider-source state contradiction and trust-root finite stop, Checkpoint 944
+
+Research 683 / Validation 380 / Message 097: repeated live connected GitHub checks for original Checkpoint 943 have one Ubuntu routing check/job (132565047313) with nonterminal in_progress status, success conclusion and completedAt, despite its parent run (43633469851) and five steps completed success; seven other checks are completed success. No all-eight-completed qualification or routing failure is claimed. Fifty-three targeted source-reconciliation tests pass. The connector's app authorization is server-managed but does not independently authenticate the model or transform a derived source copy into signed provider proof. Further copy-only probes stop absent new source capability. Experiment-only J1=4, new J1=0, qualified RELATIONAL J2=0, E01 J3 HOLD, formal P03 INCOMPLETE, physical target unselected. Next evaluate a genuine provider-owned composite source read or record bounded capability HOLD and resume higher-value architectural work.
 
 ## Current MC-0030 paired real GitHub-native CI admission and natural-owner trust-root boundary, Checkpoint 943
 

@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / TWO REAL GITHUB CI CASES OFFLINE RECEIPT CONTRACT TESTED / PROVIDER COPY UNAUTHENTICATED / SOURCE OWNER TRUST ROOT NEXT / FORMAL P03 INCOMPLETE
+**Status:** OPEN / LIVE GITHUB CHECK JOB WORKFLOW STATUS CONFLICT RECONCILED / TRUSTED COMPOSITE SOURCE OR FINITE CAPABILITY HOLD NEXT / FORMAL P03 INCOMPLETE
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -1299,5 +1299,30 @@ This work is a development evidence/port feasibility probe, not a new accepted J
     NEW_ACCEPTED_J1=0
     NEW_QUALIFIED_RELATIONAL_J2=0
     HISTORICAL_E01_J3=HOLD
+    FORMAL_P03=INCOMPLETE
+    PHYSICAL_TARGET_SELECTED=false
+
+## Actual provider Checkpoint 943 status contradiction and bounded live-source reconciliation, Checkpoint 944
+
+Research 683, Validation 380 and Message 097 re-query actual GitHub App source records, not just archived model prose. Exact check/job 132565047313 on Checkpoint 943's SHA reports in_progress together with success conclusion and completedAt; its parent workflow run 43633469851 and all five job steps report completed success. The other seven of eight check runs completed success. A separately connected GitHub job/step reader corroborates the unusual child state. The source identity binds commit, app issuer, suite, job and parent; the contradiction is status completion, and its underlying provider-vs-normalization root cause remains UNKNOWN. No eighth completed check or failed routing test is invented.
+
+The bounded Python source-status reconciler, pinned 5,091-byte DERIVED tool-result relay and immutable non-governing output have 53 new focused tests passing. Wrong source SHA, forged app identity, duplicate/missing records, wrong job association, source status conflicts and false owner/proof fields are rejected or held. Even a hypothetically coherent all-green copy cannot provide provider signing or model-exclusive identity.
+
+This closes further source-copy-only rehearsal as a finite nonqualifying path. A future meaningful test requires a server-owned composite provider read with explicit provenance or real natural-owner authentication, rather than another self-authored JSON field. Original experiment-only J1=4, new accepted J1=0, qualified RELATIONAL J2=0, historical E01 J3 HOLD, formal P03 INCOMPLETE and physical target unselected. All architectural, storage, branch and working-procedure levels remain reconsiderable.
+
+    CURRENT=R0_P03_LIVE_PROVIDER_STATUS_CONTRADICTION_AND_TRUST_ROOT_STOP
+    RESEARCH=683
+    VALIDATION=380
+    CHECKPOINT=944
+    CHATGPT_MESSAGE=MC0030_MESSAGE097
+    ORIGINAL_SOURCE_COMMIT=2a7f8fe3f170840262122296d9b7f3e54664bc39
+    CONFLICTING_CHECK_ID=132565047313
+    COMPLETED_SUCCESS=7_OF_8
+    COMPLETED_FAILURE=0
+    PROVIDER_SOURCE_STATE=HOLD_CONTRADICTORY_COMPLETION
+    INDEPENDENT_ACTOR_IDENTITY=false
+    NEW_ACCEPTED_J1=0
+    NEW_QUALIFIED_RELATIONAL_J2=0
+    ORIGINAL_E01_J3=HOLD
     FORMAL_P03=INCOMPLETE
     PHYSICAL_TARGET_SELECTED=false

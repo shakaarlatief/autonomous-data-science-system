@@ -1,0 +1,173 @@
+{
+  "check_run": {
+    "annotations_count": 1,
+    "app_id": 15368,
+    "app_slug": "github-actions",
+    "check_suite_id": 118141913251,
+    "completed_at": "2026-11-14T19:41:49Z",
+    "conclusion": "success",
+    "head_sha": "2a7f8fe3f170840262122296d9b7f3e54664bc39",
+    "id": 132565047313,
+    "name": "validate-current-routing (ubuntu-latest)",
+    "started_at": "2026-11-14T19:41:42Z",
+    "status": "in_progress"
+  },
+  "provider_api_tools_used": [
+    "github_list_check_runs_for_ref",
+    "github_get_check_run",
+    "github_get_workflow_run",
+    "github_fetch_workflow_run_jobs",
+    "github_fetch_workflow_job_steps",
+    "codex_github_authorization_metadata"
+  ],
+  "provider_auth_mode_reported": "github-app-user-token-device-flow",
+  "record_is_governing": false,
+  "ref_check_runs": [
+    {
+      "app_id": 15368,
+      "app_slug": "github-actions",
+      "conclusion": "success",
+      "head_sha": "2a7f8fe3f170840262122296d9b7f3e54664bc39",
+      "id": 132565047313,
+      "name": "validate-current-routing (ubuntu-latest)",
+      "status": "in_progress"
+    },
+    {
+      "app_id": 15368,
+      "app_slug": "github-actions",
+      "conclusion": "success",
+      "head_sha": "2a7f8fe3f170840262122296d9b7f3e54664bc39",
+      "id": 132565047078,
+      "name": "validate-collaboration-state (ubuntu-latest)",
+      "status": "completed"
+    },
+    {
+      "app_id": 15368,
+      "app_slug": "github-actions",
+      "conclusion": "success",
+      "head_sha": "2a7f8fe3f170840262122296d9b7f3e54664bc39",
+      "id": 132565046984,
+      "name": "validate-knowledge-map",
+      "status": "completed"
+    },
+    {
+      "app_id": 15368,
+      "app_slug": "github-actions",
+      "conclusion": "success",
+      "head_sha": "2a7f8fe3f170840262122296d9b7f3e54664bc39",
+      "id": 132565046934,
+      "name": "validate-current-routing (windows-latest)",
+      "status": "completed"
+    },
+    {
+      "app_id": 15368,
+      "app_slug": "github-actions",
+      "conclusion": "success",
+      "head_sha": "2a7f8fe3f170840262122296d9b7f3e54664bc39",
+      "id": 132565046757,
+      "name": "validate-collaboration-state (windows-latest)",
+      "status": "completed"
+    },
+    {
+      "app_id": 15368,
+      "app_slug": "github-actions",
+      "conclusion": "success",
+      "head_sha": "2a7f8fe3f170840262122296d9b7f3e54664bc39",
+      "id": 132565046602,
+      "name": "repository-integrity (windows-latest)",
+      "status": "completed"
+    },
+    {
+      "app_id": 15368,
+      "app_slug": "github-actions",
+      "conclusion": "success",
+      "head_sha": "2a7f8fe3f170840262122296d9b7f3e54664bc39",
+      "id": 132565046389,
+      "name": "repository-integrity (ubuntu-latest)",
+      "status": "completed"
+    },
+    {
+      "app_id": 15368,
+      "app_slug": "github-actions",
+      "conclusion": "success",
+      "head_sha": "2a7f8fe3f170840262122296d9b7f3e54664bc39",
+      "id": 132565046383,
+      "name": "validate",
+      "status": "completed"
+    }
+  ],
+  "repository_full_name": "shakaarlatief/autonomous-data-science-system",
+  "schema_version": 1,
+  "source_authentication_from_copied_file": false,
+  "source_commit_parent": "e29329b3097b593a917a386d33f900a3cf97b193",
+  "source_credential_server_owned": true,
+  "source_observation_date_utc": "2026-11-14",
+  "source_role": "DERIVED_COORDINATOR_RELAY_OF_LIVE_CONNECTED_GITHUB_APP_READS",
+  "steps": [
+    {
+      "conclusion": "success",
+      "name": "Set up job",
+      "number": 1,
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "name": "Run actions/checkout@v7",
+      "number": 2,
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "name": "Validate routing manifest and CURRENT_STATE owner",
+      "number": 3,
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "name": "Post Run actions/checkout@v7",
+      "number": 6,
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "name": "Complete job",
+      "number": 7,
+      "status": "completed"
+    }
+  ],
+  "target_git_sha": "2a7f8fe3f170840262122296d9b7f3e54664bc39",
+  "workflow_jobs": [
+    {
+      "completed_at": "2026-11-14T19:41:57Z",
+      "conclusion": "success",
+      "id": 132565046934,
+      "name": "validate-current-routing (windows-latest)",
+      "run_attempt": 1,
+      "run_id": 43633469851,
+      "started_at": "2026-11-14T19:41:42Z",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-14T19:41:49Z",
+      "conclusion": "success",
+      "id": 132565047313,
+      "name": "validate-current-routing (ubuntu-latest)",
+      "run_attempt": 1,
+      "run_id": 43633469851,
+      "started_at": "2026-11-14T19:41:42Z",
+      "status": "in_progress"
+    }
+  ],
+  "workflow_run": {
+    "actor_login": "shakaarlatief",
+    "check_suite_id": 118141913251,
+    "conclusion": "success",
+    "event": "push",
+    "head_sha": "2a7f8fe3f170840262122296d9b7f3e54664bc39",
+    "id": 43633469851,
+    "name": "Current routing consistency",
+    "run_attempt": 1,
+    "status": "completed",
+    "workflow_id": 341120562
+  }
+}

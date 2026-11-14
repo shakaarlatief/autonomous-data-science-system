@@ -1,0 +1,35 @@
+{
+  "all_five_steps_source_reported_complete_success": true,
+  "conflict_reasons": [
+    "NONTERMINAL_CHECK_WITH_TERMINAL_CONCLUSION",
+    "NONTERMINAL_CHECK_HAS_COMPLETED_AT",
+    "NONTERMINAL_JOB_HAS_COMPLETED_AT",
+    "COMPLETED_WORKFLOW_CONFLICTS_WITH_NONTERMINAL_JOB"
+  ],
+  "conflicting_check_id": 132565047313,
+  "connected_github_tool_was_used_in_exposed_interaction": true,
+  "formal_r0_p03_score": null,
+  "governing_j1_acceptances_added": 0,
+  "governing_j2_relational_admissions_added": 0,
+  "historical_e01_j3": "HOLD",
+  "independent_model_session_identity_authenticated": false,
+  "offline_copy_is_provider_signed": false,
+  "parent_workflow_source_reported_completed_success": true,
+  "physical_target_selected": false,
+  "schema_version": 1,
+  "self_authenticating_trust_root_created": false,
+  "source_reported_completed_failure_count": 0,
+  "source_reported_completed_success_count": 7,
+  "source_reported_total_checks": 8,
+  "source_role": "DERIVED_COORDINATOR_RELAY_OF_LIVE_CONNECTED_GITHUB_APP_READS",
+  "source_sha256": "1d968a4eb516780c70cfd70ae51a82eadbcad8e92e043b861a2a1f5b0c776bf2",
+  "source_status": "SOURCE_REPORTED_CONTRADICTION",
+  "suggested_next_step": "FINITELY_STOP_COPY_PROBES_AND_TEST_PROVIDER_OWNED_LIVE_COMPOSITE_READ_OR_SOURCE_OWNER_AUTHENTICITY",
+  "target_commit": "2a7f8fe3f170840262122296d9b7f3e54664bc39",
+  "verified_git": {
+    "commit": "2a7f8fe3f170840262122296d9b7f3e54664bc39",
+    "parent": "e29329b3097b593a917a386d33f900a3cf97b193"
+  },
+  "workflow_run_id": 43633469851,
+  "world": "R0_P03_UNSCORED_SOURCE_RECONCILIATION"
+}
