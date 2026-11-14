@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / MESSAGE 091 VERIFIED CANNOT_ATTEST / HISTORICAL J2 REQUEST CLOSED / PROSPECTIVE AT-ACTION J2 DESIGN NEXT / FORMAL P03 INCOMPLETE
+**Status:** OPEN / REAL AT-ACTION J2 PROBE COMMITTED AND VERIFIED / CLAIM UNQUALIFIED / SOURCE ASSURANCE PORT NEXT / FORMAL P03 INCOMPLETE
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -1210,5 +1210,25 @@ Research 678 and Message 092 reconcile two independently Git-OBSERVABLE facts ve
     J2_RELATIONAL_QUALIFIED=0
     PROVIDER_TRANSPORT=UNKNOWN
     NEW_J3=HOLD
+    FORMAL_P03=INCOMPLETE
+    PHYSICAL_TARGET_SELECTED=false
+
+## Genuine forward J2 at-action event with a co-committed non-governing source claim, Checkpoint 940
+
+Research 679, Validation 376 and Message 093 demonstrate a real one-file Git commit/push at 131c54a4aec9f8733af35b1c90e8b16a7c9919a5, originally created after clean head fefa21bd57df9d40d71a53c5b8af8da0d81b667c. Its actor-authored precommit record includes exact expected path/parent and a RELATIONAL COVERS candidate over a UNACCEPTED_PROBE_ONLY_ACTION_RECORDING_CRITERION. Git objects independently verify the exact action, but do not authenticate the source owner or prove the provider API. The candidate COVERS is not an accepted J1 relation or qualified J2. Thirty-nine new regression cases PASS, including attempted authority promotion and source fact/owner substitution.
+
+This is useful physical-design evidence for separating natural Git OBSERVABLE facts, candidate RELATIONAL claims and EPHEMERAL action receipts. It does not resolve historical Claude D1 CANNOT_ATTEST, certify E01 J3, create a primary scored task or select GOVERNED_LEDGER_KERNEL_V02. Next investigate an actually qualified typed J2 owner/provider assurance port, with further owner acceptance only if a new consequential effect is proposed.
+
+    CURRENT=R0_P03_FORWARD_J2_AT_ACTION_SOURCE_PROBE_VERIFIED
+    RESEARCH=679
+    VALIDATION=376
+    CHECKPOINT=940
+    CHATGPT_MESSAGE=MC0030_MESSAGE093
+    REAL_EVENT_COMMIT=131c54a4aec9f8733af35b1c90e8b16a7c9919a5
+    NEW_ACCEPTED_J1=0
+    NEW_QUALIFIED_J2=0
+    PROVIDER_PROOF=NOT_INDEPENDENTLY_AVAILABLE
+    EXISTING_P03_EXPERIMENT_ONLY_J1=4
+    HISTORICAL_E01_J3=HOLD
     FORMAL_P03=INCOMPLETE
     PHYSICAL_TARGET_SELECTED=false

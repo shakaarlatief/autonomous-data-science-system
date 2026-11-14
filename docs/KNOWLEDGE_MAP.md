@@ -1083,6 +1083,14 @@ docs/research/675_r0_p03_real_event_semantic_admission_contract_and_owner_packet
 docs/research/676_r0_p03_owner_accepted_d1_experiment_reuse_binding_and_j2_boundary.md
 docs/research/677_r0_p03_j2_component_evidence_and_natural_owner_declaration_contract.md
 docs/research/678_r0_p03_message091_evidence_reconciliation_and_j2_carrier_design_trigger.md
+docs/research/679_r0_p03_prospective_at_action_j2_source_owner_and_fact_class_probe.md
+docs/local_execution/validation/376_r0_p03_live_at_action_j2_evidence_and_assurance_probe.md
+docs/checkpoints/940_r0_p03_forward_j2_at_action_evidence_probe_and_design_options.md
+docs/model_collaboration/threads/MC-0030/messages/093_chatgpt_r0_p03_prospective_j2_source_event_realized.md
+experiments/r0_p03_navigation_probe/v03_forward_j2_at_action_event_001.json
+experiments/r0_p03_navigation_probe/v03_forward_j2_at_action_evidence_probe_v01.py
+experiments/r0_p03_navigation_probe/v03_forward_j2_at_action_evidence_result_v01.json
+tests/unit/test_r0_p03_v03_forward_j2_at_action_evidence_probe_v01.py
 docs/model_collaboration/threads/MC-0030/messages/091_claude_r0_p03_d1_j2_natural_owner_declaration.md
 docs/model_collaboration/threads/MC-0030/messages/092_chatgpt_r0_p03_claude_message091_cannot_attest_reconciliation.md
 docs/local_execution/validation/375_r0_p03_message091_source_owner_cannot_attest_and_evidence_boundaries.md
@@ -2271,7 +2279,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-939 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-940 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

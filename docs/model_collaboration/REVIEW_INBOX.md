@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-11-14
-**Status:** MC-0030 OPEN / Claude Message 091 published and exact verified CANNOT_ATTEST in Research 678 / retrospective J2 owner request CLOSED / two Git OBSERVABLE facts retained, connector transport source-attested not provider-proven / J2 typed carrier design trigger / 25 new regressions PASS / experiment-only J1=4, J2 RELATIONAL qualified=0, new J3 HOLD / formal P03 INCOMPLETE / physical target unselected / Specification 028 unchanged / MC-0029 resolved / MC-0010 deferred
+**Status:** MC-0030 OPEN / Research 679 actual source-local forward J2 at-action Git commit 131c54a4 verified / co-committed probe-only COVERS claim unqualified / 39 focused tests PASS / actor authentication and provider-native receipt unresolved / historical Claude CANNOT_ATTEST preserved / existing experiment-only J1=4, new J1=0, qualified J2=0, E01 J3 HOLD / formal P03 INCOMPLETE / physical target unselected / Specification 028 unchanged / MC-0029 resolved / MC-0010 deferred
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -20,6 +20,10 @@ docs/current_routing.json
 ```
 
 This inbox intentionally does not duplicate that state except where needed to explain collaboration obligations.
+
+## Current MC-0030 real forward at-action J2 evidence source probe
+
+Research 679 / Validation 376 / Checkpoint 940 / Message 093 verify an actually executed and published one-file Git event at 131c54a4 with a co-committed source-authored COVERS claim referring only to an unaccepted probe criterion. The exact Git parent/path/blob are independent OBSERVABLE facts; actor identity and provider API are not independently proven, and the RELATIONAL claim is not qualified J2. Thirty-nine targeted tests PASS. The historical Claude Message 091 CANNOT_ATTEST stands, as does accepted experiment-only J1=4, new J1=0, J2 qualified=0, old E01 J3 HOLD, formal P03 INCOMPLETE and physical target unselected. Next is typed J2 natural-owner identity and native provider-evidence qualification, not another historical Claude request.
 
 ## Current MC-0030 received Message 091 CANNOT_ATTEST, retrospective J2 request closed
 

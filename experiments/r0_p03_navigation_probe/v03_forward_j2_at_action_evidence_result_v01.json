@@ -1,0 +1,77 @@
+{
+  "actor_claim": {
+    "claim_recorded_in_same_git_commit": true,
+    "claim_type": "RELATIONAL_COVERS_PROBE_ONLY_RECORDING_CRITERION",
+    "claimant_identity": "SELF_DESCRIBED_NOT_INDEPENDENTLY_AUTHENTICATED",
+    "claimant_role": "EXPOSED_CHATGPT_ARCHITECTURE_COORDINATOR",
+    "claimed_component_ids": [
+      "ACTOR_INTENT_PRESENT",
+      "EXPECTED_PARENT_DECLARED",
+      "INTENDED_PATH_DECLARED"
+    ],
+    "claimed_coverage": "FULL_FOR_SELF_REPORTED_INTENT_CONTENT_ONLY",
+    "governing_j1_target_accepted": false,
+    "independent_owner_identity_proof": false,
+    "qualified_j2_relational": false,
+    "source_carrier": "experiments/r0_p03_navigation_probe/v03_forward_j2_at_action_event_001.json",
+    "source_commit": "131c54a4aec9f8733af35b1c90e8b16a7c9919a5"
+  },
+  "candidate_design_discriminators": {
+    "architectural_candidate": "OPEN_NO_PHYSICAL_SELECTION",
+    "cocommitted_actor_claim": "CAUSAL_SOURCE_COHERENCE_GIT_VERIFIABLE_OWNER_IDENTITY_UNPROVEN",
+    "direct_git_observables": "RECONSTRUCTIBLE_FROM_PLATFORM_OBJECTS",
+    "external_ephemeral_action": "REQUIRES_PROVIDER_RECEIPT_WHEN_GOVERNING_ASSURANCE_DEMANDS_IT",
+    "missing_evidence": "BOUNDED_UNKNOWN_NEVER_AUTOMATIC_SATISFIED",
+    "relational_j2": "REQUIRES_REAL_ACCEPTED_EFFECT_AND_QUALIFIED_SOURCE_OWNER_DECLARATION"
+  },
+  "comparison_to_historical": {
+    "historical_contemporaneous_covers_of_new_p03_j1": false,
+    "historical_event": "ORIGINAL_D1_MC0029_MESSAGE018",
+    "historical_later_source_owner_response": "CANNOT_ATTEST",
+    "new_event_claim_is_qualified_j2": false,
+    "new_event_has_contemporaneously_cocommitted_claim": true,
+    "new_event_has_owner_authenticated_identity": false,
+    "new_event_is_more_traceable_as_claim": true,
+    "new_event_proves_actual_requested_executor": false
+  },
+  "ephemeral_executor": {
+    "durable_independent_provider_receipt": false,
+    "provider_execution_report_in_current_conversation": "BRIDGE_COMMIT_PATHS_AND_PUSH_FF_SUCCESS_REPORTED",
+    "record_was_created_before_commit_claim": true,
+    "requested_executor_self_report": "CODEXLESS_RUNTIME_BRIDGE_CODEX_GIT_COMMIT_PATHS",
+    "status": "SOURCE_REPORTED_EXECUTION_WITH_GIT_OBSERVABLE_SIDE_EFFECT",
+    "underlying_provider_api_independently_authenticated": false
+  },
+  "formal_r0_p03_scores": null,
+  "historical_j3_completion": "HOLD",
+  "new_accepted_j1_effects": 0,
+  "new_j3_completion": "NOT_APPLICABLE_NO_GOVERNING_PROBE_EFFECT",
+  "new_qualified_natural_owner_j2": 0,
+  "next": "QUALIFY_WHETHER_A_REAL_SOURCE_OWNER_AT_ACTION_COVERS_PORT_AND_PROVIDER_RECEIPT CAN_BE_SUPPORTED_WITHOUT_UNSAFE_IDENTITY_OR_AUTHORITATIVE_INDEX_ASSUMPTIONS",
+  "observable_git": {
+    "changed_path_exact": true,
+    "fact_owner": "GIT_COMMIT_OBJECT",
+    "file_blob_exact": true,
+    "no_separate_covers_needed_for_direct_git_facts": true,
+    "parent_exact": true
+  },
+  "p03_preexisting_experiment_only_accepted_j1": 4,
+  "physical_target_selected": false,
+  "schema_version": 1,
+  "scope": "EXPOSED_NON_GOVERNING_UNSCORED_PHYSICAL_J2_CARRIER_PROBE",
+  "source_event": {
+    "changed_paths": [
+      "A\texperiments/r0_p03_navigation_probe/v03_forward_j2_at_action_event_001.json"
+    ],
+    "commit_parent": "fefa21bd57df9d40d71a53c5b8af8da0d81b667c",
+    "event_commit": "131c54a4aec9f8733af35b1c90e8b16a7c9919a5",
+    "exact_claim_present_in_same_commit_tree": true,
+    "git_blob_oid": "425b365c3a845e776babbccd8a6ecf7188c3a73b",
+    "git_blob_sha256": "ce7a6addb7c1b612c4e1ed5a65fa3baacf06c57f11fae06a512e213b41f923a2",
+    "git_blob_size": 2990,
+    "independent_actor_identity": "NOT_VERIFIED",
+    "independent_observation_class": "GIT_OBJECT_VERIFIED",
+    "independent_tool_provider_transport": "NOT_VERIFIED_FROM_GIT"
+  },
+  "status": "REAL_GIT_AT_ACTION_CLAIM_COCOMMITTED_WITH_INDEPENDENT_OBSERVABLES"
+}
