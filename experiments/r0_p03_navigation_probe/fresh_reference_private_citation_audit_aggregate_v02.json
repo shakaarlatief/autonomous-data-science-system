@@ -1,0 +1,32 @@
+{
+  "audit_id": "R0_P03_FRESH_REFERENCE_CITATION_MECHANICAL_V02",
+  "detailed_source_paths_or_quotes_in_public_output": false,
+  "independent_gold_or_scored_R0_P03_qualified": false,
+  "limitations": [
+    "Report-table explicit source witnesses only; narrative claims and uncited rows are not fully source-audited.",
+    "Original Git path, blob and line bounds do not establish that source assertions are true or operative.",
+    "Literal excerpts that do not match cited lines remain unresolved rather than silently repaired or falsified.",
+    "Same-account local-only custody has no demonstrated separation from prospective scored arm authors.",
+    "Retrospective mechanical audit follows the source-review result and cannot retroactively create blinded gold."
+  ],
+  "original_case_answer_contents_released": false,
+  "original_source_git_pin": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+  "private_report_bytes": 84359,
+  "private_report_sha256": "cce0c99e2c6b019b3e8f67ea960e92c2108b8ff673b685b2865de6977d06dc0b",
+  "scientific_class": "UNSCORED_RETROSPECTIVE_PRIVATE_REPORT_CITATION_AUDIT",
+  "semantic_claim_entailment_checked": false,
+  "verification_counts": {
+    "EXACT_CITED_LINE_MATCH": 40,
+    "LITERAL_MATCH_ELSEWHERE_IN_SAME_BLOB": 1,
+    "NO_LITERAL_MATCH": 11,
+    "all_blob_ids_verified": 1,
+    "all_line_ranges_valid": 1,
+    "all_literal_quotes_verified_on_cited_lines": 0,
+    "citation_rows": 52,
+    "distinct_historical_paths_opened": 46,
+    "historical_blob_ids_verified": 52,
+    "historical_line_ranges_valid": 52,
+    "original_git_pin_exists": 1,
+    "unparsed_citation_cells": 0
+  }
+}

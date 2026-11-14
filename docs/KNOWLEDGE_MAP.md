@@ -1066,6 +1066,15 @@ docs/research/658_r0_p03_route_b_actual_extractive_answer_evidence_and_citation_
 docs/research/659_r0_p03_route_b_exposed_gpt6_reasoned_original_b0_b1_answer_comparison.md
 docs/research/660_r0_p03_three_masked_claude_review_complete_and_unmasked_answer_support_assessment.md
 docs/research/661_r0_p03_four_need_reference_feasibility_and_evidence_boundary.md
+docs/research/662_r0_p03_private_reference_git_line_replay_and_literal_attribution_gaps.md
+docs/local_execution/validation/361_r0_p03_private_reference_git_blob_line_literal_audit_v01_v02.md
+docs/checkpoints/925_r0_p03_original_reference_citation_provenance_audited_with_twelve_gaps.md
+experiments/r0_p03_navigation_probe/fresh_reference_private_citation_audit_v01.py
+experiments/r0_p03_navigation_probe/fresh_reference_private_citation_audit_v02.py
+experiments/r0_p03_navigation_probe/fresh_reference_private_citation_audit_aggregate_v01.json
+experiments/r0_p03_navigation_probe/fresh_reference_private_citation_audit_aggregate_v02.json
+tests/unit/test_r0_p03_fresh_reference_private_citation_audit_v01.py
+tests/unit/test_r0_p03_fresh_reference_private_citation_audit_v02.py
 docs/local_execution/validation/360_r0_p03_fresh_reference_pilot_public_provenance_and_custody_boundary.md
 docs/checkpoints/924_r0_p03_four_need_independent_source_reference_feasibility_completed.md
 docs/model_collaboration/threads/MC-0030/messages/072_chatgpt_r0_p03_fresh_question_origination_pilot_handoff.md
@@ -2149,7 +2158,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-924 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-925 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 
