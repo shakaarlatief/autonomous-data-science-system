@@ -80,3 +80,34 @@ def test_cross_thread_identical_numbers_are_valid(tmp_path: Path) -> None:
     for thread in ("MC-0001", "MC-0002"):
         (messages(tmp_path, thread) / "001_first.md").write_text("first", encoding="utf-8")
     assert MODULE.validate_message_identities(tmp_path) == []
+
+
+def test_historical_collision_original_bytes_preserved_by_git_checkout() -> None:
+    """Git source identity must survive Windows checkout without CRLF conversion.
+
+    The historical exception deliberately compares exact SHA-256 over file
+    bytes, not normalized semantic text. Pinning the two files as -text in
+    .gitattributes stops platform-specific worktree conversion, including
+    GitHub Actions windows-latest with autocrlf enabled.
+    """
+    import subprocess
+
+    source_root = "docs/model_collaboration/threads/MC-0030/messages"
+    for name, expected_sha in MODULE.LEGACY_MESSAGE_COLLISION_063.items():
+        rel_path = f"{source_root}/{name}"
+        attr = subprocess.check_output(
+            ["git", "check-attr", "text", "--", rel_path],
+            cwd=ROOT,
+            text=True,
+            encoding="utf-8",
+        ).strip()
+        assert attr == f"{rel_path}: text: unset"
+        git_blob = subprocess.check_output(
+            ["git", "show", f"HEAD:{rel_path}"],
+            cwd=ROOT,
+        )
+        checkout_bytes = (ROOT / rel_path).read_bytes()
+        assert checkout_bytes == git_blob
+        assert hashlib.sha256(git_blob).hexdigest() == expected_sha
+        assert b"\r\n" not in checkout_bytes
+    assert MODULE.validate_message_identities(ROOT) == []
