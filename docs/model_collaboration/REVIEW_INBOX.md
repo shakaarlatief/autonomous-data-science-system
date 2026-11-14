@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-11-14
-**Status:** MC-0030 OPEN / Research 679 actual source-local forward J2 at-action Git commit 131c54a4 verified / co-committed probe-only COVERS claim unqualified / 39 focused tests PASS / actor authentication and provider-native receipt unresolved / historical Claude CANNOT_ATTEST preserved / existing experiment-only J1=4, new J1=0, qualified J2=0, E01 J3 HOLD / formal P03 INCOMPLETE / physical target unselected / Specification 028 unchanged / MC-0029 resolved / MC-0010 deferred
+**Status:** MC-0030 OPEN / Research 680 source-verified typed J2 port over original D1 and real forward Git action implemented / 44 new tests PASS / two original E01 Git OBSERVABLE facts verified, original connector transport source attested provider unverified / forward COVERS targets only unaccepted probe criterion / no independent natural owner authentication or native provider receipt / original accepted experiment J1=4, new J1=0, qualified RELATIONAL J2=0, old E01 J3 HOLD / formal P03 INCOMPLETE / physical target unselected / Specification 028 unchanged / MC-0029 resolved / MC-0010 deferred
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -20,6 +20,10 @@ docs/current_routing.json
 ```
 
 This inbox intentionally does not duplicate that state except where needed to explain collaboration obligations.
+
+## Current MC-0030 source-verified typed J2 assurance port, Checkpoint 941
+
+Research 680, Validation 377 and Message 094 verify a bounded two-real-event OBSERVABLE/RELATIONAL/EPHEMERAL evidence interface. Exact Git source facts for two original E01 components qualify as OBSERVABLE, while original connector transport remains source-attested without provider proof. The forward actor's co-committed COVERS still targets only an unaccepted diagnostic criterion. Forty-four new tests pass and reject evidence-to-effect transplantation, injected accepted-effect IDs and unverified identity/provider flags. Experiment-only J1 accepted=4, new J1=0, new RELATIONAL J2=0, original E01 J3 HOLD, formal P03 INCOMPLETE, physical target unselected. Next: independent natural-owner authentication and provider-native receipt availability; no new Claude retrospective request.
 
 ## Current MC-0030 real forward at-action J2 evidence source probe
 

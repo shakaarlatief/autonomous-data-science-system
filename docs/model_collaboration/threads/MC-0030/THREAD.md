@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / REAL AT-ACTION J2 PROBE COMMITTED AND VERIFIED / CLAIM UNQUALIFIED / SOURCE ASSURANCE PORT NEXT / FORMAL P03 INCOMPLETE
+**Status:** OPEN / TWO EVENT TYPED J2 PORT VERIFIED / GIT FACTS VERIFIED CLAIMS UNQUALIFIED / SOURCE OWNER PROVIDER ASSURANCE NEXT / FORMAL P03 INCOMPLETE
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -1229,6 +1229,26 @@ This is useful physical-design evidence for separating natural Git OBSERVABLE fa
     NEW_QUALIFIED_J2=0
     PROVIDER_PROOF=NOT_INDEPENDENTLY_AVAILABLE
     EXISTING_P03_EXPERIMENT_ONLY_J1=4
+    HISTORICAL_E01_J3=HOLD
+    FORMAL_P03=INCOMPLETE
+    PHYSICAL_TARGET_SELECTED=false
+
+## Typed source-verified J2 fact/assurance port over two genuine events, Checkpoint 941
+
+Research 680, Validation 377 and Message 094 implement a bounded typed OBSERVABLE/RELATIONAL/EPHEMERAL port over the exact original D1 Git event and the real forward at-action event. The verifier preserves two directly source-observed E01 Git facts and the original owner-accepted four experiment-only J1 effects. The original connector API remains SOURCE_REPORTED and provider-unverified; the forward co-committed COVERS targets an UNACCEPTED probe criterion. Fake provider/owner proof flags, moved accepted effect targets, altered original source digests and injected accepted effects are rejected; 44 new tests pass. No new qualified RELATIONAL J2 or provider EPHEMERAL facts, no new governing J3 success and no formal P03 score were created.
+
+The hardcoded two-event port is an unscored prototype, not a generalized physical product or an endorsed architecture selection. Next identify actual independent source-owner authentication and durable provider receipt availability, and use an exact new owner-reviewed accepted effect only if separately authorized. The historical Claude CANNOT_ATTEST request remains closed.
+
+    CURRENT=R0_P03_TYPED_J2_ASSURANCE_PORT_VERIFIED
+    RESEARCH=680
+    VALIDATION=377
+    CHECKPOINT=941
+    CHATGPT_MESSAGE=MC0030_MESSAGE094
+    ORIGINAL_ACCEPTED_EXPERIMENT_ONLY_J1=4
+    NEW_ACCEPTED_J1=0
+    ORIGINAL_D1_GIT_OBSERVABLES=2_VERIFIED
+    NEW_RELATIONAL_J2_QUALIFIED=0
+    PROVIDER_NATIVE_RECEIPTS_QUALIFIED=0
     HISTORICAL_E01_J3=HOLD
     FORMAL_P03=INCOMPLETE
     PHYSICAL_TARGET_SELECTED=false

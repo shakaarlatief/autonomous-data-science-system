@@ -1,0 +1,163 @@
+{
+  "accepted_e01_evidence_readiness": {
+    "additional_genuine_relational_coverage_qualified": false,
+    "attestation_sufficiency_interpretation": "UNRESOLVED_NO_SILENT_J1_AMENDMENT",
+    "completion_rule": "ALL_REQUIRED",
+    "direct_git_observables_verified": 2,
+    "ephemeral_connector_source_attested": true,
+    "j3_not_evaluated_by_this_port": true,
+    "orientation": "HOLD_UNQUALIFIED_COMPONENT_AND_ASSURANCE",
+    "required_components": [
+      "TRANSPORT_ATTESTED_GITHUB_CONNECTOR",
+      "AUTHORIZED_PATH_ONLY",
+      "COMMIT_RECEIPT_BOUND_TO_CORRECTION_HEAD"
+    ],
+    "underlying_provider_use_qualified": false
+  },
+  "accepted_j1_count": 4,
+  "actual_git_events": [
+    "cd0cf087a4d0ddb30920a8c753e478da8f92295c",
+    "131c54a4aec9f8733af35b1c90e8b16a7c9919a5"
+  ],
+  "candidate_next_architecture_tests": [
+    "Owner-source-authentication verifier with real trust root, no caller-provided assurance bit",
+    "Provider-native receipt adapter with independent platform observation and recovery guarantees",
+    "Acceptance-scoped RELATIONAL verification for an actually accepted new experiment effect",
+    "Metamorphic evidence removal, duplicate claim and stale source-currentness checks"
+  ],
+  "capabilities_actually_implemented": {
+    "exact_git_original_object_verification": true,
+    "governing_j3_predicate_evaluation": false,
+    "natural_owner_identity_authentication": false,
+    "production_j1_authentication": false,
+    "provider_native_receipt_verification": false
+  },
+  "forward_probe_relational_status": {
+    "actor_identity_authenticated": false,
+    "governing_effect_accepted": false,
+    "qualified_j2_relational": false,
+    "source_claim_co_committed": true,
+    "target": "UNACCEPTED_PROBE_ONLY_ACTION_RECORDING_CRITERION"
+  },
+  "historical_d1_source_attestations": {
+    "authoritative_provider_receipts": 0,
+    "claim_family": "D1_ACTION_CONNECTOR_USE_SOURCE_ASSERTION",
+    "deduplicated_claim_family_count": 1,
+    "natural_owner_covers_response": "CANNOT_ATTEST",
+    "textual_source_carriers": 2,
+    "underlying_connector_use": "UNKNOWN"
+  },
+  "inquiries": [
+    {
+      "claim_family": "D1_GIT_PATH",
+      "component_id": "AUTHORIZED_PATH_ONLY",
+      "event_commit": "cd0cf087a4d0ddb30920a8c753e478da8f92295c",
+      "fact_kind": "OBSERVABLE",
+      "is_governing_j2_relational_admission": false,
+      "qualification": "VERIFIED_GIT_OBSERVABLE",
+      "target_effect": "D1-E01-D2-CLAUDE-WRITE-REQUIREMENT"
+    },
+    {
+      "claim_family": "D1_GIT_PARENT",
+      "component_id": "COMMIT_RECEIPT_BOUND_TO_CORRECTION_HEAD",
+      "event_commit": "cd0cf087a4d0ddb30920a8c753e478da8f92295c",
+      "fact_kind": "OBSERVABLE",
+      "is_governing_j2_relational_admission": false,
+      "qualification": "VERIFIED_GIT_OBSERVABLE",
+      "target_effect": "D1-E01-D2-CLAUDE-WRITE-REQUIREMENT"
+    },
+    {
+      "claim_family": "D1_ACTION_CONNECTOR_USE_SOURCE_ASSERTION",
+      "component_id": "TRANSPORT_ATTESTED_GITHUB_CONNECTOR",
+      "event_commit": "cd0cf087a4d0ddb30920a8c753e478da8f92295c",
+      "fact_kind": "EPHEMERAL",
+      "is_governing_j2_relational_admission": false,
+      "qualification": "HOLD_PROVIDER_RECEIPT_UNAVAILABLE",
+      "target_effect": "D1-E01-D2-CLAUDE-WRITE-REQUIREMENT"
+    },
+    {
+      "claim_family": "FORWARD_COCOMMITTED_PROBE_ONLY_COVERS",
+      "component_id": "ACTOR_INTENT_PRESENT",
+      "event_commit": "131c54a4aec9f8733af35b1c90e8b16a7c9919a5",
+      "fact_kind": "RELATIONAL",
+      "is_governing_j2_relational_admission": false,
+      "qualification": "HOLD_NO_ACCEPTED_TARGET",
+      "target_effect": "UNACCEPTED_PROBE_ONLY_ACTION_RECORDING_CRITERION"
+    },
+    {
+      "claim_family": "FORWARD_GIT_PATH",
+      "component_id": "FORWARD_COMMIT_PATH_EXACT",
+      "event_commit": "131c54a4aec9f8733af35b1c90e8b16a7c9919a5",
+      "fact_kind": "OBSERVABLE",
+      "is_governing_j2_relational_admission": false,
+      "qualification": "HOLD_NO_ACCEPTED_TARGET",
+      "target_effect": "UNACCEPTED_PROBE_ONLY_ACTION_RECORDING_CRITERION"
+    },
+    {
+      "claim_family": "FORWARD_GIT_PARENT",
+      "component_id": "FORWARD_COMMIT_PARENT_EXACT",
+      "event_commit": "131c54a4aec9f8733af35b1c90e8b16a7c9919a5",
+      "fact_kind": "OBSERVABLE",
+      "is_governing_j2_relational_admission": false,
+      "qualification": "HOLD_NO_ACCEPTED_TARGET",
+      "target_effect": "UNACCEPTED_PROBE_ONLY_ACTION_RECORDING_CRITERION"
+    },
+    {
+      "claim_family": "FORWARD_RUNTIME_BRIDGE_TOOL_REPORT",
+      "component_id": "PROVIDER_EXECUTED_CODEXLESS_COMMIT",
+      "event_commit": "131c54a4aec9f8733af35b1c90e8b16a7c9919a5",
+      "fact_kind": "EPHEMERAL",
+      "is_governing_j2_relational_admission": false,
+      "qualification": "HOLD_NO_ACCEPTED_TARGET",
+      "target_effect": "UNACCEPTED_PROBE_ONLY_ACTION_RECORDING_CRITERION"
+    }
+  ],
+  "invariants": {
+    "formal_p03_score": null,
+    "historical_d1_raw_outcome": "D1_AMEND_UNCHANGED",
+    "historical_e01_j3": "HOLD",
+    "new_accepted_j1_effects": 0,
+    "new_provider_verified_ephemeral_facts": 0,
+    "new_qualified_j2_relational_facts": 0,
+    "physical_architecture_selected": false
+  },
+  "original_accepted_j1_effect_ids": [
+    "D1-E01-D2-CLAUDE-WRITE-REQUIREMENT",
+    "D1-E02-NO-CLAUDE-RUNTIME-BRIDGE",
+    "D1-E03-MESSAGE018-AUTHORIZATION",
+    "D1-E04-TRANSPORT-CORRECTION-LIFECYCLE"
+  ],
+  "schema_version": 1,
+  "source_verified_git_observations": [
+    {
+      "component": "AUTHORIZED_PATH_ONLY",
+      "fact_owner": "GIT_OBJECT_STORE",
+      "source_commit": "cd0cf087a4d0ddb30920a8c753e478da8f92295c",
+      "source_digest": "890ea35d0e6ea99143e0918cb41ee93a8c28add9981d57add9f20dcc707cadaa",
+      "value": "docs/model_collaboration/threads/MC-0029/messages/018_claude_d2_lineage_evaluator_b.md"
+    },
+    {
+      "component": "COMMIT_RECEIPT_BOUND_TO_CORRECTION_HEAD",
+      "fact_owner": "GIT_OBJECT_STORE",
+      "source_commit": "cd0cf087a4d0ddb30920a8c753e478da8f92295c",
+      "source_digest": "890ea35d0e6ea99143e0918cb41ee93a8c28add9981d57add9f20dcc707cadaa",
+      "value": "73f54c6a96b7a9172376b4c88deb9a5a400506d0"
+    },
+    {
+      "component": "FORWARD_COMMIT_PATH_EXACT",
+      "fact_owner": "GIT_OBJECT_STORE",
+      "source_commit": "131c54a4aec9f8733af35b1c90e8b16a7c9919a5",
+      "source_digest": "ce7a6addb7c1b612c4e1ed5a65fa3baacf06c57f11fae06a512e213b41f923a2",
+      "value": "experiments/r0_p03_navigation_probe/v03_forward_j2_at_action_event_001.json"
+    },
+    {
+      "component": "FORWARD_COMMIT_PARENT_EXACT",
+      "fact_owner": "GIT_OBJECT_STORE",
+      "source_commit": "131c54a4aec9f8733af35b1c90e8b16a7c9919a5",
+      "source_digest": "ce7a6addb7c1b612c4e1ed5a65fa3baacf06c57f11fae06a512e213b41f923a2",
+      "value": "fefa21bd57df9d40d71a53c5b8af8da0d81b667c"
+    }
+  ],
+  "status": "SOURCE_VERIFIED_OBSERVABLES_WITH_UNQUALIFIED_RELATIONAL_AND_EPHEMERAL",
+  "world_class": "P03_V2_EXPOSED_UNSCORED_J2_PORT"
+}
