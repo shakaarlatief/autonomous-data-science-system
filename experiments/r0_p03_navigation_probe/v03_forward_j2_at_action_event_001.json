@@ -1,0 +1,61 @@
+{
+  "actor_statement": {
+    "action_intent": "I intend to add this exact file through the approved single-path commit mechanism",
+    "claimant_identity_assurance": "CONVERSATION_ROLE_NOT_INDEPENDENTLY_AUTHENTICATED",
+    "claimant_role": "EXPOSED_CHATGPT_ARCHITECTURE_COORDINATOR",
+    "natural_owner_claim_scope": "AUTHOR_OF_THIS_RECORD_AND_COMMIT_INTENT_NOT_GIT_OR_PROVIDER_FACTS",
+    "relational_claim": {
+      "component_ids": [
+        "ACTOR_INTENT_PRESENT",
+        "EXPECTED_PARENT_DECLARED",
+        "INTENDED_PATH_DECLARED"
+      ],
+      "coverage_extent": "FULL_FOR_SELF_REPORTED_INTENT_CONTENT_ONLY",
+      "relation": "COVERS",
+      "source_status": "CLAIMED_BY_EXPOSED_ACTOR_NOT_J2_ADMITTED",
+      "subject_source_path": "experiments/r0_p03_navigation_probe/v03_forward_j2_at_action_event_001.json",
+      "target": "UNACCEPTED_PROBE_ONLY_ACTION_RECORDING_CRITERION"
+    }
+  },
+  "assurance_limits": [
+    "An identical file committed with a Git SHA proves tree membership, not authentic human or provider identity",
+    "Commit tool execution has not yet occurred at authoring time",
+    "Git author, commit body and actor JSON do not independently prove the executor provider API",
+    "No new governing J1 was proposed or accepted for this probe-only target",
+    "No existing E01 source-owner COVERS or historical connector proof is created",
+    "No new J3 completion, formal R0-P03 score, physical target or migration is implied"
+  ],
+  "at_action_source_status": "BEFORE_GIT_COMMIT_SOURCE_DECLARATION",
+  "event_id": "R0_P03_V2_FORWARD_J2_ACTION_001",
+  "experimental_action": {
+    "commit_message": "Exercise real at-action J2 source-carrier separation with one non-governing event",
+    "commit_occurred_at_time_record_was_written": false,
+    "commit_sha_known_before_action": false,
+    "expected_branch": "v1-source-vault-bootstrap-resume",
+    "expected_parent_sha": "fefa21bd57df9d40d71a53c5b8af8da0d81b667c",
+    "operation": "ADD_EXACTLY_ONE_NEW_SOURCE_RECORD_IN_ACTUAL_GIT_COMMIT",
+    "requested_executor": "CODEXLESS_RUNTIME_BRIDGE_CODEX_GIT_COMMIT_PATHS",
+    "source_path": "experiments/r0_p03_navigation_probe/v03_forward_j2_at_action_event_001.json"
+  },
+  "fact_owner_boundaries": {
+    "actor_claim_relation": {
+      "fact_class": "RELATIONAL",
+      "natural_owner": "THIS_SOURCE_AUTHOR",
+      "status": "RECORDED_CLAIM_NOT_AUTHENTICATED_OR_QUALIFIED"
+    },
+    "actual_bridge_invocation": {
+      "durability": "FOLLOWUP_NON_GOVERNING_RECEIPT_ONLY",
+      "fact_class": "EPHEMERAL",
+      "natural_owner": "CODEXLESS_BRIDGE_EXECUTION_RESPONSE",
+      "status": "UNOBSERVED_AT_RECORD_AUTHORING"
+    },
+    "git_parent_and_changed_path": {
+      "fact_class": "OBSERVABLE",
+      "natural_owner": "GIT_OBJECT_STORE",
+      "status": "TO_BE_VERIFIED_AFTER_COMMIT"
+    }
+  },
+  "governing_authority": "NONE_EXPERIMENT_ONLY_UNSCORED",
+  "record_class": "PRECOMMIT_CONTEMPORANEOUS_SOURCE_OWNER_CLAIM_AND_ACTION_INTENT",
+  "schema_version": 1
+}
