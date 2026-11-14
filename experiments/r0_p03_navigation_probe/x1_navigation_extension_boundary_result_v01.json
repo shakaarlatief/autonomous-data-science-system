@@ -1,0 +1,87 @@
+{
+  "arms": {
+    "B0": {
+      "metadata_digest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "metadata_survives_path_rename": true,
+      "ranking_ids": [
+        "carrier:test",
+        "carrier:code",
+        "carrier:decision",
+        "carrier:continuity"
+      ],
+      "rebuild_digest_preserved": true
+    },
+    "B1": {
+      "metadata_digest": "7275810a5e2339b0f3d115f52608964a2f899a7a66cd0f843a9b72638b5021e7",
+      "metadata_survives_path_rename": true,
+      "ranking_ids": [
+        "carrier:code",
+        "carrier:decision",
+        "carrier:test",
+        "carrier:continuity"
+      ],
+      "rebuild_digest_preserved": true
+    },
+    "B2": {
+      "metadata_digest": "5b0e8d5a7b619d88fa8ada923264b90eb7fbdefa9fc5dca57c344a01b4bf9246",
+      "metadata_survives_path_rename": true,
+      "ranking_ids": [
+        "carrier:decision",
+        "carrier:code",
+        "carrier:test",
+        "carrier:continuity"
+      ],
+      "rebuild_digest_preserved": true
+    },
+    "B3": {
+      "metadata_digest": "7083676fb066da943a2d61a7e0c4bb8b6c5e43e84846dfc072b034b72d6c036f",
+      "metadata_survives_path_rename": true,
+      "ranking_ids": [
+        "carrier:test",
+        "carrier:decision",
+        "carrier:code",
+        "carrier:continuity"
+      ],
+      "rebuild_digest_preserved": true
+    },
+    "B4": {
+      "metadata_digest": "27c0b7a205170f763b3ec1eef621a4affd2d8d86ba9f1dbb3d9304003ce3217f",
+      "metadata_survives_path_rename": true,
+      "ranking_ids": [
+        "carrier:decision",
+        "carrier:code",
+        "carrier:test",
+        "carrier:continuity"
+      ],
+      "rebuild_digest_preserved": true
+    }
+  },
+  "authored_metadata_rewritten_count": 0,
+  "d1_d2_results_unchanged": true,
+  "d1_effect_count": 4,
+  "d1_j3_digest": "b33a6f831cad906087b554a68d06dfd601e84d11911b4d8d936c107b40c44014",
+  "d2_case_count": 14,
+  "d2_digest": "7c3f2d2aa521ee8c44e672dd583fb2828e8a97f6a2ce4efb1807df92417b8ec9",
+  "d2_replace_obsolete_link": "REVIEW_REQUIRED",
+  "limitations": [
+    "No implemented GOVERNED_LEDGER_KERNEL_V02 kernel or R1 extension contract",
+    "D1 accepted effects are development replay, not current production authority",
+    "D1 and D2 are distinct replay scenarios, not one integrated lineage world",
+    "Four synthetic carriers are not source-owned production relationships",
+    "B4 synthetic vectors are not neural embedding quality or model feasibility",
+    "B1/B3 governed vocabulary admission and owner burden are not tested",
+    "Index rebuild and growth are synthetic, not production maintenance F1",
+    "Rank outputs are diagnostics, not original Research 513 answer scores"
+  ],
+  "mechanical_negative_controls_rejected": [
+    "authority_field_injection",
+    "path_as_identity",
+    "invented_effect",
+    "authority_class_promotion",
+    "vector_path_as_identity"
+  ],
+  "physical_target_selected": false,
+  "research_513_formal_outcome": null,
+  "status": "LIMITED_UNSCORED_INTERFACE_PILOT_NOT_X1_PASS",
+  "synthetic_growth_carriers_added": 10
+}

@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 932
+**Checkpoint:** 933
 **Date:** 2026-11-14
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -19,6 +19,8 @@ Primary collaborator     ChatGPT; Codex Desktop work is owner-relayed by default
 ```
 
 Repository artifacts remain authoritative across chats and models.
+
+**CLAUDE R0-P03 METHOD REVIEW RECONCILED AND LIMITED X1 NAVIGATION INTERFACE PILOT EXECUTED (Research 670 / Validation 369 / Checkpoint 933 / MC-0030 Message 085; 2026-11-14):** Claude's complete Message 084 was fetched from the one-file GitHub commit 2b45f922 and its 41,190-byte exact Git source SHA-256 verified. Research 670 accepts the *actual historical V03-native substrate mismatch* and reference-eligibility bottleneck, while distinguishing a newly constructed experimental V03 analogue from historical production J1 and retaining Research 513/559/576 owner governance. The limited X1 pilot reuses D1 four-effect and D2 fourteen-case real development evaluators plus Route-B ranking primitives over explicitly synthetic carriers. It ran five B0-B4 adapter demonstrations and rejected five authority/identity payload attacks; 132 focused tests PASS. This is **LIMITED UNSCORED INTERFACE EVIDENCE**, not a full X1 architecture PASS and not formal P03 scoring. Source-owner governance, meaningful V02 kernel coupling, R1 hooks, actual neural B4 and Research 217 sufficiency remain unqualified; next is a bounded meaningful X1 implementation-coupling check or an explicit owner method decision. V03 logical selection, Specification 028 current authority, R0-P01 deferred state and R0-P02 bounded PASS are unchanged. No physical target, migration, authority switch or prospective P03 protocol amendment is selected.
 
 **R0-P03 BOTTLENECK REASSESSMENT AND CLAUDE METHOD CHALLENGE PREPARED (Research 669 / Validation 368 / Checkpoint 932 / MC-0030 Message 083; 2026-11-14):** Source-grounded review of the full Project Operating Architecture, effective Research 513/559/576, C01/C02 pre-score reference-capacity HOLDs, real November 12-13 B0-B4-like experiments, the independently originated four-need pilot, and Checkpoints 930-931 identifies a repeated **incomplete independent reference-answer** gate. A second, still-to-be-challenged hypothesis is that full historical owner/J1/J2/CI verification may be inappropriately coupled to a comparison of additional navigation mechanisms. Research 669 compares the original method, a two-environment known-truth plus real-source method, a real-source-only graded alternative and governed deferral, and selects NONE. MC-0030 Message 083 invites Claude to reorient to the whole architecture program and independently challenge those proposals. No Research 513/559/576 amendment, new gold, scored result, physical architecture selection or migration is authorized; R0-P01 remains deferred with its documented authentication dependency, R0-P02 has bounded PASS, V03 remains the logical successor and Specification 028 remains operative.
 

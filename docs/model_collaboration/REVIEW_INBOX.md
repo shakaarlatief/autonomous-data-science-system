@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-11-14
-**Status:** MC-0030 OPEN / Message 083 prospective P03 method redesign critique prepared for Claude Message 084 / original R0-P03 scoring incomplete / physical target not selected / Specification 028 unchanged / no migration / MC-0029 resolved / MC-0010 deferred
+**Status:** MC-0030 OPEN / Claude Message 084 verified and reconciled in Research 670 and Message 085 / limited unscored X1 pilot executed / full X1 and formal P03 incomplete / physical target unselected / Specification 028 unchanged / MC-0029 resolved / MC-0010 deferred
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -20,6 +20,10 @@ docs/current_routing.json
 ```
 
 This inbox intentionally does not duplicate that state except where needed to explain collaboration obligations.
+
+## Current MC-0030 disposition after Claude methodology review
+
+Claude Message 084 was verified on GitHub at 2b45f922df7f9179e1c5f3217dcb268bedcb7eed and reconciled in Research 670, MC-0030 Message 085, Validation 369 and Checkpoint 933. The proposed future P03 method amendment is not accepted. A limited synthetic unscored X1 adapter probe executed with 132 focused tests passing, but full physical lock-in qualification and Research 513 formal B0-B4 scoring remain INCOMPLETE. No further Claude task is pending. Next substantive work is bounded X1 real implementation coupling or a governed owner method decision.
 
 ## Current R0-P03 methodology challenge (MC-0030)
 
