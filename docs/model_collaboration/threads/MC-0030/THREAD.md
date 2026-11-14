@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / LIVE GITHUB CHECK JOB WORKFLOW STATUS CONFLICT RECONCILED / TRUSTED COMPOSITE SOURCE OR FINITE CAPABILITY HOLD NEXT / FORMAL P03 INCOMPLETE
+**Status:** OPEN / REAL ADS G006 G013 SEMANTIC WORLD SOURCE CANDIDATE VERIFIED / EXACT PROSPECTIVE OWNER J1 PACKET PENDING / FORMAL P03 INCOMPLETE
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -1324,5 +1324,29 @@ This closes further source-copy-only rehearsal as a finite nonqualifying path. A
     NEW_ACCEPTED_J1=0
     NEW_QUALIFIED_RELATIONAL_J2=0
     ORIGINAL_E01_J3=HOLD
+    FORMAL_P03=INCOMPLETE
+    PHYSICAL_TARGET_SELECTED=false
+
+## R0-P03-V2 real Project Knowledge semantic source candidate and exact proposed owner packet, Checkpoint 945
+
+Research 684, Validation 381 and Message 098 return directly to the original accepted Research 672–673 experimental navigation plan. The preexisting original Git-pinned 15-file, 16-witness source frame was revalidated and extended by twelve exact G006 identity / G013 current-derived-refresh source witnesses across ten candidate paths, adding four previously absent source paths and reaching 19 distinct real ADS paths. Original implementation commits 99cca348 and 192dc161 have their actual parents, code/test path membership and ancestry verified. Original test definitions are distinguished from current actual execution and from historical acceptance.
+
+Five current identity tests and two refresh/manifest relocation tests passed. The new immutable source audit passed 39 focused tests. An exact four-effect prospective P03 experiment-only J1 packet, ID P03V2_PKA_REAL_SOURCE_TWO_STATE_EXPERIMENT_J1_001, canonical SHA-256 0fa8ecc09f4745b514697d206356ce2f529fa66e15380a9bd0d43f1c6a00a6df, has 29 passing validation tests and remains **NOT OWNER ACCEPTED**. It proposes S0 identity preservation, S1 identity+refresh, prospective REPLACE/OPEN_RESET and prohibition of physical-path/derived authority. No historical Git chronology has been promoted into governing lineage or natural-owner COVERS.
+
+A new exact owner decision, actual prospective implementation-source-owner coverage and mechanical currentness/J3 are required before the common source world can be qualified. The former four D1 accepted experiment-only J1 effects remain a bounded UNKNOWN negative source; new J1=0, RELATIONAL J2=0, integrated J3 not executed, formal B0–B4 INCOMPLETE, physical architecture unselected. This is an evidence-grounded source candidate, not a production target or finalized 60/20 corpus. Next is exact owner packet review and, only if accepted, one actual prospective source-world construction path rather than further historical Claude connector probes.
+
+    CURRENT=R0_P03_G006_G013_REAL_SEMANTIC_WORLD_CANDIDATE
+    RESEARCH=684
+    VALIDATION=381
+    CHECKPOINT=945
+    CHATGPT_MESSAGE=MC0030_MESSAGE098
+    VERIFIED_ORIGINAL_SOURCE_PATHS=19
+    ORIGINAL_IMPLEMENTATION_EVENTS=G006_G013_GIT_VERIFIED
+    NEW_OWNER_PROPOSAL=P03V2_PKA_REAL_SOURCE_TWO_STATE_EXPERIMENT_J1_001
+    NEW_OWNER_J1_DECISION=PENDING
+    NEW_EXPERIMENT_ONLY_J1_ACCEPTED=0
+    EXISTING_D1_EXPERIMENT_J1=4
+    NEW_RELATIONAL_J2_QUALIFIED=0
+    INTEGRATED_J3=NOT_EXECUTED
     FORMAL_P03=INCOMPLETE
     PHYSICAL_TARGET_SELECTED=false

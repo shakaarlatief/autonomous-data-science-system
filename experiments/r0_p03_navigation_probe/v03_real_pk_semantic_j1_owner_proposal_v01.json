@@ -1,0 +1,98 @@
+{
+  "canonical_payload_sha256": "0fa8ecc09f4745b514697d206356ce2f529fa66e15380a9bd0d43f1c6a00a6df",
+  "canonicalization": "UTF8_JSON_SORTED_KEYS_COMPACT_NO_EXTRA_WHITESPACE",
+  "decision_kind": "EXPERIMENT_ONLY_SEMANTIC_EFFECT_SCOPE",
+  "decision_state": "PROPOSED_NOT_OWNER_ACCEPTED",
+  "effect_timeline": {
+    "S0": [
+      "P03PKA-E01-S0-IDENTITY-CONTINUITY",
+      "P03PKA-E04-NO-PATH-OR-DERIVED-AUTHORITY"
+    ],
+    "S1": [
+      "P03PKA-E02-S1-IDENTITY-REFRESH",
+      "P03PKA-E04-NO-PATH-OR-DERIVED-AUTHORITY"
+    ],
+    "historical_g006_g013_git_chronology_is_not_new_effect_lineage": true,
+    "transition_requires_real_prospective_source_revision": true
+  },
+  "existing_d1_experiment_effect_count": 4,
+  "new_effects": [
+    {
+      "accounting": "REALIZATION_TRACKED",
+      "completion_contract": {
+        "actual_natural_owner_covers_required": true,
+        "composition": "ALL_REQUIRED",
+        "exact_source_revision_and_executed_evidence_required": true,
+        "required_components": [
+          "EXPLICIT_IDENTITY_PRESERVING_MOVE",
+          "HISTORICAL_CARRIER_REMAINS_RESOLVABLE"
+        ]
+      },
+      "id": "P03PKA-E01-S0-IDENTITY-CONTINUITY",
+      "state": "S0_INITIAL",
+      "statement": "In the bounded P03 experimental source world, a move or representation replacement of an authored canonical source carrier must preserve its semantic identity and retain its historical carrier in lookup.",
+      "type": "REQUIRE"
+    },
+    {
+      "accounting": "REALIZATION_TRACKED",
+      "completion_contract": {
+        "actual_natural_owner_covers_required": true,
+        "composition": "ALL_REQUIRED",
+        "exact_source_revision_and_executed_evidence_required": true,
+        "required_components": [
+          "EXPLICIT_IDENTITY_PRESERVING_MOVE",
+          "AFFECTED_VIEW_REFRESH_SELECTED",
+          "INCREMENTAL_EQUALS_CURRENT_FULL_BUILD",
+          "STALE_DERIVED_RESULT_NOT_GOVERNING"
+        ]
+      },
+      "id": "P03PKA-E02-S1-IDENTITY-REFRESH",
+      "state": "S1_SUCCESSOR_AFTER_REAL_SOURCE_REVISION",
+      "statement": "In the bounded P03 successor experimental state, the same authored semantic identity must survive a real source carrier move; affected derived views must be rebuilt from the complete current source snapshot and any incremental refresh must be equivalent to the full current build. A stale prior generated manifest must never govern current semantics.",
+      "type": "REQUIRE"
+    },
+    {
+      "accounting": "NO_REALIZATION_REQUIRED",
+      "id": "P03PKA-E03-S1-REPLACE-OPEN-RESET",
+      "lineage": {
+        "predecessor_id": "P03PKA-E01-S0-IDENTITY-CONTINUITY",
+        "realization_succession": "OPEN_RESET",
+        "relation": "REPLACE",
+        "successor_id": "P03PKA-E02-S1-IDENTITY-REFRESH",
+        "transition_not_activated_by_this_proposal": true
+      },
+      "state": "S1_SUCCESSOR_AFTER_REAL_SOURCE_REVISION",
+      "statement": "When the separately qualified prospective P03 source-revision transition activates S1, S1 REPLACES S0 as the current experimental requirement, with OPEN_RESET realization succession; S0 implementation evidence cannot be carried forward as sufficient for S1 without requalification.",
+      "type": "LIFECYCLE"
+    },
+    {
+      "accounting": "NO_REALIZATION_REQUIRED",
+      "id": "P03PKA-E04-NO-PATH-OR-DERIVED-AUTHORITY",
+      "standing_check": "DETECTIVE_ONLY_FALSE_AUTHORITY_REJECTION",
+      "state": "BOTH",
+      "statement": "Neither a carrier path nor a generated navigation/index/manifest output may be treated as governing semantic identity or acceptance authority.",
+      "type": "PROHIBIT"
+    }
+  ],
+  "next_execution_boundaries": {
+    "actual_source_owner_j2_declaration_required": true,
+    "formal_sixty_twenty_or_three_to_one_corpus_not_frozen": true,
+    "formal_twelve_tasks_and_legacy_nine_unoriginated": true,
+    "j2_declaration_not_provided_by_owner_acceptance": true,
+    "j3_predicate_must_be_evaluated_not_author_reported": true,
+    "migration_authorized": false,
+    "no_model_identity_or_connector_proof_assumed": true,
+    "physical_architecture_selection_authorized": false,
+    "preexisting_d1_cannot_attest_kept_as_unknown_periphery": true,
+    "production_specification_028_unchanged": true,
+    "qualified_executed_test_evidence_required": true,
+    "separate_exact_owner_acceptance_required": true
+  },
+  "proposal_id": "P03V2_PKA_REAL_SOURCE_TWO_STATE_EXPERIMENT_J1_001",
+  "proposed_new_effect_count": 4,
+  "schema_version": 1,
+  "source_audit_sha256": "59de22c2709d380189d60cab305902bff7033f9453cd5687223abe58805f56ac",
+  "source_pin": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+  "source_role": "EXPOSED_PROPOSAL_NOT_GOVERNING_SOURCE",
+  "world_candidate": "P03V2_PKA_IDENTITY_AND_DERIVED_REFRESH_REAL_SOURCES_V01"
+}

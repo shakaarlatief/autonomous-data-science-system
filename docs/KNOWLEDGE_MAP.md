@@ -1088,6 +1088,16 @@ docs/research/680_r0_p03_typed_j2_natural_owner_and_assurance_port_probe.md
 docs/research/681_r0_p03_github_native_assurance_and_ci_line_ending_requalification.md
 docs/research/682_r0_p03_provider_native_receipt_and_source_owner_trust_root_admission_contract.md
 docs/research/683_r0_p03_live_provider_check_job_workflow_status_conflict_and_assurance_boundary.md
+docs/research/684_r0_p03_real_semantic_world_candidate_qualification_and_navigation_return.md
+docs/local_execution/validation/381_r0_p03_real_semantic_world_candidate_source_audit.md
+docs/checkpoints/945_r0_p03_real_semantic_world_candidate_audit_and_owner_packet_boundary.md
+docs/model_collaboration/threads/MC-0030/messages/098_chatgpt_r0_p03_real_semantic_world_candidate_and_next_execution.md
+experiments/r0_p03_navigation_probe/v03_real_pk_semantic_candidate_audit_v01.py
+experiments/r0_p03_navigation_probe/v03_real_pk_semantic_candidate_audit_result_v01.json
+experiments/r0_p03_navigation_probe/v03_real_pk_semantic_j1_owner_proposal_v01.py
+experiments/r0_p03_navigation_probe/v03_real_pk_semantic_j1_owner_proposal_v01.json
+tests/unit/test_r0_p03_v03_real_pk_semantic_candidate_audit_v01.py
+tests/unit/test_r0_p03_v03_real_pk_semantic_j1_owner_proposal_v01.py
 docs/local_execution/validation/380_r0_p03_live_provider_ci_status_reconciliation_and_gap.md
 docs/checkpoints/944_r0_p03_live_provider_status_conflict_reconciliation_and_trust_root_stop.md
 docs/model_collaboration/threads/MC-0030/messages/097_chatgpt_r0_p03_live_provider_status_reconciliation_and_architecture_boundary.md
@@ -2309,7 +2319,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-944 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-945 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-11-14
-**Status:** MC-0030 OPEN / Research 683 source-native repeated GitHub reads identify genuine Checkpoint 943 check/job status contradiction (in_progress with success conclusion and completed timestamp; parent and all steps completed success; 7 other checks completed success) / 53 new source-status reconciliation tests PASS / no qualified eighth completed check, no independent source actor identity or detached provider proof / existing accepted experiment-only J1=4, new J1=0, RELATIONAL J2=0, E01 J3 HOLD / formal P03 INCOMPLETE / physical target unselected / next provider-owned composite read or finite capability HOLD / Specification 028 unchanged / MC-0029 resolved / MC-0010 deferred
+**Status:** MC-0030 OPEN / Research 684 real P03-V2 source candidate refocus on G006 stable identity and G013 current-source derived refresh / 19 distinct original Git-pinned ADS sources, 12 candidate witnesses, actual G006/G013 original implementation commits verified / seven targeted current-code semantic tests and 68 new source/proposal tests PASS / exact four-effect prospective experiment-only J1 owner-review packet prepared but NOT ACCEPTED / old D1 accepted experiment J1=4 remains negative UNKNOWN case; newly accepted J1=0, qualified J2=0, integrated J3 not run / formal R0-P03 INCOMPLETE, physical target unselected / next exact owner packet review before prospective source-owner implementation world / Specification 028 unchanged / MC-0029 resolved / MC-0010 deferred
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -20,6 +20,10 @@ docs/current_routing.json
 ```
 
 This inbox intentionally does not duplicate that state except where needed to explain collaboration obligations.
+
+## Current MC-0030 genuine ADS semantic source-world candidate and exact pending effect review, Checkpoint 945
+
+Research 684, Validation 381 and Message 098 re-anchor the work to the accepted R0-P03-V2 B0–B4 semantic-navigation experiment. The source-qualified candidate combines G006 stable semantic identity and G013 full/incremental derived-view refresh, verifying 19 original Git-pinned ADS paths including 12 candidate witnesses, original implementation commits/parents and source role distinctions. Five current identity and two targeted refresh behavior tests pass; 39 source audit and 28 exact proposal tests pass. The new four-effect two-state experiment-only J1 packet has canonical SHA-256 0fa8ecc09f4745b514697d206356ce2f529fa66e15380a9bd0d43f1c6a00a6df and **has NOT been owner-accepted**. Genuine owner decision, source-owner RELATIONAL J2 and actual prospective source change/J3 are required. Existing D1 four accepted experiment J1 effects are retained as bounded UNKNOWN, new accepted J1=0, J2=0, formal P03 INCOMPLETE, no physical selection. Next is owner review of the exact packet, not more retrospective GitHub connector research.
 
 ## Current MC-0030 actual GitHub provider-source state contradiction and trust-root finite stop, Checkpoint 944
 

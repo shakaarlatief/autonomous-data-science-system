@@ -1,0 +1,252 @@
+{
+  "additional_candidate_witness_count": 12,
+  "additional_candidate_witnesses": [
+    {
+      "anchor": "def build_identity_index(",
+      "authority": "VERIFIED_SOURCE_CONTENT_NOT_NEW_EXPERIMENT_J1_OR_J2",
+      "line_1based": 81,
+      "original_byte_count": 17211,
+      "original_git_blob": "298ee0493bfcf949e1874d81f8de2fbc7294e96e",
+      "original_sha256": "c267136871d0349c5920edc47cae88fed07b097902f154d689b25d06d9d481df",
+      "source_commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+      "source_path": "tools/project_knowledge/identity.py",
+      "source_role": "NATURAL_CODE_SOURCE",
+      "witness_id": "G006_IMPLEMENTATION"
+    },
+    {
+      "anchor": "def test_same_id_carrier_continuity_and_historical_representation(kind):",
+      "authority": "VERIFIED_SOURCE_CONTENT_NOT_NEW_EXPERIMENT_J1_OR_J2",
+      "line_1based": 94,
+      "original_byte_count": 28848,
+      "original_git_blob": "d85253c368507941f1e555f2d35db1b09ccf06aa",
+      "original_sha256": "5c12d727aabccccc0ff5603d30c403377c59ee10abe8c51a7709f0f8a1e3b948",
+      "source_commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+      "source_path": "tests/unit/test_project_knowledge_identity.py",
+      "source_role": "TEST_DEFINITION_NOT_EXECUTION",
+      "witness_id": "G006_MOVE_TEST"
+    },
+    {
+      "anchor": "def test_supersede_preserves_history_and_explicit_current_successor():",
+      "authority": "VERIFIED_SOURCE_CONTENT_NOT_NEW_EXPERIMENT_J1_OR_J2",
+      "line_1based": 138,
+      "original_byte_count": 28848,
+      "original_git_blob": "d85253c368507941f1e555f2d35db1b09ccf06aa",
+      "original_sha256": "5c12d727aabccccc0ff5603d30c403377c59ee10abe8c51a7709f0f8a1e3b948",
+      "source_commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+      "source_path": "tests/unit/test_project_knowledge_identity.py",
+      "source_role": "TEST_DEFINITION_NOT_EXECUTION",
+      "witness_id": "G006_SUPERSEDE_TEST"
+    },
+    {
+      "anchor": "**Status:** PKA-G006 ACCEPTED",
+      "authority": "VERIFIED_SOURCE_CONTENT_NOT_NEW_EXPERIMENT_J1_OR_J2",
+      "line_1based": 4,
+      "original_byte_count": 9807,
+      "original_git_blob": "953a7f7e0f8a04c791a2746acce500fed717b1d5",
+      "original_sha256": "d65c08a28bbd63d75d5c4a770293e63a37c833e8f2433153ac676302fca1a608",
+      "source_commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+      "source_path": "docs/research/181_w0_identity_transition_current_index_g006_result.md",
+      "source_role": "HISTORICAL_GATE_ACCEPTANCE_REPORTED_NOT_P03_J1",
+      "witness_id": "G006_DECISION_RECORD"
+    },
+    {
+      "anchor": "def plan_view_refresh(",
+      "authority": "VERIFIED_SOURCE_CONTENT_NOT_NEW_EXPERIMENT_J1_OR_J2",
+      "line_1based": 78,
+      "original_byte_count": 5812,
+      "original_git_blob": "f6963f3acc4e3c1366f7a064e85d00a2d2993429",
+      "original_sha256": "e0d8d4dbdefa00919ed85c1433dbffd4a2c6168753c80612773b86a6162520a8",
+      "source_commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+      "source_path": "tools/project_knowledge/services/refresh.py",
+      "source_role": "NATURAL_CODE_SOURCE",
+      "witness_id": "G013_REFRESH_IMPLEMENTATION"
+    },
+    {
+      "anchor": "def build_views(",
+      "authority": "VERIFIED_SOURCE_CONTENT_NOT_NEW_EXPERIMENT_J1_OR_J2",
+      "line_1based": 206,
+      "original_byte_count": 16279,
+      "original_git_blob": "7f5b06e514d9261c1e8b70cf0ebec46c7c7f301e",
+      "original_sha256": "d6090fc68fc129d1b790ef41c40296ee6b9b85b9bc586668466987d87de0fcea",
+      "source_commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+      "source_path": "tools/project_knowledge/views.py",
+      "source_role": "NATURAL_CODE_SOURCE",
+      "witness_id": "G013_VIEW_IMPLEMENTATION"
+    },
+    {
+      "anchor": "def test_manifest_output_relocation_selects_only_that_view_and_matches_full_build(refresh_repo):",
+      "authority": "VERIFIED_SOURCE_CONTENT_NOT_NEW_EXPERIMENT_J1_OR_J2",
+      "line_1based": 235,
+      "original_byte_count": 25699,
+      "original_git_blob": "219e58408039ac89691f311fb478045bb0f781f9",
+      "original_sha256": "e81868bd95174193185bf965b5e39e73608bf06db71517892fa394816e362972",
+      "source_commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+      "source_path": "tests/unit/test_project_knowledge_refresh.py",
+      "source_role": "TEST_DEFINITION_NOT_EXECUTION",
+      "witness_id": "G013_EQUIVALENCE_TEST"
+    },
+    {
+      "anchor": "def test_g006_same_identity_move_and_authored_transition_are_not_rename_heuristics(refresh_repo):",
+      "authority": "VERIFIED_SOURCE_CONTENT_NOT_NEW_EXPERIMENT_J1_OR_J2",
+      "line_1based": 343,
+      "original_byte_count": 25699,
+      "original_git_blob": "219e58408039ac89691f311fb478045bb0f781f9",
+      "original_sha256": "e81868bd95174193185bf965b5e39e73608bf06db71517892fa394816e362972",
+      "source_commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+      "source_path": "tests/unit/test_project_knowledge_refresh.py",
+      "source_role": "TEST_DEFINITION_NOT_EXECUTION",
+      "witness_id": "G013_CROSS_SEMANTIC_TEST"
+    },
+    {
+      "anchor": "**Status:** PKA-G013 ACCEPTED",
+      "authority": "VERIFIED_SOURCE_CONTENT_NOT_NEW_EXPERIMENT_J1_OR_J2",
+      "line_1based": 4,
+      "original_byte_count": 11701,
+      "original_git_blob": "13e6fa7a39e3ff39a5c05c58f78e8dc3a8633186",
+      "original_sha256": "7b37f650d1b9c2a7741555ecaea505dc18943bee3a25c5e336835f6907220c91",
+      "source_commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+      "source_path": "docs/research/189_w0_full_incremental_rebuild_equivalence_g013_result.md",
+      "source_role": "HISTORICAL_GATE_ACCEPTANCE_REPORTED_NOT_P03_J1",
+      "witness_id": "G013_DECISION_RECORD"
+    },
+    {
+      "anchor": "**Authority:** Frozen implementation contract subordinate to D-035 and Requirements V0.2.",
+      "authority": "VERIFIED_SOURCE_CONTENT_NOT_NEW_EXPERIMENT_J1_OR_J2",
+      "line_1based": 6,
+      "original_byte_count": 37292,
+      "original_git_blob": "70db025eefa69a8dec43b04dfdae87f5700754c9",
+      "original_sha256": "7651707b5d590efd7686a77dca20597dc731bfafa1fabc2358775bef7b9d2ffe",
+      "source_commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+      "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "source_role": "ORIGINAL_FROZEN_CONTRACT_TEXT",
+      "witness_id": "SPEC_028"
+    },
+    {
+      "anchor": "## D-036. Select THIN_CENTRED_HYBRID_V03 as the successor Project semantic/control architecture target",
+      "authority": "VERIFIED_SOURCE_CONTENT_NOT_NEW_EXPERIMENT_J1_OR_J2",
+      "line_1based": 1032,
+      "original_byte_count": 55260,
+      "original_git_blob": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+      "original_sha256": "14e40c0ca6ec0f38373d971f90fd91b4457657606b93c5fccdfb101b3301bd04",
+      "source_commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+      "source_path": "docs/DECISIONS.md",
+      "source_role": "HISTORICAL_LOGICAL_ARCHITECTURE_DECISION_SOURCE",
+      "witness_id": "D036_LOGICAL"
+    },
+    {
+      "anchor": "**Authority:** W5 design result only.",
+      "authority": "VERIFIED_SOURCE_CONTENT_NOT_NEW_EXPERIMENT_J1_OR_J2",
+      "line_1based": 12,
+      "original_byte_count": 9218,
+      "original_git_blob": "a79dbc712a3b58cdd2e2e2f0a86ddf1f89b0b2a4",
+      "original_sha256": "ea21b21b79a89efc6c2c2bcf030cc1617bad9f47eb2b761d07f5ec0a6e246177",
+      "source_commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+      "source_path": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+      "source_role": "HISTORICAL_COMPARATOR_SOURCE",
+      "witness_id": "W5_SUBJECTS"
+    }
+  ],
+  "candidate_comparison": {
+    "D1_HISTORICAL_ONLY": {
+      "experiment_only_j1_accepted": 4,
+      "historical_provider_transport": "SOURCE_ATTESTED_UNVERIFIED",
+      "qualified_j2_relational": 0,
+      "role": "RETAIN_AS_BOUNDED_UNKNOWN_NEGATIVE_CASE"
+    },
+    "G006_G013_PROJECT_KNOWLEDGE": {
+      "cross_role_code_tests_documents": true,
+      "natural_owner_j2_covers_qualified": false,
+      "new_owner_experiment_j1_accepted": false,
+      "original_source_history_observed": true,
+      "real_identity_and_refresh_behavior_candidate": true,
+      "role": "PREFERRED_SOURCE_CANDIDATE_NOT_YET_FORMAL_WORLD"
+    },
+    "GITHUB_CI_RECEIPT_CHAIN": {
+      "enough_identity_lineage_and_semantic_breadth_alone": false,
+      "provider_ci_outcome_source_observed": true,
+      "role": "OPTIONAL_EVIDENCE_PERIPHERY_NOT_MAIN_WORLD"
+    }
+  },
+  "candidate_distinct_paths": 10,
+  "combined_unique_source_paths": 19,
+  "existing_d1_experiment_only_j1_effects": 4,
+  "formal_b0_b4_scores": null,
+  "frozen_formal_world": false,
+  "integrated_j3_completion": "NOT_RUN_HOLD_MISSING_ADMISSIONS",
+  "new_experiment_only_j1_effects_accepted": 0,
+  "new_qualified_j2_relations": 0,
+  "new_source_paths_not_in_original_fifteen": [
+    "docs/research/181_w0_identity_transition_current_index_g006_result.md",
+    "docs/research/189_w0_full_incremental_rebuild_equivalence_g013_result.md",
+    "tests/unit/test_project_knowledge_refresh.py",
+    "tools/project_knowledge/services/refresh.py"
+  ],
+  "next_required_substantive_steps": [
+    "Design two genuinely successive, exact experiment-only accepted effect states, not inferred from chronological Git commits",
+    "Present exact scoped owner packet for any newly authored experimental J1 effects; method-level Proceed is insufficient",
+    "Identify actual source-carrier natural owners and a qualifying J2 COVERS declaration path without inventing testimony",
+    "Execute one integrated J1/J2/lineage/currentness/J3 world with a real source revision and stale evidence negative case",
+    "Freeze source sampling and ensure equal B0-B4 common semantic inputs and neutral lexical access",
+    "Demonstrate the independent twelve-primary and nine-neutral-legacy Level B source/gold custody gates before formal scoring"
+  ],
+  "original_git_implementation_events": {
+    "G006": {
+      "changed_paths": [
+        "docs/CURRENT_STATE.md",
+        "docs/KNOWLEDGE_MAP.md",
+        "docs/checkpoints/528_pka_g006_identity_engine_accepted_authority_resolver_next.md",
+        "docs/current_routing.json",
+        "docs/research/181_w0_identity_transition_current_index_g006_result.md",
+        "tests/unit/test_project_knowledge_identity.py",
+        "tests/unit/test_project_knowledge_substrate_architecture.py",
+        "tools/project_knowledge/identity.py",
+        "tools/project_knowledge/model.py"
+      ],
+      "commit": "99cca3484f4dcb37128c38c2436a6dbcd6d00a0f",
+      "is_ancestor_of_original_source_pin": true,
+      "parent": "256c5bfa253a9ad178e1fa578c028071cb26f6d2",
+      "proves_historical_p03_j1_or_j2": false,
+      "required_path_subset_verified": true
+    },
+    "G013": {
+      "changed_paths": [
+        "tests/unit/test_project_knowledge_refresh.py",
+        "tests/unit/test_project_knowledge_substrate_architecture.py",
+        "tools/project_knowledge/model.py",
+        "tools/project_knowledge/services/generation.py",
+        "tools/project_knowledge/services/refresh.py",
+        "tools/project_knowledge/views.py"
+      ],
+      "commit": "192dc161203577c11e7a7fce869634a5fccc29d8",
+      "is_ancestor_of_original_source_pin": true,
+      "parent": "abd752d3c604a382121e45773442de69ed4c01e1",
+      "proves_historical_p03_j1_or_j2": false,
+      "required_path_subset_verified": true
+    }
+  },
+  "original_git_source_pin": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+  "original_preexisting_source_frame": {
+    "distinct_paths": 15,
+    "source_role_count": 10,
+    "witness_count": 16
+  },
+  "physical_target_selected": false,
+  "schema_version": 1,
+  "scientific_method": "RESEARCH673_M1_M6_OWNER_ACCEPTED",
+  "source_qualification": {
+    "cross_semantic_move_refresh_test": "GIT_TEST_DEFINITION_PRESENT_NOT_EXECUTION",
+    "current_worktree_files_not_used_as_original_source_evidence": true,
+    "documented_historical_gates": [
+      "G006_REPORTED_ACCEPTED",
+      "G013_REPORTED_ACCEPTED"
+    ],
+    "g006_identity_move_supersede_and_history": "GIT_CODE_AND_TEST_DEFINITIONS_PRESENT",
+    "g013_refresh_and_rebuild_equivalence": "GIT_CODE_AND_TEST_DEFINITIONS_PRESENT",
+    "historical_git_commits_form_chronology_not_j1_effect_supersession": true,
+    "original_source_paths_are_not_j2_covers_declarations": true,
+    "w5_subject_comparator": "ORIGINAL_HISTORICAL_W5_SOURCE_PRESENT"
+  },
+  "status": "SOURCE_VERIFIED_CANDIDATE_ONLY_NOT_A_QUALIFIED_V03_WORLD",
+  "twelve_primary_tasks_originated": false,
+  "world_candidate": "P03V2_PKA_IDENTITY_AND_DERIVED_REFRESH_REAL_SOURCES_V01"
+}

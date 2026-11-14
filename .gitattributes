@@ -109,6 +109,9 @@ experiments/r0_p03_navigation_probe/v03_provider_ci_receipt_admission_result_v01
 # Preserve live-check source relay and derived contradiction receipt as exact LF bytes.
 experiments/r0_p03_navigation_probe/v03_live_ci_provider_conflict_source_v01.json -text
 experiments/r0_p03_navigation_probe/v03_live_ci_provider_reconciliation_result_v01.json -text
+# Preserve the exact Git-pinned real-semantic-world source audit and proposed owner packet across Windows checkout.
+experiments/r0_p03_navigation_probe/v03_real_pk_semantic_candidate_audit_result_v01.json -text
+experiments/r0_p03_navigation_probe/v03_real_pk_semantic_j1_owner_proposal_v01.json -text
 # Preserve both original MC-0030 Message 063 historical carriers as exact Git blobs across Windows checkout.
 # The collision guard hashes their literal LF source bytes; CRLF worktree conversion would falsify the historical exception.
 docs/model_collaboration/threads/MC-0030/messages/063_chatgpt_r0_p03_message062_reconciliation_and_owner_option_a.md -text
