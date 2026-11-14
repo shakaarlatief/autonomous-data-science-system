@@ -1,0 +1,275 @@
+{
+  "j2_evidence_ladder_candidate": [
+    {
+      "claim": "The action commit has the exact correction parent and adds only Message 018",
+      "class": "OBSERVABLE",
+      "evidence_id": "J2OBS-D1-GIT-PATH",
+      "governing_completion_consequence": false,
+      "source": "git:cd0cf087a4d0ddb30920a8c753e478da8f92295c",
+      "verification": "GIT_OBJECT_VERIFIED"
+    },
+    {
+      "claim": "Claude reports its own GitHub connector transport",
+      "class": "SOURCE_REPORTED_ATTESTATION",
+      "evidence_id": "J2ASSERT-D1-CLAUDE-TRANSPORT",
+      "governing_completion_consequence": false,
+      "source": "docs/model_collaboration/threads/MC-0029/messages/018_claude_d2_lineage_evaluator_b.md",
+      "verification": "MESSAGE_CONTENT_VERIFIED_PROVIDER_TRANSPORT_NOT_INDEPENDENTLY_OBSERVED"
+    },
+    {
+      "claim": "The actual Claude message and Git action realize E01's three required completion components",
+      "class": "RELATIONAL_PROPOSAL",
+      "covered_components": [
+        "TRANSPORT_ATTESTED_GITHUB_CONNECTOR",
+        "AUTHORIZED_PATH_ONLY",
+        "COMMIT_RECEIPT_BOUND_TO_CORRECTION_HEAD"
+      ],
+      "evidence_id": "J2REL-D1-E01-COVERAGE",
+      "governing_completion_consequence": false,
+      "source": "docs/model_collaboration/threads/MC-0029/messages/018_claude_d2_lineage_evaluator_b.md",
+      "target_effect_id": "D1-E01-D2-CLAUDE-WRITE-REQUIREMENT",
+      "verification": "NOT_ADMITTED_AS_P03_NATURAL_OWNER_RELATION"
+    }
+  ],
+  "new_p03_accepted_j1_effect_ids": [],
+  "new_p03_formal_scores": null,
+  "new_p03_formal_tasks": [],
+  "new_p03_owner_decision": null,
+  "new_p03_qualified_j2_relations": [],
+  "original_d1_historical_replay_evidence": {
+    "original_d1_owner_review_packet_sha256_basis": "WORKTREE_BYTES_CRLF",
+    "original_d1_probe": "HYBRID_D1_REAL_EVENT_REPLAY_V01",
+    "original_event_source": "Research 485",
+    "original_output_shape_reconciliation": "Research 499",
+    "original_owner_acceptance_applies_to_new_p03_world": false,
+    "original_owner_acceptance_source": "Research 491"
+  },
+  "original_d1_non_governing_j3_preview": {
+    "d1_raw_v01_initialization_shape": "SINGLE_OBJECT",
+    "historical_d1_disposition": "D1_AMEND_NOT_FORMAL_P03_PASS",
+    "non_governing_d1_evaluator_projection": {
+      "acceptance_binding_valid": true,
+      "authorization_exercise_status": "EXERCISED_VALID",
+      "current_effect_ids": [
+        "D1-E01-D2-CLAUDE-WRITE-REQUIREMENT",
+        "D1-E02-NO-CLAUDE-RUNTIME-BRIDGE"
+      ],
+      "fixture_id": "REAL_CLAUDE_MESSAGE018_TRANSPORT_CORRECTION",
+      "lineage_relation_valid": true,
+      "next_gap": "NONE",
+      "realization_initialization": [
+        {
+          "effect_id": "D1-E01-D2-CLAUDE-WRITE-REQUIREMENT",
+          "mode": "OPEN_RESET"
+        }
+      ],
+      "realization_orientation": "SATISFIED",
+      "requirement_satisfied": true,
+      "review_owner": null,
+      "review_required": false,
+      "shared_predicates": {
+        "authorization_exercise_valid": true,
+        "authorized_path_only": true,
+        "commit_receipt_bound_to_correction_head": true,
+        "evidence_valid": true,
+        "lineage_transition_valid": true,
+        "qualification_complete": true,
+        "runtime_bridge_prohibition_not_violated": true,
+        "transport_attested_github_connector": true
+      },
+      "source_fact_contract_valid": true,
+      "standing_prohibition_enforcement": "DETECTIVE_ONLY_COMPLIANT"
+    },
+    "research_499_reconciled_initialization_shape": "ORDERED_LIST_BY_EFFECT_ID",
+    "source": "D1_HISTORICAL_EVALUATOR_A_DEVELOPMENT_REPLAY"
+  },
+  "original_d1_provenance": {
+    "actual_git_action_parent": "73f54c6a96b7a9172376b4c88deb9a5a400506d0",
+    "actual_git_changed_paths": [
+      "docs/model_collaboration/threads/MC-0029/messages/018_claude_d2_lineage_evaluator_b.md"
+    ],
+    "original_d1_lifecycle": {
+      "predecessor_id": "R484-S5-CLAUDE-RUNTIME-BRIDGE-REQUIREMENT",
+      "realization_succession": "OPEN_RESET",
+      "relation": "REPLACE",
+      "successor_id": "D1-E01-D2-CLAUDE-WRITE-REQUIREMENT"
+    },
+    "original_d1_packet_crlf_length": 5193,
+    "original_d1_packet_git_blob_length": 5107,
+    "original_d1_recorded_owner_packet_sha256": "2ac7ec839138189b5657da4c8f78f8c938ac3227da1c7af7f3c6f3fda7ae4fb4",
+    "original_d1_recorded_sha256_basis": "WORKTREE_BYTES_CRLF",
+    "original_git_action_commit": "cd0cf087a4d0ddb30920a8c753e478da8f92295c",
+    "original_owner_decision_class": "CONVERSATIONAL_OWNER_ACCEPTANCE_FOR_D1_REPLAY_ONLY",
+    "same_content_git_blob_sha256": "af7037517174dda8e80a34f4c3cc3608afacf498ed798a3fb91242dfe4765e79",
+    "source_reported_transport": "CLAUDE_SIDE_GITHUB_CONNECTOR",
+    "transport_proof_class": "CLAUDE_SOURCE_ATTESTATION_NOT_INDEPENDENT_PROVIDER_PROOF"
+  },
+  "owner_decision_options": [
+    "ACCEPT",
+    "AMEND",
+    "REJECT"
+  ],
+  "proposal_id": "R0_P03_V2_D1_REAL_EVENT_REUSE_CANDIDATE_001",
+  "proposal_status": "OWNER_EXPERIMENT_ONLY_ACCEPTANCE_NOT_OBSERVED",
+  "proposed_lineage": {
+    "predecessor_id": "R484-S5-CLAUDE-RUNTIME-BRIDGE-REQUIREMENT",
+    "realization_succession": "OPEN_RESET",
+    "relation": "REPLACE",
+    "successor_id": "D1-E01-D2-CLAUDE-WRITE-REQUIREMENT"
+  },
+  "proposed_world_id": "P03V2_DEVELOPMENT_WORLD_CLAUDE_COLLABORATION_V01",
+  "request_for_new_owner_review": "May these exact four previously reviewed D1 effect statements, as bound to the specified original Git source and original development acceptance, be reused as EXPERIMENT-ONLY J1 semantic inputs in the new P03-V2 development world? This does not alter D1, active project authority, J2 RELATIONAL provenance, real CI evidence or physical target selection.",
+  "requested_effect_accounting": {
+    "NO_REALIZATION_REQUIRED": 3,
+    "REALIZATION_TRACKED": 1
+  },
+  "requested_experiment_only_j1_effects": [
+    {
+      "accepted_effect_id": "D1-E01-D2-CLAUDE-WRITE-REQUIREMENT",
+      "accepted_effect_statement": "For the D-2 Evaluator B collaboration write, Claude must use the Claude-side GitHub connector and change only the authorized MC-0029 Message 018 path.",
+      "accounting_disposition": "REALIZATION_TRACKED",
+      "completion_contract": {
+        "activation_required": false,
+        "authority": "GOVERNING_ACCEPTANCE",
+        "composition_rule": "ALL_REQUIRED",
+        "evidence_required": true,
+        "qualification_required": true,
+        "required_components": [
+          "TRANSPORT_ATTESTED_GITHUB_CONNECTOR",
+          "AUTHORIZED_PATH_ONLY",
+          "COMMIT_RECEIPT_BOUND_TO_CORRECTION_HEAD"
+        ]
+      },
+      "type": "REQUIRE"
+    },
+    {
+      "accepted_effect_id": "D1-E02-NO-CLAUDE-RUNTIME-BRIDGE",
+      "accepted_effect_statement": "The D-2 Claude action must not be routed through or depend on the ChatGPT-only Codexless Runtime Bridge.",
+      "accounting_disposition": "NO_REALIZATION_REQUIRED",
+      "accounting_reason": "STANDING_CONTROL_CONSEQUENCE",
+      "standing_enforcement": {
+        "control_ref": "D1-HANDOFF-TRANSPORT-AUDIT",
+        "mode": "DETECTIVE_ONLY"
+      },
+      "type": "PROHIBIT"
+    },
+    {
+      "accepted_effect_id": "D1-E03-MESSAGE018-AUTHORIZATION",
+      "accepted_effect_statement": "Claude is authorized to create exactly MC-0029 Message 018 through the Claude-side GitHub connector for the blinded D-2 Evaluator B task.",
+      "accounting_disposition": "NO_REALIZATION_REQUIRED",
+      "accounting_reason": "SELF_EXECUTING_DISPOSITION",
+      "exercise_contract": {
+        "exact_authorized_path": "docs/model_collaboration/threads/MC-0029/messages/018_claude_d2_lineage_evaluator_b.md",
+        "governed_receipt_required_when_exercised": true
+      },
+      "type": "AUTHORIZE"
+    },
+    {
+      "accepted_effect_id": "D1-E04-TRANSPORT-CORRECTION-LIFECYCLE",
+      "accepted_effect_statement": "The incorrect Research 484 Section 5 Claude Runtime-Bridge requirement is replaced by the corrected Claude-side transport rule, and Research 477's transport-nonconformance finding is withdrawn while its substantive architecture reconciliation remains unchanged.",
+      "accounting_disposition": "NO_REALIZATION_REQUIRED",
+      "accounting_reason": "SELF_EXECUTING_DISPOSITION",
+      "lineage": {
+        "predecessor_id": "R484-S5-CLAUDE-RUNTIME-BRIDGE-REQUIREMENT",
+        "realization_succession": "OPEN_RESET",
+        "relation": "REPLACE",
+        "successor_id": "D1-E01-D2-CLAUDE-WRITE-REQUIREMENT"
+      },
+      "type": "LIFECYCLE"
+    }
+  ],
+  "schema_version": 1,
+  "source_commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+  "source_facts": {
+    "actual_git_commit_parent_and_path": "INDEPENDENTLY_VERIFIED_GIT",
+    "claude_connector_transport": "SOURCE_ATTESTED_NOT_INDEPENDENTLY_PROVIDER_VERIFIED",
+    "original_d1_source_fact_fixture": "REAL_CLAUDE_MESSAGE018_TRANSPORT_CORRECTION",
+    "original_source_action_github_commit": "cd0cf087a4d0ddb30920a8c753e478da8f92295c"
+  },
+  "source_manifest": [
+    {
+      "byte_count": 5107,
+      "commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+      "git_blob_oid": "0d28cc8e62db26d73d991591b320034e136a1c85",
+      "sha256": "af7037517174dda8e80a34f4c3cc3608afacf498ed798a3fb91242dfe4765e79",
+      "source_path": "experiments/ao10_hybrid_d1_replay_v01/owner_review_packet.json"
+    },
+    {
+      "byte_count": 3096,
+      "commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+      "git_blob_oid": "f6b6bca6871e603d9ae1f87336bc0459d9a8b2bc",
+      "sha256": "cffbeffc45e0adeda0adbb6b240b4b9968f461f3af4ce3f89af716776742ebe4",
+      "source_path": "experiments/ao10_hybrid_d1_replay_v01/accepted_j1.json"
+    },
+    {
+      "byte_count": 1327,
+      "commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+      "git_blob_oid": "4aba9ed09da78a0b82b7d4b7e41193a4f02dfdf9",
+      "sha256": "3b5ceaa50765297c34d8d1cfa2f6230ba1d3263f457aa3f6f71dd51f39b6ded3",
+      "source_path": "experiments/ao10_hybrid_d1_replay_v01/source_facts.json"
+    },
+    {
+      "byte_count": 3093,
+      "commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+      "git_blob_oid": "cc0ee1ae98ed8b745d2b9bfff48f834ac2f4a0a9",
+      "sha256": "b1852c008fe9f61026cc44b24e5f936c8ec22d129989cb09019ae004805d98ac",
+      "source_path": "experiments/ao10_hybrid_d1_replay_v01/definitions.json"
+    },
+    {
+      "byte_count": 9293,
+      "commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+      "git_blob_oid": "e5ca846ae048228c5e2fb9d748052e12424b95c0",
+      "sha256": "4891047345854a367cbf8a7b95a8486512481c7562002b3e2a4444f346da5a57",
+      "source_path": "experiments/ao10_hybrid_d1_replay_v01/evaluator_chatgpt_a.py"
+    },
+    {
+      "byte_count": 3750,
+      "commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+      "git_blob_oid": "afc430a7a2aa1def78af1d5c269ef683449e7b43",
+      "sha256": "31d9d2a1f0ecbf9fe752e76e52a74be0b195f01206561ac16a72c58f2132e409",
+      "source_path": "docs/research/484_d2_claude_evaluator_b_handoff_freeze.md"
+    },
+    {
+      "byte_count": 4543,
+      "commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+      "git_blob_oid": "93b92518cc990fee49aa098e1b18435629ce752b",
+      "sha256": "b8bcc01822fb7e9327dd7f331950d88a23c802572ce4371665e21496ba71ac24",
+      "source_path": "docs/research/485_claude_collaboration_transport_correction.md"
+    },
+    {
+      "byte_count": 8048,
+      "commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+      "git_blob_oid": "55a1dcd1ecdb3229a2b1850023ad38afed8c6589",
+      "sha256": "46f648146d915401c7773962dd3ac56a38517e1a68f6d70d455aff4f85c34d73",
+      "source_path": "docs/research/490_d1_integrated_real_event_microreplay_protocol.md"
+    },
+    {
+      "byte_count": 3551,
+      "commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+      "git_blob_oid": "dded217e6581a4593ef9e87fe8ff6df737411e34",
+      "sha256": "56598c88023aed3e1e86c92430fff64ea5312bab1b93040ca7a28bbfb6e7682d",
+      "source_path": "docs/research/491_d1_owner_acceptance_and_j1_binding.md"
+    },
+    {
+      "byte_count": 3050,
+      "commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+      "git_blob_oid": "988e2449df6e18348f69ee2f11d7e4d13a040a7d",
+      "sha256": "1167a314e99c5ca0efb5980b77338316f88f8010d209c05cf0cb5929a546ed0a",
+      "source_path": "docs/research/495_d1_hash_basis_correction.md"
+    },
+    {
+      "byte_count": 6032,
+      "commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+      "git_blob_oid": "790538f5b0d17647fec37b5b2c018983ca0c286c",
+      "sha256": "07413ab2c984f2e836354ab6c43bbdcf8d127d1d6cb1605559e978cc7841e4e0",
+      "source_path": "docs/research/499_d1_comparison_result_and_reconciliation.md"
+    },
+    {
+      "byte_count": 20671,
+      "commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+      "git_blob_oid": "2d8fdf1a50dba34427f72d4c01949504003d7037",
+      "sha256": "890ea35d0e6ea99143e0918cb41ee93a8c28add9981d57add9f20dcc707cadaa",
+      "source_path": "docs/model_collaboration/threads/MC-0029/messages/018_claude_d2_lineage_evaluator_b.md"
+    }
+  ]
+}

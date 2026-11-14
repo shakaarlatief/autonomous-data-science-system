@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / R0-P03-V2 METHOD OWNER ACCEPTED / PINNED REAL-SOURCE SPECIMEN EXECUTED / SEMANTIC EFFECT/J2 ADMISSION NEXT / FORMAL SCORE INCOMPLETE
+**Status:** OPEN / R0-P03 REAL D1 SOURCE REUSE OWNER PACKET PREPARED / NO NEW J1/J2 ACCEPTED / FORMAL P03 INCOMPLETE
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -1140,5 +1140,21 @@ Research 674 executed a reproducible preadmission candidate using exact Git-pinn
     NEXT_ACTOR=chatgpt
     FORMAL_V03_WORLD=HOLD
     EXPERIMENTAL_J1_EFFECTS_ADMITTED=0
+    FORMAL_P03=INCOMPLETE
+    PHYSICAL_TARGET_SELECTED=false
+
+## Exact real D1 event P03 experiment-only owner packet ready, Checkpoint 936
+
+Research 675 verifies the actual original Research 485-491 four-effect D1 development replay, scoped original owner ACCEPT, original Claude Git action parent and one changed path, and exact historical owner-packet hash bases (recorded CRLF versus committed LF Git blob). Research 499's original D1_AMEND outcome remains intact. The new prospectively proposed P03-V2 reuse packet contains those original four effects as experiment-only candidates, one explicit REPLACE/OPEN_RESET lineage, separate observable Git and source-attested transport evidence, and a separate unadmitted natural-owner J2 RELATIONAL link. The packet's canonical SHA-256 is 186c70ff487104f8ee5baee8d21b50ffd466e812c6b97debb20296c8bbf9451f. Twenty-two new focused regression cases passed, including a guard against drift in the executed historical evaluator. New P03 owner decision, J1 acceptance, J2 qualification, original formal score and physical target remain absent. No further Claude review is assigned.
+
+    CURRENT=R0_P03_EXACT_REAL_EVENT_REUSE_OWNER_DECISION
+    OWNER_PACKET=R0_P03_V2_D1_REAL_EVENT_REUSE_CANDIDATE_001
+    PACKET_SHA256=186c70ff487104f8ee5baee8d21b50ffd466e812c6b97debb20296c8bbf9451f
+    CHATGPT_MESSAGE=MC0030_MESSAGE088
+    RESEARCH=675
+    VALIDATION=372
+    CHECKPOINT=936
+    P03_ACCEPTED_J1_EFFECTS=0
+    P03_QUALIFIED_J2_RELATIONS=0
     FORMAL_P03=INCOMPLETE
     PHYSICAL_TARGET_SELECTED=false

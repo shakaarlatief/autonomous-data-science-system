@@ -1,0 +1,16 @@
+{
+  "formal_r0_p03_scores": null,
+  "formal_v03_experiment_world": "HOLD",
+  "historical_action_parent_path_verified": true,
+  "historical_d1_effects_reviewed_in_original_context": 4,
+  "new_owner_confirmation": "NOT_OBSERVED",
+  "new_p03_accepted_effects": 0,
+  "new_p03_qualified_j2_relations": 0,
+  "original_d1_result_not_rescored": true,
+  "original_d1_source_count": 12,
+  "owner_packet_canonical_sha256": "186c70ff487104f8ee5baee8d21b50ffd466e812c6b97debb20296c8bbf9451f",
+  "owner_packet_git_source_pin": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+  "physical_target_selected": false,
+  "proposal_id": "R0_P03_V2_D1_REAL_EVENT_REUSE_CANDIDATE_001",
+  "status": "REAL_D1_EVENT_VERIFIED_EXPERIMENT_REUSE_NOT_YET_ACCEPTED"
+}

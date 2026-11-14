@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-11-14
-**Status:** MC-0030 OPEN / Research 672 M1-M6 owner-accepted in Research 673 / real original-source frame Research 674 verified (15 paths, 16 witnesses, 28 new tests) / experiment J1/J2 unadmitted / formal P03 INCOMPLETE / physical target unselected / Specification 028 unchanged / MC-0029 resolved / MC-0010 deferred
+**Status:** MC-0030 OPEN / Research 673 P03-V2 method effective / Research 675 original D1 Git event and owner packet verified / new experiment-only P03 packet SHA-256 186c70ff... prepared NOT ACCEPTED / J1/J2 unadmitted / formal P03 INCOMPLETE / physical target unselected / Specification 028 unchanged / MC-0029 resolved / MC-0010 deferred
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -20,6 +20,10 @@ docs/current_routing.json
 ```
 
 This inbox intentionally does not duplicate that state except where needed to explain collaboration obligations.
+
+## Current MC-0030 exact real D1 experiment-only owner packet
+
+Research 675 and Message 088 verified the original D1 owner-reviewed four-effect development replay, actual original Git parent/path and historical byte-basis SHA distinction. The new P03-V2 experiment-only owner review packet R0_P03_V2_D1_REAL_EVENT_REUSE_CANDIDATE_001 has canonical SHA-256 186c70ff487104f8ee5baee8d21b50ffd466e812c6b97debb20296c8bbf9451f and remains NOT ACCEPTED. Original D1=AMEND, new P03 J1/J2 zero admitted, 22 new regressions pass. Next is exact owner ACCEPT/AMEND/REJECT. No new Claude review is pending.
 
 ## Current MC-0030 owner-accepted R0-P03-V2 method and real-source preadmission
 
