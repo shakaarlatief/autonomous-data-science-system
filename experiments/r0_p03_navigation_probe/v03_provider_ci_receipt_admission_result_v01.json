@@ -1,0 +1,65 @@
+{
+  "cases": [
+    {
+      "diagnostic": "STRUCTURALLY_RED_UNAUTHENTICATED_REPLAY",
+      "head_sha": "511224a037bf63031ead0eda61754702361eebd7",
+      "independently_authenticated_model_or_connector": false,
+      "independently_authenticated_provider_receipt_offline": false,
+      "j3_completion_admissible": false,
+      "missing_count": 0,
+      "qualified_j2_relational": false,
+      "source_replay_failed_check_count": 2,
+      "source_replay_succeeded_check_count": 6
+    },
+    {
+      "diagnostic": "STRUCTURALLY_GREEN_UNAUTHENTICATED_REPLAY",
+      "head_sha": "e29329b3097b593a917a386d33f900a3cf97b193",
+      "independently_authenticated_model_or_connector": false,
+      "independently_authenticated_provider_receipt_offline": false,
+      "j3_completion_admissible": false,
+      "missing_count": 0,
+      "qualified_j2_relational": false,
+      "source_replay_failed_check_count": 0,
+      "source_replay_succeeded_check_count": 8
+    }
+  ],
+  "next": "INTEGRATE_REAL_TRUSTED_PROVIDER_SOURCE_ADAPTER_AND_OWNER_AUTHENTICATION_WITHOUT_SELF_CERTIFICATION",
+  "operationally_observed_online": {
+    "bridge_authenticated_app_source_adapter_is_a_future_integration_candidate": true,
+    "copy_can_serve_as_independent_provider_authentication": false,
+    "github_provider_api_was_actually_called_in_exposed_interaction": true,
+    "online_source_results_transcribed_into_this_untrusted_copy": true,
+    "real_time_current_head_ci_pass_proven_by_this_file": false,
+    "this_file_is_signed_by_github": false,
+    "this_program_can_requery_provider_api": false
+  },
+  "qualification": {
+    "current_branch_prepush_ci_enforced": "NOT_ESTABLISHED",
+    "formal_r0_p03_score": null,
+    "historical_e01_j3": "HOLD",
+    "independently_verified_original_d1_connector_transport": false,
+    "new_accepted_j1": 0,
+    "new_j3_completion_certified": false,
+    "new_qualified_relational_j2": 0,
+    "original_accepted_experiment_only_j1_count": 4,
+    "physical_architecture_selected": false
+  },
+  "research_scope": "R0_P03_V2_EXPOSED_UNSCORED_RECEIPT_TRUST_ROOT_PROTOCOL",
+  "schema_version": 1,
+  "source_class": "DERIVED_EXPOSED_MODEL_TRANSCRIPTION_OF_GITHUB_APP_API_READS",
+  "source_copy_sha256": "cd37b2222f9efd1e10ba0c884f2fe27af63209abf7605015b7267f265de610bd",
+  "source_git_parent_reverified": {
+    "511224a037bf63031ead0eda61754702361eebd7": "5304f10d5c2943fcca50303c3282ad56b1b519d8",
+    "e29329b3097b593a917a386d33f900a3cf97b193": "36ab6cd33a31d579c68b6b814ca70b1fae59fc40"
+  },
+  "trust_root_requirements_for_future_qualified_provider_adapter": [
+    "Explicit allowlisted provider account and repository binding",
+    "Server-owned authenticated read with no caller-selected token or host",
+    "Native check-run and workflow-run ID with exact commit SHA and attempt",
+    "Provider-owned status and issuer app identity from a live response",
+    "Re-query/reconciliation for retries, reruns, missing checks and stale results",
+    "Source-owner/actor authentication verified independently from Git authorship",
+    "Accepted J1 component semantic match and explicit J2 fact-class qualification",
+    "No promotion of a copied JSON envelope or derived index to source authority"
+  ]
+}

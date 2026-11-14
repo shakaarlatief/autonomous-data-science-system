@@ -102,6 +102,10 @@ experiments/r0_p03_navigation_probe/four_need_public_claim_support_reconciliatio
 experiments/r0_p03_navigation_probe/source_closure_common_projection_aggregate_v01.json -text
 # Exact original pinned documentary evidence-chain source-free aggregate.
 experiments/r0_p03_navigation_probe/historical_semantic_evidence_chain_aggregate_v01.json -text
+# Preserve the exact exposed provider-source transcription and derived admission result across Windows/POSIX worktrees.
+# The offline assay has a raw-byte source SHA; line-ending conversion must not create false source drift.
+experiments/r0_p03_navigation_probe/v03_provider_ci_receipt_source_snapshot_v01.json -text
+experiments/r0_p03_navigation_probe/v03_provider_ci_receipt_admission_result_v01.json -text
 # Preserve both original MC-0030 Message 063 historical carriers as exact Git blobs across Windows checkout.
 # The collision guard hashes their literal LF source bytes; CRLF worktree conversion would falsify the historical exception.
 docs/model_collaboration/threads/MC-0030/messages/063_chatgpt_r0_p03_message062_reconciliation_and_owner_option_a.md -text

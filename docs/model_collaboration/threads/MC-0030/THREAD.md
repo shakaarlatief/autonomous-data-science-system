@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / GITHUB NATIVE CI RECEIPTS VERIFIED AND WINDOWS CI REPAIRED / ACTOR TRUST ROOT AND CONNECTOR PROOF UNQUALIFIED / FORMAL P03 INCOMPLETE
+**Status:** OPEN / TWO REAL GITHUB CI CASES OFFLINE RECEIPT CONTRACT TESTED / PROVIDER COPY UNAUTHENTICATED / SOURCE OWNER TRUST ROOT NEXT / FORMAL P03 INCOMPLETE
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -1273,6 +1273,30 @@ Five relevant GitHub native commit-signature checks were unsigned. GitHub Action
     HISTORICAL_CLAUDE_CONNECTOR_TRANSPORT=UNKNOWN
     INDEPENDENT_MODEL_ACTOR_IDENTITY=UNVERIFIED
     ORIGINAL_P03_EXPERIMENT_ONLY_ACCEPTED_J1=4
+    NEW_QUALIFIED_RELATIONAL_J2=0
+    HISTORICAL_E01_J3=HOLD
+    FORMAL_P03=INCOMPLETE
+    PHYSICAL_TARGET_SELECTED=false
+
+## Exact source-bound provider receipt admission and missing trust root, Checkpoint 943
+
+Research 682, Validation 379 and Message 096 inspect genuine connected GitHub API results for the two past Checkpoint 941 and 942 CI histories. The former has six completed successes and two completed Windows failures; the latter has eight completed successes. Both have native GitHub check/workflow IDs, app identity, exact source SHA and attempts, while the original commits are unsigned. Those live API reads are distinct from the subsequent model-authored source-observation JSON copy.
+
+The executable bounded offline admission protocol verifies the Git source ancestry and two-event run/check linkage, account/issuer, completeness, duplicate or missing checks, run attempt, source SHA, and a fixed DERIVED source copy SHA. Fifty-two focused tests pass. One intentionally rewrites the old real failures into a completely coherent false green copy: the parser recognizes structural coherence but strictly denies authenticated provider proof, agent/source-owner identity, qualified RELATIONAL J2, and J3 completion. This exposes the gap an actual authenticated provider source adapter must resolve rather than covering it with richer JSON.
+
+This work is a development evidence/port feasibility probe, not a new accepted J1, a protected formal P03 task, a production trust root, an endorsement of signed Git, or a physical target selection. Original experimental J1=4, qualified RELATIONAL J2=0, original E01 J3 HOLD and formal P03 INCOMPLETE remain. Next test genuine authenticated live provider/owner provenance, including source-specific freshness and recovery, under an exact owner-visible contract if consequential authority is required.
+
+    CURRENT=R0_P03_PROVIDER_CI_OFFLINE_RECEIPT_ADMISSION_TESTED_TRUSTED_SOURCE_NEXT
+    RESEARCH=682
+    VALIDATION=379
+    CHECKPOINT=943
+    CHATGPT_MESSAGE=MC0030_MESSAGE096
+    REAL_GITHUB_SOURCE_HISTORIES=2
+    CI_HISTORY_941=6_SUCCESS_2_FAILURE
+    CI_HISTORY_942=8_SUCCESS
+    SOURCE_COPY_AUTHENTICATED=false
+    ORIGINAL_ACCEPTED_EXPERIMENT_ONLY_J1=4
+    NEW_ACCEPTED_J1=0
     NEW_QUALIFIED_RELATIONAL_J2=0
     HISTORICAL_E01_J3=HOLD
     FORMAL_P03=INCOMPLETE

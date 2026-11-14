@@ -1,0 +1,302 @@
+{
+  "inspection_date": "2026-11-14",
+  "not_a_governing_effect_or_formal_p03_task": true,
+  "observation_methods": [
+    "github_list_check_runs_for_ref",
+    "github_get_workflow_run",
+    "github_fetch_git_commit"
+  ],
+  "offline_provider_authentication": false,
+  "qualified_j2_relational_claims": 0,
+  "record_class": "DERIVED_EXPOSED_MODEL_TRANSCRIPTION_OF_GITHUB_APP_API_READS",
+  "repository_full_name": "shakaarlatief/autonomous-data-science-system",
+  "schema_version": 1,
+  "source_assurance_limit": "Source API was queried through an authenticated connector in the live interaction; this copied file is not a signed response, immutable provider receipt, or independent model identity proof.",
+  "source_provider": "github.com",
+  "source_relative_cases": [
+    {
+      "check_runs": [
+        {
+          "app_id": 15368,
+          "app_slug": "github-actions",
+          "conclusion": "failure",
+          "head_sha": "511224a037bf63031ead0eda61754702361eebd7",
+          "id": 132549849947,
+          "name": "validate-collaboration-state (windows-latest)",
+          "status": "completed",
+          "workflow_run_id": 43628566028
+        },
+        {
+          "app_id": 15368,
+          "app_slug": "github-actions",
+          "conclusion": "success",
+          "head_sha": "511224a037bf63031ead0eda61754702361eebd7",
+          "id": 132549849890,
+          "name": "validate-current-routing (windows-latest)",
+          "status": "completed",
+          "workflow_run_id": 43628566317
+        },
+        {
+          "app_id": 15368,
+          "app_slug": "github-actions",
+          "conclusion": "success",
+          "head_sha": "511224a037bf63031ead0eda61754702361eebd7",
+          "id": 132549849745,
+          "name": "repository-integrity (ubuntu-latest)",
+          "status": "completed",
+          "workflow_run_id": 43628566327
+        },
+        {
+          "app_id": 15368,
+          "app_slug": "github-actions",
+          "conclusion": "success",
+          "head_sha": "511224a037bf63031ead0eda61754702361eebd7",
+          "id": 132549849742,
+          "name": "validate",
+          "status": "completed",
+          "workflow_run_id": 43628566318
+        },
+        {
+          "app_id": 15368,
+          "app_slug": "github-actions",
+          "conclusion": "success",
+          "head_sha": "511224a037bf63031ead0eda61754702361eebd7",
+          "id": 132549849657,
+          "name": "validate-current-routing (ubuntu-latest)",
+          "status": "completed",
+          "workflow_run_id": 43628566317
+        },
+        {
+          "app_id": 15368,
+          "app_slug": "github-actions",
+          "conclusion": "failure",
+          "head_sha": "511224a037bf63031ead0eda61754702361eebd7",
+          "id": 132549849558,
+          "name": "repository-integrity (windows-latest)",
+          "status": "completed",
+          "workflow_run_id": 43628566327
+        },
+        {
+          "app_id": 15368,
+          "app_slug": "github-actions",
+          "conclusion": "success",
+          "head_sha": "511224a037bf63031ead0eda61754702361eebd7",
+          "id": 132549849543,
+          "name": "validate-collaboration-state (ubuntu-latest)",
+          "status": "completed",
+          "workflow_run_id": 43628566028
+        },
+        {
+          "app_id": 15368,
+          "app_slug": "github-actions",
+          "conclusion": "success",
+          "head_sha": "511224a037bf63031ead0eda61754702361eebd7",
+          "id": 132549849517,
+          "name": "validate-knowledge-map",
+          "status": "completed",
+          "workflow_run_id": 43628566322
+        }
+      ],
+      "commit_sha": "511224a037bf63031ead0eda61754702361eebd7",
+      "git_commit_signature": {
+        "reason": "unsigned",
+        "verified": false
+      },
+      "run_created_at_utc": "2026-11-14T18:47:38Z",
+      "workflow_runs": [
+        {
+          "actor_login": "shakaarlatief",
+          "attempt": 1,
+          "conclusion": "success",
+          "event": "push",
+          "head_sha": "511224a037bf63031ead0eda61754702361eebd7",
+          "id": 43628566318,
+          "name": "Checkpoint metadata",
+          "status": "completed"
+        },
+        {
+          "actor_login": "shakaarlatief",
+          "attempt": 1,
+          "conclusion": "success",
+          "event": "push",
+          "head_sha": "511224a037bf63031ead0eda61754702361eebd7",
+          "id": 43628566317,
+          "name": "Current routing consistency",
+          "status": "completed"
+        },
+        {
+          "actor_login": "shakaarlatief",
+          "attempt": 1,
+          "conclusion": "success",
+          "event": "push",
+          "head_sha": "511224a037bf63031ead0eda61754702361eebd7",
+          "id": 43628566322,
+          "name": "Knowledge map integrity",
+          "status": "completed"
+        },
+        {
+          "actor_login": "shakaarlatief",
+          "attempt": 1,
+          "conclusion": "failure",
+          "event": "push",
+          "head_sha": "511224a037bf63031ead0eda61754702361eebd7",
+          "id": 43628566028,
+          "name": "Model collaboration state",
+          "status": "completed"
+        },
+        {
+          "actor_login": "shakaarlatief",
+          "attempt": 1,
+          "conclusion": "failure",
+          "event": "push",
+          "head_sha": "511224a037bf63031ead0eda61754702361eebd7",
+          "id": 43628566327,
+          "name": "Repository integrity",
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "check_runs": [
+        {
+          "app_id": 15368,
+          "app_slug": "github-actions",
+          "conclusion": "success",
+          "head_sha": "e29329b3097b593a917a386d33f900a3cf97b193",
+          "id": 132556677606,
+          "name": "validate-collaboration-state (ubuntu-latest)",
+          "status": "completed",
+          "workflow_run_id": 43630785845
+        },
+        {
+          "app_id": 15368,
+          "app_slug": "github-actions",
+          "conclusion": "success",
+          "head_sha": "e29329b3097b593a917a386d33f900a3cf97b193",
+          "id": 132556677403,
+          "name": "validate-collaboration-state (windows-latest)",
+          "status": "completed",
+          "workflow_run_id": 43630785845
+        },
+        {
+          "app_id": 15368,
+          "app_slug": "github-actions",
+          "conclusion": "success",
+          "head_sha": "e29329b3097b593a917a386d33f900a3cf97b193",
+          "id": 132556677135,
+          "name": "validate-current-routing (ubuntu-latest)",
+          "status": "completed",
+          "workflow_run_id": 43630785793
+        },
+        {
+          "app_id": 15368,
+          "app_slug": "github-actions",
+          "conclusion": "success",
+          "head_sha": "e29329b3097b593a917a386d33f900a3cf97b193",
+          "id": 132556677109,
+          "name": "repository-integrity (windows-latest)",
+          "status": "completed",
+          "workflow_run_id": 43630785821
+        },
+        {
+          "app_id": 15368,
+          "app_slug": "github-actions",
+          "conclusion": "success",
+          "head_sha": "e29329b3097b593a917a386d33f900a3cf97b193",
+          "id": 132556676962,
+          "name": "repository-integrity (ubuntu-latest)",
+          "status": "completed",
+          "workflow_run_id": 43630785821
+        },
+        {
+          "app_id": 15368,
+          "app_slug": "github-actions",
+          "conclusion": "success",
+          "head_sha": "e29329b3097b593a917a386d33f900a3cf97b193",
+          "id": 132556676884,
+          "name": "validate",
+          "status": "completed",
+          "workflow_run_id": 43630785731
+        },
+        {
+          "app_id": 15368,
+          "app_slug": "github-actions",
+          "conclusion": "success",
+          "head_sha": "e29329b3097b593a917a386d33f900a3cf97b193",
+          "id": 132556676868,
+          "name": "validate-current-routing (windows-latest)",
+          "status": "completed",
+          "workflow_run_id": 43630785793
+        },
+        {
+          "app_id": 15368,
+          "app_slug": "github-actions",
+          "conclusion": "success",
+          "head_sha": "e29329b3097b593a917a386d33f900a3cf97b193",
+          "id": 132556676772,
+          "name": "validate-knowledge-map",
+          "status": "completed",
+          "workflow_run_id": 43630785693
+        }
+      ],
+      "commit_sha": "e29329b3097b593a917a386d33f900a3cf97b193",
+      "git_commit_signature": {
+        "reason": "unsigned",
+        "verified": false
+      },
+      "run_created_at_utc": "2026-11-14T19:12:03Z",
+      "workflow_runs": [
+        {
+          "actor_login": "shakaarlatief",
+          "attempt": 1,
+          "conclusion": "success",
+          "event": "push",
+          "head_sha": "e29329b3097b593a917a386d33f900a3cf97b193",
+          "id": 43630785731,
+          "name": "Checkpoint metadata",
+          "status": "completed"
+        },
+        {
+          "actor_login": "shakaarlatief",
+          "attempt": 1,
+          "conclusion": "success",
+          "event": "push",
+          "head_sha": "e29329b3097b593a917a386d33f900a3cf97b193",
+          "id": 43630785793,
+          "name": "Current routing consistency",
+          "status": "completed"
+        },
+        {
+          "actor_login": "shakaarlatief",
+          "attempt": 1,
+          "conclusion": "success",
+          "event": "push",
+          "head_sha": "e29329b3097b593a917a386d33f900a3cf97b193",
+          "id": 43630785693,
+          "name": "Knowledge map integrity",
+          "status": "completed"
+        },
+        {
+          "actor_login": "shakaarlatief",
+          "attempt": 1,
+          "conclusion": "success",
+          "event": "push",
+          "head_sha": "e29329b3097b593a917a386d33f900a3cf97b193",
+          "id": 43630785845,
+          "name": "Model collaboration state",
+          "status": "completed"
+        },
+        {
+          "actor_login": "shakaarlatief",
+          "attempt": 1,
+          "conclusion": "success",
+          "event": "push",
+          "head_sha": "e29329b3097b593a917a386d33f900a3cf97b193",
+          "id": 43630785821,
+          "name": "Repository integrity",
+          "status": "completed"
+        }
+      ]
+    }
+  ]
+}

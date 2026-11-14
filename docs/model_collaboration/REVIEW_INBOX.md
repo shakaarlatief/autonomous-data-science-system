@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-11-14
-**Status:** MC-0030 OPEN / Research 681 confirms GitHub-native CI execution receipts and fixes two failed Windows checks on Checkpoint 941 through exact LF-pinned Message 063 attributes and workflow trigger/test coverage; repair commit 36ab6cd3 has 4 green GitHub jobs / five sampled commits unsigned / source actor and original Claude connector API remain unverified / original experiment-only J1=4, new J1=0, qualified RELATIONAL J2=0, E01 J3 HOLD / formal P03 INCOMPLETE / physical target unselected / Specification 028 unchanged / MC-0029 resolved / MC-0010 deferred
+**Status:** MC-0030 OPEN / Research 682 uses genuine GitHub API native source histories for 941 (6 PASS, 2 Windows FAIL) and 942 (8 PASS), with 52 source-bound offline adversarial receipt tests PASS / consistent forged all-green copy remains explicitly UNAUTHENTICATED / no model-exclusive owner identity or provider-origin detached receipt inferred / prior Windows CI repair remains green / experiment-only J1=4, new J1=0, qualified RELATIONAL J2=0, old E01 J3 HOLD / formal P03 INCOMPLETE / physical target unselected / Specification 028 unchanged / MC-0029 resolved / MC-0010 deferred
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -20,6 +20,10 @@ docs/current_routing.json
 ```
 
 This inbox intentionally does not duplicate that state except where needed to explain collaboration obligations.
+
+## Current MC-0030 paired real GitHub-native CI admission and natural-owner trust-root boundary, Checkpoint 943
+
+Research 682, Validation 379 and Message 096 use actual native provider API source reads for Checkpoint 941 (six success, two Windows failures) and Checkpoint 942 (eight successes). An explicitly DERIVED and UNAUTHENTICATED 10,143-byte copy was tested with a strict offline run/check/source-admission parser; 52 adversarial tests PASS. A fully coherent forged green copy still cannot authenticate provider evidence, model identity or governing J2/J3. The original four accepted experimental J1 effects, historical E01 HOLD, formal P03 INCOMPLETE and unselected physical target remain. Next: genuine trusted live provider source adapter and source-owner identity/trust-root feasibility, not broader self-certified JSON or historical Claude testimony.
 
 ## Current MC-0030 provider-native CI source evidence and Windows byte-identity repair, Checkpoint 942
 
