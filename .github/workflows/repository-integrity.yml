@@ -4,6 +4,7 @@ on:
   workflow_dispatch:
   push:
     paths:
+      - .gitattributes
       - docs/**
       - schemas/project_knowledge/**
       - tools/project_knowledge/**
@@ -17,12 +18,14 @@ on:
       - scripts/check_knowledge_map.py
       - scripts/check_model_collaboration_state.py
       - tests/unit/test_repository_integrity.py
+      - tests/unit/test_model_collaboration_message_identity.py
       - tests/unit/test_repository_integrity_aggregate.py
       - tests/unit/test_current_routing_integrity.py
       - tests/unit/test_continuity_preflight.py
       - .github/workflows/repository-integrity.yml
   pull_request:
     paths:
+      - .gitattributes
       - docs/**
       - schemas/project_knowledge/**
       - tools/project_knowledge/**
@@ -36,6 +39,7 @@ on:
       - scripts/check_knowledge_map.py
       - scripts/check_model_collaboration_state.py
       - tests/unit/test_repository_integrity.py
+      - tests/unit/test_model_collaboration_message_identity.py
       - tests/unit/test_repository_integrity_aggregate.py
       - tests/unit/test_current_routing_integrity.py
       - tests/unit/test_continuity_preflight.py
@@ -62,6 +66,7 @@ jobs:
         run: >-
           uv run --python 3.13 --locked python -m pytest -q
           tests/unit/test_repository_integrity.py
+          tests/unit/test_model_collaboration_message_identity.py
           tests/unit/test_repository_integrity_aggregate.py
           tests/unit/test_current_routing_integrity.py
           tests/unit/test_continuity_preflight.py

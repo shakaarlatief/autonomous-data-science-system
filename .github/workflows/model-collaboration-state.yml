@@ -4,18 +4,22 @@ on:
   workflow_dispatch:
   push:
     paths:
+      - .gitattributes
       - schemas/model_collaboration_thread_state_v1.schema.json
       - scripts/check_model_collaboration_state.py
       - tests/unit/test_model_collaboration_state.py
+      - tests/unit/test_model_collaboration_message_identity.py
       - docs/model_collaboration/threads/**/STATE.json
       - docs/model_collaboration/threads/**/THREAD.md
       - docs/specifications/024_v1_model_collaboration_state_guard.md
       - .github/workflows/model-collaboration-state.yml
   pull_request:
     paths:
+      - .gitattributes
       - schemas/model_collaboration_thread_state_v1.schema.json
       - scripts/check_model_collaboration_state.py
       - tests/unit/test_model_collaboration_state.py
+      - tests/unit/test_model_collaboration_message_identity.py
       - docs/model_collaboration/threads/**/STATE.json
       - docs/model_collaboration/threads/**/THREAD.md
       - docs/specifications/024_v1_model_collaboration_state_guard.md
@@ -41,7 +45,7 @@ jobs:
       - name: Validate guarded collaboration state
         run: uv run --python 3.13 --locked python scripts/check_model_collaboration_state.py
       - name: Run collaboration-state unit tests
-        run: uv run --python 3.13 --locked python -m pytest -q tests/unit/test_model_collaboration_state.py
+        run: uv run --python 3.13 --locked python -m pytest -q tests/unit/test_model_collaboration_state.py tests/unit/test_model_collaboration_message_identity.py
       - name: Assert current routing remains free of collaboration-lock fields
         shell: bash
         run: |
