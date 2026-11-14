@@ -1,0 +1,88 @@
+{
+  "accepted_experiment_only_j1": 4,
+  "accepted_j1_original_statement_unchanged": true,
+  "disposition": {
+    "ACCEPTED_PACKET_SHA256": "186c70ff487104f8ee5baee8d21b50ffd466e812c6b97debb20296c8bbf9451f",
+    "AUTHORIAL_CONTINUITY": "NOT_ESTABLISHED_CONTEXT_COMPACTED_2026-10-13",
+    "CONTRADICTION_FOUND": "false",
+    "COVERED_COMPONENTS": "NONE",
+    "DISPOSITION": "CANNOT_ATTEST",
+    "GIT_OBSERVABLE_REVERIFIED": "AUTHORIZED_PATH_ONLY,COMMIT_RECEIPT_BOUND_TO_CORRECTION_HEAD",
+    "J2_QUALIFIED": "0",
+    "J3_CERTIFIED": "false",
+    "JSON_DECLARATION": "NOT_PROVIDED",
+    "MESSAGE": "MC0030_091",
+    "PRODUCTION_AUTHORITY": "false",
+    "PROVIDER_TRANSPORT": "CANNOT_CONFIRM_TRANSPORT",
+    "REPLY_TO": "MC0030_090",
+    "SECOND_CARRIER": "CD0CF087_COMMIT_MESSAGE_FLAGGED",
+    "TARGET_EFFECT": "D1-E01-D2-CLAUDE-WRITE-REQUIREMENT"
+  },
+  "ephemeral_transport": {
+    "actual_connector_action_proven": false,
+    "assurance_and_completion_rule_interpretation": "UNRESOLVED_DO_NOT_SILENTLY_AMEND_E01",
+    "attestation_exists_as_original_source_text": true,
+    "attestation_sources": {
+      "claim_identity": "D1_EVENT_CONNECTOR_USE_SOURCE_ASSERTION",
+      "duplicated_admitted_natural_owner_j2_fact": false,
+      "number_of_independent_first_hand_owner_witnesses": 0,
+      "number_of_independent_provider_records": 0,
+      "number_of_textual_attestation_carriers": 2,
+      "original_commit_message_text_verified": true,
+      "original_message_text_verified": true,
+      "qualification_status": "TWO_SAME_EVENT_SOURCE_ASSERTIONS_NOT_PROVIDER_PROOF",
+      "single_authoritative_provider_event_carrier_selected": false,
+      "underlying_transport": "UNKNOWN"
+    },
+    "component": "TRANSPORT_ATTESTED_GITHUB_CONNECTOR"
+  },
+  "formal_p03_scores": null,
+  "future_physical_design_trigger": {
+    "existing_textual_attestations": "NOT_TWO_AUTHORITATIVE_FACTS",
+    "independent_provider_evidence": "REQUIRED_ONLY_WHEN_GOVERNING_ASSURANCE_DEMANDS_IT",
+    "one_natural_authoritative_carrier_class": "REQUIRED_PER_ACCEPTED_FACT_TUPLE",
+    "relational_coverage": "AT_ACTION_OR_TRANSACTIONALLY_LINKED_OWNER_DECLARATION_IF_REQUIRED",
+    "source_owned_ephemeral_event": "CONTEMPORANEOUS_DURABLE_RECEIPT_WITH_TRACEABLE_OWNER",
+    "status": "OPEN_J2_TYPED_FACT_AND_ASSURANCE_CONTRACT"
+  },
+  "historical_d1_result": "D1_AMEND_UNCHANGED",
+  "natural_owner_relational": {
+    "covered_components": [],
+    "first_hand_context_retained": false,
+    "new_covers_claim_present": false,
+    "qualified_relational_facts": 0,
+    "reask_same_historical_action_from_other_claude_sessions": false,
+    "reply": "CANNOT_ATTEST"
+  },
+  "new_j3_completion_certified": false,
+  "new_j3_satisfaction": "HOLD_J2_NATURAL_OWNER_QUALIFICATION_AND_ASSURANCE",
+  "next": "NON_RETROSPECTIVE_J2_SOURCE_EVENT_DESIGN_AND_SHARED_REAL_CONTENT_WORLD_QUALIFICATION",
+  "observable_git": {
+    "accepted_e01_completion_predicate_mapping": "DIRECT_GIT_FACTS_ONLY",
+    "additional_relational_covers_required_for_direct_observable_fact_itself": false,
+    "j3_satisfied_from_git_alone": false,
+    "natural_owner": "GIT_COMMIT_OBJECT",
+    "verified_component_ids": [
+      "AUTHORIZED_PATH_ONLY",
+      "COMMIT_RECEIPT_BOUND_TO_CORRECTION_HEAD"
+    ]
+  },
+  "physical_architecture_selected": false,
+  "publication": {
+    "changed_paths": [
+      "A\tdocs/model_collaboration/threads/MC-0030/messages/091_claude_r0_p03_d1_j2_natural_owner_declaration.md"
+    ],
+    "commit": "90dc870cd059fa555299505b7c7f8110dadb47f4",
+    "git_blob_oid": "20f7e89e567d66a1697acab79415448916e4c2ef",
+    "original_action_first_hand_continuity": "NOT_ESTABLISHED",
+    "parent": "4284ce016dc69de82c5f724766112c3fd785fa39",
+    "provenance_class": "SHARED_GIT_CONTENT_WITH_CLAUDE_COLLABORATION_TRAILER",
+    "source_git_blob_bytes": 11784,
+    "source_git_blob_sha256": "c419e147ba2b1d69b89fa457b0a9483e90fcf035ffc1370d3d373204748a32de",
+    "source_path": "docs/model_collaboration/threads/MC-0030/messages/091_claude_r0_p03_d1_j2_natural_owner_declaration.md"
+  },
+  "qualified_j2_relational_count": 0,
+  "schema_version": 1,
+  "status": "MESSAGE091_CANNOT_ATTEST_RECEIVED_HISTORICAL_J2_REQUEST_CLOSED",
+  "target_effect": "D1-E01-D2-CLAUDE-WRITE-REQUIREMENT"
+}
