@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / R0-P03 X1 SUBSTANTIVE D2 COUPLING EXECUTED / FULL X1 INCONCLUSIVE / OWNER METHOD DECISION NEXT / FORMAL P03 UNSCORED
+**Status:** OPEN / R0-P03-V2 METHOD OWNER ACCEPTED / PINNED REAL-SOURCE SPECIMEN EXECUTED / SEMANTIC EFFECT/J2 ADMISSION NEXT / FORMAL SCORE INCOMPLETE
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -1124,4 +1124,21 @@ Research 671 executed an unscored genuine D2 F09/F10 source-freshness counterfac
     FULL_X1=INCONCLUSIVE
     P03_FORMAL=INCOMPLETE
     PROTOCOL_AMENDMENT_ACCEPTED=false
+    PHYSICAL_TARGET_SELECTED=false
+
+## R0-P03-V2 prospective method accepted; original-Git source frame verified, Checkpoint 935
+
+The owner explicitly said "I ACCEPT. Proceed." to Research 672 M1-M6. Research 673 prospectively amends new primary source/reference/task ordering, while preserving Research 513's original numerical and safety gates, Research 559's neutral historical nine independent freeze ordering and Research 576's remaining Level B safeguards. This decision does NOT admit a single new experimental governing effect, source-owner J2 relation, physical architecture or migration.
+
+Research 674 executed a reproducible preadmission candidate using exact Git-pinned source blobs: 15 original paths, 16 original line witnesses, actual project decisions, code, tests, workflow definitions, derived routing and historical navigation records. 28 new source and safety tests passed. Three documentary effect propositions remain UNADMITTED. The corpus is NOT yet the frozen 60/20 primary world and independent scored primary tasks have not been originated. No new Claude request is pending.
+
+    CURRENT=R0_P03_V2_REAL_SOURCE_PREADMISSION
+    OWNER_METHOD_APPROVAL=RESEARCH673_ACCEPTED
+    SOURCE_FRAME=RESEARCH674
+    VALIDATION=371
+    CHECKPOINT=935
+    NEXT_ACTOR=chatgpt
+    FORMAL_V03_WORLD=HOLD
+    EXPERIMENTAL_J1_EFFECTS_ADMITTED=0
+    FORMAL_P03=INCOMPLETE
     PHYSICAL_TARGET_SELECTED=false

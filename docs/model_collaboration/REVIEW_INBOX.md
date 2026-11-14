@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-11-14
-**Status:** MC-0030 OPEN / X1 substantive D2 freshness/lineage/owner/index mutation executed in Research 671 and Message 086 / 152 focused regressions PASS / full X1 INCONCLUSIVE / Research 672 owner method proposal NOT ACCEPTED / formal P03 INCOMPLETE / physical target unselected / Specification 028 unchanged / MC-0029 resolved / MC-0010 deferred
+**Status:** MC-0030 OPEN / Research 672 M1-M6 owner-accepted in Research 673 / real original-source frame Research 674 verified (15 paths, 16 witnesses, 28 new tests) / experiment J1/J2 unadmitted / formal P03 INCOMPLETE / physical target unselected / Specification 028 unchanged / MC-0029 resolved / MC-0010 deferred
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -20,6 +20,10 @@ docs/current_routing.json
 ```
 
 This inbox intentionally does not duplicate that state except where needed to explain collaboration obligations.
+
+## Current MC-0030 owner-accepted R0-P03-V2 method and real-source preadmission
+
+The owner explicitly accepted Research 672 M1-M6. Research 673 records prospective primary-world, source-relative gold, arm-first primary tasks and single-admission rules, preserving Research 559 legacy nine and Research 513 hard gates. Research 674 and Message 087 verified 15 original Git source paths, 16 source line witnesses and 28 new tests while admitting zero new experimental J1/J2. The next bounded work is exact experiment-only effect and natural-owner J2 admission design. No Claude review or formal score is currently queued.
 
 ## Current MC-0030 owner-method decision boundary after coupled X1
 

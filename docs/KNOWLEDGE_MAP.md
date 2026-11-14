@@ -1077,6 +1077,14 @@ docs/research/669_r0_p03_bottleneck_and_prospective_comparison_redesign_assessme
 docs/research/670_r0_p03_message084_reconciliation_and_x1_limited_interface_pilot.md
 docs/research/671_r0_p03_coupled_lineage_mutation_findings_and_x1_stop_boundary.md
 docs/research/672_r0_p03_post_x1_physical_discrimination_and_prospective_method_decision_proposal.md
+docs/research/673_r0_p03_owner_accepted_prospective_method_amendment.md
+docs/research/674_r0_p03_real_content_source_frame_preadmission_probe.md
+docs/model_collaboration/threads/MC-0030/messages/087_chatgpt_r0_p03_owner_amendment_record_and_real_source_world_seed.md
+docs/local_execution/validation/371_r0_p03_prospective_amendment_and_git_pinned_seed_verification.md
+docs/checkpoints/935_r0_p03_owner_amendment_and_real_content_seed_preflight.md
+experiments/r0_p03_navigation_probe/v03_real_content_source_frame_v01.py
+experiments/r0_p03_navigation_probe/v03_real_content_source_frame_result_v01.json
+tests/unit/test_r0_p03_v03_real_content_source_frame_v01.py
 docs/model_collaboration/threads/MC-0030/messages/086_chatgpt_r0_p03_x1_coupled_mutation_outcome_and_governed_next_choice.md
 docs/local_execution/validation/370_r0_p03_x1_coupled_d2_freshness_source_revision_and_lineage_checks.md
 docs/checkpoints/934_r0_p03_coupled_x1_mutation_probe_and_structural_stop.md
@@ -2232,7 +2240,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-934 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-935 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 
