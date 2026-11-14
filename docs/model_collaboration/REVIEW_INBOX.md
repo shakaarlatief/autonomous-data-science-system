@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-11-14
-**Status:** MC-0030 OPEN / Claude Message 084 verified and reconciled in Research 670 and Message 085 / limited unscored X1 pilot executed / full X1 and formal P03 incomplete / physical target unselected / Specification 028 unchanged / MC-0029 resolved / MC-0010 deferred
+**Status:** MC-0030 OPEN / X1 substantive D2 freshness/lineage/owner/index mutation executed in Research 671 and Message 086 / 152 focused regressions PASS / full X1 INCONCLUSIVE / Research 672 owner method proposal NOT ACCEPTED / formal P03 INCOMPLETE / physical target unselected / Specification 028 unchanged / MC-0029 resolved / MC-0010 deferred
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -20,6 +20,10 @@ docs/current_routing.json
 ```
 
 This inbox intentionally does not duplicate that state except where needed to explain collaboration obligations.
+
+## Current MC-0030 owner-method decision boundary after coupled X1
+
+Research 671, Message 086, Validation 370 and Checkpoint 934 record substantive unscored original-D2-F09/F10 coupled mutation evidence: 152 focused tests pass, but actual physical V02 kernel/source-owner compatibility remains INCONCLUSIVE. Research 672 proposes a shared V03 real-content experimental world for the meaningful physical-coupling test and, under a separate accepted method, formal P03. This proposal is NOT owner-accepted. There is no new Claude obligation, formal task/gold authorization or architecture selection.
 
 ## Current MC-0030 disposition after Claude methodology review
 

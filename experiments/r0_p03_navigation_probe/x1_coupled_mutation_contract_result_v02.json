@@ -1,0 +1,135 @@
+{
+  "arm_interface_classifications": {
+    "B0": {
+      "candidate_r1_hook": "versioned connector-readable orientation freshness and source-head bound publication",
+      "classification": "INCONCLUSIVE",
+      "evidence": "Common D2 projection and publication stale check exercised; no actual V02 orientation publication or lexical service"
+    },
+    "B1": {
+      "candidate_r1_hook": "source-owned facet declaration schema and governed vocabulary admission/evolution",
+      "classification": "REQUIRES_R1_HOOK_CANDIDATE",
+      "evidence": "Simulated source owner and declared subject validation; unknown subject blocked"
+    },
+    "B2": {
+      "candidate_r1_hook": "typed editorial relation provenance and lineage-triggered review/rebinding",
+      "classification": "REQUIRES_R1_HOOK_CANDIDATE",
+      "evidence": "Actual D2 effect successor makes old P1 editorial links REVIEW_REQUIRED, without auto-rebind"
+    },
+    "B3": {
+      "candidate_r1_hook": "distinct crosscutting concern vocabulary ownership and evolution",
+      "classification": "REQUIRES_R1_HOOK_CANDIDATE",
+      "evidence": "Concern declarations are source revision bound and unknown concern blocked"
+    },
+    "B4": {
+      "candidate_r1_hook": "pluggable model/version/source-index provenance, safety and update/rebuild contract",
+      "classification": "REQUIRES_R1_HOOK_CANDIDATE",
+      "evidence": "Model/source index provenance invalidates stale publication, and explicit rebuild restores it"
+    }
+  },
+  "common_projection_hashes": {
+    "predecessor": "ea0e1f78460dc39bf536fa7de26b83271ef35e17da230fc8f5a722cd72f18700",
+    "stale_carry": "eee53d473b5ac0006142fc5dc4d6cee364f108f8ae25aa502764f80d2f3c1708",
+    "valid_carry": "9fcb81caa462563748bcea328713a30fa8c16e7c3e36ff36767a73ed9eb6d4b3"
+  },
+  "d2_case_ids": [
+    "F09_REPLACE_VALID_REALIZATION_CARRY",
+    "F10_REPLACE_STALE_CARRY_FACTS"
+  ],
+  "d2_fresh_mode": "CARRY_FACTS_FOR_REVALIDATION",
+  "d2_stale_mode": "OPEN_RESET",
+  "d2_stale_review_required": true,
+  "missing_contracts": [
+    "Actual V02 governing admission and versioned effect/evidence projection",
+    "Natural-owner J2 RELATIONAL declaration and revocation/coverage ownership",
+    "Actual source-owned navigation governance and owner authorization",
+    "Shared V03 identity and fragment/reference contract across real carriers",
+    "Connector-readable derived orientation publication and freshness SLA",
+    "Real B4 model feasibility and embeddings; Research 217 navigational sufficiency"
+  ],
+  "negative_controls_rejected": {
+    "foreign_claimed_source_owner": true,
+    "invented_navigation_authority": true,
+    "obsolete_model_revision": true,
+    "old_cache_after_source_rewrite": true,
+    "stale_model_source_revision": true,
+    "stale_source_owner_declaration": true,
+    "tampered_published_orientation": true,
+    "ungoverned_new_concern": true,
+    "ungoverned_new_subject": true
+  },
+  "per_arm": {
+    "B0": {
+      "diagnostic_carrier_ids": [
+        "carrier:code",
+        "carrier:continuity",
+        "carrier:decision",
+        "carrier:tests"
+      ],
+      "disposable_rebuild_stable": true,
+      "fresh_vs_stale_j2_distinguished": true,
+      "pre_and_post_currentness_distinguished": true,
+      "replay_semantic_changes_visible": true,
+      "stale_publication_rejected": true
+    },
+    "B1": {
+      "diagnostic_carrier_ids": [
+        "carrier:code",
+        "carrier:continuity",
+        "carrier:decision",
+        "carrier:tests"
+      ],
+      "disposable_rebuild_stable": true,
+      "fresh_vs_stale_j2_distinguished": true,
+      "pre_and_post_currentness_distinguished": true,
+      "replay_semantic_changes_visible": true,
+      "stale_publication_rejected": true
+    },
+    "B2": {
+      "diagnostic_carrier_ids": [
+        "carrier:decision",
+        "carrier:code",
+        "carrier:continuity",
+        "carrier:tests"
+      ],
+      "disposable_rebuild_stable": true,
+      "fresh_vs_stale_j2_distinguished": true,
+      "pre_and_post_currentness_distinguished": true,
+      "replay_semantic_changes_visible": true,
+      "stale_publication_rejected": true
+    },
+    "B3": {
+      "diagnostic_carrier_ids": [
+        "carrier:code",
+        "carrier:continuity",
+        "carrier:decision",
+        "carrier:tests"
+      ],
+      "disposable_rebuild_stable": true,
+      "fresh_vs_stale_j2_distinguished": true,
+      "pre_and_post_currentness_distinguished": true,
+      "replay_semantic_changes_visible": true,
+      "stale_publication_rejected": true
+    },
+    "B4": {
+      "diagnostic_carrier_ids": [
+        "carrier:decision",
+        "carrier:code",
+        "carrier:continuity",
+        "carrier:tests"
+      ],
+      "disposable_rebuild_stable": true,
+      "fresh_vs_stale_j2_distinguished": true,
+      "pre_and_post_currentness_distinguished": true,
+      "replay_semantic_changes_visible": true,
+      "stale_publication_rejected": true
+    }
+  },
+  "physical_target_selected": false,
+  "research_513_formal_score": null,
+  "scenario_kind": "ALTERNATIVE_FRESH_VS_STALE_D2_REPLAY_NOT_REAL_HISTORY",
+  "source": "experiments/ao10_hybrid_d2_lineage_v01/reviewer_fixtures.json",
+  "source_revision_rebuilt_usable": true,
+  "status": "COUPLED_D2_MUTATION_EVIDENCE_X1_FULL_INCONCLUSIVE",
+  "v02_kernel_implemented": false,
+  "verified_production_j1_or_j2": false
+}
