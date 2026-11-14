@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / R0-P03 SOURCE-ONLY CAPSULE PREPARED / REVIEWER EXECUTION AND GOLD CUSTODY UNQUALIFIED
+**Status:** OPEN / R0-P03 METHOD REDESIGN ASSESSMENT PREPARED / CLAUDE MESSAGE 084 CHALLENGE NEXT / NO FORMAL SCORE
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -1080,3 +1080,18 @@ Research 579: At published af8f6b37543605a3f61382871cae2484c68d4324, native expo
     NO_NEW_CENSUS_TASKS_GOLD_ARMS_OR_SCORES=true
     NEXT_ACTOR=chatgpt
     CHECKPOINT=898_UNCHANGED
+
+## R0-P03 prospective experiment-method adversarial review handoff, Checkpoint 932
+
+Research 669 traces the C01/C02 independent-reference bottleneck, November 12-13 real B0-B4-like exploratory comparisons and later unqualified source relationships to a potential experiment-design mismatch. It proposes multiple prospective options, selecting none and preserving original Research 513/559/576 and all prior experimental outcomes.
+
+MC-0030 Message 083 asks Claude to re-read the entire Project Operating Architecture evolution, independently criticize the source-grounded diagnosis and candidate comparison protocols, and return a bounded methodology recommendation as a one-file Message 084 commit without push. Claude is an openly comparative reviewer, not a fresh scorer or protected gold author. The request is prepared, and no Claude response has yet been observed.
+
+    PHASE=R0_P03_METHOD_REDESIGN_CLAUDE_CHALLENGE
+    NEXT_ACTOR=claude
+    REQUEST=MC0030_MESSAGE083
+    EXPECTED_REPLY=MC0030_MESSAGE084
+    METHOD_CANDIDATE=RESEARCH669_UNSELECTED
+    P03_FORMAL_SCORE=INCOMPLETE
+    PHYSICAL_TARGET_SELECTED=false
+    CURRENT_SPECIFICATION_028_AUTHORITY=UNCHANGED

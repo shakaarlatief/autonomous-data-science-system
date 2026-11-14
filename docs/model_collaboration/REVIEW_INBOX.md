@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
-**Date:** 2026-11-13
-**Status:** MC-0030 OPEN / Message 064 exposed critique received and reconciled by Message 065, Research 649 and Checkpoint 912 / V03 governed source-grammar exploratory audit executed / original R0-P03 scoring incomplete / physical target not selected / Specification 028 unchanged / no migration / MC-0029 resolved / MC-0010 deferred
+**Date:** 2026-11-14
+**Status:** MC-0030 OPEN / Message 083 prospective P03 method redesign critique prepared for Claude Message 084 / original R0-P03 scoring incomplete / physical target not selected / Specification 028 unchanged / no migration / MC-0029 resolved / MC-0010 deferred
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -20,6 +20,10 @@ docs/current_routing.json
 ```
 
 This inbox intentionally does not duplicate that state except where needed to explain collaboration obligations.
+
+## Current R0-P03 methodology challenge (MC-0030)
+
+Research 669 and MC-0030 Message 083 prepare a non-governing re-evaluation of the historical reference-capacity and V03-substrate dependencies before selecting a B0-B4 architecture. The task owner requests Claude's independently reasoned, whole-program-grounded adversarial critique, with only Message 084 as the permitted reply and no push. Claude is an exposed comparative methodology reviewer, not an independent reference-gold author or scored evaluator. Original Research 513/559/576 and C01/C02 records remain unchanged.
 
 ## Exposed R0-P03 semantics critique received and reconciled
 

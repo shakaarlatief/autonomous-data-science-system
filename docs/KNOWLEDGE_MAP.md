@@ -1073,6 +1073,10 @@ docs/research/665_r0_p03_four_need_masked_evidence_support_review_fixture_freeze
 docs/research/666_r0_p03_four_need_claim_support_synthesis_and_exploratory_stop_rule.md
 docs/research/667_r0_p03_exact_original_source_closure_frontier_and_common_projection_probe.md
 docs/research/668_r0_p03_historical_documentary_semantic_chain_and_nonpromotion_evidence.md
+docs/research/669_r0_p03_bottleneck_and_prospective_comparison_redesign_assessment.md
+docs/model_collaboration/threads/MC-0030/messages/083_chatgpt_r0_p03_whole_program_reorientation_and_method_redesign_critique_request.md
+docs/local_execution/validation/368_r0_p03_method_redesign_source_trace_and_claude_handoff_validation.md
+docs/checkpoints/932_r0_p03_method_bottleneck_assessment_and_claude_adversarial_handoff.md
 docs/local_execution/validation/367_r0_p03_documentary_semantic_chain_exact_source_and_nonpromotion.md
 docs/checkpoints/931_r0_p03_historical_documentary_semantic_chain_verified_without_authority_promotion.md
 experiments/r0_p03_navigation_probe/historical_semantic_evidence_chain_v01.py
@@ -2212,7 +2216,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-931 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-932 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 
