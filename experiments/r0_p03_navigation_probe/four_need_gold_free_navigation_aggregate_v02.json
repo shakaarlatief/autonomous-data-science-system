@@ -1,0 +1,23 @@
+{
+  "candidate_sources_reordered": false,
+  "corrected_clipping_flags_A": 1,
+  "corrected_clipping_flags_B": 1,
+  "formal_scoring": false,
+  "id": "R0_P03_FOUR_NEED_GOLD_FREE_PACKET_CLIP_FLAG_CORRECTION_V02",
+  "only_boolean_line_clipped_flags_changed": true,
+  "original_frozen_questions_sha256": "95dec6abdc5ad7ceec435f9cb3b3eb114a4dad8ac75f4865df05ea9509eff5d6",
+  "original_git_pin": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+  "original_source_files_checked": 23,
+  "original_source_line_numbers_changed": false,
+  "original_v01_aggregate_sha256": "6f35585e5b2ba71e6b20c72f6932ac2291c2365b51c3820b9ea1cc74bbae56bb",
+  "original_v01_packet_A_sha256": "0c7b39ecba5524c96d96426303e29c362b09c070fa24c14aa2d6c8b4a080be10",
+  "original_v01_packet_B_sha256": "60bcdf530b98377f2faa7749ac904f0f1a0f9d00590f32cd1b38a03af0375ac5",
+  "private_reference_report_read": false,
+  "question_text_changed": false,
+  "retrieved_source_content_changed": false,
+  "v01_still_preserved": true,
+  "v02_packet_A_bytes": 92552,
+  "v02_packet_A_sha256": "3876a30dabc022c67483ea0de5c3ddfcbb75c43ed054f5e4668345df53fe9a37",
+  "v02_packet_B_bytes": 91531,
+  "v02_packet_B_sha256": "a7ec96918330aa75b2ead92fcf6ad60b4324abc9d5f90ed1f82d1422fc6499d0"
+}

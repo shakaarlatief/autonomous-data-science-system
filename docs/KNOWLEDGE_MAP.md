@@ -1067,6 +1067,24 @@ docs/research/659_r0_p03_route_b_exposed_gpt6_reasoned_original_b0_b1_answer_com
 docs/research/660_r0_p03_three_masked_claude_review_complete_and_unmasked_answer_support_assessment.md
 docs/research/661_r0_p03_four_need_reference_feasibility_and_evidence_boundary.md
 docs/research/662_r0_p03_private_reference_git_line_replay_and_literal_attribution_gaps.md
+docs/research/663_r0_p03_twelve_citation_review_and_four_need_gold_free_navigation_execution.md
+docs/local_execution/validation/362_r0_p03_four_need_gold_free_actual_source_packet_retrieval_and_citation_integrity.md
+docs/checkpoints/926_r0_p03_twelve_quote_review_and_four_need_gold_free_source_packets_frozen.md
+docs/model_collaboration/threads/MC-0030/messages/076_chatgpt_r0_p03_twelve_literal_attribution_discrepancy_review_handoff.md
+docs/model_collaboration/threads/MC-0030/messages/077_claude_r0_p03_twelve_literal_attribution_review_result.md
+docs/model_collaboration/threads/MC-0030/messages/078_chatgpt_r0_p03_four_fresh_need_gold_free_source_answer_handoff.md
+experiments/r0_p03_navigation_probe/FOUR_NEED_GOLD_FREE_ORIGINAL_SOURCE_NAVIGATION_TRIAL_CONTRACT_V01.md
+experiments/r0_p03_navigation_probe/four_need_gold_free_original_source_navigation_v01.py
+experiments/r0_p03_navigation_probe/four_need_gold_free_packet_clipping_correction_v02.py
+experiments/r0_p03_navigation_probe/four_need_gold_free_source_packet_A_v01.json
+experiments/r0_p03_navigation_probe/four_need_gold_free_source_packet_B_v01.json
+experiments/r0_p03_navigation_probe/four_need_gold_free_source_packet_A_v02.json
+experiments/r0_p03_navigation_probe/four_need_gold_free_source_packet_B_v02.json
+experiments/r0_p03_navigation_probe/four_need_gold_free_navigation_aggregate_v01.json
+experiments/r0_p03_navigation_probe/four_need_gold_free_navigation_aggregate_v02.json
+tests/unit/test_r0_p03_four_need_gold_free_original_source_navigation_v01.py
+tests/unit/test_r0_p03_four_need_source_packet_clipping_correction_v02.py
+tests/unit/test_r0_p03_four_need_gold_free_packet_v02_integrity.py
 docs/local_execution/validation/361_r0_p03_private_reference_git_blob_line_literal_audit_v01_v02.md
 docs/checkpoints/925_r0_p03_original_reference_citation_provenance_audited_with_twelve_gaps.md
 experiments/r0_p03_navigation_probe/fresh_reference_private_citation_audit_v01.py
@@ -2158,7 +2176,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-925 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-926 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

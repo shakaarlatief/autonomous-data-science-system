@@ -84,3 +84,10 @@ experiments/r0_p03_navigation_probe/NEED_MATERIAL_HOLD_WITNESS_AGGREGATE_VERIFIE
 experiments/r0_p03_navigation_probe/NEED_MATERIAL_HOLD_WITNESS_AGGREGATE_VERIFIED_V02.md -text
 # Keep the objective source-path-only need-origination pilot index immutable across Windows checkouts.
 experiments/r0_p03_navigation_probe/fresh_reference_need_index_pilot_v01.json -text
+# Preserve original and metadata-corrected four-need source-only navigation packets and aggregate bytes.
+experiments/r0_p03_navigation_probe/four_need_gold_free_source_packet_A_v01.json -text
+experiments/r0_p03_navigation_probe/four_need_gold_free_source_packet_B_v01.json -text
+experiments/r0_p03_navigation_probe/four_need_gold_free_navigation_aggregate_v01.json -text
+experiments/r0_p03_navigation_probe/four_need_gold_free_source_packet_A_v02.json -text
+experiments/r0_p03_navigation_probe/four_need_gold_free_source_packet_B_v02.json -text
+experiments/r0_p03_navigation_probe/four_need_gold_free_navigation_aggregate_v02.json -text

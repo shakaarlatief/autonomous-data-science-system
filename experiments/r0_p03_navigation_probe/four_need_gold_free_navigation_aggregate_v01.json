@@ -1,0 +1,44 @@
+{
+  "contract_sha256": "2e7637f174d2b1772737eab896eaefeb306c31eba546785bcb6369b2dba0d09e",
+  "document_count": 2258,
+  "document_roles_count": {
+    "CHECKPOINT": 902,
+    "FOUNDATION": 25,
+    "ORIENTATION": 2,
+    "RESEARCH": 724,
+    "SCRIPT_PY": 47,
+    "SPECIFICATION": 28,
+    "TEST_PY": 141,
+    "TOOL_PY": 54,
+    "VALIDATION": 335
+  },
+  "formal_R0_P03_scored": false,
+  "frozen_question_message_sha256": "95dec6abdc5ad7ceec435f9cb3b3eb114a4dad8ac75f4865df05ea9509eff5d6",
+  "id": "R0_P03_FOUR_NEED_GOLD_FREE_NAVIGATION_V01",
+  "indexed_doc_truncation_counts": {
+    "COMPLETE": 1917,
+    "TRUNCATED": 341
+  },
+  "original_blob_bytes_total": 18106101,
+  "original_expected_source_gold_read": false,
+  "original_git_pin": "47ed6344a9153dcf366769e95722840fbf1a8f8b",
+  "packet_A_bytes": 92553,
+  "packet_A_sha256": "0c7b39ecba5524c96d96426303e29c362b09c070fa24c14aa2d6c8b4a080be10",
+  "packet_B_bytes": 91532,
+  "packet_B_sha256": "60bcdf530b98377f2faa7749ac904f0f1a0f9d00590f32cd1b38a03af0375ac5",
+  "physical_architecture_selected": false,
+  "private_review_report_read": false,
+  "question_count": 4,
+  "reference_truth_scored": false,
+  "same_original_corpus_for_both": true,
+  "source_per_question": 4,
+  "source_specific_rankings_or_answers_in_summary": false,
+  "top_four_overlaps_by_fixed_question_order": [
+    2,
+    2,
+    2,
+    3
+  ],
+  "treatment_A": "BODY_FTS5_BM25",
+  "treatment_B": "BODY_PLUS_HEADINGS_RRF_DIAGNOSTIC_NOT_OFFICIAL_B1_B4"
+}
