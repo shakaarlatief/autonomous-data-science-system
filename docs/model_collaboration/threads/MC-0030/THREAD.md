@@ -1616,3 +1616,25 @@ No further generic source or reviewer preflight without a concrete new enabling 
     FORMAL_P03=INCOMPLETE
     PHYSICAL_TARGET_SELECTED=false
     NEXT=OWNER_SCOPED_INDEPENDENT_ROUTE_OR_BOUNDED_DEFERRAL_DECISION
+
+## Correct the direct Claude CLI inference and restore owner-relayed Message 112 handoff
+
+Research 698 / Checkpoint 959 / Message 112 are a prospective coordination correction following the owner's reminder of the established, repeatedly working MC-0030 ChatGPT-Claude collaboration. The failed direct Claude subprocess calls recorded at Checkpoint 958 still happened, but they do NOT demonstrate failure of the owner-relayed MC-0030 route. The exact existing precedent is ChatGPT Message 083, the resulting Claude/claude-04 Message 084, and independently verified one-file commit/reconciliation in Research 670.
+
+The previously used method is: the project owner relays a precisely frozen collaboration request to the existing Claude / claude-04 conversation (or a separately disclosed new Claude Code conversation), Claude inspects public repository sources and commits only its authorized new collaboration-message file without pushing, and ChatGPT verifies and reconciles that commit after the response is available. It does not require ChatGPT to invoke the Claude executable through Codexless. The active Codexless-only rule continues to apply to ChatGPT's ADS repository operations.
+
+New Message 112 has been prepared for that owner relay. It asks Claude to challenge the practical finite path to actual Research 673 M1-M6 scoring using actual prior independent C02 author/review precedents, current exact 24-source V03 S1 experiment-only semantic evidence, the executed B0-B3 treatments, Research 632's real failed 80-source cohort release and Research 697's narrow CLI results. Claude's next response target is Message 113; this is a **critical-path exposed comparative review**, not fresh/blind gold origination, source-owner acceptance, formal scoring, architecture selection or a second version of the current method.
+
+The real formal Level B/source-world/reference-admission HOLD remains, and the formal M6 attempt is unconsumed. The exposed collaborator may advise on how to obtain a genuinely new independent reference-author/custodian/evaluator route without qualifying itself as those separate actors. The expected next actor in the collaboration state is \`claude\` **after owner relay**, not a claim that the prompt has already been transmitted.
+
+    RESEARCH=698
+    CHECKPOINT=959
+    REQUEST=MC0030_MESSAGE112
+    EXPECTED_CLAUDE_REPLY=MC0030_MESSAGE113
+    MESSAGE112_STATUS=PREPARED_FOR_OWNER_RELAY
+    CLAUDE_COMPARATIVE_HISTORY=VALID_PRIOR_WORKFLOW
+    DIRECT_CLAUDE_CLI=UNQUALIFIED_IN_PRIOR_BOUND
+    FORMAL_REFERENCE_CUSTODY=NOT_QUALIFIED
+    FORMAL_M6_ATTEMPTS_CONSUMED=0
+    FORMAL_P03=INCOMPLETE
+    NEXT=OWNER_RELAY_112_THEN_VERIFY_113
