@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "manifest_id": "P03V2_UNSCORED_MIXED_ROLE_SOURCE_SEED_001",
+  "status": "NONFORMAL_ROLE_STRATIFIED_REVIEW_SEED_NOT_BUILD_OR_HELDOUT",
+  "original_git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+  "provenance_class": "COORDINATOR_AUTHORED_SEED_EXACT_GIT_READ_REQUIRED",
+  "purpose": "Demonstrate real-content cross-plane candidate-role coverage and non-authority for a future impartial shared substrate; not formal cohort sampling.",
+  "prohibited": [
+    "FORMAL_60_20_SAMPLE_SELECTION",
+    "HELDOUT_MEMBERSHIP_OR_SALT_DISCLOSURE",
+    "TASK_OR_GOLD_ORACLE_AUTHORING",
+    "PATH_AS_GOVERNING_IDENTITY",
+    "RESEARCH_OR_TEST_PRESENCE_AS_J1_OR_J2_ADMISSION",
+    "SINGLE_ROLE_OR_MARKDOWN_ONLY_SAMPLING_AS_AUTOMATIC_FAIRNESS",
+    "PRIMARY_ARM_IMPLEMENTATION_OR_SCORE"
+  ],
+  "sources": [
+    {
+      "path": "docs/DECISIONS.md",
+      "role_hypothesis": "CURRENT_DECISION_CONTEXT",
+      "eligibility": "UNREVIEWED_SOURCE_ROLE_CANDIDATE",
+      "role_is_not_accepted_authority": true
+    },
+    {
+      "path": "docs/ARCHITECTURE_PROGRAM_OVERVIEW.md",
+      "role_hypothesis": "CURRENT_ORIENTATION_CONTEXT",
+      "eligibility": "UNREVIEWED_SOURCE_ROLE_CANDIDATE",
+      "role_is_not_accepted_authority": true
+    },
+    {
+      "path": "docs/CONTINUITY.md",
+      "role_hypothesis": "CURRENT_ORIENTATION_CONTEXT",
+      "eligibility": "UNREVIEWED_SOURCE_ROLE_CANDIDATE",
+      "role_is_not_accepted_authority": true
+    },
+    {
+      "path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "role_hypothesis": "CONTRACT_CARRIER",
+      "eligibility": "UNREVIEWED_SOURCE_ROLE_CANDIDATE",
+      "role_is_not_accepted_authority": true
+    },
+    {
+      "path": "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md",
+      "role_hypothesis": "FOUNDATION_CARRIER",
+      "eligibility": "UNREVIEWED_SOURCE_ROLE_CANDIDATE",
+      "role_is_not_accepted_authority": true
+    },
+    {
+      "path": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+      "role_hypothesis": "HISTORICAL_NAVIGATION_EVIDENCE",
+      "eligibility": "UNREVIEWED_SOURCE_ROLE_CANDIDATE",
+      "role_is_not_accepted_authority": true
+    },
+    {
+      "path": "docs/research/254_r7b_target_project_information_hierarchy_and_research218_supersession_candidate.md",
+      "role_hypothesis": "UNSELECTED_SUPERSESSION_PROPOSAL",
+      "eligibility": "UNREVIEWED_SOURCE_ROLE_CANDIDATE",
+      "role_is_not_accepted_authority": true
+    },
+    {
+      "path": "docs/research/219_activation_orchestration_self_hosting_bootstrap_program.md",
+      "role_hypothesis": "AO_ARCHITECTURE_RESEARCH",
+      "eligibility": "UNREVIEWED_SOURCE_ROLE_CANDIDATE",
+      "role_is_not_accepted_authority": true
+    },
+    {
+      "path": "docs/research/293_p_d1_warrant_proportionality_result.md",
+      "role_hypothesis": "ASSURANCE_RESEARCH",
+      "eligibility": "UNREVIEWED_SOURCE_ROLE_CANDIDATE",
+      "role_is_not_accepted_authority": true
+    },
+    {
+      "path": "docs/cockpit/README.md",
+      "role_hypothesis": "PRODUCT_SOURCE_PROVENANCE",
+      "eligibility": "UNREVIEWED_SOURCE_ROLE_CANDIDATE",
+      "role_is_not_accepted_authority": true
+    },
+    {
+      "path": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+      "role_hypothesis": "PRODUCT_SOURCE_PROVENANCE",
+      "eligibility": "UNREVIEWED_SOURCE_ROLE_CANDIDATE",
+      "role_is_not_accepted_authority": true
+    },
+    {
+      "path": "tools/project_knowledge/identity.py",
+      "role_hypothesis": "IMPLEMENTATION_SOURCE",
+      "eligibility": "UNREVIEWED_SOURCE_ROLE_CANDIDATE",
+      "role_is_not_accepted_authority": true
+    },
+    {
+      "path": "tools/project_knowledge/authority.py",
+      "role_hypothesis": "IMPLEMENTATION_SOURCE",
+      "eligibility": "UNREVIEWED_SOURCE_ROLE_CANDIDATE",
+      "role_is_not_accepted_authority": true
+    },
+    {
+      "path": "tools/project_knowledge/services/refresh.py",
+      "role_hypothesis": "IMPLEMENTATION_SOURCE",
+      "eligibility": "UNREVIEWED_SOURCE_ROLE_CANDIDATE",
+      "role_is_not_accepted_authority": true
+    },
+    {
+      "path": "tools/project_knowledge/services/generation.py",
+      "role_hypothesis": "IMPLEMENTATION_SOURCE",
+      "eligibility": "UNREVIEWED_SOURCE_ROLE_CANDIDATE",
+      "role_is_not_accepted_authority": true
+    },
+    {
+      "path": "src/ads_system/application/source_universe.py",
+      "role_hypothesis": "IMPLEMENTATION_SOURCE",
+      "eligibility": "UNREVIEWED_SOURCE_ROLE_CANDIDATE",
+      "role_is_not_accepted_authority": true
+    },
+    {
+      "path": "src/ads_system/infrastructure/retrieval/sqlite_fts.py",
+      "role_hypothesis": "IMPLEMENTATION_SOURCE",
+      "eligibility": "UNREVIEWED_SOURCE_ROLE_CANDIDATE",
+      "role_is_not_accepted_authority": true
+    },
+    {
+      "path": "frontend/src/components/CockpitProjectMap.tsx",
+      "role_hypothesis": "IMPLEMENTATION_SOURCE",
+      "eligibility": "UNREVIEWED_SOURCE_ROLE_CANDIDATE",
+      "role_is_not_accepted_authority": true
+    },
+    {
+      "path": "frontend/src/components/MissingnessWorkspace.tsx",
+      "role_hypothesis": "IMPLEMENTATION_SOURCE",
+      "eligibility": "UNREVIEWED_SOURCE_ROLE_CANDIDATE",
+      "role_is_not_accepted_authority": true
+    },
+    {
+      "path": "schemas/project_knowledge/semantic_source.v1.schema.json",
+      "role_hypothesis": "SCHEMA_DEFINITION",
+      "eligibility": "UNREVIEWED_SOURCE_ROLE_CANDIDATE",
+      "role_is_not_accepted_authority": true
+    },
+    {
+      "path": "tests/unit/test_project_knowledge_identity.py",
+      "role_hypothesis": "TEST_DEFINITION_NOT_EXECUTION",
+      "eligibility": "UNREVIEWED_SOURCE_ROLE_CANDIDATE",
+      "role_is_not_accepted_authority": true
+    },
+    {
+      "path": "tests/unit/test_project_knowledge_refresh.py",
+      "role_hypothesis": "TEST_DEFINITION_NOT_EXECUTION",
+      "eligibility": "UNREVIEWED_SOURCE_ROLE_CANDIDATE",
+      "role_is_not_accepted_authority": true
+    },
+    {
+      "path": "scripts/check_repository_integrity.py",
+      "role_hypothesis": "VALIDATOR_SOURCE_NOT_PASS_RECEIPT",
+      "eligibility": "UNREVIEWED_SOURCE_ROLE_CANDIDATE",
+      "role_is_not_accepted_authority": true
+    },
+    {
+      "path": ".github/workflows/repository-integrity.yml",
+      "role_hypothesis": "WORKFLOW_DEFINITION_NOT_RUN",
+      "eligibility": "UNREVIEWED_SOURCE_ROLE_CANDIDATE",
+      "role_is_not_accepted_authority": true
+    }
+  ]
+}

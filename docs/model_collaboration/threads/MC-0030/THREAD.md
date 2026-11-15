@@ -1537,3 +1537,23 @@ Research 693, Validation 390 and Message 107 preserve a distinct deterministic l
     INDEPENDENT_ACTOR_AUTHENTICATION=false
     FORMAL_P03=INCOMPLETE
     NEXT=REAL_SOURCE_COHORT_AND_COMMON_B0_B4_SUBSTRATE
+
+## Real mixed-source readiness and common-interface prequalification, Checkpoint 955
+
+Research 694, Validation 391 and Message 108 use exactly pinned Checkpoint 954 Git 17ea403ef64092f275e3c7d6492d99929804f8e5 for a first unscored real-content R0-P03-V2 corpus/substrate readiness increment. Existing original source-census and role-frame mechanisms observe 1,586 ten-stratum Markdown path candidates and 2,897 broadly reviewable original ADS textual paths (4,090 tracked), all **candidate-only**, not formally eligible source carriers. An immutable coordinator seed of 24 mixed-role Git original sources spanning docs, implementation, frontend, schema, tests, integrity workflow, AO/assurance and Source Vault/Cockpit context is bound to SHA-256 d10d1f4a5f50f082b73689f4858b2a4f003746969fb098add7e8fa9bedb7a6b4. All 14 role-class labels are tentative, not J1/J2 or currentness admission.
+
+The new source-bound program verifies exact original Git blob/line evidence, supplies an unranked exact-source lexical probe and a nine-capability V03 experiment-only shared semantic core containing Checkpoint 954 qualified weaker-assurance S1/J2/J3. B0-B4 common-only projection bytes are identical at SHA-256 33d3ab8fef047f55313ebdab0fb097389859953b8fed0eee5027e288e4e51bdb, but this is interface equality, not runtime equality of five unimplemented navigation arms. Immutable output SHA-256 49e9743809c28e15776e6a96730bfab4ff25187a94ae9238953aca4a654d0463. Thirty-eight focused tests pass after test harness corrections. Nothing selects build or heldout paths, fresh primary tasks, gold, formal arm scores or physical architecture. The independent 65-source Research 217 legacy reference remains separate.
+
+Next: genuine source-content eligibility/authority/currentness and closure, independent custody/sampling, then runnable common B0-B4 semantics and fair arm mechanisms under Research 513/559/576/673. Do not mistake candidate path counts or common projection hash for a formal 60/20 or fair runtime comparison. All physical/workflow design levels remain open.
+
+    RESEARCH=694
+    VALIDATION=391
+    CHECKPOINT=955
+    MESSAGE=MC0030_MESSAGE108
+    ROLE_SEED=24_UNREVIEWED
+    COMMON_INTERFACE_HASH=33d3ab8fef047f55313ebdab0fb097389859953b8fed0eee5027e288e4e51bdb
+    FORMAL_60_20=NOT_SELECTED
+    ARM_RUNTIME_PARITY=NOT_DEMONSTRATED
+    FORMAL_P03=INCOMPLETE
+    PHYSICAL_TARGET_SELECTED=false
+    NEXT=SOURCE_ELIGIBILITY_AND_COMMON_RUNTIME_CONTRACT
