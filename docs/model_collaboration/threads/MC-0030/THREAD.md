@@ -1557,3 +1557,23 @@ Next: genuine source-content eligibility/authority/currentness and closure, inde
     FORMAL_P03=INCOMPLETE
     PHYSICAL_TARGET_SELECTED=false
     NEXT=SOURCE_ELIGIBILITY_AND_COMMON_RUNTIME_CONTRACT
+
+## Content-grounded source roles and real common B0-B4 runtime, Checkpoint 956
+
+Research 695, Validation 392 and Message 109 preserve full source-content inspection of the previously proposed 24 unscored exact-Git witnesses (source ref 17ea403e, seed SHA256 d10d1f4a5f50f082b73689f4858b2a4f003746969fb098add7e8fa9bedb7a6b4). Content types are eleven Markdown, nine Python, two TSX, one schema and one workflow. Each status/document claim, Python AST declaration, TS export, schema property or workflow definition has an exact source line witness. The Decisions source has 36 entry headings with 11 reported statuses, requiring per-decision currentness review rather than whole-file current authority. All 24 remain NOT_ADJUDICATED for formal eligibility. Source-content receipt SHA256 d1da9fb5a8dfe4f75d81a22eed1fb1725a737ac66bc49591c416c2631aa7d63b.
+
+New common runtime exposes bounded exact-Git source excerpts, literal search, source content role observations, original accepted source-relative experiment-only weak-assurance J1/J2/J3 and transient non-governing derived orientation, using the same callable for all five B0-B4 labels. Their fixed synthetic engineering request traces and call counts are identical, API observation SHA256 5d2fe1ff0300b53b1f7daee9b9cabbc2cbc233a743f1ea4fd4481153277399a5, and runtime receipt SHA256 06b6042dd6228a83a8df9e41e4994867ae20afb42cb54e6f79a39d987f975ce2. Fifty-three focused adversarial tests pass. There are no separate navigation arm implementations, formal scores, independent gold or formal build/held-out set yet. A process-cache regeneration is not a production-generated-index deletion invariant.
+
+Next: independently adjudicate source semantic eligibility/currentness and entire source closure, qualify future split custodianship, and substantiate actual complete common connector parity before arm-specific implementation and freeze. Nothing chooses a physical target, changes production J1/J2/J3 or relaxes Research 513/559/576/673 hard gates.
+
+    RESEARCH=695
+    VALIDATION=392
+    CHECKPOINT=956
+    MESSAGE=MC0030_MESSAGE109
+    CONTENT_ROLE_OBSERVATIONS=24
+    FORMAL_SEMANTIC_ELIGIBILITY=NOT_ADJUDICATED
+    COMMON_SHARED_RUNTIME=TESTED_UNSCORED
+    ARM_SPECIFIC_RUNTIMES=NOT_QUALIFIED
+    FORMAL_60_20=NOT_FROZEN
+    FORMAL_P03=INCOMPLETE
+    NEXT=INDEPENDENT_SOURCE_ELIGIBILITY_AND_CONNECTOR_PARITY

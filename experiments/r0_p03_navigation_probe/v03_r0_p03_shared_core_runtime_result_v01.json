@@ -1,0 +1,96 @@
+{
+  "b1_b2_b3_b4_additions_implemented": false,
+  "ephemeral_derived_cache_discard_and_rebuild_equal": true,
+  "formal_60_20_selected": false,
+  "formal_r0_p03": "INCOMPLETE",
+  "hidden_gold_or_primary_tasks_generated": false,
+  "legacy_65_source_packet_modified": false,
+  "limitations": [
+    "All five facades call one shared common implementation; this tests actual common API behavior, not separate B0-B4 implementations or navigation advantages.",
+    "The 24 pilot sources are not independently adjudicated semantic-eligibility or owner/currentness facts.",
+    "Dropping this process-local cache is not a qualified test of deleting all future generated indexes or original repository views.",
+    "No independent blind author, hidden gold, held-out carrier, B0-B4 arm-specific indexing, budgets or scored navigation outputs were exercised."
+  ],
+  "literal_git_search_and_excerpt_read_implemented": true,
+  "original_role_source_count": 24,
+  "per_arm_equal_common_api_probes": {
+    "B0": {
+      "cache_drop_rebuild_equal": true,
+      "call_count_by_method": {
+        "derived_orientation": 2,
+        "drop_derived": 1,
+        "experimental_semantics": 2,
+        "literal_search": 1,
+        "read_source": 3,
+        "source_role_observation": 1
+      },
+      "common_api_observation_sha256": "5d2fe1ff0300b53b1f7daee9b9cabbc2cbc233a743f1ea4fd4481153277399a5",
+      "common_contract_sha256": "33d3ab8fef047f55313ebdab0fb097389859953b8fed0eee5027e288e4e51bdb",
+      "source_line_and_revision_exact": true
+    },
+    "B1": {
+      "cache_drop_rebuild_equal": true,
+      "call_count_by_method": {
+        "derived_orientation": 2,
+        "drop_derived": 1,
+        "experimental_semantics": 2,
+        "literal_search": 1,
+        "read_source": 3,
+        "source_role_observation": 1
+      },
+      "common_api_observation_sha256": "5d2fe1ff0300b53b1f7daee9b9cabbc2cbc233a743f1ea4fd4481153277399a5",
+      "common_contract_sha256": "33d3ab8fef047f55313ebdab0fb097389859953b8fed0eee5027e288e4e51bdb",
+      "source_line_and_revision_exact": true
+    },
+    "B2": {
+      "cache_drop_rebuild_equal": true,
+      "call_count_by_method": {
+        "derived_orientation": 2,
+        "drop_derived": 1,
+        "experimental_semantics": 2,
+        "literal_search": 1,
+        "read_source": 3,
+        "source_role_observation": 1
+      },
+      "common_api_observation_sha256": "5d2fe1ff0300b53b1f7daee9b9cabbc2cbc233a743f1ea4fd4481153277399a5",
+      "common_contract_sha256": "33d3ab8fef047f55313ebdab0fb097389859953b8fed0eee5027e288e4e51bdb",
+      "source_line_and_revision_exact": true
+    },
+    "B3": {
+      "cache_drop_rebuild_equal": true,
+      "call_count_by_method": {
+        "derived_orientation": 2,
+        "drop_derived": 1,
+        "experimental_semantics": 2,
+        "literal_search": 1,
+        "read_source": 3,
+        "source_role_observation": 1
+      },
+      "common_api_observation_sha256": "5d2fe1ff0300b53b1f7daee9b9cabbc2cbc233a743f1ea4fd4481153277399a5",
+      "common_contract_sha256": "33d3ab8fef047f55313ebdab0fb097389859953b8fed0eee5027e288e4e51bdb",
+      "source_line_and_revision_exact": true
+    },
+    "B4": {
+      "cache_drop_rebuild_equal": true,
+      "call_count_by_method": {
+        "derived_orientation": 2,
+        "drop_derived": 1,
+        "experimental_semantics": 2,
+        "literal_search": 1,
+        "read_source": 3,
+        "source_role_observation": 1
+      },
+      "common_api_observation_sha256": "5d2fe1ff0300b53b1f7daee9b9cabbc2cbc233a743f1ea4fd4481153277399a5",
+      "common_contract_sha256": "33d3ab8fef047f55313ebdab0fb097389859953b8fed0eee5027e288e4e51bdb",
+      "source_line_and_revision_exact": true
+    }
+  },
+  "physical_architecture_selected": false,
+  "production_or_actual_arm_runtime_parity_qualified": false,
+  "same_common_api_results_for_all_arm_labels": true,
+  "same_common_request_counts_for_all_arm_labels": true,
+  "schema_version": 1,
+  "source_content_receipt_sha256": "d1da9fb5a8dfe4f75d81a22eed1fb1725a737ac66bc49591c416c2631aa7d63b",
+  "source_git_revision": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+  "status": "COMMON_API_RUNTIME_BEHAVIOR_EQUAL_ON_UNSCORED_24_SOURCE_PILOT"
+}

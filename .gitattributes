@@ -149,6 +149,9 @@ experiments/r0_p03_navigation_probe/v03_real_pk_delegated_s1_j3_lifecycle_result
 # Preserve exact original-Git source seed and unscored shared-interface evidence on Windows/Linux.
 experiments/r0_p03_navigation_probe/v03_r0_p03_unscored_mixed_source_seed_v01.json -text
 experiments/r0_p03_navigation_probe/v03_r0_p03_unscored_mixed_source_cohort_readiness_result_v01.json -text
+# Protect exact content-role and shared-runtime source receipts from platform-specific text conversion.
+experiments/r0_p03_navigation_probe/v03_r0_p03_source_content_role_preflight_result_v01.json -text
+experiments/r0_p03_navigation_probe/v03_r0_p03_shared_core_runtime_result_v01.json -text
 
 # Preserve both original MC-0030 Message 063 historical carriers as exact Git blobs across Windows checkout.
 # The collision guard hashes their literal LF source bytes; CRLF worktree conversion would falsify the historical exception.

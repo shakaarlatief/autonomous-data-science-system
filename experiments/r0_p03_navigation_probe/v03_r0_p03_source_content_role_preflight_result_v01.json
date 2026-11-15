@@ -1,0 +1,1427 @@
+{
+  "content_role_evidence": [
+    {
+      "accepted_authority": "NOT_INFERRED_FROM_SOURCE_CONTENT_OR_ROLE",
+      "formal_cohort_membership": "NOT_SELECTED",
+      "independent_source_referee": "NOT_ASSIGNED",
+      "previous_coordinator_role_hint": "CURRENT_DECISION_CONTEXT",
+      "semantic_eligibility": "NOT_ADJUDICATED",
+      "source_git_blob": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+      "source_observation": {
+        "decision_witnesses": [
+          {
+            "claimed_status": {
+              "line": 9,
+              "line_sha256": "7734c2c2403936056b0dd10e14a218429f18882736e1fac1ad584b487a07d443",
+              "raw_text": "**Status:** Accepted  "
+            },
+            "decision_id": "D-001",
+            "header": {
+              "line": 7,
+              "line_sha256": "1da07894e9b04f9d4f9dfcf8d756e7bc18a59abbea509c166b4246854a22ce79",
+              "raw_text": "## D-001. Create a dedicated project separate from individual data projects"
+            }
+          },
+          {
+            "claimed_status": {
+              "line": 22,
+              "line_sha256": "7734c2c2403936056b0dd10e14a218429f18882736e1fac1ad584b487a07d443",
+              "raw_text": "**Status:** Accepted  "
+            },
+            "decision_id": "D-002",
+            "header": {
+              "line": 20,
+              "line_sha256": "22a5af4e35c024df675b4f5a3d786ec52634cfeec434ef7de36444a1724b76e4",
+              "raw_text": "## D-002. Use a dedicated GitHub repository as the persistent home of the project"
+            }
+          },
+          {
+            "claimed_status": {
+              "line": 35,
+              "line_sha256": "2bdf688d6c37e715045f1f6503a2da19bdae46b657cb78128123239b621f58d5",
+              "raw_text": "**Status:** Superseded in current repository state; the repository is now public  "
+            },
+            "decision_id": "D-003",
+            "header": {
+              "line": 33,
+              "line_sha256": "a2db0d6a81b980d3f8c11caf18611ca4e8f170e3eb8be137980e0efaee8acf43",
+              "raw_text": "## D-003. Keep the repository private during the early design stage"
+            }
+          },
+          {
+            "claimed_status": {
+              "line": 51,
+              "line_sha256": "7734c2c2403936056b0dd10e14a218429f18882736e1fac1ad584b487a07d443",
+              "raw_text": "**Status:** Accepted  "
+            },
+            "decision_id": "D-004",
+            "header": {
+              "line": 49,
+              "line_sha256": "56bddefa8ad6207f8a205afc183abee74925ab2fd5cb4e23cc23e9ffafe99c5c",
+              "raw_text": "## D-004. Treat chat as the design workspace and the repository as the source of truth"
+            }
+          },
+          {
+            "claimed_status": {
+              "line": 64,
+              "line_sha256": "7734c2c2403936056b0dd10e14a218429f18882736e1fac1ad584b487a07d443",
+              "raw_text": "**Status:** Accepted  "
+            },
+            "decision_id": "D-005",
+            "header": {
+              "line": 62,
+              "line_sha256": "6a1c1bf0354aa3ad92e3d3c3b384b59febc29a1ee4b9963012fdc36480f8c68f",
+              "raw_text": "## D-005. Preserve important knowledge at multiple levels of detail"
+            }
+          },
+          {
+            "claimed_status": {
+              "line": 79,
+              "line_sha256": "7734c2c2403936056b0dd10e14a218429f18882736e1fac1ad584b487a07d443",
+              "raw_text": "**Status:** Accepted  "
+            },
+            "decision_id": "D-006",
+            "header": {
+              "line": 77,
+              "line_sha256": "ee8c965d82117d85da2d1a15fd00abf06f319f5df4a68fc115f2d8aacfb72e41",
+              "raw_text": "## D-006. Foundational design memos are first-class project artifacts"
+            }
+          },
+          {
+            "claimed_status": {
+              "line": 92,
+              "line_sha256": "7734c2c2403936056b0dd10e14a218429f18882736e1fac1ad584b487a07d443",
+              "raw_text": "**Status:** Accepted  "
+            },
+            "decision_id": "D-007",
+            "header": {
+              "line": 90,
+              "line_sha256": "2addb9a0ea0d7545235091de58a532395173c3fb6b5d5931905425be2d2592d9",
+              "raw_text": "## D-007. Historical conversation material is not automatically canonical"
+            }
+          },
+          {
+            "claimed_status": {
+              "line": 105,
+              "line_sha256": "7734c2c2403936056b0dd10e14a218429f18882736e1fac1ad584b487a07d443",
+              "raw_text": "**Status:** Accepted  "
+            },
+            "decision_id": "D-008",
+            "header": {
+              "line": 103,
+              "line_sha256": "bbf2c53fb55748753ab277134b9c9c0a51f5a4c051ed2d3adfe691daa6015cf2",
+              "raw_text": "## D-008. Establish an explicit new-chat continuity procedure"
+            }
+          },
+          {
+            "claimed_status": {
+              "line": 122,
+              "line_sha256": "7734c2c2403936056b0dd10e14a218429f18882736e1fac1ad584b487a07d443",
+              "raw_text": "**Status:** Accepted  "
+            },
+            "decision_id": "D-009",
+            "header": {
+              "line": 120,
+              "line_sha256": "71da7dd27067d8c0cdc1d127c3c91edfc79883c9ad846cd6f7de1123451a1214",
+              "raw_text": "## D-009. Use checkpoints rather than trying to document every message immediately"
+            }
+          },
+          {
+            "claimed_status": {
+              "line": 135,
+              "line_sha256": "7734c2c2403936056b0dd10e14a218429f18882736e1fac1ad584b487a07d443",
+              "raw_text": "**Status:** Accepted  "
+            },
+            "decision_id": "D-010",
+            "header": {
+              "line": 133,
+              "line_sha256": "34c534918c7f36ba39051a7543a7d4f73728361c758765f9969985d3ed914c9e",
+              "raw_text": "## D-010. Treat the documentation methodology as provisional"
+            }
+          },
+          {
+            "claimed_status": {
+              "line": 148,
+              "line_sha256": "5cc0129f83e280918eccbfbb05dcf262e7a4d9ed0d2e963559364bba381d0905",
+              "raw_text": "**Status:** Superseded for the V1 persistence/retrieval architecture by D-028, persistence tooling by D-029, Python project/dependency tooling by D-030, reusable-knowledge interchange by D-031, initial reasoning runtime by D-032, source-universe substrate by D-033, and project-development knowledge architecture by D-035; still applicable to implementation subsystems not yet selected"
+            },
+            "decision_id": "D-011",
+            "header": {
+              "line": 146,
+              "line_sha256": "c862b14b09f14b96d671a77ddeba895b130b9250905fab541b3384c7e1f8aca1",
+              "raw_text": "## D-011. Do not select the implementation architecture yet"
+            }
+          },
+          {
+            "claimed_status": {
+              "line": 162,
+              "line_sha256": "6e6f700505592fb339d9ee72854a1a3dcb1a0e2b63f648b58d2f126d968721e2",
+              "raw_text": "**Status:** Accepted at the conceptual level  "
+            },
+            "decision_id": "D-012",
+            "header": {
+              "line": 160,
+              "line_sha256": "da2045cef39d38a72e59380ad1527235f7884798e2d9f37c2e6300bdf54e7493",
+              "raw_text": "## D-012. Do not attempt to design one complete fixed workflow for all data science projects"
+            }
+          },
+          {
+            "claimed_status": {
+              "line": 177,
+              "line_sha256": "7734c2c2403936056b0dd10e14a218429f18882736e1fac1ad584b487a07d443",
+              "raw_text": "**Status:** Accepted  "
+            },
+            "decision_id": "D-013",
+            "header": {
+              "line": 175,
+              "line_sha256": "622b4b52eafd51a9e1527319bb1f3dd2e4bd287912022e1086a1e05d65e0b9cf",
+              "raw_text": "## D-013. Use real projects to develop and test the system"
+            }
+          },
+          {
+            "claimed_status": {
+              "line": 190,
+              "line_sha256": "7734c2c2403936056b0dd10e14a218429f18882736e1fac1ad584b487a07d443",
+              "raw_text": "**Status:** Accepted  "
+            },
+            "decision_id": "D-014",
+            "header": {
+              "line": 188,
+              "line_sha256": "c3d52f23681a3beb9f47bbed463188dde7d947c7af81f19eb7168a23e55dc27c",
+              "raw_text": "## D-014. Generalize project lessons when appropriate"
+            }
+          },
+          {
+            "claimed_status": {
+              "line": 203,
+              "line_sha256": "7bb8bcaf5833d2c6538d913167a3f722190eaf28f21a5d42b9b715bdea42fb4a",
+              "raw_text": "**Status:** Superseded in architectural-uncertainty scope by D-033; durable public-Git exclusion outcome retained  "
+            },
+            "decision_id": "D-015",
+            "header": {
+              "line": 201,
+              "line_sha256": "e273940d793d08565cc031a5ad25dafd76b9158972be31f105810d5e19adbfba",
+              "raw_text": "## D-015. Keep the currently attached learning materials outside the repository for now"
+            }
+          },
+          {
+            "claimed_status": {
+              "line": 219,
+              "line_sha256": "875a0d4ea72271b1b581c91ede7b477b920cbbea0e459030a571dc1352663e47",
+              "raw_text": "**Status:** Accepted and executed  "
+            },
+            "decision_id": "D-016",
+            "header": {
+              "line": 217,
+              "line_sha256": "e2ac367313a1e3b4acfbf701ae2a422912903937886e0966099f2032b6e10361",
+              "raw_text": "## D-016. Create Checkpoint 0 before continuing deeper system design"
+            }
+          },
+          {
+            "claimed_status": {
+              "line": 232,
+              "line_sha256": "7734c2c2403936056b0dd10e14a218429f18882736e1fac1ad584b487a07d443",
+              "raw_text": "**Status:** Accepted  "
+            },
+            "decision_id": "D-017",
+            "header": {
+              "line": 230,
+              "line_sha256": "fd12c7b425ada725fe70ab66ee0c16574bd5a8f39b248a66b56b56960ebc4032",
+              "raw_text": "## D-017. Define the primary purpose in project-relative terms"
+            }
+          },
+          {
+            "claimed_status": {
+              "line": 251,
+              "line_sha256": "7734c2c2403936056b0dd10e14a218429f18882736e1fac1ad584b487a07d443",
+              "raw_text": "**Status:** Accepted  "
+            },
+            "decision_id": "D-018",
+            "header": {
+              "line": 249,
+              "line_sha256": "7906e169ae38a6133d8daf2fae63e2a610dcaa98acc0d5806450ec2c746982b9",
+              "raw_text": "## D-018. Make checkpoint detection a proactive AI responsibility"
+            }
+          },
+          {
+            "claimed_status": {
+              "line": 270,
+              "line_sha256": "7734c2c2403936056b0dd10e14a218429f18882736e1fac1ad584b487a07d443",
+              "raw_text": "**Status:** Accepted  "
+            },
+            "decision_id": "D-019",
+            "header": {
+              "line": 268,
+              "line_sha256": "3dd68095df88d16dc692068dc661d975176ef4eaa735aa1f0d8f9c1902b072c9",
+              "raw_text": "## D-019. Use numbered, content-specific design-session names"
+            }
+          },
+          {
+            "claimed_status": {
+              "line": 291,
+              "line_sha256": "7734c2c2403936056b0dd10e14a218429f18882736e1fac1ad584b487a07d443",
+              "raw_text": "**Status:** Accepted  "
+            },
+            "decision_id": "D-020",
+            "header": {
+              "line": 289,
+              "line_sha256": "9039c863d46dd3cec97d7faef08a128ffbb579fb8cdf026f317f20b9ad6a3574",
+              "raw_text": "## D-020. Make design-chat rotation a proactive AI responsibility"
+            }
+          },
+          {
+            "claimed_status": {
+              "line": 312,
+              "line_sha256": "7734c2c2403936056b0dd10e14a218429f18882736e1fac1ad584b487a07d443",
+              "raw_text": "**Status:** Accepted  "
+            },
+            "decision_id": "D-021",
+            "header": {
+              "line": 310,
+              "line_sha256": "c780e587c73a863381554f1a39772e055ce05de33fc571935b98ba7a55c93f97",
+              "raw_text": "## D-021. Add an explicit promotion audit to substantive checkpoints"
+            }
+          },
+          {
+            "claimed_status": {
+              "line": 331,
+              "line_sha256": "7734c2c2403936056b0dd10e14a218429f18882736e1fac1ad584b487a07d443",
+              "raw_text": "**Status:** Accepted  "
+            },
+            "decision_id": "D-022",
+            "header": {
+              "line": 329,
+              "line_sha256": "4e7817dfae1a7954de42c5c5df108a3b7dfc66878f3319a178924de96ae9fc58",
+              "raw_text": "## D-022. Maintain a knowledge map as a routing layer"
+            }
+          },
+          {
+            "claimed_status": {
+              "line": 354,
+              "line_sha256": "7734c2c2403936056b0dd10e14a218429f18882736e1fac1ad584b487a07d443",
+              "raw_text": "**Status:** Accepted  "
+            },
+            "decision_id": "D-023",
+            "header": {
+              "line": 352,
+              "line_sha256": "ce0bebeb585a425c50238e1784222ea0eecc53892ba6cfe95229435b971ca638",
+              "raw_text": "## D-023. Perform periodic knowledge reconciliation and separate current state from detailed experiment ledgers"
+            }
+          },
+          {
+            "claimed_status": {
+              "line": 375,
+              "line_sha256": "e44031600d89f23bd28e5c08dcce6d5d4b0f697f83133d399ad5f361c34928d2",
+              "raw_text": "**Status:** Accepted for the current stage  "
+            },
+            "decision_id": "D-024",
+            "header": {
+              "line": 373,
+              "line_sha256": "bee220379d6006df6c266fbaa8199530d6bfa0e3e1c2e158b310703fd315c74c",
+              "raw_text": "## D-024. Keep Git and Markdown as the current preservation substrate and defer advanced knowledge infrastructure"
+            }
+          },
+          {
+            "claimed_status": {
+              "line": 394,
+              "line_sha256": "7734c2c2403936056b0dd10e14a218429f18882736e1fac1ad584b487a07d443",
+              "raw_text": "**Status:** Accepted  "
+            },
+            "decision_id": "D-025",
+            "header": {
+              "line": 392,
+              "line_sha256": "ab3782e1532759524ff2a6584ae960d21ef0ba4093f27dc0533953b6e7fffbfa",
+              "raw_text": "## D-025. Maintain a selective major-changes ledger"
+            }
+          },
+          {
+            "claimed_status": {
+              "line": 415,
+              "line_sha256": "268fbca79b6148641691e23f5a40e8da4c118968f93fbbb1b7eefc4a41d7f8c8",
+              "raw_text": "**Status:** Accepted and frozen for Prototype V0 operational use  "
+            },
+            "decision_id": "D-026",
+            "header": {
+              "line": 413,
+              "line_sha256": "1e8efc8e5e8fd096f229b72d8a1ab2289cc3fb101eaf2fd5b21ac55dd8019313",
+              "raw_text": "## D-026. Use the retrospectively validated held-out supervisor for remaining Prototype V0 execution"
+            }
+          },
+          {
+            "claimed_status": {
+              "line": 443,
+              "line_sha256": "b67bfc280ef0c4da220448196b035b33750c988336264266b3e774a01549a221",
+              "raw_text": "**Status:** Accepted for the remaining Prototype V0 treatment-execution phase  "
+            },
+            "decision_id": "D-027",
+            "header": {
+              "line": 441,
+              "line_sha256": "aa77123595d4771ac55765cc8ba29d88ced8b2329211e0aff7b7d2a67db25019",
+              "raw_text": "## D-027. Allow large bounded unattended supervisor batches after the prospective smoke test"
+            }
+          },
+          {
+            "claimed_status": {
+              "line": 470,
+              "line_sha256": "9488d804deab4b536a84ac8fbcc4572fe90b0f878f69833aaacb8be824c6fdb2",
+              "raw_text": "**Status:** Accepted for V1  "
+            },
+            "decision_id": "D-028",
+            "header": {
+              "line": 468,
+              "line_sha256": "4c994d4eedc64b9cd1366815a9494c823aea0b29d15d10467aac42f80b5185b8",
+              "raw_text": "## D-028. Use a SQLite-centered local-first architecture for V1 methodological knowledge and project state"
+            }
+          },
+          {
+            "claimed_status": {
+              "line": 534,
+              "line_sha256": "9488d804deab4b536a84ac8fbcc4572fe90b0f878f69833aaacb8be824c6fdb2",
+              "raw_text": "**Status:** Accepted for V1  "
+            },
+            "decision_id": "D-029",
+            "header": {
+              "line": 532,
+              "line_sha256": "02ff874f8e0067d1d6c0d96a74417744069b5be2e21cdcc742f0775004ba5254",
+              "raw_text": "## D-029. Use SQLAlchemy Core and Alembic for V1 persistence implementation"
+            }
+          },
+          {
+            "claimed_status": {
+              "line": 580,
+              "line_sha256": "9488d804deab4b536a84ac8fbcc4572fe90b0f878f69833aaacb8be824c6fdb2",
+              "raw_text": "**Status:** Accepted for V1  "
+            },
+            "decision_id": "D-030",
+            "header": {
+              "line": 578,
+              "line_sha256": "2193409c4471a0ad3775cff7daae6ae6ee5ec67cf08ff71ccff6ae7f9c36c0ee",
+              "raw_text": "## D-030. Use uv with standards-based pyproject metadata for the V1 Python project"
+            }
+          },
+          {
+            "claimed_status": {
+              "line": 624,
+              "line_sha256": "9488d804deab4b536a84ac8fbcc4572fe90b0f878f69833aaacb8be824c6fdb2",
+              "raw_text": "**Status:** Accepted for V1  "
+            },
+            "decision_id": "D-031",
+            "header": {
+              "line": 622,
+              "line_sha256": "e6b13610c68e1b128a159439941347a388c52e306d2744401ea35b63a0ce0365",
+              "raw_text": "## D-031. Use JSON plus JSON Schema and semantic validation for V1 reusable-knowledge interchange"
+            }
+          },
+          {
+            "claimed_status": {
+              "line": 668,
+              "line_sha256": "9488d804deab4b536a84ac8fbcc4572fe90b0f878f69833aaacb8be824c6fdb2",
+              "raw_text": "**Status:** Accepted for V1  "
+            },
+            "decision_id": "D-032",
+            "header": {
+              "line": 666,
+              "line_sha256": "68883de320a8027ab7cfed36f3281e7f0232e5f7f5417bea6c22202047db2a47",
+              "raw_text": "## D-032. Use OpenAI Agents SDK behind an ADS-owned runtime port for the initial V1 reasoning runtime"
+            }
+          },
+          {
+            "claimed_status": {
+              "line": 780,
+              "line_sha256": "9488d804deab4b536a84ac8fbcc4572fe90b0f878f69833aaacb8be824c6fdb2",
+              "raw_text": "**Status:** Accepted for V1  "
+            },
+            "decision_id": "D-033",
+            "header": {
+              "line": 778,
+              "line_sha256": "b3ea49eda608e9e2bc7bd7be26a51f3b58090de994c432704ede209184d081e8",
+              "raw_text": "## D-033. Use an ADS-owned private source universe substrate for external evidence artifacts"
+            }
+          },
+          {
+            "claimed_status": {
+              "line": 843,
+              "line_sha256": "7734c2c2403936056b0dd10e14a218429f18882736e1fac1ad584b487a07d443",
+              "raw_text": "**Status:** Accepted  "
+            },
+            "decision_id": "D-034",
+            "header": {
+              "line": 841,
+              "line_sha256": "c078cf9410c694dfac9e99a321eead1871933c5c0d61e091c29cf8efb12bc36f",
+              "raw_text": "## D-034. Adopt governed provider-neutral multi-model development collaboration"
+            }
+          },
+          {
+            "claimed_status": {
+              "line": 930,
+              "line_sha256": "91a9facec78916ff42d61efa0358b8d2f62a69985f42be26514c8cf50f714d56",
+              "raw_text": "**Status:** Accepted / selected successor target / not yet operational authority"
+            },
+            "decision_id": "D-035",
+            "header": {
+              "line": 928,
+              "line_sha256": "3079804c470d0bc6e5728f30e84e05ddc501336195cb94f4096ae00fa02e0554",
+              "raw_text": "## D-035. Select PKA-CANDIDATE-01 as the successor project-development knowledge architecture target"
+            }
+          },
+          {
+            "claimed_status": {
+              "line": 1034,
+              "line_sha256": "91a9facec78916ff42d61efa0358b8d2f62a69985f42be26514c8cf50f714d56",
+              "raw_text": "**Status:** Accepted / selected successor target / not yet operational authority"
+            },
+            "decision_id": "D-036",
+            "header": {
+              "line": 1032,
+              "line_sha256": "bd8e9b7847f534af11a910cd5f98119473fd7b652b657e1020e0df20e59a83db",
+              "raw_text": "## D-036. Select THIN_CENTRED_HYBRID_V03 as the successor Project semantic/control architecture target"
+            }
+          }
+        ],
+        "distinct_reported_statuses": [
+          "**Status:** Accepted",
+          "**Status:** Accepted / selected successor target / not yet operational authority",
+          "**Status:** Accepted and executed",
+          "**Status:** Accepted and frozen for Prototype V0 operational use",
+          "**Status:** Accepted at the conceptual level",
+          "**Status:** Accepted for V1",
+          "**Status:** Accepted for the current stage",
+          "**Status:** Accepted for the remaining Prototype V0 treatment-execution phase",
+          "**Status:** Superseded for the V1 persistence/retrieval architecture by D-028, persistence tooling by D-029, Python project/dependency tooling by D-030, reusable-knowledge interchange by D-031, initial reasoning runtime by D-032, source-universe substrate by D-033, and project-development knowledge architecture by D-035; still applicable to implementation subsystems not yet selected",
+          "**Status:** Superseded in architectural-uncertainty scope by D-033; durable public-Git exclusion outcome retained",
+          "**Status:** Superseded in current repository state; the repository is now public"
+        ],
+        "evidence_class": "DOC_AUTHORIAL_STATUS_OR_EXPLANATION_NOT_CURRENTNESS_CERTIFICATION",
+        "first_line": {
+          "line": 1,
+          "line_sha256": "55014cace8283815b0bfbc6e5801a9d15504e5591676af506cdce60239b3dec8",
+          "raw_text": "# Decisions"
+        },
+        "per_entry_decision_count": 36,
+        "source_format": "MARKDOWN",
+        "structural_claim_type": "MULTI_DECISION_COLLECTION_NOT_ONE_STATUS",
+        "whole_document_current_authority_from_this_parser": false
+      },
+      "source_path": "docs/DECISIONS.md",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "source_sha256": "14e40c0ca6ec0f38373d971f90fd91b4457657606b93c5fccdfb101b3301bd04"
+    },
+    {
+      "accepted_authority": "NOT_INFERRED_FROM_SOURCE_CONTENT_OR_ROLE",
+      "formal_cohort_membership": "NOT_SELECTED",
+      "independent_source_referee": "NOT_ASSIGNED",
+      "previous_coordinator_role_hint": "CURRENT_ORIENTATION_CONTEXT",
+      "semantic_eligibility": "NOT_ADJUDICATED",
+      "source_git_blob": "ad8c582b1588cc62b753425d33da91de42e31f3e",
+      "source_observation": {
+        "evidence_class": "DOC_AUTHORIAL_STATUS_OR_EXPLANATION_NOT_CURRENTNESS_CERTIFICATION",
+        "first_line": {
+          "line": 1,
+          "line_sha256": "46c856efe253be2e84099cfbcdd91f3079f5a57103702201a5667bf688fc0cbb",
+          "raw_text": "# Architecture Program Overview and Working Roadmap"
+        },
+        "metadata_is_not_admitted_j1_or_currentness": true,
+        "reported_metadata": [
+          {
+            "field": "Status",
+            "source": {
+              "line": 3,
+              "line_sha256": "5895166c815c4a13bfa99d48819c7265f1a0e340e126ee7d63cea7398238c1e6",
+              "raw_text": "**Status:** TEMPORARY HUMAN ORIENTATION / NON-AUTHORITATIVE / NON-GOVERNING  "
+            }
+          }
+        ],
+        "source_format": "MARKDOWN",
+        "structural_claim_type": "DOCUMENT_HEADER_AUTHORIAL_REPORT"
+      },
+      "source_path": "docs/ARCHITECTURE_PROGRAM_OVERVIEW.md",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "source_sha256": "73d5791efc49260ec258a1379c3857de42ff915c402de6a0aff14ef32afce437"
+    },
+    {
+      "accepted_authority": "NOT_INFERRED_FROM_SOURCE_CONTENT_OR_ROLE",
+      "formal_cohort_membership": "NOT_SELECTED",
+      "independent_source_referee": "NOT_ASSIGNED",
+      "previous_coordinator_role_hint": "CURRENT_ORIENTATION_CONTEXT",
+      "semantic_eligibility": "NOT_ADJUDICATED",
+      "source_git_blob": "34098855a410008d7e1012c38cb1cf39cb1acfa7",
+      "source_observation": {
+        "evidence_class": "DOC_AUTHORIAL_STATUS_OR_EXPLANATION_NOT_CURRENTNESS_CERTIFICATION",
+        "first_line": {
+          "line": 1,
+          "line_sha256": "82fa969c888475bc9a5bc2c913686a337b653d6181199f7f11e38b4d310809a8",
+          "raw_text": "# Continuity"
+        },
+        "metadata_is_not_admitted_j1_or_currentness": true,
+        "reported_metadata": [
+          {
+            "field": "Status",
+            "source": {
+              "line": 3,
+              "line_sha256": "4de35f588abd308a7b025f48adacc42a662be575508a809d0f515036ab8484fb",
+              "raw_text": "**Status:** Current canonical continuity procedure  "
+            }
+          },
+          {
+            "field": "Last reviewed",
+            "source": {
+              "line": 5,
+              "line_sha256": "a96da9a44a7e8382789cbffbcbbc3e7000909780727bd25663a5c1b8d2019ba9",
+              "raw_text": "**Last reviewed:** 2026-09-26"
+            }
+          }
+        ],
+        "source_format": "MARKDOWN",
+        "structural_claim_type": "DOCUMENT_HEADER_AUTHORIAL_REPORT"
+      },
+      "source_path": "docs/CONTINUITY.md",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "source_sha256": "b54c1f6e6e48fb7f82cab62e91b7b9294360b1f41d0b20ba055f5757d5d49b88"
+    },
+    {
+      "accepted_authority": "NOT_INFERRED_FROM_SOURCE_CONTENT_OR_ROLE",
+      "formal_cohort_membership": "NOT_SELECTED",
+      "independent_source_referee": "NOT_ASSIGNED",
+      "previous_coordinator_role_hint": "CONTRACT_CARRIER",
+      "semantic_eligibility": "NOT_ADJUDICATED",
+      "source_git_blob": "70db025eefa69a8dec43b04dfdae87f5700754c9",
+      "source_observation": {
+        "evidence_class": "DOC_AUTHORIAL_STATUS_OR_EXPLANATION_NOT_CURRENTNESS_CERTIFICATION",
+        "first_line": {
+          "line": 1,
+          "line_sha256": "6af4b06a632b132108da61d51567211ec01ba12da6b2ef73acac30cc19973a78",
+          "raw_text": "# Specification 028 — V1 Project-Knowledge Architecture Implementation and Migration Contract"
+        },
+        "metadata_is_not_admitted_j1_or_currentness": true,
+        "reported_metadata": [
+          {
+            "field": "Status",
+            "source": {
+              "line": 4,
+              "line_sha256": "9256e02da151289f3c9c943202cafa78eef6ce9f71f8bc609b260b2b1c8aa163",
+              "raw_text": "**Status:** FROZEN / IMPLEMENTATION PENDING"
+            }
+          },
+          {
+            "field": "Scope",
+            "source": {
+              "line": 5,
+              "line_sha256": "51012899d2f5088b2e1f188da25c88dc6546e94ff3884279d440896b6f39be42",
+              "raw_text": "**Scope:** Production implementation and staged migration contract for the owner-selected `PKA-CANDIDATE-01` project-development knowledge architecture, including repository-local tooling, structured semantic declarations, deterministic derived views, authority resolution, workstream continuation, reconstruction planning, capture/promotion, validation, professional architecture documentation, compatibility migration, rollback, and cutover qualification."
+            }
+          },
+          {
+            "field": "Authority",
+            "source": {
+              "line": 6,
+              "line_sha256": "fb9e1b3de76672a9967abec6b468877bc31203d6825d9590f7fe35eb3a0c30de",
+              "raw_text": "**Authority:** Frozen implementation contract subordinate to D-035 and Requirements V0.2. It does not switch operational authority. Existing continuity remains authoritative until a later explicit qualified authority-switch decision."
+            }
+          }
+        ],
+        "source_format": "MARKDOWN",
+        "structural_claim_type": "DOCUMENT_HEADER_AUTHORIAL_REPORT"
+      },
+      "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "source_sha256": "7651707b5d590efd7686a77dca20597dc731bfafa1fabc2358775bef7b9d2ffe"
+    },
+    {
+      "accepted_authority": "NOT_INFERRED_FROM_SOURCE_CONTENT_OR_ROLE",
+      "formal_cohort_membership": "NOT_SELECTED",
+      "independent_source_referee": "NOT_ASSIGNED",
+      "previous_coordinator_role_hint": "FOUNDATION_CARRIER",
+      "semantic_eligibility": "NOT_ADJUDICATED",
+      "source_git_blob": "20c8ed53d6a2955b7cda2ae6ceada05e2629d6c9",
+      "source_observation": {
+        "evidence_class": "DOC_AUTHORIAL_STATUS_OR_EXPLANATION_NOT_CURRENTNESS_CERTIFICATION",
+        "first_line": {
+          "line": 1,
+          "line_sha256": "0d2b373896d0cc09726de5438c1f1880805373d64f24139c6c5f98718079e9c3",
+          "raw_text": "# Foundation 014: Knowledge Preservation Architecture and Evolution"
+        },
+        "metadata_is_not_admitted_j1_or_currentness": true,
+        "reported_metadata": [
+          {
+            "field": "Status",
+            "source": {
+              "line": 4,
+              "line_sha256": "bedf5f99c2fe0e5acec827e98215cda834fa5984f814562a47b43a1689219bea",
+              "raw_text": "**Status:** Foundational design memo  "
+            }
+          },
+          {
+            "field": "Maturity",
+            "source": {
+              "line": 5,
+              "line_sha256": "c022c0e18435c87badc41ee8b1ea38e5804c960262cd061e950e07cb5ebfd411",
+              "raw_text": "**Maturity:** Accepted current project-development architecture with explicitly deferred future tooling  "
+            }
+          },
+          {
+            "field": "Scope",
+            "source": {
+              "line": 6,
+              "line_sha256": "0945b5223d18f70b7f889336940063c021e77e2012ed0ffec980988db4dd1df6",
+              "raw_text": "**Scope:** How this project preserves, promotes, discovers, reconciles, and evolves its own knowledge. This does not change Prototype V0 treatment behavior."
+            }
+          }
+        ],
+        "source_format": "MARKDOWN",
+        "structural_claim_type": "DOCUMENT_HEADER_AUTHORIAL_REPORT"
+      },
+      "source_path": "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "source_sha256": "d93720c72673dc99f2b5b9f61453c20a536993b6ddd989a21608f32cbb653f77"
+    },
+    {
+      "accepted_authority": "NOT_INFERRED_FROM_SOURCE_CONTENT_OR_ROLE",
+      "formal_cohort_membership": "NOT_SELECTED",
+      "independent_source_referee": "NOT_ASSIGNED",
+      "previous_coordinator_role_hint": "HISTORICAL_NAVIGATION_EVIDENCE",
+      "semantic_eligibility": "NOT_ADJUDICATED",
+      "source_git_blob": "a79dbc712a3b58cdd2e2e2f0a86ddf1f89b0b2a4",
+      "source_observation": {
+        "evidence_class": "DOC_AUTHORIAL_STATUS_OR_EXPLANATION_NOT_CURRENTNESS_CERTIFICATION",
+        "first_line": {
+          "line": 1,
+          "line_sha256": "03e3c31facf5d13227861d9f7101818bd4fbd2d6a47771469034a7a3f059e160",
+          "raw_text": "# Research 217: W5 T1 V0.2 Controlled Subject Architecture Acceptance"
+        },
+        "metadata_is_not_admitted_j1_or_currentness": true,
+        "reported_metadata": [
+          {
+            "field": "Status",
+            "source": {
+              "line": 4,
+              "line_sha256": "f862c96f5d49daf2950462246a0903cf9ea4b3be569abfc7d14fd0c5ae6e4009",
+              "raw_text": "**Status:** T1 ACCEPTED / CONTROLLED SUBJECT ARCHITECTURE FROZEN"
+            }
+          },
+          {
+            "field": "Scope",
+            "source": {
+              "line": 11,
+              "line_sha256": "3f78ec3ba6a6ad95516f89a9bc744ad56d11eac750daa4153a663328ee9e60e1",
+              "raw_text": "**Scope:** Reconcile the V0.2 deterministic 65-carrier experiment and the second blind 24-carrier calibration, freeze the V1 semantic-subject contract, and identify bounded definition clarifications for production realization."
+            }
+          },
+          {
+            "field": "Authority",
+            "source": {
+              "line": 12,
+              "line_sha256": "2c4f487ff9a7844bf8e65321fb7525ca6b550ee1baeff45c82eeb35a1bfc2a50",
+              "raw_text": "**Authority:** W5 design result only. This does not yet add navigation metadata to production sources, change source authority, replace the legacy Knowledge Map, begin broad semantic migration, or switch operational authority."
+            }
+          }
+        ],
+        "source_format": "MARKDOWN",
+        "structural_claim_type": "DOCUMENT_HEADER_AUTHORIAL_REPORT"
+      },
+      "source_path": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "source_sha256": "ea21b21b79a89efc6c2c2bcf030cc1617bad9f47eb2b761d07f5ec0a6e246177"
+    },
+    {
+      "accepted_authority": "NOT_INFERRED_FROM_SOURCE_CONTENT_OR_ROLE",
+      "formal_cohort_membership": "NOT_SELECTED",
+      "independent_source_referee": "NOT_ASSIGNED",
+      "previous_coordinator_role_hint": "UNSELECTED_SUPERSESSION_PROPOSAL",
+      "semantic_eligibility": "NOT_ADJUDICATED",
+      "source_git_blob": "1a55bc9b492c625b32c30711dc8bfeb43b4e944b",
+      "source_observation": {
+        "evidence_class": "DOC_AUTHORIAL_STATUS_OR_EXPLANATION_NOT_CURRENTNESS_CERTIFICATION",
+        "first_line": {
+          "line": 1,
+          "line_sha256": "2f58dc86960381553f7d617de5b849bcca9ddd4ba99326959a44f8d32f5db8bf",
+          "raw_text": "# Research 254: R7-B Target Project Information Hierarchy and Research 218 Supersession Candidate"
+        },
+        "metadata_is_not_admitted_j1_or_currentness": true,
+        "reported_metadata": [
+          {
+            "field": "Status",
+            "source": {
+              "line": 4,
+              "line_sha256": "9848f5f7b901173f3342531c94f3134f32639570a2d871dd1928f5c540894083",
+              "raw_text": "**Status:** R7 TARGET HIERARCHY RECOMMENDED / RESEARCH 218 PHYSICAL TREE SUPERSESSION CANDIDATE / OWNER DECISION REQUIRED / NO PHYSICAL MIGRATION"
+            }
+          },
+          {
+            "field": "Scope",
+            "source": {
+              "line": 8,
+              "line_sha256": "683f9a3434d6c6fc150e5854b17c937cff1a34b426c0fe8e8bffabe9817609e0",
+              "raw_text": "**Scope:** Convert the accepted R7-A information model into a coherent physical Project information hierarchy, authoring decision tree and compatibility/supersession plan. This is a target recommendation only."
+            }
+          }
+        ],
+        "source_format": "MARKDOWN",
+        "structural_claim_type": "DOCUMENT_HEADER_AUTHORIAL_REPORT"
+      },
+      "source_path": "docs/research/254_r7b_target_project_information_hierarchy_and_research218_supersession_candidate.md",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "source_sha256": "c9c0b14ae6b44106c901e088f0291f4101c800ee0832cbf3f9a0bf7902fe7ef8"
+    },
+    {
+      "accepted_authority": "NOT_INFERRED_FROM_SOURCE_CONTENT_OR_ROLE",
+      "formal_cohort_membership": "NOT_SELECTED",
+      "independent_source_referee": "NOT_ASSIGNED",
+      "previous_coordinator_role_hint": "AO_ARCHITECTURE_RESEARCH",
+      "semantic_eligibility": "NOT_ADJUDICATED",
+      "source_git_blob": "73b731068c02d57be38f8c0c4401255cbb0148d0",
+      "source_observation": {
+        "evidence_class": "DOC_AUTHORIAL_STATUS_OR_EXPLANATION_NOT_CURRENTNESS_CERTIFICATION",
+        "first_line": {
+          "line": 1,
+          "line_sha256": "125cb8bb43cf86520514deaaa4ad757ed66a6acf75fbe8daf33478156d9acf1c",
+          "raw_text": "# Research 219: Activation, Orchestration and Self-Hosting Bootstrap Program"
+        },
+        "metadata_is_not_admitted_j1_or_currentness": true,
+        "reported_metadata": [
+          {
+            "field": "Status",
+            "source": {
+              "line": 4,
+              "line_sha256": "086f16a647c7d32c01aaf5149e32692c36cd72d8973e15e2ff02ecaeff41a29a",
+              "raw_text": "**Status:** ACTIVE / AO-9 COMPLETE / RESEARCH 218 PHYSICAL-INFORMATION-ARCHITECTURE EVOLUTION NEXT BEFORE AO-10 / W5-F0 PAUSED"
+            }
+          },
+          {
+            "field": "Scope",
+            "source": {
+              "line": 11,
+              "line_sha256": "12a14f772334074d4b66fb3cc5db2eb27f46228b274139c25d97c9b79213aa0d",
+              "raw_text": "**Scope:** Determine and implement the missing project control/orchestration layer required so that relevant knowledge, process, collaborator, recovery path, preservation path, and architecture-evolution behavior activate from ordinary owner intent without depending on the owner remembering the architecture."
+            }
+          }
+        ],
+        "source_format": "MARKDOWN",
+        "structural_claim_type": "DOCUMENT_HEADER_AUTHORIAL_REPORT"
+      },
+      "source_path": "docs/research/219_activation_orchestration_self_hosting_bootstrap_program.md",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "source_sha256": "61e7ad0743009a7ec7ee70ba0d1338d3cef0493ab1275fcd1a0c6f59a2663b74"
+    },
+    {
+      "accepted_authority": "NOT_INFERRED_FROM_SOURCE_CONTENT_OR_ROLE",
+      "formal_cohort_membership": "NOT_SELECTED",
+      "independent_source_referee": "NOT_ASSIGNED",
+      "previous_coordinator_role_hint": "ASSURANCE_RESEARCH",
+      "semantic_eligibility": "NOT_ADJUDICATED",
+      "source_git_blob": "83f54df0210a5a55cc8a342fd3ad2cebb063f524",
+      "source_observation": {
+        "evidence_class": "DOC_AUTHORIAL_STATUS_OR_EXPLANATION_NOT_CURRENTNESS_CERTIFICATION",
+        "first_line": {
+          "line": 1,
+          "line_sha256": "5ce1880cf5710eb6ee413d3754c8532f8006c17c6e09192164e82729dbd6392d",
+          "raw_text": "# Research 293: P-D1 Warrant-Proportionality Result"
+        },
+        "metadata_is_not_admitted_j1_or_currentness": true,
+        "reported_metadata": [
+          {
+            "field": "Status",
+            "source": {
+              "line": 4,
+              "line_sha256": "87856aee750e57f26487bef7c2df5756c206afd8a3c7c896bbb01fc3f8f5e3ea",
+              "raw_text": "**Status:** P-D1 PASS / SELECTIVE WARRANT MODEL SUPPORTED / NO OWNER ASSURANCE DECISION"
+            }
+          },
+          {
+            "field": "Scope",
+            "source": {
+              "line": 12,
+              "line_sha256": "b37af2c740a806b7091355df3c0adfd341b7b70b9c21febe6a6a15eeec52fe77",
+              "raw_text": "**Scope:** Record the frozen-harness execution result for warrant proportionality."
+            }
+          },
+          {
+            "field": "Authority",
+            "source": {
+              "line": 13,
+              "line_sha256": "9f6fb9a50e4fd825f91f7f10074478ac2e6c7f76aadfece854e3088b2bcd389e",
+              "raw_text": "**Authority:** Empirical architecture evidence only."
+            }
+          }
+        ],
+        "source_format": "MARKDOWN",
+        "structural_claim_type": "DOCUMENT_HEADER_AUTHORIAL_REPORT"
+      },
+      "source_path": "docs/research/293_p_d1_warrant_proportionality_result.md",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "source_sha256": "b8615332394d34436e99c5c7c045a239edafb0bc2a01bec71cab0caf52ccdb81"
+    },
+    {
+      "accepted_authority": "NOT_INFERRED_FROM_SOURCE_CONTENT_OR_ROLE",
+      "formal_cohort_membership": "NOT_SELECTED",
+      "independent_source_referee": "NOT_ASSIGNED",
+      "previous_coordinator_role_hint": "PRODUCT_SOURCE_PROVENANCE",
+      "semantic_eligibility": "NOT_ADJUDICATED",
+      "source_git_blob": "1719ed23c62315078a0f35267001b8a3e2ce8b97",
+      "source_observation": {
+        "evidence_class": "DOC_AUTHORIAL_STATUS_OR_EXPLANATION_NOT_CURRENTNESS_CERTIFICATION",
+        "first_line": {
+          "line": 1,
+          "line_sha256": "a23afaaaa626d60dfc75a5d40696a895f51c9542d1d5f09a8757d6a93240defd",
+          "raw_text": "# Project Cockpit Implementation Provenance"
+        },
+        "metadata_is_not_admitted_j1_or_currentness": true,
+        "reported_metadata": [
+          {
+            "field": "Status",
+            "source": {
+              "line": 3,
+              "line_sha256": "d20f155f224a7c0d8f1e8ff7b7e1c6ff3ae610d2e579e02a1f5df8ae073ab9e3",
+              "raw_text": "**Status:** PAUSED / safely resumable next-generation Cockpit design and fidelity surface  "
+            }
+          },
+          {
+            "field": "Authority",
+            "source": {
+              "line": 4,
+              "line_sha256": "663e5a6dc45995851e37c38f6ef7250fb7d8cf11613b6de73396b30ee4c69b1a",
+              "raw_text": "**Authority:** Specialized integration contract beneath accepted specifications, canonical decisions and foundations. It does not replace their semantic authority.  "
+            }
+          }
+        ],
+        "source_format": "MARKDOWN",
+        "structural_claim_type": "DOCUMENT_HEADER_AUTHORIAL_REPORT"
+      },
+      "source_path": "docs/cockpit/README.md",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "source_sha256": "08726acc6541e23fa568d1b444f98124456ac5863fc263498af5e5115f8a90c3"
+    },
+    {
+      "accepted_authority": "NOT_INFERRED_FROM_SOURCE_CONTENT_OR_ROLE",
+      "formal_cohort_membership": "NOT_SELECTED",
+      "independent_source_referee": "NOT_ASSIGNED",
+      "previous_coordinator_role_hint": "PRODUCT_SOURCE_PROVENANCE",
+      "semantic_eligibility": "NOT_ADJUDICATED",
+      "source_git_blob": "73492b62b08fd1cb4d0179d0691f6107bdabab96",
+      "source_observation": {
+        "evidence_class": "DOC_AUTHORIAL_STATUS_OR_EXPLANATION_NOT_CURRENTNESS_CERTIFICATION",
+        "first_line": {
+          "line": 1,
+          "line_sha256": "ef2f52f87ac1e2856612fb337ef1aaaa3241b6f5cc9856930cbc46283866d7b1",
+          "raw_text": "# Permanent Source Vault Bootstrap Runbook"
+        },
+        "metadata_is_not_admitted_j1_or_currentness": true,
+        "reported_metadata": [
+          {
+            "field": "Status",
+            "source": {
+              "line": 3,
+              "line_sha256": "fee12e5f2db9d9bc1150dd309814cc0ea8b7c66ece98e0eec2ffc169a00a293a",
+              "raw_text": "**Status:** Active operational runbook for the first user-controlled Source Universe deployment  "
+            }
+          },
+          {
+            "field": "Last reviewed",
+            "source": {
+              "line": 5,
+              "line_sha256": "ff467ddd82df847ddf5d706468c954b5f2f8a8919444ffc14ab3761121900727",
+              "raw_text": "**Last reviewed:** 2026-08-31  "
+            }
+          },
+          {
+            "field": "Scope",
+            "source": {
+              "line": 6,
+              "line_sha256": "1aebf015631c5a0cb08069ee33e398100aabd5c58a8888526943eeba456fe751",
+              "raw_text": "**Scope:** Deploy the accepted Specification 023 source substrate on durable user-controlled storage and ingest the original VU Amsterdam Machine Learning folder before any additional course corpus is admitted  "
+            }
+          },
+          {
+            "field": "Authority",
+            "source": {
+              "line": 7,
+              "line_sha256": "1758b6dc9e68de7f66410b8b04ece288e6fe79b6cfbd17fe4a931cbf655fa4ce",
+              "raw_text": "**Authority:** Operational guidance subordinate to Foundation 022, Specification 023, and the current checkpoint. This file does not select a permanent cloud provider, backup provider, or final multi-user deployment topology."
+            }
+          }
+        ],
+        "source_format": "MARKDOWN",
+        "structural_claim_type": "DOCUMENT_HEADER_AUTHORIAL_REPORT"
+      },
+      "source_path": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "source_sha256": "4cf4205cd5f800a43ab32f74db3b3f4c557f6f9bf65e97c6dbbb98f214f413bf"
+    },
+    {
+      "accepted_authority": "NOT_INFERRED_FROM_SOURCE_CONTENT_OR_ROLE",
+      "formal_cohort_membership": "NOT_SELECTED",
+      "independent_source_referee": "NOT_ASSIGNED",
+      "previous_coordinator_role_hint": "IMPLEMENTATION_SOURCE",
+      "semantic_eligibility": "NOT_ADJUDICATED",
+      "source_git_blob": "298ee0493bfcf949e1874d81f8de2fbc7294e96e",
+      "source_observation": {
+        "evidence_class": "SOURCE_SYNTAX_NOT_IMPLEMENTATION_EXECUTION_OR_J2",
+        "evidence_line": {
+          "line": 25,
+          "line_sha256": "9c084f3f14ec5437140bdddd8de60b269f705b857ccad108907f7e2cba0b915e",
+          "raw_text": "class IdentityValidationError(SubstrateError):"
+        },
+        "first_declaration_names": [
+          "IdentityValidationError",
+          "transition_from_source",
+          "_ids",
+          "_source_key",
+          "_source_data",
+          "build_identity_index",
+          "resolve_identity",
+          "historical_lookup"
+        ],
+        "module_docstring_present": true,
+        "realization_of_accepted_effect_proven_by_source": false,
+        "source_format": "PYTHON",
+        "source_parses": true,
+        "structural_claim_type": "PYTHON_PROGRAM_DECLARATIONS",
+        "test_result_proven_by_source": false,
+        "top_level_declaration_count": 10
+      },
+      "source_path": "tools/project_knowledge/identity.py",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "source_sha256": "c267136871d0349c5920edc47cae88fed07b097902f154d689b25d06d9d481df"
+    },
+    {
+      "accepted_authority": "NOT_INFERRED_FROM_SOURCE_CONTENT_OR_ROLE",
+      "formal_cohort_membership": "NOT_SELECTED",
+      "independent_source_referee": "NOT_ASSIGNED",
+      "previous_coordinator_role_hint": "IMPLEMENTATION_SOURCE",
+      "semantic_eligibility": "NOT_ADJUDICATED",
+      "source_git_blob": "e4b74a7efa0adbde16e49d411dd831be3f83e164",
+      "source_observation": {
+        "evidence_class": "SOURCE_SYNTAX_NOT_IMPLEMENTATION_EXECUTION_OR_J2",
+        "evidence_line": {
+          "line": 25,
+          "line_sha256": "a6dffe10019cf8755f91bb1dece7cb1c02df2b4ae1d086dd5ecb4e97a4f0f232",
+          "raw_text": "def _facets(scope: Scope | None) -> dict[str, frozenset[str]]:"
+        },
+        "first_declaration_names": [
+          "_facets",
+          "match_scope",
+          "_intersection",
+          "_narrower",
+          "_Failure",
+          "_conflict",
+          "_temporal",
+          "_levels"
+        ],
+        "module_docstring_present": true,
+        "realization_of_accepted_effect_proven_by_source": false,
+        "source_format": "PYTHON",
+        "source_parses": true,
+        "structural_claim_type": "PYTHON_PROGRAM_DECLARATIONS",
+        "test_result_proven_by_source": false,
+        "top_level_declaration_count": 17
+      },
+      "source_path": "tools/project_knowledge/authority.py",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "source_sha256": "30efbf020b8540f879171a6ab0386b38d4ac1b29c90adb3b2853ccd6434e787d"
+    },
+    {
+      "accepted_authority": "NOT_INFERRED_FROM_SOURCE_CONTENT_OR_ROLE",
+      "formal_cohort_membership": "NOT_SELECTED",
+      "independent_source_referee": "NOT_ASSIGNED",
+      "previous_coordinator_role_hint": "IMPLEMENTATION_SOURCE",
+      "semantic_eligibility": "NOT_ADJUDICATED",
+      "source_git_blob": "f6963f3acc4e3c1366f7a064e85d00a2d2993429",
+      "source_observation": {
+        "evidence_class": "SOURCE_SYNTAX_NOT_IMPLEMENTATION_EXECUTION_OR_J2",
+        "evidence_line": {
+          "line": 19,
+          "line_sha256": "24fbaca31cdced04b0573cb9caf46f7e2028f5009b4b855b000b900a5a451805",
+          "raw_text": "def _definitions(specifications):"
+        },
+        "first_declaration_names": [
+          "_definitions",
+          "_plan",
+          "plan_view_refresh",
+          "refresh_views"
+        ],
+        "module_docstring_present": true,
+        "realization_of_accepted_effect_proven_by_source": false,
+        "source_format": "PYTHON",
+        "source_parses": true,
+        "structural_claim_type": "PYTHON_PROGRAM_DECLARATIONS",
+        "test_result_proven_by_source": false,
+        "top_level_declaration_count": 4
+      },
+      "source_path": "tools/project_knowledge/services/refresh.py",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "source_sha256": "e0d8d4dbdefa00919ed85c1433dbffd4a2c6168753c80612773b86a6162520a8"
+    },
+    {
+      "accepted_authority": "NOT_INFERRED_FROM_SOURCE_CONTENT_OR_ROLE",
+      "formal_cohort_membership": "NOT_SELECTED",
+      "independent_source_referee": "NOT_ASSIGNED",
+      "previous_coordinator_role_hint": "IMPLEMENTATION_SOURCE",
+      "semantic_eligibility": "NOT_ADJUDICATED",
+      "source_git_blob": "4b7039ef9e5473d73a761b7cfa4f6be4d5c30032",
+      "source_observation": {
+        "evidence_class": "SOURCE_SYNTAX_NOT_IMPLEMENTATION_EXECUTION_OR_J2",
+        "evidence_line": {
+          "line": 27,
+          "line_sha256": "e6301e8f6150cfe54f62a637783d61c2d1af862a77e6a086f7cfffc9ca0aaacc",
+          "raw_text": "class _GenerationDiscovery(DiscoveryPolicy):"
+        },
+        "first_declaration_names": [
+          "_GenerationDiscovery",
+          "_capabilities",
+          "_generation_inputs",
+          "_generate_verified",
+          "_dependencies_verified",
+          "_freshness_verified",
+          "_execute_bound",
+          "generate_views"
+        ],
+        "module_docstring_present": true,
+        "realization_of_accepted_effect_proven_by_source": false,
+        "source_format": "PYTHON",
+        "source_parses": true,
+        "structural_claim_type": "PYTHON_PROGRAM_DECLARATIONS",
+        "test_result_proven_by_source": false,
+        "top_level_declaration_count": 11
+      },
+      "source_path": "tools/project_knowledge/services/generation.py",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "source_sha256": "40b70b0a51e83ee82f243b0404cac40fbf7dc537a9f3e0b25df71157fd0a91d0"
+    },
+    {
+      "accepted_authority": "NOT_INFERRED_FROM_SOURCE_CONTENT_OR_ROLE",
+      "formal_cohort_membership": "NOT_SELECTED",
+      "independent_source_referee": "NOT_ASSIGNED",
+      "previous_coordinator_role_hint": "IMPLEMENTATION_SOURCE",
+      "semantic_eligibility": "NOT_ADJUDICATED",
+      "source_git_blob": "08cec452aa595b981b696967cdb392b0fa73ffa4",
+      "source_observation": {
+        "evidence_class": "SOURCE_SYNTAX_NOT_IMPLEMENTATION_EXECUTION_OR_J2",
+        "evidence_line": {
+          "line": 29,
+          "line_sha256": "d8430509062b7ade502cc3e24fea8b5001b669a7b7a0dbec3edc4bb1d99cc307",
+          "raw_text": "class SourceArtifactStore(Protocol):"
+        },
+        "first_declaration_names": [
+          "SourceArtifactStore",
+          "LogicalSourceConflict",
+          "DirtySourceStore",
+          "IngestRequest",
+          "IngestOutcome",
+          "SourceUniverseService",
+          "_snapshot_document",
+          "_hash_stream"
+        ],
+        "module_docstring_present": true,
+        "realization_of_accepted_effect_proven_by_source": false,
+        "source_format": "PYTHON",
+        "source_parses": true,
+        "structural_claim_type": "PYTHON_PROGRAM_DECLARATIONS",
+        "test_result_proven_by_source": false,
+        "top_level_declaration_count": 11
+      },
+      "source_path": "src/ads_system/application/source_universe.py",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "source_sha256": "5e15af2e2200ec2c72d6fa49ef3ca7b85610cf6b7a30826d68e5a2999e723032"
+    },
+    {
+      "accepted_authority": "NOT_INFERRED_FROM_SOURCE_CONTENT_OR_ROLE",
+      "formal_cohort_membership": "NOT_SELECTED",
+      "independent_source_referee": "NOT_ASSIGNED",
+      "previous_coordinator_role_hint": "IMPLEMENTATION_SOURCE",
+      "semantic_eligibility": "NOT_ADJUDICATED",
+      "source_git_blob": "71718ceb7958a4005c89ae34add6fc75e603de2f",
+      "source_observation": {
+        "evidence_class": "SOURCE_SYNTAX_NOT_IMPLEMENTATION_EXECUTION_OR_J2",
+        "evidence_line": {
+          "line": 80,
+          "line_sha256": "505b5e7e3a1291e8673deacfca93de43bccd07a3a01bdd2ccec627b9cf421c46",
+          "raw_text": "class SqliteFtsKnowledgeRetrieval:"
+        },
+        "first_declaration_names": [
+          "SqliteFtsKnowledgeRetrieval"
+        ],
+        "module_docstring_present": true,
+        "realization_of_accepted_effect_proven_by_source": false,
+        "source_format": "PYTHON",
+        "source_parses": true,
+        "structural_claim_type": "PYTHON_PROGRAM_DECLARATIONS",
+        "test_result_proven_by_source": false,
+        "top_level_declaration_count": 1
+      },
+      "source_path": "src/ads_system/infrastructure/retrieval/sqlite_fts.py",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "source_sha256": "21b607ca08127bf1d851f99a7ceaa83c8f691918e0677244e3d4461c40532094"
+    },
+    {
+      "accepted_authority": "NOT_INFERRED_FROM_SOURCE_CONTENT_OR_ROLE",
+      "formal_cohort_membership": "NOT_SELECTED",
+      "independent_source_referee": "NOT_ASSIGNED",
+      "previous_coordinator_role_hint": "IMPLEMENTATION_SOURCE",
+      "semantic_eligibility": "NOT_ADJUDICATED",
+      "source_git_blob": "3ee4e0b01ca095fed1e7c5367e4bd8d037569886",
+      "source_observation": {
+        "evidence_class": "FRONTEND_EXPORT_SOURCE_NOT_RUNNING_UI_EVIDENCE",
+        "exports": [
+          {
+            "name": "ProjectMapFocus",
+            "source": {
+              "line": 37,
+              "line_sha256": "cafae78929dd1caad9c47ebf5b50ef01b58b4eda06cd84a47a5ae466c1eb8a9b",
+              "raw_text": "export type ProjectMapFocus = 'data' | 'eda' | 'missingness'"
+            }
+          },
+          {
+            "name": "CockpitProjectMap",
+            "source": {
+              "line": 107,
+              "line_sha256": "900f965ad253122f1c6a46daa3b49da2796b146657a4c0f8992f5837f0e144c8",
+              "raw_text": "export function CockpitProjectMap({ onFocus }: ProjectMapProps) {"
+            }
+          }
+        ],
+        "running_ui_proven_by_source": false,
+        "source_format": "TYPESCRIPT",
+        "structural_claim_type": "FRONTEND_SOURCE_EXPORTS_NOT_EXECUTION"
+      },
+      "source_path": "frontend/src/components/CockpitProjectMap.tsx",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "source_sha256": "55eb8d84493171bb96ec219a14fbaa5102349ed7d870ab8c7fbd2d86c6017c4c"
+    },
+    {
+      "accepted_authority": "NOT_INFERRED_FROM_SOURCE_CONTENT_OR_ROLE",
+      "formal_cohort_membership": "NOT_SELECTED",
+      "independent_source_referee": "NOT_ASSIGNED",
+      "previous_coordinator_role_hint": "IMPLEMENTATION_SOURCE",
+      "semantic_eligibility": "NOT_ADJUDICATED",
+      "source_git_blob": "b4da773416d6801b8720b3d8b605eadf9b91315b",
+      "source_observation": {
+        "evidence_class": "FRONTEND_EXPORT_SOURCE_NOT_RUNNING_UI_EVIDENCE",
+        "exports": [
+          {
+            "name": "MissingnessWorkspace",
+            "source": {
+              "line": 19,
+              "line_sha256": "f650ada8a2889d76f9a5e45fe3857c8492b5c087f659513994bea3ac9de423ec",
+              "raw_text": "export function MissingnessWorkspace({"
+            }
+          }
+        ],
+        "running_ui_proven_by_source": false,
+        "source_format": "TYPESCRIPT",
+        "structural_claim_type": "FRONTEND_SOURCE_EXPORTS_NOT_EXECUTION"
+      },
+      "source_path": "frontend/src/components/MissingnessWorkspace.tsx",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "source_sha256": "b1068d1a59f35015a189ec366b1c567a32e09a4561da8083823cfbc06f086e54"
+    },
+    {
+      "accepted_authority": "NOT_INFERRED_FROM_SOURCE_CONTENT_OR_ROLE",
+      "formal_cohort_membership": "NOT_SELECTED",
+      "independent_source_referee": "NOT_ASSIGNED",
+      "previous_coordinator_role_hint": "SCHEMA_DEFINITION",
+      "semantic_eligibility": "NOT_ADJUDICATED",
+      "source_git_blob": "f202757950601411d7e2e4584a7f66a4215c21f7",
+      "source_observation": {
+        "declared_title": "Project knowledge semantic_source V1",
+        "evidence_class": "SCHEMA_BYTES_NOT_GOVERNED_ACCEPTANCE",
+        "evidence_line": {
+          "line": 4,
+          "line_sha256": "287330e535c97f5b9cd2def6e923a752cf48e99f0d543d104556f8dd5d90440e",
+          "raw_text": "  \"title\": \"Project knowledge semantic_source V1\","
+        },
+        "property_names": [
+          "authority_class",
+          "authority_from",
+          "authority_to",
+          "effective_from",
+          "effective_to",
+          "kind",
+          "outcome",
+          "profile",
+          "provenance",
+          "references",
+          "relations",
+          "risk_or_reopen_triggers",
+          "schema_version",
+          "scope",
+          "semantic_id",
+          "state"
+        ],
+        "schema_dialect": "https://json-schema.org/draft/2020-12/schema",
+        "schema_is_accepted_governing_effect": false,
+        "source_format": "JSON_SCHEMA",
+        "structural_claim_type": "JSON_SCHEMA_DECLARATION_NOT_J1_OR_J2"
+      },
+      "source_path": "schemas/project_knowledge/semantic_source.v1.schema.json",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "source_sha256": "ef32ac73c21c09990e99ba4890e60ec96f6246d407e9e3b3903c29fdd22e4be2"
+    },
+    {
+      "accepted_authority": "NOT_INFERRED_FROM_SOURCE_CONTENT_OR_ROLE",
+      "formal_cohort_membership": "NOT_SELECTED",
+      "independent_source_referee": "NOT_ASSIGNED",
+      "previous_coordinator_role_hint": "TEST_DEFINITION_NOT_EXECUTION",
+      "semantic_eligibility": "NOT_ADJUDICATED",
+      "source_git_blob": "d85253c368507941f1e555f2d35db1b09ccf06aa",
+      "source_observation": {
+        "evidence_class": "SOURCE_SYNTAX_NOT_IMPLEMENTATION_EXECUTION_OR_J2",
+        "evidence_line": {
+          "line": 36,
+          "line_sha256": "e3a89c68e76bafbc073f97d32cf0b14567de0618e6f9540b8570d2487205a84e",
+          "raw_text": "def source(sid, path=None, *, authority=\"canonical\", profile=Profile.SEMANTIC_SOURCE, **fields):"
+        },
+        "first_declaration_names": [
+          "source",
+          "transition",
+          "build",
+          "resolve",
+          "targets",
+          "errors",
+          "test_current_selective_and_unknown_identity",
+          "test_same_id_carrier_continuity_and_historical_representation"
+        ],
+        "module_docstring_present": true,
+        "realization_of_accepted_effect_proven_by_source": false,
+        "source_format": "PYTHON",
+        "source_parses": true,
+        "structural_claim_type": "TEST_DECLARATIONS_NOT_EXECUTION",
+        "test_result_proven_by_source": false,
+        "top_level_declaration_count": 45
+      },
+      "source_path": "tests/unit/test_project_knowledge_identity.py",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "source_sha256": "5c12d727aabccccc0ff5603d30c403377c59ee10abe8c51a7709f0f8a1e3b948"
+    },
+    {
+      "accepted_authority": "NOT_INFERRED_FROM_SOURCE_CONTENT_OR_ROLE",
+      "formal_cohort_membership": "NOT_SELECTED",
+      "independent_source_referee": "NOT_ASSIGNED",
+      "previous_coordinator_role_hint": "TEST_DEFINITION_NOT_EXECUTION",
+      "semantic_eligibility": "NOT_ADJUDICATED",
+      "source_git_blob": "219e58408039ac89691f311fb478045bb0f781f9",
+      "source_observation": {
+        "evidence_class": "SOURCE_SYNTAX_NOT_IMPLEMENTATION_EXECUTION_OR_J2",
+        "evidence_line": {
+          "line": 30,
+          "line_sha256": "c7983cbb2b61087c0dbf162963a8f02e0df69fa5168e65e826c9652c410336cf",
+          "raw_text": "def refresh_repo(core_repo):"
+        },
+        "first_declaration_names": [
+          "refresh_repo",
+          "specifications",
+          "head",
+          "update",
+          "note",
+          "assert_equivalent",
+          "test_frozen_w0_change_matrix",
+          "test_repeated_and_permuted_specifications_have_identical_plans_and_results"
+        ],
+        "module_docstring_present": true,
+        "realization_of_accepted_effect_proven_by_source": false,
+        "source_format": "PYTHON",
+        "source_parses": true,
+        "structural_claim_type": "TEST_DECLARATIONS_NOT_EXECUTION",
+        "test_result_proven_by_source": false,
+        "top_level_declaration_count": 26
+      },
+      "source_path": "tests/unit/test_project_knowledge_refresh.py",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "source_sha256": "e81868bd95174193185bf965b5e39e73608bf06db71517892fa394816e362972"
+    },
+    {
+      "accepted_authority": "NOT_INFERRED_FROM_SOURCE_CONTENT_OR_ROLE",
+      "formal_cohort_membership": "NOT_SELECTED",
+      "independent_source_referee": "NOT_ASSIGNED",
+      "previous_coordinator_role_hint": "VALIDATOR_SOURCE_NOT_PASS_RECEIPT",
+      "semantic_eligibility": "NOT_ADJUDICATED",
+      "source_git_blob": "d6735588025cd07db74f9c8a0dc139881248f29d",
+      "source_observation": {
+        "evidence_class": "SOURCE_SYNTAX_NOT_IMPLEMENTATION_EXECUTION_OR_J2",
+        "evidence_line": {
+          "line": 13,
+          "line_sha256": "132fa68fe3cd6e60d791c1177b0b817c4869f9a0b5320235067688e6d7f617b7",
+          "raw_text": "class ValidatorResult:"
+        },
+        "first_declaration_names": [
+          "ValidatorResult",
+          "FocusedValidator",
+          "parse_args",
+          "validator_command",
+          "run_validator",
+          "project_knowledge_validator_command",
+          "run_project_knowledge_validator",
+          "main"
+        ],
+        "module_docstring_present": false,
+        "realization_of_accepted_effect_proven_by_source": false,
+        "source_format": "PYTHON",
+        "source_parses": true,
+        "structural_claim_type": "PYTHON_PROGRAM_DECLARATIONS",
+        "test_result_proven_by_source": false,
+        "top_level_declaration_count": 8
+      },
+      "source_path": "scripts/check_repository_integrity.py",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "source_sha256": "b3694a8a786b060d924cc6f71525ad05f5979d3eaa7f63560b8ed8eddec817d2"
+    },
+    {
+      "accepted_authority": "NOT_INFERRED_FROM_SOURCE_CONTENT_OR_ROLE",
+      "formal_cohort_membership": "NOT_SELECTED",
+      "independent_source_referee": "NOT_ASSIGNED",
+      "previous_coordinator_role_hint": "WORKFLOW_DEFINITION_NOT_RUN",
+      "semantic_eligibility": "NOT_ADJUDICATED",
+      "source_git_blob": "3392b6fb0841df0ff118f1fb1028eeb24bf286e7",
+      "source_observation": {
+        "actual_provider_ci_run_proven_by_source": false,
+        "definition_witnesses": [
+          {
+            "line": 1,
+            "line_sha256": "db317e8da05857abcc5fc63db783e0fd0ac831f0ec1415f0bda9251e031ec2d6",
+            "raw_text": "name: Repository integrity"
+          },
+          {
+            "line": 3,
+            "line_sha256": "fc8135fd1264162a0a9b1fb413cf3ab58a2f07a0d78717ded78108a950ea7b75",
+            "raw_text": "on:"
+          },
+          {
+            "line": 51,
+            "line_sha256": "31d9430f44b068186410d7ecc88458e0cf5e67b439951f03c391cf0ace3f1ffe",
+            "raw_text": "jobs:"
+          }
+        ],
+        "evidence_class": "WORKFLOW_DEFINITION_NOT_CI_RUN_RECEIPT",
+        "source_format": "WORKFLOW_YAML",
+        "structural_claim_type": "WORKFLOW_DEFINITION_NOT_PROVIDER_CI_EXECUTION"
+      },
+      "source_path": ".github/workflows/repository-integrity.yml",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "source_sha256": "a8be89bcc76f61ce557736e3760ed2cd94a49eef48b1a7a80b6975f415ba3bd4"
+    }
+  ],
+  "formal_60_20_source_set_selected": false,
+  "gold_or_task_answers_generated": false,
+  "independent_eligibility_referee_qualified": false,
+  "limits": [
+    "Headers are source-authored status claims, not independently verified currentness or governing-effect admissions.",
+    "The decisions collection has per-entry mixed statuses; no whole-file ACCEPT implies every past decision is currently governing.",
+    "Python syntax, TypeScript exports, a JSON schema and workflow YAML are source definitions, not proof of code execution, J2, test PASS or CI outcome.",
+    "The 24 fixed records were authored by the exposed coordinator and cannot qualify independence, semantic eligibility or formal build/heldout sampling.",
+    "The formal 60/20 and the separate 65-source legacy worlds remain unselected/unmodified."
+  ],
+  "navigation_arm_scores": null,
+  "production_authority_changed": false,
+  "schema_version": 1,
+  "source_count": 24,
+  "source_git_revision": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+  "source_modality_counts": {
+    "JSON_SCHEMA": 1,
+    "MARKDOWN": 11,
+    "PYTHON": 9,
+    "TYPESCRIPT": 2,
+    "WORKFLOW_YAML": 1
+  },
+  "source_seed_sha256": "d10d1f4a5f50f082b73689f4858b2a4f003746969fb098add7e8fa9bedb7a6b4",
+  "status": "SOURCE_CONTENT_OBSERVED_SEMANTIC_ELIGIBILITY_STILL_UNADJUDICATED",
+  "unreviewed_semantic_eligibility_count": 24,
+  "verified_original_git_content_and_claim_locations": true
+}
