@@ -1,0 +1,90 @@
+{
+  "accepted_effect_id": "P03PKA-E02-S1-IDENTITY-REFRESH",
+  "accepted_policy": {
+    "owner_acceptance_binding_sha256": "beabc995359f79fe8d4f659efa76ff912b8ec02de74397d3656c29438215672d",
+    "owner_acceptance_commit": "872d461aecf1cbd4a6a18249e9e75050a5e97773",
+    "proposal_id": "P03V2_EXPERIMENT_SOURCE_OWNER_RELATIONAL_J2_ASSURANCE_POLICY_REV01",
+    "proposal_sha256": "f0217d8c24aba8aa5a5d493d6c816f9e439de4e32f32c00d56665b075ead798f",
+    "scope_freeze_commit": "c523340a20dd7628bc2a470594e28b48929a29dc",
+    "scope_id": "P03V2_ACCEPTED_POLICY_REV01_DELEGATED_S1_COMPOSITE_REALIZER_EVENT_001"
+  },
+  "all_required_component_claims": [
+    {
+      "component_id": "EXPLICIT_IDENTITY_PRESERVING_MOVE",
+      "coverage_assertion": "FULL_AS_SOURCE_AUTHOR_CLAIM_PENDING_EVIDENCE_ADMISSION",
+      "evidence_field": "g006.identity_preserved",
+      "observation_kind": "NEW_EVENT_G006_IDENTITY_CONTINUITY"
+    },
+    {
+      "component_id": "AFFECTED_VIEW_REFRESH_SELECTED",
+      "coverage_assertion": "FULL_AS_SOURCE_AUTHOR_CLAIM_PENDING_EVIDENCE_ADMISSION",
+      "evidence_field": "g013.affected_view",
+      "observation_kind": "NEW_EVENT_G013_SELECTED_EXPECTED_VIEW"
+    },
+    {
+      "component_id": "INCREMENTAL_EQUALS_CURRENT_FULL_BUILD",
+      "coverage_assertion": "FULL_AS_SOURCE_AUTHOR_CLAIM_PENDING_EVIDENCE_ADMISSION",
+      "evidence_field": "g013.selected_equals_full",
+      "observation_kind": "NEW_EVENT_G013_G009_EXACT_EQUIVALENCE"
+    },
+    {
+      "component_id": "STALE_DERIVED_RESULT_NOT_GOVERNING",
+      "coverage_assertion": "FULL_AS_SOURCE_AUTHOR_CLAIM_PENDING_EVIDENCE_ADMISSION",
+      "evidence_field": "g013.previous_manifest",
+      "observation_kind": "OLD_STALE_AND_NEW_FRESH"
+    }
+  ],
+  "authorial_coverage_summary": "CLAIMED_FULL_NOT_SELF_CERTIFIED",
+  "authority": {
+    "formal_b0_b4_scored": false,
+    "historical_s0_evidence_carryover": false,
+    "j3_satisfied": false,
+    "physical_target_selected": false,
+    "production_j2_accepted": false,
+    "qualified_relational_j2": false,
+    "s1_activated": false
+  },
+  "declaration_id": "P03V2_S1_DELEGATED_COMPOSITE_POSTEXECUTION_COVERS_001",
+  "declaration_status": "SOURCE_AUTHOR_COVERS_CLAIM_AWAITING_SEPARATE_J2_ADMISSION",
+  "execution_evidence": {
+    "formal_ads_corpus_rebuild": false,
+    "independent_model_or_provider_actor_attestation": false,
+    "published_evidence_commit": "338e591c3ba08bc1ca87af44df678086164a3f4b",
+    "receipt_path": "experiments/r0_p03_navigation_probe/v03_real_pk_delegated_s1_composite_realizer_result_v01.json",
+    "receipt_sha256": "47e41bb4c0fde09b9d245751ab7d727e81a9b7d78ec557053828cebad34e42f2",
+    "reproduced_at_least_twice": true,
+    "source_role": "OBSERVABLE_PRODUCTION_CODE_EXECUTED_IN_ISOLATED_SCHEMA_VALID_GIT_ROOT"
+  },
+  "fact_class": "RELATIONAL",
+  "natural_owner": {
+    "independently_authenticated": false,
+    "natural_owner_scope": "AUTHOR_OF_EXPERIMENT_ORCHESTRATION_ONLY",
+    "production_implementation_author": false,
+    "provenance": "RECORDED_CHAT_AND_EXPOSED_SESSION_NOT_INDEPENDENTLY_AUTHENTICATED",
+    "role": "EXPOSED_CHATGPT_AUTHOR_OF_THIS_COMPOSITE_EXPERIMENTAL_EXECUTION_ORCHESTRATOR",
+    "self_declared_same_source_author_as_at_action_intent": true
+  },
+  "postexecution_timing": {
+    "execution_receipt_precedes_declaration": true,
+    "new_source_event_already_committed": true,
+    "not_backdated_as_at_action_covers": true
+  },
+  "realizer": {
+    "executable_path": "experiments/r0_p03_navigation_probe/v03_real_pk_delegated_s1_composite_realizer_v01.py",
+    "executable_sha256": "2f6799ffa3c3be784853630f29d5e147c5552ff80234c22567f3eaa100d1978d",
+    "historical_g006_g013_library_ownership_asserted": false,
+    "id": "P03PKA.EXPERIMENT_COMPOSITE_G006_G013_DELEGATED_001"
+  },
+  "relation": "COVERS",
+  "relation_scope": "EXACT_ONE_EVENT_SOURCE_RELATIVE_EXPERIMENT_ONLY",
+  "schema_version": 1,
+  "source_event": {
+    "after_path": "experiments/r0_p03_navigation_probe/real_pk_world/delegated_s1/identity_carrier_v03.json",
+    "at_action_intent_path": "experiments/r0_p03_navigation_probe/real_pk_world/delegated_s1/source_author_realizer_intent_v01.json",
+    "at_action_relationship": "PROSPECTIVE_EXECUTION_INTENT_NOT_J2_COVERS",
+    "before_path": "experiments/r0_p03_navigation_probe/real_pk_world/prospective_s1/identity_carrier_v02.json",
+    "commit": "ca91cbc27dc47f6efa383a788d4c9c02689bb9bd",
+    "parent": "c523340a20dd7628bc2a470594e28b48929a29dc"
+  },
+  "world_id": "P03V2_PKA_IDENTITY_AND_DERIVED_REFRESH_REAL_SOURCES_V01"
+}
