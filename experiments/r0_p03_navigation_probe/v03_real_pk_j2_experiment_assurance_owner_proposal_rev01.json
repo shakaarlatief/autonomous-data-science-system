@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "proposal_id": "P03V2_EXPERIMENT_SOURCE_OWNER_RELATIONAL_J2_ASSURANCE_POLICY_REV01",
+  "decision_state": "PROPOSED_NOT_OWNER_ACCEPTED",
+  "decision_kind": "EXPERIMENT_ONLY_NATURAL_SOURCE_OWNER_ASSURANCE_INTERPRETATION",
+  "source_head_preparation": "488a437fa2a8957a01a8c6fa053109a15bd13046",
+  "source_context": {
+    "world_id": "P03V2_PKA_IDENTITY_AND_DERIVED_REFRESH_REAL_SOURCES_V01",
+    "accepted_j1_effect_id": "P03PKA-E02-S1-IDENTITY-REFRESH",
+    "accepted_j1_proposal_id": "P03V2_PKA_REAL_SOURCE_TWO_STATE_EXPERIMENT_J1_001",
+    "accepted_j1_proposal_digest": "0fa8ecc09f4745b514697d206356ce2f529fa66e15380a9bd0d43f1c6a00a6df",
+    "required_components": [
+      "EXPLICIT_IDENTITY_PRESERVING_MOVE",
+      "AFFECTED_VIEW_REFRESH_SELECTED",
+      "INCREMENTAL_EQUALS_CURRENT_FULL_BUILD",
+      "STALE_DERIVED_RESULT_NOT_GOVERNING"
+    ],
+    "original_948_source_event": "faf8ff2686c6b09f53d3569470cf2057c11e5971",
+    "original_948_result_digest": "b64569b802f5d9d6de2e6d975ba8a3e462698ba696752afe0392c4abd0f565ac",
+    "original_948_qualified_relational_j2": 0,
+    "original_948_s1_activated": false,
+    "original_948_j3": "HOLD"
+  },
+  "candidate_policy": {
+    "policy_state": "INACTIVE_UNTIL_SEPARATE_EXACT_OWNER_DECISION",
+    "duration": "ONE_PROSPECTIVE_BOUNDED_EXPERIMENTAL_SOURCE_EVENT",
+    "effective_rule": "FORWARD_ONLY_FROM_ACCEPTED_POLICY_NO_RETROSPECTIVE_J2_PROMOTION",
+    "source_author_scope": "EXPOSED_EXPERIMENT_CARRIER_AUTHOR_ONLY_NOT_HISTORICAL_G006_G013_CODE_OWNER",
+    "owner_delegation_method": "EXACT_RECORDED_CHAT_OWNER_ACCEPTANCE_OF_FROZEN_PACKET",
+    "owner_authenticity_class": "RECORDED_CHAT_OWNER_CONFIRMATION_NOT_INDEPENDENTLY_VERIFIABLE",
+    "source_author_authenticity_class": "EXPOSED_SESSION_AND_GIT_PROVENANCE_NOT_INDEPENDENTLY_AUTHENTICATED",
+    "relationship_class_if_qualified": "EXPERIMENT_ONLY_SOURCE_RELATIVE_RELATIONAL_J2_WITH_DECLARED_WEAK_ACTOR_ASSURANCE",
+    "independent_strong_natural_owner_authentication_claimed": false,
+    "technical_requirements": [
+      "FUTURE_EVENT_PUBLISHED_AFTER_POLICY_ACCEPTANCE_AND_SOURCE_SCOPE_FREEZE",
+      "EXACT_GIT_PARENT_SOURCE_REVISIONS_AND_CHANGED_PATHS_INDEPENDENTLY_VERIFIED",
+      "SINGLE_NATURAL_OWNER_CARRIER_FOR_EACH_FACT_TUPLE_NO_CONTRADICTORY_DUPLICATES",
+      "SOURCE_AUTHOR_REALIZER_SCOPE_NAMED_PRIOR_TO_EVENT_AND_NOT_INFERRED_FROM_GIT_AUTHOR",
+      "SCOPED_AUTHOR_CONTROLS_EXACT_EXECUTABLE_EXPERIMENT_REALIZER_NOT_JUST_NARRATIVE_SOURCE",
+      "COVERAGE_BOUND_TO_COMPOSITE_REALIZER_NOT_HISTORICAL_G006_G013_IMPLEMENTATION_AUTHORSHIP",
+      "CONTEMPORANEOUS_AUTHOR_DECLARES_REALIZER_INTENT_AND_EXACT_ACCEPTED_J1_COMPONENT_BINDING",
+      "POSTEXECUTION_COVERS_DECLARATION_BY_SAME_SCOPED_SOURCE_AUTHOR_NOT_BACKDATED",
+      "ACTUAL_PRODUCTION_G006_AND_G013_G009_ON_EXACT_NEW_SOURCE_REVISION",
+      "PARTIAL_COVERAGE_ALLOWED_AS_EVIDENCE_BUT_ALL_REQUIRED_FOR_J3_COMPLETION",
+      "EXECUTION_EVIDENCE_SOURCE_REVISION_PINNED_AND_SEPARATE_FROM_RELATIONAL_DECLARATION",
+      "NO_PREDECESSOR_S0_EVIDENCE_CARRIED_AS_S1_J3_PASS",
+      "FALSE_AUTHORITY_AND_UNKNOWN_CASES_MECHANICALLY_REJECTED",
+      "INDEPENDENT_SEPARATE_J3_EVALUATOR_WITH_EXACT_ADMITTED_J1_AND_J2",
+      "SOURCE_RELATIVE_REFERENCE_TRUTH_EXPOSES_WEAK_ASSURANCE_TO_ALL_B0_B4_ARMS"
+    ],
+    "non_delegable_claims": [
+      "INDEPENDENT_MODEL_SESSION_ACTOR_AUTHENTICATION",
+      "PRODUCTION_NATURAL_OWNER_COVERS",
+      "HISTORICAL_G006_G013_IMPLEMENTATION_AUTHORSHIP",
+      "CRYPTOGRAPHIC_GOVERNING_J1_ACCEPTANCE",
+      "RETROACTIVE_948_J2_CERTIFICATION",
+      "PROVIDER_NATIVE_EPHEMERAL_RECEIPT_AUTHENTICATION",
+      "NEW_EFFECT_OR_CHANGE_TO_ACCEPTED_J1_COMPONENTS",
+      "S1_ACTIVATION_FROM_SOURCE_CLAIM_ALONE",
+      "J3_SATISFIED_FROM_SOURCE_CLAIM_ALONE",
+      "FORMAL_B0_B4_SCORING_OR_ARCHITECTURE_SELECTION",
+      "MIGRATION_OR_PRODUCTION_AUTHORITY_CHANGE"
+    ],
+    "automatic_qualification_if_owner_accepts": false,
+    "new_source_event_required_after_owner_acceptance": true,
+    "j3_re_evaluation_required": true,
+    "full_r0_p03_method_unchanged": true
+  },
+  "decision_choices": {
+    "ACCEPT": "Authorize only the above one-event prospective experiment-only weak-assurance source-owner admission policy; do not activate it against prior events or count J2/J3 until future separate qualification.",
+    "AMEND": "Reject these exact policy terms for now and request a new separately hashed, reviewable revision before any owner approval.",
+    "REJECT": "Do not authorize weaker experiment-only source-owner J2 admission; keep J2 HOLD and plan a stronger independent natural-owner route or a scoped scientific-method revision."
+  },
+  "independence_and_falsification": {
+    "author_self_claim_cannot_self_admit": true,
+    "source_hash_is_not_independent_actor_authentication": true,
+    "structurally_valid_claim_can_still_fail_owner_assurance": true,
+    "prior_source_result_stays_hold": true,
+    "no_registered_authenticated_source_adapter_in_this_proposal": true,
+    "formal_primary_and_legacy_reference_guards_unchanged": true
+  },
+  "authority": {
+    "accepted_by_owner": false,
+    "eligible_to_admit_j2_now": false,
+    "qualified_relational_j2": 0,
+    "s1_activated": false,
+    "j3_certified": false,
+    "formal_r0_p03_completed": false,
+    "physical_architecture_selected": false,
+    "production_authority_changed": false
+  }
+}

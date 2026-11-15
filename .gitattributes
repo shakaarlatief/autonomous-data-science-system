@@ -126,6 +126,13 @@ experiments/r0_p03_navigation_probe/v03_real_pk_common_world_preflight_result_v0
 # Deterministic real-source G013 execution receipt and non-governing unified observation overlay.
 experiments/r0_p03_navigation_probe/v03_real_pk_g013_isolated_source_refresh_result_v01.json -text
 experiments/r0_p03_navigation_probe/v03_real_pk_common_world_g013_overlay_result_v01.json -text
+# Preserve the prospective P03 source-owner Git claim, unqualified assay receipt and frozen policy proposal bytes.
+experiments/r0_p03_navigation_probe/real_pk_world/prospective_s1/identity_carrier_v02.json -text
+experiments/r0_p03_navigation_probe/real_pk_world/prospective_s1/realizes_s1_at_action_v01.json -text
+experiments/r0_p03_navigation_probe/v03_real_pk_prospective_j2_source_assay_result_v01.json -text
+experiments/r0_p03_navigation_probe/v03_real_pk_j2_experiment_assurance_owner_proposal_rev01.json -text
+experiments/r0_p03_navigation_probe/v03_real_pk_j2_experiment_assurance_preflight_result_rev01.json -text
+
 # Preserve both original MC-0030 Message 063 historical carriers as exact Git blobs across Windows checkout.
 # The collision guard hashes their literal LF source bytes; CRLF worktree conversion would falsify the historical exception.
 docs/model_collaboration/threads/MC-0030/messages/063_chatgpt_r0_p03_message062_reconciliation_and_owner_option_a.md -text

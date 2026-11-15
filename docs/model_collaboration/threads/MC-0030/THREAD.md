@@ -1428,3 +1428,23 @@ The finite outcome remains structural Git/claim co-location PASS with qualified 
     J3=HOLD
     FORMAL_P03=INCOMPLETE
     NEXT=OWNER_SOURCE_OWNER_J2_ASSURANCE_DISPOSITION
+
+## Exact experiment-only J2 source-owner assurance policy proposal, Checkpoint 949
+
+Research 688, Validation 385 and Message 102 distinguish Research 555's accepted recorded-chat authority for current human-owner research decisions from still-unverified natural model-source-owner authenticity under Research 512 and Research 682. A strict one-event forward-only experimental provenance/delegation candidate was authored for the accepted S1 source world. Proposal ID P03V2_EXPERIMENT_SOURCE_OWNER_RELATIONAL_J2_ASSURANCE_POLICY_REV01, exact raw SHA-256 f0217d8c24aba8aa5a5d493d6c816f9e439de4e32f32c00d56665b075ead798f, is explicitly PROPOSED_NOT_OWNER_ACCEPTED.
+
+The candidate would require an actually owned composite executable experimental realizer, not simply text claiming historic G006/G013 code ownership; subsequent exact Git source event after prior owner approval, actual new-event G006/G013/G009 execution, distinct non-backdated authorial COVERS and independently adjudicated J3. It explicitly preserves weak actor identity assurance, source-role parity, OPEN_RESET non-carry, false-authority negatives and no retrospective Checkpoint 948 J2. The exact proposal, earlier real source and receipt passed 53 adversarial preflight tests. It establishes no authentication policy or governing fact by itself.
+
+The owner is next to ACCEPT, AMEND or REJECT the exact separately reviewable policy. Alternatives remain an independently authenticated source-owner route or HOLD/alternate source or method amendment. Qualified J2=0, S1 NOT_ACTIVATED, J3 HOLD, formal P03 INCOMPLETE and physical target unselected.
+
+    RESEARCH=688
+    VALIDATION=385
+    CHECKPOINT=949
+    MESSAGE=MC0030_MESSAGE102
+    J2_ASSURANCE_POLICY=PROPOSED_NOT_OWNER_ACCEPTED
+    POLICY_SHA256=f0217d8c24aba8aa5a5d493d6c816f9e439de4e32f32c00d56665b075ead798f
+    QUALIFIED_RELATIONAL_J2=0
+    S1_ACTIVATED=false
+    J3=HOLD
+    FORMAL_P03=INCOMPLETE
+    NEXT=EXACT_OWNER_ACCEPT_AMEND_REJECT

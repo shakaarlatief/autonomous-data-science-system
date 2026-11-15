@@ -1,0 +1,22 @@
+{
+  "auto_qualify_future_j2_if_policy_accepted": false,
+  "eligible_to_admit_existing_j2": false,
+  "formal_r0_p03": "INCOMPLETE",
+  "future_policy_decision_required": true,
+  "future_source_revision_and_real_execution_required": true,
+  "owner_decision": "NOT_RECEIVED",
+  "physical_architecture_selected": false,
+  "prior_event_commit": "faf8ff2686c6b09f53d3569470cf2057c11e5971",
+  "prior_event_git_structural_result": "PASS",
+  "prior_event_j2": "HOLD",
+  "prior_event_j3": "HOLD",
+  "prior_event_nat_owner_authentication": "NOT_INDEPENDENTLY_VERIFIED",
+  "prior_event_s1": "NOT_ACTIVATED",
+  "production_authority_changed": false,
+  "proposal_id": "P03V2_EXPERIMENT_SOURCE_OWNER_RELATIONAL_J2_ASSURANCE_POLICY_REV01",
+  "proposal_scope": "ONE_FUTURE_SOURCE_EVENT_EXPERIMENT_ONLY",
+  "proposal_sha256": "f0217d8c24aba8aa5a5d493d6c816f9e439de4e32f32c00d56665b075ead798f",
+  "proposal_state": "PROPOSED_NOT_OWNER_ACCEPTED",
+  "schema_version": 1,
+  "strong_actor_authentication_satisfied": false
+}
