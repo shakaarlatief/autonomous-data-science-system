@@ -1,0 +1,53 @@
+{
+  "accepted_effect_ref": "P03PKA-E02-S1-IDENTITY-REFRESH",
+  "asserted_implementation_coverage": null,
+  "descriptive_semantics": [
+    "The explicitly authored semantic identity survives an actual Git source revision; the previous carrier path itself is not semantic identity or acceptance authority.",
+    "This prospectively authored source revision names the already accepted S1 effect, but source text cannot independently activate S1, establish its four ALL_REQUIRED implementation components or certify J3.",
+    "Earlier G006/G013 observations apply to their exact original Git source transition. Their evidence is not automatically carried forward as governing realization of the present newly authored source event.",
+    "The five original Git source witnesses from the predecessor are preserved in the predecessor Git object; this successor's expanded list is deliberately cleared rather than reasserting them as freshly executed evidence.",
+    "A co-committed COVERS declaration names the complete accepted S1 component list, but explicitly marks all coverage as proposed pending actual execution and natural-owner admission.",
+    "The new source and declaration are authored by the exposed ChatGPT experiment collaborator; neither model authorship nor the Git commit independently proves a qualified natural-owner identity, historical G006/G013 code ownership or provider authentication.",
+    "The frozen S1 REPLACE OPEN_RESET rule remains not activated and no predecessor S0 evidence is sufficient without explicit requalification.",
+    "The emitted source is isolated experimental data, not an ADS production Project Knowledge source, a B0-B4 scoring corpus, independent reference gold, or a physical architecture selection."
+  ],
+  "expanded_real_ads_source_witnesses": [],
+  "governed_source": {
+    "authority_class": "canonical",
+    "kind": "p03-experimental-real-g006-reference",
+    "profile": "semantic_source.v1",
+    "schema_version": "1",
+    "semantic_id": "P03PKA.G006.IDENTITY.CONTINUITY"
+  },
+  "lifecycle_stage": "S1_SOURCE_CANDIDATE_NOT_GOVERNING_ACTIVATION",
+  "no_formal_task_or_score": true,
+  "production_authority": false,
+  "real_ads_source": {
+    "implementation_gate": "G006",
+    "original_git_pin": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+    "original_implementation_commit": "99cca3484f4dcb37128c38c2436a6dbcd6d00a0f",
+    "original_path": "tools/project_knowledge/identity.py",
+    "original_sha256": "c267136871d0349c5920edc47cae88fed07b097902f154d689b25d06d9d481df",
+    "source_role": "EXACT_GIT_IMPLEMENTATION_BYTES_NOT_RETROACTIVE_J1_J2"
+  },
+  "revision_provenance": {
+    "authority_claim": "EXPERIMENT_ONLY_SOURCE_RECORD_NOT_GOVERNING_PROJECT_AUTHORITY",
+    "current_source_path": "experiments/r0_p03_navigation_probe/real_pk_world/prospective_s1/identity_carrier_v02.json",
+    "event_class": "ACTUAL_PROSPECTIVE_EXPERIMENT_SOURCE_REPRESENTATION_CHANGE",
+    "expected_action_parent": "2def5a1751f579138cf67047d5f68362eff92af4",
+    "git_successor_commit": "UNAVAILABLE_UNTIL_COMMIT",
+    "natural_owner_j2_coverage": "UNQUALIFIED",
+    "previous_source_path": "experiments/r0_p03_navigation_probe/real_pk_world/current/identity_carrier_v01.json",
+    "prior_git_commit": "cac152cfe6c2133ffd46cf7fa3b7e0b99d015cb4",
+    "semantic_id_invariant": "P03PKA.G006.IDENTITY.CONTINUITY",
+    "successor_j1_activation": "NOT_ACTIVATED"
+  },
+  "schema_version": 1,
+  "source_owner_claim": {
+    "actor": "EXPOSED_CHATGPT_COORDINATOR",
+    "claim_class": "AT_ACTION_AUTHOR_CLAIM_NOT_INDEPENDENTLY_AUTHENTICATED",
+    "natural_owner_relational_j2_qualified": false
+  },
+  "source_role": "EXPERIMENT_ONLY_S1_PROSPECTIVE_SOURCE_CARRIER_WITH_UNQUALIFIED_COLOCATED_J2_CLAIM",
+  "world_id": "P03V2_PKA_IDENTITY_AND_DERIVED_REFRESH_REAL_SOURCES_V01"
+}

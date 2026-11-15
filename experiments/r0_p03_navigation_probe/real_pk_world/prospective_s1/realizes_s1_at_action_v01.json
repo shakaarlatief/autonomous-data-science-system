@@ -1,0 +1,60 @@
+{
+  "author_statement": {
+    "claim_made_before_action": true,
+    "claimant_identity_assurance": "MODEL_CONVERSATION_CLAIM_NOT_INDEPENDENTLY_AUTHENTICATED",
+    "claimed_role": "EXPOSED_CHATGPT_EXPERIMENT_SOURCE_AUTHOR",
+    "independently_authenticated_actor": false,
+    "natural_owner_scope": "THIS_P03_PROSPECTIVE_SOURCE_REVISION_ONLY",
+    "provider_receipt_verified": false
+  },
+  "authority_exclusions": [
+    "NO_INDEPENDENT_MODEL_ACTOR_PROOF",
+    "NO_AUTHENTICATED_NATURAL_OWNER_RELATIONAL_J2",
+    "NO_S1_ACTIVATION",
+    "NO_J3_SATISFIED",
+    "NO_PRODUCTION_OR_PHYSICAL_TARGET_AUTHORITY",
+    "NO_FORMAL_B0_B4_SCORE"
+  ],
+  "fact_class": "RELATIONAL_SOURCE_AUTHOR_ASSERTION",
+  "j3_status": "HOLD_J2_OWNER_ASSURANCE",
+  "record_class": "AT_ACTION_EXPERIMENT_SOURCE_OWNER_COVERS_CANDIDATE",
+  "relational_claim": {
+    "component_ids": [
+      "EXPLICIT_IDENTITY_PRESERVING_MOVE",
+      "AFFECTED_VIEW_REFRESH_SELECTED",
+      "INCREMENTAL_EQUALS_CURRENT_FULL_BUILD",
+      "STALE_DERIVED_RESULT_NOT_GOVERNING"
+    ],
+    "coverage_status": "PROPOSED_PENDING_ACTUAL_EXECUTION_AND_OWNER_QUALIFICATION",
+    "realizer_id": "P03PKA.EXPERIMENT_SOURCE_CARRIER_TRANSITION_002",
+    "relation": "COVERS",
+    "target_accepted_effect_id": "P03PKA-E02-S1-IDENTITY-REFRESH"
+  },
+  "s1_activation": "NOT_ACTIVATED",
+  "schema_version": 1,
+  "source_action": {
+    "commit_sha_known_before_action": false,
+    "declaration_path": "experiments/r0_p03_navigation_probe/real_pk_world/prospective_s1/realizes_s1_at_action_v01.json",
+    "expected_branch": "v1-source-vault-bootstrap-resume",
+    "expected_changed_paths": [
+      {
+        "path": "experiments/r0_p03_navigation_probe/real_pk_world/current/identity_carrier_v01.json",
+        "status": "D"
+      },
+      {
+        "path": "experiments/r0_p03_navigation_probe/real_pk_world/prospective_s1/identity_carrier_v02.json",
+        "status": "A"
+      },
+      {
+        "path": "experiments/r0_p03_navigation_probe/real_pk_world/prospective_s1/realizes_s1_at_action_v01.json",
+        "status": "A"
+      }
+    ],
+    "expected_parent_sha": "2def5a1751f579138cf67047d5f68362eff92af4",
+    "new_path": "experiments/r0_p03_navigation_probe/real_pk_world/prospective_s1/identity_carrier_v02.json",
+    "operation": "ACTUAL_REPRESENTATION_REPLACEMENT_WITH_COCOMMITTED_CLAIM",
+    "previous_path": "experiments/r0_p03_navigation_probe/real_pk_world/current/identity_carrier_v01.json",
+    "previous_source_commit": "cac152cfe6c2133ffd46cf7fa3b7e0b99d015cb4"
+  },
+  "world_id": "P03V2_PKA_IDENTITY_AND_DERIVED_REFRESH_REAL_SOURCES_V01"
+}
