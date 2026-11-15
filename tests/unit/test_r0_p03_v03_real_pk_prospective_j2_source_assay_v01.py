@@ -64,7 +64,7 @@ def sample_claim(parent: str = "a" * 40) -> dict:
 
 
 def sample_after(parent: str = "a" * 40) -> tuple[dict, dict]:
-    before = json.loads((assay.ROOT / assay.BEFORE).read_text("utf8"))
+    before = json.loads(assay._git("show", f"{assay.previous.REPLACEMENT_COMMIT}:{assay.BEFORE}").decode("utf8"))
     after = deepcopy(before)
     after["accepted_effect_ref"] = assay.EFFECT
     after["lifecycle_stage"] = "S1_SOURCE_CANDIDATE_NOT_GOVERNING_ACTIVATION"
