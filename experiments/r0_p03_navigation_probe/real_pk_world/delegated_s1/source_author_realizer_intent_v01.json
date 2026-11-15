@@ -1,0 +1,28 @@
+{
+  "accepted_s1_effect_id": "P03PKA-E02-S1-IDENTITY-REFRESH",
+  "author_identity_assurance": "RECORDED_CHAT_AND_EXPOSED_SESSION_NOT_INDEPENDENTLY_AUTHENTICATED",
+  "author_role": "EXPOSED_CHATGPT_AUTHOR_OF_THIS_COMPOSITE_EXPERIMENTAL_EXECUTION_ORCHESTRATOR",
+  "execution_status": "NOT_EXECUTED_AT_TIME_OF_GIT_EVENT",
+  "formal_b0_b4_scored": false,
+  "j3": "HOLD",
+  "policy_acceptance_commit": "872d461aecf1cbd4a6a18249e9e75050a5e97773",
+  "policy_proposal_id": "P03V2_EXPERIMENT_SOURCE_OWNER_RELATIONAL_J2_ASSURANCE_POLICY_REV01",
+  "production_authority": false,
+  "qualified_relational_j2": false,
+  "realizer_id": "P03PKA.EXPERIMENT_COMPOSITE_G006_G013_DELEGATED_001",
+  "relationship": "PROSPECTIVE_EXECUTION_INTENT_NOT_J2_COVERS",
+  "s1_activated": false,
+  "schema_version": 1,
+  "scope_freeze_commit": "c523340a20dd7628bc2a470594e28b48929a29dc",
+  "scope_id": "P03V2_ACCEPTED_POLICY_REV01_DELEGATED_S1_COMPOSITE_REALIZER_EVENT_001",
+  "semantic_id": "P03PKA.G006.IDENTITY.CONTINUITY",
+  "source_after_path": "experiments/r0_p03_navigation_probe/real_pk_world/delegated_s1/identity_carrier_v03.json",
+  "source_before_path": "experiments/r0_p03_navigation_probe/real_pk_world/prospective_s1/identity_carrier_v02.json",
+  "source_event_parent": "c523340a20dd7628bc2a470594e28b48929a29dc",
+  "target_components": [
+    "EXPLICIT_IDENTITY_PRESERVING_MOVE",
+    "AFFECTED_VIEW_REFRESH_SELECTED",
+    "INCREMENTAL_EQUALS_CURRENT_FULL_BUILD",
+    "STALE_DERIVED_RESULT_NOT_GOVERNING"
+  ]
+}
