@@ -1,0 +1,40 @@
+{
+  "accepted_new_experiment_only_j1_count": 4,
+  "formal_r0_p03": "INCOMPLETE",
+  "j3": "HOLD_OWNER_RELATIONAL_QUALIFICATION",
+  "natural_owner_relational_declaration_source_exists": true,
+  "next": "QUALIFY_EXPERIMENT_SOURCE_OWNER_AUTHORITY_FOR_EXACT_COVERS_THEN_RUN_TRUE_G013_CURRENT_SOURCE_REFRESH",
+  "observed_git_transition": {
+    "initial_commit": "10cad3cb0a885135579f00f3a887a3c090f65352",
+    "original_and_new_sources_verified": true,
+    "replacement_commit": "cac152cfe6c2133ffd46cf7fa3b7e0b99d015cb4",
+    "semantic_identity": "P03PKA.G006.IDENTITY.CONTINUITY"
+  },
+  "physical_architecture_selected": false,
+  "qualified_relational_j2_count": 0,
+  "required_component_ids": [
+    "EXPLICIT_IDENTITY_PRESERVING_MOVE",
+    "HISTORICAL_CARRIER_REMAINS_RESOLVABLE"
+  ],
+  "s1_activation": "NOT_ACTIVATED",
+  "schema_version": 1,
+  "scope": "REAL_ADS_SOURCE_EXPERIMENT_NOT_PRODUCTION",
+  "source_local_relational_declarations": [
+    {
+      "component_ids": [
+        "EXPLICIT_IDENTITY_PRESERVING_MOVE",
+        "HISTORICAL_CARRIER_REMAINS_RESOLVABLE"
+      ],
+      "fact_class": "RELATIONAL_SOURCE_LOCAL_COVERS_PROPOSAL_NOT_YET_QUALIFIED",
+      "qualified_as_governing_relational_j2": false,
+      "realizer_id": "P03PKA.EXPERIMENT_SOURCE_CARRIER_TRANSITION_001",
+      "reported_coverage": "FULL",
+      "source_exact_sha256": "4d0aa3cdcedc2f0c33ed81a8c11ecf743a3135c2c938205cb8d8a392bd265c2f",
+      "source_owner": "EXPOSED_CHATGPT_AUTHOR_OF_EXPERIMENT_SOURCE_CARRIER_AND_MOVE",
+      "source_owner_independently_authenticated": false,
+      "target_effect_id": "P03PKA-E01-S0-IDENTITY-CONTINUITY"
+    }
+  ],
+  "source_observable_component_test_passed": true,
+  "world_id": "P03V2_PKA_IDENTITY_AND_DERIVED_REFRESH_REAL_SOURCES_V01"
+}

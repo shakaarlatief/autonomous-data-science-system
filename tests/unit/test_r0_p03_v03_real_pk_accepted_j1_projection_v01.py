@@ -146,17 +146,24 @@ def test_existing_j1_projection_result_is_byte_stable(projection):
     assert p.OUTPUT.read_text("utf8") == expected
 
 
-def test_experimental_initial_carrier_is_schema_valid_and_not_production():
+def test_initial_carrier_is_recovered_at_exact_git_commit_after_real_replacement():
+    """An actual later source move does not erase original Git source evidence."""
     from tools.project_knowledge.adapters.schema import SchemaValidator
     from tools.project_knowledge.model import RawDeclaration
+    from experiments.r0_p03_navigation_probe import (
+        v03_real_pk_source_transition_v01 as transition,
+    )
 
-    carrier = p.HERE / "real_pk_world/initial/identity_carrier_v01.json"
-    rec = json.loads(carrier.read_text("utf8"))
-    assert rec["world_id"] == p.EXPERIMENT_ID
-    assert rec["production_authority"] is False
-    assert rec["source_owner_claim"]["natural_owner_relational_j2_qualified"] is False
-    assert rec["governed_source"]["authority_class"] == "canonical"
-    assert not SchemaValidator().validate(RawDeclaration(rec["governed_source"]))
-    assert rec["real_ads_source"]["original_git_pin"] == (
+    original, current, source = transition.committed_carriers()
+    assert source["initial_commit"] == transition.INITIAL_COMMIT
+    assert source["replacement_commit"] == transition.REPLACEMENT_COMMIT
+    assert original["world_id"] == current["world_id"] == p.EXPERIMENT_ID
+    assert original["production_authority"] is current["production_authority"] is False
+    assert original["source_owner_claim"]["natural_owner_relational_j2_qualified"] is False
+    assert current["source_owner_claim"]["natural_owner_relational_j2_qualified"] is False
+    assert original["governed_source"]["semantic_id"] == current["governed_source"]["semantic_id"]
+    assert all(not SchemaValidator().validate(RawDeclaration(x["governed_source"]))
+               for x in (original, current))
+    assert original["real_ads_source"]["original_git_pin"] == (
         "5463b2ad2e6799339746637f38340fa2a9dc00f6"
     )

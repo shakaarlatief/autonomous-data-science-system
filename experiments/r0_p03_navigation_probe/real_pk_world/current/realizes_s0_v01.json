@@ -1,0 +1,43 @@
+{
+  "accepted_effect_id": "P03PKA-E01-S0-IDENTITY-CONTINUITY",
+  "component_claims": [
+    {
+      "coverage": "FULL",
+      "evidence_class": "OBSERVABLE_EXACT_GIT_AND_SOURCE_LOCAL_RELATION",
+      "id": "EXPLICIT_IDENTITY_PRESERVING_MOVE",
+      "source_commit": "cac152cfe6c2133ffd46cf7fa3b7e0b99d015cb4"
+    },
+    {
+      "coverage": "FULL",
+      "evidence_class": "EXECUTED_PRODUCTION_G006_REPLAY",
+      "id": "HISTORICAL_CARRIER_REMAINS_RESOLVABLE",
+      "source_result_sha256": "fc8a40c58fbacbd0be32f82ada6bbb1a92749f30e90d453f55dc961953b05d0d"
+    }
+  ],
+  "coverage_claim": "FULL",
+  "fact_class": "RELATIONAL_SOURCE_LOCAL_COVERS_PROPOSAL_NOT_YET_QUALIFIED",
+  "independently_authenticated_actor": false,
+  "j3_satisfaction_inferred": false,
+  "natural_owner_carrier": "experiments/r0_p03_navigation_probe/real_pk_world/current/identity_carrier_v01.json",
+  "natural_owner_carrier_git_commit": "cac152cfe6c2133ffd46cf7fa3b7e0b99d015cb4",
+  "natural_owner_carrier_sha256": "d618807f510a4400ec62e1d25b931c6810e9b4928e8c348317ecd54db89d8b32",
+  "predecessor_source_commit": "10cad3cb0a885135579f00f3a887a3c090f65352",
+  "prohibited_inferences": [
+    "CLAIMED_SOURCE_OWNER_EQUALS_INDEPENDENT_ACTOR_PROOF",
+    "CHATGPT_SOURCE_OWNER_OF_HISTORICAL_G006_G013_CODE",
+    "PUBLIC_GIT_AUTHOR_EQUALS_MODEL_SESSION_PROVENANCE",
+    "SOURCE_OBSERVATION_ALONE_SUFFICES_FOR_GOVERNING_RELATIONAL_J2",
+    "S0_TEST_PASS_IMPLIES_J3_COMPLETE",
+    "S1_AUTOMATICALLY_ACTIVATED_OR_SATISFIED",
+    "PRODUCTION_AUTHORITY_OR_SELECTED_PHYSICAL_ARCHITECTURE"
+  ],
+  "qualified_relational_j2": false,
+  "realizer_id": "P03PKA.EXPERIMENT_SOURCE_CARRIER_TRANSITION_001",
+  "realizer_scope": "THIS_EXPERIMENT_SOURCE_REPRESENTATION_CHANGE_ONLY_NOT_HISTORICAL_G006_G013_CODE_OWNERSHIP",
+  "schema_version": 1,
+  "source_owner_assurance": "AT_ACTION_SOURCE_AUTHOR_ASSERTION_NOT_INDEPENDENTLY_AUTHENTICATED",
+  "source_owner_claim": "EXPOSED_CHATGPT_AUTHOR_OF_EXPERIMENT_SOURCE_CARRIER_AND_MOVE",
+  "source_owner_declaration_status": "EXPLICIT_SOURCE_AUTHORED_PROPOSAL_PENDING_QUALIFICATION",
+  "successor_j1_activation": "NOT_ACTIVATED",
+  "world_id": "P03V2_PKA_IDENTITY_AND_DERIVED_REFRESH_REAL_SOURCES_V01"
+}

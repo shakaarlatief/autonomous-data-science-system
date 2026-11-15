@@ -1,0 +1,71 @@
+{
+  "accepted_j1": {
+    "active_effect_ids": [
+      "P03PKA-E01-S0-IDENTITY-CONTINUITY",
+      "P03PKA-E04-NO-PATH-OR-DERIVED-AUTHORITY"
+    ],
+    "effect_count": 4,
+    "lineage_rule": {
+      "predecessor_id": "P03PKA-E01-S0-IDENTITY-CONTINUITY",
+      "realization_succession": "OPEN_RESET",
+      "relation": "REPLACE",
+      "successor_id": "P03PKA-E02-S1-IDENTITY-REFRESH",
+      "transition_not_activated_by_this_proposal": true
+    },
+    "successor_effect_dormant": "P03PKA-E02-S1-IDENTITY-REFRESH"
+  },
+  "actual_g006_replay": {
+    "continuity_preserved": true,
+    "current_source_path": "experiments/r0_p03_navigation_probe/real_pk_world/current/identity_carrier_v01.json",
+    "historical_carrier_paths": [
+      "experiments/r0_p03_navigation_probe/real_pk_world/current/identity_carrier_v01.json",
+      "experiments/r0_p03_navigation_probe/real_pk_world/initial/identity_carrier_v01.json"
+    ],
+    "history_known": true,
+    "identity_current_targets": [
+      "P03PKA.G006.IDENTITY.CONTINUITY"
+    ],
+    "order_independent_serialization": true
+  },
+  "formal_b0_b4_scores": null,
+  "formal_primary_tasks": null,
+  "git": {
+    "both_exact_source_revisions_verified": true,
+    "git_changed_paths": [
+      "experiments/r0_p03_navigation_probe/real_pk_world/current/identity_carrier_v01.json",
+      "experiments/r0_p03_navigation_probe/real_pk_world/initial/identity_carrier_v01.json"
+    ],
+    "initial_commit": "10cad3cb0a885135579f00f3a887a3c090f65352",
+    "initial_parent": "ed1c379f31fadc47a62189363720e0cfb9390afa",
+    "initial_path": "experiments/r0_p03_navigation_probe/real_pk_world/initial/identity_carrier_v01.json",
+    "initial_sha256": "effcbcf0bdd54576f9611a5381ab900490561cd762fb3f1985096b6ac92703b2",
+    "replacement_commit": "cac152cfe6c2133ffd46cf7fa3b7e0b99d015cb4",
+    "replacement_path": "experiments/r0_p03_navigation_probe/real_pk_world/current/identity_carrier_v01.json",
+    "replacement_sha256": "d618807f510a4400ec62e1d25b931c6810e9b4928e8c348317ecd54db89d8b32"
+  },
+  "j3": {
+    "S0": "HOLD_NATURAL_OWNER_J2_DESPITE_OBSERVED_IDENTITY_BEHAVIOR",
+    "S1": "NOT_ACTIVATED",
+    "completion_certified": false,
+    "source_revision_observed_but_not_qualified_j1_activation": true
+  },
+  "observed_source_revision": {
+    "actual_source_replacement": true,
+    "original_and_current_git_blob_bytes_differ": true,
+    "same_explicit_authored_semantic_id": "P03PKA.G006.IDENTITY.CONTINUITY",
+    "transition_class": "REPRESENTATION_REPLACEMENT",
+    "transition_declared_in_current_carrier": true
+  },
+  "owner_relation": {
+    "at_action_author_claim_exposed": true,
+    "author_claim_independently_verified": false,
+    "g006_historical_implementation_owner_covers_authenticated": false,
+    "qualified_relational_j2_count": 0,
+    "source_observable_identity_move_not_equivalent_to_covers": true
+  },
+  "physical_architecture_selected": false,
+  "production_code_changed": false,
+  "schema_version": 1,
+  "source_role": "GIT_ORIGINAL_OBSERVABLE_AND_PRODUCTION_G006_SEMANTIC_REPLAY",
+  "world_id": "P03V2_PKA_IDENTITY_AND_DERIVED_REFRESH_REAL_SOURCES_V01"
+}

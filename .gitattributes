@@ -118,6 +118,11 @@ experiments/r0_p03_navigation_probe/v03_real_pk_accepted_j1_projection_result_v0
 # Source carrier will be moved through actual Git history, never treated as a path-derived semantic ID.
 experiments/r0_p03_navigation_probe/real_pk_world/initial/identity_carrier_v01.json -text
 experiments/r0_p03_navigation_probe/real_pk_world/current/identity_carrier_v01.json -text
+# Preserve exact real-source witness and explicitly non-governing J2/combined-world preflight outputs.
+experiments/r0_p03_navigation_probe/real_pk_world/current/realizes_s0_v01.json -text
+experiments/r0_p03_navigation_probe/v03_real_pk_source_transition_result_v01.json -text
+experiments/r0_p03_navigation_probe/v03_real_pk_source_owner_coverage_preflight_result_v01.json -text
+experiments/r0_p03_navigation_probe/v03_real_pk_common_world_preflight_result_v01.json -text
 # Preserve both original MC-0030 Message 063 historical carriers as exact Git blobs across Windows checkout.
 # The collision guard hashes their literal LF source bytes; CRLF worktree conversion would falsify the historical exception.
 docs/model_collaboration/threads/MC-0030/messages/063_chatgpt_r0_p03_message062_reconciliation_and_owner_option_a.md -text

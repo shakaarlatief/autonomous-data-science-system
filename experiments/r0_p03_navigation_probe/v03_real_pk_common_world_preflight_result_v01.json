@@ -1,0 +1,368 @@
+{
+  "accepted_j1": {
+    "acceptance_class": "CHAT_CONVERSATION_EXPLICIT_OWNER_REPLY_NOT_INDEPENDENTLY_AUTHENTICATED",
+    "accepted_effects": [
+      {
+        "accounting": "REALIZATION_TRACKED",
+        "completion_contract": {
+          "actual_natural_owner_covers_required": true,
+          "composition": "ALL_REQUIRED",
+          "exact_source_revision_and_executed_evidence_required": true,
+          "required_components": [
+            "EXPLICIT_IDENTITY_PRESERVING_MOVE",
+            "HISTORICAL_CARRIER_REMAINS_RESOLVABLE"
+          ]
+        },
+        "id": "P03PKA-E01-S0-IDENTITY-CONTINUITY",
+        "state": "S0_INITIAL",
+        "statement": "In the bounded P03 experimental source world, a move or representation replacement of an authored canonical source carrier must preserve its semantic identity and retain its historical carrier in lookup.",
+        "type": "REQUIRE"
+      },
+      {
+        "accounting": "REALIZATION_TRACKED",
+        "completion_contract": {
+          "actual_natural_owner_covers_required": true,
+          "composition": "ALL_REQUIRED",
+          "exact_source_revision_and_executed_evidence_required": true,
+          "required_components": [
+            "EXPLICIT_IDENTITY_PRESERVING_MOVE",
+            "AFFECTED_VIEW_REFRESH_SELECTED",
+            "INCREMENTAL_EQUALS_CURRENT_FULL_BUILD",
+            "STALE_DERIVED_RESULT_NOT_GOVERNING"
+          ]
+        },
+        "id": "P03PKA-E02-S1-IDENTITY-REFRESH",
+        "state": "S1_SUCCESSOR_AFTER_REAL_SOURCE_REVISION",
+        "statement": "In the bounded P03 successor experimental state, the same authored semantic identity must survive a real source carrier move; affected derived views must be rebuilt from the complete current source snapshot and any incremental refresh must be equivalent to the full current build. A stale prior generated manifest must never govern current semantics.",
+        "type": "REQUIRE"
+      },
+      {
+        "accounting": "NO_REALIZATION_REQUIRED",
+        "id": "P03PKA-E03-S1-REPLACE-OPEN-RESET",
+        "lineage": {
+          "predecessor_id": "P03PKA-E01-S0-IDENTITY-CONTINUITY",
+          "realization_succession": "OPEN_RESET",
+          "relation": "REPLACE",
+          "successor_id": "P03PKA-E02-S1-IDENTITY-REFRESH",
+          "transition_not_activated_by_this_proposal": true
+        },
+        "state": "S1_SUCCESSOR_AFTER_REAL_SOURCE_REVISION",
+        "statement": "When the separately qualified prospective P03 source-revision transition activates S1, S1 REPLACES S0 as the current experimental requirement, with OPEN_RESET realization succession; S0 implementation evidence cannot be carried forward as sufficient for S1 without requalification.",
+        "type": "LIFECYCLE"
+      },
+      {
+        "accounting": "NO_REALIZATION_REQUIRED",
+        "id": "P03PKA-E04-NO-PATH-OR-DERIVED-AUTHORITY",
+        "standing_check": "DETECTIVE_ONLY_FALSE_AUTHORITY_REJECTION",
+        "state": "BOTH",
+        "statement": "Neither a carrier path nor a generated navigation/index/manifest output may be treated as governing semantic identity or acceptance authority.",
+        "type": "PROHIBIT"
+      }
+    ],
+    "current_effect_ids": [
+      "P03PKA-E01-S0-IDENTITY-CONTINUITY",
+      "P03PKA-E04-NO-PATH-OR-DERIVED-AUTHORITY"
+    ],
+    "dormant_successor_effect_ids": [
+      "P03PKA-E02-S1-IDENTITY-REFRESH"
+    ],
+    "original_review_commit": "ed1c379f31fadc47a62189363720e0cfb9390afa"
+  },
+  "accepted_lineage_currentness": {
+    "S1_activation": "NOT_ACTIVATED",
+    "accepted_rule": {
+      "predecessor_id": "P03PKA-E01-S0-IDENTITY-CONTINUITY",
+      "realization_succession": "OPEN_RESET",
+      "relation": "REPLACE",
+      "successor_id": "P03PKA-E02-S1-IDENTITY-REFRESH",
+      "transition_not_activated_by_this_proposal": true
+    },
+    "active_state": "S0_INITIAL",
+    "actual_git_revision_does_not_automatically_qualify_s1": true,
+    "successor_realization_evidence_carryover": "FORBIDDEN_BY_OPEN_RESET"
+  },
+  "formality": {
+    "blinded_evaluators_assigned": false,
+    "formal_B0_B4_scores": null,
+    "nine_neutral_legacy_reference_gold_frozen_under_current_method": false,
+    "physical_target_selected": false,
+    "sixty_build_twenty_heldout_or_fallback_frozen": false,
+    "twelve_independent_primary_tasks_originated": false
+  },
+  "j2": {
+    "observable": {
+      "git_source_history_verified": true,
+      "identity_continuity_and_history_executed_in_g006": true
+    },
+    "qualified_relational": [],
+    "qualified_relational_count": 0,
+    "source_local_relational_candidates_not_admitted": [
+      {
+        "component_ids": [
+          "EXPLICIT_IDENTITY_PRESERVING_MOVE",
+          "HISTORICAL_CARRIER_REMAINS_RESOLVABLE"
+        ],
+        "fact_class": "RELATIONAL_SOURCE_LOCAL_COVERS_PROPOSAL_NOT_YET_QUALIFIED",
+        "qualified_as_governing_relational_j2": false,
+        "realizer_id": "P03PKA.EXPERIMENT_SOURCE_CARRIER_TRANSITION_001",
+        "reported_coverage": "FULL",
+        "source_exact_sha256": "4d0aa3cdcedc2f0c33ed81a8c11ecf743a3135c2c938205cb8d8a392bd265c2f",
+        "source_owner": "EXPOSED_CHATGPT_AUTHOR_OF_EXPERIMENT_SOURCE_CARRIER_AND_MOVE",
+        "source_owner_independently_authenticated": false,
+        "target_effect_id": "P03PKA-E01-S0-IDENTITY-CONTINUITY"
+      }
+    ]
+  },
+  "j3": {
+    "S0": "HOLD_UNQUALIFIED_SOURCE_OWNER_RELATION",
+    "S1": "NOT_ACTIVATED",
+    "completion_certified": false
+  },
+  "original_project_source_catalog": {
+    "all_original_source_roles_are_evidence_not_new_governing_effects": true,
+    "distinct_original_git_paths": 19,
+    "source_pin": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+    "sources": [
+      {
+        "evidence_class": "ORIGINAL_SOURCE_OBSERVABLE_WITHOUT_NEW_J1_J2",
+        "exact_source_commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+        "git_blob_oid": "367300418316f86b3e09c1d84b9631816d9dc99a",
+        "sha256": "b21beb95611e45bbd02b17f7cef93cc437fdfd8a5f193d0d8d884027eb731e03",
+        "source_path": ".github/workflows/repository-integrity.yml",
+        "source_roles": [
+          "WORKFLOW_DEFINITION_NOT_EXECUTION"
+        ]
+      },
+      {
+        "evidence_class": "ORIGINAL_SOURCE_OBSERVABLE_WITHOUT_NEW_J1_J2",
+        "exact_source_commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+        "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+        "sha256": "14e40c0ca6ec0f38373d971f90fd91b4457657606b93c5fccdfb101b3301bd04",
+        "source_path": "docs/DECISIONS.md",
+        "source_roles": [
+          "HISTORICAL_LOGICAL_ARCHITECTURE_DECISION_SOURCE",
+          "HISTORICAL_SELECTED_DECISION_REPORTED"
+        ]
+      },
+      {
+        "evidence_class": "ORIGINAL_SOURCE_OBSERVABLE_WITHOUT_NEW_J1_J2",
+        "exact_source_commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+        "git_blob_oid": "89b4d9731e2493d9eb0976799a4f71d78f76ece9",
+        "sha256": "87e52375afe02ae31af753d95ce568677770c8a3a7ff242a28126f8cd8366114",
+        "source_path": "docs/checkpoints/522_candidate01_physical_architecture_v01_proposed_spec028_next.md",
+        "source_roles": [
+          "DOCUMENTARY_CHECKPOINT_NOT_J1"
+        ]
+      },
+      {
+        "evidence_class": "ORIGINAL_SOURCE_OBSERVABLE_WITHOUT_NEW_J1_J2",
+        "exact_source_commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+        "git_blob_oid": "fbea8871a1516aad3aa0ba4071484e447c794b82",
+        "sha256": "475dfc9e4ff18e8669ee3a46880fb2d5eb7e5250f3aac112b37ae5cd18e08d4c",
+        "source_path": "docs/current_routing.json",
+        "source_roles": [
+          "DERIVED_ROUTING_STATUS_NOT_J1"
+        ]
+      },
+      {
+        "evidence_class": "ORIGINAL_SOURCE_OBSERVABLE_WITHOUT_NEW_J1_J2",
+        "exact_source_commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+        "git_blob_oid": "fb16859ebe94cc09acf2e37b4afee27380946adf",
+        "sha256": "9b18b5d1d5296690bba2837278b85057a92b5a8d9f656870e0972c7a3c15f2a8",
+        "source_path": "docs/research/144_whole_architecture_candidate_repository_native_semantic_sources.md",
+        "source_roles": [
+          "ARCHITECTURAL_CANDIDATE"
+        ]
+      },
+      {
+        "evidence_class": "ORIGINAL_SOURCE_OBSERVABLE_WITHOUT_NEW_J1_J2",
+        "exact_source_commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+        "git_blob_oid": "953a7f7e0f8a04c791a2746acce500fed717b1d5",
+        "sha256": "d65c08a28bbd63d75d5c4a770293e63a37c833e8f2433153ac676302fca1a608",
+        "source_path": "docs/research/181_w0_identity_transition_current_index_g006_result.md",
+        "source_roles": [
+          "HISTORICAL_GATE_ACCEPTANCE_REPORTED_NOT_P03_J1"
+        ]
+      },
+      {
+        "evidence_class": "ORIGINAL_SOURCE_OBSERVABLE_WITHOUT_NEW_J1_J2",
+        "exact_source_commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+        "git_blob_oid": "13e6fa7a39e3ff39a5c05c58f78e8dc3a8633186",
+        "sha256": "7b37f650d1b9c2a7741555ecaea505dc18943bee3a25c5e336835f6907220c91",
+        "source_path": "docs/research/189_w0_full_incremental_rebuild_equivalence_g013_result.md",
+        "source_roles": [
+          "HISTORICAL_GATE_ACCEPTANCE_REPORTED_NOT_P03_J1"
+        ]
+      },
+      {
+        "evidence_class": "ORIGINAL_SOURCE_OBSERVABLE_WITHOUT_NEW_J1_J2",
+        "exact_source_commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+        "git_blob_oid": "a79dbc712a3b58cdd2e2e2f0a86ddf1f89b0b2a4",
+        "sha256": "ea21b21b79a89efc6c2c2bcf030cc1617bad9f47eb2b761d07f5ec0a6e246177",
+        "source_path": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+        "source_roles": [
+          "HISTORICAL_COMPARATOR_SOURCE",
+          "HISTORICAL_NAVIGATION_EVIDENCE"
+        ]
+      },
+      {
+        "evidence_class": "ORIGINAL_SOURCE_OBSERVABLE_WITHOUT_NEW_J1_J2",
+        "exact_source_commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+        "git_blob_oid": "345db82a0e64983e5b223910667de0f95ed4db3b",
+        "sha256": "d0fa68eaeefdf4b42689680ddaec4eb930c7b8ac65f7f6a99839c908400a00a5",
+        "source_path": "docs/research/218_w5_final_information_architecture_reconciliation_and_target_freeze.md",
+        "source_roles": [
+          "HISTORICAL_NAVIGATION_PROPOSAL"
+        ]
+      },
+      {
+        "evidence_class": "ORIGINAL_SOURCE_OBSERVABLE_WITHOUT_NEW_J1_J2",
+        "exact_source_commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+        "git_blob_oid": "70db025eefa69a8dec43b04dfdae87f5700754c9",
+        "sha256": "7651707b5d590efd7686a77dca20597dc731bfafa1fabc2358775bef7b9d2ffe",
+        "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+        "source_roles": [
+          "FROZEN_CONTRACT_TEXT",
+          "ORIGINAL_FROZEN_CONTRACT_TEXT"
+        ]
+      },
+      {
+        "evidence_class": "ORIGINAL_SOURCE_OBSERVABLE_WITHOUT_NEW_J1_J2",
+        "exact_source_commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+        "git_blob_oid": "30354978662caf1189b3341193162c8939349bd5",
+        "sha256": "2b6be27b6352b1dab836d79e76883045d2d4a01a4928ffdc00afff04f47b13f7",
+        "source_path": "tests/unit/test_project_knowledge_authority.py",
+        "source_roles": [
+          "TEST_DEFINITION_NOT_EXECUTION"
+        ]
+      },
+      {
+        "evidence_class": "ORIGINAL_SOURCE_OBSERVABLE_WITHOUT_NEW_J1_J2",
+        "exact_source_commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+        "git_blob_oid": "48179580b08efcc66ba543c95ed5d184af68bc5d",
+        "sha256": "452f416747d64498e25d161b8c47d64a441eca4656d890ffc337b63e90c2db35",
+        "source_path": "tests/unit/test_project_knowledge_capture.py",
+        "source_roles": [
+          "TEST_DEFINITION_NOT_EXECUTION"
+        ]
+      },
+      {
+        "evidence_class": "ORIGINAL_SOURCE_OBSERVABLE_WITHOUT_NEW_J1_J2",
+        "exact_source_commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+        "git_blob_oid": "d85253c368507941f1e555f2d35db1b09ccf06aa",
+        "sha256": "5c12d727aabccccc0ff5603d30c403377c59ee10abe8c51a7709f0f8a1e3b948",
+        "source_path": "tests/unit/test_project_knowledge_identity.py",
+        "source_roles": [
+          "TEST_DEFINITION_NOT_EXECUTION"
+        ]
+      },
+      {
+        "evidence_class": "ORIGINAL_SOURCE_OBSERVABLE_WITHOUT_NEW_J1_J2",
+        "exact_source_commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+        "git_blob_oid": "219e58408039ac89691f311fb478045bb0f781f9",
+        "sha256": "e81868bd95174193185bf965b5e39e73608bf06db71517892fa394816e362972",
+        "source_path": "tests/unit/test_project_knowledge_refresh.py",
+        "source_roles": [
+          "TEST_DEFINITION_NOT_EXECUTION"
+        ]
+      },
+      {
+        "evidence_class": "ORIGINAL_SOURCE_OBSERVABLE_WITHOUT_NEW_J1_J2",
+        "exact_source_commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+        "git_blob_oid": "e4b74a7efa0adbde16e49d411dd831be3f83e164",
+        "sha256": "30efbf020b8540f879171a6ab0386b38d4ac1b29c90adb3b2853ccd6434e787d",
+        "source_path": "tools/project_knowledge/authority.py",
+        "source_roles": [
+          "EXACT_SOURCE_IMPLEMENTATION_BYTES"
+        ]
+      },
+      {
+        "evidence_class": "ORIGINAL_SOURCE_OBSERVABLE_WITHOUT_NEW_J1_J2",
+        "exact_source_commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+        "git_blob_oid": "0d4b64a12d8abdd64531f3461733cfc30f6708f5",
+        "sha256": "15b370e81a82b213dd43de52223fc1a150b5e24fc0fef1627e9f4fa9d9c1b84d",
+        "source_path": "tools/project_knowledge/capture.py",
+        "source_roles": [
+          "EXACT_SOURCE_IMPLEMENTATION_BYTES"
+        ]
+      },
+      {
+        "evidence_class": "ORIGINAL_SOURCE_OBSERVABLE_WITHOUT_NEW_J1_J2",
+        "exact_source_commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+        "git_blob_oid": "298ee0493bfcf949e1874d81f8de2fbc7294e96e",
+        "sha256": "c267136871d0349c5920edc47cae88fed07b097902f154d689b25d06d9d481df",
+        "source_path": "tools/project_knowledge/identity.py",
+        "source_roles": [
+          "EXACT_SOURCE_IMPLEMENTATION_BYTES",
+          "NATURAL_CODE_SOURCE"
+        ]
+      },
+      {
+        "evidence_class": "ORIGINAL_SOURCE_OBSERVABLE_WITHOUT_NEW_J1_J2",
+        "exact_source_commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+        "git_blob_oid": "f6963f3acc4e3c1366f7a064e85d00a2d2993429",
+        "sha256": "e0d8d4dbdefa00919ed85c1433dbffd4a2c6168753c80612773b86a6162520a8",
+        "source_path": "tools/project_knowledge/services/refresh.py",
+        "source_roles": [
+          "NATURAL_CODE_SOURCE"
+        ]
+      },
+      {
+        "evidence_class": "ORIGINAL_SOURCE_OBSERVABLE_WITHOUT_NEW_J1_J2",
+        "exact_source_commit": "5463b2ad2e6799339746637f38340fa2a9dc00f6",
+        "git_blob_oid": "7f5b06e514d9261c1e8b70cf0ebec46c7c7f301e",
+        "sha256": "d6090fc68fc129d1b790ef41c40296ee6b9b85b9bc586668466987d87de0fcea",
+        "source_path": "tools/project_knowledge/views.py",
+        "source_roles": [
+          "EXACT_SOURCE_IMPLEMENTATION_BYTES",
+          "NATURAL_CODE_SOURCE"
+        ]
+      }
+    ]
+  },
+  "remaining_qualification": [
+    "SOURCE_OWNER_RELATIONAL_COVERS_ASSURANCE_FOR_EXPERIMENT_CARRIER",
+    "SECOND_QUALIFIED_S1_SOURCE_REVISION_WITH_TRUE_G013_VIEW_REFRESH",
+    "MECHANICAL_S0_S1_J3_AND_STALE_EVIDENCE_BEHAVIOR",
+    "NEUTRAL_60_20_OR_DETERMINISTIC_3_1_SOURCE_FREEZE",
+    "B0_B4_ARM_IMPLEMENTATION_PARITY_AND_LEGACY_INDEPENDENCE",
+    "INDEPENDENT_TWELVE_PRIMARY_TASKS_PROTECTED_GOLD_TWO_EVALUATORS"
+  ],
+  "schema_version": 1,
+  "scope": "R0_P03_V2_REAL_PROJECT_KNOWLEDGE_SOURCE_WORLD_EXPERIMENT_ONLY",
+  "semantic_identity": {
+    "authored_id": "P03PKA.G006.IDENTITY.CONTINUITY",
+    "continuity_observed_by_g006": true,
+    "current_lookup_does_not_derive_from_path": true,
+    "current_source": "experiments/r0_p03_navigation_probe/real_pk_world/current/identity_carrier_v01.json",
+    "historical_sources": [
+      "experiments/r0_p03_navigation_probe/real_pk_world/current/identity_carrier_v01.json",
+      "experiments/r0_p03_navigation_probe/real_pk_world/initial/identity_carrier_v01.json"
+    ]
+  },
+  "shared_arm_input": {
+    "arm_implementations_frozen": false,
+    "common_semantics": [
+      "source_role_and_natural_owner_provenance",
+      "exact_pinned_source_revision",
+      "accepted_effect_ids_and_component_contracts",
+      "lineage_and_currentness",
+      "identity_and_historical_lookup",
+      "J2_OBSERVABLE_RELATIONAL_EPHEMERAL_ASSURANCE",
+      "J3_completion_or_explicit_HOLD",
+      "lexical_full_text_and_derived_orientation_to_be_frozen"
+    ],
+    "identical_mandatory_information_for_B0_B1_B2_B3_B4": true,
+    "no_arm_specific_index_authority": true
+  },
+  "source_versions": {
+    "current_source_sha256": "d618807f510a4400ec62e1d25b931c6810e9b4928e8c348317ecd54db89d8b32",
+    "git_paths_exact_verified": true,
+    "initial_git_commit": "10cad3cb0a885135579f00f3a887a3c090f65352",
+    "original_source_sha256": "effcbcf0bdd54576f9611a5381ab900490561cd762fb3f1985096b6ac92703b2",
+    "relation": "REPRESENTATION_REPLACEMENT",
+    "replacement_git_commit": "cac152cfe6c2133ffd46cf7fa3b7e0b99d015cb4"
+  },
+  "world_id": "P03V2_PKA_IDENTITY_AND_DERIVED_REFRESH_REAL_SOURCES_V01",
+  "world_status": "ONE_REAL_SOURCE_COMMON_SEMANTIC_PREFLIGHT_J2_J3_HOLD_NOT_FROZEN"
+}

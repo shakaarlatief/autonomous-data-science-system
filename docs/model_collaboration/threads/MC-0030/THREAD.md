@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / REAL ADS G006 G013 SEMANTIC WORLD SOURCE CANDIDATE VERIFIED / EXACT PROSPECTIVE OWNER J1 PACKET PENDING / FORMAL P03 INCOMPLETE
+**Status:** OPEN / FOUR REAL ADS PKA EXPERIMENT J1 EFFECTS ACCEPTED / ACTUAL GIT G006 SOURCE TRANSITION PROVEN / J2 AND TRUE G013 S1 SOURCE WORLD NEXT / FORMAL P03 INCOMPLETE
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -1348,5 +1348,35 @@ A new exact owner decision, actual prospective implementation-source-owner cover
     EXISTING_D1_EXPERIMENT_J1=4
     NEW_RELATIONAL_J2_QUALIFIED=0
     INTEGRATED_J3=NOT_EXECUTED
+    FORMAL_P03=INCOMPLETE
+    PHYSICAL_TARGET_SELECTED=false
+
+## Owner-accepted new PKA experiment semantics with real Git evidence and single common world, Checkpoint 946
+
+Research 685, Validation 382 and MC-0030 Message 099 bind the owner's explicit "I ACCEPT. Proceed." to the exact Research 684 four-effect experiment-only J1 packet. Source commit ed1c379f, canonical digest 0fa8ecc0, four IDs and exclusions are frozen; this is not a production acceptance, natural-owner J2 admission, source-owner cryptographic authentication or formal P03 PASS.
+
+An actual new Git experiment carrier was committed at 10cad3cb, then materially replaced at a separate Git commit cac152cf with exactly one old path removed and a new expanded source added. The authored semantic ID was identical, both Git source blobs were independently reopened and verified, and actual production G006 identity/currentness/historical lookup code confirmed current resolution and both carrier paths. The first unchanged-byte rename Git commit was rejected by guarded exact-path staging; it was not represented as success. The successful event is specifically REPRESENTATION_REPLACEMENT.
+
+The exposed experiment carrier's author added a source-local COVERS proposal for the two exact S0 completion components, with real Git and executed G006 evidence. The declaration itself is explicitly NOT qualified as governing natural-owner RELATIONAL J2 or a model-authenticated historical G006/G013 code author. Therefore S0 J3 is HOLD, S1 accepted but NOT_ACTIVATED, the accepted REPLACE/OPEN_RESET rule is not executed, and qualified J2=0.
+
+One common unscored semantic-world record now joins 19 original Git-pinned ADS source paths, four accepted experiment-only effects, real source identity and history, J2 OBSERVABLE, explicit unqualified COVERS and J3 HOLD, shared by future B0–B4. A true full/incremental G013 source-world execution has not yet been demonstrated. Existing G013 focused move/manifest tests pass separately. Direct full ADS repository validation on ed1c379f, 10cad3cb and cac152cf all returned the same eight preexisting docs/DECISIONS.md SOURCE_DIGEST_MISMATCH diagnostics. Experiment carrier is outside production discovery by design. No production migration, formal score or selected physical architecture.
+
+The next evidence gate is bounded natural-owner J2 qualification for the new experiment carrier and true G013 successor/currentness testing. The previous historical Claude GitHub provider receipt line remains a preserved but finite side investigation, not the main R0-P03 navigation task.
+
+    CURRENT=R0_P03_REAL_SOURCE_J1_ACCEPTED_G006_IDENTITY_WORLD
+    RESEARCH=685
+    VALIDATION=382
+    CHECKPOINT=946
+    CHATGPT_MESSAGE=MC0030_MESSAGE099
+    FOUR_NEW_EXPERIMENT_EFFECTS=OWNER_ACCEPTED
+    REAL_SOURCE_INITIAL_COMMIT=10cad3cb0a885135579f00f3a887a3c090f65352
+    REAL_SOURCE_REPLACEMENT_COMMIT=cac152cfe6c2133ffd46cf7fa3b7e0b99d015cb4
+    ORIGINAL_PROJECT_SOURCE_PATHS=19
+    G006_CURRENT_AND_HISTORICAL=PASS
+    SOURCE_LOCAL_COVERS_PROPOSAL=YES
+    RELATIONAL_J2_QUALIFIED=0
+    S1_ACTIVATION=NOT_ACTIVATED
+    J3=HOLD
+    EXACT_G013_SOURCE_WORLD_REFRESH=NOT_QUALIFIED
     FORMAL_P03=INCOMPLETE
     PHYSICAL_TARGET_SELECTED=false

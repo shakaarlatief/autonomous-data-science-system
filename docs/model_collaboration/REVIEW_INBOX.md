@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-11-14
-**Status:** MC-0030 OPEN / Research 684 real P03-V2 source candidate refocus on G006 stable identity and G013 current-source derived refresh / 19 distinct original Git-pinned ADS sources, 12 candidate witnesses, actual G006/G013 original implementation commits verified / seven targeted current-code semantic tests and 68 new source/proposal tests PASS / exact four-effect prospective experiment-only J1 owner-review packet prepared but NOT ACCEPTED / old D1 accepted experiment J1=4 remains negative UNKNOWN case; newly accepted J1=0, qualified J2=0, integrated J3 not run / formal R0-P03 INCOMPLETE, physical target unselected / next exact owner packet review before prospective source-owner implementation world / Specification 028 unchanged / MC-0029 resolved / MC-0010 deferred
+**Status:** MC-0030 OPEN / Research 685 owner explicitly ACCEPTED exact four-effect PKA experiment J1 packet (verbatim I ACCEPT. Proceed.; source ed1c379f / canonical 0fa8ecc0) / original real ADS source frame 19 paths; prospective experiment carrier Git 10cad3cb initial -> cac152cf actual representation replacement / production G006 identity continuity and two historical carrier paths verified / exact source-owner-local S0 two-component COVERS candidate present but J2 still unqualified / one common unscored source/semantic world; S0 current, S1 not activated, J3 HOLD / original D1 4 effects separately preserved / two production G013 targeted regressions pass but no actual G013 source-world refresh admitted, main full validation preexisting DECISIONS source digest mismatch / formal R0-P03 INCOMPLETE, physical target unselected / next real source-owner J2 and G013 S1 scope; Specification 028 unchanged / MC-0029 resolved / MC-0010 deferred
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -20,6 +20,10 @@ docs/current_routing.json
 ```
 
 This inbox intentionally does not duplicate that state except where needed to explain collaboration obligations.
+
+## Current MC-0030 four accepted PKA experiment effects, actual source identity transition and common-world preflight, Checkpoint 946
+
+Research 685, Validation 382, Message 099: the owner expressly accepted exact packet P03V2_PKA_REAL_SOURCE_TWO_STATE_EXPERIMENT_J1_001 with four experiment-only effects, S0 current and S1 dormant. Git commit 10cad3cb adds the real experimental source; cac152cf materially replaces its representation while preserving authored semantic ID. Exact Git evidence and actual production G006 continuity/current+historical lookup passed. A new source-local experimental author COVERS claim names both S0 components but is NOT qualified governing RELATIONAL J2; J3 HOLD, S1 not activated. One common unscored semantic-world preflight combines 19 original Git ADS sources with the new J1/source/J2/J3 classes, preserving B0–B4 parity without scores. Targeted existing G013 tests pass, but the exact new source-world G013 refresh remains unqualified and direct repo validation retains eight preexisting DECISIONS.md digest mismatches. Formal P03 INCOMPLETE, physical architecture unselected. Next true natural-owner J2 and G013 S1 source evaluation, not more historical connector receipt copying.
 
 ## Current MC-0030 genuine ADS semantic source-world candidate and exact pending effect review, Checkpoint 945
 
