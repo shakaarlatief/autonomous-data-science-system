@@ -1,0 +1,108 @@
+{
+  "authority": {
+    "J3_satisfaction_certified": false,
+    "S1_accepted_transition_activated": false,
+    "formal_B0_B4_scoring_performed": false,
+    "physical_architecture_selected": false,
+    "source_owner_relational_J2_qualified": false
+  },
+  "component_observations_not_gov_j2": [
+    {
+      "accepted_effect": "P03PKA-E02-S1-IDENTITY-REFRESH",
+      "component": "EXPLICIT_IDENTITY_PRESERVING_MOVE",
+      "evidence_class": "OBSERVABLE_EXECUTED",
+      "observation": "SAME_IDENTITY_FROM_EXACT_GIT_G006_REPLAY",
+      "qualified_governing_j2": false
+    },
+    {
+      "accepted_effect": "P03PKA-E02-S1-IDENTITY-REFRESH",
+      "component": "AFFECTED_VIEW_REFRESH_SELECTED",
+      "evidence_class": "OBSERVABLE_EXECUTED",
+      "observation": "G013_SELECTED_AFFECTED_SEMANTIC_INVENTORY",
+      "qualified_governing_j2": false
+    },
+    {
+      "accepted_effect": "P03PKA-E02-S1-IDENTITY-REFRESH",
+      "component": "INCREMENTAL_EQUALS_CURRENT_FULL_BUILD",
+      "evidence_class": "OBSERVABLE_EXECUTED",
+      "observation": "BYTE_IDENTICAL_G013_SELECTED_AND_G009_FULL_CURRENT_BUILDS",
+      "qualified_governing_j2": false
+    },
+    {
+      "accepted_effect": "P03PKA-E02-S1-IDENTITY-REFRESH",
+      "component": "STALE_DERIVED_RESULT_NOT_GOVERNING",
+      "evidence_class": "OBSERVABLE_EXECUTED",
+      "observation": "OLD_MANIFEST_STALE_NEW_MANIFEST_FRESH",
+      "qualified_governing_j2": false
+    }
+  ],
+  "debug": {
+    "after_view_sources": 5,
+    "before_view_sources": 5
+  },
+  "execution": {
+    "G013_affected_view_ids": [
+      "p03_real_semantic_inventory"
+    ],
+    "G013_full_fallback": false,
+    "G013_reasons": [
+      [
+        "p03_real_semantic_inventory",
+        "DEPENDENCY_BINDING_CHANGED"
+      ]
+    ],
+    "actual_production_G009_full_generator_used": true,
+    "actual_production_G013_api_used": true,
+    "current_manifest_currentness": "FRESH",
+    "current_repository_admission": "PASS",
+    "current_view_sha256": "b76999ded5f55ec552390e9a5a7286f7ca348ea4703a89ba7ab2a149b0df6404",
+    "ephemeral_git_commit_after": "df8423466976add577b128924a635bf1918ead0e",
+    "ephemeral_git_commit_before": "22ff8fdafdd0db4160eb1b4798cb4c6259ea4b82",
+    "fixture_supporting_source_count": 8,
+    "generated_view_id": "p03_real_semantic_inventory",
+    "incremental_exactly_equals_full_build": true,
+    "new_view_manifest_sha256": "14d9f0e3ec9941be6e9ed2da2cac2829eff8e60130d77e11b64346fdd8f233ee",
+    "old_view_bytes_differ_from_new": true,
+    "old_view_sha256": "67f52f6b20834550d5191e94d7582e8930f67bfb56cb4a8a0d6dd7fedf1c41f4",
+    "output_source_input_is_complete_current_snapshot": true,
+    "previous_manifest_currentness": "STALE",
+    "previous_repository_admission": "PASS"
+  },
+  "experimental_source": {
+    "governed_source_field_values_unchanged_from_actual_carrier": true,
+    "original_after_sha256": "d618807f510a4400ec62e1d25b931c6810e9b4928e8c348317ecd54db89d8b32",
+    "original_before_sha256": "effcbcf0bdd54576f9611a5381ab900490561cd762fb3f1985096b6ac92703b2",
+    "original_exact_bytes_copied_to_isolated_root": true,
+    "original_git_after_commit": "cac152cfe6c2133ffd46cf7fa3b7e0b99d015cb4",
+    "original_git_before_commit": "10cad3cb0a885135579f00f3a887a3c090f65352",
+    "same_semantic_id": "P03PKA.G006.IDENTITY.CONTINUITY"
+  },
+  "provenance": {
+    "all_19_original_sources_executed_as_single_G013_CORPUS": false,
+    "fixture_only_for_valid_production_execution_closure": true,
+    "production_source_or_code_modified": false,
+    "qualified_source_claim": "REAL_ORIGINAL_GIT_BLOB_AND_SCHEMA_FIELD_PROJECTION",
+    "same_real_main_repository_full_validation_claimed": false,
+    "supporting_fixture": "tests/fixtures/project_knowledge_g010/corpus.json",
+    "temporary_sandbox_commits_not_original_ADS_Git_commits": true
+  },
+  "schema_version": 1,
+  "source_projection": {
+    "after": {
+      "content_digest": "adb61c6f55e9844f2e12c0550dae96f0692046571de2ebc9473b2fdd89832b95",
+      "profile": "semantic_source.v1",
+      "semantic_id": "P03PKA.G006.IDENTITY.CONTINUITY",
+      "source_path": "docs/p03_real_source/current/identity.json"
+    },
+    "before": {
+      "content_digest": "adb61c6f55e9844f2e12c0550dae96f0692046571de2ebc9473b2fdd89832b95",
+      "profile": "semantic_source.v1",
+      "semantic_id": "P03PKA.G006.IDENTITY.CONTINUITY",
+      "source_path": "docs/p03_real_source/initial/identity.json"
+    },
+    "identity_unmodified_when_carrier_path_changes": true,
+    "previous_carrier_absent_from_current_view": true,
+    "source_content_digest_unchanged": true
+  },
+  "status": "ACTUAL_PRODUCTION_G013_REFRESH_ON_EXACT_REAL_SOURCE_PROJECTION_PASS"
+}

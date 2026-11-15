@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-11-14
-**Status:** MC-0030 OPEN / Research 685 owner explicitly ACCEPTED exact four-effect PKA experiment J1 packet (verbatim I ACCEPT. Proceed.; source ed1c379f / canonical 0fa8ecc0) / original real ADS source frame 19 paths; prospective experiment carrier Git 10cad3cb initial -> cac152cf actual representation replacement / production G006 identity continuity and two historical carrier paths verified / exact source-owner-local S0 two-component COVERS candidate present but J2 still unqualified / one common unscored source/semantic world; S0 current, S1 not activated, J3 HOLD / original D1 4 effects separately preserved / two production G013 targeted regressions pass but no actual G013 source-world refresh admitted, main full validation preexisting DECISIONS source digest mismatch / formal R0-P03 INCOMPLETE, physical target unselected / next real source-owner J2 and G013 S1 scope; Specification 028 unchanged / MC-0029 resolved / MC-0010 deferred
+**Status:** MC-0030 OPEN / Research 686 actual production G013 refresh and G009 full-current generation PASS on exact original ADS Git carrier before/after bytes in schema-admitted isolated source root (G010 fixture support explicitly not primary corpus); generated inventory retains same authored semantic ID/content digest after path move, selected affected view exactly equals full build, old manifest STALE, current FRESH / all four accepted S1 component observations present but governing natural-owner RELATIONAL J2=0; previous S0 COVERS declaration postdates event and is NOT co-committed source-owner receipt / common 19-original-source world overlay with accepted four PKA experimental J1 and G006/G013 evidence; S1 dormant, J3 HOLD, formal P03 INCOMPLETE, physical target unselected / next finite prospective source-owner J2 and S1 lineage, then common corpus and B0–B4 navigation readiness / Specification 028 unchanged / MC-0029 resolved / MC-0010 deferred
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -20,6 +20,10 @@ docs/current_routing.json
 ```
 
 This inbox intentionally does not duplicate that state except where needed to explain collaboration obligations.
+
+## Current MC-0030 real-source G013 incremental/full execution and existing J2 qualification gap, Checkpoint 947
+
+Research 686, Validation 383 and Message 100: actual production G013 and G009 executed against original Git-pinned P03 source-carrier versions in an isolated schema-valid temporary Git root, with G010 eight-carrier test fixture only as supporting execution infrastructure. G013 selected one affected semantic inventory and generated exact incremental/full byte equality; prior manifest STALE, new manifest FRESH; generated semantic_id/content digest retained despite changed source path. All four accepted S1 component observations are OBSERVABLE, not governing natural-owner RELATIONAL J2. One immutable common-world overlay retains the original 19-source ADS catalog, owner-accepted four PKA J1, S0 current, S1 dormant, J3 HOLD, B0–B4 equal-source semantics. Earlier S0 COVERS proposal postdates its action and is neither co-committed nor independently authenticated. New qualified RELATIONAL J2=0; formal R0-P03 INCOMPLETE, no physical/production architecture selection. Next finite prospective natural-owner COVERS and S1 REPLACE/OPEN_RESET qualification, then corpus and navigation arm freeze.
 
 ## Current MC-0030 four accepted PKA experiment effects, actual source identity transition and common-world preflight, Checkpoint 946
 

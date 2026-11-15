@@ -1,7 +1,7 @@
 # MC-0030 Thread: V03 Physical Realization Architecture
 
 **Thread:** MC-0030
-**Status:** OPEN / FOUR REAL ADS PKA EXPERIMENT J1 EFFECTS ACCEPTED / ACTUAL GIT G006 SOURCE TRANSITION PROVEN / J2 AND TRUE G013 S1 SOURCE WORLD NEXT / FORMAL P03 INCOMPLETE
+**Status:** OPEN / REAL ADS G006 IDENTITY AND ACTUAL G013 SOURCE REFRESH OBSERVED / J2 SOURCE OWNER AND S1 LINEAGE NEXT / FORMAL P03 INCOMPLETE
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE
 **Coordination branch:** v1-source-vault-bootstrap-resume
 **Frozen independent base:** c459e9c8ac4435b80d4ac9d2bdb215aa72c13adc
@@ -1378,5 +1378,33 @@ The next evidence gate is bounded natural-owner J2 qualification for the new exp
     S1_ACTIVATION=NOT_ACTIVATED
     J3=HOLD
     EXACT_G013_SOURCE_WORLD_REFRESH=NOT_QUALIFIED
+    FORMAL_P03=INCOMPLETE
+    PHYSICAL_TARGET_SELECTED=false
+
+## Production G013 actually executed on exact real source carrier; source-owner J2 remains distinct, Checkpoint 947
+
+Research 686, Validation 383 and MC-0030 Message 100 execute actual production G013 selected incremental refresh and G009 complete-current generation over the two exact real ADS Git carrier versions from 10cad3cb and cac152cf, projected into a separate schema-admitted temporary Git source root. The unmodified source declaration fields retain authored semantic_id; original full Git bytes are sidecar evidence, and the existing eight-carrier G010 fixture supplies only the valid generation support environment, not the formal P03 original ADS corpus.
+
+G013 selects precisely p03_real_semantic_inventory for DEPENDENCY_BINDING_CHANGED; selected incremental ViewBuildResult matches the full current build, old manifest is STALE, rebuilt manifest FRESH. The generated source inventory itself confirms same authored semantic ID and content digest despite moved source path, and no old path in the current generated view. Temporary sandbox Git SHA and view bytes reproduce under explicitly fixed sandbox-only timestamps. These support all four exact accepted S1 OBSERVABLE technical components and do NOT establish governing RELATIONAL J2.
+
+An immutable overlay adds G013 execution evidence to the nineteen original Git-pinned ADS source world and four already owner-accepted PKA experimental J1 effects. The old S0 COVERS candidate was authored in a later Git commit than the original source event and is NOT co-committed nor independently authenticated. Qualified natural-owner J2=0, S1 accepted but not activated, J3 HOLD, formal B0–B4 INCOMPLETE and physical target unselected. The separate isolated execution does not alter production, repair the preexisting whole-ADS docs/DECISIONS.md digest diagnostics or replace the original Research 513/559/576/673 role and reference safeguards.
+
+Next finite source-owner relation qualification on genuinely prospective evidence, then qualified S1 REPLACE/OPEN_RESET, J3 and actual corpus/navigation arm freeze. No repeat of the old historical provider authentication investigation.
+
+    CURRENT=R0_P03_REAL_SOURCE_G013_OBSERVED_COMMON_SEMANTIC_WORLD
+    RESEARCH=686
+    VALIDATION=383
+    CHECKPOINT=947
+    CHATGPT_MESSAGE=MC0030_MESSAGE100
+    G013_ACTUAL_REAL_SOURCE_PROJECTION=PASS
+    G013_INCREMENTAL_FULL_EQUIVALENCE=PASS
+    OLD_MANIFEST=STALE
+    CURRENT_MANIFEST=FRESH
+    S1_COMPONENT_OBSERVATIONS=FOUR
+    ORIGINAL_SOURCE_CATALOG_PATHS=19
+    OWNER_ACCEPTED_PKA_EXPERIMENT_J1=4
+    QUALIFIED_J2_RELATIONAL=0
+    S1_ACTIVATED=false
+    J3=HOLD
     FORMAL_P03=INCOMPLETE
     PHYSICAL_TARGET_SELECTED=false
