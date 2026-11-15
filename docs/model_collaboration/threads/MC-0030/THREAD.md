@@ -1597,3 +1597,22 @@ Next is to attack the specific remaining formal independent source/custodial/sem
     INDEPENDENT_REFERENCE_GOLD=NOT_QUALIFIED
     FORMAL_P03=INCOMPLETE
     NEXT=FORMAL_INDEPENDENT_SOURCE_CUSTODIAN_ROUTE_OR_HOLD
+
+## Formal R0-P03 pre-admission HOLD after bounded independent reviewer-route test, Checkpoint 958
+
+Research 697, Validation 394 and Message 111 record one finite, genuine execution-path probe instead of repeating generic comparator-infrastructure studies. The local Claude Code CLI was available and reported signed-in status; nonetheless two basic/minimal one-turn, no-tools, no-session-persistence direct execution requests on the current Codexless Runtime Bridge reached the host's 30-second timeout with **no model answer**. A nested-scope invocation failed Windows sandbox setup. Detached process diagnostic gave no verified completion or model output. This does not prove Claude is unavailable generally; it establishes only that this local direct reviewer execution route did not qualify. No private gold, independent task or sensitive source reference was presented to any of these probes.
+
+The exact scientific admission context also matters: Research 632's earlier independent review held the old 80 original-source release, while the new V03 world has 24 source-role examples without adjudicated 60/20 eligibility. Distinct B0-B3 navigation code genuinely runs (Checkpoint 957) but uses coordinator-exposed metadata; no independent 12 primary tasks, neutral 9 legacy references, protected reference custody, and actual fair arm/source freeze exist. M6 one formal admission attempt has **NOT** been consumed. Explicit disposition \`HOLD_PRE_ADMISSION_LEVEL_B_REFERENCE_AND_SOURCE_WORLD_NOT_QUALIFIED\`.
+
+No further generic source or reviewer preflight without a concrete new enabling route. Next decision is owner-scoped: qualify actual independent reviewer/custodian/source-world access, **or** prospectively authorize Research 672/R0-R54 bounded navigation-selection deferral with precise later qualification/falsification obligations. Neither is implicitly accepted by generic \`Proceed\`. Prior Research 513/559/576/673 and Specification 028 remain binding. No physical target selected.
+
+    RESEARCH=697
+    VALIDATION=394
+    CHECKPOINT=958
+    MESSAGE=MC0030_MESSAGE111
+    INDEPENDENT_CLAUDE_DIRECT_ROUTE=FAILED_TO_PRODUCE_MODEL_RESULT
+    FORMAL_PRE_ADMISSION=HOLD
+    FORMAL_M6_ATTEMPTS_CONSUMED=0
+    FORMAL_P03=INCOMPLETE
+    PHYSICAL_TARGET_SELECTED=false
+    NEXT=OWNER_SCOPED_INDEPENDENT_ROUTE_OR_BOUNDED_DEFERRAL_DECISION

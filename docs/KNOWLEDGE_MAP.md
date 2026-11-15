@@ -1101,6 +1101,10 @@ docs/research/693_r0_p03_separate_j3_open_reset_experiment_only_s1_evaluation.md
 docs/research/694_r0_p03_unscored_mixed_source_cohort_and_common_core_readiness.md
 docs/research/695_r0_p03_exact_source_content_role_preflight_and_common_runtime.md
 docs/research/696_r0_p03_executed_distinct_navigation_channels_on_v03_source_world.md
+docs/research/697_r0_p03_finite_fresh_reviewer_route_failure_and_formal_readiness_hold.md
+docs/local_execution/validation/394_r0_p03_fresh_reviewer_execution_failures_and_admission_hold.md
+docs/checkpoints/958_r0_p03_independent_reviewer_route_failed_and_explicit_pre_admission_hold.md
+docs/model_collaboration/threads/MC-0030/messages/111_chatgpt_r0_p03_finite_reviewer_execution_hold.md
 docs/local_execution/validation/393_r0_p03_executed_b0_b3_navigation_channels.md
 docs/checkpoints/957_r0_p03_distinct_navigation_arms_actually_executed.md
 docs/model_collaboration/threads/MC-0030/messages/110_chatgpt_r0_p03_distinct_arm_execution.md
@@ -2427,7 +2431,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-957 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-958 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 
