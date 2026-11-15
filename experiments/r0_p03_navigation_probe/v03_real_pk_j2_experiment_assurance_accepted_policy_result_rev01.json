@@ -1,0 +1,34 @@
+{
+  "formal_r0_p03_complete": false,
+  "j3_satisfied": false,
+  "next_gates": {
+    "g006_and_g013_execution_for_new_event": "NOT_YET_PERFORMED",
+    "independent_j3": "NOT_EVALUATED",
+    "new_exact_git_event": "NOT_YET_PERFORMED",
+    "one_source_realizer_scope_freeze": "REQUIRED_BEFORE_NEW_EVENT",
+    "postexecution_covers": "NOT_YET_RECEIVED"
+  },
+  "physical_target_selected": false,
+  "policy": {
+    "binding_file_sha256": "beabc995359f79fe8d4f659efa76ff912b8ec02de74397d3656c29438215672d",
+    "original_proposal_git_commit": "3dc76841973e75af201c4036007e95f06d10545d",
+    "owner_decision": "ACCEPT",
+    "owner_decision_source": "EXPLICIT_CHAT_REPLY_REPORTED_IN_THIS_INTERACTION",
+    "owner_independent_authentication": false,
+    "proposal_id": "P03V2_EXPERIMENT_SOURCE_OWNER_RELATIONAL_J2_ASSURANCE_POLICY_REV01",
+    "proposal_sha256": "f0217d8c24aba8aa5a5d493d6c816f9e439de4e32f32c00d56665b075ead798f",
+    "scope": "ONE_FUTURE_EXPERIMENT_ONLY_EVENT",
+    "status": "OWNER_ACCEPTED_PROSPECTIVE_EXPERIMENT_ONLY_POLICY",
+    "usable_before_binding_publication": false
+  },
+  "preexisting_event": {
+    "git": "faf8ff2686c6b09f53d3569470cf2057c11e5971",
+    "j3": "HOLD",
+    "natural_owner_j2_qualified": false,
+    "s1_activated": false
+  },
+  "production_authority_changed": false,
+  "qualified_experimental_relational_j2": 0,
+  "s1_activated": false,
+  "schema_version": 1
+}

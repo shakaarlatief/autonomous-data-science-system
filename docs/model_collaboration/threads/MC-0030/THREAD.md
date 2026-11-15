@@ -1448,3 +1448,20 @@ The owner is next to ACCEPT, AMEND or REJECT the exact separately reviewable pol
     J3=HOLD
     FORMAL_P03=INCOMPLETE
     NEXT=EXACT_OWNER_ACCEPT_AMEND_REJECT
+
+## Exact one-event J2 policy owner ACCEPT, Checkpoint 950
+
+Research 689 / Validation 386 / Message 103 bind the user's verbatim ACCEPT reply to the exact policy proposal \`P03V2_EXPERIMENT_SOURCE_OWNER_RELATIONAL_J2_ASSURANCE_POLICY_REV01\`, source Git 3dc76841, SHA-256 f0217d8c24aba8aa5a5d493d6c816f9e439de4e32f32c00d56665b075ead798f. The separate recorded-chat acceptance binding is SHA-256 beabc995359f79fe8d4f659efa76ff912b8ec02de74397d3656c29438215672d; the historical original predecision proposal and receipt were not rewritten. Source-bound accepted-policy/negative preflight tests: 83 PASS.
+
+This owner acceptance authorizes ONE future prospectively frozen composite executable experimental realizer with explicitly weaker, not independently authenticated, actor assurance. It does NOT authenticate the historical G006/G013 implementer or the model, retroactively certify old Git source claims, grant production J2, activate S1 or satisfy J3. Required next steps are a separately published preaction realizer/source scope freeze, later true Git event with author intent, actual production G006 and G013/G009 on new exact source versions, separately authored postexecution COVERS and independent J3. The old J2=0/OPEN_RESET prohibition, neutral comparator independence, formal experiment and physical selection boundaries remain unchanged.
+
+    RESEARCH=689
+    VALIDATION=386
+    CHECKPOINT=950
+    MESSAGE=MC0030_MESSAGE103
+    POLICY=OWNER_ACCEPTED_ONE_FUTURE_EXPERIMENT_EVENT
+    QUALIFIED_RELATIONAL_J2=0
+    S1_ACTIVATED=false
+    J3=HOLD
+    FORMAL_P03=INCOMPLETE
+    NEXT=PREACTION_REALIZER_SCOPE_FREEZE

@@ -1093,6 +1093,14 @@ docs/research/685_r0_p03_real_source_semantic_world_j1_acceptance_and_git_transi
 docs/research/686_r0_p03_real_g013_refresh_evidence_and_common_semantic_world_overlay.md
 docs/research/687_r0_p03_prospective_s1_j2_source_event_and_finite_owner_assurance_hold.md
 docs/research/688_r0_p03_experiment_source_owner_j2_assurance_policy_decision_proposal.md
+docs/research/689_r0_p03_experiment_j2_assurance_policy_owner_acceptance_binding.md
+docs/local_execution/validation/386_r0_p03_experiment_j2_policy_owner_acceptance_verified.md
+docs/checkpoints/950_r0_p03_experiment_j2_policy_owner_accepted_realizer_freeze_next.md
+docs/model_collaboration/threads/MC-0030/messages/103_chatgpt_r0_p03_experiment_j2_policy_owner_acceptance.md
+experiments/r0_p03_navigation_probe/v03_real_pk_j2_experiment_assurance_owner_acceptance_binding_rev01.json
+experiments/r0_p03_navigation_probe/v03_real_pk_j2_experiment_assurance_accepted_policy_rev01.py
+experiments/r0_p03_navigation_probe/v03_real_pk_j2_experiment_assurance_accepted_policy_result_rev01.json
+tests/unit/test_r0_p03_v03_real_pk_j2_accepted_policy_rev01.py
 docs/local_execution/validation/385_r0_p03_experiment_j2_policy_source_bound_negative_preflight.md
 docs/checkpoints/949_r0_p03_experimental_j2_source_owner_assurance_policy_owner_decision.md
 docs/model_collaboration/threads/MC-0030/messages/102_chatgpt_r0_p03_experiment_j2_assurance_policy_proposal.md
@@ -2365,7 +2373,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-949 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-950 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 
