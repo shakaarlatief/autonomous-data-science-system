@@ -152,6 +152,9 @@ experiments/r0_p03_navigation_probe/v03_r0_p03_unscored_mixed_source_cohort_read
 # Protect exact content-role and shared-runtime source receipts from platform-specific text conversion.
 experiments/r0_p03_navigation_probe/v03_r0_p03_source_content_role_preflight_result_v01.json -text
 experiments/r0_p03_navigation_probe/v03_r0_p03_shared_core_runtime_result_v01.json -text
+# Exact-Git source-relative real B0-B3 arm metadata and executable receipt across Windows/Ubuntu.
+experiments/r0_p03_navigation_probe/v03_r0_p03_real_navigation_arms_exposed_metadata_v01.json -text
+experiments/r0_p03_navigation_probe/v03_r0_p03_actual_navigation_channels_unscored_result_v01.json -text
 
 # Preserve both original MC-0030 Message 063 historical carriers as exact Git blobs across Windows checkout.
 # The collision guard hashes their literal LF source bytes; CRLF worktree conversion would falsify the historical exception.

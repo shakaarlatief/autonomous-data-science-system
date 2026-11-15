@@ -1577,3 +1577,23 @@ Next: independently adjudicate source semantic eligibility/currentness and entir
     FORMAL_60_20=NOT_FROZEN
     FORMAL_P03=INCOMPLETE
     NEXT=INDEPENDENT_SOURCE_ELIGIBILITY_AND_CONNECTOR_PARITY
+
+## First actually distinct B0-B3 navigation execution on experimental V03 real sources, Checkpoint 957
+
+Research 696, Validation 393 and Message 110 are a substantive shift from interface-only common calls to actual four-arm ranking treatment execution. B0 indexes all 459,438 original UTF-8 Git source bytes of the 24 original ADS pilot files with full-source 220-token BM25 passages (2,435 passages), no historical Route B 12,000-character cap. B1 adds Research 217 controlled per-source subjects, B2 a distinct eight-link editorial about graph, B3 a five-concern crosscutting taxonomy. All four arms execute the same prior common real-Git source and experiment-only accepted weak-assurance S1/J2/J3 semantics. Seven exposed unscored engineering queries per arm show B1 differing top-eight source rankings vs B0 in 3, B2 in 3, B3 in 4 cases; NO formal correctness, independent gold or Research 513 PASS follows from these ranking differences.
+
+Research 217 catalog SHA256 53c5cb65caccd1a9123f5d6da2e5738f618b383339c5bcfcf1d58fb9f5399495; source-adjacent author-exposed metadata SHA256 e605d20259372e7583a1e7c52f22740279e09bc1435e22fbd741d53563295034, create-only execution receipt SHA256 bda8b2d64152d01f9e2b70487c275ab9c1ede8ceb833729fac6e88adbc18e309. Twenty-seven focused tests PASS. Local venv lacks neural B4 libraries, and its inclusion/omission still requires prospective prefreeze decision. This is a successful actual implementation/execution milestone but not an independent source-owner-authoring, closed eligible 60/20 or scored experiment.
+
+Next is to attack the specific remaining formal independent source/custodial/semantic eligibility obstacle, not to increase the number of generic source-readiness documents. If that cannot be qualified, report a named scientific HOLD and follow Research 672 M6/R0-R54 owner decision. No physical target selection or production acceptance switch.
+
+    RESEARCH=696
+    VALIDATION=393
+    CHECKPOINT=957
+    MESSAGE=MC0030_MESSAGE110
+    ACTUALLY_DISTINCT_EXECUTED_B0_B3=true
+    DIAGNOSTIC_RANK_DIFFERENCES=3_3_4_OF_7_NOT_SCORE
+    B4_NEURAL=LOCAL_PROVIDER_NOT_QUALIFIED
+    FORMAL_60_20=NOT_SELECTED
+    INDEPENDENT_REFERENCE_GOLD=NOT_QUALIFIED
+    FORMAL_P03=INCOMPLETE
+    NEXT=FORMAL_INDEPENDENT_SOURCE_CUSTODIAN_ROUTE_OR_HOLD

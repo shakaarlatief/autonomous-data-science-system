@@ -1100,6 +1100,14 @@ docs/research/692_r0_p03_postexecution_source_owner_relational_j2_experiment_adm
 docs/research/693_r0_p03_separate_j3_open_reset_experiment_only_s1_evaluation.md
 docs/research/694_r0_p03_unscored_mixed_source_cohort_and_common_core_readiness.md
 docs/research/695_r0_p03_exact_source_content_role_preflight_and_common_runtime.md
+docs/research/696_r0_p03_executed_distinct_navigation_channels_on_v03_source_world.md
+docs/local_execution/validation/393_r0_p03_executed_b0_b3_navigation_channels.md
+docs/checkpoints/957_r0_p03_distinct_navigation_arms_actually_executed.md
+docs/model_collaboration/threads/MC-0030/messages/110_chatgpt_r0_p03_distinct_arm_execution.md
+experiments/r0_p03_navigation_probe/v03_r0_p03_real_navigation_arms_exposed_metadata_v01.json
+experiments/r0_p03_navigation_probe/v03_r0_p03_actual_navigation_channels_unscored_v01.py
+experiments/r0_p03_navigation_probe/v03_r0_p03_actual_navigation_channels_unscored_result_v01.json
+tests/unit/test_r0_p03_v03_actual_navigation_channels_unscored_v01.py
 docs/local_execution/validation/392_r0_p03_source_content_roles_and_executable_common_core.md
 docs/checkpoints/956_r0_p03_exact_source_content_roles_and_shared_core_runtime.md
 docs/model_collaboration/threads/MC-0030/messages/109_chatgpt_r0_p03_source_content_and_common_runtime.md
@@ -2419,7 +2427,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-956 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-957 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

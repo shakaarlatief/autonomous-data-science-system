@@ -1,0 +1,260 @@
+{
+  "schema_version": 1,
+  "status": "EXPOSED_COORDINATOR_AUTHORED_ARM_SPECIFIC_PILOT_METADATA_UNSCORED",
+  "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+  "subject_catalog": "experiments/project_knowledge_subject_navigation_t1_v02/subject_catalog_candidate_v02.json",
+  "subject_historical_scope": "W5_T1_V02_VOCABULARY_REUSED_FOR_UNSCORED_EDUCATIONAL_CHANNEL_ONLY",
+  "author": "EXPOSED_CHATGPT_COORDINATOR_NOT_SOURCE_OWNER_OR_BLIND_EVALUATOR",
+  "prior_outcome_exposure": "COORDINATOR_HAS_SEEN_EXPLORATORY_ROUTE_B_RESULTS; THESE_ASSIGNMENTS_CANNOT_BE_REUSED_AS_FORMAL_INDEPENDENT_REFERENCE",
+  "limitations": [
+    "Subject/concern assignment is an external source-adjacent experimental overlay and not a natural-owner accepted declaration",
+    "Editorial about links are additional non-governing discovery edges, not J1 acceptance, J2 REALIZES, or proof of implemented dependency",
+    "The twenty-four records are pilot candidates, not the formal 60/20, and this package must never be treated as hidden gold"
+  ],
+  "b1": {
+    "subjects_by_source": {
+      "docs/DECISIONS.md": [
+        "development-governance",
+        "admissibility-authority"
+      ],
+      "docs/ARCHITECTURE_PROGRAM_OVERVIEW.md": [
+        "system-identity",
+        "project-knowledge-architecture"
+      ],
+      "docs/CONTINUITY.md": [
+        "development-governance",
+        "project-knowledge-architecture"
+      ],
+      "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md": [
+        "project-knowledge-architecture",
+        "admissibility-authority"
+      ],
+      "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md": [
+        "project-knowledge-architecture",
+        "development-governance"
+      ],
+      "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md": [
+        "project-knowledge-architecture",
+        "retrieval-context"
+      ],
+      "docs/research/254_r7b_target_project_information_hierarchy_and_research218_supersession_candidate.md": [
+        "project-knowledge-architecture",
+        "development-governance"
+      ],
+      "docs/research/219_activation_orchestration_self_hosting_bootstrap_program.md": [
+        "project-orchestration",
+        "development-governance"
+      ],
+      "docs/research/293_p_d1_warrant_proportionality_result.md": [
+        "evaluation-assurance",
+        "admissibility-authority"
+      ],
+      "docs/cockpit/README.md": [
+        "cockpit-product",
+        "cockpit-implementation"
+      ],
+      "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md": [
+        "source-universe",
+        "development-governance"
+      ],
+      "tools/project_knowledge/identity.py": [
+        "project-knowledge-architecture",
+        "development-governance"
+      ],
+      "tools/project_knowledge/authority.py": [
+        "admissibility-authority",
+        "project-knowledge-architecture"
+      ],
+      "tools/project_knowledge/services/refresh.py": [
+        "project-knowledge-architecture",
+        "tooling-integrations"
+      ],
+      "tools/project_knowledge/services/generation.py": [
+        "project-knowledge-architecture",
+        "tooling-integrations"
+      ],
+      "src/ads_system/application/source_universe.py": [
+        "source-universe",
+        "runtime-persistence"
+      ],
+      "src/ads_system/infrastructure/retrieval/sqlite_fts.py": [
+        "retrieval-context",
+        "runtime-persistence"
+      ],
+      "frontend/src/components/CockpitProjectMap.tsx": [
+        "cockpit-interaction",
+        "cockpit-implementation"
+      ],
+      "frontend/src/components/MissingnessWorkspace.tsx": [
+        "cockpit-interaction",
+        "cockpit-implementation"
+      ],
+      "schemas/project_knowledge/semantic_source.v1.schema.json": [
+        "project-knowledge-architecture",
+        "admissibility-authority"
+      ],
+      "tests/unit/test_project_knowledge_identity.py": [
+        "evaluation-assurance",
+        "project-knowledge-architecture"
+      ],
+      "tests/unit/test_project_knowledge_refresh.py": [
+        "evaluation-assurance",
+        "project-knowledge-architecture"
+      ],
+      "scripts/check_repository_integrity.py": [
+        "development-governance",
+        "tooling-integrations"
+      ],
+      ".github/workflows/repository-integrity.yml": [
+        "development-governance",
+        "evaluation-assurance"
+      ]
+    }
+  },
+  "b2": {
+    "additional_editorial_about_links": [
+      {
+        "source": "docs/research/254_r7b_target_project_information_hierarchy_and_research218_supersession_candidate.md",
+        "target": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+        "description": "about the incumbent architecture that a future hierarchy proposal would evolve",
+        "claimed_relation": "EXPERIMENTAL_EDITORIAL_ABOUT_ONLY"
+      },
+      {
+        "source": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+        "target": "tools/project_knowledge/identity.py",
+        "description": "historical navigation evaluation related to identity implementation in the later pilot",
+        "claimed_relation": "EXPERIMENTAL_EDITORIAL_ABOUT_ONLY"
+      },
+      {
+        "source": "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+        "target": "src/ads_system/application/source_universe.py",
+        "description": "operational source-vault guidance related to Product source-ingestion implementation",
+        "claimed_relation": "EXPERIMENTAL_EDITORIAL_ABOUT_ONLY"
+      },
+      {
+        "source": "docs/cockpit/README.md",
+        "target": "frontend/src/components/CockpitProjectMap.tsx",
+        "description": "cockpit provenance orientation connected to current frontend source",
+        "claimed_relation": "EXPERIMENTAL_EDITORIAL_ABOUT_ONLY"
+      },
+      {
+        "source": "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md",
+        "target": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+        "description": "foundational knowledge-preservation rationale related to historical navigation evaluation",
+        "claimed_relation": "EXPERIMENTAL_EDITORIAL_ABOUT_ONLY"
+      },
+      {
+        "source": "docs/research/293_p_d1_warrant_proportionality_result.md",
+        "target": "tests/unit/test_project_knowledge_identity.py",
+        "description": "assurance evidence theme related to later identity regression source",
+        "claimed_relation": "EXPERIMENTAL_EDITORIAL_ABOUT_ONLY"
+      },
+      {
+        "source": "src/ads_system/infrastructure/retrieval/sqlite_fts.py",
+        "target": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+        "description": "product retrieval code and project-knowledge retrieval study share an editorial retrieval topic",
+        "claimed_relation": "EXPERIMENTAL_EDITORIAL_ABOUT_ONLY"
+      },
+      {
+        "source": "docs/ARCHITECTURE_PROGRAM_OVERVIEW.md",
+        "target": "frontend/src/components/CockpitProjectMap.tsx",
+        "description": "whole-program orientation to an example of product implementation",
+        "claimed_relation": "EXPERIMENTAL_EDITORIAL_ABOUT_ONLY"
+      }
+    ]
+  },
+  "b3": {
+    "concern_definitions": {
+      "owner-approval-boundary": "Explicit separation between claimed approval and presently effective governing authorization",
+      "execution-reproducibility": "Evidence needed to rerun and substantiate source or test outcomes",
+      "temporal-currentness": "Transitions, staleness, source revisions, freshness and present validity",
+      "source-evidence-integrity": "Provenance, byte integrity and evidence traceability distinct from claims",
+      "migration-compatibility": "Continuity of meaning and operations through a system migration"
+    },
+    "concerns_by_source": {
+      "docs/DECISIONS.md": [
+        "owner-approval-boundary",
+        "migration-compatibility"
+      ],
+      "docs/ARCHITECTURE_PROGRAM_OVERVIEW.md": [
+        "migration-compatibility"
+      ],
+      "docs/CONTINUITY.md": [
+        "temporal-currentness",
+        "source-evidence-integrity"
+      ],
+      "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md": [
+        "migration-compatibility",
+        "owner-approval-boundary"
+      ],
+      "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md": [
+        "temporal-currentness"
+      ],
+      "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md": [
+        "source-evidence-integrity"
+      ],
+      "docs/research/254_r7b_target_project_information_hierarchy_and_research218_supersession_candidate.md": [
+        "migration-compatibility",
+        "owner-approval-boundary"
+      ],
+      "docs/research/219_activation_orchestration_self_hosting_bootstrap_program.md": [
+        "owner-approval-boundary",
+        "temporal-currentness"
+      ],
+      "docs/research/293_p_d1_warrant_proportionality_result.md": [
+        "execution-reproducibility",
+        "source-evidence-integrity"
+      ],
+      "docs/cockpit/README.md": [
+        "migration-compatibility"
+      ],
+      "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md": [
+        "source-evidence-integrity",
+        "execution-reproducibility"
+      ],
+      "tools/project_knowledge/identity.py": [
+        "temporal-currentness"
+      ],
+      "tools/project_knowledge/authority.py": [
+        "owner-approval-boundary"
+      ],
+      "tools/project_knowledge/services/refresh.py": [
+        "temporal-currentness",
+        "execution-reproducibility"
+      ],
+      "tools/project_knowledge/services/generation.py": [
+        "execution-reproducibility",
+        "source-evidence-integrity"
+      ],
+      "src/ads_system/application/source_universe.py": [
+        "source-evidence-integrity"
+      ],
+      "src/ads_system/infrastructure/retrieval/sqlite_fts.py": [
+        "temporal-currentness"
+      ],
+      "frontend/src/components/CockpitProjectMap.tsx": [
+        "migration-compatibility"
+      ],
+      "frontend/src/components/MissingnessWorkspace.tsx": [
+        "execution-reproducibility"
+      ],
+      "schemas/project_knowledge/semantic_source.v1.schema.json": [
+        "source-evidence-integrity"
+      ],
+      "tests/unit/test_project_knowledge_identity.py": [
+        "execution-reproducibility",
+        "temporal-currentness"
+      ],
+      "tests/unit/test_project_knowledge_refresh.py": [
+        "execution-reproducibility",
+        "temporal-currentness"
+      ],
+      "scripts/check_repository_integrity.py": [
+        "execution-reproducibility"
+      ],
+      ".github/workflows/repository-integrity.yml": [
+        "execution-reproducibility"
+      ]
+    }
+  }
+}

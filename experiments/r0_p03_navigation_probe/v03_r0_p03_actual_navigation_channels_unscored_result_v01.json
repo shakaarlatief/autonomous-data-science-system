@@ -1,0 +1,465 @@
+{
+  "arm_specific_exposed_metadata_sha256": "e605d20259372e7583a1e7c52f22740279e09bc1435e22fbd741d53563295034",
+  "authority_boundaries": {
+    "actual_formal_b0_b4_freeze": false,
+    "all_real_source_bytes_are_git_pinned": true,
+    "author_of_arm_metadata": "EXPOSED_CHATGPT_COORDINATOR_NOT_SOURCE_OWNER",
+    "formal_r0_p03": "INCOMPLETE",
+    "formal_source_sample_60_20_selected": false,
+    "independent_reference_gold": false,
+    "metadata_and_query_exposure": "UNSUITABLE_FOR_FORMAL_BLINDED_REFERENCE",
+    "no_comparator_quality_scores_observed": true,
+    "shared_semantic_j1_j2_j3_source_relative_only": true,
+    "source_owner_natural_authoring_qualified": false
+  },
+  "character_limit_per_document": null,
+  "classification": "EXPOSED_UNSCORED_REAL_GIT_DISTINCT_B0_B3_EXECUTION",
+  "common_core_sha256_by_arm": {
+    "B0": "33d3ab8fef047f55313ebdab0fb097389859953b8fed0eee5027e288e4e51bdb",
+    "B1": "33d3ab8fef047f55313ebdab0fb097389859953b8fed0eee5027e288e4e51bdb",
+    "B2": "33d3ab8fef047f55313ebdab0fb097389859953b8fed0eee5027e288e4e51bdb",
+    "B3": "33d3ab8fef047f55313ebdab0fb097389859953b8fed0eee5027e288e4e51bdb"
+  },
+  "common_documentary_path_relation_count": 10,
+  "common_documentary_path_relation_digest": "45b484eaa11f1977f5147148be3f81f81521a6d085d3bb2dbbcbcd4d0bda322c",
+  "corpus_source_count": 24,
+  "distinct_mechanisms": {
+    "B0": "FULL_SOURCE_PASSAGE_BM25_LEXICAL_AND_EXACT_IDENTIFIER",
+    "B1": "B0_PLUS_W5_CONTROLLED_SOURCE_ADJACENT_SUBJECT_FACETS",
+    "B2": "B0_PLUS_EXPLICIT_EXTRA_EDITORIAL_ABOUT_LINK_GRAPH",
+    "B3": "B0_PLUS_INDEPENDENT_CROSSCUTTING_CONCERN_VOCABULARY"
+  },
+  "exposed_diagnostic_query_count": 7,
+  "exposed_diagnostic_traces_not_scored": [
+    {
+      "candidate_rankings": {
+        "B0": [
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/ARCHITECTURE_PROGRAM_OVERVIEW.md",
+          "docs/research/254_r7b_target_project_information_hierarchy_and_research218_supersession_candidate.md",
+          "docs/DECISIONS.md",
+          "docs/cockpit/README.md",
+          "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md",
+          "docs/CONTINUITY.md",
+          "docs/research/219_activation_orchestration_self_hosting_bootstrap_program.md"
+        ],
+        "B1": [
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/ARCHITECTURE_PROGRAM_OVERVIEW.md",
+          "docs/research/254_r7b_target_project_information_hierarchy_and_research218_supersession_candidate.md",
+          "docs/DECISIONS.md",
+          "docs/cockpit/README.md",
+          "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md",
+          "docs/CONTINUITY.md",
+          "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md"
+        ],
+        "B2": [
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/ARCHITECTURE_PROGRAM_OVERVIEW.md",
+          "docs/research/254_r7b_target_project_information_hierarchy_and_research218_supersession_candidate.md",
+          "docs/DECISIONS.md",
+          "docs/cockpit/README.md",
+          "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md",
+          "docs/CONTINUITY.md",
+          "docs/research/219_activation_orchestration_self_hosting_bootstrap_program.md"
+        ],
+        "B3": [
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/ARCHITECTURE_PROGRAM_OVERVIEW.md",
+          "docs/research/254_r7b_target_project_information_hierarchy_and_research218_supersession_candidate.md",
+          "docs/DECISIONS.md",
+          "docs/cockpit/README.md",
+          "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md",
+          "docs/CONTINUITY.md",
+          "docs/research/219_activation_orchestration_self_hosting_bootstrap_program.md"
+        ]
+      },
+      "exposed_engineering_query": "project knowledge architecture implementation migration contract",
+      "not_a_correctness_score": true,
+      "same_rank_as_b0": {
+        "B0": true,
+        "B1": false,
+        "B2": true,
+        "B3": true
+      },
+      "source_revisions_verified_same_all_arms": true
+    },
+    {
+      "candidate_rankings": {
+        "B0": [
+          "docs/research/254_r7b_target_project_information_hierarchy_and_research218_supersession_candidate.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+          "frontend/src/components/CockpitProjectMap.tsx",
+          "src/ads_system/infrastructure/retrieval/sqlite_fts.py",
+          "docs/CONTINUITY.md",
+          "tests/unit/test_project_knowledge_refresh.py",
+          "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md"
+        ],
+        "B1": [
+          "docs/research/254_r7b_target_project_information_hierarchy_and_research218_supersession_candidate.md",
+          "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "src/ads_system/infrastructure/retrieval/sqlite_fts.py",
+          "frontend/src/components/CockpitProjectMap.tsx",
+          "docs/CONTINUITY.md",
+          "tests/unit/test_project_knowledge_refresh.py",
+          "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md"
+        ],
+        "B2": [
+          "docs/research/254_r7b_target_project_information_hierarchy_and_research218_supersession_candidate.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+          "frontend/src/components/CockpitProjectMap.tsx",
+          "src/ads_system/infrastructure/retrieval/sqlite_fts.py",
+          "docs/CONTINUITY.md",
+          "tests/unit/test_project_knowledge_refresh.py",
+          "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md"
+        ],
+        "B3": [
+          "docs/research/254_r7b_target_project_information_hierarchy_and_research218_supersession_candidate.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+          "frontend/src/components/CockpitProjectMap.tsx",
+          "src/ads_system/infrastructure/retrieval/sqlite_fts.py",
+          "docs/CONTINUITY.md",
+          "tests/unit/test_project_knowledge_refresh.py",
+          "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md"
+        ]
+      },
+      "exposed_engineering_query": "historical subject navigation retrieval evaluation",
+      "not_a_correctness_score": true,
+      "same_rank_as_b0": {
+        "B0": true,
+        "B1": false,
+        "B2": true,
+        "B3": true
+      },
+      "source_revisions_verified_same_all_arms": true
+    },
+    {
+      "candidate_rankings": {
+        "B0": [
+          "docs/research/254_r7b_target_project_information_hierarchy_and_research218_supersession_candidate.md",
+          "docs/ARCHITECTURE_PROGRAM_OVERVIEW.md",
+          "docs/DECISIONS.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/cockpit/README.md",
+          "docs/research/219_activation_orchestration_self_hosting_bootstrap_program.md",
+          "docs/CONTINUITY.md",
+          "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md"
+        ],
+        "B1": [
+          "docs/research/254_r7b_target_project_information_hierarchy_and_research218_supersession_candidate.md",
+          "docs/ARCHITECTURE_PROGRAM_OVERVIEW.md",
+          "docs/DECISIONS.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/cockpit/README.md",
+          "docs/research/219_activation_orchestration_self_hosting_bootstrap_program.md",
+          "docs/CONTINUITY.md",
+          "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md"
+        ],
+        "B2": [
+          "docs/research/254_r7b_target_project_information_hierarchy_and_research218_supersession_candidate.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/ARCHITECTURE_PROGRAM_OVERVIEW.md",
+          "docs/DECISIONS.md",
+          "docs/cockpit/README.md",
+          "docs/research/219_activation_orchestration_self_hosting_bootstrap_program.md",
+          "docs/CONTINUITY.md",
+          "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md"
+        ],
+        "B3": [
+          "docs/research/254_r7b_target_project_information_hierarchy_and_research218_supersession_candidate.md",
+          "docs/DECISIONS.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/ARCHITECTURE_PROGRAM_OVERVIEW.md",
+          "docs/research/219_activation_orchestration_self_hosting_bootstrap_program.md",
+          "docs/cockpit/README.md",
+          "docs/CONTINUITY.md",
+          "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md"
+        ]
+      },
+      "exposed_engineering_query": "owner approval boundary governing decision",
+      "not_a_correctness_score": true,
+      "same_rank_as_b0": {
+        "B0": true,
+        "B1": true,
+        "B2": false,
+        "B3": false
+      },
+      "source_revisions_verified_same_all_arms": true
+    },
+    {
+      "candidate_rankings": {
+        "B0": [
+          "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+          "docs/cockpit/README.md",
+          "docs/research/254_r7b_target_project_information_hierarchy_and_research218_supersession_candidate.md",
+          "docs/ARCHITECTURE_PROGRAM_OVERVIEW.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/CONTINUITY.md",
+          "docs/DECISIONS.md",
+          "docs/research/293_p_d1_warrant_proportionality_result.md"
+        ],
+        "B1": [
+          "docs/cockpit/README.md",
+          "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+          "docs/research/254_r7b_target_project_information_hierarchy_and_research218_supersession_candidate.md",
+          "docs/ARCHITECTURE_PROGRAM_OVERVIEW.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/CONTINUITY.md",
+          "docs/DECISIONS.md",
+          "docs/research/293_p_d1_warrant_proportionality_result.md"
+        ],
+        "B2": [
+          "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+          "docs/cockpit/README.md",
+          "docs/research/254_r7b_target_project_information_hierarchy_and_research218_supersession_candidate.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/ARCHITECTURE_PROGRAM_OVERVIEW.md",
+          "docs/CONTINUITY.md",
+          "docs/DECISIONS.md",
+          "docs/research/293_p_d1_warrant_proportionality_result.md"
+        ],
+        "B3": [
+          "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+          "docs/cockpit/README.md",
+          "docs/research/254_r7b_target_project_information_hierarchy_and_research218_supersession_candidate.md",
+          "docs/ARCHITECTURE_PROGRAM_OVERVIEW.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/CONTINUITY.md",
+          "docs/DECISIONS.md",
+          "docs/research/293_p_d1_warrant_proportionality_result.md"
+        ]
+      },
+      "exposed_engineering_query": "cockpit implementation product interface",
+      "not_a_correctness_score": true,
+      "same_rank_as_b0": {
+        "B0": true,
+        "B1": false,
+        "B2": false,
+        "B3": true
+      },
+      "source_revisions_verified_same_all_arms": true
+    },
+    {
+      "candidate_rankings": {
+        "B0": [
+          "docs/DECISIONS.md",
+          "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+          "docs/CONTINUITY.md",
+          "docs/cockpit/README.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "tests/unit/test_project_knowledge_identity.py",
+          "docs/research/219_activation_orchestration_self_hosting_bootstrap_program.md",
+          "docs/research/254_r7b_target_project_information_hierarchy_and_research218_supersession_candidate.md"
+        ],
+        "B1": [
+          "docs/DECISIONS.md",
+          "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+          "docs/CONTINUITY.md",
+          "docs/cockpit/README.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "tests/unit/test_project_knowledge_identity.py",
+          "docs/research/219_activation_orchestration_self_hosting_bootstrap_program.md",
+          "docs/research/254_r7b_target_project_information_hierarchy_and_research218_supersession_candidate.md"
+        ],
+        "B2": [
+          "docs/DECISIONS.md",
+          "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+          "docs/CONTINUITY.md",
+          "docs/cockpit/README.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "tests/unit/test_project_knowledge_identity.py",
+          "docs/research/219_activation_orchestration_self_hosting_bootstrap_program.md",
+          "docs/research/254_r7b_target_project_information_hierarchy_and_research218_supersession_candidate.md"
+        ],
+        "B3": [
+          "docs/DECISIONS.md",
+          "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+          "docs/CONTINUITY.md",
+          "docs/cockpit/README.md",
+          "tests/unit/test_project_knowledge_identity.py",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/research/293_p_d1_warrant_proportionality_result.md",
+          "docs/research/219_activation_orchestration_self_hosting_bootstrap_program.md"
+        ]
+      },
+      "exposed_engineering_query": "source universe source vault ingestion evidence",
+      "not_a_correctness_score": true,
+      "same_rank_as_b0": {
+        "B0": true,
+        "B1": true,
+        "B2": true,
+        "B3": false
+      },
+      "source_revisions_verified_same_all_arms": true
+    },
+    {
+      "candidate_rankings": {
+        "B0": [
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/ARCHITECTURE_PROGRAM_OVERVIEW.md",
+          "tools/project_knowledge/authority.py",
+          "tests/unit/test_project_knowledge_refresh.py",
+          "docs/CONTINUITY.md",
+          "tools/project_knowledge/services/generation.py",
+          "docs/research/254_r7b_target_project_information_hierarchy_and_research218_supersession_candidate.md",
+          "docs/research/293_p_d1_warrant_proportionality_result.md"
+        ],
+        "B1": [
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/ARCHITECTURE_PROGRAM_OVERVIEW.md",
+          "tools/project_knowledge/authority.py",
+          "tests/unit/test_project_knowledge_refresh.py",
+          "docs/CONTINUITY.md",
+          "tools/project_knowledge/services/generation.py",
+          "docs/research/254_r7b_target_project_information_hierarchy_and_research218_supersession_candidate.md",
+          "docs/research/293_p_d1_warrant_proportionality_result.md"
+        ],
+        "B2": [
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/ARCHITECTURE_PROGRAM_OVERVIEW.md",
+          "tools/project_knowledge/authority.py",
+          "tests/unit/test_project_knowledge_refresh.py",
+          "docs/CONTINUITY.md",
+          "tools/project_knowledge/services/generation.py",
+          "docs/research/254_r7b_target_project_information_hierarchy_and_research218_supersession_candidate.md",
+          "docs/research/293_p_d1_warrant_proportionality_result.md"
+        ],
+        "B3": [
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "tests/unit/test_project_knowledge_refresh.py",
+          "docs/CONTINUITY.md",
+          "docs/ARCHITECTURE_PROGRAM_OVERVIEW.md",
+          "tools/project_knowledge/services/generation.py",
+          "tools/project_knowledge/authority.py",
+          "docs/research/293_p_d1_warrant_proportionality_result.md",
+          "docs/research/254_r7b_target_project_information_hierarchy_and_research218_supersession_candidate.md"
+        ]
+      },
+      "exposed_engineering_query": "source refresh currentness stale regeneration",
+      "not_a_correctness_score": true,
+      "same_rank_as_b0": {
+        "B0": true,
+        "B1": true,
+        "B2": true,
+        "B3": false
+      },
+      "source_revisions_verified_same_all_arms": true
+    },
+    {
+      "candidate_rankings": {
+        "B0": [
+          "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+          "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+          "docs/ARCHITECTURE_PROGRAM_OVERVIEW.md",
+          "docs/research/254_r7b_target_project_information_hierarchy_and_research218_supersession_candidate.md",
+          "docs/CONTINUITY.md",
+          "docs/DECISIONS.md",
+          "docs/research/293_p_d1_warrant_proportionality_result.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md"
+        ],
+        "B1": [
+          "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+          "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+          "docs/ARCHITECTURE_PROGRAM_OVERVIEW.md",
+          "docs/research/254_r7b_target_project_information_hierarchy_and_research218_supersession_candidate.md",
+          "docs/CONTINUITY.md",
+          "docs/DECISIONS.md",
+          "docs/research/293_p_d1_warrant_proportionality_result.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md"
+        ],
+        "B2": [
+          "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+          "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+          "docs/ARCHITECTURE_PROGRAM_OVERVIEW.md",
+          "docs/research/254_r7b_target_project_information_hierarchy_and_research218_supersession_candidate.md",
+          "docs/CONTINUITY.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/DECISIONS.md",
+          "docs/research/293_p_d1_warrant_proportionality_result.md"
+        ],
+        "B3": [
+          "docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md",
+          "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md",
+          "docs/research/293_p_d1_warrant_proportionality_result.md",
+          "docs/CONTINUITY.md",
+          "docs/ARCHITECTURE_PROGRAM_OVERVIEW.md",
+          "docs/research/254_r7b_target_project_information_hierarchy_and_research218_supersession_candidate.md",
+          "docs/DECISIONS.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md"
+        ]
+      },
+      "exposed_engineering_query": "source proof test execution reproducibility",
+      "not_a_correctness_score": true,
+      "same_rank_as_b0": {
+        "B0": true,
+        "B1": true,
+        "B2": false,
+        "B3": false
+      },
+      "source_revisions_verified_same_all_arms": true
+    }
+  ],
+  "full_original_source_byte_count": 459438,
+  "limitations": [
+    "This is a real execution of B0-B3 differentiating navigation signals on the exact unscored 24-source Git pilot, not formal Research 513 admission.",
+    "B1/B2/B3 pilot metadata are exposed coordinator source-adjacent claims, not qualifying natural-owner authored declarations or independent gold.",
+    "The common documentary path mentions are lexical mentions, not validated semantic documentary authority or a full typed relations substrate.",
+    "The same core source/semantic API is used by all four arms; the Ranker accesses exact Git bytes internally, not an isolated connector-only agent tool environment.",
+    "B4 neural model availability was tested only for the current Python environment and remains a prospective prefreeze feasibility choice.",
+    "The diagnostic queries precede final arm/source/gold freeze, have no answer key, and must not become the independent primary or legacy scoring packet."
+  ],
+  "neural_b4_current_environment": {
+    "admission_status": "NOT_IMPLEMENTED_OR_PREFREEZE_QUALIFIED",
+    "formal_inclusion_decision": "REQUIRES_PREFREEZE_FEASIBILITY_DECISION",
+    "sentence_transformers_importable": false,
+    "torch_importable": false,
+    "transformers_importable": false
+  },
+  "passage_bm25_chunk_count": 2435,
+  "per_arm_query_operations": {
+    "B0": {
+      "common_read": 0,
+      "common_search": 1,
+      "concern_rank": 0,
+      "editorial_link_rank": 0,
+      "lexical_rank": 7,
+      "subject_rank": 0
+    },
+    "B1": {
+      "common_read": 0,
+      "common_search": 1,
+      "concern_rank": 0,
+      "editorial_link_rank": 0,
+      "lexical_rank": 7,
+      "subject_rank": 7
+    },
+    "B2": {
+      "common_read": 0,
+      "common_search": 1,
+      "concern_rank": 0,
+      "editorial_link_rank": 7,
+      "lexical_rank": 7,
+      "subject_rank": 0
+    },
+    "B3": {
+      "common_read": 0,
+      "common_search": 1,
+      "concern_rank": 7,
+      "editorial_link_rank": 0,
+      "lexical_rank": 7,
+      "subject_rank": 0
+    }
+  },
+  "rankings_changed_vs_b0_count_not_accuracy": {
+    "B0": 0,
+    "B1": 3,
+    "B2": 3,
+    "B3": 4
+  },
+  "schema_version": 1,
+  "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5"
+}
