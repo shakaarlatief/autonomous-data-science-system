@@ -1097,6 +1097,13 @@ docs/research/689_r0_p03_experiment_j2_assurance_policy_owner_acceptance_binding
 docs/research/690_r0_p03_delegated_s1_composite_realizer_preaction_freeze.md
 docs/research/691_r0_p03_delegated_s1_actual_git_event_g006_g013_execution.md
 docs/research/692_r0_p03_postexecution_source_owner_relational_j2_experiment_admission.md
+docs/research/693_r0_p03_separate_j3_open_reset_experiment_only_s1_evaluation.md
+docs/local_execution/validation/390_r0_p03_separate_s1_j3_open_reset_and_component_falsification.md
+docs/checkpoints/954_r0_p03_experiment_s1_j3_open_reset_evaluated.md
+docs/model_collaboration/threads/MC-0030/messages/107_chatgpt_r0_p03_experiment_s1_j3_open_reset_evaluation.md
+experiments/r0_p03_navigation_probe/v03_real_pk_delegated_s1_j3_lifecycle_v01.py
+experiments/r0_p03_navigation_probe/v03_real_pk_delegated_s1_j3_lifecycle_result_v01.json
+tests/unit/test_r0_p03_v03_real_pk_delegated_s1_j3_lifecycle_v01.py
 docs/local_execution/validation/389_r0_p03_delegated_s1_postexecution_j2_source_relative_admission.md
 docs/checkpoints/953_r0_p03_delegated_s1_experiment_only_relational_j2_qualified.md
 docs/model_collaboration/threads/MC-0030/messages/106_chatgpt_r0_p03_postexecution_source_owner_covers_and_j2_admission.md
@@ -2395,7 +2402,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-953 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-954 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

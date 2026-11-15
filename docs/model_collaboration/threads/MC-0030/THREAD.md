@@ -1520,3 +1520,20 @@ A distinct mechanical J2 verifier checks original source Git bytes/chronology, a
     J3=NOT_EVALUATED
     FORMAL_P03=INCOMPLETE
     NEXT=SEPARATE_J3_LIFECYCLE_EVALUATION
+
+## Separate source-relative experimental S1 and J3 OPEN_RESET evaluation, Checkpoint 954
+
+Research 693, Validation 390 and Message 107 preserve a distinct deterministic lifecycle/requirement evaluator after experimental source-owner J2 admission. It verifies the exact original owner-accepted J1, published weaker-source-assurance J2 source and reexecuted G006/G013/G009 production evidence for new Git source event ca91cbc2. The source author COVERS FULL and self-J3 flags are not accepted as completion. Under E03 REPLACE/OPEN_RESET the new S1 source world is active, E02+E04 current, E01 retired, with ZERO predecessor S0 evidence/credit carried forward. Four new-event ALL_REQUIRED components then pass, so new J3 is SATISFIED_EXPERIMENT_ONLY_SOURCE_RELATIVE_WEAK_ACTOR_ASSURANCE. Exact J3 derived output SHA-256 1b31365160e29b902d578222a8dc39e15c55b49e0e592448baeada13284b4341.
+
+77 adversarial tests PASS including 16 component failure combinations and deliberate currentness, J1/J2 source authority and provenance forgeries; adjacent 60 J2 and 20 real-event tests also PASS. The evaluator is structurally separate but authored by the same exposed model collaborator, not independent blind scientific gold. Model actor identity remains not independently authenticated; production J2/J3, physical design, formal B0-B4 corpus/arm/reference/scoring remain unqualified. Next ChatGPT should qualify representative real ADS source cohort, source roles and common B0-B4 semantic substrate before protected independent reference origination.
+
+    RESEARCH=693
+    VALIDATION=390
+    CHECKPOINT=954
+    MESSAGE=MC0030_MESSAGE107
+    EXPERIMENT_S1=ACTIVE
+    EXPERIMENT_J3=SATISFIED_SOURCE_RELATIVE_WEAK_ASSURANCE
+    PRODUCTION_J3=false
+    INDEPENDENT_ACTOR_AUTHENTICATION=false
+    FORMAL_P03=INCOMPLETE
+    NEXT=REAL_SOURCE_COHORT_AND_COMMON_B0_B4_SUBSTRATE

@@ -144,6 +144,8 @@ experiments/r0_p03_navigation_probe/v03_real_pk_delegated_s1_composite_realizer_
 # Bind postexecution source-owner COVERS and the separate exact experiment-only J2 evidence across OS checkouts.
 experiments/r0_p03_navigation_probe/real_pk_world/delegated_s1/source_author_postexecution_covers_v01.json -text
 experiments/r0_p03_navigation_probe/v03_real_pk_delegated_s1_j2_admission_result_v01.json -text
+# Exact separate experiment-only S1 J3 lifecycle/OPEN_RESET output must retain LF source bytes.
+experiments/r0_p03_navigation_probe/v03_real_pk_delegated_s1_j3_lifecycle_result_v01.json -text
 
 # Preserve both original MC-0030 Message 063 historical carriers as exact Git blobs across Windows checkout.
 # The collision guard hashes their literal LF source bytes; CRLF worktree conversion would falsify the historical exception.
