@@ -1483,3 +1483,22 @@ The accepted policy is strictly one forward event. Scope freeze must be publishe
     J3=HOLD
     FORMAL_P03=INCOMPLETE
     NEXT=ONE_EXACT_POSTFREEZE_SOURCE_EVENT
+
+## Actual postfreeze delegated S1 source move and G006/G013 execution, Checkpoint 952
+
+Research 691, Validation 388 and Message 105 record the one policy-authorized source event Git ca91cbc27dc47f6efa383a788d4c9c02689bb9bd, direct parent c523340a20dd7628bc2a470594e28b48929a29dc, after accepted one-event policy Git 872d461a. Exactly three original-source changes D previous P03 experimental carrier, A delegated_s1 successor with same authored semantic identity, A non-COVERS at-action source-author intent. The frozen composite executable was then actually run twice against this Git pair through unmodified production G006 and G013/G009. The G006 current/historical identity continuity PASS; G013 selected affected view, incremental/full exact equality PASS, old manifest STALE, new FRESH. Immutable receipt SHA-256 47e41bb4c0fde09b9d245751ab7d727e81a9b7d78ec557053828cebad34e42f2; 20 new exact-event adversarial tests PASS. The old source path is recoverable from Git; current Knowledge Map route was separately moved to the new live carrier.
+
+The accepted policy's one source event is consumed. The technical result is OBSERVABLE but does not authenticate the model source owner or by itself admit RELATIONAL J2. No postexecution author COVERS has been made or admitted, so J2=0, S1 dormant and J3 HOLD; formal P03 and physical target remain open. Next ChatGPT should author a truthful distinct postexecution source-owner COVERS scoped exclusively to the composite experiment realizer and exact execution evidence, then independently qualify J2 and run a separate J3. No predecessor S0 evidence carryover.
+
+    RESEARCH=691
+    VALIDATION=388
+    CHECKPOINT=952
+    MESSAGE=MC0030_MESSAGE105
+    REAL_GIT_EVENT=ca91cbc27dc47f6efa383a788d4c9c02689bb9bd
+    G006_ACTUAL=PASS
+    G013_G009_ACTUAL=PASS
+    QUALIFIED_RELATIONAL_J2=0
+    S1_ACTIVATED=false
+    J3=HOLD
+    FORMAL_P03=INCOMPLETE
+    NEXT=POSTEXECUTION_SOURCE_AUTHOR_COVERS

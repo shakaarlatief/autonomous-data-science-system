@@ -1,0 +1,71 @@
+{
+  "component_ids": [
+    "EXPLICIT_IDENTITY_PRESERVING_MOVE",
+    "AFFECTED_VIEW_REFRESH_SELECTED",
+    "INCREMENTAL_EQUALS_CURRENT_FULL_BUILD",
+    "STALE_DERIVED_RESULT_NOT_GOVERNING"
+  ],
+  "event": {
+    "after_sha256": "10df00847933203fb836a6b8f7c8d56732ab108fedc60ea2679e6197aaf3a331",
+    "before_sha256": "6e0e90f4cf3b210adfac2a8d762ec6527ad260e34bad32aa5ceabf87c0ad5bef",
+    "changes": [
+      {
+        "path": "experiments/r0_p03_navigation_probe/real_pk_world/delegated_s1/identity_carrier_v03.json",
+        "status": "A"
+      },
+      {
+        "path": "experiments/r0_p03_navigation_probe/real_pk_world/delegated_s1/source_author_realizer_intent_v01.json",
+        "status": "A"
+      },
+      {
+        "path": "experiments/r0_p03_navigation_probe/real_pk_world/prospective_s1/identity_carrier_v02.json",
+        "status": "D"
+      }
+    ],
+    "freeze_commit": "c523340a20dd7628bc2a470594e28b48929a29dc",
+    "intent_sha256": "eb6401ea2fa267b35fc1decb09506a7e78c74aebcc9d746c5174436ad58afdcf",
+    "source_event_commit": "ca91cbc27dc47f6efa383a788d4c9c02689bb9bd"
+  },
+  "formal_R0_P03": "INCOMPLETE",
+  "g006": {
+    "authored_semantic_id": "P03PKA.G006.IDENTITY.CONTINUITY",
+    "current_carrier": "experiments/r0_p03_navigation_probe/real_pk_world/delegated_s1/identity_carrier_v03.json",
+    "historical_carriers": [
+      "experiments/r0_p03_navigation_probe/real_pk_world/delegated_s1/identity_carrier_v03.json",
+      "experiments/r0_p03_navigation_probe/real_pk_world/prospective_s1/identity_carrier_v02.json"
+    ],
+    "identity_preserved": true,
+    "production_g006_executed": true,
+    "serialization_order_independent": true
+  },
+  "g013": {
+    "G010_fixture_used_only_as_execution_prerequisite": true,
+    "affected_view": "p03_delegated_s1_inventory",
+    "current_manifest": "FRESH",
+    "current_manifest_sha256": "c810a4a8a23df3649db10a54d5124c77433cd5e829afacdb1760ca64bfe63aba",
+    "generated_current_view_sha256": "f12d946b6d95372ec4871894339f71ef6df1c01fad100f8cbb9a20f214504d13",
+    "isolated_after_commit": "61d9b19decd205b0c373f9a8a4bd8ff88aaeaf74",
+    "isolated_before_commit": "b97a5361ca350e4b47aa85f3f6770cd8c0f32131",
+    "previous_manifest": "STALE",
+    "production_g013_g009_executed": true,
+    "selected_equals_full": true,
+    "selection_reason": [
+      [
+        "p03_delegated_s1_inventory",
+        "DEPENDENCY_BINDING_CHANGED"
+      ]
+    ],
+    "source_content_digest": "adb61c6f55e9844f2e12c0550dae96f0692046571de2ebc9473b2fdd89832b95",
+    "whole_ADS_corpus_G013_claimed": false
+  },
+  "j3": "HOLD_PENDING_SOURCE_OWNER_COVERS_AND_SEPARATE_EVALUATOR",
+  "physical_architecture_selected": false,
+  "postexecution_covers_admitted": false,
+  "production_modified": false,
+  "qualified_relational_j2": false,
+  "realizer_id": "P03PKA.EXPERIMENT_COMPOSITE_G006_G013_DELEGATED_001",
+  "s1_activated": false,
+  "schema_version": 1,
+  "source_author_independently_authenticated": false,
+  "status": "NEW_SOURCE_RELATIVE_G006_G013_OBSERVED_NOT_J2_CERTIFIED"
+}

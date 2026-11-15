@@ -1095,6 +1095,13 @@ docs/research/687_r0_p03_prospective_s1_j2_source_event_and_finite_owner_assuran
 docs/research/688_r0_p03_experiment_source_owner_j2_assurance_policy_decision_proposal.md
 docs/research/689_r0_p03_experiment_j2_assurance_policy_owner_acceptance_binding.md
 docs/research/690_r0_p03_delegated_s1_composite_realizer_preaction_freeze.md
+docs/research/691_r0_p03_delegated_s1_actual_git_event_g006_g013_execution.md
+docs/local_execution/validation/388_r0_p03_delegated_s1_actual_source_g006_g013_replay.md
+docs/checkpoints/952_r0_p03_delegated_source_event_g006_g013_real_execution.md
+docs/model_collaboration/threads/MC-0030/messages/105_chatgpt_r0_p03_delegated_s1_real_source_execution.md
+experiments/r0_p03_navigation_probe/real_pk_world/delegated_s1/source_author_realizer_intent_v01.json
+experiments/r0_p03_navigation_probe/v03_real_pk_delegated_s1_composite_realizer_result_v01.json
+tests/unit/test_r0_p03_v03_real_pk_delegated_s1_real_event_v01.py
 docs/local_execution/validation/387_r0_p03_delegated_s1_composite_realizer_preaction_contract.md
 docs/checkpoints/951_r0_p03_delegated_s1_composite_realizer_preaction_freeze.md
 docs/model_collaboration/threads/MC-0030/messages/104_chatgpt_r0_p03_delegated_s1_preaction_scope_freeze.md
@@ -1140,7 +1147,7 @@ experiments/r0_p03_navigation_probe/v03_real_pk_accepted_j1_projection_v01.py
 experiments/r0_p03_navigation_probe/v03_real_pk_accepted_j1_projection_result_v01.json
 experiments/r0_p03_navigation_probe/v03_real_pk_source_transition_v01.py
 experiments/r0_p03_navigation_probe/v03_real_pk_source_transition_result_v01.json
-experiments/r0_p03_navigation_probe/real_pk_world/prospective_s1/identity_carrier_v02.json
+experiments/r0_p03_navigation_probe/real_pk_world/delegated_s1/identity_carrier_v03.json
 experiments/r0_p03_navigation_probe/real_pk_world/current/realizes_s0_v01.json
 experiments/r0_p03_navigation_probe/v03_real_pk_source_owner_coverage_preflight_v01.py
 experiments/r0_p03_navigation_probe/v03_real_pk_source_owner_coverage_preflight_result_v01.json
@@ -2380,7 +2387,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-951 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-952 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 
