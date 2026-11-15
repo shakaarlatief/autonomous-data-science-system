@@ -1,0 +1,44 @@
+{
+  "J3": "HOLD_J2_OWNER_ASSURANCE_AND_NEW_EVENT_EXECUTION",
+  "S1_activated": false,
+  "accepted_effect": "P03PKA-E02-S1-IDENTITY-REFRESH",
+  "claimed_relational_J2_qualified": false,
+  "commit": "faf8ff2686c6b09f53d3569470cf2057c11e5971",
+  "component_execution_verified_for_this_transition": false,
+  "component_ids": [
+    "EXPLICIT_IDENTITY_PRESERVING_MOVE",
+    "AFFECTED_VIEW_REFRESH_SELECTED",
+    "INCREMENTAL_EQUALS_CURRENT_FULL_BUILD",
+    "STALE_DERIVED_RESULT_NOT_GOVERNING"
+  ],
+  "declaration_present_in_same_commit": true,
+  "formal_R0_P03": "INCOMPLETE",
+  "git_exact_changes": [
+    {
+      "path": "experiments/r0_p03_navigation_probe/real_pk_world/current/identity_carrier_v01.json",
+      "status": "D"
+    },
+    {
+      "path": "experiments/r0_p03_navigation_probe/real_pk_world/prospective_s1/identity_carrier_v02.json",
+      "status": "A"
+    },
+    {
+      "path": "experiments/r0_p03_navigation_probe/real_pk_world/prospective_s1/realizes_s1_at_action_v01.json",
+      "status": "A"
+    }
+  ],
+  "git_observable_verified": true,
+  "parent": "2def5a1751f579138cf67047d5f68362eff92af4",
+  "physical_architecture_selected": false,
+  "production_authority_changed": false,
+  "same_authored_semantic_source": true,
+  "schema_version": 1,
+  "semantic_identity": "P03PKA.G006.IDENTITY.CONTINUITY",
+  "source_digests": {
+    "cocommitted_claim": "0befd1310967547a1063d04c41863f63fea5a55daf682409683ce2f99642a95c",
+    "previous_carrier": "d618807f510a4400ec62e1d25b931c6810e9b4928e8c348317ecd54db89d8b32",
+    "prospective_carrier": "6e0e90f4cf3b210adfac2a8d762ec6527ad260e34bad32aa5ceabf87c0ad5bef"
+  },
+  "source_owner_claim_independently_authenticated": false,
+  "status": "SOURCE_COCOMMIT_AND_GIT_TRANSITION_VERIFIED_J2_OWNER_ASSURANCE_HOLD"
+}

@@ -1408,3 +1408,23 @@ Next finite source-owner relation qualification on genuinely prospective evidenc
     J3=HOLD
     FORMAL_P03=INCOMPLETE
     PHYSICAL_TARGET_SELECTED=false
+
+## Prospective S1 Git source-owner COVERS co-commit and finite J2 HOLD, Checkpoint 948
+
+Research 687, Validation 384 and Message 101 preserve a prospectively frozen source-owner event contract at f13046f5, a source-test preparation correction at 2def5a17, and the actual Git event commit faf8ff2686c6b09f53d3569470cf2057c11e5971. Exactly three changed paths remove the prior carrier, add a successor carrier with unchanged authored semantic ID, and include an S1-targeted source-author COVERS claim in that same Git commit. The Git parent, source bytes, exact path changes and all four accepted S1 component references are verified. The source-author statement is not independently authenticated and does not assert executed coverage of this new event.
+
+The later move revealed and prompted a bounded repair of a historical Git-replay dependency on the old physical worktree path. Historical exact Git blobs remain accessible without retaining duplicate current files; present-but-conflicting old-path contents still reject. The stale Knowledge Map current-file route was also corrected. A first adjacent test run failed (2 FAIL / 57 ERROR), a later combined attempt timed out, and three completed focused batches subsequently passed 184 tests. This is scoped subsystem evidence, not a complete integrated test claim.
+
+The finite outcome remains structural Git/claim co-location PASS with qualified RELATIONAL J2=ZERO, S1 NOT_ACTIVATED, J3 HOLD, formal R0-P03 INCOMPLETE and physical target unselected. The next actor is the human owner for an explicit bounded assurance-policy/owner-standing decision or a qualified alternative natural-owner source route. Research 513/559/576/673 and Specification 028 continue unchanged. Do not restart historical connector authentication attempts or infer authority from Git/model authored flags.
+
+    RESEARCH=687
+    VALIDATION=384
+    CHECKPOINT=948
+    MESSAGE=MC0030_MESSAGE101
+    REAL_SOURCE_EVENT=faf8ff2686c6b09f53d3569470cf2057c11e5971
+    GIT_COCOMMIT=PASS
+    QUALIFIED_RELATIONAL_J2=0
+    S1_ACTIVATED=false
+    J3=HOLD
+    FORMAL_P03=INCOMPLETE
+    NEXT=OWNER_SOURCE_OWNER_J2_ASSURANCE_DISPOSITION

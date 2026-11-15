@@ -84,7 +84,12 @@ def committed_carriers() -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]
         or before_raw == after_raw
     ):
         raise ValueError("P03_REAL_SOURCE_BYTE_EVIDENCE_CHANGED")
-    if (BASE / "real_pk_world/current/identity_carrier_v01.json").read_bytes() != after_raw:
+    # A Git-pinned historical replay must survive later physical carrier moves.
+    # When the old path still exists in the worktree, reject conflicting bytes;
+    # when it has been removed, the exact source-of-record is the verified Git
+    # blob above. Current successor admission is a distinct later inquiry.
+    worktree_carrier = BASE / "real_pk_world/current/identity_carrier_v01.json"
+    if worktree_carrier.exists() and worktree_carrier.read_bytes() != after_raw:
         raise ValueError("P03_CURRENT_CARRIER_WORKTREE_DRIFT")
     if subprocess.run(
         ["git", "cat-file", "-e", f"{REPLACEMENT_COMMIT}:{INITIAL_PATH}"],

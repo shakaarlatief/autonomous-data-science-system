@@ -170,17 +170,28 @@ def test_absent_original_blob_cannot_generate_positive_world(monkeypatch):
 
 def test_stale_worktree_current_carrier_not_mistaken_for_git_original(monkeypatch):
     from pathlib import Path
-    class FakePath:
-        def read_bytes(self):
-            return b"changed or stale"
-    old = Path.read_bytes
-    def replacement(self):
-        if self.name == "identity_carrier_v01.json" and "current" in self.parts:
-            return b"changed or stale"
-        return old(self)
-    monkeypatch.setattr(Path, "read_bytes", replacement)
+    target = probe.BASE / "real_pk_world/current/identity_carrier_v01.json"
+    original_exists = Path.exists
+    original_read_bytes = Path.read_bytes
+
+    def with_stale_carrier_present(self):
+        return True if self == target else original_exists(self)
+
+    def with_stale_carrier_bytes(self):
+        return b"changed or stale" if self == target else original_read_bytes(self)
+
+    monkeypatch.setattr(Path, "exists", with_stale_carrier_present)
+    monkeypatch.setattr(Path, "read_bytes", with_stale_carrier_bytes)
     with pytest.raises(ValueError, match="P03_CURRENT_CARRIER_WORKTREE_DRIFT"):
         probe.committed_carriers()
+
+
+def test_historical_git_replay_survives_subsequent_carrier_removal(originals):
+    historical_path = probe.BASE / "real_pk_world/current/identity_carrier_v01.json"
+    assert not historical_path.exists()
+    _, earlier_current, git_facts = originals
+    assert earlier_current["governed_source"]["semantic_id"] == probe.AUTHORED_ID
+    assert git_facts["replacement_commit"] == probe.REPLACEMENT_COMMIT
 
 
 def test_wrong_source_parent_fails_before_semantic_success(monkeypatch):

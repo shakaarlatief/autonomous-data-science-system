@@ -1091,6 +1091,15 @@ docs/research/683_r0_p03_live_provider_check_job_workflow_status_conflict_and_as
 docs/research/684_r0_p03_real_semantic_world_candidate_qualification_and_navigation_return.md
 docs/research/685_r0_p03_real_source_semantic_world_j1_acceptance_and_git_transition.md
 docs/research/686_r0_p03_real_g013_refresh_evidence_and_common_semantic_world_overlay.md
+docs/research/687_r0_p03_prospective_s1_j2_source_event_and_finite_owner_assurance_hold.md
+docs/local_execution/validation/384_r0_p03_prospective_s1_j2_source_action_historical_replay_and_assurance_hold.md
+docs/checkpoints/948_r0_p03_prospective_s1_j2_source_owner_evidence_and_assurance_hold.md
+docs/model_collaboration/threads/MC-0030/messages/101_chatgpt_r0_p03_prospective_source_owner_event_and_finite_assurance_hold.md
+experiments/r0_p03_navigation_probe/V03_REAL_PK_PROSPECTIVE_S1_J2_EVENT_CONTRACT_V01.md
+experiments/r0_p03_navigation_probe/v03_real_pk_prospective_j2_source_assay_v01.py
+experiments/r0_p03_navigation_probe/v03_real_pk_prospective_j2_source_assay_result_v01.json
+experiments/r0_p03_navigation_probe/real_pk_world/prospective_s1/realizes_s1_at_action_v01.json
+tests/unit/test_r0_p03_v03_real_pk_prospective_j2_source_assay_v01.py
 docs/local_execution/validation/383_r0_p03_real_git_source_g013_incremental_full_freshness.md
 docs/checkpoints/947_r0_p03_real_source_g013_execution_and_common_world_observations.md
 docs/model_collaboration/threads/MC-0030/messages/100_chatgpt_r0_p03_real_source_g013_integration_and_j2_boundary.md
@@ -1108,7 +1117,7 @@ experiments/r0_p03_navigation_probe/v03_real_pk_accepted_j1_projection_v01.py
 experiments/r0_p03_navigation_probe/v03_real_pk_accepted_j1_projection_result_v01.json
 experiments/r0_p03_navigation_probe/v03_real_pk_source_transition_v01.py
 experiments/r0_p03_navigation_probe/v03_real_pk_source_transition_result_v01.json
-experiments/r0_p03_navigation_probe/real_pk_world/current/identity_carrier_v01.json
+experiments/r0_p03_navigation_probe/real_pk_world/prospective_s1/identity_carrier_v02.json
 experiments/r0_p03_navigation_probe/real_pk_world/current/realizes_s0_v01.json
 experiments/r0_p03_navigation_probe/v03_real_pk_source_owner_coverage_preflight_v01.py
 experiments/r0_p03_navigation_probe/v03_real_pk_source_owner_coverage_preflight_result_v01.json
@@ -2348,7 +2357,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-947 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-948 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 
