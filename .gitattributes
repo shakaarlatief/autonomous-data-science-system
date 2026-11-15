@@ -141,6 +141,9 @@ experiments/r0_p03_navigation_probe/v03_real_pk_delegated_s1_composite_realizer_
 experiments/r0_p03_navigation_probe/real_pk_world/delegated_s1/identity_carrier_v03.json -text
 experiments/r0_p03_navigation_probe/real_pk_world/delegated_s1/source_author_realizer_intent_v01.json -text
 experiments/r0_p03_navigation_probe/v03_real_pk_delegated_s1_composite_realizer_result_v01.json -text
+# Bind postexecution source-owner COVERS and the separate exact experiment-only J2 evidence across OS checkouts.
+experiments/r0_p03_navigation_probe/real_pk_world/delegated_s1/source_author_postexecution_covers_v01.json -text
+experiments/r0_p03_navigation_probe/v03_real_pk_delegated_s1_j2_admission_result_v01.json -text
 
 # Preserve both original MC-0030 Message 063 historical carriers as exact Git blobs across Windows checkout.
 # The collision guard hashes their literal LF source bytes; CRLF worktree conversion would falsify the historical exception.

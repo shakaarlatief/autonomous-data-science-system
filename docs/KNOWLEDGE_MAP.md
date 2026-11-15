@@ -1096,6 +1096,14 @@ docs/research/688_r0_p03_experiment_source_owner_j2_assurance_policy_decision_pr
 docs/research/689_r0_p03_experiment_j2_assurance_policy_owner_acceptance_binding.md
 docs/research/690_r0_p03_delegated_s1_composite_realizer_preaction_freeze.md
 docs/research/691_r0_p03_delegated_s1_actual_git_event_g006_g013_execution.md
+docs/research/692_r0_p03_postexecution_source_owner_relational_j2_experiment_admission.md
+docs/local_execution/validation/389_r0_p03_delegated_s1_postexecution_j2_source_relative_admission.md
+docs/checkpoints/953_r0_p03_delegated_s1_experiment_only_relational_j2_qualified.md
+docs/model_collaboration/threads/MC-0030/messages/106_chatgpt_r0_p03_postexecution_source_owner_covers_and_j2_admission.md
+experiments/r0_p03_navigation_probe/real_pk_world/delegated_s1/source_author_postexecution_covers_v01.json
+experiments/r0_p03_navigation_probe/v03_real_pk_delegated_s1_j2_admission_v01.py
+experiments/r0_p03_navigation_probe/v03_real_pk_delegated_s1_j2_admission_result_v01.json
+tests/unit/test_r0_p03_v03_real_pk_delegated_s1_j2_admission_v01.py
 docs/local_execution/validation/388_r0_p03_delegated_s1_actual_source_g006_g013_replay.md
 docs/checkpoints/952_r0_p03_delegated_source_event_g006_g013_real_execution.md
 docs/model_collaboration/threads/MC-0030/messages/105_chatgpt_r0_p03_delegated_s1_real_source_execution.md
@@ -2387,7 +2395,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-952 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-953 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

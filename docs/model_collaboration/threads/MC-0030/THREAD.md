@@ -1502,3 +1502,21 @@ The accepted policy's one source event is consumed. The technical result is OBSE
     J3=HOLD
     FORMAL_P03=INCOMPLETE
     NEXT=POSTEXECUTION_SOURCE_AUTHOR_COVERS
+
+## Source-relative experimental J2 after distinct postexecution COVERS, Checkpoint 953
+
+Research 692, Validation 389 and Message 106 preserve a separately committed postexecution source-author COVERS declaration at d4ef4d3ec259c2d578ad412f197dd49211225bc7, parent 338e591c published production-backed source execution. Exact COVERS SHA-256 a1fd016deb19d1468bfbbe2810fccd1bb5c0487711adc4d9dc17bb77901c2d6f. Its scope is strictly the new exposed-author experimental G006/G013 composite realizer, the accepted S1 effect and actual source Git ca91cbc2. It claims no historical production code ownership or independently authenticated model identity, and its four FULL strings are source assertions pending evidence admission.
+
+A distinct mechanical J2 verifier checks original source Git bytes/chronology, accepted J1 and one-event weak-source-owner policy, bounded source-world uniqueness, new exact G006/G013/G009 execution and four ALL_REQUIRED observations. Sixty adversarial tests pass. Exactly one EXPERIMENT_ONLY_SOURCE_RELATIVE_RELATIONAL_J2_WITH_DECLARED_WEAK_ACTOR_ASSURANCE is qualified. The same exposed collaborator authored source and verifier, so this is not independently authored blinded scientific reference or strong actor verification. S1 activation and J3 are still separate, not inferred from J2 source claims. Next a distinct J3 evaluator, checking E03 REPLACE/OPEN_RESET and zero predecessor carry, then later independent formal corpus and B0-B4 comparator preparation.
+
+    RESEARCH=692
+    VALIDATION=389
+    CHECKPOINT=953
+    MESSAGE=MC0030_MESSAGE106
+    EXPERIMENT_ONLY_QUALIFIED_J2=1
+    PRODUCTION_J2=0
+    INDEPENDENT_ACTOR_AUTHENTICATION=false
+    S1=NOT_EVALUATED_BY_J3
+    J3=NOT_EVALUATED
+    FORMAL_P03=INCOMPLETE
+    NEXT=SEPARATE_J3_LIFECYCLE_EVALUATION
