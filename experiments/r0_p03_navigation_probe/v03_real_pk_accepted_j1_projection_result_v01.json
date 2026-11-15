@@ -1,0 +1,131 @@
+{
+  "accepted_j1": {
+    "accounting_tracked_requirements": [
+      "P03PKA-E01-S0-IDENTITY-CONTINUITY",
+      "P03PKA-E02-S1-IDENTITY-REFRESH"
+    ],
+    "count": 4,
+    "current_effect_ids": [
+      "P03PKA-E01-S0-IDENTITY-CONTINUITY",
+      "P03PKA-E04-NO-PATH-OR-DERIVED-AUTHORITY"
+    ],
+    "dormant_until_source_revision": [
+      "P03PKA-E02-S1-IDENTITY-REFRESH"
+    ],
+    "effects": [
+      {
+        "accounting": "REALIZATION_TRACKED",
+        "completion_contract": {
+          "actual_natural_owner_covers_required": true,
+          "composition": "ALL_REQUIRED",
+          "exact_source_revision_and_executed_evidence_required": true,
+          "required_components": [
+            "EXPLICIT_IDENTITY_PRESERVING_MOVE",
+            "HISTORICAL_CARRIER_REMAINS_RESOLVABLE"
+          ]
+        },
+        "id": "P03PKA-E01-S0-IDENTITY-CONTINUITY",
+        "state": "S0_INITIAL",
+        "statement": "In the bounded P03 experimental source world, a move or representation replacement of an authored canonical source carrier must preserve its semantic identity and retain its historical carrier in lookup.",
+        "type": "REQUIRE"
+      },
+      {
+        "accounting": "REALIZATION_TRACKED",
+        "completion_contract": {
+          "actual_natural_owner_covers_required": true,
+          "composition": "ALL_REQUIRED",
+          "exact_source_revision_and_executed_evidence_required": true,
+          "required_components": [
+            "EXPLICIT_IDENTITY_PRESERVING_MOVE",
+            "AFFECTED_VIEW_REFRESH_SELECTED",
+            "INCREMENTAL_EQUALS_CURRENT_FULL_BUILD",
+            "STALE_DERIVED_RESULT_NOT_GOVERNING"
+          ]
+        },
+        "id": "P03PKA-E02-S1-IDENTITY-REFRESH",
+        "state": "S1_SUCCESSOR_AFTER_REAL_SOURCE_REVISION",
+        "statement": "In the bounded P03 successor experimental state, the same authored semantic identity must survive a real source carrier move; affected derived views must be rebuilt from the complete current source snapshot and any incremental refresh must be equivalent to the full current build. A stale prior generated manifest must never govern current semantics.",
+        "type": "REQUIRE"
+      },
+      {
+        "accounting": "NO_REALIZATION_REQUIRED",
+        "id": "P03PKA-E03-S1-REPLACE-OPEN-RESET",
+        "lineage": {
+          "predecessor_id": "P03PKA-E01-S0-IDENTITY-CONTINUITY",
+          "realization_succession": "OPEN_RESET",
+          "relation": "REPLACE",
+          "successor_id": "P03PKA-E02-S1-IDENTITY-REFRESH",
+          "transition_not_activated_by_this_proposal": true
+        },
+        "state": "S1_SUCCESSOR_AFTER_REAL_SOURCE_REVISION",
+        "statement": "When the separately qualified prospective P03 source-revision transition activates S1, S1 REPLACES S0 as the current experimental requirement, with OPEN_RESET realization succession; S0 implementation evidence cannot be carried forward as sufficient for S1 without requalification.",
+        "type": "LIFECYCLE"
+      },
+      {
+        "accounting": "NO_REALIZATION_REQUIRED",
+        "id": "P03PKA-E04-NO-PATH-OR-DERIVED-AUTHORITY",
+        "standing_check": "DETECTIVE_ONLY_FALSE_AUTHORITY_REJECTION",
+        "state": "BOTH",
+        "statement": "Neither a carrier path nor a generated navigation/index/manifest output may be treated as governing semantic identity or acceptance authority.",
+        "type": "PROHIBIT"
+      }
+    ],
+    "lifecycle_effect_id": "P03PKA-E03-S1-REPLACE-OPEN-RESET"
+  },
+  "currentness": {
+    "accepted_transition_rule": {
+      "predecessor_id": "P03PKA-E01-S0-IDENTITY-CONTINUITY",
+      "realization_succession": "OPEN_RESET",
+      "relation": "REPLACE",
+      "successor_id": "P03PKA-E02-S1-IDENTITY-REFRESH",
+      "transition_not_activated_by_this_proposal": true
+    },
+    "activation_status": "NOT_ACTIVATED",
+    "actual_source_revision_qualified": false,
+    "current_state": "S0_INITIAL",
+    "on_future_qualified_activation": {
+      "evidence_carryover_allowed": false,
+      "new_current_requirement": "P03PKA-E02-S1-IDENTITY-REFRESH",
+      "realization_successor_initialization": "OPEN_RESET",
+      "retired_current_requirement": "P03PKA-E01-S0-IDENTITY-CONTINUITY"
+    },
+    "successor_state": "S1_SUCCESSOR_AFTER_REAL_SOURCE_REVISION"
+  },
+  "exact_accepted_proposal": {
+    "canonical_payload_sha256": "0fa8ecc09f4745b514697d206356ce2f529fa66e15380a9bd0d43f1c6a00a6df",
+    "commit": "ed1c379f31fadc47a62189363720e0cfb9390afa",
+    "git_bytes_sha256": "340ec577f6bbe2fca7f8739cc33788e878bff659cf6ef554745d60af7d3088b0",
+    "source_path": "experiments/r0_p03_navigation_probe/v03_real_pk_semantic_j1_owner_proposal_v01.json"
+  },
+  "formal_b0_b4_scores": null,
+  "formal_primary_tasks": null,
+  "j2": {
+    "candidate_source_owner_statements": [],
+    "qualified_count": 0,
+    "qualified_relational": [],
+    "source_observations_do_not_imply_covers": true
+  },
+  "j3": {
+    "S0": "HOLD_J2_OWNER_RELATION_AND_EXECUTION_EVIDENCE",
+    "S1": "NOT_ACTIVATED",
+    "satisfaction_certified": false
+  },
+  "owner_decision": {
+    "binding_file_sha256": "2916a31085adef8dc21b598cd4d26f44f97c25ab264ae20c12f412782ee1e84f",
+    "independently_cryptographically_authenticated": false,
+    "provenance": "CHAT_CONVERSATION_EXPLICIT_OWNER_REPLY_NOT_INDEPENDENTLY_AUTHENTICATED",
+    "verbatim_reply": "I ACCEPT. Proceed.",
+    "verdict": "ACCEPT"
+  },
+  "physical_architecture_selected": false,
+  "preexisting_d1_experiment": {
+    "accepted_effect_count": 4,
+    "not_merged_into_new_world": true,
+    "source_world": "SEPARATE_HISTORICAL_D1_HOLD"
+  },
+  "production_migration_authorized": false,
+  "schema_version": 1,
+  "scope": "EXPERIMENT_ONLY_NON_OPERATIONAL",
+  "world_id": "P03V2_PKA_IDENTITY_AND_DERIVED_REFRESH_REAL_SOURCES_V01",
+  "world_status": "J1_ACCEPTED_S0_ACTIVE_S1_DORMANT_J2_AND_J3_UNQUALIFIED"
+}

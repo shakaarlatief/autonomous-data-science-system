@@ -1,0 +1,43 @@
+{
+  "accepted_effect_ids": [
+    "P03PKA-E01-S0-IDENTITY-CONTINUITY",
+    "P03PKA-E02-S1-IDENTITY-REFRESH",
+    "P03PKA-E03-S1-REPLACE-OPEN-RESET",
+    "P03PKA-E04-NO-PATH-OR-DERIVED-AUTHORITY"
+  ],
+  "accepted_j2_relations": [],
+  "accepted_scope": "FOUR_EXACT_PROSPECTIVE_EXPERIMENT_ONLY_PKA_EFFECTS_WITH_S1_DORMANT_UNTIL_REAL_SOURCE_REVISION",
+  "binding_id": "P03V2_PKA_TWO_STATE_EXPERIMENT_OWNER_ACCEPTANCE_BINDING_V01",
+  "decision": "ACCEPT",
+  "decision_context": "Immediate owner reply to Checkpoint 945 exact ACCEPT/AMEND/REJECT question, explicitly naming proposal and canonical digest; Research 684, MC-0030 Message 098",
+  "decision_date": "2026-11-15",
+  "decision_provenance_class": "CHAT_CONVERSATION_EXPLICIT_OWNER_REPLY_NOT_INDEPENDENTLY_AUTHENTICATED",
+  "excluded_authorizations": [
+    "PRODUCTION_J1_J2_ADMISSION",
+    "NATURAL_OWNER_RELATIONAL_J2_QUALIFICATION",
+    "SOURCE_OWNER_AUTHENTICATION_BY_OWNER_ACCEPTANCE",
+    "S1_ACTIVATION_WITHOUT_REAL_SOURCE_REVISION",
+    "RETROACTIVE_HISTORICAL_G006_G013_ACCEPTANCE_REWRITE",
+    "J3_REQUIREMENT_SATISFACTION_INFERENCE",
+    "FORMAL_P03_PRIMARY_TASK_OR_GOLD_CREATION",
+    "FORMAL_B0_B4_COMPARATOR_SCORING",
+    "PHYSICAL_ARCHITECTURE_SELECTION",
+    "MIGRATION_OR_CUTOVER",
+    "PRODUCTION_SOURCE_MODIFICATION"
+  ],
+  "experimental_world_id": "P03V2_PKA_IDENTITY_AND_DERIVED_REFRESH_REAL_SOURCES_V01",
+  "initial_active_effect_ids": [
+    "P03PKA-E01-S0-IDENTITY-CONTINUITY",
+    "P03PKA-E04-NO-PATH-OR-DERIVED-AUTHORITY"
+  ],
+  "proposal_id": "P03V2_PKA_REAL_SOURCE_TWO_STATE_EXPERIMENT_J1_001",
+  "provenance_boundary": "Conversational acceptance is the observed owner instruction; serialized record and SHA alone do not independently authenticate owner identity",
+  "schema_version": 1,
+  "source_audit_sha256": "59de22c2709d380189d60cab305902bff7033f9453cd5687223abe58805f56ac",
+  "source_proposal_canonical_payload_sha256": "0fa8ecc09f4745b514697d206356ce2f529fa66e15380a9bd0d43f1c6a00a6df",
+  "source_proposal_commit": "ed1c379f31fadc47a62189363720e0cfb9390afa",
+  "source_proposal_git_bytes_sha256": "340ec577f6bbe2fca7f8739cc33788e878bff659cf6ef554745d60af7d3088b0",
+  "source_proposal_path": "experiments/r0_p03_navigation_probe/v03_real_pk_semantic_j1_owner_proposal_v01.json",
+  "successor_activation": "PENDING_ACTUAL_QUALIFIED_PROSPECTIVE_SOURCE_REVISION",
+  "verbatim_owner_reply": "I ACCEPT. Proceed."
+}
