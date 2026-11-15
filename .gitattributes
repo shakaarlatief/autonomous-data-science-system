@@ -135,6 +135,12 @@ experiments/r0_p03_navigation_probe/v03_real_pk_j2_experiment_assurance_prefligh
 # Preserve the separately accepted one-event policy decision and derived non-J2 receipt.
 experiments/r0_p03_navigation_probe/v03_real_pk_j2_experiment_assurance_owner_acceptance_binding_rev01.json -text
 experiments/r0_p03_navigation_probe/v03_real_pk_j2_experiment_assurance_accepted_policy_result_rev01.json -text
+# Freeze the exact one-event delegated S1 realizer source and authored scope bytes across OS checkouts.
+experiments/r0_p03_navigation_probe/v03_real_pk_delegated_s1_event_scope_v01.json -text
+experiments/r0_p03_navigation_probe/v03_real_pk_delegated_s1_composite_realizer_v01.py -text
+experiments/r0_p03_navigation_probe/real_pk_world/delegated_s1/identity_carrier_v03.json -text
+experiments/r0_p03_navigation_probe/real_pk_world/delegated_s1/source_author_realizer_intent_v01.json -text
+experiments/r0_p03_navigation_probe/v03_real_pk_delegated_s1_composite_realizer_result_v01.json -text
 
 # Preserve both original MC-0030 Message 063 historical carriers as exact Git blobs across Windows checkout.
 # The collision guard hashes their literal LF source bytes; CRLF worktree conversion would falsify the historical exception.

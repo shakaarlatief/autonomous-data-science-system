@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "scope_id": "P03V2_ACCEPTED_POLICY_REV01_DELEGATED_S1_COMPOSITE_REALIZER_EVENT_001",
+  "status": "FROZEN_PREACTION_NOT_YET_EXECUTED",
+  "policy": {
+    "proposal_id": "P03V2_EXPERIMENT_SOURCE_OWNER_RELATIONAL_J2_ASSURANCE_POLICY_REV01",
+    "proposal_sha256": "f0217d8c24aba8aa5a5d493d6c816f9e439de4e32f32c00d56665b075ead798f",
+    "acceptance_commit": "872d461aecf1cbd4a6a18249e9e75050a5e97773",
+    "acceptance_binding_sha256": "beabc995359f79fe8d4f659efa76ff912b8ec02de74397d3656c29438215672d",
+    "owner_acceptance_class": "CHAT_RECORDED_NOT_INDEPENDENTLY_AUTHENTICATED",
+    "max_new_events": 1
+  },
+  "world_id": "P03V2_PKA_IDENTITY_AND_DERIVED_REFRESH_REAL_SOURCES_V01",
+  "accepted_s1_effect_id": "P03PKA-E02-S1-IDENTITY-REFRESH",
+  "components": [
+    "EXPLICIT_IDENTITY_PRESERVING_MOVE",
+    "AFFECTED_VIEW_REFRESH_SELECTED",
+    "INCREMENTAL_EQUALS_CURRENT_FULL_BUILD",
+    "STALE_DERIVED_RESULT_NOT_GOVERNING"
+  ],
+  "source_before": {
+    "commit": "faf8ff2686c6b09f53d3569470cf2057c11e5971",
+    "path": "experiments/r0_p03_navigation_probe/real_pk_world/prospective_s1/identity_carrier_v02.json",
+    "sha256": "6e0e90f4cf3b210adfac2a8d762ec6527ad260e34bad32aa5ceabf87c0ad5bef",
+    "authored_semantic_id": "P03PKA.G006.IDENTITY.CONTINUITY"
+  },
+  "event": {
+    "branch": "v1-source-vault-bootstrap-resume",
+    "after_path": "experiments/r0_p03_navigation_probe/real_pk_world/delegated_s1/identity_carrier_v03.json",
+    "at_action_intent_path": "experiments/r0_p03_navigation_probe/real_pk_world/delegated_s1/source_author_realizer_intent_v01.json",
+    "expected_paths": [
+      {
+        "status": "D",
+        "path": "experiments/r0_p03_navigation_probe/real_pk_world/prospective_s1/identity_carrier_v02.json"
+      },
+      {
+        "status": "A",
+        "path": "experiments/r0_p03_navigation_probe/real_pk_world/delegated_s1/identity_carrier_v03.json"
+      },
+      {
+        "status": "A",
+        "path": "experiments/r0_p03_navigation_probe/real_pk_world/delegated_s1/source_author_realizer_intent_v01.json"
+      }
+    ],
+    "must_be_committed_after_this_scope_publication": true,
+    "event_parent_must_be_exact_frozen_scope_commit": true,
+    "allow_preaction_knowledge_of_event_commit": false,
+    "source_implementation_code_changes_in_event": false,
+    "production_code_changes_in_event": false
+  },
+  "realizer": {
+    "id": "P03PKA.EXPERIMENT_COMPOSITE_G006_G013_DELEGATED_001",
+    "executable_path": "experiments/r0_p03_navigation_probe/v03_real_pk_delegated_s1_composite_realizer_v01.py",
+    "natural_owner_scope": "EXPOSED_CHATGPT_AUTHOR_OF_THIS_COMPOSITE_EXPERIMENTAL_EXECUTION_ORCHESTRATOR",
+    "actor_assurance": "RECORDED_CHAT_AND_EXPOSED_SESSION_NOT_INDEPENDENTLY_AUTHENTICATED",
+    "historical_production_g006_g013_owner_claim": false,
+    "executed_code_origin": "REUSE_UNMODIFIED_PRODUCTION_G006_G009_G013_AS_DEPENDENCIES",
+    "composite_scope": "EXACT_GIT_SOURCE_PAIR_TO_ISOLATED_G006_AND_G013_G009_WITH_REPRODUCIBLE_EVIDENCE",
+    "support_fixture": "tests/fixtures/project_knowledge_g010/corpus.json",
+    "fixture_counts_as_formal_navigation_source": false,
+    "output_isolated_from_production": true
+  },
+  "postevent": {
+    "new_event_g006_required": true,
+    "new_event_g013_and_full_generation_required": true,
+    "old_manifest_must_be_stale": true,
+    "new_manifest_must_be_fresh": true,
+    "postexecution_covers_path": "experiments/r0_p03_navigation_probe/real_pk_world/delegated_s1/source_author_postexecution_covers_v01.json",
+    "postexecution_covers_must_be_separate_commit": true,
+    "postexecution_covers_cannot_predate_actual_execution": true,
+    "source_author_relational_claim_must_name_actual_composite_realizer": true,
+    "independent_separate_j3_required": true,
+    "s1_open_reset_does_not_carry_predecessor_evidence": true
+  },
+  "authority_exclusions": [
+    "NO_INDEPENDENT_MODEL_ACTOR_PROOF",
+    "NO_HISTORICAL_G006_G013_PRODUCTION_IMPLEMENTATION_OWNER",
+    "NO_RETROACTIVE_948_J2",
+    "NO_AUTOMATIC_J2_FROM_GIT_OR_OWNER_POLICY",
+    "NO_AUTOMATIC_S1_ACTIVATION",
+    "NO_J3_SATISFIED_WITHOUT_INDEPENDENT_EVALUATOR",
+    "NO_PRODUCTION_OR_PHYSICAL_ARCHITECTURE_AUTHORITY",
+    "NO_FORMAL_B0_B4_SCORE"
+  ]
+}

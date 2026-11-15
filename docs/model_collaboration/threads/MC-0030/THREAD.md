@@ -1465,3 +1465,21 @@ This owner acceptance authorizes ONE future prospectively frozen composite execu
     J3=HOLD
     FORMAL_P03=INCOMPLETE
     NEXT=PREACTION_REALIZER_SCOPE_FREEZE
+
+## Frozen preaction experimental source-owner composite G006/G013 realizer, Checkpoint 951
+
+Research 690, Validation 387 and Message 104 freeze one exact post-acceptance experiment-realizer source scope in v03_real_pk_delegated_s1_event_scope_v01.json (SHA-256 0fefd227092177e2e444a63fdb5b1ee8a7200ca75524145fe13e2c4a52d549d7). The executable v03_real_pk_delegated_s1_composite_realizer_v01.py is owned by the exposed experiment author as an orchestration of unmodified G006/G009/G013, not a claim to the historical production library owner. Twenty-eight preaction negative/synthetic tests pass. The exact future one-event Git diff is deletion of previous P03 carrier, addition of delegated_s1 successor with the identical authored ID, and addition of co-committed non-COVERS source-owner realizer INTENT.
+
+The accepted policy is strictly one forward event. Scope freeze must be published before source action; action commit parent must equal freeze. At-action source cannot claim already-executed evidence. The realizer later executes on actual new Git commit/parent, produces only engineering evidence, and leaves separate postexecution authored COVERS and independent J3 mandatory. Qualified J2=0, S1 dormant, J3 HOLD, formal P03 incomplete and physical target unselected.
+
+    RESEARCH=690
+    VALIDATION=387
+    CHECKPOINT=951
+    MESSAGE=MC0030_MESSAGE104
+    PREACTION_SCOPE_FROZEN=true
+    REAL_EVENT=NOT_PERFORMED
+    QUALIFIED_RELATIONAL_J2=0
+    S1_ACTIVATED=false
+    J3=HOLD
+    FORMAL_P03=INCOMPLETE
+    NEXT=ONE_EXACT_POSTFREEZE_SOURCE_EVENT
