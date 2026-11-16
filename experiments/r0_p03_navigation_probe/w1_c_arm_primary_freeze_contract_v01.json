@@ -1,0 +1,225 @@
+{
+  "all_b0_b3_versions_frozen_before_task_origination": true,
+  "authored_metadata_exposure": {
+    "additional_source_to_governing_about_links": 23,
+    "author": "EXPOSED_CHATGPT_COORDINATOR",
+    "authored_minutes": "NOT_MEASURED",
+    "cross_cutting_concern_assignments": 115,
+    "cross_cutting_concern_definitions": 5,
+    "curated_research217_memberships": 120,
+    "heldout_metadata": "NOT_AUTHORED_AND_NOT_DRAWN",
+    "independent_annotation_reliability": "NOT_MEASURED",
+    "natural_owner_j2_attested": false,
+    "preferred_routes": 60,
+    "prior_pilot_exposure": "DISCLOSED",
+    "research217_historical_taxonomy_cost": "NOT_ZERO_NOT_QUANTIFIED"
+  },
+  "b4_engineering_evidence": "No qualified neural provider in project Python environment; external neural session/model host not enabled under equalized budget",
+  "b4_omitted_prospectively_at_fixture_freeze": true,
+  "b4_scope": "No neural semantic retrieval conclusion; Research513 conditional engineering-feasibility omission",
+  "classification": "C_ARM_W1_PRIMARY_B0_B3_SOURCE_AND_IMPL_FREEZE_BEFORE_INDEPENDENT_PRIMARY_TASKS",
+  "common_source_substrate_code_path_identical_to_all_arms": true,
+  "exact_shared_connector_functions": [
+    "list_sources",
+    "read",
+    "search",
+    "semantics",
+    "rank",
+    "context_pack"
+  ],
+  "excluded_formal_operations": {
+    "M6_formal_score": false,
+    "heldout_draw": false,
+    "neutral_legacy_9_gold": false,
+    "owner_M6_session_budget_approved": false,
+    "physical_architecture_selected": false,
+    "primary_12_tasks": false,
+    "production_j1_j2_j3_switched": false,
+    "protected_gold": false
+  },
+  "freeze_source_implementation_commit": "b987b1837f38479c3ccd34410de4ef52ab4c1edd",
+  "original_60_source_git_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+  "per_task_context_pack": {
+    "after_context_pack_fresh_answerer_extra_tool_reads": 0,
+    "answerer_direct_repo_or_web_connectors": "DISABLED",
+    "legacy_context_delivery": "SEPARATE_NOT_BUILT_BEFORE_NEUTRAL_9_CASE_FREEZE",
+    "max_original_source_excerpt_chars_total": 16800,
+    "max_query_characters": 160,
+    "original_source_excerpt_max_chars_per_candidate": 2800,
+    "source_read_full_bytes_while_building_common_BM25": true,
+    "top_source_count": 6
+  },
+  "post_freeze_task_construction": "NO_INDEPENDENT_TASKS_OR_GOLD_EXIST_AT_FREEZE",
+  "preregistered_w1_rule_commit": "b084ec8aa775426a96742ca437394f1f7b0b0b00",
+  "primary_context_delivery_mode": "DETERMINISTIC_ONE_SHOT_CLOSED_CONTEXT_PACK_BEFORE_FRESH_ANSWER_SESSION",
+  "schema_version": 1,
+  "scientific_limitations": [
+    "This freeze is for the primary W1 world only, not the original 65-source Research217 legacy world, whose neutral reference must precede its arm construction",
+    "Authored sidecar tags and editorial links are non-governing suggestions, and coordinator prior Route B exposure is disclosed; no independent gold is asserted",
+    "Query snippets are bounded; missing source propositions remain unknown and can cause an independently judged primary task failure",
+    "All future answer sessions receive equal one-shot context caps, tool budget, and fixed arm versions",
+    "This is a technical arm/version/metadata freeze, not a scored scientific viability finding"
+  ],
+  "treatment_specification": {
+    "additional_metadata_sha256": "ddee9beeace236eb8d987c62e69b0bb15fac4c501a81266ac6fbdfbb00450871",
+    "b4": {
+      "change_after_freeze": "REQUIRES_EXPLICIT_NEW_PROSPECTIVE_FREEZE_BEFORE_ANY_TASK_OR_SCORE_NOT_AN_AUTOMATIC_SWITCH",
+      "checked_local_python_packages": {
+        "sentence_transformers": false,
+        "torch": false,
+        "transformers": false
+      },
+      "classical_lsa_is_not_neural_b4": true,
+      "external_provider_availability": "NOT_INDEPENDENTLY_QUALIFIED",
+      "neural_models_ruled_out_globally": false,
+      "no_comparative_embedding_score_was_observed": true,
+      "omission_basis": "CURRENT_REPOSITORY_PYTHON_ENVIRONMENT_HAS_NO_QUALIFIED_NEURAL_PROVIDER_OR_EQUALIZED_EMBEDDING_RUNTIME",
+      "original_research513_conditional_b4_clause_kept": true,
+      "policy": "B4_OMITTED_PROSPECTIVELY_AT_W1_PRIMARY_C_ARM_FREEZE"
+    },
+    "catalog_sha256": "53c5cb65caccd1a9123f5d6da2e5738f618b383339c5bcfcf1d58fb9f5399495",
+    "classification": "W1_PRIMARY_B0_B3_ARM_IMPL_AND_METADATA_PREFREEZE",
+    "common_bm25_passage_count": 4626,
+    "common_capabilities": [
+      "source_list",
+      "exact_original_blob_read",
+      "literal_line_search",
+      "source_relative_evidence",
+      "non_governing_derived_orientation",
+      "bm25_full_text"
+    ],
+    "common_documentary_path_mentions": 65,
+    "common_original_source_bytes": 822370,
+    "common_original_source_count": 60,
+    "common_original_source_lines": 20580,
+    "common_source_semantic_digest": "3ea6617bdffbddfdb7b5d234c0598bae8d4a53b49e2641a1853b0712d0d62fe0",
+    "costs_not_quality_scores": {
+      "B0": {
+        "author_created_editorial_links": 0,
+        "authored_concern_definitions": 0,
+        "authored_concern_memberships": 0,
+        "authored_subject_memberships": 0,
+        "generated_vs_authored": "CURATED_TAGS_AUTHOR_AUTHORED; SOURCE_ANCHORS_DERIVED",
+        "historical_research217_taxonomy_and_membership_cost": "UNQUANTIFIED_REQUIRED",
+        "incremental_navigation_metadata_bytes_utf8": 0,
+        "manual_annotation_minutes": "NOT_MEASURED_NOT_ASSUMED_FREE",
+        "preferred_subject_routes": 0,
+        "recurring_cost": "NOT_YET_MEASURED_ON_HELDOUT"
+      },
+      "B1": {
+        "author_created_editorial_links": 0,
+        "authored_concern_definitions": 0,
+        "authored_concern_memberships": 0,
+        "authored_subject_memberships": 120,
+        "generated_vs_authored": "CURATED_TAGS_AUTHOR_AUTHORED; SOURCE_ANCHORS_DERIVED",
+        "historical_research217_taxonomy_and_membership_cost": "UNQUANTIFIED_REQUIRED",
+        "incremental_navigation_metadata_bytes_utf8": 13546,
+        "manual_annotation_minutes": "NOT_MEASURED_NOT_ASSUMED_FREE",
+        "preferred_subject_routes": 60,
+        "recurring_cost": "NOT_YET_MEASURED_ON_HELDOUT"
+      },
+      "B2": {
+        "author_created_editorial_links": 23,
+        "authored_concern_definitions": 0,
+        "authored_concern_memberships": 0,
+        "authored_subject_memberships": 0,
+        "generated_vs_authored": "CURATED_TAGS_AUTHOR_AUTHORED; SOURCE_ANCHORS_DERIVED",
+        "historical_research217_taxonomy_and_membership_cost": "UNQUANTIFIED_REQUIRED",
+        "incremental_navigation_metadata_bytes_utf8": 10814,
+        "manual_annotation_minutes": "NOT_MEASURED_NOT_ASSUMED_FREE",
+        "preferred_subject_routes": 0,
+        "recurring_cost": "NOT_YET_MEASURED_ON_HELDOUT"
+      },
+      "B3": {
+        "author_created_editorial_links": 0,
+        "authored_concern_definitions": 5,
+        "authored_concern_memberships": 115,
+        "authored_subject_memberships": 0,
+        "generated_vs_authored": "CURATED_TAGS_AUTHOR_AUTHORED; SOURCE_ANCHORS_DERIVED",
+        "historical_research217_taxonomy_and_membership_cost": "UNQUANTIFIED_REQUIRED",
+        "incremental_navigation_metadata_bytes_utf8": 8799,
+        "manual_annotation_minutes": "NOT_MEASURED_NOT_ASSUMED_FREE",
+        "preferred_subject_routes": 0,
+        "recurring_cost": "NOT_YET_MEASURED_ON_HELDOUT"
+      }
+    },
+    "equalized_context_budget": {
+      "full_original_source_read_available_through_common_contract": true,
+      "future_answerer_tool_call_budget": "MUST_BE_FROZEN_WITH_FRESH_SESSION_PACKETS_BEFORE_FORMAL_EXECUTION",
+      "max_query_characters": 160,
+      "source_candidates_per_query": 6,
+      "source_excerpt_chars_per_candidate": 2800,
+      "total_source_excerpt_chars": 16800
+    },
+    "formal_scored_attempts_used": 0,
+    "future_heldout_draw": "NOT_DRAWN",
+    "metadata_source_owner_authentication": "NOT_CLAIMED_EXPOSED_COORDINATOR_AUTHORED",
+    "original_source_git": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+    "per_arm_distinct_additions": {
+      "B0": "NONE_COMMON_ONLY",
+      "B1": "W5_18_SUBJECT_CONTROLLED_POLYHIERARCHY_WITH_PREFERRED_ROUTES",
+      "B2": "SOURCE_CARRIER_TO_GOVERNING_EXTRA_EDITORIAL_ABOUT_LINKS",
+      "B3": "CROSSCUTTING_CONCERNS_INDEPENDENT_OF_W5_SUBJECT_CATALOG"
+    },
+    "physical_target_selected": false,
+    "post_arm_freeze_primary_authoring": "NOT_YET_OCCURRED",
+    "production_authority_changed": false,
+    "protected_gold": "NONE",
+    "research559_legacy_nine": "NOT_YET_FROZEN_DO_NOT_BUILD_LEGACY_ARMS",
+    "schema_version": 1,
+    "w1_manifest_sha256": "b3e7de396f303fad1e14fe575d712693a784ab6732ced6e5667919bafdc5842e",
+    "w1_rule_git": "b084ec8aa775426a96742ca437394f1f7b0b0b00",
+    "w1_substrate_sha256": "457390b693bddaaa62a0f536c6c4c4afa690bb61a5ece8fd44c9c7f0681347ac"
+  },
+  "w1_primary_arm_implementation_git_objects": {
+    "curated_navigation_metadata": {
+      "bytes": 64025,
+      "git_blob_oid": "203c21b23574a8c2d3e835258019eadf2be42e77",
+      "git_source_commit": "b987b1837f38479c3ccd34410de4ef52ab4c1edd",
+      "path": "experiments/r0_p03_navigation_probe/w1_c_arm_authored_navigation_metadata.json",
+      "sha256": "ddee9beeace236eb8d987c62e69b0bb15fac4c501a81266ac6fbdfbb00450871"
+    },
+    "primary_runtime": {
+      "bytes": 26550,
+      "git_blob_oid": "ded4e3c81b9d478b9e8d137199a8ec6f1410fa4b",
+      "git_source_commit": "b987b1837f38479c3ccd34410de4ef52ab4c1edd",
+      "path": "experiments/r0_p03_navigation_probe/w1_primary_c_arm_v01.py",
+      "sha256": "5e4c90421854a01be0fb564c4fdffbdb96ec99ca7c7da2a2de0762be30c93be2"
+    },
+    "primary_runtime_adversarial_tests": {
+      "bytes": 12119,
+      "git_blob_oid": "b2e21a540b207ffd4567666fd843aa8e27227205",
+      "git_source_commit": "b987b1837f38479c3ccd34410de4ef52ab4c1edd",
+      "path": "tests/unit/test_r0_p03_w1_primary_c_arm_v01.py",
+      "sha256": "55928b51a346c5f469048efc988bea0524877f5e1a9c57af3e0ceb9d5977b438"
+    },
+    "research217_subject_catalog": {
+      "bytes": 17932,
+      "git_blob_oid": "cfa520fcb4ed61079f835ba24de161ef47f6dec3",
+      "git_source_commit": "b987b1837f38479c3ccd34410de4ef52ab4c1edd",
+      "path": "experiments/project_knowledge_subject_navigation_t1_v02/subject_catalog_candidate_v02.json",
+      "sha256": "53c5cb65caccd1a9123f5d6da2e5738f618b383339c5bcfcf1d58fb9f5399495"
+    },
+    "w1_build_manifest": {
+      "bytes": 54185,
+      "git_blob_oid": "8a4c21cb262971d8ddfc55740f2514b168bfdb42",
+      "git_source_commit": "b987b1837f38479c3ccd34410de4ef52ab4c1edd",
+      "path": "experiments/r0_p03_navigation_probe/w1_manifest.json",
+      "sha256": "b3e7de396f303fad1e14fe575d712693a784ab6732ced6e5667919bafdc5842e"
+    },
+    "w1_sampling_rule": {
+      "bytes": 13652,
+      "git_blob_oid": "c6e4f8395b68839f6d37e96eb5531a6569ebea9b",
+      "git_source_commit": "b987b1837f38479c3ccd34410de4ef52ab4c1edd",
+      "path": "experiments/r0_p03_navigation_probe/W1_RULE.md",
+      "sha256": "43b87eb7c3ac3dd4f58a4dc4bd8e8dcb326fe7feaae27da9bc3a137b079221fc"
+    },
+    "w1_source_relative_substrate": {
+      "bytes": 471415,
+      "git_blob_oid": "f3f8769cd3e9704c9d54600b1a17add7c4d323bb",
+      "git_source_commit": "b987b1837f38479c3ccd34410de4ef52ab4c1edd",
+      "path": "experiments/r0_p03_navigation_probe/w1_substrate.json",
+      "sha256": "457390b693bddaaa62a0f536c6c4c4afa690bb61a5ece8fd44c9c7f0681347ac"
+    }
+  }
+}
