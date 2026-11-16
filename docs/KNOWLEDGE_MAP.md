@@ -1103,6 +1103,17 @@ docs/research/695_r0_p03_exact_source_content_role_preflight_and_common_runtime.
 docs/research/696_r0_p03_executed_distinct_navigation_channels_on_v03_source_world.md
 docs/research/697_r0_p03_finite_fresh_reviewer_route_failure_and_formal_readiness_hold.md
 docs/research/698_r0_p03_claude_handoff_route_correction_and_narrow_critical_path_review.md
+docs/research/699_r0_p03_w1_precommitted_60_source_build_world_and_mechanical_substrate.md
+docs/local_execution/validation/395_r0_p03_w1_precommitted_real_world_and_semantics_verification.md
+docs/checkpoints/960_r0_p03_w1_actual_source_world_build_frozen_and_shared_substrate.md
+docs/model_collaboration/threads/MC-0030/messages/113_claude_r0_p03_execution_admission_path_and_role_separation_review.md
+docs/model_collaboration/threads/MC-0030/messages/114_chatgpt_r0_p03_message113_reconciliation_and_w1_execution.md
+experiments/r0_p03_navigation_probe/W1_RULE.md
+experiments/r0_p03_navigation_probe/w1_freeze_v01.py
+experiments/r0_p03_navigation_probe/w1_manifest.json
+experiments/r0_p03_navigation_probe/w1_substrate.json
+experiments/r0_p03_navigation_probe/w1_exclusion_log.json
+tests/unit/test_r0_p03_w1_precommitted_world_freeze_v01.py
 docs/checkpoints/959_r0_p03_claude_collaboration_route_corrected_and_handoff_frozen.md
 docs/model_collaboration/threads/MC-0030/messages/112_chatgpt_r0_p03_restore_claude_collaboration_and_execution_critical_path.md
 docs/local_execution/validation/394_r0_p03_fresh_reviewer_execution_failures_and_admission_hold.md
@@ -2434,7 +2445,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-959 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-960 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

@@ -1,0 +1,3234 @@
+{
+  "build_predeclared_future_heldout_capacity": {
+    "domain_collaboration": {
+      "build_count": 4,
+      "disconnected_selected_count": 0,
+      "frame_count": 130,
+      "future_heldout_capacity": 126,
+      "future_heldout_quota": 2,
+      "seed_count": 0
+    },
+    "governing": {
+      "build_count": 9,
+      "disconnected_selected_count": 0,
+      "frame_count": 29,
+      "future_heldout_capacity": 20,
+      "future_heldout_quota": 3,
+      "seed_count": 2
+    },
+    "historical_evidence": {
+      "build_count": 10,
+      "disconnected_selected_count": 0,
+      "frame_count": 1909,
+      "future_heldout_capacity": 1899,
+      "future_heldout_quota": 3,
+      "seed_count": 0
+    },
+    "orientation_foundation": {
+      "build_count": 7,
+      "disconnected_selected_count": 0,
+      "frame_count": 63,
+      "future_heldout_capacity": 56,
+      "future_heldout_quota": 2,
+      "seed_count": 2
+    },
+    "product_realization": {
+      "build_count": 10,
+      "disconnected_selected_count": 0,
+      "frame_count": 245,
+      "future_heldout_capacity": 235,
+      "future_heldout_quota": 3,
+      "seed_count": 0
+    },
+    "project_realization": {
+      "build_count": 12,
+      "disconnected_selected_count": 0,
+      "frame_count": 129,
+      "future_heldout_capacity": 117,
+      "future_heldout_quota": 4,
+      "seed_count": 4
+    },
+    "verification": {
+      "build_count": 8,
+      "disconnected_selected_count": 0,
+      "frame_count": 117,
+      "future_heldout_capacity": 109,
+      "future_heldout_quota": 3,
+      "seed_count": 2
+    }
+  },
+  "classification": "W1_PRIOR_TO_TASKS_EXCLUSION_EVIDENCE_NOT_GOLD",
+  "contract": {
+    "rule_git_commit": "b084ec8aa775426a96742ca437394f1f7b0b0b00",
+    "rule_sha256": "43b87eb7c3ac3dd4f58a4dc4bd8e8dcb326fe7feaae27da9bc3a137b079221fc",
+    "source_git_revision": "17ea403ef64092f275e3c7d6492d99929804f8e5"
+  },
+  "excluded_path_records": [
+    {
+      "reason": "EXPLICIT_ACCUMULATED_P03_CONTENT_EXCLUSION",
+      "source_path": "docs/ARCHITECTURE_PROGRAM_OVERVIEW.md"
+    },
+    {
+      "reason": "EXPLICIT_ACCUMULATED_P03_CONTENT_EXCLUSION",
+      "source_path": "docs/CURRENT_STATE.md"
+    },
+    {
+      "reason": "EXPLICIT_ACCUMULATED_P03_CONTENT_EXCLUSION",
+      "source_path": "docs/KNOWLEDGE_MAP.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/014_provider_neutral_baseline_runners.md"
+    },
+    {
+      "reason": "SCOPE_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/017_duplicate_structured_output_normalization.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/018_first_behavior_evaluable_b0_run.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/019_first_b0_semantic_trajectory_review.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/020_first_behavior_evaluable_b1_run.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/021_first_matched_b0_b1_semantic_comparison.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/023_second_behavior_evaluable_b0_calibration_run.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/024_second_behavior_evaluable_b1_calibration_run.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/025_third_behavior_evaluable_b1_calibration_run.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/053_first_held_out_attempt_h1_r01_b0_terminal_record.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/054_first_held_out_attempt_h1_r01_b0_full_mechanical_verification.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/055_second_held_out_attempt_h1_r01_b1_terminal_record.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/056_h1_r01_b1_full_mechanical_verification.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/059_h1_r02_b1_terminal_record.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/060_h1_r02_b1_full_mechanical_verification.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/063_h1_r02_b0_a01_non_behavior_evaluable_provider_failure.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/064_h1_r02_b0_a01_provider_ambiguity_verified_and_replacement_authorized.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/065_h1_r02_b0_a02_second_non_behavior_evaluable_provider_failure.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/066_h1_r02_b0_a02_provider_ambiguity_verified_and_final_replacement_authorized.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/067_h1_r02_b0_a03_behavior_evaluable_terminal_record.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/068_h1_r02_b0_a03_full_mechanical_verification.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/071_h1_r03_b0_pre_provider_interruption_recovery_and_relaunch_authorization.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/072_h1_r03_b0_behavior_evaluable_terminal_record.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/073_h1_r03_b0_full_mechanical_verification.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/077_h1_r03_b1_behavior_evaluable_terminal_record.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/078_h1_r03_b1_full_mechanical_verification.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/079_h1_r04_b0_behavior_evaluable_terminal_record.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/080_h1_r04_b0_full_mechanical_verification.md"
+    },
+    {
+      "reason": "SCOPE_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/082_held_out_supervisor_retroactively_validated_and_frozen_for_live_use.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/555_w5_information_architecture_frozen_broader_semantic_migration_opened.md"
+    },
+    {
+      "reason": "SCOPE_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/556_activation_orchestration_self_hosting_bootstrap_opened.md"
+    },
+    {
+      "reason": "SCOPE_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/566_ao9_p7_owner_decisions_accepted_research218_evolution_next.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/682_key_author_a_p3_birth_heldout_phase_defined.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/683_key_author_a_p3_explicitly_authorized_batch1_next.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/684_key_author_a_p3_batch1_passed_batch2_released.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/686_key_author_a_p3_batch2_passed_batch3_released.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/687_key_author_a_p3_batch3_passed_batch4_released.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/688_key_author_a_p3_batch4_passed_batch5_released.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/689_key_author_a_p3_batch5_passed_batch6_released.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/690_key_author_a_p3_batch6_passed_batch7_released.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/691_key_author_a_p3_batch7_passed_batch8_released.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/692_key_author_a_p3_batch8_passed_batch9_released.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/693_key_author_a_p3_batch9_compaction_hold_reconciled.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/694_key_author_a_p3_batch9_replacement_passed_batch10_fresh_session_released.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/695_key_author_a_p3_batch10_passed_batch11_released.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/696_key_author_a_p3_batch11_passed_batch12_fresh_session_released.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/697_key_author_a_p3_batch12_passed_batch13_fresh_session_released.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/698_key_author_a_p3_birth_heldout_passed.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/checkpoints/891_r0_owner_authentication_deferral_and_p03_resume.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/892_r0_p03_source_reconciliation_and_prefreeze_next.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/893_r0_p03_source_frame_contract_and_independent_review_next.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/894_r0_p03_source_adversarial_review_handoff_prepared.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/895_r0_p03_owner_option_a_legacy_gold_amendment_and_claude_reconciliation.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/896_r0_p03_role_frame_and_neutral_source_specimen.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/897_r0_p03_independent_reference_intake_and_authoring_readiness.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/898_r0_p03_source_only_capsule_and_reviewer_execution_readiness.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/899_r0_p03_bounded_evidence_capacity_hold_and_prospective_decision.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/900_r0_p03_owner_accepted_prospective_c02_cohort_and_neutral_author_input.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/901_r0_p03_c02_independent_origination_complete_and_protected_review_boundary.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/902_r0_p03_c02_phase_a_equivalence_result_and_capacity_hold.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/903_r0_p03_c02_phase_b_ledger_only_capacity_hold_and_original_source_boundary.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/904_r0_p03_c02_direct_original_evidence_reality_and_prospective_reference_decision.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/905_r0_p03_actual_exploratory_legacy_b0_b1_live_navigation_execution.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/906_r0_p03_real_source_citation_proxy_exploratory_execution.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/907_r0_p03_real_65_heading_query_location_stress_executed.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/908_r0_p03_hybrid_fusion_and_query_routing_real_experiment.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/909_r0_p03_source_reference_navigation_and_abstention_real_execution.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/910_r0_p03_paraphrase_failure_and_evidence_scope_abstention_execution.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/911_r0_p03_reference_evidence_context_audit_and_versioned_declared_source_subset.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/912_r0_p03_exposed_claude_critique_reconciliation_and_governed_reference_grammar_repair.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/913_r0_p03_actual_new_source_t2_owner_status_retrieval_and_guarded_evidence_execution.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/914_r0_p03_t2_118_request_subject_binding_and_unsupported_authority_execution.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/915_r0_p03_real_decision_ledger_snapshot_currentness_scope_and_accepted_nonoperative_execution.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/916_r0_p03_t2_no_id_query_method_comparison_and_consensus_source_status_hypotheses.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/917_r0_p03_original_git_and_external_ci_execution_evidence_boundary.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/918_r0_p03_route_b_first_primary_twelve_task_b0_source_anchored_execution.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/919_r0_p03_route_b_actual_subject_editorial_link_concern_comparison.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/920_r0_p03_route_b_actual_classical_lsa_semantic_embedding_experiment_and_neural_access_hold.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/921_r0_p03_route_b_actual_extractive_answer_citations_and_reference_evidence_execution.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/922_r0_p03_route_b_actual_exposed_gpt6_source_bounded_reasoned_answer_pairs.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/923_r0_p03_three_claude_masked_answer_reviews_completed_and_unmasked.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/924_r0_p03_four_need_independent_source_reference_feasibility_completed.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/925_r0_p03_original_reference_citation_provenance_audited_with_twelve_gaps.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/926_r0_p03_twelve_quote_review_and_four_need_gold_free_source_packets_frozen.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/927_r0_p03_frozen_two_author_source_answers_and_cross_case_evidence_boundary.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/928_r0_p03_masked_four_need_claim_support_review_packet_ready.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/929_r0_p03_four_need_masked_review_reconciled_and_exploratory_stop.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/930_r0_p03_original_eighty_source_closure_frontier_and_shared_projection_probe.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/931_r0_p03_historical_documentary_semantic_chain_verified_without_authority_promotion.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/932_r0_p03_method_bottleneck_assessment_and_claude_adversarial_handoff.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/933_r0_p03_claude_method_review_reconciled_and_x1_interface_slice_executed.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/934_r0_p03_coupled_x1_mutation_probe_and_structural_stop.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/935_r0_p03_owner_amendment_and_real_content_seed_preflight.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/936_r0_p03_real_event_semantic_contract_candidate_and_owner_packet_hold.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/937_r0_p03_experimental_d1_effects_accepted_and_j2_qualification_pending.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/938_r0_p03_j2_component_preflight_and_natural_owner_handoff.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/939_r0_p03_source_owner_cannot_attest_and_j2_method_discrimination.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/940_r0_p03_forward_j2_at_action_evidence_probe_and_design_options.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/941_r0_p03_typed_j2_assurance_port_and_qualification_gap.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/942_r0_p03_github_native_receipt_feasibility_and_ci_requalification.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/943_r0_p03_provider_ci_receipt_admission_contract_and_unresolved_actor_trust.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/944_r0_p03_live_provider_status_conflict_reconciliation_and_trust_root_stop.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/945_r0_p03_real_semantic_world_candidate_audit_and_owner_packet_boundary.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/946_r0_p03_accepted_pk_two_state_j1_real_source_transition_common_world.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/947_r0_p03_real_source_g013_execution_and_common_world_observations.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/948_r0_p03_prospective_s1_j2_source_owner_evidence_and_assurance_hold.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/949_r0_p03_experimental_j2_source_owner_assurance_policy_owner_decision.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/950_r0_p03_experiment_j2_policy_owner_accepted_realizer_freeze_next.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/951_r0_p03_delegated_s1_composite_realizer_preaction_freeze.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/952_r0_p03_delegated_source_event_g006_g013_real_execution.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/953_r0_p03_delegated_s1_experiment_only_relational_j2_qualified.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT",
+      "source_path": "docs/checkpoints/954_r0_p03_experiment_s1_j3_open_reset_evaluated.md"
+    },
+    {
+      "reason": "SCOPE_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/foundations/015_held_out_supervision_and_mechanical_verification_architecture.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/244_r0_p03_source_frame_and_protocol_preparation.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/245_r0_p03_source_census_and_shared_substrate_candidate.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/246_r0_p03_source_modality_and_collaboration_handoff.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/247_r0_p03_option_a_reconciliation_and_legacy_preservation.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/248_r0_p03_role_frame_and_source_bound_specimen.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/249_r0_p03_independent_reference_intake_and_preservation.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/250_r0_p03_source_only_capsule_and_preservation.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/251_codexless_helper_restart_and_uncertain_commit_recovery.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/252_r0_p03_source_access_and_reviewer_boundary_feasibility.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/253_r0_p03_restricted_host_synthetic_preflight.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/254_r0_p03_reference_custody_and_role_design_feasibility.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/255_r0_p03_synthetic_stream_collector_and_sealing_mechanics.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/256_r0_p03_principal_and_recipient_encryption_feasibility.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/257_r0_p03_owner_sandbox_and_synthetic_cms_trial.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/258_r0_p03_owner_canary_cross_tool_access_postflight.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/259_r0_p03_protected_owner_canary_os_denial.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/260_r0_p03_arm_author_controlled_write_and_host_boundary.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/261_r0_p03_task_capacity_and_common_substrate_parity_diagnostic.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/262_r0_p03_source_eligibility_closure_and_neutral_mapping.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/263_semantic_git_preflight_timeout_release_recovery.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/264_r0_p03_s1_reviewer_transport_custody_qualification_plan.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/265_r0_p03_s1_source_free_transport_custody_synthetic_trial.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/266_r0_p03_s1_fake_role_boundary_adversarial_tests.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/267_r0_p03_s1_read_only_security_boundary_evidence.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/268_r0_p03_fictional_reviewer_report_cms_regressions.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/269_r0_p03_owner_reviewer_recipient_preflight.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/270_r0_p03_owner_reported_reviewer_cms_handoff_receipt.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/271_r0_p03_v04_review_evidence_and_v05_method_regressions.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/272_r0_p03_v05_s1_a2_readiness_preflight.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/273_r0_p03_v05_external_review_and_v06_gate_validation.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/274_r0_p03_s1_a2_live_tool_boundary_preflight.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/275_r0_p03_candidate_intake_and_fixture_integrity.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/276_r0_p03_candidate_fidelity_report_reconciliation.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/277_r0_p03_candidate_outbound_binary_owner_relayed_integrity.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/278_semantic_git_host_readonly_release_repair_and_a2_publication.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/279_r0_p03_source_free_protected_output_preflight.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/280_r0_p03_s1_a2_owner_m1_source_free_handoff_ready.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/281_r0_p03_source_free_owner_verifier_stage_diagnostics.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/282_r0_p03_owner_short_passphrase_verifier_repair.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/283_r0_p03_live_owner_five_record_readback_and_next_a2_boundary.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/284_r0_p03_author_view_route_preflight_and_hold.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/285_r0_p03_actual_author_view_intake_report_fingerprint_and_hold.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/286_r0_p03_owner_confirmed_temporary_author_view_ui_no_connected_apps.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/287_r0_p03_author_route_risk_and_distinct_challenger_intake_preflight.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/288_r0_p03_actual_pinned_source_status_first_wave_staging.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/289_r0_p03_wave0_protected_real_review_handoff_preflight.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/290_r0_p03_wave0_exact_owner_authorization_and_owner_only_setup_boundary.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/291_r0_p03_wave0_owner_reported_real_recipient_prepared.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/292_r0_p03_wave0_owner_relayed_encrypted_reviewer_receipt_pending_readback.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/293_r0_p03_real_wave0_owner_authenticated_reviewer_readback.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/294_r0_p03_wave0_independent_challenger_first_pass_route_preflight.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/295_r0_p03_wave0_owner_authorized_distinct_challenger_first_pass.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/296_r0_p03_wave0_challenger_first_pass_owner_relayed_encrypted_receipt.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/297_r0_p03_challenger_owner_verify_and_private_dual_comparison_preflight.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/298_r0_p03_wave0_owner_comparison_module_import_repair.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/299_r0_p03_wave0_owner_private_comparison_verified.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/300_codexless_cold_bootstrap_github_keyring_dependency_recovery.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/301_r0_p03_owner_authorized_wave0_substantive_challenge_handoff.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/302_r0_p03_wave0_owner_restricted_adversarial_packet_verified.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/303_r0_p03_wave0_substantive_challenger_sealed_receipt_pending_owner_authentication.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/304_r0_p03_wave0_substantive_adversarial_challenge_owner_authenticated.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/305_r0_p03_wave0_owner_authorized_semantic_adjudication_preflight.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/306_r0_p03_wave0_owner_verified_semantic_adjudication_packet.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/307_r0_p03_wave0_semantic_adjudication_sealed_receipt_pending_owner_readback.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/308_r0_p03_wave0_semantic_adjudication_owner_authenticated.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/309_r0_p03_wave0_authenticated_semantic_decisions_owner_private_qualification_route.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/310_r0_p03_wave0_owner_private_scientific_review_created.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/311_r0_p03_real_2539_source_world_coverage_gate.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/312_r0_p03_historical_dependency_frontier_and_shared_lexical_preflight.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/313_r0_p03_real_source_qualification_calibration_holdout_preparation.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/314_r0_p03_owner_authorized_calibration_only_separate_nonarm_handoff.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/315_r0_p03_independent_calibration_completion_receipt_rule_inspection_pending.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/316_r0_p03_real_source_free_rule_review_and_falsification_freeze_readiness.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/317_r0_p03_owner_accepted_frozen_falsification_rule_and_narrow_holdout_authorization.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/318_r0_p03_independent_falsification_safe_receipt_summary_pending.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/319_r0_p03_actual_source_free_falsification_summary_and_bounded_method_outcome.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/320_r0_p03_actual_80_source_candidate_and_critical_path_release_review.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/321_r0_p03_owner_authorized_actual_80_source_release_review_handoff.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/322_r0_p03_eighty_source_release_review_receipt_and_material_capacity_hold.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/323_r0_p03_actual_eighty_source_aggregate_and_critical_path_order_correction.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/324_r0_p03_neutral_independent_need_origination_input_and_one_file_handoff.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/325_r0_p03_v01_safe_stop_and_prospective_need_author_v02_handoff.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/326_r0_p03_real_twelve_need_origination_receipt_and_owner_private_intake.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/327_r0_p03_owner_need_import_report_and_need_specific_source_discovery_handoff.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/328_r0_p03_twelve_need_independent_adjudication_receipt_and_verification_boundary.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/329_r0_p03_real_need_adjudication_aggregate_and_exact_byte_recovery.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/330_r0_p03_owner_private_31_source_byte_export_receipt_and_reviewer_handoff.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/331_r0_p03_31_authenticated_originals_and_six_material_holds_remain.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/332_r0_p03_independently_verified_31_original_payloads_and_six_material_holds.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/333_r0_p03_material_hold_witness_aggregate_and_indexed_recovery.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/334_r0_p03_actual_v02_witness_and_capacity_boundary.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/335_r0_p03_execution_readiness_evidence_and_blocker_audit.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/336_r0_p03_owner_accepted_c02_neutral_packet_and_handoff.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/337_r0_p03_c02_actual_source_free_origination_receipt_verified.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/338_r0_p03_c02_actual_phase_a_equivalence_aggregate_and_task_capacity.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/339_r0_p03_c02_actual_phase_b_ledger_only_feasibility.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/340_r0_p03_c02_direct_original_safe_receipt_identity_and_capacity.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/341_r0_p03_actual_live_exploratory_b0_b1_legacy_navigation_result.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/342_r0_p03_executed_b2_source_citation_proxy_result.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/343_r0_p03_executed_65_source_heading_query_locator_stress.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/344_r0_p03_actual_hybrid_fusion_routing_and_ablation_execution.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/345_r0_p03_actual_directed_reference_query_negative_evidence_execution.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/346_r0_p03_actual_719_paraphrase_and_semantic_scope_boundary_execution.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/347_r0_p03_real_source_reference_provenance_audit_and_versioned_correction.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/348_r0_p03_native_declared_reference_evidence_and_model_message_identity_reconciliation.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/349_r0_p03_new_source_t2_24_question_owner_status_and_abstention_execution.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/350_r0_p03_t2_actual_118_request_source_identity_and_authority_abstention.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/351_r0_p03_real_two_git_snapshot_decision_ledger_identity_and_lifecycle_execution.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/352_r0_p03_no_id_t2_competing_lexical_character_fusion_and_source_status_tests.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/353_r0_p03_original_git_event_witness_and_external_ci_evidence_qualification.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/354_r0_p03_route_b_first_twelve_primary_source_answer_and_b0_execution.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/355_r0_p03_route_b_exposed_subject_editorial_link_concern_method_comparison.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/356_r0_p03_route_b_b4_classical_lsa_embedding_execution_and_exact_provenance.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/357_r0_p03_route_b_actual_extractive_84_answer_citation_evidence_execution.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/358_r0_p03_route_b_exposed_gpt6_twenty_four_model_answers_and_cited_original_lines.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/359_r0_p03_three_claude_review_consolidation_and_original_git_source_lines.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/360_r0_p03_fresh_reference_pilot_public_provenance_and_custody_boundary.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/361_r0_p03_private_reference_git_blob_line_literal_audit_v01_v02.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/362_r0_p03_four_need_gold_free_actual_source_packet_retrieval_and_citation_integrity.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/363_r0_p03_two_actual_source_answer_commits_and_case_boundary_audit.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/364_r0_p03_masked_case_local_original_excerpt_claim_review_fixture_qualified.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/365_r0_p03_masked_claim_review_receipt_and_source_free_reconciliation.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/366_r0_p03_eighty_source_frontier_and_non_authoritative_projection_verification.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/367_r0_p03_documentary_semantic_chain_exact_source_and_nonpromotion.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/368_r0_p03_method_redesign_source_trace_and_claude_handoff_validation.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/369_r0_p03_x1_limited_navigation_extension_boundary_execution.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/370_r0_p03_x1_coupled_d2_freshness_source_revision_and_lineage_checks.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/371_r0_p03_prospective_amendment_and_git_pinned_seed_verification.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/372_r0_p03_real_event_owner_packet_and_semantic_integrity_checks.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/373_r0_p03_d1_experiment_owner_binding_and_projection_verification.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/374_r0_p03_j2_original_git_component_evidence_preflight.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/375_r0_p03_message091_source_owner_cannot_attest_and_evidence_boundaries.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/376_r0_p03_live_at_action_j2_evidence_and_assurance_probe.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/377_r0_p03_typed_j2_source_assurance_contract_verification.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/378_r0_p03_github_provider_evidence_and_cross_platform_ci_repair.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/379_r0_p03_provider_ci_receipt_admission_contract_source_bound_execution.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/380_r0_p03_live_provider_ci_status_reconciliation_and_gap.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/381_r0_p03_real_semantic_world_candidate_source_audit.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/382_r0_p03_accepted_j1_real_git_source_move_and_common_world.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/383_r0_p03_real_git_source_g013_incremental_full_freshness.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/384_r0_p03_prospective_s1_j2_source_action_historical_replay_and_assurance_hold.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/385_r0_p03_experiment_j2_policy_source_bound_negative_preflight.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/386_r0_p03_experiment_j2_policy_owner_acceptance_verified.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/387_r0_p03_delegated_s1_composite_realizer_preaction_contract.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/388_r0_p03_delegated_s1_actual_source_g006_g013_replay.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/389_r0_p03_delegated_s1_postexecution_j2_source_relative_admission.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION",
+      "source_path": "docs/local_execution/validation/390_r0_p03_separate_s1_j3_open_reset_and_component_falsification.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0001/messages/001_chatgpt_review_request.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0001/messages/002_claude_independent_proposal.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0001/messages/003_claude_comparative_review.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0001/messages/004_chatgpt_response_to_claude.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0001/messages/005_claude_phase_d_challenge.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0001/messages/006_chatgpt_phase_d_resolution.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0002/messages/001_chatgpt_implementation_review_request.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0002/messages/002_claude_implementation_review.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0002/messages/003_chatgpt_review_disposition.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0003/messages/001_chatgpt_deferred_catchup_review_request.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0003/messages/002_claude_deferred_catchup_review.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0003/messages/003_chatgpt_review_disposition.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0004/messages/001_claude_independent_phase_a_proposal.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0004/messages/002_claude_comparative_review.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0004/messages/003_chatgpt_work_unit_grammar_divergent_ideation_request.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0004/messages/004_claude_work_unit_grammar_divergent_ideation.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0004/messages/005_chatgpt_deep_focus_transition_divergent_ideation_request.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0004/messages/006_claude_deep_focus_transition_divergent_ideation.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0004/messages/007_chatgpt_conversation_workspace_blind_design_request.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0004/messages/008_claude_conversation_workspace_blind_design.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0004/messages/009_chatgpt_conversation_scope_work_unit_anchor_ideation_request.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0004/messages/009a_chatgpt_conversation_scope_anchor_human_refinement_addendum.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0004/messages/010_claude_conversation_scope_work_unit_anchor_ideation.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0004/messages/011_chatgpt_project_owner_pause_source_vault_resume.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0005/messages/001_claude_v07_information_architecture_review.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0006/messages/001_claude_source_universe_architecture_review.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0006/messages/002_chatgpt_task_owner_disposition.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0006/messages/ENVIRONMENT_SELECTION.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0007/messages/001_claude_code_source_hardening_verification.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0007/messages/002_chatgpt_interaction_provenance_correction.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0008/messages/001_claude_independent_governed_document_integrity_proposal.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0008/messages/002_chatgpt_task_owner_disposition_and_candidate_integrity_architecture.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0008/messages/003_claude_comparative_governed_document_integrity_review.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0008/messages/004_chatgpt_final_reconciliation_and_accepted_integrity_architecture.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0011/messages/001_claude_foundational_knowledge_architecture_reflection.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0011/messages/002_chatgpt_response_to_claude_foundational_reflection.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0011/messages/003_claude_focused_foundational_followup.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0011/messages/004_chatgpt_second_response_scope_control_plane_and_research_sequence.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0011/messages/005_claude_architecture_boundary_and_sequence_followup.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0011/messages/006_chatgpt_foundational_dialogue_synthesis_and_owner_decision_request.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0012/messages/001_claude_post_evidence_pre_owner_source_reassessment.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0012/messages/002_chatgpt_phase1_disposition_and_phase2_owner_source_handoff.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0012/messages/003_claude_post_owner_source_incremental_evaluation.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0012/messages/004_chatgpt_cross_model_reconciliation_and_thread_close.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0013/messages/001_claude_independent_architecture_counter_design.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0013/messages/002_chatgpt_independent_design_disposition_and_comparative_handoff.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0013/messages/003_claude_comparative_architecture_critique.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0013/messages/004_chatgpt_comparative_reconciliation_and_probe_handoff.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0014/messages/001_claude_adversarial_probe_interpretation.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0014/messages/002_chatgpt_adversarial_review_disposition_and_close.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0015/messages/001_claude_independent_real_corpus_judgment.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0015/messages/002_chatgpt_cross_reviewer_comparison_and_construct_validity_handoff.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0015/messages/003_claude_comparative_construct_validity_review.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0015/messages/004_chatgpt_construct_reconciliation_and_thread_close.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0016/messages/001_claude_adversarial_candidate_01_review.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0016/messages/002_chatgpt_adversarial_review_disposition_and_narrow_followup.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0016/messages/003_claude_narrow_candidate_amendment_review.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0016/messages/004_chatgpt_final_disposition_and_thread_close.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0017/messages/001_claude_independent_w0_implementation_architecture.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0017/messages/002_chatgpt_comparative_w0_implementation_architecture.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0017/messages/003_claude_comparative_w0_implementation_critique.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0017/messages/004_chatgpt_final_w0_implementation_architecture_synthesis.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/model_collaboration/threads/MC-0018/BRIEF.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/model_collaboration/threads/MC-0018/RESOLUTION.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/model_collaboration/threads/MC-0018/THREAD.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0018/messages/001_claude_w5_information_architecture_review_and_counterdesign.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0018/messages/002_chatgpt_w5_v02_disposition_and_implementation_review_request.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0018/messages/003_claude_w5_v02_and_w0_w4_implementation_conformance_followup.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0018/messages/004_chatgpt_final_reconciliation_and_empirical_gate_handoff.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/model_collaboration/threads/MC-0019/BRIEF.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/model_collaboration/threads/MC-0019/RESOLUTION.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/model_collaboration/threads/MC-0019/THREAD.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0019/messages/001_claude_blind_subject_placement.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0019/messages/002_chatgpt_calibration_comparison_and_t1_disposition.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/model_collaboration/threads/MC-0020/BRIEF.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/model_collaboration/threads/MC-0020/RESOLUTION.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/model_collaboration/threads/MC-0020/THREAD.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0020/messages/001_claude_v02_blind_subject_placement.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0020/messages/002_chatgpt_v02_calibration_comparison_and_final_t1_disposition.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0021/messages/001_claude_independent_control_plane_architecture.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0021/messages/002_chatgpt_comparative_exposure_package.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0021/messages/003_claude_comparative_control_plane_review.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0021/messages/004_chatgpt_reconciliation_and_ao8_disposition.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0022/messages/001_claude_independent_residency_and_reuse_architecture.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0022/messages/002_chatgpt_materialized_project_sovereignty_candidate_and_comparative_exposure.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0022/messages/003_claude_comparative_residency_and_reuse_review.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0022/messages/004_chatgpt_reconciliation_and_residency_disposition.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0023/messages/001_claude_adversarial_g_dual_review.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0023/messages/002_chatgpt_disposition_and_g_dual_amendment_candidate.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0023/messages/003_chatgpt_owner_amendment_acceptance_and_thread_close.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0024/messages/001_claude_r218_vs_r254_comparative_review.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0024/messages/002_chatgpt_comparative_reconciliation_and_r7_amendment_candidate.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0024/messages/003_chatgpt_owner_r7_amendment_acceptance_and_thread_close.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0025/messages/001_claude_adversarial_r8a_exact_target_review.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0025/messages/002_chatgpt_r8a_adversarial_reconciliation_and_amendment_candidate.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0025/messages/003_chatgpt_owner_r8a_amendment_acceptance_and_thread_close.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0026/messages/001_claude_independent_r8b_representation_architecture.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0026/messages/002_chatgpt_comparative_r8b_reconciliation.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0026/messages/003_claude_comparative_r8b_reconciliation_critique.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0026/messages/004_chatgpt_final_reconciliation_and_probe_handoff.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0027/messages/001_claude_p_r8b_01_result_audit.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0027/messages/002_chatgpt_audit_reconciliation_and_corrected_rerun_handoff.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0027/messages/003_chatgpt_corrected_probe_pass_owner_decision_handoff.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0027/messages/004_chatgpt_owner_acceptance_and_thread_close.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0028/messages/001_claude_independent_assurance_architecture.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0028/messages/002_chatgpt_facet_warrant_comparative_reconciliation_and_warrant_f_handoff.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0028/messages/003_claude_comparative_warrant_f_critique.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0028/messages/004_chatgpt_owner_freedom_and_warrant_f_v02_reconciliation.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0028/messages/005_chatgpt_owner_acceptance_and_thread_close.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0029/messages/001_claude_independent_spec028_ao10_design.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0029/messages/002_chatgpt_comparative_reconciliation.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0029/messages/003_claude_comparative_integrated_project_system_critique.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0029/messages/004_chatgpt_message003_reconciliation.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0029/messages/005_claude_drp01_annotation_b.json"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0029/messages/006_claude_drp03_obligation_units_a.json"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0029/messages/007_claude_drp03_amendment_critique.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0029/messages/008_claude_drp03_r2_protocol_critique.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0029/messages/009_claude_drp03_r2_protocol_v02_final_critique.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0029/messages/010_chatgpt_successor_construct_candidate_family_handoff.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0029/messages/011_claude_successor_construct_counterdesign.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0029/messages/012_chatgpt_message011_reconciliation.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0029/messages/013_claude_sp4_recital_leak_annotation.json"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0029/messages/014_chatgpt_thin_vs_rich_accepted_critique_handoff.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0029/messages/015_claude_thin_vs_rich_accepted_critique.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0029/messages/016_chatgpt_integrated_hybrid_final_critique_handoff.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0029/messages/017_claude_integrated_hybrid_final_critique.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0029/messages/018_claude_d2_lineage_evaluator_b.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0029/messages/019_chatgpt_d1_integrated_replay_evaluator_b_handoff.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0029/messages/020_claude_d1_integrated_replay_evaluator_b.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/001_claude_independent_r0_physical_architecture.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/002_chatgpt_comparative_reconciliation.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/003_claude_comparative_critique.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/004_chatgpt_message003_reconciliation.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/005_chatgpt_r0_probe_preregistration.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/006_chatgpt_r0_p02_fixture_freeze.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/007_chatgpt_r0_p02_attempt001_harness_invalid_attempt002_refreeze.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/008_chatgpt_r0_p02_attempt002_deterministic_core_pass.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/009_chatgpt_r0_p02_full_pass_reconciliation.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/010_chatgpt_r0_p01_fixture_implementation_contract_freeze.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/011_chatgpt_runtime_bridge_recovery_refresh_and_concurrency_trigger.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/012_chatgpt_runtime_bridge_reliability_repairs_qualified_p01_resumes.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/013_claude_r0_p01_contract_architecture_triage.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/014_chatgpt_r0_p01_contract_audit_reconciliation_and_refreeze.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/015_chatgpt_r0_p01_harness_implementation_qualification.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/016_chatgpt_r0_p01_attempt_001_reconciliation.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/017_chatgpt_r0_p01_prospective_amend_triage.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/018_claude_r0_p01_amend_triage_critique.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/019_chatgpt_r0_p01_claude_amend_triage_reconciliation.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/020_chatgpt_r0_p01_successor_v03_draft_review_handoff.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/021_claude_r0_p01_v03_draft_review.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/022_chatgpt_r0_p01_message_021_reconciliation_and_rev02_review_request.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/023_claude_r0_p01_v03_rev02_review.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/024_chatgpt_r0_p01_rev03_targeted_recheck_handoff.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/025_claude_r0_p01_v03_rev03_targeted_recheck.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/026_chatgpt_r0_p01_rev04_reconciliation_owner_decisions.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/027_chatgpt_r0_p01_b01_b02_accepted_qualification_next.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/028_chatgpt_r0_p01_q0_trace_q1_design_review_handoff.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/029_claude_r0_p01_q0_q1_review.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/030_chatgpt_r0_p01_message029_reconciliation_q0_rev02_f1_f2_recheck.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/031_claude_r0_p01_q0_rev02_f1_f2_review.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/032_chatgpt_r0_p01_message031_reconciliation_first_clause_audit_request.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/033_claude_r0_p01_clause_audit_batch001.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/034_chatgpt_r0_p01_message033_reconciliation_one_prompt_remaining_audit.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/035_claude_r0_p01_clause_audit_batch002.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/036_claude_r0_p01_clause_audit_batch003.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/037_claude_r0_p01_clause_audit_batch004.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/038_claude_r0_p01_clause_audit_batch005.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/039_claude_r0_p01_clause_audit_batch006.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/040_claude_r0_p01_clause_audit_batch007.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/041_claude_r0_p01_clause_audit_batch008.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/042_claude_r0_p01_clause_audit_batch009.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/043_claude_r0_p01_clause_audit_batch010.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/044_claude_r0_p01_clause_audit_batch011.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/045_claude_r0_p01_clause_audit_batch012.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/046_claude_r0_p01_clause_audit_batch013.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/047_claude_r0_p01_clause_audit_batch014.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/048_claude_r0_p01_clause_audit_batch015.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/049_claude_r0_p01_clause_audit_batch016.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/050_claude_r0_p01_clause_audit_batch017.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/051_claude_r0_p01_clause_audit_batch018.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/052_claude_r0_p01_remaining_clause_audit_summary.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/053_chatgpt_r0_p01_full_clause_audit_completion_and_f1_scoring_boundary_reconciliation.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/054_chatgpt_r0_p01_scoring_boundary_rev01_independent_review_request.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/055_claude_r0_p01_scoring_boundary_rev01_independent_review.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/056_chatgpt_r0_p01_message055_targeted_reconciliation_rev02_review_request.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/057_claude_r0_p01_scoring_boundary_rev02_focused_review.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/058_chatgpt_r0_p01_message057_technical_site_table_independent_review_request.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/059_claude_r0_p01_site_decision_table_rev01_independent_review.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/060_chatgpt_r0_p01_owner_authorized_replacement_and_proportionality_reset.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/061_chatgpt_r0_p03_prefreeze_comparator_design_review_request.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/062_claude_r0_p03_prefreeze_comparator_design_critique.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/063_chatgpt_r0_p03_exploratory_source_semantics_review_request.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/063_chatgpt_r0_p03_message062_reconciliation_and_owner_option_a.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/064_claude_r0_p03_source_semantics_and_fusion_critique.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/065_chatgpt_r0_p03_message064_reconciliation_and_063_identity_collision_disposition.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/066_chatgpt_r0_p03_masked_b0_b1_answer_review_handoff.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/067_claude_r0_p03_masked_b0_b1_p01_p04_claim_review.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/068_chatgpt_r0_p03_masked_b0_b1_p05_p08_review_handoff.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/069_claude_r0_p03_masked_b0_b1_p05_p08_claim_review.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/070_chatgpt_r0_p03_masked_b0_b1_p09_p12_review_handoff.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/071_claude_r0_p03_masked_b0_b1_p09_p12_claim_review.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/072_chatgpt_r0_p03_fresh_question_origination_pilot_handoff.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/073_claude_r0_p03_fresh_independent_need_origination_pilot.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/074_chatgpt_r0_p03_fresh_full_source_reference_pilot_handoff.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/075_claude_r0_p03_fresh_reference_feasibility_pilot_result.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/076_chatgpt_r0_p03_twelve_literal_attribution_discrepancy_review_handoff.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/077_claude_r0_p03_twelve_literal_attribution_review_result.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/078_chatgpt_r0_p03_four_fresh_need_gold_free_source_answer_handoff.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/079_claude_r0_p03_fresh_need_packet_a_source_only_answers.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/080_claude_r0_p03_fresh_need_packet_b_source_only_answers.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/081_chatgpt_r0_p03_four_need_masked_claim_support_review_handoff.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/082_claude_r0_p03_masked_four_need_claim_support_review_result.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/083_chatgpt_r0_p03_whole_program_reorientation_and_method_redesign_critique_request.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/084_claude_r0_p03_method_redesign_adversarial_critique.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/085_chatgpt_r0_p03_message084_reconciliation_and_bounded_x1_pilot.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/086_chatgpt_r0_p03_x1_coupled_mutation_outcome_and_governed_next_choice.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/087_chatgpt_r0_p03_owner_amendment_record_and_real_source_world_seed.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/088_chatgpt_r0_p03_d1_real_event_semantic_reuse_admission_proposal.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/089_chatgpt_r0_p03_exact_d1_reuse_owner_acceptance_binding.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/090_chatgpt_r0_p03_j2_natural_owner_declaration_request.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/091_claude_r0_p03_d1_j2_natural_owner_declaration.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/092_chatgpt_r0_p03_claude_message091_cannot_attest_reconciliation.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/093_chatgpt_r0_p03_prospective_j2_source_event_realized.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/094_chatgpt_r0_p03_typed_j2_port_recommendation.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/095_chatgpt_r0_p03_provider_native_receipts_and_ci_repair.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/096_chatgpt_r0_p03_native_provider_receipt_contract_boundaries.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/097_chatgpt_r0_p03_live_provider_status_reconciliation_and_architecture_boundary.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/098_chatgpt_r0_p03_real_semantic_world_candidate_and_next_execution.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/099_chatgpt_r0_p03_owner_accepted_pka_real_source_world_progress.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/100_chatgpt_r0_p03_real_source_g013_integration_and_j2_boundary.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/101_chatgpt_r0_p03_prospective_source_owner_event_and_finite_assurance_hold.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/102_chatgpt_r0_p03_experiment_j2_assurance_policy_proposal.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/103_chatgpt_r0_p03_experiment_j2_policy_owner_acceptance.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/104_chatgpt_r0_p03_delegated_s1_preaction_scope_freeze.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/105_chatgpt_r0_p03_delegated_s1_real_source_execution.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/106_chatgpt_r0_p03_postexecution_source_owner_covers_and_j2_admission.md"
+    },
+    {
+      "reason": "MODEL_COLLABORATION_MESSAGE",
+      "source_path": "docs/model_collaboration/threads/MC-0030/messages/107_chatgpt_r0_p03_experiment_s1_j3_open_reset_evaluation.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/research/206_w5_future_knowledge_information_architecture_and_authoring_design.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/research/207_w5_representative_artifact_family_matrix_and_information_architecture_v01.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/research/208_w5_physical_authoring_v02_freeze_and_empirical_gate_program.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/research/209_w5_c1_persistent_view_implementation_closure_qualification_result.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/research/210_w5_t1_controlled_subject_vocabulary_fixture_freeze.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/research/211_w5_t3_item_registry_identity_carrier_fixture_freeze.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/research/212_w5_t3_item_registry_identity_carrier_result.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/research/213_w5_t4_historical_navigation_preservation_fixture_freeze.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/research/214_w5_t4_historical_navigation_preservation_result.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/research/215_w5_t1_v01_controlled_subject_calibration_result.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/research/216_w5_t1_v02_subject_vocabulary_refinement_and_blind_calibration_fixture.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/research/217_w5_t1_v02_controlled_subject_architecture_acceptance.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/research/218_w5_final_information_architecture_reconciliation_and_target_freeze.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/research/231_ao9_p3_model_free_mechanism_trace.md"
+    },
+    {
+      "reason": "SCOPE_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/research/233_ao9_p5_evaluation_and_decision_synthesis.md"
+    },
+    {
+      "reason": "SCOPE_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/research/235_ao9_p7_owner_decisions_and_ao9_closure.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/research/345_key_author_a_p3_birth_heldout_phase_design.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/research/346_key_author_a_p3_explicit_owner_authorization.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/research/347_key_author_a_p3_batch1_pass_batch2_released.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/research/349_key_author_a_p3_batch2_pass_batch3_released.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/research/350_key_author_a_p3_batch3_pass_batch4_released.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/research/351_key_author_a_p3_batch4_pass_batch5_released.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/research/352_key_author_a_p3_batch5_pass_batch6_released.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/research/353_key_author_a_p3_batch6_pass_batch7_released.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/research/354_key_author_a_p3_batch7_pass_batch8_released.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/research/355_key_author_a_p3_batch8_pass_batch9_released.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/research/356_key_author_a_p3_batch9_compaction_hold_fresh_replacement_authorized.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/research/357_key_author_a_p3_batch9_replacement_pass_batch10_fresh_session_released.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/research/358_key_author_a_p3_batch10_pass_batch11_released.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/research/359_key_author_a_p3_batch11_pass_batch12_fresh_session_released.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/research/360_key_author_a_p3_batch12_pass_batch13_fresh_session_released.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/research/361_key_author_a_p3_birth_heldout_pass.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/556_r0_p03_source_reconciliation_and_prefreeze_design.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/557_r0_p03_common_substrate_and_source_census_candidate.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/558_r0_p03_prefreeze_adversarial_source_audit_and_review_boundary.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/559_r0_p03_claude_critique_reconciliation_and_owner_accepted_legacy_gold_amendment.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/560_r0_p03_role_aware_source_frame_and_neutral_specimen_candidate.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/561_r0_p03_independent_reference_intake_and_primary_task_method_candidate.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/562_r0_p03_source_only_capsule_and_reviewer_execution_readiness.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/563_r0_p03_reviewer_boundary_feasibility_and_source_access_candidate.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/564_r0_p03_restricted_claude_synthetic_host_preflight.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/565_r0_p03_independent_reference_custody_and_role_qualification_design.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/566_r0_p03_synthetic_final_output_sealing_and_handoff_boundary.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/567_r0_p03_reviewer_to_custodian_principal_and_recipient_key_feasibility.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/568_r0_p03_owner_scoped_arm_author_sandbox_and_recipient_envelope.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/569_r0_p03_owner_canary_cross_tool_access_failure_and_acl_remediation.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/570_r0_p03_owner_protected_canary_os_acl_denial_and_scope.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/571_r0_p03_arm_author_controlled_write_and_host_boundary.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/572_r0_p03_windows_author_sandbox_scope_read_only_preflight.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/573_r0_p03_isolated_authoring_environment_feasibility.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/574_r0_p03_isolation_evidence_closeout_and_pragmatic_execution_direction.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/575_r0_p03_pragmatic_level_b_execution_protocol_candidate.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/576_r0_p03_owner_accepted_pragmatic_level_b_execution_method.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/577_r0_p03_task_capacity_and_common_substrate_parity_diagnostic.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/578_r0_p03_source_eligibility_closure_and_neutral_mapping.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/579_r0_p03_primary_task_origin_and_selection_route_decision.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/582_r0_p03_fresh_primary_author_rehearsal_packet.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/583_r0_p03_rehearsal_review_and_primary_author_source_readiness.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/584_r0_p03_owner_approved_synthetic_custody_preflight.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/585_r0_p03_owner_fake_custody_report_and_access_boundary.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/586_r0_p03_synthetic_complete_reference_author_to_recipient_handoff.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/587_r0_p03_temporary_chat_owner_public_recipient_trial_preparation.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/588_r0_p03_owner_fake_recipient_prepare_native_stderr_repair.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/589_r0_p03_real_temporary_chat_fictional_cms_owner_readback_result.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/590_r0_p03_primary_author_source_world_coverage_expansion_and_admission_hold.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/591_r0_p03_historical_evidence_review_population_and_author_admission_boundary.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/592_r0_p03_prospective_source_status_contamination_review_method.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/593_r0_p03_source_status_method_critique_and_reviewer_route_qualification.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/594_r0_p03_synthetic_source_status_reviewer_intake_result.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/595_r0_p03_v02_independent_synthetic_method_challenge_and_scoped_disposition_repair.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/596_r0_p03_v03_independent_synthetic_review_and_v04_type_release_contract.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/597_r0_p03_s1_source_free_architecture_threat_review_and_harness_selection.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/598_r0_p03_s1_role_isolation_custody_option_review.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/599_r0_p03_s1_windows_and_runtime_authority_reconnaissance.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/600_r0_p03_reviewer_workflow_proportionality_and_minimum_evidence_route.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/601_r0_p03_reviewer_report_cms_handoff_format_and_boundary.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/602_r0_p03_owner_fictional_reviewer_recipient_workflow.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/603_r0_p03_owner_mediated_fictional_reviewer_handoff_outcome.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/604_r0_p03_v04_independent_method_review_handoff_readiness.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/605_r0_p03_v04_external_review_and_stage_precedence_reconciliation.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/606_r0_p03_v05_focused_handoff_and_s1_a2_actor_qualification.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/607_r0_p03_v05_external_focused_review_v06_world_freeze_repair.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/608_r0_p03_s1_a2_actual_tool_boundary_and_reviewer_intake.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/609_r0_p03_candidate_environment_intake_and_source_free_fidelity_probe.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/610_r0_p03_a2_candidate_fidelity_external_result_reconciliation.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/611_r0_p03_a2_candidate_binary_artifact_external_receipt.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/612_r0_p03_candidate_protected_output_route_preparation.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/613_r0_p03_s1_a2_actual_owner_cms_decrypt_and_diagnostic_hold.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/614_r0_p03_a2_r07_future_blind_author_route_scope_and_actual_witness.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/615_r0_p03_a2_r07_actual_test_only_author_view_intake_and_instrumentability.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/616_r0_p03_s1_a2_author_route_risk_resolution_and_distinct_challenger_candidate.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/617_r0_p03_level_b_pragmatic_transition_and_first_real_source_review_wave.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/618_r0_p03_wave0_exact_review_handoff_and_new_owner_recipient.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/619_r0_p03_wave0_independent_blind_second_assessment_and_owner_comparison_route.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/620_r0_p03_wave0_private_dual_report_reconciliation_and_challenge_preparation.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/621_r0_p03_wave0_owner_authorized_substantive_adversarial_challenge.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/622_r0_p03_post_challenge_semantic_decisions_and_experiment_critical_path.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/623_r0_p03_wave0_authorized_final_semantic_decision_register_route.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/624_r0_p03_owner_private_wave0_decision_qualification_and_source_world_closure.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/625_r0_p03_real_source_world_coverage_audit_and_critical_family_closure.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/626_r0_p03_historical_dependency_frontier_and_neutral_retrieval_preflight.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/627_r0_p03_task_independent_source_qualification_pilot_and_falsification_contract.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/628_r0_p03_calibration_rule_independent_method_review_and_falsification_readiness.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/629_r0_p03_owner_accepted_falsification_method_freeze_and_independent_challenger.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/630_r0_p03_falsification_outcome_and_transition_to_source_world_closure.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/631_r0_p03_concrete_80_original_source_world_candidate_and_bounded_release_gate.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/632_r0_p03_actual_80_source_review_and_task_first_critical_path_correction.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/633_r0_p03_neutral_independent_need_origination_input_realization.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/634_r0_p03_six_hold_witness_feasibility_and_targeted_recovery.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/635_r0_p03_completed_witness_capacity_hold_and_prospective_protocol_decision.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/636_r0_p03_direct_scored_execution_readiness_audit_and_minimal_critical_path.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/637_r0_p03_owner_accepted_prospective_c02_independent_need_origination.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/638_r0_p03_c02_independent_origination_received_and_protected_adjudication_transition.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/639_r0_p03_c02_phase_a_verified_equivalence_capacity_and_phase_b_boundary.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/640_r0_p03_c02_phase_b_ledger_only_evidence_capacity_and_next_scientific_gate.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/641_r0_p03_c02_direct_original_evidence_exhaustion_and_prospective_reference_decision.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/642_r0_p03_execution_first_exploratory_legacy_b0_b1_results_and_protocol_boundary.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/643_r0_p03_exploratory_real_source_citation_proxy_incremental_comparison.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/644_r0_p03_mechanical_heading_query_stress_reveals_query_family_dependence.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/645_r0_p03_real_hybrid_fusion_ablation_and_query_routing_execution.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/646_r0_p03_executed_directed_reference_retrieval_and_negative_evidence_controls.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/647_r0_p03_719_query_paraphrase_scope_and_abstention_execution.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/648_r0_p03_source_reference_context_evidence_and_declared_reference_qualification.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/649_r0_p03_claude_message064_reconciliation_native_source_parsers_and_scientific_boundary.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/650_r0_p03_t2_first_real_new_source_owner_status_and_evidence_guard_experiment.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/651_r0_p03_t2_subject_identity_and_unsupported_governing_question_execution.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/652_r0_p03_t2_real_decision_ledger_snapshot_supersession_and_operational_authority_probe.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/653_r0_p03_no_decision_id_competing_retrievers_rank_fusion_and_selective_evidence_probe.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/654_r0_p03_objective_git_event_and_external_ci_evidence_ladder_audit.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/655_r0_p03_route_b_first_twelve_source_answer_primary_b0_execution.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/656_r0_p03_route_b_distinct_b1_b2_b3_real_navigation_mechanisms_and_costs.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/657_r0_p03_route_b_b4_classical_latent_semantic_embedding_execution_and_neural_access_hold.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/658_r0_p03_route_b_actual_extractive_answer_evidence_and_citation_comparison.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/659_r0_p03_route_b_exposed_gpt6_reasoned_original_b0_b1_answer_comparison.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/660_r0_p03_three_masked_claude_review_complete_and_unmasked_answer_support_assessment.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/661_r0_p03_four_need_reference_feasibility_and_evidence_boundary.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/662_r0_p03_private_reference_git_line_replay_and_literal_attribution_gaps.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/663_r0_p03_twelve_citation_review_and_four_need_gold_free_navigation_execution.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/664_r0_p03_two_frozen_source_answer_authors_and_case_local_boundary_limitation.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/665_r0_p03_four_need_masked_evidence_support_review_fixture_freeze.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/666_r0_p03_four_need_claim_support_synthesis_and_exploratory_stop_rule.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/667_r0_p03_exact_original_source_closure_frontier_and_common_projection_probe.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/668_r0_p03_historical_documentary_semantic_chain_and_nonpromotion_evidence.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/669_r0_p03_bottleneck_and_prospective_comparison_redesign_assessment.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/670_r0_p03_message084_reconciliation_and_x1_limited_interface_pilot.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/671_r0_p03_coupled_lineage_mutation_findings_and_x1_stop_boundary.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/672_r0_p03_post_x1_physical_discrimination_and_prospective_method_decision_proposal.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/673_r0_p03_owner_accepted_prospective_method_amendment.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/674_r0_p03_real_content_source_frame_preadmission_probe.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/675_r0_p03_real_event_semantic_admission_contract_and_owner_packet.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/676_r0_p03_owner_accepted_d1_experiment_reuse_binding_and_j2_boundary.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/677_r0_p03_j2_component_evidence_and_natural_owner_declaration_contract.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/678_r0_p03_message091_evidence_reconciliation_and_j2_carrier_design_trigger.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/679_r0_p03_prospective_at_action_j2_source_owner_and_fact_class_probe.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/680_r0_p03_typed_j2_natural_owner_and_assurance_port_probe.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/681_r0_p03_github_native_assurance_and_ci_line_ending_requalification.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/682_r0_p03_provider_native_receipt_and_source_owner_trust_root_admission_contract.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/683_r0_p03_live_provider_check_job_workflow_status_conflict_and_assurance_boundary.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/684_r0_p03_real_semantic_world_candidate_qualification_and_navigation_return.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/685_r0_p03_real_source_semantic_world_j1_acceptance_and_git_transition.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/686_r0_p03_real_g013_refresh_evidence_and_common_semantic_world_overlay.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/687_r0_p03_prospective_s1_j2_source_event_and_finite_owner_assurance_hold.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/688_r0_p03_experiment_source_owner_j2_assurance_policy_decision_proposal.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/689_r0_p03_experiment_j2_assurance_policy_owner_acceptance_binding.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/690_r0_p03_delegated_s1_composite_realizer_preaction_freeze.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/691_r0_p03_delegated_s1_actual_git_event_g006_g013_execution.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/692_r0_p03_postexecution_source_owner_relational_j2_experiment_admission.md"
+    },
+    {
+      "reason": "FRAME_LEAKAGE:P03_RESEARCH_DESIGN",
+      "source_path": "docs/research/693_r0_p03_separate_j3_open_reset_experiment_only_s1_evaluation.md"
+    },
+    {
+      "reason": "H1_PROBE_OR_NAVIGATION_EXPOSURE",
+      "source_path": "docs/research/project_knowledge_activation_orchestration/ao9/evaluations/P3_MODEL_FREE_TRACE_V01.md"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_a2_test_only_author_view_intake_receipt.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_arm_author_preflight.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_c02_direct_original_evidence_aggregate_identity.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_c02_origination_safe_receipt_identity.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_c02_phase_a_equivalence_aggregate_identity.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_c02_phase_b_evidence_feasibility_identity.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_capacity_parity_diagnostic.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_eighty_source_release_aggregate_identity.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_eligibility_mapping_candidate.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_exploratory_65_source_heading_query_stress.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_exploratory_directed_relation_retrieval.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_exploratory_hybrid_fusion_and_routing.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_exploratory_legacy_b0_b1_actual_execution.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_exploratory_legacy_b2_source_link_proxy.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_exploratory_paraphrase_scope_and_abstention.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_exploratory_reference_declaration_correction_v02.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_exploratory_reference_provenance_audit.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_exploratory_t2_decision_ledger_snapshot_and_scope_v03.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_exploratory_t2_no_id_retrieval_and_selective_evidence_v04.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_exploratory_t2_owner_status_guarded_retrieval.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_exploratory_t2_subject_binding_and_unsupported_authority_v02.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_fake_public_recipient.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_fake_reviewer_recipient.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_four_need_gold_free_original_source_navigation_v01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_four_need_gold_free_packet_v02_integrity.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_four_need_masked_source_excerpt_claim_review_v01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_four_need_public_claim_support_reconciliation_v01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_four_need_source_only_answer_case_boundary_v01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_four_need_source_packet_clipping_correction_v02.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_fresh_reference_need_index_pilot_v01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_fresh_reference_private_citation_audit_v01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_fresh_reference_private_citation_audit_v02.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_governed_reference_audit_v03.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_historical_evidence_dependency_frontier.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_historical_semantic_evidence_chain_v01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_independent_reference_intake.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_material_hold_witness_aggregate_identity.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_material_hold_witness_v02_identity.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_minimum_experiment_corpus_candidate.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_need_adjudication_discovery_index.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_need_adjudication_exact_source_bytes.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_need_source_adjudication_aggregate_identity.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_need_source_adjudication_verified_v02_identity.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_neutral_need_origination_packet.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_neutral_need_origination_packet_v02.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_neutral_readonly_retrieval_candidate.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_owner_need_proposals_intake.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_owner_synthetic_custody_script.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_primary_author_frontend_expansion_candidate.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_primary_author_historical_evidence_review_candidate.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_primary_author_pilot_builder.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_primary_author_source_readiness_candidate.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_prospective_c02_need_origination_packet_v01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_prospective_source_qualification_pilot.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_restricted_host_preflight.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_role_frame_candidate.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_route_b_b4_local_lsa_embedding_v01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_route_b_distinct_b1_b2_b3_navigation_v01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_route_b_exposed_gpt6_reasoned_b0_b1_answers_v01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_route_b_extractively_cited_answer_evidence_v01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_route_b_primary_b0_baseline_execution_v01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_route_b_three_claude_masked_review_consolidation_v01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_route_b_treatment_masked_claim_review_packets_v01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_s1_a2_candidate_protected_output_probe.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_s1_a2_candidate_report_reconciliation.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_s1_a2_intake_and_fixtures.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_s1_a2_owner_source_free_recipient.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_s1_fake_reviewer_report_handoff.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_s1_role_boundary_synthetic.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_s1_source_status_protected_route.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_s1_transport_custody_synthetic.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_s1_wave0_independent_challenger_first_pass.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_s1_wave0_owner_private_compare.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_source_census.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_source_closure_common_projection_probe_v01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_source_event_witness_capacity_and_external_ci.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_source_family_falsification_method_freeze.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_source_family_falsification_summary_identity.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_source_free_calibration_rule_identity.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_source_only_access.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_source_only_capsule.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_source_status_first_wave_candidate.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_source_world_coverage_gate.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_synthetic_cms_recipient_preflight.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_synthetic_custody_evidence_candidate.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_synthetic_output_collector.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_synthetic_reference_handoff_candidate.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_temporary_author_fake_cms_sender.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_v03_d1_accepted_semantic_projection_v01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_v03_d1_real_event_admission_contract_v01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_v03_forward_j2_at_action_evidence_probe_v01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_v03_j2_091_response_reconciliation_v01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_v03_j2_natural_owner_evidence_contract_v01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_v03_live_ci_provider_reconciliation_v01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_v03_provider_ci_admission_contract_v01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_v03_real_content_source_frame_v01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_v03_real_pk_accepted_j1_projection_v01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_v03_real_pk_common_world_g013_overlay_v01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_v03_real_pk_common_world_preflight_v01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_v03_real_pk_delegated_s1_composite_realizer_v01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_v03_real_pk_delegated_s1_j2_admission_v01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_v03_real_pk_delegated_s1_j3_lifecycle_v01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_v03_real_pk_delegated_s1_real_event_v01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_v03_real_pk_g013_isolated_source_refresh_v01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_v03_real_pk_j2_accepted_policy_rev01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_v03_real_pk_j2_experiment_assurance_preflight_rev01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_v03_real_pk_prospective_j2_source_assay_v01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_v03_real_pk_semantic_candidate_audit_v01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_v03_real_pk_semantic_j1_owner_proposal_v01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_v03_real_pk_source_owner_coverage_preflight_v01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_v03_real_pk_source_transition_v01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_v03_typed_j2_assurance_port_v01.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_v05_method_precedence_contract.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_v06_author_world_freeze_precedence.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_x1_coupled_mutation_contract_v02.py"
+    },
+    {
+      "reason": "PROBE_EXPERIMENT_OR_TEST",
+      "source_path": "tests/unit/test_r0_p03_x1_navigation_extension_boundary_v01.py"
+    }
+  ],
+  "frame_counts": {
+    "eligible_by_stratum": {
+      "domain_collaboration": 130,
+      "governing": 29,
+      "historical_evidence": 1909,
+      "orientation_foundation": 63,
+      "product_realization": 245,
+      "project_realization": 129,
+      "verification": 117
+    },
+    "reviewable_before_text_and_exclusions": 3407,
+    "tracked_at_ref": 4090
+  },
+  "heldout_identity_exposed": false,
+  "reached_by_literal_citations_within_four_hops": 615,
+  "reasons": {
+    "EXPLICIT_ACCUMULATED_P03_CONTENT_EXCLUSION": 3,
+    "FRAME_LEAKAGE:P03_CONTEMPORARY_CHECKPOINT": 63,
+    "FRAME_LEAKAGE:P03_CONTEMPORARY_VALIDATION": 147,
+    "FRAME_LEAKAGE:P03_RESEARCH_DESIGN": 136,
+    "H1_PROBE_OR_NAVIGATION_EXPOSURE": 85,
+    "MODEL_COLLABORATION_MESSAGE": 228,
+    "PROBE_EXPERIMENT_OR_TEST": 116,
+    "SCOPE_PROBE_OR_NAVIGATION_EXPOSURE": 7
+  },
+  "schema_version": 1
+}

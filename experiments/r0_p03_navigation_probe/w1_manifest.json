@@ -1,0 +1,1178 @@
+{
+  "build_source_count": 60,
+  "classification": "WORLD_W1_BUILD_FROZEN_HELDOUT_RULE_FROZEN_NOT_DRAWN",
+  "contract": {
+    "rule_git_commit": "b084ec8aa775426a96742ca437394f1f7b0b0b00",
+    "rule_sha256": "43b87eb7c3ac3dd4f58a4dc4bd8e8dcb326fe7feaae27da9bc3a137b079221fc",
+    "source_git_revision": "17ea403ef64092f275e3c7d6492d99929804f8e5"
+  },
+  "heldout_draw_status": "NOT_DRAWN_PROHIBITED_UNTIL_POST_C_ARM",
+  "heldout_future_target": 20,
+  "historical_65_source_research217_world_separate": true,
+  "metadata_no_experimental_j1_acceptance_from_paths": true,
+  "per_stratum": {
+    "domain_collaboration": {
+      "build_count": 4,
+      "disconnected_selected_count": 0,
+      "frame_count": 130,
+      "future_heldout_capacity": 126,
+      "future_heldout_quota": 2,
+      "seed_count": 0
+    },
+    "governing": {
+      "build_count": 9,
+      "disconnected_selected_count": 0,
+      "frame_count": 29,
+      "future_heldout_capacity": 20,
+      "future_heldout_quota": 3,
+      "seed_count": 2
+    },
+    "historical_evidence": {
+      "build_count": 10,
+      "disconnected_selected_count": 0,
+      "frame_count": 1909,
+      "future_heldout_capacity": 1899,
+      "future_heldout_quota": 3,
+      "seed_count": 0
+    },
+    "orientation_foundation": {
+      "build_count": 7,
+      "disconnected_selected_count": 0,
+      "frame_count": 63,
+      "future_heldout_capacity": 56,
+      "future_heldout_quota": 2,
+      "seed_count": 2
+    },
+    "product_realization": {
+      "build_count": 10,
+      "disconnected_selected_count": 0,
+      "frame_count": 245,
+      "future_heldout_capacity": 235,
+      "future_heldout_quota": 3,
+      "seed_count": 0
+    },
+    "project_realization": {
+      "build_count": 12,
+      "disconnected_selected_count": 0,
+      "frame_count": 129,
+      "future_heldout_capacity": 117,
+      "future_heldout_quota": 4,
+      "seed_count": 4
+    },
+    "verification": {
+      "build_count": 8,
+      "disconnected_selected_count": 0,
+      "frame_count": 117,
+      "future_heldout_capacity": 109,
+      "future_heldout_quota": 3,
+      "seed_count": 2
+    }
+  },
+  "predeclared_heldout_rule": "W1_RULE.md Section 5; SHA256(W1-HELDOUT-v1 || NUL || C_arm_full_40_hex || NUL || path || NUL || git_blob_oid)",
+  "primary_gold": null,
+  "schema_version": 1,
+  "score": null,
+  "source_records": [
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 0,
+      "build": true,
+      "byte_count": 26445,
+      "citation_predecessor_not_semantic_dependency": null,
+      "git_blob_oid": "34098855a410008d7e1012c38cb1cf39cb1acfa7",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "navigation_or_orientation",
+      "selection_class": "MANDATORY_SEED",
+      "source_path": "docs/CONTINUITY.md",
+      "source_sha256": "b54c1f6e6e48fb7f82cab62e91b7b9294360b1f41d0b20ba055f5757d5d49b88",
+      "stratum": "orientation_foundation"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 0,
+      "build": true,
+      "byte_count": 55260,
+      "citation_predecessor_not_semantic_dependency": null,
+      "git_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "governing_decision_carrier",
+      "selection_class": "MANDATORY_SEED",
+      "source_path": "docs/DECISIONS.md",
+      "source_sha256": "14e40c0ca6ec0f38373d971f90fd91b4457657606b93c5fccdfb101b3301bd04",
+      "stratum": "governing"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 1,
+      "build": true,
+      "byte_count": 36807,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 525,
+        "predecessor_source": "docs/DECISIONS.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "fe9eba89dc6c11b7f80d84b2a7bb71fb14eee3dd",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "historical_progress_evidence",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md",
+      "source_sha256": "aab278bc1c6c440d6c78fecb3a0a8c88a72cc877d6bb1f981b4de358dc41a5a5",
+      "stratum": "historical_evidence"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 1,
+      "build": true,
+      "byte_count": 27929,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 526,
+        "predecessor_source": "docs/DECISIONS.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "88b13dcf1092007ed98d458dfb824f4508f28418",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "historical_progress_evidence",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "docs/checkpoints/108_v1_architecture_comparison_and_sqlite_centered_selection.md",
+      "source_sha256": "35e4148a3bf8570fb0e439a50601d55222a9a323ec320fafc525caa3aaffeda6",
+      "stratum": "historical_evidence"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 1,
+      "build": true,
+      "byte_count": 1431,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 1120,
+        "predecessor_source": "docs/DECISIONS.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "326adf70ff0091b0218fb396ea3ea11483c01ae7",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "historical_progress_evidence",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "docs/checkpoints/838_owner_architecture_decision_package_frozen.md",
+      "source_sha256": "d32db53609af02af228b9e270577b3996e4fa50231fcf2619a3bd20578ea4d63",
+      "stratum": "historical_evidence"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 1,
+      "build": true,
+      "byte_count": 1639,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 1121,
+        "predecessor_source": "docs/DECISIONS.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "d3258f2275be3838cf116359f103e584582ea02a",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "historical_progress_evidence",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "docs/checkpoints/839_v03_selected_realization_program_opened.md",
+      "source_sha256": "4204ade6cc587930d269612a92aac34e1918cea187bd38dedb0a608f57da7459",
+      "stratum": "historical_evidence"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 1,
+      "build": true,
+      "byte_count": 8694,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 362,
+        "predecessor_source": "docs/DECISIONS.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "73cf31283e4d6895a688c70221b7a0843fe96f61",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "other_project_document",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "docs/experiments/prototype_v0/HELD_OUT_STATUS.md",
+      "source_sha256": "8a53977bb07dbfcc728e724427f60f2b42d79a050111ffed420baa9b75df8f78",
+      "stratum": "domain_collaboration"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 0,
+      "build": true,
+      "byte_count": 14834,
+      "citation_predecessor_not_semantic_dependency": null,
+      "git_blob_oid": "20c8ed53d6a2955b7cda2ae6ceada05e2629d6c9",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "foundation",
+      "selection_class": "MANDATORY_SEED",
+      "source_path": "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md",
+      "source_sha256": "d93720c72673dc99f2b5b9f61453c20a536993b6ddd989a21608f32cbb653f77",
+      "stratum": "orientation_foundation"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 1,
+      "build": true,
+      "byte_count": 9218,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 422,
+        "predecessor_source": "docs/CONTINUITY.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "2d1f8e816b00900f71d7982b072b6027728f5ab2",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "engineering_or_collaboration_evidence",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md",
+      "source_sha256": "333a2c1a89ff2673ef9c334c8a472c762c26185bb1d853737dea0a94a88c80cb",
+      "stratum": "domain_collaboration"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 1,
+      "build": true,
+      "byte_count": 5011,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 919,
+        "predecessor_source": "docs/DECISIONS.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "c755c85a0c726714badead5e37cdf8b627429af6",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "engineering_or_collaboration_evidence",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "docs/model_collaboration/threads/MC-0001/RESOLUTION.md",
+      "source_sha256": "63771f9e3ea054a83e349050ce316af918fbdedc38ed05d1c1fe475a7cc6dac1",
+      "stratum": "domain_collaboration"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 1,
+      "build": true,
+      "byte_count": 1391,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 921,
+        "predecessor_source": "docs/DECISIONS.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "ef16ace81645106c507410cf9910af9b547d5627",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "engineering_or_collaboration_evidence",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "docs/model_collaboration/threads/MC-0002/RESOLUTION.md",
+      "source_sha256": "dd8d4d160e423ad97b8aa462fc772096f8d30c6308a3f96cfdeb05fc7b1549b4",
+      "stratum": "domain_collaboration"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 1,
+      "build": true,
+      "byte_count": 3715,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 750,
+        "predecessor_source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "d4026b953699b8617022ea453335d476e4d19a46",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "incumbent_project_knowledge_source",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "docs/project_knowledge/architecture/reconstruction_and_action.md",
+      "source_sha256": "8e15f054dd7ca776aef087c874fc2502d89c1565f94c71583aacd72dd87835f3",
+      "stratum": "orientation_foundation"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 1,
+      "build": true,
+      "byte_count": 10121,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 476,
+        "predecessor_source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "735dcf0e95c37c4e4442550b479f97c4c386cdff",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "derived_project_knowledge_view",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "docs/project_knowledge/generated/identity_index.json",
+      "source_sha256": "ad6670b6e0df28c654049986a3f0bb7fc744096e868beab6b1d3611b1d3d9665",
+      "stratum": "orientation_foundation"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 1,
+      "build": true,
+      "byte_count": 5070,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 480,
+        "predecessor_source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "3ddc38a709b391e30d02e24e5dc4bbaecec1c62e",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "derived_project_knowledge_view",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "docs/project_knowledge/generated/risk_obligation_index.json",
+      "source_sha256": "9722e34406b11ec7718c25ac2b801d5e53cf1153601f47caf4c94c233f1f6c89",
+      "stratum": "orientation_foundation"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 1,
+      "build": true,
+      "byte_count": 4472,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 475,
+        "predecessor_source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "526cf3ed43aa53ae1743ddeb0f4df00621968a74",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "derived_project_knowledge_view",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "docs/project_knowledge/generated/source_catalog.json",
+      "source_sha256": "03a1b3b7f4625a12b088fa866e3bdc7713040c7c720000d81c9a06664338a396",
+      "stratum": "orientation_foundation"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 1,
+      "build": true,
+      "byte_count": 3226,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 478,
+        "predecessor_source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "e851c1d659654f626919ec4d8117bf4f3ef1f744",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "derived_project_knowledge_view",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "docs/project_knowledge/generated/workstream_graph.json",
+      "source_sha256": "aa2c803263dc6c67283ada2feddee02eb5d333d8ce5d5d3e3f41d4c60115cad6",
+      "stratum": "orientation_foundation"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 1,
+      "build": true,
+      "byte_count": 18068,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 762,
+        "predecessor_source": "docs/DECISIONS.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "11413ea7bb0d5a1e1294d4c957888b65a0bd2187",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "research_proposal_or_result",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "docs/research/010_2026_runtime_bakeoff_preimplementation_refresh.md",
+      "source_sha256": "d10ead26bacf6c466b86faae85fd8d1c31e1a29b014a83867d8504e14e785bb2",
+      "stratum": "historical_evidence"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 1,
+      "build": true,
+      "byte_count": 7883,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 764,
+        "predecessor_source": "docs/DECISIONS.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "f159e7ee508b9fce12d9db6be5d5e4c73db0f775",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "research_proposal_or_result",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md",
+      "source_sha256": "9c502772a5251688569f4a79a1a55d6e7afb30721c0c0f1ea19df9e07e511822",
+      "stratum": "historical_evidence"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 1,
+      "build": true,
+      "byte_count": 12876,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 538,
+        "predecessor_source": "docs/CONTINUITY.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "d3f850beb65f0807622a562068039658ff608d15",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "research_proposal_or_result",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md",
+      "source_sha256": "ed13eb45390f684529194268d2d1283ab7aa105bc2e4a57e09477569e7689410",
+      "stratum": "historical_evidence"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 1,
+      "build": true,
+      "byte_count": 64957,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 1025,
+        "predecessor_source": "docs/DECISIONS.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "fb16859ebe94cc09acf2e37b4afee27380946adf",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "research_proposal_or_result",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "docs/research/144_whole_architecture_candidate_repository_native_semantic_sources.md",
+      "source_sha256": "9b18b5d1d5296690bba2837278b85057a92b5a8d9f656870e0972c7a3c15f2a8",
+      "stratum": "historical_evidence"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 1,
+      "build": true,
+      "byte_count": 41413,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 1026,
+        "predecessor_source": "docs/DECISIONS.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "90283c74c962d08516177a66d2fc67d963fe0455",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "research_proposal_or_result",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "docs/research/145_candidate_01_requirements_v02_design_coverage_and_qualification_plan.md",
+      "source_sha256": "721f41aa3d27661972a873d02e5c8249b8bd3a1e483d43531ff62f1ac9c85b43",
+      "stratum": "historical_evidence"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 1,
+      "build": true,
+      "byte_count": 33252,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 7,
+        "predecessor_source": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "40065180f9a9af605f028640617bdb85bbfe29bf",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "research_proposal_or_result",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md",
+      "source_sha256": "4987ee2290d82be62a86d5c6215045315fe81f3e6be0e5365c67fc3b8227b52c",
+      "stratum": "historical_evidence"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 1,
+      "build": true,
+      "byte_count": 15216,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 570,
+        "predecessor_source": "docs/DECISIONS.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "0a37a1c00c3cf61a405837fb7939f3c6e2d059be",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "specification_carrier",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "docs/specifications/002_v1_persistence_tooling_standard.md",
+      "source_sha256": "7f3b58204ffac8d9583ea61ce7411a68eaaf0cdf9ff5cb56cbb1e1235af6811e",
+      "stratum": "governing"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 1,
+      "build": true,
+      "byte_count": 9219,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 615,
+        "predecessor_source": "docs/DECISIONS.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "f041be50c86dd70ccc86895174d218729ce05411",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "specification_carrier",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "docs/specifications/003_v1_python_project_and_dependency_tooling.md",
+      "source_sha256": "5d0885390aba07b5cdb4c9b39b315f93110b8d127e7c70a6ecd393b553fd2b40",
+      "stratum": "governing"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 1,
+      "build": true,
+      "byte_count": 14873,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 761,
+        "predecessor_source": "docs/DECISIONS.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "3d31b4a6d84b8b74af5bfd7c17f937d85d7b4fa8",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "specification_carrier",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md",
+      "source_sha256": "b6b9c0b169f77ade9f2a5cb504478279ad5095339d74564b7c0ef43b22c3fdeb",
+      "stratum": "governing"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 1,
+      "build": true,
+      "byte_count": 31152,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 834,
+        "predecessor_source": "docs/DECISIONS.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "9acd8782427fc96478a21cd4cde801299bbeec91",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "specification_carrier",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "docs/specifications/023_v1_source_universe_substrate.md",
+      "source_sha256": "89bc2d74f24ad295633b81e0f73473b7039eeafe8413c2affa3c8e36b9edf8cc",
+      "stratum": "governing"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 1,
+      "build": true,
+      "byte_count": 17190,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 542,
+        "predecessor_source": "docs/CONTINUITY.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "bc8af01f0579a712f3cbecc7effec7c57263bcf3",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "specification_carrier",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+      "source_sha256": "509aa6b5fa2f419541a38c25ccdb75129e5663faf6634d535493187abc0a5fda",
+      "stratum": "governing"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 1,
+      "build": true,
+      "byte_count": 12145,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 543,
+        "predecessor_source": "docs/CONTINUITY.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "e0db267cbcfd439ae403c7923a189eb156b2de7f",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "specification_carrier",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "docs/specifications/026_v1_repository_integrity_recovery_amendment.md",
+      "source_sha256": "c81d389d6a925a2ecf3bd8f5c2d8d6730f58e3f72dc1d152759bfc16ab2ff5d8",
+      "stratum": "governing"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 1,
+      "build": true,
+      "byte_count": 7988,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 544,
+        "predecessor_source": "docs/CONTINUITY.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "31221444506ab5b1af7c9ab41ae7fdfea64368ed",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "specification_carrier",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "docs/specifications/027_v1_historical_intermediate_checkpoint_integrity_extension.md",
+      "source_sha256": "96df5da7c45be645c39ee9b02d1568772aa1b598f6393af784a076702b5a5229",
+      "stratum": "governing"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 0,
+      "build": true,
+      "byte_count": 37292,
+      "citation_predecessor_not_semantic_dependency": null,
+      "git_blob_oid": "70db025eefa69a8dec43b04dfdae87f5700754c9",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "specification_carrier",
+      "selection_class": "MANDATORY_SEED",
+      "source_path": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "source_sha256": "7651707b5d590efd7686a77dca20597dc731bfafa1fabc2358775bef7b9d2ffe",
+      "stratum": "governing"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 2,
+      "build": true,
+      "byte_count": 14882,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 175,
+        "predecessor_source": "scripts/select_cockpit_verification.py",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "1bef8d451407f247ae5825d85bee67d49260e2ac",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "product_or_cross_plane_realizer",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "frontend/design-lab/cockpit-conversation-integration-study.js",
+      "source_sha256": "b0c80237d9d5a919dd2b83629de54203e7682cfd84ec07e91a348fae08f05bcb",
+      "stratum": "product_realization"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 2,
+      "build": true,
+      "byte_count": 20883,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 176,
+        "predecessor_source": "scripts/select_cockpit_verification.py",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "5b3092fefb5b701ce13ff3ca0c1929bfb0245cba",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "product_or_cross_plane_realizer",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "frontend/design-lab/cockpit-practical-workspace-study.css",
+      "source_sha256": "d46ece56624aeb1471c5acd8e11d4e5691af43074a3aa5c8ba9997a3f7968739",
+      "stratum": "product_realization"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 2,
+      "build": true,
+      "byte_count": 6160,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 97,
+        "predecessor_source": "scripts/select_cockpit_verification.py",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "779832c995fb1e8ee505ff19309c0dcc7eb3f4f3",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "product_or_cross_plane_realizer",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "frontend/design-lab/cockpit-reintegration-presentation-integrity.css",
+      "source_sha256": "63524c32ea38925113e2dc16b31499c2f0e8c4eff35a01aa22c8c69c505c4e32",
+      "stratum": "product_realization"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 2,
+      "build": true,
+      "byte_count": 3897,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 98,
+        "predecessor_source": "scripts/select_cockpit_verification.py",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "b1ee15518b36ab7da710e578d5084fcb50f7f97d",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "product_or_cross_plane_realizer",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "frontend/design-lab/cockpit-reintegration-review-256.css",
+      "source_sha256": "a12a2330e967b6d3023670d5e2f5d118ed01d0e389d6cacf6da9392fed929a3c",
+      "stratum": "product_realization"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 3,
+      "build": true,
+      "byte_count": 4795,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 35,
+        "predecessor_source": "docs/research/091_source_faithful_reintegration_interaction_integrity_gate.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "c491a167f67ce6e2ac2c4668bfeb58e4caa85133",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "product_or_cross_plane_realizer",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "frontend/design-lab/cockpit-reintegration-review-controls.css",
+      "source_sha256": "5ea10392e116db1516aba961744a4039d533ca65af1a63e3982ff547a0b7800a",
+      "stratum": "product_realization"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 2,
+      "build": true,
+      "byte_count": 14134,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 189,
+        "predecessor_source": "scripts/select_cockpit_verification.py",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "4dae5bef54a841c22e6c1da1038ab63aeadbf0a6",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "product_or_cross_plane_realizer",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "frontend/design-lab/cockpit-reintegration.html",
+      "source_sha256": "fccaee279d1465118a7362712484c3e4f2f1795a986c20f9ec07277f6b2e0433",
+      "stratum": "product_realization"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 3,
+      "build": true,
+      "byte_count": 794,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 161,
+        "predecessor_source": "docs/cockpit/accepted_implementation_manifest.json",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "86406f665bcf237b5073970db5ac93c85d0d13c0",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "product_or_cross_plane_realizer",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "frontend/design-lab/work-unit-blocked-carrier-ring-swap.css",
+      "source_sha256": "6a8ef72665719bf4ce9131efe85c19bf56246f7faf011531eac11d4e4326a666",
+      "stratum": "product_realization"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 2,
+      "build": true,
+      "byte_count": 8714,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 161,
+        "predecessor_source": "scripts/select_cockpit_verification.py",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "a59a14ed870e2c559684c0e68b3a786e66222978",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "product_or_cross_plane_realizer",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "frontend/e2e/cockpit-reintegration-review-256.spec.ts",
+      "source_sha256": "1c5c18877a043d8663e2b3a3244399871ef793c8b0cbcb710e6ad90aa5873c88",
+      "stratum": "product_realization"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 0,
+      "build": true,
+      "byte_count": 2088,
+      "citation_predecessor_not_semantic_dependency": null,
+      "git_blob_oid": "f202757950601411d7e2e4584a7f66a4215c21f7",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "machine_schema_realization",
+      "selection_class": "MANDATORY_SEED",
+      "source_path": "schemas/project_knowledge/semantic_source.v1.schema.json",
+      "source_sha256": "ef32ac73c21c09990e99ba4890e60ec96f6246d407e9e3b3903c29fdd22e4be2",
+      "stratum": "project_realization"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 1,
+      "build": true,
+      "byte_count": 5009,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 443,
+        "predecessor_source": "tests/unit/test_project_knowledge_refresh.py",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "bbbea98e3d73539dc072a3ab337a4e11e8b9d40c",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "machine_schema_realization",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "schemas/project_knowledge/workstream.v1.schema.json",
+      "source_sha256": "86d86849c4903011b9145064a58d18864e36a8fbdbd1f87edb4d14d350fbb0e9",
+      "stratum": "project_realization"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 1,
+      "build": true,
+      "byte_count": 9001,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 661,
+        "predecessor_source": "docs/DECISIONS.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "3cc9ea31301460177788e2ffbc2865d6659277ca",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "machine_schema_realization",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "schemas/reusable_knowledge_bundle_v1.schema.json",
+      "source_sha256": "233d06c5ef579e6f1a15b99267eed9011566b46c63f822f66fe757f1972856eb",
+      "stratum": "project_realization"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 1,
+      "build": true,
+      "byte_count": 13123,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 368,
+        "predecessor_source": "docs/CONTINUITY.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "9ee74ee717b8586c6cc56e87022ccbbc21cfa26c",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "developer_tool_or_qualification",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "scripts/check_knowledge_map.py",
+      "source_sha256": "e918cf2b548e4f2b56d7d7b7cbb50c7bb18e342fa076b846d547cd6f0d89fbaf",
+      "stratum": "project_realization"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 2,
+      "build": true,
+      "byte_count": 3425,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 206,
+        "predecessor_source": "docs/private_companion/README.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "43430f3e4e7faf2287549170fcfc193e106773d6",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "developer_tool_or_qualification",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "scripts/check_private_continuity.py",
+      "source_sha256": "4fc5bcfb9c418a14be5509c85cbc916017092d898ef463c8adbfd07845ae831e",
+      "stratum": "project_realization"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 1,
+      "build": true,
+      "byte_count": 9154,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 400,
+        "predecessor_source": "docs/CONTINUITY.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "60740383504258626f3d722e3aabc3e961d171a7",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "developer_tool_or_qualification",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "scripts/select_cockpit_verification.py",
+      "source_sha256": "64f6f2ffee9d897c1ad7289065f4cb90832a7d8f41afc2ddd91d4359e318a31a",
+      "stratum": "project_realization"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 2,
+      "build": true,
+      "byte_count": 207,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 80,
+        "predecessor_source": "docs/checkpoints/113_v1_python_project_tooling_validated.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "3f0b957646918c002d8318d11627f87c5e140e1c",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "product_or_cross_plane_realizer",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "src/ads_system/__init__.py",
+      "source_sha256": "e34d893ec5db51a147469cd87b1c92b28e5a830d86f9e8087e93a550dca5a57f",
+      "stratum": "product_realization"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 2,
+      "build": true,
+      "byte_count": 14186,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 198,
+        "predecessor_source": "docs/checkpoints/115_reusable_knowledge_interchange_contract_validated.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "85bcb7f86cb455c6c256e91be301956bc3cdbc01",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "product_or_cross_plane_realizer",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "src/ads_system/infrastructure/interchange/knowledge_bundle.py",
+      "source_sha256": "1c73a1dea8921d8a6637a502513ce3131e7213a2b3b8100d666b549eb15fe34d",
+      "stratum": "product_realization"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 2,
+      "build": true,
+      "byte_count": 24384,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 199,
+        "predecessor_source": "docs/checkpoints/115_reusable_knowledge_interchange_contract_validated.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "0bd33751d2931d78b6ac5c7f14e32fcb736bc5fa",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "verification_or_test_carrier",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "tests/fixtures/knowledge/reusable_knowledge_stress_v1.json",
+      "source_sha256": "138eed419c97c42117f2672375698dc741423e052ef52f33f0bfba82e65614a9",
+      "stratum": "verification"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 3,
+      "build": true,
+      "byte_count": 817,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 205,
+        "predecessor_source": "docs/checkpoints/192_specification_022_incomplete_result_preservation_promotion_candidate.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "197733419f05f721dbfd3df05735c0d8d3f767e3",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "verification_or_test_carrier",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "tests/fixtures/methodological_navigation/spec022_contract_fixture_manifest_v1.json",
+      "source_sha256": "202c0ea91fac32a5ff64eea7856da02cfe1632c835cb2a4507587ab0ec3c0d07",
+      "stratum": "verification"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 2,
+      "build": true,
+      "byte_count": 1609,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 255,
+        "predecessor_source": "docs/specifications/002_v1_persistence_tooling_standard.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "5fddb86dd2c3f8afa548e4115b0f0be0a1cb019d",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "verification_or_test_carrier",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "tests/test_migration_revision_ids.py",
+      "source_sha256": "8e97a2ca113f80e33f550ce84947e169b1baba3d21749a90b1175d59d770a9f5",
+      "stratum": "verification"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 2,
+      "build": true,
+      "byte_count": 174,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 81,
+        "predecessor_source": "docs/checkpoints/113_v1_python_project_tooling_validated.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "39ffc9d2eb424f2b0754f2fff44640cf40afcd50",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "verification_or_test_carrier",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "tests/test_package_smoke.py",
+      "source_sha256": "ce0b6bad4792ddfdba5db7f6871687126233c0c44a56bd68582e84a4f8650fc0",
+      "stratum": "verification"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 2,
+      "build": true,
+      "byte_count": 7105,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 200,
+        "predecessor_source": "docs/checkpoints/115_reusable_knowledge_interchange_contract_validated.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "6d34ac9854b5235e99d322258dee844f07100e08",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "verification_or_test_carrier",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "tests/unit/test_knowledge_interchange.py",
+      "source_sha256": "e739a6bef7e398e769fda982736926db281403cdd553dcb544510baeb174104a",
+      "stratum": "verification"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 2,
+      "build": true,
+      "byte_count": 7556,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 47,
+        "predecessor_source": "docs/specifications/024_v1_model_collaboration_state_guard.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "2bc0bbc15b2157b6879f0eb9237ea1ac7578e760",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "verification_or_test_carrier",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "tests/unit/test_model_collaboration_state.py",
+      "source_sha256": "6ae0864d1fb1d671a1b652b51a46cf83ec50250829f3dcd656198484acdc5092",
+      "stratum": "verification"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 0,
+      "build": true,
+      "byte_count": 28848,
+      "citation_predecessor_not_semantic_dependency": null,
+      "git_blob_oid": "d85253c368507941f1e555f2d35db1b09ccf06aa",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "verification_or_test_carrier",
+      "selection_class": "MANDATORY_SEED",
+      "source_path": "tests/unit/test_project_knowledge_identity.py",
+      "source_sha256": "5c12d727aabccccc0ff5603d30c403377c59ee10abe8c51a7709f0f8a1e3b948",
+      "stratum": "verification"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 0,
+      "build": true,
+      "byte_count": 25699,
+      "citation_predecessor_not_semantic_dependency": null,
+      "git_blob_oid": "219e58408039ac89691f311fb478045bb0f781f9",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "verification_or_test_carrier",
+      "selection_class": "MANDATORY_SEED",
+      "source_path": "tests/unit/test_project_knowledge_refresh.py",
+      "source_sha256": "e81868bd95174193185bf965b5e39e73608bf06db71517892fa394816e362972",
+      "stratum": "verification"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 2,
+      "build": true,
+      "byte_count": 4920,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 87,
+        "predecessor_source": "docs/project_knowledge/architecture/knowledge_lifecycle.md",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "0d4b64a12d8abdd64531f3461733cfc30f6708f5",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "project_tool_realizer_candidate",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "tools/project_knowledge/capture.py",
+      "source_sha256": "15b370e81a82b213dd43de52223fc1a150b5e24fc0fef1627e9f4fa9d9c1b84d",
+      "stratum": "project_realization"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 0,
+      "build": true,
+      "byte_count": 17211,
+      "citation_predecessor_not_semantic_dependency": null,
+      "git_blob_oid": "298ee0493bfcf949e1874d81f8de2fbc7294e96e",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "project_tool_realizer_candidate",
+      "selection_class": "MANDATORY_SEED",
+      "source_path": "tools/project_knowledge/identity.py",
+      "source_sha256": "c267136871d0349c5920edc47cae88fed07b097902f154d689b25d06d9d481df",
+      "stratum": "project_realization"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 1,
+      "build": true,
+      "byte_count": 409,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 442,
+        "predecessor_source": "tests/unit/test_project_knowledge_refresh.py",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "e4ff83dfcb33c16b167cac9de46e73f87bb34a20",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "project_tool_realizer_candidate",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "tools/project_knowledge/pure_source_inventory.py",
+      "source_sha256": "aea20e04c050f07c54c9e7f485ea20842f9e4005c0cc162920c4bd11e352dd32",
+      "stratum": "project_realization"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 0,
+      "build": true,
+      "byte_count": 17377,
+      "citation_predecessor_not_semantic_dependency": null,
+      "git_blob_oid": "4b7039ef9e5473d73a761b7cfa4f6be4d5c30032",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "project_tool_realizer_candidate",
+      "selection_class": "MANDATORY_SEED",
+      "source_path": "tools/project_knowledge/services/generation.py",
+      "source_sha256": "40b70b0a51e83ee82f243b0404cac40fbf7dc537a9f3e0b25df71157fd0a91d0",
+      "stratum": "project_realization"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 0,
+      "build": true,
+      "byte_count": 5812,
+      "citation_predecessor_not_semantic_dependency": null,
+      "git_blob_oid": "f6963f3acc4e3c1366f7a064e85d00a2d2993429",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "project_tool_realizer_candidate",
+      "selection_class": "MANDATORY_SEED",
+      "source_path": "tools/project_knowledge/services/refresh.py",
+      "source_sha256": "e0d8d4dbdefa00919ed85c1433dbffd4a2c6168753c80612773b86a6162520a8",
+      "stratum": "project_realization"
+    },
+    {
+      "accepted_j1_from_source_carrier": false,
+      "accepted_natural_owner_j2_from_path": false,
+      "bfs_distance": 1,
+      "build": true,
+      "byte_count": 11210,
+      "citation_predecessor_not_semantic_dependency": {
+        "predecessor_line": 442,
+        "predecessor_source": "tests/unit/test_project_knowledge_refresh.py",
+        "relation": "LITERAL_DOCUMENTARY_MENTION_NOT_GOVERNING"
+      },
+      "git_blob_oid": "8d2bea281087677101c9ba3f53a8e24d908bb6b0",
+      "git_source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "path_role_hint_not_semantic_authority": "project_tool_realizer_candidate",
+      "selection_class": "CITED_BFS_FRONTIER",
+      "source_path": "tools/project_knowledge/services/validation.py",
+      "source_sha256": "eeb81a501960ae22984bd73f563dc66d77851071bcbd889cc4b31352817b6afe",
+      "stratum": "project_realization"
+    }
+  ],
+  "source_role_parity_is_stratum_sampling_not_semantic_admission": true
+}

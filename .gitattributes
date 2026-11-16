@@ -155,6 +155,10 @@ experiments/r0_p03_navigation_probe/v03_r0_p03_shared_core_runtime_result_v01.js
 # Exact-Git source-relative real B0-B3 arm metadata and executable receipt across Windows/Ubuntu.
 experiments/r0_p03_navigation_probe/v03_r0_p03_real_navigation_arms_exposed_metadata_v01.json -text
 experiments/r0_p03_navigation_probe/v03_r0_p03_actual_navigation_channels_unscored_result_v01.json -text
+# Preserve the pre-registered W1 exact source-world receipts without CRLF conversion.
+experiments/r0_p03_navigation_probe/w1_manifest.json -text
+experiments/r0_p03_navigation_probe/w1_substrate.json -text
+experiments/r0_p03_navigation_probe/w1_exclusion_log.json -text
 
 # Preserve both original MC-0030 Message 063 historical carriers as exact Git blobs across Windows checkout.
 # The collision guard hashes their literal LF source bytes; CRLF worktree conversion would falsify the historical exception.

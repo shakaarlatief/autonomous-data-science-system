@@ -1638,3 +1638,27 @@ The real formal Level B/source-world/reference-admission HOLD remains, and the f
     FORMAL_M6_ATTEMPTS_CONSUMED=0
     FORMAL_P03=INCOMPLETE
     NEXT=OWNER_RELAY_112_THEN_VERIFY_113
+
+## Claude Message 113 accepted as exposed critique and executed W1 BUILD freeze, Checkpoint 960
+
+Claude / claude-04 authored MC-0030 Message 113 as a **comparative exposed** method review. The owner used the connected GitHub connector to publish the exact authored bytes, resulting in shared commit \`56df05bbfc14aa6f33c3e0b37f61bd61bcc55597\`, parent \`48a02332d854f7b5269b8dee39a72e3c036d6463\`, with one added Message 113 file, Git blob \`ffdde3e289c40d098b96d8f7561e6fc166766b80\`, original 29,577 bytes and SHA-256 \`f70305abc72efb99acefd428fd4df03fafdceefb65b4e2472196aa594ad8fcfa\`. Its local-only transport passages were true at initial writing, but the published shared file now exists. Future Claude task requests MUST specify **GitHub connector publication with independently checked shared-byte/parent identity**, not merely a local unpushed commit.
+
+Research 699, Validation 395, Checkpoint 960 and Message 114 adopt and actually execute its \`EXECUTE_BOUNDED_NEXT_STEP\` recommendation. The task-owner first committed immutable \`W1_RULE.md\` separately as \`b084ec8aa775426a96742ca437394f1f7b0b0b00\`, parent \`56df05bb\`, before first W1 selection. The fixed original source world \`17ea403ef64092f275e3c7d6492d99929804f8e5\`, exact ten task-neutral seed anchors, seven source-location strata, deterministic four-hop literal citation graph and precommitted future heldout rule selected **60 actual original ADS BUILD carriers**, all within citation frontier, without post-result rule amendment or disconnected backfill. The 20 HELDOUT identities remain **undrawn** until actual \`C_arm\`.
+
+W1 mechanical evidence contains **374 SOURCE_REPORTED line assertions, 189 DEFINITION_ONLY_NOT_EXECUTION code/test lines, 60 OBSERVABLE_GIT_BLOB records**, and exactly one separately accepted experiment-only weak-assurance S1 core envelope (four J1 effects, one experimental source-relative J2). Every source assertion and old/generated-index carrier stays non-governing, and source-bounded missing links remain unknown. The actual five-label shared W1 source list/read/search/semantics connector parity passes, with 27 focused tests. This does NOT complete individual scored B0–B4 implementation, independent 12 new primary tasks, neutral nine legacy, protected gold or evaluator role admission, B4 feasibility/omission choice, or owner-approved M6 session budget.
+
+The next **different** engineering gate is \`C_ARM_REAL_W1_NAVIGATION_IMPL_AND_FREEZE\`, plus the independent neutral legacy/fake-only reference custody actors where required; do not repeat generic source referee or per-fact owner-acceptance cycles. Claude's existing claude-04 session remains an exposed critic, never a fresh blind gold role. No formal M6 attempt, physical target or production switch.
+
+    RESEARCH=699
+    VALIDATION=395
+    CHECKPOINT=960
+    MESSAGE=MC0030_MESSAGE114
+    CLAUDE_MESSAGE113_SHARED_PUBLISHED_AND_HASH_VERIFIED=true
+    W1_RULE_COMMITTED_SEPARATELY_FIRST=true
+    W1_BUILD_ACTUAL_SOURCE_FILES=60
+    W1_HELDOUT_DRAWN=false
+    W1_COMMON_SOURCE_AND_SEMANTICS_PARITY=PASS
+    W1_PRODUCTION_AUTHORITY_CHANGED=false
+    FORMAL_M6_ATTEMPTS_USED=0
+    FORMAL_P03=INCOMPLETE
+    NEXT=C_ARM_W1_NAVIGATION_IMPL_AND_FREEZE
