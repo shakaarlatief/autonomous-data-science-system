@@ -1,0 +1,574 @@
+{
+  "bm25_passages": 4626,
+  "classification": "W1_FROZEN_PRIMARY_B0_B3_REAL_EXECUTION_EXPOSED_UNSCORED",
+  "common_core_digest": "3ea6617bdffbddfdb7b5d234c0598bae8d4a53b49e2641a1853b0712d0d62fe0",
+  "context_cap": {
+    "full_original_source_read_available_through_common_contract": true,
+    "future_answerer_tool_call_budget": "MUST_BE_FROZEN_WITH_FRESH_SESSION_PACKETS_BEFORE_FORMAL_EXECUTION",
+    "max_query_characters": 160,
+    "source_candidates_per_query": 6,
+    "source_excerpt_chars_per_candidate": 2800,
+    "total_source_excerpt_chars": 16800
+  },
+  "exposed_diagnostic_order_by_arm": [
+    {
+      "candidate_order_by_arm": {
+        "B0": [
+          "docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md",
+          "docs/CONTINUITY.md",
+          "docs/checkpoints/108_v1_architecture_comparison_and_sqlite_centered_selection.md",
+          "docs/DECISIONS.md",
+          "docs/research/144_whole_architecture_candidate_repository_native_semantic_sources.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md"
+        ],
+        "B1": [
+          "docs/CONTINUITY.md",
+          "docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md",
+          "docs/research/144_whole_architecture_candidate_repository_native_semantic_sources.md",
+          "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/research/145_candidate_01_requirements_v02_design_coverage_and_qualification_plan.md"
+        ],
+        "B2": [
+          "docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md",
+          "docs/CONTINUITY.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/checkpoints/108_v1_architecture_comparison_and_sqlite_centered_selection.md",
+          "docs/DECISIONS.md",
+          "docs/research/144_whole_architecture_candidate_repository_native_semantic_sources.md"
+        ],
+        "B3": [
+          "docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md",
+          "docs/CONTINUITY.md",
+          "docs/checkpoints/108_v1_architecture_comparison_and_sqlite_centered_selection.md",
+          "docs/DECISIONS.md",
+          "docs/research/144_whole_architecture_candidate_repository_native_semantic_sources.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md"
+        ]
+      },
+      "context_exact_line_evidence_sha256_by_arm": {
+        "B0": "f715cabc05c82c9be7e9345d7d19d0b7ec016b45fd92f37939cd81e33b393ed0",
+        "B1": "94c6c7570ba6246ac214b25439b71d58b3f79c17d1dfdba8e4ea399635b77174",
+        "B2": "c2229465cfb559a2ef3a7dfdeb240d3e5f89156c8bd53a26f5fa510f3ab45acd",
+        "B3": "78b3ab9acaf13b083b7ce3150b4ba4bb7530b16b9824e0e9dc2c835d1236c93f"
+      },
+      "not_relevance_or_quality_scored": true,
+      "query_exposed_non_scored": "project knowledge reconstruction",
+      "same_candidate_order_as_b0": {
+        "B0": true,
+        "B1": false,
+        "B2": false,
+        "B3": true
+      },
+      "source_context_characters_by_arm": {
+        "B0": 7353,
+        "B1": 9618,
+        "B2": 7353,
+        "B3": 7353
+      }
+    },
+    {
+      "candidate_order_by_arm": {
+        "B0": [
+          "docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/specifications/002_v1_persistence_tooling_standard.md",
+          "docs/specifications/003_v1_python_project_and_dependency_tooling.md",
+          "docs/research/010_2026_runtime_bakeoff_preimplementation_refresh.md",
+          "docs/checkpoints/108_v1_architecture_comparison_and_sqlite_centered_selection.md"
+        ],
+        "B1": [
+          "docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/specifications/002_v1_persistence_tooling_standard.md",
+          "docs/specifications/003_v1_python_project_and_dependency_tooling.md",
+          "docs/research/010_2026_runtime_bakeoff_preimplementation_refresh.md",
+          "docs/DECISIONS.md"
+        ],
+        "B2": [
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md",
+          "docs/specifications/002_v1_persistence_tooling_standard.md",
+          "docs/specifications/003_v1_python_project_and_dependency_tooling.md",
+          "docs/research/010_2026_runtime_bakeoff_preimplementation_refresh.md",
+          "docs/checkpoints/108_v1_architecture_comparison_and_sqlite_centered_selection.md"
+        ],
+        "B3": [
+          "docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/research/010_2026_runtime_bakeoff_preimplementation_refresh.md",
+          "docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md",
+          "docs/specifications/002_v1_persistence_tooling_standard.md",
+          "docs/specifications/003_v1_python_project_and_dependency_tooling.md"
+        ]
+      },
+      "context_exact_line_evidence_sha256_by_arm": {
+        "B0": "512a2da886b9f7860c58a95fbff7a382cf5d2e1c5f9028a391f81792dc17ae2b",
+        "B1": "12e947fa8677f48c32c3b4333304325e6bc90d7f69370afc66f3edcbeb8cec91",
+        "B2": "4ecde78e16646ab713372002b6312a07b94a3da4af5b9a84c917e604066ad764",
+        "B3": "4398d39d3b756cdc8e8053d08d90c3c02766c88d88a066e2b122225e5c6e05c8"
+      },
+      "not_relevance_or_quality_scored": true,
+      "query_exposed_non_scored": "decision authority currentness",
+      "same_candidate_order_as_b0": {
+        "B0": true,
+        "B1": false,
+        "B2": false,
+        "B3": false
+      },
+      "source_context_characters_by_arm": {
+        "B0": 7751,
+        "B1": 8506,
+        "B2": 7751,
+        "B3": 6984
+      }
+    },
+    {
+      "candidate_order_by_arm": {
+        "B0": [
+          "docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md",
+          "docs/specifications/002_v1_persistence_tooling_standard.md",
+          "docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md",
+          "docs/CONTINUITY.md",
+          "docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md"
+        ],
+        "B1": [
+          "docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md",
+          "docs/specifications/002_v1_persistence_tooling_standard.md",
+          "docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md",
+          "docs/CONTINUITY.md",
+          "docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md",
+          "docs/research/010_2026_runtime_bakeoff_preimplementation_refresh.md"
+        ],
+        "B2": [
+          "docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md",
+          "docs/specifications/002_v1_persistence_tooling_standard.md",
+          "docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md",
+          "docs/CONTINUITY.md",
+          "docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md"
+        ],
+        "B3": [
+          "docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md",
+          "docs/specifications/002_v1_persistence_tooling_standard.md",
+          "docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md",
+          "docs/CONTINUITY.md",
+          "docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md",
+          "docs/research/010_2026_runtime_bakeoff_preimplementation_refresh.md"
+        ]
+      },
+      "context_exact_line_evidence_sha256_by_arm": {
+        "B0": "5cd3ba90915ed9c478efab940e37d7c3d0ff2065f213157d073c9ab9a5be0796",
+        "B1": "576a4135d170a376214e8c4561a32667583c0b9aa2b38257f486d8c34dea2c67",
+        "B2": "279fefb874e14606ccbeee552065af4f2fc11ccb5c48b040844714b1aabdccfa",
+        "B3": "24c428041cfac221d4b551ecf2b5128387d49c18d8be63fab9358795569793bb"
+      },
+      "not_relevance_or_quality_scored": true,
+      "query_exposed_non_scored": "runtime persistence evidence",
+      "same_candidate_order_as_b0": {
+        "B0": true,
+        "B1": false,
+        "B2": true,
+        "B3": false
+      },
+      "source_context_characters_by_arm": {
+        "B0": 5369,
+        "B1": 5326,
+        "B2": 5369,
+        "B3": 5326
+      }
+    },
+    {
+      "candidate_order_by_arm": {
+        "B0": [
+          "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+          "docs/CONTINUITY.md",
+          "docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md",
+          "docs/research/144_whole_architecture_candidate_repository_native_semantic_sources.md",
+          "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md",
+          "scripts/check_knowledge_map.py"
+        ],
+        "B1": [
+          "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+          "docs/CONTINUITY.md",
+          "docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md",
+          "docs/research/144_whole_architecture_candidate_repository_native_semantic_sources.md",
+          "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md",
+          "scripts/check_knowledge_map.py"
+        ],
+        "B2": [
+          "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+          "docs/CONTINUITY.md",
+          "docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md",
+          "docs/research/144_whole_architecture_candidate_repository_native_semantic_sources.md",
+          "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md",
+          "scripts/check_knowledge_map.py"
+        ],
+        "B3": [
+          "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+          "docs/CONTINUITY.md",
+          "docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md",
+          "docs/research/144_whole_architecture_candidate_repository_native_semantic_sources.md",
+          "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md",
+          "scripts/check_knowledge_map.py"
+        ]
+      },
+      "context_exact_line_evidence_sha256_by_arm": {
+        "B0": "bfb59113d67afbe1d3e76b960436a3667588f90da9e70ad4c14766042775d2fa",
+        "B1": "d301fe94fd3497fb685d61419711fb48560fe6588a025f275b2869199b9c37be",
+        "B2": "c4c5c9d42f485300e877539e4db97ff1983b358c4ba97bc5a4903e0249de1bfe",
+        "B3": "2764bb06c0e80a224bfd1bf926cf94b67106dc2def5f4ee7fc988b609566ea65"
+      },
+      "not_relevance_or_quality_scored": true,
+      "query_exposed_non_scored": "cockpit visual language",
+      "same_candidate_order_as_b0": {
+        "B0": true,
+        "B1": true,
+        "B2": true,
+        "B3": true
+      },
+      "source_context_characters_by_arm": {
+        "B0": 3943,
+        "B1": 3943,
+        "B2": 3943,
+        "B3": 3943
+      }
+    },
+    {
+      "candidate_order_by_arm": {
+        "B0": [
+          "docs/specifications/023_v1_source_universe_substrate.md",
+          "docs/research/144_whole_architecture_candidate_repository_native_semantic_sources.md",
+          "docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md",
+          "docs/model_collaboration/threads/MC-0001/RESOLUTION.md",
+          "docs/DECISIONS.md",
+          "docs/CONTINUITY.md"
+        ],
+        "B1": [
+          "docs/specifications/023_v1_source_universe_substrate.md",
+          "docs/research/144_whole_architecture_candidate_repository_native_semantic_sources.md",
+          "docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md",
+          "docs/model_collaboration/threads/MC-0001/RESOLUTION.md",
+          "docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md",
+          "docs/DECISIONS.md"
+        ],
+        "B2": [
+          "docs/specifications/023_v1_source_universe_substrate.md",
+          "docs/research/144_whole_architecture_candidate_repository_native_semantic_sources.md",
+          "docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/model_collaboration/threads/MC-0001/RESOLUTION.md",
+          "docs/DECISIONS.md"
+        ],
+        "B3": [
+          "docs/specifications/023_v1_source_universe_substrate.md",
+          "docs/CONTINUITY.md",
+          "docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md",
+          "docs/specifications/027_v1_historical_intermediate_checkpoint_integrity_extension.md",
+          "docs/research/144_whole_architecture_candidate_repository_native_semantic_sources.md",
+          "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md"
+        ]
+      },
+      "context_exact_line_evidence_sha256_by_arm": {
+        "B0": "30987b0b8e95ed1b1fbb5e4f1fc35dbf486c7104bb32aa0236ef869bd0f96cda",
+        "B1": "b5f166a706931256900a14fc2dea5b89f5716e375a5314e041380872632aafa8",
+        "B2": "d0d7a429d80bd4585961589447ca97e7d6d9abf592c8975742af15aab141daa9",
+        "B3": "3a89b7060a38aadb80257057eafbb9f4316e98c847c057ce04cdb16422b75ca5"
+      },
+      "not_relevance_or_quality_scored": true,
+      "query_exposed_non_scored": "source evidence integrity",
+      "same_candidate_order_as_b0": {
+        "B0": true,
+        "B1": false,
+        "B2": false,
+        "B3": false
+      },
+      "source_context_characters_by_arm": {
+        "B0": 6566,
+        "B1": 6651,
+        "B2": 6809,
+        "B3": 7314
+      }
+    },
+    {
+      "candidate_order_by_arm": {
+        "B0": [
+          "docs/specifications/002_v1_persistence_tooling_standard.md",
+          "docs/specifications/003_v1_python_project_and_dependency_tooling.md",
+          "docs/research/144_whole_architecture_candidate_repository_native_semantic_sources.md",
+          "docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md",
+          "docs/DECISIONS.md",
+          "docs/specifications/023_v1_source_universe_substrate.md"
+        ],
+        "B1": [
+          "docs/specifications/002_v1_persistence_tooling_standard.md",
+          "docs/specifications/003_v1_python_project_and_dependency_tooling.md",
+          "docs/research/144_whole_architecture_candidate_repository_native_semantic_sources.md",
+          "docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md",
+          "docs/DECISIONS.md",
+          "docs/specifications/023_v1_source_universe_substrate.md"
+        ],
+        "B2": [
+          "docs/specifications/003_v1_python_project_and_dependency_tooling.md",
+          "docs/specifications/002_v1_persistence_tooling_standard.md",
+          "docs/research/144_whole_architecture_candidate_repository_native_semantic_sources.md",
+          "docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md",
+          "docs/DECISIONS.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md"
+        ],
+        "B3": [
+          "docs/specifications/002_v1_persistence_tooling_standard.md",
+          "docs/specifications/003_v1_python_project_and_dependency_tooling.md",
+          "docs/research/144_whole_architecture_candidate_repository_native_semantic_sources.md",
+          "docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md",
+          "docs/DECISIONS.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md"
+        ]
+      },
+      "context_exact_line_evidence_sha256_by_arm": {
+        "B0": "a36511ca2d82823abf9840c3c3a9096f702efd51e07efccd188e21b8c2946895",
+        "B1": "9d5be655e664156225e7f90ec9b7ce1f6cb01c1d1d41133768a5b6a63c720ec2",
+        "B2": "b9837c34a4d038ec3e430bf126cf91ac3c55ecfa8816861f1bddad526a66677d",
+        "B3": "5f5bcde27ded807e3de74c916e2942772baf986fa487aedd86eb4e781fcadb07"
+      },
+      "not_relevance_or_quality_scored": true,
+      "query_exposed_non_scored": "developer tooling migration",
+      "same_candidate_order_as_b0": {
+        "B0": true,
+        "B1": true,
+        "B2": false,
+        "B3": false
+      },
+      "source_context_characters_by_arm": {
+        "B0": 6557,
+        "B1": 6557,
+        "B2": 7293,
+        "B3": 7293
+      }
+    },
+    {
+      "candidate_order_by_arm": {
+        "B0": [
+          "docs/DECISIONS.md",
+          "docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md",
+          "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+          "docs/CONTINUITY.md",
+          "docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md",
+          "docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md"
+        ],
+        "B1": [
+          "docs/DECISIONS.md",
+          "docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md",
+          "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+          "docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md",
+          "docs/CONTINUITY.md",
+          "docs/model_collaboration/threads/MC-0002/RESOLUTION.md"
+        ],
+        "B2": [
+          "docs/DECISIONS.md",
+          "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+          "docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md",
+          "docs/CONTINUITY.md",
+          "docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md",
+          "docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md"
+        ],
+        "B3": [
+          "docs/DECISIONS.md",
+          "docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md",
+          "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+          "docs/CONTINUITY.md",
+          "docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md",
+          "docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md"
+        ]
+      },
+      "context_exact_line_evidence_sha256_by_arm": {
+        "B0": "6f53367fffc99db647c4e9cb64a4a9107620841aa6d09df973a1da1fd850d208",
+        "B1": "158b25453e7aaa216e49d4a44160c8a2a051b76f364e563078907fc0427a044b",
+        "B2": "10fa45ffa21d509f4a98fa09e41345ae30680f30063f024888025d3fc196252c",
+        "B3": "6f1529d86464e1209071373377501d5bd8d77381a7ecf027e5411f388fcfe3f6"
+      },
+      "not_relevance_or_quality_scored": true,
+      "query_exposed_non_scored": "model collaboration review",
+      "same_candidate_order_as_b0": {
+        "B0": true,
+        "B1": false,
+        "B2": false,
+        "B3": true
+      },
+      "source_context_characters_by_arm": {
+        "B0": 5927,
+        "B1": 6180,
+        "B2": 5927,
+        "B3": 5927
+      }
+    },
+    {
+      "candidate_order_by_arm": {
+        "B0": [
+          "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md",
+          "docs/CONTINUITY.md",
+          "docs/DECISIONS.md",
+          "docs/research/145_candidate_01_requirements_v02_design_coverage_and_qualification_plan.md",
+          "docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md",
+          "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md"
+        ],
+        "B1": [
+          "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md",
+          "docs/CONTINUITY.md",
+          "docs/DECISIONS.md",
+          "docs/research/145_candidate_01_requirements_v02_design_coverage_and_qualification_plan.md",
+          "docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md",
+          "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md"
+        ],
+        "B2": [
+          "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md",
+          "docs/CONTINUITY.md",
+          "docs/DECISIONS.md",
+          "docs/research/145_candidate_01_requirements_v02_design_coverage_and_qualification_plan.md",
+          "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+          "docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md"
+        ],
+        "B3": [
+          "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md",
+          "docs/CONTINUITY.md",
+          "docs/DECISIONS.md",
+          "docs/research/145_candidate_01_requirements_v02_design_coverage_and_qualification_plan.md",
+          "docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md",
+          "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md"
+        ]
+      },
+      "context_exact_line_evidence_sha256_by_arm": {
+        "B0": "78b4a6d7f6a0cc958c89df02f418847c622c728c08fe9907cbd171cb0db32298",
+        "B1": "f91ccca08eb69b8461614369de9ae3d46dc91b980ec8220218ee3b9aae16f95d",
+        "B2": "137c45bd7f0fceada870945b8ca25eb07c01fd407dc2155a11c72d06295f403f",
+        "B3": "1d5f1fc8f8880220932f15a93e2e74c3aa62760e36abeaeeb8878daed41d931e"
+      },
+      "not_relevance_or_quality_scored": true,
+      "query_exposed_non_scored": "knowledge preservation continuity",
+      "same_candidate_order_as_b0": {
+        "B0": true,
+        "B1": true,
+        "B2": false,
+        "B3": true
+      },
+      "source_context_characters_by_arm": {
+        "B0": 8289,
+        "B1": 8289,
+        "B2": 8638,
+        "B3": 8289
+      }
+    }
+  ],
+  "exposed_probe_count": 8,
+  "fairness_limits": [
+    "Eight exposed mechanism probes are not independent needs or correctness scores and must not enter fresh origination or reference packets.",
+    "No post-freeze membership/link/concern/parameter tuning is permitted from this execution.",
+    "B0-B3 share full original 60 source W1 contents and exact experimental S1 semantics but rank candidates through distinct metadata-only additions.",
+    "Authored navigation metadata is a coordinator-curated source-adjacent overlay, not natural-owner J2, blind gold, or source-verified authority.",
+    "B4 omission is scoped to present equalized environment feasibility, not embedding-performance evidence.",
+    "Closed context packs are bounded and cannot guarantee all future independent needs are answerable."
+  ],
+  "frozen_c_arm_commit": "f43390ab267810502d7538e212cd30f4fee18aaf",
+  "frozen_contract_sha256": "31e77378218e60780cdbad2dfec98293ac71f3fbeb58206066dff268ea5d845a",
+  "heldout_paths": "NOT_DRAWN",
+  "independent_primary_task_authorship": "NOT_STARTED",
+  "legacy_65_source_arm_work": "NOT_STARTED_BEFORE_INDEPENDENT_NEUTRAL_NINE",
+  "mechanism_browse_smoke_counts": {
+    "controlled_subject_count": 24,
+    "example_concern_browse_count": 31,
+    "example_editorial_browse_count": 1,
+    "source_to_governing_editorial_links": 23,
+    "subject_parent_browse_count": 43
+  },
+  "neural_b4": "PROSPECTIVELY_OMITTED_AT_PRIMARY_C_ARM_FREEZE",
+  "orders_different_from_b0_not_quality_score": {
+    "B0": 0,
+    "B1": 5,
+    "B2": 6,
+    "B3": 4
+  },
+  "original_source_git_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+  "per_arm_curated_metadata_costs_not_performance_scores": {
+    "B0": {
+      "author_created_editorial_links": 0,
+      "authored_concern_definitions": 0,
+      "authored_concern_memberships": 0,
+      "authored_subject_memberships": 0,
+      "generated_vs_authored": "CURATED_TAGS_AUTHOR_AUTHORED; SOURCE_ANCHORS_DERIVED",
+      "historical_research217_taxonomy_and_membership_cost": "UNQUANTIFIED_REQUIRED",
+      "incremental_navigation_metadata_bytes_utf8": 0,
+      "manual_annotation_minutes": "NOT_MEASURED_NOT_ASSUMED_FREE",
+      "preferred_subject_routes": 0,
+      "recurring_cost": "NOT_YET_MEASURED_ON_HELDOUT"
+    },
+    "B1": {
+      "author_created_editorial_links": 0,
+      "authored_concern_definitions": 0,
+      "authored_concern_memberships": 0,
+      "authored_subject_memberships": 120,
+      "generated_vs_authored": "CURATED_TAGS_AUTHOR_AUTHORED; SOURCE_ANCHORS_DERIVED",
+      "historical_research217_taxonomy_and_membership_cost": "UNQUANTIFIED_REQUIRED",
+      "incremental_navigation_metadata_bytes_utf8": 13546,
+      "manual_annotation_minutes": "NOT_MEASURED_NOT_ASSUMED_FREE",
+      "preferred_subject_routes": 60,
+      "recurring_cost": "NOT_YET_MEASURED_ON_HELDOUT"
+    },
+    "B2": {
+      "author_created_editorial_links": 23,
+      "authored_concern_definitions": 0,
+      "authored_concern_memberships": 0,
+      "authored_subject_memberships": 0,
+      "generated_vs_authored": "CURATED_TAGS_AUTHOR_AUTHORED; SOURCE_ANCHORS_DERIVED",
+      "historical_research217_taxonomy_and_membership_cost": "UNQUANTIFIED_REQUIRED",
+      "incremental_navigation_metadata_bytes_utf8": 10814,
+      "manual_annotation_minutes": "NOT_MEASURED_NOT_ASSUMED_FREE",
+      "preferred_subject_routes": 0,
+      "recurring_cost": "NOT_YET_MEASURED_ON_HELDOUT"
+    },
+    "B3": {
+      "author_created_editorial_links": 0,
+      "authored_concern_definitions": 5,
+      "authored_concern_memberships": 115,
+      "authored_subject_memberships": 0,
+      "generated_vs_authored": "CURATED_TAGS_AUTHOR_AUTHORED; SOURCE_ANCHORS_DERIVED",
+      "historical_research217_taxonomy_and_membership_cost": "UNQUANTIFIED_REQUIRED",
+      "incremental_navigation_metadata_bytes_utf8": 8799,
+      "manual_annotation_minutes": "NOT_MEASURED_NOT_ASSUMED_FREE",
+      "preferred_subject_routes": 0,
+      "recurring_cost": "NOT_YET_MEASURED_ON_HELDOUT"
+    }
+  },
+  "per_arm_method_operation_counts": {
+    "B0": {
+      "context_pack": 8,
+      "lexical_rank": 8
+    },
+    "B1": {
+      "context_pack": 8,
+      "lexical_rank": 8,
+      "subject_browse": 1,
+      "subject_rank": 8
+    },
+    "B2": {
+      "context_pack": 8,
+      "editorial_browse": 1,
+      "editorial_rank": 8,
+      "lexical_rank": 8
+    },
+    "B3": {
+      "concern_browse": 1,
+      "concern_rank": 8,
+      "context_pack": 8,
+      "lexical_rank": 8
+    }
+  },
+  "physical_architecture_selection": false,
+  "production_authority_changed": false,
+  "protected_reference": "NONE",
+  "research513_primary_or_legacy_pass_counts": "NONE",
+  "research673_m6_formal_attempt_used": false,
+  "schema_version": 1,
+  "source_count": 60,
+  "total_original_git_source_bytes": 822370
+}

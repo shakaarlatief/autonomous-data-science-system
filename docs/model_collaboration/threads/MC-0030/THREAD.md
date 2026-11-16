@@ -1662,3 +1662,26 @@ The next **different** engineering gate is \`C_ARM_REAL_W1_NAVIGATION_IMPL_AND_F
     FORMAL_M6_ATTEMPTS_USED=0
     FORMAL_P03=INCOMPLETE
     NEXT=C_ARM_W1_NAVIGATION_IMPL_AND_FREEZE
+
+## Frozen and actually executed W1 primary C_arm B0-B3 comparator implementations, Checkpoint 961
+
+Research 700 / Validation 396 / Message 115 record a genuine primary-arm execution milestone on the already frozen 60-original-Git-source W1 world. The 60 exact original sources (822,370 original UTF-8 bytes, 4,626 common BM25 passages) and all experimental S1 source-reported / accepted weak-assurance J1/J2/J3 semantics are available identically across arms. B0 is common BM25 only; B1 adds the Research 217 controlled subject/polyhierarchy with 120 exposed-coordinator-authored W1 memberships and 60 preferred routes; B2 adds 23 extra directional carrier to governing-contract editorial about-links that are NOT duplicated by native literal documentary mentions, NEVER natural-owner J2 REALIZES; B3 adds 115 authored concern assignments under a five-concern crosscutting taxonomy. All metadata is explicitly non-governing source-adjacent coordinator curation, not independently verified semantic membership or accepted J1/J2.
+
+The exact implementation and metadata were committed as `b987b1837f38479c3ccd34410de4ef52ab4c1edd`; a separate pre-task, pre-diagnostic Git-object version and budget contract was committed as `f43390ab267810502d7538e212cd30f4fee18aaf`. It prospectively **omits B4 neural** under Research 513 §6.3 for absence of a qualified equalized neural host, without inferring model quality, and freezes one-shot six-source/16,800-original-source-char answer-context pack budget and zero live answerer repo/web reads. Only after `C_arm` was committed did the coordinator execute eight exposed mechanical probes. B1 differed in six-source source order from B0 on 5 of 8, B2 6 of 8, B3 4 of 8: **not a scored correctness outcome**. The unchanged code+metadata produced create-only receipt SHA-256 `97403f0859b68ce1028944271014c7b0b6e963ccd9ac5d651cd4298e9623652c`; 32 implementation plus 10 postfreeze tests passed.
+
+The **primary W1 freeze** does not build or score the old 65-source Research 217 **legacy** nine. Research 559 requires neutral independently adjudicated legacy gold before legacy arm construction. Also missing: Research 576 actual fake-only Level B restricted reference custody, new 12 primary needs with independent gold from owner-relayed unexposed actors, post-`C_arm` 20 heldout draw and maintenance F1/churn/rebuild, two fresh evaluators when needed, and owner-approved Research 673 M6 numeric session/time budget. Zero formal M6 attempts consumed. Next carry out the two real protected independent-role gates, **not** a repeat of source readiness or comparator planning.
+
+    RESEARCH=700
+    VALIDATION=396
+    CHECKPOINT=961
+    MESSAGE=MC0030_MESSAGE115
+    PRIMARY_CODE_AND_AUTHORED_METADATA=b987b183
+    PRIMARY_FREEZE=f43390ab
+    W1_PRIMARY_B0_B3_ACTUALLY_EXECUTED=true
+    EXPOSED_DIFFERENCES_NOT_SCORE=5_6_4_OF_8
+    B4=PROSPECTIVE_OMISSION_BEFORE_RESULTS
+    LEGACY_REFERENCE9=UNFROZEN
+    FAKE_ONLY_PROTECTED_CUSTODY=NOT_DONE
+    FORMAL_M6_ATTEMPTS_USED=0
+    FORMAL_P03=INCOMPLETE
+    NEXT=OWNER_RELAY_FAKE_ONLY_CUSTODY_AND_FRESH_NEUTRAL_LEGACY_NINE
