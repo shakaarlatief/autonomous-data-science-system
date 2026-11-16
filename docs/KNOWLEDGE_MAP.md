@@ -1105,6 +1105,12 @@ docs/research/697_r0_p03_finite_fresh_reviewer_route_failure_and_formal_readines
 docs/research/698_r0_p03_claude_handoff_route_correction_and_narrow_critical_path_review.md
 docs/research/699_r0_p03_w1_precommitted_60_source_build_world_and_mechanical_substrate.md
 docs/research/700_r0_p03_w1_primary_c_arm_distinct_navigation_freeze_and_execution.md
+docs/research/701_r0_p03_synthetic_custody_no_extra_backup_and_legacy65_independent_handoff.md
+docs/local_execution/validation/397_r0_p03_legacy65_source_only_handoff_and_custody_evidence_reuse.md
+docs/checkpoints/962_r0_p03_no_extra_backup_and_legacy65_source_only_independent_handoff_ready.md
+docs/model_collaboration/threads/MC-0030/messages/116_chatgpt_r0_p03_owner_backup_correction_legacy65_source_only_handoff.md
+experiments/r0_p03_navigation_probe/legacy_65_source_only_handoff_v01.py
+tests/unit/test_r0_p03_legacy65_source_only_handoff_v01.py
 docs/local_execution/validation/396_r0_p03_w1_primary_arm_freeze_postfreeze_execution.md
 docs/checkpoints/961_r0_p03_w1_primary_c_arm_frozen_and_distinct_navigation_executed.md
 docs/model_collaboration/threads/MC-0030/messages/115_chatgpt_r0_p03_primary_w1_c_arm_freeze_and_execution.md
@@ -2456,7 +2462,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-961 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-962 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

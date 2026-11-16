@@ -1685,3 +1685,22 @@ The **primary W1 freeze** does not build or score the old 65-source Research 217
     FORMAL_M6_ATTEMPTS_USED=0
     FORMAL_P03=INCOMPLETE
     NEXT=OWNER_RELAY_FAKE_ONLY_CUSTODY_AND_FRESH_NEUTRAL_LEGACY_NINE
+
+## Owner extra backup chore retracted; independent historical legacy-65 source-only relay ready, Checkpoint 962
+
+Research 701 / Validation 397 / MC-0030 Message 116 preserve the owner's instruction **not** to create an additional backup folder, USB copy or repeat file-storage exercise. This assistant-suggested means was never mandatory under Research 575/576 and is not a new gate. Existing Research 585 owner-report of a complete fictional 21-case separate-process readback is retained; newly owner-downloaded two-case fake reference passed exact count/hash/UTF-8/JSON locally, with only an independently verified source-safe receipt received by the exposed coordinator. This does NOT qualify known-route answerer isolation or complete protected *real* gold delivery for formal scoring. Those distinct controls remain open, not silently waived.
+
+The coordinator actually generated a reproducible **65 historical exact-source-only ZIP** under the ignored local owner-upload staging directory. Historical original Git revision is 4b94ffe183ff7af72cef6ee7492b4ba2f30c11ef, 65 fully original Git-verified bytes and paths, plus one versioned manifest, one nine-neutral-topical-domain file and one independent reviewer brief, **68 members**. Exact archive is 622,066 bytes, SHA-256 db2eb5fc66105918166db54de225b0625ce6d7faf9cb9270bfd98ba3842ffc7b; seven focused verification tests PASS. No historical B1 required/excluded source lists, W5 scenario answers/catalog, current W1 arm data, new task gold or score were packaged. A per-blob subprocess time-out was repaired by Git tree and batch blob verification without changing ZIP identity.
+
+The resulting owner-upload source pack path is .ads-private/p03_legacy_independent_source_only_handoff/P03_LEGACY65_NEUTRAL_SOURCE_ONLY_V01.zip. Owner relay to a **fresh independent, non-arm, non-W5-exposed legacy neutral reference author** is next. The complete nine-case reference is prospective protected owner-held output and must not be sent to this exposed coordinator. Existing Research 559 requires the independently neutral legacy packet to be frozen before historical 65-world legacy arm construction. The primary W1 arm versions remain frozen at f43390ab; no 20 heldout draw, 12 post-arm original primary needs, actual scored Research 513 result, owner M6 budget or physical/prod authority switch has occurred.
+
+    RESEARCH=701
+    VALIDATION=397
+    CHECKPOINT=962
+    MESSAGE=MC0030_MESSAGE116
+    OWNER_EXTRA_BACKUP=NOT_REQUIRED
+    LEGACY65_SOURCE_ONLY_ZIP_READY=true
+    LEGACY65_NEUTRAL_REFERENCE=UNAUTHORED
+    REAL_GOLD_ANSWERER_ISOLATION=NOT_QUALIFIED
+    FORMAL_M6_ATTEMPTS_USED=0
+    NEXT=OWNER_FRESH_INDEPENDENT_LEGACY65_AUTHOR_RELAY
