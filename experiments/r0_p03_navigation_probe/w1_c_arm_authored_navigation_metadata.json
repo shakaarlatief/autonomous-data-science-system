@@ -1,0 +1,1381 @@
+{
+  "b1_subjects_by_source": {
+    "docs/CONTINUITY.md": {
+      "preferred_subject": "development-governance",
+      "subjects": [
+        "development-governance",
+        "project-knowledge-architecture"
+      ]
+    },
+    "docs/DECISIONS.md": {
+      "preferred_subject": "admissibility-authority",
+      "subjects": [
+        "admissibility-authority",
+        "development-governance"
+      ]
+    },
+    "docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md": {
+      "preferred_subject": "methodological-knowledge",
+      "subjects": [
+        "methodological-knowledge",
+        "evaluation-assurance"
+      ]
+    },
+    "docs/checkpoints/108_v1_architecture_comparison_and_sqlite_centered_selection.md": {
+      "preferred_subject": "runtime-persistence",
+      "subjects": [
+        "runtime-persistence",
+        "evaluation-assurance"
+      ]
+    },
+    "docs/checkpoints/838_owner_architecture_decision_package_frozen.md": {
+      "preferred_subject": "admissibility-authority",
+      "subjects": [
+        "admissibility-authority",
+        "project-knowledge-architecture"
+      ]
+    },
+    "docs/checkpoints/839_v03_selected_realization_program_opened.md": {
+      "preferred_subject": "project-knowledge-architecture",
+      "subjects": [
+        "project-knowledge-architecture",
+        "admissibility-authority"
+      ]
+    },
+    "docs/experiments/prototype_v0/HELD_OUT_STATUS.md": {
+      "preferred_subject": "evaluation-assurance",
+      "subjects": [
+        "evaluation-assurance",
+        "development-governance"
+      ]
+    },
+    "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md": {
+      "preferred_subject": "project-knowledge-architecture",
+      "subjects": [
+        "project-knowledge-architecture",
+        "knowledge-representation"
+      ]
+    },
+    "docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md": {
+      "preferred_subject": "model-collaboration",
+      "subjects": [
+        "model-collaboration",
+        "development-governance"
+      ]
+    },
+    "docs/model_collaboration/threads/MC-0001/RESOLUTION.md": {
+      "preferred_subject": "model-collaboration",
+      "subjects": [
+        "model-collaboration",
+        "development-governance"
+      ]
+    },
+    "docs/model_collaboration/threads/MC-0002/RESOLUTION.md": {
+      "preferred_subject": "model-collaboration",
+      "subjects": [
+        "model-collaboration",
+        "development-governance"
+      ]
+    },
+    "docs/project_knowledge/architecture/reconstruction_and_action.md": {
+      "preferred_subject": "project-knowledge-architecture",
+      "subjects": [
+        "project-knowledge-architecture",
+        "recommendation-action"
+      ]
+    },
+    "docs/project_knowledge/generated/identity_index.json": {
+      "preferred_subject": "project-knowledge-architecture",
+      "subjects": [
+        "project-knowledge-architecture",
+        "knowledge-representation"
+      ]
+    },
+    "docs/project_knowledge/generated/risk_obligation_index.json": {
+      "preferred_subject": "project-knowledge-architecture",
+      "subjects": [
+        "project-knowledge-architecture",
+        "recommendation-action"
+      ]
+    },
+    "docs/project_knowledge/generated/source_catalog.json": {
+      "preferred_subject": "project-knowledge-architecture",
+      "subjects": [
+        "project-knowledge-architecture",
+        "source-universe"
+      ]
+    },
+    "docs/project_knowledge/generated/workstream_graph.json": {
+      "preferred_subject": "project-orchestration",
+      "subjects": [
+        "project-orchestration",
+        "project-knowledge-architecture"
+      ]
+    },
+    "docs/research/010_2026_runtime_bakeoff_preimplementation_refresh.md": {
+      "preferred_subject": "runtime-persistence",
+      "subjects": [
+        "runtime-persistence",
+        "tooling-integrations"
+      ]
+    },
+    "docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md": {
+      "preferred_subject": "runtime-persistence",
+      "subjects": [
+        "runtime-persistence",
+        "evaluation-assurance"
+      ]
+    },
+    "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md": {
+      "preferred_subject": "development-governance",
+      "subjects": [
+        "development-governance",
+        "project-knowledge-architecture"
+      ]
+    },
+    "docs/research/144_whole_architecture_candidate_repository_native_semantic_sources.md": {
+      "preferred_subject": "project-knowledge-architecture",
+      "subjects": [
+        "project-knowledge-architecture",
+        "knowledge-representation"
+      ]
+    },
+    "docs/research/145_candidate_01_requirements_v02_design_coverage_and_qualification_plan.md": {
+      "preferred_subject": "project-knowledge-architecture",
+      "subjects": [
+        "project-knowledge-architecture",
+        "evaluation-assurance"
+      ]
+    },
+    "docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md": {
+      "preferred_subject": "project-knowledge-architecture",
+      "subjects": [
+        "project-knowledge-architecture",
+        "admissibility-authority"
+      ]
+    },
+    "docs/specifications/002_v1_persistence_tooling_standard.md": {
+      "preferred_subject": "runtime-persistence",
+      "subjects": [
+        "runtime-persistence",
+        "tooling-integrations"
+      ]
+    },
+    "docs/specifications/003_v1_python_project_and_dependency_tooling.md": {
+      "preferred_subject": "tooling-integrations",
+      "subjects": [
+        "tooling-integrations",
+        "development-governance"
+      ]
+    },
+    "docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md": {
+      "preferred_subject": "runtime-persistence",
+      "subjects": [
+        "runtime-persistence",
+        "evaluation-assurance"
+      ]
+    },
+    "docs/specifications/023_v1_source_universe_substrate.md": {
+      "preferred_subject": "source-universe",
+      "subjects": [
+        "source-universe",
+        "runtime-persistence"
+      ]
+    },
+    "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md": {
+      "preferred_subject": "development-governance",
+      "subjects": [
+        "development-governance",
+        "evaluation-assurance"
+      ]
+    },
+    "docs/specifications/026_v1_repository_integrity_recovery_amendment.md": {
+      "preferred_subject": "development-governance",
+      "subjects": [
+        "development-governance",
+        "admissibility-authority"
+      ]
+    },
+    "docs/specifications/027_v1_historical_intermediate_checkpoint_integrity_extension.md": {
+      "preferred_subject": "development-governance",
+      "subjects": [
+        "development-governance",
+        "evaluation-assurance"
+      ]
+    },
+    "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md": {
+      "preferred_subject": "project-knowledge-architecture",
+      "subjects": [
+        "project-knowledge-architecture",
+        "admissibility-authority"
+      ]
+    },
+    "frontend/design-lab/cockpit-conversation-integration-study.js": {
+      "preferred_subject": "cockpit-interaction",
+      "subjects": [
+        "cockpit-interaction",
+        "cockpit-implementation"
+      ]
+    },
+    "frontend/design-lab/cockpit-practical-workspace-study.css": {
+      "preferred_subject": "cockpit-visual-language",
+      "subjects": [
+        "cockpit-visual-language",
+        "cockpit-interaction"
+      ]
+    },
+    "frontend/design-lab/cockpit-reintegration-presentation-integrity.css": {
+      "preferred_subject": "cockpit-visual-language",
+      "subjects": [
+        "cockpit-visual-language",
+        "cockpit-implementation"
+      ]
+    },
+    "frontend/design-lab/cockpit-reintegration-review-256.css": {
+      "preferred_subject": "cockpit-visual-language",
+      "subjects": [
+        "cockpit-visual-language",
+        "cockpit-interaction"
+      ]
+    },
+    "frontend/design-lab/cockpit-reintegration-review-controls.css": {
+      "preferred_subject": "cockpit-interaction",
+      "subjects": [
+        "cockpit-interaction",
+        "cockpit-visual-language"
+      ]
+    },
+    "frontend/design-lab/cockpit-reintegration.html": {
+      "preferred_subject": "cockpit-implementation",
+      "subjects": [
+        "cockpit-implementation",
+        "cockpit-product"
+      ]
+    },
+    "frontend/design-lab/work-unit-blocked-carrier-ring-swap.css": {
+      "preferred_subject": "cockpit-visual-language",
+      "subjects": [
+        "cockpit-visual-language",
+        "cockpit-interaction"
+      ]
+    },
+    "frontend/e2e/cockpit-reintegration-review-256.spec.ts": {
+      "preferred_subject": "evaluation-assurance",
+      "subjects": [
+        "evaluation-assurance",
+        "cockpit-implementation"
+      ]
+    },
+    "schemas/project_knowledge/semantic_source.v1.schema.json": {
+      "preferred_subject": "project-knowledge-architecture",
+      "subjects": [
+        "project-knowledge-architecture",
+        "knowledge-representation"
+      ]
+    },
+    "schemas/project_knowledge/workstream.v1.schema.json": {
+      "preferred_subject": "project-orchestration",
+      "subjects": [
+        "project-orchestration",
+        "knowledge-representation"
+      ]
+    },
+    "schemas/reusable_knowledge_bundle_v1.schema.json": {
+      "preferred_subject": "knowledge-representation",
+      "subjects": [
+        "knowledge-representation",
+        "source-universe"
+      ]
+    },
+    "scripts/check_knowledge_map.py": {
+      "preferred_subject": "development-governance",
+      "subjects": [
+        "development-governance",
+        "evaluation-assurance"
+      ]
+    },
+    "scripts/check_private_continuity.py": {
+      "preferred_subject": "development-governance",
+      "subjects": [
+        "development-governance",
+        "admissibility-authority"
+      ]
+    },
+    "scripts/select_cockpit_verification.py": {
+      "preferred_subject": "evaluation-assurance",
+      "subjects": [
+        "evaluation-assurance",
+        "cockpit-implementation"
+      ]
+    },
+    "src/ads_system/__init__.py": {
+      "preferred_subject": "runtime-persistence",
+      "subjects": [
+        "runtime-persistence",
+        "system-identity"
+      ]
+    },
+    "src/ads_system/infrastructure/interchange/knowledge_bundle.py": {
+      "preferred_subject": "knowledge-representation",
+      "subjects": [
+        "knowledge-representation",
+        "source-universe"
+      ]
+    },
+    "tests/fixtures/knowledge/reusable_knowledge_stress_v1.json": {
+      "preferred_subject": "evaluation-assurance",
+      "subjects": [
+        "evaluation-assurance",
+        "knowledge-representation"
+      ]
+    },
+    "tests/fixtures/methodological_navigation/spec022_contract_fixture_manifest_v1.json": {
+      "preferred_subject": "evaluation-assurance",
+      "subjects": [
+        "evaluation-assurance",
+        "retrieval-context"
+      ]
+    },
+    "tests/test_migration_revision_ids.py": {
+      "preferred_subject": "evaluation-assurance",
+      "subjects": [
+        "evaluation-assurance",
+        "runtime-persistence"
+      ]
+    },
+    "tests/test_package_smoke.py": {
+      "preferred_subject": "evaluation-assurance",
+      "subjects": [
+        "evaluation-assurance",
+        "development-governance"
+      ]
+    },
+    "tests/unit/test_knowledge_interchange.py": {
+      "preferred_subject": "evaluation-assurance",
+      "subjects": [
+        "evaluation-assurance",
+        "knowledge-representation"
+      ]
+    },
+    "tests/unit/test_model_collaboration_state.py": {
+      "preferred_subject": "evaluation-assurance",
+      "subjects": [
+        "evaluation-assurance",
+        "model-collaboration"
+      ]
+    },
+    "tests/unit/test_project_knowledge_identity.py": {
+      "preferred_subject": "evaluation-assurance",
+      "subjects": [
+        "evaluation-assurance",
+        "project-knowledge-architecture"
+      ]
+    },
+    "tests/unit/test_project_knowledge_refresh.py": {
+      "preferred_subject": "evaluation-assurance",
+      "subjects": [
+        "evaluation-assurance",
+        "project-knowledge-architecture"
+      ]
+    },
+    "tools/project_knowledge/capture.py": {
+      "preferred_subject": "project-knowledge-architecture",
+      "subjects": [
+        "project-knowledge-architecture",
+        "tooling-integrations"
+      ]
+    },
+    "tools/project_knowledge/identity.py": {
+      "preferred_subject": "project-knowledge-architecture",
+      "subjects": [
+        "project-knowledge-architecture",
+        "knowledge-representation"
+      ]
+    },
+    "tools/project_knowledge/pure_source_inventory.py": {
+      "preferred_subject": "project-knowledge-architecture",
+      "subjects": [
+        "project-knowledge-architecture",
+        "source-universe"
+      ]
+    },
+    "tools/project_knowledge/services/generation.py": {
+      "preferred_subject": "project-knowledge-architecture",
+      "subjects": [
+        "project-knowledge-architecture",
+        "tooling-integrations"
+      ]
+    },
+    "tools/project_knowledge/services/refresh.py": {
+      "preferred_subject": "project-knowledge-architecture",
+      "subjects": [
+        "project-knowledge-architecture",
+        "tooling-integrations"
+      ]
+    },
+    "tools/project_knowledge/services/validation.py": {
+      "preferred_subject": "evaluation-assurance",
+      "subjects": [
+        "evaluation-assurance",
+        "project-knowledge-architecture"
+      ]
+    }
+  },
+  "b2_additional_editorial_links": [
+    {
+      "claims_j1_j2_j3_implementation": false,
+      "governing_target": "docs/DECISIONS.md",
+      "id": "W1B2-001",
+      "rationale": "Owner decision-package provenance provides an editorial route to the decision ledger.",
+      "relation": "NON_GOVERNING_EDITORIAL_ABOUT_ONLY",
+      "source": "docs/checkpoints/838_owner_architecture_decision_package_frozen.md",
+      "source_owner_verified": false
+    },
+    {
+      "claims_j1_j2_j3_implementation": false,
+      "governing_target": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "id": "W1B2-002",
+      "rationale": "Historical selected target record relates to the present project-knowledge implementation contract.",
+      "relation": "NON_GOVERNING_EDITORIAL_ABOUT_ONLY",
+      "source": "docs/checkpoints/839_v03_selected_realization_program_opened.md",
+      "source_owner_verified": false
+    },
+    {
+      "claims_j1_j2_j3_implementation": false,
+      "governing_target": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "id": "W1B2-003",
+      "rationale": "Knowledge-preservation foundations are relevant to later implementation boundaries.",
+      "relation": "NON_GOVERNING_EDITORIAL_ABOUT_ONLY",
+      "source": "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md",
+      "source_owner_verified": false
+    },
+    {
+      "claims_j1_j2_j3_implementation": false,
+      "governing_target": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "id": "W1B2-004",
+      "rationale": "Architecture proposal informs the subsequently frozen project-knowledge contract.",
+      "relation": "NON_GOVERNING_EDITORIAL_ABOUT_ONLY",
+      "source": "docs/research/144_whole_architecture_candidate_repository_native_semantic_sources.md",
+      "source_owner_verified": false
+    },
+    {
+      "claims_j1_j2_j3_implementation": false,
+      "governing_target": "docs/specifications/023_v1_source_universe_substrate.md",
+      "id": "W1B2-005",
+      "rationale": "Architecture coverage planning is related to source-substrate requirements.",
+      "relation": "NON_GOVERNING_EDITORIAL_ABOUT_ONLY",
+      "source": "docs/research/145_candidate_01_requirements_v02_design_coverage_and_qualification_plan.md",
+      "source_owner_verified": false
+    },
+    {
+      "claims_j1_j2_j3_implementation": false,
+      "governing_target": "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+      "id": "W1B2-006",
+      "rationale": "Repository information-architecture research relates to repository-integrity requirements.",
+      "relation": "NON_GOVERNING_EDITORIAL_ABOUT_ONLY",
+      "source": "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md",
+      "source_owner_verified": false
+    },
+    {
+      "claims_j1_j2_j3_implementation": false,
+      "governing_target": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "id": "W1B2-007",
+      "rationale": "Project-knowledge requirements provide context for their implementation contract.",
+      "relation": "NON_GOVERNING_EDITORIAL_ABOUT_ONLY",
+      "source": "docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md",
+      "source_owner_verified": false
+    },
+    {
+      "claims_j1_j2_j3_implementation": false,
+      "governing_target": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "id": "W1B2-008",
+      "rationale": "Reconstruction and action guidance relates to the technical contract.",
+      "relation": "NON_GOVERNING_EDITORIAL_ABOUT_ONLY",
+      "source": "docs/project_knowledge/architecture/reconstruction_and_action.md",
+      "source_owner_verified": false
+    },
+    {
+      "claims_j1_j2_j3_implementation": false,
+      "governing_target": "docs/DECISIONS.md",
+      "id": "W1B2-009",
+      "rationale": "Collaboration continuity guidance relates editorially to the decision ledger.",
+      "relation": "NON_GOVERNING_EDITORIAL_ABOUT_ONLY",
+      "source": "docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md",
+      "source_owner_verified": false
+    },
+    {
+      "claims_j1_j2_j3_implementation": false,
+      "governing_target": "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+      "id": "W1B2-010",
+      "rationale": "Historical collaboration resolution provides context for integrity hardening.",
+      "relation": "NON_GOVERNING_EDITORIAL_ABOUT_ONLY",
+      "source": "docs/model_collaboration/threads/MC-0002/RESOLUTION.md",
+      "source_owner_verified": false
+    },
+    {
+      "claims_j1_j2_j3_implementation": false,
+      "governing_target": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "id": "W1B2-011",
+      "rationale": "Identity code is related to contract identity behavior, not proof of conformity.",
+      "relation": "NON_GOVERNING_EDITORIAL_ABOUT_ONLY",
+      "source": "tools/project_knowledge/identity.py",
+      "source_owner_verified": false
+    },
+    {
+      "claims_j1_j2_j3_implementation": false,
+      "governing_target": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "id": "W1B2-012",
+      "rationale": "Refresh code concerns lifecycle behavior specified by the project-knowledge contract.",
+      "relation": "NON_GOVERNING_EDITORIAL_ABOUT_ONLY",
+      "source": "tools/project_knowledge/services/refresh.py",
+      "source_owner_verified": false
+    },
+    {
+      "claims_j1_j2_j3_implementation": false,
+      "governing_target": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "id": "W1B2-013",
+      "rationale": "Generated-orientation code is related to the project's derived-view contract.",
+      "relation": "NON_GOVERNING_EDITORIAL_ABOUT_ONLY",
+      "source": "tools/project_knowledge/services/generation.py",
+      "source_owner_verified": false
+    },
+    {
+      "claims_j1_j2_j3_implementation": false,
+      "governing_target": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "id": "W1B2-014",
+      "rationale": "Validation code provides an investigation route to the project-knowledge contract.",
+      "relation": "NON_GOVERNING_EDITORIAL_ABOUT_ONLY",
+      "source": "tools/project_knowledge/services/validation.py",
+      "source_owner_verified": false
+    },
+    {
+      "claims_j1_j2_j3_implementation": false,
+      "governing_target": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "id": "W1B2-015",
+      "rationale": "Identity test definitions are relevant to the contract without verifying success.",
+      "relation": "NON_GOVERNING_EDITORIAL_ABOUT_ONLY",
+      "source": "tests/unit/test_project_knowledge_identity.py",
+      "source_owner_verified": false
+    },
+    {
+      "claims_j1_j2_j3_implementation": false,
+      "governing_target": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "id": "W1B2-016",
+      "rationale": "Refresh test definitions are relevant to the contract without verifying success.",
+      "relation": "NON_GOVERNING_EDITORIAL_ABOUT_ONLY",
+      "source": "tests/unit/test_project_knowledge_refresh.py",
+      "source_owner_verified": false
+    },
+    {
+      "claims_j1_j2_j3_implementation": false,
+      "governing_target": "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+      "id": "W1B2-017",
+      "rationale": "Knowledge map checks relate to repository integrity controls.",
+      "relation": "NON_GOVERNING_EDITORIAL_ABOUT_ONLY",
+      "source": "scripts/check_knowledge_map.py",
+      "source_owner_verified": false
+    },
+    {
+      "claims_j1_j2_j3_implementation": false,
+      "governing_target": "docs/specifications/003_v1_python_project_and_dependency_tooling.md",
+      "id": "W1B2-018",
+      "rationale": "Historical knowledge requirements offer context for project dependency tooling.",
+      "relation": "NON_GOVERNING_EDITORIAL_ABOUT_ONLY",
+      "source": "docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md",
+      "source_owner_verified": false
+    },
+    {
+      "claims_j1_j2_j3_implementation": false,
+      "governing_target": "docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md",
+      "id": "W1B2-019",
+      "rationale": "Runtime comparator research adds context for runtime specification choices.",
+      "relation": "NON_GOVERNING_EDITORIAL_ABOUT_ONLY",
+      "source": "docs/research/010_2026_runtime_bakeoff_preimplementation_refresh.md",
+      "source_owner_verified": false
+    },
+    {
+      "claims_j1_j2_j3_implementation": false,
+      "governing_target": "docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md",
+      "id": "W1B2-020",
+      "rationale": "Historical durability research adds context to runtime evaluation.",
+      "relation": "NON_GOVERNING_EDITORIAL_ABOUT_ONLY",
+      "source": "docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md",
+      "source_owner_verified": false
+    },
+    {
+      "claims_j1_j2_j3_implementation": false,
+      "governing_target": "docs/specifications/023_v1_source_universe_substrate.md",
+      "id": "W1B2-021",
+      "rationale": "Knowledge-bundle code is related to source-substrate behavior.",
+      "relation": "NON_GOVERNING_EDITORIAL_ABOUT_ONLY",
+      "source": "src/ads_system/infrastructure/interchange/knowledge_bundle.py",
+      "source_owner_verified": false
+    },
+    {
+      "claims_j1_j2_j3_implementation": false,
+      "governing_target": "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md",
+      "id": "W1B2-022",
+      "rationale": "Cockpit reintegration prototype is editorial context for the staged knowledge contract.",
+      "relation": "NON_GOVERNING_EDITORIAL_ABOUT_ONLY",
+      "source": "frontend/design-lab/cockpit-reintegration.html",
+      "source_owner_verified": false
+    },
+    {
+      "claims_j1_j2_j3_implementation": false,
+      "governing_target": "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md",
+      "id": "W1B2-023",
+      "rationale": "Collaboration-state tests are related to repository integrity.",
+      "relation": "NON_GOVERNING_EDITORIAL_ABOUT_ONLY",
+      "source": "tests/unit/test_model_collaboration_state.py",
+      "source_owner_verified": false
+    }
+  ],
+  "b3_concerns_by_source": {
+    "docs/CONTINUITY.md": [
+      "temporal-currentness",
+      "source-evidence-integrity"
+    ],
+    "docs/DECISIONS.md": [
+      "owner-approval-boundary",
+      "temporal-currentness"
+    ],
+    "docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md": [
+      "migration-compatibility",
+      "execution-reproducibility"
+    ],
+    "docs/checkpoints/108_v1_architecture_comparison_and_sqlite_centered_selection.md": [
+      "owner-approval-boundary",
+      "migration-compatibility"
+    ],
+    "docs/checkpoints/838_owner_architecture_decision_package_frozen.md": [
+      "owner-approval-boundary",
+      "source-evidence-integrity"
+    ],
+    "docs/checkpoints/839_v03_selected_realization_program_opened.md": [
+      "owner-approval-boundary",
+      "temporal-currentness"
+    ],
+    "docs/experiments/prototype_v0/HELD_OUT_STATUS.md": [
+      "execution-reproducibility",
+      "source-evidence-integrity"
+    ],
+    "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md": [
+      "migration-compatibility",
+      "temporal-currentness"
+    ],
+    "docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md": [
+      "temporal-currentness",
+      "source-evidence-integrity"
+    ],
+    "docs/model_collaboration/threads/MC-0001/RESOLUTION.md": [
+      "owner-approval-boundary",
+      "source-evidence-integrity"
+    ],
+    "docs/model_collaboration/threads/MC-0002/RESOLUTION.md": [
+      "owner-approval-boundary",
+      "source-evidence-integrity"
+    ],
+    "docs/project_knowledge/architecture/reconstruction_and_action.md": [
+      "temporal-currentness",
+      "migration-compatibility"
+    ],
+    "docs/project_knowledge/generated/identity_index.json": [
+      "source-evidence-integrity",
+      "temporal-currentness"
+    ],
+    "docs/project_knowledge/generated/risk_obligation_index.json": [
+      "owner-approval-boundary",
+      "source-evidence-integrity"
+    ],
+    "docs/project_knowledge/generated/source_catalog.json": [
+      "source-evidence-integrity",
+      "temporal-currentness"
+    ],
+    "docs/project_knowledge/generated/workstream_graph.json": [
+      "temporal-currentness",
+      "source-evidence-integrity"
+    ],
+    "docs/research/010_2026_runtime_bakeoff_preimplementation_refresh.md": [
+      "execution-reproducibility",
+      "temporal-currentness"
+    ],
+    "docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md": [
+      "execution-reproducibility",
+      "temporal-currentness"
+    ],
+    "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md": [
+      "migration-compatibility",
+      "source-evidence-integrity"
+    ],
+    "docs/research/144_whole_architecture_candidate_repository_native_semantic_sources.md": [
+      "migration-compatibility",
+      "owner-approval-boundary"
+    ],
+    "docs/research/145_candidate_01_requirements_v02_design_coverage_and_qualification_plan.md": [
+      "execution-reproducibility",
+      "migration-compatibility"
+    ],
+    "docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md": [
+      "owner-approval-boundary",
+      "migration-compatibility"
+    ],
+    "docs/specifications/002_v1_persistence_tooling_standard.md": [
+      "migration-compatibility",
+      "execution-reproducibility"
+    ],
+    "docs/specifications/003_v1_python_project_and_dependency_tooling.md": [
+      "execution-reproducibility",
+      "source-evidence-integrity"
+    ],
+    "docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md": [
+      "execution-reproducibility",
+      "migration-compatibility"
+    ],
+    "docs/specifications/023_v1_source_universe_substrate.md": [
+      "source-evidence-integrity",
+      "temporal-currentness"
+    ],
+    "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md": [
+      "source-evidence-integrity",
+      "execution-reproducibility"
+    ],
+    "docs/specifications/026_v1_repository_integrity_recovery_amendment.md": [
+      "source-evidence-integrity",
+      "migration-compatibility"
+    ],
+    "docs/specifications/027_v1_historical_intermediate_checkpoint_integrity_extension.md": [
+      "temporal-currentness",
+      "source-evidence-integrity"
+    ],
+    "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md": [
+      "migration-compatibility",
+      "owner-approval-boundary"
+    ],
+    "frontend/design-lab/cockpit-conversation-integration-study.js": [
+      "migration-compatibility",
+      "execution-reproducibility"
+    ],
+    "frontend/design-lab/cockpit-practical-workspace-study.css": [
+      "migration-compatibility"
+    ],
+    "frontend/design-lab/cockpit-reintegration-presentation-integrity.css": [
+      "migration-compatibility",
+      "source-evidence-integrity"
+    ],
+    "frontend/design-lab/cockpit-reintegration-review-256.css": [
+      "migration-compatibility"
+    ],
+    "frontend/design-lab/cockpit-reintegration-review-controls.css": [
+      "migration-compatibility"
+    ],
+    "frontend/design-lab/cockpit-reintegration.html": [
+      "migration-compatibility",
+      "execution-reproducibility"
+    ],
+    "frontend/design-lab/work-unit-blocked-carrier-ring-swap.css": [
+      "migration-compatibility"
+    ],
+    "frontend/e2e/cockpit-reintegration-review-256.spec.ts": [
+      "execution-reproducibility",
+      "migration-compatibility"
+    ],
+    "schemas/project_knowledge/semantic_source.v1.schema.json": [
+      "source-evidence-integrity",
+      "migration-compatibility"
+    ],
+    "schemas/project_knowledge/workstream.v1.schema.json": [
+      "source-evidence-integrity",
+      "migration-compatibility"
+    ],
+    "schemas/reusable_knowledge_bundle_v1.schema.json": [
+      "source-evidence-integrity",
+      "migration-compatibility"
+    ],
+    "scripts/check_knowledge_map.py": [
+      "source-evidence-integrity",
+      "execution-reproducibility"
+    ],
+    "scripts/check_private_continuity.py": [
+      "source-evidence-integrity",
+      "execution-reproducibility"
+    ],
+    "scripts/select_cockpit_verification.py": [
+      "execution-reproducibility",
+      "migration-compatibility"
+    ],
+    "src/ads_system/__init__.py": [
+      "migration-compatibility",
+      "execution-reproducibility"
+    ],
+    "src/ads_system/infrastructure/interchange/knowledge_bundle.py": [
+      "source-evidence-integrity",
+      "migration-compatibility"
+    ],
+    "tests/fixtures/knowledge/reusable_knowledge_stress_v1.json": [
+      "execution-reproducibility",
+      "source-evidence-integrity"
+    ],
+    "tests/fixtures/methodological_navigation/spec022_contract_fixture_manifest_v1.json": [
+      "execution-reproducibility",
+      "source-evidence-integrity"
+    ],
+    "tests/test_migration_revision_ids.py": [
+      "migration-compatibility",
+      "execution-reproducibility"
+    ],
+    "tests/test_package_smoke.py": [
+      "execution-reproducibility"
+    ],
+    "tests/unit/test_knowledge_interchange.py": [
+      "execution-reproducibility",
+      "source-evidence-integrity"
+    ],
+    "tests/unit/test_model_collaboration_state.py": [
+      "execution-reproducibility",
+      "owner-approval-boundary"
+    ],
+    "tests/unit/test_project_knowledge_identity.py": [
+      "temporal-currentness",
+      "execution-reproducibility"
+    ],
+    "tests/unit/test_project_knowledge_refresh.py": [
+      "temporal-currentness",
+      "execution-reproducibility"
+    ],
+    "tools/project_knowledge/capture.py": [
+      "source-evidence-integrity",
+      "execution-reproducibility"
+    ],
+    "tools/project_knowledge/identity.py": [
+      "temporal-currentness",
+      "source-evidence-integrity"
+    ],
+    "tools/project_knowledge/pure_source_inventory.py": [
+      "source-evidence-integrity",
+      "execution-reproducibility"
+    ],
+    "tools/project_knowledge/services/generation.py": [
+      "source-evidence-integrity",
+      "execution-reproducibility"
+    ],
+    "tools/project_knowledge/services/refresh.py": [
+      "temporal-currentness",
+      "execution-reproducibility"
+    ],
+    "tools/project_knowledge/services/validation.py": [
+      "source-evidence-integrity",
+      "execution-reproducibility"
+    ]
+  },
+  "classification": "W1_PRETASK_EXPOSED_AUTHOR_CURATED_NON_GOVERNING_NAVIGATION",
+  "concern_descriptions": {
+    "execution-reproducibility": "Reproduction and testing of execution results with explicit evidence",
+    "migration-compatibility": "Meaning and operation preserved across data and system changes",
+    "owner-approval-boundary": "Distinction between owner selection, governing authorization and operational permission",
+    "source-evidence-integrity": "Provenance, durable original-source evidence and derived integrity",
+    "temporal-currentness": "Effect, source and evidence freshness, identity transitions and staleness"
+  },
+  "formal_legacy_golden": null,
+  "noncommon_authority": false,
+  "original_research217_preferred_route_policy": "First curated membership is preferred; browse hierarchy is from the original frozen Research217 catalog",
+  "original_source_git_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+  "primary_tasks": null,
+  "research217_catalog_sha256": "53c5cb65caccd1a9123f5d6da2e5738f618b383339c5bcfcf1d58fb9f5399495",
+  "schema_version": 1,
+  "source_adjacent_coordinator_authorship": {
+    "author": "ChatGPT exposed coordinator; independent authoring NOT claimed",
+    "authorship_mechanism": "Manual selection of research217 controlled membership and crosscutting concern tags for every W1 source, plus editorial links from carrier to governing contract",
+    "heldout_labels": null,
+    "historical_route_b_and_pilot_exposure": true,
+    "human_annotation_minutes_measured": false,
+    "no_protected_task_gold_or_heldout_access": true,
+    "not_natural_owner_j2": true,
+    "original_sources_not_modified": true,
+    "prior_research217_catalog_and_metadata_design_cost_is_not_zero": true,
+    "source_anchor_is_context_witness_not_membership_proof": true
+  },
+  "source_context_anchors": {
+    "docs/CONTINUITY.md": {
+      "context_excerpt": "# Continuity",
+      "source_blob_oid": "34098855a410008d7e1012c38cb1cf39cb1acfa7",
+      "source_line": 1,
+      "source_line_sha256": "82fa969c888475bc9a5bc2c913686a337b653d6181199f7f11e38b4d310809a8",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "docs/DECISIONS.md": {
+      "context_excerpt": "# Decisions",
+      "source_blob_oid": "2369141f8134f01941f2c1b635780a5ec8fb7b2b",
+      "source_line": 1,
+      "source_line_sha256": "55014cace8283815b0bfbc6e5801a9d15504e5591676af506cdce60239b3dec8",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md": {
+      "context_excerpt": "**Scope:** Derives technology-neutral implementation requirements from Foundations 018-020 before comparing persistence, retrieval, rule-evaluation, or backend architecture options.  ",
+      "source_blob_oid": "fe9eba89dc6c11b7f80d84b2a7bb71fb14eee3dd",
+      "source_line": 7,
+      "source_line_sha256": "dc0ccc0edafa5bdc60051abc3e0d8349f624e63a4c53bb8f09dfdc59953bb83d",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "docs/checkpoints/108_v1_architecture_comparison_and_sqlite_centered_selection.md": {
+      "context_excerpt": "**Scope:** Compares plausible technology families against Checkpoint 107 requirements, records targeted external research and a synthetic SQLite viability spike, and selects the smallest currently jus",
+      "source_blob_oid": "88b13dcf1092007ed98d458dfb824f4508f28418",
+      "source_line": 7,
+      "source_line_sha256": "2f4cd022f96ed656afaf37cd2d11f6672cd26f566c6406be493f6370c5a40812",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "docs/checkpoints/838_owner_architecture_decision_package_frozen.md": {
+      "context_excerpt": "**Scope:** Freeze the exact THIN_CENTRED_HYBRID_V03 architecture-selection package before owner judgment.",
+      "source_blob_oid": "326adf70ff0091b0218fb396ea3ea11483c01ae7",
+      "source_line": 7,
+      "source_line_sha256": "070e450554797887ba5c6b559b89b79025ebc76c929905c8e18c06967d5aa2d1",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "docs/checkpoints/839_v03_selected_realization_program_opened.md": {
+      "context_excerpt": "**Scope:** Record the owner's ACCEPT decision and open the V03 realization program without switching operational authority.",
+      "source_blob_oid": "d3258f2275be3838cf116359f103e584582ea02a",
+      "source_line": 7,
+      "source_line_sha256": "bca50bfb8e0822987c74a21b9d62d60ea5006d2db1a0175d1e77a718c035caa6",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "docs/experiments/prototype_v0/HELD_OUT_STATUS.md": {
+      "context_excerpt": "# Prototype V0 Held-Out Status",
+      "source_blob_oid": "73cf31283e4d6895a688c70221b7a0843fe96f61",
+      "source_line": 1,
+      "source_line_sha256": "0b1883894d9c0150e013c577c088dd8899f393030d5ee4787be51171f62e6b4c",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "docs/foundations/014_knowledge_preservation_architecture_and_evolution.md": {
+      "context_excerpt": "**Scope:** How this project preserves, promotes, discovers, reconciles, and evolves its own knowledge. This does not change Prototype V0 treatment behavior.",
+      "source_blob_oid": "20c8ed53d6a2955b7cda2ae6ceada05e2629d6c9",
+      "source_line": 6,
+      "source_line_sha256": "0945b5223d18f70b7f889336940063c021e77e2012ed0ffec980988db4dd1df6",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md": {
+      "context_excerpt": "# Deferred Review and Catch-Up Protocol",
+      "source_blob_oid": "2d1f8e816b00900f71d7982b072b6027728f5ab2",
+      "source_line": 1,
+      "source_line_sha256": "6c5876927de9dcec047924f50f0cb48a3d4a21f362a656077f7da3d33791c4a1",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "docs/model_collaboration/threads/MC-0001/RESOLUTION.md": {
+      "context_excerpt": "# MC-0001 Resolution",
+      "source_blob_oid": "c755c85a0c726714badead5e37cdf8b627429af6",
+      "source_line": 1,
+      "source_line_sha256": "e69b480c06ad5c55b8e2f49ec7f81d3f3331792220a0aaf7239cf444a6f5c19e",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "docs/model_collaboration/threads/MC-0002/RESOLUTION.md": {
+      "context_excerpt": "# MC-0002 Resolution",
+      "source_blob_oid": "ef16ace81645106c507410cf9910af9b547d5627",
+      "source_line": 1,
+      "source_line_sha256": "1f445f337aabcaff99b4f3e80c9d0a1bc96396aeb7fed25348ca6833f0d4c2d8",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "docs/project_knowledge/architecture/reconstruction_and_action.md": {
+      "context_excerpt": "# Reconstruction, Authority and Safe Action",
+      "source_blob_oid": "d4026b953699b8617022ea453335d476e4d19a46",
+      "source_line": 1,
+      "source_line_sha256": "0025a59f781acec4776ba24fc21af692169c0dfd134c9410778d1e0a17f17da5",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "docs/project_knowledge/generated/identity_index.json": {
+      "context_excerpt": "{",
+      "source_blob_oid": "735dcf0e95c37c4e4442550b479f97c4c386cdff",
+      "source_line": 1,
+      "source_line_sha256": "021fb596db81e6d02bf3d2586ee3981fe519f275c0ac9ca76bbcf2ebb4097d96",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "docs/project_knowledge/generated/risk_obligation_index.json": {
+      "context_excerpt": "{",
+      "source_blob_oid": "3ddc38a709b391e30d02e24e5dc4bbaecec1c62e",
+      "source_line": 1,
+      "source_line_sha256": "021fb596db81e6d02bf3d2586ee3981fe519f275c0ac9ca76bbcf2ebb4097d96",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "docs/project_knowledge/generated/source_catalog.json": {
+      "context_excerpt": "{",
+      "source_blob_oid": "526cf3ed43aa53ae1743ddeb0f4df00621968a74",
+      "source_line": 1,
+      "source_line_sha256": "021fb596db81e6d02bf3d2586ee3981fe519f275c0ac9ca76bbcf2ebb4097d96",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "docs/project_knowledge/generated/workstream_graph.json": {
+      "context_excerpt": "{",
+      "source_blob_oid": "e851c1d659654f626919ec4d8117bf4f3ef1f744",
+      "source_line": 1,
+      "source_line_sha256": "021fb596db81e6d02bf3d2586ee3981fe519f275c0ac9ca76bbcf2ebb4097d96",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "docs/research/010_2026_runtime_bakeoff_preimplementation_refresh.md": {
+      "context_excerpt": "**Scope:** Fresh official-source audit of Specification 005 candidates immediately before executable runtime-bakeoff implementation  ",
+      "source_blob_oid": "11413ea7bb0d5a1e1294d4c957888b65a0bd2187",
+      "source_line": 5,
+      "source_line_sha256": "c241de5865cbed9840c72dffe2ad740c078918e0d26e9e13cb9928cc10db5d8d",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md": {
+      "context_excerpt": "**Scope:** Verifies the currently released LangGraph ecosystem and narrows the ADS durability comparator before implementation.  ",
+      "source_blob_oid": "f159e7ee508b9fce12d9db6be5d5e4c73db0f775",
+      "source_line": 5,
+      "source_line_sha256": "0a5081fd9790108b32556db5d351d64ecb0006a16d75cf6d97a820db0ab7098b",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md": {
+      "context_excerpt": "**Scope:** Repository-scale knowledge preservation, discoverability, navigation ownership and validation  ",
+      "source_blob_oid": "d3f850beb65f0807622a562068039658ff608d15",
+      "source_line": 5,
+      "source_line_sha256": "11196358337cbb82c3026c0f42dcff602c357aa85db3f7da1f6726a8163c6411",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "docs/research/144_whole_architecture_candidate_repository_native_semantic_sources.md": {
+      "context_excerpt": "**Scope:** Synthesize one serious successor architecture from the complete Research 124 evidence field after the H1/H2 mechanism probes, real-corpus independent review, MC-0014/MC-0015 corrections, D1",
+      "source_blob_oid": "fb16859ebe94cc09acf2e37b4afee27380946adf",
+      "source_line": 6,
+      "source_line_sha256": "ab5029132007cc6055175e80e05ce8c4e6bb316a1023e65bf9a9f97d0af0031e",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "docs/research/145_candidate_01_requirements_v02_design_coverage_and_qualification_plan.md": {
+      "context_excerpt": "**Scope:** Systematically map the whole-architecture candidate against every frozen Requirements V0.2 requirement/invariant, distinguish design coverage from actual qualification evidence, identify se",
+      "source_blob_oid": "90283c74c962d08516177a66d2fc67d963fe0455",
+      "source_line": 6,
+      "source_line_sha256": "0fac96c5c61c26afeb721c2aed5eb735f22b06d544cbcf29898de000bee4bb3f",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "docs/research/PROJECT_KNOWLEDGE_ARCHITECTURE_REQUIREMENTS_V02.md": {
+      "context_excerpt": "**Scope:** Architecture-neutral acceptance requirements and invariants for the successor project-development knowledge architecture supporting development of ADS. This is not the architecture of the A",
+      "source_blob_oid": "40065180f9a9af605f028640617bdb85bbfe29bf",
+      "source_line": 6,
+      "source_line_sha256": "31568fb838add76289e3e538e831ad94ec7627a37578c290091cdb099ba6db0f",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "docs/specifications/002_v1_persistence_tooling_standard.md": {
+      "context_excerpt": "**Scope:** Python persistence toolkit and schema-migration tooling for Specification 001's SQLite-centered architecture and its PostgreSQL migration seam  ",
+      "source_blob_oid": "0a37a1c00c3cf61a405837fb7939f3c6e2d059be",
+      "source_line": 5,
+      "source_line_sha256": "a7b0402b8c8f86db500e9115b65f77aee1eedbf640c47c839333c0b2e66a7ad1",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "docs/specifications/003_v1_python_project_and_dependency_tooling.md": {
+      "context_excerpt": "**Scope:** Python project metadata, dependency resolution/locking, package build, source layout, and reproducible development/CI environment for the V1 application package  ",
+      "source_blob_oid": "f041be50c86dd70ccc86895174d218729ce05411",
+      "source_line": 5,
+      "source_line_sha256": "0538687767f331a0689ff99157a6d7c4a7687f157aaf10c72f43683b4cc95d8e",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md": {
+      "context_excerpt": "**Scope:** Empirical selection of the first V1 reasoning/agent runtime and validation of MCP/HITL/durability/domain-isolation boundaries  ",
+      "source_blob_oid": "3d31b4a6d84b8b74af5bfd7c17f937d85d7b4fa8",
+      "source_line": 5,
+      "source_line_sha256": "ae9861cfb84c8b7afdbf40277f56fe98c2bb661c57a342f2abf9316ac961b072",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "docs/specifications/023_v1_source_universe_substrate.md": {
+      "context_excerpt": "**Scope:** Minimal governed source registry, exact source-artifact preservation, deterministic registry export, integrity verification, bounded derived-artifact lineage, and first real-corpus recovery",
+      "source_blob_oid": "9acd8782427fc96478a21cd4cde801299bbeec91",
+      "source_line": 5,
+      "source_line_sha256": "8b2967fd2d50a32395fe8eba749668970074ea00eb93f94603ee33d6e547afc2",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md": {
+      "context_excerpt": "**Scope:** Prospective typed repository-integrity contracts, branch-scoped live-state freshness, explicit continuity bootstrap routing, public/private integrity separation, deterministic validation, a",
+      "source_blob_oid": "bc8af01f0579a712f3cbecc7effec7c57263bcf3",
+      "source_line": 5,
+      "source_line_sha256": "25136d45a915e895afe9136e911fd430356036219fcc371ef938d3155782730a",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "docs/specifications/026_v1_repository_integrity_recovery_amendment.md": {
+      "context_excerpt": "**Scope:** Correct the bounded implementation-contract defects found by the post-outage recovery audit without prematurely performing the canonical/routing/private reconciliation deliberately deferred",
+      "source_blob_oid": "e0db267cbcfd439ae403c7923a189eb156b2de7f",
+      "source_line": 5,
+      "source_line_sha256": "ea3be2b84e4725e481e59a9aac28ed3d299a8d70bd2e46a4abdc448e8bab2642",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "docs/specifications/027_v1_historical_intermediate_checkpoint_integrity_extension.md": {
+      "context_excerpt": "**Scope:** Extend the governed repository-integrity architecture so preserved non-numbered historical intermediate checkpoint milestones receive explicit metadata and Knowledge Map protection without ",
+      "source_blob_oid": "31221444506ab5b1af7c9ab41ae7fdfea64368ed",
+      "source_line": 5,
+      "source_line_sha256": "a2d8334b1a21a4811d24d18e34297aa2c905412e1dff413d5b008e9c3dffb8ff",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "docs/specifications/028_v1_project_knowledge_architecture_implementation_and_migration_contract.md": {
+      "context_excerpt": "**Scope:** Production implementation and staged migration contract for the owner-selected `PKA-CANDIDATE-01` project-development knowledge architecture, including repository-local tooling, structured ",
+      "source_blob_oid": "70db025eefa69a8dec43b04dfdae87f5700754c9",
+      "source_line": 5,
+      "source_line_sha256": "51012899d2f5088b2e1f188da25c88dc6546e94ff3884279d440896b6f39be42",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "frontend/design-lab/cockpit-conversation-integration-study.js": {
+      "context_excerpt": "/*",
+      "source_blob_oid": "1bef8d451407f247ae5825d85bee67d49260e2ac",
+      "source_line": 1,
+      "source_line_sha256": "766e0153d3f7ec95c97e755b1ea7b1681566923b9299365fdc8399443ca20c1d",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "frontend/design-lab/cockpit-practical-workspace-study.css": {
+      "context_excerpt": "/*",
+      "source_blob_oid": "5b3092fefb5b701ce13ff3ca0c1929bfb0245cba",
+      "source_line": 1,
+      "source_line_sha256": "766e0153d3f7ec95c97e755b1ea7b1681566923b9299365fdc8399443ca20c1d",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "frontend/design-lab/cockpit-reintegration-presentation-integrity.css": {
+      "context_excerpt": "/*",
+      "source_blob_oid": "779832c995fb1e8ee505ff19309c0dcc7eb3f4f3",
+      "source_line": 1,
+      "source_line_sha256": "766e0153d3f7ec95c97e755b1ea7b1681566923b9299365fdc8399443ca20c1d",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "frontend/design-lab/cockpit-reintegration-review-256.css": {
+      "context_excerpt": "/*",
+      "source_blob_oid": "b1ee15518b36ab7da710e578d5084fcb50f7f97d",
+      "source_line": 1,
+      "source_line_sha256": "766e0153d3f7ec95c97e755b1ea7b1681566923b9299365fdc8399443ca20c1d",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "frontend/design-lab/cockpit-reintegration-review-controls.css": {
+      "context_excerpt": "/*",
+      "source_blob_oid": "c491a167f67ce6e2ac2c4668bfeb58e4caa85133",
+      "source_line": 1,
+      "source_line_sha256": "766e0153d3f7ec95c97e755b1ea7b1681566923b9299365fdc8399443ca20c1d",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "frontend/design-lab/cockpit-reintegration.html": {
+      "context_excerpt": "<!doctype html>",
+      "source_blob_oid": "4dae5bef54a841c22e6c1da1038ab63aeadbf0a6",
+      "source_line": 1,
+      "source_line_sha256": "fe26c59e91ac8de694b2531dc3bdc1b7faf471d3d7e4e00870af60f5f22897cb",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "frontend/design-lab/work-unit-blocked-carrier-ring-swap.css": {
+      "context_excerpt": "/* Human-selected compact red carrier shape swap.",
+      "source_blob_oid": "86406f665bcf237b5073970db5ac93c85d0d13c0",
+      "source_line": 1,
+      "source_line_sha256": "6147138ca299d9972f49313ede7e1088edd2f75b0654dc26fd1056a75b95d2a0",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "frontend/e2e/cockpit-reintegration-review-256.spec.ts": {
+      "context_excerpt": "import { expect, test, type Page } from '@playwright/test'",
+      "source_blob_oid": "a59a14ed870e2c559684c0e68b3a786e66222978",
+      "source_line": 1,
+      "source_line_sha256": "fe35f6b6ed96a7f684f8e379f2cb0406ebc4c2655e2e65c03d2196582031a971",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "schemas/project_knowledge/semantic_source.v1.schema.json": {
+      "context_excerpt": "{",
+      "source_blob_oid": "f202757950601411d7e2e4584a7f66a4215c21f7",
+      "source_line": 1,
+      "source_line_sha256": "021fb596db81e6d02bf3d2586ee3981fe519f275c0ac9ca76bbcf2ebb4097d96",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "schemas/project_knowledge/workstream.v1.schema.json": {
+      "context_excerpt": "{",
+      "source_blob_oid": "bbbea98e3d73539dc072a3ab337a4e11e8b9d40c",
+      "source_line": 1,
+      "source_line_sha256": "021fb596db81e6d02bf3d2586ee3981fe519f275c0ac9ca76bbcf2ebb4097d96",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "schemas/reusable_knowledge_bundle_v1.schema.json": {
+      "context_excerpt": "{",
+      "source_blob_oid": "3cc9ea31301460177788e2ffbc2865d6659277ca",
+      "source_line": 1,
+      "source_line_sha256": "021fb596db81e6d02bf3d2586ee3981fe519f275c0ac9ca76bbcf2ebb4097d96",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "scripts/check_knowledge_map.py": {
+      "context_excerpt": "from __future__ import annotations",
+      "source_blob_oid": "9ee74ee717b8586c6cc56e87022ccbbc21cfa26c",
+      "source_line": 1,
+      "source_line_sha256": "a6284e6d3d43bdfbf0da732945adb2b4f31147c92bea47aee100d7f556c22d00",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "scripts/check_private_continuity.py": {
+      "context_excerpt": "from __future__ import annotations",
+      "source_blob_oid": "43430f3e4e7faf2287549170fcfc193e106773d6",
+      "source_line": 1,
+      "source_line_sha256": "a6284e6d3d43bdfbf0da732945adb2b4f31147c92bea47aee100d7f556c22d00",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "scripts/select_cockpit_verification.py": {
+      "context_excerpt": "from __future__ import annotations",
+      "source_blob_oid": "60740383504258626f3d722e3aabc3e961d171a7",
+      "source_line": 1,
+      "source_line_sha256": "a6284e6d3d43bdfbf0da732945adb2b4f31147c92bea47aee100d7f556c22d00",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "src/ads_system/__init__.py": {
+      "context_excerpt": "\"\"\"Autonomous Data Science System V1 application package.",
+      "source_blob_oid": "3f0b957646918c002d8318d11627f87c5e140e1c",
+      "source_line": 1,
+      "source_line_sha256": "df247adbbdcdf1c5d9b63f2fec0d6e0f1983092abad55774890e596159fcfa74",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "src/ads_system/infrastructure/interchange/knowledge_bundle.py": {
+      "context_excerpt": "\"\"\"Deterministic V1 reusable-knowledge interchange utilities.",
+      "source_blob_oid": "85bcb7f86cb455c6c256e91be301956bc3cdbc01",
+      "source_line": 1,
+      "source_line_sha256": "7bcf4f91e3d39cc9573cc70b1e14fbd00fc172499d842b7c32e1aca9c5fb7237",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "tests/fixtures/knowledge/reusable_knowledge_stress_v1.json": {
+      "context_excerpt": "{",
+      "source_blob_oid": "0bd33751d2931d78b6ac5c7f14e32fcb736bc5fa",
+      "source_line": 1,
+      "source_line_sha256": "021fb596db81e6d02bf3d2586ee3981fe519f275c0ac9ca76bbcf2ebb4097d96",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "tests/fixtures/methodological_navigation/spec022_contract_fixture_manifest_v1.json": {
+      "context_excerpt": "{",
+      "source_blob_oid": "197733419f05f721dbfd3df05735c0d8d3f767e3",
+      "source_line": 1,
+      "source_line_sha256": "021fb596db81e6d02bf3d2586ee3981fe519f275c0ac9ca76bbcf2ebb4097d96",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "tests/test_migration_revision_ids.py": {
+      "context_excerpt": "from __future__ import annotations",
+      "source_blob_oid": "5fddb86dd2c3f8afa548e4115b0f0be0a1cb019d",
+      "source_line": 1,
+      "source_line_sha256": "a6284e6d3d43bdfbf0da732945adb2b4f31147c92bea47aee100d7f556c22d00",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "tests/test_package_smoke.py": {
+      "context_excerpt": "from __future__ import annotations",
+      "source_blob_oid": "39ffc9d2eb424f2b0754f2fff44640cf40afcd50",
+      "source_line": 1,
+      "source_line_sha256": "a6284e6d3d43bdfbf0da732945adb2b4f31147c92bea47aee100d7f556c22d00",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "tests/unit/test_knowledge_interchange.py": {
+      "context_excerpt": "from __future__ import annotations",
+      "source_blob_oid": "6d34ac9854b5235e99d322258dee844f07100e08",
+      "source_line": 1,
+      "source_line_sha256": "a6284e6d3d43bdfbf0da732945adb2b4f31147c92bea47aee100d7f556c22d00",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "tests/unit/test_model_collaboration_state.py": {
+      "context_excerpt": "from __future__ import annotations",
+      "source_blob_oid": "2bc0bbc15b2157b6879f0eb9237ea1ac7578e760",
+      "source_line": 1,
+      "source_line_sha256": "a6284e6d3d43bdfbf0da732945adb2b4f31147c92bea47aee100d7f556c22d00",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "tests/unit/test_project_knowledge_identity.py": {
+      "context_excerpt": "\"\"\"G006 qualification translations and explicitly contract-derived fixtures.",
+      "source_blob_oid": "d85253c368507941f1e555f2d35db1b09ccf06aa",
+      "source_line": 1,
+      "source_line_sha256": "7be0d22dbc8e0f46e45a6bc9959a84af442717ccddcdca46f6fa4a000781fd58",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "tests/unit/test_project_knowledge_refresh.py": {
+      "context_excerpt": "\"\"\"G013 complete-result equivalence over the frozen G010 production corpus.",
+      "source_blob_oid": "219e58408039ac89691f311fb478045bb0f781f9",
+      "source_line": 1,
+      "source_line_sha256": "bd66fb4c4bd7756502a9bee4415907a923b35927166e2870e1c9c484927fb6ce",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "tools/project_knowledge/capture.py": {
+      "context_excerpt": "\"\"\"G011: pure capture and prospective promotion semantics over explicit inputs.",
+      "source_blob_oid": "0d4b64a12d8abdd64531f3461733cfc30f6708f5",
+      "source_line": 1,
+      "source_line_sha256": "72711572c1c48e74e98894377d4fc6b2b66ca2526369fba682d7a4cd8fab536f",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "tools/project_knowledge/identity.py": {
+      "context_excerpt": "\"\"\"G006: pure identity continuity, transition validation and in-memory indexing.",
+      "source_blob_oid": "298ee0493bfcf949e1874d81f8de2fbc7294e96e",
+      "source_line": 1,
+      "source_line_sha256": "f240d059e7611fa074a2cc9e0defaab0255eeca24b6a862228ae90b1b0824d5d",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "tools/project_knowledge/pure_source_inventory.py": {
+      "context_excerpt": "\"\"\"Restricted source-inventory units: declarations only.\"\"\"",
+      "source_blob_oid": "e4ff83dfcb33c16b167cac9de46e73f87bb34a20",
+      "source_line": 1,
+      "source_line_sha256": "3be4464e056a073a8dcfe73f319576516da3056edc309ba646fd5a2278782141",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "tools/project_knowledge/services/generation.py": {
+      "context_excerpt": "\"\"\"G009 read-only orchestration: committed corpus -> one pure view builder.",
+      "source_blob_oid": "4b7039ef9e5473d73a761b7cfa4f6be4d5c30032",
+      "source_line": 1,
+      "source_line_sha256": "aeaa170931c962ecc6a8c0d4750ba1f5217ad989b2f1b93d5a48b42a8c02030c",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "tools/project_knowledge/services/refresh.py": {
+      "context_excerpt": "\"\"\"G013 read-only impact selection; G009 remains the only generation path.",
+      "source_blob_oid": "f6963f3acc4e3c1366f7a064e85d00a2d2993429",
+      "source_line": 1,
+      "source_line_sha256": "610227a2e14774b7e9c07164dd24b83e883a8207e4b8eda6e2dccb25392f730d",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    },
+    "tools/project_knowledge/services/validation.py": {
+      "context_excerpt": "\"\"\"Read-only first-slice validation, without identity/authority resolution.\"\"\"",
+      "source_blob_oid": "8d2bea281087677101c9ba3f53a8e24d908bb6b0",
+      "source_line": 1,
+      "source_line_sha256": "5625ea89dce13e26de87d32c3044b9537bba6236f03701c1c892e91dfa603531",
+      "source_ref": "17ea403ef64092f275e3c7d6492d99929804f8e5",
+      "witness_is_not_independent_label_verification": true
+    }
+  },
+  "w1_manifest_sha256": "b3e7de396f303fad1e14fe575d712693a784ab6732ced6e5667919bafdc5842e",
+  "w1_substrate_sha256": "457390b693bddaaa62a0f536c6c4c4afa690bb61a5ece8fd44c9c7f0681347ac"
+}

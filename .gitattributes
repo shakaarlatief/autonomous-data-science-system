@@ -159,6 +159,10 @@ experiments/r0_p03_navigation_probe/v03_r0_p03_actual_navigation_channels_unscor
 experiments/r0_p03_navigation_probe/w1_manifest.json -text
 experiments/r0_p03_navigation_probe/w1_substrate.json -text
 experiments/r0_p03_navigation_probe/w1_exclusion_log.json -text
+# W1 primary comparator source-adjacent authored metadata and arm freeze receipt.
+experiments/r0_p03_navigation_probe/w1_c_arm_authored_navigation_metadata.json -text
+experiments/r0_p03_navigation_probe/w1_c_arm_primary_freeze_contract_v01.json -text
+experiments/r0_p03_navigation_probe/w1_c_arm_exposed_mechanism_execution_receipt_v01.json -text
 
 # Preserve both original MC-0030 Message 063 historical carriers as exact Git blobs across Windows checkout.
 # The collision guard hashes their literal LF source bytes; CRLF worktree conversion would falsify the historical exception.
